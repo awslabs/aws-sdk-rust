@@ -3,12 +3,12 @@
 /// <p>The instance metadata options that apply to the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceMetadataOptions {
-    /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
-    /// <ul>
-    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
-    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
-    /// </ul>
+pub struct InstanceMetadataOptions  {
+    /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li> 
+    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li> 
+    /// </ul> 
     /// <p>The default setting is <b>optional</b>.</p>
     #[doc(hidden)]
     pub http_tokens: std::option::Option<std::string::String>,
@@ -17,13 +17,13 @@ pub struct InstanceMetadataOptions {
     pub http_put_response_hop_limit: std::option::Option<i32>,
 }
 impl InstanceMetadataOptions {
-    /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
-    /// <ul>
-    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
-    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
-    /// </ul>
+    /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li> 
+    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li> 
+    /// </ul> 
     /// <p>The default setting is <b>optional</b>.</p>
-    pub fn http_tokens(&self) -> std::option::Option<&str> {
+    pub fn http_tokens(&self) -> std::option::Option<& str> {
         self.http_tokens.as_deref()
     }
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
@@ -33,7 +33,7 @@ impl InstanceMetadataOptions {
 }
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
 pub mod instance_metadata_options {
-
+    
     /// A builder for [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -41,25 +41,24 @@ pub mod instance_metadata_options {
         pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
-        /// <ul>
-        /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
-        /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
-        /// </ul>
+        /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li> 
+        /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li> 
+        /// </ul> 
         /// <p>The default setting is <b>optional</b>.</p>
         pub fn http_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_tokens = Some(input.into());
             self
         }
-        /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
-        /// <ul>
-        /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
-        /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
-        /// </ul>
+        /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li> 
+        /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li> 
+        /// </ul> 
         /// <p>The default setting is <b>optional</b>.</p>
         pub fn set_http_tokens(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.http_tokens = input;
-            self
+            self.http_tokens = input; self
         }
         /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
         pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
@@ -68,17 +67,20 @@ pub mod instance_metadata_options {
         }
         /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
         pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.http_put_response_hop_limit = input;
-            self
+            self.http_put_response_hop_limit = input; self
         }
         /// Consumes the builder and constructs a [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
         pub fn build(self) -> crate::model::InstanceMetadataOptions {
             crate::model::InstanceMetadataOptions {
-                http_tokens: self.http_tokens,
-                http_put_response_hop_limit: self.http_put_response_hop_limit,
+                http_tokens: self.http_tokens
+                ,
+                http_put_response_hop_limit: self.http_put_response_hop_limit
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceMetadataOptions {
     /// Creates a new builder-style object to manufacture [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
@@ -90,20 +92,20 @@ impl InstanceMetadataOptions {
 /// <p>Logging configuration defines where Image Builder uploads your logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Logging {
+pub struct Logging  {
     /// <p>The Amazon S3 logging configuration.</p>
     #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::S3Logs>,
 }
 impl Logging {
     /// <p>The Amazon S3 logging configuration.</p>
-    pub fn s3_logs(&self) -> std::option::Option<&crate::model::S3Logs> {
+    pub fn s3_logs(&self) -> std::option::Option<& crate::model::S3Logs> {
         self.s3_logs.as_ref()
     }
 }
 /// See [`Logging`](crate::model::Logging).
 pub mod logging {
-
+    
     /// A builder for [`Logging`](crate::model::Logging).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -117,16 +119,18 @@ pub mod logging {
         }
         /// <p>The Amazon S3 logging configuration.</p>
         pub fn set_s3_logs(mut self, input: std::option::Option<crate::model::S3Logs>) -> Self {
-            self.s3_logs = input;
-            self
+            self.s3_logs = input; self
         }
         /// Consumes the builder and constructs a [`Logging`](crate::model::Logging).
         pub fn build(self) -> crate::model::Logging {
             crate::model::Logging {
-                s3_logs: self.s3_logs,
+                s3_logs: self.s3_logs
+                ,
             }
         }
     }
+    
+    
 }
 impl Logging {
     /// Creates a new builder-style object to manufacture [`Logging`](crate::model::Logging).
@@ -138,7 +142,7 @@ impl Logging {
 /// <p>Amazon S3 logging configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Logs {
+pub struct S3Logs  {
     /// <p>The S3 bucket in which to store the logs.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -148,17 +152,17 @@ pub struct S3Logs {
 }
 impl S3Logs {
     /// <p>The S3 bucket in which to store the logs.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
 }
 /// See [`S3Logs`](crate::model::S3Logs).
 pub mod s3_logs {
-
+    
     /// A builder for [`S3Logs`](crate::model::S3Logs).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -172,12 +176,8 @@ pub mod s3_logs {
             self
         }
         /// <p>The S3 bucket in which to store the logs.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -185,21 +185,21 @@ pub mod s3_logs {
             self
         }
         /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
-        pub fn set_s3_key_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_key_prefix = input;
-            self
+        pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_key_prefix = input; self
         }
         /// Consumes the builder and constructs a [`S3Logs`](crate::model::S3Logs).
         pub fn build(self) -> crate::model::S3Logs {
             crate::model::S3Logs {
-                s3_bucket_name: self.s3_bucket_name,
-                s3_key_prefix: self.s3_key_prefix,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                s3_key_prefix: self.s3_key_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Logs {
     /// Creates a new builder-style object to manufacture [`S3Logs`](crate::model::S3Logs).
@@ -214,9 +214,9 @@ impl S3Logs {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pipelinestatus = unimplemented!();
 /// match pipelinestatus {
@@ -238,58 +238,52 @@ impl S3Logs {
 /// Specifically, when `pipelinestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PipelineStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PipelineStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PipelineStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => PipelineStatus::Disabled,
             "ENABLED" => PipelineStatus::Enabled,
-            other => PipelineStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PipelineStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PipelineStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PipelineStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PipelineStatus::from(s))
+                }
+            }
 impl PipelineStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PipelineStatus::Disabled => "DISABLED",
             PipelineStatus::Enabled => "ENABLED",
-            PipelineStatus::Unknown(value) => value.as_str(),
+            PipelineStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for PipelineStatus {
@@ -301,8 +295,8 @@ impl AsRef<str> for PipelineStatus {
 /// <p>A schedule configures how often and when a pipeline will automatically create a new image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Schedule {
-    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+pub struct Schedule  {
+    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p> 
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
     #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
@@ -311,52 +305,44 @@ pub struct Schedule {
     pub timezone: std::option::Option<std::string::String>,
     /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
     #[doc(hidden)]
-    pub pipeline_execution_start_condition:
-        std::option::Option<crate::model::PipelineExecutionStartCondition>,
+    pub pipeline_execution_start_condition: std::option::Option<crate::model::PipelineExecutionStartCondition>,
 }
 impl Schedule {
-    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p> 
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
-    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
-    pub fn pipeline_execution_start_condition(
-        &self,
-    ) -> std::option::Option<&crate::model::PipelineExecutionStartCondition> {
+    pub fn pipeline_execution_start_condition(&self) -> std::option::Option<& crate::model::PipelineExecutionStartCondition> {
         self.pipeline_execution_start_condition.as_ref()
     }
 }
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
-
+    
     /// A builder for [`Schedule`](crate::model::Schedule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
         pub(crate) timezone: std::option::Option<std::string::String>,
-        pub(crate) pipeline_execution_start_condition:
-            std::option::Option<crate::model::PipelineExecutionStartCondition>,
+        pub(crate) pipeline_execution_start_condition: std::option::Option<crate::model::PipelineExecutionStartCondition>,
     }
     impl Builder {
-        /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+        /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p> 
         /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
         }
-        /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+        /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p> 
         /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
-        pub fn set_schedule_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_expression = input;
-            self
+        pub fn set_schedule_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_expression = input; self
         }
         /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -365,34 +351,31 @@ pub mod schedule {
         }
         /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.timezone = input;
-            self
+            self.timezone = input; self
         }
         /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
-        pub fn pipeline_execution_start_condition(
-            mut self,
-            input: crate::model::PipelineExecutionStartCondition,
-        ) -> Self {
+        pub fn pipeline_execution_start_condition(mut self, input: crate::model::PipelineExecutionStartCondition) -> Self {
             self.pipeline_execution_start_condition = Some(input);
             self
         }
         /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
-        pub fn set_pipeline_execution_start_condition(
-            mut self,
-            input: std::option::Option<crate::model::PipelineExecutionStartCondition>,
-        ) -> Self {
-            self.pipeline_execution_start_condition = input;
-            self
+        pub fn set_pipeline_execution_start_condition(mut self, input: std::option::Option<crate::model::PipelineExecutionStartCondition>) -> Self {
+            self.pipeline_execution_start_condition = input; self
         }
         /// Consumes the builder and constructs a [`Schedule`](crate::model::Schedule).
         pub fn build(self) -> crate::model::Schedule {
             crate::model::Schedule {
-                schedule_expression: self.schedule_expression,
-                timezone: self.timezone,
-                pipeline_execution_start_condition: self.pipeline_execution_start_condition,
+                schedule_expression: self.schedule_expression
+                ,
+                timezone: self.timezone
+                ,
+                pipeline_execution_start_condition: self.pipeline_execution_start_condition
+                ,
             }
         }
     }
+    
+    
 }
 impl Schedule {
     /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
@@ -407,9 +390,9 @@ impl Schedule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pipelineexecutionstartcondition = unimplemented!();
 /// match pipelineexecutionstartcondition {
@@ -431,66 +414,51 @@ impl Schedule {
 /// Specifically, when `pipelineexecutionstartcondition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PipelineExecutionStartCondition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PipelineExecutionStartCondition {
     #[allow(missing_docs)] // documentation missing in model
     ExpressionMatchAndDependencyUpdatesAvailable,
     #[allow(missing_docs)] // documentation missing in model
     ExpressionMatchOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PipelineExecutionStartCondition {
     fn from(s: &str) -> Self {
         match s {
-            "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE" => {
-                PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable
-            }
+            "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE" => PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable,
             "EXPRESSION_MATCH_ONLY" => PipelineExecutionStartCondition::ExpressionMatchOnly,
-            other => PipelineExecutionStartCondition::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PipelineExecutionStartCondition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PipelineExecutionStartCondition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PipelineExecutionStartCondition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PipelineExecutionStartCondition::from(s))
+                }
+            }
 impl PipelineExecutionStartCondition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable => {
-                "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE"
-            }
+            PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable => "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
             PipelineExecutionStartCondition::ExpressionMatchOnly => "EXPRESSION_MATCH_ONLY",
-            PipelineExecutionStartCondition::Unknown(value) => value.as_str(),
+            PipelineExecutionStartCondition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
-            "EXPRESSION_MATCH_ONLY",
+            "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE", "EXPRESSION_MATCH_ONLY"
         ]
     }
 }
@@ -503,12 +471,12 @@ impl AsRef<str> for PipelineExecutionStartCondition {
 /// <p>Configure image tests for your pipeline build. Tests run after building the image, to verify that the AMI or container image is valid before distributing it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageTestsConfiguration {
+pub struct ImageTestsConfiguration  {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     #[doc(hidden)]
     pub image_tests_enabled: std::option::Option<bool>,
-    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
-    /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note> 
+    /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p> 
     /// </note>
     #[doc(hidden)]
     pub timeout_minutes: std::option::Option<i32>,
@@ -518,8 +486,8 @@ impl ImageTestsConfiguration {
     pub fn image_tests_enabled(&self) -> std::option::Option<bool> {
         self.image_tests_enabled
     }
-    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
-    /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note> 
+    /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p> 
     /// </note>
     pub fn timeout_minutes(&self) -> std::option::Option<i32> {
         self.timeout_minutes
@@ -527,7 +495,7 @@ impl ImageTestsConfiguration {
 }
 /// See [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
 pub mod image_tests_configuration {
-
+    
     /// A builder for [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -542,31 +510,33 @@ pub mod image_tests_configuration {
         }
         /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
         pub fn set_image_tests_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.image_tests_enabled = input;
-            self
+            self.image_tests_enabled = input; self
         }
-        /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
-        /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+        /// <p>The maximum time in minutes that tests are permitted to run.</p> <note> 
+        /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p> 
         /// </note>
         pub fn timeout_minutes(mut self, input: i32) -> Self {
             self.timeout_minutes = Some(input);
             self
         }
-        /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
-        /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+        /// <p>The maximum time in minutes that tests are permitted to run.</p> <note> 
+        /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p> 
         /// </note>
         pub fn set_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_minutes = input;
-            self
+            self.timeout_minutes = input; self
         }
         /// Consumes the builder and constructs a [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
         pub fn build(self) -> crate::model::ImageTestsConfiguration {
             crate::model::ImageTestsConfiguration {
-                image_tests_enabled: self.image_tests_enabled,
-                timeout_minutes: self.timeout_minutes,
+                image_tests_enabled: self.image_tests_enabled
+                ,
+                timeout_minutes: self.timeout_minutes
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageTestsConfiguration {
     /// Creates a new builder-style object to manufacture [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
@@ -578,92 +548,72 @@ impl ImageTestsConfiguration {
 /// <p> Defines the settings for a specific Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Distribution {
+pub struct Distribution  {
     /// <p>The target Region.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
     #[doc(hidden)]
-    pub ami_distribution_configuration:
-        std::option::Option<crate::model::AmiDistributionConfiguration>,
+    pub ami_distribution_configuration: std::option::Option<crate::model::AmiDistributionConfiguration>,
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
     #[doc(hidden)]
-    pub container_distribution_configuration:
-        std::option::Option<crate::model::ContainerDistributionConfiguration>,
+    pub container_distribution_configuration: std::option::Option<crate::model::ContainerDistributionConfiguration>,
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
     #[doc(hidden)]
     pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
     #[doc(hidden)]
-    pub launch_template_configurations:
-        std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
+    pub launch_template_configurations: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
     #[doc(hidden)]
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
     #[doc(hidden)]
-    pub fast_launch_configurations:
-        std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
+    pub fast_launch_configurations: std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
 }
 impl Distribution {
     /// <p>The target Region.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
-    pub fn ami_distribution_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::AmiDistributionConfiguration> {
+    pub fn ami_distribution_configuration(&self) -> std::option::Option<& crate::model::AmiDistributionConfiguration> {
         self.ami_distribution_configuration.as_ref()
     }
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
-    pub fn container_distribution_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ContainerDistributionConfiguration> {
+    pub fn container_distribution_configuration(&self) -> std::option::Option<& crate::model::ContainerDistributionConfiguration> {
         self.container_distribution_configuration.as_ref()
     }
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
-    pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_configuration_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.license_configuration_arns.as_deref()
     }
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
-    pub fn launch_template_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::LaunchTemplateConfiguration]> {
+    pub fn launch_template_configurations(&self) -> std::option::Option<& [crate::model::LaunchTemplateConfiguration]> {
         self.launch_template_configurations.as_deref()
     }
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
-    pub fn s3_export_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::S3ExportConfiguration> {
+    pub fn s3_export_configuration(&self) -> std::option::Option<& crate::model::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
-    pub fn fast_launch_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::FastLaunchConfiguration]> {
+    pub fn fast_launch_configurations(&self) -> std::option::Option<& [crate::model::FastLaunchConfiguration]> {
         self.fast_launch_configurations.as_deref()
     }
 }
 /// See [`Distribution`](crate::model::Distribution).
 pub mod distribution {
-
+    
     /// A builder for [`Distribution`](crate::model::Distribution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
-        pub(crate) ami_distribution_configuration:
-            std::option::Option<crate::model::AmiDistributionConfiguration>,
-        pub(crate) container_distribution_configuration:
-            std::option::Option<crate::model::ContainerDistributionConfiguration>,
-        pub(crate) license_configuration_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) launch_template_configurations:
-            std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
-        pub(crate) s3_export_configuration:
-            std::option::Option<crate::model::S3ExportConfiguration>,
-        pub(crate) fast_launch_configurations:
-            std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
+        pub(crate) ami_distribution_configuration: std::option::Option<crate::model::AmiDistributionConfiguration>,
+        pub(crate) container_distribution_configuration: std::option::Option<crate::model::ContainerDistributionConfiguration>,
+        pub(crate) license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) launch_template_configurations: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
+        pub(crate) s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
+        pub(crate) fast_launch_configurations: std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
     }
     impl Builder {
         /// <p>The target Region.</p>
@@ -673,40 +623,25 @@ pub mod distribution {
         }
         /// <p>The target Region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
-        pub fn ami_distribution_configuration(
-            mut self,
-            input: crate::model::AmiDistributionConfiguration,
-        ) -> Self {
+        pub fn ami_distribution_configuration(mut self, input: crate::model::AmiDistributionConfiguration) -> Self {
             self.ami_distribution_configuration = Some(input);
             self
         }
         /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
-        pub fn set_ami_distribution_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AmiDistributionConfiguration>,
-        ) -> Self {
-            self.ami_distribution_configuration = input;
-            self
+        pub fn set_ami_distribution_configuration(mut self, input: std::option::Option<crate::model::AmiDistributionConfiguration>) -> Self {
+            self.ami_distribution_configuration = input; self
         }
         /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
-        pub fn container_distribution_configuration(
-            mut self,
-            input: crate::model::ContainerDistributionConfiguration,
-        ) -> Self {
+        pub fn container_distribution_configuration(mut self, input: crate::model::ContainerDistributionConfiguration) -> Self {
             self.container_distribution_configuration = Some(input);
             self
         }
         /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
-        pub fn set_container_distribution_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ContainerDistributionConfiguration>,
-        ) -> Self {
-            self.container_distribution_configuration = input;
-            self
+        pub fn set_container_distribution_configuration(mut self, input: std::option::Option<crate::model::ContainerDistributionConfiguration>) -> Self {
+            self.container_distribution_configuration = input; self
         }
         /// Appends an item to `license_configuration_arns`.
         ///
@@ -715,91 +650,75 @@ pub mod distribution {
         /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
         pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_configuration_arns.unwrap_or_default();
-            v.push(input.into());
-            self.license_configuration_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_configuration_arns = Some(v);
+                            self
         }
         /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
-        pub fn set_license_configuration_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_configuration_arns = input;
-            self
+        pub fn set_license_configuration_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_configuration_arns = input; self
         }
         /// Appends an item to `launch_template_configurations`.
         ///
         /// To override the contents of this collection use [`set_launch_template_configurations`](Self::set_launch_template_configurations).
         ///
         /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
-        pub fn launch_template_configurations(
-            mut self,
-            input: crate::model::LaunchTemplateConfiguration,
-        ) -> Self {
+        pub fn launch_template_configurations(mut self, input: crate::model::LaunchTemplateConfiguration) -> Self {
             let mut v = self.launch_template_configurations.unwrap_or_default();
-            v.push(input);
-            self.launch_template_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.launch_template_configurations = Some(v);
+                            self
         }
         /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
-        pub fn set_launch_template_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
-        ) -> Self {
-            self.launch_template_configurations = input;
-            self
+        pub fn set_launch_template_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>) -> Self {
+            self.launch_template_configurations = input; self
         }
         /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
-        pub fn s3_export_configuration(
-            mut self,
-            input: crate::model::S3ExportConfiguration,
-        ) -> Self {
+        pub fn s3_export_configuration(mut self, input: crate::model::S3ExportConfiguration) -> Self {
             self.s3_export_configuration = Some(input);
             self
         }
         /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
-        pub fn set_s3_export_configuration(
-            mut self,
-            input: std::option::Option<crate::model::S3ExportConfiguration>,
-        ) -> Self {
-            self.s3_export_configuration = input;
-            self
+        pub fn set_s3_export_configuration(mut self, input: std::option::Option<crate::model::S3ExportConfiguration>) -> Self {
+            self.s3_export_configuration = input; self
         }
         /// Appends an item to `fast_launch_configurations`.
         ///
         /// To override the contents of this collection use [`set_fast_launch_configurations`](Self::set_fast_launch_configurations).
         ///
         /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
-        pub fn fast_launch_configurations(
-            mut self,
-            input: crate::model::FastLaunchConfiguration,
-        ) -> Self {
+        pub fn fast_launch_configurations(mut self, input: crate::model::FastLaunchConfiguration) -> Self {
             let mut v = self.fast_launch_configurations.unwrap_or_default();
-            v.push(input);
-            self.fast_launch_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.fast_launch_configurations = Some(v);
+                            self
         }
         /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
-        pub fn set_fast_launch_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
-        ) -> Self {
-            self.fast_launch_configurations = input;
-            self
+        pub fn set_fast_launch_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>) -> Self {
+            self.fast_launch_configurations = input; self
         }
         /// Consumes the builder and constructs a [`Distribution`](crate::model::Distribution).
         pub fn build(self) -> crate::model::Distribution {
             crate::model::Distribution {
-                region: self.region,
-                ami_distribution_configuration: self.ami_distribution_configuration,
-                container_distribution_configuration: self.container_distribution_configuration,
-                license_configuration_arns: self.license_configuration_arns,
-                launch_template_configurations: self.launch_template_configurations,
-                s3_export_configuration: self.s3_export_configuration,
-                fast_launch_configurations: self.fast_launch_configurations,
+                region: self.region
+                ,
+                ami_distribution_configuration: self.ami_distribution_configuration
+                ,
+                container_distribution_configuration: self.container_distribution_configuration
+                ,
+                license_configuration_arns: self.license_configuration_arns
+                ,
+                launch_template_configurations: self.launch_template_configurations
+                ,
+                s3_export_configuration: self.s3_export_configuration
+                ,
+                fast_launch_configurations: self.fast_launch_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl Distribution {
     /// Creates a new builder-style object to manufacture [`Distribution`](crate::model::Distribution).
@@ -811,7 +730,7 @@ impl Distribution {
 /// <p>Define and configure faster launching for output Windows AMIs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FastLaunchConfiguration {
+pub struct FastLaunchConfiguration  {
     /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -834,9 +753,7 @@ impl FastLaunchConfiguration {
         self.enabled
     }
     /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
-    pub fn snapshot_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::FastLaunchSnapshotConfiguration> {
+    pub fn snapshot_configuration(&self) -> std::option::Option<& crate::model::FastLaunchSnapshotConfiguration> {
         self.snapshot_configuration.as_ref()
     }
     /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
@@ -844,28 +761,24 @@ impl FastLaunchConfiguration {
         self.max_parallel_launches
     }
     /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
-    pub fn launch_template(
-        &self,
-    ) -> std::option::Option<&crate::model::FastLaunchLaunchTemplateSpecification> {
+    pub fn launch_template(&self) -> std::option::Option<& crate::model::FastLaunchLaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
     /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 /// See [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
 pub mod fast_launch_configuration {
-
+    
     /// A builder for [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) snapshot_configuration:
-            std::option::Option<crate::model::FastLaunchSnapshotConfiguration>,
+        pub(crate) snapshot_configuration: std::option::Option<crate::model::FastLaunchSnapshotConfiguration>,
         pub(crate) max_parallel_launches: std::option::Option<i32>,
-        pub(crate) launch_template:
-            std::option::Option<crate::model::FastLaunchLaunchTemplateSpecification>,
+        pub(crate) launch_template: std::option::Option<crate::model::FastLaunchLaunchTemplateSpecification>,
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -876,24 +789,16 @@ pub mod fast_launch_configuration {
         }
         /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
-        pub fn snapshot_configuration(
-            mut self,
-            input: crate::model::FastLaunchSnapshotConfiguration,
-        ) -> Self {
+        pub fn snapshot_configuration(mut self, input: crate::model::FastLaunchSnapshotConfiguration) -> Self {
             self.snapshot_configuration = Some(input);
             self
         }
         /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
-        pub fn set_snapshot_configuration(
-            mut self,
-            input: std::option::Option<crate::model::FastLaunchSnapshotConfiguration>,
-        ) -> Self {
-            self.snapshot_configuration = input;
-            self
+        pub fn set_snapshot_configuration(mut self, input: std::option::Option<crate::model::FastLaunchSnapshotConfiguration>) -> Self {
+            self.snapshot_configuration = input; self
         }
         /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
         pub fn max_parallel_launches(mut self, input: i32) -> Self {
@@ -902,24 +807,16 @@ pub mod fast_launch_configuration {
         }
         /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
         pub fn set_max_parallel_launches(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_parallel_launches = input;
-            self
+            self.max_parallel_launches = input; self
         }
         /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
-        pub fn launch_template(
-            mut self,
-            input: crate::model::FastLaunchLaunchTemplateSpecification,
-        ) -> Self {
+        pub fn launch_template(mut self, input: crate::model::FastLaunchLaunchTemplateSpecification) -> Self {
             self.launch_template = Some(input);
             self
         }
         /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
-        pub fn set_launch_template(
-            mut self,
-            input: std::option::Option<crate::model::FastLaunchLaunchTemplateSpecification>,
-        ) -> Self {
-            self.launch_template = input;
-            self
+        pub fn set_launch_template(mut self, input: std::option::Option<crate::model::FastLaunchLaunchTemplateSpecification>) -> Self {
+            self.launch_template = input; self
         }
         /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -928,20 +825,27 @@ pub mod fast_launch_configuration {
         }
         /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Consumes the builder and constructs a [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
         pub fn build(self) -> crate::model::FastLaunchConfiguration {
             crate::model::FastLaunchConfiguration {
-                enabled: self.enabled.unwrap_or_default(),
-                snapshot_configuration: self.snapshot_configuration,
-                max_parallel_launches: self.max_parallel_launches,
-                launch_template: self.launch_template,
-                account_id: self.account_id,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                snapshot_configuration: self.snapshot_configuration
+                ,
+                max_parallel_launches: self.max_parallel_launches
+                ,
+                launch_template: self.launch_template
+                ,
+                account_id: self.account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl FastLaunchConfiguration {
     /// Creates a new builder-style object to manufacture [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
@@ -950,12 +854,12 @@ impl FastLaunchConfiguration {
     }
 }
 
-/// <p>Identifies the launch template that the associated Windows AMI uses for launching an instance when faster launching is enabled.</p> <note>
-/// <p>You can specify either the <code>launchTemplateName</code> or the <code>launchTemplateId</code>, but not both.</p>
+/// <p>Identifies the launch template that the associated Windows AMI uses for launching an instance when faster launching is enabled.</p> <note> 
+/// <p>You can specify either the <code>launchTemplateName</code> or the <code>launchTemplateId</code>, but not both.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FastLaunchLaunchTemplateSpecification {
+pub struct FastLaunchLaunchTemplateSpecification  {
     /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
@@ -968,21 +872,21 @@ pub struct FastLaunchLaunchTemplateSpecification {
 }
 impl FastLaunchLaunchTemplateSpecification {
     /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
-    pub fn launch_template_version(&self) -> std::option::Option<&str> {
+    pub fn launch_template_version(&self) -> std::option::Option<& str> {
         self.launch_template_version.as_deref()
     }
 }
 /// See [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
 pub mod fast_launch_launch_template_specification {
-
+    
     /// A builder for [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -997,12 +901,8 @@ pub mod fast_launch_launch_template_specification {
             self
         }
         /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
-        pub fn set_launch_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_template_id = input;
-            self
+        pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_template_id = input; self
         }
         /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
         pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1010,12 +910,8 @@ pub mod fast_launch_launch_template_specification {
             self
         }
         /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
-        pub fn set_launch_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_template_name = input;
-            self
+        pub fn set_launch_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_template_name = input; self
         }
         /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
         pub fn launch_template_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1023,22 +919,23 @@ pub mod fast_launch_launch_template_specification {
             self
         }
         /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
-        pub fn set_launch_template_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_template_version = input;
-            self
+        pub fn set_launch_template_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_template_version = input; self
         }
         /// Consumes the builder and constructs a [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
         pub fn build(self) -> crate::model::FastLaunchLaunchTemplateSpecification {
             crate::model::FastLaunchLaunchTemplateSpecification {
-                launch_template_id: self.launch_template_id,
-                launch_template_name: self.launch_template_name,
-                launch_template_version: self.launch_template_version,
+                launch_template_id: self.launch_template_id
+                ,
+                launch_template_name: self.launch_template_name
+                ,
+                launch_template_version: self.launch_template_version
+                ,
             }
         }
     }
+    
+    
 }
 impl FastLaunchLaunchTemplateSpecification {
     /// Creates a new builder-style object to manufacture [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
@@ -1050,7 +947,7 @@ impl FastLaunchLaunchTemplateSpecification {
 /// <p>Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FastLaunchSnapshotConfiguration {
+pub struct FastLaunchSnapshotConfiguration  {
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
     #[doc(hidden)]
     pub target_resource_count: std::option::Option<i32>,
@@ -1063,7 +960,7 @@ impl FastLaunchSnapshotConfiguration {
 }
 /// See [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
 pub mod fast_launch_snapshot_configuration {
-
+    
     /// A builder for [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1077,16 +974,18 @@ pub mod fast_launch_snapshot_configuration {
         }
         /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
         pub fn set_target_resource_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_resource_count = input;
-            self
+            self.target_resource_count = input; self
         }
         /// Consumes the builder and constructs a [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
         pub fn build(self) -> crate::model::FastLaunchSnapshotConfiguration {
             crate::model::FastLaunchSnapshotConfiguration {
-                target_resource_count: self.target_resource_count,
+                target_resource_count: self.target_resource_count
+                ,
             }
         }
     }
+    
+    
 }
 impl FastLaunchSnapshotConfiguration {
     /// Creates a new builder-style object to manufacture [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
@@ -1098,15 +997,15 @@ impl FastLaunchSnapshotConfiguration {
 /// <p>Properties that configure export from your build instance to a compatible file format for your VM.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ExportConfiguration {
+pub struct S3ExportConfiguration  {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
     #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
-    /// <p>Export the updated image to one of the following supported disk image formats:</p>
-    /// <ul>
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+    /// <p>Export the updated image to one of the following supported disk image formats:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li> 
+    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li> 
+    /// <li> <p> <b>Raw</b> – Raw format.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub disk_image_format: std::option::Option<crate::model::DiskImageFormat>,
@@ -1119,30 +1018,30 @@ pub struct S3ExportConfiguration {
 }
 impl S3ExportConfiguration {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> std::option::Option<& str> {
         self.role_name.as_deref()
     }
-    /// <p>Export the updated image to one of the following supported disk image formats:</p>
-    /// <ul>
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+    /// <p>Export the updated image to one of the following supported disk image formats:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li> 
+    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li> 
+    /// <li> <p> <b>Raw</b> – Raw format.</p> </li> 
     /// </ul>
-    pub fn disk_image_format(&self) -> std::option::Option<&crate::model::DiskImageFormat> {
+    pub fn disk_image_format(&self) -> std::option::Option<& crate::model::DiskImageFormat> {
         self.disk_image_format.as_ref()
     }
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
 }
 /// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
 pub mod s3_export_configuration {
-
+    
     /// A builder for [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1159,31 +1058,26 @@ pub mod s3_export_configuration {
         }
         /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_name = input;
-            self
+            self.role_name = input; self
         }
-        /// <p>Export the updated image to one of the following supported disk image formats:</p>
-        /// <ul>
-        /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-        /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-        /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+        /// <p>Export the updated image to one of the following supported disk image formats:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li> 
+        /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li> 
+        /// <li> <p> <b>Raw</b> – Raw format.</p> </li> 
         /// </ul>
         pub fn disk_image_format(mut self, input: crate::model::DiskImageFormat) -> Self {
             self.disk_image_format = Some(input);
             self
         }
-        /// <p>Export the updated image to one of the following supported disk image formats:</p>
-        /// <ul>
-        /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-        /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-        /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+        /// <p>Export the updated image to one of the following supported disk image formats:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li> 
+        /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li> 
+        /// <li> <p> <b>Raw</b> – Raw format.</p> </li> 
         /// </ul>
-        pub fn set_disk_image_format(
-            mut self,
-            input: std::option::Option<crate::model::DiskImageFormat>,
-        ) -> Self {
-            self.disk_image_format = input;
-            self
+        pub fn set_disk_image_format(mut self, input: std::option::Option<crate::model::DiskImageFormat>) -> Self {
+            self.disk_image_format = input; self
         }
         /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1192,8 +1086,7 @@ pub mod s3_export_configuration {
         }
         /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
         pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1202,19 +1095,24 @@ pub mod s3_export_configuration {
         }
         /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = input;
-            self
+            self.s3_prefix = input; self
         }
         /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
         pub fn build(self) -> crate::model::S3ExportConfiguration {
             crate::model::S3ExportConfiguration {
-                role_name: self.role_name,
-                disk_image_format: self.disk_image_format,
-                s3_bucket: self.s3_bucket,
-                s3_prefix: self.s3_prefix,
+                role_name: self.role_name
+                ,
+                disk_image_format: self.disk_image_format
+                ,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_prefix: self.s3_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl S3ExportConfiguration {
     /// Creates a new builder-style object to manufacture [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
@@ -1229,9 +1127,9 @@ impl S3ExportConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let diskimageformat = unimplemented!();
 /// match diskimageformat {
@@ -1254,22 +1152,14 @@ impl S3ExportConfiguration {
 /// Specifically, when `diskimageformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DiskImageFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DiskImageFormat {
     #[allow(missing_docs)] // documentation missing in model
     Raw,
@@ -1278,7 +1168,7 @@ pub enum DiskImageFormat {
     #[allow(missing_docs)] // documentation missing in model
     Vmdk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DiskImageFormat {
     fn from(s: &str) -> Self {
@@ -1286,17 +1176,17 @@ impl std::convert::From<&str> for DiskImageFormat {
             "RAW" => DiskImageFormat::Raw,
             "VHD" => DiskImageFormat::Vhd,
             "VMDK" => DiskImageFormat::Vmdk,
-            other => DiskImageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DiskImageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DiskImageFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DiskImageFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DiskImageFormat::from(s))
+                }
+            }
 impl DiskImageFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1304,12 +1194,14 @@ impl DiskImageFormat {
             DiskImageFormat::Raw => "RAW",
             DiskImageFormat::Vhd => "VHD",
             DiskImageFormat::Vmdk => "VMDK",
-            DiskImageFormat::Unknown(value) => value.as_str(),
+            DiskImageFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RAW", "VHD", "VMDK"]
+        &[
+            "RAW", "VHD", "VMDK"
+        ]
     }
 }
 impl AsRef<str> for DiskImageFormat {
@@ -1321,7 +1213,7 @@ impl AsRef<str> for DiskImageFormat {
 /// <p>Identifies an Amazon EC2 launch template to use for a specific account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateConfiguration {
+pub struct LaunchTemplateConfiguration  {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
@@ -1334,11 +1226,11 @@ pub struct LaunchTemplateConfiguration {
 }
 impl LaunchTemplateConfiguration {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The account ID that this configuration applies to.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
@@ -1348,7 +1240,7 @@ impl LaunchTemplateConfiguration {
 }
 /// See [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
 pub mod launch_template_configuration {
-
+    
     /// A builder for [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1363,12 +1255,8 @@ pub mod launch_template_configuration {
             self
         }
         /// <p>Identifies the Amazon EC2 launch template to use.</p>
-        pub fn set_launch_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_template_id = input;
-            self
+        pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_template_id = input; self
         }
         /// <p>The account ID that this configuration applies to.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1377,8 +1265,7 @@ pub mod launch_template_configuration {
         }
         /// <p>The account ID that this configuration applies to.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
         pub fn set_default_version(mut self, input: bool) -> Self {
@@ -1387,18 +1274,23 @@ pub mod launch_template_configuration {
         }
         /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
         pub fn set_set_default_version(mut self, input: std::option::Option<bool>) -> Self {
-            self.set_default_version = input;
-            self
+            self.set_default_version = input; self
         }
         /// Consumes the builder and constructs a [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
         pub fn build(self) -> crate::model::LaunchTemplateConfiguration {
             crate::model::LaunchTemplateConfiguration {
-                launch_template_id: self.launch_template_id,
-                account_id: self.account_id,
-                set_default_version: self.set_default_version.unwrap_or_default(),
+                launch_template_id: self.launch_template_id
+                ,
+                account_id: self.account_id
+                ,
+                set_default_version: self.set_default_version
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LaunchTemplateConfiguration {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
@@ -1410,7 +1302,7 @@ impl LaunchTemplateConfiguration {
 /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContainerDistributionConfiguration {
+pub struct ContainerDistributionConfiguration  {
     /// <p>The description of the container distribution configuration.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -1423,23 +1315,21 @@ pub struct ContainerDistributionConfiguration {
 }
 impl ContainerDistributionConfiguration {
     /// <p>The description of the container distribution configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    pub fn container_tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn container_tags(&self) -> std::option::Option<& [std::string::String]> {
         self.container_tags.as_deref()
     }
     /// <p>The destination repository for the container distribution configuration.</p>
-    pub fn target_repository(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetContainerRepository> {
+    pub fn target_repository(&self) -> std::option::Option<& crate::model::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
 }
 /// See [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
 pub mod container_distribution_configuration {
-
+    
     /// A builder for [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1455,8 +1345,7 @@ pub mod container_distribution_configuration {
         }
         /// <p>The description of the container distribution configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `container_tags`.
         ///
@@ -1465,17 +1354,13 @@ pub mod container_distribution_configuration {
         /// <p>Tags that are attached to the container distribution configuration.</p>
         pub fn container_tags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.container_tags.unwrap_or_default();
-            v.push(input.into());
-            self.container_tags = Some(v);
-            self
+                            v.push(input.into());
+                            self.container_tags = Some(v);
+                            self
         }
         /// <p>Tags that are attached to the container distribution configuration.</p>
-        pub fn set_container_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.container_tags = input;
-            self
+        pub fn set_container_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.container_tags = input; self
         }
         /// <p>The destination repository for the container distribution configuration.</p>
         pub fn target_repository(mut self, input: crate::model::TargetContainerRepository) -> Self {
@@ -1483,22 +1368,23 @@ pub mod container_distribution_configuration {
             self
         }
         /// <p>The destination repository for the container distribution configuration.</p>
-        pub fn set_target_repository(
-            mut self,
-            input: std::option::Option<crate::model::TargetContainerRepository>,
-        ) -> Self {
-            self.target_repository = input;
-            self
+        pub fn set_target_repository(mut self, input: std::option::Option<crate::model::TargetContainerRepository>) -> Self {
+            self.target_repository = input; self
         }
         /// Consumes the builder and constructs a [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
         pub fn build(self) -> crate::model::ContainerDistributionConfiguration {
             crate::model::ContainerDistributionConfiguration {
-                description: self.description,
-                container_tags: self.container_tags,
-                target_repository: self.target_repository,
+                description: self.description
+                ,
+                container_tags: self.container_tags
+                ,
+                target_repository: self.target_repository
+                ,
             }
         }
     }
+    
+    
 }
 impl ContainerDistributionConfiguration {
     /// Creates a new builder-style object to manufacture [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
@@ -1510,7 +1396,7 @@ impl ContainerDistributionConfiguration {
 /// <p>The container repository where the output container image is stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetContainerRepository {
+pub struct TargetContainerRepository  {
     /// <p>Specifies the service in which this image was registered.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::model::ContainerRepositoryService>,
@@ -1520,17 +1406,17 @@ pub struct TargetContainerRepository {
 }
 impl TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
-    pub fn service(&self) -> std::option::Option<&crate::model::ContainerRepositoryService> {
+    pub fn service(&self) -> std::option::Option<& crate::model::ContainerRepositoryService> {
         self.service.as_ref()
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
 /// See [`TargetContainerRepository`](crate::model::TargetContainerRepository).
 pub mod target_container_repository {
-
+    
     /// A builder for [`TargetContainerRepository`](crate::model::TargetContainerRepository).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1544,12 +1430,8 @@ pub mod target_container_repository {
             self
         }
         /// <p>Specifies the service in which this image was registered.</p>
-        pub fn set_service(
-            mut self,
-            input: std::option::Option<crate::model::ContainerRepositoryService>,
-        ) -> Self {
-            self.service = input;
-            self
+        pub fn set_service(mut self, input: std::option::Option<crate::model::ContainerRepositoryService>) -> Self {
+            self.service = input; self
         }
         /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1557,21 +1439,21 @@ pub mod target_container_repository {
             self
         }
         /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// Consumes the builder and constructs a [`TargetContainerRepository`](crate::model::TargetContainerRepository).
         pub fn build(self) -> crate::model::TargetContainerRepository {
             crate::model::TargetContainerRepository {
-                service: self.service,
-                repository_name: self.repository_name,
+                service: self.service
+                ,
+                repository_name: self.repository_name
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetContainerRepository {
     /// Creates a new builder-style object to manufacture [`TargetContainerRepository`](crate::model::TargetContainerRepository).
@@ -1586,9 +1468,9 @@ impl TargetContainerRepository {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let containerrepositoryservice = unimplemented!();
 /// match containerrepositoryservice {
@@ -1609,56 +1491,48 @@ impl TargetContainerRepository {
 /// Specifically, when `containerrepositoryservice` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContainerRepositoryService::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContainerRepositoryService {
     #[allow(missing_docs)] // documentation missing in model
     Ecr,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContainerRepositoryService {
     fn from(s: &str) -> Self {
         match s {
             "ECR" => ContainerRepositoryService::Ecr,
-            other => ContainerRepositoryService::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ContainerRepositoryService::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContainerRepositoryService {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContainerRepositoryService::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContainerRepositoryService::from(s))
+                }
+            }
 impl ContainerRepositoryService {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerRepositoryService::Ecr => "ECR",
-            ContainerRepositoryService::Unknown(value) => value.as_str(),
+            ContainerRepositoryService::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ECR"]
+        &[
+            "ECR"
+        ]
     }
 }
 impl AsRef<str> for ContainerRepositoryService {
@@ -1670,7 +1544,7 @@ impl AsRef<str> for ContainerRepositoryService {
 /// <p> Define and configure the output AMIs of the pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AmiDistributionConfiguration {
+pub struct AmiDistributionConfiguration  {
     /// <p>The name of the output AMI.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1682,8 +1556,7 @@ pub struct AmiDistributionConfiguration {
     pub target_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
     #[doc(hidden)]
-    pub ami_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub ami_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -1693,50 +1566,42 @@ pub struct AmiDistributionConfiguration {
 }
 impl AmiDistributionConfiguration {
     /// <p>The name of the output AMI.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of an account to which you want to distribute an image.</p>
-    pub fn target_account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.target_account_ids.as_deref()
     }
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
-    pub fn ami_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn ami_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.ami_tags.as_ref()
     }
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
-    pub fn launch_permission(
-        &self,
-    ) -> std::option::Option<&crate::model::LaunchPermissionConfiguration> {
+    pub fn launch_permission(&self) -> std::option::Option<& crate::model::LaunchPermissionConfiguration> {
         self.launch_permission.as_ref()
     }
 }
 /// See [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
 pub mod ami_distribution_configuration {
-
+    
     /// A builder for [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) target_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) ami_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) ami_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) launch_permission:
-            std::option::Option<crate::model::LaunchPermissionConfiguration>,
+        pub(crate) launch_permission: std::option::Option<crate::model::LaunchPermissionConfiguration>,
     }
     impl Builder {
         /// <p>The name of the output AMI.</p>
@@ -1746,8 +1611,7 @@ pub mod ami_distribution_configuration {
         }
         /// <p>The name of the output AMI.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1756,8 +1620,7 @@ pub mod ami_distribution_configuration {
         }
         /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `target_account_ids`.
         ///
@@ -1766,42 +1629,28 @@ pub mod ami_distribution_configuration {
         /// <p>The ID of an account to which you want to distribute an image.</p>
         pub fn target_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_account_ids.unwrap_or_default();
-            v.push(input.into());
-            self.target_account_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.target_account_ids = Some(v);
+                            self
         }
         /// <p>The ID of an account to which you want to distribute an image.</p>
-        pub fn set_target_account_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.target_account_ids = input;
-            self
+        pub fn set_target_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.target_account_ids = input; self
         }
         /// Adds a key-value pair to `ami_tags`.
         ///
         /// To override the contents of this collection use [`set_ami_tags`](Self::set_ami_tags).
         ///
         /// <p>The tags to apply to AMIs distributed to this Region.</p>
-        pub fn ami_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ami_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.ami_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.ami_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.ami_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags to apply to AMIs distributed to this Region.</p>
-        pub fn set_ami_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.ami_tags = input;
-            self
+        pub fn set_ami_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.ami_tags = input; self
         }
         /// <p>The KMS key identifier used to encrypt the distributed image.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1810,37 +1659,37 @@ pub mod ami_distribution_configuration {
         }
         /// <p>The KMS key identifier used to encrypt the distributed image.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
-        pub fn launch_permission(
-            mut self,
-            input: crate::model::LaunchPermissionConfiguration,
-        ) -> Self {
+        pub fn launch_permission(mut self, input: crate::model::LaunchPermissionConfiguration) -> Self {
             self.launch_permission = Some(input);
             self
         }
         /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
-        pub fn set_launch_permission(
-            mut self,
-            input: std::option::Option<crate::model::LaunchPermissionConfiguration>,
-        ) -> Self {
-            self.launch_permission = input;
-            self
+        pub fn set_launch_permission(mut self, input: std::option::Option<crate::model::LaunchPermissionConfiguration>) -> Self {
+            self.launch_permission = input; self
         }
         /// Consumes the builder and constructs a [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
         pub fn build(self) -> crate::model::AmiDistributionConfiguration {
             crate::model::AmiDistributionConfiguration {
-                name: self.name,
-                description: self.description,
-                target_account_ids: self.target_account_ids,
-                ami_tags: self.ami_tags,
-                kms_key_id: self.kms_key_id,
-                launch_permission: self.launch_permission,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                target_account_ids: self.target_account_ids
+                ,
+                ami_tags: self.ami_tags
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                launch_permission: self.launch_permission
+                ,
             }
         }
     }
+    
+    
 }
 impl AmiDistributionConfiguration {
     /// Creates a new builder-style object to manufacture [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
@@ -1852,7 +1701,7 @@ impl AmiDistributionConfiguration {
 /// <p>Describes the configuration for a launch permission. The launch permission modification request is sent to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public, set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchPermissionConfiguration {
+pub struct LaunchPermissionConfiguration  {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1868,33 +1717,32 @@ pub struct LaunchPermissionConfiguration {
 }
 impl LaunchPermissionConfiguration {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn user_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.user_groups.as_deref()
     }
     /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
-    pub fn organization_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn organization_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.organization_arns.as_deref()
     }
     /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
-    pub fn organizational_unit_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn organizational_unit_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.organizational_unit_arns.as_deref()
     }
 }
 /// See [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
 pub mod launch_permission_configuration {
-
+    
     /// A builder for [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) user_groups: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) organization_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) organizational_unit_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) organizational_unit_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `user_ids`.
@@ -1904,17 +1752,13 @@ pub mod launch_permission_configuration {
         /// <p>The Amazon Web Services account ID.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_ids = Some(v);
+                            self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn set_user_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_ids = input;
-            self
+        pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_ids = input; self
         }
         /// Appends an item to `user_groups`.
         ///
@@ -1923,17 +1767,13 @@ pub mod launch_permission_configuration {
         /// <p>The name of the group.</p>
         pub fn user_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_groups.unwrap_or_default();
-            v.push(input.into());
-            self.user_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_groups = Some(v);
+                            self
         }
         /// <p>The name of the group.</p>
-        pub fn set_user_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_groups = input;
-            self
+        pub fn set_user_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_groups = input; self
         }
         /// Appends an item to `organization_arns`.
         ///
@@ -1942,17 +1782,13 @@ pub mod launch_permission_configuration {
         /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
         pub fn organization_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.organization_arns.unwrap_or_default();
-            v.push(input.into());
-            self.organization_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.organization_arns = Some(v);
+                            self
         }
         /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
-        pub fn set_organization_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.organization_arns = input;
-            self
+        pub fn set_organization_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.organization_arns = input; self
         }
         /// Appends an item to `organizational_unit_arns`.
         ///
@@ -1961,28 +1797,30 @@ pub mod launch_permission_configuration {
         /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
         pub fn organizational_unit_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.organizational_unit_arns.unwrap_or_default();
-            v.push(input.into());
-            self.organizational_unit_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.organizational_unit_arns = Some(v);
+                            self
         }
         /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
-        pub fn set_organizational_unit_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.organizational_unit_arns = input;
-            self
+        pub fn set_organizational_unit_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.organizational_unit_arns = input; self
         }
         /// Consumes the builder and constructs a [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
         pub fn build(self) -> crate::model::LaunchPermissionConfiguration {
             crate::model::LaunchPermissionConfiguration {
-                user_ids: self.user_ids,
-                user_groups: self.user_groups,
-                organization_arns: self.organization_arns,
-                organizational_unit_arns: self.organizational_unit_arns,
+                user_ids: self.user_ids
+                ,
+                user_groups: self.user_groups
+                ,
+                organization_arns: self.organization_arns
+                ,
+                organizational_unit_arns: self.organizational_unit_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl LaunchPermissionConfiguration {
     /// Creates a new builder-style object to manufacture [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
@@ -1994,7 +1832,7 @@ impl LaunchPermissionConfiguration {
 /// <p>The infrastructure used when building Amazon EC2 AMIs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InfrastructureConfigurationSummary {
+pub struct InfrastructureConfigurationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2012,12 +1850,10 @@ pub struct InfrastructureConfigurationSummary {
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags attached to the image created by Image Builder.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags of the infrastructure configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The instance types of the infrastructure configuration.</p>
     #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2027,51 +1863,45 @@ pub struct InfrastructureConfigurationSummary {
 }
 impl InfrastructureConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the infrastructure configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the infrastructure configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date on which the infrastructure configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which the infrastructure configuration was last updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<&str> {
+    pub fn date_updated(&self) -> std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags attached to the image created by Image Builder.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_types(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_types.as_deref()
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
-    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
 }
 /// See [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
 pub mod infrastructure_configuration_summary {
-
+    
     /// A builder for [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2080,12 +1910,8 @@ pub mod infrastructure_configuration_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
         pub(crate) date_updated: std::option::Option<std::string::String>,
-        pub(crate) resource_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
     }
@@ -2097,8 +1923,7 @@ pub mod infrastructure_configuration_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the infrastructure configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2107,8 +1932,7 @@ pub mod infrastructure_configuration_summary {
         }
         /// <p>The name of the infrastructure configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the infrastructure configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2117,8 +1941,7 @@ pub mod infrastructure_configuration_summary {
         }
         /// <p>The description of the infrastructure configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date on which the infrastructure configuration was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2127,8 +1950,7 @@ pub mod infrastructure_configuration_summary {
         }
         /// <p>The date on which the infrastructure configuration was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// <p>The date on which the infrastructure configuration was last updated.</p>
         pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2137,58 +1959,37 @@ pub mod infrastructure_configuration_summary {
         }
         /// <p>The date on which the infrastructure configuration was last updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_updated = input;
-            self
+            self.date_updated = input; self
         }
         /// Adds a key-value pair to `resource_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags attached to the image created by Image Builder.</p>
-        pub fn resource_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags attached to the image created by Image Builder.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_tags = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the infrastructure configuration.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of the infrastructure configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `instance_types`.
         ///
@@ -2197,17 +1998,13 @@ pub mod infrastructure_configuration_summary {
         /// <p>The instance types of the infrastructure configuration.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
-            self.instance_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.instance_types = Some(v);
+                            self
         }
         /// <p>The instance types of the infrastructure configuration.</p>
-        pub fn set_instance_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instance_types = input;
-            self
+        pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instance_types = input; self
         }
         /// <p>The instance profile of the infrastructure configuration.</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2215,28 +2012,35 @@ pub mod infrastructure_configuration_summary {
             self
         }
         /// <p>The instance profile of the infrastructure configuration.</p>
-        pub fn set_instance_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_profile_name = input;
-            self
+        pub fn set_instance_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_profile_name = input; self
         }
         /// Consumes the builder and constructs a [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
         pub fn build(self) -> crate::model::InfrastructureConfigurationSummary {
             crate::model::InfrastructureConfigurationSummary {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                resource_tags: self.resource_tags,
-                tags: self.tags,
-                instance_types: self.instance_types,
-                instance_profile_name: self.instance_profile_name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                resource_tags: self.resource_tags
+                ,
+                tags: self.tags
+                ,
+                instance_types: self.instance_types
+                ,
+                instance_profile_name: self.instance_profile_name
+                ,
             }
         }
     }
+    
+    
 }
 impl InfrastructureConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
@@ -2248,7 +2052,7 @@ impl InfrastructureConfigurationSummary {
 /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2258,17 +2062,17 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The filter values. Filter values are case-sensitive.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2283,8 +2087,7 @@ pub mod filter {
         }
         /// <p>The name of the filter. Filter names are case-sensitive.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -2293,26 +2096,26 @@ pub mod filter {
         /// <p>The filter values. Filter values are case-sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The filter values. Filter values are case-sensitive.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -2324,20 +2127,20 @@ impl Filter {
 /// <p>The defining characteristics of a specific version of an Image Builder image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageVersion {
-    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-    /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+pub struct ImageVersion  {
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note> 
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+    /// <ol> 
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-    /// </ol>
+    /// </major></p> </li> 
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+    /// </ol> 
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2347,7 +2150,7 @@ pub struct ImageVersion {
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageType>,
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -2359,10 +2162,10 @@ pub struct ImageVersion {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -2378,11 +2181,11 @@ pub struct ImageVersion {
     /// <p>The date on which this specific version of the Image Builder image was created.</p>
     #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-    /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+    /// <ul> 
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
@@ -2391,32 +2194,32 @@ pub struct ImageVersion {
     pub image_source: std::option::Option<crate::model::ImageSource>,
 }
 impl ImageVersion {
-    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-    /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note> 
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+    /// <ol> 
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-    /// </ol>
+    /// </major></p> </li> 
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+    /// </ol> 
     /// </note>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of this specific version of an Image Builder image.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ImageType> {
         self.r#type.as_ref()
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -2428,47 +2231,47 @@ impl ImageVersion {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    pub fn os_version(&self) -> std::option::Option<&str> {
+    pub fn os_version(&self) -> std::option::Option<& str> {
         self.os_version.as_deref()
     }
     /// <p>The owner of the image version.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The date on which this specific version of the Image Builder image was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-    /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+    /// <ul> 
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
     /// </ul>
-    pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
+    pub fn build_type(&self) -> std::option::Option<& crate::model::BuildType> {
         self.build_type.as_ref()
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn image_source(&self) -> std::option::Option<&crate::model::ImageSource> {
+    pub fn image_source(&self) -> std::option::Option<& crate::model::ImageSource> {
         self.image_source.as_ref()
     }
 }
 /// See [`ImageVersion`](crate::model::ImageVersion).
 pub mod image_version {
-
+    
     /// A builder for [`ImageVersion`](crate::model::ImageVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2484,41 +2287,40 @@ pub mod image_version {
         pub(crate) image_source: std::option::Option<crate::model::ImageSource>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
-        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-        /// <ol>
-        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note> 
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+        /// <ol> 
+        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
         /// <li> <p>Version ARNs have only the first three nodes: <major>
         /// .
         /// <minor>
         /// .
         /// <patch></patch>
         /// </minor>
-        /// </major></p> </li>
-        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-        /// </ol>
+        /// </major></p> </li> 
+        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+        /// </ol> 
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
-        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-        /// <ol>
-        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note> 
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+        /// <ol> 
+        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
         /// <li> <p>Version ARNs have only the first three nodes: <major>
         /// .
         /// <minor>
         /// .
         /// <patch></patch>
         /// </minor>
-        /// </major></p> </li>
-        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-        /// </ol>
+        /// </major></p> </li> 
+        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+        /// </ol> 
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of this specific version of an Image Builder image.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2527,8 +2329,7 @@ pub mod image_version {
         }
         /// <p>The name of this specific version of an Image Builder image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
@@ -2537,10 +2338,9 @@ pub mod image_version {
         }
         /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+        /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -2552,16 +2352,16 @@ pub mod image_version {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+        /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -2573,14 +2373,13 @@ pub mod image_version {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -2589,8 +2388,7 @@ pub mod image_version {
         }
         /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2599,8 +2397,7 @@ pub mod image_version {
         }
         /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.os_version = input;
-            self
+            self.os_version = input; self
         }
         /// <p>The owner of the image version.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2609,8 +2406,7 @@ pub mod image_version {
         }
         /// <p>The owner of the image version.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The date on which this specific version of the Image Builder image was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2619,31 +2415,26 @@ pub mod image_version {
         }
         /// <p>The date on which this specific version of the Image Builder image was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
-        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-        /// <ul>
-        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+        /// <ul> 
+        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
         /// </ul>
         pub fn build_type(mut self, input: crate::model::BuildType) -> Self {
             self.build_type = Some(input);
             self
         }
-        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-        /// <ul>
-        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+        /// <ul> 
+        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
         /// </ul>
-        pub fn set_build_type(
-            mut self,
-            input: std::option::Option<crate::model::BuildType>,
-        ) -> Self {
-            self.build_type = input;
-            self
+        pub fn set_build_type(mut self, input: std::option::Option<crate::model::BuildType>) -> Self {
+            self.build_type = input; self
         }
         /// <p>The origin of the base image that Image Builder used to build this image.</p>
         pub fn image_source(mut self, input: crate::model::ImageSource) -> Self {
@@ -2651,29 +2442,37 @@ pub mod image_version {
             self
         }
         /// <p>The origin of the base image that Image Builder used to build this image.</p>
-        pub fn set_image_source(
-            mut self,
-            input: std::option::Option<crate::model::ImageSource>,
-        ) -> Self {
-            self.image_source = input;
-            self
+        pub fn set_image_source(mut self, input: std::option::Option<crate::model::ImageSource>) -> Self {
+            self.image_source = input; self
         }
         /// Consumes the builder and constructs a [`ImageVersion`](crate::model::ImageVersion).
         pub fn build(self) -> crate::model::ImageVersion {
             crate::model::ImageVersion {
-                arn: self.arn,
-                name: self.name,
-                r#type: self.r#type,
-                version: self.version,
-                platform: self.platform,
-                os_version: self.os_version,
-                owner: self.owner,
-                date_created: self.date_created,
-                build_type: self.build_type,
-                image_source: self.image_source,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                version: self.version
+                ,
+                platform: self.platform
+                ,
+                os_version: self.os_version
+                ,
+                owner: self.owner
+                ,
+                date_created: self.date_created
+                ,
+                build_type: self.build_type
+                ,
+                image_source: self.image_source
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageVersion {
     /// Creates a new builder-style object to manufacture [`ImageVersion`](crate::model::ImageVersion).
@@ -2688,9 +2487,9 @@ impl ImageVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagesource = unimplemented!();
 /// match imagesource {
@@ -2714,22 +2513,14 @@ impl ImageVersion {
 /// Specifically, when `imagesource` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageSource::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageSource {
     #[allow(missing_docs)] // documentation missing in model
     AmazonManaged,
@@ -2740,7 +2531,7 @@ pub enum ImageSource {
     #[allow(missing_docs)] // documentation missing in model
     Imported,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageSource {
     fn from(s: &str) -> Self {
@@ -2749,17 +2540,17 @@ impl std::convert::From<&str> for ImageSource {
             "AWS_MARKETPLACE" => ImageSource::AwsMarketplace,
             "CUSTOM" => ImageSource::Custom,
             "IMPORTED" => ImageSource::Imported,
-            other => ImageSource::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImageSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageSource {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageSource::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageSource::from(s))
+                }
+            }
 impl ImageSource {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2768,12 +2559,14 @@ impl ImageSource {
             ImageSource::AwsMarketplace => "AWS_MARKETPLACE",
             ImageSource::Custom => "CUSTOM",
             ImageSource::Imported => "IMPORTED",
-            ImageSource::Unknown(value) => value.as_str(),
+            ImageSource::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AMAZON_MANAGED", "AWS_MARKETPLACE", "CUSTOM", "IMPORTED"]
+        &[
+            "AMAZON_MANAGED", "AWS_MARKETPLACE", "CUSTOM", "IMPORTED"
+        ]
     }
 }
 impl AsRef<str> for ImageSource {
@@ -2788,9 +2581,9 @@ impl AsRef<str> for ImageSource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let buildtype = unimplemented!();
 /// match buildtype {
@@ -2813,22 +2606,14 @@ impl AsRef<str> for ImageSource {
 /// Specifically, when `buildtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BuildType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BuildType {
     #[allow(missing_docs)] // documentation missing in model
     Import,
@@ -2837,7 +2622,7 @@ pub enum BuildType {
     #[allow(missing_docs)] // documentation missing in model
     UserInitiated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BuildType {
     fn from(s: &str) -> Self {
@@ -2845,17 +2630,17 @@ impl std::convert::From<&str> for BuildType {
             "IMPORT" => BuildType::Import,
             "SCHEDULED" => BuildType::Scheduled,
             "USER_INITIATED" => BuildType::UserInitiated,
-            other => BuildType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BuildType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BuildType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BuildType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BuildType::from(s))
+                }
+            }
 impl BuildType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2863,12 +2648,14 @@ impl BuildType {
             BuildType::Import => "IMPORT",
             BuildType::Scheduled => "SCHEDULED",
             BuildType::UserInitiated => "USER_INITIATED",
-            BuildType::Unknown(value) => value.as_str(),
+            BuildType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMPORT", "SCHEDULED", "USER_INITIATED"]
+        &[
+            "IMPORT", "SCHEDULED", "USER_INITIATED"
+        ]
     }
 }
 impl AsRef<str> for BuildType {
@@ -2883,9 +2670,9 @@ impl AsRef<str> for BuildType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let platform = unimplemented!();
 /// match platform {
@@ -2907,58 +2694,52 @@ impl AsRef<str> for BuildType {
 /// Specifically, when `platform` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Platform::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Platform {
     #[allow(missing_docs)] // documentation missing in model
     Linux,
     #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Platform {
     fn from(s: &str) -> Self {
         match s {
             "Linux" => Platform::Linux,
             "Windows" => Platform::Windows,
-            other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Platform {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Platform::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Platform::from(s))
+                }
+            }
 impl Platform {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Platform::Linux => "Linux",
             Platform::Windows => "Windows",
-            Platform::Unknown(value) => value.as_str(),
+            Platform::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Linux", "Windows"]
+        &[
+            "Linux", "Windows"
+        ]
     }
 }
 impl AsRef<str> for Platform {
@@ -2973,9 +2754,9 @@ impl AsRef<str> for Platform {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagetype = unimplemented!();
 /// match imagetype {
@@ -2997,58 +2778,52 @@ impl AsRef<str> for Platform {
 /// Specifically, when `imagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageType {
     #[allow(missing_docs)] // documentation missing in model
     Ami,
     #[allow(missing_docs)] // documentation missing in model
     Docker,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageType {
     fn from(s: &str) -> Self {
         match s {
             "AMI" => ImageType::Ami,
             "DOCKER" => ImageType::Docker,
-            other => ImageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageType::from(s))
+                }
+            }
 impl ImageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageType::Ami => "AMI",
             ImageType::Docker => "DOCKER",
-            ImageType::Unknown(value) => value.as_str(),
+            ImageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AMI", "DOCKER"]
+        &[
+            "AMI", "DOCKER"
+        ]
     }
 }
 impl AsRef<str> for ImageType {
@@ -3063,9 +2838,9 @@ impl AsRef<str> for ImageType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ownership = unimplemented!();
 /// match ownership {
@@ -3089,22 +2864,14 @@ impl AsRef<str> for ImageType {
 /// Specifically, when `ownership` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Ownership::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `Ownership::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Ownership {
     #[allow(missing_docs)] // documentation missing in model
     Amazon,
@@ -3115,7 +2882,7 @@ pub enum Ownership {
     #[allow(missing_docs)] // documentation missing in model
     Thirdparty,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Ownership {
     fn from(s: &str) -> Self {
@@ -3124,17 +2891,17 @@ impl std::convert::From<&str> for Ownership {
             "Self" => Ownership::SelfValue,
             "Shared" => Ownership::Shared,
             "ThirdParty" => Ownership::Thirdparty,
-            other => Ownership::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Ownership::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Ownership {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Ownership::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Ownership::from(s))
+                }
+            }
 impl Ownership {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3143,12 +2910,14 @@ impl Ownership {
             Ownership::SelfValue => "Self",
             Ownership::Shared => "Shared",
             Ownership::Thirdparty => "ThirdParty",
-            Ownership::Unknown(value) => value.as_str(),
+            Ownership::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Amazon", "Self", "Shared", "ThirdParty"]
+        &[
+            "Amazon", "Self", "Shared", "ThirdParty"
+        ]
     }
 }
 impl AsRef<str> for Ownership {
@@ -3160,7 +2929,7 @@ impl AsRef<str> for Ownership {
 /// <p>A summary of an image recipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageRecipeSummary {
+pub struct ImageRecipeSummary  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3181,45 +2950,41 @@ pub struct ImageRecipeSummary {
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The tags of the image recipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ImageRecipeSummary {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the image recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The platform of the image recipe.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The owner of the image recipe.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The base image of the image recipe.</p>
-    pub fn parent_image(&self) -> std::option::Option<&str> {
+    pub fn parent_image(&self) -> std::option::Option<& str> {
         self.parent_image.as_deref()
     }
     /// <p>The date on which this image recipe was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
 pub mod image_recipe_summary {
-
+    
     /// A builder for [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3229,9 +2994,7 @@ pub mod image_recipe_summary {
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) parent_image: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
@@ -3241,8 +3004,7 @@ pub mod image_recipe_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the image recipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3251,8 +3013,7 @@ pub mod image_recipe_summary {
         }
         /// <p>The name of the image recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The platform of the image recipe.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -3261,8 +3022,7 @@ pub mod image_recipe_summary {
         }
         /// <p>The platform of the image recipe.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The owner of the image recipe.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3271,8 +3031,7 @@ pub mod image_recipe_summary {
         }
         /// <p>The owner of the image recipe.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The base image of the image recipe.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3281,8 +3040,7 @@ pub mod image_recipe_summary {
         }
         /// <p>The base image of the image recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_image = input;
-            self
+            self.parent_image = input; self
         }
         /// <p>The date on which this image recipe was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3291,47 +3049,45 @@ pub mod image_recipe_summary {
         }
         /// <p>The date on which this image recipe was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the image recipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of the image recipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
         pub fn build(self) -> crate::model::ImageRecipeSummary {
             crate::model::ImageRecipeSummary {
-                arn: self.arn,
-                name: self.name,
-                platform: self.platform,
-                owner: self.owner,
-                parent_image: self.parent_image,
-                date_created: self.date_created,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                platform: self.platform
+                ,
+                owner: self.owner
+                ,
+                parent_image: self.parent_image
+                ,
+                date_created: self.date_created
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageRecipeSummary {
     /// Creates a new builder-style object to manufacture [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
@@ -3343,7 +3099,7 @@ impl ImageRecipeSummary {
 /// <p>Details of an image pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImagePipeline {
+pub struct ImagePipeline  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3394,24 +3150,23 @@ pub struct ImagePipeline {
     pub date_next_run: std::option::Option<std::string::String>,
     /// <p>The tags of this image pipeline.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ImagePipeline {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the image pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the image pipeline.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The platform of the image pipeline.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
@@ -3419,62 +3174,57 @@ impl ImagePipeline {
         self.enhanced_image_metadata_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.</p>
-    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this image pipeline.</p>
-    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
     /// <p>The image tests configuration of the image pipeline.</p>
-    pub fn image_tests_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(&self) -> std::option::Option<& crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p>The schedule of the image pipeline.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::model::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>The status of the image pipeline.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PipelineStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PipelineStatus> {
         self.status.as_ref()
     }
     /// <p>The date on which this image pipeline was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which this image pipeline was last updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<&str> {
+    pub fn date_updated(&self) -> std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>This is no longer supported, and does not return a value.</p>
-    pub fn date_last_run(&self) -> std::option::Option<&str> {
+    pub fn date_last_run(&self) -> std::option::Option<& str> {
         self.date_last_run.as_deref()
     }
     /// <p>This is no longer supported, and does not return a value.</p>
-    pub fn date_next_run(&self) -> std::option::Option<&str> {
+    pub fn date_next_run(&self) -> std::option::Option<& str> {
         self.date_next_run.as_deref()
     }
     /// <p>The tags of this image pipeline.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ImagePipeline`](crate::model::ImagePipeline).
 pub mod image_pipeline {
-
+    
     /// A builder for [`ImagePipeline`](crate::model::ImagePipeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3487,17 +3237,14 @@ pub mod image_pipeline {
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
-        pub(crate) image_tests_configuration:
-            std::option::Option<crate::model::ImageTestsConfiguration>,
+        pub(crate) image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
         pub(crate) schedule: std::option::Option<crate::model::Schedule>,
         pub(crate) status: std::option::Option<crate::model::PipelineStatus>,
         pub(crate) date_created: std::option::Option<std::string::String>,
         pub(crate) date_updated: std::option::Option<std::string::String>,
         pub(crate) date_last_run: std::option::Option<std::string::String>,
         pub(crate) date_next_run: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
@@ -3507,8 +3254,7 @@ pub mod image_pipeline {
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the image pipeline.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3517,8 +3263,7 @@ pub mod image_pipeline {
         }
         /// <p>The name of the image pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the image pipeline.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3527,8 +3272,7 @@ pub mod image_pipeline {
         }
         /// <p>The description of the image pipeline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The platform of the image pipeline.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -3537,8 +3281,7 @@ pub mod image_pipeline {
         }
         /// <p>The platform of the image pipeline.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
@@ -3546,12 +3289,8 @@ pub mod image_pipeline {
             self
         }
         /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
-        pub fn set_enhanced_image_metadata_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enhanced_image_metadata_enabled = input;
-            self
+        pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enhanced_image_metadata_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3559,12 +3298,8 @@ pub mod image_pipeline {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.</p>
-        pub fn set_image_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_recipe_arn = input;
-            self
+        pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_recipe_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.</p>
         pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3572,60 +3307,35 @@ pub mod image_pipeline {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.</p>
-        pub fn set_container_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_recipe_arn = input;
-            self
+        pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_recipe_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.</p>
-        pub fn infrastructure_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.</p>
-        pub fn set_infrastructure_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.infrastructure_configuration_arn = input;
-            self
+        pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.infrastructure_configuration_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this image pipeline.</p>
-        pub fn distribution_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this image pipeline.</p>
-        pub fn set_distribution_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.distribution_configuration_arn = input;
-            self
+        pub fn set_distribution_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.distribution_configuration_arn = input; self
         }
         /// <p>The image tests configuration of the image pipeline.</p>
-        pub fn image_tests_configuration(
-            mut self,
-            input: crate::model::ImageTestsConfiguration,
-        ) -> Self {
+        pub fn image_tests_configuration(mut self, input: crate::model::ImageTestsConfiguration) -> Self {
             self.image_tests_configuration = Some(input);
             self
         }
         /// <p>The image tests configuration of the image pipeline.</p>
-        pub fn set_image_tests_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ImageTestsConfiguration>,
-        ) -> Self {
-            self.image_tests_configuration = input;
-            self
+        pub fn set_image_tests_configuration(mut self, input: std::option::Option<crate::model::ImageTestsConfiguration>) -> Self {
+            self.image_tests_configuration = input; self
         }
         /// <p>The schedule of the image pipeline.</p>
         pub fn schedule(mut self, input: crate::model::Schedule) -> Self {
@@ -3634,8 +3344,7 @@ pub mod image_pipeline {
         }
         /// <p>The schedule of the image pipeline.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
-            self.schedule = input;
-            self
+            self.schedule = input; self
         }
         /// <p>The status of the image pipeline.</p>
         pub fn status(mut self, input: crate::model::PipelineStatus) -> Self {
@@ -3643,12 +3352,8 @@ pub mod image_pipeline {
             self
         }
         /// <p>The status of the image pipeline.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PipelineStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PipelineStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date on which this image pipeline was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3657,8 +3362,7 @@ pub mod image_pipeline {
         }
         /// <p>The date on which this image pipeline was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// <p>The date on which this image pipeline was last updated.</p>
         pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3667,8 +3371,7 @@ pub mod image_pipeline {
         }
         /// <p>The date on which this image pipeline was last updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_updated = input;
-            self
+            self.date_updated = input; self
         }
         /// <p>This is no longer supported, and does not return a value.</p>
         pub fn date_last_run(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3676,12 +3379,8 @@ pub mod image_pipeline {
             self
         }
         /// <p>This is no longer supported, and does not return a value.</p>
-        pub fn set_date_last_run(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.date_last_run = input;
-            self
+        pub fn set_date_last_run(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.date_last_run = input; self
         }
         /// <p>This is no longer supported, and does not return a value.</p>
         pub fn date_next_run(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3689,61 +3388,66 @@ pub mod image_pipeline {
             self
         }
         /// <p>This is no longer supported, and does not return a value.</p>
-        pub fn set_date_next_run(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.date_next_run = input;
-            self
+        pub fn set_date_next_run(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.date_next_run = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of this image pipeline.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of this image pipeline.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ImagePipeline`](crate::model::ImagePipeline).
         pub fn build(self) -> crate::model::ImagePipeline {
             crate::model::ImagePipeline {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                platform: self.platform,
-                enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled,
-                image_recipe_arn: self.image_recipe_arn,
-                container_recipe_arn: self.container_recipe_arn,
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-                distribution_configuration_arn: self.distribution_configuration_arn,
-                image_tests_configuration: self.image_tests_configuration,
-                schedule: self.schedule,
-                status: self.status,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                date_last_run: self.date_last_run,
-                date_next_run: self.date_next_run,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                platform: self.platform
+                ,
+                enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled
+                ,
+                image_recipe_arn: self.image_recipe_arn
+                ,
+                container_recipe_arn: self.container_recipe_arn
+                ,
+                infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                ,
+                distribution_configuration_arn: self.distribution_configuration_arn
+                ,
+                image_tests_configuration: self.image_tests_configuration
+                ,
+                schedule: self.schedule
+                ,
+                status: self.status
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                date_last_run: self.date_last_run
+                ,
+                date_next_run: self.date_next_run
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ImagePipeline {
     /// Creates a new builder-style object to manufacture [`ImagePipeline`](crate::model::ImagePipeline).
@@ -3755,7 +3459,7 @@ impl ImagePipeline {
 /// <p>An image summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageSummary {
+pub struct ImageSummary  {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3788,13 +3492,12 @@ pub struct ImageSummary {
     pub output_resources: std::option::Option<crate::model::OutputResources>,
     /// <p>The tags that apply to this image.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-    /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+    /// <ul> 
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
@@ -3804,69 +3507,66 @@ pub struct ImageSummary {
 }
 impl ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the image.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ImageType> {
         self.r#type.as_ref()
     }
     /// <p>The version of the image.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The image operating system platform, such as Linux or Windows.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    pub fn os_version(&self) -> std::option::Option<&str> {
+    pub fn os_version(&self) -> std::option::Option<& str> {
         self.os_version.as_deref()
     }
     /// <p>The state of the image.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ImageState> {
         self.state.as_ref()
     }
     /// <p>The owner of the image.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The date on which Image Builder created this image.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The output resources that Image Builder produced when it created this image.</p>
-    pub fn output_resources(&self) -> std::option::Option<&crate::model::OutputResources> {
+    pub fn output_resources(&self) -> std::option::Option<& crate::model::OutputResources> {
         self.output_resources.as_ref()
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-    /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+    /// <ul> 
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
     /// </ul>
-    pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
+    pub fn build_type(&self) -> std::option::Option<& crate::model::BuildType> {
         self.build_type.as_ref()
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn image_source(&self) -> std::option::Option<&crate::model::ImageSource> {
+    pub fn image_source(&self) -> std::option::Option<& crate::model::ImageSource> {
         self.image_source.as_ref()
     }
 }
 /// See [`ImageSummary`](crate::model::ImageSummary).
 pub mod image_summary {
-
+    
     /// A builder for [`ImageSummary`](crate::model::ImageSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3880,9 +3580,7 @@ pub mod image_summary {
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
         pub(crate) output_resources: std::option::Option<crate::model::OutputResources>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) build_type: std::option::Option<crate::model::BuildType>,
         pub(crate) image_source: std::option::Option<crate::model::ImageSource>,
     }
@@ -3894,8 +3592,7 @@ pub mod image_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the image.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the image.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3904,8 +3601,7 @@ pub mod image_summary {
         }
         /// <p>The name of the image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
@@ -3914,8 +3610,7 @@ pub mod image_summary {
         }
         /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The version of the image.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3924,8 +3619,7 @@ pub mod image_summary {
         }
         /// <p>The version of the image.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The image operating system platform, such as Linux or Windows.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -3934,8 +3628,7 @@ pub mod image_summary {
         }
         /// <p>The image operating system platform, such as Linux or Windows.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3944,8 +3637,7 @@ pub mod image_summary {
         }
         /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.os_version = input;
-            self
+            self.os_version = input; self
         }
         /// <p>The state of the image.</p>
         pub fn state(mut self, input: crate::model::ImageState) -> Self {
@@ -3954,8 +3646,7 @@ pub mod image_summary {
         }
         /// <p>The state of the image.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The owner of the image.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3964,8 +3655,7 @@ pub mod image_summary {
         }
         /// <p>The owner of the image.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The date on which Image Builder created this image.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3974,8 +3664,7 @@ pub mod image_summary {
         }
         /// <p>The date on which Image Builder created this image.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// <p>The output resources that Image Builder produced when it created this image.</p>
         pub fn output_resources(mut self, input: crate::model::OutputResources) -> Self {
@@ -3983,60 +3672,42 @@ pub mod image_summary {
             self
         }
         /// <p>The output resources that Image Builder produced when it created this image.</p>
-        pub fn set_output_resources(
-            mut self,
-            input: std::option::Option<crate::model::OutputResources>,
-        ) -> Self {
-            self.output_resources = input;
-            self
+        pub fn set_output_resources(mut self, input: std::option::Option<crate::model::OutputResources>) -> Self {
+            self.output_resources = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that apply to this image.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags that apply to this image.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-        /// <ul>
-        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+        /// <ul> 
+        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
         /// </ul>
         pub fn build_type(mut self, input: crate::model::BuildType) -> Self {
             self.build_type = Some(input);
             self
         }
-        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-        /// <ul>
-        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+        /// <ul> 
+        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
         /// </ul>
-        pub fn set_build_type(
-            mut self,
-            input: std::option::Option<crate::model::BuildType>,
-        ) -> Self {
-            self.build_type = input;
-            self
+        pub fn set_build_type(mut self, input: std::option::Option<crate::model::BuildType>) -> Self {
+            self.build_type = input; self
         }
         /// <p>The origin of the base image that Image Builder used to build this image.</p>
         pub fn image_source(mut self, input: crate::model::ImageSource) -> Self {
@@ -4044,32 +3715,43 @@ pub mod image_summary {
             self
         }
         /// <p>The origin of the base image that Image Builder used to build this image.</p>
-        pub fn set_image_source(
-            mut self,
-            input: std::option::Option<crate::model::ImageSource>,
-        ) -> Self {
-            self.image_source = input;
-            self
+        pub fn set_image_source(mut self, input: std::option::Option<crate::model::ImageSource>) -> Self {
+            self.image_source = input; self
         }
         /// Consumes the builder and constructs a [`ImageSummary`](crate::model::ImageSummary).
         pub fn build(self) -> crate::model::ImageSummary {
             crate::model::ImageSummary {
-                arn: self.arn,
-                name: self.name,
-                r#type: self.r#type,
-                version: self.version,
-                platform: self.platform,
-                os_version: self.os_version,
-                state: self.state,
-                owner: self.owner,
-                date_created: self.date_created,
-                output_resources: self.output_resources,
-                tags: self.tags,
-                build_type: self.build_type,
-                image_source: self.image_source,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                version: self.version
+                ,
+                platform: self.platform
+                ,
+                os_version: self.os_version
+                ,
+                state: self.state
+                ,
+                owner: self.owner
+                ,
+                date_created: self.date_created
+                ,
+                output_resources: self.output_resources
+                ,
+                tags: self.tags
+                ,
+                build_type: self.build_type
+                ,
+                image_source: self.image_source
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageSummary {
     /// Creates a new builder-style object to manufacture [`ImageSummary`](crate::model::ImageSummary).
@@ -4081,7 +3763,7 @@ impl ImageSummary {
 /// <p>The resources produced by this image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputResources {
+pub struct OutputResources  {
     /// <p>The Amazon EC2 AMIs created by this image.</p>
     #[doc(hidden)]
     pub amis: std::option::Option<std::vec::Vec<crate::model::Ami>>,
@@ -4091,17 +3773,17 @@ pub struct OutputResources {
 }
 impl OutputResources {
     /// <p>The Amazon EC2 AMIs created by this image.</p>
-    pub fn amis(&self) -> std::option::Option<&[crate::model::Ami]> {
+    pub fn amis(&self) -> std::option::Option<& [crate::model::Ami]> {
         self.amis.as_deref()
     }
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
-    pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
+    pub fn containers(&self) -> std::option::Option<& [crate::model::Container]> {
         self.containers.as_deref()
     }
 }
 /// See [`OutputResources`](crate::model::OutputResources).
 pub mod output_resources {
-
+    
     /// A builder for [`OutputResources`](crate::model::OutputResources).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4116,17 +3798,13 @@ pub mod output_resources {
         /// <p>The Amazon EC2 AMIs created by this image.</p>
         pub fn amis(mut self, input: crate::model::Ami) -> Self {
             let mut v = self.amis.unwrap_or_default();
-            v.push(input);
-            self.amis = Some(v);
-            self
+                            v.push(input);
+                            self.amis = Some(v);
+                            self
         }
         /// <p>The Amazon EC2 AMIs created by this image.</p>
-        pub fn set_amis(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ami>>,
-        ) -> Self {
-            self.amis = input;
-            self
+        pub fn set_amis(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ami>>) -> Self {
+            self.amis = input; self
         }
         /// Appends an item to `containers`.
         ///
@@ -4135,26 +3813,26 @@ pub mod output_resources {
         /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
         pub fn containers(mut self, input: crate::model::Container) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input);
-            self.containers = Some(v);
-            self
+                            v.push(input);
+                            self.containers = Some(v);
+                            self
         }
         /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
-        pub fn set_containers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Container>>,
-        ) -> Self {
-            self.containers = input;
-            self
+        pub fn set_containers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Container>>) -> Self {
+            self.containers = input; self
         }
         /// Consumes the builder and constructs a [`OutputResources`](crate::model::OutputResources).
         pub fn build(self) -> crate::model::OutputResources {
             crate::model::OutputResources {
-                amis: self.amis,
-                containers: self.containers,
+                amis: self.amis
+                ,
+                containers: self.containers
+                ,
             }
         }
     }
+    
+    
 }
 impl OutputResources {
     /// Creates a new builder-style object to manufacture [`OutputResources`](crate::model::OutputResources).
@@ -4166,7 +3844,7 @@ impl OutputResources {
 /// <p>A container encapsulates the runtime environment for an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Container {
+pub struct Container  {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -4176,17 +3854,17 @@ pub struct Container {
 }
 impl Container {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>A list of URIs for containers created in the context Region.</p>
-    pub fn image_uris(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn image_uris(&self) -> std::option::Option<& [std::string::String]> {
         self.image_uris.as_deref()
     }
 }
 /// See [`Container`](crate::model::Container).
 pub mod container {
-
+    
     /// A builder for [`Container`](crate::model::Container).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4201,8 +3879,7 @@ pub mod container {
         }
         /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Appends an item to `image_uris`.
         ///
@@ -4211,26 +3888,26 @@ pub mod container {
         /// <p>A list of URIs for containers created in the context Region.</p>
         pub fn image_uris(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.image_uris.unwrap_or_default();
-            v.push(input.into());
-            self.image_uris = Some(v);
-            self
+                            v.push(input.into());
+                            self.image_uris = Some(v);
+                            self
         }
         /// <p>A list of URIs for containers created in the context Region.</p>
-        pub fn set_image_uris(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.image_uris = input;
-            self
+        pub fn set_image_uris(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.image_uris = input; self
         }
         /// Consumes the builder and constructs a [`Container`](crate::model::Container).
         pub fn build(self) -> crate::model::Container {
             crate::model::Container {
-                region: self.region,
-                image_uris: self.image_uris,
+                region: self.region
+                ,
+                image_uris: self.image_uris
+                ,
             }
         }
     }
+    
+    
 }
 impl Container {
     /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container).
@@ -4242,7 +3919,7 @@ impl Container {
 /// <p> Details of an Amazon EC2 AMI.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ami {
+pub struct Ami  {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -4264,33 +3941,33 @@ pub struct Ami {
 }
 impl Ami {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
-    pub fn image(&self) -> std::option::Option<&str> {
+    pub fn image(&self) -> std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>The name of the Amazon EC2 AMI.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> Image state shows the image status and the reason for that status.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ImageState> {
         self.state.as_ref()
     }
     /// <p>The account ID of the owner of the AMI.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 /// See [`Ami`](crate::model::Ami).
 pub mod ami {
-
+    
     /// A builder for [`Ami`](crate::model::Ami).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4309,8 +3986,7 @@ pub mod ami {
         }
         /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The AMI ID of the Amazon EC2 AMI.</p>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4319,8 +3995,7 @@ pub mod ami {
         }
         /// <p>The AMI ID of the Amazon EC2 AMI.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image = input;
-            self
+            self.image = input; self
         }
         /// <p>The name of the Amazon EC2 AMI.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4329,8 +4004,7 @@ pub mod ami {
         }
         /// <p>The name of the Amazon EC2 AMI.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4339,8 +4013,7 @@ pub mod ami {
         }
         /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> Image state shows the image status and the reason for that status.</p>
         pub fn state(mut self, input: crate::model::ImageState) -> Self {
@@ -4349,8 +4022,7 @@ pub mod ami {
         }
         /// <p> Image state shows the image status and the reason for that status.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The account ID of the owner of the AMI.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4359,21 +4031,28 @@ pub mod ami {
         }
         /// <p>The account ID of the owner of the AMI.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Consumes the builder and constructs a [`Ami`](crate::model::Ami).
         pub fn build(self) -> crate::model::Ami {
             crate::model::Ami {
-                region: self.region,
-                image: self.image,
-                name: self.name,
-                description: self.description,
-                state: self.state,
-                account_id: self.account_id,
+                region: self.region
+                ,
+                image: self.image
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                account_id: self.account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Ami {
     /// Creates a new builder-style object to manufacture [`Ami`](crate::model::Ami).
@@ -4385,7 +4064,7 @@ impl Ami {
 /// <p> Image state shows the image status and the reason for that status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageState {
+pub struct ImageState  {
     /// <p>The status of the image.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ImageStatus>,
@@ -4395,17 +4074,17 @@ pub struct ImageState {
 }
 impl ImageState {
     /// <p>The status of the image.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ImageStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ImageStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the image's status.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`ImageState`](crate::model::ImageState).
 pub mod image_state {
-
+    
     /// A builder for [`ImageState`](crate::model::ImageState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4420,8 +4099,7 @@ pub mod image_state {
         }
         /// <p>The status of the image.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ImageStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The reason for the image's status.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4430,17 +4108,20 @@ pub mod image_state {
         }
         /// <p>The reason for the image's status.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`ImageState`](crate::model::ImageState).
         pub fn build(self) -> crate::model::ImageState {
             crate::model::ImageState {
-                status: self.status,
-                reason: self.reason,
+                status: self.status
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageState {
     /// Creates a new builder-style object to manufacture [`ImageState`](crate::model::ImageState).
@@ -4455,9 +4136,9 @@ impl ImageState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagestatus = unimplemented!();
 /// match imagestatus {
@@ -4488,22 +4169,14 @@ impl ImageState {
 /// Specifically, when `imagestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -4528,7 +4201,7 @@ pub enum ImageStatus {
     #[allow(missing_docs)] // documentation missing in model
     Testing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageStatus {
     fn from(s: &str) -> Self {
@@ -4544,17 +4217,17 @@ impl std::convert::From<&str> for ImageStatus {
             "INTEGRATING" => ImageStatus::Integrating,
             "PENDING" => ImageStatus::Pending,
             "TESTING" => ImageStatus::Testing,
-            other => ImageStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImageStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageStatus::from(s))
+                }
+            }
 impl ImageStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4570,23 +4243,13 @@ impl ImageStatus {
             ImageStatus::Integrating => "INTEGRATING",
             ImageStatus::Pending => "PENDING",
             ImageStatus::Testing => "TESTING",
-            ImageStatus::Unknown(value) => value.as_str(),
+            ImageStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "BUILDING",
-            "CANCELLED",
-            "CREATING",
-            "DELETED",
-            "DEPRECATED",
-            "DISTRIBUTING",
-            "FAILED",
-            "INTEGRATING",
-            "PENDING",
-            "TESTING",
+            "AVAILABLE", "BUILDING", "CANCELLED", "CREATING", "DELETED", "DEPRECATED", "DISTRIBUTING", "FAILED", "INTEGRATING", "PENDING", "TESTING"
         ]
     }
 }
@@ -4599,7 +4262,7 @@ impl AsRef<str> for ImageStatus {
 /// <p>Represents a package installed on an Image Builder image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImagePackage {
+pub struct ImagePackage  {
     /// <p>The name of the package as reported to the operating system package manager.</p>
     #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
@@ -4609,17 +4272,17 @@ pub struct ImagePackage {
 }
 impl ImagePackage {
     /// <p>The name of the package as reported to the operating system package manager.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The version of the package as reported to the operating system package manager.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
 }
 /// See [`ImagePackage`](crate::model::ImagePackage).
 pub mod image_package {
-
+    
     /// A builder for [`ImagePackage`](crate::model::ImagePackage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4634,8 +4297,7 @@ pub mod image_package {
         }
         /// <p>The name of the package as reported to the operating system package manager.</p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_name = input;
-            self
+            self.package_name = input; self
         }
         /// <p>The version of the package as reported to the operating system package manager.</p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4643,21 +4305,21 @@ pub mod image_package {
             self
         }
         /// <p>The version of the package as reported to the operating system package manager.</p>
-        pub fn set_package_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.package_version = input;
-            self
+        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.package_version = input; self
         }
         /// Consumes the builder and constructs a [`ImagePackage`](crate::model::ImagePackage).
         pub fn build(self) -> crate::model::ImagePackage {
             crate::model::ImagePackage {
-                package_name: self.package_name,
-                package_version: self.package_version,
+                package_name: self.package_name
+                ,
+                package_version: self.package_version
+                ,
             }
         }
     }
+    
+    
 }
 impl ImagePackage {
     /// Creates a new builder-style object to manufacture [`ImagePackage`](crate::model::ImagePackage).
@@ -4669,7 +4331,7 @@ impl ImagePackage {
 /// <p>A high-level overview of a distribution configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DistributionConfigurationSummary {
+pub struct DistributionConfigurationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4687,48 +4349,44 @@ pub struct DistributionConfigurationSummary {
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags associated with the distribution configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of Regions where the container image is distributed to.</p>
     #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DistributionConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the distribution configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the distribution configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date on which the distribution configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which the distribution configuration was updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<&str> {
+    pub fn date_updated(&self) -> std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags associated with the distribution configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of Regions where the container image is distributed to.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
 }
 /// See [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
 pub mod distribution_configuration_summary {
-
+    
     /// A builder for [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4737,9 +4395,7 @@ pub mod distribution_configuration_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
         pub(crate) date_updated: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -4750,8 +4406,7 @@ pub mod distribution_configuration_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the distribution configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4760,8 +4415,7 @@ pub mod distribution_configuration_summary {
         }
         /// <p>The name of the distribution configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the distribution configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4770,8 +4424,7 @@ pub mod distribution_configuration_summary {
         }
         /// <p>The description of the distribution configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date on which the distribution configuration was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4780,8 +4433,7 @@ pub mod distribution_configuration_summary {
         }
         /// <p>The date on which the distribution configuration was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// <p>The date on which the distribution configuration was updated.</p>
         pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4790,33 +4442,22 @@ pub mod distribution_configuration_summary {
         }
         /// <p>The date on which the distribution configuration was updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_updated = input;
-            self
+            self.date_updated = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the distribution configuration.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the distribution configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `regions`.
         ///
@@ -4825,31 +4466,36 @@ pub mod distribution_configuration_summary {
         /// <p>A list of Regions where the container image is distributed to.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
-            self.regions = Some(v);
-            self
+                            v.push(input.into());
+                            self.regions = Some(v);
+                            self
         }
         /// <p>A list of Regions where the container image is distributed to.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.regions = input; self
         }
         /// Consumes the builder and constructs a [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
         pub fn build(self) -> crate::model::DistributionConfigurationSummary {
             crate::model::DistributionConfigurationSummary {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                tags: self.tags,
-                regions: self.regions,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                tags: self.tags
+                ,
+                regions: self.regions
+                ,
             }
         }
     }
+    
+    
 }
 impl DistributionConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
@@ -4861,7 +4507,7 @@ impl DistributionConfigurationSummary {
 /// <p>A summary of a container recipe</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContainerRecipeSummary {
+pub struct ContainerRecipeSummary  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4885,49 +4531,45 @@ pub struct ContainerRecipeSummary {
     pub date_created: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ContainerRecipeSummary {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies the type of container, such as "Docker".</p>
-    pub fn container_type(&self) -> std::option::Option<&crate::model::ContainerType> {
+    pub fn container_type(&self) -> std::option::Option<& crate::model::ContainerType> {
         self.container_type.as_ref()
     }
     /// <p>The name of the container recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The owner of the container recipe.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The base image for the container recipe.</p>
-    pub fn parent_image(&self) -> std::option::Option<&str> {
+    pub fn parent_image(&self) -> std::option::Option<& str> {
         self.parent_image.as_deref()
     }
     /// <p>The date when this container recipe was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
 pub mod container_recipe_summary {
-
+    
     /// A builder for [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4938,9 +4580,7 @@ pub mod container_recipe_summary {
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) parent_image: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
@@ -4950,8 +4590,7 @@ pub mod container_recipe_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Specifies the type of container, such as "Docker".</p>
         pub fn container_type(mut self, input: crate::model::ContainerType) -> Self {
@@ -4959,12 +4598,8 @@ pub mod container_recipe_summary {
             self
         }
         /// <p>Specifies the type of container, such as "Docker".</p>
-        pub fn set_container_type(
-            mut self,
-            input: std::option::Option<crate::model::ContainerType>,
-        ) -> Self {
-            self.container_type = input;
-            self
+        pub fn set_container_type(mut self, input: std::option::Option<crate::model::ContainerType>) -> Self {
+            self.container_type = input; self
         }
         /// <p>The name of the container recipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4973,8 +4608,7 @@ pub mod container_recipe_summary {
         }
         /// <p>The name of the container recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The system platform for the container, such as Windows or Linux.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -4983,8 +4617,7 @@ pub mod container_recipe_summary {
         }
         /// <p>The system platform for the container, such as Windows or Linux.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The owner of the container recipe.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4993,8 +4626,7 @@ pub mod container_recipe_summary {
         }
         /// <p>The owner of the container recipe.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The base image for the container recipe.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5003,8 +4635,7 @@ pub mod container_recipe_summary {
         }
         /// <p>The base image for the container recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_image = input;
-            self
+            self.parent_image = input; self
         }
         /// <p>The date when this container recipe was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5013,48 +4644,47 @@ pub mod container_recipe_summary {
         }
         /// <p>The date when this container recipe was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags that are attached to the container recipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags that are attached to the container recipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
         pub fn build(self) -> crate::model::ContainerRecipeSummary {
             crate::model::ContainerRecipeSummary {
-                arn: self.arn,
-                container_type: self.container_type,
-                name: self.name,
-                platform: self.platform,
-                owner: self.owner,
-                parent_image: self.parent_image,
-                date_created: self.date_created,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                container_type: self.container_type
+                ,
+                name: self.name
+                ,
+                platform: self.platform
+                ,
+                owner: self.owner
+                ,
+                parent_image: self.parent_image
+                ,
+                date_created: self.date_created
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ContainerRecipeSummary {
     /// Creates a new builder-style object to manufacture [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
@@ -5069,9 +4699,9 @@ impl ContainerRecipeSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let containertype = unimplemented!();
 /// match containertype {
@@ -5092,54 +4722,48 @@ impl ContainerRecipeSummary {
 /// Specifically, when `containertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContainerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContainerType {
     #[allow(missing_docs)] // documentation missing in model
     Docker,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContainerType {
     fn from(s: &str) -> Self {
         match s {
             "DOCKER" => ContainerType::Docker,
-            other => ContainerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ContainerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContainerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContainerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContainerType::from(s))
+                }
+            }
 impl ContainerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerType::Docker => "DOCKER",
-            ContainerType::Unknown(value) => value.as_str(),
+            ContainerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOCKER"]
+        &[
+            "DOCKER"
+        ]
     }
 }
 impl AsRef<str> for ContainerType {
@@ -5151,27 +4775,27 @@ impl AsRef<str> for ContainerType {
 /// <p>The defining characteristics of a specific version of an Amazon Web Services TOE component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentVersion {
-    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-    /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+pub struct ComponentVersion  {
+    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note> 
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+    /// <ol> 
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-    /// </ol>
+    /// </major></p> </li> 
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+    /// </ol> 
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the component.</p> <note>
+    /// <p>The semantic version of the component.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -5183,10 +4807,10 @@ pub struct ComponentVersion {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -5210,28 +4834,28 @@ pub struct ComponentVersion {
     pub date_created: std::option::Option<std::string::String>,
 }
 impl ComponentVersion {
-    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-    /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note> 
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+    /// <ol> 
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-    /// </ol>
+    /// </major></p> </li> 
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+    /// </ol> 
     /// </note>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the component.</p> <note>
+    /// <p>The semantic version of the component.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -5243,42 +4867,42 @@ impl ComponentVersion {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The description of the component.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The platform of the component.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_os_versions(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_os_versions.as_deref()
     }
     /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ComponentType> {
         self.r#type.as_ref()
     }
     /// <p>The owner of the component.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The date that the component was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
 }
 /// See [`ComponentVersion`](crate::model::ComponentVersion).
 pub mod component_version {
-
+    
     /// A builder for [`ComponentVersion`](crate::model::ComponentVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5293,41 +4917,40 @@ pub mod component_version {
         pub(crate) date_created: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
-        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-        /// <ol>
-        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the component.</p> <note> 
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+        /// <ol> 
+        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
         /// <li> <p>Version ARNs have only the first three nodes: <major>
         /// .
         /// <minor>
         /// .
         /// <patch></patch>
         /// </minor>
-        /// </major></p> </li>
-        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-        /// </ol>
+        /// </major></p> </li> 
+        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+        /// </ol> 
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
-        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-        /// <ol>
-        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the component.</p> <note> 
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+        /// <ol> 
+        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
         /// <li> <p>Version ARNs have only the first three nodes: <major>
         /// .
         /// <minor>
         /// .
         /// <patch></patch>
         /// </minor>
-        /// </major></p> </li>
-        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-        /// </ol>
+        /// </major></p> </li> 
+        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+        /// </ol> 
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the component.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5336,10 +4959,9 @@ pub mod component_version {
         }
         /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The semantic version of the component.</p> <note>
+        /// <p>The semantic version of the component.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -5351,16 +4973,16 @@ pub mod component_version {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the component.</p> <note>
+        /// <p>The semantic version of the component.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -5372,14 +4994,13 @@ pub mod component_version {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The description of the component.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5388,8 +5009,7 @@ pub mod component_version {
         }
         /// <p>The description of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -5398,8 +5018,7 @@ pub mod component_version {
         }
         /// <p>The platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// Appends an item to `supported_os_versions`.
         ///
@@ -5408,17 +5027,13 @@ pub mod component_version {
         /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
-            v.push(input.into());
-            self.supported_os_versions = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_os_versions = Some(v);
+                            self
         }
         /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-        pub fn set_supported_os_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_os_versions = input;
-            self
+        pub fn set_supported_os_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_os_versions = input; self
         }
         /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
@@ -5427,8 +5042,7 @@ pub mod component_version {
         }
         /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The owner of the component.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5437,8 +5051,7 @@ pub mod component_version {
         }
         /// <p>The owner of the component.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The date that the component was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5447,24 +5060,34 @@ pub mod component_version {
         }
         /// <p>The date that the component was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// Consumes the builder and constructs a [`ComponentVersion`](crate::model::ComponentVersion).
         pub fn build(self) -> crate::model::ComponentVersion {
             crate::model::ComponentVersion {
-                arn: self.arn,
-                name: self.name,
-                version: self.version,
-                description: self.description,
-                platform: self.platform,
-                supported_os_versions: self.supported_os_versions,
-                r#type: self.r#type,
-                owner: self.owner,
-                date_created: self.date_created,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                description: self.description
+                ,
+                platform: self.platform
+                ,
+                supported_os_versions: self.supported_os_versions
+                ,
+                r#type: self.r#type
+                ,
+                owner: self.owner
+                ,
+                date_created: self.date_created
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentVersion {
     /// Creates a new builder-style object to manufacture [`ComponentVersion`](crate::model::ComponentVersion).
@@ -5479,9 +5102,9 @@ impl ComponentVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let componenttype = unimplemented!();
 /// match componenttype {
@@ -5503,58 +5126,52 @@ impl ComponentVersion {
 /// Specifically, when `componenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComponentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComponentType {
     #[allow(missing_docs)] // documentation missing in model
     Build,
     #[allow(missing_docs)] // documentation missing in model
     Test,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComponentType {
     fn from(s: &str) -> Self {
         match s {
             "BUILD" => ComponentType::Build,
             "TEST" => ComponentType::Test,
-            other => ComponentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ComponentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComponentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComponentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComponentType::from(s))
+                }
+            }
 impl ComponentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentType::Build => "BUILD",
             ComponentType::Test => "TEST",
-            ComponentType::Unknown(value) => value.as_str(),
+            ComponentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BUILD", "TEST"]
+        &[
+            "BUILD", "TEST"
+        ]
     }
 }
 impl AsRef<str> for ComponentType {
@@ -5566,7 +5183,7 @@ impl AsRef<str> for ComponentType {
 /// <p>A high-level summary of a component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentSummary {
+pub struct ComponentSummary  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5602,8 +5219,7 @@ pub struct ComponentSummary {
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The tags that apply to the component.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
     #[doc(hidden)]
     pub publisher: std::option::Option<std::string::String>,
@@ -5613,58 +5229,55 @@ pub struct ComponentSummary {
 }
 impl ComponentSummary {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The operating system platform of the component.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_os_versions(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_os_versions.as_deref()
     }
     /// <p>Describes the current status of the component.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ComponentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ComponentState> {
         self.state.as_ref()
     }
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ComponentType> {
         self.r#type.as_ref()
     }
     /// <p>The owner of the component.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The description of the component.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The change description for the current version of the component.</p>
-    pub fn change_description(&self) -> std::option::Option<&str> {
+    pub fn change_description(&self) -> std::option::Option<& str> {
         self.change_description.as_deref()
     }
     /// <p>The original creation date of the component.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
-    pub fn publisher(&self) -> std::option::Option<&str> {
+    pub fn publisher(&self) -> std::option::Option<& str> {
         self.publisher.as_deref()
     }
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
@@ -5674,7 +5287,7 @@ impl ComponentSummary {
 }
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
 pub mod component_summary {
-
+    
     /// A builder for [`ComponentSummary`](crate::model::ComponentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5689,9 +5302,7 @@ pub mod component_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) change_description: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) publisher: std::option::Option<std::string::String>,
         pub(crate) obfuscate: std::option::Option<bool>,
     }
@@ -5703,8 +5314,7 @@ pub mod component_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the component.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5713,8 +5323,7 @@ pub mod component_summary {
         }
         /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the component.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5723,8 +5332,7 @@ pub mod component_summary {
         }
         /// <p>The version of the component.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The operating system platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -5733,8 +5341,7 @@ pub mod component_summary {
         }
         /// <p>The operating system platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// Appends an item to `supported_os_versions`.
         ///
@@ -5743,17 +5350,13 @@ pub mod component_summary {
         /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
-            v.push(input.into());
-            self.supported_os_versions = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_os_versions = Some(v);
+                            self
         }
         /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-        pub fn set_supported_os_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_os_versions = input;
-            self
+        pub fn set_supported_os_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_os_versions = input; self
         }
         /// <p>Describes the current status of the component.</p>
         pub fn state(mut self, input: crate::model::ComponentState) -> Self {
@@ -5761,12 +5364,8 @@ pub mod component_summary {
             self
         }
         /// <p>Describes the current status of the component.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ComponentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ComponentState>) -> Self {
+            self.state = input; self
         }
         /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
@@ -5775,8 +5374,7 @@ pub mod component_summary {
         }
         /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The owner of the component.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5785,8 +5383,7 @@ pub mod component_summary {
         }
         /// <p>The owner of the component.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The description of the component.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5795,8 +5392,7 @@ pub mod component_summary {
         }
         /// <p>The description of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The change description for the current version of the component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5804,12 +5400,8 @@ pub mod component_summary {
             self
         }
         /// <p>The change description for the current version of the component.</p>
-        pub fn set_change_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_description = input;
-            self
+        pub fn set_change_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_description = input; self
         }
         /// <p>The original creation date of the component.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5818,33 +5410,22 @@ pub mod component_summary {
         }
         /// <p>The original creation date of the component.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that apply to the component.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags that apply to the component.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
         pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5853,8 +5434,7 @@ pub mod component_summary {
         }
         /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
         pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.publisher = input;
-            self
+            self.publisher = input; self
         }
         /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
         pub fn obfuscate(mut self, input: bool) -> Self {
@@ -5863,29 +5443,45 @@ pub mod component_summary {
         }
         /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
         pub fn set_obfuscate(mut self, input: std::option::Option<bool>) -> Self {
-            self.obfuscate = input;
-            self
+            self.obfuscate = input; self
         }
         /// Consumes the builder and constructs a [`ComponentSummary`](crate::model::ComponentSummary).
         pub fn build(self) -> crate::model::ComponentSummary {
             crate::model::ComponentSummary {
-                arn: self.arn,
-                name: self.name,
-                version: self.version,
-                platform: self.platform,
-                supported_os_versions: self.supported_os_versions,
-                state: self.state,
-                r#type: self.r#type,
-                owner: self.owner,
-                description: self.description,
-                change_description: self.change_description,
-                date_created: self.date_created,
-                tags: self.tags,
-                publisher: self.publisher,
-                obfuscate: self.obfuscate.unwrap_or_default(),
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                platform: self.platform
+                ,
+                supported_os_versions: self.supported_os_versions
+                ,
+                state: self.state
+                ,
+                r#type: self.r#type
+                ,
+                owner: self.owner
+                ,
+                description: self.description
+                ,
+                change_description: self.change_description
+                ,
+                date_created: self.date_created
+                ,
+                tags: self.tags
+                ,
+                publisher: self.publisher
+                ,
+                obfuscate: self.obfuscate
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentSummary {
     /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
@@ -5897,7 +5493,7 @@ impl ComponentSummary {
 /// <p>A group of fields that describe the current status of components that are no longer active.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentState {
+pub struct ComponentState  {
     /// <p>The current state of the component.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ComponentStatus>,
@@ -5907,17 +5503,17 @@ pub struct ComponentState {
 }
 impl ComponentState {
     /// <p>The current state of the component.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ComponentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ComponentStatus> {
         self.status.as_ref()
     }
     /// <p>Describes how or why the component changed state.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`ComponentState`](crate::model::ComponentState).
 pub mod component_state {
-
+    
     /// A builder for [`ComponentState`](crate::model::ComponentState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5931,12 +5527,8 @@ pub mod component_state {
             self
         }
         /// <p>The current state of the component.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ComponentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ComponentStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Describes how or why the component changed state.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5945,17 +5537,20 @@ pub mod component_state {
         }
         /// <p>Describes how or why the component changed state.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`ComponentState`](crate::model::ComponentState).
         pub fn build(self) -> crate::model::ComponentState {
             crate::model::ComponentState {
-                status: self.status,
-                reason: self.reason,
+                status: self.status
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentState {
     /// Creates a new builder-style object to manufacture [`ComponentState`](crate::model::ComponentState).
@@ -5970,9 +5565,9 @@ impl ComponentState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let componentstatus = unimplemented!();
 /// match componentstatus {
@@ -5993,54 +5588,48 @@ impl ComponentState {
 /// Specifically, when `componentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComponentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComponentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deprecated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComponentStatus {
     fn from(s: &str) -> Self {
         match s {
             "DEPRECATED" => ComponentStatus::Deprecated,
-            other => ComponentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ComponentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComponentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComponentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComponentStatus::from(s))
+                }
+            }
 impl ComponentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentStatus::Deprecated => "DEPRECATED",
-            ComponentStatus::Unknown(value) => value.as_str(),
+            ComponentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPRECATED"]
+        &[
+            "DEPRECATED"
+        ]
     }
 }
 impl AsRef<str> for ComponentStatus {
@@ -6055,9 +5644,9 @@ impl AsRef<str> for ComponentStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let componentformat = unimplemented!();
 /// match componentformat {
@@ -6078,54 +5667,48 @@ impl AsRef<str> for ComponentStatus {
 /// Specifically, when `componentformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComponentFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComponentFormat {
     #[allow(missing_docs)] // documentation missing in model
     Shell,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComponentFormat {
     fn from(s: &str) -> Self {
         match s {
             "SHELL" => ComponentFormat::Shell,
-            other => ComponentFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ComponentFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComponentFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComponentFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComponentFormat::from(s))
+                }
+            }
 impl ComponentFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentFormat::Shell => "SHELL",
-            ComponentFormat::Unknown(value) => value.as_str(),
+            ComponentFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SHELL"]
+        &[
+            "SHELL"
+        ]
     }
 }
 impl AsRef<str> for ComponentFormat {
@@ -6137,7 +5720,7 @@ impl AsRef<str> for ComponentFormat {
 /// <p>Details of the infrastructure configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InfrastructureConfiguration {
+pub struct InfrastructureConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6168,8 +5751,8 @@ pub struct InfrastructureConfiguration {
     /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
     #[doc(hidden)]
     pub terminate_instance_on_failure: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
     /// </note>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
@@ -6181,95 +5764,85 @@ pub struct InfrastructureConfiguration {
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
     #[doc(hidden)]
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl InfrastructureConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the infrastructure configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the infrastructure configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_types(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_types.as_deref()
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
-    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The security group IDs of the infrastructure configuration.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The subnet ID of the infrastructure configuration.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
-    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+    pub fn logging(&self) -> std::option::Option<& crate::model::Logging> {
         self.logging.as_ref()
     }
     /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
-    pub fn key_pair(&self) -> std::option::Option<&str> {
+    pub fn key_pair(&self) -> std::option::Option<& str> {
         self.key_pair.as_deref()
     }
     /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
     pub fn terminate_instance_on_failure(&self) -> std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
     /// </note>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The date on which the infrastructure configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which the infrastructure configuration was last updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<&str> {
+    pub fn date_updated(&self) -> std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
-    pub fn instance_metadata_options(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
+    pub fn instance_metadata_options(&self) -> std::option::Option<& crate::model::InstanceMetadataOptions> {
         self.instance_metadata_options.as_ref()
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
 pub mod infrastructure_configuration {
-
+    
     /// A builder for [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6286,14 +5859,9 @@ pub mod infrastructure_configuration {
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
         pub(crate) date_updated: std::option::Option<std::string::String>,
-        pub(crate) resource_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) instance_metadata_options:
-            std::option::Option<crate::model::InstanceMetadataOptions>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
@@ -6303,8 +5871,7 @@ pub mod infrastructure_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the infrastructure configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6313,8 +5880,7 @@ pub mod infrastructure_configuration {
         }
         /// <p>The name of the infrastructure configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the infrastructure configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6323,8 +5889,7 @@ pub mod infrastructure_configuration {
         }
         /// <p>The description of the infrastructure configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `instance_types`.
         ///
@@ -6333,17 +5898,13 @@ pub mod infrastructure_configuration {
         /// <p>The instance types of the infrastructure configuration.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
-            self.instance_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.instance_types = Some(v);
+                            self
         }
         /// <p>The instance types of the infrastructure configuration.</p>
-        pub fn set_instance_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instance_types = input;
-            self
+        pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instance_types = input; self
         }
         /// <p>The instance profile of the infrastructure configuration.</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6351,12 +5912,8 @@ pub mod infrastructure_configuration {
             self
         }
         /// <p>The instance profile of the infrastructure configuration.</p>
-        pub fn set_instance_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_profile_name = input;
-            self
+        pub fn set_instance_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_profile_name = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -6365,17 +5922,13 @@ pub mod infrastructure_configuration {
         /// <p>The security group IDs of the infrastructure configuration.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The security group IDs of the infrastructure configuration.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// <p>The subnet ID of the infrastructure configuration.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6384,8 +5937,7 @@ pub mod infrastructure_configuration {
         }
         /// <p>The subnet ID of the infrastructure configuration.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
         pub fn logging(mut self, input: crate::model::Logging) -> Self {
@@ -6394,8 +5946,7 @@ pub mod infrastructure_configuration {
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
         pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
-            self.logging = input;
-            self
+            self.logging = input; self
         }
         /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6404,8 +5955,7 @@ pub mod infrastructure_configuration {
         }
         /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_pair = input;
-            self
+            self.key_pair = input; self
         }
         /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
         pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
@@ -6413,29 +5963,21 @@ pub mod infrastructure_configuration {
             self
         }
         /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
-        pub fn set_terminate_instance_on_failure(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.terminate_instance_on_failure = input;
-            self
+        pub fn set_terminate_instance_on_failure(mut self, input: std::option::Option<bool>) -> Self {
+            self.terminate_instance_on_failure = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
         /// </note>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
         /// </note>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// <p>The date on which the infrastructure configuration was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6444,8 +5986,7 @@ pub mod infrastructure_configuration {
         }
         /// <p>The date on which the infrastructure configuration was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// <p>The date on which the infrastructure configuration was last updated.</p>
         pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6454,97 +5995,87 @@ pub mod infrastructure_configuration {
         }
         /// <p>The date on which the infrastructure configuration was last updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_updated = input;
-            self
+            self.date_updated = input; self
         }
         /// Adds a key-value pair to `resource_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags attached to the resource created by Image Builder.</p>
-        pub fn resource_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags attached to the resource created by Image Builder.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_tags = input; self
         }
         /// <p>The instance metadata option settings for the infrastructure configuration.</p>
-        pub fn instance_metadata_options(
-            mut self,
-            input: crate::model::InstanceMetadataOptions,
-        ) -> Self {
+        pub fn instance_metadata_options(mut self, input: crate::model::InstanceMetadataOptions) -> Self {
             self.instance_metadata_options = Some(input);
             self
         }
         /// <p>The instance metadata option settings for the infrastructure configuration.</p>
-        pub fn set_instance_metadata_options(
-            mut self,
-            input: std::option::Option<crate::model::InstanceMetadataOptions>,
-        ) -> Self {
-            self.instance_metadata_options = input;
-            self
+        pub fn set_instance_metadata_options(mut self, input: std::option::Option<crate::model::InstanceMetadataOptions>) -> Self {
+            self.instance_metadata_options = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the infrastructure configuration.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of the infrastructure configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
         pub fn build(self) -> crate::model::InfrastructureConfiguration {
             crate::model::InfrastructureConfiguration {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                instance_types: self.instance_types,
-                instance_profile_name: self.instance_profile_name,
-                security_group_ids: self.security_group_ids,
-                subnet_id: self.subnet_id,
-                logging: self.logging,
-                key_pair: self.key_pair,
-                terminate_instance_on_failure: self.terminate_instance_on_failure,
-                sns_topic_arn: self.sns_topic_arn,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                resource_tags: self.resource_tags,
-                instance_metadata_options: self.instance_metadata_options,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                instance_types: self.instance_types
+                ,
+                instance_profile_name: self.instance_profile_name
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                subnet_id: self.subnet_id
+                ,
+                logging: self.logging
+                ,
+                key_pair: self.key_pair
+                ,
+                terminate_instance_on_failure: self.terminate_instance_on_failure
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                resource_tags: self.resource_tags
+                ,
+                instance_metadata_options: self.instance_metadata_options
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl InfrastructureConfiguration {
     /// Creates a new builder-style object to manufacture [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
@@ -6556,7 +6087,7 @@ impl InfrastructureConfiguration {
 /// <p>An image recipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageRecipe {
+pub struct ImageRecipe  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6586,91 +6117,81 @@ pub struct ImageRecipe {
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+    pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
     /// <p>The date on which this image recipe was created.</p>
     #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The tags of the image recipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory to be used during build and test workflows.</p>
     #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
     #[doc(hidden)]
-    pub additional_instance_configuration:
-        std::option::Option<crate::model::AdditionalInstanceConfiguration>,
+    pub additional_instance_configuration: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
 }
 impl ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ImageType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the image recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the image recipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The platform of the image recipe.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The owner of the image recipe.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The version of the image recipe.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
+    pub fn components(&self) -> std::option::Option<& [crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
     /// <p>The base image of the image recipe.</p>
-    pub fn parent_image(&self) -> std::option::Option<&str> {
+    pub fn parent_image(&self) -> std::option::Option<& str> {
         self.parent_image.as_deref()
     }
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> std::option::Option<& [crate::model::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>The date on which this image recipe was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The working directory to be used during build and test workflows.</p>
-    pub fn working_directory(&self) -> std::option::Option<&str> {
+    pub fn working_directory(&self) -> std::option::Option<& str> {
         self.working_directory.as_deref()
     }
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
-    pub fn additional_instance_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::AdditionalInstanceConfiguration> {
+    pub fn additional_instance_configuration(&self) -> std::option::Option<& crate::model::AdditionalInstanceConfiguration> {
         self.additional_instance_configuration.as_ref()
     }
 }
 /// See [`ImageRecipe`](crate::model::ImageRecipe).
 pub mod image_recipe {
-
+    
     /// A builder for [`ImageRecipe`](crate::model::ImageRecipe).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6681,18 +6202,13 @@ pub mod image_recipe {
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) components:
-            std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
+        pub(crate) components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
         pub(crate) parent_image: std::option::Option<std::string::String>,
-        pub(crate) block_device_mappings:
-            std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+        pub(crate) block_device_mappings: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
         pub(crate) date_created: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) working_directory: std::option::Option<std::string::String>,
-        pub(crate) additional_instance_configuration:
-            std::option::Option<crate::model::AdditionalInstanceConfiguration>,
+        pub(crate) additional_instance_configuration: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
@@ -6702,8 +6218,7 @@ pub mod image_recipe {
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
@@ -6712,8 +6227,7 @@ pub mod image_recipe {
         }
         /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The name of the image recipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6722,8 +6236,7 @@ pub mod image_recipe {
         }
         /// <p>The name of the image recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the image recipe.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6732,8 +6245,7 @@ pub mod image_recipe {
         }
         /// <p>The description of the image recipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The platform of the image recipe.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -6742,8 +6254,7 @@ pub mod image_recipe {
         }
         /// <p>The platform of the image recipe.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The owner of the image recipe.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6752,8 +6263,7 @@ pub mod image_recipe {
         }
         /// <p>The owner of the image recipe.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The version of the image recipe.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6762,8 +6272,7 @@ pub mod image_recipe {
         }
         /// <p>The version of the image recipe.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Appends an item to `components`.
         ///
@@ -6772,17 +6281,13 @@ pub mod image_recipe {
         /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input);
-            self.components = Some(v);
-            self
+                            v.push(input);
+                            self.components = Some(v);
+                            self
         }
         /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-        pub fn set_components(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
-        ) -> Self {
-            self.components = input;
-            self
+        pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>) -> Self {
+            self.components = input; self
         }
         /// <p>The base image of the image recipe.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6791,30 +6296,22 @@ pub mod image_recipe {
         }
         /// <p>The base image of the image recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_image = input;
-            self
+            self.parent_image = input; self
         }
         /// Appends an item to `block_device_mappings`.
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
         /// <p>The block device mappings to apply when creating images from this recipe.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: crate::model::InstanceBlockDeviceMapping,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::InstanceBlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input);
-            self.block_device_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.block_device_mappings = Some(v);
+                            self
         }
         /// <p>The block device mappings to apply when creating images from this recipe.</p>
-        pub fn set_block_device_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
-        ) -> Self {
-            self.block_device_mappings = input;
-            self
+        pub fn set_block_device_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>) -> Self {
+            self.block_device_mappings = input; self
         }
         /// <p>The date on which this image recipe was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6823,33 +6320,22 @@ pub mod image_recipe {
         }
         /// <p>The date on which this image recipe was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the image recipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of the image recipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The working directory to be used during build and test workflows.</p>
         pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6857,49 +6343,54 @@ pub mod image_recipe {
             self
         }
         /// <p>The working directory to be used during build and test workflows.</p>
-        pub fn set_working_directory(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.working_directory = input;
-            self
+        pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.working_directory = input; self
         }
         /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
-        pub fn additional_instance_configuration(
-            mut self,
-            input: crate::model::AdditionalInstanceConfiguration,
-        ) -> Self {
+        pub fn additional_instance_configuration(mut self, input: crate::model::AdditionalInstanceConfiguration) -> Self {
             self.additional_instance_configuration = Some(input);
             self
         }
         /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
-        pub fn set_additional_instance_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
-        ) -> Self {
-            self.additional_instance_configuration = input;
-            self
+        pub fn set_additional_instance_configuration(mut self, input: std::option::Option<crate::model::AdditionalInstanceConfiguration>) -> Self {
+            self.additional_instance_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ImageRecipe`](crate::model::ImageRecipe).
         pub fn build(self) -> crate::model::ImageRecipe {
             crate::model::ImageRecipe {
-                arn: self.arn,
-                r#type: self.r#type,
-                name: self.name,
-                description: self.description,
-                platform: self.platform,
-                owner: self.owner,
-                version: self.version,
-                components: self.components,
-                parent_image: self.parent_image,
-                block_device_mappings: self.block_device_mappings,
-                date_created: self.date_created,
-                tags: self.tags,
-                working_directory: self.working_directory,
-                additional_instance_configuration: self.additional_instance_configuration,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                platform: self.platform
+                ,
+                owner: self.owner
+                ,
+                version: self.version
+                ,
+                components: self.components
+                ,
+                parent_image: self.parent_image
+                ,
+                block_device_mappings: self.block_device_mappings
+                ,
+                date_created: self.date_created
+                ,
+                tags: self.tags
+                ,
+                working_directory: self.working_directory
+                ,
+                additional_instance_configuration: self.additional_instance_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageRecipe {
     /// Creates a new builder-style object to manufacture [`ImageRecipe`](crate::model::ImageRecipe).
@@ -6908,43 +6399,43 @@ impl ImageRecipe {
     }
 }
 
-/// <p>In addition to your infrastructure configuration, these settings provide an extra layer of control over your build instances. You can also specify commands to run on launch for all of your build instances.</p>
+/// <p>In addition to your infrastructure configuration, these settings provide an extra layer of control over your build instances. You can also specify commands to run on launch for all of your build instances.</p> 
 /// <p>Image Builder does not automatically install the Systems Manager agent on Windows instances. If your base image includes the Systems Manager agent, then the AMI that you create will also include the agent. For Linux instances, if the base image does not already include the Systems Manager agent, Image Builder installs it. For Linux instances where Image Builder installs the Systems Manager agent, you can choose whether to keep it for the AMI that you create.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdditionalInstanceConfiguration {
+pub struct AdditionalInstanceConfiguration  {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
     #[doc(hidden)]
     pub systems_manager_agent: std::option::Option<crate::model::SystemsManagerAgent>,
-    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
-    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
-    /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-    /// <p> <i>#!/bin/bash</i> </p>
-    /// <p>mkdir -p /var/bb/</p>
-    /// <p>touch /var</p>
+    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p> 
+    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note> 
+    /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> 
+    /// <p> <i>#!/bin/bash</i> </p> 
+    /// <p>mkdir -p /var/bb/</p> 
+    /// <p>touch /var</p> 
     /// </note>
     #[doc(hidden)]
     pub user_data_override: std::option::Option<std::string::String>,
 }
 impl AdditionalInstanceConfiguration {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
-    pub fn systems_manager_agent(&self) -> std::option::Option<&crate::model::SystemsManagerAgent> {
+    pub fn systems_manager_agent(&self) -> std::option::Option<& crate::model::SystemsManagerAgent> {
         self.systems_manager_agent.as_ref()
     }
-    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
-    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
-    /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-    /// <p> <i>#!/bin/bash</i> </p>
-    /// <p>mkdir -p /var/bb/</p>
-    /// <p>touch /var</p>
+    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p> 
+    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note> 
+    /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> 
+    /// <p> <i>#!/bin/bash</i> </p> 
+    /// <p>mkdir -p /var/bb/</p> 
+    /// <p>touch /var</p> 
     /// </note>
-    pub fn user_data_override(&self) -> std::option::Option<&str> {
+    pub fn user_data_override(&self) -> std::option::Option<& str> {
         self.user_data_override.as_deref()
     }
 }
 /// See [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
 pub mod additional_instance_configuration {
-
+    
     /// A builder for [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6958,46 +6449,42 @@ pub mod additional_instance_configuration {
             self
         }
         /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
-        pub fn set_systems_manager_agent(
-            mut self,
-            input: std::option::Option<crate::model::SystemsManagerAgent>,
-        ) -> Self {
-            self.systems_manager_agent = input;
-            self
+        pub fn set_systems_manager_agent(mut self, input: std::option::Option<crate::model::SystemsManagerAgent>) -> Self {
+            self.systems_manager_agent = input; self
         }
-        /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
-        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
-        /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-        /// <p> <i>#!/bin/bash</i> </p>
-        /// <p>mkdir -p /var/bb/</p>
-        /// <p>touch /var</p>
+        /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p> 
+        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note> 
+        /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> 
+        /// <p> <i>#!/bin/bash</i> </p> 
+        /// <p>mkdir -p /var/bb/</p> 
+        /// <p>touch /var</p> 
         /// </note>
         pub fn user_data_override(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_data_override = Some(input.into());
             self
         }
-        /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
-        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
-        /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-        /// <p> <i>#!/bin/bash</i> </p>
-        /// <p>mkdir -p /var/bb/</p>
-        /// <p>touch /var</p>
+        /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p> 
+        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note> 
+        /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> 
+        /// <p> <i>#!/bin/bash</i> </p> 
+        /// <p>mkdir -p /var/bb/</p> 
+        /// <p>touch /var</p> 
         /// </note>
-        pub fn set_user_data_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_data_override = input;
-            self
+        pub fn set_user_data_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_data_override = input; self
         }
         /// Consumes the builder and constructs a [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
         pub fn build(self) -> crate::model::AdditionalInstanceConfiguration {
             crate::model::AdditionalInstanceConfiguration {
-                systems_manager_agent: self.systems_manager_agent,
-                user_data_override: self.user_data_override,
+                systems_manager_agent: self.systems_manager_agent
+                ,
+                user_data_override: self.user_data_override
+                ,
             }
         }
     }
+    
+    
 }
 impl AdditionalInstanceConfiguration {
     /// Creates a new builder-style object to manufacture [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
@@ -7009,7 +6496,7 @@ impl AdditionalInstanceConfiguration {
 /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemsManagerAgent {
+pub struct SystemsManagerAgent  {
     /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
     #[doc(hidden)]
     pub uninstall_after_build: std::option::Option<bool>,
@@ -7022,7 +6509,7 @@ impl SystemsManagerAgent {
 }
 /// See [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
 pub mod systems_manager_agent {
-
+    
     /// A builder for [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7036,16 +6523,18 @@ pub mod systems_manager_agent {
         }
         /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
         pub fn set_uninstall_after_build(mut self, input: std::option::Option<bool>) -> Self {
-            self.uninstall_after_build = input;
-            self
+            self.uninstall_after_build = input; self
         }
         /// Consumes the builder and constructs a [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
         pub fn build(self) -> crate::model::SystemsManagerAgent {
             crate::model::SystemsManagerAgent {
-                uninstall_after_build: self.uninstall_after_build,
+                uninstall_after_build: self.uninstall_after_build
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemsManagerAgent {
     /// Creates a new builder-style object to manufacture [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
@@ -7057,7 +6546,7 @@ impl SystemsManagerAgent {
 /// <p>Defines block device mappings for the instance used to configure your image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceBlockDeviceMapping {
+pub struct InstanceBlockDeviceMapping  {
     /// <p>The device to which these mappings apply.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -7073,25 +6562,25 @@ pub struct InstanceBlockDeviceMapping {
 }
 impl InstanceBlockDeviceMapping {
     /// <p>The device to which these mappings apply.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
-    pub fn ebs(&self) -> std::option::Option<&crate::model::EbsInstanceBlockDeviceSpecification> {
+    pub fn ebs(&self) -> std::option::Option<& crate::model::EbsInstanceBlockDeviceSpecification> {
         self.ebs.as_ref()
     }
     /// <p>Use to manage instance ephemeral devices.</p>
-    pub fn virtual_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_name(&self) -> std::option::Option<& str> {
         self.virtual_name.as_deref()
     }
     /// <p>Use to remove a mapping from the base image.</p>
-    pub fn no_device(&self) -> std::option::Option<&str> {
+    pub fn no_device(&self) -> std::option::Option<& str> {
         self.no_device.as_deref()
     }
 }
 /// See [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
 pub mod instance_block_device_mapping {
-
+    
     /// A builder for [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7108,8 +6597,7 @@ pub mod instance_block_device_mapping {
         }
         /// <p>The device to which these mappings apply.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
         pub fn ebs(mut self, input: crate::model::EbsInstanceBlockDeviceSpecification) -> Self {
@@ -7117,12 +6605,8 @@ pub mod instance_block_device_mapping {
             self
         }
         /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
-        pub fn set_ebs(
-            mut self,
-            input: std::option::Option<crate::model::EbsInstanceBlockDeviceSpecification>,
-        ) -> Self {
-            self.ebs = input;
-            self
+        pub fn set_ebs(mut self, input: std::option::Option<crate::model::EbsInstanceBlockDeviceSpecification>) -> Self {
+            self.ebs = input; self
         }
         /// <p>Use to manage instance ephemeral devices.</p>
         pub fn virtual_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7131,8 +6615,7 @@ pub mod instance_block_device_mapping {
         }
         /// <p>Use to manage instance ephemeral devices.</p>
         pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.virtual_name = input;
-            self
+            self.virtual_name = input; self
         }
         /// <p>Use to remove a mapping from the base image.</p>
         pub fn no_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7141,19 +6624,24 @@ pub mod instance_block_device_mapping {
         }
         /// <p>Use to remove a mapping from the base image.</p>
         pub fn set_no_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.no_device = input;
-            self
+            self.no_device = input; self
         }
         /// Consumes the builder and constructs a [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
         pub fn build(self) -> crate::model::InstanceBlockDeviceMapping {
             crate::model::InstanceBlockDeviceMapping {
-                device_name: self.device_name,
-                ebs: self.ebs,
-                virtual_name: self.virtual_name,
-                no_device: self.no_device,
+                device_name: self.device_name
+                ,
+                ebs: self.ebs
+                ,
+                virtual_name: self.virtual_name
+                ,
+                no_device: self.no_device
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceBlockDeviceMapping {
     /// Creates a new builder-style object to manufacture [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
@@ -7165,7 +6653,7 @@ impl InstanceBlockDeviceMapping {
 /// <p>Amazon EBS-specific block device mapping specifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsInstanceBlockDeviceSpecification {
+pub struct EbsInstanceBlockDeviceSpecification  {
     /// <p>Use to configure device encryption.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
@@ -7205,11 +6693,11 @@ impl EbsInstanceBlockDeviceSpecification {
         self.iops
     }
     /// <p>Use to configure the KMS key to use when encrypting the device.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The snapshot that defines the device contents.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Use to override the device's volume size.</p>
@@ -7217,7 +6705,7 @@ impl EbsInstanceBlockDeviceSpecification {
         self.volume_size
     }
     /// <p>Use to override the device's volume type.</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::model::EbsVolumeType> {
+    pub fn volume_type(&self) -> std::option::Option<& crate::model::EbsVolumeType> {
         self.volume_type.as_ref()
     }
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
@@ -7227,7 +6715,7 @@ impl EbsInstanceBlockDeviceSpecification {
 }
 /// See [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
 pub mod ebs_instance_block_device_specification {
-
+    
     /// A builder for [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7248,8 +6736,7 @@ pub mod ebs_instance_block_device_specification {
         }
         /// <p>Use to configure device encryption.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// <p>Use to configure delete on termination of the associated device.</p>
         pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -7258,8 +6745,7 @@ pub mod ebs_instance_block_device_specification {
         }
         /// <p>Use to configure delete on termination of the associated device.</p>
         pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_on_termination = input;
-            self
+            self.delete_on_termination = input; self
         }
         /// <p>Use to configure device IOPS.</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -7268,8 +6754,7 @@ pub mod ebs_instance_block_device_specification {
         }
         /// <p>Use to configure device IOPS.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-            self.iops = input;
-            self
+            self.iops = input; self
         }
         /// <p>Use to configure the KMS key to use when encrypting the device.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7278,8 +6763,7 @@ pub mod ebs_instance_block_device_specification {
         }
         /// <p>Use to configure the KMS key to use when encrypting the device.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The snapshot that defines the device contents.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7288,8 +6772,7 @@ pub mod ebs_instance_block_device_specification {
         }
         /// <p>The snapshot that defines the device contents.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>Use to override the device's volume size.</p>
         pub fn volume_size(mut self, input: i32) -> Self {
@@ -7298,8 +6781,7 @@ pub mod ebs_instance_block_device_specification {
         }
         /// <p>Use to override the device's volume size.</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.volume_size = input;
-            self
+            self.volume_size = input; self
         }
         /// <p>Use to override the device's volume type.</p>
         pub fn volume_type(mut self, input: crate::model::EbsVolumeType) -> Self {
@@ -7307,12 +6789,8 @@ pub mod ebs_instance_block_device_specification {
             self
         }
         /// <p>Use to override the device's volume type.</p>
-        pub fn set_volume_type(
-            mut self,
-            input: std::option::Option<crate::model::EbsVolumeType>,
-        ) -> Self {
-            self.volume_type = input;
-            self
+        pub fn set_volume_type(mut self, input: std::option::Option<crate::model::EbsVolumeType>) -> Self {
+            self.volume_type = input; self
         }
         /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
         pub fn throughput(mut self, input: i32) -> Self {
@@ -7321,23 +6799,32 @@ pub mod ebs_instance_block_device_specification {
         }
         /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
         pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
-            self.throughput = input;
-            self
+            self.throughput = input; self
         }
         /// Consumes the builder and constructs a [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
         pub fn build(self) -> crate::model::EbsInstanceBlockDeviceSpecification {
             crate::model::EbsInstanceBlockDeviceSpecification {
-                encrypted: self.encrypted,
-                delete_on_termination: self.delete_on_termination,
-                iops: self.iops,
-                kms_key_id: self.kms_key_id,
-                snapshot_id: self.snapshot_id,
-                volume_size: self.volume_size,
-                volume_type: self.volume_type,
-                throughput: self.throughput,
+                encrypted: self.encrypted
+                ,
+                delete_on_termination: self.delete_on_termination
+                ,
+                iops: self.iops
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                volume_size: self.volume_size
+                ,
+                volume_type: self.volume_type
+                ,
+                throughput: self.throughput
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsInstanceBlockDeviceSpecification {
     /// Creates a new builder-style object to manufacture [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
@@ -7352,9 +6839,9 @@ impl EbsInstanceBlockDeviceSpecification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ebsvolumetype = unimplemented!();
 /// match ebsvolumetype {
@@ -7381,22 +6868,14 @@ impl EbsInstanceBlockDeviceSpecification {
 /// Specifically, when `ebsvolumetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EbsVolumeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EbsVolumeType {
     #[allow(missing_docs)] // documentation missing in model
     Gp2,
@@ -7413,7 +6892,7 @@ pub enum EbsVolumeType {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EbsVolumeType {
     fn from(s: &str) -> Self {
@@ -7425,17 +6904,17 @@ impl std::convert::From<&str> for EbsVolumeType {
             "sc1" => EbsVolumeType::Sc1,
             "st1" => EbsVolumeType::St1,
             "standard" => EbsVolumeType::Standard,
-            other => EbsVolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EbsVolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EbsVolumeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EbsVolumeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EbsVolumeType::from(s))
+                }
+            }
 impl EbsVolumeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7447,12 +6926,14 @@ impl EbsVolumeType {
             EbsVolumeType::Sc1 => "sc1",
             EbsVolumeType::St1 => "st1",
             EbsVolumeType::Standard => "standard",
-            EbsVolumeType::Unknown(value) => value.as_str(),
+            EbsVolumeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["gp2", "gp3", "io1", "io2", "sc1", "st1", "standard"]
+        &[
+            "gp2", "gp3", "io1", "io2", "sc1", "st1", "standard"
+        ]
     }
 }
 impl AsRef<str> for EbsVolumeType {
@@ -7464,7 +6945,7 @@ impl AsRef<str> for EbsVolumeType {
 /// <p> Configuration details of the component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentConfiguration {
+pub struct ComponentConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
@@ -7474,17 +6955,17 @@ pub struct ComponentConfiguration {
 }
 impl ComponentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(&self) -> std::option::Option<&str> {
+    pub fn component_arn(&self) -> std::option::Option<& str> {
         self.component_arn.as_deref()
     }
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::ComponentParameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::ComponentParameter]> {
         self.parameters.as_deref()
     }
 }
 /// See [`ComponentConfiguration`](crate::model::ComponentConfiguration).
 pub mod component_configuration {
-
+    
     /// A builder for [`ComponentConfiguration`](crate::model::ComponentConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7498,12 +6979,8 @@ pub mod component_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
-        pub fn set_component_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_arn = input;
-            self
+        pub fn set_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_arn = input; self
         }
         /// Appends an item to `parameters`.
         ///
@@ -7512,26 +6989,26 @@ pub mod component_configuration {
         /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
         pub fn parameters(mut self, input: crate::model::ComponentParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`ComponentConfiguration`](crate::model::ComponentConfiguration).
         pub fn build(self) -> crate::model::ComponentConfiguration {
             crate::model::ComponentConfiguration {
-                component_arn: self.component_arn,
-                parameters: self.parameters,
+                component_arn: self.component_arn
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentConfiguration {
     /// Creates a new builder-style object to manufacture [`ComponentConfiguration`](crate::model::ComponentConfiguration).
@@ -7543,7 +7020,7 @@ impl ComponentConfiguration {
 /// <p>Contains a key/value pair that sets the named component parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentParameter {
+pub struct ComponentParameter  {
     /// <p>The name of the component parameter to set.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7553,17 +7030,17 @@ pub struct ComponentParameter {
 }
 impl ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Sets the value for the named component parameter.</p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> std::option::Option<& [std::string::String]> {
         self.value.as_deref()
     }
 }
 /// See [`ComponentParameter`](crate::model::ComponentParameter).
 pub mod component_parameter {
-
+    
     /// A builder for [`ComponentParameter`](crate::model::ComponentParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7578,8 +7055,7 @@ pub mod component_parameter {
         }
         /// <p>The name of the component parameter to set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `value`.
         ///
@@ -7588,26 +7064,26 @@ pub mod component_parameter {
         /// <p>Sets the value for the named component parameter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
-            v.push(input.into());
-            self.value = Some(v);
-            self
+                            v.push(input.into());
+                            self.value = Some(v);
+                            self
         }
         /// <p>Sets the value for the named component parameter.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ComponentParameter`](crate::model::ComponentParameter).
         pub fn build(self) -> crate::model::ComponentParameter {
             crate::model::ComponentParameter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentParameter {
     /// Creates a new builder-style object to manufacture [`ComponentParameter`](crate::model::ComponentParameter).
@@ -7619,20 +7095,20 @@ impl ComponentParameter {
 /// <p>An Image Builder image. You must specify exactly one recipe for the image – either a container recipe (<code>containerRecipe</code>), which creates a container image, or an image recipe (<code>imageRecipe</code>), which creates an AMI.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Image {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-    /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+pub struct Image  {
+    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note> 
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+    /// <ol> 
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-    /// </ol>
+    /// </major></p> </li> 
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+    /// </ol> 
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7642,7 +7118,7 @@ pub struct Image {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the image.</p> <note>
+    /// <p>The semantic version of the image.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -7654,10 +7130,10 @@ pub struct Image {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -7687,8 +7163,7 @@ pub struct Image {
     pub source_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The infrastructure that Image Builder used to create this image.</p>
     #[doc(hidden)]
-    pub infrastructure_configuration:
-        std::option::Option<crate::model::InfrastructureConfiguration>,
+    pub infrastructure_configuration: std::option::Option<crate::model::InfrastructureConfiguration>,
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
     #[doc(hidden)]
     pub distribution_configuration: std::option::Option<crate::model::DistributionConfiguration>,
@@ -7703,13 +7178,12 @@ pub struct Image {
     pub output_resources: std::option::Option<crate::model::OutputResources>,
     /// <p>The tags that apply to this image.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-    /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+    /// <ul> 
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
@@ -7718,32 +7192,32 @@ pub struct Image {
     pub image_source: std::option::Option<crate::model::ImageSource>,
 }
 impl Image {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-    /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note> 
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+    /// <ol> 
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-    /// </ol>
+    /// </major></p> </li> 
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+    /// </ol> 
     /// </note>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ImageType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the image.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the image.</p> <note>
+    /// <p>The semantic version of the image.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -7755,16 +7229,16 @@ impl Image {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The image operating system platform, such as Linux or Windows.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
@@ -7772,79 +7246,70 @@ impl Image {
         self.enhanced_image_metadata_enabled
     }
     /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    pub fn os_version(&self) -> std::option::Option<&str> {
+    pub fn os_version(&self) -> std::option::Option<& str> {
         self.os_version.as_deref()
     }
     /// <p>The state of the image.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ImageState> {
         self.state.as_ref()
     }
     /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
-    pub fn image_recipe(&self) -> std::option::Option<&crate::model::ImageRecipe> {
+    pub fn image_recipe(&self) -> std::option::Option<& crate::model::ImageRecipe> {
         self.image_recipe.as_ref()
     }
     /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
-    pub fn container_recipe(&self) -> std::option::Option<&crate::model::ContainerRecipe> {
+    pub fn container_recipe(&self) -> std::option::Option<& crate::model::ContainerRecipe> {
         self.container_recipe.as_ref()
     }
     /// <p>The name of the image pipeline that created this image.</p>
-    pub fn source_pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn source_pipeline_name(&self) -> std::option::Option<& str> {
         self.source_pipeline_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
-    pub fn source_pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn source_pipeline_arn(&self) -> std::option::Option<& str> {
         self.source_pipeline_arn.as_deref()
     }
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    pub fn infrastructure_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InfrastructureConfiguration> {
+    pub fn infrastructure_configuration(&self) -> std::option::Option<& crate::model::InfrastructureConfiguration> {
         self.infrastructure_configuration.as_ref()
     }
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    pub fn distribution_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DistributionConfiguration> {
+    pub fn distribution_configuration(&self) -> std::option::Option<& crate::model::DistributionConfiguration> {
         self.distribution_configuration.as_ref()
     }
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    pub fn image_tests_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(&self) -> std::option::Option<& crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p>The date on which Image Builder created this image.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The output resources that Image Builder produces for this image.</p>
-    pub fn output_resources(&self) -> std::option::Option<&crate::model::OutputResources> {
+    pub fn output_resources(&self) -> std::option::Option<& crate::model::OutputResources> {
         self.output_resources.as_ref()
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-    /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+    /// <ul> 
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
     /// </ul>
-    pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
+    pub fn build_type(&self) -> std::option::Option<& crate::model::BuildType> {
         self.build_type.as_ref()
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn image_source(&self) -> std::option::Option<&crate::model::ImageSource> {
+    pub fn image_source(&self) -> std::option::Option<& crate::model::ImageSource> {
         self.image_source.as_ref()
     }
 }
 /// See [`Image`](crate::model::Image).
 pub mod image {
-
+    
     /// A builder for [`Image`](crate::model::Image).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7860,56 +7325,50 @@ pub mod image {
         pub(crate) container_recipe: std::option::Option<crate::model::ContainerRecipe>,
         pub(crate) source_pipeline_name: std::option::Option<std::string::String>,
         pub(crate) source_pipeline_arn: std::option::Option<std::string::String>,
-        pub(crate) infrastructure_configuration:
-            std::option::Option<crate::model::InfrastructureConfiguration>,
-        pub(crate) distribution_configuration:
-            std::option::Option<crate::model::DistributionConfiguration>,
-        pub(crate) image_tests_configuration:
-            std::option::Option<crate::model::ImageTestsConfiguration>,
+        pub(crate) infrastructure_configuration: std::option::Option<crate::model::InfrastructureConfiguration>,
+        pub(crate) distribution_configuration: std::option::Option<crate::model::DistributionConfiguration>,
+        pub(crate) image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
         pub(crate) date_created: std::option::Option<std::string::String>,
         pub(crate) output_resources: std::option::Option<crate::model::OutputResources>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) build_type: std::option::Option<crate::model::BuildType>,
         pub(crate) image_source: std::option::Option<crate::model::ImageSource>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
-        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-        /// <ol>
-        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the image.</p> <note> 
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+        /// <ol> 
+        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
         /// <li> <p>Version ARNs have only the first three nodes: <major>
         /// .
         /// <minor>
         /// .
         /// <patch></patch>
         /// </minor>
-        /// </major></p> </li>
-        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-        /// </ol>
+        /// </major></p> </li> 
+        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+        /// </ol> 
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
-        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-        /// <ol>
-        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the image.</p> <note> 
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+        /// <ol> 
+        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
         /// <li> <p>Version ARNs have only the first three nodes: <major>
         /// .
         /// <minor>
         /// .
         /// <patch></patch>
         /// </minor>
-        /// </major></p> </li>
-        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-        /// </ol>
+        /// </major></p> </li> 
+        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+        /// </ol> 
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
@@ -7918,8 +7377,7 @@ pub mod image {
         }
         /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The name of the image.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7928,10 +7386,9 @@ pub mod image {
         }
         /// <p>The name of the image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The semantic version of the image.</p> <note>
+        /// <p>The semantic version of the image.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -7943,16 +7400,16 @@ pub mod image {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the image.</p> <note>
+        /// <p>The semantic version of the image.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -7964,14 +7421,13 @@ pub mod image {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The image operating system platform, such as Linux or Windows.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -7980,8 +7436,7 @@ pub mod image {
         }
         /// <p>The image operating system platform, such as Linux or Windows.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
@@ -7989,12 +7444,8 @@ pub mod image {
             self
         }
         /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
-        pub fn set_enhanced_image_metadata_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enhanced_image_metadata_enabled = input;
-            self
+        pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enhanced_image_metadata_enabled = input; self
         }
         /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8003,8 +7454,7 @@ pub mod image {
         }
         /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.os_version = input;
-            self
+            self.os_version = input; self
         }
         /// <p>The state of the image.</p>
         pub fn state(mut self, input: crate::model::ImageState) -> Self {
@@ -8013,8 +7463,7 @@ pub mod image {
         }
         /// <p>The state of the image.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
         pub fn image_recipe(mut self, input: crate::model::ImageRecipe) -> Self {
@@ -8022,12 +7471,8 @@ pub mod image {
             self
         }
         /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
-        pub fn set_image_recipe(
-            mut self,
-            input: std::option::Option<crate::model::ImageRecipe>,
-        ) -> Self {
-            self.image_recipe = input;
-            self
+        pub fn set_image_recipe(mut self, input: std::option::Option<crate::model::ImageRecipe>) -> Self {
+            self.image_recipe = input; self
         }
         /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
         pub fn container_recipe(mut self, input: crate::model::ContainerRecipe) -> Self {
@@ -8035,12 +7480,8 @@ pub mod image {
             self
         }
         /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
-        pub fn set_container_recipe(
-            mut self,
-            input: std::option::Option<crate::model::ContainerRecipe>,
-        ) -> Self {
-            self.container_recipe = input;
-            self
+        pub fn set_container_recipe(mut self, input: std::option::Option<crate::model::ContainerRecipe>) -> Self {
+            self.container_recipe = input; self
         }
         /// <p>The name of the image pipeline that created this image.</p>
         pub fn source_pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8048,12 +7489,8 @@ pub mod image {
             self
         }
         /// <p>The name of the image pipeline that created this image.</p>
-        pub fn set_source_pipeline_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_pipeline_name = input;
-            self
+        pub fn set_source_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_pipeline_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
         pub fn source_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8061,60 +7498,35 @@ pub mod image {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
-        pub fn set_source_pipeline_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_pipeline_arn = input;
-            self
+        pub fn set_source_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_pipeline_arn = input; self
         }
         /// <p>The infrastructure that Image Builder used to create this image.</p>
-        pub fn infrastructure_configuration(
-            mut self,
-            input: crate::model::InfrastructureConfiguration,
-        ) -> Self {
+        pub fn infrastructure_configuration(mut self, input: crate::model::InfrastructureConfiguration) -> Self {
             self.infrastructure_configuration = Some(input);
             self
         }
         /// <p>The infrastructure that Image Builder used to create this image.</p>
-        pub fn set_infrastructure_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InfrastructureConfiguration>,
-        ) -> Self {
-            self.infrastructure_configuration = input;
-            self
+        pub fn set_infrastructure_configuration(mut self, input: std::option::Option<crate::model::InfrastructureConfiguration>) -> Self {
+            self.infrastructure_configuration = input; self
         }
         /// <p>The distribution configuration that Image Builder used to create this image.</p>
-        pub fn distribution_configuration(
-            mut self,
-            input: crate::model::DistributionConfiguration,
-        ) -> Self {
+        pub fn distribution_configuration(mut self, input: crate::model::DistributionConfiguration) -> Self {
             self.distribution_configuration = Some(input);
             self
         }
         /// <p>The distribution configuration that Image Builder used to create this image.</p>
-        pub fn set_distribution_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DistributionConfiguration>,
-        ) -> Self {
-            self.distribution_configuration = input;
-            self
+        pub fn set_distribution_configuration(mut self, input: std::option::Option<crate::model::DistributionConfiguration>) -> Self {
+            self.distribution_configuration = input; self
         }
         /// <p>The image tests that ran when that Image Builder created this image.</p>
-        pub fn image_tests_configuration(
-            mut self,
-            input: crate::model::ImageTestsConfiguration,
-        ) -> Self {
+        pub fn image_tests_configuration(mut self, input: crate::model::ImageTestsConfiguration) -> Self {
             self.image_tests_configuration = Some(input);
             self
         }
         /// <p>The image tests that ran when that Image Builder created this image.</p>
-        pub fn set_image_tests_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ImageTestsConfiguration>,
-        ) -> Self {
-            self.image_tests_configuration = input;
-            self
+        pub fn set_image_tests_configuration(mut self, input: std::option::Option<crate::model::ImageTestsConfiguration>) -> Self {
+            self.image_tests_configuration = input; self
         }
         /// <p>The date on which Image Builder created this image.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8123,8 +7535,7 @@ pub mod image {
         }
         /// <p>The date on which Image Builder created this image.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// <p>The output resources that Image Builder produces for this image.</p>
         pub fn output_resources(mut self, input: crate::model::OutputResources) -> Self {
@@ -8132,60 +7543,42 @@ pub mod image {
             self
         }
         /// <p>The output resources that Image Builder produces for this image.</p>
-        pub fn set_output_resources(
-            mut self,
-            input: std::option::Option<crate::model::OutputResources>,
-        ) -> Self {
-            self.output_resources = input;
-            self
+        pub fn set_output_resources(mut self, input: std::option::Option<crate::model::OutputResources>) -> Self {
+            self.output_resources = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that apply to this image.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags that apply to this image.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-        /// <ul>
-        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+        /// <ul> 
+        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
         /// </ul>
         pub fn build_type(mut self, input: crate::model::BuildType) -> Self {
             self.build_type = Some(input);
             self
         }
-        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
-        /// <ul>
-        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+        /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
+        /// <ul> 
+        /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
+        /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
+        /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
         /// </ul>
-        pub fn set_build_type(
-            mut self,
-            input: std::option::Option<crate::model::BuildType>,
-        ) -> Self {
-            self.build_type = input;
-            self
+        pub fn set_build_type(mut self, input: std::option::Option<crate::model::BuildType>) -> Self {
+            self.build_type = input; self
         }
         /// <p>The origin of the base image that Image Builder used to build this image.</p>
         pub fn image_source(mut self, input: crate::model::ImageSource) -> Self {
@@ -8193,39 +7586,57 @@ pub mod image {
             self
         }
         /// <p>The origin of the base image that Image Builder used to build this image.</p>
-        pub fn set_image_source(
-            mut self,
-            input: std::option::Option<crate::model::ImageSource>,
-        ) -> Self {
-            self.image_source = input;
-            self
+        pub fn set_image_source(mut self, input: std::option::Option<crate::model::ImageSource>) -> Self {
+            self.image_source = input; self
         }
         /// Consumes the builder and constructs a [`Image`](crate::model::Image).
         pub fn build(self) -> crate::model::Image {
             crate::model::Image {
-                arn: self.arn,
-                r#type: self.r#type,
-                name: self.name,
-                version: self.version,
-                platform: self.platform,
-                enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled,
-                os_version: self.os_version,
-                state: self.state,
-                image_recipe: self.image_recipe,
-                container_recipe: self.container_recipe,
-                source_pipeline_name: self.source_pipeline_name,
-                source_pipeline_arn: self.source_pipeline_arn,
-                infrastructure_configuration: self.infrastructure_configuration,
-                distribution_configuration: self.distribution_configuration,
-                image_tests_configuration: self.image_tests_configuration,
-                date_created: self.date_created,
-                output_resources: self.output_resources,
-                tags: self.tags,
-                build_type: self.build_type,
-                image_source: self.image_source,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                platform: self.platform
+                ,
+                enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled
+                ,
+                os_version: self.os_version
+                ,
+                state: self.state
+                ,
+                image_recipe: self.image_recipe
+                ,
+                container_recipe: self.container_recipe
+                ,
+                source_pipeline_name: self.source_pipeline_name
+                ,
+                source_pipeline_arn: self.source_pipeline_arn
+                ,
+                infrastructure_configuration: self.infrastructure_configuration
+                ,
+                distribution_configuration: self.distribution_configuration
+                ,
+                image_tests_configuration: self.image_tests_configuration
+                ,
+                date_created: self.date_created
+                ,
+                output_resources: self.output_resources
+                ,
+                tags: self.tags
+                ,
+                build_type: self.build_type
+                ,
+                image_source: self.image_source
+                ,
             }
         }
     }
+    
+    
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
@@ -8237,7 +7648,7 @@ impl Image {
 /// <p>A distribution configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DistributionConfiguration {
+pub struct DistributionConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8261,24 +7672,23 @@ pub struct DistributionConfiguration {
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags of the distribution configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DistributionConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the distribution configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the distribution configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-    pub fn distributions(&self) -> std::option::Option<&[crate::model::Distribution]> {
+    pub fn distributions(&self) -> std::option::Option<& [crate::model::Distribution]> {
         self.distributions.as_deref()
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
@@ -8286,24 +7696,21 @@ impl DistributionConfiguration {
         self.timeout_minutes
     }
     /// <p>The date on which this distribution configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which this distribution configuration was last updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<&str> {
+    pub fn date_updated(&self) -> std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DistributionConfiguration`](crate::model::DistributionConfiguration).
 pub mod distribution_configuration {
-
+    
     /// A builder for [`DistributionConfiguration`](crate::model::DistributionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8314,9 +7721,7 @@ pub mod distribution_configuration {
         pub(crate) timeout_minutes: std::option::Option<i32>,
         pub(crate) date_created: std::option::Option<std::string::String>,
         pub(crate) date_updated: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
@@ -8326,8 +7731,7 @@ pub mod distribution_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the distribution configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8336,8 +7740,7 @@ pub mod distribution_configuration {
         }
         /// <p>The name of the distribution configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the distribution configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8346,8 +7749,7 @@ pub mod distribution_configuration {
         }
         /// <p>The description of the distribution configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `distributions`.
         ///
@@ -8356,17 +7758,13 @@ pub mod distribution_configuration {
         /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
         pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input);
-            self.distributions = Some(v);
-            self
+                            v.push(input);
+                            self.distributions = Some(v);
+                            self
         }
         /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-        pub fn set_distributions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
-        ) -> Self {
-            self.distributions = input;
-            self
+        pub fn set_distributions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Distribution>>) -> Self {
+            self.distributions = input; self
         }
         /// <p>The maximum duration in minutes for this distribution configuration.</p>
         pub fn timeout_minutes(mut self, input: i32) -> Self {
@@ -8375,8 +7773,7 @@ pub mod distribution_configuration {
         }
         /// <p>The maximum duration in minutes for this distribution configuration.</p>
         pub fn set_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_minutes = input;
-            self
+            self.timeout_minutes = input; self
         }
         /// <p>The date on which this distribution configuration was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8385,8 +7782,7 @@ pub mod distribution_configuration {
         }
         /// <p>The date on which this distribution configuration was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// <p>The date on which this distribution configuration was last updated.</p>
         pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8395,48 +7791,47 @@ pub mod distribution_configuration {
         }
         /// <p>The date on which this distribution configuration was last updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_updated = input;
-            self
+            self.date_updated = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the distribution configuration.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of the distribution configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DistributionConfiguration`](crate::model::DistributionConfiguration).
         pub fn build(self) -> crate::model::DistributionConfiguration {
             crate::model::DistributionConfiguration {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                distributions: self.distributions,
-                timeout_minutes: self.timeout_minutes,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                distributions: self.distributions
+                ,
+                timeout_minutes: self.timeout_minutes
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DistributionConfiguration {
     /// Creates a new builder-style object to manufacture [`DistributionConfiguration`](crate::model::DistributionConfiguration).
@@ -8448,20 +7843,20 @@ impl DistributionConfiguration {
 /// <p>A container recipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContainerRecipe {
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-    /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+pub struct ContainerRecipe  {
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note> 
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+    /// <ol> 
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-    /// </ol>
+    /// </major></p> </li> 
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+    /// </ol> 
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8480,7 +7875,7 @@ pub struct ContainerRecipe {
     /// <p>The owner of the container recipe.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the container recipe.</p> <note>
+    /// <p>The semantic version of the container recipe.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -8492,10 +7887,10 @@ pub struct ContainerRecipe {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -8522,8 +7917,7 @@ pub struct ContainerRecipe {
     pub date_created: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
     #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
@@ -8532,44 +7926,44 @@ pub struct ContainerRecipe {
     pub target_repository: std::option::Option<crate::model::TargetContainerRepository>,
 }
 impl ContainerRecipe {
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-    /// <ol>
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note> 
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+    /// <ol> 
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li>
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-    /// </ol>
+    /// </major></p> </li> 
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+    /// </ol> 
     /// </note>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies the type of container, such as Docker.</p>
-    pub fn container_type(&self) -> std::option::Option<&crate::model::ContainerType> {
+    pub fn container_type(&self) -> std::option::Option<& crate::model::ContainerType> {
         self.container_type.as_ref()
     }
     /// <p>The name of the container recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the container recipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The owner of the container recipe.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
-    /// <p>The semantic version of the container recipe.</p> <note>
+    /// <p>The semantic version of the container recipe.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -8581,30 +7975,28 @@ impl ContainerRecipe {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
+    pub fn components(&self) -> std::option::Option<& [crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn instance_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceConfiguration> {
+    pub fn instance_configuration(&self) -> std::option::Option<& crate::model::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
-    pub fn dockerfile_template_data(&self) -> std::option::Option<&str> {
+    pub fn dockerfile_template_data(&self) -> std::option::Option<& str> {
         self.dockerfile_template_data.as_deref()
     }
     /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A flag that indicates if the target container is encrypted.</p>
@@ -8612,34 +8004,29 @@ impl ContainerRecipe {
         self.encrypted
     }
     /// <p>The base image for the container recipe.</p>
-    pub fn parent_image(&self) -> std::option::Option<&str> {
+    pub fn parent_image(&self) -> std::option::Option<& str> {
         self.parent_image.as_deref()
     }
     /// <p>The date when this container recipe was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn working_directory(&self) -> std::option::Option<&str> {
+    pub fn working_directory(&self) -> std::option::Option<& str> {
         self.working_directory.as_deref()
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn target_repository(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetContainerRepository> {
+    pub fn target_repository(&self) -> std::option::Option<& crate::model::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
 }
 /// See [`ContainerRecipe`](crate::model::ContainerRecipe).
 pub mod container_recipe {
-
+    
     /// A builder for [`ContainerRecipe`](crate::model::ContainerRecipe).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8650,56 +8037,52 @@ pub mod container_recipe {
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) components:
-            std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
+        pub(crate) components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
         pub(crate) instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
         pub(crate) dockerfile_template_data: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) encrypted: std::option::Option<bool>,
         pub(crate) parent_image: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) working_directory: std::option::Option<std::string::String>,
         pub(crate) target_repository: std::option::Option<crate::model::TargetContainerRepository>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
-        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-        /// <ol>
-        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note> 
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+        /// <ol> 
+        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
         /// <li> <p>Version ARNs have only the first three nodes: <major>
         /// .
         /// <minor>
         /// .
         /// <patch></patch>
         /// </minor>
-        /// </major></p> </li>
-        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-        /// </ol>
+        /// </major></p> </li> 
+        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+        /// </ol> 
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
-        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
-        /// <ol>
-        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note> 
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
+        /// <ol> 
+        /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
         /// <li> <p>Version ARNs have only the first three nodes: <major>
         /// .
         /// <minor>
         /// .
         /// <patch></patch>
         /// </minor>
-        /// </major></p> </li>
-        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
-        /// </ol>
+        /// </major></p> </li> 
+        /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
+        /// </ol> 
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Specifies the type of container, such as Docker.</p>
         pub fn container_type(mut self, input: crate::model::ContainerType) -> Self {
@@ -8707,12 +8090,8 @@ pub mod container_recipe {
             self
         }
         /// <p>Specifies the type of container, such as Docker.</p>
-        pub fn set_container_type(
-            mut self,
-            input: std::option::Option<crate::model::ContainerType>,
-        ) -> Self {
-            self.container_type = input;
-            self
+        pub fn set_container_type(mut self, input: std::option::Option<crate::model::ContainerType>) -> Self {
+            self.container_type = input; self
         }
         /// <p>The name of the container recipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8721,8 +8100,7 @@ pub mod container_recipe {
         }
         /// <p>The name of the container recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the container recipe.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8731,8 +8109,7 @@ pub mod container_recipe {
         }
         /// <p>The description of the container recipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The system platform for the container, such as Windows or Linux.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -8741,8 +8118,7 @@ pub mod container_recipe {
         }
         /// <p>The system platform for the container, such as Windows or Linux.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The owner of the container recipe.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8751,10 +8127,9 @@ pub mod container_recipe {
         }
         /// <p>The owner of the container recipe.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
-        /// <p>The semantic version of the container recipe.</p> <note>
+        /// <p>The semantic version of the container recipe.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -8766,16 +8141,16 @@ pub mod container_recipe {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the container recipe.</p> <note>
+        /// <p>The semantic version of the container recipe.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -8787,14 +8162,13 @@ pub mod container_recipe {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Appends an item to `components`.
         ///
@@ -8803,33 +8177,22 @@ pub mod container_recipe {
         /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input);
-            self.components = Some(v);
-            self
+                            v.push(input);
+                            self.components = Some(v);
+                            self
         }
         /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-        pub fn set_components(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
-        ) -> Self {
-            self.components = input;
-            self
+        pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>) -> Self {
+            self.components = input; self
         }
         /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-        pub fn instance_configuration(
-            mut self,
-            input: crate::model::InstanceConfiguration,
-        ) -> Self {
+        pub fn instance_configuration(mut self, input: crate::model::InstanceConfiguration) -> Self {
             self.instance_configuration = Some(input);
             self
         }
         /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-        pub fn set_instance_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InstanceConfiguration>,
-        ) -> Self {
-            self.instance_configuration = input;
-            self
+        pub fn set_instance_configuration(mut self, input: std::option::Option<crate::model::InstanceConfiguration>) -> Self {
+            self.instance_configuration = input; self
         }
         /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
         pub fn dockerfile_template_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8837,12 +8200,8 @@ pub mod container_recipe {
             self
         }
         /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
-        pub fn set_dockerfile_template_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dockerfile_template_data = input;
-            self
+        pub fn set_dockerfile_template_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dockerfile_template_data = input; self
         }
         /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8851,8 +8210,7 @@ pub mod container_recipe {
         }
         /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>A flag that indicates if the target container is encrypted.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -8861,8 +8219,7 @@ pub mod container_recipe {
         }
         /// <p>A flag that indicates if the target container is encrypted.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// <p>The base image for the container recipe.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8871,8 +8228,7 @@ pub mod container_recipe {
         }
         /// <p>The base image for the container recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_image = input;
-            self
+            self.parent_image = input; self
         }
         /// <p>The date when this container recipe was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8881,33 +8237,22 @@ pub mod container_recipe {
         }
         /// <p>The date when this container recipe was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags that are attached to the container recipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags that are attached to the container recipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The working directory for use during build and test workflows.</p>
         pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8915,12 +8260,8 @@ pub mod container_recipe {
             self
         }
         /// <p>The working directory for use during build and test workflows.</p>
-        pub fn set_working_directory(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.working_directory = input;
-            self
+        pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.working_directory = input; self
         }
         /// <p>The destination repository for the container image.</p>
         pub fn target_repository(mut self, input: crate::model::TargetContainerRepository) -> Self {
@@ -8928,36 +8269,51 @@ pub mod container_recipe {
             self
         }
         /// <p>The destination repository for the container image.</p>
-        pub fn set_target_repository(
-            mut self,
-            input: std::option::Option<crate::model::TargetContainerRepository>,
-        ) -> Self {
-            self.target_repository = input;
-            self
+        pub fn set_target_repository(mut self, input: std::option::Option<crate::model::TargetContainerRepository>) -> Self {
+            self.target_repository = input; self
         }
         /// Consumes the builder and constructs a [`ContainerRecipe`](crate::model::ContainerRecipe).
         pub fn build(self) -> crate::model::ContainerRecipe {
             crate::model::ContainerRecipe {
-                arn: self.arn,
-                container_type: self.container_type,
-                name: self.name,
-                description: self.description,
-                platform: self.platform,
-                owner: self.owner,
-                version: self.version,
-                components: self.components,
-                instance_configuration: self.instance_configuration,
-                dockerfile_template_data: self.dockerfile_template_data,
-                kms_key_id: self.kms_key_id,
-                encrypted: self.encrypted,
-                parent_image: self.parent_image,
-                date_created: self.date_created,
-                tags: self.tags,
-                working_directory: self.working_directory,
-                target_repository: self.target_repository,
+                arn: self.arn
+                ,
+                container_type: self.container_type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                platform: self.platform
+                ,
+                owner: self.owner
+                ,
+                version: self.version
+                ,
+                components: self.components
+                ,
+                instance_configuration: self.instance_configuration
+                ,
+                dockerfile_template_data: self.dockerfile_template_data
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                encrypted: self.encrypted
+                ,
+                parent_image: self.parent_image
+                ,
+                date_created: self.date_created
+                ,
+                tags: self.tags
+                ,
+                working_directory: self.working_directory
+                ,
+                target_repository: self.target_repository
+                ,
             }
         }
     }
+    
+    
 }
 impl ContainerRecipe {
     /// Creates a new builder-style object to manufacture [`ContainerRecipe`](crate::model::ContainerRecipe).
@@ -8969,36 +8325,32 @@ impl ContainerRecipe {
 /// <p>Defines a custom base AMI and block device mapping configurations of an instance used for building and testing container images.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceConfiguration {
+pub struct InstanceConfiguration  {
     /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
     #[doc(hidden)]
     pub image: std::option::Option<std::string::String>,
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+    pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
 }
 impl InstanceConfiguration {
     /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
-    pub fn image(&self) -> std::option::Option<&str> {
+    pub fn image(&self) -> std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> std::option::Option<& [crate::model::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
 }
 /// See [`InstanceConfiguration`](crate::model::InstanceConfiguration).
 pub mod instance_configuration {
-
+    
     /// A builder for [`InstanceConfiguration`](crate::model::InstanceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<std::string::String>,
-        pub(crate) block_device_mappings:
-            std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+        pub(crate) block_device_mappings: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
     }
     impl Builder {
         /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
@@ -9008,39 +8360,35 @@ pub mod instance_configuration {
         }
         /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image = input;
-            self
+            self.image = input; self
         }
         /// Appends an item to `block_device_mappings`.
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
         /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: crate::model::InstanceBlockDeviceMapping,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::InstanceBlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input);
-            self.block_device_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.block_device_mappings = Some(v);
+                            self
         }
         /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
-        pub fn set_block_device_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
-        ) -> Self {
-            self.block_device_mappings = input;
-            self
+        pub fn set_block_device_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>) -> Self {
+            self.block_device_mappings = input; self
         }
         /// Consumes the builder and constructs a [`InstanceConfiguration`](crate::model::InstanceConfiguration).
         pub fn build(self) -> crate::model::InstanceConfiguration {
             crate::model::InstanceConfiguration {
-                image: self.image,
-                block_device_mappings: self.block_device_mappings,
+                image: self.image
+                ,
+                block_device_mappings: self.block_device_mappings
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceConfiguration {
     /// Creates a new builder-style object to manufacture [`InstanceConfiguration`](crate::model::InstanceConfiguration).
@@ -9052,7 +8400,7 @@ impl InstanceConfiguration {
 /// <p>A detailed view of a component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Component {
+pub struct Component  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -9100,8 +8448,7 @@ pub struct Component {
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The tags that apply to the component.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
     #[doc(hidden)]
     pub publisher: std::option::Option<std::string::String>,
@@ -9111,55 +8458,55 @@ pub struct Component {
 }
 impl Component {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The description of the component.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The change description of the component.</p>
-    pub fn change_description(&self) -> std::option::Option<&str> {
+    pub fn change_description(&self) -> std::option::Option<& str> {
         self.change_description.as_deref()
     }
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ComponentType> {
         self.r#type.as_ref()
     }
     /// <p>The operating system platform of the component.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_os_versions(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_os_versions.as_deref()
     }
     /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ComponentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ComponentState> {
         self.state.as_ref()
     }
     /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::ComponentParameterDetail]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::ComponentParameterDetail]> {
         self.parameters.as_deref()
     }
     /// <p>The owner of the component.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>Component data contains the YAML document content for the component.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> std::option::Option<& str> {
         self.data.as_deref()
     }
     /// <p>The KMS key identifier used to encrypt the component.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The encryption status of the component.</p>
@@ -9167,18 +8514,15 @@ impl Component {
         self.encrypted
     }
     /// <p>The date that Image Builder created the component.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
-    pub fn publisher(&self) -> std::option::Option<&str> {
+    pub fn publisher(&self) -> std::option::Option<& str> {
         self.publisher.as_deref()
     }
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
@@ -9188,7 +8532,7 @@ impl Component {
 }
 /// See [`Component`](crate::model::Component).
 pub mod component {
-
+    
     /// A builder for [`Component`](crate::model::Component).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9201,16 +8545,13 @@ pub mod component {
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state: std::option::Option<crate::model::ComponentState>,
-        pub(crate) parameters:
-            std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) data: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) encrypted: std::option::Option<bool>,
         pub(crate) date_created: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) publisher: std::option::Option<std::string::String>,
         pub(crate) obfuscate: std::option::Option<bool>,
     }
@@ -9222,8 +8563,7 @@ pub mod component {
         }
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the component.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9232,8 +8572,7 @@ pub mod component {
         }
         /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the component.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9242,8 +8581,7 @@ pub mod component {
         }
         /// <p>The version of the component.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The description of the component.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9252,8 +8590,7 @@ pub mod component {
         }
         /// <p>The description of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The change description of the component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9261,12 +8598,8 @@ pub mod component {
             self
         }
         /// <p>The change description of the component.</p>
-        pub fn set_change_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_description = input;
-            self
+        pub fn set_change_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_description = input; self
         }
         /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
@@ -9275,8 +8608,7 @@ pub mod component {
         }
         /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The operating system platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -9285,8 +8617,7 @@ pub mod component {
         }
         /// <p>The operating system platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// Appends an item to `supported_os_versions`.
         ///
@@ -9295,17 +8626,13 @@ pub mod component {
         /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
-            v.push(input.into());
-            self.supported_os_versions = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_os_versions = Some(v);
+                            self
         }
         /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-        pub fn set_supported_os_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_os_versions = input;
-            self
+        pub fn set_supported_os_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_os_versions = input; self
         }
         /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
         pub fn state(mut self, input: crate::model::ComponentState) -> Self {
@@ -9313,12 +8640,8 @@ pub mod component {
             self
         }
         /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ComponentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ComponentState>) -> Self {
+            self.state = input; self
         }
         /// Appends an item to `parameters`.
         ///
@@ -9327,17 +8650,13 @@ pub mod component {
         /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
         pub fn parameters(mut self, input: crate::model::ComponentParameterDetail) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The owner of the component.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9346,8 +8665,7 @@ pub mod component {
         }
         /// <p>The owner of the component.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>Component data contains the YAML document content for the component.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9356,8 +8674,7 @@ pub mod component {
         }
         /// <p>Component data contains the YAML document content for the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// <p>The KMS key identifier used to encrypt the component.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9366,8 +8683,7 @@ pub mod component {
         }
         /// <p>The KMS key identifier used to encrypt the component.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The encryption status of the component.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -9376,8 +8692,7 @@ pub mod component {
         }
         /// <p>The encryption status of the component.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// <p>The date that Image Builder created the component.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9386,33 +8701,22 @@ pub mod component {
         }
         /// <p>The date that Image Builder created the component.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date_created = input;
-            self
+            self.date_created = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that apply to the component.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags that apply to the component.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
         pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9421,8 +8725,7 @@ pub mod component {
         }
         /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
         pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.publisher = input;
-            self
+            self.publisher = input; self
         }
         /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
         pub fn obfuscate(mut self, input: bool) -> Self {
@@ -9431,33 +8734,53 @@ pub mod component {
         }
         /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
         pub fn set_obfuscate(mut self, input: std::option::Option<bool>) -> Self {
-            self.obfuscate = input;
-            self
+            self.obfuscate = input; self
         }
         /// Consumes the builder and constructs a [`Component`](crate::model::Component).
         pub fn build(self) -> crate::model::Component {
             crate::model::Component {
-                arn: self.arn,
-                name: self.name,
-                version: self.version,
-                description: self.description,
-                change_description: self.change_description,
-                r#type: self.r#type,
-                platform: self.platform,
-                supported_os_versions: self.supported_os_versions,
-                state: self.state,
-                parameters: self.parameters,
-                owner: self.owner,
-                data: self.data,
-                kms_key_id: self.kms_key_id,
-                encrypted: self.encrypted,
-                date_created: self.date_created,
-                tags: self.tags,
-                publisher: self.publisher,
-                obfuscate: self.obfuscate.unwrap_or_default(),
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                description: self.description
+                ,
+                change_description: self.change_description
+                ,
+                r#type: self.r#type
+                ,
+                platform: self.platform
+                ,
+                supported_os_versions: self.supported_os_versions
+                ,
+                state: self.state
+                ,
+                parameters: self.parameters
+                ,
+                owner: self.owner
+                ,
+                data: self.data
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                encrypted: self.encrypted
+                ,
+                date_created: self.date_created
+                ,
+                tags: self.tags
+                ,
+                publisher: self.publisher
+                ,
+                obfuscate: self.obfuscate
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Component {
     /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
@@ -9469,7 +8792,7 @@ impl Component {
 /// <p>Defines a parameter that is used to provide configuration details for the component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentParameterDetail {
+pub struct ComponentParameterDetail  {
     /// <p>The name of this input parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -9485,25 +8808,25 @@ pub struct ComponentParameterDetail {
 }
 impl ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The default value of this parameter if no input is provided.</p>
-    pub fn default_value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn default_value(&self) -> std::option::Option<& [std::string::String]> {
         self.default_value.as_deref()
     }
     /// <p>Describes this parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
 pub mod component_parameter_detail {
-
+    
     /// A builder for [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9520,8 +8843,7 @@ pub mod component_parameter_detail {
         }
         /// <p>The name of this input parameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9530,8 +8852,7 @@ pub mod component_parameter_detail {
         }
         /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `default_value`.
         ///
@@ -9540,17 +8861,13 @@ pub mod component_parameter_detail {
         /// <p>The default value of this parameter if no input is provided.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.default_value.unwrap_or_default();
-            v.push(input.into());
-            self.default_value = Some(v);
-            self
+                            v.push(input.into());
+                            self.default_value = Some(v);
+                            self
         }
         /// <p>The default value of this parameter if no input is provided.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.default_value = input; self
         }
         /// <p>Describes this parameter.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9559,19 +8876,24 @@ pub mod component_parameter_detail {
         }
         /// <p>Describes this parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
         pub fn build(self) -> crate::model::ComponentParameterDetail {
             crate::model::ComponentParameterDetail {
-                name: self.name,
-                r#type: self.r#type,
-                default_value: self.default_value,
-                description: self.description,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                default_value: self.default_value
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentParameterDetail {
     /// Creates a new builder-style object to manufacture [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
@@ -9579,3 +8901,4 @@ impl ComponentParameterDetail {
         crate::model::component_parameter_detail::Builder::default()
     }
 }
+

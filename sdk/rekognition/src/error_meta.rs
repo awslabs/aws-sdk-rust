@@ -37,22 +37,22 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
-    /// <p></p>
+    /// <p></p> 
     /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -77,19 +77,14 @@ impl std::fmt::Display for Error {
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::VideoTooLargeException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompareFacesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompareFacesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CompareFacesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -97,47 +92,22 @@ where
 impl From<crate::error::CompareFacesError> for Error {
     fn from(err: crate::error::CompareFacesError) -> Self {
         match err.kind {
-            crate::error::CompareFacesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CompareFacesErrorKind::ImageTooLargeException(inner) => {
-                Error::ImageTooLargeException(inner)
-            }
-            crate::error::CompareFacesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::CompareFacesErrorKind::InvalidImageFormatException(inner) => {
-                Error::InvalidImageFormatException(inner)
-            }
-            crate::error::CompareFacesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CompareFacesErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::CompareFacesErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::CompareFacesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CompareFacesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CompareFacesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CompareFacesErrorKind::ImageTooLargeException(inner) => Error::ImageTooLargeException(inner),
+            crate::error::CompareFacesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::CompareFacesErrorKind::InvalidImageFormatException(inner) => Error::InvalidImageFormatException(inner),
+            crate::error::CompareFacesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CompareFacesErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::CompareFacesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::CompareFacesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CompareFacesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopyProjectVersionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CopyProjectVersionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopyProjectVersionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CopyProjectVersionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -145,50 +115,23 @@ where
 impl From<crate::error::CopyProjectVersionError> for Error {
     fn from(err: crate::error::CopyProjectVersionError) -> Self {
         match err.kind {
-            crate::error::CopyProjectVersionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CopyProjectVersionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::CopyProjectVersionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CopyProjectVersionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CopyProjectVersionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::CopyProjectVersionErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::CopyProjectVersionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CopyProjectVersionErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CopyProjectVersionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CopyProjectVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CopyProjectVersionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CopyProjectVersionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::CopyProjectVersionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CopyProjectVersionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CopyProjectVersionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::CopyProjectVersionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::CopyProjectVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CopyProjectVersionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CopyProjectVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CopyProjectVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCollectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCollectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCollectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCollectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -196,42 +139,21 @@ where
 impl From<crate::error::CreateCollectionError> for Error {
     fn from(err: crate::error::CreateCollectionError) -> Self {
         match err.kind {
-            crate::error::CreateCollectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateCollectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::CreateCollectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateCollectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::CreateCollectionErrorKind::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
-            crate::error::CreateCollectionErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateCollectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateCollectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateCollectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateCollectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::CreateCollectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CreateCollectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::CreateCollectionErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::error::CreateCollectionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateCollectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateCollectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDatasetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDatasetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDatasetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -239,48 +161,23 @@ where
 impl From<crate::error::CreateDatasetError> for Error {
     fn from(err: crate::error::CreateDatasetError) -> Self {
         match err.kind {
-            crate::error::CreateDatasetErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateDatasetErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::CreateDatasetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateDatasetErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::CreateDatasetErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateDatasetErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::CreateDatasetErrorKind::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
-            crate::error::CreateDatasetErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateDatasetErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateDatasetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateDatasetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateDatasetErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::CreateDatasetErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CreateDatasetErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::CreateDatasetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateDatasetErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::CreateDatasetErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::error::CreateDatasetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateDatasetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateDatasetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProjectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateProjectError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -288,45 +185,21 @@ where
 impl From<crate::error::CreateProjectError> for Error {
     fn from(err: crate::error::CreateProjectError) -> Self {
         match err.kind {
-            crate::error::CreateProjectErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateProjectErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::CreateProjectErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateProjectErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateProjectErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::CreateProjectErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::CreateProjectErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateProjectErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateProjectErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::CreateProjectErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CreateProjectErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateProjectErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::CreateProjectErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::CreateProjectErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateProjectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProjectVersionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateProjectVersionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProjectVersionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateProjectVersionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -334,51 +207,23 @@ where
 impl From<crate::error::CreateProjectVersionError> for Error {
     fn from(err: crate::error::CreateProjectVersionError) -> Self {
         match err.kind {
-            crate::error::CreateProjectVersionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateProjectVersionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::CreateProjectVersionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateProjectVersionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateProjectVersionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::CreateProjectVersionErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::CreateProjectVersionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateProjectVersionErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateProjectVersionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateProjectVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateProjectVersionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateProjectVersionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::CreateProjectVersionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CreateProjectVersionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateProjectVersionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::CreateProjectVersionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::CreateProjectVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateProjectVersionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateProjectVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateProjectVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateStreamProcessorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateStreamProcessorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateStreamProcessorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateStreamProcessorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -398,17 +243,10 @@ impl From<crate::error::CreateStreamProcessorError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCollectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCollectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCollectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCollectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -416,39 +254,20 @@ where
 impl From<crate::error::DeleteCollectionError> for Error {
     fn from(err: crate::error::DeleteCollectionError) -> Self {
         match err.kind {
-            crate::error::DeleteCollectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteCollectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DeleteCollectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteCollectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::DeleteCollectionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteCollectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteCollectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteCollectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteCollectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DeleteCollectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DeleteCollectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DeleteCollectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteCollectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteCollectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -456,45 +275,22 @@ where
 impl From<crate::error::DeleteDatasetError> for Error {
     fn from(err: crate::error::DeleteDatasetError) -> Self {
         match err.kind {
-            crate::error::DeleteDatasetErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteDatasetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteDatasetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteDatasetErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DeleteDatasetErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DeleteDatasetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::DeleteDatasetErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DeleteDatasetErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::DeleteDatasetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteDatasetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteDatasetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFacesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFacesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFacesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -502,39 +298,20 @@ where
 impl From<crate::error::DeleteFacesError> for Error {
     fn from(err: crate::error::DeleteFacesError) -> Self {
         match err.kind {
-            crate::error::DeleteFacesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteFacesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DeleteFacesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteFacesErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::DeleteFacesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteFacesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteFacesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteFacesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteFacesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DeleteFacesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DeleteFacesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DeleteFacesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteFacesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteFacesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProjectError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProjectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProjectError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -542,44 +319,21 @@ where
 impl From<crate::error::DeleteProjectError> for Error {
     fn from(err: crate::error::DeleteProjectError) -> Self {
         match err.kind {
-            crate::error::DeleteProjectErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DeleteProjectErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteProjectErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteProjectErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DeleteProjectErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DeleteProjectErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DeleteProjectErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::DeleteProjectErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteProjectErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteProjectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProjectPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteProjectPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProjectPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProjectPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -587,45 +341,21 @@ where
 impl From<crate::error::DeleteProjectPolicyError> for Error {
     fn from(err: crate::error::DeleteProjectPolicyError) -> Self {
         match err.kind {
-            crate::error::DeleteProjectPolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteProjectPolicyErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DeleteProjectPolicyErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteProjectPolicyErrorKind::InvalidPolicyRevisionIdException(inner) => {
-                Error::InvalidPolicyRevisionIdException(inner)
-            }
-            crate::error::DeleteProjectPolicyErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::DeleteProjectPolicyErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteProjectPolicyErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteProjectPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteProjectPolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteProjectPolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DeleteProjectPolicyErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DeleteProjectPolicyErrorKind::InvalidPolicyRevisionIdException(inner) => Error::InvalidPolicyRevisionIdException(inner),
+            crate::error::DeleteProjectPolicyErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DeleteProjectPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteProjectPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteProjectPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProjectVersionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteProjectVersionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProjectVersionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProjectVersionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -633,45 +363,21 @@ where
 impl From<crate::error::DeleteProjectVersionError> for Error {
     fn from(err: crate::error::DeleteProjectVersionError) -> Self {
         match err.kind {
-            crate::error::DeleteProjectVersionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteProjectVersionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DeleteProjectVersionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteProjectVersionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::DeleteProjectVersionErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteProjectVersionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteProjectVersionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteProjectVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteProjectVersionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteProjectVersionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DeleteProjectVersionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DeleteProjectVersionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DeleteProjectVersionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::DeleteProjectVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteProjectVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteProjectVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteStreamProcessorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteStreamProcessorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteStreamProcessorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteStreamProcessorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -690,17 +396,10 @@ impl From<crate::error::DeleteStreamProcessorError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCollectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCollectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCollectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeCollectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -708,39 +407,20 @@ where
 impl From<crate::error::DescribeCollectionError> for Error {
     fn from(err: crate::error::DescribeCollectionError) -> Self {
         match err.kind {
-            crate::error::DescribeCollectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeCollectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DescribeCollectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeCollectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::DescribeCollectionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeCollectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeCollectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeCollectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeCollectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DescribeCollectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DescribeCollectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DescribeCollectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeCollectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeCollectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -748,41 +428,20 @@ where
 impl From<crate::error::DescribeDatasetError> for Error {
     fn from(err: crate::error::DescribeDatasetError) -> Self {
         match err.kind {
-            crate::error::DescribeDatasetErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::DescribeDatasetErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeDatasetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeDatasetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeDatasetErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DescribeDatasetErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DescribeDatasetErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DescribeDatasetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeDatasetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeDatasetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeProjectsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeProjectsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeProjectsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeProjectsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -790,42 +449,20 @@ where
 impl From<crate::error::DescribeProjectsError> for Error {
     fn from(err: crate::error::DescribeProjectsError) -> Self {
         match err.kind {
-            crate::error::DescribeProjectsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeProjectsErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DescribeProjectsErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::DescribeProjectsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeProjectsErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::DescribeProjectsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeProjectsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeProjectsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeProjectsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DescribeProjectsErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::DescribeProjectsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DescribeProjectsErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DescribeProjectsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeProjectsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeProjectVersionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeProjectVersionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeProjectVersionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeProjectVersionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -844,18 +481,10 @@ impl From<crate::error::DescribeProjectVersionsError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeStreamProcessorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeStreamProcessorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeStreamProcessorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeStreamProcessorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -873,17 +502,10 @@ impl From<crate::error::DescribeStreamProcessorError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectCustomLabelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DetectCustomLabelsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectCustomLabelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectCustomLabelsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -891,54 +513,25 @@ where
 impl From<crate::error::DetectCustomLabelsError> for Error {
     fn from(err: crate::error::DetectCustomLabelsError) -> Self {
         match err.kind {
-            crate::error::DetectCustomLabelsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::ImageTooLargeException(inner) => {
-                Error::ImageTooLargeException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::InvalidImageFormatException(inner) => {
-                Error::InvalidImageFormatException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::DetectCustomLabelsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::ResourceNotReadyException(inner) => {
-                Error::ResourceNotReadyException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DetectCustomLabelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DetectCustomLabelsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DetectCustomLabelsErrorKind::ImageTooLargeException(inner) => Error::ImageTooLargeException(inner),
+            crate::error::DetectCustomLabelsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DetectCustomLabelsErrorKind::InvalidImageFormatException(inner) => Error::InvalidImageFormatException(inner),
+            crate::error::DetectCustomLabelsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DetectCustomLabelsErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::DetectCustomLabelsErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::DetectCustomLabelsErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DetectCustomLabelsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DetectCustomLabelsErrorKind::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+            crate::error::DetectCustomLabelsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DetectCustomLabelsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectFacesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectFacesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectFacesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -946,45 +539,22 @@ where
 impl From<crate::error::DetectFacesError> for Error {
     fn from(err: crate::error::DetectFacesError) -> Self {
         match err.kind {
-            crate::error::DetectFacesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DetectFacesErrorKind::ImageTooLargeException(inner) => {
-                Error::ImageTooLargeException(inner)
-            }
-            crate::error::DetectFacesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DetectFacesErrorKind::InvalidImageFormatException(inner) => {
-                Error::InvalidImageFormatException(inner)
-            }
-            crate::error::DetectFacesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DetectFacesErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::DetectFacesErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::DetectFacesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DetectFacesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DetectFacesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DetectFacesErrorKind::ImageTooLargeException(inner) => Error::ImageTooLargeException(inner),
+            crate::error::DetectFacesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DetectFacesErrorKind::InvalidImageFormatException(inner) => Error::InvalidImageFormatException(inner),
+            crate::error::DetectFacesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DetectFacesErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::DetectFacesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DetectFacesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DetectFacesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectLabelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectLabelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectLabelsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -992,48 +562,22 @@ where
 impl From<crate::error::DetectLabelsError> for Error {
     fn from(err: crate::error::DetectLabelsError) -> Self {
         match err.kind {
-            crate::error::DetectLabelsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DetectLabelsErrorKind::ImageTooLargeException(inner) => {
-                Error::ImageTooLargeException(inner)
-            }
-            crate::error::DetectLabelsErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DetectLabelsErrorKind::InvalidImageFormatException(inner) => {
-                Error::InvalidImageFormatException(inner)
-            }
-            crate::error::DetectLabelsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DetectLabelsErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::DetectLabelsErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::DetectLabelsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DetectLabelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DetectLabelsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DetectLabelsErrorKind::ImageTooLargeException(inner) => Error::ImageTooLargeException(inner),
+            crate::error::DetectLabelsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DetectLabelsErrorKind::InvalidImageFormatException(inner) => Error::InvalidImageFormatException(inner),
+            crate::error::DetectLabelsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DetectLabelsErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::DetectLabelsErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DetectLabelsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DetectLabelsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectModerationLabelsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DetectModerationLabelsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectModerationLabelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectModerationLabelsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1054,18 +598,10 @@ impl From<crate::error::DetectModerationLabelsError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectProtectiveEquipmentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DetectProtectiveEquipmentError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectProtectiveEquipmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectProtectiveEquipmentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1085,15 +621,10 @@ impl From<crate::error::DetectProtectiveEquipmentError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectTextError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectTextError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectTextError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1101,48 +632,22 @@ where
 impl From<crate::error::DetectTextError> for Error {
     fn from(err: crate::error::DetectTextError) -> Self {
         match err.kind {
-            crate::error::DetectTextErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DetectTextErrorKind::ImageTooLargeException(inner) => {
-                Error::ImageTooLargeException(inner)
-            }
-            crate::error::DetectTextErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::DetectTextErrorKind::InvalidImageFormatException(inner) => {
-                Error::InvalidImageFormatException(inner)
-            }
-            crate::error::DetectTextErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DetectTextErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::DetectTextErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::DetectTextErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DetectTextErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DetectTextErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DetectTextErrorKind::ImageTooLargeException(inner) => Error::ImageTooLargeException(inner),
+            crate::error::DetectTextErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DetectTextErrorKind::InvalidImageFormatException(inner) => Error::InvalidImageFormatException(inner),
+            crate::error::DetectTextErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DetectTextErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::DetectTextErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DetectTextErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DetectTextErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DistributeDatasetEntriesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DistributeDatasetEntriesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DistributeDatasetEntriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DistributeDatasetEntriesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1161,17 +666,10 @@ impl From<crate::error::DistributeDatasetEntriesError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCelebrityInfoError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCelebrityInfoError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCelebrityInfoError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCelebrityInfoError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1179,42 +677,20 @@ where
 impl From<crate::error::GetCelebrityInfoError> for Error {
     fn from(err: crate::error::GetCelebrityInfoError) -> Self {
         match err.kind {
-            crate::error::GetCelebrityInfoErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetCelebrityInfoErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetCelebrityInfoErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetCelebrityInfoErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetCelebrityInfoErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetCelebrityInfoErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetCelebrityInfoErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetCelebrityInfoErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetCelebrityInfoErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetCelebrityInfoErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetCelebrityInfoErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetCelebrityInfoErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetCelebrityInfoErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetCelebrityInfoErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCelebrityRecognitionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCelebrityRecognitionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCelebrityRecognitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCelebrityRecognitionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1233,18 +709,10 @@ impl From<crate::error::GetCelebrityRecognitionError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContentModerationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetContentModerationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContentModerationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContentModerationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1252,44 +720,21 @@ where
 impl From<crate::error::GetContentModerationError> for Error {
     fn from(err: crate::error::GetContentModerationError) -> Self {
         match err.kind {
-            crate::error::GetContentModerationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetContentModerationErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetContentModerationErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::GetContentModerationErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetContentModerationErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetContentModerationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetContentModerationErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetContentModerationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetContentModerationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetContentModerationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetContentModerationErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::GetContentModerationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetContentModerationErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetContentModerationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetContentModerationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetContentModerationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFaceDetectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetFaceDetectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFaceDetectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFaceDetectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1297,42 +742,21 @@ where
 impl From<crate::error::GetFaceDetectionError> for Error {
     fn from(err: crate::error::GetFaceDetectionError) -> Self {
         match err.kind {
-            crate::error::GetFaceDetectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetFaceDetectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetFaceDetectionErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::GetFaceDetectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetFaceDetectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetFaceDetectionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetFaceDetectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetFaceDetectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetFaceDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetFaceDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetFaceDetectionErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::GetFaceDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetFaceDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetFaceDetectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetFaceDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetFaceDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFaceSearchError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFaceSearchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFaceSearchError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1340,44 +764,21 @@ where
 impl From<crate::error::GetFaceSearchError> for Error {
     fn from(err: crate::error::GetFaceSearchError) -> Self {
         match err.kind {
-            crate::error::GetFaceSearchErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetFaceSearchErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetFaceSearchErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::GetFaceSearchErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetFaceSearchErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::GetFaceSearchErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetFaceSearchErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetFaceSearchErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetFaceSearchErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetFaceSearchErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetFaceSearchErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::GetFaceSearchErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetFaceSearchErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetFaceSearchErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetFaceSearchErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetFaceSearchErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLabelDetectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetLabelDetectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLabelDetectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLabelDetectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1385,44 +786,21 @@ where
 impl From<crate::error::GetLabelDetectionError> for Error {
     fn from(err: crate::error::GetLabelDetectionError) -> Self {
         match err.kind {
-            crate::error::GetLabelDetectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetLabelDetectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetLabelDetectionErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::GetLabelDetectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetLabelDetectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetLabelDetectionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetLabelDetectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetLabelDetectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetLabelDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetLabelDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetLabelDetectionErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::GetLabelDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetLabelDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetLabelDetectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetLabelDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetLabelDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPersonTrackingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetPersonTrackingError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPersonTrackingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPersonTrackingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1430,44 +808,21 @@ where
 impl From<crate::error::GetPersonTrackingError> for Error {
     fn from(err: crate::error::GetPersonTrackingError) -> Self {
         match err.kind {
-            crate::error::GetPersonTrackingErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetPersonTrackingErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetPersonTrackingErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::GetPersonTrackingErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetPersonTrackingErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetPersonTrackingErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetPersonTrackingErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetPersonTrackingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetPersonTrackingErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetPersonTrackingErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetPersonTrackingErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::GetPersonTrackingErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetPersonTrackingErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetPersonTrackingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetPersonTrackingErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetPersonTrackingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSegmentDetectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSegmentDetectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSegmentDetectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSegmentDetectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1475,44 +830,21 @@ where
 impl From<crate::error::GetSegmentDetectionError> for Error {
     fn from(err: crate::error::GetSegmentDetectionError) -> Self {
         match err.kind {
-            crate::error::GetSegmentDetectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetSegmentDetectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetSegmentDetectionErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::GetSegmentDetectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetSegmentDetectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetSegmentDetectionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetSegmentDetectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetSegmentDetectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSegmentDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetSegmentDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetSegmentDetectionErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::GetSegmentDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetSegmentDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetSegmentDetectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetSegmentDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetSegmentDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTextDetectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetTextDetectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTextDetectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTextDetectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1520,42 +852,21 @@ where
 impl From<crate::error::GetTextDetectionError> for Error {
     fn from(err: crate::error::GetTextDetectionError) -> Self {
         match err.kind {
-            crate::error::GetTextDetectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetTextDetectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetTextDetectionErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::GetTextDetectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetTextDetectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetTextDetectionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetTextDetectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetTextDetectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTextDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetTextDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetTextDetectionErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::GetTextDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetTextDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetTextDetectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetTextDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::IndexFacesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::IndexFacesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::IndexFacesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1563,51 +874,24 @@ where
 impl From<crate::error::IndexFacesError> for Error {
     fn from(err: crate::error::IndexFacesError) -> Self {
         match err.kind {
-            crate::error::IndexFacesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::IndexFacesErrorKind::ImageTooLargeException(inner) => {
-                Error::ImageTooLargeException(inner)
-            }
-            crate::error::IndexFacesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::IndexFacesErrorKind::InvalidImageFormatException(inner) => {
-                Error::InvalidImageFormatException(inner)
-            }
-            crate::error::IndexFacesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::IndexFacesErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::IndexFacesErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::IndexFacesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::IndexFacesErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::IndexFacesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::IndexFacesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::IndexFacesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::IndexFacesErrorKind::ImageTooLargeException(inner) => Error::ImageTooLargeException(inner),
+            crate::error::IndexFacesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::IndexFacesErrorKind::InvalidImageFormatException(inner) => Error::InvalidImageFormatException(inner),
+            crate::error::IndexFacesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::IndexFacesErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::IndexFacesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::IndexFacesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::IndexFacesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::IndexFacesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::IndexFacesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCollectionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCollectionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListCollectionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1615,44 +899,21 @@ where
 impl From<crate::error::ListCollectionsError> for Error {
     fn from(err: crate::error::ListCollectionsError) -> Self {
         match err.kind {
-            crate::error::ListCollectionsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListCollectionsErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::ListCollectionsErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::ListCollectionsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListCollectionsErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::ListCollectionsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListCollectionsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListCollectionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListCollectionsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListCollectionsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::ListCollectionsErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListCollectionsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListCollectionsErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::ListCollectionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListCollectionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListCollectionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasetEntriesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDatasetEntriesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasetEntriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDatasetEntriesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1660,50 +921,23 @@ where
 impl From<crate::error::ListDatasetEntriesError> for Error {
     fn from(err: crate::error::ListDatasetEntriesError) -> Self {
         match err.kind {
-            crate::error::ListDatasetEntriesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListDatasetEntriesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::ListDatasetEntriesErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::ListDatasetEntriesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListDatasetEntriesErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::ListDatasetEntriesErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::ListDatasetEntriesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListDatasetEntriesErrorKind::ResourceNotReadyException(inner) => {
-                Error::ResourceNotReadyException(inner)
-            }
-            crate::error::ListDatasetEntriesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListDatasetEntriesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDatasetEntriesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListDatasetEntriesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::ListDatasetEntriesErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListDatasetEntriesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListDatasetEntriesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::ListDatasetEntriesErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::ListDatasetEntriesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListDatasetEntriesErrorKind::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+            crate::error::ListDatasetEntriesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListDatasetEntriesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasetLabelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDatasetLabelsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasetLabelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDatasetLabelsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1711,48 +945,23 @@ where
 impl From<crate::error::ListDatasetLabelsError> for Error {
     fn from(err: crate::error::ListDatasetLabelsError) -> Self {
         match err.kind {
-            crate::error::ListDatasetLabelsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListDatasetLabelsErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::ListDatasetLabelsErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::ListDatasetLabelsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListDatasetLabelsErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::ListDatasetLabelsErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::ListDatasetLabelsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListDatasetLabelsErrorKind::ResourceNotReadyException(inner) => {
-                Error::ResourceNotReadyException(inner)
-            }
-            crate::error::ListDatasetLabelsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListDatasetLabelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDatasetLabelsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListDatasetLabelsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::ListDatasetLabelsErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListDatasetLabelsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListDatasetLabelsErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::ListDatasetLabelsErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::ListDatasetLabelsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListDatasetLabelsErrorKind::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+            crate::error::ListDatasetLabelsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListDatasetLabelsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFacesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFacesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFacesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1760,44 +969,21 @@ where
 impl From<crate::error::ListFacesError> for Error {
     fn from(err: crate::error::ListFacesError) -> Self {
         match err.kind {
-            crate::error::ListFacesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListFacesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::ListFacesErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::ListFacesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListFacesErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::ListFacesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListFacesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListFacesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListFacesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListFacesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::ListFacesErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListFacesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListFacesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::ListFacesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListFacesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListFacesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProjectPoliciesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListProjectPoliciesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProjectPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProjectPoliciesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1805,45 +991,21 @@ where
 impl From<crate::error::ListProjectPoliciesError> for Error {
     fn from(err: crate::error::ListProjectPoliciesError) -> Self {
         match err.kind {
-            crate::error::ListProjectPoliciesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListProjectPoliciesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::ListProjectPoliciesErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::ListProjectPoliciesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListProjectPoliciesErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::ListProjectPoliciesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListProjectPoliciesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListProjectPoliciesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListProjectPoliciesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListProjectPoliciesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::ListProjectPoliciesErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListProjectPoliciesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListProjectPoliciesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::ListProjectPoliciesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListProjectPoliciesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListProjectPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStreamProcessorsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListStreamProcessorsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStreamProcessorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStreamProcessorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1851,41 +1013,20 @@ where
 impl From<crate::error::ListStreamProcessorsError> for Error {
     fn from(err: crate::error::ListStreamProcessorsError) -> Self {
         match err.kind {
-            crate::error::ListStreamProcessorsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListStreamProcessorsErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::ListStreamProcessorsErrorKind::InvalidPaginationTokenException(inner) => {
-                Error::InvalidPaginationTokenException(inner)
-            }
-            crate::error::ListStreamProcessorsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListStreamProcessorsErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::ListStreamProcessorsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListStreamProcessorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListStreamProcessorsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListStreamProcessorsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::ListStreamProcessorsErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListStreamProcessorsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListStreamProcessorsErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::ListStreamProcessorsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListStreamProcessorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1893,41 +1034,20 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::ListTagsForResourceErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListTagsForResourceErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutProjectPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutProjectPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutProjectPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutProjectPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1935,57 +1055,25 @@ where
 impl From<crate::error::PutProjectPolicyError> for Error {
     fn from(err: crate::error::PutProjectPolicyError) -> Self {
         match err.kind {
-            crate::error::PutProjectPolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::InvalidPolicyRevisionIdException(inner) => {
-                Error::InvalidPolicyRevisionIdException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::PutProjectPolicyErrorKind::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::PutProjectPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutProjectPolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::PutProjectPolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::PutProjectPolicyErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::PutProjectPolicyErrorKind::InvalidPolicyRevisionIdException(inner) => Error::InvalidPolicyRevisionIdException(inner),
+            crate::error::PutProjectPolicyErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::PutProjectPolicyErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::error::PutProjectPolicyErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::PutProjectPolicyErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::error::PutProjectPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::PutProjectPolicyErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::PutProjectPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::PutProjectPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RecognizeCelebritiesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RecognizeCelebritiesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RecognizeCelebritiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RecognizeCelebritiesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1993,45 +1081,22 @@ where
 impl From<crate::error::RecognizeCelebritiesError> for Error {
     fn from(err: crate::error::RecognizeCelebritiesError) -> Self {
         match err.kind {
-            crate::error::RecognizeCelebritiesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::RecognizeCelebritiesErrorKind::ImageTooLargeException(inner) => {
-                Error::ImageTooLargeException(inner)
-            }
-            crate::error::RecognizeCelebritiesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::RecognizeCelebritiesErrorKind::InvalidImageFormatException(inner) => {
-                Error::InvalidImageFormatException(inner)
-            }
-            crate::error::RecognizeCelebritiesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::RecognizeCelebritiesErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::RecognizeCelebritiesErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::RecognizeCelebritiesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::RecognizeCelebritiesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RecognizeCelebritiesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::RecognizeCelebritiesErrorKind::ImageTooLargeException(inner) => Error::ImageTooLargeException(inner),
+            crate::error::RecognizeCelebritiesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::RecognizeCelebritiesErrorKind::InvalidImageFormatException(inner) => Error::InvalidImageFormatException(inner),
+            crate::error::RecognizeCelebritiesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::RecognizeCelebritiesErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::RecognizeCelebritiesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::RecognizeCelebritiesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::RecognizeCelebritiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchFacesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchFacesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchFacesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2039,41 +1104,20 @@ where
 impl From<crate::error::SearchFacesError> for Error {
     fn from(err: crate::error::SearchFacesError) -> Self {
         match err.kind {
-            crate::error::SearchFacesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::SearchFacesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::SearchFacesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SearchFacesErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::SearchFacesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SearchFacesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::SearchFacesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SearchFacesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::SearchFacesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::SearchFacesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::SearchFacesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::SearchFacesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::SearchFacesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::SearchFacesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchFacesByImageError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SearchFacesByImageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchFacesByImageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchFacesByImageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2081,51 +1125,23 @@ where
 impl From<crate::error::SearchFacesByImageError> for Error {
     fn from(err: crate::error::SearchFacesByImageError) -> Self {
         match err.kind {
-            crate::error::SearchFacesByImageErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::SearchFacesByImageErrorKind::ImageTooLargeException(inner) => {
-                Error::ImageTooLargeException(inner)
-            }
-            crate::error::SearchFacesByImageErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::SearchFacesByImageErrorKind::InvalidImageFormatException(inner) => {
-                Error::InvalidImageFormatException(inner)
-            }
-            crate::error::SearchFacesByImageErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::SearchFacesByImageErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::SearchFacesByImageErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::SearchFacesByImageErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SearchFacesByImageErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::SearchFacesByImageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SearchFacesByImageErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::SearchFacesByImageErrorKind::ImageTooLargeException(inner) => Error::ImageTooLargeException(inner),
+            crate::error::SearchFacesByImageErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::SearchFacesByImageErrorKind::InvalidImageFormatException(inner) => Error::InvalidImageFormatException(inner),
+            crate::error::SearchFacesByImageErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::SearchFacesByImageErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::SearchFacesByImageErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::SearchFacesByImageErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::SearchFacesByImageErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::SearchFacesByImageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartCelebrityRecognitionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartCelebrityRecognitionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartCelebrityRecognitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartCelebrityRecognitionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2146,18 +1162,10 @@ impl From<crate::error::StartCelebrityRecognitionError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartContentModerationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartContentModerationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartContentModerationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartContentModerationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2178,17 +1186,10 @@ impl From<crate::error::StartContentModerationError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartFaceDetectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartFaceDetectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartFaceDetectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartFaceDetectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2196,48 +1197,23 @@ where
 impl From<crate::error::StartFaceDetectionError> for Error {
     fn from(err: crate::error::StartFaceDetectionError) -> Self {
         match err.kind {
-            crate::error::StartFaceDetectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartFaceDetectionErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartFaceDetectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StartFaceDetectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartFaceDetectionErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::StartFaceDetectionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartFaceDetectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartFaceDetectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartFaceDetectionErrorKind::VideoTooLargeException(inner) => {
-                Error::VideoTooLargeException(inner)
-            }
-            crate::error::StartFaceDetectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartFaceDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartFaceDetectionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartFaceDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartFaceDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartFaceDetectionErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartFaceDetectionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartFaceDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartFaceDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartFaceDetectionErrorKind::VideoTooLargeException(inner) => Error::VideoTooLargeException(inner),
+            crate::error::StartFaceDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartFaceSearchError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartFaceSearchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartFaceSearchError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2245,53 +1221,24 @@ where
 impl From<crate::error::StartFaceSearchError> for Error {
     fn from(err: crate::error::StartFaceSearchError) -> Self {
         match err.kind {
-            crate::error::StartFaceSearchErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::IdempotentParameterMismatchException(inner) => {
-                Error::IdempotentParameterMismatchException(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartFaceSearchErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::VideoTooLargeException(inner) => {
-                Error::VideoTooLargeException(inner)
-            }
-            crate::error::StartFaceSearchErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartFaceSearchErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartFaceSearchErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartFaceSearchErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartFaceSearchErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartFaceSearchErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartFaceSearchErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartFaceSearchErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartFaceSearchErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartFaceSearchErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartFaceSearchErrorKind::VideoTooLargeException(inner) => Error::VideoTooLargeException(inner),
+            crate::error::StartFaceSearchErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartLabelDetectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartLabelDetectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartLabelDetectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartLabelDetectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2299,50 +1246,23 @@ where
 impl From<crate::error::StartLabelDetectionError> for Error {
     fn from(err: crate::error::StartLabelDetectionError) -> Self {
         match err.kind {
-            crate::error::StartLabelDetectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartLabelDetectionErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartLabelDetectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StartLabelDetectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartLabelDetectionErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::StartLabelDetectionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartLabelDetectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartLabelDetectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartLabelDetectionErrorKind::VideoTooLargeException(inner) => {
-                Error::VideoTooLargeException(inner)
-            }
-            crate::error::StartLabelDetectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartLabelDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartLabelDetectionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartLabelDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartLabelDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartLabelDetectionErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartLabelDetectionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartLabelDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartLabelDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartLabelDetectionErrorKind::VideoTooLargeException(inner) => Error::VideoTooLargeException(inner),
+            crate::error::StartLabelDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartPersonTrackingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartPersonTrackingError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartPersonTrackingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartPersonTrackingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2350,50 +1270,23 @@ where
 impl From<crate::error::StartPersonTrackingError> for Error {
     fn from(err: crate::error::StartPersonTrackingError) -> Self {
         match err.kind {
-            crate::error::StartPersonTrackingErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartPersonTrackingErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartPersonTrackingErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StartPersonTrackingErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartPersonTrackingErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::StartPersonTrackingErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartPersonTrackingErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartPersonTrackingErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartPersonTrackingErrorKind::VideoTooLargeException(inner) => {
-                Error::VideoTooLargeException(inner)
-            }
-            crate::error::StartPersonTrackingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartPersonTrackingErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartPersonTrackingErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartPersonTrackingErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartPersonTrackingErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartPersonTrackingErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartPersonTrackingErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartPersonTrackingErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartPersonTrackingErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartPersonTrackingErrorKind::VideoTooLargeException(inner) => Error::VideoTooLargeException(inner),
+            crate::error::StartPersonTrackingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartProjectVersionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartProjectVersionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartProjectVersionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartProjectVersionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2401,48 +1294,22 @@ where
 impl From<crate::error::StartProjectVersionError> for Error {
     fn from(err: crate::error::StartProjectVersionError) -> Self {
         match err.kind {
-            crate::error::StartProjectVersionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartProjectVersionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StartProjectVersionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartProjectVersionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartProjectVersionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartProjectVersionErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::StartProjectVersionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartProjectVersionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartProjectVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartProjectVersionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartProjectVersionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartProjectVersionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartProjectVersionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartProjectVersionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartProjectVersionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::StartProjectVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartProjectVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartProjectVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSegmentDetectionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartSegmentDetectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSegmentDetectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartSegmentDetectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2463,18 +1330,10 @@ impl From<crate::error::StartSegmentDetectionError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartStreamProcessorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartStreamProcessorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartStreamProcessorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartStreamProcessorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2482,44 +1341,21 @@ where
 impl From<crate::error::StartStreamProcessorError> for Error {
     fn from(err: crate::error::StartStreamProcessorError) -> Self {
         match err.kind {
-            crate::error::StartStreamProcessorErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartStreamProcessorErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StartStreamProcessorErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartStreamProcessorErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartStreamProcessorErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::StartStreamProcessorErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartStreamProcessorErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartStreamProcessorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartStreamProcessorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartStreamProcessorErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartStreamProcessorErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartStreamProcessorErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartStreamProcessorErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::StartStreamProcessorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartStreamProcessorErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartStreamProcessorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartTextDetectionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartTextDetectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartTextDetectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartTextDetectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2527,50 +1363,23 @@ where
 impl From<crate::error::StartTextDetectionError> for Error {
     fn from(err: crate::error::StartTextDetectionError) -> Self {
         match err.kind {
-            crate::error::StartTextDetectionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartTextDetectionErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartTextDetectionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StartTextDetectionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartTextDetectionErrorKind::InvalidS3ObjectException(inner) => {
-                Error::InvalidS3ObjectException(inner)
-            }
-            crate::error::StartTextDetectionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartTextDetectionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartTextDetectionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartTextDetectionErrorKind::VideoTooLargeException(inner) => {
-                Error::VideoTooLargeException(inner)
-            }
-            crate::error::StartTextDetectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartTextDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartTextDetectionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartTextDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartTextDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartTextDetectionErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartTextDetectionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartTextDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartTextDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartTextDetectionErrorKind::VideoTooLargeException(inner) => Error::VideoTooLargeException(inner),
+            crate::error::StartTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopProjectVersionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopProjectVersionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopProjectVersionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopProjectVersionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2578,44 +1387,21 @@ where
 impl From<crate::error::StopProjectVersionError> for Error {
     fn from(err: crate::error::StopProjectVersionError) -> Self {
         match err.kind {
-            crate::error::StopProjectVersionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StopProjectVersionErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StopProjectVersionErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StopProjectVersionErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StopProjectVersionErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::StopProjectVersionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopProjectVersionErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StopProjectVersionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopProjectVersionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StopProjectVersionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StopProjectVersionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StopProjectVersionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StopProjectVersionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::StopProjectVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StopProjectVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StopProjectVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopStreamProcessorError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopStreamProcessorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopStreamProcessorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopStreamProcessorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2623,42 +1409,21 @@ where
 impl From<crate::error::StopStreamProcessorError> for Error {
     fn from(err: crate::error::StopStreamProcessorError) -> Self {
         match err.kind {
-            crate::error::StopStreamProcessorErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StopStreamProcessorErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::StopStreamProcessorErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StopStreamProcessorErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StopStreamProcessorErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::StopStreamProcessorErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StopStreamProcessorErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StopStreamProcessorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopStreamProcessorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StopStreamProcessorErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StopStreamProcessorErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StopStreamProcessorErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StopStreamProcessorErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::StopStreamProcessorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StopStreamProcessorErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StopStreamProcessorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2666,42 +1431,21 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::TagResourceErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::TagResourceErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::TagResourceErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::TagResourceErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::TagResourceErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::TagResourceErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::TagResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2709,42 +1453,20 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ProvisionedThroughputExceededException(inner) => {
-                Error::ProvisionedThroughputExceededException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UntagResourceErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::UntagResourceErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDatasetEntriesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateDatasetEntriesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDatasetEntriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDatasetEntriesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2752,48 +1474,22 @@ where
 impl From<crate::error::UpdateDatasetEntriesError> for Error {
     fn from(err: crate::error::UpdateDatasetEntriesError) -> Self {
         match err.kind {
-            crate::error::UpdateDatasetEntriesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateDatasetEntriesErrorKind::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::UpdateDatasetEntriesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateDatasetEntriesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateDatasetEntriesErrorKind::ProvisionedThroughputExceededException(
-                inner,
-            ) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::UpdateDatasetEntriesErrorKind::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::UpdateDatasetEntriesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateDatasetEntriesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UpdateDatasetEntriesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateDatasetEntriesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateDatasetEntriesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::UpdateDatasetEntriesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::UpdateDatasetEntriesErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::UpdateDatasetEntriesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::UpdateDatasetEntriesErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::UpdateDatasetEntriesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateDatasetEntriesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateDatasetEntriesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStreamProcessorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateStreamProcessorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStreamProcessorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateStreamProcessorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2812,3 +1508,4 @@ impl From<crate::error::UpdateStreamProcessorError> for Error {
     }
 }
 impl std::error::Error for Error {}
+

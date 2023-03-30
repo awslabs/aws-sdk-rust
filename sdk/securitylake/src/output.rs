@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriptionNotificationConfigurationOutput {
+pub struct UpdateSubscriptionNotificationConfigurationOutput  {
     /// <p>Returns the ARN of the queue.</p>
     #[doc(hidden)]
     pub queue_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSubscriptionNotificationConfigurationOutput {
     /// <p>Returns the ARN of the queue.</p>
-    pub fn queue_arn(&self) -> std::option::Option<&str> {
+    pub fn queue_arn(&self) -> std::option::Option<& str> {
         self.queue_arn.as_deref()
     }
 }
 /// See [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
 pub mod update_subscription_notification_configuration_output {
-
+    
     /// A builder for [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,21 +29,22 @@ pub mod update_subscription_notification_configuration_output {
         }
         /// <p>Returns the ARN of the queue.</p>
         pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_arn = input;
-            self
+            self.queue_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateSubscriptionNotificationConfigurationOutput {
             crate::output::UpdateSubscriptionNotificationConfigurationOutput {
-                queue_arn: self.queue_arn,
+                queue_arn: self.queue_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSubscriptionNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
-    pub fn builder() -> crate::output::update_subscription_notification_configuration_output::Builder
-    {
+    pub fn builder() -> crate::output::update_subscription_notification_configuration_output::Builder {
         crate::output::update_subscription_notification_configuration_output::Builder::default()
     }
 }
@@ -51,20 +52,20 @@ impl UpdateSubscriptionNotificationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriberOutput {
+pub struct UpdateSubscriberOutput  {
     /// <p>The account of the subscriber.</p>
     #[doc(hidden)]
     pub subscriber: std::option::Option<crate::model::SubscriberResource>,
 }
 impl UpdateSubscriberOutput {
     /// <p>The account of the subscriber.</p>
-    pub fn subscriber(&self) -> std::option::Option<&crate::model::SubscriberResource> {
+    pub fn subscriber(&self) -> std::option::Option<& crate::model::SubscriberResource> {
         self.subscriber.as_ref()
     }
 }
 /// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
 pub mod update_subscriber_output {
-
+    
     /// A builder for [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,20 +78,19 @@ pub mod update_subscriber_output {
             self
         }
         /// <p>The account of the subscriber.</p>
-        pub fn set_subscriber(
-            mut self,
-            input: std::option::Option<crate::model::SubscriberResource>,
-        ) -> Self {
-            self.subscriber = input;
-            self
+        pub fn set_subscriber(mut self, input: std::option::Option<crate::model::SubscriberResource>) -> Self {
+            self.subscriber = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
         pub fn build(self) -> crate::output::UpdateSubscriberOutput {
             crate::output::UpdateSubscriberOutput {
-                subscriber: self.subscriber,
+                subscriber: self.subscriber
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
@@ -102,19 +102,24 @@ impl UpdateSubscriberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDatalakeExceptionsSubscriptionOutput {}
+pub struct UpdateDatalakeExceptionsSubscriptionOutput  {
+}
 /// See [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
 pub mod update_datalake_exceptions_subscription_output {
-
+    
     /// A builder for [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
         pub fn build(self) -> crate::output::UpdateDatalakeExceptionsSubscriptionOutput {
-            crate::output::UpdateDatalakeExceptionsSubscriptionOutput {}
+            crate::output::UpdateDatalakeExceptionsSubscriptionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDatalakeExceptionsSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
@@ -126,19 +131,24 @@ impl UpdateDatalakeExceptionsSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDatalakeExceptionsExpiryOutput {}
+pub struct UpdateDatalakeExceptionsExpiryOutput  {
+}
 /// See [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
 pub mod update_datalake_exceptions_expiry_output {
-
+    
     /// A builder for [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
         pub fn build(self) -> crate::output::UpdateDatalakeExceptionsExpiryOutput {
-            crate::output::UpdateDatalakeExceptionsExpiryOutput {}
+            crate::output::UpdateDatalakeExceptionsExpiryOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDatalakeExceptionsExpiryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
@@ -150,19 +160,24 @@ impl UpdateDatalakeExceptionsExpiryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDatalakeOutput {}
+pub struct UpdateDatalakeOutput  {
+}
 /// See [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
 pub mod update_datalake_output {
-
+    
     /// A builder for [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
         pub fn build(self) -> crate::output::UpdateDatalakeOutput {
-            crate::output::UpdateDatalakeOutput {}
+            crate::output::UpdateDatalakeOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDatalakeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
@@ -174,7 +189,7 @@ impl UpdateDatalakeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscribersOutput {
+pub struct ListSubscribersOutput  {
     /// <p>The subscribers available for the specified Security Lake account ID.</p>
     #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::SubscriberResource>>,
@@ -184,22 +199,21 @@ pub struct ListSubscribersOutput {
 }
 impl ListSubscribersOutput {
     /// <p>The subscribers available for the specified Security Lake account ID.</p>
-    pub fn subscribers(&self) -> std::option::Option<&[crate::model::SubscriberResource]> {
+    pub fn subscribers(&self) -> std::option::Option<& [crate::model::SubscriberResource]> {
         self.subscribers.as_deref()
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
 pub mod list_subscribers_output {
-
+    
     /// A builder for [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) subscribers:
-            std::option::Option<std::vec::Vec<crate::model::SubscriberResource>>,
+        pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::SubscriberResource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -210,17 +224,13 @@ pub mod list_subscribers_output {
         /// <p>The subscribers available for the specified Security Lake account ID.</p>
         pub fn subscribers(mut self, input: crate::model::SubscriberResource) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input);
-            self.subscribers = Some(v);
-            self
+                            v.push(input);
+                            self.subscribers = Some(v);
+                            self
         }
         /// <p>The subscribers available for the specified Security Lake account ID.</p>
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubscriberResource>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
+        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubscriberResource>>) -> Self {
+            self.subscribers = input; self
         }
         /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -229,17 +239,20 @@ pub mod list_subscribers_output {
         }
         /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
         pub fn build(self) -> crate::output::ListSubscribersOutput {
             crate::output::ListSubscribersOutput {
-                subscribers: self.subscribers,
-                next_token: self.next_token,
+                subscribers: self.subscribers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSubscribersOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
@@ -251,55 +264,31 @@ impl ListSubscribersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLogSourcesOutput {
+pub struct ListLogSourcesOutput  {
     /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
     #[doc(hidden)]
-    pub region_source_types_accounts_list: std::option::Option<
-        std::vec::Vec<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        >,
-    >,
+    pub region_source_types_accounts_list: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>>,
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogSourcesOutput {
     /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
-    pub fn region_source_types_accounts_list(
-        &self,
-    ) -> std::option::Option<
-        &[std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >],
-    > {
+    pub fn region_source_types_accounts_list(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>]> {
         self.region_source_types_accounts_list.as_deref()
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
 pub mod list_log_sources_output {
-
+    
     /// A builder for [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) region_source_types_accounts_list: std::option::Option<
-            std::vec::Vec<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::collections::HashMap<
-                        std::string::String,
-                        std::vec::Vec<std::string::String>,
-                    >,
-                >,
-            >,
-        >,
+        pub(crate) region_source_types_accounts_list: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -308,35 +297,15 @@ pub mod list_log_sources_output {
         /// To override the contents of this collection use [`set_region_source_types_accounts_list`](Self::set_region_source_types_accounts_list).
         ///
         /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
-        pub fn region_source_types_accounts_list(
-            mut self,
-            input: std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        ) -> Self {
+        pub fn region_source_types_accounts_list(mut self, input: std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
             let mut v = self.region_source_types_accounts_list.unwrap_or_default();
-            v.push(input);
-            self.region_source_types_accounts_list = Some(v);
-            self
+                            v.push(input);
+                            self.region_source_types_accounts_list = Some(v);
+                            self
         }
         /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
-        pub fn set_region_source_types_accounts_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<
-                    std::collections::HashMap<
-                        std::string::String,
-                        std::collections::HashMap<
-                            std::string::String,
-                            std::vec::Vec<std::string::String>,
-                        >,
-                    >,
-                >,
-            >,
-        ) -> Self {
-            self.region_source_types_accounts_list = input;
-            self
+        pub fn set_region_source_types_accounts_list(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>>) -> Self {
+            self.region_source_types_accounts_list = input; self
         }
         /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -345,17 +314,20 @@ pub mod list_log_sources_output {
         }
         /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
         pub fn build(self) -> crate::output::ListLogSourcesOutput {
             crate::output::ListLogSourcesOutput {
-                region_source_types_accounts_list: self.region_source_types_accounts_list,
-                next_token: self.next_token,
+                region_source_types_accounts_list: self.region_source_types_accounts_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLogSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
@@ -367,34 +339,33 @@ impl ListLogSourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatalakeExceptionsOutput {
+pub struct ListDatalakeExceptionsOutput  {
     /// <p>Lists the failures that cannot be retried in the current Region.</p>
     #[doc(hidden)]
     pub non_retryable_failures: std::option::Option<std::vec::Vec<crate::model::FailuresResponse>>,
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatalakeExceptionsOutput {
     /// <p>Lists the failures that cannot be retried in the current Region.</p>
-    pub fn non_retryable_failures(&self) -> std::option::Option<&[crate::model::FailuresResponse]> {
+    pub fn non_retryable_failures(&self) -> std::option::Option<& [crate::model::FailuresResponse]> {
         self.non_retryable_failures.as_deref()
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
 pub mod list_datalake_exceptions_output {
-
+    
     /// A builder for [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) non_retryable_failures:
-            std::option::Option<std::vec::Vec<crate::model::FailuresResponse>>,
+        pub(crate) non_retryable_failures: std::option::Option<std::vec::Vec<crate::model::FailuresResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -405,38 +376,37 @@ pub mod list_datalake_exceptions_output {
         /// <p>Lists the failures that cannot be retried in the current Region.</p>
         pub fn non_retryable_failures(mut self, input: crate::model::FailuresResponse) -> Self {
             let mut v = self.non_retryable_failures.unwrap_or_default();
-            v.push(input);
-            self.non_retryable_failures = Some(v);
-            self
+                            v.push(input);
+                            self.non_retryable_failures = Some(v);
+                            self
         }
         /// <p>Lists the failures that cannot be retried in the current Region.</p>
-        pub fn set_non_retryable_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailuresResponse>>,
-        ) -> Self {
-            self.non_retryable_failures = input;
-            self
+        pub fn set_non_retryable_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailuresResponse>>) -> Self {
+            self.non_retryable_failures = input; self
         }
-        /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
         /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
         /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
         pub fn build(self) -> crate::output::ListDatalakeExceptionsOutput {
             crate::output::ListDatalakeExceptionsOutput {
-                non_retryable_failures: self.non_retryable_failures,
-                next_token: self.next_token,
+                non_retryable_failures: self.non_retryable_failures
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDatalakeExceptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
@@ -448,20 +418,20 @@ impl ListDatalakeExceptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubscriberOutput {
+pub struct GetSubscriberOutput  {
     /// <p>The subscription information for the specified subscription ID.</p>
     #[doc(hidden)]
     pub subscriber: std::option::Option<crate::model::SubscriberResource>,
 }
 impl GetSubscriberOutput {
     /// <p>The subscription information for the specified subscription ID.</p>
-    pub fn subscriber(&self) -> std::option::Option<&crate::model::SubscriberResource> {
+    pub fn subscriber(&self) -> std::option::Option<& crate::model::SubscriberResource> {
         self.subscriber.as_ref()
     }
 }
 /// See [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
 pub mod get_subscriber_output {
-
+    
     /// A builder for [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -474,20 +444,19 @@ pub mod get_subscriber_output {
             self
         }
         /// <p>The subscription information for the specified subscription ID.</p>
-        pub fn set_subscriber(
-            mut self,
-            input: std::option::Option<crate::model::SubscriberResource>,
-        ) -> Self {
-            self.subscriber = input;
-            self
+        pub fn set_subscriber(mut self, input: std::option::Option<crate::model::SubscriberResource>) -> Self {
+            self.subscriber = input; self
         }
         /// Consumes the builder and constructs a [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
         pub fn build(self) -> crate::output::GetSubscriberOutput {
             crate::output::GetSubscriberOutput {
-                subscriber: self.subscriber,
+                subscriber: self.subscriber
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
@@ -499,34 +468,33 @@ impl GetSubscriberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeStatusOutput {
+pub struct GetDatalakeStatusOutput  {
     /// <p>The list of enabled accounts and enabled sources.</p>
     #[doc(hidden)]
     pub account_sources_list: std::option::Option<std::vec::Vec<crate::model::AccountSources>>,
-    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDatalakeStatusOutput {
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub fn account_sources_list(&self) -> std::option::Option<&[crate::model::AccountSources]> {
+    pub fn account_sources_list(&self) -> std::option::Option<& [crate::model::AccountSources]> {
         self.account_sources_list.as_deref()
     }
-    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
 pub mod get_datalake_status_output {
-
+    
     /// A builder for [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) account_sources_list:
-            std::option::Option<std::vec::Vec<crate::model::AccountSources>>,
+        pub(crate) account_sources_list: std::option::Option<std::vec::Vec<crate::model::AccountSources>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -537,38 +505,37 @@ pub mod get_datalake_status_output {
         /// <p>The list of enabled accounts and enabled sources.</p>
         pub fn account_sources_list(mut self, input: crate::model::AccountSources) -> Self {
             let mut v = self.account_sources_list.unwrap_or_default();
-            v.push(input);
-            self.account_sources_list = Some(v);
-            self
+                            v.push(input);
+                            self.account_sources_list = Some(v);
+                            self
         }
         /// <p>The list of enabled accounts and enabled sources.</p>
-        pub fn set_account_sources_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountSources>>,
-        ) -> Self {
-            self.account_sources_list = input;
-            self
+        pub fn set_account_sources_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountSources>>) -> Self {
+            self.account_sources_list = input; self
         }
-        /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
         /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
         /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
         pub fn build(self) -> crate::output::GetDatalakeStatusOutput {
             crate::output::GetDatalakeStatusOutput {
-                account_sources_list: self.account_sources_list,
-                next_token: self.next_token,
+                account_sources_list: self.account_sources_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDatalakeStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
@@ -580,53 +547,45 @@ impl GetDatalakeStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeExceptionsSubscriptionOutput {
+pub struct GetDatalakeExceptionsSubscriptionOutput  {
     /// <p>Retrieves the exception notification subscription information.</p>
     #[doc(hidden)]
-    pub protocol_and_notification_endpoint:
-        std::option::Option<crate::model::ProtocolAndNotificationEndpoint>,
+    pub protocol_and_notification_endpoint: std::option::Option<crate::model::ProtocolAndNotificationEndpoint>,
 }
 impl GetDatalakeExceptionsSubscriptionOutput {
     /// <p>Retrieves the exception notification subscription information.</p>
-    pub fn protocol_and_notification_endpoint(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtocolAndNotificationEndpoint> {
+    pub fn protocol_and_notification_endpoint(&self) -> std::option::Option<& crate::model::ProtocolAndNotificationEndpoint> {
         self.protocol_and_notification_endpoint.as_ref()
     }
 }
 /// See [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
 pub mod get_datalake_exceptions_subscription_output {
-
+    
     /// A builder for [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) protocol_and_notification_endpoint:
-            std::option::Option<crate::model::ProtocolAndNotificationEndpoint>,
+        pub(crate) protocol_and_notification_endpoint: std::option::Option<crate::model::ProtocolAndNotificationEndpoint>,
     }
     impl Builder {
         /// <p>Retrieves the exception notification subscription information.</p>
-        pub fn protocol_and_notification_endpoint(
-            mut self,
-            input: crate::model::ProtocolAndNotificationEndpoint,
-        ) -> Self {
+        pub fn protocol_and_notification_endpoint(mut self, input: crate::model::ProtocolAndNotificationEndpoint) -> Self {
             self.protocol_and_notification_endpoint = Some(input);
             self
         }
         /// <p>Retrieves the exception notification subscription information.</p>
-        pub fn set_protocol_and_notification_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::ProtocolAndNotificationEndpoint>,
-        ) -> Self {
-            self.protocol_and_notification_endpoint = input;
-            self
+        pub fn set_protocol_and_notification_endpoint(mut self, input: std::option::Option<crate::model::ProtocolAndNotificationEndpoint>) -> Self {
+            self.protocol_and_notification_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
         pub fn build(self) -> crate::output::GetDatalakeExceptionsSubscriptionOutput {
             crate::output::GetDatalakeExceptionsSubscriptionOutput {
-                protocol_and_notification_endpoint: self.protocol_and_notification_endpoint,
+                protocol_and_notification_endpoint: self.protocol_and_notification_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDatalakeExceptionsSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
@@ -638,7 +597,7 @@ impl GetDatalakeExceptionsSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeExceptionsExpiryOutput {
+pub struct GetDatalakeExceptionsExpiryOutput  {
     /// <p>The expiration period and time-to-live (TTL).</p>
     #[doc(hidden)]
     pub exception_message_expiry: std::option::Option<i64>,
@@ -651,7 +610,7 @@ impl GetDatalakeExceptionsExpiryOutput {
 }
 /// See [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
 pub mod get_datalake_exceptions_expiry_output {
-
+    
     /// A builder for [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -665,16 +624,18 @@ pub mod get_datalake_exceptions_expiry_output {
         }
         /// <p>The expiration period and time-to-live (TTL).</p>
         pub fn set_exception_message_expiry(mut self, input: std::option::Option<i64>) -> Self {
-            self.exception_message_expiry = input;
-            self
+            self.exception_message_expiry = input; self
         }
         /// Consumes the builder and constructs a [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
         pub fn build(self) -> crate::output::GetDatalakeExceptionsExpiryOutput {
             crate::output::GetDatalakeExceptionsExpiryOutput {
-                exception_message_expiry: self.exception_message_expiry,
+                exception_message_expiry: self.exception_message_expiry
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDatalakeExceptionsExpiryOutput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
@@ -686,28 +647,24 @@ impl GetDatalakeExceptionsExpiryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeAutoEnableOutput {
+pub struct GetDatalakeAutoEnableOutput  {
     /// <p>The configuration for new accounts.</p>
     #[doc(hidden)]
-    pub auto_enable_new_accounts:
-        std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
+    pub auto_enable_new_accounts: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
 }
 impl GetDatalakeAutoEnableOutput {
     /// <p>The configuration for new accounts.</p>
-    pub fn auto_enable_new_accounts(
-        &self,
-    ) -> std::option::Option<&[crate::model::AutoEnableNewRegionConfiguration]> {
+    pub fn auto_enable_new_accounts(&self) -> std::option::Option<& [crate::model::AutoEnableNewRegionConfiguration]> {
         self.auto_enable_new_accounts.as_deref()
     }
 }
 /// See [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
 pub mod get_datalake_auto_enable_output {
-
+    
     /// A builder for [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) auto_enable_new_accounts:
-            std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
+        pub(crate) auto_enable_new_accounts: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
     }
     impl Builder {
         /// Appends an item to `auto_enable_new_accounts`.
@@ -715,32 +672,26 @@ pub mod get_datalake_auto_enable_output {
         /// To override the contents of this collection use [`set_auto_enable_new_accounts`](Self::set_auto_enable_new_accounts).
         ///
         /// <p>The configuration for new accounts.</p>
-        pub fn auto_enable_new_accounts(
-            mut self,
-            input: crate::model::AutoEnableNewRegionConfiguration,
-        ) -> Self {
+        pub fn auto_enable_new_accounts(mut self, input: crate::model::AutoEnableNewRegionConfiguration) -> Self {
             let mut v = self.auto_enable_new_accounts.unwrap_or_default();
-            v.push(input);
-            self.auto_enable_new_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.auto_enable_new_accounts = Some(v);
+                            self
         }
         /// <p>The configuration for new accounts.</p>
-        pub fn set_auto_enable_new_accounts(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>,
-            >,
-        ) -> Self {
-            self.auto_enable_new_accounts = input;
-            self
+        pub fn set_auto_enable_new_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>) -> Self {
+            self.auto_enable_new_accounts = input; self
         }
         /// Consumes the builder and constructs a [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
         pub fn build(self) -> crate::output::GetDatalakeAutoEnableOutput {
             crate::output::GetDatalakeAutoEnableOutput {
-                auto_enable_new_accounts: self.auto_enable_new_accounts,
+                auto_enable_new_accounts: self.auto_enable_new_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDatalakeAutoEnableOutput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
@@ -752,35 +703,24 @@ impl GetDatalakeAutoEnableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeOutput {
+pub struct GetDatalakeOutput  {
     /// <p>Retrieves the Security Lake configuration object. </p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<
-        std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>,
-    >,
+    pub configurations: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>>,
 }
 impl GetDatalakeOutput {
     /// <p>Retrieves the Security Lake configuration object. </p>
-    pub fn configurations(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>,
-    > {
+    pub fn configurations(&self) -> std::option::Option<& std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>> {
         self.configurations.as_ref()
     }
 }
 /// See [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
 pub mod get_datalake_output {
-
+    
     /// A builder for [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configurations: std::option::Option<
-            std::collections::HashMap<
-                crate::model::Region,
-                crate::model::LakeConfigurationResponse,
-            >,
-        >,
+        pub(crate) configurations: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>>,
     }
     impl Builder {
         /// Adds a key-value pair to `configurations`.
@@ -788,36 +728,26 @@ pub mod get_datalake_output {
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>Retrieves the Security Lake configuration object. </p>
-        pub fn configurations(
-            mut self,
-            k: crate::model::Region,
-            v: crate::model::LakeConfigurationResponse,
-        ) -> Self {
+        pub fn configurations(mut self, k: crate::model::Region, v: crate::model::LakeConfigurationResponse) -> Self {
             let mut hash_map = self.configurations.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.configurations = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.configurations = Some(hash_map);
+                            self
         }
         /// <p>Retrieves the Security Lake configuration object. </p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::Region,
-                    crate::model::LakeConfigurationResponse,
-                >,
-            >,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>>) -> Self {
+            self.configurations = input; self
         }
         /// Consumes the builder and constructs a [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
         pub fn build(self) -> crate::output::GetDatalakeOutput {
             crate::output::GetDatalakeOutput {
-                configurations: self.configurations,
+                configurations: self.configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDatalakeOutput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
@@ -829,24 +759,28 @@ impl GetDatalakeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriptionNotificationConfigurationOutput {}
+pub struct DeleteSubscriptionNotificationConfigurationOutput  {
+}
 /// See [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
 pub mod delete_subscription_notification_configuration_output {
-
+    
     /// A builder for [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteSubscriptionNotificationConfigurationOutput {
-            crate::output::DeleteSubscriptionNotificationConfigurationOutput {}
+            crate::output::DeleteSubscriptionNotificationConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSubscriptionNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
-    pub fn builder() -> crate::output::delete_subscription_notification_configuration_output::Builder
-    {
+    pub fn builder() -> crate::output::delete_subscription_notification_configuration_output::Builder {
         crate::output::delete_subscription_notification_configuration_output::Builder::default()
     }
 }
@@ -854,19 +788,24 @@ impl DeleteSubscriptionNotificationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriberOutput {}
+pub struct DeleteSubscriberOutput  {
+}
 /// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
 pub mod delete_subscriber_output {
-
+    
     /// A builder for [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
         pub fn build(self) -> crate::output::DeleteSubscriberOutput {
-            crate::output::DeleteSubscriberOutput {}
+            crate::output::DeleteSubscriberOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
@@ -878,20 +817,20 @@ impl DeleteSubscriberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatalakeExceptionsSubscriptionOutput {
+pub struct DeleteDatalakeExceptionsSubscriptionOutput  {
     /// <p>Retrieves the status of the delete Security Lake operation for an account. </p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteDatalakeExceptionsSubscriptionOutput {
     /// <p>Retrieves the status of the delete Security Lake operation for an account. </p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
 pub mod delete_datalake_exceptions_subscription_output {
-
+    
     /// A builder for [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -905,16 +844,18 @@ pub mod delete_datalake_exceptions_subscription_output {
         }
         /// <p>Retrieves the status of the delete Security Lake operation for an account. </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteDatalakeExceptionsSubscriptionOutput {
             crate::output::DeleteDatalakeExceptionsSubscriptionOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDatalakeExceptionsSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
@@ -926,19 +867,24 @@ impl DeleteDatalakeExceptionsSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatalakeDelegatedAdminOutput {}
+pub struct DeleteDatalakeDelegatedAdminOutput  {
+}
 /// See [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
 pub mod delete_datalake_delegated_admin_output {
-
+    
     /// A builder for [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
         pub fn build(self) -> crate::output::DeleteDatalakeDelegatedAdminOutput {
-            crate::output::DeleteDatalakeDelegatedAdminOutput {}
+            crate::output::DeleteDatalakeDelegatedAdminOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDatalakeDelegatedAdminOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
@@ -950,19 +896,24 @@ impl DeleteDatalakeDelegatedAdminOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatalakeAutoEnableOutput {}
+pub struct DeleteDatalakeAutoEnableOutput  {
+}
 /// See [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
 pub mod delete_datalake_auto_enable_output {
-
+    
     /// A builder for [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
         pub fn build(self) -> crate::output::DeleteDatalakeAutoEnableOutput {
-            crate::output::DeleteDatalakeAutoEnableOutput {}
+            crate::output::DeleteDatalakeAutoEnableOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDatalakeAutoEnableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
@@ -974,19 +925,24 @@ impl DeleteDatalakeAutoEnableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatalakeOutput {}
+pub struct DeleteDatalakeOutput  {
+}
 /// See [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
 pub mod delete_datalake_output {
-
+    
     /// A builder for [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
         pub fn build(self) -> crate::output::DeleteDatalakeOutput {
-            crate::output::DeleteDatalakeOutput {}
+            crate::output::DeleteDatalakeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDatalakeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
@@ -998,20 +954,20 @@ impl DeleteDatalakeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomLogSourceOutput {
+pub struct DeleteCustomLogSourceOutput  {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
     #[doc(hidden)]
     pub custom_data_location: std::option::Option<std::string::String>,
 }
 impl DeleteCustomLogSourceOutput {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn custom_data_location(&self) -> std::option::Option<&str> {
+    pub fn custom_data_location(&self) -> std::option::Option<& str> {
         self.custom_data_location.as_deref()
     }
 }
 /// See [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
 pub mod delete_custom_log_source_output {
-
+    
     /// A builder for [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1024,20 +980,19 @@ pub mod delete_custom_log_source_output {
             self
         }
         /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-        pub fn set_custom_data_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_data_location = input;
-            self
+        pub fn set_custom_data_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_data_location = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
         pub fn build(self) -> crate::output::DeleteCustomLogSourceOutput {
             crate::output::DeleteCustomLogSourceOutput {
-                custom_data_location: self.custom_data_location,
+                custom_data_location: self.custom_data_location
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCustomLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
@@ -1049,7 +1004,7 @@ impl DeleteCustomLogSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAwsLogSourceOutput {
+pub struct DeleteAwsLogSourceOutput  {
     /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
     #[doc(hidden)]
     pub processing: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1059,17 +1014,17 @@ pub struct DeleteAwsLogSourceOutput {
 }
 impl DeleteAwsLogSourceOutput {
     /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
-    pub fn processing(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn processing(&self) -> std::option::Option<& [std::string::String]> {
         self.processing.as_deref()
     }
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-    pub fn failed(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failed(&self) -> std::option::Option<& [std::string::String]> {
         self.failed.as_deref()
     }
 }
 /// See [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
 pub mod delete_aws_log_source_output {
-
+    
     /// A builder for [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1084,17 +1039,13 @@ pub mod delete_aws_log_source_output {
         /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
         pub fn processing(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.processing.unwrap_or_default();
-            v.push(input.into());
-            self.processing = Some(v);
-            self
+                            v.push(input.into());
+                            self.processing = Some(v);
+                            self
         }
         /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
-        pub fn set_processing(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.processing = input;
-            self
+        pub fn set_processing(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.processing = input; self
         }
         /// Appends an item to `failed`.
         ///
@@ -1103,26 +1054,26 @@ pub mod delete_aws_log_source_output {
         /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
         pub fn failed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
-            self.failed = Some(v);
-            self
+                            v.push(input.into());
+                            self.failed = Some(v);
+                            self
         }
         /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
         pub fn build(self) -> crate::output::DeleteAwsLogSourceOutput {
             crate::output::DeleteAwsLogSourceOutput {
-                processing: self.processing,
-                failed: self.failed,
+                processing: self.processing
+                ,
+                failed: self.failed
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAwsLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
@@ -1134,20 +1085,20 @@ impl DeleteAwsLogSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriptionNotificationConfigurationOutput {
+pub struct CreateSubscriptionNotificationConfigurationOutput  {
     /// <p>Returns the Amazon Resource Name (ARN) of the queue.</p>
     #[doc(hidden)]
     pub queue_arn: std::option::Option<std::string::String>,
 }
 impl CreateSubscriptionNotificationConfigurationOutput {
     /// <p>Returns the Amazon Resource Name (ARN) of the queue.</p>
-    pub fn queue_arn(&self) -> std::option::Option<&str> {
+    pub fn queue_arn(&self) -> std::option::Option<& str> {
         self.queue_arn.as_deref()
     }
 }
 /// See [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
 pub mod create_subscription_notification_configuration_output {
-
+    
     /// A builder for [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1161,21 +1112,22 @@ pub mod create_subscription_notification_configuration_output {
         }
         /// <p>Returns the Amazon Resource Name (ARN) of the queue.</p>
         pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_arn = input;
-            self
+            self.queue_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::CreateSubscriptionNotificationConfigurationOutput {
             crate::output::CreateSubscriptionNotificationConfigurationOutput {
-                queue_arn: self.queue_arn,
+                queue_arn: self.queue_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSubscriptionNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
-    pub fn builder() -> crate::output::create_subscription_notification_configuration_output::Builder
-    {
+    pub fn builder() -> crate::output::create_subscription_notification_configuration_output::Builder {
         crate::output::create_subscription_notification_configuration_output::Builder::default()
     }
 }
@@ -1183,7 +1135,7 @@ impl CreateSubscriptionNotificationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriberOutput {
+pub struct CreateSubscriberOutput  {
     /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
     #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
@@ -1199,25 +1151,25 @@ pub struct CreateSubscriberOutput {
 }
 impl CreateSubscriberOutput {
     /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
-    pub fn subscription_id(&self) -> std::option::Option<&str> {
+    pub fn subscription_id(&self) -> std::option::Option<& str> {
         self.subscription_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The ARN for the Amazon Simple Notification Service.</p>
-    pub fn sns_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_arn(&self) -> std::option::Option<& str> {
         self.sns_arn.as_deref()
     }
     /// <p>The ARN for the Amazon S3 bucket. </p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
 }
 /// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
 pub mod create_subscriber_output {
-
+    
     /// A builder for [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1233,12 +1185,8 @@ pub mod create_subscriber_output {
             self
         }
         /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
-        pub fn set_subscription_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_id = input;
-            self
+        pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1247,8 +1195,7 @@ pub mod create_subscriber_output {
         }
         /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The ARN for the Amazon Simple Notification Service.</p>
         pub fn sns_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1257,8 +1204,7 @@ pub mod create_subscriber_output {
         }
         /// <p>The ARN for the Amazon Simple Notification Service.</p>
         pub fn set_sns_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sns_arn = input;
-            self
+            self.sns_arn = input; self
         }
         /// <p>The ARN for the Amazon S3 bucket. </p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1266,23 +1212,25 @@ pub mod create_subscriber_output {
             self
         }
         /// <p>The ARN for the Amazon S3 bucket. </p>
-        pub fn set_s3_bucket_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_arn = input;
-            self
+        pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
         pub fn build(self) -> crate::output::CreateSubscriberOutput {
             crate::output::CreateSubscriberOutput {
-                subscription_id: self.subscription_id,
-                role_arn: self.role_arn,
-                sns_arn: self.sns_arn,
-                s3_bucket_arn: self.s3_bucket_arn,
+                subscription_id: self.subscription_id
+                ,
+                role_arn: self.role_arn
+                ,
+                sns_arn: self.sns_arn
+                ,
+                s3_bucket_arn: self.s3_bucket_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
@@ -1294,19 +1242,24 @@ impl CreateSubscriberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatalakeExceptionsSubscriptionOutput {}
+pub struct CreateDatalakeExceptionsSubscriptionOutput  {
+}
 /// See [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
 pub mod create_datalake_exceptions_subscription_output {
-
+    
     /// A builder for [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateDatalakeExceptionsSubscriptionOutput {
-            crate::output::CreateDatalakeExceptionsSubscriptionOutput {}
+            crate::output::CreateDatalakeExceptionsSubscriptionOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateDatalakeExceptionsSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
@@ -1318,19 +1271,24 @@ impl CreateDatalakeExceptionsSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatalakeDelegatedAdminOutput {}
+pub struct CreateDatalakeDelegatedAdminOutput  {
+}
 /// See [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
 pub mod create_datalake_delegated_admin_output {
-
+    
     /// A builder for [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
         pub fn build(self) -> crate::output::CreateDatalakeDelegatedAdminOutput {
-            crate::output::CreateDatalakeDelegatedAdminOutput {}
+            crate::output::CreateDatalakeDelegatedAdminOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateDatalakeDelegatedAdminOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
@@ -1342,19 +1300,24 @@ impl CreateDatalakeDelegatedAdminOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatalakeAutoEnableOutput {}
+pub struct CreateDatalakeAutoEnableOutput  {
+}
 /// See [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
 pub mod create_datalake_auto_enable_output {
-
+    
     /// A builder for [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
         pub fn build(self) -> crate::output::CreateDatalakeAutoEnableOutput {
-            crate::output::CreateDatalakeAutoEnableOutput {}
+            crate::output::CreateDatalakeAutoEnableOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateDatalakeAutoEnableOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
@@ -1366,19 +1329,24 @@ impl CreateDatalakeAutoEnableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatalakeOutput {}
+pub struct CreateDatalakeOutput  {
+}
 /// See [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
 pub mod create_datalake_output {
-
+    
     /// A builder for [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
         pub fn build(self) -> crate::output::CreateDatalakeOutput {
-            crate::output::CreateDatalakeOutput {}
+            crate::output::CreateDatalakeOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateDatalakeOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
@@ -1390,7 +1358,7 @@ impl CreateDatalakeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomLogSourceOutput {
+pub struct CreateCustomLogSourceOutput  {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
     #[doc(hidden)]
     pub custom_data_location: std::option::Option<std::string::String>,
@@ -1409,29 +1377,29 @@ pub struct CreateCustomLogSourceOutput {
 }
 impl CreateCustomLogSourceOutput {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn custom_data_location(&self) -> std::option::Option<&str> {
+    pub fn custom_data_location(&self) -> std::option::Option<& str> {
         self.custom_data_location.as_deref()
     }
     /// <p>The name of the Glue crawler.</p>
-    pub fn glue_crawler_name(&self) -> std::option::Option<&str> {
+    pub fn glue_crawler_name(&self) -> std::option::Option<& str> {
         self.glue_crawler_name.as_deref()
     }
     /// <p>The table name of the Glue crawler.</p>
-    pub fn glue_table_name(&self) -> std::option::Option<&str> {
+    pub fn glue_table_name(&self) -> std::option::Option<& str> {
         self.glue_table_name.as_deref()
     }
     /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    pub fn glue_database_name(&self) -> std::option::Option<&str> {
+    pub fn glue_database_name(&self) -> std::option::Option<& str> {
         self.glue_database_name.as_deref()
     }
     /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
-    pub fn log_provider_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn log_provider_access_role_arn(&self) -> std::option::Option<& str> {
         self.log_provider_access_role_arn.as_deref()
     }
 }
 /// See [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
 pub mod create_custom_log_source_output {
-
+    
     /// A builder for [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1448,12 +1416,8 @@ pub mod create_custom_log_source_output {
             self
         }
         /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-        pub fn set_custom_data_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_data_location = input;
-            self
+        pub fn set_custom_data_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_data_location = input; self
         }
         /// <p>The name of the Glue crawler.</p>
         pub fn glue_crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1461,12 +1425,8 @@ pub mod create_custom_log_source_output {
             self
         }
         /// <p>The name of the Glue crawler.</p>
-        pub fn set_glue_crawler_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.glue_crawler_name = input;
-            self
+        pub fn set_glue_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.glue_crawler_name = input; self
         }
         /// <p>The table name of the Glue crawler.</p>
         pub fn glue_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1474,12 +1434,8 @@ pub mod create_custom_log_source_output {
             self
         }
         /// <p>The table name of the Glue crawler.</p>
-        pub fn set_glue_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.glue_table_name = input;
-            self
+        pub fn set_glue_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.glue_table_name = input; self
         }
         /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn glue_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1487,40 +1443,36 @@ pub mod create_custom_log_source_output {
             self
         }
         /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-        pub fn set_glue_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.glue_database_name = input;
-            self
+        pub fn set_glue_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.glue_database_name = input; self
         }
         /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
-        pub fn log_provider_access_role_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn log_provider_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_provider_access_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
-        pub fn set_log_provider_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_provider_access_role_arn = input;
-            self
+        pub fn set_log_provider_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_provider_access_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
         pub fn build(self) -> crate::output::CreateCustomLogSourceOutput {
             crate::output::CreateCustomLogSourceOutput {
-                custom_data_location: self.custom_data_location,
-                glue_crawler_name: self.glue_crawler_name,
-                glue_table_name: self.glue_table_name,
-                glue_database_name: self.glue_database_name,
-                log_provider_access_role_arn: self.log_provider_access_role_arn,
+                custom_data_location: self.custom_data_location
+                ,
+                glue_crawler_name: self.glue_crawler_name
+                ,
+                glue_table_name: self.glue_table_name
+                ,
+                glue_database_name: self.glue_database_name
+                ,
+                log_provider_access_role_arn: self.log_provider_access_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCustomLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
@@ -1532,7 +1484,7 @@ impl CreateCustomLogSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAwsLogSourceOutput {
+pub struct CreateAwsLogSourceOutput  {
     /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
     #[doc(hidden)]
     pub processing: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1542,17 +1494,17 @@ pub struct CreateAwsLogSourceOutput {
 }
 impl CreateAwsLogSourceOutput {
     /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-    pub fn processing(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn processing(&self) -> std::option::Option<& [std::string::String]> {
         self.processing.as_deref()
     }
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
-    pub fn failed(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failed(&self) -> std::option::Option<& [std::string::String]> {
         self.failed.as_deref()
     }
 }
 /// See [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
 pub mod create_aws_log_source_output {
-
+    
     /// A builder for [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1567,17 +1519,13 @@ pub mod create_aws_log_source_output {
         /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
         pub fn processing(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.processing.unwrap_or_default();
-            v.push(input.into());
-            self.processing = Some(v);
-            self
+                            v.push(input.into());
+                            self.processing = Some(v);
+                            self
         }
         /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-        pub fn set_processing(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.processing = input;
-            self
+        pub fn set_processing(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.processing = input; self
         }
         /// Appends an item to `failed`.
         ///
@@ -1586,26 +1534,26 @@ pub mod create_aws_log_source_output {
         /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
         pub fn failed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
-            self.failed = Some(v);
-            self
+                            v.push(input.into());
+                            self.failed = Some(v);
+                            self
         }
         /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
         pub fn build(self) -> crate::output::CreateAwsLogSourceOutput {
             crate::output::CreateAwsLogSourceOutput {
-                processing: self.processing,
-                failed: self.failed,
+                processing: self.processing
+                ,
+                failed: self.failed
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAwsLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
@@ -1613,3 +1561,4 @@ impl CreateAwsLogSourceOutput {
         crate::output::create_aws_log_source_output::Builder::default()
     }
 }
+

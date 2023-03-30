@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSharedEndpointsOutput {
+pub struct ListSharedEndpointsOutput  {
     /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -12,17 +12,17 @@ pub struct ListSharedEndpointsOutput {
 }
 impl ListSharedEndpointsOutput {
     /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::model::Endpoint]> {
         self.endpoints.as_deref()
     }
     /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
 pub mod list_shared_endpoints_output {
-
+    
     /// A builder for [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod list_shared_endpoints_output {
         /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
         pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input);
-            self.endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.endpoints = Some(v);
+                            self
         }
         /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>) -> Self {
+            self.endpoints = input; self
         }
         /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod list_shared_endpoints_output {
         }
         /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
         pub fn build(self) -> crate::output::ListSharedEndpointsOutput {
             crate::output::ListSharedEndpointsOutput {
-                endpoints: self.endpoints,
-                next_token: self.next_token,
+                endpoints: self.endpoints
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSharedEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
@@ -78,7 +77,7 @@ impl ListSharedEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEndpointsOutput {
+pub struct ListEndpointsOutput  {
     /// <p>The list of endpoints associated with the specified Outpost.</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -88,17 +87,17 @@ pub struct ListEndpointsOutput {
 }
 impl ListEndpointsOutput {
     /// <p>The list of endpoints associated with the specified Outpost.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::model::Endpoint]> {
         self.endpoints.as_deref()
     }
     /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
 pub mod list_endpoints_output {
-
+    
     /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -113,17 +112,13 @@ pub mod list_endpoints_output {
         /// <p>The list of endpoints associated with the specified Outpost.</p>
         pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input);
-            self.endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.endpoints = Some(v);
+                            self
         }
         /// <p>The list of endpoints associated with the specified Outpost.</p>
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>) -> Self {
+            self.endpoints = input; self
         }
         /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,17 +127,20 @@ pub mod list_endpoints_output {
         }
         /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
         pub fn build(self) -> crate::output::ListEndpointsOutput {
             crate::output::ListEndpointsOutput {
-                endpoints: self.endpoints,
-                next_token: self.next_token,
+                endpoints: self.endpoints
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
@@ -154,19 +152,24 @@ impl ListEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEndpointOutput {}
+pub struct DeleteEndpointOutput  {
+}
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
-
+    
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
         pub fn build(self) -> crate::output::DeleteEndpointOutput {
-            crate::output::DeleteEndpointOutput {}
+            crate::output::DeleteEndpointOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
@@ -178,20 +181,20 @@ impl DeleteEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEndpointOutput {
+pub struct CreateEndpointOutput  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl CreateEndpointOutput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
 }
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
 pub mod create_endpoint_output {
-
+    
     /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -205,16 +208,18 @@ pub mod create_endpoint_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_arn = input;
-            self
+            self.endpoint_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
         pub fn build(self) -> crate::output::CreateEndpointOutput {
             crate::output::CreateEndpointOutput {
-                endpoint_arn: self.endpoint_arn,
+                endpoint_arn: self.endpoint_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
@@ -222,3 +227,4 @@ impl CreateEndpointOutput {
         crate::output::create_endpoint_output::Builder::default()
     }
 }
+

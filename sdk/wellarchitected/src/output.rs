@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpgradeLensReviewOutput {}
+pub struct UpgradeLensReviewOutput  {
+}
 /// See [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
 pub mod upgrade_lens_review_output {
-
+    
     /// A builder for [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
         pub fn build(self) -> crate::output::UpgradeLensReviewOutput {
-            crate::output::UpgradeLensReviewOutput {}
+            crate::output::UpgradeLensReviewOutput {
+            }
         }
     }
+    
+    
 }
 impl UpgradeLensReviewOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
@@ -26,7 +31,7 @@ impl UpgradeLensReviewOutput {
 /// <p>Input for Update Workload Share</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkloadShareOutput {
+pub struct UpdateWorkloadShareOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
@@ -36,17 +41,17 @@ pub struct UpdateWorkloadShareOutput {
 }
 impl UpdateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A workload share return object.</p>
-    pub fn workload_share(&self) -> std::option::Option<&crate::model::WorkloadShare> {
+    pub fn workload_share(&self) -> std::option::Option<& crate::model::WorkloadShare> {
         self.workload_share.as_ref()
     }
 }
 /// See [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
 pub mod update_workload_share_output {
-
+    
     /// A builder for [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -61,8 +66,7 @@ pub mod update_workload_share_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
         /// <p>A workload share return object.</p>
         pub fn workload_share(mut self, input: crate::model::WorkloadShare) -> Self {
@@ -70,21 +74,21 @@ pub mod update_workload_share_output {
             self
         }
         /// <p>A workload share return object.</p>
-        pub fn set_workload_share(
-            mut self,
-            input: std::option::Option<crate::model::WorkloadShare>,
-        ) -> Self {
-            self.workload_share = input;
-            self
+        pub fn set_workload_share(mut self, input: std::option::Option<crate::model::WorkloadShare>) -> Self {
+            self.workload_share = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
         pub fn build(self) -> crate::output::UpdateWorkloadShareOutput {
             crate::output::UpdateWorkloadShareOutput {
-                workload_id: self.workload_id,
-                workload_share: self.workload_share,
+                workload_id: self.workload_id
+                ,
+                workload_share: self.workload_share
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWorkloadShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
@@ -96,20 +100,20 @@ impl UpdateWorkloadShareOutput {
 /// <p>Output of an update workload call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkloadOutput {
+pub struct UpdateWorkloadOutput  {
     /// <p>A workload return object.</p>
     #[doc(hidden)]
     pub workload: std::option::Option<crate::model::Workload>,
 }
 impl UpdateWorkloadOutput {
     /// <p>A workload return object.</p>
-    pub fn workload(&self) -> std::option::Option<&crate::model::Workload> {
+    pub fn workload(&self) -> std::option::Option<& crate::model::Workload> {
         self.workload.as_ref()
     }
 }
 /// See [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
 pub mod update_workload_output {
-
+    
     /// A builder for [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -123,16 +127,18 @@ pub mod update_workload_output {
         }
         /// <p>A workload return object.</p>
         pub fn set_workload(mut self, input: std::option::Option<crate::model::Workload>) -> Self {
-            self.workload = input;
-            self
+            self.workload = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
         pub fn build(self) -> crate::output::UpdateWorkloadOutput {
             crate::output::UpdateWorkloadOutput {
-                workload: self.workload,
+                workload: self.workload
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWorkloadOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
@@ -144,20 +150,20 @@ impl UpdateWorkloadOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateShareInvitationOutput {
+pub struct UpdateShareInvitationOutput  {
     /// <p>The updated workload or custom lens share invitation.</p>
     #[doc(hidden)]
     pub share_invitation: std::option::Option<crate::model::ShareInvitation>,
 }
 impl UpdateShareInvitationOutput {
     /// <p>The updated workload or custom lens share invitation.</p>
-    pub fn share_invitation(&self) -> std::option::Option<&crate::model::ShareInvitation> {
+    pub fn share_invitation(&self) -> std::option::Option<& crate::model::ShareInvitation> {
         self.share_invitation.as_ref()
     }
 }
 /// See [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
 pub mod update_share_invitation_output {
-
+    
     /// A builder for [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -170,20 +176,19 @@ pub mod update_share_invitation_output {
             self
         }
         /// <p>The updated workload or custom lens share invitation.</p>
-        pub fn set_share_invitation(
-            mut self,
-            input: std::option::Option<crate::model::ShareInvitation>,
-        ) -> Self {
-            self.share_invitation = input;
-            self
+        pub fn set_share_invitation(mut self, input: std::option::Option<crate::model::ShareInvitation>) -> Self {
+            self.share_invitation = input; self
         }
         /// Consumes the builder and constructs a [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
         pub fn build(self) -> crate::output::UpdateShareInvitationOutput {
             crate::output::UpdateShareInvitationOutput {
-                share_invitation: self.share_invitation,
+                share_invitation: self.share_invitation
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateShareInvitationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
@@ -195,7 +200,7 @@ impl UpdateShareInvitationOutput {
 /// <p>Output of a update lens review call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLensReviewOutput {
+pub struct UpdateLensReviewOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
@@ -205,17 +210,17 @@ pub struct UpdateLensReviewOutput {
 }
 impl UpdateLensReviewOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A lens review of a question.</p>
-    pub fn lens_review(&self) -> std::option::Option<&crate::model::LensReview> {
+    pub fn lens_review(&self) -> std::option::Option<& crate::model::LensReview> {
         self.lens_review.as_ref()
     }
 }
 /// See [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
 pub mod update_lens_review_output {
-
+    
     /// A builder for [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -230,8 +235,7 @@ pub mod update_lens_review_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
         /// <p>A lens review of a question.</p>
         pub fn lens_review(mut self, input: crate::model::LensReview) -> Self {
@@ -239,21 +243,21 @@ pub mod update_lens_review_output {
             self
         }
         /// <p>A lens review of a question.</p>
-        pub fn set_lens_review(
-            mut self,
-            input: std::option::Option<crate::model::LensReview>,
-        ) -> Self {
-            self.lens_review = input;
-            self
+        pub fn set_lens_review(mut self, input: std::option::Option<crate::model::LensReview>) -> Self {
+            self.lens_review = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
         pub fn build(self) -> crate::output::UpdateLensReviewOutput {
             crate::output::UpdateLensReviewOutput {
-                workload_id: self.workload_id,
-                lens_review: self.lens_review,
+                workload_id: self.workload_id
+                ,
+                lens_review: self.lens_review
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateLensReviewOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
@@ -265,19 +269,24 @@ impl UpdateLensReviewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGlobalSettingsOutput {}
+pub struct UpdateGlobalSettingsOutput  {
+}
 /// See [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
 pub mod update_global_settings_output {
-
+    
     /// A builder for [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
         pub fn build(self) -> crate::output::UpdateGlobalSettingsOutput {
-            crate::output::UpdateGlobalSettingsOutput {}
+            crate::output::UpdateGlobalSettingsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateGlobalSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
@@ -289,13 +298,13 @@ impl UpdateGlobalSettingsOutput {
 /// <p>Output of a update answer call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnswerOutput {
+pub struct UpdateAnswerOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -308,28 +317,28 @@ pub struct UpdateAnswerOutput {
 }
 impl UpdateAnswerOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<&str> {
+    pub fn lens_alias(&self) -> std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>An answer of the question.</p>
-    pub fn answer(&self) -> std::option::Option<&crate::model::Answer> {
+    pub fn answer(&self) -> std::option::Option<& crate::model::Answer> {
         self.answer.as_ref()
     }
 }
 /// See [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
 pub mod update_answer_output {
-
+    
     /// A builder for [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -346,24 +355,22 @@ pub mod update_answer_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_alias = input;
-            self
+            self.lens_alias = input; self
         }
         /// <p>The ARN for the lens.</p>
         pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -372,8 +379,7 @@ pub mod update_answer_output {
         }
         /// <p>The ARN for the lens.</p>
         pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_arn = input;
-            self
+            self.lens_arn = input; self
         }
         /// <p>An answer of the question.</p>
         pub fn answer(mut self, input: crate::model::Answer) -> Self {
@@ -382,19 +388,24 @@ pub mod update_answer_output {
         }
         /// <p>An answer of the question.</p>
         pub fn set_answer(mut self, input: std::option::Option<crate::model::Answer>) -> Self {
-            self.answer = input;
-            self
+            self.answer = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
         pub fn build(self) -> crate::output::UpdateAnswerOutput {
             crate::output::UpdateAnswerOutput {
-                workload_id: self.workload_id,
-                lens_alias: self.lens_alias,
-                lens_arn: self.lens_arn,
-                answer: self.answer,
+                workload_id: self.workload_id
+                ,
+                lens_alias: self.lens_alias
+                ,
+                lens_arn: self.lens_arn
+                ,
+                answer: self.answer
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAnswerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
@@ -406,19 +417,24 @@ impl UpdateAnswerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -430,19 +446,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -454,43 +475,39 @@ impl TagResourceOutput {
 /// <p>Input for List Workload Share</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkloadSharesOutput {
+pub struct ListWorkloadSharesOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A list of workload share summaries.</p>
     #[doc(hidden)]
-    pub workload_share_summaries:
-        std::option::Option<std::vec::Vec<crate::model::WorkloadShareSummary>>,
+    pub workload_share_summaries: std::option::Option<std::vec::Vec<crate::model::WorkloadShareSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkloadSharesOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A list of workload share summaries.</p>
-    pub fn workload_share_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::WorkloadShareSummary]> {
+    pub fn workload_share_summaries(&self) -> std::option::Option<& [crate::model::WorkloadShareSummary]> {
         self.workload_share_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
 pub mod list_workload_shares_output {
-
+    
     /// A builder for [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
-        pub(crate) workload_share_summaries:
-            std::option::Option<std::vec::Vec<crate::model::WorkloadShareSummary>>,
+        pub(crate) workload_share_summaries: std::option::Option<std::vec::Vec<crate::model::WorkloadShareSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -501,30 +518,22 @@ pub mod list_workload_shares_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
         /// Appends an item to `workload_share_summaries`.
         ///
         /// To override the contents of this collection use [`set_workload_share_summaries`](Self::set_workload_share_summaries).
         ///
         /// <p>A list of workload share summaries.</p>
-        pub fn workload_share_summaries(
-            mut self,
-            input: crate::model::WorkloadShareSummary,
-        ) -> Self {
+        pub fn workload_share_summaries(mut self, input: crate::model::WorkloadShareSummary) -> Self {
             let mut v = self.workload_share_summaries.unwrap_or_default();
-            v.push(input);
-            self.workload_share_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.workload_share_summaries = Some(v);
+                            self
         }
         /// <p>A list of workload share summaries.</p>
-        pub fn set_workload_share_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkloadShareSummary>>,
-        ) -> Self {
-            self.workload_share_summaries = input;
-            self
+        pub fn set_workload_share_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkloadShareSummary>>) -> Self {
+            self.workload_share_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -533,18 +542,22 @@ pub mod list_workload_shares_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
         pub fn build(self) -> crate::output::ListWorkloadSharesOutput {
             crate::output::ListWorkloadSharesOutput {
-                workload_id: self.workload_id,
-                workload_share_summaries: self.workload_share_summaries,
-                next_token: self.next_token,
+                workload_id: self.workload_id
+                ,
+                workload_share_summaries: self.workload_share_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkloadSharesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
@@ -556,7 +569,7 @@ impl ListWorkloadSharesOutput {
 /// <p>Output of a list workloads call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkloadsOutput {
+pub struct ListWorkloadsOutput  {
     /// <p>A list of workload summaries.</p>
     #[doc(hidden)]
     pub workload_summaries: std::option::Option<std::vec::Vec<crate::model::WorkloadSummary>>,
@@ -566,22 +579,21 @@ pub struct ListWorkloadsOutput {
 }
 impl ListWorkloadsOutput {
     /// <p>A list of workload summaries.</p>
-    pub fn workload_summaries(&self) -> std::option::Option<&[crate::model::WorkloadSummary]> {
+    pub fn workload_summaries(&self) -> std::option::Option<& [crate::model::WorkloadSummary]> {
         self.workload_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
 pub mod list_workloads_output {
-
+    
     /// A builder for [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) workload_summaries:
-            std::option::Option<std::vec::Vec<crate::model::WorkloadSummary>>,
+        pub(crate) workload_summaries: std::option::Option<std::vec::Vec<crate::model::WorkloadSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -592,17 +604,13 @@ pub mod list_workloads_output {
         /// <p>A list of workload summaries.</p>
         pub fn workload_summaries(mut self, input: crate::model::WorkloadSummary) -> Self {
             let mut v = self.workload_summaries.unwrap_or_default();
-            v.push(input);
-            self.workload_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.workload_summaries = Some(v);
+                            self
         }
         /// <p>A list of workload summaries.</p>
-        pub fn set_workload_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkloadSummary>>,
-        ) -> Self {
-            self.workload_summaries = input;
-            self
+        pub fn set_workload_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkloadSummary>>) -> Self {
+            self.workload_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -611,17 +619,20 @@ pub mod list_workloads_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
         pub fn build(self) -> crate::output::ListWorkloadsOutput {
             crate::output::ListWorkloadsOutput {
-                workload_summaries: self.workload_summaries,
-                next_token: self.next_token,
+                workload_summaries: self.workload_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkloadsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
@@ -633,30 +644,24 @@ impl ListWorkloadsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags for the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -664,31 +669,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -700,35 +700,31 @@ impl ListTagsForResourceOutput {
 /// <p>Input for List Share Invitations</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListShareInvitationsOutput {
+pub struct ListShareInvitationsOutput  {
     /// <p>List of share invitation summaries in a workload.</p>
     #[doc(hidden)]
-    pub share_invitation_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>,
+    pub share_invitation_summaries: std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListShareInvitationsOutput {
     /// <p>List of share invitation summaries in a workload.</p>
-    pub fn share_invitation_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ShareInvitationSummary]> {
+    pub fn share_invitation_summaries(&self) -> std::option::Option<& [crate::model::ShareInvitationSummary]> {
         self.share_invitation_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
 pub mod list_share_invitations_output {
-
+    
     /// A builder for [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) share_invitation_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>,
+        pub(crate) share_invitation_summaries: std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -737,22 +733,15 @@ pub mod list_share_invitations_output {
         /// To override the contents of this collection use [`set_share_invitation_summaries`](Self::set_share_invitation_summaries).
         ///
         /// <p>List of share invitation summaries in a workload.</p>
-        pub fn share_invitation_summaries(
-            mut self,
-            input: crate::model::ShareInvitationSummary,
-        ) -> Self {
+        pub fn share_invitation_summaries(mut self, input: crate::model::ShareInvitationSummary) -> Self {
             let mut v = self.share_invitation_summaries.unwrap_or_default();
-            v.push(input);
-            self.share_invitation_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.share_invitation_summaries = Some(v);
+                            self
         }
         /// <p>List of share invitation summaries in a workload.</p>
-        pub fn set_share_invitation_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>,
-        ) -> Self {
-            self.share_invitation_summaries = input;
-            self
+        pub fn set_share_invitation_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>) -> Self {
+            self.share_invitation_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -761,17 +750,20 @@ pub mod list_share_invitations_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
         pub fn build(self) -> crate::output::ListShareInvitationsOutput {
             crate::output::ListShareInvitationsOutput {
-                share_invitation_summaries: self.share_invitation_summaries,
-                next_token: self.next_token,
+                share_invitation_summaries: self.share_invitation_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListShareInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
@@ -783,35 +775,31 @@ impl ListShareInvitationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNotificationsOutput {
+pub struct ListNotificationsOutput  {
     /// <p>List of lens notification summaries in a workload.</p>
     #[doc(hidden)]
-    pub notification_summaries:
-        std::option::Option<std::vec::Vec<crate::model::NotificationSummary>>,
+    pub notification_summaries: std::option::Option<std::vec::Vec<crate::model::NotificationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNotificationsOutput {
     /// <p>List of lens notification summaries in a workload.</p>
-    pub fn notification_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::NotificationSummary]> {
+    pub fn notification_summaries(&self) -> std::option::Option<& [crate::model::NotificationSummary]> {
         self.notification_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
 pub mod list_notifications_output {
-
+    
     /// A builder for [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) notification_summaries:
-            std::option::Option<std::vec::Vec<crate::model::NotificationSummary>>,
+        pub(crate) notification_summaries: std::option::Option<std::vec::Vec<crate::model::NotificationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -822,17 +810,13 @@ pub mod list_notifications_output {
         /// <p>List of lens notification summaries in a workload.</p>
         pub fn notification_summaries(mut self, input: crate::model::NotificationSummary) -> Self {
             let mut v = self.notification_summaries.unwrap_or_default();
-            v.push(input);
-            self.notification_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.notification_summaries = Some(v);
+                            self
         }
         /// <p>List of lens notification summaries in a workload.</p>
-        pub fn set_notification_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NotificationSummary>>,
-        ) -> Self {
-            self.notification_summaries = input;
-            self
+        pub fn set_notification_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationSummary>>) -> Self {
+            self.notification_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -841,17 +825,20 @@ pub mod list_notifications_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
         pub fn build(self) -> crate::output::ListNotificationsOutput {
             crate::output::ListNotificationsOutput {
-                notification_summaries: self.notification_summaries,
-                next_token: self.next_token,
+                notification_summaries: self.notification_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
@@ -863,7 +850,7 @@ impl ListNotificationsOutput {
 /// <p>Output of a list milestones call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMilestonesOutput {
+pub struct ListMilestonesOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
@@ -876,27 +863,26 @@ pub struct ListMilestonesOutput {
 }
 impl ListMilestonesOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A list of milestone summaries.</p>
-    pub fn milestone_summaries(&self) -> std::option::Option<&[crate::model::MilestoneSummary]> {
+    pub fn milestone_summaries(&self) -> std::option::Option<& [crate::model::MilestoneSummary]> {
         self.milestone_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
 pub mod list_milestones_output {
-
+    
     /// A builder for [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
-        pub(crate) milestone_summaries:
-            std::option::Option<std::vec::Vec<crate::model::MilestoneSummary>>,
+        pub(crate) milestone_summaries: std::option::Option<std::vec::Vec<crate::model::MilestoneSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -907,8 +893,7 @@ pub mod list_milestones_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
         /// Appends an item to `milestone_summaries`.
         ///
@@ -917,17 +902,13 @@ pub mod list_milestones_output {
         /// <p>A list of milestone summaries.</p>
         pub fn milestone_summaries(mut self, input: crate::model::MilestoneSummary) -> Self {
             let mut v = self.milestone_summaries.unwrap_or_default();
-            v.push(input);
-            self.milestone_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.milestone_summaries = Some(v);
+                            self
         }
         /// <p>A list of milestone summaries.</p>
-        pub fn set_milestone_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MilestoneSummary>>,
-        ) -> Self {
-            self.milestone_summaries = input;
-            self
+        pub fn set_milestone_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::MilestoneSummary>>) -> Self {
+            self.milestone_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -936,18 +917,22 @@ pub mod list_milestones_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
         pub fn build(self) -> crate::output::ListMilestonesOutput {
             crate::output::ListMilestonesOutput {
-                workload_id: self.workload_id,
-                milestone_summaries: self.milestone_summaries,
-                next_token: self.next_token,
+                workload_id: self.workload_id
+                ,
+                milestone_summaries: self.milestone_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMilestonesOutput {
     /// Creates a new builder-style object to manufacture [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
@@ -959,7 +944,7 @@ impl ListMilestonesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLensSharesOutput {
+pub struct ListLensSharesOutput  {
     /// <p>A list of lens share summaries.</p>
     #[doc(hidden)]
     pub lens_share_summaries: std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
@@ -969,22 +954,21 @@ pub struct ListLensSharesOutput {
 }
 impl ListLensSharesOutput {
     /// <p>A list of lens share summaries.</p>
-    pub fn lens_share_summaries(&self) -> std::option::Option<&[crate::model::LensShareSummary]> {
+    pub fn lens_share_summaries(&self) -> std::option::Option<& [crate::model::LensShareSummary]> {
         self.lens_share_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
 pub mod list_lens_shares_output {
-
+    
     /// A builder for [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) lens_share_summaries:
-            std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
+        pub(crate) lens_share_summaries: std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -995,17 +979,13 @@ pub mod list_lens_shares_output {
         /// <p>A list of lens share summaries.</p>
         pub fn lens_share_summaries(mut self, input: crate::model::LensShareSummary) -> Self {
             let mut v = self.lens_share_summaries.unwrap_or_default();
-            v.push(input);
-            self.lens_share_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.lens_share_summaries = Some(v);
+                            self
         }
         /// <p>A list of lens share summaries.</p>
-        pub fn set_lens_share_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
-        ) -> Self {
-            self.lens_share_summaries = input;
-            self
+        pub fn set_lens_share_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>) -> Self {
+            self.lens_share_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1014,17 +994,20 @@ pub mod list_lens_shares_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
         pub fn build(self) -> crate::output::ListLensSharesOutput {
             crate::output::ListLensSharesOutput {
-                lens_share_summaries: self.lens_share_summaries,
-                next_token: self.next_token,
+                lens_share_summaries: self.lens_share_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLensSharesOutput {
     /// Creates a new builder-style object to manufacture [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
@@ -1036,11 +1019,11 @@ impl ListLensSharesOutput {
 /// <p>Output of a list lens reviews call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLensReviewsOutput {
+pub struct ListLensReviewsOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
@@ -1053,33 +1036,32 @@ pub struct ListLensReviewsOutput {
 }
 impl ListLensReviewsOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    pub fn lens_review_summaries(&self) -> std::option::Option<&[crate::model::LensReviewSummary]> {
+    pub fn lens_review_summaries(&self) -> std::option::Option<& [crate::model::LensReviewSummary]> {
         self.lens_review_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
 pub mod list_lens_reviews_output {
-
+    
     /// A builder for [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone_number: std::option::Option<i32>,
-        pub(crate) lens_review_summaries:
-            std::option::Option<std::vec::Vec<crate::model::LensReviewSummary>>,
+        pub(crate) lens_review_summaries: std::option::Option<std::vec::Vec<crate::model::LensReviewSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1090,20 +1072,18 @@ pub mod list_lens_reviews_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn milestone_number(mut self, input: i32) -> Self {
             self.milestone_number = Some(input);
             self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.milestone_number = input;
-            self
+            self.milestone_number = input; self
         }
         /// Appends an item to `lens_review_summaries`.
         ///
@@ -1112,17 +1092,13 @@ pub mod list_lens_reviews_output {
         /// <p>List of lens summaries of lens reviews of a workload.</p>
         pub fn lens_review_summaries(mut self, input: crate::model::LensReviewSummary) -> Self {
             let mut v = self.lens_review_summaries.unwrap_or_default();
-            v.push(input);
-            self.lens_review_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.lens_review_summaries = Some(v);
+                            self
         }
         /// <p>List of lens summaries of lens reviews of a workload.</p>
-        pub fn set_lens_review_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LensReviewSummary>>,
-        ) -> Self {
-            self.lens_review_summaries = input;
-            self
+        pub fn set_lens_review_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::LensReviewSummary>>) -> Self {
+            self.lens_review_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1131,19 +1107,25 @@ pub mod list_lens_reviews_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
         pub fn build(self) -> crate::output::ListLensReviewsOutput {
             crate::output::ListLensReviewsOutput {
-                workload_id: self.workload_id,
-                milestone_number: self.milestone_number.unwrap_or_default(),
-                lens_review_summaries: self.lens_review_summaries,
-                next_token: self.next_token,
+                workload_id: self.workload_id
+                ,
+                milestone_number: self.milestone_number
+                    .unwrap_or_default()
+                ,
+                lens_review_summaries: self.lens_review_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLensReviewsOutput {
     /// Creates a new builder-style object to manufacture [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
@@ -1155,17 +1137,17 @@ impl ListLensReviewsOutput {
 /// <p>Output of a list lens review improvements call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLensReviewImprovementsOutput {
+pub struct ListLensReviewImprovementsOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -1181,39 +1163,37 @@ pub struct ListLensReviewImprovementsOutput {
 }
 impl ListLensReviewImprovementsOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
     }
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<&str> {
+    pub fn lens_alias(&self) -> std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    pub fn improvement_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ImprovementSummary]> {
+    pub fn improvement_summaries(&self) -> std::option::Option<& [crate::model::ImprovementSummary]> {
         self.improvement_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
 pub mod list_lens_review_improvements_output {
-
+    
     /// A builder for [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1221,8 +1201,7 @@ pub mod list_lens_review_improvements_output {
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) lens_alias: std::option::Option<std::string::String>,
         pub(crate) lens_arn: std::option::Option<std::string::String>,
-        pub(crate) improvement_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>,
+        pub(crate) improvement_summaries: std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1233,36 +1212,33 @@ pub mod list_lens_review_improvements_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn milestone_number(mut self, input: i32) -> Self {
             self.milestone_number = Some(input);
             self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.milestone_number = input;
-            self
+            self.milestone_number = input; self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_alias = input;
-            self
+            self.lens_alias = input; self
         }
         /// <p>The ARN for the lens.</p>
         pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1271,8 +1247,7 @@ pub mod list_lens_review_improvements_output {
         }
         /// <p>The ARN for the lens.</p>
         pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_arn = input;
-            self
+            self.lens_arn = input; self
         }
         /// Appends an item to `improvement_summaries`.
         ///
@@ -1281,17 +1256,13 @@ pub mod list_lens_review_improvements_output {
         /// <p>List of improvement summaries of lens review in a workload.</p>
         pub fn improvement_summaries(mut self, input: crate::model::ImprovementSummary) -> Self {
             let mut v = self.improvement_summaries.unwrap_or_default();
-            v.push(input);
-            self.improvement_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.improvement_summaries = Some(v);
+                            self
         }
         /// <p>List of improvement summaries of lens review in a workload.</p>
-        pub fn set_improvement_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>,
-        ) -> Self {
-            self.improvement_summaries = input;
-            self
+        pub fn set_improvement_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>) -> Self {
+            self.improvement_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1300,21 +1271,29 @@ pub mod list_lens_review_improvements_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
         pub fn build(self) -> crate::output::ListLensReviewImprovementsOutput {
             crate::output::ListLensReviewImprovementsOutput {
-                workload_id: self.workload_id,
-                milestone_number: self.milestone_number.unwrap_or_default(),
-                lens_alias: self.lens_alias,
-                lens_arn: self.lens_arn,
-                improvement_summaries: self.improvement_summaries,
-                next_token: self.next_token,
+                workload_id: self.workload_id
+                ,
+                milestone_number: self.milestone_number
+                    .unwrap_or_default()
+                ,
+                lens_alias: self.lens_alias
+                ,
+                lens_arn: self.lens_arn
+                ,
+                improvement_summaries: self.improvement_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLensReviewImprovementsOutput {
     /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
@@ -1326,7 +1305,7 @@ impl ListLensReviewImprovementsOutput {
 /// <p>Output of a list lenses call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLensesOutput {
+pub struct ListLensesOutput  {
     /// <p>List of lens summaries of available lenses.</p>
     #[doc(hidden)]
     pub lens_summaries: std::option::Option<std::vec::Vec<crate::model::LensSummary>>,
@@ -1336,17 +1315,17 @@ pub struct ListLensesOutput {
 }
 impl ListLensesOutput {
     /// <p>List of lens summaries of available lenses.</p>
-    pub fn lens_summaries(&self) -> std::option::Option<&[crate::model::LensSummary]> {
+    pub fn lens_summaries(&self) -> std::option::Option<& [crate::model::LensSummary]> {
         self.lens_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLensesOutput`](crate::output::ListLensesOutput).
 pub mod list_lenses_output {
-
+    
     /// A builder for [`ListLensesOutput`](crate::output::ListLensesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1361,17 +1340,13 @@ pub mod list_lenses_output {
         /// <p>List of lens summaries of available lenses.</p>
         pub fn lens_summaries(mut self, input: crate::model::LensSummary) -> Self {
             let mut v = self.lens_summaries.unwrap_or_default();
-            v.push(input);
-            self.lens_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.lens_summaries = Some(v);
+                            self
         }
         /// <p>List of lens summaries of available lenses.</p>
-        pub fn set_lens_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LensSummary>>,
-        ) -> Self {
-            self.lens_summaries = input;
-            self
+        pub fn set_lens_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::LensSummary>>) -> Self {
+            self.lens_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1380,17 +1355,20 @@ pub mod list_lenses_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLensesOutput`](crate::output::ListLensesOutput).
         pub fn build(self) -> crate::output::ListLensesOutput {
             crate::output::ListLensesOutput {
-                lens_summaries: self.lens_summaries,
-                next_token: self.next_token,
+                lens_summaries: self.lens_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLensesOutput {
     /// Creates a new builder-style object to manufacture [`ListLensesOutput`](crate::output::ListLensesOutput).
@@ -1402,7 +1380,7 @@ impl ListLensesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCheckSummariesOutput {
+pub struct ListCheckSummariesOutput  {
     /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
     #[doc(hidden)]
     pub check_summaries: std::option::Option<std::vec::Vec<crate::model::CheckSummary>>,
@@ -1412,17 +1390,17 @@ pub struct ListCheckSummariesOutput {
 }
 impl ListCheckSummariesOutput {
     /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
-    pub fn check_summaries(&self) -> std::option::Option<&[crate::model::CheckSummary]> {
+    pub fn check_summaries(&self) -> std::option::Option<& [crate::model::CheckSummary]> {
         self.check_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
 pub mod list_check_summaries_output {
-
+    
     /// A builder for [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1437,17 +1415,13 @@ pub mod list_check_summaries_output {
         /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
         pub fn check_summaries(mut self, input: crate::model::CheckSummary) -> Self {
             let mut v = self.check_summaries.unwrap_or_default();
-            v.push(input);
-            self.check_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.check_summaries = Some(v);
+                            self
         }
         /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
-        pub fn set_check_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CheckSummary>>,
-        ) -> Self {
-            self.check_summaries = input;
-            self
+        pub fn set_check_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::CheckSummary>>) -> Self {
+            self.check_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1456,17 +1430,20 @@ pub mod list_check_summaries_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
         pub fn build(self) -> crate::output::ListCheckSummariesOutput {
             crate::output::ListCheckSummariesOutput {
-                check_summaries: self.check_summaries,
-                next_token: self.next_token,
+                check_summaries: self.check_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCheckSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
@@ -1478,7 +1455,7 @@ impl ListCheckSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCheckDetailsOutput {
+pub struct ListCheckDetailsOutput  {
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
     #[doc(hidden)]
     pub check_details: std::option::Option<std::vec::Vec<crate::model::CheckDetail>>,
@@ -1488,17 +1465,17 @@ pub struct ListCheckDetailsOutput {
 }
 impl ListCheckDetailsOutput {
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
-    pub fn check_details(&self) -> std::option::Option<&[crate::model::CheckDetail]> {
+    pub fn check_details(&self) -> std::option::Option<& [crate::model::CheckDetail]> {
         self.check_details.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
 pub mod list_check_details_output {
-
+    
     /// A builder for [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1513,17 +1490,13 @@ pub mod list_check_details_output {
         /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
         pub fn check_details(mut self, input: crate::model::CheckDetail) -> Self {
             let mut v = self.check_details.unwrap_or_default();
-            v.push(input);
-            self.check_details = Some(v);
-            self
+                            v.push(input);
+                            self.check_details = Some(v);
+                            self
         }
         /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
-        pub fn set_check_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CheckDetail>>,
-        ) -> Self {
-            self.check_details = input;
-            self
+        pub fn set_check_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::CheckDetail>>) -> Self {
+            self.check_details = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1532,17 +1505,20 @@ pub mod list_check_details_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
         pub fn build(self) -> crate::output::ListCheckDetailsOutput {
             crate::output::ListCheckDetailsOutput {
-                check_details: self.check_details,
-                next_token: self.next_token,
+                check_details: self.check_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCheckDetailsOutput {
     /// Creates a new builder-style object to manufacture [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
@@ -1554,17 +1530,17 @@ impl ListCheckDetailsOutput {
 /// <p>Output of a list answers call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnswersOutput {
+pub struct ListAnswersOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -1580,37 +1556,37 @@ pub struct ListAnswersOutput {
 }
 impl ListAnswersOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
     }
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<&str> {
+    pub fn lens_alias(&self) -> std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>List of answer summaries of lens review in a workload.</p>
-    pub fn answer_summaries(&self) -> std::option::Option<&[crate::model::AnswerSummary]> {
+    pub fn answer_summaries(&self) -> std::option::Option<& [crate::model::AnswerSummary]> {
         self.answer_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAnswersOutput`](crate::output::ListAnswersOutput).
 pub mod list_answers_output {
-
+    
     /// A builder for [`ListAnswersOutput`](crate::output::ListAnswersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1618,8 +1594,7 @@ pub mod list_answers_output {
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) lens_alias: std::option::Option<std::string::String>,
         pub(crate) lens_arn: std::option::Option<std::string::String>,
-        pub(crate) answer_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>,
+        pub(crate) answer_summaries: std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1630,36 +1605,33 @@ pub mod list_answers_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn milestone_number(mut self, input: i32) -> Self {
             self.milestone_number = Some(input);
             self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.milestone_number = input;
-            self
+            self.milestone_number = input; self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_alias = input;
-            self
+            self.lens_alias = input; self
         }
         /// <p>The ARN for the lens.</p>
         pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1668,8 +1640,7 @@ pub mod list_answers_output {
         }
         /// <p>The ARN for the lens.</p>
         pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_arn = input;
-            self
+            self.lens_arn = input; self
         }
         /// Appends an item to `answer_summaries`.
         ///
@@ -1678,17 +1649,13 @@ pub mod list_answers_output {
         /// <p>List of answer summaries of lens review in a workload.</p>
         pub fn answer_summaries(mut self, input: crate::model::AnswerSummary) -> Self {
             let mut v = self.answer_summaries.unwrap_or_default();
-            v.push(input);
-            self.answer_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.answer_summaries = Some(v);
+                            self
         }
         /// <p>List of answer summaries of lens review in a workload.</p>
-        pub fn set_answer_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>,
-        ) -> Self {
-            self.answer_summaries = input;
-            self
+        pub fn set_answer_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>) -> Self {
+            self.answer_summaries = input; self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1697,21 +1664,29 @@ pub mod list_answers_output {
         }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAnswersOutput`](crate::output::ListAnswersOutput).
         pub fn build(self) -> crate::output::ListAnswersOutput {
             crate::output::ListAnswersOutput {
-                workload_id: self.workload_id,
-                milestone_number: self.milestone_number.unwrap_or_default(),
-                lens_alias: self.lens_alias,
-                lens_arn: self.lens_arn,
-                answer_summaries: self.answer_summaries,
-                next_token: self.next_token,
+                workload_id: self.workload_id
+                ,
+                milestone_number: self.milestone_number
+                    .unwrap_or_default()
+                ,
+                lens_alias: self.lens_alias
+                ,
+                lens_arn: self.lens_arn
+                ,
+                answer_summaries: self.answer_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAnswersOutput {
     /// Creates a new builder-style object to manufacture [`ListAnswersOutput`](crate::output::ListAnswersOutput).
@@ -1723,7 +1698,7 @@ impl ListAnswersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportLensOutput {
+pub struct ImportLensOutput  {
     /// <p>The ARN for the lens.</p>
     #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
@@ -1733,17 +1708,17 @@ pub struct ImportLensOutput {
 }
 impl ImportLensOutput {
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The status of the imported lens.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ImportLensStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ImportLensStatus> {
         self.status.as_ref()
     }
 }
 /// See [`ImportLensOutput`](crate::output::ImportLensOutput).
 pub mod import_lens_output {
-
+    
     /// A builder for [`ImportLensOutput`](crate::output::ImportLensOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1758,8 +1733,7 @@ pub mod import_lens_output {
         }
         /// <p>The ARN for the lens.</p>
         pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_arn = input;
-            self
+            self.lens_arn = input; self
         }
         /// <p>The status of the imported lens.</p>
         pub fn status(mut self, input: crate::model::ImportLensStatus) -> Self {
@@ -1767,21 +1741,21 @@ pub mod import_lens_output {
             self
         }
         /// <p>The status of the imported lens.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ImportLensStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ImportLensStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ImportLensOutput`](crate::output::ImportLensOutput).
         pub fn build(self) -> crate::output::ImportLensOutput {
             crate::output::ImportLensOutput {
-                lens_arn: self.lens_arn,
-                status: self.status,
+                lens_arn: self.lens_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportLensOutput {
     /// Creates a new builder-style object to manufacture [`ImportLensOutput`](crate::output::ImportLensOutput).
@@ -1793,20 +1767,20 @@ impl ImportLensOutput {
 /// <p>Output of a get workload call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkloadOutput {
+pub struct GetWorkloadOutput  {
     /// <p>A workload return object.</p>
     #[doc(hidden)]
     pub workload: std::option::Option<crate::model::Workload>,
 }
 impl GetWorkloadOutput {
     /// <p>A workload return object.</p>
-    pub fn workload(&self) -> std::option::Option<&crate::model::Workload> {
+    pub fn workload(&self) -> std::option::Option<& crate::model::Workload> {
         self.workload.as_ref()
     }
 }
 /// See [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
 pub mod get_workload_output {
-
+    
     /// A builder for [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1820,16 +1794,18 @@ pub mod get_workload_output {
         }
         /// <p>A workload return object.</p>
         pub fn set_workload(mut self, input: std::option::Option<crate::model::Workload>) -> Self {
-            self.workload = input;
-            self
+            self.workload = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
         pub fn build(self) -> crate::output::GetWorkloadOutput {
             crate::output::GetWorkloadOutput {
-                workload: self.workload,
+                workload: self.workload
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWorkloadOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
@@ -1841,7 +1817,7 @@ impl GetWorkloadOutput {
 /// <p>Output of a get milestone call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMilestoneOutput {
+pub struct GetMilestoneOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
@@ -1851,17 +1827,17 @@ pub struct GetMilestoneOutput {
 }
 impl GetMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A milestone return object.</p>
-    pub fn milestone(&self) -> std::option::Option<&crate::model::Milestone> {
+    pub fn milestone(&self) -> std::option::Option<& crate::model::Milestone> {
         self.milestone.as_ref()
     }
 }
 /// See [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
 pub mod get_milestone_output {
-
+    
     /// A builder for [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1876,8 +1852,7 @@ pub mod get_milestone_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
         /// <p>A milestone return object.</p>
         pub fn milestone(mut self, input: crate::model::Milestone) -> Self {
@@ -1885,21 +1860,21 @@ pub mod get_milestone_output {
             self
         }
         /// <p>A milestone return object.</p>
-        pub fn set_milestone(
-            mut self,
-            input: std::option::Option<crate::model::Milestone>,
-        ) -> Self {
-            self.milestone = input;
-            self
+        pub fn set_milestone(mut self, input: std::option::Option<crate::model::Milestone>) -> Self {
+            self.milestone = input; self
         }
         /// Consumes the builder and constructs a [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
         pub fn build(self) -> crate::output::GetMilestoneOutput {
             crate::output::GetMilestoneOutput {
-                workload_id: self.workload_id,
-                milestone: self.milestone,
+                workload_id: self.workload_id
+                ,
+                milestone: self.milestone
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMilestoneOutput {
     /// Creates a new builder-style object to manufacture [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
@@ -1911,10 +1886,10 @@ impl GetMilestoneOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLensVersionDifferenceOutput {
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+pub struct GetLensVersionDifferenceOutput  {
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -1935,37 +1910,37 @@ pub struct GetLensVersionDifferenceOutput {
     pub version_differences: std::option::Option<crate::model::VersionDifferences>,
 }
 impl GetLensVersionDifferenceOutput {
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<&str> {
+    pub fn lens_alias(&self) -> std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The base version of the lens.</p>
-    pub fn base_lens_version(&self) -> std::option::Option<&str> {
+    pub fn base_lens_version(&self) -> std::option::Option<& str> {
         self.base_lens_version.as_deref()
     }
     /// <p>The target lens version for the lens.</p>
-    pub fn target_lens_version(&self) -> std::option::Option<&str> {
+    pub fn target_lens_version(&self) -> std::option::Option<& str> {
         self.target_lens_version.as_deref()
     }
     /// <p>The latest version of the lens.</p>
-    pub fn latest_lens_version(&self) -> std::option::Option<&str> {
+    pub fn latest_lens_version(&self) -> std::option::Option<& str> {
         self.latest_lens_version.as_deref()
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn version_differences(&self) -> std::option::Option<&crate::model::VersionDifferences> {
+    pub fn version_differences(&self) -> std::option::Option<& crate::model::VersionDifferences> {
         self.version_differences.as_ref()
     }
 }
 /// See [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
 pub mod get_lens_version_difference_output {
-
+    
     /// A builder for [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1977,21 +1952,20 @@ pub mod get_lens_version_difference_output {
         pub(crate) version_differences: std::option::Option<crate::model::VersionDifferences>,
     }
     impl Builder {
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_alias = input;
-            self
+            self.lens_alias = input; self
         }
         /// <p>The ARN for the lens.</p>
         pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2000,8 +1974,7 @@ pub mod get_lens_version_difference_output {
         }
         /// <p>The ARN for the lens.</p>
         pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_arn = input;
-            self
+            self.lens_arn = input; self
         }
         /// <p>The base version of the lens.</p>
         pub fn base_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2009,12 +1982,8 @@ pub mod get_lens_version_difference_output {
             self
         }
         /// <p>The base version of the lens.</p>
-        pub fn set_base_lens_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.base_lens_version = input;
-            self
+        pub fn set_base_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_lens_version = input; self
         }
         /// <p>The target lens version for the lens.</p>
         pub fn target_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2022,12 +1991,8 @@ pub mod get_lens_version_difference_output {
             self
         }
         /// <p>The target lens version for the lens.</p>
-        pub fn set_target_lens_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_lens_version = input;
-            self
+        pub fn set_target_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_lens_version = input; self
         }
         /// <p>The latest version of the lens.</p>
         pub fn latest_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2035,12 +2000,8 @@ pub mod get_lens_version_difference_output {
             self
         }
         /// <p>The latest version of the lens.</p>
-        pub fn set_latest_lens_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_lens_version = input;
-            self
+        pub fn set_latest_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_lens_version = input; self
         }
         /// <p>The differences between the base and latest versions of the lens.</p>
         pub fn version_differences(mut self, input: crate::model::VersionDifferences) -> Self {
@@ -2048,25 +2009,29 @@ pub mod get_lens_version_difference_output {
             self
         }
         /// <p>The differences between the base and latest versions of the lens.</p>
-        pub fn set_version_differences(
-            mut self,
-            input: std::option::Option<crate::model::VersionDifferences>,
-        ) -> Self {
-            self.version_differences = input;
-            self
+        pub fn set_version_differences(mut self, input: std::option::Option<crate::model::VersionDifferences>) -> Self {
+            self.version_differences = input; self
         }
         /// Consumes the builder and constructs a [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
         pub fn build(self) -> crate::output::GetLensVersionDifferenceOutput {
             crate::output::GetLensVersionDifferenceOutput {
-                lens_alias: self.lens_alias,
-                lens_arn: self.lens_arn,
-                base_lens_version: self.base_lens_version,
-                target_lens_version: self.target_lens_version,
-                latest_lens_version: self.latest_lens_version,
-                version_differences: self.version_differences,
+                lens_alias: self.lens_alias
+                ,
+                lens_arn: self.lens_arn
+                ,
+                base_lens_version: self.base_lens_version
+                ,
+                target_lens_version: self.target_lens_version
+                ,
+                latest_lens_version: self.latest_lens_version
+                ,
+                version_differences: self.version_differences
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLensVersionDifferenceOutput {
     /// Creates a new builder-style object to manufacture [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
@@ -2078,11 +2043,11 @@ impl GetLensVersionDifferenceOutput {
 /// <p>Output of a get lens review report call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLensReviewReportOutput {
+pub struct GetLensReviewReportOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
@@ -2092,22 +2057,22 @@ pub struct GetLensReviewReportOutput {
 }
 impl GetLensReviewReportOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
     }
     /// <p>A report of a lens review.</p>
-    pub fn lens_review_report(&self) -> std::option::Option<&crate::model::LensReviewReport> {
+    pub fn lens_review_report(&self) -> std::option::Option<& crate::model::LensReviewReport> {
         self.lens_review_report.as_ref()
     }
 }
 /// See [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
 pub mod get_lens_review_report_output {
-
+    
     /// A builder for [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2123,20 +2088,18 @@ pub mod get_lens_review_report_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn milestone_number(mut self, input: i32) -> Self {
             self.milestone_number = Some(input);
             self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.milestone_number = input;
-            self
+            self.milestone_number = input; self
         }
         /// <p>A report of a lens review.</p>
         pub fn lens_review_report(mut self, input: crate::model::LensReviewReport) -> Self {
@@ -2144,22 +2107,24 @@ pub mod get_lens_review_report_output {
             self
         }
         /// <p>A report of a lens review.</p>
-        pub fn set_lens_review_report(
-            mut self,
-            input: std::option::Option<crate::model::LensReviewReport>,
-        ) -> Self {
-            self.lens_review_report = input;
-            self
+        pub fn set_lens_review_report(mut self, input: std::option::Option<crate::model::LensReviewReport>) -> Self {
+            self.lens_review_report = input; self
         }
         /// Consumes the builder and constructs a [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
         pub fn build(self) -> crate::output::GetLensReviewReportOutput {
             crate::output::GetLensReviewReportOutput {
-                workload_id: self.workload_id,
-                milestone_number: self.milestone_number.unwrap_or_default(),
-                lens_review_report: self.lens_review_report,
+                workload_id: self.workload_id
+                ,
+                milestone_number: self.milestone_number
+                    .unwrap_or_default()
+                ,
+                lens_review_report: self.lens_review_report
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLensReviewReportOutput {
     /// Creates a new builder-style object to manufacture [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
@@ -2171,11 +2136,11 @@ impl GetLensReviewReportOutput {
 /// <p>Output of a get lens review call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLensReviewOutput {
+pub struct GetLensReviewOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
@@ -2185,22 +2150,22 @@ pub struct GetLensReviewOutput {
 }
 impl GetLensReviewOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
     }
     /// <p>A lens review of a question.</p>
-    pub fn lens_review(&self) -> std::option::Option<&crate::model::LensReview> {
+    pub fn lens_review(&self) -> std::option::Option<& crate::model::LensReview> {
         self.lens_review.as_ref()
     }
 }
 /// See [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
 pub mod get_lens_review_output {
-
+    
     /// A builder for [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2216,20 +2181,18 @@ pub mod get_lens_review_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn milestone_number(mut self, input: i32) -> Self {
             self.milestone_number = Some(input);
             self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.milestone_number = input;
-            self
+            self.milestone_number = input; self
         }
         /// <p>A lens review of a question.</p>
         pub fn lens_review(mut self, input: crate::model::LensReview) -> Self {
@@ -2237,22 +2200,24 @@ pub mod get_lens_review_output {
             self
         }
         /// <p>A lens review of a question.</p>
-        pub fn set_lens_review(
-            mut self,
-            input: std::option::Option<crate::model::LensReview>,
-        ) -> Self {
-            self.lens_review = input;
-            self
+        pub fn set_lens_review(mut self, input: std::option::Option<crate::model::LensReview>) -> Self {
+            self.lens_review = input; self
         }
         /// Consumes the builder and constructs a [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
         pub fn build(self) -> crate::output::GetLensReviewOutput {
             crate::output::GetLensReviewOutput {
-                workload_id: self.workload_id,
-                milestone_number: self.milestone_number.unwrap_or_default(),
-                lens_review: self.lens_review,
+                workload_id: self.workload_id
+                ,
+                milestone_number: self.milestone_number
+                    .unwrap_or_default()
+                ,
+                lens_review: self.lens_review
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLensReviewOutput {
     /// Creates a new builder-style object to manufacture [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
@@ -2264,20 +2229,20 @@ impl GetLensReviewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLensOutput {
+pub struct GetLensOutput  {
     /// <p>A lens return object.</p>
     #[doc(hidden)]
     pub lens: std::option::Option<crate::model::Lens>,
 }
 impl GetLensOutput {
     /// <p>A lens return object.</p>
-    pub fn lens(&self) -> std::option::Option<&crate::model::Lens> {
+    pub fn lens(&self) -> std::option::Option<& crate::model::Lens> {
         self.lens.as_ref()
     }
 }
 /// See [`GetLensOutput`](crate::output::GetLensOutput).
 pub mod get_lens_output {
-
+    
     /// A builder for [`GetLensOutput`](crate::output::GetLensOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2291,14 +2256,18 @@ pub mod get_lens_output {
         }
         /// <p>A lens return object.</p>
         pub fn set_lens(mut self, input: std::option::Option<crate::model::Lens>) -> Self {
-            self.lens = input;
-            self
+            self.lens = input; self
         }
         /// Consumes the builder and constructs a [`GetLensOutput`](crate::output::GetLensOutput).
         pub fn build(self) -> crate::output::GetLensOutput {
-            crate::output::GetLensOutput { lens: self.lens }
+            crate::output::GetLensOutput {
+                lens: self.lens
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetLensOutput {
     /// Creates a new builder-style object to manufacture [`GetLensOutput`](crate::output::GetLensOutput).
@@ -2310,17 +2279,17 @@ impl GetLensOutput {
 /// <p>Output of a get answer call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnswerOutput {
+pub struct GetAnswerOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -2333,33 +2302,33 @@ pub struct GetAnswerOutput {
 }
 impl GetAnswerOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
     }
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<&str> {
+    pub fn lens_alias(&self) -> std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>An answer of the question.</p>
-    pub fn answer(&self) -> std::option::Option<&crate::model::Answer> {
+    pub fn answer(&self) -> std::option::Option<& crate::model::Answer> {
         self.answer.as_ref()
     }
 }
 /// See [`GetAnswerOutput`](crate::output::GetAnswerOutput).
 pub mod get_answer_output {
-
+    
     /// A builder for [`GetAnswerOutput`](crate::output::GetAnswerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2377,36 +2346,33 @@ pub mod get_answer_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn milestone_number(mut self, input: i32) -> Self {
             self.milestone_number = Some(input);
             self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.milestone_number = input;
-            self
+            self.milestone_number = input; self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens.</p>
-        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
-        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
+        /// <p>The alias of the lens.</p> 
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_alias = input;
-            self
+            self.lens_alias = input; self
         }
         /// <p>The ARN for the lens.</p>
         pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2415,8 +2381,7 @@ pub mod get_answer_output {
         }
         /// <p>The ARN for the lens.</p>
         pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_arn = input;
-            self
+            self.lens_arn = input; self
         }
         /// <p>An answer of the question.</p>
         pub fn answer(mut self, input: crate::model::Answer) -> Self {
@@ -2425,20 +2390,27 @@ pub mod get_answer_output {
         }
         /// <p>An answer of the question.</p>
         pub fn set_answer(mut self, input: std::option::Option<crate::model::Answer>) -> Self {
-            self.answer = input;
-            self
+            self.answer = input; self
         }
         /// Consumes the builder and constructs a [`GetAnswerOutput`](crate::output::GetAnswerOutput).
         pub fn build(self) -> crate::output::GetAnswerOutput {
             crate::output::GetAnswerOutput {
-                workload_id: self.workload_id,
-                milestone_number: self.milestone_number.unwrap_or_default(),
-                lens_alias: self.lens_alias,
-                lens_arn: self.lens_arn,
-                answer: self.answer,
+                workload_id: self.workload_id
+                ,
+                milestone_number: self.milestone_number
+                    .unwrap_or_default()
+                ,
+                lens_alias: self.lens_alias
+                ,
+                lens_arn: self.lens_arn
+                ,
+                answer: self.answer
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAnswerOutput {
     /// Creates a new builder-style object to manufacture [`GetAnswerOutput`](crate::output::GetAnswerOutput).
@@ -2450,20 +2422,20 @@ impl GetAnswerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportLensOutput {
+pub struct ExportLensOutput  {
     /// <p>The JSON for the lens.</p>
     #[doc(hidden)]
     pub lens_json: std::option::Option<std::string::String>,
 }
 impl ExportLensOutput {
     /// <p>The JSON for the lens.</p>
-    pub fn lens_json(&self) -> std::option::Option<&str> {
+    pub fn lens_json(&self) -> std::option::Option<& str> {
         self.lens_json.as_deref()
     }
 }
 /// See [`ExportLensOutput`](crate::output::ExportLensOutput).
 pub mod export_lens_output {
-
+    
     /// A builder for [`ExportLensOutput`](crate::output::ExportLensOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2477,16 +2449,18 @@ pub mod export_lens_output {
         }
         /// <p>The JSON for the lens.</p>
         pub fn set_lens_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_json = input;
-            self
+            self.lens_json = input; self
         }
         /// Consumes the builder and constructs a [`ExportLensOutput`](crate::output::ExportLensOutput).
         pub fn build(self) -> crate::output::ExportLensOutput {
             crate::output::ExportLensOutput {
-                lens_json: self.lens_json,
+                lens_json: self.lens_json
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportLensOutput {
     /// Creates a new builder-style object to manufacture [`ExportLensOutput`](crate::output::ExportLensOutput).
@@ -2498,19 +2472,24 @@ impl ExportLensOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateLensesOutput {}
+pub struct DisassociateLensesOutput  {
+}
 /// See [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
 pub mod disassociate_lenses_output {
-
+    
     /// A builder for [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
         pub fn build(self) -> crate::output::DisassociateLensesOutput {
-            crate::output::DisassociateLensesOutput {}
+            crate::output::DisassociateLensesOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateLensesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
@@ -2522,19 +2501,24 @@ impl DisassociateLensesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkloadShareOutput {}
+pub struct DeleteWorkloadShareOutput  {
+}
 /// See [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
 pub mod delete_workload_share_output {
-
+    
     /// A builder for [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
         pub fn build(self) -> crate::output::DeleteWorkloadShareOutput {
-            crate::output::DeleteWorkloadShareOutput {}
+            crate::output::DeleteWorkloadShareOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkloadShareOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
@@ -2546,19 +2530,24 @@ impl DeleteWorkloadShareOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkloadOutput {}
+pub struct DeleteWorkloadOutput  {
+}
 /// See [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
 pub mod delete_workload_output {
-
+    
     /// A builder for [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
         pub fn build(self) -> crate::output::DeleteWorkloadOutput {
-            crate::output::DeleteWorkloadOutput {}
+            crate::output::DeleteWorkloadOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkloadOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
@@ -2570,19 +2559,24 @@ impl DeleteWorkloadOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLensShareOutput {}
+pub struct DeleteLensShareOutput  {
+}
 /// See [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
 pub mod delete_lens_share_output {
-
+    
     /// A builder for [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
         pub fn build(self) -> crate::output::DeleteLensShareOutput {
-            crate::output::DeleteLensShareOutput {}
+            crate::output::DeleteLensShareOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLensShareOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
@@ -2594,19 +2588,24 @@ impl DeleteLensShareOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLensOutput {}
+pub struct DeleteLensOutput  {
+}
 /// See [`DeleteLensOutput`](crate::output::DeleteLensOutput).
 pub mod delete_lens_output {
-
+    
     /// A builder for [`DeleteLensOutput`](crate::output::DeleteLensOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLensOutput`](crate::output::DeleteLensOutput).
         pub fn build(self) -> crate::output::DeleteLensOutput {
-            crate::output::DeleteLensOutput {}
+            crate::output::DeleteLensOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLensOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLensOutput`](crate::output::DeleteLensOutput).
@@ -2618,7 +2617,7 @@ impl DeleteLensOutput {
 /// <p>Input for Create Workload Share</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkloadShareOutput {
+pub struct CreateWorkloadShareOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
@@ -2628,17 +2627,17 @@ pub struct CreateWorkloadShareOutput {
 }
 impl CreateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The ID associated with the workload share.</p>
-    pub fn share_id(&self) -> std::option::Option<&str> {
+    pub fn share_id(&self) -> std::option::Option<& str> {
         self.share_id.as_deref()
     }
 }
 /// See [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
 pub mod create_workload_share_output {
-
+    
     /// A builder for [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2653,8 +2652,7 @@ pub mod create_workload_share_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
         /// <p>The ID associated with the workload share.</p>
         pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2663,17 +2661,20 @@ pub mod create_workload_share_output {
         }
         /// <p>The ID associated with the workload share.</p>
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.share_id = input;
-            self
+            self.share_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
         pub fn build(self) -> crate::output::CreateWorkloadShareOutput {
             crate::output::CreateWorkloadShareOutput {
-                workload_id: self.workload_id,
-                share_id: self.share_id,
+                workload_id: self.workload_id
+                ,
+                share_id: self.share_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWorkloadShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
@@ -2685,7 +2686,7 @@ impl CreateWorkloadShareOutput {
 /// <p>Output of a create workload call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkloadOutput {
+pub struct CreateWorkloadOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
@@ -2695,17 +2696,17 @@ pub struct CreateWorkloadOutput {
 }
 impl CreateWorkloadOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The ARN for the workload.</p>
-    pub fn workload_arn(&self) -> std::option::Option<&str> {
+    pub fn workload_arn(&self) -> std::option::Option<& str> {
         self.workload_arn.as_deref()
     }
 }
 /// See [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
 pub mod create_workload_output {
-
+    
     /// A builder for [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2720,8 +2721,7 @@ pub mod create_workload_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
         /// <p>The ARN for the workload.</p>
         pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2730,17 +2730,20 @@ pub mod create_workload_output {
         }
         /// <p>The ARN for the workload.</p>
         pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_arn = input;
-            self
+            self.workload_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
         pub fn build(self) -> crate::output::CreateWorkloadOutput {
             crate::output::CreateWorkloadOutput {
-                workload_id: self.workload_id,
-                workload_arn: self.workload_arn,
+                workload_id: self.workload_id
+                ,
+                workload_arn: self.workload_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWorkloadOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
@@ -2752,21 +2755,21 @@ impl CreateWorkloadOutput {
 /// <p>Output of a create milestone call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMilestoneOutput {
+pub struct CreateMilestoneOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
 }
 impl CreateMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>The milestone number.</p>
+    /// <p>The milestone number.</p> 
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
@@ -2774,7 +2777,7 @@ impl CreateMilestoneOutput {
 }
 /// See [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
 pub mod create_milestone_output {
-
+    
     /// A builder for [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2789,29 +2792,32 @@ pub mod create_milestone_output {
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workload_id = input;
-            self
+            self.workload_id = input; self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn milestone_number(mut self, input: i32) -> Self {
             self.milestone_number = Some(input);
             self
         }
-        /// <p>The milestone number.</p>
+        /// <p>The milestone number.</p> 
         /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.milestone_number = input;
-            self
+            self.milestone_number = input; self
         }
         /// Consumes the builder and constructs a [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
         pub fn build(self) -> crate::output::CreateMilestoneOutput {
             crate::output::CreateMilestoneOutput {
-                workload_id: self.workload_id,
-                milestone_number: self.milestone_number.unwrap_or_default(),
+                workload_id: self.workload_id
+                ,
+                milestone_number: self.milestone_number
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMilestoneOutput {
     /// Creates a new builder-style object to manufacture [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
@@ -2823,7 +2829,7 @@ impl CreateMilestoneOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLensVersionOutput {
+pub struct CreateLensVersionOutput  {
     /// <p>The ARN for the lens.</p>
     #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
@@ -2833,17 +2839,17 @@ pub struct CreateLensVersionOutput {
 }
 impl CreateLensVersionOutput {
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The version of the lens.</p>
-    pub fn lens_version(&self) -> std::option::Option<&str> {
+    pub fn lens_version(&self) -> std::option::Option<& str> {
         self.lens_version.as_deref()
     }
 }
 /// See [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
 pub mod create_lens_version_output {
-
+    
     /// A builder for [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2858,8 +2864,7 @@ pub mod create_lens_version_output {
         }
         /// <p>The ARN for the lens.</p>
         pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_arn = input;
-            self
+            self.lens_arn = input; self
         }
         /// <p>The version of the lens.</p>
         pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2868,17 +2873,20 @@ pub mod create_lens_version_output {
         }
         /// <p>The version of the lens.</p>
         pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_version = input;
-            self
+            self.lens_version = input; self
         }
         /// Consumes the builder and constructs a [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
         pub fn build(self) -> crate::output::CreateLensVersionOutput {
             crate::output::CreateLensVersionOutput {
-                lens_arn: self.lens_arn,
-                lens_version: self.lens_version,
+                lens_arn: self.lens_arn
+                ,
+                lens_version: self.lens_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLensVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
@@ -2890,20 +2898,20 @@ impl CreateLensVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLensShareOutput {
+pub struct CreateLensShareOutput  {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
 }
 impl CreateLensShareOutput {
     /// <p>The ID associated with the workload share.</p>
-    pub fn share_id(&self) -> std::option::Option<&str> {
+    pub fn share_id(&self) -> std::option::Option<& str> {
         self.share_id.as_deref()
     }
 }
 /// See [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
 pub mod create_lens_share_output {
-
+    
     /// A builder for [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2917,16 +2925,18 @@ pub mod create_lens_share_output {
         }
         /// <p>The ID associated with the workload share.</p>
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.share_id = input;
-            self
+            self.share_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
         pub fn build(self) -> crate::output::CreateLensShareOutput {
             crate::output::CreateLensShareOutput {
-                share_id: self.share_id,
+                share_id: self.share_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLensShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
@@ -2938,19 +2948,24 @@ impl CreateLensShareOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateLensesOutput {}
+pub struct AssociateLensesOutput  {
+}
 /// See [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
 pub mod associate_lenses_output {
-
+    
     /// A builder for [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
         pub fn build(self) -> crate::output::AssociateLensesOutput {
-            crate::output::AssociateLensesOutput {}
+            crate::output::AssociateLensesOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateLensesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
@@ -2958,3 +2973,4 @@ impl AssociateLensesOutput {
         crate::output::associate_lenses_output::Builder::default()
     }
 }
+

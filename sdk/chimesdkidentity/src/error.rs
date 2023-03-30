@@ -4,17 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateAppInstanceUserEndpointError {
     /// Kind of error that occurred.
-    pub kind: UpdateAppInstanceUserEndpointErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateAppInstanceUserEndpointErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateAppInstanceUserEndpointError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -36,35 +34,43 @@ pub enum UpdateAppInstanceUserEndpointErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAppInstanceUserEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAppInstanceUserEndpointErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserEndpointErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) => {
+            UpdateAppInstanceUserEndpointErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateAppInstanceUserEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -78,120 +84,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateAppInstanceUserEndpoint
 }
 impl UpdateAppInstanceUserEndpointError {
     /// Creates a new `UpdateAppInstanceUserEndpointError`.
-    pub fn new(
-        kind: UpdateAppInstanceUserEndpointErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateAppInstanceUserEndpointError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateAppInstanceUserEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateAppInstanceUserEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateAppInstanceUserEndpointError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateAppInstanceUserEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserEndpointErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserEndpointErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserEndpointErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserEndpointErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserEndpointErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserEndpointErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserEndpointErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserEndpointErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserEndpointErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserEndpointErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserEndpointErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateAppInstanceUserEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAppInstanceUserEndpointErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateAppInstanceUserEndpointErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) => {
+            UpdateAppInstanceUserEndpointErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserEndpointErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            UpdateAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -199,7 +187,7 @@ impl std::error::Error for UpdateAppInstanceUserEndpointError {
 /// <p>The client is not currently authorized to make the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnauthorizedClientException {
+pub struct UnauthorizedClientException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -209,21 +197,19 @@ pub struct UnauthorizedClientException {
 }
 impl UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl UnauthorizedClientException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnauthorizedClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedClientException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -233,7 +219,7 @@ impl std::fmt::Display for UnauthorizedClientException {
 impl std::error::Error for UnauthorizedClientException {}
 /// See [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
 pub mod unauthorized_client_exception {
-
+    
     /// A builder for [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -248,8 +234,7 @@ pub mod unauthorized_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -258,17 +243,20 @@ pub mod unauthorized_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
         pub fn build(self) -> crate::error::UnauthorizedClientException {
             crate::error::UnauthorizedClientException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnauthorizedClientException {
     /// Creates a new builder-style object to manufacture [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
@@ -280,7 +268,7 @@ impl UnauthorizedClientException {
 /// <p>The client exceeded its request rate limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottledClientException {
+pub struct ThrottledClientException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -290,21 +278,19 @@ pub struct ThrottledClientException {
 }
 impl ThrottledClientException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ThrottledClientException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottledClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottledClientException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -314,7 +300,7 @@ impl std::fmt::Display for ThrottledClientException {
 impl std::error::Error for ThrottledClientException {}
 /// See [`ThrottledClientException`](crate::error::ThrottledClientException).
 pub mod throttled_client_exception {
-
+    
     /// A builder for [`ThrottledClientException`](crate::error::ThrottledClientException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -329,8 +315,7 @@ pub mod throttled_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -339,17 +324,20 @@ pub mod throttled_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottledClientException`](crate::error::ThrottledClientException).
         pub fn build(self) -> crate::error::ThrottledClientException {
             crate::error::ThrottledClientException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottledClientException {
     /// Creates a new builder-style object to manufacture [`ThrottledClientException`](crate::error::ThrottledClientException).
@@ -361,7 +349,7 @@ impl ThrottledClientException {
 /// <p>The service is currently unavailable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUnavailableException {
+pub struct ServiceUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -371,21 +359,19 @@ pub struct ServiceUnavailableException {
 }
 impl ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -395,7 +381,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
 pub mod service_unavailable_exception {
-
+    
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -410,8 +396,7 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -420,17 +405,20 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
         pub fn build(self) -> crate::error::ServiceUnavailableException {
             crate::error::ServiceUnavailableException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
@@ -442,7 +430,7 @@ impl ServiceUnavailableException {
 /// <p>The service encountered an unexpected error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceFailureException {
+pub struct ServiceFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -452,21 +440,19 @@ pub struct ServiceFailureException {
 }
 impl ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ServiceFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceFailureException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -476,7 +462,7 @@ impl std::fmt::Display for ServiceFailureException {
 impl std::error::Error for ServiceFailureException {}
 /// See [`ServiceFailureException`](crate::error::ServiceFailureException).
 pub mod service_failure_exception {
-
+    
     /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -491,8 +477,7 @@ pub mod service_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -501,17 +486,20 @@ pub mod service_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException).
         pub fn build(self) -> crate::error::ServiceFailureException {
             crate::error::ServiceFailureException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceFailureException {
     /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException).
@@ -523,7 +511,7 @@ impl ServiceFailureException {
 /// <p>The client is permanently forbidden from making the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException {
+pub struct ForbiddenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -533,21 +521,19 @@ pub struct ForbiddenException {
 }
 impl ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ForbiddenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -557,7 +543,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
-
+    
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -572,8 +558,7 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -582,17 +567,20 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
         pub fn build(self) -> crate::error::ForbiddenException {
             crate::error::ForbiddenException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ForbiddenException {
     /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
@@ -604,7 +592,7 @@ impl ForbiddenException {
 /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -614,21 +602,19 @@ pub struct ConflictException {
 }
 impl ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -638,7 +624,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -653,8 +639,7 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -663,17 +648,20 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -685,7 +673,7 @@ impl ConflictException {
 /// <p>The input parameters don't match the service's restrictions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -695,21 +683,19 @@ pub struct BadRequestException {
 }
 impl BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -719,7 +705,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -734,8 +720,7 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -744,17 +729,20 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -768,15 +756,15 @@ impl BadRequestException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateAppInstanceUserError {
     /// Kind of error that occurred.
-    pub kind: UpdateAppInstanceUserErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateAppInstanceUserErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateAppInstanceUserError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -800,28 +788,46 @@ pub enum UpdateAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAppInstanceUserErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateAppInstanceUserErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceUserErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -835,119 +841,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateAppInstanceUserError {
 }
 impl UpdateAppInstanceUserError {
     /// Creates a new `UpdateAppInstanceUserError`.
-    pub fn new(kind: UpdateAppInstanceUserErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateAppInstanceUserError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateAppInstanceUserError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateAppInstanceUserErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateAppInstanceUserError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateAppInstanceUserError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceUserErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceUserErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateAppInstanceUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAppInstanceUserErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateAppInstanceUserErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceUserErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -955,7 +951,7 @@ impl std::error::Error for UpdateAppInstanceUserError {
 /// <p>The request exceeds the resource limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceLimitExceededException {
+pub struct ResourceLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -965,21 +961,19 @@ pub struct ResourceLimitExceededException {
 }
 impl ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ResourceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLimitExceededException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -989,7 +983,7 @@ impl std::fmt::Display for ResourceLimitExceededException {
 impl std::error::Error for ResourceLimitExceededException {}
 /// See [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
 pub mod resource_limit_exceeded_exception {
-
+    
     /// A builder for [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1004,8 +998,7 @@ pub mod resource_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1014,17 +1007,20 @@ pub mod resource_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
         pub fn build(self) -> crate::error::ResourceLimitExceededException {
             crate::error::ResourceLimitExceededException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
@@ -1038,15 +1034,15 @@ impl ResourceLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateAppInstanceError {
     /// Kind of error that occurred.
-    pub kind: UpdateAppInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateAppInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateAppInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1068,27 +1064,43 @@ pub enum UpdateAppInstanceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAppInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAppInstanceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UpdateAppInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateAppInstanceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAppInstanceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1102,52 +1114,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateAppInstanceError {
 }
 impl UpdateAppInstanceError {
     /// Creates a new `UpdateAppInstanceError`.
-    pub fn new(kind: UpdateAppInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateAppInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateAppInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateAppInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateAppInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateAppInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -1155,51 +1164,52 @@ impl UpdateAppInstanceError {
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAppInstanceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateAppInstanceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateAppInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAppInstanceErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateAppInstanceErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateAppInstanceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateAppInstanceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateAppInstanceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateAppInstanceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdateAppInstanceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateAppInstanceErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateAppInstanceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAppInstanceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1209,15 +1219,15 @@ impl std::error::Error for UpdateAppInstanceError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1237,26 +1247,40 @@ pub enum UntagResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1270,46 +1294,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
@@ -1320,43 +1344,45 @@ impl UntagResourceError {
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UntagResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1366,15 +1392,15 @@ impl std::error::Error for UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1396,27 +1422,43 @@ pub enum TagResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1430,46 +1472,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
@@ -1480,10 +1522,7 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
@@ -1491,37 +1530,44 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            TagResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            TagResourceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            TagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            TagResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            TagResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1531,17 +1577,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct RegisterAppInstanceUserEndpointError {
     /// Kind of error that occurred.
-    pub kind: RegisterAppInstanceUserEndpointErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterAppInstanceUserEndpointErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterAppInstanceUserEndpointError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1565,38 +1609,46 @@ pub enum RegisterAppInstanceUserEndpointErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterAppInstanceUserEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterAppInstanceUserEndpointErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            RegisterAppInstanceUserEndpointErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            RegisterAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            RegisterAppInstanceUserEndpointErrorKind::ResourceLimitExceededException(_inner) => {
+            RegisterAppInstanceUserEndpointErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RegisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1610,132 +1662,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterAppInstanceUserEndpoi
 }
 impl RegisterAppInstanceUserEndpointError {
     /// Creates a new `RegisterAppInstanceUserEndpointError`.
-    pub fn new(
-        kind: RegisterAppInstanceUserEndpointErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterAppInstanceUserEndpointError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterAppInstanceUserEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterAppInstanceUserEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterAppInstanceUserEndpointError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterAppInstanceUserEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterAppInstanceUserEndpointErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterAppInstanceUserEndpointErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, RegisterAppInstanceUserEndpointErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `RegisterAppInstanceUserEndpointErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterAppInstanceUserEndpointErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, RegisterAppInstanceUserEndpointErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `RegisterAppInstanceUserEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterAppInstanceUserEndpointErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, RegisterAppInstanceUserEndpointErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `RegisterAppInstanceUserEndpointErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterAppInstanceUserEndpointErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, RegisterAppInstanceUserEndpointErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RegisterAppInstanceUserEndpointErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, RegisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for RegisterAppInstanceUserEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterAppInstanceUserEndpointErrorKind::BadRequestException(_inner) => Some(_inner),
-            RegisterAppInstanceUserEndpointErrorKind::ConflictException(_inner) => Some(_inner),
-            RegisterAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) => Some(_inner),
-            RegisterAppInstanceUserEndpointErrorKind::ResourceLimitExceededException(_inner) => {
+            RegisterAppInstanceUserEndpointErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RegisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            RegisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1745,17 +1774,15 @@ impl std::error::Error for RegisterAppInstanceUserEndpointError {
 #[derive(std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsError {
     /// Kind of error that occurred.
-    pub kind: PutAppInstanceRetentionSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutAppInstanceRetentionSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutAppInstanceRetentionSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1775,34 +1802,40 @@ pub enum PutAppInstanceRetentionSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAppInstanceRetentionSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAppInstanceRetentionSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_inner) => {
+            PutAppInstanceRetentionSettingsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1816,114 +1849,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutAppInstanceRetentionSettin
 }
 impl PutAppInstanceRetentionSettingsError {
     /// Creates a new `PutAppInstanceRetentionSettingsError`.
-    pub fn new(
-        kind: PutAppInstanceRetentionSettingsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutAppInstanceRetentionSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutAppInstanceRetentionSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutAppInstanceRetentionSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutAppInstanceRetentionSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutAppInstanceRetentionSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAppInstanceRetentionSettingsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutAppInstanceRetentionSettingsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutAppInstanceRetentionSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAppInstanceRetentionSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
-            PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_inner) => {
+            PutAppInstanceRetentionSettingsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            PutAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1933,15 +1947,15 @@ impl std::error::Error for PutAppInstanceRetentionSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1961,26 +1975,40 @@ pub enum ListTagsForResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1994,99 +2022,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2096,15 +2120,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListAppInstanceUsersError {
     /// Kind of error that occurred.
-    pub kind: ListAppInstanceUsersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAppInstanceUsersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAppInstanceUsersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListAppInstanceUsersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2124,26 +2148,40 @@ pub enum ListAppInstanceUsersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppInstanceUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAppInstanceUsersErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListAppInstanceUsersErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListAppInstanceUsersErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListAppInstanceUsersErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListAppInstanceUsersErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListAppInstanceUsersErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListAppInstanceUsersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListAppInstanceUsersErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUsersErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUsersErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUsersErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUsersErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUsersErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUsersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2157,103 +2195,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAppInstanceUsersError {
 }
 impl ListAppInstanceUsersError {
     /// Creates a new `ListAppInstanceUsersError`.
-    pub fn new(kind: ListAppInstanceUsersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAppInstanceUsersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAppInstanceUsersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAppInstanceUsersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAppInstanceUsersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAppInstanceUsersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAppInstanceUsersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAppInstanceUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAppInstanceUsersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAppInstanceUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUsersErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUsersErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUsersErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUsersErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUsersErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUsersErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUsersErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUsersErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUsersErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUsersErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUsersErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUsersErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListAppInstanceUsersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAppInstanceUsersErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListAppInstanceUsersErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListAppInstanceUsersErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListAppInstanceUsersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListAppInstanceUsersErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListAppInstanceUsersErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListAppInstanceUsersErrorKind::Unhandled(_inner) => Some(_inner),
+            ListAppInstanceUsersErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUsersErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUsersErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUsersErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUsersErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUsersErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUsersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2263,17 +2293,15 @@ impl std::error::Error for ListAppInstanceUsersError {
 #[derive(std::fmt::Debug)]
 pub struct ListAppInstanceUserEndpointsError {
     /// Kind of error that occurred.
-    pub kind: ListAppInstanceUserEndpointsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAppInstanceUserEndpointsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAppInstanceUserEndpointsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2293,32 +2321,40 @@ pub enum ListAppInstanceUserEndpointsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppInstanceUserEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAppInstanceUserEndpointsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListAppInstanceUserEndpointsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListAppInstanceUserEndpointsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException(_inner) => {
+            ListAppInstanceUserEndpointsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListAppInstanceUserEndpointsErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAppInstanceUserEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2332,107 +2368,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAppInstanceUserEndpointsE
 }
 impl ListAppInstanceUserEndpointsError {
     /// Creates a new `ListAppInstanceUserEndpointsError`.
-    pub fn new(kind: ListAppInstanceUserEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAppInstanceUserEndpointsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAppInstanceUserEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAppInstanceUserEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAppInstanceUserEndpointsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAppInstanceUserEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAppInstanceUserEndpointsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUserEndpointsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUserEndpointsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUserEndpointsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUserEndpointsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUserEndpointsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUserEndpointsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUserEndpointsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUserEndpointsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUserEndpointsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUserEndpointsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUserEndpointsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListAppInstanceUserEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAppInstanceUserEndpointsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListAppInstanceUserEndpointsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListAppInstanceUserEndpointsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException(_inner) => {
+            ListAppInstanceUserEndpointsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceUserEndpointsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListAppInstanceUserEndpointsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            ListAppInstanceUserEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2442,15 +2466,15 @@ impl std::error::Error for ListAppInstanceUserEndpointsError {
 #[derive(std::fmt::Debug)]
 pub struct ListAppInstancesError {
     /// Kind of error that occurred.
-    pub kind: ListAppInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAppInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAppInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListAppInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2470,26 +2494,40 @@ pub enum ListAppInstancesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAppInstancesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListAppInstancesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListAppInstancesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListAppInstancesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListAppInstancesErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListAppInstancesErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListAppInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListAppInstancesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstancesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstancesErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstancesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstancesErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstancesErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstancesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2503,52 +2541,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAppInstancesError {
 }
 impl ListAppInstancesError {
     /// Creates a new `ListAppInstancesError`.
-    pub fn new(kind: ListAppInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAppInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAppInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAppInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAppInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAppInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAppInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAppInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAppInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAppInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAppInstancesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstancesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListAppInstancesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstancesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -2556,43 +2591,45 @@ impl ListAppInstancesError {
     }
     /// Returns `true` if the error kind is `ListAppInstancesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstancesErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListAppInstancesErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstancesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstancesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListAppInstancesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstancesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstancesErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListAppInstancesErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstancesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstancesErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListAppInstancesErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListAppInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAppInstancesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListAppInstancesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListAppInstancesErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListAppInstancesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListAppInstancesErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListAppInstancesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListAppInstancesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListAppInstancesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstancesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstancesErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstancesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstancesErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstancesErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstancesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2602,15 +2639,15 @@ impl std::error::Error for ListAppInstancesError {
 #[derive(std::fmt::Debug)]
 pub struct ListAppInstanceAdminsError {
     /// Kind of error that occurred.
-    pub kind: ListAppInstanceAdminsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAppInstanceAdminsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAppInstanceAdminsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListAppInstanceAdminsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2632,27 +2669,43 @@ pub enum ListAppInstanceAdminsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppInstanceAdminsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAppInstanceAdminsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListAppInstanceAdminsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListAppInstanceAdminsErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            ListAppInstanceAdminsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListAppInstanceAdminsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListAppInstanceAdminsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListAppInstanceAdminsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListAppInstanceAdminsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListAppInstanceAdminsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceAdminsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceAdminsErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceAdminsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceAdminsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceAdminsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceAdminsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAppInstanceAdminsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2666,111 +2719,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAppInstanceAdminsError {
 }
 impl ListAppInstanceAdminsError {
     /// Creates a new `ListAppInstanceAdminsError`.
-    pub fn new(kind: ListAppInstanceAdminsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAppInstanceAdminsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAppInstanceAdminsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAppInstanceAdminsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAppInstanceAdminsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAppInstanceAdminsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAppInstanceAdminsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAppInstanceAdminsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAppInstanceAdminsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAppInstanceAdminsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceAdminsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListAppInstanceAdminsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceAdminsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListAppInstanceAdminsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceAdminsErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListAppInstanceAdminsErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceAdminsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListAppInstanceAdminsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceAdminsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListAppInstanceAdminsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceAdminsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListAppInstanceAdminsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAppInstanceAdminsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListAppInstanceAdminsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListAppInstanceAdminsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAppInstanceAdminsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListAppInstanceAdminsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListAppInstanceAdminsErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            ListAppInstanceAdminsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListAppInstanceAdminsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListAppInstanceAdminsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListAppInstanceAdminsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListAppInstanceAdminsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListAppInstanceAdminsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceAdminsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceAdminsErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceAdminsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceAdminsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceAdminsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceAdminsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAppInstanceAdminsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2780,17 +2824,15 @@ impl std::error::Error for ListAppInstanceAdminsError {
 #[derive(std::fmt::Debug)]
 pub struct GetAppInstanceRetentionSettingsError {
     /// Kind of error that occurred.
-    pub kind: GetAppInstanceRetentionSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetAppInstanceRetentionSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetAppInstanceRetentionSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2810,34 +2852,40 @@ pub enum GetAppInstanceRetentionSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppInstanceRetentionSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAppInstanceRetentionSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_inner) => {
+            GetAppInstanceRetentionSettingsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2851,114 +2899,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetAppInstanceRetentionSettin
 }
 impl GetAppInstanceRetentionSettingsError {
     /// Creates a new `GetAppInstanceRetentionSettingsError`.
-    pub fn new(
-        kind: GetAppInstanceRetentionSettingsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetAppInstanceRetentionSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetAppInstanceRetentionSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetAppInstanceRetentionSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetAppInstanceRetentionSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetAppInstanceRetentionSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAppInstanceRetentionSettingsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetAppInstanceRetentionSettingsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetAppInstanceRetentionSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAppInstanceRetentionSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_inner) => {
+            GetAppInstanceRetentionSettingsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            GetAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2968,17 +2997,15 @@ impl std::error::Error for GetAppInstanceRetentionSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAppInstanceUserEndpointError {
     /// Kind of error that occurred.
-    pub kind: DescribeAppInstanceUserEndpointErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAppInstanceUserEndpointErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeAppInstanceUserEndpointError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2998,34 +3025,40 @@ pub enum DescribeAppInstanceUserEndpointErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAppInstanceUserEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAppInstanceUserEndpointErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) => {
+            DescribeAppInstanceUserEndpointErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeAppInstanceUserEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3039,114 +3072,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAppInstanceUserEndpoi
 }
 impl DescribeAppInstanceUserEndpointError {
     /// Creates a new `DescribeAppInstanceUserEndpointError`.
-    pub fn new(
-        kind: DescribeAppInstanceUserEndpointErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAppInstanceUserEndpointError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAppInstanceUserEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAppInstanceUserEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAppInstanceUserEndpointError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAppInstanceUserEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserEndpointErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserEndpointErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserEndpointErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserEndpointErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserEndpointErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserEndpointErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserEndpointErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserEndpointErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DescribeAppInstanceUserEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAppInstanceUserEndpointErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) => {
+            DescribeAppInstanceUserEndpointErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserEndpointErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            DescribeAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3156,15 +3170,15 @@ impl std::error::Error for DescribeAppInstanceUserEndpointError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAppInstanceUserError {
     /// Kind of error that occurred.
-    pub kind: DescribeAppInstanceUserErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAppInstanceUserErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeAppInstanceUserError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3184,26 +3198,40 @@ pub enum DescribeAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAppInstanceUserErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceUserErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceUserErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeAppInstanceUserErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceUserErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3217,103 +3245,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAppInstanceUserError 
 }
 impl DescribeAppInstanceUserError {
     /// Creates a new `DescribeAppInstanceUserError`.
-    pub fn new(kind: DescribeAppInstanceUserErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAppInstanceUserError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAppInstanceUserError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAppInstanceUserErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAppInstanceUserError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAppInstanceUserError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceUserErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceUserErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DescribeAppInstanceUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAppInstanceUserErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeAppInstanceUserErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeAppInstanceUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DescribeAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeAppInstanceUserErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DescribeAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeAppInstanceUserErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceUserErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3323,17 +3343,15 @@ impl std::error::Error for DescribeAppInstanceUserError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAppInstanceAdminError {
     /// Kind of error that occurred.
-    pub kind: DescribeAppInstanceAdminErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAppInstanceAdminErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeAppInstanceAdminError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3353,26 +3371,40 @@ pub enum DescribeAppInstanceAdminErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAppInstanceAdminError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAppInstanceAdminErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceAdminErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceAdminErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceAdminErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceAdminErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeAppInstanceAdminErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceAdminErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceAdminErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceAdminErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceAdminErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3386,103 +3418,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAppInstanceAdminError
 }
 impl DescribeAppInstanceAdminError {
     /// Creates a new `DescribeAppInstanceAdminError`.
-    pub fn new(kind: DescribeAppInstanceAdminErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAppInstanceAdminError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAppInstanceAdminError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAppInstanceAdminErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAppInstanceAdminError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAppInstanceAdminError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceAdminErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceAdminErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceAdminErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceAdminErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceAdminErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceAdminErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceAdminErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceAdminErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DescribeAppInstanceAdminError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAppInstanceAdminErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeAppInstanceAdminErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeAppInstanceAdminErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeAppInstanceAdminErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeAppInstanceAdminErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceAdminErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceAdminErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceAdminErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceAdminErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3492,15 +3516,15 @@ impl std::error::Error for DescribeAppInstanceAdminError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAppInstanceError {
     /// Kind of error that occurred.
-    pub kind: DescribeAppInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAppInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeAppInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3520,26 +3544,40 @@ pub enum DescribeAppInstanceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAppInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAppInstanceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DescribeAppInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeAppInstanceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAppInstanceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3553,99 +3591,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAppInstanceError {
 }
 impl DescribeAppInstanceError {
     /// Creates a new `DescribeAppInstanceError`.
-    pub fn new(kind: DescribeAppInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAppInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAppInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAppInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAppInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAppInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAppInstanceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DescribeAppInstanceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DescribeAppInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAppInstanceErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeAppInstanceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeAppInstanceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DescribeAppInstanceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeAppInstanceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DescribeAppInstanceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeAppInstanceErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeAppInstanceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAppInstanceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3655,17 +3689,15 @@ impl std::error::Error for DescribeAppInstanceError {
 #[derive(std::fmt::Debug)]
 pub struct DeregisterAppInstanceUserEndpointError {
     /// Kind of error that occurred.
-    pub kind: DeregisterAppInstanceUserEndpointErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeregisterAppInstanceUserEndpointErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeregisterAppInstanceUserEndpointError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3685,36 +3717,40 @@ pub enum DeregisterAppInstanceUserEndpointErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterAppInstanceUserEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterAppInstanceUserEndpointErrorKind::BadRequestException(_inner) => {
+            DeregisterAppInstanceUserEndpointErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeregisterAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeregisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeregisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3728,114 +3764,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeregisterAppInstanceUserEndp
 }
 impl DeregisterAppInstanceUserEndpointError {
     /// Creates a new `DeregisterAppInstanceUserEndpointError`.
-    pub fn new(
-        kind: DeregisterAppInstanceUserEndpointErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeregisterAppInstanceUserEndpointError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeregisterAppInstanceUserEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeregisterAppInstanceUserEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeregisterAppInstanceUserEndpointError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeregisterAppInstanceUserEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeregisterAppInstanceUserEndpointErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterAppInstanceUserEndpointErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeregisterAppInstanceUserEndpointErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeregisterAppInstanceUserEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterAppInstanceUserEndpointErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeregisterAppInstanceUserEndpointErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeregisterAppInstanceUserEndpointErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeregisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeregisterAppInstanceUserEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterAppInstanceUserEndpointErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeregisterAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeregisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) => {
+            DeregisterAppInstanceUserEndpointErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            DeregisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3845,15 +3862,15 @@ impl std::error::Error for DeregisterAppInstanceUserEndpointError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteAppInstanceUserError {
     /// Kind of error that occurred.
-    pub kind: DeleteAppInstanceUserErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteAppInstanceUserErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteAppInstanceUserError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3877,28 +3894,46 @@ pub enum DeleteAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAppInstanceUserErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceUserErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceUserErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceUserErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteAppInstanceUserErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceUserErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceUserErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceUserErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceUserErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceUserErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceUserErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceUserErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3912,119 +3947,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteAppInstanceUserError {
 }
 impl DeleteAppInstanceUserError {
     /// Creates a new `DeleteAppInstanceUserError`.
-    pub fn new(kind: DeleteAppInstanceUserErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteAppInstanceUserError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteAppInstanceUserError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteAppInstanceUserErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteAppInstanceUserError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteAppInstanceUserError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceUserErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceUserErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceUserErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceUserErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceUserErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceUserErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceUserErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceUserErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceUserErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceUserErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceUserErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceUserErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceUserErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceUserErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceUserErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceUserErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteAppInstanceUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAppInstanceUserErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteAppInstanceUserErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceUserErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceUserErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceUserErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceUserErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceUserErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceUserErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceUserErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4034,15 +4059,15 @@ impl std::error::Error for DeleteAppInstanceUserError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteAppInstanceAdminError {
     /// Kind of error that occurred.
-    pub kind: DeleteAppInstanceAdminErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteAppInstanceAdminErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteAppInstanceAdminError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4066,30 +4091,46 @@ pub enum DeleteAppInstanceAdminErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppInstanceAdminError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAppInstanceAdminErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceAdminErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceAdminErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceAdminErrorKind::ResourceLimitExceededException(_inner) => {
+            DeleteAppInstanceAdminErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceAdminErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceAdminErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceAdminErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceAdminErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceAdminErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceAdminErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteAppInstanceAdminErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceAdminErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceAdminErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4103,119 +4144,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteAppInstanceAdminError {
 }
 impl DeleteAppInstanceAdminError {
     /// Creates a new `DeleteAppInstanceAdminError`.
-    pub fn new(kind: DeleteAppInstanceAdminErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteAppInstanceAdminError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteAppInstanceAdminError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteAppInstanceAdminErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteAppInstanceAdminError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteAppInstanceAdminError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceAdminErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceAdminErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceAdminErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceAdminErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceAdminErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceAdminErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceAdminErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceAdminErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceAdminErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceAdminErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceAdminErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceAdminErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteAppInstanceAdminError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAppInstanceAdminErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteAppInstanceAdminErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceAdminErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceAdminErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceAdminErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceAdminErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceAdminErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceAdminErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4225,15 +4256,15 @@ impl std::error::Error for DeleteAppInstanceAdminError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteAppInstanceError {
     /// Kind of error that occurred.
-    pub kind: DeleteAppInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteAppInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteAppInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4255,27 +4286,43 @@ pub enum DeleteAppInstanceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAppInstanceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DeleteAppInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteAppInstanceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAppInstanceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4289,107 +4336,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteAppInstanceError {
 }
 impl DeleteAppInstanceError {
     /// Creates a new `DeleteAppInstanceError`.
-    pub fn new(kind: DeleteAppInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteAppInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteAppInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteAppInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteAppInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteAppInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAppInstanceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteAppInstanceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteAppInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAppInstanceErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteAppInstanceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteAppInstanceErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            DeleteAppInstanceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteAppInstanceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteAppInstanceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteAppInstanceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteAppInstanceErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteAppInstanceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAppInstanceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4399,15 +4441,15 @@ impl std::error::Error for DeleteAppInstanceError {
 #[derive(std::fmt::Debug)]
 pub struct CreateAppInstanceUserError {
     /// Kind of error that occurred.
-    pub kind: CreateAppInstanceUserErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateAppInstanceUserErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateAppInstanceUserError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4431,28 +4473,46 @@ pub enum CreateAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAppInstanceUserErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateAppInstanceUserErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateAppInstanceUserErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            CreateAppInstanceUserErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateAppInstanceUserErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            CreateAppInstanceUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateAppInstanceUserErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceUserErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceUserErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceUserErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceUserErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceUserErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4466,119 +4526,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateAppInstanceUserError {
 }
 impl CreateAppInstanceUserError {
     /// Creates a new `CreateAppInstanceUserError`.
-    pub fn new(kind: CreateAppInstanceUserErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateAppInstanceUserError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateAppInstanceUserError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateAppInstanceUserErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateAppInstanceUserError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateAppInstanceUserError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceUserErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceUserErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceUserErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceUserErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceUserErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceUserErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceUserErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceUserErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceUserErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceUserErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceUserErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceUserErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceUserErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceUserErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceUserErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceUserErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateAppInstanceUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAppInstanceUserErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateAppInstanceUserErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceUserErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceUserErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceUserErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceUserErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceUserErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceUserErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4588,15 +4638,15 @@ impl std::error::Error for CreateAppInstanceUserError {
 #[derive(std::fmt::Debug)]
 pub struct CreateAppInstanceAdminError {
     /// Kind of error that occurred.
-    pub kind: CreateAppInstanceAdminErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateAppInstanceAdminErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateAppInstanceAdminError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4620,30 +4670,46 @@ pub enum CreateAppInstanceAdminErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppInstanceAdminError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAppInstanceAdminErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateAppInstanceAdminErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateAppInstanceAdminErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateAppInstanceAdminErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceAdminErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceAdminErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceAdminErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceAdminErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceAdminErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateAppInstanceAdminErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateAppInstanceAdminErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            CreateAppInstanceAdminErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4657,119 +4723,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateAppInstanceAdminError {
 }
 impl CreateAppInstanceAdminError {
     /// Creates a new `CreateAppInstanceAdminError`.
-    pub fn new(kind: CreateAppInstanceAdminErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateAppInstanceAdminError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateAppInstanceAdminError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateAppInstanceAdminErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateAppInstanceAdminError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateAppInstanceAdminError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceAdminErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceAdminErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceAdminErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceAdminErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceAdminErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceAdminErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceAdminErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceAdminErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceAdminErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceAdminErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceAdminErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceAdminErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceAdminErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceAdminErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateAppInstanceAdminError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAppInstanceAdminErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateAppInstanceAdminErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceAdminErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceAdminErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceAdminErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceAdminErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceAdminErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4779,15 +4835,15 @@ impl std::error::Error for CreateAppInstanceAdminError {
 #[derive(std::fmt::Debug)]
 pub struct CreateAppInstanceError {
     /// Kind of error that occurred.
-    pub kind: CreateAppInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateAppInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateAppInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4811,28 +4867,46 @@ pub enum CreateAppInstanceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAppInstanceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateAppInstanceErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateAppInstanceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateAppInstanceErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            CreateAppInstanceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateAppInstanceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateAppInstanceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateAppInstanceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            CreateAppInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateAppInstanceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAppInstanceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4846,52 +4920,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateAppInstanceError {
 }
 impl CreateAppInstanceError {
     /// Creates a new `CreateAppInstanceError`.
-    pub fn new(kind: CreateAppInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateAppInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateAppInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateAppInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateAppInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateAppInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -4899,88 +4970,89 @@ impl CreateAppInstanceError {
     }
     /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAppInstanceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateAppInstanceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateAppInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAppInstanceErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateAppInstanceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAppInstanceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

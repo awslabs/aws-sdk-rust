@@ -3,7 +3,7 @@
 /// <p>Application version details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Version {
+pub struct Version  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,8 +12,7 @@ pub struct Version {
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>An array of parameter types supported by the application.</p>
     #[doc(hidden)]
-    pub parameter_definitions:
-        std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
+    pub parameter_definitions: std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
     /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
     /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
@@ -42,17 +41,15 @@ pub struct Version {
 }
 impl Version {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>An array of parameter types supported by the application.</p>
-    pub fn parameter_definitions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ParameterDefinition]> {
+    pub fn parameter_definitions(&self) -> std::option::Option<& [crate::model::ParameterDefinition]> {
         self.parameter_definitions.as_deref()
     }
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
@@ -61,7 +58,7 @@ impl Version {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub fn required_capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+    pub fn required_capabilities(&self) -> std::option::Option<& [crate::model::Capability]> {
         self.required_capabilities.as_deref()
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
@@ -70,35 +67,33 @@ impl Version {
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn source_code_archive_url(&self) -> std::option::Option<&str> {
+    pub fn source_code_archive_url(&self) -> std::option::Option<& str> {
         self.source_code_archive_url.as_deref()
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(&self) -> std::option::Option<&str> {
+    pub fn source_code_url(&self) -> std::option::Option<& str> {
         self.source_code_url.as_deref()
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
-    pub fn template_url(&self) -> std::option::Option<&str> {
+    pub fn template_url(&self) -> std::option::Option<& str> {
         self.template_url.as_deref()
     }
 }
 /// See [`Version`](crate::model::Version).
 pub mod version {
-
+    
     /// A builder for [`Version`](crate::model::Version).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<std::string::String>,
-        pub(crate) parameter_definitions:
-            std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
-        pub(crate) required_capabilities:
-            std::option::Option<std::vec::Vec<crate::model::Capability>>,
+        pub(crate) parameter_definitions: std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
+        pub(crate) required_capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         pub(crate) resources_supported: std::option::Option<bool>,
         pub(crate) semantic_version: std::option::Option<std::string::String>,
         pub(crate) source_code_archive_url: std::option::Option<std::string::String>,
@@ -112,12 +107,8 @@ pub mod version {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,12 +116,8 @@ pub mod version {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// Appends an item to `parameter_definitions`.
         ///
@@ -139,17 +126,13 @@ pub mod version {
         /// <p>An array of parameter types supported by the application.</p>
         pub fn parameter_definitions(mut self, input: crate::model::ParameterDefinition) -> Self {
             let mut v = self.parameter_definitions.unwrap_or_default();
-            v.push(input);
-            self.parameter_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.parameter_definitions = Some(v);
+                            self
         }
         /// <p>An array of parameter types supported by the application.</p>
-        pub fn set_parameter_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
-        ) -> Self {
-            self.parameter_definitions = input;
-            self
+        pub fn set_parameter_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>) -> Self {
+            self.parameter_definitions = input; self
         }
         /// Appends an item to `required_capabilities`.
         ///
@@ -163,9 +146,9 @@ pub mod version {
         /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn required_capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.required_capabilities.unwrap_or_default();
-            v.push(input);
-            self.required_capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.required_capabilities = Some(v);
+                            self
         }
         /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
         /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
@@ -173,12 +156,8 @@ pub mod version {
         /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
         /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
         /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-        pub fn set_required_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-        ) -> Self {
-            self.required_capabilities = input;
-            self
+        pub fn set_required_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Capability>>) -> Self {
+            self.required_capabilities = input; self
         }
         /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
         pub fn resources_supported(mut self, input: bool) -> Self {
@@ -187,8 +166,7 @@ pub mod version {
         }
         /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
         pub fn set_resources_supported(mut self, input: std::option::Option<bool>) -> Self {
-            self.resources_supported = input;
-            self
+            self.resources_supported = input; self
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
@@ -198,12 +176,8 @@ pub mod version {
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
         /// <p>Maximum size 50 MB</p>
@@ -213,12 +187,8 @@ pub mod version {
         }
         /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
         /// <p>Maximum size 50 MB</p>
-        pub fn set_source_code_archive_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_code_archive_url = input;
-            self
+        pub fn set_source_code_archive_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_code_archive_url = input; self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
         pub fn source_code_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -226,12 +196,8 @@ pub mod version {
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-        pub fn set_source_code_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_code_url = input;
-            self
+        pub fn set_source_code_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_code_url = input; self
         }
         /// <p>A link to the packaged AWS SAM template of your application.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,24 +206,35 @@ pub mod version {
         }
         /// <p>A link to the packaged AWS SAM template of your application.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_url = input;
-            self
+            self.template_url = input; self
         }
         /// Consumes the builder and constructs a [`Version`](crate::model::Version).
         pub fn build(self) -> crate::model::Version {
             crate::model::Version {
-                application_id: self.application_id,
-                creation_time: self.creation_time,
-                parameter_definitions: self.parameter_definitions,
-                required_capabilities: self.required_capabilities,
-                resources_supported: self.resources_supported.unwrap_or_default(),
-                semantic_version: self.semantic_version,
-                source_code_archive_url: self.source_code_archive_url,
-                source_code_url: self.source_code_url,
-                template_url: self.template_url,
+                application_id: self.application_id
+                ,
+                creation_time: self.creation_time
+                ,
+                parameter_definitions: self.parameter_definitions
+                ,
+                required_capabilities: self.required_capabilities
+                ,
+                resources_supported: self.resources_supported
+                    .unwrap_or_default()
+                ,
+                semantic_version: self.semantic_version
+                ,
+                source_code_archive_url: self.source_code_archive_url
+                ,
+                source_code_url: self.source_code_url
+                ,
+                template_url: self.template_url
+                ,
             }
         }
     }
+    
+    
 }
 impl Version {
     /// Creates a new builder-style object to manufacture [`Version`](crate::model::Version).
@@ -272,9 +249,9 @@ impl Version {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let capability = unimplemented!();
 /// match capability {
@@ -298,22 +275,14 @@ impl Version {
 /// Specifically, when `capability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Capability::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Values that must be specified in order to deploy some applications.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Capability {
     #[allow(missing_docs)] // documentation missing in model
     CapabilityAutoExpand,
@@ -324,7 +293,7 @@ pub enum Capability {
     #[allow(missing_docs)] // documentation missing in model
     CapabilityResourcePolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Capability {
     fn from(s: &str) -> Self {
@@ -333,17 +302,17 @@ impl std::convert::From<&str> for Capability {
             "CAPABILITY_IAM" => Capability::CapabilityIam,
             "CAPABILITY_NAMED_IAM" => Capability::CapabilityNamedIam,
             "CAPABILITY_RESOURCE_POLICY" => Capability::CapabilityResourcePolicy,
-            other => Capability::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Capability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Capability {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Capability::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Capability::from(s))
+                }
+            }
 impl Capability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -352,16 +321,13 @@ impl Capability {
             Capability::CapabilityIam => "CAPABILITY_IAM",
             Capability::CapabilityNamedIam => "CAPABILITY_NAMED_IAM",
             Capability::CapabilityResourcePolicy => "CAPABILITY_RESOURCE_POLICY",
-            Capability::Unknown(value) => value.as_str(),
+            Capability::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CAPABILITY_AUTO_EXPAND",
-            "CAPABILITY_IAM",
-            "CAPABILITY_NAMED_IAM",
-            "CAPABILITY_RESOURCE_POLICY",
+            "CAPABILITY_AUTO_EXPAND", "CAPABILITY_IAM", "CAPABILITY_NAMED_IAM", "CAPABILITY_RESOURCE_POLICY"
         ]
     }
 }
@@ -374,7 +340,7 @@ impl AsRef<str> for Capability {
 /// <p>Parameters supported by the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterDefinition {
+pub struct ParameterDefinition  {
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
     #[doc(hidden)]
     pub allowed_pattern: std::option::Option<std::string::String>,
@@ -429,26 +395,26 @@ pub struct ParameterDefinition {
 }
 impl ParameterDefinition {
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
-    pub fn allowed_pattern(&self) -> std::option::Option<&str> {
+    pub fn allowed_pattern(&self) -> std::option::Option<& str> {
         self.allowed_pattern.as_deref()
     }
     /// <p>An array containing the list of values allowed for the parameter.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_values(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_values.as_deref()
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
     /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
-    pub fn constraint_description(&self) -> std::option::Option<&str> {
+    pub fn constraint_description(&self) -> std::option::Option<& str> {
         self.constraint_description.as_deref()
     }
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>A string of up to 4,000 characters that describes the parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
@@ -468,7 +434,7 @@ impl ParameterDefinition {
         self.min_value
     }
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
@@ -476,7 +442,7 @@ impl ParameterDefinition {
         self.no_echo
     }
     /// <p>A list of AWS SAM resources that use this parameter.</p>
-    pub fn referenced_by_resources(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn referenced_by_resources(&self) -> std::option::Option<& [std::string::String]> {
         self.referenced_by_resources.as_deref()
     }
     /// <p>The type of the parameter.</p>
@@ -489,13 +455,13 @@ impl ParameterDefinition {
     /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
     /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`ParameterDefinition`](crate::model::ParameterDefinition).
 pub mod parameter_definition {
-
+    
     /// A builder for [`ParameterDefinition`](crate::model::ParameterDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -520,12 +486,8 @@ pub mod parameter_definition {
             self
         }
         /// <p>A regular expression that represents the patterns to allow for String types.</p>
-        pub fn set_allowed_pattern(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.allowed_pattern = input;
-            self
+        pub fn set_allowed_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.allowed_pattern = input; self
         }
         /// Appends an item to `allowed_values`.
         ///
@@ -534,17 +496,13 @@ pub mod parameter_definition {
         /// <p>An array containing the list of values allowed for the parameter.</p>
         pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_values = Some(v);
+                            self
         }
         /// <p>An array containing the list of values allowed for the parameter.</p>
-        pub fn set_allowed_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_values = input;
-            self
+        pub fn set_allowed_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_values = input; self
         }
         /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
         /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
@@ -558,12 +516,8 @@ pub mod parameter_definition {
         /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
         /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
         /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
-        pub fn set_constraint_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.constraint_description = input;
-            self
+        pub fn set_constraint_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constraint_description = input; self
         }
         /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -571,12 +525,8 @@ pub mod parameter_definition {
             self
         }
         /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// <p>A string of up to 4,000 characters that describes the parameter.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -585,8 +535,7 @@ pub mod parameter_definition {
         }
         /// <p>A string of up to 4,000 characters that describes the parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
         pub fn max_length(mut self, input: i32) -> Self {
@@ -595,8 +544,7 @@ pub mod parameter_definition {
         }
         /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
         pub fn set_max_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_length = input;
-            self
+            self.max_length = input; self
         }
         /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
         pub fn max_value(mut self, input: i32) -> Self {
@@ -605,8 +553,7 @@ pub mod parameter_definition {
         }
         /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
         pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_value = input;
-            self
+            self.max_value = input; self
         }
         /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
         pub fn min_length(mut self, input: i32) -> Self {
@@ -615,8 +562,7 @@ pub mod parameter_definition {
         }
         /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
         pub fn set_min_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_length = input;
-            self
+            self.min_length = input; self
         }
         /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
         pub fn min_value(mut self, input: i32) -> Self {
@@ -625,8 +571,7 @@ pub mod parameter_definition {
         }
         /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
         pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_value = input;
-            self
+            self.min_value = input; self
         }
         /// <p>The name of the parameter.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -635,8 +580,7 @@ pub mod parameter_definition {
         }
         /// <p>The name of the parameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
         pub fn no_echo(mut self, input: bool) -> Self {
@@ -645,8 +589,7 @@ pub mod parameter_definition {
         }
         /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
         pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
-            self.no_echo = input;
-            self
+            self.no_echo = input; self
         }
         /// Appends an item to `referenced_by_resources`.
         ///
@@ -655,17 +598,13 @@ pub mod parameter_definition {
         /// <p>A list of AWS SAM resources that use this parameter.</p>
         pub fn referenced_by_resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.referenced_by_resources.unwrap_or_default();
-            v.push(input.into());
-            self.referenced_by_resources = Some(v);
-            self
+                            v.push(input.into());
+                            self.referenced_by_resources = Some(v);
+                            self
         }
         /// <p>A list of AWS SAM resources that use this parameter.</p>
-        pub fn set_referenced_by_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.referenced_by_resources = input;
-            self
+        pub fn set_referenced_by_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.referenced_by_resources = input; self
         }
         /// <p>The type of the parameter.</p>
         /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
@@ -692,28 +631,47 @@ pub mod parameter_definition {
         /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
         /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`ParameterDefinition`](crate::model::ParameterDefinition).
         pub fn build(self) -> crate::model::ParameterDefinition {
             crate::model::ParameterDefinition {
-                allowed_pattern: self.allowed_pattern,
-                allowed_values: self.allowed_values,
-                constraint_description: self.constraint_description,
-                default_value: self.default_value,
-                description: self.description,
-                max_length: self.max_length.unwrap_or_default(),
-                max_value: self.max_value.unwrap_or_default(),
-                min_length: self.min_length.unwrap_or_default(),
-                min_value: self.min_value.unwrap_or_default(),
-                name: self.name,
-                no_echo: self.no_echo.unwrap_or_default(),
-                referenced_by_resources: self.referenced_by_resources,
-                r#type: self.r#type,
+                allowed_pattern: self.allowed_pattern
+                ,
+                allowed_values: self.allowed_values
+                ,
+                constraint_description: self.constraint_description
+                ,
+                default_value: self.default_value
+                ,
+                description: self.description
+                ,
+                max_length: self.max_length
+                    .unwrap_or_default()
+                ,
+                max_value: self.max_value
+                    .unwrap_or_default()
+                ,
+                min_length: self.min_length
+                    .unwrap_or_default()
+                ,
+                min_value: self.min_value
+                    .unwrap_or_default()
+                ,
+                name: self.name
+                ,
+                no_echo: self.no_echo
+                    .unwrap_or_default()
+                ,
+                referenced_by_resources: self.referenced_by_resources
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl ParameterDefinition {
     /// Creates a new builder-style object to manufacture [`ParameterDefinition`](crate::model::ParameterDefinition).
@@ -725,7 +683,7 @@ impl ParameterDefinition {
 /// <p>Policy statement applied to the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationPolicyStatement {
+pub struct ApplicationPolicyStatement  {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
     #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -741,25 +699,25 @@ pub struct ApplicationPolicyStatement {
 }
 impl ApplicationPolicyStatement {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
-    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn actions(&self) -> std::option::Option<& [std::string::String]> {
         self.actions.as_deref()
     }
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub fn principal_org_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn principal_org_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.principal_org_i_ds.as_deref()
     }
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
-    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn principals(&self) -> std::option::Option<& [std::string::String]> {
         self.principals.as_deref()
     }
     /// <p>A unique ID for the statement.</p>
-    pub fn statement_id(&self) -> std::option::Option<&str> {
+    pub fn statement_id(&self) -> std::option::Option<& str> {
         self.statement_id.as_deref()
     }
 }
 /// See [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
 pub mod application_policy_statement {
-
+    
     /// A builder for [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -776,17 +734,13 @@ pub mod application_policy_statement {
         /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
-            self.actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.actions = Some(v);
+                            self
         }
         /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.actions = input; self
         }
         /// Appends an item to `principal_org_i_ds`.
         ///
@@ -795,17 +749,13 @@ pub mod application_policy_statement {
         /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
         pub fn principal_org_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principal_org_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.principal_org_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.principal_org_i_ds = Some(v);
+                            self
         }
         /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-        pub fn set_principal_org_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.principal_org_i_ds = input;
-            self
+        pub fn set_principal_org_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.principal_org_i_ds = input; self
         }
         /// Appends an item to `principals`.
         ///
@@ -814,17 +764,13 @@ pub mod application_policy_statement {
         /// <p>An array of AWS account IDs, or * to make the application public.</p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
-            self.principals = Some(v);
-            self
+                            v.push(input.into());
+                            self.principals = Some(v);
+                            self
         }
         /// <p>An array of AWS account IDs, or * to make the application public.</p>
-        pub fn set_principals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.principals = input;
-            self
+        pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.principals = input; self
         }
         /// <p>A unique ID for the statement.</p>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -833,19 +779,24 @@ pub mod application_policy_statement {
         }
         /// <p>A unique ID for the statement.</p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statement_id = input;
-            self
+            self.statement_id = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
         pub fn build(self) -> crate::model::ApplicationPolicyStatement {
             crate::model::ApplicationPolicyStatement {
-                actions: self.actions,
-                principal_org_i_ds: self.principal_org_i_ds,
-                principals: self.principals,
-                statement_id: self.statement_id,
+                actions: self.actions
+                ,
+                principal_org_i_ds: self.principal_org_i_ds
+                ,
+                principals: self.principals
+                ,
+                statement_id: self.statement_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationPolicyStatement {
     /// Creates a new builder-style object to manufacture [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
@@ -857,7 +808,7 @@ impl ApplicationPolicyStatement {
 /// <p>An application version summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VersionSummary {
+pub struct VersionSummary  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -874,26 +825,26 @@ pub struct VersionSummary {
 }
 impl VersionSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(&self) -> std::option::Option<&str> {
+    pub fn source_code_url(&self) -> std::option::Option<& str> {
         self.source_code_url.as_deref()
     }
 }
 /// See [`VersionSummary`](crate::model::VersionSummary).
 pub mod version_summary {
-
+    
     /// A builder for [`VersionSummary`](crate::model::VersionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -909,12 +860,8 @@ pub mod version_summary {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -922,12 +869,8 @@ pub mod version_summary {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
@@ -937,12 +880,8 @@ pub mod version_summary {
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
         pub fn source_code_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -950,23 +889,25 @@ pub mod version_summary {
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-        pub fn set_source_code_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_code_url = input;
-            self
+        pub fn set_source_code_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_code_url = input; self
         }
         /// Consumes the builder and constructs a [`VersionSummary`](crate::model::VersionSummary).
         pub fn build(self) -> crate::model::VersionSummary {
             crate::model::VersionSummary {
-                application_id: self.application_id,
-                creation_time: self.creation_time,
-                semantic_version: self.semantic_version,
-                source_code_url: self.source_code_url,
+                application_id: self.application_id
+                ,
+                creation_time: self.creation_time
+                ,
+                semantic_version: self.semantic_version
+                ,
+                source_code_url: self.source_code_url
+                ,
             }
         }
     }
+    
+    
 }
 impl VersionSummary {
     /// Creates a new builder-style object to manufacture [`VersionSummary`](crate::model::VersionSummary).
@@ -978,7 +919,7 @@ impl VersionSummary {
 /// <p>Summary of details about the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -1013,48 +954,48 @@ pub struct ApplicationSummary {
 }
 impl ApplicationSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    pub fn author(&self) -> std::option::Option<&str> {
+    pub fn author(&self) -> std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(&self) -> std::option::Option<&str> {
+    pub fn home_page_url(&self) -> std::option::Option<& str> {
         self.home_page_url.as_deref()
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-    pub fn spdx_license_id(&self) -> std::option::Option<&str> {
+    pub fn spdx_license_id(&self) -> std::option::Option<& str> {
         self.spdx_license_id.as_deref()
     }
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
-
+    
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1074,12 +1015,8 @@ pub mod application_summary {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The name of the author publishing the app.</p>
         /// <p>Minimum length=1. Maximum length=127.</p>
@@ -1092,8 +1029,7 @@ pub mod application_summary {
         /// <p>Minimum length=1. Maximum length=127.</p>
         /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.author = input;
-            self
+            self.author = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1101,12 +1037,8 @@ pub mod application_summary {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of the application.</p>
         /// <p>Minimum length=1. Maximum length=256</p>
@@ -1117,8 +1049,7 @@ pub mod application_summary {
         /// <p>The description of the application.</p>
         /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
         pub fn home_page_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1126,12 +1057,8 @@ pub mod application_summary {
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-        pub fn set_home_page_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.home_page_url = input;
-            self
+        pub fn set_home_page_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.home_page_url = input; self
         }
         /// Appends an item to `labels`.
         ///
@@ -1142,19 +1069,15 @@ pub mod application_summary {
         /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
-            self.labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.labels = Some(v);
+                            self
         }
         /// <p>Labels to improve discovery of apps in search results.</p>
         /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
         /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.labels = input; self
         }
         /// <p>The name of the application.</p>
         /// <p>Minimum length=1. Maximum length=140</p>
@@ -1167,8 +1090,7 @@ pub mod application_summary {
         /// <p>Minimum length=1. Maximum length=140</p>
         /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
         pub fn spdx_license_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1176,27 +1098,33 @@ pub mod application_summary {
             self
         }
         /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-        pub fn set_spdx_license_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.spdx_license_id = input;
-            self
+        pub fn set_spdx_license_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.spdx_license_id = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationSummary`](crate::model::ApplicationSummary).
         pub fn build(self) -> crate::model::ApplicationSummary {
             crate::model::ApplicationSummary {
-                application_id: self.application_id,
-                author: self.author,
-                creation_time: self.creation_time,
-                description: self.description,
-                home_page_url: self.home_page_url,
-                labels: self.labels,
-                name: self.name,
-                spdx_license_id: self.spdx_license_id,
+                application_id: self.application_id
+                ,
+                author: self.author
+                ,
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                home_page_url: self.home_page_url
+                ,
+                labels: self.labels
+                ,
+                name: self.name
+                ,
+                spdx_license_id: self.spdx_license_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationSummary {
     /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
@@ -1208,7 +1136,7 @@ impl ApplicationSummary {
 /// <p>A nested application summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationDependencySummary {
+pub struct ApplicationDependencySummary  {
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -1218,17 +1146,17 @@ pub struct ApplicationDependencySummary {
 }
 impl ApplicationDependencySummary {
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The semantic version of the nested application.</p>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
 }
 /// See [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
 pub mod application_dependency_summary {
-
+    
     /// A builder for [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1242,12 +1170,8 @@ pub mod application_dependency_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The semantic version of the nested application.</p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1255,21 +1179,21 @@ pub mod application_dependency_summary {
             self
         }
         /// <p>The semantic version of the nested application.</p>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
         pub fn build(self) -> crate::model::ApplicationDependencySummary {
             crate::model::ApplicationDependencySummary {
-                application_id: self.application_id,
-                semantic_version: self.semantic_version,
+                application_id: self.application_id
+                ,
+                semantic_version: self.semantic_version
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationDependencySummary {
     /// Creates a new builder-style object to manufacture [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
@@ -1284,9 +1208,9 @@ impl ApplicationDependencySummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -1309,22 +1233,14 @@ impl ApplicationDependencySummary {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1333,7 +1249,7 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Preparing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -1341,17 +1257,17 @@ impl std::convert::From<&str> for Status {
             "ACTIVE" => Status::Active,
             "EXPIRED" => Status::Expired,
             "PREPARING" => Status::Preparing,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1359,12 +1275,14 @@ impl Status {
             Status::Active => "ACTIVE",
             Status::Expired => "EXPIRED",
             Status::Preparing => "PREPARING",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "EXPIRED", "PREPARING"]
+        &[
+            "ACTIVE", "EXPIRED", "PREPARING"
+        ]
     }
 }
 impl AsRef<str> for Status {
@@ -1376,7 +1294,7 @@ impl AsRef<str> for Status {
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1386,17 +1304,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1411,8 +1329,7 @@ pub mod tag {
         }
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1421,17 +1338,20 @@ pub mod tag {
         }
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1443,7 +1363,7 @@ impl Tag {
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RollbackConfiguration {
+pub struct RollbackConfiguration  {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     #[doc(hidden)]
     pub monitoring_time_in_minutes: i32,
@@ -1457,19 +1377,18 @@ impl RollbackConfiguration {
         self.monitoring_time_in_minutes
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn rollback_triggers(&self) -> std::option::Option<&[crate::model::RollbackTrigger]> {
+    pub fn rollback_triggers(&self) -> std::option::Option<& [crate::model::RollbackTrigger]> {
         self.rollback_triggers.as_deref()
     }
 }
 /// See [`RollbackConfiguration`](crate::model::RollbackConfiguration).
 pub mod rollback_configuration {
-
+    
     /// A builder for [`RollbackConfiguration`](crate::model::RollbackConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitoring_time_in_minutes: std::option::Option<i32>,
-        pub(crate) rollback_triggers:
-            std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
+        pub(crate) rollback_triggers: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
     }
     impl Builder {
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
@@ -1479,8 +1398,7 @@ pub mod rollback_configuration {
         }
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
         pub fn set_monitoring_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.monitoring_time_in_minutes = input;
-            self
+            self.monitoring_time_in_minutes = input; self
         }
         /// Appends an item to `rollback_triggers`.
         ///
@@ -1489,26 +1407,27 @@ pub mod rollback_configuration {
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
         pub fn rollback_triggers(mut self, input: crate::model::RollbackTrigger) -> Self {
             let mut v = self.rollback_triggers.unwrap_or_default();
-            v.push(input);
-            self.rollback_triggers = Some(v);
-            self
+                            v.push(input);
+                            self.rollback_triggers = Some(v);
+                            self
         }
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-        pub fn set_rollback_triggers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
-        ) -> Self {
-            self.rollback_triggers = input;
-            self
+        pub fn set_rollback_triggers(mut self, input: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>) -> Self {
+            self.rollback_triggers = input; self
         }
         /// Consumes the builder and constructs a [`RollbackConfiguration`](crate::model::RollbackConfiguration).
         pub fn build(self) -> crate::model::RollbackConfiguration {
             crate::model::RollbackConfiguration {
-                monitoring_time_in_minutes: self.monitoring_time_in_minutes.unwrap_or_default(),
-                rollback_triggers: self.rollback_triggers,
+                monitoring_time_in_minutes: self.monitoring_time_in_minutes
+                    .unwrap_or_default()
+                ,
+                rollback_triggers: self.rollback_triggers
+                ,
             }
         }
     }
+    
+    
 }
 impl RollbackConfiguration {
     /// Creates a new builder-style object to manufacture [`RollbackConfiguration`](crate::model::RollbackConfiguration).
@@ -1520,7 +1439,7 @@ impl RollbackConfiguration {
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RollbackTrigger {
+pub struct RollbackTrigger  {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1530,17 +1449,17 @@ pub struct RollbackTrigger {
 }
 impl RollbackTrigger {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`RollbackTrigger`](crate::model::RollbackTrigger).
 pub mod rollback_trigger {
-
+    
     /// A builder for [`RollbackTrigger`](crate::model::RollbackTrigger).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1555,8 +1474,7 @@ pub mod rollback_trigger {
         }
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1565,17 +1483,20 @@ pub mod rollback_trigger {
         }
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`RollbackTrigger`](crate::model::RollbackTrigger).
         pub fn build(self) -> crate::model::RollbackTrigger {
             crate::model::RollbackTrigger {
-                arn: self.arn,
-                r#type: self.r#type,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl RollbackTrigger {
     /// Creates a new builder-style object to manufacture [`RollbackTrigger`](crate::model::RollbackTrigger).
@@ -1587,7 +1508,7 @@ impl RollbackTrigger {
 /// <p>Parameter value of the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterValue {
+pub struct ParameterValue  {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1597,17 +1518,17 @@ pub struct ParameterValue {
 }
 impl ParameterValue {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The input value associated with the parameter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ParameterValue`](crate::model::ParameterValue).
 pub mod parameter_value {
-
+    
     /// A builder for [`ParameterValue`](crate::model::ParameterValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1622,8 +1543,7 @@ pub mod parameter_value {
         }
         /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The input value associated with the parameter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1632,17 +1552,20 @@ pub mod parameter_value {
         }
         /// <p>The input value associated with the parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ParameterValue`](crate::model::ParameterValue).
         pub fn build(self) -> crate::model::ParameterValue {
             crate::model::ParameterValue {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ParameterValue {
     /// Creates a new builder-style object to manufacture [`ParameterValue`](crate::model::ParameterValue).
@@ -1650,3 +1573,4 @@ impl ParameterValue {
         crate::model::parameter_value::Builder::default()
     }
 }
+

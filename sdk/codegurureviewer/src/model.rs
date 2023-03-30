@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reaction = unimplemented!();
 /// match reaction {
@@ -30,58 +30,52 @@
 /// Specifically, when `reaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Reaction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Reaction {
     #[allow(missing_docs)] // documentation missing in model
     ThumbsDown,
     #[allow(missing_docs)] // documentation missing in model
     ThumbsUp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Reaction {
     fn from(s: &str) -> Self {
         match s {
             "ThumbsDown" => Reaction::ThumbsDown,
             "ThumbsUp" => Reaction::ThumbsUp,
-            other => Reaction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Reaction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Reaction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Reaction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Reaction::from(s))
+                }
+            }
 impl Reaction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Reaction::ThumbsDown => "ThumbsDown",
             Reaction::ThumbsUp => "ThumbsUp",
-            Reaction::Unknown(value) => value.as_str(),
+            Reaction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ThumbsDown", "ThumbsUp"]
+        &[
+            "ThumbsDown", "ThumbsUp"
+        ]
     }
 }
 impl AsRef<str> for Reaction {
@@ -93,7 +87,7 @@ impl AsRef<str> for Reaction {
 /// <p>Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryAssociationSummary {
+pub struct RepositoryAssociationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
     pub association_arn: std::option::Option<std::string::String>,
@@ -115,75 +109,75 @@ pub struct RepositoryAssociationSummary {
     /// <p>The provider type of the repository association.</p>
     #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::ProviderType>,
-    /// <p>The state of the repository association.</p>
-    /// <p>The valid repository association states are:</p>
-    /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
-    /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
-    /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// <p>The state of the repository association.</p> 
+    /// <p>The valid repository association states are:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> 
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> 
+    /// <ul> 
+    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> 
+    /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> 
+    /// </note> </li> 
+    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> 
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> 
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::RepositoryAssociationState>,
 }
 impl RepositoryAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn association_arn(&self) -> std::option::Option<&str> {
+    pub fn association_arn(&self) -> std::option::Option<& str> {
         self.association_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, since the repository association was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>The repository association ID.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The name of the repository association.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The provider type of the repository association.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+    pub fn provider_type(&self) -> std::option::Option<& crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>The state of the repository association.</p>
-    /// <p>The valid repository association states are:</p>
-    /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
-    /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
-    /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// <p>The state of the repository association.</p> 
+    /// <p>The valid repository association states are:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> 
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> 
+    /// <ul> 
+    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> 
+    /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> 
+    /// </note> </li> 
+    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> 
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> 
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::model::RepositoryAssociationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RepositoryAssociationState> {
         self.state.as_ref()
     }
 }
 /// See [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
 pub mod repository_association_summary {
-
+    
     /// A builder for [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -203,12 +197,8 @@ pub mod repository_association_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-        pub fn set_association_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.association_arn = input;
-            self
+        pub fn set_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.association_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,12 +206,8 @@ pub mod repository_association_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The time, in milliseconds since the epoch, since the repository association was last updated.</p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -229,12 +215,8 @@ pub mod repository_association_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, since the repository association was last updated.</p>
-        pub fn set_last_updated_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time_stamp = input;
-            self
+        pub fn set_last_updated_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time_stamp = input; self
         }
         /// <p>The repository association ID.</p>
         pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -242,12 +224,8 @@ pub mod repository_association_summary {
             self
         }
         /// <p>The repository association ID.</p>
-        pub fn set_association_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.association_id = input;
-            self
+        pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.association_id = input; self
         }
         /// <p>The name of the repository association.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,8 +234,7 @@ pub mod repository_association_summary {
         }
         /// <p>The name of the repository association.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,8 +243,7 @@ pub mod repository_association_summary {
         }
         /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The provider type of the repository association.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
@@ -275,68 +251,70 @@ pub mod repository_association_summary {
             self
         }
         /// <p>The provider type of the repository association.</p>
-        pub fn set_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::ProviderType>,
-        ) -> Self {
-            self.provider_type = input;
-            self
+        pub fn set_provider_type(mut self, input: std::option::Option<crate::model::ProviderType>) -> Self {
+            self.provider_type = input; self
         }
-        /// <p>The state of the repository association.</p>
-        /// <p>The valid repository association states are:</p>
-        /// <ul>
-        /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
-        /// <ul>
-        /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
-        /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-        /// </note> </li>
-        /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+        /// <p>The state of the repository association.</p> 
+        /// <p>The valid repository association states are:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> 
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> 
+        /// <ul> 
+        /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> 
+        /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> 
+        /// </note> </li> 
+        /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> 
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> 
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> 
         /// </ul>
         pub fn state(mut self, input: crate::model::RepositoryAssociationState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the repository association.</p>
-        /// <p>The valid repository association states are:</p>
-        /// <ul>
-        /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
-        /// <ul>
-        /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
-        /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-        /// </note> </li>
-        /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+        /// <p>The state of the repository association.</p> 
+        /// <p>The valid repository association states are:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> 
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> 
+        /// <ul> 
+        /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> 
+        /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> 
+        /// </note> </li> 
+        /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> 
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> 
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> 
         /// </ul>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryAssociationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::RepositoryAssociationState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
         pub fn build(self) -> crate::model::RepositoryAssociationSummary {
             crate::model::RepositoryAssociationSummary {
-                association_arn: self.association_arn,
-                connection_arn: self.connection_arn,
-                last_updated_time_stamp: self.last_updated_time_stamp,
-                association_id: self.association_id,
-                name: self.name,
-                owner: self.owner,
-                provider_type: self.provider_type,
-                state: self.state,
+                association_arn: self.association_arn
+                ,
+                connection_arn: self.connection_arn
+                ,
+                last_updated_time_stamp: self.last_updated_time_stamp
+                ,
+                association_id: self.association_id
+                ,
+                name: self.name
+                ,
+                owner: self.owner
+                ,
+                provider_type: self.provider_type
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryAssociationSummary {
     /// Creates a new builder-style object to manufacture [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
@@ -351,9 +329,9 @@ impl RepositoryAssociationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let repositoryassociationstate = unimplemented!();
 /// match repositoryassociationstate {
@@ -378,22 +356,14 @@ impl RepositoryAssociationSummary {
 /// Specifically, when `repositoryassociationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RepositoryAssociationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RepositoryAssociationState {
     #[allow(missing_docs)] // documentation missing in model
     Associated,
@@ -406,7 +376,7 @@ pub enum RepositoryAssociationState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepositoryAssociationState {
     fn from(s: &str) -> Self {
@@ -416,19 +386,17 @@ impl std::convert::From<&str> for RepositoryAssociationState {
             "Disassociated" => RepositoryAssociationState::Disassociated,
             "Disassociating" => RepositoryAssociationState::Disassociating,
             "Failed" => RepositoryAssociationState::Failed,
-            other => RepositoryAssociationState::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RepositoryAssociationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RepositoryAssociationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RepositoryAssociationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RepositoryAssociationState::from(s))
+                }
+            }
 impl RepositoryAssociationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -438,17 +406,13 @@ impl RepositoryAssociationState {
             RepositoryAssociationState::Disassociated => "Disassociated",
             RepositoryAssociationState::Disassociating => "Disassociating",
             RepositoryAssociationState::Failed => "Failed",
-            RepositoryAssociationState::Unknown(value) => value.as_str(),
+            RepositoryAssociationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Associated",
-            "Associating",
-            "Disassociated",
-            "Disassociating",
-            "Failed",
+            "Associated", "Associating", "Disassociated", "Disassociating", "Failed"
         ]
     }
 }
@@ -464,9 +428,9 @@ impl AsRef<str> for RepositoryAssociationState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let providertype = unimplemented!();
 /// match providertype {
@@ -491,22 +455,14 @@ impl AsRef<str> for RepositoryAssociationState {
 /// Specifically, when `providertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProviderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProviderType {
     #[allow(missing_docs)] // documentation missing in model
     Bitbucket,
@@ -519,7 +475,7 @@ pub enum ProviderType {
     #[allow(missing_docs)] // documentation missing in model
     S3Bucket,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProviderType {
     fn from(s: &str) -> Self {
@@ -529,17 +485,17 @@ impl std::convert::From<&str> for ProviderType {
             "GitHub" => ProviderType::GitHub,
             "GitHubEnterpriseServer" => ProviderType::GitHubEnterpriseServer,
             "S3Bucket" => ProviderType::S3Bucket,
-            other => ProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProviderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProviderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProviderType::from(s))
+                }
+            }
 impl ProviderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -549,17 +505,13 @@ impl ProviderType {
             ProviderType::GitHub => "GitHub",
             ProviderType::GitHubEnterpriseServer => "GitHubEnterpriseServer",
             ProviderType::S3Bucket => "S3Bucket",
-            ProviderType::Unknown(value) => value.as_str(),
+            ProviderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Bitbucket",
-            "CodeCommit",
-            "GitHub",
-            "GitHubEnterpriseServer",
-            "S3Bucket",
+            "Bitbucket", "CodeCommit", "GitHub", "GitHubEnterpriseServer", "S3Bucket"
         ]
     }
 }
@@ -572,7 +524,7 @@ impl AsRef<str> for ProviderType {
 /// <p>Information about recommendations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationSummary {
+pub struct RecommendationSummary  {
     /// <p>Name of the file on which a recommendation is provided.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -600,11 +552,11 @@ pub struct RecommendationSummary {
 }
 impl RecommendationSummary {
     /// <p>Name of the file on which a recommendation is provided.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>Start line from where the recommendation is applicable in the source commit or source branch.</p>
@@ -616,27 +568,25 @@ impl RecommendationSummary {
         self.end_line
     }
     /// <p>A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of a recommendation.</p>
-    pub fn recommendation_category(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommendationCategory> {
+    pub fn recommendation_category(&self) -> std::option::Option<& crate::model::RecommendationCategory> {
         self.recommendation_category.as_ref()
     }
     /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
-    pub fn rule_metadata(&self) -> std::option::Option<&crate::model::RuleMetadata> {
+    pub fn rule_metadata(&self) -> std::option::Option<& crate::model::RuleMetadata> {
         self.rule_metadata.as_ref()
     }
     /// <p>The severity of the issue in the code that generated this recommendation.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::model::Severity> {
+    pub fn severity(&self) -> std::option::Option<& crate::model::Severity> {
         self.severity.as_ref()
     }
 }
 /// See [`RecommendationSummary`](crate::model::RecommendationSummary).
 pub mod recommendation_summary {
-
+    
     /// A builder for [`RecommendationSummary`](crate::model::RecommendationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -645,8 +595,7 @@ pub mod recommendation_summary {
         pub(crate) start_line: std::option::Option<i32>,
         pub(crate) end_line: std::option::Option<i32>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) recommendation_category:
-            std::option::Option<crate::model::RecommendationCategory>,
+        pub(crate) recommendation_category: std::option::Option<crate::model::RecommendationCategory>,
         pub(crate) rule_metadata: std::option::Option<crate::model::RuleMetadata>,
         pub(crate) severity: std::option::Option<crate::model::Severity>,
     }
@@ -658,8 +607,7 @@ pub mod recommendation_summary {
         }
         /// <p>Name of the file on which a recommendation is provided.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -667,12 +615,8 @@ pub mod recommendation_summary {
             self
         }
         /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>Start line from where the recommendation is applicable in the source commit or source branch.</p>
         pub fn start_line(mut self, input: i32) -> Self {
@@ -681,8 +625,7 @@ pub mod recommendation_summary {
         }
         /// <p>Start line from where the recommendation is applicable in the source commit or source branch.</p>
         pub fn set_start_line(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_line = input;
-            self
+            self.start_line = input; self
         }
         /// <p>Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same.</p>
         pub fn end_line(mut self, input: i32) -> Self {
@@ -691,8 +634,7 @@ pub mod recommendation_summary {
         }
         /// <p>Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same.</p>
         pub fn set_end_line(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_line = input;
-            self
+            self.end_line = input; self
         }
         /// <p>A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -701,24 +643,16 @@ pub mod recommendation_summary {
         }
         /// <p>A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type of a recommendation.</p>
-        pub fn recommendation_category(
-            mut self,
-            input: crate::model::RecommendationCategory,
-        ) -> Self {
+        pub fn recommendation_category(mut self, input: crate::model::RecommendationCategory) -> Self {
             self.recommendation_category = Some(input);
             self
         }
         /// <p>The type of a recommendation.</p>
-        pub fn set_recommendation_category(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationCategory>,
-        ) -> Self {
-            self.recommendation_category = input;
-            self
+        pub fn set_recommendation_category(mut self, input: std::option::Option<crate::model::RecommendationCategory>) -> Self {
+            self.recommendation_category = input; self
         }
         /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
         pub fn rule_metadata(mut self, input: crate::model::RuleMetadata) -> Self {
@@ -726,12 +660,8 @@ pub mod recommendation_summary {
             self
         }
         /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
-        pub fn set_rule_metadata(
-            mut self,
-            input: std::option::Option<crate::model::RuleMetadata>,
-        ) -> Self {
-            self.rule_metadata = input;
-            self
+        pub fn set_rule_metadata(mut self, input: std::option::Option<crate::model::RuleMetadata>) -> Self {
+            self.rule_metadata = input; self
         }
         /// <p>The severity of the issue in the code that generated this recommendation.</p>
         pub fn severity(mut self, input: crate::model::Severity) -> Self {
@@ -740,23 +670,32 @@ pub mod recommendation_summary {
         }
         /// <p>The severity of the issue in the code that generated this recommendation.</p>
         pub fn set_severity(mut self, input: std::option::Option<crate::model::Severity>) -> Self {
-            self.severity = input;
-            self
+            self.severity = input; self
         }
         /// Consumes the builder and constructs a [`RecommendationSummary`](crate::model::RecommendationSummary).
         pub fn build(self) -> crate::model::RecommendationSummary {
             crate::model::RecommendationSummary {
-                file_path: self.file_path,
-                recommendation_id: self.recommendation_id,
-                start_line: self.start_line,
-                end_line: self.end_line,
-                description: self.description,
-                recommendation_category: self.recommendation_category,
-                rule_metadata: self.rule_metadata,
-                severity: self.severity,
+                file_path: self.file_path
+                ,
+                recommendation_id: self.recommendation_id
+                ,
+                start_line: self.start_line
+                ,
+                end_line: self.end_line
+                ,
+                description: self.description
+                ,
+                recommendation_category: self.recommendation_category
+                ,
+                rule_metadata: self.rule_metadata
+                ,
+                severity: self.severity
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommendationSummary {
     /// Creates a new builder-style object to manufacture [`RecommendationSummary`](crate::model::RecommendationSummary).
@@ -771,9 +710,9 @@ impl RecommendationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let severity = unimplemented!();
 /// match severity {
@@ -798,22 +737,14 @@ impl RecommendationSummary {
 /// Specifically, when `severity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Severity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Severity {
     #[allow(missing_docs)] // documentation missing in model
     Critical,
@@ -826,7 +757,7 @@ pub enum Severity {
     #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Severity {
     fn from(s: &str) -> Self {
@@ -836,17 +767,17 @@ impl std::convert::From<&str> for Severity {
             "Info" => Severity::Info,
             "Low" => Severity::Low,
             "Medium" => Severity::Medium,
-            other => Severity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Severity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Severity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Severity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Severity::from(s))
+                }
+            }
 impl Severity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -856,12 +787,14 @@ impl Severity {
             Severity::Info => "Info",
             Severity::Low => "Low",
             Severity::Medium => "Medium",
-            Severity::Unknown(value) => value.as_str(),
+            Severity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Critical", "High", "Info", "Low", "Medium"]
+        &[
+            "Critical", "High", "Info", "Low", "Medium"
+        ]
     }
 }
 impl AsRef<str> for Severity {
@@ -873,7 +806,7 @@ impl AsRef<str> for Severity {
 /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleMetadata {
+pub struct RuleMetadata  {
     /// <p>The ID of the rule.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
@@ -892,29 +825,29 @@ pub struct RuleMetadata {
 }
 impl RuleMetadata {
     /// <p>The ID of the rule.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>A short description of the rule.</p>
-    pub fn short_description(&self) -> std::option::Option<&str> {
+    pub fn short_description(&self) -> std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>A long description of the rule.</p>
-    pub fn long_description(&self) -> std::option::Option<&str> {
+    pub fn long_description(&self) -> std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>Tags that are associated with the rule.</p>
-    pub fn rule_tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_tags(&self) -> std::option::Option<& [std::string::String]> {
         self.rule_tags.as_deref()
     }
 }
 /// See [`RuleMetadata`](crate::model::RuleMetadata).
 pub mod rule_metadata {
-
+    
     /// A builder for [`RuleMetadata`](crate::model::RuleMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -932,8 +865,7 @@ pub mod rule_metadata {
         }
         /// <p>The ID of the rule.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_id = input;
-            self
+            self.rule_id = input; self
         }
         /// <p>The name of the rule.</p>
         pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -942,8 +874,7 @@ pub mod rule_metadata {
         }
         /// <p>The name of the rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>A short description of the rule.</p>
         pub fn short_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -951,12 +882,8 @@ pub mod rule_metadata {
             self
         }
         /// <p>A short description of the rule.</p>
-        pub fn set_short_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.short_description = input;
-            self
+        pub fn set_short_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.short_description = input; self
         }
         /// <p>A long description of the rule.</p>
         pub fn long_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -964,12 +891,8 @@ pub mod rule_metadata {
             self
         }
         /// <p>A long description of the rule.</p>
-        pub fn set_long_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.long_description = input;
-            self
+        pub fn set_long_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.long_description = input; self
         }
         /// Appends an item to `rule_tags`.
         ///
@@ -978,29 +901,32 @@ pub mod rule_metadata {
         /// <p>Tags that are associated with the rule.</p>
         pub fn rule_tags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_tags.unwrap_or_default();
-            v.push(input.into());
-            self.rule_tags = Some(v);
-            self
+                            v.push(input.into());
+                            self.rule_tags = Some(v);
+                            self
         }
         /// <p>Tags that are associated with the rule.</p>
-        pub fn set_rule_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rule_tags = input;
-            self
+        pub fn set_rule_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rule_tags = input; self
         }
         /// Consumes the builder and constructs a [`RuleMetadata`](crate::model::RuleMetadata).
         pub fn build(self) -> crate::model::RuleMetadata {
             crate::model::RuleMetadata {
-                rule_id: self.rule_id,
-                rule_name: self.rule_name,
-                short_description: self.short_description,
-                long_description: self.long_description,
-                rule_tags: self.rule_tags,
+                rule_id: self.rule_id
+                ,
+                rule_name: self.rule_name
+                ,
+                short_description: self.short_description
+                ,
+                long_description: self.long_description
+                ,
+                rule_tags: self.rule_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleMetadata {
     /// Creates a new builder-style object to manufacture [`RuleMetadata`](crate::model::RuleMetadata).
@@ -1015,9 +941,9 @@ impl RuleMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationcategory = unimplemented!();
 /// match recommendationcategory {
@@ -1048,22 +974,14 @@ impl RuleMetadata {
 /// Specifically, when `recommendationcategory` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationCategory::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecommendationCategory {
     #[allow(missing_docs)] // documentation missing in model
     AwsBestPractices,
@@ -1088,7 +1006,7 @@ pub enum RecommendationCategory {
     #[allow(missing_docs)] // documentation missing in model
     SecurityIssues,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationCategory {
     fn from(s: &str) -> Self {
@@ -1104,19 +1022,17 @@ impl std::convert::From<&str> for RecommendationCategory {
             "PythonBestPractices" => RecommendationCategory::PythonBestPractices,
             "ResourceLeaks" => RecommendationCategory::ResourceLeaks,
             "SecurityIssues" => RecommendationCategory::SecurityIssues,
-            other => {
-                RecommendationCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RecommendationCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecommendationCategory {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationCategory::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecommendationCategory::from(s))
+                }
+            }
 impl RecommendationCategory {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1132,23 +1048,13 @@ impl RecommendationCategory {
             RecommendationCategory::PythonBestPractices => "PythonBestPractices",
             RecommendationCategory::ResourceLeaks => "ResourceLeaks",
             RecommendationCategory::SecurityIssues => "SecurityIssues",
-            RecommendationCategory::Unknown(value) => value.as_str(),
+            RecommendationCategory::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWSBestPractices",
-            "AWSCloudFormationIssues",
-            "CodeInconsistencies",
-            "CodeMaintenanceIssues",
-            "ConcurrencyIssues",
-            "DuplicateCode",
-            "InputValidations",
-            "JavaBestPractices",
-            "PythonBestPractices",
-            "ResourceLeaks",
-            "SecurityIssues",
+            "AWSBestPractices", "AWSCloudFormationIssues", "CodeInconsistencies", "CodeMaintenanceIssues", "ConcurrencyIssues", "DuplicateCode", "InputValidations", "JavaBestPractices", "PythonBestPractices", "ResourceLeaks", "SecurityIssues"
         ]
     }
 }
@@ -1161,36 +1067,36 @@ impl AsRef<str> for RecommendationCategory {
 /// <p>Information about recommendation feedback summaries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationFeedbackSummary {
+pub struct RecommendationFeedbackSummary  {
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
     #[doc(hidden)]
     pub reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
-    /// <p>The ID of the user that gave the feedback.</p>
+    /// <p>The ID of the user that gave the feedback.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl RecommendationFeedbackSummary {
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
-    pub fn reactions(&self) -> std::option::Option<&[crate::model::Reaction]> {
+    pub fn reactions(&self) -> std::option::Option<& [crate::model::Reaction]> {
         self.reactions.as_deref()
     }
-    /// <p>The ID of the user that gave the feedback.</p>
+    /// <p>The ID of the user that gave the feedback.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
 /// See [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
 pub mod recommendation_feedback_summary {
-
+    
     /// A builder for [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1205,12 +1111,8 @@ pub mod recommendation_feedback_summary {
             self
         }
         /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// Appends an item to `reactions`.
         ///
@@ -1219,39 +1121,39 @@ pub mod recommendation_feedback_summary {
         /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
         pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
             let mut v = self.reactions.unwrap_or_default();
-            v.push(input);
-            self.reactions = Some(v);
-            self
+                            v.push(input);
+                            self.reactions = Some(v);
+                            self
         }
         /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
-        pub fn set_reactions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
-        ) -> Self {
-            self.reactions = input;
-            self
+        pub fn set_reactions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Reaction>>) -> Self {
+            self.reactions = input; self
         }
-        /// <p>The ID of the user that gave the feedback.</p>
+        /// <p>The ID of the user that gave the feedback.</p> 
         /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>The ID of the user that gave the feedback.</p>
+        /// <p>The ID of the user that gave the feedback.</p> 
         /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// Consumes the builder and constructs a [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
         pub fn build(self) -> crate::model::RecommendationFeedbackSummary {
             crate::model::RecommendationFeedbackSummary {
-                recommendation_id: self.recommendation_id,
-                reactions: self.reactions,
-                user_id: self.user_id,
+                recommendation_id: self.recommendation_id
+                ,
+                reactions: self.reactions
+                ,
+                user_id: self.user_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommendationFeedbackSummary {
     /// Creates a new builder-style object to manufacture [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
@@ -1263,7 +1165,7 @@ impl RecommendationFeedbackSummary {
 /// <p>Information about the summary of the code review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeReviewSummary {
+pub struct CodeReviewSummary  {
     /// <p>The name of the code review.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1279,13 +1181,13 @@ pub struct CodeReviewSummary {
     /// <p>The provider type of the repository association.</p>
     #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::ProviderType>,
-    /// <p>The state of the code review.</p>
-    /// <p>The valid code review states are:</p>
-    /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <p>The state of the code review.</p> 
+    /// <p>The valid code review states are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobState>,
@@ -1310,64 +1212,64 @@ pub struct CodeReviewSummary {
 }
 impl CodeReviewSummary {
     /// <p>The name of the code review.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> std::option::Option<& str> {
         self.code_review_arn.as_deref()
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The provider type of the repository association.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+    pub fn provider_type(&self) -> std::option::Option<& crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>The state of the code review.</p>
-    /// <p>The valid code review states are:</p>
-    /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <p>The state of the code review.</p> 
+    /// <p>The valid code review states are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::model::JobState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::JobState> {
         self.state.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>The type of the code review.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::Type> {
         self.r#type.as_ref()
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The statistics from the code review.</p>
-    pub fn metrics_summary(&self) -> std::option::Option<&crate::model::MetricsSummary> {
+    pub fn metrics_summary(&self) -> std::option::Option<& crate::model::MetricsSummary> {
         self.metrics_summary.as_ref()
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    pub fn source_code_type(&self) -> std::option::Option<&crate::model::SourceCodeType> {
+    pub fn source_code_type(&self) -> std::option::Option<& crate::model::SourceCodeType> {
         self.source_code_type.as_ref()
     }
 }
 /// See [`CodeReviewSummary`](crate::model::CodeReviewSummary).
 pub mod code_review_summary {
-
+    
     /// A builder for [`CodeReviewSummary`](crate::model::CodeReviewSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1392,8 +1294,7 @@ pub mod code_review_summary {
         }
         /// <p>The name of the code review.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1401,12 +1302,8 @@ pub mod code_review_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-        pub fn set_code_review_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_review_arn = input;
-            self
+        pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_review_arn = input; self
         }
         /// <p>The name of the repository.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1414,12 +1311,8 @@ pub mod code_review_summary {
             self
         }
         /// <p>The name of the repository.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1428,8 +1321,7 @@ pub mod code_review_summary {
         }
         /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The provider type of the repository association.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
@@ -1437,36 +1329,31 @@ pub mod code_review_summary {
             self
         }
         /// <p>The provider type of the repository association.</p>
-        pub fn set_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::ProviderType>,
-        ) -> Self {
-            self.provider_type = input;
-            self
+        pub fn set_provider_type(mut self, input: std::option::Option<crate::model::ProviderType>) -> Self {
+            self.provider_type = input; self
         }
-        /// <p>The state of the code review.</p>
-        /// <p>The valid code review states are:</p>
-        /// <ul>
-        /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-        /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-        /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+        /// <p>The state of the code review.</p> 
+        /// <p>The valid code review states are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
+        /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
         /// </ul>
         pub fn state(mut self, input: crate::model::JobState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the code review.</p>
-        /// <p>The valid code review states are:</p>
-        /// <ul>
-        /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-        /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-        /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+        /// <p>The state of the code review.</p> 
+        /// <p>The valid code review states are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
+        /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
         /// </ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JobState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
         pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1474,12 +1361,8 @@ pub mod code_review_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-        pub fn set_created_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time_stamp = input;
-            self
+        pub fn set_created_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time_stamp = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1487,12 +1370,8 @@ pub mod code_review_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-        pub fn set_last_updated_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time_stamp = input;
-            self
+        pub fn set_last_updated_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time_stamp = input; self
         }
         /// <p>The type of the code review.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
@@ -1501,8 +1380,7 @@ pub mod code_review_summary {
         }
         /// <p>The type of the code review.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The pull request ID for the code review.</p>
         pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1510,12 +1388,8 @@ pub mod code_review_summary {
             self
         }
         /// <p>The pull request ID for the code review.</p>
-        pub fn set_pull_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pull_request_id = input;
-            self
+        pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pull_request_id = input; self
         }
         /// <p>The statistics from the code review.</p>
         pub fn metrics_summary(mut self, input: crate::model::MetricsSummary) -> Self {
@@ -1523,12 +1397,8 @@ pub mod code_review_summary {
             self
         }
         /// <p>The statistics from the code review.</p>
-        pub fn set_metrics_summary(
-            mut self,
-            input: std::option::Option<crate::model::MetricsSummary>,
-        ) -> Self {
-            self.metrics_summary = input;
-            self
+        pub fn set_metrics_summary(mut self, input: std::option::Option<crate::model::MetricsSummary>) -> Self {
+            self.metrics_summary = input; self
         }
         /// <p>Specifies the source code that is analyzed in a code review.</p>
         pub fn source_code_type(mut self, input: crate::model::SourceCodeType) -> Self {
@@ -1536,31 +1406,41 @@ pub mod code_review_summary {
             self
         }
         /// <p>Specifies the source code that is analyzed in a code review.</p>
-        pub fn set_source_code_type(
-            mut self,
-            input: std::option::Option<crate::model::SourceCodeType>,
-        ) -> Self {
-            self.source_code_type = input;
-            self
+        pub fn set_source_code_type(mut self, input: std::option::Option<crate::model::SourceCodeType>) -> Self {
+            self.source_code_type = input; self
         }
         /// Consumes the builder and constructs a [`CodeReviewSummary`](crate::model::CodeReviewSummary).
         pub fn build(self) -> crate::model::CodeReviewSummary {
             crate::model::CodeReviewSummary {
-                name: self.name,
-                code_review_arn: self.code_review_arn,
-                repository_name: self.repository_name,
-                owner: self.owner,
-                provider_type: self.provider_type,
-                state: self.state,
-                created_time_stamp: self.created_time_stamp,
-                last_updated_time_stamp: self.last_updated_time_stamp,
-                r#type: self.r#type,
-                pull_request_id: self.pull_request_id,
-                metrics_summary: self.metrics_summary,
-                source_code_type: self.source_code_type,
+                name: self.name
+                ,
+                code_review_arn: self.code_review_arn
+                ,
+                repository_name: self.repository_name
+                ,
+                owner: self.owner
+                ,
+                provider_type: self.provider_type
+                ,
+                state: self.state
+                ,
+                created_time_stamp: self.created_time_stamp
+                ,
+                last_updated_time_stamp: self.last_updated_time_stamp
+                ,
+                r#type: self.r#type
+                ,
+                pull_request_id: self.pull_request_id
+                ,
+                metrics_summary: self.metrics_summary
+                ,
+                source_code_type: self.source_code_type
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeReviewSummary {
     /// Creates a new builder-style object to manufacture [`CodeReviewSummary`](crate::model::CodeReviewSummary).
@@ -1572,7 +1452,7 @@ impl CodeReviewSummary {
 /// <p>Specifies the source code that is analyzed in a code review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceCodeType {
+pub struct SourceCodeType  {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.</p>
     #[doc(hidden)]
     pub commit_diff: std::option::Option<crate::model::CommitDiffSourceCodeType>,
@@ -1591,31 +1471,29 @@ pub struct SourceCodeType {
 }
 impl SourceCodeType {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.</p>
-    pub fn commit_diff(&self) -> std::option::Option<&crate::model::CommitDiffSourceCodeType> {
+    pub fn commit_diff(&self) -> std::option::Option<& crate::model::CommitDiffSourceCodeType> {
         self.commit_diff.as_ref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn repository_head(
-        &self,
-    ) -> std::option::Option<&crate::model::RepositoryHeadSourceCodeType> {
+    pub fn repository_head(&self) -> std::option::Option<& crate::model::RepositoryHeadSourceCodeType> {
         self.repository_head.as_ref()
     }
     /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
-    pub fn branch_diff(&self) -> std::option::Option<&crate::model::BranchDiffSourceCodeType> {
+    pub fn branch_diff(&self) -> std::option::Option<& crate::model::BranchDiffSourceCodeType> {
         self.branch_diff.as_ref()
     }
     /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
-    pub fn s3_bucket_repository(&self) -> std::option::Option<&crate::model::S3BucketRepository> {
+    pub fn s3_bucket_repository(&self) -> std::option::Option<& crate::model::S3BucketRepository> {
         self.s3_bucket_repository.as_ref()
     }
     /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
-    pub fn request_metadata(&self) -> std::option::Option<&crate::model::RequestMetadata> {
+    pub fn request_metadata(&self) -> std::option::Option<& crate::model::RequestMetadata> {
         self.request_metadata.as_ref()
     }
 }
 /// See [`SourceCodeType`](crate::model::SourceCodeType).
 pub mod source_code_type {
-
+    
     /// A builder for [`SourceCodeType`](crate::model::SourceCodeType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1632,28 +1510,17 @@ pub mod source_code_type {
             self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.</p>
-        pub fn set_commit_diff(
-            mut self,
-            input: std::option::Option<crate::model::CommitDiffSourceCodeType>,
-        ) -> Self {
-            self.commit_diff = input;
-            self
+        pub fn set_commit_diff(mut self, input: std::option::Option<crate::model::CommitDiffSourceCodeType>) -> Self {
+            self.commit_diff = input; self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-        pub fn repository_head(
-            mut self,
-            input: crate::model::RepositoryHeadSourceCodeType,
-        ) -> Self {
+        pub fn repository_head(mut self, input: crate::model::RepositoryHeadSourceCodeType) -> Self {
             self.repository_head = Some(input);
             self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-        pub fn set_repository_head(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
-        ) -> Self {
-            self.repository_head = input;
-            self
+        pub fn set_repository_head(mut self, input: std::option::Option<crate::model::RepositoryHeadSourceCodeType>) -> Self {
+            self.repository_head = input; self
         }
         /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
         pub fn branch_diff(mut self, input: crate::model::BranchDiffSourceCodeType) -> Self {
@@ -1661,12 +1528,8 @@ pub mod source_code_type {
             self
         }
         /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
-        pub fn set_branch_diff(
-            mut self,
-            input: std::option::Option<crate::model::BranchDiffSourceCodeType>,
-        ) -> Self {
-            self.branch_diff = input;
-            self
+        pub fn set_branch_diff(mut self, input: std::option::Option<crate::model::BranchDiffSourceCodeType>) -> Self {
+            self.branch_diff = input; self
         }
         /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
         pub fn s3_bucket_repository(mut self, input: crate::model::S3BucketRepository) -> Self {
@@ -1674,12 +1537,8 @@ pub mod source_code_type {
             self
         }
         /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
-        pub fn set_s3_bucket_repository(
-            mut self,
-            input: std::option::Option<crate::model::S3BucketRepository>,
-        ) -> Self {
-            self.s3_bucket_repository = input;
-            self
+        pub fn set_s3_bucket_repository(mut self, input: std::option::Option<crate::model::S3BucketRepository>) -> Self {
+            self.s3_bucket_repository = input; self
         }
         /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
         pub fn request_metadata(mut self, input: crate::model::RequestMetadata) -> Self {
@@ -1687,24 +1546,27 @@ pub mod source_code_type {
             self
         }
         /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
-        pub fn set_request_metadata(
-            mut self,
-            input: std::option::Option<crate::model::RequestMetadata>,
-        ) -> Self {
-            self.request_metadata = input;
-            self
+        pub fn set_request_metadata(mut self, input: std::option::Option<crate::model::RequestMetadata>) -> Self {
+            self.request_metadata = input; self
         }
         /// Consumes the builder and constructs a [`SourceCodeType`](crate::model::SourceCodeType).
         pub fn build(self) -> crate::model::SourceCodeType {
             crate::model::SourceCodeType {
-                commit_diff: self.commit_diff,
-                repository_head: self.repository_head,
-                branch_diff: self.branch_diff,
-                s3_bucket_repository: self.s3_bucket_repository,
-                request_metadata: self.request_metadata,
+                commit_diff: self.commit_diff
+                ,
+                repository_head: self.repository_head
+                ,
+                branch_diff: self.branch_diff
+                ,
+                s3_bucket_repository: self.s3_bucket_repository
+                ,
+                request_metadata: self.request_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceCodeType {
     /// Creates a new builder-style object to manufacture [`SourceCodeType`](crate::model::SourceCodeType).
@@ -1716,7 +1578,7 @@ impl SourceCodeType {
 /// <p>Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestMetadata {
+pub struct RequestMetadata  {
     /// <p>The ID of the request. This is required for a pull request code review.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -1732,25 +1594,25 @@ pub struct RequestMetadata {
 }
 impl RequestMetadata {
     /// <p>The ID of the request. This is required for a pull request code review.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
-    pub fn requester(&self) -> std::option::Option<&str> {
+    pub fn requester(&self) -> std::option::Option<& str> {
         self.requester.as_deref()
     }
     /// <p>Information about the event associated with a code review.</p>
-    pub fn event_info(&self) -> std::option::Option<&crate::model::EventInfo> {
+    pub fn event_info(&self) -> std::option::Option<& crate::model::EventInfo> {
         self.event_info.as_ref()
     }
     /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
-    pub fn vendor_name(&self) -> std::option::Option<&crate::model::VendorName> {
+    pub fn vendor_name(&self) -> std::option::Option<& crate::model::VendorName> {
         self.vendor_name.as_ref()
     }
 }
 /// See [`RequestMetadata`](crate::model::RequestMetadata).
 pub mod request_metadata {
-
+    
     /// A builder for [`RequestMetadata`](crate::model::RequestMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1767,8 +1629,7 @@ pub mod request_metadata {
         }
         /// <p>The ID of the request. This is required for a pull request code review.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
         pub fn requester(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1777,8 +1638,7 @@ pub mod request_metadata {
         }
         /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
         pub fn set_requester(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.requester = input;
-            self
+            self.requester = input; self
         }
         /// <p>Information about the event associated with a code review.</p>
         pub fn event_info(mut self, input: crate::model::EventInfo) -> Self {
@@ -1786,12 +1646,8 @@ pub mod request_metadata {
             self
         }
         /// <p>Information about the event associated with a code review.</p>
-        pub fn set_event_info(
-            mut self,
-            input: std::option::Option<crate::model::EventInfo>,
-        ) -> Self {
-            self.event_info = input;
-            self
+        pub fn set_event_info(mut self, input: std::option::Option<crate::model::EventInfo>) -> Self {
+            self.event_info = input; self
         }
         /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
         pub fn vendor_name(mut self, input: crate::model::VendorName) -> Self {
@@ -1799,23 +1655,25 @@ pub mod request_metadata {
             self
         }
         /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
-        pub fn set_vendor_name(
-            mut self,
-            input: std::option::Option<crate::model::VendorName>,
-        ) -> Self {
-            self.vendor_name = input;
-            self
+        pub fn set_vendor_name(mut self, input: std::option::Option<crate::model::VendorName>) -> Self {
+            self.vendor_name = input; self
         }
         /// Consumes the builder and constructs a [`RequestMetadata`](crate::model::RequestMetadata).
         pub fn build(self) -> crate::model::RequestMetadata {
             crate::model::RequestMetadata {
-                request_id: self.request_id,
-                requester: self.requester,
-                event_info: self.event_info,
-                vendor_name: self.vendor_name,
+                request_id: self.request_id
+                ,
+                requester: self.requester
+                ,
+                event_info: self.event_info
+                ,
+                vendor_name: self.vendor_name
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestMetadata {
     /// Creates a new builder-style object to manufacture [`RequestMetadata`](crate::model::RequestMetadata).
@@ -1830,9 +1688,9 @@ impl RequestMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vendorname = unimplemented!();
 /// match vendorname {
@@ -1855,22 +1713,14 @@ impl RequestMetadata {
 /// Specifically, when `vendorname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VendorName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VendorName {
     #[allow(missing_docs)] // documentation missing in model
     Github,
@@ -1879,7 +1729,7 @@ pub enum VendorName {
     #[allow(missing_docs)] // documentation missing in model
     NativeS3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VendorName {
     fn from(s: &str) -> Self {
@@ -1887,17 +1737,17 @@ impl std::convert::From<&str> for VendorName {
             "GitHub" => VendorName::Github,
             "GitLab" => VendorName::Gitlab,
             "NativeS3" => VendorName::NativeS3,
-            other => VendorName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VendorName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VendorName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VendorName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VendorName::from(s))
+                }
+            }
 impl VendorName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1905,12 +1755,14 @@ impl VendorName {
             VendorName::Github => "GitHub",
             VendorName::Gitlab => "GitLab",
             VendorName::NativeS3 => "NativeS3",
-            VendorName::Unknown(value) => value.as_str(),
+            VendorName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GitHub", "GitLab", "NativeS3"]
+        &[
+            "GitHub", "GitLab", "NativeS3"
+        ]
     }
 }
 impl AsRef<str> for VendorName {
@@ -1922,7 +1774,7 @@ impl AsRef<str> for VendorName {
 /// <p>Information about an event. The event might be a push, pull request, scheduled request, or another type of event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventInfo {
+pub struct EventInfo  {
     /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1932,17 +1784,17 @@ pub struct EventInfo {
 }
 impl EventInfo {
     /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of an event. The state might be open, closed, or another state.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
 }
 /// See [`EventInfo`](crate::model::EventInfo).
 pub mod event_info {
-
+    
     /// A builder for [`EventInfo`](crate::model::EventInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1957,8 +1809,7 @@ pub mod event_info {
         }
         /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state of an event. The state might be open, closed, or another state.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1967,17 +1818,20 @@ pub mod event_info {
         }
         /// <p>The state of an event. The state might be open, closed, or another state.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`EventInfo`](crate::model::EventInfo).
         pub fn build(self) -> crate::model::EventInfo {
             crate::model::EventInfo {
-                name: self.name,
-                state: self.state,
+                name: self.name
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl EventInfo {
     /// Creates a new builder-style object to manufacture [`EventInfo`](crate::model::EventInfo).
@@ -1989,7 +1843,7 @@ impl EventInfo {
 /// <p>Information about an associated repository in an S3 bucket. The associated repository contains a source code .zip file and a build artifacts .zip file that contains .jar or .class files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketRepository {
+pub struct S3BucketRepository  {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1999,17 +1853,17 @@ pub struct S3BucketRepository {
 }
 impl S3BucketRepository {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
-    pub fn details(&self) -> std::option::Option<&crate::model::S3RepositoryDetails> {
+    pub fn details(&self) -> std::option::Option<& crate::model::S3RepositoryDetails> {
         self.details.as_ref()
     }
 }
 /// See [`S3BucketRepository`](crate::model::S3BucketRepository).
 pub mod s3_bucket_repository {
-
+    
     /// A builder for [`S3BucketRepository`](crate::model::S3BucketRepository).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2024,8 +1878,7 @@ pub mod s3_bucket_repository {
         }
         /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
         pub fn details(mut self, input: crate::model::S3RepositoryDetails) -> Self {
@@ -2033,21 +1886,21 @@ pub mod s3_bucket_repository {
             self
         }
         /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
-        pub fn set_details(
-            mut self,
-            input: std::option::Option<crate::model::S3RepositoryDetails>,
-        ) -> Self {
-            self.details = input;
-            self
+        pub fn set_details(mut self, input: std::option::Option<crate::model::S3RepositoryDetails>) -> Self {
+            self.details = input; self
         }
         /// Consumes the builder and constructs a [`S3BucketRepository`](crate::model::S3BucketRepository).
         pub fn build(self) -> crate::model::S3BucketRepository {
             crate::model::S3BucketRepository {
-                name: self.name,
-                details: self.details,
+                name: self.name
+                ,
+                details: self.details
+                ,
             }
         }
     }
+    
+    
 }
 impl S3BucketRepository {
     /// Creates a new builder-style object to manufacture [`S3BucketRepository`](crate::model::S3BucketRepository).
@@ -2059,7 +1912,7 @@ impl S3BucketRepository {
 /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3RepositoryDetails {
+pub struct S3RepositoryDetails  {
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -2069,17 +1922,17 @@ pub struct S3RepositoryDetails {
 }
 impl S3RepositoryDetails {
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
-    pub fn code_artifacts(&self) -> std::option::Option<&crate::model::CodeArtifacts> {
+    pub fn code_artifacts(&self) -> std::option::Option<& crate::model::CodeArtifacts> {
         self.code_artifacts.as_ref()
     }
 }
 /// See [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
 pub mod s3_repository_details {
-
+    
     /// A builder for [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2094,8 +1947,7 @@ pub mod s3_repository_details {
         }
         /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
         pub fn code_artifacts(mut self, input: crate::model::CodeArtifacts) -> Self {
@@ -2103,21 +1955,21 @@ pub mod s3_repository_details {
             self
         }
         /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
-        pub fn set_code_artifacts(
-            mut self,
-            input: std::option::Option<crate::model::CodeArtifacts>,
-        ) -> Self {
-            self.code_artifacts = input;
-            self
+        pub fn set_code_artifacts(mut self, input: std::option::Option<crate::model::CodeArtifacts>) -> Self {
+            self.code_artifacts = input; self
         }
         /// Consumes the builder and constructs a [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
         pub fn build(self) -> crate::model::S3RepositoryDetails {
             crate::model::S3RepositoryDetails {
-                bucket_name: self.bucket_name,
-                code_artifacts: self.code_artifacts,
+                bucket_name: self.bucket_name
+                ,
+                code_artifacts: self.code_artifacts
+                ,
             }
         }
     }
+    
+    
 }
 impl S3RepositoryDetails {
     /// Creates a new builder-style object to manufacture [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
@@ -2126,14 +1978,14 @@ impl S3RepositoryDetails {
     }
 }
 
-/// <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p>
-/// <ul>
-/// <li> <p>Source code artifacts are source code files in a Git repository that are compressed into a .zip file.</p> </li>
-/// <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li>
+/// <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p> 
+/// <ul> 
+/// <li> <p>Source code artifacts are source code files in a Git repository that are compressed into a .zip file.</p> </li> 
+/// <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeArtifacts {
+pub struct CodeArtifacts  {
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
     #[doc(hidden)]
     pub source_code_artifacts_object_key: std::option::Option<std::string::String>,
@@ -2143,17 +1995,17 @@ pub struct CodeArtifacts {
 }
 impl CodeArtifacts {
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
-    pub fn source_code_artifacts_object_key(&self) -> std::option::Option<&str> {
+    pub fn source_code_artifacts_object_key(&self) -> std::option::Option<& str> {
         self.source_code_artifacts_object_key.as_deref()
     }
     /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
-    pub fn build_artifacts_object_key(&self) -> std::option::Option<&str> {
+    pub fn build_artifacts_object_key(&self) -> std::option::Option<& str> {
         self.build_artifacts_object_key.as_deref()
     }
 }
 /// See [`CodeArtifacts`](crate::model::CodeArtifacts).
 pub mod code_artifacts {
-
+    
     /// A builder for [`CodeArtifacts`](crate::model::CodeArtifacts).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2162,20 +2014,13 @@ pub mod code_artifacts {
     }
     impl Builder {
         /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
-        pub fn source_code_artifacts_object_key(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn source_code_artifacts_object_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_code_artifacts_object_key = Some(input.into());
             self
         }
         /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
-        pub fn set_source_code_artifacts_object_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_code_artifacts_object_key = input;
-            self
+        pub fn set_source_code_artifacts_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_code_artifacts_object_key = input; self
         }
         /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
         pub fn build_artifacts_object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2183,21 +2028,21 @@ pub mod code_artifacts {
             self
         }
         /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
-        pub fn set_build_artifacts_object_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.build_artifacts_object_key = input;
-            self
+        pub fn set_build_artifacts_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.build_artifacts_object_key = input; self
         }
         /// Consumes the builder and constructs a [`CodeArtifacts`](crate::model::CodeArtifacts).
         pub fn build(self) -> crate::model::CodeArtifacts {
             crate::model::CodeArtifacts {
-                source_code_artifacts_object_key: self.source_code_artifacts_object_key,
-                build_artifacts_object_key: self.build_artifacts_object_key,
+                source_code_artifacts_object_key: self.source_code_artifacts_object_key
+                ,
+                build_artifacts_object_key: self.build_artifacts_object_key
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeArtifacts {
     /// Creates a new builder-style object to manufacture [`CodeArtifacts`](crate::model::CodeArtifacts).
@@ -2209,7 +2054,7 @@ impl CodeArtifacts {
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a code diff between a source and destination branch in an associated repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BranchDiffSourceCodeType {
+pub struct BranchDiffSourceCodeType  {
     /// <p>The source branch for a diff in an associated repository.</p>
     #[doc(hidden)]
     pub source_branch_name: std::option::Option<std::string::String>,
@@ -2219,17 +2064,17 @@ pub struct BranchDiffSourceCodeType {
 }
 impl BranchDiffSourceCodeType {
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub fn source_branch_name(&self) -> std::option::Option<&str> {
+    pub fn source_branch_name(&self) -> std::option::Option<& str> {
         self.source_branch_name.as_deref()
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub fn destination_branch_name(&self) -> std::option::Option<&str> {
+    pub fn destination_branch_name(&self) -> std::option::Option<& str> {
         self.destination_branch_name.as_deref()
     }
 }
 /// See [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
 pub mod branch_diff_source_code_type {
-
+    
     /// A builder for [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2243,12 +2088,8 @@ pub mod branch_diff_source_code_type {
             self
         }
         /// <p>The source branch for a diff in an associated repository.</p>
-        pub fn set_source_branch_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_branch_name = input;
-            self
+        pub fn set_source_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_branch_name = input; self
         }
         /// <p>The destination branch for a diff in an associated repository.</p>
         pub fn destination_branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2256,21 +2097,21 @@ pub mod branch_diff_source_code_type {
             self
         }
         /// <p>The destination branch for a diff in an associated repository.</p>
-        pub fn set_destination_branch_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_branch_name = input;
-            self
+        pub fn set_destination_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_branch_name = input; self
         }
         /// Consumes the builder and constructs a [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
         pub fn build(self) -> crate::model::BranchDiffSourceCodeType {
             crate::model::BranchDiffSourceCodeType {
-                source_branch_name: self.source_branch_name,
-                destination_branch_name: self.destination_branch_name,
+                source_branch_name: self.source_branch_name
+                ,
+                destination_branch_name: self.destination_branch_name
+                ,
             }
         }
     }
+    
+    
 }
 impl BranchDiffSourceCodeType {
     /// Creates a new builder-style object to manufacture [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
@@ -2282,20 +2123,20 @@ impl BranchDiffSourceCodeType {
 /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryHeadSourceCodeType {
+pub struct RepositoryHeadSourceCodeType  {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
     #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
 }
 impl RepositoryHeadSourceCodeType {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
 /// See [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
 pub mod repository_head_source_code_type {
-
+    
     /// A builder for [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2309,16 +2150,18 @@ pub mod repository_head_source_code_type {
         }
         /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
         pub fn build(self) -> crate::model::RepositoryHeadSourceCodeType {
             crate::model::RepositoryHeadSourceCodeType {
-                branch_name: self.branch_name,
+                branch_name: self.branch_name
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryHeadSourceCodeType {
     /// Creates a new builder-style object to manufacture [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
@@ -2330,7 +2173,7 @@ impl RepositoryHeadSourceCodeType {
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommitDiffSourceCodeType {
+pub struct CommitDiffSourceCodeType  {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
     #[doc(hidden)]
     pub source_commit: std::option::Option<std::string::String>,
@@ -2343,21 +2186,21 @@ pub struct CommitDiffSourceCodeType {
 }
 impl CommitDiffSourceCodeType {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn source_commit(&self) -> std::option::Option<&str> {
+    pub fn source_commit(&self) -> std::option::Option<& str> {
         self.source_commit.as_deref()
     }
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn destination_commit(&self) -> std::option::Option<&str> {
+    pub fn destination_commit(&self) -> std::option::Option<& str> {
         self.destination_commit.as_deref()
     }
     /// <p>The SHA of the merge base of a commit.</p>
-    pub fn merge_base_commit(&self) -> std::option::Option<&str> {
+    pub fn merge_base_commit(&self) -> std::option::Option<& str> {
         self.merge_base_commit.as_deref()
     }
 }
 /// See [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
 pub mod commit_diff_source_code_type {
-
+    
     /// A builder for [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2372,12 +2215,8 @@ pub mod commit_diff_source_code_type {
             self
         }
         /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
-        pub fn set_source_commit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_commit = input;
-            self
+        pub fn set_source_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_commit = input; self
         }
         /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
         pub fn destination_commit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2385,12 +2224,8 @@ pub mod commit_diff_source_code_type {
             self
         }
         /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
-        pub fn set_destination_commit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_commit = input;
-            self
+        pub fn set_destination_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_commit = input; self
         }
         /// <p>The SHA of the merge base of a commit.</p>
         pub fn merge_base_commit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2398,22 +2233,23 @@ pub mod commit_diff_source_code_type {
             self
         }
         /// <p>The SHA of the merge base of a commit.</p>
-        pub fn set_merge_base_commit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.merge_base_commit = input;
-            self
+        pub fn set_merge_base_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.merge_base_commit = input; self
         }
         /// Consumes the builder and constructs a [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
         pub fn build(self) -> crate::model::CommitDiffSourceCodeType {
             crate::model::CommitDiffSourceCodeType {
-                source_commit: self.source_commit,
-                destination_commit: self.destination_commit,
-                merge_base_commit: self.merge_base_commit,
+                source_commit: self.source_commit
+                ,
+                destination_commit: self.destination_commit
+                ,
+                merge_base_commit: self.merge_base_commit
+                ,
             }
         }
     }
+    
+    
 }
 impl CommitDiffSourceCodeType {
     /// Creates a new builder-style object to manufacture [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
@@ -2425,7 +2261,7 @@ impl CommitDiffSourceCodeType {
 /// <p>Information about metrics summaries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricsSummary {
+pub struct MetricsSummary  {
     /// <p>Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code.</p>
     #[doc(hidden)]
     pub metered_lines_of_code_count: std::option::Option<i64>,
@@ -2452,7 +2288,7 @@ impl MetricsSummary {
 }
 /// See [`MetricsSummary`](crate::model::MetricsSummary).
 pub mod metrics_summary {
-
+    
     /// A builder for [`MetricsSummary`](crate::model::MetricsSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2468,8 +2304,7 @@ pub mod metrics_summary {
         }
         /// <p>Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code.</p>
         pub fn set_metered_lines_of_code_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.metered_lines_of_code_count = input;
-            self
+            self.metered_lines_of_code_count = input; self
         }
         /// <p>Lines of code suppressed in the code review based on the <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code> file. For full repository analyses, this number includes all lines of code in the files that are suppressed. For pull requests, this number only includes the <i>changed</i> lines of code that are suppressed. In both cases, this number does not include non-code lines such as comments and import statements. For example, if you initiate a full repository analysis on a repository containing 5 files, each file with 100 lines of code, and 2 files are listed as excluded in the <code>aws-codeguru-reviewer.yml</code> file, then <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total number of lines of code suppressed. However, if you submit a pull request for the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes the lines in the 2 files that changed. If only 1 of the 2 files changed in the pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100) as the total number of lines of code suppressed.</p>
         pub fn suppressed_lines_of_code_count(mut self, input: i64) -> Self {
@@ -2477,12 +2312,8 @@ pub mod metrics_summary {
             self
         }
         /// <p>Lines of code suppressed in the code review based on the <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code> file. For full repository analyses, this number includes all lines of code in the files that are suppressed. For pull requests, this number only includes the <i>changed</i> lines of code that are suppressed. In both cases, this number does not include non-code lines such as comments and import statements. For example, if you initiate a full repository analysis on a repository containing 5 files, each file with 100 lines of code, and 2 files are listed as excluded in the <code>aws-codeguru-reviewer.yml</code> file, then <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total number of lines of code suppressed. However, if you submit a pull request for the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes the lines in the 2 files that changed. If only 1 of the 2 files changed in the pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100) as the total number of lines of code suppressed.</p>
-        pub fn set_suppressed_lines_of_code_count(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.suppressed_lines_of_code_count = input;
-            self
+        pub fn set_suppressed_lines_of_code_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.suppressed_lines_of_code_count = input; self
         }
         /// <p>Total number of recommendations found in the code review.</p>
         pub fn findings_count(mut self, input: i64) -> Self {
@@ -2491,18 +2322,22 @@ pub mod metrics_summary {
         }
         /// <p>Total number of recommendations found in the code review.</p>
         pub fn set_findings_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.findings_count = input;
-            self
+            self.findings_count = input; self
         }
         /// Consumes the builder and constructs a [`MetricsSummary`](crate::model::MetricsSummary).
         pub fn build(self) -> crate::model::MetricsSummary {
             crate::model::MetricsSummary {
-                metered_lines_of_code_count: self.metered_lines_of_code_count,
-                suppressed_lines_of_code_count: self.suppressed_lines_of_code_count,
-                findings_count: self.findings_count,
+                metered_lines_of_code_count: self.metered_lines_of_code_count
+                ,
+                suppressed_lines_of_code_count: self.suppressed_lines_of_code_count
+                ,
+                findings_count: self.findings_count
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricsSummary {
     /// Creates a new builder-style object to manufacture [`MetricsSummary`](crate::model::MetricsSummary).
@@ -2517,9 +2352,9 @@ impl MetricsSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let type = unimplemented!();
 /// match type {
@@ -2541,58 +2376,52 @@ impl MetricsSummary {
 /// Specifically, when `type` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Type::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     PullRequest,
     #[allow(missing_docs)] // documentation missing in model
     RepositoryAnalysis,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
         match s {
             "PullRequest" => Type::PullRequest,
             "RepositoryAnalysis" => Type::RepositoryAnalysis,
-            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Type {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Type::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Type::from(s))
+                }
+            }
 impl Type {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Type::PullRequest => "PullRequest",
             Type::RepositoryAnalysis => "RepositoryAnalysis",
-            Type::Unknown(value) => value.as_str(),
+            Type::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PullRequest", "RepositoryAnalysis"]
+        &[
+            "PullRequest", "RepositoryAnalysis"
+        ]
     }
 }
 impl AsRef<str> for Type {
@@ -2607,9 +2436,9 @@ impl AsRef<str> for Type {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstate = unimplemented!();
 /// match jobstate {
@@ -2633,22 +2462,14 @@ impl AsRef<str> for Type {
 /// Specifically, when `jobstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobState {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -2659,7 +2480,7 @@ pub enum JobState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobState {
     fn from(s: &str) -> Self {
@@ -2668,17 +2489,17 @@ impl std::convert::From<&str> for JobState {
             "Deleting" => JobState::Deleting,
             "Failed" => JobState::Failed,
             "Pending" => JobState::Pending,
-            other => JobState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobState::from(s))
+                }
+            }
 impl JobState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2687,12 +2508,14 @@ impl JobState {
             JobState::Deleting => "Deleting",
             JobState::Failed => "Failed",
             JobState::Pending => "Pending",
-            JobState::Unknown(value) => value.as_str(),
+            JobState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Deleting", "Failed", "Pending"]
+        &[
+            "Completed", "Deleting", "Failed", "Pending"
+        ]
     }
 }
 impl AsRef<str> for JobState {
@@ -2704,7 +2527,7 @@ impl AsRef<str> for JobState {
 /// <p>Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">DescribeRepositoryAssociation</a> operation returns a <code>RepositoryAssociation</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryAssociation {
+pub struct RepositoryAssociation  {
     /// <p>The ID of the repository association.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -2723,20 +2546,20 @@ pub struct RepositoryAssociation {
     /// <p>The provider type of the repository association.</p>
     #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::ProviderType>,
-    /// <p>The state of the repository association.</p>
-    /// <p>The valid repository association states are:</p>
-    /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
-    /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
-    /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// <p>The state of the repository association.</p> 
+    /// <p>The valid repository association states are:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> 
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> 
+    /// <ul> 
+    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> 
+    /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> 
+    /// </note> </li> 
+    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> 
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> 
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::RepositoryAssociationState>,
@@ -2749,10 +2572,10 @@ pub struct RepositoryAssociation {
     /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
     #[doc(hidden)]
     pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
-    /// <ul>
-    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
-    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
+    /// <p>A <code>KMSKeyDetails</code> object that contains:</p> 
+    /// <ul> 
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> 
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub kms_key_details: std::option::Option<crate::model::KmsKeyDetails>,
@@ -2762,75 +2585,75 @@ pub struct RepositoryAssociation {
 }
 impl RepositoryAssociation {
     /// <p>The ID of the repository association.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
-    pub fn association_arn(&self) -> std::option::Option<&str> {
+    pub fn association_arn(&self) -> std::option::Option<& str> {
         self.association_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The name of the repository.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The provider type of the repository association.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+    pub fn provider_type(&self) -> std::option::Option<& crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>The state of the repository association.</p>
-    /// <p>The valid repository association states are:</p>
-    /// <ul>
-    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
-    /// <ul>
-    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
-    /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-    /// </note> </li>
-    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+    /// <p>The state of the repository association.</p> 
+    /// <p>The valid repository association states are:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> 
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> 
+    /// <ul> 
+    /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> 
+    /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> 
+    /// </note> </li> 
+    /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> 
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> 
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::model::RepositoryAssociationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RepositoryAssociationState> {
         self.state.as_ref()
     }
     /// <p>A description of why the repository association is in the current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
-    /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
-    /// <ul>
-    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
-    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
+    /// <p>A <code>KMSKeyDetails</code> object that contains:</p> 
+    /// <ul> 
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> 
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li> 
     /// </ul>
-    pub fn kms_key_details(&self) -> std::option::Option<&crate::model::KmsKeyDetails> {
+    pub fn kms_key_details(&self) -> std::option::Option<& crate::model::KmsKeyDetails> {
         self.kms_key_details.as_ref()
     }
     /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
-    pub fn s3_repository_details(&self) -> std::option::Option<&crate::model::S3RepositoryDetails> {
+    pub fn s3_repository_details(&self) -> std::option::Option<& crate::model::S3RepositoryDetails> {
         self.s3_repository_details.as_ref()
     }
 }
 /// See [`RepositoryAssociation`](crate::model::RepositoryAssociation).
 pub mod repository_association {
-
+    
     /// A builder for [`RepositoryAssociation`](crate::model::RepositoryAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2854,12 +2677,8 @@ pub mod repository_association {
             self
         }
         /// <p>The ID of the repository association.</p>
-        pub fn set_association_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.association_id = input;
-            self
+        pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.association_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
         pub fn association_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2867,12 +2686,8 @@ pub mod repository_association {
             self
         }
         /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
-        pub fn set_association_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.association_arn = input;
-            self
+        pub fn set_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.association_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2880,12 +2695,8 @@ pub mod repository_association {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The name of the repository.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2894,8 +2705,7 @@ pub mod repository_association {
         }
         /// <p>The name of the repository.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2904,8 +2714,7 @@ pub mod repository_association {
         }
         /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The provider type of the repository association.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
@@ -2913,53 +2722,45 @@ pub mod repository_association {
             self
         }
         /// <p>The provider type of the repository association.</p>
-        pub fn set_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::ProviderType>,
-        ) -> Self {
-            self.provider_type = input;
-            self
+        pub fn set_provider_type(mut self, input: std::option::Option<crate::model::ProviderType>) -> Self {
+            self.provider_type = input; self
         }
-        /// <p>The state of the repository association.</p>
-        /// <p>The valid repository association states are:</p>
-        /// <ul>
-        /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
-        /// <ul>
-        /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
-        /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-        /// </note> </li>
-        /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+        /// <p>The state of the repository association.</p> 
+        /// <p>The valid repository association states are:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> 
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> 
+        /// <ul> 
+        /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> 
+        /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> 
+        /// </note> </li> 
+        /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> 
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> 
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> 
         /// </ul>
         pub fn state(mut self, input: crate::model::RepositoryAssociationState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the repository association.</p>
-        /// <p>The valid repository association states are:</p>
-        /// <ul>
-        /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li>
-        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p>
-        /// <ul>
-        /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note>
-        /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p>
-        /// </note> </li>
-        /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li>
-        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
-        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
+        /// <p>The state of the repository association.</p> 
+        /// <p>The valid repository association states are:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> 
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> 
+        /// <ul> 
+        /// <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> 
+        /// <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> 
+        /// </note> </li> 
+        /// <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> 
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> 
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> 
         /// </ul>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryAssociationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::RepositoryAssociationState>) -> Self {
+            self.state = input; self
         }
         /// <p>A description of why the repository association is in the current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2968,8 +2769,7 @@ pub mod repository_association {
         }
         /// <p>A description of why the repository association is in the current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2977,12 +2777,8 @@ pub mod repository_association {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
-        pub fn set_last_updated_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time_stamp = input;
-            self
+        pub fn set_last_updated_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time_stamp = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
         pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2990,33 +2786,25 @@ pub mod repository_association {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
-        pub fn set_created_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time_stamp = input;
-            self
+        pub fn set_created_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time_stamp = input; self
         }
-        /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
-        /// <ul>
-        /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
-        /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
+        /// <p>A <code>KMSKeyDetails</code> object that contains:</p> 
+        /// <ul> 
+        /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> 
+        /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li> 
         /// </ul>
         pub fn kms_key_details(mut self, input: crate::model::KmsKeyDetails) -> Self {
             self.kms_key_details = Some(input);
             self
         }
-        /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
-        /// <ul>
-        /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
-        /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
+        /// <p>A <code>KMSKeyDetails</code> object that contains:</p> 
+        /// <ul> 
+        /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> 
+        /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li> 
         /// </ul>
-        pub fn set_kms_key_details(
-            mut self,
-            input: std::option::Option<crate::model::KmsKeyDetails>,
-        ) -> Self {
-            self.kms_key_details = input;
-            self
+        pub fn set_kms_key_details(mut self, input: std::option::Option<crate::model::KmsKeyDetails>) -> Self {
+            self.kms_key_details = input; self
         }
         /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
         pub fn s3_repository_details(mut self, input: crate::model::S3RepositoryDetails) -> Self {
@@ -3024,31 +2812,41 @@ pub mod repository_association {
             self
         }
         /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
-        pub fn set_s3_repository_details(
-            mut self,
-            input: std::option::Option<crate::model::S3RepositoryDetails>,
-        ) -> Self {
-            self.s3_repository_details = input;
-            self
+        pub fn set_s3_repository_details(mut self, input: std::option::Option<crate::model::S3RepositoryDetails>) -> Self {
+            self.s3_repository_details = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryAssociation`](crate::model::RepositoryAssociation).
         pub fn build(self) -> crate::model::RepositoryAssociation {
             crate::model::RepositoryAssociation {
-                association_id: self.association_id,
-                association_arn: self.association_arn,
-                connection_arn: self.connection_arn,
-                name: self.name,
-                owner: self.owner,
-                provider_type: self.provider_type,
-                state: self.state,
-                state_reason: self.state_reason,
-                last_updated_time_stamp: self.last_updated_time_stamp,
-                created_time_stamp: self.created_time_stamp,
-                kms_key_details: self.kms_key_details,
-                s3_repository_details: self.s3_repository_details,
+                association_id: self.association_id
+                ,
+                association_arn: self.association_arn
+                ,
+                connection_arn: self.connection_arn
+                ,
+                name: self.name
+                ,
+                owner: self.owner
+                ,
+                provider_type: self.provider_type
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                last_updated_time_stamp: self.last_updated_time_stamp
+                ,
+                created_time_stamp: self.created_time_stamp
+                ,
+                kms_key_details: self.kms_key_details
+                ,
+                s3_repository_details: self.s3_repository_details
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryAssociation {
     /// Creates a new builder-style object to manufacture [`RepositoryAssociation`](crate::model::RepositoryAssociation).
@@ -3057,14 +2855,14 @@ impl RepositoryAssociation {
     }
 }
 
-/// <p>An object that contains:</p>
-/// <ul>
-/// <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
-/// <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li>
+/// <p>An object that contains:</p> 
+/// <ul> 
+/// <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> 
+/// <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsKeyDetails {
+pub struct KmsKeyDetails  {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -3074,17 +2872,17 @@ pub struct KmsKeyDetails {
 }
 impl KmsKeyDetails {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-    pub fn encryption_option(&self) -> std::option::Option<&crate::model::EncryptionOption> {
+    pub fn encryption_option(&self) -> std::option::Option<& crate::model::EncryptionOption> {
         self.encryption_option.as_ref()
     }
 }
 /// See [`KmsKeyDetails`](crate::model::KmsKeyDetails).
 pub mod kms_key_details {
-
+    
     /// A builder for [`KmsKeyDetails`](crate::model::KmsKeyDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3099,8 +2897,7 @@ pub mod kms_key_details {
         }
         /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
         pub fn encryption_option(mut self, input: crate::model::EncryptionOption) -> Self {
@@ -3108,21 +2905,21 @@ pub mod kms_key_details {
             self
         }
         /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-        pub fn set_encryption_option(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionOption>,
-        ) -> Self {
-            self.encryption_option = input;
-            self
+        pub fn set_encryption_option(mut self, input: std::option::Option<crate::model::EncryptionOption>) -> Self {
+            self.encryption_option = input; self
         }
         /// Consumes the builder and constructs a [`KmsKeyDetails`](crate::model::KmsKeyDetails).
         pub fn build(self) -> crate::model::KmsKeyDetails {
             crate::model::KmsKeyDetails {
-                kms_key_id: self.kms_key_id,
-                encryption_option: self.encryption_option,
+                kms_key_id: self.kms_key_id
+                ,
+                encryption_option: self.encryption_option
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsKeyDetails {
     /// Creates a new builder-style object to manufacture [`KmsKeyDetails`](crate::model::KmsKeyDetails).
@@ -3137,9 +2934,9 @@ impl KmsKeyDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionoption = unimplemented!();
 /// match encryptionoption {
@@ -3161,58 +2958,52 @@ impl KmsKeyDetails {
 /// Specifically, when `encryptionoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionOption {
     #[allow(missing_docs)] // documentation missing in model
     AoCmk,
     #[allow(missing_docs)] // documentation missing in model
     CmCmk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionOption {
     fn from(s: &str) -> Self {
         match s {
             "AWS_OWNED_CMK" => EncryptionOption::AoCmk,
             "CUSTOMER_MANAGED_CMK" => EncryptionOption::CmCmk,
-            other => EncryptionOption::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionOption::from(s))
+                }
+            }
 impl EncryptionOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionOption::AoCmk => "AWS_OWNED_CMK",
             EncryptionOption::CmCmk => "CUSTOMER_MANAGED_CMK",
-            EncryptionOption::Unknown(value) => value.as_str(),
+            EncryptionOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_OWNED_CMK", "CUSTOMER_MANAGED_CMK"]
+        &[
+            "AWS_OWNED_CMK", "CUSTOMER_MANAGED_CMK"
+        ]
     }
 }
 impl AsRef<str> for EncryptionOption {
@@ -3224,7 +3015,7 @@ impl AsRef<str> for EncryptionOption {
 /// <p>Information about the recommendation feedback.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationFeedback {
+pub struct RecommendationFeedback  {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
     pub code_review_arn: std::option::Option<std::string::String>,
@@ -3234,7 +3025,7 @@ pub struct RecommendationFeedback {
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.</p>
     #[doc(hidden)]
     pub reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
-    /// <p>The ID of the user that made the API call.</p>
+    /// <p>The ID of the user that made the API call.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -3247,34 +3038,34 @@ pub struct RecommendationFeedback {
 }
 impl RecommendationFeedback {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> std::option::Option<& str> {
         self.code_review_arn.as_deref()
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.</p>
-    pub fn reactions(&self) -> std::option::Option<&[crate::model::Reaction]> {
+    pub fn reactions(&self) -> std::option::Option<& [crate::model::Reaction]> {
         self.reactions.as_deref()
     }
-    /// <p>The ID of the user that made the API call.</p>
+    /// <p>The ID of the user that made the API call.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The time at which the feedback was created.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>The time at which the feedback was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
 }
 /// See [`RecommendationFeedback`](crate::model::RecommendationFeedback).
 pub mod recommendation_feedback {
-
+    
     /// A builder for [`RecommendationFeedback`](crate::model::RecommendationFeedback).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3292,12 +3083,8 @@ pub mod recommendation_feedback {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-        pub fn set_code_review_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_review_arn = input;
-            self
+        pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_review_arn = input; self
         }
         /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3305,12 +3092,8 @@ pub mod recommendation_feedback {
             self
         }
         /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// Appends an item to `reactions`.
         ///
@@ -3319,29 +3102,24 @@ pub mod recommendation_feedback {
         /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.</p>
         pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
             let mut v = self.reactions.unwrap_or_default();
-            v.push(input);
-            self.reactions = Some(v);
-            self
+                            v.push(input);
+                            self.reactions = Some(v);
+                            self
         }
         /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.</p>
-        pub fn set_reactions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
-        ) -> Self {
-            self.reactions = input;
-            self
+        pub fn set_reactions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Reaction>>) -> Self {
+            self.reactions = input; self
         }
-        /// <p>The ID of the user that made the API call.</p>
+        /// <p>The ID of the user that made the API call.</p> 
         /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>The ID of the user that made the API call.</p>
+        /// <p>The ID of the user that made the API call.</p> 
         /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>The time at which the feedback was created.</p>
         pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3349,12 +3127,8 @@ pub mod recommendation_feedback {
             self
         }
         /// <p>The time at which the feedback was created.</p>
-        pub fn set_created_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time_stamp = input;
-            self
+        pub fn set_created_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time_stamp = input; self
         }
         /// <p>The time at which the feedback was last updated.</p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3362,25 +3136,29 @@ pub mod recommendation_feedback {
             self
         }
         /// <p>The time at which the feedback was last updated.</p>
-        pub fn set_last_updated_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time_stamp = input;
-            self
+        pub fn set_last_updated_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time_stamp = input; self
         }
         /// Consumes the builder and constructs a [`RecommendationFeedback`](crate::model::RecommendationFeedback).
         pub fn build(self) -> crate::model::RecommendationFeedback {
             crate::model::RecommendationFeedback {
-                code_review_arn: self.code_review_arn,
-                recommendation_id: self.recommendation_id,
-                reactions: self.reactions,
-                user_id: self.user_id,
-                created_time_stamp: self.created_time_stamp,
-                last_updated_time_stamp: self.last_updated_time_stamp,
+                code_review_arn: self.code_review_arn
+                ,
+                recommendation_id: self.recommendation_id
+                ,
+                reactions: self.reactions
+                ,
+                user_id: self.user_id
+                ,
+                created_time_stamp: self.created_time_stamp
+                ,
+                last_updated_time_stamp: self.last_updated_time_stamp
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommendationFeedback {
     /// Creates a new builder-style object to manufacture [`RecommendationFeedback`](crate::model::RecommendationFeedback).
@@ -3392,7 +3170,7 @@ impl RecommendationFeedback {
 /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeReview {
+pub struct CodeReview  {
     /// <p>The name of the code review.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3408,12 +3186,12 @@ pub struct CodeReview {
     /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
     #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::ProviderType>,
-    /// <p>The valid code review states are:</p>
-    /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <p>The valid code review states are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobState>,
@@ -3450,79 +3228,79 @@ pub struct CodeReview {
 }
 impl CodeReview {
     /// <p>The name of the code review.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> std::option::Option<& str> {
         self.code_review_arn.as_deref()
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+    pub fn provider_type(&self) -> std::option::Option<& crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>The valid code review states are:</p>
-    /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <p>The valid code review states are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::model::JobState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::JobState> {
         self.state.as_ref()
     }
     /// <p>The reason for the state of the code review.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>The type of code review.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::Type> {
         self.r#type.as_ref()
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The type of the source code for the code review.</p>
-    pub fn source_code_type(&self) -> std::option::Option<&crate::model::SourceCodeType> {
+    pub fn source_code_type(&self) -> std::option::Option<& crate::model::SourceCodeType> {
         self.source_code_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn association_arn(&self) -> std::option::Option<&str> {
+    pub fn association_arn(&self) -> std::option::Option<& str> {
         self.association_arn.as_deref()
     }
     /// <p>The statistics from the code review.</p>
-    pub fn metrics(&self) -> std::option::Option<&crate::model::Metrics> {
+    pub fn metrics(&self) -> std::option::Option<& crate::model::Metrics> {
         self.metrics.as_ref()
     }
     /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    pub fn analysis_types(&self) -> std::option::Option<&[crate::model::AnalysisType]> {
+    pub fn analysis_types(&self) -> std::option::Option<& [crate::model::AnalysisType]> {
         self.analysis_types.as_deref()
     }
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
-    pub fn config_file_state(&self) -> std::option::Option<&crate::model::ConfigFileState> {
+    pub fn config_file_state(&self) -> std::option::Option<& crate::model::ConfigFileState> {
         self.config_file_state.as_ref()
     }
 }
 /// See [`CodeReview`](crate::model::CodeReview).
 pub mod code_review {
-
+    
     /// A builder for [`CodeReview`](crate::model::CodeReview).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3551,8 +3329,7 @@ pub mod code_review {
         }
         /// <p>The name of the code review.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3560,12 +3337,8 @@ pub mod code_review {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-        pub fn set_code_review_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_review_arn = input;
-            self
+        pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_review_arn = input; self
         }
         /// <p>The name of the repository.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3573,12 +3346,8 @@ pub mod code_review {
             self
         }
         /// <p>The name of the repository.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3587,8 +3356,7 @@ pub mod code_review {
         }
         /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
@@ -3596,34 +3364,29 @@ pub mod code_review {
             self
         }
         /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
-        pub fn set_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::ProviderType>,
-        ) -> Self {
-            self.provider_type = input;
-            self
+        pub fn set_provider_type(mut self, input: std::option::Option<crate::model::ProviderType>) -> Self {
+            self.provider_type = input; self
         }
-        /// <p>The valid code review states are:</p>
-        /// <ul>
-        /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-        /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-        /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+        /// <p>The valid code review states are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
+        /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
         /// </ul>
         pub fn state(mut self, input: crate::model::JobState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The valid code review states are:</p>
-        /// <ul>
-        /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-        /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-        /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+        /// <p>The valid code review states are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
+        /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
         /// </ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JobState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the state of the code review.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3632,8 +3395,7 @@ pub mod code_review {
         }
         /// <p>The reason for the state of the code review.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
         pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3641,12 +3403,8 @@ pub mod code_review {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-        pub fn set_created_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time_stamp = input;
-            self
+        pub fn set_created_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time_stamp = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3654,12 +3412,8 @@ pub mod code_review {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-        pub fn set_last_updated_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time_stamp = input;
-            self
+        pub fn set_last_updated_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time_stamp = input; self
         }
         /// <p>The type of code review.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
@@ -3668,8 +3422,7 @@ pub mod code_review {
         }
         /// <p>The type of code review.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The pull request ID for the code review.</p>
         pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3677,12 +3430,8 @@ pub mod code_review {
             self
         }
         /// <p>The pull request ID for the code review.</p>
-        pub fn set_pull_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pull_request_id = input;
-            self
+        pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pull_request_id = input; self
         }
         /// <p>The type of the source code for the code review.</p>
         pub fn source_code_type(mut self, input: crate::model::SourceCodeType) -> Self {
@@ -3690,12 +3439,8 @@ pub mod code_review {
             self
         }
         /// <p>The type of the source code for the code review.</p>
-        pub fn set_source_code_type(
-            mut self,
-            input: std::option::Option<crate::model::SourceCodeType>,
-        ) -> Self {
-            self.source_code_type = input;
-            self
+        pub fn set_source_code_type(mut self, input: std::option::Option<crate::model::SourceCodeType>) -> Self {
+            self.source_code_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
         pub fn association_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3703,12 +3448,8 @@ pub mod code_review {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-        pub fn set_association_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.association_arn = input;
-            self
+        pub fn set_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.association_arn = input; self
         }
         /// <p>The statistics from the code review.</p>
         pub fn metrics(mut self, input: crate::model::Metrics) -> Self {
@@ -3717,8 +3458,7 @@ pub mod code_review {
         }
         /// <p>The statistics from the code review.</p>
         pub fn set_metrics(mut self, input: std::option::Option<crate::model::Metrics>) -> Self {
-            self.metrics = input;
-            self
+            self.metrics = input; self
         }
         /// Appends an item to `analysis_types`.
         ///
@@ -3727,17 +3467,13 @@ pub mod code_review {
         /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
         pub fn analysis_types(mut self, input: crate::model::AnalysisType) -> Self {
             let mut v = self.analysis_types.unwrap_or_default();
-            v.push(input);
-            self.analysis_types = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_types = Some(v);
+                            self
         }
         /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-        pub fn set_analysis_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
-        ) -> Self {
-            self.analysis_types = input;
-            self
+        pub fn set_analysis_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>) -> Self {
+            self.analysis_types = input; self
         }
         /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
         pub fn config_file_state(mut self, input: crate::model::ConfigFileState) -> Self {
@@ -3745,35 +3481,49 @@ pub mod code_review {
             self
         }
         /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
-        pub fn set_config_file_state(
-            mut self,
-            input: std::option::Option<crate::model::ConfigFileState>,
-        ) -> Self {
-            self.config_file_state = input;
-            self
+        pub fn set_config_file_state(mut self, input: std::option::Option<crate::model::ConfigFileState>) -> Self {
+            self.config_file_state = input; self
         }
         /// Consumes the builder and constructs a [`CodeReview`](crate::model::CodeReview).
         pub fn build(self) -> crate::model::CodeReview {
             crate::model::CodeReview {
-                name: self.name,
-                code_review_arn: self.code_review_arn,
-                repository_name: self.repository_name,
-                owner: self.owner,
-                provider_type: self.provider_type,
-                state: self.state,
-                state_reason: self.state_reason,
-                created_time_stamp: self.created_time_stamp,
-                last_updated_time_stamp: self.last_updated_time_stamp,
-                r#type: self.r#type,
-                pull_request_id: self.pull_request_id,
-                source_code_type: self.source_code_type,
-                association_arn: self.association_arn,
-                metrics: self.metrics,
-                analysis_types: self.analysis_types,
-                config_file_state: self.config_file_state,
+                name: self.name
+                ,
+                code_review_arn: self.code_review_arn
+                ,
+                repository_name: self.repository_name
+                ,
+                owner: self.owner
+                ,
+                provider_type: self.provider_type
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                created_time_stamp: self.created_time_stamp
+                ,
+                last_updated_time_stamp: self.last_updated_time_stamp
+                ,
+                r#type: self.r#type
+                ,
+                pull_request_id: self.pull_request_id
+                ,
+                source_code_type: self.source_code_type
+                ,
+                association_arn: self.association_arn
+                ,
+                metrics: self.metrics
+                ,
+                analysis_types: self.analysis_types
+                ,
+                config_file_state: self.config_file_state
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeReview {
     /// Creates a new builder-style object to manufacture [`CodeReview`](crate::model::CodeReview).
@@ -3788,9 +3538,9 @@ impl CodeReview {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configfilestate = unimplemented!();
 /// match configfilestate {
@@ -3813,22 +3563,14 @@ impl CodeReview {
 /// Specifically, when `configfilestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigFileState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigFileState {
     #[allow(missing_docs)] // documentation missing in model
     Absent,
@@ -3837,7 +3579,7 @@ pub enum ConfigFileState {
     #[allow(missing_docs)] // documentation missing in model
     PresentWithErrors,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigFileState {
     fn from(s: &str) -> Self {
@@ -3845,17 +3587,17 @@ impl std::convert::From<&str> for ConfigFileState {
             "Absent" => ConfigFileState::Absent,
             "Present" => ConfigFileState::Present,
             "PresentWithErrors" => ConfigFileState::PresentWithErrors,
-            other => ConfigFileState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConfigFileState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigFileState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigFileState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigFileState::from(s))
+                }
+            }
 impl ConfigFileState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3863,12 +3605,14 @@ impl ConfigFileState {
             ConfigFileState::Absent => "Absent",
             ConfigFileState::Present => "Present",
             ConfigFileState::PresentWithErrors => "PresentWithErrors",
-            ConfigFileState::Unknown(value) => value.as_str(),
+            ConfigFileState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Absent", "Present", "PresentWithErrors"]
+        &[
+            "Absent", "Present", "PresentWithErrors"
+        ]
     }
 }
 impl AsRef<str> for ConfigFileState {
@@ -3883,9 +3627,9 @@ impl AsRef<str> for ConfigFileState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analysistype = unimplemented!();
 /// match analysistype {
@@ -3907,58 +3651,52 @@ impl AsRef<str> for ConfigFileState {
 /// Specifically, when `analysistype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalysisType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnalysisType {
     #[allow(missing_docs)] // documentation missing in model
     CodeQuality,
     #[allow(missing_docs)] // documentation missing in model
     Security,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalysisType {
     fn from(s: &str) -> Self {
         match s {
             "CodeQuality" => AnalysisType::CodeQuality,
             "Security" => AnalysisType::Security,
-            other => AnalysisType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AnalysisType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnalysisType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalysisType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnalysisType::from(s))
+                }
+            }
 impl AnalysisType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnalysisType::CodeQuality => "CodeQuality",
             AnalysisType::Security => "Security",
-            AnalysisType::Unknown(value) => value.as_str(),
+            AnalysisType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CodeQuality", "Security"]
+        &[
+            "CodeQuality", "Security"
+        ]
     }
 }
 impl AsRef<str> for AnalysisType {
@@ -3970,7 +3708,7 @@ impl AsRef<str> for AnalysisType {
 /// <p>Information about the statistics from the code review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metrics {
+pub struct Metrics  {
     /// <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.</p>
     #[doc(hidden)]
     pub metered_lines_of_code_count: std::option::Option<i64>,
@@ -3997,7 +3735,7 @@ impl Metrics {
 }
 /// See [`Metrics`](crate::model::Metrics).
 pub mod metrics {
-
+    
     /// A builder for [`Metrics`](crate::model::Metrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4013,8 +3751,7 @@ pub mod metrics {
         }
         /// <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.</p>
         pub fn set_metered_lines_of_code_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.metered_lines_of_code_count = input;
-            self
+            self.metered_lines_of_code_count = input; self
         }
         /// <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. </p>
         pub fn suppressed_lines_of_code_count(mut self, input: i64) -> Self {
@@ -4022,12 +3759,8 @@ pub mod metrics {
             self
         }
         /// <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. </p>
-        pub fn set_suppressed_lines_of_code_count(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.suppressed_lines_of_code_count = input;
-            self
+        pub fn set_suppressed_lines_of_code_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.suppressed_lines_of_code_count = input; self
         }
         /// <p>Total number of recommendations found in the code review.</p>
         pub fn findings_count(mut self, input: i64) -> Self {
@@ -4036,18 +3769,22 @@ pub mod metrics {
         }
         /// <p>Total number of recommendations found in the code review.</p>
         pub fn set_findings_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.findings_count = input;
-            self
+            self.findings_count = input; self
         }
         /// Consumes the builder and constructs a [`Metrics`](crate::model::Metrics).
         pub fn build(self) -> crate::model::Metrics {
             crate::model::Metrics {
-                metered_lines_of_code_count: self.metered_lines_of_code_count,
-                suppressed_lines_of_code_count: self.suppressed_lines_of_code_count,
-                findings_count: self.findings_count,
+                metered_lines_of_code_count: self.metered_lines_of_code_count
+                ,
+                suppressed_lines_of_code_count: self.suppressed_lines_of_code_count
+                ,
+                findings_count: self.findings_count
+                ,
             }
         }
     }
+    
+    
 }
 impl Metrics {
     /// Creates a new builder-style object to manufacture [`Metrics`](crate::model::Metrics).
@@ -4056,14 +3793,14 @@ impl Metrics {
     }
 }
 
-/// <p>The type of a code review. There are two code review types:</p>
-/// <ul>
-/// <li> <p> <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated repository.</p> </li>
-/// <li> <p> <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p> </li>
+/// <p>The type of a code review. There are two code review types:</p> 
+/// <ul> 
+/// <li> <p> <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated repository.</p> </li> 
+/// <li> <p> <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeReviewType {
+pub struct CodeReviewType  {
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
     #[doc(hidden)]
     pub repository_analysis: std::option::Option<crate::model::RepositoryAnalysis>,
@@ -4073,17 +3810,17 @@ pub struct CodeReviewType {
 }
 impl CodeReviewType {
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
-    pub fn repository_analysis(&self) -> std::option::Option<&crate::model::RepositoryAnalysis> {
+    pub fn repository_analysis(&self) -> std::option::Option<& crate::model::RepositoryAnalysis> {
         self.repository_analysis.as_ref()
     }
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    pub fn analysis_types(&self) -> std::option::Option<&[crate::model::AnalysisType]> {
+    pub fn analysis_types(&self) -> std::option::Option<& [crate::model::AnalysisType]> {
         self.analysis_types.as_deref()
     }
 }
 /// See [`CodeReviewType`](crate::model::CodeReviewType).
 pub mod code_review_type {
-
+    
     /// A builder for [`CodeReviewType`](crate::model::CodeReviewType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4097,12 +3834,8 @@ pub mod code_review_type {
             self
         }
         /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
-        pub fn set_repository_analysis(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryAnalysis>,
-        ) -> Self {
-            self.repository_analysis = input;
-            self
+        pub fn set_repository_analysis(mut self, input: std::option::Option<crate::model::RepositoryAnalysis>) -> Self {
+            self.repository_analysis = input; self
         }
         /// Appends an item to `analysis_types`.
         ///
@@ -4111,26 +3844,26 @@ pub mod code_review_type {
         /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
         pub fn analysis_types(mut self, input: crate::model::AnalysisType) -> Self {
             let mut v = self.analysis_types.unwrap_or_default();
-            v.push(input);
-            self.analysis_types = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_types = Some(v);
+                            self
         }
         /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-        pub fn set_analysis_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
-        ) -> Self {
-            self.analysis_types = input;
-            self
+        pub fn set_analysis_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>) -> Self {
+            self.analysis_types = input; self
         }
         /// Consumes the builder and constructs a [`CodeReviewType`](crate::model::CodeReviewType).
         pub fn build(self) -> crate::model::CodeReviewType {
             crate::model::CodeReviewType {
-                repository_analysis: self.repository_analysis,
-                analysis_types: self.analysis_types,
+                repository_analysis: self.repository_analysis
+                ,
+                analysis_types: self.analysis_types
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeReviewType {
     /// Creates a new builder-style object to manufacture [`CodeReviewType`](crate::model::CodeReviewType).
@@ -4142,7 +3875,7 @@ impl CodeReviewType {
 /// <p>A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryAnalysis {
+pub struct RepositoryAnalysis  {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     #[doc(hidden)]
     pub repository_head: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
@@ -4152,19 +3885,17 @@ pub struct RepositoryAnalysis {
 }
 impl RepositoryAnalysis {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn repository_head(
-        &self,
-    ) -> std::option::Option<&crate::model::RepositoryHeadSourceCodeType> {
+    pub fn repository_head(&self) -> std::option::Option<& crate::model::RepositoryHeadSourceCodeType> {
         self.repository_head.as_ref()
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    pub fn source_code_type(&self) -> std::option::Option<&crate::model::SourceCodeType> {
+    pub fn source_code_type(&self) -> std::option::Option<& crate::model::SourceCodeType> {
         self.source_code_type.as_ref()
     }
 }
 /// See [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
 pub mod repository_analysis {
-
+    
     /// A builder for [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4173,20 +3904,13 @@ pub mod repository_analysis {
     }
     impl Builder {
         /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-        pub fn repository_head(
-            mut self,
-            input: crate::model::RepositoryHeadSourceCodeType,
-        ) -> Self {
+        pub fn repository_head(mut self, input: crate::model::RepositoryHeadSourceCodeType) -> Self {
             self.repository_head = Some(input);
             self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-        pub fn set_repository_head(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
-        ) -> Self {
-            self.repository_head = input;
-            self
+        pub fn set_repository_head(mut self, input: std::option::Option<crate::model::RepositoryHeadSourceCodeType>) -> Self {
+            self.repository_head = input; self
         }
         /// <p>Specifies the source code that is analyzed in a code review.</p>
         pub fn source_code_type(mut self, input: crate::model::SourceCodeType) -> Self {
@@ -4194,21 +3918,21 @@ pub mod repository_analysis {
             self
         }
         /// <p>Specifies the source code that is analyzed in a code review.</p>
-        pub fn set_source_code_type(
-            mut self,
-            input: std::option::Option<crate::model::SourceCodeType>,
-        ) -> Self {
-            self.source_code_type = input;
-            self
+        pub fn set_source_code_type(mut self, input: std::option::Option<crate::model::SourceCodeType>) -> Self {
+            self.source_code_type = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
         pub fn build(self) -> crate::model::RepositoryAnalysis {
             crate::model::RepositoryAnalysis {
-                repository_head: self.repository_head,
-                source_code_type: self.source_code_type,
+                repository_head: self.repository_head
+                ,
+                source_code_type: self.source_code_type
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryAnalysis {
     /// Creates a new builder-style object to manufacture [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
@@ -4220,7 +3944,7 @@ impl RepositoryAnalysis {
 /// <p>Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Repository {
+pub struct Repository  {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
     #[doc(hidden)]
     pub code_commit: std::option::Option<crate::model::CodeCommitRepository>,
@@ -4236,34 +3960,31 @@ pub struct Repository {
 }
 impl Repository {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
-    pub fn code_commit(&self) -> std::option::Option<&crate::model::CodeCommitRepository> {
+    pub fn code_commit(&self) -> std::option::Option<& crate::model::CodeCommitRepository> {
         self.code_commit.as_ref()
     }
     /// <p> Information about a Bitbucket repository. </p>
-    pub fn bitbucket(&self) -> std::option::Option<&crate::model::ThirdPartySourceRepository> {
+    pub fn bitbucket(&self) -> std::option::Option<& crate::model::ThirdPartySourceRepository> {
         self.bitbucket.as_ref()
     }
     /// <p>Information about a GitHub Enterprise Server repository.</p>
-    pub fn git_hub_enterprise_server(
-        &self,
-    ) -> std::option::Option<&crate::model::ThirdPartySourceRepository> {
+    pub fn git_hub_enterprise_server(&self) -> std::option::Option<& crate::model::ThirdPartySourceRepository> {
         self.git_hub_enterprise_server.as_ref()
     }
     /// <p>Information about a repository in an S3 bucket.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&crate::model::S3Repository> {
+    pub fn s3_bucket(&self) -> std::option::Option<& crate::model::S3Repository> {
         self.s3_bucket.as_ref()
     }
 }
 /// See [`Repository`](crate::model::Repository).
 pub mod repository {
-
+    
     /// A builder for [`Repository`](crate::model::Repository).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_commit: std::option::Option<crate::model::CodeCommitRepository>,
         pub(crate) bitbucket: std::option::Option<crate::model::ThirdPartySourceRepository>,
-        pub(crate) git_hub_enterprise_server:
-            std::option::Option<crate::model::ThirdPartySourceRepository>,
+        pub(crate) git_hub_enterprise_server: std::option::Option<crate::model::ThirdPartySourceRepository>,
         pub(crate) s3_bucket: std::option::Option<crate::model::S3Repository>,
     }
     impl Builder {
@@ -4273,12 +3994,8 @@ pub mod repository {
             self
         }
         /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
-        pub fn set_code_commit(
-            mut self,
-            input: std::option::Option<crate::model::CodeCommitRepository>,
-        ) -> Self {
-            self.code_commit = input;
-            self
+        pub fn set_code_commit(mut self, input: std::option::Option<crate::model::CodeCommitRepository>) -> Self {
+            self.code_commit = input; self
         }
         /// <p> Information about a Bitbucket repository. </p>
         pub fn bitbucket(mut self, input: crate::model::ThirdPartySourceRepository) -> Self {
@@ -4286,28 +4003,17 @@ pub mod repository {
             self
         }
         /// <p> Information about a Bitbucket repository. </p>
-        pub fn set_bitbucket(
-            mut self,
-            input: std::option::Option<crate::model::ThirdPartySourceRepository>,
-        ) -> Self {
-            self.bitbucket = input;
-            self
+        pub fn set_bitbucket(mut self, input: std::option::Option<crate::model::ThirdPartySourceRepository>) -> Self {
+            self.bitbucket = input; self
         }
         /// <p>Information about a GitHub Enterprise Server repository.</p>
-        pub fn git_hub_enterprise_server(
-            mut self,
-            input: crate::model::ThirdPartySourceRepository,
-        ) -> Self {
+        pub fn git_hub_enterprise_server(mut self, input: crate::model::ThirdPartySourceRepository) -> Self {
             self.git_hub_enterprise_server = Some(input);
             self
         }
         /// <p>Information about a GitHub Enterprise Server repository.</p>
-        pub fn set_git_hub_enterprise_server(
-            mut self,
-            input: std::option::Option<crate::model::ThirdPartySourceRepository>,
-        ) -> Self {
-            self.git_hub_enterprise_server = input;
-            self
+        pub fn set_git_hub_enterprise_server(mut self, input: std::option::Option<crate::model::ThirdPartySourceRepository>) -> Self {
+            self.git_hub_enterprise_server = input; self
         }
         /// <p>Information about a repository in an S3 bucket.</p>
         pub fn s3_bucket(mut self, input: crate::model::S3Repository) -> Self {
@@ -4315,23 +4021,25 @@ pub mod repository {
             self
         }
         /// <p>Information about a repository in an S3 bucket.</p>
-        pub fn set_s3_bucket(
-            mut self,
-            input: std::option::Option<crate::model::S3Repository>,
-        ) -> Self {
-            self.s3_bucket = input;
-            self
+        pub fn set_s3_bucket(mut self, input: std::option::Option<crate::model::S3Repository>) -> Self {
+            self.s3_bucket = input; self
         }
         /// Consumes the builder and constructs a [`Repository`](crate::model::Repository).
         pub fn build(self) -> crate::model::Repository {
             crate::model::Repository {
-                code_commit: self.code_commit,
-                bitbucket: self.bitbucket,
-                git_hub_enterprise_server: self.git_hub_enterprise_server,
-                s3_bucket: self.s3_bucket,
+                code_commit: self.code_commit
+                ,
+                bitbucket: self.bitbucket
+                ,
+                git_hub_enterprise_server: self.git_hub_enterprise_server
+                ,
+                s3_bucket: self.s3_bucket
+                ,
             }
         }
     }
+    
+    
 }
 impl Repository {
     /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
@@ -4343,7 +4051,7 @@ impl Repository {
 /// <p>Information about a repository in an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Repository {
+pub struct S3Repository  {
     /// <p>The name of the repository in the S3 bucket.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4353,17 +4061,17 @@ pub struct S3Repository {
 }
 impl S3Repository {
     /// <p>The name of the repository in the S3 bucket.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
 }
 /// See [`S3Repository`](crate::model::S3Repository).
 pub mod s3_repository {
-
+    
     /// A builder for [`S3Repository`](crate::model::S3Repository).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4378,8 +4086,7 @@ pub mod s3_repository {
         }
         /// <p>The name of the repository in the S3 bucket.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4388,17 +4095,20 @@ pub mod s3_repository {
         }
         /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// Consumes the builder and constructs a [`S3Repository`](crate::model::S3Repository).
         pub fn build(self) -> crate::model::S3Repository {
             crate::model::S3Repository {
-                name: self.name,
-                bucket_name: self.bucket_name,
+                name: self.name
+                ,
+                bucket_name: self.bucket_name
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Repository {
     /// Creates a new builder-style object to manufacture [`S3Repository`](crate::model::S3Repository).
@@ -4410,7 +4120,7 @@ impl S3Repository {
 /// <p>Information about a third-party source repository connected to CodeGuru Reviewer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThirdPartySourceRepository {
+pub struct ThirdPartySourceRepository  {
     /// <p>The name of the third party source repository.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4423,21 +4133,21 @@ pub struct ThirdPartySourceRepository {
 }
 impl ThirdPartySourceRepository {
     /// <p>The name of the third party source repository.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID </p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
 }
 /// See [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
 pub mod third_party_source_repository {
-
+    
     /// A builder for [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4453,8 +4163,7 @@ pub mod third_party_source_repository {
         }
         /// <p>The name of the third party source repository.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4462,12 +4171,8 @@ pub mod third_party_source_repository {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID </p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4476,18 +4181,22 @@ pub mod third_party_source_repository {
         }
         /// <p>The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID </p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// Consumes the builder and constructs a [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
         pub fn build(self) -> crate::model::ThirdPartySourceRepository {
             crate::model::ThirdPartySourceRepository {
-                name: self.name,
-                connection_arn: self.connection_arn,
-                owner: self.owner,
+                name: self.name
+                ,
+                connection_arn: self.connection_arn
+                ,
+                owner: self.owner
+                ,
             }
         }
     }
+    
+    
 }
 impl ThirdPartySourceRepository {
     /// Creates a new builder-style object to manufacture [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
@@ -4499,20 +4208,20 @@ impl ThirdPartySourceRepository {
 /// <p>Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeCommitRepository {
+pub struct CodeCommitRepository  {
     /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CodeCommitRepository {
     /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CodeCommitRepository`](crate::model::CodeCommitRepository).
 pub mod code_commit_repository {
-
+    
     /// A builder for [`CodeCommitRepository`](crate::model::CodeCommitRepository).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4526,14 +4235,18 @@ pub mod code_commit_repository {
         }
         /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CodeCommitRepository`](crate::model::CodeCommitRepository).
         pub fn build(self) -> crate::model::CodeCommitRepository {
-            crate::model::CodeCommitRepository { name: self.name }
+            crate::model::CodeCommitRepository {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl CodeCommitRepository {
     /// Creates a new builder-style object to manufacture [`CodeCommitRepository`](crate::model::CodeCommitRepository).
@@ -4541,3 +4254,4 @@ impl CodeCommitRepository {
         crate::model::code_commit_repository::Builder::default()
     }
 }
+

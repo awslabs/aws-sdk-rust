@@ -15,15 +15,15 @@ pub enum Error {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Status Code: 404, The stream with the given name does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34,19 +34,14 @@ impl std::fmt::Display for Error {
             Error::InvalidEndpointException(inner) => inner.fmt(f),
             Error::NotAuthorizedException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -54,28 +49,15 @@ where
 impl From<crate::error::GetMediaError> for Error {
     fn from(err: crate::error::GetMediaError) -> Self {
         match err.kind {
-            crate::error::GetMediaErrorKind::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::GetMediaErrorKind::ConnectionLimitExceededException(inner) => {
-                Error::ConnectionLimitExceededException(inner)
-            }
-            crate::error::GetMediaErrorKind::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetMediaErrorKind::InvalidEndpointException(inner) => {
-                Error::InvalidEndpointException(inner)
-            }
-            crate::error::GetMediaErrorKind::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetMediaErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetMediaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetMediaErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::GetMediaErrorKind::ConnectionLimitExceededException(inner) => Error::ConnectionLimitExceededException(inner),
+            crate::error::GetMediaErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::GetMediaErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::error::GetMediaErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::error::GetMediaErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetMediaErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

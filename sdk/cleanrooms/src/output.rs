@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProtectedQueryOutput {
+pub struct UpdateProtectedQueryOutput  {
     /// <p>The protected query output.</p>
     #[doc(hidden)]
     pub protected_query: std::option::Option<crate::model::ProtectedQuery>,
 }
 impl UpdateProtectedQueryOutput {
     /// <p>The protected query output.</p>
-    pub fn protected_query(&self) -> std::option::Option<&crate::model::ProtectedQuery> {
+    pub fn protected_query(&self) -> std::option::Option<& crate::model::ProtectedQuery> {
         self.protected_query.as_ref()
     }
 }
 /// See [`UpdateProtectedQueryOutput`](crate::output::UpdateProtectedQueryOutput).
 pub mod update_protected_query_output {
-
+    
     /// A builder for [`UpdateProtectedQueryOutput`](crate::output::UpdateProtectedQueryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_protected_query_output {
             self
         }
         /// <p>The protected query output.</p>
-        pub fn set_protected_query(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQuery>,
-        ) -> Self {
-            self.protected_query = input;
-            self
+        pub fn set_protected_query(mut self, input: std::option::Option<crate::model::ProtectedQuery>) -> Self {
+            self.protected_query = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProtectedQueryOutput`](crate::output::UpdateProtectedQueryOutput).
         pub fn build(self) -> crate::output::UpdateProtectedQueryOutput {
             crate::output::UpdateProtectedQueryOutput {
-                protected_query: self.protected_query,
+                protected_query: self.protected_query
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProtectedQueryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProtectedQueryOutput`](crate::output::UpdateProtectedQueryOutput).
@@ -53,20 +52,20 @@ impl UpdateProtectedQueryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartProtectedQueryOutput {
+pub struct StartProtectedQueryOutput  {
     /// <p>The protected query.</p>
     #[doc(hidden)]
     pub protected_query: std::option::Option<crate::model::ProtectedQuery>,
 }
 impl StartProtectedQueryOutput {
     /// <p>The protected query.</p>
-    pub fn protected_query(&self) -> std::option::Option<&crate::model::ProtectedQuery> {
+    pub fn protected_query(&self) -> std::option::Option<& crate::model::ProtectedQuery> {
         self.protected_query.as_ref()
     }
 }
 /// See [`StartProtectedQueryOutput`](crate::output::StartProtectedQueryOutput).
 pub mod start_protected_query_output {
-
+    
     /// A builder for [`StartProtectedQueryOutput`](crate::output::StartProtectedQueryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod start_protected_query_output {
             self
         }
         /// <p>The protected query.</p>
-        pub fn set_protected_query(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQuery>,
-        ) -> Self {
-            self.protected_query = input;
-            self
+        pub fn set_protected_query(mut self, input: std::option::Option<crate::model::ProtectedQuery>) -> Self {
+            self.protected_query = input; self
         }
         /// Consumes the builder and constructs a [`StartProtectedQueryOutput`](crate::output::StartProtectedQueryOutput).
         pub fn build(self) -> crate::output::StartProtectedQueryOutput {
             crate::output::StartProtectedQueryOutput {
-                protected_query: self.protected_query,
+                protected_query: self.protected_query
+                ,
             }
         }
     }
+    
+    
 }
 impl StartProtectedQueryOutput {
     /// Creates a new builder-style object to manufacture [`StartProtectedQueryOutput`](crate::output::StartProtectedQueryOutput).
@@ -104,7 +102,7 @@ impl StartProtectedQueryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProtectedQueriesOutput {
+pub struct ListProtectedQueriesOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -114,23 +112,22 @@ pub struct ListProtectedQueriesOutput {
 }
 impl ListProtectedQueriesOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of protected queries.</p>
-    pub fn protected_queries(&self) -> std::option::Option<&[crate::model::ProtectedQuerySummary]> {
+    pub fn protected_queries(&self) -> std::option::Option<& [crate::model::ProtectedQuerySummary]> {
         self.protected_queries.as_deref()
     }
 }
 /// See [`ListProtectedQueriesOutput`](crate::output::ListProtectedQueriesOutput).
 pub mod list_protected_queries_output {
-
+    
     /// A builder for [`ListProtectedQueriesOutput`](crate::output::ListProtectedQueriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) protected_queries:
-            std::option::Option<std::vec::Vec<crate::model::ProtectedQuerySummary>>,
+        pub(crate) protected_queries: std::option::Option<std::vec::Vec<crate::model::ProtectedQuerySummary>>,
     }
     impl Builder {
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -140,8 +137,7 @@ pub mod list_protected_queries_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `protected_queries`.
         ///
@@ -150,26 +146,26 @@ pub mod list_protected_queries_output {
         /// <p>A list of protected queries.</p>
         pub fn protected_queries(mut self, input: crate::model::ProtectedQuerySummary) -> Self {
             let mut v = self.protected_queries.unwrap_or_default();
-            v.push(input);
-            self.protected_queries = Some(v);
-            self
+                            v.push(input);
+                            self.protected_queries = Some(v);
+                            self
         }
         /// <p>A list of protected queries.</p>
-        pub fn set_protected_queries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtectedQuerySummary>>,
-        ) -> Self {
-            self.protected_queries = input;
-            self
+        pub fn set_protected_queries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtectedQuerySummary>>) -> Self {
+            self.protected_queries = input; self
         }
         /// Consumes the builder and constructs a [`ListProtectedQueriesOutput`](crate::output::ListProtectedQueriesOutput).
         pub fn build(self) -> crate::output::ListProtectedQueriesOutput {
             crate::output::ListProtectedQueriesOutput {
-                next_token: self.next_token,
-                protected_queries: self.protected_queries,
+                next_token: self.next_token
+                ,
+                protected_queries: self.protected_queries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProtectedQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectedQueriesOutput`](crate::output::ListProtectedQueriesOutput).
@@ -181,20 +177,20 @@ impl ListProtectedQueriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProtectedQueryOutput {
+pub struct GetProtectedQueryOutput  {
     /// <p>The query processing metadata.</p>
     #[doc(hidden)]
     pub protected_query: std::option::Option<crate::model::ProtectedQuery>,
 }
 impl GetProtectedQueryOutput {
     /// <p>The query processing metadata.</p>
-    pub fn protected_query(&self) -> std::option::Option<&crate::model::ProtectedQuery> {
+    pub fn protected_query(&self) -> std::option::Option<& crate::model::ProtectedQuery> {
         self.protected_query.as_ref()
     }
 }
 /// See [`GetProtectedQueryOutput`](crate::output::GetProtectedQueryOutput).
 pub mod get_protected_query_output {
-
+    
     /// A builder for [`GetProtectedQueryOutput`](crate::output::GetProtectedQueryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -207,20 +203,19 @@ pub mod get_protected_query_output {
             self
         }
         /// <p>The query processing metadata.</p>
-        pub fn set_protected_query(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQuery>,
-        ) -> Self {
-            self.protected_query = input;
-            self
+        pub fn set_protected_query(mut self, input: std::option::Option<crate::model::ProtectedQuery>) -> Self {
+            self.protected_query = input; self
         }
         /// Consumes the builder and constructs a [`GetProtectedQueryOutput`](crate::output::GetProtectedQueryOutput).
         pub fn build(self) -> crate::output::GetProtectedQueryOutput {
             crate::output::GetProtectedQueryOutput {
-                protected_query: self.protected_query,
+                protected_query: self.protected_query
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProtectedQueryOutput {
     /// Creates a new builder-style object to manufacture [`GetProtectedQueryOutput`](crate::output::GetProtectedQueryOutput).
@@ -232,7 +227,7 @@ impl GetProtectedQueryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMembershipsOutput {
+pub struct ListMembershipsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -242,23 +237,22 @@ pub struct ListMembershipsOutput {
 }
 impl ListMembershipsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of memberships returned from the ListMemberships operation.</p>
-    pub fn membership_summaries(&self) -> std::option::Option<&[crate::model::MembershipSummary]> {
+    pub fn membership_summaries(&self) -> std::option::Option<& [crate::model::MembershipSummary]> {
         self.membership_summaries.as_deref()
     }
 }
 /// See [`ListMembershipsOutput`](crate::output::ListMembershipsOutput).
 pub mod list_memberships_output {
-
+    
     /// A builder for [`ListMembershipsOutput`](crate::output::ListMembershipsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) membership_summaries:
-            std::option::Option<std::vec::Vec<crate::model::MembershipSummary>>,
+        pub(crate) membership_summaries: std::option::Option<std::vec::Vec<crate::model::MembershipSummary>>,
     }
     impl Builder {
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -268,8 +262,7 @@ pub mod list_memberships_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `membership_summaries`.
         ///
@@ -278,26 +271,26 @@ pub mod list_memberships_output {
         /// <p>The list of memberships returned from the ListMemberships operation.</p>
         pub fn membership_summaries(mut self, input: crate::model::MembershipSummary) -> Self {
             let mut v = self.membership_summaries.unwrap_or_default();
-            v.push(input);
-            self.membership_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.membership_summaries = Some(v);
+                            self
         }
         /// <p>The list of memberships returned from the ListMemberships operation.</p>
-        pub fn set_membership_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MembershipSummary>>,
-        ) -> Self {
-            self.membership_summaries = input;
-            self
+        pub fn set_membership_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::MembershipSummary>>) -> Self {
+            self.membership_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListMembershipsOutput`](crate::output::ListMembershipsOutput).
         pub fn build(self) -> crate::output::ListMembershipsOutput {
             crate::output::ListMembershipsOutput {
-                next_token: self.next_token,
-                membership_summaries: self.membership_summaries,
+                next_token: self.next_token
+                ,
+                membership_summaries: self.membership_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListMembershipsOutput`](crate::output::ListMembershipsOutput).
@@ -309,20 +302,20 @@ impl ListMembershipsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMembershipOutput {
+pub struct CreateMembershipOutput  {
     /// <p>The membership that was created.</p>
     #[doc(hidden)]
     pub membership: std::option::Option<crate::model::Membership>,
 }
 impl CreateMembershipOutput {
     /// <p>The membership that was created.</p>
-    pub fn membership(&self) -> std::option::Option<&crate::model::Membership> {
+    pub fn membership(&self) -> std::option::Option<& crate::model::Membership> {
         self.membership.as_ref()
     }
 }
 /// See [`CreateMembershipOutput`](crate::output::CreateMembershipOutput).
 pub mod create_membership_output {
-
+    
     /// A builder for [`CreateMembershipOutput`](crate::output::CreateMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -335,20 +328,19 @@ pub mod create_membership_output {
             self
         }
         /// <p>The membership that was created.</p>
-        pub fn set_membership(
-            mut self,
-            input: std::option::Option<crate::model::Membership>,
-        ) -> Self {
-            self.membership = input;
-            self
+        pub fn set_membership(mut self, input: std::option::Option<crate::model::Membership>) -> Self {
+            self.membership = input; self
         }
         /// Consumes the builder and constructs a [`CreateMembershipOutput`](crate::output::CreateMembershipOutput).
         pub fn build(self) -> crate::output::CreateMembershipOutput {
             crate::output::CreateMembershipOutput {
-                membership: self.membership,
+                membership: self.membership
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateMembershipOutput`](crate::output::CreateMembershipOutput).
@@ -360,19 +352,24 @@ impl CreateMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMembershipOutput {}
+pub struct DeleteMembershipOutput  {
+}
 /// See [`DeleteMembershipOutput`](crate::output::DeleteMembershipOutput).
 pub mod delete_membership_output {
-
+    
     /// A builder for [`DeleteMembershipOutput`](crate::output::DeleteMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMembershipOutput`](crate::output::DeleteMembershipOutput).
         pub fn build(self) -> crate::output::DeleteMembershipOutput {
-            crate::output::DeleteMembershipOutput {}
+            crate::output::DeleteMembershipOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMembershipOutput`](crate::output::DeleteMembershipOutput).
@@ -384,20 +381,20 @@ impl DeleteMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMembershipOutput {
+pub struct UpdateMembershipOutput  {
     /// <p>The membership object.</p>
     #[doc(hidden)]
     pub membership: std::option::Option<crate::model::Membership>,
 }
 impl UpdateMembershipOutput {
     /// <p>The membership object.</p>
-    pub fn membership(&self) -> std::option::Option<&crate::model::Membership> {
+    pub fn membership(&self) -> std::option::Option<& crate::model::Membership> {
         self.membership.as_ref()
     }
 }
 /// See [`UpdateMembershipOutput`](crate::output::UpdateMembershipOutput).
 pub mod update_membership_output {
-
+    
     /// A builder for [`UpdateMembershipOutput`](crate::output::UpdateMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -410,20 +407,19 @@ pub mod update_membership_output {
             self
         }
         /// <p>The membership object.</p>
-        pub fn set_membership(
-            mut self,
-            input: std::option::Option<crate::model::Membership>,
-        ) -> Self {
-            self.membership = input;
-            self
+        pub fn set_membership(mut self, input: std::option::Option<crate::model::Membership>) -> Self {
+            self.membership = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMembershipOutput`](crate::output::UpdateMembershipOutput).
         pub fn build(self) -> crate::output::UpdateMembershipOutput {
             crate::output::UpdateMembershipOutput {
-                membership: self.membership,
+                membership: self.membership
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMembershipOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMembershipOutput`](crate::output::UpdateMembershipOutput).
@@ -435,20 +431,20 @@ impl UpdateMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMembershipOutput {
+pub struct GetMembershipOutput  {
     /// <p>The membership retrieved for the provided identifier.</p>
     #[doc(hidden)]
     pub membership: std::option::Option<crate::model::Membership>,
 }
 impl GetMembershipOutput {
     /// <p>The membership retrieved for the provided identifier.</p>
-    pub fn membership(&self) -> std::option::Option<&crate::model::Membership> {
+    pub fn membership(&self) -> std::option::Option<& crate::model::Membership> {
         self.membership.as_ref()
     }
 }
 /// See [`GetMembershipOutput`](crate::output::GetMembershipOutput).
 pub mod get_membership_output {
-
+    
     /// A builder for [`GetMembershipOutput`](crate::output::GetMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -461,20 +457,19 @@ pub mod get_membership_output {
             self
         }
         /// <p>The membership retrieved for the provided identifier.</p>
-        pub fn set_membership(
-            mut self,
-            input: std::option::Option<crate::model::Membership>,
-        ) -> Self {
-            self.membership = input;
-            self
+        pub fn set_membership(mut self, input: std::option::Option<crate::model::Membership>) -> Self {
+            self.membership = input; self
         }
         /// Consumes the builder and constructs a [`GetMembershipOutput`](crate::output::GetMembershipOutput).
         pub fn build(self) -> crate::output::GetMembershipOutput {
             crate::output::GetMembershipOutput {
-                membership: self.membership,
+                membership: self.membership
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMembershipOutput {
     /// Creates a new builder-style object to manufacture [`GetMembershipOutput`](crate::output::GetMembershipOutput).
@@ -486,20 +481,20 @@ impl GetMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfiguredTableAnalysisRuleOutput {
+pub struct UpdateConfiguredTableAnalysisRuleOutput  {
     /// <p>The entire updated analysis rule.</p>
     #[doc(hidden)]
     pub analysis_rule: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
 }
 impl UpdateConfiguredTableAnalysisRuleOutput {
     /// <p>The entire updated analysis rule.</p>
-    pub fn analysis_rule(&self) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRule> {
+    pub fn analysis_rule(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRule> {
         self.analysis_rule.as_ref()
     }
 }
 /// See [`UpdateConfiguredTableAnalysisRuleOutput`](crate::output::UpdateConfiguredTableAnalysisRuleOutput).
 pub mod update_configured_table_analysis_rule_output {
-
+    
     /// A builder for [`UpdateConfiguredTableAnalysisRuleOutput`](crate::output::UpdateConfiguredTableAnalysisRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -512,20 +507,19 @@ pub mod update_configured_table_analysis_rule_output {
             self
         }
         /// <p>The entire updated analysis rule.</p>
-        pub fn set_analysis_rule(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
-        ) -> Self {
-            self.analysis_rule = input;
-            self
+        pub fn set_analysis_rule(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRule>) -> Self {
+            self.analysis_rule = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfiguredTableAnalysisRuleOutput`](crate::output::UpdateConfiguredTableAnalysisRuleOutput).
         pub fn build(self) -> crate::output::UpdateConfiguredTableAnalysisRuleOutput {
             crate::output::UpdateConfiguredTableAnalysisRuleOutput {
-                analysis_rule: self.analysis_rule,
+                analysis_rule: self.analysis_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConfiguredTableAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredTableAnalysisRuleOutput`](crate::output::UpdateConfiguredTableAnalysisRuleOutput).
@@ -537,20 +531,20 @@ impl UpdateConfiguredTableAnalysisRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfiguredTableAnalysisRuleOutput {
+pub struct GetConfiguredTableAnalysisRuleOutput  {
     /// <p>The entire analysis rule output.</p>
     #[doc(hidden)]
     pub analysis_rule: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
 }
 impl GetConfiguredTableAnalysisRuleOutput {
     /// <p>The entire analysis rule output.</p>
-    pub fn analysis_rule(&self) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRule> {
+    pub fn analysis_rule(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRule> {
         self.analysis_rule.as_ref()
     }
 }
 /// See [`GetConfiguredTableAnalysisRuleOutput`](crate::output::GetConfiguredTableAnalysisRuleOutput).
 pub mod get_configured_table_analysis_rule_output {
-
+    
     /// A builder for [`GetConfiguredTableAnalysisRuleOutput`](crate::output::GetConfiguredTableAnalysisRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -563,20 +557,19 @@ pub mod get_configured_table_analysis_rule_output {
             self
         }
         /// <p>The entire analysis rule output.</p>
-        pub fn set_analysis_rule(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
-        ) -> Self {
-            self.analysis_rule = input;
-            self
+        pub fn set_analysis_rule(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRule>) -> Self {
+            self.analysis_rule = input; self
         }
         /// Consumes the builder and constructs a [`GetConfiguredTableAnalysisRuleOutput`](crate::output::GetConfiguredTableAnalysisRuleOutput).
         pub fn build(self) -> crate::output::GetConfiguredTableAnalysisRuleOutput {
             crate::output::GetConfiguredTableAnalysisRuleOutput {
-                analysis_rule: self.analysis_rule,
+                analysis_rule: self.analysis_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfiguredTableAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetConfiguredTableAnalysisRuleOutput`](crate::output::GetConfiguredTableAnalysisRuleOutput).
@@ -588,19 +581,24 @@ impl GetConfiguredTableAnalysisRuleOutput {
 /// <p>An empty response that indicates a successful delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableAnalysisRuleOutput {}
+pub struct DeleteConfiguredTableAnalysisRuleOutput  {
+}
 /// See [`DeleteConfiguredTableAnalysisRuleOutput`](crate::output::DeleteConfiguredTableAnalysisRuleOutput).
 pub mod delete_configured_table_analysis_rule_output {
-
+    
     /// A builder for [`DeleteConfiguredTableAnalysisRuleOutput`](crate::output::DeleteConfiguredTableAnalysisRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConfiguredTableAnalysisRuleOutput`](crate::output::DeleteConfiguredTableAnalysisRuleOutput).
         pub fn build(self) -> crate::output::DeleteConfiguredTableAnalysisRuleOutput {
-            crate::output::DeleteConfiguredTableAnalysisRuleOutput {}
+            crate::output::DeleteConfiguredTableAnalysisRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConfiguredTableAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableAnalysisRuleOutput`](crate::output::DeleteConfiguredTableAnalysisRuleOutput).
@@ -612,20 +610,20 @@ impl DeleteConfiguredTableAnalysisRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfiguredTableAnalysisRuleOutput {
+pub struct CreateConfiguredTableAnalysisRuleOutput  {
     /// <p>The entire created analysis rule.</p>
     #[doc(hidden)]
     pub analysis_rule: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
 }
 impl CreateConfiguredTableAnalysisRuleOutput {
     /// <p>The entire created analysis rule.</p>
-    pub fn analysis_rule(&self) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRule> {
+    pub fn analysis_rule(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRule> {
         self.analysis_rule.as_ref()
     }
 }
 /// See [`CreateConfiguredTableAnalysisRuleOutput`](crate::output::CreateConfiguredTableAnalysisRuleOutput).
 pub mod create_configured_table_analysis_rule_output {
-
+    
     /// A builder for [`CreateConfiguredTableAnalysisRuleOutput`](crate::output::CreateConfiguredTableAnalysisRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -638,20 +636,19 @@ pub mod create_configured_table_analysis_rule_output {
             self
         }
         /// <p>The entire created analysis rule.</p>
-        pub fn set_analysis_rule(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRule>,
-        ) -> Self {
-            self.analysis_rule = input;
-            self
+        pub fn set_analysis_rule(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRule>) -> Self {
+            self.analysis_rule = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfiguredTableAnalysisRuleOutput`](crate::output::CreateConfiguredTableAnalysisRuleOutput).
         pub fn build(self) -> crate::output::CreateConfiguredTableAnalysisRuleOutput {
             crate::output::CreateConfiguredTableAnalysisRuleOutput {
-                analysis_rule: self.analysis_rule,
+                analysis_rule: self.analysis_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConfiguredTableAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableAnalysisRuleOutput`](crate::output::CreateConfiguredTableAnalysisRuleOutput).
@@ -663,35 +660,31 @@ impl CreateConfiguredTableAnalysisRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfiguredTablesOutput {
+pub struct ListConfiguredTablesOutput  {
     /// <p>The configured tables listed by the request.</p>
     #[doc(hidden)]
-    pub configured_table_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ConfiguredTableSummary>>,
+    pub configured_table_summaries: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableSummary>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfiguredTablesOutput {
     /// <p>The configured tables listed by the request.</p>
-    pub fn configured_table_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConfiguredTableSummary]> {
+    pub fn configured_table_summaries(&self) -> std::option::Option<& [crate::model::ConfiguredTableSummary]> {
         self.configured_table_summaries.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConfiguredTablesOutput`](crate::output::ListConfiguredTablesOutput).
 pub mod list_configured_tables_output {
-
+    
     /// A builder for [`ListConfiguredTablesOutput`](crate::output::ListConfiguredTablesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configured_table_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ConfiguredTableSummary>>,
+        pub(crate) configured_table_summaries: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -700,22 +693,15 @@ pub mod list_configured_tables_output {
         /// To override the contents of this collection use [`set_configured_table_summaries`](Self::set_configured_table_summaries).
         ///
         /// <p>The configured tables listed by the request.</p>
-        pub fn configured_table_summaries(
-            mut self,
-            input: crate::model::ConfiguredTableSummary,
-        ) -> Self {
+        pub fn configured_table_summaries(mut self, input: crate::model::ConfiguredTableSummary) -> Self {
             let mut v = self.configured_table_summaries.unwrap_or_default();
-            v.push(input);
-            self.configured_table_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.configured_table_summaries = Some(v);
+                            self
         }
         /// <p>The configured tables listed by the request.</p>
-        pub fn set_configured_table_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableSummary>>,
-        ) -> Self {
-            self.configured_table_summaries = input;
-            self
+        pub fn set_configured_table_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableSummary>>) -> Self {
+            self.configured_table_summaries = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -724,17 +710,20 @@ pub mod list_configured_tables_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConfiguredTablesOutput`](crate::output::ListConfiguredTablesOutput).
         pub fn build(self) -> crate::output::ListConfiguredTablesOutput {
             crate::output::ListConfiguredTablesOutput {
-                configured_table_summaries: self.configured_table_summaries,
-                next_token: self.next_token,
+                configured_table_summaries: self.configured_table_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConfiguredTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListConfiguredTablesOutput`](crate::output::ListConfiguredTablesOutput).
@@ -746,20 +735,20 @@ impl ListConfiguredTablesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfiguredTableOutput {
+pub struct CreateConfiguredTableOutput  {
     /// <p>The created configured table.</p>
     #[doc(hidden)]
     pub configured_table: std::option::Option<crate::model::ConfiguredTable>,
 }
 impl CreateConfiguredTableOutput {
     /// <p>The created configured table.</p>
-    pub fn configured_table(&self) -> std::option::Option<&crate::model::ConfiguredTable> {
+    pub fn configured_table(&self) -> std::option::Option<& crate::model::ConfiguredTable> {
         self.configured_table.as_ref()
     }
 }
 /// See [`CreateConfiguredTableOutput`](crate::output::CreateConfiguredTableOutput).
 pub mod create_configured_table_output {
-
+    
     /// A builder for [`CreateConfiguredTableOutput`](crate::output::CreateConfiguredTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -772,20 +761,19 @@ pub mod create_configured_table_output {
             self
         }
         /// <p>The created configured table.</p>
-        pub fn set_configured_table(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTable>,
-        ) -> Self {
-            self.configured_table = input;
-            self
+        pub fn set_configured_table(mut self, input: std::option::Option<crate::model::ConfiguredTable>) -> Self {
+            self.configured_table = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfiguredTableOutput`](crate::output::CreateConfiguredTableOutput).
         pub fn build(self) -> crate::output::CreateConfiguredTableOutput {
             crate::output::CreateConfiguredTableOutput {
-                configured_table: self.configured_table,
+                configured_table: self.configured_table
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConfiguredTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableOutput`](crate::output::CreateConfiguredTableOutput).
@@ -797,19 +785,24 @@ impl CreateConfiguredTableOutput {
 /// <p>The empty output for a successful deletion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableOutput {}
+pub struct DeleteConfiguredTableOutput  {
+}
 /// See [`DeleteConfiguredTableOutput`](crate::output::DeleteConfiguredTableOutput).
 pub mod delete_configured_table_output {
-
+    
     /// A builder for [`DeleteConfiguredTableOutput`](crate::output::DeleteConfiguredTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConfiguredTableOutput`](crate::output::DeleteConfiguredTableOutput).
         pub fn build(self) -> crate::output::DeleteConfiguredTableOutput {
-            crate::output::DeleteConfiguredTableOutput {}
+            crate::output::DeleteConfiguredTableOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConfiguredTableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableOutput`](crate::output::DeleteConfiguredTableOutput).
@@ -821,20 +814,20 @@ impl DeleteConfiguredTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfiguredTableOutput {
+pub struct UpdateConfiguredTableOutput  {
     /// <p>The updated configured table.</p>
     #[doc(hidden)]
     pub configured_table: std::option::Option<crate::model::ConfiguredTable>,
 }
 impl UpdateConfiguredTableOutput {
     /// <p>The updated configured table.</p>
-    pub fn configured_table(&self) -> std::option::Option<&crate::model::ConfiguredTable> {
+    pub fn configured_table(&self) -> std::option::Option<& crate::model::ConfiguredTable> {
         self.configured_table.as_ref()
     }
 }
 /// See [`UpdateConfiguredTableOutput`](crate::output::UpdateConfiguredTableOutput).
 pub mod update_configured_table_output {
-
+    
     /// A builder for [`UpdateConfiguredTableOutput`](crate::output::UpdateConfiguredTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -847,20 +840,19 @@ pub mod update_configured_table_output {
             self
         }
         /// <p>The updated configured table.</p>
-        pub fn set_configured_table(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTable>,
-        ) -> Self {
-            self.configured_table = input;
-            self
+        pub fn set_configured_table(mut self, input: std::option::Option<crate::model::ConfiguredTable>) -> Self {
+            self.configured_table = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfiguredTableOutput`](crate::output::UpdateConfiguredTableOutput).
         pub fn build(self) -> crate::output::UpdateConfiguredTableOutput {
             crate::output::UpdateConfiguredTableOutput {
-                configured_table: self.configured_table,
+                configured_table: self.configured_table
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConfiguredTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredTableOutput`](crate::output::UpdateConfiguredTableOutput).
@@ -872,20 +864,20 @@ impl UpdateConfiguredTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfiguredTableOutput {
+pub struct GetConfiguredTableOutput  {
     /// <p>The retrieved configured table.</p>
     #[doc(hidden)]
     pub configured_table: std::option::Option<crate::model::ConfiguredTable>,
 }
 impl GetConfiguredTableOutput {
     /// <p>The retrieved configured table.</p>
-    pub fn configured_table(&self) -> std::option::Option<&crate::model::ConfiguredTable> {
+    pub fn configured_table(&self) -> std::option::Option<& crate::model::ConfiguredTable> {
         self.configured_table.as_ref()
     }
 }
 /// See [`GetConfiguredTableOutput`](crate::output::GetConfiguredTableOutput).
 pub mod get_configured_table_output {
-
+    
     /// A builder for [`GetConfiguredTableOutput`](crate::output::GetConfiguredTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -898,20 +890,19 @@ pub mod get_configured_table_output {
             self
         }
         /// <p>The retrieved configured table.</p>
-        pub fn set_configured_table(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTable>,
-        ) -> Self {
-            self.configured_table = input;
-            self
+        pub fn set_configured_table(mut self, input: std::option::Option<crate::model::ConfiguredTable>) -> Self {
+            self.configured_table = input; self
         }
         /// Consumes the builder and constructs a [`GetConfiguredTableOutput`](crate::output::GetConfiguredTableOutput).
         pub fn build(self) -> crate::output::GetConfiguredTableOutput {
             crate::output::GetConfiguredTableOutput {
-                configured_table: self.configured_table,
+                configured_table: self.configured_table
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfiguredTableOutput {
     /// Creates a new builder-style object to manufacture [`GetConfiguredTableOutput`](crate::output::GetConfiguredTableOutput).
@@ -923,35 +914,31 @@ impl GetConfiguredTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfiguredTableAssociationsOutput {
+pub struct ListConfiguredTableAssociationsOutput  {
     /// <p>The retrieved list of configured table associations.</p>
     #[doc(hidden)]
-    pub configured_table_association_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAssociationSummary>>,
+    pub configured_table_association_summaries: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAssociationSummary>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfiguredTableAssociationsOutput {
     /// <p>The retrieved list of configured table associations.</p>
-    pub fn configured_table_association_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConfiguredTableAssociationSummary]> {
+    pub fn configured_table_association_summaries(&self) -> std::option::Option<& [crate::model::ConfiguredTableAssociationSummary]> {
         self.configured_table_association_summaries.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConfiguredTableAssociationsOutput`](crate::output::ListConfiguredTableAssociationsOutput).
 pub mod list_configured_table_associations_output {
-
+    
     /// A builder for [`ListConfiguredTableAssociationsOutput`](crate::output::ListConfiguredTableAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configured_table_association_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAssociationSummary>>,
+        pub(crate) configured_table_association_summaries: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAssociationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -960,26 +947,15 @@ pub mod list_configured_table_associations_output {
         /// To override the contents of this collection use [`set_configured_table_association_summaries`](Self::set_configured_table_association_summaries).
         ///
         /// <p>The retrieved list of configured table associations.</p>
-        pub fn configured_table_association_summaries(
-            mut self,
-            input: crate::model::ConfiguredTableAssociationSummary,
-        ) -> Self {
-            let mut v = self
-                .configured_table_association_summaries
-                .unwrap_or_default();
-            v.push(input);
-            self.configured_table_association_summaries = Some(v);
-            self
+        pub fn configured_table_association_summaries(mut self, input: crate::model::ConfiguredTableAssociationSummary) -> Self {
+            let mut v = self.configured_table_association_summaries.unwrap_or_default();
+                            v.push(input);
+                            self.configured_table_association_summaries = Some(v);
+                            self
         }
         /// <p>The retrieved list of configured table associations.</p>
-        pub fn set_configured_table_association_summaries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ConfiguredTableAssociationSummary>,
-            >,
-        ) -> Self {
-            self.configured_table_association_summaries = input;
-            self
+        pub fn set_configured_table_association_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAssociationSummary>>) -> Self {
+            self.configured_table_association_summaries = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -988,17 +964,20 @@ pub mod list_configured_table_associations_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConfiguredTableAssociationsOutput`](crate::output::ListConfiguredTableAssociationsOutput).
         pub fn build(self) -> crate::output::ListConfiguredTableAssociationsOutput {
             crate::output::ListConfiguredTableAssociationsOutput {
-                configured_table_association_summaries: self.configured_table_association_summaries,
-                next_token: self.next_token,
+                configured_table_association_summaries: self.configured_table_association_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConfiguredTableAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfiguredTableAssociationsOutput`](crate::output::ListConfiguredTableAssociationsOutput).
@@ -1010,52 +989,45 @@ impl ListConfiguredTableAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfiguredTableAssociationOutput {
+pub struct CreateConfiguredTableAssociationOutput  {
     /// <p>The entire configured table association object.</p>
     #[doc(hidden)]
     pub configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
 }
 impl CreateConfiguredTableAssociationOutput {
     /// <p>The entire configured table association object.</p>
-    pub fn configured_table_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAssociation> {
+    pub fn configured_table_association(&self) -> std::option::Option<& crate::model::ConfiguredTableAssociation> {
         self.configured_table_association.as_ref()
     }
 }
 /// See [`CreateConfiguredTableAssociationOutput`](crate::output::CreateConfiguredTableAssociationOutput).
 pub mod create_configured_table_association_output {
-
+    
     /// A builder for [`CreateConfiguredTableAssociationOutput`](crate::output::CreateConfiguredTableAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configured_table_association:
-            std::option::Option<crate::model::ConfiguredTableAssociation>,
+        pub(crate) configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
     }
     impl Builder {
         /// <p>The entire configured table association object.</p>
-        pub fn configured_table_association(
-            mut self,
-            input: crate::model::ConfiguredTableAssociation,
-        ) -> Self {
+        pub fn configured_table_association(mut self, input: crate::model::ConfiguredTableAssociation) -> Self {
             self.configured_table_association = Some(input);
             self
         }
         /// <p>The entire configured table association object.</p>
-        pub fn set_configured_table_association(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAssociation>,
-        ) -> Self {
-            self.configured_table_association = input;
-            self
+        pub fn set_configured_table_association(mut self, input: std::option::Option<crate::model::ConfiguredTableAssociation>) -> Self {
+            self.configured_table_association = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfiguredTableAssociationOutput`](crate::output::CreateConfiguredTableAssociationOutput).
         pub fn build(self) -> crate::output::CreateConfiguredTableAssociationOutput {
             crate::output::CreateConfiguredTableAssociationOutput {
-                configured_table_association: self.configured_table_association,
+                configured_table_association: self.configured_table_association
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConfiguredTableAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableAssociationOutput`](crate::output::CreateConfiguredTableAssociationOutput).
@@ -1067,19 +1039,24 @@ impl CreateConfiguredTableAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableAssociationOutput {}
+pub struct DeleteConfiguredTableAssociationOutput  {
+}
 /// See [`DeleteConfiguredTableAssociationOutput`](crate::output::DeleteConfiguredTableAssociationOutput).
 pub mod delete_configured_table_association_output {
-
+    
     /// A builder for [`DeleteConfiguredTableAssociationOutput`](crate::output::DeleteConfiguredTableAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConfiguredTableAssociationOutput`](crate::output::DeleteConfiguredTableAssociationOutput).
         pub fn build(self) -> crate::output::DeleteConfiguredTableAssociationOutput {
-            crate::output::DeleteConfiguredTableAssociationOutput {}
+            crate::output::DeleteConfiguredTableAssociationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConfiguredTableAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableAssociationOutput`](crate::output::DeleteConfiguredTableAssociationOutput).
@@ -1091,52 +1068,45 @@ impl DeleteConfiguredTableAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfiguredTableAssociationOutput {
+pub struct UpdateConfiguredTableAssociationOutput  {
     /// <p>The entire updated configured table association.</p>
     #[doc(hidden)]
     pub configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
 }
 impl UpdateConfiguredTableAssociationOutput {
     /// <p>The entire updated configured table association.</p>
-    pub fn configured_table_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAssociation> {
+    pub fn configured_table_association(&self) -> std::option::Option<& crate::model::ConfiguredTableAssociation> {
         self.configured_table_association.as_ref()
     }
 }
 /// See [`UpdateConfiguredTableAssociationOutput`](crate::output::UpdateConfiguredTableAssociationOutput).
 pub mod update_configured_table_association_output {
-
+    
     /// A builder for [`UpdateConfiguredTableAssociationOutput`](crate::output::UpdateConfiguredTableAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configured_table_association:
-            std::option::Option<crate::model::ConfiguredTableAssociation>,
+        pub(crate) configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
     }
     impl Builder {
         /// <p>The entire updated configured table association.</p>
-        pub fn configured_table_association(
-            mut self,
-            input: crate::model::ConfiguredTableAssociation,
-        ) -> Self {
+        pub fn configured_table_association(mut self, input: crate::model::ConfiguredTableAssociation) -> Self {
             self.configured_table_association = Some(input);
             self
         }
         /// <p>The entire updated configured table association.</p>
-        pub fn set_configured_table_association(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAssociation>,
-        ) -> Self {
-            self.configured_table_association = input;
-            self
+        pub fn set_configured_table_association(mut self, input: std::option::Option<crate::model::ConfiguredTableAssociation>) -> Self {
+            self.configured_table_association = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfiguredTableAssociationOutput`](crate::output::UpdateConfiguredTableAssociationOutput).
         pub fn build(self) -> crate::output::UpdateConfiguredTableAssociationOutput {
             crate::output::UpdateConfiguredTableAssociationOutput {
-                configured_table_association: self.configured_table_association,
+                configured_table_association: self.configured_table_association
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConfiguredTableAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredTableAssociationOutput`](crate::output::UpdateConfiguredTableAssociationOutput).
@@ -1148,52 +1118,45 @@ impl UpdateConfiguredTableAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfiguredTableAssociationOutput {
+pub struct GetConfiguredTableAssociationOutput  {
     /// <p>The entire configured table association object.</p>
     #[doc(hidden)]
     pub configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
 }
 impl GetConfiguredTableAssociationOutput {
     /// <p>The entire configured table association object.</p>
-    pub fn configured_table_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAssociation> {
+    pub fn configured_table_association(&self) -> std::option::Option<& crate::model::ConfiguredTableAssociation> {
         self.configured_table_association.as_ref()
     }
 }
 /// See [`GetConfiguredTableAssociationOutput`](crate::output::GetConfiguredTableAssociationOutput).
 pub mod get_configured_table_association_output {
-
+    
     /// A builder for [`GetConfiguredTableAssociationOutput`](crate::output::GetConfiguredTableAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configured_table_association:
-            std::option::Option<crate::model::ConfiguredTableAssociation>,
+        pub(crate) configured_table_association: std::option::Option<crate::model::ConfiguredTableAssociation>,
     }
     impl Builder {
         /// <p>The entire configured table association object.</p>
-        pub fn configured_table_association(
-            mut self,
-            input: crate::model::ConfiguredTableAssociation,
-        ) -> Self {
+        pub fn configured_table_association(mut self, input: crate::model::ConfiguredTableAssociation) -> Self {
             self.configured_table_association = Some(input);
             self
         }
         /// <p>The entire configured table association object.</p>
-        pub fn set_configured_table_association(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAssociation>,
-        ) -> Self {
-            self.configured_table_association = input;
-            self
+        pub fn set_configured_table_association(mut self, input: std::option::Option<crate::model::ConfiguredTableAssociation>) -> Self {
+            self.configured_table_association = input; self
         }
         /// Consumes the builder and constructs a [`GetConfiguredTableAssociationOutput`](crate::output::GetConfiguredTableAssociationOutput).
         pub fn build(self) -> crate::output::GetConfiguredTableAssociationOutput {
             crate::output::GetConfiguredTableAssociationOutput {
-                configured_table_association: self.configured_table_association,
+                configured_table_association: self.configured_table_association
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfiguredTableAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetConfiguredTableAssociationOutput`](crate::output::GetConfiguredTableAssociationOutput).
@@ -1205,7 +1168,7 @@ impl GetConfiguredTableAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSchemasOutput {
+pub struct ListSchemasOutput  {
     /// <p>The retrieved list of schemas.</p>
     #[doc(hidden)]
     pub schema_summaries: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>,
@@ -1215,22 +1178,21 @@ pub struct ListSchemasOutput {
 }
 impl ListSchemasOutput {
     /// <p>The retrieved list of schemas.</p>
-    pub fn schema_summaries(&self) -> std::option::Option<&[crate::model::SchemaSummary]> {
+    pub fn schema_summaries(&self) -> std::option::Option<& [crate::model::SchemaSummary]> {
         self.schema_summaries.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSchemasOutput`](crate::output::ListSchemasOutput).
 pub mod list_schemas_output {
-
+    
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) schema_summaries:
-            std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>,
+        pub(crate) schema_summaries: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1241,17 +1203,13 @@ pub mod list_schemas_output {
         /// <p>The retrieved list of schemas.</p>
         pub fn schema_summaries(mut self, input: crate::model::SchemaSummary) -> Self {
             let mut v = self.schema_summaries.unwrap_or_default();
-            v.push(input);
-            self.schema_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.schema_summaries = Some(v);
+                            self
         }
         /// <p>The retrieved list of schemas.</p>
-        pub fn set_schema_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>,
-        ) -> Self {
-            self.schema_summaries = input;
-            self
+        pub fn set_schema_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>) -> Self {
+            self.schema_summaries = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1260,17 +1218,20 @@ pub mod list_schemas_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSchemasOutput`](crate::output::ListSchemasOutput).
         pub fn build(self) -> crate::output::ListSchemasOutput {
             crate::output::ListSchemasOutput {
-                schema_summaries: self.schema_summaries,
-                next_token: self.next_token,
+                schema_summaries: self.schema_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSchemasOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemasOutput`](crate::output::ListSchemasOutput).
@@ -1282,7 +1243,7 @@ impl ListSchemasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMembersOutput {
+pub struct ListMembersOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1292,23 +1253,22 @@ pub struct ListMembersOutput {
 }
 impl ListMembersOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub fn member_summaries(&self) -> std::option::Option<&[crate::model::MemberSummary]> {
+    pub fn member_summaries(&self) -> std::option::Option<& [crate::model::MemberSummary]> {
         self.member_summaries.as_deref()
     }
 }
 /// See [`ListMembersOutput`](crate::output::ListMembersOutput).
 pub mod list_members_output {
-
+    
     /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) member_summaries:
-            std::option::Option<std::vec::Vec<crate::model::MemberSummary>>,
+        pub(crate) member_summaries: std::option::Option<std::vec::Vec<crate::model::MemberSummary>>,
     }
     impl Builder {
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1318,8 +1278,7 @@ pub mod list_members_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `member_summaries`.
         ///
@@ -1328,26 +1287,26 @@ pub mod list_members_output {
         /// <p>The list of members returned by the ListMembers operation.</p>
         pub fn member_summaries(mut self, input: crate::model::MemberSummary) -> Self {
             let mut v = self.member_summaries.unwrap_or_default();
-            v.push(input);
-            self.member_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.member_summaries = Some(v);
+                            self
         }
         /// <p>The list of members returned by the ListMembers operation.</p>
-        pub fn set_member_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MemberSummary>>,
-        ) -> Self {
-            self.member_summaries = input;
-            self
+        pub fn set_member_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::MemberSummary>>) -> Self {
+            self.member_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListMembersOutput`](crate::output::ListMembersOutput).
         pub fn build(self) -> crate::output::ListMembersOutput {
             crate::output::ListMembersOutput {
-                next_token: self.next_token,
-                member_summaries: self.member_summaries,
+                next_token: self.next_token
+                ,
+                member_summaries: self.member_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListMembersOutput`](crate::output::ListMembersOutput).
@@ -1359,20 +1318,20 @@ impl ListMembersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaAnalysisRuleOutput {
+pub struct GetSchemaAnalysisRuleOutput  {
     /// <p>A specification about how data from the configured table can be used.</p>
     #[doc(hidden)]
     pub analysis_rule: std::option::Option<crate::model::AnalysisRule>,
 }
 impl GetSchemaAnalysisRuleOutput {
     /// <p>A specification about how data from the configured table can be used.</p>
-    pub fn analysis_rule(&self) -> std::option::Option<&crate::model::AnalysisRule> {
+    pub fn analysis_rule(&self) -> std::option::Option<& crate::model::AnalysisRule> {
         self.analysis_rule.as_ref()
     }
 }
 /// See [`GetSchemaAnalysisRuleOutput`](crate::output::GetSchemaAnalysisRuleOutput).
 pub mod get_schema_analysis_rule_output {
-
+    
     /// A builder for [`GetSchemaAnalysisRuleOutput`](crate::output::GetSchemaAnalysisRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1385,20 +1344,19 @@ pub mod get_schema_analysis_rule_output {
             self
         }
         /// <p>A specification about how data from the configured table can be used.</p>
-        pub fn set_analysis_rule(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisRule>,
-        ) -> Self {
-            self.analysis_rule = input;
-            self
+        pub fn set_analysis_rule(mut self, input: std::option::Option<crate::model::AnalysisRule>) -> Self {
+            self.analysis_rule = input; self
         }
         /// Consumes the builder and constructs a [`GetSchemaAnalysisRuleOutput`](crate::output::GetSchemaAnalysisRuleOutput).
         pub fn build(self) -> crate::output::GetSchemaAnalysisRuleOutput {
             crate::output::GetSchemaAnalysisRuleOutput {
-                analysis_rule: self.analysis_rule,
+                analysis_rule: self.analysis_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSchemaAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaAnalysisRuleOutput`](crate::output::GetSchemaAnalysisRuleOutput).
@@ -1410,20 +1368,20 @@ impl GetSchemaAnalysisRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaOutput {
+pub struct GetSchemaOutput  {
     /// <p>The entire schema object.</p>
     #[doc(hidden)]
     pub schema: std::option::Option<crate::model::Schema>,
 }
 impl GetSchemaOutput {
     /// <p>The entire schema object.</p>
-    pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
+    pub fn schema(&self) -> std::option::Option<& crate::model::Schema> {
         self.schema.as_ref()
     }
 }
 /// See [`GetSchemaOutput`](crate::output::GetSchemaOutput).
 pub mod get_schema_output {
-
+    
     /// A builder for [`GetSchemaOutput`](crate::output::GetSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1437,16 +1395,18 @@ pub mod get_schema_output {
         }
         /// <p>The entire schema object.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
         /// Consumes the builder and constructs a [`GetSchemaOutput`](crate::output::GetSchemaOutput).
         pub fn build(self) -> crate::output::GetSchemaOutput {
             crate::output::GetSchemaOutput {
-                schema: self.schema,
+                schema: self.schema
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaOutput`](crate::output::GetSchemaOutput).
@@ -1458,19 +1418,24 @@ impl GetSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMemberOutput {}
+pub struct DeleteMemberOutput  {
+}
 /// See [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
 pub mod delete_member_output {
-
+    
     /// A builder for [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
         pub fn build(self) -> crate::output::DeleteMemberOutput {
-            crate::output::DeleteMemberOutput {}
+            crate::output::DeleteMemberOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMemberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
@@ -1482,7 +1447,7 @@ impl DeleteMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetSchemaOutput {
+pub struct BatchGetSchemaOutput  {
     /// <p>The retrieved list of schemas.</p>
     #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::model::Schema>>,
@@ -1492,17 +1457,17 @@ pub struct BatchGetSchemaOutput {
 }
 impl BatchGetSchemaOutput {
     /// <p>The retrieved list of schemas.</p>
-    pub fn schemas(&self) -> std::option::Option<&[crate::model::Schema]> {
+    pub fn schemas(&self) -> std::option::Option<& [crate::model::Schema]> {
         self.schemas.as_deref()
     }
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetSchemaError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchGetSchemaError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchGetSchemaOutput`](crate::output::BatchGetSchemaOutput).
 pub mod batch_get_schema_output {
-
+    
     /// A builder for [`BatchGetSchemaOutput`](crate::output::BatchGetSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1517,17 +1482,13 @@ pub mod batch_get_schema_output {
         /// <p>The retrieved list of schemas.</p>
         pub fn schemas(mut self, input: crate::model::Schema) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input);
-            self.schemas = Some(v);
-            self
+                            v.push(input);
+                            self.schemas = Some(v);
+                            self
         }
         /// <p>The retrieved list of schemas.</p>
-        pub fn set_schemas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Schema>>,
-        ) -> Self {
-            self.schemas = input;
-            self
+        pub fn set_schemas(mut self, input: std::option::Option<std::vec::Vec<crate::model::Schema>>) -> Self {
+            self.schemas = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -1536,26 +1497,26 @@ pub mod batch_get_schema_output {
         /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
         pub fn errors(mut self, input: crate::model::BatchGetSchemaError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchGetSchemaError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetSchemaError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetSchemaOutput`](crate::output::BatchGetSchemaOutput).
         pub fn build(self) -> crate::output::BatchGetSchemaOutput {
             crate::output::BatchGetSchemaOutput {
-                schemas: self.schemas,
-                errors: self.errors,
+                schemas: self.schemas
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetSchemaOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetSchemaOutput`](crate::output::BatchGetSchemaOutput).
@@ -1567,7 +1528,7 @@ impl BatchGetSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCollaborationsOutput {
+pub struct ListCollaborationsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1577,23 +1538,22 @@ pub struct ListCollaborationsOutput {
 }
 impl ListCollaborationsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of collaborations.</p>
-    pub fn collaboration_list(&self) -> std::option::Option<&[crate::model::CollaborationSummary]> {
+    pub fn collaboration_list(&self) -> std::option::Option<& [crate::model::CollaborationSummary]> {
         self.collaboration_list.as_deref()
     }
 }
 /// See [`ListCollaborationsOutput`](crate::output::ListCollaborationsOutput).
 pub mod list_collaborations_output {
-
+    
     /// A builder for [`ListCollaborationsOutput`](crate::output::ListCollaborationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) collaboration_list:
-            std::option::Option<std::vec::Vec<crate::model::CollaborationSummary>>,
+        pub(crate) collaboration_list: std::option::Option<std::vec::Vec<crate::model::CollaborationSummary>>,
     }
     impl Builder {
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1603,8 +1563,7 @@ pub mod list_collaborations_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `collaboration_list`.
         ///
@@ -1613,26 +1572,26 @@ pub mod list_collaborations_output {
         /// <p>The list of collaborations.</p>
         pub fn collaboration_list(mut self, input: crate::model::CollaborationSummary) -> Self {
             let mut v = self.collaboration_list.unwrap_or_default();
-            v.push(input);
-            self.collaboration_list = Some(v);
-            self
+                            v.push(input);
+                            self.collaboration_list = Some(v);
+                            self
         }
         /// <p>The list of collaborations.</p>
-        pub fn set_collaboration_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CollaborationSummary>>,
-        ) -> Self {
-            self.collaboration_list = input;
-            self
+        pub fn set_collaboration_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::CollaborationSummary>>) -> Self {
+            self.collaboration_list = input; self
         }
         /// Consumes the builder and constructs a [`ListCollaborationsOutput`](crate::output::ListCollaborationsOutput).
         pub fn build(self) -> crate::output::ListCollaborationsOutput {
             crate::output::ListCollaborationsOutput {
-                next_token: self.next_token,
-                collaboration_list: self.collaboration_list,
+                next_token: self.next_token
+                ,
+                collaboration_list: self.collaboration_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCollaborationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationsOutput`](crate::output::ListCollaborationsOutput).
@@ -1644,20 +1603,20 @@ impl ListCollaborationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCollaborationOutput {
+pub struct CreateCollaborationOutput  {
     /// <p>The entire created collaboration object.</p>
     #[doc(hidden)]
     pub collaboration: std::option::Option<crate::model::Collaboration>,
 }
 impl CreateCollaborationOutput {
     /// <p>The entire created collaboration object.</p>
-    pub fn collaboration(&self) -> std::option::Option<&crate::model::Collaboration> {
+    pub fn collaboration(&self) -> std::option::Option<& crate::model::Collaboration> {
         self.collaboration.as_ref()
     }
 }
 /// See [`CreateCollaborationOutput`](crate::output::CreateCollaborationOutput).
 pub mod create_collaboration_output {
-
+    
     /// A builder for [`CreateCollaborationOutput`](crate::output::CreateCollaborationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1670,20 +1629,19 @@ pub mod create_collaboration_output {
             self
         }
         /// <p>The entire created collaboration object.</p>
-        pub fn set_collaboration(
-            mut self,
-            input: std::option::Option<crate::model::Collaboration>,
-        ) -> Self {
-            self.collaboration = input;
-            self
+        pub fn set_collaboration(mut self, input: std::option::Option<crate::model::Collaboration>) -> Self {
+            self.collaboration = input; self
         }
         /// Consumes the builder and constructs a [`CreateCollaborationOutput`](crate::output::CreateCollaborationOutput).
         pub fn build(self) -> crate::output::CreateCollaborationOutput {
             crate::output::CreateCollaborationOutput {
-                collaboration: self.collaboration,
+                collaboration: self.collaboration
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCollaborationOutput {
     /// Creates a new builder-style object to manufacture [`CreateCollaborationOutput`](crate::output::CreateCollaborationOutput).
@@ -1695,19 +1653,24 @@ impl CreateCollaborationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCollaborationOutput {}
+pub struct DeleteCollaborationOutput  {
+}
 /// See [`DeleteCollaborationOutput`](crate::output::DeleteCollaborationOutput).
 pub mod delete_collaboration_output {
-
+    
     /// A builder for [`DeleteCollaborationOutput`](crate::output::DeleteCollaborationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCollaborationOutput`](crate::output::DeleteCollaborationOutput).
         pub fn build(self) -> crate::output::DeleteCollaborationOutput {
-            crate::output::DeleteCollaborationOutput {}
+            crate::output::DeleteCollaborationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCollaborationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCollaborationOutput`](crate::output::DeleteCollaborationOutput).
@@ -1719,20 +1682,20 @@ impl DeleteCollaborationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCollaborationOutput {
+pub struct UpdateCollaborationOutput  {
     /// <p>The entire collaboration that has been updated.</p>
     #[doc(hidden)]
     pub collaboration: std::option::Option<crate::model::Collaboration>,
 }
 impl UpdateCollaborationOutput {
     /// <p>The entire collaboration that has been updated.</p>
-    pub fn collaboration(&self) -> std::option::Option<&crate::model::Collaboration> {
+    pub fn collaboration(&self) -> std::option::Option<& crate::model::Collaboration> {
         self.collaboration.as_ref()
     }
 }
 /// See [`UpdateCollaborationOutput`](crate::output::UpdateCollaborationOutput).
 pub mod update_collaboration_output {
-
+    
     /// A builder for [`UpdateCollaborationOutput`](crate::output::UpdateCollaborationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1745,20 +1708,19 @@ pub mod update_collaboration_output {
             self
         }
         /// <p>The entire collaboration that has been updated.</p>
-        pub fn set_collaboration(
-            mut self,
-            input: std::option::Option<crate::model::Collaboration>,
-        ) -> Self {
-            self.collaboration = input;
-            self
+        pub fn set_collaboration(mut self, input: std::option::Option<crate::model::Collaboration>) -> Self {
+            self.collaboration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCollaborationOutput`](crate::output::UpdateCollaborationOutput).
         pub fn build(self) -> crate::output::UpdateCollaborationOutput {
             crate::output::UpdateCollaborationOutput {
-                collaboration: self.collaboration,
+                collaboration: self.collaboration
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCollaborationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCollaborationOutput`](crate::output::UpdateCollaborationOutput).
@@ -1770,20 +1732,20 @@ impl UpdateCollaborationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCollaborationOutput {
+pub struct GetCollaborationOutput  {
     /// <p>The entire collaboration for this identifier.</p>
     #[doc(hidden)]
     pub collaboration: std::option::Option<crate::model::Collaboration>,
 }
 impl GetCollaborationOutput {
     /// <p>The entire collaboration for this identifier.</p>
-    pub fn collaboration(&self) -> std::option::Option<&crate::model::Collaboration> {
+    pub fn collaboration(&self) -> std::option::Option<& crate::model::Collaboration> {
         self.collaboration.as_ref()
     }
 }
 /// See [`GetCollaborationOutput`](crate::output::GetCollaborationOutput).
 pub mod get_collaboration_output {
-
+    
     /// A builder for [`GetCollaborationOutput`](crate::output::GetCollaborationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1796,20 +1758,19 @@ pub mod get_collaboration_output {
             self
         }
         /// <p>The entire collaboration for this identifier.</p>
-        pub fn set_collaboration(
-            mut self,
-            input: std::option::Option<crate::model::Collaboration>,
-        ) -> Self {
-            self.collaboration = input;
-            self
+        pub fn set_collaboration(mut self, input: std::option::Option<crate::model::Collaboration>) -> Self {
+            self.collaboration = input; self
         }
         /// Consumes the builder and constructs a [`GetCollaborationOutput`](crate::output::GetCollaborationOutput).
         pub fn build(self) -> crate::output::GetCollaborationOutput {
             crate::output::GetCollaborationOutput {
-                collaboration: self.collaboration,
+                collaboration: self.collaboration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCollaborationOutput {
     /// Creates a new builder-style object to manufacture [`GetCollaborationOutput`](crate::output::GetCollaborationOutput).
@@ -1817,3 +1778,4 @@ impl GetCollaborationOutput {
         crate::output::get_collaboration_output::Builder::default()
     }
 }
+

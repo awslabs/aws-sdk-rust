@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permissionsmode = unimplemented!();
 /// match permissionsmode {
@@ -30,58 +30,52 @@
 /// Specifically, when `permissionsmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PermissionsMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PermissionsMode {
     #[allow(missing_docs)] // documentation missing in model
     AllowAll,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PermissionsMode {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW_ALL" => PermissionsMode::AllowAll,
             "STANDARD" => PermissionsMode::Standard,
-            other => PermissionsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PermissionsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PermissionsMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PermissionsMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PermissionsMode::from(s))
+                }
+            }
 impl PermissionsMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PermissionsMode::AllowAll => "ALLOW_ALL",
             PermissionsMode::Standard => "STANDARD",
-            PermissionsMode::Unknown(value) => value.as_str(),
+            PermissionsMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW_ALL", "STANDARD"]
+        &[
+            "ALLOW_ALL", "STANDARD"
+        ]
     }
 }
 impl AsRef<str> for PermissionsMode {
@@ -90,52 +84,50 @@ impl AsRef<str> for PermissionsMode {
     }
 }
 
-/// <p>Information about the encryption of data at rest in an Amazon QLDB ledger. This includes the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in the case of an error).</p>
+/// <p>Information about the encryption of data at rest in an Amazon QLDB ledger. This includes the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in the case of an error).</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LedgerEncryptionDescription {
+pub struct LedgerEncryptionDescription  {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
-    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
-    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
+    /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li> 
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li> 
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub encryption_status: std::option::Option<crate::model::EncryptionStatus>,
-    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p> 
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     #[doc(hidden)]
     pub inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LedgerEncryptionDescription {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
-    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
-    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
+    /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li> 
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li> 
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li> 
     /// </ul>
-    pub fn encryption_status(&self) -> std::option::Option<&crate::model::EncryptionStatus> {
+    pub fn encryption_status(&self) -> std::option::Option<& crate::model::EncryptionStatus> {
         self.encryption_status.as_ref()
     }
-    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p> 
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
-    pub fn inaccessible_kms_key_date_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn inaccessible_kms_key_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.inaccessible_kms_key_date_time.as_ref()
     }
 }
 /// See [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
 pub mod ledger_encryption_description {
-
+    
     /// A builder for [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -151,56 +143,52 @@ pub mod ledger_encryption_description {
         }
         /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
-        /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
-        /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
-        /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
+        /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li> 
+        /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li> 
+        /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li> 
         /// </ul>
         pub fn encryption_status(mut self, input: crate::model::EncryptionStatus) -> Self {
             self.encryption_status = Some(input);
             self
         }
-        /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
-        /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
-        /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
+        /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li> 
+        /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li> 
+        /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li> 
         /// </ul>
-        pub fn set_encryption_status(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionStatus>,
-        ) -> Self {
-            self.encryption_status = input;
-            self
+        pub fn set_encryption_status(mut self, input: std::option::Option<crate::model::EncryptionStatus>) -> Self {
+            self.encryption_status = input; self
         }
-        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p> 
         /// <p>This parameter is undefined if the KMS key is accessible.</p>
         pub fn inaccessible_kms_key_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inaccessible_kms_key_date_time = Some(input);
             self
         }
-        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p> 
         /// <p>This parameter is undefined if the KMS key is accessible.</p>
-        pub fn set_inaccessible_kms_key_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inaccessible_kms_key_date_time = input;
-            self
+        pub fn set_inaccessible_kms_key_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.inaccessible_kms_key_date_time = input; self
         }
         /// Consumes the builder and constructs a [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
         pub fn build(self) -> crate::model::LedgerEncryptionDescription {
             crate::model::LedgerEncryptionDescription {
-                kms_key_arn: self.kms_key_arn,
-                encryption_status: self.encryption_status,
-                inaccessible_kms_key_date_time: self.inaccessible_kms_key_date_time,
+                kms_key_arn: self.kms_key_arn
+                ,
+                encryption_status: self.encryption_status
+                ,
+                inaccessible_kms_key_date_time: self.inaccessible_kms_key_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LedgerEncryptionDescription {
     /// Creates a new builder-style object to manufacture [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
@@ -215,9 +203,9 @@ impl LedgerEncryptionDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionstatus = unimplemented!();
 /// match encryptionstatus {
@@ -240,22 +228,14 @@ impl LedgerEncryptionDescription {
 /// Specifically, when `encryptionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
@@ -264,7 +244,7 @@ pub enum EncryptionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionStatus {
     fn from(s: &str) -> Self {
@@ -272,17 +252,17 @@ impl std::convert::From<&str> for EncryptionStatus {
             "ENABLED" => EncryptionStatus::Enabled,
             "KMS_KEY_INACCESSIBLE" => EncryptionStatus::KmsKeyInaccessible,
             "UPDATING" => EncryptionStatus::Updating,
-            other => EncryptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionStatus::from(s))
+                }
+            }
 impl EncryptionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -290,12 +270,14 @@ impl EncryptionStatus {
             EncryptionStatus::Enabled => "ENABLED",
             EncryptionStatus::KmsKeyInaccessible => "KMS_KEY_INACCESSIBLE",
             EncryptionStatus::Updating => "UPDATING",
-            EncryptionStatus::Unknown(value) => value.as_str(),
+            EncryptionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENABLED", "KMS_KEY_INACCESSIBLE", "UPDATING"]
+        &[
+            "ENABLED", "KMS_KEY_INACCESSIBLE", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for EncryptionStatus {
@@ -310,9 +292,9 @@ impl AsRef<str> for EncryptionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ledgerstate = unimplemented!();
 /// match ledgerstate {
@@ -336,22 +318,14 @@ impl AsRef<str> for EncryptionStatus {
 /// Specifically, when `ledgerstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LedgerState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LedgerState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -362,7 +336,7 @@ pub enum LedgerState {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LedgerState {
     fn from(s: &str) -> Self {
@@ -371,17 +345,17 @@ impl std::convert::From<&str> for LedgerState {
             "CREATING" => LedgerState::Creating,
             "DELETED" => LedgerState::Deleted,
             "DELETING" => LedgerState::Deleting,
-            other => LedgerState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LedgerState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LedgerState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LedgerState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LedgerState::from(s))
+                }
+            }
 impl LedgerState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -390,12 +364,14 @@ impl LedgerState {
             LedgerState::Creating => "CREATING",
             LedgerState::Deleted => "DELETED",
             LedgerState::Deleting => "DELETING",
-            LedgerState::Unknown(value) => value.as_str(),
+            LedgerState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETED", "DELETING"]
+        &[
+            "ACTIVE", "CREATING", "DELETED", "DELETING"
+        ]
     }
 }
 impl AsRef<str> for LedgerState {
@@ -407,21 +383,21 @@ impl AsRef<str> for LedgerState {
 /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisConfiguration {
+pub struct KinesisConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p> 
     /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     #[doc(hidden)]
     pub aggregation_enabled: std::option::Option<bool>,
 }
 impl KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p> 
     /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn aggregation_enabled(&self) -> std::option::Option<bool> {
         self.aggregation_enabled
@@ -429,7 +405,7 @@ impl KinesisConfiguration {
 }
 /// See [`KinesisConfiguration`](crate::model::KinesisConfiguration).
 pub mod kinesis_configuration {
-
+    
     /// A builder for [`KinesisConfiguration`](crate::model::KinesisConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -444,29 +420,31 @@ pub mod kinesis_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
-        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p> 
         /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
         pub fn aggregation_enabled(mut self, input: bool) -> Self {
             self.aggregation_enabled = Some(input);
             self
         }
-        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p> 
         /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
         pub fn set_aggregation_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.aggregation_enabled = input;
-            self
+            self.aggregation_enabled = input; self
         }
         /// Consumes the builder and constructs a [`KinesisConfiguration`](crate::model::KinesisConfiguration).
         pub fn build(self) -> crate::model::KinesisConfiguration {
             crate::model::KinesisConfiguration {
-                stream_arn: self.stream_arn,
-                aggregation_enabled: self.aggregation_enabled,
+                stream_arn: self.stream_arn
+                ,
+                aggregation_enabled: self.aggregation_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl KinesisConfiguration {
     /// Creates a new builder-style object to manufacture [`KinesisConfiguration`](crate::model::KinesisConfiguration).
@@ -478,7 +456,7 @@ impl KinesisConfiguration {
 /// <p>Information about a ledger, including its name, state, and when it was created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LedgerSummary {
+pub struct LedgerSummary  {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -491,21 +469,21 @@ pub struct LedgerSummary {
 }
 impl LedgerSummary {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the ledger.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::LedgerState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::LedgerState> {
         self.state.as_ref()
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`LedgerSummary`](crate::model::LedgerSummary).
 pub mod ledger_summary {
-
+    
     /// A builder for [`LedgerSummary`](crate::model::LedgerSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -521,8 +499,7 @@ pub mod ledger_summary {
         }
         /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the ledger.</p>
         pub fn state(mut self, input: crate::model::LedgerState) -> Self {
@@ -531,8 +508,7 @@ pub mod ledger_summary {
         }
         /// <p>The current status of the ledger.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::LedgerState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -540,22 +516,23 @@ pub mod ledger_summary {
             self
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`LedgerSummary`](crate::model::LedgerSummary).
         pub fn build(self) -> crate::model::LedgerSummary {
             crate::model::LedgerSummary {
-                name: self.name,
-                state: self.state,
-                creation_date_time: self.creation_date_time,
+                name: self.name
+                ,
+                state: self.state
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LedgerSummary {
     /// Creates a new builder-style object to manufacture [`LedgerSummary`](crate::model::LedgerSummary).
@@ -567,7 +544,7 @@ impl LedgerSummary {
 /// <p>Information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JournalS3ExportDescription {
+pub struct JournalS3ExportDescription  {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
@@ -589,10 +566,10 @@ pub struct JournalS3ExportDescription {
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     #[doc(hidden)]
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
-    /// <ul>
-    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
-    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> 
+    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -602,51 +579,49 @@ pub struct JournalS3ExportDescription {
 }
 impl JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(&self) -> std::option::Option<&str> {
+    pub fn ledger_name(&self) -> std::option::Option<& str> {
         self.ledger_name.as_deref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn export_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn export_creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.export_creation_time.as_ref()
     }
     /// <p>The current state of the journal export job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ExportStatus> {
         self.status.as_ref()
     }
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn inclusive_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn exclusive_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
-    pub fn s3_export_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::S3ExportConfiguration> {
+    pub fn s3_export_configuration(&self) -> std::option::Option<& crate::model::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
-    /// <ul>
-    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
-    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> 
+    /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> 
     /// </ul>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The output format of the exported journal data.</p>
-    pub fn output_format(&self) -> std::option::Option<&crate::model::OutputFormat> {
+    pub fn output_format(&self) -> std::option::Option<& crate::model::OutputFormat> {
         self.output_format.as_ref()
     }
 }
 /// See [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
 pub mod journal_s3_export_description {
-
+    
     /// A builder for [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -656,8 +631,7 @@ pub mod journal_s3_export_description {
         pub(crate) status: std::option::Option<crate::model::ExportStatus>,
         pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) s3_export_configuration:
-            std::option::Option<crate::model::S3ExportConfiguration>,
+        pub(crate) s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) output_format: std::option::Option<crate::model::OutputFormat>,
     }
@@ -669,8 +643,7 @@ pub mod journal_s3_export_description {
         }
         /// <p>The name of the ledger.</p>
         pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ledger_name = input;
-            self
+            self.ledger_name = input; self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
         pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -679,8 +652,7 @@ pub mod journal_s3_export_description {
         }
         /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.export_id = input;
-            self
+            self.export_id = input; self
         }
         /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn export_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -688,12 +660,8 @@ pub mod journal_s3_export_description {
             self
         }
         /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn set_export_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.export_creation_time = input;
-            self
+        pub fn set_export_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.export_creation_time = input; self
         }
         /// <p>The current state of the journal export job.</p>
         pub fn status(mut self, input: crate::model::ExportStatus) -> Self {
@@ -701,12 +669,8 @@ pub mod journal_s3_export_description {
             self
         }
         /// <p>The current state of the journal export job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ExportStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ExportStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
         pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -714,12 +678,8 @@ pub mod journal_s3_export_description {
             self
         }
         /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
-        pub fn set_inclusive_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inclusive_start_time = input;
-            self
+        pub fn set_inclusive_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.inclusive_start_time = input; self
         }
         /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
         pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -727,46 +687,34 @@ pub mod journal_s3_export_description {
             self
         }
         /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
-        pub fn set_exclusive_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.exclusive_end_time = input;
-            self
+        pub fn set_exclusive_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.exclusive_end_time = input; self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
-        pub fn s3_export_configuration(
-            mut self,
-            input: crate::model::S3ExportConfiguration,
-        ) -> Self {
+        pub fn s3_export_configuration(mut self, input: crate::model::S3ExportConfiguration) -> Self {
             self.s3_export_configuration = Some(input);
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
-        pub fn set_s3_export_configuration(
-            mut self,
-            input: std::option::Option<crate::model::S3ExportConfiguration>,
-        ) -> Self {
-            self.s3_export_configuration = input;
-            self
+        pub fn set_s3_export_configuration(mut self, input: std::option::Option<crate::model::S3ExportConfiguration>) -> Self {
+            self.s3_export_configuration = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
-        /// <ul>
-        /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
-        /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> 
+        /// <ul> 
+        /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> 
+        /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> 
         /// </ul>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
-        /// <ul>
-        /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
-        /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> 
+        /// <ul> 
+        /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> 
+        /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> 
         /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The output format of the exported journal data.</p>
         pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
@@ -774,28 +722,35 @@ pub mod journal_s3_export_description {
             self
         }
         /// <p>The output format of the exported journal data.</p>
-        pub fn set_output_format(
-            mut self,
-            input: std::option::Option<crate::model::OutputFormat>,
-        ) -> Self {
-            self.output_format = input;
-            self
+        pub fn set_output_format(mut self, input: std::option::Option<crate::model::OutputFormat>) -> Self {
+            self.output_format = input; self
         }
         /// Consumes the builder and constructs a [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
         pub fn build(self) -> crate::model::JournalS3ExportDescription {
             crate::model::JournalS3ExportDescription {
-                ledger_name: self.ledger_name,
-                export_id: self.export_id,
-                export_creation_time: self.export_creation_time,
-                status: self.status,
-                inclusive_start_time: self.inclusive_start_time,
-                exclusive_end_time: self.exclusive_end_time,
-                s3_export_configuration: self.s3_export_configuration,
-                role_arn: self.role_arn,
-                output_format: self.output_format,
+                ledger_name: self.ledger_name
+                ,
+                export_id: self.export_id
+                ,
+                export_creation_time: self.export_creation_time
+                ,
+                status: self.status
+                ,
+                inclusive_start_time: self.inclusive_start_time
+                ,
+                exclusive_end_time: self.exclusive_end_time
+                ,
+                s3_export_configuration: self.s3_export_configuration
+                ,
+                role_arn: self.role_arn
+                ,
+                output_format: self.output_format
+                ,
             }
         }
     }
+    
+    
 }
 impl JournalS3ExportDescription {
     /// Creates a new builder-style object to manufacture [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
@@ -810,9 +765,9 @@ impl JournalS3ExportDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let outputformat = unimplemented!();
 /// match outputformat {
@@ -835,22 +790,14 @@ impl JournalS3ExportDescription {
 /// Specifically, when `outputformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OutputFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
     IonBinary,
@@ -859,7 +806,7 @@ pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Json,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OutputFormat {
     fn from(s: &str) -> Self {
@@ -867,17 +814,17 @@ impl std::convert::From<&str> for OutputFormat {
             "ION_BINARY" => OutputFormat::IonBinary,
             "ION_TEXT" => OutputFormat::IonText,
             "JSON" => OutputFormat::Json,
-            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OutputFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OutputFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OutputFormat::from(s))
+                }
+            }
 impl OutputFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -885,12 +832,14 @@ impl OutputFormat {
             OutputFormat::IonBinary => "ION_BINARY",
             OutputFormat::IonText => "ION_TEXT",
             OutputFormat::Json => "JSON",
-            OutputFormat::Unknown(value) => value.as_str(),
+            OutputFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ION_BINARY", "ION_TEXT", "JSON"]
+        &[
+            "ION_BINARY", "ION_TEXT", "JSON"
+        ]
     }
 }
 impl AsRef<str> for OutputFormat {
@@ -902,18 +851,18 @@ impl AsRef<str> for OutputFormat {
 /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ExportConfiguration {
-    /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
+pub struct S3ExportConfiguration  {
+    /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p> 
     /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
-    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    /// <p>The following are examples of valid <code>Prefix</code> values:</p>
-    /// <ul>
-    /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
-    /// <li> <p> <code>JournalExports</code> </p> </li>
-    /// <li> <p> <code>My:Tests/</code> </p> </li>
+    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p> 
+    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p> 
+    /// <p>The following are examples of valid <code>Prefix</code> values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li> 
+    /// <li> <p> <code>JournalExports</code> </p> </li> 
+    /// <li> <p> <code>My:Tests/</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -922,102 +871,95 @@ pub struct S3ExportConfiguration {
     pub encryption_configuration: std::option::Option<crate::model::S3EncryptionConfiguration>,
 }
 impl S3ExportConfiguration {
-    /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
+    /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p> 
     /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
-    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    /// <p>The following are examples of valid <code>Prefix</code> values:</p>
-    /// <ul>
-    /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
-    /// <li> <p> <code>JournalExports</code> </p> </li>
-    /// <li> <p> <code>My:Tests/</code> </p> </li>
+    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p> 
+    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p> 
+    /// <p>The following are examples of valid <code>Prefix</code> values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li> 
+    /// <li> <p> <code>JournalExports</code> </p> </li> 
+    /// <li> <p> <code>My:Tests/</code> </p> </li> 
     /// </ul>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::S3EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> std::option::Option<& crate::model::S3EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
 /// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
 pub mod s3_export_configuration {
-
+    
     /// A builder for [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
-        pub(crate) encryption_configuration:
-            std::option::Option<crate::model::S3EncryptionConfiguration>,
+        pub(crate) encryption_configuration: std::option::Option<crate::model::S3EncryptionConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
+        /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p> 
         /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
+        /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p> 
         /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
-        /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
-        /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>The following are examples of valid <code>Prefix</code> values:</p>
-        /// <ul>
-        /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
-        /// <li> <p> <code>JournalExports</code> </p> </li>
-        /// <li> <p> <code>My:Tests/</code> </p> </li>
+        /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p> 
+        /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p> 
+        /// <p>The following are examples of valid <code>Prefix</code> values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li> 
+        /// <li> <p> <code>JournalExports</code> </p> </li> 
+        /// <li> <p> <code>My:Tests/</code> </p> </li> 
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
-        /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>The following are examples of valid <code>Prefix</code> values:</p>
-        /// <ul>
-        /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
-        /// <li> <p> <code>JournalExports</code> </p> </li>
-        /// <li> <p> <code>My:Tests/</code> </p> </li>
+        /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p> 
+        /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p> 
+        /// <p>The following are examples of valid <code>Prefix</code> values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li> 
+        /// <li> <p> <code>JournalExports</code> </p> </li> 
+        /// <li> <p> <code>My:Tests/</code> </p> </li> 
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
-        pub fn encryption_configuration(
-            mut self,
-            input: crate::model::S3EncryptionConfiguration,
-        ) -> Self {
+        pub fn encryption_configuration(mut self, input: crate::model::S3EncryptionConfiguration) -> Self {
             self.encryption_configuration = Some(input);
             self
         }
         /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
-        pub fn set_encryption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::S3EncryptionConfiguration>,
-        ) -> Self {
-            self.encryption_configuration = input;
-            self
+        pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::model::S3EncryptionConfiguration>) -> Self {
+            self.encryption_configuration = input; self
         }
         /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
         pub fn build(self) -> crate::model::S3ExportConfiguration {
             crate::model::S3ExportConfiguration {
-                bucket: self.bucket,
-                prefix: self.prefix,
-                encryption_configuration: self.encryption_configuration,
+                bucket: self.bucket
+                ,
+                prefix: self.prefix
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl S3ExportConfiguration {
     /// Creates a new builder-style object to manufacture [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
@@ -1029,83 +971,76 @@ impl S3ExportConfiguration {
 /// <p>The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3EncryptionConfiguration {
-    /// <p>The Amazon S3 object encryption type.</p>
+pub struct S3EncryptionConfiguration  {
+    /// <p>The Amazon S3 object encryption type.</p> 
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-    /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p> 
+    /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> 
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3EncryptionConfiguration {
-    /// <p>The Amazon S3 object encryption type.</p>
+    /// <p>The Amazon S3 object encryption type.</p> 
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    pub fn object_encryption_type(
-        &self,
-    ) -> std::option::Option<&crate::model::S3ObjectEncryptionType> {
+    pub fn object_encryption_type(&self) -> std::option::Option<& crate::model::S3ObjectEncryptionType> {
         self.object_encryption_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-    /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p> 
+    /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> 
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
 /// See [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
 pub mod s3_encryption_configuration {
-
+    
     /// A builder for [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) object_encryption_type:
-            std::option::Option<crate::model::S3ObjectEncryptionType>,
+        pub(crate) object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon S3 object encryption type.</p>
+        /// <p>The Amazon S3 object encryption type.</p> 
         /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        pub fn object_encryption_type(
-            mut self,
-            input: crate::model::S3ObjectEncryptionType,
-        ) -> Self {
+        pub fn object_encryption_type(mut self, input: crate::model::S3ObjectEncryptionType) -> Self {
             self.object_encryption_type = Some(input);
             self
         }
-        /// <p>The Amazon S3 object encryption type.</p>
+        /// <p>The Amazon S3 object encryption type.</p> 
         /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        pub fn set_object_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::S3ObjectEncryptionType>,
-        ) -> Self {
-            self.object_encryption_type = input;
-            self
+        pub fn set_object_encryption_type(mut self, input: std::option::Option<crate::model::S3ObjectEncryptionType>) -> Self {
+            self.object_encryption_type = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-        /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p> 
+        /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> 
         /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-        /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p> 
+        /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> 
         /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
         pub fn build(self) -> crate::model::S3EncryptionConfiguration {
             crate::model::S3EncryptionConfiguration {
-                object_encryption_type: self.object_encryption_type,
-                kms_key_arn: self.kms_key_arn,
+                object_encryption_type: self.object_encryption_type
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl S3EncryptionConfiguration {
     /// Creates a new builder-style object to manufacture [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
@@ -1120,9 +1055,9 @@ impl S3EncryptionConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3objectencryptiontype = unimplemented!();
 /// match s3objectencryptiontype {
@@ -1145,22 +1080,14 @@ impl S3EncryptionConfiguration {
 /// Specifically, when `s3objectencryptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3ObjectEncryptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3ObjectEncryptionType {
     #[allow(missing_docs)] // documentation missing in model
     NoEncryption,
@@ -1169,7 +1096,7 @@ pub enum S3ObjectEncryptionType {
     #[allow(missing_docs)] // documentation missing in model
     SseS3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3ObjectEncryptionType {
     fn from(s: &str) -> Self {
@@ -1177,19 +1104,17 @@ impl std::convert::From<&str> for S3ObjectEncryptionType {
             "NO_ENCRYPTION" => S3ObjectEncryptionType::NoEncryption,
             "SSE_KMS" => S3ObjectEncryptionType::SseKms,
             "SSE_S3" => S3ObjectEncryptionType::SseS3,
-            other => {
-                S3ObjectEncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => S3ObjectEncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3ObjectEncryptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3ObjectEncryptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3ObjectEncryptionType::from(s))
+                }
+            }
 impl S3ObjectEncryptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1197,12 +1122,14 @@ impl S3ObjectEncryptionType {
             S3ObjectEncryptionType::NoEncryption => "NO_ENCRYPTION",
             S3ObjectEncryptionType::SseKms => "SSE_KMS",
             S3ObjectEncryptionType::SseS3 => "SSE_S3",
-            S3ObjectEncryptionType::Unknown(value) => value.as_str(),
+            S3ObjectEncryptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NO_ENCRYPTION", "SSE_KMS", "SSE_S3"]
+        &[
+            "NO_ENCRYPTION", "SSE_KMS", "SSE_S3"
+        ]
     }
 }
 impl AsRef<str> for S3ObjectEncryptionType {
@@ -1217,9 +1144,9 @@ impl AsRef<str> for S3ObjectEncryptionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exportstatus = unimplemented!();
 /// match exportstatus {
@@ -1242,22 +1169,14 @@ impl AsRef<str> for S3ObjectEncryptionType {
 /// Specifically, when `exportstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExportStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -1266,7 +1185,7 @@ pub enum ExportStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportStatus {
     fn from(s: &str) -> Self {
@@ -1274,17 +1193,17 @@ impl std::convert::From<&str> for ExportStatus {
             "CANCELLED" => ExportStatus::Cancelled,
             "COMPLETED" => ExportStatus::Completed,
             "IN_PROGRESS" => ExportStatus::InProgress,
-            other => ExportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExportStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExportStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExportStatus::from(s))
+                }
+            }
 impl ExportStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1292,12 +1211,14 @@ impl ExportStatus {
             ExportStatus::Cancelled => "CANCELLED",
             ExportStatus::Completed => "COMPLETED",
             ExportStatus::InProgress => "IN_PROGRESS",
-            ExportStatus::Unknown(value) => value.as_str(),
+            ExportStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELLED", "COMPLETED", "IN_PROGRESS"]
+        &[
+            "CANCELLED", "COMPLETED", "IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for ExportStatus {
@@ -1309,7 +1230,7 @@ impl AsRef<str> for ExportStatus {
 /// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of the original stream creation request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JournalKinesisStreamDescription {
+pub struct JournalKinesisStreamDescription  {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
@@ -1346,55 +1267,53 @@ pub struct JournalKinesisStreamDescription {
 }
 impl JournalKinesisStreamDescription {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(&self) -> std::option::Option<&str> {
+    pub fn ledger_name(&self) -> std::option::Option<& str> {
         self.ledger_name.as_deref()
     }
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn inclusive_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
-    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn exclusive_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The current state of the QLDB journal stream.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StreamStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StreamStatus> {
         self.status.as_ref()
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
-    pub fn kinesis_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisConfiguration> {
+    pub fn kinesis_configuration(&self) -> std::option::Option<& crate::model::KinesisConfiguration> {
         self.kinesis_configuration.as_ref()
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
-    pub fn error_cause(&self) -> std::option::Option<&crate::model::ErrorCause> {
+    pub fn error_cause(&self) -> std::option::Option<& crate::model::ErrorCause> {
         self.error_cause.as_ref()
     }
     /// <p>The user-defined name of the QLDB journal stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
 }
 /// See [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
 pub mod journal_kinesis_stream_description {
-
+    
     /// A builder for [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1418,8 +1337,7 @@ pub mod journal_kinesis_stream_description {
         }
         /// <p>The name of the ledger.</p>
         pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ledger_name = input;
-            self
+            self.ledger_name = input; self
         }
         /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1427,12 +1345,8 @@ pub mod journal_kinesis_stream_description {
             self
         }
         /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The inclusive start date and time from which to start streaming journal data.</p>
         pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1440,12 +1354,8 @@ pub mod journal_kinesis_stream_description {
             self
         }
         /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-        pub fn set_inclusive_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.inclusive_start_time = input;
-            self
+        pub fn set_inclusive_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.inclusive_start_time = input; self
         }
         /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
         pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1453,12 +1363,8 @@ pub mod journal_kinesis_stream_description {
             self
         }
         /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
-        pub fn set_exclusive_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.exclusive_end_time = input;
-            self
+        pub fn set_exclusive_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.exclusive_end_time = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1467,8 +1373,7 @@ pub mod journal_kinesis_stream_description {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1477,8 +1382,7 @@ pub mod journal_kinesis_stream_description {
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
+            self.stream_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1487,8 +1391,7 @@ pub mod journal_kinesis_stream_description {
         }
         /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The current state of the QLDB journal stream.</p>
         pub fn status(mut self, input: crate::model::StreamStatus) -> Self {
@@ -1496,12 +1399,8 @@ pub mod journal_kinesis_stream_description {
             self
         }
         /// <p>The current state of the QLDB journal stream.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StreamStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StreamStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
         pub fn kinesis_configuration(mut self, input: crate::model::KinesisConfiguration) -> Self {
@@ -1509,12 +1408,8 @@ pub mod journal_kinesis_stream_description {
             self
         }
         /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
-        pub fn set_kinesis_configuration(
-            mut self,
-            input: std::option::Option<crate::model::KinesisConfiguration>,
-        ) -> Self {
-            self.kinesis_configuration = input;
-            self
+        pub fn set_kinesis_configuration(mut self, input: std::option::Option<crate::model::KinesisConfiguration>) -> Self {
+            self.kinesis_configuration = input; self
         }
         /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
         pub fn error_cause(mut self, input: crate::model::ErrorCause) -> Self {
@@ -1522,12 +1417,8 @@ pub mod journal_kinesis_stream_description {
             self
         }
         /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
-        pub fn set_error_cause(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCause>,
-        ) -> Self {
-            self.error_cause = input;
-            self
+        pub fn set_error_cause(mut self, input: std::option::Option<crate::model::ErrorCause>) -> Self {
+            self.error_cause = input; self
         }
         /// <p>The user-defined name of the QLDB journal stream.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1536,26 +1427,38 @@ pub mod journal_kinesis_stream_description {
         }
         /// <p>The user-defined name of the QLDB journal stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = input;
-            self
+            self.stream_name = input; self
         }
         /// Consumes the builder and constructs a [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
         pub fn build(self) -> crate::model::JournalKinesisStreamDescription {
             crate::model::JournalKinesisStreamDescription {
-                ledger_name: self.ledger_name,
-                creation_time: self.creation_time,
-                inclusive_start_time: self.inclusive_start_time,
-                exclusive_end_time: self.exclusive_end_time,
-                role_arn: self.role_arn,
-                stream_id: self.stream_id,
-                arn: self.arn,
-                status: self.status,
-                kinesis_configuration: self.kinesis_configuration,
-                error_cause: self.error_cause,
-                stream_name: self.stream_name,
+                ledger_name: self.ledger_name
+                ,
+                creation_time: self.creation_time
+                ,
+                inclusive_start_time: self.inclusive_start_time
+                ,
+                exclusive_end_time: self.exclusive_end_time
+                ,
+                role_arn: self.role_arn
+                ,
+                stream_id: self.stream_id
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                kinesis_configuration: self.kinesis_configuration
+                ,
+                error_cause: self.error_cause
+                ,
+                stream_name: self.stream_name
+                ,
             }
         }
     }
+    
+    
 }
 impl JournalKinesisStreamDescription {
     /// Creates a new builder-style object to manufacture [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
@@ -1570,9 +1473,9 @@ impl JournalKinesisStreamDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcause = unimplemented!();
 /// match errorcause {
@@ -1594,58 +1497,52 @@ impl JournalKinesisStreamDescription {
 /// Specifically, when `errorcause` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCause::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCause {
     #[allow(missing_docs)] // documentation missing in model
     IamPermissionRevoked,
     #[allow(missing_docs)] // documentation missing in model
     KinesisStreamNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCause {
     fn from(s: &str) -> Self {
         match s {
             "IAM_PERMISSION_REVOKED" => ErrorCause::IamPermissionRevoked,
             "KINESIS_STREAM_NOT_FOUND" => ErrorCause::KinesisStreamNotFound,
-            other => ErrorCause::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCause {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCause::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCause::from(s))
+                }
+            }
 impl ErrorCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCause::IamPermissionRevoked => "IAM_PERMISSION_REVOKED",
             ErrorCause::KinesisStreamNotFound => "KINESIS_STREAM_NOT_FOUND",
-            ErrorCause::Unknown(value) => value.as_str(),
+            ErrorCause::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IAM_PERMISSION_REVOKED", "KINESIS_STREAM_NOT_FOUND"]
+        &[
+            "IAM_PERMISSION_REVOKED", "KINESIS_STREAM_NOT_FOUND"
+        ]
     }
 }
 impl AsRef<str> for ErrorCause {
@@ -1660,9 +1557,9 @@ impl AsRef<str> for ErrorCause {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamstatus = unimplemented!();
 /// match streamstatus {
@@ -1687,22 +1584,14 @@ impl AsRef<str> for ErrorCause {
 /// Specifically, when `streamstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1715,7 +1604,7 @@ pub enum StreamStatus {
     #[allow(missing_docs)] // documentation missing in model
     Impaired,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamStatus {
     fn from(s: &str) -> Self {
@@ -1725,17 +1614,17 @@ impl std::convert::From<&str> for StreamStatus {
             "COMPLETED" => StreamStatus::Completed,
             "FAILED" => StreamStatus::Failed,
             "IMPAIRED" => StreamStatus::Impaired,
-            other => StreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamStatus::from(s))
+                }
+            }
 impl StreamStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1745,12 +1634,14 @@ impl StreamStatus {
             StreamStatus::Completed => "COMPLETED",
             StreamStatus::Failed => "FAILED",
             StreamStatus::Impaired => "IMPAIRED",
-            StreamStatus::Unknown(value) => value.as_str(),
+            StreamStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CANCELED", "COMPLETED", "FAILED", "IMPAIRED"]
+        &[
+            "ACTIVE", "CANCELED", "COMPLETED", "FAILED", "IMPAIRED"
+        ]
     }
 }
 impl AsRef<str> for StreamStatus {
@@ -1762,18 +1653,18 @@ impl AsRef<str> for StreamStatus {
 /// <p>A structure that can contain a value in multiple encoding formats.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ValueHolder {
+pub struct ValueHolder  {
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
     #[doc(hidden)]
     pub ion_text: std::option::Option<std::string::String>,
 }
 impl ValueHolder {
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn ion_text(&self) -> std::option::Option<&str> {
+    pub fn ion_text(&self) -> std::option::Option<& str> {
         self.ion_text.as_deref()
     }
 }
-impl std::fmt::Debug for ValueHolder {
+impl  std::fmt::Debug for ValueHolder  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValueHolder");
         formatter.field("ion_text", &"*** Sensitive Data Redacted ***");
@@ -1782,7 +1673,7 @@ impl std::fmt::Debug for ValueHolder {
 }
 /// See [`ValueHolder`](crate::model::ValueHolder).
 pub mod value_holder {
-
+    
     /// A builder for [`ValueHolder`](crate::model::ValueHolder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1796,13 +1687,13 @@ pub mod value_holder {
         }
         /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
         pub fn set_ion_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ion_text = input;
-            self
+            self.ion_text = input; self
         }
         /// Consumes the builder and constructs a [`ValueHolder`](crate::model::ValueHolder).
         pub fn build(self) -> crate::model::ValueHolder {
             crate::model::ValueHolder {
-                ion_text: self.ion_text,
+                ion_text: self.ion_text
+                ,
             }
         }
     }
@@ -1813,6 +1704,8 @@ pub mod value_holder {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ValueHolder {
     /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder).
@@ -1820,3 +1713,4 @@ impl ValueHolder {
         crate::model::value_holder::Builder::default()
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let optimizertype = unimplemented!();
 /// match optimizertype {
@@ -31,22 +31,14 @@
 /// Specifically, when `optimizertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OptimizerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OptimizerType {
     #[allow(missing_docs)] // documentation missing in model
     Generic,
@@ -55,7 +47,7 @@ pub enum OptimizerType {
     #[allow(missing_docs)] // documentation missing in model
     GarbageCollection,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OptimizerType {
     fn from(s: &str) -> Self {
@@ -63,17 +55,17 @@ impl std::convert::From<&str> for OptimizerType {
             "ALL" => OptimizerType::Generic,
             "COMPACTION" => OptimizerType::Compaction,
             "GARBAGE_COLLECTION" => OptimizerType::GarbageCollection,
-            other => OptimizerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OptimizerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OptimizerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OptimizerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OptimizerType::from(s))
+                }
+            }
 impl OptimizerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -81,12 +73,14 @@ impl OptimizerType {
             OptimizerType::Generic => "ALL",
             OptimizerType::Compaction => "COMPACTION",
             OptimizerType::GarbageCollection => "GARBAGE_COLLECTION",
-            OptimizerType::Unknown(value) => value.as_str(),
+            OptimizerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "COMPACTION", "GARBAGE_COLLECTION"]
+        &[
+            "ALL", "COMPACTION", "GARBAGE_COLLECTION"
+        ]
     }
 }
 impl AsRef<str> for OptimizerType {
@@ -98,7 +92,7 @@ impl AsRef<str> for OptimizerType {
 /// <p>Defines an object to add to or delete from a governed table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WriteOperation {
+pub struct WriteOperation  {
     /// <p>A new object to add to the governed table.</p>
     #[doc(hidden)]
     pub add_object: std::option::Option<crate::model::AddObjectInput>,
@@ -108,17 +102,17 @@ pub struct WriteOperation {
 }
 impl WriteOperation {
     /// <p>A new object to add to the governed table.</p>
-    pub fn add_object(&self) -> std::option::Option<&crate::model::AddObjectInput> {
+    pub fn add_object(&self) -> std::option::Option<& crate::model::AddObjectInput> {
         self.add_object.as_ref()
     }
     /// <p>An object to delete from the governed table.</p>
-    pub fn delete_object(&self) -> std::option::Option<&crate::model::DeleteObjectInput> {
+    pub fn delete_object(&self) -> std::option::Option<& crate::model::DeleteObjectInput> {
         self.delete_object.as_ref()
     }
 }
 /// See [`WriteOperation`](crate::model::WriteOperation).
 pub mod write_operation {
-
+    
     /// A builder for [`WriteOperation`](crate::model::WriteOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -132,12 +126,8 @@ pub mod write_operation {
             self
         }
         /// <p>A new object to add to the governed table.</p>
-        pub fn set_add_object(
-            mut self,
-            input: std::option::Option<crate::model::AddObjectInput>,
-        ) -> Self {
-            self.add_object = input;
-            self
+        pub fn set_add_object(mut self, input: std::option::Option<crate::model::AddObjectInput>) -> Self {
+            self.add_object = input; self
         }
         /// <p>An object to delete from the governed table.</p>
         pub fn delete_object(mut self, input: crate::model::DeleteObjectInput) -> Self {
@@ -145,21 +135,21 @@ pub mod write_operation {
             self
         }
         /// <p>An object to delete from the governed table.</p>
-        pub fn set_delete_object(
-            mut self,
-            input: std::option::Option<crate::model::DeleteObjectInput>,
-        ) -> Self {
-            self.delete_object = input;
-            self
+        pub fn set_delete_object(mut self, input: std::option::Option<crate::model::DeleteObjectInput>) -> Self {
+            self.delete_object = input; self
         }
         /// Consumes the builder and constructs a [`WriteOperation`](crate::model::WriteOperation).
         pub fn build(self) -> crate::model::WriteOperation {
             crate::model::WriteOperation {
-                add_object: self.add_object,
-                delete_object: self.delete_object,
+                add_object: self.add_object
+                ,
+                delete_object: self.delete_object
+                ,
             }
         }
     }
+    
+    
 }
 impl WriteOperation {
     /// Creates a new builder-style object to manufacture [`WriteOperation`](crate::model::WriteOperation).
@@ -171,7 +161,7 @@ impl WriteOperation {
 /// <p>An object to delete from the governed table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteObjectInput {
+pub struct DeleteObjectInput  {
     /// <p>The Amazon S3 location of the object to delete.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -184,21 +174,21 @@ pub struct DeleteObjectInput {
 }
 impl DeleteObjectInput {
     /// <p>The Amazon S3 location of the object to delete.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
-    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_values(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_values.as_deref()
     }
 }
 /// See [`DeleteObjectInput`](crate::model::DeleteObjectInput).
 pub mod delete_object_input {
-
+    
     /// A builder for [`DeleteObjectInput`](crate::model::DeleteObjectInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -214,8 +204,7 @@ pub mod delete_object_input {
         }
         /// <p>The Amazon S3 location of the object to delete.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,8 +213,7 @@ pub mod delete_object_input {
         }
         /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = input;
-            self
+            self.e_tag = input; self
         }
         /// Appends an item to `partition_values`.
         ///
@@ -234,27 +222,28 @@ pub mod delete_object_input {
         /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
         pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_values.unwrap_or_default();
-            v.push(input.into());
-            self.partition_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.partition_values = Some(v);
+                            self
         }
         /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
-        pub fn set_partition_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.partition_values = input;
-            self
+        pub fn set_partition_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.partition_values = input; self
         }
         /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::model::DeleteObjectInput).
         pub fn build(self) -> crate::model::DeleteObjectInput {
             crate::model::DeleteObjectInput {
-                uri: self.uri,
-                e_tag: self.e_tag,
-                partition_values: self.partition_values,
+                uri: self.uri
+                ,
+                e_tag: self.e_tag
+                ,
+                partition_values: self.partition_values
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteObjectInput {
     /// Creates a new builder-style object to manufacture [`DeleteObjectInput`](crate::model::DeleteObjectInput).
@@ -266,7 +255,7 @@ impl DeleteObjectInput {
 /// <p>A new object to add to the governed table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddObjectInput {
+pub struct AddObjectInput  {
     /// <p>The Amazon S3 location of the object.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -276,33 +265,33 @@ pub struct AddObjectInput {
     /// <p>The size of the Amazon S3 object in bytes.</p>
     #[doc(hidden)]
     pub size: i64,
-    /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
+    /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p> 
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
     #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddObjectInput {
     /// <p>The Amazon S3 location of the object.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub fn size(&self) -> i64 {
         self.size
     }
-    /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
+    /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p> 
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_values(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_values.as_deref()
     }
 }
 /// See [`AddObjectInput`](crate::model::AddObjectInput).
 pub mod add_object_input {
-
+    
     /// A builder for [`AddObjectInput`](crate::model::AddObjectInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -319,8 +308,7 @@ pub mod add_object_input {
         }
         /// <p>The Amazon S3 location of the object.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -329,8 +317,7 @@ pub mod add_object_input {
         }
         /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = input;
-            self
+            self.e_tag = input; self
         }
         /// <p>The size of the Amazon S3 object in bytes.</p>
         pub fn size(mut self, input: i64) -> Self {
@@ -339,40 +326,42 @@ pub mod add_object_input {
         }
         /// <p>The size of the Amazon S3 object in bytes.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// Appends an item to `partition_values`.
         ///
         /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
         ///
-        /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
+        /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p> 
         /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
         pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_values.unwrap_or_default();
-            v.push(input.into());
-            self.partition_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.partition_values = Some(v);
+                            self
         }
-        /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
+        /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p> 
         /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-        pub fn set_partition_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.partition_values = input;
-            self
+        pub fn set_partition_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.partition_values = input; self
         }
         /// Consumes the builder and constructs a [`AddObjectInput`](crate::model::AddObjectInput).
         pub fn build(self) -> crate::model::AddObjectInput {
             crate::model::AddObjectInput {
-                uri: self.uri,
-                e_tag: self.e_tag,
-                size: self.size.unwrap_or_default(),
-                partition_values: self.partition_values,
+                uri: self.uri
+                ,
+                e_tag: self.e_tag
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
+                partition_values: self.partition_values
+                ,
             }
         }
     }
+    
+    
 }
 impl AddObjectInput {
     /// Creates a new builder-style object to manufacture [`AddObjectInput`](crate::model::AddObjectInput).
@@ -387,9 +376,9 @@ impl AddObjectInput {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transactiontype = unimplemented!();
 /// match transactiontype {
@@ -411,58 +400,52 @@ impl AddObjectInput {
 /// Specifically, when `transactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransactionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TransactionType {
     #[allow(missing_docs)] // documentation missing in model
     ReadAndWrite,
     #[allow(missing_docs)] // documentation missing in model
     ReadOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TransactionType {
     fn from(s: &str) -> Self {
         match s {
             "READ_AND_WRITE" => TransactionType::ReadAndWrite,
             "READ_ONLY" => TransactionType::ReadOnly,
-            other => TransactionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TransactionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TransactionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransactionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TransactionType::from(s))
+                }
+            }
 impl TransactionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransactionType::ReadAndWrite => "READ_AND_WRITE",
             TransactionType::ReadOnly => "READ_ONLY",
-            TransactionType::Unknown(value) => value.as_str(),
+            TransactionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["READ_AND_WRITE", "READ_ONLY"]
+        &[
+            "READ_AND_WRITE", "READ_ONLY"
+        ]
     }
 }
 impl AsRef<str> for TransactionType {
@@ -474,7 +457,7 @@ impl AsRef<str> for TransactionType {
 /// <p>A structure containing information about the query plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryPlanningContext {
+pub struct QueryPlanningContext  {
     /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -486,49 +469,43 @@ pub struct QueryPlanningContext {
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A map consisting of key-value pairs.</p>
     #[doc(hidden)]
-    pub query_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub query_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The transaction ID at which to read the table contents. If this transaction is not committed, the read will be treated as part of that transaction and will see its writes. If this transaction has aborted, an error will be returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl QueryPlanningContext {
     /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The database containing the table.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn query_as_of_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn query_as_of_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.query_as_of_time.as_ref()
     }
     /// <p>A map consisting of key-value pairs.</p>
-    pub fn query_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn query_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.query_parameters.as_ref()
     }
     /// <p>The transaction ID at which to read the table contents. If this transaction is not committed, the read will be treated as part of that transaction and will see its writes. If this transaction has aborted, an error will be returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
 /// See [`QueryPlanningContext`](crate::model::QueryPlanningContext).
 pub mod query_planning_context {
-
+    
     /// A builder for [`QueryPlanningContext`](crate::model::QueryPlanningContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) query_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) query_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -539,8 +516,7 @@ pub mod query_planning_context {
         }
         /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The database containing the table.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -548,12 +524,8 @@ pub mod query_planning_context {
             self
         }
         /// <p>The database containing the table.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
         pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -561,37 +533,23 @@ pub mod query_planning_context {
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-        pub fn set_query_as_of_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.query_as_of_time = input;
-            self
+        pub fn set_query_as_of_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.query_as_of_time = input; self
         }
         /// Adds a key-value pair to `query_parameters`.
         ///
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
         /// <p>A map consisting of key-value pairs.</p>
-        pub fn query_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn query_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.query_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.query_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.query_parameters = Some(hash_map);
+                            self
         }
         /// <p>A map consisting of key-value pairs.</p>
-        pub fn set_query_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.query_parameters = input;
-            self
+        pub fn set_query_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.query_parameters = input; self
         }
         /// <p>The transaction ID at which to read the table contents. If this transaction is not committed, the read will be treated as part of that transaction and will see its writes. If this transaction has aborted, an error will be returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
         pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -599,24 +557,27 @@ pub mod query_planning_context {
             self
         }
         /// <p>The transaction ID at which to read the table contents. If this transaction is not committed, the read will be treated as part of that transaction and will see its writes. If this transaction has aborted, an error will be returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-        pub fn set_transaction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transaction_id = input;
-            self
+        pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transaction_id = input; self
         }
         /// Consumes the builder and constructs a [`QueryPlanningContext`](crate::model::QueryPlanningContext).
         pub fn build(self) -> crate::model::QueryPlanningContext {
             crate::model::QueryPlanningContext {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                query_as_of_time: self.query_as_of_time,
-                query_parameters: self.query_parameters,
-                transaction_id: self.transaction_id,
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                query_as_of_time: self.query_as_of_time
+                ,
+                query_parameters: self.query_parameters
+                ,
+                transaction_id: self.transaction_id
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryPlanningContext {
     /// Creates a new builder-style object to manufacture [`QueryPlanningContext`](crate::model::QueryPlanningContext).
@@ -628,7 +589,7 @@ impl QueryPlanningContext {
 /// <p>A structure describing a table resource with LF-tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaggedTable {
+pub struct TaggedTable  {
     /// <p>A table that has LF-tags attached to it.</p>
     #[doc(hidden)]
     pub table: std::option::Option<crate::model::TableResource>,
@@ -644,33 +605,32 @@ pub struct TaggedTable {
 }
 impl TaggedTable {
     /// <p>A table that has LF-tags attached to it.</p>
-    pub fn table(&self) -> std::option::Option<&crate::model::TableResource> {
+    pub fn table(&self) -> std::option::Option<& crate::model::TableResource> {
         self.table.as_ref()
     }
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
-    pub fn lf_tag_on_database(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+    pub fn lf_tag_on_database(&self) -> std::option::Option<& [crate::model::LfTagPair]> {
         self.lf_tag_on_database.as_deref()
     }
     /// <p>A list of LF-tags attached to the table.</p>
-    pub fn lf_tags_on_table(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+    pub fn lf_tags_on_table(&self) -> std::option::Option<& [crate::model::LfTagPair]> {
         self.lf_tags_on_table.as_deref()
     }
     /// <p>A list of LF-tags attached to columns in the table.</p>
-    pub fn lf_tags_on_columns(&self) -> std::option::Option<&[crate::model::ColumnLfTag]> {
+    pub fn lf_tags_on_columns(&self) -> std::option::Option<& [crate::model::ColumnLfTag]> {
         self.lf_tags_on_columns.as_deref()
     }
 }
 /// See [`TaggedTable`](crate::model::TaggedTable).
 pub mod tagged_table {
-
+    
     /// A builder for [`TaggedTable`](crate::model::TaggedTable).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table: std::option::Option<crate::model::TableResource>,
         pub(crate) lf_tag_on_database: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
         pub(crate) lf_tags_on_table: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
-        pub(crate) lf_tags_on_columns:
-            std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>,
+        pub(crate) lf_tags_on_columns: std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>,
     }
     impl Builder {
         /// <p>A table that has LF-tags attached to it.</p>
@@ -679,12 +639,8 @@ pub mod tagged_table {
             self
         }
         /// <p>A table that has LF-tags attached to it.</p>
-        pub fn set_table(
-            mut self,
-            input: std::option::Option<crate::model::TableResource>,
-        ) -> Self {
-            self.table = input;
-            self
+        pub fn set_table(mut self, input: std::option::Option<crate::model::TableResource>) -> Self {
+            self.table = input; self
         }
         /// Appends an item to `lf_tag_on_database`.
         ///
@@ -693,17 +649,13 @@ pub mod tagged_table {
         /// <p>A list of LF-tags attached to the database where the table resides.</p>
         pub fn lf_tag_on_database(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tag_on_database.unwrap_or_default();
-            v.push(input);
-            self.lf_tag_on_database = Some(v);
-            self
+                            v.push(input);
+                            self.lf_tag_on_database = Some(v);
+                            self
         }
         /// <p>A list of LF-tags attached to the database where the table resides.</p>
-        pub fn set_lf_tag_on_database(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
-        ) -> Self {
-            self.lf_tag_on_database = input;
-            self
+        pub fn set_lf_tag_on_database(mut self, input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>) -> Self {
+            self.lf_tag_on_database = input; self
         }
         /// Appends an item to `lf_tags_on_table`.
         ///
@@ -712,17 +664,13 @@ pub mod tagged_table {
         /// <p>A list of LF-tags attached to the table.</p>
         pub fn lf_tags_on_table(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags_on_table.unwrap_or_default();
-            v.push(input);
-            self.lf_tags_on_table = Some(v);
-            self
+                            v.push(input);
+                            self.lf_tags_on_table = Some(v);
+                            self
         }
         /// <p>A list of LF-tags attached to the table.</p>
-        pub fn set_lf_tags_on_table(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
-        ) -> Self {
-            self.lf_tags_on_table = input;
-            self
+        pub fn set_lf_tags_on_table(mut self, input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>) -> Self {
+            self.lf_tags_on_table = input; self
         }
         /// Appends an item to `lf_tags_on_columns`.
         ///
@@ -731,28 +679,30 @@ pub mod tagged_table {
         /// <p>A list of LF-tags attached to columns in the table.</p>
         pub fn lf_tags_on_columns(mut self, input: crate::model::ColumnLfTag) -> Self {
             let mut v = self.lf_tags_on_columns.unwrap_or_default();
-            v.push(input);
-            self.lf_tags_on_columns = Some(v);
-            self
+                            v.push(input);
+                            self.lf_tags_on_columns = Some(v);
+                            self
         }
         /// <p>A list of LF-tags attached to columns in the table.</p>
-        pub fn set_lf_tags_on_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>,
-        ) -> Self {
-            self.lf_tags_on_columns = input;
-            self
+        pub fn set_lf_tags_on_columns(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>) -> Self {
+            self.lf_tags_on_columns = input; self
         }
         /// Consumes the builder and constructs a [`TaggedTable`](crate::model::TaggedTable).
         pub fn build(self) -> crate::model::TaggedTable {
             crate::model::TaggedTable {
-                table: self.table,
-                lf_tag_on_database: self.lf_tag_on_database,
-                lf_tags_on_table: self.lf_tags_on_table,
-                lf_tags_on_columns: self.lf_tags_on_columns,
+                table: self.table
+                ,
+                lf_tag_on_database: self.lf_tag_on_database
+                ,
+                lf_tags_on_table: self.lf_tags_on_table
+                ,
+                lf_tags_on_columns: self.lf_tags_on_columns
+                ,
             }
         }
     }
+    
+    
 }
 impl TaggedTable {
     /// Creates a new builder-style object to manufacture [`TaggedTable`](crate::model::TaggedTable).
@@ -764,7 +714,7 @@ impl TaggedTable {
 /// <p>A structure containing the name of a column resource and the LF-tags attached to it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnLfTag {
+pub struct ColumnLfTag  {
     /// <p>The name of a column resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -774,17 +724,17 @@ pub struct ColumnLfTag {
 }
 impl ColumnLfTag {
     /// <p>The name of a column resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The LF-tags attached to a column resource.</p>
-    pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+    pub fn lf_tags(&self) -> std::option::Option<& [crate::model::LfTagPair]> {
         self.lf_tags.as_deref()
     }
 }
 /// See [`ColumnLfTag`](crate::model::ColumnLfTag).
 pub mod column_lf_tag {
-
+    
     /// A builder for [`ColumnLfTag`](crate::model::ColumnLfTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -799,8 +749,7 @@ pub mod column_lf_tag {
         }
         /// <p>The name of a column resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `lf_tags`.
         ///
@@ -809,26 +758,26 @@ pub mod column_lf_tag {
         /// <p>The LF-tags attached to a column resource.</p>
         pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input);
-            self.lf_tags = Some(v);
-            self
+                            v.push(input);
+                            self.lf_tags = Some(v);
+                            self
         }
         /// <p>The LF-tags attached to a column resource.</p>
-        pub fn set_lf_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
-        ) -> Self {
-            self.lf_tags = input;
-            self
+        pub fn set_lf_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>) -> Self {
+            self.lf_tags = input; self
         }
         /// Consumes the builder and constructs a [`ColumnLfTag`](crate::model::ColumnLfTag).
         pub fn build(self) -> crate::model::ColumnLfTag {
             crate::model::ColumnLfTag {
-                name: self.name,
-                lf_tags: self.lf_tags,
+                name: self.name
+                ,
+                lf_tags: self.lf_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ColumnLfTag {
     /// Creates a new builder-style object to manufacture [`ColumnLfTag`](crate::model::ColumnLfTag).
@@ -840,7 +789,7 @@ impl ColumnLfTag {
 /// <p>A structure containing an LF-tag key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LfTagPair {
+pub struct LfTagPair  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -853,21 +802,21 @@ pub struct LfTagPair {
 }
 impl LfTagPair {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The key-name for the LF-tag.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_values(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_values.as_deref()
     }
 }
 /// See [`LfTagPair`](crate::model::LfTagPair).
 pub mod lf_tag_pair {
-
+    
     /// A builder for [`LfTagPair`](crate::model::LfTagPair).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -883,8 +832,7 @@ pub mod lf_tag_pair {
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The key-name for the LF-tag.</p>
         pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -893,8 +841,7 @@ pub mod lf_tag_pair {
         }
         /// <p>The key-name for the LF-tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// Appends an item to `tag_values`.
         ///
@@ -903,27 +850,28 @@ pub mod lf_tag_pair {
         /// <p>A list of possible values an attribute can take.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
-            v.push(input.into());
-            self.tag_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_values = Some(v);
+                            self
         }
         /// <p>A list of possible values an attribute can take.</p>
-        pub fn set_tag_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_values = input;
-            self
+        pub fn set_tag_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_values = input; self
         }
         /// Consumes the builder and constructs a [`LfTagPair`](crate::model::LfTagPair).
         pub fn build(self) -> crate::model::LfTagPair {
             crate::model::LfTagPair {
-                catalog_id: self.catalog_id,
-                tag_key: self.tag_key,
-                tag_values: self.tag_values,
+                catalog_id: self.catalog_id
+                ,
+                tag_key: self.tag_key
+                ,
+                tag_values: self.tag_values
+                ,
             }
         }
     }
+    
+    
 }
 impl LfTagPair {
     /// Creates a new builder-style object to manufacture [`LfTagPair`](crate::model::LfTagPair).
@@ -935,7 +883,7 @@ impl LfTagPair {
 /// <p>A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableResource {
+pub struct TableResource  {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -945,33 +893,33 @@ pub struct TableResource {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A wildcard object representing every table under a database.</p>
+    /// <p>A wildcard object representing every table under a database.</p> 
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
     #[doc(hidden)]
     pub table_wildcard: std::option::Option<crate::model::TableWildcard>,
 }
 impl TableResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>A wildcard object representing every table under a database.</p>
+    /// <p>A wildcard object representing every table under a database.</p> 
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
-    pub fn table_wildcard(&self) -> std::option::Option<&crate::model::TableWildcard> {
+    pub fn table_wildcard(&self) -> std::option::Option<& crate::model::TableWildcard> {
         self.table_wildcard.as_ref()
     }
 }
 /// See [`TableResource`](crate::model::TableResource).
 pub mod table_resource {
-
+    
     /// A builder for [`TableResource`](crate::model::TableResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -988,8 +936,7 @@ pub mod table_resource {
         }
         /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -997,12 +944,8 @@ pub mod table_resource {
             self
         }
         /// <p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The name of the table.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1011,34 +954,35 @@ pub mod table_resource {
         }
         /// <p>The name of the table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>A wildcard object representing every table under a database.</p>
+        /// <p>A wildcard object representing every table under a database.</p> 
         /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
         pub fn table_wildcard(mut self, input: crate::model::TableWildcard) -> Self {
             self.table_wildcard = Some(input);
             self
         }
-        /// <p>A wildcard object representing every table under a database.</p>
+        /// <p>A wildcard object representing every table under a database.</p> 
         /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
-        pub fn set_table_wildcard(
-            mut self,
-            input: std::option::Option<crate::model::TableWildcard>,
-        ) -> Self {
-            self.table_wildcard = input;
-            self
+        pub fn set_table_wildcard(mut self, input: std::option::Option<crate::model::TableWildcard>) -> Self {
+            self.table_wildcard = input; self
         }
         /// Consumes the builder and constructs a [`TableResource`](crate::model::TableResource).
         pub fn build(self) -> crate::model::TableResource {
             crate::model::TableResource {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                name: self.name,
-                table_wildcard: self.table_wildcard,
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                name: self.name
+                ,
+                table_wildcard: self.table_wildcard
+                ,
             }
         }
     }
+    
+    
 }
 impl TableResource {
     /// Creates a new builder-style object to manufacture [`TableResource`](crate::model::TableResource).
@@ -1050,19 +994,24 @@ impl TableResource {
 /// <p>A wildcard object representing every table under a database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableWildcard {}
+pub struct TableWildcard  {
+}
 /// See [`TableWildcard`](crate::model::TableWildcard).
 pub mod table_wildcard {
-
+    
     /// A builder for [`TableWildcard`](crate::model::TableWildcard).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TableWildcard`](crate::model::TableWildcard).
         pub fn build(self) -> crate::model::TableWildcard {
-            crate::model::TableWildcard {}
+            crate::model::TableWildcard {
+            }
         }
     }
+    
+    
 }
 impl TableWildcard {
     /// Creates a new builder-style object to manufacture [`TableWildcard`](crate::model::TableWildcard).
@@ -1074,7 +1023,7 @@ impl TableWildcard {
 /// <p>A structure that allows an admin to grant user permissions on certain conditions. For example, granting a role access to all columns that do not have the LF-tag 'PII' in tables that have the LF-tag 'Prod'.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LfTag {
+pub struct LfTag  {
     /// <p>The key-name for the LF-tag.</p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -1084,17 +1033,17 @@ pub struct LfTag {
 }
 impl LfTag {
     /// <p>The key-name for the LF-tag.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_values(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_values.as_deref()
     }
 }
 /// See [`LfTag`](crate::model::LfTag).
 pub mod lf_tag {
-
+    
     /// A builder for [`LfTag`](crate::model::LfTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1109,8 +1058,7 @@ pub mod lf_tag {
         }
         /// <p>The key-name for the LF-tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// Appends an item to `tag_values`.
         ///
@@ -1119,26 +1067,26 @@ pub mod lf_tag {
         /// <p>A list of possible values an attribute can take.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
-            v.push(input.into());
-            self.tag_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_values = Some(v);
+                            self
         }
         /// <p>A list of possible values an attribute can take.</p>
-        pub fn set_tag_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_values = input;
-            self
+        pub fn set_tag_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_values = input; self
         }
         /// Consumes the builder and constructs a [`LfTag`](crate::model::LfTag).
         pub fn build(self) -> crate::model::LfTag {
             crate::model::LfTag {
-                tag_key: self.tag_key,
-                tag_values: self.tag_values,
+                tag_key: self.tag_key
+                ,
+                tag_values: self.tag_values
+                ,
             }
         }
     }
+    
+    
 }
 impl LfTag {
     /// Creates a new builder-style object to manufacture [`LfTag`](crate::model::LfTag).
@@ -1150,7 +1098,7 @@ impl LfTag {
 /// <p>A structure describing a database resource with LF-tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaggedDatabase {
+pub struct TaggedDatabase  {
     /// <p>A database that has LF-tags attached to it.</p>
     #[doc(hidden)]
     pub database: std::option::Option<crate::model::DatabaseResource>,
@@ -1160,17 +1108,17 @@ pub struct TaggedDatabase {
 }
 impl TaggedDatabase {
     /// <p>A database that has LF-tags attached to it.</p>
-    pub fn database(&self) -> std::option::Option<&crate::model::DatabaseResource> {
+    pub fn database(&self) -> std::option::Option<& crate::model::DatabaseResource> {
         self.database.as_ref()
     }
     /// <p>A list of LF-tags attached to the database.</p>
-    pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+    pub fn lf_tags(&self) -> std::option::Option<& [crate::model::LfTagPair]> {
         self.lf_tags.as_deref()
     }
 }
 /// See [`TaggedDatabase`](crate::model::TaggedDatabase).
 pub mod tagged_database {
-
+    
     /// A builder for [`TaggedDatabase`](crate::model::TaggedDatabase).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1184,12 +1132,8 @@ pub mod tagged_database {
             self
         }
         /// <p>A database that has LF-tags attached to it.</p>
-        pub fn set_database(
-            mut self,
-            input: std::option::Option<crate::model::DatabaseResource>,
-        ) -> Self {
-            self.database = input;
-            self
+        pub fn set_database(mut self, input: std::option::Option<crate::model::DatabaseResource>) -> Self {
+            self.database = input; self
         }
         /// Appends an item to `lf_tags`.
         ///
@@ -1198,26 +1142,26 @@ pub mod tagged_database {
         /// <p>A list of LF-tags attached to the database.</p>
         pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input);
-            self.lf_tags = Some(v);
-            self
+                            v.push(input);
+                            self.lf_tags = Some(v);
+                            self
         }
         /// <p>A list of LF-tags attached to the database.</p>
-        pub fn set_lf_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
-        ) -> Self {
-            self.lf_tags = input;
-            self
+        pub fn set_lf_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>) -> Self {
+            self.lf_tags = input; self
         }
         /// Consumes the builder and constructs a [`TaggedDatabase`](crate::model::TaggedDatabase).
         pub fn build(self) -> crate::model::TaggedDatabase {
             crate::model::TaggedDatabase {
-                database: self.database,
-                lf_tags: self.lf_tags,
+                database: self.database
+                ,
+                lf_tags: self.lf_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl TaggedDatabase {
     /// Creates a new builder-style object to manufacture [`TaggedDatabase`](crate::model::TaggedDatabase).
@@ -1229,7 +1173,7 @@ impl TaggedDatabase {
 /// <p>A structure for the database object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseResource {
+pub struct DatabaseResource  {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -1239,17 +1183,17 @@ pub struct DatabaseResource {
 }
 impl DatabaseResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`DatabaseResource`](crate::model::DatabaseResource).
 pub mod database_resource {
-
+    
     /// A builder for [`DatabaseResource`](crate::model::DatabaseResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1264,8 +1208,7 @@ pub mod database_resource {
         }
         /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The name of the database resource. Unique to the Data Catalog.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1274,17 +1217,20 @@ pub mod database_resource {
         }
         /// <p>The name of the database resource. Unique to the Data Catalog.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DatabaseResource`](crate::model::DatabaseResource).
         pub fn build(self) -> crate::model::DatabaseResource {
             crate::model::DatabaseResource {
-                catalog_id: self.catalog_id,
-                name: self.name,
+                catalog_id: self.catalog_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl DatabaseResource {
     /// Creates a new builder-style object to manufacture [`DatabaseResource`](crate::model::DatabaseResource).
@@ -1299,9 +1245,9 @@ impl DatabaseResource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permission = unimplemented!();
 /// match permission {
@@ -1333,22 +1279,14 @@ impl DatabaseResource {
 /// Specifically, when `permission` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Permission::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -1375,7 +1313,7 @@ pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     Select,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Permission {
     fn from(s: &str) -> Self {
@@ -1392,17 +1330,17 @@ impl std::convert::From<&str> for Permission {
             "DROP" => Permission::Drop,
             "INSERT" => Permission::Insert,
             "SELECT" => Permission::Select,
-            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Permission {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Permission::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Permission::from(s))
+                }
+            }
 impl Permission {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1419,24 +1357,13 @@ impl Permission {
             Permission::Drop => "DROP",
             Permission::Insert => "INSERT",
             Permission::Select => "SELECT",
-            Permission::Unknown(value) => value.as_str(),
+            Permission::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALL",
-            "ALTER",
-            "ASSOCIATE",
-            "CREATE_DATABASE",
-            "CREATE_TABLE",
-            "CREATE_TAG",
-            "DATA_LOCATION_ACCESS",
-            "DELETE",
-            "DESCRIBE",
-            "DROP",
-            "INSERT",
-            "SELECT",
+            "ALL", "ALTER", "ASSOCIATE", "CREATE_DATABASE", "CREATE_TABLE", "CREATE_TAG", "DATA_LOCATION_ACCESS", "DELETE", "DESCRIBE", "DROP", "INSERT", "SELECT"
         ]
     }
 }
@@ -1449,7 +1376,7 @@ impl AsRef<str> for Permission {
 /// <p>A structure for the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog: std::option::Option<crate::model::CatalogResource>,
@@ -1477,43 +1404,41 @@ pub struct Resource {
 }
 impl Resource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog(&self) -> std::option::Option<&crate::model::CatalogResource> {
+    pub fn catalog(&self) -> std::option::Option<& crate::model::CatalogResource> {
         self.catalog.as_ref()
     }
     /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
-    pub fn database(&self) -> std::option::Option<&crate::model::DatabaseResource> {
+    pub fn database(&self) -> std::option::Option<& crate::model::DatabaseResource> {
         self.database.as_ref()
     }
     /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
-    pub fn table(&self) -> std::option::Option<&crate::model::TableResource> {
+    pub fn table(&self) -> std::option::Option<& crate::model::TableResource> {
         self.table.as_ref()
     }
     /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
-    pub fn table_with_columns(
-        &self,
-    ) -> std::option::Option<&crate::model::TableWithColumnsResource> {
+    pub fn table_with_columns(&self) -> std::option::Option<& crate::model::TableWithColumnsResource> {
         self.table_with_columns.as_ref()
     }
     /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
-    pub fn data_location(&self) -> std::option::Option<&crate::model::DataLocationResource> {
+    pub fn data_location(&self) -> std::option::Option<& crate::model::DataLocationResource> {
         self.data_location.as_ref()
     }
     /// <p>A data cell filter.</p>
-    pub fn data_cells_filter(&self) -> std::option::Option<&crate::model::DataCellsFilterResource> {
+    pub fn data_cells_filter(&self) -> std::option::Option<& crate::model::DataCellsFilterResource> {
         self.data_cells_filter.as_ref()
     }
     /// <p>The LF-tag key and values attached to a resource.</p>
-    pub fn lf_tag(&self) -> std::option::Option<&crate::model::LfTagKeyResource> {
+    pub fn lf_tag(&self) -> std::option::Option<& crate::model::LfTagKeyResource> {
         self.lf_tag.as_ref()
     }
     /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
-    pub fn lf_tag_policy(&self) -> std::option::Option<&crate::model::LfTagPolicyResource> {
+    pub fn lf_tag_policy(&self) -> std::option::Option<& crate::model::LfTagPolicyResource> {
         self.lf_tag_policy.as_ref()
     }
 }
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
-
+    
     /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1533,12 +1458,8 @@ pub mod resource {
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn set_catalog(
-            mut self,
-            input: std::option::Option<crate::model::CatalogResource>,
-        ) -> Self {
-            self.catalog = input;
-            self
+        pub fn set_catalog(mut self, input: std::option::Option<crate::model::CatalogResource>) -> Self {
+            self.catalog = input; self
         }
         /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
         pub fn database(mut self, input: crate::model::DatabaseResource) -> Self {
@@ -1546,12 +1467,8 @@ pub mod resource {
             self
         }
         /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
-        pub fn set_database(
-            mut self,
-            input: std::option::Option<crate::model::DatabaseResource>,
-        ) -> Self {
-            self.database = input;
-            self
+        pub fn set_database(mut self, input: std::option::Option<crate::model::DatabaseResource>) -> Self {
+            self.database = input; self
         }
         /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
         pub fn table(mut self, input: crate::model::TableResource) -> Self {
@@ -1559,12 +1476,8 @@ pub mod resource {
             self
         }
         /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
-        pub fn set_table(
-            mut self,
-            input: std::option::Option<crate::model::TableResource>,
-        ) -> Self {
-            self.table = input;
-            self
+        pub fn set_table(mut self, input: std::option::Option<crate::model::TableResource>) -> Self {
+            self.table = input; self
         }
         /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
         pub fn table_with_columns(mut self, input: crate::model::TableWithColumnsResource) -> Self {
@@ -1572,12 +1485,8 @@ pub mod resource {
             self
         }
         /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
-        pub fn set_table_with_columns(
-            mut self,
-            input: std::option::Option<crate::model::TableWithColumnsResource>,
-        ) -> Self {
-            self.table_with_columns = input;
-            self
+        pub fn set_table_with_columns(mut self, input: std::option::Option<crate::model::TableWithColumnsResource>) -> Self {
+            self.table_with_columns = input; self
         }
         /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
         pub fn data_location(mut self, input: crate::model::DataLocationResource) -> Self {
@@ -1585,12 +1494,8 @@ pub mod resource {
             self
         }
         /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
-        pub fn set_data_location(
-            mut self,
-            input: std::option::Option<crate::model::DataLocationResource>,
-        ) -> Self {
-            self.data_location = input;
-            self
+        pub fn set_data_location(mut self, input: std::option::Option<crate::model::DataLocationResource>) -> Self {
+            self.data_location = input; self
         }
         /// <p>A data cell filter.</p>
         pub fn data_cells_filter(mut self, input: crate::model::DataCellsFilterResource) -> Self {
@@ -1598,12 +1503,8 @@ pub mod resource {
             self
         }
         /// <p>A data cell filter.</p>
-        pub fn set_data_cells_filter(
-            mut self,
-            input: std::option::Option<crate::model::DataCellsFilterResource>,
-        ) -> Self {
-            self.data_cells_filter = input;
-            self
+        pub fn set_data_cells_filter(mut self, input: std::option::Option<crate::model::DataCellsFilterResource>) -> Self {
+            self.data_cells_filter = input; self
         }
         /// <p>The LF-tag key and values attached to a resource.</p>
         pub fn lf_tag(mut self, input: crate::model::LfTagKeyResource) -> Self {
@@ -1611,12 +1512,8 @@ pub mod resource {
             self
         }
         /// <p>The LF-tag key and values attached to a resource.</p>
-        pub fn set_lf_tag(
-            mut self,
-            input: std::option::Option<crate::model::LfTagKeyResource>,
-        ) -> Self {
-            self.lf_tag = input;
-            self
+        pub fn set_lf_tag(mut self, input: std::option::Option<crate::model::LfTagKeyResource>) -> Self {
+            self.lf_tag = input; self
         }
         /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
         pub fn lf_tag_policy(mut self, input: crate::model::LfTagPolicyResource) -> Self {
@@ -1624,27 +1521,33 @@ pub mod resource {
             self
         }
         /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
-        pub fn set_lf_tag_policy(
-            mut self,
-            input: std::option::Option<crate::model::LfTagPolicyResource>,
-        ) -> Self {
-            self.lf_tag_policy = input;
-            self
+        pub fn set_lf_tag_policy(mut self, input: std::option::Option<crate::model::LfTagPolicyResource>) -> Self {
+            self.lf_tag_policy = input; self
         }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
-                catalog: self.catalog,
-                database: self.database,
-                table: self.table,
-                table_with_columns: self.table_with_columns,
-                data_location: self.data_location,
-                data_cells_filter: self.data_cells_filter,
-                lf_tag: self.lf_tag,
-                lf_tag_policy: self.lf_tag_policy,
+                catalog: self.catalog
+                ,
+                database: self.database
+                ,
+                table: self.table
+                ,
+                table_with_columns: self.table_with_columns
+                ,
+                data_location: self.data_location
+                ,
+                data_cells_filter: self.data_cells_filter
+                ,
+                lf_tag: self.lf_tag
+                ,
+                lf_tag_policy: self.lf_tag_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
@@ -1656,7 +1559,7 @@ impl Resource {
 /// <p>A structure containing a list of LF-tag conditions that apply to a resource's LF-tag policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LfTagPolicyResource {
+pub struct LfTagPolicyResource  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -1669,21 +1572,21 @@ pub struct LfTagPolicyResource {
 }
 impl LfTagPolicyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-    pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
+    pub fn expression(&self) -> std::option::Option<& [crate::model::LfTag]> {
         self.expression.as_deref()
     }
 }
 /// See [`LfTagPolicyResource`](crate::model::LfTagPolicyResource).
 pub mod lf_tag_policy_resource {
-
+    
     /// A builder for [`LfTagPolicyResource`](crate::model::LfTagPolicyResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1699,8 +1602,7 @@ pub mod lf_tag_policy_resource {
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The resource type for which the LF-tag policy applies.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -1708,12 +1610,8 @@ pub mod lf_tag_policy_resource {
             self
         }
         /// <p>The resource type for which the LF-tag policy applies.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `expression`.
         ///
@@ -1722,27 +1620,28 @@ pub mod lf_tag_policy_resource {
         /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
         pub fn expression(mut self, input: crate::model::LfTag) -> Self {
             let mut v = self.expression.unwrap_or_default();
-            v.push(input);
-            self.expression = Some(v);
-            self
+                            v.push(input);
+                            self.expression = Some(v);
+                            self
         }
         /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-        pub fn set_expression(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
-        ) -> Self {
-            self.expression = input;
-            self
+        pub fn set_expression(mut self, input: std::option::Option<std::vec::Vec<crate::model::LfTag>>) -> Self {
+            self.expression = input; self
         }
         /// Consumes the builder and constructs a [`LfTagPolicyResource`](crate::model::LfTagPolicyResource).
         pub fn build(self) -> crate::model::LfTagPolicyResource {
             crate::model::LfTagPolicyResource {
-                catalog_id: self.catalog_id,
-                resource_type: self.resource_type,
-                expression: self.expression,
+                catalog_id: self.catalog_id
+                ,
+                resource_type: self.resource_type
+                ,
+                expression: self.expression
+                ,
             }
         }
     }
+    
+    
 }
 impl LfTagPolicyResource {
     /// Creates a new builder-style object to manufacture [`LfTagPolicyResource`](crate::model::LfTagPolicyResource).
@@ -1757,9 +1656,9 @@ impl LfTagPolicyResource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -1781,58 +1680,52 @@ impl LfTagPolicyResource {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Database,
     #[allow(missing_docs)] // documentation missing in model
     Table,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "DATABASE" => ResourceType::Database,
             "TABLE" => ResourceType::Table,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Database => "DATABASE",
             ResourceType::Table => "TABLE",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DATABASE", "TABLE"]
+        &[
+            "DATABASE", "TABLE"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -1844,7 +1737,7 @@ impl AsRef<str> for ResourceType {
 /// <p>A structure containing an LF-tag key and values for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LfTagKeyResource {
+pub struct LfTagKeyResource  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -1857,21 +1750,21 @@ pub struct LfTagKeyResource {
 }
 impl LfTagKeyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The key-name for the LF-tag.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_values(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_values.as_deref()
     }
 }
 /// See [`LfTagKeyResource`](crate::model::LfTagKeyResource).
 pub mod lf_tag_key_resource {
-
+    
     /// A builder for [`LfTagKeyResource`](crate::model::LfTagKeyResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1887,8 +1780,7 @@ pub mod lf_tag_key_resource {
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The key-name for the LF-tag.</p>
         pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1897,8 +1789,7 @@ pub mod lf_tag_key_resource {
         }
         /// <p>The key-name for the LF-tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// Appends an item to `tag_values`.
         ///
@@ -1907,27 +1798,28 @@ pub mod lf_tag_key_resource {
         /// <p>A list of possible values an attribute can take.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
-            v.push(input.into());
-            self.tag_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_values = Some(v);
+                            self
         }
         /// <p>A list of possible values an attribute can take.</p>
-        pub fn set_tag_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_values = input;
-            self
+        pub fn set_tag_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_values = input; self
         }
         /// Consumes the builder and constructs a [`LfTagKeyResource`](crate::model::LfTagKeyResource).
         pub fn build(self) -> crate::model::LfTagKeyResource {
             crate::model::LfTagKeyResource {
-                catalog_id: self.catalog_id,
-                tag_key: self.tag_key,
-                tag_values: self.tag_values,
+                catalog_id: self.catalog_id
+                ,
+                tag_key: self.tag_key
+                ,
+                tag_values: self.tag_values
+                ,
             }
         }
     }
+    
+    
 }
 impl LfTagKeyResource {
     /// Creates a new builder-style object to manufacture [`LfTagKeyResource`](crate::model::LfTagKeyResource).
@@ -1939,7 +1831,7 @@ impl LfTagKeyResource {
 /// <p>A structure for a data cells filter resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataCellsFilterResource {
+pub struct DataCellsFilterResource  {
     /// <p>The ID of the catalog to which the table belongs.</p>
     #[doc(hidden)]
     pub table_catalog_id: std::option::Option<std::string::String>,
@@ -1955,25 +1847,25 @@ pub struct DataCellsFilterResource {
 }
 impl DataCellsFilterResource {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(&self) -> std::option::Option<&str> {
+    pub fn table_catalog_id(&self) -> std::option::Option<& str> {
         self.table_catalog_id.as_deref()
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the data cells filter. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`DataCellsFilterResource`](crate::model::DataCellsFilterResource).
 pub mod data_cells_filter_resource {
-
+    
     /// A builder for [`DataCellsFilterResource`](crate::model::DataCellsFilterResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1989,12 +1881,8 @@ pub mod data_cells_filter_resource {
             self
         }
         /// <p>The ID of the catalog to which the table belongs.</p>
-        pub fn set_table_catalog_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.table_catalog_id = input;
-            self
+        pub fn set_table_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_catalog_id = input; self
         }
         /// <p>A database in the Glue Data Catalog.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2002,12 +1890,8 @@ pub mod data_cells_filter_resource {
             self
         }
         /// <p>A database in the Glue Data Catalog.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The name of the table.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2016,8 +1900,7 @@ pub mod data_cells_filter_resource {
         }
         /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The name of the data cells filter. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2026,19 +1909,24 @@ pub mod data_cells_filter_resource {
         }
         /// <p>The name of the data cells filter. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DataCellsFilterResource`](crate::model::DataCellsFilterResource).
         pub fn build(self) -> crate::model::DataCellsFilterResource {
             crate::model::DataCellsFilterResource {
-                table_catalog_id: self.table_catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                name: self.name,
+                table_catalog_id: self.table_catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl DataCellsFilterResource {
     /// Creates a new builder-style object to manufacture [`DataCellsFilterResource`](crate::model::DataCellsFilterResource).
@@ -2050,7 +1938,7 @@ impl DataCellsFilterResource {
 /// <p>A structure for a data location object where permissions are granted or revoked. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataLocationResource {
+pub struct DataLocationResource  {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -2060,17 +1948,17 @@ pub struct DataLocationResource {
 }
 impl DataLocationResource {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`DataLocationResource`](crate::model::DataLocationResource).
 pub mod data_location_resource {
-
+    
     /// A builder for [`DataLocationResource`](crate::model::DataLocationResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2085,8 +1973,7 @@ pub mod data_location_resource {
         }
         /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2095,17 +1982,20 @@ pub mod data_location_resource {
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`DataLocationResource`](crate::model::DataLocationResource).
         pub fn build(self) -> crate::model::DataLocationResource {
             crate::model::DataLocationResource {
-                catalog_id: self.catalog_id,
-                resource_arn: self.resource_arn,
+                catalog_id: self.catalog_id
+                ,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DataLocationResource {
     /// Creates a new builder-style object to manufacture [`DataLocationResource`](crate::model::DataLocationResource).
@@ -2114,11 +2004,11 @@ impl DataLocationResource {
     }
 }
 
-/// <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p>
+/// <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p> 
 /// <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableWithColumnsResource {
+pub struct TableWithColumnsResource  {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -2137,29 +2027,29 @@ pub struct TableWithColumnsResource {
 }
 impl TableWithColumnsResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn column_names(&self) -> std::option::Option<& [std::string::String]> {
         self.column_names.as_deref()
     }
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-    pub fn column_wildcard(&self) -> std::option::Option<&crate::model::ColumnWildcard> {
+    pub fn column_wildcard(&self) -> std::option::Option<& crate::model::ColumnWildcard> {
         self.column_wildcard.as_ref()
     }
 }
 /// See [`TableWithColumnsResource`](crate::model::TableWithColumnsResource).
 pub mod table_with_columns_resource {
-
+    
     /// A builder for [`TableWithColumnsResource`](crate::model::TableWithColumnsResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2177,8 +2067,7 @@ pub mod table_with_columns_resource {
         }
         /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2186,12 +2075,8 @@ pub mod table_with_columns_resource {
             self
         }
         /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2200,8 +2085,7 @@ pub mod table_with_columns_resource {
         }
         /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `column_names`.
         ///
@@ -2210,17 +2094,13 @@ pub mod table_with_columns_resource {
         /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
         pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.column_names.unwrap_or_default();
-            v.push(input.into());
-            self.column_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.column_names = Some(v);
+                            self
         }
         /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-        pub fn set_column_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.column_names = input;
-            self
+        pub fn set_column_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.column_names = input; self
         }
         /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
         pub fn column_wildcard(mut self, input: crate::model::ColumnWildcard) -> Self {
@@ -2228,24 +2108,27 @@ pub mod table_with_columns_resource {
             self
         }
         /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-        pub fn set_column_wildcard(
-            mut self,
-            input: std::option::Option<crate::model::ColumnWildcard>,
-        ) -> Self {
-            self.column_wildcard = input;
-            self
+        pub fn set_column_wildcard(mut self, input: std::option::Option<crate::model::ColumnWildcard>) -> Self {
+            self.column_wildcard = input; self
         }
         /// Consumes the builder and constructs a [`TableWithColumnsResource`](crate::model::TableWithColumnsResource).
         pub fn build(self) -> crate::model::TableWithColumnsResource {
             crate::model::TableWithColumnsResource {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                name: self.name,
-                column_names: self.column_names,
-                column_wildcard: self.column_wildcard,
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                name: self.name
+                ,
+                column_names: self.column_names
+                ,
+                column_wildcard: self.column_wildcard
+                ,
             }
         }
     }
+    
+    
 }
 impl TableWithColumnsResource {
     /// Creates a new builder-style object to manufacture [`TableWithColumnsResource`](crate::model::TableWithColumnsResource).
@@ -2257,20 +2140,20 @@ impl TableWithColumnsResource {
 /// <p>A wildcard object, consisting of an optional list of excluded column names or indexes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnWildcard {
+pub struct ColumnWildcard  {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
     #[doc(hidden)]
     pub excluded_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
-    pub fn excluded_column_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn excluded_column_names(&self) -> std::option::Option<& [std::string::String]> {
         self.excluded_column_names.as_deref()
     }
 }
 /// See [`ColumnWildcard`](crate::model::ColumnWildcard).
 pub mod column_wildcard {
-
+    
     /// A builder for [`ColumnWildcard`](crate::model::ColumnWildcard).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2284,25 +2167,24 @@ pub mod column_wildcard {
         /// <p>Excludes column names. Any column with this name will be excluded.</p>
         pub fn excluded_column_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_column_names.unwrap_or_default();
-            v.push(input.into());
-            self.excluded_column_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.excluded_column_names = Some(v);
+                            self
         }
         /// <p>Excludes column names. Any column with this name will be excluded.</p>
-        pub fn set_excluded_column_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.excluded_column_names = input;
-            self
+        pub fn set_excluded_column_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.excluded_column_names = input; self
         }
         /// Consumes the builder and constructs a [`ColumnWildcard`](crate::model::ColumnWildcard).
         pub fn build(self) -> crate::model::ColumnWildcard {
             crate::model::ColumnWildcard {
-                excluded_column_names: self.excluded_column_names,
+                excluded_column_names: self.excluded_column_names
+                ,
             }
         }
     }
+    
+    
 }
 impl ColumnWildcard {
     /// Creates a new builder-style object to manufacture [`ColumnWildcard`](crate::model::ColumnWildcard).
@@ -2314,19 +2196,24 @@ impl ColumnWildcard {
 /// <p>A structure for the catalog object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CatalogResource {}
+pub struct CatalogResource  {
+}
 /// See [`CatalogResource`](crate::model::CatalogResource).
 pub mod catalog_resource {
-
+    
     /// A builder for [`CatalogResource`](crate::model::CatalogResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CatalogResource`](crate::model::CatalogResource).
         pub fn build(self) -> crate::model::CatalogResource {
-            crate::model::CatalogResource {}
+            crate::model::CatalogResource {
+            }
         }
     }
+    
+    
 }
 impl CatalogResource {
     /// Creates a new builder-style object to manufacture [`CatalogResource`](crate::model::CatalogResource).
@@ -2338,20 +2225,20 @@ impl CatalogResource {
 /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataLakePrincipal {
+pub struct DataLakePrincipal  {
     /// <p>An identifier for the Lake Formation principal.</p>
     #[doc(hidden)]
     pub data_lake_principal_identifier: std::option::Option<std::string::String>,
 }
 impl DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
-    pub fn data_lake_principal_identifier(&self) -> std::option::Option<&str> {
+    pub fn data_lake_principal_identifier(&self) -> std::option::Option<& str> {
         self.data_lake_principal_identifier.as_deref()
     }
 }
 /// See [`DataLakePrincipal`](crate::model::DataLakePrincipal).
 pub mod data_lake_principal {
-
+    
     /// A builder for [`DataLakePrincipal`](crate::model::DataLakePrincipal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2359,28 +2246,24 @@ pub mod data_lake_principal {
     }
     impl Builder {
         /// <p>An identifier for the Lake Formation principal.</p>
-        pub fn data_lake_principal_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn data_lake_principal_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_lake_principal_identifier = Some(input.into());
             self
         }
         /// <p>An identifier for the Lake Formation principal.</p>
-        pub fn set_data_lake_principal_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_lake_principal_identifier = input;
-            self
+        pub fn set_data_lake_principal_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_lake_principal_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DataLakePrincipal`](crate::model::DataLakePrincipal).
         pub fn build(self) -> crate::model::DataLakePrincipal {
             crate::model::DataLakePrincipal {
-                data_lake_principal_identifier: self.data_lake_principal_identifier,
+                data_lake_principal_identifier: self.data_lake_principal_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl DataLakePrincipal {
     /// Creates a new builder-style object to manufacture [`DataLakePrincipal`](crate::model::DataLakePrincipal).
@@ -2392,7 +2275,7 @@ impl DataLakePrincipal {
 /// <p>A structure containing an error related to a <code>TagResource</code> or <code>UnTagResource</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LfTagError {
+pub struct LfTagError  {
     /// <p>The key-name of the LF-tag.</p>
     #[doc(hidden)]
     pub lf_tag: std::option::Option<crate::model::LfTagPair>,
@@ -2402,17 +2285,17 @@ pub struct LfTagError {
 }
 impl LfTagError {
     /// <p>The key-name of the LF-tag.</p>
-    pub fn lf_tag(&self) -> std::option::Option<&crate::model::LfTagPair> {
+    pub fn lf_tag(&self) -> std::option::Option<& crate::model::LfTagPair> {
         self.lf_tag.as_ref()
     }
     /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorDetail> {
         self.error.as_ref()
     }
 }
 /// See [`LfTagError`](crate::model::LfTagError).
 pub mod lf_tag_error {
-
+    
     /// A builder for [`LfTagError`](crate::model::LfTagError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2427,8 +2310,7 @@ pub mod lf_tag_error {
         }
         /// <p>The key-name of the LF-tag.</p>
         pub fn set_lf_tag(mut self, input: std::option::Option<crate::model::LfTagPair>) -> Self {
-            self.lf_tag = input;
-            self
+            self.lf_tag = input; self
         }
         /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
         pub fn error(mut self, input: crate::model::ErrorDetail) -> Self {
@@ -2437,17 +2319,20 @@ pub mod lf_tag_error {
         }
         /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetail>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`LfTagError`](crate::model::LfTagError).
         pub fn build(self) -> crate::model::LfTagError {
             crate::model::LfTagError {
-                lf_tag: self.lf_tag,
-                error: self.error,
+                lf_tag: self.lf_tag
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl LfTagError {
     /// Creates a new builder-style object to manufacture [`LfTagError`](crate::model::LfTagError).
@@ -2459,7 +2344,7 @@ impl LfTagError {
 /// <p>Contains details about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetail {
+pub struct ErrorDetail  {
     /// <p>The code associated with this error.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -2469,17 +2354,17 @@ pub struct ErrorDetail {
 }
 impl ErrorDetail {
     /// <p>The code associated with this error.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A message describing the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
-
+    
     /// A builder for [`ErrorDetail`](crate::model::ErrorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2494,8 +2379,7 @@ pub mod error_detail {
         }
         /// <p>The code associated with this error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>A message describing the error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2503,21 +2387,21 @@ pub mod error_detail {
             self
         }
         /// <p>A message describing the error.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`ErrorDetail`](crate::model::ErrorDetail).
         pub fn build(self) -> crate::model::ErrorDetail {
             crate::model::ErrorDetail {
-                error_code: self.error_code,
-                error_message: self.error_message,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorDetail {
     /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
@@ -2529,120 +2413,100 @@ impl ErrorDetail {
 /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataLakeSettings {
+pub struct DataLakeSettings  {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
     #[doc(hidden)]
     pub data_lake_admins: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
-    /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-    /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
+    /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p> 
+    /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> 
+    /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     #[doc(hidden)]
-    pub create_database_default_permissions:
-        std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
-    /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-    /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
+    pub create_database_default_permissions: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
+    /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p> 
+    /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> 
+    /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     #[doc(hidden)]
-    pub create_table_default_permissions:
-        std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
+    pub create_table_default_permissions: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p> 
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
     #[doc(hidden)]
     pub trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
-    /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
-    /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p> 
+    /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p> 
+    /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p> 
     /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
     #[doc(hidden)]
     pub allow_external_data_filtering: std::option::Option<bool>,
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
     #[doc(hidden)]
-    pub external_data_filtering_allow_list:
-        std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
+    pub external_data_filtering_allow_list: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
     #[doc(hidden)]
     pub authorized_session_tag_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
-    pub fn data_lake_admins(&self) -> std::option::Option<&[crate::model::DataLakePrincipal]> {
+    pub fn data_lake_admins(&self) -> std::option::Option<& [crate::model::DataLakePrincipal]> {
         self.data_lake_admins.as_deref()
     }
-    /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-    /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
+    /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p> 
+    /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> 
+    /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn create_database_default_permissions(
-        &self,
-    ) -> std::option::Option<&[crate::model::PrincipalPermissions]> {
+    pub fn create_database_default_permissions(&self) -> std::option::Option<& [crate::model::PrincipalPermissions]> {
         self.create_database_default_permissions.as_deref()
     }
-    /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-    /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
+    /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p> 
+    /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> 
+    /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn create_table_default_permissions(
-        &self,
-    ) -> std::option::Option<&[crate::model::PrincipalPermissions]> {
+    pub fn create_table_default_permissions(&self) -> std::option::Option<& [crate::model::PrincipalPermissions]> {
         self.create_table_default_permissions.as_deref()
     }
     /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
-    /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
+    /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p> 
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
-    pub fn trusted_resource_owners(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn trusted_resource_owners(&self) -> std::option::Option<& [std::string::String]> {
         self.trusted_resource_owners.as_deref()
     }
-    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
-    /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
-    /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p> 
+    /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p> 
+    /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p> 
     /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
     pub fn allow_external_data_filtering(&self) -> std::option::Option<bool> {
         self.allow_external_data_filtering
     }
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
-    pub fn external_data_filtering_allow_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataLakePrincipal]> {
+    pub fn external_data_filtering_allow_list(&self) -> std::option::Option<& [crate::model::DataLakePrincipal]> {
         self.external_data_filtering_allow_list.as_deref()
     }
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
-    pub fn authorized_session_tag_value_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn authorized_session_tag_value_list(&self) -> std::option::Option<& [std::string::String]> {
         self.authorized_session_tag_value_list.as_deref()
     }
 }
 /// See [`DataLakeSettings`](crate::model::DataLakeSettings).
 pub mod data_lake_settings {
-
+    
     /// A builder for [`DataLakeSettings`](crate::model::DataLakeSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data_lake_admins:
-            std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
-        pub(crate) create_database_default_permissions:
-            std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
-        pub(crate) create_table_default_permissions:
-            std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) data_lake_admins: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
+        pub(crate) create_database_default_permissions: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
+        pub(crate) create_table_default_permissions: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) allow_external_data_filtering: std::option::Option<bool>,
-        pub(crate) external_data_filtering_allow_list:
-            std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
-        pub(crate) authorized_session_tag_value_list:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) external_data_filtering_allow_list: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
+        pub(crate) authorized_session_tag_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `data_lake_admins`.
@@ -2652,197 +2516,157 @@ pub mod data_lake_settings {
         /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
         pub fn data_lake_admins(mut self, input: crate::model::DataLakePrincipal) -> Self {
             let mut v = self.data_lake_admins.unwrap_or_default();
-            v.push(input);
-            self.data_lake_admins = Some(v);
-            self
+                            v.push(input);
+                            self.data_lake_admins = Some(v);
+                            self
         }
         /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
-        pub fn set_data_lake_admins(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
-        ) -> Self {
-            self.data_lake_admins = input;
-            self
+        pub fn set_data_lake_admins(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>) -> Self {
+            self.data_lake_admins = input; self
         }
         /// Appends an item to `create_database_default_permissions`.
         ///
         /// To override the contents of this collection use [`set_create_database_default_permissions`](Self::set_create_database_default_permissions).
         ///
-        /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-        /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
+        /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p> 
+        /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> 
+        /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-        pub fn create_database_default_permissions(
-            mut self,
-            input: crate::model::PrincipalPermissions,
-        ) -> Self {
+        pub fn create_database_default_permissions(mut self, input: crate::model::PrincipalPermissions) -> Self {
             let mut v = self.create_database_default_permissions.unwrap_or_default();
-            v.push(input);
-            self.create_database_default_permissions = Some(v);
-            self
+                            v.push(input);
+                            self.create_database_default_permissions = Some(v);
+                            self
         }
-        /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-        /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
+        /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p> 
+        /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> 
+        /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-        pub fn set_create_database_default_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
-        ) -> Self {
-            self.create_database_default_permissions = input;
-            self
+        pub fn set_create_database_default_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>) -> Self {
+            self.create_database_default_permissions = input; self
         }
         /// Appends an item to `create_table_default_permissions`.
         ///
         /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
         ///
-        /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-        /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
+        /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p> 
+        /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> 
+        /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-        pub fn create_table_default_permissions(
-            mut self,
-            input: crate::model::PrincipalPermissions,
-        ) -> Self {
+        pub fn create_table_default_permissions(mut self, input: crate::model::PrincipalPermissions) -> Self {
             let mut v = self.create_table_default_permissions.unwrap_or_default();
-            v.push(input);
-            self.create_table_default_permissions = Some(v);
-            self
+                            v.push(input);
+                            self.create_table_default_permissions = Some(v);
+                            self
         }
-        /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-        /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
+        /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p> 
+        /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> 
+        /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-        pub fn set_create_table_default_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
-        ) -> Self {
-            self.create_table_default_permissions = input;
-            self
+        pub fn set_create_table_default_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>) -> Self {
+            self.create_table_default_permissions = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Appends an item to `trusted_resource_owners`.
         ///
         /// To override the contents of this collection use [`set_trusted_resource_owners`](Self::set_trusted_resource_owners).
         ///
-        /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
+        /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p> 
         /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
         pub fn trusted_resource_owners(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trusted_resource_owners.unwrap_or_default();
-            v.push(input.into());
-            self.trusted_resource_owners = Some(v);
-            self
+                            v.push(input.into());
+                            self.trusted_resource_owners = Some(v);
+                            self
         }
-        /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
+        /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p> 
         /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
-        pub fn set_trusted_resource_owners(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.trusted_resource_owners = input;
-            self
+        pub fn set_trusted_resource_owners(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.trusted_resource_owners = input; self
         }
-        /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
-        /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
-        /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+        /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p> 
+        /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p> 
+        /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p> 
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
         pub fn allow_external_data_filtering(mut self, input: bool) -> Self {
             self.allow_external_data_filtering = Some(input);
             self
         }
-        /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
-        /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
-        /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+        /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p> 
+        /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p> 
+        /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p> 
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
-        pub fn set_allow_external_data_filtering(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.allow_external_data_filtering = input;
-            self
+        pub fn set_allow_external_data_filtering(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_external_data_filtering = input; self
         }
         /// Appends an item to `external_data_filtering_allow_list`.
         ///
         /// To override the contents of this collection use [`set_external_data_filtering_allow_list`](Self::set_external_data_filtering_allow_list).
         ///
         /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
-        pub fn external_data_filtering_allow_list(
-            mut self,
-            input: crate::model::DataLakePrincipal,
-        ) -> Self {
+        pub fn external_data_filtering_allow_list(mut self, input: crate::model::DataLakePrincipal) -> Self {
             let mut v = self.external_data_filtering_allow_list.unwrap_or_default();
-            v.push(input);
-            self.external_data_filtering_allow_list = Some(v);
-            self
+                            v.push(input);
+                            self.external_data_filtering_allow_list = Some(v);
+                            self
         }
         /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
-        pub fn set_external_data_filtering_allow_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
-        ) -> Self {
-            self.external_data_filtering_allow_list = input;
-            self
+        pub fn set_external_data_filtering_allow_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>) -> Self {
+            self.external_data_filtering_allow_list = input; self
         }
         /// Appends an item to `authorized_session_tag_value_list`.
         ///
         /// To override the contents of this collection use [`set_authorized_session_tag_value_list`](Self::set_authorized_session_tag_value_list).
         ///
         /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
-        pub fn authorized_session_tag_value_list(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn authorized_session_tag_value_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorized_session_tag_value_list.unwrap_or_default();
-            v.push(input.into());
-            self.authorized_session_tag_value_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.authorized_session_tag_value_list = Some(v);
+                            self
         }
         /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
-        pub fn set_authorized_session_tag_value_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.authorized_session_tag_value_list = input;
-            self
+        pub fn set_authorized_session_tag_value_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.authorized_session_tag_value_list = input; self
         }
         /// Consumes the builder and constructs a [`DataLakeSettings`](crate::model::DataLakeSettings).
         pub fn build(self) -> crate::model::DataLakeSettings {
             crate::model::DataLakeSettings {
-                data_lake_admins: self.data_lake_admins,
-                create_database_default_permissions: self.create_database_default_permissions,
-                create_table_default_permissions: self.create_table_default_permissions,
-                parameters: self.parameters,
-                trusted_resource_owners: self.trusted_resource_owners,
-                allow_external_data_filtering: self.allow_external_data_filtering,
-                external_data_filtering_allow_list: self.external_data_filtering_allow_list,
-                authorized_session_tag_value_list: self.authorized_session_tag_value_list,
+                data_lake_admins: self.data_lake_admins
+                ,
+                create_database_default_permissions: self.create_database_default_permissions
+                ,
+                create_table_default_permissions: self.create_table_default_permissions
+                ,
+                parameters: self.parameters
+                ,
+                trusted_resource_owners: self.trusted_resource_owners
+                ,
+                allow_external_data_filtering: self.allow_external_data_filtering
+                ,
+                external_data_filtering_allow_list: self.external_data_filtering_allow_list
+                ,
+                authorized_session_tag_value_list: self.authorized_session_tag_value_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DataLakeSettings {
     /// Creates a new builder-style object to manufacture [`DataLakeSettings`](crate::model::DataLakeSettings).
@@ -2854,7 +2678,7 @@ impl DataLakeSettings {
 /// <p>Permissions granted to a principal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrincipalPermissions {
+pub struct PrincipalPermissions  {
     /// <p>The principal who is granted permissions.</p>
     #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
@@ -2864,17 +2688,17 @@ pub struct PrincipalPermissions {
 }
 impl PrincipalPermissions {
     /// <p>The principal who is granted permissions.</p>
-    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+    pub fn principal(&self) -> std::option::Option<& crate::model::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>The permissions that are granted to the principal.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::Permission]> {
         self.permissions.as_deref()
     }
 }
 /// See [`PrincipalPermissions`](crate::model::PrincipalPermissions).
 pub mod principal_permissions {
-
+    
     /// A builder for [`PrincipalPermissions`](crate::model::PrincipalPermissions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2888,12 +2712,8 @@ pub mod principal_permissions {
             self
         }
         /// <p>The principal who is granted permissions.</p>
-        pub fn set_principal(
-            mut self,
-            input: std::option::Option<crate::model::DataLakePrincipal>,
-        ) -> Self {
-            self.principal = input;
-            self
+        pub fn set_principal(mut self, input: std::option::Option<crate::model::DataLakePrincipal>) -> Self {
+            self.principal = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -2902,26 +2722,26 @@ pub mod principal_permissions {
         /// <p>The permissions that are granted to the principal.</p>
         pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>The permissions that are granted to the principal.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Permission>>) -> Self {
+            self.permissions = input; self
         }
         /// Consumes the builder and constructs a [`PrincipalPermissions`](crate::model::PrincipalPermissions).
         pub fn build(self) -> crate::model::PrincipalPermissions {
             crate::model::PrincipalPermissions {
-                principal: self.principal,
-                permissions: self.permissions,
+                principal: self.principal
+                ,
+                permissions: self.permissions
+                ,
             }
         }
     }
+    
+    
 }
 impl PrincipalPermissions {
     /// Creates a new builder-style object to manufacture [`PrincipalPermissions`](crate::model::PrincipalPermissions).
@@ -2933,7 +2753,7 @@ impl PrincipalPermissions {
 /// <p>A structure that contains information about a transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransactionDescription {
+pub struct TransactionDescription  {
     /// <p>The ID of the transaction.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
@@ -2949,25 +2769,25 @@ pub struct TransactionDescription {
 }
 impl TransactionDescription {
     /// <p>The ID of the transaction.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
-    pub fn transaction_status(&self) -> std::option::Option<&crate::model::TransactionStatus> {
+    pub fn transaction_status(&self) -> std::option::Option<& crate::model::TransactionStatus> {
         self.transaction_status.as_ref()
     }
     /// <p>The time when the transaction started.</p>
-    pub fn transaction_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn transaction_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.transaction_start_time.as_ref()
     }
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
-    pub fn transaction_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn transaction_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.transaction_end_time.as_ref()
     }
 }
 /// See [`TransactionDescription`](crate::model::TransactionDescription).
 pub mod transaction_description {
-
+    
     /// A builder for [`TransactionDescription`](crate::model::TransactionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2983,12 +2803,8 @@ pub mod transaction_description {
             self
         }
         /// <p>The ID of the transaction.</p>
-        pub fn set_transaction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transaction_id = input;
-            self
+        pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transaction_id = input; self
         }
         /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
         pub fn transaction_status(mut self, input: crate::model::TransactionStatus) -> Self {
@@ -2996,12 +2812,8 @@ pub mod transaction_description {
             self
         }
         /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
-        pub fn set_transaction_status(
-            mut self,
-            input: std::option::Option<crate::model::TransactionStatus>,
-        ) -> Self {
-            self.transaction_status = input;
-            self
+        pub fn set_transaction_status(mut self, input: std::option::Option<crate::model::TransactionStatus>) -> Self {
+            self.transaction_status = input; self
         }
         /// <p>The time when the transaction started.</p>
         pub fn transaction_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3009,12 +2821,8 @@ pub mod transaction_description {
             self
         }
         /// <p>The time when the transaction started.</p>
-        pub fn set_transaction_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.transaction_start_time = input;
-            self
+        pub fn set_transaction_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.transaction_start_time = input; self
         }
         /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
         pub fn transaction_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3022,23 +2830,25 @@ pub mod transaction_description {
             self
         }
         /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
-        pub fn set_transaction_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.transaction_end_time = input;
-            self
+        pub fn set_transaction_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.transaction_end_time = input; self
         }
         /// Consumes the builder and constructs a [`TransactionDescription`](crate::model::TransactionDescription).
         pub fn build(self) -> crate::model::TransactionDescription {
             crate::model::TransactionDescription {
-                transaction_id: self.transaction_id,
-                transaction_status: self.transaction_status,
-                transaction_start_time: self.transaction_start_time,
-                transaction_end_time: self.transaction_end_time,
+                transaction_id: self.transaction_id
+                ,
+                transaction_status: self.transaction_status
+                ,
+                transaction_start_time: self.transaction_start_time
+                ,
+                transaction_end_time: self.transaction_end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl TransactionDescription {
     /// Creates a new builder-style object to manufacture [`TransactionDescription`](crate::model::TransactionDescription).
@@ -3053,9 +2863,9 @@ impl TransactionDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transactionstatus = unimplemented!();
 /// match transactionstatus {
@@ -3079,22 +2889,14 @@ impl TransactionDescription {
 /// Specifically, when `transactionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransactionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TransactionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Aborted,
@@ -3105,7 +2907,7 @@ pub enum TransactionStatus {
     #[allow(missing_docs)] // documentation missing in model
     CommitInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TransactionStatus {
     fn from(s: &str) -> Self {
@@ -3114,19 +2916,17 @@ impl std::convert::From<&str> for TransactionStatus {
             "ACTIVE" => TransactionStatus::Active,
             "COMMITTED" => TransactionStatus::Committed,
             "COMMIT_IN_PROGRESS" => TransactionStatus::CommitInProgress,
-            other => {
-                TransactionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TransactionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TransactionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransactionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TransactionStatus::from(s))
+                }
+            }
 impl TransactionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3135,12 +2935,14 @@ impl TransactionStatus {
             TransactionStatus::Active => "ACTIVE",
             TransactionStatus::Committed => "COMMITTED",
             TransactionStatus::CommitInProgress => "COMMIT_IN_PROGRESS",
-            TransactionStatus::Unknown(value) => value.as_str(),
+            TransactionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ABORTED", "ACTIVE", "COMMITTED", "COMMIT_IN_PROGRESS"]
+        &[
+            "ABORTED", "ACTIVE", "COMMITTED", "COMMIT_IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for TransactionStatus {
@@ -3155,9 +2957,9 @@ impl AsRef<str> for TransactionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transactionstatusfilter = unimplemented!();
 /// match transactionstatusfilter {
@@ -3182,22 +2984,14 @@ impl AsRef<str> for TransactionStatus {
 /// Specifically, when `transactionstatusfilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransactionStatusFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TransactionStatusFilter {
     #[allow(missing_docs)] // documentation missing in model
     Aborted,
@@ -3210,7 +3004,7 @@ pub enum TransactionStatusFilter {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TransactionStatusFilter {
     fn from(s: &str) -> Self {
@@ -3220,19 +3014,17 @@ impl std::convert::From<&str> for TransactionStatusFilter {
             "ALL" => TransactionStatusFilter::All,
             "COMMITTED" => TransactionStatusFilter::Committed,
             "COMPLETED" => TransactionStatusFilter::Completed,
-            other => TransactionStatusFilter::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TransactionStatusFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TransactionStatusFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransactionStatusFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TransactionStatusFilter::from(s))
+                }
+            }
 impl TransactionStatusFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3242,12 +3034,14 @@ impl TransactionStatusFilter {
             TransactionStatusFilter::All => "ALL",
             TransactionStatusFilter::Committed => "COMMITTED",
             TransactionStatusFilter::Completed => "COMPLETED",
-            TransactionStatusFilter::Unknown(value) => value.as_str(),
+            TransactionStatusFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ABORTED", "ACTIVE", "ALL", "COMMITTED", "COMPLETED"]
+        &[
+            "ABORTED", "ACTIVE", "ALL", "COMMITTED", "COMPLETED"
+        ]
     }
 }
 impl AsRef<str> for TransactionStatusFilter {
@@ -3259,16 +3053,15 @@ impl AsRef<str> for TransactionStatusFilter {
 /// <p>A structure describing the configuration and details of a storage optimizer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageOptimizer {
+pub struct StorageOptimizer  {
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
     #[doc(hidden)]
     pub storage_optimizer_type: std::option::Option<crate::model::OptimizerType>,
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
     #[doc(hidden)]
-    pub config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A message that contains information about any error (if present).</p>
-    /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
+    pub config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A message that contains information about any error (if present).</p> 
+    /// <p>When an acceleration result has an enabled status, the error message is empty.</p> 
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
@@ -3281,41 +3074,36 @@ pub struct StorageOptimizer {
 }
 impl StorageOptimizer {
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
-    pub fn storage_optimizer_type(&self) -> std::option::Option<&crate::model::OptimizerType> {
+    pub fn storage_optimizer_type(&self) -> std::option::Option<& crate::model::OptimizerType> {
         self.storage_optimizer_type.as_ref()
     }
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
-    pub fn config(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn config(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.config.as_ref()
     }
-    /// <p>A message that contains information about any error (if present).</p>
-    /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
+    /// <p>A message that contains information about any error (if present).</p> 
+    /// <p>When an acceleration result has an enabled status, the error message is empty.</p> 
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>A message that contains information about any warnings (if present).</p>
-    pub fn warnings(&self) -> std::option::Option<&str> {
+    pub fn warnings(&self) -> std::option::Option<& str> {
         self.warnings.as_deref()
     }
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
-    pub fn last_run_details(&self) -> std::option::Option<&str> {
+    pub fn last_run_details(&self) -> std::option::Option<& str> {
         self.last_run_details.as_deref()
     }
 }
 /// See [`StorageOptimizer`](crate::model::StorageOptimizer).
 pub mod storage_optimizer {
-
+    
     /// A builder for [`StorageOptimizer`](crate::model::StorageOptimizer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_optimizer_type: std::option::Option<crate::model::OptimizerType>,
-        pub(crate) config: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::string::String>,
         pub(crate) last_run_details: std::option::Option<std::string::String>,
@@ -3327,54 +3115,36 @@ pub mod storage_optimizer {
             self
         }
         /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
-        pub fn set_storage_optimizer_type(
-            mut self,
-            input: std::option::Option<crate::model::OptimizerType>,
-        ) -> Self {
-            self.storage_optimizer_type = input;
-            self
+        pub fn set_storage_optimizer_type(mut self, input: std::option::Option<crate::model::OptimizerType>) -> Self {
+            self.storage_optimizer_type = input; self
         }
         /// Adds a key-value pair to `config`.
         ///
         /// To override the contents of this collection use [`set_config`](Self::set_config).
         ///
         /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
-        pub fn config(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn config(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.config.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.config = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.config = Some(hash_map);
+                            self
         }
         /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
-        pub fn set_config(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.config = input;
-            self
+        pub fn set_config(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.config = input; self
         }
-        /// <p>A message that contains information about any error (if present).</p>
-        /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
+        /// <p>A message that contains information about any error (if present).</p> 
+        /// <p>When an acceleration result has an enabled status, the error message is empty.</p> 
         /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>A message that contains information about any error (if present).</p>
-        /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
+        /// <p>A message that contains information about any error (if present).</p> 
+        /// <p>When an acceleration result has an enabled status, the error message is empty.</p> 
         /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>A message that contains information about any warnings (if present).</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3383,8 +3153,7 @@ pub mod storage_optimizer {
         }
         /// <p>A message that contains information about any warnings (if present).</p>
         pub fn set_warnings(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.warnings = input;
-            self
+            self.warnings = input; self
         }
         /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
         pub fn last_run_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3392,24 +3161,27 @@ pub mod storage_optimizer {
             self
         }
         /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
-        pub fn set_last_run_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_run_details = input;
-            self
+        pub fn set_last_run_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_run_details = input; self
         }
         /// Consumes the builder and constructs a [`StorageOptimizer`](crate::model::StorageOptimizer).
         pub fn build(self) -> crate::model::StorageOptimizer {
             crate::model::StorageOptimizer {
-                storage_optimizer_type: self.storage_optimizer_type,
-                config: self.config,
-                error_message: self.error_message,
-                warnings: self.warnings,
-                last_run_details: self.last_run_details,
+                storage_optimizer_type: self.storage_optimizer_type
+                ,
+                config: self.config
+                ,
+                error_message: self.error_message
+                ,
+                warnings: self.warnings
+                ,
+                last_run_details: self.last_run_details
+                ,
             }
         }
     }
+    
+    
 }
 impl StorageOptimizer {
     /// Creates a new builder-style object to manufacture [`StorageOptimizer`](crate::model::StorageOptimizer).
@@ -3421,7 +3193,7 @@ impl StorageOptimizer {
 /// <p>A structure containing information about an Lake Formation resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInfo {
+pub struct ResourceInfo  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -3434,21 +3206,21 @@ pub struct ResourceInfo {
 }
 impl ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The IAM role that registered a resource.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The date and time the resource was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
 /// See [`ResourceInfo`](crate::model::ResourceInfo).
 pub mod resource_info {
-
+    
     /// A builder for [`ResourceInfo`](crate::model::ResourceInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3464,8 +3236,7 @@ pub mod resource_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The IAM role that registered a resource.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3474,8 +3245,7 @@ pub mod resource_info {
         }
         /// <p>The IAM role that registered a resource.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The date and time the resource was last modified.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3483,22 +3253,23 @@ pub mod resource_info {
             self
         }
         /// <p>The date and time the resource was last modified.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// Consumes the builder and constructs a [`ResourceInfo`](crate::model::ResourceInfo).
         pub fn build(self) -> crate::model::ResourceInfo {
             crate::model::ResourceInfo {
-                resource_arn: self.resource_arn,
-                role_arn: self.role_arn,
-                last_modified: self.last_modified,
+                resource_arn: self.resource_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                last_modified: self.last_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceInfo {
     /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::model::ResourceInfo).
@@ -3510,7 +3281,7 @@ impl ResourceInfo {
 /// <p>This structure describes the filtering of columns in a table based on a filter condition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterCondition {
+pub struct FilterCondition  {
     /// <p>The field to filter in the filter condition.</p>
     #[doc(hidden)]
     pub field: std::option::Option<crate::model::FieldNameString>,
@@ -3523,21 +3294,21 @@ pub struct FilterCondition {
 }
 impl FilterCondition {
     /// <p>The field to filter in the filter condition.</p>
-    pub fn field(&self) -> std::option::Option<&crate::model::FieldNameString> {
+    pub fn field(&self) -> std::option::Option<& crate::model::FieldNameString> {
         self.field.as_ref()
     }
     /// <p>The comparison operator used in the filter condition.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>A string with values used in evaluating the filter condition.</p>
-    pub fn string_value_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn string_value_list(&self) -> std::option::Option<& [std::string::String]> {
         self.string_value_list.as_deref()
     }
 }
 /// See [`FilterCondition`](crate::model::FilterCondition).
 pub mod filter_condition {
-
+    
     /// A builder for [`FilterCondition`](crate::model::FilterCondition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3552,12 +3323,8 @@ pub mod filter_condition {
             self
         }
         /// <p>The field to filter in the filter condition.</p>
-        pub fn set_field(
-            mut self,
-            input: std::option::Option<crate::model::FieldNameString>,
-        ) -> Self {
-            self.field = input;
-            self
+        pub fn set_field(mut self, input: std::option::Option<crate::model::FieldNameString>) -> Self {
+            self.field = input; self
         }
         /// <p>The comparison operator used in the filter condition.</p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
@@ -3565,12 +3332,8 @@ pub mod filter_condition {
             self
         }
         /// <p>The comparison operator used in the filter condition.</p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.comparison_operator = input; self
         }
         /// Appends an item to `string_value_list`.
         ///
@@ -3579,27 +3342,28 @@ pub mod filter_condition {
         /// <p>A string with values used in evaluating the filter condition.</p>
         pub fn string_value_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.string_value_list.unwrap_or_default();
-            v.push(input.into());
-            self.string_value_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.string_value_list = Some(v);
+                            self
         }
         /// <p>A string with values used in evaluating the filter condition.</p>
-        pub fn set_string_value_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.string_value_list = input;
-            self
+        pub fn set_string_value_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.string_value_list = input; self
         }
         /// Consumes the builder and constructs a [`FilterCondition`](crate::model::FilterCondition).
         pub fn build(self) -> crate::model::FilterCondition {
             crate::model::FilterCondition {
-                field: self.field,
-                comparison_operator: self.comparison_operator,
-                string_value_list: self.string_value_list,
+                field: self.field
+                ,
+                comparison_operator: self.comparison_operator
+                ,
+                string_value_list: self.string_value_list
+                ,
             }
         }
     }
+    
+    
 }
 impl FilterCondition {
     /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
@@ -3614,9 +3378,9 @@ impl FilterCondition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
@@ -3647,22 +3411,14 @@ impl FilterCondition {
 /// Specifically, when `comparisonoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComparisonOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
@@ -3687,7 +3443,7 @@ pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     NotContains,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
@@ -3703,19 +3459,17 @@ impl std::convert::From<&str> for ComparisonOperator {
             "LT" => ComparisonOperator::Lt,
             "NE" => ComparisonOperator::Ne,
             "NOT_CONTAINS" => ComparisonOperator::NotContains,
-            other => {
-                ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComparisonOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComparisonOperator::from(s))
+                }
+            }
 impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3731,23 +3485,13 @@ impl ComparisonOperator {
             ComparisonOperator::Lt => "LT",
             ComparisonOperator::Ne => "NE",
             ComparisonOperator::NotContains => "NOT_CONTAINS",
-            ComparisonOperator::Unknown(value) => value.as_str(),
+            ComparisonOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BEGINS_WITH",
-            "BETWEEN",
-            "CONTAINS",
-            "EQ",
-            "GE",
-            "GT",
-            "IN",
-            "LE",
-            "LT",
-            "NE",
-            "NOT_CONTAINS",
+            "BEGINS_WITH", "BETWEEN", "CONTAINS", "EQ", "GE", "GT", "IN", "LE", "LT", "NE", "NOT_CONTAINS"
         ]
     }
 }
@@ -3763,9 +3507,9 @@ impl AsRef<str> for ComparisonOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fieldnamestring = unimplemented!();
 /// match fieldnamestring {
@@ -3788,22 +3532,14 @@ impl AsRef<str> for ComparisonOperator {
 /// Specifically, when `fieldnamestring` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FieldNameString::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FieldNameString {
     #[allow(missing_docs)] // documentation missing in model
     LastModified,
@@ -3812,7 +3548,7 @@ pub enum FieldNameString {
     #[allow(missing_docs)] // documentation missing in model
     RoleArn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FieldNameString {
     fn from(s: &str) -> Self {
@@ -3820,17 +3556,17 @@ impl std::convert::From<&str> for FieldNameString {
             "LAST_MODIFIED" => FieldNameString::LastModified,
             "RESOURCE_ARN" => FieldNameString::ResourceArn,
             "ROLE_ARN" => FieldNameString::RoleArn,
-            other => FieldNameString::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FieldNameString::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FieldNameString {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FieldNameString::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FieldNameString::from(s))
+                }
+            }
 impl FieldNameString {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3838,12 +3574,14 @@ impl FieldNameString {
             FieldNameString::LastModified => "LAST_MODIFIED",
             FieldNameString::ResourceArn => "RESOURCE_ARN",
             FieldNameString::RoleArn => "ROLE_ARN",
-            FieldNameString::Unknown(value) => value.as_str(),
+            FieldNameString::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LAST_MODIFIED", "RESOURCE_ARN", "ROLE_ARN"]
+        &[
+            "LAST_MODIFIED", "RESOURCE_ARN", "ROLE_ARN"
+        ]
     }
 }
 impl AsRef<str> for FieldNameString {
@@ -3855,7 +3593,7 @@ impl AsRef<str> for FieldNameString {
 /// <p>The permissions granted or revoked on a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrincipalResourcePermissions {
+pub struct PrincipalResourcePermissions  {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
     #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
@@ -3874,39 +3612,36 @@ pub struct PrincipalResourcePermissions {
 }
 impl PrincipalResourcePermissions {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
-    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+    pub fn principal(&self) -> std::option::Option<& crate::model::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>The resource where permissions are to be granted or revoked.</p>
-    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+    pub fn resource(&self) -> std::option::Option<& crate::model::Resource> {
         self.resource.as_ref()
     }
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::Permission]> {
         self.permissions.as_deref()
     }
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    pub fn permissions_with_grant_option(
-        &self,
-    ) -> std::option::Option<&[crate::model::Permission]> {
+    pub fn permissions_with_grant_option(&self) -> std::option::Option<& [crate::model::Permission]> {
         self.permissions_with_grant_option.as_deref()
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
-    pub fn additional_details(&self) -> std::option::Option<&crate::model::DetailsMap> {
+    pub fn additional_details(&self) -> std::option::Option<& crate::model::DetailsMap> {
         self.additional_details.as_ref()
     }
 }
 /// See [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions).
 pub mod principal_resource_permissions {
-
+    
     /// A builder for [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal: std::option::Option<crate::model::DataLakePrincipal>,
         pub(crate) resource: std::option::Option<crate::model::Resource>,
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        pub(crate) permissions_with_grant_option:
-            std::option::Option<std::vec::Vec<crate::model::Permission>>,
+        pub(crate) permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
         pub(crate) additional_details: std::option::Option<crate::model::DetailsMap>,
     }
     impl Builder {
@@ -3916,12 +3651,8 @@ pub mod principal_resource_permissions {
             self
         }
         /// <p>The Data Lake principal to be granted or revoked permissions.</p>
-        pub fn set_principal(
-            mut self,
-            input: std::option::Option<crate::model::DataLakePrincipal>,
-        ) -> Self {
-            self.principal = input;
-            self
+        pub fn set_principal(mut self, input: std::option::Option<crate::model::DataLakePrincipal>) -> Self {
+            self.principal = input; self
         }
         /// <p>The resource where permissions are to be granted or revoked.</p>
         pub fn resource(mut self, input: crate::model::Resource) -> Self {
@@ -3930,8 +3661,7 @@ pub mod principal_resource_permissions {
         }
         /// <p>The resource where permissions are to be granted or revoked.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -3940,17 +3670,13 @@ pub mod principal_resource_permissions {
         /// <p>The permissions to be granted or revoked on the resource.</p>
         pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>The permissions to be granted or revoked on the resource.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Permission>>) -> Self {
+            self.permissions = input; self
         }
         /// Appends an item to `permissions_with_grant_option`.
         ///
@@ -3959,17 +3685,13 @@ pub mod principal_resource_permissions {
         /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
         pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions_with_grant_option.unwrap_or_default();
-            v.push(input);
-            self.permissions_with_grant_option = Some(v);
-            self
+                            v.push(input);
+                            self.permissions_with_grant_option = Some(v);
+                            self
         }
         /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-        pub fn set_permissions_with_grant_option(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        ) -> Self {
-            self.permissions_with_grant_option = input;
-            self
+        pub fn set_permissions_with_grant_option(mut self, input: std::option::Option<std::vec::Vec<crate::model::Permission>>) -> Self {
+            self.permissions_with_grant_option = input; self
         }
         /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
         pub fn additional_details(mut self, input: crate::model::DetailsMap) -> Self {
@@ -3977,24 +3699,27 @@ pub mod principal_resource_permissions {
             self
         }
         /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
-        pub fn set_additional_details(
-            mut self,
-            input: std::option::Option<crate::model::DetailsMap>,
-        ) -> Self {
-            self.additional_details = input;
-            self
+        pub fn set_additional_details(mut self, input: std::option::Option<crate::model::DetailsMap>) -> Self {
+            self.additional_details = input; self
         }
         /// Consumes the builder and constructs a [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions).
         pub fn build(self) -> crate::model::PrincipalResourcePermissions {
             crate::model::PrincipalResourcePermissions {
-                principal: self.principal,
-                resource: self.resource,
-                permissions: self.permissions,
-                permissions_with_grant_option: self.permissions_with_grant_option,
-                additional_details: self.additional_details,
+                principal: self.principal
+                ,
+                resource: self.resource
+                ,
+                permissions: self.permissions
+                ,
+                permissions_with_grant_option: self.permissions_with_grant_option
+                ,
+                additional_details: self.additional_details
+                ,
             }
         }
     }
+    
+    
 }
 impl PrincipalResourcePermissions {
     /// Creates a new builder-style object to manufacture [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions).
@@ -4003,24 +3728,24 @@ impl PrincipalResourcePermissions {
     }
 }
 
-/// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p>
+/// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p> 
 /// <p>If a catalog resource is shared through Resource Access Manager (RAM), then there will exist a corresponding RAM resource share ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetailsMap {
+pub struct DetailsMap  {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
     #[doc(hidden)]
     pub resource_share: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn resource_share(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_share(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_share.as_deref()
     }
 }
 /// See [`DetailsMap`](crate::model::DetailsMap).
 pub mod details_map {
-
+    
     /// A builder for [`DetailsMap`](crate::model::DetailsMap).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4034,25 +3759,24 @@ pub mod details_map {
         /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
         pub fn resource_share(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share.unwrap_or_default();
-            v.push(input.into());
-            self.resource_share = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_share = Some(v);
+                            self
         }
         /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-        pub fn set_resource_share(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_share = input;
-            self
+        pub fn set_resource_share(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_share = input; self
         }
         /// Consumes the builder and constructs a [`DetailsMap`](crate::model::DetailsMap).
         pub fn build(self) -> crate::model::DetailsMap {
             crate::model::DetailsMap {
-                resource_share: self.resource_share,
+                resource_share: self.resource_share
+                ,
             }
         }
     }
+    
+    
 }
 impl DetailsMap {
     /// Creates a new builder-style object to manufacture [`DetailsMap`](crate::model::DetailsMap).
@@ -4067,9 +3791,9 @@ impl DetailsMap {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datalakeresourcetype = unimplemented!();
 /// match datalakeresourcetype {
@@ -4097,22 +3821,14 @@ impl DetailsMap {
 /// Specifically, when `datalakeresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataLakeResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataLakeResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Catalog,
@@ -4131,7 +3847,7 @@ pub enum DataLakeResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Table,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataLakeResourceType {
     fn from(s: &str) -> Self {
@@ -4144,19 +3860,17 @@ impl std::convert::From<&str> for DataLakeResourceType {
             "LF_TAG_POLICY_DATABASE" => DataLakeResourceType::LfTagPolicyDatabase,
             "LF_TAG_POLICY_TABLE" => DataLakeResourceType::LfTagPolicyTable,
             "TABLE" => DataLakeResourceType::Table,
-            other => {
-                DataLakeResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DataLakeResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataLakeResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataLakeResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataLakeResourceType::from(s))
+                }
+            }
 impl DataLakeResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4169,20 +3883,13 @@ impl DataLakeResourceType {
             DataLakeResourceType::LfTagPolicyDatabase => "LF_TAG_POLICY_DATABASE",
             DataLakeResourceType::LfTagPolicyTable => "LF_TAG_POLICY_TABLE",
             DataLakeResourceType::Table => "TABLE",
-            DataLakeResourceType::Unknown(value) => value.as_str(),
+            DataLakeResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CATALOG",
-            "DATABASE",
-            "DATA_LOCATION",
-            "LF_TAG",
-            "LF_TAG_POLICY",
-            "LF_TAG_POLICY_DATABASE",
-            "LF_TAG_POLICY_TABLE",
-            "TABLE",
+            "CATALOG", "DATABASE", "DATA_LOCATION", "LF_TAG", "LF_TAG_POLICY", "LF_TAG_POLICY_DATABASE", "LF_TAG_POLICY_TABLE", "TABLE"
         ]
     }
 }
@@ -4198,9 +3905,9 @@ impl AsRef<str> for DataLakeResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcesharetype = unimplemented!();
 /// match resourcesharetype {
@@ -4222,60 +3929,52 @@ impl AsRef<str> for DataLakeResourceType {
 /// Specifically, when `resourcesharetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceShareType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceShareType {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     Foreign,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareType {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => ResourceShareType::All,
             "FOREIGN" => ResourceShareType::Foreign,
-            other => {
-                ResourceShareType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceShareType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceShareType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceShareType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceShareType::from(s))
+                }
+            }
 impl ResourceShareType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareType::All => "ALL",
             ResourceShareType::Foreign => "FOREIGN",
-            ResourceShareType::Unknown(value) => value.as_str(),
+            ResourceShareType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "FOREIGN"]
+        &[
+            "ALL", "FOREIGN"
+        ]
     }
 }
 impl AsRef<str> for ResourceShareType {
@@ -4287,7 +3986,7 @@ impl AsRef<str> for ResourceShareType {
 /// <p>A structure that describes certain columns on certain rows.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataCellsFilter {
+pub struct DataCellsFilter  {
     /// <p>The ID of the catalog to which the table belongs.</p>
     #[doc(hidden)]
     pub table_catalog_id: std::option::Option<std::string::String>,
@@ -4306,45 +4005,45 @@ pub struct DataCellsFilter {
     /// <p>A list of column names.</p>
     #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A wildcard with exclusions.</p>
+    /// <p>A wildcard with exclusions.</p> 
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     #[doc(hidden)]
     pub column_wildcard: std::option::Option<crate::model::ColumnWildcard>,
 }
 impl DataCellsFilter {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(&self) -> std::option::Option<&str> {
+    pub fn table_catalog_id(&self) -> std::option::Option<& str> {
         self.table_catalog_id.as_deref()
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A table in the database.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name given by the user to the data filter cell.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A PartiQL predicate.</p>
-    pub fn row_filter(&self) -> std::option::Option<&crate::model::RowFilter> {
+    pub fn row_filter(&self) -> std::option::Option<& crate::model::RowFilter> {
         self.row_filter.as_ref()
     }
     /// <p>A list of column names.</p>
-    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn column_names(&self) -> std::option::Option<& [std::string::String]> {
         self.column_names.as_deref()
     }
-    /// <p>A wildcard with exclusions.</p>
+    /// <p>A wildcard with exclusions.</p> 
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
-    pub fn column_wildcard(&self) -> std::option::Option<&crate::model::ColumnWildcard> {
+    pub fn column_wildcard(&self) -> std::option::Option<& crate::model::ColumnWildcard> {
         self.column_wildcard.as_ref()
     }
 }
 /// See [`DataCellsFilter`](crate::model::DataCellsFilter).
 pub mod data_cells_filter {
-
+    
     /// A builder for [`DataCellsFilter`](crate::model::DataCellsFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4363,12 +4062,8 @@ pub mod data_cells_filter {
             self
         }
         /// <p>The ID of the catalog to which the table belongs.</p>
-        pub fn set_table_catalog_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.table_catalog_id = input;
-            self
+        pub fn set_table_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_catalog_id = input; self
         }
         /// <p>A database in the Glue Data Catalog.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4376,12 +4071,8 @@ pub mod data_cells_filter {
             self
         }
         /// <p>A database in the Glue Data Catalog.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>A table in the database.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4390,8 +4081,7 @@ pub mod data_cells_filter {
         }
         /// <p>A table in the database.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The name given by the user to the data filter cell.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4400,8 +4090,7 @@ pub mod data_cells_filter {
         }
         /// <p>The name given by the user to the data filter cell.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A PartiQL predicate.</p>
         pub fn row_filter(mut self, input: crate::model::RowFilter) -> Self {
@@ -4409,12 +4098,8 @@ pub mod data_cells_filter {
             self
         }
         /// <p>A PartiQL predicate.</p>
-        pub fn set_row_filter(
-            mut self,
-            input: std::option::Option<crate::model::RowFilter>,
-        ) -> Self {
-            self.row_filter = input;
-            self
+        pub fn set_row_filter(mut self, input: std::option::Option<crate::model::RowFilter>) -> Self {
+            self.row_filter = input; self
         }
         /// Appends an item to `column_names`.
         ///
@@ -4423,46 +4108,47 @@ pub mod data_cells_filter {
         /// <p>A list of column names.</p>
         pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.column_names.unwrap_or_default();
-            v.push(input.into());
-            self.column_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.column_names = Some(v);
+                            self
         }
         /// <p>A list of column names.</p>
-        pub fn set_column_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.column_names = input;
-            self
+        pub fn set_column_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.column_names = input; self
         }
-        /// <p>A wildcard with exclusions.</p>
+        /// <p>A wildcard with exclusions.</p> 
         /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
         pub fn column_wildcard(mut self, input: crate::model::ColumnWildcard) -> Self {
             self.column_wildcard = Some(input);
             self
         }
-        /// <p>A wildcard with exclusions.</p>
+        /// <p>A wildcard with exclusions.</p> 
         /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
-        pub fn set_column_wildcard(
-            mut self,
-            input: std::option::Option<crate::model::ColumnWildcard>,
-        ) -> Self {
-            self.column_wildcard = input;
-            self
+        pub fn set_column_wildcard(mut self, input: std::option::Option<crate::model::ColumnWildcard>) -> Self {
+            self.column_wildcard = input; self
         }
         /// Consumes the builder and constructs a [`DataCellsFilter`](crate::model::DataCellsFilter).
         pub fn build(self) -> crate::model::DataCellsFilter {
             crate::model::DataCellsFilter {
-                table_catalog_id: self.table_catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                name: self.name,
-                row_filter: self.row_filter,
-                column_names: self.column_names,
-                column_wildcard: self.column_wildcard,
+                table_catalog_id: self.table_catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                name: self.name
+                ,
+                row_filter: self.row_filter
+                ,
+                column_names: self.column_names
+                ,
+                column_wildcard: self.column_wildcard
+                ,
             }
         }
     }
+    
+    
 }
 impl DataCellsFilter {
     /// Creates a new builder-style object to manufacture [`DataCellsFilter`](crate::model::DataCellsFilter).
@@ -4474,7 +4160,7 @@ impl DataCellsFilter {
 /// <p>A PartiQL predicate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RowFilter {
+pub struct RowFilter  {
     /// <p>A filter expression.</p>
     #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
@@ -4484,17 +4170,17 @@ pub struct RowFilter {
 }
 impl RowFilter {
     /// <p>A filter expression.</p>
-    pub fn filter_expression(&self) -> std::option::Option<&str> {
+    pub fn filter_expression(&self) -> std::option::Option<& str> {
         self.filter_expression.as_deref()
     }
     /// <p>A wildcard for all rows.</p>
-    pub fn all_rows_wildcard(&self) -> std::option::Option<&crate::model::AllRowsWildcard> {
+    pub fn all_rows_wildcard(&self) -> std::option::Option<& crate::model::AllRowsWildcard> {
         self.all_rows_wildcard.as_ref()
     }
 }
 /// See [`RowFilter`](crate::model::RowFilter).
 pub mod row_filter {
-
+    
     /// A builder for [`RowFilter`](crate::model::RowFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4508,12 +4194,8 @@ pub mod row_filter {
             self
         }
         /// <p>A filter expression.</p>
-        pub fn set_filter_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.filter_expression = input;
-            self
+        pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_expression = input; self
         }
         /// <p>A wildcard for all rows.</p>
         pub fn all_rows_wildcard(mut self, input: crate::model::AllRowsWildcard) -> Self {
@@ -4521,21 +4203,21 @@ pub mod row_filter {
             self
         }
         /// <p>A wildcard for all rows.</p>
-        pub fn set_all_rows_wildcard(
-            mut self,
-            input: std::option::Option<crate::model::AllRowsWildcard>,
-        ) -> Self {
-            self.all_rows_wildcard = input;
-            self
+        pub fn set_all_rows_wildcard(mut self, input: std::option::Option<crate::model::AllRowsWildcard>) -> Self {
+            self.all_rows_wildcard = input; self
         }
         /// Consumes the builder and constructs a [`RowFilter`](crate::model::RowFilter).
         pub fn build(self) -> crate::model::RowFilter {
             crate::model::RowFilter {
-                filter_expression: self.filter_expression,
-                all_rows_wildcard: self.all_rows_wildcard,
+                filter_expression: self.filter_expression
+                ,
+                all_rows_wildcard: self.all_rows_wildcard
+                ,
             }
         }
     }
+    
+    
 }
 impl RowFilter {
     /// Creates a new builder-style object to manufacture [`RowFilter`](crate::model::RowFilter).
@@ -4547,19 +4229,24 @@ impl RowFilter {
 /// <p>A structure that you pass to indicate you want all rows in a filter. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllRowsWildcard {}
+pub struct AllRowsWildcard  {
+}
 /// See [`AllRowsWildcard`](crate::model::AllRowsWildcard).
 pub mod all_rows_wildcard {
-
+    
     /// A builder for [`AllRowsWildcard`](crate::model::AllRowsWildcard).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AllRowsWildcard`](crate::model::AllRowsWildcard).
         pub fn build(self) -> crate::model::AllRowsWildcard {
-            crate::model::AllRowsWildcard {}
+            crate::model::AllRowsWildcard {
+            }
         }
     }
+    
+    
 }
 impl AllRowsWildcard {
     /// Creates a new builder-style object to manufacture [`AllRowsWildcard`](crate::model::AllRowsWildcard).
@@ -4571,7 +4258,7 @@ impl AllRowsWildcard {
 /// <p>Defines the valid range of work unit IDs for querying the execution service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkUnitRange {
+pub struct WorkUnitRange  {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
     #[doc(hidden)]
     pub work_unit_id_max: i64,
@@ -4592,13 +4279,13 @@ impl WorkUnitRange {
         self.work_unit_id_min
     }
     /// <p>A work token used to query the execution service.</p>
-    pub fn work_unit_token(&self) -> std::option::Option<&str> {
+    pub fn work_unit_token(&self) -> std::option::Option<& str> {
         self.work_unit_token.as_deref()
     }
 }
 /// See [`WorkUnitRange`](crate::model::WorkUnitRange).
 pub mod work_unit_range {
-
+    
     /// A builder for [`WorkUnitRange`](crate::model::WorkUnitRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4614,8 +4301,7 @@ pub mod work_unit_range {
         }
         /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
         pub fn set_work_unit_id_max(mut self, input: std::option::Option<i64>) -> Self {
-            self.work_unit_id_max = input;
-            self
+            self.work_unit_id_max = input; self
         }
         /// <p>Defines the minimum work unit ID in the range.</p>
         pub fn work_unit_id_min(mut self, input: i64) -> Self {
@@ -4624,8 +4310,7 @@ pub mod work_unit_range {
         }
         /// <p>Defines the minimum work unit ID in the range.</p>
         pub fn set_work_unit_id_min(mut self, input: std::option::Option<i64>) -> Self {
-            self.work_unit_id_min = input;
-            self
+            self.work_unit_id_min = input; self
         }
         /// <p>A work token used to query the execution service.</p>
         pub fn work_unit_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4633,22 +4318,25 @@ pub mod work_unit_range {
             self
         }
         /// <p>A work token used to query the execution service.</p>
-        pub fn set_work_unit_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.work_unit_token = input;
-            self
+        pub fn set_work_unit_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_unit_token = input; self
         }
         /// Consumes the builder and constructs a [`WorkUnitRange`](crate::model::WorkUnitRange).
         pub fn build(self) -> crate::model::WorkUnitRange {
             crate::model::WorkUnitRange {
-                work_unit_id_max: self.work_unit_id_max.unwrap_or_default(),
-                work_unit_id_min: self.work_unit_id_min.unwrap_or_default(),
-                work_unit_token: self.work_unit_token,
+                work_unit_id_max: self.work_unit_id_max
+                    .unwrap_or_default()
+                ,
+                work_unit_id_min: self.work_unit_id_min
+                    .unwrap_or_default()
+                ,
+                work_unit_token: self.work_unit_token
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkUnitRange {
     /// Creates a new builder-style object to manufacture [`WorkUnitRange`](crate::model::WorkUnitRange).
@@ -4663,9 +4351,9 @@ impl WorkUnitRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permissiontype = unimplemented!();
 /// match permissiontype {
@@ -4687,58 +4375,52 @@ impl WorkUnitRange {
 /// Specifically, when `permissiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PermissionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PermissionType {
     #[allow(missing_docs)] // documentation missing in model
     CellFilterPermission,
     #[allow(missing_docs)] // documentation missing in model
     ColumnPermission,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PermissionType {
     fn from(s: &str) -> Self {
         match s {
             "CELL_FILTER_PERMISSION" => PermissionType::CellFilterPermission,
             "COLUMN_PERMISSION" => PermissionType::ColumnPermission,
-            other => PermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PermissionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PermissionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PermissionType::from(s))
+                }
+            }
 impl PermissionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PermissionType::CellFilterPermission => "CELL_FILTER_PERMISSION",
             PermissionType::ColumnPermission => "COLUMN_PERMISSION",
-            PermissionType::Unknown(value) => value.as_str(),
+            PermissionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CELL_FILTER_PERMISSION", "COLUMN_PERMISSION"]
+        &[
+            "CELL_FILTER_PERMISSION", "COLUMN_PERMISSION"
+        ]
     }
 }
 impl AsRef<str> for PermissionType {
@@ -4750,20 +4432,20 @@ impl AsRef<str> for PermissionType {
 /// <p>A structure used to include auditing information on the privileged API. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuditContext {
+pub struct AuditContext  {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
     #[doc(hidden)]
     pub additional_audit_context: std::option::Option<std::string::String>,
 }
 impl AuditContext {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
-    pub fn additional_audit_context(&self) -> std::option::Option<&str> {
+    pub fn additional_audit_context(&self) -> std::option::Option<& str> {
         self.additional_audit_context.as_deref()
     }
 }
 /// See [`AuditContext`](crate::model::AuditContext).
 pub mod audit_context {
-
+    
     /// A builder for [`AuditContext`](crate::model::AuditContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4776,20 +4458,19 @@ pub mod audit_context {
             self
         }
         /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
-        pub fn set_additional_audit_context(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_audit_context = input;
-            self
+        pub fn set_additional_audit_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_audit_context = input; self
         }
         /// Consumes the builder and constructs a [`AuditContext`](crate::model::AuditContext).
         pub fn build(self) -> crate::model::AuditContext {
             crate::model::AuditContext {
-                additional_audit_context: self.additional_audit_context,
+                additional_audit_context: self.additional_audit_context
+                ,
             }
         }
     }
+    
+    
 }
 impl AuditContext {
     /// Creates a new builder-style object to manufacture [`AuditContext`](crate::model::AuditContext).
@@ -4801,20 +4482,20 @@ impl AuditContext {
 /// <p>Contains a list of values defining partitions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartitionValueList {
+pub struct PartitionValueList  {
     /// <p>The list of partition values.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PartitionValueList {
     /// <p>The list of partition values.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`PartitionValueList`](crate::model::PartitionValueList).
 pub mod partition_value_list {
-
+    
     /// A builder for [`PartitionValueList`](crate::model::PartitionValueList).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4828,25 +4509,24 @@ pub mod partition_value_list {
         /// <p>The list of partition values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The list of partition values.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`PartitionValueList`](crate::model::PartitionValueList).
         pub fn build(self) -> crate::model::PartitionValueList {
             crate::model::PartitionValueList {
-                values: self.values,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl PartitionValueList {
     /// Creates a new builder-style object to manufacture [`PartitionValueList`](crate::model::PartitionValueList).
@@ -4858,7 +4538,7 @@ impl PartitionValueList {
 /// <p>A structure containing a list of partition values and table objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartitionObjects {
+pub struct PartitionObjects  {
     /// <p>A list of partition values.</p>
     #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4868,17 +4548,17 @@ pub struct PartitionObjects {
 }
 impl PartitionObjects {
     /// <p>A list of partition values.</p>
-    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_values(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_values.as_deref()
     }
     /// <p>A list of table objects</p>
-    pub fn objects(&self) -> std::option::Option<&[crate::model::TableObject]> {
+    pub fn objects(&self) -> std::option::Option<& [crate::model::TableObject]> {
         self.objects.as_deref()
     }
 }
 /// See [`PartitionObjects`](crate::model::PartitionObjects).
 pub mod partition_objects {
-
+    
     /// A builder for [`PartitionObjects`](crate::model::PartitionObjects).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4893,17 +4573,13 @@ pub mod partition_objects {
         /// <p>A list of partition values.</p>
         pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_values.unwrap_or_default();
-            v.push(input.into());
-            self.partition_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.partition_values = Some(v);
+                            self
         }
         /// <p>A list of partition values.</p>
-        pub fn set_partition_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.partition_values = input;
-            self
+        pub fn set_partition_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.partition_values = input; self
         }
         /// Appends an item to `objects`.
         ///
@@ -4912,26 +4588,26 @@ pub mod partition_objects {
         /// <p>A list of table objects</p>
         pub fn objects(mut self, input: crate::model::TableObject) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(input);
-            self.objects = Some(v);
-            self
+                            v.push(input);
+                            self.objects = Some(v);
+                            self
         }
         /// <p>A list of table objects</p>
-        pub fn set_objects(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TableObject>>,
-        ) -> Self {
-            self.objects = input;
-            self
+        pub fn set_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::TableObject>>) -> Self {
+            self.objects = input; self
         }
         /// Consumes the builder and constructs a [`PartitionObjects`](crate::model::PartitionObjects).
         pub fn build(self) -> crate::model::PartitionObjects {
             crate::model::PartitionObjects {
-                partition_values: self.partition_values,
-                objects: self.objects,
+                partition_values: self.partition_values
+                ,
+                objects: self.objects
+                ,
             }
         }
     }
+    
+    
 }
 impl PartitionObjects {
     /// Creates a new builder-style object to manufacture [`PartitionObjects`](crate::model::PartitionObjects).
@@ -4943,7 +4619,7 @@ impl PartitionObjects {
 /// <p>Specifies the details of a governed table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableObject {
+pub struct TableObject  {
     /// <p>The Amazon S3 location of the object.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -4956,11 +4632,11 @@ pub struct TableObject {
 }
 impl TableObject {
     /// <p>The Amazon S3 location of the object.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
@@ -4970,7 +4646,7 @@ impl TableObject {
 }
 /// See [`TableObject`](crate::model::TableObject).
 pub mod table_object {
-
+    
     /// A builder for [`TableObject`](crate::model::TableObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4986,8 +4662,7 @@ pub mod table_object {
         }
         /// <p>The Amazon S3 location of the object.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4996,8 +4671,7 @@ pub mod table_object {
         }
         /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = input;
-            self
+            self.e_tag = input; self
         }
         /// <p>The size of the Amazon S3 object in bytes.</p>
         pub fn size(mut self, input: i64) -> Self {
@@ -5006,18 +4680,23 @@ pub mod table_object {
         }
         /// <p>The size of the Amazon S3 object in bytes.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// Consumes the builder and constructs a [`TableObject`](crate::model::TableObject).
         pub fn build(self) -> crate::model::TableObject {
             crate::model::TableObject {
-                uri: self.uri,
-                e_tag: self.e_tag,
-                size: self.size.unwrap_or_default(),
+                uri: self.uri
+                ,
+                e_tag: self.e_tag
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl TableObject {
     /// Creates a new builder-style object to manufacture [`TableObject`](crate::model::TableObject).
@@ -5029,7 +4708,7 @@ impl TableObject {
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlanningStatistics {
+pub struct PlanningStatistics  {
     /// <p>An estimate of the data that was scanned in bytes.</p>
     #[doc(hidden)]
     pub estimated_data_to_scan_bytes: i64,
@@ -5063,7 +4742,7 @@ impl PlanningStatistics {
 }
 /// See [`PlanningStatistics`](crate::model::PlanningStatistics).
 pub mod planning_statistics {
-
+    
     /// A builder for [`PlanningStatistics`](crate::model::PlanningStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5080,8 +4759,7 @@ pub mod planning_statistics {
         }
         /// <p>An estimate of the data that was scanned in bytes.</p>
         pub fn set_estimated_data_to_scan_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.estimated_data_to_scan_bytes = input;
-            self
+            self.estimated_data_to_scan_bytes = input; self
         }
         /// <p>The time that it took to process the request.</p>
         pub fn planning_time_millis(mut self, input: i64) -> Self {
@@ -5090,8 +4768,7 @@ pub mod planning_statistics {
         }
         /// <p>The time that it took to process the request.</p>
         pub fn set_planning_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.planning_time_millis = input;
-            self
+            self.planning_time_millis = input; self
         }
         /// <p>The time the request was in queue to be processed.</p>
         pub fn queue_time_millis(mut self, input: i64) -> Self {
@@ -5100,8 +4777,7 @@ pub mod planning_statistics {
         }
         /// <p>The time the request was in queue to be processed.</p>
         pub fn set_queue_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.queue_time_millis = input;
-            self
+            self.queue_time_millis = input; self
         }
         /// <p>The number of work units generated.</p>
         pub fn work_units_generated_count(mut self, input: i64) -> Self {
@@ -5110,19 +4786,28 @@ pub mod planning_statistics {
         }
         /// <p>The number of work units generated.</p>
         pub fn set_work_units_generated_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.work_units_generated_count = input;
-            self
+            self.work_units_generated_count = input; self
         }
         /// Consumes the builder and constructs a [`PlanningStatistics`](crate::model::PlanningStatistics).
         pub fn build(self) -> crate::model::PlanningStatistics {
             crate::model::PlanningStatistics {
-                estimated_data_to_scan_bytes: self.estimated_data_to_scan_bytes.unwrap_or_default(),
-                planning_time_millis: self.planning_time_millis.unwrap_or_default(),
-                queue_time_millis: self.queue_time_millis.unwrap_or_default(),
-                work_units_generated_count: self.work_units_generated_count.unwrap_or_default(),
+                estimated_data_to_scan_bytes: self.estimated_data_to_scan_bytes
+                    .unwrap_or_default()
+                ,
+                planning_time_millis: self.planning_time_millis
+                    .unwrap_or_default()
+                ,
+                queue_time_millis: self.queue_time_millis
+                    .unwrap_or_default()
+                ,
+                work_units_generated_count: self.work_units_generated_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PlanningStatistics {
     /// Creates a new builder-style object to manufacture [`PlanningStatistics`](crate::model::PlanningStatistics).
@@ -5134,7 +4819,7 @@ impl PlanningStatistics {
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionStatistics {
+pub struct ExecutionStatistics  {
     /// <p>The average time the request took to be executed.</p>
     #[doc(hidden)]
     pub average_execution_time_millis: i64,
@@ -5161,7 +4846,7 @@ impl ExecutionStatistics {
 }
 /// See [`ExecutionStatistics`](crate::model::ExecutionStatistics).
 pub mod execution_statistics {
-
+    
     /// A builder for [`ExecutionStatistics`](crate::model::ExecutionStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5176,12 +4861,8 @@ pub mod execution_statistics {
             self
         }
         /// <p>The average time the request took to be executed.</p>
-        pub fn set_average_execution_time_millis(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.average_execution_time_millis = input;
-            self
+        pub fn set_average_execution_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.average_execution_time_millis = input; self
         }
         /// <p>The amount of data that was scanned in bytes.</p>
         pub fn data_scanned_bytes(mut self, input: i64) -> Self {
@@ -5190,8 +4871,7 @@ pub mod execution_statistics {
         }
         /// <p>The amount of data that was scanned in bytes.</p>
         pub fn set_data_scanned_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_scanned_bytes = input;
-            self
+            self.data_scanned_bytes = input; self
         }
         /// <p>The number of work units executed.</p>
         pub fn work_units_executed_count(mut self, input: i64) -> Self {
@@ -5200,20 +4880,25 @@ pub mod execution_statistics {
         }
         /// <p>The number of work units executed.</p>
         pub fn set_work_units_executed_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.work_units_executed_count = input;
-            self
+            self.work_units_executed_count = input; self
         }
         /// Consumes the builder and constructs a [`ExecutionStatistics`](crate::model::ExecutionStatistics).
         pub fn build(self) -> crate::model::ExecutionStatistics {
             crate::model::ExecutionStatistics {
-                average_execution_time_millis: self
-                    .average_execution_time_millis
-                    .unwrap_or_default(),
-                data_scanned_bytes: self.data_scanned_bytes.unwrap_or_default(),
-                work_units_executed_count: self.work_units_executed_count.unwrap_or_default(),
+                average_execution_time_millis: self.average_execution_time_millis
+                    .unwrap_or_default()
+                ,
+                data_scanned_bytes: self.data_scanned_bytes
+                    .unwrap_or_default()
+                ,
+                work_units_executed_count: self.work_units_executed_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecutionStatistics {
     /// Creates a new builder-style object to manufacture [`ExecutionStatistics`](crate::model::ExecutionStatistics).
@@ -5228,9 +4913,9 @@ impl ExecutionStatistics {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let querystatestring = unimplemented!();
 /// match querystatestring {
@@ -5255,22 +4940,14 @@ impl ExecutionStatistics {
 /// Specifically, when `querystatestring` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QueryStateString::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QueryStateString {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -5283,7 +4960,7 @@ pub enum QueryStateString {
     #[allow(missing_docs)] // documentation missing in model
     WorkunitsAvailable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryStateString {
     fn from(s: &str) -> Self {
@@ -5293,17 +4970,17 @@ impl std::convert::From<&str> for QueryStateString {
             "FINISHED" => QueryStateString::Finished,
             "PENDING" => QueryStateString::Pending,
             "WORKUNITS_AVAILABLE" => QueryStateString::WorkunitsAvailable,
-            other => QueryStateString::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => QueryStateString::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for QueryStateString {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueryStateString::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QueryStateString::from(s))
+                }
+            }
 impl QueryStateString {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5313,17 +4990,13 @@ impl QueryStateString {
             QueryStateString::Finished => "FINISHED",
             QueryStateString::Pending => "PENDING",
             QueryStateString::WorkunitsAvailable => "WORKUNITS_AVAILABLE",
-            QueryStateString::Unknown(value) => value.as_str(),
+            QueryStateString::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ERROR",
-            "EXPIRED",
-            "FINISHED",
-            "PENDING",
-            "WORKUNITS_AVAILABLE",
+            "ERROR", "EXPIRED", "FINISHED", "PENDING", "WORKUNITS_AVAILABLE"
         ]
     }
 }
@@ -5336,7 +5009,7 @@ impl AsRef<str> for QueryStateString {
 /// <p>An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that <code>VirtualPut</code> was called before writing the object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualObject {
+pub struct VirtualObject  {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -5346,17 +5019,17 @@ pub struct VirtualObject {
 }
 impl VirtualObject {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The ETag of the Amazon S3 object.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 /// See [`VirtualObject`](crate::model::VirtualObject).
 pub mod virtual_object {
-
+    
     /// A builder for [`VirtualObject`](crate::model::VirtualObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5371,8 +5044,7 @@ pub mod virtual_object {
         }
         /// <p>The path to the Amazon S3 object. Must start with s3://</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The ETag of the Amazon S3 object.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5381,17 +5053,20 @@ pub mod virtual_object {
         }
         /// <p>The ETag of the Amazon S3 object.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = input;
-            self
+            self.e_tag = input; self
         }
         /// Consumes the builder and constructs a [`VirtualObject`](crate::model::VirtualObject).
         pub fn build(self) -> crate::model::VirtualObject {
             crate::model::VirtualObject {
-                uri: self.uri,
-                e_tag: self.e_tag,
+                uri: self.uri
+                ,
+                e_tag: self.e_tag
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualObject {
     /// Creates a new builder-style object to manufacture [`VirtualObject`](crate::model::VirtualObject).
@@ -5403,7 +5078,7 @@ impl VirtualObject {
 /// <p>A list of failures when performing a batch grant or batch revoke operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPermissionsFailureEntry {
+pub struct BatchPermissionsFailureEntry  {
     /// <p>An identifier for an entry of the batch request.</p>
     #[doc(hidden)]
     pub request_entry: std::option::Option<crate::model::BatchPermissionsRequestEntry>,
@@ -5413,19 +5088,17 @@ pub struct BatchPermissionsFailureEntry {
 }
 impl BatchPermissionsFailureEntry {
     /// <p>An identifier for an entry of the batch request.</p>
-    pub fn request_entry(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchPermissionsRequestEntry> {
+    pub fn request_entry(&self) -> std::option::Option<& crate::model::BatchPermissionsRequestEntry> {
         self.request_entry.as_ref()
     }
     /// <p>An error message that applies to the failure of the entry.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorDetail> {
         self.error.as_ref()
     }
 }
 /// See [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry).
 pub mod batch_permissions_failure_entry {
-
+    
     /// A builder for [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5439,12 +5112,8 @@ pub mod batch_permissions_failure_entry {
             self
         }
         /// <p>An identifier for an entry of the batch request.</p>
-        pub fn set_request_entry(
-            mut self,
-            input: std::option::Option<crate::model::BatchPermissionsRequestEntry>,
-        ) -> Self {
-            self.request_entry = input;
-            self
+        pub fn set_request_entry(mut self, input: std::option::Option<crate::model::BatchPermissionsRequestEntry>) -> Self {
+            self.request_entry = input; self
         }
         /// <p>An error message that applies to the failure of the entry.</p>
         pub fn error(mut self, input: crate::model::ErrorDetail) -> Self {
@@ -5453,17 +5122,20 @@ pub mod batch_permissions_failure_entry {
         }
         /// <p>An error message that applies to the failure of the entry.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetail>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry).
         pub fn build(self) -> crate::model::BatchPermissionsFailureEntry {
             crate::model::BatchPermissionsFailureEntry {
-                request_entry: self.request_entry,
-                error: self.error,
+                request_entry: self.request_entry
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPermissionsFailureEntry {
     /// Creates a new builder-style object to manufacture [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry).
@@ -5475,7 +5147,7 @@ impl BatchPermissionsFailureEntry {
 /// <p>A permission to a resource granted by batch operation to the principal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPermissionsRequestEntry {
+pub struct BatchPermissionsRequestEntry  {
     /// <p>A unique identifier for the batch permissions request entry.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5494,31 +5166,29 @@ pub struct BatchPermissionsRequestEntry {
 }
 impl BatchPermissionsRequestEntry {
     /// <p>A unique identifier for the batch permissions request entry.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The principal to be granted a permission.</p>
-    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+    pub fn principal(&self) -> std::option::Option<& crate::model::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>The resource to which the principal is to be granted a permission.</p>
-    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+    pub fn resource(&self) -> std::option::Option<& crate::model::Resource> {
         self.resource.as_ref()
     }
     /// <p>The permissions to be granted.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::Permission]> {
         self.permissions.as_deref()
     }
     /// <p>Indicates if the option to pass permissions is granted.</p>
-    pub fn permissions_with_grant_option(
-        &self,
-    ) -> std::option::Option<&[crate::model::Permission]> {
+    pub fn permissions_with_grant_option(&self) -> std::option::Option<& [crate::model::Permission]> {
         self.permissions_with_grant_option.as_deref()
     }
 }
 /// See [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry).
 pub mod batch_permissions_request_entry {
-
+    
     /// A builder for [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5526,8 +5196,7 @@ pub mod batch_permissions_request_entry {
         pub(crate) principal: std::option::Option<crate::model::DataLakePrincipal>,
         pub(crate) resource: std::option::Option<crate::model::Resource>,
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        pub(crate) permissions_with_grant_option:
-            std::option::Option<std::vec::Vec<crate::model::Permission>>,
+        pub(crate) permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     }
     impl Builder {
         /// <p>A unique identifier for the batch permissions request entry.</p>
@@ -5537,8 +5206,7 @@ pub mod batch_permissions_request_entry {
         }
         /// <p>A unique identifier for the batch permissions request entry.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The principal to be granted a permission.</p>
         pub fn principal(mut self, input: crate::model::DataLakePrincipal) -> Self {
@@ -5546,12 +5214,8 @@ pub mod batch_permissions_request_entry {
             self
         }
         /// <p>The principal to be granted a permission.</p>
-        pub fn set_principal(
-            mut self,
-            input: std::option::Option<crate::model::DataLakePrincipal>,
-        ) -> Self {
-            self.principal = input;
-            self
+        pub fn set_principal(mut self, input: std::option::Option<crate::model::DataLakePrincipal>) -> Self {
+            self.principal = input; self
         }
         /// <p>The resource to which the principal is to be granted a permission.</p>
         pub fn resource(mut self, input: crate::model::Resource) -> Self {
@@ -5560,8 +5224,7 @@ pub mod batch_permissions_request_entry {
         }
         /// <p>The resource to which the principal is to be granted a permission.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -5570,17 +5233,13 @@ pub mod batch_permissions_request_entry {
         /// <p>The permissions to be granted.</p>
         pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>The permissions to be granted.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Permission>>) -> Self {
+            self.permissions = input; self
         }
         /// Appends an item to `permissions_with_grant_option`.
         ///
@@ -5589,29 +5248,32 @@ pub mod batch_permissions_request_entry {
         /// <p>Indicates if the option to pass permissions is granted.</p>
         pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions_with_grant_option.unwrap_or_default();
-            v.push(input);
-            self.permissions_with_grant_option = Some(v);
-            self
+                            v.push(input);
+                            self.permissions_with_grant_option = Some(v);
+                            self
         }
         /// <p>Indicates if the option to pass permissions is granted.</p>
-        pub fn set_permissions_with_grant_option(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        ) -> Self {
-            self.permissions_with_grant_option = input;
-            self
+        pub fn set_permissions_with_grant_option(mut self, input: std::option::Option<std::vec::Vec<crate::model::Permission>>) -> Self {
+            self.permissions_with_grant_option = input; self
         }
         /// Consumes the builder and constructs a [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry).
         pub fn build(self) -> crate::model::BatchPermissionsRequestEntry {
             crate::model::BatchPermissionsRequestEntry {
-                id: self.id,
-                principal: self.principal,
-                resource: self.resource,
-                permissions: self.permissions,
-                permissions_with_grant_option: self.permissions_with_grant_option,
+                id: self.id
+                ,
+                principal: self.principal
+                ,
+                resource: self.resource
+                ,
+                permissions: self.permissions
+                ,
+                permissions_with_grant_option: self.permissions_with_grant_option
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPermissionsRequestEntry {
     /// Creates a new builder-style object to manufacture [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry).
@@ -5619,3 +5281,4 @@ impl BatchPermissionsRequestEntry {
         crate::model::batch_permissions_request_entry::Builder::default()
     }
 }
+

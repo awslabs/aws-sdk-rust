@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let licensetype = unimplemented!();
 /// match licensetype {
@@ -30,58 +30,52 @@
 /// Specifically, when `licensetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LicenseType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LicenseType {
     #[allow(missing_docs)] // documentation missing in model
     Aws,
     #[allow(missing_docs)] // documentation missing in model
     Byol,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LicenseType {
     fn from(s: &str) -> Self {
         match s {
             "AWS" => LicenseType::Aws,
             "BYOL" => LicenseType::Byol,
-            other => LicenseType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LicenseType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LicenseType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LicenseType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LicenseType::from(s))
+                }
+            }
 impl LicenseType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseType::Aws => "AWS",
             LicenseType::Byol => "BYOL",
-            LicenseType::Unknown(value) => value.as_str(),
+            LicenseType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS", "BYOL"]
+        &[
+            "AWS", "BYOL"
+        ]
     }
 }
 impl AsRef<str> for LicenseType {
@@ -93,7 +87,7 @@ impl AsRef<str> for LicenseType {
 /// <p>Key/value pair that can be assigned to an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -103,17 +97,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -128,8 +122,7 @@ pub mod tag {
         }
         /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The tag value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,17 +131,20 @@ pub mod tag {
         }
         /// <p>The tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -160,7 +156,7 @@ impl Tag {
 /// <p>Logical grouping of servers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerGroup {
+pub struct ServerGroup  {
     /// <p>The ID of a server group.</p>
     #[doc(hidden)]
     pub server_group_id: std::option::Option<std::string::String>,
@@ -173,21 +169,21 @@ pub struct ServerGroup {
 }
 impl ServerGroup {
     /// <p>The ID of a server group.</p>
-    pub fn server_group_id(&self) -> std::option::Option<&str> {
+    pub fn server_group_id(&self) -> std::option::Option<& str> {
         self.server_group_id.as_deref()
     }
     /// <p>The name of a server group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The servers that belong to a server group.</p>
-    pub fn server_list(&self) -> std::option::Option<&[crate::model::Server]> {
+    pub fn server_list(&self) -> std::option::Option<& [crate::model::Server]> {
         self.server_list.as_deref()
     }
 }
 /// See [`ServerGroup`](crate::model::ServerGroup).
 pub mod server_group {
-
+    
     /// A builder for [`ServerGroup`](crate::model::ServerGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -202,12 +198,8 @@ pub mod server_group {
             self
         }
         /// <p>The ID of a server group.</p>
-        pub fn set_server_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_group_id = input;
-            self
+        pub fn set_server_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_group_id = input; self
         }
         /// <p>The name of a server group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,8 +208,7 @@ pub mod server_group {
         }
         /// <p>The name of a server group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `server_list`.
         ///
@@ -226,27 +217,28 @@ pub mod server_group {
         /// <p>The servers that belong to a server group.</p>
         pub fn server_list(mut self, input: crate::model::Server) -> Self {
             let mut v = self.server_list.unwrap_or_default();
-            v.push(input);
-            self.server_list = Some(v);
-            self
+                            v.push(input);
+                            self.server_list = Some(v);
+                            self
         }
         /// <p>The servers that belong to a server group.</p>
-        pub fn set_server_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Server>>,
-        ) -> Self {
-            self.server_list = input;
-            self
+        pub fn set_server_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Server>>) -> Self {
+            self.server_list = input; self
         }
         /// Consumes the builder and constructs a [`ServerGroup`](crate::model::ServerGroup).
         pub fn build(self) -> crate::model::ServerGroup {
             crate::model::ServerGroup {
-                server_group_id: self.server_group_id,
-                name: self.name,
-                server_list: self.server_list,
+                server_group_id: self.server_group_id
+                ,
+                name: self.name
+                ,
+                server_list: self.server_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerGroup {
     /// Creates a new builder-style object to manufacture [`ServerGroup`](crate::model::ServerGroup).
@@ -258,7 +250,7 @@ impl ServerGroup {
 /// <p>Represents a server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Server {
+pub struct Server  {
     /// <p>The ID of the server.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -277,19 +269,19 @@ pub struct Server {
 }
 impl Server {
     /// <p>The ID of the server.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The type of server.</p>
-    pub fn server_type(&self) -> std::option::Option<&crate::model::ServerType> {
+    pub fn server_type(&self) -> std::option::Option<& crate::model::ServerType> {
         self.server_type.as_ref()
     }
     /// <p>Information about the VM server.</p>
-    pub fn vm_server(&self) -> std::option::Option<&crate::model::VmServer> {
+    pub fn vm_server(&self) -> std::option::Option<& crate::model::VmServer> {
         self.vm_server.as_ref()
     }
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+    pub fn replication_job_id(&self) -> std::option::Option<& str> {
         self.replication_job_id.as_deref()
     }
     /// <p>Indicates whether the replication job is deleted or failed.</p>
@@ -299,7 +291,7 @@ impl Server {
 }
 /// See [`Server`](crate::model::Server).
 pub mod server {
-
+    
     /// A builder for [`Server`](crate::model::Server).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -317,8 +309,7 @@ pub mod server {
         }
         /// <p>The ID of the server.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>The type of server.</p>
         pub fn server_type(mut self, input: crate::model::ServerType) -> Self {
@@ -326,12 +317,8 @@ pub mod server {
             self
         }
         /// <p>The type of server.</p>
-        pub fn set_server_type(
-            mut self,
-            input: std::option::Option<crate::model::ServerType>,
-        ) -> Self {
-            self.server_type = input;
-            self
+        pub fn set_server_type(mut self, input: std::option::Option<crate::model::ServerType>) -> Self {
+            self.server_type = input; self
         }
         /// <p>Information about the VM server.</p>
         pub fn vm_server(mut self, input: crate::model::VmServer) -> Self {
@@ -340,8 +327,7 @@ pub mod server {
         }
         /// <p>Information about the VM server.</p>
         pub fn set_vm_server(mut self, input: std::option::Option<crate::model::VmServer>) -> Self {
-            self.vm_server = input;
-            self
+            self.vm_server = input; self
         }
         /// <p>The ID of the replication job.</p>
         pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -349,12 +335,8 @@ pub mod server {
             self
         }
         /// <p>The ID of the replication job.</p>
-        pub fn set_replication_job_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_job_id = input;
-            self
+        pub fn set_replication_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_job_id = input; self
         }
         /// <p>Indicates whether the replication job is deleted or failed.</p>
         pub fn replication_job_terminated(mut self, input: bool) -> Self {
@@ -363,20 +345,26 @@ pub mod server {
         }
         /// <p>Indicates whether the replication job is deleted or failed.</p>
         pub fn set_replication_job_terminated(mut self, input: std::option::Option<bool>) -> Self {
-            self.replication_job_terminated = input;
-            self
+            self.replication_job_terminated = input; self
         }
         /// Consumes the builder and constructs a [`Server`](crate::model::Server).
         pub fn build(self) -> crate::model::Server {
             crate::model::Server {
-                server_id: self.server_id,
-                server_type: self.server_type,
-                vm_server: self.vm_server,
-                replication_job_id: self.replication_job_id,
-                replication_job_terminated: self.replication_job_terminated,
+                server_id: self.server_id
+                ,
+                server_type: self.server_type
+                ,
+                vm_server: self.vm_server
+                ,
+                replication_job_id: self.replication_job_id
+                ,
+                replication_job_terminated: self.replication_job_terminated
+                ,
             }
         }
     }
+    
+    
 }
 impl Server {
     /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server).
@@ -388,7 +376,7 @@ impl Server {
 /// <p>Represents a VM server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VmServer {
+pub struct VmServer  {
     /// <p>The VM server location.</p>
     #[doc(hidden)]
     pub vm_server_address: std::option::Option<crate::model::VmServerAddress>,
@@ -407,29 +395,29 @@ pub struct VmServer {
 }
 impl VmServer {
     /// <p>The VM server location.</p>
-    pub fn vm_server_address(&self) -> std::option::Option<&crate::model::VmServerAddress> {
+    pub fn vm_server_address(&self) -> std::option::Option<& crate::model::VmServerAddress> {
         self.vm_server_address.as_ref()
     }
     /// <p>The name of the VM.</p>
-    pub fn vm_name(&self) -> std::option::Option<&str> {
+    pub fn vm_name(&self) -> std::option::Option<& str> {
         self.vm_name.as_deref()
     }
     /// <p>The name of the VM manager.</p>
-    pub fn vm_manager_name(&self) -> std::option::Option<&str> {
+    pub fn vm_manager_name(&self) -> std::option::Option<& str> {
         self.vm_manager_name.as_deref()
     }
     /// <p>The type of VM management product.</p>
-    pub fn vm_manager_type(&self) -> std::option::Option<&crate::model::VmManagerType> {
+    pub fn vm_manager_type(&self) -> std::option::Option<& crate::model::VmManagerType> {
         self.vm_manager_type.as_ref()
     }
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
-    pub fn vm_path(&self) -> std::option::Option<&str> {
+    pub fn vm_path(&self) -> std::option::Option<& str> {
         self.vm_path.as_deref()
     }
 }
 /// See [`VmServer`](crate::model::VmServer).
 pub mod vm_server {
-
+    
     /// A builder for [`VmServer`](crate::model::VmServer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -446,12 +434,8 @@ pub mod vm_server {
             self
         }
         /// <p>The VM server location.</p>
-        pub fn set_vm_server_address(
-            mut self,
-            input: std::option::Option<crate::model::VmServerAddress>,
-        ) -> Self {
-            self.vm_server_address = input;
-            self
+        pub fn set_vm_server_address(mut self, input: std::option::Option<crate::model::VmServerAddress>) -> Self {
+            self.vm_server_address = input; self
         }
         /// <p>The name of the VM.</p>
         pub fn vm_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -460,8 +444,7 @@ pub mod vm_server {
         }
         /// <p>The name of the VM.</p>
         pub fn set_vm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vm_name = input;
-            self
+            self.vm_name = input; self
         }
         /// <p>The name of the VM manager.</p>
         pub fn vm_manager_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -469,12 +452,8 @@ pub mod vm_server {
             self
         }
         /// <p>The name of the VM manager.</p>
-        pub fn set_vm_manager_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vm_manager_name = input;
-            self
+        pub fn set_vm_manager_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vm_manager_name = input; self
         }
         /// <p>The type of VM management product.</p>
         pub fn vm_manager_type(mut self, input: crate::model::VmManagerType) -> Self {
@@ -482,12 +461,8 @@ pub mod vm_server {
             self
         }
         /// <p>The type of VM management product.</p>
-        pub fn set_vm_manager_type(
-            mut self,
-            input: std::option::Option<crate::model::VmManagerType>,
-        ) -> Self {
-            self.vm_manager_type = input;
-            self
+        pub fn set_vm_manager_type(mut self, input: std::option::Option<crate::model::VmManagerType>) -> Self {
+            self.vm_manager_type = input; self
         }
         /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
         pub fn vm_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -496,20 +471,26 @@ pub mod vm_server {
         }
         /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
         pub fn set_vm_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vm_path = input;
-            self
+            self.vm_path = input; self
         }
         /// Consumes the builder and constructs a [`VmServer`](crate::model::VmServer).
         pub fn build(self) -> crate::model::VmServer {
             crate::model::VmServer {
-                vm_server_address: self.vm_server_address,
-                vm_name: self.vm_name,
-                vm_manager_name: self.vm_manager_name,
-                vm_manager_type: self.vm_manager_type,
-                vm_path: self.vm_path,
+                vm_server_address: self.vm_server_address
+                ,
+                vm_name: self.vm_name
+                ,
+                vm_manager_name: self.vm_manager_name
+                ,
+                vm_manager_type: self.vm_manager_type
+                ,
+                vm_path: self.vm_path
+                ,
             }
         }
     }
+    
+    
 }
 impl VmServer {
     /// Creates a new builder-style object to manufacture [`VmServer`](crate::model::VmServer).
@@ -524,9 +505,9 @@ impl VmServer {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vmmanagertype = unimplemented!();
 /// match vmmanagertype {
@@ -549,22 +530,14 @@ impl VmServer {
 /// Specifically, when `vmmanagertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VmManagerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VmManagerType {
     #[allow(missing_docs)] // documentation missing in model
     HyperVManager,
@@ -573,7 +546,7 @@ pub enum VmManagerType {
     #[allow(missing_docs)] // documentation missing in model
     VSphere,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VmManagerType {
     fn from(s: &str) -> Self {
@@ -581,17 +554,17 @@ impl std::convert::From<&str> for VmManagerType {
             "HYPERV-MANAGER" => VmManagerType::HyperVManager,
             "SCVMM" => VmManagerType::Scvmm,
             "VSPHERE" => VmManagerType::VSphere,
-            other => VmManagerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VmManagerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VmManagerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VmManagerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VmManagerType::from(s))
+                }
+            }
 impl VmManagerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -599,12 +572,14 @@ impl VmManagerType {
             VmManagerType::HyperVManager => "HYPERV-MANAGER",
             VmManagerType::Scvmm => "SCVMM",
             VmManagerType::VSphere => "VSPHERE",
-            VmManagerType::Unknown(value) => value.as_str(),
+            VmManagerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HYPERV-MANAGER", "SCVMM", "VSPHERE"]
+        &[
+            "HYPERV-MANAGER", "SCVMM", "VSPHERE"
+        ]
     }
 }
 impl AsRef<str> for VmManagerType {
@@ -616,7 +591,7 @@ impl AsRef<str> for VmManagerType {
 /// <p>Represents a VM server location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VmServerAddress {
+pub struct VmServerAddress  {
     /// <p>The ID of the VM manager.</p>
     #[doc(hidden)]
     pub vm_manager_id: std::option::Option<std::string::String>,
@@ -626,17 +601,17 @@ pub struct VmServerAddress {
 }
 impl VmServerAddress {
     /// <p>The ID of the VM manager.</p>
-    pub fn vm_manager_id(&self) -> std::option::Option<&str> {
+    pub fn vm_manager_id(&self) -> std::option::Option<& str> {
         self.vm_manager_id.as_deref()
     }
     /// <p>The ID of the VM.</p>
-    pub fn vm_id(&self) -> std::option::Option<&str> {
+    pub fn vm_id(&self) -> std::option::Option<& str> {
         self.vm_id.as_deref()
     }
 }
 /// See [`VmServerAddress`](crate::model::VmServerAddress).
 pub mod vm_server_address {
-
+    
     /// A builder for [`VmServerAddress`](crate::model::VmServerAddress).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -650,12 +625,8 @@ pub mod vm_server_address {
             self
         }
         /// <p>The ID of the VM manager.</p>
-        pub fn set_vm_manager_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vm_manager_id = input;
-            self
+        pub fn set_vm_manager_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vm_manager_id = input; self
         }
         /// <p>The ID of the VM.</p>
         pub fn vm_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -664,17 +635,20 @@ pub mod vm_server_address {
         }
         /// <p>The ID of the VM.</p>
         pub fn set_vm_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vm_id = input;
-            self
+            self.vm_id = input; self
         }
         /// Consumes the builder and constructs a [`VmServerAddress`](crate::model::VmServerAddress).
         pub fn build(self) -> crate::model::VmServerAddress {
             crate::model::VmServerAddress {
-                vm_manager_id: self.vm_manager_id,
-                vm_id: self.vm_id,
+                vm_manager_id: self.vm_manager_id
+                ,
+                vm_id: self.vm_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VmServerAddress {
     /// Creates a new builder-style object to manufacture [`VmServerAddress`](crate::model::VmServerAddress).
@@ -689,9 +663,9 @@ impl VmServerAddress {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servertype = unimplemented!();
 /// match servertype {
@@ -712,54 +686,48 @@ impl VmServerAddress {
 /// Specifically, when `servertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServerType {
     #[allow(missing_docs)] // documentation missing in model
     VirtualMachine,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServerType {
     fn from(s: &str) -> Self {
         match s {
             "VIRTUAL_MACHINE" => ServerType::VirtualMachine,
-            other => ServerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ServerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServerType::from(s))
+                }
+            }
 impl ServerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServerType::VirtualMachine => "VIRTUAL_MACHINE",
-            ServerType::Unknown(value) => value.as_str(),
+            ServerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VIRTUAL_MACHINE"]
+        &[
+            "VIRTUAL_MACHINE"
+        ]
     }
 }
 impl AsRef<str> for ServerType {
@@ -771,7 +739,7 @@ impl AsRef<str> for ServerType {
 /// <p>Information about the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppSummary {
+pub struct AppSummary  {
     /// <p>The unique ID of the application.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -792,8 +760,7 @@ pub struct AppSummary {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Status of the replication configuration.</p>
     #[doc(hidden)]
-    pub replication_configuration_status:
-        std::option::Option<crate::model::AppReplicationConfigurationStatus>,
+    pub replication_configuration_status: std::option::Option<crate::model::AppReplicationConfigurationStatus>,
     /// <p>The replication status of the application.</p>
     #[doc(hidden)]
     pub replication_status: std::option::Option<crate::model::AppReplicationStatus>,
@@ -805,8 +772,7 @@ pub struct AppSummary {
     pub latest_replication_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status of the launch configuration.</p>
     #[doc(hidden)]
-    pub launch_configuration_status:
-        std::option::Option<crate::model::AppLaunchConfigurationStatus>,
+    pub launch_configuration_status: std::option::Option<crate::model::AppLaunchConfigurationStatus>,
     /// <p>The launch status of the application.</p>
     #[doc(hidden)]
     pub launch_status: std::option::Option<crate::model::AppLaunchStatus>,
@@ -834,75 +800,71 @@ pub struct AppSummary {
 }
 impl AppSummary {
     /// <p>The unique ID of the application.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The ID of the application.</p>
-    pub fn imported_app_id(&self) -> std::option::Option<&str> {
+    pub fn imported_app_id(&self) -> std::option::Option<& str> {
         self.imported_app_id.as_deref()
     }
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Status of the application.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AppStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AppStatus> {
         self.status.as_ref()
     }
     /// <p>A message related to the status of the application</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Status of the replication configuration.</p>
-    pub fn replication_configuration_status(
-        &self,
-    ) -> std::option::Option<&crate::model::AppReplicationConfigurationStatus> {
+    pub fn replication_configuration_status(&self) -> std::option::Option<& crate::model::AppReplicationConfigurationStatus> {
         self.replication_configuration_status.as_ref()
     }
     /// <p>The replication status of the application.</p>
-    pub fn replication_status(&self) -> std::option::Option<&crate::model::AppReplicationStatus> {
+    pub fn replication_status(&self) -> std::option::Option<& crate::model::AppReplicationStatus> {
         self.replication_status.as_ref()
     }
     /// <p>A message related to the replication status of the application.</p>
-    pub fn replication_status_message(&self) -> std::option::Option<&str> {
+    pub fn replication_status_message(&self) -> std::option::Option<& str> {
         self.replication_status_message.as_deref()
     }
     /// <p>The timestamp of the application's most recent successful replication.</p>
-    pub fn latest_replication_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_replication_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_replication_time.as_ref()
     }
     /// <p>Status of the launch configuration.</p>
-    pub fn launch_configuration_status(
-        &self,
-    ) -> std::option::Option<&crate::model::AppLaunchConfigurationStatus> {
+    pub fn launch_configuration_status(&self) -> std::option::Option<& crate::model::AppLaunchConfigurationStatus> {
         self.launch_configuration_status.as_ref()
     }
     /// <p>The launch status of the application.</p>
-    pub fn launch_status(&self) -> std::option::Option<&crate::model::AppLaunchStatus> {
+    pub fn launch_status(&self) -> std::option::Option<& crate::model::AppLaunchStatus> {
         self.launch_status.as_ref()
     }
     /// <p>A message related to the launch status of the application.</p>
-    pub fn launch_status_message(&self) -> std::option::Option<&str> {
+    pub fn launch_status_message(&self) -> std::option::Option<& str> {
         self.launch_status_message.as_deref()
     }
     /// <p>Details about the latest launch of the application.</p>
-    pub fn launch_details(&self) -> std::option::Option<&crate::model::LaunchDetails> {
+    pub fn launch_details(&self) -> std::option::Option<& crate::model::LaunchDetails> {
         self.launch_details.as_ref()
     }
     /// <p>The creation time of the application.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last modified time of the application.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The number of server groups present in the application.</p>
@@ -916,7 +878,7 @@ impl AppSummary {
 }
 /// See [`AppSummary`](crate::model::AppSummary).
 pub mod app_summary {
-
+    
     /// A builder for [`AppSummary`](crate::model::AppSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -926,13 +888,11 @@ pub mod app_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AppStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) replication_configuration_status:
-            std::option::Option<crate::model::AppReplicationConfigurationStatus>,
+        pub(crate) replication_configuration_status: std::option::Option<crate::model::AppReplicationConfigurationStatus>,
         pub(crate) replication_status: std::option::Option<crate::model::AppReplicationStatus>,
         pub(crate) replication_status_message: std::option::Option<std::string::String>,
         pub(crate) latest_replication_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) launch_configuration_status:
-            std::option::Option<crate::model::AppLaunchConfigurationStatus>,
+        pub(crate) launch_configuration_status: std::option::Option<crate::model::AppLaunchConfigurationStatus>,
         pub(crate) launch_status: std::option::Option<crate::model::AppLaunchStatus>,
         pub(crate) launch_status_message: std::option::Option<std::string::String>,
         pub(crate) launch_details: std::option::Option<crate::model::LaunchDetails>,
@@ -950,8 +910,7 @@ pub mod app_summary {
         }
         /// <p>The unique ID of the application.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The ID of the application.</p>
         pub fn imported_app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -959,12 +918,8 @@ pub mod app_summary {
             self
         }
         /// <p>The ID of the application.</p>
-        pub fn set_imported_app_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.imported_app_id = input;
-            self
+        pub fn set_imported_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.imported_app_id = input; self
         }
         /// <p>The name of the application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -973,8 +928,7 @@ pub mod app_summary {
         }
         /// <p>The name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -983,8 +937,7 @@ pub mod app_summary {
         }
         /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Status of the application.</p>
         pub fn status(mut self, input: crate::model::AppStatus) -> Self {
@@ -993,8 +946,7 @@ pub mod app_summary {
         }
         /// <p>Status of the application.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::AppStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A message related to the status of the application</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1002,28 +954,17 @@ pub mod app_summary {
             self
         }
         /// <p>A message related to the status of the application</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>Status of the replication configuration.</p>
-        pub fn replication_configuration_status(
-            mut self,
-            input: crate::model::AppReplicationConfigurationStatus,
-        ) -> Self {
+        pub fn replication_configuration_status(mut self, input: crate::model::AppReplicationConfigurationStatus) -> Self {
             self.replication_configuration_status = Some(input);
             self
         }
         /// <p>Status of the replication configuration.</p>
-        pub fn set_replication_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::AppReplicationConfigurationStatus>,
-        ) -> Self {
-            self.replication_configuration_status = input;
-            self
+        pub fn set_replication_configuration_status(mut self, input: std::option::Option<crate::model::AppReplicationConfigurationStatus>) -> Self {
+            self.replication_configuration_status = input; self
         }
         /// <p>The replication status of the application.</p>
         pub fn replication_status(mut self, input: crate::model::AppReplicationStatus) -> Self {
@@ -1031,12 +972,8 @@ pub mod app_summary {
             self
         }
         /// <p>The replication status of the application.</p>
-        pub fn set_replication_status(
-            mut self,
-            input: std::option::Option<crate::model::AppReplicationStatus>,
-        ) -> Self {
-            self.replication_status = input;
-            self
+        pub fn set_replication_status(mut self, input: std::option::Option<crate::model::AppReplicationStatus>) -> Self {
+            self.replication_status = input; self
         }
         /// <p>A message related to the replication status of the application.</p>
         pub fn replication_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1044,12 +981,8 @@ pub mod app_summary {
             self
         }
         /// <p>A message related to the replication status of the application.</p>
-        pub fn set_replication_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_status_message = input;
-            self
+        pub fn set_replication_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_status_message = input; self
         }
         /// <p>The timestamp of the application's most recent successful replication.</p>
         pub fn latest_replication_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1057,28 +990,17 @@ pub mod app_summary {
             self
         }
         /// <p>The timestamp of the application's most recent successful replication.</p>
-        pub fn set_latest_replication_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_replication_time = input;
-            self
+        pub fn set_latest_replication_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_replication_time = input; self
         }
         /// <p>Status of the launch configuration.</p>
-        pub fn launch_configuration_status(
-            mut self,
-            input: crate::model::AppLaunchConfigurationStatus,
-        ) -> Self {
+        pub fn launch_configuration_status(mut self, input: crate::model::AppLaunchConfigurationStatus) -> Self {
             self.launch_configuration_status = Some(input);
             self
         }
         /// <p>Status of the launch configuration.</p>
-        pub fn set_launch_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::AppLaunchConfigurationStatus>,
-        ) -> Self {
-            self.launch_configuration_status = input;
-            self
+        pub fn set_launch_configuration_status(mut self, input: std::option::Option<crate::model::AppLaunchConfigurationStatus>) -> Self {
+            self.launch_configuration_status = input; self
         }
         /// <p>The launch status of the application.</p>
         pub fn launch_status(mut self, input: crate::model::AppLaunchStatus) -> Self {
@@ -1086,12 +1008,8 @@ pub mod app_summary {
             self
         }
         /// <p>The launch status of the application.</p>
-        pub fn set_launch_status(
-            mut self,
-            input: std::option::Option<crate::model::AppLaunchStatus>,
-        ) -> Self {
-            self.launch_status = input;
-            self
+        pub fn set_launch_status(mut self, input: std::option::Option<crate::model::AppLaunchStatus>) -> Self {
+            self.launch_status = input; self
         }
         /// <p>A message related to the launch status of the application.</p>
         pub fn launch_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1099,12 +1017,8 @@ pub mod app_summary {
             self
         }
         /// <p>A message related to the launch status of the application.</p>
-        pub fn set_launch_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_status_message = input;
-            self
+        pub fn set_launch_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_status_message = input; self
         }
         /// <p>Details about the latest launch of the application.</p>
         pub fn launch_details(mut self, input: crate::model::LaunchDetails) -> Self {
@@ -1112,12 +1026,8 @@ pub mod app_summary {
             self
         }
         /// <p>Details about the latest launch of the application.</p>
-        pub fn set_launch_details(
-            mut self,
-            input: std::option::Option<crate::model::LaunchDetails>,
-        ) -> Self {
-            self.launch_details = input;
-            self
+        pub fn set_launch_details(mut self, input: std::option::Option<crate::model::LaunchDetails>) -> Self {
+            self.launch_details = input; self
         }
         /// <p>The creation time of the application.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1125,12 +1035,8 @@ pub mod app_summary {
             self
         }
         /// <p>The creation time of the application.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The last modified time of the application.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1138,12 +1044,8 @@ pub mod app_summary {
             self
         }
         /// <p>The last modified time of the application.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1152,8 +1054,7 @@ pub mod app_summary {
         }
         /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_name = input;
-            self
+            self.role_name = input; self
         }
         /// <p>The number of server groups present in the application.</p>
         pub fn total_server_groups(mut self, input: i32) -> Self {
@@ -1162,8 +1063,7 @@ pub mod app_summary {
         }
         /// <p>The number of server groups present in the application.</p>
         pub fn set_total_server_groups(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_server_groups = input;
-            self
+            self.total_server_groups = input; self
         }
         /// <p>The number of servers present in the application.</p>
         pub fn total_servers(mut self, input: i32) -> Self {
@@ -1172,34 +1072,54 @@ pub mod app_summary {
         }
         /// <p>The number of servers present in the application.</p>
         pub fn set_total_servers(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_servers = input;
-            self
+            self.total_servers = input; self
         }
         /// Consumes the builder and constructs a [`AppSummary`](crate::model::AppSummary).
         pub fn build(self) -> crate::model::AppSummary {
             crate::model::AppSummary {
-                app_id: self.app_id,
-                imported_app_id: self.imported_app_id,
-                name: self.name,
-                description: self.description,
-                status: self.status,
-                status_message: self.status_message,
-                replication_configuration_status: self.replication_configuration_status,
-                replication_status: self.replication_status,
-                replication_status_message: self.replication_status_message,
-                latest_replication_time: self.latest_replication_time,
-                launch_configuration_status: self.launch_configuration_status,
-                launch_status: self.launch_status,
-                launch_status_message: self.launch_status_message,
-                launch_details: self.launch_details,
-                creation_time: self.creation_time,
-                last_modified: self.last_modified,
-                role_name: self.role_name,
-                total_server_groups: self.total_server_groups,
-                total_servers: self.total_servers,
+                app_id: self.app_id
+                ,
+                imported_app_id: self.imported_app_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                replication_configuration_status: self.replication_configuration_status
+                ,
+                replication_status: self.replication_status
+                ,
+                replication_status_message: self.replication_status_message
+                ,
+                latest_replication_time: self.latest_replication_time
+                ,
+                launch_configuration_status: self.launch_configuration_status
+                ,
+                launch_status: self.launch_status
+                ,
+                launch_status_message: self.launch_status_message
+                ,
+                launch_details: self.launch_details
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified: self.last_modified
+                ,
+                role_name: self.role_name
+                ,
+                total_server_groups: self.total_server_groups
+                ,
+                total_servers: self.total_servers
+                ,
             }
         }
     }
+    
+    
 }
 impl AppSummary {
     /// Creates a new builder-style object to manufacture [`AppSummary`](crate::model::AppSummary).
@@ -1211,7 +1131,7 @@ impl AppSummary {
 /// <p>Details about the latest launch of an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchDetails {
+pub struct LaunchDetails  {
     /// <p>The latest time that this application was launched successfully.</p>
     #[doc(hidden)]
     pub latest_launch_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1224,21 +1144,21 @@ pub struct LaunchDetails {
 }
 impl LaunchDetails {
     /// <p>The latest time that this application was launched successfully.</p>
-    pub fn latest_launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_launch_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_launch_time.as_ref()
     }
     /// <p>The name of the latest stack launched for this application.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The ID of the latest stack launched for this application.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
 /// See [`LaunchDetails`](crate::model::LaunchDetails).
 pub mod launch_details {
-
+    
     /// A builder for [`LaunchDetails`](crate::model::LaunchDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1253,12 +1173,8 @@ pub mod launch_details {
             self
         }
         /// <p>The latest time that this application was launched successfully.</p>
-        pub fn set_latest_launch_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_launch_time = input;
-            self
+        pub fn set_latest_launch_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_launch_time = input; self
         }
         /// <p>The name of the latest stack launched for this application.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1267,8 +1183,7 @@ pub mod launch_details {
         }
         /// <p>The name of the latest stack launched for this application.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = input;
-            self
+            self.stack_name = input; self
         }
         /// <p>The ID of the latest stack launched for this application.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1277,18 +1192,22 @@ pub mod launch_details {
         }
         /// <p>The ID of the latest stack launched for this application.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// Consumes the builder and constructs a [`LaunchDetails`](crate::model::LaunchDetails).
         pub fn build(self) -> crate::model::LaunchDetails {
             crate::model::LaunchDetails {
-                latest_launch_time: self.latest_launch_time,
-                stack_name: self.stack_name,
-                stack_id: self.stack_id,
+                latest_launch_time: self.latest_launch_time
+                ,
+                stack_name: self.stack_name
+                ,
+                stack_id: self.stack_id
+                ,
             }
         }
     }
+    
+    
 }
 impl LaunchDetails {
     /// Creates a new builder-style object to manufacture [`LaunchDetails`](crate::model::LaunchDetails).
@@ -1303,9 +1222,9 @@ impl LaunchDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applaunchstatus = unimplemented!();
 /// match applaunchstatus {
@@ -1340,22 +1259,14 @@ impl LaunchDetails {
 /// Specifically, when `applaunchstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppLaunchStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppLaunchStatus {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationInvalid,
@@ -1388,7 +1299,7 @@ pub enum AppLaunchStatus {
     #[allow(missing_docs)] // documentation missing in model
     ValidationInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppLaunchStatus {
     fn from(s: &str) -> Self {
@@ -1408,17 +1319,17 @@ impl std::convert::From<&str> for AppLaunchStatus {
             "TERMINATE_FAILED" => AppLaunchStatus::TerminateFailed,
             "TERMINATE_IN_PROGRESS" => AppLaunchStatus::TerminateInProgress,
             "VALIDATION_IN_PROGRESS" => AppLaunchStatus::ValidationInProgress,
-            other => AppLaunchStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AppLaunchStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppLaunchStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppLaunchStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppLaunchStatus::from(s))
+                }
+            }
 impl AppLaunchStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1438,27 +1349,13 @@ impl AppLaunchStatus {
             AppLaunchStatus::TerminateFailed => "TERMINATE_FAILED",
             AppLaunchStatus::TerminateInProgress => "TERMINATE_IN_PROGRESS",
             AppLaunchStatus::ValidationInProgress => "VALIDATION_IN_PROGRESS",
-            AppLaunchStatus::Unknown(value) => value.as_str(),
+            AppLaunchStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CONFIGURATION_INVALID",
-            "CONFIGURATION_IN_PROGRESS",
-            "DELTA_LAUNCH_FAILED",
-            "DELTA_LAUNCH_IN_PROGRESS",
-            "LAUNCHED",
-            "LAUNCH_FAILED",
-            "LAUNCH_IN_PROGRESS",
-            "LAUNCH_PENDING",
-            "PARTIALLY_LAUNCHED",
-            "READY_FOR_CONFIGURATION",
-            "READY_FOR_LAUNCH",
-            "TERMINATED",
-            "TERMINATE_FAILED",
-            "TERMINATE_IN_PROGRESS",
-            "VALIDATION_IN_PROGRESS",
+            "CONFIGURATION_INVALID", "CONFIGURATION_IN_PROGRESS", "DELTA_LAUNCH_FAILED", "DELTA_LAUNCH_IN_PROGRESS", "LAUNCHED", "LAUNCH_FAILED", "LAUNCH_IN_PROGRESS", "LAUNCH_PENDING", "PARTIALLY_LAUNCHED", "READY_FOR_CONFIGURATION", "READY_FOR_LAUNCH", "TERMINATED", "TERMINATE_FAILED", "TERMINATE_IN_PROGRESS", "VALIDATION_IN_PROGRESS"
         ]
     }
 }
@@ -1474,9 +1371,9 @@ impl AsRef<str> for AppLaunchStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applaunchconfigurationstatus = unimplemented!();
 /// match applaunchconfigurationstatus {
@@ -1498,60 +1395,52 @@ impl AsRef<str> for AppLaunchStatus {
 /// Specifically, when `applaunchconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppLaunchConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppLaunchConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Configured,
     #[allow(missing_docs)] // documentation missing in model
     NotConfigured,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppLaunchConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "CONFIGURED" => AppLaunchConfigurationStatus::Configured,
             "NOT_CONFIGURED" => AppLaunchConfigurationStatus::NotConfigured,
-            other => AppLaunchConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AppLaunchConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppLaunchConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppLaunchConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppLaunchConfigurationStatus::from(s))
+                }
+            }
 impl AppLaunchConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AppLaunchConfigurationStatus::Configured => "CONFIGURED",
             AppLaunchConfigurationStatus::NotConfigured => "NOT_CONFIGURED",
-            AppLaunchConfigurationStatus::Unknown(value) => value.as_str(),
+            AppLaunchConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFIGURED", "NOT_CONFIGURED"]
+        &[
+            "CONFIGURED", "NOT_CONFIGURED"
+        ]
     }
 }
 impl AsRef<str> for AppLaunchConfigurationStatus {
@@ -1566,9 +1455,9 @@ impl AsRef<str> for AppLaunchConfigurationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appreplicationstatus = unimplemented!();
 /// match appreplicationstatus {
@@ -1604,22 +1493,14 @@ impl AsRef<str> for AppLaunchConfigurationStatus {
 /// Specifically, when `appreplicationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppReplicationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppReplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationInvalid,
@@ -1654,7 +1535,7 @@ pub enum AppReplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     ValidationInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppReplicationStatus {
     fn from(s: &str) -> Self {
@@ -1675,19 +1556,17 @@ impl std::convert::From<&str> for AppReplicationStatus {
             "REPLICATION_STOPPING" => AppReplicationStatus::ReplicationStopping,
             "REPLICATION_STOP_FAILED" => AppReplicationStatus::ReplicationStopFailed,
             "VALIDATION_IN_PROGRESS" => AppReplicationStatus::ValidationInProgress,
-            other => {
-                AppReplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AppReplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppReplicationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppReplicationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppReplicationStatus::from(s))
+                }
+            }
 impl AppReplicationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1708,28 +1587,13 @@ impl AppReplicationStatus {
             AppReplicationStatus::ReplicationStopping => "REPLICATION_STOPPING",
             AppReplicationStatus::ReplicationStopFailed => "REPLICATION_STOP_FAILED",
             AppReplicationStatus::ValidationInProgress => "VALIDATION_IN_PROGRESS",
-            AppReplicationStatus::Unknown(value) => value.as_str(),
+            AppReplicationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CONFIGURATION_INVALID",
-            "CONFIGURATION_IN_PROGRESS",
-            "DELTA_REPLICATED",
-            "DELTA_REPLICATION_FAILED",
-            "DELTA_REPLICATION_IN_PROGRESS",
-            "PARTIALLY_REPLICATED",
-            "READY_FOR_CONFIGURATION",
-            "READY_FOR_REPLICATION",
-            "REPLICATED",
-            "REPLICATION_FAILED",
-            "REPLICATION_IN_PROGRESS",
-            "REPLICATION_PENDING",
-            "REPLICATION_STOPPED",
-            "REPLICATION_STOPPING",
-            "REPLICATION_STOP_FAILED",
-            "VALIDATION_IN_PROGRESS",
+            "CONFIGURATION_INVALID", "CONFIGURATION_IN_PROGRESS", "DELTA_REPLICATED", "DELTA_REPLICATION_FAILED", "DELTA_REPLICATION_IN_PROGRESS", "PARTIALLY_REPLICATED", "READY_FOR_CONFIGURATION", "READY_FOR_REPLICATION", "REPLICATED", "REPLICATION_FAILED", "REPLICATION_IN_PROGRESS", "REPLICATION_PENDING", "REPLICATION_STOPPED", "REPLICATION_STOPPING", "REPLICATION_STOP_FAILED", "VALIDATION_IN_PROGRESS"
         ]
     }
 }
@@ -1745,9 +1609,9 @@ impl AsRef<str> for AppReplicationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appreplicationconfigurationstatus = unimplemented!();
 /// match appreplicationconfigurationstatus {
@@ -1769,60 +1633,52 @@ impl AsRef<str> for AppReplicationStatus {
 /// Specifically, when `appreplicationconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppReplicationConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppReplicationConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Configured,
     #[allow(missing_docs)] // documentation missing in model
     NotConfigured,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppReplicationConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "CONFIGURED" => AppReplicationConfigurationStatus::Configured,
             "NOT_CONFIGURED" => AppReplicationConfigurationStatus::NotConfigured,
-            other => AppReplicationConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AppReplicationConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppReplicationConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppReplicationConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppReplicationConfigurationStatus::from(s))
+                }
+            }
 impl AppReplicationConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AppReplicationConfigurationStatus::Configured => "CONFIGURED",
             AppReplicationConfigurationStatus::NotConfigured => "NOT_CONFIGURED",
-            AppReplicationConfigurationStatus::Unknown(value) => value.as_str(),
+            AppReplicationConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFIGURED", "NOT_CONFIGURED"]
+        &[
+            "CONFIGURED", "NOT_CONFIGURED"
+        ]
     }
 }
 impl AsRef<str> for AppReplicationConfigurationStatus {
@@ -1837,9 +1693,9 @@ impl AsRef<str> for AppReplicationConfigurationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appstatus = unimplemented!();
 /// match appstatus {
@@ -1865,22 +1721,14 @@ impl AsRef<str> for AppReplicationConfigurationStatus {
 /// Specifically, when `appstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1895,7 +1743,7 @@ pub enum AppStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppStatus {
     fn from(s: &str) -> Self {
@@ -1906,17 +1754,17 @@ impl std::convert::From<&str> for AppStatus {
             "DELETE_FAILED" => AppStatus::DeleteFailed,
             "DELETING" => AppStatus::Deleting,
             "UPDATING" => AppStatus::Updating,
-            other => AppStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AppStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppStatus::from(s))
+                }
+            }
 impl AppStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1927,18 +1775,13 @@ impl AppStatus {
             AppStatus::DeleteFailed => "DELETE_FAILED",
             AppStatus::Deleting => "DELETING",
             AppStatus::Updating => "UPDATING",
-            AppStatus::Unknown(value) => value.as_str(),
+            AppStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "DELETED",
-            "DELETE_FAILED",
-            "DELETING",
-            "UPDATING",
+            "ACTIVE", "CREATING", "DELETED", "DELETE_FAILED", "DELETING", "UPDATING"
         ]
     }
 }
@@ -1951,36 +1794,32 @@ impl AsRef<str> for AppStatus {
 /// <p>Configuration for validating an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerGroupValidationConfiguration {
+pub struct ServerGroupValidationConfiguration  {
     /// <p>The ID of the server group.</p>
     #[doc(hidden)]
     pub server_group_id: std::option::Option<std::string::String>,
     /// <p>The validation configuration.</p>
     #[doc(hidden)]
-    pub server_validation_configurations:
-        std::option::Option<std::vec::Vec<crate::model::ServerValidationConfiguration>>,
+    pub server_validation_configurations: std::option::Option<std::vec::Vec<crate::model::ServerValidationConfiguration>>,
 }
 impl ServerGroupValidationConfiguration {
     /// <p>The ID of the server group.</p>
-    pub fn server_group_id(&self) -> std::option::Option<&str> {
+    pub fn server_group_id(&self) -> std::option::Option<& str> {
         self.server_group_id.as_deref()
     }
     /// <p>The validation configuration.</p>
-    pub fn server_validation_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServerValidationConfiguration]> {
+    pub fn server_validation_configurations(&self) -> std::option::Option<& [crate::model::ServerValidationConfiguration]> {
         self.server_validation_configurations.as_deref()
     }
 }
 /// See [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
 pub mod server_group_validation_configuration {
-
+    
     /// A builder for [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
-        pub(crate) server_validation_configurations:
-            std::option::Option<std::vec::Vec<crate::model::ServerValidationConfiguration>>,
+        pub(crate) server_validation_configurations: std::option::Option<std::vec::Vec<crate::model::ServerValidationConfiguration>>,
     }
     impl Builder {
         /// <p>The ID of the server group.</p>
@@ -1989,43 +1828,36 @@ pub mod server_group_validation_configuration {
             self
         }
         /// <p>The ID of the server group.</p>
-        pub fn set_server_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_group_id = input;
-            self
+        pub fn set_server_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_group_id = input; self
         }
         /// Appends an item to `server_validation_configurations`.
         ///
         /// To override the contents of this collection use [`set_server_validation_configurations`](Self::set_server_validation_configurations).
         ///
         /// <p>The validation configuration.</p>
-        pub fn server_validation_configurations(
-            mut self,
-            input: crate::model::ServerValidationConfiguration,
-        ) -> Self {
+        pub fn server_validation_configurations(mut self, input: crate::model::ServerValidationConfiguration) -> Self {
             let mut v = self.server_validation_configurations.unwrap_or_default();
-            v.push(input);
-            self.server_validation_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.server_validation_configurations = Some(v);
+                            self
         }
         /// <p>The validation configuration.</p>
-        pub fn set_server_validation_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServerValidationConfiguration>>,
-        ) -> Self {
-            self.server_validation_configurations = input;
-            self
+        pub fn set_server_validation_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServerValidationConfiguration>>) -> Self {
+            self.server_validation_configurations = input; self
         }
         /// Consumes the builder and constructs a [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
         pub fn build(self) -> crate::model::ServerGroupValidationConfiguration {
             crate::model::ServerGroupValidationConfiguration {
-                server_group_id: self.server_group_id,
-                server_validation_configurations: self.server_validation_configurations,
+                server_group_id: self.server_group_id
+                ,
+                server_validation_configurations: self.server_validation_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerGroupValidationConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
@@ -2037,7 +1869,7 @@ impl ServerGroupValidationConfiguration {
 /// <p>Configuration for validating an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerValidationConfiguration {
+pub struct ServerValidationConfiguration  {
     /// <p>Represents a server.</p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
@@ -2052,48 +1884,41 @@ pub struct ServerValidationConfiguration {
     pub server_validation_strategy: std::option::Option<crate::model::ServerValidationStrategy>,
     /// <p>The validation parameters.</p>
     #[doc(hidden)]
-    pub user_data_validation_parameters:
-        std::option::Option<crate::model::UserDataValidationParameters>,
+    pub user_data_validation_parameters: std::option::Option<crate::model::UserDataValidationParameters>,
 }
 impl ServerValidationConfiguration {
     /// <p>Represents a server.</p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> std::option::Option<&str> {
+    pub fn validation_id(&self) -> std::option::Option<& str> {
         self.validation_id.as_deref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The validation strategy.</p>
-    pub fn server_validation_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerValidationStrategy> {
+    pub fn server_validation_strategy(&self) -> std::option::Option<& crate::model::ServerValidationStrategy> {
         self.server_validation_strategy.as_ref()
     }
     /// <p>The validation parameters.</p>
-    pub fn user_data_validation_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::UserDataValidationParameters> {
+    pub fn user_data_validation_parameters(&self) -> std::option::Option<& crate::model::UserDataValidationParameters> {
         self.user_data_validation_parameters.as_ref()
     }
 }
 /// See [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
 pub mod server_validation_configuration {
-
+    
     /// A builder for [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
         pub(crate) validation_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) server_validation_strategy:
-            std::option::Option<crate::model::ServerValidationStrategy>,
-        pub(crate) user_data_validation_parameters:
-            std::option::Option<crate::model::UserDataValidationParameters>,
+        pub(crate) server_validation_strategy: std::option::Option<crate::model::ServerValidationStrategy>,
+        pub(crate) user_data_validation_parameters: std::option::Option<crate::model::UserDataValidationParameters>,
     }
     impl Builder {
         /// <p>Represents a server.</p>
@@ -2103,8 +1928,7 @@ pub mod server_validation_configuration {
         }
         /// <p>Represents a server.</p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// <p>The ID of the validation.</p>
         pub fn validation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2112,12 +1936,8 @@ pub mod server_validation_configuration {
             self
         }
         /// <p>The ID of the validation.</p>
-        pub fn set_validation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.validation_id = input;
-            self
+        pub fn set_validation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.validation_id = input; self
         }
         /// <p>The name of the configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2126,52 +1946,44 @@ pub mod server_validation_configuration {
         }
         /// <p>The name of the configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The validation strategy.</p>
-        pub fn server_validation_strategy(
-            mut self,
-            input: crate::model::ServerValidationStrategy,
-        ) -> Self {
+        pub fn server_validation_strategy(mut self, input: crate::model::ServerValidationStrategy) -> Self {
             self.server_validation_strategy = Some(input);
             self
         }
         /// <p>The validation strategy.</p>
-        pub fn set_server_validation_strategy(
-            mut self,
-            input: std::option::Option<crate::model::ServerValidationStrategy>,
-        ) -> Self {
-            self.server_validation_strategy = input;
-            self
+        pub fn set_server_validation_strategy(mut self, input: std::option::Option<crate::model::ServerValidationStrategy>) -> Self {
+            self.server_validation_strategy = input; self
         }
         /// <p>The validation parameters.</p>
-        pub fn user_data_validation_parameters(
-            mut self,
-            input: crate::model::UserDataValidationParameters,
-        ) -> Self {
+        pub fn user_data_validation_parameters(mut self, input: crate::model::UserDataValidationParameters) -> Self {
             self.user_data_validation_parameters = Some(input);
             self
         }
         /// <p>The validation parameters.</p>
-        pub fn set_user_data_validation_parameters(
-            mut self,
-            input: std::option::Option<crate::model::UserDataValidationParameters>,
-        ) -> Self {
-            self.user_data_validation_parameters = input;
-            self
+        pub fn set_user_data_validation_parameters(mut self, input: std::option::Option<crate::model::UserDataValidationParameters>) -> Self {
+            self.user_data_validation_parameters = input; self
         }
         /// Consumes the builder and constructs a [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
         pub fn build(self) -> crate::model::ServerValidationConfiguration {
             crate::model::ServerValidationConfiguration {
-                server: self.server,
-                validation_id: self.validation_id,
-                name: self.name,
-                server_validation_strategy: self.server_validation_strategy,
-                user_data_validation_parameters: self.user_data_validation_parameters,
+                server: self.server
+                ,
+                validation_id: self.validation_id
+                ,
+                name: self.name
+                ,
+                server_validation_strategy: self.server_validation_strategy
+                ,
+                user_data_validation_parameters: self.user_data_validation_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerValidationConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
@@ -2183,7 +1995,7 @@ impl ServerValidationConfiguration {
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserDataValidationParameters {
+pub struct UserDataValidationParameters  {
     /// <p>The location of the validation script.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
@@ -2193,17 +2005,17 @@ pub struct UserDataValidationParameters {
 }
 impl UserDataValidationParameters {
     /// <p>The location of the validation script.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::model::Source> {
         self.source.as_ref()
     }
     /// <p>The type of validation script.</p>
-    pub fn script_type(&self) -> std::option::Option<&crate::model::ScriptType> {
+    pub fn script_type(&self) -> std::option::Option<& crate::model::ScriptType> {
         self.script_type.as_ref()
     }
 }
 /// See [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
 pub mod user_data_validation_parameters {
-
+    
     /// A builder for [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2218,8 +2030,7 @@ pub mod user_data_validation_parameters {
         }
         /// <p>The location of the validation script.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The type of validation script.</p>
         pub fn script_type(mut self, input: crate::model::ScriptType) -> Self {
@@ -2227,21 +2038,21 @@ pub mod user_data_validation_parameters {
             self
         }
         /// <p>The type of validation script.</p>
-        pub fn set_script_type(
-            mut self,
-            input: std::option::Option<crate::model::ScriptType>,
-        ) -> Self {
-            self.script_type = input;
-            self
+        pub fn set_script_type(mut self, input: std::option::Option<crate::model::ScriptType>) -> Self {
+            self.script_type = input; self
         }
         /// Consumes the builder and constructs a [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
         pub fn build(self) -> crate::model::UserDataValidationParameters {
             crate::model::UserDataValidationParameters {
-                source: self.source,
-                script_type: self.script_type,
+                source: self.source
+                ,
+                script_type: self.script_type
+                ,
             }
         }
     }
+    
+    
 }
 impl UserDataValidationParameters {
     /// Creates a new builder-style object to manufacture [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
@@ -2256,9 +2067,9 @@ impl UserDataValidationParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scripttype = unimplemented!();
 /// match scripttype {
@@ -2280,58 +2091,52 @@ impl UserDataValidationParameters {
 /// Specifically, when `scripttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScriptType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScriptType {
     #[allow(missing_docs)] // documentation missing in model
     PowershellScript,
     #[allow(missing_docs)] // documentation missing in model
     ShellScript,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScriptType {
     fn from(s: &str) -> Self {
         match s {
             "POWERSHELL_SCRIPT" => ScriptType::PowershellScript,
             "SHELL_SCRIPT" => ScriptType::ShellScript,
-            other => ScriptType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ScriptType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScriptType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScriptType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScriptType::from(s))
+                }
+            }
 impl ScriptType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScriptType::PowershellScript => "POWERSHELL_SCRIPT",
             ScriptType::ShellScript => "SHELL_SCRIPT",
-            ScriptType::Unknown(value) => value.as_str(),
+            ScriptType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["POWERSHELL_SCRIPT", "SHELL_SCRIPT"]
+        &[
+            "POWERSHELL_SCRIPT", "SHELL_SCRIPT"
+        ]
     }
 }
 impl AsRef<str> for ScriptType {
@@ -2343,20 +2148,20 @@ impl AsRef<str> for ScriptType {
 /// <p>Contains the location of a validation script.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// <p>Location of an Amazon S3 object.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl Source {
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3_location.as_ref()
     }
 }
 /// See [`Source`](crate::model::Source).
 pub mod source {
-
+    
     /// A builder for [`Source`](crate::model::Source).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2369,20 +2174,19 @@ pub mod source {
             self
         }
         /// <p>Location of an Amazon S3 object.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3_location = input; self
         }
         /// Consumes the builder and constructs a [`Source`](crate::model::Source).
         pub fn build(self) -> crate::model::Source {
             crate::model::Source {
-                s3_location: self.s3_location,
+                s3_location: self.s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
@@ -2394,7 +2198,7 @@ impl Source {
 /// <p>Location of an Amazon S3 object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -2404,17 +2208,17 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The Amazon S3 bucket key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2429,8 +2233,7 @@ pub mod s3_location {
         }
         /// <p>The Amazon S3 bucket name.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The Amazon S3 bucket key.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2439,17 +2242,20 @@ pub mod s3_location {
         }
         /// <p>The Amazon S3 bucket key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                bucket: self.bucket,
-                key: self.key,
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -2464,9 +2270,9 @@ impl S3Location {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servervalidationstrategy = unimplemented!();
 /// match servervalidationstrategy {
@@ -2487,56 +2293,48 @@ impl S3Location {
 /// Specifically, when `servervalidationstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServerValidationStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServerValidationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Userdata,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServerValidationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "USERDATA" => ServerValidationStrategy::Userdata,
-            other => ServerValidationStrategy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ServerValidationStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServerValidationStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerValidationStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServerValidationStrategy::from(s))
+                }
+            }
 impl ServerValidationStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServerValidationStrategy::Userdata => "USERDATA",
-            ServerValidationStrategy::Unknown(value) => value.as_str(),
+            ServerValidationStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["USERDATA"]
+        &[
+            "USERDATA"
+        ]
     }
 }
 impl AsRef<str> for ServerValidationStrategy {
@@ -2548,7 +2346,7 @@ impl AsRef<str> for ServerValidationStrategy {
 /// <p>Configuration for validating an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppValidationConfiguration {
+pub struct AppValidationConfiguration  {
     /// <p>The ID of the validation.</p>
     #[doc(hidden)]
     pub validation_id: std::option::Option<std::string::String>,
@@ -2564,38 +2362,32 @@ pub struct AppValidationConfiguration {
 }
 impl AppValidationConfiguration {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> std::option::Option<&str> {
+    pub fn validation_id(&self) -> std::option::Option<& str> {
         self.validation_id.as_deref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The validation strategy.</p>
-    pub fn app_validation_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::AppValidationStrategy> {
+    pub fn app_validation_strategy(&self) -> std::option::Option<& crate::model::AppValidationStrategy> {
         self.app_validation_strategy.as_ref()
     }
     /// <p>The validation parameters.</p>
-    pub fn ssm_validation_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::SsmValidationParameters> {
+    pub fn ssm_validation_parameters(&self) -> std::option::Option<& crate::model::SsmValidationParameters> {
         self.ssm_validation_parameters.as_ref()
     }
 }
 /// See [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
 pub mod app_validation_configuration {
-
+    
     /// A builder for [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) app_validation_strategy:
-            std::option::Option<crate::model::AppValidationStrategy>,
-        pub(crate) ssm_validation_parameters:
-            std::option::Option<crate::model::SsmValidationParameters>,
+        pub(crate) app_validation_strategy: std::option::Option<crate::model::AppValidationStrategy>,
+        pub(crate) ssm_validation_parameters: std::option::Option<crate::model::SsmValidationParameters>,
     }
     impl Builder {
         /// <p>The ID of the validation.</p>
@@ -2604,12 +2396,8 @@ pub mod app_validation_configuration {
             self
         }
         /// <p>The ID of the validation.</p>
-        pub fn set_validation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.validation_id = input;
-            self
+        pub fn set_validation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.validation_id = input; self
         }
         /// <p>The name of the configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2618,51 +2406,42 @@ pub mod app_validation_configuration {
         }
         /// <p>The name of the configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The validation strategy.</p>
-        pub fn app_validation_strategy(
-            mut self,
-            input: crate::model::AppValidationStrategy,
-        ) -> Self {
+        pub fn app_validation_strategy(mut self, input: crate::model::AppValidationStrategy) -> Self {
             self.app_validation_strategy = Some(input);
             self
         }
         /// <p>The validation strategy.</p>
-        pub fn set_app_validation_strategy(
-            mut self,
-            input: std::option::Option<crate::model::AppValidationStrategy>,
-        ) -> Self {
-            self.app_validation_strategy = input;
-            self
+        pub fn set_app_validation_strategy(mut self, input: std::option::Option<crate::model::AppValidationStrategy>) -> Self {
+            self.app_validation_strategy = input; self
         }
         /// <p>The validation parameters.</p>
-        pub fn ssm_validation_parameters(
-            mut self,
-            input: crate::model::SsmValidationParameters,
-        ) -> Self {
+        pub fn ssm_validation_parameters(mut self, input: crate::model::SsmValidationParameters) -> Self {
             self.ssm_validation_parameters = Some(input);
             self
         }
         /// <p>The validation parameters.</p>
-        pub fn set_ssm_validation_parameters(
-            mut self,
-            input: std::option::Option<crate::model::SsmValidationParameters>,
-        ) -> Self {
-            self.ssm_validation_parameters = input;
-            self
+        pub fn set_ssm_validation_parameters(mut self, input: std::option::Option<crate::model::SsmValidationParameters>) -> Self {
+            self.ssm_validation_parameters = input; self
         }
         /// Consumes the builder and constructs a [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
         pub fn build(self) -> crate::model::AppValidationConfiguration {
             crate::model::AppValidationConfiguration {
-                validation_id: self.validation_id,
-                name: self.name,
-                app_validation_strategy: self.app_validation_strategy,
-                ssm_validation_parameters: self.ssm_validation_parameters,
+                validation_id: self.validation_id
+                ,
+                name: self.name
+                ,
+                app_validation_strategy: self.app_validation_strategy
+                ,
+                ssm_validation_parameters: self.ssm_validation_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl AppValidationConfiguration {
     /// Creates a new builder-style object to manufacture [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
@@ -2674,7 +2453,7 @@ impl AppValidationConfiguration {
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmValidationParameters {
+pub struct SsmValidationParameters  {
     /// <p>The location of the validation script.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
@@ -2696,19 +2475,19 @@ pub struct SsmValidationParameters {
 }
 impl SsmValidationParameters {
     /// <p>The location of the validation script.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::model::Source> {
         self.source.as_ref()
     }
     /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The type of validation script.</p>
-    pub fn script_type(&self) -> std::option::Option<&crate::model::ScriptType> {
+    pub fn script_type(&self) -> std::option::Option<& crate::model::ScriptType> {
         self.script_type.as_ref()
     }
     /// <p>The command to run the validation script.</p>
-    pub fn command(&self) -> std::option::Option<&str> {
+    pub fn command(&self) -> std::option::Option<& str> {
         self.command.as_deref()
     }
     /// <p>The timeout interval, in seconds.</p>
@@ -2716,13 +2495,13 @@ impl SsmValidationParameters {
         self.execution_timeout_seconds
     }
     /// <p>The name of the S3 bucket for output.</p>
-    pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn output_s3_bucket_name(&self) -> std::option::Option<& str> {
         self.output_s3_bucket_name.as_deref()
     }
 }
 /// See [`SsmValidationParameters`](crate::model::SsmValidationParameters).
 pub mod ssm_validation_parameters {
-
+    
     /// A builder for [`SsmValidationParameters`](crate::model::SsmValidationParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2741,8 +2520,7 @@ pub mod ssm_validation_parameters {
         }
         /// <p>The location of the validation script.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2751,8 +2529,7 @@ pub mod ssm_validation_parameters {
         }
         /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The type of validation script.</p>
         pub fn script_type(mut self, input: crate::model::ScriptType) -> Self {
@@ -2760,12 +2537,8 @@ pub mod ssm_validation_parameters {
             self
         }
         /// <p>The type of validation script.</p>
-        pub fn set_script_type(
-            mut self,
-            input: std::option::Option<crate::model::ScriptType>,
-        ) -> Self {
-            self.script_type = input;
-            self
+        pub fn set_script_type(mut self, input: std::option::Option<crate::model::ScriptType>) -> Self {
+            self.script_type = input; self
         }
         /// <p>The command to run the validation script.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2774,8 +2547,7 @@ pub mod ssm_validation_parameters {
         }
         /// <p>The command to run the validation script.</p>
         pub fn set_command(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.command = input;
-            self
+            self.command = input; self
         }
         /// <p>The timeout interval, in seconds.</p>
         pub fn execution_timeout_seconds(mut self, input: i32) -> Self {
@@ -2784,8 +2556,7 @@ pub mod ssm_validation_parameters {
         }
         /// <p>The timeout interval, in seconds.</p>
         pub fn set_execution_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.execution_timeout_seconds = input;
-            self
+            self.execution_timeout_seconds = input; self
         }
         /// <p>The name of the S3 bucket for output.</p>
         pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2793,25 +2564,30 @@ pub mod ssm_validation_parameters {
             self
         }
         /// <p>The name of the S3 bucket for output.</p>
-        pub fn set_output_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.output_s3_bucket_name = input;
-            self
+        pub fn set_output_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_s3_bucket_name = input; self
         }
         /// Consumes the builder and constructs a [`SsmValidationParameters`](crate::model::SsmValidationParameters).
         pub fn build(self) -> crate::model::SsmValidationParameters {
             crate::model::SsmValidationParameters {
-                source: self.source,
-                instance_id: self.instance_id,
-                script_type: self.script_type,
-                command: self.command,
-                execution_timeout_seconds: self.execution_timeout_seconds.unwrap_or_default(),
-                output_s3_bucket_name: self.output_s3_bucket_name,
+                source: self.source
+                ,
+                instance_id: self.instance_id
+                ,
+                script_type: self.script_type
+                ,
+                command: self.command
+                ,
+                execution_timeout_seconds: self.execution_timeout_seconds
+                    .unwrap_or_default()
+                ,
+                output_s3_bucket_name: self.output_s3_bucket_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SsmValidationParameters {
     /// Creates a new builder-style object to manufacture [`SsmValidationParameters`](crate::model::SsmValidationParameters).
@@ -2826,9 +2602,9 @@ impl SsmValidationParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appvalidationstrategy = unimplemented!();
 /// match appvalidationstrategy {
@@ -2849,56 +2625,48 @@ impl SsmValidationParameters {
 /// Specifically, when `appvalidationstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppValidationStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppValidationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Ssm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppValidationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "SSM" => AppValidationStrategy::Ssm,
-            other => {
-                AppValidationStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AppValidationStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppValidationStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppValidationStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppValidationStrategy::from(s))
+                }
+            }
 impl AppValidationStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AppValidationStrategy::Ssm => "SSM",
-            AppValidationStrategy::Unknown(value) => value.as_str(),
+            AppValidationStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SSM"]
+        &[
+            "SSM"
+        ]
     }
 }
 impl AsRef<str> for AppValidationStrategy {
@@ -2910,36 +2678,32 @@ impl AsRef<str> for AppValidationStrategy {
 /// <p>Replication configuration for a server group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerGroupReplicationConfiguration {
+pub struct ServerGroupReplicationConfiguration  {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
     #[doc(hidden)]
     pub server_group_id: std::option::Option<std::string::String>,
     /// <p>The replication configuration for servers in the server group.</p>
     #[doc(hidden)]
-    pub server_replication_configurations:
-        std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
+    pub server_replication_configurations: std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
 }
 impl ServerGroupReplicationConfiguration {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
-    pub fn server_group_id(&self) -> std::option::Option<&str> {
+    pub fn server_group_id(&self) -> std::option::Option<& str> {
         self.server_group_id.as_deref()
     }
     /// <p>The replication configuration for servers in the server group.</p>
-    pub fn server_replication_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServerReplicationConfiguration]> {
+    pub fn server_replication_configurations(&self) -> std::option::Option<& [crate::model::ServerReplicationConfiguration]> {
         self.server_replication_configurations.as_deref()
     }
 }
 /// See [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
 pub mod server_group_replication_configuration {
-
+    
     /// A builder for [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
-        pub(crate) server_replication_configurations:
-            std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
+        pub(crate) server_replication_configurations: std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
     }
     impl Builder {
         /// <p>The ID of the server group with which this replication configuration is associated.</p>
@@ -2948,43 +2712,36 @@ pub mod server_group_replication_configuration {
             self
         }
         /// <p>The ID of the server group with which this replication configuration is associated.</p>
-        pub fn set_server_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_group_id = input;
-            self
+        pub fn set_server_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_group_id = input; self
         }
         /// Appends an item to `server_replication_configurations`.
         ///
         /// To override the contents of this collection use [`set_server_replication_configurations`](Self::set_server_replication_configurations).
         ///
         /// <p>The replication configuration for servers in the server group.</p>
-        pub fn server_replication_configurations(
-            mut self,
-            input: crate::model::ServerReplicationConfiguration,
-        ) -> Self {
+        pub fn server_replication_configurations(mut self, input: crate::model::ServerReplicationConfiguration) -> Self {
             let mut v = self.server_replication_configurations.unwrap_or_default();
-            v.push(input);
-            self.server_replication_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.server_replication_configurations = Some(v);
+                            self
         }
         /// <p>The replication configuration for servers in the server group.</p>
-        pub fn set_server_replication_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
-        ) -> Self {
-            self.server_replication_configurations = input;
-            self
+        pub fn set_server_replication_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>) -> Self {
+            self.server_replication_configurations = input; self
         }
         /// Consumes the builder and constructs a [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
         pub fn build(self) -> crate::model::ServerGroupReplicationConfiguration {
             crate::model::ServerGroupReplicationConfiguration {
-                server_group_id: self.server_group_id,
-                server_replication_configurations: self.server_replication_configurations,
+                server_group_id: self.server_group_id
+                ,
+                server_replication_configurations: self.server_replication_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerGroupReplicationConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
@@ -2996,36 +2753,32 @@ impl ServerGroupReplicationConfiguration {
 /// <p>Replication configuration of a server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerReplicationConfiguration {
+pub struct ServerReplicationConfiguration  {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
     /// <p>The parameters for replicating the server.</p>
     #[doc(hidden)]
-    pub server_replication_parameters:
-        std::option::Option<crate::model::ServerReplicationParameters>,
+    pub server_replication_parameters: std::option::Option<crate::model::ServerReplicationParameters>,
 }
 impl ServerReplicationConfiguration {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
     /// <p>The parameters for replicating the server.</p>
-    pub fn server_replication_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerReplicationParameters> {
+    pub fn server_replication_parameters(&self) -> std::option::Option<& crate::model::ServerReplicationParameters> {
         self.server_replication_parameters.as_ref()
     }
 }
 /// See [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
 pub mod server_replication_configuration {
-
+    
     /// A builder for [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
-        pub(crate) server_replication_parameters:
-            std::option::Option<crate::model::ServerReplicationParameters>,
+        pub(crate) server_replication_parameters: std::option::Option<crate::model::ServerReplicationParameters>,
     }
     impl Builder {
         /// <p>The ID of the server with which this replication configuration is associated.</p>
@@ -3035,33 +2788,29 @@ pub mod server_replication_configuration {
         }
         /// <p>The ID of the server with which this replication configuration is associated.</p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// <p>The parameters for replicating the server.</p>
-        pub fn server_replication_parameters(
-            mut self,
-            input: crate::model::ServerReplicationParameters,
-        ) -> Self {
+        pub fn server_replication_parameters(mut self, input: crate::model::ServerReplicationParameters) -> Self {
             self.server_replication_parameters = Some(input);
             self
         }
         /// <p>The parameters for replicating the server.</p>
-        pub fn set_server_replication_parameters(
-            mut self,
-            input: std::option::Option<crate::model::ServerReplicationParameters>,
-        ) -> Self {
-            self.server_replication_parameters = input;
-            self
+        pub fn set_server_replication_parameters(mut self, input: std::option::Option<crate::model::ServerReplicationParameters>) -> Self {
+            self.server_replication_parameters = input; self
         }
         /// Consumes the builder and constructs a [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
         pub fn build(self) -> crate::model::ServerReplicationConfiguration {
             crate::model::ServerReplicationConfiguration {
-                server: self.server,
-                server_replication_parameters: self.server_replication_parameters,
+                server: self.server
+                ,
+                server_replication_parameters: self.server_replication_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerReplicationConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
@@ -3073,7 +2822,7 @@ impl ServerReplicationConfiguration {
 /// <p>The replication parameters for replicating a server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerReplicationParameters {
+pub struct ServerReplicationParameters  {
     /// <p>The seed time for creating a replication job for the server.</p>
     #[doc(hidden)]
     pub seed_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3092,20 +2841,20 @@ pub struct ServerReplicationParameters {
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerReplicationParameters {
     /// <p>The seed time for creating a replication job for the server.</p>
-    pub fn seed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn seed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.seed_time.as_ref()
     }
     /// <p>The frequency of creating replication jobs for the server.</p>
@@ -3117,7 +2866,7 @@ impl ServerReplicationParameters {
         self.run_once
     }
     /// <p>The license type for creating a replication job for the server.</p>
-    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+    pub fn license_type(&self) -> std::option::Option<& crate::model::LicenseType> {
         self.license_type.as_ref()
     }
     /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
@@ -3128,21 +2877,21 @@ impl ServerReplicationParameters {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
 pub mod server_replication_parameters {
-
+    
     /// A builder for [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3161,12 +2910,8 @@ pub mod server_replication_parameters {
             self
         }
         /// <p>The seed time for creating a replication job for the server.</p>
-        pub fn set_seed_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.seed_time = input;
-            self
+        pub fn set_seed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.seed_time = input; self
         }
         /// <p>The frequency of creating replication jobs for the server.</p>
         pub fn frequency(mut self, input: i32) -> Self {
@@ -3175,8 +2920,7 @@ pub mod server_replication_parameters {
         }
         /// <p>The frequency of creating replication jobs for the server.</p>
         pub fn set_frequency(mut self, input: std::option::Option<i32>) -> Self {
-            self.frequency = input;
-            self
+            self.frequency = input; self
         }
         /// <p>Indicates whether to run the replication job one time.</p>
         pub fn run_once(mut self, input: bool) -> Self {
@@ -3185,8 +2929,7 @@ pub mod server_replication_parameters {
         }
         /// <p>Indicates whether to run the replication job one time.</p>
         pub fn set_run_once(mut self, input: std::option::Option<bool>) -> Self {
-            self.run_once = input;
-            self
+            self.run_once = input; self
         }
         /// <p>The license type for creating a replication job for the server.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
@@ -3194,12 +2937,8 @@ pub mod server_replication_parameters {
             self
         }
         /// <p>The license type for creating a replication job for the server.</p>
-        pub fn set_license_type(
-            mut self,
-            input: std::option::Option<crate::model::LicenseType>,
-        ) -> Self {
-            self.license_type = input;
-            self
+        pub fn set_license_type(mut self, input: std::option::Option<crate::model::LicenseType>) -> Self {
+            self.license_type = input; self
         }
         /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
@@ -3207,12 +2946,8 @@ pub mod server_replication_parameters {
             self
         }
         /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
-        pub fn set_number_of_recent_amis_to_keep(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.number_of_recent_amis_to_keep = input;
-            self
+        pub fn set_number_of_recent_amis_to_keep(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_recent_amis_to_keep = input; self
         }
         /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -3221,46 +2956,53 @@ pub mod server_replication_parameters {
         }
         /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
-        /// <ul>
-        /// <li> <p>KMS key ID</p> </li>
-        /// <li> <p>KMS key alias</p> </li>
-        /// <li> <p>ARN referring to the KMS key ID</p> </li>
-        /// <li> <p>ARN referring to the KMS key alias</p> </li>
-        /// </ul>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
+        /// <ul> 
+        /// <li> <p>KMS key ID</p> </li> 
+        /// <li> <p>KMS key alias</p> </li> 
+        /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+        /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+        /// </ul> 
         /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
-        /// <ul>
-        /// <li> <p>KMS key ID</p> </li>
-        /// <li> <p>KMS key alias</p> </li>
-        /// <li> <p>ARN referring to the KMS key ID</p> </li>
-        /// <li> <p>ARN referring to the KMS key alias</p> </li>
-        /// </ul>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
+        /// <ul> 
+        /// <li> <p>KMS key ID</p> </li> 
+        /// <li> <p>KMS key alias</p> </li> 
+        /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+        /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+        /// </ul> 
         /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
         pub fn build(self) -> crate::model::ServerReplicationParameters {
             crate::model::ServerReplicationParameters {
-                seed_time: self.seed_time,
-                frequency: self.frequency,
-                run_once: self.run_once,
-                license_type: self.license_type,
-                number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep,
-                encrypted: self.encrypted,
-                kms_key_id: self.kms_key_id,
+                seed_time: self.seed_time
+                ,
+                frequency: self.frequency
+                ,
+                run_once: self.run_once
+                ,
+                license_type: self.license_type
+                ,
+                number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep
+                ,
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerReplicationParameters {
     /// Creates a new builder-style object to manufacture [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
@@ -3272,7 +3014,7 @@ impl ServerReplicationParameters {
 /// <p>Launch configuration for a server group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerGroupLaunchConfiguration {
+pub struct ServerGroupLaunchConfiguration  {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
     #[doc(hidden)]
     pub server_group_id: std::option::Option<std::string::String>,
@@ -3281,12 +3023,11 @@ pub struct ServerGroupLaunchConfiguration {
     pub launch_order: std::option::Option<i32>,
     /// <p>The launch configuration for servers in the server group.</p>
     #[doc(hidden)]
-    pub server_launch_configurations:
-        std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
+    pub server_launch_configurations: std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
 }
 impl ServerGroupLaunchConfiguration {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
-    pub fn server_group_id(&self) -> std::option::Option<&str> {
+    pub fn server_group_id(&self) -> std::option::Option<& str> {
         self.server_group_id.as_deref()
     }
     /// <p>The launch order of servers in the server group.</p>
@@ -3294,22 +3035,19 @@ impl ServerGroupLaunchConfiguration {
         self.launch_order
     }
     /// <p>The launch configuration for servers in the server group.</p>
-    pub fn server_launch_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServerLaunchConfiguration]> {
+    pub fn server_launch_configurations(&self) -> std::option::Option<& [crate::model::ServerLaunchConfiguration]> {
         self.server_launch_configurations.as_deref()
     }
 }
 /// See [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
 pub mod server_group_launch_configuration {
-
+    
     /// A builder for [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
         pub(crate) launch_order: std::option::Option<i32>,
-        pub(crate) server_launch_configurations:
-            std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
+        pub(crate) server_launch_configurations: std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
     }
     impl Builder {
         /// <p>The ID of the server group with which the launch configuration is associated.</p>
@@ -3318,12 +3056,8 @@ pub mod server_group_launch_configuration {
             self
         }
         /// <p>The ID of the server group with which the launch configuration is associated.</p>
-        pub fn set_server_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_group_id = input;
-            self
+        pub fn set_server_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_group_id = input; self
         }
         /// <p>The launch order of servers in the server group.</p>
         pub fn launch_order(mut self, input: i32) -> Self {
@@ -3332,40 +3066,37 @@ pub mod server_group_launch_configuration {
         }
         /// <p>The launch order of servers in the server group.</p>
         pub fn set_launch_order(mut self, input: std::option::Option<i32>) -> Self {
-            self.launch_order = input;
-            self
+            self.launch_order = input; self
         }
         /// Appends an item to `server_launch_configurations`.
         ///
         /// To override the contents of this collection use [`set_server_launch_configurations`](Self::set_server_launch_configurations).
         ///
         /// <p>The launch configuration for servers in the server group.</p>
-        pub fn server_launch_configurations(
-            mut self,
-            input: crate::model::ServerLaunchConfiguration,
-        ) -> Self {
+        pub fn server_launch_configurations(mut self, input: crate::model::ServerLaunchConfiguration) -> Self {
             let mut v = self.server_launch_configurations.unwrap_or_default();
-            v.push(input);
-            self.server_launch_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.server_launch_configurations = Some(v);
+                            self
         }
         /// <p>The launch configuration for servers in the server group.</p>
-        pub fn set_server_launch_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
-        ) -> Self {
-            self.server_launch_configurations = input;
-            self
+        pub fn set_server_launch_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>) -> Self {
+            self.server_launch_configurations = input; self
         }
         /// Consumes the builder and constructs a [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
         pub fn build(self) -> crate::model::ServerGroupLaunchConfiguration {
             crate::model::ServerGroupLaunchConfiguration {
-                server_group_id: self.server_group_id,
-                launch_order: self.launch_order,
-                server_launch_configurations: self.server_launch_configurations,
+                server_group_id: self.server_group_id
+                ,
+                launch_order: self.launch_order
+                ,
+                server_launch_configurations: self.server_launch_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerGroupLaunchConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
@@ -3377,7 +3108,7 @@ impl ServerGroupLaunchConfiguration {
 /// <p>Launch configuration for a server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerLaunchConfiguration {
+pub struct ServerLaunchConfiguration  {
     /// <p>The ID of the server with which the launch configuration is associated.</p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
@@ -3417,35 +3148,35 @@ pub struct ServerLaunchConfiguration {
 }
 impl ServerLaunchConfiguration {
     /// <p>The ID of the server with which the launch configuration is associated.</p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
     /// <p>The logical ID of the server in the CloudFormation template.</p>
-    pub fn logical_id(&self) -> std::option::Option<&str> {
+    pub fn logical_id(&self) -> std::option::Option<& str> {
         self.logical_id.as_deref()
     }
     /// <p>The ID of the VPC into which the server should be launched.</p>
-    pub fn vpc(&self) -> std::option::Option<&str> {
+    pub fn vpc(&self) -> std::option::Option<& str> {
         self.vpc.as_deref()
     }
     /// <p>The ID of the subnet the server should be launched into.</p>
-    pub fn subnet(&self) -> std::option::Option<&str> {
+    pub fn subnet(&self) -> std::option::Option<& str> {
         self.subnet.as_deref()
     }
     /// <p>The ID of the security group that applies to the launched server.</p>
-    pub fn security_group(&self) -> std::option::Option<&str> {
+    pub fn security_group(&self) -> std::option::Option<& str> {
         self.security_group.as_deref()
     }
     /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
-    pub fn ec2_key_name(&self) -> std::option::Option<&str> {
+    pub fn ec2_key_name(&self) -> std::option::Option<& str> {
         self.ec2_key_name.as_deref()
     }
     /// <p>Location of the user-data script to be executed when launching the server.</p>
-    pub fn user_data(&self) -> std::option::Option<&crate::model::UserData> {
+    pub fn user_data(&self) -> std::option::Option<& crate::model::UserData> {
         self.user_data.as_ref()
     }
     /// <p>The instance type to use when launching the server.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
@@ -3453,21 +3184,21 @@ impl ServerLaunchConfiguration {
         self.associate_public_ip_address
     }
     /// <p>The name of the IAM instance profile.</p>
-    pub fn iam_instance_profile_name(&self) -> std::option::Option<&str> {
+    pub fn iam_instance_profile_name(&self) -> std::option::Option<& str> {
         self.iam_instance_profile_name.as_deref()
     }
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn configure_script(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn configure_script(&self) -> std::option::Option<& crate::model::S3Location> {
         self.configure_script.as_ref()
     }
     /// <p>The type of configuration script.</p>
-    pub fn configure_script_type(&self) -> std::option::Option<&crate::model::ScriptType> {
+    pub fn configure_script_type(&self) -> std::option::Option<& crate::model::ScriptType> {
         self.configure_script_type.as_ref()
     }
 }
 /// See [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
 pub mod server_launch_configuration {
-
+    
     /// A builder for [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3492,8 +3223,7 @@ pub mod server_launch_configuration {
         }
         /// <p>The ID of the server with which the launch configuration is associated.</p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// <p>The logical ID of the server in the CloudFormation template.</p>
         pub fn logical_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3502,8 +3232,7 @@ pub mod server_launch_configuration {
         }
         /// <p>The logical ID of the server in the CloudFormation template.</p>
         pub fn set_logical_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.logical_id = input;
-            self
+            self.logical_id = input; self
         }
         /// <p>The ID of the VPC into which the server should be launched.</p>
         pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3512,8 +3241,7 @@ pub mod server_launch_configuration {
         }
         /// <p>The ID of the VPC into which the server should be launched.</p>
         pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc = input;
-            self
+            self.vpc = input; self
         }
         /// <p>The ID of the subnet the server should be launched into.</p>
         pub fn subnet(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3522,8 +3250,7 @@ pub mod server_launch_configuration {
         }
         /// <p>The ID of the subnet the server should be launched into.</p>
         pub fn set_subnet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet = input;
-            self
+            self.subnet = input; self
         }
         /// <p>The ID of the security group that applies to the launched server.</p>
         pub fn security_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3531,12 +3258,8 @@ pub mod server_launch_configuration {
             self
         }
         /// <p>The ID of the security group that applies to the launched server.</p>
-        pub fn set_security_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.security_group = input;
-            self
+        pub fn set_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.security_group = input; self
         }
         /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
         pub fn ec2_key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3545,8 +3268,7 @@ pub mod server_launch_configuration {
         }
         /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
         pub fn set_ec2_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ec2_key_name = input;
-            self
+            self.ec2_key_name = input; self
         }
         /// <p>Location of the user-data script to be executed when launching the server.</p>
         pub fn user_data(mut self, input: crate::model::UserData) -> Self {
@@ -3555,8 +3277,7 @@ pub mod server_launch_configuration {
         }
         /// <p>Location of the user-data script to be executed when launching the server.</p>
         pub fn set_user_data(mut self, input: std::option::Option<crate::model::UserData>) -> Self {
-            self.user_data = input;
-            self
+            self.user_data = input; self
         }
         /// <p>The instance type to use when launching the server.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3564,12 +3285,8 @@ pub mod server_launch_configuration {
             self
         }
         /// <p>The instance type to use when launching the server.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
         pub fn associate_public_ip_address(mut self, input: bool) -> Self {
@@ -3578,8 +3295,7 @@ pub mod server_launch_configuration {
         }
         /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
-            self.associate_public_ip_address = input;
-            self
+            self.associate_public_ip_address = input; self
         }
         /// <p>The name of the IAM instance profile.</p>
         pub fn iam_instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3587,12 +3303,8 @@ pub mod server_launch_configuration {
             self
         }
         /// <p>The name of the IAM instance profile.</p>
-        pub fn set_iam_instance_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iam_instance_profile_name = input;
-            self
+        pub fn set_iam_instance_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_instance_profile_name = input; self
         }
         /// <p>Location of an Amazon S3 object.</p>
         pub fn configure_script(mut self, input: crate::model::S3Location) -> Self {
@@ -3600,12 +3312,8 @@ pub mod server_launch_configuration {
             self
         }
         /// <p>Location of an Amazon S3 object.</p>
-        pub fn set_configure_script(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.configure_script = input;
-            self
+        pub fn set_configure_script(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.configure_script = input; self
         }
         /// <p>The type of configuration script.</p>
         pub fn configure_script_type(mut self, input: crate::model::ScriptType) -> Self {
@@ -3613,31 +3321,41 @@ pub mod server_launch_configuration {
             self
         }
         /// <p>The type of configuration script.</p>
-        pub fn set_configure_script_type(
-            mut self,
-            input: std::option::Option<crate::model::ScriptType>,
-        ) -> Self {
-            self.configure_script_type = input;
-            self
+        pub fn set_configure_script_type(mut self, input: std::option::Option<crate::model::ScriptType>) -> Self {
+            self.configure_script_type = input; self
         }
         /// Consumes the builder and constructs a [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
         pub fn build(self) -> crate::model::ServerLaunchConfiguration {
             crate::model::ServerLaunchConfiguration {
-                server: self.server,
-                logical_id: self.logical_id,
-                vpc: self.vpc,
-                subnet: self.subnet,
-                security_group: self.security_group,
-                ec2_key_name: self.ec2_key_name,
-                user_data: self.user_data,
-                instance_type: self.instance_type,
-                associate_public_ip_address: self.associate_public_ip_address,
-                iam_instance_profile_name: self.iam_instance_profile_name,
-                configure_script: self.configure_script,
-                configure_script_type: self.configure_script_type,
+                server: self.server
+                ,
+                logical_id: self.logical_id
+                ,
+                vpc: self.vpc
+                ,
+                subnet: self.subnet
+                ,
+                security_group: self.security_group
+                ,
+                ec2_key_name: self.ec2_key_name
+                ,
+                user_data: self.user_data
+                ,
+                instance_type: self.instance_type
+                ,
+                associate_public_ip_address: self.associate_public_ip_address
+                ,
+                iam_instance_profile_name: self.iam_instance_profile_name
+                ,
+                configure_script: self.configure_script
+                ,
+                configure_script_type: self.configure_script_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerLaunchConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
@@ -3649,20 +3367,20 @@ impl ServerLaunchConfiguration {
 /// <p>A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserData {
+pub struct UserData  {
     /// <p>Amazon S3 location of the user-data script.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl UserData {
     /// <p>Amazon S3 location of the user-data script.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3_location.as_ref()
     }
 }
 /// See [`UserData`](crate::model::UserData).
 pub mod user_data {
-
+    
     /// A builder for [`UserData`](crate::model::UserData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3675,20 +3393,19 @@ pub mod user_data {
             self
         }
         /// <p>Amazon S3 location of the user-data script.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3_location = input; self
         }
         /// Consumes the builder and constructs a [`UserData`](crate::model::UserData).
         pub fn build(self) -> crate::model::UserData {
             crate::model::UserData {
-                s3_location: self.s3_location,
+                s3_location: self.s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl UserData {
     /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData).
@@ -3700,7 +3417,7 @@ impl UserData {
 /// <p>Contains the status of validating an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationContext {
+pub struct NotificationContext  {
     /// <p>The ID of the validation.</p>
     #[doc(hidden)]
     pub validation_id: std::option::Option<std::string::String>,
@@ -3713,21 +3430,21 @@ pub struct NotificationContext {
 }
 impl NotificationContext {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> std::option::Option<&str> {
+    pub fn validation_id(&self) -> std::option::Option<& str> {
         self.validation_id.as_deref()
     }
     /// <p>The status of the validation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ValidationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ValidationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 /// See [`NotificationContext`](crate::model::NotificationContext).
 pub mod notification_context {
-
+    
     /// A builder for [`NotificationContext`](crate::model::NotificationContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3742,12 +3459,8 @@ pub mod notification_context {
             self
         }
         /// <p>The ID of the validation.</p>
-        pub fn set_validation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.validation_id = input;
-            self
+        pub fn set_validation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.validation_id = input; self
         }
         /// <p>The status of the validation.</p>
         pub fn status(mut self, input: crate::model::ValidationStatus) -> Self {
@@ -3755,12 +3468,8 @@ pub mod notification_context {
             self
         }
         /// <p>The status of the validation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ValidationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ValidationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3768,22 +3477,23 @@ pub mod notification_context {
             self
         }
         /// <p>The status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Consumes the builder and constructs a [`NotificationContext`](crate::model::NotificationContext).
         pub fn build(self) -> crate::model::NotificationContext {
             crate::model::NotificationContext {
-                validation_id: self.validation_id,
-                status: self.status,
-                status_message: self.status_message,
+                validation_id: self.validation_id
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotificationContext {
     /// Creates a new builder-style object to manufacture [`NotificationContext`](crate::model::NotificationContext).
@@ -3798,9 +3508,9 @@ impl NotificationContext {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationstatus = unimplemented!();
 /// match validationstatus {
@@ -3825,22 +3535,14 @@ impl NotificationContext {
 /// Specifically, when `validationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3853,7 +3555,7 @@ pub enum ValidationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationStatus {
     fn from(s: &str) -> Self {
@@ -3863,17 +3565,17 @@ impl std::convert::From<&str> for ValidationStatus {
             "PENDING" => ValidationStatus::Pending,
             "READY_FOR_VALIDATION" => ValidationStatus::ReadyForValidation,
             "SUCCEEDED" => ValidationStatus::Succeeded,
-            other => ValidationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ValidationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationStatus::from(s))
+                }
+            }
 impl ValidationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3883,17 +3585,13 @@ impl ValidationStatus {
             ValidationStatus::Pending => "PENDING",
             ValidationStatus::ReadyForValidation => "READY_FOR_VALIDATION",
             ValidationStatus::Succeeded => "SUCCEEDED",
-            ValidationStatus::Unknown(value) => value.as_str(),
+            ValidationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FAILED",
-            "IN_PROGRESS",
-            "PENDING",
-            "READY_FOR_VALIDATION",
-            "SUCCEEDED",
+            "FAILED", "IN_PROGRESS", "PENDING", "READY_FOR_VALIDATION", "SUCCEEDED"
         ]
     }
 }
@@ -3909,9 +3607,9 @@ impl AsRef<str> for ValidationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servercatalogstatus = unimplemented!();
 /// match servercatalogstatus {
@@ -3936,22 +3634,14 @@ impl AsRef<str> for ValidationStatus {
 /// Specifically, when `servercatalogstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServerCatalogStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServerCatalogStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -3964,7 +3654,7 @@ pub enum ServerCatalogStatus {
     #[allow(missing_docs)] // documentation missing in model
     NotImported,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServerCatalogStatus {
     fn from(s: &str) -> Self {
@@ -3974,19 +3664,17 @@ impl std::convert::From<&str> for ServerCatalogStatus {
             "EXPIRED" => ServerCatalogStatus::Expired,
             "IMPORTING" => ServerCatalogStatus::Importing,
             "NOT_IMPORTED" => ServerCatalogStatus::NotImported,
-            other => {
-                ServerCatalogStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ServerCatalogStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServerCatalogStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerCatalogStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServerCatalogStatus::from(s))
+                }
+            }
 impl ServerCatalogStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3996,17 +3684,13 @@ impl ServerCatalogStatus {
             ServerCatalogStatus::Expired => "EXPIRED",
             ServerCatalogStatus::Importing => "IMPORTING",
             ServerCatalogStatus::NotImported => "NOT_IMPORTED",
-            ServerCatalogStatus::Unknown(value) => value.as_str(),
+            ServerCatalogStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "DELETED",
-            "EXPIRED",
-            "IMPORTING",
-            "NOT_IMPORTED",
+            "AVAILABLE", "DELETED", "EXPIRED", "IMPORTING", "NOT_IMPORTED"
         ]
     }
 }
@@ -4019,7 +3703,7 @@ impl AsRef<str> for ServerCatalogStatus {
 /// <p>Represents a replication run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationRun {
+pub struct ReplicationRun  {
     /// <p>The ID of the replication run.</p>
     #[doc(hidden)]
     pub replication_run_id: std::option::Option<std::string::String>,
@@ -4050,73 +3734,73 @@ pub struct ReplicationRun {
     /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ReplicationRun {
     /// <p>The ID of the replication run.</p>
-    pub fn replication_run_id(&self) -> std::option::Option<&str> {
+    pub fn replication_run_id(&self) -> std::option::Option<& str> {
         self.replication_run_id.as_deref()
     }
     /// <p>The state of the replication run.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ReplicationRunState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ReplicationRunState> {
         self.state.as_ref()
     }
     /// <p>The type of replication run.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ReplicationRunType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ReplicationRunType> {
         self.r#type.as_ref()
     }
     /// <p>Details about the current stage of the replication run.</p>
-    pub fn stage_details(&self) -> std::option::Option<&crate::model::ReplicationRunStageDetails> {
+    pub fn stage_details(&self) -> std::option::Option<& crate::model::ReplicationRunStageDetails> {
         self.stage_details.as_ref()
     }
     /// <p>The description of the current status of the replication job.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
-    pub fn ami_id(&self) -> std::option::Option<&str> {
+    pub fn ami_id(&self) -> std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn scheduled_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
     /// <p>The completion time of the last replication run.</p>
-    pub fn completed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_time.as_ref()
     }
     /// <p>The description of the replication run.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`ReplicationRun`](crate::model::ReplicationRun).
 pub mod replication_run {
-
+    
     /// A builder for [`ReplicationRun`](crate::model::ReplicationRun).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4139,12 +3823,8 @@ pub mod replication_run {
             self
         }
         /// <p>The ID of the replication run.</p>
-        pub fn set_replication_run_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_run_id = input;
-            self
+        pub fn set_replication_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_run_id = input; self
         }
         /// <p>The state of the replication run.</p>
         pub fn state(mut self, input: crate::model::ReplicationRunState) -> Self {
@@ -4152,12 +3832,8 @@ pub mod replication_run {
             self
         }
         /// <p>The state of the replication run.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationRunState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ReplicationRunState>) -> Self {
+            self.state = input; self
         }
         /// <p>The type of replication run.</p>
         pub fn r#type(mut self, input: crate::model::ReplicationRunType) -> Self {
@@ -4165,12 +3841,8 @@ pub mod replication_run {
             self
         }
         /// <p>The type of replication run.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationRunType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ReplicationRunType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Details about the current stage of the replication run.</p>
         pub fn stage_details(mut self, input: crate::model::ReplicationRunStageDetails) -> Self {
@@ -4178,12 +3850,8 @@ pub mod replication_run {
             self
         }
         /// <p>Details about the current stage of the replication run.</p>
-        pub fn set_stage_details(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationRunStageDetails>,
-        ) -> Self {
-            self.stage_details = input;
-            self
+        pub fn set_stage_details(mut self, input: std::option::Option<crate::model::ReplicationRunStageDetails>) -> Self {
+            self.stage_details = input; self
         }
         /// <p>The description of the current status of the replication job.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4191,12 +3859,8 @@ pub mod replication_run {
             self
         }
         /// <p>The description of the current status of the replication job.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
         pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4205,8 +3869,7 @@ pub mod replication_run {
         }
         /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ami_id = input;
-            self
+            self.ami_id = input; self
         }
         /// <p>The start time of the next replication run.</p>
         pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4214,12 +3877,8 @@ pub mod replication_run {
             self
         }
         /// <p>The start time of the next replication run.</p>
-        pub fn set_scheduled_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.scheduled_start_time = input;
-            self
+        pub fn set_scheduled_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.scheduled_start_time = input; self
         }
         /// <p>The completion time of the last replication run.</p>
         pub fn completed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4227,12 +3886,8 @@ pub mod replication_run {
             self
         }
         /// <p>The completion time of the last replication run.</p>
-        pub fn set_completed_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_time = input;
-            self
+        pub fn set_completed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_time = input; self
         }
         /// <p>The description of the replication run.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4241,8 +3896,7 @@ pub mod replication_run {
         }
         /// <p>The description of the replication run.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -4251,50 +3905,61 @@ pub mod replication_run {
         }
         /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
-        /// <ul>
-        /// <li> <p>KMS key ID</p> </li>
-        /// <li> <p>KMS key alias</p> </li>
-        /// <li> <p>ARN referring to the KMS key ID</p> </li>
-        /// <li> <p>ARN referring to the KMS key alias</p> </li>
-        /// </ul>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
+        /// <ul> 
+        /// <li> <p>KMS key ID</p> </li> 
+        /// <li> <p>KMS key alias</p> </li> 
+        /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+        /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+        /// </ul> 
         /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
-        /// <ul>
-        /// <li> <p>KMS key ID</p> </li>
-        /// <li> <p>KMS key alias</p> </li>
-        /// <li> <p>ARN referring to the KMS key ID</p> </li>
-        /// <li> <p>ARN referring to the KMS key alias</p> </li>
-        /// </ul>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
+        /// <ul> 
+        /// <li> <p>KMS key ID</p> </li> 
+        /// <li> <p>KMS key alias</p> </li> 
+        /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+        /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+        /// </ul> 
         /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationRun`](crate::model::ReplicationRun).
         pub fn build(self) -> crate::model::ReplicationRun {
             crate::model::ReplicationRun {
-                replication_run_id: self.replication_run_id,
-                state: self.state,
-                r#type: self.r#type,
-                stage_details: self.stage_details,
-                status_message: self.status_message,
-                ami_id: self.ami_id,
-                scheduled_start_time: self.scheduled_start_time,
-                completed_time: self.completed_time,
-                description: self.description,
-                encrypted: self.encrypted,
-                kms_key_id: self.kms_key_id,
+                replication_run_id: self.replication_run_id
+                ,
+                state: self.state
+                ,
+                r#type: self.r#type
+                ,
+                stage_details: self.stage_details
+                ,
+                status_message: self.status_message
+                ,
+                ami_id: self.ami_id
+                ,
+                scheduled_start_time: self.scheduled_start_time
+                ,
+                completed_time: self.completed_time
+                ,
+                description: self.description
+                ,
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationRun {
     /// Creates a new builder-style object to manufacture [`ReplicationRun`](crate::model::ReplicationRun).
@@ -4306,7 +3971,7 @@ impl ReplicationRun {
 /// <p>Details of the current stage of a replication run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationRunStageDetails {
+pub struct ReplicationRunStageDetails  {
     /// <p>The current stage of a replication run.</p>
     #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
@@ -4316,17 +3981,17 @@ pub struct ReplicationRunStageDetails {
 }
 impl ReplicationRunStageDetails {
     /// <p>The current stage of a replication run.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> std::option::Option<& str> {
         self.stage.as_deref()
     }
     /// <p>The progress of the current stage of a replication run.</p>
-    pub fn stage_progress(&self) -> std::option::Option<&str> {
+    pub fn stage_progress(&self) -> std::option::Option<& str> {
         self.stage_progress.as_deref()
     }
 }
 /// See [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
 pub mod replication_run_stage_details {
-
+    
     /// A builder for [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4341,8 +4006,7 @@ pub mod replication_run_stage_details {
         }
         /// <p>The current stage of a replication run.</p>
         pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage = input;
-            self
+            self.stage = input; self
         }
         /// <p>The progress of the current stage of a replication run.</p>
         pub fn stage_progress(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4350,21 +4014,21 @@ pub mod replication_run_stage_details {
             self
         }
         /// <p>The progress of the current stage of a replication run.</p>
-        pub fn set_stage_progress(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.stage_progress = input;
-            self
+        pub fn set_stage_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_progress = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
         pub fn build(self) -> crate::model::ReplicationRunStageDetails {
             crate::model::ReplicationRunStageDetails {
-                stage: self.stage,
-                stage_progress: self.stage_progress,
+                stage: self.stage
+                ,
+                stage_progress: self.stage_progress
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationRunStageDetails {
     /// Creates a new builder-style object to manufacture [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
@@ -4379,9 +4043,9 @@ impl ReplicationRunStageDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationruntype = unimplemented!();
 /// match replicationruntype {
@@ -4403,60 +4067,52 @@ impl ReplicationRunStageDetails {
 /// Specifically, when `replicationruntype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationRunType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationRunType {
     #[allow(missing_docs)] // documentation missing in model
     Automatic,
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationRunType {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATIC" => ReplicationRunType::Automatic,
             "ON_DEMAND" => ReplicationRunType::OnDemand,
-            other => {
-                ReplicationRunType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReplicationRunType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationRunType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationRunType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationRunType::from(s))
+                }
+            }
 impl ReplicationRunType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationRunType::Automatic => "AUTOMATIC",
             ReplicationRunType::OnDemand => "ON_DEMAND",
-            ReplicationRunType::Unknown(value) => value.as_str(),
+            ReplicationRunType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMATIC", "ON_DEMAND"]
+        &[
+            "AUTOMATIC", "ON_DEMAND"
+        ]
     }
 }
 impl AsRef<str> for ReplicationRunType {
@@ -4471,9 +4127,9 @@ impl AsRef<str> for ReplicationRunType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationrunstate = unimplemented!();
 /// match replicationrunstate {
@@ -4500,22 +4156,14 @@ impl AsRef<str> for ReplicationRunType {
 /// Specifically, when `replicationrunstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationRunState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationRunState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -4532,7 +4180,7 @@ pub enum ReplicationRunState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationRunState {
     fn from(s: &str) -> Self {
@@ -4544,19 +4192,17 @@ impl std::convert::From<&str> for ReplicationRunState {
             "FAILED" => ReplicationRunState::Failed,
             "MISSED" => ReplicationRunState::Missed,
             "PENDING" => ReplicationRunState::Pending,
-            other => {
-                ReplicationRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReplicationRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationRunState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationRunState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationRunState::from(s))
+                }
+            }
 impl ReplicationRunState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4568,19 +4214,13 @@ impl ReplicationRunState {
             ReplicationRunState::Failed => "FAILED",
             ReplicationRunState::Missed => "MISSED",
             ReplicationRunState::Pending => "PENDING",
-            ReplicationRunState::Unknown(value) => value.as_str(),
+            ReplicationRunState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "COMPLETED",
-            "DELETED",
-            "DELETING",
-            "FAILED",
-            "MISSED",
-            "PENDING",
+            "ACTIVE", "COMPLETED", "DELETED", "DELETING", "FAILED", "MISSED", "PENDING"
         ]
     }
 }
@@ -4593,7 +4233,7 @@ impl AsRef<str> for ReplicationRunState {
 /// <p>Represents a replication job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationJob {
+pub struct ReplicationJob  {
     /// <p>The ID of the replication job.</p>
     #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
@@ -4642,13 +4282,13 @@ pub struct ReplicationJob {
     /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -4658,23 +4298,23 @@ pub struct ReplicationJob {
 }
 impl ReplicationJob {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+    pub fn replication_job_id(&self) -> std::option::Option<& str> {
         self.replication_job_id.as_deref()
     }
     /// <p>The ID of the server.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The type of server.</p>
-    pub fn server_type(&self) -> std::option::Option<&crate::model::ServerType> {
+    pub fn server_type(&self) -> std::option::Option<& crate::model::ServerType> {
         self.server_type.as_ref()
     }
     /// <p>Information about the VM server.</p>
-    pub fn vm_server(&self) -> std::option::Option<&crate::model::VmServer> {
+    pub fn vm_server(&self) -> std::option::Option<& crate::model::VmServer> {
         self.vm_server.as_ref()
     }
     /// <p>The seed replication time.</p>
-    pub fn seed_replication_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn seed_replication_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.seed_replication_time.as_ref()
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
@@ -4686,33 +4326,31 @@ impl ReplicationJob {
         self.run_once
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn next_replication_run_start_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn next_replication_run_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.next_replication_run_start_time.as_ref()
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+    pub fn license_type(&self) -> std::option::Option<& crate::model::LicenseType> {
         self.license_type.as_ref()
     }
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
-    pub fn latest_ami_id(&self) -> std::option::Option<&str> {
+    pub fn latest_ami_id(&self) -> std::option::Option<& str> {
         self.latest_ami_id.as_deref()
     }
     /// <p>The state of the replication job.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ReplicationJobState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ReplicationJobState> {
         self.state.as_ref()
     }
     /// <p>The description of the current status of the replication job.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The description of the replication job.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
@@ -4723,25 +4361,25 @@ impl ReplicationJob {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Information about the replication runs.</p>
-    pub fn replication_run_list(&self) -> std::option::Option<&[crate::model::ReplicationRun]> {
+    pub fn replication_run_list(&self) -> std::option::Option<& [crate::model::ReplicationRun]> {
         self.replication_run_list.as_deref()
     }
 }
 /// See [`ReplicationJob`](crate::model::ReplicationJob).
 pub mod replication_job {
-
+    
     /// A builder for [`ReplicationJob`](crate::model::ReplicationJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4762,8 +4400,7 @@ pub mod replication_job {
         pub(crate) number_of_recent_amis_to_keep: std::option::Option<i32>,
         pub(crate) encrypted: std::option::Option<bool>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) replication_run_list:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>,
+        pub(crate) replication_run_list: std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>,
     }
     impl Builder {
         /// <p>The ID of the replication job.</p>
@@ -4772,12 +4409,8 @@ pub mod replication_job {
             self
         }
         /// <p>The ID of the replication job.</p>
-        pub fn set_replication_job_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_job_id = input;
-            self
+        pub fn set_replication_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_job_id = input; self
         }
         /// <p>The ID of the server.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4786,8 +4419,7 @@ pub mod replication_job {
         }
         /// <p>The ID of the server.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>The type of server.</p>
         pub fn server_type(mut self, input: crate::model::ServerType) -> Self {
@@ -4795,12 +4427,8 @@ pub mod replication_job {
             self
         }
         /// <p>The type of server.</p>
-        pub fn set_server_type(
-            mut self,
-            input: std::option::Option<crate::model::ServerType>,
-        ) -> Self {
-            self.server_type = input;
-            self
+        pub fn set_server_type(mut self, input: std::option::Option<crate::model::ServerType>) -> Self {
+            self.server_type = input; self
         }
         /// <p>Information about the VM server.</p>
         pub fn vm_server(mut self, input: crate::model::VmServer) -> Self {
@@ -4809,8 +4437,7 @@ pub mod replication_job {
         }
         /// <p>Information about the VM server.</p>
         pub fn set_vm_server(mut self, input: std::option::Option<crate::model::VmServer>) -> Self {
-            self.vm_server = input;
-            self
+            self.vm_server = input; self
         }
         /// <p>The seed replication time.</p>
         pub fn seed_replication_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4818,12 +4445,8 @@ pub mod replication_job {
             self
         }
         /// <p>The seed replication time.</p>
-        pub fn set_seed_replication_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.seed_replication_time = input;
-            self
+        pub fn set_seed_replication_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.seed_replication_time = input; self
         }
         /// <p>The time between consecutive replication runs, in hours.</p>
         pub fn frequency(mut self, input: i32) -> Self {
@@ -4832,8 +4455,7 @@ pub mod replication_job {
         }
         /// <p>The time between consecutive replication runs, in hours.</p>
         pub fn set_frequency(mut self, input: std::option::Option<i32>) -> Self {
-            self.frequency = input;
-            self
+            self.frequency = input; self
         }
         /// <p>Indicates whether to run the replication job one time.</p>
         pub fn run_once(mut self, input: bool) -> Self {
@@ -4842,24 +4464,16 @@ pub mod replication_job {
         }
         /// <p>Indicates whether to run the replication job one time.</p>
         pub fn set_run_once(mut self, input: std::option::Option<bool>) -> Self {
-            self.run_once = input;
-            self
+            self.run_once = input; self
         }
         /// <p>The start time of the next replication run.</p>
-        pub fn next_replication_run_start_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn next_replication_run_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.next_replication_run_start_time = Some(input);
             self
         }
         /// <p>The start time of the next replication run.</p>
-        pub fn set_next_replication_run_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.next_replication_run_start_time = input;
-            self
+        pub fn set_next_replication_run_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.next_replication_run_start_time = input; self
         }
         /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
@@ -4867,12 +4481,8 @@ pub mod replication_job {
             self
         }
         /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-        pub fn set_license_type(
-            mut self,
-            input: std::option::Option<crate::model::LicenseType>,
-        ) -> Self {
-            self.license_type = input;
-            self
+        pub fn set_license_type(mut self, input: std::option::Option<crate::model::LicenseType>) -> Self {
+            self.license_type = input; self
         }
         /// <p>The name of the IAM role to be used by Server Migration Service.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4881,8 +4491,7 @@ pub mod replication_job {
         }
         /// <p>The name of the IAM role to be used by Server Migration Service.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_name = input;
-            self
+            self.role_name = input; self
         }
         /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
         pub fn latest_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4890,12 +4499,8 @@ pub mod replication_job {
             self
         }
         /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
-        pub fn set_latest_ami_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_ami_id = input;
-            self
+        pub fn set_latest_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_ami_id = input; self
         }
         /// <p>The state of the replication job.</p>
         pub fn state(mut self, input: crate::model::ReplicationJobState) -> Self {
@@ -4903,12 +4508,8 @@ pub mod replication_job {
             self
         }
         /// <p>The state of the replication job.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationJobState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ReplicationJobState>) -> Self {
+            self.state = input; self
         }
         /// <p>The description of the current status of the replication job.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4916,12 +4517,8 @@ pub mod replication_job {
             self
         }
         /// <p>The description of the current status of the replication job.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The description of the replication job.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4930,8 +4527,7 @@ pub mod replication_job {
         }
         /// <p>The description of the replication job.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
@@ -4939,12 +4535,8 @@ pub mod replication_job {
             self
         }
         /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
-        pub fn set_number_of_recent_amis_to_keep(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.number_of_recent_amis_to_keep = input;
-            self
+        pub fn set_number_of_recent_amis_to_keep(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_recent_amis_to_keep = input; self
         }
         /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -4953,32 +4545,30 @@ pub mod replication_job {
         }
         /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
-        /// <ul>
-        /// <li> <p>KMS key ID</p> </li>
-        /// <li> <p>KMS key alias</p> </li>
-        /// <li> <p>ARN referring to the KMS key ID</p> </li>
-        /// <li> <p>ARN referring to the KMS key alias</p> </li>
-        /// </ul>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p> 
+        /// <ul> 
+        /// <li> <p>KMS key ID</p> </li> 
+        /// <li> <p>KMS key alias</p> </li> 
+        /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+        /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+        /// </ul> 
         /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
-        /// <ul>
-        /// <li> <p>KMS key ID</p> </li>
-        /// <li> <p>KMS key alias</p> </li>
-        /// <li> <p>ARN referring to the KMS key ID</p> </li>
-        /// <li> <p>ARN referring to the KMS key alias</p> </li>
-        /// </ul>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p> 
+        /// <ul> 
+        /// <li> <p>KMS key ID</p> </li> 
+        /// <li> <p>KMS key alias</p> </li> 
+        /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+        /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+        /// </ul> 
         /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Appends an item to `replication_run_list`.
         ///
@@ -4987,42 +4577,58 @@ pub mod replication_job {
         /// <p>Information about the replication runs.</p>
         pub fn replication_run_list(mut self, input: crate::model::ReplicationRun) -> Self {
             let mut v = self.replication_run_list.unwrap_or_default();
-            v.push(input);
-            self.replication_run_list = Some(v);
-            self
+                            v.push(input);
+                            self.replication_run_list = Some(v);
+                            self
         }
         /// <p>Information about the replication runs.</p>
-        pub fn set_replication_run_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>,
-        ) -> Self {
-            self.replication_run_list = input;
-            self
+        pub fn set_replication_run_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>) -> Self {
+            self.replication_run_list = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationJob`](crate::model::ReplicationJob).
         pub fn build(self) -> crate::model::ReplicationJob {
             crate::model::ReplicationJob {
-                replication_job_id: self.replication_job_id,
-                server_id: self.server_id,
-                server_type: self.server_type,
-                vm_server: self.vm_server,
-                seed_replication_time: self.seed_replication_time,
-                frequency: self.frequency,
-                run_once: self.run_once,
-                next_replication_run_start_time: self.next_replication_run_start_time,
-                license_type: self.license_type,
-                role_name: self.role_name,
-                latest_ami_id: self.latest_ami_id,
-                state: self.state,
-                status_message: self.status_message,
-                description: self.description,
-                number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep,
-                encrypted: self.encrypted,
-                kms_key_id: self.kms_key_id,
-                replication_run_list: self.replication_run_list,
+                replication_job_id: self.replication_job_id
+                ,
+                server_id: self.server_id
+                ,
+                server_type: self.server_type
+                ,
+                vm_server: self.vm_server
+                ,
+                seed_replication_time: self.seed_replication_time
+                ,
+                frequency: self.frequency
+                ,
+                run_once: self.run_once
+                ,
+                next_replication_run_start_time: self.next_replication_run_start_time
+                ,
+                license_type: self.license_type
+                ,
+                role_name: self.role_name
+                ,
+                latest_ami_id: self.latest_ami_id
+                ,
+                state: self.state
+                ,
+                status_message: self.status_message
+                ,
+                description: self.description
+                ,
+                number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep
+                ,
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                replication_run_list: self.replication_run_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationJob {
     /// Creates a new builder-style object to manufacture [`ReplicationJob`](crate::model::ReplicationJob).
@@ -5037,9 +4643,9 @@ impl ReplicationJob {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationjobstate = unimplemented!();
 /// match replicationjobstate {
@@ -5067,22 +4673,14 @@ impl ReplicationJob {
 /// Specifically, when `replicationjobstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationJobState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationJobState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -5101,7 +4699,7 @@ pub enum ReplicationJobState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationJobState {
     fn from(s: &str) -> Self {
@@ -5114,19 +4712,17 @@ impl std::convert::From<&str> for ReplicationJobState {
             "FAILING" => ReplicationJobState::Failing,
             "PAUSED_ON_FAILURE" => ReplicationJobState::PausedOnFailure,
             "PENDING" => ReplicationJobState::Pending,
-            other => {
-                ReplicationJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReplicationJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationJobState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationJobState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationJobState::from(s))
+                }
+            }
 impl ReplicationJobState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5139,20 +4735,13 @@ impl ReplicationJobState {
             ReplicationJobState::Failing => "FAILING",
             ReplicationJobState::PausedOnFailure => "PAUSED_ON_FAILURE",
             ReplicationJobState::Pending => "PENDING",
-            ReplicationJobState::Unknown(value) => value.as_str(),
+            ReplicationJobState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "COMPLETED",
-            "DELETED",
-            "DELETING",
-            "FAILED",
-            "FAILING",
-            "PAUSED_ON_FAILURE",
-            "PENDING",
+            "ACTIVE", "COMPLETED", "DELETED", "DELETING", "FAILED", "FAILING", "PAUSED_ON_FAILURE", "PENDING"
         ]
     }
 }
@@ -5165,7 +4754,7 @@ impl AsRef<str> for ReplicationJobState {
 /// <p>Represents a connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Connector {
+pub struct Connector  {
     /// <p>The ID of the connector.</p>
     #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
@@ -5199,57 +4788,56 @@ pub struct Connector {
 }
 impl Connector {
     /// <p>The ID of the connector.</p>
-    pub fn connector_id(&self) -> std::option::Option<&str> {
+    pub fn connector_id(&self) -> std::option::Option<& str> {
         self.connector_id.as_deref()
     }
     /// <p>The connector version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The status of the connector.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ConnectorStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ConnectorStatus> {
         self.status.as_ref()
     }
     /// <p>The capabilities of the connector.</p>
-    pub fn capability_list(&self) -> std::option::Option<&[crate::model::ConnectorCapability]> {
+    pub fn capability_list(&self) -> std::option::Option<& [crate::model::ConnectorCapability]> {
         self.capability_list.as_deref()
     }
     /// <p>The name of the VM manager.</p>
-    pub fn vm_manager_name(&self) -> std::option::Option<&str> {
+    pub fn vm_manager_name(&self) -> std::option::Option<& str> {
         self.vm_manager_name.as_deref()
     }
     /// <p>The VM management product.</p>
-    pub fn vm_manager_type(&self) -> std::option::Option<&crate::model::VmManagerType> {
+    pub fn vm_manager_type(&self) -> std::option::Option<& crate::model::VmManagerType> {
         self.vm_manager_type.as_ref()
     }
     /// <p>The ID of the VM manager.</p>
-    pub fn vm_manager_id(&self) -> std::option::Option<&str> {
+    pub fn vm_manager_id(&self) -> std::option::Option<& str> {
         self.vm_manager_id.as_deref()
     }
     /// <p>The IP address of the connector.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The MAC address of the connector.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>The time the connector was associated.</p>
-    pub fn associated_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn associated_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.associated_on.as_ref()
     }
 }
 /// See [`Connector`](crate::model::Connector).
 pub mod connector {
-
+    
     /// A builder for [`Connector`](crate::model::Connector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ConnectorStatus>,
-        pub(crate) capability_list:
-            std::option::Option<std::vec::Vec<crate::model::ConnectorCapability>>,
+        pub(crate) capability_list: std::option::Option<std::vec::Vec<crate::model::ConnectorCapability>>,
         pub(crate) vm_manager_name: std::option::Option<std::string::String>,
         pub(crate) vm_manager_type: std::option::Option<crate::model::VmManagerType>,
         pub(crate) vm_manager_id: std::option::Option<std::string::String>,
@@ -5265,8 +4853,7 @@ pub mod connector {
         }
         /// <p>The ID of the connector.</p>
         pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_id = input;
-            self
+            self.connector_id = input; self
         }
         /// <p>The connector version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5275,8 +4862,7 @@ pub mod connector {
         }
         /// <p>The connector version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The status of the connector.</p>
         pub fn status(mut self, input: crate::model::ConnectorStatus) -> Self {
@@ -5284,12 +4870,8 @@ pub mod connector {
             self
         }
         /// <p>The status of the connector.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ConnectorStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ConnectorStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `capability_list`.
         ///
@@ -5298,17 +4880,13 @@ pub mod connector {
         /// <p>The capabilities of the connector.</p>
         pub fn capability_list(mut self, input: crate::model::ConnectorCapability) -> Self {
             let mut v = self.capability_list.unwrap_or_default();
-            v.push(input);
-            self.capability_list = Some(v);
-            self
+                            v.push(input);
+                            self.capability_list = Some(v);
+                            self
         }
         /// <p>The capabilities of the connector.</p>
-        pub fn set_capability_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConnectorCapability>>,
-        ) -> Self {
-            self.capability_list = input;
-            self
+        pub fn set_capability_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConnectorCapability>>) -> Self {
+            self.capability_list = input; self
         }
         /// <p>The name of the VM manager.</p>
         pub fn vm_manager_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5316,12 +4894,8 @@ pub mod connector {
             self
         }
         /// <p>The name of the VM manager.</p>
-        pub fn set_vm_manager_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vm_manager_name = input;
-            self
+        pub fn set_vm_manager_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vm_manager_name = input; self
         }
         /// <p>The VM management product.</p>
         pub fn vm_manager_type(mut self, input: crate::model::VmManagerType) -> Self {
@@ -5329,12 +4903,8 @@ pub mod connector {
             self
         }
         /// <p>The VM management product.</p>
-        pub fn set_vm_manager_type(
-            mut self,
-            input: std::option::Option<crate::model::VmManagerType>,
-        ) -> Self {
-            self.vm_manager_type = input;
-            self
+        pub fn set_vm_manager_type(mut self, input: std::option::Option<crate::model::VmManagerType>) -> Self {
+            self.vm_manager_type = input; self
         }
         /// <p>The ID of the VM manager.</p>
         pub fn vm_manager_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5342,12 +4912,8 @@ pub mod connector {
             self
         }
         /// <p>The ID of the VM manager.</p>
-        pub fn set_vm_manager_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vm_manager_id = input;
-            self
+        pub fn set_vm_manager_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vm_manager_id = input; self
         }
         /// <p>The IP address of the connector.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5356,8 +4922,7 @@ pub mod connector {
         }
         /// <p>The IP address of the connector.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
         /// <p>The MAC address of the connector.</p>
         pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5366,8 +4931,7 @@ pub mod connector {
         }
         /// <p>The MAC address of the connector.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// <p>The time the connector was associated.</p>
         pub fn associated_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5375,29 +4939,37 @@ pub mod connector {
             self
         }
         /// <p>The time the connector was associated.</p>
-        pub fn set_associated_on(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.associated_on = input;
-            self
+        pub fn set_associated_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.associated_on = input; self
         }
         /// Consumes the builder and constructs a [`Connector`](crate::model::Connector).
         pub fn build(self) -> crate::model::Connector {
             crate::model::Connector {
-                connector_id: self.connector_id,
-                version: self.version,
-                status: self.status,
-                capability_list: self.capability_list,
-                vm_manager_name: self.vm_manager_name,
-                vm_manager_type: self.vm_manager_type,
-                vm_manager_id: self.vm_manager_id,
-                ip_address: self.ip_address,
-                mac_address: self.mac_address,
-                associated_on: self.associated_on,
+                connector_id: self.connector_id
+                ,
+                version: self.version
+                ,
+                status: self.status
+                ,
+                capability_list: self.capability_list
+                ,
+                vm_manager_name: self.vm_manager_name
+                ,
+                vm_manager_type: self.vm_manager_type
+                ,
+                vm_manager_id: self.vm_manager_id
+                ,
+                ip_address: self.ip_address
+                ,
+                mac_address: self.mac_address
+                ,
+                associated_on: self.associated_on
+                ,
             }
         }
     }
+    
+    
 }
 impl Connector {
     /// Creates a new builder-style object to manufacture [`Connector`](crate::model::Connector).
@@ -5412,9 +4984,9 @@ impl Connector {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectorcapability = unimplemented!();
 /// match connectorcapability {
@@ -5439,22 +5011,14 @@ impl Connector {
 /// Specifically, when `connectorcapability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectorCapability::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectorCapability {
     #[allow(missing_docs)] // documentation missing in model
     HyperVManager,
@@ -5467,7 +5031,7 @@ pub enum ConnectorCapability {
     #[allow(missing_docs)] // documentation missing in model
     VSphere,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectorCapability {
     fn from(s: &str) -> Self {
@@ -5477,19 +5041,17 @@ impl std::convert::From<&str> for ConnectorCapability {
             "SMS_OPTIMIZED" => ConnectorCapability::SmsOptimized,
             "SNAPSHOT_BATCHING" => ConnectorCapability::SnapshotBatching,
             "VSPHERE" => ConnectorCapability::VSphere,
-            other => {
-                ConnectorCapability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConnectorCapability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectorCapability {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectorCapability::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectorCapability::from(s))
+                }
+            }
 impl ConnectorCapability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5499,17 +5061,13 @@ impl ConnectorCapability {
             ConnectorCapability::SmsOptimized => "SMS_OPTIMIZED",
             ConnectorCapability::SnapshotBatching => "SNAPSHOT_BATCHING",
             ConnectorCapability::VSphere => "VSPHERE",
-            ConnectorCapability::Unknown(value) => value.as_str(),
+            ConnectorCapability::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "HYPERV-MANAGER",
-            "SCVMM",
-            "SMS_OPTIMIZED",
-            "SNAPSHOT_BATCHING",
-            "VSPHERE",
+            "HYPERV-MANAGER", "SCVMM", "SMS_OPTIMIZED", "SNAPSHOT_BATCHING", "VSPHERE"
         ]
     }
 }
@@ -5525,9 +5083,9 @@ impl AsRef<str> for ConnectorCapability {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectorstatus = unimplemented!();
 /// match connectorstatus {
@@ -5549,58 +5107,52 @@ impl AsRef<str> for ConnectorCapability {
 /// Specifically, when `connectorstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectorStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectorStatus {
     #[allow(missing_docs)] // documentation missing in model
     Healthy,
     #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectorStatus {
     fn from(s: &str) -> Self {
         match s {
             "HEALTHY" => ConnectorStatus::Healthy,
             "UNHEALTHY" => ConnectorStatus::Unhealthy,
-            other => ConnectorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConnectorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectorStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectorStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectorStatus::from(s))
+                }
+            }
 impl ConnectorStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectorStatus::Healthy => "HEALTHY",
             ConnectorStatus::Unhealthy => "UNHEALTHY",
-            ConnectorStatus::Unknown(value) => value.as_str(),
+            ConnectorStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HEALTHY", "UNHEALTHY"]
+        &[
+            "HEALTHY", "UNHEALTHY"
+        ]
     }
 }
 impl AsRef<str> for ConnectorStatus {
@@ -5612,7 +5164,7 @@ impl AsRef<str> for ConnectorStatus {
 /// <p>Contains validation output.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationOutput {
+pub struct ValidationOutput  {
     /// <p>The ID of the validation.</p>
     #[doc(hidden)]
     pub validation_id: std::option::Option<std::string::String>,
@@ -5637,39 +5189,37 @@ pub struct ValidationOutput {
 }
 impl ValidationOutput {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> std::option::Option<&str> {
+    pub fn validation_id(&self) -> std::option::Option<& str> {
         self.validation_id.as_deref()
     }
     /// <p>The name of the validation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the validation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ValidationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ValidationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The latest time that the validation was performed.</p>
-    pub fn latest_validation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_validation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_validation_time.as_ref()
     }
     /// <p>The output from validating an application.</p>
-    pub fn app_validation_output(&self) -> std::option::Option<&crate::model::AppValidationOutput> {
+    pub fn app_validation_output(&self) -> std::option::Option<& crate::model::AppValidationOutput> {
         self.app_validation_output.as_ref()
     }
     /// <p>The output from validation an instance.</p>
-    pub fn server_validation_output(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerValidationOutput> {
+    pub fn server_validation_output(&self) -> std::option::Option<& crate::model::ServerValidationOutput> {
         self.server_validation_output.as_ref()
     }
 }
 /// See [`ValidationOutput`](crate::model::ValidationOutput).
 pub mod validation_output {
-
+    
     /// A builder for [`ValidationOutput`](crate::model::ValidationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5679,8 +5229,7 @@ pub mod validation_output {
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) latest_validation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) app_validation_output: std::option::Option<crate::model::AppValidationOutput>,
-        pub(crate) server_validation_output:
-            std::option::Option<crate::model::ServerValidationOutput>,
+        pub(crate) server_validation_output: std::option::Option<crate::model::ServerValidationOutput>,
     }
     impl Builder {
         /// <p>The ID of the validation.</p>
@@ -5689,12 +5238,8 @@ pub mod validation_output {
             self
         }
         /// <p>The ID of the validation.</p>
-        pub fn set_validation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.validation_id = input;
-            self
+        pub fn set_validation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.validation_id = input; self
         }
         /// <p>The name of the validation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5703,8 +5248,7 @@ pub mod validation_output {
         }
         /// <p>The name of the validation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the validation.</p>
         pub fn status(mut self, input: crate::model::ValidationStatus) -> Self {
@@ -5712,12 +5256,8 @@ pub mod validation_output {
             self
         }
         /// <p>The status of the validation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ValidationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ValidationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5725,12 +5265,8 @@ pub mod validation_output {
             self
         }
         /// <p>The status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The latest time that the validation was performed.</p>
         pub fn latest_validation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5738,12 +5274,8 @@ pub mod validation_output {
             self
         }
         /// <p>The latest time that the validation was performed.</p>
-        pub fn set_latest_validation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_validation_time = input;
-            self
+        pub fn set_latest_validation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_validation_time = input; self
         }
         /// <p>The output from validating an application.</p>
         pub fn app_validation_output(mut self, input: crate::model::AppValidationOutput) -> Self {
@@ -5751,42 +5283,40 @@ pub mod validation_output {
             self
         }
         /// <p>The output from validating an application.</p>
-        pub fn set_app_validation_output(
-            mut self,
-            input: std::option::Option<crate::model::AppValidationOutput>,
-        ) -> Self {
-            self.app_validation_output = input;
-            self
+        pub fn set_app_validation_output(mut self, input: std::option::Option<crate::model::AppValidationOutput>) -> Self {
+            self.app_validation_output = input; self
         }
         /// <p>The output from validation an instance.</p>
-        pub fn server_validation_output(
-            mut self,
-            input: crate::model::ServerValidationOutput,
-        ) -> Self {
+        pub fn server_validation_output(mut self, input: crate::model::ServerValidationOutput) -> Self {
             self.server_validation_output = Some(input);
             self
         }
         /// <p>The output from validation an instance.</p>
-        pub fn set_server_validation_output(
-            mut self,
-            input: std::option::Option<crate::model::ServerValidationOutput>,
-        ) -> Self {
-            self.server_validation_output = input;
-            self
+        pub fn set_server_validation_output(mut self, input: std::option::Option<crate::model::ServerValidationOutput>) -> Self {
+            self.server_validation_output = input; self
         }
         /// Consumes the builder and constructs a [`ValidationOutput`](crate::model::ValidationOutput).
         pub fn build(self) -> crate::model::ValidationOutput {
             crate::model::ValidationOutput {
-                validation_id: self.validation_id,
-                name: self.name,
-                status: self.status,
-                status_message: self.status_message,
-                latest_validation_time: self.latest_validation_time,
-                app_validation_output: self.app_validation_output,
-                server_validation_output: self.server_validation_output,
+                validation_id: self.validation_id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                latest_validation_time: self.latest_validation_time
+                ,
+                app_validation_output: self.app_validation_output
+                ,
+                server_validation_output: self.server_validation_output
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationOutput {
     /// Creates a new builder-style object to manufacture [`ValidationOutput`](crate::model::ValidationOutput).
@@ -5798,20 +5328,20 @@ impl ValidationOutput {
 /// <p>Contains output from validating an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerValidationOutput {
+pub struct ServerValidationOutput  {
     /// <p>Represents a server.</p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl ServerValidationOutput {
     /// <p>Represents a server.</p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
 }
 /// See [`ServerValidationOutput`](crate::model::ServerValidationOutput).
 pub mod server_validation_output {
-
+    
     /// A builder for [`ServerValidationOutput`](crate::model::ServerValidationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5825,16 +5355,18 @@ pub mod server_validation_output {
         }
         /// <p>Represents a server.</p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// Consumes the builder and constructs a [`ServerValidationOutput`](crate::model::ServerValidationOutput).
         pub fn build(self) -> crate::model::ServerValidationOutput {
             crate::model::ServerValidationOutput {
-                server: self.server,
+                server: self.server
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerValidationOutput {
     /// Creates a new builder-style object to manufacture [`ServerValidationOutput`](crate::model::ServerValidationOutput).
@@ -5846,20 +5378,20 @@ impl ServerValidationOutput {
 /// <p>Output from validating an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppValidationOutput {
+pub struct AppValidationOutput  {
     /// <p>Output from using SSM to validate the application.</p>
     #[doc(hidden)]
     pub ssm_output: std::option::Option<crate::model::SsmOutput>,
 }
 impl AppValidationOutput {
     /// <p>Output from using SSM to validate the application.</p>
-    pub fn ssm_output(&self) -> std::option::Option<&crate::model::SsmOutput> {
+    pub fn ssm_output(&self) -> std::option::Option<& crate::model::SsmOutput> {
         self.ssm_output.as_ref()
     }
 }
 /// See [`AppValidationOutput`](crate::model::AppValidationOutput).
 pub mod app_validation_output {
-
+    
     /// A builder for [`AppValidationOutput`](crate::model::AppValidationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5872,20 +5404,19 @@ pub mod app_validation_output {
             self
         }
         /// <p>Output from using SSM to validate the application.</p>
-        pub fn set_ssm_output(
-            mut self,
-            input: std::option::Option<crate::model::SsmOutput>,
-        ) -> Self {
-            self.ssm_output = input;
-            self
+        pub fn set_ssm_output(mut self, input: std::option::Option<crate::model::SsmOutput>) -> Self {
+            self.ssm_output = input; self
         }
         /// Consumes the builder and constructs a [`AppValidationOutput`](crate::model::AppValidationOutput).
         pub fn build(self) -> crate::model::AppValidationOutput {
             crate::model::AppValidationOutput {
-                ssm_output: self.ssm_output,
+                ssm_output: self.ssm_output
+                ,
             }
         }
     }
+    
+    
 }
 impl AppValidationOutput {
     /// Creates a new builder-style object to manufacture [`AppValidationOutput`](crate::model::AppValidationOutput).
@@ -5897,20 +5428,20 @@ impl AppValidationOutput {
 /// <p>Contains the location of validation output.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmOutput {
+pub struct SsmOutput  {
     /// <p>Location of an Amazon S3 object.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl SsmOutput {
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3_location.as_ref()
     }
 }
 /// See [`SsmOutput`](crate::model::SsmOutput).
 pub mod ssm_output {
-
+    
     /// A builder for [`SsmOutput`](crate::model::SsmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5923,20 +5454,19 @@ pub mod ssm_output {
             self
         }
         /// <p>Location of an Amazon S3 object.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3_location = input; self
         }
         /// Consumes the builder and constructs a [`SsmOutput`](crate::model::SsmOutput).
         pub fn build(self) -> crate::model::SsmOutput {
             crate::model::SsmOutput {
-                s3_location: self.s3_location,
+                s3_location: self.s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl SsmOutput {
     /// Creates a new builder-style object to manufacture [`SsmOutput`](crate::model::SsmOutput).
@@ -5951,9 +5481,9 @@ impl SsmOutput {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let outputformat = unimplemented!();
 /// match outputformat {
@@ -5975,58 +5505,52 @@ impl SsmOutput {
 /// Specifically, when `outputformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OutputFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
     Yaml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OutputFormat {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => OutputFormat::Json,
             "YAML" => OutputFormat::Yaml,
-            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OutputFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OutputFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OutputFormat::from(s))
+                }
+            }
 impl OutputFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OutputFormat::Json => "JSON",
             OutputFormat::Yaml => "YAML",
-            OutputFormat::Unknown(value) => value.as_str(),
+            OutputFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JSON", "YAML"]
+        &[
+            "JSON", "YAML"
+        ]
     }
 }
 impl AsRef<str> for OutputFormat {
@@ -6034,3 +5558,4 @@ impl AsRef<str> for OutputFormat {
         self.as_str()
     }
 }
+

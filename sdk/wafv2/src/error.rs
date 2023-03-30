@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateWebACLError {
     /// Kind of error that occurred.
-    pub kind: UpdateWebACLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateWebACLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateWebACLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -20,26 +20,24 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateWebACLErrorKind {
-    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
-    /// <p>Provide the handling configuration and retry your operation.</p>
+    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p> 
+    /// <p>Provide the handling configuration and retry your operation.</p> 
     /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
     WafConfigurationWarningException(crate::error::WafConfigurationWarningException),
     /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
     /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
-    WafExpiredManagedRuleGroupVersionException(
-        crate::error::WafExpiredManagedRuleGroupVersionException,
-    ),
+    WafExpiredManagedRuleGroupVersionException(crate::error::WafExpiredManagedRuleGroupVersionException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
@@ -54,34 +52,58 @@ pub enum UpdateWebACLErrorKind {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateWebACLErrorKind::WafConfigurationWarningException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+            UpdateWebACLErrorKind::WafConfigurationWarningException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafDuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafInvalidResourceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::WafUnavailableEntityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateWebACLErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafInvalidResourceException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::WafUnavailableEntityException(_inner) => _inner.fmt(f),
-            UpdateWebACLErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -95,149 +117,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateWebACLError {
 }
 impl UpdateWebACLError {
     /// Creates a new `UpdateWebACLError`.
-    pub fn new(kind: UpdateWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateWebACLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateWebACLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafConfigurationWarningException`.
     pub fn is_waf_configuration_warning_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafConfigurationWarningException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafConfigurationWarningException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafDuplicateItemException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafDuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException`.
     pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafInvalidResourceException`.
     pub fn is_waf_invalid_resource_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafInvalidResourceException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafInvalidResourceException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafSubscriptionNotFoundException`.
     pub fn is_waf_subscription_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafSubscriptionNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafSubscriptionNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafUnavailableEntityException`.
     pub fn is_waf_unavailable_entity_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateWebACLErrorKind::WafUnavailableEntityException(_)
-        )
+        matches!(&self.kind, UpdateWebACLErrorKind::WafUnavailableEntityException(_))
     }
 }
 impl std::error::Error for UpdateWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateWebACLErrorKind::WafConfigurationWarningException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+            UpdateWebACLErrorKind::WafConfigurationWarningException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafDuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafInvalidResourceException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::WafUnavailableEntityException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateWebACLErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafInvalidResourceException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -245,25 +255,20 @@ impl std::error::Error for UpdateWebACLError {
 /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafUnavailableEntityException {
+pub struct WafUnavailableEntityException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafUnavailableEntityException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafUnavailableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafUnavailableEntityException [WAFUnavailableEntityException]"
-        )?;
+        write!(f, "WafUnavailableEntityException [WAFUnavailableEntityException]")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -273,7 +278,7 @@ impl std::fmt::Display for WafUnavailableEntityException {
 impl std::error::Error for WafUnavailableEntityException {}
 /// See [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
 pub mod waf_unavailable_entity_exception {
-
+    
     /// A builder for [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -287,16 +292,18 @@ pub mod waf_unavailable_entity_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
         pub fn build(self) -> crate::error::WafUnavailableEntityException {
             crate::error::WafUnavailableEntityException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafUnavailableEntityException {
     /// Creates a new builder-style object to manufacture [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
@@ -308,25 +315,20 @@ impl WafUnavailableEntityException {
 /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafSubscriptionNotFoundException {
+pub struct WafSubscriptionNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafSubscriptionNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafSubscriptionNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafSubscriptionNotFoundException [WAFSubscriptionNotFoundException]"
-        )?;
+        write!(f, "WafSubscriptionNotFoundException [WAFSubscriptionNotFoundException]")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -336,7 +338,7 @@ impl std::fmt::Display for WafSubscriptionNotFoundException {
 impl std::error::Error for WafSubscriptionNotFoundException {}
 /// See [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
 pub mod waf_subscription_not_found_exception {
-
+    
     /// A builder for [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -350,16 +352,18 @@ pub mod waf_subscription_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
         pub fn build(self) -> crate::error::WafSubscriptionNotFoundException {
             crate::error::WafSubscriptionNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafSubscriptionNotFoundException {
     /// Creates a new builder-style object to manufacture [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
@@ -371,22 +375,20 @@ impl WafSubscriptionNotFoundException {
 /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafOptimisticLockException {
+pub struct WafOptimisticLockException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafOptimisticLockException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafOptimisticLockException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafOptimisticLockException [WAFOptimisticLockException]")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -396,7 +398,7 @@ impl std::fmt::Display for WafOptimisticLockException {
 impl std::error::Error for WafOptimisticLockException {}
 /// See [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
 pub mod waf_optimistic_lock_exception {
-
+    
     /// A builder for [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -410,16 +412,18 @@ pub mod waf_optimistic_lock_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
         pub fn build(self) -> crate::error::WafOptimisticLockException {
             crate::error::WafOptimisticLockException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafOptimisticLockException {
     /// Creates a new builder-style object to manufacture [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
@@ -431,25 +435,20 @@ impl WafOptimisticLockException {
 /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafNonexistentItemException {
+pub struct WafNonexistentItemException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafNonexistentItemException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafNonexistentItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafNonexistentItemException [WAFNonexistentItemException]"
-        )?;
+        write!(f, "WafNonexistentItemException [WAFNonexistentItemException]")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -459,7 +458,7 @@ impl std::fmt::Display for WafNonexistentItemException {
 impl std::error::Error for WafNonexistentItemException {}
 /// See [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
 pub mod waf_nonexistent_item_exception {
-
+    
     /// A builder for [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -473,16 +472,18 @@ pub mod waf_nonexistent_item_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
         pub fn build(self) -> crate::error::WafNonexistentItemException {
             crate::error::WafNonexistentItemException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafNonexistentItemException {
     /// Creates a new builder-style object to manufacture [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
@@ -494,22 +495,20 @@ impl WafNonexistentItemException {
 /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafLimitsExceededException {
+pub struct WafLimitsExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafLimitsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafLimitsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafLimitsExceededException [WAFLimitsExceededException]")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -519,7 +518,7 @@ impl std::fmt::Display for WafLimitsExceededException {
 impl std::error::Error for WafLimitsExceededException {}
 /// See [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
 pub mod waf_limits_exceeded_exception {
-
+    
     /// A builder for [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -533,16 +532,18 @@ pub mod waf_limits_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
         pub fn build(self) -> crate::error::WafLimitsExceededException {
             crate::error::WafLimitsExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafLimitsExceededException {
     /// Creates a new builder-style object to manufacture [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
@@ -554,25 +555,20 @@ impl WafLimitsExceededException {
 /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafInvalidResourceException {
+pub struct WafInvalidResourceException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafInvalidResourceException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafInvalidResourceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafInvalidResourceException [WAFInvalidResourceException]"
-        )?;
+        write!(f, "WafInvalidResourceException [WAFInvalidResourceException]")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -582,7 +578,7 @@ impl std::fmt::Display for WafInvalidResourceException {
 impl std::error::Error for WafInvalidResourceException {}
 /// See [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
 pub mod waf_invalid_resource_exception {
-
+    
     /// A builder for [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -596,16 +592,18 @@ pub mod waf_invalid_resource_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
         pub fn build(self) -> crate::error::WafInvalidResourceException {
             crate::error::WafInvalidResourceException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafInvalidResourceException {
     /// Creates a new builder-style object to manufacture [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
@@ -614,16 +612,16 @@ impl WafInvalidResourceException {
     }
 }
 
-/// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-/// <ul>
-/// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-/// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-/// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-/// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+/// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+/// <ul> 
+/// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+/// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+/// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+/// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafInvalidParameterException {
+pub struct WafInvalidParameterException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -639,32 +637,27 @@ pub struct WafInvalidParameterException {
 }
 impl WafInvalidParameterException {
     /// <p>The settings where the invalid parameter was found. </p>
-    pub fn field(&self) -> std::option::Option<&crate::model::ParameterExceptionField> {
+    pub fn field(&self) -> std::option::Option<& crate::model::ParameterExceptionField> {
         self.field.as_ref()
     }
     /// <p>The invalid parameter that resulted in the exception. </p>
-    pub fn parameter(&self) -> std::option::Option<&str> {
+    pub fn parameter(&self) -> std::option::Option<& str> {
         self.parameter.as_deref()
     }
     /// <p>Additional information about the exception.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 impl WafInvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafInvalidParameterException [WAFInvalidParameterException]"
-        )?;
+        write!(f, "WafInvalidParameterException [WAFInvalidParameterException]")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -674,7 +667,7 @@ impl std::fmt::Display for WafInvalidParameterException {
 impl std::error::Error for WafInvalidParameterException {}
 /// See [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
 pub mod waf_invalid_parameter_exception {
-
+    
     /// A builder for [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -691,8 +684,7 @@ pub mod waf_invalid_parameter_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The settings where the invalid parameter was found. </p>
         pub fn field(mut self, input: crate::model::ParameterExceptionField) -> Self {
@@ -700,12 +692,8 @@ pub mod waf_invalid_parameter_exception {
             self
         }
         /// <p>The settings where the invalid parameter was found. </p>
-        pub fn set_field(
-            mut self,
-            input: std::option::Option<crate::model::ParameterExceptionField>,
-        ) -> Self {
-            self.field = input;
-            self
+        pub fn set_field(mut self, input: std::option::Option<crate::model::ParameterExceptionField>) -> Self {
+            self.field = input; self
         }
         /// <p>The invalid parameter that resulted in the exception. </p>
         pub fn parameter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -714,8 +702,7 @@ pub mod waf_invalid_parameter_exception {
         }
         /// <p>The invalid parameter that resulted in the exception. </p>
         pub fn set_parameter(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parameter = input;
-            self
+            self.parameter = input; self
         }
         /// <p>Additional information about the exception.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -724,19 +711,24 @@ pub mod waf_invalid_parameter_exception {
         }
         /// <p>Additional information about the exception.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
         pub fn build(self) -> crate::error::WafInvalidParameterException {
             crate::error::WafInvalidParameterException {
-                message: self.message,
-                field: self.field,
-                parameter: self.parameter,
-                reason: self.reason,
+                message: self.message
+                ,
+                field: self.field
+                ,
+                parameter: self.parameter
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl WafInvalidParameterException {
     /// Creates a new builder-style object to manufacture [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
@@ -748,25 +740,20 @@ impl WafInvalidParameterException {
 /// <p>The operation isn't valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafInvalidOperationException {
+pub struct WafInvalidOperationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafInvalidOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafInvalidOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafInvalidOperationException [WAFInvalidOperationException]"
-        )?;
+        write!(f, "WafInvalidOperationException [WAFInvalidOperationException]")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -776,7 +763,7 @@ impl std::fmt::Display for WafInvalidOperationException {
 impl std::error::Error for WafInvalidOperationException {}
 /// See [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
 pub mod waf_invalid_operation_exception {
-
+    
     /// A builder for [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -790,16 +777,18 @@ pub mod waf_invalid_operation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
         pub fn build(self) -> crate::error::WafInvalidOperationException {
             crate::error::WafInvalidOperationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafInvalidOperationException {
     /// Creates a new builder-style object to manufacture [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
@@ -811,22 +800,20 @@ impl WafInvalidOperationException {
 /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafInternalErrorException {
+pub struct WafInternalErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafInternalErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafInternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafInternalErrorException [WAFInternalErrorException]")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -836,7 +823,7 @@ impl std::fmt::Display for WafInternalErrorException {
 impl std::error::Error for WafInternalErrorException {}
 /// See [`WafInternalErrorException`](crate::error::WafInternalErrorException).
 pub mod waf_internal_error_exception {
-
+    
     /// A builder for [`WafInternalErrorException`](crate::error::WafInternalErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -850,16 +837,18 @@ pub mod waf_internal_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafInternalErrorException`](crate::error::WafInternalErrorException).
         pub fn build(self) -> crate::error::WafInternalErrorException {
             crate::error::WafInternalErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafInternalErrorException {
     /// Creates a new builder-style object to manufacture [`WafInternalErrorException`](crate::error::WafInternalErrorException).
@@ -871,22 +860,20 @@ impl WafInternalErrorException {
 /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafExpiredManagedRuleGroupVersionException {
+pub struct WafExpiredManagedRuleGroupVersionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafExpiredManagedRuleGroupVersionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafExpiredManagedRuleGroupVersionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafExpiredManagedRuleGroupVersionException [WAFExpiredManagedRuleGroupVersionException]")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -896,7 +883,7 @@ impl std::fmt::Display for WafExpiredManagedRuleGroupVersionException {
 impl std::error::Error for WafExpiredManagedRuleGroupVersionException {}
 /// See [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
 pub mod waf_expired_managed_rule_group_version_exception {
-
+    
     /// A builder for [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -910,16 +897,18 @@ pub mod waf_expired_managed_rule_group_version_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
         pub fn build(self) -> crate::error::WafExpiredManagedRuleGroupVersionException {
             crate::error::WafExpiredManagedRuleGroupVersionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafExpiredManagedRuleGroupVersionException {
     /// Creates a new builder-style object to manufacture [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
@@ -931,22 +920,20 @@ impl WafExpiredManagedRuleGroupVersionException {
 /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafDuplicateItemException {
+pub struct WafDuplicateItemException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafDuplicateItemException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafDuplicateItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafDuplicateItemException [WAFDuplicateItemException]")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -956,7 +943,7 @@ impl std::fmt::Display for WafDuplicateItemException {
 impl std::error::Error for WafDuplicateItemException {}
 /// See [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
 pub mod waf_duplicate_item_exception {
-
+    
     /// A builder for [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -970,16 +957,18 @@ pub mod waf_duplicate_item_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
         pub fn build(self) -> crate::error::WafDuplicateItemException {
             crate::error::WafDuplicateItemException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafDuplicateItemException {
     /// Creates a new builder-style object to manufacture [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
@@ -988,30 +977,25 @@ impl WafDuplicateItemException {
     }
 }
 
-/// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
-/// <p>Provide the handling configuration and retry your operation.</p>
+/// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p> 
+/// <p>Provide the handling configuration and retry your operation.</p> 
 /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafConfigurationWarningException {
+pub struct WafConfigurationWarningException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafConfigurationWarningException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafConfigurationWarningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafConfigurationWarningException [WAFConfigurationWarningException]"
-        )?;
+        write!(f, "WafConfigurationWarningException [WAFConfigurationWarningException]")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1021,7 +1005,7 @@ impl std::fmt::Display for WafConfigurationWarningException {
 impl std::error::Error for WafConfigurationWarningException {}
 /// See [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
 pub mod waf_configuration_warning_exception {
-
+    
     /// A builder for [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1035,16 +1019,18 @@ pub mod waf_configuration_warning_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
         pub fn build(self) -> crate::error::WafConfigurationWarningException {
             crate::error::WafConfigurationWarningException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafConfigurationWarningException {
     /// Creates a new builder-style object to manufacture [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
@@ -1058,15 +1044,15 @@ impl WafConfigurationWarningException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateRuleGroupError {
     /// Kind of error that occurred.
-    pub kind: UpdateRuleGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateRuleGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateRuleGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1074,8 +1060,8 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuleGroupErrorKind {
-    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
-    /// <p>Provide the handling configuration and retry your operation.</p>
+    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p> 
+    /// <p>Provide the handling configuration and retry your operation.</p> 
     /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
     WafConfigurationWarningException(crate::error::WafConfigurationWarningException),
     /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
@@ -1084,12 +1070,12 @@ pub enum UpdateRuleGroupErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
@@ -1102,30 +1088,52 @@ pub enum UpdateRuleGroupErrorKind {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRuleGroupErrorKind::WafConfigurationWarningException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::WafUnavailableEntityException(_inner) => _inner.fmt(f),
-            UpdateRuleGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateRuleGroupErrorKind::WafConfigurationWarningException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafDuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::WafUnavailableEntityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRuleGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1139,131 +1147,123 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateRuleGroupError {
 }
 impl UpdateRuleGroupError {
     /// Creates a new `UpdateRuleGroupError`.
-    pub fn new(kind: UpdateRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateRuleGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateRuleGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafConfigurationWarningException`.
     pub fn is_waf_configuration_warning_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafConfigurationWarningException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafConfigurationWarningException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafDuplicateItemException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafDuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException`.
     pub fn is_waf_subscription_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafUnavailableEntityException`.
     pub fn is_waf_unavailable_entity_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRuleGroupErrorKind::WafUnavailableEntityException(_)
-        )
+        matches!(&self.kind, UpdateRuleGroupErrorKind::WafUnavailableEntityException(_))
     }
 }
 impl std::error::Error for UpdateRuleGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRuleGroupErrorKind::WafConfigurationWarningException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateRuleGroupErrorKind::WafConfigurationWarningException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafDuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::WafUnavailableEntityException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRuleGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1273,15 +1273,15 @@ impl std::error::Error for UpdateRuleGroupError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateRegexPatternSetError {
     /// Kind of error that occurred.
-    pub kind: UpdateRegexPatternSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateRegexPatternSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateRegexPatternSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1295,12 +1295,12 @@ pub enum UpdateRegexPatternSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
@@ -1309,27 +1309,43 @@ pub enum UpdateRegexPatternSetErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRegexPatternSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRegexPatternSetErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
-            UpdateRegexPatternSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            UpdateRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            UpdateRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            UpdateRegexPatternSetErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            UpdateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            UpdateRegexPatternSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateRegexPatternSetErrorKind::WafDuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRegexPatternSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRegexPatternSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRegexPatternSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRegexPatternSetErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRegexPatternSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1343,111 +1359,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateRegexPatternSetError {
 }
 impl UpdateRegexPatternSetError {
     /// Creates a new `UpdateRegexPatternSetError`.
-    pub fn new(kind: UpdateRegexPatternSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateRegexPatternSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateRegexPatternSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateRegexPatternSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateRegexPatternSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateRegexPatternSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRegexPatternSetErrorKind::WafDuplicateItemException(_)
-        )
+        matches!(&self.kind, UpdateRegexPatternSetErrorKind::WafDuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRegexPatternSetErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateRegexPatternSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRegexPatternSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, UpdateRegexPatternSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRegexPatternSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateRegexPatternSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRegexPatternSetErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, UpdateRegexPatternSetErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRegexPatternSetErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, UpdateRegexPatternSetErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRegexPatternSetErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, UpdateRegexPatternSetErrorKind::WafOptimisticLockException(_))
     }
 }
 impl std::error::Error for UpdateRegexPatternSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRegexPatternSetErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
-            UpdateRegexPatternSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            UpdateRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            UpdateRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            UpdateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            UpdateRegexPatternSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            UpdateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            UpdateRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateRegexPatternSetErrorKind::WafDuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRegexPatternSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRegexPatternSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRegexPatternSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRegexPatternSetErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRegexPatternSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1457,17 +1464,15 @@ impl std::error::Error for UpdateRegexPatternSetError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateManagedRuleSetVersionExpiryDateError {
     /// Kind of error that occurred.
-    pub kind: UpdateManagedRuleSetVersionExpiryDateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateManagedRuleSetVersionExpiryDateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateManagedRuleSetVersionExpiryDateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1479,47 +1484,49 @@ pub enum UpdateManagedRuleSetVersionExpiryDateErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateManagedRuleSetVersionExpiryDateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_inner) => {
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1533,108 +1540,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateManagedRuleSetVersionEx
 }
 impl UpdateManagedRuleSetVersionExpiryDateError {
     /// Creates a new `UpdateManagedRuleSetVersionExpiryDateError`.
-    pub fn new(
-        kind: UpdateManagedRuleSetVersionExpiryDateErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateManagedRuleSetVersionExpiryDateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateManagedRuleSetVersionExpiryDateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateManagedRuleSetVersionExpiryDateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateManagedRuleSetVersionExpiryDateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateManagedRuleSetVersionExpiryDateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_))
     }
 }
 impl std::error::Error for UpdateManagedRuleSetVersionExpiryDateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_inner) => {
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(
-                _inner,
-            ) => Some(_inner),
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(
-                _inner,
-            ) => Some(_inner),
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_inner) => {
-                Some(_inner)
-            }
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_inner) => {
-                Some(_inner)
-            }
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1644,15 +1631,15 @@ impl std::error::Error for UpdateManagedRuleSetVersionExpiryDateError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateIPSetError {
     /// Kind of error that occurred.
-    pub kind: UpdateIPSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateIPSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateIPSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1666,12 +1653,12 @@ pub enum UpdateIPSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
@@ -1680,27 +1667,43 @@ pub enum UpdateIPSetErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateIPSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateIPSetErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
-            UpdateIPSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            UpdateIPSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            UpdateIPSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateIPSetErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            UpdateIPSetErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            UpdateIPSetErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            UpdateIPSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateIPSetErrorKind::WafDuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateIPSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateIPSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateIPSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateIPSetErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateIPSetErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateIPSetErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateIPSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1714,107 +1717,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateIPSetError {
 }
 impl UpdateIPSetError {
     /// Creates a new `UpdateIPSetError`.
-    pub fn new(kind: UpdateIPSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateIPSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateIPSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateIPSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateIPSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateIPSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateIPSetErrorKind::WafDuplicateItemException(_)
-        )
+        matches!(&self.kind, UpdateIPSetErrorKind::WafDuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateIPSetErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateIPSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateIPSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, UpdateIPSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateIPSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateIPSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateIPSetErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, UpdateIPSetErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateIPSetErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, UpdateIPSetErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateIPSetErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, UpdateIPSetErrorKind::WafOptimisticLockException(_))
     }
 }
 impl std::error::Error for UpdateIPSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateIPSetErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
-            UpdateIPSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            UpdateIPSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            UpdateIPSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            UpdateIPSetErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            UpdateIPSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            UpdateIPSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            UpdateIPSetErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateIPSetErrorKind::WafDuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateIPSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateIPSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateIPSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateIPSetErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateIPSetErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateIPSetErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateIPSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1824,15 +1822,15 @@ impl std::error::Error for UpdateIPSetError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1844,12 +1842,12 @@ pub enum UntagResourceErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
@@ -1858,26 +1856,40 @@ pub enum UntagResourceErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::WafTagOperationInternalErrorException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1891,99 +1903,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            UntagResourceErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            UntagResourceErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            UntagResourceErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1991,25 +1999,20 @@ impl std::error::Error for UntagResourceError {
 /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafTagOperationInternalErrorException {
+pub struct WafTagOperationInternalErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafTagOperationInternalErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafTagOperationInternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafTagOperationInternalErrorException [WAFTagOperationInternalErrorException]"
-        )?;
+        write!(f, "WafTagOperationInternalErrorException [WAFTagOperationInternalErrorException]")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -2019,7 +2022,7 @@ impl std::fmt::Display for WafTagOperationInternalErrorException {
 impl std::error::Error for WafTagOperationInternalErrorException {}
 /// See [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
 pub mod waf_tag_operation_internal_error_exception {
-
+    
     /// A builder for [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2033,16 +2036,18 @@ pub mod waf_tag_operation_internal_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
         pub fn build(self) -> crate::error::WafTagOperationInternalErrorException {
             crate::error::WafTagOperationInternalErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafTagOperationInternalErrorException {
     /// Creates a new builder-style object to manufacture [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
@@ -2054,22 +2059,20 @@ impl WafTagOperationInternalErrorException {
 /// <p>An error occurred during the tagging operation. Retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafTagOperationException {
+pub struct WafTagOperationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafTagOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafTagOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafTagOperationException [WAFTagOperationException]")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -2079,7 +2082,7 @@ impl std::fmt::Display for WafTagOperationException {
 impl std::error::Error for WafTagOperationException {}
 /// See [`WafTagOperationException`](crate::error::WafTagOperationException).
 pub mod waf_tag_operation_exception {
-
+    
     /// A builder for [`WafTagOperationException`](crate::error::WafTagOperationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2093,16 +2096,18 @@ pub mod waf_tag_operation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafTagOperationException`](crate::error::WafTagOperationException).
         pub fn build(self) -> crate::error::WafTagOperationException {
             crate::error::WafTagOperationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafTagOperationException {
     /// Creates a new builder-style object to manufacture [`WafTagOperationException`](crate::error::WafTagOperationException).
@@ -2116,15 +2121,15 @@ impl WafTagOperationException {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2136,12 +2141,12 @@ pub enum TagResourceErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
@@ -2152,27 +2157,43 @@ pub enum TagResourceErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::WafTagOperationInternalErrorException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2186,107 +2207,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            TagResourceErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            TagResourceErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            TagResourceErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            TagResourceErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            TagResourceErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            TagResourceErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2296,15 +2312,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct PutPermissionPolicyError {
     /// Kind of error that occurred.
-    pub kind: PutPermissionPolicyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutPermissionPolicyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutPermissionPolicyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2314,47 +2330,55 @@ impl aws_smithy_http::result::CreateUnhandledError for PutPermissionPolicyError 
 pub enum PutPermissionPolicyErrorKind {
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation failed because the specified policy isn't in the proper format. </p>
-    /// <p>The policy specifications must conform to the following:</p>
-    /// <ul>
-    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
-    /// </ul>
+    /// <p>The operation failed because the specified policy isn't in the proper format. </p> 
+    /// <p>The policy specifications must conform to the following:</p> 
+    /// <ul> 
+    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li> 
+    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li> 
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li> 
+    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li> 
+    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
     WafInvalidPermissionPolicyException(crate::error::WafInvalidPermissionPolicyException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutPermissionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutPermissionPolicyErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            PutPermissionPolicyErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(_inner) => {
+            PutPermissionPolicyErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutPermissionPolicyErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutPermissionPolicyErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutPermissionPolicyErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutPermissionPolicyErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            PutPermissionPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2368,120 +2392,111 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutPermissionPolicyError {
 }
 impl PutPermissionPolicyError {
     /// Creates a new `PutPermissionPolicyError`.
-    pub fn new(kind: PutPermissionPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutPermissionPolicyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutPermissionPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutPermissionPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutPermissionPolicyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutPermissionPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutPermissionPolicyErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutPermissionPolicyErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, PutPermissionPolicyErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `PutPermissionPolicyErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutPermissionPolicyErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, PutPermissionPolicyErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException`.
     pub fn is_waf_invalid_permission_policy_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(_)
-        )
+        matches!(&self.kind, PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(_))
     }
     /// Returns `true` if the error kind is `PutPermissionPolicyErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutPermissionPolicyErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, PutPermissionPolicyErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for PutPermissionPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutPermissionPolicyErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            PutPermissionPolicyErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(_inner) => {
+            PutPermissionPolicyErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            PutPermissionPolicyErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            PutPermissionPolicyErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            PutPermissionPolicyErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutPermissionPolicyErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            PutPermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-/// <p>The operation failed because the specified policy isn't in the proper format. </p>
-/// <p>The policy specifications must conform to the following:</p>
-/// <ul>
-/// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-/// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-/// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-/// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-/// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
-/// </ul>
+/// <p>The operation failed because the specified policy isn't in the proper format. </p> 
+/// <p>The policy specifications must conform to the following:</p> 
+/// <ul> 
+/// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li> 
+/// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li> 
+/// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li> 
+/// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li> 
+/// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li> 
+/// </ul> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafInvalidPermissionPolicyException {
+pub struct WafInvalidPermissionPolicyException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafInvalidPermissionPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafInvalidPermissionPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafInvalidPermissionPolicyException [WAFInvalidPermissionPolicyException]"
-        )?;
+        write!(f, "WafInvalidPermissionPolicyException [WAFInvalidPermissionPolicyException]")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -2491,7 +2506,7 @@ impl std::fmt::Display for WafInvalidPermissionPolicyException {
 impl std::error::Error for WafInvalidPermissionPolicyException {}
 /// See [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
 pub mod waf_invalid_permission_policy_exception {
-
+    
     /// A builder for [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2505,16 +2520,18 @@ pub mod waf_invalid_permission_policy_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
         pub fn build(self) -> crate::error::WafInvalidPermissionPolicyException {
             crate::error::WafInvalidPermissionPolicyException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafInvalidPermissionPolicyException {
     /// Creates a new builder-style object to manufacture [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
@@ -2528,17 +2545,15 @@ impl WafInvalidPermissionPolicyException {
 #[derive(std::fmt::Debug)]
 pub struct PutManagedRuleSetVersionsError {
     /// Kind of error that occurred.
-    pub kind: PutManagedRuleSetVersionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutManagedRuleSetVersionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutManagedRuleSetVersionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2550,43 +2565,49 @@ pub enum PutManagedRuleSetVersionsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutManagedRuleSetVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_inner) => {
+            PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutManagedRuleSetVersionsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            PutManagedRuleSetVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2600,99 +2621,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutManagedRuleSetVersionsErro
 }
 impl PutManagedRuleSetVersionsError {
     /// Creates a new `PutManagedRuleSetVersionsError`.
-    pub fn new(kind: PutManagedRuleSetVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutManagedRuleSetVersionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutManagedRuleSetVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutManagedRuleSetVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutManagedRuleSetVersionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutManagedRuleSetVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutManagedRuleSetVersionsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_))
     }
 }
 impl std::error::Error for PutManagedRuleSetVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_inner) => {
+            PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            PutManagedRuleSetVersionsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            PutManagedRuleSetVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2702,15 +2712,15 @@ impl std::error::Error for PutManagedRuleSetVersionsError {
 #[derive(std::fmt::Debug)]
 pub struct PutLoggingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: PutLoggingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutLoggingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutLoggingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2722,52 +2732,64 @@ pub enum PutLoggingConfigurationErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
-    WafLogDestinationPermissionIssueException(
-        crate::error::WafLogDestinationPermissionIssueException,
-    ),
+    WafLogDestinationPermissionIssueException(crate::error::WafLogDestinationPermissionIssueException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
     WafServiceLinkedRoleErrorException(crate::error::WafServiceLinkedRoleErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutLoggingConfigurationErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            PutLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            PutLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            PutLoggingConfigurationErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_inner) => {
+            PutLoggingConfigurationErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLoggingConfigurationErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            PutLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2781,123 +2803,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutLoggingConfigurationError 
 }
 impl PutLoggingConfigurationError {
     /// Creates a new `PutLoggingConfigurationError`.
-    pub fn new(kind: PutLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutLoggingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutLoggingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLoggingConfigurationErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, PutLoggingConfigurationErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLoggingConfigurationErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, PutLoggingConfigurationErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLoggingConfigurationErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, PutLoggingConfigurationErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLoggingConfigurationErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, PutLoggingConfigurationErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException`.
     pub fn is_waf_log_destination_permission_issue_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_)
-        )
+        matches!(&self.kind, PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_))
     }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLoggingConfigurationErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, PutLoggingConfigurationErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLoggingConfigurationErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, PutLoggingConfigurationErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException`.
     pub fn is_waf_service_linked_role_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_)
-        )
+        matches!(&self.kind, PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_))
     }
 }
 impl std::error::Error for PutLoggingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutLoggingConfigurationErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            PutLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            PutLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            PutLoggingConfigurationErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_inner) => {
+            PutLoggingConfigurationErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            PutLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            PutLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            PutLoggingConfigurationErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(_inner) =>
+            Some(_inner)
+            ,
+            PutLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            PutLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_inner) =>
+            Some(_inner)
+            ,
+            PutLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            PutLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_inner) => {
-                Some(_inner)
-            }
-            PutLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2905,25 +2913,20 @@ impl std::error::Error for PutLoggingConfigurationError {
 /// <p>WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafServiceLinkedRoleErrorException {
+pub struct WafServiceLinkedRoleErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafServiceLinkedRoleErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafServiceLinkedRoleErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafServiceLinkedRoleErrorException [WAFServiceLinkedRoleErrorException]"
-        )?;
+        write!(f, "WafServiceLinkedRoleErrorException [WAFServiceLinkedRoleErrorException]")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -2933,7 +2936,7 @@ impl std::fmt::Display for WafServiceLinkedRoleErrorException {
 impl std::error::Error for WafServiceLinkedRoleErrorException {}
 /// See [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
 pub mod waf_service_linked_role_error_exception {
-
+    
     /// A builder for [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2947,16 +2950,18 @@ pub mod waf_service_linked_role_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
         pub fn build(self) -> crate::error::WafServiceLinkedRoleErrorException {
             crate::error::WafServiceLinkedRoleErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafServiceLinkedRoleErrorException {
     /// Creates a new builder-style object to manufacture [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
@@ -2968,25 +2973,20 @@ impl WafServiceLinkedRoleErrorException {
 /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafLogDestinationPermissionIssueException {
+pub struct WafLogDestinationPermissionIssueException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafLogDestinationPermissionIssueException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafLogDestinationPermissionIssueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "WafLogDestinationPermissionIssueException [WAFLogDestinationPermissionIssueException]"
-        )?;
+        write!(f, "WafLogDestinationPermissionIssueException [WAFLogDestinationPermissionIssueException]")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -2996,7 +2996,7 @@ impl std::fmt::Display for WafLogDestinationPermissionIssueException {
 impl std::error::Error for WafLogDestinationPermissionIssueException {}
 /// See [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
 pub mod waf_log_destination_permission_issue_exception {
-
+    
     /// A builder for [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3010,16 +3010,18 @@ pub mod waf_log_destination_permission_issue_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
         pub fn build(self) -> crate::error::WafLogDestinationPermissionIssueException {
             crate::error::WafLogDestinationPermissionIssueException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafLogDestinationPermissionIssueException {
     /// Creates a new builder-style object to manufacture [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
@@ -3033,15 +3035,15 @@ impl WafLogDestinationPermissionIssueException {
 #[derive(std::fmt::Debug)]
 pub struct ListWebACLsError {
     /// Kind of error that occurred.
-    pub kind: ListWebACLsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListWebACLsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListWebACLsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListWebACLsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3053,31 +3055,39 @@ pub enum ListWebACLsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWebACLsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListWebACLsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListWebACLsErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            ListWebACLsErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            ListWebACLsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListWebACLsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListWebACLsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListWebACLsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListWebACLsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3091,75 +3101,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListWebACLsError {
 }
 impl ListWebACLsError {
     /// Creates a new `ListWebACLsError`.
-    pub fn new(kind: ListWebACLsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListWebACLsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListWebACLsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListWebACLsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListWebACLsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListWebACLsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListWebACLsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListWebACLsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListWebACLsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListWebACLsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListWebACLsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListWebACLsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListWebACLsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListWebACLsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListWebACLsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListWebACLsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListWebACLsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListWebACLsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListWebACLsErrorKind::WafInvalidParameterException(_))
     }
 }
 impl std::error::Error for ListWebACLsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListWebACLsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListWebACLsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            ListWebACLsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListWebACLsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListWebACLsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListWebACLsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListWebACLsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListWebACLsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3169,15 +3178,15 @@ impl std::error::Error for ListWebACLsError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3189,12 +3198,12 @@ pub enum ListTagsForResourceErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
@@ -3203,28 +3212,40 @@ pub enum ListTagsForResourceErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(_inner) => {
+            ListTagsForResourceErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3238,101 +3259,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(_inner) => {
+            ListTagsForResourceErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3342,15 +3357,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListRuleGroupsError {
     /// Kind of error that occurred.
-    pub kind: ListRuleGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListRuleGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListRuleGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3362,31 +3377,39 @@ pub enum ListRuleGroupsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRuleGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRuleGroupsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListRuleGroupsErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            ListRuleGroupsErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            ListRuleGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListRuleGroupsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRuleGroupsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRuleGroupsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRuleGroupsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3400,75 +3423,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListRuleGroupsError {
 }
 impl ListRuleGroupsError {
     /// Creates a new `ListRuleGroupsError`.
-    pub fn new(kind: ListRuleGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListRuleGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListRuleGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListRuleGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListRuleGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListRuleGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListRuleGroupsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRuleGroupsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListRuleGroupsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListRuleGroupsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRuleGroupsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListRuleGroupsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListRuleGroupsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRuleGroupsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListRuleGroupsErrorKind::WafInvalidParameterException(_))
     }
 }
 impl std::error::Error for ListRuleGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRuleGroupsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListRuleGroupsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            ListRuleGroupsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListRuleGroupsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListRuleGroupsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListRuleGroupsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListRuleGroupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3478,15 +3500,15 @@ impl std::error::Error for ListRuleGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct ListResourcesForWebACLError {
     /// Kind of error that occurred.
-    pub kind: ListResourcesForWebACLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListResourcesForWebACLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListResourcesForWebACLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListResourcesForWebACLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3498,34 +3520,44 @@ pub enum ListResourcesForWebACLErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourcesForWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListResourcesForWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListResourcesForWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            ListResourcesForWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            ListResourcesForWebACLErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            ListResourcesForWebACLErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListResourcesForWebACLErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesForWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesForWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesForWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesForWebACLErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3539,87 +3571,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListResourcesForWebACLError {
 }
 impl ListResourcesForWebACLError {
     /// Creates a new `ListResourcesForWebACLError`.
-    pub fn new(kind: ListResourcesForWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListResourcesForWebACLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListResourcesForWebACLErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListResourcesForWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListResourcesForWebACLErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListResourcesForWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListResourcesForWebACLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListResourcesForWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListResourcesForWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListResourcesForWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListResourcesForWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesForWebACLErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListResourcesForWebACLErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesForWebACLErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesForWebACLErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListResourcesForWebACLErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesForWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesForWebACLErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListResourcesForWebACLErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesForWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesForWebACLErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, ListResourcesForWebACLErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for ListResourcesForWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListResourcesForWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListResourcesForWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            ListResourcesForWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListResourcesForWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            ListResourcesForWebACLErrorKind::Unhandled(_inner) => Some(_inner),
+            ListResourcesForWebACLErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesForWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesForWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesForWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesForWebACLErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3629,15 +3655,15 @@ impl std::error::Error for ListResourcesForWebACLError {
 #[derive(std::fmt::Debug)]
 pub struct ListRegexPatternSetsError {
     /// Kind of error that occurred.
-    pub kind: ListRegexPatternSetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListRegexPatternSetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListRegexPatternSetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListRegexPatternSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3649,31 +3675,39 @@ pub enum ListRegexPatternSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRegexPatternSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRegexPatternSetsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListRegexPatternSetsErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            ListRegexPatternSetsErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            ListRegexPatternSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListRegexPatternSetsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRegexPatternSetsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRegexPatternSetsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRegexPatternSetsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3687,79 +3721,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListRegexPatternSetsError {
 }
 impl ListRegexPatternSetsError {
     /// Creates a new `ListRegexPatternSetsError`.
-    pub fn new(kind: ListRegexPatternSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListRegexPatternSetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListRegexPatternSetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListRegexPatternSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListRegexPatternSetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListRegexPatternSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListRegexPatternSetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListRegexPatternSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListRegexPatternSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListRegexPatternSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListRegexPatternSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRegexPatternSetsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListRegexPatternSetsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListRegexPatternSetsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRegexPatternSetsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListRegexPatternSetsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListRegexPatternSetsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRegexPatternSetsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListRegexPatternSetsErrorKind::WafInvalidParameterException(_))
     }
 }
 impl std::error::Error for ListRegexPatternSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRegexPatternSetsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListRegexPatternSetsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            ListRegexPatternSetsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListRegexPatternSetsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListRegexPatternSetsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListRegexPatternSetsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListRegexPatternSetsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListRegexPatternSetsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3769,15 +3798,15 @@ impl std::error::Error for ListRegexPatternSetsError {
 #[derive(std::fmt::Debug)]
 pub struct ListMobileSdkReleasesError {
     /// Kind of error that occurred.
-    pub kind: ListMobileSdkReleasesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListMobileSdkReleasesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListMobileSdkReleasesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListMobileSdkReleasesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3789,31 +3818,39 @@ pub enum ListMobileSdkReleasesErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMobileSdkReleasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListMobileSdkReleasesErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            ListMobileSdkReleasesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListMobileSdkReleasesErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMobileSdkReleasesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3827,79 +3864,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListMobileSdkReleasesError {
 }
 impl ListMobileSdkReleasesError {
     /// Creates a new `ListMobileSdkReleasesError`.
-    pub fn new(kind: ListMobileSdkReleasesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListMobileSdkReleasesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListMobileSdkReleasesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListMobileSdkReleasesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListMobileSdkReleasesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListMobileSdkReleasesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListMobileSdkReleasesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListMobileSdkReleasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListMobileSdkReleasesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListMobileSdkReleasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListMobileSdkReleasesErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMobileSdkReleasesErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListMobileSdkReleasesErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListMobileSdkReleasesErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListMobileSdkReleasesErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_))
     }
 }
 impl std::error::Error for ListMobileSdkReleasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListMobileSdkReleasesErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListMobileSdkReleasesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListMobileSdkReleasesErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListMobileSdkReleasesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3909,15 +3941,15 @@ impl std::error::Error for ListMobileSdkReleasesError {
 #[derive(std::fmt::Debug)]
 pub struct ListManagedRuleSetsError {
     /// Kind of error that occurred.
-    pub kind: ListManagedRuleSetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListManagedRuleSetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListManagedRuleSetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListManagedRuleSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3929,31 +3961,39 @@ pub enum ListManagedRuleSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListManagedRuleSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListManagedRuleSetsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListManagedRuleSetsErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            ListManagedRuleSetsErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            ListManagedRuleSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListManagedRuleSetsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListManagedRuleSetsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListManagedRuleSetsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListManagedRuleSetsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3967,75 +4007,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListManagedRuleSetsError {
 }
 impl ListManagedRuleSetsError {
     /// Creates a new `ListManagedRuleSetsError`.
-    pub fn new(kind: ListManagedRuleSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListManagedRuleSetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListManagedRuleSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListManagedRuleSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListManagedRuleSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListManagedRuleSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListManagedRuleSetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListManagedRuleSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListManagedRuleSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListManagedRuleSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListManagedRuleSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListManagedRuleSetsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListManagedRuleSetsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListManagedRuleSetsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListManagedRuleSetsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListManagedRuleSetsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListManagedRuleSetsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListManagedRuleSetsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListManagedRuleSetsErrorKind::WafInvalidParameterException(_))
     }
 }
 impl std::error::Error for ListManagedRuleSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListManagedRuleSetsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListManagedRuleSetsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            ListManagedRuleSetsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListManagedRuleSetsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListManagedRuleSetsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListManagedRuleSetsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListManagedRuleSetsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListManagedRuleSetsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4045,17 +4084,15 @@ impl std::error::Error for ListManagedRuleSetsError {
 #[derive(std::fmt::Debug)]
 pub struct ListLoggingConfigurationsError {
     /// Kind of error that occurred.
-    pub kind: ListLoggingConfigurationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListLoggingConfigurationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListLoggingConfigurationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4067,35 +4104,39 @@ pub enum ListLoggingConfigurationsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLoggingConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLoggingConfigurationsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListLoggingConfigurationsErrorKind::WafInvalidOperationException(_inner) => {
+            ListLoggingConfigurationsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLoggingConfigurationsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLoggingConfigurationsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLoggingConfigurationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListLoggingConfigurationsErrorKind::WafInvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLoggingConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4109,83 +4150,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLoggingConfigurationsErro
 }
 impl ListLoggingConfigurationsError {
     /// Creates a new `ListLoggingConfigurationsError`.
-    pub fn new(kind: ListLoggingConfigurationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListLoggingConfigurationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListLoggingConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListLoggingConfigurationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListLoggingConfigurationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListLoggingConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListLoggingConfigurationsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLoggingConfigurationsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListLoggingConfigurationsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListLoggingConfigurationsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLoggingConfigurationsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListLoggingConfigurationsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListLoggingConfigurationsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLoggingConfigurationsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListLoggingConfigurationsErrorKind::WafInvalidParameterException(_))
     }
 }
 impl std::error::Error for ListLoggingConfigurationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLoggingConfigurationsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListLoggingConfigurationsErrorKind::WafInvalidOperationException(_inner) => {
+            ListLoggingConfigurationsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListLoggingConfigurationsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLoggingConfigurationsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListLoggingConfigurationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListLoggingConfigurationsErrorKind::WafInvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            ListLoggingConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4195,15 +4227,15 @@ impl std::error::Error for ListLoggingConfigurationsError {
 #[derive(std::fmt::Debug)]
 pub struct ListIPSetsError {
     /// Kind of error that occurred.
-    pub kind: ListIPSetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListIPSetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListIPSetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListIPSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4215,31 +4247,39 @@ pub enum ListIPSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIPSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListIPSetsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            ListIPSetsErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            ListIPSetsErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            ListIPSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListIPSetsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListIPSetsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListIPSetsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListIPSetsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4253,75 +4293,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListIPSetsError {
 }
 impl ListIPSetsError {
     /// Creates a new `ListIPSetsError`.
-    pub fn new(kind: ListIPSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListIPSetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListIPSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListIPSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListIPSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListIPSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListIPSetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListIPSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListIPSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListIPSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListIPSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListIPSetsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListIPSetsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListIPSetsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListIPSetsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListIPSetsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListIPSetsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListIPSetsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListIPSetsErrorKind::WafInvalidParameterException(_))
     }
 }
 impl std::error::Error for ListIPSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListIPSetsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            ListIPSetsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            ListIPSetsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListIPSetsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListIPSetsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListIPSetsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListIPSetsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListIPSetsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4331,17 +4370,15 @@ impl std::error::Error for ListIPSetsError {
 #[derive(std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupVersionsError {
     /// Kind of error that occurred.
-    pub kind: ListAvailableManagedRuleGroupVersionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAvailableManagedRuleGroupVersionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAvailableManagedRuleGroupVersionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4353,42 +4390,44 @@ pub enum ListAvailableManagedRuleGroupVersionsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableManagedRuleGroupVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_inner) => {
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4402,98 +4441,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAvailableManagedRuleGroup
 }
 impl ListAvailableManagedRuleGroupVersionsError {
     /// Creates a new `ListAvailableManagedRuleGroupVersionsError`.
-    pub fn new(
-        kind: ListAvailableManagedRuleGroupVersionsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAvailableManagedRuleGroupVersionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAvailableManagedRuleGroupVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAvailableManagedRuleGroupVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAvailableManagedRuleGroupVersionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAvailableManagedRuleGroupVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for ListAvailableManagedRuleGroupVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_inner) => {
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(
-                _inner,
-            ) => Some(_inner),
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(
-                _inner,
-            ) => Some(_inner),
-            ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_inner) => {
-                Some(_inner)
-            }
-            ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4503,17 +4525,15 @@ impl std::error::Error for ListAvailableManagedRuleGroupVersionsError {
 #[derive(std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsError {
     /// Kind of error that occurred.
-    pub kind: ListAvailableManagedRuleGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAvailableManagedRuleGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAvailableManagedRuleGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4525,37 +4545,39 @@ pub enum ListAvailableManagedRuleGroupsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableManagedRuleGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(_inner) => {
+            ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableManagedRuleGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAvailableManagedRuleGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4569,88 +4591,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAvailableManagedRuleGroup
 }
 impl ListAvailableManagedRuleGroupsError {
     /// Creates a new `ListAvailableManagedRuleGroupsError`.
-    pub fn new(
-        kind: ListAvailableManagedRuleGroupsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAvailableManagedRuleGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAvailableManagedRuleGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAvailableManagedRuleGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAvailableManagedRuleGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAvailableManagedRuleGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(_))
     }
 }
 impl std::error::Error for ListAvailableManagedRuleGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(_inner) => {
+            ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableManagedRuleGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(_inner) => {
-                Some(_inner)
-            }
-            ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            ListAvailableManagedRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4660,15 +4668,15 @@ impl std::error::Error for ListAvailableManagedRuleGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct GetWebACLForResourceError {
     /// Kind of error that occurred.
-    pub kind: GetWebACLForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetWebACLForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetWebACLForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetWebACLForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4680,37 +4688,49 @@ pub enum GetWebACLForResourceErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetWebACLForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetWebACLForResourceErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetWebACLForResourceErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            GetWebACLForResourceErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetWebACLForResourceErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetWebACLForResourceErrorKind::WafUnavailableEntityException(_inner) => _inner.fmt(f),
-            GetWebACLForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetWebACLForResourceErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLForResourceErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLForResourceErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLForResourceErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLForResourceErrorKind::WafUnavailableEntityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4724,95 +4744,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetWebACLForResourceError {
 }
 impl GetWebACLForResourceError {
     /// Creates a new `GetWebACLForResourceError`.
-    pub fn new(kind: GetWebACLForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetWebACLForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetWebACLForResourceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetWebACLForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetWebACLForResourceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetWebACLForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetWebACLForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetWebACLForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetWebACLForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetWebACLForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetWebACLForResourceErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetWebACLForResourceErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetWebACLForResourceErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetWebACLForResourceErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetWebACLForResourceErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetWebACLForResourceErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetWebACLForResourceErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetWebACLForResourceErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetWebACLForResourceErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetWebACLForResourceErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetWebACLForResourceErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetWebACLForResourceErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `GetWebACLForResourceErrorKind::WafUnavailableEntityException`.
     pub fn is_waf_unavailable_entity_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetWebACLForResourceErrorKind::WafUnavailableEntityException(_)
-        )
+        matches!(&self.kind, GetWebACLForResourceErrorKind::WafUnavailableEntityException(_))
     }
 }
 impl std::error::Error for GetWebACLForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetWebACLForResourceErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetWebACLForResourceErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            GetWebACLForResourceErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetWebACLForResourceErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetWebACLForResourceErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            GetWebACLForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            GetWebACLForResourceErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLForResourceErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLForResourceErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLForResourceErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLForResourceErrorKind::WafUnavailableEntityException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4822,15 +4835,15 @@ impl std::error::Error for GetWebACLForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct GetWebACLError {
     /// Kind of error that occurred.
-    pub kind: GetWebACLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetWebACLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetWebACLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetWebACLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4842,34 +4855,44 @@ pub enum GetWebACLErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            GetWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetWebACLErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetWebACLErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetWebACLErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetWebACLErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4883,80 +4906,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetWebACLError {
 }
 impl GetWebACLError {
     /// Creates a new `GetWebACLError`.
-    pub fn new(kind: GetWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetWebACLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetWebACLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetWebACLErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetWebACLErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetWebACLErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetWebACLErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetWebACLErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetWebACLErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetWebACLErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetWebACLErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            GetWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetWebACLErrorKind::Unhandled(_inner) => Some(_inner),
+            GetWebACLErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetWebACLErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4966,15 +4990,15 @@ impl std::error::Error for GetWebACLError {
 #[derive(std::fmt::Debug)]
 pub struct GetSampledRequestsError {
     /// Kind of error that occurred.
-    pub kind: GetSampledRequestsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSampledRequestsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSampledRequestsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSampledRequestsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4984,33 +5008,41 @@ impl aws_smithy_http::result::CreateUnhandledError for GetSampledRequestsError {
 pub enum GetSampledRequestsErrorKind {
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSampledRequestsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSampledRequestsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetSampledRequestsErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetSampledRequestsErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetSampledRequestsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetSampledRequestsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSampledRequestsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSampledRequestsErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSampledRequestsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5024,75 +5056,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSampledRequestsError {
 }
 impl GetSampledRequestsError {
     /// Creates a new `GetSampledRequestsError`.
-    pub fn new(kind: GetSampledRequestsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSampledRequestsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSampledRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSampledRequestsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSampledRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSampledRequestsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSampledRequestsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSampledRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSampledRequestsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSampledRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSampledRequestsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSampledRequestsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetSampledRequestsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetSampledRequestsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSampledRequestsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetSampledRequestsErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetSampledRequestsErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSampledRequestsErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetSampledRequestsErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetSampledRequestsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSampledRequestsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetSampledRequestsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetSampledRequestsErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetSampledRequestsErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSampledRequestsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetSampledRequestsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetSampledRequestsErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetSampledRequestsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5102,15 +5133,15 @@ impl std::error::Error for GetSampledRequestsError {
 #[derive(std::fmt::Debug)]
 pub struct GetRuleGroupError {
     /// Kind of error that occurred.
-    pub kind: GetRuleGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetRuleGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetRuleGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5122,34 +5153,44 @@ pub enum GetRuleGroupErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRuleGroupErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetRuleGroupErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            GetRuleGroupErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetRuleGroupErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetRuleGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRuleGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5163,83 +5204,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetRuleGroupError {
 }
 impl GetRuleGroupError {
     /// Creates a new `GetRuleGroupError`.
-    pub fn new(kind: GetRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetRuleGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetRuleGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRuleGroupErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetRuleGroupErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetRuleGroupErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRuleGroupErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetRuleGroupErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetRuleGroupErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRuleGroupErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetRuleGroupErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRuleGroupErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetRuleGroupErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetRuleGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRuleGroupErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetRuleGroupErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            GetRuleGroupErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetRuleGroupErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            GetRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetRuleGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5249,15 +5288,15 @@ impl std::error::Error for GetRuleGroupError {
 #[derive(std::fmt::Debug)]
 pub struct GetRegexPatternSetError {
     /// Kind of error that occurred.
-    pub kind: GetRegexPatternSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetRegexPatternSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetRegexPatternSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5269,34 +5308,44 @@ pub enum GetRegexPatternSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRegexPatternSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRegexPatternSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            GetRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetRegexPatternSetErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetRegexPatternSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetRegexPatternSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRegexPatternSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRegexPatternSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRegexPatternSetErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRegexPatternSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5310,83 +5359,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetRegexPatternSetError {
 }
 impl GetRegexPatternSetError {
     /// Creates a new `GetRegexPatternSetError`.
-    pub fn new(kind: GetRegexPatternSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetRegexPatternSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetRegexPatternSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetRegexPatternSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetRegexPatternSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetRegexPatternSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetRegexPatternSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRegexPatternSetErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetRegexPatternSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetRegexPatternSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRegexPatternSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetRegexPatternSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetRegexPatternSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRegexPatternSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetRegexPatternSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetRegexPatternSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRegexPatternSetErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetRegexPatternSetErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetRegexPatternSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRegexPatternSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            GetRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetRegexPatternSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner),
+            GetRegexPatternSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetRegexPatternSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetRegexPatternSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetRegexPatternSetErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetRegexPatternSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5396,17 +5443,15 @@ impl std::error::Error for GetRegexPatternSetError {
 #[derive(std::fmt::Debug)]
 pub struct GetRateBasedStatementManagedKeysError {
     /// Kind of error that occurred.
-    pub kind: GetRateBasedStatementManagedKeysErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetRateBasedStatementManagedKeysErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetRateBasedStatementManagedKeysError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5418,42 +5463,44 @@ pub enum GetRateBasedStatementManagedKeysErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRateBasedStatementManagedKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException(_inner) => {
+            GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRateBasedStatementManagedKeysErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetRateBasedStatementManagedKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5467,98 +5514,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetRateBasedStatementManagedK
 }
 impl GetRateBasedStatementManagedKeysError {
     /// Creates a new `GetRateBasedStatementManagedKeysError`.
-    pub fn new(
-        kind: GetRateBasedStatementManagedKeysErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetRateBasedStatementManagedKeysError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetRateBasedStatementManagedKeysError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetRateBasedStatementManagedKeysErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetRateBasedStatementManagedKeysError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetRateBasedStatementManagedKeysError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetRateBasedStatementManagedKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException(_inner) => {
+            GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetRateBasedStatementManagedKeysErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(_inner) => {
-                Some(_inner)
-            }
-            GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(_inner) => {
-                Some(_inner)
-            }
-            GetRateBasedStatementManagedKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5568,15 +5598,15 @@ impl std::error::Error for GetRateBasedStatementManagedKeysError {
 #[derive(std::fmt::Debug)]
 pub struct GetPermissionPolicyError {
     /// Kind of error that occurred.
-    pub kind: GetPermissionPolicyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetPermissionPolicyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetPermissionPolicyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5586,33 +5616,41 @@ impl aws_smithy_http::result::CreateUnhandledError for GetPermissionPolicyError 
 pub enum GetPermissionPolicyErrorKind {
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPermissionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPermissionPolicyErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetPermissionPolicyErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetPermissionPolicyErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetPermissionPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetPermissionPolicyErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPermissionPolicyErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPermissionPolicyErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPermissionPolicyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5626,75 +5664,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetPermissionPolicyError {
 }
 impl GetPermissionPolicyError {
     /// Creates a new `GetPermissionPolicyError`.
-    pub fn new(kind: GetPermissionPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetPermissionPolicyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetPermissionPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetPermissionPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetPermissionPolicyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetPermissionPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetPermissionPolicyErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPermissionPolicyErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetPermissionPolicyErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetPermissionPolicyErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPermissionPolicyErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetPermissionPolicyErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetPermissionPolicyErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPermissionPolicyErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetPermissionPolicyErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetPermissionPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPermissionPolicyErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetPermissionPolicyErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetPermissionPolicyErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetPermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
+            GetPermissionPolicyErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetPermissionPolicyErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetPermissionPolicyErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetPermissionPolicyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5704,15 +5741,15 @@ impl std::error::Error for GetPermissionPolicyError {
 #[derive(std::fmt::Debug)]
 pub struct GetMobileSdkReleaseError {
     /// Kind of error that occurred.
-    pub kind: GetMobileSdkReleaseErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetMobileSdkReleaseErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetMobileSdkReleaseError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetMobileSdkReleaseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5724,34 +5761,44 @@ pub enum GetMobileSdkReleaseErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMobileSdkReleaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetMobileSdkReleaseErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetMobileSdkReleaseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetMobileSdkReleaseErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMobileSdkReleaseErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5765,83 +5812,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetMobileSdkReleaseError {
 }
 impl GetMobileSdkReleaseError {
     /// Creates a new `GetMobileSdkReleaseError`.
-    pub fn new(kind: GetMobileSdkReleaseErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetMobileSdkReleaseError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetMobileSdkReleaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetMobileSdkReleaseError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetMobileSdkReleaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetMobileSdkReleaseErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetMobileSdkReleaseError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetMobileSdkReleaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetMobileSdkReleaseError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetMobileSdkReleaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetMobileSdkReleaseErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMobileSdkReleaseErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetMobileSdkReleaseErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetMobileSdkReleaseErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetMobileSdkReleaseErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetMobileSdkReleaseErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetMobileSdkReleaseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetMobileSdkReleaseErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetMobileSdkReleaseErrorKind::Unhandled(_inner) => Some(_inner),
+            GetMobileSdkReleaseErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetMobileSdkReleaseErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5851,15 +5896,15 @@ impl std::error::Error for GetMobileSdkReleaseError {
 #[derive(std::fmt::Debug)]
 pub struct GetManagedRuleSetError {
     /// Kind of error that occurred.
-    pub kind: GetManagedRuleSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetManagedRuleSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetManagedRuleSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetManagedRuleSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5871,34 +5916,44 @@ pub enum GetManagedRuleSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetManagedRuleSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetManagedRuleSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetManagedRuleSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            GetManagedRuleSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetManagedRuleSetErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetManagedRuleSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetManagedRuleSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetManagedRuleSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetManagedRuleSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetManagedRuleSetErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetManagedRuleSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5912,83 +5967,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetManagedRuleSetError {
 }
 impl GetManagedRuleSetError {
     /// Creates a new `GetManagedRuleSetError`.
-    pub fn new(kind: GetManagedRuleSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetManagedRuleSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetManagedRuleSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetManagedRuleSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetManagedRuleSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetManagedRuleSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetManagedRuleSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetManagedRuleSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetManagedRuleSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetManagedRuleSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetManagedRuleSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetManagedRuleSetErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetManagedRuleSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetManagedRuleSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetManagedRuleSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetManagedRuleSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetManagedRuleSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetManagedRuleSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetManagedRuleSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetManagedRuleSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetManagedRuleSetErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetManagedRuleSetErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetManagedRuleSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetManagedRuleSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetManagedRuleSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            GetManagedRuleSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetManagedRuleSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetManagedRuleSetErrorKind::Unhandled(_inner) => Some(_inner),
+            GetManagedRuleSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetManagedRuleSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetManagedRuleSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetManagedRuleSetErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetManagedRuleSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5998,15 +6051,15 @@ impl std::error::Error for GetManagedRuleSetError {
 #[derive(std::fmt::Debug)]
 pub struct GetLoggingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetLoggingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLoggingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLoggingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6018,34 +6071,44 @@ pub enum GetLoggingConfigurationErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLoggingConfigurationErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            GetLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetLoggingConfigurationErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLoggingConfigurationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6059,87 +6122,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLoggingConfigurationError 
 }
 impl GetLoggingConfigurationError {
     /// Creates a new `GetLoggingConfigurationError`.
-    pub fn new(kind: GetLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLoggingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLoggingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLoggingConfigurationErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GetLoggingConfigurationErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLoggingConfigurationErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetLoggingConfigurationErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLoggingConfigurationErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetLoggingConfigurationErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLoggingConfigurationErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetLoggingConfigurationErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetLoggingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLoggingConfigurationErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            GetLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+            GetLoggingConfigurationErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetLoggingConfigurationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6149,15 +6206,15 @@ impl std::error::Error for GetLoggingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetIPSetError {
     /// Kind of error that occurred.
-    pub kind: GetIPSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetIPSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetIPSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetIPSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6169,34 +6226,44 @@ pub enum GetIPSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetIPSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetIPSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            GetIPSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            GetIPSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            GetIPSetErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            GetIPSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetIPSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetIPSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetIPSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetIPSetErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetIPSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6210,80 +6277,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetIPSetError {
 }
 impl GetIPSetError {
     /// Creates a new `GetIPSetError`.
-    pub fn new(kind: GetIPSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetIPSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetIPSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetIPSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetIPSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetIPSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetIPSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetIPSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetIPSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetIPSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GetIPSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GetIPSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetIPSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GetIPSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetIPSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetIPSetErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GetIPSetErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GetIPSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetIPSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GetIPSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            GetIPSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            GetIPSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetIPSetErrorKind::Unhandled(_inner) => Some(_inner),
+            GetIPSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetIPSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetIPSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetIPSetErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GetIPSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6293,17 +6361,15 @@ impl std::error::Error for GetIPSetError {
 #[derive(std::fmt::Debug)]
 pub struct GenerateMobileSdkReleaseUrlError {
     /// Kind of error that occurred.
-    pub kind: GenerateMobileSdkReleaseUrlErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GenerateMobileSdkReleaseUrlErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GenerateMobileSdkReleaseUrlError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6315,42 +6381,44 @@ pub enum GenerateMobileSdkReleaseUrlErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateMobileSdkReleaseUrlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_inner) => {
+            GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMobileSdkReleaseUrlErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateMobileSdkReleaseUrlErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6364,93 +6432,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GenerateMobileSdkReleaseUrlEr
 }
 impl GenerateMobileSdkReleaseUrlError {
     /// Creates a new `GenerateMobileSdkReleaseUrlError`.
-    pub fn new(kind: GenerateMobileSdkReleaseUrlErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GenerateMobileSdkReleaseUrlError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GenerateMobileSdkReleaseUrlError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GenerateMobileSdkReleaseUrlErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GenerateMobileSdkReleaseUrlError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GenerateMobileSdkReleaseUrlError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for GenerateMobileSdkReleaseUrlError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_inner) => {
+            GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMobileSdkReleaseUrlErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_inner) => {
-                Some(_inner)
-            }
-            GenerateMobileSdkReleaseUrlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6460,15 +6516,15 @@ impl std::error::Error for GenerateMobileSdkReleaseUrlError {
 #[derive(std::fmt::Debug)]
 pub struct DisassociateWebACLError {
     /// Kind of error that occurred.
-    pub kind: DisassociateWebACLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisassociateWebACLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisassociateWebACLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DisassociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6480,34 +6536,44 @@ pub enum DisassociateWebACLErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisassociateWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            DisassociateWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            DisassociateWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            DisassociateWebACLErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            DisassociateWebACLErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DisassociateWebACLErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateWebACLErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6521,83 +6587,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisassociateWebACLError {
 }
 impl DisassociateWebACLError {
     /// Creates a new `DisassociateWebACLError`.
-    pub fn new(kind: DisassociateWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisassociateWebACLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisassociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisassociateWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisassociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisassociateWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisassociateWebACLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisassociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisassociateWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisassociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisassociateWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateWebACLErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DisassociateWebACLErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DisassociateWebACLErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateWebACLErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, DisassociateWebACLErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `DisassociateWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateWebACLErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DisassociateWebACLErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DisassociateWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateWebACLErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DisassociateWebACLErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for DisassociateWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisassociateWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            DisassociateWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            DisassociateWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            DisassociateWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DisassociateWebACLErrorKind::Unhandled(_inner) => Some(_inner),
+            DisassociateWebACLErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateWebACLErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6607,17 +6671,15 @@ impl std::error::Error for DisassociateWebACLError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeManagedRuleGroupError {
     /// Kind of error that occurred.
-    pub kind: DescribeManagedRuleGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeManagedRuleGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeManagedRuleGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeManagedRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeManagedRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6626,51 +6688,57 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeManagedRuleGroupE
 #[derive(std::fmt::Debug)]
 pub enum DescribeManagedRuleGroupErrorKind {
     /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
-    WafExpiredManagedRuleGroupVersionException(
-        crate::error::WafExpiredManagedRuleGroupVersionException,
-    ),
+    WafExpiredManagedRuleGroupVersionException(crate::error::WafExpiredManagedRuleGroupVersionException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
     WafInvalidResourceException(crate::error::WafInvalidResourceException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeManagedRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeManagedRuleGroupErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(_inner) => {
+            DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeManagedRuleGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(_inner) => _inner.fmt(f),
-            DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            DescribeManagedRuleGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6684,105 +6752,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeManagedRuleGroupError
 }
 impl DescribeManagedRuleGroupError {
     /// Creates a new `DescribeManagedRuleGroupError`.
-    pub fn new(kind: DescribeManagedRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeManagedRuleGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeManagedRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeManagedRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeManagedRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeManagedRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeManagedRuleGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeManagedRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeManagedRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeManagedRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException`.
     pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(_)
-        )
+        matches!(&self.kind, DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(_))
     }
     /// Returns `true` if the error kind is `DescribeManagedRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeManagedRuleGroupErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeManagedRuleGroupErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeManagedRuleGroupErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `DescribeManagedRuleGroupErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeManagedRuleGroupErrorKind::WafInvalidResourceException`.
     pub fn is_waf_invalid_resource_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(_)
-        )
+        matches!(&self.kind, DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(_))
     }
     /// Returns `true` if the error kind is `DescribeManagedRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for DescribeManagedRuleGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(
-                _inner,
-            ) => Some(_inner),
-            DescribeManagedRuleGroupErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(_inner) => Some(_inner),
-            DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DescribeManagedRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeManagedRuleGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6792,15 +6850,15 @@ impl std::error::Error for DescribeManagedRuleGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteWebACLError {
     /// Kind of error that occurred.
-    pub kind: DeleteWebACLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteWebACLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteWebACLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteWebACLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6814,12 +6872,12 @@ pub enum DeleteWebACLErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
@@ -6830,28 +6888,46 @@ pub enum DeleteWebACLErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteWebACLErrorKind::WafAssociatedItemException(_inner) => _inner.fmt(f),
-            DeleteWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            DeleteWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            DeleteWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteWebACLErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            DeleteWebACLErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            DeleteWebACLErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            DeleteWebACLErrorKind::WafTagOperationInternalErrorException(_inner) => _inner.fmt(f),
-            DeleteWebACLErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteWebACLErrorKind::WafAssociatedItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteWebACLErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteWebACLErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteWebACLErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteWebACLErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteWebACLErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6865,115 +6941,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteWebACLError {
 }
 impl DeleteWebACLError {
     /// Creates a new `DeleteWebACLError`.
-    pub fn new(kind: DeleteWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteWebACLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteWebACLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafAssociatedItemException`.
     pub fn is_waf_associated_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteWebACLErrorKind::WafAssociatedItemException(_)
-        )
+        matches!(&self.kind, DeleteWebACLErrorKind::WafAssociatedItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteWebACLErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteWebACLErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteWebACLErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, DeleteWebACLErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteWebACLErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteWebACLErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteWebACLErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DeleteWebACLErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteWebACLErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, DeleteWebACLErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteWebACLErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, DeleteWebACLErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteWebACLErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteWebACLErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for DeleteWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteWebACLErrorKind::WafAssociatedItemException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteWebACLErrorKind::WafAssociatedItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteWebACLErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteWebACLErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteWebACLErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteWebACLErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteWebACLErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6981,22 +7051,20 @@ impl std::error::Error for DeleteWebACLError {
 /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafAssociatedItemException {
+pub struct WafAssociatedItemException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl WafAssociatedItemException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for WafAssociatedItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafAssociatedItemException [WAFAssociatedItemException]")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -7006,7 +7074,7 @@ impl std::fmt::Display for WafAssociatedItemException {
 impl std::error::Error for WafAssociatedItemException {}
 /// See [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
 pub mod waf_associated_item_exception {
-
+    
     /// A builder for [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7020,16 +7088,18 @@ pub mod waf_associated_item_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
         pub fn build(self) -> crate::error::WafAssociatedItemException {
             crate::error::WafAssociatedItemException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl WafAssociatedItemException {
     /// Creates a new builder-style object to manufacture [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
@@ -7043,15 +7113,15 @@ impl WafAssociatedItemException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteRuleGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteRuleGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteRuleGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteRuleGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7065,12 +7135,12 @@ pub enum DeleteRuleGroupErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
@@ -7081,30 +7151,46 @@ pub enum DeleteRuleGroupErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRuleGroupErrorKind::WafAssociatedItemException(_inner) => _inner.fmt(f),
-            DeleteRuleGroupErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            DeleteRuleGroupErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            DeleteRuleGroupErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteRuleGroupErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            DeleteRuleGroupErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            DeleteRuleGroupErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) => {
+            DeleteRuleGroupErrorKind::WafAssociatedItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleGroupErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleGroupErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteRuleGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7118,115 +7204,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteRuleGroupError {
 }
 impl DeleteRuleGroupError {
     /// Creates a new `DeleteRuleGroupError`.
-    pub fn new(kind: DeleteRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteRuleGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteRuleGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafAssociatedItemException`.
     pub fn is_waf_associated_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleGroupErrorKind::WafAssociatedItemException(_)
-        )
+        matches!(&self.kind, DeleteRuleGroupErrorKind::WafAssociatedItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleGroupErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteRuleGroupErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleGroupErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, DeleteRuleGroupErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleGroupErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteRuleGroupErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleGroupErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DeleteRuleGroupErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleGroupErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, DeleteRuleGroupErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleGroupErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, DeleteRuleGroupErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for DeleteRuleGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRuleGroupErrorKind::WafAssociatedItemException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteRuleGroupErrorKind::WafAssociatedItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleGroupErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleGroupErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7236,15 +7316,15 @@ impl std::error::Error for DeleteRuleGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteRegexPatternSetError {
     /// Kind of error that occurred.
-    pub kind: DeleteRegexPatternSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteRegexPatternSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteRegexPatternSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7258,12 +7338,12 @@ pub enum DeleteRegexPatternSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
@@ -7274,30 +7354,46 @@ pub enum DeleteRegexPatternSetErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRegexPatternSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRegexPatternSetErrorKind::WafAssociatedItemException(_inner) => _inner.fmt(f),
-            DeleteRegexPatternSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            DeleteRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            DeleteRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteRegexPatternSetErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            DeleteRegexPatternSetErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            DeleteRegexPatternSetErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) => {
+            DeleteRegexPatternSetErrorKind::WafAssociatedItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRegexPatternSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRegexPatternSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRegexPatternSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRegexPatternSetErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRegexPatternSetErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRegexPatternSetErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRegexPatternSetErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteRegexPatternSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7311,121 +7407,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteRegexPatternSetError {
 }
 impl DeleteRegexPatternSetError {
     /// Creates a new `DeleteRegexPatternSetError`.
-    pub fn new(kind: DeleteRegexPatternSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteRegexPatternSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteRegexPatternSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteRegexPatternSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteRegexPatternSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteRegexPatternSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafAssociatedItemException`.
     pub fn is_waf_associated_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRegexPatternSetErrorKind::WafAssociatedItemException(_)
-        )
+        matches!(&self.kind, DeleteRegexPatternSetErrorKind::WafAssociatedItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRegexPatternSetErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteRegexPatternSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRegexPatternSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, DeleteRegexPatternSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRegexPatternSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteRegexPatternSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRegexPatternSetErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DeleteRegexPatternSetErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRegexPatternSetErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, DeleteRegexPatternSetErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRegexPatternSetErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, DeleteRegexPatternSetErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for DeleteRegexPatternSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRegexPatternSetErrorKind::WafAssociatedItemException(_inner) => Some(_inner),
-            DeleteRegexPatternSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            DeleteRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            DeleteRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            DeleteRegexPatternSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DeleteRegexPatternSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            DeleteRegexPatternSetErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) => {
+            DeleteRegexPatternSetErrorKind::WafAssociatedItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRegexPatternSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRegexPatternSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRegexPatternSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRegexPatternSetErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRegexPatternSetErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRegexPatternSetErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRegexPatternSetErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7435,15 +7519,15 @@ impl std::error::Error for DeleteRegexPatternSetError {
 #[derive(std::fmt::Debug)]
 pub struct DeletePermissionPolicyError {
     /// Kind of error that occurred.
-    pub kind: DeletePermissionPolicyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeletePermissionPolicyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeletePermissionPolicyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeletePermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7453,33 +7537,41 @@ impl aws_smithy_http::result::CreateUnhandledError for DeletePermissionPolicyErr
 pub enum DeletePermissionPolicyErrorKind {
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePermissionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeletePermissionPolicyErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            DeletePermissionPolicyErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            DeletePermissionPolicyErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            DeletePermissionPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeletePermissionPolicyErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePermissionPolicyErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePermissionPolicyErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePermissionPolicyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7493,79 +7585,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeletePermissionPolicyError {
 }
 impl DeletePermissionPolicyError {
     /// Creates a new `DeletePermissionPolicyError`.
-    pub fn new(kind: DeletePermissionPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeletePermissionPolicyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeletePermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeletePermissionPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeletePermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeletePermissionPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeletePermissionPolicyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeletePermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeletePermissionPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeletePermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeletePermissionPolicyErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePermissionPolicyErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DeletePermissionPolicyErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeletePermissionPolicyErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePermissionPolicyErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DeletePermissionPolicyErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeletePermissionPolicyErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePermissionPolicyErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DeletePermissionPolicyErrorKind::WafNonexistentItemException(_))
     }
 }
 impl std::error::Error for DeletePermissionPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeletePermissionPolicyErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            DeletePermissionPolicyErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            DeletePermissionPolicyErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DeletePermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
+            DeletePermissionPolicyErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePermissionPolicyErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePermissionPolicyErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePermissionPolicyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7575,17 +7662,15 @@ impl std::error::Error for DeletePermissionPolicyError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: DeleteLoggingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteLoggingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteLoggingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7597,45 +7682,49 @@ pub enum DeleteLoggingConfigurationErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLoggingConfigurationErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            DeleteLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => {
+            DeleteLoggingConfigurationErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7649,101 +7738,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLoggingConfigurationErr
 }
 impl DeleteLoggingConfigurationError {
     /// Creates a new `DeleteLoggingConfigurationError`.
-    pub fn new(kind: DeleteLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteLoggingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteLoggingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLoggingConfigurationErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteLoggingConfigurationErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLoggingConfigurationErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, DeleteLoggingConfigurationErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLoggingConfigurationErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteLoggingConfigurationErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(_))
     }
 }
 impl std::error::Error for DeleteLoggingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLoggingConfigurationErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            DeleteLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => {
+            DeleteLoggingConfigurationErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => {
-                Some(_inner)
-            }
-            DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            DeleteLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7753,15 +7829,15 @@ impl std::error::Error for DeleteLoggingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteIPSetError {
     /// Kind of error that occurred.
-    pub kind: DeleteIPSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteIPSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteIPSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteIPSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7775,12 +7851,12 @@ pub enum DeleteIPSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
@@ -7791,28 +7867,46 @@ pub enum DeleteIPSetErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteIPSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteIPSetErrorKind::WafAssociatedItemException(_inner) => _inner.fmt(f),
-            DeleteIPSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            DeleteIPSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            DeleteIPSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteIPSetErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            DeleteIPSetErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            DeleteIPSetErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            DeleteIPSetErrorKind::WafTagOperationInternalErrorException(_inner) => _inner.fmt(f),
-            DeleteIPSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteIPSetErrorKind::WafAssociatedItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteIPSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteIPSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteIPSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteIPSetErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteIPSetErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteIPSetErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteIPSetErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteIPSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7826,115 +7920,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteIPSetError {
 }
 impl DeleteIPSetError {
     /// Creates a new `DeleteIPSetError`.
-    pub fn new(kind: DeleteIPSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteIPSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteIPSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteIPSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteIPSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteIPSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafAssociatedItemException`.
     pub fn is_waf_associated_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteIPSetErrorKind::WafAssociatedItemException(_)
-        )
+        matches!(&self.kind, DeleteIPSetErrorKind::WafAssociatedItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteIPSetErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteIPSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteIPSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, DeleteIPSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteIPSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteIPSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteIPSetErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DeleteIPSetErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteIPSetErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, DeleteIPSetErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteIPSetErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, DeleteIPSetErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteIPSetErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteIPSetErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for DeleteIPSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteIPSetErrorKind::WafAssociatedItemException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteIPSetErrorKind::WafAssociatedItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteIPSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteIPSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteIPSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteIPSetErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteIPSetErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteIPSetErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteIPSetErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteIPSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7944,17 +8032,15 @@ impl std::error::Error for DeleteIPSetError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteFirewallManagerRuleGroupsError {
     /// Kind of error that occurred.
-    pub kind: DeleteFirewallManagerRuleGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteFirewallManagerRuleGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteFirewallManagerRuleGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7966,47 +8052,49 @@ pub enum DeleteFirewallManagerRuleGroupsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFirewallManagerRuleGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException(_inner) => {
+            DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8020,108 +8108,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteFirewallManagerRuleGrou
 }
 impl DeleteFirewallManagerRuleGroupsError {
     /// Creates a new `DeleteFirewallManagerRuleGroupsError`.
-    pub fn new(
-        kind: DeleteFirewallManagerRuleGroupsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteFirewallManagerRuleGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteFirewallManagerRuleGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteFirewallManagerRuleGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteFirewallManagerRuleGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteFirewallManagerRuleGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(_))
     }
 }
 impl std::error::Error for DeleteFirewallManagerRuleGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException(_inner) => {
+            DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException(_inner) => {
-                Some(_inner)
-            }
-            DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(_inner) => {
-                Some(_inner)
-            }
-            DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(_inner) => {
-                Some(_inner)
-            }
-            DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8131,15 +8199,15 @@ impl std::error::Error for DeleteFirewallManagerRuleGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct CreateWebACLError {
     /// Kind of error that occurred.
-    pub kind: CreateWebACLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateWebACLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateWebACLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8147,26 +8215,24 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWebACLErrorKind {
-    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
-    /// <p>Provide the handling configuration and retry your operation.</p>
+    /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p> 
+    /// <p>Provide the handling configuration and retry your operation.</p> 
     /// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
     WafConfigurationWarningException(crate::error::WafConfigurationWarningException),
     /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
     /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
-    WafExpiredManagedRuleGroupVersionException(
-        crate::error::WafExpiredManagedRuleGroupVersionException,
-    ),
+    WafExpiredManagedRuleGroupVersionException(crate::error::WafExpiredManagedRuleGroupVersionException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
@@ -8185,36 +8251,64 @@ pub enum CreateWebACLErrorKind {
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateWebACLErrorKind::WafConfigurationWarningException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+            CreateWebACLErrorKind::WafConfigurationWarningException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafDuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafInvalidResourceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::WafUnavailableEntityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateWebACLErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafInvalidResourceException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafTagOperationInternalErrorException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::WafUnavailableEntityException(_inner) => _inner.fmt(f),
-            CreateWebACLErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8228,165 +8322,151 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateWebACLError {
 }
 impl CreateWebACLError {
     /// Creates a new `CreateWebACLError`.
-    pub fn new(kind: CreateWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateWebACLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateWebACLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafConfigurationWarningException`.
     pub fn is_waf_configuration_warning_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafConfigurationWarningException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafConfigurationWarningException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafDuplicateItemException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafDuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException`.
     pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafInvalidResourceException`.
     pub fn is_waf_invalid_resource_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafInvalidResourceException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafInvalidResourceException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafSubscriptionNotFoundException`.
     pub fn is_waf_subscription_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafSubscriptionNotFoundException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafSubscriptionNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafTagOperationInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafUnavailableEntityException`.
     pub fn is_waf_unavailable_entity_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateWebACLErrorKind::WafUnavailableEntityException(_)
-        )
+        matches!(&self.kind, CreateWebACLErrorKind::WafUnavailableEntityException(_))
     }
 }
 impl std::error::Error for CreateWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateWebACLErrorKind::WafConfigurationWarningException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+            CreateWebACLErrorKind::WafConfigurationWarningException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafDuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafInvalidResourceException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::WafUnavailableEntityException(_inner) =>
+            Some(_inner)
+            ,
+            CreateWebACLErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafInvalidResourceException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8396,15 +8476,15 @@ impl std::error::Error for CreateWebACLError {
 #[derive(std::fmt::Debug)]
 pub struct CreateRuleGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateRuleGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateRuleGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateRuleGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8418,12 +8498,12 @@ pub enum CreateRuleGroupErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
@@ -8440,33 +8520,55 @@ pub enum CreateRuleGroupErrorKind {
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateRuleGroupErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) => {
+            CreateRuleGroupErrorKind::WafDuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::WafUnavailableEntityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateRuleGroupErrorKind::WafUnavailableEntityException(_inner) => _inner.fmt(f),
-            CreateRuleGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8480,139 +8582,130 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateRuleGroupError {
 }
 impl CreateRuleGroupError {
     /// Creates a new `CreateRuleGroupError`.
-    pub fn new(kind: CreateRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateRuleGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateRuleGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateRuleGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateRuleGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafDuplicateItemException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafDuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafSubscriptionNotFoundException`.
     pub fn is_waf_subscription_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafSubscriptionNotFoundException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafSubscriptionNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafUnavailableEntityException`.
     pub fn is_waf_unavailable_entity_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleGroupErrorKind::WafUnavailableEntityException(_)
-        )
+        matches!(&self.kind, CreateRuleGroupErrorKind::WafUnavailableEntityException(_))
     }
 }
 impl std::error::Error for CreateRuleGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateRuleGroupErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateRuleGroupErrorKind::WafDuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::WafUnavailableEntityException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8622,15 +8715,15 @@ impl std::error::Error for CreateRuleGroupError {
 #[derive(std::fmt::Debug)]
 pub struct CreateRegexPatternSetError {
     /// Kind of error that occurred.
-    pub kind: CreateRegexPatternSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateRegexPatternSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateRegexPatternSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8644,12 +8737,12 @@ pub enum CreateRegexPatternSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
@@ -8660,30 +8753,46 @@ pub enum CreateRegexPatternSetErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRegexPatternSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateRegexPatternSetErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
-            CreateRegexPatternSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            CreateRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            CreateRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            CreateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            CreateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            CreateRegexPatternSetErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) => {
+            CreateRegexPatternSetErrorKind::WafDuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRegexPatternSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRegexPatternSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRegexPatternSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRegexPatternSetErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRegexPatternSetErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateRegexPatternSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8697,121 +8806,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateRegexPatternSetError {
 }
 impl CreateRegexPatternSetError {
     /// Creates a new `CreateRegexPatternSetError`.
-    pub fn new(kind: CreateRegexPatternSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateRegexPatternSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateRegexPatternSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateRegexPatternSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateRegexPatternSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateRegexPatternSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRegexPatternSetErrorKind::WafDuplicateItemException(_)
-        )
+        matches!(&self.kind, CreateRegexPatternSetErrorKind::WafDuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRegexPatternSetErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateRegexPatternSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRegexPatternSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, CreateRegexPatternSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRegexPatternSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateRegexPatternSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRegexPatternSetErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, CreateRegexPatternSetErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRegexPatternSetErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, CreateRegexPatternSetErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRegexPatternSetErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, CreateRegexPatternSetErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for CreateRegexPatternSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateRegexPatternSetErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
-            CreateRegexPatternSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            CreateRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            CreateRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            CreateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            CreateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            CreateRegexPatternSetErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) => {
+            CreateRegexPatternSetErrorKind::WafDuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRegexPatternSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRegexPatternSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRegexPatternSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRegexPatternSetErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRegexPatternSetErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8821,15 +8918,15 @@ impl std::error::Error for CreateRegexPatternSetError {
 #[derive(std::fmt::Debug)]
 pub struct CreateIPSetError {
     /// Kind of error that occurred.
-    pub kind: CreateIPSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateIPSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateIPSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8843,12 +8940,12 @@ pub enum CreateIPSetErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
@@ -8859,28 +8956,46 @@ pub enum CreateIPSetErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateIPSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateIPSetErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
-            CreateIPSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            CreateIPSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            CreateIPSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            CreateIPSetErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            CreateIPSetErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
-            CreateIPSetErrorKind::WafTagOperationException(_inner) => _inner.fmt(f),
-            CreateIPSetErrorKind::WafTagOperationInternalErrorException(_inner) => _inner.fmt(f),
-            CreateIPSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateIPSetErrorKind::WafDuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateIPSetErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateIPSetErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateIPSetErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateIPSetErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateIPSetErrorKind::WafOptimisticLockException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateIPSetErrorKind::WafTagOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateIPSetErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateIPSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8894,115 +9009,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateIPSetError {
 }
 impl CreateIPSetError {
     /// Creates a new `CreateIPSetError`.
-    pub fn new(kind: CreateIPSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateIPSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateIPSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateIPSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateIPSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateIPSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafDuplicateItemException`.
     pub fn is_waf_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateIPSetErrorKind::WafDuplicateItemException(_)
-        )
+        matches!(&self.kind, CreateIPSetErrorKind::WafDuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateIPSetErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateIPSetErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateIPSetErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, CreateIPSetErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateIPSetErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateIPSetErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateIPSetErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, CreateIPSetErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafOptimisticLockException`.
     pub fn is_waf_optimistic_lock_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateIPSetErrorKind::WafOptimisticLockException(_)
-        )
+        matches!(&self.kind, CreateIPSetErrorKind::WafOptimisticLockException(_))
     }
     /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateIPSetErrorKind::WafTagOperationException(_)
-        )
+        matches!(&self.kind, CreateIPSetErrorKind::WafTagOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateIPSetErrorKind::WafTagOperationInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateIPSetErrorKind::WafTagOperationInternalErrorException(_))
     }
 }
 impl std::error::Error for CreateIPSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateIPSetErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::WafTagOperationException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateIPSetErrorKind::WafDuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            CreateIPSetErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateIPSetErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateIPSetErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateIPSetErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateIPSetErrorKind::WafOptimisticLockException(_inner) =>
+            Some(_inner)
+            ,
+            CreateIPSetErrorKind::WafTagOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateIPSetErrorKind::WafTagOperationInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateIPSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9012,15 +9121,15 @@ impl std::error::Error for CreateIPSetError {
 #[derive(std::fmt::Debug)]
 pub struct CheckCapacityError {
     /// Kind of error that occurred.
-    pub kind: CheckCapacityErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CheckCapacityErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CheckCapacityError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CheckCapacityErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9029,19 +9138,17 @@ impl aws_smithy_http::result::CreateUnhandledError for CheckCapacityError {
 #[derive(std::fmt::Debug)]
 pub enum CheckCapacityErrorKind {
     /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
-    WafExpiredManagedRuleGroupVersionException(
-        crate::error::WafExpiredManagedRuleGroupVersionException,
-    ),
+    WafExpiredManagedRuleGroupVersionException(crate::error::WafExpiredManagedRuleGroupVersionException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
@@ -9054,31 +9161,49 @@ pub enum CheckCapacityErrorKind {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckCapacityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+            CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::WafInvalidResourceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::WafLimitsExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::WafUnavailableEntityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckCapacityErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CheckCapacityErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            CheckCapacityErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            CheckCapacityErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            CheckCapacityErrorKind::WafInvalidResourceException(_inner) => _inner.fmt(f),
-            CheckCapacityErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
-            CheckCapacityErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            CheckCapacityErrorKind::WafSubscriptionNotFoundException(_inner) => _inner.fmt(f),
-            CheckCapacityErrorKind::WafUnavailableEntityException(_inner) => _inner.fmt(f),
-            CheckCapacityErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9092,125 +9217,116 @@ impl aws_smithy_types::retry::ProvideErrorKind for CheckCapacityError {
 }
 impl CheckCapacityError {
     /// Creates a new `CheckCapacityError`.
-    pub fn new(kind: CheckCapacityErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CheckCapacityError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CheckCapacityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CheckCapacityError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CheckCapacityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CheckCapacityErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CheckCapacityError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CheckCapacityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CheckCapacityError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CheckCapacityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException`.
     pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_))
     }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafInvalidResourceException`.
     pub fn is_waf_invalid_resource_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafInvalidResourceException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafInvalidResourceException(_))
     }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafLimitsExceededException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafLimitsExceededException(_))
     }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafSubscriptionNotFoundException`.
     pub fn is_waf_subscription_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafSubscriptionNotFoundException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafSubscriptionNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafUnavailableEntityException`.
     pub fn is_waf_unavailable_entity_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckCapacityErrorKind::WafUnavailableEntityException(_)
-        )
+        matches!(&self.kind, CheckCapacityErrorKind::WafUnavailableEntityException(_))
     }
 }
 impl std::error::Error for CheckCapacityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+            CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::WafInvalidResourceException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::WafLimitsExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::WafSubscriptionNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::WafUnavailableEntityException(_inner) =>
+            Some(_inner)
+            ,
+            CheckCapacityErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CheckCapacityErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::WafInvalidResourceException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::WafSubscriptionNotFoundException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9220,15 +9336,15 @@ impl std::error::Error for CheckCapacityError {
 #[derive(std::fmt::Debug)]
 pub struct AssociateWebACLError {
     /// Kind of error that occurred.
-    pub kind: AssociateWebACLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssociateWebACLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssociateWebACLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AssociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9240,37 +9356,49 @@ pub enum AssociateWebACLErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
-    /// <ul>
-    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
-    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
+    /// <ul> 
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li> 
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssociateWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
-            AssociateWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
-            AssociateWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
-            AssociateWebACLErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
-            AssociateWebACLErrorKind::WafUnavailableEntityException(_inner) => _inner.fmt(f),
-            AssociateWebACLErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AssociateWebACLErrorKind::WafInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateWebACLErrorKind::WafUnavailableEntityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateWebACLErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9284,120 +9412,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssociateWebACLError {
 }
 impl AssociateWebACLError {
     /// Creates a new `AssociateWebACLError`.
-    pub fn new(kind: AssociateWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssociateWebACLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssociateWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssociateWebACLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssociateWebACLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssociateWebACLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssociateWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateWebACLErrorKind::WafInternalErrorException(_)
-        )
+        matches!(&self.kind, AssociateWebACLErrorKind::WafInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `AssociateWebACLErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateWebACLErrorKind::WafInvalidOperationException(_)
-        )
+        matches!(&self.kind, AssociateWebACLErrorKind::WafInvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `AssociateWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateWebACLErrorKind::WafInvalidParameterException(_)
-        )
+        matches!(&self.kind, AssociateWebACLErrorKind::WafInvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `AssociateWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateWebACLErrorKind::WafNonexistentItemException(_)
-        )
+        matches!(&self.kind, AssociateWebACLErrorKind::WafNonexistentItemException(_))
     }
     /// Returns `true` if the error kind is `AssociateWebACLErrorKind::WafUnavailableEntityException`.
     pub fn is_waf_unavailable_entity_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateWebACLErrorKind::WafUnavailableEntityException(_)
-        )
+        matches!(&self.kind, AssociateWebACLErrorKind::WafUnavailableEntityException(_))
     }
 }
 impl std::error::Error for AssociateWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssociateWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
-            AssociateWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
-            AssociateWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            AssociateWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            AssociateWebACLErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            AssociateWebACLErrorKind::Unhandled(_inner) => Some(_inner),
+            AssociateWebACLErrorKind::WafInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateWebACLErrorKind::WafInvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateWebACLErrorKind::WafInvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateWebACLErrorKind::WafNonexistentItemException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateWebACLErrorKind::WafUnavailableEntityException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateWebACLErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

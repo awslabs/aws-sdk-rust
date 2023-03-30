@@ -11,15 +11,15 @@ pub enum Error {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The specified resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28,21 +28,14 @@ impl std::fmt::Display for Error {
             Error::ClientLimitExceededException(inner) => inner.fmt(f),
             Error::InvalidArgumentException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::JoinStorageSessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::JoinStorageSessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::JoinStorageSessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::JoinStorageSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -50,22 +43,13 @@ where
 impl From<crate::error::JoinStorageSessionError> for Error {
     fn from(err: crate::error::JoinStorageSessionError) -> Self {
         match err.kind {
-            crate::error::JoinStorageSessionErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::JoinStorageSessionErrorKind::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::JoinStorageSessionErrorKind::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::JoinStorageSessionErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::JoinStorageSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::JoinStorageSessionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::JoinStorageSessionErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::JoinStorageSessionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::JoinStorageSessionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::JoinStorageSessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

@@ -3,20 +3,20 @@
 /// <p>Contains the response to a successful <code>UploadSSHPublicKey</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadSshPublicKeyOutput {
+pub struct UploadSshPublicKeyOutput  {
     /// <p>Contains information about the SSH public key.</p>
     #[doc(hidden)]
     pub ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
 }
 impl UploadSshPublicKeyOutput {
     /// <p>Contains information about the SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&crate::model::SshPublicKey> {
+    pub fn ssh_public_key(&self) -> std::option::Option<& crate::model::SshPublicKey> {
         self.ssh_public_key.as_ref()
     }
 }
 /// See [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput).
 pub mod upload_ssh_public_key_output {
-
+    
     /// A builder for [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,20 +29,19 @@ pub mod upload_ssh_public_key_output {
             self
         }
         /// <p>Contains information about the SSH public key.</p>
-        pub fn set_ssh_public_key(
-            mut self,
-            input: std::option::Option<crate::model::SshPublicKey>,
-        ) -> Self {
-            self.ssh_public_key = input;
-            self
+        pub fn set_ssh_public_key(mut self, input: std::option::Option<crate::model::SshPublicKey>) -> Self {
+            self.ssh_public_key = input; self
         }
         /// Consumes the builder and constructs a [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput).
         pub fn build(self) -> crate::output::UploadSshPublicKeyOutput {
             crate::output::UploadSshPublicKeyOutput {
-                ssh_public_key: self.ssh_public_key,
+                ssh_public_key: self.ssh_public_key
+                ,
             }
         }
     }
+    
+    
 }
 impl UploadSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput).
@@ -54,20 +53,20 @@ impl UploadSshPublicKeyOutput {
 /// <p>Contains the response to a successful <code>UploadSigningCertificate</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadSigningCertificateOutput {
+pub struct UploadSigningCertificateOutput  {
     /// <p>Information about the certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::SigningCertificate>,
 }
 impl UploadSigningCertificateOutput {
     /// <p>Information about the certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::SigningCertificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::SigningCertificate> {
         self.certificate.as_ref()
     }
 }
 /// See [`UploadSigningCertificateOutput`](crate::output::UploadSigningCertificateOutput).
 pub mod upload_signing_certificate_output {
-
+    
     /// A builder for [`UploadSigningCertificateOutput`](crate::output::UploadSigningCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -80,20 +79,19 @@ pub mod upload_signing_certificate_output {
             self
         }
         /// <p>Information about the certificate.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::SigningCertificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::SigningCertificate>) -> Self {
+            self.certificate = input; self
         }
         /// Consumes the builder and constructs a [`UploadSigningCertificateOutput`](crate::output::UploadSigningCertificateOutput).
         pub fn build(self) -> crate::output::UploadSigningCertificateOutput {
             crate::output::UploadSigningCertificateOutput {
-                certificate: self.certificate,
+                certificate: self.certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl UploadSigningCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UploadSigningCertificateOutput`](crate::output::UploadSigningCertificateOutput).
@@ -105,7 +103,7 @@ impl UploadSigningCertificateOutput {
 /// <p>Contains the response to a successful <code>UploadServerCertificate</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadServerCertificateOutput {
+pub struct UploadServerCertificateOutput  {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
     #[doc(hidden)]
     pub server_certificate_metadata: std::option::Option<crate::model::ServerCertificateMetadata>,
@@ -115,42 +113,32 @@ pub struct UploadServerCertificateOutput {
 }
 impl UploadServerCertificateOutput {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
-    pub fn server_certificate_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerCertificateMetadata> {
+    pub fn server_certificate_metadata(&self) -> std::option::Option<& crate::model::ServerCertificateMetadata> {
         self.server_certificate_metadata.as_ref()
     }
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`UploadServerCertificateOutput`](crate::output::UploadServerCertificateOutput).
 pub mod upload_server_certificate_output {
-
+    
     /// A builder for [`UploadServerCertificateOutput`](crate::output::UploadServerCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) server_certificate_metadata:
-            std::option::Option<crate::model::ServerCertificateMetadata>,
+        pub(crate) server_certificate_metadata: std::option::Option<crate::model::ServerCertificateMetadata>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
-        pub fn server_certificate_metadata(
-            mut self,
-            input: crate::model::ServerCertificateMetadata,
-        ) -> Self {
+        pub fn server_certificate_metadata(mut self, input: crate::model::ServerCertificateMetadata) -> Self {
             self.server_certificate_metadata = Some(input);
             self
         }
         /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
-        pub fn set_server_certificate_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ServerCertificateMetadata>,
-        ) -> Self {
-            self.server_certificate_metadata = input;
-            self
+        pub fn set_server_certificate_metadata(mut self, input: std::option::Option<crate::model::ServerCertificateMetadata>) -> Self {
+            self.server_certificate_metadata = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -159,26 +147,26 @@ pub mod upload_server_certificate_output {
         /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UploadServerCertificateOutput`](crate::output::UploadServerCertificateOutput).
         pub fn build(self) -> crate::output::UploadServerCertificateOutput {
             crate::output::UploadServerCertificateOutput {
-                server_certificate_metadata: self.server_certificate_metadata,
-                tags: self.tags,
+                server_certificate_metadata: self.server_certificate_metadata
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UploadServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UploadServerCertificateOutput`](crate::output::UploadServerCertificateOutput).
@@ -190,19 +178,24 @@ impl UploadServerCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserOutput {}
+pub struct UpdateUserOutput  {
+}
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
-
+    
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::output::UpdateUserOutput).
         pub fn build(self) -> crate::output::UpdateUserOutput {
-            crate::output::UpdateUserOutput {}
+            crate::output::UpdateUserOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateUserOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
@@ -214,19 +207,24 @@ impl UpdateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSshPublicKeyOutput {}
+pub struct UpdateSshPublicKeyOutput  {
+}
 /// See [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput).
 pub mod update_ssh_public_key_output {
-
+    
     /// A builder for [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput).
         pub fn build(self) -> crate::output::UpdateSshPublicKeyOutput {
-            crate::output::UpdateSshPublicKeyOutput {}
+            crate::output::UpdateSshPublicKeyOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput).
@@ -238,19 +236,24 @@ impl UpdateSshPublicKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSigningCertificateOutput {}
+pub struct UpdateSigningCertificateOutput  {
+}
 /// See [`UpdateSigningCertificateOutput`](crate::output::UpdateSigningCertificateOutput).
 pub mod update_signing_certificate_output {
-
+    
     /// A builder for [`UpdateSigningCertificateOutput`](crate::output::UpdateSigningCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSigningCertificateOutput`](crate::output::UpdateSigningCertificateOutput).
         pub fn build(self) -> crate::output::UpdateSigningCertificateOutput {
-            crate::output::UpdateSigningCertificateOutput {}
+            crate::output::UpdateSigningCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateSigningCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSigningCertificateOutput`](crate::output::UpdateSigningCertificateOutput).
@@ -262,19 +265,24 @@ impl UpdateSigningCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceSpecificCredentialOutput {}
+pub struct UpdateServiceSpecificCredentialOutput  {
+}
 /// See [`UpdateServiceSpecificCredentialOutput`](crate::output::UpdateServiceSpecificCredentialOutput).
 pub mod update_service_specific_credential_output {
-
+    
     /// A builder for [`UpdateServiceSpecificCredentialOutput`](crate::output::UpdateServiceSpecificCredentialOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateServiceSpecificCredentialOutput`](crate::output::UpdateServiceSpecificCredentialOutput).
         pub fn build(self) -> crate::output::UpdateServiceSpecificCredentialOutput {
-            crate::output::UpdateServiceSpecificCredentialOutput {}
+            crate::output::UpdateServiceSpecificCredentialOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateServiceSpecificCredentialOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSpecificCredentialOutput`](crate::output::UpdateServiceSpecificCredentialOutput).
@@ -286,19 +294,24 @@ impl UpdateServiceSpecificCredentialOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServerCertificateOutput {}
+pub struct UpdateServerCertificateOutput  {
+}
 /// See [`UpdateServerCertificateOutput`](crate::output::UpdateServerCertificateOutput).
 pub mod update_server_certificate_output {
-
+    
     /// A builder for [`UpdateServerCertificateOutput`](crate::output::UpdateServerCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateServerCertificateOutput`](crate::output::UpdateServerCertificateOutput).
         pub fn build(self) -> crate::output::UpdateServerCertificateOutput {
-            crate::output::UpdateServerCertificateOutput {}
+            crate::output::UpdateServerCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServerCertificateOutput`](crate::output::UpdateServerCertificateOutput).
@@ -310,20 +323,20 @@ impl UpdateServerCertificateOutput {
 /// <p>Contains the response to a successful <code>UpdateSAMLProvider</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSamlProviderOutput {
+pub struct UpdateSamlProviderOutput  {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
     #[doc(hidden)]
     pub saml_provider_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn saml_provider_arn(&self) -> std::option::Option<& str> {
         self.saml_provider_arn.as_deref()
     }
 }
 /// See [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput).
 pub mod update_saml_provider_output {
-
+    
     /// A builder for [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -336,20 +349,19 @@ pub mod update_saml_provider_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-        pub fn set_saml_provider_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.saml_provider_arn = input;
-            self
+        pub fn set_saml_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.saml_provider_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput).
         pub fn build(self) -> crate::output::UpdateSamlProviderOutput {
             crate::output::UpdateSamlProviderOutput {
-                saml_provider_arn: self.saml_provider_arn,
+                saml_provider_arn: self.saml_provider_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput).
@@ -361,20 +373,20 @@ impl UpdateSamlProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRoleDescriptionOutput {
+pub struct UpdateRoleDescriptionOutput  {
     /// <p>A structure that contains details about the modified role.</p>
     #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
 impl UpdateRoleDescriptionOutput {
     /// <p>A structure that contains details about the modified role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+    pub fn role(&self) -> std::option::Option<& crate::model::Role> {
         self.role.as_ref()
     }
 }
 /// See [`UpdateRoleDescriptionOutput`](crate::output::UpdateRoleDescriptionOutput).
 pub mod update_role_description_output {
-
+    
     /// A builder for [`UpdateRoleDescriptionOutput`](crate::output::UpdateRoleDescriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -388,14 +400,18 @@ pub mod update_role_description_output {
         }
         /// <p>A structure that contains details about the modified role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRoleDescriptionOutput`](crate::output::UpdateRoleDescriptionOutput).
         pub fn build(self) -> crate::output::UpdateRoleDescriptionOutput {
-            crate::output::UpdateRoleDescriptionOutput { role: self.role }
+            crate::output::UpdateRoleDescriptionOutput {
+                role: self.role
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateRoleDescriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoleDescriptionOutput`](crate::output::UpdateRoleDescriptionOutput).
@@ -407,19 +423,24 @@ impl UpdateRoleDescriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRoleOutput {}
+pub struct UpdateRoleOutput  {
+}
 /// See [`UpdateRoleOutput`](crate::output::UpdateRoleOutput).
 pub mod update_role_output {
-
+    
     /// A builder for [`UpdateRoleOutput`](crate::output::UpdateRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRoleOutput`](crate::output::UpdateRoleOutput).
         pub fn build(self) -> crate::output::UpdateRoleOutput {
-            crate::output::UpdateRoleOutput {}
+            crate::output::UpdateRoleOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateRoleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoleOutput`](crate::output::UpdateRoleOutput).
@@ -431,19 +452,24 @@ impl UpdateRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOpenIdConnectProviderThumbprintOutput {}
+pub struct UpdateOpenIdConnectProviderThumbprintOutput  {
+}
 /// See [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput).
 pub mod update_open_id_connect_provider_thumbprint_output {
-
+    
     /// A builder for [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput).
         pub fn build(self) -> crate::output::UpdateOpenIdConnectProviderThumbprintOutput {
-            crate::output::UpdateOpenIdConnectProviderThumbprintOutput {}
+            crate::output::UpdateOpenIdConnectProviderThumbprintOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateOpenIdConnectProviderThumbprintOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput).
@@ -455,19 +481,24 @@ impl UpdateOpenIdConnectProviderThumbprintOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLoginProfileOutput {}
+pub struct UpdateLoginProfileOutput  {
+}
 /// See [`UpdateLoginProfileOutput`](crate::output::UpdateLoginProfileOutput).
 pub mod update_login_profile_output {
-
+    
     /// A builder for [`UpdateLoginProfileOutput`](crate::output::UpdateLoginProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLoginProfileOutput`](crate::output::UpdateLoginProfileOutput).
         pub fn build(self) -> crate::output::UpdateLoginProfileOutput {
-            crate::output::UpdateLoginProfileOutput {}
+            crate::output::UpdateLoginProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLoginProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoginProfileOutput`](crate::output::UpdateLoginProfileOutput).
@@ -479,19 +510,24 @@ impl UpdateLoginProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupOutput {}
+pub struct UpdateGroupOutput  {
+}
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
 pub mod update_group_output {
-
+    
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
         pub fn build(self) -> crate::output::UpdateGroupOutput {
-            crate::output::UpdateGroupOutput {}
+            crate::output::UpdateGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
@@ -503,19 +539,24 @@ impl UpdateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssumeRolePolicyOutput {}
+pub struct UpdateAssumeRolePolicyOutput  {
+}
 /// See [`UpdateAssumeRolePolicyOutput`](crate::output::UpdateAssumeRolePolicyOutput).
 pub mod update_assume_role_policy_output {
-
+    
     /// A builder for [`UpdateAssumeRolePolicyOutput`](crate::output::UpdateAssumeRolePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAssumeRolePolicyOutput`](crate::output::UpdateAssumeRolePolicyOutput).
         pub fn build(self) -> crate::output::UpdateAssumeRolePolicyOutput {
-            crate::output::UpdateAssumeRolePolicyOutput {}
+            crate::output::UpdateAssumeRolePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAssumeRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssumeRolePolicyOutput`](crate::output::UpdateAssumeRolePolicyOutput).
@@ -527,19 +568,24 @@ impl UpdateAssumeRolePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccountPasswordPolicyOutput {}
+pub struct UpdateAccountPasswordPolicyOutput  {
+}
 /// See [`UpdateAccountPasswordPolicyOutput`](crate::output::UpdateAccountPasswordPolicyOutput).
 pub mod update_account_password_policy_output {
-
+    
     /// A builder for [`UpdateAccountPasswordPolicyOutput`](crate::output::UpdateAccountPasswordPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAccountPasswordPolicyOutput`](crate::output::UpdateAccountPasswordPolicyOutput).
         pub fn build(self) -> crate::output::UpdateAccountPasswordPolicyOutput {
-            crate::output::UpdateAccountPasswordPolicyOutput {}
+            crate::output::UpdateAccountPasswordPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAccountPasswordPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountPasswordPolicyOutput`](crate::output::UpdateAccountPasswordPolicyOutput).
@@ -551,19 +597,24 @@ impl UpdateAccountPasswordPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccessKeyOutput {}
+pub struct UpdateAccessKeyOutput  {
+}
 /// See [`UpdateAccessKeyOutput`](crate::output::UpdateAccessKeyOutput).
 pub mod update_access_key_output {
-
+    
     /// A builder for [`UpdateAccessKeyOutput`](crate::output::UpdateAccessKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAccessKeyOutput`](crate::output::UpdateAccessKeyOutput).
         pub fn build(self) -> crate::output::UpdateAccessKeyOutput {
-            crate::output::UpdateAccessKeyOutput {}
+            crate::output::UpdateAccessKeyOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAccessKeyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessKeyOutput`](crate::output::UpdateAccessKeyOutput).
@@ -575,19 +626,24 @@ impl UpdateAccessKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagUserOutput {}
+pub struct UntagUserOutput  {
+}
 /// See [`UntagUserOutput`](crate::output::UntagUserOutput).
 pub mod untag_user_output {
-
+    
     /// A builder for [`UntagUserOutput`](crate::output::UntagUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagUserOutput`](crate::output::UntagUserOutput).
         pub fn build(self) -> crate::output::UntagUserOutput {
-            crate::output::UntagUserOutput {}
+            crate::output::UntagUserOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagUserOutput {
     /// Creates a new builder-style object to manufacture [`UntagUserOutput`](crate::output::UntagUserOutput).
@@ -599,19 +655,24 @@ impl UntagUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagServerCertificateOutput {}
+pub struct UntagServerCertificateOutput  {
+}
 /// See [`UntagServerCertificateOutput`](crate::output::UntagServerCertificateOutput).
 pub mod untag_server_certificate_output {
-
+    
     /// A builder for [`UntagServerCertificateOutput`](crate::output::UntagServerCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagServerCertificateOutput`](crate::output::UntagServerCertificateOutput).
         pub fn build(self) -> crate::output::UntagServerCertificateOutput {
-            crate::output::UntagServerCertificateOutput {}
+            crate::output::UntagServerCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UntagServerCertificateOutput`](crate::output::UntagServerCertificateOutput).
@@ -623,19 +684,24 @@ impl UntagServerCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagSamlProviderOutput {}
+pub struct UntagSamlProviderOutput  {
+}
 /// See [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput).
 pub mod untag_saml_provider_output {
-
+    
     /// A builder for [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput).
         pub fn build(self) -> crate::output::UntagSamlProviderOutput {
-            crate::output::UntagSamlProviderOutput {}
+            crate::output::UntagSamlProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput).
@@ -647,19 +713,24 @@ impl UntagSamlProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagRoleOutput {}
+pub struct UntagRoleOutput  {
+}
 /// See [`UntagRoleOutput`](crate::output::UntagRoleOutput).
 pub mod untag_role_output {
-
+    
     /// A builder for [`UntagRoleOutput`](crate::output::UntagRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagRoleOutput`](crate::output::UntagRoleOutput).
         pub fn build(self) -> crate::output::UntagRoleOutput {
-            crate::output::UntagRoleOutput {}
+            crate::output::UntagRoleOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagRoleOutput {
     /// Creates a new builder-style object to manufacture [`UntagRoleOutput`](crate::output::UntagRoleOutput).
@@ -671,19 +742,24 @@ impl UntagRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagPolicyOutput {}
+pub struct UntagPolicyOutput  {
+}
 /// See [`UntagPolicyOutput`](crate::output::UntagPolicyOutput).
 pub mod untag_policy_output {
-
+    
     /// A builder for [`UntagPolicyOutput`](crate::output::UntagPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagPolicyOutput`](crate::output::UntagPolicyOutput).
         pub fn build(self) -> crate::output::UntagPolicyOutput {
-            crate::output::UntagPolicyOutput {}
+            crate::output::UntagPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UntagPolicyOutput`](crate::output::UntagPolicyOutput).
@@ -695,19 +771,24 @@ impl UntagPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagOpenIdConnectProviderOutput {}
+pub struct UntagOpenIdConnectProviderOutput  {
+}
 /// See [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput).
 pub mod untag_open_id_connect_provider_output {
-
+    
     /// A builder for [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput).
         pub fn build(self) -> crate::output::UntagOpenIdConnectProviderOutput {
-            crate::output::UntagOpenIdConnectProviderOutput {}
+            crate::output::UntagOpenIdConnectProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput).
@@ -719,19 +800,24 @@ impl UntagOpenIdConnectProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagMfaDeviceOutput {}
+pub struct UntagMfaDeviceOutput  {
+}
 /// See [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput).
 pub mod untag_mfa_device_output {
-
+    
     /// A builder for [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput).
         pub fn build(self) -> crate::output::UntagMfaDeviceOutput {
-            crate::output::UntagMfaDeviceOutput {}
+            crate::output::UntagMfaDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput).
@@ -743,19 +829,24 @@ impl UntagMfaDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagInstanceProfileOutput {}
+pub struct UntagInstanceProfileOutput  {
+}
 /// See [`UntagInstanceProfileOutput`](crate::output::UntagInstanceProfileOutput).
 pub mod untag_instance_profile_output {
-
+    
     /// A builder for [`UntagInstanceProfileOutput`](crate::output::UntagInstanceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagInstanceProfileOutput`](crate::output::UntagInstanceProfileOutput).
         pub fn build(self) -> crate::output::UntagInstanceProfileOutput {
-            crate::output::UntagInstanceProfileOutput {}
+            crate::output::UntagInstanceProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`UntagInstanceProfileOutput`](crate::output::UntagInstanceProfileOutput).
@@ -767,19 +858,24 @@ impl UntagInstanceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagUserOutput {}
+pub struct TagUserOutput  {
+}
 /// See [`TagUserOutput`](crate::output::TagUserOutput).
 pub mod tag_user_output {
-
+    
     /// A builder for [`TagUserOutput`](crate::output::TagUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagUserOutput`](crate::output::TagUserOutput).
         pub fn build(self) -> crate::output::TagUserOutput {
-            crate::output::TagUserOutput {}
+            crate::output::TagUserOutput {
+            }
         }
     }
+    
+    
 }
 impl TagUserOutput {
     /// Creates a new builder-style object to manufacture [`TagUserOutput`](crate::output::TagUserOutput).
@@ -791,19 +887,24 @@ impl TagUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagServerCertificateOutput {}
+pub struct TagServerCertificateOutput  {
+}
 /// See [`TagServerCertificateOutput`](crate::output::TagServerCertificateOutput).
 pub mod tag_server_certificate_output {
-
+    
     /// A builder for [`TagServerCertificateOutput`](crate::output::TagServerCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagServerCertificateOutput`](crate::output::TagServerCertificateOutput).
         pub fn build(self) -> crate::output::TagServerCertificateOutput {
-            crate::output::TagServerCertificateOutput {}
+            crate::output::TagServerCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl TagServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`TagServerCertificateOutput`](crate::output::TagServerCertificateOutput).
@@ -815,19 +916,24 @@ impl TagServerCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagSamlProviderOutput {}
+pub struct TagSamlProviderOutput  {
+}
 /// See [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput).
 pub mod tag_saml_provider_output {
-
+    
     /// A builder for [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput).
         pub fn build(self) -> crate::output::TagSamlProviderOutput {
-            crate::output::TagSamlProviderOutput {}
+            crate::output::TagSamlProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl TagSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput).
@@ -839,19 +945,24 @@ impl TagSamlProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagRoleOutput {}
+pub struct TagRoleOutput  {
+}
 /// See [`TagRoleOutput`](crate::output::TagRoleOutput).
 pub mod tag_role_output {
-
+    
     /// A builder for [`TagRoleOutput`](crate::output::TagRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagRoleOutput`](crate::output::TagRoleOutput).
         pub fn build(self) -> crate::output::TagRoleOutput {
-            crate::output::TagRoleOutput {}
+            crate::output::TagRoleOutput {
+            }
         }
     }
+    
+    
 }
 impl TagRoleOutput {
     /// Creates a new builder-style object to manufacture [`TagRoleOutput`](crate::output::TagRoleOutput).
@@ -863,19 +974,24 @@ impl TagRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagPolicyOutput {}
+pub struct TagPolicyOutput  {
+}
 /// See [`TagPolicyOutput`](crate::output::TagPolicyOutput).
 pub mod tag_policy_output {
-
+    
     /// A builder for [`TagPolicyOutput`](crate::output::TagPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagPolicyOutput`](crate::output::TagPolicyOutput).
         pub fn build(self) -> crate::output::TagPolicyOutput {
-            crate::output::TagPolicyOutput {}
+            crate::output::TagPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl TagPolicyOutput {
     /// Creates a new builder-style object to manufacture [`TagPolicyOutput`](crate::output::TagPolicyOutput).
@@ -887,19 +1003,24 @@ impl TagPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagOpenIdConnectProviderOutput {}
+pub struct TagOpenIdConnectProviderOutput  {
+}
 /// See [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput).
 pub mod tag_open_id_connect_provider_output {
-
+    
     /// A builder for [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput).
         pub fn build(self) -> crate::output::TagOpenIdConnectProviderOutput {
-            crate::output::TagOpenIdConnectProviderOutput {}
+            crate::output::TagOpenIdConnectProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl TagOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput).
@@ -911,19 +1032,24 @@ impl TagOpenIdConnectProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagMfaDeviceOutput {}
+pub struct TagMfaDeviceOutput  {
+}
 /// See [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput).
 pub mod tag_mfa_device_output {
-
+    
     /// A builder for [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput).
         pub fn build(self) -> crate::output::TagMfaDeviceOutput {
-            crate::output::TagMfaDeviceOutput {}
+            crate::output::TagMfaDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput).
@@ -935,19 +1061,24 @@ impl TagMfaDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagInstanceProfileOutput {}
+pub struct TagInstanceProfileOutput  {
+}
 /// See [`TagInstanceProfileOutput`](crate::output::TagInstanceProfileOutput).
 pub mod tag_instance_profile_output {
-
+    
     /// A builder for [`TagInstanceProfileOutput`](crate::output::TagInstanceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagInstanceProfileOutput`](crate::output::TagInstanceProfileOutput).
         pub fn build(self) -> crate::output::TagInstanceProfileOutput {
-            crate::output::TagInstanceProfileOutput {}
+            crate::output::TagInstanceProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl TagInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`TagInstanceProfileOutput`](crate::output::TagInstanceProfileOutput).
@@ -959,7 +1090,7 @@ impl TagInstanceProfileOutput {
 /// <p>Contains the response to a successful <code>SimulatePrincipalPolicy</code> or <code>SimulateCustomPolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulatePrincipalPolicyOutput {
+pub struct SimulatePrincipalPolicyOutput  {
     /// <p>The results of the simulation.</p>
     #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -972,7 +1103,7 @@ pub struct SimulatePrincipalPolicyOutput {
 }
 impl SimulatePrincipalPolicyOutput {
     /// <p>The results of the simulation.</p>
-    pub fn evaluation_results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
+    pub fn evaluation_results(&self) -> std::option::Option<& [crate::model::EvaluationResult]> {
         self.evaluation_results.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -980,18 +1111,17 @@ impl SimulatePrincipalPolicyOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`SimulatePrincipalPolicyOutput`](crate::output::SimulatePrincipalPolicyOutput).
 pub mod simulate_principal_policy_output {
-
+    
     /// A builder for [`SimulatePrincipalPolicyOutput`](crate::output::SimulatePrincipalPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) evaluation_results:
-            std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
+        pub(crate) evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -1003,17 +1133,13 @@ pub mod simulate_principal_policy_output {
         /// <p>The results of the simulation.</p>
         pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input);
-            self.evaluation_results = Some(v);
-            self
+                            v.push(input);
+                            self.evaluation_results = Some(v);
+                            self
         }
         /// <p>The results of the simulation.</p>
-        pub fn set_evaluation_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
-        ) -> Self {
-            self.evaluation_results = input;
-            self
+        pub fn set_evaluation_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>) -> Self {
+            self.evaluation_results = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -1022,8 +1148,7 @@ pub mod simulate_principal_policy_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1032,18 +1157,23 @@ pub mod simulate_principal_policy_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`SimulatePrincipalPolicyOutput`](crate::output::SimulatePrincipalPolicyOutput).
         pub fn build(self) -> crate::output::SimulatePrincipalPolicyOutput {
             crate::output::SimulatePrincipalPolicyOutput {
-                evaluation_results: self.evaluation_results,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                evaluation_results: self.evaluation_results
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulatePrincipalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SimulatePrincipalPolicyOutput`](crate::output::SimulatePrincipalPolicyOutput).
@@ -1055,7 +1185,7 @@ impl SimulatePrincipalPolicyOutput {
 /// <p>Contains the response to a successful <code>SimulatePrincipalPolicy</code> or <code>SimulateCustomPolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulateCustomPolicyOutput {
+pub struct SimulateCustomPolicyOutput  {
     /// <p>The results of the simulation.</p>
     #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -1068,7 +1198,7 @@ pub struct SimulateCustomPolicyOutput {
 }
 impl SimulateCustomPolicyOutput {
     /// <p>The results of the simulation.</p>
-    pub fn evaluation_results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
+    pub fn evaluation_results(&self) -> std::option::Option<& [crate::model::EvaluationResult]> {
         self.evaluation_results.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -1076,18 +1206,17 @@ impl SimulateCustomPolicyOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`SimulateCustomPolicyOutput`](crate::output::SimulateCustomPolicyOutput).
 pub mod simulate_custom_policy_output {
-
+    
     /// A builder for [`SimulateCustomPolicyOutput`](crate::output::SimulateCustomPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) evaluation_results:
-            std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
+        pub(crate) evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -1099,17 +1228,13 @@ pub mod simulate_custom_policy_output {
         /// <p>The results of the simulation.</p>
         pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input);
-            self.evaluation_results = Some(v);
-            self
+                            v.push(input);
+                            self.evaluation_results = Some(v);
+                            self
         }
         /// <p>The results of the simulation.</p>
-        pub fn set_evaluation_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
-        ) -> Self {
-            self.evaluation_results = input;
-            self
+        pub fn set_evaluation_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>) -> Self {
+            self.evaluation_results = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -1118,8 +1243,7 @@ pub mod simulate_custom_policy_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1128,18 +1252,23 @@ pub mod simulate_custom_policy_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`SimulateCustomPolicyOutput`](crate::output::SimulateCustomPolicyOutput).
         pub fn build(self) -> crate::output::SimulateCustomPolicyOutput {
             crate::output::SimulateCustomPolicyOutput {
-                evaluation_results: self.evaluation_results,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                evaluation_results: self.evaluation_results
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulateCustomPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SimulateCustomPolicyOutput`](crate::output::SimulateCustomPolicyOutput).
@@ -1151,19 +1280,24 @@ impl SimulateCustomPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetSecurityTokenServicePreferencesOutput {}
+pub struct SetSecurityTokenServicePreferencesOutput  {
+}
 /// See [`SetSecurityTokenServicePreferencesOutput`](crate::output::SetSecurityTokenServicePreferencesOutput).
 pub mod set_security_token_service_preferences_output {
-
+    
     /// A builder for [`SetSecurityTokenServicePreferencesOutput`](crate::output::SetSecurityTokenServicePreferencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetSecurityTokenServicePreferencesOutput`](crate::output::SetSecurityTokenServicePreferencesOutput).
         pub fn build(self) -> crate::output::SetSecurityTokenServicePreferencesOutput {
-            crate::output::SetSecurityTokenServicePreferencesOutput {}
+            crate::output::SetSecurityTokenServicePreferencesOutput {
+            }
         }
     }
+    
+    
 }
 impl SetSecurityTokenServicePreferencesOutput {
     /// Creates a new builder-style object to manufacture [`SetSecurityTokenServicePreferencesOutput`](crate::output::SetSecurityTokenServicePreferencesOutput).
@@ -1175,19 +1309,24 @@ impl SetSecurityTokenServicePreferencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultPolicyVersionOutput {}
+pub struct SetDefaultPolicyVersionOutput  {
+}
 /// See [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput).
 pub mod set_default_policy_version_output {
-
+    
     /// A builder for [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput).
         pub fn build(self) -> crate::output::SetDefaultPolicyVersionOutput {
-            crate::output::SetDefaultPolicyVersionOutput {}
+            crate::output::SetDefaultPolicyVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl SetDefaultPolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput).
@@ -1199,19 +1338,24 @@ impl SetDefaultPolicyVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResyncMfaDeviceOutput {}
+pub struct ResyncMfaDeviceOutput  {
+}
 /// See [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput).
 pub mod resync_mfa_device_output {
-
+    
     /// A builder for [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput).
         pub fn build(self) -> crate::output::ResyncMfaDeviceOutput {
-            crate::output::ResyncMfaDeviceOutput {}
+            crate::output::ResyncMfaDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl ResyncMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput).
@@ -1223,60 +1367,53 @@ impl ResyncMfaDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetServiceSpecificCredentialOutput {
-    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
-    /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
+pub struct ResetServiceSpecificCredentialOutput  {
+    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important> 
+    /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p> 
     /// </important>
     #[doc(hidden)]
     pub service_specific_credential: std::option::Option<crate::model::ServiceSpecificCredential>,
 }
 impl ResetServiceSpecificCredentialOutput {
-    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
-    /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
+    /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important> 
+    /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p> 
     /// </important>
-    pub fn service_specific_credential(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceSpecificCredential> {
+    pub fn service_specific_credential(&self) -> std::option::Option<& crate::model::ServiceSpecificCredential> {
         self.service_specific_credential.as_ref()
     }
 }
 /// See [`ResetServiceSpecificCredentialOutput`](crate::output::ResetServiceSpecificCredentialOutput).
 pub mod reset_service_specific_credential_output {
-
+    
     /// A builder for [`ResetServiceSpecificCredentialOutput`](crate::output::ResetServiceSpecificCredentialOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_specific_credential:
-            std::option::Option<crate::model::ServiceSpecificCredential>,
+        pub(crate) service_specific_credential: std::option::Option<crate::model::ServiceSpecificCredential>,
     }
     impl Builder {
-        /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
-        /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
+        /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important> 
+        /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p> 
         /// </important>
-        pub fn service_specific_credential(
-            mut self,
-            input: crate::model::ServiceSpecificCredential,
-        ) -> Self {
+        pub fn service_specific_credential(mut self, input: crate::model::ServiceSpecificCredential) -> Self {
             self.service_specific_credential = Some(input);
             self
         }
-        /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
-        /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
+        /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important> 
+        /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p> 
         /// </important>
-        pub fn set_service_specific_credential(
-            mut self,
-            input: std::option::Option<crate::model::ServiceSpecificCredential>,
-        ) -> Self {
-            self.service_specific_credential = input;
-            self
+        pub fn set_service_specific_credential(mut self, input: std::option::Option<crate::model::ServiceSpecificCredential>) -> Self {
+            self.service_specific_credential = input; self
         }
         /// Consumes the builder and constructs a [`ResetServiceSpecificCredentialOutput`](crate::output::ResetServiceSpecificCredentialOutput).
         pub fn build(self) -> crate::output::ResetServiceSpecificCredentialOutput {
             crate::output::ResetServiceSpecificCredentialOutput {
-                service_specific_credential: self.service_specific_credential,
+                service_specific_credential: self.service_specific_credential
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetServiceSpecificCredentialOutput {
     /// Creates a new builder-style object to manufacture [`ResetServiceSpecificCredentialOutput`](crate::output::ResetServiceSpecificCredentialOutput).
@@ -1288,19 +1425,24 @@ impl ResetServiceSpecificCredentialOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveUserFromGroupOutput {}
+pub struct RemoveUserFromGroupOutput  {
+}
 /// See [`RemoveUserFromGroupOutput`](crate::output::RemoveUserFromGroupOutput).
 pub mod remove_user_from_group_output {
-
+    
     /// A builder for [`RemoveUserFromGroupOutput`](crate::output::RemoveUserFromGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveUserFromGroupOutput`](crate::output::RemoveUserFromGroupOutput).
         pub fn build(self) -> crate::output::RemoveUserFromGroupOutput {
-            crate::output::RemoveUserFromGroupOutput {}
+            crate::output::RemoveUserFromGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveUserFromGroupOutput {
     /// Creates a new builder-style object to manufacture [`RemoveUserFromGroupOutput`](crate::output::RemoveUserFromGroupOutput).
@@ -1312,19 +1454,24 @@ impl RemoveUserFromGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveRoleFromInstanceProfileOutput {}
+pub struct RemoveRoleFromInstanceProfileOutput  {
+}
 /// See [`RemoveRoleFromInstanceProfileOutput`](crate::output::RemoveRoleFromInstanceProfileOutput).
 pub mod remove_role_from_instance_profile_output {
-
+    
     /// A builder for [`RemoveRoleFromInstanceProfileOutput`](crate::output::RemoveRoleFromInstanceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveRoleFromInstanceProfileOutput`](crate::output::RemoveRoleFromInstanceProfileOutput).
         pub fn build(self) -> crate::output::RemoveRoleFromInstanceProfileOutput {
-            crate::output::RemoveRoleFromInstanceProfileOutput {}
+            crate::output::RemoveRoleFromInstanceProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveRoleFromInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`RemoveRoleFromInstanceProfileOutput`](crate::output::RemoveRoleFromInstanceProfileOutput).
@@ -1336,24 +1483,28 @@ impl RemoveRoleFromInstanceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveClientIdFromOpenIdConnectProviderOutput {}
+pub struct RemoveClientIdFromOpenIdConnectProviderOutput  {
+}
 /// See [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput).
 pub mod remove_client_id_from_open_id_connect_provider_output {
-
+    
     /// A builder for [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput).
         pub fn build(self) -> crate::output::RemoveClientIdFromOpenIdConnectProviderOutput {
-            crate::output::RemoveClientIdFromOpenIdConnectProviderOutput {}
+            crate::output::RemoveClientIdFromOpenIdConnectProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveClientIdFromOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput).
-    pub fn builder() -> crate::output::remove_client_id_from_open_id_connect_provider_output::Builder
-    {
+    pub fn builder() -> crate::output::remove_client_id_from_open_id_connect_provider_output::Builder {
         crate::output::remove_client_id_from_open_id_connect_provider_output::Builder::default()
     }
 }
@@ -1361,19 +1512,24 @@ impl RemoveClientIdFromOpenIdConnectProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutUserPolicyOutput {}
+pub struct PutUserPolicyOutput  {
+}
 /// See [`PutUserPolicyOutput`](crate::output::PutUserPolicyOutput).
 pub mod put_user_policy_output {
-
+    
     /// A builder for [`PutUserPolicyOutput`](crate::output::PutUserPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutUserPolicyOutput`](crate::output::PutUserPolicyOutput).
         pub fn build(self) -> crate::output::PutUserPolicyOutput {
-            crate::output::PutUserPolicyOutput {}
+            crate::output::PutUserPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutUserPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutUserPolicyOutput`](crate::output::PutUserPolicyOutput).
@@ -1385,19 +1541,24 @@ impl PutUserPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutUserPermissionsBoundaryOutput {}
+pub struct PutUserPermissionsBoundaryOutput  {
+}
 /// See [`PutUserPermissionsBoundaryOutput`](crate::output::PutUserPermissionsBoundaryOutput).
 pub mod put_user_permissions_boundary_output {
-
+    
     /// A builder for [`PutUserPermissionsBoundaryOutput`](crate::output::PutUserPermissionsBoundaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutUserPermissionsBoundaryOutput`](crate::output::PutUserPermissionsBoundaryOutput).
         pub fn build(self) -> crate::output::PutUserPermissionsBoundaryOutput {
-            crate::output::PutUserPermissionsBoundaryOutput {}
+            crate::output::PutUserPermissionsBoundaryOutput {
+            }
         }
     }
+    
+    
 }
 impl PutUserPermissionsBoundaryOutput {
     /// Creates a new builder-style object to manufacture [`PutUserPermissionsBoundaryOutput`](crate::output::PutUserPermissionsBoundaryOutput).
@@ -1409,19 +1570,24 @@ impl PutUserPermissionsBoundaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRolePolicyOutput {}
+pub struct PutRolePolicyOutput  {
+}
 /// See [`PutRolePolicyOutput`](crate::output::PutRolePolicyOutput).
 pub mod put_role_policy_output {
-
+    
     /// A builder for [`PutRolePolicyOutput`](crate::output::PutRolePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutRolePolicyOutput`](crate::output::PutRolePolicyOutput).
         pub fn build(self) -> crate::output::PutRolePolicyOutput {
-            crate::output::PutRolePolicyOutput {}
+            crate::output::PutRolePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutRolePolicyOutput`](crate::output::PutRolePolicyOutput).
@@ -1433,19 +1599,24 @@ impl PutRolePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRolePermissionsBoundaryOutput {}
+pub struct PutRolePermissionsBoundaryOutput  {
+}
 /// See [`PutRolePermissionsBoundaryOutput`](crate::output::PutRolePermissionsBoundaryOutput).
 pub mod put_role_permissions_boundary_output {
-
+    
     /// A builder for [`PutRolePermissionsBoundaryOutput`](crate::output::PutRolePermissionsBoundaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutRolePermissionsBoundaryOutput`](crate::output::PutRolePermissionsBoundaryOutput).
         pub fn build(self) -> crate::output::PutRolePermissionsBoundaryOutput {
-            crate::output::PutRolePermissionsBoundaryOutput {}
+            crate::output::PutRolePermissionsBoundaryOutput {
+            }
         }
     }
+    
+    
 }
 impl PutRolePermissionsBoundaryOutput {
     /// Creates a new builder-style object to manufacture [`PutRolePermissionsBoundaryOutput`](crate::output::PutRolePermissionsBoundaryOutput).
@@ -1457,19 +1628,24 @@ impl PutRolePermissionsBoundaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutGroupPolicyOutput {}
+pub struct PutGroupPolicyOutput  {
+}
 /// See [`PutGroupPolicyOutput`](crate::output::PutGroupPolicyOutput).
 pub mod put_group_policy_output {
-
+    
     /// A builder for [`PutGroupPolicyOutput`](crate::output::PutGroupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutGroupPolicyOutput`](crate::output::PutGroupPolicyOutput).
         pub fn build(self) -> crate::output::PutGroupPolicyOutput {
-            crate::output::PutGroupPolicyOutput {}
+            crate::output::PutGroupPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutGroupPolicyOutput`](crate::output::PutGroupPolicyOutput).
@@ -1481,7 +1657,7 @@ impl PutGroupPolicyOutput {
 /// <p>Contains the response to a successful <code>ListVirtualMFADevices</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualMfaDevicesOutput {
+pub struct ListVirtualMfaDevicesOutput  {
     /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
     #[doc(hidden)]
     pub virtual_mfa_devices: std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
@@ -1494,7 +1670,7 @@ pub struct ListVirtualMfaDevicesOutput {
 }
 impl ListVirtualMfaDevicesOutput {
     /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
-    pub fn virtual_mfa_devices(&self) -> std::option::Option<&[crate::model::VirtualMfaDevice]> {
+    pub fn virtual_mfa_devices(&self) -> std::option::Option<& [crate::model::VirtualMfaDevice]> {
         self.virtual_mfa_devices.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -1502,18 +1678,17 @@ impl ListVirtualMfaDevicesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput).
 pub mod list_virtual_mfa_devices_output {
-
+    
     /// A builder for [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_mfa_devices:
-            std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
+        pub(crate) virtual_mfa_devices: std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -1525,17 +1700,13 @@ pub mod list_virtual_mfa_devices_output {
         /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
         pub fn virtual_mfa_devices(mut self, input: crate::model::VirtualMfaDevice) -> Self {
             let mut v = self.virtual_mfa_devices.unwrap_or_default();
-            v.push(input);
-            self.virtual_mfa_devices = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_mfa_devices = Some(v);
+                            self
         }
         /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
-        pub fn set_virtual_mfa_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
-        ) -> Self {
-            self.virtual_mfa_devices = input;
-            self
+        pub fn set_virtual_mfa_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>) -> Self {
+            self.virtual_mfa_devices = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -1544,8 +1715,7 @@ pub mod list_virtual_mfa_devices_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1554,18 +1724,23 @@ pub mod list_virtual_mfa_devices_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput).
         pub fn build(self) -> crate::output::ListVirtualMfaDevicesOutput {
             crate::output::ListVirtualMfaDevicesOutput {
-                virtual_mfa_devices: self.virtual_mfa_devices,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                virtual_mfa_devices: self.virtual_mfa_devices
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVirtualMfaDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput).
@@ -1577,7 +1752,7 @@ impl ListVirtualMfaDevicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserTagsOutput {
+pub struct ListUserTagsOutput  {
     /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1590,7 +1765,7 @@ pub struct ListUserTagsOutput {
 }
 impl ListUserTagsOutput {
     /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -1598,13 +1773,13 @@ impl ListUserTagsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListUserTagsOutput`](crate::output::ListUserTagsOutput).
 pub mod list_user_tags_output {
-
+    
     /// A builder for [`ListUserTagsOutput`](crate::output::ListUserTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1620,17 +1795,13 @@ pub mod list_user_tags_output {
         /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -1639,8 +1810,7 @@ pub mod list_user_tags_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1649,18 +1819,23 @@ pub mod list_user_tags_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListUserTagsOutput`](crate::output::ListUserTagsOutput).
         pub fn build(self) -> crate::output::ListUserTagsOutput {
             crate::output::ListUserTagsOutput {
-                tags: self.tags,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                tags: self.tags
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUserTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserTagsOutput`](crate::output::ListUserTagsOutput).
@@ -1672,7 +1847,7 @@ impl ListUserTagsOutput {
 /// <p>Contains the response to a successful <code>ListUsers</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsersOutput {
+pub struct ListUsersOutput  {
     /// <p>A list of users.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -1685,7 +1860,7 @@ pub struct ListUsersOutput {
 }
 impl ListUsersOutput {
     /// <p>A list of users.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::User]> {
         self.users.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -1693,13 +1868,13 @@ impl ListUsersOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
 pub mod list_users_output {
-
+    
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1715,17 +1890,13 @@ pub mod list_users_output {
         /// <p>A list of users.</p>
         pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>A list of users.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::User>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::User>>) -> Self {
+            self.users = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -1734,8 +1905,7 @@ pub mod list_users_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1744,18 +1914,23 @@ pub mod list_users_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListUsersOutput`](crate::output::ListUsersOutput).
         pub fn build(self) -> crate::output::ListUsersOutput {
             crate::output::ListUsersOutput {
-                users: self.users,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                users: self.users
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::output::ListUsersOutput).
@@ -1767,7 +1942,7 @@ impl ListUsersOutput {
 /// <p>Contains the response to a successful <code>ListUserPolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserPoliciesOutput {
+pub struct ListUserPoliciesOutput  {
     /// <p>A list of policy names.</p>
     #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1780,7 +1955,7 @@ pub struct ListUserPoliciesOutput {
 }
 impl ListUserPoliciesOutput {
     /// <p>A list of policy names.</p>
-    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
         self.policy_names.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -1788,13 +1963,13 @@ impl ListUserPoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListUserPoliciesOutput`](crate::output::ListUserPoliciesOutput).
 pub mod list_user_policies_output {
-
+    
     /// A builder for [`ListUserPoliciesOutput`](crate::output::ListUserPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1810,17 +1985,13 @@ pub mod list_user_policies_output {
         /// <p>A list of policy names.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-            v.push(input.into());
-            self.policy_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.policy_names = Some(v);
+                            self
         }
         /// <p>A list of policy names.</p>
-        pub fn set_policy_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.policy_names = input;
-            self
+        pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.policy_names = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -1829,8 +2000,7 @@ pub mod list_user_policies_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1839,18 +2009,23 @@ pub mod list_user_policies_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListUserPoliciesOutput`](crate::output::ListUserPoliciesOutput).
         pub fn build(self) -> crate::output::ListUserPoliciesOutput {
             crate::output::ListUserPoliciesOutput {
-                policy_names: self.policy_names,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                policy_names: self.policy_names
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUserPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListUserPoliciesOutput`](crate::output::ListUserPoliciesOutput).
@@ -1862,7 +2037,7 @@ impl ListUserPoliciesOutput {
 /// <p>Contains the response to a successful <code>ListSSHPublicKeys</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSshPublicKeysOutput {
+pub struct ListSshPublicKeysOutput  {
     /// <p>A list of the SSH public keys assigned to IAM user.</p>
     #[doc(hidden)]
     pub ssh_public_keys: std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
@@ -1875,7 +2050,7 @@ pub struct ListSshPublicKeysOutput {
 }
 impl ListSshPublicKeysOutput {
     /// <p>A list of the SSH public keys assigned to IAM user.</p>
-    pub fn ssh_public_keys(&self) -> std::option::Option<&[crate::model::SshPublicKeyMetadata]> {
+    pub fn ssh_public_keys(&self) -> std::option::Option<& [crate::model::SshPublicKeyMetadata]> {
         self.ssh_public_keys.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -1883,18 +2058,17 @@ impl ListSshPublicKeysOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput).
 pub mod list_ssh_public_keys_output {
-
+    
     /// A builder for [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ssh_public_keys:
-            std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
+        pub(crate) ssh_public_keys: std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -1906,17 +2080,13 @@ pub mod list_ssh_public_keys_output {
         /// <p>A list of the SSH public keys assigned to IAM user.</p>
         pub fn ssh_public_keys(mut self, input: crate::model::SshPublicKeyMetadata) -> Self {
             let mut v = self.ssh_public_keys.unwrap_or_default();
-            v.push(input);
-            self.ssh_public_keys = Some(v);
-            self
+                            v.push(input);
+                            self.ssh_public_keys = Some(v);
+                            self
         }
         /// <p>A list of the SSH public keys assigned to IAM user.</p>
-        pub fn set_ssh_public_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
-        ) -> Self {
-            self.ssh_public_keys = input;
-            self
+        pub fn set_ssh_public_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>) -> Self {
+            self.ssh_public_keys = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -1925,8 +2095,7 @@ pub mod list_ssh_public_keys_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1935,18 +2104,23 @@ pub mod list_ssh_public_keys_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput).
         pub fn build(self) -> crate::output::ListSshPublicKeysOutput {
             crate::output::ListSshPublicKeysOutput {
-                ssh_public_keys: self.ssh_public_keys,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                ssh_public_keys: self.ssh_public_keys
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSshPublicKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput).
@@ -1958,7 +2132,7 @@ impl ListSshPublicKeysOutput {
 /// <p>Contains the response to a successful <code>ListSigningCertificates</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSigningCertificatesOutput {
+pub struct ListSigningCertificatesOutput  {
     /// <p>A list of the user's signing certificate information.</p>
     #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
@@ -1971,7 +2145,7 @@ pub struct ListSigningCertificatesOutput {
 }
 impl ListSigningCertificatesOutput {
     /// <p>A list of the user's signing certificate information.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::SigningCertificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::SigningCertificate]> {
         self.certificates.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -1979,18 +2153,17 @@ impl ListSigningCertificatesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListSigningCertificatesOutput`](crate::output::ListSigningCertificatesOutput).
 pub mod list_signing_certificates_output {
-
+    
     /// A builder for [`ListSigningCertificatesOutput`](crate::output::ListSigningCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) certificates:
-            std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
+        pub(crate) certificates: std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -2002,17 +2175,13 @@ pub mod list_signing_certificates_output {
         /// <p>A list of the user's signing certificate information.</p>
         pub fn certificates(mut self, input: crate::model::SigningCertificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>A list of the user's signing certificate information.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>) -> Self {
+            self.certificates = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2021,8 +2190,7 @@ pub mod list_signing_certificates_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2031,18 +2199,23 @@ pub mod list_signing_certificates_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListSigningCertificatesOutput`](crate::output::ListSigningCertificatesOutput).
         pub fn build(self) -> crate::output::ListSigningCertificatesOutput {
             crate::output::ListSigningCertificatesOutput {
-                certificates: self.certificates,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                certificates: self.certificates
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSigningCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningCertificatesOutput`](crate::output::ListSigningCertificatesOutput).
@@ -2054,28 +2227,24 @@ impl ListSigningCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceSpecificCredentialsOutput {
+pub struct ListServiceSpecificCredentialsOutput  {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
     #[doc(hidden)]
-    pub service_specific_credentials:
-        std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>,
+    pub service_specific_credentials: std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>,
 }
 impl ListServiceSpecificCredentialsOutput {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
-    pub fn service_specific_credentials(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServiceSpecificCredentialMetadata]> {
+    pub fn service_specific_credentials(&self) -> std::option::Option<& [crate::model::ServiceSpecificCredentialMetadata]> {
         self.service_specific_credentials.as_deref()
     }
 }
 /// See [`ListServiceSpecificCredentialsOutput`](crate::output::ListServiceSpecificCredentialsOutput).
 pub mod list_service_specific_credentials_output {
-
+    
     /// A builder for [`ListServiceSpecificCredentialsOutput`](crate::output::ListServiceSpecificCredentialsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_specific_credentials:
-            std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>,
+        pub(crate) service_specific_credentials: std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>,
     }
     impl Builder {
         /// Appends an item to `service_specific_credentials`.
@@ -2083,32 +2252,26 @@ pub mod list_service_specific_credentials_output {
         /// To override the contents of this collection use [`set_service_specific_credentials`](Self::set_service_specific_credentials).
         ///
         /// <p>A list of structures that each contain details about a service-specific credential.</p>
-        pub fn service_specific_credentials(
-            mut self,
-            input: crate::model::ServiceSpecificCredentialMetadata,
-        ) -> Self {
+        pub fn service_specific_credentials(mut self, input: crate::model::ServiceSpecificCredentialMetadata) -> Self {
             let mut v = self.service_specific_credentials.unwrap_or_default();
-            v.push(input);
-            self.service_specific_credentials = Some(v);
-            self
+                            v.push(input);
+                            self.service_specific_credentials = Some(v);
+                            self
         }
         /// <p>A list of structures that each contain details about a service-specific credential.</p>
-        pub fn set_service_specific_credentials(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>,
-            >,
-        ) -> Self {
-            self.service_specific_credentials = input;
-            self
+        pub fn set_service_specific_credentials(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>) -> Self {
+            self.service_specific_credentials = input; self
         }
         /// Consumes the builder and constructs a [`ListServiceSpecificCredentialsOutput`](crate::output::ListServiceSpecificCredentialsOutput).
         pub fn build(self) -> crate::output::ListServiceSpecificCredentialsOutput {
             crate::output::ListServiceSpecificCredentialsOutput {
-                service_specific_credentials: self.service_specific_credentials,
+                service_specific_credentials: self.service_specific_credentials
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServiceSpecificCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceSpecificCredentialsOutput`](crate::output::ListServiceSpecificCredentialsOutput).
@@ -2120,7 +2283,7 @@ impl ListServiceSpecificCredentialsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServerCertificateTagsOutput {
+pub struct ListServerCertificateTagsOutput  {
     /// <p>The list of tags that are currently attached to the IAM server certificate. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2133,7 +2296,7 @@ pub struct ListServerCertificateTagsOutput {
 }
 impl ListServerCertificateTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM server certificate. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2141,13 +2304,13 @@ impl ListServerCertificateTagsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListServerCertificateTagsOutput`](crate::output::ListServerCertificateTagsOutput).
 pub mod list_server_certificate_tags_output {
-
+    
     /// A builder for [`ListServerCertificateTagsOutput`](crate::output::ListServerCertificateTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2163,17 +2326,13 @@ pub mod list_server_certificate_tags_output {
         /// <p>The list of tags that are currently attached to the IAM server certificate. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags that are currently attached to the IAM server certificate. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2182,8 +2341,7 @@ pub mod list_server_certificate_tags_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2192,18 +2350,23 @@ pub mod list_server_certificate_tags_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListServerCertificateTagsOutput`](crate::output::ListServerCertificateTagsOutput).
         pub fn build(self) -> crate::output::ListServerCertificateTagsOutput {
             crate::output::ListServerCertificateTagsOutput {
-                tags: self.tags,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                tags: self.tags
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServerCertificateTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListServerCertificateTagsOutput`](crate::output::ListServerCertificateTagsOutput).
@@ -2215,11 +2378,10 @@ impl ListServerCertificateTagsOutput {
 /// <p>Contains the response to a successful <code>ListServerCertificates</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServerCertificatesOutput {
+pub struct ListServerCertificatesOutput  {
     /// <p>A list of server certificates.</p>
     #[doc(hidden)]
-    pub server_certificate_metadata_list:
-        std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
+    pub server_certificate_metadata_list: std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
@@ -2229,9 +2391,7 @@ pub struct ListServerCertificatesOutput {
 }
 impl ListServerCertificatesOutput {
     /// <p>A list of server certificates.</p>
-    pub fn server_certificate_metadata_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServerCertificateMetadata]> {
+    pub fn server_certificate_metadata_list(&self) -> std::option::Option<& [crate::model::ServerCertificateMetadata]> {
         self.server_certificate_metadata_list.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2239,18 +2399,17 @@ impl ListServerCertificatesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListServerCertificatesOutput`](crate::output::ListServerCertificatesOutput).
 pub mod list_server_certificates_output {
-
+    
     /// A builder for [`ListServerCertificatesOutput`](crate::output::ListServerCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) server_certificate_metadata_list:
-            std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
+        pub(crate) server_certificate_metadata_list: std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -2260,22 +2419,15 @@ pub mod list_server_certificates_output {
         /// To override the contents of this collection use [`set_server_certificate_metadata_list`](Self::set_server_certificate_metadata_list).
         ///
         /// <p>A list of server certificates.</p>
-        pub fn server_certificate_metadata_list(
-            mut self,
-            input: crate::model::ServerCertificateMetadata,
-        ) -> Self {
+        pub fn server_certificate_metadata_list(mut self, input: crate::model::ServerCertificateMetadata) -> Self {
             let mut v = self.server_certificate_metadata_list.unwrap_or_default();
-            v.push(input);
-            self.server_certificate_metadata_list = Some(v);
-            self
+                            v.push(input);
+                            self.server_certificate_metadata_list = Some(v);
+                            self
         }
         /// <p>A list of server certificates.</p>
-        pub fn set_server_certificate_metadata_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
-        ) -> Self {
-            self.server_certificate_metadata_list = input;
-            self
+        pub fn set_server_certificate_metadata_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>) -> Self {
+            self.server_certificate_metadata_list = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2284,8 +2436,7 @@ pub mod list_server_certificates_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2294,18 +2445,23 @@ pub mod list_server_certificates_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListServerCertificatesOutput`](crate::output::ListServerCertificatesOutput).
         pub fn build(self) -> crate::output::ListServerCertificatesOutput {
             crate::output::ListServerCertificatesOutput {
-                server_certificate_metadata_list: self.server_certificate_metadata_list,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                server_certificate_metadata_list: self.server_certificate_metadata_list
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServerCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListServerCertificatesOutput`](crate::output::ListServerCertificatesOutput).
@@ -2317,7 +2473,7 @@ impl ListServerCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSamlProviderTagsOutput {
+pub struct ListSamlProviderTagsOutput  {
     /// <p>The list of tags that are currently attached to the Security Assertion Markup Language (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2330,7 +2486,7 @@ pub struct ListSamlProviderTagsOutput {
 }
 impl ListSamlProviderTagsOutput {
     /// <p>The list of tags that are currently attached to the Security Assertion Markup Language (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2338,13 +2494,13 @@ impl ListSamlProviderTagsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput).
 pub mod list_saml_provider_tags_output {
-
+    
     /// A builder for [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2360,17 +2516,13 @@ pub mod list_saml_provider_tags_output {
         /// <p>The list of tags that are currently attached to the Security Assertion Markup Language (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags that are currently attached to the Security Assertion Markup Language (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2379,8 +2531,7 @@ pub mod list_saml_provider_tags_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2389,18 +2540,23 @@ pub mod list_saml_provider_tags_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput).
         pub fn build(self) -> crate::output::ListSamlProviderTagsOutput {
             crate::output::ListSamlProviderTagsOutput {
-                tags: self.tags,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                tags: self.tags
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSamlProviderTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput).
@@ -2412,27 +2568,24 @@ impl ListSamlProviderTagsOutput {
 /// <p>Contains the response to a successful <code>ListSAMLProviders</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSamlProvidersOutput {
+pub struct ListSamlProvidersOutput  {
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
     #[doc(hidden)]
     pub saml_provider_list: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
 }
 impl ListSamlProvidersOutput {
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
-    pub fn saml_provider_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::SamlProviderListEntry]> {
+    pub fn saml_provider_list(&self) -> std::option::Option<& [crate::model::SamlProviderListEntry]> {
         self.saml_provider_list.as_deref()
     }
 }
 /// See [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput).
 pub mod list_saml_providers_output {
-
+    
     /// A builder for [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) saml_provider_list:
-            std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
+        pub(crate) saml_provider_list: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
     }
     impl Builder {
         /// Appends an item to `saml_provider_list`.
@@ -2442,25 +2595,24 @@ pub mod list_saml_providers_output {
         /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
         pub fn saml_provider_list(mut self, input: crate::model::SamlProviderListEntry) -> Self {
             let mut v = self.saml_provider_list.unwrap_or_default();
-            v.push(input);
-            self.saml_provider_list = Some(v);
-            self
+                            v.push(input);
+                            self.saml_provider_list = Some(v);
+                            self
         }
         /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
-        pub fn set_saml_provider_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
-        ) -> Self {
-            self.saml_provider_list = input;
-            self
+        pub fn set_saml_provider_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>) -> Self {
+            self.saml_provider_list = input; self
         }
         /// Consumes the builder and constructs a [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput).
         pub fn build(self) -> crate::output::ListSamlProvidersOutput {
             crate::output::ListSamlProvidersOutput {
-                saml_provider_list: self.saml_provider_list,
+                saml_provider_list: self.saml_provider_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSamlProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput).
@@ -2472,7 +2624,7 @@ impl ListSamlProvidersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRoleTagsOutput {
+pub struct ListRoleTagsOutput  {
     /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2485,7 +2637,7 @@ pub struct ListRoleTagsOutput {
 }
 impl ListRoleTagsOutput {
     /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2493,13 +2645,13 @@ impl ListRoleTagsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListRoleTagsOutput`](crate::output::ListRoleTagsOutput).
 pub mod list_role_tags_output {
-
+    
     /// A builder for [`ListRoleTagsOutput`](crate::output::ListRoleTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2515,17 +2667,13 @@ pub mod list_role_tags_output {
         /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2534,8 +2682,7 @@ pub mod list_role_tags_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2544,18 +2691,23 @@ pub mod list_role_tags_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListRoleTagsOutput`](crate::output::ListRoleTagsOutput).
         pub fn build(self) -> crate::output::ListRoleTagsOutput {
             crate::output::ListRoleTagsOutput {
-                tags: self.tags,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                tags: self.tags
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRoleTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoleTagsOutput`](crate::output::ListRoleTagsOutput).
@@ -2567,7 +2719,7 @@ impl ListRoleTagsOutput {
 /// <p>Contains the response to a successful <code>ListRoles</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRolesOutput {
+pub struct ListRolesOutput  {
     /// <p>A list of roles.</p>
     #[doc(hidden)]
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
@@ -2580,7 +2732,7 @@ pub struct ListRolesOutput {
 }
 impl ListRolesOutput {
     /// <p>A list of roles.</p>
-    pub fn roles(&self) -> std::option::Option<&[crate::model::Role]> {
+    pub fn roles(&self) -> std::option::Option<& [crate::model::Role]> {
         self.roles.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2588,13 +2740,13 @@ impl ListRolesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListRolesOutput`](crate::output::ListRolesOutput).
 pub mod list_roles_output {
-
+    
     /// A builder for [`ListRolesOutput`](crate::output::ListRolesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2610,17 +2762,13 @@ pub mod list_roles_output {
         /// <p>A list of roles.</p>
         pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input);
-            self.roles = Some(v);
-            self
+                            v.push(input);
+                            self.roles = Some(v);
+                            self
         }
         /// <p>A list of roles.</p>
-        pub fn set_roles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Role>>,
-        ) -> Self {
-            self.roles = input;
-            self
+        pub fn set_roles(mut self, input: std::option::Option<std::vec::Vec<crate::model::Role>>) -> Self {
+            self.roles = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2629,8 +2777,7 @@ pub mod list_roles_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2639,18 +2786,23 @@ pub mod list_roles_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListRolesOutput`](crate::output::ListRolesOutput).
         pub fn build(self) -> crate::output::ListRolesOutput {
             crate::output::ListRolesOutput {
-                roles: self.roles,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                roles: self.roles
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRolesOutput {
     /// Creates a new builder-style object to manufacture [`ListRolesOutput`](crate::output::ListRolesOutput).
@@ -2662,7 +2814,7 @@ impl ListRolesOutput {
 /// <p>Contains the response to a successful <code>ListRolePolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRolePoliciesOutput {
+pub struct ListRolePoliciesOutput  {
     /// <p>A list of policy names.</p>
     #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2675,7 +2827,7 @@ pub struct ListRolePoliciesOutput {
 }
 impl ListRolePoliciesOutput {
     /// <p>A list of policy names.</p>
-    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
         self.policy_names.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2683,13 +2835,13 @@ impl ListRolePoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListRolePoliciesOutput`](crate::output::ListRolePoliciesOutput).
 pub mod list_role_policies_output {
-
+    
     /// A builder for [`ListRolePoliciesOutput`](crate::output::ListRolePoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2705,17 +2857,13 @@ pub mod list_role_policies_output {
         /// <p>A list of policy names.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-            v.push(input.into());
-            self.policy_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.policy_names = Some(v);
+                            self
         }
         /// <p>A list of policy names.</p>
-        pub fn set_policy_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.policy_names = input;
-            self
+        pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.policy_names = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2724,8 +2872,7 @@ pub mod list_role_policies_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2734,18 +2881,23 @@ pub mod list_role_policies_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListRolePoliciesOutput`](crate::output::ListRolePoliciesOutput).
         pub fn build(self) -> crate::output::ListRolePoliciesOutput {
             crate::output::ListRolePoliciesOutput {
-                policy_names: self.policy_names,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                policy_names: self.policy_names
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRolePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListRolePoliciesOutput`](crate::output::ListRolePoliciesOutput).
@@ -2757,8 +2909,8 @@ impl ListRolePoliciesOutput {
 /// <p>Contains the response to a successful <code>ListPolicyVersions</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPolicyVersionsOutput {
-    /// <p>A list of policy versions.</p>
+pub struct ListPolicyVersionsOutput  {
+    /// <p>A list of policy versions.</p> 
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
@@ -2770,9 +2922,9 @@ pub struct ListPolicyVersionsOutput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPolicyVersionsOutput {
-    /// <p>A list of policy versions.</p>
+    /// <p>A list of policy versions.</p> 
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn versions(&self) -> std::option::Option<&[crate::model::PolicyVersion]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::PolicyVersion]> {
         self.versions.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2780,13 +2932,13 @@ impl ListPolicyVersionsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput).
 pub mod list_policy_versions_output {
-
+    
     /// A builder for [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2799,22 +2951,18 @@ pub mod list_policy_versions_output {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p>A list of policy versions.</p>
+        /// <p>A list of policy versions.</p> 
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
         pub fn versions(mut self, input: crate::model::PolicyVersion) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
-        /// <p>A list of policy versions.</p>
+        /// <p>A list of policy versions.</p> 
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>) -> Self {
+            self.versions = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2823,8 +2971,7 @@ pub mod list_policy_versions_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2833,18 +2980,23 @@ pub mod list_policy_versions_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput).
         pub fn build(self) -> crate::output::ListPolicyVersionsOutput {
             crate::output::ListPolicyVersionsOutput {
-                versions: self.versions,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                versions: self.versions
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPolicyVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput).
@@ -2856,7 +3008,7 @@ impl ListPolicyVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPolicyTagsOutput {
+pub struct ListPolicyTagsOutput  {
     /// <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2869,7 +3021,7 @@ pub struct ListPolicyTagsOutput {
 }
 impl ListPolicyTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2877,13 +3029,13 @@ impl ListPolicyTagsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListPolicyTagsOutput`](crate::output::ListPolicyTagsOutput).
 pub mod list_policy_tags_output {
-
+    
     /// A builder for [`ListPolicyTagsOutput`](crate::output::ListPolicyTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2899,17 +3051,13 @@ pub mod list_policy_tags_output {
         /// <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -2918,8 +3066,7 @@ pub mod list_policy_tags_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2928,18 +3075,23 @@ pub mod list_policy_tags_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListPolicyTagsOutput`](crate::output::ListPolicyTagsOutput).
         pub fn build(self) -> crate::output::ListPolicyTagsOutput {
             crate::output::ListPolicyTagsOutput {
-                tags: self.tags,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                tags: self.tags
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPolicyTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyTagsOutput`](crate::output::ListPolicyTagsOutput).
@@ -2951,11 +3103,10 @@ impl ListPolicyTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPoliciesGrantingServiceAccessOutput {
+pub struct ListPoliciesGrantingServiceAccessOutput  {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
     #[doc(hidden)]
-    pub policies_granting_service_access:
-        std::option::Option<std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>>,
+    pub policies_granting_service_access: std::option::Option<std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
@@ -2965,9 +3116,7 @@ pub struct ListPoliciesGrantingServiceAccessOutput {
 }
 impl ListPoliciesGrantingServiceAccessOutput {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-    pub fn policies_granting_service_access(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListPoliciesGrantingServiceAccessEntry]> {
+    pub fn policies_granting_service_access(&self) -> std::option::Option<& [crate::model::ListPoliciesGrantingServiceAccessEntry]> {
         self.policies_granting_service_access.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -2975,19 +3124,17 @@ impl ListPoliciesGrantingServiceAccessOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListPoliciesGrantingServiceAccessOutput`](crate::output::ListPoliciesGrantingServiceAccessOutput).
 pub mod list_policies_granting_service_access_output {
-
+    
     /// A builder for [`ListPoliciesGrantingServiceAccessOutput`](crate::output::ListPoliciesGrantingServiceAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policies_granting_service_access: std::option::Option<
-            std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>,
-        >,
+        pub(crate) policies_granting_service_access: std::option::Option<std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -2997,24 +3144,15 @@ pub mod list_policies_granting_service_access_output {
         /// To override the contents of this collection use [`set_policies_granting_service_access`](Self::set_policies_granting_service_access).
         ///
         /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-        pub fn policies_granting_service_access(
-            mut self,
-            input: crate::model::ListPoliciesGrantingServiceAccessEntry,
-        ) -> Self {
+        pub fn policies_granting_service_access(mut self, input: crate::model::ListPoliciesGrantingServiceAccessEntry) -> Self {
             let mut v = self.policies_granting_service_access.unwrap_or_default();
-            v.push(input);
-            self.policies_granting_service_access = Some(v);
-            self
+                            v.push(input);
+                            self.policies_granting_service_access = Some(v);
+                            self
         }
         /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-        pub fn set_policies_granting_service_access(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>,
-            >,
-        ) -> Self {
-            self.policies_granting_service_access = input;
-            self
+        pub fn set_policies_granting_service_access(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>>) -> Self {
+            self.policies_granting_service_access = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3023,8 +3161,7 @@ pub mod list_policies_granting_service_access_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3033,18 +3170,23 @@ pub mod list_policies_granting_service_access_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListPoliciesGrantingServiceAccessOutput`](crate::output::ListPoliciesGrantingServiceAccessOutput).
         pub fn build(self) -> crate::output::ListPoliciesGrantingServiceAccessOutput {
             crate::output::ListPoliciesGrantingServiceAccessOutput {
-                policies_granting_service_access: self.policies_granting_service_access,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                policies_granting_service_access: self.policies_granting_service_access
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPoliciesGrantingServiceAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesGrantingServiceAccessOutput`](crate::output::ListPoliciesGrantingServiceAccessOutput).
@@ -3056,7 +3198,7 @@ impl ListPoliciesGrantingServiceAccessOutput {
 /// <p>Contains the response to a successful <code>ListPolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPoliciesOutput {
+pub struct ListPoliciesOutput  {
     /// <p>A list of policies.</p>
     #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
@@ -3069,7 +3211,7 @@ pub struct ListPoliciesOutput {
 }
 impl ListPoliciesOutput {
     /// <p>A list of policies.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
+    pub fn policies(&self) -> std::option::Option<& [crate::model::Policy]> {
         self.policies.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3077,13 +3219,13 @@ impl ListPoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
 pub mod list_policies_output {
-
+    
     /// A builder for [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3099,17 +3241,13 @@ pub mod list_policies_output {
         /// <p>A list of policies.</p>
         pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input);
-            self.policies = Some(v);
-            self
+                            v.push(input);
+                            self.policies = Some(v);
+                            self
         }
         /// <p>A list of policies.</p>
-        pub fn set_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Policy>>,
-        ) -> Self {
-            self.policies = input;
-            self
+        pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::Policy>>) -> Self {
+            self.policies = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3118,8 +3256,7 @@ pub mod list_policies_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3128,18 +3265,23 @@ pub mod list_policies_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
         pub fn build(self) -> crate::output::ListPoliciesOutput {
             crate::output::ListPoliciesOutput {
-                policies: self.policies,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                policies: self.policies
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
@@ -3151,7 +3293,7 @@ impl ListPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpenIdConnectProviderTagsOutput {
+pub struct ListOpenIdConnectProviderTagsOutput  {
     /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3164,7 +3306,7 @@ pub struct ListOpenIdConnectProviderTagsOutput {
 }
 impl ListOpenIdConnectProviderTagsOutput {
     /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3172,13 +3314,13 @@ impl ListOpenIdConnectProviderTagsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput).
 pub mod list_open_id_connect_provider_tags_output {
-
+    
     /// A builder for [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3194,17 +3336,13 @@ pub mod list_open_id_connect_provider_tags_output {
         /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3213,8 +3351,7 @@ pub mod list_open_id_connect_provider_tags_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3223,18 +3360,23 @@ pub mod list_open_id_connect_provider_tags_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput).
         pub fn build(self) -> crate::output::ListOpenIdConnectProviderTagsOutput {
             crate::output::ListOpenIdConnectProviderTagsOutput {
-                tags: self.tags,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                tags: self.tags
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOpenIdConnectProviderTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput).
@@ -3246,28 +3388,24 @@ impl ListOpenIdConnectProviderTagsOutput {
 /// <p>Contains the response to a successful <code>ListOpenIDConnectProviders</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpenIdConnectProvidersOutput {
+pub struct ListOpenIdConnectProvidersOutput  {
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub open_id_connect_provider_list:
-        std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
+    pub open_id_connect_provider_list: std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
 }
 impl ListOpenIdConnectProvidersOutput {
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
-    pub fn open_id_connect_provider_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::OpenIdConnectProviderListEntry]> {
+    pub fn open_id_connect_provider_list(&self) -> std::option::Option<& [crate::model::OpenIdConnectProviderListEntry]> {
         self.open_id_connect_provider_list.as_deref()
     }
 }
 /// See [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput).
 pub mod list_open_id_connect_providers_output {
-
+    
     /// A builder for [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) open_id_connect_provider_list:
-            std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
+        pub(crate) open_id_connect_provider_list: std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
     }
     impl Builder {
         /// Appends an item to `open_id_connect_provider_list`.
@@ -3275,30 +3413,26 @@ pub mod list_open_id_connect_providers_output {
         /// To override the contents of this collection use [`set_open_id_connect_provider_list`](Self::set_open_id_connect_provider_list).
         ///
         /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
-        pub fn open_id_connect_provider_list(
-            mut self,
-            input: crate::model::OpenIdConnectProviderListEntry,
-        ) -> Self {
+        pub fn open_id_connect_provider_list(mut self, input: crate::model::OpenIdConnectProviderListEntry) -> Self {
             let mut v = self.open_id_connect_provider_list.unwrap_or_default();
-            v.push(input);
-            self.open_id_connect_provider_list = Some(v);
-            self
+                            v.push(input);
+                            self.open_id_connect_provider_list = Some(v);
+                            self
         }
         /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
-        pub fn set_open_id_connect_provider_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
-        ) -> Self {
-            self.open_id_connect_provider_list = input;
-            self
+        pub fn set_open_id_connect_provider_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>) -> Self {
+            self.open_id_connect_provider_list = input; self
         }
         /// Consumes the builder and constructs a [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput).
         pub fn build(self) -> crate::output::ListOpenIdConnectProvidersOutput {
             crate::output::ListOpenIdConnectProvidersOutput {
-                open_id_connect_provider_list: self.open_id_connect_provider_list,
+                open_id_connect_provider_list: self.open_id_connect_provider_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOpenIdConnectProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput).
@@ -3310,7 +3444,7 @@ impl ListOpenIdConnectProvidersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMfaDeviceTagsOutput {
+pub struct ListMfaDeviceTagsOutput  {
     /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3323,7 +3457,7 @@ pub struct ListMfaDeviceTagsOutput {
 }
 impl ListMfaDeviceTagsOutput {
     /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3331,13 +3465,13 @@ impl ListMfaDeviceTagsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput).
 pub mod list_mfa_device_tags_output {
-
+    
     /// A builder for [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3353,17 +3487,13 @@ pub mod list_mfa_device_tags_output {
         /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3372,8 +3502,7 @@ pub mod list_mfa_device_tags_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3382,18 +3511,23 @@ pub mod list_mfa_device_tags_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput).
         pub fn build(self) -> crate::output::ListMfaDeviceTagsOutput {
             crate::output::ListMfaDeviceTagsOutput {
-                tags: self.tags,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                tags: self.tags
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMfaDeviceTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput).
@@ -3405,7 +3539,7 @@ impl ListMfaDeviceTagsOutput {
 /// <p>Contains the response to a successful <code>ListMFADevices</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMfaDevicesOutput {
+pub struct ListMfaDevicesOutput  {
     /// <p>A list of MFA devices.</p>
     #[doc(hidden)]
     pub mfa_devices: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>,
@@ -3418,7 +3552,7 @@ pub struct ListMfaDevicesOutput {
 }
 impl ListMfaDevicesOutput {
     /// <p>A list of MFA devices.</p>
-    pub fn mfa_devices(&self) -> std::option::Option<&[crate::model::MfaDevice]> {
+    pub fn mfa_devices(&self) -> std::option::Option<& [crate::model::MfaDevice]> {
         self.mfa_devices.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3426,13 +3560,13 @@ impl ListMfaDevicesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput).
 pub mod list_mfa_devices_output {
-
+    
     /// A builder for [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3448,17 +3582,13 @@ pub mod list_mfa_devices_output {
         /// <p>A list of MFA devices.</p>
         pub fn mfa_devices(mut self, input: crate::model::MfaDevice) -> Self {
             let mut v = self.mfa_devices.unwrap_or_default();
-            v.push(input);
-            self.mfa_devices = Some(v);
-            self
+                            v.push(input);
+                            self.mfa_devices = Some(v);
+                            self
         }
         /// <p>A list of MFA devices.</p>
-        pub fn set_mfa_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>,
-        ) -> Self {
-            self.mfa_devices = input;
-            self
+        pub fn set_mfa_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>) -> Self {
+            self.mfa_devices = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3467,8 +3597,7 @@ pub mod list_mfa_devices_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3477,18 +3606,23 @@ pub mod list_mfa_devices_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput).
         pub fn build(self) -> crate::output::ListMfaDevicesOutput {
             crate::output::ListMfaDevicesOutput {
-                mfa_devices: self.mfa_devices,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                mfa_devices: self.mfa_devices
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMfaDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput).
@@ -3500,7 +3634,7 @@ impl ListMfaDevicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstanceProfileTagsOutput {
+pub struct ListInstanceProfileTagsOutput  {
     /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3513,7 +3647,7 @@ pub struct ListInstanceProfileTagsOutput {
 }
 impl ListInstanceProfileTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3521,13 +3655,13 @@ impl ListInstanceProfileTagsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListInstanceProfileTagsOutput`](crate::output::ListInstanceProfileTagsOutput).
 pub mod list_instance_profile_tags_output {
-
+    
     /// A builder for [`ListInstanceProfileTagsOutput`](crate::output::ListInstanceProfileTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3543,17 +3677,13 @@ pub mod list_instance_profile_tags_output {
         /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3562,8 +3692,7 @@ pub mod list_instance_profile_tags_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3572,18 +3701,23 @@ pub mod list_instance_profile_tags_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfileTagsOutput`](crate::output::ListInstanceProfileTagsOutput).
         pub fn build(self) -> crate::output::ListInstanceProfileTagsOutput {
             crate::output::ListInstanceProfileTagsOutput {
-                tags: self.tags,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                tags: self.tags
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInstanceProfileTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfileTagsOutput`](crate::output::ListInstanceProfileTagsOutput).
@@ -3595,7 +3729,7 @@ impl ListInstanceProfileTagsOutput {
 /// <p>Contains the response to a successful <code>ListInstanceProfilesForRole</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstanceProfilesForRoleOutput {
+pub struct ListInstanceProfilesForRoleOutput  {
     /// <p>A list of instance profiles.</p>
     #[doc(hidden)]
     pub instance_profiles: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -3608,7 +3742,7 @@ pub struct ListInstanceProfilesForRoleOutput {
 }
 impl ListInstanceProfilesForRoleOutput {
     /// <p>A list of instance profiles.</p>
-    pub fn instance_profiles(&self) -> std::option::Option<&[crate::model::InstanceProfile]> {
+    pub fn instance_profiles(&self) -> std::option::Option<& [crate::model::InstanceProfile]> {
         self.instance_profiles.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3616,18 +3750,17 @@ impl ListInstanceProfilesForRoleOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListInstanceProfilesForRoleOutput`](crate::output::ListInstanceProfilesForRoleOutput).
 pub mod list_instance_profiles_for_role_output {
-
+    
     /// A builder for [`ListInstanceProfilesForRoleOutput`](crate::output::ListInstanceProfilesForRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_profiles:
-            std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
+        pub(crate) instance_profiles: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -3639,17 +3772,13 @@ pub mod list_instance_profiles_for_role_output {
         /// <p>A list of instance profiles.</p>
         pub fn instance_profiles(mut self, input: crate::model::InstanceProfile) -> Self {
             let mut v = self.instance_profiles.unwrap_or_default();
-            v.push(input);
-            self.instance_profiles = Some(v);
-            self
+                            v.push(input);
+                            self.instance_profiles = Some(v);
+                            self
         }
         /// <p>A list of instance profiles.</p>
-        pub fn set_instance_profiles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
-        ) -> Self {
-            self.instance_profiles = input;
-            self
+        pub fn set_instance_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>) -> Self {
+            self.instance_profiles = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3658,8 +3787,7 @@ pub mod list_instance_profiles_for_role_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3668,18 +3796,23 @@ pub mod list_instance_profiles_for_role_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfilesForRoleOutput`](crate::output::ListInstanceProfilesForRoleOutput).
         pub fn build(self) -> crate::output::ListInstanceProfilesForRoleOutput {
             crate::output::ListInstanceProfilesForRoleOutput {
-                instance_profiles: self.instance_profiles,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                instance_profiles: self.instance_profiles
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInstanceProfilesForRoleOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfilesForRoleOutput`](crate::output::ListInstanceProfilesForRoleOutput).
@@ -3691,7 +3824,7 @@ impl ListInstanceProfilesForRoleOutput {
 /// <p>Contains the response to a successful <code>ListInstanceProfiles</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstanceProfilesOutput {
+pub struct ListInstanceProfilesOutput  {
     /// <p>A list of instance profiles.</p>
     #[doc(hidden)]
     pub instance_profiles: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -3704,7 +3837,7 @@ pub struct ListInstanceProfilesOutput {
 }
 impl ListInstanceProfilesOutput {
     /// <p>A list of instance profiles.</p>
-    pub fn instance_profiles(&self) -> std::option::Option<&[crate::model::InstanceProfile]> {
+    pub fn instance_profiles(&self) -> std::option::Option<& [crate::model::InstanceProfile]> {
         self.instance_profiles.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3712,18 +3845,17 @@ impl ListInstanceProfilesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput).
 pub mod list_instance_profiles_output {
-
+    
     /// A builder for [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_profiles:
-            std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
+        pub(crate) instance_profiles: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -3735,17 +3867,13 @@ pub mod list_instance_profiles_output {
         /// <p>A list of instance profiles.</p>
         pub fn instance_profiles(mut self, input: crate::model::InstanceProfile) -> Self {
             let mut v = self.instance_profiles.unwrap_or_default();
-            v.push(input);
-            self.instance_profiles = Some(v);
-            self
+                            v.push(input);
+                            self.instance_profiles = Some(v);
+                            self
         }
         /// <p>A list of instance profiles.</p>
-        pub fn set_instance_profiles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
-        ) -> Self {
-            self.instance_profiles = input;
-            self
+        pub fn set_instance_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>) -> Self {
+            self.instance_profiles = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3754,8 +3882,7 @@ pub mod list_instance_profiles_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3764,18 +3891,23 @@ pub mod list_instance_profiles_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput).
         pub fn build(self) -> crate::output::ListInstanceProfilesOutput {
             crate::output::ListInstanceProfilesOutput {
-                instance_profiles: self.instance_profiles,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                instance_profiles: self.instance_profiles
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInstanceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput).
@@ -3787,7 +3919,7 @@ impl ListInstanceProfilesOutput {
 /// <p>Contains the response to a successful <code>ListGroupsForUser</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupsForUserOutput {
+pub struct ListGroupsForUserOutput  {
     /// <p>A list of groups.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -3800,7 +3932,7 @@ pub struct ListGroupsForUserOutput {
 }
 impl ListGroupsForUserOutput {
     /// <p>A list of groups.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::Group]> {
         self.groups.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3808,13 +3940,13 @@ impl ListGroupsForUserOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListGroupsForUserOutput`](crate::output::ListGroupsForUserOutput).
 pub mod list_groups_for_user_output {
-
+    
     /// A builder for [`ListGroupsForUserOutput`](crate::output::ListGroupsForUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3830,17 +3962,13 @@ pub mod list_groups_for_user_output {
         /// <p>A list of groups.</p>
         pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>A list of groups.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::Group>>) -> Self {
+            self.groups = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3849,8 +3977,7 @@ pub mod list_groups_for_user_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3859,18 +3986,23 @@ pub mod list_groups_for_user_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupsForUserOutput`](crate::output::ListGroupsForUserOutput).
         pub fn build(self) -> crate::output::ListGroupsForUserOutput {
             crate::output::ListGroupsForUserOutput {
-                groups: self.groups,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                groups: self.groups
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupsForUserOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsForUserOutput`](crate::output::ListGroupsForUserOutput).
@@ -3882,7 +4014,7 @@ impl ListGroupsForUserOutput {
 /// <p>Contains the response to a successful <code>ListGroups</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupsOutput {
+pub struct ListGroupsOutput  {
     /// <p>A list of groups.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -3895,7 +4027,7 @@ pub struct ListGroupsOutput {
 }
 impl ListGroupsOutput {
     /// <p>A list of groups.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::Group]> {
         self.groups.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -3903,13 +4035,13 @@ impl ListGroupsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
 pub mod list_groups_output {
-
+    
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3925,17 +4057,13 @@ pub mod list_groups_output {
         /// <p>A list of groups.</p>
         pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>A list of groups.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::Group>>) -> Self {
+            self.groups = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -3944,8 +4072,7 @@ pub mod list_groups_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3954,18 +4081,23 @@ pub mod list_groups_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::output::ListGroupsOutput).
         pub fn build(self) -> crate::output::ListGroupsOutput {
             crate::output::ListGroupsOutput {
-                groups: self.groups,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                groups: self.groups
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOutput`](crate::output::ListGroupsOutput).
@@ -3977,8 +4109,8 @@ impl ListGroupsOutput {
 /// <p>Contains the response to a successful <code>ListGroupPolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupPoliciesOutput {
-    /// <p>A list of policy names.</p>
+pub struct ListGroupPoliciesOutput  {
+    /// <p>A list of policy names.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3990,9 +4122,9 @@ pub struct ListGroupPoliciesOutput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListGroupPoliciesOutput {
-    /// <p>A list of policy names.</p>
+    /// <p>A list of policy names.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
         self.policy_names.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -4000,13 +4132,13 @@ impl ListGroupPoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListGroupPoliciesOutput`](crate::output::ListGroupPoliciesOutput).
 pub mod list_group_policies_output {
-
+    
     /// A builder for [`ListGroupPoliciesOutput`](crate::output::ListGroupPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4019,22 +4151,18 @@ pub mod list_group_policies_output {
         ///
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
-        /// <p>A list of policy names.</p>
+        /// <p>A list of policy names.</p> 
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-            v.push(input.into());
-            self.policy_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.policy_names = Some(v);
+                            self
         }
-        /// <p>A list of policy names.</p>
+        /// <p>A list of policy names.</p> 
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn set_policy_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.policy_names = input;
-            self
+        pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.policy_names = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -4043,8 +4171,7 @@ pub mod list_group_policies_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4053,18 +4180,23 @@ pub mod list_group_policies_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupPoliciesOutput`](crate::output::ListGroupPoliciesOutput).
         pub fn build(self) -> crate::output::ListGroupPoliciesOutput {
             crate::output::ListGroupPoliciesOutput {
-                policy_names: self.policy_names,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                policy_names: self.policy_names
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupPoliciesOutput`](crate::output::ListGroupPoliciesOutput).
@@ -4076,7 +4208,7 @@ impl ListGroupPoliciesOutput {
 /// <p>Contains the response to a successful <code>ListEntitiesForPolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitiesForPolicyOutput {
+pub struct ListEntitiesForPolicyOutput  {
     /// <p>A list of IAM groups that the policy is attached to.</p>
     #[doc(hidden)]
     pub policy_groups: std::option::Option<std::vec::Vec<crate::model::PolicyGroup>>,
@@ -4095,15 +4227,15 @@ pub struct ListEntitiesForPolicyOutput {
 }
 impl ListEntitiesForPolicyOutput {
     /// <p>A list of IAM groups that the policy is attached to.</p>
-    pub fn policy_groups(&self) -> std::option::Option<&[crate::model::PolicyGroup]> {
+    pub fn policy_groups(&self) -> std::option::Option<& [crate::model::PolicyGroup]> {
         self.policy_groups.as_deref()
     }
     /// <p>A list of IAM users that the policy is attached to.</p>
-    pub fn policy_users(&self) -> std::option::Option<&[crate::model::PolicyUser]> {
+    pub fn policy_users(&self) -> std::option::Option<& [crate::model::PolicyUser]> {
         self.policy_users.as_deref()
     }
     /// <p>A list of IAM roles that the policy is attached to.</p>
-    pub fn policy_roles(&self) -> std::option::Option<&[crate::model::PolicyRole]> {
+    pub fn policy_roles(&self) -> std::option::Option<& [crate::model::PolicyRole]> {
         self.policy_roles.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -4111,13 +4243,13 @@ impl ListEntitiesForPolicyOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListEntitiesForPolicyOutput`](crate::output::ListEntitiesForPolicyOutput).
 pub mod list_entities_for_policy_output {
-
+    
     /// A builder for [`ListEntitiesForPolicyOutput`](crate::output::ListEntitiesForPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4135,17 +4267,13 @@ pub mod list_entities_for_policy_output {
         /// <p>A list of IAM groups that the policy is attached to.</p>
         pub fn policy_groups(mut self, input: crate::model::PolicyGroup) -> Self {
             let mut v = self.policy_groups.unwrap_or_default();
-            v.push(input);
-            self.policy_groups = Some(v);
-            self
+                            v.push(input);
+                            self.policy_groups = Some(v);
+                            self
         }
         /// <p>A list of IAM groups that the policy is attached to.</p>
-        pub fn set_policy_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyGroup>>,
-        ) -> Self {
-            self.policy_groups = input;
-            self
+        pub fn set_policy_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyGroup>>) -> Self {
+            self.policy_groups = input; self
         }
         /// Appends an item to `policy_users`.
         ///
@@ -4154,17 +4282,13 @@ pub mod list_entities_for_policy_output {
         /// <p>A list of IAM users that the policy is attached to.</p>
         pub fn policy_users(mut self, input: crate::model::PolicyUser) -> Self {
             let mut v = self.policy_users.unwrap_or_default();
-            v.push(input);
-            self.policy_users = Some(v);
-            self
+                            v.push(input);
+                            self.policy_users = Some(v);
+                            self
         }
         /// <p>A list of IAM users that the policy is attached to.</p>
-        pub fn set_policy_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyUser>>,
-        ) -> Self {
-            self.policy_users = input;
-            self
+        pub fn set_policy_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyUser>>) -> Self {
+            self.policy_users = input; self
         }
         /// Appends an item to `policy_roles`.
         ///
@@ -4173,17 +4297,13 @@ pub mod list_entities_for_policy_output {
         /// <p>A list of IAM roles that the policy is attached to.</p>
         pub fn policy_roles(mut self, input: crate::model::PolicyRole) -> Self {
             let mut v = self.policy_roles.unwrap_or_default();
-            v.push(input);
-            self.policy_roles = Some(v);
-            self
+                            v.push(input);
+                            self.policy_roles = Some(v);
+                            self
         }
         /// <p>A list of IAM roles that the policy is attached to.</p>
-        pub fn set_policy_roles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyRole>>,
-        ) -> Self {
-            self.policy_roles = input;
-            self
+        pub fn set_policy_roles(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyRole>>) -> Self {
+            self.policy_roles = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -4192,8 +4312,7 @@ pub mod list_entities_for_policy_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4202,20 +4321,27 @@ pub mod list_entities_for_policy_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListEntitiesForPolicyOutput`](crate::output::ListEntitiesForPolicyOutput).
         pub fn build(self) -> crate::output::ListEntitiesForPolicyOutput {
             crate::output::ListEntitiesForPolicyOutput {
-                policy_groups: self.policy_groups,
-                policy_users: self.policy_users,
-                policy_roles: self.policy_roles,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                policy_groups: self.policy_groups
+                ,
+                policy_users: self.policy_users
+                ,
+                policy_roles: self.policy_roles
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEntitiesForPolicyOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesForPolicyOutput`](crate::output::ListEntitiesForPolicyOutput).
@@ -4227,7 +4353,7 @@ impl ListEntitiesForPolicyOutput {
 /// <p>Contains the response to a successful <code>ListAttachedUserPolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedUserPoliciesOutput {
+pub struct ListAttachedUserPoliciesOutput  {
     /// <p>A list of the attached policies.</p>
     #[doc(hidden)]
     pub attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4240,7 +4366,7 @@ pub struct ListAttachedUserPoliciesOutput {
 }
 impl ListAttachedUserPoliciesOutput {
     /// <p>A list of the attached policies.</p>
-    pub fn attached_policies(&self) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+    pub fn attached_policies(&self) -> std::option::Option<& [crate::model::AttachedPolicy]> {
         self.attached_policies.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -4248,18 +4374,17 @@ impl ListAttachedUserPoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListAttachedUserPoliciesOutput`](crate::output::ListAttachedUserPoliciesOutput).
 pub mod list_attached_user_policies_output {
-
+    
     /// A builder for [`ListAttachedUserPoliciesOutput`](crate::output::ListAttachedUserPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attached_policies:
-            std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+        pub(crate) attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -4271,17 +4396,13 @@ pub mod list_attached_user_policies_output {
         /// <p>A list of the attached policies.</p>
         pub fn attached_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(input);
-            self.attached_policies = Some(v);
-            self
+                            v.push(input);
+                            self.attached_policies = Some(v);
+                            self
         }
         /// <p>A list of the attached policies.</p>
-        pub fn set_attached_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
-        ) -> Self {
-            self.attached_policies = input;
-            self
+        pub fn set_attached_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>) -> Self {
+            self.attached_policies = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -4290,8 +4411,7 @@ pub mod list_attached_user_policies_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4300,18 +4420,23 @@ pub mod list_attached_user_policies_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListAttachedUserPoliciesOutput`](crate::output::ListAttachedUserPoliciesOutput).
         pub fn build(self) -> crate::output::ListAttachedUserPoliciesOutput {
             crate::output::ListAttachedUserPoliciesOutput {
-                attached_policies: self.attached_policies,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                attached_policies: self.attached_policies
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttachedUserPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedUserPoliciesOutput`](crate::output::ListAttachedUserPoliciesOutput).
@@ -4323,7 +4448,7 @@ impl ListAttachedUserPoliciesOutput {
 /// <p>Contains the response to a successful <code>ListAttachedRolePolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedRolePoliciesOutput {
+pub struct ListAttachedRolePoliciesOutput  {
     /// <p>A list of the attached policies.</p>
     #[doc(hidden)]
     pub attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4336,7 +4461,7 @@ pub struct ListAttachedRolePoliciesOutput {
 }
 impl ListAttachedRolePoliciesOutput {
     /// <p>A list of the attached policies.</p>
-    pub fn attached_policies(&self) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+    pub fn attached_policies(&self) -> std::option::Option<& [crate::model::AttachedPolicy]> {
         self.attached_policies.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -4344,18 +4469,17 @@ impl ListAttachedRolePoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListAttachedRolePoliciesOutput`](crate::output::ListAttachedRolePoliciesOutput).
 pub mod list_attached_role_policies_output {
-
+    
     /// A builder for [`ListAttachedRolePoliciesOutput`](crate::output::ListAttachedRolePoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attached_policies:
-            std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+        pub(crate) attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -4367,17 +4491,13 @@ pub mod list_attached_role_policies_output {
         /// <p>A list of the attached policies.</p>
         pub fn attached_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(input);
-            self.attached_policies = Some(v);
-            self
+                            v.push(input);
+                            self.attached_policies = Some(v);
+                            self
         }
         /// <p>A list of the attached policies.</p>
-        pub fn set_attached_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
-        ) -> Self {
-            self.attached_policies = input;
-            self
+        pub fn set_attached_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>) -> Self {
+            self.attached_policies = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -4386,8 +4506,7 @@ pub mod list_attached_role_policies_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4396,18 +4515,23 @@ pub mod list_attached_role_policies_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListAttachedRolePoliciesOutput`](crate::output::ListAttachedRolePoliciesOutput).
         pub fn build(self) -> crate::output::ListAttachedRolePoliciesOutput {
             crate::output::ListAttachedRolePoliciesOutput {
-                attached_policies: self.attached_policies,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                attached_policies: self.attached_policies
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttachedRolePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedRolePoliciesOutput`](crate::output::ListAttachedRolePoliciesOutput).
@@ -4419,7 +4543,7 @@ impl ListAttachedRolePoliciesOutput {
 /// <p>Contains the response to a successful <code>ListAttachedGroupPolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedGroupPoliciesOutput {
+pub struct ListAttachedGroupPoliciesOutput  {
     /// <p>A list of the attached policies.</p>
     #[doc(hidden)]
     pub attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4432,7 +4556,7 @@ pub struct ListAttachedGroupPoliciesOutput {
 }
 impl ListAttachedGroupPoliciesOutput {
     /// <p>A list of the attached policies.</p>
-    pub fn attached_policies(&self) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+    pub fn attached_policies(&self) -> std::option::Option<& [crate::model::AttachedPolicy]> {
         self.attached_policies.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -4440,18 +4564,17 @@ impl ListAttachedGroupPoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListAttachedGroupPoliciesOutput`](crate::output::ListAttachedGroupPoliciesOutput).
 pub mod list_attached_group_policies_output {
-
+    
     /// A builder for [`ListAttachedGroupPoliciesOutput`](crate::output::ListAttachedGroupPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attached_policies:
-            std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+        pub(crate) attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -4463,17 +4586,13 @@ pub mod list_attached_group_policies_output {
         /// <p>A list of the attached policies.</p>
         pub fn attached_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(input);
-            self.attached_policies = Some(v);
-            self
+                            v.push(input);
+                            self.attached_policies = Some(v);
+                            self
         }
         /// <p>A list of the attached policies.</p>
-        pub fn set_attached_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
-        ) -> Self {
-            self.attached_policies = input;
-            self
+        pub fn set_attached_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>) -> Self {
+            self.attached_policies = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -4482,8 +4601,7 @@ pub mod list_attached_group_policies_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4492,18 +4610,23 @@ pub mod list_attached_group_policies_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListAttachedGroupPoliciesOutput`](crate::output::ListAttachedGroupPoliciesOutput).
         pub fn build(self) -> crate::output::ListAttachedGroupPoliciesOutput {
             crate::output::ListAttachedGroupPoliciesOutput {
-                attached_policies: self.attached_policies,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                attached_policies: self.attached_policies
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttachedGroupPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedGroupPoliciesOutput`](crate::output::ListAttachedGroupPoliciesOutput).
@@ -4515,7 +4638,7 @@ impl ListAttachedGroupPoliciesOutput {
 /// <p>Contains the response to a successful <code>ListAccountAliases</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAliasesOutput {
+pub struct ListAccountAliasesOutput  {
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
     #[doc(hidden)]
     pub account_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4528,7 +4651,7 @@ pub struct ListAccountAliasesOutput {
 }
 impl ListAccountAliasesOutput {
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
-    pub fn account_aliases(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_aliases(&self) -> std::option::Option<& [std::string::String]> {
         self.account_aliases.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -4536,13 +4659,13 @@ impl ListAccountAliasesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListAccountAliasesOutput`](crate::output::ListAccountAliasesOutput).
 pub mod list_account_aliases_output {
-
+    
     /// A builder for [`ListAccountAliasesOutput`](crate::output::ListAccountAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4558,17 +4681,13 @@ pub mod list_account_aliases_output {
         /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
         pub fn account_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_aliases.unwrap_or_default();
-            v.push(input.into());
-            self.account_aliases = Some(v);
-            self
+                            v.push(input.into());
+                            self.account_aliases = Some(v);
+                            self
         }
         /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
-        pub fn set_account_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.account_aliases = input;
-            self
+        pub fn set_account_aliases(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.account_aliases = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -4577,8 +4696,7 @@ pub mod list_account_aliases_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4587,18 +4705,23 @@ pub mod list_account_aliases_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountAliasesOutput`](crate::output::ListAccountAliasesOutput).
         pub fn build(self) -> crate::output::ListAccountAliasesOutput {
             crate::output::ListAccountAliasesOutput {
-                account_aliases: self.account_aliases,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                account_aliases: self.account_aliases
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccountAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAliasesOutput`](crate::output::ListAccountAliasesOutput).
@@ -4610,7 +4733,7 @@ impl ListAccountAliasesOutput {
 /// <p>Contains the response to a successful <code>ListAccessKeys</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessKeysOutput {
+pub struct ListAccessKeysOutput  {
     /// <p>A list of objects containing metadata about the access keys.</p>
     #[doc(hidden)]
     pub access_key_metadata: std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
@@ -4623,7 +4746,7 @@ pub struct ListAccessKeysOutput {
 }
 impl ListAccessKeysOutput {
     /// <p>A list of objects containing metadata about the access keys.</p>
-    pub fn access_key_metadata(&self) -> std::option::Option<&[crate::model::AccessKeyMetadata]> {
+    pub fn access_key_metadata(&self) -> std::option::Option<& [crate::model::AccessKeyMetadata]> {
         self.access_key_metadata.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -4631,18 +4754,17 @@ impl ListAccessKeysOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListAccessKeysOutput`](crate::output::ListAccessKeysOutput).
 pub mod list_access_keys_output {
-
+    
     /// A builder for [`ListAccessKeysOutput`](crate::output::ListAccessKeysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) access_key_metadata:
-            std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
+        pub(crate) access_key_metadata: std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -4654,17 +4776,13 @@ pub mod list_access_keys_output {
         /// <p>A list of objects containing metadata about the access keys.</p>
         pub fn access_key_metadata(mut self, input: crate::model::AccessKeyMetadata) -> Self {
             let mut v = self.access_key_metadata.unwrap_or_default();
-            v.push(input);
-            self.access_key_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.access_key_metadata = Some(v);
+                            self
         }
         /// <p>A list of objects containing metadata about the access keys.</p>
-        pub fn set_access_key_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
-        ) -> Self {
-            self.access_key_metadata = input;
-            self
+        pub fn set_access_key_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>) -> Self {
+            self.access_key_metadata = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -4673,8 +4791,7 @@ pub mod list_access_keys_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4683,18 +4800,23 @@ pub mod list_access_keys_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListAccessKeysOutput`](crate::output::ListAccessKeysOutput).
         pub fn build(self) -> crate::output::ListAccessKeysOutput {
             crate::output::ListAccessKeysOutput {
-                access_key_metadata: self.access_key_metadata,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                access_key_metadata: self.access_key_metadata
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccessKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessKeysOutput`](crate::output::ListAccessKeysOutput).
@@ -4706,36 +4828,36 @@ impl ListAccessKeysOutput {
 /// <p>Contains the response to a successful <code>GetUserPolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserPolicyOutput {
+pub struct GetUserPolicyOutput  {
     /// <p>The user the policy is associated with.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The policy document.</p>
+    /// <p>The policy document.</p> 
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl GetUserPolicyOutput {
     /// <p>The user the policy is associated with.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
-    /// <p>The policy document.</p>
+    /// <p>The policy document.</p> 
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
 }
 /// See [`GetUserPolicyOutput`](crate::output::GetUserPolicyOutput).
 pub mod get_user_policy_output {
-
+    
     /// A builder for [`GetUserPolicyOutput`](crate::output::GetUserPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4751,8 +4873,7 @@ pub mod get_user_policy_output {
         }
         /// <p>The user the policy is associated with.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>The name of the policy.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4761,33 +4882,33 @@ pub mod get_user_policy_output {
         }
         /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
-        /// <p>The policy document.</p>
+        /// <p>The policy document.</p> 
         /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
-        /// <p>The policy document.</p>
+        /// <p>The policy document.</p> 
         /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-        pub fn set_policy_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_document = input;
-            self
+        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_document = input; self
         }
         /// Consumes the builder and constructs a [`GetUserPolicyOutput`](crate::output::GetUserPolicyOutput).
         pub fn build(self) -> crate::output::GetUserPolicyOutput {
             crate::output::GetUserPolicyOutput {
-                user_name: self.user_name,
-                policy_name: self.policy_name,
-                policy_document: self.policy_document,
+                user_name: self.user_name
+                ,
+                policy_name: self.policy_name
+                ,
+                policy_document: self.policy_document
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUserPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetUserPolicyOutput`](crate::output::GetUserPolicyOutput).
@@ -4799,53 +4920,57 @@ impl GetUserPolicyOutput {
 /// <p>Contains the response to a successful <code>GetUser</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserOutput {
-    /// <p>A structure containing details about the IAM user.</p> <important>
-    /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-    /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p>
+pub struct GetUserOutput  {
+    /// <p>A structure containing details about the IAM user.</p> <important> 
+    /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p> 
+    /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p> 
     /// </important>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl GetUserOutput {
-    /// <p>A structure containing details about the IAM user.</p> <important>
-    /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-    /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p>
+    /// <p>A structure containing details about the IAM user.</p> <important> 
+    /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p> 
+    /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p> 
     /// </important>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
 }
 /// See [`GetUserOutput`](crate::output::GetUserOutput).
 pub mod get_user_output {
-
+    
     /// A builder for [`GetUserOutput`](crate::output::GetUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
     }
     impl Builder {
-        /// <p>A structure containing details about the IAM user.</p> <important>
-        /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-        /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p>
+        /// <p>A structure containing details about the IAM user.</p> <important> 
+        /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p> 
+        /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p> 
         /// </important>
         pub fn user(mut self, input: crate::model::User) -> Self {
             self.user = Some(input);
             self
         }
-        /// <p>A structure containing details about the IAM user.</p> <important>
-        /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-        /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p>
+        /// <p>A structure containing details about the IAM user.</p> <important> 
+        /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p> 
+        /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p> 
         /// </important>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// Consumes the builder and constructs a [`GetUserOutput`](crate::output::GetUserOutput).
         pub fn build(self) -> crate::output::GetUserOutput {
-            crate::output::GetUserOutput { user: self.user }
+            crate::output::GetUserOutput {
+                user: self.user
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetUserOutput {
     /// Creates a new builder-style object to manufacture [`GetUserOutput`](crate::output::GetUserOutput).
@@ -4857,20 +4982,20 @@ impl GetUserOutput {
 /// <p>Contains the response to a successful <code>GetSSHPublicKey</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSshPublicKeyOutput {
+pub struct GetSshPublicKeyOutput  {
     /// <p>A structure containing details about the SSH public key.</p>
     #[doc(hidden)]
     pub ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
 }
 impl GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&crate::model::SshPublicKey> {
+    pub fn ssh_public_key(&self) -> std::option::Option<& crate::model::SshPublicKey> {
         self.ssh_public_key.as_ref()
     }
 }
 /// See [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput).
 pub mod get_ssh_public_key_output {
-
+    
     /// A builder for [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4883,20 +5008,19 @@ pub mod get_ssh_public_key_output {
             self
         }
         /// <p>A structure containing details about the SSH public key.</p>
-        pub fn set_ssh_public_key(
-            mut self,
-            input: std::option::Option<crate::model::SshPublicKey>,
-        ) -> Self {
-            self.ssh_public_key = input;
-            self
+        pub fn set_ssh_public_key(mut self, input: std::option::Option<crate::model::SshPublicKey>) -> Self {
+            self.ssh_public_key = input; self
         }
         /// Consumes the builder and constructs a [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput).
         pub fn build(self) -> crate::output::GetSshPublicKeyOutput {
             crate::output::GetSshPublicKeyOutput {
-                ssh_public_key: self.ssh_public_key,
+                ssh_public_key: self.ssh_public_key
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput).
@@ -4908,7 +5032,7 @@ impl GetSshPublicKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceLinkedRoleDeletionStatusOutput {
+pub struct GetServiceLinkedRoleDeletionStatusOutput  {
     /// <p>The status of the deletion.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeletionTaskStatusType>,
@@ -4918,17 +5042,17 @@ pub struct GetServiceLinkedRoleDeletionStatusOutput {
 }
 impl GetServiceLinkedRoleDeletionStatusOutput {
     /// <p>The status of the deletion.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DeletionTaskStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DeletionTaskStatusType> {
         self.status.as_ref()
     }
     /// <p>An object that contains details about the reason the deletion failed.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::model::DeletionTaskFailureReasonType> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::DeletionTaskFailureReasonType> {
         self.reason.as_ref()
     }
 }
 /// See [`GetServiceLinkedRoleDeletionStatusOutput`](crate::output::GetServiceLinkedRoleDeletionStatusOutput).
 pub mod get_service_linked_role_deletion_status_output {
-
+    
     /// A builder for [`GetServiceLinkedRoleDeletionStatusOutput`](crate::output::GetServiceLinkedRoleDeletionStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4942,12 +5066,8 @@ pub mod get_service_linked_role_deletion_status_output {
             self
         }
         /// <p>The status of the deletion.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DeletionTaskStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DeletionTaskStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>An object that contains details about the reason the deletion failed.</p>
         pub fn reason(mut self, input: crate::model::DeletionTaskFailureReasonType) -> Self {
@@ -4955,21 +5075,21 @@ pub mod get_service_linked_role_deletion_status_output {
             self
         }
         /// <p>An object that contains details about the reason the deletion failed.</p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::DeletionTaskFailureReasonType>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::DeletionTaskFailureReasonType>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceLinkedRoleDeletionStatusOutput`](crate::output::GetServiceLinkedRoleDeletionStatusOutput).
         pub fn build(self) -> crate::output::GetServiceLinkedRoleDeletionStatusOutput {
             crate::output::GetServiceLinkedRoleDeletionStatusOutput {
-                status: self.status,
-                reason: self.reason,
+                status: self.status
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceLinkedRoleDeletionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceLinkedRoleDeletionStatusOutput`](crate::output::GetServiceLinkedRoleDeletionStatusOutput).
@@ -4981,14 +5101,14 @@ impl GetServiceLinkedRoleDeletionStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
+pub struct GetServiceLastAccessedDetailsWithEntitiesOutput  {
     /// <p>The status of the job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     #[doc(hidden)]
     pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     #[doc(hidden)]
     pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -5007,20 +5127,20 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
 }
 impl GetServiceLastAccessedDetailsWithEntitiesOutput {
     /// <p>The status of the job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatusType> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatusType> {
         self.job_status.as_ref()
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_creation_date.as_ref()
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
-    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_completion_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_completion_date.as_ref()
     }
     /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
-    pub fn entity_details_list(&self) -> std::option::Option<&[crate::model::EntityDetails]> {
+    pub fn entity_details_list(&self) -> std::option::Option<& [crate::model::EntityDetails]> {
         self.entity_details_list.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -5028,25 +5148,24 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>An object that contains details about the reason the operation failed.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorDetails> {
         self.error.as_ref()
     }
 }
 /// See [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput).
 pub mod get_service_last_accessed_details_with_entities_output {
-
+    
     /// A builder for [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
         pub(crate) job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) entity_details_list:
-            std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
+        pub(crate) entity_details_list: std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::ErrorDetails>,
@@ -5058,12 +5177,8 @@ pub mod get_service_last_accessed_details_with_entities_output {
             self
         }
         /// <p>The status of the job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatusType>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatusType>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
         pub fn job_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5071,27 +5186,19 @@ pub mod get_service_last_accessed_details_with_entities_output {
             self
         }
         /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-        pub fn set_job_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_creation_date = input;
-            self
+        pub fn set_job_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_creation_date = input; self
         }
-        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
         /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
         pub fn job_completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_completion_date = Some(input);
             self
         }
-        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
         /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
-        pub fn set_job_completion_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_completion_date = input;
-            self
+        pub fn set_job_completion_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_completion_date = input; self
         }
         /// Appends an item to `entity_details_list`.
         ///
@@ -5100,17 +5207,13 @@ pub mod get_service_last_accessed_details_with_entities_output {
         /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
         pub fn entity_details_list(mut self, input: crate::model::EntityDetails) -> Self {
             let mut v = self.entity_details_list.unwrap_or_default();
-            v.push(input);
-            self.entity_details_list = Some(v);
-            self
+                            v.push(input);
+                            self.entity_details_list = Some(v);
+                            self
         }
         /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
-        pub fn set_entity_details_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
-        ) -> Self {
-            self.entity_details_list = input;
-            self
+        pub fn set_entity_details_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntityDetails>>) -> Self {
+            self.entity_details_list = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -5119,8 +5222,7 @@ pub mod get_service_last_accessed_details_with_entities_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5129,8 +5231,7 @@ pub mod get_service_last_accessed_details_with_entities_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>An object that contains details about the reason the operation failed.</p>
         pub fn error(mut self, input: crate::model::ErrorDetails) -> Self {
@@ -5139,27 +5240,35 @@ pub mod get_service_last_accessed_details_with_entities_output {
         }
         /// <p>An object that contains details about the reason the operation failed.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput).
         pub fn build(self) -> crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput {
             crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput {
-                job_status: self.job_status,
-                job_creation_date: self.job_creation_date,
-                job_completion_date: self.job_completion_date,
-                entity_details_list: self.entity_details_list,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
-                error: self.error,
+                job_status: self.job_status
+                ,
+                job_creation_date: self.job_creation_date
+                ,
+                job_completion_date: self.job_completion_date
+                ,
+                entity_details_list: self.entity_details_list
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceLastAccessedDetailsWithEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput).
-    pub fn builder(
-    ) -> crate::output::get_service_last_accessed_details_with_entities_output::Builder {
+    pub fn builder() -> crate::output::get_service_last_accessed_details_with_entities_output::Builder {
         crate::output::get_service_last_accessed_details_with_entities_output::Builder::default()
     }
 }
@@ -5167,7 +5276,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceLastAccessedDetailsOutput {
+pub struct GetServiceLastAccessedDetailsOutput  {
     /// <p>The status of the job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatusType>,
@@ -5179,9 +5288,8 @@ pub struct GetServiceLastAccessedDetailsOutput {
     pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
     #[doc(hidden)]
-    pub services_last_accessed:
-        std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    pub services_last_accessed: std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
+    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     #[doc(hidden)]
     pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -5197,28 +5305,24 @@ pub struct GetServiceLastAccessedDetailsOutput {
 }
 impl GetServiceLastAccessedDetailsOutput {
     /// <p>The status of the job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatusType> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatusType> {
         self.job_status.as_ref()
     }
     /// <p>The type of job. Service jobs return information about when each service was last accessed. Action jobs also include information about when tracked actions within the service were last accessed.</p>
-    pub fn job_type(
-        &self,
-    ) -> std::option::Option<&crate::model::AccessAdvisorUsageGranularityType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::AccessAdvisorUsageGranularityType> {
         self.job_type.as_ref()
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_creation_date.as_ref()
     }
     /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
-    pub fn services_last_accessed(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServiceLastAccessed]> {
+    pub fn services_last_accessed(&self) -> std::option::Option<& [crate::model::ServiceLastAccessed]> {
         self.services_last_accessed.as_deref()
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
-    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_completion_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_completion_date.as_ref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -5226,25 +5330,24 @@ impl GetServiceLastAccessedDetailsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>An object that contains details about the reason the operation failed.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorDetails> {
         self.error.as_ref()
     }
 }
 /// See [`GetServiceLastAccessedDetailsOutput`](crate::output::GetServiceLastAccessedDetailsOutput).
 pub mod get_service_last_accessed_details_output {
-
+    
     /// A builder for [`GetServiceLastAccessedDetailsOutput`](crate::output::GetServiceLastAccessedDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
         pub(crate) job_type: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
         pub(crate) job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) services_last_accessed:
-            std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
+        pub(crate) services_last_accessed: std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
         pub(crate) job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -5257,12 +5360,8 @@ pub mod get_service_last_accessed_details_output {
             self
         }
         /// <p>The status of the job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatusType>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatusType>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The type of job. Service jobs return information about when each service was last accessed. Action jobs also include information about when tracked actions within the service were last accessed.</p>
         pub fn job_type(mut self, input: crate::model::AccessAdvisorUsageGranularityType) -> Self {
@@ -5270,12 +5369,8 @@ pub mod get_service_last_accessed_details_output {
             self
         }
         /// <p>The type of job. Service jobs return information about when each service was last accessed. Action jobs also include information about when tracked actions within the service were last accessed.</p>
-        pub fn set_job_type(
-            mut self,
-            input: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
-        ) -> Self {
-            self.job_type = input;
-            self
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>) -> Self {
+            self.job_type = input; self
         }
         /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
         pub fn job_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5283,12 +5378,8 @@ pub mod get_service_last_accessed_details_output {
             self
         }
         /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-        pub fn set_job_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_creation_date = input;
-            self
+        pub fn set_job_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_creation_date = input; self
         }
         /// Appends an item to `services_last_accessed`.
         ///
@@ -5297,32 +5388,24 @@ pub mod get_service_last_accessed_details_output {
         /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
         pub fn services_last_accessed(mut self, input: crate::model::ServiceLastAccessed) -> Self {
             let mut v = self.services_last_accessed.unwrap_or_default();
-            v.push(input);
-            self.services_last_accessed = Some(v);
-            self
+                            v.push(input);
+                            self.services_last_accessed = Some(v);
+                            self
         }
         /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
-        pub fn set_services_last_accessed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
-        ) -> Self {
-            self.services_last_accessed = input;
-            self
+        pub fn set_services_last_accessed(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>) -> Self {
+            self.services_last_accessed = input; self
         }
-        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
         /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
         pub fn job_completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_completion_date = Some(input);
             self
         }
-        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
         /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
-        pub fn set_job_completion_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_completion_date = input;
-            self
+        pub fn set_job_completion_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_completion_date = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -5331,8 +5414,7 @@ pub mod get_service_last_accessed_details_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5341,8 +5423,7 @@ pub mod get_service_last_accessed_details_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>An object that contains details about the reason the operation failed.</p>
         pub fn error(mut self, input: crate::model::ErrorDetails) -> Self {
@@ -5351,23 +5432,33 @@ pub mod get_service_last_accessed_details_output {
         }
         /// <p>An object that contains details about the reason the operation failed.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceLastAccessedDetailsOutput`](crate::output::GetServiceLastAccessedDetailsOutput).
         pub fn build(self) -> crate::output::GetServiceLastAccessedDetailsOutput {
             crate::output::GetServiceLastAccessedDetailsOutput {
-                job_status: self.job_status,
-                job_type: self.job_type,
-                job_creation_date: self.job_creation_date,
-                services_last_accessed: self.services_last_accessed,
-                job_completion_date: self.job_completion_date,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
-                error: self.error,
+                job_status: self.job_status
+                ,
+                job_type: self.job_type
+                ,
+                job_creation_date: self.job_creation_date
+                ,
+                services_last_accessed: self.services_last_accessed
+                ,
+                job_completion_date: self.job_completion_date
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceLastAccessedDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceLastAccessedDetailsOutput`](crate::output::GetServiceLastAccessedDetailsOutput).
@@ -5379,20 +5470,20 @@ impl GetServiceLastAccessedDetailsOutput {
 /// <p>Contains the response to a successful <code>GetServerCertificate</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServerCertificateOutput {
+pub struct GetServerCertificateOutput  {
     /// <p>A structure containing details about the server certificate.</p>
     #[doc(hidden)]
     pub server_certificate: std::option::Option<crate::model::ServerCertificate>,
 }
 impl GetServerCertificateOutput {
     /// <p>A structure containing details about the server certificate.</p>
-    pub fn server_certificate(&self) -> std::option::Option<&crate::model::ServerCertificate> {
+    pub fn server_certificate(&self) -> std::option::Option<& crate::model::ServerCertificate> {
         self.server_certificate.as_ref()
     }
 }
 /// See [`GetServerCertificateOutput`](crate::output::GetServerCertificateOutput).
 pub mod get_server_certificate_output {
-
+    
     /// A builder for [`GetServerCertificateOutput`](crate::output::GetServerCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5405,20 +5496,19 @@ pub mod get_server_certificate_output {
             self
         }
         /// <p>A structure containing details about the server certificate.</p>
-        pub fn set_server_certificate(
-            mut self,
-            input: std::option::Option<crate::model::ServerCertificate>,
-        ) -> Self {
-            self.server_certificate = input;
-            self
+        pub fn set_server_certificate(mut self, input: std::option::Option<crate::model::ServerCertificate>) -> Self {
+            self.server_certificate = input; self
         }
         /// Consumes the builder and constructs a [`GetServerCertificateOutput`](crate::output::GetServerCertificateOutput).
         pub fn build(self) -> crate::output::GetServerCertificateOutput {
             crate::output::GetServerCertificateOutput {
-                server_certificate: self.server_certificate,
+                server_certificate: self.server_certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetServerCertificateOutput`](crate::output::GetServerCertificateOutput).
@@ -5430,7 +5520,7 @@ impl GetServerCertificateOutput {
 /// <p>Contains the response to a successful <code>GetSAMLProvider</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSamlProviderOutput {
+pub struct GetSamlProviderOutput  {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     #[doc(hidden)]
     pub saml_metadata_document: std::option::Option<std::string::String>,
@@ -5446,25 +5536,25 @@ pub struct GetSamlProviderOutput {
 }
 impl GetSamlProviderOutput {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
-    pub fn saml_metadata_document(&self) -> std::option::Option<&str> {
+    pub fn saml_metadata_document(&self) -> std::option::Option<& str> {
         self.saml_metadata_document.as_deref()
     }
     /// <p>The date and time when the SAML provider was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn valid_until(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput).
 pub mod get_saml_provider_output {
-
+    
     /// A builder for [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5480,12 +5570,8 @@ pub mod get_saml_provider_output {
             self
         }
         /// <p>The XML metadata document that includes information about an identity provider.</p>
-        pub fn set_saml_metadata_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.saml_metadata_document = input;
-            self
+        pub fn set_saml_metadata_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.saml_metadata_document = input; self
         }
         /// <p>The date and time when the SAML provider was created.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5493,12 +5579,8 @@ pub mod get_saml_provider_output {
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
         pub fn valid_until(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5506,12 +5588,8 @@ pub mod get_saml_provider_output {
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
-        pub fn set_valid_until(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.valid_until = input;
-            self
+        pub fn set_valid_until(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.valid_until = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5520,28 +5598,30 @@ pub mod get_saml_provider_output {
         /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput).
         pub fn build(self) -> crate::output::GetSamlProviderOutput {
             crate::output::GetSamlProviderOutput {
-                saml_metadata_document: self.saml_metadata_document,
-                create_date: self.create_date,
-                valid_until: self.valid_until,
-                tags: self.tags,
+                saml_metadata_document: self.saml_metadata_document
+                ,
+                create_date: self.create_date
+                ,
+                valid_until: self.valid_until
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput).
@@ -5553,36 +5633,36 @@ impl GetSamlProviderOutput {
 /// <p>Contains the response to a successful <code>GetRolePolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRolePolicyOutput {
+pub struct GetRolePolicyOutput  {
     /// <p>The role the policy is associated with.</p>
     #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The policy document.</p>
+    /// <p>The policy document.</p> 
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl GetRolePolicyOutput {
     /// <p>The role the policy is associated with.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
-    /// <p>The policy document.</p>
+    /// <p>The policy document.</p> 
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
 }
 /// See [`GetRolePolicyOutput`](crate::output::GetRolePolicyOutput).
 pub mod get_role_policy_output {
-
+    
     /// A builder for [`GetRolePolicyOutput`](crate::output::GetRolePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5598,8 +5678,7 @@ pub mod get_role_policy_output {
         }
         /// <p>The role the policy is associated with.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_name = input;
-            self
+            self.role_name = input; self
         }
         /// <p>The name of the policy.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5608,33 +5687,33 @@ pub mod get_role_policy_output {
         }
         /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
-        /// <p>The policy document.</p>
+        /// <p>The policy document.</p> 
         /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
-        /// <p>The policy document.</p>
+        /// <p>The policy document.</p> 
         /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-        pub fn set_policy_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_document = input;
-            self
+        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_document = input; self
         }
         /// Consumes the builder and constructs a [`GetRolePolicyOutput`](crate::output::GetRolePolicyOutput).
         pub fn build(self) -> crate::output::GetRolePolicyOutput {
             crate::output::GetRolePolicyOutput {
-                role_name: self.role_name,
-                policy_name: self.policy_name,
-                policy_document: self.policy_document,
+                role_name: self.role_name
+                ,
+                policy_name: self.policy_name
+                ,
+                policy_document: self.policy_document
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetRolePolicyOutput`](crate::output::GetRolePolicyOutput).
@@ -5646,20 +5725,20 @@ impl GetRolePolicyOutput {
 /// <p>Contains the response to a successful <code>GetRole</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRoleOutput {
+pub struct GetRoleOutput  {
     /// <p>A structure containing details about the IAM role.</p>
     #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
 impl GetRoleOutput {
     /// <p>A structure containing details about the IAM role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+    pub fn role(&self) -> std::option::Option<& crate::model::Role> {
         self.role.as_ref()
     }
 }
 /// See [`GetRoleOutput`](crate::output::GetRoleOutput).
 pub mod get_role_output {
-
+    
     /// A builder for [`GetRoleOutput`](crate::output::GetRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5673,14 +5752,18 @@ pub mod get_role_output {
         }
         /// <p>A structure containing details about the IAM role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// Consumes the builder and constructs a [`GetRoleOutput`](crate::output::GetRoleOutput).
         pub fn build(self) -> crate::output::GetRoleOutput {
-            crate::output::GetRoleOutput { role: self.role }
+            crate::output::GetRoleOutput {
+                role: self.role
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetRoleOutput {
     /// Creates a new builder-style object to manufacture [`GetRoleOutput`](crate::output::GetRoleOutput).
@@ -5692,20 +5775,20 @@ impl GetRoleOutput {
 /// <p>Contains the response to a successful <code>GetPolicyVersion</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyVersionOutput {
+pub struct GetPolicyVersionOutput  {
     /// <p>A structure containing details about the policy version.</p>
     #[doc(hidden)]
     pub policy_version: std::option::Option<crate::model::PolicyVersion>,
 }
 impl GetPolicyVersionOutput {
     /// <p>A structure containing details about the policy version.</p>
-    pub fn policy_version(&self) -> std::option::Option<&crate::model::PolicyVersion> {
+    pub fn policy_version(&self) -> std::option::Option<& crate::model::PolicyVersion> {
         self.policy_version.as_ref()
     }
 }
 /// See [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput).
 pub mod get_policy_version_output {
-
+    
     /// A builder for [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5718,20 +5801,19 @@ pub mod get_policy_version_output {
             self
         }
         /// <p>A structure containing details about the policy version.</p>
-        pub fn set_policy_version(
-            mut self,
-            input: std::option::Option<crate::model::PolicyVersion>,
-        ) -> Self {
-            self.policy_version = input;
-            self
+        pub fn set_policy_version(mut self, input: std::option::Option<crate::model::PolicyVersion>) -> Self {
+            self.policy_version = input; self
         }
         /// Consumes the builder and constructs a [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput).
         pub fn build(self) -> crate::output::GetPolicyVersionOutput {
             crate::output::GetPolicyVersionOutput {
-                policy_version: self.policy_version,
+                policy_version: self.policy_version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput).
@@ -5743,20 +5825,20 @@ impl GetPolicyVersionOutput {
 /// <p>Contains the response to a successful <code>GetPolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// <p>A structure containing details about the policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl GetPolicyOutput {
     /// <p>A structure containing details about the policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
-
+    
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5770,16 +5852,18 @@ pub mod get_policy_output {
         }
         /// <p>A structure containing details about the policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput).
         pub fn build(self) -> crate::output::GetPolicyOutput {
             crate::output::GetPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput).
@@ -5791,14 +5875,14 @@ impl GetPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOrganizationsAccessReportOutput {
+pub struct GetOrganizationsAccessReportOutput  {
     /// <p>The status of the job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     #[doc(hidden)]
     pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     #[doc(hidden)]
     pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -5817,23 +5901,23 @@ pub struct GetOrganizationsAccessReportOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Contains information about the reason that the operation failed.</p>
+    /// <p>Contains information about the reason that the operation failed.</p> 
     /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
     #[doc(hidden)]
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
 impl GetOrganizationsAccessReportOutput {
     /// <p>The status of the job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatusType> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatusType> {
         self.job_status.as_ref()
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_creation_date.as_ref()
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
-    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_completion_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_completion_date.as_ref()
     }
     /// <p>The number of services that the applicable SCPs allow account principals to access.</p>
@@ -5845,7 +5929,7 @@ impl GetOrganizationsAccessReportOutput {
         self.number_of_services_not_accessed
     }
     /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
-    pub fn access_details(&self) -> std::option::Option<&[crate::model::AccessDetail]> {
+    pub fn access_details(&self) -> std::option::Option<& [crate::model::AccessDetail]> {
         self.access_details.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -5853,18 +5937,18 @@ impl GetOrganizationsAccessReportOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
-    /// <p>Contains information about the reason that the operation failed.</p>
+    /// <p>Contains information about the reason that the operation failed.</p> 
     /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
-    pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+    pub fn error_details(&self) -> std::option::Option<& crate::model::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
 /// See [`GetOrganizationsAccessReportOutput`](crate::output::GetOrganizationsAccessReportOutput).
 pub mod get_organizations_access_report_output {
-
+    
     /// A builder for [`GetOrganizationsAccessReportOutput`](crate::output::GetOrganizationsAccessReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5885,12 +5969,8 @@ pub mod get_organizations_access_report_output {
             self
         }
         /// <p>The status of the job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatusType>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatusType>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
         pub fn job_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5898,27 +5978,19 @@ pub mod get_organizations_access_report_output {
             self
         }
         /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-        pub fn set_job_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_creation_date = input;
-            self
+        pub fn set_job_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_creation_date = input; self
         }
-        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
         /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
         pub fn job_completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.job_completion_date = Some(input);
             self
         }
-        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+        /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p> 
         /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
-        pub fn set_job_completion_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_completion_date = input;
-            self
+        pub fn set_job_completion_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_completion_date = input; self
         }
         /// <p>The number of services that the applicable SCPs allow account principals to access.</p>
         pub fn number_of_services_accessible(mut self, input: i32) -> Self {
@@ -5926,12 +5998,8 @@ pub mod get_organizations_access_report_output {
             self
         }
         /// <p>The number of services that the applicable SCPs allow account principals to access.</p>
-        pub fn set_number_of_services_accessible(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.number_of_services_accessible = input;
-            self
+        pub fn set_number_of_services_accessible(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_services_accessible = input; self
         }
         /// <p>The number of services that account principals are allowed but did not attempt to access.</p>
         pub fn number_of_services_not_accessed(mut self, input: i32) -> Self {
@@ -5939,12 +6007,8 @@ pub mod get_organizations_access_report_output {
             self
         }
         /// <p>The number of services that account principals are allowed but did not attempt to access.</p>
-        pub fn set_number_of_services_not_accessed(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.number_of_services_not_accessed = input;
-            self
+        pub fn set_number_of_services_not_accessed(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_services_not_accessed = input; self
         }
         /// Appends an item to `access_details`.
         ///
@@ -5953,17 +6017,13 @@ pub mod get_organizations_access_report_output {
         /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
         pub fn access_details(mut self, input: crate::model::AccessDetail) -> Self {
             let mut v = self.access_details.unwrap_or_default();
-            v.push(input);
-            self.access_details = Some(v);
-            self
+                            v.push(input);
+                            self.access_details = Some(v);
+                            self
         }
         /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
-        pub fn set_access_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessDetail>>,
-        ) -> Self {
-            self.access_details = input;
-            self
+        pub fn set_access_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessDetail>>) -> Self {
+            self.access_details = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -5972,8 +6032,7 @@ pub mod get_organizations_access_report_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5982,39 +6041,46 @@ pub mod get_organizations_access_report_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
-        /// <p>Contains information about the reason that the operation failed.</p>
+        /// <p>Contains information about the reason that the operation failed.</p> 
         /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
         pub fn error_details(mut self, input: crate::model::ErrorDetails) -> Self {
             self.error_details = Some(input);
             self
         }
-        /// <p>Contains information about the reason that the operation failed.</p>
+        /// <p>Contains information about the reason that the operation failed.</p> 
         /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<crate::model::ErrorDetails>,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
+            self.error_details = input; self
         }
         /// Consumes the builder and constructs a [`GetOrganizationsAccessReportOutput`](crate::output::GetOrganizationsAccessReportOutput).
         pub fn build(self) -> crate::output::GetOrganizationsAccessReportOutput {
             crate::output::GetOrganizationsAccessReportOutput {
-                job_status: self.job_status,
-                job_creation_date: self.job_creation_date,
-                job_completion_date: self.job_completion_date,
-                number_of_services_accessible: self.number_of_services_accessible,
-                number_of_services_not_accessed: self.number_of_services_not_accessed,
-                access_details: self.access_details,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
-                error_details: self.error_details,
+                job_status: self.job_status
+                ,
+                job_creation_date: self.job_creation_date
+                ,
+                job_completion_date: self.job_completion_date
+                ,
+                number_of_services_accessible: self.number_of_services_accessible
+                ,
+                number_of_services_not_accessed: self.number_of_services_not_accessed
+                ,
+                access_details: self.access_details
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
+                error_details: self.error_details
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOrganizationsAccessReportOutput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationsAccessReportOutput`](crate::output::GetOrganizationsAccessReportOutput).
@@ -6026,7 +6092,7 @@ impl GetOrganizationsAccessReportOutput {
 /// <p>Contains the response to a successful <code>GetOpenIDConnectProvider</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOpenIdConnectProviderOutput {
+pub struct GetOpenIdConnectProviderOutput  {
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -6045,29 +6111,29 @@ pub struct GetOpenIdConnectProviderOutput {
 }
 impl GetOpenIdConnectProviderOutput {
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn client_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn client_id_list(&self) -> std::option::Option<& [std::string::String]> {
         self.client_id_list.as_deref()
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn thumbprint_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn thumbprint_list(&self) -> std::option::Option<& [std::string::String]> {
         self.thumbprint_list.as_deref()
     }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput).
 pub mod get_open_id_connect_provider_output {
-
+    
     /// A builder for [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6085,8 +6151,7 @@ pub mod get_open_id_connect_provider_output {
         }
         /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Appends an item to `client_id_list`.
         ///
@@ -6095,17 +6160,13 @@ pub mod get_open_id_connect_provider_output {
         /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
         pub fn client_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.client_id_list.unwrap_or_default();
-            v.push(input.into());
-            self.client_id_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.client_id_list = Some(v);
+                            self
         }
         /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-        pub fn set_client_id_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.client_id_list = input;
-            self
+        pub fn set_client_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.client_id_list = input; self
         }
         /// Appends an item to `thumbprint_list`.
         ///
@@ -6114,17 +6175,13 @@ pub mod get_open_id_connect_provider_output {
         /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
         pub fn thumbprint_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.thumbprint_list.unwrap_or_default();
-            v.push(input.into());
-            self.thumbprint_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.thumbprint_list = Some(v);
+                            self
         }
         /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-        pub fn set_thumbprint_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.thumbprint_list = input;
-            self
+        pub fn set_thumbprint_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.thumbprint_list = input; self
         }
         /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6132,12 +6189,8 @@ pub mod get_open_id_connect_provider_output {
             self
         }
         /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6146,29 +6199,32 @@ pub mod get_open_id_connect_provider_output {
         /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput).
         pub fn build(self) -> crate::output::GetOpenIdConnectProviderOutput {
             crate::output::GetOpenIdConnectProviderOutput {
-                url: self.url,
-                client_id_list: self.client_id_list,
-                thumbprint_list: self.thumbprint_list,
-                create_date: self.create_date,
-                tags: self.tags,
+                url: self.url
+                ,
+                client_id_list: self.client_id_list
+                ,
+                thumbprint_list: self.thumbprint_list
+                ,
+                create_date: self.create_date
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput).
@@ -6180,20 +6236,20 @@ impl GetOpenIdConnectProviderOutput {
 /// <p>Contains the response to a successful <code>GetLoginProfile</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoginProfileOutput {
+pub struct GetLoginProfileOutput  {
     /// <p>A structure containing the user name and the profile creation date for the user.</p>
     #[doc(hidden)]
     pub login_profile: std::option::Option<crate::model::LoginProfile>,
 }
 impl GetLoginProfileOutput {
     /// <p>A structure containing the user name and the profile creation date for the user.</p>
-    pub fn login_profile(&self) -> std::option::Option<&crate::model::LoginProfile> {
+    pub fn login_profile(&self) -> std::option::Option<& crate::model::LoginProfile> {
         self.login_profile.as_ref()
     }
 }
 /// See [`GetLoginProfileOutput`](crate::output::GetLoginProfileOutput).
 pub mod get_login_profile_output {
-
+    
     /// A builder for [`GetLoginProfileOutput`](crate::output::GetLoginProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6206,20 +6262,19 @@ pub mod get_login_profile_output {
             self
         }
         /// <p>A structure containing the user name and the profile creation date for the user.</p>
-        pub fn set_login_profile(
-            mut self,
-            input: std::option::Option<crate::model::LoginProfile>,
-        ) -> Self {
-            self.login_profile = input;
-            self
+        pub fn set_login_profile(mut self, input: std::option::Option<crate::model::LoginProfile>) -> Self {
+            self.login_profile = input; self
         }
         /// Consumes the builder and constructs a [`GetLoginProfileOutput`](crate::output::GetLoginProfileOutput).
         pub fn build(self) -> crate::output::GetLoginProfileOutput {
             crate::output::GetLoginProfileOutput {
-                login_profile: self.login_profile,
+                login_profile: self.login_profile
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoginProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetLoginProfileOutput`](crate::output::GetLoginProfileOutput).
@@ -6231,20 +6286,20 @@ impl GetLoginProfileOutput {
 /// <p>Contains the response to a successful <code>GetInstanceProfile</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceProfileOutput {
+pub struct GetInstanceProfileOutput  {
     /// <p>A structure containing details about the instance profile.</p>
     #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
 impl GetInstanceProfileOutput {
     /// <p>A structure containing details about the instance profile.</p>
-    pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
+    pub fn instance_profile(&self) -> std::option::Option<& crate::model::InstanceProfile> {
         self.instance_profile.as_ref()
     }
 }
 /// See [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput).
 pub mod get_instance_profile_output {
-
+    
     /// A builder for [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6257,20 +6312,19 @@ pub mod get_instance_profile_output {
             self
         }
         /// <p>A structure containing details about the instance profile.</p>
-        pub fn set_instance_profile(
-            mut self,
-            input: std::option::Option<crate::model::InstanceProfile>,
-        ) -> Self {
-            self.instance_profile = input;
-            self
+        pub fn set_instance_profile(mut self, input: std::option::Option<crate::model::InstanceProfile>) -> Self {
+            self.instance_profile = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput).
         pub fn build(self) -> crate::output::GetInstanceProfileOutput {
             crate::output::GetInstanceProfileOutput {
-                instance_profile: self.instance_profile,
+                instance_profile: self.instance_profile
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput).
@@ -6282,36 +6336,36 @@ impl GetInstanceProfileOutput {
 /// <p>Contains the response to a successful <code>GetGroupPolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupPolicyOutput {
+pub struct GetGroupPolicyOutput  {
     /// <p>The group the policy is associated with.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The policy document.</p>
+    /// <p>The policy document.</p> 
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl GetGroupPolicyOutput {
     /// <p>The group the policy is associated with.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
-    /// <p>The policy document.</p>
+    /// <p>The policy document.</p> 
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
 }
 /// See [`GetGroupPolicyOutput`](crate::output::GetGroupPolicyOutput).
 pub mod get_group_policy_output {
-
+    
     /// A builder for [`GetGroupPolicyOutput`](crate::output::GetGroupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6327,8 +6381,7 @@ pub mod get_group_policy_output {
         }
         /// <p>The group the policy is associated with.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p>The name of the policy.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6337,33 +6390,33 @@ pub mod get_group_policy_output {
         }
         /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
-        /// <p>The policy document.</p>
+        /// <p>The policy document.</p> 
         /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
-        /// <p>The policy document.</p>
+        /// <p>The policy document.</p> 
         /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-        pub fn set_policy_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_document = input;
-            self
+        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_document = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupPolicyOutput`](crate::output::GetGroupPolicyOutput).
         pub fn build(self) -> crate::output::GetGroupPolicyOutput {
             crate::output::GetGroupPolicyOutput {
-                group_name: self.group_name,
-                policy_name: self.policy_name,
-                policy_document: self.policy_document,
+                group_name: self.group_name
+                ,
+                policy_name: self.policy_name
+                ,
+                policy_document: self.policy_document
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupPolicyOutput`](crate::output::GetGroupPolicyOutput).
@@ -6375,7 +6428,7 @@ impl GetGroupPolicyOutput {
 /// <p>Contains the response to a successful <code>GetGroup</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupOutput {
+pub struct GetGroupOutput  {
     /// <p>A structure that contains details about the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
@@ -6391,11 +6444,11 @@ pub struct GetGroupOutput {
 }
 impl GetGroupOutput {
     /// <p>A structure that contains details about the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
     /// <p>A list of users in the group.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::User]> {
         self.users.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -6403,13 +6456,13 @@ impl GetGroupOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput).
 pub mod get_group_output {
-
+    
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6426,8 +6479,7 @@ pub mod get_group_output {
         }
         /// <p>A structure that contains details about the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Appends an item to `users`.
         ///
@@ -6436,17 +6488,13 @@ pub mod get_group_output {
         /// <p>A list of users in the group.</p>
         pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>A list of users in the group.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::User>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::User>>) -> Self {
+            self.users = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -6455,8 +6503,7 @@ pub mod get_group_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6465,19 +6512,25 @@ pub mod get_group_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupOutput`](crate::output::GetGroupOutput).
         pub fn build(self) -> crate::output::GetGroupOutput {
             crate::output::GetGroupOutput {
-                group: self.group,
-                users: self.users,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                group: self.group
+                ,
+                users: self.users
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupOutput`](crate::output::GetGroupOutput).
@@ -6489,7 +6542,7 @@ impl GetGroupOutput {
 /// <p>Contains the response to a successful <code>GetCredentialReport</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCredentialReportOutput {
+pub struct GetCredentialReportOutput  {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
     #[doc(hidden)]
     pub content: std::option::Option<aws_smithy_types::Blob>,
@@ -6502,21 +6555,21 @@ pub struct GetCredentialReportOutput {
 }
 impl GetCredentialReportOutput {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
-    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>The format (MIME type) of the credential report.</p>
-    pub fn report_format(&self) -> std::option::Option<&crate::model::ReportFormatType> {
+    pub fn report_format(&self) -> std::option::Option<& crate::model::ReportFormatType> {
         self.report_format.as_ref()
     }
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-    pub fn generated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn generated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.generated_time.as_ref()
     }
 }
 /// See [`GetCredentialReportOutput`](crate::output::GetCredentialReportOutput).
 pub mod get_credential_report_output {
-
+    
     /// A builder for [`GetCredentialReportOutput`](crate::output::GetCredentialReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6532,8 +6585,7 @@ pub mod get_credential_report_output {
         }
         /// <p>Contains the credential report. The report is Base64-encoded.</p>
         pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The format (MIME type) of the credential report.</p>
         pub fn report_format(mut self, input: crate::model::ReportFormatType) -> Self {
@@ -6541,12 +6593,8 @@ pub mod get_credential_report_output {
             self
         }
         /// <p>The format (MIME type) of the credential report.</p>
-        pub fn set_report_format(
-            mut self,
-            input: std::option::Option<crate::model::ReportFormatType>,
-        ) -> Self {
-            self.report_format = input;
-            self
+        pub fn set_report_format(mut self, input: std::option::Option<crate::model::ReportFormatType>) -> Self {
+            self.report_format = input; self
         }
         /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
         pub fn generated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6554,22 +6602,23 @@ pub mod get_credential_report_output {
             self
         }
         /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-        pub fn set_generated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.generated_time = input;
-            self
+        pub fn set_generated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.generated_time = input; self
         }
         /// Consumes the builder and constructs a [`GetCredentialReportOutput`](crate::output::GetCredentialReportOutput).
         pub fn build(self) -> crate::output::GetCredentialReportOutput {
             crate::output::GetCredentialReportOutput {
-                content: self.content,
-                report_format: self.report_format,
-                generated_time: self.generated_time,
+                content: self.content
+                ,
+                report_format: self.report_format
+                ,
+                generated_time: self.generated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCredentialReportOutput {
     /// Creates a new builder-style object to manufacture [`GetCredentialReportOutput`](crate::output::GetCredentialReportOutput).
@@ -6581,20 +6630,20 @@ impl GetCredentialReportOutput {
 /// <p>Contains the response to a successful <code>GetContextKeysForPrincipalPolicy</code> or <code>GetContextKeysForCustomPolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContextKeysForPrincipalPolicyOutput {
+pub struct GetContextKeysForPrincipalPolicyOutput  {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     #[doc(hidden)]
     pub context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetContextKeysForPrincipalPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub fn context_key_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn context_key_names(&self) -> std::option::Option<& [std::string::String]> {
         self.context_key_names.as_deref()
     }
 }
 /// See [`GetContextKeysForPrincipalPolicyOutput`](crate::output::GetContextKeysForPrincipalPolicyOutput).
 pub mod get_context_keys_for_principal_policy_output {
-
+    
     /// A builder for [`GetContextKeysForPrincipalPolicyOutput`](crate::output::GetContextKeysForPrincipalPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6608,25 +6657,24 @@ pub mod get_context_keys_for_principal_policy_output {
         /// <p>The list of context keys that are referenced in the input policies.</p>
         pub fn context_key_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.context_key_names.unwrap_or_default();
-            v.push(input.into());
-            self.context_key_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.context_key_names = Some(v);
+                            self
         }
         /// <p>The list of context keys that are referenced in the input policies.</p>
-        pub fn set_context_key_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.context_key_names = input;
-            self
+        pub fn set_context_key_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.context_key_names = input; self
         }
         /// Consumes the builder and constructs a [`GetContextKeysForPrincipalPolicyOutput`](crate::output::GetContextKeysForPrincipalPolicyOutput).
         pub fn build(self) -> crate::output::GetContextKeysForPrincipalPolicyOutput {
             crate::output::GetContextKeysForPrincipalPolicyOutput {
-                context_key_names: self.context_key_names,
+                context_key_names: self.context_key_names
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContextKeysForPrincipalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContextKeysForPrincipalPolicyOutput`](crate::output::GetContextKeysForPrincipalPolicyOutput).
@@ -6638,20 +6686,20 @@ impl GetContextKeysForPrincipalPolicyOutput {
 /// <p>Contains the response to a successful <code>GetContextKeysForPrincipalPolicy</code> or <code>GetContextKeysForCustomPolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContextKeysForCustomPolicyOutput {
+pub struct GetContextKeysForCustomPolicyOutput  {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     #[doc(hidden)]
     pub context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetContextKeysForCustomPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub fn context_key_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn context_key_names(&self) -> std::option::Option<& [std::string::String]> {
         self.context_key_names.as_deref()
     }
 }
 /// See [`GetContextKeysForCustomPolicyOutput`](crate::output::GetContextKeysForCustomPolicyOutput).
 pub mod get_context_keys_for_custom_policy_output {
-
+    
     /// A builder for [`GetContextKeysForCustomPolicyOutput`](crate::output::GetContextKeysForCustomPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6665,25 +6713,24 @@ pub mod get_context_keys_for_custom_policy_output {
         /// <p>The list of context keys that are referenced in the input policies.</p>
         pub fn context_key_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.context_key_names.unwrap_or_default();
-            v.push(input.into());
-            self.context_key_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.context_key_names = Some(v);
+                            self
         }
         /// <p>The list of context keys that are referenced in the input policies.</p>
-        pub fn set_context_key_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.context_key_names = input;
-            self
+        pub fn set_context_key_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.context_key_names = input; self
         }
         /// Consumes the builder and constructs a [`GetContextKeysForCustomPolicyOutput`](crate::output::GetContextKeysForCustomPolicyOutput).
         pub fn build(self) -> crate::output::GetContextKeysForCustomPolicyOutput {
             crate::output::GetContextKeysForCustomPolicyOutput {
-                context_key_names: self.context_key_names,
+                context_key_names: self.context_key_names
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContextKeysForCustomPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContextKeysForCustomPolicyOutput`](crate::output::GetContextKeysForCustomPolicyOutput).
@@ -6695,28 +6742,24 @@ impl GetContextKeysForCustomPolicyOutput {
 /// <p>Contains the response to a successful <code>GetAccountSummary</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountSummaryOutput {
+pub struct GetAccountSummaryOutput  {
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
     #[doc(hidden)]
-    pub summary_map:
-        std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
+    pub summary_map: std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
 }
 impl GetAccountSummaryOutput {
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
-    pub fn summary_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::model::SummaryKeyType, i32>> {
+    pub fn summary_map(&self) -> std::option::Option<& std::collections::HashMap<crate::model::SummaryKeyType, i32>> {
         self.summary_map.as_ref()
     }
 }
 /// See [`GetAccountSummaryOutput`](crate::output::GetAccountSummaryOutput).
 pub mod get_account_summary_output {
-
+    
     /// A builder for [`GetAccountSummaryOutput`](crate::output::GetAccountSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) summary_map:
-            std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
+        pub(crate) summary_map: std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
     }
     impl Builder {
         /// Adds a key-value pair to `summary_map`.
@@ -6726,27 +6769,24 @@ pub mod get_account_summary_output {
         /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
         pub fn summary_map(mut self, k: crate::model::SummaryKeyType, v: i32) -> Self {
             let mut hash_map = self.summary_map.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.summary_map = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.summary_map = Some(hash_map);
+                            self
         }
         /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
-        pub fn set_summary_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::SummaryKeyType, i32>,
-            >,
-        ) -> Self {
-            self.summary_map = input;
-            self
+        pub fn set_summary_map(mut self, input: std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>) -> Self {
+            self.summary_map = input; self
         }
         /// Consumes the builder and constructs a [`GetAccountSummaryOutput`](crate::output::GetAccountSummaryOutput).
         pub fn build(self) -> crate::output::GetAccountSummaryOutput {
             crate::output::GetAccountSummaryOutput {
-                summary_map: self.summary_map,
+                summary_map: self.summary_map
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccountSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSummaryOutput`](crate::output::GetAccountSummaryOutput).
@@ -6758,20 +6798,20 @@ impl GetAccountSummaryOutput {
 /// <p>Contains the response to a successful <code>GetAccountPasswordPolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountPasswordPolicyOutput {
+pub struct GetAccountPasswordPolicyOutput  {
     /// <p>A structure that contains details about the account's password policy.</p>
     #[doc(hidden)]
     pub password_policy: std::option::Option<crate::model::PasswordPolicy>,
 }
 impl GetAccountPasswordPolicyOutput {
     /// <p>A structure that contains details about the account's password policy.</p>
-    pub fn password_policy(&self) -> std::option::Option<&crate::model::PasswordPolicy> {
+    pub fn password_policy(&self) -> std::option::Option<& crate::model::PasswordPolicy> {
         self.password_policy.as_ref()
     }
 }
 /// See [`GetAccountPasswordPolicyOutput`](crate::output::GetAccountPasswordPolicyOutput).
 pub mod get_account_password_policy_output {
-
+    
     /// A builder for [`GetAccountPasswordPolicyOutput`](crate::output::GetAccountPasswordPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6784,20 +6824,19 @@ pub mod get_account_password_policy_output {
             self
         }
         /// <p>A structure that contains details about the account's password policy.</p>
-        pub fn set_password_policy(
-            mut self,
-            input: std::option::Option<crate::model::PasswordPolicy>,
-        ) -> Self {
-            self.password_policy = input;
-            self
+        pub fn set_password_policy(mut self, input: std::option::Option<crate::model::PasswordPolicy>) -> Self {
+            self.password_policy = input; self
         }
         /// Consumes the builder and constructs a [`GetAccountPasswordPolicyOutput`](crate::output::GetAccountPasswordPolicyOutput).
         pub fn build(self) -> crate::output::GetAccountPasswordPolicyOutput {
             crate::output::GetAccountPasswordPolicyOutput {
-                password_policy: self.password_policy,
+                password_policy: self.password_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccountPasswordPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountPasswordPolicyOutput`](crate::output::GetAccountPasswordPolicyOutput).
@@ -6809,7 +6848,7 @@ impl GetAccountPasswordPolicyOutput {
 /// <p>Contains the response to a successful <code>GetAccountAuthorizationDetails</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountAuthorizationDetailsOutput {
+pub struct GetAccountAuthorizationDetailsOutput  {
     /// <p>A list containing information about IAM users.</p>
     #[doc(hidden)]
     pub user_detail_list: std::option::Option<std::vec::Vec<crate::model::UserDetail>>,
@@ -6831,19 +6870,19 @@ pub struct GetAccountAuthorizationDetailsOutput {
 }
 impl GetAccountAuthorizationDetailsOutput {
     /// <p>A list containing information about IAM users.</p>
-    pub fn user_detail_list(&self) -> std::option::Option<&[crate::model::UserDetail]> {
+    pub fn user_detail_list(&self) -> std::option::Option<& [crate::model::UserDetail]> {
         self.user_detail_list.as_deref()
     }
     /// <p>A list containing information about IAM groups.</p>
-    pub fn group_detail_list(&self) -> std::option::Option<&[crate::model::GroupDetail]> {
+    pub fn group_detail_list(&self) -> std::option::Option<& [crate::model::GroupDetail]> {
         self.group_detail_list.as_deref()
     }
     /// <p>A list containing information about IAM roles.</p>
-    pub fn role_detail_list(&self) -> std::option::Option<&[crate::model::RoleDetail]> {
+    pub fn role_detail_list(&self) -> std::option::Option<& [crate::model::RoleDetail]> {
         self.role_detail_list.as_deref()
     }
     /// <p>A list containing information about managed policies.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::model::ManagedPolicyDetail]> {
+    pub fn policies(&self) -> std::option::Option<& [crate::model::ManagedPolicyDetail]> {
         self.policies.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -6851,13 +6890,13 @@ impl GetAccountAuthorizationDetailsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`GetAccountAuthorizationDetailsOutput`](crate::output::GetAccountAuthorizationDetailsOutput).
 pub mod get_account_authorization_details_output {
-
+    
     /// A builder for [`GetAccountAuthorizationDetailsOutput`](crate::output::GetAccountAuthorizationDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6876,17 +6915,13 @@ pub mod get_account_authorization_details_output {
         /// <p>A list containing information about IAM users.</p>
         pub fn user_detail_list(mut self, input: crate::model::UserDetail) -> Self {
             let mut v = self.user_detail_list.unwrap_or_default();
-            v.push(input);
-            self.user_detail_list = Some(v);
-            self
+                            v.push(input);
+                            self.user_detail_list = Some(v);
+                            self
         }
         /// <p>A list containing information about IAM users.</p>
-        pub fn set_user_detail_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UserDetail>>,
-        ) -> Self {
-            self.user_detail_list = input;
-            self
+        pub fn set_user_detail_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::UserDetail>>) -> Self {
+            self.user_detail_list = input; self
         }
         /// Appends an item to `group_detail_list`.
         ///
@@ -6895,17 +6930,13 @@ pub mod get_account_authorization_details_output {
         /// <p>A list containing information about IAM groups.</p>
         pub fn group_detail_list(mut self, input: crate::model::GroupDetail) -> Self {
             let mut v = self.group_detail_list.unwrap_or_default();
-            v.push(input);
-            self.group_detail_list = Some(v);
-            self
+                            v.push(input);
+                            self.group_detail_list = Some(v);
+                            self
         }
         /// <p>A list containing information about IAM groups.</p>
-        pub fn set_group_detail_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupDetail>>,
-        ) -> Self {
-            self.group_detail_list = input;
-            self
+        pub fn set_group_detail_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupDetail>>) -> Self {
+            self.group_detail_list = input; self
         }
         /// Appends an item to `role_detail_list`.
         ///
@@ -6914,17 +6945,13 @@ pub mod get_account_authorization_details_output {
         /// <p>A list containing information about IAM roles.</p>
         pub fn role_detail_list(mut self, input: crate::model::RoleDetail) -> Self {
             let mut v = self.role_detail_list.unwrap_or_default();
-            v.push(input);
-            self.role_detail_list = Some(v);
-            self
+                            v.push(input);
+                            self.role_detail_list = Some(v);
+                            self
         }
         /// <p>A list containing information about IAM roles.</p>
-        pub fn set_role_detail_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RoleDetail>>,
-        ) -> Self {
-            self.role_detail_list = input;
-            self
+        pub fn set_role_detail_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::RoleDetail>>) -> Self {
+            self.role_detail_list = input; self
         }
         /// Appends an item to `policies`.
         ///
@@ -6933,17 +6960,13 @@ pub mod get_account_authorization_details_output {
         /// <p>A list containing information about managed policies.</p>
         pub fn policies(mut self, input: crate::model::ManagedPolicyDetail) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input);
-            self.policies = Some(v);
-            self
+                            v.push(input);
+                            self.policies = Some(v);
+                            self
         }
         /// <p>A list containing information about managed policies.</p>
-        pub fn set_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedPolicyDetail>>,
-        ) -> Self {
-            self.policies = input;
-            self
+        pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedPolicyDetail>>) -> Self {
+            self.policies = input; self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
@@ -6952,8 +6975,7 @@ pub mod get_account_authorization_details_output {
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_truncated = input;
-            self
+            self.is_truncated = input; self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6962,21 +6984,29 @@ pub mod get_account_authorization_details_output {
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`GetAccountAuthorizationDetailsOutput`](crate::output::GetAccountAuthorizationDetailsOutput).
         pub fn build(self) -> crate::output::GetAccountAuthorizationDetailsOutput {
             crate::output::GetAccountAuthorizationDetailsOutput {
-                user_detail_list: self.user_detail_list,
-                group_detail_list: self.group_detail_list,
-                role_detail_list: self.role_detail_list,
-                policies: self.policies,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                user_detail_list: self.user_detail_list
+                ,
+                group_detail_list: self.group_detail_list
+                ,
+                role_detail_list: self.role_detail_list
+                ,
+                policies: self.policies
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccountAuthorizationDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountAuthorizationDetailsOutput`](crate::output::GetAccountAuthorizationDetailsOutput).
@@ -6988,8 +7018,8 @@ impl GetAccountAuthorizationDetailsOutput {
 /// <p>Contains the response to a successful <code>GetAccessKeyLastUsed</code> request. It is also returned as a member of the <code>AccessKeyMetaData</code> structure returned by the <code>ListAccessKeys</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessKeyLastUsedOutput {
-    /// <p>The name of the IAM user that owns this access key.</p>
+pub struct GetAccessKeyLastUsedOutput  {
+    /// <p>The name of the IAM user that owns this access key.</p> 
     /// <p></p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -6998,19 +7028,19 @@ pub struct GetAccessKeyLastUsedOutput {
     pub access_key_last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
 }
 impl GetAccessKeyLastUsedOutput {
-    /// <p>The name of the IAM user that owns this access key.</p>
+    /// <p>The name of the IAM user that owns this access key.</p> 
     /// <p></p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Contains information about the last time the access key was used.</p>
-    pub fn access_key_last_used(&self) -> std::option::Option<&crate::model::AccessKeyLastUsed> {
+    pub fn access_key_last_used(&self) -> std::option::Option<& crate::model::AccessKeyLastUsed> {
         self.access_key_last_used.as_ref()
     }
 }
 /// See [`GetAccessKeyLastUsedOutput`](crate::output::GetAccessKeyLastUsedOutput).
 pub mod get_access_key_last_used_output {
-
+    
     /// A builder for [`GetAccessKeyLastUsedOutput`](crate::output::GetAccessKeyLastUsedOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7018,17 +7048,16 @@ pub mod get_access_key_last_used_output {
         pub(crate) access_key_last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
     }
     impl Builder {
-        /// <p>The name of the IAM user that owns this access key.</p>
+        /// <p>The name of the IAM user that owns this access key.</p> 
         /// <p></p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The name of the IAM user that owns this access key.</p>
+        /// <p>The name of the IAM user that owns this access key.</p> 
         /// <p></p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>Contains information about the last time the access key was used.</p>
         pub fn access_key_last_used(mut self, input: crate::model::AccessKeyLastUsed) -> Self {
@@ -7036,21 +7065,21 @@ pub mod get_access_key_last_used_output {
             self
         }
         /// <p>Contains information about the last time the access key was used.</p>
-        pub fn set_access_key_last_used(
-            mut self,
-            input: std::option::Option<crate::model::AccessKeyLastUsed>,
-        ) -> Self {
-            self.access_key_last_used = input;
-            self
+        pub fn set_access_key_last_used(mut self, input: std::option::Option<crate::model::AccessKeyLastUsed>) -> Self {
+            self.access_key_last_used = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessKeyLastUsedOutput`](crate::output::GetAccessKeyLastUsedOutput).
         pub fn build(self) -> crate::output::GetAccessKeyLastUsedOutput {
             crate::output::GetAccessKeyLastUsedOutput {
-                user_name: self.user_name,
-                access_key_last_used: self.access_key_last_used,
+                user_name: self.user_name
+                ,
+                access_key_last_used: self.access_key_last_used
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessKeyLastUsedOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessKeyLastUsedOutput`](crate::output::GetAccessKeyLastUsedOutput).
@@ -7062,20 +7091,20 @@ impl GetAccessKeyLastUsedOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateServiceLastAccessedDetailsOutput {
+pub struct GenerateServiceLastAccessedDetailsOutput  {
     /// <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GenerateServiceLastAccessedDetailsOutput {
     /// <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`GenerateServiceLastAccessedDetailsOutput`](crate::output::GenerateServiceLastAccessedDetailsOutput).
 pub mod generate_service_last_accessed_details_output {
-
+    
     /// A builder for [`GenerateServiceLastAccessedDetailsOutput`](crate::output::GenerateServiceLastAccessedDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7089,16 +7118,18 @@ pub mod generate_service_last_accessed_details_output {
         }
         /// <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`GenerateServiceLastAccessedDetailsOutput`](crate::output::GenerateServiceLastAccessedDetailsOutput).
         pub fn build(self) -> crate::output::GenerateServiceLastAccessedDetailsOutput {
             crate::output::GenerateServiceLastAccessedDetailsOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GenerateServiceLastAccessedDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GenerateServiceLastAccessedDetailsOutput`](crate::output::GenerateServiceLastAccessedDetailsOutput).
@@ -7110,20 +7141,20 @@ impl GenerateServiceLastAccessedDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateOrganizationsAccessReportOutput {
+pub struct GenerateOrganizationsAccessReportOutput  {
     /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GenerateOrganizationsAccessReportOutput {
     /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`GenerateOrganizationsAccessReportOutput`](crate::output::GenerateOrganizationsAccessReportOutput).
 pub mod generate_organizations_access_report_output {
-
+    
     /// A builder for [`GenerateOrganizationsAccessReportOutput`](crate::output::GenerateOrganizationsAccessReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7137,16 +7168,18 @@ pub mod generate_organizations_access_report_output {
         }
         /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`GenerateOrganizationsAccessReportOutput`](crate::output::GenerateOrganizationsAccessReportOutput).
         pub fn build(self) -> crate::output::GenerateOrganizationsAccessReportOutput {
             crate::output::GenerateOrganizationsAccessReportOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GenerateOrganizationsAccessReportOutput {
     /// Creates a new builder-style object to manufacture [`GenerateOrganizationsAccessReportOutput`](crate::output::GenerateOrganizationsAccessReportOutput).
@@ -7158,7 +7191,7 @@ impl GenerateOrganizationsAccessReportOutput {
 /// <p>Contains the response to a successful <code>GenerateCredentialReport</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateCredentialReportOutput {
+pub struct GenerateCredentialReportOutput  {
     /// <p>Information about the state of the credential report.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReportStateType>,
@@ -7168,17 +7201,17 @@ pub struct GenerateCredentialReportOutput {
 }
 impl GenerateCredentialReportOutput {
     /// <p>Information about the state of the credential report.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ReportStateType> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ReportStateType> {
         self.state.as_ref()
     }
     /// <p>Information about the credential report.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`GenerateCredentialReportOutput`](crate::output::GenerateCredentialReportOutput).
 pub mod generate_credential_report_output {
-
+    
     /// A builder for [`GenerateCredentialReportOutput`](crate::output::GenerateCredentialReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7192,12 +7225,8 @@ pub mod generate_credential_report_output {
             self
         }
         /// <p>Information about the state of the credential report.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ReportStateType>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ReportStateType>) -> Self {
+            self.state = input; self
         }
         /// <p>Information about the credential report.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7206,17 +7235,20 @@ pub mod generate_credential_report_output {
         }
         /// <p>Information about the credential report.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`GenerateCredentialReportOutput`](crate::output::GenerateCredentialReportOutput).
         pub fn build(self) -> crate::output::GenerateCredentialReportOutput {
             crate::output::GenerateCredentialReportOutput {
-                state: self.state,
-                description: self.description,
+                state: self.state
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl GenerateCredentialReportOutput {
     /// Creates a new builder-style object to manufacture [`GenerateCredentialReportOutput`](crate::output::GenerateCredentialReportOutput).
@@ -7228,19 +7260,24 @@ impl GenerateCredentialReportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableMfaDeviceOutput {}
+pub struct EnableMfaDeviceOutput  {
+}
 /// See [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput).
 pub mod enable_mfa_device_output {
-
+    
     /// A builder for [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput).
         pub fn build(self) -> crate::output::EnableMfaDeviceOutput {
-            crate::output::EnableMfaDeviceOutput {}
+            crate::output::EnableMfaDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput).
@@ -7252,19 +7289,24 @@ impl EnableMfaDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachUserPolicyOutput {}
+pub struct DetachUserPolicyOutput  {
+}
 /// See [`DetachUserPolicyOutput`](crate::output::DetachUserPolicyOutput).
 pub mod detach_user_policy_output {
-
+    
     /// A builder for [`DetachUserPolicyOutput`](crate::output::DetachUserPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DetachUserPolicyOutput`](crate::output::DetachUserPolicyOutput).
         pub fn build(self) -> crate::output::DetachUserPolicyOutput {
-            crate::output::DetachUserPolicyOutput {}
+            crate::output::DetachUserPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DetachUserPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DetachUserPolicyOutput`](crate::output::DetachUserPolicyOutput).
@@ -7276,19 +7318,24 @@ impl DetachUserPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachRolePolicyOutput {}
+pub struct DetachRolePolicyOutput  {
+}
 /// See [`DetachRolePolicyOutput`](crate::output::DetachRolePolicyOutput).
 pub mod detach_role_policy_output {
-
+    
     /// A builder for [`DetachRolePolicyOutput`](crate::output::DetachRolePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DetachRolePolicyOutput`](crate::output::DetachRolePolicyOutput).
         pub fn build(self) -> crate::output::DetachRolePolicyOutput {
-            crate::output::DetachRolePolicyOutput {}
+            crate::output::DetachRolePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DetachRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DetachRolePolicyOutput`](crate::output::DetachRolePolicyOutput).
@@ -7300,19 +7347,24 @@ impl DetachRolePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachGroupPolicyOutput {}
+pub struct DetachGroupPolicyOutput  {
+}
 /// See [`DetachGroupPolicyOutput`](crate::output::DetachGroupPolicyOutput).
 pub mod detach_group_policy_output {
-
+    
     /// A builder for [`DetachGroupPolicyOutput`](crate::output::DetachGroupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DetachGroupPolicyOutput`](crate::output::DetachGroupPolicyOutput).
         pub fn build(self) -> crate::output::DetachGroupPolicyOutput {
-            crate::output::DetachGroupPolicyOutput {}
+            crate::output::DetachGroupPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DetachGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DetachGroupPolicyOutput`](crate::output::DetachGroupPolicyOutput).
@@ -7324,19 +7376,24 @@ impl DetachGroupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualMfaDeviceOutput {}
+pub struct DeleteVirtualMfaDeviceOutput  {
+}
 /// See [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput).
 pub mod delete_virtual_mfa_device_output {
-
+    
     /// A builder for [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput).
         pub fn build(self) -> crate::output::DeleteVirtualMfaDeviceOutput {
-            crate::output::DeleteVirtualMfaDeviceOutput {}
+            crate::output::DeleteVirtualMfaDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVirtualMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput).
@@ -7348,19 +7405,24 @@ impl DeleteVirtualMfaDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserPolicyOutput {}
+pub struct DeleteUserPolicyOutput  {
+}
 /// See [`DeleteUserPolicyOutput`](crate::output::DeleteUserPolicyOutput).
 pub mod delete_user_policy_output {
-
+    
     /// A builder for [`DeleteUserPolicyOutput`](crate::output::DeleteUserPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserPolicyOutput`](crate::output::DeleteUserPolicyOutput).
         pub fn build(self) -> crate::output::DeleteUserPolicyOutput {
-            crate::output::DeleteUserPolicyOutput {}
+            crate::output::DeleteUserPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteUserPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserPolicyOutput`](crate::output::DeleteUserPolicyOutput).
@@ -7372,19 +7434,24 @@ impl DeleteUserPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserPermissionsBoundaryOutput {}
+pub struct DeleteUserPermissionsBoundaryOutput  {
+}
 /// See [`DeleteUserPermissionsBoundaryOutput`](crate::output::DeleteUserPermissionsBoundaryOutput).
 pub mod delete_user_permissions_boundary_output {
-
+    
     /// A builder for [`DeleteUserPermissionsBoundaryOutput`](crate::output::DeleteUserPermissionsBoundaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserPermissionsBoundaryOutput`](crate::output::DeleteUserPermissionsBoundaryOutput).
         pub fn build(self) -> crate::output::DeleteUserPermissionsBoundaryOutput {
-            crate::output::DeleteUserPermissionsBoundaryOutput {}
+            crate::output::DeleteUserPermissionsBoundaryOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteUserPermissionsBoundaryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserPermissionsBoundaryOutput`](crate::output::DeleteUserPermissionsBoundaryOutput).
@@ -7396,19 +7463,24 @@ impl DeleteUserPermissionsBoundaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserOutput {}
+pub struct DeleteUserOutput  {
+}
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
-
+    
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
         pub fn build(self) -> crate::output::DeleteUserOutput {
-            crate::output::DeleteUserOutput {}
+            crate::output::DeleteUserOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteUserOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -7420,19 +7492,24 @@ impl DeleteUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSshPublicKeyOutput {}
+pub struct DeleteSshPublicKeyOutput  {
+}
 /// See [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
 pub mod delete_ssh_public_key_output {
-
+    
     /// A builder for [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
         pub fn build(self) -> crate::output::DeleteSshPublicKeyOutput {
-            crate::output::DeleteSshPublicKeyOutput {}
+            crate::output::DeleteSshPublicKeyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
@@ -7444,19 +7521,24 @@ impl DeleteSshPublicKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSigningCertificateOutput {}
+pub struct DeleteSigningCertificateOutput  {
+}
 /// See [`DeleteSigningCertificateOutput`](crate::output::DeleteSigningCertificateOutput).
 pub mod delete_signing_certificate_output {
-
+    
     /// A builder for [`DeleteSigningCertificateOutput`](crate::output::DeleteSigningCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSigningCertificateOutput`](crate::output::DeleteSigningCertificateOutput).
         pub fn build(self) -> crate::output::DeleteSigningCertificateOutput {
-            crate::output::DeleteSigningCertificateOutput {}
+            crate::output::DeleteSigningCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSigningCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSigningCertificateOutput`](crate::output::DeleteSigningCertificateOutput).
@@ -7468,19 +7550,24 @@ impl DeleteSigningCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceSpecificCredentialOutput {}
+pub struct DeleteServiceSpecificCredentialOutput  {
+}
 /// See [`DeleteServiceSpecificCredentialOutput`](crate::output::DeleteServiceSpecificCredentialOutput).
 pub mod delete_service_specific_credential_output {
-
+    
     /// A builder for [`DeleteServiceSpecificCredentialOutput`](crate::output::DeleteServiceSpecificCredentialOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServiceSpecificCredentialOutput`](crate::output::DeleteServiceSpecificCredentialOutput).
         pub fn build(self) -> crate::output::DeleteServiceSpecificCredentialOutput {
-            crate::output::DeleteServiceSpecificCredentialOutput {}
+            crate::output::DeleteServiceSpecificCredentialOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteServiceSpecificCredentialOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceSpecificCredentialOutput`](crate::output::DeleteServiceSpecificCredentialOutput).
@@ -7492,7 +7579,7 @@ impl DeleteServiceSpecificCredentialOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceLinkedRoleOutput {
+pub struct DeleteServiceLinkedRoleOutput  {
     /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
     /// <service-principal-name>
     /// /
@@ -7513,13 +7600,13 @@ impl DeleteServiceLinkedRoleOutput {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    pub fn deletion_task_id(&self) -> std::option::Option<&str> {
+    pub fn deletion_task_id(&self) -> std::option::Option<& str> {
         self.deletion_task_id.as_deref()
     }
 }
 /// See [`DeleteServiceLinkedRoleOutput`](crate::output::DeleteServiceLinkedRoleOutput).
 pub mod delete_service_linked_role_output {
-
+    
     /// A builder for [`DeleteServiceLinkedRoleOutput`](crate::output::DeleteServiceLinkedRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7546,20 +7633,19 @@ pub mod delete_service_linked_role_output {
         /// <task-uuid></task-uuid>
         /// </role-name>
         /// </service-principal-name></code>.</p>
-        pub fn set_deletion_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deletion_task_id = input;
-            self
+        pub fn set_deletion_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deletion_task_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteServiceLinkedRoleOutput`](crate::output::DeleteServiceLinkedRoleOutput).
         pub fn build(self) -> crate::output::DeleteServiceLinkedRoleOutput {
             crate::output::DeleteServiceLinkedRoleOutput {
-                deletion_task_id: self.deletion_task_id,
+                deletion_task_id: self.deletion_task_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteServiceLinkedRoleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceLinkedRoleOutput`](crate::output::DeleteServiceLinkedRoleOutput).
@@ -7571,19 +7657,24 @@ impl DeleteServiceLinkedRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServerCertificateOutput {}
+pub struct DeleteServerCertificateOutput  {
+}
 /// See [`DeleteServerCertificateOutput`](crate::output::DeleteServerCertificateOutput).
 pub mod delete_server_certificate_output {
-
+    
     /// A builder for [`DeleteServerCertificateOutput`](crate::output::DeleteServerCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServerCertificateOutput`](crate::output::DeleteServerCertificateOutput).
         pub fn build(self) -> crate::output::DeleteServerCertificateOutput {
-            crate::output::DeleteServerCertificateOutput {}
+            crate::output::DeleteServerCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServerCertificateOutput`](crate::output::DeleteServerCertificateOutput).
@@ -7595,19 +7686,24 @@ impl DeleteServerCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSamlProviderOutput {}
+pub struct DeleteSamlProviderOutput  {
+}
 /// See [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput).
 pub mod delete_saml_provider_output {
-
+    
     /// A builder for [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput).
         pub fn build(self) -> crate::output::DeleteSamlProviderOutput {
-            crate::output::DeleteSamlProviderOutput {}
+            crate::output::DeleteSamlProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput).
@@ -7619,19 +7715,24 @@ impl DeleteSamlProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRolePolicyOutput {}
+pub struct DeleteRolePolicyOutput  {
+}
 /// See [`DeleteRolePolicyOutput`](crate::output::DeleteRolePolicyOutput).
 pub mod delete_role_policy_output {
-
+    
     /// A builder for [`DeleteRolePolicyOutput`](crate::output::DeleteRolePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRolePolicyOutput`](crate::output::DeleteRolePolicyOutput).
         pub fn build(self) -> crate::output::DeleteRolePolicyOutput {
-            crate::output::DeleteRolePolicyOutput {}
+            crate::output::DeleteRolePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRolePolicyOutput`](crate::output::DeleteRolePolicyOutput).
@@ -7643,19 +7744,24 @@ impl DeleteRolePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRolePermissionsBoundaryOutput {}
+pub struct DeleteRolePermissionsBoundaryOutput  {
+}
 /// See [`DeleteRolePermissionsBoundaryOutput`](crate::output::DeleteRolePermissionsBoundaryOutput).
 pub mod delete_role_permissions_boundary_output {
-
+    
     /// A builder for [`DeleteRolePermissionsBoundaryOutput`](crate::output::DeleteRolePermissionsBoundaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRolePermissionsBoundaryOutput`](crate::output::DeleteRolePermissionsBoundaryOutput).
         pub fn build(self) -> crate::output::DeleteRolePermissionsBoundaryOutput {
-            crate::output::DeleteRolePermissionsBoundaryOutput {}
+            crate::output::DeleteRolePermissionsBoundaryOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRolePermissionsBoundaryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRolePermissionsBoundaryOutput`](crate::output::DeleteRolePermissionsBoundaryOutput).
@@ -7667,19 +7773,24 @@ impl DeleteRolePermissionsBoundaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRoleOutput {}
+pub struct DeleteRoleOutput  {
+}
 /// See [`DeleteRoleOutput`](crate::output::DeleteRoleOutput).
 pub mod delete_role_output {
-
+    
     /// A builder for [`DeleteRoleOutput`](crate::output::DeleteRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRoleOutput`](crate::output::DeleteRoleOutput).
         pub fn build(self) -> crate::output::DeleteRoleOutput {
-            crate::output::DeleteRoleOutput {}
+            crate::output::DeleteRoleOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRoleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRoleOutput`](crate::output::DeleteRoleOutput).
@@ -7691,19 +7802,24 @@ impl DeleteRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyVersionOutput {}
+pub struct DeletePolicyVersionOutput  {
+}
 /// See [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput).
 pub mod delete_policy_version_output {
-
+    
     /// A builder for [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput).
         pub fn build(self) -> crate::output::DeletePolicyVersionOutput {
-            crate::output::DeletePolicyVersionOutput {}
+            crate::output::DeletePolicyVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput).
@@ -7715,19 +7831,24 @@ impl DeletePolicyVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyOutput {}
+pub struct DeletePolicyOutput  {
+}
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
 pub mod delete_policy_output {
-
+    
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
         pub fn build(self) -> crate::output::DeletePolicyOutput {
-            crate::output::DeletePolicyOutput {}
+            crate::output::DeletePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
@@ -7739,19 +7860,24 @@ impl DeletePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOpenIdConnectProviderOutput {}
+pub struct DeleteOpenIdConnectProviderOutput  {
+}
 /// See [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput).
 pub mod delete_open_id_connect_provider_output {
-
+    
     /// A builder for [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput).
         pub fn build(self) -> crate::output::DeleteOpenIdConnectProviderOutput {
-            crate::output::DeleteOpenIdConnectProviderOutput {}
+            crate::output::DeleteOpenIdConnectProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput).
@@ -7763,19 +7889,24 @@ impl DeleteOpenIdConnectProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoginProfileOutput {}
+pub struct DeleteLoginProfileOutput  {
+}
 /// See [`DeleteLoginProfileOutput`](crate::output::DeleteLoginProfileOutput).
 pub mod delete_login_profile_output {
-
+    
     /// A builder for [`DeleteLoginProfileOutput`](crate::output::DeleteLoginProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoginProfileOutput`](crate::output::DeleteLoginProfileOutput).
         pub fn build(self) -> crate::output::DeleteLoginProfileOutput {
-            crate::output::DeleteLoginProfileOutput {}
+            crate::output::DeleteLoginProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLoginProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoginProfileOutput`](crate::output::DeleteLoginProfileOutput).
@@ -7787,19 +7918,24 @@ impl DeleteLoginProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInstanceProfileOutput {}
+pub struct DeleteInstanceProfileOutput  {
+}
 /// See [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput).
 pub mod delete_instance_profile_output {
-
+    
     /// A builder for [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput).
         pub fn build(self) -> crate::output::DeleteInstanceProfileOutput {
-            crate::output::DeleteInstanceProfileOutput {}
+            crate::output::DeleteInstanceProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput).
@@ -7811,19 +7947,24 @@ impl DeleteInstanceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupPolicyOutput {}
+pub struct DeleteGroupPolicyOutput  {
+}
 /// See [`DeleteGroupPolicyOutput`](crate::output::DeleteGroupPolicyOutput).
 pub mod delete_group_policy_output {
-
+    
     /// A builder for [`DeleteGroupPolicyOutput`](crate::output::DeleteGroupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupPolicyOutput`](crate::output::DeleteGroupPolicyOutput).
         pub fn build(self) -> crate::output::DeleteGroupPolicyOutput {
-            crate::output::DeleteGroupPolicyOutput {}
+            crate::output::DeleteGroupPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupPolicyOutput`](crate::output::DeleteGroupPolicyOutput).
@@ -7835,19 +7976,24 @@ impl DeleteGroupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupOutput {}
+pub struct DeleteGroupOutput  {
+}
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
 pub mod delete_group_output {
-
+    
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
         pub fn build(self) -> crate::output::DeleteGroupOutput {
-            crate::output::DeleteGroupOutput {}
+            crate::output::DeleteGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -7859,19 +8005,24 @@ impl DeleteGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountPasswordPolicyOutput {}
+pub struct DeleteAccountPasswordPolicyOutput  {
+}
 /// See [`DeleteAccountPasswordPolicyOutput`](crate::output::DeleteAccountPasswordPolicyOutput).
 pub mod delete_account_password_policy_output {
-
+    
     /// A builder for [`DeleteAccountPasswordPolicyOutput`](crate::output::DeleteAccountPasswordPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccountPasswordPolicyOutput`](crate::output::DeleteAccountPasswordPolicyOutput).
         pub fn build(self) -> crate::output::DeleteAccountPasswordPolicyOutput {
-            crate::output::DeleteAccountPasswordPolicyOutput {}
+            crate::output::DeleteAccountPasswordPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccountPasswordPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountPasswordPolicyOutput`](crate::output::DeleteAccountPasswordPolicyOutput).
@@ -7883,19 +8034,24 @@ impl DeleteAccountPasswordPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountAliasOutput {}
+pub struct DeleteAccountAliasOutput  {
+}
 /// See [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
 pub mod delete_account_alias_output {
-
+    
     /// A builder for [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
         pub fn build(self) -> crate::output::DeleteAccountAliasOutput {
-            crate::output::DeleteAccountAliasOutput {}
+            crate::output::DeleteAccountAliasOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccountAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
@@ -7907,19 +8063,24 @@ impl DeleteAccountAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessKeyOutput {}
+pub struct DeleteAccessKeyOutput  {
+}
 /// See [`DeleteAccessKeyOutput`](crate::output::DeleteAccessKeyOutput).
 pub mod delete_access_key_output {
-
+    
     /// A builder for [`DeleteAccessKeyOutput`](crate::output::DeleteAccessKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessKeyOutput`](crate::output::DeleteAccessKeyOutput).
         pub fn build(self) -> crate::output::DeleteAccessKeyOutput {
-            crate::output::DeleteAccessKeyOutput {}
+            crate::output::DeleteAccessKeyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessKeyOutput`](crate::output::DeleteAccessKeyOutput).
@@ -7931,19 +8092,24 @@ impl DeleteAccessKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateMfaDeviceOutput {}
+pub struct DeactivateMfaDeviceOutput  {
+}
 /// See [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput).
 pub mod deactivate_mfa_device_output {
-
+    
     /// A builder for [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput).
         pub fn build(self) -> crate::output::DeactivateMfaDeviceOutput {
-            crate::output::DeactivateMfaDeviceOutput {}
+            crate::output::DeactivateMfaDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeactivateMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput).
@@ -7955,20 +8121,20 @@ impl DeactivateMfaDeviceOutput {
 /// <p>Contains the response to a successful <code>CreateVirtualMFADevice</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualMfaDeviceOutput {
+pub struct CreateVirtualMfaDeviceOutput  {
     /// <p>A structure containing details about the new virtual MFA device.</p>
     #[doc(hidden)]
     pub virtual_mfa_device: std::option::Option<crate::model::VirtualMfaDevice>,
 }
 impl CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
-    pub fn virtual_mfa_device(&self) -> std::option::Option<&crate::model::VirtualMfaDevice> {
+    pub fn virtual_mfa_device(&self) -> std::option::Option<& crate::model::VirtualMfaDevice> {
         self.virtual_mfa_device.as_ref()
     }
 }
 /// See [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput).
 pub mod create_virtual_mfa_device_output {
-
+    
     /// A builder for [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7981,20 +8147,19 @@ pub mod create_virtual_mfa_device_output {
             self
         }
         /// <p>A structure containing details about the new virtual MFA device.</p>
-        pub fn set_virtual_mfa_device(
-            mut self,
-            input: std::option::Option<crate::model::VirtualMfaDevice>,
-        ) -> Self {
-            self.virtual_mfa_device = input;
-            self
+        pub fn set_virtual_mfa_device(mut self, input: std::option::Option<crate::model::VirtualMfaDevice>) -> Self {
+            self.virtual_mfa_device = input; self
         }
         /// Consumes the builder and constructs a [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput).
         pub fn build(self) -> crate::output::CreateVirtualMfaDeviceOutput {
             crate::output::CreateVirtualMfaDeviceOutput {
-                virtual_mfa_device: self.virtual_mfa_device,
+                virtual_mfa_device: self.virtual_mfa_device
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVirtualMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput).
@@ -8006,20 +8171,20 @@ impl CreateVirtualMfaDeviceOutput {
 /// <p>Contains the response to a successful <code>CreateUser</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserOutput {
+pub struct CreateUserOutput  {
     /// <p>A structure with details about the new IAM user.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl CreateUserOutput {
     /// <p>A structure with details about the new IAM user.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
-
+    
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8033,14 +8198,18 @@ pub mod create_user_output {
         }
         /// <p>A structure with details about the new IAM user.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput).
         pub fn build(self) -> crate::output::CreateUserOutput {
-            crate::output::CreateUserOutput { user: self.user }
+            crate::output::CreateUserOutput {
+                user: self.user
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateUserOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
@@ -8052,60 +8221,53 @@ impl CreateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceSpecificCredentialOutput {
-    /// <p>A structure that contains information about the newly created service-specific credential.</p> <important>
-    /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
+pub struct CreateServiceSpecificCredentialOutput  {
+    /// <p>A structure that contains information about the newly created service-specific credential.</p> <important> 
+    /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p> 
     /// </important>
     #[doc(hidden)]
     pub service_specific_credential: std::option::Option<crate::model::ServiceSpecificCredential>,
 }
 impl CreateServiceSpecificCredentialOutput {
-    /// <p>A structure that contains information about the newly created service-specific credential.</p> <important>
-    /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
+    /// <p>A structure that contains information about the newly created service-specific credential.</p> <important> 
+    /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p> 
     /// </important>
-    pub fn service_specific_credential(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceSpecificCredential> {
+    pub fn service_specific_credential(&self) -> std::option::Option<& crate::model::ServiceSpecificCredential> {
         self.service_specific_credential.as_ref()
     }
 }
 /// See [`CreateServiceSpecificCredentialOutput`](crate::output::CreateServiceSpecificCredentialOutput).
 pub mod create_service_specific_credential_output {
-
+    
     /// A builder for [`CreateServiceSpecificCredentialOutput`](crate::output::CreateServiceSpecificCredentialOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_specific_credential:
-            std::option::Option<crate::model::ServiceSpecificCredential>,
+        pub(crate) service_specific_credential: std::option::Option<crate::model::ServiceSpecificCredential>,
     }
     impl Builder {
-        /// <p>A structure that contains information about the newly created service-specific credential.</p> <important>
-        /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
+        /// <p>A structure that contains information about the newly created service-specific credential.</p> <important> 
+        /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p> 
         /// </important>
-        pub fn service_specific_credential(
-            mut self,
-            input: crate::model::ServiceSpecificCredential,
-        ) -> Self {
+        pub fn service_specific_credential(mut self, input: crate::model::ServiceSpecificCredential) -> Self {
             self.service_specific_credential = Some(input);
             self
         }
-        /// <p>A structure that contains information about the newly created service-specific credential.</p> <important>
-        /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
+        /// <p>A structure that contains information about the newly created service-specific credential.</p> <important> 
+        /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p> 
         /// </important>
-        pub fn set_service_specific_credential(
-            mut self,
-            input: std::option::Option<crate::model::ServiceSpecificCredential>,
-        ) -> Self {
-            self.service_specific_credential = input;
-            self
+        pub fn set_service_specific_credential(mut self, input: std::option::Option<crate::model::ServiceSpecificCredential>) -> Self {
+            self.service_specific_credential = input; self
         }
         /// Consumes the builder and constructs a [`CreateServiceSpecificCredentialOutput`](crate::output::CreateServiceSpecificCredentialOutput).
         pub fn build(self) -> crate::output::CreateServiceSpecificCredentialOutput {
             crate::output::CreateServiceSpecificCredentialOutput {
-                service_specific_credential: self.service_specific_credential,
+                service_specific_credential: self.service_specific_credential
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateServiceSpecificCredentialOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceSpecificCredentialOutput`](crate::output::CreateServiceSpecificCredentialOutput).
@@ -8117,20 +8279,20 @@ impl CreateServiceSpecificCredentialOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceLinkedRoleOutput {
+pub struct CreateServiceLinkedRoleOutput  {
     /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
     #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
 impl CreateServiceLinkedRoleOutput {
     /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+    pub fn role(&self) -> std::option::Option<& crate::model::Role> {
         self.role.as_ref()
     }
 }
 /// See [`CreateServiceLinkedRoleOutput`](crate::output::CreateServiceLinkedRoleOutput).
 pub mod create_service_linked_role_output {
-
+    
     /// A builder for [`CreateServiceLinkedRoleOutput`](crate::output::CreateServiceLinkedRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8144,14 +8306,18 @@ pub mod create_service_linked_role_output {
         }
         /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// Consumes the builder and constructs a [`CreateServiceLinkedRoleOutput`](crate::output::CreateServiceLinkedRoleOutput).
         pub fn build(self) -> crate::output::CreateServiceLinkedRoleOutput {
-            crate::output::CreateServiceLinkedRoleOutput { role: self.role }
+            crate::output::CreateServiceLinkedRoleOutput {
+                role: self.role
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateServiceLinkedRoleOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceLinkedRoleOutput`](crate::output::CreateServiceLinkedRoleOutput).
@@ -8163,7 +8329,7 @@ impl CreateServiceLinkedRoleOutput {
 /// <p>Contains the response to a successful <code>CreateSAMLProvider</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSamlProviderOutput {
+pub struct CreateSamlProviderOutput  {
     /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
     #[doc(hidden)]
     pub saml_provider_arn: std::option::Option<std::string::String>,
@@ -8173,17 +8339,17 @@ pub struct CreateSamlProviderOutput {
 }
 impl CreateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn saml_provider_arn(&self) -> std::option::Option<& str> {
         self.saml_provider_arn.as_deref()
     }
     /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput).
 pub mod create_saml_provider_output {
-
+    
     /// A builder for [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8197,12 +8363,8 @@ pub mod create_saml_provider_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-        pub fn set_saml_provider_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.saml_provider_arn = input;
-            self
+        pub fn set_saml_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.saml_provider_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -8211,26 +8373,26 @@ pub mod create_saml_provider_output {
         /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput).
         pub fn build(self) -> crate::output::CreateSamlProviderOutput {
             crate::output::CreateSamlProviderOutput {
-                saml_provider_arn: self.saml_provider_arn,
-                tags: self.tags,
+                saml_provider_arn: self.saml_provider_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput).
@@ -8242,20 +8404,20 @@ impl CreateSamlProviderOutput {
 /// <p>Contains the response to a successful <code>CreateRole</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRoleOutput {
+pub struct CreateRoleOutput  {
     /// <p>A structure containing details about the new role.</p>
     #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
 impl CreateRoleOutput {
     /// <p>A structure containing details about the new role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+    pub fn role(&self) -> std::option::Option<& crate::model::Role> {
         self.role.as_ref()
     }
 }
 /// See [`CreateRoleOutput`](crate::output::CreateRoleOutput).
 pub mod create_role_output {
-
+    
     /// A builder for [`CreateRoleOutput`](crate::output::CreateRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8269,14 +8431,18 @@ pub mod create_role_output {
         }
         /// <p>A structure containing details about the new role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// Consumes the builder and constructs a [`CreateRoleOutput`](crate::output::CreateRoleOutput).
         pub fn build(self) -> crate::output::CreateRoleOutput {
-            crate::output::CreateRoleOutput { role: self.role }
+            crate::output::CreateRoleOutput {
+                role: self.role
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateRoleOutput {
     /// Creates a new builder-style object to manufacture [`CreateRoleOutput`](crate::output::CreateRoleOutput).
@@ -8288,20 +8454,20 @@ impl CreateRoleOutput {
 /// <p>Contains the response to a successful <code>CreatePolicyVersion</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePolicyVersionOutput {
+pub struct CreatePolicyVersionOutput  {
     /// <p>A structure containing details about the new policy version.</p>
     #[doc(hidden)]
     pub policy_version: std::option::Option<crate::model::PolicyVersion>,
 }
 impl CreatePolicyVersionOutput {
     /// <p>A structure containing details about the new policy version.</p>
-    pub fn policy_version(&self) -> std::option::Option<&crate::model::PolicyVersion> {
+    pub fn policy_version(&self) -> std::option::Option<& crate::model::PolicyVersion> {
         self.policy_version.as_ref()
     }
 }
 /// See [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput).
 pub mod create_policy_version_output {
-
+    
     /// A builder for [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8314,20 +8480,19 @@ pub mod create_policy_version_output {
             self
         }
         /// <p>A structure containing details about the new policy version.</p>
-        pub fn set_policy_version(
-            mut self,
-            input: std::option::Option<crate::model::PolicyVersion>,
-        ) -> Self {
-            self.policy_version = input;
-            self
+        pub fn set_policy_version(mut self, input: std::option::Option<crate::model::PolicyVersion>) -> Self {
+            self.policy_version = input; self
         }
         /// Consumes the builder and constructs a [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput).
         pub fn build(self) -> crate::output::CreatePolicyVersionOutput {
             crate::output::CreatePolicyVersionOutput {
-                policy_version: self.policy_version,
+                policy_version: self.policy_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput).
@@ -8339,20 +8504,20 @@ impl CreatePolicyVersionOutput {
 /// <p>Contains the response to a successful <code>CreatePolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePolicyOutput {
+pub struct CreatePolicyOutput  {
     /// <p>A structure containing details about the new policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl CreatePolicyOutput {
     /// <p>A structure containing details about the new policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
 }
 /// See [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
 pub mod create_policy_output {
-
+    
     /// A builder for [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8366,16 +8531,18 @@ pub mod create_policy_output {
         }
         /// <p>A structure containing details about the new policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
         pub fn build(self) -> crate::output::CreatePolicyOutput {
             crate::output::CreatePolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
@@ -8387,7 +8554,7 @@ impl CreatePolicyOutput {
 /// <p>Contains the response to a successful <code>CreateOpenIDConnectProvider</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOpenIdConnectProviderOutput {
+pub struct CreateOpenIdConnectProviderOutput  {
     /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
     #[doc(hidden)]
     pub open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -8397,17 +8564,17 @@ pub struct CreateOpenIdConnectProviderOutput {
 }
 impl CreateOpenIdConnectProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
-    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<& str> {
         self.open_id_connect_provider_arn.as_deref()
     }
     /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput).
 pub mod create_open_id_connect_provider_output {
-
+    
     /// A builder for [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8416,20 +8583,13 @@ pub mod create_open_id_connect_provider_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
-        pub fn open_id_connect_provider_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn open_id_connect_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
-        pub fn set_open_id_connect_provider_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.open_id_connect_provider_arn = input;
-            self
+        pub fn set_open_id_connect_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.open_id_connect_provider_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -8438,26 +8598,26 @@ pub mod create_open_id_connect_provider_output {
         /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput).
         pub fn build(self) -> crate::output::CreateOpenIdConnectProviderOutput {
             crate::output::CreateOpenIdConnectProviderOutput {
-                open_id_connect_provider_arn: self.open_id_connect_provider_arn,
-                tags: self.tags,
+                open_id_connect_provider_arn: self.open_id_connect_provider_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput).
@@ -8469,20 +8629,20 @@ impl CreateOpenIdConnectProviderOutput {
 /// <p>Contains the response to a successful <code>CreateLoginProfile</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoginProfileOutput {
+pub struct CreateLoginProfileOutput  {
     /// <p>A structure containing the user name and password create date.</p>
     #[doc(hidden)]
     pub login_profile: std::option::Option<crate::model::LoginProfile>,
 }
 impl CreateLoginProfileOutput {
     /// <p>A structure containing the user name and password create date.</p>
-    pub fn login_profile(&self) -> std::option::Option<&crate::model::LoginProfile> {
+    pub fn login_profile(&self) -> std::option::Option<& crate::model::LoginProfile> {
         self.login_profile.as_ref()
     }
 }
 /// See [`CreateLoginProfileOutput`](crate::output::CreateLoginProfileOutput).
 pub mod create_login_profile_output {
-
+    
     /// A builder for [`CreateLoginProfileOutput`](crate::output::CreateLoginProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8495,20 +8655,19 @@ pub mod create_login_profile_output {
             self
         }
         /// <p>A structure containing the user name and password create date.</p>
-        pub fn set_login_profile(
-            mut self,
-            input: std::option::Option<crate::model::LoginProfile>,
-        ) -> Self {
-            self.login_profile = input;
-            self
+        pub fn set_login_profile(mut self, input: std::option::Option<crate::model::LoginProfile>) -> Self {
+            self.login_profile = input; self
         }
         /// Consumes the builder and constructs a [`CreateLoginProfileOutput`](crate::output::CreateLoginProfileOutput).
         pub fn build(self) -> crate::output::CreateLoginProfileOutput {
             crate::output::CreateLoginProfileOutput {
-                login_profile: self.login_profile,
+                login_profile: self.login_profile
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLoginProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoginProfileOutput`](crate::output::CreateLoginProfileOutput).
@@ -8520,20 +8679,20 @@ impl CreateLoginProfileOutput {
 /// <p>Contains the response to a successful <code>CreateInstanceProfile</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstanceProfileOutput {
+pub struct CreateInstanceProfileOutput  {
     /// <p>A structure containing details about the new instance profile.</p>
     #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
 impl CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
-    pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
+    pub fn instance_profile(&self) -> std::option::Option<& crate::model::InstanceProfile> {
         self.instance_profile.as_ref()
     }
 }
 /// See [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput).
 pub mod create_instance_profile_output {
-
+    
     /// A builder for [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8546,20 +8705,19 @@ pub mod create_instance_profile_output {
             self
         }
         /// <p>A structure containing details about the new instance profile.</p>
-        pub fn set_instance_profile(
-            mut self,
-            input: std::option::Option<crate::model::InstanceProfile>,
-        ) -> Self {
-            self.instance_profile = input;
-            self
+        pub fn set_instance_profile(mut self, input: std::option::Option<crate::model::InstanceProfile>) -> Self {
+            self.instance_profile = input; self
         }
         /// Consumes the builder and constructs a [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput).
         pub fn build(self) -> crate::output::CreateInstanceProfileOutput {
             crate::output::CreateInstanceProfileOutput {
-                instance_profile: self.instance_profile,
+                instance_profile: self.instance_profile
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput).
@@ -8571,20 +8729,20 @@ impl CreateInstanceProfileOutput {
 /// <p>Contains the response to a successful <code>CreateGroup</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupOutput {
+pub struct CreateGroupOutput  {
     /// <p>A structure containing details about the new group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl CreateGroupOutput {
     /// <p>A structure containing details about the new group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
 pub mod create_group_output {
-
+    
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8598,14 +8756,18 @@ pub mod create_group_output {
         }
         /// <p>A structure containing details about the new group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput).
         pub fn build(self) -> crate::output::CreateGroupOutput {
-            crate::output::CreateGroupOutput { group: self.group }
+            crate::output::CreateGroupOutput {
+                group: self.group
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupOutput`](crate::output::CreateGroupOutput).
@@ -8617,19 +8779,24 @@ impl CreateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccountAliasOutput {}
+pub struct CreateAccountAliasOutput  {
+}
 /// See [`CreateAccountAliasOutput`](crate::output::CreateAccountAliasOutput).
 pub mod create_account_alias_output {
-
+    
     /// A builder for [`CreateAccountAliasOutput`](crate::output::CreateAccountAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateAccountAliasOutput`](crate::output::CreateAccountAliasOutput).
         pub fn build(self) -> crate::output::CreateAccountAliasOutput {
-            crate::output::CreateAccountAliasOutput {}
+            crate::output::CreateAccountAliasOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateAccountAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccountAliasOutput`](crate::output::CreateAccountAliasOutput).
@@ -8641,20 +8808,20 @@ impl CreateAccountAliasOutput {
 /// <p>Contains the response to a successful <code>CreateAccessKey</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessKeyOutput {
+pub struct CreateAccessKeyOutput  {
     /// <p>A structure with details about the access key.</p>
     #[doc(hidden)]
     pub access_key: std::option::Option<crate::model::AccessKey>,
 }
 impl CreateAccessKeyOutput {
     /// <p>A structure with details about the access key.</p>
-    pub fn access_key(&self) -> std::option::Option<&crate::model::AccessKey> {
+    pub fn access_key(&self) -> std::option::Option<& crate::model::AccessKey> {
         self.access_key.as_ref()
     }
 }
 /// See [`CreateAccessKeyOutput`](crate::output::CreateAccessKeyOutput).
 pub mod create_access_key_output {
-
+    
     /// A builder for [`CreateAccessKeyOutput`](crate::output::CreateAccessKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8667,20 +8834,19 @@ pub mod create_access_key_output {
             self
         }
         /// <p>A structure with details about the access key.</p>
-        pub fn set_access_key(
-            mut self,
-            input: std::option::Option<crate::model::AccessKey>,
-        ) -> Self {
-            self.access_key = input;
-            self
+        pub fn set_access_key(mut self, input: std::option::Option<crate::model::AccessKey>) -> Self {
+            self.access_key = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccessKeyOutput`](crate::output::CreateAccessKeyOutput).
         pub fn build(self) -> crate::output::CreateAccessKeyOutput {
             crate::output::CreateAccessKeyOutput {
-                access_key: self.access_key,
+                access_key: self.access_key
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccessKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessKeyOutput`](crate::output::CreateAccessKeyOutput).
@@ -8692,19 +8858,24 @@ impl CreateAccessKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangePasswordOutput {}
+pub struct ChangePasswordOutput  {
+}
 /// See [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
 pub mod change_password_output {
-
+    
     /// A builder for [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
         pub fn build(self) -> crate::output::ChangePasswordOutput {
-            crate::output::ChangePasswordOutput {}
+            crate::output::ChangePasswordOutput {
+            }
         }
     }
+    
+    
 }
 impl ChangePasswordOutput {
     /// Creates a new builder-style object to manufacture [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
@@ -8716,19 +8887,24 @@ impl ChangePasswordOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachUserPolicyOutput {}
+pub struct AttachUserPolicyOutput  {
+}
 /// See [`AttachUserPolicyOutput`](crate::output::AttachUserPolicyOutput).
 pub mod attach_user_policy_output {
-
+    
     /// A builder for [`AttachUserPolicyOutput`](crate::output::AttachUserPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AttachUserPolicyOutput`](crate::output::AttachUserPolicyOutput).
         pub fn build(self) -> crate::output::AttachUserPolicyOutput {
-            crate::output::AttachUserPolicyOutput {}
+            crate::output::AttachUserPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl AttachUserPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachUserPolicyOutput`](crate::output::AttachUserPolicyOutput).
@@ -8740,19 +8916,24 @@ impl AttachUserPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachRolePolicyOutput {}
+pub struct AttachRolePolicyOutput  {
+}
 /// See [`AttachRolePolicyOutput`](crate::output::AttachRolePolicyOutput).
 pub mod attach_role_policy_output {
-
+    
     /// A builder for [`AttachRolePolicyOutput`](crate::output::AttachRolePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AttachRolePolicyOutput`](crate::output::AttachRolePolicyOutput).
         pub fn build(self) -> crate::output::AttachRolePolicyOutput {
-            crate::output::AttachRolePolicyOutput {}
+            crate::output::AttachRolePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl AttachRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachRolePolicyOutput`](crate::output::AttachRolePolicyOutput).
@@ -8764,19 +8945,24 @@ impl AttachRolePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachGroupPolicyOutput {}
+pub struct AttachGroupPolicyOutput  {
+}
 /// See [`AttachGroupPolicyOutput`](crate::output::AttachGroupPolicyOutput).
 pub mod attach_group_policy_output {
-
+    
     /// A builder for [`AttachGroupPolicyOutput`](crate::output::AttachGroupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AttachGroupPolicyOutput`](crate::output::AttachGroupPolicyOutput).
         pub fn build(self) -> crate::output::AttachGroupPolicyOutput {
-            crate::output::AttachGroupPolicyOutput {}
+            crate::output::AttachGroupPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl AttachGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachGroupPolicyOutput`](crate::output::AttachGroupPolicyOutput).
@@ -8788,19 +8974,24 @@ impl AttachGroupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddUserToGroupOutput {}
+pub struct AddUserToGroupOutput  {
+}
 /// See [`AddUserToGroupOutput`](crate::output::AddUserToGroupOutput).
 pub mod add_user_to_group_output {
-
+    
     /// A builder for [`AddUserToGroupOutput`](crate::output::AddUserToGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddUserToGroupOutput`](crate::output::AddUserToGroupOutput).
         pub fn build(self) -> crate::output::AddUserToGroupOutput {
-            crate::output::AddUserToGroupOutput {}
+            crate::output::AddUserToGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl AddUserToGroupOutput {
     /// Creates a new builder-style object to manufacture [`AddUserToGroupOutput`](crate::output::AddUserToGroupOutput).
@@ -8812,19 +9003,24 @@ impl AddUserToGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddRoleToInstanceProfileOutput {}
+pub struct AddRoleToInstanceProfileOutput  {
+}
 /// See [`AddRoleToInstanceProfileOutput`](crate::output::AddRoleToInstanceProfileOutput).
 pub mod add_role_to_instance_profile_output {
-
+    
     /// A builder for [`AddRoleToInstanceProfileOutput`](crate::output::AddRoleToInstanceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddRoleToInstanceProfileOutput`](crate::output::AddRoleToInstanceProfileOutput).
         pub fn build(self) -> crate::output::AddRoleToInstanceProfileOutput {
-            crate::output::AddRoleToInstanceProfileOutput {}
+            crate::output::AddRoleToInstanceProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl AddRoleToInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`AddRoleToInstanceProfileOutput`](crate::output::AddRoleToInstanceProfileOutput).
@@ -8836,19 +9032,24 @@ impl AddRoleToInstanceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddClientIdToOpenIdConnectProviderOutput {}
+pub struct AddClientIdToOpenIdConnectProviderOutput  {
+}
 /// See [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput).
 pub mod add_client_id_to_open_id_connect_provider_output {
-
+    
     /// A builder for [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput).
         pub fn build(self) -> crate::output::AddClientIdToOpenIdConnectProviderOutput {
-            crate::output::AddClientIdToOpenIdConnectProviderOutput {}
+            crate::output::AddClientIdToOpenIdConnectProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl AddClientIdToOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput).
@@ -8856,3 +9057,4 @@ impl AddClientIdToOpenIdConnectProviderOutput {
         crate::output::add_client_id_to_open_id_connect_provider_output::Builder::default()
     }
 }
+

@@ -3,19 +3,24 @@
 /// <p>The structure representing the SubmitFeedbackResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubmitFeedbackOutput {}
+pub struct SubmitFeedbackOutput  {
+}
 /// See [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
 pub mod submit_feedback_output {
-
+    
     /// A builder for [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
         pub fn build(self) -> crate::output::SubmitFeedbackOutput {
-            crate::output::SubmitFeedbackOutput {}
+            crate::output::SubmitFeedbackOutput {
+            }
         }
     }
+    
+    
 }
 impl SubmitFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
@@ -27,7 +32,7 @@ impl SubmitFeedbackOutput {
 /// <p>The structure representing the <code>removePermissionResponse</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemovePermissionOutput {
+pub struct RemovePermissionOutput  {
     /// <p> The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed. </p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -37,17 +42,17 @@ pub struct RemovePermissionOutput {
 }
 impl RemovePermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed. </p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response. </p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
 pub mod remove_permission_output {
-
+    
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -62,8 +67,7 @@ pub mod remove_permission_output {
         }
         /// <p> The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response. </p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,17 +76,20 @@ pub mod remove_permission_output {
         }
         /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
         pub fn build(self) -> crate::output::RemovePermissionOutput {
             crate::output::RemovePermissionOutput {
-                policy: self.policy,
-                revision_id: self.revision_id,
+                policy: self.policy
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RemovePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
@@ -94,52 +101,45 @@ impl RemovePermissionOutput {
 /// <p>The structure representing the RemoveNotificationChannelResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveNotificationChannelOutput {
+pub struct RemoveNotificationChannelOutput  {
     /// <p>The new notification configuration for this profiling group.</p>
     #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl RemoveNotificationChannelOutput {
     /// <p>The new notification configuration for this profiling group.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> std::option::Option<& crate::model::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
 /// See [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
 pub mod remove_notification_channel_output {
-
+    
     /// A builder for [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) notification_configuration:
-            std::option::Option<crate::model::NotificationConfiguration>,
+        pub(crate) notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
     }
     impl Builder {
         /// <p>The new notification configuration for this profiling group.</p>
-        pub fn notification_configuration(
-            mut self,
-            input: crate::model::NotificationConfiguration,
-        ) -> Self {
+        pub fn notification_configuration(mut self, input: crate::model::NotificationConfiguration) -> Self {
             self.notification_configuration = Some(input);
             self
         }
         /// <p>The new notification configuration for this profiling group.</p>
-        pub fn set_notification_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NotificationConfiguration>,
-        ) -> Self {
-            self.notification_configuration = input;
-            self
+        pub fn set_notification_configuration(mut self, input: std::option::Option<crate::model::NotificationConfiguration>) -> Self {
+            self.notification_configuration = input; self
         }
         /// Consumes the builder and constructs a [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
         pub fn build(self) -> crate::output::RemoveNotificationChannelOutput {
             crate::output::RemoveNotificationChannelOutput {
-                notification_configuration: self.notification_configuration,
+                notification_configuration: self.notification_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveNotificationChannelOutput {
     /// Creates a new builder-style object to manufacture [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
@@ -151,7 +151,7 @@ impl RemoveNotificationChannelOutput {
 /// <p>The structure representing the <code>putPermissionResponse</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionOutput {
+pub struct PutPermissionOutput  {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -161,17 +161,17 @@ pub struct PutPermissionOutput {
 }
 impl PutPermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`PutPermissionOutput`](crate::output::PutPermissionOutput).
 pub mod put_permission_output {
-
+    
     /// A builder for [`PutPermissionOutput`](crate::output::PutPermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -186,8 +186,7 @@ pub mod put_permission_output {
         }
         /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,17 +195,20 @@ pub mod put_permission_output {
         }
         /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`PutPermissionOutput`](crate::output::PutPermissionOutput).
         pub fn build(self) -> crate::output::PutPermissionOutput {
             crate::output::PutPermissionOutput {
-                policy: self.policy,
-                revision_id: self.revision_id,
+                policy: self.policy
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PutPermissionOutput {
     /// Creates a new builder-style object to manufacture [`PutPermissionOutput`](crate::output::PutPermissionOutput).
@@ -218,19 +220,24 @@ impl PutPermissionOutput {
 /// <p>The structure representing the postAgentProfileResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostAgentProfileOutput {}
+pub struct PostAgentProfileOutput  {
+}
 /// See [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput).
 pub mod post_agent_profile_output {
-
+    
     /// A builder for [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput).
         pub fn build(self) -> crate::output::PostAgentProfileOutput {
-            crate::output::PostAgentProfileOutput {}
+            crate::output::PostAgentProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl PostAgentProfileOutput {
     /// Creates a new builder-style object to manufacture [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput).
@@ -242,7 +249,7 @@ impl PostAgentProfileOutput {
 /// <p>The structure representing the listProfileTimesResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfileTimesOutput {
+pub struct ListProfileTimesOutput  {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     #[doc(hidden)]
     pub profile_times: std::option::Option<std::vec::Vec<crate::model::ProfileTime>>,
@@ -252,17 +259,17 @@ pub struct ListProfileTimesOutput {
 }
 impl ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-    pub fn profile_times(&self) -> std::option::Option<&[crate::model::ProfileTime]> {
+    pub fn profile_times(&self) -> std::option::Option<& [crate::model::ProfileTime]> {
         self.profile_times.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProfileTimesOutput`](crate::output::ListProfileTimesOutput).
 pub mod list_profile_times_output {
-
+    
     /// A builder for [`ListProfileTimesOutput`](crate::output::ListProfileTimesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -277,17 +284,13 @@ pub mod list_profile_times_output {
         /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
         pub fn profile_times(mut self, input: crate::model::ProfileTime) -> Self {
             let mut v = self.profile_times.unwrap_or_default();
-            v.push(input);
-            self.profile_times = Some(v);
-            self
+                            v.push(input);
+                            self.profile_times = Some(v);
+                            self
         }
         /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-        pub fn set_profile_times(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProfileTime>>,
-        ) -> Self {
-            self.profile_times = input;
-            self
+        pub fn set_profile_times(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProfileTime>>) -> Self {
+            self.profile_times = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -296,17 +299,20 @@ pub mod list_profile_times_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProfileTimesOutput`](crate::output::ListProfileTimesOutput).
         pub fn build(self) -> crate::output::ListProfileTimesOutput {
             crate::output::ListProfileTimesOutput {
-                profile_times: self.profile_times,
-                next_token: self.next_token,
+                profile_times: self.profile_times
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProfileTimesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileTimesOutput`](crate::output::ListProfileTimesOutput).
@@ -318,35 +324,31 @@ impl ListProfileTimesOutput {
 /// <p>The structure representing the ListFindingsReportsResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsReportsOutput {
+pub struct ListFindingsReportsOutput  {
     /// <p>The list of analysis results summaries.</p>
     #[doc(hidden)]
-    pub findings_report_summaries:
-        std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
+    pub findings_report_summaries: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsReportsOutput {
     /// <p>The list of analysis results summaries.</p>
-    pub fn findings_report_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::FindingsReportSummary]> {
+    pub fn findings_report_summaries(&self) -> std::option::Option<& [crate::model::FindingsReportSummary]> {
         self.findings_report_summaries.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFindingsReportsOutput`](crate::output::ListFindingsReportsOutput).
 pub mod list_findings_reports_output {
-
+    
     /// A builder for [`ListFindingsReportsOutput`](crate::output::ListFindingsReportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) findings_report_summaries:
-            std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
+        pub(crate) findings_report_summaries: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -355,22 +357,15 @@ pub mod list_findings_reports_output {
         /// To override the contents of this collection use [`set_findings_report_summaries`](Self::set_findings_report_summaries).
         ///
         /// <p>The list of analysis results summaries.</p>
-        pub fn findings_report_summaries(
-            mut self,
-            input: crate::model::FindingsReportSummary,
-        ) -> Self {
+        pub fn findings_report_summaries(mut self, input: crate::model::FindingsReportSummary) -> Self {
             let mut v = self.findings_report_summaries.unwrap_or_default();
-            v.push(input);
-            self.findings_report_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.findings_report_summaries = Some(v);
+                            self
         }
         /// <p>The list of analysis results summaries.</p>
-        pub fn set_findings_report_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
-        ) -> Self {
-            self.findings_report_summaries = input;
-            self
+        pub fn set_findings_report_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>) -> Self {
+            self.findings_report_summaries = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -379,17 +374,20 @@ pub mod list_findings_reports_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFindingsReportsOutput`](crate::output::ListFindingsReportsOutput).
         pub fn build(self) -> crate::output::ListFindingsReportsOutput {
             crate::output::ListFindingsReportsOutput {
-                findings_report_summaries: self.findings_report_summaries,
-                next_token: self.next_token,
+                findings_report_summaries: self.findings_report_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFindingsReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsReportsOutput`](crate::output::ListFindingsReportsOutput).
@@ -401,7 +399,7 @@ impl ListFindingsReportsOutput {
 /// <p>The structure representing the GetRecommendationsResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommendationsOutput {
+pub struct GetRecommendationsOutput  {
     /// <p>The name of the profiling group the analysis data is about.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -420,37 +418,36 @@ pub struct GetRecommendationsOutput {
 }
 impl GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn profile_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn profile_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.profile_start_time.as_ref()
     }
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn profile_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn profile_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.profile_end_time.as_ref()
     }
     /// <p>The list of recommendations that the analysis found for this profile.</p>
-    pub fn recommendations(&self) -> std::option::Option<&[crate::model::Recommendation]> {
+    pub fn recommendations(&self) -> std::option::Option<& [crate::model::Recommendation]> {
         self.recommendations.as_deref()
     }
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
-    pub fn anomalies(&self) -> std::option::Option<&[crate::model::Anomaly]> {
+    pub fn anomalies(&self) -> std::option::Option<& [crate::model::Anomaly]> {
         self.anomalies.as_deref()
     }
 }
 /// See [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
 pub mod get_recommendations_output {
-
+    
     /// A builder for [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
         pub(crate) profile_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) profile_end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) recommendations:
-            std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+        pub(crate) recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
         pub(crate) anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
     }
     impl Builder {
@@ -460,12 +457,8 @@ pub mod get_recommendations_output {
             self
         }
         /// <p>The name of the profiling group the analysis data is about.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn profile_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -473,12 +466,8 @@ pub mod get_recommendations_output {
             self
         }
         /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_profile_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.profile_start_time = input;
-            self
+        pub fn set_profile_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.profile_start_time = input; self
         }
         /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn profile_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -486,12 +475,8 @@ pub mod get_recommendations_output {
             self
         }
         /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_profile_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.profile_end_time = input;
-            self
+        pub fn set_profile_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.profile_end_time = input; self
         }
         /// Appends an item to `recommendations`.
         ///
@@ -500,17 +485,13 @@ pub mod get_recommendations_output {
         /// <p>The list of recommendations that the analysis found for this profile.</p>
         pub fn recommendations(mut self, input: crate::model::Recommendation) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input);
-            self.recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.recommendations = Some(v);
+                            self
         }
         /// <p>The list of recommendations that the analysis found for this profile.</p>
-        pub fn set_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
-        ) -> Self {
-            self.recommendations = input;
-            self
+        pub fn set_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>) -> Self {
+            self.recommendations = input; self
         }
         /// Appends an item to `anomalies`.
         ///
@@ -519,29 +500,32 @@ pub mod get_recommendations_output {
         /// <p> The list of anomalies that the analysis has found for this profile. </p>
         pub fn anomalies(mut self, input: crate::model::Anomaly) -> Self {
             let mut v = self.anomalies.unwrap_or_default();
-            v.push(input);
-            self.anomalies = Some(v);
-            self
+                            v.push(input);
+                            self.anomalies = Some(v);
+                            self
         }
         /// <p> The list of anomalies that the analysis has found for this profile. </p>
-        pub fn set_anomalies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
-        ) -> Self {
-            self.anomalies = input;
-            self
+        pub fn set_anomalies(mut self, input: std::option::Option<std::vec::Vec<crate::model::Anomaly>>) -> Self {
+            self.anomalies = input; self
         }
         /// Consumes the builder and constructs a [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
         pub fn build(self) -> crate::output::GetRecommendationsOutput {
             crate::output::GetRecommendationsOutput {
-                profiling_group_name: self.profiling_group_name,
-                profile_start_time: self.profile_start_time,
-                profile_end_time: self.profile_end_time,
-                recommendations: self.recommendations,
-                anomalies: self.anomalies,
+                profiling_group_name: self.profiling_group_name
+                ,
+                profile_start_time: self.profile_start_time
+                ,
+                profile_end_time: self.profile_end_time
+                ,
+                recommendations: self.recommendations
+                ,
+                anomalies: self.anomalies
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
@@ -553,7 +537,7 @@ impl GetRecommendationsOutput {
 /// <p>The structure representing the getProfileResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProfileOutput {
+pub struct GetProfileOutput  {
     /// <p>Information about the profile.</p>
     #[doc(hidden)]
     pub profile: std::option::Option<aws_smithy_types::Blob>,
@@ -566,21 +550,21 @@ pub struct GetProfileOutput {
 }
 impl GetProfileOutput {
     /// <p>Information about the profile.</p>
-    pub fn profile(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn profile(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.profile.as_ref()
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The content encoding of the profile.</p>
-    pub fn content_encoding(&self) -> std::option::Option<&str> {
+    pub fn content_encoding(&self) -> std::option::Option<& str> {
         self.content_encoding.as_deref()
     }
 }
 /// See [`GetProfileOutput`](crate::output::GetProfileOutput).
 pub mod get_profile_output {
-
+    
     /// A builder for [`GetProfileOutput`](crate::output::GetProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -596,8 +580,7 @@ pub mod get_profile_output {
         }
         /// <p>Information about the profile.</p>
         pub fn set_profile(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.profile = input;
-            self
+            self.profile = input; self
         }
         /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -606,8 +589,7 @@ pub mod get_profile_output {
         }
         /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>The content encoding of the profile.</p>
         pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
@@ -615,22 +597,23 @@ pub mod get_profile_output {
             self
         }
         /// <p>The content encoding of the profile.</p>
-        pub fn set_content_encoding(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.content_encoding = input;
-            self
+        pub fn set_content_encoding(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_encoding = input; self
         }
         /// Consumes the builder and constructs a [`GetProfileOutput`](crate::output::GetProfileOutput).
         pub fn build(self) -> crate::output::GetProfileOutput {
             crate::output::GetProfileOutput {
-                profile: self.profile,
-                content_type: self.content_type,
-                content_encoding: self.content_encoding,
+                profile: self.profile
+                ,
+                content_type: self.content_type
+                ,
+                content_encoding: self.content_encoding
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileOutput`](crate::output::GetProfileOutput).
@@ -642,7 +625,7 @@ impl GetProfileOutput {
 /// <p>The structure representing the <code>getPolicyResponse</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -652,17 +635,17 @@ pub struct GetPolicyOutput {
 }
 impl GetPolicyOutput {
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>A unique identifier for the current revision of the returned policy.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
-
+    
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -677,8 +660,7 @@ pub mod get_policy_output {
         }
         /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>A unique identifier for the current revision of the returned policy.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -687,17 +669,20 @@ pub mod get_policy_output {
         }
         /// <p>A unique identifier for the current revision of the returned policy.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput).
         pub fn build(self) -> crate::output::GetPolicyOutput {
             crate::output::GetPolicyOutput {
-                policy: self.policy,
-                revision_id: self.revision_id,
+                policy: self.policy
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput).
@@ -709,52 +694,45 @@ impl GetPolicyOutput {
 /// <p>The structure representing the GetNotificationConfigurationResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNotificationConfigurationOutput {
+pub struct GetNotificationConfigurationOutput  {
     /// <p>The current notification configuration for this profiling group.</p>
     #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl GetNotificationConfigurationOutput {
     /// <p>The current notification configuration for this profiling group.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> std::option::Option<& crate::model::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
 /// See [`GetNotificationConfigurationOutput`](crate::output::GetNotificationConfigurationOutput).
 pub mod get_notification_configuration_output {
-
+    
     /// A builder for [`GetNotificationConfigurationOutput`](crate::output::GetNotificationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) notification_configuration:
-            std::option::Option<crate::model::NotificationConfiguration>,
+        pub(crate) notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
     }
     impl Builder {
         /// <p>The current notification configuration for this profiling group.</p>
-        pub fn notification_configuration(
-            mut self,
-            input: crate::model::NotificationConfiguration,
-        ) -> Self {
+        pub fn notification_configuration(mut self, input: crate::model::NotificationConfiguration) -> Self {
             self.notification_configuration = Some(input);
             self
         }
         /// <p>The current notification configuration for this profiling group.</p>
-        pub fn set_notification_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NotificationConfiguration>,
-        ) -> Self {
-            self.notification_configuration = input;
-            self
+        pub fn set_notification_configuration(mut self, input: std::option::Option<crate::model::NotificationConfiguration>) -> Self {
+            self.notification_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetNotificationConfigurationOutput`](crate::output::GetNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::GetNotificationConfigurationOutput {
             crate::output::GetNotificationConfigurationOutput {
-                notification_configuration: self.notification_configuration,
+                notification_configuration: self.notification_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetNotificationConfigurationOutput`](crate::output::GetNotificationConfigurationOutput).
@@ -766,20 +744,20 @@ impl GetNotificationConfigurationOutput {
 /// <p>The structure representing the configureAgentResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureAgentOutput {
+pub struct ConfigureAgentOutput  {
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::AgentConfiguration>,
 }
 impl ConfigureAgentOutput {
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::AgentConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::AgentConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`ConfigureAgentOutput`](crate::output::ConfigureAgentOutput).
 pub mod configure_agent_output {
-
+    
     /// A builder for [`ConfigureAgentOutput`](crate::output::ConfigureAgentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -792,20 +770,19 @@ pub mod configure_agent_output {
             self
         }
         /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AgentConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::AgentConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`ConfigureAgentOutput`](crate::output::ConfigureAgentOutput).
         pub fn build(self) -> crate::output::ConfigureAgentOutput {
             crate::output::ConfigureAgentOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigureAgentOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureAgentOutput`](crate::output::ConfigureAgentOutput).
@@ -817,18 +794,18 @@ impl ConfigureAgentOutput {
 /// <p>The structure representing the BatchGetFrameMetricDataResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetFrameMetricDataOutput {
+pub struct BatchGetFrameMetricDataOutput  {
     /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
-    /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p> 
+    /// <ul> 
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resolution: std::option::Option<crate::model::AggregationPeriod>,
@@ -837,57 +814,45 @@ pub struct BatchGetFrameMetricDataOutput {
     pub end_times: std::option::Option<std::vec::Vec<crate::model::TimestampStructure>>,
     /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
     #[doc(hidden)]
-    pub unprocessed_end_times: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::TimestampStructure>,
-        >,
-    >,
+    pub unprocessed_end_times: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::TimestampStructure>>>,
     /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     #[doc(hidden)]
     pub frame_metric_data: std::option::Option<std::vec::Vec<crate::model::FrameMetricDatum>>,
 }
 impl BatchGetFrameMetricDataOutput {
     /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
-    /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p> 
+    /// <ul> 
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
     /// </ul>
-    pub fn resolution(&self) -> std::option::Option<&crate::model::AggregationPeriod> {
+    pub fn resolution(&self) -> std::option::Option<& crate::model::AggregationPeriod> {
         self.resolution.as_ref()
     }
     /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
-    pub fn end_times(&self) -> std::option::Option<&[crate::model::TimestampStructure]> {
+    pub fn end_times(&self) -> std::option::Option<& [crate::model::TimestampStructure]> {
         self.end_times.as_deref()
     }
     /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
-    pub fn unprocessed_end_times(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::TimestampStructure>,
-        >,
-    > {
+    pub fn unprocessed_end_times(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::TimestampStructure>>> {
         self.unprocessed_end_times.as_ref()
     }
     /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn frame_metric_data(&self) -> std::option::Option<&[crate::model::FrameMetricDatum]> {
+    pub fn frame_metric_data(&self) -> std::option::Option<& [crate::model::FrameMetricDatum]> {
         self.frame_metric_data.as_deref()
     }
 }
 /// See [`BatchGetFrameMetricDataOutput`](crate::output::BatchGetFrameMetricDataOutput).
 pub mod batch_get_frame_metric_data_output {
-
+    
     /// A builder for [`BatchGetFrameMetricDataOutput`](crate::output::BatchGetFrameMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -895,14 +860,8 @@ pub mod batch_get_frame_metric_data_output {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resolution: std::option::Option<crate::model::AggregationPeriod>,
         pub(crate) end_times: std::option::Option<std::vec::Vec<crate::model::TimestampStructure>>,
-        pub(crate) unprocessed_end_times: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::TimestampStructure>,
-            >,
-        >,
-        pub(crate) frame_metric_data:
-            std::option::Option<std::vec::Vec<crate::model::FrameMetricDatum>>,
+        pub(crate) unprocessed_end_times: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::TimestampStructure>>>,
+        pub(crate) frame_metric_data: std::option::Option<std::vec::Vec<crate::model::FrameMetricDatum>>,
     }
     impl Builder {
         /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
@@ -911,12 +870,8 @@ pub mod batch_get_frame_metric_data_output {
             self
         }
         /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -924,35 +879,27 @@ pub mod batch_get_frame_metric_data_output {
             self
         }
         /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
-        /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
-        /// <ul>
-        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+        /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p> 
+        /// <ul> 
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
         /// </ul>
         pub fn resolution(mut self, input: crate::model::AggregationPeriod) -> Self {
             self.resolution = Some(input);
             self
         }
-        /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
-        /// <ul>
-        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+        /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p> 
+        /// <ul> 
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
         /// </ul>
-        pub fn set_resolution(
-            mut self,
-            input: std::option::Option<crate::model::AggregationPeriod>,
-        ) -> Self {
-            self.resolution = input;
-            self
+        pub fn set_resolution(mut self, input: std::option::Option<crate::model::AggregationPeriod>) -> Self {
+            self.resolution = input; self
         }
         /// Appends an item to `end_times`.
         ///
@@ -961,45 +908,28 @@ pub mod batch_get_frame_metric_data_output {
         /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
         pub fn end_times(mut self, input: crate::model::TimestampStructure) -> Self {
             let mut v = self.end_times.unwrap_or_default();
-            v.push(input);
-            self.end_times = Some(v);
-            self
+                            v.push(input);
+                            self.end_times = Some(v);
+                            self
         }
         /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
-        pub fn set_end_times(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TimestampStructure>>,
-        ) -> Self {
-            self.end_times = input;
-            self
+        pub fn set_end_times(mut self, input: std::option::Option<std::vec::Vec<crate::model::TimestampStructure>>) -> Self {
+            self.end_times = input; self
         }
         /// Adds a key-value pair to `unprocessed_end_times`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_end_times`](Self::set_unprocessed_end_times).
         ///
         /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
-        pub fn unprocessed_end_times(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::TimestampStructure>,
-        ) -> Self {
+        pub fn unprocessed_end_times(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::TimestampStructure>) -> Self {
             let mut hash_map = self.unprocessed_end_times.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.unprocessed_end_times = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.unprocessed_end_times = Some(hash_map);
+                            self
         }
         /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
-        pub fn set_unprocessed_end_times(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::TimestampStructure>,
-                >,
-            >,
-        ) -> Self {
-            self.unprocessed_end_times = input;
-            self
+        pub fn set_unprocessed_end_times(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::TimestampStructure>>>) -> Self {
+            self.unprocessed_end_times = input; self
         }
         /// Appends an item to `frame_metric_data`.
         ///
@@ -1008,30 +938,34 @@ pub mod batch_get_frame_metric_data_output {
         /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
         pub fn frame_metric_data(mut self, input: crate::model::FrameMetricDatum) -> Self {
             let mut v = self.frame_metric_data.unwrap_or_default();
-            v.push(input);
-            self.frame_metric_data = Some(v);
-            self
+                            v.push(input);
+                            self.frame_metric_data = Some(v);
+                            self
         }
         /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-        pub fn set_frame_metric_data(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FrameMetricDatum>>,
-        ) -> Self {
-            self.frame_metric_data = input;
-            self
+        pub fn set_frame_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::model::FrameMetricDatum>>) -> Self {
+            self.frame_metric_data = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetFrameMetricDataOutput`](crate::output::BatchGetFrameMetricDataOutput).
         pub fn build(self) -> crate::output::BatchGetFrameMetricDataOutput {
             crate::output::BatchGetFrameMetricDataOutput {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                resolution: self.resolution,
-                end_times: self.end_times,
-                unprocessed_end_times: self.unprocessed_end_times,
-                frame_metric_data: self.frame_metric_data,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                resolution: self.resolution
+                ,
+                end_times: self.end_times
+                ,
+                unprocessed_end_times: self.unprocessed_end_times
+                ,
+                frame_metric_data: self.frame_metric_data
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetFrameMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetFrameMetricDataOutput`](crate::output::BatchGetFrameMetricDataOutput).
@@ -1043,52 +977,45 @@ impl BatchGetFrameMetricDataOutput {
 /// <p>The structure representing the AddNotificationChannelsResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddNotificationChannelsOutput {
+pub struct AddNotificationChannelsOutput  {
     /// <p>The new notification configuration for this profiling group.</p>
     #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl AddNotificationChannelsOutput {
     /// <p>The new notification configuration for this profiling group.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> std::option::Option<& crate::model::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
 /// See [`AddNotificationChannelsOutput`](crate::output::AddNotificationChannelsOutput).
 pub mod add_notification_channels_output {
-
+    
     /// A builder for [`AddNotificationChannelsOutput`](crate::output::AddNotificationChannelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) notification_configuration:
-            std::option::Option<crate::model::NotificationConfiguration>,
+        pub(crate) notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
     }
     impl Builder {
         /// <p>The new notification configuration for this profiling group.</p>
-        pub fn notification_configuration(
-            mut self,
-            input: crate::model::NotificationConfiguration,
-        ) -> Self {
+        pub fn notification_configuration(mut self, input: crate::model::NotificationConfiguration) -> Self {
             self.notification_configuration = Some(input);
             self
         }
         /// <p>The new notification configuration for this profiling group.</p>
-        pub fn set_notification_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NotificationConfiguration>,
-        ) -> Self {
-            self.notification_configuration = input;
-            self
+        pub fn set_notification_configuration(mut self, input: std::option::Option<crate::model::NotificationConfiguration>) -> Self {
+            self.notification_configuration = input; self
         }
         /// Consumes the builder and constructs a [`AddNotificationChannelsOutput`](crate::output::AddNotificationChannelsOutput).
         pub fn build(self) -> crate::output::AddNotificationChannelsOutput {
             crate::output::AddNotificationChannelsOutput {
-                notification_configuration: self.notification_configuration,
+                notification_configuration: self.notification_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl AddNotificationChannelsOutput {
     /// Creates a new builder-style object to manufacture [`AddNotificationChannelsOutput`](crate::output::AddNotificationChannelsOutput).
@@ -1100,43 +1027,39 @@ impl AddNotificationChannelsOutput {
 /// <p>The structure representing the listProfilingGroupsResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfilingGroupsOutput {
+pub struct ListProfilingGroupsOutput  {
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
     #[doc(hidden)]
     pub profiling_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
     #[doc(hidden)]
-    pub profiling_groups:
-        std::option::Option<std::vec::Vec<crate::model::ProfilingGroupDescription>>,
+    pub profiling_groups: std::option::Option<std::vec::Vec<crate::model::ProfilingGroupDescription>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfilingGroupsOutput {
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
-    pub fn profiling_group_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn profiling_group_names(&self) -> std::option::Option<& [std::string::String]> {
         self.profiling_group_names.as_deref()
     }
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
-    pub fn profiling_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProfilingGroupDescription]> {
+    pub fn profiling_groups(&self) -> std::option::Option<& [crate::model::ProfilingGroupDescription]> {
         self.profiling_groups.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProfilingGroupsOutput`](crate::output::ListProfilingGroupsOutput).
 pub mod list_profiling_groups_output {
-
+    
     /// A builder for [`ListProfilingGroupsOutput`](crate::output::ListProfilingGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) profiling_groups:
-            std::option::Option<std::vec::Vec<crate::model::ProfilingGroupDescription>>,
+        pub(crate) profiling_groups: std::option::Option<std::vec::Vec<crate::model::ProfilingGroupDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1147,17 +1070,13 @@ pub mod list_profiling_groups_output {
         /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
         pub fn profiling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.profiling_group_names.unwrap_or_default();
-            v.push(input.into());
-            self.profiling_group_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.profiling_group_names = Some(v);
+                            self
         }
         /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
-        pub fn set_profiling_group_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.profiling_group_names = input;
-            self
+        pub fn set_profiling_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.profiling_group_names = input; self
         }
         /// Appends an item to `profiling_groups`.
         ///
@@ -1166,17 +1085,13 @@ pub mod list_profiling_groups_output {
         /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
         pub fn profiling_groups(mut self, input: crate::model::ProfilingGroupDescription) -> Self {
             let mut v = self.profiling_groups.unwrap_or_default();
-            v.push(input);
-            self.profiling_groups = Some(v);
-            self
+                            v.push(input);
+                            self.profiling_groups = Some(v);
+                            self
         }
         /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
-        pub fn set_profiling_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProfilingGroupDescription>>,
-        ) -> Self {
-            self.profiling_groups = input;
-            self
+        pub fn set_profiling_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProfilingGroupDescription>>) -> Self {
+            self.profiling_groups = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1185,18 +1100,22 @@ pub mod list_profiling_groups_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProfilingGroupsOutput`](crate::output::ListProfilingGroupsOutput).
         pub fn build(self) -> crate::output::ListProfilingGroupsOutput {
             crate::output::ListProfilingGroupsOutput {
-                profiling_group_names: self.profiling_group_names,
-                profiling_groups: self.profiling_groups,
-                next_token: self.next_token,
+                profiling_group_names: self.profiling_group_names
+                ,
+                profiling_groups: self.profiling_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProfilingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListProfilingGroupsOutput`](crate::output::ListProfilingGroupsOutput).
@@ -1208,20 +1127,20 @@ impl ListProfilingGroupsOutput {
 /// <p>The structure representing the createProfilingGroupResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProfilingGroupOutput {
+pub struct CreateProfilingGroupOutput  {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
     #[doc(hidden)]
     pub profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
 }
 impl CreateProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
-    pub fn profiling_group(&self) -> std::option::Option<&crate::model::ProfilingGroupDescription> {
+    pub fn profiling_group(&self) -> std::option::Option<& crate::model::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
     }
 }
 /// See [`CreateProfilingGroupOutput`](crate::output::CreateProfilingGroupOutput).
 pub mod create_profiling_group_output {
-
+    
     /// A builder for [`CreateProfilingGroupOutput`](crate::output::CreateProfilingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1234,20 +1153,19 @@ pub mod create_profiling_group_output {
             self
         }
         /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
-        pub fn set_profiling_group(
-            mut self,
-            input: std::option::Option<crate::model::ProfilingGroupDescription>,
-        ) -> Self {
-            self.profiling_group = input;
-            self
+        pub fn set_profiling_group(mut self, input: std::option::Option<crate::model::ProfilingGroupDescription>) -> Self {
+            self.profiling_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateProfilingGroupOutput`](crate::output::CreateProfilingGroupOutput).
         pub fn build(self) -> crate::output::CreateProfilingGroupOutput {
             crate::output::CreateProfilingGroupOutput {
-                profiling_group: self.profiling_group,
+                profiling_group: self.profiling_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProfilingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfilingGroupOutput`](crate::output::CreateProfilingGroupOutput).
@@ -1259,19 +1177,24 @@ impl CreateProfilingGroupOutput {
 /// <p>The structure representing the deleteProfilingGroupResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProfilingGroupOutput {}
+pub struct DeleteProfilingGroupOutput  {
+}
 /// See [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput).
 pub mod delete_profiling_group_output {
-
+    
     /// A builder for [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput).
         pub fn build(self) -> crate::output::DeleteProfilingGroupOutput {
-            crate::output::DeleteProfilingGroupOutput {}
+            crate::output::DeleteProfilingGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProfilingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput).
@@ -1283,20 +1206,20 @@ impl DeleteProfilingGroupOutput {
 /// <p>The structure representing the updateProfilingGroupResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProfilingGroupOutput {
+pub struct UpdateProfilingGroupOutput  {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
     #[doc(hidden)]
     pub profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
 }
 impl UpdateProfilingGroupOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
-    pub fn profiling_group(&self) -> std::option::Option<&crate::model::ProfilingGroupDescription> {
+    pub fn profiling_group(&self) -> std::option::Option<& crate::model::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
     }
 }
 /// See [`UpdateProfilingGroupOutput`](crate::output::UpdateProfilingGroupOutput).
 pub mod update_profiling_group_output {
-
+    
     /// A builder for [`UpdateProfilingGroupOutput`](crate::output::UpdateProfilingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1309,20 +1232,19 @@ pub mod update_profiling_group_output {
             self
         }
         /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
-        pub fn set_profiling_group(
-            mut self,
-            input: std::option::Option<crate::model::ProfilingGroupDescription>,
-        ) -> Self {
-            self.profiling_group = input;
-            self
+        pub fn set_profiling_group(mut self, input: std::option::Option<crate::model::ProfilingGroupDescription>) -> Self {
+            self.profiling_group = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProfilingGroupOutput`](crate::output::UpdateProfilingGroupOutput).
         pub fn build(self) -> crate::output::UpdateProfilingGroupOutput {
             crate::output::UpdateProfilingGroupOutput {
-                profiling_group: self.profiling_group,
+                profiling_group: self.profiling_group
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProfilingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProfilingGroupOutput`](crate::output::UpdateProfilingGroupOutput).
@@ -1334,20 +1256,20 @@ impl UpdateProfilingGroupOutput {
 /// <p>The structure representing the describeProfilingGroupResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProfilingGroupOutput {
+pub struct DescribeProfilingGroupOutput  {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
     #[doc(hidden)]
     pub profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
 }
 impl DescribeProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
-    pub fn profiling_group(&self) -> std::option::Option<&crate::model::ProfilingGroupDescription> {
+    pub fn profiling_group(&self) -> std::option::Option<& crate::model::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
     }
 }
 /// See [`DescribeProfilingGroupOutput`](crate::output::DescribeProfilingGroupOutput).
 pub mod describe_profiling_group_output {
-
+    
     /// A builder for [`DescribeProfilingGroupOutput`](crate::output::DescribeProfilingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1360,20 +1282,19 @@ pub mod describe_profiling_group_output {
             self
         }
         /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
-        pub fn set_profiling_group(
-            mut self,
-            input: std::option::Option<crate::model::ProfilingGroupDescription>,
-        ) -> Self {
-            self.profiling_group = input;
-            self
+        pub fn set_profiling_group(mut self, input: std::option::Option<crate::model::ProfilingGroupDescription>) -> Self {
+            self.profiling_group = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProfilingGroupOutput`](crate::output::DescribeProfilingGroupOutput).
         pub fn build(self) -> crate::output::DescribeProfilingGroupOutput {
             crate::output::DescribeProfilingGroupOutput {
-                profiling_group: self.profiling_group,
+                profiling_group: self.profiling_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProfilingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProfilingGroupOutput`](crate::output::DescribeProfilingGroupOutput).
@@ -1385,19 +1306,24 @@ impl DescribeProfilingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1409,19 +1335,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1433,30 +1364,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p> The list of tags assigned to the specified resource. This is the list of tags returned in the response. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p> The list of tags assigned to the specified resource. This is the list of tags returned in the response. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1464,31 +1389,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The list of tags assigned to the specified resource. This is the list of tags returned in the response. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The list of tags assigned to the specified resource. This is the list of tags returned in the response. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1500,7 +1420,7 @@ impl ListTagsForResourceOutput {
 /// <p>The structure representing the GetFindingsReportAccountSummaryResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsReportAccountSummaryOutput {
+pub struct GetFindingsReportAccountSummaryOutput  {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
     #[doc(hidden)]
     pub report_summaries: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
@@ -1510,22 +1430,21 @@ pub struct GetFindingsReportAccountSummaryOutput {
 }
 impl GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
-    pub fn report_summaries(&self) -> std::option::Option<&[crate::model::FindingsReportSummary]> {
+    pub fn report_summaries(&self) -> std::option::Option<& [crate::model::FindingsReportSummary]> {
         self.report_summaries.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetFindingsReportAccountSummaryOutput`](crate::output::GetFindingsReportAccountSummaryOutput).
 pub mod get_findings_report_account_summary_output {
-
+    
     /// A builder for [`GetFindingsReportAccountSummaryOutput`](crate::output::GetFindingsReportAccountSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) report_summaries:
-            std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
+        pub(crate) report_summaries: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1536,17 +1455,13 @@ pub mod get_findings_report_account_summary_output {
         /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
         pub fn report_summaries(mut self, input: crate::model::FindingsReportSummary) -> Self {
             let mut v = self.report_summaries.unwrap_or_default();
-            v.push(input);
-            self.report_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.report_summaries = Some(v);
+                            self
         }
         /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
-        pub fn set_report_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
-        ) -> Self {
-            self.report_summaries = input;
-            self
+        pub fn set_report_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>) -> Self {
+            self.report_summaries = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1555,17 +1470,20 @@ pub mod get_findings_report_account_summary_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetFindingsReportAccountSummaryOutput`](crate::output::GetFindingsReportAccountSummaryOutput).
         pub fn build(self) -> crate::output::GetFindingsReportAccountSummaryOutput {
             crate::output::GetFindingsReportAccountSummaryOutput {
-                report_summaries: self.report_summaries,
-                next_token: self.next_token,
+                report_summaries: self.report_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFindingsReportAccountSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsReportAccountSummaryOutput`](crate::output::GetFindingsReportAccountSummaryOutput).
@@ -1573,3 +1491,4 @@ impl GetFindingsReportAccountSummaryOutput {
         crate::output::get_findings_report_account_summary_output::Builder::default()
     }
 }
+

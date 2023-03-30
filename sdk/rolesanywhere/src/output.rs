@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableTrustAnchorOutput {
+pub struct EnableTrustAnchorOutput  {
     /// <p>The state of the trust anchor after a read or write operation. </p>
     #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl EnableTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn trust_anchor(&self) -> std::option::Option<&crate::model::TrustAnchorDetail> {
+    pub fn trust_anchor(&self) -> std::option::Option<& crate::model::TrustAnchorDetail> {
         self.trust_anchor.as_ref()
     }
 }
 /// See [`EnableTrustAnchorOutput`](crate::output::EnableTrustAnchorOutput).
 pub mod enable_trust_anchor_output {
-
+    
     /// A builder for [`EnableTrustAnchorOutput`](crate::output::EnableTrustAnchorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod enable_trust_anchor_output {
             self
         }
         /// <p>The state of the trust anchor after a read or write operation. </p>
-        pub fn set_trust_anchor(
-            mut self,
-            input: std::option::Option<crate::model::TrustAnchorDetail>,
-        ) -> Self {
-            self.trust_anchor = input;
-            self
+        pub fn set_trust_anchor(mut self, input: std::option::Option<crate::model::TrustAnchorDetail>) -> Self {
+            self.trust_anchor = input; self
         }
         /// Consumes the builder and constructs a [`EnableTrustAnchorOutput`](crate::output::EnableTrustAnchorOutput).
         pub fn build(self) -> crate::output::EnableTrustAnchorOutput {
             crate::output::EnableTrustAnchorOutput {
-                trust_anchor: self.trust_anchor,
+                trust_anchor: self.trust_anchor
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableTrustAnchorOutput {
     /// Creates a new builder-style object to manufacture [`EnableTrustAnchorOutput`](crate::output::EnableTrustAnchorOutput).
@@ -53,20 +52,20 @@ impl EnableTrustAnchorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableTrustAnchorOutput {
+pub struct DisableTrustAnchorOutput  {
     /// <p>The state of the trust anchor after a read or write operation. </p>
     #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl DisableTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn trust_anchor(&self) -> std::option::Option<&crate::model::TrustAnchorDetail> {
+    pub fn trust_anchor(&self) -> std::option::Option<& crate::model::TrustAnchorDetail> {
         self.trust_anchor.as_ref()
     }
 }
 /// See [`DisableTrustAnchorOutput`](crate::output::DisableTrustAnchorOutput).
 pub mod disable_trust_anchor_output {
-
+    
     /// A builder for [`DisableTrustAnchorOutput`](crate::output::DisableTrustAnchorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod disable_trust_anchor_output {
             self
         }
         /// <p>The state of the trust anchor after a read or write operation. </p>
-        pub fn set_trust_anchor(
-            mut self,
-            input: std::option::Option<crate::model::TrustAnchorDetail>,
-        ) -> Self {
-            self.trust_anchor = input;
-            self
+        pub fn set_trust_anchor(mut self, input: std::option::Option<crate::model::TrustAnchorDetail>) -> Self {
+            self.trust_anchor = input; self
         }
         /// Consumes the builder and constructs a [`DisableTrustAnchorOutput`](crate::output::DisableTrustAnchorOutput).
         pub fn build(self) -> crate::output::DisableTrustAnchorOutput {
             crate::output::DisableTrustAnchorOutput {
-                trust_anchor: self.trust_anchor,
+                trust_anchor: self.trust_anchor
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableTrustAnchorOutput {
     /// Creates a new builder-style object to manufacture [`DisableTrustAnchorOutput`](crate::output::DisableTrustAnchorOutput).
@@ -104,7 +102,7 @@ impl DisableTrustAnchorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrustAnchorsOutput {
+pub struct ListTrustAnchorsOutput  {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -114,23 +112,22 @@ pub struct ListTrustAnchorsOutput {
 }
 impl ListTrustAnchorsOutput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of trust anchors.</p>
-    pub fn trust_anchors(&self) -> std::option::Option<&[crate::model::TrustAnchorDetail]> {
+    pub fn trust_anchors(&self) -> std::option::Option<& [crate::model::TrustAnchorDetail]> {
         self.trust_anchors.as_deref()
     }
 }
 /// See [`ListTrustAnchorsOutput`](crate::output::ListTrustAnchorsOutput).
 pub mod list_trust_anchors_output {
-
+    
     /// A builder for [`ListTrustAnchorsOutput`](crate::output::ListTrustAnchorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) trust_anchors:
-            std::option::Option<std::vec::Vec<crate::model::TrustAnchorDetail>>,
+        pub(crate) trust_anchors: std::option::Option<std::vec::Vec<crate::model::TrustAnchorDetail>>,
     }
     impl Builder {
         /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
@@ -140,8 +137,7 @@ pub mod list_trust_anchors_output {
         }
         /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `trust_anchors`.
         ///
@@ -150,26 +146,26 @@ pub mod list_trust_anchors_output {
         /// <p>A list of trust anchors.</p>
         pub fn trust_anchors(mut self, input: crate::model::TrustAnchorDetail) -> Self {
             let mut v = self.trust_anchors.unwrap_or_default();
-            v.push(input);
-            self.trust_anchors = Some(v);
-            self
+                            v.push(input);
+                            self.trust_anchors = Some(v);
+                            self
         }
         /// <p>A list of trust anchors.</p>
-        pub fn set_trust_anchors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TrustAnchorDetail>>,
-        ) -> Self {
-            self.trust_anchors = input;
-            self
+        pub fn set_trust_anchors(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrustAnchorDetail>>) -> Self {
+            self.trust_anchors = input; self
         }
         /// Consumes the builder and constructs a [`ListTrustAnchorsOutput`](crate::output::ListTrustAnchorsOutput).
         pub fn build(self) -> crate::output::ListTrustAnchorsOutput {
             crate::output::ListTrustAnchorsOutput {
-                next_token: self.next_token,
-                trust_anchors: self.trust_anchors,
+                next_token: self.next_token
+                ,
+                trust_anchors: self.trust_anchors
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTrustAnchorsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrustAnchorsOutput`](crate::output::ListTrustAnchorsOutput).
@@ -181,20 +177,20 @@ impl ListTrustAnchorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrustAnchorOutput {
+pub struct CreateTrustAnchorOutput  {
     /// <p>The state of the trust anchor after a read or write operation. </p>
     #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl CreateTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn trust_anchor(&self) -> std::option::Option<&crate::model::TrustAnchorDetail> {
+    pub fn trust_anchor(&self) -> std::option::Option<& crate::model::TrustAnchorDetail> {
         self.trust_anchor.as_ref()
     }
 }
 /// See [`CreateTrustAnchorOutput`](crate::output::CreateTrustAnchorOutput).
 pub mod create_trust_anchor_output {
-
+    
     /// A builder for [`CreateTrustAnchorOutput`](crate::output::CreateTrustAnchorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -207,20 +203,19 @@ pub mod create_trust_anchor_output {
             self
         }
         /// <p>The state of the trust anchor after a read or write operation. </p>
-        pub fn set_trust_anchor(
-            mut self,
-            input: std::option::Option<crate::model::TrustAnchorDetail>,
-        ) -> Self {
-            self.trust_anchor = input;
-            self
+        pub fn set_trust_anchor(mut self, input: std::option::Option<crate::model::TrustAnchorDetail>) -> Self {
+            self.trust_anchor = input; self
         }
         /// Consumes the builder and constructs a [`CreateTrustAnchorOutput`](crate::output::CreateTrustAnchorOutput).
         pub fn build(self) -> crate::output::CreateTrustAnchorOutput {
             crate::output::CreateTrustAnchorOutput {
-                trust_anchor: self.trust_anchor,
+                trust_anchor: self.trust_anchor
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTrustAnchorOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrustAnchorOutput`](crate::output::CreateTrustAnchorOutput).
@@ -232,20 +227,20 @@ impl CreateTrustAnchorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrustAnchorOutput {
+pub struct DeleteTrustAnchorOutput  {
     /// <p>The state of the trust anchor after a read or write operation. </p>
     #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl DeleteTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn trust_anchor(&self) -> std::option::Option<&crate::model::TrustAnchorDetail> {
+    pub fn trust_anchor(&self) -> std::option::Option<& crate::model::TrustAnchorDetail> {
         self.trust_anchor.as_ref()
     }
 }
 /// See [`DeleteTrustAnchorOutput`](crate::output::DeleteTrustAnchorOutput).
 pub mod delete_trust_anchor_output {
-
+    
     /// A builder for [`DeleteTrustAnchorOutput`](crate::output::DeleteTrustAnchorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -258,20 +253,19 @@ pub mod delete_trust_anchor_output {
             self
         }
         /// <p>The state of the trust anchor after a read or write operation. </p>
-        pub fn set_trust_anchor(
-            mut self,
-            input: std::option::Option<crate::model::TrustAnchorDetail>,
-        ) -> Self {
-            self.trust_anchor = input;
-            self
+        pub fn set_trust_anchor(mut self, input: std::option::Option<crate::model::TrustAnchorDetail>) -> Self {
+            self.trust_anchor = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTrustAnchorOutput`](crate::output::DeleteTrustAnchorOutput).
         pub fn build(self) -> crate::output::DeleteTrustAnchorOutput {
             crate::output::DeleteTrustAnchorOutput {
-                trust_anchor: self.trust_anchor,
+                trust_anchor: self.trust_anchor
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteTrustAnchorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrustAnchorOutput`](crate::output::DeleteTrustAnchorOutput).
@@ -283,20 +277,20 @@ impl DeleteTrustAnchorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTrustAnchorOutput {
+pub struct UpdateTrustAnchorOutput  {
     /// <p>The state of the trust anchor after a read or write operation. </p>
     #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl UpdateTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn trust_anchor(&self) -> std::option::Option<&crate::model::TrustAnchorDetail> {
+    pub fn trust_anchor(&self) -> std::option::Option<& crate::model::TrustAnchorDetail> {
         self.trust_anchor.as_ref()
     }
 }
 /// See [`UpdateTrustAnchorOutput`](crate::output::UpdateTrustAnchorOutput).
 pub mod update_trust_anchor_output {
-
+    
     /// A builder for [`UpdateTrustAnchorOutput`](crate::output::UpdateTrustAnchorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -309,20 +303,19 @@ pub mod update_trust_anchor_output {
             self
         }
         /// <p>The state of the trust anchor after a read or write operation. </p>
-        pub fn set_trust_anchor(
-            mut self,
-            input: std::option::Option<crate::model::TrustAnchorDetail>,
-        ) -> Self {
-            self.trust_anchor = input;
-            self
+        pub fn set_trust_anchor(mut self, input: std::option::Option<crate::model::TrustAnchorDetail>) -> Self {
+            self.trust_anchor = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTrustAnchorOutput`](crate::output::UpdateTrustAnchorOutput).
         pub fn build(self) -> crate::output::UpdateTrustAnchorOutput {
             crate::output::UpdateTrustAnchorOutput {
-                trust_anchor: self.trust_anchor,
+                trust_anchor: self.trust_anchor
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTrustAnchorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrustAnchorOutput`](crate::output::UpdateTrustAnchorOutput).
@@ -334,20 +327,20 @@ impl UpdateTrustAnchorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTrustAnchorOutput {
+pub struct GetTrustAnchorOutput  {
     /// <p>The state of the trust anchor after a read or write operation. </p>
     #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl GetTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn trust_anchor(&self) -> std::option::Option<&crate::model::TrustAnchorDetail> {
+    pub fn trust_anchor(&self) -> std::option::Option<& crate::model::TrustAnchorDetail> {
         self.trust_anchor.as_ref()
     }
 }
 /// See [`GetTrustAnchorOutput`](crate::output::GetTrustAnchorOutput).
 pub mod get_trust_anchor_output {
-
+    
     /// A builder for [`GetTrustAnchorOutput`](crate::output::GetTrustAnchorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -360,20 +353,19 @@ pub mod get_trust_anchor_output {
             self
         }
         /// <p>The state of the trust anchor after a read or write operation. </p>
-        pub fn set_trust_anchor(
-            mut self,
-            input: std::option::Option<crate::model::TrustAnchorDetail>,
-        ) -> Self {
-            self.trust_anchor = input;
-            self
+        pub fn set_trust_anchor(mut self, input: std::option::Option<crate::model::TrustAnchorDetail>) -> Self {
+            self.trust_anchor = input; self
         }
         /// Consumes the builder and constructs a [`GetTrustAnchorOutput`](crate::output::GetTrustAnchorOutput).
         pub fn build(self) -> crate::output::GetTrustAnchorOutput {
             crate::output::GetTrustAnchorOutput {
-                trust_anchor: self.trust_anchor,
+                trust_anchor: self.trust_anchor
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTrustAnchorOutput {
     /// Creates a new builder-style object to manufacture [`GetTrustAnchorOutput`](crate::output::GetTrustAnchorOutput).
@@ -385,7 +377,7 @@ impl GetTrustAnchorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubjectsOutput {
+pub struct ListSubjectsOutput  {
     /// <p>A list of subjects.</p>
     #[doc(hidden)]
     pub subjects: std::option::Option<std::vec::Vec<crate::model::SubjectSummary>>,
@@ -395,17 +387,17 @@ pub struct ListSubjectsOutput {
 }
 impl ListSubjectsOutput {
     /// <p>A list of subjects.</p>
-    pub fn subjects(&self) -> std::option::Option<&[crate::model::SubjectSummary]> {
+    pub fn subjects(&self) -> std::option::Option<& [crate::model::SubjectSummary]> {
         self.subjects.as_deref()
     }
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSubjectsOutput`](crate::output::ListSubjectsOutput).
 pub mod list_subjects_output {
-
+    
     /// A builder for [`ListSubjectsOutput`](crate::output::ListSubjectsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -420,17 +412,13 @@ pub mod list_subjects_output {
         /// <p>A list of subjects.</p>
         pub fn subjects(mut self, input: crate::model::SubjectSummary) -> Self {
             let mut v = self.subjects.unwrap_or_default();
-            v.push(input);
-            self.subjects = Some(v);
-            self
+                            v.push(input);
+                            self.subjects = Some(v);
+                            self
         }
         /// <p>A list of subjects.</p>
-        pub fn set_subjects(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubjectSummary>>,
-        ) -> Self {
-            self.subjects = input;
-            self
+        pub fn set_subjects(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubjectSummary>>) -> Self {
+            self.subjects = input; self
         }
         /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -439,17 +427,20 @@ pub mod list_subjects_output {
         }
         /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSubjectsOutput`](crate::output::ListSubjectsOutput).
         pub fn build(self) -> crate::output::ListSubjectsOutput {
             crate::output::ListSubjectsOutput {
-                subjects: self.subjects,
-                next_token: self.next_token,
+                subjects: self.subjects
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSubjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubjectsOutput`](crate::output::ListSubjectsOutput).
@@ -461,20 +452,20 @@ impl ListSubjectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubjectOutput {
+pub struct GetSubjectOutput  {
     /// <p>The state of the subject after a read or write operation.</p>
     #[doc(hidden)]
     pub subject: std::option::Option<crate::model::SubjectDetail>,
 }
 impl GetSubjectOutput {
     /// <p>The state of the subject after a read or write operation.</p>
-    pub fn subject(&self) -> std::option::Option<&crate::model::SubjectDetail> {
+    pub fn subject(&self) -> std::option::Option<& crate::model::SubjectDetail> {
         self.subject.as_ref()
     }
 }
 /// See [`GetSubjectOutput`](crate::output::GetSubjectOutput).
 pub mod get_subject_output {
-
+    
     /// A builder for [`GetSubjectOutput`](crate::output::GetSubjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -487,20 +478,19 @@ pub mod get_subject_output {
             self
         }
         /// <p>The state of the subject after a read or write operation.</p>
-        pub fn set_subject(
-            mut self,
-            input: std::option::Option<crate::model::SubjectDetail>,
-        ) -> Self {
-            self.subject = input;
-            self
+        pub fn set_subject(mut self, input: std::option::Option<crate::model::SubjectDetail>) -> Self {
+            self.subject = input; self
         }
         /// Consumes the builder and constructs a [`GetSubjectOutput`](crate::output::GetSubjectOutput).
         pub fn build(self) -> crate::output::GetSubjectOutput {
             crate::output::GetSubjectOutput {
-                subject: self.subject,
+                subject: self.subject
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSubjectOutput {
     /// Creates a new builder-style object to manufacture [`GetSubjectOutput`](crate::output::GetSubjectOutput).
@@ -512,20 +502,20 @@ impl GetSubjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableProfileOutput {
+pub struct EnableProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
     #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl EnableProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn profile(&self) -> std::option::Option<&crate::model::ProfileDetail> {
+    pub fn profile(&self) -> std::option::Option<& crate::model::ProfileDetail> {
         self.profile.as_ref()
     }
 }
 /// See [`EnableProfileOutput`](crate::output::EnableProfileOutput).
 pub mod enable_profile_output {
-
+    
     /// A builder for [`EnableProfileOutput`](crate::output::EnableProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -538,20 +528,19 @@ pub mod enable_profile_output {
             self
         }
         /// <p>The state of the profile after a read or write operation.</p>
-        pub fn set_profile(
-            mut self,
-            input: std::option::Option<crate::model::ProfileDetail>,
-        ) -> Self {
-            self.profile = input;
-            self
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::ProfileDetail>) -> Self {
+            self.profile = input; self
         }
         /// Consumes the builder and constructs a [`EnableProfileOutput`](crate::output::EnableProfileOutput).
         pub fn build(self) -> crate::output::EnableProfileOutput {
             crate::output::EnableProfileOutput {
-                profile: self.profile,
+                profile: self.profile
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableProfileOutput {
     /// Creates a new builder-style object to manufacture [`EnableProfileOutput`](crate::output::EnableProfileOutput).
@@ -563,20 +552,20 @@ impl EnableProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableProfileOutput {
+pub struct DisableProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
     #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl DisableProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn profile(&self) -> std::option::Option<&crate::model::ProfileDetail> {
+    pub fn profile(&self) -> std::option::Option<& crate::model::ProfileDetail> {
         self.profile.as_ref()
     }
 }
 /// See [`DisableProfileOutput`](crate::output::DisableProfileOutput).
 pub mod disable_profile_output {
-
+    
     /// A builder for [`DisableProfileOutput`](crate::output::DisableProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -589,20 +578,19 @@ pub mod disable_profile_output {
             self
         }
         /// <p>The state of the profile after a read or write operation.</p>
-        pub fn set_profile(
-            mut self,
-            input: std::option::Option<crate::model::ProfileDetail>,
-        ) -> Self {
-            self.profile = input;
-            self
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::ProfileDetail>) -> Self {
+            self.profile = input; self
         }
         /// Consumes the builder and constructs a [`DisableProfileOutput`](crate::output::DisableProfileOutput).
         pub fn build(self) -> crate::output::DisableProfileOutput {
             crate::output::DisableProfileOutput {
-                profile: self.profile,
+                profile: self.profile
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableProfileOutput {
     /// Creates a new builder-style object to manufacture [`DisableProfileOutput`](crate::output::DisableProfileOutput).
@@ -614,7 +602,7 @@ impl DisableProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfilesOutput {
+pub struct ListProfilesOutput  {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -624,17 +612,17 @@ pub struct ListProfilesOutput {
 }
 impl ListProfilesOutput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of profiles.</p>
-    pub fn profiles(&self) -> std::option::Option<&[crate::model::ProfileDetail]> {
+    pub fn profiles(&self) -> std::option::Option<& [crate::model::ProfileDetail]> {
         self.profiles.as_deref()
     }
 }
 /// See [`ListProfilesOutput`](crate::output::ListProfilesOutput).
 pub mod list_profiles_output {
-
+    
     /// A builder for [`ListProfilesOutput`](crate::output::ListProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -649,8 +637,7 @@ pub mod list_profiles_output {
         }
         /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `profiles`.
         ///
@@ -659,26 +646,26 @@ pub mod list_profiles_output {
         /// <p>A list of profiles.</p>
         pub fn profiles(mut self, input: crate::model::ProfileDetail) -> Self {
             let mut v = self.profiles.unwrap_or_default();
-            v.push(input);
-            self.profiles = Some(v);
-            self
+                            v.push(input);
+                            self.profiles = Some(v);
+                            self
         }
         /// <p>A list of profiles.</p>
-        pub fn set_profiles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProfileDetail>>,
-        ) -> Self {
-            self.profiles = input;
-            self
+        pub fn set_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProfileDetail>>) -> Self {
+            self.profiles = input; self
         }
         /// Consumes the builder and constructs a [`ListProfilesOutput`](crate::output::ListProfilesOutput).
         pub fn build(self) -> crate::output::ListProfilesOutput {
             crate::output::ListProfilesOutput {
-                next_token: self.next_token,
-                profiles: self.profiles,
+                next_token: self.next_token
+                ,
+                profiles: self.profiles
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfilesOutput`](crate::output::ListProfilesOutput).
@@ -690,20 +677,20 @@ impl ListProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProfileOutput {
+pub struct CreateProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
     #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl CreateProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn profile(&self) -> std::option::Option<&crate::model::ProfileDetail> {
+    pub fn profile(&self) -> std::option::Option<& crate::model::ProfileDetail> {
         self.profile.as_ref()
     }
 }
 /// See [`CreateProfileOutput`](crate::output::CreateProfileOutput).
 pub mod create_profile_output {
-
+    
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -716,20 +703,19 @@ pub mod create_profile_output {
             self
         }
         /// <p>The state of the profile after a read or write operation.</p>
-        pub fn set_profile(
-            mut self,
-            input: std::option::Option<crate::model::ProfileDetail>,
-        ) -> Self {
-            self.profile = input;
-            self
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::ProfileDetail>) -> Self {
+            self.profile = input; self
         }
         /// Consumes the builder and constructs a [`CreateProfileOutput`](crate::output::CreateProfileOutput).
         pub fn build(self) -> crate::output::CreateProfileOutput {
             crate::output::CreateProfileOutput {
-                profile: self.profile,
+                profile: self.profile
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfileOutput`](crate::output::CreateProfileOutput).
@@ -741,20 +727,20 @@ impl CreateProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProfileOutput {
+pub struct DeleteProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
     #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl DeleteProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn profile(&self) -> std::option::Option<&crate::model::ProfileDetail> {
+    pub fn profile(&self) -> std::option::Option<& crate::model::ProfileDetail> {
         self.profile.as_ref()
     }
 }
 /// See [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
 pub mod delete_profile_output {
-
+    
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -767,20 +753,19 @@ pub mod delete_profile_output {
             self
         }
         /// <p>The state of the profile after a read or write operation.</p>
-        pub fn set_profile(
-            mut self,
-            input: std::option::Option<crate::model::ProfileDetail>,
-        ) -> Self {
-            self.profile = input;
-            self
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::ProfileDetail>) -> Self {
+            self.profile = input; self
         }
         /// Consumes the builder and constructs a [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
         pub fn build(self) -> crate::output::DeleteProfileOutput {
             crate::output::DeleteProfileOutput {
-                profile: self.profile,
+                profile: self.profile
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
@@ -792,20 +777,20 @@ impl DeleteProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProfileOutput {
+pub struct UpdateProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
     #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl UpdateProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn profile(&self) -> std::option::Option<&crate::model::ProfileDetail> {
+    pub fn profile(&self) -> std::option::Option<& crate::model::ProfileDetail> {
         self.profile.as_ref()
     }
 }
 /// See [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
 pub mod update_profile_output {
-
+    
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -818,20 +803,19 @@ pub mod update_profile_output {
             self
         }
         /// <p>The state of the profile after a read or write operation.</p>
-        pub fn set_profile(
-            mut self,
-            input: std::option::Option<crate::model::ProfileDetail>,
-        ) -> Self {
-            self.profile = input;
-            self
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::ProfileDetail>) -> Self {
+            self.profile = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
         pub fn build(self) -> crate::output::UpdateProfileOutput {
             crate::output::UpdateProfileOutput {
-                profile: self.profile,
+                profile: self.profile
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
@@ -843,20 +827,20 @@ impl UpdateProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProfileOutput {
+pub struct GetProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
     #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl GetProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn profile(&self) -> std::option::Option<&crate::model::ProfileDetail> {
+    pub fn profile(&self) -> std::option::Option<& crate::model::ProfileDetail> {
         self.profile.as_ref()
     }
 }
 /// See [`GetProfileOutput`](crate::output::GetProfileOutput).
 pub mod get_profile_output {
-
+    
     /// A builder for [`GetProfileOutput`](crate::output::GetProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -869,20 +853,19 @@ pub mod get_profile_output {
             self
         }
         /// <p>The state of the profile after a read or write operation.</p>
-        pub fn set_profile(
-            mut self,
-            input: std::option::Option<crate::model::ProfileDetail>,
-        ) -> Self {
-            self.profile = input;
-            self
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::ProfileDetail>) -> Self {
+            self.profile = input; self
         }
         /// Consumes the builder and constructs a [`GetProfileOutput`](crate::output::GetProfileOutput).
         pub fn build(self) -> crate::output::GetProfileOutput {
             crate::output::GetProfileOutput {
-                profile: self.profile,
+                profile: self.profile
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileOutput`](crate::output::GetProfileOutput).
@@ -894,20 +877,20 @@ impl GetProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableCrlOutput {
+pub struct EnableCrlOutput  {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl EnableCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl(&self) -> std::option::Option<&crate::model::CrlDetail> {
+    pub fn crl(&self) -> std::option::Option<& crate::model::CrlDetail> {
         self.crl.as_ref()
     }
 }
 /// See [`EnableCrlOutput`](crate::output::EnableCrlOutput).
 pub mod enable_crl_output {
-
+    
     /// A builder for [`EnableCrlOutput`](crate::output::EnableCrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -921,14 +904,18 @@ pub mod enable_crl_output {
         }
         /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
         pub fn set_crl(mut self, input: std::option::Option<crate::model::CrlDetail>) -> Self {
-            self.crl = input;
-            self
+            self.crl = input; self
         }
         /// Consumes the builder and constructs a [`EnableCrlOutput`](crate::output::EnableCrlOutput).
         pub fn build(self) -> crate::output::EnableCrlOutput {
-            crate::output::EnableCrlOutput { crl: self.crl }
+            crate::output::EnableCrlOutput {
+                crl: self.crl
+                ,
+            }
         }
     }
+    
+    
 }
 impl EnableCrlOutput {
     /// Creates a new builder-style object to manufacture [`EnableCrlOutput`](crate::output::EnableCrlOutput).
@@ -940,20 +927,20 @@ impl EnableCrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableCrlOutput {
+pub struct DisableCrlOutput  {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl DisableCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl(&self) -> std::option::Option<&crate::model::CrlDetail> {
+    pub fn crl(&self) -> std::option::Option<& crate::model::CrlDetail> {
         self.crl.as_ref()
     }
 }
 /// See [`DisableCrlOutput`](crate::output::DisableCrlOutput).
 pub mod disable_crl_output {
-
+    
     /// A builder for [`DisableCrlOutput`](crate::output::DisableCrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -967,14 +954,18 @@ pub mod disable_crl_output {
         }
         /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
         pub fn set_crl(mut self, input: std::option::Option<crate::model::CrlDetail>) -> Self {
-            self.crl = input;
-            self
+            self.crl = input; self
         }
         /// Consumes the builder and constructs a [`DisableCrlOutput`](crate::output::DisableCrlOutput).
         pub fn build(self) -> crate::output::DisableCrlOutput {
-            crate::output::DisableCrlOutput { crl: self.crl }
+            crate::output::DisableCrlOutput {
+                crl: self.crl
+                ,
+            }
         }
     }
+    
+    
 }
 impl DisableCrlOutput {
     /// Creates a new builder-style object to manufacture [`DisableCrlOutput`](crate::output::DisableCrlOutput).
@@ -986,7 +977,7 @@ impl DisableCrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCrlsOutput {
+pub struct ListCrlsOutput  {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -996,17 +987,17 @@ pub struct ListCrlsOutput {
 }
 impl ListCrlsOutput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of certificate revocation lists (CRL). </p>
-    pub fn crls(&self) -> std::option::Option<&[crate::model::CrlDetail]> {
+    pub fn crls(&self) -> std::option::Option<& [crate::model::CrlDetail]> {
         self.crls.as_deref()
     }
 }
 /// See [`ListCrlsOutput`](crate::output::ListCrlsOutput).
 pub mod list_crls_output {
-
+    
     /// A builder for [`ListCrlsOutput`](crate::output::ListCrlsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1021,8 +1012,7 @@ pub mod list_crls_output {
         }
         /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `crls`.
         ///
@@ -1031,26 +1021,26 @@ pub mod list_crls_output {
         /// <p>A list of certificate revocation lists (CRL). </p>
         pub fn crls(mut self, input: crate::model::CrlDetail) -> Self {
             let mut v = self.crls.unwrap_or_default();
-            v.push(input);
-            self.crls = Some(v);
-            self
+                            v.push(input);
+                            self.crls = Some(v);
+                            self
         }
         /// <p>A list of certificate revocation lists (CRL). </p>
-        pub fn set_crls(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CrlDetail>>,
-        ) -> Self {
-            self.crls = input;
-            self
+        pub fn set_crls(mut self, input: std::option::Option<std::vec::Vec<crate::model::CrlDetail>>) -> Self {
+            self.crls = input; self
         }
         /// Consumes the builder and constructs a [`ListCrlsOutput`](crate::output::ListCrlsOutput).
         pub fn build(self) -> crate::output::ListCrlsOutput {
             crate::output::ListCrlsOutput {
-                next_token: self.next_token,
-                crls: self.crls,
+                next_token: self.next_token
+                ,
+                crls: self.crls
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCrlsOutput {
     /// Creates a new builder-style object to manufacture [`ListCrlsOutput`](crate::output::ListCrlsOutput).
@@ -1062,20 +1052,20 @@ impl ListCrlsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCrlOutput {
+pub struct ImportCrlOutput  {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl ImportCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl(&self) -> std::option::Option<&crate::model::CrlDetail> {
+    pub fn crl(&self) -> std::option::Option<& crate::model::CrlDetail> {
         self.crl.as_ref()
     }
 }
 /// See [`ImportCrlOutput`](crate::output::ImportCrlOutput).
 pub mod import_crl_output {
-
+    
     /// A builder for [`ImportCrlOutput`](crate::output::ImportCrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1089,14 +1079,18 @@ pub mod import_crl_output {
         }
         /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
         pub fn set_crl(mut self, input: std::option::Option<crate::model::CrlDetail>) -> Self {
-            self.crl = input;
-            self
+            self.crl = input; self
         }
         /// Consumes the builder and constructs a [`ImportCrlOutput`](crate::output::ImportCrlOutput).
         pub fn build(self) -> crate::output::ImportCrlOutput {
-            crate::output::ImportCrlOutput { crl: self.crl }
+            crate::output::ImportCrlOutput {
+                crl: self.crl
+                ,
+            }
         }
     }
+    
+    
 }
 impl ImportCrlOutput {
     /// Creates a new builder-style object to manufacture [`ImportCrlOutput`](crate::output::ImportCrlOutput).
@@ -1108,20 +1102,20 @@ impl ImportCrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCrlOutput {
+pub struct DeleteCrlOutput  {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl DeleteCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl(&self) -> std::option::Option<&crate::model::CrlDetail> {
+    pub fn crl(&self) -> std::option::Option<& crate::model::CrlDetail> {
         self.crl.as_ref()
     }
 }
 /// See [`DeleteCrlOutput`](crate::output::DeleteCrlOutput).
 pub mod delete_crl_output {
-
+    
     /// A builder for [`DeleteCrlOutput`](crate::output::DeleteCrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1135,14 +1129,18 @@ pub mod delete_crl_output {
         }
         /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
         pub fn set_crl(mut self, input: std::option::Option<crate::model::CrlDetail>) -> Self {
-            self.crl = input;
-            self
+            self.crl = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCrlOutput`](crate::output::DeleteCrlOutput).
         pub fn build(self) -> crate::output::DeleteCrlOutput {
-            crate::output::DeleteCrlOutput { crl: self.crl }
+            crate::output::DeleteCrlOutput {
+                crl: self.crl
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteCrlOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCrlOutput`](crate::output::DeleteCrlOutput).
@@ -1154,20 +1152,20 @@ impl DeleteCrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCrlOutput {
+pub struct UpdateCrlOutput  {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl UpdateCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl(&self) -> std::option::Option<&crate::model::CrlDetail> {
+    pub fn crl(&self) -> std::option::Option<& crate::model::CrlDetail> {
         self.crl.as_ref()
     }
 }
 /// See [`UpdateCrlOutput`](crate::output::UpdateCrlOutput).
 pub mod update_crl_output {
-
+    
     /// A builder for [`UpdateCrlOutput`](crate::output::UpdateCrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1181,14 +1179,18 @@ pub mod update_crl_output {
         }
         /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
         pub fn set_crl(mut self, input: std::option::Option<crate::model::CrlDetail>) -> Self {
-            self.crl = input;
-            self
+            self.crl = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCrlOutput`](crate::output::UpdateCrlOutput).
         pub fn build(self) -> crate::output::UpdateCrlOutput {
-            crate::output::UpdateCrlOutput { crl: self.crl }
+            crate::output::UpdateCrlOutput {
+                crl: self.crl
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateCrlOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCrlOutput`](crate::output::UpdateCrlOutput).
@@ -1200,20 +1202,20 @@ impl UpdateCrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCrlOutput {
+pub struct GetCrlOutput  {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl GetCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl(&self) -> std::option::Option<&crate::model::CrlDetail> {
+    pub fn crl(&self) -> std::option::Option<& crate::model::CrlDetail> {
         self.crl.as_ref()
     }
 }
 /// See [`GetCrlOutput`](crate::output::GetCrlOutput).
 pub mod get_crl_output {
-
+    
     /// A builder for [`GetCrlOutput`](crate::output::GetCrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1227,14 +1229,18 @@ pub mod get_crl_output {
         }
         /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
         pub fn set_crl(mut self, input: std::option::Option<crate::model::CrlDetail>) -> Self {
-            self.crl = input;
-            self
+            self.crl = input; self
         }
         /// Consumes the builder and constructs a [`GetCrlOutput`](crate::output::GetCrlOutput).
         pub fn build(self) -> crate::output::GetCrlOutput {
-            crate::output::GetCrlOutput { crl: self.crl }
+            crate::output::GetCrlOutput {
+                crl: self.crl
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetCrlOutput {
     /// Creates a new builder-style object to manufacture [`GetCrlOutput`](crate::output::GetCrlOutput).
@@ -1246,19 +1252,24 @@ impl GetCrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1270,19 +1281,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1294,20 +1310,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags attached to the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags attached to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1321,23 +1337,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tags attached to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags attached to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1345,3 +1362,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

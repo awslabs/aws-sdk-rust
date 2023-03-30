@@ -3,7 +3,7 @@
 /// <p>Contains information about a a field in a validation exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The message with more information about the validation exception.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The message with more information about the validation exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>The message with more information about the validation exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -99,22 +101,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -125,7 +119,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -134,19 +128,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -155,16 +147,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANNOT_PARSE",
-            "FIELD_VALIDATION_FAILED",
-            "OTHER",
-            "UNKNOWN_OPERATION",
+            "CANNOT_PARSE", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
         ]
     }
 }
@@ -177,7 +166,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>Describes a list of filters for choosing a subset of dimension values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricSetDimensionFilter {
+pub struct MetricSetDimensionFilter  {
     /// <p>The dimension that you want to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -187,17 +176,17 @@ pub struct MetricSetDimensionFilter {
 }
 impl MetricSetDimensionFilter {
     /// <p>The dimension that you want to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The list of filters that you are applying.</p>
-    pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filter_list(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filter_list.as_deref()
     }
 }
 /// See [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
 pub mod metric_set_dimension_filter {
-
+    
     /// A builder for [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -212,8 +201,7 @@ pub mod metric_set_dimension_filter {
         }
         /// <p>The dimension that you want to filter on.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `filter_list`.
         ///
@@ -222,26 +210,26 @@ pub mod metric_set_dimension_filter {
         /// <p>The list of filters that you are applying.</p>
         pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filter_list.unwrap_or_default();
-            v.push(input);
-            self.filter_list = Some(v);
-            self
+                            v.push(input);
+                            self.filter_list = Some(v);
+                            self
         }
         /// <p>The list of filters that you are applying.</p>
-        pub fn set_filter_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filter_list = input;
-            self
+        pub fn set_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filter_list = input; self
         }
         /// Consumes the builder and constructs a [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
         pub fn build(self) -> crate::model::MetricSetDimensionFilter {
             crate::model::MetricSetDimensionFilter {
-                name: self.name,
-                filter_list: self.filter_list,
+                name: self.name
+                ,
+                filter_list: self.filter_list
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricSetDimensionFilter {
     /// Creates a new builder-style object to manufacture [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
@@ -253,7 +241,7 @@ impl MetricSetDimensionFilter {
 /// <p>Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The value that you want to include in the filter.</p>
     #[doc(hidden)]
     pub dimension_value: std::option::Option<std::string::String>,
@@ -263,17 +251,17 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The value that you want to include in the filter.</p>
-    pub fn dimension_value(&self) -> std::option::Option<&str> {
+    pub fn dimension_value(&self) -> std::option::Option<& str> {
         self.dimension_value.as_deref()
     }
     /// <p>The condition to apply.</p>
-    pub fn filter_operation(&self) -> std::option::Option<&crate::model::FilterOperation> {
+    pub fn filter_operation(&self) -> std::option::Option<& crate::model::FilterOperation> {
         self.filter_operation.as_ref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -287,12 +275,8 @@ pub mod filter {
             self
         }
         /// <p>The value that you want to include in the filter.</p>
-        pub fn set_dimension_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_value = input;
-            self
+        pub fn set_dimension_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_value = input; self
         }
         /// <p>The condition to apply.</p>
         pub fn filter_operation(mut self, input: crate::model::FilterOperation) -> Self {
@@ -300,21 +284,21 @@ pub mod filter {
             self
         }
         /// <p>The condition to apply.</p>
-        pub fn set_filter_operation(
-            mut self,
-            input: std::option::Option<crate::model::FilterOperation>,
-        ) -> Self {
-            self.filter_operation = input;
-            self
+        pub fn set_filter_operation(mut self, input: std::option::Option<crate::model::FilterOperation>) -> Self {
+            self.filter_operation = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                dimension_value: self.dimension_value,
-                filter_operation: self.filter_operation,
+                dimension_value: self.dimension_value
+                ,
+                filter_operation: self.filter_operation
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -329,9 +313,9 @@ impl Filter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filteroperation = unimplemented!();
 /// match filteroperation {
@@ -352,54 +336,48 @@ impl Filter {
 /// Specifically, when `filteroperation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FilterOperation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FilterOperation {
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterOperation {
     fn from(s: &str) -> Self {
         match s {
             "EQUALS" => FilterOperation::Equals,
-            other => FilterOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FilterOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FilterOperation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterOperation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FilterOperation::from(s))
+                }
+            }
 impl FilterOperation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterOperation::Equals => "EQUALS",
-            FilterOperation::Unknown(value) => value.as_str(),
+            FilterOperation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EQUALS"]
+        &[
+            "EQUALS"
+        ]
     }
 }
 impl AsRef<str> for FilterOperation {
@@ -411,7 +389,7 @@ impl AsRef<str> for FilterOperation {
 /// <p>Contains information about source data used to generate metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricSource {
+pub struct MetricSource  {
     /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
     #[doc(hidden)]
     pub s3_source_config: std::option::Option<crate::model::S3SourceConfig>,
@@ -433,35 +411,33 @@ pub struct MetricSource {
 }
 impl MetricSource {
     /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
-    pub fn s3_source_config(&self) -> std::option::Option<&crate::model::S3SourceConfig> {
+    pub fn s3_source_config(&self) -> std::option::Option<& crate::model::S3SourceConfig> {
         self.s3_source_config.as_ref()
     }
     /// <p>Details about an AppFlow datasource.</p>
-    pub fn app_flow_config(&self) -> std::option::Option<&crate::model::AppFlowConfig> {
+    pub fn app_flow_config(&self) -> std::option::Option<& crate::model::AppFlowConfig> {
         self.app_flow_config.as_ref()
     }
     /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
-    pub fn cloud_watch_config(&self) -> std::option::Option<&crate::model::CloudWatchConfig> {
+    pub fn cloud_watch_config(&self) -> std::option::Option<& crate::model::CloudWatchConfig> {
         self.cloud_watch_config.as_ref()
     }
     /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
-    pub fn rds_source_config(&self) -> std::option::Option<&crate::model::RdsSourceConfig> {
+    pub fn rds_source_config(&self) -> std::option::Option<& crate::model::RdsSourceConfig> {
         self.rds_source_config.as_ref()
     }
     /// <p>Details about an Amazon Redshift database datasource.</p>
-    pub fn redshift_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::RedshiftSourceConfig> {
+    pub fn redshift_source_config(&self) -> std::option::Option<& crate::model::RedshiftSourceConfig> {
         self.redshift_source_config.as_ref()
     }
     /// <p>Details about an Amazon Athena datasource.</p>
-    pub fn athena_source_config(&self) -> std::option::Option<&crate::model::AthenaSourceConfig> {
+    pub fn athena_source_config(&self) -> std::option::Option<& crate::model::AthenaSourceConfig> {
         self.athena_source_config.as_ref()
     }
 }
 /// See [`MetricSource`](crate::model::MetricSource).
 pub mod metric_source {
-
+    
     /// A builder for [`MetricSource`](crate::model::MetricSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -479,12 +455,8 @@ pub mod metric_source {
             self
         }
         /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
-        pub fn set_s3_source_config(
-            mut self,
-            input: std::option::Option<crate::model::S3SourceConfig>,
-        ) -> Self {
-            self.s3_source_config = input;
-            self
+        pub fn set_s3_source_config(mut self, input: std::option::Option<crate::model::S3SourceConfig>) -> Self {
+            self.s3_source_config = input; self
         }
         /// <p>Details about an AppFlow datasource.</p>
         pub fn app_flow_config(mut self, input: crate::model::AppFlowConfig) -> Self {
@@ -492,12 +464,8 @@ pub mod metric_source {
             self
         }
         /// <p>Details about an AppFlow datasource.</p>
-        pub fn set_app_flow_config(
-            mut self,
-            input: std::option::Option<crate::model::AppFlowConfig>,
-        ) -> Self {
-            self.app_flow_config = input;
-            self
+        pub fn set_app_flow_config(mut self, input: std::option::Option<crate::model::AppFlowConfig>) -> Self {
+            self.app_flow_config = input; self
         }
         /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
         pub fn cloud_watch_config(mut self, input: crate::model::CloudWatchConfig) -> Self {
@@ -505,12 +473,8 @@ pub mod metric_source {
             self
         }
         /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
-        pub fn set_cloud_watch_config(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchConfig>,
-        ) -> Self {
-            self.cloud_watch_config = input;
-            self
+        pub fn set_cloud_watch_config(mut self, input: std::option::Option<crate::model::CloudWatchConfig>) -> Self {
+            self.cloud_watch_config = input; self
         }
         /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
         pub fn rds_source_config(mut self, input: crate::model::RdsSourceConfig) -> Self {
@@ -518,12 +482,8 @@ pub mod metric_source {
             self
         }
         /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
-        pub fn set_rds_source_config(
-            mut self,
-            input: std::option::Option<crate::model::RdsSourceConfig>,
-        ) -> Self {
-            self.rds_source_config = input;
-            self
+        pub fn set_rds_source_config(mut self, input: std::option::Option<crate::model::RdsSourceConfig>) -> Self {
+            self.rds_source_config = input; self
         }
         /// <p>Details about an Amazon Redshift database datasource.</p>
         pub fn redshift_source_config(mut self, input: crate::model::RedshiftSourceConfig) -> Self {
@@ -531,12 +491,8 @@ pub mod metric_source {
             self
         }
         /// <p>Details about an Amazon Redshift database datasource.</p>
-        pub fn set_redshift_source_config(
-            mut self,
-            input: std::option::Option<crate::model::RedshiftSourceConfig>,
-        ) -> Self {
-            self.redshift_source_config = input;
-            self
+        pub fn set_redshift_source_config(mut self, input: std::option::Option<crate::model::RedshiftSourceConfig>) -> Self {
+            self.redshift_source_config = input; self
         }
         /// <p>Details about an Amazon Athena datasource.</p>
         pub fn athena_source_config(mut self, input: crate::model::AthenaSourceConfig) -> Self {
@@ -544,25 +500,29 @@ pub mod metric_source {
             self
         }
         /// <p>Details about an Amazon Athena datasource.</p>
-        pub fn set_athena_source_config(
-            mut self,
-            input: std::option::Option<crate::model::AthenaSourceConfig>,
-        ) -> Self {
-            self.athena_source_config = input;
-            self
+        pub fn set_athena_source_config(mut self, input: std::option::Option<crate::model::AthenaSourceConfig>) -> Self {
+            self.athena_source_config = input; self
         }
         /// Consumes the builder and constructs a [`MetricSource`](crate::model::MetricSource).
         pub fn build(self) -> crate::model::MetricSource {
             crate::model::MetricSource {
-                s3_source_config: self.s3_source_config,
-                app_flow_config: self.app_flow_config,
-                cloud_watch_config: self.cloud_watch_config,
-                rds_source_config: self.rds_source_config,
-                redshift_source_config: self.redshift_source_config,
-                athena_source_config: self.athena_source_config,
+                s3_source_config: self.s3_source_config
+                ,
+                app_flow_config: self.app_flow_config
+                ,
+                cloud_watch_config: self.cloud_watch_config
+                ,
+                rds_source_config: self.rds_source_config
+                ,
+                redshift_source_config: self.redshift_source_config
+                ,
+                athena_source_config: self.athena_source_config
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricSource {
     /// Creates a new builder-style object to manufacture [`MetricSource`](crate::model::MetricSource).
@@ -574,7 +534,7 @@ impl MetricSource {
 /// <p>Details about an Amazon Athena datasource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AthenaSourceConfig {
+pub struct AthenaSourceConfig  {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -599,39 +559,37 @@ pub struct AthenaSourceConfig {
 }
 impl AthenaSourceConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The database's name.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The database's data catalog.</p>
-    pub fn data_catalog(&self) -> std::option::Option<&str> {
+    pub fn data_catalog(&self) -> std::option::Option<& str> {
         self.data_catalog.as_deref()
     }
     /// <p>The database's table name.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The database's work group name.</p>
-    pub fn work_group_name(&self) -> std::option::Option<&str> {
+    pub fn work_group_name(&self) -> std::option::Option<& str> {
         self.work_group_name.as_deref()
     }
     /// <p>The database's results path.</p>
-    pub fn s3_results_path(&self) -> std::option::Option<&str> {
+    pub fn s3_results_path(&self) -> std::option::Option<& str> {
         self.s3_results_path.as_deref()
     }
     /// <p>Settings for backtest mode.</p>
-    pub fn back_test_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::BackTestConfiguration> {
+    pub fn back_test_configuration(&self) -> std::option::Option<& crate::model::BackTestConfiguration> {
         self.back_test_configuration.as_ref()
     }
 }
 /// See [`AthenaSourceConfig`](crate::model::AthenaSourceConfig).
 pub mod athena_source_config {
-
+    
     /// A builder for [`AthenaSourceConfig`](crate::model::AthenaSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -641,8 +599,7 @@ pub mod athena_source_config {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) work_group_name: std::option::Option<std::string::String>,
         pub(crate) s3_results_path: std::option::Option<std::string::String>,
-        pub(crate) back_test_configuration:
-            std::option::Option<crate::model::BackTestConfiguration>,
+        pub(crate) back_test_configuration: std::option::Option<crate::model::BackTestConfiguration>,
     }
     impl Builder {
         /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
@@ -652,8 +609,7 @@ pub mod athena_source_config {
         }
         /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The database's name.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -661,12 +617,8 @@ pub mod athena_source_config {
             self
         }
         /// <p>The database's name.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The database's data catalog.</p>
         pub fn data_catalog(mut self, input: impl Into<std::string::String>) -> Self {
@@ -675,8 +627,7 @@ pub mod athena_source_config {
         }
         /// <p>The database's data catalog.</p>
         pub fn set_data_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_catalog = input;
-            self
+            self.data_catalog = input; self
         }
         /// <p>The database's table name.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -685,8 +636,7 @@ pub mod athena_source_config {
         }
         /// <p>The database's table name.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The database's work group name.</p>
         pub fn work_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -694,12 +644,8 @@ pub mod athena_source_config {
             self
         }
         /// <p>The database's work group name.</p>
-        pub fn set_work_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.work_group_name = input;
-            self
+        pub fn set_work_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group_name = input; self
         }
         /// <p>The database's results path.</p>
         pub fn s3_results_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -707,42 +653,40 @@ pub mod athena_source_config {
             self
         }
         /// <p>The database's results path.</p>
-        pub fn set_s3_results_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_results_path = input;
-            self
+        pub fn set_s3_results_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_results_path = input; self
         }
         /// <p>Settings for backtest mode.</p>
-        pub fn back_test_configuration(
-            mut self,
-            input: crate::model::BackTestConfiguration,
-        ) -> Self {
+        pub fn back_test_configuration(mut self, input: crate::model::BackTestConfiguration) -> Self {
             self.back_test_configuration = Some(input);
             self
         }
         /// <p>Settings for backtest mode.</p>
-        pub fn set_back_test_configuration(
-            mut self,
-            input: std::option::Option<crate::model::BackTestConfiguration>,
-        ) -> Self {
-            self.back_test_configuration = input;
-            self
+        pub fn set_back_test_configuration(mut self, input: std::option::Option<crate::model::BackTestConfiguration>) -> Self {
+            self.back_test_configuration = input; self
         }
         /// Consumes the builder and constructs a [`AthenaSourceConfig`](crate::model::AthenaSourceConfig).
         pub fn build(self) -> crate::model::AthenaSourceConfig {
             crate::model::AthenaSourceConfig {
-                role_arn: self.role_arn,
-                database_name: self.database_name,
-                data_catalog: self.data_catalog,
-                table_name: self.table_name,
-                work_group_name: self.work_group_name,
-                s3_results_path: self.s3_results_path,
-                back_test_configuration: self.back_test_configuration,
+                role_arn: self.role_arn
+                ,
+                database_name: self.database_name
+                ,
+                data_catalog: self.data_catalog
+                ,
+                table_name: self.table_name
+                ,
+                work_group_name: self.work_group_name
+                ,
+                s3_results_path: self.s3_results_path
+                ,
+                back_test_configuration: self.back_test_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl AthenaSourceConfig {
     /// Creates a new builder-style object to manufacture [`AthenaSourceConfig`](crate::model::AthenaSourceConfig).
@@ -754,7 +698,7 @@ impl AthenaSourceConfig {
 /// <p>Settings for backtest mode.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackTestConfiguration {
+pub struct BackTestConfiguration  {
     /// <p>Run a backtest instead of monitoring new data.</p>
     #[doc(hidden)]
     pub run_back_test_mode: std::option::Option<bool>,
@@ -767,7 +711,7 @@ impl BackTestConfiguration {
 }
 /// See [`BackTestConfiguration`](crate::model::BackTestConfiguration).
 pub mod back_test_configuration {
-
+    
     /// A builder for [`BackTestConfiguration`](crate::model::BackTestConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -781,16 +725,18 @@ pub mod back_test_configuration {
         }
         /// <p>Run a backtest instead of monitoring new data.</p>
         pub fn set_run_back_test_mode(mut self, input: std::option::Option<bool>) -> Self {
-            self.run_back_test_mode = input;
-            self
+            self.run_back_test_mode = input; self
         }
         /// Consumes the builder and constructs a [`BackTestConfiguration`](crate::model::BackTestConfiguration).
         pub fn build(self) -> crate::model::BackTestConfiguration {
             crate::model::BackTestConfiguration {
-                run_back_test_mode: self.run_back_test_mode,
+                run_back_test_mode: self.run_back_test_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl BackTestConfiguration {
     /// Creates a new builder-style object to manufacture [`BackTestConfiguration`](crate::model::BackTestConfiguration).
@@ -802,7 +748,7 @@ impl BackTestConfiguration {
 /// <p>Provides information about the Amazon Redshift database configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedshiftSourceConfig {
+pub struct RedshiftSourceConfig  {
     /// <p>A string identifying the Redshift cluster.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -830,11 +776,11 @@ pub struct RedshiftSourceConfig {
 }
 impl RedshiftSourceConfig {
     /// <p>A string identifying the Redshift cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of the database host.</p>
-    pub fn database_host(&self) -> std::option::Option<&str> {
+    pub fn database_host(&self) -> std::option::Option<& str> {
         self.database_host.as_deref()
     }
     /// <p>The port number where the database can be accessed.</p>
@@ -842,29 +788,29 @@ impl RedshiftSourceConfig {
         self.database_port
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> std::option::Option<& str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The Redshift database name.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The table name of the Redshift database.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<& crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
 /// See [`RedshiftSourceConfig`](crate::model::RedshiftSourceConfig).
 pub mod redshift_source_config {
-
+    
     /// A builder for [`RedshiftSourceConfig`](crate::model::RedshiftSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -884,12 +830,8 @@ pub mod redshift_source_config {
             self
         }
         /// <p>A string identifying the Redshift cluster.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The name of the database host.</p>
         pub fn database_host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -897,12 +839,8 @@ pub mod redshift_source_config {
             self
         }
         /// <p>The name of the database host.</p>
-        pub fn set_database_host(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_host = input;
-            self
+        pub fn set_database_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_host = input; self
         }
         /// <p>The port number where the database can be accessed.</p>
         pub fn database_port(mut self, input: i32) -> Self {
@@ -911,8 +849,7 @@ pub mod redshift_source_config {
         }
         /// <p>The port number where the database can be accessed.</p>
         pub fn set_database_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.database_port = input;
-            self
+            self.database_port = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
         pub fn secret_manager_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -920,12 +857,8 @@ pub mod redshift_source_config {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-        pub fn set_secret_manager_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_manager_arn = input;
-            self
+        pub fn set_secret_manager_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_manager_arn = input; self
         }
         /// <p>The Redshift database name.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -933,12 +866,8 @@ pub mod redshift_source_config {
             self
         }
         /// <p>The Redshift database name.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The table name of the Redshift database.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -947,8 +876,7 @@ pub mod redshift_source_config {
         }
         /// <p>The table name of the Redshift database.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -957,8 +885,7 @@ pub mod redshift_source_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
@@ -966,27 +893,33 @@ pub mod redshift_source_config {
             self
         }
         /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-        pub fn set_vpc_configuration(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfiguration>,
-        ) -> Self {
-            self.vpc_configuration = input;
-            self
+        pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::model::VpcConfiguration>) -> Self {
+            self.vpc_configuration = input; self
         }
         /// Consumes the builder and constructs a [`RedshiftSourceConfig`](crate::model::RedshiftSourceConfig).
         pub fn build(self) -> crate::model::RedshiftSourceConfig {
             crate::model::RedshiftSourceConfig {
-                cluster_identifier: self.cluster_identifier,
-                database_host: self.database_host,
-                database_port: self.database_port,
-                secret_manager_arn: self.secret_manager_arn,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                role_arn: self.role_arn,
-                vpc_configuration: self.vpc_configuration,
+                cluster_identifier: self.cluster_identifier
+                ,
+                database_host: self.database_host
+                ,
+                database_port: self.database_port
+                ,
+                secret_manager_arn: self.secret_manager_arn
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                role_arn: self.role_arn
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl RedshiftSourceConfig {
     /// Creates a new builder-style object to manufacture [`RedshiftSourceConfig`](crate::model::RedshiftSourceConfig).
@@ -998,7 +931,7 @@ impl RedshiftSourceConfig {
 /// <p>Contains configuration information about the Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfiguration {
+pub struct VpcConfiguration  {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
     #[doc(hidden)]
     pub subnet_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1008,17 +941,17 @@ pub struct VpcConfiguration {
 }
 impl VpcConfiguration {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    pub fn subnet_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_id_list(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_id_list.as_deref()
     }
     /// <p>An array of strings containing the list of security groups.</p>
-    pub fn security_group_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_id_list(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_id_list.as_deref()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
-
+    
     /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1033,17 +966,13 @@ pub mod vpc_configuration {
         /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
         pub fn subnet_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_id_list.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_id_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_id_list = Some(v);
+                            self
         }
         /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-        pub fn set_subnet_id_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_id_list = input;
-            self
+        pub fn set_subnet_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_id_list = input; self
         }
         /// Appends an item to `security_group_id_list`.
         ///
@@ -1052,26 +981,26 @@ pub mod vpc_configuration {
         /// <p>An array of strings containing the list of security groups.</p>
         pub fn security_group_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_id_list.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_id_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_id_list = Some(v);
+                            self
         }
         /// <p>An array of strings containing the list of security groups.</p>
-        pub fn set_security_group_id_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_id_list = input;
-            self
+        pub fn set_security_group_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_id_list = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfiguration`](crate::model::VpcConfiguration).
         pub fn build(self) -> crate::model::VpcConfiguration {
             crate::model::VpcConfiguration {
-                subnet_id_list: self.subnet_id_list,
-                security_group_id_list: self.security_group_id_list,
+                subnet_id_list: self.subnet_id_list
+                ,
+                security_group_id_list: self.security_group_id_list
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfiguration {
     /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -1083,7 +1012,7 @@ impl VpcConfiguration {
 /// <p>Contains information about the Amazon Relational Database Service (RDS) configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsSourceConfig {
+pub struct RdsSourceConfig  {
     /// <p>A string identifying the database instance.</p>
     #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
@@ -1111,11 +1040,11 @@ pub struct RdsSourceConfig {
 }
 impl RdsSourceConfig {
     /// <p>A string identifying the database instance.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The host name of the database.</p>
-    pub fn database_host(&self) -> std::option::Option<&str> {
+    pub fn database_host(&self) -> std::option::Option<& str> {
         self.database_host.as_deref()
     }
     /// <p>The port number where the database can be accessed.</p>
@@ -1123,29 +1052,29 @@ impl RdsSourceConfig {
         self.database_port
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> std::option::Option<& str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The name of the RDS database.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table in the database.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<& crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
 /// See [`RdsSourceConfig`](crate::model::RdsSourceConfig).
 pub mod rds_source_config {
-
+    
     /// A builder for [`RdsSourceConfig`](crate::model::RdsSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1165,12 +1094,8 @@ pub mod rds_source_config {
             self
         }
         /// <p>A string identifying the database instance.</p>
-        pub fn set_db_instance_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_instance_identifier = input;
-            self
+        pub fn set_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_instance_identifier = input; self
         }
         /// <p>The host name of the database.</p>
         pub fn database_host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1178,12 +1103,8 @@ pub mod rds_source_config {
             self
         }
         /// <p>The host name of the database.</p>
-        pub fn set_database_host(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_host = input;
-            self
+        pub fn set_database_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_host = input; self
         }
         /// <p>The port number where the database can be accessed.</p>
         pub fn database_port(mut self, input: i32) -> Self {
@@ -1192,8 +1113,7 @@ pub mod rds_source_config {
         }
         /// <p>The port number where the database can be accessed.</p>
         pub fn set_database_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.database_port = input;
-            self
+            self.database_port = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
         pub fn secret_manager_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1201,12 +1121,8 @@ pub mod rds_source_config {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-        pub fn set_secret_manager_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_manager_arn = input;
-            self
+        pub fn set_secret_manager_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_manager_arn = input; self
         }
         /// <p>The name of the RDS database.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1214,12 +1130,8 @@ pub mod rds_source_config {
             self
         }
         /// <p>The name of the RDS database.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The name of the table in the database.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1228,8 +1140,7 @@ pub mod rds_source_config {
         }
         /// <p>The name of the table in the database.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the role.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1238,8 +1149,7 @@ pub mod rds_source_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the role.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
@@ -1247,27 +1157,33 @@ pub mod rds_source_config {
             self
         }
         /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-        pub fn set_vpc_configuration(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfiguration>,
-        ) -> Self {
-            self.vpc_configuration = input;
-            self
+        pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::model::VpcConfiguration>) -> Self {
+            self.vpc_configuration = input; self
         }
         /// Consumes the builder and constructs a [`RdsSourceConfig`](crate::model::RdsSourceConfig).
         pub fn build(self) -> crate::model::RdsSourceConfig {
             crate::model::RdsSourceConfig {
-                db_instance_identifier: self.db_instance_identifier,
-                database_host: self.database_host,
-                database_port: self.database_port,
-                secret_manager_arn: self.secret_manager_arn,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                role_arn: self.role_arn,
-                vpc_configuration: self.vpc_configuration,
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                database_host: self.database_host
+                ,
+                database_port: self.database_port
+                ,
+                secret_manager_arn: self.secret_manager_arn
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                role_arn: self.role_arn
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl RdsSourceConfig {
     /// Creates a new builder-style object to manufacture [`RdsSourceConfig`](crate::model::RdsSourceConfig).
@@ -1279,7 +1195,7 @@ impl RdsSourceConfig {
 /// <p>Details about an Amazon CloudWatch datasource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchConfig {
+pub struct CloudWatchConfig  {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -1289,25 +1205,22 @@ pub struct CloudWatchConfig {
 }
 impl CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Settings for backtest mode.</p>
-    pub fn back_test_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::BackTestConfiguration> {
+    pub fn back_test_configuration(&self) -> std::option::Option<& crate::model::BackTestConfiguration> {
         self.back_test_configuration.as_ref()
     }
 }
 /// See [`CloudWatchConfig`](crate::model::CloudWatchConfig).
 pub mod cloud_watch_config {
-
+    
     /// A builder for [`CloudWatchConfig`](crate::model::CloudWatchConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) back_test_configuration:
-            std::option::Option<crate::model::BackTestConfiguration>,
+        pub(crate) back_test_configuration: std::option::Option<crate::model::BackTestConfiguration>,
     }
     impl Builder {
         /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
@@ -1317,33 +1230,29 @@ pub mod cloud_watch_config {
         }
         /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>Settings for backtest mode.</p>
-        pub fn back_test_configuration(
-            mut self,
-            input: crate::model::BackTestConfiguration,
-        ) -> Self {
+        pub fn back_test_configuration(mut self, input: crate::model::BackTestConfiguration) -> Self {
             self.back_test_configuration = Some(input);
             self
         }
         /// <p>Settings for backtest mode.</p>
-        pub fn set_back_test_configuration(
-            mut self,
-            input: std::option::Option<crate::model::BackTestConfiguration>,
-        ) -> Self {
-            self.back_test_configuration = input;
-            self
+        pub fn set_back_test_configuration(mut self, input: std::option::Option<crate::model::BackTestConfiguration>) -> Self {
+            self.back_test_configuration = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchConfig`](crate::model::CloudWatchConfig).
         pub fn build(self) -> crate::model::CloudWatchConfig {
             crate::model::CloudWatchConfig {
-                role_arn: self.role_arn,
-                back_test_configuration: self.back_test_configuration,
+                role_arn: self.role_arn
+                ,
+                back_test_configuration: self.back_test_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchConfig {
     /// Creates a new builder-style object to manufacture [`CloudWatchConfig`](crate::model::CloudWatchConfig).
@@ -1355,7 +1264,7 @@ impl CloudWatchConfig {
 /// <p>Details about an Amazon AppFlow flow datasource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppFlowConfig {
+pub struct AppFlowConfig  {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -1365,17 +1274,17 @@ pub struct AppFlowConfig {
 }
 impl AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p> name of the flow.</p>
-    pub fn flow_name(&self) -> std::option::Option<&str> {
+    pub fn flow_name(&self) -> std::option::Option<& str> {
         self.flow_name.as_deref()
     }
 }
 /// See [`AppFlowConfig`](crate::model::AppFlowConfig).
 pub mod app_flow_config {
-
+    
     /// A builder for [`AppFlowConfig`](crate::model::AppFlowConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1390,8 +1299,7 @@ pub mod app_flow_config {
         }
         /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p> name of the flow.</p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1400,17 +1308,20 @@ pub mod app_flow_config {
         }
         /// <p> name of the flow.</p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input;
-            self
+            self.flow_name = input; self
         }
         /// Consumes the builder and constructs a [`AppFlowConfig`](crate::model::AppFlowConfig).
         pub fn build(self) -> crate::model::AppFlowConfig {
             crate::model::AppFlowConfig {
-                role_arn: self.role_arn,
-                flow_name: self.flow_name,
+                role_arn: self.role_arn
+                ,
+                flow_name: self.flow_name
+                ,
             }
         }
     }
+    
+    
 }
 impl AppFlowConfig {
     /// Creates a new builder-style object to manufacture [`AppFlowConfig`](crate::model::AppFlowConfig).
@@ -1422,7 +1333,7 @@ impl AppFlowConfig {
 /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3SourceConfig {
+pub struct S3SourceConfig  {
     /// <p>The ARN of an IAM role that has read and write access permissions to the source S3 bucket.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -1438,34 +1349,31 @@ pub struct S3SourceConfig {
 }
 impl S3SourceConfig {
     /// <p>The ARN of an IAM role that has read and write access permissions to the source S3 bucket.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of templated paths to the source files.</p>
-    pub fn templated_path_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn templated_path_list(&self) -> std::option::Option<& [std::string::String]> {
         self.templated_path_list.as_deref()
     }
     /// <p>A list of paths to the historical data files.</p>
-    pub fn historical_data_path_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn historical_data_path_list(&self) -> std::option::Option<& [std::string::String]> {
         self.historical_data_path_list.as_deref()
     }
     /// <p>Contains information about a source file's formatting.</p>
-    pub fn file_format_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::model::FileFormatDescriptor> {
+    pub fn file_format_descriptor(&self) -> std::option::Option<& crate::model::FileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
     }
 }
 /// See [`S3SourceConfig`](crate::model::S3SourceConfig).
 pub mod s3_source_config {
-
+    
     /// A builder for [`S3SourceConfig`](crate::model::S3SourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) historical_data_path_list:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) historical_data_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) file_format_descriptor: std::option::Option<crate::model::FileFormatDescriptor>,
     }
     impl Builder {
@@ -1476,8 +1384,7 @@ pub mod s3_source_config {
         }
         /// <p>The ARN of an IAM role that has read and write access permissions to the source S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Appends an item to `templated_path_list`.
         ///
@@ -1486,17 +1393,13 @@ pub mod s3_source_config {
         /// <p>A list of templated paths to the source files.</p>
         pub fn templated_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.templated_path_list.unwrap_or_default();
-            v.push(input.into());
-            self.templated_path_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.templated_path_list = Some(v);
+                            self
         }
         /// <p>A list of templated paths to the source files.</p>
-        pub fn set_templated_path_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.templated_path_list = input;
-            self
+        pub fn set_templated_path_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.templated_path_list = input; self
         }
         /// Appends an item to `historical_data_path_list`.
         ///
@@ -1505,17 +1408,13 @@ pub mod s3_source_config {
         /// <p>A list of paths to the historical data files.</p>
         pub fn historical_data_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.historical_data_path_list.unwrap_or_default();
-            v.push(input.into());
-            self.historical_data_path_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.historical_data_path_list = Some(v);
+                            self
         }
         /// <p>A list of paths to the historical data files.</p>
-        pub fn set_historical_data_path_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.historical_data_path_list = input;
-            self
+        pub fn set_historical_data_path_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.historical_data_path_list = input; self
         }
         /// <p>Contains information about a source file's formatting.</p>
         pub fn file_format_descriptor(mut self, input: crate::model::FileFormatDescriptor) -> Self {
@@ -1523,23 +1422,25 @@ pub mod s3_source_config {
             self
         }
         /// <p>Contains information about a source file's formatting.</p>
-        pub fn set_file_format_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::FileFormatDescriptor>,
-        ) -> Self {
-            self.file_format_descriptor = input;
-            self
+        pub fn set_file_format_descriptor(mut self, input: std::option::Option<crate::model::FileFormatDescriptor>) -> Self {
+            self.file_format_descriptor = input; self
         }
         /// Consumes the builder and constructs a [`S3SourceConfig`](crate::model::S3SourceConfig).
         pub fn build(self) -> crate::model::S3SourceConfig {
             crate::model::S3SourceConfig {
-                role_arn: self.role_arn,
-                templated_path_list: self.templated_path_list,
-                historical_data_path_list: self.historical_data_path_list,
-                file_format_descriptor: self.file_format_descriptor,
+                role_arn: self.role_arn
+                ,
+                templated_path_list: self.templated_path_list
+                ,
+                historical_data_path_list: self.historical_data_path_list
+                ,
+                file_format_descriptor: self.file_format_descriptor
+                ,
             }
         }
     }
+    
+    
 }
 impl S3SourceConfig {
     /// Creates a new builder-style object to manufacture [`S3SourceConfig`](crate::model::S3SourceConfig).
@@ -1551,7 +1452,7 @@ impl S3SourceConfig {
 /// <p>Contains information about a source file's formatting.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileFormatDescriptor {
+pub struct FileFormatDescriptor  {
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
     #[doc(hidden)]
     pub csv_format_descriptor: std::option::Option<crate::model::CsvFormatDescriptor>,
@@ -1561,19 +1462,17 @@ pub struct FileFormatDescriptor {
 }
 impl FileFormatDescriptor {
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
-    pub fn csv_format_descriptor(&self) -> std::option::Option<&crate::model::CsvFormatDescriptor> {
+    pub fn csv_format_descriptor(&self) -> std::option::Option<& crate::model::CsvFormatDescriptor> {
         self.csv_format_descriptor.as_ref()
     }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
-    pub fn json_format_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::model::JsonFormatDescriptor> {
+    pub fn json_format_descriptor(&self) -> std::option::Option<& crate::model::JsonFormatDescriptor> {
         self.json_format_descriptor.as_ref()
     }
 }
 /// See [`FileFormatDescriptor`](crate::model::FileFormatDescriptor).
 pub mod file_format_descriptor {
-
+    
     /// A builder for [`FileFormatDescriptor`](crate::model::FileFormatDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1587,12 +1486,8 @@ pub mod file_format_descriptor {
             self
         }
         /// <p>Contains information about how a source CSV data file should be analyzed.</p>
-        pub fn set_csv_format_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::CsvFormatDescriptor>,
-        ) -> Self {
-            self.csv_format_descriptor = input;
-            self
+        pub fn set_csv_format_descriptor(mut self, input: std::option::Option<crate::model::CsvFormatDescriptor>) -> Self {
+            self.csv_format_descriptor = input; self
         }
         /// <p>Contains information about how a source JSON data file should be analyzed.</p>
         pub fn json_format_descriptor(mut self, input: crate::model::JsonFormatDescriptor) -> Self {
@@ -1600,21 +1495,21 @@ pub mod file_format_descriptor {
             self
         }
         /// <p>Contains information about how a source JSON data file should be analyzed.</p>
-        pub fn set_json_format_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::JsonFormatDescriptor>,
-        ) -> Self {
-            self.json_format_descriptor = input;
-            self
+        pub fn set_json_format_descriptor(mut self, input: std::option::Option<crate::model::JsonFormatDescriptor>) -> Self {
+            self.json_format_descriptor = input; self
         }
         /// Consumes the builder and constructs a [`FileFormatDescriptor`](crate::model::FileFormatDescriptor).
         pub fn build(self) -> crate::model::FileFormatDescriptor {
             crate::model::FileFormatDescriptor {
-                csv_format_descriptor: self.csv_format_descriptor,
-                json_format_descriptor: self.json_format_descriptor,
+                csv_format_descriptor: self.csv_format_descriptor
+                ,
+                json_format_descriptor: self.json_format_descriptor
+                ,
             }
         }
     }
+    
+    
 }
 impl FileFormatDescriptor {
     /// Creates a new builder-style object to manufacture [`FileFormatDescriptor`](crate::model::FileFormatDescriptor).
@@ -1626,7 +1521,7 @@ impl FileFormatDescriptor {
 /// <p>Contains information about how a source JSON data file should be analyzed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JsonFormatDescriptor {
+pub struct JsonFormatDescriptor  {
     /// <p>The level of compression of the source CSV file.</p>
     #[doc(hidden)]
     pub file_compression: std::option::Option<crate::model::JsonFileCompression>,
@@ -1636,17 +1531,17 @@ pub struct JsonFormatDescriptor {
 }
 impl JsonFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
-    pub fn file_compression(&self) -> std::option::Option<&crate::model::JsonFileCompression> {
+    pub fn file_compression(&self) -> std::option::Option<& crate::model::JsonFileCompression> {
         self.file_compression.as_ref()
     }
     /// <p>The character set in which the source JSON file is written.</p>
-    pub fn charset(&self) -> std::option::Option<&str> {
+    pub fn charset(&self) -> std::option::Option<& str> {
         self.charset.as_deref()
     }
 }
 /// See [`JsonFormatDescriptor`](crate::model::JsonFormatDescriptor).
 pub mod json_format_descriptor {
-
+    
     /// A builder for [`JsonFormatDescriptor`](crate::model::JsonFormatDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1660,12 +1555,8 @@ pub mod json_format_descriptor {
             self
         }
         /// <p>The level of compression of the source CSV file.</p>
-        pub fn set_file_compression(
-            mut self,
-            input: std::option::Option<crate::model::JsonFileCompression>,
-        ) -> Self {
-            self.file_compression = input;
-            self
+        pub fn set_file_compression(mut self, input: std::option::Option<crate::model::JsonFileCompression>) -> Self {
+            self.file_compression = input; self
         }
         /// <p>The character set in which the source JSON file is written.</p>
         pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1674,17 +1565,20 @@ pub mod json_format_descriptor {
         }
         /// <p>The character set in which the source JSON file is written.</p>
         pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.charset = input;
-            self
+            self.charset = input; self
         }
         /// Consumes the builder and constructs a [`JsonFormatDescriptor`](crate::model::JsonFormatDescriptor).
         pub fn build(self) -> crate::model::JsonFormatDescriptor {
             crate::model::JsonFormatDescriptor {
-                file_compression: self.file_compression,
-                charset: self.charset,
+                file_compression: self.file_compression
+                ,
+                charset: self.charset
+                ,
             }
         }
     }
+    
+    
 }
 impl JsonFormatDescriptor {
     /// Creates a new builder-style object to manufacture [`JsonFormatDescriptor`](crate::model::JsonFormatDescriptor).
@@ -1699,9 +1593,9 @@ impl JsonFormatDescriptor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jsonfilecompression = unimplemented!();
 /// match jsonfilecompression {
@@ -1723,60 +1617,52 @@ impl JsonFormatDescriptor {
 /// Specifically, when `jsonfilecompression` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JsonFileCompression::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JsonFileCompression {
     #[allow(missing_docs)] // documentation missing in model
     Gzip,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JsonFileCompression {
     fn from(s: &str) -> Self {
         match s {
             "GZIP" => JsonFileCompression::Gzip,
             "NONE" => JsonFileCompression::None,
-            other => {
-                JsonFileCompression::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => JsonFileCompression::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JsonFileCompression {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JsonFileCompression::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JsonFileCompression::from(s))
+                }
+            }
 impl JsonFileCompression {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JsonFileCompression::Gzip => "GZIP",
             JsonFileCompression::None => "NONE",
-            JsonFileCompression::Unknown(value) => value.as_str(),
+            JsonFileCompression::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GZIP", "NONE"]
+        &[
+            "GZIP", "NONE"
+        ]
     }
 }
 impl AsRef<str> for JsonFileCompression {
@@ -1788,7 +1674,7 @@ impl AsRef<str> for JsonFileCompression {
 /// <p>Contains information about how a source CSV data file should be analyzed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CsvFormatDescriptor {
+pub struct CsvFormatDescriptor  {
     /// <p>The level of compression of the source CSV file.</p>
     #[doc(hidden)]
     pub file_compression: std::option::Option<crate::model::CsvFileCompression>,
@@ -1810,11 +1696,11 @@ pub struct CsvFormatDescriptor {
 }
 impl CsvFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
-    pub fn file_compression(&self) -> std::option::Option<&crate::model::CsvFileCompression> {
+    pub fn file_compression(&self) -> std::option::Option<& crate::model::CsvFileCompression> {
         self.file_compression.as_ref()
     }
     /// <p>The character set in which the source CSV file is written.</p>
-    pub fn charset(&self) -> std::option::Option<&str> {
+    pub fn charset(&self) -> std::option::Option<& str> {
         self.charset.as_deref()
     }
     /// <p>Whether or not the source CSV file contains a header.</p>
@@ -1822,21 +1708,21 @@ impl CsvFormatDescriptor {
         self.contains_header
     }
     /// <p>The character used to delimit the source CSV file.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>A list of the source CSV file's headers, if any.</p>
-    pub fn header_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn header_list(&self) -> std::option::Option<& [std::string::String]> {
         self.header_list.as_deref()
     }
     /// <p>The character used as a quote character.</p>
-    pub fn quote_symbol(&self) -> std::option::Option<&str> {
+    pub fn quote_symbol(&self) -> std::option::Option<& str> {
         self.quote_symbol.as_deref()
     }
 }
 /// See [`CsvFormatDescriptor`](crate::model::CsvFormatDescriptor).
 pub mod csv_format_descriptor {
-
+    
     /// A builder for [`CsvFormatDescriptor`](crate::model::CsvFormatDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1854,12 +1740,8 @@ pub mod csv_format_descriptor {
             self
         }
         /// <p>The level of compression of the source CSV file.</p>
-        pub fn set_file_compression(
-            mut self,
-            input: std::option::Option<crate::model::CsvFileCompression>,
-        ) -> Self {
-            self.file_compression = input;
-            self
+        pub fn set_file_compression(mut self, input: std::option::Option<crate::model::CsvFileCompression>) -> Self {
+            self.file_compression = input; self
         }
         /// <p>The character set in which the source CSV file is written.</p>
         pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1868,8 +1750,7 @@ pub mod csv_format_descriptor {
         }
         /// <p>The character set in which the source CSV file is written.</p>
         pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.charset = input;
-            self
+            self.charset = input; self
         }
         /// <p>Whether or not the source CSV file contains a header.</p>
         pub fn contains_header(mut self, input: bool) -> Self {
@@ -1878,8 +1759,7 @@ pub mod csv_format_descriptor {
         }
         /// <p>Whether or not the source CSV file contains a header.</p>
         pub fn set_contains_header(mut self, input: std::option::Option<bool>) -> Self {
-            self.contains_header = input;
-            self
+            self.contains_header = input; self
         }
         /// <p>The character used to delimit the source CSV file.</p>
         pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1888,8 +1768,7 @@ pub mod csv_format_descriptor {
         }
         /// <p>The character used to delimit the source CSV file.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = input;
-            self
+            self.delimiter = input; self
         }
         /// Appends an item to `header_list`.
         ///
@@ -1898,17 +1777,13 @@ pub mod csv_format_descriptor {
         /// <p>A list of the source CSV file's headers, if any.</p>
         pub fn header_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.header_list.unwrap_or_default();
-            v.push(input.into());
-            self.header_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.header_list = Some(v);
+                            self
         }
         /// <p>A list of the source CSV file's headers, if any.</p>
-        pub fn set_header_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.header_list = input;
-            self
+        pub fn set_header_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.header_list = input; self
         }
         /// <p>The character used as a quote character.</p>
         pub fn quote_symbol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1917,21 +1792,28 @@ pub mod csv_format_descriptor {
         }
         /// <p>The character used as a quote character.</p>
         pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.quote_symbol = input;
-            self
+            self.quote_symbol = input; self
         }
         /// Consumes the builder and constructs a [`CsvFormatDescriptor`](crate::model::CsvFormatDescriptor).
         pub fn build(self) -> crate::model::CsvFormatDescriptor {
             crate::model::CsvFormatDescriptor {
-                file_compression: self.file_compression,
-                charset: self.charset,
-                contains_header: self.contains_header,
-                delimiter: self.delimiter,
-                header_list: self.header_list,
-                quote_symbol: self.quote_symbol,
+                file_compression: self.file_compression
+                ,
+                charset: self.charset
+                ,
+                contains_header: self.contains_header
+                ,
+                delimiter: self.delimiter
+                ,
+                header_list: self.header_list
+                ,
+                quote_symbol: self.quote_symbol
+                ,
             }
         }
     }
+    
+    
 }
 impl CsvFormatDescriptor {
     /// Creates a new builder-style object to manufacture [`CsvFormatDescriptor`](crate::model::CsvFormatDescriptor).
@@ -1946,9 +1828,9 @@ impl CsvFormatDescriptor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let csvfilecompression = unimplemented!();
 /// match csvfilecompression {
@@ -1970,60 +1852,52 @@ impl CsvFormatDescriptor {
 /// Specifically, when `csvfilecompression` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CsvFileCompression::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CsvFileCompression {
     #[allow(missing_docs)] // documentation missing in model
     Gzip,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CsvFileCompression {
     fn from(s: &str) -> Self {
         match s {
             "GZIP" => CsvFileCompression::Gzip,
             "NONE" => CsvFileCompression::None,
-            other => {
-                CsvFileCompression::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CsvFileCompression::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CsvFileCompression {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CsvFileCompression::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CsvFileCompression::from(s))
+                }
+            }
 impl CsvFileCompression {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CsvFileCompression::Gzip => "GZIP",
             CsvFileCompression::None => "NONE",
-            CsvFileCompression::Unknown(value) => value.as_str(),
+            CsvFileCompression::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GZIP", "NONE"]
+        &[
+            "GZIP", "NONE"
+        ]
     }
 }
 impl AsRef<str> for CsvFileCompression {
@@ -2038,9 +1912,9 @@ impl AsRef<str> for CsvFileCompression {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let frequency = unimplemented!();
 /// match frequency {
@@ -2064,22 +1938,14 @@ impl AsRef<str> for CsvFileCompression {
 /// Specifically, when `frequency` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Frequency::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Frequency {
     #[allow(missing_docs)] // documentation missing in model
     P1D,
@@ -2090,7 +1956,7 @@ pub enum Frequency {
     #[allow(missing_docs)] // documentation missing in model
     Pt5M,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Frequency {
     fn from(s: &str) -> Self {
@@ -2099,17 +1965,17 @@ impl std::convert::From<&str> for Frequency {
             "PT10M" => Frequency::Pt10M,
             "PT1H" => Frequency::Pt1H,
             "PT5M" => Frequency::Pt5M,
-            other => Frequency::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Frequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Frequency {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Frequency::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Frequency::from(s))
+                }
+            }
 impl Frequency {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2118,12 +1984,14 @@ impl Frequency {
             Frequency::Pt10M => "PT10M",
             Frequency::Pt1H => "PT1H",
             Frequency::Pt5M => "PT5M",
-            Frequency::Unknown(value) => value.as_str(),
+            Frequency::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["P1D", "PT10M", "PT1H", "PT5M"]
+        &[
+            "P1D", "PT10M", "PT1H", "PT5M"
+        ]
     }
 }
 impl AsRef<str> for Frequency {
@@ -2135,7 +2003,7 @@ impl AsRef<str> for Frequency {
 /// <p>Contains information about the column used to track time in a source data file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampColumn {
+pub struct TimestampColumn  {
     /// <p>The name of the timestamp column.</p>
     #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
@@ -2145,17 +2013,17 @@ pub struct TimestampColumn {
 }
 impl TimestampColumn {
     /// <p>The name of the timestamp column.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> std::option::Option<& str> {
         self.column_name.as_deref()
     }
     /// <p>The format of the timestamp column.</p>
-    pub fn column_format(&self) -> std::option::Option<&str> {
+    pub fn column_format(&self) -> std::option::Option<& str> {
         self.column_format.as_deref()
     }
 }
 /// See [`TimestampColumn`](crate::model::TimestampColumn).
 pub mod timestamp_column {
-
+    
     /// A builder for [`TimestampColumn`](crate::model::TimestampColumn).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2170,8 +2038,7 @@ pub mod timestamp_column {
         }
         /// <p>The name of the timestamp column.</p>
         pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.column_name = input;
-            self
+            self.column_name = input; self
         }
         /// <p>The format of the timestamp column.</p>
         pub fn column_format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2179,21 +2046,21 @@ pub mod timestamp_column {
             self
         }
         /// <p>The format of the timestamp column.</p>
-        pub fn set_column_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.column_format = input;
-            self
+        pub fn set_column_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.column_format = input; self
         }
         /// Consumes the builder and constructs a [`TimestampColumn`](crate::model::TimestampColumn).
         pub fn build(self) -> crate::model::TimestampColumn {
             crate::model::TimestampColumn {
-                column_name: self.column_name,
-                column_format: self.column_format,
+                column_name: self.column_name
+                ,
+                column_format: self.column_format
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestampColumn {
     /// Creates a new builder-style object to manufacture [`TimestampColumn`](crate::model::TimestampColumn).
@@ -2205,7 +2072,7 @@ impl TimestampColumn {
 /// <p>A calculation made by contrasting a measure and a dimension from your source data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metric {
+pub struct Metric  {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -2218,21 +2085,21 @@ pub struct Metric {
 }
 impl Metric {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn aggregation_function(&self) -> std::option::Option<&crate::model::AggregationFunction> {
+    pub fn aggregation_function(&self) -> std::option::Option<& crate::model::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The namespace for the metric.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
-
+    
     /// A builder for [`Metric`](crate::model::Metric).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2248,8 +2115,7 @@ pub mod metric {
         }
         /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The function with which the metric is calculated.</p>
         pub fn aggregation_function(mut self, input: crate::model::AggregationFunction) -> Self {
@@ -2257,12 +2123,8 @@ pub mod metric {
             self
         }
         /// <p>The function with which the metric is calculated.</p>
-        pub fn set_aggregation_function(
-            mut self,
-            input: std::option::Option<crate::model::AggregationFunction>,
-        ) -> Self {
-            self.aggregation_function = input;
-            self
+        pub fn set_aggregation_function(mut self, input: std::option::Option<crate::model::AggregationFunction>) -> Self {
+            self.aggregation_function = input; self
         }
         /// <p>The namespace for the metric.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2271,18 +2133,22 @@ pub mod metric {
         }
         /// <p>The namespace for the metric.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// Consumes the builder and constructs a [`Metric`](crate::model::Metric).
         pub fn build(self) -> crate::model::Metric {
             crate::model::Metric {
-                metric_name: self.metric_name,
-                aggregation_function: self.aggregation_function,
-                namespace: self.namespace,
+                metric_name: self.metric_name
+                ,
+                aggregation_function: self.aggregation_function
+                ,
+                namespace: self.namespace
+                ,
             }
         }
     }
+    
+    
 }
 impl Metric {
     /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
@@ -2297,9 +2163,9 @@ impl Metric {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggregationfunction = unimplemented!();
 /// match aggregationfunction {
@@ -2321,60 +2187,52 @@ impl Metric {
 /// Specifically, when `aggregationfunction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregationFunction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AggregationFunction {
     #[allow(missing_docs)] // documentation missing in model
     Avg,
     #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregationFunction {
     fn from(s: &str) -> Self {
         match s {
             "AVG" => AggregationFunction::Avg,
             "SUM" => AggregationFunction::Sum,
-            other => {
-                AggregationFunction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AggregationFunction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AggregationFunction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregationFunction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AggregationFunction::from(s))
+                }
+            }
 impl AggregationFunction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregationFunction::Avg => "AVG",
             AggregationFunction::Sum => "SUM",
-            AggregationFunction::Unknown(value) => value.as_str(),
+            AggregationFunction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVG", "SUM"]
+        &[
+            "AVG", "SUM"
+        ]
     }
 }
 impl AsRef<str> for AggregationFunction {
@@ -2386,20 +2244,20 @@ impl AsRef<str> for AggregationFunction {
 /// <p>Contains information about a detector's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyDetectorConfig {
+pub struct AnomalyDetectorConfig  {
     /// <p>The frequency at which the detector analyzes its source data.</p>
     #[doc(hidden)]
     pub anomaly_detector_frequency: std::option::Option<crate::model::Frequency>,
 }
 impl AnomalyDetectorConfig {
     /// <p>The frequency at which the detector analyzes its source data.</p>
-    pub fn anomaly_detector_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+    pub fn anomaly_detector_frequency(&self) -> std::option::Option<& crate::model::Frequency> {
         self.anomaly_detector_frequency.as_ref()
     }
 }
 /// See [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig).
 pub mod anomaly_detector_config {
-
+    
     /// A builder for [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2412,20 +2270,19 @@ pub mod anomaly_detector_config {
             self
         }
         /// <p>The frequency at which the detector analyzes its source data.</p>
-        pub fn set_anomaly_detector_frequency(
-            mut self,
-            input: std::option::Option<crate::model::Frequency>,
-        ) -> Self {
-            self.anomaly_detector_frequency = input;
-            self
+        pub fn set_anomaly_detector_frequency(mut self, input: std::option::Option<crate::model::Frequency>) -> Self {
+            self.anomaly_detector_frequency = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig).
         pub fn build(self) -> crate::model::AnomalyDetectorConfig {
             crate::model::AnomalyDetectorConfig {
-                anomaly_detector_frequency: self.anomaly_detector_frequency,
+                anomaly_detector_frequency: self.anomaly_detector_frequency
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyDetectorConfig {
     /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig).
@@ -2437,7 +2294,7 @@ impl AnomalyDetectorConfig {
 /// <p>The configuration of the alert filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlertFilters {
+pub struct AlertFilters  {
     /// <p>The list of measures that you want to get alerts for.</p>
     #[doc(hidden)]
     pub metric_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2447,23 +2304,22 @@ pub struct AlertFilters {
 }
 impl AlertFilters {
     /// <p>The list of measures that you want to get alerts for.</p>
-    pub fn metric_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn metric_list(&self) -> std::option::Option<& [std::string::String]> {
         self.metric_list.as_deref()
     }
     /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
-    pub fn dimension_filter_list(&self) -> std::option::Option<&[crate::model::DimensionFilter]> {
+    pub fn dimension_filter_list(&self) -> std::option::Option<& [crate::model::DimensionFilter]> {
         self.dimension_filter_list.as_deref()
     }
 }
 /// See [`AlertFilters`](crate::model::AlertFilters).
 pub mod alert_filters {
-
+    
     /// A builder for [`AlertFilters`](crate::model::AlertFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_list: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) dimension_filter_list:
-            std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
+        pub(crate) dimension_filter_list: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
     }
     impl Builder {
         /// Appends an item to `metric_list`.
@@ -2473,17 +2329,13 @@ pub mod alert_filters {
         /// <p>The list of measures that you want to get alerts for.</p>
         pub fn metric_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metric_list.unwrap_or_default();
-            v.push(input.into());
-            self.metric_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.metric_list = Some(v);
+                            self
         }
         /// <p>The list of measures that you want to get alerts for.</p>
-        pub fn set_metric_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.metric_list = input;
-            self
+        pub fn set_metric_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.metric_list = input; self
         }
         /// Appends an item to `dimension_filter_list`.
         ///
@@ -2492,26 +2344,26 @@ pub mod alert_filters {
         /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
         pub fn dimension_filter_list(mut self, input: crate::model::DimensionFilter) -> Self {
             let mut v = self.dimension_filter_list.unwrap_or_default();
-            v.push(input);
-            self.dimension_filter_list = Some(v);
-            self
+                            v.push(input);
+                            self.dimension_filter_list = Some(v);
+                            self
         }
         /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
-        pub fn set_dimension_filter_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
-        ) -> Self {
-            self.dimension_filter_list = input;
-            self
+        pub fn set_dimension_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>) -> Self {
+            self.dimension_filter_list = input; self
         }
         /// Consumes the builder and constructs a [`AlertFilters`](crate::model::AlertFilters).
         pub fn build(self) -> crate::model::AlertFilters {
             crate::model::AlertFilters {
-                metric_list: self.metric_list,
-                dimension_filter_list: self.dimension_filter_list,
+                metric_list: self.metric_list
+                ,
+                dimension_filter_list: self.dimension_filter_list
+                ,
             }
         }
     }
+    
+    
 }
 impl AlertFilters {
     /// Creates a new builder-style object to manufacture [`AlertFilters`](crate::model::AlertFilters).
@@ -2523,7 +2375,7 @@ impl AlertFilters {
 /// <p>The dimension filter, containing DimensionName and DimensionValueList.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionFilter {
+pub struct DimensionFilter  {
     /// <p>The name of the dimension to filter on.</p>
     #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
@@ -2533,17 +2385,17 @@ pub struct DimensionFilter {
 }
 impl DimensionFilter {
     /// <p>The name of the dimension to filter on.</p>
-    pub fn dimension_name(&self) -> std::option::Option<&str> {
+    pub fn dimension_name(&self) -> std::option::Option<& str> {
         self.dimension_name.as_deref()
     }
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    pub fn dimension_value_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dimension_value_list(&self) -> std::option::Option<& [std::string::String]> {
         self.dimension_value_list.as_deref()
     }
 }
 /// See [`DimensionFilter`](crate::model::DimensionFilter).
 pub mod dimension_filter {
-
+    
     /// A builder for [`DimensionFilter`](crate::model::DimensionFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2557,12 +2409,8 @@ pub mod dimension_filter {
             self
         }
         /// <p>The name of the dimension to filter on.</p>
-        pub fn set_dimension_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_name = input;
-            self
+        pub fn set_dimension_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_name = input; self
         }
         /// Appends an item to `dimension_value_list`.
         ///
@@ -2571,26 +2419,26 @@ pub mod dimension_filter {
         /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
         pub fn dimension_value_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dimension_value_list.unwrap_or_default();
-            v.push(input.into());
-            self.dimension_value_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.dimension_value_list = Some(v);
+                            self
         }
         /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-        pub fn set_dimension_value_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.dimension_value_list = input;
-            self
+        pub fn set_dimension_value_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.dimension_value_list = input; self
         }
         /// Consumes the builder and constructs a [`DimensionFilter`](crate::model::DimensionFilter).
         pub fn build(self) -> crate::model::DimensionFilter {
             crate::model::DimensionFilter {
-                dimension_name: self.dimension_name,
-                dimension_value_list: self.dimension_value_list,
+                dimension_name: self.dimension_name
+                ,
+                dimension_value_list: self.dimension_value_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DimensionFilter {
     /// Creates a new builder-style object to manufacture [`DimensionFilter`](crate::model::DimensionFilter).
@@ -2602,7 +2450,7 @@ impl DimensionFilter {
 /// <p>A configuration that specifies the action to perform when anomalies are detected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Action {
+pub struct Action  {
     /// <p>A configuration for an Amazon SNS channel.</p>
     #[doc(hidden)]
     pub sns_configuration: std::option::Option<crate::model::SnsConfiguration>,
@@ -2612,17 +2460,17 @@ pub struct Action {
 }
 impl Action {
     /// <p>A configuration for an Amazon SNS channel.</p>
-    pub fn sns_configuration(&self) -> std::option::Option<&crate::model::SnsConfiguration> {
+    pub fn sns_configuration(&self) -> std::option::Option<& crate::model::SnsConfiguration> {
         self.sns_configuration.as_ref()
     }
     /// <p>A configuration for an AWS Lambda channel.</p>
-    pub fn lambda_configuration(&self) -> std::option::Option<&crate::model::LambdaConfiguration> {
+    pub fn lambda_configuration(&self) -> std::option::Option<& crate::model::LambdaConfiguration> {
         self.lambda_configuration.as_ref()
     }
 }
 /// See [`Action`](crate::model::Action).
 pub mod action {
-
+    
     /// A builder for [`Action`](crate::model::Action).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2636,12 +2484,8 @@ pub mod action {
             self
         }
         /// <p>A configuration for an Amazon SNS channel.</p>
-        pub fn set_sns_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SnsConfiguration>,
-        ) -> Self {
-            self.sns_configuration = input;
-            self
+        pub fn set_sns_configuration(mut self, input: std::option::Option<crate::model::SnsConfiguration>) -> Self {
+            self.sns_configuration = input; self
         }
         /// <p>A configuration for an AWS Lambda channel.</p>
         pub fn lambda_configuration(mut self, input: crate::model::LambdaConfiguration) -> Self {
@@ -2649,21 +2493,21 @@ pub mod action {
             self
         }
         /// <p>A configuration for an AWS Lambda channel.</p>
-        pub fn set_lambda_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LambdaConfiguration>,
-        ) -> Self {
-            self.lambda_configuration = input;
-            self
+        pub fn set_lambda_configuration(mut self, input: std::option::Option<crate::model::LambdaConfiguration>) -> Self {
+            self.lambda_configuration = input; self
         }
         /// Consumes the builder and constructs a [`Action`](crate::model::Action).
         pub fn build(self) -> crate::model::Action {
             crate::model::Action {
-                sns_configuration: self.sns_configuration,
-                lambda_configuration: self.lambda_configuration,
+                sns_configuration: self.sns_configuration
+                ,
+                lambda_configuration: self.lambda_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl Action {
     /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
@@ -2675,7 +2519,7 @@ impl Action {
 /// <p>Contains information about a Lambda configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaConfiguration {
+pub struct LambdaConfiguration  {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -2685,17 +2529,17 @@ pub struct LambdaConfiguration {
 }
 impl LambdaConfiguration {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The ARN of the Lambda function.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> std::option::Option<& str> {
         self.lambda_arn.as_deref()
     }
 }
 /// See [`LambdaConfiguration`](crate::model::LambdaConfiguration).
 pub mod lambda_configuration {
-
+    
     /// A builder for [`LambdaConfiguration`](crate::model::LambdaConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2710,8 +2554,7 @@ pub mod lambda_configuration {
         }
         /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2720,17 +2563,20 @@ pub mod lambda_configuration {
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lambda_arn = input;
-            self
+            self.lambda_arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::model::LambdaConfiguration).
         pub fn build(self) -> crate::model::LambdaConfiguration {
             crate::model::LambdaConfiguration {
-                role_arn: self.role_arn,
-                lambda_arn: self.lambda_arn,
+                role_arn: self.role_arn
+                ,
+                lambda_arn: self.lambda_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaConfiguration {
     /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration).
@@ -2742,44 +2588,44 @@ impl LambdaConfiguration {
 /// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsConfiguration {
+pub struct SnsConfiguration  {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the target SNS topic.</p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The format of the SNS topic.</p>
-    /// <ul>
-    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// <p>The format of the SNS topic.</p> 
+    /// <ul> 
+    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> 
+    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> 
+    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub sns_format: std::option::Option<crate::model::SnsFormat>,
 }
 impl SnsConfiguration {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The ARN of the target SNS topic.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>The format of the SNS topic.</p>
-    /// <ul>
-    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// <p>The format of the SNS topic.</p> 
+    /// <ul> 
+    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> 
+    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> 
+    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> 
     /// </ul>
-    pub fn sns_format(&self) -> std::option::Option<&crate::model::SnsFormat> {
+    pub fn sns_format(&self) -> std::option::Option<& crate::model::SnsFormat> {
         self.sns_format.as_ref()
     }
 }
 /// See [`SnsConfiguration`](crate::model::SnsConfiguration).
 pub mod sns_configuration {
-
+    
     /// A builder for [`SnsConfiguration`](crate::model::SnsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2795,8 +2641,7 @@ pub mod sns_configuration {
         }
         /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The ARN of the target SNS topic.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2804,45 +2649,42 @@ pub mod sns_configuration {
             self
         }
         /// <p>The ARN of the target SNS topic.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
-        /// <p>The format of the SNS topic.</p>
-        /// <ul>
-        /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-        /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-        /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+        /// <p>The format of the SNS topic.</p> 
+        /// <ul> 
+        /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> 
+        /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> 
+        /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> 
         /// </ul>
         pub fn sns_format(mut self, input: crate::model::SnsFormat) -> Self {
             self.sns_format = Some(input);
             self
         }
-        /// <p>The format of the SNS topic.</p>
-        /// <ul>
-        /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
-        /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
-        /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+        /// <p>The format of the SNS topic.</p> 
+        /// <ul> 
+        /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> 
+        /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> 
+        /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> 
         /// </ul>
-        pub fn set_sns_format(
-            mut self,
-            input: std::option::Option<crate::model::SnsFormat>,
-        ) -> Self {
-            self.sns_format = input;
-            self
+        pub fn set_sns_format(mut self, input: std::option::Option<crate::model::SnsFormat>) -> Self {
+            self.sns_format = input; self
         }
         /// Consumes the builder and constructs a [`SnsConfiguration`](crate::model::SnsConfiguration).
         pub fn build(self) -> crate::model::SnsConfiguration {
             crate::model::SnsConfiguration {
-                role_arn: self.role_arn,
-                sns_topic_arn: self.sns_topic_arn,
-                sns_format: self.sns_format,
+                role_arn: self.role_arn
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                sns_format: self.sns_format
+                ,
             }
         }
     }
+    
+    
 }
 impl SnsConfiguration {
     /// Creates a new builder-style object to manufacture [`SnsConfiguration`](crate::model::SnsConfiguration).
@@ -2857,9 +2699,9 @@ impl SnsConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snsformat = unimplemented!();
 /// match snsformat {
@@ -2882,22 +2724,14 @@ impl SnsConfiguration {
 /// Specifically, when `snsformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnsFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnsFormat {
     #[allow(missing_docs)] // documentation missing in model
     Json,
@@ -2906,7 +2740,7 @@ pub enum SnsFormat {
     #[allow(missing_docs)] // documentation missing in model
     ShortText,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnsFormat {
     fn from(s: &str) -> Self {
@@ -2914,17 +2748,17 @@ impl std::convert::From<&str> for SnsFormat {
             "JSON" => SnsFormat::Json,
             "LONG_TEXT" => SnsFormat::LongText,
             "SHORT_TEXT" => SnsFormat::ShortText,
-            other => SnsFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SnsFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnsFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnsFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnsFormat::from(s))
+                }
+            }
 impl SnsFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2932,12 +2766,14 @@ impl SnsFormat {
             SnsFormat::Json => "JSON",
             SnsFormat::LongText => "LONG_TEXT",
             SnsFormat::ShortText => "SHORT_TEXT",
-            SnsFormat::Unknown(value) => value.as_str(),
+            SnsFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JSON", "LONG_TEXT", "SHORT_TEXT"]
+        &[
+            "JSON", "LONG_TEXT", "SHORT_TEXT"
+        ]
     }
 }
 impl AsRef<str> for SnsFormat {
@@ -2949,7 +2785,7 @@ impl AsRef<str> for SnsFormat {
 /// <p>Feedback for an anomalous metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyGroupTimeSeriesFeedback {
+pub struct AnomalyGroupTimeSeriesFeedback  {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
@@ -2962,11 +2798,11 @@ pub struct AnomalyGroupTimeSeriesFeedback {
 }
 impl AnomalyGroupTimeSeriesFeedback {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> std::option::Option<&str> {
+    pub fn time_series_id(&self) -> std::option::Option<& str> {
         self.time_series_id.as_deref()
     }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
@@ -2976,7 +2812,7 @@ impl AnomalyGroupTimeSeriesFeedback {
 }
 /// See [`AnomalyGroupTimeSeriesFeedback`](crate::model::AnomalyGroupTimeSeriesFeedback).
 pub mod anomaly_group_time_series_feedback {
-
+    
     /// A builder for [`AnomalyGroupTimeSeriesFeedback`](crate::model::AnomalyGroupTimeSeriesFeedback).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2991,12 +2827,8 @@ pub mod anomaly_group_time_series_feedback {
             self
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn set_anomaly_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_group_id = input;
-            self
+        pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_group_id = input; self
         }
         /// <p>The ID of the metric.</p>
         pub fn time_series_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3004,12 +2836,8 @@ pub mod anomaly_group_time_series_feedback {
             self
         }
         /// <p>The ID of the metric.</p>
-        pub fn set_time_series_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.time_series_id = input;
-            self
+        pub fn set_time_series_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time_series_id = input; self
         }
         /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
         pub fn is_anomaly(mut self, input: bool) -> Self {
@@ -3018,18 +2846,22 @@ pub mod anomaly_group_time_series_feedback {
         }
         /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
         pub fn set_is_anomaly(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_anomaly = input;
-            self
+            self.is_anomaly = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyGroupTimeSeriesFeedback`](crate::model::AnomalyGroupTimeSeriesFeedback).
         pub fn build(self) -> crate::model::AnomalyGroupTimeSeriesFeedback {
             crate::model::AnomalyGroupTimeSeriesFeedback {
-                anomaly_group_id: self.anomaly_group_id,
-                time_series_id: self.time_series_id,
-                is_anomaly: self.is_anomaly,
+                anomaly_group_id: self.anomaly_group_id
+                ,
+                time_series_id: self.time_series_id
+                ,
+                is_anomaly: self.is_anomaly
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyGroupTimeSeriesFeedback {
     /// Creates a new builder-style object to manufacture [`AnomalyGroupTimeSeriesFeedback`](crate::model::AnomalyGroupTimeSeriesFeedback).
@@ -3041,7 +2873,7 @@ impl AnomalyGroupTimeSeriesFeedback {
 /// <p>Contains information about a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricSetSummary {
+pub struct MetricSetSummary  {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
@@ -3062,45 +2894,41 @@ pub struct MetricSetSummary {
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl MetricSetSummary {
     /// <p>The ARN of the dataset.</p>
-    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_set_arn(&self) -> std::option::Option<& str> {
         self.metric_set_arn.as_deref()
     }
     /// <p>The ARN of the detector to which the dataset belongs.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The description of the dataset.</p>
-    pub fn metric_set_description(&self) -> std::option::Option<&str> {
+    pub fn metric_set_description(&self) -> std::option::Option<& str> {
         self.metric_set_description.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn metric_set_name(&self) -> std::option::Option<&str> {
+    pub fn metric_set_name(&self) -> std::option::Option<& str> {
         self.metric_set_name.as_deref()
     }
     /// <p>The time at which the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the dataset was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`MetricSetSummary`](crate::model::MetricSetSummary).
 pub mod metric_set_summary {
-
+    
     /// A builder for [`MetricSetSummary`](crate::model::MetricSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3110,9 +2938,7 @@ pub mod metric_set_summary {
         pub(crate) metric_set_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the dataset.</p>
@@ -3121,12 +2947,8 @@ pub mod metric_set_summary {
             self
         }
         /// <p>The ARN of the dataset.</p>
-        pub fn set_metric_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_set_arn = input;
-            self
+        pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_set_arn = input; self
         }
         /// <p>The ARN of the detector to which the dataset belongs.</p>
         pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3134,12 +2956,8 @@ pub mod metric_set_summary {
             self
         }
         /// <p>The ARN of the detector to which the dataset belongs.</p>
-        pub fn set_anomaly_detector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_detector_arn = input;
-            self
+        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_detector_arn = input; self
         }
         /// <p>The description of the dataset.</p>
         pub fn metric_set_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3147,12 +2965,8 @@ pub mod metric_set_summary {
             self
         }
         /// <p>The description of the dataset.</p>
-        pub fn set_metric_set_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_set_description = input;
-            self
+        pub fn set_metric_set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_set_description = input; self
         }
         /// <p>The name of the dataset.</p>
         pub fn metric_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3160,12 +2974,8 @@ pub mod metric_set_summary {
             self
         }
         /// <p>The name of the dataset.</p>
-        pub fn set_metric_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_set_name = input;
-            self
+        pub fn set_metric_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_set_name = input; self
         }
         /// <p>The time at which the dataset was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3173,12 +2983,8 @@ pub mod metric_set_summary {
             self
         }
         /// <p>The time at which the dataset was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time at which the dataset was last modified.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3186,51 +2992,46 @@ pub mod metric_set_summary {
             self
         }
         /// <p>The time at which the dataset was last modified.</p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`MetricSetSummary`](crate::model::MetricSetSummary).
         pub fn build(self) -> crate::model::MetricSetSummary {
             crate::model::MetricSetSummary {
-                metric_set_arn: self.metric_set_arn,
-                anomaly_detector_arn: self.anomaly_detector_arn,
-                metric_set_description: self.metric_set_description,
-                metric_set_name: self.metric_set_name,
-                creation_time: self.creation_time,
-                last_modification_time: self.last_modification_time,
-                tags: self.tags,
+                metric_set_arn: self.metric_set_arn
+                ,
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                metric_set_description: self.metric_set_description
+                ,
+                metric_set_name: self.metric_set_name
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modification_time: self.last_modification_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricSetSummary {
     /// Creates a new builder-style object to manufacture [`MetricSetSummary`](crate::model::MetricSetSummary).
@@ -3242,7 +3043,7 @@ impl MetricSetSummary {
 /// <p>Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeSeries {
+pub struct TimeSeries  {
     /// <p>The ID of the metric.</p>
     #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
@@ -3255,27 +3056,26 @@ pub struct TimeSeries {
 }
 impl TimeSeries {
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> std::option::Option<&str> {
+    pub fn time_series_id(&self) -> std::option::Option<& str> {
         self.time_series_id.as_deref()
     }
     /// <p>The dimensions of the metric.</p>
-    pub fn dimension_list(&self) -> std::option::Option<&[crate::model::DimensionNameValue]> {
+    pub fn dimension_list(&self) -> std::option::Option<& [crate::model::DimensionNameValue]> {
         self.dimension_list.as_deref()
     }
     /// <p>The values for the metric.</p>
-    pub fn metric_value_list(&self) -> std::option::Option<&[f64]> {
+    pub fn metric_value_list(&self) -> std::option::Option<& [f64]> {
         self.metric_value_list.as_deref()
     }
 }
 /// See [`TimeSeries`](crate::model::TimeSeries).
 pub mod time_series {
-
+    
     /// A builder for [`TimeSeries`](crate::model::TimeSeries).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_series_id: std::option::Option<std::string::String>,
-        pub(crate) dimension_list:
-            std::option::Option<std::vec::Vec<crate::model::DimensionNameValue>>,
+        pub(crate) dimension_list: std::option::Option<std::vec::Vec<crate::model::DimensionNameValue>>,
         pub(crate) metric_value_list: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -3285,12 +3085,8 @@ pub mod time_series {
             self
         }
         /// <p>The ID of the metric.</p>
-        pub fn set_time_series_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.time_series_id = input;
-            self
+        pub fn set_time_series_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time_series_id = input; self
         }
         /// Appends an item to `dimension_list`.
         ///
@@ -3299,17 +3095,13 @@ pub mod time_series {
         /// <p>The dimensions of the metric.</p>
         pub fn dimension_list(mut self, input: crate::model::DimensionNameValue) -> Self {
             let mut v = self.dimension_list.unwrap_or_default();
-            v.push(input);
-            self.dimension_list = Some(v);
-            self
+                            v.push(input);
+                            self.dimension_list = Some(v);
+                            self
         }
         /// <p>The dimensions of the metric.</p>
-        pub fn set_dimension_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DimensionNameValue>>,
-        ) -> Self {
-            self.dimension_list = input;
-            self
+        pub fn set_dimension_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionNameValue>>) -> Self {
+            self.dimension_list = input; self
         }
         /// Appends an item to `metric_value_list`.
         ///
@@ -3318,27 +3110,28 @@ pub mod time_series {
         /// <p>The values for the metric.</p>
         pub fn metric_value_list(mut self, input: f64) -> Self {
             let mut v = self.metric_value_list.unwrap_or_default();
-            v.push(input);
-            self.metric_value_list = Some(v);
-            self
+                            v.push(input);
+                            self.metric_value_list = Some(v);
+                            self
         }
         /// <p>The values for the metric.</p>
-        pub fn set_metric_value_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<f64>>,
-        ) -> Self {
-            self.metric_value_list = input;
-            self
+        pub fn set_metric_value_list(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+            self.metric_value_list = input; self
         }
         /// Consumes the builder and constructs a [`TimeSeries`](crate::model::TimeSeries).
         pub fn build(self) -> crate::model::TimeSeries {
             crate::model::TimeSeries {
-                time_series_id: self.time_series_id,
-                dimension_list: self.dimension_list,
-                metric_value_list: self.metric_value_list,
+                time_series_id: self.time_series_id
+                ,
+                dimension_list: self.dimension_list
+                ,
+                metric_value_list: self.metric_value_list
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeSeries {
     /// Creates a new builder-style object to manufacture [`TimeSeries`](crate::model::TimeSeries).
@@ -3350,7 +3143,7 @@ impl TimeSeries {
 /// <p>A dimension name and value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionNameValue {
+pub struct DimensionNameValue  {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
@@ -3360,17 +3153,17 @@ pub struct DimensionNameValue {
 }
 impl DimensionNameValue {
     /// <p>The name of the dimension.</p>
-    pub fn dimension_name(&self) -> std::option::Option<&str> {
+    pub fn dimension_name(&self) -> std::option::Option<& str> {
         self.dimension_name.as_deref()
     }
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(&self) -> std::option::Option<&str> {
+    pub fn dimension_value(&self) -> std::option::Option<& str> {
         self.dimension_value.as_deref()
     }
 }
 /// See [`DimensionNameValue`](crate::model::DimensionNameValue).
 pub mod dimension_name_value {
-
+    
     /// A builder for [`DimensionNameValue`](crate::model::DimensionNameValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3384,12 +3177,8 @@ pub mod dimension_name_value {
             self
         }
         /// <p>The name of the dimension.</p>
-        pub fn set_dimension_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_name = input;
-            self
+        pub fn set_dimension_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_name = input; self
         }
         /// <p>The value of the dimension.</p>
         pub fn dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3397,21 +3186,21 @@ pub mod dimension_name_value {
             self
         }
         /// <p>The value of the dimension.</p>
-        pub fn set_dimension_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_value = input;
-            self
+        pub fn set_dimension_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_value = input; self
         }
         /// Consumes the builder and constructs a [`DimensionNameValue`](crate::model::DimensionNameValue).
         pub fn build(self) -> crate::model::DimensionNameValue {
             crate::model::DimensionNameValue {
-                dimension_name: self.dimension_name,
-                dimension_value: self.dimension_value,
+                dimension_name: self.dimension_name
+                ,
+                dimension_value: self.dimension_value
+                ,
             }
         }
     }
+    
+    
 }
 impl DimensionNameValue {
     /// Creates a new builder-style object to manufacture [`DimensionNameValue`](crate::model::DimensionNameValue).
@@ -3423,7 +3212,7 @@ impl DimensionNameValue {
 /// <p>Aggregated statistics for a group of anomalous metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyGroupStatistics {
+pub struct AnomalyGroupStatistics  {
     /// <p>The start of the time range that was searched.</p>
     #[doc(hidden)]
     pub evaluation_start_date: std::option::Option<std::string::String>,
@@ -3432,12 +3221,11 @@ pub struct AnomalyGroupStatistics {
     pub total_count: i32,
     /// <p>Statistics for individual metrics within the group.</p>
     #[doc(hidden)]
-    pub itemized_metric_stats_list:
-        std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
+    pub itemized_metric_stats_list: std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
 }
 impl AnomalyGroupStatistics {
     /// <p>The start of the time range that was searched.</p>
-    pub fn evaluation_start_date(&self) -> std::option::Option<&str> {
+    pub fn evaluation_start_date(&self) -> std::option::Option<& str> {
         self.evaluation_start_date.as_deref()
     }
     /// <p>The number of groups found.</p>
@@ -3445,22 +3233,19 @@ impl AnomalyGroupStatistics {
         self.total_count
     }
     /// <p>Statistics for individual metrics within the group.</p>
-    pub fn itemized_metric_stats_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ItemizedMetricStats]> {
+    pub fn itemized_metric_stats_list(&self) -> std::option::Option<& [crate::model::ItemizedMetricStats]> {
         self.itemized_metric_stats_list.as_deref()
     }
 }
 /// See [`AnomalyGroupStatistics`](crate::model::AnomalyGroupStatistics).
 pub mod anomaly_group_statistics {
-
+    
     /// A builder for [`AnomalyGroupStatistics`](crate::model::AnomalyGroupStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_start_date: std::option::Option<std::string::String>,
         pub(crate) total_count: std::option::Option<i32>,
-        pub(crate) itemized_metric_stats_list:
-            std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
+        pub(crate) itemized_metric_stats_list: std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
     }
     impl Builder {
         /// <p>The start of the time range that was searched.</p>
@@ -3469,12 +3254,8 @@ pub mod anomaly_group_statistics {
             self
         }
         /// <p>The start of the time range that was searched.</p>
-        pub fn set_evaluation_start_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluation_start_date = input;
-            self
+        pub fn set_evaluation_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluation_start_date = input; self
         }
         /// <p>The number of groups found.</p>
         pub fn total_count(mut self, input: i32) -> Self {
@@ -3483,40 +3264,38 @@ pub mod anomaly_group_statistics {
         }
         /// <p>The number of groups found.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_count = input;
-            self
+            self.total_count = input; self
         }
         /// Appends an item to `itemized_metric_stats_list`.
         ///
         /// To override the contents of this collection use [`set_itemized_metric_stats_list`](Self::set_itemized_metric_stats_list).
         ///
         /// <p>Statistics for individual metrics within the group.</p>
-        pub fn itemized_metric_stats_list(
-            mut self,
-            input: crate::model::ItemizedMetricStats,
-        ) -> Self {
+        pub fn itemized_metric_stats_list(mut self, input: crate::model::ItemizedMetricStats) -> Self {
             let mut v = self.itemized_metric_stats_list.unwrap_or_default();
-            v.push(input);
-            self.itemized_metric_stats_list = Some(v);
-            self
+                            v.push(input);
+                            self.itemized_metric_stats_list = Some(v);
+                            self
         }
         /// <p>Statistics for individual metrics within the group.</p>
-        pub fn set_itemized_metric_stats_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
-        ) -> Self {
-            self.itemized_metric_stats_list = input;
-            self
+        pub fn set_itemized_metric_stats_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>) -> Self {
+            self.itemized_metric_stats_list = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyGroupStatistics`](crate::model::AnomalyGroupStatistics).
         pub fn build(self) -> crate::model::AnomalyGroupStatistics {
             crate::model::AnomalyGroupStatistics {
-                evaluation_start_date: self.evaluation_start_date,
-                total_count: self.total_count.unwrap_or_default(),
-                itemized_metric_stats_list: self.itemized_metric_stats_list,
+                evaluation_start_date: self.evaluation_start_date
+                ,
+                total_count: self.total_count
+                    .unwrap_or_default()
+                ,
+                itemized_metric_stats_list: self.itemized_metric_stats_list
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyGroupStatistics {
     /// Creates a new builder-style object to manufacture [`AnomalyGroupStatistics`](crate::model::AnomalyGroupStatistics).
@@ -3528,7 +3307,7 @@ impl AnomalyGroupStatistics {
 /// <p>Aggregated statistics about a measure affected by an anomaly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ItemizedMetricStats {
+pub struct ItemizedMetricStats  {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -3538,7 +3317,7 @@ pub struct ItemizedMetricStats {
 }
 impl ItemizedMetricStats {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The number of times that the measure appears.</p>
@@ -3548,7 +3327,7 @@ impl ItemizedMetricStats {
 }
 /// See [`ItemizedMetricStats`](crate::model::ItemizedMetricStats).
 pub mod itemized_metric_stats {
-
+    
     /// A builder for [`ItemizedMetricStats`](crate::model::ItemizedMetricStats).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3563,8 +3342,7 @@ pub mod itemized_metric_stats {
         }
         /// <p>The name of the measure.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The number of times that the measure appears.</p>
         pub fn occurrence_count(mut self, input: i32) -> Self {
@@ -3573,17 +3351,21 @@ pub mod itemized_metric_stats {
         }
         /// <p>The number of times that the measure appears.</p>
         pub fn set_occurrence_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.occurrence_count = input;
-            self
+            self.occurrence_count = input; self
         }
         /// Consumes the builder and constructs a [`ItemizedMetricStats`](crate::model::ItemizedMetricStats).
         pub fn build(self) -> crate::model::ItemizedMetricStats {
             crate::model::ItemizedMetricStats {
-                metric_name: self.metric_name,
-                occurrence_count: self.occurrence_count.unwrap_or_default(),
+                metric_name: self.metric_name
+                ,
+                occurrence_count: self.occurrence_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ItemizedMetricStats {
     /// Creates a new builder-style object to manufacture [`ItemizedMetricStats`](crate::model::ItemizedMetricStats).
@@ -3595,7 +3377,7 @@ impl ItemizedMetricStats {
 /// <p>Details about a group of anomalous metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyGroupSummary {
+pub struct AnomalyGroupSummary  {
     /// <p>The start time for the group.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
@@ -3614,15 +3396,15 @@ pub struct AnomalyGroupSummary {
 }
 impl AnomalyGroupSummary {
     /// <p>The start time for the group.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The end time for the group.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The severity score of the group.</p>
@@ -3630,13 +3412,13 @@ impl AnomalyGroupSummary {
         self.anomaly_group_score
     }
     /// <p>The name of the primary affected measure for the group.</p>
-    pub fn primary_metric_name(&self) -> std::option::Option<&str> {
+    pub fn primary_metric_name(&self) -> std::option::Option<& str> {
         self.primary_metric_name.as_deref()
     }
 }
 /// See [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary).
 pub mod anomaly_group_summary {
-
+    
     /// A builder for [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3654,8 +3436,7 @@ pub mod anomaly_group_summary {
         }
         /// <p>The start time for the group.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The end time for the group.</p>
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3664,8 +3445,7 @@ pub mod anomaly_group_summary {
         }
         /// <p>The end time for the group.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// <p>The ID of the anomaly group.</p>
         pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3673,12 +3453,8 @@ pub mod anomaly_group_summary {
             self
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn set_anomaly_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_group_id = input;
-            self
+        pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_group_id = input; self
         }
         /// <p>The severity score of the group.</p>
         pub fn anomaly_group_score(mut self, input: f64) -> Self {
@@ -3687,8 +3463,7 @@ pub mod anomaly_group_summary {
         }
         /// <p>The severity score of the group.</p>
         pub fn set_anomaly_group_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.anomaly_group_score = input;
-            self
+            self.anomaly_group_score = input; self
         }
         /// <p>The name of the primary affected measure for the group.</p>
         pub fn primary_metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3696,24 +3471,27 @@ pub mod anomaly_group_summary {
             self
         }
         /// <p>The name of the primary affected measure for the group.</p>
-        pub fn set_primary_metric_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_metric_name = input;
-            self
+        pub fn set_primary_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_metric_name = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary).
         pub fn build(self) -> crate::model::AnomalyGroupSummary {
             crate::model::AnomalyGroupSummary {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                anomaly_group_id: self.anomaly_group_id,
-                anomaly_group_score: self.anomaly_group_score,
-                primary_metric_name: self.primary_metric_name,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                anomaly_group_id: self.anomaly_group_id
+                ,
+                anomaly_group_score: self.anomaly_group_score
+                ,
+                primary_metric_name: self.primary_metric_name
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyGroupSummary {
     /// Creates a new builder-style object to manufacture [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary).
@@ -3722,11 +3500,11 @@ impl AnomalyGroupSummary {
     }
 }
 
-/// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
+/// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p> 
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InterMetricImpactDetails {
+pub struct InterMetricImpactDetails  {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -3742,15 +3520,15 @@ pub struct InterMetricImpactDetails {
 }
 impl InterMetricImpactDetails {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
-    pub fn relationship_type(&self) -> std::option::Option<&crate::model::RelationshipType> {
+    pub fn relationship_type(&self) -> std::option::Option<& crate::model::RelationshipType> {
         self.relationship_type.as_ref()
     }
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
@@ -3760,7 +3538,7 @@ impl InterMetricImpactDetails {
 }
 /// See [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails).
 pub mod inter_metric_impact_details {
-
+    
     /// A builder for [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3777,8 +3555,7 @@ pub mod inter_metric_impact_details {
         }
         /// <p>The name of the measure.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The ID of the anomaly group.</p>
         pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3786,12 +3563,8 @@ pub mod inter_metric_impact_details {
             self
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn set_anomaly_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_group_id = input;
-            self
+        pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_group_id = input; self
         }
         /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
         pub fn relationship_type(mut self, input: crate::model::RelationshipType) -> Self {
@@ -3799,12 +3572,8 @@ pub mod inter_metric_impact_details {
             self
         }
         /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
-        pub fn set_relationship_type(
-            mut self,
-            input: std::option::Option<crate::model::RelationshipType>,
-        ) -> Self {
-            self.relationship_type = input;
-            self
+        pub fn set_relationship_type(mut self, input: std::option::Option<crate::model::RelationshipType>) -> Self {
+            self.relationship_type = input; self
         }
         /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
         pub fn contribution_percentage(mut self, input: f64) -> Self {
@@ -3813,19 +3582,24 @@ pub mod inter_metric_impact_details {
         }
         /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
         pub fn set_contribution_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.contribution_percentage = input;
-            self
+            self.contribution_percentage = input; self
         }
         /// Consumes the builder and constructs a [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails).
         pub fn build(self) -> crate::model::InterMetricImpactDetails {
             crate::model::InterMetricImpactDetails {
-                metric_name: self.metric_name,
-                anomaly_group_id: self.anomaly_group_id,
-                relationship_type: self.relationship_type,
-                contribution_percentage: self.contribution_percentage,
+                metric_name: self.metric_name
+                ,
+                anomaly_group_id: self.anomaly_group_id
+                ,
+                relationship_type: self.relationship_type
+                ,
+                contribution_percentage: self.contribution_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl InterMetricImpactDetails {
     /// Creates a new builder-style object to manufacture [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails).
@@ -3840,9 +3614,9 @@ impl InterMetricImpactDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let relationshiptype = unimplemented!();
 /// match relationshiptype {
@@ -3864,60 +3638,51 @@ impl InterMetricImpactDetails {
 /// Specifically, when `relationshiptype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RelationshipType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     CauseOfInputAnomalyGroup,
     #[allow(missing_docs)] // documentation missing in model
     EffectOfInputAnomalyGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RelationshipType {
     fn from(s: &str) -> Self {
         match s {
             "CAUSE_OF_INPUT_ANOMALY_GROUP" => RelationshipType::CauseOfInputAnomalyGroup,
             "EFFECT_OF_INPUT_ANOMALY_GROUP" => RelationshipType::EffectOfInputAnomalyGroup,
-            other => RelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RelationshipType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RelationshipType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RelationshipType::from(s))
+                }
+            }
 impl RelationshipType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelationshipType::CauseOfInputAnomalyGroup => "CAUSE_OF_INPUT_ANOMALY_GROUP",
             RelationshipType::EffectOfInputAnomalyGroup => "EFFECT_OF_INPUT_ANOMALY_GROUP",
-            RelationshipType::Unknown(value) => value.as_str(),
+            RelationshipType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CAUSE_OF_INPUT_ANOMALY_GROUP",
-            "EFFECT_OF_INPUT_ANOMALY_GROUP",
+            "CAUSE_OF_INPUT_ANOMALY_GROUP", "EFFECT_OF_INPUT_ANOMALY_GROUP"
         ]
     }
 }
@@ -3930,7 +3695,7 @@ impl AsRef<str> for RelationshipType {
 /// <p>Contains information about an an anomaly detector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyDetectorSummary {
+pub struct AnomalyDetectorSummary  {
     /// <p>The ARN of the detector.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -3951,45 +3716,41 @@ pub struct AnomalyDetectorSummary {
     pub status: std::option::Option<crate::model::AnomalyDetectorStatus>,
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AnomalyDetectorSummary {
     /// <p>The ARN of the detector.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The name of the detector.</p>
-    pub fn anomaly_detector_name(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_name(&self) -> std::option::Option<& str> {
         self.anomaly_detector_name.as_deref()
     }
     /// <p>A description of the detector.</p>
-    pub fn anomaly_detector_description(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_description(&self) -> std::option::Option<& str> {
         self.anomaly_detector_description.as_deref()
     }
     /// <p>The time at which the detector was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the detector was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The status of detector.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyDetectorStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AnomalyDetectorStatus> {
         self.status.as_ref()
     }
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`AnomalyDetectorSummary`](crate::model::AnomalyDetectorSummary).
 pub mod anomaly_detector_summary {
-
+    
     /// A builder for [`AnomalyDetectorSummary`](crate::model::AnomalyDetectorSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3999,9 +3760,7 @@ pub mod anomaly_detector_summary {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AnomalyDetectorStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the detector.</p>
@@ -4010,12 +3769,8 @@ pub mod anomaly_detector_summary {
             self
         }
         /// <p>The ARN of the detector.</p>
-        pub fn set_anomaly_detector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_detector_arn = input;
-            self
+        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_detector_arn = input; self
         }
         /// <p>The name of the detector.</p>
         pub fn anomaly_detector_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4023,28 +3778,17 @@ pub mod anomaly_detector_summary {
             self
         }
         /// <p>The name of the detector.</p>
-        pub fn set_anomaly_detector_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_detector_name = input;
-            self
+        pub fn set_anomaly_detector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_detector_name = input; self
         }
         /// <p>A description of the detector.</p>
-        pub fn anomaly_detector_description(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn anomaly_detector_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.anomaly_detector_description = Some(input.into());
             self
         }
         /// <p>A description of the detector.</p>
-        pub fn set_anomaly_detector_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_detector_description = input;
-            self
+        pub fn set_anomaly_detector_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_detector_description = input; self
         }
         /// <p>The time at which the detector was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4052,12 +3796,8 @@ pub mod anomaly_detector_summary {
             self
         }
         /// <p>The time at which the detector was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time at which the detector was last modified.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4065,12 +3805,8 @@ pub mod anomaly_detector_summary {
             self
         }
         /// <p>The time at which the detector was last modified.</p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// <p>The status of detector.</p>
         pub fn status(mut self, input: crate::model::AnomalyDetectorStatus) -> Self {
@@ -4078,51 +3814,46 @@ pub mod anomaly_detector_summary {
             self
         }
         /// <p>The status of detector.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AnomalyDetectorStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AnomalyDetectorStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyDetectorSummary`](crate::model::AnomalyDetectorSummary).
         pub fn build(self) -> crate::model::AnomalyDetectorSummary {
             crate::model::AnomalyDetectorSummary {
-                anomaly_detector_arn: self.anomaly_detector_arn,
-                anomaly_detector_name: self.anomaly_detector_name,
-                anomaly_detector_description: self.anomaly_detector_description,
-                creation_time: self.creation_time,
-                last_modification_time: self.last_modification_time,
-                status: self.status,
-                tags: self.tags,
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                anomaly_detector_name: self.anomaly_detector_name
+                ,
+                anomaly_detector_description: self.anomaly_detector_description
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modification_time: self.last_modification_time
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyDetectorSummary {
     /// Creates a new builder-style object to manufacture [`AnomalyDetectorSummary`](crate::model::AnomalyDetectorSummary).
@@ -4137,9 +3868,9 @@ impl AnomalyDetectorSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let anomalydetectorstatus = unimplemented!();
 /// match anomalydetectorstatus {
@@ -4170,22 +3901,14 @@ impl AnomalyDetectorSummary {
 /// Specifically, when `anomalydetectorstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnomalyDetectorStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnomalyDetectorStatus {
     #[allow(missing_docs)] // documentation missing in model
     Activating,
@@ -4210,7 +3933,7 @@ pub enum AnomalyDetectorStatus {
     #[allow(missing_docs)] // documentation missing in model
     Learning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnomalyDetectorStatus {
     fn from(s: &str) -> Self {
@@ -4226,19 +3949,17 @@ impl std::convert::From<&str> for AnomalyDetectorStatus {
             "FAILED" => AnomalyDetectorStatus::Failed,
             "INACTIVE" => AnomalyDetectorStatus::Inactive,
             "LEARNING" => AnomalyDetectorStatus::Learning,
-            other => {
-                AnomalyDetectorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AnomalyDetectorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnomalyDetectorStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnomalyDetectorStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnomalyDetectorStatus::from(s))
+                }
+            }
 impl AnomalyDetectorStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4254,23 +3975,13 @@ impl AnomalyDetectorStatus {
             AnomalyDetectorStatus::Failed => "FAILED",
             AnomalyDetectorStatus::Inactive => "INACTIVE",
             AnomalyDetectorStatus::Learning => "LEARNING",
-            AnomalyDetectorStatus::Unknown(value) => value.as_str(),
+            AnomalyDetectorStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVATING",
-            "ACTIVE",
-            "BACK_TEST_ACTIVATING",
-            "BACK_TEST_ACTIVE",
-            "BACK_TEST_COMPLETE",
-            "DEACTIVATED",
-            "DEACTIVATING",
-            "DELETING",
-            "FAILED",
-            "INACTIVE",
-            "LEARNING",
+            "ACTIVATING", "ACTIVE", "BACK_TEST_ACTIVATING", "BACK_TEST_ACTIVE", "BACK_TEST_COMPLETE", "DEACTIVATED", "DEACTIVATING", "DELETING", "FAILED", "INACTIVE", "LEARNING"
         ]
     }
 }
@@ -4283,7 +3994,7 @@ impl AsRef<str> for AnomalyDetectorStatus {
 /// <p>Provides a summary of an alert's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlertSummary {
+pub struct AlertSummary  {
     /// <p>The ARN of the alert.</p>
     #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
@@ -4310,20 +4021,19 @@ pub struct AlertSummary {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AlertSummary {
     /// <p>The ARN of the alert.</p>
-    pub fn alert_arn(&self) -> std::option::Option<&str> {
+    pub fn alert_arn(&self) -> std::option::Option<& str> {
         self.alert_arn.as_deref()
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The name of the alert.</p>
-    pub fn alert_name(&self) -> std::option::Option<&str> {
+    pub fn alert_name(&self) -> std::option::Option<& str> {
         self.alert_name.as_deref()
     }
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
@@ -4331,32 +4041,29 @@ impl AlertSummary {
         self.alert_sensitivity_threshold
     }
     /// <p>The type of the alert.</p>
-    pub fn alert_type(&self) -> std::option::Option<&crate::model::AlertType> {
+    pub fn alert_type(&self) -> std::option::Option<& crate::model::AlertType> {
         self.alert_type.as_ref()
     }
     /// <p>The status of the alert.</p>
-    pub fn alert_status(&self) -> std::option::Option<&crate::model::AlertStatus> {
+    pub fn alert_status(&self) -> std::option::Option<& crate::model::AlertStatus> {
         self.alert_status.as_ref()
     }
     /// <p>The time at which the alert was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The time at which the alert was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`AlertSummary`](crate::model::AlertSummary).
 pub mod alert_summary {
-
+    
     /// A builder for [`AlertSummary`](crate::model::AlertSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4368,9 +4075,7 @@ pub mod alert_summary {
         pub(crate) alert_status: std::option::Option<crate::model::AlertStatus>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the alert.</p>
@@ -4380,8 +4085,7 @@ pub mod alert_summary {
         }
         /// <p>The ARN of the alert.</p>
         pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alert_arn = input;
-            self
+            self.alert_arn = input; self
         }
         /// <p>The ARN of the detector to which the alert is attached.</p>
         pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4389,12 +4093,8 @@ pub mod alert_summary {
             self
         }
         /// <p>The ARN of the detector to which the alert is attached.</p>
-        pub fn set_anomaly_detector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_detector_arn = input;
-            self
+        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_detector_arn = input; self
         }
         /// <p>The name of the alert.</p>
         pub fn alert_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4403,8 +4103,7 @@ pub mod alert_summary {
         }
         /// <p>The name of the alert.</p>
         pub fn set_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alert_name = input;
-            self
+            self.alert_name = input; self
         }
         /// <p>The minimum severity for an anomaly to trigger the alert.</p>
         pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
@@ -4413,8 +4112,7 @@ pub mod alert_summary {
         }
         /// <p>The minimum severity for an anomaly to trigger the alert.</p>
         pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.alert_sensitivity_threshold = input;
-            self
+            self.alert_sensitivity_threshold = input; self
         }
         /// <p>The type of the alert.</p>
         pub fn alert_type(mut self, input: crate::model::AlertType) -> Self {
@@ -4422,12 +4120,8 @@ pub mod alert_summary {
             self
         }
         /// <p>The type of the alert.</p>
-        pub fn set_alert_type(
-            mut self,
-            input: std::option::Option<crate::model::AlertType>,
-        ) -> Self {
-            self.alert_type = input;
-            self
+        pub fn set_alert_type(mut self, input: std::option::Option<crate::model::AlertType>) -> Self {
+            self.alert_type = input; self
         }
         /// <p>The status of the alert.</p>
         pub fn alert_status(mut self, input: crate::model::AlertStatus) -> Self {
@@ -4435,12 +4129,8 @@ pub mod alert_summary {
             self
         }
         /// <p>The status of the alert.</p>
-        pub fn set_alert_status(
-            mut self,
-            input: std::option::Option<crate::model::AlertStatus>,
-        ) -> Self {
-            self.alert_status = input;
-            self
+        pub fn set_alert_status(mut self, input: std::option::Option<crate::model::AlertStatus>) -> Self {
+            self.alert_status = input; self
         }
         /// <p>The time at which the alert was last modified.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4448,12 +4138,8 @@ pub mod alert_summary {
             self
         }
         /// <p>The time at which the alert was last modified.</p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// <p>The time at which the alert was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4461,53 +4147,51 @@ pub mod alert_summary {
             self
         }
         /// <p>The time at which the alert was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`AlertSummary`](crate::model::AlertSummary).
         pub fn build(self) -> crate::model::AlertSummary {
             crate::model::AlertSummary {
-                alert_arn: self.alert_arn,
-                anomaly_detector_arn: self.anomaly_detector_arn,
-                alert_name: self.alert_name,
-                alert_sensitivity_threshold: self.alert_sensitivity_threshold.unwrap_or_default(),
-                alert_type: self.alert_type,
-                alert_status: self.alert_status,
-                last_modification_time: self.last_modification_time,
-                creation_time: self.creation_time,
-                tags: self.tags,
+                alert_arn: self.alert_arn
+                ,
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                alert_name: self.alert_name
+                ,
+                alert_sensitivity_threshold: self.alert_sensitivity_threshold
+                    .unwrap_or_default()
+                ,
+                alert_type: self.alert_type
+                ,
+                alert_status: self.alert_status
+                ,
+                last_modification_time: self.last_modification_time
+                ,
+                creation_time: self.creation_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl AlertSummary {
     /// Creates a new builder-style object to manufacture [`AlertSummary`](crate::model::AlertSummary).
@@ -4522,9 +4206,9 @@ impl AlertSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let alertstatus = unimplemented!();
 /// match alertstatus {
@@ -4546,58 +4230,52 @@ impl AlertSummary {
 /// Specifically, when `alertstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlertStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlertStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlertStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AlertStatus::Active,
             "INACTIVE" => AlertStatus::Inactive,
-            other => AlertStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AlertStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AlertStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlertStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlertStatus::from(s))
+                }
+            }
 impl AlertStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlertStatus::Active => "ACTIVE",
             AlertStatus::Inactive => "INACTIVE",
-            AlertStatus::Unknown(value) => value.as_str(),
+            AlertStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE"]
+        &[
+            "ACTIVE", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for AlertStatus {
@@ -4612,9 +4290,9 @@ impl AsRef<str> for AlertStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let alerttype = unimplemented!();
 /// match alerttype {
@@ -4636,58 +4314,52 @@ impl AsRef<str> for AlertStatus {
 /// Specifically, when `alerttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlertType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlertType {
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
     #[allow(missing_docs)] // documentation missing in model
     Sns,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlertType {
     fn from(s: &str) -> Self {
         match s {
             "LAMBDA" => AlertType::Lambda,
             "SNS" => AlertType::Sns,
-            other => AlertType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AlertType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AlertType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlertType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlertType::from(s))
+                }
+            }
 impl AlertType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlertType::Lambda => "LAMBDA",
             AlertType::Sns => "SNS",
-            AlertType::Unknown(value) => value.as_str(),
+            AlertType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LAMBDA", "SNS"]
+        &[
+            "LAMBDA", "SNS"
+        ]
     }
 }
 impl AsRef<str> for AlertType {
@@ -4699,7 +4371,7 @@ impl AsRef<str> for AlertType {
 /// <p>Contains information about the source configuration in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SampleDataS3SourceConfig {
+pub struct SampleDataS3SourceConfig  {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -4715,34 +4387,31 @@ pub struct SampleDataS3SourceConfig {
 }
 impl SampleDataS3SourceConfig {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An array of strings containing the list of templated paths.</p>
-    pub fn templated_path_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn templated_path_list(&self) -> std::option::Option<& [std::string::String]> {
         self.templated_path_list.as_deref()
     }
     /// <p>An array of strings containing the historical set of data paths.</p>
-    pub fn historical_data_path_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn historical_data_path_list(&self) -> std::option::Option<& [std::string::String]> {
         self.historical_data_path_list.as_deref()
     }
     /// <p>Contains information about a source file's formatting.</p>
-    pub fn file_format_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::model::FileFormatDescriptor> {
+    pub fn file_format_descriptor(&self) -> std::option::Option<& crate::model::FileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
     }
 }
 /// See [`SampleDataS3SourceConfig`](crate::model::SampleDataS3SourceConfig).
 pub mod sample_data_s3_source_config {
-
+    
     /// A builder for [`SampleDataS3SourceConfig`](crate::model::SampleDataS3SourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) historical_data_path_list:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) historical_data_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) file_format_descriptor: std::option::Option<crate::model::FileFormatDescriptor>,
     }
     impl Builder {
@@ -4753,8 +4422,7 @@ pub mod sample_data_s3_source_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the role.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Appends an item to `templated_path_list`.
         ///
@@ -4763,17 +4431,13 @@ pub mod sample_data_s3_source_config {
         /// <p>An array of strings containing the list of templated paths.</p>
         pub fn templated_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.templated_path_list.unwrap_or_default();
-            v.push(input.into());
-            self.templated_path_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.templated_path_list = Some(v);
+                            self
         }
         /// <p>An array of strings containing the list of templated paths.</p>
-        pub fn set_templated_path_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.templated_path_list = input;
-            self
+        pub fn set_templated_path_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.templated_path_list = input; self
         }
         /// Appends an item to `historical_data_path_list`.
         ///
@@ -4782,17 +4446,13 @@ pub mod sample_data_s3_source_config {
         /// <p>An array of strings containing the historical set of data paths.</p>
         pub fn historical_data_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.historical_data_path_list.unwrap_or_default();
-            v.push(input.into());
-            self.historical_data_path_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.historical_data_path_list = Some(v);
+                            self
         }
         /// <p>An array of strings containing the historical set of data paths.</p>
-        pub fn set_historical_data_path_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.historical_data_path_list = input;
-            self
+        pub fn set_historical_data_path_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.historical_data_path_list = input; self
         }
         /// <p>Contains information about a source file's formatting.</p>
         pub fn file_format_descriptor(mut self, input: crate::model::FileFormatDescriptor) -> Self {
@@ -4800,23 +4460,25 @@ pub mod sample_data_s3_source_config {
             self
         }
         /// <p>Contains information about a source file's formatting.</p>
-        pub fn set_file_format_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::FileFormatDescriptor>,
-        ) -> Self {
-            self.file_format_descriptor = input;
-            self
+        pub fn set_file_format_descriptor(mut self, input: std::option::Option<crate::model::FileFormatDescriptor>) -> Self {
+            self.file_format_descriptor = input; self
         }
         /// Consumes the builder and constructs a [`SampleDataS3SourceConfig`](crate::model::SampleDataS3SourceConfig).
         pub fn build(self) -> crate::model::SampleDataS3SourceConfig {
             crate::model::SampleDataS3SourceConfig {
-                role_arn: self.role_arn,
-                templated_path_list: self.templated_path_list,
-                historical_data_path_list: self.historical_data_path_list,
-                file_format_descriptor: self.file_format_descriptor,
+                role_arn: self.role_arn
+                ,
+                templated_path_list: self.templated_path_list
+                ,
+                historical_data_path_list: self.historical_data_path_list
+                ,
+                file_format_descriptor: self.file_format_descriptor
+                ,
             }
         }
     }
+    
+    
 }
 impl SampleDataS3SourceConfig {
     /// Creates a new builder-style object to manufacture [`SampleDataS3SourceConfig`](crate::model::SampleDataS3SourceConfig).
@@ -4828,7 +4490,7 @@ impl SampleDataS3SourceConfig {
 /// <p>Details about feedback submitted for an anomalous metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeSeriesFeedback {
+pub struct TimeSeriesFeedback  {
     /// <p>The ID of the metric.</p>
     #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
@@ -4838,7 +4500,7 @@ pub struct TimeSeriesFeedback {
 }
 impl TimeSeriesFeedback {
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> std::option::Option<&str> {
+    pub fn time_series_id(&self) -> std::option::Option<& str> {
         self.time_series_id.as_deref()
     }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
@@ -4848,7 +4510,7 @@ impl TimeSeriesFeedback {
 }
 /// See [`TimeSeriesFeedback`](crate::model::TimeSeriesFeedback).
 pub mod time_series_feedback {
-
+    
     /// A builder for [`TimeSeriesFeedback`](crate::model::TimeSeriesFeedback).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4862,12 +4524,8 @@ pub mod time_series_feedback {
             self
         }
         /// <p>The ID of the metric.</p>
-        pub fn set_time_series_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.time_series_id = input;
-            self
+        pub fn set_time_series_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time_series_id = input; self
         }
         /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
         pub fn is_anomaly(mut self, input: bool) -> Self {
@@ -4876,17 +4534,20 @@ pub mod time_series_feedback {
         }
         /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
         pub fn set_is_anomaly(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_anomaly = input;
-            self
+            self.is_anomaly = input; self
         }
         /// Consumes the builder and constructs a [`TimeSeriesFeedback`](crate::model::TimeSeriesFeedback).
         pub fn build(self) -> crate::model::TimeSeriesFeedback {
             crate::model::TimeSeriesFeedback {
-                time_series_id: self.time_series_id,
-                is_anomaly: self.is_anomaly,
+                time_series_id: self.time_series_id
+                ,
+                is_anomaly: self.is_anomaly
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeSeriesFeedback {
     /// Creates a new builder-style object to manufacture [`TimeSeriesFeedback`](crate::model::TimeSeriesFeedback).
@@ -4898,7 +4559,7 @@ impl TimeSeriesFeedback {
 /// <p>An anomalous metric in an anomaly group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyGroupTimeSeries {
+pub struct AnomalyGroupTimeSeries  {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
@@ -4908,17 +4569,17 @@ pub struct AnomalyGroupTimeSeries {
 }
 impl AnomalyGroupTimeSeries {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> std::option::Option<&str> {
+    pub fn time_series_id(&self) -> std::option::Option<& str> {
         self.time_series_id.as_deref()
     }
 }
 /// See [`AnomalyGroupTimeSeries`](crate::model::AnomalyGroupTimeSeries).
 pub mod anomaly_group_time_series {
-
+    
     /// A builder for [`AnomalyGroupTimeSeries`](crate::model::AnomalyGroupTimeSeries).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4932,12 +4593,8 @@ pub mod anomaly_group_time_series {
             self
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn set_anomaly_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_group_id = input;
-            self
+        pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_group_id = input; self
         }
         /// <p>The ID of the metric.</p>
         pub fn time_series_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4945,21 +4602,21 @@ pub mod anomaly_group_time_series {
             self
         }
         /// <p>The ID of the metric.</p>
-        pub fn set_time_series_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.time_series_id = input;
-            self
+        pub fn set_time_series_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time_series_id = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyGroupTimeSeries`](crate::model::AnomalyGroupTimeSeries).
         pub fn build(self) -> crate::model::AnomalyGroupTimeSeries {
             crate::model::AnomalyGroupTimeSeries {
-                anomaly_group_id: self.anomaly_group_id,
-                time_series_id: self.time_series_id,
+                anomaly_group_id: self.anomaly_group_id
+                ,
+                time_series_id: self.time_series_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyGroupTimeSeries {
     /// Creates a new builder-style object to manufacture [`AnomalyGroupTimeSeries`](crate::model::AnomalyGroupTimeSeries).
@@ -4971,36 +4628,32 @@ impl AnomalyGroupTimeSeries {
 /// <p>Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <code>GetDataQualityMetrics</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyDetectorDataQualityMetric {
+pub struct AnomalyDetectorDataQualityMetric  {
     /// <p>The start time for the data quality metrics collection.</p>
     #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
     #[doc(hidden)]
-    pub metric_set_data_quality_metric_list:
-        std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
+    pub metric_set_data_quality_metric_list: std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
 }
 impl AnomalyDetectorDataQualityMetric {
     /// <p>The start time for the data quality metrics collection.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
-    pub fn metric_set_data_quality_metric_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::MetricSetDataQualityMetric]> {
+    pub fn metric_set_data_quality_metric_list(&self) -> std::option::Option<& [crate::model::MetricSetDataQualityMetric]> {
         self.metric_set_data_quality_metric_list.as_deref()
     }
 }
 /// See [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
 pub mod anomaly_detector_data_quality_metric {
-
+    
     /// A builder for [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) metric_set_data_quality_metric_list:
-            std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
+        pub(crate) metric_set_data_quality_metric_list: std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
     }
     impl Builder {
         /// <p>The start time for the data quality metrics collection.</p>
@@ -5009,43 +4662,36 @@ pub mod anomaly_detector_data_quality_metric {
             self
         }
         /// <p>The start time for the data quality metrics collection.</p>
-        pub fn set_start_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_timestamp = input;
-            self
+        pub fn set_start_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_timestamp = input; self
         }
         /// Appends an item to `metric_set_data_quality_metric_list`.
         ///
         /// To override the contents of this collection use [`set_metric_set_data_quality_metric_list`](Self::set_metric_set_data_quality_metric_list).
         ///
         /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
-        pub fn metric_set_data_quality_metric_list(
-            mut self,
-            input: crate::model::MetricSetDataQualityMetric,
-        ) -> Self {
+        pub fn metric_set_data_quality_metric_list(mut self, input: crate::model::MetricSetDataQualityMetric) -> Self {
             let mut v = self.metric_set_data_quality_metric_list.unwrap_or_default();
-            v.push(input);
-            self.metric_set_data_quality_metric_list = Some(v);
-            self
+                            v.push(input);
+                            self.metric_set_data_quality_metric_list = Some(v);
+                            self
         }
         /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
-        pub fn set_metric_set_data_quality_metric_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
-        ) -> Self {
-            self.metric_set_data_quality_metric_list = input;
-            self
+        pub fn set_metric_set_data_quality_metric_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>) -> Self {
+            self.metric_set_data_quality_metric_list = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
         pub fn build(self) -> crate::model::AnomalyDetectorDataQualityMetric {
             crate::model::AnomalyDetectorDataQualityMetric {
-                start_timestamp: self.start_timestamp,
-                metric_set_data_quality_metric_list: self.metric_set_data_quality_metric_list,
+                start_timestamp: self.start_timestamp
+                ,
+                metric_set_data_quality_metric_list: self.metric_set_data_quality_metric_list
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyDetectorDataQualityMetric {
     /// Creates a new builder-style object to manufacture [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
@@ -5057,36 +4703,32 @@ impl AnomalyDetectorDataQualityMetric {
 /// <p>An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricSetDataQualityMetric {
+pub struct MetricSetDataQualityMetric  {
     /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
     #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
     /// <p>The array of data quality metrics contained in the data quality metric set.</p>
     #[doc(hidden)]
-    pub data_quality_metric_list:
-        std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>,
+    pub data_quality_metric_list: std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>,
 }
 impl MetricSetDataQualityMetric {
     /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
-    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_set_arn(&self) -> std::option::Option<& str> {
         self.metric_set_arn.as_deref()
     }
     /// <p>The array of data quality metrics contained in the data quality metric set.</p>
-    pub fn data_quality_metric_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataQualityMetric]> {
+    pub fn data_quality_metric_list(&self) -> std::option::Option<& [crate::model::DataQualityMetric]> {
         self.data_quality_metric_list.as_deref()
     }
 }
 /// See [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
 pub mod metric_set_data_quality_metric {
-
+    
     /// A builder for [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
-        pub(crate) data_quality_metric_list:
-            std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>,
+        pub(crate) data_quality_metric_list: std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
@@ -5095,12 +4737,8 @@ pub mod metric_set_data_quality_metric {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
-        pub fn set_metric_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_set_arn = input;
-            self
+        pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_set_arn = input; self
         }
         /// Appends an item to `data_quality_metric_list`.
         ///
@@ -5109,26 +4747,26 @@ pub mod metric_set_data_quality_metric {
         /// <p>The array of data quality metrics contained in the data quality metric set.</p>
         pub fn data_quality_metric_list(mut self, input: crate::model::DataQualityMetric) -> Self {
             let mut v = self.data_quality_metric_list.unwrap_or_default();
-            v.push(input);
-            self.data_quality_metric_list = Some(v);
-            self
+                            v.push(input);
+                            self.data_quality_metric_list = Some(v);
+                            self
         }
         /// <p>The array of data quality metrics contained in the data quality metric set.</p>
-        pub fn set_data_quality_metric_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>,
-        ) -> Self {
-            self.data_quality_metric_list = input;
-            self
+        pub fn set_data_quality_metric_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>) -> Self {
+            self.data_quality_metric_list = input; self
         }
         /// Consumes the builder and constructs a [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
         pub fn build(self) -> crate::model::MetricSetDataQualityMetric {
             crate::model::MetricSetDataQualityMetric {
-                metric_set_arn: self.metric_set_arn,
-                data_quality_metric_list: self.data_quality_metric_list,
+                metric_set_arn: self.metric_set_arn
+                ,
+                data_quality_metric_list: self.data_quality_metric_list
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricSetDataQualityMetric {
     /// Creates a new builder-style object to manufacture [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
@@ -5140,7 +4778,7 @@ impl MetricSetDataQualityMetric {
 /// <p>An array that describes a data quality metric. Each <code>DataQualityMetric</code> object contains the data quality metric name, its value, a description of the metric, and the affected column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataQualityMetric {
+pub struct DataQualityMetric  {
     /// <p>The name of the data quality metric.</p>
     #[doc(hidden)]
     pub metric_type: std::option::Option<crate::model::DataQualityMetricType>,
@@ -5156,15 +4794,15 @@ pub struct DataQualityMetric {
 }
 impl DataQualityMetric {
     /// <p>The name of the data quality metric.</p>
-    pub fn metric_type(&self) -> std::option::Option<&crate::model::DataQualityMetricType> {
+    pub fn metric_type(&self) -> std::option::Option<& crate::model::DataQualityMetricType> {
         self.metric_type.as_ref()
     }
     /// <p>A description of the data quality metric.</p>
-    pub fn metric_description(&self) -> std::option::Option<&str> {
+    pub fn metric_description(&self) -> std::option::Option<& str> {
         self.metric_description.as_deref()
     }
     /// <p>The column that is being monitored.</p>
-    pub fn related_column_name(&self) -> std::option::Option<&str> {
+    pub fn related_column_name(&self) -> std::option::Option<& str> {
         self.related_column_name.as_deref()
     }
     /// <p>The value of the data quality metric.</p>
@@ -5174,7 +4812,7 @@ impl DataQualityMetric {
 }
 /// See [`DataQualityMetric`](crate::model::DataQualityMetric).
 pub mod data_quality_metric {
-
+    
     /// A builder for [`DataQualityMetric`](crate::model::DataQualityMetric).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5190,12 +4828,8 @@ pub mod data_quality_metric {
             self
         }
         /// <p>The name of the data quality metric.</p>
-        pub fn set_metric_type(
-            mut self,
-            input: std::option::Option<crate::model::DataQualityMetricType>,
-        ) -> Self {
-            self.metric_type = input;
-            self
+        pub fn set_metric_type(mut self, input: std::option::Option<crate::model::DataQualityMetricType>) -> Self {
+            self.metric_type = input; self
         }
         /// <p>A description of the data quality metric.</p>
         pub fn metric_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5203,12 +4837,8 @@ pub mod data_quality_metric {
             self
         }
         /// <p>A description of the data quality metric.</p>
-        pub fn set_metric_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_description = input;
-            self
+        pub fn set_metric_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_description = input; self
         }
         /// <p>The column that is being monitored.</p>
         pub fn related_column_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5216,12 +4846,8 @@ pub mod data_quality_metric {
             self
         }
         /// <p>The column that is being monitored.</p>
-        pub fn set_related_column_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.related_column_name = input;
-            self
+        pub fn set_related_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.related_column_name = input; self
         }
         /// <p>The value of the data quality metric.</p>
         pub fn metric_value(mut self, input: f64) -> Self {
@@ -5230,19 +4856,24 @@ pub mod data_quality_metric {
         }
         /// <p>The value of the data quality metric.</p>
         pub fn set_metric_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.metric_value = input;
-            self
+            self.metric_value = input; self
         }
         /// Consumes the builder and constructs a [`DataQualityMetric`](crate::model::DataQualityMetric).
         pub fn build(self) -> crate::model::DataQualityMetric {
             crate::model::DataQualityMetric {
-                metric_type: self.metric_type,
-                metric_description: self.metric_description,
-                related_column_name: self.related_column_name,
-                metric_value: self.metric_value,
+                metric_type: self.metric_type
+                ,
+                metric_description: self.metric_description
+                ,
+                related_column_name: self.related_column_name
+                ,
+                metric_value: self.metric_value
+                ,
             }
         }
     }
+    
+    
 }
 impl DataQualityMetric {
     /// Creates a new builder-style object to manufacture [`DataQualityMetric`](crate::model::DataQualityMetric).
@@ -5257,9 +4888,9 @@ impl DataQualityMetric {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dataqualitymetrictype = unimplemented!();
 /// match dataqualitymetrictype {
@@ -5289,22 +4920,14 @@ impl DataQualityMetric {
 /// Specifically, when `dataqualitymetrictype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataQualityMetricType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataQualityMetricType {
     #[allow(missing_docs)] // documentation missing in model
     BacktestInferenceDataEndTimeStamp,
@@ -5327,80 +4950,53 @@ pub enum DataQualityMetricType {
     #[allow(missing_docs)] // documentation missing in model
     TimeSeriesCount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataQualityMetricType {
     fn from(s: &str) -> Self {
         match s {
-            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP" => {
-                DataQualityMetricType::BacktestInferenceDataEndTimeStamp
-            }
-            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP" => {
-                DataQualityMetricType::BacktestInferenceDataStartTimeStamp
-            }
-            "BACKTEST_TRAINING_DATA_END_TIME_STAMP" => {
-                DataQualityMetricType::BacktestTrainingDataEndTimeStamp
-            }
-            "BACKTEST_TRAINING_DATA_START_TIME_STAMP" => {
-                DataQualityMetricType::BacktestTrainingDataStartTimeStamp
-            }
+            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP" => DataQualityMetricType::BacktestInferenceDataEndTimeStamp,
+            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP" => DataQualityMetricType::BacktestInferenceDataStartTimeStamp,
+            "BACKTEST_TRAINING_DATA_END_TIME_STAMP" => DataQualityMetricType::BacktestTrainingDataEndTimeStamp,
+            "BACKTEST_TRAINING_DATA_START_TIME_STAMP" => DataQualityMetricType::BacktestTrainingDataStartTimeStamp,
             "COLUMN_COMPLETENESS" => DataQualityMetricType::ColumnCompleteness,
             "DIMENSION_UNIQUENESS" => DataQualityMetricType::DimensionUniqueness,
             "INVALID_ROWS_COMPLIANCE" => DataQualityMetricType::InvalidRowsCompliance,
             "ROWS_PARTIAL_COMPLIANCE" => DataQualityMetricType::RowsPartialCompliance,
             "ROWS_PROCESSED" => DataQualityMetricType::RowsProcessed,
             "TIME_SERIES_COUNT" => DataQualityMetricType::TimeSeriesCount,
-            other => {
-                DataQualityMetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DataQualityMetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataQualityMetricType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataQualityMetricType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataQualityMetricType::from(s))
+                }
+            }
 impl DataQualityMetricType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            DataQualityMetricType::BacktestInferenceDataEndTimeStamp => {
-                "BACKTEST_INFERENCE_DATA_END_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestInferenceDataStartTimeStamp => {
-                "BACKTEST_INFERENCE_DATA_START_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestTrainingDataEndTimeStamp => {
-                "BACKTEST_TRAINING_DATA_END_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestTrainingDataStartTimeStamp => {
-                "BACKTEST_TRAINING_DATA_START_TIME_STAMP"
-            }
+            DataQualityMetricType::BacktestInferenceDataEndTimeStamp => "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
+            DataQualityMetricType::BacktestInferenceDataStartTimeStamp => "BACKTEST_INFERENCE_DATA_START_TIME_STAMP",
+            DataQualityMetricType::BacktestTrainingDataEndTimeStamp => "BACKTEST_TRAINING_DATA_END_TIME_STAMP",
+            DataQualityMetricType::BacktestTrainingDataStartTimeStamp => "BACKTEST_TRAINING_DATA_START_TIME_STAMP",
             DataQualityMetricType::ColumnCompleteness => "COLUMN_COMPLETENESS",
             DataQualityMetricType::DimensionUniqueness => "DIMENSION_UNIQUENESS",
             DataQualityMetricType::InvalidRowsCompliance => "INVALID_ROWS_COMPLIANCE",
             DataQualityMetricType::RowsPartialCompliance => "ROWS_PARTIAL_COMPLIANCE",
             DataQualityMetricType::RowsProcessed => "ROWS_PROCESSED",
             DataQualityMetricType::TimeSeriesCount => "TIME_SERIES_COUNT",
-            DataQualityMetricType::Unknown(value) => value.as_str(),
+            DataQualityMetricType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
-            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP",
-            "BACKTEST_TRAINING_DATA_END_TIME_STAMP",
-            "BACKTEST_TRAINING_DATA_START_TIME_STAMP",
-            "COLUMN_COMPLETENESS",
-            "DIMENSION_UNIQUENESS",
-            "INVALID_ROWS_COMPLIANCE",
-            "ROWS_PARTIAL_COMPLIANCE",
-            "ROWS_PROCESSED",
-            "TIME_SERIES_COUNT",
+            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP", "BACKTEST_INFERENCE_DATA_START_TIME_STAMP", "BACKTEST_TRAINING_DATA_END_TIME_STAMP", "BACKTEST_TRAINING_DATA_START_TIME_STAMP", "COLUMN_COMPLETENESS", "DIMENSION_UNIQUENESS", "INVALID_ROWS_COMPLIANCE", "ROWS_PARTIAL_COMPLIANCE", "ROWS_PROCESSED", "TIME_SERIES_COUNT"
         ]
     }
 }
@@ -5413,7 +5009,7 @@ impl AsRef<str> for DataQualityMetricType {
 /// <p>A group of anomalous metrics</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyGroup {
+pub struct AnomalyGroup  {
     /// <p>The start time for the group.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
@@ -5431,20 +5027,19 @@ pub struct AnomalyGroup {
     pub primary_metric_name: std::option::Option<std::string::String>,
     /// <p>A list of measures affected by the anomaly.</p>
     #[doc(hidden)]
-    pub metric_level_impact_list:
-        std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>,
+    pub metric_level_impact_list: std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>,
 }
 impl AnomalyGroup {
     /// <p>The start time for the group.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The end time for the group.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The severity score of the group.</p>
@@ -5452,19 +5047,17 @@ impl AnomalyGroup {
         self.anomaly_group_score
     }
     /// <p>The name of the primary affected measure for the group.</p>
-    pub fn primary_metric_name(&self) -> std::option::Option<&str> {
+    pub fn primary_metric_name(&self) -> std::option::Option<& str> {
         self.primary_metric_name.as_deref()
     }
     /// <p>A list of measures affected by the anomaly.</p>
-    pub fn metric_level_impact_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::MetricLevelImpact]> {
+    pub fn metric_level_impact_list(&self) -> std::option::Option<& [crate::model::MetricLevelImpact]> {
         self.metric_level_impact_list.as_deref()
     }
 }
 /// See [`AnomalyGroup`](crate::model::AnomalyGroup).
 pub mod anomaly_group {
-
+    
     /// A builder for [`AnomalyGroup`](crate::model::AnomalyGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5473,8 +5066,7 @@ pub mod anomaly_group {
         pub(crate) anomaly_group_id: std::option::Option<std::string::String>,
         pub(crate) anomaly_group_score: std::option::Option<f64>,
         pub(crate) primary_metric_name: std::option::Option<std::string::String>,
-        pub(crate) metric_level_impact_list:
-            std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>,
+        pub(crate) metric_level_impact_list: std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>,
     }
     impl Builder {
         /// <p>The start time for the group.</p>
@@ -5484,8 +5076,7 @@ pub mod anomaly_group {
         }
         /// <p>The start time for the group.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The end time for the group.</p>
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5494,8 +5085,7 @@ pub mod anomaly_group {
         }
         /// <p>The end time for the group.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// <p>The ID of the anomaly group.</p>
         pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5503,12 +5093,8 @@ pub mod anomaly_group {
             self
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn set_anomaly_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_group_id = input;
-            self
+        pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_group_id = input; self
         }
         /// <p>The severity score of the group.</p>
         pub fn anomaly_group_score(mut self, input: f64) -> Self {
@@ -5517,8 +5103,7 @@ pub mod anomaly_group {
         }
         /// <p>The severity score of the group.</p>
         pub fn set_anomaly_group_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.anomaly_group_score = input;
-            self
+            self.anomaly_group_score = input; self
         }
         /// <p>The name of the primary affected measure for the group.</p>
         pub fn primary_metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5526,12 +5111,8 @@ pub mod anomaly_group {
             self
         }
         /// <p>The name of the primary affected measure for the group.</p>
-        pub fn set_primary_metric_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_metric_name = input;
-            self
+        pub fn set_primary_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_metric_name = input; self
         }
         /// Appends an item to `metric_level_impact_list`.
         ///
@@ -5540,30 +5121,34 @@ pub mod anomaly_group {
         /// <p>A list of measures affected by the anomaly.</p>
         pub fn metric_level_impact_list(mut self, input: crate::model::MetricLevelImpact) -> Self {
             let mut v = self.metric_level_impact_list.unwrap_or_default();
-            v.push(input);
-            self.metric_level_impact_list = Some(v);
-            self
+                            v.push(input);
+                            self.metric_level_impact_list = Some(v);
+                            self
         }
         /// <p>A list of measures affected by the anomaly.</p>
-        pub fn set_metric_level_impact_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>,
-        ) -> Self {
-            self.metric_level_impact_list = input;
-            self
+        pub fn set_metric_level_impact_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>) -> Self {
+            self.metric_level_impact_list = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyGroup`](crate::model::AnomalyGroup).
         pub fn build(self) -> crate::model::AnomalyGroup {
             crate::model::AnomalyGroup {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                anomaly_group_id: self.anomaly_group_id,
-                anomaly_group_score: self.anomaly_group_score,
-                primary_metric_name: self.primary_metric_name,
-                metric_level_impact_list: self.metric_level_impact_list,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                anomaly_group_id: self.anomaly_group_id
+                ,
+                anomaly_group_score: self.anomaly_group_score
+                ,
+                primary_metric_name: self.primary_metric_name
+                ,
+                metric_level_impact_list: self.metric_level_impact_list
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyGroup {
     /// Creates a new builder-style object to manufacture [`AnomalyGroup`](crate::model::AnomalyGroup).
@@ -5575,7 +5160,7 @@ impl AnomalyGroup {
 /// <p>Details about a measure affected by an anomaly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricLevelImpact {
+pub struct MetricLevelImpact  {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -5588,7 +5173,7 @@ pub struct MetricLevelImpact {
 }
 impl MetricLevelImpact {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The number of anomalous metrics for the measure.</p>
@@ -5596,13 +5181,13 @@ impl MetricLevelImpact {
         self.num_time_series
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
-    pub fn contribution_matrix(&self) -> std::option::Option<&crate::model::ContributionMatrix> {
+    pub fn contribution_matrix(&self) -> std::option::Option<& crate::model::ContributionMatrix> {
         self.contribution_matrix.as_ref()
     }
 }
 /// See [`MetricLevelImpact`](crate::model::MetricLevelImpact).
 pub mod metric_level_impact {
-
+    
     /// A builder for [`MetricLevelImpact`](crate::model::MetricLevelImpact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5618,8 +5203,7 @@ pub mod metric_level_impact {
         }
         /// <p>The name of the measure.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The number of anomalous metrics for the measure.</p>
         pub fn num_time_series(mut self, input: i32) -> Self {
@@ -5628,8 +5212,7 @@ pub mod metric_level_impact {
         }
         /// <p>The number of anomalous metrics for the measure.</p>
         pub fn set_num_time_series(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_time_series = input;
-            self
+            self.num_time_series = input; self
         }
         /// <p>Details about the dimensions that contributed to the anomaly.</p>
         pub fn contribution_matrix(mut self, input: crate::model::ContributionMatrix) -> Self {
@@ -5637,22 +5220,24 @@ pub mod metric_level_impact {
             self
         }
         /// <p>Details about the dimensions that contributed to the anomaly.</p>
-        pub fn set_contribution_matrix(
-            mut self,
-            input: std::option::Option<crate::model::ContributionMatrix>,
-        ) -> Self {
-            self.contribution_matrix = input;
-            self
+        pub fn set_contribution_matrix(mut self, input: std::option::Option<crate::model::ContributionMatrix>) -> Self {
+            self.contribution_matrix = input; self
         }
         /// Consumes the builder and constructs a [`MetricLevelImpact`](crate::model::MetricLevelImpact).
         pub fn build(self) -> crate::model::MetricLevelImpact {
             crate::model::MetricLevelImpact {
-                metric_name: self.metric_name,
-                num_time_series: self.num_time_series.unwrap_or_default(),
-                contribution_matrix: self.contribution_matrix,
+                metric_name: self.metric_name
+                ,
+                num_time_series: self.num_time_series
+                    .unwrap_or_default()
+                ,
+                contribution_matrix: self.contribution_matrix
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricLevelImpact {
     /// Creates a new builder-style object to manufacture [`MetricLevelImpact`](crate::model::MetricLevelImpact).
@@ -5664,28 +5249,24 @@ impl MetricLevelImpact {
 /// <p>Details about dimensions that contributed to an anomaly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContributionMatrix {
+pub struct ContributionMatrix  {
     /// <p>A list of contributing dimensions.</p>
     #[doc(hidden)]
-    pub dimension_contribution_list:
-        std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
+    pub dimension_contribution_list: std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
 }
 impl ContributionMatrix {
     /// <p>A list of contributing dimensions.</p>
-    pub fn dimension_contribution_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DimensionContribution]> {
+    pub fn dimension_contribution_list(&self) -> std::option::Option<& [crate::model::DimensionContribution]> {
         self.dimension_contribution_list.as_deref()
     }
 }
 /// See [`ContributionMatrix`](crate::model::ContributionMatrix).
 pub mod contribution_matrix {
-
+    
     /// A builder for [`ContributionMatrix`](crate::model::ContributionMatrix).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dimension_contribution_list:
-            std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
+        pub(crate) dimension_contribution_list: std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
     }
     impl Builder {
         /// Appends an item to `dimension_contribution_list`.
@@ -5693,30 +5274,26 @@ pub mod contribution_matrix {
         /// To override the contents of this collection use [`set_dimension_contribution_list`](Self::set_dimension_contribution_list).
         ///
         /// <p>A list of contributing dimensions.</p>
-        pub fn dimension_contribution_list(
-            mut self,
-            input: crate::model::DimensionContribution,
-        ) -> Self {
+        pub fn dimension_contribution_list(mut self, input: crate::model::DimensionContribution) -> Self {
             let mut v = self.dimension_contribution_list.unwrap_or_default();
-            v.push(input);
-            self.dimension_contribution_list = Some(v);
-            self
+                            v.push(input);
+                            self.dimension_contribution_list = Some(v);
+                            self
         }
         /// <p>A list of contributing dimensions.</p>
-        pub fn set_dimension_contribution_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
-        ) -> Self {
-            self.dimension_contribution_list = input;
-            self
+        pub fn set_dimension_contribution_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>) -> Self {
+            self.dimension_contribution_list = input; self
         }
         /// Consumes the builder and constructs a [`ContributionMatrix`](crate::model::ContributionMatrix).
         pub fn build(self) -> crate::model::ContributionMatrix {
             crate::model::ContributionMatrix {
-                dimension_contribution_list: self.dimension_contribution_list,
+                dimension_contribution_list: self.dimension_contribution_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ContributionMatrix {
     /// Creates a new builder-style object to manufacture [`ContributionMatrix`](crate::model::ContributionMatrix).
@@ -5728,36 +5305,32 @@ impl ContributionMatrix {
 /// <p>Details about a dimension that contributed to an anomaly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionContribution {
+pub struct DimensionContribution  {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>A list of dimension values that contributed to the anomaly.</p>
     #[doc(hidden)]
-    pub dimension_value_contribution_list:
-        std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>,
+    pub dimension_value_contribution_list: std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>,
 }
 impl DimensionContribution {
     /// <p>The name of the dimension.</p>
-    pub fn dimension_name(&self) -> std::option::Option<&str> {
+    pub fn dimension_name(&self) -> std::option::Option<& str> {
         self.dimension_name.as_deref()
     }
     /// <p>A list of dimension values that contributed to the anomaly.</p>
-    pub fn dimension_value_contribution_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DimensionValueContribution]> {
+    pub fn dimension_value_contribution_list(&self) -> std::option::Option<& [crate::model::DimensionValueContribution]> {
         self.dimension_value_contribution_list.as_deref()
     }
 }
 /// See [`DimensionContribution`](crate::model::DimensionContribution).
 pub mod dimension_contribution {
-
+    
     /// A builder for [`DimensionContribution`](crate::model::DimensionContribution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimension_name: std::option::Option<std::string::String>,
-        pub(crate) dimension_value_contribution_list:
-            std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>,
+        pub(crate) dimension_value_contribution_list: std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>,
     }
     impl Builder {
         /// <p>The name of the dimension.</p>
@@ -5766,43 +5339,36 @@ pub mod dimension_contribution {
             self
         }
         /// <p>The name of the dimension.</p>
-        pub fn set_dimension_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_name = input;
-            self
+        pub fn set_dimension_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_name = input; self
         }
         /// Appends an item to `dimension_value_contribution_list`.
         ///
         /// To override the contents of this collection use [`set_dimension_value_contribution_list`](Self::set_dimension_value_contribution_list).
         ///
         /// <p>A list of dimension values that contributed to the anomaly.</p>
-        pub fn dimension_value_contribution_list(
-            mut self,
-            input: crate::model::DimensionValueContribution,
-        ) -> Self {
+        pub fn dimension_value_contribution_list(mut self, input: crate::model::DimensionValueContribution) -> Self {
             let mut v = self.dimension_value_contribution_list.unwrap_or_default();
-            v.push(input);
-            self.dimension_value_contribution_list = Some(v);
-            self
+                            v.push(input);
+                            self.dimension_value_contribution_list = Some(v);
+                            self
         }
         /// <p>A list of dimension values that contributed to the anomaly.</p>
-        pub fn set_dimension_value_contribution_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>,
-        ) -> Self {
-            self.dimension_value_contribution_list = input;
-            self
+        pub fn set_dimension_value_contribution_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>) -> Self {
+            self.dimension_value_contribution_list = input; self
         }
         /// Consumes the builder and constructs a [`DimensionContribution`](crate::model::DimensionContribution).
         pub fn build(self) -> crate::model::DimensionContribution {
             crate::model::DimensionContribution {
-                dimension_name: self.dimension_name,
-                dimension_value_contribution_list: self.dimension_value_contribution_list,
+                dimension_name: self.dimension_name
+                ,
+                dimension_value_contribution_list: self.dimension_value_contribution_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DimensionContribution {
     /// Creates a new builder-style object to manufacture [`DimensionContribution`](crate::model::DimensionContribution).
@@ -5814,7 +5380,7 @@ impl DimensionContribution {
 /// <p>The severity of a value of a dimension that contributed to an anomaly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionValueContribution {
+pub struct DimensionValueContribution  {
     /// <p>The value of the dimension.</p>
     #[doc(hidden)]
     pub dimension_value: std::option::Option<std::string::String>,
@@ -5824,7 +5390,7 @@ pub struct DimensionValueContribution {
 }
 impl DimensionValueContribution {
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(&self) -> std::option::Option<&str> {
+    pub fn dimension_value(&self) -> std::option::Option<& str> {
         self.dimension_value.as_deref()
     }
     /// <p>The severity score of the value.</p>
@@ -5834,7 +5400,7 @@ impl DimensionValueContribution {
 }
 /// See [`DimensionValueContribution`](crate::model::DimensionValueContribution).
 pub mod dimension_value_contribution {
-
+    
     /// A builder for [`DimensionValueContribution`](crate::model::DimensionValueContribution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5848,12 +5414,8 @@ pub mod dimension_value_contribution {
             self
         }
         /// <p>The value of the dimension.</p>
-        pub fn set_dimension_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_value = input;
-            self
+        pub fn set_dimension_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_value = input; self
         }
         /// <p>The severity score of the value.</p>
         pub fn contribution_score(mut self, input: f64) -> Self {
@@ -5862,17 +5424,20 @@ pub mod dimension_value_contribution {
         }
         /// <p>The severity score of the value.</p>
         pub fn set_contribution_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.contribution_score = input;
-            self
+            self.contribution_score = input; self
         }
         /// Consumes the builder and constructs a [`DimensionValueContribution`](crate::model::DimensionValueContribution).
         pub fn build(self) -> crate::model::DimensionValueContribution {
             crate::model::DimensionValueContribution {
-                dimension_value: self.dimension_value,
-                contribution_score: self.contribution_score,
+                dimension_value: self.dimension_value
+                ,
+                contribution_score: self.contribution_score
+                ,
             }
         }
     }
+    
+    
 }
 impl DimensionValueContribution {
     /// Creates a new builder-style object to manufacture [`DimensionValueContribution`](crate::model::DimensionValueContribution).
@@ -5884,7 +5449,7 @@ impl DimensionValueContribution {
 /// <p>An inferred dataset configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedMetricSetConfig {
+pub struct DetectedMetricSetConfig  {
     /// <p>The dataset's offset.</p>
     #[doc(hidden)]
     pub offset: std::option::Option<crate::model::DetectedField>,
@@ -5897,21 +5462,21 @@ pub struct DetectedMetricSetConfig {
 }
 impl DetectedMetricSetConfig {
     /// <p>The dataset's offset.</p>
-    pub fn offset(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn offset(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.offset.as_ref()
     }
     /// <p>The dataset's interval.</p>
-    pub fn metric_set_frequency(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn metric_set_frequency(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.metric_set_frequency.as_ref()
     }
     /// <p>The dataset's data source.</p>
-    pub fn metric_source(&self) -> std::option::Option<&crate::model::DetectedMetricSource> {
+    pub fn metric_source(&self) -> std::option::Option<& crate::model::DetectedMetricSource> {
         self.metric_source.as_ref()
     }
 }
 /// See [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig).
 pub mod detected_metric_set_config {
-
+    
     /// A builder for [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5926,12 +5491,8 @@ pub mod detected_metric_set_config {
             self
         }
         /// <p>The dataset's offset.</p>
-        pub fn set_offset(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.offset = input;
-            self
+        pub fn set_offset(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.offset = input; self
         }
         /// <p>The dataset's interval.</p>
         pub fn metric_set_frequency(mut self, input: crate::model::DetectedField) -> Self {
@@ -5939,12 +5500,8 @@ pub mod detected_metric_set_config {
             self
         }
         /// <p>The dataset's interval.</p>
-        pub fn set_metric_set_frequency(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.metric_set_frequency = input;
-            self
+        pub fn set_metric_set_frequency(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.metric_set_frequency = input; self
         }
         /// <p>The dataset's data source.</p>
         pub fn metric_source(mut self, input: crate::model::DetectedMetricSource) -> Self {
@@ -5952,22 +5509,23 @@ pub mod detected_metric_set_config {
             self
         }
         /// <p>The dataset's data source.</p>
-        pub fn set_metric_source(
-            mut self,
-            input: std::option::Option<crate::model::DetectedMetricSource>,
-        ) -> Self {
-            self.metric_source = input;
-            self
+        pub fn set_metric_source(mut self, input: std::option::Option<crate::model::DetectedMetricSource>) -> Self {
+            self.metric_source = input; self
         }
         /// Consumes the builder and constructs a [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig).
         pub fn build(self) -> crate::model::DetectedMetricSetConfig {
             crate::model::DetectedMetricSetConfig {
-                offset: self.offset,
-                metric_set_frequency: self.metric_set_frequency,
-                metric_source: self.metric_source,
+                offset: self.offset
+                ,
+                metric_set_frequency: self.metric_set_frequency
+                ,
+                metric_source: self.metric_source
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectedMetricSetConfig {
     /// Creates a new builder-style object to manufacture [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig).
@@ -5979,20 +5537,20 @@ impl DetectedMetricSetConfig {
 /// <p>An inferred data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedMetricSource {
+pub struct DetectedMetricSource  {
     /// <p>The data source's source configuration.</p>
     #[doc(hidden)]
     pub s3_source_config: std::option::Option<crate::model::DetectedS3SourceConfig>,
 }
 impl DetectedMetricSource {
     /// <p>The data source's source configuration.</p>
-    pub fn s3_source_config(&self) -> std::option::Option<&crate::model::DetectedS3SourceConfig> {
+    pub fn s3_source_config(&self) -> std::option::Option<& crate::model::DetectedS3SourceConfig> {
         self.s3_source_config.as_ref()
     }
 }
 /// See [`DetectedMetricSource`](crate::model::DetectedMetricSource).
 pub mod detected_metric_source {
-
+    
     /// A builder for [`DetectedMetricSource`](crate::model::DetectedMetricSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6005,20 +5563,19 @@ pub mod detected_metric_source {
             self
         }
         /// <p>The data source's source configuration.</p>
-        pub fn set_s3_source_config(
-            mut self,
-            input: std::option::Option<crate::model::DetectedS3SourceConfig>,
-        ) -> Self {
-            self.s3_source_config = input;
-            self
+        pub fn set_s3_source_config(mut self, input: std::option::Option<crate::model::DetectedS3SourceConfig>) -> Self {
+            self.s3_source_config = input; self
         }
         /// Consumes the builder and constructs a [`DetectedMetricSource`](crate::model::DetectedMetricSource).
         pub fn build(self) -> crate::model::DetectedMetricSource {
             crate::model::DetectedMetricSource {
-                s3_source_config: self.s3_source_config,
+                s3_source_config: self.s3_source_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectedMetricSource {
     /// Creates a new builder-style object to manufacture [`DetectedMetricSource`](crate::model::DetectedMetricSource).
@@ -6030,52 +5587,45 @@ impl DetectedMetricSource {
 /// <p>An inferred source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedS3SourceConfig {
+pub struct DetectedS3SourceConfig  {
     /// <p>The source's file format descriptor.</p>
     #[doc(hidden)]
     pub file_format_descriptor: std::option::Option<crate::model::DetectedFileFormatDescriptor>,
 }
 impl DetectedS3SourceConfig {
     /// <p>The source's file format descriptor.</p>
-    pub fn file_format_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::model::DetectedFileFormatDescriptor> {
+    pub fn file_format_descriptor(&self) -> std::option::Option<& crate::model::DetectedFileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
     }
 }
 /// See [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig).
 pub mod detected_s3_source_config {
-
+    
     /// A builder for [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) file_format_descriptor:
-            std::option::Option<crate::model::DetectedFileFormatDescriptor>,
+        pub(crate) file_format_descriptor: std::option::Option<crate::model::DetectedFileFormatDescriptor>,
     }
     impl Builder {
         /// <p>The source's file format descriptor.</p>
-        pub fn file_format_descriptor(
-            mut self,
-            input: crate::model::DetectedFileFormatDescriptor,
-        ) -> Self {
+        pub fn file_format_descriptor(mut self, input: crate::model::DetectedFileFormatDescriptor) -> Self {
             self.file_format_descriptor = Some(input);
             self
         }
         /// <p>The source's file format descriptor.</p>
-        pub fn set_file_format_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::DetectedFileFormatDescriptor>,
-        ) -> Self {
-            self.file_format_descriptor = input;
-            self
+        pub fn set_file_format_descriptor(mut self, input: std::option::Option<crate::model::DetectedFileFormatDescriptor>) -> Self {
+            self.file_format_descriptor = input; self
         }
         /// Consumes the builder and constructs a [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig).
         pub fn build(self) -> crate::model::DetectedS3SourceConfig {
             crate::model::DetectedS3SourceConfig {
-                file_format_descriptor: self.file_format_descriptor,
+                file_format_descriptor: self.file_format_descriptor
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectedS3SourceConfig {
     /// Creates a new builder-style object to manufacture [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig).
@@ -6087,7 +5637,7 @@ impl DetectedS3SourceConfig {
 /// <p>Properties of an inferred data format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedFileFormatDescriptor {
+pub struct DetectedFileFormatDescriptor  {
     /// <p>Details about a CSV format.</p>
     #[doc(hidden)]
     pub csv_format_descriptor: std::option::Option<crate::model::DetectedCsvFormatDescriptor>,
@@ -6097,70 +5647,54 @@ pub struct DetectedFileFormatDescriptor {
 }
 impl DetectedFileFormatDescriptor {
     /// <p>Details about a CSV format.</p>
-    pub fn csv_format_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::model::DetectedCsvFormatDescriptor> {
+    pub fn csv_format_descriptor(&self) -> std::option::Option<& crate::model::DetectedCsvFormatDescriptor> {
         self.csv_format_descriptor.as_ref()
     }
     /// <p>Details about a JSON format.</p>
-    pub fn json_format_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::model::DetectedJsonFormatDescriptor> {
+    pub fn json_format_descriptor(&self) -> std::option::Option<& crate::model::DetectedJsonFormatDescriptor> {
         self.json_format_descriptor.as_ref()
     }
 }
 /// See [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor).
 pub mod detected_file_format_descriptor {
-
+    
     /// A builder for [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) csv_format_descriptor:
-            std::option::Option<crate::model::DetectedCsvFormatDescriptor>,
-        pub(crate) json_format_descriptor:
-            std::option::Option<crate::model::DetectedJsonFormatDescriptor>,
+        pub(crate) csv_format_descriptor: std::option::Option<crate::model::DetectedCsvFormatDescriptor>,
+        pub(crate) json_format_descriptor: std::option::Option<crate::model::DetectedJsonFormatDescriptor>,
     }
     impl Builder {
         /// <p>Details about a CSV format.</p>
-        pub fn csv_format_descriptor(
-            mut self,
-            input: crate::model::DetectedCsvFormatDescriptor,
-        ) -> Self {
+        pub fn csv_format_descriptor(mut self, input: crate::model::DetectedCsvFormatDescriptor) -> Self {
             self.csv_format_descriptor = Some(input);
             self
         }
         /// <p>Details about a CSV format.</p>
-        pub fn set_csv_format_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::DetectedCsvFormatDescriptor>,
-        ) -> Self {
-            self.csv_format_descriptor = input;
-            self
+        pub fn set_csv_format_descriptor(mut self, input: std::option::Option<crate::model::DetectedCsvFormatDescriptor>) -> Self {
+            self.csv_format_descriptor = input; self
         }
         /// <p>Details about a JSON format.</p>
-        pub fn json_format_descriptor(
-            mut self,
-            input: crate::model::DetectedJsonFormatDescriptor,
-        ) -> Self {
+        pub fn json_format_descriptor(mut self, input: crate::model::DetectedJsonFormatDescriptor) -> Self {
             self.json_format_descriptor = Some(input);
             self
         }
         /// <p>Details about a JSON format.</p>
-        pub fn set_json_format_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::DetectedJsonFormatDescriptor>,
-        ) -> Self {
-            self.json_format_descriptor = input;
-            self
+        pub fn set_json_format_descriptor(mut self, input: std::option::Option<crate::model::DetectedJsonFormatDescriptor>) -> Self {
+            self.json_format_descriptor = input; self
         }
         /// Consumes the builder and constructs a [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor).
         pub fn build(self) -> crate::model::DetectedFileFormatDescriptor {
             crate::model::DetectedFileFormatDescriptor {
-                csv_format_descriptor: self.csv_format_descriptor,
-                json_format_descriptor: self.json_format_descriptor,
+                csv_format_descriptor: self.csv_format_descriptor
+                ,
+                json_format_descriptor: self.json_format_descriptor
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectedFileFormatDescriptor {
     /// Creates a new builder-style object to manufacture [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor).
@@ -6172,7 +5706,7 @@ impl DetectedFileFormatDescriptor {
 /// <p>A detected JSON format descriptor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedJsonFormatDescriptor {
+pub struct DetectedJsonFormatDescriptor  {
     /// <p>The format's file compression.</p>
     #[doc(hidden)]
     pub file_compression: std::option::Option<crate::model::DetectedField>,
@@ -6182,17 +5716,17 @@ pub struct DetectedJsonFormatDescriptor {
 }
 impl DetectedJsonFormatDescriptor {
     /// <p>The format's file compression.</p>
-    pub fn file_compression(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn file_compression(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.file_compression.as_ref()
     }
     /// <p>The format's character set.</p>
-    pub fn charset(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn charset(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.charset.as_ref()
     }
 }
 /// See [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor).
 pub mod detected_json_format_descriptor {
-
+    
     /// A builder for [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6206,12 +5740,8 @@ pub mod detected_json_format_descriptor {
             self
         }
         /// <p>The format's file compression.</p>
-        pub fn set_file_compression(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.file_compression = input;
-            self
+        pub fn set_file_compression(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.file_compression = input; self
         }
         /// <p>The format's character set.</p>
         pub fn charset(mut self, input: crate::model::DetectedField) -> Self {
@@ -6219,21 +5749,21 @@ pub mod detected_json_format_descriptor {
             self
         }
         /// <p>The format's character set.</p>
-        pub fn set_charset(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.charset = input;
-            self
+        pub fn set_charset(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.charset = input; self
         }
         /// Consumes the builder and constructs a [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor).
         pub fn build(self) -> crate::model::DetectedJsonFormatDescriptor {
             crate::model::DetectedJsonFormatDescriptor {
-                file_compression: self.file_compression,
-                charset: self.charset,
+                file_compression: self.file_compression
+                ,
+                charset: self.charset
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectedJsonFormatDescriptor {
     /// Creates a new builder-style object to manufacture [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor).
@@ -6245,7 +5775,7 @@ impl DetectedJsonFormatDescriptor {
 /// <p>An inferred field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedField {
+pub struct DetectedField  {
     /// <p>The field's value.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::model::AttributeValue>,
@@ -6258,21 +5788,21 @@ pub struct DetectedField {
 }
 impl DetectedField {
     /// <p>The field's value.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::AttributeValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::AttributeValue> {
         self.value.as_ref()
     }
     /// <p>The field's confidence.</p>
-    pub fn confidence(&self) -> std::option::Option<&crate::model::Confidence> {
+    pub fn confidence(&self) -> std::option::Option<& crate::model::Confidence> {
         self.confidence.as_ref()
     }
     /// <p>The field's message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DetectedField`](crate::model::DetectedField).
 pub mod detected_field {
-
+    
     /// A builder for [`DetectedField`](crate::model::DetectedField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6287,12 +5817,8 @@ pub mod detected_field {
             self
         }
         /// <p>The field's value.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::AttributeValue>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::AttributeValue>) -> Self {
+            self.value = input; self
         }
         /// <p>The field's confidence.</p>
         pub fn confidence(mut self, input: crate::model::Confidence) -> Self {
@@ -6300,12 +5826,8 @@ pub mod detected_field {
             self
         }
         /// <p>The field's confidence.</p>
-        pub fn set_confidence(
-            mut self,
-            input: std::option::Option<crate::model::Confidence>,
-        ) -> Self {
-            self.confidence = input;
-            self
+        pub fn set_confidence(mut self, input: std::option::Option<crate::model::Confidence>) -> Self {
+            self.confidence = input; self
         }
         /// <p>The field's message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6314,18 +5836,22 @@ pub mod detected_field {
         }
         /// <p>The field's message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DetectedField`](crate::model::DetectedField).
         pub fn build(self) -> crate::model::DetectedField {
             crate::model::DetectedField {
-                value: self.value,
-                confidence: self.confidence,
-                message: self.message,
+                value: self.value
+                ,
+                confidence: self.confidence
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectedField {
     /// Creates a new builder-style object to manufacture [`DetectedField`](crate::model::DetectedField).
@@ -6340,9 +5866,9 @@ impl DetectedField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let confidence = unimplemented!();
 /// match confidence {
@@ -6365,22 +5891,14 @@ impl DetectedField {
 /// Specifically, when `confidence` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Confidence::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Confidence {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -6389,7 +5907,7 @@ pub enum Confidence {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Confidence {
     fn from(s: &str) -> Self {
@@ -6397,17 +5915,17 @@ impl std::convert::From<&str> for Confidence {
             "HIGH" => Confidence::High,
             "LOW" => Confidence::Low,
             "NONE" => Confidence::None,
-            other => Confidence::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Confidence::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Confidence {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Confidence::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Confidence::from(s))
+                }
+            }
 impl Confidence {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6415,12 +5933,14 @@ impl Confidence {
             Confidence::High => "HIGH",
             Confidence::Low => "LOW",
             Confidence::None => "NONE",
-            Confidence::Unknown(value) => value.as_str(),
+            Confidence::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HIGH", "LOW", "NONE"]
+        &[
+            "HIGH", "LOW", "NONE"
+        ]
     }
 }
 impl AsRef<str> for Confidence {
@@ -6432,7 +5952,7 @@ impl AsRef<str> for Confidence {
 /// <p>An attribute value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeValue {
+pub struct AttributeValue  {
     /// <p>A string.</p>
     #[doc(hidden)]
     pub s: std::option::Option<std::string::String>,
@@ -6454,33 +5974,33 @@ pub struct AttributeValue {
 }
 impl AttributeValue {
     /// <p>A string.</p>
-    pub fn s(&self) -> std::option::Option<&str> {
+    pub fn s(&self) -> std::option::Option<& str> {
         self.s.as_deref()
     }
     /// <p>A number.</p>
-    pub fn n(&self) -> std::option::Option<&str> {
+    pub fn n(&self) -> std::option::Option<& str> {
         self.n.as_deref()
     }
     /// <p>A binary value.</p>
-    pub fn b(&self) -> std::option::Option<&str> {
+    pub fn b(&self) -> std::option::Option<& str> {
         self.b.as_deref()
     }
     /// <p>A list of strings.</p>
-    pub fn ss(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ss(&self) -> std::option::Option<& [std::string::String]> {
         self.ss.as_deref()
     }
     /// <p>A list of numbers.</p>
-    pub fn ns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ns(&self) -> std::option::Option<& [std::string::String]> {
         self.ns.as_deref()
     }
     /// <p>A list of binary values.</p>
-    pub fn bs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bs(&self) -> std::option::Option<& [std::string::String]> {
         self.bs.as_deref()
     }
 }
 /// See [`AttributeValue`](crate::model::AttributeValue).
 pub mod attribute_value {
-
+    
     /// A builder for [`AttributeValue`](crate::model::AttributeValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6499,8 +6019,7 @@ pub mod attribute_value {
         }
         /// <p>A string.</p>
         pub fn set_s(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s = input;
-            self
+            self.s = input; self
         }
         /// <p>A number.</p>
         pub fn n(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6509,8 +6028,7 @@ pub mod attribute_value {
         }
         /// <p>A number.</p>
         pub fn set_n(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.n = input;
-            self
+            self.n = input; self
         }
         /// <p>A binary value.</p>
         pub fn b(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6519,8 +6037,7 @@ pub mod attribute_value {
         }
         /// <p>A binary value.</p>
         pub fn set_b(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.b = input;
-            self
+            self.b = input; self
         }
         /// Appends an item to `ss`.
         ///
@@ -6529,17 +6046,13 @@ pub mod attribute_value {
         /// <p>A list of strings.</p>
         pub fn ss(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ss.unwrap_or_default();
-            v.push(input.into());
-            self.ss = Some(v);
-            self
+                            v.push(input.into());
+                            self.ss = Some(v);
+                            self
         }
         /// <p>A list of strings.</p>
-        pub fn set_ss(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ss = input;
-            self
+        pub fn set_ss(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ss = input; self
         }
         /// Appends an item to `ns`.
         ///
@@ -6548,17 +6061,13 @@ pub mod attribute_value {
         /// <p>A list of numbers.</p>
         pub fn ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ns.unwrap_or_default();
-            v.push(input.into());
-            self.ns = Some(v);
-            self
+                            v.push(input.into());
+                            self.ns = Some(v);
+                            self
         }
         /// <p>A list of numbers.</p>
-        pub fn set_ns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ns = input;
-            self
+        pub fn set_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ns = input; self
         }
         /// Appends an item to `bs`.
         ///
@@ -6567,30 +6076,34 @@ pub mod attribute_value {
         /// <p>A list of binary values.</p>
         pub fn bs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bs.unwrap_or_default();
-            v.push(input.into());
-            self.bs = Some(v);
-            self
+                            v.push(input.into());
+                            self.bs = Some(v);
+                            self
         }
         /// <p>A list of binary values.</p>
-        pub fn set_bs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.bs = input;
-            self
+        pub fn set_bs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.bs = input; self
         }
         /// Consumes the builder and constructs a [`AttributeValue`](crate::model::AttributeValue).
         pub fn build(self) -> crate::model::AttributeValue {
             crate::model::AttributeValue {
-                s: self.s,
-                n: self.n,
-                b: self.b,
-                ss: self.ss,
-                ns: self.ns,
-                bs: self.bs,
+                s: self.s
+                ,
+                n: self.n
+                ,
+                b: self.b
+                ,
+                ss: self.ss
+                ,
+                ns: self.ns
+                ,
+                bs: self.bs
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeValue {
     /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
@@ -6602,7 +6115,7 @@ impl AttributeValue {
 /// <p>Properties of an inferred CSV format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedCsvFormatDescriptor {
+pub struct DetectedCsvFormatDescriptor  {
     /// <p>The format's file compression.</p>
     #[doc(hidden)]
     pub file_compression: std::option::Option<crate::model::DetectedField>,
@@ -6624,33 +6137,33 @@ pub struct DetectedCsvFormatDescriptor {
 }
 impl DetectedCsvFormatDescriptor {
     /// <p>The format's file compression.</p>
-    pub fn file_compression(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn file_compression(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.file_compression.as_ref()
     }
     /// <p>The format's charset.</p>
-    pub fn charset(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn charset(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.charset.as_ref()
     }
     /// <p>Whether the format includes a header.</p>
-    pub fn contains_header(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn contains_header(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.contains_header.as_ref()
     }
     /// <p>The format's delimiter.</p>
-    pub fn delimiter(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn delimiter(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.delimiter.as_ref()
     }
     /// <p>The format's header list.</p>
-    pub fn header_list(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn header_list(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.header_list.as_ref()
     }
     /// <p>The format's quote symbol.</p>
-    pub fn quote_symbol(&self) -> std::option::Option<&crate::model::DetectedField> {
+    pub fn quote_symbol(&self) -> std::option::Option<& crate::model::DetectedField> {
         self.quote_symbol.as_ref()
     }
 }
 /// See [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor).
 pub mod detected_csv_format_descriptor {
-
+    
     /// A builder for [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6668,12 +6181,8 @@ pub mod detected_csv_format_descriptor {
             self
         }
         /// <p>The format's file compression.</p>
-        pub fn set_file_compression(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.file_compression = input;
-            self
+        pub fn set_file_compression(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.file_compression = input; self
         }
         /// <p>The format's charset.</p>
         pub fn charset(mut self, input: crate::model::DetectedField) -> Self {
@@ -6681,12 +6190,8 @@ pub mod detected_csv_format_descriptor {
             self
         }
         /// <p>The format's charset.</p>
-        pub fn set_charset(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.charset = input;
-            self
+        pub fn set_charset(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.charset = input; self
         }
         /// <p>Whether the format includes a header.</p>
         pub fn contains_header(mut self, input: crate::model::DetectedField) -> Self {
@@ -6694,12 +6199,8 @@ pub mod detected_csv_format_descriptor {
             self
         }
         /// <p>Whether the format includes a header.</p>
-        pub fn set_contains_header(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.contains_header = input;
-            self
+        pub fn set_contains_header(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.contains_header = input; self
         }
         /// <p>The format's delimiter.</p>
         pub fn delimiter(mut self, input: crate::model::DetectedField) -> Self {
@@ -6707,12 +6208,8 @@ pub mod detected_csv_format_descriptor {
             self
         }
         /// <p>The format's delimiter.</p>
-        pub fn set_delimiter(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.delimiter = input;
-            self
+        pub fn set_delimiter(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.delimiter = input; self
         }
         /// <p>The format's header list.</p>
         pub fn header_list(mut self, input: crate::model::DetectedField) -> Self {
@@ -6720,12 +6217,8 @@ pub mod detected_csv_format_descriptor {
             self
         }
         /// <p>The format's header list.</p>
-        pub fn set_header_list(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.header_list = input;
-            self
+        pub fn set_header_list(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.header_list = input; self
         }
         /// <p>The format's quote symbol.</p>
         pub fn quote_symbol(mut self, input: crate::model::DetectedField) -> Self {
@@ -6733,25 +6226,29 @@ pub mod detected_csv_format_descriptor {
             self
         }
         /// <p>The format's quote symbol.</p>
-        pub fn set_quote_symbol(
-            mut self,
-            input: std::option::Option<crate::model::DetectedField>,
-        ) -> Self {
-            self.quote_symbol = input;
-            self
+        pub fn set_quote_symbol(mut self, input: std::option::Option<crate::model::DetectedField>) -> Self {
+            self.quote_symbol = input; self
         }
         /// Consumes the builder and constructs a [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor).
         pub fn build(self) -> crate::model::DetectedCsvFormatDescriptor {
             crate::model::DetectedCsvFormatDescriptor {
-                file_compression: self.file_compression,
-                charset: self.charset,
-                contains_header: self.contains_header,
-                delimiter: self.delimiter,
-                header_list: self.header_list,
-                quote_symbol: self.quote_symbol,
+                file_compression: self.file_compression
+                ,
+                charset: self.charset
+                ,
+                contains_header: self.contains_header
+                ,
+                delimiter: self.delimiter
+                ,
+                header_list: self.header_list
+                ,
+                quote_symbol: self.quote_symbol
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectedCsvFormatDescriptor {
     /// Creates a new builder-style object to manufacture [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor).
@@ -6763,22 +6260,20 @@ impl DetectedCsvFormatDescriptor {
 /// <p>An auto detection metric source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoDetectionMetricSource {
+pub struct AutoDetectionMetricSource  {
     /// <p>The source's source config.</p>
     #[doc(hidden)]
     pub s3_source_config: std::option::Option<crate::model::AutoDetectionS3SourceConfig>,
 }
 impl AutoDetectionMetricSource {
     /// <p>The source's source config.</p>
-    pub fn s3_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AutoDetectionS3SourceConfig> {
+    pub fn s3_source_config(&self) -> std::option::Option<& crate::model::AutoDetectionS3SourceConfig> {
         self.s3_source_config.as_ref()
     }
 }
 /// See [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource).
 pub mod auto_detection_metric_source {
-
+    
     /// A builder for [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6786,28 +6281,24 @@ pub mod auto_detection_metric_source {
     }
     impl Builder {
         /// <p>The source's source config.</p>
-        pub fn s3_source_config(
-            mut self,
-            input: crate::model::AutoDetectionS3SourceConfig,
-        ) -> Self {
+        pub fn s3_source_config(mut self, input: crate::model::AutoDetectionS3SourceConfig) -> Self {
             self.s3_source_config = Some(input);
             self
         }
         /// <p>The source's source config.</p>
-        pub fn set_s3_source_config(
-            mut self,
-            input: std::option::Option<crate::model::AutoDetectionS3SourceConfig>,
-        ) -> Self {
-            self.s3_source_config = input;
-            self
+        pub fn set_s3_source_config(mut self, input: std::option::Option<crate::model::AutoDetectionS3SourceConfig>) -> Self {
+            self.s3_source_config = input; self
         }
         /// Consumes the builder and constructs a [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource).
         pub fn build(self) -> crate::model::AutoDetectionMetricSource {
             crate::model::AutoDetectionMetricSource {
-                s3_source_config: self.s3_source_config,
+                s3_source_config: self.s3_source_config
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoDetectionMetricSource {
     /// Creates a new builder-style object to manufacture [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource).
@@ -6819,7 +6310,7 @@ impl AutoDetectionMetricSource {
 /// <p>An auto detection source config.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoDetectionS3SourceConfig {
+pub struct AutoDetectionS3SourceConfig  {
     /// <p>The config's templated path list.</p>
     #[doc(hidden)]
     pub templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6829,23 +6320,22 @@ pub struct AutoDetectionS3SourceConfig {
 }
 impl AutoDetectionS3SourceConfig {
     /// <p>The config's templated path list.</p>
-    pub fn templated_path_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn templated_path_list(&self) -> std::option::Option<& [std::string::String]> {
         self.templated_path_list.as_deref()
     }
     /// <p>The config's historical data path list.</p>
-    pub fn historical_data_path_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn historical_data_path_list(&self) -> std::option::Option<& [std::string::String]> {
         self.historical_data_path_list.as_deref()
     }
 }
 /// See [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig).
 pub mod auto_detection_s3_source_config {
-
+    
     /// A builder for [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) historical_data_path_list:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) historical_data_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `templated_path_list`.
@@ -6855,17 +6345,13 @@ pub mod auto_detection_s3_source_config {
         /// <p>The config's templated path list.</p>
         pub fn templated_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.templated_path_list.unwrap_or_default();
-            v.push(input.into());
-            self.templated_path_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.templated_path_list = Some(v);
+                            self
         }
         /// <p>The config's templated path list.</p>
-        pub fn set_templated_path_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.templated_path_list = input;
-            self
+        pub fn set_templated_path_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.templated_path_list = input; self
         }
         /// Appends an item to `historical_data_path_list`.
         ///
@@ -6874,26 +6360,26 @@ pub mod auto_detection_s3_source_config {
         /// <p>The config's historical data path list.</p>
         pub fn historical_data_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.historical_data_path_list.unwrap_or_default();
-            v.push(input.into());
-            self.historical_data_path_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.historical_data_path_list = Some(v);
+                            self
         }
         /// <p>The config's historical data path list.</p>
-        pub fn set_historical_data_path_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.historical_data_path_list = input;
-            self
+        pub fn set_historical_data_path_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.historical_data_path_list = input; self
         }
         /// Consumes the builder and constructs a [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig).
         pub fn build(self) -> crate::model::AutoDetectionS3SourceConfig {
             crate::model::AutoDetectionS3SourceConfig {
-                templated_path_list: self.templated_path_list,
-                historical_data_path_list: self.historical_data_path_list,
+                templated_path_list: self.templated_path_list
+                ,
+                historical_data_path_list: self.historical_data_path_list
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoDetectionS3SourceConfig {
     /// Creates a new builder-style object to manufacture [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig).
@@ -6908,9 +6394,9 @@ impl AutoDetectionS3SourceConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let anomalydetectorfailuretype = unimplemented!();
 /// match anomalydetectorfailuretype {
@@ -6934,22 +6420,14 @@ impl AutoDetectionS3SourceConfig {
 /// Specifically, when `anomalydetectorfailuretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnomalyDetectorFailureType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnomalyDetectorFailureType {
     #[allow(missing_docs)] // documentation missing in model
     ActivationFailure,
@@ -6960,7 +6438,7 @@ pub enum AnomalyDetectorFailureType {
     #[allow(missing_docs)] // documentation missing in model
     DeletionFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnomalyDetectorFailureType {
     fn from(s: &str) -> Self {
@@ -6969,19 +6447,17 @@ impl std::convert::From<&str> for AnomalyDetectorFailureType {
             "BACK_TEST_ACTIVATION_FAILURE" => AnomalyDetectorFailureType::BackTestActivationFailure,
             "DEACTIVATION_FAILURE" => AnomalyDetectorFailureType::DeactivationFailure,
             "DELETION_FAILURE" => AnomalyDetectorFailureType::DeletionFailure,
-            other => AnomalyDetectorFailureType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AnomalyDetectorFailureType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnomalyDetectorFailureType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnomalyDetectorFailureType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnomalyDetectorFailureType::from(s))
+                }
+            }
 impl AnomalyDetectorFailureType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6990,16 +6466,13 @@ impl AnomalyDetectorFailureType {
             AnomalyDetectorFailureType::BackTestActivationFailure => "BACK_TEST_ACTIVATION_FAILURE",
             AnomalyDetectorFailureType::DeactivationFailure => "DEACTIVATION_FAILURE",
             AnomalyDetectorFailureType::DeletionFailure => "DELETION_FAILURE",
-            AnomalyDetectorFailureType::Unknown(value) => value.as_str(),
+            AnomalyDetectorFailureType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVATION_FAILURE",
-            "BACK_TEST_ACTIVATION_FAILURE",
-            "DEACTIVATION_FAILURE",
-            "DELETION_FAILURE",
+            "ACTIVATION_FAILURE", "BACK_TEST_ACTIVATION_FAILURE", "DEACTIVATION_FAILURE", "DELETION_FAILURE"
         ]
     }
 }
@@ -7012,20 +6485,20 @@ impl AsRef<str> for AnomalyDetectorFailureType {
 /// <p>Contains information about a detector's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyDetectorConfigSummary {
+pub struct AnomalyDetectorConfigSummary  {
     /// <p>The interval at which the detector analyzes its source data.</p>
     #[doc(hidden)]
     pub anomaly_detector_frequency: std::option::Option<crate::model::Frequency>,
 }
 impl AnomalyDetectorConfigSummary {
     /// <p>The interval at which the detector analyzes its source data.</p>
-    pub fn anomaly_detector_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+    pub fn anomaly_detector_frequency(&self) -> std::option::Option<& crate::model::Frequency> {
         self.anomaly_detector_frequency.as_ref()
     }
 }
 /// See [`AnomalyDetectorConfigSummary`](crate::model::AnomalyDetectorConfigSummary).
 pub mod anomaly_detector_config_summary {
-
+    
     /// A builder for [`AnomalyDetectorConfigSummary`](crate::model::AnomalyDetectorConfigSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7038,20 +6511,19 @@ pub mod anomaly_detector_config_summary {
             self
         }
         /// <p>The interval at which the detector analyzes its source data.</p>
-        pub fn set_anomaly_detector_frequency(
-            mut self,
-            input: std::option::Option<crate::model::Frequency>,
-        ) -> Self {
-            self.anomaly_detector_frequency = input;
-            self
+        pub fn set_anomaly_detector_frequency(mut self, input: std::option::Option<crate::model::Frequency>) -> Self {
+            self.anomaly_detector_frequency = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyDetectorConfigSummary`](crate::model::AnomalyDetectorConfigSummary).
         pub fn build(self) -> crate::model::AnomalyDetectorConfigSummary {
             crate::model::AnomalyDetectorConfigSummary {
-                anomaly_detector_frequency: self.anomaly_detector_frequency,
+                anomaly_detector_frequency: self.anomaly_detector_frequency
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyDetectorConfigSummary {
     /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfigSummary`](crate::model::AnomalyDetectorConfigSummary).
@@ -7063,7 +6535,7 @@ impl AnomalyDetectorConfigSummary {
 /// <p>The status of an anomaly detector run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionStatus {
+pub struct ExecutionStatus  {
     /// <p>The run's timestamp.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
@@ -7076,21 +6548,21 @@ pub struct ExecutionStatus {
 }
 impl ExecutionStatus {
     /// <p>The run's timestamp.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> std::option::Option<& str> {
         self.timestamp.as_deref()
     }
     /// <p>The run's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyDetectionTaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AnomalyDetectionTaskStatus> {
         self.status.as_ref()
     }
     /// <p>The reason that the run failed, if applicable.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`ExecutionStatus`](crate::model::ExecutionStatus).
 pub mod execution_status {
-
+    
     /// A builder for [`ExecutionStatus`](crate::model::ExecutionStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7106,8 +6578,7 @@ pub mod execution_status {
         }
         /// <p>The run's timestamp.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>The run's status.</p>
         pub fn status(mut self, input: crate::model::AnomalyDetectionTaskStatus) -> Self {
@@ -7115,12 +6586,8 @@ pub mod execution_status {
             self
         }
         /// <p>The run's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AnomalyDetectionTaskStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AnomalyDetectionTaskStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The reason that the run failed, if applicable.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7128,22 +6595,23 @@ pub mod execution_status {
             self
         }
         /// <p>The reason that the run failed, if applicable.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`ExecutionStatus`](crate::model::ExecutionStatus).
         pub fn build(self) -> crate::model::ExecutionStatus {
             crate::model::ExecutionStatus {
-                timestamp: self.timestamp,
-                status: self.status,
-                failure_reason: self.failure_reason,
+                timestamp: self.timestamp
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecutionStatus {
     /// Creates a new builder-style object to manufacture [`ExecutionStatus`](crate::model::ExecutionStatus).
@@ -7158,9 +6626,9 @@ impl ExecutionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let anomalydetectiontaskstatus = unimplemented!();
 /// match anomalydetectiontaskstatus {
@@ -7185,22 +6653,14 @@ impl ExecutionStatus {
 /// Specifically, when `anomalydetectiontaskstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnomalyDetectionTaskStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnomalyDetectionTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -7213,7 +6673,7 @@ pub enum AnomalyDetectionTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnomalyDetectionTaskStatus {
     fn from(s: &str) -> Self {
@@ -7223,19 +6683,17 @@ impl std::convert::From<&str> for AnomalyDetectionTaskStatus {
             "FAILED_TO_SCHEDULE" => AnomalyDetectionTaskStatus::FailedToSchedule,
             "IN_PROGRESS" => AnomalyDetectionTaskStatus::InProgress,
             "PENDING" => AnomalyDetectionTaskStatus::Pending,
-            other => AnomalyDetectionTaskStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AnomalyDetectionTaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnomalyDetectionTaskStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnomalyDetectionTaskStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnomalyDetectionTaskStatus::from(s))
+                }
+            }
 impl AnomalyDetectionTaskStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7245,17 +6703,13 @@ impl AnomalyDetectionTaskStatus {
             AnomalyDetectionTaskStatus::FailedToSchedule => "FAILED_TO_SCHEDULE",
             AnomalyDetectionTaskStatus::InProgress => "IN_PROGRESS",
             AnomalyDetectionTaskStatus::Pending => "PENDING",
-            AnomalyDetectionTaskStatus::Unknown(value) => value.as_str(),
+            AnomalyDetectionTaskStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COMPLETED",
-            "FAILED",
-            "FAILED_TO_SCHEDULE",
-            "IN_PROGRESS",
-            "PENDING",
+            "COMPLETED", "FAILED", "FAILED_TO_SCHEDULE", "IN_PROGRESS", "PENDING"
         ]
     }
 }
@@ -7268,7 +6722,7 @@ impl AsRef<str> for AnomalyDetectionTaskStatus {
 /// <p>A configuration for Amazon SNS-integrated notifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Alert {
+pub struct Alert  {
     /// <p>Action that will be triggered when there is an alert.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
@@ -7305,23 +6759,23 @@ pub struct Alert {
 }
 impl Alert {
     /// <p>Action that will be triggered when there is an alert.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::model::Action> {
         self.action.as_ref()
     }
     /// <p>A description of the alert.</p>
-    pub fn alert_description(&self) -> std::option::Option<&str> {
+    pub fn alert_description(&self) -> std::option::Option<& str> {
         self.alert_description.as_deref()
     }
     /// <p>The ARN of the alert.</p>
-    pub fn alert_arn(&self) -> std::option::Option<&str> {
+    pub fn alert_arn(&self) -> std::option::Option<& str> {
         self.alert_arn.as_deref()
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The name of the alert.</p>
-    pub fn alert_name(&self) -> std::option::Option<&str> {
+    pub fn alert_name(&self) -> std::option::Option<& str> {
         self.alert_name.as_deref()
     }
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
@@ -7329,29 +6783,29 @@ impl Alert {
         self.alert_sensitivity_threshold
     }
     /// <p>The type of the alert.</p>
-    pub fn alert_type(&self) -> std::option::Option<&crate::model::AlertType> {
+    pub fn alert_type(&self) -> std::option::Option<& crate::model::AlertType> {
         self.alert_type.as_ref()
     }
     /// <p>The status of the alert.</p>
-    pub fn alert_status(&self) -> std::option::Option<&crate::model::AlertStatus> {
+    pub fn alert_status(&self) -> std::option::Option<& crate::model::AlertStatus> {
         self.alert_status.as_ref()
     }
     /// <p>The time at which the alert was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The time at which the alert was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
-    pub fn alert_filters(&self) -> std::option::Option<&crate::model::AlertFilters> {
+    pub fn alert_filters(&self) -> std::option::Option<& crate::model::AlertFilters> {
         self.alert_filters.as_ref()
     }
 }
 /// See [`Alert`](crate::model::Alert).
 pub mod alert {
-
+    
     /// A builder for [`Alert`](crate::model::Alert).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7375,8 +6829,7 @@ pub mod alert {
         }
         /// <p>Action that will be triggered when there is an alert.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>A description of the alert.</p>
         pub fn alert_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7384,12 +6837,8 @@ pub mod alert {
             self
         }
         /// <p>A description of the alert.</p>
-        pub fn set_alert_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alert_description = input;
-            self
+        pub fn set_alert_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alert_description = input; self
         }
         /// <p>The ARN of the alert.</p>
         pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7398,8 +6847,7 @@ pub mod alert {
         }
         /// <p>The ARN of the alert.</p>
         pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alert_arn = input;
-            self
+            self.alert_arn = input; self
         }
         /// <p>The ARN of the detector to which the alert is attached.</p>
         pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7407,12 +6855,8 @@ pub mod alert {
             self
         }
         /// <p>The ARN of the detector to which the alert is attached.</p>
-        pub fn set_anomaly_detector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_detector_arn = input;
-            self
+        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_detector_arn = input; self
         }
         /// <p>The name of the alert.</p>
         pub fn alert_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7421,8 +6865,7 @@ pub mod alert {
         }
         /// <p>The name of the alert.</p>
         pub fn set_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alert_name = input;
-            self
+            self.alert_name = input; self
         }
         /// <p>The minimum severity for an anomaly to trigger the alert.</p>
         pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
@@ -7431,8 +6874,7 @@ pub mod alert {
         }
         /// <p>The minimum severity for an anomaly to trigger the alert.</p>
         pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.alert_sensitivity_threshold = input;
-            self
+            self.alert_sensitivity_threshold = input; self
         }
         /// <p>The type of the alert.</p>
         pub fn alert_type(mut self, input: crate::model::AlertType) -> Self {
@@ -7440,12 +6882,8 @@ pub mod alert {
             self
         }
         /// <p>The type of the alert.</p>
-        pub fn set_alert_type(
-            mut self,
-            input: std::option::Option<crate::model::AlertType>,
-        ) -> Self {
-            self.alert_type = input;
-            self
+        pub fn set_alert_type(mut self, input: std::option::Option<crate::model::AlertType>) -> Self {
+            self.alert_type = input; self
         }
         /// <p>The status of the alert.</p>
         pub fn alert_status(mut self, input: crate::model::AlertStatus) -> Self {
@@ -7453,12 +6891,8 @@ pub mod alert {
             self
         }
         /// <p>The status of the alert.</p>
-        pub fn set_alert_status(
-            mut self,
-            input: std::option::Option<crate::model::AlertStatus>,
-        ) -> Self {
-            self.alert_status = input;
-            self
+        pub fn set_alert_status(mut self, input: std::option::Option<crate::model::AlertStatus>) -> Self {
+            self.alert_status = input; self
         }
         /// <p>The time at which the alert was last modified.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7466,12 +6900,8 @@ pub mod alert {
             self
         }
         /// <p>The time at which the alert was last modified.</p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// <p>The time at which the alert was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7479,12 +6909,8 @@ pub mod alert {
             self
         }
         /// <p>The time at which the alert was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
         pub fn alert_filters(mut self, input: crate::model::AlertFilters) -> Self {
@@ -7492,30 +6918,40 @@ pub mod alert {
             self
         }
         /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
-        pub fn set_alert_filters(
-            mut self,
-            input: std::option::Option<crate::model::AlertFilters>,
-        ) -> Self {
-            self.alert_filters = input;
-            self
+        pub fn set_alert_filters(mut self, input: std::option::Option<crate::model::AlertFilters>) -> Self {
+            self.alert_filters = input; self
         }
         /// Consumes the builder and constructs a [`Alert`](crate::model::Alert).
         pub fn build(self) -> crate::model::Alert {
             crate::model::Alert {
-                action: self.action,
-                alert_description: self.alert_description,
-                alert_arn: self.alert_arn,
-                anomaly_detector_arn: self.anomaly_detector_arn,
-                alert_name: self.alert_name,
-                alert_sensitivity_threshold: self.alert_sensitivity_threshold.unwrap_or_default(),
-                alert_type: self.alert_type,
-                alert_status: self.alert_status,
-                last_modification_time: self.last_modification_time,
-                creation_time: self.creation_time,
-                alert_filters: self.alert_filters,
+                action: self.action
+                ,
+                alert_description: self.alert_description
+                ,
+                alert_arn: self.alert_arn
+                ,
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                alert_name: self.alert_name
+                ,
+                alert_sensitivity_threshold: self.alert_sensitivity_threshold
+                    .unwrap_or_default()
+                ,
+                alert_type: self.alert_type
+                ,
+                alert_status: self.alert_status
+                ,
+                last_modification_time: self.last_modification_time
+                ,
+                creation_time: self.creation_time
+                ,
+                alert_filters: self.alert_filters
+                ,
             }
         }
     }
+    
+    
 }
 impl Alert {
     /// Creates a new builder-style object to manufacture [`Alert`](crate::model::Alert).
@@ -7523,3 +6959,4 @@ impl Alert {
         crate::model::alert::Builder::default()
     }
 }
+

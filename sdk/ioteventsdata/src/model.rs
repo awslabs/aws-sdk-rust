@@ -3,7 +3,7 @@
 /// <p>Information about the detector (instance).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorSummary {
+pub struct DetectorSummary  {
     /// <p>The name of the detector model that created this detector (instance).</p>
     #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
@@ -25,33 +25,33 @@ pub struct DetectorSummary {
 }
 impl DetectorSummary {
     /// <p>The name of the detector model that created this detector (instance).</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The version of the detector model that created this detector (instance).</p>
-    pub fn detector_model_version(&self) -> std::option::Option<&str> {
+    pub fn detector_model_version(&self) -> std::option::Option<& str> {
         self.detector_model_version.as_deref()
     }
     /// <p>The current state of the detector (instance).</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DetectorStateSummary> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DetectorStateSummary> {
         self.state.as_ref()
     }
     /// <p>The time the detector (instance) was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the detector (instance) was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
 /// See [`DetectorSummary`](crate::model::DetectorSummary).
 pub mod detector_summary {
-
+    
     /// A builder for [`DetectorSummary`](crate::model::DetectorSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -69,12 +69,8 @@ pub mod detector_summary {
             self
         }
         /// <p>The name of the detector model that created this detector (instance).</p>
-        pub fn set_detector_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_model_name = input;
-            self
+        pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_model_name = input; self
         }
         /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +79,7 @@ pub mod detector_summary {
         }
         /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>The version of the detector model that created this detector (instance).</p>
         pub fn detector_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,12 +87,8 @@ pub mod detector_summary {
             self
         }
         /// <p>The version of the detector model that created this detector (instance).</p>
-        pub fn set_detector_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_model_version = input;
-            self
+        pub fn set_detector_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_model_version = input; self
         }
         /// <p>The current state of the detector (instance).</p>
         pub fn state(mut self, input: crate::model::DetectorStateSummary) -> Self {
@@ -105,12 +96,8 @@ pub mod detector_summary {
             self
         }
         /// <p>The current state of the detector (instance).</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DetectorStateSummary>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DetectorStateSummary>) -> Self {
+            self.state = input; self
         }
         /// <p>The time the detector (instance) was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,12 +105,8 @@ pub mod detector_summary {
             self
         }
         /// <p>The time the detector (instance) was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the detector (instance) was last updated.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -131,25 +114,29 @@ pub mod detector_summary {
             self
         }
         /// <p>The time the detector (instance) was last updated.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Consumes the builder and constructs a [`DetectorSummary`](crate::model::DetectorSummary).
         pub fn build(self) -> crate::model::DetectorSummary {
             crate::model::DetectorSummary {
-                detector_model_name: self.detector_model_name,
-                key_value: self.key_value,
-                detector_model_version: self.detector_model_version,
-                state: self.state,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
+                detector_model_name: self.detector_model_name
+                ,
+                key_value: self.key_value
+                ,
+                detector_model_version: self.detector_model_version
+                ,
+                state: self.state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectorSummary {
     /// Creates a new builder-style object to manufacture [`DetectorSummary`](crate::model::DetectorSummary).
@@ -161,20 +148,20 @@ impl DetectorSummary {
 /// <p>Information about the detector state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorStateSummary {
+pub struct DetectorStateSummary  {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
 }
 impl DetectorStateSummary {
     /// <p>The name of the state.</p>
-    pub fn state_name(&self) -> std::option::Option<&str> {
+    pub fn state_name(&self) -> std::option::Option<& str> {
         self.state_name.as_deref()
     }
 }
 /// See [`DetectorStateSummary`](crate::model::DetectorStateSummary).
 pub mod detector_state_summary {
-
+    
     /// A builder for [`DetectorStateSummary`](crate::model::DetectorStateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -188,16 +175,18 @@ pub mod detector_state_summary {
         }
         /// <p>The name of the state.</p>
         pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_name = input;
-            self
+            self.state_name = input; self
         }
         /// Consumes the builder and constructs a [`DetectorStateSummary`](crate::model::DetectorStateSummary).
         pub fn build(self) -> crate::model::DetectorStateSummary {
             crate::model::DetectorStateSummary {
-                state_name: self.state_name,
+                state_name: self.state_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectorStateSummary {
     /// Creates a new builder-style object to manufacture [`DetectorStateSummary`](crate::model::DetectorStateSummary).
@@ -209,7 +198,7 @@ impl DetectorStateSummary {
 /// <p>Contains a summary of an alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmSummary {
+pub struct AlarmSummary  {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
@@ -219,14 +208,14 @@ pub struct AlarmSummary {
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
-    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state_name: std::option::Option<crate::model::AlarmStateName>,
@@ -239,41 +228,41 @@ pub struct AlarmSummary {
 }
 impl AlarmSummary {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_version(&self) -> std::option::Option<& str> {
         self.alarm_model_version.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
-    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
     /// </ul>
-    pub fn state_name(&self) -> std::option::Option<&crate::model::AlarmStateName> {
+    pub fn state_name(&self) -> std::option::Option<& crate::model::AlarmStateName> {
         self.state_name.as_ref()
     }
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
 /// See [`AlarmSummary`](crate::model::AlarmSummary).
 pub mod alarm_summary {
-
+    
     /// A builder for [`AlarmSummary`](crate::model::AlarmSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -291,12 +280,8 @@ pub mod alarm_summary {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The version of the alarm model.</p>
         pub fn alarm_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -304,12 +289,8 @@ pub mod alarm_summary {
             self
         }
         /// <p>The version of the alarm model.</p>
-        pub fn set_alarm_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_version = input;
-            self
+        pub fn set_alarm_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_version = input; self
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -318,37 +299,32 @@ pub mod alarm_summary {
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
-        /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+        /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
         /// </ul>
         pub fn state_name(mut self, input: crate::model::AlarmStateName) -> Self {
             self.state_name = Some(input);
             self
         }
-        /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+        /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
         /// </ul>
-        pub fn set_state_name(
-            mut self,
-            input: std::option::Option<crate::model::AlarmStateName>,
-        ) -> Self {
-            self.state_name = input;
-            self
+        pub fn set_state_name(mut self, input: std::option::Option<crate::model::AlarmStateName>) -> Self {
+            self.state_name = input; self
         }
         /// <p>The time the alarm was created, in the Unix epoch format.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -356,12 +332,8 @@ pub mod alarm_summary {
             self
         }
         /// <p>The time the alarm was created, in the Unix epoch format.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -369,25 +341,29 @@ pub mod alarm_summary {
             self
         }
         /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Consumes the builder and constructs a [`AlarmSummary`](crate::model::AlarmSummary).
         pub fn build(self) -> crate::model::AlarmSummary {
             crate::model::AlarmSummary {
-                alarm_model_name: self.alarm_model_name,
-                alarm_model_version: self.alarm_model_version,
-                key_value: self.key_value,
-                state_name: self.state_name,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
+                alarm_model_name: self.alarm_model_name
+                ,
+                alarm_model_version: self.alarm_model_version
+                ,
+                key_value: self.key_value
+                ,
+                state_name: self.state_name
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl AlarmSummary {
     /// Creates a new builder-style object to manufacture [`AlarmSummary`](crate::model::AlarmSummary).
@@ -402,9 +378,9 @@ impl AlarmSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let alarmstatename = unimplemented!();
 /// match alarmstatename {
@@ -430,22 +406,14 @@ impl AlarmSummary {
 /// Specifically, when `alarmstatename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlarmStateName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlarmStateName {
     #[allow(missing_docs)] // documentation missing in model
     Acknowledged,
@@ -460,7 +428,7 @@ pub enum AlarmStateName {
     #[allow(missing_docs)] // documentation missing in model
     SnoozeDisabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlarmStateName {
     fn from(s: &str) -> Self {
@@ -471,17 +439,17 @@ impl std::convert::From<&str> for AlarmStateName {
             "LATCHED" => AlarmStateName::Latched,
             "NORMAL" => AlarmStateName::Normal,
             "SNOOZE_DISABLED" => AlarmStateName::SnoozeDisabled,
-            other => AlarmStateName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AlarmStateName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AlarmStateName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlarmStateName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlarmStateName::from(s))
+                }
+            }
 impl AlarmStateName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -492,18 +460,13 @@ impl AlarmStateName {
             AlarmStateName::Latched => "LATCHED",
             AlarmStateName::Normal => "NORMAL",
             AlarmStateName::SnoozeDisabled => "SNOOZE_DISABLED",
-            AlarmStateName::Unknown(value) => value.as_str(),
+            AlarmStateName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACKNOWLEDGED",
-            "ACTIVE",
-            "DISABLED",
-            "LATCHED",
-            "NORMAL",
-            "SNOOZE_DISABLED",
+            "ACKNOWLEDGED", "ACTIVE", "DISABLED", "LATCHED", "NORMAL", "SNOOZE_DISABLED"
         ]
     }
 }
@@ -516,7 +479,7 @@ impl AsRef<str> for AlarmStateName {
 /// <p>Information about the detector (instance).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Detector {
+pub struct Detector  {
     /// <p>The name of the detector model that created this detector (instance).</p>
     #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
@@ -538,33 +501,33 @@ pub struct Detector {
 }
 impl Detector {
     /// <p>The name of the detector model that created this detector (instance).</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The version of the detector model that created this detector (instance).</p>
-    pub fn detector_model_version(&self) -> std::option::Option<&str> {
+    pub fn detector_model_version(&self) -> std::option::Option<& str> {
         self.detector_model_version.as_deref()
     }
     /// <p>The current state of the detector (instance).</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DetectorState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DetectorState> {
         self.state.as_ref()
     }
     /// <p>The time the detector (instance) was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the detector (instance) was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
 /// See [`Detector`](crate::model::Detector).
 pub mod detector {
-
+    
     /// A builder for [`Detector`](crate::model::Detector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -582,12 +545,8 @@ pub mod detector {
             self
         }
         /// <p>The name of the detector model that created this detector (instance).</p>
-        pub fn set_detector_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_model_name = input;
-            self
+        pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_model_name = input; self
         }
         /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -596,8 +555,7 @@ pub mod detector {
         }
         /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>The version of the detector model that created this detector (instance).</p>
         pub fn detector_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -605,12 +563,8 @@ pub mod detector {
             self
         }
         /// <p>The version of the detector model that created this detector (instance).</p>
-        pub fn set_detector_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_model_version = input;
-            self
+        pub fn set_detector_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_model_version = input; self
         }
         /// <p>The current state of the detector (instance).</p>
         pub fn state(mut self, input: crate::model::DetectorState) -> Self {
@@ -618,12 +572,8 @@ pub mod detector {
             self
         }
         /// <p>The current state of the detector (instance).</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DetectorState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DetectorState>) -> Self {
+            self.state = input; self
         }
         /// <p>The time the detector (instance) was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -631,12 +581,8 @@ pub mod detector {
             self
         }
         /// <p>The time the detector (instance) was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the detector (instance) was last updated.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -644,25 +590,29 @@ pub mod detector {
             self
         }
         /// <p>The time the detector (instance) was last updated.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Consumes the builder and constructs a [`Detector`](crate::model::Detector).
         pub fn build(self) -> crate::model::Detector {
             crate::model::Detector {
-                detector_model_name: self.detector_model_name,
-                key_value: self.key_value,
-                detector_model_version: self.detector_model_version,
-                state: self.state,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
+                detector_model_name: self.detector_model_name
+                ,
+                key_value: self.key_value
+                ,
+                detector_model_version: self.detector_model_version
+                ,
+                state: self.state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Detector {
     /// Creates a new builder-style object to manufacture [`Detector`](crate::model::Detector).
@@ -674,7 +624,7 @@ impl Detector {
 /// <p>Information about the current state of the detector instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorState {
+pub struct DetectorState  {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
@@ -687,21 +637,21 @@ pub struct DetectorState {
 }
 impl DetectorState {
     /// <p>The name of the state.</p>
-    pub fn state_name(&self) -> std::option::Option<&str> {
+    pub fn state_name(&self) -> std::option::Option<& str> {
         self.state_name.as_deref()
     }
     /// <p>The current values of the detector's variables.</p>
-    pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
+    pub fn variables(&self) -> std::option::Option<& [crate::model::Variable]> {
         self.variables.as_deref()
     }
     /// <p>The current state of the detector's timers.</p>
-    pub fn timers(&self) -> std::option::Option<&[crate::model::Timer]> {
+    pub fn timers(&self) -> std::option::Option<& [crate::model::Timer]> {
         self.timers.as_deref()
     }
 }
 /// See [`DetectorState`](crate::model::DetectorState).
 pub mod detector_state {
-
+    
     /// A builder for [`DetectorState`](crate::model::DetectorState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -717,8 +667,7 @@ pub mod detector_state {
         }
         /// <p>The name of the state.</p>
         pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_name = input;
-            self
+            self.state_name = input; self
         }
         /// Appends an item to `variables`.
         ///
@@ -727,17 +676,13 @@ pub mod detector_state {
         /// <p>The current values of the detector's variables.</p>
         pub fn variables(mut self, input: crate::model::Variable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input);
-            self.variables = Some(v);
-            self
+                            v.push(input);
+                            self.variables = Some(v);
+                            self
         }
         /// <p>The current values of the detector's variables.</p>
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Variable>>,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::model::Variable>>) -> Self {
+            self.variables = input; self
         }
         /// Appends an item to `timers`.
         ///
@@ -746,27 +691,28 @@ pub mod detector_state {
         /// <p>The current state of the detector's timers.</p>
         pub fn timers(mut self, input: crate::model::Timer) -> Self {
             let mut v = self.timers.unwrap_or_default();
-            v.push(input);
-            self.timers = Some(v);
-            self
+                            v.push(input);
+                            self.timers = Some(v);
+                            self
         }
         /// <p>The current state of the detector's timers.</p>
-        pub fn set_timers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Timer>>,
-        ) -> Self {
-            self.timers = input;
-            self
+        pub fn set_timers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Timer>>) -> Self {
+            self.timers = input; self
         }
         /// Consumes the builder and constructs a [`DetectorState`](crate::model::DetectorState).
         pub fn build(self) -> crate::model::DetectorState {
             crate::model::DetectorState {
-                state_name: self.state_name,
-                variables: self.variables,
-                timers: self.timers,
+                state_name: self.state_name
+                ,
+                variables: self.variables
+                ,
+                timers: self.timers
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectorState {
     /// Creates a new builder-style object to manufacture [`DetectorState`](crate::model::DetectorState).
@@ -778,7 +724,7 @@ impl DetectorState {
 /// <p>The current state of a timer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Timer {
+pub struct Timer  {
     /// <p>The name of the timer.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -788,17 +734,17 @@ pub struct Timer {
 }
 impl Timer {
     /// <p>The name of the timer.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The expiration time for the timer.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
 /// See [`Timer`](crate::model::Timer).
 pub mod timer {
-
+    
     /// A builder for [`Timer`](crate::model::Timer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -813,8 +759,7 @@ pub mod timer {
         }
         /// <p>The name of the timer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The expiration time for the timer.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -822,21 +767,21 @@ pub mod timer {
             self
         }
         /// <p>The expiration time for the timer.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`Timer`](crate::model::Timer).
         pub fn build(self) -> crate::model::Timer {
             crate::model::Timer {
-                name: self.name,
-                timestamp: self.timestamp,
+                name: self.name
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl Timer {
     /// Creates a new builder-style object to manufacture [`Timer`](crate::model::Timer).
@@ -848,7 +793,7 @@ impl Timer {
 /// <p>The current state of the variable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Variable {
+pub struct Variable  {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -858,17 +803,17 @@ pub struct Variable {
 }
 impl Variable {
     /// <p>The name of the variable.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current value of the variable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Variable`](crate::model::Variable).
 pub mod variable {
-
+    
     /// A builder for [`Variable`](crate::model::Variable).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -883,8 +828,7 @@ pub mod variable {
         }
         /// <p>The name of the variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current value of the variable.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -893,17 +837,20 @@ pub mod variable {
         }
         /// <p>The current value of the variable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Variable`](crate::model::Variable).
         pub fn build(self) -> crate::model::Variable {
             crate::model::Variable {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Variable {
     /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable).
@@ -915,7 +862,7 @@ impl Variable {
 /// <p>Contains information about an alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Alarm {
+pub struct Alarm  {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
@@ -940,19 +887,19 @@ pub struct Alarm {
 }
 impl Alarm {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_version(&self) -> std::option::Option<& str> {
         self.alarm_model_version.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>Contains information about the current state of the alarm.</p>
-    pub fn alarm_state(&self) -> std::option::Option<&crate::model::AlarmState> {
+    pub fn alarm_state(&self) -> std::option::Option<& crate::model::AlarmState> {
         self.alarm_state.as_ref()
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -960,17 +907,17 @@ impl Alarm {
         self.severity
     }
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
-
+    
     /// A builder for [`Alarm`](crate::model::Alarm).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -989,12 +936,8 @@ pub mod alarm {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The version of the alarm model.</p>
         pub fn alarm_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1002,12 +945,8 @@ pub mod alarm {
             self
         }
         /// <p>The version of the alarm model.</p>
-        pub fn set_alarm_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_version = input;
-            self
+        pub fn set_alarm_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_version = input; self
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1016,8 +955,7 @@ pub mod alarm {
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>Contains information about the current state of the alarm.</p>
         pub fn alarm_state(mut self, input: crate::model::AlarmState) -> Self {
@@ -1025,12 +963,8 @@ pub mod alarm {
             self
         }
         /// <p>Contains information about the current state of the alarm.</p>
-        pub fn set_alarm_state(
-            mut self,
-            input: std::option::Option<crate::model::AlarmState>,
-        ) -> Self {
-            self.alarm_state = input;
-            self
+        pub fn set_alarm_state(mut self, input: std::option::Option<crate::model::AlarmState>) -> Self {
+            self.alarm_state = input; self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
         pub fn severity(mut self, input: i32) -> Self {
@@ -1039,8 +973,7 @@ pub mod alarm {
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
         pub fn set_severity(mut self, input: std::option::Option<i32>) -> Self {
-            self.severity = input;
-            self
+            self.severity = input; self
         }
         /// <p>The time the alarm was created, in the Unix epoch format.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1048,12 +981,8 @@ pub mod alarm {
             self
         }
         /// <p>The time the alarm was created, in the Unix epoch format.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1061,26 +990,31 @@ pub mod alarm {
             self
         }
         /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Consumes the builder and constructs a [`Alarm`](crate::model::Alarm).
         pub fn build(self) -> crate::model::Alarm {
             crate::model::Alarm {
-                alarm_model_name: self.alarm_model_name,
-                alarm_model_version: self.alarm_model_version,
-                key_value: self.key_value,
-                alarm_state: self.alarm_state,
-                severity: self.severity,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
+                alarm_model_name: self.alarm_model_name
+                ,
+                alarm_model_version: self.alarm_model_version
+                ,
+                key_value: self.key_value
+                ,
+                alarm_state: self.alarm_state
+                ,
+                severity: self.severity
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Alarm {
     /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
@@ -1092,15 +1026,15 @@ impl Alarm {
 /// <p>Contains information about the current state of the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmState {
-    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+pub struct AlarmState  {
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state_name: std::option::Option<crate::model::AlarmStateName>,
@@ -1115,34 +1049,34 @@ pub struct AlarmState {
     pub system_event: std::option::Option<crate::model::SystemEvent>,
 }
 impl AlarmState {
-    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
     /// </ul>
-    pub fn state_name(&self) -> std::option::Option<&crate::model::AlarmStateName> {
+    pub fn state_name(&self) -> std::option::Option<& crate::model::AlarmStateName> {
         self.state_name.as_ref()
     }
     /// <p>Information needed to evaluate data.</p>
-    pub fn rule_evaluation(&self) -> std::option::Option<&crate::model::RuleEvaluation> {
+    pub fn rule_evaluation(&self) -> std::option::Option<& crate::model::RuleEvaluation> {
         self.rule_evaluation.as_ref()
     }
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
-    pub fn customer_action(&self) -> std::option::Option<&crate::model::CustomerAction> {
+    pub fn customer_action(&self) -> std::option::Option<& crate::model::CustomerAction> {
         self.customer_action.as_ref()
     }
     /// <p>Contains information about alarm state changes.</p>
-    pub fn system_event(&self) -> std::option::Option<&crate::model::SystemEvent> {
+    pub fn system_event(&self) -> std::option::Option<& crate::model::SystemEvent> {
         self.system_event.as_ref()
     }
 }
 /// See [`AlarmState`](crate::model::AlarmState).
 pub mod alarm_state {
-
+    
     /// A builder for [`AlarmState`](crate::model::AlarmState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1152,34 +1086,30 @@ pub mod alarm_state {
         pub(crate) system_event: std::option::Option<crate::model::SystemEvent>,
     }
     impl Builder {
-        /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+        /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
         /// </ul>
         pub fn state_name(mut self, input: crate::model::AlarmStateName) -> Self {
             self.state_name = Some(input);
             self
         }
-        /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+        /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
         /// </ul>
-        pub fn set_state_name(
-            mut self,
-            input: std::option::Option<crate::model::AlarmStateName>,
-        ) -> Self {
-            self.state_name = input;
-            self
+        pub fn set_state_name(mut self, input: std::option::Option<crate::model::AlarmStateName>) -> Self {
+            self.state_name = input; self
         }
         /// <p>Information needed to evaluate data.</p>
         pub fn rule_evaluation(mut self, input: crate::model::RuleEvaluation) -> Self {
@@ -1187,12 +1117,8 @@ pub mod alarm_state {
             self
         }
         /// <p>Information needed to evaluate data.</p>
-        pub fn set_rule_evaluation(
-            mut self,
-            input: std::option::Option<crate::model::RuleEvaluation>,
-        ) -> Self {
-            self.rule_evaluation = input;
-            self
+        pub fn set_rule_evaluation(mut self, input: std::option::Option<crate::model::RuleEvaluation>) -> Self {
+            self.rule_evaluation = input; self
         }
         /// <p>Contains information about the action that you can take to respond to the alarm.</p>
         pub fn customer_action(mut self, input: crate::model::CustomerAction) -> Self {
@@ -1200,12 +1126,8 @@ pub mod alarm_state {
             self
         }
         /// <p>Contains information about the action that you can take to respond to the alarm.</p>
-        pub fn set_customer_action(
-            mut self,
-            input: std::option::Option<crate::model::CustomerAction>,
-        ) -> Self {
-            self.customer_action = input;
-            self
+        pub fn set_customer_action(mut self, input: std::option::Option<crate::model::CustomerAction>) -> Self {
+            self.customer_action = input; self
         }
         /// <p>Contains information about alarm state changes.</p>
         pub fn system_event(mut self, input: crate::model::SystemEvent) -> Self {
@@ -1213,23 +1135,25 @@ pub mod alarm_state {
             self
         }
         /// <p>Contains information about alarm state changes.</p>
-        pub fn set_system_event(
-            mut self,
-            input: std::option::Option<crate::model::SystemEvent>,
-        ) -> Self {
-            self.system_event = input;
-            self
+        pub fn set_system_event(mut self, input: std::option::Option<crate::model::SystemEvent>) -> Self {
+            self.system_event = input; self
         }
         /// Consumes the builder and constructs a [`AlarmState`](crate::model::AlarmState).
         pub fn build(self) -> crate::model::AlarmState {
             crate::model::AlarmState {
-                state_name: self.state_name,
-                rule_evaluation: self.rule_evaluation,
-                customer_action: self.customer_action,
-                system_event: self.system_event,
+                state_name: self.state_name
+                ,
+                rule_evaluation: self.rule_evaluation
+                ,
+                customer_action: self.customer_action
+                ,
+                system_event: self.system_event
+                ,
             }
         }
     }
+    
+    
 }
 impl AlarmState {
     /// Creates a new builder-style object to manufacture [`AlarmState`](crate::model::AlarmState).
@@ -1241,7 +1165,7 @@ impl AlarmState {
 /// <p>Contains information about alarm state changes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemEvent {
+pub struct SystemEvent  {
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
     #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::EventType>,
@@ -1251,25 +1175,22 @@ pub struct SystemEvent {
 }
 impl SystemEvent {
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
-    pub fn event_type(&self) -> std::option::Option<&crate::model::EventType> {
+    pub fn event_type(&self) -> std::option::Option<& crate::model::EventType> {
         self.event_type.as_ref()
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn state_change_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::StateChangeConfiguration> {
+    pub fn state_change_configuration(&self) -> std::option::Option<& crate::model::StateChangeConfiguration> {
         self.state_change_configuration.as_ref()
     }
 }
 /// See [`SystemEvent`](crate::model::SystemEvent).
 pub mod system_event {
-
+    
     /// A builder for [`SystemEvent`](crate::model::SystemEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
-        pub(crate) state_change_configuration:
-            std::option::Option<crate::model::StateChangeConfiguration>,
+        pub(crate) state_change_configuration: std::option::Option<crate::model::StateChangeConfiguration>,
     }
     impl Builder {
         /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
@@ -1278,37 +1199,30 @@ pub mod system_event {
             self
         }
         /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
-        pub fn set_event_type(
-            mut self,
-            input: std::option::Option<crate::model::EventType>,
-        ) -> Self {
-            self.event_type = input;
-            self
+        pub fn set_event_type(mut self, input: std::option::Option<crate::model::EventType>) -> Self {
+            self.event_type = input; self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
-        pub fn state_change_configuration(
-            mut self,
-            input: crate::model::StateChangeConfiguration,
-        ) -> Self {
+        pub fn state_change_configuration(mut self, input: crate::model::StateChangeConfiguration) -> Self {
             self.state_change_configuration = Some(input);
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
-        pub fn set_state_change_configuration(
-            mut self,
-            input: std::option::Option<crate::model::StateChangeConfiguration>,
-        ) -> Self {
-            self.state_change_configuration = input;
-            self
+        pub fn set_state_change_configuration(mut self, input: std::option::Option<crate::model::StateChangeConfiguration>) -> Self {
+            self.state_change_configuration = input; self
         }
         /// Consumes the builder and constructs a [`SystemEvent`](crate::model::SystemEvent).
         pub fn build(self) -> crate::model::SystemEvent {
             crate::model::SystemEvent {
-                event_type: self.event_type,
-                state_change_configuration: self.state_change_configuration,
+                event_type: self.event_type
+                ,
+                state_change_configuration: self.state_change_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemEvent {
     /// Creates a new builder-style object to manufacture [`SystemEvent`](crate::model::SystemEvent).
@@ -1320,20 +1234,20 @@ impl SystemEvent {
 /// <p>Contains the configuration information of alarm state changes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StateChangeConfiguration {
+pub struct StateChangeConfiguration  {
     /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
     #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
 }
 impl StateChangeConfiguration {
     /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
-    pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
+    pub fn trigger_type(&self) -> std::option::Option<& crate::model::TriggerType> {
         self.trigger_type.as_ref()
     }
 }
 /// See [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
 pub mod state_change_configuration {
-
+    
     /// A builder for [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1346,20 +1260,19 @@ pub mod state_change_configuration {
             self
         }
         /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
-        pub fn set_trigger_type(
-            mut self,
-            input: std::option::Option<crate::model::TriggerType>,
-        ) -> Self {
-            self.trigger_type = input;
-            self
+        pub fn set_trigger_type(mut self, input: std::option::Option<crate::model::TriggerType>) -> Self {
+            self.trigger_type = input; self
         }
         /// Consumes the builder and constructs a [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
         pub fn build(self) -> crate::model::StateChangeConfiguration {
             crate::model::StateChangeConfiguration {
-                trigger_type: self.trigger_type,
+                trigger_type: self.trigger_type
+                ,
             }
         }
     }
+    
+    
 }
 impl StateChangeConfiguration {
     /// Creates a new builder-style object to manufacture [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
@@ -1374,9 +1287,9 @@ impl StateChangeConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let triggertype = unimplemented!();
 /// match triggertype {
@@ -1397,54 +1310,48 @@ impl StateChangeConfiguration {
 /// Specifically, when `triggertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TriggerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TriggerType {
     #[allow(missing_docs)] // documentation missing in model
     SnoozeTimeout,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TriggerType {
     fn from(s: &str) -> Self {
         match s {
             "SNOOZE_TIMEOUT" => TriggerType::SnoozeTimeout,
-            other => TriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TriggerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TriggerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TriggerType::from(s))
+                }
+            }
 impl TriggerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TriggerType::SnoozeTimeout => "SNOOZE_TIMEOUT",
-            TriggerType::Unknown(value) => value.as_str(),
+            TriggerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SNOOZE_TIMEOUT"]
+        &[
+            "SNOOZE_TIMEOUT"
+        ]
     }
 }
 impl AsRef<str> for TriggerType {
@@ -1459,9 +1366,9 @@ impl AsRef<str> for TriggerType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventtype = unimplemented!();
 /// match eventtype {
@@ -1482,54 +1389,48 @@ impl AsRef<str> for TriggerType {
 /// Specifically, when `eventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     StateChange,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
         match s {
             "STATE_CHANGE" => EventType::StateChange,
-            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventType::from(s))
+                }
+            }
 impl EventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventType::StateChange => "STATE_CHANGE",
-            EventType::Unknown(value) => value.as_str(),
+            EventType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STATE_CHANGE"]
+        &[
+            "STATE_CHANGE"
+        ]
     }
 }
 impl AsRef<str> for EventType {
@@ -1541,15 +1442,15 @@ impl AsRef<str> for EventType {
 /// <p>Contains information about the action that you can take to respond to the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomerAction {
-    /// <p>The name of the action. The action name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
-    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
-    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
-    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
-    /// </ul>
+pub struct CustomerAction  {
+    /// <p>The name of the action. The action name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li> 
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li> 
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li> 
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<crate::model::CustomerActionName>,
@@ -1564,196 +1465,149 @@ pub struct CustomerAction {
     pub disable_action_configuration: std::option::Option<crate::model::DisableActionConfiguration>,
     /// <p>Contains the configuration information of an acknowledge action.</p>
     #[doc(hidden)]
-    pub acknowledge_action_configuration:
-        std::option::Option<crate::model::AcknowledgeActionConfiguration>,
+    pub acknowledge_action_configuration: std::option::Option<crate::model::AcknowledgeActionConfiguration>,
     /// <p>Contains the configuration information of a reset action.</p>
     #[doc(hidden)]
     pub reset_action_configuration: std::option::Option<crate::model::ResetActionConfiguration>,
 }
 impl CustomerAction {
-    /// <p>The name of the action. The action name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
-    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
-    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
-    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the action. The action name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li> 
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li> 
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li> 
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
-    pub fn action_name(&self) -> std::option::Option<&crate::model::CustomerActionName> {
+    pub fn action_name(&self) -> std::option::Option<& crate::model::CustomerActionName> {
         self.action_name.as_ref()
     }
     /// <p>Contains the configuration information of a snooze action.</p>
-    pub fn snooze_action_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::SnoozeActionConfiguration> {
+    pub fn snooze_action_configuration(&self) -> std::option::Option<& crate::model::SnoozeActionConfiguration> {
         self.snooze_action_configuration.as_ref()
     }
     /// <p>Contains the configuration information of an enable action.</p>
-    pub fn enable_action_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::EnableActionConfiguration> {
+    pub fn enable_action_configuration(&self) -> std::option::Option<& crate::model::EnableActionConfiguration> {
         self.enable_action_configuration.as_ref()
     }
     /// <p>Contains the configuration information of a disable action.</p>
-    pub fn disable_action_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DisableActionConfiguration> {
+    pub fn disable_action_configuration(&self) -> std::option::Option<& crate::model::DisableActionConfiguration> {
         self.disable_action_configuration.as_ref()
     }
     /// <p>Contains the configuration information of an acknowledge action.</p>
-    pub fn acknowledge_action_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::AcknowledgeActionConfiguration> {
+    pub fn acknowledge_action_configuration(&self) -> std::option::Option<& crate::model::AcknowledgeActionConfiguration> {
         self.acknowledge_action_configuration.as_ref()
     }
     /// <p>Contains the configuration information of a reset action.</p>
-    pub fn reset_action_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ResetActionConfiguration> {
+    pub fn reset_action_configuration(&self) -> std::option::Option<& crate::model::ResetActionConfiguration> {
         self.reset_action_configuration.as_ref()
     }
 }
 /// See [`CustomerAction`](crate::model::CustomerAction).
 pub mod customer_action {
-
+    
     /// A builder for [`CustomerAction`](crate::model::CustomerAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_name: std::option::Option<crate::model::CustomerActionName>,
-        pub(crate) snooze_action_configuration:
-            std::option::Option<crate::model::SnoozeActionConfiguration>,
-        pub(crate) enable_action_configuration:
-            std::option::Option<crate::model::EnableActionConfiguration>,
-        pub(crate) disable_action_configuration:
-            std::option::Option<crate::model::DisableActionConfiguration>,
-        pub(crate) acknowledge_action_configuration:
-            std::option::Option<crate::model::AcknowledgeActionConfiguration>,
-        pub(crate) reset_action_configuration:
-            std::option::Option<crate::model::ResetActionConfiguration>,
+        pub(crate) snooze_action_configuration: std::option::Option<crate::model::SnoozeActionConfiguration>,
+        pub(crate) enable_action_configuration: std::option::Option<crate::model::EnableActionConfiguration>,
+        pub(crate) disable_action_configuration: std::option::Option<crate::model::DisableActionConfiguration>,
+        pub(crate) acknowledge_action_configuration: std::option::Option<crate::model::AcknowledgeActionConfiguration>,
+        pub(crate) reset_action_configuration: std::option::Option<crate::model::ResetActionConfiguration>,
     }
     impl Builder {
-        /// <p>The name of the action. The action name can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
-        /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
-        /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
-        /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
-        /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
-        /// </ul>
+        /// <p>The name of the action. The action name can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li> 
+        /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li> 
+        /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li> 
+        /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li> 
+        /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li> 
+        /// </ul> 
         /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
         pub fn action_name(mut self, input: crate::model::CustomerActionName) -> Self {
             self.action_name = Some(input);
             self
         }
-        /// <p>The name of the action. The action name can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
-        /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
-        /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
-        /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
-        /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
-        /// </ul>
+        /// <p>The name of the action. The action name can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li> 
+        /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li> 
+        /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li> 
+        /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li> 
+        /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li> 
+        /// </ul> 
         /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
-        pub fn set_action_name(
-            mut self,
-            input: std::option::Option<crate::model::CustomerActionName>,
-        ) -> Self {
-            self.action_name = input;
-            self
+        pub fn set_action_name(mut self, input: std::option::Option<crate::model::CustomerActionName>) -> Self {
+            self.action_name = input; self
         }
         /// <p>Contains the configuration information of a snooze action.</p>
-        pub fn snooze_action_configuration(
-            mut self,
-            input: crate::model::SnoozeActionConfiguration,
-        ) -> Self {
+        pub fn snooze_action_configuration(mut self, input: crate::model::SnoozeActionConfiguration) -> Self {
             self.snooze_action_configuration = Some(input);
             self
         }
         /// <p>Contains the configuration information of a snooze action.</p>
-        pub fn set_snooze_action_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SnoozeActionConfiguration>,
-        ) -> Self {
-            self.snooze_action_configuration = input;
-            self
+        pub fn set_snooze_action_configuration(mut self, input: std::option::Option<crate::model::SnoozeActionConfiguration>) -> Self {
+            self.snooze_action_configuration = input; self
         }
         /// <p>Contains the configuration information of an enable action.</p>
-        pub fn enable_action_configuration(
-            mut self,
-            input: crate::model::EnableActionConfiguration,
-        ) -> Self {
+        pub fn enable_action_configuration(mut self, input: crate::model::EnableActionConfiguration) -> Self {
             self.enable_action_configuration = Some(input);
             self
         }
         /// <p>Contains the configuration information of an enable action.</p>
-        pub fn set_enable_action_configuration(
-            mut self,
-            input: std::option::Option<crate::model::EnableActionConfiguration>,
-        ) -> Self {
-            self.enable_action_configuration = input;
-            self
+        pub fn set_enable_action_configuration(mut self, input: std::option::Option<crate::model::EnableActionConfiguration>) -> Self {
+            self.enable_action_configuration = input; self
         }
         /// <p>Contains the configuration information of a disable action.</p>
-        pub fn disable_action_configuration(
-            mut self,
-            input: crate::model::DisableActionConfiguration,
-        ) -> Self {
+        pub fn disable_action_configuration(mut self, input: crate::model::DisableActionConfiguration) -> Self {
             self.disable_action_configuration = Some(input);
             self
         }
         /// <p>Contains the configuration information of a disable action.</p>
-        pub fn set_disable_action_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DisableActionConfiguration>,
-        ) -> Self {
-            self.disable_action_configuration = input;
-            self
+        pub fn set_disable_action_configuration(mut self, input: std::option::Option<crate::model::DisableActionConfiguration>) -> Self {
+            self.disable_action_configuration = input; self
         }
         /// <p>Contains the configuration information of an acknowledge action.</p>
-        pub fn acknowledge_action_configuration(
-            mut self,
-            input: crate::model::AcknowledgeActionConfiguration,
-        ) -> Self {
+        pub fn acknowledge_action_configuration(mut self, input: crate::model::AcknowledgeActionConfiguration) -> Self {
             self.acknowledge_action_configuration = Some(input);
             self
         }
         /// <p>Contains the configuration information of an acknowledge action.</p>
-        pub fn set_acknowledge_action_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AcknowledgeActionConfiguration>,
-        ) -> Self {
-            self.acknowledge_action_configuration = input;
-            self
+        pub fn set_acknowledge_action_configuration(mut self, input: std::option::Option<crate::model::AcknowledgeActionConfiguration>) -> Self {
+            self.acknowledge_action_configuration = input; self
         }
         /// <p>Contains the configuration information of a reset action.</p>
-        pub fn reset_action_configuration(
-            mut self,
-            input: crate::model::ResetActionConfiguration,
-        ) -> Self {
+        pub fn reset_action_configuration(mut self, input: crate::model::ResetActionConfiguration) -> Self {
             self.reset_action_configuration = Some(input);
             self
         }
         /// <p>Contains the configuration information of a reset action.</p>
-        pub fn set_reset_action_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ResetActionConfiguration>,
-        ) -> Self {
-            self.reset_action_configuration = input;
-            self
+        pub fn set_reset_action_configuration(mut self, input: std::option::Option<crate::model::ResetActionConfiguration>) -> Self {
+            self.reset_action_configuration = input; self
         }
         /// Consumes the builder and constructs a [`CustomerAction`](crate::model::CustomerAction).
         pub fn build(self) -> crate::model::CustomerAction {
             crate::model::CustomerAction {
-                action_name: self.action_name,
-                snooze_action_configuration: self.snooze_action_configuration,
-                enable_action_configuration: self.enable_action_configuration,
-                disable_action_configuration: self.disable_action_configuration,
-                acknowledge_action_configuration: self.acknowledge_action_configuration,
-                reset_action_configuration: self.reset_action_configuration,
+                action_name: self.action_name
+                ,
+                snooze_action_configuration: self.snooze_action_configuration
+                ,
+                enable_action_configuration: self.enable_action_configuration
+                ,
+                disable_action_configuration: self.disable_action_configuration
+                ,
+                acknowledge_action_configuration: self.acknowledge_action_configuration
+                ,
+                reset_action_configuration: self.reset_action_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomerAction {
     /// Creates a new builder-style object to manufacture [`CustomerAction`](crate::model::CustomerAction).
@@ -1765,20 +1619,20 @@ impl CustomerAction {
 /// <p>Contains the configuration information of a reset action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetActionConfiguration {
+pub struct ResetActionConfiguration  {
     /// <p>The note that you can leave when you reset the alarm.</p>
     #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl ResetActionConfiguration {
     /// <p>The note that you can leave when you reset the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
 pub mod reset_action_configuration {
-
+    
     /// A builder for [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1792,14 +1646,18 @@ pub mod reset_action_configuration {
         }
         /// <p>The note that you can leave when you reset the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
         pub fn build(self) -> crate::model::ResetActionConfiguration {
-            crate::model::ResetActionConfiguration { note: self.note }
+            crate::model::ResetActionConfiguration {
+                note: self.note
+                ,
+            }
         }
     }
+    
+    
 }
 impl ResetActionConfiguration {
     /// Creates a new builder-style object to manufacture [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
@@ -1811,20 +1669,20 @@ impl ResetActionConfiguration {
 /// <p>Contains the configuration information of an acknowledge action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeActionConfiguration {
+pub struct AcknowledgeActionConfiguration  {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
 pub mod acknowledge_action_configuration {
-
+    
     /// A builder for [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1838,14 +1696,18 @@ pub mod acknowledge_action_configuration {
         }
         /// <p>The note that you can leave when you acknowledge the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
         pub fn build(self) -> crate::model::AcknowledgeActionConfiguration {
-            crate::model::AcknowledgeActionConfiguration { note: self.note }
+            crate::model::AcknowledgeActionConfiguration {
+                note: self.note
+                ,
+            }
         }
     }
+    
+    
 }
 impl AcknowledgeActionConfiguration {
     /// Creates a new builder-style object to manufacture [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
@@ -1857,20 +1719,20 @@ impl AcknowledgeActionConfiguration {
 /// <p>Contains the configuration information of a disable action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableActionConfiguration {
+pub struct DisableActionConfiguration  {
     /// <p>The note that you can leave when you disable the alarm.</p>
     #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl DisableActionConfiguration {
     /// <p>The note that you can leave when you disable the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
 pub mod disable_action_configuration {
-
+    
     /// A builder for [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1884,14 +1746,18 @@ pub mod disable_action_configuration {
         }
         /// <p>The note that you can leave when you disable the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
         pub fn build(self) -> crate::model::DisableActionConfiguration {
-            crate::model::DisableActionConfiguration { note: self.note }
+            crate::model::DisableActionConfiguration {
+                note: self.note
+                ,
+            }
         }
     }
+    
+    
 }
 impl DisableActionConfiguration {
     /// Creates a new builder-style object to manufacture [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
@@ -1903,20 +1769,20 @@ impl DisableActionConfiguration {
 /// <p>Contains the configuration information of an enable action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableActionConfiguration {
+pub struct EnableActionConfiguration  {
     /// <p>The note that you can leave when you enable the alarm.</p>
     #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl EnableActionConfiguration {
     /// <p>The note that you can leave when you enable the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
 pub mod enable_action_configuration {
-
+    
     /// A builder for [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1930,14 +1796,18 @@ pub mod enable_action_configuration {
         }
         /// <p>The note that you can leave when you enable the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
         pub fn build(self) -> crate::model::EnableActionConfiguration {
-            crate::model::EnableActionConfiguration { note: self.note }
+            crate::model::EnableActionConfiguration {
+                note: self.note
+                ,
+            }
         }
     }
+    
+    
 }
 impl EnableActionConfiguration {
     /// Creates a new builder-style object to manufacture [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
@@ -1949,7 +1819,7 @@ impl EnableActionConfiguration {
 /// <p>Contains the configuration information of a snooze action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnoozeActionConfiguration {
+pub struct SnoozeActionConfiguration  {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     #[doc(hidden)]
     pub snooze_duration: std::option::Option<i32>,
@@ -1963,13 +1833,13 @@ impl SnoozeActionConfiguration {
         self.snooze_duration
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
 pub mod snooze_action_configuration {
-
+    
     /// A builder for [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1984,8 +1854,7 @@ pub mod snooze_action_configuration {
         }
         /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
         pub fn set_snooze_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.snooze_duration = input;
-            self
+            self.snooze_duration = input; self
         }
         /// <p>The note that you can leave when you snooze the alarm.</p>
         pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1994,17 +1863,20 @@ pub mod snooze_action_configuration {
         }
         /// <p>The note that you can leave when you snooze the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
         pub fn build(self) -> crate::model::SnoozeActionConfiguration {
             crate::model::SnoozeActionConfiguration {
-                snooze_duration: self.snooze_duration,
-                note: self.note,
+                snooze_duration: self.snooze_duration
+                ,
+                note: self.note
+                ,
             }
         }
     }
+    
+    
 }
 impl SnoozeActionConfiguration {
     /// Creates a new builder-style object to manufacture [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
@@ -2019,9 +1891,9 @@ impl SnoozeActionConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let customeractionname = unimplemented!();
 /// match customeractionname {
@@ -2046,22 +1918,14 @@ impl SnoozeActionConfiguration {
 /// Specifically, when `customeractionname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CustomerActionName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CustomerActionName {
     #[allow(missing_docs)] // documentation missing in model
     Acknowledge,
@@ -2074,7 +1938,7 @@ pub enum CustomerActionName {
     #[allow(missing_docs)] // documentation missing in model
     Snooze,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomerActionName {
     fn from(s: &str) -> Self {
@@ -2084,19 +1948,17 @@ impl std::convert::From<&str> for CustomerActionName {
             "ENABLE" => CustomerActionName::Enable,
             "RESET" => CustomerActionName::Reset,
             "SNOOZE" => CustomerActionName::Snooze,
-            other => {
-                CustomerActionName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CustomerActionName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CustomerActionName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomerActionName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CustomerActionName::from(s))
+                }
+            }
 impl CustomerActionName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2106,12 +1968,14 @@ impl CustomerActionName {
             CustomerActionName::Enable => "ENABLE",
             CustomerActionName::Reset => "RESET",
             CustomerActionName::Snooze => "SNOOZE",
-            CustomerActionName::Unknown(value) => value.as_str(),
+            CustomerActionName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACKNOWLEDGE", "DISABLE", "ENABLE", "RESET", "SNOOZE"]
+        &[
+            "ACKNOWLEDGE", "DISABLE", "ENABLE", "RESET", "SNOOZE"
+        ]
     }
 }
 impl AsRef<str> for CustomerActionName {
@@ -2123,22 +1987,20 @@ impl AsRef<str> for CustomerActionName {
 /// <p>Information needed to evaluate data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleEvaluation {
+pub struct RuleEvaluation  {
     /// <p>Information needed to compare two values with a comparison operator.</p>
     #[doc(hidden)]
     pub simple_rule_evaluation: std::option::Option<crate::model::SimpleRuleEvaluation>,
 }
 impl RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
-    pub fn simple_rule_evaluation(
-        &self,
-    ) -> std::option::Option<&crate::model::SimpleRuleEvaluation> {
+    pub fn simple_rule_evaluation(&self) -> std::option::Option<& crate::model::SimpleRuleEvaluation> {
         self.simple_rule_evaluation.as_ref()
     }
 }
 /// See [`RuleEvaluation`](crate::model::RuleEvaluation).
 pub mod rule_evaluation {
-
+    
     /// A builder for [`RuleEvaluation`](crate::model::RuleEvaluation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2151,20 +2013,19 @@ pub mod rule_evaluation {
             self
         }
         /// <p>Information needed to compare two values with a comparison operator.</p>
-        pub fn set_simple_rule_evaluation(
-            mut self,
-            input: std::option::Option<crate::model::SimpleRuleEvaluation>,
-        ) -> Self {
-            self.simple_rule_evaluation = input;
-            self
+        pub fn set_simple_rule_evaluation(mut self, input: std::option::Option<crate::model::SimpleRuleEvaluation>) -> Self {
+            self.simple_rule_evaluation = input; self
         }
         /// Consumes the builder and constructs a [`RuleEvaluation`](crate::model::RuleEvaluation).
         pub fn build(self) -> crate::model::RuleEvaluation {
             crate::model::RuleEvaluation {
-                simple_rule_evaluation: self.simple_rule_evaluation,
+                simple_rule_evaluation: self.simple_rule_evaluation
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleEvaluation {
     /// Creates a new builder-style object to manufacture [`RuleEvaluation`](crate::model::RuleEvaluation).
@@ -2176,7 +2037,7 @@ impl RuleEvaluation {
 /// <p>Information needed to compare two values with a comparison operator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimpleRuleEvaluation {
+pub struct SimpleRuleEvaluation  {
     /// <p>The value of the input property, on the left side of the comparison operator.</p>
     #[doc(hidden)]
     pub input_property_value: std::option::Option<std::string::String>,
@@ -2189,21 +2050,21 @@ pub struct SimpleRuleEvaluation {
 }
 impl SimpleRuleEvaluation {
     /// <p>The value of the input property, on the left side of the comparison operator.</p>
-    pub fn input_property_value(&self) -> std::option::Option<&str> {
+    pub fn input_property_value(&self) -> std::option::Option<& str> {
         self.input_property_value.as_deref()
     }
     /// <p>The comparison operator.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.operator.as_ref()
     }
     /// <p>The threshold value, on the right side of the comparison operator.</p>
-    pub fn threshold_value(&self) -> std::option::Option<&str> {
+    pub fn threshold_value(&self) -> std::option::Option<& str> {
         self.threshold_value.as_deref()
     }
 }
 /// See [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
 pub mod simple_rule_evaluation {
-
+    
     /// A builder for [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2218,12 +2079,8 @@ pub mod simple_rule_evaluation {
             self
         }
         /// <p>The value of the input property, on the left side of the comparison operator.</p>
-        pub fn set_input_property_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.input_property_value = input;
-            self
+        pub fn set_input_property_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_property_value = input; self
         }
         /// <p>The comparison operator.</p>
         pub fn operator(mut self, input: crate::model::ComparisonOperator) -> Self {
@@ -2231,12 +2088,8 @@ pub mod simple_rule_evaluation {
             self
         }
         /// <p>The comparison operator.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.operator = input; self
         }
         /// <p>The threshold value, on the right side of the comparison operator.</p>
         pub fn threshold_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2244,22 +2097,23 @@ pub mod simple_rule_evaluation {
             self
         }
         /// <p>The threshold value, on the right side of the comparison operator.</p>
-        pub fn set_threshold_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.threshold_value = input;
-            self
+        pub fn set_threshold_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.threshold_value = input; self
         }
         /// Consumes the builder and constructs a [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
         pub fn build(self) -> crate::model::SimpleRuleEvaluation {
             crate::model::SimpleRuleEvaluation {
-                input_property_value: self.input_property_value,
-                operator: self.operator,
-                threshold_value: self.threshold_value,
+                input_property_value: self.input_property_value
+                ,
+                operator: self.operator
+                ,
+                threshold_value: self.threshold_value
+                ,
             }
         }
     }
+    
+    
 }
 impl SimpleRuleEvaluation {
     /// Creates a new builder-style object to manufacture [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
@@ -2274,9 +2128,9 @@ impl SimpleRuleEvaluation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
@@ -2302,22 +2156,14 @@ impl SimpleRuleEvaluation {
 /// Specifically, when `comparisonoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComparisonOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     Equal,
@@ -2332,7 +2178,7 @@ pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     NotEqual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
@@ -2343,19 +2189,17 @@ impl std::convert::From<&str> for ComparisonOperator {
             "LESS" => ComparisonOperator::Less,
             "LESS_OR_EQUAL" => ComparisonOperator::LessOrEqual,
             "NOT_EQUAL" => ComparisonOperator::NotEqual,
-            other => {
-                ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComparisonOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComparisonOperator::from(s))
+                }
+            }
 impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2366,18 +2210,13 @@ impl ComparisonOperator {
             ComparisonOperator::Less => "LESS",
             ComparisonOperator::LessOrEqual => "LESS_OR_EQUAL",
             ComparisonOperator::NotEqual => "NOT_EQUAL",
-            ComparisonOperator::Unknown(value) => value.as_str(),
+            ComparisonOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EQUAL",
-            "GREATER",
-            "GREATER_OR_EQUAL",
-            "LESS",
-            "LESS_OR_EQUAL",
-            "NOT_EQUAL",
+            "EQUAL", "GREATER", "GREATER_OR_EQUAL", "LESS", "LESS_OR_EQUAL", "NOT_EQUAL"
         ]
     }
 }
@@ -2390,7 +2229,7 @@ impl AsRef<str> for ComparisonOperator {
 /// <p>Information about the error that occurred when attempting to update a detector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateDetectorErrorEntry {
+pub struct BatchUpdateDetectorErrorEntry  {
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -2403,21 +2242,21 @@ pub struct BatchUpdateDetectorErrorEntry {
 }
 impl BatchUpdateDetectorErrorEntry {
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
 pub mod batch_update_detector_error_entry {
-
+    
     /// A builder for [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2433,8 +2272,7 @@ pub mod batch_update_detector_error_entry {
         }
         /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>The error code.</p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
@@ -2442,12 +2280,8 @@ pub mod batch_update_detector_error_entry {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>A message that describes the error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2455,22 +2289,23 @@ pub mod batch_update_detector_error_entry {
             self
         }
         /// <p>A message that describes the error.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
         pub fn build(self) -> crate::model::BatchUpdateDetectorErrorEntry {
             crate::model::BatchUpdateDetectorErrorEntry {
-                message_id: self.message_id,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                message_id: self.message_id
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateDetectorErrorEntry {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
@@ -2485,9 +2320,9 @@ impl BatchUpdateDetectorErrorEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -2512,22 +2347,14 @@ impl BatchUpdateDetectorErrorEntry {
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalFailureException,
@@ -2540,7 +2367,7 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ThrottlingException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -2550,17 +2377,17 @@ impl std::convert::From<&str> for ErrorCode {
             "ResourceNotFoundException" => ErrorCode::ResourceNotFoundException,
             "ServiceUnavailableException" => ErrorCode::ServiceUnavailableException,
             "ThrottlingException" => ErrorCode::ThrottlingException,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2570,17 +2397,13 @@ impl ErrorCode {
             ErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
             ErrorCode::ServiceUnavailableException => "ServiceUnavailableException",
             ErrorCode::ThrottlingException => "ThrottlingException",
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "InternalFailureException",
-            "InvalidRequestException",
-            "ResourceNotFoundException",
-            "ServiceUnavailableException",
-            "ThrottlingException",
+            "InternalFailureException", "InvalidRequestException", "ResourceNotFoundException", "ServiceUnavailableException", "ThrottlingException"
         ]
     }
 }
@@ -2593,7 +2416,7 @@ impl AsRef<str> for ErrorCode {
 /// <p>Information used to update the detector (instance).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDetectorRequest {
+pub struct UpdateDetectorRequest  {
     /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -2609,25 +2432,25 @@ pub struct UpdateDetectorRequest {
 }
 impl UpdateDetectorRequest {
     /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The name of the detector model that created the detectors (instances).</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DetectorStateDefinition> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DetectorStateDefinition> {
         self.state.as_ref()
     }
 }
 /// See [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
 pub mod update_detector_request {
-
+    
     /// A builder for [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2644,8 +2467,7 @@ pub mod update_detector_request {
         }
         /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>The name of the detector model that created the detectors (instances).</p>
         pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2653,12 +2475,8 @@ pub mod update_detector_request {
             self
         }
         /// <p>The name of the detector model that created the detectors (instances).</p>
-        pub fn set_detector_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_model_name = input;
-            self
+        pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_model_name = input; self
         }
         /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2667,8 +2485,7 @@ pub mod update_detector_request {
         }
         /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
         pub fn state(mut self, input: crate::model::DetectorStateDefinition) -> Self {
@@ -2676,23 +2493,25 @@ pub mod update_detector_request {
             self
         }
         /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DetectorStateDefinition>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DetectorStateDefinition>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
         pub fn build(self) -> crate::model::UpdateDetectorRequest {
             crate::model::UpdateDetectorRequest {
-                message_id: self.message_id,
-                detector_model_name: self.detector_model_name,
-                key_value: self.key_value,
-                state: self.state,
+                message_id: self.message_id
+                ,
+                detector_model_name: self.detector_model_name
+                ,
+                key_value: self.key_value
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDetectorRequest {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
@@ -2704,7 +2523,7 @@ impl UpdateDetectorRequest {
 /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorStateDefinition {
+pub struct DetectorStateDefinition  {
     /// <p>The name of the new state of the detector (instance).</p>
     #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
@@ -2717,21 +2536,21 @@ pub struct DetectorStateDefinition {
 }
 impl DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
-    pub fn state_name(&self) -> std::option::Option<&str> {
+    pub fn state_name(&self) -> std::option::Option<& str> {
         self.state_name.as_deref()
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn variables(&self) -> std::option::Option<&[crate::model::VariableDefinition]> {
+    pub fn variables(&self) -> std::option::Option<& [crate::model::VariableDefinition]> {
         self.variables.as_deref()
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn timers(&self) -> std::option::Option<&[crate::model::TimerDefinition]> {
+    pub fn timers(&self) -> std::option::Option<& [crate::model::TimerDefinition]> {
         self.timers.as_deref()
     }
 }
 /// See [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
 pub mod detector_state_definition {
-
+    
     /// A builder for [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2747,8 +2566,7 @@ pub mod detector_state_definition {
         }
         /// <p>The name of the new state of the detector (instance).</p>
         pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_name = input;
-            self
+            self.state_name = input; self
         }
         /// Appends an item to `variables`.
         ///
@@ -2757,17 +2575,13 @@ pub mod detector_state_definition {
         /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
         pub fn variables(mut self, input: crate::model::VariableDefinition) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input);
-            self.variables = Some(v);
-            self
+                            v.push(input);
+                            self.variables = Some(v);
+                            self
         }
         /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VariableDefinition>>,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::model::VariableDefinition>>) -> Self {
+            self.variables = input; self
         }
         /// Appends an item to `timers`.
         ///
@@ -2776,27 +2590,28 @@ pub mod detector_state_definition {
         /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
         pub fn timers(mut self, input: crate::model::TimerDefinition) -> Self {
             let mut v = self.timers.unwrap_or_default();
-            v.push(input);
-            self.timers = Some(v);
-            self
+                            v.push(input);
+                            self.timers = Some(v);
+                            self
         }
         /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-        pub fn set_timers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TimerDefinition>>,
-        ) -> Self {
-            self.timers = input;
-            self
+        pub fn set_timers(mut self, input: std::option::Option<std::vec::Vec<crate::model::TimerDefinition>>) -> Self {
+            self.timers = input; self
         }
         /// Consumes the builder and constructs a [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
         pub fn build(self) -> crate::model::DetectorStateDefinition {
             crate::model::DetectorStateDefinition {
-                state_name: self.state_name,
-                variables: self.variables,
-                timers: self.timers,
+                state_name: self.state_name
+                ,
+                variables: self.variables
+                ,
+                timers: self.timers
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectorStateDefinition {
     /// Creates a new builder-style object to manufacture [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
@@ -2808,7 +2623,7 @@ impl DetectorStateDefinition {
 /// <p>The new setting of a timer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimerDefinition {
+pub struct TimerDefinition  {
     /// <p>The name of the timer.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2818,7 +2633,7 @@ pub struct TimerDefinition {
 }
 impl TimerDefinition {
     /// <p>The name of the timer.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
@@ -2828,7 +2643,7 @@ impl TimerDefinition {
 }
 /// See [`TimerDefinition`](crate::model::TimerDefinition).
 pub mod timer_definition {
-
+    
     /// A builder for [`TimerDefinition`](crate::model::TimerDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2843,8 +2658,7 @@ pub mod timer_definition {
         }
         /// <p>The name of the timer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
         pub fn seconds(mut self, input: i32) -> Self {
@@ -2853,17 +2667,20 @@ pub mod timer_definition {
         }
         /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
         pub fn set_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.seconds = input;
-            self
+            self.seconds = input; self
         }
         /// Consumes the builder and constructs a [`TimerDefinition`](crate::model::TimerDefinition).
         pub fn build(self) -> crate::model::TimerDefinition {
             crate::model::TimerDefinition {
-                name: self.name,
-                seconds: self.seconds,
+                name: self.name
+                ,
+                seconds: self.seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl TimerDefinition {
     /// Creates a new builder-style object to manufacture [`TimerDefinition`](crate::model::TimerDefinition).
@@ -2875,7 +2692,7 @@ impl TimerDefinition {
 /// <p>The new value of the variable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VariableDefinition {
+pub struct VariableDefinition  {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2885,17 +2702,17 @@ pub struct VariableDefinition {
 }
 impl VariableDefinition {
     /// <p>The name of the variable.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new value of the variable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`VariableDefinition`](crate::model::VariableDefinition).
 pub mod variable_definition {
-
+    
     /// A builder for [`VariableDefinition`](crate::model::VariableDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2910,8 +2727,7 @@ pub mod variable_definition {
         }
         /// <p>The name of the variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The new value of the variable.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2920,17 +2736,20 @@ pub mod variable_definition {
         }
         /// <p>The new value of the variable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`VariableDefinition`](crate::model::VariableDefinition).
         pub fn build(self) -> crate::model::VariableDefinition {
             crate::model::VariableDefinition {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl VariableDefinition {
     /// Creates a new builder-style object to manufacture [`VariableDefinition`](crate::model::VariableDefinition).
@@ -2939,17 +2758,17 @@ impl VariableDefinition {
     }
 }
 
-/// <p>Contains error messages associated with one of the following requests:</p>
-/// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchAcknowledgeAlarm.html">BatchAcknowledgeAlarm</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDisableAlarm.html">BatchDisableAlarm</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchEnableAlarm.html">BatchEnableAlarm</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchResetAlarm.html">BatchResetAlarm</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchSnoozeAlarm.html">BatchSnoozeAlarm</a> </p> </li>
+/// <p>Contains error messages associated with one of the following requests:</p> 
+/// <ul> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchAcknowledgeAlarm.html">BatchAcknowledgeAlarm</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDisableAlarm.html">BatchDisableAlarm</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchEnableAlarm.html">BatchEnableAlarm</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchResetAlarm.html">BatchResetAlarm</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchSnoozeAlarm.html">BatchSnoozeAlarm</a> </p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAlarmActionErrorEntry {
+pub struct BatchAlarmActionErrorEntry  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -2962,21 +2781,21 @@ pub struct BatchAlarmActionErrorEntry {
 }
 impl BatchAlarmActionErrorEntry {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
 pub mod batch_alarm_action_error_entry {
-
+    
     /// A builder for [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2992,8 +2811,7 @@ pub mod batch_alarm_action_error_entry {
         }
         /// <p>The request ID. Each ID must be unique within each batch.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The error code.</p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
@@ -3001,12 +2819,8 @@ pub mod batch_alarm_action_error_entry {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>A message that describes the error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3014,22 +2828,23 @@ pub mod batch_alarm_action_error_entry {
             self
         }
         /// <p>A message that describes the error.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
         pub fn build(self) -> crate::model::BatchAlarmActionErrorEntry {
             crate::model::BatchAlarmActionErrorEntry {
-                request_id: self.request_id,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                request_id: self.request_id
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAlarmActionErrorEntry {
     /// Creates a new builder-style object to manufacture [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
@@ -3041,7 +2856,7 @@ impl BatchAlarmActionErrorEntry {
 /// <p>Information needed to snooze the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnoozeAlarmActionRequest {
+pub struct SnoozeAlarmActionRequest  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -3060,19 +2875,19 @@ pub struct SnoozeAlarmActionRequest {
 }
 impl SnoozeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
@@ -3082,7 +2897,7 @@ impl SnoozeAlarmActionRequest {
 }
 /// See [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
 pub mod snooze_alarm_action_request {
-
+    
     /// A builder for [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3100,8 +2915,7 @@ pub mod snooze_alarm_action_request {
         }
         /// <p>The request ID. Each ID must be unique within each batch.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The name of the alarm model.</p>
         pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3109,12 +2923,8 @@ pub mod snooze_alarm_action_request {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3123,8 +2933,7 @@ pub mod snooze_alarm_action_request {
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>The note that you can leave when you snooze the alarm.</p>
         pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3133,8 +2942,7 @@ pub mod snooze_alarm_action_request {
         }
         /// <p>The note that you can leave when you snooze the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
         pub fn snooze_duration(mut self, input: i32) -> Self {
@@ -3143,20 +2951,26 @@ pub mod snooze_alarm_action_request {
         }
         /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
         pub fn set_snooze_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.snooze_duration = input;
-            self
+            self.snooze_duration = input; self
         }
         /// Consumes the builder and constructs a [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
         pub fn build(self) -> crate::model::SnoozeAlarmActionRequest {
             crate::model::SnoozeAlarmActionRequest {
-                request_id: self.request_id,
-                alarm_model_name: self.alarm_model_name,
-                key_value: self.key_value,
-                note: self.note,
-                snooze_duration: self.snooze_duration,
+                request_id: self.request_id
+                ,
+                alarm_model_name: self.alarm_model_name
+                ,
+                key_value: self.key_value
+                ,
+                note: self.note
+                ,
+                snooze_duration: self.snooze_duration
+                ,
             }
         }
     }
+    
+    
 }
 impl SnoozeAlarmActionRequest {
     /// Creates a new builder-style object to manufacture [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
@@ -3168,7 +2982,7 @@ impl SnoozeAlarmActionRequest {
 /// <p>Information needed to reset the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetAlarmActionRequest {
+pub struct ResetAlarmActionRequest  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -3184,25 +2998,25 @@ pub struct ResetAlarmActionRequest {
 }
 impl ResetAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The note that you can leave when you reset the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
 pub mod reset_alarm_action_request {
-
+    
     /// A builder for [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3219,8 +3033,7 @@ pub mod reset_alarm_action_request {
         }
         /// <p>The request ID. Each ID must be unique within each batch.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The name of the alarm model.</p>
         pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3228,12 +3041,8 @@ pub mod reset_alarm_action_request {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3242,8 +3051,7 @@ pub mod reset_alarm_action_request {
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>The note that you can leave when you reset the alarm.</p>
         pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3252,19 +3060,24 @@ pub mod reset_alarm_action_request {
         }
         /// <p>The note that you can leave when you reset the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
         pub fn build(self) -> crate::model::ResetAlarmActionRequest {
             crate::model::ResetAlarmActionRequest {
-                request_id: self.request_id,
-                alarm_model_name: self.alarm_model_name,
-                key_value: self.key_value,
-                note: self.note,
+                request_id: self.request_id
+                ,
+                alarm_model_name: self.alarm_model_name
+                ,
+                key_value: self.key_value
+                ,
+                note: self.note
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetAlarmActionRequest {
     /// Creates a new builder-style object to manufacture [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
@@ -3276,7 +3089,7 @@ impl ResetAlarmActionRequest {
 /// <p>Contains information about the errors encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutMessageErrorEntry {
+pub struct BatchPutMessageErrorEntry  {
     /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -3289,21 +3102,21 @@ pub struct BatchPutMessageErrorEntry {
 }
 impl BatchPutMessageErrorEntry {
     /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
 pub mod batch_put_message_error_entry {
-
+    
     /// A builder for [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3319,8 +3132,7 @@ pub mod batch_put_message_error_entry {
         }
         /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>The error code.</p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
@@ -3328,12 +3140,8 @@ pub mod batch_put_message_error_entry {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>A message that describes the error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3341,22 +3149,23 @@ pub mod batch_put_message_error_entry {
             self
         }
         /// <p>A message that describes the error.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
         pub fn build(self) -> crate::model::BatchPutMessageErrorEntry {
             crate::model::BatchPutMessageErrorEntry {
-                message_id: self.message_id,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                message_id: self.message_id
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutMessageErrorEntry {
     /// Creates a new builder-style object to manufacture [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
@@ -3368,7 +3177,7 @@ impl BatchPutMessageErrorEntry {
 /// <p>Information about a message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -3384,25 +3193,25 @@ pub struct Message {
 }
 impl Message {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> std::option::Option<& str> {
         self.input_name.as_deref()
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>The timestamp associated with the message.</p>
-    pub fn timestamp(&self) -> std::option::Option<&crate::model::TimestampValue> {
+    pub fn timestamp(&self) -> std::option::Option<& crate::model::TimestampValue> {
         self.timestamp.as_ref()
     }
 }
 /// See [`Message`](crate::model::Message).
 pub mod message {
-
+    
     /// A builder for [`Message`](crate::model::Message).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3419,8 +3228,7 @@ pub mod message {
         }
         /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>The name of the input into which the message payload is transformed.</p>
         pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3429,8 +3237,7 @@ pub mod message {
         }
         /// <p>The name of the input into which the message payload is transformed.</p>
         pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input_name = input;
-            self
+            self.input_name = input; self
         }
         /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -3439,8 +3246,7 @@ pub mod message {
         }
         /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.payload = input;
-            self
+            self.payload = input; self
         }
         /// <p>The timestamp associated with the message.</p>
         pub fn timestamp(mut self, input: crate::model::TimestampValue) -> Self {
@@ -3448,23 +3254,25 @@ pub mod message {
             self
         }
         /// <p>The timestamp associated with the message.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<crate::model::TimestampValue>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<crate::model::TimestampValue>) -> Self {
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`Message`](crate::model::Message).
         pub fn build(self) -> crate::model::Message {
             crate::model::Message {
-                message_id: self.message_id,
-                input_name: self.input_name,
-                payload: self.payload,
-                timestamp: self.timestamp,
+                message_id: self.message_id
+                ,
+                input_name: self.input_name
+                ,
+                payload: self.payload
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl Message {
     /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
@@ -3476,7 +3284,7 @@ impl Message {
 /// <p>Contains information about a timestamp.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampValue {
+pub struct TimestampValue  {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub time_in_millis: std::option::Option<i64>,
@@ -3489,7 +3297,7 @@ impl TimestampValue {
 }
 /// See [`TimestampValue`](crate::model::TimestampValue).
 pub mod timestamp_value {
-
+    
     /// A builder for [`TimestampValue`](crate::model::TimestampValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3503,16 +3311,18 @@ pub mod timestamp_value {
         }
         /// <p>The value of the timestamp, in the Unix epoch format.</p>
         pub fn set_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.time_in_millis = input;
-            self
+            self.time_in_millis = input; self
         }
         /// Consumes the builder and constructs a [`TimestampValue`](crate::model::TimestampValue).
         pub fn build(self) -> crate::model::TimestampValue {
             crate::model::TimestampValue {
-                time_in_millis: self.time_in_millis,
+                time_in_millis: self.time_in_millis
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestampValue {
     /// Creates a new builder-style object to manufacture [`TimestampValue`](crate::model::TimestampValue).
@@ -3524,7 +3334,7 @@ impl TimestampValue {
 /// <p>Information needed to enable the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAlarmActionRequest {
+pub struct EnableAlarmActionRequest  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -3540,25 +3350,25 @@ pub struct EnableAlarmActionRequest {
 }
 impl EnableAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The note that you can leave when you enable the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
 pub mod enable_alarm_action_request {
-
+    
     /// A builder for [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3575,8 +3385,7 @@ pub mod enable_alarm_action_request {
         }
         /// <p>The request ID. Each ID must be unique within each batch.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The name of the alarm model.</p>
         pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3584,12 +3393,8 @@ pub mod enable_alarm_action_request {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3598,8 +3403,7 @@ pub mod enable_alarm_action_request {
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>The note that you can leave when you enable the alarm.</p>
         pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3608,19 +3412,24 @@ pub mod enable_alarm_action_request {
         }
         /// <p>The note that you can leave when you enable the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
         pub fn build(self) -> crate::model::EnableAlarmActionRequest {
             crate::model::EnableAlarmActionRequest {
-                request_id: self.request_id,
-                alarm_model_name: self.alarm_model_name,
-                key_value: self.key_value,
-                note: self.note,
+                request_id: self.request_id
+                ,
+                alarm_model_name: self.alarm_model_name
+                ,
+                key_value: self.key_value
+                ,
+                note: self.note
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableAlarmActionRequest {
     /// Creates a new builder-style object to manufacture [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
@@ -3632,7 +3441,7 @@ impl EnableAlarmActionRequest {
 /// <p>Information used to disable the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAlarmActionRequest {
+pub struct DisableAlarmActionRequest  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -3648,25 +3457,25 @@ pub struct DisableAlarmActionRequest {
 }
 impl DisableAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The note that you can leave when you disable the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
 pub mod disable_alarm_action_request {
-
+    
     /// A builder for [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3683,8 +3492,7 @@ pub mod disable_alarm_action_request {
         }
         /// <p>The request ID. Each ID must be unique within each batch.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The name of the alarm model.</p>
         pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3692,12 +3500,8 @@ pub mod disable_alarm_action_request {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3706,8 +3510,7 @@ pub mod disable_alarm_action_request {
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>The note that you can leave when you disable the alarm.</p>
         pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3716,19 +3519,24 @@ pub mod disable_alarm_action_request {
         }
         /// <p>The note that you can leave when you disable the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
         pub fn build(self) -> crate::model::DisableAlarmActionRequest {
             crate::model::DisableAlarmActionRequest {
-                request_id: self.request_id,
-                alarm_model_name: self.alarm_model_name,
-                key_value: self.key_value,
-                note: self.note,
+                request_id: self.request_id
+                ,
+                alarm_model_name: self.alarm_model_name
+                ,
+                key_value: self.key_value
+                ,
+                note: self.note
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableAlarmActionRequest {
     /// Creates a new builder-style object to manufacture [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
@@ -3740,7 +3548,7 @@ impl DisableAlarmActionRequest {
 /// <p>Contains error messages associated with the deletion request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDetectorErrorEntry {
+pub struct BatchDeleteDetectorErrorEntry  {
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -3753,21 +3561,21 @@ pub struct BatchDeleteDetectorErrorEntry {
 }
 impl BatchDeleteDetectorErrorEntry {
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
 pub mod batch_delete_detector_error_entry {
-
+    
     /// A builder for [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3783,8 +3591,7 @@ pub mod batch_delete_detector_error_entry {
         }
         /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>The error code.</p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
@@ -3792,12 +3599,8 @@ pub mod batch_delete_detector_error_entry {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>A message that describes the error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3805,22 +3608,23 @@ pub mod batch_delete_detector_error_entry {
             self
         }
         /// <p>A message that describes the error.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
         pub fn build(self) -> crate::model::BatchDeleteDetectorErrorEntry {
             crate::model::BatchDeleteDetectorErrorEntry {
-                message_id: self.message_id,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                message_id: self.message_id
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteDetectorErrorEntry {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
@@ -3832,7 +3636,7 @@ impl BatchDeleteDetectorErrorEntry {
 /// <p>Information used to delete the detector model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDetectorRequest {
+pub struct DeleteDetectorRequest  {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -3845,21 +3649,21 @@ pub struct DeleteDetectorRequest {
 }
 impl DeleteDetectorRequest {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The name of the detector model that was used to create the detector instance.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
 }
 /// See [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
 pub mod delete_detector_request {
-
+    
     /// A builder for [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3875,8 +3679,7 @@ pub mod delete_detector_request {
         }
         /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>The name of the detector model that was used to create the detector instance.</p>
         pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3884,12 +3687,8 @@ pub mod delete_detector_request {
             self
         }
         /// <p>The name of the detector model that was used to create the detector instance.</p>
-        pub fn set_detector_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_model_name = input;
-            self
+        pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_model_name = input; self
         }
         /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3898,18 +3697,22 @@ pub mod delete_detector_request {
         }
         /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
         pub fn build(self) -> crate::model::DeleteDetectorRequest {
             crate::model::DeleteDetectorRequest {
-                message_id: self.message_id,
-                detector_model_name: self.detector_model_name,
-                key_value: self.key_value,
+                message_id: self.message_id
+                ,
+                detector_model_name: self.detector_model_name
+                ,
+                key_value: self.key_value
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDetectorRequest {
     /// Creates a new builder-style object to manufacture [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
@@ -3921,7 +3724,7 @@ impl DeleteDetectorRequest {
 /// <p>Information needed to acknowledge the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeAlarmActionRequest {
+pub struct AcknowledgeAlarmActionRequest  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -3937,25 +3740,25 @@ pub struct AcknowledgeAlarmActionRequest {
 }
 impl AcknowledgeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> std::option::Option<& str> {
         self.note.as_deref()
     }
 }
 /// See [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
 pub mod acknowledge_alarm_action_request {
-
+    
     /// A builder for [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3972,8 +3775,7 @@ pub mod acknowledge_alarm_action_request {
         }
         /// <p>The request ID. Each ID must be unique within each batch.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The name of the alarm model.</p>
         pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3981,12 +3783,8 @@ pub mod acknowledge_alarm_action_request {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3995,8 +3793,7 @@ pub mod acknowledge_alarm_action_request {
         }
         /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_value = input;
-            self
+            self.key_value = input; self
         }
         /// <p>The note that you can leave when you acknowledge the alarm.</p>
         pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4005,19 +3802,24 @@ pub mod acknowledge_alarm_action_request {
         }
         /// <p>The note that you can leave when you acknowledge the alarm.</p>
         pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.note = input;
-            self
+            self.note = input; self
         }
         /// Consumes the builder and constructs a [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
         pub fn build(self) -> crate::model::AcknowledgeAlarmActionRequest {
             crate::model::AcknowledgeAlarmActionRequest {
-                request_id: self.request_id,
-                alarm_model_name: self.alarm_model_name,
-                key_value: self.key_value,
-                note: self.note,
+                request_id: self.request_id
+                ,
+                alarm_model_name: self.alarm_model_name
+                ,
+                key_value: self.key_value
+                ,
+                note: self.note
+                ,
             }
         }
     }
+    
+    
 }
 impl AcknowledgeAlarmActionRequest {
     /// Creates a new builder-style object to manufacture [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
@@ -4025,3 +3827,4 @@ impl AcknowledgeAlarmActionRequest {
         crate::model::acknowledge_alarm_action_request::Builder::default()
     }
 }
+

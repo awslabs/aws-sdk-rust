@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicecode = unimplemented!();
 /// match servicecode {
@@ -29,54 +29,48 @@
 /// Specifically, when `servicecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceCode {
     #[allow(missing_docs)] // documentation missing in model
     SsmIncidents,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceCode {
     fn from(s: &str) -> Self {
         match s {
             "ssm-incidents" => ServiceCode::SsmIncidents,
-            other => ServiceCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ServiceCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceCode::from(s))
+                }
+            }
 impl ServiceCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceCode::SsmIncidents => "ssm-incidents",
-            ServiceCode::Unknown(value) => value.as_str(),
+            ServiceCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ssm-incidents"]
+        &[
+            "ssm-incidents"
+        ]
     }
 }
 impl AsRef<str> for ServiceCode {
@@ -91,9 +85,9 @@ impl AsRef<str> for ServiceCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -118,22 +112,14 @@ impl AsRef<str> for ServiceCode {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IncidentRecord,
@@ -146,7 +132,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     TimelineEvent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -156,17 +142,17 @@ impl std::convert::From<&str> for ResourceType {
             "RESOURCE_POLICY" => ResourceType::ResourcePolicy,
             "RESPONSE_PLAN" => ResourceType::ResponsePlan,
             "TIMELINE_EVENT" => ResourceType::TimelineEvent,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -176,17 +162,13 @@ impl ResourceType {
             ResourceType::ResourcePolicy => "RESOURCE_POLICY",
             ResourceType::ResponsePlan => "RESPONSE_PLAN",
             ResourceType::TimelineEvent => "TIMELINE_EVENT",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "INCIDENT_RECORD",
-            "REPLICATION_SET",
-            "RESOURCE_POLICY",
-            "RESPONSE_PLAN",
-            "TIMELINE_EVENT",
+            "INCIDENT_RECORD", "REPLICATION_SET", "RESOURCE_POLICY", "RESPONSE_PLAN", "TIMELINE_EVENT"
         ]
     }
 }
@@ -218,11 +200,7 @@ impl EventReference {
     /// Tries to convert the enum instance into [`RelatedItemId`](crate::model::EventReference::RelatedItemId), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_related_item_id(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let EventReference::RelatedItemId(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let EventReference::RelatedItemId(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`RelatedItemId`](crate::model::EventReference::RelatedItemId).
     pub fn is_related_item_id(&self) -> bool {
@@ -231,11 +209,7 @@ impl EventReference {
     /// Tries to convert the enum instance into [`Resource`](crate::model::EventReference::Resource), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_resource(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let EventReference::Resource(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let EventReference::Resource(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Resource`](crate::model::EventReference::Resource).
     pub fn is_resource(&self) -> bool {
@@ -267,14 +241,8 @@ impl Integration {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`PagerDutyConfiguration`](crate::model::Integration::PagerDutyConfiguration), extracting the inner [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_pager_duty_configuration(
-        &self,
-    ) -> std::result::Result<&crate::model::PagerDutyConfiguration, &Self> {
-        if let Integration::PagerDutyConfiguration(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_pager_duty_configuration(&self) -> std::result::Result<&crate::model::PagerDutyConfiguration, &Self> {
+        if let Integration::PagerDutyConfiguration(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`PagerDutyConfiguration`](crate::model::Integration::PagerDutyConfiguration).
     pub fn is_pager_duty_configuration(&self) -> bool {
@@ -289,7 +257,7 @@ impl Integration {
 /// <p>Details about the PagerDuty configuration for a response plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PagerDutyConfiguration {
+pub struct PagerDutyConfiguration  {
     /// <p>The name of the PagerDuty configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -298,35 +266,31 @@ pub struct PagerDutyConfiguration {
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
     #[doc(hidden)]
-    pub pager_duty_incident_configuration:
-        std::option::Option<crate::model::PagerDutyIncidentConfiguration>,
+    pub pager_duty_incident_configuration: std::option::Option<crate::model::PagerDutyIncidentConfiguration>,
 }
 impl PagerDutyConfiguration {
     /// <p>The name of the PagerDuty configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    pub fn secret_id(&self) -> std::option::Option<&str> {
+    pub fn secret_id(&self) -> std::option::Option<& str> {
         self.secret_id.as_deref()
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
-    pub fn pager_duty_incident_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::PagerDutyIncidentConfiguration> {
+    pub fn pager_duty_incident_configuration(&self) -> std::option::Option<& crate::model::PagerDutyIncidentConfiguration> {
         self.pager_duty_incident_configuration.as_ref()
     }
 }
 /// See [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
 pub mod pager_duty_configuration {
-
+    
     /// A builder for [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) secret_id: std::option::Option<std::string::String>,
-        pub(crate) pager_duty_incident_configuration:
-            std::option::Option<crate::model::PagerDutyIncidentConfiguration>,
+        pub(crate) pager_duty_incident_configuration: std::option::Option<crate::model::PagerDutyIncidentConfiguration>,
     }
     impl Builder {
         /// <p>The name of the PagerDuty configuration.</p>
@@ -336,8 +300,7 @@ pub mod pager_duty_configuration {
         }
         /// <p>The name of the PagerDuty configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -346,34 +309,31 @@ pub mod pager_duty_configuration {
         }
         /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = input;
-            self
+            self.secret_id = input; self
         }
         /// <p>Details about the PagerDuty service associated with the configuration.</p>
-        pub fn pager_duty_incident_configuration(
-            mut self,
-            input: crate::model::PagerDutyIncidentConfiguration,
-        ) -> Self {
+        pub fn pager_duty_incident_configuration(mut self, input: crate::model::PagerDutyIncidentConfiguration) -> Self {
             self.pager_duty_incident_configuration = Some(input);
             self
         }
         /// <p>Details about the PagerDuty service associated with the configuration.</p>
-        pub fn set_pager_duty_incident_configuration(
-            mut self,
-            input: std::option::Option<crate::model::PagerDutyIncidentConfiguration>,
-        ) -> Self {
-            self.pager_duty_incident_configuration = input;
-            self
+        pub fn set_pager_duty_incident_configuration(mut self, input: std::option::Option<crate::model::PagerDutyIncidentConfiguration>) -> Self {
+            self.pager_duty_incident_configuration = input; self
         }
         /// Consumes the builder and constructs a [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
         pub fn build(self) -> crate::model::PagerDutyConfiguration {
             crate::model::PagerDutyConfiguration {
-                name: self.name,
-                secret_id: self.secret_id,
-                pager_duty_incident_configuration: self.pager_duty_incident_configuration,
+                name: self.name
+                ,
+                secret_id: self.secret_id
+                ,
+                pager_duty_incident_configuration: self.pager_duty_incident_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl PagerDutyConfiguration {
     /// Creates a new builder-style object to manufacture [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
@@ -385,20 +345,20 @@ impl PagerDutyConfiguration {
 /// <p>Details about the PagerDuty service where the response plan creates an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PagerDutyIncidentConfiguration {
+pub struct PagerDutyIncidentConfiguration  {
     /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
 }
 impl PagerDutyIncidentConfiguration {
     /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
 }
 /// See [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
 pub mod pager_duty_incident_configuration {
-
+    
     /// A builder for [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -412,16 +372,18 @@ pub mod pager_duty_incident_configuration {
         }
         /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// Consumes the builder and constructs a [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
         pub fn build(self) -> crate::model::PagerDutyIncidentConfiguration {
             crate::model::PagerDutyIncidentConfiguration {
-                service_id: self.service_id,
+                service_id: self.service_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PagerDutyIncidentConfiguration {
     /// Creates a new builder-style object to manufacture [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
@@ -451,11 +413,7 @@ impl Action {
     /// Tries to convert the enum instance into [`SsmAutomation`](crate::model::Action::SsmAutomation), extracting the inner [`SsmAutomation`](crate::model::SsmAutomation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ssm_automation(&self) -> std::result::Result<&crate::model::SsmAutomation, &Self> {
-        if let Action::SsmAutomation(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Action::SsmAutomation(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SsmAutomation`](crate::model::Action::SsmAutomation).
     pub fn is_ssm_automation(&self) -> bool {
@@ -470,7 +428,7 @@ impl Action {
 /// <p>Details about the Systems Manager automation document that will be used as a runbook during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmAutomation {
+pub struct SsmAutomation  {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -485,52 +443,40 @@ pub struct SsmAutomation {
     pub target_account: std::option::Option<crate::model::SsmTargetAccount>,
     /// <p>The key-value pair parameters to use when running the automation document.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
     #[doc(hidden)]
-    pub dynamic_parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>,
-    >,
+    pub dynamic_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>>,
 }
 impl SsmAutomation {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The automation document's name.</p>
-    pub fn document_name(&self) -> std::option::Option<&str> {
+    pub fn document_name(&self) -> std::option::Option<& str> {
         self.document_name.as_deref()
     }
     /// <p>The automation document's version to use when running.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
-    pub fn target_account(&self) -> std::option::Option<&crate::model::SsmTargetAccount> {
+    pub fn target_account(&self) -> std::option::Option<& crate::model::SsmTargetAccount> {
         self.target_account.as_ref()
     }
     /// <p>The key-value pair parameters to use when running the automation document.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
-    pub fn dynamic_parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>,
-    > {
+    pub fn dynamic_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>> {
         self.dynamic_parameters.as_ref()
     }
 }
 /// See [`SsmAutomation`](crate::model::SsmAutomation).
 pub mod ssm_automation {
-
+    
     /// A builder for [`SsmAutomation`](crate::model::SsmAutomation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -538,12 +484,8 @@ pub mod ssm_automation {
         pub(crate) document_name: std::option::Option<std::string::String>,
         pub(crate) document_version: std::option::Option<std::string::String>,
         pub(crate) target_account: std::option::Option<crate::model::SsmTargetAccount>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
-        pub(crate) dynamic_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+        pub(crate) dynamic_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
@@ -553,8 +495,7 @@ pub mod ssm_automation {
         }
         /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The automation document's name.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -562,12 +503,8 @@ pub mod ssm_automation {
             self
         }
         /// <p>The automation document's name.</p>
-        pub fn set_document_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_name = input;
-            self
+        pub fn set_document_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_name = input; self
         }
         /// <p>The automation document's version to use when running.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -575,12 +512,8 @@ pub mod ssm_automation {
             self
         }
         /// <p>The automation document's version to use when running.</p>
-        pub fn set_document_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_version = input;
-            self
+        pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_version = input; self
         }
         /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
         pub fn target_account(mut self, input: crate::model::SsmTargetAccount) -> Self {
@@ -588,78 +521,59 @@ pub mod ssm_automation {
             self
         }
         /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
-        pub fn set_target_account(
-            mut self,
-            input: std::option::Option<crate::model::SsmTargetAccount>,
-        ) -> Self {
-            self.target_account = input;
-            self
+        pub fn set_target_account(mut self, input: std::option::Option<crate::model::SsmTargetAccount>) -> Self {
+            self.target_account = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The key-value pair parameters to use when running the automation document.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The key-value pair parameters to use when running the automation document.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+            self.parameters = input; self
         }
         /// Adds a key-value pair to `dynamic_parameters`.
         ///
         /// To override the contents of this collection use [`set_dynamic_parameters`](Self::set_dynamic_parameters).
         ///
         /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
-        pub fn dynamic_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::DynamicSsmParameterValue,
-        ) -> Self {
+        pub fn dynamic_parameters(mut self, k: impl Into<std::string::String>, v: crate::model::DynamicSsmParameterValue) -> Self {
             let mut hash_map = self.dynamic_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.dynamic_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.dynamic_parameters = Some(hash_map);
+                            self
         }
         /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
-        pub fn set_dynamic_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::DynamicSsmParameterValue,
-                >,
-            >,
-        ) -> Self {
-            self.dynamic_parameters = input;
-            self
+        pub fn set_dynamic_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>>) -> Self {
+            self.dynamic_parameters = input; self
         }
         /// Consumes the builder and constructs a [`SsmAutomation`](crate::model::SsmAutomation).
         pub fn build(self) -> crate::model::SsmAutomation {
             crate::model::SsmAutomation {
-                role_arn: self.role_arn,
-                document_name: self.document_name,
-                document_version: self.document_version,
-                target_account: self.target_account,
-                parameters: self.parameters,
-                dynamic_parameters: self.dynamic_parameters,
+                role_arn: self.role_arn
+                ,
+                document_name: self.document_name
+                ,
+                document_version: self.document_version
+                ,
+                target_account: self.target_account
+                ,
+                parameters: self.parameters
+                ,
+                dynamic_parameters: self.dynamic_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl SsmAutomation {
     /// Creates a new builder-style object to manufacture [`SsmAutomation`](crate::model::SsmAutomation).
@@ -689,11 +603,7 @@ impl DynamicSsmParameterValue {
     /// Tries to convert the enum instance into [`Variable`](crate::model::DynamicSsmParameterValue::Variable), extracting the inner [`VariableType`](crate::model::VariableType).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_variable(&self) -> std::result::Result<&crate::model::VariableType, &Self> {
-        if let DynamicSsmParameterValue::Variable(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let DynamicSsmParameterValue::Variable(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Variable`](crate::model::DynamicSsmParameterValue::Variable).
     pub fn is_variable(&self) -> bool {
@@ -711,9 +621,9 @@ impl DynamicSsmParameterValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let variabletype = unimplemented!();
 /// match variabletype {
@@ -735,58 +645,52 @@ impl DynamicSsmParameterValue {
 /// Specifically, when `variabletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VariableType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VariableType {
     #[allow(missing_docs)] // documentation missing in model
     IncidentRecordArn,
     #[allow(missing_docs)] // documentation missing in model
     InvolvedResources,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VariableType {
     fn from(s: &str) -> Self {
         match s {
             "INCIDENT_RECORD_ARN" => VariableType::IncidentRecordArn,
             "INVOLVED_RESOURCES" => VariableType::InvolvedResources,
-            other => VariableType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VariableType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VariableType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VariableType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VariableType::from(s))
+                }
+            }
 impl VariableType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VariableType::IncidentRecordArn => "INCIDENT_RECORD_ARN",
             VariableType::InvolvedResources => "INVOLVED_RESOURCES",
-            VariableType::Unknown(value) => value.as_str(),
+            VariableType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INCIDENT_RECORD_ARN", "INVOLVED_RESOURCES"]
+        &[
+            "INCIDENT_RECORD_ARN", "INVOLVED_RESOURCES"
+        ]
     }
 }
 impl AsRef<str> for VariableType {
@@ -801,9 +705,9 @@ impl AsRef<str> for VariableType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ssmtargetaccount = unimplemented!();
 /// match ssmtargetaccount {
@@ -825,58 +729,52 @@ impl AsRef<str> for VariableType {
 /// Specifically, when `ssmtargetaccount` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SsmTargetAccount::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SsmTargetAccount {
     #[allow(missing_docs)] // documentation missing in model
     ImpactedAccount,
     #[allow(missing_docs)] // documentation missing in model
     ResponsePlanOwnerAccount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SsmTargetAccount {
     fn from(s: &str) -> Self {
         match s {
             "IMPACTED_ACCOUNT" => SsmTargetAccount::ImpactedAccount,
             "RESPONSE_PLAN_OWNER_ACCOUNT" => SsmTargetAccount::ResponsePlanOwnerAccount,
-            other => SsmTargetAccount::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SsmTargetAccount::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SsmTargetAccount {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SsmTargetAccount::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SsmTargetAccount::from(s))
+                }
+            }
 impl SsmTargetAccount {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SsmTargetAccount::ImpactedAccount => "IMPACTED_ACCOUNT",
             SsmTargetAccount::ResponsePlanOwnerAccount => "RESPONSE_PLAN_OWNER_ACCOUNT",
-            SsmTargetAccount::Unknown(value) => value.as_str(),
+            SsmTargetAccount::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMPACTED_ACCOUNT", "RESPONSE_PLAN_OWNER_ACCOUNT"]
+        &[
+            "IMPACTED_ACCOUNT", "RESPONSE_PLAN_OWNER_ACCOUNT"
+        ]
     }
 }
 impl AsRef<str> for SsmTargetAccount {
@@ -906,14 +804,8 @@ pub enum ChatChannel {
 impl ChatChannel {
     /// Tries to convert the enum instance into [`ChatbotSns`](crate::model::ChatChannel::ChatbotSns), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_chatbot_sns(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let ChatChannel::ChatbotSns(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_chatbot_sns(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let ChatChannel::ChatbotSns(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ChatbotSns`](crate::model::ChatChannel::ChatbotSns).
     pub fn is_chatbot_sns(&self) -> bool {
@@ -922,11 +814,7 @@ impl ChatChannel {
     /// Tries to convert the enum instance into [`Empty`](crate::model::ChatChannel::Empty), extracting the inner [`EmptyChatChannel`](crate::model::EmptyChatChannel).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_empty(&self) -> std::result::Result<&crate::model::EmptyChatChannel, &Self> {
-        if let ChatChannel::Empty(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ChatChannel::Empty(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Empty`](crate::model::ChatChannel::Empty).
     pub fn is_empty(&self) -> bool {
@@ -941,19 +829,24 @@ impl ChatChannel {
 /// <p>Used to remove the chat channel from an incident record or response plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmptyChatChannel {}
+pub struct EmptyChatChannel  {
+}
 /// See [`EmptyChatChannel`](crate::model::EmptyChatChannel).
 pub mod empty_chat_channel {
-
+    
     /// A builder for [`EmptyChatChannel`](crate::model::EmptyChatChannel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EmptyChatChannel`](crate::model::EmptyChatChannel).
         pub fn build(self) -> crate::model::EmptyChatChannel {
-            crate::model::EmptyChatChannel {}
+            crate::model::EmptyChatChannel {
+            }
         }
     }
+    
+    
 }
 impl EmptyChatChannel {
     /// Creates a new builder-style object to manufacture [`EmptyChatChannel`](crate::model::EmptyChatChannel).
@@ -983,11 +876,7 @@ impl NotificationTargetItem {
     /// Tries to convert the enum instance into [`SnsTopicArn`](crate::model::NotificationTargetItem::SnsTopicArn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sns_topic_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let NotificationTargetItem::SnsTopicArn(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let NotificationTargetItem::SnsTopicArn(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SnsTopicArn`](crate::model::NotificationTargetItem::SnsTopicArn).
     pub fn is_sns_topic_arn(&self) -> bool {
@@ -1020,14 +909,8 @@ pub enum UpdateReplicationSetAction {
 impl UpdateReplicationSetAction {
     /// Tries to convert the enum instance into [`AddRegionAction`](crate::model::UpdateReplicationSetAction::AddRegionAction), extracting the inner [`AddRegionAction`](crate::model::AddRegionAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_add_region_action(
-        &self,
-    ) -> std::result::Result<&crate::model::AddRegionAction, &Self> {
-        if let UpdateReplicationSetAction::AddRegionAction(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_add_region_action(&self) -> std::result::Result<&crate::model::AddRegionAction, &Self> {
+        if let UpdateReplicationSetAction::AddRegionAction(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AddRegionAction`](crate::model::UpdateReplicationSetAction::AddRegionAction).
     pub fn is_add_region_action(&self) -> bool {
@@ -1035,14 +918,8 @@ impl UpdateReplicationSetAction {
     }
     /// Tries to convert the enum instance into [`DeleteRegionAction`](crate::model::UpdateReplicationSetAction::DeleteRegionAction), extracting the inner [`DeleteRegionAction`](crate::model::DeleteRegionAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_delete_region_action(
-        &self,
-    ) -> std::result::Result<&crate::model::DeleteRegionAction, &Self> {
-        if let UpdateReplicationSetAction::DeleteRegionAction(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_delete_region_action(&self) -> std::result::Result<&crate::model::DeleteRegionAction, &Self> {
+        if let UpdateReplicationSetAction::DeleteRegionAction(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`DeleteRegionAction`](crate::model::UpdateReplicationSetAction::DeleteRegionAction).
     pub fn is_delete_region_action(&self) -> bool {
@@ -1057,20 +934,20 @@ impl UpdateReplicationSetAction {
 /// <p>Defines the information about the Amazon Web Services Region you're deleting from your replication set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegionAction {
+pub struct DeleteRegionAction  {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl DeleteRegionAction {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
 }
 /// See [`DeleteRegionAction`](crate::model::DeleteRegionAction).
 pub mod delete_region_action {
-
+    
     /// A builder for [`DeleteRegionAction`](crate::model::DeleteRegionAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1084,16 +961,18 @@ pub mod delete_region_action {
         }
         /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region_name = input;
-            self
+            self.region_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRegionAction`](crate::model::DeleteRegionAction).
         pub fn build(self) -> crate::model::DeleteRegionAction {
             crate::model::DeleteRegionAction {
-                region_name: self.region_name,
+                region_name: self.region_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRegionAction {
     /// Creates a new builder-style object to manufacture [`DeleteRegionAction`](crate::model::DeleteRegionAction).
@@ -1105,7 +984,7 @@ impl DeleteRegionAction {
 /// <p>Defines the Amazon Web Services Region and KMS key to add to the replication set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddRegionAction {
+pub struct AddRegionAction  {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
@@ -1115,17 +994,17 @@ pub struct AddRegionAction {
 }
 impl AddRegionAction {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
-    pub fn sse_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn sse_kms_key_id(&self) -> std::option::Option<& str> {
         self.sse_kms_key_id.as_deref()
     }
 }
 /// See [`AddRegionAction`](crate::model::AddRegionAction).
 pub mod add_region_action {
-
+    
     /// A builder for [`AddRegionAction`](crate::model::AddRegionAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1140,8 +1019,7 @@ pub mod add_region_action {
         }
         /// <p>The Amazon Web Services Region name to add to the replication set.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region_name = input;
-            self
+            self.region_name = input; self
         }
         /// <p>The KMS key ID to use to encrypt your replication set.</p>
         pub fn sse_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1149,21 +1027,21 @@ pub mod add_region_action {
             self
         }
         /// <p>The KMS key ID to use to encrypt your replication set.</p>
-        pub fn set_sse_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sse_kms_key_id = input;
-            self
+        pub fn set_sse_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sse_kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`AddRegionAction`](crate::model::AddRegionAction).
         pub fn build(self) -> crate::model::AddRegionAction {
             crate::model::AddRegionAction {
-                region_name: self.region_name,
-                sse_kms_key_id: self.sse_kms_key_id,
+                region_name: self.region_name
+                ,
+                sse_kms_key_id: self.sse_kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AddRegionAction {
     /// Creates a new builder-style object to manufacture [`AddRegionAction`](crate::model::AddRegionAction).
@@ -1194,11 +1072,7 @@ impl RelatedItemsUpdate {
     /// Tries to convert the enum instance into [`ItemToAdd`](crate::model::RelatedItemsUpdate::ItemToAdd), extracting the inner [`RelatedItem`](crate::model::RelatedItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_item_to_add(&self) -> std::result::Result<&crate::model::RelatedItem, &Self> {
-        if let RelatedItemsUpdate::ItemToAdd(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let RelatedItemsUpdate::ItemToAdd(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ItemToAdd`](crate::model::RelatedItemsUpdate::ItemToAdd).
     pub fn is_item_to_add(&self) -> bool {
@@ -1207,11 +1081,7 @@ impl RelatedItemsUpdate {
     /// Tries to convert the enum instance into [`ItemToRemove`](crate::model::RelatedItemsUpdate::ItemToRemove), extracting the inner [`ItemIdentifier`](crate::model::ItemIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_item_to_remove(&self) -> std::result::Result<&crate::model::ItemIdentifier, &Self> {
-        if let RelatedItemsUpdate::ItemToRemove(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let RelatedItemsUpdate::ItemToRemove(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ItemToRemove`](crate::model::RelatedItemsUpdate::ItemToRemove).
     pub fn is_item_to_remove(&self) -> bool {
@@ -1226,7 +1096,7 @@ impl RelatedItemsUpdate {
 /// <p>Details and type of a related item.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ItemIdentifier {
+pub struct ItemIdentifier  {
     /// <p>Details about the related item.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::model::ItemValue>,
@@ -1236,17 +1106,17 @@ pub struct ItemIdentifier {
 }
 impl ItemIdentifier {
     /// <p>Details about the related item.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::ItemValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::ItemValue> {
         self.value.as_ref()
     }
     /// <p>The type of related item. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ItemType> {
         self.r#type.as_ref()
     }
 }
 /// See [`ItemIdentifier`](crate::model::ItemIdentifier).
 pub mod item_identifier {
-
+    
     /// A builder for [`ItemIdentifier`](crate::model::ItemIdentifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1261,8 +1131,7 @@ pub mod item_identifier {
         }
         /// <p>Details about the related item.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::ItemValue>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The type of related item. </p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
@@ -1271,17 +1140,20 @@ pub mod item_identifier {
         }
         /// <p>The type of related item. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`ItemIdentifier`](crate::model::ItemIdentifier).
         pub fn build(self) -> crate::model::ItemIdentifier {
             crate::model::ItemIdentifier {
-                value: self.value,
-                r#type: self.r#type,
+                value: self.value
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl ItemIdentifier {
     /// Creates a new builder-style object to manufacture [`ItemIdentifier`](crate::model::ItemIdentifier).
@@ -1296,9 +1168,9 @@ impl ItemIdentifier {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let itemtype = unimplemented!();
 /// match itemtype {
@@ -1327,22 +1199,14 @@ impl ItemIdentifier {
 /// Specifically, when `itemtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ItemType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ItemType {
     #[allow(missing_docs)] // documentation missing in model
     Analysis,
@@ -1363,7 +1227,7 @@ pub enum ItemType {
     #[allow(missing_docs)] // documentation missing in model
     Task,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ItemType {
     fn from(s: &str) -> Self {
@@ -1377,17 +1241,17 @@ impl std::convert::From<&str> for ItemType {
             "OTHER" => ItemType::Other,
             "PARENT" => ItemType::Parent,
             "TASK" => ItemType::Task,
-            other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ItemType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ItemType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ItemType::from(s))
+                }
+            }
 impl ItemType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1401,21 +1265,13 @@ impl ItemType {
             ItemType::Other => "OTHER",
             ItemType::Parent => "PARENT",
             ItemType::Task => "TASK",
-            ItemType::Unknown(value) => value.as_str(),
+            ItemType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ANALYSIS",
-            "ATTACHMENT",
-            "AUTOMATION",
-            "INCIDENT",
-            "INVOLVED_RESOURCE",
-            "METRIC",
-            "OTHER",
-            "PARENT",
-            "TASK",
+            "ANALYSIS", "ATTACHMENT", "AUTOMATION", "INCIDENT", "INVOLVED_RESOURCE", "METRIC", "OTHER", "PARENT", "TASK"
         ]
     }
 }
@@ -1451,11 +1307,7 @@ impl ItemValue {
     /// Tries to convert the enum instance into [`Arn`](crate::model::ItemValue::Arn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let ItemValue::Arn(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ItemValue::Arn(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Arn`](crate::model::ItemValue::Arn).
     pub fn is_arn(&self) -> bool {
@@ -1464,11 +1316,7 @@ impl ItemValue {
     /// Tries to convert the enum instance into [`MetricDefinition`](crate::model::ItemValue::MetricDefinition), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_metric_definition(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let ItemValue::MetricDefinition(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ItemValue::MetricDefinition(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`MetricDefinition`](crate::model::ItemValue::MetricDefinition).
     pub fn is_metric_definition(&self) -> bool {
@@ -1476,14 +1324,8 @@ impl ItemValue {
     }
     /// Tries to convert the enum instance into [`PagerDutyIncidentDetail`](crate::model::ItemValue::PagerDutyIncidentDetail), extracting the inner [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_pager_duty_incident_detail(
-        &self,
-    ) -> std::result::Result<&crate::model::PagerDutyIncidentDetail, &Self> {
-        if let ItemValue::PagerDutyIncidentDetail(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_pager_duty_incident_detail(&self) -> std::result::Result<&crate::model::PagerDutyIncidentDetail, &Self> {
+        if let ItemValue::PagerDutyIncidentDetail(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`PagerDutyIncidentDetail`](crate::model::ItemValue::PagerDutyIncidentDetail).
     pub fn is_pager_duty_incident_detail(&self) -> bool {
@@ -1492,11 +1334,7 @@ impl ItemValue {
     /// Tries to convert the enum instance into [`Url`](crate::model::ItemValue::Url), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let ItemValue::Url(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ItemValue::Url(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Url`](crate::model::ItemValue::Url).
     pub fn is_url(&self) -> bool {
@@ -1511,7 +1349,7 @@ impl ItemValue {
 /// <p>Details about the PagerDuty incident associated with an incident created by an Incident Manager response plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PagerDutyIncidentDetail {
+pub struct PagerDutyIncidentDetail  {
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1524,7 +1362,7 @@ pub struct PagerDutyIncidentDetail {
 }
 impl PagerDutyIncidentDetail {
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
@@ -1532,13 +1370,13 @@ impl PagerDutyIncidentDetail {
         self.auto_resolve
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    pub fn secret_id(&self) -> std::option::Option<&str> {
+    pub fn secret_id(&self) -> std::option::Option<& str> {
         self.secret_id.as_deref()
     }
 }
 /// See [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
 pub mod pager_duty_incident_detail {
-
+    
     /// A builder for [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1554,8 +1392,7 @@ pub mod pager_duty_incident_detail {
         }
         /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
         pub fn auto_resolve(mut self, input: bool) -> Self {
@@ -1564,8 +1401,7 @@ pub mod pager_duty_incident_detail {
         }
         /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
         pub fn set_auto_resolve(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_resolve = input;
-            self
+            self.auto_resolve = input; self
         }
         /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1574,18 +1410,22 @@ pub mod pager_duty_incident_detail {
         }
         /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = input;
-            self
+            self.secret_id = input; self
         }
         /// Consumes the builder and constructs a [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
         pub fn build(self) -> crate::model::PagerDutyIncidentDetail {
             crate::model::PagerDutyIncidentDetail {
-                id: self.id,
-                auto_resolve: self.auto_resolve,
-                secret_id: self.secret_id,
+                id: self.id
+                ,
+                auto_resolve: self.auto_resolve
+                ,
+                secret_id: self.secret_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PagerDutyIncidentDetail {
     /// Creates a new builder-style object to manufacture [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
@@ -1597,38 +1437,38 @@ impl PagerDutyIncidentDetail {
 /// <p>Resources that responders use to triage and mitigate the incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelatedItem {
+pub struct RelatedItem  {
     /// <p>Details about the related item.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<crate::model::ItemIdentifier>,
     /// <p>The title of the related item.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
-    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
-    /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important> 
+    /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p> 
     /// </important>
     #[doc(hidden)]
     pub generated_id: std::option::Option<std::string::String>,
 }
 impl RelatedItem {
     /// <p>Details about the related item.</p>
-    pub fn identifier(&self) -> std::option::Option<&crate::model::ItemIdentifier> {
+    pub fn identifier(&self) -> std::option::Option<& crate::model::ItemIdentifier> {
         self.identifier.as_ref()
     }
     /// <p>The title of the related item.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
-    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
-    /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important> 
+    /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p> 
     /// </important>
-    pub fn generated_id(&self) -> std::option::Option<&str> {
+    pub fn generated_id(&self) -> std::option::Option<& str> {
         self.generated_id.as_deref()
     }
 }
 /// See [`RelatedItem`](crate::model::RelatedItem).
 pub mod related_item {
-
+    
     /// A builder for [`RelatedItem`](crate::model::RelatedItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1643,12 +1483,8 @@ pub mod related_item {
             self
         }
         /// <p>Details about the related item.</p>
-        pub fn set_identifier(
-            mut self,
-            input: std::option::Option<crate::model::ItemIdentifier>,
-        ) -> Self {
-            self.identifier = input;
-            self
+        pub fn set_identifier(mut self, input: std::option::Option<crate::model::ItemIdentifier>) -> Self {
+            self.identifier = input; self
         }
         /// <p>The title of the related item.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1657,32 +1493,35 @@ pub mod related_item {
         }
         /// <p>The title of the related item.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
-        /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
-        /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+        /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important> 
+        /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p> 
         /// </important>
         pub fn generated_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.generated_id = Some(input.into());
             self
         }
-        /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
-        /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+        /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important> 
+        /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p> 
         /// </important>
         pub fn set_generated_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.generated_id = input;
-            self
+            self.generated_id = input; self
         }
         /// Consumes the builder and constructs a [`RelatedItem`](crate::model::RelatedItem).
         pub fn build(self) -> crate::model::RelatedItem {
             crate::model::RelatedItem {
-                identifier: self.identifier,
-                title: self.title,
-                generated_id: self.generated_id,
+                identifier: self.identifier
+                ,
+                title: self.title
+                ,
+                generated_id: self.generated_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RelatedItem {
     /// Creates a new builder-style object to manufacture [`RelatedItem`](crate::model::RelatedItem).
@@ -1697,9 +1536,9 @@ impl RelatedItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let incidentrecordstatus = unimplemented!();
 /// match incidentrecordstatus {
@@ -1721,60 +1560,52 @@ impl RelatedItem {
 /// Specifically, when `incidentrecordstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IncidentRecordStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IncidentRecordStatus {
     #[allow(missing_docs)] // documentation missing in model
     Open,
     #[allow(missing_docs)] // documentation missing in model
     Resolved,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IncidentRecordStatus {
     fn from(s: &str) -> Self {
         match s {
             "OPEN" => IncidentRecordStatus::Open,
             "RESOLVED" => IncidentRecordStatus::Resolved,
-            other => {
-                IncidentRecordStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => IncidentRecordStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IncidentRecordStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IncidentRecordStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IncidentRecordStatus::from(s))
+                }
+            }
 impl IncidentRecordStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IncidentRecordStatus::Open => "OPEN",
             IncidentRecordStatus::Resolved => "RESOLVED",
-            IncidentRecordStatus::Unknown(value) => value.as_str(),
+            IncidentRecordStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OPEN", "RESOLVED"]
+        &[
+            "OPEN", "RESOLVED"
+        ]
     }
 }
 impl AsRef<str> for IncidentRecordStatus {
@@ -1786,7 +1617,7 @@ impl AsRef<str> for IncidentRecordStatus {
 /// <p>Details about what caused the incident to be created in Incident Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TriggerDetails {
+pub struct TriggerDetails  {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -1802,25 +1633,25 @@ pub struct TriggerDetails {
 }
 impl TriggerDetails {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
-    pub fn trigger_arn(&self) -> std::option::Option<&str> {
+    pub fn trigger_arn(&self) -> std::option::Option<& str> {
         self.trigger_arn.as_deref()
     }
     /// <p>The time that the incident was detected.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
-    pub fn raw_data(&self) -> std::option::Option<&str> {
+    pub fn raw_data(&self) -> std::option::Option<& str> {
         self.raw_data.as_deref()
     }
 }
 /// See [`TriggerDetails`](crate::model::TriggerDetails).
 pub mod trigger_details {
-
+    
     /// A builder for [`TriggerDetails`](crate::model::TriggerDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1837,8 +1668,7 @@ pub mod trigger_details {
         }
         /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
         pub fn trigger_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1847,8 +1677,7 @@ pub mod trigger_details {
         }
         /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
         pub fn set_trigger_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.trigger_arn = input;
-            self
+            self.trigger_arn = input; self
         }
         /// <p>The time that the incident was detected.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1856,12 +1685,8 @@ pub mod trigger_details {
             self
         }
         /// <p>The time that the incident was detected.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
         pub fn raw_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1870,19 +1695,24 @@ pub mod trigger_details {
         }
         /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
         pub fn set_raw_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.raw_data = input;
-            self
+            self.raw_data = input; self
         }
         /// Consumes the builder and constructs a [`TriggerDetails`](crate::model::TriggerDetails).
         pub fn build(self) -> crate::model::TriggerDetails {
             crate::model::TriggerDetails {
-                source: self.source,
-                trigger_arn: self.trigger_arn,
-                timestamp: self.timestamp,
-                raw_data: self.raw_data,
+                source: self.source
+                ,
+                trigger_arn: self.trigger_arn
+                ,
+                timestamp: self.timestamp
+                ,
+                raw_data: self.raw_data
+                ,
             }
         }
     }
+    
+    
 }
 impl TriggerDetails {
     /// Creates a new builder-style object to manufacture [`TriggerDetails`](crate::model::TriggerDetails).
@@ -1894,7 +1724,7 @@ impl TriggerDetails {
 /// <p>Details about a timeline event during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSummary {
+pub struct EventSummary  {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
@@ -1916,33 +1746,33 @@ pub struct EventSummary {
 }
 impl EventSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
-    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+    pub fn incident_record_arn(&self) -> std::option::Option<& str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>The timeline event ID.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The time that the event occurred.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The time that the timeline event was last updated.</p>
-    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_updated_time.as_ref()
     }
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn event_references(&self) -> std::option::Option<&[crate::model::EventReference]> {
+    pub fn event_references(&self) -> std::option::Option<& [crate::model::EventReference]> {
         self.event_references.as_deref()
     }
 }
 /// See [`EventSummary`](crate::model::EventSummary).
 pub mod event_summary {
-
+    
     /// A builder for [`EventSummary`](crate::model::EventSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1951,8 +1781,7 @@ pub mod event_summary {
         pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<std::string::String>,
-        pub(crate) event_references:
-            std::option::Option<std::vec::Vec<crate::model::EventReference>>,
+        pub(crate) event_references: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
@@ -1961,12 +1790,8 @@ pub mod event_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
-        pub fn set_incident_record_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.incident_record_arn = input;
-            self
+        pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.incident_record_arn = input; self
         }
         /// <p>The timeline event ID.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1975,8 +1800,7 @@ pub mod event_summary {
         }
         /// <p>The timeline event ID.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_id = input;
-            self
+            self.event_id = input; self
         }
         /// <p>The time that the event occurred.</p>
         pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1984,12 +1808,8 @@ pub mod event_summary {
             self
         }
         /// <p>The time that the event occurred.</p>
-        pub fn set_event_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_time = input;
-            self
+        pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_time = input; self
         }
         /// <p>The time that the timeline event was last updated.</p>
         pub fn event_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1997,12 +1817,8 @@ pub mod event_summary {
             self
         }
         /// <p>The time that the timeline event was last updated.</p>
-        pub fn set_event_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_updated_time = input;
-            self
+        pub fn set_event_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_updated_time = input; self
         }
         /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2011,8 +1827,7 @@ pub mod event_summary {
         }
         /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_type = input;
-            self
+            self.event_type = input; self
         }
         /// Appends an item to `event_references`.
         ///
@@ -2021,30 +1836,34 @@ pub mod event_summary {
         /// <p>A list of references in a <code>TimelineEvent</code>.</p>
         pub fn event_references(mut self, input: crate::model::EventReference) -> Self {
             let mut v = self.event_references.unwrap_or_default();
-            v.push(input);
-            self.event_references = Some(v);
-            self
+                            v.push(input);
+                            self.event_references = Some(v);
+                            self
         }
         /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-        pub fn set_event_references(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
-        ) -> Self {
-            self.event_references = input;
-            self
+        pub fn set_event_references(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventReference>>) -> Self {
+            self.event_references = input; self
         }
         /// Consumes the builder and constructs a [`EventSummary`](crate::model::EventSummary).
         pub fn build(self) -> crate::model::EventSummary {
             crate::model::EventSummary {
-                incident_record_arn: self.incident_record_arn,
-                event_id: self.event_id,
-                event_time: self.event_time,
-                event_updated_time: self.event_updated_time,
-                event_type: self.event_type,
-                event_references: self.event_references,
+                incident_record_arn: self.incident_record_arn
+                ,
+                event_id: self.event_id
+                ,
+                event_time: self.event_time
+                ,
+                event_updated_time: self.event_updated_time
+                ,
+                event_type: self.event_type
+                ,
+                event_references: self.event_references
+                ,
             }
         }
     }
+    
+    
 }
 impl EventSummary {
     /// Creates a new builder-style object to manufacture [`EventSummary`](crate::model::EventSummary).
@@ -2059,9 +1878,9 @@ impl EventSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortorder = unimplemented!();
 /// match sortorder {
@@ -2083,58 +1902,52 @@ impl EventSummary {
 /// Specifically, when `sortorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortOrder {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
     fn from(s: &str) -> Self {
         match s {
             "ASCENDING" => SortOrder::Ascending,
             "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortOrder::from(s))
+                }
+            }
 impl SortOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ASCENDING",
             SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str(),
+            SortOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASCENDING", "DESCENDING"]
+        &[
+            "ASCENDING", "DESCENDING"
+        ]
     }
 }
 impl AsRef<str> for SortOrder {
@@ -2149,9 +1962,9 @@ impl AsRef<str> for SortOrder {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let timelineeventsort = unimplemented!();
 /// match timelineeventsort {
@@ -2172,56 +1985,48 @@ impl AsRef<str> for SortOrder {
 /// Specifically, when `timelineeventsort` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimelineEventSort::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TimelineEventSort {
     #[allow(missing_docs)] // documentation missing in model
     EventTime,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TimelineEventSort {
     fn from(s: &str) -> Self {
         match s {
             "EVENT_TIME" => TimelineEventSort::EventTime,
-            other => {
-                TimelineEventSort::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TimelineEventSort::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TimelineEventSort {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimelineEventSort::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TimelineEventSort::from(s))
+                }
+            }
 impl TimelineEventSort {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TimelineEventSort::EventTime => "EVENT_TIME",
-            TimelineEventSort::Unknown(value) => value.as_str(),
+            TimelineEventSort::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EVENT_TIME"]
+        &[
+            "EVENT_TIME"
+        ]
     }
 }
 impl AsRef<str> for TimelineEventSort {
@@ -2233,7 +2038,7 @@ impl AsRef<str> for TimelineEventSort {
 /// <p>Filter the selection by using a condition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The key that you're filtering on.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2243,17 +2048,17 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The key that you're filtering on.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+    pub fn condition(&self) -> std::option::Option<& crate::model::Condition> {
         self.condition.as_ref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2268,8 +2073,7 @@ pub mod filter {
         }
         /// <p>The key that you're filtering on.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
         pub fn condition(mut self, input: crate::model::Condition) -> Self {
@@ -2277,21 +2081,21 @@ pub mod filter {
             self
         }
         /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
-        pub fn set_condition(
-            mut self,
-            input: std::option::Option<crate::model::Condition>,
-        ) -> Self {
-            self.condition = input;
-            self
+        pub fn set_condition(mut self, input: std::option::Option<crate::model::Condition>) -> Self {
+            self.condition = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                key: self.key,
-                condition: self.condition,
+                key: self.key
+                ,
+                condition: self.condition
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -2324,11 +2128,7 @@ impl Condition {
     /// Tries to convert the enum instance into [`After`](crate::model::Condition::After), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_after(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
-        if let Condition::After(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Condition::After(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`After`](crate::model::Condition::After).
     pub fn is_after(&self) -> bool {
@@ -2337,11 +2137,7 @@ impl Condition {
     /// Tries to convert the enum instance into [`Before`](crate::model::Condition::Before), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_before(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
-        if let Condition::Before(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Condition::Before(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Before`](crate::model::Condition::Before).
     pub fn is_before(&self) -> bool {
@@ -2350,11 +2146,7 @@ impl Condition {
     /// Tries to convert the enum instance into [`Equals`](crate::model::Condition::Equals), extracting the inner [`AttributeValueList`](crate::model::AttributeValueList).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_equals(&self) -> std::result::Result<&crate::model::AttributeValueList, &Self> {
-        if let Condition::Equals(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Condition::Equals(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Equals`](crate::model::Condition::Equals).
     pub fn is_equals(&self) -> bool {
@@ -2388,11 +2180,7 @@ impl AttributeValueList {
     /// Tries to convert the enum instance into [`IntegerValues`](crate::model::AttributeValueList::IntegerValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_values(&self) -> std::result::Result<&std::vec::Vec<i32>, &Self> {
-        if let AttributeValueList::IntegerValues(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AttributeValueList::IntegerValues(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`IntegerValues`](crate::model::AttributeValueList::IntegerValues).
     pub fn is_integer_values(&self) -> bool {
@@ -2400,14 +2188,8 @@ impl AttributeValueList {
     }
     /// Tries to convert the enum instance into [`StringValues`](crate::model::AttributeValueList::StringValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_values(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let AttributeValueList::StringValues(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_string_values(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let AttributeValueList::StringValues(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValues`](crate::model::AttributeValueList::StringValues).
     pub fn is_string_values(&self) -> bool {
@@ -2422,7 +2204,7 @@ impl AttributeValueList {
 /// <p>Details of the response plan that are used when creating an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponsePlanSummary {
+pub struct ResponsePlanSummary  {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2435,21 +2217,21 @@ pub struct ResponsePlanSummary {
 }
 impl ResponsePlanSummary {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 /// See [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
 pub mod response_plan_summary {
-
+    
     /// A builder for [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2465,8 +2247,7 @@ pub mod response_plan_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the response plan. This can't include spaces.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2475,8 +2256,7 @@ pub mod response_plan_summary {
         }
         /// <p>The name of the response plan. This can't include spaces.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The human readable name of the response plan. This can include spaces.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2485,18 +2265,22 @@ pub mod response_plan_summary {
         }
         /// <p>The human readable name of the response plan. This can include spaces.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// Consumes the builder and constructs a [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
         pub fn build(self) -> crate::model::ResponsePlanSummary {
             crate::model::ResponsePlanSummary {
-                arn: self.arn,
-                name: self.name,
-                display_name: self.display_name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ResponsePlanSummary {
     /// Creates a new builder-style object to manufacture [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
@@ -2508,7 +2292,7 @@ impl ResponsePlanSummary {
 /// <p>Details describing an incident record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncidentRecordSummary {
+pub struct IncidentRecordSummary  {
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2533,15 +2317,15 @@ pub struct IncidentRecordSummary {
 }
 impl IncidentRecordSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The current status of the incident.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::IncidentRecordStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::IncidentRecordStatus> {
         self.status.as_ref()
     }
     /// <p>Defines the impact to customers and applications.</p>
@@ -2549,23 +2333,21 @@ impl IncidentRecordSummary {
         self.impact
     }
     /// <p>The time the incident was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the incident was resolved.</p>
-    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn resolved_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.resolved_time.as_ref()
     }
     /// <p>What caused Incident Manager to create the incident.</p>
-    pub fn incident_record_source(
-        &self,
-    ) -> std::option::Option<&crate::model::IncidentRecordSource> {
+    pub fn incident_record_source(&self) -> std::option::Option<& crate::model::IncidentRecordSource> {
         self.incident_record_source.as_ref()
     }
 }
 /// See [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
 pub mod incident_record_summary {
-
+    
     /// A builder for [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2585,8 +2367,7 @@ pub mod incident_record_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2595,8 +2376,7 @@ pub mod incident_record_summary {
         }
         /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The current status of the incident.</p>
         pub fn status(mut self, input: crate::model::IncidentRecordStatus) -> Self {
@@ -2604,12 +2384,8 @@ pub mod incident_record_summary {
             self
         }
         /// <p>The current status of the incident.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::IncidentRecordStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::IncidentRecordStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Defines the impact to customers and applications.</p>
         pub fn impact(mut self, input: i32) -> Self {
@@ -2618,8 +2394,7 @@ pub mod incident_record_summary {
         }
         /// <p>Defines the impact to customers and applications.</p>
         pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
-            self.impact = input;
-            self
+            self.impact = input; self
         }
         /// <p>The time the incident was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2627,12 +2402,8 @@ pub mod incident_record_summary {
             self
         }
         /// <p>The time the incident was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the incident was resolved.</p>
         pub fn resolved_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2640,12 +2411,8 @@ pub mod incident_record_summary {
             self
         }
         /// <p>The time the incident was resolved.</p>
-        pub fn set_resolved_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.resolved_time = input;
-            self
+        pub fn set_resolved_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.resolved_time = input; self
         }
         /// <p>What caused Incident Manager to create the incident.</p>
         pub fn incident_record_source(mut self, input: crate::model::IncidentRecordSource) -> Self {
@@ -2653,26 +2420,31 @@ pub mod incident_record_summary {
             self
         }
         /// <p>What caused Incident Manager to create the incident.</p>
-        pub fn set_incident_record_source(
-            mut self,
-            input: std::option::Option<crate::model::IncidentRecordSource>,
-        ) -> Self {
-            self.incident_record_source = input;
-            self
+        pub fn set_incident_record_source(mut self, input: std::option::Option<crate::model::IncidentRecordSource>) -> Self {
+            self.incident_record_source = input; self
         }
         /// Consumes the builder and constructs a [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
         pub fn build(self) -> crate::model::IncidentRecordSummary {
             crate::model::IncidentRecordSummary {
-                arn: self.arn,
-                title: self.title,
-                status: self.status,
-                impact: self.impact,
-                creation_time: self.creation_time,
-                resolved_time: self.resolved_time,
-                incident_record_source: self.incident_record_source,
+                arn: self.arn
+                ,
+                title: self.title
+                ,
+                status: self.status
+                ,
+                impact: self.impact
+                ,
+                creation_time: self.creation_time
+                ,
+                resolved_time: self.resolved_time
+                ,
+                incident_record_source: self.incident_record_source
+                ,
             }
         }
     }
+    
+    
 }
 impl IncidentRecordSummary {
     /// Creates a new builder-style object to manufacture [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
@@ -2684,7 +2456,7 @@ impl IncidentRecordSummary {
 /// <p>Details about what created the incident record and when it was created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncidentRecordSource {
+pub struct IncidentRecordSource  {
     /// <p>The principal that started the incident.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
@@ -2700,25 +2472,25 @@ pub struct IncidentRecordSource {
 }
 impl IncidentRecordSource {
     /// <p>The principal that started the incident.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
-    pub fn invoked_by(&self) -> std::option::Option<&str> {
+    pub fn invoked_by(&self) -> std::option::Option<& str> {
         self.invoked_by.as_deref()
     }
     /// <p>The resource that caused the incident to be created.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
 }
 /// See [`IncidentRecordSource`](crate::model::IncidentRecordSource).
 pub mod incident_record_source {
-
+    
     /// A builder for [`IncidentRecordSource`](crate::model::IncidentRecordSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2735,8 +2507,7 @@ pub mod incident_record_source {
         }
         /// <p>The principal that started the incident.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
         pub fn invoked_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2745,8 +2516,7 @@ pub mod incident_record_source {
         }
         /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
         pub fn set_invoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.invoked_by = input;
-            self
+            self.invoked_by = input; self
         }
         /// <p>The resource that caused the incident to be created.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2755,8 +2525,7 @@ pub mod incident_record_source {
         }
         /// <p>The resource that caused the incident to be created.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2765,19 +2534,24 @@ pub mod incident_record_source {
         }
         /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// Consumes the builder and constructs a [`IncidentRecordSource`](crate::model::IncidentRecordSource).
         pub fn build(self) -> crate::model::IncidentRecordSource {
             crate::model::IncidentRecordSource {
-                created_by: self.created_by,
-                invoked_by: self.invoked_by,
-                resource_arn: self.resource_arn,
-                source: self.source,
+                created_by: self.created_by
+                ,
+                invoked_by: self.invoked_by
+                ,
+                resource_arn: self.resource_arn
+                ,
+                source: self.source
+                ,
             }
         }
     }
+    
+    
 }
 impl IncidentRecordSource {
     /// Creates a new builder-style object to manufacture [`IncidentRecordSource`](crate::model::IncidentRecordSource).
@@ -2789,7 +2563,7 @@ impl IncidentRecordSource {
 /// <p>A significant event that happened during the incident. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimelineEvent {
+pub struct TimelineEvent  {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
@@ -2814,37 +2588,37 @@ pub struct TimelineEvent {
 }
 impl TimelineEvent {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
-    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+    pub fn incident_record_arn(&self) -> std::option::Option<& str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>The ID of the timeline event.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The time that the event occurred.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The time that the timeline event was last updated.</p>
-    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_updated_time.as_ref()
     }
     /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>A short description of the event.</p>
-    pub fn event_data(&self) -> std::option::Option<&str> {
+    pub fn event_data(&self) -> std::option::Option<& str> {
         self.event_data.as_deref()
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn event_references(&self) -> std::option::Option<&[crate::model::EventReference]> {
+    pub fn event_references(&self) -> std::option::Option<& [crate::model::EventReference]> {
         self.event_references.as_deref()
     }
 }
 /// See [`TimelineEvent`](crate::model::TimelineEvent).
 pub mod timeline_event {
-
+    
     /// A builder for [`TimelineEvent`](crate::model::TimelineEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2854,8 +2628,7 @@ pub mod timeline_event {
         pub(crate) event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<std::string::String>,
         pub(crate) event_data: std::option::Option<std::string::String>,
-        pub(crate) event_references:
-            std::option::Option<std::vec::Vec<crate::model::EventReference>>,
+        pub(crate) event_references: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
@@ -2864,12 +2637,8 @@ pub mod timeline_event {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
-        pub fn set_incident_record_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.incident_record_arn = input;
-            self
+        pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.incident_record_arn = input; self
         }
         /// <p>The ID of the timeline event.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2878,8 +2647,7 @@ pub mod timeline_event {
         }
         /// <p>The ID of the timeline event.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_id = input;
-            self
+            self.event_id = input; self
         }
         /// <p>The time that the event occurred.</p>
         pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2887,12 +2655,8 @@ pub mod timeline_event {
             self
         }
         /// <p>The time that the event occurred.</p>
-        pub fn set_event_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_time = input;
-            self
+        pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_time = input; self
         }
         /// <p>The time that the timeline event was last updated.</p>
         pub fn event_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2900,12 +2664,8 @@ pub mod timeline_event {
             self
         }
         /// <p>The time that the timeline event was last updated.</p>
-        pub fn set_event_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_updated_time = input;
-            self
+        pub fn set_event_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_updated_time = input; self
         }
         /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2914,8 +2674,7 @@ pub mod timeline_event {
         }
         /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_type = input;
-            self
+            self.event_type = input; self
         }
         /// <p>A short description of the event.</p>
         pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2924,8 +2683,7 @@ pub mod timeline_event {
         }
         /// <p>A short description of the event.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_data = input;
-            self
+            self.event_data = input; self
         }
         /// Appends an item to `event_references`.
         ///
@@ -2934,31 +2692,36 @@ pub mod timeline_event {
         /// <p>A list of references in a <code>TimelineEvent</code>.</p>
         pub fn event_references(mut self, input: crate::model::EventReference) -> Self {
             let mut v = self.event_references.unwrap_or_default();
-            v.push(input);
-            self.event_references = Some(v);
-            self
+                            v.push(input);
+                            self.event_references = Some(v);
+                            self
         }
         /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-        pub fn set_event_references(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
-        ) -> Self {
-            self.event_references = input;
-            self
+        pub fn set_event_references(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventReference>>) -> Self {
+            self.event_references = input; self
         }
         /// Consumes the builder and constructs a [`TimelineEvent`](crate::model::TimelineEvent).
         pub fn build(self) -> crate::model::TimelineEvent {
             crate::model::TimelineEvent {
-                incident_record_arn: self.incident_record_arn,
-                event_id: self.event_id,
-                event_time: self.event_time,
-                event_updated_time: self.event_updated_time,
-                event_type: self.event_type,
-                event_data: self.event_data,
-                event_references: self.event_references,
+                incident_record_arn: self.incident_record_arn
+                ,
+                event_id: self.event_id
+                ,
+                event_time: self.event_time
+                ,
+                event_updated_time: self.event_updated_time
+                ,
+                event_type: self.event_type
+                ,
+                event_data: self.event_data
+                ,
+                event_references: self.event_references
+                ,
             }
         }
     }
+    
+    
 }
 impl TimelineEvent {
     /// Creates a new builder-style object to manufacture [`TimelineEvent`](crate::model::TimelineEvent).
@@ -2970,7 +2733,7 @@ impl TimelineEvent {
 /// <p>Basic details used in creating a response plan. The response plan is then used to create an incident record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncidentTemplate {
+pub struct IncidentTemplate  {
     /// <p>The title of the incident. </p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -2985,16 +2748,14 @@ pub struct IncidentTemplate {
     pub dedupe_string: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     #[doc(hidden)]
-    pub notification_targets:
-        std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
+    pub notification_targets: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
     #[doc(hidden)]
-    pub incident_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub incident_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl IncidentTemplate {
     /// <p>The title of the incident. </p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The impact of the incident on your customers and applications. </p>
@@ -3002,30 +2763,25 @@ impl IncidentTemplate {
         self.impact
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
-    pub fn dedupe_string(&self) -> std::option::Option<&str> {
+    pub fn dedupe_string(&self) -> std::option::Option<& str> {
         self.dedupe_string.as_deref()
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn notification_targets(
-        &self,
-    ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
+    pub fn notification_targets(&self) -> std::option::Option<& [crate::model::NotificationTargetItem]> {
         self.notification_targets.as_deref()
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    pub fn incident_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn incident_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.incident_tags.as_ref()
     }
 }
 /// See [`IncidentTemplate`](crate::model::IncidentTemplate).
 pub mod incident_template {
-
+    
     /// A builder for [`IncidentTemplate`](crate::model::IncidentTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3033,11 +2789,8 @@ pub mod incident_template {
         pub(crate) impact: std::option::Option<i32>,
         pub(crate) summary: std::option::Option<std::string::String>,
         pub(crate) dedupe_string: std::option::Option<std::string::String>,
-        pub(crate) notification_targets:
-            std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
-        pub(crate) incident_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) notification_targets: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
+        pub(crate) incident_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The title of the incident. </p>
@@ -3047,8 +2800,7 @@ pub mod incident_template {
         }
         /// <p>The title of the incident. </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The impact of the incident on your customers and applications. </p>
         pub fn impact(mut self, input: i32) -> Self {
@@ -3057,8 +2809,7 @@ pub mod incident_template {
         }
         /// <p>The impact of the incident on your customers and applications. </p>
         pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
-            self.impact = input;
-            self
+            self.impact = input; self
         }
         /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3067,8 +2818,7 @@ pub mod incident_template {
         }
         /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
         pub fn dedupe_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3076,12 +2826,8 @@ pub mod incident_template {
             self
         }
         /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
-        pub fn set_dedupe_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dedupe_string = input;
-            self
+        pub fn set_dedupe_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dedupe_string = input; self
         }
         /// Appends an item to `notification_targets`.
         ///
@@ -3090,55 +2836,49 @@ pub mod incident_template {
         /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             let mut v = self.notification_targets.unwrap_or_default();
-            v.push(input);
-            self.notification_targets = Some(v);
-            self
+                            v.push(input);
+                            self.notification_targets = Some(v);
+                            self
         }
         /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-        pub fn set_notification_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
-        ) -> Self {
-            self.notification_targets = input;
-            self
+        pub fn set_notification_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>) -> Self {
+            self.notification_targets = input; self
         }
         /// Adds a key-value pair to `incident_tags`.
         ///
         /// To override the contents of this collection use [`set_incident_tags`](Self::set_incident_tags).
         ///
         /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-        pub fn incident_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn incident_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.incident_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.incident_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.incident_tags = Some(hash_map);
+                            self
         }
         /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-        pub fn set_incident_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.incident_tags = input;
-            self
+        pub fn set_incident_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.incident_tags = input; self
         }
         /// Consumes the builder and constructs a [`IncidentTemplate`](crate::model::IncidentTemplate).
         pub fn build(self) -> crate::model::IncidentTemplate {
             crate::model::IncidentTemplate {
-                title: self.title,
-                impact: self.impact,
-                summary: self.summary,
-                dedupe_string: self.dedupe_string,
-                notification_targets: self.notification_targets,
-                incident_tags: self.incident_tags,
+                title: self.title
+                ,
+                impact: self.impact
+                ,
+                summary: self.summary
+                ,
+                dedupe_string: self.dedupe_string
+                ,
+                notification_targets: self.notification_targets
+                ,
+                incident_tags: self.incident_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl IncidentTemplate {
     /// Creates a new builder-style object to manufacture [`IncidentTemplate`](crate::model::IncidentTemplate).
@@ -3150,7 +2890,7 @@ impl IncidentTemplate {
 /// <p>The resource policy that allows Incident Manager to perform actions on resources on your behalf.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p>The JSON blob that describes the policy.</p>
     #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
@@ -3163,21 +2903,21 @@ pub struct ResourcePolicy {
 }
 impl ResourcePolicy {
     /// <p>The JSON blob that describes the policy.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The ID of the resource policy.</p>
-    pub fn policy_id(&self) -> std::option::Option<&str> {
+    pub fn policy_id(&self) -> std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
-    pub fn ram_resource_share_region(&self) -> std::option::Option<&str> {
+    pub fn ram_resource_share_region(&self) -> std::option::Option<& str> {
         self.ram_resource_share_region.as_deref()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
-
+    
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3192,12 +2932,8 @@ pub mod resource_policy {
             self
         }
         /// <p>The JSON blob that describes the policy.</p>
-        pub fn set_policy_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_document = input;
-            self
+        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_document = input; self
         }
         /// <p>The ID of the resource policy.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3206,8 +2942,7 @@ pub mod resource_policy {
         }
         /// <p>The ID of the resource policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_id = input;
-            self
+            self.policy_id = input; self
         }
         /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
         pub fn ram_resource_share_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3215,22 +2950,23 @@ pub mod resource_policy {
             self
         }
         /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
-        pub fn set_ram_resource_share_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ram_resource_share_region = input;
-            self
+        pub fn set_ram_resource_share_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ram_resource_share_region = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
         pub fn build(self) -> crate::model::ResourcePolicy {
             crate::model::ResourcePolicy {
-                policy_document: self.policy_document,
-                policy_id: self.policy_id,
-                ram_resource_share_region: self.ram_resource_share_region,
+                policy_document: self.policy_document
+                ,
+                policy_id: self.policy_id
+                ,
+                ram_resource_share_region: self.ram_resource_share_region
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePolicy {
     /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -3242,15 +2978,13 @@ impl ResourcePolicy {
 /// <p>The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationSet {
+pub struct ReplicationSet  {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
     #[doc(hidden)]
-    pub region_map: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
-    >,
+    pub region_map: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RegionInfo>>,
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReplicationSetStatus>,
@@ -3272,19 +3006,15 @@ pub struct ReplicationSet {
 }
 impl ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
-    pub fn region_map(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
-    > {
+    pub fn region_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::RegionInfo>> {
         self.region_map.as_ref()
     }
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReplicationSetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReplicationSetStatus> {
         self.status.as_ref()
     }
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
@@ -3292,32 +3022,30 @@ impl ReplicationSet {
         self.deletion_protected
     }
     /// <p>When the replication set was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Details about who created the replication set.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>When the replication set was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Who last modified the replication set.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
 }
 /// See [`ReplicationSet`](crate::model::ReplicationSet).
 pub mod replication_set {
-
+    
     /// A builder for [`ReplicationSet`](crate::model::ReplicationSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) region_map: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
-        >,
+        pub(crate) region_map: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RegionInfo>>,
         pub(crate) status: std::option::Option<crate::model::ReplicationSetStatus>,
         pub(crate) deletion_protected: std::option::Option<bool>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3333,33 +3061,22 @@ pub mod replication_set {
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Adds a key-value pair to `region_map`.
         ///
         /// To override the contents of this collection use [`set_region_map`](Self::set_region_map).
         ///
         /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
-        pub fn region_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::RegionInfo,
-        ) -> Self {
+        pub fn region_map(mut self, k: impl Into<std::string::String>, v: crate::model::RegionInfo) -> Self {
             let mut hash_map = self.region_map.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.region_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.region_map = Some(hash_map);
+                            self
         }
         /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
-        pub fn set_region_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
-            >,
-        ) -> Self {
-            self.region_map = input;
-            self
+        pub fn set_region_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RegionInfo>>) -> Self {
+            self.region_map = input; self
         }
         /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
         pub fn status(mut self, input: crate::model::ReplicationSetStatus) -> Self {
@@ -3367,12 +3084,8 @@ pub mod replication_set {
             self
         }
         /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationSetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReplicationSetStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
         pub fn deletion_protected(mut self, input: bool) -> Self {
@@ -3381,8 +3094,7 @@ pub mod replication_set {
         }
         /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
         pub fn set_deletion_protected(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protected = input;
-            self
+            self.deletion_protected = input; self
         }
         /// <p>When the replication set was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3390,12 +3102,8 @@ pub mod replication_set {
             self
         }
         /// <p>When the replication set was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>Details about who created the replication set.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3404,8 +3112,7 @@ pub mod replication_set {
         }
         /// <p>Details about who created the replication set.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>When the replication set was last updated.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3413,12 +3120,8 @@ pub mod replication_set {
             self
         }
         /// <p>When the replication set was last updated.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>Who last modified the replication set.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3426,27 +3129,33 @@ pub mod replication_set {
             self
         }
         /// <p>Who last modified the replication set.</p>
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationSet`](crate::model::ReplicationSet).
         pub fn build(self) -> crate::model::ReplicationSet {
             crate::model::ReplicationSet {
-                arn: self.arn,
-                region_map: self.region_map,
-                status: self.status,
-                deletion_protected: self.deletion_protected,
-                created_time: self.created_time,
-                created_by: self.created_by,
-                last_modified_time: self.last_modified_time,
-                last_modified_by: self.last_modified_by,
+                arn: self.arn
+                ,
+                region_map: self.region_map
+                ,
+                status: self.status
+                ,
+                deletion_protected: self.deletion_protected
+                ,
+                created_time: self.created_time
+                ,
+                created_by: self.created_by
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                last_modified_by: self.last_modified_by
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationSet {
     /// Creates a new builder-style object to manufacture [`ReplicationSet`](crate::model::ReplicationSet).
@@ -3461,9 +3170,9 @@ impl ReplicationSet {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationsetstatus = unimplemented!();
 /// match replicationsetstatus {
@@ -3488,22 +3197,14 @@ impl ReplicationSet {
 /// Specifically, when `replicationsetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationSetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationSetStatus {
     /// All operations have completed successfully and the replication set is ready to use
     Active,
@@ -3516,7 +3217,7 @@ pub enum ReplicationSetStatus {
     /// Replication set is in the process of being updated.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationSetStatus {
     fn from(s: &str) -> Self {
@@ -3526,19 +3227,17 @@ impl std::convert::From<&str> for ReplicationSetStatus {
             "DELETING" => ReplicationSetStatus::Deleting,
             "FAILED" => ReplicationSetStatus::Failed,
             "UPDATING" => ReplicationSetStatus::Updating,
-            other => {
-                ReplicationSetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReplicationSetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationSetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationSetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationSetStatus::from(s))
+                }
+            }
 impl ReplicationSetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3548,12 +3247,14 @@ impl ReplicationSetStatus {
             ReplicationSetStatus::Deleting => "DELETING",
             ReplicationSetStatus::Failed => "FAILED",
             ReplicationSetStatus::Updating => "UPDATING",
-            ReplicationSetStatus::Unknown(value) => value.as_str(),
+            ReplicationSetStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for ReplicationSetStatus {
@@ -3565,7 +3266,7 @@ impl AsRef<str> for ReplicationSetStatus {
 /// <p>Information about a Amazon Web Services Region in your replication set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionInfo {
+pub struct RegionInfo  {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub sse_kms_key_id: std::option::Option<std::string::String>,
@@ -3581,25 +3282,25 @@ pub struct RegionInfo {
 }
 impl RegionInfo {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
-    pub fn sse_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn sse_kms_key_id(&self) -> std::option::Option<& str> {
         self.sse_kms_key_id.as_deref()
     }
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RegionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RegionStatus> {
         self.status.as_ref()
     }
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
-    pub fn status_update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.status_update_date_time.as_ref()
     }
 }
 /// See [`RegionInfo`](crate::model::RegionInfo).
 pub mod region_info {
-
+    
     /// A builder for [`RegionInfo`](crate::model::RegionInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3615,12 +3316,8 @@ pub mod region_info {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
-        pub fn set_sse_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sse_kms_key_id = input;
-            self
+        pub fn set_sse_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sse_kms_key_id = input; self
         }
         /// <p>The status of the Amazon Web Services Region in the replication set.</p>
         pub fn status(mut self, input: crate::model::RegionStatus) -> Self {
@@ -3628,12 +3325,8 @@ pub mod region_info {
             self
         }
         /// <p>The status of the Amazon Web Services Region in the replication set.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RegionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RegionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3641,12 +3334,8 @@ pub mod region_info {
             self
         }
         /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
         pub fn status_update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3654,23 +3343,25 @@ pub mod region_info {
             self
         }
         /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
-        pub fn set_status_update_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.status_update_date_time = input;
-            self
+        pub fn set_status_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.status_update_date_time = input; self
         }
         /// Consumes the builder and constructs a [`RegionInfo`](crate::model::RegionInfo).
         pub fn build(self) -> crate::model::RegionInfo {
             crate::model::RegionInfo {
-                sse_kms_key_id: self.sse_kms_key_id,
-                status: self.status,
-                status_message: self.status_message,
-                status_update_date_time: self.status_update_date_time,
+                sse_kms_key_id: self.sse_kms_key_id
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                status_update_date_time: self.status_update_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl RegionInfo {
     /// Creates a new builder-style object to manufacture [`RegionInfo`](crate::model::RegionInfo).
@@ -3685,9 +3376,9 @@ impl RegionInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let regionstatus = unimplemented!();
 /// match regionstatus {
@@ -3711,22 +3402,14 @@ impl RegionInfo {
 /// Specifically, when `regionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RegionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RegionStatus {
     /// All operations have completed successfully and the region is ready to use
     Active,
@@ -3737,7 +3420,7 @@ pub enum RegionStatus {
     /// The region is not healthy and we cannot automatically fix it.
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RegionStatus {
     fn from(s: &str) -> Self {
@@ -3746,17 +3429,17 @@ impl std::convert::From<&str> for RegionStatus {
             "CREATING" => RegionStatus::Creating,
             "DELETING" => RegionStatus::Deleting,
             "FAILED" => RegionStatus::Failed,
-            other => RegionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RegionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RegionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RegionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RegionStatus::from(s))
+                }
+            }
 impl RegionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3765,12 +3448,14 @@ impl RegionStatus {
             RegionStatus::Creating => "CREATING",
             RegionStatus::Deleting => "DELETING",
             RegionStatus::Failed => "FAILED",
-            RegionStatus::Unknown(value) => value.as_str(),
+            RegionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED"
+        ]
     }
 }
 impl AsRef<str> for RegionStatus {
@@ -3782,7 +3467,7 @@ impl AsRef<str> for RegionStatus {
 /// <p>The record of the incident that's created when an incident occurs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncidentRecord {
+pub struct IncidentRecord  {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3812,8 +3497,7 @@ pub struct IncidentRecord {
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
     #[doc(hidden)]
-    pub automation_executions:
-        std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>,
+    pub automation_executions: std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>,
     /// <p>Details about the action that started the incident.</p>
     #[doc(hidden)]
     pub incident_record_source: std::option::Option<crate::model::IncidentRecordSource>,
@@ -3825,24 +3509,23 @@ pub struct IncidentRecord {
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     #[doc(hidden)]
-    pub notification_targets:
-        std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
+    pub notification_targets: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
 impl IncidentRecord {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The title of the incident.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The current status of the incident.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::IncidentRecordStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::IncidentRecordStatus> {
         self.status.as_ref()
     }
     /// <p>The impact of the incident on customers and applications.</p>
@@ -3850,51 +3533,45 @@ impl IncidentRecord {
         self.impact
     }
     /// <p>The time that Incident Manager created the incident record.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
-    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn resolved_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.resolved_time.as_ref()
     }
     /// <p>The time at which the incident was most recently modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Who modified the incident most recently.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
-    pub fn automation_executions(
-        &self,
-    ) -> std::option::Option<&[crate::model::AutomationExecution]> {
+    pub fn automation_executions(&self) -> std::option::Option<& [crate::model::AutomationExecution]> {
         self.automation_executions.as_deref()
     }
     /// <p>Details about the action that started the incident.</p>
-    pub fn incident_record_source(
-        &self,
-    ) -> std::option::Option<&crate::model::IncidentRecordSource> {
+    pub fn incident_record_source(&self) -> std::option::Option<& crate::model::IncidentRecordSource> {
         self.incident_record_source.as_ref()
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn dedupe_string(&self) -> std::option::Option<&str> {
+    pub fn dedupe_string(&self) -> std::option::Option<& str> {
         self.dedupe_string.as_deref()
     }
     /// <p>The chat channel used for collaboration during an incident.</p>
-    pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
+    pub fn chat_channel(&self) -> std::option::Option<& crate::model::ChatChannel> {
         self.chat_channel.as_ref()
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn notification_targets(
-        &self,
-    ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
+    pub fn notification_targets(&self) -> std::option::Option<& [crate::model::NotificationTargetItem]> {
         self.notification_targets.as_deref()
     }
 }
 /// See [`IncidentRecord`](crate::model::IncidentRecord).
 pub mod incident_record {
-
+    
     /// A builder for [`IncidentRecord`](crate::model::IncidentRecord).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3907,13 +3584,11 @@ pub mod incident_record {
         pub(crate) resolved_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
-        pub(crate) automation_executions:
-            std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>,
+        pub(crate) automation_executions: std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>,
         pub(crate) incident_record_source: std::option::Option<crate::model::IncidentRecordSource>,
         pub(crate) dedupe_string: std::option::Option<std::string::String>,
         pub(crate) chat_channel: std::option::Option<crate::model::ChatChannel>,
-        pub(crate) notification_targets:
-            std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
+        pub(crate) notification_targets: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
@@ -3923,8 +3598,7 @@ pub mod incident_record {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The title of the incident.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3933,8 +3607,7 @@ pub mod incident_record {
         }
         /// <p>The title of the incident.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3943,8 +3616,7 @@ pub mod incident_record {
         }
         /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p>The current status of the incident.</p>
         pub fn status(mut self, input: crate::model::IncidentRecordStatus) -> Self {
@@ -3952,12 +3624,8 @@ pub mod incident_record {
             self
         }
         /// <p>The current status of the incident.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::IncidentRecordStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::IncidentRecordStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The impact of the incident on customers and applications.</p>
         pub fn impact(mut self, input: i32) -> Self {
@@ -3966,8 +3634,7 @@ pub mod incident_record {
         }
         /// <p>The impact of the incident on customers and applications.</p>
         pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
-            self.impact = input;
-            self
+            self.impact = input; self
         }
         /// <p>The time that Incident Manager created the incident record.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3975,12 +3642,8 @@ pub mod incident_record {
             self
         }
         /// <p>The time that Incident Manager created the incident record.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
         pub fn resolved_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3988,12 +3651,8 @@ pub mod incident_record {
             self
         }
         /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
-        pub fn set_resolved_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.resolved_time = input;
-            self
+        pub fn set_resolved_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.resolved_time = input; self
         }
         /// <p>The time at which the incident was most recently modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4001,12 +3660,8 @@ pub mod incident_record {
             self
         }
         /// <p>The time at which the incident was most recently modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>Who modified the incident most recently.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4014,12 +3669,8 @@ pub mod incident_record {
             self
         }
         /// <p>Who modified the incident most recently.</p>
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// Appends an item to `automation_executions`.
         ///
@@ -4028,17 +3679,13 @@ pub mod incident_record {
         /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
         pub fn automation_executions(mut self, input: crate::model::AutomationExecution) -> Self {
             let mut v = self.automation_executions.unwrap_or_default();
-            v.push(input);
-            self.automation_executions = Some(v);
-            self
+                            v.push(input);
+                            self.automation_executions = Some(v);
+                            self
         }
         /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
-        pub fn set_automation_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>,
-        ) -> Self {
-            self.automation_executions = input;
-            self
+        pub fn set_automation_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>) -> Self {
+            self.automation_executions = input; self
         }
         /// <p>Details about the action that started the incident.</p>
         pub fn incident_record_source(mut self, input: crate::model::IncidentRecordSource) -> Self {
@@ -4046,12 +3693,8 @@ pub mod incident_record {
             self
         }
         /// <p>Details about the action that started the incident.</p>
-        pub fn set_incident_record_source(
-            mut self,
-            input: std::option::Option<crate::model::IncidentRecordSource>,
-        ) -> Self {
-            self.incident_record_source = input;
-            self
+        pub fn set_incident_record_source(mut self, input: std::option::Option<crate::model::IncidentRecordSource>) -> Self {
+            self.incident_record_source = input; self
         }
         /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
         pub fn dedupe_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4059,12 +3702,8 @@ pub mod incident_record {
             self
         }
         /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-        pub fn set_dedupe_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dedupe_string = input;
-            self
+        pub fn set_dedupe_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dedupe_string = input; self
         }
         /// <p>The chat channel used for collaboration during an incident.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
@@ -4072,12 +3711,8 @@ pub mod incident_record {
             self
         }
         /// <p>The chat channel used for collaboration during an incident.</p>
-        pub fn set_chat_channel(
-            mut self,
-            input: std::option::Option<crate::model::ChatChannel>,
-        ) -> Self {
-            self.chat_channel = input;
-            self
+        pub fn set_chat_channel(mut self, input: std::option::Option<crate::model::ChatChannel>) -> Self {
+            self.chat_channel = input; self
         }
         /// Appends an item to `notification_targets`.
         ///
@@ -4086,38 +3721,50 @@ pub mod incident_record {
         /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             let mut v = self.notification_targets.unwrap_or_default();
-            v.push(input);
-            self.notification_targets = Some(v);
-            self
+                            v.push(input);
+                            self.notification_targets = Some(v);
+                            self
         }
         /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-        pub fn set_notification_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
-        ) -> Self {
-            self.notification_targets = input;
-            self
+        pub fn set_notification_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>) -> Self {
+            self.notification_targets = input; self
         }
         /// Consumes the builder and constructs a [`IncidentRecord`](crate::model::IncidentRecord).
         pub fn build(self) -> crate::model::IncidentRecord {
             crate::model::IncidentRecord {
-                arn: self.arn,
-                title: self.title,
-                summary: self.summary,
-                status: self.status,
-                impact: self.impact,
-                creation_time: self.creation_time,
-                resolved_time: self.resolved_time,
-                last_modified_time: self.last_modified_time,
-                last_modified_by: self.last_modified_by,
-                automation_executions: self.automation_executions,
-                incident_record_source: self.incident_record_source,
-                dedupe_string: self.dedupe_string,
-                chat_channel: self.chat_channel,
-                notification_targets: self.notification_targets,
+                arn: self.arn
+                ,
+                title: self.title
+                ,
+                summary: self.summary
+                ,
+                status: self.status
+                ,
+                impact: self.impact
+                ,
+                creation_time: self.creation_time
+                ,
+                resolved_time: self.resolved_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                automation_executions: self.automation_executions
+                ,
+                incident_record_source: self.incident_record_source
+                ,
+                dedupe_string: self.dedupe_string
+                ,
+                chat_channel: self.chat_channel
+                ,
+                notification_targets: self.notification_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl IncidentRecord {
     /// Creates a new builder-style object to manufacture [`IncidentRecord`](crate::model::IncidentRecord).
@@ -4147,11 +3794,7 @@ impl AutomationExecution {
     /// Tries to convert the enum instance into [`SsmExecutionArn`](crate::model::AutomationExecution::SsmExecutionArn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ssm_execution_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let AutomationExecution::SsmExecutionArn(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AutomationExecution::SsmExecutionArn(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SsmExecutionArn`](crate::model::AutomationExecution::SsmExecutionArn).
     pub fn is_ssm_execution_arn(&self) -> bool {
@@ -4166,20 +3809,20 @@ impl AutomationExecution {
 /// <p>The mapping between a Amazon Web Services Region and the key that's used to encrypt the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionMapInputValue {
+pub struct RegionMapInputValue  {
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
     #[doc(hidden)]
     pub sse_kms_key_id: std::option::Option<std::string::String>,
 }
 impl RegionMapInputValue {
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
-    pub fn sse_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn sse_kms_key_id(&self) -> std::option::Option<& str> {
         self.sse_kms_key_id.as_deref()
     }
 }
 /// See [`RegionMapInputValue`](crate::model::RegionMapInputValue).
 pub mod region_map_input_value {
-
+    
     /// A builder for [`RegionMapInputValue`](crate::model::RegionMapInputValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4192,20 +3835,19 @@ pub mod region_map_input_value {
             self
         }
         /// <p>The KMS key used to encrypt the data in your replication set.</p>
-        pub fn set_sse_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sse_kms_key_id = input;
-            self
+        pub fn set_sse_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sse_kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`RegionMapInputValue`](crate::model::RegionMapInputValue).
         pub fn build(self) -> crate::model::RegionMapInputValue {
             crate::model::RegionMapInputValue {
-                sse_kms_key_id: self.sse_kms_key_id,
+                sse_kms_key_id: self.sse_kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegionMapInputValue {
     /// Creates a new builder-style object to manufacture [`RegionMapInputValue`](crate::model::RegionMapInputValue).
@@ -4213,3 +3855,4 @@ impl RegionMapInputValue {
         crate::model::region_map_input_value::Builder::default()
     }
 }
+

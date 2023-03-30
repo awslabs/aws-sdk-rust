@@ -3,7 +3,7 @@
 /// <p>Template summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateSummary {
+pub struct TemplateSummary  {
     /// <p>The unique identifier for the template.</p>
     #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
@@ -19,25 +19,25 @@ pub struct TemplateSummary {
 }
 impl TemplateSummary {
     /// <p>The unique identifier for the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> std::option::Option<&str> {
+    pub fn template_arn(&self) -> std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The template name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the template.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TemplateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TemplateStatus> {
         self.status.as_ref()
     }
 }
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
 pub mod template_summary {
-
+    
     /// A builder for [`TemplateSummary`](crate::model::TemplateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -54,8 +54,7 @@ pub mod template_summary {
         }
         /// <p>The unique identifier for the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +63,7 @@ pub mod template_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_arn = input;
-            self
+            self.template_arn = input; self
         }
         /// <p>The template name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +72,7 @@ pub mod template_summary {
         }
         /// <p>The template name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the template.</p>
         pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
@@ -83,23 +80,25 @@ pub mod template_summary {
             self
         }
         /// <p>The status of the template.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TemplateStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TemplateStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`TemplateSummary`](crate::model::TemplateSummary).
         pub fn build(self) -> crate::model::TemplateSummary {
             crate::model::TemplateSummary {
-                template_id: self.template_id,
-                template_arn: self.template_arn,
-                name: self.name,
-                status: self.status,
+                template_id: self.template_id
+                ,
+                template_arn: self.template_arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateSummary {
     /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
@@ -114,9 +113,9 @@ impl TemplateSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let templatestatus = unimplemented!();
 /// match templatestatus {
@@ -138,58 +137,52 @@ impl TemplateSummary {
 /// Specifically, when `templatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TemplateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Status of a template
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TemplateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateStatus {
     fn from(s: &str) -> Self {
         match s {
             "Active" => TemplateStatus::Active,
             "Inactive" => TemplateStatus::Inactive,
-            other => TemplateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TemplateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TemplateStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TemplateStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TemplateStatus::from(s))
+                }
+            }
 impl TemplateStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemplateStatus::Active => "Active",
             TemplateStatus::Inactive => "Inactive",
-            TemplateStatus::Unknown(value) => value.as_str(),
+            TemplateStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "Inactive"]
+        &[
+            "Active", "Inactive"
+        ]
     }
 }
 impl AsRef<str> for TemplateStatus {
@@ -201,20 +194,20 @@ impl AsRef<str> for TemplateStatus {
 /// <p>List of fields that must have a value provided to create a case.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequiredField {
+pub struct RequiredField  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
 }
 impl RequiredField {
     /// <p>Unique identifier of a field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
 }
 /// See [`RequiredField`](crate::model::RequiredField).
 pub mod required_field {
-
+    
     /// A builder for [`RequiredField`](crate::model::RequiredField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -228,16 +221,18 @@ pub mod required_field {
         }
         /// <p>Unique identifier of a field.</p>
         pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_id = input;
-            self
+            self.field_id = input; self
         }
         /// Consumes the builder and constructs a [`RequiredField`](crate::model::RequiredField).
         pub fn build(self) -> crate::model::RequiredField {
             crate::model::RequiredField {
-                field_id: self.field_id,
+                field_id: self.field_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RequiredField {
     /// Creates a new builder-style object to manufacture [`RequiredField`](crate::model::RequiredField).
@@ -249,20 +244,20 @@ impl RequiredField {
 /// <p>Object to store configuration of layouts associated to the template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LayoutConfiguration {
+pub struct LayoutConfiguration  {
     /// <p> Unique identifier of a layout. </p>
     #[doc(hidden)]
     pub default_layout: std::option::Option<std::string::String>,
 }
 impl LayoutConfiguration {
     /// <p> Unique identifier of a layout. </p>
-    pub fn default_layout(&self) -> std::option::Option<&str> {
+    pub fn default_layout(&self) -> std::option::Option<& str> {
         self.default_layout.as_deref()
     }
 }
 /// See [`LayoutConfiguration`](crate::model::LayoutConfiguration).
 pub mod layout_configuration {
-
+    
     /// A builder for [`LayoutConfiguration`](crate::model::LayoutConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -275,20 +270,19 @@ pub mod layout_configuration {
             self
         }
         /// <p> Unique identifier of a layout. </p>
-        pub fn set_default_layout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_layout = input;
-            self
+        pub fn set_default_layout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_layout = input; self
         }
         /// Consumes the builder and constructs a [`LayoutConfiguration`](crate::model::LayoutConfiguration).
         pub fn build(self) -> crate::model::LayoutConfiguration {
             crate::model::LayoutConfiguration {
-                default_layout: self.default_layout,
+                default_layout: self.default_layout
+                ,
             }
         }
     }
+    
+    
 }
 impl LayoutConfiguration {
     /// Creates a new builder-style object to manufacture [`LayoutConfiguration`](crate::model::LayoutConfiguration).
@@ -300,7 +294,7 @@ impl LayoutConfiguration {
 /// <p>Object for the summarized details of the layout.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LayoutSummary {
+pub struct LayoutSummary  {
     /// <p>The unique identifier for of the layout.</p>
     #[doc(hidden)]
     pub layout_id: std::option::Option<std::string::String>,
@@ -313,21 +307,21 @@ pub struct LayoutSummary {
 }
 impl LayoutSummary {
     /// <p>The unique identifier for of the layout.</p>
-    pub fn layout_id(&self) -> std::option::Option<&str> {
+    pub fn layout_id(&self) -> std::option::Option<& str> {
         self.layout_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
-    pub fn layout_arn(&self) -> std::option::Option<&str> {
+    pub fn layout_arn(&self) -> std::option::Option<& str> {
         self.layout_arn.as_deref()
     }
     /// <p>The name of the layout.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`LayoutSummary`](crate::model::LayoutSummary).
 pub mod layout_summary {
-
+    
     /// A builder for [`LayoutSummary`](crate::model::LayoutSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -343,8 +337,7 @@ pub mod layout_summary {
         }
         /// <p>The unique identifier for of the layout.</p>
         pub fn set_layout_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layout_id = input;
-            self
+            self.layout_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the layout.</p>
         pub fn layout_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -353,8 +346,7 @@ pub mod layout_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the layout.</p>
         pub fn set_layout_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layout_arn = input;
-            self
+            self.layout_arn = input; self
         }
         /// <p>The name of the layout.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -363,18 +355,22 @@ pub mod layout_summary {
         }
         /// <p>The name of the layout.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`LayoutSummary`](crate::model::LayoutSummary).
         pub fn build(self) -> crate::model::LayoutSummary {
             crate::model::LayoutSummary {
-                layout_id: self.layout_id,
-                layout_arn: self.layout_arn,
-                name: self.name,
+                layout_id: self.layout_id
+                ,
+                layout_arn: self.layout_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl LayoutSummary {
     /// Creates a new builder-style object to manufacture [`LayoutSummary`](crate::model::LayoutSummary).
@@ -404,11 +400,7 @@ impl LayoutContent {
     /// Tries to convert the enum instance into [`Basic`](crate::model::LayoutContent::Basic), extracting the inner [`BasicLayout`](crate::model::BasicLayout).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_basic(&self) -> std::result::Result<&crate::model::BasicLayout, &Self> {
-        if let LayoutContent::Basic(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let LayoutContent::Basic(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Basic`](crate::model::LayoutContent::Basic).
     pub fn is_basic(&self) -> bool {
@@ -423,7 +415,7 @@ impl LayoutContent {
 /// <p>Content specific to <code>BasicLayout</code> type. It configures fields in the top panel and More Info tab of agent application. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BasicLayout {
+pub struct BasicLayout  {
     /// <p>This represents sections in a panel of the page layout.</p>
     #[doc(hidden)]
     pub top_panel: std::option::Option<crate::model::LayoutSections>,
@@ -433,17 +425,17 @@ pub struct BasicLayout {
 }
 impl BasicLayout {
     /// <p>This represents sections in a panel of the page layout.</p>
-    pub fn top_panel(&self) -> std::option::Option<&crate::model::LayoutSections> {
+    pub fn top_panel(&self) -> std::option::Option<& crate::model::LayoutSections> {
         self.top_panel.as_ref()
     }
     /// <p>This represents sections in a tab of the page layout.</p>
-    pub fn more_info(&self) -> std::option::Option<&crate::model::LayoutSections> {
+    pub fn more_info(&self) -> std::option::Option<& crate::model::LayoutSections> {
         self.more_info.as_ref()
     }
 }
 /// See [`BasicLayout`](crate::model::BasicLayout).
 pub mod basic_layout {
-
+    
     /// A builder for [`BasicLayout`](crate::model::BasicLayout).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -457,12 +449,8 @@ pub mod basic_layout {
             self
         }
         /// <p>This represents sections in a panel of the page layout.</p>
-        pub fn set_top_panel(
-            mut self,
-            input: std::option::Option<crate::model::LayoutSections>,
-        ) -> Self {
-            self.top_panel = input;
-            self
+        pub fn set_top_panel(mut self, input: std::option::Option<crate::model::LayoutSections>) -> Self {
+            self.top_panel = input; self
         }
         /// <p>This represents sections in a tab of the page layout.</p>
         pub fn more_info(mut self, input: crate::model::LayoutSections) -> Self {
@@ -470,21 +458,21 @@ pub mod basic_layout {
             self
         }
         /// <p>This represents sections in a tab of the page layout.</p>
-        pub fn set_more_info(
-            mut self,
-            input: std::option::Option<crate::model::LayoutSections>,
-        ) -> Self {
-            self.more_info = input;
-            self
+        pub fn set_more_info(mut self, input: std::option::Option<crate::model::LayoutSections>) -> Self {
+            self.more_info = input; self
         }
         /// Consumes the builder and constructs a [`BasicLayout`](crate::model::BasicLayout).
         pub fn build(self) -> crate::model::BasicLayout {
             crate::model::BasicLayout {
-                top_panel: self.top_panel,
-                more_info: self.more_info,
+                top_panel: self.top_panel
+                ,
+                more_info: self.more_info
+                ,
             }
         }
     }
+    
+    
 }
 impl BasicLayout {
     /// Creates a new builder-style object to manufacture [`BasicLayout`](crate::model::BasicLayout).
@@ -496,20 +484,20 @@ impl BasicLayout {
 /// <p>Ordered list containing different kinds of sections that can be added. A LayoutSections object can only contain one section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LayoutSections {
+pub struct LayoutSections  {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
     #[doc(hidden)]
     pub sections: std::option::Option<std::vec::Vec<crate::model::Section>>,
 }
 impl LayoutSections {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
-    pub fn sections(&self) -> std::option::Option<&[crate::model::Section]> {
+    pub fn sections(&self) -> std::option::Option<& [crate::model::Section]> {
         self.sections.as_deref()
     }
 }
 /// See [`LayoutSections`](crate::model::LayoutSections).
 pub mod layout_sections {
-
+    
     /// A builder for [`LayoutSections`](crate::model::LayoutSections).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -523,25 +511,24 @@ pub mod layout_sections {
         /// <p>Ordered list containing different kinds of sections that can be added.</p>
         pub fn sections(mut self, input: crate::model::Section) -> Self {
             let mut v = self.sections.unwrap_or_default();
-            v.push(input);
-            self.sections = Some(v);
-            self
+                            v.push(input);
+                            self.sections = Some(v);
+                            self
         }
         /// <p>Ordered list containing different kinds of sections that can be added.</p>
-        pub fn set_sections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Section>>,
-        ) -> Self {
-            self.sections = input;
-            self
+        pub fn set_sections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Section>>) -> Self {
+            self.sections = input; self
         }
         /// Consumes the builder and constructs a [`LayoutSections`](crate::model::LayoutSections).
         pub fn build(self) -> crate::model::LayoutSections {
             crate::model::LayoutSections {
-                sections: self.sections,
+                sections: self.sections
+                ,
             }
         }
     }
+    
+    
 }
 impl LayoutSections {
     /// Creates a new builder-style object to manufacture [`LayoutSections`](crate::model::LayoutSections).
@@ -571,11 +558,7 @@ impl Section {
     /// Tries to convert the enum instance into [`FieldGroup`](crate::model::Section::FieldGroup), extracting the inner [`FieldGroup`](crate::model::FieldGroup).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_field_group(&self) -> std::result::Result<&crate::model::FieldGroup, &Self> {
-        if let Section::FieldGroup(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Section::FieldGroup(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`FieldGroup`](crate::model::Section::FieldGroup).
     pub fn is_field_group(&self) -> bool {
@@ -590,7 +573,7 @@ impl Section {
 /// <p>Object for a group of fields and associated properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldGroup {
+pub struct FieldGroup  {
     /// <p>Name of the field group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -600,17 +583,17 @@ pub struct FieldGroup {
 }
 impl FieldGroup {
     /// <p>Name of the field group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::FieldItem]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::FieldItem]> {
         self.fields.as_deref()
     }
 }
 /// See [`FieldGroup`](crate::model::FieldGroup).
 pub mod field_group {
-
+    
     /// A builder for [`FieldGroup`](crate::model::FieldGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -625,8 +608,7 @@ pub mod field_group {
         }
         /// <p>Name of the field group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `fields`.
         ///
@@ -635,26 +617,26 @@ pub mod field_group {
         /// <p>Represents an ordered list containing field related information.</p>
         pub fn fields(mut self, input: crate::model::FieldItem) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>Represents an ordered list containing field related information.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldItem>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldItem>>) -> Self {
+            self.fields = input; self
         }
         /// Consumes the builder and constructs a [`FieldGroup`](crate::model::FieldGroup).
         pub fn build(self) -> crate::model::FieldGroup {
             crate::model::FieldGroup {
-                name: self.name,
-                fields: self.fields,
+                name: self.name
+                ,
+                fields: self.fields
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldGroup {
     /// Creates a new builder-style object to manufacture [`FieldGroup`](crate::model::FieldGroup).
@@ -666,20 +648,20 @@ impl FieldGroup {
 /// <p>Object for field related information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldItem {
+pub struct FieldItem  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl FieldItem {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`FieldItem`](crate::model::FieldItem).
 pub mod field_item {
-
+    
     /// A builder for [`FieldItem`](crate::model::FieldItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -693,14 +675,18 @@ pub mod field_item {
         }
         /// <p>Unique identifier of a field.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`FieldItem`](crate::model::FieldItem).
         pub fn build(self) -> crate::model::FieldItem {
-            crate::model::FieldItem { id: self.id }
+            crate::model::FieldItem {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl FieldItem {
     /// Creates a new builder-style object to manufacture [`FieldItem`](crate::model::FieldItem).
@@ -712,7 +698,7 @@ impl FieldItem {
 /// <p>Object for field Options information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldOption {
+pub struct FieldOption  {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -725,11 +711,11 @@ pub struct FieldOption {
 }
 impl FieldOption {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
@@ -739,7 +725,7 @@ impl FieldOption {
 }
 /// See [`FieldOption`](crate::model::FieldOption).
 pub mod field_option {
-
+    
     /// A builder for [`FieldOption`](crate::model::FieldOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -755,8 +741,7 @@ pub mod field_option {
         }
         /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -765,8 +750,7 @@ pub mod field_option {
         }
         /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -775,18 +759,22 @@ pub mod field_option {
         }
         /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// Consumes the builder and constructs a [`FieldOption`](crate::model::FieldOption).
         pub fn build(self) -> crate::model::FieldOption {
             crate::model::FieldOption {
-                name: self.name,
-                value: self.value,
-                active: self.active,
+                name: self.name
+                ,
+                value: self.value
+                ,
+                active: self.active
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldOption {
     /// Creates a new builder-style object to manufacture [`FieldOption`](crate::model::FieldOption).
@@ -798,7 +786,7 @@ impl FieldOption {
 /// <p>Object for field Options errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldOptionError {
+pub struct FieldOptionError  {
     /// <p>Error message from creating or updating field option.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -811,21 +799,21 @@ pub struct FieldOptionError {
 }
 impl FieldOptionError {
     /// <p>Error message from creating or updating field option.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Error code from creating or updating field option.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The field option value that caused the error.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`FieldOptionError`](crate::model::FieldOptionError).
 pub mod field_option_error {
-
+    
     /// A builder for [`FieldOptionError`](crate::model::FieldOptionError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -841,8 +829,7 @@ pub mod field_option_error {
         }
         /// <p>Error message from creating or updating field option.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>Error code from creating or updating field option.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -851,8 +838,7 @@ pub mod field_option_error {
         }
         /// <p>Error code from creating or updating field option.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The field option value that caused the error.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -861,18 +847,22 @@ pub mod field_option_error {
         }
         /// <p>The field option value that caused the error.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`FieldOptionError`](crate::model::FieldOptionError).
         pub fn build(self) -> crate::model::FieldOptionError {
             crate::model::FieldOptionError {
-                message: self.message,
-                error_code: self.error_code,
-                value: self.value,
+                message: self.message
+                ,
+                error_code: self.error_code
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldOptionError {
     /// Creates a new builder-style object to manufacture [`FieldOptionError`](crate::model::FieldOptionError).
@@ -884,7 +874,7 @@ impl FieldOptionError {
 /// <p>Object for errors on fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldError {
+pub struct FieldError  {
     /// <p>The field identifier that caused the error.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -897,21 +887,21 @@ pub struct FieldError {
 }
 impl FieldError {
     /// <p>The field identifier that caused the error.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The error code from getting a field.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message from getting a field.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`FieldError`](crate::model::FieldError).
 pub mod field_error {
-
+    
     /// A builder for [`FieldError`](crate::model::FieldError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -927,8 +917,7 @@ pub mod field_error {
         }
         /// <p>The field identifier that caused the error.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The error code from getting a field.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -937,8 +926,7 @@ pub mod field_error {
         }
         /// <p>The error code from getting a field.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The error message from getting a field.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -947,18 +935,22 @@ pub mod field_error {
         }
         /// <p>The error message from getting a field.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`FieldError`](crate::model::FieldError).
         pub fn build(self) -> crate::model::FieldError {
             crate::model::FieldError {
-                id: self.id,
-                error_code: self.error_code,
-                message: self.message,
+                id: self.id
+                ,
+                error_code: self.error_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldError {
     /// Creates a new builder-style object to manufacture [`FieldError`](crate::model::FieldError).
@@ -970,7 +962,7 @@ impl FieldError {
 /// <p>Object to store detailed field information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFieldResponse {
+pub struct GetFieldResponse  {
     /// <p>Unique identifier of the field.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -991,47 +983,41 @@ pub struct GetFieldResponse {
     pub namespace: std::option::Option<crate::model::FieldNamespace>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>Name of the field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(&self) -> std::option::Option<&str> {
+    pub fn field_arn(&self) -> std::option::Option<& str> {
         self.field_arn.as_deref()
     }
     /// <p>Description of the field.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Type of the field.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FieldType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FieldType> {
         self.r#type.as_ref()
     }
     /// <p>Namespace of the field.</p>
-    pub fn namespace(&self) -> std::option::Option<&crate::model::FieldNamespace> {
+    pub fn namespace(&self) -> std::option::Option<& crate::model::FieldNamespace> {
         self.namespace.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetFieldResponse`](crate::model::GetFieldResponse).
 pub mod get_field_response {
-
+    
     /// A builder for [`GetFieldResponse`](crate::model::GetFieldResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1041,12 +1027,7 @@ pub mod get_field_response {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::FieldType>,
         pub(crate) namespace: std::option::Option<crate::model::FieldNamespace>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
     }
     impl Builder {
         /// <p>Unique identifier of the field.</p>
@@ -1056,8 +1037,7 @@ pub mod get_field_response {
         }
         /// <p>Unique identifier of the field.</p>
         pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_id = input;
-            self
+            self.field_id = input; self
         }
         /// <p>Name of the field.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1066,8 +1046,7 @@ pub mod get_field_response {
         }
         /// <p>Name of the field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the field.</p>
         pub fn field_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1076,8 +1055,7 @@ pub mod get_field_response {
         }
         /// <p>The Amazon Resource Name (ARN) of the field.</p>
         pub fn set_field_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_arn = input;
-            self
+            self.field_arn = input; self
         }
         /// <p>Description of the field.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1086,8 +1064,7 @@ pub mod get_field_response {
         }
         /// <p>Description of the field.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Type of the field.</p>
         pub fn r#type(mut self, input: crate::model::FieldType) -> Self {
@@ -1096,8 +1073,7 @@ pub mod get_field_response {
         }
         /// <p>Type of the field.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FieldType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Namespace of the field.</p>
         pub fn namespace(mut self, input: crate::model::FieldNamespace) -> Self {
@@ -1105,54 +1081,46 @@ pub mod get_field_response {
             self
         }
         /// <p>Namespace of the field.</p>
-        pub fn set_namespace(
-            mut self,
-            input: std::option::Option<crate::model::FieldNamespace>,
-        ) -> Self {
-            self.namespace = input;
-            self
+        pub fn set_namespace(mut self, input: std::option::Option<crate::model::FieldNamespace>) -> Self {
+            self.namespace = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::option::Option<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::option::Option<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetFieldResponse`](crate::model::GetFieldResponse).
         pub fn build(self) -> crate::model::GetFieldResponse {
             crate::model::GetFieldResponse {
-                field_id: self.field_id,
-                name: self.name,
-                field_arn: self.field_arn,
-                description: self.description,
-                r#type: self.r#type,
-                namespace: self.namespace,
-                tags: self.tags,
+                field_id: self.field_id
+                ,
+                name: self.name
+                ,
+                field_arn: self.field_arn
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                namespace: self.namespace
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFieldResponse {
     /// Creates a new builder-style object to manufacture [`GetFieldResponse`](crate::model::GetFieldResponse).
@@ -1167,9 +1135,9 @@ impl GetFieldResponse {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fieldnamespace = unimplemented!();
 /// match fieldnamespace {
@@ -1191,58 +1159,52 @@ impl GetFieldResponse {
 /// Specifically, when `fieldnamespace` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FieldNamespace::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FieldNamespace {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     System,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FieldNamespace {
     fn from(s: &str) -> Self {
         match s {
             "Custom" => FieldNamespace::Custom,
             "System" => FieldNamespace::System,
-            other => FieldNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FieldNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FieldNamespace {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FieldNamespace::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FieldNamespace::from(s))
+                }
+            }
 impl FieldNamespace {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FieldNamespace::Custom => "Custom",
             FieldNamespace::System => "System",
-            FieldNamespace::Unknown(value) => value.as_str(),
+            FieldNamespace::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Custom", "System"]
+        &[
+            "Custom", "System"
+        ]
     }
 }
 impl AsRef<str> for FieldNamespace {
@@ -1257,9 +1219,9 @@ impl AsRef<str> for FieldNamespace {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fieldtype = unimplemented!();
 /// match fieldtype {
@@ -1284,22 +1246,14 @@ impl AsRef<str> for FieldNamespace {
 /// Specifically, when `fieldtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FieldType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FieldType {
     #[allow(missing_docs)] // documentation missing in model
     Boolean,
@@ -1312,7 +1266,7 @@ pub enum FieldType {
     #[allow(missing_docs)] // documentation missing in model
     Text,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FieldType {
     fn from(s: &str) -> Self {
@@ -1322,17 +1276,17 @@ impl std::convert::From<&str> for FieldType {
             "Number" => FieldType::Number,
             "SingleSelect" => FieldType::SingleSelect,
             "Text" => FieldType::Text,
-            other => FieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FieldType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FieldType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FieldType::from(s))
+                }
+            }
 impl FieldType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1342,12 +1296,14 @@ impl FieldType {
             FieldType::Number => "Number",
             FieldType::SingleSelect => "SingleSelect",
             FieldType::Text => "Text",
-            FieldType::Unknown(value) => value.as_str(),
+            FieldType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Boolean", "DateTime", "Number", "SingleSelect", "Text"]
+        &[
+            "Boolean", "DateTime", "Number", "SingleSelect", "Text"
+        ]
     }
 }
 impl AsRef<str> for FieldType {
@@ -1359,20 +1315,20 @@ impl AsRef<str> for FieldType {
 /// <p>Object for unique identifier of a field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldIdentifier {
+pub struct FieldIdentifier  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl FieldIdentifier {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`FieldIdentifier`](crate::model::FieldIdentifier).
 pub mod field_identifier {
-
+    
     /// A builder for [`FieldIdentifier`](crate::model::FieldIdentifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1386,14 +1342,18 @@ pub mod field_identifier {
         }
         /// <p>Unique identifier of a field.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`FieldIdentifier`](crate::model::FieldIdentifier).
         pub fn build(self) -> crate::model::FieldIdentifier {
-            crate::model::FieldIdentifier { id: self.id }
+            crate::model::FieldIdentifier {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl FieldIdentifier {
     /// Creates a new builder-style object to manufacture [`FieldIdentifier`](crate::model::FieldIdentifier).
@@ -1405,7 +1365,7 @@ impl FieldIdentifier {
 /// <p>Object for the summarized details of the field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldSummary {
+pub struct FieldSummary  {
     /// <p>The unique identifier of a field.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -1424,29 +1384,29 @@ pub struct FieldSummary {
 }
 impl FieldSummary {
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(&self) -> std::option::Option<&str> {
+    pub fn field_arn(&self) -> std::option::Option<& str> {
         self.field_arn.as_deref()
     }
     /// <p>Name of the field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of a field.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FieldType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FieldType> {
         self.r#type.as_ref()
     }
     /// <p>The namespace of a field.</p>
-    pub fn namespace(&self) -> std::option::Option<&crate::model::FieldNamespace> {
+    pub fn namespace(&self) -> std::option::Option<& crate::model::FieldNamespace> {
         self.namespace.as_ref()
     }
 }
 /// See [`FieldSummary`](crate::model::FieldSummary).
 pub mod field_summary {
-
+    
     /// A builder for [`FieldSummary`](crate::model::FieldSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1464,8 +1424,7 @@ pub mod field_summary {
         }
         /// <p>The unique identifier of a field.</p>
         pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_id = input;
-            self
+            self.field_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the field.</p>
         pub fn field_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1474,8 +1433,7 @@ pub mod field_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the field.</p>
         pub fn set_field_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_arn = input;
-            self
+            self.field_arn = input; self
         }
         /// <p>Name of the field.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1484,8 +1442,7 @@ pub mod field_summary {
         }
         /// <p>Name of the field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of a field.</p>
         pub fn r#type(mut self, input: crate::model::FieldType) -> Self {
@@ -1494,8 +1451,7 @@ pub mod field_summary {
         }
         /// <p>The type of a field.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FieldType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The namespace of a field.</p>
         pub fn namespace(mut self, input: crate::model::FieldNamespace) -> Self {
@@ -1503,24 +1459,27 @@ pub mod field_summary {
             self
         }
         /// <p>The namespace of a field.</p>
-        pub fn set_namespace(
-            mut self,
-            input: std::option::Option<crate::model::FieldNamespace>,
-        ) -> Self {
-            self.namespace = input;
-            self
+        pub fn set_namespace(mut self, input: std::option::Option<crate::model::FieldNamespace>) -> Self {
+            self.namespace = input; self
         }
         /// Consumes the builder and constructs a [`FieldSummary`](crate::model::FieldSummary).
         pub fn build(self) -> crate::model::FieldSummary {
             crate::model::FieldSummary {
-                field_id: self.field_id,
-                field_arn: self.field_arn,
-                name: self.name,
-                r#type: self.r#type,
-                namespace: self.namespace,
+                field_id: self.field_id
+                ,
+                field_arn: self.field_arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                namespace: self.namespace
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldSummary {
     /// Creates a new builder-style object to manufacture [`FieldSummary`](crate::model::FieldSummary).
@@ -1532,7 +1491,7 @@ impl FieldSummary {
 /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventBridgeConfiguration {
+pub struct EventBridgeConfiguration  {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -1546,13 +1505,13 @@ impl EventBridgeConfiguration {
         self.enabled
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
-    pub fn included_data(&self) -> std::option::Option<&crate::model::EventIncludedData> {
+    pub fn included_data(&self) -> std::option::Option<& crate::model::EventIncludedData> {
         self.included_data.as_ref()
     }
 }
 /// See [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
 pub mod event_bridge_configuration {
-
+    
     /// A builder for [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1567,8 +1526,7 @@ pub mod event_bridge_configuration {
         }
         /// <p>Indicates whether the to broadcast case event data to the customer.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>Details of what case and related item data is published through the case event stream.</p>
         pub fn included_data(mut self, input: crate::model::EventIncludedData) -> Self {
@@ -1576,21 +1534,21 @@ pub mod event_bridge_configuration {
             self
         }
         /// <p>Details of what case and related item data is published through the case event stream.</p>
-        pub fn set_included_data(
-            mut self,
-            input: std::option::Option<crate::model::EventIncludedData>,
-        ) -> Self {
-            self.included_data = input;
-            self
+        pub fn set_included_data(mut self, input: std::option::Option<crate::model::EventIncludedData>) -> Self {
+            self.included_data = input; self
         }
         /// Consumes the builder and constructs a [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
         pub fn build(self) -> crate::model::EventBridgeConfiguration {
             crate::model::EventBridgeConfiguration {
-                enabled: self.enabled,
-                included_data: self.included_data,
+                enabled: self.enabled
+                ,
+                included_data: self.included_data
+                ,
             }
         }
     }
+    
+    
 }
 impl EventBridgeConfiguration {
     /// Creates a new builder-style object to manufacture [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
@@ -1602,7 +1560,7 @@ impl EventBridgeConfiguration {
 /// <p>Details of what case and related item data is published through the case event stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventIncludedData {
+pub struct EventIncludedData  {
     /// <p>Details of what case data is published through the case event stream.</p>
     #[doc(hidden)]
     pub case_data: std::option::Option<crate::model::CaseEventIncludedData>,
@@ -1612,25 +1570,22 @@ pub struct EventIncludedData {
 }
 impl EventIncludedData {
     /// <p>Details of what case data is published through the case event stream.</p>
-    pub fn case_data(&self) -> std::option::Option<&crate::model::CaseEventIncludedData> {
+    pub fn case_data(&self) -> std::option::Option<& crate::model::CaseEventIncludedData> {
         self.case_data.as_ref()
     }
     /// <p>Details of what related item data is published through the case event stream.</p>
-    pub fn related_item_data(
-        &self,
-    ) -> std::option::Option<&crate::model::RelatedItemEventIncludedData> {
+    pub fn related_item_data(&self) -> std::option::Option<& crate::model::RelatedItemEventIncludedData> {
         self.related_item_data.as_ref()
     }
 }
 /// See [`EventIncludedData`](crate::model::EventIncludedData).
 pub mod event_included_data {
-
+    
     /// A builder for [`EventIncludedData`](crate::model::EventIncludedData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_data: std::option::Option<crate::model::CaseEventIncludedData>,
-        pub(crate) related_item_data:
-            std::option::Option<crate::model::RelatedItemEventIncludedData>,
+        pub(crate) related_item_data: std::option::Option<crate::model::RelatedItemEventIncludedData>,
     }
     impl Builder {
         /// <p>Details of what case data is published through the case event stream.</p>
@@ -1639,37 +1594,30 @@ pub mod event_included_data {
             self
         }
         /// <p>Details of what case data is published through the case event stream.</p>
-        pub fn set_case_data(
-            mut self,
-            input: std::option::Option<crate::model::CaseEventIncludedData>,
-        ) -> Self {
-            self.case_data = input;
-            self
+        pub fn set_case_data(mut self, input: std::option::Option<crate::model::CaseEventIncludedData>) -> Self {
+            self.case_data = input; self
         }
         /// <p>Details of what related item data is published through the case event stream.</p>
-        pub fn related_item_data(
-            mut self,
-            input: crate::model::RelatedItemEventIncludedData,
-        ) -> Self {
+        pub fn related_item_data(mut self, input: crate::model::RelatedItemEventIncludedData) -> Self {
             self.related_item_data = Some(input);
             self
         }
         /// <p>Details of what related item data is published through the case event stream.</p>
-        pub fn set_related_item_data(
-            mut self,
-            input: std::option::Option<crate::model::RelatedItemEventIncludedData>,
-        ) -> Self {
-            self.related_item_data = input;
-            self
+        pub fn set_related_item_data(mut self, input: std::option::Option<crate::model::RelatedItemEventIncludedData>) -> Self {
+            self.related_item_data = input; self
         }
         /// Consumes the builder and constructs a [`EventIncludedData`](crate::model::EventIncludedData).
         pub fn build(self) -> crate::model::EventIncludedData {
             crate::model::EventIncludedData {
-                case_data: self.case_data,
-                related_item_data: self.related_item_data,
+                case_data: self.case_data
+                ,
+                related_item_data: self.related_item_data
+                ,
             }
         }
     }
+    
+    
 }
 impl EventIncludedData {
     /// Creates a new builder-style object to manufacture [`EventIncludedData`](crate::model::EventIncludedData).
@@ -1681,7 +1629,7 @@ impl EventIncludedData {
 /// <p>Details of what related item data is published through the case event stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelatedItemEventIncludedData {
+pub struct RelatedItemEventIncludedData  {
     /// <p>Details of what related item data is published through the case event stream.</p>
     #[doc(hidden)]
     pub include_content: std::option::Option<bool>,
@@ -1694,7 +1642,7 @@ impl RelatedItemEventIncludedData {
 }
 /// See [`RelatedItemEventIncludedData`](crate::model::RelatedItemEventIncludedData).
 pub mod related_item_event_included_data {
-
+    
     /// A builder for [`RelatedItemEventIncludedData`](crate::model::RelatedItemEventIncludedData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1708,16 +1656,18 @@ pub mod related_item_event_included_data {
         }
         /// <p>Details of what related item data is published through the case event stream.</p>
         pub fn set_include_content(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_content = input;
-            self
+            self.include_content = input; self
         }
         /// Consumes the builder and constructs a [`RelatedItemEventIncludedData`](crate::model::RelatedItemEventIncludedData).
         pub fn build(self) -> crate::model::RelatedItemEventIncludedData {
             crate::model::RelatedItemEventIncludedData {
-                include_content: self.include_content,
+                include_content: self.include_content
+                ,
             }
         }
     }
+    
+    
 }
 impl RelatedItemEventIncludedData {
     /// Creates a new builder-style object to manufacture [`RelatedItemEventIncludedData`](crate::model::RelatedItemEventIncludedData).
@@ -1729,20 +1679,20 @@ impl RelatedItemEventIncludedData {
 /// <p>Details of what case data is published through the case event stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CaseEventIncludedData {
+pub struct CaseEventIncludedData  {
     /// <p>List of field identifiers.</p>
     #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::FieldIdentifier>>,
 }
 impl CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::FieldIdentifier]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::FieldIdentifier]> {
         self.fields.as_deref()
     }
 }
 /// See [`CaseEventIncludedData`](crate::model::CaseEventIncludedData).
 pub mod case_event_included_data {
-
+    
     /// A builder for [`CaseEventIncludedData`](crate::model::CaseEventIncludedData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1756,25 +1706,24 @@ pub mod case_event_included_data {
         /// <p>List of field identifiers.</p>
         pub fn fields(mut self, input: crate::model::FieldIdentifier) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>List of field identifiers.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldIdentifier>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldIdentifier>>) -> Self {
+            self.fields = input; self
         }
         /// Consumes the builder and constructs a [`CaseEventIncludedData`](crate::model::CaseEventIncludedData).
         pub fn build(self) -> crate::model::CaseEventIncludedData {
             crate::model::CaseEventIncludedData {
-                fields: self.fields,
+                fields: self.fields
+                ,
             }
         }
     }
+    
+    
 }
 impl CaseEventIncludedData {
     /// Creates a new builder-style object to manufacture [`CaseEventIncludedData`](crate::model::CaseEventIncludedData).
@@ -1786,7 +1735,7 @@ impl CaseEventIncludedData {
 /// <p>Object for the summarized details of the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainSummary {
+pub struct DomainSummary  {
     /// <p>The unique identifier of the domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -1799,21 +1748,21 @@ pub struct DomainSummary {
 }
 impl DomainSummary {
     /// <p>The unique identifier of the domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
-    pub fn domain_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_arn(&self) -> std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
-
+    
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1829,8 +1778,7 @@ pub mod domain_summary {
         }
         /// <p>The unique identifier of the domain.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the domain.</p>
         pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1839,8 +1787,7 @@ pub mod domain_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the domain.</p>
         pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_arn = input;
-            self
+            self.domain_arn = input; self
         }
         /// <p>The name of the domain.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1849,18 +1796,22 @@ pub mod domain_summary {
         }
         /// <p>The name of the domain.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary).
         pub fn build(self) -> crate::model::DomainSummary {
             crate::model::DomainSummary {
-                domain_id: self.domain_id,
-                domain_arn: self.domain_arn,
-                name: self.name,
+                domain_id: self.domain_id
+                ,
+                domain_arn: self.domain_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainSummary {
     /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
@@ -1875,9 +1826,9 @@ impl DomainSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let domainstatus = unimplemented!();
 /// match domainstatus {
@@ -1900,22 +1851,14 @@ impl DomainSummary {
 /// Specifically, when `domainstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1924,7 +1867,7 @@ pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreationInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainStatus {
     fn from(s: &str) -> Self {
@@ -1932,17 +1875,17 @@ impl std::convert::From<&str> for DomainStatus {
             "Active" => DomainStatus::Active,
             "CreationFailed" => DomainStatus::CreationFailed,
             "CreationInProgress" => DomainStatus::CreationInProgress,
-            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DomainStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DomainStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DomainStatus::from(s))
+                }
+            }
 impl DomainStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1950,12 +1893,14 @@ impl DomainStatus {
             DomainStatus::Active => "Active",
             DomainStatus::CreationFailed => "CreationFailed",
             DomainStatus::CreationInProgress => "CreationInProgress",
-            DomainStatus::Unknown(value) => value.as_str(),
+            DomainStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "CreationFailed", "CreationInProgress"]
+        &[
+            "Active", "CreationFailed", "CreationInProgress"
+        ]
     }
 }
 impl AsRef<str> for DomainStatus {
@@ -1967,7 +1912,7 @@ impl AsRef<str> for DomainStatus {
 /// <p>A list of items that represent cases.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchCasesResponseItem {
+pub struct SearchCasesResponseItem  {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
@@ -1979,47 +1924,36 @@ pub struct SearchCasesResponseItem {
     pub fields: std::option::Option<std::vec::Vec<crate::model::FieldValue>>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl SearchCasesResponseItem {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>List of case field values.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::FieldValue]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::FieldValue]> {
         self.fields.as_deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
 /// See [`SearchCasesResponseItem`](crate::model::SearchCasesResponseItem).
 pub mod search_cases_response_item {
-
+    
     /// A builder for [`SearchCasesResponseItem`](crate::model::SearchCasesResponseItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::FieldValue>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
     }
     impl Builder {
         /// <p>A unique identifier of the case.</p>
@@ -2029,8 +1963,7 @@ pub mod search_cases_response_item {
         }
         /// <p>A unique identifier of the case.</p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.case_id = input;
-            self
+            self.case_id = input; self
         }
         /// <p>A unique identifier of a template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2039,8 +1972,7 @@ pub mod search_cases_response_item {
         }
         /// <p>A unique identifier of a template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// Appends an item to `fields`.
         ///
@@ -2049,56 +1981,45 @@ pub mod search_cases_response_item {
         /// <p>List of case field values.</p>
         pub fn fields(mut self, input: crate::model::FieldValue) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>List of case field values.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldValue>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldValue>>) -> Self {
+            self.fields = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::option::Option<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::option::Option<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`SearchCasesResponseItem`](crate::model::SearchCasesResponseItem).
         pub fn build(self) -> crate::model::SearchCasesResponseItem {
             crate::model::SearchCasesResponseItem {
-                case_id: self.case_id,
-                template_id: self.template_id,
-                fields: self.fields,
-                tags: self.tags,
+                case_id: self.case_id
+                ,
+                template_id: self.template_id
+                ,
+                fields: self.fields
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchCasesResponseItem {
     /// Creates a new builder-style object to manufacture [`SearchCasesResponseItem`](crate::model::SearchCasesResponseItem).
@@ -2110,7 +2031,7 @@ impl SearchCasesResponseItem {
 /// <p>Object for case field values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldValue {
+pub struct FieldValue  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2120,17 +2041,17 @@ pub struct FieldValue {
 }
 impl FieldValue {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Union of potential field value types.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::FieldValueUnion> {
+    pub fn value(&self) -> std::option::Option<& crate::model::FieldValueUnion> {
         self.value.as_ref()
     }
 }
 /// See [`FieldValue`](crate::model::FieldValue).
 pub mod field_value {
-
+    
     /// A builder for [`FieldValue`](crate::model::FieldValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2145,8 +2066,7 @@ pub mod field_value {
         }
         /// <p>Unique identifier of a field.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Union of potential field value types.</p>
         pub fn value(mut self, input: crate::model::FieldValueUnion) -> Self {
@@ -2154,21 +2074,21 @@ pub mod field_value {
             self
         }
         /// <p>Union of potential field value types.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::FieldValueUnion>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::FieldValueUnion>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`FieldValue`](crate::model::FieldValue).
         pub fn build(self) -> crate::model::FieldValue {
             crate::model::FieldValue {
-                id: self.id,
-                value: self.value,
+                id: self.id
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldValue {
     /// Creates a new builder-style object to manufacture [`FieldValue`](crate::model::FieldValue).
@@ -2201,11 +2121,7 @@ impl FieldValueUnion {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::model::FieldValueUnion::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
-        if let FieldValueUnion::BooleanValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldValueUnion::BooleanValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::FieldValueUnion::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
@@ -2214,11 +2130,7 @@ impl FieldValueUnion {
     /// Tries to convert the enum instance into [`DoubleValue`](crate::model::FieldValueUnion::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
-        if let FieldValueUnion::DoubleValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldValueUnion::DoubleValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`DoubleValue`](crate::model::FieldValueUnion::DoubleValue).
     pub fn is_double_value(&self) -> bool {
@@ -2227,11 +2139,7 @@ impl FieldValueUnion {
     /// Tries to convert the enum instance into [`StringValue`](crate::model::FieldValueUnion::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FieldValueUnion::StringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldValueUnion::StringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::model::FieldValueUnion::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -2246,7 +2154,7 @@ impl FieldValueUnion {
 /// <p>A structured set of sort terms.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sort {
+pub struct Sort  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -2256,17 +2164,17 @@ pub struct Sort {
 }
 impl Sort {
     /// <p>Unique identifier of a field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>A structured set of sort terms</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::Order> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::Order> {
         self.sort_order.as_ref()
     }
 }
 /// See [`Sort`](crate::model::Sort).
 pub mod sort {
-
+    
     /// A builder for [`Sort`](crate::model::Sort).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2281,8 +2189,7 @@ pub mod sort {
         }
         /// <p>Unique identifier of a field.</p>
         pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_id = input;
-            self
+            self.field_id = input; self
         }
         /// <p>A structured set of sort terms</p>
         pub fn sort_order(mut self, input: crate::model::Order) -> Self {
@@ -2291,17 +2198,20 @@ pub mod sort {
         }
         /// <p>A structured set of sort terms</p>
         pub fn set_sort_order(mut self, input: std::option::Option<crate::model::Order>) -> Self {
-            self.sort_order = input;
-            self
+            self.sort_order = input; self
         }
         /// Consumes the builder and constructs a [`Sort`](crate::model::Sort).
         pub fn build(self) -> crate::model::Sort {
             crate::model::Sort {
-                field_id: self.field_id,
-                sort_order: self.sort_order,
+                field_id: self.field_id
+                ,
+                sort_order: self.sort_order
+                ,
             }
         }
     }
+    
+    
 }
 impl Sort {
     /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
@@ -2316,9 +2226,9 @@ impl Sort {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let order = unimplemented!();
 /// match order {
@@ -2340,58 +2250,52 @@ impl Sort {
 /// Specifically, when `order` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Order::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Order {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Order {
     fn from(s: &str) -> Self {
         match s {
             "Asc" => Order::Ascending,
             "Desc" => Order::Descending,
-            other => Order::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Order::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Order {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Order::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Order::from(s))
+                }
+            }
 impl Order {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Order::Ascending => "Asc",
             Order::Descending => "Desc",
-            Order::Unknown(value) => value.as_str(),
+            Order::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Asc", "Desc"]
+        &[
+            "Asc", "Desc"
+        ]
     }
 }
 impl AsRef<str> for Order {
@@ -2423,14 +2327,8 @@ pub enum CaseFilter {
 impl CaseFilter {
     /// Tries to convert the enum instance into [`AndAll`](crate::model::CaseFilter::AndAll), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and_all(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<crate::model::CaseFilter>, &Self> {
-        if let CaseFilter::AndAll(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_and_all(&self) -> std::result::Result<&std::vec::Vec<crate::model::CaseFilter>, &Self> {
+        if let CaseFilter::AndAll(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AndAll`](crate::model::CaseFilter::AndAll).
     pub fn is_and_all(&self) -> bool {
@@ -2439,11 +2337,7 @@ impl CaseFilter {
     /// Tries to convert the enum instance into [`Field`](crate::model::CaseFilter::Field), extracting the inner [`FieldFilter`](crate::model::FieldFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_field(&self) -> std::result::Result<&crate::model::FieldFilter, &Self> {
-        if let CaseFilter::Field(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let CaseFilter::Field(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Field`](crate::model::CaseFilter::Field).
     pub fn is_field(&self) -> bool {
@@ -2452,11 +2346,7 @@ impl CaseFilter {
     /// Tries to convert the enum instance into [`Not`](crate::model::CaseFilter::Not), extracting the inner [`Box`](std::boxed::Box).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_not(&self) -> std::result::Result<&std::boxed::Box<crate::model::CaseFilter>, &Self> {
-        if let CaseFilter::Not(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let CaseFilter::Not(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Not`](crate::model::CaseFilter::Not).
     pub fn is_not(&self) -> bool {
@@ -2498,11 +2388,7 @@ impl FieldFilter {
     /// Tries to convert the enum instance into [`Contains`](crate::model::FieldFilter::Contains), extracting the inner [`FieldValue`](crate::model::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contains(&self) -> std::result::Result<&crate::model::FieldValue, &Self> {
-        if let FieldFilter::Contains(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldFilter::Contains(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Contains`](crate::model::FieldFilter::Contains).
     pub fn is_contains(&self) -> bool {
@@ -2511,11 +2397,7 @@ impl FieldFilter {
     /// Tries to convert the enum instance into [`EqualTo`](crate::model::FieldFilter::EqualTo), extracting the inner [`FieldValue`](crate::model::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_equal_to(&self) -> std::result::Result<&crate::model::FieldValue, &Self> {
-        if let FieldFilter::EqualTo(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldFilter::EqualTo(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`EqualTo`](crate::model::FieldFilter::EqualTo).
     pub fn is_equal_to(&self) -> bool {
@@ -2524,11 +2406,7 @@ impl FieldFilter {
     /// Tries to convert the enum instance into [`GreaterThan`](crate::model::FieldFilter::GreaterThan), extracting the inner [`FieldValue`](crate::model::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_greater_than(&self) -> std::result::Result<&crate::model::FieldValue, &Self> {
-        if let FieldFilter::GreaterThan(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldFilter::GreaterThan(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`GreaterThan`](crate::model::FieldFilter::GreaterThan).
     pub fn is_greater_than(&self) -> bool {
@@ -2536,14 +2414,8 @@ impl FieldFilter {
     }
     /// Tries to convert the enum instance into [`GreaterThanOrEqualTo`](crate::model::FieldFilter::GreaterThanOrEqualTo), extracting the inner [`FieldValue`](crate::model::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_greater_than_or_equal_to(
-        &self,
-    ) -> std::result::Result<&crate::model::FieldValue, &Self> {
-        if let FieldFilter::GreaterThanOrEqualTo(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_greater_than_or_equal_to(&self) -> std::result::Result<&crate::model::FieldValue, &Self> {
+        if let FieldFilter::GreaterThanOrEqualTo(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`GreaterThanOrEqualTo`](crate::model::FieldFilter::GreaterThanOrEqualTo).
     pub fn is_greater_than_or_equal_to(&self) -> bool {
@@ -2552,11 +2424,7 @@ impl FieldFilter {
     /// Tries to convert the enum instance into [`LessThan`](crate::model::FieldFilter::LessThan), extracting the inner [`FieldValue`](crate::model::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_less_than(&self) -> std::result::Result<&crate::model::FieldValue, &Self> {
-        if let FieldFilter::LessThan(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldFilter::LessThan(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`LessThan`](crate::model::FieldFilter::LessThan).
     pub fn is_less_than(&self) -> bool {
@@ -2564,14 +2432,8 @@ impl FieldFilter {
     }
     /// Tries to convert the enum instance into [`LessThanOrEqualTo`](crate::model::FieldFilter::LessThanOrEqualTo), extracting the inner [`FieldValue`](crate::model::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_less_than_or_equal_to(
-        &self,
-    ) -> std::result::Result<&crate::model::FieldValue, &Self> {
-        if let FieldFilter::LessThanOrEqualTo(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_less_than_or_equal_to(&self) -> std::result::Result<&crate::model::FieldValue, &Self> {
+        if let FieldFilter::LessThanOrEqualTo(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`LessThanOrEqualTo`](crate::model::FieldFilter::LessThanOrEqualTo).
     pub fn is_less_than_or_equal_to(&self) -> bool {
@@ -2586,7 +2448,7 @@ impl FieldFilter {
 /// <p>Case summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CaseSummary {
+pub struct CaseSummary  {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
@@ -2596,17 +2458,17 @@ pub struct CaseSummary {
 }
 impl CaseSummary {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
 }
 /// See [`CaseSummary`](crate::model::CaseSummary).
 pub mod case_summary {
-
+    
     /// A builder for [`CaseSummary`](crate::model::CaseSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2621,8 +2483,7 @@ pub mod case_summary {
         }
         /// <p>A unique identifier of the case.</p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.case_id = input;
-            self
+            self.case_id = input; self
         }
         /// <p>A unique identifier of a template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2631,17 +2492,20 @@ pub mod case_summary {
         }
         /// <p>A unique identifier of a template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// Consumes the builder and constructs a [`CaseSummary`](crate::model::CaseSummary).
         pub fn build(self) -> crate::model::CaseSummary {
             crate::model::CaseSummary {
-                case_id: self.case_id,
-                template_id: self.template_id,
+                case_id: self.case_id
+                ,
+                template_id: self.template_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CaseSummary {
     /// Creates a new builder-style object to manufacture [`CaseSummary`](crate::model::CaseSummary).
@@ -2653,7 +2517,7 @@ impl CaseSummary {
 /// <p>A list of items that represent RelatedItems.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchRelatedItemsResponseItem {
+pub struct SearchRelatedItemsResponseItem  {
     /// <p>Unique identifier of a related item.</p>
     #[doc(hidden)]
     pub related_item_id: std::option::Option<std::string::String>,
@@ -2668,39 +2532,33 @@ pub struct SearchRelatedItemsResponseItem {
     pub content: std::option::Option<crate::model::RelatedItemContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl SearchRelatedItemsResponseItem {
     /// <p>Unique identifier of a related item.</p>
-    pub fn related_item_id(&self) -> std::option::Option<&str> {
+    pub fn related_item_id(&self) -> std::option::Option<& str> {
         self.related_item_id.as_deref()
     }
     /// <p>Type of a related item.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RelatedItemType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RelatedItemType> {
         self.r#type.as_ref()
     }
     /// <p>Time at which a related item was associated with a case.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn association_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>Represents the content of a particular type of related item.</p>
-    pub fn content(&self) -> std::option::Option<&crate::model::RelatedItemContent> {
+    pub fn content(&self) -> std::option::Option<& crate::model::RelatedItemContent> {
         self.content.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
 /// See [`SearchRelatedItemsResponseItem`](crate::model::SearchRelatedItemsResponseItem).
 pub mod search_related_items_response_item {
-
+    
     /// A builder for [`SearchRelatedItemsResponseItem`](crate::model::SearchRelatedItemsResponseItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2708,12 +2566,7 @@ pub mod search_related_items_response_item {
         pub(crate) r#type: std::option::Option<crate::model::RelatedItemType>,
         pub(crate) association_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) content: std::option::Option<crate::model::RelatedItemContent>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
     }
     impl Builder {
         /// <p>Unique identifier of a related item.</p>
@@ -2722,12 +2575,8 @@ pub mod search_related_items_response_item {
             self
         }
         /// <p>Unique identifier of a related item.</p>
-        pub fn set_related_item_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.related_item_id = input;
-            self
+        pub fn set_related_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.related_item_id = input; self
         }
         /// <p>Type of a related item.</p>
         pub fn r#type(mut self, input: crate::model::RelatedItemType) -> Self {
@@ -2735,12 +2584,8 @@ pub mod search_related_items_response_item {
             self
         }
         /// <p>Type of a related item.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::RelatedItemType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RelatedItemType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Time at which a related item was associated with a case.</p>
         pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2748,12 +2593,8 @@ pub mod search_related_items_response_item {
             self
         }
         /// <p>Time at which a related item was associated with a case.</p>
-        pub fn set_association_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.association_time = input;
-            self
+        pub fn set_association_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.association_time = input; self
         }
         /// <p>Represents the content of a particular type of related item.</p>
         pub fn content(mut self, input: crate::model::RelatedItemContent) -> Self {
@@ -2761,52 +2602,42 @@ pub mod search_related_items_response_item {
             self
         }
         /// <p>Represents the content of a particular type of related item.</p>
-        pub fn set_content(
-            mut self,
-            input: std::option::Option<crate::model::RelatedItemContent>,
-        ) -> Self {
-            self.content = input;
-            self
+        pub fn set_content(mut self, input: std::option::Option<crate::model::RelatedItemContent>) -> Self {
+            self.content = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::option::Option<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::option::Option<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`SearchRelatedItemsResponseItem`](crate::model::SearchRelatedItemsResponseItem).
         pub fn build(self) -> crate::model::SearchRelatedItemsResponseItem {
             crate::model::SearchRelatedItemsResponseItem {
-                related_item_id: self.related_item_id,
-                r#type: self.r#type,
-                association_time: self.association_time,
-                content: self.content,
-                tags: self.tags,
+                related_item_id: self.related_item_id
+                ,
+                r#type: self.r#type
+                ,
+                association_time: self.association_time
+                ,
+                content: self.content
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchRelatedItemsResponseItem {
     /// Creates a new builder-style object to manufacture [`SearchRelatedItemsResponseItem`](crate::model::SearchRelatedItemsResponseItem).
@@ -2837,11 +2668,7 @@ impl RelatedItemContent {
     /// Tries to convert the enum instance into [`Comment`](crate::model::RelatedItemContent::Comment), extracting the inner [`CommentContent`](crate::model::CommentContent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_comment(&self) -> std::result::Result<&crate::model::CommentContent, &Self> {
-        if let RelatedItemContent::Comment(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let RelatedItemContent::Comment(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Comment`](crate::model::RelatedItemContent::Comment).
     pub fn is_comment(&self) -> bool {
@@ -2850,11 +2677,7 @@ impl RelatedItemContent {
     /// Tries to convert the enum instance into [`Contact`](crate::model::RelatedItemContent::Contact), extracting the inner [`ContactContent`](crate::model::ContactContent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contact(&self) -> std::result::Result<&crate::model::ContactContent, &Self> {
-        if let RelatedItemContent::Contact(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let RelatedItemContent::Contact(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Contact`](crate::model::RelatedItemContent::Contact).
     pub fn is_contact(&self) -> bool {
@@ -2869,7 +2692,7 @@ impl RelatedItemContent {
 /// <p>Represents the content of a <code>Comment</code> to be returned to agents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommentContent {
+pub struct CommentContent  {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
     #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
@@ -2879,17 +2702,17 @@ pub struct CommentContent {
 }
 impl CommentContent {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::model::CommentBodyTextType> {
+    pub fn content_type(&self) -> std::option::Option<& crate::model::CommentBodyTextType> {
         self.content_type.as_ref()
     }
 }
 /// See [`CommentContent`](crate::model::CommentContent).
 pub mod comment_content {
-
+    
     /// A builder for [`CommentContent`](crate::model::CommentContent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2904,8 +2727,7 @@ pub mod comment_content {
         }
         /// <p>Text in the body of a <code>Comment</code> on a case.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.body = input;
-            self
+            self.body = input; self
         }
         /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
         pub fn content_type(mut self, input: crate::model::CommentBodyTextType) -> Self {
@@ -2913,21 +2735,21 @@ pub mod comment_content {
             self
         }
         /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
-        pub fn set_content_type(
-            mut self,
-            input: std::option::Option<crate::model::CommentBodyTextType>,
-        ) -> Self {
-            self.content_type = input;
-            self
+        pub fn set_content_type(mut self, input: std::option::Option<crate::model::CommentBodyTextType>) -> Self {
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`CommentContent`](crate::model::CommentContent).
         pub fn build(self) -> crate::model::CommentContent {
             crate::model::CommentContent {
-                body: self.body,
-                content_type: self.content_type,
+                body: self.body
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
+    
+    
 }
 impl CommentContent {
     /// Creates a new builder-style object to manufacture [`CommentContent`](crate::model::CommentContent).
@@ -2942,9 +2764,9 @@ impl CommentContent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let commentbodytexttype = unimplemented!();
 /// match commentbodytexttype {
@@ -2965,56 +2787,48 @@ impl CommentContent {
 /// Specifically, when `commentbodytexttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CommentBodyTextType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CommentBodyTextType {
     #[allow(missing_docs)] // documentation missing in model
     Plaintext,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CommentBodyTextType {
     fn from(s: &str) -> Self {
         match s {
             "Text/Plain" => CommentBodyTextType::Plaintext,
-            other => {
-                CommentBodyTextType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CommentBodyTextType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CommentBodyTextType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CommentBodyTextType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CommentBodyTextType::from(s))
+                }
+            }
 impl CommentBodyTextType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CommentBodyTextType::Plaintext => "Text/Plain",
-            CommentBodyTextType::Unknown(value) => value.as_str(),
+            CommentBodyTextType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Text/Plain"]
+        &[
+            "Text/Plain"
+        ]
     }
 }
 impl AsRef<str> for CommentBodyTextType {
@@ -3026,7 +2840,7 @@ impl AsRef<str> for CommentBodyTextType {
 /// <p>An object that represents a content of an Amazon Connect contact object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactContent {
+pub struct ContactContent  {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -3039,21 +2853,21 @@ pub struct ContactContent {
 }
 impl ContactContent {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn channel(&self) -> std::option::Option<&str> {
+    pub fn channel(&self) -> std::option::Option<& str> {
         self.channel.as_deref()
     }
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
-    pub fn connected_to_system_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn connected_to_system_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.connected_to_system_time.as_ref()
     }
 }
 /// See [`ContactContent`](crate::model::ContactContent).
 pub mod contact_content {
-
+    
     /// A builder for [`ContactContent`](crate::model::ContactContent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3069,8 +2883,7 @@ pub mod contact_content {
         }
         /// <p>A unique identifier of a contact in Amazon Connect.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
         pub fn channel(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3079,8 +2892,7 @@ pub mod contact_content {
         }
         /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
         pub fn set_channel(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel = input;
-            self
+            self.channel = input; self
         }
         /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
         pub fn connected_to_system_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3088,22 +2900,23 @@ pub mod contact_content {
             self
         }
         /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
-        pub fn set_connected_to_system_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.connected_to_system_time = input;
-            self
+        pub fn set_connected_to_system_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.connected_to_system_time = input; self
         }
         /// Consumes the builder and constructs a [`ContactContent`](crate::model::ContactContent).
         pub fn build(self) -> crate::model::ContactContent {
             crate::model::ContactContent {
-                contact_arn: self.contact_arn,
-                channel: self.channel,
-                connected_to_system_time: self.connected_to_system_time,
+                contact_arn: self.contact_arn
+                ,
+                channel: self.channel
+                ,
+                connected_to_system_time: self.connected_to_system_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ContactContent {
     /// Creates a new builder-style object to manufacture [`ContactContent`](crate::model::ContactContent).
@@ -3118,9 +2931,9 @@ impl ContactContent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let relateditemtype = unimplemented!();
 /// match relateditemtype {
@@ -3142,58 +2955,52 @@ impl ContactContent {
 /// Specifically, when `relateditemtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RelatedItemType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RelatedItemType {
     #[allow(missing_docs)] // documentation missing in model
     Comment,
     #[allow(missing_docs)] // documentation missing in model
     Contact,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RelatedItemType {
     fn from(s: &str) -> Self {
         match s {
             "Comment" => RelatedItemType::Comment,
             "Contact" => RelatedItemType::Contact,
-            other => RelatedItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RelatedItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RelatedItemType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RelatedItemType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RelatedItemType::from(s))
+                }
+            }
 impl RelatedItemType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelatedItemType::Comment => "Comment",
             RelatedItemType::Contact => "Contact",
-            RelatedItemType::Unknown(value) => value.as_str(),
+            RelatedItemType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Comment", "Contact"]
+        &[
+            "Comment", "Contact"
+        ]
     }
 }
 impl AsRef<str> for RelatedItemType {
@@ -3224,11 +3031,7 @@ impl RelatedItemTypeFilter {
     /// Tries to convert the enum instance into [`Comment`](crate::model::RelatedItemTypeFilter::Comment), extracting the inner [`CommentFilter`](crate::model::CommentFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_comment(&self) -> std::result::Result<&crate::model::CommentFilter, &Self> {
-        if let RelatedItemTypeFilter::Comment(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let RelatedItemTypeFilter::Comment(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Comment`](crate::model::RelatedItemTypeFilter::Comment).
     pub fn is_comment(&self) -> bool {
@@ -3237,11 +3040,7 @@ impl RelatedItemTypeFilter {
     /// Tries to convert the enum instance into [`Contact`](crate::model::RelatedItemTypeFilter::Contact), extracting the inner [`ContactFilter`](crate::model::ContactFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contact(&self) -> std::result::Result<&crate::model::ContactFilter, &Self> {
-        if let RelatedItemTypeFilter::Contact(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let RelatedItemTypeFilter::Contact(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Contact`](crate::model::RelatedItemTypeFilter::Contact).
     pub fn is_contact(&self) -> bool {
@@ -3256,19 +3055,24 @@ impl RelatedItemTypeFilter {
 /// <p>A filter for related items of type <code>Comment</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommentFilter {}
+pub struct CommentFilter  {
+}
 /// See [`CommentFilter`](crate::model::CommentFilter).
 pub mod comment_filter {
-
+    
     /// A builder for [`CommentFilter`](crate::model::CommentFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CommentFilter`](crate::model::CommentFilter).
         pub fn build(self) -> crate::model::CommentFilter {
-            crate::model::CommentFilter {}
+            crate::model::CommentFilter {
+            }
         }
     }
+    
+    
 }
 impl CommentFilter {
     /// Creates a new builder-style object to manufacture [`CommentFilter`](crate::model::CommentFilter).
@@ -3280,7 +3084,7 @@ impl CommentFilter {
 /// <p>A filter for related items of type <code>Contact</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactFilter {
+pub struct ContactFilter  {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3290,17 +3094,17 @@ pub struct ContactFilter {
 }
 impl ContactFilter {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn channel(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn channel(&self) -> std::option::Option<& [std::string::String]> {
         self.channel.as_deref()
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
 /// See [`ContactFilter`](crate::model::ContactFilter).
 pub mod contact_filter {
-
+    
     /// A builder for [`ContactFilter`](crate::model::ContactFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3315,17 +3119,13 @@ pub mod contact_filter {
         /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
         pub fn channel(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.channel.unwrap_or_default();
-            v.push(input.into());
-            self.channel = Some(v);
-            self
+                            v.push(input.into());
+                            self.channel = Some(v);
+                            self
         }
         /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-        pub fn set_channel(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.channel = input;
-            self
+        pub fn set_channel(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.channel = input; self
         }
         /// <p>A unique identifier of a contact in Amazon Connect.</p>
         pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3334,17 +3134,20 @@ pub mod contact_filter {
         }
         /// <p>A unique identifier of a contact in Amazon Connect.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// Consumes the builder and constructs a [`ContactFilter`](crate::model::ContactFilter).
         pub fn build(self) -> crate::model::ContactFilter {
             crate::model::ContactFilter {
-                channel: self.channel,
-                contact_arn: self.contact_arn,
+                channel: self.channel
+                ,
+                contact_arn: self.contact_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ContactFilter {
     /// Creates a new builder-style object to manufacture [`ContactFilter`](crate::model::ContactFilter).
@@ -3375,11 +3178,7 @@ impl RelatedItemInputContent {
     /// Tries to convert the enum instance into [`Comment`](crate::model::RelatedItemInputContent::Comment), extracting the inner [`CommentContent`](crate::model::CommentContent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_comment(&self) -> std::result::Result<&crate::model::CommentContent, &Self> {
-        if let RelatedItemInputContent::Comment(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let RelatedItemInputContent::Comment(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Comment`](crate::model::RelatedItemInputContent::Comment).
     pub fn is_comment(&self) -> bool {
@@ -3388,11 +3187,7 @@ impl RelatedItemInputContent {
     /// Tries to convert the enum instance into [`Contact`](crate::model::RelatedItemInputContent::Contact), extracting the inner [`Contact`](crate::model::Contact).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contact(&self) -> std::result::Result<&crate::model::Contact, &Self> {
-        if let RelatedItemInputContent::Contact(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let RelatedItemInputContent::Contact(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Contact`](crate::model::RelatedItemInputContent::Contact).
     pub fn is_contact(&self) -> bool {
@@ -3407,20 +3202,20 @@ impl RelatedItemInputContent {
 /// <p>An object that represents an Amazon Connect contact object. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Contact {
+pub struct Contact  {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl Contact {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
 /// See [`Contact`](crate::model::Contact).
 pub mod contact {
-
+    
     /// A builder for [`Contact`](crate::model::Contact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3434,16 +3229,18 @@ pub mod contact {
         }
         /// <p>A unique identifier of a contact in Amazon Connect.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// Consumes the builder and constructs a [`Contact`](crate::model::Contact).
         pub fn build(self) -> crate::model::Contact {
             crate::model::Contact {
-                contact_arn: self.contact_arn,
+                contact_arn: self.contact_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Contact {
     /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
@@ -3451,3 +3248,4 @@ impl Contact {
         crate::model::contact::Builder::default()
     }
 }
+

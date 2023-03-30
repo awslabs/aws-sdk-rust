@@ -3,7 +3,7 @@
 /// <p>The resource configuration for updating backend storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendStorageResourceConfig {
+pub struct UpdateBackendStorageResourceConfig  {
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<crate::model::BackendStoragePermissions>,
@@ -13,17 +13,17 @@ pub struct UpdateBackendStorageResourceConfig {
 }
 impl UpdateBackendStorageResourceConfig {
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    pub fn permissions(&self) -> std::option::Option<&crate::model::BackendStoragePermissions> {
+    pub fn permissions(&self) -> std::option::Option<& crate::model::BackendStoragePermissions> {
         self.permissions.as_ref()
     }
     /// <p>The name of the storage service.</p>
-    pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
+    pub fn service_name(&self) -> std::option::Option<& crate::model::ServiceName> {
         self.service_name.as_ref()
     }
 }
 /// See [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
 pub mod update_backend_storage_resource_config {
-
+    
     /// A builder for [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,12 +37,8 @@ pub mod update_backend_storage_resource_config {
             self
         }
         /// <p>The authorization configuration for the storage S3 bucket.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<crate::model::BackendStoragePermissions>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<crate::model::BackendStoragePermissions>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The name of the storage service.</p>
         pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
@@ -50,21 +46,21 @@ pub mod update_backend_storage_resource_config {
             self
         }
         /// <p>The name of the storage service.</p>
-        pub fn set_service_name(
-            mut self,
-            input: std::option::Option<crate::model::ServiceName>,
-        ) -> Self {
-            self.service_name = input;
-            self
+        pub fn set_service_name(mut self, input: std::option::Option<crate::model::ServiceName>) -> Self {
+            self.service_name = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
         pub fn build(self) -> crate::model::UpdateBackendStorageResourceConfig {
             crate::model::UpdateBackendStorageResourceConfig {
-                permissions: self.permissions,
-                service_name: self.service_name,
+                permissions: self.permissions
+                ,
+                service_name: self.service_name
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendStorageResourceConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
@@ -79,9 +75,9 @@ impl UpdateBackendStorageResourceConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicename = unimplemented!();
 /// match servicename {
@@ -102,54 +98,48 @@ impl UpdateBackendStorageResourceConfig {
 /// Specifically, when `servicename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceName {
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceName {
     fn from(s: &str) -> Self {
         match s {
             "S3" => ServiceName::S3,
-            other => ServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceName::from(s))
+                }
+            }
 impl ServiceName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceName::S3 => "S3",
-            ServiceName::Unknown(value) => value.as_str(),
+            ServiceName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["S3"]
+        &[
+            "S3"
+        ]
     }
 }
 impl AsRef<str> for ServiceName {
@@ -161,7 +151,7 @@ impl AsRef<str> for ServiceName {
 /// <p>Describes the read, write, and delete permissions users have against your storage S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendStoragePermissions {
+pub struct BackendStoragePermissions  {
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
     #[doc(hidden)]
     pub authenticated: std::option::Option<std::vec::Vec<crate::model::AuthenticatedElement>>,
@@ -171,24 +161,22 @@ pub struct BackendStoragePermissions {
 }
 impl BackendStoragePermissions {
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn authenticated(&self) -> std::option::Option<&[crate::model::AuthenticatedElement]> {
+    pub fn authenticated(&self) -> std::option::Option<& [crate::model::AuthenticatedElement]> {
         self.authenticated.as_deref()
     }
     /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn un_authenticated(&self) -> std::option::Option<&[crate::model::UnAuthenticatedElement]> {
+    pub fn un_authenticated(&self) -> std::option::Option<& [crate::model::UnAuthenticatedElement]> {
         self.un_authenticated.as_deref()
     }
 }
 /// See [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
 pub mod backend_storage_permissions {
-
+    
     /// A builder for [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) authenticated:
-            std::option::Option<std::vec::Vec<crate::model::AuthenticatedElement>>,
-        pub(crate) un_authenticated:
-            std::option::Option<std::vec::Vec<crate::model::UnAuthenticatedElement>>,
+        pub(crate) authenticated: std::option::Option<std::vec::Vec<crate::model::AuthenticatedElement>>,
+        pub(crate) un_authenticated: std::option::Option<std::vec::Vec<crate::model::UnAuthenticatedElement>>,
     }
     impl Builder {
         /// Appends an item to `authenticated`.
@@ -198,17 +186,13 @@ pub mod backend_storage_permissions {
         /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
         pub fn authenticated(mut self, input: crate::model::AuthenticatedElement) -> Self {
             let mut v = self.authenticated.unwrap_or_default();
-            v.push(input);
-            self.authenticated = Some(v);
-            self
+                            v.push(input);
+                            self.authenticated = Some(v);
+                            self
         }
         /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
-        pub fn set_authenticated(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AuthenticatedElement>>,
-        ) -> Self {
-            self.authenticated = input;
-            self
+        pub fn set_authenticated(mut self, input: std::option::Option<std::vec::Vec<crate::model::AuthenticatedElement>>) -> Self {
+            self.authenticated = input; self
         }
         /// Appends an item to `un_authenticated`.
         ///
@@ -217,26 +201,26 @@ pub mod backend_storage_permissions {
         /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
         pub fn un_authenticated(mut self, input: crate::model::UnAuthenticatedElement) -> Self {
             let mut v = self.un_authenticated.unwrap_or_default();
-            v.push(input);
-            self.un_authenticated = Some(v);
-            self
+                            v.push(input);
+                            self.un_authenticated = Some(v);
+                            self
         }
         /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
-        pub fn set_un_authenticated(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnAuthenticatedElement>>,
-        ) -> Self {
-            self.un_authenticated = input;
-            self
+        pub fn set_un_authenticated(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnAuthenticatedElement>>) -> Self {
+            self.un_authenticated = input; self
         }
         /// Consumes the builder and constructs a [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
         pub fn build(self) -> crate::model::BackendStoragePermissions {
             crate::model::BackendStoragePermissions {
-                authenticated: self.authenticated,
-                un_authenticated: self.un_authenticated,
+                authenticated: self.authenticated
+                ,
+                un_authenticated: self.un_authenticated
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendStoragePermissions {
     /// Creates a new builder-style object to manufacture [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
@@ -251,9 +235,9 @@ impl BackendStoragePermissions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let unauthenticatedelement = unimplemented!();
 /// match unauthenticatedelement {
@@ -276,22 +260,14 @@ impl BackendStoragePermissions {
 /// Specifically, when `unauthenticatedelement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UnAuthenticatedElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UnAuthenticatedElement {
     #[allow(missing_docs)] // documentation missing in model
     CreateAndUpdate,
@@ -300,7 +276,7 @@ pub enum UnAuthenticatedElement {
     #[allow(missing_docs)] // documentation missing in model
     Read,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UnAuthenticatedElement {
     fn from(s: &str) -> Self {
@@ -308,19 +284,17 @@ impl std::convert::From<&str> for UnAuthenticatedElement {
             "CREATE_AND_UPDATE" => UnAuthenticatedElement::CreateAndUpdate,
             "DELETE" => UnAuthenticatedElement::Delete,
             "READ" => UnAuthenticatedElement::Read,
-            other => {
-                UnAuthenticatedElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UnAuthenticatedElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UnAuthenticatedElement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UnAuthenticatedElement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UnAuthenticatedElement::from(s))
+                }
+            }
 impl UnAuthenticatedElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -328,12 +302,14 @@ impl UnAuthenticatedElement {
             UnAuthenticatedElement::CreateAndUpdate => "CREATE_AND_UPDATE",
             UnAuthenticatedElement::Delete => "DELETE",
             UnAuthenticatedElement::Read => "READ",
-            UnAuthenticatedElement::Unknown(value) => value.as_str(),
+            UnAuthenticatedElement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_AND_UPDATE", "DELETE", "READ"]
+        &[
+            "CREATE_AND_UPDATE", "DELETE", "READ"
+        ]
     }
 }
 impl AsRef<str> for UnAuthenticatedElement {
@@ -348,9 +324,9 @@ impl AsRef<str> for UnAuthenticatedElement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authenticatedelement = unimplemented!();
 /// match authenticatedelement {
@@ -373,22 +349,14 @@ impl AsRef<str> for UnAuthenticatedElement {
 /// Specifically, when `authenticatedelement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthenticatedElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthenticatedElement {
     #[allow(missing_docs)] // documentation missing in model
     CreateAndUpdate,
@@ -397,7 +365,7 @@ pub enum AuthenticatedElement {
     #[allow(missing_docs)] // documentation missing in model
     Read,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthenticatedElement {
     fn from(s: &str) -> Self {
@@ -405,19 +373,17 @@ impl std::convert::From<&str> for AuthenticatedElement {
             "CREATE_AND_UPDATE" => AuthenticatedElement::CreateAndUpdate,
             "DELETE" => AuthenticatedElement::Delete,
             "READ" => AuthenticatedElement::Read,
-            other => {
-                AuthenticatedElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthenticatedElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthenticatedElement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthenticatedElement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthenticatedElement::from(s))
+                }
+            }
 impl AuthenticatedElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -425,12 +391,14 @@ impl AuthenticatedElement {
             AuthenticatedElement::CreateAndUpdate => "CREATE_AND_UPDATE",
             AuthenticatedElement::Delete => "DELETE",
             AuthenticatedElement::Read => "READ",
-            AuthenticatedElement::Unknown(value) => value.as_str(),
+            AuthenticatedElement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_AND_UPDATE", "DELETE", "READ"]
+        &[
+            "CREATE_AND_UPDATE", "DELETE", "READ"
+        ]
     }
 }
 impl AsRef<str> for AuthenticatedElement {
@@ -442,7 +410,7 @@ impl AsRef<str> for AuthenticatedElement {
 /// <p>The request object for this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoginAuthConfigReqObj {
+pub struct LoginAuthConfigReqObj  {
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
     #[doc(hidden)]
     pub aws_cognito_identity_pool_id: std::option::Option<std::string::String>,
@@ -458,25 +426,25 @@ pub struct LoginAuthConfigReqObj {
 }
 impl LoginAuthConfigReqObj {
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
-    pub fn aws_cognito_identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn aws_cognito_identity_pool_id(&self) -> std::option::Option<& str> {
         self.aws_cognito_identity_pool_id.as_deref()
     }
     /// <p>The AWS Region for the Amplify Admin UI login.</p>
-    pub fn aws_cognito_region(&self) -> std::option::Option<&str> {
+    pub fn aws_cognito_region(&self) -> std::option::Option<& str> {
         self.aws_cognito_region.as_deref()
     }
     /// <p>The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.</p>
-    pub fn aws_user_pools_id(&self) -> std::option::Option<&str> {
+    pub fn aws_user_pools_id(&self) -> std::option::Option<& str> {
         self.aws_user_pools_id.as_deref()
     }
     /// <p>The web client ID for the Amazon Cognito user pools.</p>
-    pub fn aws_user_pools_web_client_id(&self) -> std::option::Option<&str> {
+    pub fn aws_user_pools_web_client_id(&self) -> std::option::Option<& str> {
         self.aws_user_pools_web_client_id.as_deref()
     }
 }
 /// See [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
 pub mod login_auth_config_req_obj {
-
+    
     /// A builder for [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -487,20 +455,13 @@ pub mod login_auth_config_req_obj {
     }
     impl Builder {
         /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
-        pub fn aws_cognito_identity_pool_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn aws_cognito_identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_cognito_identity_pool_id = Some(input.into());
             self
         }
         /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
-        pub fn set_aws_cognito_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_cognito_identity_pool_id = input;
-            self
+        pub fn set_aws_cognito_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_cognito_identity_pool_id = input; self
         }
         /// <p>The AWS Region for the Amplify Admin UI login.</p>
         pub fn aws_cognito_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -508,12 +469,8 @@ pub mod login_auth_config_req_obj {
             self
         }
         /// <p>The AWS Region for the Amplify Admin UI login.</p>
-        pub fn set_aws_cognito_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_cognito_region = input;
-            self
+        pub fn set_aws_cognito_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_cognito_region = input; self
         }
         /// <p>The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.</p>
         pub fn aws_user_pools_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -521,39 +478,34 @@ pub mod login_auth_config_req_obj {
             self
         }
         /// <p>The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.</p>
-        pub fn set_aws_user_pools_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_user_pools_id = input;
-            self
+        pub fn set_aws_user_pools_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_user_pools_id = input; self
         }
         /// <p>The web client ID for the Amazon Cognito user pools.</p>
-        pub fn aws_user_pools_web_client_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn aws_user_pools_web_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_user_pools_web_client_id = Some(input.into());
             self
         }
         /// <p>The web client ID for the Amazon Cognito user pools.</p>
-        pub fn set_aws_user_pools_web_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_user_pools_web_client_id = input;
-            self
+        pub fn set_aws_user_pools_web_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_user_pools_web_client_id = input; self
         }
         /// Consumes the builder and constructs a [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
         pub fn build(self) -> crate::model::LoginAuthConfigReqObj {
             crate::model::LoginAuthConfigReqObj {
-                aws_cognito_identity_pool_id: self.aws_cognito_identity_pool_id,
-                aws_cognito_region: self.aws_cognito_region,
-                aws_user_pools_id: self.aws_user_pools_id,
-                aws_user_pools_web_client_id: self.aws_user_pools_web_client_id,
+                aws_cognito_identity_pool_id: self.aws_cognito_identity_pool_id
+                ,
+                aws_cognito_region: self.aws_cognito_region
+                ,
+                aws_user_pools_id: self.aws_user_pools_id
+                ,
+                aws_user_pools_web_client_id: self.aws_user_pools_web_client_id
+                ,
             }
         }
     }
+    
+    
 }
 impl LoginAuthConfigReqObj {
     /// Creates a new builder-style object to manufacture [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
@@ -565,14 +517,13 @@ impl LoginAuthConfigReqObj {
 /// <p>Defines the resource configuration when updating an authentication resource in your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthResourceConfig {
+pub struct UpdateBackendAuthResourceConfig  {
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
     #[doc(hidden)]
     pub auth_resources: std::option::Option<crate::model::AuthResources>,
     /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
     #[doc(hidden)]
-    pub identity_pool_configs:
-        std::option::Option<crate::model::UpdateBackendAuthIdentityPoolConfig>,
+    pub identity_pool_configs: std::option::Option<crate::model::UpdateBackendAuthIdentityPoolConfig>,
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
@@ -582,38 +533,32 @@ pub struct UpdateBackendAuthResourceConfig {
 }
 impl UpdateBackendAuthResourceConfig {
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
-    pub fn auth_resources(&self) -> std::option::Option<&crate::model::AuthResources> {
+    pub fn auth_resources(&self) -> std::option::Option<& crate::model::AuthResources> {
         self.auth_resources.as_ref()
     }
     /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
-    pub fn identity_pool_configs(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdateBackendAuthIdentityPoolConfig> {
+    pub fn identity_pool_configs(&self) -> std::option::Option<& crate::model::UpdateBackendAuthIdentityPoolConfig> {
         self.identity_pool_configs.as_ref()
     }
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
-    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+    pub fn service(&self) -> std::option::Option<& crate::model::Service> {
         self.service.as_ref()
     }
     /// <p>Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
-    pub fn user_pool_configs(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdateBackendAuthUserPoolConfig> {
+    pub fn user_pool_configs(&self) -> std::option::Option<& crate::model::UpdateBackendAuthUserPoolConfig> {
         self.user_pool_configs.as_ref()
     }
 }
 /// See [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
 pub mod update_backend_auth_resource_config {
-
+    
     /// A builder for [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_resources: std::option::Option<crate::model::AuthResources>,
-        pub(crate) identity_pool_configs:
-            std::option::Option<crate::model::UpdateBackendAuthIdentityPoolConfig>,
+        pub(crate) identity_pool_configs: std::option::Option<crate::model::UpdateBackendAuthIdentityPoolConfig>,
         pub(crate) service: std::option::Option<crate::model::Service>,
-        pub(crate) user_pool_configs:
-            std::option::Option<crate::model::UpdateBackendAuthUserPoolConfig>,
+        pub(crate) user_pool_configs: std::option::Option<crate::model::UpdateBackendAuthUserPoolConfig>,
     }
     impl Builder {
         /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
@@ -622,28 +567,17 @@ pub mod update_backend_auth_resource_config {
             self
         }
         /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
-        pub fn set_auth_resources(
-            mut self,
-            input: std::option::Option<crate::model::AuthResources>,
-        ) -> Self {
-            self.auth_resources = input;
-            self
+        pub fn set_auth_resources(mut self, input: std::option::Option<crate::model::AuthResources>) -> Self {
+            self.auth_resources = input; self
         }
         /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
-        pub fn identity_pool_configs(
-            mut self,
-            input: crate::model::UpdateBackendAuthIdentityPoolConfig,
-        ) -> Self {
+        pub fn identity_pool_configs(mut self, input: crate::model::UpdateBackendAuthIdentityPoolConfig) -> Self {
             self.identity_pool_configs = Some(input);
             self
         }
         /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
-        pub fn set_identity_pool_configs(
-            mut self,
-            input: std::option::Option<crate::model::UpdateBackendAuthIdentityPoolConfig>,
-        ) -> Self {
-            self.identity_pool_configs = input;
-            self
+        pub fn set_identity_pool_configs(mut self, input: std::option::Option<crate::model::UpdateBackendAuthIdentityPoolConfig>) -> Self {
+            self.identity_pool_configs = input; self
         }
         /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
         pub fn service(mut self, input: crate::model::Service) -> Self {
@@ -652,35 +586,33 @@ pub mod update_backend_auth_resource_config {
         }
         /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p>Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
-        pub fn user_pool_configs(
-            mut self,
-            input: crate::model::UpdateBackendAuthUserPoolConfig,
-        ) -> Self {
+        pub fn user_pool_configs(mut self, input: crate::model::UpdateBackendAuthUserPoolConfig) -> Self {
             self.user_pool_configs = Some(input);
             self
         }
         /// <p>Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
-        pub fn set_user_pool_configs(
-            mut self,
-            input: std::option::Option<crate::model::UpdateBackendAuthUserPoolConfig>,
-        ) -> Self {
-            self.user_pool_configs = input;
-            self
+        pub fn set_user_pool_configs(mut self, input: std::option::Option<crate::model::UpdateBackendAuthUserPoolConfig>) -> Self {
+            self.user_pool_configs = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
         pub fn build(self) -> crate::model::UpdateBackendAuthResourceConfig {
             crate::model::UpdateBackendAuthResourceConfig {
-                auth_resources: self.auth_resources,
-                identity_pool_configs: self.identity_pool_configs,
-                service: self.service,
-                user_pool_configs: self.user_pool_configs,
+                auth_resources: self.auth_resources
+                ,
+                identity_pool_configs: self.identity_pool_configs
+                ,
+                service: self.service
+                ,
+                user_pool_configs: self.user_pool_configs
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthResourceConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
@@ -692,7 +624,7 @@ impl UpdateBackendAuthResourceConfig {
 /// <p>Describes the Amazon Cognito user pool configuration for the authorization resource to be configured for your Amplify project on an update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthUserPoolConfig {
+pub struct UpdateBackendAuthUserPoolConfig  {
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
     pub forgot_password: std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
@@ -707,68 +639,51 @@ pub struct UpdateBackendAuthUserPoolConfig {
     pub password_policy: std::option::Option<crate::model::UpdateBackendAuthPasswordPolicyConfig>,
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub verification_message:
-        std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>,
+    pub verification_message: std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>,
 }
 impl UpdateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn forgot_password(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdateBackendAuthForgotPasswordConfig> {
+    pub fn forgot_password(&self) -> std::option::Option<& crate::model::UpdateBackendAuthForgotPasswordConfig> {
         self.forgot_password.as_ref()
     }
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
-    pub fn mfa(&self) -> std::option::Option<&crate::model::UpdateBackendAuthMfaConfig> {
+    pub fn mfa(&self) -> std::option::Option<& crate::model::UpdateBackendAuthMfaConfig> {
         self.mfa.as_ref()
     }
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn o_auth(&self) -> std::option::Option<&crate::model::UpdateBackendAuthOAuthConfig> {
+    pub fn o_auth(&self) -> std::option::Option<& crate::model::UpdateBackendAuthOAuthConfig> {
         self.o_auth.as_ref()
     }
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn password_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdateBackendAuthPasswordPolicyConfig> {
+    pub fn password_policy(&self) -> std::option::Option<& crate::model::UpdateBackendAuthPasswordPolicyConfig> {
         self.password_policy.as_ref()
     }
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn verification_message(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdateBackendAuthVerificationMessageConfig> {
+    pub fn verification_message(&self) -> std::option::Option<& crate::model::UpdateBackendAuthVerificationMessageConfig> {
         self.verification_message.as_ref()
     }
 }
 /// See [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
 pub mod update_backend_auth_user_pool_config {
-
+    
     /// A builder for [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) forgot_password:
-            std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
+        pub(crate) forgot_password: std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
         pub(crate) mfa: std::option::Option<crate::model::UpdateBackendAuthMfaConfig>,
         pub(crate) o_auth: std::option::Option<crate::model::UpdateBackendAuthOAuthConfig>,
-        pub(crate) password_policy:
-            std::option::Option<crate::model::UpdateBackendAuthPasswordPolicyConfig>,
-        pub(crate) verification_message:
-            std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>,
+        pub(crate) password_policy: std::option::Option<crate::model::UpdateBackendAuthPasswordPolicyConfig>,
+        pub(crate) verification_message: std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>,
     }
     impl Builder {
         /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn forgot_password(
-            mut self,
-            input: crate::model::UpdateBackendAuthForgotPasswordConfig,
-        ) -> Self {
+        pub fn forgot_password(mut self, input: crate::model::UpdateBackendAuthForgotPasswordConfig) -> Self {
             self.forgot_password = Some(input);
             self
         }
         /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_forgot_password(
-            mut self,
-            input: std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
-        ) -> Self {
-            self.forgot_password = input;
-            self
+        pub fn set_forgot_password(mut self, input: std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>) -> Self {
+            self.forgot_password = input; self
         }
         /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
         pub fn mfa(mut self, input: crate::model::UpdateBackendAuthMfaConfig) -> Self {
@@ -776,12 +691,8 @@ pub mod update_backend_auth_user_pool_config {
             self
         }
         /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
-        pub fn set_mfa(
-            mut self,
-            input: std::option::Option<crate::model::UpdateBackendAuthMfaConfig>,
-        ) -> Self {
-            self.mfa = input;
-            self
+        pub fn set_mfa(mut self, input: std::option::Option<crate::model::UpdateBackendAuthMfaConfig>) -> Self {
+            self.mfa = input; self
         }
         /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
         pub fn o_auth(mut self, input: crate::model::UpdateBackendAuthOAuthConfig) -> Self {
@@ -789,56 +700,45 @@ pub mod update_backend_auth_user_pool_config {
             self
         }
         /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_o_auth(
-            mut self,
-            input: std::option::Option<crate::model::UpdateBackendAuthOAuthConfig>,
-        ) -> Self {
-            self.o_auth = input;
-            self
+        pub fn set_o_auth(mut self, input: std::option::Option<crate::model::UpdateBackendAuthOAuthConfig>) -> Self {
+            self.o_auth = input; self
         }
         /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn password_policy(
-            mut self,
-            input: crate::model::UpdateBackendAuthPasswordPolicyConfig,
-        ) -> Self {
+        pub fn password_policy(mut self, input: crate::model::UpdateBackendAuthPasswordPolicyConfig) -> Self {
             self.password_policy = Some(input);
             self
         }
         /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_password_policy(
-            mut self,
-            input: std::option::Option<crate::model::UpdateBackendAuthPasswordPolicyConfig>,
-        ) -> Self {
-            self.password_policy = input;
-            self
+        pub fn set_password_policy(mut self, input: std::option::Option<crate::model::UpdateBackendAuthPasswordPolicyConfig>) -> Self {
+            self.password_policy = input; self
         }
         /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn verification_message(
-            mut self,
-            input: crate::model::UpdateBackendAuthVerificationMessageConfig,
-        ) -> Self {
+        pub fn verification_message(mut self, input: crate::model::UpdateBackendAuthVerificationMessageConfig) -> Self {
             self.verification_message = Some(input);
             self
         }
         /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_verification_message(
-            mut self,
-            input: std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>,
-        ) -> Self {
-            self.verification_message = input;
-            self
+        pub fn set_verification_message(mut self, input: std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>) -> Self {
+            self.verification_message = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
         pub fn build(self) -> crate::model::UpdateBackendAuthUserPoolConfig {
             crate::model::UpdateBackendAuthUserPoolConfig {
-                forgot_password: self.forgot_password,
-                mfa: self.mfa,
-                o_auth: self.o_auth,
-                password_policy: self.password_policy,
-                verification_message: self.verification_message,
+                forgot_password: self.forgot_password
+                ,
+                mfa: self.mfa
+                ,
+                o_auth: self.o_auth
+                ,
+                password_policy: self.password_policy
+                ,
+                verification_message: self.verification_message
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthUserPoolConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
@@ -850,7 +750,7 @@ impl UpdateBackendAuthUserPoolConfig {
 /// <p>Updates the configuration of the email or SMS message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthVerificationMessageConfig {
+pub struct UpdateBackendAuthVerificationMessageConfig  {
     /// <p>The type of verification message to send.</p>
     #[doc(hidden)]
     pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
@@ -863,21 +763,21 @@ pub struct UpdateBackendAuthVerificationMessageConfig {
 }
 impl UpdateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
-    pub fn delivery_method(&self) -> std::option::Option<&crate::model::DeliveryMethod> {
+    pub fn delivery_method(&self) -> std::option::Option<& crate::model::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
     /// <p>The settings for the email message.</p>
-    pub fn email_settings(&self) -> std::option::Option<&crate::model::EmailSettings> {
+    pub fn email_settings(&self) -> std::option::Option<& crate::model::EmailSettings> {
         self.email_settings.as_ref()
     }
     /// <p>The settings for the SMS message.</p>
-    pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
+    pub fn sms_settings(&self) -> std::option::Option<& crate::model::SmsSettings> {
         self.sms_settings.as_ref()
     }
 }
 /// See [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
 pub mod update_backend_auth_verification_message_config {
-
+    
     /// A builder for [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -892,12 +792,8 @@ pub mod update_backend_auth_verification_message_config {
             self
         }
         /// <p>The type of verification message to send.</p>
-        pub fn set_delivery_method(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryMethod>,
-        ) -> Self {
-            self.delivery_method = input;
-            self
+        pub fn set_delivery_method(mut self, input: std::option::Option<crate::model::DeliveryMethod>) -> Self {
+            self.delivery_method = input; self
         }
         /// <p>The settings for the email message.</p>
         pub fn email_settings(mut self, input: crate::model::EmailSettings) -> Self {
@@ -905,12 +801,8 @@ pub mod update_backend_auth_verification_message_config {
             self
         }
         /// <p>The settings for the email message.</p>
-        pub fn set_email_settings(
-            mut self,
-            input: std::option::Option<crate::model::EmailSettings>,
-        ) -> Self {
-            self.email_settings = input;
-            self
+        pub fn set_email_settings(mut self, input: std::option::Option<crate::model::EmailSettings>) -> Self {
+            self.email_settings = input; self
         }
         /// <p>The settings for the SMS message.</p>
         pub fn sms_settings(mut self, input: crate::model::SmsSettings) -> Self {
@@ -918,22 +810,23 @@ pub mod update_backend_auth_verification_message_config {
             self
         }
         /// <p>The settings for the SMS message.</p>
-        pub fn set_sms_settings(
-            mut self,
-            input: std::option::Option<crate::model::SmsSettings>,
-        ) -> Self {
-            self.sms_settings = input;
-            self
+        pub fn set_sms_settings(mut self, input: std::option::Option<crate::model::SmsSettings>) -> Self {
+            self.sms_settings = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
         pub fn build(self) -> crate::model::UpdateBackendAuthVerificationMessageConfig {
             crate::model::UpdateBackendAuthVerificationMessageConfig {
-                delivery_method: self.delivery_method,
-                email_settings: self.email_settings,
-                sms_settings: self.sms_settings,
+                delivery_method: self.delivery_method
+                ,
+                email_settings: self.email_settings
+                ,
+                sms_settings: self.sms_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthVerificationMessageConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
@@ -945,20 +838,20 @@ impl UpdateBackendAuthVerificationMessageConfig {
 /// <p>SMS settings for authentication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SmsSettings {
+pub struct SmsSettings  {
     /// <p>The contents of the SMS message.</p>
     #[doc(hidden)]
     pub sms_message: std::option::Option<std::string::String>,
 }
 impl SmsSettings {
     /// <p>The contents of the SMS message.</p>
-    pub fn sms_message(&self) -> std::option::Option<&str> {
+    pub fn sms_message(&self) -> std::option::Option<& str> {
         self.sms_message.as_deref()
     }
 }
 /// See [`SmsSettings`](crate::model::SmsSettings).
 pub mod sms_settings {
-
+    
     /// A builder for [`SmsSettings`](crate::model::SmsSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -972,16 +865,18 @@ pub mod sms_settings {
         }
         /// <p>The contents of the SMS message.</p>
         pub fn set_sms_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sms_message = input;
-            self
+            self.sms_message = input; self
         }
         /// Consumes the builder and constructs a [`SmsSettings`](crate::model::SmsSettings).
         pub fn build(self) -> crate::model::SmsSettings {
             crate::model::SmsSettings {
-                sms_message: self.sms_message,
+                sms_message: self.sms_message
+                ,
             }
         }
     }
+    
+    
 }
 impl SmsSettings {
     /// Creates a new builder-style object to manufacture [`SmsSettings`](crate::model::SmsSettings).
@@ -993,7 +888,7 @@ impl SmsSettings {
 /// <p>The configuration for the email sent when an app user forgets their password.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmailSettings {
+pub struct EmailSettings  {
     /// <p>The contents of the email message.</p>
     #[doc(hidden)]
     pub email_message: std::option::Option<std::string::String>,
@@ -1003,17 +898,17 @@ pub struct EmailSettings {
 }
 impl EmailSettings {
     /// <p>The contents of the email message.</p>
-    pub fn email_message(&self) -> std::option::Option<&str> {
+    pub fn email_message(&self) -> std::option::Option<& str> {
         self.email_message.as_deref()
     }
     /// <p>The contents of the subject line of the email message.</p>
-    pub fn email_subject(&self) -> std::option::Option<&str> {
+    pub fn email_subject(&self) -> std::option::Option<& str> {
         self.email_subject.as_deref()
     }
 }
 /// See [`EmailSettings`](crate::model::EmailSettings).
 pub mod email_settings {
-
+    
     /// A builder for [`EmailSettings`](crate::model::EmailSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1027,12 +922,8 @@ pub mod email_settings {
             self
         }
         /// <p>The contents of the email message.</p>
-        pub fn set_email_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_message = input;
-            self
+        pub fn set_email_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_message = input; self
         }
         /// <p>The contents of the subject line of the email message.</p>
         pub fn email_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1040,21 +931,21 @@ pub mod email_settings {
             self
         }
         /// <p>The contents of the subject line of the email message.</p>
-        pub fn set_email_subject(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_subject = input;
-            self
+        pub fn set_email_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_subject = input; self
         }
         /// Consumes the builder and constructs a [`EmailSettings`](crate::model::EmailSettings).
         pub fn build(self) -> crate::model::EmailSettings {
             crate::model::EmailSettings {
-                email_message: self.email_message,
-                email_subject: self.email_subject,
+                email_message: self.email_message
+                ,
+                email_subject: self.email_subject
+                ,
             }
         }
     }
+    
+    
 }
 impl EmailSettings {
     /// Creates a new builder-style object to manufacture [`EmailSettings`](crate::model::EmailSettings).
@@ -1069,9 +960,9 @@ impl EmailSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deliverymethod = unimplemented!();
 /// match deliverymethod {
@@ -1093,58 +984,52 @@ impl EmailSettings {
 /// Specifically, when `deliverymethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeliveryMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of verification message to send.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeliveryMethod {
     #[allow(missing_docs)] // documentation missing in model
     Email,
     #[allow(missing_docs)] // documentation missing in model
     Sms,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeliveryMethod {
     fn from(s: &str) -> Self {
         match s {
             "EMAIL" => DeliveryMethod::Email,
             "SMS" => DeliveryMethod::Sms,
-            other => DeliveryMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeliveryMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeliveryMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeliveryMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeliveryMethod::from(s))
+                }
+            }
 impl DeliveryMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeliveryMethod::Email => "EMAIL",
             DeliveryMethod::Sms => "SMS",
-            DeliveryMethod::Unknown(value) => value.as_str(),
+            DeliveryMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EMAIL", "SMS"]
+        &[
+            "EMAIL", "SMS"
+        ]
     }
 }
 impl AsRef<str> for DeliveryMethod {
@@ -1156,20 +1041,17 @@ impl AsRef<str> for DeliveryMethod {
 /// <p>Describes the password policy for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthPasswordPolicyConfig {
+pub struct UpdateBackendAuthPasswordPolicyConfig  {
     /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub additional_constraints:
-        std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
+    pub additional_constraints: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
     /// <p>Describes the minimum length of the password required to sign in to the auth resource, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
     pub minimum_length: f64,
 }
 impl UpdateBackendAuthPasswordPolicyConfig {
     /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
-    pub fn additional_constraints(
-        &self,
-    ) -> std::option::Option<&[crate::model::AdditionalConstraintsElement]> {
+    pub fn additional_constraints(&self) -> std::option::Option<& [crate::model::AdditionalConstraintsElement]> {
         self.additional_constraints.as_deref()
     }
     /// <p>Describes the minimum length of the password required to sign in to the auth resource, configured as a part of your Amplify project.</p>
@@ -1179,12 +1061,11 @@ impl UpdateBackendAuthPasswordPolicyConfig {
 }
 /// See [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
 pub mod update_backend_auth_password_policy_config {
-
+    
     /// A builder for [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) additional_constraints:
-            std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
+        pub(crate) additional_constraints: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
         pub(crate) minimum_length: std::option::Option<f64>,
     }
     impl Builder {
@@ -1193,22 +1074,15 @@ pub mod update_backend_auth_password_policy_config {
         /// To override the contents of this collection use [`set_additional_constraints`](Self::set_additional_constraints).
         ///
         /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
-        pub fn additional_constraints(
-            mut self,
-            input: crate::model::AdditionalConstraintsElement,
-        ) -> Self {
+        pub fn additional_constraints(mut self, input: crate::model::AdditionalConstraintsElement) -> Self {
             let mut v = self.additional_constraints.unwrap_or_default();
-            v.push(input);
-            self.additional_constraints = Some(v);
-            self
+                            v.push(input);
+                            self.additional_constraints = Some(v);
+                            self
         }
         /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
-        pub fn set_additional_constraints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
-        ) -> Self {
-            self.additional_constraints = input;
-            self
+        pub fn set_additional_constraints(mut self, input: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>) -> Self {
+            self.additional_constraints = input; self
         }
         /// <p>Describes the minimum length of the password required to sign in to the auth resource, configured as a part of your Amplify project.</p>
         pub fn minimum_length(mut self, input: f64) -> Self {
@@ -1217,17 +1091,21 @@ pub mod update_backend_auth_password_policy_config {
         }
         /// <p>Describes the minimum length of the password required to sign in to the auth resource, configured as a part of your Amplify project.</p>
         pub fn set_minimum_length(mut self, input: std::option::Option<f64>) -> Self {
-            self.minimum_length = input;
-            self
+            self.minimum_length = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
         pub fn build(self) -> crate::model::UpdateBackendAuthPasswordPolicyConfig {
             crate::model::UpdateBackendAuthPasswordPolicyConfig {
-                additional_constraints: self.additional_constraints,
-                minimum_length: self.minimum_length.unwrap_or_default(),
+                additional_constraints: self.additional_constraints
+                ,
+                minimum_length: self.minimum_length
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthPasswordPolicyConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
@@ -1242,9 +1120,9 @@ impl UpdateBackendAuthPasswordPolicyConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let additionalconstraintselement = unimplemented!();
 /// match additionalconstraintselement {
@@ -1268,22 +1146,14 @@ impl UpdateBackendAuthPasswordPolicyConfig {
 /// Specifically, when `additionalconstraintselement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdditionalConstraintsElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AdditionalConstraintsElement {
     #[allow(missing_docs)] // documentation missing in model
     RequireDigit,
@@ -1294,7 +1164,7 @@ pub enum AdditionalConstraintsElement {
     #[allow(missing_docs)] // documentation missing in model
     RequireUppercase,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdditionalConstraintsElement {
     fn from(s: &str) -> Self {
@@ -1303,19 +1173,17 @@ impl std::convert::From<&str> for AdditionalConstraintsElement {
             "REQUIRE_LOWERCASE" => AdditionalConstraintsElement::RequireLowercase,
             "REQUIRE_SYMBOL" => AdditionalConstraintsElement::RequireSymbol,
             "REQUIRE_UPPERCASE" => AdditionalConstraintsElement::RequireUppercase,
-            other => AdditionalConstraintsElement::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AdditionalConstraintsElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AdditionalConstraintsElement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdditionalConstraintsElement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AdditionalConstraintsElement::from(s))
+                }
+            }
 impl AdditionalConstraintsElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1324,16 +1192,13 @@ impl AdditionalConstraintsElement {
             AdditionalConstraintsElement::RequireLowercase => "REQUIRE_LOWERCASE",
             AdditionalConstraintsElement::RequireSymbol => "REQUIRE_SYMBOL",
             AdditionalConstraintsElement::RequireUppercase => "REQUIRE_UPPERCASE",
-            AdditionalConstraintsElement::Unknown(value) => value.as_str(),
+            AdditionalConstraintsElement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "REQUIRE_DIGIT",
-            "REQUIRE_LOWERCASE",
-            "REQUIRE_SYMBOL",
-            "REQUIRE_UPPERCASE",
+            "REQUIRE_DIGIT", "REQUIRE_LOWERCASE", "REQUIRE_SYMBOL", "REQUIRE_UPPERCASE"
         ]
     }
 }
@@ -1346,7 +1211,7 @@ impl AsRef<str> for AdditionalConstraintsElement {
 /// <p>The OAuth configurations for authenticating users into your Amplify app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthOAuthConfig {
+pub struct UpdateBackendAuthOAuthConfig  {
     /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
     #[doc(hidden)]
     pub domain_prefix: std::option::Option<std::string::String>,
@@ -1368,46 +1233,42 @@ pub struct UpdateBackendAuthOAuthConfig {
 }
 impl UpdateBackendAuthOAuthConfig {
     /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
-    pub fn domain_prefix(&self) -> std::option::Option<&str> {
+    pub fn domain_prefix(&self) -> std::option::Option<& str> {
         self.domain_prefix.as_deref()
     }
     /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
-    pub fn o_auth_grant_type(&self) -> std::option::Option<&crate::model::OAuthGrantType> {
+    pub fn o_auth_grant_type(&self) -> std::option::Option<& crate::model::OAuthGrantType> {
         self.o_auth_grant_type.as_ref()
     }
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
-    pub fn o_auth_scopes(&self) -> std::option::Option<&[crate::model::OAuthScopesElement]> {
+    pub fn o_auth_scopes(&self) -> std::option::Option<& [crate::model::OAuthScopesElement]> {
         self.o_auth_scopes.as_deref()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub fn redirect_sign_in_ur_is(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn redirect_sign_in_ur_is(&self) -> std::option::Option<& [std::string::String]> {
         self.redirect_sign_in_ur_is.as_deref()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn redirect_sign_out_ur_is(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn redirect_sign_out_ur_is(&self) -> std::option::Option<& [std::string::String]> {
         self.redirect_sign_out_ur_is.as_deref()
     }
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
-    pub fn social_provider_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::SocialProviderSettings> {
+    pub fn social_provider_settings(&self) -> std::option::Option<& crate::model::SocialProviderSettings> {
         self.social_provider_settings.as_ref()
     }
 }
 /// See [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
 pub mod update_backend_auth_o_auth_config {
-
+    
     /// A builder for [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_prefix: std::option::Option<std::string::String>,
         pub(crate) o_auth_grant_type: std::option::Option<crate::model::OAuthGrantType>,
-        pub(crate) o_auth_scopes:
-            std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>,
+        pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>,
         pub(crate) redirect_sign_in_ur_is: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) redirect_sign_out_ur_is: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) social_provider_settings:
-            std::option::Option<crate::model::SocialProviderSettings>,
+        pub(crate) social_provider_settings: std::option::Option<crate::model::SocialProviderSettings>,
     }
     impl Builder {
         /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
@@ -1416,12 +1277,8 @@ pub mod update_backend_auth_o_auth_config {
             self
         }
         /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
-        pub fn set_domain_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.domain_prefix = input;
-            self
+        pub fn set_domain_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_prefix = input; self
         }
         /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
         pub fn o_auth_grant_type(mut self, input: crate::model::OAuthGrantType) -> Self {
@@ -1429,12 +1286,8 @@ pub mod update_backend_auth_o_auth_config {
             self
         }
         /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
-        pub fn set_o_auth_grant_type(
-            mut self,
-            input: std::option::Option<crate::model::OAuthGrantType>,
-        ) -> Self {
-            self.o_auth_grant_type = input;
-            self
+        pub fn set_o_auth_grant_type(mut self, input: std::option::Option<crate::model::OAuthGrantType>) -> Self {
+            self.o_auth_grant_type = input; self
         }
         /// Appends an item to `o_auth_scopes`.
         ///
@@ -1443,17 +1296,13 @@ pub mod update_backend_auth_o_auth_config {
         /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
         pub fn o_auth_scopes(mut self, input: crate::model::OAuthScopesElement) -> Self {
             let mut v = self.o_auth_scopes.unwrap_or_default();
-            v.push(input);
-            self.o_auth_scopes = Some(v);
-            self
+                            v.push(input);
+                            self.o_auth_scopes = Some(v);
+                            self
         }
         /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
-        pub fn set_o_auth_scopes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>,
-        ) -> Self {
-            self.o_auth_scopes = input;
-            self
+        pub fn set_o_auth_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>) -> Self {
+            self.o_auth_scopes = input; self
         }
         /// Appends an item to `redirect_sign_in_ur_is`.
         ///
@@ -1462,17 +1311,13 @@ pub mod update_backend_auth_o_auth_config {
         /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
         pub fn redirect_sign_in_ur_is(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.redirect_sign_in_ur_is.unwrap_or_default();
-            v.push(input.into());
-            self.redirect_sign_in_ur_is = Some(v);
-            self
+                            v.push(input.into());
+                            self.redirect_sign_in_ur_is = Some(v);
+                            self
         }
         /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-        pub fn set_redirect_sign_in_ur_is(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.redirect_sign_in_ur_is = input;
-            self
+        pub fn set_redirect_sign_in_ur_is(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.redirect_sign_in_ur_is = input; self
         }
         /// Appends an item to `redirect_sign_out_ur_is`.
         ///
@@ -1481,46 +1326,43 @@ pub mod update_backend_auth_o_auth_config {
         /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
         pub fn redirect_sign_out_ur_is(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.redirect_sign_out_ur_is.unwrap_or_default();
-            v.push(input.into());
-            self.redirect_sign_out_ur_is = Some(v);
-            self
+                            v.push(input.into());
+                            self.redirect_sign_out_ur_is = Some(v);
+                            self
         }
         /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-        pub fn set_redirect_sign_out_ur_is(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.redirect_sign_out_ur_is = input;
-            self
+        pub fn set_redirect_sign_out_ur_is(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.redirect_sign_out_ur_is = input; self
         }
         /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
-        pub fn social_provider_settings(
-            mut self,
-            input: crate::model::SocialProviderSettings,
-        ) -> Self {
+        pub fn social_provider_settings(mut self, input: crate::model::SocialProviderSettings) -> Self {
             self.social_provider_settings = Some(input);
             self
         }
         /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
-        pub fn set_social_provider_settings(
-            mut self,
-            input: std::option::Option<crate::model::SocialProviderSettings>,
-        ) -> Self {
-            self.social_provider_settings = input;
-            self
+        pub fn set_social_provider_settings(mut self, input: std::option::Option<crate::model::SocialProviderSettings>) -> Self {
+            self.social_provider_settings = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
         pub fn build(self) -> crate::model::UpdateBackendAuthOAuthConfig {
             crate::model::UpdateBackendAuthOAuthConfig {
-                domain_prefix: self.domain_prefix,
-                o_auth_grant_type: self.o_auth_grant_type,
-                o_auth_scopes: self.o_auth_scopes,
-                redirect_sign_in_ur_is: self.redirect_sign_in_ur_is,
-                redirect_sign_out_ur_is: self.redirect_sign_out_ur_is,
-                social_provider_settings: self.social_provider_settings,
+                domain_prefix: self.domain_prefix
+                ,
+                o_auth_grant_type: self.o_auth_grant_type
+                ,
+                o_auth_scopes: self.o_auth_scopes
+                ,
+                redirect_sign_in_ur_is: self.redirect_sign_in_ur_is
+                ,
+                redirect_sign_out_ur_is: self.redirect_sign_out_ur_is
+                ,
+                social_provider_settings: self.social_provider_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthOAuthConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
@@ -1532,7 +1374,7 @@ impl UpdateBackendAuthOAuthConfig {
 /// <p>The settings for using the social identity providers for access to your Amplify app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SocialProviderSettings {
+pub struct SocialProviderSettings  {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     #[doc(hidden)]
     pub facebook: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
@@ -1548,38 +1390,32 @@ pub struct SocialProviderSettings {
 }
 impl SocialProviderSettings {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn facebook(&self) -> std::option::Option<&crate::model::BackendAuthSocialProviderConfig> {
+    pub fn facebook(&self) -> std::option::Option<& crate::model::BackendAuthSocialProviderConfig> {
         self.facebook.as_ref()
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn google(&self) -> std::option::Option<&crate::model::BackendAuthSocialProviderConfig> {
+    pub fn google(&self) -> std::option::Option<& crate::model::BackendAuthSocialProviderConfig> {
         self.google.as_ref()
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn login_with_amazon(
-        &self,
-    ) -> std::option::Option<&crate::model::BackendAuthSocialProviderConfig> {
+    pub fn login_with_amazon(&self) -> std::option::Option<& crate::model::BackendAuthSocialProviderConfig> {
         self.login_with_amazon.as_ref()
     }
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn sign_in_with_apple(
-        &self,
-    ) -> std::option::Option<&crate::model::BackendAuthAppleProviderConfig> {
+    pub fn sign_in_with_apple(&self) -> std::option::Option<& crate::model::BackendAuthAppleProviderConfig> {
         self.sign_in_with_apple.as_ref()
     }
 }
 /// See [`SocialProviderSettings`](crate::model::SocialProviderSettings).
 pub mod social_provider_settings {
-
+    
     /// A builder for [`SocialProviderSettings`](crate::model::SocialProviderSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) facebook: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
         pub(crate) google: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
-        pub(crate) login_with_amazon:
-            std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
-        pub(crate) sign_in_with_apple:
-            std::option::Option<crate::model::BackendAuthAppleProviderConfig>,
+        pub(crate) login_with_amazon: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
+        pub(crate) sign_in_with_apple: std::option::Option<crate::model::BackendAuthAppleProviderConfig>,
     }
     impl Builder {
         /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
@@ -1588,12 +1424,8 @@ pub mod social_provider_settings {
             self
         }
         /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-        pub fn set_facebook(
-            mut self,
-            input: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
-        ) -> Self {
-            self.facebook = input;
-            self
+        pub fn set_facebook(mut self, input: std::option::Option<crate::model::BackendAuthSocialProviderConfig>) -> Self {
+            self.facebook = input; self
         }
         /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
         pub fn google(mut self, input: crate::model::BackendAuthSocialProviderConfig) -> Self {
@@ -1601,55 +1433,43 @@ pub mod social_provider_settings {
             self
         }
         /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-        pub fn set_google(
-            mut self,
-            input: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
-        ) -> Self {
-            self.google = input;
-            self
+        pub fn set_google(mut self, input: std::option::Option<crate::model::BackendAuthSocialProviderConfig>) -> Self {
+            self.google = input; self
         }
         /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-        pub fn login_with_amazon(
-            mut self,
-            input: crate::model::BackendAuthSocialProviderConfig,
-        ) -> Self {
+        pub fn login_with_amazon(mut self, input: crate::model::BackendAuthSocialProviderConfig) -> Self {
             self.login_with_amazon = Some(input);
             self
         }
         /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-        pub fn set_login_with_amazon(
-            mut self,
-            input: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
-        ) -> Self {
-            self.login_with_amazon = input;
-            self
+        pub fn set_login_with_amazon(mut self, input: std::option::Option<crate::model::BackendAuthSocialProviderConfig>) -> Self {
+            self.login_with_amazon = input; self
         }
         /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-        pub fn sign_in_with_apple(
-            mut self,
-            input: crate::model::BackendAuthAppleProviderConfig,
-        ) -> Self {
+        pub fn sign_in_with_apple(mut self, input: crate::model::BackendAuthAppleProviderConfig) -> Self {
             self.sign_in_with_apple = Some(input);
             self
         }
         /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-        pub fn set_sign_in_with_apple(
-            mut self,
-            input: std::option::Option<crate::model::BackendAuthAppleProviderConfig>,
-        ) -> Self {
-            self.sign_in_with_apple = input;
-            self
+        pub fn set_sign_in_with_apple(mut self, input: std::option::Option<crate::model::BackendAuthAppleProviderConfig>) -> Self {
+            self.sign_in_with_apple = input; self
         }
         /// Consumes the builder and constructs a [`SocialProviderSettings`](crate::model::SocialProviderSettings).
         pub fn build(self) -> crate::model::SocialProviderSettings {
             crate::model::SocialProviderSettings {
-                facebook: self.facebook,
-                google: self.google,
-                login_with_amazon: self.login_with_amazon,
-                sign_in_with_apple: self.sign_in_with_apple,
+                facebook: self.facebook
+                ,
+                google: self.google
+                ,
+                login_with_amazon: self.login_with_amazon
+                ,
+                sign_in_with_apple: self.sign_in_with_apple
+                ,
             }
         }
     }
+    
+    
 }
 impl SocialProviderSettings {
     /// Creates a new builder-style object to manufacture [`SocialProviderSettings`](crate::model::SocialProviderSettings).
@@ -1661,7 +1481,7 @@ impl SocialProviderSettings {
 /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendAuthAppleProviderConfig {
+pub struct BackendAuthAppleProviderConfig  {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
@@ -1677,25 +1497,25 @@ pub struct BackendAuthAppleProviderConfig {
 }
 impl BackendAuthAppleProviderConfig {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>Describes the key_id that comes from Apple.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>Describes the private_key that comes from Apple.</p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> std::option::Option<& str> {
         self.private_key.as_deref()
     }
     /// <p>Describes the team_id that comes from Apple.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
 }
 /// See [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
 pub mod backend_auth_apple_provider_config {
-
+    
     /// A builder for [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1712,8 +1532,7 @@ pub mod backend_auth_apple_provider_config {
         }
         /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_id = input;
-            self
+            self.client_id = input; self
         }
         /// <p>Describes the key_id that comes from Apple.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1722,8 +1541,7 @@ pub mod backend_auth_apple_provider_config {
         }
         /// <p>Describes the key_id that comes from Apple.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// <p>Describes the private_key that comes from Apple.</p>
         pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1732,8 +1550,7 @@ pub mod backend_auth_apple_provider_config {
         }
         /// <p>Describes the private_key that comes from Apple.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.private_key = input;
-            self
+            self.private_key = input; self
         }
         /// <p>Describes the team_id that comes from Apple.</p>
         pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1742,19 +1559,24 @@ pub mod backend_auth_apple_provider_config {
         }
         /// <p>Describes the team_id that comes from Apple.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_id = input;
-            self
+            self.team_id = input; self
         }
         /// Consumes the builder and constructs a [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
         pub fn build(self) -> crate::model::BackendAuthAppleProviderConfig {
             crate::model::BackendAuthAppleProviderConfig {
-                client_id: self.client_id,
-                key_id: self.key_id,
-                private_key: self.private_key,
-                team_id: self.team_id,
+                client_id: self.client_id
+                ,
+                key_id: self.key_id
+                ,
+                private_key: self.private_key
+                ,
+                team_id: self.team_id
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendAuthAppleProviderConfig {
     /// Creates a new builder-style object to manufacture [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
@@ -1766,7 +1588,7 @@ impl BackendAuthAppleProviderConfig {
 /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendAuthSocialProviderConfig {
+pub struct BackendAuthSocialProviderConfig  {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
@@ -1776,17 +1598,17 @@ pub struct BackendAuthSocialProviderConfig {
 }
 impl BackendAuthSocialProviderConfig {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-    pub fn client_secret(&self) -> std::option::Option<&str> {
+    pub fn client_secret(&self) -> std::option::Option<& str> {
         self.client_secret.as_deref()
     }
 }
 /// See [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
 pub mod backend_auth_social_provider_config {
-
+    
     /// A builder for [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1801,8 +1623,7 @@ pub mod backend_auth_social_provider_config {
         }
         /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_id = input;
-            self
+            self.client_id = input; self
         }
         /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1810,21 +1631,21 @@ pub mod backend_auth_social_provider_config {
             self
         }
         /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-        pub fn set_client_secret(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_secret = input;
-            self
+        pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_secret = input; self
         }
         /// Consumes the builder and constructs a [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
         pub fn build(self) -> crate::model::BackendAuthSocialProviderConfig {
             crate::model::BackendAuthSocialProviderConfig {
-                client_id: self.client_id,
-                client_secret: self.client_secret,
+                client_id: self.client_id
+                ,
+                client_secret: self.client_secret
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendAuthSocialProviderConfig {
     /// Creates a new builder-style object to manufacture [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
@@ -1839,9 +1660,9 @@ impl BackendAuthSocialProviderConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let oauthscopeselement = unimplemented!();
 /// match oauthscopeselement {
@@ -1866,22 +1687,14 @@ impl BackendAuthSocialProviderConfig {
 /// Specifically, when `oauthscopeselement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OAuthScopesElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OAuthScopesElement {
     #[allow(missing_docs)] // documentation missing in model
     AwsCognitoSigninUserAdmin,
@@ -1894,7 +1707,7 @@ pub enum OAuthScopesElement {
     #[allow(missing_docs)] // documentation missing in model
     Profile,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OAuthScopesElement {
     fn from(s: &str) -> Self {
@@ -1904,19 +1717,17 @@ impl std::convert::From<&str> for OAuthScopesElement {
             "OPENID" => OAuthScopesElement::Openid,
             "PHONE" => OAuthScopesElement::Phone,
             "PROFILE" => OAuthScopesElement::Profile,
-            other => {
-                OAuthScopesElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => OAuthScopesElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OAuthScopesElement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OAuthScopesElement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OAuthScopesElement::from(s))
+                }
+            }
 impl OAuthScopesElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1926,17 +1737,13 @@ impl OAuthScopesElement {
             OAuthScopesElement::Openid => "OPENID",
             OAuthScopesElement::Phone => "PHONE",
             OAuthScopesElement::Profile => "PROFILE",
-            OAuthScopesElement::Unknown(value) => value.as_str(),
+            OAuthScopesElement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWS_COGNITO_SIGNIN_USER_ADMIN",
-            "EMAIL",
-            "OPENID",
-            "PHONE",
-            "PROFILE",
+            "AWS_COGNITO_SIGNIN_USER_ADMIN", "EMAIL", "OPENID", "PHONE", "PROFILE"
         ]
     }
 }
@@ -1952,9 +1759,9 @@ impl AsRef<str> for OAuthScopesElement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let oauthgranttype = unimplemented!();
 /// match oauthgranttype {
@@ -1976,58 +1783,52 @@ impl AsRef<str> for OAuthScopesElement {
 /// Specifically, when `oauthgranttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OAuthGrantType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OAuthGrantType {
     #[allow(missing_docs)] // documentation missing in model
     Code,
     #[allow(missing_docs)] // documentation missing in model
     Implicit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OAuthGrantType {
     fn from(s: &str) -> Self {
         match s {
             "CODE" => OAuthGrantType::Code,
             "IMPLICIT" => OAuthGrantType::Implicit,
-            other => OAuthGrantType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OAuthGrantType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OAuthGrantType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OAuthGrantType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OAuthGrantType::from(s))
+                }
+            }
 impl OAuthGrantType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OAuthGrantType::Code => "CODE",
             OAuthGrantType::Implicit => "IMPLICIT",
-            OAuthGrantType::Unknown(value) => value.as_str(),
+            OAuthGrantType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODE", "IMPLICIT"]
+        &[
+            "CODE", "IMPLICIT"
+        ]
     }
 }
 impl AsRef<str> for OAuthGrantType {
@@ -2039,7 +1840,7 @@ impl AsRef<str> for OAuthGrantType {
 /// <p>Updates the multi-factor authentication (MFA) configuration for the backend of your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthMfaConfig {
+pub struct UpdateBackendAuthMfaConfig  {
     /// <p>The MFA mode for the backend of your Amplify project.</p>
     #[doc(hidden)]
     pub mfa_mode: std::option::Option<crate::model::MfaMode>,
@@ -2049,17 +1850,17 @@ pub struct UpdateBackendAuthMfaConfig {
 }
 impl UpdateBackendAuthMfaConfig {
     /// <p>The MFA mode for the backend of your Amplify project.</p>
-    pub fn mfa_mode(&self) -> std::option::Option<&crate::model::MfaMode> {
+    pub fn mfa_mode(&self) -> std::option::Option<& crate::model::MfaMode> {
         self.mfa_mode.as_ref()
     }
     /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
+    pub fn settings(&self) -> std::option::Option<& crate::model::Settings> {
         self.settings.as_ref()
     }
 }
 /// See [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
 pub mod update_backend_auth_mfa_config {
-
+    
     /// A builder for [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2074,8 +1875,7 @@ pub mod update_backend_auth_mfa_config {
         }
         /// <p>The MFA mode for the backend of your Amplify project.</p>
         pub fn set_mfa_mode(mut self, input: std::option::Option<crate::model::MfaMode>) -> Self {
-            self.mfa_mode = input;
-            self
+            self.mfa_mode = input; self
         }
         /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
         pub fn settings(mut self, input: crate::model::Settings) -> Self {
@@ -2084,17 +1884,20 @@ pub mod update_backend_auth_mfa_config {
         }
         /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
         pub fn set_settings(mut self, input: std::option::Option<crate::model::Settings>) -> Self {
-            self.settings = input;
-            self
+            self.settings = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
         pub fn build(self) -> crate::model::UpdateBackendAuthMfaConfig {
             crate::model::UpdateBackendAuthMfaConfig {
-                mfa_mode: self.mfa_mode,
-                settings: self.settings,
+                mfa_mode: self.mfa_mode
+                ,
+                settings: self.settings
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthMfaConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
@@ -2106,7 +1909,7 @@ impl UpdateBackendAuthMfaConfig {
 /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Settings {
+pub struct Settings  {
     /// <p>The supported MFA types.</p>
     #[doc(hidden)]
     pub mfa_types: std::option::Option<std::vec::Vec<crate::model::MfaTypesElement>>,
@@ -2116,17 +1919,17 @@ pub struct Settings {
 }
 impl Settings {
     /// <p>The supported MFA types.</p>
-    pub fn mfa_types(&self) -> std::option::Option<&[crate::model::MfaTypesElement]> {
+    pub fn mfa_types(&self) -> std::option::Option<& [crate::model::MfaTypesElement]> {
         self.mfa_types.as_deref()
     }
     /// <p>The body of the SMS message.</p>
-    pub fn sms_message(&self) -> std::option::Option<&str> {
+    pub fn sms_message(&self) -> std::option::Option<& str> {
         self.sms_message.as_deref()
     }
 }
 /// See [`Settings`](crate::model::Settings).
 pub mod settings {
-
+    
     /// A builder for [`Settings`](crate::model::Settings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2141,17 +1944,13 @@ pub mod settings {
         /// <p>The supported MFA types.</p>
         pub fn mfa_types(mut self, input: crate::model::MfaTypesElement) -> Self {
             let mut v = self.mfa_types.unwrap_or_default();
-            v.push(input);
-            self.mfa_types = Some(v);
-            self
+                            v.push(input);
+                            self.mfa_types = Some(v);
+                            self
         }
         /// <p>The supported MFA types.</p>
-        pub fn set_mfa_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MfaTypesElement>>,
-        ) -> Self {
-            self.mfa_types = input;
-            self
+        pub fn set_mfa_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::MfaTypesElement>>) -> Self {
+            self.mfa_types = input; self
         }
         /// <p>The body of the SMS message.</p>
         pub fn sms_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2160,17 +1959,20 @@ pub mod settings {
         }
         /// <p>The body of the SMS message.</p>
         pub fn set_sms_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sms_message = input;
-            self
+            self.sms_message = input; self
         }
         /// Consumes the builder and constructs a [`Settings`](crate::model::Settings).
         pub fn build(self) -> crate::model::Settings {
             crate::model::Settings {
-                mfa_types: self.mfa_types,
-                sms_message: self.sms_message,
+                mfa_types: self.mfa_types
+                ,
+                sms_message: self.sms_message
+                ,
             }
         }
     }
+    
+    
 }
 impl Settings {
     /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
@@ -2185,9 +1987,9 @@ impl Settings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mfatypeselement = unimplemented!();
 /// match mfatypeselement {
@@ -2209,58 +2011,52 @@ impl Settings {
 /// Specifically, when `mfatypeselement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MfaTypesElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MfaTypesElement {
     #[allow(missing_docs)] // documentation missing in model
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Totp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MfaTypesElement {
     fn from(s: &str) -> Self {
         match s {
             "SMS" => MfaTypesElement::Sms,
             "TOTP" => MfaTypesElement::Totp,
-            other => MfaTypesElement::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MfaTypesElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MfaTypesElement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MfaTypesElement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MfaTypesElement::from(s))
+                }
+            }
 impl MfaTypesElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MfaTypesElement::Sms => "SMS",
             MfaTypesElement::Totp => "TOTP",
-            MfaTypesElement::Unknown(value) => value.as_str(),
+            MfaTypesElement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SMS", "TOTP"]
+        &[
+            "SMS", "TOTP"
+        ]
     }
 }
 impl AsRef<str> for MfaTypesElement {
@@ -2275,9 +2071,9 @@ impl AsRef<str> for MfaTypesElement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mfamode = unimplemented!();
 /// match mfamode {
@@ -2300,22 +2096,14 @@ impl AsRef<str> for MfaTypesElement {
 /// Specifically, when `mfamode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MfaMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MfaMode {
     #[allow(missing_docs)] // documentation missing in model
     Off,
@@ -2324,7 +2112,7 @@ pub enum MfaMode {
     #[allow(missing_docs)] // documentation missing in model
     Optional,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MfaMode {
     fn from(s: &str) -> Self {
@@ -2332,17 +2120,17 @@ impl std::convert::From<&str> for MfaMode {
             "OFF" => MfaMode::Off,
             "ON" => MfaMode::On,
             "OPTIONAL" => MfaMode::Optional,
-            other => MfaMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MfaMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MfaMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MfaMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MfaMode::from(s))
+                }
+            }
 impl MfaMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2350,12 +2138,14 @@ impl MfaMode {
             MfaMode::Off => "OFF",
             MfaMode::On => "ON",
             MfaMode::Optional => "OPTIONAL",
-            MfaMode::Unknown(value) => value.as_str(),
+            MfaMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OFF", "ON", "OPTIONAL"]
+        &[
+            "OFF", "ON", "OPTIONAL"
+        ]
     }
 }
 impl AsRef<str> for MfaMode {
@@ -2367,7 +2157,7 @@ impl AsRef<str> for MfaMode {
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthForgotPasswordConfig {
+pub struct UpdateBackendAuthForgotPasswordConfig  {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
     #[doc(hidden)]
     pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
@@ -2380,21 +2170,21 @@ pub struct UpdateBackendAuthForgotPasswordConfig {
 }
 impl UpdateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
-    pub fn delivery_method(&self) -> std::option::Option<&crate::model::DeliveryMethod> {
+    pub fn delivery_method(&self) -> std::option::Option<& crate::model::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-    pub fn email_settings(&self) -> std::option::Option<&crate::model::EmailSettings> {
+    pub fn email_settings(&self) -> std::option::Option<& crate::model::EmailSettings> {
         self.email_settings.as_ref()
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
-    pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
+    pub fn sms_settings(&self) -> std::option::Option<& crate::model::SmsSettings> {
         self.sms_settings.as_ref()
     }
 }
 /// See [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
 pub mod update_backend_auth_forgot_password_config {
-
+    
     /// A builder for [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2409,12 +2199,8 @@ pub mod update_backend_auth_forgot_password_config {
             self
         }
         /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
-        pub fn set_delivery_method(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryMethod>,
-        ) -> Self {
-            self.delivery_method = input;
-            self
+        pub fn set_delivery_method(mut self, input: std::option::Option<crate::model::DeliveryMethod>) -> Self {
+            self.delivery_method = input; self
         }
         /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
         pub fn email_settings(mut self, input: crate::model::EmailSettings) -> Self {
@@ -2422,12 +2208,8 @@ pub mod update_backend_auth_forgot_password_config {
             self
         }
         /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-        pub fn set_email_settings(
-            mut self,
-            input: std::option::Option<crate::model::EmailSettings>,
-        ) -> Self {
-            self.email_settings = input;
-            self
+        pub fn set_email_settings(mut self, input: std::option::Option<crate::model::EmailSettings>) -> Self {
+            self.email_settings = input; self
         }
         /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
         pub fn sms_settings(mut self, input: crate::model::SmsSettings) -> Self {
@@ -2435,22 +2217,23 @@ pub mod update_backend_auth_forgot_password_config {
             self
         }
         /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
-        pub fn set_sms_settings(
-            mut self,
-            input: std::option::Option<crate::model::SmsSettings>,
-        ) -> Self {
-            self.sms_settings = input;
-            self
+        pub fn set_sms_settings(mut self, input: std::option::Option<crate::model::SmsSettings>) -> Self {
+            self.sms_settings = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
         pub fn build(self) -> crate::model::UpdateBackendAuthForgotPasswordConfig {
             crate::model::UpdateBackendAuthForgotPasswordConfig {
-                delivery_method: self.delivery_method,
-                email_settings: self.email_settings,
-                sms_settings: self.sms_settings,
+                delivery_method: self.delivery_method
+                ,
+                email_settings: self.email_settings
+                ,
+                sms_settings: self.sms_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthForgotPasswordConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
@@ -2465,9 +2248,9 @@ impl UpdateBackendAuthForgotPasswordConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let service = unimplemented!();
 /// match service {
@@ -2488,54 +2271,48 @@ impl UpdateBackendAuthForgotPasswordConfig {
 /// Specifically, when `service` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Service::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Service {
     #[allow(missing_docs)] // documentation missing in model
     Cognito,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Service {
     fn from(s: &str) -> Self {
         match s {
             "COGNITO" => Service::Cognito,
-            other => Service::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Service::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Service {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Service::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Service::from(s))
+                }
+            }
 impl Service {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Service::Cognito => "COGNITO",
-            Service::Unknown(value) => value.as_str(),
+            Service::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COGNITO"]
+        &[
+            "COGNITO"
+        ]
     }
 }
 impl AsRef<str> for Service {
@@ -2547,7 +2324,7 @@ impl AsRef<str> for Service {
 /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthIdentityPoolConfig {
+pub struct UpdateBackendAuthIdentityPoolConfig  {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     #[doc(hidden)]
     pub unauthenticated_login: bool,
@@ -2560,7 +2337,7 @@ impl UpdateBackendAuthIdentityPoolConfig {
 }
 /// See [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
 pub mod update_backend_auth_identity_pool_config {
-
+    
     /// A builder for [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2574,16 +2351,19 @@ pub mod update_backend_auth_identity_pool_config {
         }
         /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
         pub fn set_unauthenticated_login(mut self, input: std::option::Option<bool>) -> Self {
-            self.unauthenticated_login = input;
-            self
+            self.unauthenticated_login = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
         pub fn build(self) -> crate::model::UpdateBackendAuthIdentityPoolConfig {
             crate::model::UpdateBackendAuthIdentityPoolConfig {
-                unauthenticated_login: self.unauthenticated_login.unwrap_or_default(),
+                unauthenticated_login: self.unauthenticated_login
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthIdentityPoolConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
@@ -2598,9 +2378,9 @@ impl UpdateBackendAuthIdentityPoolConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authresources = unimplemented!();
 /// match authresources {
@@ -2622,58 +2402,52 @@ impl UpdateBackendAuthIdentityPoolConfig {
 /// Specifically, when `authresources` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthResources::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthResources {
     #[allow(missing_docs)] // documentation missing in model
     IdentityPoolAndUserPool,
     #[allow(missing_docs)] // documentation missing in model
     UserPoolOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthResources {
     fn from(s: &str) -> Self {
         match s {
             "IDENTITY_POOL_AND_USER_POOL" => AuthResources::IdentityPoolAndUserPool,
             "USER_POOL_ONLY" => AuthResources::UserPoolOnly,
-            other => AuthResources::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AuthResources::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthResources {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthResources::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthResources::from(s))
+                }
+            }
 impl AuthResources {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthResources::IdentityPoolAndUserPool => "IDENTITY_POOL_AND_USER_POOL",
             AuthResources::UserPoolOnly => "USER_POOL_ONLY",
-            AuthResources::Unknown(value) => value.as_str(),
+            AuthResources::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IDENTITY_POOL_AND_USER_POOL", "USER_POOL_ONLY"]
+        &[
+            "IDENTITY_POOL_AND_USER_POOL", "USER_POOL_ONLY"
+        ]
     }
 }
 impl AsRef<str> for AuthResources {
@@ -2685,7 +2459,7 @@ impl AsRef<str> for AuthResources {
 /// <p>The resource config for the data model, configured as a part of the Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendApiResourceConfig {
+pub struct BackendApiResourceConfig  {
     /// <p>Additional authentication methods used to interact with your data models.</p>
     #[doc(hidden)]
     pub additional_auth_types: std::option::Option<std::vec::Vec<crate::model::BackendApiAuthType>>,
@@ -2707,45 +2481,39 @@ pub struct BackendApiResourceConfig {
 }
 impl BackendApiResourceConfig {
     /// <p>Additional authentication methods used to interact with your data models.</p>
-    pub fn additional_auth_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::BackendApiAuthType]> {
+    pub fn additional_auth_types(&self) -> std::option::Option<& [crate::model::BackendApiAuthType]> {
         self.additional_auth_types.as_deref()
     }
     /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
-    pub fn api_name(&self) -> std::option::Option<&str> {
+    pub fn api_name(&self) -> std::option::Option<& str> {
         self.api_name.as_deref()
     }
     /// <p>The conflict resolution strategy for your data stored in the data models.</p>
-    pub fn conflict_resolution(
-        &self,
-    ) -> std::option::Option<&crate::model::BackendApiConflictResolution> {
+    pub fn conflict_resolution(&self) -> std::option::Option<& crate::model::BackendApiConflictResolution> {
         self.conflict_resolution.as_ref()
     }
     /// <p>The default authentication type for interacting with the configured data models in your Amplify project.</p>
-    pub fn default_auth_type(&self) -> std::option::Option<&crate::model::BackendApiAuthType> {
+    pub fn default_auth_type(&self) -> std::option::Option<& crate::model::BackendApiAuthType> {
         self.default_auth_type.as_ref()
     }
     /// <p>The service used to provision and interact with the data model.</p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The definition of the data model in the annotated transform of the GraphQL schema.</p>
-    pub fn transform_schema(&self) -> std::option::Option<&str> {
+    pub fn transform_schema(&self) -> std::option::Option<& str> {
         self.transform_schema.as_deref()
     }
 }
 /// See [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
 pub mod backend_api_resource_config {
-
+    
     /// A builder for [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) additional_auth_types:
-            std::option::Option<std::vec::Vec<crate::model::BackendApiAuthType>>,
+        pub(crate) additional_auth_types: std::option::Option<std::vec::Vec<crate::model::BackendApiAuthType>>,
         pub(crate) api_name: std::option::Option<std::string::String>,
-        pub(crate) conflict_resolution:
-            std::option::Option<crate::model::BackendApiConflictResolution>,
+        pub(crate) conflict_resolution: std::option::Option<crate::model::BackendApiConflictResolution>,
         pub(crate) default_auth_type: std::option::Option<crate::model::BackendApiAuthType>,
         pub(crate) service: std::option::Option<std::string::String>,
         pub(crate) transform_schema: std::option::Option<std::string::String>,
@@ -2758,17 +2526,13 @@ pub mod backend_api_resource_config {
         /// <p>Additional authentication methods used to interact with your data models.</p>
         pub fn additional_auth_types(mut self, input: crate::model::BackendApiAuthType) -> Self {
             let mut v = self.additional_auth_types.unwrap_or_default();
-            v.push(input);
-            self.additional_auth_types = Some(v);
-            self
+                            v.push(input);
+                            self.additional_auth_types = Some(v);
+                            self
         }
         /// <p>Additional authentication methods used to interact with your data models.</p>
-        pub fn set_additional_auth_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BackendApiAuthType>>,
-        ) -> Self {
-            self.additional_auth_types = input;
-            self
+        pub fn set_additional_auth_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::BackendApiAuthType>>) -> Self {
+            self.additional_auth_types = input; self
         }
         /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
         pub fn api_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2777,24 +2541,16 @@ pub mod backend_api_resource_config {
         }
         /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
         pub fn set_api_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.api_name = input;
-            self
+            self.api_name = input; self
         }
         /// <p>The conflict resolution strategy for your data stored in the data models.</p>
-        pub fn conflict_resolution(
-            mut self,
-            input: crate::model::BackendApiConflictResolution,
-        ) -> Self {
+        pub fn conflict_resolution(mut self, input: crate::model::BackendApiConflictResolution) -> Self {
             self.conflict_resolution = Some(input);
             self
         }
         /// <p>The conflict resolution strategy for your data stored in the data models.</p>
-        pub fn set_conflict_resolution(
-            mut self,
-            input: std::option::Option<crate::model::BackendApiConflictResolution>,
-        ) -> Self {
-            self.conflict_resolution = input;
-            self
+        pub fn set_conflict_resolution(mut self, input: std::option::Option<crate::model::BackendApiConflictResolution>) -> Self {
+            self.conflict_resolution = input; self
         }
         /// <p>The default authentication type for interacting with the configured data models in your Amplify project.</p>
         pub fn default_auth_type(mut self, input: crate::model::BackendApiAuthType) -> Self {
@@ -2802,12 +2558,8 @@ pub mod backend_api_resource_config {
             self
         }
         /// <p>The default authentication type for interacting with the configured data models in your Amplify project.</p>
-        pub fn set_default_auth_type(
-            mut self,
-            input: std::option::Option<crate::model::BackendApiAuthType>,
-        ) -> Self {
-            self.default_auth_type = input;
-            self
+        pub fn set_default_auth_type(mut self, input: std::option::Option<crate::model::BackendApiAuthType>) -> Self {
+            self.default_auth_type = input; self
         }
         /// <p>The service used to provision and interact with the data model.</p>
         pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2816,8 +2568,7 @@ pub mod backend_api_resource_config {
         }
         /// <p>The service used to provision and interact with the data model.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p>The definition of the data model in the annotated transform of the GraphQL schema.</p>
         pub fn transform_schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2825,25 +2576,29 @@ pub mod backend_api_resource_config {
             self
         }
         /// <p>The definition of the data model in the annotated transform of the GraphQL schema.</p>
-        pub fn set_transform_schema(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transform_schema = input;
-            self
+        pub fn set_transform_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transform_schema = input; self
         }
         /// Consumes the builder and constructs a [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
         pub fn build(self) -> crate::model::BackendApiResourceConfig {
             crate::model::BackendApiResourceConfig {
-                additional_auth_types: self.additional_auth_types,
-                api_name: self.api_name,
-                conflict_resolution: self.conflict_resolution,
-                default_auth_type: self.default_auth_type,
-                service: self.service,
-                transform_schema: self.transform_schema,
+                additional_auth_types: self.additional_auth_types
+                ,
+                api_name: self.api_name
+                ,
+                conflict_resolution: self.conflict_resolution
+                ,
+                default_auth_type: self.default_auth_type
+                ,
+                service: self.service
+                ,
+                transform_schema: self.transform_schema
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendApiResourceConfig {
     /// Creates a new builder-style object to manufacture [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
@@ -2855,7 +2610,7 @@ impl BackendApiResourceConfig {
 /// <p>Describes the auth types for your configured data models.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendApiAuthType {
+pub struct BackendApiAuthType  {
     /// <p>Describes the authentication mode.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::model::Mode>,
@@ -2865,17 +2620,17 @@ pub struct BackendApiAuthType {
 }
 impl BackendApiAuthType {
     /// <p>Describes the authentication mode.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::Mode> {
         self.mode.as_ref()
     }
     /// <p>Describes settings for the authentication mode.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::model::BackendApiAppSyncAuthSettings> {
+    pub fn settings(&self) -> std::option::Option<& crate::model::BackendApiAppSyncAuthSettings> {
         self.settings.as_ref()
     }
 }
 /// See [`BackendApiAuthType`](crate::model::BackendApiAuthType).
 pub mod backend_api_auth_type {
-
+    
     /// A builder for [`BackendApiAuthType`](crate::model::BackendApiAuthType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2890,8 +2645,7 @@ pub mod backend_api_auth_type {
         }
         /// <p>Describes the authentication mode.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::Mode>) -> Self {
-            self.mode = input;
-            self
+            self.mode = input; self
         }
         /// <p>Describes settings for the authentication mode.</p>
         pub fn settings(mut self, input: crate::model::BackendApiAppSyncAuthSettings) -> Self {
@@ -2899,21 +2653,21 @@ pub mod backend_api_auth_type {
             self
         }
         /// <p>Describes settings for the authentication mode.</p>
-        pub fn set_settings(
-            mut self,
-            input: std::option::Option<crate::model::BackendApiAppSyncAuthSettings>,
-        ) -> Self {
-            self.settings = input;
-            self
+        pub fn set_settings(mut self, input: std::option::Option<crate::model::BackendApiAppSyncAuthSettings>) -> Self {
+            self.settings = input; self
         }
         /// Consumes the builder and constructs a [`BackendApiAuthType`](crate::model::BackendApiAuthType).
         pub fn build(self) -> crate::model::BackendApiAuthType {
             crate::model::BackendApiAuthType {
-                mode: self.mode,
-                settings: self.settings,
+                mode: self.mode
+                ,
+                settings: self.settings
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendApiAuthType {
     /// Creates a new builder-style object to manufacture [`BackendApiAuthType`](crate::model::BackendApiAuthType).
@@ -2925,7 +2679,7 @@ impl BackendApiAuthType {
 /// <p>The authentication settings for accessing provisioned data models in your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendApiAppSyncAuthSettings {
+pub struct BackendApiAppSyncAuthSettings  {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
     #[doc(hidden)]
     pub cognito_user_pool_id: std::option::Option<std::string::String>,
@@ -2953,11 +2707,11 @@ pub struct BackendApiAppSyncAuthSettings {
 }
 impl BackendApiAppSyncAuthSettings {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
-    pub fn cognito_user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn cognito_user_pool_id(&self) -> std::option::Option<& str> {
         self.cognito_user_pool_id.as_deref()
     }
     /// <p>The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
@@ -2965,29 +2719,29 @@ impl BackendApiAppSyncAuthSettings {
         self.expiration_time
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn open_id_auth_ttl(&self) -> std::option::Option<&str> {
+    pub fn open_id_auth_ttl(&self) -> std::option::Option<& str> {
         self.open_id_auth_ttl.as_deref()
     }
     /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
-    pub fn open_id_client_id(&self) -> std::option::Option<&str> {
+    pub fn open_id_client_id(&self) -> std::option::Option<& str> {
         self.open_id_client_id.as_deref()
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn open_id_iat_ttl(&self) -> std::option::Option<&str> {
+    pub fn open_id_iat_ttl(&self) -> std::option::Option<& str> {
         self.open_id_iat_ttl.as_deref()
     }
     /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
-    pub fn open_id_issue_url(&self) -> std::option::Option<&str> {
+    pub fn open_id_issue_url(&self) -> std::option::Option<& str> {
         self.open_id_issue_url.as_deref()
     }
     /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
-    pub fn open_id_provider_name(&self) -> std::option::Option<&str> {
+    pub fn open_id_provider_name(&self) -> std::option::Option<& str> {
         self.open_id_provider_name.as_deref()
     }
 }
 /// See [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
 pub mod backend_api_app_sync_auth_settings {
-
+    
     /// A builder for [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3007,12 +2761,8 @@ pub mod backend_api_app_sync_auth_settings {
             self
         }
         /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
-        pub fn set_cognito_user_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cognito_user_pool_id = input;
-            self
+        pub fn set_cognito_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cognito_user_pool_id = input; self
         }
         /// <p>The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3021,8 +2771,7 @@ pub mod backend_api_app_sync_auth_settings {
         }
         /// <p>The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
         pub fn expiration_time(mut self, input: f64) -> Self {
@@ -3031,8 +2780,7 @@ pub mod backend_api_app_sync_auth_settings {
         }
         /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
         pub fn set_expiration_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.expiration_time = input;
-            self
+            self.expiration_time = input; self
         }
         /// <p>The expiry time for the OpenID authentication mechanism.</p>
         pub fn open_id_auth_ttl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3040,12 +2788,8 @@ pub mod backend_api_app_sync_auth_settings {
             self
         }
         /// <p>The expiry time for the OpenID authentication mechanism.</p>
-        pub fn set_open_id_auth_ttl(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.open_id_auth_ttl = input;
-            self
+        pub fn set_open_id_auth_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.open_id_auth_ttl = input; self
         }
         /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
         pub fn open_id_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3053,12 +2797,8 @@ pub mod backend_api_app_sync_auth_settings {
             self
         }
         /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
-        pub fn set_open_id_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.open_id_client_id = input;
-            self
+        pub fn set_open_id_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.open_id_client_id = input; self
         }
         /// <p>The expiry time for the OpenID authentication mechanism.</p>
         pub fn open_id_iat_ttl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3066,12 +2806,8 @@ pub mod backend_api_app_sync_auth_settings {
             self
         }
         /// <p>The expiry time for the OpenID authentication mechanism.</p>
-        pub fn set_open_id_iat_ttl(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.open_id_iat_ttl = input;
-            self
+        pub fn set_open_id_iat_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.open_id_iat_ttl = input; self
         }
         /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
         pub fn open_id_issue_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3079,12 +2815,8 @@ pub mod backend_api_app_sync_auth_settings {
             self
         }
         /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
-        pub fn set_open_id_issue_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.open_id_issue_url = input;
-            self
+        pub fn set_open_id_issue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.open_id_issue_url = input; self
         }
         /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
         pub fn open_id_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3092,27 +2824,34 @@ pub mod backend_api_app_sync_auth_settings {
             self
         }
         /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
-        pub fn set_open_id_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.open_id_provider_name = input;
-            self
+        pub fn set_open_id_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.open_id_provider_name = input; self
         }
         /// Consumes the builder and constructs a [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
         pub fn build(self) -> crate::model::BackendApiAppSyncAuthSettings {
             crate::model::BackendApiAppSyncAuthSettings {
-                cognito_user_pool_id: self.cognito_user_pool_id,
-                description: self.description,
-                expiration_time: self.expiration_time.unwrap_or_default(),
-                open_id_auth_ttl: self.open_id_auth_ttl,
-                open_id_client_id: self.open_id_client_id,
-                open_id_iat_ttl: self.open_id_iat_ttl,
-                open_id_issue_url: self.open_id_issue_url,
-                open_id_provider_name: self.open_id_provider_name,
+                cognito_user_pool_id: self.cognito_user_pool_id
+                ,
+                description: self.description
+                ,
+                expiration_time: self.expiration_time
+                    .unwrap_or_default()
+                ,
+                open_id_auth_ttl: self.open_id_auth_ttl
+                ,
+                open_id_client_id: self.open_id_client_id
+                ,
+                open_id_iat_ttl: self.open_id_iat_ttl
+                ,
+                open_id_issue_url: self.open_id_issue_url
+                ,
+                open_id_provider_name: self.open_id_provider_name
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendApiAppSyncAuthSettings {
     /// Creates a new builder-style object to manufacture [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
@@ -3127,9 +2866,9 @@ impl BackendApiAppSyncAuthSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mode = unimplemented!();
 /// match mode {
@@ -3153,22 +2892,14 @@ impl BackendApiAppSyncAuthSettings {
 /// Specifically, when `mode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Mode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Mode {
     #[allow(missing_docs)] // documentation missing in model
     AmazonCognitoUserPools,
@@ -3179,7 +2910,7 @@ pub enum Mode {
     #[allow(missing_docs)] // documentation missing in model
     OpenidConnect,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Mode {
     fn from(s: &str) -> Self {
@@ -3188,17 +2919,17 @@ impl std::convert::From<&str> for Mode {
             "API_KEY" => Mode::ApiKey,
             "AWS_IAM" => Mode::AwsIam,
             "OPENID_CONNECT" => Mode::OpenidConnect,
-            other => Mode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Mode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Mode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Mode::from(s))
+                }
+            }
 impl Mode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3207,16 +2938,13 @@ impl Mode {
             Mode::ApiKey => "API_KEY",
             Mode::AwsIam => "AWS_IAM",
             Mode::OpenidConnect => "OPENID_CONNECT",
-            Mode::Unknown(value) => value.as_str(),
+            Mode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AMAZON_COGNITO_USER_POOLS",
-            "API_KEY",
-            "AWS_IAM",
-            "OPENID_CONNECT",
+            "AMAZON_COGNITO_USER_POOLS", "API_KEY", "AWS_IAM", "OPENID_CONNECT"
         ]
     }
 }
@@ -3229,20 +2957,20 @@ impl AsRef<str> for Mode {
 /// <p>Describes the conflict resolution configuration for your data model configured in your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendApiConflictResolution {
+pub struct BackendApiConflictResolution  {
     /// <p>The strategy for conflict resolution.</p>
     #[doc(hidden)]
     pub resolution_strategy: std::option::Option<crate::model::ResolutionStrategy>,
 }
 impl BackendApiConflictResolution {
     /// <p>The strategy for conflict resolution.</p>
-    pub fn resolution_strategy(&self) -> std::option::Option<&crate::model::ResolutionStrategy> {
+    pub fn resolution_strategy(&self) -> std::option::Option<& crate::model::ResolutionStrategy> {
         self.resolution_strategy.as_ref()
     }
 }
 /// See [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
 pub mod backend_api_conflict_resolution {
-
+    
     /// A builder for [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3255,20 +2983,19 @@ pub mod backend_api_conflict_resolution {
             self
         }
         /// <p>The strategy for conflict resolution.</p>
-        pub fn set_resolution_strategy(
-            mut self,
-            input: std::option::Option<crate::model::ResolutionStrategy>,
-        ) -> Self {
-            self.resolution_strategy = input;
-            self
+        pub fn set_resolution_strategy(mut self, input: std::option::Option<crate::model::ResolutionStrategy>) -> Self {
+            self.resolution_strategy = input; self
         }
         /// Consumes the builder and constructs a [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
         pub fn build(self) -> crate::model::BackendApiConflictResolution {
             crate::model::BackendApiConflictResolution {
-                resolution_strategy: self.resolution_strategy,
+                resolution_strategy: self.resolution_strategy
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendApiConflictResolution {
     /// Creates a new builder-style object to manufacture [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
@@ -3283,9 +3010,9 @@ impl BackendApiConflictResolution {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resolutionstrategy = unimplemented!();
 /// match resolutionstrategy {
@@ -3309,22 +3036,14 @@ impl BackendApiConflictResolution {
 /// Specifically, when `resolutionstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResolutionStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResolutionStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Automerge,
@@ -3335,7 +3054,7 @@ pub enum ResolutionStrategy {
     #[allow(missing_docs)] // documentation missing in model
     OptimisticConcurrency,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResolutionStrategy {
     fn from(s: &str) -> Self {
@@ -3344,19 +3063,17 @@ impl std::convert::From<&str> for ResolutionStrategy {
             "LAMBDA" => ResolutionStrategy::Lambda,
             "NONE" => ResolutionStrategy::None,
             "OPTIMISTIC_CONCURRENCY" => ResolutionStrategy::OptimisticConcurrency,
-            other => {
-                ResolutionStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResolutionStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResolutionStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResolutionStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResolutionStrategy::from(s))
+                }
+            }
 impl ResolutionStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3365,12 +3082,14 @@ impl ResolutionStrategy {
             ResolutionStrategy::Lambda => "LAMBDA",
             ResolutionStrategy::None => "NONE",
             ResolutionStrategy::OptimisticConcurrency => "OPTIMISTIC_CONCURRENCY",
-            ResolutionStrategy::Unknown(value) => value.as_str(),
+            ResolutionStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"]
+        &[
+            "AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"
+        ]
     }
 }
 impl AsRef<str> for ResolutionStrategy {
@@ -3382,7 +3101,7 @@ impl AsRef<str> for ResolutionStrategy {
 /// <p>Describes the metadata of the S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketInfo {
+pub struct S3BucketInfo  {
     /// <p>The creation date of the S3 bucket.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<std::string::String>,
@@ -3392,17 +3111,17 @@ pub struct S3BucketInfo {
 }
 impl S3BucketInfo {
     /// <p>The creation date of the S3 bucket.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`S3BucketInfo`](crate::model::S3BucketInfo).
 pub mod s3_bucket_info {
-
+    
     /// A builder for [`S3BucketInfo`](crate::model::S3BucketInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3416,12 +3135,8 @@ pub mod s3_bucket_info {
             self
         }
         /// <p>The creation date of the S3 bucket.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The name of the S3 bucket.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3430,17 +3145,20 @@ pub mod s3_bucket_info {
         }
         /// <p>The name of the S3 bucket.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`S3BucketInfo`](crate::model::S3BucketInfo).
         pub fn build(self) -> crate::model::S3BucketInfo {
             crate::model::S3BucketInfo {
-                creation_date: self.creation_date,
-                name: self.name,
+                creation_date: self.creation_date
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl S3BucketInfo {
     /// Creates a new builder-style object to manufacture [`S3BucketInfo`](crate::model::S3BucketInfo).
@@ -3452,7 +3170,7 @@ impl S3BucketInfo {
 /// <p>The response object for this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendJobRespObj {
+pub struct BackendJobRespObj  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -3480,41 +3198,41 @@ pub struct BackendJobRespObj {
 }
 impl BackendJobRespObj {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The time when the job was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&str> {
+    pub fn create_time(&self) -> std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time when the job was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&str> {
+    pub fn update_time(&self) -> std::option::Option<& str> {
         self.update_time.as_deref()
     }
 }
 /// See [`BackendJobRespObj`](crate::model::BackendJobRespObj).
 pub mod backend_job_resp_obj {
-
+    
     /// A builder for [`BackendJobRespObj`](crate::model::BackendJobRespObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3535,8 +3253,7 @@ pub mod backend_job_resp_obj {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3544,12 +3261,8 @@ pub mod backend_job_resp_obj {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The time when the job was created.</p>
         pub fn create_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3558,8 +3271,7 @@ pub mod backend_job_resp_obj {
         }
         /// <p>The time when the job was created.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3568,8 +3280,7 @@ pub mod backend_job_resp_obj {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3578,8 +3289,7 @@ pub mod backend_job_resp_obj {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3588,8 +3298,7 @@ pub mod backend_job_resp_obj {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3598,8 +3307,7 @@ pub mod backend_job_resp_obj {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time when the job was last updated.</p>
         pub fn update_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3608,23 +3316,32 @@ pub mod backend_job_resp_obj {
         }
         /// <p>The time when the job was last updated.</p>
         pub fn set_update_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_time = input;
-            self
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`BackendJobRespObj`](crate::model::BackendJobRespObj).
         pub fn build(self) -> crate::model::BackendJobRespObj {
             crate::model::BackendJobRespObj {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                create_time: self.create_time,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
-                update_time: self.update_time,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                create_time: self.create_time
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendJobRespObj {
     /// Creates a new builder-style object to manufacture [`BackendJobRespObj`](crate::model::BackendJobRespObj).
@@ -3636,7 +3353,7 @@ impl BackendJobRespObj {
 /// <p>The details for a backend storage resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendStorageResourceConfig {
+pub struct GetBackendStorageResourceConfig  {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -3652,7 +3369,7 @@ pub struct GetBackendStorageResourceConfig {
 }
 impl GetBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>Returns True if the storage resource has been imported.</p>
@@ -3660,17 +3377,17 @@ impl GetBackendStorageResourceConfig {
         self.imported
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    pub fn permissions(&self) -> std::option::Option<&crate::model::BackendStoragePermissions> {
+    pub fn permissions(&self) -> std::option::Option<& crate::model::BackendStoragePermissions> {
         self.permissions.as_ref()
     }
     /// <p>The name of the storage service.</p>
-    pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
+    pub fn service_name(&self) -> std::option::Option<& crate::model::ServiceName> {
         self.service_name.as_ref()
     }
 }
 /// See [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
 pub mod get_backend_storage_resource_config {
-
+    
     /// A builder for [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3687,8 +3404,7 @@ pub mod get_backend_storage_resource_config {
         }
         /// <p>The name of the S3 bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>Returns True if the storage resource has been imported.</p>
         pub fn imported(mut self, input: bool) -> Self {
@@ -3697,8 +3413,7 @@ pub mod get_backend_storage_resource_config {
         }
         /// <p>Returns True if the storage resource has been imported.</p>
         pub fn set_imported(mut self, input: std::option::Option<bool>) -> Self {
-            self.imported = input;
-            self
+            self.imported = input; self
         }
         /// <p>The authorization configuration for the storage S3 bucket.</p>
         pub fn permissions(mut self, input: crate::model::BackendStoragePermissions) -> Self {
@@ -3706,12 +3421,8 @@ pub mod get_backend_storage_resource_config {
             self
         }
         /// <p>The authorization configuration for the storage S3 bucket.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<crate::model::BackendStoragePermissions>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<crate::model::BackendStoragePermissions>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The name of the storage service.</p>
         pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
@@ -3719,23 +3430,26 @@ pub mod get_backend_storage_resource_config {
             self
         }
         /// <p>The name of the storage service.</p>
-        pub fn set_service_name(
-            mut self,
-            input: std::option::Option<crate::model::ServiceName>,
-        ) -> Self {
-            self.service_name = input;
-            self
+        pub fn set_service_name(mut self, input: std::option::Option<crate::model::ServiceName>) -> Self {
+            self.service_name = input; self
         }
         /// Consumes the builder and constructs a [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
         pub fn build(self) -> crate::model::GetBackendStorageResourceConfig {
             crate::model::GetBackendStorageResourceConfig {
-                bucket_name: self.bucket_name,
-                imported: self.imported.unwrap_or_default(),
-                permissions: self.permissions,
-                service_name: self.service_name,
+                bucket_name: self.bucket_name
+                ,
+                imported: self.imported
+                    .unwrap_or_default()
+                ,
+                permissions: self.permissions
+                ,
+                service_name: self.service_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBackendStorageResourceConfig {
     /// Creates a new builder-style object to manufacture [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
@@ -3747,14 +3461,13 @@ impl GetBackendStorageResourceConfig {
 /// <p>Defines the resource configuration when creating an auth resource in your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthResourceConfig {
+pub struct CreateBackendAuthResourceConfig  {
     /// <p>Defines whether you want to configure only authentication or both authentication and authorization settings.</p>
     #[doc(hidden)]
     pub auth_resources: std::option::Option<crate::model::AuthResources>,
     /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
     #[doc(hidden)]
-    pub identity_pool_configs:
-        std::option::Option<crate::model::CreateBackendAuthIdentityPoolConfig>,
+    pub identity_pool_configs: std::option::Option<crate::model::CreateBackendAuthIdentityPoolConfig>,
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
@@ -3764,38 +3477,32 @@ pub struct CreateBackendAuthResourceConfig {
 }
 impl CreateBackendAuthResourceConfig {
     /// <p>Defines whether you want to configure only authentication or both authentication and authorization settings.</p>
-    pub fn auth_resources(&self) -> std::option::Option<&crate::model::AuthResources> {
+    pub fn auth_resources(&self) -> std::option::Option<& crate::model::AuthResources> {
         self.auth_resources.as_ref()
     }
     /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
-    pub fn identity_pool_configs(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateBackendAuthIdentityPoolConfig> {
+    pub fn identity_pool_configs(&self) -> std::option::Option<& crate::model::CreateBackendAuthIdentityPoolConfig> {
         self.identity_pool_configs.as_ref()
     }
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
-    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+    pub fn service(&self) -> std::option::Option<& crate::model::Service> {
         self.service.as_ref()
     }
     /// <p>Describes authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
-    pub fn user_pool_configs(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateBackendAuthUserPoolConfig> {
+    pub fn user_pool_configs(&self) -> std::option::Option<& crate::model::CreateBackendAuthUserPoolConfig> {
         self.user_pool_configs.as_ref()
     }
 }
 /// See [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
 pub mod create_backend_auth_resource_config {
-
+    
     /// A builder for [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_resources: std::option::Option<crate::model::AuthResources>,
-        pub(crate) identity_pool_configs:
-            std::option::Option<crate::model::CreateBackendAuthIdentityPoolConfig>,
+        pub(crate) identity_pool_configs: std::option::Option<crate::model::CreateBackendAuthIdentityPoolConfig>,
         pub(crate) service: std::option::Option<crate::model::Service>,
-        pub(crate) user_pool_configs:
-            std::option::Option<crate::model::CreateBackendAuthUserPoolConfig>,
+        pub(crate) user_pool_configs: std::option::Option<crate::model::CreateBackendAuthUserPoolConfig>,
     }
     impl Builder {
         /// <p>Defines whether you want to configure only authentication or both authentication and authorization settings.</p>
@@ -3804,28 +3511,17 @@ pub mod create_backend_auth_resource_config {
             self
         }
         /// <p>Defines whether you want to configure only authentication or both authentication and authorization settings.</p>
-        pub fn set_auth_resources(
-            mut self,
-            input: std::option::Option<crate::model::AuthResources>,
-        ) -> Self {
-            self.auth_resources = input;
-            self
+        pub fn set_auth_resources(mut self, input: std::option::Option<crate::model::AuthResources>) -> Self {
+            self.auth_resources = input; self
         }
         /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
-        pub fn identity_pool_configs(
-            mut self,
-            input: crate::model::CreateBackendAuthIdentityPoolConfig,
-        ) -> Self {
+        pub fn identity_pool_configs(mut self, input: crate::model::CreateBackendAuthIdentityPoolConfig) -> Self {
             self.identity_pool_configs = Some(input);
             self
         }
         /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
-        pub fn set_identity_pool_configs(
-            mut self,
-            input: std::option::Option<crate::model::CreateBackendAuthIdentityPoolConfig>,
-        ) -> Self {
-            self.identity_pool_configs = input;
-            self
+        pub fn set_identity_pool_configs(mut self, input: std::option::Option<crate::model::CreateBackendAuthIdentityPoolConfig>) -> Self {
+            self.identity_pool_configs = input; self
         }
         /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
         pub fn service(mut self, input: crate::model::Service) -> Self {
@@ -3834,35 +3530,33 @@ pub mod create_backend_auth_resource_config {
         }
         /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p>Describes authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
-        pub fn user_pool_configs(
-            mut self,
-            input: crate::model::CreateBackendAuthUserPoolConfig,
-        ) -> Self {
+        pub fn user_pool_configs(mut self, input: crate::model::CreateBackendAuthUserPoolConfig) -> Self {
             self.user_pool_configs = Some(input);
             self
         }
         /// <p>Describes authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
-        pub fn set_user_pool_configs(
-            mut self,
-            input: std::option::Option<crate::model::CreateBackendAuthUserPoolConfig>,
-        ) -> Self {
-            self.user_pool_configs = input;
-            self
+        pub fn set_user_pool_configs(mut self, input: std::option::Option<crate::model::CreateBackendAuthUserPoolConfig>) -> Self {
+            self.user_pool_configs = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
         pub fn build(self) -> crate::model::CreateBackendAuthResourceConfig {
             crate::model::CreateBackendAuthResourceConfig {
-                auth_resources: self.auth_resources,
-                identity_pool_configs: self.identity_pool_configs,
-                service: self.service,
-                user_pool_configs: self.user_pool_configs,
+                auth_resources: self.auth_resources
+                ,
+                identity_pool_configs: self.identity_pool_configs
+                ,
+                service: self.service
+                ,
+                user_pool_configs: self.user_pool_configs
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthResourceConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
@@ -3874,7 +3568,7 @@ impl CreateBackendAuthResourceConfig {
 /// <p>Describes the Amazon Cognito user pool configuration for the auth resource to be configured for your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthUserPoolConfig {
+pub struct CreateBackendAuthUserPoolConfig  {
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
     pub forgot_password: std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
@@ -3889,8 +3583,7 @@ pub struct CreateBackendAuthUserPoolConfig {
     pub password_policy: std::option::Option<crate::model::CreateBackendAuthPasswordPolicyConfig>,
     /// <p>The required attributes to sign up new users in the user pool.</p>
     #[doc(hidden)]
-    pub required_sign_up_attributes:
-        std::option::Option<std::vec::Vec<crate::model::RequiredSignUpAttributesElement>>,
+    pub required_sign_up_attributes: std::option::Option<std::vec::Vec<crate::model::RequiredSignUpAttributesElement>>,
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
     pub sign_in_method: std::option::Option<crate::model::SignInMethod>,
@@ -3899,86 +3592,66 @@ pub struct CreateBackendAuthUserPoolConfig {
     pub user_pool_name: std::option::Option<std::string::String>,
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub verification_message:
-        std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
+    pub verification_message: std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
 }
 impl CreateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn forgot_password(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateBackendAuthForgotPasswordConfig> {
+    pub fn forgot_password(&self) -> std::option::Option<& crate::model::CreateBackendAuthForgotPasswordConfig> {
         self.forgot_password.as_ref()
     }
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
-    pub fn mfa(&self) -> std::option::Option<&crate::model::CreateBackendAuthMfaConfig> {
+    pub fn mfa(&self) -> std::option::Option<& crate::model::CreateBackendAuthMfaConfig> {
         self.mfa.as_ref()
     }
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn o_auth(&self) -> std::option::Option<&crate::model::CreateBackendAuthOAuthConfig> {
+    pub fn o_auth(&self) -> std::option::Option<& crate::model::CreateBackendAuthOAuthConfig> {
         self.o_auth.as_ref()
     }
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn password_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateBackendAuthPasswordPolicyConfig> {
+    pub fn password_policy(&self) -> std::option::Option<& crate::model::CreateBackendAuthPasswordPolicyConfig> {
         self.password_policy.as_ref()
     }
     /// <p>The required attributes to sign up new users in the user pool.</p>
-    pub fn required_sign_up_attributes(
-        &self,
-    ) -> std::option::Option<&[crate::model::RequiredSignUpAttributesElement]> {
+    pub fn required_sign_up_attributes(&self) -> std::option::Option<& [crate::model::RequiredSignUpAttributesElement]> {
         self.required_sign_up_attributes.as_deref()
     }
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn sign_in_method(&self) -> std::option::Option<&crate::model::SignInMethod> {
+    pub fn sign_in_method(&self) -> std::option::Option<& crate::model::SignInMethod> {
         self.sign_in_method.as_ref()
     }
     /// <p>The Amazon Cognito user pool name.</p>
-    pub fn user_pool_name(&self) -> std::option::Option<&str> {
+    pub fn user_pool_name(&self) -> std::option::Option<& str> {
         self.user_pool_name.as_deref()
     }
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn verification_message(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateBackendAuthVerificationMessageConfig> {
+    pub fn verification_message(&self) -> std::option::Option<& crate::model::CreateBackendAuthVerificationMessageConfig> {
         self.verification_message.as_ref()
     }
 }
 /// See [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
 pub mod create_backend_auth_user_pool_config {
-
+    
     /// A builder for [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) forgot_password:
-            std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
+        pub(crate) forgot_password: std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
         pub(crate) mfa: std::option::Option<crate::model::CreateBackendAuthMfaConfig>,
         pub(crate) o_auth: std::option::Option<crate::model::CreateBackendAuthOAuthConfig>,
-        pub(crate) password_policy:
-            std::option::Option<crate::model::CreateBackendAuthPasswordPolicyConfig>,
-        pub(crate) required_sign_up_attributes:
-            std::option::Option<std::vec::Vec<crate::model::RequiredSignUpAttributesElement>>,
+        pub(crate) password_policy: std::option::Option<crate::model::CreateBackendAuthPasswordPolicyConfig>,
+        pub(crate) required_sign_up_attributes: std::option::Option<std::vec::Vec<crate::model::RequiredSignUpAttributesElement>>,
         pub(crate) sign_in_method: std::option::Option<crate::model::SignInMethod>,
         pub(crate) user_pool_name: std::option::Option<std::string::String>,
-        pub(crate) verification_message:
-            std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
+        pub(crate) verification_message: std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
     }
     impl Builder {
         /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn forgot_password(
-            mut self,
-            input: crate::model::CreateBackendAuthForgotPasswordConfig,
-        ) -> Self {
+        pub fn forgot_password(mut self, input: crate::model::CreateBackendAuthForgotPasswordConfig) -> Self {
             self.forgot_password = Some(input);
             self
         }
         /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_forgot_password(
-            mut self,
-            input: std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
-        ) -> Self {
-            self.forgot_password = input;
-            self
+        pub fn set_forgot_password(mut self, input: std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>) -> Self {
+            self.forgot_password = input; self
         }
         /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
         pub fn mfa(mut self, input: crate::model::CreateBackendAuthMfaConfig) -> Self {
@@ -3986,12 +3659,8 @@ pub mod create_backend_auth_user_pool_config {
             self
         }
         /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
-        pub fn set_mfa(
-            mut self,
-            input: std::option::Option<crate::model::CreateBackendAuthMfaConfig>,
-        ) -> Self {
-            self.mfa = input;
-            self
+        pub fn set_mfa(mut self, input: std::option::Option<crate::model::CreateBackendAuthMfaConfig>) -> Self {
+            self.mfa = input; self
         }
         /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
         pub fn o_auth(mut self, input: crate::model::CreateBackendAuthOAuthConfig) -> Self {
@@ -3999,52 +3668,32 @@ pub mod create_backend_auth_user_pool_config {
             self
         }
         /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_o_auth(
-            mut self,
-            input: std::option::Option<crate::model::CreateBackendAuthOAuthConfig>,
-        ) -> Self {
-            self.o_auth = input;
-            self
+        pub fn set_o_auth(mut self, input: std::option::Option<crate::model::CreateBackendAuthOAuthConfig>) -> Self {
+            self.o_auth = input; self
         }
         /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn password_policy(
-            mut self,
-            input: crate::model::CreateBackendAuthPasswordPolicyConfig,
-        ) -> Self {
+        pub fn password_policy(mut self, input: crate::model::CreateBackendAuthPasswordPolicyConfig) -> Self {
             self.password_policy = Some(input);
             self
         }
         /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_password_policy(
-            mut self,
-            input: std::option::Option<crate::model::CreateBackendAuthPasswordPolicyConfig>,
-        ) -> Self {
-            self.password_policy = input;
-            self
+        pub fn set_password_policy(mut self, input: std::option::Option<crate::model::CreateBackendAuthPasswordPolicyConfig>) -> Self {
+            self.password_policy = input; self
         }
         /// Appends an item to `required_sign_up_attributes`.
         ///
         /// To override the contents of this collection use [`set_required_sign_up_attributes`](Self::set_required_sign_up_attributes).
         ///
         /// <p>The required attributes to sign up new users in the user pool.</p>
-        pub fn required_sign_up_attributes(
-            mut self,
-            input: crate::model::RequiredSignUpAttributesElement,
-        ) -> Self {
+        pub fn required_sign_up_attributes(mut self, input: crate::model::RequiredSignUpAttributesElement) -> Self {
             let mut v = self.required_sign_up_attributes.unwrap_or_default();
-            v.push(input);
-            self.required_sign_up_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.required_sign_up_attributes = Some(v);
+                            self
         }
         /// <p>The required attributes to sign up new users in the user pool.</p>
-        pub fn set_required_sign_up_attributes(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::RequiredSignUpAttributesElement>,
-            >,
-        ) -> Self {
-            self.required_sign_up_attributes = input;
-            self
+        pub fn set_required_sign_up_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RequiredSignUpAttributesElement>>) -> Self {
+            self.required_sign_up_attributes = input; self
         }
         /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
         pub fn sign_in_method(mut self, input: crate::model::SignInMethod) -> Self {
@@ -4052,12 +3701,8 @@ pub mod create_backend_auth_user_pool_config {
             self
         }
         /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_sign_in_method(
-            mut self,
-            input: std::option::Option<crate::model::SignInMethod>,
-        ) -> Self {
-            self.sign_in_method = input;
-            self
+        pub fn set_sign_in_method(mut self, input: std::option::Option<crate::model::SignInMethod>) -> Self {
+            self.sign_in_method = input; self
         }
         /// <p>The Amazon Cognito user pool name.</p>
         pub fn user_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4065,43 +3710,42 @@ pub mod create_backend_auth_user_pool_config {
             self
         }
         /// <p>The Amazon Cognito user pool name.</p>
-        pub fn set_user_pool_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_pool_name = input;
-            self
+        pub fn set_user_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_pool_name = input; self
         }
         /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn verification_message(
-            mut self,
-            input: crate::model::CreateBackendAuthVerificationMessageConfig,
-        ) -> Self {
+        pub fn verification_message(mut self, input: crate::model::CreateBackendAuthVerificationMessageConfig) -> Self {
             self.verification_message = Some(input);
             self
         }
         /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-        pub fn set_verification_message(
-            mut self,
-            input: std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
-        ) -> Self {
-            self.verification_message = input;
-            self
+        pub fn set_verification_message(mut self, input: std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>) -> Self {
+            self.verification_message = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
         pub fn build(self) -> crate::model::CreateBackendAuthUserPoolConfig {
             crate::model::CreateBackendAuthUserPoolConfig {
-                forgot_password: self.forgot_password,
-                mfa: self.mfa,
-                o_auth: self.o_auth,
-                password_policy: self.password_policy,
-                required_sign_up_attributes: self.required_sign_up_attributes,
-                sign_in_method: self.sign_in_method,
-                user_pool_name: self.user_pool_name,
-                verification_message: self.verification_message,
+                forgot_password: self.forgot_password
+                ,
+                mfa: self.mfa
+                ,
+                o_auth: self.o_auth
+                ,
+                password_policy: self.password_policy
+                ,
+                required_sign_up_attributes: self.required_sign_up_attributes
+                ,
+                sign_in_method: self.sign_in_method
+                ,
+                user_pool_name: self.user_pool_name
+                ,
+                verification_message: self.verification_message
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthUserPoolConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
@@ -4113,7 +3757,7 @@ impl CreateBackendAuthUserPoolConfig {
 /// <p>Creates an email or SMS verification message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthVerificationMessageConfig {
+pub struct CreateBackendAuthVerificationMessageConfig  {
     /// <p>The type of verification message to send.</p>
     #[doc(hidden)]
     pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
@@ -4126,21 +3770,21 @@ pub struct CreateBackendAuthVerificationMessageConfig {
 }
 impl CreateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
-    pub fn delivery_method(&self) -> std::option::Option<&crate::model::DeliveryMethod> {
+    pub fn delivery_method(&self) -> std::option::Option<& crate::model::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
     /// <p>The settings for the email message.</p>
-    pub fn email_settings(&self) -> std::option::Option<&crate::model::EmailSettings> {
+    pub fn email_settings(&self) -> std::option::Option<& crate::model::EmailSettings> {
         self.email_settings.as_ref()
     }
     /// <p>The settings for the SMS message.</p>
-    pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
+    pub fn sms_settings(&self) -> std::option::Option<& crate::model::SmsSettings> {
         self.sms_settings.as_ref()
     }
 }
 /// See [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
 pub mod create_backend_auth_verification_message_config {
-
+    
     /// A builder for [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4155,12 +3799,8 @@ pub mod create_backend_auth_verification_message_config {
             self
         }
         /// <p>The type of verification message to send.</p>
-        pub fn set_delivery_method(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryMethod>,
-        ) -> Self {
-            self.delivery_method = input;
-            self
+        pub fn set_delivery_method(mut self, input: std::option::Option<crate::model::DeliveryMethod>) -> Self {
+            self.delivery_method = input; self
         }
         /// <p>The settings for the email message.</p>
         pub fn email_settings(mut self, input: crate::model::EmailSettings) -> Self {
@@ -4168,12 +3808,8 @@ pub mod create_backend_auth_verification_message_config {
             self
         }
         /// <p>The settings for the email message.</p>
-        pub fn set_email_settings(
-            mut self,
-            input: std::option::Option<crate::model::EmailSettings>,
-        ) -> Self {
-            self.email_settings = input;
-            self
+        pub fn set_email_settings(mut self, input: std::option::Option<crate::model::EmailSettings>) -> Self {
+            self.email_settings = input; self
         }
         /// <p>The settings for the SMS message.</p>
         pub fn sms_settings(mut self, input: crate::model::SmsSettings) -> Self {
@@ -4181,22 +3817,23 @@ pub mod create_backend_auth_verification_message_config {
             self
         }
         /// <p>The settings for the SMS message.</p>
-        pub fn set_sms_settings(
-            mut self,
-            input: std::option::Option<crate::model::SmsSettings>,
-        ) -> Self {
-            self.sms_settings = input;
-            self
+        pub fn set_sms_settings(mut self, input: std::option::Option<crate::model::SmsSettings>) -> Self {
+            self.sms_settings = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
         pub fn build(self) -> crate::model::CreateBackendAuthVerificationMessageConfig {
             crate::model::CreateBackendAuthVerificationMessageConfig {
-                delivery_method: self.delivery_method,
-                email_settings: self.email_settings,
-                sms_settings: self.sms_settings,
+                delivery_method: self.delivery_method
+                ,
+                email_settings: self.email_settings
+                ,
+                sms_settings: self.sms_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthVerificationMessageConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
@@ -4211,9 +3848,9 @@ impl CreateBackendAuthVerificationMessageConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let signinmethod = unimplemented!();
 /// match signinmethod {
@@ -4237,22 +3874,14 @@ impl CreateBackendAuthVerificationMessageConfig {
 /// Specifically, when `signinmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SignInMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SignInMethod {
     #[allow(missing_docs)] // documentation missing in model
     Email,
@@ -4263,7 +3892,7 @@ pub enum SignInMethod {
     #[allow(missing_docs)] // documentation missing in model
     Username,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SignInMethod {
     fn from(s: &str) -> Self {
@@ -4272,17 +3901,17 @@ impl std::convert::From<&str> for SignInMethod {
             "EMAIL_AND_PHONE_NUMBER" => SignInMethod::EmailAndPhoneNumber,
             "PHONE_NUMBER" => SignInMethod::PhoneNumber,
             "USERNAME" => SignInMethod::Username,
-            other => SignInMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SignInMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SignInMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SignInMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SignInMethod::from(s))
+                }
+            }
 impl SignInMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4291,16 +3920,13 @@ impl SignInMethod {
             SignInMethod::EmailAndPhoneNumber => "EMAIL_AND_PHONE_NUMBER",
             SignInMethod::PhoneNumber => "PHONE_NUMBER",
             SignInMethod::Username => "USERNAME",
-            SignInMethod::Unknown(value) => value.as_str(),
+            SignInMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EMAIL",
-            "EMAIL_AND_PHONE_NUMBER",
-            "PHONE_NUMBER",
-            "USERNAME",
+            "EMAIL", "EMAIL_AND_PHONE_NUMBER", "PHONE_NUMBER", "USERNAME"
         ]
     }
 }
@@ -4316,9 +3942,9 @@ impl AsRef<str> for SignInMethod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let requiredsignupattributeselement = unimplemented!();
 /// match requiredsignupattributeselement {
@@ -4355,22 +3981,14 @@ impl AsRef<str> for SignInMethod {
 /// Specifically, when `requiredsignupattributeselement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RequiredSignUpAttributesElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RequiredSignUpAttributesElement {
     #[allow(missing_docs)] // documentation missing in model
     Address,
@@ -4407,7 +4025,7 @@ pub enum RequiredSignUpAttributesElement {
     #[allow(missing_docs)] // documentation missing in model
     ZoneInfo,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequiredSignUpAttributesElement {
     fn from(s: &str) -> Self {
@@ -4429,19 +4047,17 @@ impl std::convert::From<&str> for RequiredSignUpAttributesElement {
             "UPDATED_AT" => RequiredSignUpAttributesElement::UpdatedAt,
             "WEBSITE" => RequiredSignUpAttributesElement::Website,
             "ZONE_INFO" => RequiredSignUpAttributesElement::ZoneInfo,
-            other => RequiredSignUpAttributesElement::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RequiredSignUpAttributesElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RequiredSignUpAttributesElement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequiredSignUpAttributesElement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RequiredSignUpAttributesElement::from(s))
+                }
+            }
 impl RequiredSignUpAttributesElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4463,29 +4079,13 @@ impl RequiredSignUpAttributesElement {
             RequiredSignUpAttributesElement::UpdatedAt => "UPDATED_AT",
             RequiredSignUpAttributesElement::Website => "WEBSITE",
             RequiredSignUpAttributesElement::ZoneInfo => "ZONE_INFO",
-            RequiredSignUpAttributesElement::Unknown(value) => value.as_str(),
+            RequiredSignUpAttributesElement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ADDRESS",
-            "BIRTHDATE",
-            "EMAIL",
-            "FAMILY_NAME",
-            "GENDER",
-            "GIVEN_NAME",
-            "LOCALE",
-            "MIDDLE_NAME",
-            "NAME",
-            "NICKNAME",
-            "PHONE_NUMBER",
-            "PICTURE",
-            "PREFERRED_USERNAME",
-            "PROFILE",
-            "UPDATED_AT",
-            "WEBSITE",
-            "ZONE_INFO",
+            "ADDRESS", "BIRTHDATE", "EMAIL", "FAMILY_NAME", "GENDER", "GIVEN_NAME", "LOCALE", "MIDDLE_NAME", "NAME", "NICKNAME", "PHONE_NUMBER", "PICTURE", "PREFERRED_USERNAME", "PROFILE", "UPDATED_AT", "WEBSITE", "ZONE_INFO"
         ]
     }
 }
@@ -4498,20 +4098,17 @@ impl AsRef<str> for RequiredSignUpAttributesElement {
 /// <p>The password policy configuration for the backend to your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthPasswordPolicyConfig {
+pub struct CreateBackendAuthPasswordPolicyConfig  {
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
     #[doc(hidden)]
-    pub additional_constraints:
-        std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
+    pub additional_constraints: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
     #[doc(hidden)]
     pub minimum_length: f64,
 }
 impl CreateBackendAuthPasswordPolicyConfig {
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
-    pub fn additional_constraints(
-        &self,
-    ) -> std::option::Option<&[crate::model::AdditionalConstraintsElement]> {
+    pub fn additional_constraints(&self) -> std::option::Option<& [crate::model::AdditionalConstraintsElement]> {
         self.additional_constraints.as_deref()
     }
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
@@ -4521,12 +4118,11 @@ impl CreateBackendAuthPasswordPolicyConfig {
 }
 /// See [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
 pub mod create_backend_auth_password_policy_config {
-
+    
     /// A builder for [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) additional_constraints:
-            std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
+        pub(crate) additional_constraints: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
         pub(crate) minimum_length: std::option::Option<f64>,
     }
     impl Builder {
@@ -4535,22 +4131,15 @@ pub mod create_backend_auth_password_policy_config {
         /// To override the contents of this collection use [`set_additional_constraints`](Self::set_additional_constraints).
         ///
         /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
-        pub fn additional_constraints(
-            mut self,
-            input: crate::model::AdditionalConstraintsElement,
-        ) -> Self {
+        pub fn additional_constraints(mut self, input: crate::model::AdditionalConstraintsElement) -> Self {
             let mut v = self.additional_constraints.unwrap_or_default();
-            v.push(input);
-            self.additional_constraints = Some(v);
-            self
+                            v.push(input);
+                            self.additional_constraints = Some(v);
+                            self
         }
         /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
-        pub fn set_additional_constraints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
-        ) -> Self {
-            self.additional_constraints = input;
-            self
+        pub fn set_additional_constraints(mut self, input: std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>) -> Self {
+            self.additional_constraints = input; self
         }
         /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
         pub fn minimum_length(mut self, input: f64) -> Self {
@@ -4559,17 +4148,21 @@ pub mod create_backend_auth_password_policy_config {
         }
         /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
         pub fn set_minimum_length(mut self, input: std::option::Option<f64>) -> Self {
-            self.minimum_length = input;
-            self
+            self.minimum_length = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
         pub fn build(self) -> crate::model::CreateBackendAuthPasswordPolicyConfig {
             crate::model::CreateBackendAuthPasswordPolicyConfig {
-                additional_constraints: self.additional_constraints,
-                minimum_length: self.minimum_length.unwrap_or_default(),
+                additional_constraints: self.additional_constraints
+                ,
+                minimum_length: self.minimum_length
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthPasswordPolicyConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
@@ -4581,7 +4174,7 @@ impl CreateBackendAuthPasswordPolicyConfig {
 /// <p>Creates the OAuth configuration for your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthOAuthConfig {
+pub struct CreateBackendAuthOAuthConfig  {
     /// <p>The domain prefix for your Amplify app.</p>
     #[doc(hidden)]
     pub domain_prefix: std::option::Option<std::string::String>,
@@ -4603,46 +4196,42 @@ pub struct CreateBackendAuthOAuthConfig {
 }
 impl CreateBackendAuthOAuthConfig {
     /// <p>The domain prefix for your Amplify app.</p>
-    pub fn domain_prefix(&self) -> std::option::Option<&str> {
+    pub fn domain_prefix(&self) -> std::option::Option<& str> {
         self.domain_prefix.as_deref()
     }
     /// <p>The OAuth grant type that you use to allow app users to authenticate from your Amplify app.</p>
-    pub fn o_auth_grant_type(&self) -> std::option::Option<&crate::model::OAuthGrantType> {
+    pub fn o_auth_grant_type(&self) -> std::option::Option<& crate::model::OAuthGrantType> {
         self.o_auth_grant_type.as_ref()
     }
     /// <p>List of OAuth-related flows used to allow your app users to authenticate from your Amplify app.</p>
-    pub fn o_auth_scopes(&self) -> std::option::Option<&[crate::model::OAuthScopesElement]> {
+    pub fn o_auth_scopes(&self) -> std::option::Option<& [crate::model::OAuthScopesElement]> {
         self.o_auth_scopes.as_deref()
     }
     /// <p>The redirected URI for signing in to your Amplify app.</p>
-    pub fn redirect_sign_in_ur_is(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn redirect_sign_in_ur_is(&self) -> std::option::Option<& [std::string::String]> {
         self.redirect_sign_in_ur_is.as_deref()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn redirect_sign_out_ur_is(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn redirect_sign_out_ur_is(&self) -> std::option::Option<& [std::string::String]> {
         self.redirect_sign_out_ur_is.as_deref()
     }
     /// <p>The settings for using social providers to access your Amplify app.</p>
-    pub fn social_provider_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::SocialProviderSettings> {
+    pub fn social_provider_settings(&self) -> std::option::Option<& crate::model::SocialProviderSettings> {
         self.social_provider_settings.as_ref()
     }
 }
 /// See [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
 pub mod create_backend_auth_o_auth_config {
-
+    
     /// A builder for [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_prefix: std::option::Option<std::string::String>,
         pub(crate) o_auth_grant_type: std::option::Option<crate::model::OAuthGrantType>,
-        pub(crate) o_auth_scopes:
-            std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>,
+        pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>,
         pub(crate) redirect_sign_in_ur_is: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) redirect_sign_out_ur_is: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) social_provider_settings:
-            std::option::Option<crate::model::SocialProviderSettings>,
+        pub(crate) social_provider_settings: std::option::Option<crate::model::SocialProviderSettings>,
     }
     impl Builder {
         /// <p>The domain prefix for your Amplify app.</p>
@@ -4651,12 +4240,8 @@ pub mod create_backend_auth_o_auth_config {
             self
         }
         /// <p>The domain prefix for your Amplify app.</p>
-        pub fn set_domain_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.domain_prefix = input;
-            self
+        pub fn set_domain_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_prefix = input; self
         }
         /// <p>The OAuth grant type that you use to allow app users to authenticate from your Amplify app.</p>
         pub fn o_auth_grant_type(mut self, input: crate::model::OAuthGrantType) -> Self {
@@ -4664,12 +4249,8 @@ pub mod create_backend_auth_o_auth_config {
             self
         }
         /// <p>The OAuth grant type that you use to allow app users to authenticate from your Amplify app.</p>
-        pub fn set_o_auth_grant_type(
-            mut self,
-            input: std::option::Option<crate::model::OAuthGrantType>,
-        ) -> Self {
-            self.o_auth_grant_type = input;
-            self
+        pub fn set_o_auth_grant_type(mut self, input: std::option::Option<crate::model::OAuthGrantType>) -> Self {
+            self.o_auth_grant_type = input; self
         }
         /// Appends an item to `o_auth_scopes`.
         ///
@@ -4678,17 +4259,13 @@ pub mod create_backend_auth_o_auth_config {
         /// <p>List of OAuth-related flows used to allow your app users to authenticate from your Amplify app.</p>
         pub fn o_auth_scopes(mut self, input: crate::model::OAuthScopesElement) -> Self {
             let mut v = self.o_auth_scopes.unwrap_or_default();
-            v.push(input);
-            self.o_auth_scopes = Some(v);
-            self
+                            v.push(input);
+                            self.o_auth_scopes = Some(v);
+                            self
         }
         /// <p>List of OAuth-related flows used to allow your app users to authenticate from your Amplify app.</p>
-        pub fn set_o_auth_scopes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>,
-        ) -> Self {
-            self.o_auth_scopes = input;
-            self
+        pub fn set_o_auth_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>) -> Self {
+            self.o_auth_scopes = input; self
         }
         /// Appends an item to `redirect_sign_in_ur_is`.
         ///
@@ -4697,17 +4274,13 @@ pub mod create_backend_auth_o_auth_config {
         /// <p>The redirected URI for signing in to your Amplify app.</p>
         pub fn redirect_sign_in_ur_is(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.redirect_sign_in_ur_is.unwrap_or_default();
-            v.push(input.into());
-            self.redirect_sign_in_ur_is = Some(v);
-            self
+                            v.push(input.into());
+                            self.redirect_sign_in_ur_is = Some(v);
+                            self
         }
         /// <p>The redirected URI for signing in to your Amplify app.</p>
-        pub fn set_redirect_sign_in_ur_is(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.redirect_sign_in_ur_is = input;
-            self
+        pub fn set_redirect_sign_in_ur_is(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.redirect_sign_in_ur_is = input; self
         }
         /// Appends an item to `redirect_sign_out_ur_is`.
         ///
@@ -4716,46 +4289,43 @@ pub mod create_backend_auth_o_auth_config {
         /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
         pub fn redirect_sign_out_ur_is(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.redirect_sign_out_ur_is.unwrap_or_default();
-            v.push(input.into());
-            self.redirect_sign_out_ur_is = Some(v);
-            self
+                            v.push(input.into());
+                            self.redirect_sign_out_ur_is = Some(v);
+                            self
         }
         /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-        pub fn set_redirect_sign_out_ur_is(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.redirect_sign_out_ur_is = input;
-            self
+        pub fn set_redirect_sign_out_ur_is(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.redirect_sign_out_ur_is = input; self
         }
         /// <p>The settings for using social providers to access your Amplify app.</p>
-        pub fn social_provider_settings(
-            mut self,
-            input: crate::model::SocialProviderSettings,
-        ) -> Self {
+        pub fn social_provider_settings(mut self, input: crate::model::SocialProviderSettings) -> Self {
             self.social_provider_settings = Some(input);
             self
         }
         /// <p>The settings for using social providers to access your Amplify app.</p>
-        pub fn set_social_provider_settings(
-            mut self,
-            input: std::option::Option<crate::model::SocialProviderSettings>,
-        ) -> Self {
-            self.social_provider_settings = input;
-            self
+        pub fn set_social_provider_settings(mut self, input: std::option::Option<crate::model::SocialProviderSettings>) -> Self {
+            self.social_provider_settings = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
         pub fn build(self) -> crate::model::CreateBackendAuthOAuthConfig {
             crate::model::CreateBackendAuthOAuthConfig {
-                domain_prefix: self.domain_prefix,
-                o_auth_grant_type: self.o_auth_grant_type,
-                o_auth_scopes: self.o_auth_scopes,
-                redirect_sign_in_ur_is: self.redirect_sign_in_ur_is,
-                redirect_sign_out_ur_is: self.redirect_sign_out_ur_is,
-                social_provider_settings: self.social_provider_settings,
+                domain_prefix: self.domain_prefix
+                ,
+                o_auth_grant_type: self.o_auth_grant_type
+                ,
+                o_auth_scopes: self.o_auth_scopes
+                ,
+                redirect_sign_in_ur_is: self.redirect_sign_in_ur_is
+                ,
+                redirect_sign_out_ur_is: self.redirect_sign_out_ur_is
+                ,
+                social_provider_settings: self.social_provider_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthOAuthConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
@@ -4767,7 +4337,7 @@ impl CreateBackendAuthOAuthConfig {
 /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthMfaConfig {
+pub struct CreateBackendAuthMfaConfig  {
     /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
     #[doc(hidden)]
     pub mfa_mode: std::option::Option<crate::model::MfaMode>,
@@ -4777,17 +4347,17 @@ pub struct CreateBackendAuthMfaConfig {
 }
 impl CreateBackendAuthMfaConfig {
     /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
-    pub fn mfa_mode(&self) -> std::option::Option<&crate::model::MfaMode> {
+    pub fn mfa_mode(&self) -> std::option::Option<& crate::model::MfaMode> {
         self.mfa_mode.as_ref()
     }
     /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
+    pub fn settings(&self) -> std::option::Option<& crate::model::Settings> {
         self.settings.as_ref()
     }
 }
 /// See [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
 pub mod create_backend_auth_mfa_config {
-
+    
     /// A builder for [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4802,8 +4372,7 @@ pub mod create_backend_auth_mfa_config {
         }
         /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
         pub fn set_mfa_mode(mut self, input: std::option::Option<crate::model::MfaMode>) -> Self {
-            self.mfa_mode = input;
-            self
+            self.mfa_mode = input; self
         }
         /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
         pub fn settings(mut self, input: crate::model::Settings) -> Self {
@@ -4812,17 +4381,20 @@ pub mod create_backend_auth_mfa_config {
         }
         /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
         pub fn set_settings(mut self, input: std::option::Option<crate::model::Settings>) -> Self {
-            self.settings = input;
-            self
+            self.settings = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
         pub fn build(self) -> crate::model::CreateBackendAuthMfaConfig {
             crate::model::CreateBackendAuthMfaConfig {
-                mfa_mode: self.mfa_mode,
-                settings: self.settings,
+                mfa_mode: self.mfa_mode
+                ,
+                settings: self.settings
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthMfaConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
@@ -4834,7 +4406,7 @@ impl CreateBackendAuthMfaConfig {
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthForgotPasswordConfig {
+pub struct CreateBackendAuthForgotPasswordConfig  {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
     #[doc(hidden)]
     pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
@@ -4847,21 +4419,21 @@ pub struct CreateBackendAuthForgotPasswordConfig {
 }
 impl CreateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
-    pub fn delivery_method(&self) -> std::option::Option<&crate::model::DeliveryMethod> {
+    pub fn delivery_method(&self) -> std::option::Option<& crate::model::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-    pub fn email_settings(&self) -> std::option::Option<&crate::model::EmailSettings> {
+    pub fn email_settings(&self) -> std::option::Option<& crate::model::EmailSettings> {
         self.email_settings.as_ref()
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
-    pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
+    pub fn sms_settings(&self) -> std::option::Option<& crate::model::SmsSettings> {
         self.sms_settings.as_ref()
     }
 }
 /// See [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
 pub mod create_backend_auth_forgot_password_config {
-
+    
     /// A builder for [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4876,12 +4448,8 @@ pub mod create_backend_auth_forgot_password_config {
             self
         }
         /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
-        pub fn set_delivery_method(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryMethod>,
-        ) -> Self {
-            self.delivery_method = input;
-            self
+        pub fn set_delivery_method(mut self, input: std::option::Option<crate::model::DeliveryMethod>) -> Self {
+            self.delivery_method = input; self
         }
         /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
         pub fn email_settings(mut self, input: crate::model::EmailSettings) -> Self {
@@ -4889,12 +4457,8 @@ pub mod create_backend_auth_forgot_password_config {
             self
         }
         /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-        pub fn set_email_settings(
-            mut self,
-            input: std::option::Option<crate::model::EmailSettings>,
-        ) -> Self {
-            self.email_settings = input;
-            self
+        pub fn set_email_settings(mut self, input: std::option::Option<crate::model::EmailSettings>) -> Self {
+            self.email_settings = input; self
         }
         /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
         pub fn sms_settings(mut self, input: crate::model::SmsSettings) -> Self {
@@ -4902,22 +4466,23 @@ pub mod create_backend_auth_forgot_password_config {
             self
         }
         /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
-        pub fn set_sms_settings(
-            mut self,
-            input: std::option::Option<crate::model::SmsSettings>,
-        ) -> Self {
-            self.sms_settings = input;
-            self
+        pub fn set_sms_settings(mut self, input: std::option::Option<crate::model::SmsSettings>) -> Self {
+            self.sms_settings = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
         pub fn build(self) -> crate::model::CreateBackendAuthForgotPasswordConfig {
             crate::model::CreateBackendAuthForgotPasswordConfig {
-                delivery_method: self.delivery_method,
-                email_settings: self.email_settings,
-                sms_settings: self.sms_settings,
+                delivery_method: self.delivery_method
+                ,
+                email_settings: self.email_settings
+                ,
+                sms_settings: self.sms_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthForgotPasswordConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
@@ -4929,7 +4494,7 @@ impl CreateBackendAuthForgotPasswordConfig {
 /// <p>Describes authorization configurations for the auth resources, configured as a part of your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthIdentityPoolConfig {
+pub struct CreateBackendAuthIdentityPoolConfig  {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
     #[doc(hidden)]
     pub identity_pool_name: std::option::Option<std::string::String>,
@@ -4939,7 +4504,7 @@ pub struct CreateBackendAuthIdentityPoolConfig {
 }
 impl CreateBackendAuthIdentityPoolConfig {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_name(&self) -> std::option::Option<& str> {
         self.identity_pool_name.as_deref()
     }
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
@@ -4949,7 +4514,7 @@ impl CreateBackendAuthIdentityPoolConfig {
 }
 /// See [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
 pub mod create_backend_auth_identity_pool_config {
-
+    
     /// A builder for [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4963,12 +4528,8 @@ pub mod create_backend_auth_identity_pool_config {
             self
         }
         /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-        pub fn set_identity_pool_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_name = input;
-            self
+        pub fn set_identity_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_name = input; self
         }
         /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
         pub fn unauthenticated_login(mut self, input: bool) -> Self {
@@ -4977,17 +4538,21 @@ pub mod create_backend_auth_identity_pool_config {
         }
         /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
         pub fn set_unauthenticated_login(mut self, input: std::option::Option<bool>) -> Self {
-            self.unauthenticated_login = input;
-            self
+            self.unauthenticated_login = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
         pub fn build(self) -> crate::model::CreateBackendAuthIdentityPoolConfig {
             crate::model::CreateBackendAuthIdentityPoolConfig {
-                identity_pool_name: self.identity_pool_name,
-                unauthenticated_login: self.unauthenticated_login.unwrap_or_default(),
+                identity_pool_name: self.identity_pool_name
+                ,
+                unauthenticated_login: self.unauthenticated_login
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthIdentityPoolConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
@@ -5002,9 +4567,9 @@ impl CreateBackendAuthIdentityPoolConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -5026,58 +4591,52 @@ impl CreateBackendAuthIdentityPoolConfig {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Latest,
     #[allow(missing_docs)] // documentation missing in model
     Stale,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
         match s {
             "LATEST" => Status::Latest,
             "STALE" => Status::Stale,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Latest => "LATEST",
             Status::Stale => "STALE",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LATEST", "STALE"]
+        &[
+            "LATEST", "STALE"
+        ]
     }
 }
 impl AsRef<str> for Status {
@@ -5089,7 +4648,7 @@ impl AsRef<str> for Status {
 /// <p>The resource configuration for creating backend storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendStorageResourceConfig {
+pub struct CreateBackendStorageResourceConfig  {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -5102,21 +4661,21 @@ pub struct CreateBackendStorageResourceConfig {
 }
 impl CreateBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    pub fn permissions(&self) -> std::option::Option<&crate::model::BackendStoragePermissions> {
+    pub fn permissions(&self) -> std::option::Option<& crate::model::BackendStoragePermissions> {
         self.permissions.as_ref()
     }
     /// <p>The name of the storage service.</p>
-    pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
+    pub fn service_name(&self) -> std::option::Option<& crate::model::ServiceName> {
         self.service_name.as_ref()
     }
 }
 /// See [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
 pub mod create_backend_storage_resource_config {
-
+    
     /// A builder for [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5132,8 +4691,7 @@ pub mod create_backend_storage_resource_config {
         }
         /// <p>The name of the S3 bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>The authorization configuration for the storage S3 bucket.</p>
         pub fn permissions(mut self, input: crate::model::BackendStoragePermissions) -> Self {
@@ -5141,12 +4699,8 @@ pub mod create_backend_storage_resource_config {
             self
         }
         /// <p>The authorization configuration for the storage S3 bucket.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<crate::model::BackendStoragePermissions>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<crate::model::BackendStoragePermissions>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The name of the storage service.</p>
         pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
@@ -5154,22 +4708,23 @@ pub mod create_backend_storage_resource_config {
             self
         }
         /// <p>The name of the storage service.</p>
-        pub fn set_service_name(
-            mut self,
-            input: std::option::Option<crate::model::ServiceName>,
-        ) -> Self {
-            self.service_name = input;
-            self
+        pub fn set_service_name(mut self, input: std::option::Option<crate::model::ServiceName>) -> Self {
+            self.service_name = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
         pub fn build(self) -> crate::model::CreateBackendStorageResourceConfig {
             crate::model::CreateBackendStorageResourceConfig {
-                bucket_name: self.bucket_name,
-                permissions: self.permissions,
-                service_name: self.service_name,
+                bucket_name: self.bucket_name
+                ,
+                permissions: self.permissions
+                ,
+                service_name: self.service_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendStorageResourceConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
@@ -5181,19 +4736,24 @@ impl CreateBackendStorageResourceConfig {
 /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceConfig {}
+pub struct ResourceConfig  {
+}
 /// See [`ResourceConfig`](crate::model::ResourceConfig).
 pub mod resource_config {
-
+    
     /// A builder for [`ResourceConfig`](crate::model::ResourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ResourceConfig`](crate::model::ResourceConfig).
         pub fn build(self) -> crate::model::ResourceConfig {
-            crate::model::ResourceConfig {}
+            crate::model::ResourceConfig {
+            }
         }
     }
+    
+    
 }
 impl ResourceConfig {
     /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::model::ResourceConfig).
@@ -5201,3 +4761,4 @@ impl ResourceConfig {
         crate::model::resource_config::Builder::default()
     }
 }
+

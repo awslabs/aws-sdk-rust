@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceOutput {
+pub struct UpdateServiceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateServiceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
 pub mod update_service_output {
-
+    
     /// A builder for [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod update_service_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
         pub fn build(self) -> crate::output::UpdateServiceOutput {
             crate::output::UpdateServiceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateServiceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
@@ -50,20 +52,20 @@ impl UpdateServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePublicDnsNamespaceOutput {
+pub struct UpdatePublicDnsNamespaceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdatePublicDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
 pub mod update_public_dns_namespace_output {
-
+    
     /// A builder for [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,16 +79,18 @@ pub mod update_public_dns_namespace_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
         pub fn build(self) -> crate::output::UpdatePublicDnsNamespaceOutput {
             crate::output::UpdatePublicDnsNamespaceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePublicDnsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
@@ -98,20 +102,20 @@ impl UpdatePublicDnsNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePrivateDnsNamespaceOutput {
+pub struct UpdatePrivateDnsNamespaceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdatePrivateDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
 pub mod update_private_dns_namespace_output {
-
+    
     /// A builder for [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -125,16 +129,18 @@ pub mod update_private_dns_namespace_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
         pub fn build(self) -> crate::output::UpdatePrivateDnsNamespaceOutput {
             crate::output::UpdatePrivateDnsNamespaceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePrivateDnsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
@@ -146,19 +152,24 @@ impl UpdatePrivateDnsNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstanceCustomHealthStatusOutput {}
+pub struct UpdateInstanceCustomHealthStatusOutput  {
+}
 /// See [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
 pub mod update_instance_custom_health_status_output {
-
+    
     /// A builder for [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
         pub fn build(self) -> crate::output::UpdateInstanceCustomHealthStatusOutput {
-            crate::output::UpdateInstanceCustomHealthStatusOutput {}
+            crate::output::UpdateInstanceCustomHealthStatusOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateInstanceCustomHealthStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
@@ -170,20 +181,20 @@ impl UpdateInstanceCustomHealthStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHttpNamespaceOutput {
+pub struct UpdateHttpNamespaceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateHttpNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
 pub mod update_http_namespace_output {
-
+    
     /// A builder for [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -197,16 +208,18 @@ pub mod update_http_namespace_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
         pub fn build(self) -> crate::output::UpdateHttpNamespaceOutput {
             crate::output::UpdateHttpNamespaceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateHttpNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
@@ -218,19 +231,24 @@ impl UpdateHttpNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -242,19 +260,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -266,20 +289,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterInstanceOutput {
+pub struct RegisterInstanceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl RegisterInstanceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
 pub mod register_instance_output {
-
+    
     /// A builder for [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -293,16 +316,18 @@ pub mod register_instance_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
         pub fn build(self) -> crate::output::RegisterInstanceOutput {
             crate::output::RegisterInstanceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
@@ -314,20 +339,20 @@ impl RegisterInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags that are assigned to the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -341,23 +366,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags that are assigned to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags that are assigned to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -369,31 +395,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServicesOutput {
+pub struct ListServicesOutput  {
     /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicesOutput {
     /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::ServiceSummary]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::ServiceSummary]> {
         self.services.as_deref()
     }
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p> 
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput).
 pub mod list_services_output {
-
+    
     /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -408,40 +434,39 @@ pub mod list_services_output {
         /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
         pub fn services(mut self, input: crate::model::ServiceSummary) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>) -> Self {
+            self.services = input; self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p> 
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p> 
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput).
         pub fn build(self) -> crate::output::ListServicesOutput {
             crate::output::ListServicesOutput {
-                services: self.services,
-                next_token: self.next_token,
+                services: self.services
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServicesOutput {
     /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput).
@@ -453,31 +478,31 @@ impl ListServicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOperationsOutput {
+pub struct ListOperationsOutput  {
     /// <p>Summary information about the operations that match the specified criteria.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOperationsOutput {
     /// <p>Summary information about the operations that match the specified criteria.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::OperationSummary]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::OperationSummary]> {
         self.operations.as_deref()
     }
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p> 
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
-
+    
     /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -492,40 +517,39 @@ pub mod list_operations_output {
         /// <p>Summary information about the operations that match the specified criteria.</p>
         pub fn operations(mut self, input: crate::model::OperationSummary) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>Summary information about the operations that match the specified criteria.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>) -> Self {
+            self.operations = input; self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p> 
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p> 
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput).
         pub fn build(self) -> crate::output::ListOperationsOutput {
             crate::output::ListOperationsOutput {
-                operations: self.operations,
-                next_token: self.next_token,
+                operations: self.operations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
@@ -537,31 +561,31 @@ impl ListOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNamespacesOutput {
+pub struct ListNamespacesOutput  {
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
     #[doc(hidden)]
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceSummary>>,
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNamespacesOutput {
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-    pub fn namespaces(&self) -> std::option::Option<&[crate::model::NamespaceSummary]> {
+    pub fn namespaces(&self) -> std::option::Option<& [crate::model::NamespaceSummary]> {
         self.namespaces.as_deref()
     }
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p> 
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
 pub mod list_namespaces_output {
-
+    
     /// A builder for [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -576,40 +600,39 @@ pub mod list_namespaces_output {
         /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
         pub fn namespaces(mut self, input: crate::model::NamespaceSummary) -> Self {
             let mut v = self.namespaces.unwrap_or_default();
-            v.push(input);
-            self.namespaces = Some(v);
-            self
+                            v.push(input);
+                            self.namespaces = Some(v);
+                            self
         }
         /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-        pub fn set_namespaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NamespaceSummary>>,
-        ) -> Self {
-            self.namespaces = input;
-            self
+        pub fn set_namespaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::NamespaceSummary>>) -> Self {
+            self.namespaces = input; self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p> 
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
+        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p> 
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
         pub fn build(self) -> crate::output::ListNamespacesOutput {
             crate::output::ListNamespacesOutput {
-                namespaces: self.namespaces,
-                next_token: self.next_token,
+                namespaces: self.namespaces
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNamespacesOutput {
     /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
@@ -621,7 +644,7 @@ impl ListNamespacesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstancesOutput {
+pub struct ListInstancesOutput  {
     /// <p>Summary information about the instances that are associated with the specified service.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
@@ -631,17 +654,17 @@ pub struct ListInstancesOutput {
 }
 impl ListInstancesOutput {
     /// <p>Summary information about the instances that are associated with the specified service.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::InstanceSummary]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::InstanceSummary]> {
         self.instances.as_deref()
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput).
 pub mod list_instances_output {
-
+    
     /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -656,17 +679,13 @@ pub mod list_instances_output {
         /// <p>Summary information about the instances that are associated with the specified service.</p>
         pub fn instances(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>Summary information about the instances that are associated with the specified service.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>) -> Self {
+            self.instances = input; self
         }
         /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -675,17 +694,20 @@ pub mod list_instances_output {
         }
         /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInstancesOutput`](crate::output::ListInstancesOutput).
         pub fn build(self) -> crate::output::ListInstancesOutput {
             crate::output::ListInstancesOutput {
-                instances: self.instances,
-                next_token: self.next_token,
+                instances: self.instances
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
@@ -697,20 +719,20 @@ impl ListInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceOutput {
+pub struct GetServiceOutput  {
     /// <p>A complex type that contains information about the service.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl GetServiceOutput {
     /// <p>A complex type that contains information about the service.</p>
-    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+    pub fn service(&self) -> std::option::Option<& crate::model::Service> {
         self.service.as_ref()
     }
 }
 /// See [`GetServiceOutput`](crate::output::GetServiceOutput).
 pub mod get_service_output {
-
+    
     /// A builder for [`GetServiceOutput`](crate::output::GetServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -724,16 +746,18 @@ pub mod get_service_output {
         }
         /// <p>A complex type that contains information about the service.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceOutput`](crate::output::GetServiceOutput).
         pub fn build(self) -> crate::output::GetServiceOutput {
             crate::output::GetServiceOutput {
-                service: self.service,
+                service: self.service
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceOutput`](crate::output::GetServiceOutput).
@@ -745,20 +769,20 @@ impl GetServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOperationOutput {
+pub struct GetOperationOutput  {
     /// <p>A complex type that contains information about the operation.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl GetOperationOutput {
     /// <p>A complex type that contains information about the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`GetOperationOutput`](crate::output::GetOperationOutput).
 pub mod get_operation_output {
-
+    
     /// A builder for [`GetOperationOutput`](crate::output::GetOperationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -771,20 +795,19 @@ pub mod get_operation_output {
             self
         }
         /// <p>A complex type that contains information about the operation.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`GetOperationOutput`](crate::output::GetOperationOutput).
         pub fn build(self) -> crate::output::GetOperationOutput {
             crate::output::GetOperationOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
@@ -796,20 +819,20 @@ impl GetOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNamespaceOutput {
+pub struct GetNamespaceOutput  {
     /// <p>A complex type that contains information about the specified namespace.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::Namespace>,
 }
 impl GetNamespaceOutput {
     /// <p>A complex type that contains information about the specified namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<&crate::model::Namespace> {
+    pub fn namespace(&self) -> std::option::Option<& crate::model::Namespace> {
         self.namespace.as_ref()
     }
 }
 /// See [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
 pub mod get_namespace_output {
-
+    
     /// A builder for [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -822,20 +845,19 @@ pub mod get_namespace_output {
             self
         }
         /// <p>A complex type that contains information about the specified namespace.</p>
-        pub fn set_namespace(
-            mut self,
-            input: std::option::Option<crate::model::Namespace>,
-        ) -> Self {
-            self.namespace = input;
-            self
+        pub fn set_namespace(mut self, input: std::option::Option<crate::model::Namespace>) -> Self {
+            self.namespace = input; self
         }
         /// Consumes the builder and constructs a [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
         pub fn build(self) -> crate::output::GetNamespaceOutput {
             crate::output::GetNamespaceOutput {
-                namespace: self.namespace,
+                namespace: self.namespace
+                ,
             }
         }
     }
+    
+    
 }
 impl GetNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
@@ -847,39 +869,31 @@ impl GetNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstancesHealthStatusOutput {
+pub struct GetInstancesHealthStatusOutput  {
     /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::HealthStatus>,
-    >,
+    pub status: std::option::Option<std::collections::HashMap<std::string::String, crate::model::HealthStatus>>,
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInstancesHealthStatusOutput {
     /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
-    pub fn status(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::HealthStatus>,
-    > {
+    pub fn status(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::HealthStatus>> {
         self.status.as_ref()
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
 pub mod get_instances_health_status_output {
-
+    
     /// A builder for [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) status: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::HealthStatus>,
-        >,
+        pub(crate) status: std::option::Option<std::collections::HashMap<std::string::String, crate::model::HealthStatus>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -888,25 +902,15 @@ pub mod get_instances_health_status_output {
         /// To override the contents of this collection use [`set_status`](Self::set_status).
         ///
         /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
-        pub fn status(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::HealthStatus,
-        ) -> Self {
+        pub fn status(mut self, k: impl Into<std::string::String>, v: crate::model::HealthStatus) -> Self {
             let mut hash_map = self.status.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.status = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.status = Some(hash_map);
+                            self
         }
         /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::HealthStatus>,
-            >,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::HealthStatus>>) -> Self {
+            self.status = input; self
         }
         /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -915,17 +919,20 @@ pub mod get_instances_health_status_output {
         }
         /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
         pub fn build(self) -> crate::output::GetInstancesHealthStatusOutput {
             crate::output::GetInstancesHealthStatusOutput {
-                status: self.status,
-                next_token: self.next_token,
+                status: self.status
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstancesHealthStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
@@ -937,20 +944,20 @@ impl GetInstancesHealthStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceOutput {
+pub struct GetInstanceOutput  {
     /// <p>A complex type that contains information about a specified instance.</p>
     #[doc(hidden)]
     pub instance: std::option::Option<crate::model::Instance>,
 }
 impl GetInstanceOutput {
     /// <p>A complex type that contains information about a specified instance.</p>
-    pub fn instance(&self) -> std::option::Option<&crate::model::Instance> {
+    pub fn instance(&self) -> std::option::Option<& crate::model::Instance> {
         self.instance.as_ref()
     }
 }
 /// See [`GetInstanceOutput`](crate::output::GetInstanceOutput).
 pub mod get_instance_output {
-
+    
     /// A builder for [`GetInstanceOutput`](crate::output::GetInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -964,16 +971,18 @@ pub mod get_instance_output {
         }
         /// <p>A complex type that contains information about a specified instance.</p>
         pub fn set_instance(mut self, input: std::option::Option<crate::model::Instance>) -> Self {
-            self.instance = input;
-            self
+            self.instance = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceOutput`](crate::output::GetInstanceOutput).
         pub fn build(self) -> crate::output::GetInstanceOutput {
             crate::output::GetInstanceOutput {
-                instance: self.instance,
+                instance: self.instance
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::output::GetInstanceOutput).
@@ -985,20 +994,20 @@ impl GetInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoverInstancesOutput {
+pub struct DiscoverInstancesOutput  {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::HttpInstanceSummary>>,
 }
 impl DiscoverInstancesOutput {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::HttpInstanceSummary]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::HttpInstanceSummary]> {
         self.instances.as_deref()
     }
 }
 /// See [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
 pub mod discover_instances_output {
-
+    
     /// A builder for [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1012,25 +1021,24 @@ pub mod discover_instances_output {
         /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
         pub fn instances(mut self, input: crate::model::HttpInstanceSummary) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpInstanceSummary>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpInstanceSummary>>) -> Self {
+            self.instances = input; self
         }
         /// Consumes the builder and constructs a [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
         pub fn build(self) -> crate::output::DiscoverInstancesOutput {
             crate::output::DiscoverInstancesOutput {
-                instances: self.instances,
+                instances: self.instances
+                ,
             }
         }
     }
+    
+    
 }
 impl DiscoverInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
@@ -1042,20 +1050,20 @@ impl DiscoverInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterInstanceOutput {
+pub struct DeregisterInstanceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeregisterInstanceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
 pub mod deregister_instance_output {
-
+    
     /// A builder for [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1069,16 +1077,18 @@ pub mod deregister_instance_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
         pub fn build(self) -> crate::output::DeregisterInstanceOutput {
             crate::output::DeregisterInstanceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeregisterInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
@@ -1090,19 +1100,24 @@ impl DeregisterInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceOutput {}
+pub struct DeleteServiceOutput  {
+}
 /// See [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
 pub mod delete_service_output {
-
+    
     /// A builder for [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
         pub fn build(self) -> crate::output::DeleteServiceOutput {
-            crate::output::DeleteServiceOutput {}
+            crate::output::DeleteServiceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteServiceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
@@ -1114,20 +1129,20 @@ impl DeleteServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNamespaceOutput {
+pub struct DeleteNamespaceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeleteNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
 pub mod delete_namespace_output {
-
+    
     /// A builder for [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1141,16 +1156,18 @@ pub mod delete_namespace_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
         pub fn build(self) -> crate::output::DeleteNamespaceOutput {
             crate::output::DeleteNamespaceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
@@ -1162,20 +1179,20 @@ impl DeleteNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceOutput {
+pub struct CreateServiceOutput  {
     /// <p>A complex type that contains information about the new service.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl CreateServiceOutput {
     /// <p>A complex type that contains information about the new service.</p>
-    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+    pub fn service(&self) -> std::option::Option<& crate::model::Service> {
         self.service.as_ref()
     }
 }
 /// See [`CreateServiceOutput`](crate::output::CreateServiceOutput).
 pub mod create_service_output {
-
+    
     /// A builder for [`CreateServiceOutput`](crate::output::CreateServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1189,16 +1206,18 @@ pub mod create_service_output {
         }
         /// <p>A complex type that contains information about the new service.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// Consumes the builder and constructs a [`CreateServiceOutput`](crate::output::CreateServiceOutput).
         pub fn build(self) -> crate::output::CreateServiceOutput {
             crate::output::CreateServiceOutput {
-                service: self.service,
+                service: self.service
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateServiceOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceOutput`](crate::output::CreateServiceOutput).
@@ -1210,20 +1229,20 @@ impl CreateServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePublicDnsNamespaceOutput {
+pub struct CreatePublicDnsNamespaceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreatePublicDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
 pub mod create_public_dns_namespace_output {
-
+    
     /// A builder for [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1237,16 +1256,18 @@ pub mod create_public_dns_namespace_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
         pub fn build(self) -> crate::output::CreatePublicDnsNamespaceOutput {
             crate::output::CreatePublicDnsNamespaceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePublicDnsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
@@ -1258,20 +1279,20 @@ impl CreatePublicDnsNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePrivateDnsNamespaceOutput {
+pub struct CreatePrivateDnsNamespaceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreatePrivateDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
 pub mod create_private_dns_namespace_output {
-
+    
     /// A builder for [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1285,16 +1306,18 @@ pub mod create_private_dns_namespace_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
         pub fn build(self) -> crate::output::CreatePrivateDnsNamespaceOutput {
             crate::output::CreatePrivateDnsNamespaceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePrivateDnsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
@@ -1306,20 +1329,20 @@ impl CreatePrivateDnsNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHttpNamespaceOutput {
+pub struct CreateHttpNamespaceOutput  {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreateHttpNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
 pub mod create_http_namespace_output {
-
+    
     /// A builder for [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1333,16 +1356,18 @@ pub mod create_http_namespace_output {
         }
         /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
         pub fn build(self) -> crate::output::CreateHttpNamespaceOutput {
             crate::output::CreateHttpNamespaceOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateHttpNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
@@ -1350,3 +1375,4 @@ impl CreateHttpNamespaceOutput {
         crate::output::create_http_namespace_output::Builder::default()
     }
 }
+

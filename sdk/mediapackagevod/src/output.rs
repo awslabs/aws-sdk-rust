@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePackagingGroupOutput {
+pub struct UpdatePackagingGroupOutput  {
     /// The approximate asset count of the PackagingGroup.
     #[doc(hidden)]
     pub approximate_asset_count: i32,
@@ -23,8 +23,7 @@ pub struct UpdatePackagingGroupOutput {
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdatePackagingGroupOutput {
     /// The approximate asset count of the PackagingGroup.
@@ -32,36 +31,33 @@ impl UpdatePackagingGroupOutput {
         self.approximate_asset_count
     }
     /// The ARN of the PackagingGroup.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::model::Authorization> {
         self.authorization.as_ref()
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of the PackagingGroup.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
 pub mod update_packaging_group_output {
-
+    
     /// A builder for [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -71,9 +67,7 @@ pub mod update_packaging_group_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The approximate asset count of the PackagingGroup.
@@ -83,8 +77,7 @@ pub mod update_packaging_group_output {
         }
         /// The approximate asset count of the PackagingGroup.
         pub fn set_approximate_asset_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.approximate_asset_count = input;
-            self
+            self.approximate_asset_count = input; self
         }
         /// The ARN of the PackagingGroup.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +86,7 @@ pub mod update_packaging_group_output {
         }
         /// The ARN of the PackagingGroup.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// CDN Authorization credentials
         pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
@@ -102,12 +94,8 @@ pub mod update_packaging_group_output {
             self
         }
         /// CDN Authorization credentials
-        pub fn set_authorization(
-            mut self,
-            input: std::option::Option<crate::model::Authorization>,
-        ) -> Self {
-            self.authorization = input;
-            self
+        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
+            self.authorization = input; self
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +104,7 @@ pub mod update_packaging_group_output {
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -125,12 +112,8 @@ pub mod update_packaging_group_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// The ID of the PackagingGroup.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,47 +122,46 @@ pub mod update_packaging_group_output {
         }
         /// The ID of the PackagingGroup.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
         pub fn build(self) -> crate::output::UpdatePackagingGroupOutput {
             crate::output::UpdatePackagingGroupOutput {
-                approximate_asset_count: self.approximate_asset_count.unwrap_or_default(),
-                arn: self.arn,
-                authorization: self.authorization,
-                domain_name: self.domain_name,
-                egress_access_logs: self.egress_access_logs,
-                id: self.id,
-                tags: self.tags,
+                approximate_asset_count: self.approximate_asset_count
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                authorization: self.authorization
+                ,
+                domain_name: self.domain_name
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                id: self.id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePackagingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
@@ -191,19 +173,24 @@ impl UpdatePackagingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -215,19 +202,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -239,30 +231,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -270,31 +256,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -306,7 +287,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackagingGroupsOutput {
+pub struct ListPackagingGroupsOutput  {
     /// A token that can be used to resume pagination from the end of the collection.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -316,23 +297,22 @@ pub struct ListPackagingGroupsOutput {
 }
 impl ListPackagingGroupsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of MediaPackage VOD PackagingGroup resources.
-    pub fn packaging_groups(&self) -> std::option::Option<&[crate::model::PackagingGroup]> {
+    pub fn packaging_groups(&self) -> std::option::Option<& [crate::model::PackagingGroup]> {
         self.packaging_groups.as_deref()
     }
 }
 /// See [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
 pub mod list_packaging_groups_output {
-
+    
     /// A builder for [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) packaging_groups:
-            std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>,
+        pub(crate) packaging_groups: std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>,
     }
     impl Builder {
         /// A token that can be used to resume pagination from the end of the collection.
@@ -342,8 +322,7 @@ pub mod list_packaging_groups_output {
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `packaging_groups`.
         ///
@@ -352,26 +331,26 @@ pub mod list_packaging_groups_output {
         /// A list of MediaPackage VOD PackagingGroup resources.
         pub fn packaging_groups(mut self, input: crate::model::PackagingGroup) -> Self {
             let mut v = self.packaging_groups.unwrap_or_default();
-            v.push(input);
-            self.packaging_groups = Some(v);
-            self
+                            v.push(input);
+                            self.packaging_groups = Some(v);
+                            self
         }
         /// A list of MediaPackage VOD PackagingGroup resources.
-        pub fn set_packaging_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>,
-        ) -> Self {
-            self.packaging_groups = input;
-            self
+        pub fn set_packaging_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>) -> Self {
+            self.packaging_groups = input; self
         }
         /// Consumes the builder and constructs a [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
         pub fn build(self) -> crate::output::ListPackagingGroupsOutput {
             crate::output::ListPackagingGroupsOutput {
-                next_token: self.next_token,
-                packaging_groups: self.packaging_groups,
+                next_token: self.next_token
+                ,
+                packaging_groups: self.packaging_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPackagingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
@@ -383,36 +362,32 @@ impl ListPackagingGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackagingConfigurationsOutput {
+pub struct ListPackagingConfigurationsOutput  {
     /// A token that can be used to resume pagination from the end of the collection.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// A list of MediaPackage VOD PackagingConfiguration resources.
     #[doc(hidden)]
-    pub packaging_configurations:
-        std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
+    pub packaging_configurations: std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
 }
 impl ListPackagingConfigurationsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of MediaPackage VOD PackagingConfiguration resources.
-    pub fn packaging_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::PackagingConfiguration]> {
+    pub fn packaging_configurations(&self) -> std::option::Option<& [crate::model::PackagingConfiguration]> {
         self.packaging_configurations.as_deref()
     }
 }
 /// See [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
 pub mod list_packaging_configurations_output {
-
+    
     /// A builder for [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) packaging_configurations:
-            std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
+        pub(crate) packaging_configurations: std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
     }
     impl Builder {
         /// A token that can be used to resume pagination from the end of the collection.
@@ -422,39 +397,35 @@ pub mod list_packaging_configurations_output {
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `packaging_configurations`.
         ///
         /// To override the contents of this collection use [`set_packaging_configurations`](Self::set_packaging_configurations).
         ///
         /// A list of MediaPackage VOD PackagingConfiguration resources.
-        pub fn packaging_configurations(
-            mut self,
-            input: crate::model::PackagingConfiguration,
-        ) -> Self {
+        pub fn packaging_configurations(mut self, input: crate::model::PackagingConfiguration) -> Self {
             let mut v = self.packaging_configurations.unwrap_or_default();
-            v.push(input);
-            self.packaging_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.packaging_configurations = Some(v);
+                            self
         }
         /// A list of MediaPackage VOD PackagingConfiguration resources.
-        pub fn set_packaging_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
-        ) -> Self {
-            self.packaging_configurations = input;
-            self
+        pub fn set_packaging_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>) -> Self {
+            self.packaging_configurations = input; self
         }
         /// Consumes the builder and constructs a [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
         pub fn build(self) -> crate::output::ListPackagingConfigurationsOutput {
             crate::output::ListPackagingConfigurationsOutput {
-                next_token: self.next_token,
-                packaging_configurations: self.packaging_configurations,
+                next_token: self.next_token
+                ,
+                packaging_configurations: self.packaging_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPackagingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
@@ -466,7 +437,7 @@ impl ListPackagingConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetsOutput {
+pub struct ListAssetsOutput  {
     /// A list of MediaPackage VOD Asset resources.
     #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetShallow>>,
@@ -476,17 +447,17 @@ pub struct ListAssetsOutput {
 }
 impl ListAssetsOutput {
     /// A list of MediaPackage VOD Asset resources.
-    pub fn assets(&self) -> std::option::Option<&[crate::model::AssetShallow]> {
+    pub fn assets(&self) -> std::option::Option<& [crate::model::AssetShallow]> {
         self.assets.as_deref()
     }
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssetsOutput`](crate::output::ListAssetsOutput).
 pub mod list_assets_output {
-
+    
     /// A builder for [`ListAssetsOutput`](crate::output::ListAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -501,17 +472,13 @@ pub mod list_assets_output {
         /// A list of MediaPackage VOD Asset resources.
         pub fn assets(mut self, input: crate::model::AssetShallow) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input);
-            self.assets = Some(v);
-            self
+                            v.push(input);
+                            self.assets = Some(v);
+                            self
         }
         /// A list of MediaPackage VOD Asset resources.
-        pub fn set_assets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetShallow>>,
-        ) -> Self {
-            self.assets = input;
-            self
+        pub fn set_assets(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetShallow>>) -> Self {
+            self.assets = input; self
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -520,17 +487,20 @@ pub mod list_assets_output {
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssetsOutput`](crate::output::ListAssetsOutput).
         pub fn build(self) -> crate::output::ListAssetsOutput {
             crate::output::ListAssetsOutput {
-                assets: self.assets,
-                next_token: self.next_token,
+                assets: self.assets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetsOutput`](crate::output::ListAssetsOutput).
@@ -542,7 +512,7 @@ impl ListAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackagingGroupOutput {
+pub struct DescribePackagingGroupOutput  {
     /// The approximate asset count of the PackagingGroup.
     #[doc(hidden)]
     pub approximate_asset_count: i32,
@@ -563,8 +533,7 @@ pub struct DescribePackagingGroupOutput {
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribePackagingGroupOutput {
     /// The approximate asset count of the PackagingGroup.
@@ -572,36 +541,33 @@ impl DescribePackagingGroupOutput {
         self.approximate_asset_count
     }
     /// The ARN of the PackagingGroup.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::model::Authorization> {
         self.authorization.as_ref()
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of the PackagingGroup.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
 pub mod describe_packaging_group_output {
-
+    
     /// A builder for [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -611,9 +577,7 @@ pub mod describe_packaging_group_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The approximate asset count of the PackagingGroup.
@@ -623,8 +587,7 @@ pub mod describe_packaging_group_output {
         }
         /// The approximate asset count of the PackagingGroup.
         pub fn set_approximate_asset_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.approximate_asset_count = input;
-            self
+            self.approximate_asset_count = input; self
         }
         /// The ARN of the PackagingGroup.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -633,8 +596,7 @@ pub mod describe_packaging_group_output {
         }
         /// The ARN of the PackagingGroup.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// CDN Authorization credentials
         pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
@@ -642,12 +604,8 @@ pub mod describe_packaging_group_output {
             self
         }
         /// CDN Authorization credentials
-        pub fn set_authorization(
-            mut self,
-            input: std::option::Option<crate::model::Authorization>,
-        ) -> Self {
-            self.authorization = input;
-            self
+        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
+            self.authorization = input; self
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -656,8 +614,7 @@ pub mod describe_packaging_group_output {
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -665,12 +622,8 @@ pub mod describe_packaging_group_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// The ID of the PackagingGroup.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -679,47 +632,46 @@ pub mod describe_packaging_group_output {
         }
         /// The ID of the PackagingGroup.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
         pub fn build(self) -> crate::output::DescribePackagingGroupOutput {
             crate::output::DescribePackagingGroupOutput {
-                approximate_asset_count: self.approximate_asset_count.unwrap_or_default(),
-                arn: self.arn,
-                authorization: self.authorization,
-                domain_name: self.domain_name,
-                egress_access_logs: self.egress_access_logs,
-                id: self.id,
-                tags: self.tags,
+                approximate_asset_count: self.approximate_asset_count
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                authorization: self.authorization
+                ,
+                domain_name: self.domain_name
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                id: self.id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePackagingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
@@ -731,7 +683,7 @@ impl DescribePackagingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackagingConfigurationOutput {
+pub struct DescribePackagingConfigurationOutput  {
     /// The ARN of the PackagingConfiguration.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -755,49 +707,45 @@ pub struct DescribePackagingConfigurationOutput {
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribePackagingConfigurationOutput {
     /// The ARN of the PackagingConfiguration.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A CMAF packaging configuration.
-    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+    pub fn cmaf_package(&self) -> std::option::Option<& crate::model::CmafPackage> {
         self.cmaf_package.as_ref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+    pub fn dash_package(&self) -> std::option::Option<& crate::model::DashPackage> {
         self.dash_package.as_ref()
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+    pub fn hls_package(&self) -> std::option::Option<& crate::model::HlsPackage> {
         self.hls_package.as_ref()
     }
     /// The ID of the PackagingConfiguration.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+    pub fn mss_package(&self) -> std::option::Option<& crate::model::MssPackage> {
         self.mss_package.as_ref()
     }
     /// The ID of a PackagingGroup.
-    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_group_id(&self) -> std::option::Option<& str> {
         self.packaging_group_id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
 pub mod describe_packaging_configuration_output {
-
+    
     /// A builder for [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -808,9 +756,7 @@ pub mod describe_packaging_configuration_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) mss_package: std::option::Option<crate::model::MssPackage>,
         pub(crate) packaging_group_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the PackagingConfiguration.
@@ -820,8 +766,7 @@ pub mod describe_packaging_configuration_output {
         }
         /// The ARN of the PackagingConfiguration.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A CMAF packaging configuration.
         pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
@@ -829,12 +774,8 @@ pub mod describe_packaging_configuration_output {
             self
         }
         /// A CMAF packaging configuration.
-        pub fn set_cmaf_package(
-            mut self,
-            input: std::option::Option<crate::model::CmafPackage>,
-        ) -> Self {
-            self.cmaf_package = input;
-            self
+        pub fn set_cmaf_package(mut self, input: std::option::Option<crate::model::CmafPackage>) -> Self {
+            self.cmaf_package = input; self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
         pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
@@ -842,12 +783,8 @@ pub mod describe_packaging_configuration_output {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn set_dash_package(
-            mut self,
-            input: std::option::Option<crate::model::DashPackage>,
-        ) -> Self {
-            self.dash_package = input;
-            self
+        pub fn set_dash_package(mut self, input: std::option::Option<crate::model::DashPackage>) -> Self {
+            self.dash_package = input; self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
         pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
@@ -855,12 +792,8 @@ pub mod describe_packaging_configuration_output {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn set_hls_package(
-            mut self,
-            input: std::option::Option<crate::model::HlsPackage>,
-        ) -> Self {
-            self.hls_package = input;
-            self
+        pub fn set_hls_package(mut self, input: std::option::Option<crate::model::HlsPackage>) -> Self {
+            self.hls_package = input; self
         }
         /// The ID of the PackagingConfiguration.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -869,8 +802,7 @@ pub mod describe_packaging_configuration_output {
         }
         /// The ID of the PackagingConfiguration.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
         pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
@@ -878,12 +810,8 @@ pub mod describe_packaging_configuration_output {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-        pub fn set_mss_package(
-            mut self,
-            input: std::option::Option<crate::model::MssPackage>,
-        ) -> Self {
-            self.mss_package = input;
-            self
+        pub fn set_mss_package(mut self, input: std::option::Option<crate::model::MssPackage>) -> Self {
+            self.mss_package = input; self
         }
         /// The ID of a PackagingGroup.
         pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -891,52 +819,48 @@ pub mod describe_packaging_configuration_output {
             self
         }
         /// The ID of a PackagingGroup.
-        pub fn set_packaging_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.packaging_group_id = input;
-            self
+        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.packaging_group_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
         pub fn build(self) -> crate::output::DescribePackagingConfigurationOutput {
             crate::output::DescribePackagingConfigurationOutput {
-                arn: self.arn,
-                cmaf_package: self.cmaf_package,
-                dash_package: self.dash_package,
-                hls_package: self.hls_package,
-                id: self.id,
-                mss_package: self.mss_package,
-                packaging_group_id: self.packaging_group_id,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                cmaf_package: self.cmaf_package
+                ,
+                dash_package: self.dash_package
+                ,
+                hls_package: self.hls_package
+                ,
+                id: self.id
+                ,
+                mss_package: self.mss_package
+                ,
+                packaging_group_id: self.packaging_group_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePackagingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
@@ -948,7 +872,7 @@ impl DescribePackagingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssetOutput {
+pub struct DescribeAssetOutput  {
     /// The ARN of the Asset.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -975,68 +899,61 @@ pub struct DescribeAssetOutput {
     pub source_role_arn: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeAssetOutput {
     /// The ARN of the Asset.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time the Asset was initially submitted for Ingest.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The list of egress endpoints available for the Asset.
-    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::EgressEndpoint]> {
+    pub fn egress_endpoints(&self) -> std::option::Option<& [crate::model::EgressEndpoint]> {
         self.egress_endpoints.as_deref()
     }
     /// The unique identifier for the Asset.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the PackagingGroup for the Asset.
-    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_group_id(&self) -> std::option::Option<& str> {
         self.packaging_group_id.as_deref()
     }
     /// The resource ID to include in SPEKE key requests.
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// ARN of the source object in S3.
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// The IAM role_arn used to access the source S3 bucket.
-    pub fn source_role_arn(&self) -> std::option::Option<&str> {
+    pub fn source_role_arn(&self) -> std::option::Option<& str> {
         self.source_role_arn.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
 pub mod describe_asset_output {
-
+    
     /// A builder for [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<std::string::String>,
-        pub(crate) egress_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>,
+        pub(crate) egress_endpoints: std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) packaging_group_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) source_role_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the Asset.
@@ -1046,8 +963,7 @@ pub mod describe_asset_output {
         }
         /// The ARN of the Asset.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time the Asset was initially submitted for Ingest.
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1056,8 +972,7 @@ pub mod describe_asset_output {
         }
         /// The time the Asset was initially submitted for Ingest.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// Appends an item to `egress_endpoints`.
         ///
@@ -1066,17 +981,13 @@ pub mod describe_asset_output {
         /// The list of egress endpoints available for the Asset.
         pub fn egress_endpoints(mut self, input: crate::model::EgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input);
-            self.egress_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.egress_endpoints = Some(v);
+                            self
         }
         /// The list of egress endpoints available for the Asset.
-        pub fn set_egress_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>,
-        ) -> Self {
-            self.egress_endpoints = input;
-            self
+        pub fn set_egress_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>) -> Self {
+            self.egress_endpoints = input; self
         }
         /// The unique identifier for the Asset.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1085,8 +996,7 @@ pub mod describe_asset_output {
         }
         /// The unique identifier for the Asset.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the PackagingGroup for the Asset.
         pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1094,12 +1004,8 @@ pub mod describe_asset_output {
             self
         }
         /// The ID of the PackagingGroup for the Asset.
-        pub fn set_packaging_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.packaging_group_id = input;
-            self
+        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.packaging_group_id = input; self
         }
         /// The resource ID to include in SPEKE key requests.
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1108,8 +1014,7 @@ pub mod describe_asset_output {
         }
         /// The resource ID to include in SPEKE key requests.
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// ARN of the source object in S3.
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1118,8 +1023,7 @@ pub mod describe_asset_output {
         }
         /// ARN of the source object in S3.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// The IAM role_arn used to access the source S3 bucket.
         pub fn source_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1127,53 +1031,50 @@ pub mod describe_asset_output {
             self
         }
         /// The IAM role_arn used to access the source S3 bucket.
-        pub fn set_source_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_role_arn = input;
-            self
+        pub fn set_source_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_role_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
         pub fn build(self) -> crate::output::DescribeAssetOutput {
             crate::output::DescribeAssetOutput {
-                arn: self.arn,
-                created_at: self.created_at,
-                egress_endpoints: self.egress_endpoints,
-                id: self.id,
-                packaging_group_id: self.packaging_group_id,
-                resource_id: self.resource_id,
-                source_arn: self.source_arn,
-                source_role_arn: self.source_role_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                egress_endpoints: self.egress_endpoints
+                ,
+                id: self.id
+                ,
+                packaging_group_id: self.packaging_group_id
+                ,
+                resource_id: self.resource_id
+                ,
+                source_arn: self.source_arn
+                ,
+                source_role_arn: self.source_role_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAssetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
@@ -1185,19 +1086,24 @@ impl DescribeAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePackagingGroupOutput {}
+pub struct DeletePackagingGroupOutput  {
+}
 /// See [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
 pub mod delete_packaging_group_output {
-
+    
     /// A builder for [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
         pub fn build(self) -> crate::output::DeletePackagingGroupOutput {
-            crate::output::DeletePackagingGroupOutput {}
+            crate::output::DeletePackagingGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePackagingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
@@ -1209,19 +1115,24 @@ impl DeletePackagingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePackagingConfigurationOutput {}
+pub struct DeletePackagingConfigurationOutput  {
+}
 /// See [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
 pub mod delete_packaging_configuration_output {
-
+    
     /// A builder for [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
         pub fn build(self) -> crate::output::DeletePackagingConfigurationOutput {
-            crate::output::DeletePackagingConfigurationOutput {}
+            crate::output::DeletePackagingConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePackagingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
@@ -1233,19 +1144,24 @@ impl DeletePackagingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssetOutput {}
+pub struct DeleteAssetOutput  {
+}
 /// See [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
 pub mod delete_asset_output {
-
+    
     /// A builder for [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
         pub fn build(self) -> crate::output::DeleteAssetOutput {
-            crate::output::DeleteAssetOutput {}
+            crate::output::DeleteAssetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAssetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
@@ -1257,7 +1173,7 @@ impl DeleteAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePackagingGroupOutput {
+pub struct CreatePackagingGroupOutput  {
     /// The ARN of the PackagingGroup.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1275,41 +1191,37 @@ pub struct CreatePackagingGroupOutput {
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreatePackagingGroupOutput {
     /// The ARN of the PackagingGroup.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::model::Authorization> {
         self.authorization.as_ref()
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of the PackagingGroup.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
 pub mod create_packaging_group_output {
-
+    
     /// A builder for [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1318,9 +1230,7 @@ pub mod create_packaging_group_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the PackagingGroup.
@@ -1330,8 +1240,7 @@ pub mod create_packaging_group_output {
         }
         /// The ARN of the PackagingGroup.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// CDN Authorization credentials
         pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
@@ -1339,12 +1248,8 @@ pub mod create_packaging_group_output {
             self
         }
         /// CDN Authorization credentials
-        pub fn set_authorization(
-            mut self,
-            input: std::option::Option<crate::model::Authorization>,
-        ) -> Self {
-            self.authorization = input;
-            self
+        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
+            self.authorization = input; self
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1353,8 +1258,7 @@ pub mod create_packaging_group_output {
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -1362,12 +1266,8 @@ pub mod create_packaging_group_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// The ID of the PackagingGroup.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1376,46 +1276,43 @@ pub mod create_packaging_group_output {
         }
         /// The ID of the PackagingGroup.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
         pub fn build(self) -> crate::output::CreatePackagingGroupOutput {
             crate::output::CreatePackagingGroupOutput {
-                arn: self.arn,
-                authorization: self.authorization,
-                domain_name: self.domain_name,
-                egress_access_logs: self.egress_access_logs,
-                id: self.id,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                authorization: self.authorization
+                ,
+                domain_name: self.domain_name
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                id: self.id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePackagingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
@@ -1427,7 +1324,7 @@ impl CreatePackagingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePackagingConfigurationOutput {
+pub struct CreatePackagingConfigurationOutput  {
     /// The ARN of the PackagingConfiguration.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1451,49 +1348,45 @@ pub struct CreatePackagingConfigurationOutput {
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreatePackagingConfigurationOutput {
     /// The ARN of the PackagingConfiguration.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A CMAF packaging configuration.
-    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+    pub fn cmaf_package(&self) -> std::option::Option<& crate::model::CmafPackage> {
         self.cmaf_package.as_ref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+    pub fn dash_package(&self) -> std::option::Option<& crate::model::DashPackage> {
         self.dash_package.as_ref()
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+    pub fn hls_package(&self) -> std::option::Option<& crate::model::HlsPackage> {
         self.hls_package.as_ref()
     }
     /// The ID of the PackagingConfiguration.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+    pub fn mss_package(&self) -> std::option::Option<& crate::model::MssPackage> {
         self.mss_package.as_ref()
     }
     /// The ID of a PackagingGroup.
-    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_group_id(&self) -> std::option::Option<& str> {
         self.packaging_group_id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
 pub mod create_packaging_configuration_output {
-
+    
     /// A builder for [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1504,9 +1397,7 @@ pub mod create_packaging_configuration_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) mss_package: std::option::Option<crate::model::MssPackage>,
         pub(crate) packaging_group_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the PackagingConfiguration.
@@ -1516,8 +1407,7 @@ pub mod create_packaging_configuration_output {
         }
         /// The ARN of the PackagingConfiguration.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A CMAF packaging configuration.
         pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
@@ -1525,12 +1415,8 @@ pub mod create_packaging_configuration_output {
             self
         }
         /// A CMAF packaging configuration.
-        pub fn set_cmaf_package(
-            mut self,
-            input: std::option::Option<crate::model::CmafPackage>,
-        ) -> Self {
-            self.cmaf_package = input;
-            self
+        pub fn set_cmaf_package(mut self, input: std::option::Option<crate::model::CmafPackage>) -> Self {
+            self.cmaf_package = input; self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
         pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
@@ -1538,12 +1424,8 @@ pub mod create_packaging_configuration_output {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn set_dash_package(
-            mut self,
-            input: std::option::Option<crate::model::DashPackage>,
-        ) -> Self {
-            self.dash_package = input;
-            self
+        pub fn set_dash_package(mut self, input: std::option::Option<crate::model::DashPackage>) -> Self {
+            self.dash_package = input; self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
         pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
@@ -1551,12 +1433,8 @@ pub mod create_packaging_configuration_output {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn set_hls_package(
-            mut self,
-            input: std::option::Option<crate::model::HlsPackage>,
-        ) -> Self {
-            self.hls_package = input;
-            self
+        pub fn set_hls_package(mut self, input: std::option::Option<crate::model::HlsPackage>) -> Self {
+            self.hls_package = input; self
         }
         /// The ID of the PackagingConfiguration.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1565,8 +1443,7 @@ pub mod create_packaging_configuration_output {
         }
         /// The ID of the PackagingConfiguration.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
         pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
@@ -1574,12 +1451,8 @@ pub mod create_packaging_configuration_output {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-        pub fn set_mss_package(
-            mut self,
-            input: std::option::Option<crate::model::MssPackage>,
-        ) -> Self {
-            self.mss_package = input;
-            self
+        pub fn set_mss_package(mut self, input: std::option::Option<crate::model::MssPackage>) -> Self {
+            self.mss_package = input; self
         }
         /// The ID of a PackagingGroup.
         pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1587,52 +1460,48 @@ pub mod create_packaging_configuration_output {
             self
         }
         /// The ID of a PackagingGroup.
-        pub fn set_packaging_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.packaging_group_id = input;
-            self
+        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.packaging_group_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
         pub fn build(self) -> crate::output::CreatePackagingConfigurationOutput {
             crate::output::CreatePackagingConfigurationOutput {
-                arn: self.arn,
-                cmaf_package: self.cmaf_package,
-                dash_package: self.dash_package,
-                hls_package: self.hls_package,
-                id: self.id,
-                mss_package: self.mss_package,
-                packaging_group_id: self.packaging_group_id,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                cmaf_package: self.cmaf_package
+                ,
+                dash_package: self.dash_package
+                ,
+                hls_package: self.hls_package
+                ,
+                id: self.id
+                ,
+                mss_package: self.mss_package
+                ,
+                packaging_group_id: self.packaging_group_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePackagingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
@@ -1644,7 +1513,7 @@ impl CreatePackagingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssetOutput {
+pub struct CreateAssetOutput  {
     /// The ARN of the Asset.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1671,68 +1540,61 @@ pub struct CreateAssetOutput {
     pub source_role_arn: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAssetOutput {
     /// The ARN of the Asset.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time the Asset was initially submitted for Ingest.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The list of egress endpoints available for the Asset.
-    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::EgressEndpoint]> {
+    pub fn egress_endpoints(&self) -> std::option::Option<& [crate::model::EgressEndpoint]> {
         self.egress_endpoints.as_deref()
     }
     /// The unique identifier for the Asset.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the PackagingGroup for the Asset.
-    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_group_id(&self) -> std::option::Option<& str> {
         self.packaging_group_id.as_deref()
     }
     /// The resource ID to include in SPEKE key requests.
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// ARN of the source object in S3.
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// The IAM role_arn used to access the source S3 bucket.
-    pub fn source_role_arn(&self) -> std::option::Option<&str> {
+    pub fn source_role_arn(&self) -> std::option::Option<& str> {
         self.source_role_arn.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateAssetOutput`](crate::output::CreateAssetOutput).
 pub mod create_asset_output {
-
+    
     /// A builder for [`CreateAssetOutput`](crate::output::CreateAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<std::string::String>,
-        pub(crate) egress_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>,
+        pub(crate) egress_endpoints: std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) packaging_group_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) source_role_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the Asset.
@@ -1742,8 +1604,7 @@ pub mod create_asset_output {
         }
         /// The ARN of the Asset.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time the Asset was initially submitted for Ingest.
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1752,8 +1613,7 @@ pub mod create_asset_output {
         }
         /// The time the Asset was initially submitted for Ingest.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// Appends an item to `egress_endpoints`.
         ///
@@ -1762,17 +1622,13 @@ pub mod create_asset_output {
         /// The list of egress endpoints available for the Asset.
         pub fn egress_endpoints(mut self, input: crate::model::EgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input);
-            self.egress_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.egress_endpoints = Some(v);
+                            self
         }
         /// The list of egress endpoints available for the Asset.
-        pub fn set_egress_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>,
-        ) -> Self {
-            self.egress_endpoints = input;
-            self
+        pub fn set_egress_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>) -> Self {
+            self.egress_endpoints = input; self
         }
         /// The unique identifier for the Asset.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1781,8 +1637,7 @@ pub mod create_asset_output {
         }
         /// The unique identifier for the Asset.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the PackagingGroup for the Asset.
         pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1790,12 +1645,8 @@ pub mod create_asset_output {
             self
         }
         /// The ID of the PackagingGroup for the Asset.
-        pub fn set_packaging_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.packaging_group_id = input;
-            self
+        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.packaging_group_id = input; self
         }
         /// The resource ID to include in SPEKE key requests.
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1804,8 +1655,7 @@ pub mod create_asset_output {
         }
         /// The resource ID to include in SPEKE key requests.
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// ARN of the source object in S3.
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1814,8 +1664,7 @@ pub mod create_asset_output {
         }
         /// ARN of the source object in S3.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// The IAM role_arn used to access the source S3 bucket.
         pub fn source_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1823,53 +1672,50 @@ pub mod create_asset_output {
             self
         }
         /// The IAM role_arn used to access the source S3 bucket.
-        pub fn set_source_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_role_arn = input;
-            self
+        pub fn set_source_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_role_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateAssetOutput`](crate::output::CreateAssetOutput).
         pub fn build(self) -> crate::output::CreateAssetOutput {
             crate::output::CreateAssetOutput {
-                arn: self.arn,
-                created_at: self.created_at,
-                egress_endpoints: self.egress_endpoints,
-                id: self.id,
-                packaging_group_id: self.packaging_group_id,
-                resource_id: self.resource_id,
-                source_arn: self.source_arn,
-                source_role_arn: self.source_role_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                egress_endpoints: self.egress_endpoints
+                ,
+                id: self.id
+                ,
+                packaging_group_id: self.packaging_group_id
+                ,
+                resource_id: self.resource_id
+                ,
+                source_arn: self.source_arn
+                ,
+                source_role_arn: self.source_role_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAssetOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssetOutput`](crate::output::CreateAssetOutput).
@@ -1881,7 +1727,7 @@ impl CreateAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureLogsOutput {
+pub struct ConfigureLogsOutput  {
     /// The ARN of the PackagingGroup.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1899,41 +1745,37 @@ pub struct ConfigureLogsOutput {
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ConfigureLogsOutput {
     /// The ARN of the PackagingGroup.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::model::Authorization> {
         self.authorization.as_ref()
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of the PackagingGroup.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
 pub mod configure_logs_output {
-
+    
     /// A builder for [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1942,9 +1784,7 @@ pub mod configure_logs_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the PackagingGroup.
@@ -1954,8 +1794,7 @@ pub mod configure_logs_output {
         }
         /// The ARN of the PackagingGroup.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// CDN Authorization credentials
         pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
@@ -1963,12 +1802,8 @@ pub mod configure_logs_output {
             self
         }
         /// CDN Authorization credentials
-        pub fn set_authorization(
-            mut self,
-            input: std::option::Option<crate::model::Authorization>,
-        ) -> Self {
-            self.authorization = input;
-            self
+        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
+            self.authorization = input; self
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1977,8 +1812,7 @@ pub mod configure_logs_output {
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -1986,12 +1820,8 @@ pub mod configure_logs_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// The ID of the PackagingGroup.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2000,46 +1830,43 @@ pub mod configure_logs_output {
         }
         /// The ID of the PackagingGroup.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
         pub fn build(self) -> crate::output::ConfigureLogsOutput {
             crate::output::ConfigureLogsOutput {
-                arn: self.arn,
-                authorization: self.authorization,
-                domain_name: self.domain_name,
-                egress_access_logs: self.egress_access_logs,
-                id: self.id,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                authorization: self.authorization
+                ,
+                domain_name: self.domain_name
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                id: self.id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigureLogsOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
@@ -2047,3 +1874,4 @@ impl ConfigureLogsOutput {
         crate::output::configure_logs_output::Builder::default()
     }
 }
+

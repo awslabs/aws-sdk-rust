@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`CancelClusterInput`](crate::input::CancelClusterInput).
 pub mod cancel_cluster_input {
-
+    
     /// A builder for [`CancelClusterInput`](crate::input::CancelClusterInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,143 +17,93 @@ pub mod cancel_cluster_input {
         }
         /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelClusterInput`](crate::input::CancelClusterInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CancelClusterInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CancelClusterInput {
-                cluster_id: self.cluster_id,
-            })
+        pub fn build(self) -> Result<crate::input::CancelClusterInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CancelClusterInput {
+                    cluster_id: self.cluster_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CancelClusterInput {
     /// Consumes the builder and constructs an Operation<[`CancelCluster`](crate::operation::CancelCluster)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CancelCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelCluster, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CancelClusterInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CancelClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CancelClusterInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CancelClusterInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.CancelCluster",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.CancelCluster"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_cluster(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_cancel_cluster(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CancelCluster::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CancelCluster",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelCluster::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelCluster", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -165,7 +115,7 @@ impl CancelClusterInput {
 
 /// See [`CancelJobInput`](crate::input::CancelJobInput).
 pub mod cancel_job_input {
-
+    
     /// A builder for [`CancelJobInput`](crate::input::CancelJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -179,141 +129,93 @@ pub mod cancel_job_input {
         }
         /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelJobInput`](crate::input::CancelJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CancelJobInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CancelJobInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::CancelJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CancelJobInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CancelJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CancelJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CancelJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CancelJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CancelJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.CancelJob",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.CancelJob"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::CancelJob::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "CancelJob",
-                    "snowball",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelJob", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -325,7 +227,7 @@ impl CancelJobInput {
 
 /// See [`CreateAddressInput`](crate::input::CreateAddressInput).
 pub mod create_address_input {
-
+    
     /// A builder for [`CreateAddressInput`](crate::input::CreateAddressInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -339,143 +241,93 @@ pub mod create_address_input {
         }
         /// <p>The address that you want the Snow device shipped to.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// Consumes the builder and constructs a [`CreateAddressInput`](crate::input::CreateAddressInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateAddressInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateAddressInput {
-                address: self.address,
-            })
+        pub fn build(self) -> Result<crate::input::CreateAddressInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateAddressInput {
+                    address: self.address
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateAddressInput {
     /// Consumes the builder and constructs an Operation<[`CreateAddress`](crate::operation::CreateAddress)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateAddress,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateAddress, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateAddressInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateAddressInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateAddressInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateAddressInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.CreateAddress",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.CreateAddress"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_address(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_address(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateAddress::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateAddress",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateAddress::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateAddress", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -487,14 +339,13 @@ impl CreateAddressInput {
 
 /// See [`CreateClusterInput`](crate::input::CreateClusterInput).
 pub mod create_cluster_input {
-
+    
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) resources: std::option::Option<crate::model::JobResource>,
-        pub(crate) on_device_service_configuration:
-            std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+        pub(crate) on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) address_id: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -507,17 +358,16 @@ pub mod create_cluster_input {
         pub(crate) remote_management: std::option::Option<crate::model::RemoteManagement>,
     }
     impl Builder {
-        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.job_type = input;
-            self
+            self.job_type = input; self
         }
         /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
@@ -525,28 +375,17 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<crate::model::JobResource>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<crate::model::JobResource>) -> Self {
+            self.resources = input; self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-        pub fn on_device_service_configuration(
-            mut self,
-            input: crate::model::OnDeviceServiceConfiguration,
-        ) -> Self {
+        pub fn on_device_service_configuration(mut self, input: crate::model::OnDeviceServiceConfiguration) -> Self {
             self.on_device_service_configuration = Some(input);
             self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-        pub fn set_on_device_service_configuration(
-            mut self,
-            input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-        ) -> Self {
-            self.on_device_service_configuration = input;
-            self
+        pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::model::OnDeviceServiceConfiguration>) -> Self {
+            self.on_device_service_configuration = input; self
         }
         /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -555,8 +394,7 @@ pub mod create_cluster_input {
         }
         /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ID for the address that you want the cluster shipped to.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -565,8 +403,7 @@ pub mod create_cluster_input {
         }
         /// <p>The ID for the address that you want the cluster shipped to.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address_id = input;
-            self
+            self.address_id = input; self
         }
         /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -575,8 +412,7 @@ pub mod create_cluster_input {
         }
         /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -585,64 +421,55 @@ pub mod create_cluster_input {
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
-        /// </note>
+        /// <p>The type of Snow Family devices to use for this cluster. </p> <note> 
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+        /// </note> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
-        /// </note>
+        /// <p>The type of Snow Family devices to use for this cluster. </p> <note> 
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+        /// </note> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn set_snowball_type(
-            mut self,
-            input: std::option::Option<crate::model::SnowballType>,
-        ) -> Self {
-            self.snowball_type = input;
-            self
+        pub fn set_snowball_type(mut self, input: std::option::Option<crate::model::SnowballType>) -> Self {
+            self.snowball_type = input; self
         }
-        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
         /// </ul>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
         /// </ul>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
-        /// </ul>
-        pub fn set_shipping_option(
-            mut self,
-            input: std::option::Option<crate::model::ShippingOption>,
-        ) -> Self {
-            self.shipping_option = input;
-            self
+        pub fn set_shipping_option(mut self, input: std::option::Option<crate::model::ShippingOption>) -> Self {
+            self.shipping_option = input; self
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -650,12 +477,8 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -663,12 +486,8 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
-        pub fn set_forwarding_address_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.forwarding_address_id = input;
-            self
+        pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forwarding_address_id = input; self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
@@ -676,12 +495,8 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
-        pub fn set_tax_documents(
-            mut self,
-            input: std::option::Option<crate::model::TaxDocuments>,
-        ) -> Self {
-            self.tax_documents = input;
-            self
+        pub fn set_tax_documents(mut self, input: std::option::Option<crate::model::TaxDocuments>) -> Self {
+            self.tax_documents = input; self
         }
         /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
@@ -689,159 +504,118 @@ pub mod create_cluster_input {
             self
         }
         /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-        pub fn set_remote_management(
-            mut self,
-            input: std::option::Option<crate::model::RemoteManagement>,
-        ) -> Self {
-            self.remote_management = input;
-            self
+        pub fn set_remote_management(mut self, input: std::option::Option<crate::model::RemoteManagement>) -> Self {
+            self.remote_management = input; self
         }
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateClusterInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateClusterInput {
-                job_type: self.job_type,
-                resources: self.resources,
-                on_device_service_configuration: self.on_device_service_configuration,
-                description: self.description,
-                address_id: self.address_id,
-                kms_key_arn: self.kms_key_arn,
-                role_arn: self.role_arn,
-                snowball_type: self.snowball_type,
-                shipping_option: self.shipping_option,
-                notification: self.notification,
-                forwarding_address_id: self.forwarding_address_id,
-                tax_documents: self.tax_documents,
-                remote_management: self.remote_management,
-            })
+        pub fn build(self) -> Result<crate::input::CreateClusterInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateClusterInput {
+                    job_type: self.job_type
+                    ,
+                    resources: self.resources
+                    ,
+                    on_device_service_configuration: self.on_device_service_configuration
+                    ,
+                    description: self.description
+                    ,
+                    address_id: self.address_id
+                    ,
+                    kms_key_arn: self.kms_key_arn
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                    snowball_type: self.snowball_type
+                    ,
+                    shipping_option: self.shipping_option
+                    ,
+                    notification: self.notification
+                    ,
+                    forwarding_address_id: self.forwarding_address_id
+                    ,
+                    tax_documents: self.tax_documents
+                    ,
+                    remote_management: self.remote_management
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateCluster, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateClusterInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateClusterInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateClusterInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.CreateCluster",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.CreateCluster"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateCluster::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateCluster",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateCluster::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateCluster", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -853,20 +627,18 @@ impl CreateClusterInput {
 
 /// See [`CreateJobInput`](crate::input::CreateJobInput).
 pub mod create_job_input {
-
+    
     /// A builder for [`CreateJobInput`](crate::input::CreateJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) resources: std::option::Option<crate::model::JobResource>,
-        pub(crate) on_device_service_configuration:
-            std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+        pub(crate) on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) address_id: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) snowball_capacity_preference:
-            std::option::Option<crate::model::SnowballCapacity>,
+        pub(crate) snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
         pub(crate) shipping_option: std::option::Option<crate::model::ShippingOption>,
         pub(crate) notification: std::option::Option<crate::model::Notification>,
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -885,41 +657,29 @@ pub mod create_job_input {
         }
         /// <p>Defines the type of job that you're creating. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.job_type = input;
-            self
+            self.job_type = input; self
         }
-        /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+        /// <p>Defines the Amazon S3 buckets associated with this job.</p> 
+        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p> 
         /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.resources = Some(input);
             self
         }
-        /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+        /// <p>Defines the Amazon S3 buckets associated with this job.</p> 
+        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p> 
         /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<crate::model::JobResource>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<crate::model::JobResource>) -> Self {
+            self.resources = input; self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-        pub fn on_device_service_configuration(
-            mut self,
-            input: crate::model::OnDeviceServiceConfiguration,
-        ) -> Self {
+        pub fn on_device_service_configuration(mut self, input: crate::model::OnDeviceServiceConfiguration) -> Self {
             self.on_device_service_configuration = Some(input);
             self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-        pub fn set_on_device_service_configuration(
-            mut self,
-            input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-        ) -> Self {
-            self.on_device_service_configuration = input;
-            self
+        pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::model::OnDeviceServiceConfiguration>) -> Self {
+            self.on_device_service_configuration = input; self
         }
         /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -928,8 +688,7 @@ pub mod create_job_input {
         }
         /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ID for the address that you want the Snow device shipped to.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -938,8 +697,7 @@ pub mod create_job_input {
         }
         /// <p>The ID for the address that you want the Snow device shipped to.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address_id = input;
-            self
+            self.address_id = input; self
         }
         /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -948,8 +706,7 @@ pub mod create_job_input {
         }
         /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -958,51 +715,39 @@ pub mod create_job_input {
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+        /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn snowball_capacity_preference(
-            mut self,
-            input: crate::model::SnowballCapacity,
-        ) -> Self {
+        pub fn snowball_capacity_preference(mut self, input: crate::model::SnowballCapacity) -> Self {
             self.snowball_capacity_preference = Some(input);
             self
         }
-        /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+        /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn set_snowball_capacity_preference(
-            mut self,
-            input: std::option::Option<crate::model::SnowballCapacity>,
-        ) -> Self {
-            self.snowball_capacity_preference = input;
-            self
+        pub fn set_snowball_capacity_preference(mut self, input: std::option::Option<crate::model::SnowballCapacity>) -> Self {
+            self.snowball_capacity_preference = input; self
         }
-        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
         /// </ul>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
         /// </ul>
-        pub fn set_shipping_option(
-            mut self,
-            input: std::option::Option<crate::model::ShippingOption>,
-        ) -> Self {
-            self.shipping_option = input;
-            self
+        pub fn set_shipping_option(mut self, input: std::option::Option<crate::model::ShippingOption>) -> Self {
+            self.shipping_option = input; self
         }
         /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -1010,12 +755,8 @@ pub mod create_job_input {
             self
         }
         /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1024,31 +765,26 @@ pub mod create_job_input {
         }
         /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
-        /// <p>The type of Snow Family devices to use for this job. </p> <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
-        /// </note>
-        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+        /// <p>The type of Snow Family devices to use for this job. </p> <note> 
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+        /// </note> 
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p> 
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snow Family devices to use for this job. </p> <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
-        /// </note>
-        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+        /// <p>The type of Snow Family devices to use for this job. </p> <note> 
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+        /// </note> 
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p> 
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn set_snowball_type(
-            mut self,
-            input: std::option::Option<crate::model::SnowballType>,
-        ) -> Self {
-            self.snowball_type = input;
-            self
+        pub fn set_snowball_type(mut self, input: std::option::Option<crate::model::SnowballType>) -> Self {
+            self.snowball_type = input; self
         }
         /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1056,12 +792,8 @@ pub mod create_job_input {
             self
         }
         /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
-        pub fn set_forwarding_address_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.forwarding_address_id = input;
-            self
+        pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forwarding_address_id = input; self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
@@ -1069,27 +801,19 @@ pub mod create_job_input {
             self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
-        pub fn set_tax_documents(
-            mut self,
-            input: std::option::Option<crate::model::TaxDocuments>,
-        ) -> Self {
-            self.tax_documents = input;
-            self
+        pub fn set_tax_documents(mut self, input: std::option::Option<crate::model::TaxDocuments>) -> Self {
+            self.tax_documents = input; self
         }
-        /// <p>Defines the device configuration for an Snowcone job.</p>
+        /// <p>Defines the device configuration for an Snowcone job.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn device_configuration(mut self, input: crate::model::DeviceConfiguration) -> Self {
             self.device_configuration = Some(input);
             self
         }
-        /// <p>Defines the device configuration for an Snowcone job.</p>
+        /// <p>Defines the device configuration for an Snowcone job.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn set_device_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DeviceConfiguration>,
-        ) -> Self {
-            self.device_configuration = input;
-            self
+        pub fn set_device_configuration(mut self, input: std::option::Option<crate::model::DeviceConfiguration>) -> Self {
+            self.device_configuration = input; self
         }
         /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
@@ -1097,12 +821,8 @@ pub mod create_job_input {
             self
         }
         /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-        pub fn set_remote_management(
-            mut self,
-            input: std::option::Option<crate::model::RemoteManagement>,
-        ) -> Self {
-            self.remote_management = input;
-            self
+        pub fn set_remote_management(mut self, input: std::option::Option<crate::model::RemoteManagement>) -> Self {
+            self.remote_management = input; self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
         pub fn long_term_pricing_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1110,161 +830,126 @@ pub mod create_job_input {
             self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
-        pub fn set_long_term_pricing_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.long_term_pricing_id = input;
-            self
+        pub fn set_long_term_pricing_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.long_term_pricing_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateJobInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateJobInput {
-                job_type: self.job_type,
-                resources: self.resources,
-                on_device_service_configuration: self.on_device_service_configuration,
-                description: self.description,
-                address_id: self.address_id,
-                kms_key_arn: self.kms_key_arn,
-                role_arn: self.role_arn,
-                snowball_capacity_preference: self.snowball_capacity_preference,
-                shipping_option: self.shipping_option,
-                notification: self.notification,
-                cluster_id: self.cluster_id,
-                snowball_type: self.snowball_type,
-                forwarding_address_id: self.forwarding_address_id,
-                tax_documents: self.tax_documents,
-                device_configuration: self.device_configuration,
-                remote_management: self.remote_management,
-                long_term_pricing_id: self.long_term_pricing_id,
-            })
+        pub fn build(self) -> Result<crate::input::CreateJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateJobInput {
+                    job_type: self.job_type
+                    ,
+                    resources: self.resources
+                    ,
+                    on_device_service_configuration: self.on_device_service_configuration
+                    ,
+                    description: self.description
+                    ,
+                    address_id: self.address_id
+                    ,
+                    kms_key_arn: self.kms_key_arn
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                    snowball_capacity_preference: self.snowball_capacity_preference
+                    ,
+                    shipping_option: self.shipping_option
+                    ,
+                    notification: self.notification
+                    ,
+                    cluster_id: self.cluster_id
+                    ,
+                    snowball_type: self.snowball_type
+                    ,
+                    forwarding_address_id: self.forwarding_address_id
+                    ,
+                    tax_documents: self.tax_documents
+                    ,
+                    device_configuration: self.device_configuration
+                    ,
+                    remote_management: self.remote_management
+                    ,
+                    long_term_pricing_id: self.long_term_pricing_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.CreateJob",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.CreateJob"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateJob::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "CreateJob",
-                    "snowball",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateJob", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1276,7 +961,7 @@ impl CreateJobInput {
 
 /// See [`CreateLongTermPricingInput`](crate::input::CreateLongTermPricingInput).
 pub mod create_long_term_pricing_input {
-
+    
     /// A builder for [`CreateLongTermPricingInput`](crate::input::CreateLongTermPricingInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1291,27 +976,19 @@ pub mod create_long_term_pricing_input {
             self
         }
         /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-        pub fn set_long_term_pricing_type(
-            mut self,
-            input: std::option::Option<crate::model::LongTermPricingType>,
-        ) -> Self {
-            self.long_term_pricing_type = input;
-            self
+        pub fn set_long_term_pricing_type(mut self, input: std::option::Option<crate::model::LongTermPricingType>) -> Self {
+            self.long_term_pricing_type = input; self
         }
-        /// <p>snowballty</p>
+        /// <p>snowballty</p> 
         /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
             self.is_long_term_pricing_auto_renew = Some(input);
             self
         }
-        /// <p>snowballty</p>
+        /// <p>snowballty</p> 
         /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
-        pub fn set_is_long_term_pricing_auto_renew(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.is_long_term_pricing_auto_renew = input;
-            self
+        pub fn set_is_long_term_pricing_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_long_term_pricing_auto_renew = input; self
         }
         /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
@@ -1319,153 +996,98 @@ pub mod create_long_term_pricing_input {
             self
         }
         /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
-        pub fn set_snowball_type(
-            mut self,
-            input: std::option::Option<crate::model::SnowballType>,
-        ) -> Self {
-            self.snowball_type = input;
-            self
+        pub fn set_snowball_type(mut self, input: std::option::Option<crate::model::SnowballType>) -> Self {
+            self.snowball_type = input; self
         }
         /// Consumes the builder and constructs a [`CreateLongTermPricingInput`](crate::input::CreateLongTermPricingInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLongTermPricingInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateLongTermPricingInput {
-                long_term_pricing_type: self.long_term_pricing_type,
-                is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew,
-                snowball_type: self.snowball_type,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLongTermPricingInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateLongTermPricingInput {
+                    long_term_pricing_type: self.long_term_pricing_type
+                    ,
+                    is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew
+                    ,
+                    snowball_type: self.snowball_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLongTermPricingInput {
     /// Consumes the builder and constructs an Operation<[`CreateLongTermPricing`](crate::operation::CreateLongTermPricing)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLongTermPricing,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLongTermPricing, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLongTermPricingInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLongTermPricingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateLongTermPricingInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateLongTermPricingInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.CreateLongTermPricing",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.CreateLongTermPricing"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_long_term_pricing(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_long_term_pricing(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLongTermPricing::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLongTermPricing",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLongTermPricing::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLongTermPricing", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1477,7 +1099,7 @@ impl CreateLongTermPricingInput {
 
 /// See [`CreateReturnShippingLabelInput`](crate::input::CreateReturnShippingLabelInput).
 pub mod create_return_shipping_label_input {
-
+    
     /// A builder for [`CreateReturnShippingLabelInput`](crate::input::CreateReturnShippingLabelInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1492,8 +1114,7 @@ pub mod create_return_shipping_label_input {
         }
         /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
@@ -1501,152 +1122,96 @@ pub mod create_return_shipping_label_input {
             self
         }
         /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-        pub fn set_shipping_option(
-            mut self,
-            input: std::option::Option<crate::model::ShippingOption>,
-        ) -> Self {
-            self.shipping_option = input;
-            self
+        pub fn set_shipping_option(mut self, input: std::option::Option<crate::model::ShippingOption>) -> Self {
+            self.shipping_option = input; self
         }
         /// Consumes the builder and constructs a [`CreateReturnShippingLabelInput`](crate::input::CreateReturnShippingLabelInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateReturnShippingLabelInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateReturnShippingLabelInput {
-                job_id: self.job_id,
-                shipping_option: self.shipping_option,
-            })
+        pub fn build(self) -> Result<crate::input::CreateReturnShippingLabelInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateReturnShippingLabelInput {
+                    job_id: self.job_id
+                    ,
+                    shipping_option: self.shipping_option
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateReturnShippingLabelInput {
     /// Consumes the builder and constructs an Operation<[`CreateReturnShippingLabel`](crate::operation::CreateReturnShippingLabel)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateReturnShippingLabel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateReturnShippingLabel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateReturnShippingLabelInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateReturnShippingLabelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateReturnShippingLabelInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateReturnShippingLabelInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.CreateReturnShippingLabel",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.CreateReturnShippingLabel"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_return_shipping_label(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_return_shipping_label(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateReturnShippingLabel::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateReturnShippingLabel",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateReturnShippingLabel::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateReturnShippingLabel", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1658,7 +1223,7 @@ impl CreateReturnShippingLabelInput {
 
 /// See [`DescribeAddressInput`](crate::input::DescribeAddressInput).
 pub mod describe_address_input {
-
+    
     /// A builder for [`DescribeAddressInput`](crate::input::DescribeAddressInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1672,143 +1237,93 @@ pub mod describe_address_input {
         }
         /// <p>The automatically generated ID for a specific address.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address_id = input;
-            self
+            self.address_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAddressInput`](crate::input::DescribeAddressInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeAddressInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeAddressInput {
-                address_id: self.address_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAddressInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAddressInput {
+                    address_id: self.address_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAddressInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAddress`](crate::operation::DescribeAddress)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAddress,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAddress, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAddressInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAddressInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAddressInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAddressInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.DescribeAddress",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.DescribeAddress"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_address(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_address(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAddress::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAddress",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAddress::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAddress", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1820,7 +1335,7 @@ impl DescribeAddressInput {
 
 /// See [`DescribeAddressesInput`](crate::input::DescribeAddressesInput).
 pub mod describe_addresses_input {
-
+    
     /// A builder for [`DescribeAddressesInput`](crate::input::DescribeAddressesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1835,8 +1350,7 @@ pub mod describe_addresses_input {
         }
         /// <p>The number of <code>ADDRESS</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1845,146 +1359,95 @@ pub mod describe_addresses_input {
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAddressesInput`](crate::input::DescribeAddressesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAddressesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeAddressesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAddressesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAddressesInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAddressesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAddresses`](crate::operation::DescribeAddresses)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAddresses,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAddresses, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAddressesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAddressesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAddressesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAddressesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.DescribeAddresses",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.DescribeAddresses"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_addresses(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_addresses(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAddresses::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAddresses",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAddresses::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAddresses", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1996,7 +1459,7 @@ impl DescribeAddressesInput {
 
 /// See [`DescribeClusterInput`](crate::input::DescribeClusterInput).
 pub mod describe_cluster_input {
-
+    
     /// A builder for [`DescribeClusterInput`](crate::input::DescribeClusterInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2010,143 +1473,93 @@ pub mod describe_cluster_input {
         }
         /// <p>The automatically generated ID for a cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeClusterInput`](crate::input::DescribeClusterInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeClusterInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeClusterInput {
-                cluster_id: self.cluster_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeClusterInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeClusterInput {
+                    cluster_id: self.cluster_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCluster`](crate::operation::DescribeCluster)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeCluster, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeClusterInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeClusterInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeClusterInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.DescribeCluster",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.DescribeCluster"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_cluster(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_cluster(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeCluster::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeCluster",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeCluster::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeCluster", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2158,7 +1571,7 @@ impl DescribeClusterInput {
 
 /// See [`DescribeJobInput`](crate::input::DescribeJobInput).
 pub mod describe_job_input {
-
+    
     /// A builder for [`DescribeJobInput`](crate::input::DescribeJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2172,143 +1585,93 @@ pub mod describe_job_input {
         }
         /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobInput`](crate::input::DescribeJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeJobInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeJobInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.DescribeJob",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.DescribeJob"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_job(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeJob::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeJob",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeJob", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2320,7 +1683,7 @@ impl DescribeJobInput {
 
 /// See [`DescribeReturnShippingLabelInput`](crate::input::DescribeReturnShippingLabelInput).
 pub mod describe_return_shipping_label_input {
-
+    
     /// A builder for [`DescribeReturnShippingLabelInput`](crate::input::DescribeReturnShippingLabelInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2334,87 +1697,58 @@ pub mod describe_return_shipping_label_input {
         }
         /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReturnShippingLabelInput`](crate::input::DescribeReturnShippingLabelInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeReturnShippingLabelInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeReturnShippingLabelInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeReturnShippingLabelInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeReturnShippingLabelInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeReturnShippingLabelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReturnShippingLabel`](crate::operation::DescribeReturnShippingLabel)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeReturnShippingLabel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeReturnShippingLabel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeReturnShippingLabelInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeReturnShippingLabelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeReturnShippingLabelInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeReturnShippingLabelInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.DescribeReturnShippingLabel",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.DescribeReturnShippingLabel"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2423,56 +1757,33 @@ impl DescribeReturnShippingLabelInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_return_shipping_label(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeReturnShippingLabel::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeReturnShippingLabel",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeReturnShippingLabel::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeReturnShippingLabel", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2484,7 +1795,7 @@ impl DescribeReturnShippingLabelInput {
 
 /// See [`GetJobManifestInput`](crate::input::GetJobManifestInput).
 pub mod get_job_manifest_input {
-
+    
     /// A builder for [`GetJobManifestInput`](crate::input::GetJobManifestInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2498,143 +1809,93 @@ pub mod get_job_manifest_input {
         }
         /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`GetJobManifestInput`](crate::input::GetJobManifestInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetJobManifestInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetJobManifestInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetJobManifestInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetJobManifestInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetJobManifestInput {
     /// Consumes the builder and constructs an Operation<[`GetJobManifest`](crate::operation::GetJobManifest)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetJobManifest,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetJobManifest, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetJobManifestInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetJobManifestInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetJobManifestInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetJobManifestInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.GetJobManifest",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.GetJobManifest"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_job_manifest(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_job_manifest(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetJobManifest::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetJobManifest",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetJobManifest::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetJobManifest", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2646,7 +1907,7 @@ impl GetJobManifestInput {
 
 /// See [`GetJobUnlockCodeInput`](crate::input::GetJobUnlockCodeInput).
 pub mod get_job_unlock_code_input {
-
+    
     /// A builder for [`GetJobUnlockCodeInput`](crate::input::GetJobUnlockCodeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2660,145 +1921,93 @@ pub mod get_job_unlock_code_input {
         }
         /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`GetJobUnlockCodeInput`](crate::input::GetJobUnlockCodeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetJobUnlockCodeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetJobUnlockCodeInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetJobUnlockCodeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetJobUnlockCodeInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetJobUnlockCodeInput {
     /// Consumes the builder and constructs an Operation<[`GetJobUnlockCode`](crate::operation::GetJobUnlockCode)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetJobUnlockCode,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetJobUnlockCode, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetJobUnlockCodeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetJobUnlockCodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetJobUnlockCodeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetJobUnlockCodeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.GetJobUnlockCode",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.GetJobUnlockCode"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_job_unlock_code(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_job_unlock_code(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetJobUnlockCode::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetJobUnlockCode",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetJobUnlockCode::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetJobUnlockCode", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2810,138 +2019,92 @@ impl GetJobUnlockCodeInput {
 
 /// See [`GetSnowballUsageInput`](crate::input::GetSnowballUsageInput).
 pub mod get_snowball_usage_input {
-
+    
     /// A builder for [`GetSnowballUsageInput`](crate::input::GetSnowballUsageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`GetSnowballUsageInput`](crate::input::GetSnowballUsageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetSnowballUsageInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetSnowballUsageInput {})
+        pub fn build(self) -> Result<crate::input::GetSnowballUsageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetSnowballUsageInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl GetSnowballUsageInput {
     /// Consumes the builder and constructs an Operation<[`GetSnowballUsage`](crate::operation::GetSnowballUsage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetSnowballUsage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetSnowballUsage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetSnowballUsageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetSnowballUsageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetSnowballUsageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetSnowballUsageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.GetSnowballUsage",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.GetSnowballUsage"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_snowball_usage(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_snowball_usage(&self)?
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetSnowballUsage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetSnowballUsage",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetSnowballUsage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetSnowballUsage", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2953,7 +2116,7 @@ impl GetSnowballUsageInput {
 
 /// See [`GetSoftwareUpdatesInput`](crate::input::GetSoftwareUpdatesInput).
 pub mod get_software_updates_input {
-
+    
     /// A builder for [`GetSoftwareUpdatesInput`](crate::input::GetSoftwareUpdatesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2967,145 +2130,93 @@ pub mod get_software_updates_input {
         }
         /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`GetSoftwareUpdatesInput`](crate::input::GetSoftwareUpdatesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetSoftwareUpdatesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetSoftwareUpdatesInput {
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetSoftwareUpdatesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetSoftwareUpdatesInput {
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetSoftwareUpdatesInput {
     /// Consumes the builder and constructs an Operation<[`GetSoftwareUpdates`](crate::operation::GetSoftwareUpdates)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetSoftwareUpdates,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetSoftwareUpdates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetSoftwareUpdatesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetSoftwareUpdatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetSoftwareUpdatesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetSoftwareUpdatesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.GetSoftwareUpdates",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.GetSoftwareUpdates"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_software_updates(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_software_updates(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetSoftwareUpdates::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetSoftwareUpdates",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetSoftwareUpdates::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetSoftwareUpdates", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3117,7 +2228,7 @@ impl GetSoftwareUpdatesInput {
 
 /// See [`ListClusterJobsInput`](crate::input::ListClusterJobsInput).
 pub mod list_cluster_jobs_input {
-
+    
     /// A builder for [`ListClusterJobsInput`](crate::input::ListClusterJobsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3133,8 +2244,7 @@ pub mod list_cluster_jobs_input {
         }
         /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// <p>The number of <code>JobListEntry</code> objects to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3143,8 +2253,7 @@ pub mod list_cluster_jobs_input {
         }
         /// <p>The number of <code>JobListEntry</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3153,145 +2262,97 @@ pub mod list_cluster_jobs_input {
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListClusterJobsInput`](crate::input::ListClusterJobsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListClusterJobsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListClusterJobsInput {
-                cluster_id: self.cluster_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListClusterJobsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListClusterJobsInput {
+                    cluster_id: self.cluster_id
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListClusterJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListClusterJobs`](crate::operation::ListClusterJobs)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListClusterJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListClusterJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListClusterJobsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListClusterJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListClusterJobsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListClusterJobsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.ListClusterJobs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.ListClusterJobs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_cluster_jobs(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_cluster_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListClusterJobs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListClusterJobs",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListClusterJobs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListClusterJobs", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3303,7 +2364,7 @@ impl ListClusterJobsInput {
 
 /// See [`ListClustersInput`](crate::input::ListClustersInput).
 pub mod list_clusters_input {
-
+    
     /// A builder for [`ListClustersInput`](crate::input::ListClustersInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3318,8 +2379,7 @@ pub mod list_clusters_input {
         }
         /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3328,144 +2388,95 @@ pub mod list_clusters_input {
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListClustersInput`](crate::input::ListClustersInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListClustersInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListClustersInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListClustersInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListClustersInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListClusters`](crate::operation::ListClusters)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListClusters,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListClusters, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListClustersInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListClustersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListClustersInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListClustersInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.ListClusters",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.ListClusters"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListClusters::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListClusters",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListClusters::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListClusters", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3477,7 +2488,7 @@ impl ListClustersInput {
 
 /// See [`ListCompatibleImagesInput`](crate::input::ListCompatibleImagesInput).
 pub mod list_compatible_images_input {
-
+    
     /// A builder for [`ListCompatibleImagesInput`](crate::input::ListCompatibleImagesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3492,8 +2503,7 @@ pub mod list_compatible_images_input {
         }
         /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3502,148 +2512,95 @@ pub mod list_compatible_images_input {
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCompatibleImagesInput`](crate::input::ListCompatibleImagesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListCompatibleImagesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListCompatibleImagesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListCompatibleImagesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListCompatibleImagesInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListCompatibleImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListCompatibleImages`](crate::operation::ListCompatibleImages)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListCompatibleImages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListCompatibleImages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListCompatibleImagesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListCompatibleImagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListCompatibleImagesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListCompatibleImagesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.ListCompatibleImages",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.ListCompatibleImages"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_compatible_images(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_compatible_images(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListCompatibleImages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListCompatibleImages",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListCompatibleImages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListCompatibleImages", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3655,7 +2612,7 @@ impl ListCompatibleImagesInput {
 
 /// See [`ListJobsInput`](crate::input::ListJobsInput).
 pub mod list_jobs_input {
-
+    
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3670,8 +2627,7 @@ pub mod list_jobs_input {
         }
         /// <p>The number of <code>JobListEntry</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3680,141 +2636,95 @@ pub mod list_jobs_input {
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobsInput`](crate::input::ListJobsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListJobsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListJobsInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListJobsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListJobsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListJobsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.ListJobs",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.ListJobs"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "ListJobs", "snowball",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListJobs", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3826,7 +2736,7 @@ impl ListJobsInput {
 
 /// See [`ListLongTermPricingInput`](crate::input::ListLongTermPricingInput).
 pub mod list_long_term_pricing_input {
-
+    
     /// A builder for [`ListLongTermPricingInput`](crate::input::ListLongTermPricingInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3841,8 +2751,7 @@ pub mod list_long_term_pricing_input {
         }
         /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3851,148 +2760,95 @@ pub mod list_long_term_pricing_input {
         }
         /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLongTermPricingInput`](crate::input::ListLongTermPricingInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListLongTermPricingInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListLongTermPricingInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListLongTermPricingInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListLongTermPricingInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListLongTermPricingInput {
     /// Consumes the builder and constructs an Operation<[`ListLongTermPricing`](crate::operation::ListLongTermPricing)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListLongTermPricing,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLongTermPricing, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListLongTermPricingInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListLongTermPricingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListLongTermPricingInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListLongTermPricingInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.ListLongTermPricing",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.ListLongTermPricing"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_long_term_pricing(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_long_term_pricing(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListLongTermPricing::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListLongTermPricing",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLongTermPricing::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLongTermPricing", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4004,7 +2860,7 @@ impl ListLongTermPricingInput {
 
 /// See [`UpdateClusterInput`](crate::input::UpdateClusterInput).
 pub mod update_cluster_input {
-
+    
     /// A builder for [`UpdateClusterInput`](crate::input::UpdateClusterInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4012,8 +2868,7 @@ pub mod update_cluster_input {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<crate::model::JobResource>,
-        pub(crate) on_device_service_configuration:
-            std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+        pub(crate) on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
         pub(crate) address_id: std::option::Option<std::string::String>,
         pub(crate) shipping_option: std::option::Option<crate::model::ShippingOption>,
         pub(crate) notification: std::option::Option<crate::model::Notification>,
@@ -4027,8 +2882,7 @@ pub mod update_cluster_input {
         }
         /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4037,8 +2891,7 @@ pub mod update_cluster_input {
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The updated description of this cluster.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4047,8 +2900,7 @@ pub mod update_cluster_input {
         }
         /// <p>The updated description of this cluster.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
@@ -4056,28 +2908,17 @@ pub mod update_cluster_input {
             self
         }
         /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<crate::model::JobResource>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<crate::model::JobResource>) -> Self {
+            self.resources = input; self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-        pub fn on_device_service_configuration(
-            mut self,
-            input: crate::model::OnDeviceServiceConfiguration,
-        ) -> Self {
+        pub fn on_device_service_configuration(mut self, input: crate::model::OnDeviceServiceConfiguration) -> Self {
             self.on_device_service_configuration = Some(input);
             self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-        pub fn set_on_device_service_configuration(
-            mut self,
-            input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-        ) -> Self {
-            self.on_device_service_configuration = input;
-            self
+        pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::model::OnDeviceServiceConfiguration>) -> Self {
+            self.on_device_service_configuration = input; self
         }
         /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4086,8 +2927,7 @@ pub mod update_cluster_input {
         }
         /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address_id = input;
-            self
+            self.address_id = input; self
         }
         /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
@@ -4095,12 +2935,8 @@ pub mod update_cluster_input {
             self
         }
         /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
-        pub fn set_shipping_option(
-            mut self,
-            input: std::option::Option<crate::model::ShippingOption>,
-        ) -> Self {
-            self.shipping_option = input;
-            self
+        pub fn set_shipping_option(mut self, input: std::option::Option<crate::model::ShippingOption>) -> Self {
+            self.shipping_option = input; self
         }
         /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -4108,12 +2944,8 @@ pub mod update_cluster_input {
             self
         }
         /// <p>The new or updated <code>Notification</code> object.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4121,155 +2953,110 @@ pub mod update_cluster_input {
             self
         }
         /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
-        pub fn set_forwarding_address_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.forwarding_address_id = input;
-            self
+        pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forwarding_address_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::input::UpdateClusterInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateClusterInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateClusterInput {
-                cluster_id: self.cluster_id,
-                role_arn: self.role_arn,
-                description: self.description,
-                resources: self.resources,
-                on_device_service_configuration: self.on_device_service_configuration,
-                address_id: self.address_id,
-                shipping_option: self.shipping_option,
-                notification: self.notification,
-                forwarding_address_id: self.forwarding_address_id,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateClusterInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateClusterInput {
+                    cluster_id: self.cluster_id
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                    description: self.description
+                    ,
+                    resources: self.resources
+                    ,
+                    on_device_service_configuration: self.on_device_service_configuration
+                    ,
+                    address_id: self.address_id
+                    ,
+                    shipping_option: self.shipping_option
+                    ,
+                    notification: self.notification
+                    ,
+                    forwarding_address_id: self.forwarding_address_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateClusterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCluster`](crate::operation::UpdateCluster)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateCluster, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateClusterInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateClusterInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateClusterInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.UpdateCluster",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.UpdateCluster"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_cluster(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_cluster(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateCluster::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateCluster",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateCluster::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateCluster", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4281,7 +3068,7 @@ impl UpdateClusterInput {
 
 /// See [`UpdateJobInput`](crate::input::UpdateJobInput).
 pub mod update_job_input {
-
+    
     /// A builder for [`UpdateJobInput`](crate::input::UpdateJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4289,13 +3076,11 @@ pub mod update_job_input {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) notification: std::option::Option<crate::model::Notification>,
         pub(crate) resources: std::option::Option<crate::model::JobResource>,
-        pub(crate) on_device_service_configuration:
-            std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+        pub(crate) on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
         pub(crate) address_id: std::option::Option<std::string::String>,
         pub(crate) shipping_option: std::option::Option<crate::model::ShippingOption>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) snowball_capacity_preference:
-            std::option::Option<crate::model::SnowballCapacity>,
+        pub(crate) snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
         pub(crate) forwarding_address_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4306,8 +3091,7 @@ pub mod update_job_input {
         }
         /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4316,8 +3100,7 @@ pub mod update_job_input {
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -4325,12 +3108,8 @@ pub mod update_job_input {
             self
         }
         /// <p>The new or updated <code>Notification</code> object.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
@@ -4338,28 +3117,17 @@ pub mod update_job_input {
             self
         }
         /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<crate::model::JobResource>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<crate::model::JobResource>) -> Self {
+            self.resources = input; self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-        pub fn on_device_service_configuration(
-            mut self,
-            input: crate::model::OnDeviceServiceConfiguration,
-        ) -> Self {
+        pub fn on_device_service_configuration(mut self, input: crate::model::OnDeviceServiceConfiguration) -> Self {
             self.on_device_service_configuration = Some(input);
             self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-        pub fn set_on_device_service_configuration(
-            mut self,
-            input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-        ) -> Self {
-            self.on_device_service_configuration = input;
-            self
+        pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::model::OnDeviceServiceConfiguration>) -> Self {
+            self.on_device_service_configuration = input; self
         }
         /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4368,8 +3136,7 @@ pub mod update_job_input {
         }
         /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address_id = input;
-            self
+            self.address_id = input; self
         }
         /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
@@ -4377,12 +3144,8 @@ pub mod update_job_input {
             self
         }
         /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
-        pub fn set_shipping_option(
-            mut self,
-            input: std::option::Option<crate::model::ShippingOption>,
-        ) -> Self {
-            self.shipping_option = input;
-            self
+        pub fn set_shipping_option(mut self, input: std::option::Option<crate::model::ShippingOption>) -> Self {
+            self.shipping_option = input; self
         }
         /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4391,26 +3154,18 @@ pub mod update_job_input {
         }
         /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn snowball_capacity_preference(
-            mut self,
-            input: crate::model::SnowballCapacity,
-        ) -> Self {
+        pub fn snowball_capacity_preference(mut self, input: crate::model::SnowballCapacity) -> Self {
             self.snowball_capacity_preference = Some(input);
             self
         }
-        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn set_snowball_capacity_preference(
-            mut self,
-            input: std::option::Option<crate::model::SnowballCapacity>,
-        ) -> Self {
-            self.snowball_capacity_preference = input;
-            self
+        pub fn set_snowball_capacity_preference(mut self, input: std::option::Option<crate::model::SnowballCapacity>) -> Self {
+            self.snowball_capacity_preference = input; self
         }
         /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4418,154 +3173,112 @@ pub mod update_job_input {
             self
         }
         /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
-        pub fn set_forwarding_address_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.forwarding_address_id = input;
-            self
+        pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forwarding_address_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateJobInput`](crate::input::UpdateJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateJobInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateJobInput {
-                job_id: self.job_id,
-                role_arn: self.role_arn,
-                notification: self.notification,
-                resources: self.resources,
-                on_device_service_configuration: self.on_device_service_configuration,
-                address_id: self.address_id,
-                shipping_option: self.shipping_option,
-                description: self.description,
-                snowball_capacity_preference: self.snowball_capacity_preference,
-                forwarding_address_id: self.forwarding_address_id,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateJobInput {
+                    job_id: self.job_id
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                    notification: self.notification
+                    ,
+                    resources: self.resources
+                    ,
+                    on_device_service_configuration: self.on_device_service_configuration
+                    ,
+                    address_id: self.address_id
+                    ,
+                    shipping_option: self.shipping_option
+                    ,
+                    description: self.description
+                    ,
+                    snowball_capacity_preference: self.snowball_capacity_preference
+                    ,
+                    forwarding_address_id: self.forwarding_address_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJob`](crate::operation::UpdateJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.UpdateJob",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.UpdateJob"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_job(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateJob::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "UpdateJob",
-                    "snowball",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateJob", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4577,7 +3290,7 @@ impl UpdateJobInput {
 
 /// See [`UpdateJobShipmentStateInput`](crate::input::UpdateJobShipmentStateInput).
 pub mod update_job_shipment_state_input {
-
+    
     /// A builder for [`UpdateJobShipmentStateInput`](crate::input::UpdateJobShipmentStateInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4592,165 +3305,108 @@ pub mod update_job_shipment_state_input {
         }
         /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The state of a device when it is being shipped. </p>
-        /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
+        /// <p>The state of a device when it is being shipped. </p> 
+        /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p> 
         /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
         pub fn shipment_state(mut self, input: crate::model::ShipmentState) -> Self {
             self.shipment_state = Some(input);
             self
         }
-        /// <p>The state of a device when it is being shipped. </p>
-        /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
+        /// <p>The state of a device when it is being shipped. </p> 
+        /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p> 
         /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
-        pub fn set_shipment_state(
-            mut self,
-            input: std::option::Option<crate::model::ShipmentState>,
-        ) -> Self {
-            self.shipment_state = input;
-            self
+        pub fn set_shipment_state(mut self, input: std::option::Option<crate::model::ShipmentState>) -> Self {
+            self.shipment_state = input; self
         }
         /// Consumes the builder and constructs a [`UpdateJobShipmentStateInput`](crate::input::UpdateJobShipmentStateInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateJobShipmentStateInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateJobShipmentStateInput {
-                job_id: self.job_id,
-                shipment_state: self.shipment_state,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateJobShipmentStateInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateJobShipmentStateInput {
+                    job_id: self.job_id
+                    ,
+                    shipment_state: self.shipment_state
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateJobShipmentStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobShipmentState`](crate::operation::UpdateJobShipmentState)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateJobShipmentState,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateJobShipmentState, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateJobShipmentStateInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateJobShipmentStateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateJobShipmentStateInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateJobShipmentStateInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.UpdateJobShipmentState",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.UpdateJobShipmentState"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_job_shipment_state(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_job_shipment_state(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateJobShipmentState::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateJobShipmentState",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateJobShipmentState::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateJobShipmentState", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4762,7 +3418,7 @@ impl UpdateJobShipmentStateInput {
 
 /// See [`UpdateLongTermPricingInput`](crate::input::UpdateLongTermPricingInput).
 pub mod update_long_term_pricing_input {
-
+    
     /// A builder for [`UpdateLongTermPricingInput`](crate::input::UpdateLongTermPricingInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4777,12 +3433,8 @@ pub mod update_long_term_pricing_input {
             self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
-        pub fn set_long_term_pricing_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.long_term_pricing_id = input;
-            self
+        pub fn set_long_term_pricing_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.long_term_pricing_id = input; self
         }
         /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
         pub fn replacement_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4790,12 +3442,8 @@ pub mod update_long_term_pricing_input {
             self
         }
         /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
-        pub fn set_replacement_job(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replacement_job = input;
-            self
+        pub fn set_replacement_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replacement_job = input; self
         }
         /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
@@ -4803,153 +3451,98 @@ pub mod update_long_term_pricing_input {
             self
         }
         /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
-        pub fn set_is_long_term_pricing_auto_renew(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.is_long_term_pricing_auto_renew = input;
-            self
+        pub fn set_is_long_term_pricing_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_long_term_pricing_auto_renew = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLongTermPricingInput`](crate::input::UpdateLongTermPricingInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateLongTermPricingInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateLongTermPricingInput {
-                long_term_pricing_id: self.long_term_pricing_id,
-                replacement_job: self.replacement_job,
-                is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateLongTermPricingInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateLongTermPricingInput {
+                    long_term_pricing_id: self.long_term_pricing_id
+                    ,
+                    replacement_job: self.replacement_job
+                    ,
+                    is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateLongTermPricingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLongTermPricing`](crate::operation::UpdateLongTermPricing)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateLongTermPricing,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLongTermPricing, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateLongTermPricingInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateLongTermPricingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateLongTermPricingInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateLongTermPricingInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSIESnowballJobManagementService.UpdateLongTermPricing",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSIESnowballJobManagementService.UpdateLongTermPricing"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_long_term_pricing(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_long_term_pricing(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateLongTermPricing::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateLongTermPricing",
-            "snowball",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLongTermPricing::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLongTermPricing", "snowball"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4962,7 +3555,7 @@ impl UpdateLongTermPricingInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLongTermPricingInput {
+pub struct UpdateLongTermPricingInput  {
     /// <p>The ID of the long-term pricing type for the device.</p>
     #[doc(hidden)]
     pub long_term_pricing_id: std::option::Option<std::string::String>,
@@ -4975,11 +3568,11 @@ pub struct UpdateLongTermPricingInput {
 }
 impl UpdateLongTermPricingInput {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+    pub fn long_term_pricing_id(&self) -> std::option::Option<& str> {
         self.long_term_pricing_id.as_deref()
     }
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
-    pub fn replacement_job(&self) -> std::option::Option<&str> {
+    pub fn replacement_job(&self) -> std::option::Option<& str> {
         self.replacement_job.as_deref()
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
@@ -4991,25 +3584,25 @@ impl UpdateLongTermPricingInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJobShipmentStateInput {
+pub struct UpdateJobShipmentStateInput  {
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The state of a device when it is being shipped. </p>
-    /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
+    /// <p>The state of a device when it is being shipped. </p> 
+    /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p> 
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     #[doc(hidden)]
     pub shipment_state: std::option::Option<crate::model::ShipmentState>,
 }
 impl UpdateJobShipmentStateInput {
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The state of a device when it is being shipped. </p>
-    /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
+    /// <p>The state of a device when it is being shipped. </p> 
+    /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p> 
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
-    pub fn shipment_state(&self) -> std::option::Option<&crate::model::ShipmentState> {
+    pub fn shipment_state(&self) -> std::option::Option<& crate::model::ShipmentState> {
         self.shipment_state.as_ref()
     }
 }
@@ -5017,7 +3610,7 @@ impl UpdateJobShipmentStateInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJobInput {
+pub struct UpdateJobInput  {
     /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -5032,8 +3625,7 @@ pub struct UpdateJobInput {
     pub resources: std::option::Option<crate::model::JobResource>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     #[doc(hidden)]
-    pub on_device_service_configuration:
-        std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     /// <p>The ID of the updated <code>Address</code> object.</p>
     #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
@@ -5043,7 +3635,7 @@ pub struct UpdateJobInput {
     /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     #[doc(hidden)]
     pub snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
@@ -5053,48 +3645,44 @@ pub struct UpdateJobInput {
 }
 impl UpdateJobInput {
     /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
-    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+    pub fn resources(&self) -> std::option::Option<& crate::model::JobResource> {
         self.resources.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    pub fn on_device_service_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> std::option::Option<& crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<& crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn snowball_capacity_preference(
-        &self,
-    ) -> std::option::Option<&crate::model::SnowballCapacity> {
+    pub fn snowball_capacity_preference(&self) -> std::option::Option<& crate::model::SnowballCapacity> {
         self.snowball_capacity_preference.as_ref()
     }
     /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> std::option::Option<& str> {
         self.forwarding_address_id.as_deref()
     }
 }
@@ -5102,7 +3690,7 @@ impl UpdateJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClusterInput {
+pub struct UpdateClusterInput  {
     /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -5117,8 +3705,7 @@ pub struct UpdateClusterInput {
     pub resources: std::option::Option<crate::model::JobResource>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     #[doc(hidden)]
-    pub on_device_service_configuration:
-        std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     /// <p>The ID of the updated <code>Address</code> object.</p>
     #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
@@ -5134,41 +3721,39 @@ pub struct UpdateClusterInput {
 }
 impl UpdateClusterInput {
     /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The updated description of this cluster.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+    pub fn resources(&self) -> std::option::Option<& crate::model::JobResource> {
         self.resources.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn on_device_service_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> std::option::Option<& crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<& crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> std::option::Option<& str> {
         self.forwarding_address_id.as_deref()
     }
 }
@@ -5176,7 +3761,7 @@ impl UpdateClusterInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLongTermPricingInput {
+pub struct ListLongTermPricingInput  {
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -5190,7 +3775,7 @@ impl ListLongTermPricingInput {
         self.max_results
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5198,7 +3783,7 @@ impl ListLongTermPricingInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsInput {
+pub struct ListJobsInput  {
     /// <p>The number of <code>JobListEntry</code> objects to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -5212,7 +3797,7 @@ impl ListJobsInput {
         self.max_results
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5220,7 +3805,7 @@ impl ListJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCompatibleImagesInput {
+pub struct ListCompatibleImagesInput  {
     /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -5234,7 +3819,7 @@ impl ListCompatibleImagesInput {
         self.max_results
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5242,7 +3827,7 @@ impl ListCompatibleImagesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClustersInput {
+pub struct ListClustersInput  {
     /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -5256,7 +3841,7 @@ impl ListClustersInput {
         self.max_results
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5264,7 +3849,7 @@ impl ListClustersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClusterJobsInput {
+pub struct ListClusterJobsInput  {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -5277,7 +3862,7 @@ pub struct ListClusterJobsInput {
 }
 impl ListClusterJobsInput {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The number of <code>JobListEntry</code> objects to return.</p>
@@ -5285,7 +3870,7 @@ impl ListClusterJobsInput {
         self.max_results
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5293,14 +3878,14 @@ impl ListClusterJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSoftwareUpdatesInput {
+pub struct GetSoftwareUpdatesInput  {
     /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetSoftwareUpdatesInput {
     /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -5308,19 +3893,20 @@ impl GetSoftwareUpdatesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSnowballUsageInput {}
+pub struct GetSnowballUsageInput  {
+}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobUnlockCodeInput {
+pub struct GetJobUnlockCodeInput  {
     /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetJobUnlockCodeInput {
     /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -5328,14 +3914,14 @@ impl GetJobUnlockCodeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobManifestInput {
+pub struct GetJobManifestInput  {
     /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetJobManifestInput {
     /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -5343,14 +3929,14 @@ impl GetJobManifestInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReturnShippingLabelInput {
+pub struct DescribeReturnShippingLabelInput  {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeReturnShippingLabelInput {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -5358,14 +3944,14 @@ impl DescribeReturnShippingLabelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobInput {
+pub struct DescribeJobInput  {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeJobInput {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -5373,14 +3959,14 @@ impl DescribeJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterInput {
+pub struct DescribeClusterInput  {
     /// <p>The automatically generated ID for a cluster.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl DescribeClusterInput {
     /// <p>The automatically generated ID for a cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
 }
@@ -5388,7 +3974,7 @@ impl DescribeClusterInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAddressesInput {
+pub struct DescribeAddressesInput  {
     /// <p>The number of <code>ADDRESS</code> objects to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -5402,7 +3988,7 @@ impl DescribeAddressesInput {
         self.max_results
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5410,14 +3996,14 @@ impl DescribeAddressesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAddressInput {
+pub struct DescribeAddressInput  {
     /// <p>The automatically generated ID for a specific address.</p>
     #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
 }
 impl DescribeAddressInput {
     /// <p>The automatically generated ID for a specific address.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> std::option::Option<& str> {
         self.address_id.as_deref()
     }
 }
@@ -5425,7 +4011,7 @@ impl DescribeAddressInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReturnShippingLabelInput {
+pub struct CreateReturnShippingLabelInput  {
     /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -5435,11 +4021,11 @@ pub struct CreateReturnShippingLabelInput {
 }
 impl CreateReturnShippingLabelInput {
     /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<& crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
 }
@@ -5447,11 +4033,11 @@ impl CreateReturnShippingLabelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLongTermPricingInput {
+pub struct CreateLongTermPricingInput  {
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
     #[doc(hidden)]
     pub long_term_pricing_type: std::option::Option<crate::model::LongTermPricingType>,
-    /// <p>snowballty</p>
+    /// <p>snowballty</p> 
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     #[doc(hidden)]
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
@@ -5461,18 +4047,16 @@ pub struct CreateLongTermPricingInput {
 }
 impl CreateLongTermPricingInput {
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-    pub fn long_term_pricing_type(
-        &self,
-    ) -> std::option::Option<&crate::model::LongTermPricingType> {
+    pub fn long_term_pricing_type(&self) -> std::option::Option<& crate::model::LongTermPricingType> {
         self.long_term_pricing_type.as_ref()
     }
-    /// <p>snowballty</p>
+    /// <p>snowballty</p> 
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
         self.is_long_term_pricing_auto_renew
     }
     /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<& crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
 }
@@ -5480,19 +4064,18 @@ impl CreateLongTermPricingInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobInput {
+pub struct CreateJobInput  {
     /// <p>Defines the type of job that you're creating. </p>
     #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
-    /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+    /// <p>Defines the Amazon S3 buckets associated with this job.</p> 
+    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p> 
     /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<crate::model::JobResource>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     #[doc(hidden)]
-    pub on_device_service_configuration:
-        std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -5505,16 +4088,16 @@ pub struct CreateJobInput {
     /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     #[doc(hidden)]
     pub snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
-    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
@@ -5524,11 +4107,11 @@ pub struct CreateJobInput {
     /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The type of Snow Family devices to use for this job. </p> <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
-    /// </note>
-    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note> 
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+    /// </note> 
+    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
@@ -5538,7 +4121,7 @@ pub struct CreateJobInput {
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowcone job.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     #[doc(hidden)]
     pub device_configuration: std::option::Option<crate::model::DeviceConfiguration>,
@@ -5551,90 +4134,86 @@ pub struct CreateJobInput {
 }
 impl CreateJobInput {
     /// <p>Defines the type of job that you're creating. </p>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::JobType> {
         self.job_type.as_ref()
     }
-    /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+    /// <p>Defines the Amazon S3 buckets associated with this job.</p> 
+    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p> 
     /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
-    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+    pub fn resources(&self) -> std::option::Option<& crate::model::JobResource> {
         self.resources.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    pub fn on_device_service_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> std::option::Option<& crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
     /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn snowball_capacity_preference(
-        &self,
-    ) -> std::option::Option<&crate::model::SnowballCapacity> {
+    pub fn snowball_capacity_preference(&self) -> std::option::Option<& crate::model::SnowballCapacity> {
         self.snowball_capacity_preference.as_ref()
     }
-    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
     /// </ul>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<& crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The type of Snow Family devices to use for this job. </p> <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
-    /// </note>
-    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+    /// <p>The type of Snow Family devices to use for this job. </p> <note> 
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+    /// </note> 
+    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<& crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
-    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> std::option::Option<& str> {
         self.forwarding_address_id.as_deref()
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
+    pub fn tax_documents(&self) -> std::option::Option<& crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowcone job.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn device_configuration(&self) -> std::option::Option<&crate::model::DeviceConfiguration> {
+    pub fn device_configuration(&self) -> std::option::Option<& crate::model::DeviceConfiguration> {
         self.device_configuration.as_ref()
     }
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-    pub fn remote_management(&self) -> std::option::Option<&crate::model::RemoteManagement> {
+    pub fn remote_management(&self) -> std::option::Option<& crate::model::RemoteManagement> {
         self.remote_management.as_ref()
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+    pub fn long_term_pricing_id(&self) -> std::option::Option<& str> {
         self.long_term_pricing_id.as_deref()
     }
 }
@@ -5642,8 +4221,8 @@ impl CreateJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClusterInput {
-    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+pub struct CreateClusterInput  {
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
@@ -5652,8 +4231,7 @@ pub struct CreateClusterInput {
     pub resources: std::option::Option<crate::model::JobResource>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     #[doc(hidden)]
-    pub on_device_service_configuration:
-        std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -5666,24 +4244,24 @@ pub struct CreateClusterInput {
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
-    /// </note>
+    /// <p>The type of Snow Family devices to use for this cluster. </p> <note> 
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+    /// </note> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
@@ -5701,74 +4279,72 @@ pub struct CreateClusterInput {
     pub remote_management: std::option::Option<crate::model::RemoteManagement>,
 }
 impl CreateClusterInput {
-    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::JobType> {
         self.job_type.as_ref()
     }
     /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
-    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+    pub fn resources(&self) -> std::option::Option<& crate::model::JobResource> {
         self.resources.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn on_device_service_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> std::option::Option<& crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
     /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID for the address that you want the cluster shipped to.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
-    /// </note>
+    /// <p>The type of Snow Family devices to use for this cluster. </p> <note> 
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+    /// </note> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<& crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
     /// </ul>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
-    /// </ul>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<& crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> std::option::Option<& str> {
         self.forwarding_address_id.as_deref()
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
+    pub fn tax_documents(&self) -> std::option::Option<& crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }
     /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-    pub fn remote_management(&self) -> std::option::Option<&crate::model::RemoteManagement> {
+    pub fn remote_management(&self) -> std::option::Option<& crate::model::RemoteManagement> {
         self.remote_management.as_ref()
     }
 }
@@ -5776,14 +4352,14 @@ impl CreateClusterInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAddressInput {
+pub struct CreateAddressInput  {
     /// <p>The address that you want the Snow device shipped to.</p>
     #[doc(hidden)]
     pub address: std::option::Option<crate::model::Address>,
 }
 impl CreateAddressInput {
     /// <p>The address that you want the Snow device shipped to.</p>
-    pub fn address(&self) -> std::option::Option<&crate::model::Address> {
+    pub fn address(&self) -> std::option::Option<& crate::model::Address> {
         self.address.as_ref()
     }
 }
@@ -5791,14 +4367,14 @@ impl CreateAddressInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobInput {
+pub struct CancelJobInput  {
     /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelJobInput {
     /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -5806,14 +4382,15 @@ impl CancelJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelClusterInput {
+pub struct CancelClusterInput  {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl CancelClusterInput {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
 }
+

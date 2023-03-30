@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -30,58 +30,52 @@
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Order,
     #[allow(missing_docs)] // documentation missing in model
     Outpost,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "ORDER" => ResourceType::Order,
             "OUTPOST" => ResourceType::Outpost,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Order => "ORDER",
             ResourceType::Outpost => "OUTPOST",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ORDER", "OUTPOST"]
+        &[
+            "ORDER", "OUTPOST"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -93,7 +87,7 @@ impl AsRef<str> for ResourceType {
 /// <p>Information about a site.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Site {
+pub struct Site  {
     /// <p>The ID of the site.</p>
     #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
@@ -108,8 +102,7 @@ pub struct Site {
     pub description: std::option::Option<std::string::String>,
     /// <p>The site tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     #[doc(hidden)]
     pub site_arn: std::option::Option<std::string::String>,
@@ -131,58 +124,53 @@ pub struct Site {
 }
 impl Site {
     /// <p>The ID of the site.</p>
-    pub fn site_id(&self) -> std::option::Option<&str> {
+    pub fn site_id(&self) -> std::option::Option<& str> {
         self.site_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the site.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the site.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The site tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
-    pub fn site_arn(&self) -> std::option::Option<&str> {
+    pub fn site_arn(&self) -> std::option::Option<& str> {
         self.site_arn.as_deref()
     }
     /// <p> Notes about a site. </p>
-    pub fn notes(&self) -> std::option::Option<&str> {
+    pub fn notes(&self) -> std::option::Option<& str> {
         self.notes.as_deref()
     }
     /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
-    pub fn operating_address_country_code(&self) -> std::option::Option<&str> {
+    pub fn operating_address_country_code(&self) -> std::option::Option<& str> {
         self.operating_address_country_code.as_deref()
     }
     /// <p> State or region where the hardware is installed and powered on. </p>
-    pub fn operating_address_state_or_region(&self) -> std::option::Option<&str> {
+    pub fn operating_address_state_or_region(&self) -> std::option::Option<& str> {
         self.operating_address_state_or_region.as_deref()
     }
     /// <p> City where the hardware is installed and powered on. </p>
-    pub fn operating_address_city(&self) -> std::option::Option<&str> {
+    pub fn operating_address_city(&self) -> std::option::Option<& str> {
         self.operating_address_city.as_deref()
     }
     /// <p> Information about the physical and logistical details for a rack at the site. </p>
-    pub fn rack_physical_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::RackPhysicalProperties> {
+    pub fn rack_physical_properties(&self) -> std::option::Option<& crate::model::RackPhysicalProperties> {
         self.rack_physical_properties.as_ref()
     }
 }
 /// See [`Site`](crate::model::Site).
 pub mod site {
-
+    
     /// A builder for [`Site`](crate::model::Site).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -190,16 +178,13 @@ pub mod site {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) site_arn: std::option::Option<std::string::String>,
         pub(crate) notes: std::option::Option<std::string::String>,
         pub(crate) operating_address_country_code: std::option::Option<std::string::String>,
         pub(crate) operating_address_state_or_region: std::option::Option<std::string::String>,
         pub(crate) operating_address_city: std::option::Option<std::string::String>,
-        pub(crate) rack_physical_properties:
-            std::option::Option<crate::model::RackPhysicalProperties>,
+        pub(crate) rack_physical_properties: std::option::Option<crate::model::RackPhysicalProperties>,
     }
     impl Builder {
         /// <p>The ID of the site.</p>
@@ -209,8 +194,7 @@ pub mod site {
         }
         /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.site_id = input;
-            self
+            self.site_id = input; self
         }
         /// <p>The ID of the Amazon Web Services account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,8 +203,7 @@ pub mod site {
         }
         /// <p>The ID of the Amazon Web Services account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the site.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -229,8 +212,7 @@ pub mod site {
         }
         /// <p>The name of the site.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the site.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -239,33 +221,22 @@ pub mod site {
         }
         /// <p>The description of the site.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The site tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The site tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the site.</p>
         pub fn site_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -274,8 +245,7 @@ pub mod site {
         }
         /// <p>The Amazon Resource Name (ARN) of the site.</p>
         pub fn set_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.site_arn = input;
-            self
+            self.site_arn = input; self
         }
         /// <p> Notes about a site. </p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,40 +254,25 @@ pub mod site {
         }
         /// <p> Notes about a site. </p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.notes = input;
-            self
+            self.notes = input; self
         }
         /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
-        pub fn operating_address_country_code(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn operating_address_country_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.operating_address_country_code = Some(input.into());
             self
         }
         /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
-        pub fn set_operating_address_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_address_country_code = input;
-            self
+        pub fn set_operating_address_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_address_country_code = input; self
         }
         /// <p> State or region where the hardware is installed and powered on. </p>
-        pub fn operating_address_state_or_region(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn operating_address_state_or_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.operating_address_state_or_region = Some(input.into());
             self
         }
         /// <p> State or region where the hardware is installed and powered on. </p>
-        pub fn set_operating_address_state_or_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_address_state_or_region = input;
-            self
+        pub fn set_operating_address_state_or_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_address_state_or_region = input; self
         }
         /// <p> City where the hardware is installed and powered on. </p>
         pub fn operating_address_city(mut self, input: impl Into<std::string::String>) -> Self {
@@ -325,46 +280,48 @@ pub mod site {
             self
         }
         /// <p> City where the hardware is installed and powered on. </p>
-        pub fn set_operating_address_city(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_address_city = input;
-            self
+        pub fn set_operating_address_city(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_address_city = input; self
         }
         /// <p> Information about the physical and logistical details for a rack at the site. </p>
-        pub fn rack_physical_properties(
-            mut self,
-            input: crate::model::RackPhysicalProperties,
-        ) -> Self {
+        pub fn rack_physical_properties(mut self, input: crate::model::RackPhysicalProperties) -> Self {
             self.rack_physical_properties = Some(input);
             self
         }
         /// <p> Information about the physical and logistical details for a rack at the site. </p>
-        pub fn set_rack_physical_properties(
-            mut self,
-            input: std::option::Option<crate::model::RackPhysicalProperties>,
-        ) -> Self {
-            self.rack_physical_properties = input;
-            self
+        pub fn set_rack_physical_properties(mut self, input: std::option::Option<crate::model::RackPhysicalProperties>) -> Self {
+            self.rack_physical_properties = input; self
         }
         /// Consumes the builder and constructs a [`Site`](crate::model::Site).
         pub fn build(self) -> crate::model::Site {
             crate::model::Site {
-                site_id: self.site_id,
-                account_id: self.account_id,
-                name: self.name,
-                description: self.description,
-                tags: self.tags,
-                site_arn: self.site_arn,
-                notes: self.notes,
-                operating_address_country_code: self.operating_address_country_code,
-                operating_address_state_or_region: self.operating_address_state_or_region,
-                operating_address_city: self.operating_address_city,
-                rack_physical_properties: self.rack_physical_properties,
+                site_id: self.site_id
+                ,
+                account_id: self.account_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                site_arn: self.site_arn
+                ,
+                notes: self.notes
+                ,
+                operating_address_country_code: self.operating_address_country_code
+                ,
+                operating_address_state_or_region: self.operating_address_state_or_region
+                ,
+                operating_address_city: self.operating_address_city
+                ,
+                rack_physical_properties: self.rack_physical_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl Site {
     /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site).
@@ -376,7 +333,7 @@ impl Site {
 /// <p> Information about the physical and logistical details for racks at sites. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RackPhysicalProperties {
+pub struct RackPhysicalProperties  {
     /// <p>The power draw available at the hardware placement position for the rack. </p>
     #[doc(hidden)]
     pub power_draw_kva: std::option::Option<crate::model::PowerDrawKva>,
@@ -407,49 +364,45 @@ pub struct RackPhysicalProperties {
 }
 impl RackPhysicalProperties {
     /// <p>The power draw available at the hardware placement position for the rack. </p>
-    pub fn power_draw_kva(&self) -> std::option::Option<&crate::model::PowerDrawKva> {
+    pub fn power_draw_kva(&self) -> std::option::Option<& crate::model::PowerDrawKva> {
         self.power_draw_kva.as_ref()
     }
     /// <p>The power option that you can provide for hardware.</p>
-    pub fn power_phase(&self) -> std::option::Option<&crate::model::PowerPhase> {
+    pub fn power_phase(&self) -> std::option::Option<& crate::model::PowerPhase> {
         self.power_phase.as_ref()
     }
     /// <p>The power connector for the hardware. </p>
-    pub fn power_connector(&self) -> std::option::Option<&crate::model::PowerConnector> {
+    pub fn power_connector(&self) -> std::option::Option<& crate::model::PowerConnector> {
         self.power_connector.as_ref()
     }
     /// <p>The position of the power feed.</p>
-    pub fn power_feed_drop(&self) -> std::option::Option<&crate::model::PowerFeedDrop> {
+    pub fn power_feed_drop(&self) -> std::option::Option<& crate::model::PowerFeedDrop> {
         self.power_feed_drop.as_ref()
     }
     /// <p>The uplink speed the rack supports for the connection to the Region. </p>
-    pub fn uplink_gbps(&self) -> std::option::Option<&crate::model::UplinkGbps> {
+    pub fn uplink_gbps(&self) -> std::option::Option<& crate::model::UplinkGbps> {
         self.uplink_gbps.as_ref()
     }
     /// <p>The number of uplinks each Outpost network device.</p>
-    pub fn uplink_count(&self) -> std::option::Option<&crate::model::UplinkCount> {
+    pub fn uplink_count(&self) -> std::option::Option<& crate::model::UplinkCount> {
         self.uplink_count.as_ref()
     }
     /// <p>The type of fiber used to attach the Outpost to the network. </p>
-    pub fn fiber_optic_cable_type(
-        &self,
-    ) -> std::option::Option<&crate::model::FiberOpticCableType> {
+    pub fn fiber_optic_cable_type(&self) -> std::option::Option<& crate::model::FiberOpticCableType> {
         self.fiber_optic_cable_type.as_ref()
     }
     /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
-    pub fn optical_standard(&self) -> std::option::Option<&crate::model::OpticalStandard> {
+    pub fn optical_standard(&self) -> std::option::Option<& crate::model::OpticalStandard> {
         self.optical_standard.as_ref()
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
-    pub fn maximum_supported_weight_lbs(
-        &self,
-    ) -> std::option::Option<&crate::model::MaximumSupportedWeightLbs> {
+    pub fn maximum_supported_weight_lbs(&self) -> std::option::Option<& crate::model::MaximumSupportedWeightLbs> {
         self.maximum_supported_weight_lbs.as_ref()
     }
 }
 /// See [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
 pub mod rack_physical_properties {
-
+    
     /// A builder for [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -461,8 +414,7 @@ pub mod rack_physical_properties {
         pub(crate) uplink_count: std::option::Option<crate::model::UplinkCount>,
         pub(crate) fiber_optic_cable_type: std::option::Option<crate::model::FiberOpticCableType>,
         pub(crate) optical_standard: std::option::Option<crate::model::OpticalStandard>,
-        pub(crate) maximum_supported_weight_lbs:
-            std::option::Option<crate::model::MaximumSupportedWeightLbs>,
+        pub(crate) maximum_supported_weight_lbs: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
     }
     impl Builder {
         /// <p>The power draw available at the hardware placement position for the rack. </p>
@@ -471,12 +423,8 @@ pub mod rack_physical_properties {
             self
         }
         /// <p>The power draw available at the hardware placement position for the rack. </p>
-        pub fn set_power_draw_kva(
-            mut self,
-            input: std::option::Option<crate::model::PowerDrawKva>,
-        ) -> Self {
-            self.power_draw_kva = input;
-            self
+        pub fn set_power_draw_kva(mut self, input: std::option::Option<crate::model::PowerDrawKva>) -> Self {
+            self.power_draw_kva = input; self
         }
         /// <p>The power option that you can provide for hardware.</p>
         pub fn power_phase(mut self, input: crate::model::PowerPhase) -> Self {
@@ -484,12 +432,8 @@ pub mod rack_physical_properties {
             self
         }
         /// <p>The power option that you can provide for hardware.</p>
-        pub fn set_power_phase(
-            mut self,
-            input: std::option::Option<crate::model::PowerPhase>,
-        ) -> Self {
-            self.power_phase = input;
-            self
+        pub fn set_power_phase(mut self, input: std::option::Option<crate::model::PowerPhase>) -> Self {
+            self.power_phase = input; self
         }
         /// <p>The power connector for the hardware. </p>
         pub fn power_connector(mut self, input: crate::model::PowerConnector) -> Self {
@@ -497,12 +441,8 @@ pub mod rack_physical_properties {
             self
         }
         /// <p>The power connector for the hardware. </p>
-        pub fn set_power_connector(
-            mut self,
-            input: std::option::Option<crate::model::PowerConnector>,
-        ) -> Self {
-            self.power_connector = input;
-            self
+        pub fn set_power_connector(mut self, input: std::option::Option<crate::model::PowerConnector>) -> Self {
+            self.power_connector = input; self
         }
         /// <p>The position of the power feed.</p>
         pub fn power_feed_drop(mut self, input: crate::model::PowerFeedDrop) -> Self {
@@ -510,12 +450,8 @@ pub mod rack_physical_properties {
             self
         }
         /// <p>The position of the power feed.</p>
-        pub fn set_power_feed_drop(
-            mut self,
-            input: std::option::Option<crate::model::PowerFeedDrop>,
-        ) -> Self {
-            self.power_feed_drop = input;
-            self
+        pub fn set_power_feed_drop(mut self, input: std::option::Option<crate::model::PowerFeedDrop>) -> Self {
+            self.power_feed_drop = input; self
         }
         /// <p>The uplink speed the rack supports for the connection to the Region. </p>
         pub fn uplink_gbps(mut self, input: crate::model::UplinkGbps) -> Self {
@@ -523,12 +459,8 @@ pub mod rack_physical_properties {
             self
         }
         /// <p>The uplink speed the rack supports for the connection to the Region. </p>
-        pub fn set_uplink_gbps(
-            mut self,
-            input: std::option::Option<crate::model::UplinkGbps>,
-        ) -> Self {
-            self.uplink_gbps = input;
-            self
+        pub fn set_uplink_gbps(mut self, input: std::option::Option<crate::model::UplinkGbps>) -> Self {
+            self.uplink_gbps = input; self
         }
         /// <p>The number of uplinks each Outpost network device.</p>
         pub fn uplink_count(mut self, input: crate::model::UplinkCount) -> Self {
@@ -536,12 +468,8 @@ pub mod rack_physical_properties {
             self
         }
         /// <p>The number of uplinks each Outpost network device.</p>
-        pub fn set_uplink_count(
-            mut self,
-            input: std::option::Option<crate::model::UplinkCount>,
-        ) -> Self {
-            self.uplink_count = input;
-            self
+        pub fn set_uplink_count(mut self, input: std::option::Option<crate::model::UplinkCount>) -> Self {
+            self.uplink_count = input; self
         }
         /// <p>The type of fiber used to attach the Outpost to the network. </p>
         pub fn fiber_optic_cable_type(mut self, input: crate::model::FiberOpticCableType) -> Self {
@@ -549,12 +477,8 @@ pub mod rack_physical_properties {
             self
         }
         /// <p>The type of fiber used to attach the Outpost to the network. </p>
-        pub fn set_fiber_optic_cable_type(
-            mut self,
-            input: std::option::Option<crate::model::FiberOpticCableType>,
-        ) -> Self {
-            self.fiber_optic_cable_type = input;
-            self
+        pub fn set_fiber_optic_cable_type(mut self, input: std::option::Option<crate::model::FiberOpticCableType>) -> Self {
+            self.fiber_optic_cable_type = input; self
         }
         /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn optical_standard(mut self, input: crate::model::OpticalStandard) -> Self {
@@ -562,44 +486,44 @@ pub mod rack_physical_properties {
             self
         }
         /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
-        pub fn set_optical_standard(
-            mut self,
-            input: std::option::Option<crate::model::OpticalStandard>,
-        ) -> Self {
-            self.optical_standard = input;
-            self
+        pub fn set_optical_standard(mut self, input: std::option::Option<crate::model::OpticalStandard>) -> Self {
+            self.optical_standard = input; self
         }
         /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
-        pub fn maximum_supported_weight_lbs(
-            mut self,
-            input: crate::model::MaximumSupportedWeightLbs,
-        ) -> Self {
+        pub fn maximum_supported_weight_lbs(mut self, input: crate::model::MaximumSupportedWeightLbs) -> Self {
             self.maximum_supported_weight_lbs = Some(input);
             self
         }
         /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
-        pub fn set_maximum_supported_weight_lbs(
-            mut self,
-            input: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
-        ) -> Self {
-            self.maximum_supported_weight_lbs = input;
-            self
+        pub fn set_maximum_supported_weight_lbs(mut self, input: std::option::Option<crate::model::MaximumSupportedWeightLbs>) -> Self {
+            self.maximum_supported_weight_lbs = input; self
         }
         /// Consumes the builder and constructs a [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
         pub fn build(self) -> crate::model::RackPhysicalProperties {
             crate::model::RackPhysicalProperties {
-                power_draw_kva: self.power_draw_kva,
-                power_phase: self.power_phase,
-                power_connector: self.power_connector,
-                power_feed_drop: self.power_feed_drop,
-                uplink_gbps: self.uplink_gbps,
-                uplink_count: self.uplink_count,
-                fiber_optic_cable_type: self.fiber_optic_cable_type,
-                optical_standard: self.optical_standard,
-                maximum_supported_weight_lbs: self.maximum_supported_weight_lbs,
+                power_draw_kva: self.power_draw_kva
+                ,
+                power_phase: self.power_phase
+                ,
+                power_connector: self.power_connector
+                ,
+                power_feed_drop: self.power_feed_drop
+                ,
+                uplink_gbps: self.uplink_gbps
+                ,
+                uplink_count: self.uplink_count
+                ,
+                fiber_optic_cable_type: self.fiber_optic_cable_type
+                ,
+                optical_standard: self.optical_standard
+                ,
+                maximum_supported_weight_lbs: self.maximum_supported_weight_lbs
+                ,
             }
         }
     }
+    
+    
 }
 impl RackPhysicalProperties {
     /// Creates a new builder-style object to manufacture [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
@@ -614,9 +538,9 @@ impl RackPhysicalProperties {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let maximumsupportedweightlbs = unimplemented!();
 /// match maximumsupportedweightlbs {
@@ -641,22 +565,14 @@ impl RackPhysicalProperties {
 /// Specifically, when `maximumsupportedweightlbs` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MaximumSupportedWeightLbs::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MaximumSupportedWeightLbs {
     #[allow(missing_docs)] // documentation missing in model
     Max1400Lbs,
@@ -669,7 +585,7 @@ pub enum MaximumSupportedWeightLbs {
     #[allow(missing_docs)] // documentation missing in model
     NoLimit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MaximumSupportedWeightLbs {
     fn from(s: &str) -> Self {
@@ -679,19 +595,17 @@ impl std::convert::From<&str> for MaximumSupportedWeightLbs {
             "MAX_1800_LBS" => MaximumSupportedWeightLbs::Max1800Lbs,
             "MAX_2000_LBS" => MaximumSupportedWeightLbs::Max2000Lbs,
             "NO_LIMIT" => MaximumSupportedWeightLbs::NoLimit,
-            other => MaximumSupportedWeightLbs::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MaximumSupportedWeightLbs::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MaximumSupportedWeightLbs {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MaximumSupportedWeightLbs::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MaximumSupportedWeightLbs::from(s))
+                }
+            }
 impl MaximumSupportedWeightLbs {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -701,17 +615,13 @@ impl MaximumSupportedWeightLbs {
             MaximumSupportedWeightLbs::Max1800Lbs => "MAX_1800_LBS",
             MaximumSupportedWeightLbs::Max2000Lbs => "MAX_2000_LBS",
             MaximumSupportedWeightLbs::NoLimit => "NO_LIMIT",
-            MaximumSupportedWeightLbs::Unknown(value) => value.as_str(),
+            MaximumSupportedWeightLbs::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "MAX_1400_LBS",
-            "MAX_1600_LBS",
-            "MAX_1800_LBS",
-            "MAX_2000_LBS",
-            "NO_LIMIT",
+            "MAX_1400_LBS", "MAX_1600_LBS", "MAX_1800_LBS", "MAX_2000_LBS", "NO_LIMIT"
         ]
     }
 }
@@ -727,9 +637,9 @@ impl AsRef<str> for MaximumSupportedWeightLbs {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let opticalstandard = unimplemented!();
 /// match opticalstandard {
@@ -762,22 +672,14 @@ impl AsRef<str> for MaximumSupportedWeightLbs {
 /// Specifically, when `opticalstandard` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OpticalStandard::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OpticalStandard {
     #[allow(missing_docs)] // documentation missing in model
     Optic1000BaseLx,
@@ -806,7 +708,7 @@ pub enum OpticalStandard {
     #[allow(missing_docs)] // documentation missing in model
     Optic40GbaseSr,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OpticalStandard {
     fn from(s: &str) -> Self {
@@ -824,17 +726,17 @@ impl std::convert::From<&str> for OpticalStandard {
             "OPTIC_40GBASE_IR4_LR4L" => OpticalStandard::Optic40GbaseIr4Lr4L,
             "OPTIC_40GBASE_LR4" => OpticalStandard::Optic40GbaseLr4,
             "OPTIC_40GBASE_SR" => OpticalStandard::Optic40GbaseSr,
-            other => OpticalStandard::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OpticalStandard::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OpticalStandard {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OpticalStandard::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OpticalStandard::from(s))
+                }
+            }
 impl OpticalStandard {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -852,25 +754,13 @@ impl OpticalStandard {
             OpticalStandard::Optic40GbaseIr4Lr4L => "OPTIC_40GBASE_IR4_LR4L",
             OpticalStandard::Optic40GbaseLr4 => "OPTIC_40GBASE_LR4",
             OpticalStandard::Optic40GbaseSr => "OPTIC_40GBASE_SR",
-            OpticalStandard::Unknown(value) => value.as_str(),
+            OpticalStandard::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "OPTIC_1000BASE_LX",
-            "OPTIC_1000BASE_SX",
-            "OPTIC_100GBASE_CWDM4",
-            "OPTIC_100GBASE_LR4",
-            "OPTIC_100GBASE_SR4",
-            "OPTIC_100G_PSM4_MSA",
-            "OPTIC_10GBASE_IR",
-            "OPTIC_10GBASE_LR",
-            "OPTIC_10GBASE_SR",
-            "OPTIC_40GBASE_ESR",
-            "OPTIC_40GBASE_IR4_LR4L",
-            "OPTIC_40GBASE_LR4",
-            "OPTIC_40GBASE_SR",
+            "OPTIC_1000BASE_LX", "OPTIC_1000BASE_SX", "OPTIC_100GBASE_CWDM4", "OPTIC_100GBASE_LR4", "OPTIC_100GBASE_SR4", "OPTIC_100G_PSM4_MSA", "OPTIC_10GBASE_IR", "OPTIC_10GBASE_LR", "OPTIC_10GBASE_SR", "OPTIC_40GBASE_ESR", "OPTIC_40GBASE_IR4_LR4L", "OPTIC_40GBASE_LR4", "OPTIC_40GBASE_SR"
         ]
     }
 }
@@ -886,9 +776,9 @@ impl AsRef<str> for OpticalStandard {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fiberopticcabletype = unimplemented!();
 /// match fiberopticcabletype {
@@ -910,60 +800,52 @@ impl AsRef<str> for OpticalStandard {
 /// Specifically, when `fiberopticcabletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FiberOpticCableType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FiberOpticCableType {
     #[allow(missing_docs)] // documentation missing in model
     MultiMode,
     #[allow(missing_docs)] // documentation missing in model
     SingleMode,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FiberOpticCableType {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_MODE" => FiberOpticCableType::MultiMode,
             "SINGLE_MODE" => FiberOpticCableType::SingleMode,
-            other => {
-                FiberOpticCableType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FiberOpticCableType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FiberOpticCableType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FiberOpticCableType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FiberOpticCableType::from(s))
+                }
+            }
 impl FiberOpticCableType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FiberOpticCableType::MultiMode => "MULTI_MODE",
             FiberOpticCableType::SingleMode => "SINGLE_MODE",
-            FiberOpticCableType::Unknown(value) => value.as_str(),
+            FiberOpticCableType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MULTI_MODE", "SINGLE_MODE"]
+        &[
+            "MULTI_MODE", "SINGLE_MODE"
+        ]
     }
 }
 impl AsRef<str> for FiberOpticCableType {
@@ -978,9 +860,9 @@ impl AsRef<str> for FiberOpticCableType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let uplinkcount = unimplemented!();
 /// match uplinkcount {
@@ -1010,22 +892,14 @@ impl AsRef<str> for FiberOpticCableType {
 /// Specifically, when `uplinkcount` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UplinkCount::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UplinkCount {
     #[allow(missing_docs)] // documentation missing in model
     UplinkCount1,
@@ -1048,7 +922,7 @@ pub enum UplinkCount {
     #[allow(missing_docs)] // documentation missing in model
     UplinkCount8,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UplinkCount {
     fn from(s: &str) -> Self {
@@ -1063,17 +937,17 @@ impl std::convert::From<&str> for UplinkCount {
             "UPLINK_COUNT_6" => UplinkCount::UplinkCount6,
             "UPLINK_COUNT_7" => UplinkCount::UplinkCount7,
             "UPLINK_COUNT_8" => UplinkCount::UplinkCount8,
-            other => UplinkCount::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UplinkCount::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UplinkCount {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UplinkCount::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UplinkCount::from(s))
+                }
+            }
 impl UplinkCount {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1088,22 +962,13 @@ impl UplinkCount {
             UplinkCount::UplinkCount6 => "UPLINK_COUNT_6",
             UplinkCount::UplinkCount7 => "UPLINK_COUNT_7",
             UplinkCount::UplinkCount8 => "UPLINK_COUNT_8",
-            UplinkCount::Unknown(value) => value.as_str(),
+            UplinkCount::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "UPLINK_COUNT_1",
-            "UPLINK_COUNT_12",
-            "UPLINK_COUNT_16",
-            "UPLINK_COUNT_2",
-            "UPLINK_COUNT_3",
-            "UPLINK_COUNT_4",
-            "UPLINK_COUNT_5",
-            "UPLINK_COUNT_6",
-            "UPLINK_COUNT_7",
-            "UPLINK_COUNT_8",
+            "UPLINK_COUNT_1", "UPLINK_COUNT_12", "UPLINK_COUNT_16", "UPLINK_COUNT_2", "UPLINK_COUNT_3", "UPLINK_COUNT_4", "UPLINK_COUNT_5", "UPLINK_COUNT_6", "UPLINK_COUNT_7", "UPLINK_COUNT_8"
         ]
     }
 }
@@ -1119,9 +984,9 @@ impl AsRef<str> for UplinkCount {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let uplinkgbps = unimplemented!();
 /// match uplinkgbps {
@@ -1145,22 +1010,14 @@ impl AsRef<str> for UplinkCount {
 /// Specifically, when `uplinkgbps` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UplinkGbps::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UplinkGbps {
     #[allow(missing_docs)] // documentation missing in model
     Uplink100G,
@@ -1171,7 +1028,7 @@ pub enum UplinkGbps {
     #[allow(missing_docs)] // documentation missing in model
     Uplink40G,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UplinkGbps {
     fn from(s: &str) -> Self {
@@ -1180,17 +1037,17 @@ impl std::convert::From<&str> for UplinkGbps {
             "UPLINK_10G" => UplinkGbps::Uplink10G,
             "UPLINK_1G" => UplinkGbps::Uplink1G,
             "UPLINK_40G" => UplinkGbps::Uplink40G,
-            other => UplinkGbps::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UplinkGbps::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UplinkGbps {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UplinkGbps::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UplinkGbps::from(s))
+                }
+            }
 impl UplinkGbps {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1199,12 +1056,14 @@ impl UplinkGbps {
             UplinkGbps::Uplink10G => "UPLINK_10G",
             UplinkGbps::Uplink1G => "UPLINK_1G",
             UplinkGbps::Uplink40G => "UPLINK_40G",
-            UplinkGbps::Unknown(value) => value.as_str(),
+            UplinkGbps::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UPLINK_100G", "UPLINK_10G", "UPLINK_1G", "UPLINK_40G"]
+        &[
+            "UPLINK_100G", "UPLINK_10G", "UPLINK_1G", "UPLINK_40G"
+        ]
     }
 }
 impl AsRef<str> for UplinkGbps {
@@ -1219,9 +1078,9 @@ impl AsRef<str> for UplinkGbps {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let powerfeeddrop = unimplemented!();
 /// match powerfeeddrop {
@@ -1243,58 +1102,52 @@ impl AsRef<str> for UplinkGbps {
 /// Specifically, when `powerfeeddrop` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PowerFeedDrop::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PowerFeedDrop {
     #[allow(missing_docs)] // documentation missing in model
     AboveRack,
     #[allow(missing_docs)] // documentation missing in model
     BelowRack,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PowerFeedDrop {
     fn from(s: &str) -> Self {
         match s {
             "ABOVE_RACK" => PowerFeedDrop::AboveRack,
             "BELOW_RACK" => PowerFeedDrop::BelowRack,
-            other => PowerFeedDrop::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PowerFeedDrop::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PowerFeedDrop {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PowerFeedDrop::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PowerFeedDrop::from(s))
+                }
+            }
 impl PowerFeedDrop {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PowerFeedDrop::AboveRack => "ABOVE_RACK",
             PowerFeedDrop::BelowRack => "BELOW_RACK",
-            PowerFeedDrop::Unknown(value) => value.as_str(),
+            PowerFeedDrop::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ABOVE_RACK", "BELOW_RACK"]
+        &[
+            "ABOVE_RACK", "BELOW_RACK"
+        ]
     }
 }
 impl AsRef<str> for PowerFeedDrop {
@@ -1309,9 +1162,9 @@ impl AsRef<str> for PowerFeedDrop {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let powerconnector = unimplemented!();
 /// match powerconnector {
@@ -1335,22 +1188,14 @@ impl AsRef<str> for PowerFeedDrop {
 /// Specifically, when `powerconnector` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PowerConnector::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PowerConnector {
     #[allow(missing_docs)] // documentation missing in model
     Ah530P7W,
@@ -1361,7 +1206,7 @@ pub enum PowerConnector {
     #[allow(missing_docs)] // documentation missing in model
     L630P,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PowerConnector {
     fn from(s: &str) -> Self {
@@ -1370,17 +1215,17 @@ impl std::convert::From<&str> for PowerConnector {
             "AH532P6W" => PowerConnector::Ah532P6W,
             "IEC309" => PowerConnector::Iec309,
             "L6_30P" => PowerConnector::L630P,
-            other => PowerConnector::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PowerConnector::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PowerConnector {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PowerConnector::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PowerConnector::from(s))
+                }
+            }
 impl PowerConnector {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1389,12 +1234,14 @@ impl PowerConnector {
             PowerConnector::Ah532P6W => "AH532P6W",
             PowerConnector::Iec309 => "IEC309",
             PowerConnector::L630P => "L6_30P",
-            PowerConnector::Unknown(value) => value.as_str(),
+            PowerConnector::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AH530P7W", "AH532P6W", "IEC309", "L6_30P"]
+        &[
+            "AH530P7W", "AH532P6W", "IEC309", "L6_30P"
+        ]
     }
 }
 impl AsRef<str> for PowerConnector {
@@ -1409,9 +1256,9 @@ impl AsRef<str> for PowerConnector {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let powerphase = unimplemented!();
 /// match powerphase {
@@ -1433,58 +1280,52 @@ impl AsRef<str> for PowerConnector {
 /// Specifically, when `powerphase` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PowerPhase::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PowerPhase {
     #[allow(missing_docs)] // documentation missing in model
     SinglePhase,
     #[allow(missing_docs)] // documentation missing in model
     ThreePhase,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PowerPhase {
     fn from(s: &str) -> Self {
         match s {
             "SINGLE_PHASE" => PowerPhase::SinglePhase,
             "THREE_PHASE" => PowerPhase::ThreePhase,
-            other => PowerPhase::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PowerPhase::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PowerPhase {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PowerPhase::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PowerPhase::from(s))
+                }
+            }
 impl PowerPhase {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PowerPhase::SinglePhase => "SINGLE_PHASE",
             PowerPhase::ThreePhase => "THREE_PHASE",
-            PowerPhase::Unknown(value) => value.as_str(),
+            PowerPhase::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SINGLE_PHASE", "THREE_PHASE"]
+        &[
+            "SINGLE_PHASE", "THREE_PHASE"
+        ]
     }
 }
 impl AsRef<str> for PowerPhase {
@@ -1499,9 +1340,9 @@ impl AsRef<str> for PowerPhase {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let powerdrawkva = unimplemented!();
 /// match powerdrawkva {
@@ -1525,22 +1366,14 @@ impl AsRef<str> for PowerPhase {
 /// Specifically, when `powerdrawkva` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PowerDrawKva::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PowerDrawKva {
     #[allow(missing_docs)] // documentation missing in model
     Power10Kva,
@@ -1551,7 +1384,7 @@ pub enum PowerDrawKva {
     #[allow(missing_docs)] // documentation missing in model
     Power5Kva,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PowerDrawKva {
     fn from(s: &str) -> Self {
@@ -1560,17 +1393,17 @@ impl std::convert::From<&str> for PowerDrawKva {
             "POWER_15_KVA" => PowerDrawKva::Power15Kva,
             "POWER_30_KVA" => PowerDrawKva::Power30Kva,
             "POWER_5_KVA" => PowerDrawKva::Power5Kva,
-            other => PowerDrawKva::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PowerDrawKva::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PowerDrawKva {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PowerDrawKva::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PowerDrawKva::from(s))
+                }
+            }
 impl PowerDrawKva {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1579,16 +1412,13 @@ impl PowerDrawKva {
             PowerDrawKva::Power15Kva => "POWER_15_KVA",
             PowerDrawKva::Power30Kva => "POWER_30_KVA",
             PowerDrawKva::Power5Kva => "POWER_5_KVA",
-            PowerDrawKva::Unknown(value) => value.as_str(),
+            PowerDrawKva::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "POWER_10_KVA",
-            "POWER_15_KVA",
-            "POWER_30_KVA",
-            "POWER_5_KVA",
+            "POWER_10_KVA", "POWER_15_KVA", "POWER_30_KVA", "POWER_5_KVA"
         ]
     }
 }
@@ -1601,7 +1431,7 @@ impl AsRef<str> for PowerDrawKva {
 /// <p> Information about an address. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Address {
+pub struct Address  {
     /// <p>The name of the contact.</p>
     #[doc(hidden)]
     pub contact_name: std::option::Option<std::string::String>,
@@ -1638,53 +1468,53 @@ pub struct Address {
 }
 impl Address {
     /// <p>The name of the contact.</p>
-    pub fn contact_name(&self) -> std::option::Option<&str> {
+    pub fn contact_name(&self) -> std::option::Option<& str> {
         self.contact_name.as_deref()
     }
     /// <p>The phone number of the contact.</p>
-    pub fn contact_phone_number(&self) -> std::option::Option<&str> {
+    pub fn contact_phone_number(&self) -> std::option::Option<& str> {
         self.contact_phone_number.as_deref()
     }
     /// <p>The first line of the address.</p>
-    pub fn address_line1(&self) -> std::option::Option<&str> {
+    pub fn address_line1(&self) -> std::option::Option<& str> {
         self.address_line1.as_deref()
     }
     /// <p>The second line of the address.</p>
-    pub fn address_line2(&self) -> std::option::Option<&str> {
+    pub fn address_line2(&self) -> std::option::Option<& str> {
         self.address_line2.as_deref()
     }
     /// <p>The third line of the address.</p>
-    pub fn address_line3(&self) -> std::option::Option<&str> {
+    pub fn address_line3(&self) -> std::option::Option<& str> {
         self.address_line3.as_deref()
     }
     /// <p>The city for the address.</p>
-    pub fn city(&self) -> std::option::Option<&str> {
+    pub fn city(&self) -> std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The state for the address.</p>
-    pub fn state_or_region(&self) -> std::option::Option<&str> {
+    pub fn state_or_region(&self) -> std::option::Option<& str> {
         self.state_or_region.as_deref()
     }
     /// <p>The district or county for the address.</p>
-    pub fn district_or_county(&self) -> std::option::Option<&str> {
+    pub fn district_or_county(&self) -> std::option::Option<& str> {
         self.district_or_county.as_deref()
     }
     /// <p>The postal code for the address.</p>
-    pub fn postal_code(&self) -> std::option::Option<&str> {
+    pub fn postal_code(&self) -> std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p>The ISO-3166 two-letter country code for the address.</p>
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
     /// <p>The municipality for the address.</p>
-    pub fn municipality(&self) -> std::option::Option<&str> {
+    pub fn municipality(&self) -> std::option::Option<& str> {
         self.municipality.as_deref()
     }
 }
 /// See [`Address`](crate::model::Address).
 pub mod address {
-
+    
     /// A builder for [`Address`](crate::model::Address).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1708,8 +1538,7 @@ pub mod address {
         }
         /// <p>The name of the contact.</p>
         pub fn set_contact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_name = input;
-            self
+            self.contact_name = input; self
         }
         /// <p>The phone number of the contact.</p>
         pub fn contact_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1717,12 +1546,8 @@ pub mod address {
             self
         }
         /// <p>The phone number of the contact.</p>
-        pub fn set_contact_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_phone_number = input;
-            self
+        pub fn set_contact_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_phone_number = input; self
         }
         /// <p>The first line of the address.</p>
         pub fn address_line1(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1730,12 +1555,8 @@ pub mod address {
             self
         }
         /// <p>The first line of the address.</p>
-        pub fn set_address_line1(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_line1 = input;
-            self
+        pub fn set_address_line1(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_line1 = input; self
         }
         /// <p>The second line of the address.</p>
         pub fn address_line2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1743,12 +1564,8 @@ pub mod address {
             self
         }
         /// <p>The second line of the address.</p>
-        pub fn set_address_line2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_line2 = input;
-            self
+        pub fn set_address_line2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_line2 = input; self
         }
         /// <p>The third line of the address.</p>
         pub fn address_line3(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1756,12 +1573,8 @@ pub mod address {
             self
         }
         /// <p>The third line of the address.</p>
-        pub fn set_address_line3(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_line3 = input;
-            self
+        pub fn set_address_line3(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_line3 = input; self
         }
         /// <p>The city for the address.</p>
         pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1770,8 +1583,7 @@ pub mod address {
         }
         /// <p>The city for the address.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.city = input;
-            self
+            self.city = input; self
         }
         /// <p>The state for the address.</p>
         pub fn state_or_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1779,12 +1591,8 @@ pub mod address {
             self
         }
         /// <p>The state for the address.</p>
-        pub fn set_state_or_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_or_region = input;
-            self
+        pub fn set_state_or_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_or_region = input; self
         }
         /// <p>The district or county for the address.</p>
         pub fn district_or_county(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1792,12 +1600,8 @@ pub mod address {
             self
         }
         /// <p>The district or county for the address.</p>
-        pub fn set_district_or_county(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.district_or_county = input;
-            self
+        pub fn set_district_or_county(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.district_or_county = input; self
         }
         /// <p>The postal code for the address.</p>
         pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1806,8 +1610,7 @@ pub mod address {
         }
         /// <p>The postal code for the address.</p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.postal_code = input;
-            self
+            self.postal_code = input; self
         }
         /// <p>The ISO-3166 two-letter country code for the address.</p>
         pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1816,8 +1619,7 @@ pub mod address {
         }
         /// <p>The ISO-3166 two-letter country code for the address.</p>
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country_code = input;
-            self
+            self.country_code = input; self
         }
         /// <p>The municipality for the address.</p>
         pub fn municipality(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1826,26 +1628,38 @@ pub mod address {
         }
         /// <p>The municipality for the address.</p>
         pub fn set_municipality(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.municipality = input;
-            self
+            self.municipality = input; self
         }
         /// Consumes the builder and constructs a [`Address`](crate::model::Address).
         pub fn build(self) -> crate::model::Address {
             crate::model::Address {
-                contact_name: self.contact_name,
-                contact_phone_number: self.contact_phone_number,
-                address_line1: self.address_line1,
-                address_line2: self.address_line2,
-                address_line3: self.address_line3,
-                city: self.city,
-                state_or_region: self.state_or_region,
-                district_or_county: self.district_or_county,
-                postal_code: self.postal_code,
-                country_code: self.country_code,
-                municipality: self.municipality,
+                contact_name: self.contact_name
+                ,
+                contact_phone_number: self.contact_phone_number
+                ,
+                address_line1: self.address_line1
+                ,
+                address_line2: self.address_line2
+                ,
+                address_line3: self.address_line3
+                ,
+                city: self.city
+                ,
+                state_or_region: self.state_or_region
+                ,
+                district_or_county: self.district_or_county
+                ,
+                postal_code: self.postal_code
+                ,
+                country_code: self.country_code
+                ,
+                municipality: self.municipality
+                ,
             }
         }
     }
+    
+    
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
@@ -1860,9 +1674,9 @@ impl Address {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let addresstype = unimplemented!();
 /// match addresstype {
@@ -1884,58 +1698,52 @@ impl Address {
 /// Specifically, when `addresstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AddressType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AddressType {
     #[allow(missing_docs)] // documentation missing in model
     OperatingAddress,
     #[allow(missing_docs)] // documentation missing in model
     ShippingAddress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AddressType {
     fn from(s: &str) -> Self {
         match s {
             "OPERATING_ADDRESS" => AddressType::OperatingAddress,
             "SHIPPING_ADDRESS" => AddressType::ShippingAddress,
-            other => AddressType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AddressType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AddressType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AddressType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AddressType::from(s))
+                }
+            }
 impl AddressType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AddressType::OperatingAddress => "OPERATING_ADDRESS",
             AddressType::ShippingAddress => "SHIPPING_ADDRESS",
-            AddressType::Unknown(value) => value.as_str(),
+            AddressType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OPERATING_ADDRESS", "SHIPPING_ADDRESS"]
+        &[
+            "OPERATING_ADDRESS", "SHIPPING_ADDRESS"
+        ]
     }
 }
 impl AsRef<str> for AddressType {
@@ -1947,7 +1755,7 @@ impl AsRef<str> for AddressType {
 /// <p>Information about an Outpost.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Outpost {
+pub struct Outpost  {
     /// <p> The ID of the Outpost. </p>
     #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
@@ -1977,8 +1785,7 @@ pub struct Outpost {
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The Outpost tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     #[doc(hidden)]
     pub site_arn: std::option::Option<std::string::String>,
@@ -1988,62 +1795,57 @@ pub struct Outpost {
 }
 impl Outpost {
     /// <p> The ID of the Outpost. </p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the Outpost owner.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The ID of the site.</p>
-    pub fn site_id(&self) -> std::option::Option<&str> {
+    pub fn site_id(&self) -> std::option::Option<& str> {
         self.site_id.as_deref()
     }
     /// <p>The name of the Outpost.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the Outpost.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The life cycle status.</p>
-    pub fn life_cycle_status(&self) -> std::option::Option<&str> {
+    pub fn life_cycle_status(&self) -> std::option::Option<& str> {
         self.life_cycle_status.as_deref()
     }
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The ID of the Availability Zone.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The Outpost tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
-    pub fn site_arn(&self) -> std::option::Option<&str> {
+    pub fn site_arn(&self) -> std::option::Option<& str> {
         self.site_arn.as_deref()
     }
     /// <p> The hardware type. </p>
-    pub fn supported_hardware_type(
-        &self,
-    ) -> std::option::Option<&crate::model::SupportedHardwareType> {
+    pub fn supported_hardware_type(&self) -> std::option::Option<& crate::model::SupportedHardwareType> {
         self.supported_hardware_type.as_ref()
     }
 }
 /// See [`Outpost`](crate::model::Outpost).
 pub mod outpost {
-
+    
     /// A builder for [`Outpost`](crate::model::Outpost).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2056,12 +1858,9 @@ pub mod outpost {
         pub(crate) life_cycle_status: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) availability_zone_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) site_arn: std::option::Option<std::string::String>,
-        pub(crate) supported_hardware_type:
-            std::option::Option<crate::model::SupportedHardwareType>,
+        pub(crate) supported_hardware_type: std::option::Option<crate::model::SupportedHardwareType>,
     }
     impl Builder {
         /// <p> The ID of the Outpost. </p>
@@ -2071,8 +1870,7 @@ pub mod outpost {
         }
         /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outpost_id = input;
-            self
+            self.outpost_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the Outpost owner.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2081,8 +1879,7 @@ pub mod outpost {
         }
         /// <p>The Amazon Web Services account ID of the Outpost owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2091,8 +1888,7 @@ pub mod outpost {
         }
         /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outpost_arn = input;
-            self
+            self.outpost_arn = input; self
         }
         /// <p>The ID of the site.</p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2101,8 +1897,7 @@ pub mod outpost {
         }
         /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.site_id = input;
-            self
+            self.site_id = input; self
         }
         /// <p>The name of the Outpost.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2111,8 +1906,7 @@ pub mod outpost {
         }
         /// <p>The name of the Outpost.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the Outpost.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2121,8 +1915,7 @@ pub mod outpost {
         }
         /// <p>The description of the Outpost.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The life cycle status.</p>
         pub fn life_cycle_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2130,12 +1923,8 @@ pub mod outpost {
             self
         }
         /// <p>The life cycle status.</p>
-        pub fn set_life_cycle_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.life_cycle_status = input;
-            self
+        pub fn set_life_cycle_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.life_cycle_status = input; self
         }
         /// <p>The Availability Zone.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2143,12 +1932,8 @@ pub mod outpost {
             self
         }
         /// <p>The Availability Zone.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The ID of the Availability Zone.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2156,37 +1941,23 @@ pub mod outpost {
             self
         }
         /// <p>The ID of the Availability Zone.</p>
-        pub fn set_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_id = input;
-            self
+        pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The Outpost tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The Outpost tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the site.</p>
         pub fn site_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2195,43 +1966,49 @@ pub mod outpost {
         }
         /// <p>The Amazon Resource Name (ARN) of the site.</p>
         pub fn set_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.site_arn = input;
-            self
+            self.site_arn = input; self
         }
         /// <p> The hardware type. </p>
-        pub fn supported_hardware_type(
-            mut self,
-            input: crate::model::SupportedHardwareType,
-        ) -> Self {
+        pub fn supported_hardware_type(mut self, input: crate::model::SupportedHardwareType) -> Self {
             self.supported_hardware_type = Some(input);
             self
         }
         /// <p> The hardware type. </p>
-        pub fn set_supported_hardware_type(
-            mut self,
-            input: std::option::Option<crate::model::SupportedHardwareType>,
-        ) -> Self {
-            self.supported_hardware_type = input;
-            self
+        pub fn set_supported_hardware_type(mut self, input: std::option::Option<crate::model::SupportedHardwareType>) -> Self {
+            self.supported_hardware_type = input; self
         }
         /// Consumes the builder and constructs a [`Outpost`](crate::model::Outpost).
         pub fn build(self) -> crate::model::Outpost {
             crate::model::Outpost {
-                outpost_id: self.outpost_id,
-                owner_id: self.owner_id,
-                outpost_arn: self.outpost_arn,
-                site_id: self.site_id,
-                name: self.name,
-                description: self.description,
-                life_cycle_status: self.life_cycle_status,
-                availability_zone: self.availability_zone,
-                availability_zone_id: self.availability_zone_id,
-                tags: self.tags,
-                site_arn: self.site_arn,
-                supported_hardware_type: self.supported_hardware_type,
+                outpost_id: self.outpost_id
+                ,
+                owner_id: self.owner_id
+                ,
+                outpost_arn: self.outpost_arn
+                ,
+                site_id: self.site_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                life_cycle_status: self.life_cycle_status
+                ,
+                availability_zone: self.availability_zone
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                tags: self.tags
+                ,
+                site_arn: self.site_arn
+                ,
+                supported_hardware_type: self.supported_hardware_type
+                ,
             }
         }
     }
+    
+    
 }
 impl Outpost {
     /// Creates a new builder-style object to manufacture [`Outpost`](crate::model::Outpost).
@@ -2246,9 +2023,9 @@ impl Outpost {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let supportedhardwaretype = unimplemented!();
 /// match supportedhardwaretype {
@@ -2270,60 +2047,52 @@ impl Outpost {
 /// Specifically, when `supportedhardwaretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SupportedHardwareType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SupportedHardwareType {
     #[allow(missing_docs)] // documentation missing in model
     Rack,
     #[allow(missing_docs)] // documentation missing in model
     Server,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SupportedHardwareType {
     fn from(s: &str) -> Self {
         match s {
             "RACK" => SupportedHardwareType::Rack,
             "SERVER" => SupportedHardwareType::Server,
-            other => {
-                SupportedHardwareType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SupportedHardwareType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SupportedHardwareType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SupportedHardwareType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SupportedHardwareType::from(s))
+                }
+            }
 impl SupportedHardwareType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SupportedHardwareType::Rack => "RACK",
             SupportedHardwareType::Server => "SERVER",
-            SupportedHardwareType::Unknown(value) => value.as_str(),
+            SupportedHardwareType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RACK", "SERVER"]
+        &[
+            "RACK", "SERVER"
+        ]
     }
 }
 impl AsRef<str> for SupportedHardwareType {
@@ -2335,7 +2104,7 @@ impl AsRef<str> for SupportedHardwareType {
 /// <p> A summary of line items in your order. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrderSummary {
+pub struct OrderSummary  {
     /// <p> The ID of the Outpost. </p>
     #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
@@ -2345,22 +2114,21 @@ pub struct OrderSummary {
     /// <p> The type of order. </p>
     #[doc(hidden)]
     pub order_type: std::option::Option<crate::model::OrderType>,
-    /// <p>The status of the order.</p>
-    /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-    /// </ul> <note>
-    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The status of the order.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
     /// </note>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::OrderStatus>,
     /// <p> The status of all line items in the order. </p>
     #[doc(hidden)]
-    pub line_item_counts_by_status:
-        std::option::Option<std::collections::HashMap<crate::model::LineItemStatus, i32>>,
+    pub line_item_counts_by_status: std::option::Option<std::collections::HashMap<crate::model::LineItemStatus, i32>>,
     /// <p> The submission date for the order. </p>
     #[doc(hidden)]
     pub order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2370,48 +2138,46 @@ pub struct OrderSummary {
 }
 impl OrderSummary {
     /// <p> The ID of the Outpost. </p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
     /// <p> The ID of the order. </p>
-    pub fn order_id(&self) -> std::option::Option<&str> {
+    pub fn order_id(&self) -> std::option::Option<& str> {
         self.order_id.as_deref()
     }
     /// <p> The type of order. </p>
-    pub fn order_type(&self) -> std::option::Option<&crate::model::OrderType> {
+    pub fn order_type(&self) -> std::option::Option<& crate::model::OrderType> {
         self.order_type.as_ref()
     }
-    /// <p>The status of the order.</p>
-    /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-    /// </ul> <note>
-    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The status of the order.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
     /// </note>
-    pub fn status(&self) -> std::option::Option<&crate::model::OrderStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OrderStatus> {
         self.status.as_ref()
     }
     /// <p> The status of all line items in the order. </p>
-    pub fn line_item_counts_by_status(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::model::LineItemStatus, i32>> {
+    pub fn line_item_counts_by_status(&self) -> std::option::Option<& std::collections::HashMap<crate::model::LineItemStatus, i32>> {
         self.line_item_counts_by_status.as_ref()
     }
     /// <p> The submission date for the order. </p>
-    pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn order_submission_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.order_submission_date.as_ref()
     }
     /// <p> The fulfilment date for the order. </p>
-    pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn order_fulfilled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
     }
 }
 /// See [`OrderSummary`](crate::model::OrderSummary).
 pub mod order_summary {
-
+    
     /// A builder for [`OrderSummary`](crate::model::OrderSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2419,8 +2185,7 @@ pub mod order_summary {
         pub(crate) order_id: std::option::Option<std::string::String>,
         pub(crate) order_type: std::option::Option<crate::model::OrderType>,
         pub(crate) status: std::option::Option<crate::model::OrderStatus>,
-        pub(crate) line_item_counts_by_status:
-            std::option::Option<std::collections::HashMap<crate::model::LineItemStatus, i32>>,
+        pub(crate) line_item_counts_by_status: std::option::Option<std::collections::HashMap<crate::model::LineItemStatus, i32>>,
         pub(crate) order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -2432,8 +2197,7 @@ pub mod order_summary {
         }
         /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outpost_id = input;
-            self
+            self.outpost_id = input; self
         }
         /// <p> The ID of the order. </p>
         pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2442,8 +2206,7 @@ pub mod order_summary {
         }
         /// <p> The ID of the order. </p>
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.order_id = input;
-            self
+            self.order_id = input; self
         }
         /// <p> The type of order. </p>
         pub fn order_type(mut self, input: crate::model::OrderType) -> Self {
@@ -2451,65 +2214,50 @@ pub mod order_summary {
             self
         }
         /// <p> The type of order. </p>
-        pub fn set_order_type(
-            mut self,
-            input: std::option::Option<crate::model::OrderType>,
-        ) -> Self {
-            self.order_type = input;
-            self
+        pub fn set_order_type(mut self, input: std::option::Option<crate::model::OrderType>) -> Self {
+            self.order_type = input; self
         }
-        /// <p>The status of the order.</p>
-        /// <ul>
-        /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-        /// </ul> <note>
-        /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+        /// <p>The status of the order.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
         /// </note>
         pub fn status(mut self, input: crate::model::OrderStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the order.</p>
-        /// <ul>
-        /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-        /// </ul> <note>
-        /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+        /// <p>The status of the order.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<crate::model::OrderStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Adds a key-value pair to `line_item_counts_by_status`.
         ///
         /// To override the contents of this collection use [`set_line_item_counts_by_status`](Self::set_line_item_counts_by_status).
         ///
         /// <p> The status of all line items in the order. </p>
-        pub fn line_item_counts_by_status(
-            mut self,
-            k: crate::model::LineItemStatus,
-            v: i32,
-        ) -> Self {
+        pub fn line_item_counts_by_status(mut self, k: crate::model::LineItemStatus, v: i32) -> Self {
             let mut hash_map = self.line_item_counts_by_status.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.line_item_counts_by_status = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.line_item_counts_by_status = Some(hash_map);
+                            self
         }
         /// <p> The status of all line items in the order. </p>
-        pub fn set_line_item_counts_by_status(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::LineItemStatus, i32>,
-            >,
-        ) -> Self {
-            self.line_item_counts_by_status = input;
-            self
+        pub fn set_line_item_counts_by_status(mut self, input: std::option::Option<std::collections::HashMap<crate::model::LineItemStatus, i32>>) -> Self {
+            self.line_item_counts_by_status = input; self
         }
         /// <p> The submission date for the order. </p>
         pub fn order_submission_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2517,12 +2265,8 @@ pub mod order_summary {
             self
         }
         /// <p> The submission date for the order. </p>
-        pub fn set_order_submission_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.order_submission_date = input;
-            self
+        pub fn set_order_submission_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.order_submission_date = input; self
         }
         /// <p> The fulfilment date for the order. </p>
         pub fn order_fulfilled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2530,26 +2274,31 @@ pub mod order_summary {
             self
         }
         /// <p> The fulfilment date for the order. </p>
-        pub fn set_order_fulfilled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.order_fulfilled_date = input;
-            self
+        pub fn set_order_fulfilled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.order_fulfilled_date = input; self
         }
         /// Consumes the builder and constructs a [`OrderSummary`](crate::model::OrderSummary).
         pub fn build(self) -> crate::model::OrderSummary {
             crate::model::OrderSummary {
-                outpost_id: self.outpost_id,
-                order_id: self.order_id,
-                order_type: self.order_type,
-                status: self.status,
-                line_item_counts_by_status: self.line_item_counts_by_status,
-                order_submission_date: self.order_submission_date,
-                order_fulfilled_date: self.order_fulfilled_date,
+                outpost_id: self.outpost_id
+                ,
+                order_id: self.order_id
+                ,
+                order_type: self.order_type
+                ,
+                status: self.status
+                ,
+                line_item_counts_by_status: self.line_item_counts_by_status
+                ,
+                order_submission_date: self.order_submission_date
+                ,
+                order_fulfilled_date: self.order_fulfilled_date
+                ,
             }
         }
     }
+    
+    
 }
 impl OrderSummary {
     /// Creates a new builder-style object to manufacture [`OrderSummary`](crate::model::OrderSummary).
@@ -2564,9 +2313,9 @@ impl OrderSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lineitemstatus = unimplemented!();
 /// match lineitemstatus {
@@ -2594,22 +2343,14 @@ impl OrderSummary {
 /// Specifically, when `lineitemstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LineItemStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LineItemStatus {
     #[allow(missing_docs)] // documentation missing in model
     Building,
@@ -2628,7 +2369,7 @@ pub enum LineItemStatus {
     #[allow(missing_docs)] // documentation missing in model
     Shipped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LineItemStatus {
     fn from(s: &str) -> Self {
@@ -2641,17 +2382,17 @@ impl std::convert::From<&str> for LineItemStatus {
             "INSTALLING" => LineItemStatus::Installing,
             "PREPARING" => LineItemStatus::Preparing,
             "SHIPPED" => LineItemStatus::Shipped,
-            other => LineItemStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LineItemStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LineItemStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LineItemStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LineItemStatus::from(s))
+                }
+            }
 impl LineItemStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2664,20 +2405,13 @@ impl LineItemStatus {
             LineItemStatus::Installing => "INSTALLING",
             LineItemStatus::Preparing => "PREPARING",
             LineItemStatus::Shipped => "SHIPPED",
-            LineItemStatus::Unknown(value) => value.as_str(),
+            LineItemStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BUILDING",
-            "CANCELLED",
-            "DELIVERED",
-            "ERROR",
-            "INSTALLED",
-            "INSTALLING",
-            "PREPARING",
-            "SHIPPED",
+            "BUILDING", "CANCELLED", "DELIVERED", "ERROR", "INSTALLED", "INSTALLING", "PREPARING", "SHIPPED"
         ]
     }
 }
@@ -2693,9 +2427,9 @@ impl AsRef<str> for LineItemStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderstatus = unimplemented!();
 /// match orderstatus {
@@ -2725,22 +2459,14 @@ impl AsRef<str> for LineItemStatus {
 /// Specifically, when `orderstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -2763,7 +2489,7 @@ pub enum OrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Received,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderStatus {
     fn from(s: &str) -> Self {
@@ -2778,17 +2504,17 @@ impl std::convert::From<&str> for OrderStatus {
             "PREPARING" => OrderStatus::Preparing,
             "PROCESSING" => OrderStatus::Processing,
             "RECEIVED" => OrderStatus::Received,
-            other => OrderStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderStatus::from(s))
+                }
+            }
 impl OrderStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2803,22 +2529,13 @@ impl OrderStatus {
             OrderStatus::Preparing => "PREPARING",
             OrderStatus::Processing => "PROCESSING",
             OrderStatus::Received => "RECEIVED",
-            OrderStatus::Unknown(value) => value.as_str(),
+            OrderStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELLED",
-            "COMPLETED",
-            "ERROR",
-            "FULFILLED",
-            "INSTALLING",
-            "IN_PROGRESS",
-            "PENDING",
-            "PREPARING",
-            "PROCESSING",
-            "RECEIVED",
+            "CANCELLED", "COMPLETED", "ERROR", "FULFILLED", "INSTALLING", "IN_PROGRESS", "PENDING", "PREPARING", "PROCESSING", "RECEIVED"
         ]
     }
 }
@@ -2834,9 +2551,9 @@ impl AsRef<str> for OrderStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ordertype = unimplemented!();
 /// match ordertype {
@@ -2858,58 +2575,52 @@ impl AsRef<str> for OrderStatus {
 /// Specifically, when `ordertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderType {
     #[allow(missing_docs)] // documentation missing in model
     Outpost,
     #[allow(missing_docs)] // documentation missing in model
     Replacement,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderType {
     fn from(s: &str) -> Self {
         match s {
             "OUTPOST" => OrderType::Outpost,
             "REPLACEMENT" => OrderType::Replacement,
-            other => OrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderType::from(s))
+                }
+            }
 impl OrderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderType::Outpost => "OUTPOST",
             OrderType::Replacement => "REPLACEMENT",
-            OrderType::Unknown(value) => value.as_str(),
+            OrderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OUTPOST", "REPLACEMENT"]
+        &[
+            "OUTPOST", "REPLACEMENT"
+        ]
     }
 }
 impl AsRef<str> for OrderType {
@@ -2921,7 +2632,7 @@ impl AsRef<str> for OrderType {
 /// <p> Information about a catalog item. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CatalogItem {
+pub struct CatalogItem  {
     /// <p> The ID of the catalog item. </p>
     #[doc(hidden)]
     pub catalog_item_id: std::option::Option<std::string::String>,
@@ -2946,15 +2657,15 @@ pub struct CatalogItem {
 }
 impl CatalogItem {
     /// <p> The ID of the catalog item. </p>
-    pub fn catalog_item_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_item_id(&self) -> std::option::Option<& str> {
         self.catalog_item_id.as_deref()
     }
     /// <p> The status of a catalog item. </p>
-    pub fn item_status(&self) -> std::option::Option<&crate::model::CatalogItemStatus> {
+    pub fn item_status(&self) -> std::option::Option<& crate::model::CatalogItemStatus> {
         self.item_status.as_ref()
     }
     /// <p> Information about the EC2 capacity of an item. </p>
-    pub fn ec2_capacities(&self) -> std::option::Option<&[crate::model::Ec2Capacity]> {
+    pub fn ec2_capacities(&self) -> std::option::Option<& [crate::model::Ec2Capacity]> {
         self.ec2_capacities.as_deref()
     }
     /// <p> Information about the power draw of an item. </p>
@@ -2966,17 +2677,17 @@ impl CatalogItem {
         self.weight_lbs
     }
     /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
-    pub fn supported_uplink_gbps(&self) -> std::option::Option<&[i32]> {
+    pub fn supported_uplink_gbps(&self) -> std::option::Option<& [i32]> {
         self.supported_uplink_gbps.as_deref()
     }
     /// <p> The supported storage options for the catalog item. </p>
-    pub fn supported_storage(&self) -> std::option::Option<&[crate::model::SupportedStorageEnum]> {
+    pub fn supported_storage(&self) -> std::option::Option<& [crate::model::SupportedStorageEnum]> {
         self.supported_storage.as_deref()
     }
 }
 /// See [`CatalogItem`](crate::model::CatalogItem).
 pub mod catalog_item {
-
+    
     /// A builder for [`CatalogItem`](crate::model::CatalogItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2986,8 +2697,7 @@ pub mod catalog_item {
         pub(crate) power_kva: std::option::Option<f32>,
         pub(crate) weight_lbs: std::option::Option<i32>,
         pub(crate) supported_uplink_gbps: std::option::Option<std::vec::Vec<i32>>,
-        pub(crate) supported_storage:
-            std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
+        pub(crate) supported_storage: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
     }
     impl Builder {
         /// <p> The ID of the catalog item. </p>
@@ -2996,12 +2706,8 @@ pub mod catalog_item {
             self
         }
         /// <p> The ID of the catalog item. </p>
-        pub fn set_catalog_item_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.catalog_item_id = input;
-            self
+        pub fn set_catalog_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_item_id = input; self
         }
         /// <p> The status of a catalog item. </p>
         pub fn item_status(mut self, input: crate::model::CatalogItemStatus) -> Self {
@@ -3009,12 +2715,8 @@ pub mod catalog_item {
             self
         }
         /// <p> The status of a catalog item. </p>
-        pub fn set_item_status(
-            mut self,
-            input: std::option::Option<crate::model::CatalogItemStatus>,
-        ) -> Self {
-            self.item_status = input;
-            self
+        pub fn set_item_status(mut self, input: std::option::Option<crate::model::CatalogItemStatus>) -> Self {
+            self.item_status = input; self
         }
         /// Appends an item to `ec2_capacities`.
         ///
@@ -3023,17 +2725,13 @@ pub mod catalog_item {
         /// <p> Information about the EC2 capacity of an item. </p>
         pub fn ec2_capacities(mut self, input: crate::model::Ec2Capacity) -> Self {
             let mut v = self.ec2_capacities.unwrap_or_default();
-            v.push(input);
-            self.ec2_capacities = Some(v);
-            self
+                            v.push(input);
+                            self.ec2_capacities = Some(v);
+                            self
         }
         /// <p> Information about the EC2 capacity of an item. </p>
-        pub fn set_ec2_capacities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ec2Capacity>>,
-        ) -> Self {
-            self.ec2_capacities = input;
-            self
+        pub fn set_ec2_capacities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ec2Capacity>>) -> Self {
+            self.ec2_capacities = input; self
         }
         /// <p> Information about the power draw of an item. </p>
         pub fn power_kva(mut self, input: f32) -> Self {
@@ -3042,8 +2740,7 @@ pub mod catalog_item {
         }
         /// <p> Information about the power draw of an item. </p>
         pub fn set_power_kva(mut self, input: std::option::Option<f32>) -> Self {
-            self.power_kva = input;
-            self
+            self.power_kva = input; self
         }
         /// <p> The weight of the item in pounds. </p>
         pub fn weight_lbs(mut self, input: i32) -> Self {
@@ -3052,8 +2749,7 @@ pub mod catalog_item {
         }
         /// <p> The weight of the item in pounds. </p>
         pub fn set_weight_lbs(mut self, input: std::option::Option<i32>) -> Self {
-            self.weight_lbs = input;
-            self
+            self.weight_lbs = input; self
         }
         /// Appends an item to `supported_uplink_gbps`.
         ///
@@ -3062,17 +2758,13 @@ pub mod catalog_item {
         /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
         pub fn supported_uplink_gbps(mut self, input: i32) -> Self {
             let mut v = self.supported_uplink_gbps.unwrap_or_default();
-            v.push(input);
-            self.supported_uplink_gbps = Some(v);
-            self
+                            v.push(input);
+                            self.supported_uplink_gbps = Some(v);
+                            self
         }
         /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
-        pub fn set_supported_uplink_gbps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i32>>,
-        ) -> Self {
-            self.supported_uplink_gbps = input;
-            self
+        pub fn set_supported_uplink_gbps(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.supported_uplink_gbps = input; self
         }
         /// Appends an item to `supported_storage`.
         ///
@@ -3081,31 +2773,36 @@ pub mod catalog_item {
         /// <p> The supported storage options for the catalog item. </p>
         pub fn supported_storage(mut self, input: crate::model::SupportedStorageEnum) -> Self {
             let mut v = self.supported_storage.unwrap_or_default();
-            v.push(input);
-            self.supported_storage = Some(v);
-            self
+                            v.push(input);
+                            self.supported_storage = Some(v);
+                            self
         }
         /// <p> The supported storage options for the catalog item. </p>
-        pub fn set_supported_storage(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
-        ) -> Self {
-            self.supported_storage = input;
-            self
+        pub fn set_supported_storage(mut self, input: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>) -> Self {
+            self.supported_storage = input; self
         }
         /// Consumes the builder and constructs a [`CatalogItem`](crate::model::CatalogItem).
         pub fn build(self) -> crate::model::CatalogItem {
             crate::model::CatalogItem {
-                catalog_item_id: self.catalog_item_id,
-                item_status: self.item_status,
-                ec2_capacities: self.ec2_capacities,
-                power_kva: self.power_kva,
-                weight_lbs: self.weight_lbs,
-                supported_uplink_gbps: self.supported_uplink_gbps,
-                supported_storage: self.supported_storage,
+                catalog_item_id: self.catalog_item_id
+                ,
+                item_status: self.item_status
+                ,
+                ec2_capacities: self.ec2_capacities
+                ,
+                power_kva: self.power_kva
+                ,
+                weight_lbs: self.weight_lbs
+                ,
+                supported_uplink_gbps: self.supported_uplink_gbps
+                ,
+                supported_storage: self.supported_storage
+                ,
             }
         }
     }
+    
+    
 }
 impl CatalogItem {
     /// Creates a new builder-style object to manufacture [`CatalogItem`](crate::model::CatalogItem).
@@ -3120,9 +2817,9 @@ impl CatalogItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let supportedstorageenum = unimplemented!();
 /// match supportedstorageenum {
@@ -3144,60 +2841,52 @@ impl CatalogItem {
 /// Specifically, when `supportedstorageenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SupportedStorageEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SupportedStorageEnum {
     #[allow(missing_docs)] // documentation missing in model
     Ebs,
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SupportedStorageEnum {
     fn from(s: &str) -> Self {
         match s {
             "EBS" => SupportedStorageEnum::Ebs,
             "S3" => SupportedStorageEnum::S3,
-            other => {
-                SupportedStorageEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SupportedStorageEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SupportedStorageEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SupportedStorageEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SupportedStorageEnum::from(s))
+                }
+            }
 impl SupportedStorageEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SupportedStorageEnum::Ebs => "EBS",
             SupportedStorageEnum::S3 => "S3",
-            SupportedStorageEnum::Unknown(value) => value.as_str(),
+            SupportedStorageEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EBS", "S3"]
+        &[
+            "EBS", "S3"
+        ]
     }
 }
 impl AsRef<str> for SupportedStorageEnum {
@@ -3209,7 +2898,7 @@ impl AsRef<str> for SupportedStorageEnum {
 /// <p> Information about EC2 capacity. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2Capacity {
+pub struct Ec2Capacity  {
     /// <p> The family of the EC2 capacity. </p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
@@ -3222,21 +2911,21 @@ pub struct Ec2Capacity {
 }
 impl Ec2Capacity {
     /// <p> The family of the EC2 capacity. </p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p> The maximum size of the EC2 capacity. </p>
-    pub fn max_size(&self) -> std::option::Option<&str> {
+    pub fn max_size(&self) -> std::option::Option<& str> {
         self.max_size.as_deref()
     }
     /// <p> The quantity of the EC2 capacity. </p>
-    pub fn quantity(&self) -> std::option::Option<&str> {
+    pub fn quantity(&self) -> std::option::Option<& str> {
         self.quantity.as_deref()
     }
 }
 /// See [`Ec2Capacity`](crate::model::Ec2Capacity).
 pub mod ec2_capacity {
-
+    
     /// A builder for [`Ec2Capacity`](crate::model::Ec2Capacity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3252,8 +2941,7 @@ pub mod ec2_capacity {
         }
         /// <p> The family of the EC2 capacity. </p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.family = input;
-            self
+            self.family = input; self
         }
         /// <p> The maximum size of the EC2 capacity. </p>
         pub fn max_size(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3262,8 +2950,7 @@ pub mod ec2_capacity {
         }
         /// <p> The maximum size of the EC2 capacity. </p>
         pub fn set_max_size(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max_size = input;
-            self
+            self.max_size = input; self
         }
         /// <p> The quantity of the EC2 capacity. </p>
         pub fn quantity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3272,18 +2959,22 @@ pub mod ec2_capacity {
         }
         /// <p> The quantity of the EC2 capacity. </p>
         pub fn set_quantity(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.quantity = input;
-            self
+            self.quantity = input; self
         }
         /// Consumes the builder and constructs a [`Ec2Capacity`](crate::model::Ec2Capacity).
         pub fn build(self) -> crate::model::Ec2Capacity {
             crate::model::Ec2Capacity {
-                family: self.family,
-                max_size: self.max_size,
-                quantity: self.quantity,
+                family: self.family
+                ,
+                max_size: self.max_size
+                ,
+                quantity: self.quantity
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2Capacity {
     /// Creates a new builder-style object to manufacture [`Ec2Capacity`](crate::model::Ec2Capacity).
@@ -3298,9 +2989,9 @@ impl Ec2Capacity {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let catalogitemstatus = unimplemented!();
 /// match catalogitemstatus {
@@ -3322,60 +3013,52 @@ impl Ec2Capacity {
 /// Specifically, when `catalogitemstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CatalogItemStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CatalogItemStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
     Discontinued,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CatalogItemStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => CatalogItemStatus::Available,
             "DISCONTINUED" => CatalogItemStatus::Discontinued,
-            other => {
-                CatalogItemStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CatalogItemStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CatalogItemStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CatalogItemStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CatalogItemStatus::from(s))
+                }
+            }
 impl CatalogItemStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CatalogItemStatus::Available => "AVAILABLE",
             CatalogItemStatus::Discontinued => "DISCONTINUED",
-            CatalogItemStatus::Unknown(value) => value.as_str(),
+            CatalogItemStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "DISCONTINUED"]
+        &[
+            "AVAILABLE", "DISCONTINUED"
+        ]
     }
 }
 impl AsRef<str> for CatalogItemStatus {
@@ -3390,9 +3073,9 @@ impl AsRef<str> for CatalogItemStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let catalogitemclass = unimplemented!();
 /// match catalogitemclass {
@@ -3414,58 +3097,52 @@ impl AsRef<str> for CatalogItemStatus {
 /// Specifically, when `catalogitemclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CatalogItemClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CatalogItemClass {
     #[allow(missing_docs)] // documentation missing in model
     Rack,
     #[allow(missing_docs)] // documentation missing in model
     Server,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CatalogItemClass {
     fn from(s: &str) -> Self {
         match s {
             "RACK" => CatalogItemClass::Rack,
             "SERVER" => CatalogItemClass::Server,
-            other => CatalogItemClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CatalogItemClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CatalogItemClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CatalogItemClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CatalogItemClass::from(s))
+                }
+            }
 impl CatalogItemClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CatalogItemClass::Rack => "RACK",
             CatalogItemClass::Server => "SERVER",
-            CatalogItemClass::Unknown(value) => value.as_str(),
+            CatalogItemClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RACK", "SERVER"]
+        &[
+            "RACK", "SERVER"
+        ]
     }
 }
 impl AsRef<str> for CatalogItemClass {
@@ -3477,7 +3154,7 @@ impl AsRef<str> for CatalogItemClass {
 /// <p> Information about hardware assets. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetInfo {
+pub struct AssetInfo  {
     /// <p> The ID of the asset. </p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -3496,29 +3173,29 @@ pub struct AssetInfo {
 }
 impl AssetInfo {
     /// <p> The ID of the asset. </p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p> The rack ID of the asset. </p>
-    pub fn rack_id(&self) -> std::option::Option<&str> {
+    pub fn rack_id(&self) -> std::option::Option<& str> {
         self.rack_id.as_deref()
     }
     /// <p> The type of the asset. </p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::model::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p> Information about compute hardware assets. </p>
-    pub fn compute_attributes(&self) -> std::option::Option<&crate::model::ComputeAttributes> {
+    pub fn compute_attributes(&self) -> std::option::Option<& crate::model::ComputeAttributes> {
         self.compute_attributes.as_ref()
     }
     /// <p> The position of an asset in a rack. </p>
-    pub fn asset_location(&self) -> std::option::Option<&crate::model::AssetLocation> {
+    pub fn asset_location(&self) -> std::option::Option<& crate::model::AssetLocation> {
         self.asset_location.as_ref()
     }
 }
 /// See [`AssetInfo`](crate::model::AssetInfo).
 pub mod asset_info {
-
+    
     /// A builder for [`AssetInfo`](crate::model::AssetInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3536,8 +3213,7 @@ pub mod asset_info {
         }
         /// <p> The ID of the asset. </p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p> The rack ID of the asset. </p>
         pub fn rack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3546,8 +3222,7 @@ pub mod asset_info {
         }
         /// <p> The rack ID of the asset. </p>
         pub fn set_rack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rack_id = input;
-            self
+            self.rack_id = input; self
         }
         /// <p> The type of the asset. </p>
         pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
@@ -3555,12 +3230,8 @@ pub mod asset_info {
             self
         }
         /// <p> The type of the asset. </p>
-        pub fn set_asset_type(
-            mut self,
-            input: std::option::Option<crate::model::AssetType>,
-        ) -> Self {
-            self.asset_type = input;
-            self
+        pub fn set_asset_type(mut self, input: std::option::Option<crate::model::AssetType>) -> Self {
+            self.asset_type = input; self
         }
         /// <p> Information about compute hardware assets. </p>
         pub fn compute_attributes(mut self, input: crate::model::ComputeAttributes) -> Self {
@@ -3568,12 +3239,8 @@ pub mod asset_info {
             self
         }
         /// <p> Information about compute hardware assets. </p>
-        pub fn set_compute_attributes(
-            mut self,
-            input: std::option::Option<crate::model::ComputeAttributes>,
-        ) -> Self {
-            self.compute_attributes = input;
-            self
+        pub fn set_compute_attributes(mut self, input: std::option::Option<crate::model::ComputeAttributes>) -> Self {
+            self.compute_attributes = input; self
         }
         /// <p> The position of an asset in a rack. </p>
         pub fn asset_location(mut self, input: crate::model::AssetLocation) -> Self {
@@ -3581,24 +3248,27 @@ pub mod asset_info {
             self
         }
         /// <p> The position of an asset in a rack. </p>
-        pub fn set_asset_location(
-            mut self,
-            input: std::option::Option<crate::model::AssetLocation>,
-        ) -> Self {
-            self.asset_location = input;
-            self
+        pub fn set_asset_location(mut self, input: std::option::Option<crate::model::AssetLocation>) -> Self {
+            self.asset_location = input; self
         }
         /// Consumes the builder and constructs a [`AssetInfo`](crate::model::AssetInfo).
         pub fn build(self) -> crate::model::AssetInfo {
             crate::model::AssetInfo {
-                asset_id: self.asset_id,
-                rack_id: self.rack_id,
-                asset_type: self.asset_type,
-                compute_attributes: self.compute_attributes,
-                asset_location: self.asset_location,
+                asset_id: self.asset_id
+                ,
+                rack_id: self.rack_id
+                ,
+                asset_type: self.asset_type
+                ,
+                compute_attributes: self.compute_attributes
+                ,
+                asset_location: self.asset_location
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetInfo {
     /// Creates a new builder-style object to manufacture [`AssetInfo`](crate::model::AssetInfo).
@@ -3610,7 +3280,7 @@ impl AssetInfo {
 /// <p> Information about the position of the asset in a rack. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetLocation {
+pub struct AssetLocation  {
     /// <p> The position of an asset in a rack measured in rack units. </p>
     #[doc(hidden)]
     pub rack_elevation: std::option::Option<f32>,
@@ -3623,7 +3293,7 @@ impl AssetLocation {
 }
 /// See [`AssetLocation`](crate::model::AssetLocation).
 pub mod asset_location {
-
+    
     /// A builder for [`AssetLocation`](crate::model::AssetLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3637,16 +3307,18 @@ pub mod asset_location {
         }
         /// <p> The position of an asset in a rack measured in rack units. </p>
         pub fn set_rack_elevation(mut self, input: std::option::Option<f32>) -> Self {
-            self.rack_elevation = input;
-            self
+            self.rack_elevation = input; self
         }
         /// Consumes the builder and constructs a [`AssetLocation`](crate::model::AssetLocation).
         pub fn build(self) -> crate::model::AssetLocation {
             crate::model::AssetLocation {
-                rack_elevation: self.rack_elevation,
+                rack_elevation: self.rack_elevation
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetLocation {
     /// Creates a new builder-style object to manufacture [`AssetLocation`](crate::model::AssetLocation).
@@ -3658,37 +3330,37 @@ impl AssetLocation {
 /// <p> Information about compute hardware assets. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeAttributes {
+pub struct ComputeAttributes  {
     /// <p> The host ID of the Dedicated Host on the asset. </p>
     #[doc(hidden)]
     pub host_id: std::option::Option<std::string::String>,
-    /// <p>The state.</p>
-    /// <ul>
-    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
-    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
-    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+    /// <p>The state.</p> 
+    /// <ul> 
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> 
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> 
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ComputeAssetState>,
 }
 impl ComputeAttributes {
     /// <p> The host ID of the Dedicated Host on the asset. </p>
-    pub fn host_id(&self) -> std::option::Option<&str> {
+    pub fn host_id(&self) -> std::option::Option<& str> {
         self.host_id.as_deref()
     }
-    /// <p>The state.</p>
-    /// <ul>
-    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
-    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
-    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+    /// <p>The state.</p> 
+    /// <ul> 
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> 
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> 
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::model::ComputeAssetState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ComputeAssetState> {
         self.state.as_ref()
     }
 }
 /// See [`ComputeAttributes`](crate::model::ComputeAttributes).
 pub mod compute_attributes {
-
+    
     /// A builder for [`ComputeAttributes`](crate::model::ComputeAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3703,40 +3375,39 @@ pub mod compute_attributes {
         }
         /// <p> The host ID of the Dedicated Host on the asset. </p>
         pub fn set_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host_id = input;
-            self
+            self.host_id = input; self
         }
-        /// <p>The state.</p>
-        /// <ul>
-        /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
-        /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
-        /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+        /// <p>The state.</p> 
+        /// <ul> 
+        /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> 
+        /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> 
+        /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> 
         /// </ul>
         pub fn state(mut self, input: crate::model::ComputeAssetState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state.</p>
-        /// <ul>
-        /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
-        /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
-        /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+        /// <p>The state.</p> 
+        /// <ul> 
+        /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> 
+        /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> 
+        /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> 
         /// </ul>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ComputeAssetState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ComputeAssetState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`ComputeAttributes`](crate::model::ComputeAttributes).
         pub fn build(self) -> crate::model::ComputeAttributes {
             crate::model::ComputeAttributes {
-                host_id: self.host_id,
-                state: self.state,
+                host_id: self.host_id
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl ComputeAttributes {
     /// Creates a new builder-style object to manufacture [`ComputeAttributes`](crate::model::ComputeAttributes).
@@ -3751,9 +3422,9 @@ impl ComputeAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let computeassetstate = unimplemented!();
 /// match computeassetstate {
@@ -3776,22 +3447,14 @@ impl ComputeAttributes {
 /// Specifically, when `computeassetstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComputeAssetState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComputeAssetState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3800,7 +3463,7 @@ pub enum ComputeAssetState {
     #[allow(missing_docs)] // documentation missing in model
     Retiring,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputeAssetState {
     fn from(s: &str) -> Self {
@@ -3808,19 +3471,17 @@ impl std::convert::From<&str> for ComputeAssetState {
             "ACTIVE" => ComputeAssetState::Active,
             "ISOLATED" => ComputeAssetState::Isolated,
             "RETIRING" => ComputeAssetState::Retiring,
-            other => {
-                ComputeAssetState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComputeAssetState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComputeAssetState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComputeAssetState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComputeAssetState::from(s))
+                }
+            }
 impl ComputeAssetState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3828,12 +3489,14 @@ impl ComputeAssetState {
             ComputeAssetState::Active => "ACTIVE",
             ComputeAssetState::Isolated => "ISOLATED",
             ComputeAssetState::Retiring => "RETIRING",
-            ComputeAssetState::Unknown(value) => value.as_str(),
+            ComputeAssetState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "ISOLATED", "RETIRING"]
+        &[
+            "ACTIVE", "ISOLATED", "RETIRING"
+        ]
     }
 }
 impl AsRef<str> for ComputeAssetState {
@@ -3848,9 +3511,9 @@ impl AsRef<str> for ComputeAssetState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assettype = unimplemented!();
 /// match assettype {
@@ -3871,54 +3534,48 @@ impl AsRef<str> for ComputeAssetState {
 /// Specifically, when `assettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssetType {
     #[allow(missing_docs)] // documentation missing in model
     Compute,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetType {
     fn from(s: &str) -> Self {
         match s {
             "COMPUTE" => AssetType::Compute,
-            other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssetType::from(s))
+                }
+            }
 impl AssetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssetType::Compute => "COMPUTE",
-            AssetType::Unknown(value) => value.as_str(),
+            AssetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPUTE"]
+        &[
+            "COMPUTE"
+        ]
     }
 }
 impl AsRef<str> for AssetType {
@@ -3933,9 +3590,9 @@ impl AsRef<str> for AssetType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assetstate = unimplemented!();
 /// match assetstate {
@@ -3957,58 +3614,52 @@ impl AsRef<str> for AssetType {
 /// Specifically, when `assetstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssetState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssetState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Retiring,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AssetState::Active,
             "RETIRING" => AssetState::Retiring,
-            other => AssetState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssetState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssetState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssetState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssetState::from(s))
+                }
+            }
 impl AssetState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssetState::Active => "ACTIVE",
             AssetState::Retiring => "RETIRING",
-            AssetState::Unknown(value) => value.as_str(),
+            AssetState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "RETIRING"]
+        &[
+            "ACTIVE", "RETIRING"
+        ]
     }
 }
 impl AsRef<str> for AssetState {
@@ -4020,20 +3671,20 @@ impl AsRef<str> for AssetState {
 /// <p>Information about an instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceTypeItem {
+pub struct InstanceTypeItem  {
     /// <p>The instance type.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
 }
 impl InstanceTypeItem {
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
 }
 /// See [`InstanceTypeItem`](crate::model::InstanceTypeItem).
 pub mod instance_type_item {
-
+    
     /// A builder for [`InstanceTypeItem`](crate::model::InstanceTypeItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4046,20 +3697,19 @@ pub mod instance_type_item {
             self
         }
         /// <p>The instance type.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// Consumes the builder and constructs a [`InstanceTypeItem`](crate::model::InstanceTypeItem).
         pub fn build(self) -> crate::model::InstanceTypeItem {
             crate::model::InstanceTypeItem {
-                instance_type: self.instance_type,
+                instance_type: self.instance_type
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceTypeItem {
     /// Creates a new builder-style object to manufacture [`InstanceTypeItem`](crate::model::InstanceTypeItem).
@@ -4071,22 +3721,22 @@ impl InstanceTypeItem {
 /// <p>Information about an order.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Order {
+pub struct Order  {
     /// <p> The ID of the Outpost in the order. </p>
     #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The ID of the order.</p>
     #[doc(hidden)]
     pub order_id: std::option::Option<std::string::String>,
-    /// <p>The status of the order.</p>
-    /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-    /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The status of the order.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
     /// </note>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::OrderStatus>,
@@ -4105,46 +3755,46 @@ pub struct Order {
 }
 impl Order {
     /// <p> The ID of the Outpost in the order. </p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
     /// <p>The ID of the order.</p>
-    pub fn order_id(&self) -> std::option::Option<&str> {
+    pub fn order_id(&self) -> std::option::Option<& str> {
         self.order_id.as_deref()
     }
-    /// <p>The status of the order.</p>
-    /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-    /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The status of the order.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
     /// </note>
-    pub fn status(&self) -> std::option::Option<&crate::model::OrderStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OrderStatus> {
         self.status.as_ref()
     }
     /// <p>The line items for the order</p>
-    pub fn line_items(&self) -> std::option::Option<&[crate::model::LineItem]> {
+    pub fn line_items(&self) -> std::option::Option<& [crate::model::LineItem]> {
         self.line_items.as_deref()
     }
     /// <p>The payment option for the order.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::model::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The submission date for the order.</p>
-    pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn order_submission_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.order_submission_date.as_ref()
     }
     /// <p>The fulfillment date of the order.</p>
-    pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn order_fulfilled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
     }
 }
 /// See [`Order`](crate::model::Order).
 pub mod order {
-
+    
     /// A builder for [`Order`](crate::model::Order).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4164,8 +3814,7 @@ pub mod order {
         }
         /// <p> The ID of the Outpost in the order. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outpost_id = input;
-            self
+            self.outpost_id = input; self
         }
         /// <p>The ID of the order.</p>
         pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4174,36 +3823,34 @@ pub mod order {
         }
         /// <p>The ID of the order.</p>
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.order_id = input;
-            self
+            self.order_id = input; self
         }
-        /// <p>The status of the order.</p>
-        /// <ul>
-        /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-        /// </ul> <note>
-        /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+        /// <p>The status of the order.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
         /// </note>
         pub fn status(mut self, input: crate::model::OrderStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the order.</p>
-        /// <ul>
-        /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-        /// </ul> <note>
-        /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+        /// <p>The status of the order.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<crate::model::OrderStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `line_items`.
         ///
@@ -4212,17 +3859,13 @@ pub mod order {
         /// <p>The line items for the order</p>
         pub fn line_items(mut self, input: crate::model::LineItem) -> Self {
             let mut v = self.line_items.unwrap_or_default();
-            v.push(input);
-            self.line_items = Some(v);
-            self
+                            v.push(input);
+                            self.line_items = Some(v);
+                            self
         }
         /// <p>The line items for the order</p>
-        pub fn set_line_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LineItem>>,
-        ) -> Self {
-            self.line_items = input;
-            self
+        pub fn set_line_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::LineItem>>) -> Self {
+            self.line_items = input; self
         }
         /// <p>The payment option for the order.</p>
         pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
@@ -4230,12 +3873,8 @@ pub mod order {
             self
         }
         /// <p>The payment option for the order.</p>
-        pub fn set_payment_option(
-            mut self,
-            input: std::option::Option<crate::model::PaymentOption>,
-        ) -> Self {
-            self.payment_option = input;
-            self
+        pub fn set_payment_option(mut self, input: std::option::Option<crate::model::PaymentOption>) -> Self {
+            self.payment_option = input; self
         }
         /// <p>The submission date for the order.</p>
         pub fn order_submission_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4243,12 +3882,8 @@ pub mod order {
             self
         }
         /// <p>The submission date for the order.</p>
-        pub fn set_order_submission_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.order_submission_date = input;
-            self
+        pub fn set_order_submission_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.order_submission_date = input; self
         }
         /// <p>The fulfillment date of the order.</p>
         pub fn order_fulfilled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4256,26 +3891,31 @@ pub mod order {
             self
         }
         /// <p>The fulfillment date of the order.</p>
-        pub fn set_order_fulfilled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.order_fulfilled_date = input;
-            self
+        pub fn set_order_fulfilled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.order_fulfilled_date = input; self
         }
         /// Consumes the builder and constructs a [`Order`](crate::model::Order).
         pub fn build(self) -> crate::model::Order {
             crate::model::Order {
-                outpost_id: self.outpost_id,
-                order_id: self.order_id,
-                status: self.status,
-                line_items: self.line_items,
-                payment_option: self.payment_option,
-                order_submission_date: self.order_submission_date,
-                order_fulfilled_date: self.order_fulfilled_date,
+                outpost_id: self.outpost_id
+                ,
+                order_id: self.order_id
+                ,
+                status: self.status
+                ,
+                line_items: self.line_items
+                ,
+                payment_option: self.payment_option
+                ,
+                order_submission_date: self.order_submission_date
+                ,
+                order_fulfilled_date: self.order_fulfilled_date
+                ,
             }
         }
     }
+    
+    
 }
 impl Order {
     /// Creates a new builder-style object to manufacture [`Order`](crate::model::Order).
@@ -4290,9 +3930,9 @@ impl Order {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let paymentoption = unimplemented!();
 /// match paymentoption {
@@ -4315,22 +3955,14 @@ impl Order {
 /// Specifically, when `paymentoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PaymentOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PaymentOption {
     #[allow(missing_docs)] // documentation missing in model
     AllUpfront,
@@ -4339,7 +3971,7 @@ pub enum PaymentOption {
     #[allow(missing_docs)] // documentation missing in model
     PartialUpfront,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PaymentOption {
     fn from(s: &str) -> Self {
@@ -4347,17 +3979,17 @@ impl std::convert::From<&str> for PaymentOption {
             "ALL_UPFRONT" => PaymentOption::AllUpfront,
             "NO_UPFRONT" => PaymentOption::NoUpfront,
             "PARTIAL_UPFRONT" => PaymentOption::PartialUpfront,
-            other => PaymentOption::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PaymentOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PaymentOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PaymentOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PaymentOption::from(s))
+                }
+            }
 impl PaymentOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4365,12 +3997,14 @@ impl PaymentOption {
             PaymentOption::AllUpfront => "ALL_UPFRONT",
             PaymentOption::NoUpfront => "NO_UPFRONT",
             PaymentOption::PartialUpfront => "PARTIAL_UPFRONT",
-            PaymentOption::Unknown(value) => value.as_str(),
+            PaymentOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"]
+        &[
+            "ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"
+        ]
     }
 }
 impl AsRef<str> for PaymentOption {
@@ -4382,7 +4016,7 @@ impl AsRef<str> for PaymentOption {
 /// <p>Information about a line item.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LineItem {
+pub struct LineItem  {
     /// <p> The ID of the catalog item. </p>
     #[doc(hidden)]
     pub catalog_item_id: std::option::Option<std::string::String>,
@@ -4400,16 +4034,15 @@ pub struct LineItem {
     pub shipment_information: std::option::Option<crate::model::ShipmentInformation>,
     /// <p> Information about assets. </p>
     #[doc(hidden)]
-    pub asset_information_list:
-        std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
+    pub asset_information_list: std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
 }
 impl LineItem {
     /// <p> The ID of the catalog item. </p>
-    pub fn catalog_item_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_item_id(&self) -> std::option::Option<& str> {
         self.catalog_item_id.as_deref()
     }
     /// <p>The ID of the line item.</p>
-    pub fn line_item_id(&self) -> std::option::Option<&str> {
+    pub fn line_item_id(&self) -> std::option::Option<& str> {
         self.line_item_id.as_deref()
     }
     /// <p>The quantity of the line item.</p>
@@ -4417,23 +4050,21 @@ impl LineItem {
         self.quantity
     }
     /// <p>The status of the line item.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LineItemStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LineItemStatus> {
         self.status.as_ref()
     }
     /// <p> Information about a line item shipment. </p>
-    pub fn shipment_information(&self) -> std::option::Option<&crate::model::ShipmentInformation> {
+    pub fn shipment_information(&self) -> std::option::Option<& crate::model::ShipmentInformation> {
         self.shipment_information.as_ref()
     }
     /// <p> Information about assets. </p>
-    pub fn asset_information_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::LineItemAssetInformation]> {
+    pub fn asset_information_list(&self) -> std::option::Option<& [crate::model::LineItemAssetInformation]> {
         self.asset_information_list.as_deref()
     }
 }
 /// See [`LineItem`](crate::model::LineItem).
 pub mod line_item {
-
+    
     /// A builder for [`LineItem`](crate::model::LineItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4442,8 +4073,7 @@ pub mod line_item {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) status: std::option::Option<crate::model::LineItemStatus>,
         pub(crate) shipment_information: std::option::Option<crate::model::ShipmentInformation>,
-        pub(crate) asset_information_list:
-            std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
+        pub(crate) asset_information_list: std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
     }
     impl Builder {
         /// <p> The ID of the catalog item. </p>
@@ -4452,12 +4082,8 @@ pub mod line_item {
             self
         }
         /// <p> The ID of the catalog item. </p>
-        pub fn set_catalog_item_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.catalog_item_id = input;
-            self
+        pub fn set_catalog_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_item_id = input; self
         }
         /// <p>The ID of the line item.</p>
         pub fn line_item_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4466,8 +4092,7 @@ pub mod line_item {
         }
         /// <p>The ID of the line item.</p>
         pub fn set_line_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.line_item_id = input;
-            self
+            self.line_item_id = input; self
         }
         /// <p>The quantity of the line item.</p>
         pub fn quantity(mut self, input: i32) -> Self {
@@ -4476,8 +4101,7 @@ pub mod line_item {
         }
         /// <p>The quantity of the line item.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-            self.quantity = input;
-            self
+            self.quantity = input; self
         }
         /// <p>The status of the line item.</p>
         pub fn status(mut self, input: crate::model::LineItemStatus) -> Self {
@@ -4485,12 +4109,8 @@ pub mod line_item {
             self
         }
         /// <p>The status of the line item.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LineItemStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LineItemStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> Information about a line item shipment. </p>
         pub fn shipment_information(mut self, input: crate::model::ShipmentInformation) -> Self {
@@ -4498,47 +4118,45 @@ pub mod line_item {
             self
         }
         /// <p> Information about a line item shipment. </p>
-        pub fn set_shipment_information(
-            mut self,
-            input: std::option::Option<crate::model::ShipmentInformation>,
-        ) -> Self {
-            self.shipment_information = input;
-            self
+        pub fn set_shipment_information(mut self, input: std::option::Option<crate::model::ShipmentInformation>) -> Self {
+            self.shipment_information = input; self
         }
         /// Appends an item to `asset_information_list`.
         ///
         /// To override the contents of this collection use [`set_asset_information_list`](Self::set_asset_information_list).
         ///
         /// <p> Information about assets. </p>
-        pub fn asset_information_list(
-            mut self,
-            input: crate::model::LineItemAssetInformation,
-        ) -> Self {
+        pub fn asset_information_list(mut self, input: crate::model::LineItemAssetInformation) -> Self {
             let mut v = self.asset_information_list.unwrap_or_default();
-            v.push(input);
-            self.asset_information_list = Some(v);
-            self
+                            v.push(input);
+                            self.asset_information_list = Some(v);
+                            self
         }
         /// <p> Information about assets. </p>
-        pub fn set_asset_information_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
-        ) -> Self {
-            self.asset_information_list = input;
-            self
+        pub fn set_asset_information_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>) -> Self {
+            self.asset_information_list = input; self
         }
         /// Consumes the builder and constructs a [`LineItem`](crate::model::LineItem).
         pub fn build(self) -> crate::model::LineItem {
             crate::model::LineItem {
-                catalog_item_id: self.catalog_item_id,
-                line_item_id: self.line_item_id,
-                quantity: self.quantity.unwrap_or_default(),
-                status: self.status,
-                shipment_information: self.shipment_information,
-                asset_information_list: self.asset_information_list,
+                catalog_item_id: self.catalog_item_id
+                ,
+                line_item_id: self.line_item_id
+                ,
+                quantity: self.quantity
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                ,
+                shipment_information: self.shipment_information
+                ,
+                asset_information_list: self.asset_information_list
+                ,
             }
         }
     }
+    
+    
 }
 impl LineItem {
     /// Creates a new builder-style object to manufacture [`LineItem`](crate::model::LineItem).
@@ -4550,7 +4168,7 @@ impl LineItem {
 /// <p> Information about a line item asset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LineItemAssetInformation {
+pub struct LineItemAssetInformation  {
     /// <p> The ID of the asset. </p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -4560,17 +4178,17 @@ pub struct LineItemAssetInformation {
 }
 impl LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p> The MAC addresses of the asset. </p>
-    pub fn mac_address_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn mac_address_list(&self) -> std::option::Option<& [std::string::String]> {
         self.mac_address_list.as_deref()
     }
 }
 /// See [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
 pub mod line_item_asset_information {
-
+    
     /// A builder for [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4585,8 +4203,7 @@ pub mod line_item_asset_information {
         }
         /// <p> The ID of the asset. </p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// Appends an item to `mac_address_list`.
         ///
@@ -4595,26 +4212,26 @@ pub mod line_item_asset_information {
         /// <p> The MAC addresses of the asset. </p>
         pub fn mac_address_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.mac_address_list.unwrap_or_default();
-            v.push(input.into());
-            self.mac_address_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.mac_address_list = Some(v);
+                            self
         }
         /// <p> The MAC addresses of the asset. </p>
-        pub fn set_mac_address_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.mac_address_list = input;
-            self
+        pub fn set_mac_address_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.mac_address_list = input; self
         }
         /// Consumes the builder and constructs a [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
         pub fn build(self) -> crate::model::LineItemAssetInformation {
             crate::model::LineItemAssetInformation {
-                asset_id: self.asset_id,
-                mac_address_list: self.mac_address_list,
+                asset_id: self.asset_id
+                ,
+                mac_address_list: self.mac_address_list
+                ,
             }
         }
     }
+    
+    
 }
 impl LineItemAssetInformation {
     /// Creates a new builder-style object to manufacture [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
@@ -4626,7 +4243,7 @@ impl LineItemAssetInformation {
 /// <p> Information about a line item shipment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShipmentInformation {
+pub struct ShipmentInformation  {
     /// <p> The tracking number of the shipment. </p>
     #[doc(hidden)]
     pub shipment_tracking_number: std::option::Option<std::string::String>,
@@ -4636,17 +4253,17 @@ pub struct ShipmentInformation {
 }
 impl ShipmentInformation {
     /// <p> The tracking number of the shipment. </p>
-    pub fn shipment_tracking_number(&self) -> std::option::Option<&str> {
+    pub fn shipment_tracking_number(&self) -> std::option::Option<& str> {
         self.shipment_tracking_number.as_deref()
     }
     /// <p> The carrier of the shipment. </p>
-    pub fn shipment_carrier(&self) -> std::option::Option<&crate::model::ShipmentCarrier> {
+    pub fn shipment_carrier(&self) -> std::option::Option<& crate::model::ShipmentCarrier> {
         self.shipment_carrier.as_ref()
     }
 }
 /// See [`ShipmentInformation`](crate::model::ShipmentInformation).
 pub mod shipment_information {
-
+    
     /// A builder for [`ShipmentInformation`](crate::model::ShipmentInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4660,12 +4277,8 @@ pub mod shipment_information {
             self
         }
         /// <p> The tracking number of the shipment. </p>
-        pub fn set_shipment_tracking_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.shipment_tracking_number = input;
-            self
+        pub fn set_shipment_tracking_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shipment_tracking_number = input; self
         }
         /// <p> The carrier of the shipment. </p>
         pub fn shipment_carrier(mut self, input: crate::model::ShipmentCarrier) -> Self {
@@ -4673,21 +4286,21 @@ pub mod shipment_information {
             self
         }
         /// <p> The carrier of the shipment. </p>
-        pub fn set_shipment_carrier(
-            mut self,
-            input: std::option::Option<crate::model::ShipmentCarrier>,
-        ) -> Self {
-            self.shipment_carrier = input;
-            self
+        pub fn set_shipment_carrier(mut self, input: std::option::Option<crate::model::ShipmentCarrier>) -> Self {
+            self.shipment_carrier = input; self
         }
         /// Consumes the builder and constructs a [`ShipmentInformation`](crate::model::ShipmentInformation).
         pub fn build(self) -> crate::model::ShipmentInformation {
             crate::model::ShipmentInformation {
-                shipment_tracking_number: self.shipment_tracking_number,
-                shipment_carrier: self.shipment_carrier,
+                shipment_tracking_number: self.shipment_tracking_number
+                ,
+                shipment_carrier: self.shipment_carrier
+                ,
             }
         }
     }
+    
+    
 }
 impl ShipmentInformation {
     /// Creates a new builder-style object to manufacture [`ShipmentInformation`](crate::model::ShipmentInformation).
@@ -4702,9 +4315,9 @@ impl ShipmentInformation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let shipmentcarrier = unimplemented!();
 /// match shipmentcarrier {
@@ -4728,22 +4341,14 @@ impl ShipmentInformation {
 /// Specifically, when `shipmentcarrier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShipmentCarrier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShipmentCarrier {
     #[allow(missing_docs)] // documentation missing in model
     Dbs,
@@ -4754,7 +4359,7 @@ pub enum ShipmentCarrier {
     #[allow(missing_docs)] // documentation missing in model
     Ups,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShipmentCarrier {
     fn from(s: &str) -> Self {
@@ -4763,17 +4368,17 @@ impl std::convert::From<&str> for ShipmentCarrier {
             "DHL" => ShipmentCarrier::Dhl,
             "FEDEX" => ShipmentCarrier::Fedex,
             "UPS" => ShipmentCarrier::Ups,
-            other => ShipmentCarrier::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ShipmentCarrier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShipmentCarrier {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShipmentCarrier::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShipmentCarrier::from(s))
+                }
+            }
 impl ShipmentCarrier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4782,12 +4387,14 @@ impl ShipmentCarrier {
             ShipmentCarrier::Dhl => "DHL",
             ShipmentCarrier::Fedex => "FEDEX",
             ShipmentCarrier::Ups => "UPS",
-            ShipmentCarrier::Unknown(value) => value.as_str(),
+            ShipmentCarrier::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DBS", "DHL", "FEDEX", "UPS"]
+        &[
+            "DBS", "DHL", "FEDEX", "UPS"
+        ]
     }
 }
 impl AsRef<str> for ShipmentCarrier {
@@ -4799,7 +4406,7 @@ impl AsRef<str> for ShipmentCarrier {
 /// <p> Information about a connection. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionDetails {
+pub struct ConnectionDetails  {
     /// <p> The public key of the client. </p>
     #[doc(hidden)]
     pub client_public_key: std::option::Option<std::string::String>,
@@ -4821,33 +4428,33 @@ pub struct ConnectionDetails {
 }
 impl ConnectionDetails {
     /// <p> The public key of the client. </p>
-    pub fn client_public_key(&self) -> std::option::Option<&str> {
+    pub fn client_public_key(&self) -> std::option::Option<& str> {
         self.client_public_key.as_deref()
     }
     /// <p> The public key of the server. </p>
-    pub fn server_public_key(&self) -> std::option::Option<&str> {
+    pub fn server_public_key(&self) -> std::option::Option<& str> {
         self.server_public_key.as_deref()
     }
     /// <p> The endpoint for the server. </p>
-    pub fn server_endpoint(&self) -> std::option::Option<&str> {
+    pub fn server_endpoint(&self) -> std::option::Option<& str> {
         self.server_endpoint.as_deref()
     }
     /// <p> The client tunnel address. </p>
-    pub fn client_tunnel_address(&self) -> std::option::Option<&str> {
+    pub fn client_tunnel_address(&self) -> std::option::Option<& str> {
         self.client_tunnel_address.as_deref()
     }
     /// <p> The server tunnel address. </p>
-    pub fn server_tunnel_address(&self) -> std::option::Option<&str> {
+    pub fn server_tunnel_address(&self) -> std::option::Option<& str> {
         self.server_tunnel_address.as_deref()
     }
     /// <p> The allowed IP addresses. </p>
-    pub fn allowed_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_ips(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_ips.as_deref()
     }
 }
 /// See [`ConnectionDetails`](crate::model::ConnectionDetails).
 pub mod connection_details {
-
+    
     /// A builder for [`ConnectionDetails`](crate::model::ConnectionDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4865,12 +4472,8 @@ pub mod connection_details {
             self
         }
         /// <p> The public key of the client. </p>
-        pub fn set_client_public_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_public_key = input;
-            self
+        pub fn set_client_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_public_key = input; self
         }
         /// <p> The public key of the server. </p>
         pub fn server_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4878,12 +4481,8 @@ pub mod connection_details {
             self
         }
         /// <p> The public key of the server. </p>
-        pub fn set_server_public_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_public_key = input;
-            self
+        pub fn set_server_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_public_key = input; self
         }
         /// <p> The endpoint for the server. </p>
         pub fn server_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4891,12 +4490,8 @@ pub mod connection_details {
             self
         }
         /// <p> The endpoint for the server. </p>
-        pub fn set_server_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_endpoint = input;
-            self
+        pub fn set_server_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_endpoint = input; self
         }
         /// <p> The client tunnel address. </p>
         pub fn client_tunnel_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4904,12 +4499,8 @@ pub mod connection_details {
             self
         }
         /// <p> The client tunnel address. </p>
-        pub fn set_client_tunnel_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_tunnel_address = input;
-            self
+        pub fn set_client_tunnel_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_tunnel_address = input; self
         }
         /// <p> The server tunnel address. </p>
         pub fn server_tunnel_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4917,12 +4508,8 @@ pub mod connection_details {
             self
         }
         /// <p> The server tunnel address. </p>
-        pub fn set_server_tunnel_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_tunnel_address = input;
-            self
+        pub fn set_server_tunnel_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_tunnel_address = input; self
         }
         /// Appends an item to `allowed_ips`.
         ///
@@ -4931,30 +4518,34 @@ pub mod connection_details {
         /// <p> The allowed IP addresses. </p>
         pub fn allowed_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_ips.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_ips = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_ips = Some(v);
+                            self
         }
         /// <p> The allowed IP addresses. </p>
-        pub fn set_allowed_ips(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_ips = input;
-            self
+        pub fn set_allowed_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_ips = input; self
         }
         /// Consumes the builder and constructs a [`ConnectionDetails`](crate::model::ConnectionDetails).
         pub fn build(self) -> crate::model::ConnectionDetails {
             crate::model::ConnectionDetails {
-                client_public_key: self.client_public_key,
-                server_public_key: self.server_public_key,
-                server_endpoint: self.server_endpoint,
-                client_tunnel_address: self.client_tunnel_address,
-                server_tunnel_address: self.server_tunnel_address,
-                allowed_ips: self.allowed_ips,
+                client_public_key: self.client_public_key
+                ,
+                server_public_key: self.server_public_key
+                ,
+                server_endpoint: self.server_endpoint
+                ,
+                client_tunnel_address: self.client_tunnel_address
+                ,
+                server_tunnel_address: self.server_tunnel_address
+                ,
+                allowed_ips: self.allowed_ips
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectionDetails {
     /// Creates a new builder-style object to manufacture [`ConnectionDetails`](crate::model::ConnectionDetails).
@@ -4969,9 +4560,9 @@ impl ConnectionDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let paymentterm = unimplemented!();
 /// match paymentterm {
@@ -4993,58 +4584,52 @@ impl ConnectionDetails {
 /// Specifically, when `paymentterm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PaymentTerm::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PaymentTerm {
     #[allow(missing_docs)] // documentation missing in model
     OneYear,
     #[allow(missing_docs)] // documentation missing in model
     ThreeYears,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PaymentTerm {
     fn from(s: &str) -> Self {
         match s {
             "ONE_YEAR" => PaymentTerm::OneYear,
             "THREE_YEARS" => PaymentTerm::ThreeYears,
-            other => PaymentTerm::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PaymentTerm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PaymentTerm {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PaymentTerm::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PaymentTerm::from(s))
+                }
+            }
 impl PaymentTerm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PaymentTerm::OneYear => "ONE_YEAR",
             PaymentTerm::ThreeYears => "THREE_YEARS",
-            PaymentTerm::Unknown(value) => value.as_str(),
+            PaymentTerm::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ONE_YEAR", "THREE_YEARS"]
+        &[
+            "ONE_YEAR", "THREE_YEARS"
+        ]
     }
 }
 impl AsRef<str> for PaymentTerm {
@@ -5056,7 +4641,7 @@ impl AsRef<str> for PaymentTerm {
 /// <p>Information about a line item request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LineItemRequest {
+pub struct LineItemRequest  {
     /// <p>The ID of the catalog item.</p>
     #[doc(hidden)]
     pub catalog_item_id: std::option::Option<std::string::String>,
@@ -5066,7 +4651,7 @@ pub struct LineItemRequest {
 }
 impl LineItemRequest {
     /// <p>The ID of the catalog item.</p>
-    pub fn catalog_item_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_item_id(&self) -> std::option::Option<& str> {
         self.catalog_item_id.as_deref()
     }
     /// <p>The quantity of a line item request.</p>
@@ -5076,7 +4661,7 @@ impl LineItemRequest {
 }
 /// See [`LineItemRequest`](crate::model::LineItemRequest).
 pub mod line_item_request {
-
+    
     /// A builder for [`LineItemRequest`](crate::model::LineItemRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5090,12 +4675,8 @@ pub mod line_item_request {
             self
         }
         /// <p>The ID of the catalog item.</p>
-        pub fn set_catalog_item_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.catalog_item_id = input;
-            self
+        pub fn set_catalog_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_item_id = input; self
         }
         /// <p>The quantity of a line item request.</p>
         pub fn quantity(mut self, input: i32) -> Self {
@@ -5104,17 +4685,21 @@ pub mod line_item_request {
         }
         /// <p>The quantity of a line item request.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-            self.quantity = input;
-            self
+            self.quantity = input; self
         }
         /// Consumes the builder and constructs a [`LineItemRequest`](crate::model::LineItemRequest).
         pub fn build(self) -> crate::model::LineItemRequest {
             crate::model::LineItemRequest {
-                catalog_item_id: self.catalog_item_id,
-                quantity: self.quantity.unwrap_or_default(),
+                catalog_item_id: self.catalog_item_id
+                ,
+                quantity: self.quantity
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LineItemRequest {
     /// Creates a new builder-style object to manufacture [`LineItemRequest`](crate::model::LineItemRequest).
@@ -5122,3 +4707,4 @@ impl LineItemRequest {
         crate::model::line_item_request::Builder::default()
     }
 }
+

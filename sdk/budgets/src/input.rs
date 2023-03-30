@@ -3,14 +3,13 @@ use std::fmt::Write;
 
 /// See [`CreateBudgetInput`](crate::input::CreateBudgetInput).
 pub mod create_budget_input {
-
+    
     /// A builder for [`CreateBudgetInput`](crate::input::CreateBudgetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) budget: std::option::Option<crate::model::Budget>,
-        pub(crate) notifications_with_subscribers:
-            std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
+        pub(crate) notifications_with_subscribers: std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
     }
     impl Builder {
         /// <p>The <code>accountId</code> that is associated with the budget.</p>
@@ -20,8 +19,7 @@ pub mod create_budget_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The budget object that you want to create.</p>
         pub fn budget(mut self, input: crate::model::Budget) -> Self {
@@ -30,167 +28,112 @@ pub mod create_budget_input {
         }
         /// <p>The budget object that you want to create.</p>
         pub fn set_budget(mut self, input: std::option::Option<crate::model::Budget>) -> Self {
-            self.budget = input;
-            self
+            self.budget = input; self
         }
         /// Appends an item to `notifications_with_subscribers`.
         ///
         /// To override the contents of this collection use [`set_notifications_with_subscribers`](Self::set_notifications_with_subscribers).
         ///
         /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-        pub fn notifications_with_subscribers(
-            mut self,
-            input: crate::model::NotificationWithSubscribers,
-        ) -> Self {
+        pub fn notifications_with_subscribers(mut self, input: crate::model::NotificationWithSubscribers) -> Self {
             let mut v = self.notifications_with_subscribers.unwrap_or_default();
-            v.push(input);
-            self.notifications_with_subscribers = Some(v);
-            self
+                            v.push(input);
+                            self.notifications_with_subscribers = Some(v);
+                            self
         }
         /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-        pub fn set_notifications_with_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
-        ) -> Self {
-            self.notifications_with_subscribers = input;
-            self
+        pub fn set_notifications_with_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>) -> Self {
+            self.notifications_with_subscribers = input; self
         }
         /// Consumes the builder and constructs a [`CreateBudgetInput`](crate::input::CreateBudgetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateBudgetInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateBudgetInput {
-                account_id: self.account_id,
-                budget: self.budget,
-                notifications_with_subscribers: self.notifications_with_subscribers,
-            })
+        pub fn build(self) -> Result<crate::input::CreateBudgetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateBudgetInput {
+                    account_id: self.account_id
+                    ,
+                    budget: self.budget
+                    ,
+                    notifications_with_subscribers: self.notifications_with_subscribers
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateBudgetInput {
     /// Consumes the builder and constructs an Operation<[`CreateBudget`](crate::operation::CreateBudget)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateBudget,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateBudget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateBudgetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateBudgetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateBudgetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateBudgetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.CreateBudget",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.CreateBudget"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_budget(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_budget(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateBudget::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateBudget",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateBudget::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateBudget", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -202,7 +145,7 @@ impl CreateBudgetInput {
 
 /// See [`CreateBudgetActionInput`](crate::input::CreateBudgetActionInput).
 pub mod create_budget_action_input {
-
+    
     /// A builder for [`CreateBudgetActionInput`](crate::input::CreateBudgetActionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -224,8 +167,7 @@ pub mod create_budget_action_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,8 +176,7 @@ pub mod create_budget_action_input {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
         pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
@@ -243,12 +184,8 @@ pub mod create_budget_action_input {
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-        pub fn set_notification_type(
-            mut self,
-            input: std::option::Option<crate::model::NotificationType>,
-        ) -> Self {
-            self.notification_type = input;
-            self
+        pub fn set_notification_type(mut self, input: std::option::Option<crate::model::NotificationType>) -> Self {
+            self.notification_type = input; self
         }
         /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
@@ -256,12 +193,8 @@ pub mod create_budget_action_input {
             self
         }
         /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
-        pub fn set_action_type(
-            mut self,
-            input: std::option::Option<crate::model::ActionType>,
-        ) -> Self {
-            self.action_type = input;
-            self
+        pub fn set_action_type(mut self, input: std::option::Option<crate::model::ActionType>) -> Self {
+            self.action_type = input; self
         }
         /// <p>The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
@@ -269,12 +202,8 @@ pub mod create_budget_action_input {
             self
         }
         /// <p>The trigger threshold of the action. </p>
-        pub fn set_action_threshold(
-            mut self,
-            input: std::option::Option<crate::model::ActionThreshold>,
-        ) -> Self {
-            self.action_threshold = input;
-            self
+        pub fn set_action_threshold(mut self, input: std::option::Option<crate::model::ActionThreshold>) -> Self {
+            self.action_threshold = input; self
         }
         /// <p>Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
@@ -282,12 +211,8 @@ pub mod create_budget_action_input {
             self
         }
         /// <p>Specifies all of the type-specific parameters. </p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::Definition>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::Definition>) -> Self {
+            self.definition = input; self
         }
         /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -295,12 +220,8 @@ pub mod create_budget_action_input {
             self
         }
         /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
@@ -308,12 +229,8 @@ pub mod create_budget_action_input {
             self
         }
         /// <p> This specifies if the action needs manual or automatic approval. </p>
-        pub fn set_approval_model(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalModel>,
-        ) -> Self {
-            self.approval_model = input;
-            self
+        pub fn set_approval_model(mut self, input: std::option::Option<crate::model::ApprovalModel>) -> Self {
+            self.approval_model = input; self
         }
         /// Appends an item to `subscribers`.
         ///
@@ -322,162 +239,115 @@ pub mod create_budget_action_input {
         /// <p> A list of subscribers.</p>
         pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input);
-            self.subscribers = Some(v);
-            self
+                            v.push(input);
+                            self.subscribers = Some(v);
+                            self
         }
         /// <p> A list of subscribers.</p>
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
+        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>) -> Self {
+            self.subscribers = input; self
         }
         /// Consumes the builder and constructs a [`CreateBudgetActionInput`](crate::input::CreateBudgetActionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateBudgetActionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification_type: self.notification_type,
-                action_type: self.action_type,
-                action_threshold: self.action_threshold,
-                definition: self.definition,
-                execution_role_arn: self.execution_role_arn,
-                approval_model: self.approval_model,
-                subscribers: self.subscribers,
-            })
+        pub fn build(self) -> Result<crate::input::CreateBudgetActionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateBudgetActionInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    notification_type: self.notification_type
+                    ,
+                    action_type: self.action_type
+                    ,
+                    action_threshold: self.action_threshold
+                    ,
+                    definition: self.definition
+                    ,
+                    execution_role_arn: self.execution_role_arn
+                    ,
+                    approval_model: self.approval_model
+                    ,
+                    subscribers: self.subscribers
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`CreateBudgetAction`](crate::operation::CreateBudgetAction)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateBudgetAction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateBudgetAction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateBudgetActionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateBudgetActionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateBudgetActionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateBudgetActionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.CreateBudgetAction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.CreateBudgetAction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_budget_action(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_budget_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateBudgetAction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateBudgetAction",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateBudgetAction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateBudgetAction", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -489,7 +359,7 @@ impl CreateBudgetActionInput {
 
 /// See [`CreateNotificationInput`](crate::input::CreateNotificationInput).
 pub mod create_notification_input {
-
+    
     /// A builder for [`CreateNotificationInput`](crate::input::CreateNotificationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -506,8 +376,7 @@ pub mod create_notification_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -516,8 +385,7 @@ pub mod create_notification_input {
         }
         /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>The notification that you want to create.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -525,12 +393,8 @@ pub mod create_notification_input {
             self
         }
         /// <p>The notification that you want to create.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// Appends an item to `subscribers`.
         ///
@@ -539,157 +403,105 @@ pub mod create_notification_input {
         /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
         pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input);
-            self.subscribers = Some(v);
-            self
+                            v.push(input);
+                            self.subscribers = Some(v);
+                            self
         }
         /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
+        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>) -> Self {
+            self.subscribers = input; self
         }
         /// Consumes the builder and constructs a [`CreateNotificationInput`](crate::input::CreateNotificationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateNotificationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateNotificationInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-                subscribers: self.subscribers,
-            })
+        pub fn build(self) -> Result<crate::input::CreateNotificationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateNotificationInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    notification: self.notification
+                    ,
+                    subscribers: self.subscribers
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateNotificationInput {
     /// Consumes the builder and constructs an Operation<[`CreateNotification`](crate::operation::CreateNotification)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateNotification,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateNotification, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateNotificationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateNotificationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateNotificationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateNotificationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.CreateNotification",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.CreateNotification"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_notification(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_notification(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateNotification::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateNotification",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateNotification::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateNotification", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -701,7 +513,7 @@ impl CreateNotificationInput {
 
 /// See [`CreateSubscriberInput`](crate::input::CreateSubscriberInput).
 pub mod create_subscriber_input {
-
+    
     /// A builder for [`CreateSubscriberInput`](crate::input::CreateSubscriberInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -718,8 +530,7 @@ pub mod create_subscriber_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -728,8 +539,7 @@ pub mod create_subscriber_input {
         }
         /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>The notification that you want to create a subscriber for.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -737,12 +547,8 @@ pub mod create_subscriber_input {
             self
         }
         /// <p>The notification that you want to create a subscriber for.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The subscriber that you want to associate with a budget notification.</p>
         pub fn subscriber(mut self, input: crate::model::Subscriber) -> Self {
@@ -750,152 +556,100 @@ pub mod create_subscriber_input {
             self
         }
         /// <p>The subscriber that you want to associate with a budget notification.</p>
-        pub fn set_subscriber(
-            mut self,
-            input: std::option::Option<crate::model::Subscriber>,
-        ) -> Self {
-            self.subscriber = input;
-            self
+        pub fn set_subscriber(mut self, input: std::option::Option<crate::model::Subscriber>) -> Self {
+            self.subscriber = input; self
         }
         /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::input::CreateSubscriberInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateSubscriberInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateSubscriberInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-                subscriber: self.subscriber,
-            })
+        pub fn build(self) -> Result<crate::input::CreateSubscriberInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateSubscriberInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    notification: self.notification
+                    ,
+                    subscriber: self.subscriber
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`CreateSubscriber`](crate::operation::CreateSubscriber)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateSubscriber,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateSubscriber, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateSubscriberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateSubscriberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateSubscriberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateSubscriberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.CreateSubscriber",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.CreateSubscriber"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_subscriber(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_subscriber(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateSubscriber::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateSubscriber",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateSubscriber::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateSubscriber", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -907,7 +661,7 @@ impl CreateSubscriberInput {
 
 /// See [`DeleteBudgetInput`](crate::input::DeleteBudgetInput).
 pub mod delete_budget_input {
-
+    
     /// A builder for [`DeleteBudgetInput`](crate::input::DeleteBudgetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -922,8 +676,7 @@ pub mod delete_budget_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget that you want to delete.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -932,144 +685,95 @@ pub mod delete_budget_input {
         }
         /// <p>The name of the budget that you want to delete.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBudgetInput`](crate::input::DeleteBudgetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteBudgetInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteBudgetInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteBudgetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteBudgetInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBudget`](crate::operation::DeleteBudget)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteBudget,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteBudget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteBudgetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteBudgetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteBudgetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteBudgetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DeleteBudget",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DeleteBudget"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_budget(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_budget(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteBudget::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteBudget",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteBudget::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteBudget", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1081,7 +785,7 @@ impl DeleteBudgetInput {
 
 /// See [`DeleteBudgetActionInput`](crate::input::DeleteBudgetActionInput).
 pub mod delete_budget_action_input {
-
+    
     /// A builder for [`DeleteBudgetActionInput`](crate::input::DeleteBudgetActionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1097,8 +801,7 @@ pub mod delete_budget_action_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1107,8 +810,7 @@ pub mod delete_budget_action_input {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1117,147 +819,97 @@ pub mod delete_budget_action_input {
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBudgetActionInput`](crate::input::DeleteBudgetActionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteBudgetActionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteBudgetActionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteBudgetActionInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    action_id: self.action_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBudgetAction`](crate::operation::DeleteBudgetAction)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteBudgetAction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteBudgetAction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteBudgetActionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteBudgetActionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteBudgetActionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteBudgetActionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DeleteBudgetAction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DeleteBudgetAction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_budget_action(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_budget_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteBudgetAction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteBudgetAction",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteBudgetAction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteBudgetAction", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1269,7 +921,7 @@ impl DeleteBudgetActionInput {
 
 /// See [`DeleteNotificationInput`](crate::input::DeleteNotificationInput).
 pub mod delete_notification_input {
-
+    
     /// A builder for [`DeleteNotificationInput`](crate::input::DeleteNotificationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1285,8 +937,7 @@ pub mod delete_notification_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget whose notification you want to delete.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1295,8 +946,7 @@ pub mod delete_notification_input {
         }
         /// <p>The name of the budget whose notification you want to delete.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>The notification that you want to delete.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -1304,151 +954,98 @@ pub mod delete_notification_input {
             self
         }
         /// <p>The notification that you want to delete.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// Consumes the builder and constructs a [`DeleteNotificationInput`](crate::input::DeleteNotificationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteNotificationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteNotificationInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteNotificationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteNotificationInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    notification: self.notification
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteNotificationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNotification`](crate::operation::DeleteNotification)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteNotification,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteNotification, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteNotificationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteNotificationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteNotificationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteNotificationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DeleteNotification",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DeleteNotification"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_notification(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_notification(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteNotification::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteNotification",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteNotification::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteNotification", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1460,7 +1057,7 @@ impl DeleteNotificationInput {
 
 /// See [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput).
 pub mod delete_subscriber_input {
-
+    
     /// A builder for [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1477,8 +1074,7 @@ pub mod delete_subscriber_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget whose subscriber you want to delete.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1487,8 +1083,7 @@ pub mod delete_subscriber_input {
         }
         /// <p>The name of the budget whose subscriber you want to delete.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>The notification whose subscriber you want to delete.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -1496,12 +1091,8 @@ pub mod delete_subscriber_input {
             self
         }
         /// <p>The notification whose subscriber you want to delete.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The subscriber that you want to delete.</p>
         pub fn subscriber(mut self, input: crate::model::Subscriber) -> Self {
@@ -1509,152 +1100,100 @@ pub mod delete_subscriber_input {
             self
         }
         /// <p>The subscriber that you want to delete.</p>
-        pub fn set_subscriber(
-            mut self,
-            input: std::option::Option<crate::model::Subscriber>,
-        ) -> Self {
-            self.subscriber = input;
-            self
+        pub fn set_subscriber(mut self, input: std::option::Option<crate::model::Subscriber>) -> Self {
+            self.subscriber = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteSubscriberInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteSubscriberInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-                subscriber: self.subscriber,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteSubscriberInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteSubscriberInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    notification: self.notification
+                    ,
+                    subscriber: self.subscriber
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSubscriber`](crate::operation::DeleteSubscriber)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteSubscriber,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteSubscriber, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteSubscriberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteSubscriberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteSubscriberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteSubscriberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DeleteSubscriber",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DeleteSubscriber"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_subscriber(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_subscriber(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteSubscriber::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteSubscriber",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteSubscriber::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteSubscriber", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1666,7 +1205,7 @@ impl DeleteSubscriberInput {
 
 /// See [`DescribeBudgetInput`](crate::input::DescribeBudgetInput).
 pub mod describe_budget_input {
-
+    
     /// A builder for [`DescribeBudgetInput`](crate::input::DescribeBudgetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1681,8 +1220,7 @@ pub mod describe_budget_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget that you want a description of.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1691,144 +1229,95 @@ pub mod describe_budget_input {
         }
         /// <p>The name of the budget that you want a description of.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetInput`](crate::input::DescribeBudgetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeBudgetInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeBudgetInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBudgetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeBudgetInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudget`](crate::operation::DescribeBudget)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBudget,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBudget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBudgetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBudgetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeBudgetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeBudgetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeBudget",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeBudget"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBudget::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBudget",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBudget::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBudget", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1840,7 +1329,7 @@ impl DescribeBudgetInput {
 
 /// See [`DescribeBudgetActionInput`](crate::input::DescribeBudgetActionInput).
 pub mod describe_budget_action_input {
-
+    
     /// A builder for [`DescribeBudgetActionInput`](crate::input::DescribeBudgetActionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1856,8 +1345,7 @@ pub mod describe_budget_action_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1866,8 +1354,7 @@ pub mod describe_budget_action_input {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1876,149 +1363,97 @@ pub mod describe_budget_action_input {
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetActionInput`](crate::input::DescribeBudgetActionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeBudgetActionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBudgetActionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeBudgetActionInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    action_id: self.action_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetAction`](crate::operation::DescribeBudgetAction)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBudgetAction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBudgetAction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBudgetActionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBudgetActionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeBudgetActionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeBudgetActionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeBudgetAction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeBudgetAction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_action(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBudgetAction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBudgetAction",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBudgetAction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBudgetAction", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2030,7 +1465,7 @@ impl DescribeBudgetActionInput {
 
 /// See [`DescribeBudgetActionHistoriesInput`](crate::input::DescribeBudgetActionHistoriesInput).
 pub mod describe_budget_action_histories_input {
-
+    
     /// A builder for [`DescribeBudgetActionHistoriesInput`](crate::input::DescribeBudgetActionHistoriesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2049,8 +1484,7 @@ pub mod describe_budget_action_histories_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2059,8 +1493,7 @@ pub mod describe_budget_action_histories_input {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2069,8 +1502,7 @@ pub mod describe_budget_action_histories_input {
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
         pub fn time_period(mut self, input: crate::model::TimePeriod) -> Self {
@@ -2078,12 +1510,8 @@ pub mod describe_budget_action_histories_input {
             self
         }
         /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::TimePeriod>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::TimePeriod>) -> Self {
+            self.time_period = input; self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2092,8 +1520,7 @@ pub mod describe_budget_action_histories_input {
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2102,92 +1529,68 @@ pub mod describe_budget_action_histories_input {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesInput`](crate::input::DescribeBudgetActionHistoriesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeBudgetActionHistoriesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeBudgetActionHistoriesInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-                time_period: self.time_period,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBudgetActionHistoriesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeBudgetActionHistoriesInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    action_id: self.action_id
+                    ,
+                    time_period: self.time_period
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBudgetActionHistoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionHistories`](crate::operation::DescribeBudgetActionHistories)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBudgetActionHistories,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBudgetActionHistories, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBudgetActionHistoriesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBudgetActionHistoriesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeBudgetActionHistoriesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeBudgetActionHistoriesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeBudgetActionHistories",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeBudgetActionHistories"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2196,56 +1599,33 @@ impl DescribeBudgetActionHistoriesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_action_histories(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBudgetActionHistories::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBudgetActionHistories",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBudgetActionHistories::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBudgetActionHistories", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2257,7 +1637,7 @@ impl DescribeBudgetActionHistoriesInput {
 
 /// See [`DescribeBudgetActionsForAccountInput`](crate::input::DescribeBudgetActionsForAccountInput).
 pub mod describe_budget_actions_for_account_input {
-
+    
     /// A builder for [`DescribeBudgetActionsForAccountInput`](crate::input::DescribeBudgetActionsForAccountInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2273,8 +1653,7 @@ pub mod describe_budget_actions_for_account_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2283,8 +1662,7 @@ pub mod describe_budget_actions_for_account_input {
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2293,89 +1671,62 @@ pub mod describe_budget_actions_for_account_input {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetActionsForAccountInput`](crate::input::DescribeBudgetActionsForAccountInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeBudgetActionsForAccountInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeBudgetActionsForAccountInput {
-                account_id: self.account_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBudgetActionsForAccountInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeBudgetActionsForAccountInput {
+                    account_id: self.account_id
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBudgetActionsForAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionsForAccount`](crate::operation::DescribeBudgetActionsForAccount)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBudgetActionsForAccount,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBudgetActionsForAccount, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBudgetActionsForAccountInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBudgetActionsForAccountInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeBudgetActionsForAccountInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeBudgetActionsForAccountInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeBudgetActionsForAccount",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeBudgetActionsForAccount"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2384,56 +1735,33 @@ impl DescribeBudgetActionsForAccountInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBudgetActionsForAccount::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBudgetActionsForAccount",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBudgetActionsForAccount::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBudgetActionsForAccount", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2445,7 +1773,7 @@ impl DescribeBudgetActionsForAccountInput {
 
 /// See [`DescribeBudgetActionsForBudgetInput`](crate::input::DescribeBudgetActionsForBudgetInput).
 pub mod describe_budget_actions_for_budget_input {
-
+    
     /// A builder for [`DescribeBudgetActionsForBudgetInput`](crate::input::DescribeBudgetActionsForBudgetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2462,8 +1790,7 @@ pub mod describe_budget_actions_for_budget_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2472,8 +1799,7 @@ pub mod describe_budget_actions_for_budget_input {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2482,8 +1808,7 @@ pub mod describe_budget_actions_for_budget_input {
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2492,90 +1817,64 @@ pub mod describe_budget_actions_for_budget_input {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetActionsForBudgetInput`](crate::input::DescribeBudgetActionsForBudgetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeBudgetActionsForBudgetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeBudgetActionsForBudgetInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBudgetActionsForBudgetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeBudgetActionsForBudgetInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBudgetActionsForBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionsForBudget`](crate::operation::DescribeBudgetActionsForBudget)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBudgetActionsForBudget,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBudgetActionsForBudget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBudgetActionsForBudgetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBudgetActionsForBudgetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeBudgetActionsForBudgetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeBudgetActionsForBudgetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeBudgetActionsForBudget",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeBudgetActionsForBudget"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2584,56 +1883,33 @@ impl DescribeBudgetActionsForBudgetInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_budget(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBudgetActionsForBudget::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBudgetActionsForBudget",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBudgetActionsForBudget::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBudgetActionsForBudget", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2645,7 +1921,7 @@ impl DescribeBudgetActionsForBudgetInput {
 
 /// See [`DescribeBudgetNotificationsForAccountInput`](crate::input::DescribeBudgetNotificationsForAccountInput).
 pub mod describe_budget_notifications_for_account_input {
-
+    
     /// A builder for [`DescribeBudgetNotificationsForAccountInput`](crate::input::DescribeBudgetNotificationsForAccountInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2661,8 +1937,7 @@ pub mod describe_budget_notifications_for_account_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2671,8 +1946,7 @@ pub mod describe_budget_notifications_for_account_input {
         }
         /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2681,89 +1955,62 @@ pub mod describe_budget_notifications_for_account_input {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountInput`](crate::input::DescribeBudgetNotificationsForAccountInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeBudgetNotificationsForAccountInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeBudgetNotificationsForAccountInput {
-                account_id: self.account_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBudgetNotificationsForAccountInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeBudgetNotificationsForAccountInput {
+                    account_id: self.account_id
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBudgetNotificationsForAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetNotificationsForAccount`](crate::operation::DescribeBudgetNotificationsForAccount)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBudgetNotificationsForAccount,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBudgetNotificationsForAccount, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBudgetNotificationsForAccountInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBudgetNotificationsForAccountInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeBudgetNotificationsForAccountInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeBudgetNotificationsForAccountInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeBudgetNotificationsForAccount",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeBudgetNotificationsForAccount"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2772,56 +2019,33 @@ impl DescribeBudgetNotificationsForAccountInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_notifications_for_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBudgetNotificationsForAccount::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBudgetNotificationsForAccount",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBudgetNotificationsForAccount::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBudgetNotificationsForAccount", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2833,7 +2057,7 @@ impl DescribeBudgetNotificationsForAccountInput {
 
 /// See [`DescribeBudgetPerformanceHistoryInput`](crate::input::DescribeBudgetPerformanceHistoryInput).
 pub mod describe_budget_performance_history_input {
-
+    
     /// A builder for [`DescribeBudgetPerformanceHistoryInput`](crate::input::DescribeBudgetPerformanceHistoryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2851,8 +2075,7 @@ pub mod describe_budget_performance_history_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2861,8 +2084,7 @@ pub mod describe_budget_performance_history_input {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
         pub fn time_period(mut self, input: crate::model::TimePeriod) -> Self {
@@ -2870,12 +2092,8 @@ pub mod describe_budget_performance_history_input {
             self
         }
         /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::TimePeriod>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::TimePeriod>) -> Self {
+            self.time_period = input; self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2884,8 +2102,7 @@ pub mod describe_budget_performance_history_input {
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2894,91 +2111,66 @@ pub mod describe_budget_performance_history_input {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetPerformanceHistoryInput`](crate::input::DescribeBudgetPerformanceHistoryInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeBudgetPerformanceHistoryInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeBudgetPerformanceHistoryInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                time_period: self.time_period,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBudgetPerformanceHistoryInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeBudgetPerformanceHistoryInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    time_period: self.time_period
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBudgetPerformanceHistoryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetPerformanceHistory`](crate::operation::DescribeBudgetPerformanceHistory)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBudgetPerformanceHistory,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBudgetPerformanceHistory, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBudgetPerformanceHistoryInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBudgetPerformanceHistoryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeBudgetPerformanceHistoryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeBudgetPerformanceHistoryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeBudgetPerformanceHistory",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeBudgetPerformanceHistory"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2987,56 +2179,33 @@ impl DescribeBudgetPerformanceHistoryInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_performance_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBudgetPerformanceHistory::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBudgetPerformanceHistory",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBudgetPerformanceHistory::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBudgetPerformanceHistory", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3048,7 +2217,7 @@ impl DescribeBudgetPerformanceHistoryInput {
 
 /// See [`DescribeBudgetsInput`](crate::input::DescribeBudgetsInput).
 pub mod describe_budgets_input {
-
+    
     /// A builder for [`DescribeBudgetsInput`](crate::input::DescribeBudgetsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3064,8 +2233,7 @@ pub mod describe_budgets_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3074,8 +2242,7 @@ pub mod describe_budgets_input {
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3084,145 +2251,97 @@ pub mod describe_budgets_input {
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetsInput`](crate::input::DescribeBudgetsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeBudgetsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeBudgetsInput {
-                account_id: self.account_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeBudgetsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeBudgetsInput {
+                    account_id: self.account_id
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeBudgetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgets`](crate::operation::DescribeBudgets)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeBudgets,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeBudgets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeBudgetsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeBudgetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeBudgetsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeBudgetsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeBudgets",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeBudgets"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_budgets(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_budgets(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeBudgets::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeBudgets",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeBudgets::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeBudgets", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3234,7 +2353,7 @@ impl DescribeBudgetsInput {
 
 /// See [`DescribeNotificationsForBudgetInput`](crate::input::DescribeNotificationsForBudgetInput).
 pub mod describe_notifications_for_budget_input {
-
+    
     /// A builder for [`DescribeNotificationsForBudgetInput`](crate::input::DescribeNotificationsForBudgetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3251,8 +2370,7 @@ pub mod describe_notifications_for_budget_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget whose notifications you want descriptions of.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3261,8 +2379,7 @@ pub mod describe_notifications_for_budget_input {
         }
         /// <p>The name of the budget whose notifications you want descriptions of.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3271,8 +2388,7 @@ pub mod describe_notifications_for_budget_input {
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3281,90 +2397,64 @@ pub mod describe_notifications_for_budget_input {
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNotificationsForBudgetInput`](crate::input::DescribeNotificationsForBudgetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeNotificationsForBudgetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeNotificationsForBudgetInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeNotificationsForBudgetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeNotificationsForBudgetInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeNotificationsForBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotificationsForBudget`](crate::operation::DescribeNotificationsForBudget)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeNotificationsForBudget,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeNotificationsForBudget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeNotificationsForBudgetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeNotificationsForBudgetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeNotificationsForBudgetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeNotificationsForBudgetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeNotificationsForBudget",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeNotificationsForBudget"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3373,56 +2463,33 @@ impl DescribeNotificationsForBudgetInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_notifications_for_budget(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeNotificationsForBudget::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeNotificationsForBudget",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeNotificationsForBudget::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeNotificationsForBudget", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3434,7 +2501,7 @@ impl DescribeNotificationsForBudgetInput {
 
 /// See [`DescribeSubscribersForNotificationInput`](crate::input::DescribeSubscribersForNotificationInput).
 pub mod describe_subscribers_for_notification_input {
-
+    
     /// A builder for [`DescribeSubscribersForNotificationInput`](crate::input::DescribeSubscribersForNotificationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3452,8 +2519,7 @@ pub mod describe_subscribers_for_notification_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget whose subscribers you want descriptions of.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3462,8 +2528,7 @@ pub mod describe_subscribers_for_notification_input {
         }
         /// <p>The name of the budget whose subscribers you want descriptions of.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>The notification whose subscribers you want to list.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -3471,12 +2536,8 @@ pub mod describe_subscribers_for_notification_input {
             self
         }
         /// <p>The notification whose subscribers you want to list.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3485,8 +2546,7 @@ pub mod describe_subscribers_for_notification_input {
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3495,91 +2555,66 @@ pub mod describe_subscribers_for_notification_input {
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationInput`](crate::input::DescribeSubscribersForNotificationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeSubscribersForNotificationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeSubscribersForNotificationInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeSubscribersForNotificationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeSubscribersForNotificationInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    notification: self.notification
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeSubscribersForNotificationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSubscribersForNotification`](crate::operation::DescribeSubscribersForNotification)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeSubscribersForNotification,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeSubscribersForNotification, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeSubscribersForNotificationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeSubscribersForNotificationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeSubscribersForNotificationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeSubscribersForNotificationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.DescribeSubscribersForNotification",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.DescribeSubscribersForNotification"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3588,56 +2623,33 @@ impl DescribeSubscribersForNotificationInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_subscribers_for_notification(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeSubscribersForNotification::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeSubscribersForNotification",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeSubscribersForNotification::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeSubscribersForNotification", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3649,7 +2661,7 @@ impl DescribeSubscribersForNotificationInput {
 
 /// See [`ExecuteBudgetActionInput`](crate::input::ExecuteBudgetActionInput).
 pub mod execute_budget_action_input {
-
+    
     /// A builder for [`ExecuteBudgetActionInput`](crate::input::ExecuteBudgetActionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3666,8 +2678,7 @@ pub mod execute_budget_action_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3676,8 +2687,7 @@ pub mod execute_budget_action_input {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3686,8 +2696,7 @@ pub mod execute_budget_action_input {
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p> The type of execution. </p>
         pub fn execution_type(mut self, input: crate::model::ExecutionType) -> Self {
@@ -3695,152 +2704,100 @@ pub mod execute_budget_action_input {
             self
         }
         /// <p> The type of execution. </p>
-        pub fn set_execution_type(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionType>,
-        ) -> Self {
-            self.execution_type = input;
-            self
+        pub fn set_execution_type(mut self, input: std::option::Option<crate::model::ExecutionType>) -> Self {
+            self.execution_type = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteBudgetActionInput`](crate::input::ExecuteBudgetActionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ExecuteBudgetActionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ExecuteBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-                execution_type: self.execution_type,
-            })
+        pub fn build(self) -> Result<crate::input::ExecuteBudgetActionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ExecuteBudgetActionInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    action_id: self.action_id
+                    ,
+                    execution_type: self.execution_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ExecuteBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteBudgetAction`](crate::operation::ExecuteBudgetAction)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ExecuteBudgetAction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ExecuteBudgetAction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ExecuteBudgetActionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ExecuteBudgetActionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ExecuteBudgetActionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ExecuteBudgetActionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.ExecuteBudgetAction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.ExecuteBudgetAction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_execute_budget_action(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_execute_budget_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ExecuteBudgetAction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ExecuteBudgetAction",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ExecuteBudgetAction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ExecuteBudgetAction", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3852,7 +2809,7 @@ impl ExecuteBudgetActionInput {
 
 /// See [`UpdateBudgetInput`](crate::input::UpdateBudgetInput).
 pub mod update_budget_input {
-
+    
     /// A builder for [`UpdateBudgetInput`](crate::input::UpdateBudgetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3867,8 +2824,7 @@ pub mod update_budget_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The budget that you want to update your budget to.</p>
         pub fn new_budget(mut self, input: crate::model::Budget) -> Self {
@@ -3877,144 +2833,95 @@ pub mod update_budget_input {
         }
         /// <p>The budget that you want to update your budget to.</p>
         pub fn set_new_budget(mut self, input: std::option::Option<crate::model::Budget>) -> Self {
-            self.new_budget = input;
-            self
+            self.new_budget = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBudgetInput`](crate::input::UpdateBudgetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateBudgetInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateBudgetInput {
-                account_id: self.account_id,
-                new_budget: self.new_budget,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateBudgetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateBudgetInput {
+                    account_id: self.account_id
+                    ,
+                    new_budget: self.new_budget
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateBudgetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBudget`](crate::operation::UpdateBudget)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateBudget,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateBudget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateBudgetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateBudgetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateBudgetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateBudgetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.UpdateBudget",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.UpdateBudget"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_budget(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_budget(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateBudget::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateBudget",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateBudget::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateBudget", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4026,7 +2933,7 @@ impl UpdateBudgetInput {
 
 /// See [`UpdateBudgetActionInput`](crate::input::UpdateBudgetActionInput).
 pub mod update_budget_action_input {
-
+    
     /// A builder for [`UpdateBudgetActionInput`](crate::input::UpdateBudgetActionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4048,8 +2955,7 @@ pub mod update_budget_action_input {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4058,8 +2964,7 @@ pub mod update_budget_action_input {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4068,8 +2973,7 @@ pub mod update_budget_action_input {
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
         pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
@@ -4077,12 +2981,8 @@ pub mod update_budget_action_input {
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-        pub fn set_notification_type(
-            mut self,
-            input: std::option::Option<crate::model::NotificationType>,
-        ) -> Self {
-            self.notification_type = input;
-            self
+        pub fn set_notification_type(mut self, input: std::option::Option<crate::model::NotificationType>) -> Self {
+            self.notification_type = input; self
         }
         /// <p>The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
@@ -4090,12 +2990,8 @@ pub mod update_budget_action_input {
             self
         }
         /// <p>The trigger threshold of the action. </p>
-        pub fn set_action_threshold(
-            mut self,
-            input: std::option::Option<crate::model::ActionThreshold>,
-        ) -> Self {
-            self.action_threshold = input;
-            self
+        pub fn set_action_threshold(mut self, input: std::option::Option<crate::model::ActionThreshold>) -> Self {
+            self.action_threshold = input; self
         }
         /// <p>Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
@@ -4103,12 +2999,8 @@ pub mod update_budget_action_input {
             self
         }
         /// <p>Specifies all of the type-specific parameters. </p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::Definition>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::Definition>) -> Self {
+            self.definition = input; self
         }
         /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4116,12 +3008,8 @@ pub mod update_budget_action_input {
             self
         }
         /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
@@ -4129,12 +3017,8 @@ pub mod update_budget_action_input {
             self
         }
         /// <p> This specifies if the action needs manual or automatic approval. </p>
-        pub fn set_approval_model(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalModel>,
-        ) -> Self {
-            self.approval_model = input;
-            self
+        pub fn set_approval_model(mut self, input: std::option::Option<crate::model::ApprovalModel>) -> Self {
+            self.approval_model = input; self
         }
         /// Appends an item to `subscribers`.
         ///
@@ -4143,162 +3027,115 @@ pub mod update_budget_action_input {
         /// <p> A list of subscribers.</p>
         pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input);
-            self.subscribers = Some(v);
-            self
+                            v.push(input);
+                            self.subscribers = Some(v);
+                            self
         }
         /// <p> A list of subscribers.</p>
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
+        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>) -> Self {
+            self.subscribers = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBudgetActionInput`](crate::input::UpdateBudgetActionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateBudgetActionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-                notification_type: self.notification_type,
-                action_threshold: self.action_threshold,
-                definition: self.definition,
-                execution_role_arn: self.execution_role_arn,
-                approval_model: self.approval_model,
-                subscribers: self.subscribers,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateBudgetActionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateBudgetActionInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    action_id: self.action_id
+                    ,
+                    notification_type: self.notification_type
+                    ,
+                    action_threshold: self.action_threshold
+                    ,
+                    definition: self.definition
+                    ,
+                    execution_role_arn: self.execution_role_arn
+                    ,
+                    approval_model: self.approval_model
+                    ,
+                    subscribers: self.subscribers
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBudgetAction`](crate::operation::UpdateBudgetAction)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateBudgetAction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateBudgetAction, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateBudgetActionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateBudgetActionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateBudgetActionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateBudgetActionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.UpdateBudgetAction",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.UpdateBudgetAction"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_budget_action(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_budget_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateBudgetAction::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateBudgetAction",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateBudgetAction::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateBudgetAction", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4310,7 +3147,7 @@ impl UpdateBudgetActionInput {
 
 /// See [`UpdateNotificationInput`](crate::input::UpdateNotificationInput).
 pub mod update_notification_input {
-
+    
     /// A builder for [`UpdateNotificationInput`](crate::input::UpdateNotificationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4327,8 +3164,7 @@ pub mod update_notification_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget whose notification you want to update.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4337,8 +3173,7 @@ pub mod update_notification_input {
         }
         /// <p>The name of the budget whose notification you want to update.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>The previous notification that is associated with a budget.</p>
         pub fn old_notification(mut self, input: crate::model::Notification) -> Self {
@@ -4346,12 +3181,8 @@ pub mod update_notification_input {
             self
         }
         /// <p>The previous notification that is associated with a budget.</p>
-        pub fn set_old_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.old_notification = input;
-            self
+        pub fn set_old_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.old_notification = input; self
         }
         /// <p>The updated notification to be associated with a budget.</p>
         pub fn new_notification(mut self, input: crate::model::Notification) -> Self {
@@ -4359,152 +3190,100 @@ pub mod update_notification_input {
             self
         }
         /// <p>The updated notification to be associated with a budget.</p>
-        pub fn set_new_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.new_notification = input;
-            self
+        pub fn set_new_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.new_notification = input; self
         }
         /// Consumes the builder and constructs a [`UpdateNotificationInput`](crate::input::UpdateNotificationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateNotificationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateNotificationInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                old_notification: self.old_notification,
-                new_notification: self.new_notification,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateNotificationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateNotificationInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    old_notification: self.old_notification
+                    ,
+                    new_notification: self.new_notification
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateNotificationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNotification`](crate::operation::UpdateNotification)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateNotification,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateNotification, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateNotificationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateNotificationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateNotificationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateNotificationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.UpdateNotification",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.UpdateNotification"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_notification(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_notification(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateNotification::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateNotification",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateNotification::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateNotification", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4516,7 +3295,7 @@ impl UpdateNotificationInput {
 
 /// See [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput).
 pub mod update_subscriber_input {
-
+    
     /// A builder for [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4534,8 +3313,7 @@ pub mod update_subscriber_input {
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of the budget whose subscriber you want to update.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4544,8 +3322,7 @@ pub mod update_subscriber_input {
         }
         /// <p>The name of the budget whose subscriber you want to update.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>The notification whose subscriber you want to update.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -4553,12 +3330,8 @@ pub mod update_subscriber_input {
             self
         }
         /// <p>The notification whose subscriber you want to update.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The previous subscriber that is associated with a budget notification.</p>
         pub fn old_subscriber(mut self, input: crate::model::Subscriber) -> Self {
@@ -4566,12 +3339,8 @@ pub mod update_subscriber_input {
             self
         }
         /// <p>The previous subscriber that is associated with a budget notification.</p>
-        pub fn set_old_subscriber(
-            mut self,
-            input: std::option::Option<crate::model::Subscriber>,
-        ) -> Self {
-            self.old_subscriber = input;
-            self
+        pub fn set_old_subscriber(mut self, input: std::option::Option<crate::model::Subscriber>) -> Self {
+            self.old_subscriber = input; self
         }
         /// <p>The updated subscriber that is associated with a budget notification.</p>
         pub fn new_subscriber(mut self, input: crate::model::Subscriber) -> Self {
@@ -4579,153 +3348,102 @@ pub mod update_subscriber_input {
             self
         }
         /// <p>The updated subscriber that is associated with a budget notification.</p>
-        pub fn set_new_subscriber(
-            mut self,
-            input: std::option::Option<crate::model::Subscriber>,
-        ) -> Self {
-            self.new_subscriber = input;
-            self
+        pub fn set_new_subscriber(mut self, input: std::option::Option<crate::model::Subscriber>) -> Self {
+            self.new_subscriber = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateSubscriberInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateSubscriberInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-                old_subscriber: self.old_subscriber,
-                new_subscriber: self.new_subscriber,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateSubscriberInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateSubscriberInput {
+                    account_id: self.account_id
+                    ,
+                    budget_name: self.budget_name
+                    ,
+                    notification: self.notification
+                    ,
+                    old_subscriber: self.old_subscriber
+                    ,
+                    new_subscriber: self.new_subscriber
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSubscriber`](crate::operation::UpdateSubscriber)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateSubscriber,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateSubscriber, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateSubscriberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateSubscriberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateSubscriberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateSubscriberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSBudgetServiceGateway.UpdateSubscriber",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSBudgetServiceGateway.UpdateSubscriber"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_subscriber(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_subscriber(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateSubscriber::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateSubscriber",
-            "budgets",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateSubscriber::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateSubscriber", "budgets"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4738,7 +3456,7 @@ impl UpdateSubscriberInput {
 /// <p> Request of UpdateSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriberInput {
+pub struct UpdateSubscriberInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -4757,23 +3475,23 @@ pub struct UpdateSubscriberInput {
 }
 impl UpdateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose subscriber you want to update.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification whose subscriber you want to update.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>The previous subscriber that is associated with a budget notification.</p>
-    pub fn old_subscriber(&self) -> std::option::Option<&crate::model::Subscriber> {
+    pub fn old_subscriber(&self) -> std::option::Option<& crate::model::Subscriber> {
         self.old_subscriber.as_ref()
     }
     /// <p>The updated subscriber that is associated with a budget notification.</p>
-    pub fn new_subscriber(&self) -> std::option::Option<&crate::model::Subscriber> {
+    pub fn new_subscriber(&self) -> std::option::Option<& crate::model::Subscriber> {
         self.new_subscriber.as_ref()
     }
 }
@@ -4781,7 +3499,7 @@ impl UpdateSubscriberInput {
 /// <p> Request of UpdateNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationInput {
+pub struct UpdateNotificationInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -4797,19 +3515,19 @@ pub struct UpdateNotificationInput {
 }
 impl UpdateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose notification you want to update.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The previous notification that is associated with a budget.</p>
-    pub fn old_notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn old_notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.old_notification.as_ref()
     }
     /// <p>The updated notification to be associated with a budget.</p>
-    pub fn new_notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn new_notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.new_notification.as_ref()
     }
 }
@@ -4817,7 +3535,7 @@ impl UpdateNotificationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBudgetActionInput {
+pub struct UpdateBudgetActionInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -4848,39 +3566,39 @@ pub struct UpdateBudgetActionInput {
 }
 impl UpdateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
+    pub fn notification_type(&self) -> std::option::Option<& crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
     /// <p>The trigger threshold of the action. </p>
-    pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
+    pub fn action_threshold(&self) -> std::option::Option<& crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
     /// <p>Specifies all of the type-specific parameters. </p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::Definition> {
         self.definition.as_ref()
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
-    pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
+    pub fn approval_model(&self) -> std::option::Option<& crate::model::ApprovalModel> {
         self.approval_model.as_ref()
     }
     /// <p> A list of subscribers.</p>
-    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+    pub fn subscribers(&self) -> std::option::Option<& [crate::model::Subscriber]> {
         self.subscribers.as_deref()
     }
 }
@@ -4888,7 +3606,7 @@ impl UpdateBudgetActionInput {
 /// <p> Request of UpdateBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBudgetInput {
+pub struct UpdateBudgetInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -4898,11 +3616,11 @@ pub struct UpdateBudgetInput {
 }
 impl UpdateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The budget that you want to update your budget to.</p>
-    pub fn new_budget(&self) -> std::option::Option<&crate::model::Budget> {
+    pub fn new_budget(&self) -> std::option::Option<& crate::model::Budget> {
         self.new_budget.as_ref()
     }
 }
@@ -4910,7 +3628,7 @@ impl UpdateBudgetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteBudgetActionInput {
+pub struct ExecuteBudgetActionInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -4926,19 +3644,19 @@ pub struct ExecuteBudgetActionInput {
 }
 impl ExecuteBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p> The type of execution. </p>
-    pub fn execution_type(&self) -> std::option::Option<&crate::model::ExecutionType> {
+    pub fn execution_type(&self) -> std::option::Option<& crate::model::ExecutionType> {
         self.execution_type.as_ref()
     }
 }
@@ -4946,7 +3664,7 @@ impl ExecuteBudgetActionInput {
 /// <p> Request of DescribeSubscribersForNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSubscribersForNotificationInput {
+pub struct DescribeSubscribersForNotificationInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -4965,15 +3683,15 @@ pub struct DescribeSubscribersForNotificationInput {
 }
 impl DescribeSubscribersForNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification whose subscribers you want to list.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -4981,7 +3699,7 @@ impl DescribeSubscribersForNotificationInput {
         self.max_results
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -4989,7 +3707,7 @@ impl DescribeSubscribersForNotificationInput {
 /// <p> Request of DescribeNotificationsForBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNotificationsForBudgetInput {
+pub struct DescribeNotificationsForBudgetInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5005,11 +3723,11 @@ pub struct DescribeNotificationsForBudgetInput {
 }
 impl DescribeNotificationsForBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose notifications you want descriptions of.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -5017,7 +3735,7 @@ impl DescribeNotificationsForBudgetInput {
         self.max_results
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5025,7 +3743,7 @@ impl DescribeNotificationsForBudgetInput {
 /// <p> Request of DescribeBudgets </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetsInput {
+pub struct DescribeBudgetsInput  {
     /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5038,7 +3756,7 @@ pub struct DescribeBudgetsInput {
 }
 impl DescribeBudgetsInput {
     /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -5046,7 +3764,7 @@ impl DescribeBudgetsInput {
         self.max_results
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5054,7 +3772,7 @@ impl DescribeBudgetsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetPerformanceHistoryInput {
+pub struct DescribeBudgetPerformanceHistoryInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5073,15 +3791,15 @@ pub struct DescribeBudgetPerformanceHistoryInput {
 }
 impl DescribeBudgetPerformanceHistoryInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::TimePeriod> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::TimePeriod> {
         self.time_period.as_ref()
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -5089,7 +3807,7 @@ impl DescribeBudgetPerformanceHistoryInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5097,7 +3815,7 @@ impl DescribeBudgetPerformanceHistoryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetNotificationsForAccountInput {
+pub struct DescribeBudgetNotificationsForAccountInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5110,7 +3828,7 @@ pub struct DescribeBudgetNotificationsForAccountInput {
 }
 impl DescribeBudgetNotificationsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
@@ -5118,7 +3836,7 @@ impl DescribeBudgetNotificationsForAccountInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5126,7 +3844,7 @@ impl DescribeBudgetNotificationsForAccountInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionsForBudgetInput {
+pub struct DescribeBudgetActionsForBudgetInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5142,11 +3860,11 @@ pub struct DescribeBudgetActionsForBudgetInput {
 }
 impl DescribeBudgetActionsForBudgetInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -5154,7 +3872,7 @@ impl DescribeBudgetActionsForBudgetInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5162,7 +3880,7 @@ impl DescribeBudgetActionsForBudgetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionsForAccountInput {
+pub struct DescribeBudgetActionsForAccountInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5175,7 +3893,7 @@ pub struct DescribeBudgetActionsForAccountInput {
 }
 impl DescribeBudgetActionsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -5183,7 +3901,7 @@ impl DescribeBudgetActionsForAccountInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5191,7 +3909,7 @@ impl DescribeBudgetActionsForAccountInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionHistoriesInput {
+pub struct DescribeBudgetActionHistoriesInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5213,19 +3931,19 @@ pub struct DescribeBudgetActionHistoriesInput {
 }
 impl DescribeBudgetActionHistoriesInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::TimePeriod> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::TimePeriod> {
         self.time_period.as_ref()
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -5233,7 +3951,7 @@ impl DescribeBudgetActionHistoriesInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5241,7 +3959,7 @@ impl DescribeBudgetActionHistoriesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionInput {
+pub struct DescribeBudgetActionInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5254,15 +3972,15 @@ pub struct DescribeBudgetActionInput {
 }
 impl DescribeBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
 }
@@ -5270,7 +3988,7 @@ impl DescribeBudgetActionInput {
 /// <p> Request of DescribeBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetInput {
+pub struct DescribeBudgetInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5280,11 +3998,11 @@ pub struct DescribeBudgetInput {
 }
 impl DescribeBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget that you want a description of.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
 }
@@ -5292,7 +4010,7 @@ impl DescribeBudgetInput {
 /// <p> Request of DeleteSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriberInput {
+pub struct DeleteSubscriberInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5308,19 +4026,19 @@ pub struct DeleteSubscriberInput {
 }
 impl DeleteSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose subscriber you want to delete.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification whose subscriber you want to delete.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>The subscriber that you want to delete.</p>
-    pub fn subscriber(&self) -> std::option::Option<&crate::model::Subscriber> {
+    pub fn subscriber(&self) -> std::option::Option<& crate::model::Subscriber> {
         self.subscriber.as_ref()
     }
 }
@@ -5328,7 +4046,7 @@ impl DeleteSubscriberInput {
 /// <p> Request of DeleteNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotificationInput {
+pub struct DeleteNotificationInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5341,15 +4059,15 @@ pub struct DeleteNotificationInput {
 }
 impl DeleteNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose notification you want to delete.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification that you want to delete.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
 }
@@ -5357,7 +4075,7 @@ impl DeleteNotificationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBudgetActionInput {
+pub struct DeleteBudgetActionInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5370,15 +4088,15 @@ pub struct DeleteBudgetActionInput {
 }
 impl DeleteBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
 }
@@ -5386,7 +4104,7 @@ impl DeleteBudgetActionInput {
 /// <p> Request of DeleteBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBudgetInput {
+pub struct DeleteBudgetInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5396,11 +4114,11 @@ pub struct DeleteBudgetInput {
 }
 impl DeleteBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget that you want to delete.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
 }
@@ -5408,7 +4126,7 @@ impl DeleteBudgetInput {
 /// <p> Request of CreateSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriberInput {
+pub struct CreateSubscriberInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5424,19 +4142,19 @@ pub struct CreateSubscriberInput {
 }
 impl CreateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification that you want to create a subscriber for.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>The subscriber that you want to associate with a budget notification.</p>
-    pub fn subscriber(&self) -> std::option::Option<&crate::model::Subscriber> {
+    pub fn subscriber(&self) -> std::option::Option<& crate::model::Subscriber> {
         self.subscriber.as_ref()
     }
 }
@@ -5444,7 +4162,7 @@ impl CreateSubscriberInput {
 /// <p> Request of CreateNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNotificationInput {
+pub struct CreateNotificationInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5460,19 +4178,19 @@ pub struct CreateNotificationInput {
 }
 impl CreateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification that you want to create.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+    pub fn subscribers(&self) -> std::option::Option<& [crate::model::Subscriber]> {
         self.subscribers.as_deref()
     }
 }
@@ -5480,7 +4198,7 @@ impl CreateNotificationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBudgetActionInput {
+pub struct CreateBudgetActionInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5511,39 +4229,39 @@ pub struct CreateBudgetActionInput {
 }
 impl CreateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
+    pub fn notification_type(&self) -> std::option::Option<& crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
-    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::model::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>The trigger threshold of the action. </p>
-    pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
+    pub fn action_threshold(&self) -> std::option::Option<& crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
     /// <p>Specifies all of the type-specific parameters. </p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::Definition> {
         self.definition.as_ref()
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
-    pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
+    pub fn approval_model(&self) -> std::option::Option<& crate::model::ApprovalModel> {
         self.approval_model.as_ref()
     }
     /// <p> A list of subscribers.</p>
-    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+    pub fn subscribers(&self) -> std::option::Option<& [crate::model::Subscriber]> {
         self.subscribers.as_deref()
     }
 }
@@ -5551,7 +4269,7 @@ impl CreateBudgetActionInput {
 /// <p> Request of CreateBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBudgetInput {
+pub struct CreateBudgetInput  {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5560,22 +4278,20 @@ pub struct CreateBudgetInput {
     pub budget: std::option::Option<crate::model::Budget>,
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
     #[doc(hidden)]
-    pub notifications_with_subscribers:
-        std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
+    pub notifications_with_subscribers: std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
 }
 impl CreateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The budget object that you want to create.</p>
-    pub fn budget(&self) -> std::option::Option<&crate::model::Budget> {
+    pub fn budget(&self) -> std::option::Option<& crate::model::Budget> {
         self.budget.as_ref()
     }
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-    pub fn notifications_with_subscribers(
-        &self,
-    ) -> std::option::Option<&[crate::model::NotificationWithSubscribers]> {
+    pub fn notifications_with_subscribers(&self) -> std::option::Option<& [crate::model::NotificationWithSubscribers]> {
         self.notifications_with_subscribers.as_deref()
     }
 }
+

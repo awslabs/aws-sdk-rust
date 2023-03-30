@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResiliencyPolicyOutput {
+pub struct UpdateResiliencyPolicyOutput  {
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
 }
 impl UpdateResiliencyPolicyOutput {
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::ResiliencyPolicy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::ResiliencyPolicy> {
         self.policy.as_ref()
     }
 }
 /// See [`UpdateResiliencyPolicyOutput`](crate::output::UpdateResiliencyPolicyOutput).
 pub mod update_resiliency_policy_output {
-
+    
     /// A builder for [`UpdateResiliencyPolicyOutput`](crate::output::UpdateResiliencyPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_resiliency_policy_output {
             self
         }
         /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::ResiliencyPolicy>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::ResiliencyPolicy>) -> Self {
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`UpdateResiliencyPolicyOutput`](crate::output::UpdateResiliencyPolicyOutput).
         pub fn build(self) -> crate::output::UpdateResiliencyPolicyOutput {
             crate::output::UpdateResiliencyPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResiliencyPolicyOutput`](crate::output::UpdateResiliencyPolicyOutput).
@@ -53,20 +52,20 @@ impl UpdateResiliencyPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAppOutput {
+pub struct UpdateAppOutput  {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl UpdateAppOutput {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
-    pub fn app(&self) -> std::option::Option<&crate::model::App> {
+    pub fn app(&self) -> std::option::Option<& crate::model::App> {
         self.app.as_ref()
     }
 }
 /// See [`UpdateAppOutput`](crate::output::UpdateAppOutput).
 pub mod update_app_output {
-
+    
     /// A builder for [`UpdateAppOutput`](crate::output::UpdateAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -80,14 +79,18 @@ pub mod update_app_output {
         }
         /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
-            self.app = input;
-            self
+            self.app = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAppOutput`](crate::output::UpdateAppOutput).
         pub fn build(self) -> crate::output::UpdateAppOutput {
-            crate::output::UpdateAppOutput { app: self.app }
+            crate::output::UpdateAppOutput {
+                app: self.app
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateAppOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppOutput`](crate::output::UpdateAppOutput).
@@ -99,19 +102,24 @@ impl UpdateAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -123,19 +131,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -147,20 +160,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAppAssessmentOutput {
+pub struct StartAppAssessmentOutput  {
     /// <p>The assessment created.</p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::AppAssessment>,
 }
 impl StartAppAssessmentOutput {
     /// <p>The assessment created.</p>
-    pub fn assessment(&self) -> std::option::Option<&crate::model::AppAssessment> {
+    pub fn assessment(&self) -> std::option::Option<& crate::model::AppAssessment> {
         self.assessment.as_ref()
     }
 }
 /// See [`StartAppAssessmentOutput`](crate::output::StartAppAssessmentOutput).
 pub mod start_app_assessment_output {
-
+    
     /// A builder for [`StartAppAssessmentOutput`](crate::output::StartAppAssessmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -173,20 +186,19 @@ pub mod start_app_assessment_output {
             self
         }
         /// <p>The assessment created.</p>
-        pub fn set_assessment(
-            mut self,
-            input: std::option::Option<crate::model::AppAssessment>,
-        ) -> Self {
-            self.assessment = input;
-            self
+        pub fn set_assessment(mut self, input: std::option::Option<crate::model::AppAssessment>) -> Self {
+            self.assessment = input; self
         }
         /// Consumes the builder and constructs a [`StartAppAssessmentOutput`](crate::output::StartAppAssessmentOutput).
         pub fn build(self) -> crate::output::StartAppAssessmentOutput {
             crate::output::StartAppAssessmentOutput {
-                assessment: self.assessment,
+                assessment: self.assessment
+                ,
             }
         }
     }
+    
+    
 }
 impl StartAppAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`StartAppAssessmentOutput`](crate::output::StartAppAssessmentOutput).
@@ -198,7 +210,7 @@ impl StartAppAssessmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolveAppVersionResourcesOutput {
+pub struct ResolveAppVersionResourcesOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -214,25 +226,25 @@ pub struct ResolveAppVersionResourcesOutput {
 }
 impl ResolveAppVersionResourcesOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> std::option::Option<&str> {
+    pub fn resolution_id(&self) -> std::option::Option<& str> {
         self.resolution_id.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceResolutionStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceResolutionStatusType> {
         self.status.as_ref()
     }
 }
 /// See [`ResolveAppVersionResourcesOutput`](crate::output::ResolveAppVersionResourcesOutput).
 pub mod resolve_app_version_resources_output {
-
+    
     /// A builder for [`ResolveAppVersionResourcesOutput`](crate::output::ResolveAppVersionResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -249,8 +261,7 @@ pub mod resolve_app_version_resources_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -259,8 +270,7 @@ pub mod resolve_app_version_resources_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// <p>The identifier for a specific resolution.</p>
         pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -268,12 +278,8 @@ pub mod resolve_app_version_resources_output {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn set_resolution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resolution_id = input;
-            self
+        pub fn set_resolution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolution_id = input; self
         }
         /// <p>The status of the action.</p>
         pub fn status(mut self, input: crate::model::ResourceResolutionStatusType) -> Self {
@@ -281,23 +287,25 @@ pub mod resolve_app_version_resources_output {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceResolutionStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceResolutionStatusType>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ResolveAppVersionResourcesOutput`](crate::output::ResolveAppVersionResourcesOutput).
         pub fn build(self) -> crate::output::ResolveAppVersionResourcesOutput {
             crate::output::ResolveAppVersionResourcesOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                resolution_id: self.resolution_id,
-                status: self.status,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                resolution_id: self.resolution_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ResolveAppVersionResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ResolveAppVersionResourcesOutput`](crate::output::ResolveAppVersionResourcesOutput).
@@ -309,7 +317,7 @@ impl ResolveAppVersionResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveDraftAppVersionResourceMappingsOutput {
+pub struct RemoveDraftAppVersionResourceMappingsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -319,17 +327,17 @@ pub struct RemoveDraftAppVersionResourceMappingsOutput {
 }
 impl RemoveDraftAppVersionResourceMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
 }
 /// See [`RemoveDraftAppVersionResourceMappingsOutput`](crate::output::RemoveDraftAppVersionResourceMappingsOutput).
 pub mod remove_draft_app_version_resource_mappings_output {
-
+    
     /// A builder for [`RemoveDraftAppVersionResourceMappingsOutput`](crate::output::RemoveDraftAppVersionResourceMappingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -344,8 +352,7 @@ pub mod remove_draft_app_version_resource_mappings_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,17 +361,20 @@ pub mod remove_draft_app_version_resource_mappings_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// Consumes the builder and constructs a [`RemoveDraftAppVersionResourceMappingsOutput`](crate::output::RemoveDraftAppVersionResourceMappingsOutput).
         pub fn build(self) -> crate::output::RemoveDraftAppVersionResourceMappingsOutput {
             crate::output::RemoveDraftAppVersionResourceMappingsOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveDraftAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveDraftAppVersionResourceMappingsOutput`](crate::output::RemoveDraftAppVersionResourceMappingsOutput).
@@ -376,7 +386,7 @@ impl RemoveDraftAppVersionResourceMappingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDraftAppVersionTemplateOutput {
+pub struct PutDraftAppVersionTemplateOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -386,17 +396,17 @@ pub struct PutDraftAppVersionTemplateOutput {
 }
 impl PutDraftAppVersionTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
 }
 /// See [`PutDraftAppVersionTemplateOutput`](crate::output::PutDraftAppVersionTemplateOutput).
 pub mod put_draft_app_version_template_output {
-
+    
     /// A builder for [`PutDraftAppVersionTemplateOutput`](crate::output::PutDraftAppVersionTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -411,8 +421,7 @@ pub mod put_draft_app_version_template_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -421,17 +430,20 @@ pub mod put_draft_app_version_template_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// Consumes the builder and constructs a [`PutDraftAppVersionTemplateOutput`](crate::output::PutDraftAppVersionTemplateOutput).
         pub fn build(self) -> crate::output::PutDraftAppVersionTemplateOutput {
             crate::output::PutDraftAppVersionTemplateOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
             }
         }
     }
+    
+    
 }
 impl PutDraftAppVersionTemplateOutput {
     /// Creates a new builder-style object to manufacture [`PutDraftAppVersionTemplateOutput`](crate::output::PutDraftAppVersionTemplateOutput).
@@ -443,7 +455,7 @@ impl PutDraftAppVersionTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishAppVersionOutput {
+pub struct PublishAppVersionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -453,17 +465,17 @@ pub struct PublishAppVersionOutput {
 }
 impl PublishAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
 }
 /// See [`PublishAppVersionOutput`](crate::output::PublishAppVersionOutput).
 pub mod publish_app_version_output {
-
+    
     /// A builder for [`PublishAppVersionOutput`](crate::output::PublishAppVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -478,8 +490,7 @@ pub mod publish_app_version_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -488,17 +499,20 @@ pub mod publish_app_version_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// Consumes the builder and constructs a [`PublishAppVersionOutput`](crate::output::PublishAppVersionOutput).
         pub fn build(self) -> crate::output::PublishAppVersionOutput {
             crate::output::PublishAppVersionOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
             }
         }
     }
+    
+    
 }
 impl PublishAppVersionOutput {
     /// Creates a new builder-style object to manufacture [`PublishAppVersionOutput`](crate::output::PublishAppVersionOutput).
@@ -510,11 +524,10 @@ impl PublishAppVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUnsupportedAppVersionResourcesOutput {
+pub struct ListUnsupportedAppVersionResourcesOutput  {
     /// <p>The unsupported resources for the application.</p>
     #[doc(hidden)]
-    pub unsupported_resources:
-        std::option::Option<std::vec::Vec<crate::model::UnsupportedResource>>,
+    pub unsupported_resources: std::option::Option<std::vec::Vec<crate::model::UnsupportedResource>>,
     /// <p>The identifier for a specific resolution.</p>
     #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
@@ -524,28 +537,25 @@ pub struct ListUnsupportedAppVersionResourcesOutput {
 }
 impl ListUnsupportedAppVersionResourcesOutput {
     /// <p>The unsupported resources for the application.</p>
-    pub fn unsupported_resources(
-        &self,
-    ) -> std::option::Option<&[crate::model::UnsupportedResource]> {
+    pub fn unsupported_resources(&self) -> std::option::Option<& [crate::model::UnsupportedResource]> {
         self.unsupported_resources.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> std::option::Option<&str> {
+    pub fn resolution_id(&self) -> std::option::Option<& str> {
         self.resolution_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListUnsupportedAppVersionResourcesOutput`](crate::output::ListUnsupportedAppVersionResourcesOutput).
 pub mod list_unsupported_app_version_resources_output {
-
+    
     /// A builder for [`ListUnsupportedAppVersionResourcesOutput`](crate::output::ListUnsupportedAppVersionResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) unsupported_resources:
-            std::option::Option<std::vec::Vec<crate::model::UnsupportedResource>>,
+        pub(crate) unsupported_resources: std::option::Option<std::vec::Vec<crate::model::UnsupportedResource>>,
         pub(crate) resolution_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -557,17 +567,13 @@ pub mod list_unsupported_app_version_resources_output {
         /// <p>The unsupported resources for the application.</p>
         pub fn unsupported_resources(mut self, input: crate::model::UnsupportedResource) -> Self {
             let mut v = self.unsupported_resources.unwrap_or_default();
-            v.push(input);
-            self.unsupported_resources = Some(v);
-            self
+                            v.push(input);
+                            self.unsupported_resources = Some(v);
+                            self
         }
         /// <p>The unsupported resources for the application.</p>
-        pub fn set_unsupported_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnsupportedResource>>,
-        ) -> Self {
-            self.unsupported_resources = input;
-            self
+        pub fn set_unsupported_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnsupportedResource>>) -> Self {
+            self.unsupported_resources = input; self
         }
         /// <p>The identifier for a specific resolution.</p>
         pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -575,12 +581,8 @@ pub mod list_unsupported_app_version_resources_output {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn set_resolution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resolution_id = input;
-            self
+        pub fn set_resolution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolution_id = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -589,18 +591,22 @@ pub mod list_unsupported_app_version_resources_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListUnsupportedAppVersionResourcesOutput`](crate::output::ListUnsupportedAppVersionResourcesOutput).
         pub fn build(self) -> crate::output::ListUnsupportedAppVersionResourcesOutput {
             crate::output::ListUnsupportedAppVersionResourcesOutput {
-                unsupported_resources: self.unsupported_resources,
-                resolution_id: self.resolution_id,
-                next_token: self.next_token,
+                unsupported_resources: self.unsupported_resources
+                ,
+                resolution_id: self.resolution_id
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUnsupportedAppVersionResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListUnsupportedAppVersionResourcesOutput`](crate::output::ListUnsupportedAppVersionResourcesOutput).
@@ -612,7 +618,7 @@ impl ListUnsupportedAppVersionResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTestRecommendationsOutput {
+pub struct ListTestRecommendationsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -622,23 +628,22 @@ pub struct ListTestRecommendationsOutput {
 }
 impl ListTestRecommendationsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The test recommendations for the Resilience Hub application.</p>
-    pub fn test_recommendations(&self) -> std::option::Option<&[crate::model::TestRecommendation]> {
+    pub fn test_recommendations(&self) -> std::option::Option<& [crate::model::TestRecommendation]> {
         self.test_recommendations.as_deref()
     }
 }
 /// See [`ListTestRecommendationsOutput`](crate::output::ListTestRecommendationsOutput).
 pub mod list_test_recommendations_output {
-
+    
     /// A builder for [`ListTestRecommendationsOutput`](crate::output::ListTestRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) test_recommendations:
-            std::option::Option<std::vec::Vec<crate::model::TestRecommendation>>,
+        pub(crate) test_recommendations: std::option::Option<std::vec::Vec<crate::model::TestRecommendation>>,
     }
     impl Builder {
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -648,8 +653,7 @@ pub mod list_test_recommendations_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `test_recommendations`.
         ///
@@ -658,26 +662,26 @@ pub mod list_test_recommendations_output {
         /// <p>The test recommendations for the Resilience Hub application.</p>
         pub fn test_recommendations(mut self, input: crate::model::TestRecommendation) -> Self {
             let mut v = self.test_recommendations.unwrap_or_default();
-            v.push(input);
-            self.test_recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.test_recommendations = Some(v);
+                            self
         }
         /// <p>The test recommendations for the Resilience Hub application.</p>
-        pub fn set_test_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TestRecommendation>>,
-        ) -> Self {
-            self.test_recommendations = input;
-            self
+        pub fn set_test_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::TestRecommendation>>) -> Self {
+            self.test_recommendations = input; self
         }
         /// Consumes the builder and constructs a [`ListTestRecommendationsOutput`](crate::output::ListTestRecommendationsOutput).
         pub fn build(self) -> crate::output::ListTestRecommendationsOutput {
             crate::output::ListTestRecommendationsOutput {
-                next_token: self.next_token,
-                test_recommendations: self.test_recommendations,
+                next_token: self.next_token
+                ,
+                test_recommendations: self.test_recommendations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTestRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestRecommendationsOutput`](crate::output::ListTestRecommendationsOutput).
@@ -689,22 +693,18 @@ impl ListTestRecommendationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
+impl  std::fmt::Debug for ListTagsForResourceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -713,13 +713,11 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -727,29 +725,22 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
     impl std::fmt::Debug for Builder {
@@ -759,6 +750,8 @@ pub mod list_tags_for_resource_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -770,7 +763,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSuggestedResiliencyPoliciesOutput {
+pub struct ListSuggestedResiliencyPoliciesOutput  {
     /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
     #[doc(hidden)]
     pub resiliency_policies: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
@@ -780,22 +773,21 @@ pub struct ListSuggestedResiliencyPoliciesOutput {
 }
 impl ListSuggestedResiliencyPoliciesOutput {
     /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
-    pub fn resiliency_policies(&self) -> std::option::Option<&[crate::model::ResiliencyPolicy]> {
+    pub fn resiliency_policies(&self) -> std::option::Option<& [crate::model::ResiliencyPolicy]> {
         self.resiliency_policies.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSuggestedResiliencyPoliciesOutput`](crate::output::ListSuggestedResiliencyPoliciesOutput).
 pub mod list_suggested_resiliency_policies_output {
-
+    
     /// A builder for [`ListSuggestedResiliencyPoliciesOutput`](crate::output::ListSuggestedResiliencyPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resiliency_policies:
-            std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
+        pub(crate) resiliency_policies: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -806,17 +798,13 @@ pub mod list_suggested_resiliency_policies_output {
         /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
         pub fn resiliency_policies(mut self, input: crate::model::ResiliencyPolicy) -> Self {
             let mut v = self.resiliency_policies.unwrap_or_default();
-            v.push(input);
-            self.resiliency_policies = Some(v);
-            self
+                            v.push(input);
+                            self.resiliency_policies = Some(v);
+                            self
         }
         /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
-        pub fn set_resiliency_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
-        ) -> Self {
-            self.resiliency_policies = input;
-            self
+        pub fn set_resiliency_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>) -> Self {
+            self.resiliency_policies = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -825,17 +813,20 @@ pub mod list_suggested_resiliency_policies_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSuggestedResiliencyPoliciesOutput`](crate::output::ListSuggestedResiliencyPoliciesOutput).
         pub fn build(self) -> crate::output::ListSuggestedResiliencyPoliciesOutput {
             crate::output::ListSuggestedResiliencyPoliciesOutput {
-                resiliency_policies: self.resiliency_policies,
-                next_token: self.next_token,
+                resiliency_policies: self.resiliency_policies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSuggestedResiliencyPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListSuggestedResiliencyPoliciesOutput`](crate::output::ListSuggestedResiliencyPoliciesOutput).
@@ -847,7 +838,7 @@ impl ListSuggestedResiliencyPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSopRecommendationsOutput {
+pub struct ListSopRecommendationsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -857,23 +848,22 @@ pub struct ListSopRecommendationsOutput {
 }
 impl ListSopRecommendationsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
-    pub fn sop_recommendations(&self) -> std::option::Option<&[crate::model::SopRecommendation]> {
+    pub fn sop_recommendations(&self) -> std::option::Option<& [crate::model::SopRecommendation]> {
         self.sop_recommendations.as_deref()
     }
 }
 /// See [`ListSopRecommendationsOutput`](crate::output::ListSopRecommendationsOutput).
 pub mod list_sop_recommendations_output {
-
+    
     /// A builder for [`ListSopRecommendationsOutput`](crate::output::ListSopRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) sop_recommendations:
-            std::option::Option<std::vec::Vec<crate::model::SopRecommendation>>,
+        pub(crate) sop_recommendations: std::option::Option<std::vec::Vec<crate::model::SopRecommendation>>,
     }
     impl Builder {
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -883,8 +873,7 @@ pub mod list_sop_recommendations_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `sop_recommendations`.
         ///
@@ -893,26 +882,26 @@ pub mod list_sop_recommendations_output {
         /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
         pub fn sop_recommendations(mut self, input: crate::model::SopRecommendation) -> Self {
             let mut v = self.sop_recommendations.unwrap_or_default();
-            v.push(input);
-            self.sop_recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.sop_recommendations = Some(v);
+                            self
         }
         /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
-        pub fn set_sop_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SopRecommendation>>,
-        ) -> Self {
-            self.sop_recommendations = input;
-            self
+        pub fn set_sop_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SopRecommendation>>) -> Self {
+            self.sop_recommendations = input; self
         }
         /// Consumes the builder and constructs a [`ListSopRecommendationsOutput`](crate::output::ListSopRecommendationsOutput).
         pub fn build(self) -> crate::output::ListSopRecommendationsOutput {
             crate::output::ListSopRecommendationsOutput {
-                next_token: self.next_token,
-                sop_recommendations: self.sop_recommendations,
+                next_token: self.next_token
+                ,
+                sop_recommendations: self.sop_recommendations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSopRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSopRecommendationsOutput`](crate::output::ListSopRecommendationsOutput).
@@ -924,7 +913,7 @@ impl ListSopRecommendationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResiliencyPoliciesOutput {
+pub struct ListResiliencyPoliciesOutput  {
     /// <p>The resiliency policies for the Resilience Hub applications.</p>
     #[doc(hidden)]
     pub resiliency_policies: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
@@ -934,22 +923,21 @@ pub struct ListResiliencyPoliciesOutput {
 }
 impl ListResiliencyPoliciesOutput {
     /// <p>The resiliency policies for the Resilience Hub applications.</p>
-    pub fn resiliency_policies(&self) -> std::option::Option<&[crate::model::ResiliencyPolicy]> {
+    pub fn resiliency_policies(&self) -> std::option::Option<& [crate::model::ResiliencyPolicy]> {
         self.resiliency_policies.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResiliencyPoliciesOutput`](crate::output::ListResiliencyPoliciesOutput).
 pub mod list_resiliency_policies_output {
-
+    
     /// A builder for [`ListResiliencyPoliciesOutput`](crate::output::ListResiliencyPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resiliency_policies:
-            std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
+        pub(crate) resiliency_policies: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -960,17 +948,13 @@ pub mod list_resiliency_policies_output {
         /// <p>The resiliency policies for the Resilience Hub applications.</p>
         pub fn resiliency_policies(mut self, input: crate::model::ResiliencyPolicy) -> Self {
             let mut v = self.resiliency_policies.unwrap_or_default();
-            v.push(input);
-            self.resiliency_policies = Some(v);
-            self
+                            v.push(input);
+                            self.resiliency_policies = Some(v);
+                            self
         }
         /// <p>The resiliency policies for the Resilience Hub applications.</p>
-        pub fn set_resiliency_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
-        ) -> Self {
-            self.resiliency_policies = input;
-            self
+        pub fn set_resiliency_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>) -> Self {
+            self.resiliency_policies = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -979,17 +963,20 @@ pub mod list_resiliency_policies_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResiliencyPoliciesOutput`](crate::output::ListResiliencyPoliciesOutput).
         pub fn build(self) -> crate::output::ListResiliencyPoliciesOutput {
             crate::output::ListResiliencyPoliciesOutput {
-                resiliency_policies: self.resiliency_policies,
-                next_token: self.next_token,
+                resiliency_policies: self.resiliency_policies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResiliencyPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListResiliencyPoliciesOutput`](crate::output::ListResiliencyPoliciesOutput).
@@ -1001,36 +988,32 @@ impl ListResiliencyPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecommendationTemplatesOutput {
+pub struct ListRecommendationTemplatesOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
     #[doc(hidden)]
-    pub recommendation_templates:
-        std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>,
+    pub recommendation_templates: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>,
 }
 impl ListRecommendationTemplatesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
-    pub fn recommendation_templates(
-        &self,
-    ) -> std::option::Option<&[crate::model::RecommendationTemplate]> {
+    pub fn recommendation_templates(&self) -> std::option::Option<& [crate::model::RecommendationTemplate]> {
         self.recommendation_templates.as_deref()
     }
 }
 /// See [`ListRecommendationTemplatesOutput`](crate::output::ListRecommendationTemplatesOutput).
 pub mod list_recommendation_templates_output {
-
+    
     /// A builder for [`ListRecommendationTemplatesOutput`](crate::output::ListRecommendationTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) recommendation_templates:
-            std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>,
+        pub(crate) recommendation_templates: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>,
     }
     impl Builder {
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1040,39 +1023,35 @@ pub mod list_recommendation_templates_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `recommendation_templates`.
         ///
         /// To override the contents of this collection use [`set_recommendation_templates`](Self::set_recommendation_templates).
         ///
         /// <p>The recommendation templates for the Resilience Hub applications.</p>
-        pub fn recommendation_templates(
-            mut self,
-            input: crate::model::RecommendationTemplate,
-        ) -> Self {
+        pub fn recommendation_templates(mut self, input: crate::model::RecommendationTemplate) -> Self {
             let mut v = self.recommendation_templates.unwrap_or_default();
-            v.push(input);
-            self.recommendation_templates = Some(v);
-            self
+                            v.push(input);
+                            self.recommendation_templates = Some(v);
+                            self
         }
         /// <p>The recommendation templates for the Resilience Hub applications.</p>
-        pub fn set_recommendation_templates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>,
-        ) -> Self {
-            self.recommendation_templates = input;
-            self
+        pub fn set_recommendation_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>) -> Self {
+            self.recommendation_templates = input; self
         }
         /// Consumes the builder and constructs a [`ListRecommendationTemplatesOutput`](crate::output::ListRecommendationTemplatesOutput).
         pub fn build(self) -> crate::output::ListRecommendationTemplatesOutput {
             crate::output::ListRecommendationTemplatesOutput {
-                next_token: self.next_token,
-                recommendation_templates: self.recommendation_templates,
+                next_token: self.next_token
+                ,
+                recommendation_templates: self.recommendation_templates
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRecommendationTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationTemplatesOutput`](crate::output::ListRecommendationTemplatesOutput).
@@ -1084,7 +1063,7 @@ impl ListRecommendationTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppVersionsOutput {
+pub struct ListAppVersionsOutput  {
     /// <p>The version of the application.</p>
     #[doc(hidden)]
     pub app_versions: std::option::Option<std::vec::Vec<crate::model::AppVersionSummary>>,
@@ -1094,22 +1073,21 @@ pub struct ListAppVersionsOutput {
 }
 impl ListAppVersionsOutput {
     /// <p>The version of the application.</p>
-    pub fn app_versions(&self) -> std::option::Option<&[crate::model::AppVersionSummary]> {
+    pub fn app_versions(&self) -> std::option::Option<& [crate::model::AppVersionSummary]> {
         self.app_versions.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppVersionsOutput`](crate::output::ListAppVersionsOutput).
 pub mod list_app_versions_output {
-
+    
     /// A builder for [`ListAppVersionsOutput`](crate::output::ListAppVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) app_versions:
-            std::option::Option<std::vec::Vec<crate::model::AppVersionSummary>>,
+        pub(crate) app_versions: std::option::Option<std::vec::Vec<crate::model::AppVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1120,17 +1098,13 @@ pub mod list_app_versions_output {
         /// <p>The version of the application.</p>
         pub fn app_versions(mut self, input: crate::model::AppVersionSummary) -> Self {
             let mut v = self.app_versions.unwrap_or_default();
-            v.push(input);
-            self.app_versions = Some(v);
-            self
+                            v.push(input);
+                            self.app_versions = Some(v);
+                            self
         }
         /// <p>The version of the application.</p>
-        pub fn set_app_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppVersionSummary>>,
-        ) -> Self {
-            self.app_versions = input;
-            self
+        pub fn set_app_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppVersionSummary>>) -> Self {
+            self.app_versions = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1139,17 +1113,20 @@ pub mod list_app_versions_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppVersionsOutput`](crate::output::ListAppVersionsOutput).
         pub fn build(self) -> crate::output::ListAppVersionsOutput {
             crate::output::ListAppVersionsOutput {
-                app_versions: self.app_versions,
-                next_token: self.next_token,
+                app_versions: self.app_versions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionsOutput`](crate::output::ListAppVersionsOutput).
@@ -1161,7 +1138,7 @@ impl ListAppVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppVersionResourcesOutput {
+pub struct ListAppVersionResourcesOutput  {
     /// <p>The physical resources in the application version.</p>
     #[doc(hidden)]
     pub physical_resources: std::option::Option<std::vec::Vec<crate::model::PhysicalResource>>,
@@ -1174,26 +1151,25 @@ pub struct ListAppVersionResourcesOutput {
 }
 impl ListAppVersionResourcesOutput {
     /// <p>The physical resources in the application version.</p>
-    pub fn physical_resources(&self) -> std::option::Option<&[crate::model::PhysicalResource]> {
+    pub fn physical_resources(&self) -> std::option::Option<& [crate::model::PhysicalResource]> {
         self.physical_resources.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> std::option::Option<&str> {
+    pub fn resolution_id(&self) -> std::option::Option<& str> {
         self.resolution_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppVersionResourcesOutput`](crate::output::ListAppVersionResourcesOutput).
 pub mod list_app_version_resources_output {
-
+    
     /// A builder for [`ListAppVersionResourcesOutput`](crate::output::ListAppVersionResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) physical_resources:
-            std::option::Option<std::vec::Vec<crate::model::PhysicalResource>>,
+        pub(crate) physical_resources: std::option::Option<std::vec::Vec<crate::model::PhysicalResource>>,
         pub(crate) resolution_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -1205,17 +1181,13 @@ pub mod list_app_version_resources_output {
         /// <p>The physical resources in the application version.</p>
         pub fn physical_resources(mut self, input: crate::model::PhysicalResource) -> Self {
             let mut v = self.physical_resources.unwrap_or_default();
-            v.push(input);
-            self.physical_resources = Some(v);
-            self
+                            v.push(input);
+                            self.physical_resources = Some(v);
+                            self
         }
         /// <p>The physical resources in the application version.</p>
-        pub fn set_physical_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PhysicalResource>>,
-        ) -> Self {
-            self.physical_resources = input;
-            self
+        pub fn set_physical_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhysicalResource>>) -> Self {
+            self.physical_resources = input; self
         }
         /// <p>The identifier for a specific resolution.</p>
         pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1223,12 +1195,8 @@ pub mod list_app_version_resources_output {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn set_resolution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resolution_id = input;
-            self
+        pub fn set_resolution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolution_id = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1237,18 +1205,22 @@ pub mod list_app_version_resources_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppVersionResourcesOutput`](crate::output::ListAppVersionResourcesOutput).
         pub fn build(self) -> crate::output::ListAppVersionResourcesOutput {
             crate::output::ListAppVersionResourcesOutput {
-                physical_resources: self.physical_resources,
-                resolution_id: self.resolution_id,
-                next_token: self.next_token,
+                physical_resources: self.physical_resources
+                ,
+                resolution_id: self.resolution_id
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppVersionResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourcesOutput`](crate::output::ListAppVersionResourcesOutput).
@@ -1260,7 +1232,7 @@ impl ListAppVersionResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppVersionResourceMappingsOutput {
+pub struct ListAppVersionResourceMappingsOutput  {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     #[doc(hidden)]
     pub resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
@@ -1270,22 +1242,21 @@ pub struct ListAppVersionResourceMappingsOutput {
 }
 impl ListAppVersionResourceMappingsOutput {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn resource_mappings(&self) -> std::option::Option<&[crate::model::ResourceMapping]> {
+    pub fn resource_mappings(&self) -> std::option::Option<& [crate::model::ResourceMapping]> {
         self.resource_mappings.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppVersionResourceMappingsOutput`](crate::output::ListAppVersionResourceMappingsOutput).
 pub mod list_app_version_resource_mappings_output {
-
+    
     /// A builder for [`ListAppVersionResourceMappingsOutput`](crate::output::ListAppVersionResourceMappingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_mappings:
-            std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
+        pub(crate) resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1296,17 +1267,13 @@ pub mod list_app_version_resource_mappings_output {
         /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
         pub fn resource_mappings(mut self, input: crate::model::ResourceMapping) -> Self {
             let mut v = self.resource_mappings.unwrap_or_default();
-            v.push(input);
-            self.resource_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.resource_mappings = Some(v);
+                            self
         }
         /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-        pub fn set_resource_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
-        ) -> Self {
-            self.resource_mappings = input;
-            self
+        pub fn set_resource_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>) -> Self {
+            self.resource_mappings = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1315,17 +1282,20 @@ pub mod list_app_version_resource_mappings_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppVersionResourceMappingsOutput`](crate::output::ListAppVersionResourceMappingsOutput).
         pub fn build(self) -> crate::output::ListAppVersionResourceMappingsOutput {
             crate::output::ListAppVersionResourceMappingsOutput {
-                resource_mappings: self.resource_mappings,
-                next_token: self.next_token,
+                resource_mappings: self.resource_mappings
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourceMappingsOutput`](crate::output::ListAppVersionResourceMappingsOutput).
@@ -1337,7 +1307,7 @@ impl ListAppVersionResourceMappingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppsOutput {
+pub struct ListAppsOutput  {
     /// <p>Summaries for the Resilience Hub application.</p>
     #[doc(hidden)]
     pub app_summaries: std::option::Option<std::vec::Vec<crate::model::AppSummary>>,
@@ -1347,17 +1317,17 @@ pub struct ListAppsOutput {
 }
 impl ListAppsOutput {
     /// <p>Summaries for the Resilience Hub application.</p>
-    pub fn app_summaries(&self) -> std::option::Option<&[crate::model::AppSummary]> {
+    pub fn app_summaries(&self) -> std::option::Option<& [crate::model::AppSummary]> {
         self.app_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppsOutput`](crate::output::ListAppsOutput).
 pub mod list_apps_output {
-
+    
     /// A builder for [`ListAppsOutput`](crate::output::ListAppsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1372,17 +1342,13 @@ pub mod list_apps_output {
         /// <p>Summaries for the Resilience Hub application.</p>
         pub fn app_summaries(mut self, input: crate::model::AppSummary) -> Self {
             let mut v = self.app_summaries.unwrap_or_default();
-            v.push(input);
-            self.app_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.app_summaries = Some(v);
+                            self
         }
         /// <p>Summaries for the Resilience Hub application.</p>
-        pub fn set_app_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppSummary>>,
-        ) -> Self {
-            self.app_summaries = input;
-            self
+        pub fn set_app_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppSummary>>) -> Self {
+            self.app_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1391,17 +1357,20 @@ pub mod list_apps_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppsOutput`](crate::output::ListAppsOutput).
         pub fn build(self) -> crate::output::ListAppsOutput {
             crate::output::ListAppsOutput {
-                app_summaries: self.app_summaries,
-                next_token: self.next_token,
+                app_summaries: self.app_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppsOutput`](crate::output::ListAppsOutput).
@@ -1413,35 +1382,31 @@ impl ListAppsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppComponentRecommendationsOutput {
+pub struct ListAppComponentRecommendationsOutput  {
     /// <p>The recommendations for an Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
     #[doc(hidden)]
-    pub component_recommendations:
-        std::option::Option<std::vec::Vec<crate::model::ComponentRecommendation>>,
+    pub component_recommendations: std::option::Option<std::vec::Vec<crate::model::ComponentRecommendation>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppComponentRecommendationsOutput {
     /// <p>The recommendations for an Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
-    pub fn component_recommendations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ComponentRecommendation]> {
+    pub fn component_recommendations(&self) -> std::option::Option<& [crate::model::ComponentRecommendation]> {
         self.component_recommendations.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppComponentRecommendationsOutput`](crate::output::ListAppComponentRecommendationsOutput).
 pub mod list_app_component_recommendations_output {
-
+    
     /// A builder for [`ListAppComponentRecommendationsOutput`](crate::output::ListAppComponentRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) component_recommendations:
-            std::option::Option<std::vec::Vec<crate::model::ComponentRecommendation>>,
+        pub(crate) component_recommendations: std::option::Option<std::vec::Vec<crate::model::ComponentRecommendation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1450,22 +1415,15 @@ pub mod list_app_component_recommendations_output {
         /// To override the contents of this collection use [`set_component_recommendations`](Self::set_component_recommendations).
         ///
         /// <p>The recommendations for an Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
-        pub fn component_recommendations(
-            mut self,
-            input: crate::model::ComponentRecommendation,
-        ) -> Self {
+        pub fn component_recommendations(mut self, input: crate::model::ComponentRecommendation) -> Self {
             let mut v = self.component_recommendations.unwrap_or_default();
-            v.push(input);
-            self.component_recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.component_recommendations = Some(v);
+                            self
         }
         /// <p>The recommendations for an Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
-        pub fn set_component_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentRecommendation>>,
-        ) -> Self {
-            self.component_recommendations = input;
-            self
+        pub fn set_component_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentRecommendation>>) -> Self {
+            self.component_recommendations = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1474,17 +1432,20 @@ pub mod list_app_component_recommendations_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppComponentRecommendationsOutput`](crate::output::ListAppComponentRecommendationsOutput).
         pub fn build(self) -> crate::output::ListAppComponentRecommendationsOutput {
             crate::output::ListAppComponentRecommendationsOutput {
-                component_recommendations: self.component_recommendations,
-                next_token: self.next_token,
+                component_recommendations: self.component_recommendations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppComponentRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppComponentRecommendationsOutput`](crate::output::ListAppComponentRecommendationsOutput).
@@ -1496,35 +1457,31 @@ impl ListAppComponentRecommendationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppComponentCompliancesOutput {
+pub struct ListAppComponentCompliancesOutput  {
     /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
     #[doc(hidden)]
-    pub component_compliances:
-        std::option::Option<std::vec::Vec<crate::model::AppComponentCompliance>>,
+    pub component_compliances: std::option::Option<std::vec::Vec<crate::model::AppComponentCompliance>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppComponentCompliancesOutput {
     /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
-    pub fn component_compliances(
-        &self,
-    ) -> std::option::Option<&[crate::model::AppComponentCompliance]> {
+    pub fn component_compliances(&self) -> std::option::Option<& [crate::model::AppComponentCompliance]> {
         self.component_compliances.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppComponentCompliancesOutput`](crate::output::ListAppComponentCompliancesOutput).
 pub mod list_app_component_compliances_output {
-
+    
     /// A builder for [`ListAppComponentCompliancesOutput`](crate::output::ListAppComponentCompliancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) component_compliances:
-            std::option::Option<std::vec::Vec<crate::model::AppComponentCompliance>>,
+        pub(crate) component_compliances: std::option::Option<std::vec::Vec<crate::model::AppComponentCompliance>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1533,22 +1490,15 @@ pub mod list_app_component_compliances_output {
         /// To override the contents of this collection use [`set_component_compliances`](Self::set_component_compliances).
         ///
         /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
-        pub fn component_compliances(
-            mut self,
-            input: crate::model::AppComponentCompliance,
-        ) -> Self {
+        pub fn component_compliances(mut self, input: crate::model::AppComponentCompliance) -> Self {
             let mut v = self.component_compliances.unwrap_or_default();
-            v.push(input);
-            self.component_compliances = Some(v);
-            self
+                            v.push(input);
+                            self.component_compliances = Some(v);
+                            self
         }
         /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
-        pub fn set_component_compliances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppComponentCompliance>>,
-        ) -> Self {
-            self.component_compliances = input;
-            self
+        pub fn set_component_compliances(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppComponentCompliance>>) -> Self {
+            self.component_compliances = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1557,17 +1507,20 @@ pub mod list_app_component_compliances_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppComponentCompliancesOutput`](crate::output::ListAppComponentCompliancesOutput).
         pub fn build(self) -> crate::output::ListAppComponentCompliancesOutput {
             crate::output::ListAppComponentCompliancesOutput {
-                component_compliances: self.component_compliances,
-                next_token: self.next_token,
+                component_compliances: self.component_compliances
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppComponentCompliancesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppComponentCompliancesOutput`](crate::output::ListAppComponentCompliancesOutput).
@@ -1579,36 +1532,32 @@ impl ListAppComponentCompliancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppAssessmentsOutput {
+pub struct ListAppAssessmentsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
     #[doc(hidden)]
-    pub assessment_summaries:
-        std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
+    pub assessment_summaries: std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
 }
 impl ListAppAssessmentsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
-    pub fn assessment_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::AppAssessmentSummary]> {
+    pub fn assessment_summaries(&self) -> std::option::Option<& [crate::model::AppAssessmentSummary]> {
         self.assessment_summaries.as_deref()
     }
 }
 /// See [`ListAppAssessmentsOutput`](crate::output::ListAppAssessmentsOutput).
 pub mod list_app_assessments_output {
-
+    
     /// A builder for [`ListAppAssessmentsOutput`](crate::output::ListAppAssessmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) assessment_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
+        pub(crate) assessment_summaries: std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
     }
     impl Builder {
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1618,8 +1567,7 @@ pub mod list_app_assessments_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `assessment_summaries`.
         ///
@@ -1628,26 +1576,26 @@ pub mod list_app_assessments_output {
         /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
         pub fn assessment_summaries(mut self, input: crate::model::AppAssessmentSummary) -> Self {
             let mut v = self.assessment_summaries.unwrap_or_default();
-            v.push(input);
-            self.assessment_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.assessment_summaries = Some(v);
+                            self
         }
         /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
-        pub fn set_assessment_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
-        ) -> Self {
-            self.assessment_summaries = input;
-            self
+        pub fn set_assessment_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>) -> Self {
+            self.assessment_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListAppAssessmentsOutput`](crate::output::ListAppAssessmentsOutput).
         pub fn build(self) -> crate::output::ListAppAssessmentsOutput {
             crate::output::ListAppAssessmentsOutput {
-                next_token: self.next_token,
-                assessment_summaries: self.assessment_summaries,
+                next_token: self.next_token
+                ,
+                assessment_summaries: self.assessment_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppAssessmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppAssessmentsOutput`](crate::output::ListAppAssessmentsOutput).
@@ -1659,35 +1607,31 @@ impl ListAppAssessmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAlarmRecommendationsOutput {
+pub struct ListAlarmRecommendationsOutput  {
     /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     #[doc(hidden)]
-    pub alarm_recommendations:
-        std::option::Option<std::vec::Vec<crate::model::AlarmRecommendation>>,
+    pub alarm_recommendations: std::option::Option<std::vec::Vec<crate::model::AlarmRecommendation>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmRecommendationsOutput {
     /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub fn alarm_recommendations(
-        &self,
-    ) -> std::option::Option<&[crate::model::AlarmRecommendation]> {
+    pub fn alarm_recommendations(&self) -> std::option::Option<& [crate::model::AlarmRecommendation]> {
         self.alarm_recommendations.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAlarmRecommendationsOutput`](crate::output::ListAlarmRecommendationsOutput).
 pub mod list_alarm_recommendations_output {
-
+    
     /// A builder for [`ListAlarmRecommendationsOutput`](crate::output::ListAlarmRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) alarm_recommendations:
-            std::option::Option<std::vec::Vec<crate::model::AlarmRecommendation>>,
+        pub(crate) alarm_recommendations: std::option::Option<std::vec::Vec<crate::model::AlarmRecommendation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1698,17 +1642,13 @@ pub mod list_alarm_recommendations_output {
         /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
         pub fn alarm_recommendations(mut self, input: crate::model::AlarmRecommendation) -> Self {
             let mut v = self.alarm_recommendations.unwrap_or_default();
-            v.push(input);
-            self.alarm_recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.alarm_recommendations = Some(v);
+                            self
         }
         /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-        pub fn set_alarm_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AlarmRecommendation>>,
-        ) -> Self {
-            self.alarm_recommendations = input;
-            self
+        pub fn set_alarm_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::AlarmRecommendation>>) -> Self {
+            self.alarm_recommendations = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1717,17 +1657,20 @@ pub mod list_alarm_recommendations_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAlarmRecommendationsOutput`](crate::output::ListAlarmRecommendationsOutput).
         pub fn build(self) -> crate::output::ListAlarmRecommendationsOutput {
             crate::output::ListAlarmRecommendationsOutput {
-                alarm_recommendations: self.alarm_recommendations,
-                next_token: self.next_token,
+                alarm_recommendations: self.alarm_recommendations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAlarmRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAlarmRecommendationsOutput`](crate::output::ListAlarmRecommendationsOutput).
@@ -1739,7 +1682,7 @@ impl ListAlarmRecommendationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportResourcesToDraftAppVersionOutput {
+pub struct ImportResourcesToDraftAppVersionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -1758,29 +1701,29 @@ pub struct ImportResourcesToDraftAppVersionOutput {
 }
 impl ImportResourcesToDraftAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
-    pub fn source_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn source_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.source_arns.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceImportStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceImportStatusType> {
         self.status.as_ref()
     }
     /// <p> A list of terraform file s3 URLs you need to import. </p>
-    pub fn terraform_sources(&self) -> std::option::Option<&[crate::model::TerraformSource]> {
+    pub fn terraform_sources(&self) -> std::option::Option<& [crate::model::TerraformSource]> {
         self.terraform_sources.as_deref()
     }
 }
 /// See [`ImportResourcesToDraftAppVersionOutput`](crate::output::ImportResourcesToDraftAppVersionOutput).
 pub mod import_resources_to_draft_app_version_output {
-
+    
     /// A builder for [`ImportResourcesToDraftAppVersionOutput`](crate::output::ImportResourcesToDraftAppVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1788,8 +1731,7 @@ pub mod import_resources_to_draft_app_version_output {
         pub(crate) app_version: std::option::Option<std::string::String>,
         pub(crate) source_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::ResourceImportStatusType>,
-        pub(crate) terraform_sources:
-            std::option::Option<std::vec::Vec<crate::model::TerraformSource>>,
+        pub(crate) terraform_sources: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1799,8 +1741,7 @@ pub mod import_resources_to_draft_app_version_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1809,8 +1750,7 @@ pub mod import_resources_to_draft_app_version_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// Appends an item to `source_arns`.
         ///
@@ -1819,17 +1759,13 @@ pub mod import_resources_to_draft_app_version_output {
         /// <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
         pub fn source_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_arns.unwrap_or_default();
-            v.push(input.into());
-            self.source_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.source_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
-        pub fn set_source_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.source_arns = input;
-            self
+        pub fn set_source_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.source_arns = input; self
         }
         /// <p>The status of the action.</p>
         pub fn status(mut self, input: crate::model::ResourceImportStatusType) -> Self {
@@ -1837,12 +1773,8 @@ pub mod import_resources_to_draft_app_version_output {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceImportStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceImportStatusType>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `terraform_sources`.
         ///
@@ -1851,29 +1783,32 @@ pub mod import_resources_to_draft_app_version_output {
         /// <p> A list of terraform file s3 URLs you need to import. </p>
         pub fn terraform_sources(mut self, input: crate::model::TerraformSource) -> Self {
             let mut v = self.terraform_sources.unwrap_or_default();
-            v.push(input);
-            self.terraform_sources = Some(v);
-            self
+                            v.push(input);
+                            self.terraform_sources = Some(v);
+                            self
         }
         /// <p> A list of terraform file s3 URLs you need to import. </p>
-        pub fn set_terraform_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>,
-        ) -> Self {
-            self.terraform_sources = input;
-            self
+        pub fn set_terraform_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>) -> Self {
+            self.terraform_sources = input; self
         }
         /// Consumes the builder and constructs a [`ImportResourcesToDraftAppVersionOutput`](crate::output::ImportResourcesToDraftAppVersionOutput).
         pub fn build(self) -> crate::output::ImportResourcesToDraftAppVersionOutput {
             crate::output::ImportResourcesToDraftAppVersionOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                source_arns: self.source_arns,
-                status: self.status,
-                terraform_sources: self.terraform_sources,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                source_arns: self.source_arns
+                ,
+                status: self.status
+                ,
+                terraform_sources: self.terraform_sources
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportResourcesToDraftAppVersionOutput {
     /// Creates a new builder-style object to manufacture [`ImportResourcesToDraftAppVersionOutput`](crate::output::ImportResourcesToDraftAppVersionOutput).
@@ -1885,20 +1820,20 @@ impl ImportResourcesToDraftAppVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResiliencyPolicyOutput {
+pub struct DescribeResiliencyPolicyOutput  {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
 }
 impl DescribeResiliencyPolicyOutput {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::ResiliencyPolicy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::ResiliencyPolicy> {
         self.policy.as_ref()
     }
 }
 /// See [`DescribeResiliencyPolicyOutput`](crate::output::DescribeResiliencyPolicyOutput).
 pub mod describe_resiliency_policy_output {
-
+    
     /// A builder for [`DescribeResiliencyPolicyOutput`](crate::output::DescribeResiliencyPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1911,20 +1846,19 @@ pub mod describe_resiliency_policy_output {
             self
         }
         /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::ResiliencyPolicy>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::ResiliencyPolicy>) -> Self {
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`DescribeResiliencyPolicyOutput`](crate::output::DescribeResiliencyPolicyOutput).
         pub fn build(self) -> crate::output::DescribeResiliencyPolicyOutput {
             crate::output::DescribeResiliencyPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResiliencyPolicyOutput`](crate::output::DescribeResiliencyPolicyOutput).
@@ -1936,7 +1870,7 @@ impl DescribeResiliencyPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDraftAppVersionResourcesImportStatusOutput {
+pub struct DescribeDraftAppVersionResourcesImportStatusOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -1955,29 +1889,29 @@ pub struct DescribeDraftAppVersionResourcesImportStatusOutput {
 }
 impl DescribeDraftAppVersionResourcesImportStatusOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceImportStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceImportStatusType> {
         self.status.as_ref()
     }
     /// <p>The timestamp for when the status last changed.</p>
-    pub fn status_change_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_change_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.status_change_time.as_ref()
     }
     /// <p>The returned error message for the request.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput).
 pub mod describe_draft_app_version_resources_import_status_output {
-
+    
     /// A builder for [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1995,8 +1929,7 @@ pub mod describe_draft_app_version_resources_import_status_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2005,8 +1938,7 @@ pub mod describe_draft_app_version_resources_import_status_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// <p>The status of the action.</p>
         pub fn status(mut self, input: crate::model::ResourceImportStatusType) -> Self {
@@ -2014,12 +1946,8 @@ pub mod describe_draft_app_version_resources_import_status_output {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceImportStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceImportStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>The timestamp for when the status last changed.</p>
         pub fn status_change_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2027,12 +1955,8 @@ pub mod describe_draft_app_version_resources_import_status_output {
             self
         }
         /// <p>The timestamp for when the status last changed.</p>
-        pub fn set_status_change_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.status_change_time = input;
-            self
+        pub fn set_status_change_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.status_change_time = input; self
         }
         /// <p>The returned error message for the request.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2040,29 +1964,31 @@ pub mod describe_draft_app_version_resources_import_status_output {
             self
         }
         /// <p>The returned error message for the request.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput).
         pub fn build(self) -> crate::output::DescribeDraftAppVersionResourcesImportStatusOutput {
             crate::output::DescribeDraftAppVersionResourcesImportStatusOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                status: self.status,
-                status_change_time: self.status_change_time,
-                error_message: self.error_message,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                status: self.status
+                ,
+                status_change_time: self.status_change_time
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDraftAppVersionResourcesImportStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput).
-    pub fn builder(
-    ) -> crate::output::describe_draft_app_version_resources_import_status_output::Builder {
+    pub fn builder() -> crate::output::describe_draft_app_version_resources_import_status_output::Builder {
         crate::output::describe_draft_app_version_resources_import_status_output::Builder::default()
     }
 }
@@ -2070,7 +1996,7 @@ impl DescribeDraftAppVersionResourcesImportStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppVersionTemplateOutput {
+pub struct DescribeAppVersionTemplateOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -2083,21 +2009,21 @@ pub struct DescribeAppVersionTemplateOutput {
 }
 impl DescribeAppVersionTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The body of the template.</p>
-    pub fn app_template_body(&self) -> std::option::Option<&str> {
+    pub fn app_template_body(&self) -> std::option::Option<& str> {
         self.app_template_body.as_deref()
     }
 }
 /// See [`DescribeAppVersionTemplateOutput`](crate::output::DescribeAppVersionTemplateOutput).
 pub mod describe_app_version_template_output {
-
+    
     /// A builder for [`DescribeAppVersionTemplateOutput`](crate::output::DescribeAppVersionTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2113,8 +2039,7 @@ pub mod describe_app_version_template_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2123,8 +2048,7 @@ pub mod describe_app_version_template_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// <p>The body of the template.</p>
         pub fn app_template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2132,22 +2056,23 @@ pub mod describe_app_version_template_output {
             self
         }
         /// <p>The body of the template.</p>
-        pub fn set_app_template_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_template_body = input;
-            self
+        pub fn set_app_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_template_body = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAppVersionTemplateOutput`](crate::output::DescribeAppVersionTemplateOutput).
         pub fn build(self) -> crate::output::DescribeAppVersionTemplateOutput {
             crate::output::DescribeAppVersionTemplateOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                app_template_body: self.app_template_body,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                app_template_body: self.app_template_body
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAppVersionTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionTemplateOutput`](crate::output::DescribeAppVersionTemplateOutput).
@@ -2159,7 +2084,7 @@ impl DescribeAppVersionTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppVersionResourcesResolutionStatusOutput {
+pub struct DescribeAppVersionResourcesResolutionStatusOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -2178,29 +2103,29 @@ pub struct DescribeAppVersionResourcesResolutionStatusOutput {
 }
 impl DescribeAppVersionResourcesResolutionStatusOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> std::option::Option<&str> {
+    pub fn resolution_id(&self) -> std::option::Option<& str> {
         self.resolution_id.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceResolutionStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceResolutionStatusType> {
         self.status.as_ref()
     }
     /// <p>The returned error message for the request.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput).
 pub mod describe_app_version_resources_resolution_status_output {
-
+    
     /// A builder for [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2218,8 +2143,7 @@ pub mod describe_app_version_resources_resolution_status_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2228,8 +2152,7 @@ pub mod describe_app_version_resources_resolution_status_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// <p>The identifier for a specific resolution.</p>
         pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2237,12 +2160,8 @@ pub mod describe_app_version_resources_resolution_status_output {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn set_resolution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resolution_id = input;
-            self
+        pub fn set_resolution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolution_id = input; self
         }
         /// <p>The status of the action.</p>
         pub fn status(mut self, input: crate::model::ResourceResolutionStatusType) -> Self {
@@ -2250,12 +2169,8 @@ pub mod describe_app_version_resources_resolution_status_output {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceResolutionStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceResolutionStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>The returned error message for the request.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2263,29 +2178,31 @@ pub mod describe_app_version_resources_resolution_status_output {
             self
         }
         /// <p>The returned error message for the request.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput).
         pub fn build(self) -> crate::output::DescribeAppVersionResourcesResolutionStatusOutput {
             crate::output::DescribeAppVersionResourcesResolutionStatusOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                resolution_id: self.resolution_id,
-                status: self.status,
-                error_message: self.error_message,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                resolution_id: self.resolution_id
+                ,
+                status: self.status
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAppVersionResourcesResolutionStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput).
-    pub fn builder(
-    ) -> crate::output::describe_app_version_resources_resolution_status_output::Builder {
+    pub fn builder() -> crate::output::describe_app_version_resources_resolution_status_output::Builder {
         crate::output::describe_app_version_resources_resolution_status_output::Builder::default()
     }
 }
@@ -2293,20 +2210,20 @@ impl DescribeAppVersionResourcesResolutionStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppAssessmentOutput {
+pub struct DescribeAppAssessmentOutput  {
     /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::AppAssessment>,
 }
 impl DescribeAppAssessmentOutput {
     /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
-    pub fn assessment(&self) -> std::option::Option<&crate::model::AppAssessment> {
+    pub fn assessment(&self) -> std::option::Option<& crate::model::AppAssessment> {
         self.assessment.as_ref()
     }
 }
 /// See [`DescribeAppAssessmentOutput`](crate::output::DescribeAppAssessmentOutput).
 pub mod describe_app_assessment_output {
-
+    
     /// A builder for [`DescribeAppAssessmentOutput`](crate::output::DescribeAppAssessmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2319,20 +2236,19 @@ pub mod describe_app_assessment_output {
             self
         }
         /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
-        pub fn set_assessment(
-            mut self,
-            input: std::option::Option<crate::model::AppAssessment>,
-        ) -> Self {
-            self.assessment = input;
-            self
+        pub fn set_assessment(mut self, input: std::option::Option<crate::model::AppAssessment>) -> Self {
+            self.assessment = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAppAssessmentOutput`](crate::output::DescribeAppAssessmentOutput).
         pub fn build(self) -> crate::output::DescribeAppAssessmentOutput {
             crate::output::DescribeAppAssessmentOutput {
-                assessment: self.assessment,
+                assessment: self.assessment
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAppAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppAssessmentOutput`](crate::output::DescribeAppAssessmentOutput).
@@ -2344,20 +2260,20 @@ impl DescribeAppAssessmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppOutput {
+pub struct DescribeAppOutput  {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl DescribeAppOutput {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
-    pub fn app(&self) -> std::option::Option<&crate::model::App> {
+    pub fn app(&self) -> std::option::Option<& crate::model::App> {
         self.app.as_ref()
     }
 }
 /// See [`DescribeAppOutput`](crate::output::DescribeAppOutput).
 pub mod describe_app_output {
-
+    
     /// A builder for [`DescribeAppOutput`](crate::output::DescribeAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2371,14 +2287,18 @@ pub mod describe_app_output {
         }
         /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
-            self.app = input;
-            self
+            self.app = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAppOutput`](crate::output::DescribeAppOutput).
         pub fn build(self) -> crate::output::DescribeAppOutput {
-            crate::output::DescribeAppOutput { app: self.app }
+            crate::output::DescribeAppOutput {
+                app: self.app
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeAppOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppOutput`](crate::output::DescribeAppOutput).
@@ -2390,20 +2310,20 @@ impl DescribeAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResiliencyPolicyOutput {
+pub struct DeleteResiliencyPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResiliencyPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
 /// See [`DeleteResiliencyPolicyOutput`](crate::output::DeleteResiliencyPolicyOutput).
 pub mod delete_resiliency_policy_output {
-
+    
     /// A builder for [`DeleteResiliencyPolicyOutput`](crate::output::DeleteResiliencyPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2417,16 +2337,18 @@ pub mod delete_resiliency_policy_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = input;
-            self
+            self.policy_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResiliencyPolicyOutput`](crate::output::DeleteResiliencyPolicyOutput).
         pub fn build(self) -> crate::output::DeleteResiliencyPolicyOutput {
             crate::output::DeleteResiliencyPolicyOutput {
-                policy_arn: self.policy_arn,
+                policy_arn: self.policy_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResiliencyPolicyOutput`](crate::output::DeleteResiliencyPolicyOutput).
@@ -2438,7 +2360,7 @@ impl DeleteResiliencyPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecommendationTemplateOutput {
+pub struct DeleteRecommendationTemplateOutput  {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     #[doc(hidden)]
     pub recommendation_template_arn: std::option::Option<std::string::String>,
@@ -2448,17 +2370,17 @@ pub struct DeleteRecommendationTemplateOutput {
 }
 impl DeleteRecommendationTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn recommendation_template_arn(&self) -> std::option::Option<&str> {
+    pub fn recommendation_template_arn(&self) -> std::option::Option<& str> {
         self.recommendation_template_arn.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RecommendationTemplateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RecommendationTemplateStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DeleteRecommendationTemplateOutput`](crate::output::DeleteRecommendationTemplateOutput).
 pub mod delete_recommendation_template_output {
-
+    
     /// A builder for [`DeleteRecommendationTemplateOutput`](crate::output::DeleteRecommendationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2467,20 +2389,13 @@ pub mod delete_recommendation_template_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-        pub fn recommendation_template_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn recommendation_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommendation_template_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-        pub fn set_recommendation_template_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_template_arn = input;
-            self
+        pub fn set_recommendation_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_template_arn = input; self
         }
         /// <p>The status of the action.</p>
         pub fn status(mut self, input: crate::model::RecommendationTemplateStatus) -> Self {
@@ -2488,21 +2403,21 @@ pub mod delete_recommendation_template_output {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationTemplateStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RecommendationTemplateStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRecommendationTemplateOutput`](crate::output::DeleteRecommendationTemplateOutput).
         pub fn build(self) -> crate::output::DeleteRecommendationTemplateOutput {
             crate::output::DeleteRecommendationTemplateOutput {
-                recommendation_template_arn: self.recommendation_template_arn,
-                status: self.status,
+                recommendation_template_arn: self.recommendation_template_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRecommendationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommendationTemplateOutput`](crate::output::DeleteRecommendationTemplateOutput).
@@ -2514,7 +2429,7 @@ impl DeleteRecommendationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppAssessmentOutput {
+pub struct DeleteAppAssessmentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
@@ -2524,17 +2439,17 @@ pub struct DeleteAppAssessmentOutput {
 }
 impl DeleteAppAssessmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn assessment_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_arn(&self) -> std::option::Option<& str> {
         self.assessment_arn.as_deref()
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn assessment_status(&self) -> std::option::Option<&crate::model::AssessmentStatus> {
+    pub fn assessment_status(&self) -> std::option::Option<& crate::model::AssessmentStatus> {
         self.assessment_status.as_ref()
     }
 }
 /// See [`DeleteAppAssessmentOutput`](crate::output::DeleteAppAssessmentOutput).
 pub mod delete_app_assessment_output {
-
+    
     /// A builder for [`DeleteAppAssessmentOutput`](crate::output::DeleteAppAssessmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2548,12 +2463,8 @@ pub mod delete_app_assessment_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_assessment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_arn = input;
-            self
+        pub fn set_assessment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_arn = input; self
         }
         /// <p>The current status of the assessment for the resiliency policy.</p>
         pub fn assessment_status(mut self, input: crate::model::AssessmentStatus) -> Self {
@@ -2561,21 +2472,21 @@ pub mod delete_app_assessment_output {
             self
         }
         /// <p>The current status of the assessment for the resiliency policy.</p>
-        pub fn set_assessment_status(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentStatus>,
-        ) -> Self {
-            self.assessment_status = input;
-            self
+        pub fn set_assessment_status(mut self, input: std::option::Option<crate::model::AssessmentStatus>) -> Self {
+            self.assessment_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAppAssessmentOutput`](crate::output::DeleteAppAssessmentOutput).
         pub fn build(self) -> crate::output::DeleteAppAssessmentOutput {
             crate::output::DeleteAppAssessmentOutput {
-                assessment_arn: self.assessment_arn,
-                assessment_status: self.assessment_status,
+                assessment_arn: self.assessment_arn
+                ,
+                assessment_status: self.assessment_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAppAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppAssessmentOutput`](crate::output::DeleteAppAssessmentOutput).
@@ -2587,20 +2498,20 @@ impl DeleteAppAssessmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppOutput {
+pub struct DeleteAppOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
 }
 /// See [`DeleteAppOutput`](crate::output::DeleteAppOutput).
 pub mod delete_app_output {
-
+    
     /// A builder for [`DeleteAppOutput`](crate::output::DeleteAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2614,16 +2525,18 @@ pub mod delete_app_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAppOutput`](crate::output::DeleteAppOutput).
         pub fn build(self) -> crate::output::DeleteAppOutput {
             crate::output::DeleteAppOutput {
-                app_arn: self.app_arn,
+                app_arn: self.app_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAppOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppOutput`](crate::output::DeleteAppOutput).
@@ -2635,20 +2548,20 @@ impl DeleteAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResiliencyPolicyOutput {
+pub struct CreateResiliencyPolicyOutput  {
     /// <p>The type of resiliency policy that was created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
 }
 impl CreateResiliencyPolicyOutput {
     /// <p>The type of resiliency policy that was created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::ResiliencyPolicy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::ResiliencyPolicy> {
         self.policy.as_ref()
     }
 }
 /// See [`CreateResiliencyPolicyOutput`](crate::output::CreateResiliencyPolicyOutput).
 pub mod create_resiliency_policy_output {
-
+    
     /// A builder for [`CreateResiliencyPolicyOutput`](crate::output::CreateResiliencyPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2661,20 +2574,19 @@ pub mod create_resiliency_policy_output {
             self
         }
         /// <p>The type of resiliency policy that was created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::ResiliencyPolicy>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::ResiliencyPolicy>) -> Self {
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`CreateResiliencyPolicyOutput`](crate::output::CreateResiliencyPolicyOutput).
         pub fn build(self) -> crate::output::CreateResiliencyPolicyOutput {
             crate::output::CreateResiliencyPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateResiliencyPolicyOutput`](crate::output::CreateResiliencyPolicyOutput).
@@ -2686,52 +2598,45 @@ impl CreateResiliencyPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRecommendationTemplateOutput {
+pub struct CreateRecommendationTemplateOutput  {
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
     #[doc(hidden)]
     pub recommendation_template: std::option::Option<crate::model::RecommendationTemplate>,
 }
 impl CreateRecommendationTemplateOutput {
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
-    pub fn recommendation_template(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommendationTemplate> {
+    pub fn recommendation_template(&self) -> std::option::Option<& crate::model::RecommendationTemplate> {
         self.recommendation_template.as_ref()
     }
 }
 /// See [`CreateRecommendationTemplateOutput`](crate::output::CreateRecommendationTemplateOutput).
 pub mod create_recommendation_template_output {
-
+    
     /// A builder for [`CreateRecommendationTemplateOutput`](crate::output::CreateRecommendationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommendation_template:
-            std::option::Option<crate::model::RecommendationTemplate>,
+        pub(crate) recommendation_template: std::option::Option<crate::model::RecommendationTemplate>,
     }
     impl Builder {
         /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
-        pub fn recommendation_template(
-            mut self,
-            input: crate::model::RecommendationTemplate,
-        ) -> Self {
+        pub fn recommendation_template(mut self, input: crate::model::RecommendationTemplate) -> Self {
             self.recommendation_template = Some(input);
             self
         }
         /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
-        pub fn set_recommendation_template(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationTemplate>,
-        ) -> Self {
-            self.recommendation_template = input;
-            self
+        pub fn set_recommendation_template(mut self, input: std::option::Option<crate::model::RecommendationTemplate>) -> Self {
+            self.recommendation_template = input; self
         }
         /// Consumes the builder and constructs a [`CreateRecommendationTemplateOutput`](crate::output::CreateRecommendationTemplateOutput).
         pub fn build(self) -> crate::output::CreateRecommendationTemplateOutput {
             crate::output::CreateRecommendationTemplateOutput {
-                recommendation_template: self.recommendation_template,
+                recommendation_template: self.recommendation_template
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRecommendationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateRecommendationTemplateOutput`](crate::output::CreateRecommendationTemplateOutput).
@@ -2743,20 +2648,20 @@ impl CreateRecommendationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppOutput {
+pub struct CreateAppOutput  {
     /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl CreateAppOutput {
     /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
-    pub fn app(&self) -> std::option::Option<&crate::model::App> {
+    pub fn app(&self) -> std::option::Option<& crate::model::App> {
         self.app.as_ref()
     }
 }
 /// See [`CreateAppOutput`](crate::output::CreateAppOutput).
 pub mod create_app_output {
-
+    
     /// A builder for [`CreateAppOutput`](crate::output::CreateAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2770,14 +2675,18 @@ pub mod create_app_output {
         }
         /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
-            self.app = input;
-            self
+            self.app = input; self
         }
         /// Consumes the builder and constructs a [`CreateAppOutput`](crate::output::CreateAppOutput).
         pub fn build(self) -> crate::output::CreateAppOutput {
-            crate::output::CreateAppOutput { app: self.app }
+            crate::output::CreateAppOutput {
+                app: self.app
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateAppOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppOutput`](crate::output::CreateAppOutput).
@@ -2789,7 +2698,7 @@ impl CreateAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddDraftAppVersionResourceMappingsOutput {
+pub struct AddDraftAppVersionResourceMappingsOutput  {
     /// <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -2802,28 +2711,27 @@ pub struct AddDraftAppVersionResourceMappingsOutput {
 }
 impl AddDraftAppVersionResourceMappingsOutput {
     /// <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn resource_mappings(&self) -> std::option::Option<&[crate::model::ResourceMapping]> {
+    pub fn resource_mappings(&self) -> std::option::Option<& [crate::model::ResourceMapping]> {
         self.resource_mappings.as_deref()
     }
 }
 /// See [`AddDraftAppVersionResourceMappingsOutput`](crate::output::AddDraftAppVersionResourceMappingsOutput).
 pub mod add_draft_app_version_resource_mappings_output {
-
+    
     /// A builder for [`AddDraftAppVersionResourceMappingsOutput`](crate::output::AddDraftAppVersionResourceMappingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) app_version: std::option::Option<std::string::String>,
-        pub(crate) resource_mappings:
-            std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
+        pub(crate) resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2833,8 +2741,7 @@ pub mod add_draft_app_version_resource_mappings_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2843,8 +2750,7 @@ pub mod add_draft_app_version_resource_mappings_output {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// Appends an item to `resource_mappings`.
         ///
@@ -2853,27 +2759,28 @@ pub mod add_draft_app_version_resource_mappings_output {
         /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
         pub fn resource_mappings(mut self, input: crate::model::ResourceMapping) -> Self {
             let mut v = self.resource_mappings.unwrap_or_default();
-            v.push(input);
-            self.resource_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.resource_mappings = Some(v);
+                            self
         }
         /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-        pub fn set_resource_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
-        ) -> Self {
-            self.resource_mappings = input;
-            self
+        pub fn set_resource_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>) -> Self {
+            self.resource_mappings = input; self
         }
         /// Consumes the builder and constructs a [`AddDraftAppVersionResourceMappingsOutput`](crate::output::AddDraftAppVersionResourceMappingsOutput).
         pub fn build(self) -> crate::output::AddDraftAppVersionResourceMappingsOutput {
             crate::output::AddDraftAppVersionResourceMappingsOutput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                resource_mappings: self.resource_mappings,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                resource_mappings: self.resource_mappings
+                ,
             }
         }
     }
+    
+    
 }
 impl AddDraftAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`AddDraftAppVersionResourceMappingsOutput`](crate::output::AddDraftAppVersionResourceMappingsOutput).
@@ -2881,3 +2788,4 @@ impl AddDraftAppVersionResourceMappingsOutput {
         crate::output::add_draft_app_version_resource_mappings_output::Builder::default()
     }
 }
+

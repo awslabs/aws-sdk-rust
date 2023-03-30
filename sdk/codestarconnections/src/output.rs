@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHostOutput {}
+pub struct UpdateHostOutput  {
+}
 /// See [`UpdateHostOutput`](crate::output::UpdateHostOutput).
 pub mod update_host_output {
-
+    
     /// A builder for [`UpdateHostOutput`](crate::output::UpdateHostOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateHostOutput`](crate::output::UpdateHostOutput).
         pub fn build(self) -> crate::output::UpdateHostOutput {
-            crate::output::UpdateHostOutput {}
+            crate::output::UpdateHostOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateHostOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHostOutput`](crate::output::UpdateHostOutput).
@@ -26,19 +31,24 @@ impl UpdateHostOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -50,19 +60,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -74,20 +89,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -101,23 +116,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tag key and value pairs associated with the specified resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tag key and value pairs associated with the specified resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -129,7 +145,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHostsOutput {
+pub struct ListHostsOutput  {
     /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
     #[doc(hidden)]
     pub hosts: std::option::Option<std::vec::Vec<crate::model::Host>>,
@@ -139,17 +155,17 @@ pub struct ListHostsOutput {
 }
 impl ListHostsOutput {
     /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
-    pub fn hosts(&self) -> std::option::Option<&[crate::model::Host]> {
+    pub fn hosts(&self) -> std::option::Option<& [crate::model::Host]> {
         self.hosts.as_deref()
     }
     /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHostsOutput`](crate::output::ListHostsOutput).
 pub mod list_hosts_output {
-
+    
     /// A builder for [`ListHostsOutput`](crate::output::ListHostsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -164,17 +180,13 @@ pub mod list_hosts_output {
         /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
         pub fn hosts(mut self, input: crate::model::Host) -> Self {
             let mut v = self.hosts.unwrap_or_default();
-            v.push(input);
-            self.hosts = Some(v);
-            self
+                            v.push(input);
+                            self.hosts = Some(v);
+                            self
         }
         /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
-        pub fn set_hosts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Host>>,
-        ) -> Self {
-            self.hosts = input;
-            self
+        pub fn set_hosts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Host>>) -> Self {
+            self.hosts = input; self
         }
         /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,17 +195,20 @@ pub mod list_hosts_output {
         }
         /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHostsOutput`](crate::output::ListHostsOutput).
         pub fn build(self) -> crate::output::ListHostsOutput {
             crate::output::ListHostsOutput {
-                hosts: self.hosts,
-                next_token: self.next_token,
+                hosts: self.hosts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHostsOutput {
     /// Creates a new builder-style object to manufacture [`ListHostsOutput`](crate::output::ListHostsOutput).
@@ -205,7 +220,7 @@ impl ListHostsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectionsOutput {
+pub struct ListConnectionsOutput  {
     /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -215,17 +230,17 @@ pub struct ListConnectionsOutput {
 }
 impl ListConnectionsOutput {
     /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
     /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
 pub mod list_connections_output {
-
+    
     /// A builder for [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -240,17 +255,13 @@ pub mod list_connections_output {
         /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -259,17 +270,20 @@ pub mod list_connections_output {
         }
         /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
         pub fn build(self) -> crate::output::ListConnectionsOutput {
             crate::output::ListConnectionsOutput {
-                connections: self.connections,
-                next_token: self.next_token,
+                connections: self.connections
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
@@ -281,7 +295,7 @@ impl ListConnectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHostOutput {
+pub struct GetHostOutput  {
     /// <p>The name of the requested host.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -300,29 +314,29 @@ pub struct GetHostOutput {
 }
 impl GetHostOutput {
     /// <p>The name of the requested host.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the requested host.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+    pub fn provider_type(&self) -> std::option::Option<& crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The endpoint of the infrastructure represented by the requested host.</p>
-    pub fn provider_endpoint(&self) -> std::option::Option<&str> {
+    pub fn provider_endpoint(&self) -> std::option::Option<& str> {
         self.provider_endpoint.as_deref()
     }
     /// <p>The VPC configuration of the requested host.</p>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<& crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
 /// See [`GetHostOutput`](crate::output::GetHostOutput).
 pub mod get_host_output {
-
+    
     /// A builder for [`GetHostOutput`](crate::output::GetHostOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -340,8 +354,7 @@ pub mod get_host_output {
         }
         /// <p>The name of the requested host.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the requested host.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -350,8 +363,7 @@ pub mod get_host_output {
         }
         /// <p>The status of the requested host.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
@@ -359,12 +371,8 @@ pub mod get_host_output {
             self
         }
         /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
-        pub fn set_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::ProviderType>,
-        ) -> Self {
-            self.provider_type = input;
-            self
+        pub fn set_provider_type(mut self, input: std::option::Option<crate::model::ProviderType>) -> Self {
+            self.provider_type = input; self
         }
         /// <p>The endpoint of the infrastructure represented by the requested host.</p>
         pub fn provider_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -372,12 +380,8 @@ pub mod get_host_output {
             self
         }
         /// <p>The endpoint of the infrastructure represented by the requested host.</p>
-        pub fn set_provider_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_endpoint = input;
-            self
+        pub fn set_provider_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_endpoint = input; self
         }
         /// <p>The VPC configuration of the requested host.</p>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
@@ -385,24 +389,27 @@ pub mod get_host_output {
             self
         }
         /// <p>The VPC configuration of the requested host.</p>
-        pub fn set_vpc_configuration(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfiguration>,
-        ) -> Self {
-            self.vpc_configuration = input;
-            self
+        pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::model::VpcConfiguration>) -> Self {
+            self.vpc_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetHostOutput`](crate::output::GetHostOutput).
         pub fn build(self) -> crate::output::GetHostOutput {
             crate::output::GetHostOutput {
-                name: self.name,
-                status: self.status,
-                provider_type: self.provider_type,
-                provider_endpoint: self.provider_endpoint,
-                vpc_configuration: self.vpc_configuration,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                provider_type: self.provider_type
+                ,
+                provider_endpoint: self.provider_endpoint
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetHostOutput {
     /// Creates a new builder-style object to manufacture [`GetHostOutput`](crate::output::GetHostOutput).
@@ -414,20 +421,20 @@ impl GetHostOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectionOutput {
+pub struct GetConnectionOutput  {
     /// <p>The connection details, such as status, owner, and provider type.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl GetConnectionOutput {
     /// <p>The connection details, such as status, owner, and provider type.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+    pub fn connection(&self) -> std::option::Option<& crate::model::Connection> {
         self.connection.as_ref()
     }
 }
 /// See [`GetConnectionOutput`](crate::output::GetConnectionOutput).
 pub mod get_connection_output {
-
+    
     /// A builder for [`GetConnectionOutput`](crate::output::GetConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -440,20 +447,19 @@ pub mod get_connection_output {
             self
         }
         /// <p>The connection details, such as status, owner, and provider type.</p>
-        pub fn set_connection(
-            mut self,
-            input: std::option::Option<crate::model::Connection>,
-        ) -> Self {
-            self.connection = input;
-            self
+        pub fn set_connection(mut self, input: std::option::Option<crate::model::Connection>) -> Self {
+            self.connection = input; self
         }
         /// Consumes the builder and constructs a [`GetConnectionOutput`](crate::output::GetConnectionOutput).
         pub fn build(self) -> crate::output::GetConnectionOutput {
             crate::output::GetConnectionOutput {
-                connection: self.connection,
+                connection: self.connection
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConnectionOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::output::GetConnectionOutput).
@@ -465,19 +471,24 @@ impl GetConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHostOutput {}
+pub struct DeleteHostOutput  {
+}
 /// See [`DeleteHostOutput`](crate::output::DeleteHostOutput).
 pub mod delete_host_output {
-
+    
     /// A builder for [`DeleteHostOutput`](crate::output::DeleteHostOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHostOutput`](crate::output::DeleteHostOutput).
         pub fn build(self) -> crate::output::DeleteHostOutput {
-            crate::output::DeleteHostOutput {}
+            crate::output::DeleteHostOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteHostOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHostOutput`](crate::output::DeleteHostOutput).
@@ -489,19 +500,24 @@ impl DeleteHostOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectionOutput {}
+pub struct DeleteConnectionOutput  {
+}
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
-
+    
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
-            crate::output::DeleteConnectionOutput {}
+            crate::output::DeleteConnectionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
@@ -513,7 +529,7 @@ impl DeleteConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHostOutput {
+pub struct CreateHostOutput  {
     /// <p>The Amazon Resource Name (ARN) of the host to be created.</p>
     #[doc(hidden)]
     pub host_arn: std::option::Option<std::string::String>,
@@ -523,17 +539,17 @@ pub struct CreateHostOutput {
 }
 impl CreateHostOutput {
     /// <p>The Amazon Resource Name (ARN) of the host to be created.</p>
-    pub fn host_arn(&self) -> std::option::Option<&str> {
+    pub fn host_arn(&self) -> std::option::Option<& str> {
         self.host_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`CreateHostOutput`](crate::output::CreateHostOutput).
 pub mod create_host_output {
-
+    
     /// A builder for [`CreateHostOutput`](crate::output::CreateHostOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -548,8 +564,7 @@ pub mod create_host_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be created.</p>
         pub fn set_host_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host_arn = input;
-            self
+            self.host_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -557,26 +572,26 @@ pub mod create_host_output {
         ///
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateHostOutput`](crate::output::CreateHostOutput).
         pub fn build(self) -> crate::output::CreateHostOutput {
             crate::output::CreateHostOutput {
-                host_arn: self.host_arn,
-                tags: self.tags,
+                host_arn: self.host_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateHostOutput {
     /// Creates a new builder-style object to manufacture [`CreateHostOutput`](crate::output::CreateHostOutput).
@@ -588,9 +603,9 @@ impl CreateHostOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
-    /// <p>The ARN is never reused if the connection is deleted.</p>
+pub struct CreateConnectionOutput  {
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> 
+    /// <p>The ARN is never reused if the connection is deleted.</p> 
     /// </note>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
@@ -599,20 +614,20 @@ pub struct CreateConnectionOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConnectionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
-    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> 
+    /// <p>The ARN is never reused if the connection is deleted.</p> 
     /// </note>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>Specifies the tags applied to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
-
+    
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -620,22 +635,18 @@ pub mod create_connection_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
-        /// <p>The ARN is never reused if the connection is deleted.</p>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> 
+        /// <p>The ARN is never reused if the connection is deleted.</p> 
         /// </note>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
-        /// <p>The ARN is never reused if the connection is deleted.</p>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> 
+        /// <p>The ARN is never reused if the connection is deleted.</p> 
         /// </note>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -644,26 +655,26 @@ pub mod create_connection_output {
         /// <p>Specifies the tags applied to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Specifies the tags applied to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
         pub fn build(self) -> crate::output::CreateConnectionOutput {
             crate::output::CreateConnectionOutput {
-                connection_arn: self.connection_arn,
-                tags: self.tags,
+                connection_arn: self.connection_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
@@ -671,3 +682,4 @@ impl CreateConnectionOutput {
         crate::output::create_connection_output::Builder::default()
     }
 }
+

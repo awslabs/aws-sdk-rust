@@ -3,7 +3,7 @@
 /// <p>This object is used in the ValidationException error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>Name of the field which failed validation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>Name of the field which failed validation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Explanation of the reason for the validation error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>Name of the field which failed validation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Explanation of the reason for the validation error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>Explanation of the reason for the validation error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -98,22 +100,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
@@ -122,7 +116,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -130,19 +124,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -150,12 +142,14 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"]
+        &[
+            "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
+        ]
     }
 }
 impl AsRef<str> for ValidationExceptionReason {
@@ -170,9 +164,9 @@ impl AsRef<str> for ValidationExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -193,54 +187,48 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Room,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "ROOM" => ResourceType::Room,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Room => "ROOM",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ROOM"]
+        &[
+            "ROOM"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -252,7 +240,7 @@ impl AsRef<str> for ResourceType {
 /// <p>Configuration information for optional message review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageReviewHandler {
+pub struct MessageReviewHandler  {
     /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -262,17 +250,17 @@ pub struct MessageReviewHandler {
 }
 impl MessageReviewHandler {
     /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
-    pub fn fallback_result(&self) -> std::option::Option<&crate::model::FallbackResult> {
+    pub fn fallback_result(&self) -> std::option::Option<& crate::model::FallbackResult> {
         self.fallback_result.as_ref()
     }
 }
 /// See [`MessageReviewHandler`](crate::model::MessageReviewHandler).
 pub mod message_review_handler {
-
+    
     /// A builder for [`MessageReviewHandler`](crate::model::MessageReviewHandler).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -287,8 +275,7 @@ pub mod message_review_handler {
         }
         /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
         pub fn fallback_result(mut self, input: crate::model::FallbackResult) -> Self {
@@ -296,21 +283,21 @@ pub mod message_review_handler {
             self
         }
         /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
-        pub fn set_fallback_result(
-            mut self,
-            input: std::option::Option<crate::model::FallbackResult>,
-        ) -> Self {
-            self.fallback_result = input;
-            self
+        pub fn set_fallback_result(mut self, input: std::option::Option<crate::model::FallbackResult>) -> Self {
+            self.fallback_result = input; self
         }
         /// Consumes the builder and constructs a [`MessageReviewHandler`](crate::model::MessageReviewHandler).
         pub fn build(self) -> crate::model::MessageReviewHandler {
             crate::model::MessageReviewHandler {
-                uri: self.uri,
-                fallback_result: self.fallback_result,
+                uri: self.uri
+                ,
+                fallback_result: self.fallback_result
+                ,
             }
         }
     }
+    
+    
 }
 impl MessageReviewHandler {
     /// Creates a new builder-style object to manufacture [`MessageReviewHandler`](crate::model::MessageReviewHandler).
@@ -325,9 +312,9 @@ impl MessageReviewHandler {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fallbackresult = unimplemented!();
 /// match fallbackresult {
@@ -349,58 +336,52 @@ impl MessageReviewHandler {
 /// Specifically, when `fallbackresult` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FallbackResult::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FallbackResult {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FallbackResult {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => FallbackResult::Allow,
             "DENY" => FallbackResult::Deny,
-            other => FallbackResult::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FallbackResult::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FallbackResult {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FallbackResult::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FallbackResult::from(s))
+                }
+            }
 impl FallbackResult {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FallbackResult::Allow => "ALLOW",
             FallbackResult::Deny => "DENY",
-            FallbackResult::Unknown(value) => value.as_str(),
+            FallbackResult::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "DENY"]
+        &[
+            "ALLOW", "DENY"
+        ]
     }
 }
 impl AsRef<str> for FallbackResult {
@@ -415,9 +396,9 @@ impl AsRef<str> for FallbackResult {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updateloggingconfigurationstate = unimplemented!();
 /// match updateloggingconfigurationstate {
@@ -438,56 +419,48 @@ impl AsRef<str> for FallbackResult {
 /// Specifically, when `updateloggingconfigurationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateLoggingConfigurationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateLoggingConfigurationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateLoggingConfigurationState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => UpdateLoggingConfigurationState::Active,
-            other => UpdateLoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UpdateLoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateLoggingConfigurationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateLoggingConfigurationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateLoggingConfigurationState::from(s))
+                }
+            }
 impl UpdateLoggingConfigurationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateLoggingConfigurationState::Active => "ACTIVE",
-            UpdateLoggingConfigurationState::Unknown(value) => value.as_str(),
+            UpdateLoggingConfigurationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE"]
+        &[
+            "ACTIVE"
+        ]
     }
 }
 impl AsRef<str> for UpdateLoggingConfigurationState {
@@ -519,14 +492,8 @@ pub enum DestinationConfiguration {
 impl DestinationConfiguration {
     /// Tries to convert the enum instance into [`CloudWatchLogs`](crate::model::DestinationConfiguration::CloudWatchLogs), extracting the inner [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_cloud_watch_logs(
-        &self,
-    ) -> std::result::Result<&crate::model::CloudWatchLogsDestinationConfiguration, &Self> {
-        if let DestinationConfiguration::CloudWatchLogs(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_cloud_watch_logs(&self) -> std::result::Result<&crate::model::CloudWatchLogsDestinationConfiguration, &Self> {
+        if let DestinationConfiguration::CloudWatchLogs(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`CloudWatchLogs`](crate::model::DestinationConfiguration::CloudWatchLogs).
     pub fn is_cloud_watch_logs(&self) -> bool {
@@ -534,14 +501,8 @@ impl DestinationConfiguration {
     }
     /// Tries to convert the enum instance into [`Firehose`](crate::model::DestinationConfiguration::Firehose), extracting the inner [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_firehose(
-        &self,
-    ) -> std::result::Result<&crate::model::FirehoseDestinationConfiguration, &Self> {
-        if let DestinationConfiguration::Firehose(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_firehose(&self) -> std::result::Result<&crate::model::FirehoseDestinationConfiguration, &Self> {
+        if let DestinationConfiguration::Firehose(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Firehose`](crate::model::DestinationConfiguration::Firehose).
     pub fn is_firehose(&self) -> bool {
@@ -550,11 +511,7 @@ impl DestinationConfiguration {
     /// Tries to convert the enum instance into [`S3`](crate::model::DestinationConfiguration::S3), extracting the inner [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> std::result::Result<&crate::model::S3DestinationConfiguration, &Self> {
-        if let DestinationConfiguration::S3(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let DestinationConfiguration::S3(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::model::DestinationConfiguration::S3).
     pub fn is_s3(&self) -> bool {
@@ -569,20 +526,20 @@ impl DestinationConfiguration {
 /// <p>Specifies a Kinesis Firehose location where chat logs will be stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FirehoseDestinationConfiguration {
+pub struct FirehoseDestinationConfiguration  {
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
 }
 impl FirehoseDestinationConfiguration {
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
 }
 /// See [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
 pub mod firehose_destination_configuration {
-
+    
     /// A builder for [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -595,20 +552,19 @@ pub mod firehose_destination_configuration {
             self
         }
         /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
-        pub fn set_delivery_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_name = input;
-            self
+        pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_name = input; self
         }
         /// Consumes the builder and constructs a [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
         pub fn build(self) -> crate::model::FirehoseDestinationConfiguration {
             crate::model::FirehoseDestinationConfiguration {
-                delivery_stream_name: self.delivery_stream_name,
+                delivery_stream_name: self.delivery_stream_name
+                ,
             }
         }
     }
+    
+    
 }
 impl FirehoseDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
@@ -620,20 +576,20 @@ impl FirehoseDestinationConfiguration {
 /// <p>Specifies a CloudWatch Logs location where chat logs will be stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsDestinationConfiguration {
+pub struct CloudWatchLogsDestinationConfiguration  {
     /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsDestinationConfiguration {
     /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
 /// See [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
 pub mod cloud_watch_logs_destination_configuration {
-
+    
     /// A builder for [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -646,20 +602,19 @@ pub mod cloud_watch_logs_destination_configuration {
             self
         }
         /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
         pub fn build(self) -> crate::model::CloudWatchLogsDestinationConfiguration {
             crate::model::CloudWatchLogsDestinationConfiguration {
-                log_group_name: self.log_group_name,
+                log_group_name: self.log_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogsDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
@@ -671,20 +626,20 @@ impl CloudWatchLogsDestinationConfiguration {
 /// <p>Specifies an S3 location where chat logs will be stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DestinationConfiguration {
+pub struct S3DestinationConfiguration  {
     /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl S3DestinationConfiguration {
     /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
 }
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
-
+    
     /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -698,16 +653,18 @@ pub mod s3_destination_configuration {
         }
         /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
         pub fn build(self) -> crate::model::S3DestinationConfiguration {
             crate::model::S3DestinationConfiguration {
-                bucket_name: self.bucket_name,
+                bucket_name: self.bucket_name
+                ,
             }
         }
     }
+    
+    
 }
 impl S3DestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
@@ -719,7 +676,7 @@ impl S3DestinationConfiguration {
 /// <p>Summary information about a room.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoomSummary {
+pub struct RoomSummary  {
     /// <p>Room ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -740,54 +697,48 @@ pub struct RoomSummary {
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>List of logging-configuration identifiers attached to the room.</p>
     #[doc(hidden)]
     pub logging_configuration_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RoomSummary {
     /// <p>Room ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Room ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Room name. The value does not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn message_review_handler(
-        &self,
-    ) -> std::option::Option<&crate::model::MessageReviewHandler> {
+    pub fn message_review_handler(&self) -> std::option::Option<& crate::model::MessageReviewHandler> {
         self.message_review_handler.as_ref()
     }
     /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>List of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn logging_configuration_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.logging_configuration_identifiers.as_deref()
     }
 }
 /// See [`RoomSummary`](crate::model::RoomSummary).
 pub mod room_summary {
-
+    
     /// A builder for [`RoomSummary`](crate::model::RoomSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -797,11 +748,8 @@ pub mod room_summary {
         pub(crate) message_review_handler: std::option::Option<crate::model::MessageReviewHandler>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) logging_configuration_identifiers:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) logging_configuration_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>Room ARN.</p>
@@ -811,8 +759,7 @@ pub mod room_summary {
         }
         /// <p>Room ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Room ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -821,8 +768,7 @@ pub mod room_summary {
         }
         /// <p>Room ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Room name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -831,8 +777,7 @@ pub mod room_summary {
         }
         /// <p>Room name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Configuration information for optional review of messages.</p>
         pub fn message_review_handler(mut self, input: crate::model::MessageReviewHandler) -> Self {
@@ -840,12 +785,8 @@ pub mod room_summary {
             self
         }
         /// <p>Configuration information for optional review of messages.</p>
-        pub fn set_message_review_handler(
-            mut self,
-            input: std::option::Option<crate::model::MessageReviewHandler>,
-        ) -> Self {
-            self.message_review_handler = input;
-            self
+        pub fn set_message_review_handler(mut self, input: std::option::Option<crate::model::MessageReviewHandler>) -> Self {
+            self.message_review_handler = input; self
         }
         /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -853,12 +794,8 @@ pub mod room_summary {
             self
         }
         /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -866,74 +803,63 @@ pub mod room_summary {
             self
         }
         /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `logging_configuration_identifiers`.
         ///
         /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
         ///
         /// <p>List of logging-configuration identifiers attached to the room.</p>
-        pub fn logging_configuration_identifiers(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn logging_configuration_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logging_configuration_identifiers.unwrap_or_default();
-            v.push(input.into());
-            self.logging_configuration_identifiers = Some(v);
-            self
+                            v.push(input.into());
+                            self.logging_configuration_identifiers = Some(v);
+                            self
         }
         /// <p>List of logging-configuration identifiers attached to the room.</p>
-        pub fn set_logging_configuration_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.logging_configuration_identifiers = input;
-            self
+        pub fn set_logging_configuration_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.logging_configuration_identifiers = input; self
         }
         /// Consumes the builder and constructs a [`RoomSummary`](crate::model::RoomSummary).
         pub fn build(self) -> crate::model::RoomSummary {
             crate::model::RoomSummary {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                message_review_handler: self.message_review_handler,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                tags: self.tags,
-                logging_configuration_identifiers: self.logging_configuration_identifiers,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                message_review_handler: self.message_review_handler
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                tags: self.tags
+                ,
+                logging_configuration_identifiers: self.logging_configuration_identifiers
+                ,
             }
         }
     }
+    
+    
 }
 impl RoomSummary {
     /// Creates a new builder-style object to manufacture [`RoomSummary`](crate::model::RoomSummary).
@@ -945,7 +871,7 @@ impl RoomSummary {
 /// <p>Summary information about a logging configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfigurationSummary {
+pub struct LoggingConfigurationSummary  {
     /// <p>Logging-configuration ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -969,51 +895,45 @@ pub struct LoggingConfigurationSummary {
     pub state: std::option::Option<crate::model::LoggingConfigurationState>,
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl LoggingConfigurationSummary {
     /// <p>Logging-configuration ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>Logging-configuration name. The value does not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> std::option::Option<& crate::model::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::LoggingConfigurationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::LoggingConfigurationState> {
         self.state.as_ref()
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
 pub mod logging_configuration_summary {
-
+    
     /// A builder for [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1022,12 +942,9 @@ pub mod logging_configuration_summary {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) destination_configuration:
-            std::option::Option<crate::model::DestinationConfiguration>,
+        pub(crate) destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
         pub(crate) state: std::option::Option<crate::model::LoggingConfigurationState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Logging-configuration ARN.</p>
@@ -1037,8 +954,7 @@ pub mod logging_configuration_summary {
         }
         /// <p>Logging-configuration ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1047,8 +963,7 @@ pub mod logging_configuration_summary {
         }
         /// <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1056,12 +971,8 @@ pub mod logging_configuration_summary {
             self
         }
         /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1069,12 +980,8 @@ pub mod logging_configuration_summary {
             self
         }
         /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>Logging-configuration name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1083,24 +990,16 @@ pub mod logging_configuration_summary {
         }
         /// <p>Logging-configuration name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
-        pub fn destination_configuration(
-            mut self,
-            input: crate::model::DestinationConfiguration,
-        ) -> Self {
+        pub fn destination_configuration(mut self, input: crate::model::DestinationConfiguration) -> Self {
             self.destination_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
-        pub fn set_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfiguration>,
-        ) -> Self {
-            self.destination_configuration = input;
-            self
+        pub fn set_destination_configuration(mut self, input: std::option::Option<crate::model::DestinationConfiguration>) -> Self {
+            self.destination_configuration = input; self
         }
         /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
         pub fn state(mut self, input: crate::model::LoggingConfigurationState) -> Self {
@@ -1108,52 +1007,48 @@ pub mod logging_configuration_summary {
             self
         }
         /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfigurationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::LoggingConfigurationState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
         pub fn build(self) -> crate::model::LoggingConfigurationSummary {
             crate::model::LoggingConfigurationSummary {
-                arn: self.arn,
-                id: self.id,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                name: self.name,
-                destination_configuration: self.destination_configuration,
-                state: self.state,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                name: self.name
+                ,
+                destination_configuration: self.destination_configuration
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl LoggingConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
@@ -1168,9 +1063,9 @@ impl LoggingConfigurationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let loggingconfigurationstate = unimplemented!();
 /// match loggingconfigurationstate {
@@ -1197,22 +1092,14 @@ impl LoggingConfigurationSummary {
 /// Specifically, when `loggingconfigurationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoggingConfigurationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LoggingConfigurationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1229,7 +1116,7 @@ pub enum LoggingConfigurationState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoggingConfigurationState {
     fn from(s: &str) -> Self {
@@ -1241,19 +1128,17 @@ impl std::convert::From<&str> for LoggingConfigurationState {
             "DELETING" => LoggingConfigurationState::Deleting,
             "UPDATE_FAILED" => LoggingConfigurationState::UpdateFailed,
             "UPDATING" => LoggingConfigurationState::Updating,
-            other => LoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LoggingConfigurationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoggingConfigurationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LoggingConfigurationState::from(s))
+                }
+            }
 impl LoggingConfigurationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1265,19 +1150,13 @@ impl LoggingConfigurationState {
             LoggingConfigurationState::Deleting => "DELETING",
             LoggingConfigurationState::UpdateFailed => "UPDATE_FAILED",
             LoggingConfigurationState::Updating => "UPDATING",
-            LoggingConfigurationState::Unknown(value) => value.as_str(),
+            LoggingConfigurationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETE_FAILED",
-            "DELETING",
-            "UPDATE_FAILED",
-            "UPDATING",
+            "ACTIVE", "CREATE_FAILED", "CREATING", "DELETE_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"
         ]
     }
 }
@@ -1293,9 +1172,9 @@ impl AsRef<str> for LoggingConfigurationState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let createloggingconfigurationstate = unimplemented!();
 /// match createloggingconfigurationstate {
@@ -1316,56 +1195,48 @@ impl AsRef<str> for LoggingConfigurationState {
 /// Specifically, when `createloggingconfigurationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CreateLoggingConfigurationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CreateLoggingConfigurationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CreateLoggingConfigurationState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => CreateLoggingConfigurationState::Active,
-            other => CreateLoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CreateLoggingConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CreateLoggingConfigurationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CreateLoggingConfigurationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CreateLoggingConfigurationState::from(s))
+                }
+            }
 impl CreateLoggingConfigurationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CreateLoggingConfigurationState::Active => "ACTIVE",
-            CreateLoggingConfigurationState::Unknown(value) => value.as_str(),
+            CreateLoggingConfigurationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE"]
+        &[
+            "ACTIVE"
+        ]
     }
 }
 impl AsRef<str> for CreateLoggingConfigurationState {
@@ -1380,9 +1251,9 @@ impl AsRef<str> for CreateLoggingConfigurationState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let chattokencapability = unimplemented!();
 /// match chattokencapability {
@@ -1405,22 +1276,14 @@ impl AsRef<str> for CreateLoggingConfigurationState {
 /// Specifically, when `chattokencapability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChatTokenCapability::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChatTokenCapability {
     #[allow(missing_docs)] // documentation missing in model
     DeleteMessage,
@@ -1429,7 +1292,7 @@ pub enum ChatTokenCapability {
     #[allow(missing_docs)] // documentation missing in model
     SendMessage,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChatTokenCapability {
     fn from(s: &str) -> Self {
@@ -1437,19 +1300,17 @@ impl std::convert::From<&str> for ChatTokenCapability {
             "DELETE_MESSAGE" => ChatTokenCapability::DeleteMessage,
             "DISCONNECT_USER" => ChatTokenCapability::DisconnectUser,
             "SEND_MESSAGE" => ChatTokenCapability::SendMessage,
-            other => {
-                ChatTokenCapability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ChatTokenCapability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChatTokenCapability {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChatTokenCapability::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChatTokenCapability::from(s))
+                }
+            }
 impl ChatTokenCapability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1457,12 +1318,14 @@ impl ChatTokenCapability {
             ChatTokenCapability::DeleteMessage => "DELETE_MESSAGE",
             ChatTokenCapability::DisconnectUser => "DISCONNECT_USER",
             ChatTokenCapability::SendMessage => "SEND_MESSAGE",
-            ChatTokenCapability::Unknown(value) => value.as_str(),
+            ChatTokenCapability::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETE_MESSAGE", "DISCONNECT_USER", "SEND_MESSAGE"]
+        &[
+            "DELETE_MESSAGE", "DISCONNECT_USER", "SEND_MESSAGE"
+        ]
     }
 }
 impl AsRef<str> for ChatTokenCapability {
@@ -1470,3 +1333,4 @@ impl AsRef<str> for ChatTokenCapability {
         self.as_str()
     }
 }
+

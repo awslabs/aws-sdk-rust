@@ -3,20 +3,20 @@
 /// <p>The key of a tag.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagKeyOnly {
+pub struct TagKeyOnly  {
     /// <p>The name of the key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl TagKeyOnly {
     /// <p>The name of the key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
 /// See [`TagKeyOnly`](crate::model::TagKeyOnly).
 pub mod tag_key_only {
-
+    
     /// A builder for [`TagKeyOnly`](crate::model::TagKeyOnly).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,14 +30,18 @@ pub mod tag_key_only {
         }
         /// <p>The name of the key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Consumes the builder and constructs a [`TagKeyOnly`](crate::model::TagKeyOnly).
         pub fn build(self) -> crate::model::TagKeyOnly {
-            crate::model::TagKeyOnly { key: self.key }
+            crate::model::TagKeyOnly {
+                key: self.key
+                ,
+            }
         }
     }
+    
+    
 }
 impl TagKeyOnly {
     /// Creates a new builder-style object to manufacture [`TagKeyOnly`](crate::model::TagKeyOnly).
@@ -49,20 +53,20 @@ impl TagKeyOnly {
 /// <p>The ID of an EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl Instance {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
-
+    
     /// A builder for [`Instance`](crate::model::Instance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -76,16 +80,18 @@ pub mod instance {
         }
         /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
-                instance_id: self.instance_id,
+                instance_id: self.instance_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
@@ -97,135 +103,109 @@ impl Instance {
 /// <p>The attributes for a load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoadBalancerAttributes {
-    /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
+pub struct LoadBalancerAttributes  {
+    /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub cross_zone_load_balancing: std::option::Option<crate::model::CrossZoneLoadBalancing>,
-    /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
+    /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub access_log: std::option::Option<crate::model::AccessLog>,
-    /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
+    /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub connection_draining: std::option::Option<crate::model::ConnectionDraining>,
-    /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
+    /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> 
     /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub connection_settings: std::option::Option<crate::model::ConnectionSettings>,
     /// <p>Any additional attributes.</p>
     #[doc(hidden)]
-    pub additional_attributes:
-        std::option::Option<std::vec::Vec<crate::model::AdditionalAttribute>>,
+    pub additional_attributes: std::option::Option<std::vec::Vec<crate::model::AdditionalAttribute>>,
 }
 impl LoadBalancerAttributes {
-    /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
+    /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn cross_zone_load_balancing(
-        &self,
-    ) -> std::option::Option<&crate::model::CrossZoneLoadBalancing> {
+    pub fn cross_zone_load_balancing(&self) -> std::option::Option<& crate::model::CrossZoneLoadBalancing> {
         self.cross_zone_load_balancing.as_ref()
     }
-    /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
+    /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn access_log(&self) -> std::option::Option<&crate::model::AccessLog> {
+    pub fn access_log(&self) -> std::option::Option<& crate::model::AccessLog> {
         self.access_log.as_ref()
     }
-    /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
+    /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn connection_draining(&self) -> std::option::Option<&crate::model::ConnectionDraining> {
+    pub fn connection_draining(&self) -> std::option::Option<& crate::model::ConnectionDraining> {
         self.connection_draining.as_ref()
     }
-    /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
+    /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> 
     /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn connection_settings(&self) -> std::option::Option<&crate::model::ConnectionSettings> {
+    pub fn connection_settings(&self) -> std::option::Option<& crate::model::ConnectionSettings> {
         self.connection_settings.as_ref()
     }
     /// <p>Any additional attributes.</p>
-    pub fn additional_attributes(
-        &self,
-    ) -> std::option::Option<&[crate::model::AdditionalAttribute]> {
+    pub fn additional_attributes(&self) -> std::option::Option<& [crate::model::AdditionalAttribute]> {
         self.additional_attributes.as_deref()
     }
 }
 /// See [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
 pub mod load_balancer_attributes {
-
+    
     /// A builder for [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cross_zone_load_balancing:
-            std::option::Option<crate::model::CrossZoneLoadBalancing>,
+        pub(crate) cross_zone_load_balancing: std::option::Option<crate::model::CrossZoneLoadBalancing>,
         pub(crate) access_log: std::option::Option<crate::model::AccessLog>,
         pub(crate) connection_draining: std::option::Option<crate::model::ConnectionDraining>,
         pub(crate) connection_settings: std::option::Option<crate::model::ConnectionSettings>,
-        pub(crate) additional_attributes:
-            std::option::Option<std::vec::Vec<crate::model::AdditionalAttribute>>,
+        pub(crate) additional_attributes: std::option::Option<std::vec::Vec<crate::model::AdditionalAttribute>>,
     }
     impl Builder {
-        /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
+        /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn cross_zone_load_balancing(
-            mut self,
-            input: crate::model::CrossZoneLoadBalancing,
-        ) -> Self {
+        pub fn cross_zone_load_balancing(mut self, input: crate::model::CrossZoneLoadBalancing) -> Self {
             self.cross_zone_load_balancing = Some(input);
             self
         }
-        /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
+        /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn set_cross_zone_load_balancing(
-            mut self,
-            input: std::option::Option<crate::model::CrossZoneLoadBalancing>,
-        ) -> Self {
-            self.cross_zone_load_balancing = input;
-            self
+        pub fn set_cross_zone_load_balancing(mut self, input: std::option::Option<crate::model::CrossZoneLoadBalancing>) -> Self {
+            self.cross_zone_load_balancing = input; self
         }
-        /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
+        /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn access_log(mut self, input: crate::model::AccessLog) -> Self {
             self.access_log = Some(input);
             self
         }
-        /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
+        /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn set_access_log(
-            mut self,
-            input: std::option::Option<crate::model::AccessLog>,
-        ) -> Self {
-            self.access_log = input;
-            self
+        pub fn set_access_log(mut self, input: std::option::Option<crate::model::AccessLog>) -> Self {
+            self.access_log = input; self
         }
-        /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
+        /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn connection_draining(mut self, input: crate::model::ConnectionDraining) -> Self {
             self.connection_draining = Some(input);
             self
         }
-        /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
+        /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn set_connection_draining(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionDraining>,
-        ) -> Self {
-            self.connection_draining = input;
-            self
+        pub fn set_connection_draining(mut self, input: std::option::Option<crate::model::ConnectionDraining>) -> Self {
+            self.connection_draining = input; self
         }
-        /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
+        /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> 
         /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn connection_settings(mut self, input: crate::model::ConnectionSettings) -> Self {
             self.connection_settings = Some(input);
             self
         }
-        /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
+        /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> 
         /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn set_connection_settings(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionSettings>,
-        ) -> Self {
-            self.connection_settings = input;
-            self
+        pub fn set_connection_settings(mut self, input: std::option::Option<crate::model::ConnectionSettings>) -> Self {
+            self.connection_settings = input; self
         }
         /// Appends an item to `additional_attributes`.
         ///
@@ -234,29 +214,32 @@ pub mod load_balancer_attributes {
         /// <p>Any additional attributes.</p>
         pub fn additional_attributes(mut self, input: crate::model::AdditionalAttribute) -> Self {
             let mut v = self.additional_attributes.unwrap_or_default();
-            v.push(input);
-            self.additional_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.additional_attributes = Some(v);
+                            self
         }
         /// <p>Any additional attributes.</p>
-        pub fn set_additional_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AdditionalAttribute>>,
-        ) -> Self {
-            self.additional_attributes = input;
-            self
+        pub fn set_additional_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AdditionalAttribute>>) -> Self {
+            self.additional_attributes = input; self
         }
         /// Consumes the builder and constructs a [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
         pub fn build(self) -> crate::model::LoadBalancerAttributes {
             crate::model::LoadBalancerAttributes {
-                cross_zone_load_balancing: self.cross_zone_load_balancing,
-                access_log: self.access_log,
-                connection_draining: self.connection_draining,
-                connection_settings: self.connection_settings,
-                additional_attributes: self.additional_attributes,
+                cross_zone_load_balancing: self.cross_zone_load_balancing
+                ,
+                access_log: self.access_log
+                ,
+                connection_draining: self.connection_draining
+                ,
+                connection_settings: self.connection_settings
+                ,
+                additional_attributes: self.additional_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl LoadBalancerAttributes {
     /// Creates a new builder-style object to manufacture [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
@@ -268,11 +251,11 @@ impl LoadBalancerAttributes {
 /// <p>Information about additional load balancer attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdditionalAttribute {
-    /// <p>The name of the attribute.</p>
-    /// <p>The following attribute is supported.</p>
-    /// <ul>
-    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+pub struct AdditionalAttribute  {
+    /// <p>The name of the attribute.</p> 
+    /// <p>The following attribute is supported.</p> 
+    /// <ul> 
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -281,22 +264,22 @@ pub struct AdditionalAttribute {
     pub value: std::option::Option<std::string::String>,
 }
 impl AdditionalAttribute {
-    /// <p>The name of the attribute.</p>
-    /// <p>The following attribute is supported.</p>
-    /// <ul>
-    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+    /// <p>The name of the attribute.</p> 
+    /// <p>The following attribute is supported.</p> 
+    /// <ul> 
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li> 
     /// </ul>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>This value of the attribute.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`AdditionalAttribute`](crate::model::AdditionalAttribute).
 pub mod additional_attribute {
-
+    
     /// A builder for [`AdditionalAttribute`](crate::model::AdditionalAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -304,23 +287,22 @@ pub mod additional_attribute {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the attribute.</p>
-        /// <p>The following attribute is supported.</p>
-        /// <ul>
-        /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+        /// <p>The name of the attribute.</p> 
+        /// <p>The following attribute is supported.</p> 
+        /// <ul> 
+        /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li> 
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The name of the attribute.</p>
-        /// <p>The following attribute is supported.</p>
-        /// <ul>
-        /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+        /// <p>The name of the attribute.</p> 
+        /// <p>The following attribute is supported.</p> 
+        /// <ul> 
+        /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li> 
         /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>This value of the attribute.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -329,17 +311,20 @@ pub mod additional_attribute {
         }
         /// <p>This value of the attribute.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AdditionalAttribute`](crate::model::AdditionalAttribute).
         pub fn build(self) -> crate::model::AdditionalAttribute {
             crate::model::AdditionalAttribute {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl AdditionalAttribute {
     /// Creates a new builder-style object to manufacture [`AdditionalAttribute`](crate::model::AdditionalAttribute).
@@ -351,7 +336,7 @@ impl AdditionalAttribute {
 /// <p>Information about the <code>ConnectionSettings</code> attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionSettings {
+pub struct ConnectionSettings  {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     #[doc(hidden)]
     pub idle_timeout: std::option::Option<i32>,
@@ -364,7 +349,7 @@ impl ConnectionSettings {
 }
 /// See [`ConnectionSettings`](crate::model::ConnectionSettings).
 pub mod connection_settings {
-
+    
     /// A builder for [`ConnectionSettings`](crate::model::ConnectionSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -378,16 +363,18 @@ pub mod connection_settings {
         }
         /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
         pub fn set_idle_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_timeout = input;
-            self
+            self.idle_timeout = input; self
         }
         /// Consumes the builder and constructs a [`ConnectionSettings`](crate::model::ConnectionSettings).
         pub fn build(self) -> crate::model::ConnectionSettings {
             crate::model::ConnectionSettings {
-                idle_timeout: self.idle_timeout,
+                idle_timeout: self.idle_timeout
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectionSettings {
     /// Creates a new builder-style object to manufacture [`ConnectionSettings`](crate::model::ConnectionSettings).
@@ -399,7 +386,7 @@ impl ConnectionSettings {
 /// <p>Information about the <code>ConnectionDraining</code> attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionDraining {
+pub struct ConnectionDraining  {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -419,7 +406,7 @@ impl ConnectionDraining {
 }
 /// See [`ConnectionDraining`](crate::model::ConnectionDraining).
 pub mod connection_draining {
-
+    
     /// A builder for [`ConnectionDraining`](crate::model::ConnectionDraining).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -434,8 +421,7 @@ pub mod connection_draining {
         }
         /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
         pub fn timeout(mut self, input: i32) -> Self {
@@ -444,17 +430,21 @@ pub mod connection_draining {
         }
         /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// Consumes the builder and constructs a [`ConnectionDraining`](crate::model::ConnectionDraining).
         pub fn build(self) -> crate::model::ConnectionDraining {
             crate::model::ConnectionDraining {
-                enabled: self.enabled.unwrap_or_default(),
-                timeout: self.timeout,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                timeout: self.timeout
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectionDraining {
     /// Creates a new builder-style object to manufacture [`ConnectionDraining`](crate::model::ConnectionDraining).
@@ -466,14 +456,14 @@ impl ConnectionDraining {
 /// <p>Information about the <code>AccessLog</code> attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessLog {
+pub struct AccessLog  {
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
     #[doc(hidden)]
     pub enabled: bool,
     /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
+    /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p> 
     /// <p>Default: 60 minutes</p>
     #[doc(hidden)]
     pub emit_interval: std::option::Option<i32>,
@@ -487,22 +477,22 @@ impl AccessLog {
         self.enabled
     }
     /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
+    /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p> 
     /// <p>Default: 60 minutes</p>
     pub fn emit_interval(&self) -> std::option::Option<i32> {
         self.emit_interval
     }
     /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
-    pub fn s3_bucket_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_prefix(&self) -> std::option::Option<& str> {
         self.s3_bucket_prefix.as_deref()
     }
 }
 /// See [`AccessLog`](crate::model::AccessLog).
 pub mod access_log {
-
+    
     /// A builder for [`AccessLog`](crate::model::AccessLog).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -519,8 +509,7 @@ pub mod access_log {
         }
         /// <p>Specifies whether access logs are enabled for the load balancer.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -528,24 +517,19 @@ pub mod access_log {
             self
         }
         /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
-        /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
+        /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p> 
         /// <p>Default: 60 minutes</p>
         pub fn emit_interval(mut self, input: i32) -> Self {
             self.emit_interval = Some(input);
             self
         }
-        /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
+        /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p> 
         /// <p>Default: 60 minutes</p>
         pub fn set_emit_interval(mut self, input: std::option::Option<i32>) -> Self {
-            self.emit_interval = input;
-            self
+            self.emit_interval = input; self
         }
         /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
         pub fn s3_bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -553,23 +537,26 @@ pub mod access_log {
             self
         }
         /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
-        pub fn set_s3_bucket_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_prefix = input;
-            self
+        pub fn set_s3_bucket_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_prefix = input; self
         }
         /// Consumes the builder and constructs a [`AccessLog`](crate::model::AccessLog).
         pub fn build(self) -> crate::model::AccessLog {
             crate::model::AccessLog {
-                enabled: self.enabled.unwrap_or_default(),
-                s3_bucket_name: self.s3_bucket_name,
-                emit_interval: self.emit_interval,
-                s3_bucket_prefix: self.s3_bucket_prefix,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                emit_interval: self.emit_interval
+                ,
+                s3_bucket_prefix: self.s3_bucket_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessLog {
     /// Creates a new builder-style object to manufacture [`AccessLog`](crate::model::AccessLog).
@@ -581,7 +568,7 @@ impl AccessLog {
 /// <p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CrossZoneLoadBalancing {
+pub struct CrossZoneLoadBalancing  {
     /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -594,7 +581,7 @@ impl CrossZoneLoadBalancing {
 }
 /// See [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
 pub mod cross_zone_load_balancing {
-
+    
     /// A builder for [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -608,16 +595,19 @@ pub mod cross_zone_load_balancing {
         }
         /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
         pub fn build(self) -> crate::model::CrossZoneLoadBalancing {
             crate::model::CrossZoneLoadBalancing {
-                enabled: self.enabled.unwrap_or_default(),
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CrossZoneLoadBalancing {
     /// Creates a new builder-style object to manufacture [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
@@ -629,7 +619,7 @@ impl CrossZoneLoadBalancing {
 /// <p>The tags associated with a load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagDescription {
+pub struct TagDescription  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -639,17 +629,17 @@ pub struct TagDescription {
 }
 impl TagDescription {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`TagDescription`](crate::model::TagDescription).
 pub mod tag_description {
-
+    
     /// A builder for [`TagDescription`](crate::model::TagDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -663,12 +653,8 @@ pub mod tag_description {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_name = input;
-            self
+        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -677,26 +663,26 @@ pub mod tag_description {
         /// <p>The tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagDescription`](crate::model::TagDescription).
         pub fn build(self) -> crate::model::TagDescription {
             crate::model::TagDescription {
-                load_balancer_name: self.load_balancer_name,
-                tags: self.tags,
+                load_balancer_name: self.load_balancer_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl TagDescription {
     /// Creates a new builder-style object to manufacture [`TagDescription`](crate::model::TagDescription).
@@ -708,7 +694,7 @@ impl TagDescription {
 /// <p>Information about a tag.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -718,17 +704,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -743,8 +729,7 @@ pub mod tag {
         }
         /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -753,17 +738,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -775,14 +763,14 @@ impl Tag {
 /// <p>Information about a load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoadBalancerDescription {
+pub struct LoadBalancerDescription  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
     #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
-    /// <p>The DNS name of the load balancer.</p>
+    /// <p>The DNS name of the load balancer.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub canonical_hosted_zone_name: std::option::Option<std::string::String>,
@@ -791,15 +779,13 @@ pub struct LoadBalancerDescription {
     pub canonical_hosted_zone_name_id: std::option::Option<std::string::String>,
     /// <p>The listeners for the load balancer.</p>
     #[doc(hidden)]
-    pub listener_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::ListenerDescription>>,
+    pub listener_descriptions: std::option::Option<std::vec::Vec<crate::model::ListenerDescription>>,
     /// <p>The policies defined for the load balancer.</p>
     #[doc(hidden)]
     pub policies: std::option::Option<crate::model::Policies>,
     /// <p>Information about your EC2 instances.</p>
     #[doc(hidden)]
-    pub backend_server_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::BackendServerDescription>>,
+    pub backend_server_descriptions: std::option::Option<std::vec::Vec<crate::model::BackendServerDescription>>,
     /// <p>The Availability Zones for the load balancer.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -824,88 +810,84 @@ pub struct LoadBalancerDescription {
     /// <p>The date and time the load balancer was created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
-    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+    /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p> 
+    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> 
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
     #[doc(hidden)]
     pub scheme: std::option::Option<std::string::String>,
 }
 impl LoadBalancerDescription {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The DNS name of the load balancer.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> std::option::Option<& str> {
         self.dns_name.as_deref()
     }
-    /// <p>The DNS name of the load balancer.</p>
+    /// <p>The DNS name of the load balancer.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn canonical_hosted_zone_name(&self) -> std::option::Option<&str> {
+    pub fn canonical_hosted_zone_name(&self) -> std::option::Option<& str> {
         self.canonical_hosted_zone_name.as_deref()
     }
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
-    pub fn canonical_hosted_zone_name_id(&self) -> std::option::Option<&str> {
+    pub fn canonical_hosted_zone_name_id(&self) -> std::option::Option<& str> {
         self.canonical_hosted_zone_name_id.as_deref()
     }
     /// <p>The listeners for the load balancer.</p>
-    pub fn listener_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListenerDescription]> {
+    pub fn listener_descriptions(&self) -> std::option::Option<& [crate::model::ListenerDescription]> {
         self.listener_descriptions.as_deref()
     }
     /// <p>The policies defined for the load balancer.</p>
-    pub fn policies(&self) -> std::option::Option<&crate::model::Policies> {
+    pub fn policies(&self) -> std::option::Option<& crate::model::Policies> {
         self.policies.as_ref()
     }
     /// <p>Information about your EC2 instances.</p>
-    pub fn backend_server_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::BackendServerDescription]> {
+    pub fn backend_server_descriptions(&self) -> std::option::Option<& [crate::model::BackendServerDescription]> {
         self.backend_server_descriptions.as_deref()
     }
     /// <p>The Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The IDs of the subnets for the load balancer.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>The ID of the VPC for the load balancer.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The IDs of the instances for the load balancer.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
         self.instances.as_deref()
     }
     /// <p>Information about the health checks conducted on the load balancer.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+    pub fn health_check(&self) -> std::option::Option<& crate::model::HealthCheck> {
         self.health_check.as_ref()
     }
     /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
-    pub fn source_security_group(&self) -> std::option::Option<&crate::model::SourceSecurityGroup> {
+    pub fn source_security_group(&self) -> std::option::Option<& crate::model::SourceSecurityGroup> {
         self.source_security_group.as_ref()
     }
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The date and time the load balancer was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
-    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+    /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p> 
+    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> 
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
-    pub fn scheme(&self) -> std::option::Option<&str> {
+    pub fn scheme(&self) -> std::option::Option<& str> {
         self.scheme.as_deref()
     }
 }
 /// See [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
 pub mod load_balancer_description {
-
+    
     /// A builder for [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -913,11 +895,9 @@ pub mod load_balancer_description {
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) canonical_hosted_zone_name: std::option::Option<std::string::String>,
         pub(crate) canonical_hosted_zone_name_id: std::option::Option<std::string::String>,
-        pub(crate) listener_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::ListenerDescription>>,
+        pub(crate) listener_descriptions: std::option::Option<std::vec::Vec<crate::model::ListenerDescription>>,
         pub(crate) policies: std::option::Option<crate::model::Policies>,
-        pub(crate) backend_server_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::BackendServerDescription>>,
+        pub(crate) backend_server_descriptions: std::option::Option<std::vec::Vec<crate::model::BackendServerDescription>>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -935,12 +915,8 @@ pub mod load_balancer_description {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_name = input;
-            self
+        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_name = input; self
         }
         /// <p>The DNS name of the load balancer.</p>
         pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -949,39 +925,27 @@ pub mod load_balancer_description {
         }
         /// <p>The DNS name of the load balancer.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = input;
-            self
+            self.dns_name = input; self
         }
-        /// <p>The DNS name of the load balancer.</p>
+        /// <p>The DNS name of the load balancer.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn canonical_hosted_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.canonical_hosted_zone_name = Some(input.into());
             self
         }
-        /// <p>The DNS name of the load balancer.</p>
+        /// <p>The DNS name of the load balancer.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn set_canonical_hosted_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.canonical_hosted_zone_name = input;
-            self
+        pub fn set_canonical_hosted_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.canonical_hosted_zone_name = input; self
         }
         /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
-        pub fn canonical_hosted_zone_name_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn canonical_hosted_zone_name_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.canonical_hosted_zone_name_id = Some(input.into());
             self
         }
         /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
-        pub fn set_canonical_hosted_zone_name_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.canonical_hosted_zone_name_id = input;
-            self
+        pub fn set_canonical_hosted_zone_name_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.canonical_hosted_zone_name_id = input; self
         }
         /// Appends an item to `listener_descriptions`.
         ///
@@ -990,17 +954,13 @@ pub mod load_balancer_description {
         /// <p>The listeners for the load balancer.</p>
         pub fn listener_descriptions(mut self, input: crate::model::ListenerDescription) -> Self {
             let mut v = self.listener_descriptions.unwrap_or_default();
-            v.push(input);
-            self.listener_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.listener_descriptions = Some(v);
+                            self
         }
         /// <p>The listeners for the load balancer.</p>
-        pub fn set_listener_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListenerDescription>>,
-        ) -> Self {
-            self.listener_descriptions = input;
-            self
+        pub fn set_listener_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListenerDescription>>) -> Self {
+            self.listener_descriptions = input; self
         }
         /// <p>The policies defined for the load balancer.</p>
         pub fn policies(mut self, input: crate::model::Policies) -> Self {
@@ -1009,30 +969,22 @@ pub mod load_balancer_description {
         }
         /// <p>The policies defined for the load balancer.</p>
         pub fn set_policies(mut self, input: std::option::Option<crate::model::Policies>) -> Self {
-            self.policies = input;
-            self
+            self.policies = input; self
         }
         /// Appends an item to `backend_server_descriptions`.
         ///
         /// To override the contents of this collection use [`set_backend_server_descriptions`](Self::set_backend_server_descriptions).
         ///
         /// <p>Information about your EC2 instances.</p>
-        pub fn backend_server_descriptions(
-            mut self,
-            input: crate::model::BackendServerDescription,
-        ) -> Self {
+        pub fn backend_server_descriptions(mut self, input: crate::model::BackendServerDescription) -> Self {
             let mut v = self.backend_server_descriptions.unwrap_or_default();
-            v.push(input);
-            self.backend_server_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.backend_server_descriptions = Some(v);
+                            self
         }
         /// <p>Information about your EC2 instances.</p>
-        pub fn set_backend_server_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BackendServerDescription>>,
-        ) -> Self {
-            self.backend_server_descriptions = input;
-            self
+        pub fn set_backend_server_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::BackendServerDescription>>) -> Self {
+            self.backend_server_descriptions = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -1041,17 +993,13 @@ pub mod load_balancer_description {
         /// <p>The Availability Zones for the load balancer.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>The Availability Zones for the load balancer.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Appends an item to `subnets`.
         ///
@@ -1060,17 +1008,13 @@ pub mod load_balancer_description {
         /// <p>The IDs of the subnets for the load balancer.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>The IDs of the subnets for the load balancer.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// <p>The ID of the VPC for the load balancer.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1079,8 +1023,7 @@ pub mod load_balancer_description {
         }
         /// <p>The ID of the VPC for the load balancer.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `instances`.
         ///
@@ -1089,17 +1032,13 @@ pub mod load_balancer_description {
         /// <p>The IDs of the instances for the load balancer.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>The IDs of the instances for the load balancer.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
+            self.instances = input; self
         }
         /// <p>Information about the health checks conducted on the load balancer.</p>
         pub fn health_check(mut self, input: crate::model::HealthCheck) -> Self {
@@ -1107,12 +1046,8 @@ pub mod load_balancer_description {
             self
         }
         /// <p>Information about the health checks conducted on the load balancer.</p>
-        pub fn set_health_check(
-            mut self,
-            input: std::option::Option<crate::model::HealthCheck>,
-        ) -> Self {
-            self.health_check = input;
-            self
+        pub fn set_health_check(mut self, input: std::option::Option<crate::model::HealthCheck>) -> Self {
+            self.health_check = input; self
         }
         /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
         pub fn source_security_group(mut self, input: crate::model::SourceSecurityGroup) -> Self {
@@ -1120,12 +1055,8 @@ pub mod load_balancer_description {
             self
         }
         /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
-        pub fn set_source_security_group(
-            mut self,
-            input: std::option::Option<crate::model::SourceSecurityGroup>,
-        ) -> Self {
-            self.source_security_group = input;
-            self
+        pub fn set_source_security_group(mut self, input: std::option::Option<crate::model::SourceSecurityGroup>) -> Self {
+            self.source_security_group = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -1134,17 +1065,13 @@ pub mod load_balancer_description {
         /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// <p>The date and time the load balancer was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1152,49 +1079,62 @@ pub mod load_balancer_description {
             self
         }
         /// <p>The date and time the load balancer was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
-        /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
-        /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+        /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p> 
+        /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> 
         /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
         pub fn scheme(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheme = Some(input.into());
             self
         }
-        /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
-        /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+        /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p> 
+        /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p> 
         /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
         pub fn set_scheme(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.scheme = input;
-            self
+            self.scheme = input; self
         }
         /// Consumes the builder and constructs a [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
         pub fn build(self) -> crate::model::LoadBalancerDescription {
             crate::model::LoadBalancerDescription {
-                load_balancer_name: self.load_balancer_name,
-                dns_name: self.dns_name,
-                canonical_hosted_zone_name: self.canonical_hosted_zone_name,
-                canonical_hosted_zone_name_id: self.canonical_hosted_zone_name_id,
-                listener_descriptions: self.listener_descriptions,
-                policies: self.policies,
-                backend_server_descriptions: self.backend_server_descriptions,
-                availability_zones: self.availability_zones,
-                subnets: self.subnets,
-                vpc_id: self.vpc_id,
-                instances: self.instances,
-                health_check: self.health_check,
-                source_security_group: self.source_security_group,
-                security_groups: self.security_groups,
-                created_time: self.created_time,
-                scheme: self.scheme,
+                load_balancer_name: self.load_balancer_name
+                ,
+                dns_name: self.dns_name
+                ,
+                canonical_hosted_zone_name: self.canonical_hosted_zone_name
+                ,
+                canonical_hosted_zone_name_id: self.canonical_hosted_zone_name_id
+                ,
+                listener_descriptions: self.listener_descriptions
+                ,
+                policies: self.policies
+                ,
+                backend_server_descriptions: self.backend_server_descriptions
+                ,
+                availability_zones: self.availability_zones
+                ,
+                subnets: self.subnets
+                ,
+                vpc_id: self.vpc_id
+                ,
+                instances: self.instances
+                ,
+                health_check: self.health_check
+                ,
+                source_security_group: self.source_security_group
+                ,
+                security_groups: self.security_groups
+                ,
+                created_time: self.created_time
+                ,
+                scheme: self.scheme
+                ,
             }
         }
     }
+    
+    
 }
 impl LoadBalancerDescription {
     /// Creates a new builder-style object to manufacture [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
@@ -1206,7 +1146,7 @@ impl LoadBalancerDescription {
 /// <p>Information about a source security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceSecurityGroup {
+pub struct SourceSecurityGroup  {
     /// <p>The owner of the security group.</p>
     #[doc(hidden)]
     pub owner_alias: std::option::Option<std::string::String>,
@@ -1216,17 +1156,17 @@ pub struct SourceSecurityGroup {
 }
 impl SourceSecurityGroup {
     /// <p>The owner of the security group.</p>
-    pub fn owner_alias(&self) -> std::option::Option<&str> {
+    pub fn owner_alias(&self) -> std::option::Option<& str> {
         self.owner_alias.as_deref()
     }
     /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
 /// See [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
 pub mod source_security_group {
-
+    
     /// A builder for [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1241,8 +1181,7 @@ pub mod source_security_group {
         }
         /// <p>The owner of the security group.</p>
         pub fn set_owner_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_alias = input;
-            self
+            self.owner_alias = input; self
         }
         /// <p>The name of the security group.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1251,17 +1190,20 @@ pub mod source_security_group {
         }
         /// <p>The name of the security group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// Consumes the builder and constructs a [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
         pub fn build(self) -> crate::model::SourceSecurityGroup {
             crate::model::SourceSecurityGroup {
-                owner_alias: self.owner_alias,
-                group_name: self.group_name,
+                owner_alias: self.owner_alias
+                ,
+                group_name: self.group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceSecurityGroup {
     /// Creates a new builder-style object to manufacture [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
@@ -1273,18 +1215,18 @@ impl SourceSecurityGroup {
 /// <p>Information about a health check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HealthCheck {
-    /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p>
-    /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p>
-    /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
-    /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
+pub struct HealthCheck  {
+    /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> 
+    /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> 
+    /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> 
+    /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> 
     /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
     #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
     #[doc(hidden)]
     pub interval: i32,
-    /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
+    /// <p>The amount of time, in seconds, during which no response means a failed health check.</p> 
     /// <p>This value must be less than the <code>Interval</code> value.</p>
     #[doc(hidden)]
     pub timeout: i32,
@@ -1296,19 +1238,19 @@ pub struct HealthCheck {
     pub healthy_threshold: i32,
 }
 impl HealthCheck {
-    /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p>
-    /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p>
-    /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
-    /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
+    /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> 
+    /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> 
+    /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> 
+    /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> 
     /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
     pub fn interval(&self) -> i32 {
         self.interval
     }
-    /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
+    /// <p>The amount of time, in seconds, during which no response means a failed health check.</p> 
     /// <p>This value must be less than the <code>Interval</code> value.</p>
     pub fn timeout(&self) -> i32 {
         self.timeout
@@ -1324,7 +1266,7 @@ impl HealthCheck {
 }
 /// See [`HealthCheck`](crate::model::HealthCheck).
 pub mod health_check {
-
+    
     /// A builder for [`HealthCheck`](crate::model::HealthCheck).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1335,23 +1277,22 @@ pub mod health_check {
         pub(crate) healthy_threshold: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p>
-        /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p>
-        /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
-        /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
+        /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> 
+        /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> 
+        /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> 
+        /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> 
         /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
             self.target = Some(input.into());
             self
         }
-        /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p>
-        /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p>
-        /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
-        /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
+        /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> 
+        /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> 
+        /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> 
+        /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p> 
         /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
         pub fn interval(mut self, input: i32) -> Self {
@@ -1360,20 +1301,18 @@ pub mod health_check {
         }
         /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
-            self.interval = input;
-            self
+            self.interval = input; self
         }
-        /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
+        /// <p>The amount of time, in seconds, during which no response means a failed health check.</p> 
         /// <p>This value must be less than the <code>Interval</code> value.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
+        /// <p>The amount of time, in seconds, during which no response means a failed health check.</p> 
         /// <p>This value must be less than the <code>Interval</code> value.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
         pub fn unhealthy_threshold(mut self, input: i32) -> Self {
@@ -1382,8 +1321,7 @@ pub mod health_check {
         }
         /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
         pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.unhealthy_threshold = input;
-            self
+            self.unhealthy_threshold = input; self
         }
         /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
         pub fn healthy_threshold(mut self, input: i32) -> Self {
@@ -1392,20 +1330,30 @@ pub mod health_check {
         }
         /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
         pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.healthy_threshold = input;
-            self
+            self.healthy_threshold = input; self
         }
         /// Consumes the builder and constructs a [`HealthCheck`](crate::model::HealthCheck).
         pub fn build(self) -> crate::model::HealthCheck {
             crate::model::HealthCheck {
-                target: self.target,
-                interval: self.interval.unwrap_or_default(),
-                timeout: self.timeout.unwrap_or_default(),
-                unhealthy_threshold: self.unhealthy_threshold.unwrap_or_default(),
-                healthy_threshold: self.healthy_threshold.unwrap_or_default(),
+                target: self.target
+                ,
+                interval: self.interval
+                    .unwrap_or_default()
+                ,
+                timeout: self.timeout
+                    .unwrap_or_default()
+                ,
+                unhealthy_threshold: self.unhealthy_threshold
+                    .unwrap_or_default()
+                ,
+                healthy_threshold: self.healthy_threshold
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl HealthCheck {
     /// Creates a new builder-style object to manufacture [`HealthCheck`](crate::model::HealthCheck).
@@ -1417,7 +1365,7 @@ impl HealthCheck {
 /// <p>Information about the configuration of an EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendServerDescription {
+pub struct BackendServerDescription  {
     /// <p>The port on which the EC2 instance is listening.</p>
     #[doc(hidden)]
     pub instance_port: i32,
@@ -1431,13 +1379,13 @@ impl BackendServerDescription {
         self.instance_port
     }
     /// <p>The names of the policies enabled for the EC2 instance.</p>
-    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
         self.policy_names.as_deref()
     }
 }
 /// See [`BackendServerDescription`](crate::model::BackendServerDescription).
 pub mod backend_server_description {
-
+    
     /// A builder for [`BackendServerDescription`](crate::model::BackendServerDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1452,8 +1400,7 @@ pub mod backend_server_description {
         }
         /// <p>The port on which the EC2 instance is listening.</p>
         pub fn set_instance_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_port = input;
-            self
+            self.instance_port = input; self
         }
         /// Appends an item to `policy_names`.
         ///
@@ -1462,26 +1409,27 @@ pub mod backend_server_description {
         /// <p>The names of the policies enabled for the EC2 instance.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-            v.push(input.into());
-            self.policy_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.policy_names = Some(v);
+                            self
         }
         /// <p>The names of the policies enabled for the EC2 instance.</p>
-        pub fn set_policy_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.policy_names = input;
-            self
+        pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.policy_names = input; self
         }
         /// Consumes the builder and constructs a [`BackendServerDescription`](crate::model::BackendServerDescription).
         pub fn build(self) -> crate::model::BackendServerDescription {
             crate::model::BackendServerDescription {
-                instance_port: self.instance_port.unwrap_or_default(),
-                policy_names: self.policy_names,
+                instance_port: self.instance_port
+                    .unwrap_or_default()
+                ,
+                policy_names: self.policy_names
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendServerDescription {
     /// Creates a new builder-style object to manufacture [`BackendServerDescription`](crate::model::BackendServerDescription).
@@ -1493,47 +1441,39 @@ impl BackendServerDescription {
 /// <p>The policies for a load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Policies {
+pub struct Policies  {
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
     #[doc(hidden)]
-    pub app_cookie_stickiness_policies:
-        std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
+    pub app_cookie_stickiness_policies: std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
     /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
     #[doc(hidden)]
-    pub lb_cookie_stickiness_policies:
-        std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
+    pub lb_cookie_stickiness_policies: std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
     /// <p>The policies other than the stickiness policies.</p>
     #[doc(hidden)]
     pub other_policies: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Policies {
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
-    pub fn app_cookie_stickiness_policies(
-        &self,
-    ) -> std::option::Option<&[crate::model::AppCookieStickinessPolicy]> {
+    pub fn app_cookie_stickiness_policies(&self) -> std::option::Option<& [crate::model::AppCookieStickinessPolicy]> {
         self.app_cookie_stickiness_policies.as_deref()
     }
     /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
-    pub fn lb_cookie_stickiness_policies(
-        &self,
-    ) -> std::option::Option<&[crate::model::LbCookieStickinessPolicy]> {
+    pub fn lb_cookie_stickiness_policies(&self) -> std::option::Option<& [crate::model::LbCookieStickinessPolicy]> {
         self.lb_cookie_stickiness_policies.as_deref()
     }
     /// <p>The policies other than the stickiness policies.</p>
-    pub fn other_policies(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn other_policies(&self) -> std::option::Option<& [std::string::String]> {
         self.other_policies.as_deref()
     }
 }
 /// See [`Policies`](crate::model::Policies).
 pub mod policies {
-
+    
     /// A builder for [`Policies`](crate::model::Policies).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) app_cookie_stickiness_policies:
-            std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
-        pub(crate) lb_cookie_stickiness_policies:
-            std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
+        pub(crate) app_cookie_stickiness_policies: std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
+        pub(crate) lb_cookie_stickiness_policies: std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
         pub(crate) other_policies: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -1542,44 +1482,30 @@ pub mod policies {
         /// To override the contents of this collection use [`set_app_cookie_stickiness_policies`](Self::set_app_cookie_stickiness_policies).
         ///
         /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
-        pub fn app_cookie_stickiness_policies(
-            mut self,
-            input: crate::model::AppCookieStickinessPolicy,
-        ) -> Self {
+        pub fn app_cookie_stickiness_policies(mut self, input: crate::model::AppCookieStickinessPolicy) -> Self {
             let mut v = self.app_cookie_stickiness_policies.unwrap_or_default();
-            v.push(input);
-            self.app_cookie_stickiness_policies = Some(v);
-            self
+                            v.push(input);
+                            self.app_cookie_stickiness_policies = Some(v);
+                            self
         }
         /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
-        pub fn set_app_cookie_stickiness_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
-        ) -> Self {
-            self.app_cookie_stickiness_policies = input;
-            self
+        pub fn set_app_cookie_stickiness_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>) -> Self {
+            self.app_cookie_stickiness_policies = input; self
         }
         /// Appends an item to `lb_cookie_stickiness_policies`.
         ///
         /// To override the contents of this collection use [`set_lb_cookie_stickiness_policies`](Self::set_lb_cookie_stickiness_policies).
         ///
         /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
-        pub fn lb_cookie_stickiness_policies(
-            mut self,
-            input: crate::model::LbCookieStickinessPolicy,
-        ) -> Self {
+        pub fn lb_cookie_stickiness_policies(mut self, input: crate::model::LbCookieStickinessPolicy) -> Self {
             let mut v = self.lb_cookie_stickiness_policies.unwrap_or_default();
-            v.push(input);
-            self.lb_cookie_stickiness_policies = Some(v);
-            self
+                            v.push(input);
+                            self.lb_cookie_stickiness_policies = Some(v);
+                            self
         }
         /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
-        pub fn set_lb_cookie_stickiness_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
-        ) -> Self {
-            self.lb_cookie_stickiness_policies = input;
-            self
+        pub fn set_lb_cookie_stickiness_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>) -> Self {
+            self.lb_cookie_stickiness_policies = input; self
         }
         /// Appends an item to `other_policies`.
         ///
@@ -1588,27 +1514,28 @@ pub mod policies {
         /// <p>The policies other than the stickiness policies.</p>
         pub fn other_policies(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.other_policies.unwrap_or_default();
-            v.push(input.into());
-            self.other_policies = Some(v);
-            self
+                            v.push(input.into());
+                            self.other_policies = Some(v);
+                            self
         }
         /// <p>The policies other than the stickiness policies.</p>
-        pub fn set_other_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.other_policies = input;
-            self
+        pub fn set_other_policies(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.other_policies = input; self
         }
         /// Consumes the builder and constructs a [`Policies`](crate::model::Policies).
         pub fn build(self) -> crate::model::Policies {
             crate::model::Policies {
-                app_cookie_stickiness_policies: self.app_cookie_stickiness_policies,
-                lb_cookie_stickiness_policies: self.lb_cookie_stickiness_policies,
-                other_policies: self.other_policies,
+                app_cookie_stickiness_policies: self.app_cookie_stickiness_policies
+                ,
+                lb_cookie_stickiness_policies: self.lb_cookie_stickiness_policies
+                ,
+                other_policies: self.other_policies
+                ,
             }
         }
     }
+    
+    
 }
 impl Policies {
     /// Creates a new builder-style object to manufacture [`Policies`](crate::model::Policies).
@@ -1620,7 +1547,7 @@ impl Policies {
 /// <p>Information about a policy for duration-based session stickiness.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LbCookieStickinessPolicy {
+pub struct LbCookieStickinessPolicy  {
     /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -1630,7 +1557,7 @@ pub struct LbCookieStickinessPolicy {
 }
 impl LbCookieStickinessPolicy {
     /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
@@ -1640,7 +1567,7 @@ impl LbCookieStickinessPolicy {
 }
 /// See [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
 pub mod lb_cookie_stickiness_policy {
-
+    
     /// A builder for [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1655,8 +1582,7 @@ pub mod lb_cookie_stickiness_policy {
         }
         /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
         /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
         pub fn cookie_expiration_period(mut self, input: i64) -> Self {
@@ -1665,17 +1591,20 @@ pub mod lb_cookie_stickiness_policy {
         }
         /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
         pub fn set_cookie_expiration_period(mut self, input: std::option::Option<i64>) -> Self {
-            self.cookie_expiration_period = input;
-            self
+            self.cookie_expiration_period = input; self
         }
         /// Consumes the builder and constructs a [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
         pub fn build(self) -> crate::model::LbCookieStickinessPolicy {
             crate::model::LbCookieStickinessPolicy {
-                policy_name: self.policy_name,
-                cookie_expiration_period: self.cookie_expiration_period,
+                policy_name: self.policy_name
+                ,
+                cookie_expiration_period: self.cookie_expiration_period
+                ,
             }
         }
     }
+    
+    
 }
 impl LbCookieStickinessPolicy {
     /// Creates a new builder-style object to manufacture [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
@@ -1687,7 +1616,7 @@ impl LbCookieStickinessPolicy {
 /// <p>Information about a policy for application-controlled session stickiness.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppCookieStickinessPolicy {
+pub struct AppCookieStickinessPolicy  {
     /// <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -1697,17 +1626,17 @@ pub struct AppCookieStickinessPolicy {
 }
 impl AppCookieStickinessPolicy {
     /// <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The name of the application cookie used for stickiness.</p>
-    pub fn cookie_name(&self) -> std::option::Option<&str> {
+    pub fn cookie_name(&self) -> std::option::Option<& str> {
         self.cookie_name.as_deref()
     }
 }
 /// See [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
 pub mod app_cookie_stickiness_policy {
-
+    
     /// A builder for [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1722,8 +1651,7 @@ pub mod app_cookie_stickiness_policy {
         }
         /// <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
         /// <p>The name of the application cookie used for stickiness.</p>
         pub fn cookie_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1732,17 +1660,20 @@ pub mod app_cookie_stickiness_policy {
         }
         /// <p>The name of the application cookie used for stickiness.</p>
         pub fn set_cookie_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cookie_name = input;
-            self
+            self.cookie_name = input; self
         }
         /// Consumes the builder and constructs a [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
         pub fn build(self) -> crate::model::AppCookieStickinessPolicy {
             crate::model::AppCookieStickinessPolicy {
-                policy_name: self.policy_name,
-                cookie_name: self.cookie_name,
+                policy_name: self.policy_name
+                ,
+                cookie_name: self.cookie_name
+                ,
             }
         }
     }
+    
+    
 }
 impl AppCookieStickinessPolicy {
     /// Creates a new builder-style object to manufacture [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
@@ -1754,7 +1685,7 @@ impl AppCookieStickinessPolicy {
 /// <p>The policies enabled for a listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListenerDescription {
+pub struct ListenerDescription  {
     /// <p>The listener.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
@@ -1764,17 +1695,17 @@ pub struct ListenerDescription {
 }
 impl ListenerDescription {
     /// <p>The listener.</p>
-    pub fn listener(&self) -> std::option::Option<&crate::model::Listener> {
+    pub fn listener(&self) -> std::option::Option<& crate::model::Listener> {
         self.listener.as_ref()
     }
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
-    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
         self.policy_names.as_deref()
     }
 }
 /// See [`ListenerDescription`](crate::model::ListenerDescription).
 pub mod listener_description {
-
+    
     /// A builder for [`ListenerDescription`](crate::model::ListenerDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1789,8 +1720,7 @@ pub mod listener_description {
         }
         /// <p>The listener.</p>
         pub fn set_listener(mut self, input: std::option::Option<crate::model::Listener>) -> Self {
-            self.listener = input;
-            self
+            self.listener = input; self
         }
         /// Appends an item to `policy_names`.
         ///
@@ -1799,26 +1729,26 @@ pub mod listener_description {
         /// <p>The policies. If there are no policies enabled, the list is empty.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-            v.push(input.into());
-            self.policy_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.policy_names = Some(v);
+                            self
         }
         /// <p>The policies. If there are no policies enabled, the list is empty.</p>
-        pub fn set_policy_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.policy_names = input;
-            self
+        pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.policy_names = input; self
         }
         /// Consumes the builder and constructs a [`ListenerDescription`](crate::model::ListenerDescription).
         pub fn build(self) -> crate::model::ListenerDescription {
             crate::model::ListenerDescription {
-                listener: self.listener,
-                policy_names: self.policy_names,
+                listener: self.listener
+                ,
+                policy_names: self.policy_names
+                ,
             }
         }
     }
+    
+    
 }
 impl ListenerDescription {
     /// Creates a new builder-style object to manufacture [`ListenerDescription`](crate::model::ListenerDescription).
@@ -1827,20 +1757,20 @@ impl ListenerDescription {
     }
 }
 
-/// <p>Information about a listener.</p>
+/// <p>Information about a listener.</p> 
 /// <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Listener {
+pub struct Listener  {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     #[doc(hidden)]
     pub load_balancer_port: i32,
-    /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
-    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
-    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+    /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p> 
+    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p> 
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> 
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     #[doc(hidden)]
     pub instance_protocol: std::option::Option<std::string::String>,
@@ -1853,18 +1783,18 @@ pub struct Listener {
 }
 impl Listener {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub fn load_balancer_port(&self) -> i32 {
         self.load_balancer_port
     }
-    /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
-    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
-    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+    /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p> 
+    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p> 
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> 
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
-    pub fn instance_protocol(&self) -> std::option::Option<&str> {
+    pub fn instance_protocol(&self) -> std::option::Option<& str> {
         self.instance_protocol.as_deref()
     }
     /// <p>The port on which the instance is listening.</p>
@@ -1872,13 +1802,13 @@ impl Listener {
         self.instance_port
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
-    pub fn ssl_certificate_id(&self) -> std::option::Option<&str> {
+    pub fn ssl_certificate_id(&self) -> std::option::Option<& str> {
         self.ssl_certificate_id.as_deref()
     }
 }
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
-
+    
     /// A builder for [`Listener`](crate::model::Listener).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1896,8 +1826,7 @@ pub mod listener {
         }
         /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.protocol = input;
-            self
+            self.protocol = input; self
         }
         /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
         pub fn load_balancer_port(mut self, input: i32) -> Self {
@@ -1906,27 +1835,22 @@ pub mod listener {
         }
         /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
         pub fn set_load_balancer_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.load_balancer_port = input;
-            self
+            self.load_balancer_port = input; self
         }
-        /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
-        /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
-        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+        /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p> 
+        /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p> 
+        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> 
         /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
         pub fn instance_protocol(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_protocol = Some(input.into());
             self
         }
-        /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
-        /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
-        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+        /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p> 
+        /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p> 
+        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> 
         /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
-        pub fn set_instance_protocol(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_protocol = input;
-            self
+        pub fn set_instance_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_protocol = input; self
         }
         /// <p>The port on which the instance is listening.</p>
         pub fn instance_port(mut self, input: i32) -> Self {
@@ -1935,8 +1859,7 @@ pub mod listener {
         }
         /// <p>The port on which the instance is listening.</p>
         pub fn set_instance_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_port = input;
-            self
+            self.instance_port = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
         pub fn ssl_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1944,24 +1867,29 @@ pub mod listener {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
-        pub fn set_ssl_certificate_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssl_certificate_id = input;
-            self
+        pub fn set_ssl_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssl_certificate_id = input; self
         }
         /// Consumes the builder and constructs a [`Listener`](crate::model::Listener).
         pub fn build(self) -> crate::model::Listener {
             crate::model::Listener {
-                protocol: self.protocol,
-                load_balancer_port: self.load_balancer_port.unwrap_or_default(),
-                instance_protocol: self.instance_protocol,
-                instance_port: self.instance_port.unwrap_or_default(),
-                ssl_certificate_id: self.ssl_certificate_id,
+                protocol: self.protocol
+                ,
+                load_balancer_port: self.load_balancer_port
+                    .unwrap_or_default()
+                ,
+                instance_protocol: self.instance_protocol
+                ,
+                instance_port: self.instance_port
+                    .unwrap_or_default()
+                ,
+                ssl_certificate_id: self.ssl_certificate_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Listener {
     /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
@@ -1973,7 +1901,7 @@ impl Listener {
 /// <p>Information about a policy type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyTypeDescription {
+pub struct PolicyTypeDescription  {
     /// <p>The name of the policy type.</p>
     #[doc(hidden)]
     pub policy_type_name: std::option::Option<std::string::String>,
@@ -1982,35 +1910,31 @@ pub struct PolicyTypeDescription {
     pub description: std::option::Option<std::string::String>,
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     #[doc(hidden)]
-    pub policy_attribute_type_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::PolicyAttributeTypeDescription>>,
+    pub policy_attribute_type_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyAttributeTypeDescription>>,
 }
 impl PolicyTypeDescription {
     /// <p>The name of the policy type.</p>
-    pub fn policy_type_name(&self) -> std::option::Option<&str> {
+    pub fn policy_type_name(&self) -> std::option::Option<& str> {
         self.policy_type_name.as_deref()
     }
     /// <p>A description of the policy type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
-    pub fn policy_attribute_type_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::PolicyAttributeTypeDescription]> {
+    pub fn policy_attribute_type_descriptions(&self) -> std::option::Option<& [crate::model::PolicyAttributeTypeDescription]> {
         self.policy_attribute_type_descriptions.as_deref()
     }
 }
 /// See [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
 pub mod policy_type_description {
-
+    
     /// A builder for [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) policy_attribute_type_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::PolicyAttributeTypeDescription>>,
+        pub(crate) policy_attribute_type_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyAttributeTypeDescription>>,
     }
     impl Builder {
         /// <p>The name of the policy type.</p>
@@ -2019,12 +1943,8 @@ pub mod policy_type_description {
             self
         }
         /// <p>The name of the policy type.</p>
-        pub fn set_policy_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_type_name = input;
-            self
+        pub fn set_policy_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_type_name = input; self
         }
         /// <p>A description of the policy type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2033,40 +1953,37 @@ pub mod policy_type_description {
         }
         /// <p>A description of the policy type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `policy_attribute_type_descriptions`.
         ///
         /// To override the contents of this collection use [`set_policy_attribute_type_descriptions`](Self::set_policy_attribute_type_descriptions).
         ///
         /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
-        pub fn policy_attribute_type_descriptions(
-            mut self,
-            input: crate::model::PolicyAttributeTypeDescription,
-        ) -> Self {
+        pub fn policy_attribute_type_descriptions(mut self, input: crate::model::PolicyAttributeTypeDescription) -> Self {
             let mut v = self.policy_attribute_type_descriptions.unwrap_or_default();
-            v.push(input);
-            self.policy_attribute_type_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.policy_attribute_type_descriptions = Some(v);
+                            self
         }
         /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
-        pub fn set_policy_attribute_type_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyAttributeTypeDescription>>,
-        ) -> Self {
-            self.policy_attribute_type_descriptions = input;
-            self
+        pub fn set_policy_attribute_type_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyAttributeTypeDescription>>) -> Self {
+            self.policy_attribute_type_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
         pub fn build(self) -> crate::model::PolicyTypeDescription {
             crate::model::PolicyTypeDescription {
-                policy_type_name: self.policy_type_name,
-                description: self.description,
-                policy_attribute_type_descriptions: self.policy_attribute_type_descriptions,
+                policy_type_name: self.policy_type_name
+                ,
+                description: self.description
+                ,
+                policy_attribute_type_descriptions: self.policy_attribute_type_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyTypeDescription {
     /// Creates a new builder-style object to manufacture [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
@@ -2078,7 +1995,7 @@ impl PolicyTypeDescription {
 /// <p>Information about a policy attribute type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyAttributeTypeDescription {
+pub struct PolicyAttributeTypeDescription  {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -2091,49 +2008,49 @@ pub struct PolicyAttributeTypeDescription {
     /// <p>The default value of the attribute, if applicable.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>The cardinality of the attribute.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>ONE(1) : Single value required</p> </li>
-    /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
-    /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
-    /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
+    /// <p>The cardinality of the attribute.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>ONE(1) : Single value required</p> </li> 
+    /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li> 
+    /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li> 
+    /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub cardinality: std::option::Option<std::string::String>,
 }
 impl PolicyAttributeTypeDescription {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
-    pub fn attribute_type(&self) -> std::option::Option<&str> {
+    pub fn attribute_type(&self) -> std::option::Option<& str> {
         self.attribute_type.as_deref()
     }
     /// <p>A description of the attribute.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The default value of the attribute, if applicable.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
-    /// <p>The cardinality of the attribute.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>ONE(1) : Single value required</p> </li>
-    /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
-    /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
-    /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
+    /// <p>The cardinality of the attribute.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>ONE(1) : Single value required</p> </li> 
+    /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li> 
+    /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li> 
+    /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li> 
     /// </ul>
-    pub fn cardinality(&self) -> std::option::Option<&str> {
+    pub fn cardinality(&self) -> std::option::Option<& str> {
         self.cardinality.as_deref()
     }
 }
 /// See [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
 pub mod policy_attribute_type_description {
-
+    
     /// A builder for [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2150,12 +2067,8 @@ pub mod policy_attribute_type_description {
             self
         }
         /// <p>The name of the attribute.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
+        pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_name = input; self
         }
         /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
         pub fn attribute_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2163,12 +2076,8 @@ pub mod policy_attribute_type_description {
             self
         }
         /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
-        pub fn set_attribute_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_type = input;
-            self
+        pub fn set_attribute_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_type = input; self
         }
         /// <p>A description of the attribute.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2177,8 +2086,7 @@ pub mod policy_attribute_type_description {
         }
         /// <p>A description of the attribute.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The default value of the attribute, if applicable.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2186,48 +2094,50 @@ pub mod policy_attribute_type_description {
             self
         }
         /// <p>The default value of the attribute, if applicable.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
-        /// <p>The cardinality of the attribute.</p>
-        /// <p>Valid values:</p>
-        /// <ul>
-        /// <li> <p>ONE(1) : Single value required</p> </li>
-        /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
-        /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
-        /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
+        /// <p>The cardinality of the attribute.</p> 
+        /// <p>Valid values:</p> 
+        /// <ul> 
+        /// <li> <p>ONE(1) : Single value required</p> </li> 
+        /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li> 
+        /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li> 
+        /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li> 
         /// </ul>
         pub fn cardinality(mut self, input: impl Into<std::string::String>) -> Self {
             self.cardinality = Some(input.into());
             self
         }
-        /// <p>The cardinality of the attribute.</p>
-        /// <p>Valid values:</p>
-        /// <ul>
-        /// <li> <p>ONE(1) : Single value required</p> </li>
-        /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
-        /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
-        /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
+        /// <p>The cardinality of the attribute.</p> 
+        /// <p>Valid values:</p> 
+        /// <ul> 
+        /// <li> <p>ONE(1) : Single value required</p> </li> 
+        /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li> 
+        /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li> 
+        /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li> 
         /// </ul>
         pub fn set_cardinality(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cardinality = input;
-            self
+            self.cardinality = input; self
         }
         /// Consumes the builder and constructs a [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
         pub fn build(self) -> crate::model::PolicyAttributeTypeDescription {
             crate::model::PolicyAttributeTypeDescription {
-                attribute_name: self.attribute_name,
-                attribute_type: self.attribute_type,
-                description: self.description,
-                default_value: self.default_value,
-                cardinality: self.cardinality,
+                attribute_name: self.attribute_name
+                ,
+                attribute_type: self.attribute_type
+                ,
+                description: self.description
+                ,
+                default_value: self.default_value
+                ,
+                cardinality: self.cardinality
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyAttributeTypeDescription {
     /// Creates a new builder-style object to manufacture [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
@@ -2239,7 +2149,7 @@ impl PolicyAttributeTypeDescription {
 /// <p>Information about a policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyDescription {
+pub struct PolicyDescription  {
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -2248,35 +2158,31 @@ pub struct PolicyDescription {
     pub policy_type_name: std::option::Option<std::string::String>,
     /// <p>The policy attributes.</p>
     #[doc(hidden)]
-    pub policy_attribute_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::PolicyAttributeDescription>>,
+    pub policy_attribute_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyAttributeDescription>>,
 }
 impl PolicyDescription {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The name of the policy type.</p>
-    pub fn policy_type_name(&self) -> std::option::Option<&str> {
+    pub fn policy_type_name(&self) -> std::option::Option<& str> {
         self.policy_type_name.as_deref()
     }
     /// <p>The policy attributes.</p>
-    pub fn policy_attribute_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::PolicyAttributeDescription]> {
+    pub fn policy_attribute_descriptions(&self) -> std::option::Option<& [crate::model::PolicyAttributeDescription]> {
         self.policy_attribute_descriptions.as_deref()
     }
 }
 /// See [`PolicyDescription`](crate::model::PolicyDescription).
 pub mod policy_description {
-
+    
     /// A builder for [`PolicyDescription`](crate::model::PolicyDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) policy_type_name: std::option::Option<std::string::String>,
-        pub(crate) policy_attribute_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::PolicyAttributeDescription>>,
+        pub(crate) policy_attribute_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyAttributeDescription>>,
     }
     impl Builder {
         /// <p>The name of the policy.</p>
@@ -2286,8 +2192,7 @@ pub mod policy_description {
         }
         /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
         /// <p>The name of the policy type.</p>
         pub fn policy_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2295,44 +2200,38 @@ pub mod policy_description {
             self
         }
         /// <p>The name of the policy type.</p>
-        pub fn set_policy_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_type_name = input;
-            self
+        pub fn set_policy_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_type_name = input; self
         }
         /// Appends an item to `policy_attribute_descriptions`.
         ///
         /// To override the contents of this collection use [`set_policy_attribute_descriptions`](Self::set_policy_attribute_descriptions).
         ///
         /// <p>The policy attributes.</p>
-        pub fn policy_attribute_descriptions(
-            mut self,
-            input: crate::model::PolicyAttributeDescription,
-        ) -> Self {
+        pub fn policy_attribute_descriptions(mut self, input: crate::model::PolicyAttributeDescription) -> Self {
             let mut v = self.policy_attribute_descriptions.unwrap_or_default();
-            v.push(input);
-            self.policy_attribute_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.policy_attribute_descriptions = Some(v);
+                            self
         }
         /// <p>The policy attributes.</p>
-        pub fn set_policy_attribute_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyAttributeDescription>>,
-        ) -> Self {
-            self.policy_attribute_descriptions = input;
-            self
+        pub fn set_policy_attribute_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyAttributeDescription>>) -> Self {
+            self.policy_attribute_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`PolicyDescription`](crate::model::PolicyDescription).
         pub fn build(self) -> crate::model::PolicyDescription {
             crate::model::PolicyDescription {
-                policy_name: self.policy_name,
-                policy_type_name: self.policy_type_name,
-                policy_attribute_descriptions: self.policy_attribute_descriptions,
+                policy_name: self.policy_name
+                ,
+                policy_type_name: self.policy_type_name
+                ,
+                policy_attribute_descriptions: self.policy_attribute_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyDescription {
     /// Creates a new builder-style object to manufacture [`PolicyDescription`](crate::model::PolicyDescription).
@@ -2344,7 +2243,7 @@ impl PolicyDescription {
 /// <p>Information about a policy attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyAttributeDescription {
+pub struct PolicyAttributeDescription  {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -2354,17 +2253,17 @@ pub struct PolicyAttributeDescription {
 }
 impl PolicyAttributeDescription {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&str> {
+    pub fn attribute_value(&self) -> std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
 /// See [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
 pub mod policy_attribute_description {
-
+    
     /// A builder for [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2378,12 +2277,8 @@ pub mod policy_attribute_description {
             self
         }
         /// <p>The name of the attribute.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
+        pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_name = input; self
         }
         /// <p>The value of the attribute.</p>
         pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2391,21 +2286,21 @@ pub mod policy_attribute_description {
             self
         }
         /// <p>The value of the attribute.</p>
-        pub fn set_attribute_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_value = input;
-            self
+        pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_value = input; self
         }
         /// Consumes the builder and constructs a [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
         pub fn build(self) -> crate::model::PolicyAttributeDescription {
             crate::model::PolicyAttributeDescription {
-                attribute_name: self.attribute_name,
-                attribute_value: self.attribute_value,
+                attribute_name: self.attribute_name
+                ,
+                attribute_value: self.attribute_value
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyAttributeDescription {
     /// Creates a new builder-style object to manufacture [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
@@ -2417,73 +2312,73 @@ impl PolicyAttributeDescription {
 /// <p>Information about the state of an EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceState {
+pub struct InstanceState  {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The current state of the instance.</p>
+    /// <p>The current state of the instance.</p> 
     /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
-    /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+    /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p> 
     /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
     #[doc(hidden)]
     pub reason_code: std::option::Option<std::string::String>,
-    /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
-    /// <ul>
-    /// <li> <p> <code>N/A</code> </p> </li>
-    /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
-    /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
-    /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
-    /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
-    /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
-    /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
-    /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
-    /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
-    /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
-    /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
-    /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
+    /// <p>A description of the instance state. This string can contain one or more of the following messages.</p> 
+    /// <ul> 
+    /// <li> <p> <code>N/A</code> </p> </li> 
+    /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li> 
+    /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li> 
+    /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li> 
+    /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li> 
+    /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li> 
+    /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li> 
+    /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li> 
+    /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li> 
+    /// <li> <p> <code>Instance is in pending state.</code> </p> </li> 
+    /// <li> <p> <code>Instance is in stopped state.</code> </p> </li> 
+    /// <li> <p> <code>Instance is in terminated state.</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl InstanceState {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
-    /// <p>The current state of the instance.</p>
+    /// <p>The current state of the instance.</p> 
     /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
-    /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+    /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p> 
     /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
-    pub fn reason_code(&self) -> std::option::Option<&str> {
+    pub fn reason_code(&self) -> std::option::Option<& str> {
         self.reason_code.as_deref()
     }
-    /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
-    /// <ul>
-    /// <li> <p> <code>N/A</code> </p> </li>
-    /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
-    /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
-    /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
-    /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
-    /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
-    /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
-    /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
-    /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
-    /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
-    /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
-    /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
+    /// <p>A description of the instance state. This string can contain one or more of the following messages.</p> 
+    /// <ul> 
+    /// <li> <p> <code>N/A</code> </p> </li> 
+    /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li> 
+    /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li> 
+    /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li> 
+    /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li> 
+    /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li> 
+    /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li> 
+    /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li> 
+    /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li> 
+    /// <li> <p> <code>Instance is in pending state.</code> </p> </li> 
+    /// <li> <p> <code>Instance is in stopped state.</code> </p> </li> 
+    /// <li> <p> <code>Instance is in terminated state.</code> </p> </li> 
     /// </ul>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`InstanceState`](crate::model::InstanceState).
 pub mod instance_state {
-
+    
     /// A builder for [`InstanceState`](crate::model::InstanceState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2500,81 +2395,83 @@ pub mod instance_state {
         }
         /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
-        /// <p>The current state of the instance.</p>
+        /// <p>The current state of the instance.</p> 
         /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The current state of the instance.</p>
+        /// <p>The current state of the instance.</p> 
         /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
-        /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+        /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p> 
         /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
         pub fn reason_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason_code = Some(input.into());
             self
         }
-        /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+        /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p> 
         /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
         pub fn set_reason_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason_code = input;
-            self
+            self.reason_code = input; self
         }
-        /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
-        /// <ul>
-        /// <li> <p> <code>N/A</code> </p> </li>
-        /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
-        /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
-        /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
-        /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
-        /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
-        /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
-        /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
-        /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
-        /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
-        /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
-        /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
+        /// <p>A description of the instance state. This string can contain one or more of the following messages.</p> 
+        /// <ul> 
+        /// <li> <p> <code>N/A</code> </p> </li> 
+        /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li> 
+        /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li> 
+        /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li> 
+        /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li> 
+        /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li> 
+        /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li> 
+        /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li> 
+        /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li> 
+        /// <li> <p> <code>Instance is in pending state.</code> </p> </li> 
+        /// <li> <p> <code>Instance is in stopped state.</code> </p> </li> 
+        /// <li> <p> <code>Instance is in terminated state.</code> </p> </li> 
         /// </ul>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
-        /// <ul>
-        /// <li> <p> <code>N/A</code> </p> </li>
-        /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
-        /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
-        /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
-        /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
-        /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
-        /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
-        /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
-        /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
-        /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
-        /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
-        /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
+        /// <p>A description of the instance state. This string can contain one or more of the following messages.</p> 
+        /// <ul> 
+        /// <li> <p> <code>N/A</code> </p> </li> 
+        /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li> 
+        /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li> 
+        /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li> 
+        /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li> 
+        /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li> 
+        /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li> 
+        /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li> 
+        /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li> 
+        /// <li> <p> <code>Instance is in pending state.</code> </p> </li> 
+        /// <li> <p> <code>Instance is in stopped state.</code> </p> </li> 
+        /// <li> <p> <code>Instance is in terminated state.</code> </p> </li> 
         /// </ul>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`InstanceState`](crate::model::InstanceState).
         pub fn build(self) -> crate::model::InstanceState {
             crate::model::InstanceState {
-                instance_id: self.instance_id,
-                state: self.state,
-                reason_code: self.reason_code,
-                description: self.description,
+                instance_id: self.instance_id
+                ,
+                state: self.state
+                ,
+                reason_code: self.reason_code
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceState {
     /// Creates a new builder-style object to manufacture [`InstanceState`](crate::model::InstanceState).
@@ -2586,12 +2483,12 @@ impl InstanceState {
 /// <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Limit {
-    /// <p>The name of the limit. The possible values are:</p>
-    /// <ul>
-    /// <li> <p>classic-listeners</p> </li>
-    /// <li> <p>classic-load-balancers</p> </li>
-    /// <li> <p>classic-registered-instances</p> </li>
+pub struct Limit  {
+    /// <p>The name of the limit. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p>classic-listeners</p> </li> 
+    /// <li> <p>classic-load-balancers</p> </li> 
+    /// <li> <p>classic-registered-instances</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2600,23 +2497,23 @@ pub struct Limit {
     pub max: std::option::Option<std::string::String>,
 }
 impl Limit {
-    /// <p>The name of the limit. The possible values are:</p>
-    /// <ul>
-    /// <li> <p>classic-listeners</p> </li>
-    /// <li> <p>classic-load-balancers</p> </li>
-    /// <li> <p>classic-registered-instances</p> </li>
+    /// <p>The name of the limit. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p>classic-listeners</p> </li> 
+    /// <li> <p>classic-load-balancers</p> </li> 
+    /// <li> <p>classic-registered-instances</p> </li> 
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum value of the limit.</p>
-    pub fn max(&self) -> std::option::Option<&str> {
+    pub fn max(&self) -> std::option::Option<& str> {
         self.max.as_deref()
     }
 }
 /// See [`Limit`](crate::model::Limit).
 pub mod limit {
-
+    
     /// A builder for [`Limit`](crate::model::Limit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2624,25 +2521,24 @@ pub mod limit {
         pub(crate) max: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the limit. The possible values are:</p>
-        /// <ul>
-        /// <li> <p>classic-listeners</p> </li>
-        /// <li> <p>classic-load-balancers</p> </li>
-        /// <li> <p>classic-registered-instances</p> </li>
+        /// <p>The name of the limit. The possible values are:</p> 
+        /// <ul> 
+        /// <li> <p>classic-listeners</p> </li> 
+        /// <li> <p>classic-load-balancers</p> </li> 
+        /// <li> <p>classic-registered-instances</p> </li> 
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the limit. The possible values are:</p>
-        /// <ul>
-        /// <li> <p>classic-listeners</p> </li>
-        /// <li> <p>classic-load-balancers</p> </li>
-        /// <li> <p>classic-registered-instances</p> </li>
+        /// <p>The name of the limit. The possible values are:</p> 
+        /// <ul> 
+        /// <li> <p>classic-listeners</p> </li> 
+        /// <li> <p>classic-load-balancers</p> </li> 
+        /// <li> <p>classic-registered-instances</p> </li> 
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The maximum value of the limit.</p>
         pub fn max(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2651,17 +2547,20 @@ pub mod limit {
         }
         /// <p>The maximum value of the limit.</p>
         pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// Consumes the builder and constructs a [`Limit`](crate::model::Limit).
         pub fn build(self) -> crate::model::Limit {
             crate::model::Limit {
-                name: self.name,
-                max: self.max,
+                name: self.name
+                ,
+                max: self.max
+                ,
             }
         }
     }
+    
+    
 }
 impl Limit {
     /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
@@ -2673,7 +2572,7 @@ impl Limit {
 /// <p>Information about a policy attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyAttribute {
+pub struct PolicyAttribute  {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -2683,17 +2582,17 @@ pub struct PolicyAttribute {
 }
 impl PolicyAttribute {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&str> {
+    pub fn attribute_value(&self) -> std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
 /// See [`PolicyAttribute`](crate::model::PolicyAttribute).
 pub mod policy_attribute {
-
+    
     /// A builder for [`PolicyAttribute`](crate::model::PolicyAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2707,12 +2606,8 @@ pub mod policy_attribute {
             self
         }
         /// <p>The name of the attribute.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
+        pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_name = input; self
         }
         /// <p>The value of the attribute.</p>
         pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2720,21 +2615,21 @@ pub mod policy_attribute {
             self
         }
         /// <p>The value of the attribute.</p>
-        pub fn set_attribute_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_value = input;
-            self
+        pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_value = input; self
         }
         /// Consumes the builder and constructs a [`PolicyAttribute`](crate::model::PolicyAttribute).
         pub fn build(self) -> crate::model::PolicyAttribute {
             crate::model::PolicyAttribute {
-                attribute_name: self.attribute_name,
-                attribute_value: self.attribute_value,
+                attribute_name: self.attribute_name
+                ,
+                attribute_value: self.attribute_value
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyAttribute {
     /// Creates a new builder-style object to manufacture [`PolicyAttribute`](crate::model::PolicyAttribute).
@@ -2742,3 +2637,4 @@ impl PolicyAttribute {
         crate::model::policy_attribute::Builder::default()
     }
 }
+

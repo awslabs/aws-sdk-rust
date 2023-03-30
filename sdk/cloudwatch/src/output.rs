@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,19 +60,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopMetricStreamsOutput {}
+pub struct StopMetricStreamsOutput  {
+}
 /// See [`StopMetricStreamsOutput`](crate::output::StopMetricStreamsOutput).
 pub mod stop_metric_streams_output {
-
+    
     /// A builder for [`StopMetricStreamsOutput`](crate::output::StopMetricStreamsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopMetricStreamsOutput`](crate::output::StopMetricStreamsOutput).
         pub fn build(self) -> crate::output::StopMetricStreamsOutput {
-            crate::output::StopMetricStreamsOutput {}
+            crate::output::StopMetricStreamsOutput {
+            }
         }
     }
+    
+    
 }
 impl StopMetricStreamsOutput {
     /// Creates a new builder-style object to manufacture [`StopMetricStreamsOutput`](crate::output::StopMetricStreamsOutput).
@@ -74,19 +89,24 @@ impl StopMetricStreamsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMetricStreamsOutput {}
+pub struct StartMetricStreamsOutput  {
+}
 /// See [`StartMetricStreamsOutput`](crate::output::StartMetricStreamsOutput).
 pub mod start_metric_streams_output {
-
+    
     /// A builder for [`StartMetricStreamsOutput`](crate::output::StartMetricStreamsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartMetricStreamsOutput`](crate::output::StartMetricStreamsOutput).
         pub fn build(self) -> crate::output::StartMetricStreamsOutput {
-            crate::output::StartMetricStreamsOutput {}
+            crate::output::StartMetricStreamsOutput {
+            }
         }
     }
+    
+    
 }
 impl StartMetricStreamsOutput {
     /// Creates a new builder-style object to manufacture [`StartMetricStreamsOutput`](crate::output::StartMetricStreamsOutput).
@@ -98,19 +118,24 @@ impl StartMetricStreamsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetAlarmStateOutput {}
+pub struct SetAlarmStateOutput  {
+}
 /// See [`SetAlarmStateOutput`](crate::output::SetAlarmStateOutput).
 pub mod set_alarm_state_output {
-
+    
     /// A builder for [`SetAlarmStateOutput`](crate::output::SetAlarmStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetAlarmStateOutput`](crate::output::SetAlarmStateOutput).
         pub fn build(self) -> crate::output::SetAlarmStateOutput {
-            crate::output::SetAlarmStateOutput {}
+            crate::output::SetAlarmStateOutput {
+            }
         }
     }
+    
+    
 }
 impl SetAlarmStateOutput {
     /// Creates a new builder-style object to manufacture [`SetAlarmStateOutput`](crate::output::SetAlarmStateOutput).
@@ -122,20 +147,20 @@ impl SetAlarmStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetricStreamOutput {
+pub struct PutMetricStreamOutput  {
     /// <p>The ARN of the metric stream.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl PutMetricStreamOutput {
     /// <p>The ARN of the metric stream.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput).
 pub mod put_metric_stream_output {
-
+    
     /// A builder for [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -149,14 +174,18 @@ pub mod put_metric_stream_output {
         }
         /// <p>The ARN of the metric stream.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput).
         pub fn build(self) -> crate::output::PutMetricStreamOutput {
-            crate::output::PutMetricStreamOutput { arn: self.arn }
+            crate::output::PutMetricStreamOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl PutMetricStreamOutput {
     /// Creates a new builder-style object to manufacture [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput).
@@ -168,19 +197,24 @@ impl PutMetricStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetricDataOutput {}
+pub struct PutMetricDataOutput  {
+}
 /// See [`PutMetricDataOutput`](crate::output::PutMetricDataOutput).
 pub mod put_metric_data_output {
-
+    
     /// A builder for [`PutMetricDataOutput`](crate::output::PutMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutMetricDataOutput`](crate::output::PutMetricDataOutput).
         pub fn build(self) -> crate::output::PutMetricDataOutput {
-            crate::output::PutMetricDataOutput {}
+            crate::output::PutMetricDataOutput {
+            }
         }
     }
+    
+    
 }
 impl PutMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`PutMetricDataOutput`](crate::output::PutMetricDataOutput).
@@ -192,19 +226,24 @@ impl PutMetricDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetricAlarmOutput {}
+pub struct PutMetricAlarmOutput  {
+}
 /// See [`PutMetricAlarmOutput`](crate::output::PutMetricAlarmOutput).
 pub mod put_metric_alarm_output {
-
+    
     /// A builder for [`PutMetricAlarmOutput`](crate::output::PutMetricAlarmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutMetricAlarmOutput`](crate::output::PutMetricAlarmOutput).
         pub fn build(self) -> crate::output::PutMetricAlarmOutput {
-            crate::output::PutMetricAlarmOutput {}
+            crate::output::PutMetricAlarmOutput {
+            }
         }
     }
+    
+    
 }
 impl PutMetricAlarmOutput {
     /// Creates a new builder-style object to manufacture [`PutMetricAlarmOutput`](crate::output::PutMetricAlarmOutput).
@@ -216,20 +255,20 @@ impl PutMetricAlarmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutManagedInsightRulesOutput {
+pub struct PutManagedInsightRulesOutput  {
     /// <p> An array that lists the rules that could not be enabled. </p>
     #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
 }
 impl PutManagedInsightRulesOutput {
     /// <p> An array that lists the rules that could not be enabled. </p>
-    pub fn failures(&self) -> std::option::Option<&[crate::model::PartialFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::model::PartialFailure]> {
         self.failures.as_deref()
     }
 }
 /// See [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
 pub mod put_managed_insight_rules_output {
-
+    
     /// A builder for [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -243,25 +282,24 @@ pub mod put_managed_insight_rules_output {
         /// <p> An array that lists the rules that could not be enabled. </p>
         pub fn failures(mut self, input: crate::model::PartialFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input);
-            self.failures = Some(v);
-            self
+                            v.push(input);
+                            self.failures = Some(v);
+                            self
         }
         /// <p> An array that lists the rules that could not be enabled. </p>
-        pub fn set_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
-        ) -> Self {
-            self.failures = input;
-            self
+        pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>) -> Self {
+            self.failures = input; self
         }
         /// Consumes the builder and constructs a [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
         pub fn build(self) -> crate::output::PutManagedInsightRulesOutput {
             crate::output::PutManagedInsightRulesOutput {
-                failures: self.failures,
+                failures: self.failures
+                ,
             }
         }
     }
+    
+    
 }
 impl PutManagedInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
@@ -273,19 +311,24 @@ impl PutManagedInsightRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInsightRuleOutput {}
+pub struct PutInsightRuleOutput  {
+}
 /// See [`PutInsightRuleOutput`](crate::output::PutInsightRuleOutput).
 pub mod put_insight_rule_output {
-
+    
     /// A builder for [`PutInsightRuleOutput`](crate::output::PutInsightRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutInsightRuleOutput`](crate::output::PutInsightRuleOutput).
         pub fn build(self) -> crate::output::PutInsightRuleOutput {
-            crate::output::PutInsightRuleOutput {}
+            crate::output::PutInsightRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl PutInsightRuleOutput {
     /// Creates a new builder-style object to manufacture [`PutInsightRuleOutput`](crate::output::PutInsightRuleOutput).
@@ -297,67 +340,59 @@ impl PutInsightRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDashboardOutput {
-    /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
-    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
+pub struct PutDashboardOutput  {
+    /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p> 
+    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p> 
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
     #[doc(hidden)]
-    pub dashboard_validation_messages:
-        std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
+    pub dashboard_validation_messages: std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
 }
 impl PutDashboardOutput {
-    /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
-    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
+    /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p> 
+    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p> 
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-    pub fn dashboard_validation_messages(
-        &self,
-    ) -> std::option::Option<&[crate::model::DashboardValidationMessage]> {
+    pub fn dashboard_validation_messages(&self) -> std::option::Option<& [crate::model::DashboardValidationMessage]> {
         self.dashboard_validation_messages.as_deref()
     }
 }
 /// See [`PutDashboardOutput`](crate::output::PutDashboardOutput).
 pub mod put_dashboard_output {
-
+    
     /// A builder for [`PutDashboardOutput`](crate::output::PutDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dashboard_validation_messages:
-            std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
+        pub(crate) dashboard_validation_messages: std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
     }
     impl Builder {
         /// Appends an item to `dashboard_validation_messages`.
         ///
         /// To override the contents of this collection use [`set_dashboard_validation_messages`](Self::set_dashboard_validation_messages).
         ///
-        /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
-        /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
+        /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p> 
+        /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p> 
         /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-        pub fn dashboard_validation_messages(
-            mut self,
-            input: crate::model::DashboardValidationMessage,
-        ) -> Self {
+        pub fn dashboard_validation_messages(mut self, input: crate::model::DashboardValidationMessage) -> Self {
             let mut v = self.dashboard_validation_messages.unwrap_or_default();
-            v.push(input);
-            self.dashboard_validation_messages = Some(v);
-            self
+                            v.push(input);
+                            self.dashboard_validation_messages = Some(v);
+                            self
         }
-        /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
-        /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
+        /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p> 
+        /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p> 
         /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-        pub fn set_dashboard_validation_messages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
-        ) -> Self {
-            self.dashboard_validation_messages = input;
-            self
+        pub fn set_dashboard_validation_messages(mut self, input: std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>) -> Self {
+            self.dashboard_validation_messages = input; self
         }
         /// Consumes the builder and constructs a [`PutDashboardOutput`](crate::output::PutDashboardOutput).
         pub fn build(self) -> crate::output::PutDashboardOutput {
             crate::output::PutDashboardOutput {
-                dashboard_validation_messages: self.dashboard_validation_messages,
+                dashboard_validation_messages: self.dashboard_validation_messages
+                ,
             }
         }
     }
+    
+    
 }
 impl PutDashboardOutput {
     /// Creates a new builder-style object to manufacture [`PutDashboardOutput`](crate::output::PutDashboardOutput).
@@ -369,19 +404,24 @@ impl PutDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCompositeAlarmOutput {}
+pub struct PutCompositeAlarmOutput  {
+}
 /// See [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput).
 pub mod put_composite_alarm_output {
-
+    
     /// A builder for [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput).
         pub fn build(self) -> crate::output::PutCompositeAlarmOutput {
-            crate::output::PutCompositeAlarmOutput {}
+            crate::output::PutCompositeAlarmOutput {
+            }
         }
     }
+    
+    
 }
 impl PutCompositeAlarmOutput {
     /// Creates a new builder-style object to manufacture [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput).
@@ -393,19 +433,24 @@ impl PutCompositeAlarmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAnomalyDetectorOutput {}
+pub struct PutAnomalyDetectorOutput  {
+}
 /// See [`PutAnomalyDetectorOutput`](crate::output::PutAnomalyDetectorOutput).
 pub mod put_anomaly_detector_output {
-
+    
     /// A builder for [`PutAnomalyDetectorOutput`](crate::output::PutAnomalyDetectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAnomalyDetectorOutput`](crate::output::PutAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::PutAnomalyDetectorOutput {
-            crate::output::PutAnomalyDetectorOutput {}
+            crate::output::PutAnomalyDetectorOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAnomalyDetectorOutput {
     /// Creates a new builder-style object to manufacture [`PutAnomalyDetectorOutput`](crate::output::PutAnomalyDetectorOutput).
@@ -417,20 +462,20 @@ impl PutAnomalyDetectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -444,23 +489,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The list of tag keys and values associated with the resource you specified.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tag keys and values associated with the resource you specified.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -472,7 +518,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMetricStreamsOutput {
+pub struct ListMetricStreamsOutput  {
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -482,17 +528,17 @@ pub struct ListMetricStreamsOutput {
 }
 impl ListMetricStreamsOutput {
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The array of metric stream information.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::model::MetricStreamEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::MetricStreamEntry]> {
         self.entries.as_deref()
     }
 }
 /// See [`ListMetricStreamsOutput`](crate::output::ListMetricStreamsOutput).
 pub mod list_metric_streams_output {
-
+    
     /// A builder for [`ListMetricStreamsOutput`](crate::output::ListMetricStreamsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -507,8 +553,7 @@ pub mod list_metric_streams_output {
         }
         /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `entries`.
         ///
@@ -517,26 +562,26 @@ pub mod list_metric_streams_output {
         /// <p>The array of metric stream information.</p>
         pub fn entries(mut self, input: crate::model::MetricStreamEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>The array of metric stream information.</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricStreamEntry>>,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricStreamEntry>>) -> Self {
+            self.entries = input; self
         }
         /// Consumes the builder and constructs a [`ListMetricStreamsOutput`](crate::output::ListMetricStreamsOutput).
         pub fn build(self) -> crate::output::ListMetricStreamsOutput {
             crate::output::ListMetricStreamsOutput {
-                next_token: self.next_token,
-                entries: self.entries,
+                next_token: self.next_token
+                ,
+                entries: self.entries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMetricStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricStreamsOutput`](crate::output::ListMetricStreamsOutput).
@@ -548,36 +593,36 @@ impl ListMetricStreamsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMetricsOutput {
+pub struct ListMetricsOutput  {
     /// <p>The metrics that match your request. </p>
     #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<crate::model::Metric>>,
     /// <p>The token that marks the start of the next batch of returned results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+    /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p> 
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
     #[doc(hidden)]
     pub owning_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListMetricsOutput {
     /// <p>The metrics that match your request. </p>
-    pub fn metrics(&self) -> std::option::Option<&[crate::model::Metric]> {
+    pub fn metrics(&self) -> std::option::Option<& [crate::model::Metric]> {
         self.metrics.as_deref()
     }
     /// <p>The token that marks the start of the next batch of returned results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+    /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p> 
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    pub fn owning_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn owning_accounts(&self) -> std::option::Option<& [std::string::String]> {
         self.owning_accounts.as_deref()
     }
 }
 /// See [`ListMetricsOutput`](crate::output::ListMetricsOutput).
 pub mod list_metrics_output {
-
+    
     /// A builder for [`ListMetricsOutput`](crate::output::ListMetricsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -593,17 +638,13 @@ pub mod list_metrics_output {
         /// <p>The metrics that match your request. </p>
         pub fn metrics(mut self, input: crate::model::Metric) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input);
-            self.metrics = Some(v);
-            self
+                            v.push(input);
+                            self.metrics = Some(v);
+                            self
         }
         /// <p>The metrics that match your request. </p>
-        pub fn set_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Metric>>,
-        ) -> Self {
-            self.metrics = input;
-            self
+        pub fn set_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metric>>) -> Self {
+            self.metrics = input; self
         }
         /// <p>The token that marks the start of the next batch of returned results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -612,39 +653,39 @@ pub mod list_metrics_output {
         }
         /// <p>The token that marks the start of the next batch of returned results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `owning_accounts`.
         ///
         /// To override the contents of this collection use [`set_owning_accounts`](Self::set_owning_accounts).
         ///
-        /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+        /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p> 
         /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
         pub fn owning_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.owning_accounts.unwrap_or_default();
-            v.push(input.into());
-            self.owning_accounts = Some(v);
-            self
+                            v.push(input.into());
+                            self.owning_accounts = Some(v);
+                            self
         }
-        /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+        /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p> 
         /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-        pub fn set_owning_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.owning_accounts = input;
-            self
+        pub fn set_owning_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.owning_accounts = input; self
         }
         /// Consumes the builder and constructs a [`ListMetricsOutput`](crate::output::ListMetricsOutput).
         pub fn build(self) -> crate::output::ListMetricsOutput {
             crate::output::ListMetricsOutput {
-                metrics: self.metrics,
-                next_token: self.next_token,
-                owning_accounts: self.owning_accounts,
+                metrics: self.metrics
+                ,
+                next_token: self.next_token
+                ,
+                owning_accounts: self.owning_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricsOutput`](crate::output::ListMetricsOutput).
@@ -656,7 +697,7 @@ impl ListMetricsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedInsightRulesOutput {
+pub struct ListManagedInsightRulesOutput  {
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     #[doc(hidden)]
     pub managed_rules: std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>,
@@ -666,22 +707,21 @@ pub struct ListManagedInsightRulesOutput {
 }
 impl ListManagedInsightRulesOutput {
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
-    pub fn managed_rules(&self) -> std::option::Option<&[crate::model::ManagedRuleDescription]> {
+    pub fn managed_rules(&self) -> std::option::Option<& [crate::model::ManagedRuleDescription]> {
         self.managed_rules.as_deref()
     }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
 pub mod list_managed_insight_rules_output {
-
+    
     /// A builder for [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) managed_rules:
-            std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>,
+        pub(crate) managed_rules: std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -692,17 +732,13 @@ pub mod list_managed_insight_rules_output {
         /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
         pub fn managed_rules(mut self, input: crate::model::ManagedRuleDescription) -> Self {
             let mut v = self.managed_rules.unwrap_or_default();
-            v.push(input);
-            self.managed_rules = Some(v);
-            self
+                            v.push(input);
+                            self.managed_rules = Some(v);
+                            self
         }
         /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
-        pub fn set_managed_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>,
-        ) -> Self {
-            self.managed_rules = input;
-            self
+        pub fn set_managed_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>) -> Self {
+            self.managed_rules = input; self
         }
         /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -711,17 +747,20 @@ pub mod list_managed_insight_rules_output {
         }
         /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
         pub fn build(self) -> crate::output::ListManagedInsightRulesOutput {
             crate::output::ListManagedInsightRulesOutput {
-                managed_rules: self.managed_rules,
-                next_token: self.next_token,
+                managed_rules: self.managed_rules
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListManagedInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
@@ -733,7 +772,7 @@ impl ListManagedInsightRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDashboardsOutput {
+pub struct ListDashboardsOutput  {
     /// <p>The list of matching dashboards.</p>
     #[doc(hidden)]
     pub dashboard_entries: std::option::Option<std::vec::Vec<crate::model::DashboardEntry>>,
@@ -743,22 +782,21 @@ pub struct ListDashboardsOutput {
 }
 impl ListDashboardsOutput {
     /// <p>The list of matching dashboards.</p>
-    pub fn dashboard_entries(&self) -> std::option::Option<&[crate::model::DashboardEntry]> {
+    pub fn dashboard_entries(&self) -> std::option::Option<& [crate::model::DashboardEntry]> {
         self.dashboard_entries.as_deref()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
 pub mod list_dashboards_output {
-
+    
     /// A builder for [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dashboard_entries:
-            std::option::Option<std::vec::Vec<crate::model::DashboardEntry>>,
+        pub(crate) dashboard_entries: std::option::Option<std::vec::Vec<crate::model::DashboardEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -769,17 +807,13 @@ pub mod list_dashboards_output {
         /// <p>The list of matching dashboards.</p>
         pub fn dashboard_entries(mut self, input: crate::model::DashboardEntry) -> Self {
             let mut v = self.dashboard_entries.unwrap_or_default();
-            v.push(input);
-            self.dashboard_entries = Some(v);
-            self
+                            v.push(input);
+                            self.dashboard_entries = Some(v);
+                            self
         }
         /// <p>The list of matching dashboards.</p>
-        pub fn set_dashboard_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DashboardEntry>>,
-        ) -> Self {
-            self.dashboard_entries = input;
-            self
+        pub fn set_dashboard_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DashboardEntry>>) -> Self {
+            self.dashboard_entries = input; self
         }
         /// <p>The token that marks the start of the next batch of returned results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -788,17 +822,20 @@ pub mod list_dashboards_output {
         }
         /// <p>The token that marks the start of the next batch of returned results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
         pub fn build(self) -> crate::output::ListDashboardsOutput {
             crate::output::ListDashboardsOutput {
-                dashboard_entries: self.dashboard_entries,
-                next_token: self.next_token,
+                dashboard_entries: self.dashboard_entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
@@ -810,20 +847,20 @@ impl ListDashboardsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricWidgetImageOutput {
+pub struct GetMetricWidgetImageOutput  {
     /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
     #[doc(hidden)]
     pub metric_widget_image: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetMetricWidgetImageOutput {
     /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
-    pub fn metric_widget_image(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn metric_widget_image(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.metric_widget_image.as_ref()
     }
 }
 /// See [`GetMetricWidgetImageOutput`](crate::output::GetMetricWidgetImageOutput).
 pub mod get_metric_widget_image_output {
-
+    
     /// A builder for [`GetMetricWidgetImageOutput`](crate::output::GetMetricWidgetImageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -836,20 +873,19 @@ pub mod get_metric_widget_image_output {
             self
         }
         /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
-        pub fn set_metric_widget_image(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.metric_widget_image = input;
-            self
+        pub fn set_metric_widget_image(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.metric_widget_image = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricWidgetImageOutput`](crate::output::GetMetricWidgetImageOutput).
         pub fn build(self) -> crate::output::GetMetricWidgetImageOutput {
             crate::output::GetMetricWidgetImageOutput {
-                metric_widget_image: self.metric_widget_image,
+                metric_widget_image: self.metric_widget_image
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMetricWidgetImageOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricWidgetImageOutput`](crate::output::GetMetricWidgetImageOutput).
@@ -861,7 +897,7 @@ impl GetMetricWidgetImageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricStreamOutput {
+pub struct GetMetricStreamOutput  {
     /// <p>The ARN of the metric stream.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -894,57 +930,54 @@ pub struct GetMetricStreamOutput {
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
     #[doc(hidden)]
-    pub statistics_configurations:
-        std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
+    pub statistics_configurations: std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
     #[doc(hidden)]
     pub include_linked_accounts_metrics: std::option::Option<bool>,
 }
 impl GetMetricStreamOutput {
     /// <p>The ARN of the metric stream.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the metric stream.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
-    pub fn include_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
+    pub fn include_filters(&self) -> std::option::Option<& [crate::model::MetricStreamFilter]> {
         self.include_filters.as_deref()
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-    pub fn exclude_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
+    pub fn exclude_filters(&self) -> std::option::Option<& [crate::model::MetricStreamFilter]> {
         self.exclude_filters.as_deref()
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
-    pub fn firehose_arn(&self) -> std::option::Option<&str> {
+    pub fn firehose_arn(&self) -> std::option::Option<& str> {
         self.firehose_arn.as_deref()
     }
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The date that the metric stream was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
-    pub fn output_format(&self) -> std::option::Option<&crate::model::MetricStreamOutputFormat> {
+    pub fn output_format(&self) -> std::option::Option<& crate::model::MetricStreamOutputFormat> {
         self.output_format.as_ref()
     }
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
-    pub fn statistics_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::MetricStreamStatisticsConfiguration]> {
+    pub fn statistics_configurations(&self) -> std::option::Option<& [crate::model::MetricStreamStatisticsConfiguration]> {
         self.statistics_configurations.as_deref()
     }
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
@@ -954,24 +987,21 @@ impl GetMetricStreamOutput {
 }
 /// See [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput).
 pub mod get_metric_stream_output {
-
+    
     /// A builder for [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) include_filters:
-            std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-        pub(crate) exclude_filters:
-            std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
+        pub(crate) include_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
+        pub(crate) exclude_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
         pub(crate) firehose_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
-        pub(crate) statistics_configurations:
-            std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
+        pub(crate) statistics_configurations: std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
         pub(crate) include_linked_accounts_metrics: std::option::Option<bool>,
     }
     impl Builder {
@@ -982,8 +1012,7 @@ pub mod get_metric_stream_output {
         }
         /// <p>The ARN of the metric stream.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the metric stream.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -992,8 +1021,7 @@ pub mod get_metric_stream_output {
         }
         /// <p>The name of the metric stream.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `include_filters`.
         ///
@@ -1002,17 +1030,13 @@ pub mod get_metric_stream_output {
         /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
         pub fn include_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.include_filters.unwrap_or_default();
-            v.push(input);
-            self.include_filters = Some(v);
-            self
+                            v.push(input);
+                            self.include_filters = Some(v);
+                            self
         }
         /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
-        pub fn set_include_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-        ) -> Self {
-            self.include_filters = input;
-            self
+        pub fn set_include_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>) -> Self {
+            self.include_filters = input; self
         }
         /// Appends an item to `exclude_filters`.
         ///
@@ -1021,17 +1045,13 @@ pub mod get_metric_stream_output {
         /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
         pub fn exclude_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.exclude_filters.unwrap_or_default();
-            v.push(input);
-            self.exclude_filters = Some(v);
-            self
+                            v.push(input);
+                            self.exclude_filters = Some(v);
+                            self
         }
         /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-        pub fn set_exclude_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-        ) -> Self {
-            self.exclude_filters = input;
-            self
+        pub fn set_exclude_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>) -> Self {
+            self.exclude_filters = input; self
         }
         /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
         pub fn firehose_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1040,8 +1060,7 @@ pub mod get_metric_stream_output {
         }
         /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firehose_arn = input;
-            self
+            self.firehose_arn = input; self
         }
         /// <p>The ARN of the IAM role that is used by this metric stream.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1050,8 +1069,7 @@ pub mod get_metric_stream_output {
         }
         /// <p>The ARN of the IAM role that is used by this metric stream.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1060,8 +1078,7 @@ pub mod get_metric_stream_output {
         }
         /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The date that the metric stream was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1069,12 +1086,8 @@ pub mod get_metric_stream_output {
             self
         }
         /// <p>The date that the metric stream was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date of the most recent update to the metric stream's configuration.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1082,12 +1095,8 @@ pub mod get_metric_stream_output {
             self
         }
         /// <p>The date of the most recent update to the metric stream's configuration.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
         pub fn output_format(mut self, input: crate::model::MetricStreamOutputFormat) -> Self {
@@ -1095,36 +1104,23 @@ pub mod get_metric_stream_output {
             self
         }
         /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
-        pub fn set_output_format(
-            mut self,
-            input: std::option::Option<crate::model::MetricStreamOutputFormat>,
-        ) -> Self {
-            self.output_format = input;
-            self
+        pub fn set_output_format(mut self, input: std::option::Option<crate::model::MetricStreamOutputFormat>) -> Self {
+            self.output_format = input; self
         }
         /// Appends an item to `statistics_configurations`.
         ///
         /// To override the contents of this collection use [`set_statistics_configurations`](Self::set_statistics_configurations).
         ///
         /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
-        pub fn statistics_configurations(
-            mut self,
-            input: crate::model::MetricStreamStatisticsConfiguration,
-        ) -> Self {
+        pub fn statistics_configurations(mut self, input: crate::model::MetricStreamStatisticsConfiguration) -> Self {
             let mut v = self.statistics_configurations.unwrap_or_default();
-            v.push(input);
-            self.statistics_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.statistics_configurations = Some(v);
+                            self
         }
         /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
-        pub fn set_statistics_configurations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>,
-            >,
-        ) -> Self {
-            self.statistics_configurations = input;
-            self
+        pub fn set_statistics_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>) -> Self {
+            self.statistics_configurations = input; self
         }
         /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
         pub fn include_linked_accounts_metrics(mut self, input: bool) -> Self {
@@ -1132,31 +1128,41 @@ pub mod get_metric_stream_output {
             self
         }
         /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
-        pub fn set_include_linked_accounts_metrics(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.include_linked_accounts_metrics = input;
-            self
+        pub fn set_include_linked_accounts_metrics(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_linked_accounts_metrics = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput).
         pub fn build(self) -> crate::output::GetMetricStreamOutput {
             crate::output::GetMetricStreamOutput {
-                arn: self.arn,
-                name: self.name,
-                include_filters: self.include_filters,
-                exclude_filters: self.exclude_filters,
-                firehose_arn: self.firehose_arn,
-                role_arn: self.role_arn,
-                state: self.state,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
-                output_format: self.output_format,
-                statistics_configurations: self.statistics_configurations,
-                include_linked_accounts_metrics: self.include_linked_accounts_metrics,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                include_filters: self.include_filters
+                ,
+                exclude_filters: self.exclude_filters
+                ,
+                firehose_arn: self.firehose_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                state: self.state
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
+                output_format: self.output_format
+                ,
+                statistics_configurations: self.statistics_configurations
+                ,
+                include_linked_accounts_metrics: self.include_linked_accounts_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMetricStreamOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput).
@@ -1168,7 +1174,7 @@ impl GetMetricStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricStatisticsOutput {
+pub struct GetMetricStatisticsOutput  {
     /// <p>A label for the specified metric.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
@@ -1178,17 +1184,17 @@ pub struct GetMetricStatisticsOutput {
 }
 impl GetMetricStatisticsOutput {
     /// <p>A label for the specified metric.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The data points for the specified metric.</p>
-    pub fn datapoints(&self) -> std::option::Option<&[crate::model::Datapoint]> {
+    pub fn datapoints(&self) -> std::option::Option<& [crate::model::Datapoint]> {
         self.datapoints.as_deref()
     }
 }
 /// See [`GetMetricStatisticsOutput`](crate::output::GetMetricStatisticsOutput).
 pub mod get_metric_statistics_output {
-
+    
     /// A builder for [`GetMetricStatisticsOutput`](crate::output::GetMetricStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1203,8 +1209,7 @@ pub mod get_metric_statistics_output {
         }
         /// <p>A label for the specified metric.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// Appends an item to `datapoints`.
         ///
@@ -1213,26 +1218,26 @@ pub mod get_metric_statistics_output {
         /// <p>The data points for the specified metric.</p>
         pub fn datapoints(mut self, input: crate::model::Datapoint) -> Self {
             let mut v = self.datapoints.unwrap_or_default();
-            v.push(input);
-            self.datapoints = Some(v);
-            self
+                            v.push(input);
+                            self.datapoints = Some(v);
+                            self
         }
         /// <p>The data points for the specified metric.</p>
-        pub fn set_datapoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
-        ) -> Self {
-            self.datapoints = input;
-            self
+        pub fn set_datapoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Datapoint>>) -> Self {
+            self.datapoints = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricStatisticsOutput`](crate::output::GetMetricStatisticsOutput).
         pub fn build(self) -> crate::output::GetMetricStatisticsOutput {
             crate::output::GetMetricStatisticsOutput {
-                label: self.label,
-                datapoints: self.datapoints,
+                label: self.label
+                ,
+                datapoints: self.datapoints
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMetricStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricStatisticsOutput`](crate::output::GetMetricStatisticsOutput).
@@ -1244,41 +1249,40 @@ impl GetMetricStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricDataOutput {
+pub struct GetMetricDataOutput  {
     /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
     #[doc(hidden)]
     pub metric_data_results: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
     /// <p>A token that marks the next batch of returned results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p> 
     /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
     #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
 }
 impl GetMetricDataOutput {
     /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
-    pub fn metric_data_results(&self) -> std::option::Option<&[crate::model::MetricDataResult]> {
+    pub fn metric_data_results(&self) -> std::option::Option<& [crate::model::MetricDataResult]> {
         self.metric_data_results.as_deref()
     }
     /// <p>A token that marks the next batch of returned results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p> 
     /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
-    pub fn messages(&self) -> std::option::Option<&[crate::model::MessageData]> {
+    pub fn messages(&self) -> std::option::Option<& [crate::model::MessageData]> {
         self.messages.as_deref()
     }
 }
 /// See [`GetMetricDataOutput`](crate::output::GetMetricDataOutput).
 pub mod get_metric_data_output {
-
+    
     /// A builder for [`GetMetricDataOutput`](crate::output::GetMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) metric_data_results:
-            std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
+        pub(crate) metric_data_results: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
     }
@@ -1290,17 +1294,13 @@ pub mod get_metric_data_output {
         /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
         pub fn metric_data_results(mut self, input: crate::model::MetricDataResult) -> Self {
             let mut v = self.metric_data_results.unwrap_or_default();
-            v.push(input);
-            self.metric_data_results = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data_results = Some(v);
+                            self
         }
         /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
-        pub fn set_metric_data_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
-        ) -> Self {
-            self.metric_data_results = input;
-            self
+        pub fn set_metric_data_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>) -> Self {
+            self.metric_data_results = input; self
         }
         /// <p>A token that marks the next batch of returned results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1309,39 +1309,39 @@ pub mod get_metric_data_output {
         }
         /// <p>A token that marks the next batch of returned results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `messages`.
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+        /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p> 
         /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
         pub fn messages(mut self, input: crate::model::MessageData) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input);
-            self.messages = Some(v);
-            self
+                            v.push(input);
+                            self.messages = Some(v);
+                            self
         }
-        /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+        /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p> 
         /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
-        pub fn set_messages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
-        ) -> Self {
-            self.messages = input;
-            self
+        pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<crate::model::MessageData>>) -> Self {
+            self.messages = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricDataOutput`](crate::output::GetMetricDataOutput).
         pub fn build(self) -> crate::output::GetMetricDataOutput {
             crate::output::GetMetricDataOutput {
-                metric_data_results: self.metric_data_results,
-                next_token: self.next_token,
-                messages: self.messages,
+                metric_data_results: self.metric_data_results
+                ,
+                next_token: self.next_token
+                ,
+                messages: self.messages
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricDataOutput`](crate::output::GetMetricDataOutput).
@@ -1353,7 +1353,7 @@ impl GetMetricDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightRuleReportOutput {
+pub struct GetInsightRuleReportOutput  {
     /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
     #[doc(hidden)]
     pub key_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1371,16 +1371,15 @@ pub struct GetInsightRuleReportOutput {
     pub contributors: std::option::Option<std::vec::Vec<crate::model::InsightRuleContributor>>,
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
     #[doc(hidden)]
-    pub metric_datapoints:
-        std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>,
+    pub metric_datapoints: std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>,
 }
 impl GetInsightRuleReportOutput {
     /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
-    pub fn key_labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn key_labels(&self) -> std::option::Option<& [std::string::String]> {
         self.key_labels.as_deref()
     }
     /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
-    pub fn aggregation_statistic(&self) -> std::option::Option<&str> {
+    pub fn aggregation_statistic(&self) -> std::option::Option<& str> {
         self.aggregation_statistic.as_deref()
     }
     /// <p>The sum of the values from all individual contributors that match the rule.</p>
@@ -1392,19 +1391,17 @@ impl GetInsightRuleReportOutput {
         self.approximate_unique_count
     }
     /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
-    pub fn contributors(&self) -> std::option::Option<&[crate::model::InsightRuleContributor]> {
+    pub fn contributors(&self) -> std::option::Option<& [crate::model::InsightRuleContributor]> {
         self.contributors.as_deref()
     }
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
-    pub fn metric_datapoints(
-        &self,
-    ) -> std::option::Option<&[crate::model::InsightRuleMetricDatapoint]> {
+    pub fn metric_datapoints(&self) -> std::option::Option<& [crate::model::InsightRuleMetricDatapoint]> {
         self.metric_datapoints.as_deref()
     }
 }
 /// See [`GetInsightRuleReportOutput`](crate::output::GetInsightRuleReportOutput).
 pub mod get_insight_rule_report_output {
-
+    
     /// A builder for [`GetInsightRuleReportOutput`](crate::output::GetInsightRuleReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1412,10 +1409,8 @@ pub mod get_insight_rule_report_output {
         pub(crate) aggregation_statistic: std::option::Option<std::string::String>,
         pub(crate) aggregate_value: std::option::Option<f64>,
         pub(crate) approximate_unique_count: std::option::Option<i64>,
-        pub(crate) contributors:
-            std::option::Option<std::vec::Vec<crate::model::InsightRuleContributor>>,
-        pub(crate) metric_datapoints:
-            std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>,
+        pub(crate) contributors: std::option::Option<std::vec::Vec<crate::model::InsightRuleContributor>>,
+        pub(crate) metric_datapoints: std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>,
     }
     impl Builder {
         /// Appends an item to `key_labels`.
@@ -1425,17 +1420,13 @@ pub mod get_insight_rule_report_output {
         /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
         pub fn key_labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.key_labels.unwrap_or_default();
-            v.push(input.into());
-            self.key_labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.key_labels = Some(v);
+                            self
         }
         /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
-        pub fn set_key_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.key_labels = input;
-            self
+        pub fn set_key_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.key_labels = input; self
         }
         /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
         pub fn aggregation_statistic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1443,12 +1434,8 @@ pub mod get_insight_rule_report_output {
             self
         }
         /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
-        pub fn set_aggregation_statistic(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aggregation_statistic = input;
-            self
+        pub fn set_aggregation_statistic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aggregation_statistic = input; self
         }
         /// <p>The sum of the values from all individual contributors that match the rule.</p>
         pub fn aggregate_value(mut self, input: f64) -> Self {
@@ -1457,8 +1444,7 @@ pub mod get_insight_rule_report_output {
         }
         /// <p>The sum of the values from all individual contributors that match the rule.</p>
         pub fn set_aggregate_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.aggregate_value = input;
-            self
+            self.aggregate_value = input; self
         }
         /// <p>An approximate count of the unique contributors found by this rule in this time period.</p>
         pub fn approximate_unique_count(mut self, input: i64) -> Self {
@@ -1467,8 +1453,7 @@ pub mod get_insight_rule_report_output {
         }
         /// <p>An approximate count of the unique contributors found by this rule in this time period.</p>
         pub fn set_approximate_unique_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.approximate_unique_count = input;
-            self
+            self.approximate_unique_count = input; self
         }
         /// Appends an item to `contributors`.
         ///
@@ -1477,52 +1462,49 @@ pub mod get_insight_rule_report_output {
         /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
         pub fn contributors(mut self, input: crate::model::InsightRuleContributor) -> Self {
             let mut v = self.contributors.unwrap_or_default();
-            v.push(input);
-            self.contributors = Some(v);
-            self
+                            v.push(input);
+                            self.contributors = Some(v);
+                            self
         }
         /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
-        pub fn set_contributors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightRuleContributor>>,
-        ) -> Self {
-            self.contributors = input;
-            self
+        pub fn set_contributors(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightRuleContributor>>) -> Self {
+            self.contributors = input; self
         }
         /// Appends an item to `metric_datapoints`.
         ///
         /// To override the contents of this collection use [`set_metric_datapoints`](Self::set_metric_datapoints).
         ///
         /// <p>A time series of metric data points that matches the time period in the rule request.</p>
-        pub fn metric_datapoints(
-            mut self,
-            input: crate::model::InsightRuleMetricDatapoint,
-        ) -> Self {
+        pub fn metric_datapoints(mut self, input: crate::model::InsightRuleMetricDatapoint) -> Self {
             let mut v = self.metric_datapoints.unwrap_or_default();
-            v.push(input);
-            self.metric_datapoints = Some(v);
-            self
+                            v.push(input);
+                            self.metric_datapoints = Some(v);
+                            self
         }
         /// <p>A time series of metric data points that matches the time period in the rule request.</p>
-        pub fn set_metric_datapoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>,
-        ) -> Self {
-            self.metric_datapoints = input;
-            self
+        pub fn set_metric_datapoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>) -> Self {
+            self.metric_datapoints = input; self
         }
         /// Consumes the builder and constructs a [`GetInsightRuleReportOutput`](crate::output::GetInsightRuleReportOutput).
         pub fn build(self) -> crate::output::GetInsightRuleReportOutput {
             crate::output::GetInsightRuleReportOutput {
-                key_labels: self.key_labels,
-                aggregation_statistic: self.aggregation_statistic,
-                aggregate_value: self.aggregate_value,
-                approximate_unique_count: self.approximate_unique_count,
-                contributors: self.contributors,
-                metric_datapoints: self.metric_datapoints,
+                key_labels: self.key_labels
+                ,
+                aggregation_statistic: self.aggregation_statistic
+                ,
+                aggregate_value: self.aggregate_value
+                ,
+                approximate_unique_count: self.approximate_unique_count
+                ,
+                contributors: self.contributors
+                ,
+                metric_datapoints: self.metric_datapoints
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInsightRuleReportOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightRuleReportOutput`](crate::output::GetInsightRuleReportOutput).
@@ -1534,7 +1516,7 @@ impl GetInsightRuleReportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDashboardOutput {
+pub struct GetDashboardOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
@@ -1547,21 +1529,21 @@ pub struct GetDashboardOutput {
 }
 impl GetDashboardOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
-    pub fn dashboard_body(&self) -> std::option::Option<&str> {
+    pub fn dashboard_body(&self) -> std::option::Option<& str> {
         self.dashboard_body.as_deref()
     }
     /// <p>The name of the dashboard.</p>
-    pub fn dashboard_name(&self) -> std::option::Option<&str> {
+    pub fn dashboard_name(&self) -> std::option::Option<& str> {
         self.dashboard_name.as_deref()
     }
 }
 /// See [`GetDashboardOutput`](crate::output::GetDashboardOutput).
 pub mod get_dashboard_output {
-
+    
     /// A builder for [`GetDashboardOutput`](crate::output::GetDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1576,12 +1558,8 @@ pub mod get_dashboard_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-        pub fn set_dashboard_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_arn = input;
-            self
+        pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_arn = input; self
         }
         /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
         pub fn dashboard_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1589,12 +1567,8 @@ pub mod get_dashboard_output {
             self
         }
         /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
-        pub fn set_dashboard_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_body = input;
-            self
+        pub fn set_dashboard_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_body = input; self
         }
         /// <p>The name of the dashboard.</p>
         pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1602,22 +1576,23 @@ pub mod get_dashboard_output {
             self
         }
         /// <p>The name of the dashboard.</p>
-        pub fn set_dashboard_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_name = input;
-            self
+        pub fn set_dashboard_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_name = input; self
         }
         /// Consumes the builder and constructs a [`GetDashboardOutput`](crate::output::GetDashboardOutput).
         pub fn build(self) -> crate::output::GetDashboardOutput {
             crate::output::GetDashboardOutput {
-                dashboard_arn: self.dashboard_arn,
-                dashboard_body: self.dashboard_body,
-                dashboard_name: self.dashboard_name,
+                dashboard_arn: self.dashboard_arn
+                ,
+                dashboard_body: self.dashboard_body
+                ,
+                dashboard_name: self.dashboard_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDashboardOutput {
     /// Creates a new builder-style object to manufacture [`GetDashboardOutput`](crate::output::GetDashboardOutput).
@@ -1629,20 +1604,20 @@ impl GetDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableInsightRulesOutput {
+pub struct EnableInsightRulesOutput  {
     /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
     #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
 }
 impl EnableInsightRulesOutput {
     /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::model::PartialFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::model::PartialFailure]> {
         self.failures.as_deref()
     }
 }
 /// See [`EnableInsightRulesOutput`](crate::output::EnableInsightRulesOutput).
 pub mod enable_insight_rules_output {
-
+    
     /// A builder for [`EnableInsightRulesOutput`](crate::output::EnableInsightRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1656,25 +1631,24 @@ pub mod enable_insight_rules_output {
         /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
         pub fn failures(mut self, input: crate::model::PartialFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input);
-            self.failures = Some(v);
-            self
+                            v.push(input);
+                            self.failures = Some(v);
+                            self
         }
         /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
-        pub fn set_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
-        ) -> Self {
-            self.failures = input;
-            self
+        pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>) -> Self {
+            self.failures = input; self
         }
         /// Consumes the builder and constructs a [`EnableInsightRulesOutput`](crate::output::EnableInsightRulesOutput).
         pub fn build(self) -> crate::output::EnableInsightRulesOutput {
             crate::output::EnableInsightRulesOutput {
-                failures: self.failures,
+                failures: self.failures
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`EnableInsightRulesOutput`](crate::output::EnableInsightRulesOutput).
@@ -1686,19 +1660,24 @@ impl EnableInsightRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAlarmActionsOutput {}
+pub struct EnableAlarmActionsOutput  {
+}
 /// See [`EnableAlarmActionsOutput`](crate::output::EnableAlarmActionsOutput).
 pub mod enable_alarm_actions_output {
-
+    
     /// A builder for [`EnableAlarmActionsOutput`](crate::output::EnableAlarmActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableAlarmActionsOutput`](crate::output::EnableAlarmActionsOutput).
         pub fn build(self) -> crate::output::EnableAlarmActionsOutput {
-            crate::output::EnableAlarmActionsOutput {}
+            crate::output::EnableAlarmActionsOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableAlarmActionsOutput {
     /// Creates a new builder-style object to manufacture [`EnableAlarmActionsOutput`](crate::output::EnableAlarmActionsOutput).
@@ -1710,20 +1689,20 @@ impl EnableAlarmActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableInsightRulesOutput {
+pub struct DisableInsightRulesOutput  {
     /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
     #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
 }
 impl DisableInsightRulesOutput {
     /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::model::PartialFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::model::PartialFailure]> {
         self.failures.as_deref()
     }
 }
 /// See [`DisableInsightRulesOutput`](crate::output::DisableInsightRulesOutput).
 pub mod disable_insight_rules_output {
-
+    
     /// A builder for [`DisableInsightRulesOutput`](crate::output::DisableInsightRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1737,25 +1716,24 @@ pub mod disable_insight_rules_output {
         /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
         pub fn failures(mut self, input: crate::model::PartialFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input);
-            self.failures = Some(v);
-            self
+                            v.push(input);
+                            self.failures = Some(v);
+                            self
         }
         /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
-        pub fn set_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
-        ) -> Self {
-            self.failures = input;
-            self
+        pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>) -> Self {
+            self.failures = input; self
         }
         /// Consumes the builder and constructs a [`DisableInsightRulesOutput`](crate::output::DisableInsightRulesOutput).
         pub fn build(self) -> crate::output::DisableInsightRulesOutput {
             crate::output::DisableInsightRulesOutput {
-                failures: self.failures,
+                failures: self.failures
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`DisableInsightRulesOutput`](crate::output::DisableInsightRulesOutput).
@@ -1767,19 +1745,24 @@ impl DisableInsightRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAlarmActionsOutput {}
+pub struct DisableAlarmActionsOutput  {
+}
 /// See [`DisableAlarmActionsOutput`](crate::output::DisableAlarmActionsOutput).
 pub mod disable_alarm_actions_output {
-
+    
     /// A builder for [`DisableAlarmActionsOutput`](crate::output::DisableAlarmActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisableAlarmActionsOutput`](crate::output::DisableAlarmActionsOutput).
         pub fn build(self) -> crate::output::DisableAlarmActionsOutput {
-            crate::output::DisableAlarmActionsOutput {}
+            crate::output::DisableAlarmActionsOutput {
+            }
         }
     }
+    
+    
 }
 impl DisableAlarmActionsOutput {
     /// Creates a new builder-style object to manufacture [`DisableAlarmActionsOutput`](crate::output::DisableAlarmActionsOutput).
@@ -1791,7 +1774,7 @@ impl DisableAlarmActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInsightRulesOutput {
+pub struct DescribeInsightRulesOutput  {
     /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1801,17 +1784,17 @@ pub struct DescribeInsightRulesOutput {
 }
 impl DescribeInsightRulesOutput {
     /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The rules returned by the operation.</p>
-    pub fn insight_rules(&self) -> std::option::Option<&[crate::model::InsightRule]> {
+    pub fn insight_rules(&self) -> std::option::Option<& [crate::model::InsightRule]> {
         self.insight_rules.as_deref()
     }
 }
 /// See [`DescribeInsightRulesOutput`](crate::output::DescribeInsightRulesOutput).
 pub mod describe_insight_rules_output {
-
+    
     /// A builder for [`DescribeInsightRulesOutput`](crate::output::DescribeInsightRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1826,8 +1809,7 @@ pub mod describe_insight_rules_output {
         }
         /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `insight_rules`.
         ///
@@ -1836,26 +1818,26 @@ pub mod describe_insight_rules_output {
         /// <p>The rules returned by the operation.</p>
         pub fn insight_rules(mut self, input: crate::model::InsightRule) -> Self {
             let mut v = self.insight_rules.unwrap_or_default();
-            v.push(input);
-            self.insight_rules = Some(v);
-            self
+                            v.push(input);
+                            self.insight_rules = Some(v);
+                            self
         }
         /// <p>The rules returned by the operation.</p>
-        pub fn set_insight_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightRule>>,
-        ) -> Self {
-            self.insight_rules = input;
-            self
+        pub fn set_insight_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightRule>>) -> Self {
+            self.insight_rules = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInsightRulesOutput`](crate::output::DescribeInsightRulesOutput).
         pub fn build(self) -> crate::output::DescribeInsightRulesOutput {
             crate::output::DescribeInsightRulesOutput {
-                next_token: self.next_token,
-                insight_rules: self.insight_rules,
+                next_token: self.next_token
+                ,
+                insight_rules: self.insight_rules
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInsightRulesOutput`](crate::output::DescribeInsightRulesOutput).
@@ -1867,7 +1849,7 @@ impl DescribeInsightRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnomalyDetectorsOutput {
+pub struct DescribeAnomalyDetectorsOutput  {
     /// <p>The list of anomaly detection models returned by the operation.</p>
     #[doc(hidden)]
     pub anomaly_detectors: std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>>,
@@ -1877,22 +1859,21 @@ pub struct DescribeAnomalyDetectorsOutput {
 }
 impl DescribeAnomalyDetectorsOutput {
     /// <p>The list of anomaly detection models returned by the operation.</p>
-    pub fn anomaly_detectors(&self) -> std::option::Option<&[crate::model::AnomalyDetector]> {
+    pub fn anomaly_detectors(&self) -> std::option::Option<& [crate::model::AnomalyDetector]> {
         self.anomaly_detectors.as_deref()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAnomalyDetectorsOutput`](crate::output::DescribeAnomalyDetectorsOutput).
 pub mod describe_anomaly_detectors_output {
-
+    
     /// A builder for [`DescribeAnomalyDetectorsOutput`](crate::output::DescribeAnomalyDetectorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) anomaly_detectors:
-            std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>>,
+        pub(crate) anomaly_detectors: std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1903,17 +1884,13 @@ pub mod describe_anomaly_detectors_output {
         /// <p>The list of anomaly detection models returned by the operation.</p>
         pub fn anomaly_detectors(mut self, input: crate::model::AnomalyDetector) -> Self {
             let mut v = self.anomaly_detectors.unwrap_or_default();
-            v.push(input);
-            self.anomaly_detectors = Some(v);
-            self
+                            v.push(input);
+                            self.anomaly_detectors = Some(v);
+                            self
         }
         /// <p>The list of anomaly detection models returned by the operation.</p>
-        pub fn set_anomaly_detectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>>,
-        ) -> Self {
-            self.anomaly_detectors = input;
-            self
+        pub fn set_anomaly_detectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>>) -> Self {
+            self.anomaly_detectors = input; self
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1922,17 +1899,20 @@ pub mod describe_anomaly_detectors_output {
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAnomalyDetectorsOutput`](crate::output::DescribeAnomalyDetectorsOutput).
         pub fn build(self) -> crate::output::DescribeAnomalyDetectorsOutput {
             crate::output::DescribeAnomalyDetectorsOutput {
-                anomaly_detectors: self.anomaly_detectors,
-                next_token: self.next_token,
+                anomaly_detectors: self.anomaly_detectors
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAnomalyDetectorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorsOutput`](crate::output::DescribeAnomalyDetectorsOutput).
@@ -1944,20 +1924,20 @@ impl DescribeAnomalyDetectorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlarmsForMetricOutput {
+pub struct DescribeAlarmsForMetricOutput  {
     /// <p>The information for each alarm with the specified metric.</p>
     #[doc(hidden)]
     pub metric_alarms: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
 }
 impl DescribeAlarmsForMetricOutput {
     /// <p>The information for each alarm with the specified metric.</p>
-    pub fn metric_alarms(&self) -> std::option::Option<&[crate::model::MetricAlarm]> {
+    pub fn metric_alarms(&self) -> std::option::Option<& [crate::model::MetricAlarm]> {
         self.metric_alarms.as_deref()
     }
 }
 /// See [`DescribeAlarmsForMetricOutput`](crate::output::DescribeAlarmsForMetricOutput).
 pub mod describe_alarms_for_metric_output {
-
+    
     /// A builder for [`DescribeAlarmsForMetricOutput`](crate::output::DescribeAlarmsForMetricOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1971,25 +1951,24 @@ pub mod describe_alarms_for_metric_output {
         /// <p>The information for each alarm with the specified metric.</p>
         pub fn metric_alarms(mut self, input: crate::model::MetricAlarm) -> Self {
             let mut v = self.metric_alarms.unwrap_or_default();
-            v.push(input);
-            self.metric_alarms = Some(v);
-            self
+                            v.push(input);
+                            self.metric_alarms = Some(v);
+                            self
         }
         /// <p>The information for each alarm with the specified metric.</p>
-        pub fn set_metric_alarms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
-        ) -> Self {
-            self.metric_alarms = input;
-            self
+        pub fn set_metric_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>) -> Self {
+            self.metric_alarms = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlarmsForMetricOutput`](crate::output::DescribeAlarmsForMetricOutput).
         pub fn build(self) -> crate::output::DescribeAlarmsForMetricOutput {
             crate::output::DescribeAlarmsForMetricOutput {
-                metric_alarms: self.metric_alarms,
+                metric_alarms: self.metric_alarms
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAlarmsForMetricOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmsForMetricOutput`](crate::output::DescribeAlarmsForMetricOutput).
@@ -2001,7 +1980,7 @@ impl DescribeAlarmsForMetricOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlarmsOutput {
+pub struct DescribeAlarmsOutput  {
     /// <p>The information about any composite alarms returned by the operation.</p>
     #[doc(hidden)]
     pub composite_alarms: std::option::Option<std::vec::Vec<crate::model::CompositeAlarm>>,
@@ -2014,26 +1993,25 @@ pub struct DescribeAlarmsOutput {
 }
 impl DescribeAlarmsOutput {
     /// <p>The information about any composite alarms returned by the operation.</p>
-    pub fn composite_alarms(&self) -> std::option::Option<&[crate::model::CompositeAlarm]> {
+    pub fn composite_alarms(&self) -> std::option::Option<& [crate::model::CompositeAlarm]> {
         self.composite_alarms.as_deref()
     }
     /// <p>The information about any metric alarms returned by the operation.</p>
-    pub fn metric_alarms(&self) -> std::option::Option<&[crate::model::MetricAlarm]> {
+    pub fn metric_alarms(&self) -> std::option::Option<& [crate::model::MetricAlarm]> {
         self.metric_alarms.as_deref()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAlarmsOutput`](crate::output::DescribeAlarmsOutput).
 pub mod describe_alarms_output {
-
+    
     /// A builder for [`DescribeAlarmsOutput`](crate::output::DescribeAlarmsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) composite_alarms:
-            std::option::Option<std::vec::Vec<crate::model::CompositeAlarm>>,
+        pub(crate) composite_alarms: std::option::Option<std::vec::Vec<crate::model::CompositeAlarm>>,
         pub(crate) metric_alarms: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -2045,17 +2023,13 @@ pub mod describe_alarms_output {
         /// <p>The information about any composite alarms returned by the operation.</p>
         pub fn composite_alarms(mut self, input: crate::model::CompositeAlarm) -> Self {
             let mut v = self.composite_alarms.unwrap_or_default();
-            v.push(input);
-            self.composite_alarms = Some(v);
-            self
+                            v.push(input);
+                            self.composite_alarms = Some(v);
+                            self
         }
         /// <p>The information about any composite alarms returned by the operation.</p>
-        pub fn set_composite_alarms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CompositeAlarm>>,
-        ) -> Self {
-            self.composite_alarms = input;
-            self
+        pub fn set_composite_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::model::CompositeAlarm>>) -> Self {
+            self.composite_alarms = input; self
         }
         /// Appends an item to `metric_alarms`.
         ///
@@ -2064,17 +2038,13 @@ pub mod describe_alarms_output {
         /// <p>The information about any metric alarms returned by the operation.</p>
         pub fn metric_alarms(mut self, input: crate::model::MetricAlarm) -> Self {
             let mut v = self.metric_alarms.unwrap_or_default();
-            v.push(input);
-            self.metric_alarms = Some(v);
-            self
+                            v.push(input);
+                            self.metric_alarms = Some(v);
+                            self
         }
         /// <p>The information about any metric alarms returned by the operation.</p>
-        pub fn set_metric_alarms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
-        ) -> Self {
-            self.metric_alarms = input;
-            self
+        pub fn set_metric_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>) -> Self {
+            self.metric_alarms = input; self
         }
         /// <p>The token that marks the start of the next batch of returned results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2083,18 +2053,22 @@ pub mod describe_alarms_output {
         }
         /// <p>The token that marks the start of the next batch of returned results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlarmsOutput`](crate::output::DescribeAlarmsOutput).
         pub fn build(self) -> crate::output::DescribeAlarmsOutput {
             crate::output::DescribeAlarmsOutput {
-                composite_alarms: self.composite_alarms,
-                metric_alarms: self.metric_alarms,
-                next_token: self.next_token,
+                composite_alarms: self.composite_alarms
+                ,
+                metric_alarms: self.metric_alarms
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAlarmsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmsOutput`](crate::output::DescribeAlarmsOutput).
@@ -2106,7 +2080,7 @@ impl DescribeAlarmsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlarmHistoryOutput {
+pub struct DescribeAlarmHistoryOutput  {
     /// <p>The alarm histories, in JSON format.</p>
     #[doc(hidden)]
     pub alarm_history_items: std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>>,
@@ -2116,22 +2090,21 @@ pub struct DescribeAlarmHistoryOutput {
 }
 impl DescribeAlarmHistoryOutput {
     /// <p>The alarm histories, in JSON format.</p>
-    pub fn alarm_history_items(&self) -> std::option::Option<&[crate::model::AlarmHistoryItem]> {
+    pub fn alarm_history_items(&self) -> std::option::Option<& [crate::model::AlarmHistoryItem]> {
         self.alarm_history_items.as_deref()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAlarmHistoryOutput`](crate::output::DescribeAlarmHistoryOutput).
 pub mod describe_alarm_history_output {
-
+    
     /// A builder for [`DescribeAlarmHistoryOutput`](crate::output::DescribeAlarmHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) alarm_history_items:
-            std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>>,
+        pub(crate) alarm_history_items: std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2142,17 +2115,13 @@ pub mod describe_alarm_history_output {
         /// <p>The alarm histories, in JSON format.</p>
         pub fn alarm_history_items(mut self, input: crate::model::AlarmHistoryItem) -> Self {
             let mut v = self.alarm_history_items.unwrap_or_default();
-            v.push(input);
-            self.alarm_history_items = Some(v);
-            self
+                            v.push(input);
+                            self.alarm_history_items = Some(v);
+                            self
         }
         /// <p>The alarm histories, in JSON format.</p>
-        pub fn set_alarm_history_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>>,
-        ) -> Self {
-            self.alarm_history_items = input;
-            self
+        pub fn set_alarm_history_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>>) -> Self {
+            self.alarm_history_items = input; self
         }
         /// <p>The token that marks the start of the next batch of returned results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2161,17 +2130,20 @@ pub mod describe_alarm_history_output {
         }
         /// <p>The token that marks the start of the next batch of returned results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlarmHistoryOutput`](crate::output::DescribeAlarmHistoryOutput).
         pub fn build(self) -> crate::output::DescribeAlarmHistoryOutput {
             crate::output::DescribeAlarmHistoryOutput {
-                alarm_history_items: self.alarm_history_items,
-                next_token: self.next_token,
+                alarm_history_items: self.alarm_history_items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAlarmHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmHistoryOutput`](crate::output::DescribeAlarmHistoryOutput).
@@ -2183,19 +2155,24 @@ impl DescribeAlarmHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMetricStreamOutput {}
+pub struct DeleteMetricStreamOutput  {
+}
 /// See [`DeleteMetricStreamOutput`](crate::output::DeleteMetricStreamOutput).
 pub mod delete_metric_stream_output {
-
+    
     /// A builder for [`DeleteMetricStreamOutput`](crate::output::DeleteMetricStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMetricStreamOutput`](crate::output::DeleteMetricStreamOutput).
         pub fn build(self) -> crate::output::DeleteMetricStreamOutput {
-            crate::output::DeleteMetricStreamOutput {}
+            crate::output::DeleteMetricStreamOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMetricStreamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMetricStreamOutput`](crate::output::DeleteMetricStreamOutput).
@@ -2207,20 +2184,20 @@ impl DeleteMetricStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInsightRulesOutput {
+pub struct DeleteInsightRulesOutput  {
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
     #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
 }
 impl DeleteInsightRulesOutput {
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::model::PartialFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::model::PartialFailure]> {
         self.failures.as_deref()
     }
 }
 /// See [`DeleteInsightRulesOutput`](crate::output::DeleteInsightRulesOutput).
 pub mod delete_insight_rules_output {
-
+    
     /// A builder for [`DeleteInsightRulesOutput`](crate::output::DeleteInsightRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2234,25 +2211,24 @@ pub mod delete_insight_rules_output {
         /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
         pub fn failures(mut self, input: crate::model::PartialFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input);
-            self.failures = Some(v);
-            self
+                            v.push(input);
+                            self.failures = Some(v);
+                            self
         }
         /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
-        pub fn set_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
-        ) -> Self {
-            self.failures = input;
-            self
+        pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>) -> Self {
+            self.failures = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInsightRulesOutput`](crate::output::DeleteInsightRulesOutput).
         pub fn build(self) -> crate::output::DeleteInsightRulesOutput {
             crate::output::DeleteInsightRulesOutput {
-                failures: self.failures,
+                failures: self.failures
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInsightRulesOutput`](crate::output::DeleteInsightRulesOutput).
@@ -2264,19 +2240,24 @@ impl DeleteInsightRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDashboardsOutput {}
+pub struct DeleteDashboardsOutput  {
+}
 /// See [`DeleteDashboardsOutput`](crate::output::DeleteDashboardsOutput).
 pub mod delete_dashboards_output {
-
+    
     /// A builder for [`DeleteDashboardsOutput`](crate::output::DeleteDashboardsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDashboardsOutput`](crate::output::DeleteDashboardsOutput).
         pub fn build(self) -> crate::output::DeleteDashboardsOutput {
-            crate::output::DeleteDashboardsOutput {}
+            crate::output::DeleteDashboardsOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDashboardsOutput`](crate::output::DeleteDashboardsOutput).
@@ -2288,19 +2269,24 @@ impl DeleteDashboardsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnomalyDetectorOutput {}
+pub struct DeleteAnomalyDetectorOutput  {
+}
 /// See [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
 pub mod delete_anomaly_detector_output {
-
+    
     /// A builder for [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::DeleteAnomalyDetectorOutput {
-            crate::output::DeleteAnomalyDetectorOutput {}
+            crate::output::DeleteAnomalyDetectorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAnomalyDetectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
@@ -2312,19 +2298,24 @@ impl DeleteAnomalyDetectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlarmsOutput {}
+pub struct DeleteAlarmsOutput  {
+}
 /// See [`DeleteAlarmsOutput`](crate::output::DeleteAlarmsOutput).
 pub mod delete_alarms_output {
-
+    
     /// A builder for [`DeleteAlarmsOutput`](crate::output::DeleteAlarmsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAlarmsOutput`](crate::output::DeleteAlarmsOutput).
         pub fn build(self) -> crate::output::DeleteAlarmsOutput {
-            crate::output::DeleteAlarmsOutput {}
+            crate::output::DeleteAlarmsOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAlarmsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlarmsOutput`](crate::output::DeleteAlarmsOutput).
@@ -2332,3 +2323,4 @@ impl DeleteAlarmsOutput {
         crate::output::delete_alarms_output::Builder::default()
     }
 }
+

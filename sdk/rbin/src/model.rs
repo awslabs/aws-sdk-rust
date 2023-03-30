@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -30,60 +30,52 @@
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidPageToken,
     #[allow(missing_docs)] // documentation missing in model
     InvalidParameterValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "INVALID_PAGE_TOKEN" => ValidationExceptionReason::InvalidPageToken,
             "INVALID_PARAMETER_VALUE" => ValidationExceptionReason::InvalidParameterValue,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::InvalidPageToken => "INVALID_PAGE_TOKEN",
             ValidationExceptionReason::InvalidParameterValue => "INVALID_PARAMETER_VALUE",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INVALID_PAGE_TOKEN", "INVALID_PARAMETER_VALUE"]
+        &[
+            "INVALID_PAGE_TOKEN", "INVALID_PARAMETER_VALUE"
+        ]
     }
 }
 impl AsRef<str> for ValidationExceptionReason {
@@ -98,9 +90,9 @@ impl AsRef<str> for ValidationExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcenotfoundexceptionreason = unimplemented!();
 /// match resourcenotfoundexceptionreason {
@@ -121,56 +113,48 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Specifically, when `resourcenotfoundexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceNotFoundExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceNotFoundExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     RuleNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceNotFoundExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "RULE_NOT_FOUND" => ResourceNotFoundExceptionReason::RuleNotFound,
-            other => ResourceNotFoundExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceNotFoundExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceNotFoundExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceNotFoundExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceNotFoundExceptionReason::from(s))
+                }
+            }
 impl ResourceNotFoundExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceNotFoundExceptionReason::RuleNotFound => "RULE_NOT_FOUND",
-            ResourceNotFoundExceptionReason::Unknown(value) => value.as_str(),
+            ResourceNotFoundExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RULE_NOT_FOUND"]
+        &[
+            "RULE_NOT_FOUND"
+        ]
     }
 }
 impl AsRef<str> for ResourceNotFoundExceptionReason {
@@ -185,9 +169,9 @@ impl AsRef<str> for ResourceNotFoundExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
@@ -208,56 +192,48 @@ impl AsRef<str> for ResourceNotFoundExceptionReason {
 /// Specifically, when `conflictexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidRuleState,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "INVALID_RULE_STATE" => ConflictExceptionReason::InvalidRuleState,
-            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictExceptionReason::from(s))
+                }
+            }
 impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictExceptionReason::InvalidRuleState => "INVALID_RULE_STATE",
-            ConflictExceptionReason::Unknown(value) => value.as_str(),
+            ConflictExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INVALID_RULE_STATE"]
+        &[
+            "INVALID_RULE_STATE"
+        ]
     }
 }
 impl AsRef<str> for ConflictExceptionReason {
@@ -272,9 +248,9 @@ impl AsRef<str> for ConflictExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lockstate = unimplemented!();
 /// match lockstate {
@@ -297,22 +273,14 @@ impl AsRef<str> for ConflictExceptionReason {
 /// Specifically, when `lockstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LockState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LockState {
     #[allow(missing_docs)] // documentation missing in model
     Locked,
@@ -321,7 +289,7 @@ pub enum LockState {
     #[allow(missing_docs)] // documentation missing in model
     Unlocked,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LockState {
     fn from(s: &str) -> Self {
@@ -329,17 +297,17 @@ impl std::convert::From<&str> for LockState {
             "locked" => LockState::Locked,
             "pending_unlock" => LockState::PendingUnlock,
             "unlocked" => LockState::Unlocked,
-            other => LockState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LockState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LockState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LockState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LockState::from(s))
+                }
+            }
 impl LockState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -347,12 +315,14 @@ impl LockState {
             LockState::Locked => "locked",
             LockState::PendingUnlock => "pending_unlock",
             LockState::Unlocked => "unlocked",
-            LockState::Unknown(value) => value.as_str(),
+            LockState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["locked", "pending_unlock", "unlocked"]
+        &[
+            "locked", "pending_unlock", "unlocked"
+        ]
     }
 }
 impl AsRef<str> for LockState {
@@ -367,9 +337,9 @@ impl AsRef<str> for LockState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rulestatus = unimplemented!();
 /// match rulestatus {
@@ -391,58 +361,52 @@ impl AsRef<str> for LockState {
 /// Specifically, when `rulestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuleStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RuleStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleStatus {
     fn from(s: &str) -> Self {
         match s {
             "available" => RuleStatus::Available,
             "pending" => RuleStatus::Pending,
-            other => RuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RuleStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RuleStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RuleStatus::from(s))
+                }
+            }
 impl RuleStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuleStatus::Available => "available",
             RuleStatus::Pending => "pending",
-            RuleStatus::Unknown(value) => value.as_str(),
+            RuleStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["available", "pending"]
+        &[
+            "available", "pending"
+        ]
     }
 }
 impl AsRef<str> for RuleStatus {
@@ -454,7 +418,7 @@ impl AsRef<str> for RuleStatus {
 /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceTag {
+pub struct ResourceTag  {
     /// <p>The tag key.</p>
     #[doc(hidden)]
     pub resource_tag_key: std::option::Option<std::string::String>,
@@ -464,17 +428,17 @@ pub struct ResourceTag {
 }
 impl ResourceTag {
     /// <p>The tag key.</p>
-    pub fn resource_tag_key(&self) -> std::option::Option<&str> {
+    pub fn resource_tag_key(&self) -> std::option::Option<& str> {
         self.resource_tag_key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn resource_tag_value(&self) -> std::option::Option<&str> {
+    pub fn resource_tag_value(&self) -> std::option::Option<& str> {
         self.resource_tag_value.as_deref()
     }
 }
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
-
+    
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -488,12 +452,8 @@ pub mod resource_tag {
             self
         }
         /// <p>The tag key.</p>
-        pub fn set_resource_tag_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_tag_key = input;
-            self
+        pub fn set_resource_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_tag_key = input; self
         }
         /// <p>The tag value.</p>
         pub fn resource_tag_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -501,21 +461,21 @@ pub mod resource_tag {
             self
         }
         /// <p>The tag value.</p>
-        pub fn set_resource_tag_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_tag_value = input;
-            self
+        pub fn set_resource_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_tag_value = input; self
         }
         /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag).
         pub fn build(self) -> crate::model::ResourceTag {
             crate::model::ResourceTag {
-                resource_tag_key: self.resource_tag_key,
-                resource_tag_value: self.resource_tag_value,
+                resource_tag_key: self.resource_tag_key
+                ,
+                resource_tag_value: self.resource_tag_value
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceTag {
     /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
@@ -530,9 +490,9 @@ impl ResourceTag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -554,58 +514,52 @@ impl ResourceTag {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EbsSnapshot,
     #[allow(missing_docs)] // documentation missing in model
     Ec2Image,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "EBS_SNAPSHOT" => ResourceType::EbsSnapshot,
             "EC2_IMAGE" => ResourceType::Ec2Image,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::EbsSnapshot => "EBS_SNAPSHOT",
             ResourceType::Ec2Image => "EC2_IMAGE",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EBS_SNAPSHOT", "EC2_IMAGE"]
+        &[
+            "EBS_SNAPSHOT", "EC2_IMAGE"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -617,7 +571,7 @@ impl AsRef<str> for ResourceType {
 /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetentionPeriod {
+pub struct RetentionPeriod  {
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     #[doc(hidden)]
     pub retention_period_value: std::option::Option<i32>,
@@ -631,13 +585,13 @@ impl RetentionPeriod {
         self.retention_period_value
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-    pub fn retention_period_unit(&self) -> std::option::Option<&crate::model::RetentionPeriodUnit> {
+    pub fn retention_period_unit(&self) -> std::option::Option<& crate::model::RetentionPeriodUnit> {
         self.retention_period_unit.as_ref()
     }
 }
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
 pub mod retention_period {
-
+    
     /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -652,8 +606,7 @@ pub mod retention_period {
         }
         /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
         pub fn set_retention_period_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.retention_period_value = input;
-            self
+            self.retention_period_value = input; self
         }
         /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
         pub fn retention_period_unit(mut self, input: crate::model::RetentionPeriodUnit) -> Self {
@@ -661,21 +614,21 @@ pub mod retention_period {
             self
         }
         /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-        pub fn set_retention_period_unit(
-            mut self,
-            input: std::option::Option<crate::model::RetentionPeriodUnit>,
-        ) -> Self {
-            self.retention_period_unit = input;
-            self
+        pub fn set_retention_period_unit(mut self, input: std::option::Option<crate::model::RetentionPeriodUnit>) -> Self {
+            self.retention_period_unit = input; self
         }
         /// Consumes the builder and constructs a [`RetentionPeriod`](crate::model::RetentionPeriod).
         pub fn build(self) -> crate::model::RetentionPeriod {
             crate::model::RetentionPeriod {
-                retention_period_value: self.retention_period_value,
-                retention_period_unit: self.retention_period_unit,
+                retention_period_value: self.retention_period_value
+                ,
+                retention_period_unit: self.retention_period_unit
+                ,
             }
         }
     }
+    
+    
 }
 impl RetentionPeriod {
     /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
@@ -690,9 +643,9 @@ impl RetentionPeriod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let retentionperiodunit = unimplemented!();
 /// match retentionperiodunit {
@@ -713,56 +666,48 @@ impl RetentionPeriod {
 /// Specifically, when `retentionperiodunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RetentionPeriodUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RetentionPeriodUnit {
     #[allow(missing_docs)] // documentation missing in model
     Days,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RetentionPeriodUnit {
     fn from(s: &str) -> Self {
         match s {
             "DAYS" => RetentionPeriodUnit::Days,
-            other => {
-                RetentionPeriodUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RetentionPeriodUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RetentionPeriodUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RetentionPeriodUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RetentionPeriodUnit::from(s))
+                }
+            }
 impl RetentionPeriodUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RetentionPeriodUnit::Days => "DAYS",
-            RetentionPeriodUnit::Unknown(value) => value.as_str(),
+            RetentionPeriodUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAYS"]
+        &[
+            "DAYS"
+        ]
     }
 }
 impl AsRef<str> for RetentionPeriodUnit {
@@ -774,20 +719,20 @@ impl AsRef<str> for RetentionPeriodUnit {
 /// <p>Information about a retention rule lock configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LockConfiguration {
+pub struct LockConfiguration  {
     /// <p>Information about the retention rule unlock delay.</p>
     #[doc(hidden)]
     pub unlock_delay: std::option::Option<crate::model::UnlockDelay>,
 }
 impl LockConfiguration {
     /// <p>Information about the retention rule unlock delay.</p>
-    pub fn unlock_delay(&self) -> std::option::Option<&crate::model::UnlockDelay> {
+    pub fn unlock_delay(&self) -> std::option::Option<& crate::model::UnlockDelay> {
         self.unlock_delay.as_ref()
     }
 }
 /// See [`LockConfiguration`](crate::model::LockConfiguration).
 pub mod lock_configuration {
-
+    
     /// A builder for [`LockConfiguration`](crate::model::LockConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -800,20 +745,19 @@ pub mod lock_configuration {
             self
         }
         /// <p>Information about the retention rule unlock delay.</p>
-        pub fn set_unlock_delay(
-            mut self,
-            input: std::option::Option<crate::model::UnlockDelay>,
-        ) -> Self {
-            self.unlock_delay = input;
-            self
+        pub fn set_unlock_delay(mut self, input: std::option::Option<crate::model::UnlockDelay>) -> Self {
+            self.unlock_delay = input; self
         }
         /// Consumes the builder and constructs a [`LockConfiguration`](crate::model::LockConfiguration).
         pub fn build(self) -> crate::model::LockConfiguration {
             crate::model::LockConfiguration {
-                unlock_delay: self.unlock_delay,
+                unlock_delay: self.unlock_delay
+                ,
             }
         }
     }
+    
+    
 }
 impl LockConfiguration {
     /// Creates a new builder-style object to manufacture [`LockConfiguration`](crate::model::LockConfiguration).
@@ -825,7 +769,7 @@ impl LockConfiguration {
 /// <p>Information about the retention rule unlock delay. The unlock delay is the period after which a retention rule can be modified or edited after it has been unlocked by a user with the required permissions. The retention rule can't be modified or deleted during the unlock delay.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnlockDelay {
+pub struct UnlockDelay  {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
     #[doc(hidden)]
     pub unlock_delay_value: std::option::Option<i32>,
@@ -839,13 +783,13 @@ impl UnlockDelay {
         self.unlock_delay_value
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-    pub fn unlock_delay_unit(&self) -> std::option::Option<&crate::model::UnlockDelayUnit> {
+    pub fn unlock_delay_unit(&self) -> std::option::Option<& crate::model::UnlockDelayUnit> {
         self.unlock_delay_unit.as_ref()
     }
 }
 /// See [`UnlockDelay`](crate::model::UnlockDelay).
 pub mod unlock_delay {
-
+    
     /// A builder for [`UnlockDelay`](crate::model::UnlockDelay).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -860,8 +804,7 @@ pub mod unlock_delay {
         }
         /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
         pub fn set_unlock_delay_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.unlock_delay_value = input;
-            self
+            self.unlock_delay_value = input; self
         }
         /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
         pub fn unlock_delay_unit(mut self, input: crate::model::UnlockDelayUnit) -> Self {
@@ -869,21 +812,21 @@ pub mod unlock_delay {
             self
         }
         /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-        pub fn set_unlock_delay_unit(
-            mut self,
-            input: std::option::Option<crate::model::UnlockDelayUnit>,
-        ) -> Self {
-            self.unlock_delay_unit = input;
-            self
+        pub fn set_unlock_delay_unit(mut self, input: std::option::Option<crate::model::UnlockDelayUnit>) -> Self {
+            self.unlock_delay_unit = input; self
         }
         /// Consumes the builder and constructs a [`UnlockDelay`](crate::model::UnlockDelay).
         pub fn build(self) -> crate::model::UnlockDelay {
             crate::model::UnlockDelay {
-                unlock_delay_value: self.unlock_delay_value,
-                unlock_delay_unit: self.unlock_delay_unit,
+                unlock_delay_value: self.unlock_delay_value
+                ,
+                unlock_delay_unit: self.unlock_delay_unit
+                ,
             }
         }
     }
+    
+    
 }
 impl UnlockDelay {
     /// Creates a new builder-style object to manufacture [`UnlockDelay`](crate::model::UnlockDelay).
@@ -898,9 +841,9 @@ impl UnlockDelay {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let unlockdelayunit = unimplemented!();
 /// match unlockdelayunit {
@@ -921,54 +864,48 @@ impl UnlockDelay {
 /// Specifically, when `unlockdelayunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UnlockDelayUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UnlockDelayUnit {
     #[allow(missing_docs)] // documentation missing in model
     Days,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UnlockDelayUnit {
     fn from(s: &str) -> Self {
         match s {
             "DAYS" => UnlockDelayUnit::Days,
-            other => UnlockDelayUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UnlockDelayUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UnlockDelayUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UnlockDelayUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UnlockDelayUnit::from(s))
+                }
+            }
 impl UnlockDelayUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UnlockDelayUnit::Days => "DAYS",
-            UnlockDelayUnit::Unknown(value) => value.as_str(),
+            UnlockDelayUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAYS"]
+        &[
+            "DAYS"
+        ]
     }
 }
 impl AsRef<str> for UnlockDelayUnit {
@@ -983,9 +920,9 @@ impl AsRef<str> for UnlockDelayUnit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicequotaexceededexceptionreason = unimplemented!();
 /// match servicequotaexceededexceptionreason {
@@ -1006,56 +943,48 @@ impl AsRef<str> for UnlockDelayUnit {
 /// Specifically, when `servicequotaexceededexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceQuotaExceededExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     ServiceQuotaExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "SERVICE_QUOTA_EXCEEDED" => ServiceQuotaExceededExceptionReason::ServiceQuotaExceeded,
-            other => ServiceQuotaExceededExceptionReason::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ServiceQuotaExceededExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceQuotaExceededExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceQuotaExceededExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceQuotaExceededExceptionReason::from(s))
+                }
+            }
 impl ServiceQuotaExceededExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceQuotaExceededExceptionReason::ServiceQuotaExceeded => "SERVICE_QUOTA_EXCEEDED",
-            ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
+            ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SERVICE_QUOTA_EXCEEDED"]
+        &[
+            "SERVICE_QUOTA_EXCEEDED"
+        ]
     }
 }
 impl AsRef<str> for ServiceQuotaExceededExceptionReason {
@@ -1067,7 +996,7 @@ impl AsRef<str> for ServiceQuotaExceededExceptionReason {
 /// <p>Information about the tags to assign to the retention rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1077,17 +1006,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1102,8 +1031,7 @@ pub mod tag {
         }
         /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The tag value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1112,17 +1040,20 @@ pub mod tag {
         }
         /// <p>The tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1134,7 +1065,7 @@ impl Tag {
 /// <p>Information about a Recycle Bin retention rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleSummary {
+pub struct RuleSummary  {
     /// <p>The unique ID of the retention rule.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
@@ -1144,43 +1075,43 @@ pub struct RuleSummary {
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
-    /// <p>The lock state for the retention rule.</p>
-    /// <ul>
-    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+    /// <p>The lock state for the retention rule.</p> 
+    /// <ul> 
+    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li> 
+    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li> 
+    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li> 
+    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub lock_state: std::option::Option<crate::model::LockState>,
 }
 impl RuleSummary {
     /// <p>The unique ID of the retention rule.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The retention rule description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+    pub fn retention_period(&self) -> std::option::Option<& crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
-    /// <p>The lock state for the retention rule.</p>
-    /// <ul>
-    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+    /// <p>The lock state for the retention rule.</p> 
+    /// <ul> 
+    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li> 
+    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li> 
+    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li> 
+    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li> 
     /// </ul>
-    pub fn lock_state(&self) -> std::option::Option<&crate::model::LockState> {
+    pub fn lock_state(&self) -> std::option::Option<& crate::model::LockState> {
         self.lock_state.as_ref()
     }
 }
 /// See [`RuleSummary`](crate::model::RuleSummary).
 pub mod rule_summary {
-
+    
     /// A builder for [`RuleSummary`](crate::model::RuleSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1197,8 +1128,7 @@ pub mod rule_summary {
         }
         /// <p>The unique ID of the retention rule.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identifier = input;
-            self
+            self.identifier = input; self
         }
         /// <p>The retention rule description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1207,8 +1137,7 @@ pub mod rule_summary {
         }
         /// <p>The retention rule description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
@@ -1216,48 +1145,46 @@ pub mod rule_summary {
             self
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-        pub fn set_retention_period(
-            mut self,
-            input: std::option::Option<crate::model::RetentionPeriod>,
-        ) -> Self {
-            self.retention_period = input;
-            self
+        pub fn set_retention_period(mut self, input: std::option::Option<crate::model::RetentionPeriod>) -> Self {
+            self.retention_period = input; self
         }
-        /// <p>The lock state for the retention rule.</p>
-        /// <ul>
-        /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-        /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-        /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-        /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+        /// <p>The lock state for the retention rule.</p> 
+        /// <ul> 
+        /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li> 
+        /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li> 
+        /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li> 
+        /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li> 
         /// </ul>
         pub fn lock_state(mut self, input: crate::model::LockState) -> Self {
             self.lock_state = Some(input);
             self
         }
-        /// <p>The lock state for the retention rule.</p>
-        /// <ul>
-        /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
-        /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
-        /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
-        /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+        /// <p>The lock state for the retention rule.</p> 
+        /// <ul> 
+        /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li> 
+        /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li> 
+        /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li> 
+        /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li> 
         /// </ul>
-        pub fn set_lock_state(
-            mut self,
-            input: std::option::Option<crate::model::LockState>,
-        ) -> Self {
-            self.lock_state = input;
-            self
+        pub fn set_lock_state(mut self, input: std::option::Option<crate::model::LockState>) -> Self {
+            self.lock_state = input; self
         }
         /// Consumes the builder and constructs a [`RuleSummary`](crate::model::RuleSummary).
         pub fn build(self) -> crate::model::RuleSummary {
             crate::model::RuleSummary {
-                identifier: self.identifier,
-                description: self.description,
-                retention_period: self.retention_period,
-                lock_state: self.lock_state,
+                identifier: self.identifier
+                ,
+                description: self.description
+                ,
+                retention_period: self.retention_period
+                ,
+                lock_state: self.lock_state
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleSummary {
     /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
@@ -1265,3 +1192,4 @@ impl RuleSummary {
         crate::model::rule_summary::Builder::default()
     }
 }
+

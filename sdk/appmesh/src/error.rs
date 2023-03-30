@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct ListMeshesError {
     /// Kind of error that occurred.
-    pub kind: ListMeshesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListMeshesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListMeshesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListMeshesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -32,26 +32,40 @@ pub enum ListMeshesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMeshesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListMeshesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListMeshesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListMeshesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListMeshesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListMeshesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListMeshesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListMeshesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListMeshesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMeshesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMeshesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMeshesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMeshesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMeshesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMeshesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -61,61 +75,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListMeshesError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            ListMeshesErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListMeshesErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListMeshesErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            ListMeshesErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            ListMeshesErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            ListMeshesErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl ListMeshesError {
     /// Creates a new `ListMeshesError`.
-    pub fn new(kind: ListMeshesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListMeshesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListMeshesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListMeshesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListMeshesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListMeshesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListMeshesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListMeshesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListMeshesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListMeshesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListMeshesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListMeshesErrorKind::BadRequestException(_))
@@ -126,10 +134,7 @@ impl ListMeshesError {
     }
     /// Returns `true` if the error kind is `ListMeshesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMeshesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListMeshesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListMeshesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -137,10 +142,7 @@ impl ListMeshesError {
     }
     /// Returns `true` if the error kind is `ListMeshesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMeshesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListMeshesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListMeshesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -150,13 +152,27 @@ impl ListMeshesError {
 impl std::error::Error for ListMeshesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListMeshesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListMeshesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListMeshesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListMeshesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListMeshesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListMeshesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListMeshesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListMeshesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListMeshesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListMeshesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListMeshesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListMeshesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListMeshesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListMeshesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -164,7 +180,7 @@ impl std::error::Error for ListMeshesError {
 /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyRequestsException {
+pub struct TooManyRequestsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -175,15 +191,13 @@ impl TooManyRequestsException {
         aws_smithy_types::retry::ErrorKind::ThrottlingError
     }
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -193,7 +207,7 @@ impl std::fmt::Display for TooManyRequestsException {
 impl std::error::Error for TooManyRequestsException {}
 /// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
 pub mod too_many_requests_exception {
-
+    
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -207,16 +221,18 @@ pub mod too_many_requests_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
         pub fn build(self) -> crate::error::TooManyRequestsException {
             crate::error::TooManyRequestsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyRequestsException {
     /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
@@ -228,7 +244,7 @@ impl TooManyRequestsException {
 /// <p>The request has failed due to a temporary failure of the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUnavailableException {
+pub struct ServiceUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -239,15 +255,13 @@ impl ServiceUnavailableException {
         aws_smithy_types::retry::ErrorKind::ServerError
     }
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -257,7 +271,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
 pub mod service_unavailable_exception {
-
+    
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -271,16 +285,18 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
         pub fn build(self) -> crate::error::ServiceUnavailableException {
             crate::error::ServiceUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
@@ -292,22 +308,20 @@ impl ServiceUnavailableException {
 /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -317,7 +331,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -331,16 +345,18 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -352,7 +368,7 @@ impl NotFoundException {
 /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerErrorException {
+pub struct InternalServerErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -363,15 +379,13 @@ impl InternalServerErrorException {
         aws_smithy_types::retry::ErrorKind::ServerError
     }
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerErrorException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -381,7 +395,7 @@ impl std::fmt::Display for InternalServerErrorException {
 impl std::error::Error for InternalServerErrorException {}
 /// See [`InternalServerErrorException`](crate::error::InternalServerErrorException).
 pub mod internal_server_error_exception {
-
+    
     /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -395,16 +409,18 @@ pub mod internal_server_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException).
         pub fn build(self) -> crate::error::InternalServerErrorException {
             crate::error::InternalServerErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerErrorException {
     /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException).
@@ -416,22 +432,20 @@ impl InternalServerErrorException {
 /// <p>You don't have permissions to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException {
+pub struct ForbiddenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ForbiddenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -441,7 +455,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
-
+    
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -455,16 +469,18 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
         pub fn build(self) -> crate::error::ForbiddenException {
             crate::error::ForbiddenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ForbiddenException {
     /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
@@ -476,22 +492,20 @@ impl ForbiddenException {
 /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -501,7 +515,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -515,16 +529,18 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -538,15 +554,15 @@ impl BadRequestException {
 #[derive(std::fmt::Debug)]
 pub struct CreateMeshError {
     /// Kind of error that occurred.
-    pub kind: CreateMeshErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateMeshErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateMeshError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateMeshErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -570,28 +586,46 @@ pub enum CreateMeshErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMeshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateMeshErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateMeshErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateMeshErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateMeshErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateMeshErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateMeshErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateMeshErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateMeshErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateMeshErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateMeshErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMeshErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMeshErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMeshErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMeshErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMeshErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMeshErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMeshErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMeshErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -601,61 +635,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateMeshError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            CreateMeshErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateMeshErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateMeshErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            CreateMeshErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            CreateMeshErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            CreateMeshErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl CreateMeshError {
     /// Creates a new `CreateMeshError`.
-    pub fn new(kind: CreateMeshErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateMeshError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateMeshError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateMeshErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateMeshError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateMeshError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateMeshErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateMeshErrorKind::BadRequestException(_))
@@ -670,10 +698,7 @@ impl CreateMeshError {
     }
     /// Returns `true` if the error kind is `CreateMeshErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMeshErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateMeshErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateMeshErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -685,10 +710,7 @@ impl CreateMeshError {
     }
     /// Returns `true` if the error kind is `CreateMeshErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMeshErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateMeshErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateMeshErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -698,15 +720,33 @@ impl CreateMeshError {
 impl std::error::Error for CreateMeshError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateMeshErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateMeshErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateMeshErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateMeshErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateMeshErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateMeshErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateMeshErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateMeshErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateMeshErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateMeshErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMeshErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMeshErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMeshErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMeshErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMeshErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMeshErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMeshErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMeshErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -714,22 +754,20 @@ impl std::error::Error for CreateMeshError {
 /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>App Mesh User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -739,7 +777,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -753,16 +791,18 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -774,22 +814,20 @@ impl LimitExceededException {
 /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -799,7 +837,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -813,16 +851,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -836,15 +876,15 @@ impl ConflictException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteMeshError {
     /// Kind of error that occurred.
-    pub kind: DeleteMeshErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteMeshErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteMeshError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteMeshErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -866,27 +906,43 @@ pub enum DeleteMeshErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMeshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteMeshErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteMeshErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteMeshErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteMeshErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteMeshErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteMeshErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteMeshErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteMeshErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteMeshErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMeshErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMeshErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMeshErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMeshErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMeshErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMeshErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMeshErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -896,61 +952,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteMeshError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DeleteMeshErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteMeshErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteMeshErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DeleteMeshErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DeleteMeshErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DeleteMeshErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DeleteMeshError {
     /// Creates a new `DeleteMeshError`.
-    pub fn new(kind: DeleteMeshErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteMeshError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteMeshError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteMeshErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteMeshError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteMeshError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteMeshErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeshErrorKind::BadRequestException(_))
@@ -961,10 +1011,7 @@ impl DeleteMeshError {
     }
     /// Returns `true` if the error kind is `DeleteMeshErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMeshErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteMeshErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteMeshErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -976,10 +1023,7 @@ impl DeleteMeshError {
     }
     /// Returns `true` if the error kind is `DeleteMeshErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMeshErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteMeshErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteMeshErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -989,14 +1033,30 @@ impl DeleteMeshError {
 impl std::error::Error for DeleteMeshError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteMeshErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteMeshErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteMeshErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteMeshErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteMeshErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteMeshErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteMeshErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteMeshErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteMeshErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMeshErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMeshErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMeshErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMeshErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMeshErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMeshErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMeshErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1004,22 +1064,20 @@ impl std::error::Error for DeleteMeshError {
 /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInUseException {
+pub struct ResourceInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1029,7 +1087,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException).
 pub mod resource_in_use_exception {
-
+    
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1043,16 +1101,18 @@ pub mod resource_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException).
         pub fn build(self) -> crate::error::ResourceInUseException {
             crate::error::ResourceInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceInUseException {
     /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException).
@@ -1066,15 +1126,15 @@ impl ResourceInUseException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateMeshError {
     /// Kind of error that occurred.
-    pub kind: UpdateMeshErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateMeshErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateMeshError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateMeshErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1096,27 +1156,43 @@ pub enum UpdateMeshErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateMeshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateMeshErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateMeshErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateMeshErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateMeshErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateMeshErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateMeshErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateMeshErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateMeshErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateMeshErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateMeshErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateMeshErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateMeshErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateMeshErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateMeshErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateMeshErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateMeshErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1126,61 +1202,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateMeshError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            UpdateMeshErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateMeshErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateMeshErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            UpdateMeshErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            UpdateMeshErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            UpdateMeshErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl UpdateMeshError {
     /// Creates a new `UpdateMeshError`.
-    pub fn new(kind: UpdateMeshErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateMeshError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateMeshError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateMeshErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateMeshError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateMeshError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateMeshErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateMeshErrorKind::BadRequestException(_))
@@ -1195,10 +1265,7 @@ impl UpdateMeshError {
     }
     /// Returns `true` if the error kind is `UpdateMeshErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateMeshErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateMeshErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateMeshErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1206,10 +1273,7 @@ impl UpdateMeshError {
     }
     /// Returns `true` if the error kind is `UpdateMeshErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateMeshErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateMeshErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateMeshErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -1219,14 +1283,30 @@ impl UpdateMeshError {
 impl std::error::Error for UpdateMeshError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateMeshErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateMeshErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateMeshErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateMeshErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateMeshErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateMeshErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateMeshErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateMeshErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateMeshErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateMeshErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateMeshErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateMeshErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateMeshErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateMeshErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateMeshErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateMeshErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1236,15 +1316,15 @@ impl std::error::Error for UpdateMeshError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeMeshError {
     /// Kind of error that occurred.
-    pub kind: DescribeMeshErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeMeshErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeMeshError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeMeshErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1264,26 +1344,40 @@ pub enum DescribeMeshErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeMeshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeMeshErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeMeshErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeMeshErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DescribeMeshErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeMeshErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeMeshErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeMeshErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeMeshErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeMeshErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeMeshErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeMeshErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeMeshErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeMeshErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeMeshErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1293,61 +1387,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeMeshError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DescribeMeshErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeMeshErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeMeshErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DescribeMeshErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DescribeMeshErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DescribeMeshErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DescribeMeshError {
     /// Creates a new `DescribeMeshError`.
-    pub fn new(kind: DescribeMeshErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeMeshError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeMeshError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeMeshErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeMeshError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeMeshError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeMeshErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeMeshErrorKind::BadRequestException(_))
@@ -1358,10 +1446,7 @@ impl DescribeMeshError {
     }
     /// Returns `true` if the error kind is `DescribeMeshErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeMeshErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeMeshErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeMeshErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1369,29 +1454,37 @@ impl DescribeMeshError {
     }
     /// Returns `true` if the error kind is `DescribeMeshErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeMeshErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeMeshErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeMeshErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeMeshErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeMeshErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeMeshError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeMeshErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeMeshErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeMeshErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DescribeMeshErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeMeshErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeMeshErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeMeshErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeMeshErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeMeshErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeMeshErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeMeshErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeMeshErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeMeshErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeMeshErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1401,15 +1494,15 @@ impl std::error::Error for DescribeMeshError {
 #[derive(std::fmt::Debug)]
 pub struct ListVirtualServicesError {
     /// Kind of error that occurred.
-    pub kind: ListVirtualServicesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVirtualServicesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListVirtualServicesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListVirtualServicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1429,26 +1522,40 @@ pub enum ListVirtualServicesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVirtualServicesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListVirtualServicesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListVirtualServicesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListVirtualServicesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListVirtualServicesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListVirtualServicesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListVirtualServicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListVirtualServicesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualServicesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualServicesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualServicesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualServicesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualServicesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualServicesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1458,114 +1565,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVirtualServicesError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            ListVirtualServicesErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListVirtualServicesErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListVirtualServicesErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            ListVirtualServicesErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            ListVirtualServicesErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            ListVirtualServicesErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl ListVirtualServicesError {
     /// Creates a new `ListVirtualServicesError`.
-    pub fn new(kind: ListVirtualServicesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVirtualServicesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVirtualServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVirtualServicesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVirtualServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVirtualServicesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVirtualServicesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVirtualServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVirtualServicesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVirtualServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualServicesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListVirtualServicesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualServicesErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListVirtualServicesErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualServicesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListVirtualServicesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualServicesErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListVirtualServicesErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualServicesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListVirtualServicesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualServicesErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListVirtualServicesErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListVirtualServicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVirtualServicesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListVirtualServicesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListVirtualServicesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListVirtualServicesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListVirtualServicesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListVirtualServicesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVirtualServicesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListVirtualServicesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualServicesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualServicesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualServicesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualServicesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualServicesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualServicesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1575,15 +1672,15 @@ impl std::error::Error for ListVirtualServicesError {
 #[derive(std::fmt::Debug)]
 pub struct CreateVirtualServiceError {
     /// Kind of error that occurred.
-    pub kind: CreateVirtualServiceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateVirtualServiceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateVirtualServiceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1607,28 +1704,46 @@ pub enum CreateVirtualServiceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVirtualServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateVirtualServiceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateVirtualServiceErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateVirtualServiceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateVirtualServiceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateVirtualServiceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateVirtualServiceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateVirtualServiceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateVirtualServiceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateVirtualServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateVirtualServiceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualServiceErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualServiceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualServiceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualServiceErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualServiceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualServiceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualServiceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualServiceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1638,134 +1753,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateVirtualServiceError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            CreateVirtualServiceErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateVirtualServiceErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateVirtualServiceErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            CreateVirtualServiceErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            CreateVirtualServiceErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            CreateVirtualServiceErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl CreateVirtualServiceError {
     /// Creates a new `CreateVirtualServiceError`.
-    pub fn new(kind: CreateVirtualServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateVirtualServiceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateVirtualServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateVirtualServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateVirtualServiceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateVirtualServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualServiceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateVirtualServiceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualServiceErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateVirtualServiceErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualServiceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateVirtualServiceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualServiceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateVirtualServiceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualServiceErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateVirtualServiceErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualServiceErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateVirtualServiceErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualServiceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateVirtualServiceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualServiceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateVirtualServiceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateVirtualServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateVirtualServiceErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateVirtualServiceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualServiceErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualServiceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualServiceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualServiceErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualServiceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualServiceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualServiceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualServiceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1775,15 +1874,15 @@ impl std::error::Error for CreateVirtualServiceError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVirtualServiceError {
     /// Kind of error that occurred.
-    pub kind: DeleteVirtualServiceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVirtualServiceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVirtualServiceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1805,27 +1904,43 @@ pub enum DeleteVirtualServiceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVirtualServiceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVirtualServiceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVirtualServiceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteVirtualServiceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVirtualServiceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteVirtualServiceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteVirtualServiceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteVirtualServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteVirtualServiceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualServiceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualServiceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualServiceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualServiceErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualServiceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualServiceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualServiceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1835,126 +1950,111 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVirtualServiceError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DeleteVirtualServiceErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteVirtualServiceErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteVirtualServiceErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DeleteVirtualServiceErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DeleteVirtualServiceErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DeleteVirtualServiceErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DeleteVirtualServiceError {
     /// Creates a new `DeleteVirtualServiceError`.
-    pub fn new(kind: DeleteVirtualServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVirtualServiceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVirtualServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVirtualServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVirtualServiceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVirtualServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualServiceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVirtualServiceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualServiceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVirtualServiceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualServiceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteVirtualServiceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualServiceErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVirtualServiceErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualServiceErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteVirtualServiceErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualServiceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVirtualServiceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualServiceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteVirtualServiceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteVirtualServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVirtualServiceErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVirtualServiceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVirtualServiceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteVirtualServiceErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVirtualServiceErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteVirtualServiceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteVirtualServiceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVirtualServiceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualServiceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualServiceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualServiceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualServiceErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualServiceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualServiceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualServiceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1964,15 +2064,15 @@ impl std::error::Error for DeleteVirtualServiceError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateVirtualServiceError {
     /// Kind of error that occurred.
-    pub kind: UpdateVirtualServiceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateVirtualServiceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateVirtualServiceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1996,28 +2096,46 @@ pub enum UpdateVirtualServiceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateVirtualServiceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateVirtualServiceErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateVirtualServiceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateVirtualServiceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateVirtualServiceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateVirtualServiceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateVirtualServiceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateVirtualServiceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateVirtualServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateVirtualServiceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualServiceErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualServiceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualServiceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualServiceErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualServiceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualServiceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualServiceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualServiceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2027,134 +2145,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateVirtualServiceError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            UpdateVirtualServiceErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateVirtualServiceErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateVirtualServiceErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            UpdateVirtualServiceErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            UpdateVirtualServiceErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            UpdateVirtualServiceErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl UpdateVirtualServiceError {
     /// Creates a new `UpdateVirtualServiceError`.
-    pub fn new(kind: UpdateVirtualServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateVirtualServiceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateVirtualServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateVirtualServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateVirtualServiceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateVirtualServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualServiceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateVirtualServiceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualServiceErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateVirtualServiceErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualServiceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateVirtualServiceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualServiceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateVirtualServiceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualServiceErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateVirtualServiceErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualServiceErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateVirtualServiceErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualServiceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateVirtualServiceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualServiceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateVirtualServiceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateVirtualServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateVirtualServiceErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateVirtualServiceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualServiceErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualServiceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualServiceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualServiceErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualServiceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualServiceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualServiceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualServiceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2164,15 +2266,15 @@ impl std::error::Error for UpdateVirtualServiceError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeVirtualServiceError {
     /// Kind of error that occurred.
-    pub kind: DescribeVirtualServiceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeVirtualServiceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeVirtualServiceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2192,26 +2294,40 @@ pub enum DescribeVirtualServiceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeVirtualServiceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeVirtualServiceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeVirtualServiceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DescribeVirtualServiceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeVirtualServiceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeVirtualServiceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeVirtualServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeVirtualServiceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualServiceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualServiceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualServiceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualServiceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualServiceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualServiceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2221,118 +2337,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeVirtualServiceError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DescribeVirtualServiceErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeVirtualServiceErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeVirtualServiceErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DescribeVirtualServiceErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DescribeVirtualServiceErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DescribeVirtualServiceErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DescribeVirtualServiceError {
     /// Creates a new `DescribeVirtualServiceError`.
-    pub fn new(kind: DescribeVirtualServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeVirtualServiceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeVirtualServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeVirtualServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeVirtualServiceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeVirtualServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualServiceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeVirtualServiceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualServiceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeVirtualServiceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualServiceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeVirtualServiceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualServiceErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeVirtualServiceErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualServiceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeVirtualServiceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualServiceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeVirtualServiceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeVirtualServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeVirtualServiceErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeVirtualServiceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeVirtualServiceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DescribeVirtualServiceErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeVirtualServiceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeVirtualServiceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeVirtualServiceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualServiceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualServiceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualServiceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualServiceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualServiceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualServiceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2342,15 +2444,15 @@ impl std::error::Error for DescribeVirtualServiceError {
 #[derive(std::fmt::Debug)]
 pub struct ListVirtualRoutersError {
     /// Kind of error that occurred.
-    pub kind: ListVirtualRoutersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVirtualRoutersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListVirtualRoutersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListVirtualRoutersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2370,26 +2472,40 @@ pub enum ListVirtualRoutersErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualRoutersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVirtualRoutersErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListVirtualRoutersErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListVirtualRoutersErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListVirtualRoutersErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListVirtualRoutersErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListVirtualRoutersErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListVirtualRoutersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListVirtualRoutersErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualRoutersErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualRoutersErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualRoutersErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualRoutersErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualRoutersErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualRoutersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2399,114 +2515,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVirtualRoutersError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            ListVirtualRoutersErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListVirtualRoutersErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListVirtualRoutersErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            ListVirtualRoutersErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            ListVirtualRoutersErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            ListVirtualRoutersErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl ListVirtualRoutersError {
     /// Creates a new `ListVirtualRoutersError`.
-    pub fn new(kind: ListVirtualRoutersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVirtualRoutersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVirtualRoutersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVirtualRoutersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVirtualRoutersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVirtualRoutersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVirtualRoutersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVirtualRoutersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVirtualRoutersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVirtualRoutersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualRoutersErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListVirtualRoutersErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualRoutersErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListVirtualRoutersErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualRoutersErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListVirtualRoutersErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualRoutersErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListVirtualRoutersErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualRoutersErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListVirtualRoutersErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualRoutersErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListVirtualRoutersErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListVirtualRoutersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVirtualRoutersErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListVirtualRoutersErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListVirtualRoutersErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListVirtualRoutersErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListVirtualRoutersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListVirtualRoutersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVirtualRoutersErrorKind::Unhandled(_inner) => Some(_inner),
+            ListVirtualRoutersErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualRoutersErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualRoutersErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualRoutersErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualRoutersErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualRoutersErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualRoutersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2516,15 +2622,15 @@ impl std::error::Error for ListVirtualRoutersError {
 #[derive(std::fmt::Debug)]
 pub struct CreateVirtualRouterError {
     /// Kind of error that occurred.
-    pub kind: CreateVirtualRouterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateVirtualRouterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateVirtualRouterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2548,28 +2654,46 @@ pub enum CreateVirtualRouterErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVirtualRouterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateVirtualRouterErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateVirtualRouterErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateVirtualRouterErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateVirtualRouterErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateVirtualRouterErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateVirtualRouterErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateVirtualRouterErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateVirtualRouterErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateVirtualRouterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateVirtualRouterErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualRouterErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualRouterErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualRouterErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualRouterErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualRouterErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualRouterErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualRouterErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualRouterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2579,130 +2703,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateVirtualRouterError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            CreateVirtualRouterErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateVirtualRouterErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateVirtualRouterErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            CreateVirtualRouterErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            CreateVirtualRouterErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            CreateVirtualRouterErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl CreateVirtualRouterError {
     /// Creates a new `CreateVirtualRouterError`.
-    pub fn new(kind: CreateVirtualRouterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateVirtualRouterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateVirtualRouterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateVirtualRouterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateVirtualRouterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateVirtualRouterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualRouterErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateVirtualRouterErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualRouterErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateVirtualRouterErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualRouterErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateVirtualRouterErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualRouterErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateVirtualRouterErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualRouterErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateVirtualRouterErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualRouterErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateVirtualRouterErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualRouterErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateVirtualRouterErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualRouterErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateVirtualRouterErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateVirtualRouterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateVirtualRouterErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateVirtualRouterErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualRouterErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualRouterErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualRouterErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualRouterErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualRouterErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualRouterErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualRouterErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualRouterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2712,15 +2824,15 @@ impl std::error::Error for CreateVirtualRouterError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVirtualRouterError {
     /// Kind of error that occurred.
-    pub kind: DeleteVirtualRouterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVirtualRouterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVirtualRouterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2742,27 +2854,43 @@ pub enum DeleteVirtualRouterErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualRouterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVirtualRouterErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVirtualRouterErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVirtualRouterErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteVirtualRouterErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVirtualRouterErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteVirtualRouterErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteVirtualRouterErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteVirtualRouterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteVirtualRouterErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualRouterErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualRouterErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualRouterErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualRouterErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualRouterErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualRouterErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualRouterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2772,122 +2900,111 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVirtualRouterError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DeleteVirtualRouterErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteVirtualRouterErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteVirtualRouterErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DeleteVirtualRouterErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DeleteVirtualRouterErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DeleteVirtualRouterErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DeleteVirtualRouterError {
     /// Creates a new `DeleteVirtualRouterError`.
-    pub fn new(kind: DeleteVirtualRouterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVirtualRouterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVirtualRouterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVirtualRouterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVirtualRouterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVirtualRouterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualRouterErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVirtualRouterErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualRouterErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVirtualRouterErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualRouterErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteVirtualRouterErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualRouterErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVirtualRouterErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualRouterErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteVirtualRouterErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualRouterErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVirtualRouterErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualRouterErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteVirtualRouterErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteVirtualRouterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVirtualRouterErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVirtualRouterErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVirtualRouterErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteVirtualRouterErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVirtualRouterErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteVirtualRouterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteVirtualRouterErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVirtualRouterErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualRouterErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualRouterErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualRouterErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualRouterErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualRouterErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualRouterErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualRouterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2897,15 +3014,15 @@ impl std::error::Error for DeleteVirtualRouterError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateVirtualRouterError {
     /// Kind of error that occurred.
-    pub kind: UpdateVirtualRouterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateVirtualRouterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateVirtualRouterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2929,28 +3046,46 @@ pub enum UpdateVirtualRouterErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualRouterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateVirtualRouterErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateVirtualRouterErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateVirtualRouterErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateVirtualRouterErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateVirtualRouterErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateVirtualRouterErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateVirtualRouterErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateVirtualRouterErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateVirtualRouterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateVirtualRouterErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualRouterErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualRouterErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualRouterErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualRouterErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualRouterErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualRouterErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualRouterErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualRouterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2960,130 +3095,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateVirtualRouterError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            UpdateVirtualRouterErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateVirtualRouterErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateVirtualRouterErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            UpdateVirtualRouterErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            UpdateVirtualRouterErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            UpdateVirtualRouterErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl UpdateVirtualRouterError {
     /// Creates a new `UpdateVirtualRouterError`.
-    pub fn new(kind: UpdateVirtualRouterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateVirtualRouterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateVirtualRouterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateVirtualRouterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateVirtualRouterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateVirtualRouterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualRouterErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateVirtualRouterErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualRouterErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateVirtualRouterErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualRouterErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateVirtualRouterErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualRouterErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateVirtualRouterErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualRouterErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateVirtualRouterErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualRouterErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateVirtualRouterErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualRouterErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateVirtualRouterErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualRouterErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateVirtualRouterErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateVirtualRouterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateVirtualRouterErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateVirtualRouterErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualRouterErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualRouterErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualRouterErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualRouterErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualRouterErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualRouterErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualRouterErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualRouterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3093,15 +3216,15 @@ impl std::error::Error for UpdateVirtualRouterError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeVirtualRouterError {
     /// Kind of error that occurred.
-    pub kind: DescribeVirtualRouterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeVirtualRouterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeVirtualRouterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3121,26 +3244,40 @@ pub enum DescribeVirtualRouterErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualRouterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeVirtualRouterErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeVirtualRouterErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeVirtualRouterErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DescribeVirtualRouterErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeVirtualRouterErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeVirtualRouterErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeVirtualRouterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeVirtualRouterErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualRouterErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualRouterErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualRouterErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualRouterErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualRouterErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualRouterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3150,118 +3287,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeVirtualRouterError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DescribeVirtualRouterErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeVirtualRouterErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeVirtualRouterErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DescribeVirtualRouterErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DescribeVirtualRouterErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DescribeVirtualRouterErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DescribeVirtualRouterError {
     /// Creates a new `DescribeVirtualRouterError`.
-    pub fn new(kind: DescribeVirtualRouterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeVirtualRouterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeVirtualRouterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeVirtualRouterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeVirtualRouterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeVirtualRouterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualRouterErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeVirtualRouterErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualRouterErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeVirtualRouterErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualRouterErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeVirtualRouterErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualRouterErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeVirtualRouterErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualRouterErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeVirtualRouterErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualRouterErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeVirtualRouterErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeVirtualRouterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeVirtualRouterErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeVirtualRouterErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeVirtualRouterErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DescribeVirtualRouterErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeVirtualRouterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeVirtualRouterErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeVirtualRouterErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualRouterErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualRouterErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualRouterErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualRouterErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualRouterErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualRouterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3271,15 +3394,15 @@ impl std::error::Error for DescribeVirtualRouterError {
 #[derive(std::fmt::Debug)]
 pub struct ListRoutesError {
     /// Kind of error that occurred.
-    pub kind: ListRoutesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListRoutesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListRoutesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListRoutesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3299,26 +3422,40 @@ pub enum ListRoutesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRoutesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRoutesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListRoutesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListRoutesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListRoutesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListRoutesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListRoutesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListRoutesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListRoutesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3328,61 +3465,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListRoutesError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            ListRoutesErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListRoutesErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListRoutesErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            ListRoutesErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            ListRoutesErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            ListRoutesErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl ListRoutesError {
     /// Creates a new `ListRoutesError`.
-    pub fn new(kind: ListRoutesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListRoutesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListRoutesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListRoutesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListRoutesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListRoutesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListRoutesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListRoutesErrorKind::BadRequestException(_))
@@ -3393,10 +3524,7 @@ impl ListRoutesError {
     }
     /// Returns `true` if the error kind is `ListRoutesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRoutesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListRoutesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListRoutesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -3404,10 +3532,7 @@ impl ListRoutesError {
     }
     /// Returns `true` if the error kind is `ListRoutesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRoutesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListRoutesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListRoutesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -3417,13 +3542,27 @@ impl ListRoutesError {
 impl std::error::Error for ListRoutesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRoutesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListRoutesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListRoutesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListRoutesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListRoutesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListRoutesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListRoutesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListRoutesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3433,15 +3572,15 @@ impl std::error::Error for ListRoutesError {
 #[derive(std::fmt::Debug)]
 pub struct CreateRouteError {
     /// Kind of error that occurred.
-    pub kind: CreateRouteErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateRouteErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateRouteError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateRouteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3465,28 +3604,46 @@ pub enum CreateRouteErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateRouteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateRouteErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateRouteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateRouteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateRouteErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateRouteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateRouteErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateRouteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateRouteErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRouteErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRouteErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRouteErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRouteErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRouteErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRouteErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRouteErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRouteErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3496,61 +3653,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateRouteError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            CreateRouteErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateRouteErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateRouteErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            CreateRouteErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            CreateRouteErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            CreateRouteErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl CreateRouteError {
     /// Creates a new `CreateRouteError`.
-    pub fn new(kind: CreateRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateRouteError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateRouteError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::BadRequestException(_))
@@ -3565,10 +3716,7 @@ impl CreateRouteError {
     }
     /// Returns `true` if the error kind is `CreateRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRouteErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateRouteErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateRouteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -3580,31 +3728,43 @@ impl CreateRouteError {
     }
     /// Returns `true` if the error kind is `CreateRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRouteErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateRouteErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRouteErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateRouteErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateRouteErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateRouteErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateRouteErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateRouteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateRouteErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateRouteErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateRouteErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateRouteErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRouteErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRouteErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRouteErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRouteErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRouteErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRouteErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRouteErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRouteErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3614,15 +3774,15 @@ impl std::error::Error for CreateRouteError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteRouteError {
     /// Kind of error that occurred.
-    pub kind: DeleteRouteErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteRouteErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteRouteError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteRouteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3644,27 +3804,43 @@ pub enum DeleteRouteErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRouteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteRouteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteRouteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteRouteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteRouteErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteRouteErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteRouteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteRouteErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRouteErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRouteErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRouteErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRouteErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRouteErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRouteErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRouteErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3674,61 +3850,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteRouteError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DeleteRouteErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteRouteErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteRouteErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DeleteRouteErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DeleteRouteErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DeleteRouteErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DeleteRouteError {
     /// Creates a new `DeleteRouteError`.
-    pub fn new(kind: DeleteRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteRouteError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteRouteError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteRouteErrorKind::BadRequestException(_))
@@ -3739,10 +3909,7 @@ impl DeleteRouteError {
     }
     /// Returns `true` if the error kind is `DeleteRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRouteErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteRouteErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -3754,30 +3921,40 @@ impl DeleteRouteError {
     }
     /// Returns `true` if the error kind is `DeleteRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRouteErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteRouteErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRouteErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteRouteErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRouteErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteRouteErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteRouteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteRouteErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteRouteErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteRouteErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteRouteErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRouteErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRouteErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRouteErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRouteErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRouteErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRouteErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRouteErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3787,15 +3964,15 @@ impl std::error::Error for DeleteRouteError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateRouteError {
     /// Kind of error that occurred.
-    pub kind: UpdateRouteErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateRouteErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateRouteError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateRouteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3819,28 +3996,46 @@ pub enum UpdateRouteErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRouteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateRouteErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateRouteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateRouteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateRouteErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateRouteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateRouteErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateRouteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateRouteErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRouteErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRouteErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRouteErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRouteErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRouteErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRouteErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRouteErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRouteErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3850,61 +4045,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateRouteError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            UpdateRouteErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateRouteErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateRouteErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            UpdateRouteErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            UpdateRouteErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            UpdateRouteErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl UpdateRouteError {
     /// Creates a new `UpdateRouteError`.
-    pub fn new(kind: UpdateRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateRouteError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateRouteError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::BadRequestException(_))
@@ -3919,10 +4108,7 @@ impl UpdateRouteError {
     }
     /// Returns `true` if the error kind is `UpdateRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRouteErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateRouteErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateRouteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -3934,31 +4120,43 @@ impl UpdateRouteError {
     }
     /// Returns `true` if the error kind is `UpdateRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRouteErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateRouteErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRouteErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateRouteErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRouteErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateRouteErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRouteErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRouteErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRouteErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRouteErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRouteErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRouteErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRouteErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRouteErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3968,15 +4166,15 @@ impl std::error::Error for UpdateRouteError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeRouteError {
     /// Kind of error that occurred.
-    pub kind: DescribeRouteErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeRouteErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeRouteError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeRouteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3996,26 +4194,40 @@ pub enum DescribeRouteErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeRouteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeRouteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeRouteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DescribeRouteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeRouteErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeRouteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeRouteErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRouteErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRouteErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRouteErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRouteErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRouteErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRouteErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4025,61 +4237,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeRouteError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DescribeRouteErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeRouteErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeRouteErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DescribeRouteErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DescribeRouteErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DescribeRouteErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DescribeRouteError {
     /// Creates a new `DescribeRouteError`.
-    pub fn new(kind: DescribeRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeRouteError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeRouteError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeRouteErrorKind::BadRequestException(_))
@@ -4090,10 +4296,7 @@ impl DescribeRouteError {
     }
     /// Returns `true` if the error kind is `DescribeRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRouteErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeRouteErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -4101,29 +4304,37 @@ impl DescribeRouteError {
     }
     /// Returns `true` if the error kind is `DescribeRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRouteErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeRouteErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRouteErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeRouteErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeRouteErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeRouteErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeRouteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DescribeRouteErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeRouteErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeRouteErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRouteErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRouteErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRouteErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRouteErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRouteErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRouteErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4133,15 +4344,15 @@ impl std::error::Error for DescribeRouteError {
 #[derive(std::fmt::Debug)]
 pub struct ListVirtualNodesError {
     /// Kind of error that occurred.
-    pub kind: ListVirtualNodesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVirtualNodesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListVirtualNodesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListVirtualNodesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4161,26 +4372,40 @@ pub enum ListVirtualNodesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualNodesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVirtualNodesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListVirtualNodesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListVirtualNodesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListVirtualNodesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListVirtualNodesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListVirtualNodesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListVirtualNodesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListVirtualNodesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualNodesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualNodesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualNodesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualNodesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualNodesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualNodesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4190,67 +4415,58 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVirtualNodesError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            ListVirtualNodesErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListVirtualNodesErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListVirtualNodesErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            ListVirtualNodesErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            ListVirtualNodesErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            ListVirtualNodesErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl ListVirtualNodesError {
     /// Creates a new `ListVirtualNodesError`.
-    pub fn new(kind: ListVirtualNodesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVirtualNodesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVirtualNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVirtualNodesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVirtualNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVirtualNodesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVirtualNodesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVirtualNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVirtualNodesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVirtualNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualNodesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListVirtualNodesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -4258,10 +4474,7 @@ impl ListVirtualNodesError {
     }
     /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualNodesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListVirtualNodesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -4269,29 +4482,37 @@ impl ListVirtualNodesError {
     }
     /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualNodesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListVirtualNodesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualNodesErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListVirtualNodesErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListVirtualNodesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVirtualNodesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListVirtualNodesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListVirtualNodesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListVirtualNodesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListVirtualNodesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListVirtualNodesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVirtualNodesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListVirtualNodesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualNodesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualNodesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualNodesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualNodesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualNodesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualNodesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4301,15 +4522,15 @@ impl std::error::Error for ListVirtualNodesError {
 #[derive(std::fmt::Debug)]
 pub struct CreateVirtualNodeError {
     /// Kind of error that occurred.
-    pub kind: CreateVirtualNodeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateVirtualNodeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateVirtualNodeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4333,28 +4554,46 @@ pub enum CreateVirtualNodeErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVirtualNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateVirtualNodeErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateVirtualNodeErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateVirtualNodeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateVirtualNodeErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateVirtualNodeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateVirtualNodeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateVirtualNodeErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateVirtualNodeErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateVirtualNodeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateVirtualNodeErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualNodeErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualNodeErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualNodeErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualNodeErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualNodeErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualNodeErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualNodeErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualNodeErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4364,67 +4603,58 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateVirtualNodeError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            CreateVirtualNodeErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateVirtualNodeErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateVirtualNodeErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            CreateVirtualNodeErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            CreateVirtualNodeErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            CreateVirtualNodeErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl CreateVirtualNodeError {
     /// Creates a new `CreateVirtualNodeError`.
-    pub fn new(kind: CreateVirtualNodeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateVirtualNodeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateVirtualNodeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateVirtualNodeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateVirtualNodeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateVirtualNodeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualNodeErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateVirtualNodeErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -4432,24 +4662,15 @@ impl CreateVirtualNodeError {
     }
     /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualNodeErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateVirtualNodeErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualNodeErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateVirtualNodeErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualNodeErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateVirtualNodeErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -4457,31 +4678,43 @@ impl CreateVirtualNodeError {
     }
     /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualNodeErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateVirtualNodeErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualNodeErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateVirtualNodeErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateVirtualNodeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateVirtualNodeErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateVirtualNodeErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualNodeErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualNodeErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualNodeErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualNodeErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualNodeErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualNodeErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualNodeErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualNodeErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4491,15 +4724,15 @@ impl std::error::Error for CreateVirtualNodeError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVirtualNodeError {
     /// Kind of error that occurred.
-    pub kind: DeleteVirtualNodeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVirtualNodeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVirtualNodeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4521,27 +4754,43 @@ pub enum DeleteVirtualNodeErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVirtualNodeErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVirtualNodeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVirtualNodeErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteVirtualNodeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVirtualNodeErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteVirtualNodeErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteVirtualNodeErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteVirtualNodeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteVirtualNodeErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualNodeErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualNodeErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualNodeErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualNodeErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualNodeErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualNodeErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualNodeErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4551,81 +4800,66 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVirtualNodeError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DeleteVirtualNodeErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteVirtualNodeErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteVirtualNodeErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DeleteVirtualNodeErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DeleteVirtualNodeErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DeleteVirtualNodeErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DeleteVirtualNodeError {
     /// Creates a new `DeleteVirtualNodeError`.
-    pub fn new(kind: DeleteVirtualNodeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVirtualNodeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVirtualNodeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVirtualNodeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVirtualNodeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVirtualNodeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualNodeErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVirtualNodeErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualNodeErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVirtualNodeErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualNodeErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteVirtualNodeErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -4633,37 +4867,44 @@ impl DeleteVirtualNodeError {
     }
     /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualNodeErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteVirtualNodeErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualNodeErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVirtualNodeErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualNodeErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteVirtualNodeErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteVirtualNodeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVirtualNodeErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVirtualNodeErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVirtualNodeErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteVirtualNodeErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVirtualNodeErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteVirtualNodeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteVirtualNodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVirtualNodeErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualNodeErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualNodeErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualNodeErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualNodeErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualNodeErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualNodeErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualNodeErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4673,15 +4914,15 @@ impl std::error::Error for DeleteVirtualNodeError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateVirtualNodeError {
     /// Kind of error that occurred.
-    pub kind: UpdateVirtualNodeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateVirtualNodeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateVirtualNodeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4705,28 +4946,46 @@ pub enum UpdateVirtualNodeErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateVirtualNodeErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateVirtualNodeErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateVirtualNodeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateVirtualNodeErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateVirtualNodeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateVirtualNodeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateVirtualNodeErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateVirtualNodeErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateVirtualNodeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateVirtualNodeErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualNodeErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualNodeErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualNodeErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualNodeErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualNodeErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualNodeErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualNodeErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualNodeErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4736,67 +4995,58 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateVirtualNodeError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            UpdateVirtualNodeErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateVirtualNodeErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateVirtualNodeErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            UpdateVirtualNodeErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            UpdateVirtualNodeErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            UpdateVirtualNodeErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl UpdateVirtualNodeError {
     /// Creates a new `UpdateVirtualNodeError`.
-    pub fn new(kind: UpdateVirtualNodeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateVirtualNodeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateVirtualNodeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateVirtualNodeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateVirtualNodeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateVirtualNodeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualNodeErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateVirtualNodeErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -4804,24 +5054,15 @@ impl UpdateVirtualNodeError {
     }
     /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualNodeErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateVirtualNodeErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualNodeErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateVirtualNodeErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualNodeErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateVirtualNodeErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -4829,31 +5070,43 @@ impl UpdateVirtualNodeError {
     }
     /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualNodeErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateVirtualNodeErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualNodeErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateVirtualNodeErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateVirtualNodeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateVirtualNodeErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateVirtualNodeErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualNodeErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualNodeErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualNodeErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualNodeErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualNodeErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualNodeErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualNodeErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualNodeErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4863,15 +5116,15 @@ impl std::error::Error for UpdateVirtualNodeError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeVirtualNodeError {
     /// Kind of error that occurred.
-    pub kind: DescribeVirtualNodeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeVirtualNodeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeVirtualNodeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4891,26 +5144,40 @@ pub enum DescribeVirtualNodeErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeVirtualNodeErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeVirtualNodeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeVirtualNodeErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DescribeVirtualNodeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeVirtualNodeErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeVirtualNodeErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeVirtualNodeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeVirtualNodeErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualNodeErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualNodeErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualNodeErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualNodeErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualNodeErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualNodeErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4920,114 +5187,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeVirtualNodeError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DescribeVirtualNodeErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeVirtualNodeErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeVirtualNodeErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DescribeVirtualNodeErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DescribeVirtualNodeErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DescribeVirtualNodeErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DescribeVirtualNodeError {
     /// Creates a new `DescribeVirtualNodeError`.
-    pub fn new(kind: DescribeVirtualNodeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeVirtualNodeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeVirtualNodeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeVirtualNodeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeVirtualNodeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeVirtualNodeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualNodeErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeVirtualNodeErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualNodeErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeVirtualNodeErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualNodeErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeVirtualNodeErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualNodeErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeVirtualNodeErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualNodeErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeVirtualNodeErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualNodeErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeVirtualNodeErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeVirtualNodeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeVirtualNodeErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeVirtualNodeErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeVirtualNodeErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DescribeVirtualNodeErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeVirtualNodeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeVirtualNodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeVirtualNodeErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualNodeErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualNodeErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualNodeErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualNodeErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualNodeErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualNodeErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5037,15 +5294,15 @@ impl std::error::Error for DescribeVirtualNodeError {
 #[derive(std::fmt::Debug)]
 pub struct ListVirtualGatewaysError {
     /// Kind of error that occurred.
-    pub kind: ListVirtualGatewaysErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVirtualGatewaysErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListVirtualGatewaysError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5065,26 +5322,40 @@ pub enum ListVirtualGatewaysErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVirtualGatewaysErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListVirtualGatewaysErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListVirtualGatewaysErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListVirtualGatewaysErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListVirtualGatewaysErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListVirtualGatewaysErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListVirtualGatewaysErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListVirtualGatewaysErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualGatewaysErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualGatewaysErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualGatewaysErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualGatewaysErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualGatewaysErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualGatewaysErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5094,114 +5365,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVirtualGatewaysError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            ListVirtualGatewaysErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListVirtualGatewaysErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListVirtualGatewaysErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            ListVirtualGatewaysErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            ListVirtualGatewaysErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            ListVirtualGatewaysErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl ListVirtualGatewaysError {
     /// Creates a new `ListVirtualGatewaysError`.
-    pub fn new(kind: ListVirtualGatewaysErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVirtualGatewaysError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVirtualGatewaysError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVirtualGatewaysErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVirtualGatewaysError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVirtualGatewaysError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualGatewaysErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListVirtualGatewaysErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualGatewaysErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListVirtualGatewaysErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualGatewaysErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListVirtualGatewaysErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualGatewaysErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListVirtualGatewaysErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualGatewaysErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListVirtualGatewaysErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualGatewaysErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListVirtualGatewaysErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListVirtualGatewaysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVirtualGatewaysErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListVirtualGatewaysErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListVirtualGatewaysErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListVirtualGatewaysErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListVirtualGatewaysErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListVirtualGatewaysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVirtualGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
+            ListVirtualGatewaysErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualGatewaysErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualGatewaysErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualGatewaysErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualGatewaysErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualGatewaysErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualGatewaysErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5211,15 +5472,15 @@ impl std::error::Error for ListVirtualGatewaysError {
 #[derive(std::fmt::Debug)]
 pub struct CreateVirtualGatewayError {
     /// Kind of error that occurred.
-    pub kind: CreateVirtualGatewayErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateVirtualGatewayErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateVirtualGatewayError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5243,28 +5504,46 @@ pub enum CreateVirtualGatewayErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVirtualGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateVirtualGatewayErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateVirtualGatewayErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateVirtualGatewayErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateVirtualGatewayErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateVirtualGatewayErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateVirtualGatewayErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateVirtualGatewayErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateVirtualGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateVirtualGatewayErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualGatewayErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualGatewayErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualGatewayErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualGatewayErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualGatewayErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualGatewayErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVirtualGatewayErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5274,134 +5553,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateVirtualGatewayError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            CreateVirtualGatewayErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateVirtualGatewayErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateVirtualGatewayErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            CreateVirtualGatewayErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            CreateVirtualGatewayErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            CreateVirtualGatewayErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl CreateVirtualGatewayError {
     /// Creates a new `CreateVirtualGatewayError`.
-    pub fn new(kind: CreateVirtualGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateVirtualGatewayError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateVirtualGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateVirtualGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateVirtualGatewayError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateVirtualGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualGatewayErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateVirtualGatewayErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualGatewayErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateVirtualGatewayErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualGatewayErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateVirtualGatewayErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualGatewayErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateVirtualGatewayErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualGatewayErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateVirtualGatewayErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualGatewayErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateVirtualGatewayErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualGatewayErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateVirtualGatewayErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVirtualGatewayErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateVirtualGatewayErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateVirtualGatewayError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateVirtualGatewayErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateVirtualGatewayErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualGatewayErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualGatewayErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualGatewayErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualGatewayErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualGatewayErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualGatewayErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVirtualGatewayErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5411,15 +5674,15 @@ impl std::error::Error for CreateVirtualGatewayError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVirtualGatewayError {
     /// Kind of error that occurred.
-    pub kind: DeleteVirtualGatewayErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVirtualGatewayErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVirtualGatewayError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5441,27 +5704,43 @@ pub enum DeleteVirtualGatewayErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVirtualGatewayErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVirtualGatewayErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVirtualGatewayErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteVirtualGatewayErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVirtualGatewayErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteVirtualGatewayErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteVirtualGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteVirtualGatewayErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualGatewayErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualGatewayErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualGatewayErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualGatewayErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualGatewayErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualGatewayErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualGatewayErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5471,126 +5750,111 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVirtualGatewayError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DeleteVirtualGatewayErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteVirtualGatewayErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteVirtualGatewayErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DeleteVirtualGatewayErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DeleteVirtualGatewayErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DeleteVirtualGatewayErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DeleteVirtualGatewayError {
     /// Creates a new `DeleteVirtualGatewayError`.
-    pub fn new(kind: DeleteVirtualGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVirtualGatewayError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVirtualGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVirtualGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVirtualGatewayError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVirtualGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualGatewayErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVirtualGatewayErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualGatewayErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVirtualGatewayErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualGatewayErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteVirtualGatewayErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualGatewayErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVirtualGatewayErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualGatewayErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteVirtualGatewayErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualGatewayErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVirtualGatewayErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualGatewayErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteVirtualGatewayErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteVirtualGatewayError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVirtualGatewayErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVirtualGatewayErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVirtualGatewayErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteVirtualGatewayErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVirtualGatewayErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteVirtualGatewayErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVirtualGatewayErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualGatewayErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualGatewayErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualGatewayErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualGatewayErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualGatewayErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualGatewayErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualGatewayErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5600,15 +5864,15 @@ impl std::error::Error for DeleteVirtualGatewayError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateVirtualGatewayError {
     /// Kind of error that occurred.
-    pub kind: UpdateVirtualGatewayErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateVirtualGatewayErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateVirtualGatewayError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5632,28 +5896,46 @@ pub enum UpdateVirtualGatewayErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateVirtualGatewayErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateVirtualGatewayErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateVirtualGatewayErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateVirtualGatewayErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateVirtualGatewayErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateVirtualGatewayErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateVirtualGatewayErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateVirtualGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateVirtualGatewayErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualGatewayErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualGatewayErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualGatewayErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualGatewayErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualGatewayErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualGatewayErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualGatewayErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5663,134 +5945,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateVirtualGatewayError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            UpdateVirtualGatewayErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateVirtualGatewayErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateVirtualGatewayErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            UpdateVirtualGatewayErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            UpdateVirtualGatewayErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            UpdateVirtualGatewayErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl UpdateVirtualGatewayError {
     /// Creates a new `UpdateVirtualGatewayError`.
-    pub fn new(kind: UpdateVirtualGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateVirtualGatewayError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateVirtualGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateVirtualGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateVirtualGatewayError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateVirtualGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualGatewayErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateVirtualGatewayErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualGatewayErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateVirtualGatewayErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualGatewayErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateVirtualGatewayErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualGatewayErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateVirtualGatewayErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualGatewayErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateVirtualGatewayErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualGatewayErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateVirtualGatewayErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualGatewayErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateVirtualGatewayErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualGatewayErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateVirtualGatewayErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateVirtualGatewayError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateVirtualGatewayErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateVirtualGatewayErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualGatewayErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualGatewayErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualGatewayErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualGatewayErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualGatewayErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualGatewayErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualGatewayErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5800,15 +6066,15 @@ impl std::error::Error for UpdateVirtualGatewayError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeVirtualGatewayError {
     /// Kind of error that occurred.
-    pub kind: DescribeVirtualGatewayErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeVirtualGatewayErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeVirtualGatewayError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5828,26 +6094,40 @@ pub enum DescribeVirtualGatewayErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeVirtualGatewayErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeVirtualGatewayErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeVirtualGatewayErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DescribeVirtualGatewayErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeVirtualGatewayErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeVirtualGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeVirtualGatewayErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualGatewayErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualGatewayErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualGatewayErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualGatewayErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualGatewayErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualGatewayErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5857,118 +6137,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeVirtualGatewayError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DescribeVirtualGatewayErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeVirtualGatewayErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeVirtualGatewayErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DescribeVirtualGatewayErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DescribeVirtualGatewayErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DescribeVirtualGatewayErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DescribeVirtualGatewayError {
     /// Creates a new `DescribeVirtualGatewayError`.
-    pub fn new(kind: DescribeVirtualGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeVirtualGatewayError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeVirtualGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeVirtualGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeVirtualGatewayError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeVirtualGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualGatewayErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeVirtualGatewayErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualGatewayErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeVirtualGatewayErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualGatewayErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeVirtualGatewayErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualGatewayErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeVirtualGatewayErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualGatewayErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeVirtualGatewayErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualGatewayErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeVirtualGatewayErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeVirtualGatewayError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeVirtualGatewayErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeVirtualGatewayErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeVirtualGatewayErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DescribeVirtualGatewayErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeVirtualGatewayErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeVirtualGatewayErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualGatewayErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualGatewayErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualGatewayErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualGatewayErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualGatewayErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualGatewayErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5978,15 +6244,15 @@ impl std::error::Error for DescribeVirtualGatewayError {
 #[derive(std::fmt::Debug)]
 pub struct ListGatewayRoutesError {
     /// Kind of error that occurred.
-    pub kind: ListGatewayRoutesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListGatewayRoutesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListGatewayRoutesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListGatewayRoutesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6006,26 +6272,40 @@ pub enum ListGatewayRoutesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGatewayRoutesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGatewayRoutesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListGatewayRoutesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListGatewayRoutesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListGatewayRoutesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListGatewayRoutesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListGatewayRoutesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListGatewayRoutesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListGatewayRoutesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGatewayRoutesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGatewayRoutesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGatewayRoutesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGatewayRoutesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGatewayRoutesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGatewayRoutesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6035,81 +6315,66 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListGatewayRoutesError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            ListGatewayRoutesErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListGatewayRoutesErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListGatewayRoutesErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            ListGatewayRoutesErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            ListGatewayRoutesErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            ListGatewayRoutesErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl ListGatewayRoutesError {
     /// Creates a new `ListGatewayRoutesError`.
-    pub fn new(kind: ListGatewayRoutesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListGatewayRoutesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListGatewayRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListGatewayRoutesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListGatewayRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListGatewayRoutesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListGatewayRoutesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListGatewayRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListGatewayRoutesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListGatewayRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGatewayRoutesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListGatewayRoutesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGatewayRoutesErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListGatewayRoutesErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGatewayRoutesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListGatewayRoutesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -6117,29 +6382,37 @@ impl ListGatewayRoutesError {
     }
     /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGatewayRoutesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListGatewayRoutesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGatewayRoutesErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListGatewayRoutesErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListGatewayRoutesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGatewayRoutesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListGatewayRoutesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListGatewayRoutesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListGatewayRoutesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListGatewayRoutesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListGatewayRoutesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListGatewayRoutesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListGatewayRoutesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListGatewayRoutesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListGatewayRoutesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListGatewayRoutesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListGatewayRoutesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListGatewayRoutesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListGatewayRoutesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6149,15 +6422,15 @@ impl std::error::Error for ListGatewayRoutesError {
 #[derive(std::fmt::Debug)]
 pub struct CreateGatewayRouteError {
     /// Kind of error that occurred.
-    pub kind: CreateGatewayRouteErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateGatewayRouteErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateGatewayRouteError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6181,28 +6454,46 @@ pub enum CreateGatewayRouteErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGatewayRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGatewayRouteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateGatewayRouteErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateGatewayRouteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateGatewayRouteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateGatewayRouteErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateGatewayRouteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateGatewayRouteErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateGatewayRouteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateGatewayRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateGatewayRouteErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGatewayRouteErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGatewayRouteErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGatewayRouteErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGatewayRouteErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGatewayRouteErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGatewayRouteErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGatewayRouteErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGatewayRouteErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6212,130 +6503,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateGatewayRouteError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            CreateGatewayRouteErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateGatewayRouteErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            CreateGatewayRouteErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            CreateGatewayRouteErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            CreateGatewayRouteErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            CreateGatewayRouteErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl CreateGatewayRouteError {
     /// Creates a new `CreateGatewayRouteError`.
-    pub fn new(kind: CreateGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateGatewayRouteError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateGatewayRouteError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGatewayRouteErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateGatewayRouteErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGatewayRouteErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateGatewayRouteErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGatewayRouteErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateGatewayRouteErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGatewayRouteErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateGatewayRouteErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGatewayRouteErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateGatewayRouteErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGatewayRouteErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateGatewayRouteErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGatewayRouteErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateGatewayRouteErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGatewayRouteErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateGatewayRouteErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateGatewayRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGatewayRouteErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateGatewayRouteErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGatewayRouteErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGatewayRouteErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGatewayRouteErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGatewayRouteErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGatewayRouteErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGatewayRouteErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGatewayRouteErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGatewayRouteErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6345,15 +6624,15 @@ impl std::error::Error for CreateGatewayRouteError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteGatewayRouteError {
     /// Kind of error that occurred.
-    pub kind: DeleteGatewayRouteErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteGatewayRouteErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteGatewayRouteError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6375,27 +6654,43 @@ pub enum DeleteGatewayRouteErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGatewayRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteGatewayRouteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteGatewayRouteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteGatewayRouteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteGatewayRouteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteGatewayRouteErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteGatewayRouteErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteGatewayRouteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteGatewayRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteGatewayRouteErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGatewayRouteErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGatewayRouteErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGatewayRouteErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGatewayRouteErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGatewayRouteErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGatewayRouteErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGatewayRouteErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6405,122 +6700,111 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteGatewayRouteError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DeleteGatewayRouteErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteGatewayRouteErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DeleteGatewayRouteErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DeleteGatewayRouteErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DeleteGatewayRouteErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DeleteGatewayRouteErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DeleteGatewayRouteError {
     /// Creates a new `DeleteGatewayRouteError`.
-    pub fn new(kind: DeleteGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteGatewayRouteError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteGatewayRouteError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGatewayRouteErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteGatewayRouteErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGatewayRouteErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteGatewayRouteErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGatewayRouteErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteGatewayRouteErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGatewayRouteErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteGatewayRouteErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGatewayRouteErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteGatewayRouteErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGatewayRouteErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteGatewayRouteErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGatewayRouteErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteGatewayRouteErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteGatewayRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteGatewayRouteErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteGatewayRouteErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteGatewayRouteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteGatewayRouteErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteGatewayRouteErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteGatewayRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteGatewayRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteGatewayRouteErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGatewayRouteErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGatewayRouteErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGatewayRouteErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGatewayRouteErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGatewayRouteErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGatewayRouteErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGatewayRouteErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6530,15 +6814,15 @@ impl std::error::Error for DeleteGatewayRouteError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateGatewayRouteError {
     /// Kind of error that occurred.
-    pub kind: UpdateGatewayRouteErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateGatewayRouteErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateGatewayRouteError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6562,28 +6846,46 @@ pub enum UpdateGatewayRouteErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGatewayRouteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateGatewayRouteErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateGatewayRouteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateGatewayRouteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateGatewayRouteErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateGatewayRouteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateGatewayRouteErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateGatewayRouteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateGatewayRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateGatewayRouteErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGatewayRouteErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGatewayRouteErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGatewayRouteErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGatewayRouteErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGatewayRouteErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGatewayRouteErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGatewayRouteErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGatewayRouteErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6593,130 +6895,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateGatewayRouteError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            UpdateGatewayRouteErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateGatewayRouteErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UpdateGatewayRouteErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            UpdateGatewayRouteErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            UpdateGatewayRouteErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            UpdateGatewayRouteErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl UpdateGatewayRouteError {
     /// Creates a new `UpdateGatewayRouteError`.
-    pub fn new(kind: UpdateGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateGatewayRouteError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateGatewayRouteError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGatewayRouteErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateGatewayRouteErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGatewayRouteErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateGatewayRouteErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGatewayRouteErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateGatewayRouteErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGatewayRouteErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateGatewayRouteErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGatewayRouteErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateGatewayRouteErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGatewayRouteErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateGatewayRouteErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGatewayRouteErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateGatewayRouteErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGatewayRouteErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateGatewayRouteErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateGatewayRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGatewayRouteErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateGatewayRouteErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGatewayRouteErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGatewayRouteErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGatewayRouteErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGatewayRouteErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGatewayRouteErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGatewayRouteErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGatewayRouteErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGatewayRouteErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6726,15 +7016,15 @@ impl std::error::Error for UpdateGatewayRouteError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeGatewayRouteError {
     /// Kind of error that occurred.
-    pub kind: DescribeGatewayRouteErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeGatewayRouteErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeGatewayRouteError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6754,26 +7044,40 @@ pub enum DescribeGatewayRouteErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGatewayRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeGatewayRouteErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeGatewayRouteErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeGatewayRouteErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DescribeGatewayRouteErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeGatewayRouteErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeGatewayRouteErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeGatewayRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeGatewayRouteErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGatewayRouteErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGatewayRouteErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGatewayRouteErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGatewayRouteErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGatewayRouteErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGatewayRouteErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6783,118 +7087,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeGatewayRouteError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            DescribeGatewayRouteErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeGatewayRouteErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            DescribeGatewayRouteErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            DescribeGatewayRouteErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            DescribeGatewayRouteErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            DescribeGatewayRouteErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl DescribeGatewayRouteError {
     /// Creates a new `DescribeGatewayRouteError`.
-    pub fn new(kind: DescribeGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeGatewayRouteError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeGatewayRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeGatewayRouteError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeGatewayRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGatewayRouteErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeGatewayRouteErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGatewayRouteErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeGatewayRouteErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGatewayRouteErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeGatewayRouteErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGatewayRouteErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeGatewayRouteErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGatewayRouteErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeGatewayRouteErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGatewayRouteErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeGatewayRouteErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeGatewayRouteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeGatewayRouteErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeGatewayRouteErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeGatewayRouteErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DescribeGatewayRouteErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeGatewayRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeGatewayRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeGatewayRouteErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGatewayRouteErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGatewayRouteErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGatewayRouteErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGatewayRouteErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGatewayRouteErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGatewayRouteErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6904,15 +7194,15 @@ impl std::error::Error for DescribeGatewayRouteError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6932,26 +7222,40 @@ pub enum UntagResourceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6961,61 +7265,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            UntagResourceErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UntagResourceErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            UntagResourceErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            UntagResourceErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            UntagResourceErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            UntagResourceErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
@@ -7026,10 +7324,7 @@ impl UntagResourceError {
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -7037,29 +7332,37 @@ impl UntagResourceError {
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7069,15 +7372,15 @@ impl std::error::Error for UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7099,27 +7402,43 @@ pub enum TagResourceErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user tags per resource. You must reduce the number of tags in the request. None of the tags in this request were applied.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7129,61 +7448,55 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            TagResourceErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            TagResourceErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            TagResourceErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            TagResourceErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            TagResourceErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            TagResourceErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
@@ -7194,10 +7507,7 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -7205,17 +7515,11 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
@@ -7225,14 +7529,30 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            TagResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            TagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7240,22 +7560,20 @@ impl std::error::Error for TagResourceError {
 /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user tags per resource. You must reduce the number of tags in the request. None of the tags in this request were applied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyTagsException {
+pub struct TooManyTagsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -7265,7 +7583,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException).
 pub mod too_many_tags_exception {
-
+    
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7279,16 +7597,18 @@ pub mod too_many_tags_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
         pub fn build(self) -> crate::error::TooManyTagsException {
             crate::error::TooManyTagsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyTagsException {
     /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
@@ -7302,15 +7622,15 @@ impl TooManyTagsException {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7330,26 +7650,40 @@ pub enum ListTagsForResourceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7359,143 +7693,134 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            ListTagsForResourceErrorKind::InternalServerErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            ListTagsForResourceErrorKind::InternalServerErrorException(inner) => Some(inner.retryable_error_kind()),
+            ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => Some(inner.retryable_error_kind()),
+            ListTagsForResourceErrorKind::TooManyRequestsException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

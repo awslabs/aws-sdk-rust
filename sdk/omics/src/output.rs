@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowsOutput {
+pub struct ListWorkflowsOutput  {
     /// <p>The workflows' items.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::WorkflowListItem>>,
@@ -12,17 +12,17 @@ pub struct ListWorkflowsOutput {
 }
 impl ListWorkflowsOutput {
     /// <p>The workflows' items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::WorkflowListItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::WorkflowListItem]> {
         self.items.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
 pub mod list_workflows_output {
-
+    
     /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod list_workflows_output {
         /// <p>The workflows' items.</p>
         pub fn items(mut self, input: crate::model::WorkflowListItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The workflows' items.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkflowListItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkflowListItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod list_workflows_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
         pub fn build(self) -> crate::output::ListWorkflowsOutput {
             crate::output::ListWorkflowsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
@@ -78,7 +77,7 @@ impl ListWorkflowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkflowOutput {
+pub struct CreateWorkflowOutput  {
     /// <p>The workflow's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -90,42 +89,36 @@ pub struct CreateWorkflowOutput {
     pub status: std::option::Option<crate::model::WorkflowStatus>,
     /// <p>The workflow's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorkflowOutput {
     /// <p>The workflow's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The workflow's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The workflow's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::WorkflowStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorkflowStatus> {
         self.status.as_ref()
     }
     /// <p>The workflow's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
 pub mod create_workflow_output {
-
+    
     /// A builder for [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkflowStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The workflow's ARN.</p>
@@ -135,8 +128,7 @@ pub mod create_workflow_output {
         }
         /// <p>The workflow's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The workflow's ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,8 +137,7 @@ pub mod create_workflow_output {
         }
         /// <p>The workflow's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The workflow's status.</p>
         pub fn status(mut self, input: crate::model::WorkflowStatus) -> Self {
@@ -154,48 +145,40 @@ pub mod create_workflow_output {
             self
         }
         /// <p>The workflow's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorkflowStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The workflow's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The workflow's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
         pub fn build(self) -> crate::output::CreateWorkflowOutput {
             crate::output::CreateWorkflowOutput {
-                arn: self.arn,
-                id: self.id,
-                status: self.status,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
@@ -207,19 +190,24 @@ impl CreateWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkflowOutput {}
+pub struct DeleteWorkflowOutput  {
+}
 /// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
 pub mod delete_workflow_output {
-
+    
     /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
         pub fn build(self) -> crate::output::DeleteWorkflowOutput {
-            crate::output::DeleteWorkflowOutput {}
+            crate::output::DeleteWorkflowOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
@@ -231,19 +219,24 @@ impl DeleteWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkflowOutput {}
+pub struct UpdateWorkflowOutput  {
+}
 /// See [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
 pub mod update_workflow_output {
-
+    
     /// A builder for [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
         pub fn build(self) -> crate::output::UpdateWorkflowOutput {
-            crate::output::UpdateWorkflowOutput {}
+            crate::output::UpdateWorkflowOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
@@ -255,7 +248,7 @@ impl UpdateWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowOutput {
+pub struct GetWorkflowOutput  {
     /// <p>The workflow's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -288,9 +281,7 @@ pub struct GetWorkflowOutput {
     pub digest: std::option::Option<std::string::String>,
     /// <p>The workflow's parameter template.</p>
     #[doc(hidden)]
-    pub parameter_template: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>,
-    >,
+    pub parameter_template: std::option::Option<std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>>,
     /// <p>The workflow's storage capacity.</p>
     #[doc(hidden)]
     pub storage_capacity: std::option::Option<i32>,
@@ -302,56 +293,51 @@ pub struct GetWorkflowOutput {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The workflow's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetWorkflowOutput {
     /// <p>The workflow's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The workflow's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The workflow's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::WorkflowStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorkflowStatus> {
         self.status.as_ref()
     }
     /// <p>The workflow's type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.r#type.as_ref()
     }
     /// <p>The workflow's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The workflow's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The workflow's engine.</p>
-    pub fn engine(&self) -> std::option::Option<&crate::model::WorkflowEngine> {
+    pub fn engine(&self) -> std::option::Option<& crate::model::WorkflowEngine> {
         self.engine.as_ref()
     }
     /// <p>The workflow's definition.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The path of the main definition file for the workflow.</p>
-    pub fn main(&self) -> std::option::Option<&str> {
+    pub fn main(&self) -> std::option::Option<& str> {
         self.main.as_deref()
     }
     /// <p>The workflow's digest.</p>
-    pub fn digest(&self) -> std::option::Option<&str> {
+    pub fn digest(&self) -> std::option::Option<& str> {
         self.digest.as_deref()
     }
     /// <p>The workflow's parameter template.</p>
-    pub fn parameter_template(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>,
-    > {
+    pub fn parameter_template(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>> {
         self.parameter_template.as_ref()
     }
     /// <p>The workflow's storage capacity.</p>
@@ -359,24 +345,21 @@ impl GetWorkflowOutput {
         self.storage_capacity
     }
     /// <p>When the workflow was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The workflow's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The workflow's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
 pub mod get_workflow_output {
-
+    
     /// A builder for [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -390,15 +373,11 @@ pub mod get_workflow_output {
         pub(crate) definition: std::option::Option<std::string::String>,
         pub(crate) main: std::option::Option<std::string::String>,
         pub(crate) digest: std::option::Option<std::string::String>,
-        pub(crate) parameter_template: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>,
-        >,
+        pub(crate) parameter_template: std::option::Option<std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>>,
         pub(crate) storage_capacity: std::option::Option<i32>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The workflow's ARN.</p>
@@ -408,8 +387,7 @@ pub mod get_workflow_output {
         }
         /// <p>The workflow's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The workflow's ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,8 +396,7 @@ pub mod get_workflow_output {
         }
         /// <p>The workflow's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The workflow's status.</p>
         pub fn status(mut self, input: crate::model::WorkflowStatus) -> Self {
@@ -427,12 +404,8 @@ pub mod get_workflow_output {
             self
         }
         /// <p>The workflow's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorkflowStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The workflow's type.</p>
         pub fn r#type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -441,8 +414,7 @@ pub mod get_workflow_output {
         }
         /// <p>The workflow's type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The workflow's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -451,8 +423,7 @@ pub mod get_workflow_output {
         }
         /// <p>The workflow's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The workflow's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -461,8 +432,7 @@ pub mod get_workflow_output {
         }
         /// <p>The workflow's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The workflow's engine.</p>
         pub fn engine(mut self, input: crate::model::WorkflowEngine) -> Self {
@@ -470,12 +440,8 @@ pub mod get_workflow_output {
             self
         }
         /// <p>The workflow's engine.</p>
-        pub fn set_engine(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowEngine>,
-        ) -> Self {
-            self.engine = input;
-            self
+        pub fn set_engine(mut self, input: std::option::Option<crate::model::WorkflowEngine>) -> Self {
+            self.engine = input; self
         }
         /// <p>The workflow's definition.</p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -484,8 +450,7 @@ pub mod get_workflow_output {
         }
         /// <p>The workflow's definition.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.definition = input;
-            self
+            self.definition = input; self
         }
         /// <p>The path of the main definition file for the workflow.</p>
         pub fn main(mut self, input: impl Into<std::string::String>) -> Self {
@@ -494,8 +459,7 @@ pub mod get_workflow_output {
         }
         /// <p>The path of the main definition file for the workflow.</p>
         pub fn set_main(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.main = input;
-            self
+            self.main = input; self
         }
         /// <p>The workflow's digest.</p>
         pub fn digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -504,33 +468,22 @@ pub mod get_workflow_output {
         }
         /// <p>The workflow's digest.</p>
         pub fn set_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.digest = input;
-            self
+            self.digest = input; self
         }
         /// Adds a key-value pair to `parameter_template`.
         ///
         /// To override the contents of this collection use [`set_parameter_template`](Self::set_parameter_template).
         ///
         /// <p>The workflow's parameter template.</p>
-        pub fn parameter_template(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::WorkflowParameter,
-        ) -> Self {
+        pub fn parameter_template(mut self, k: impl Into<std::string::String>, v: crate::model::WorkflowParameter) -> Self {
             let mut hash_map = self.parameter_template.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameter_template = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameter_template = Some(hash_map);
+                            self
         }
         /// <p>The workflow's parameter template.</p>
-        pub fn set_parameter_template(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>,
-            >,
-        ) -> Self {
-            self.parameter_template = input;
-            self
+        pub fn set_parameter_template(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>>) -> Self {
+            self.parameter_template = input; self
         }
         /// <p>The workflow's storage capacity.</p>
         pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -539,8 +492,7 @@ pub mod get_workflow_output {
         }
         /// <p>The workflow's storage capacity.</p>
         pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.storage_capacity = input;
-            self
+            self.storage_capacity = input; self
         }
         /// <p>When the workflow was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -548,12 +500,8 @@ pub mod get_workflow_output {
             self
         }
         /// <p>When the workflow was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The workflow's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -561,59 +509,62 @@ pub mod get_workflow_output {
             self
         }
         /// <p>The workflow's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The workflow's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The workflow's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
         pub fn build(self) -> crate::output::GetWorkflowOutput {
             crate::output::GetWorkflowOutput {
-                arn: self.arn,
-                id: self.id,
-                status: self.status,
-                r#type: self.r#type,
-                name: self.name,
-                description: self.description,
-                engine: self.engine,
-                definition: self.definition,
-                main: self.main,
-                digest: self.digest,
-                parameter_template: self.parameter_template,
-                storage_capacity: self.storage_capacity,
-                creation_time: self.creation_time,
-                status_message: self.status_message,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                engine: self.engine
+                ,
+                definition: self.definition
+                ,
+                main: self.main
+                ,
+                digest: self.digest
+                ,
+                parameter_template: self.parameter_template
+                ,
+                storage_capacity: self.storage_capacity
+                ,
+                creation_time: self.creation_time
+                ,
+                status_message: self.status_message
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
@@ -625,7 +576,7 @@ impl GetWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVariantStoresOutput {
+pub struct ListVariantStoresOutput  {
     /// <p>A list of variant stores.</p>
     #[doc(hidden)]
     pub variant_stores: std::option::Option<std::vec::Vec<crate::model::VariantStoreItem>>,
@@ -635,22 +586,21 @@ pub struct ListVariantStoresOutput {
 }
 impl ListVariantStoresOutput {
     /// <p>A list of variant stores.</p>
-    pub fn variant_stores(&self) -> std::option::Option<&[crate::model::VariantStoreItem]> {
+    pub fn variant_stores(&self) -> std::option::Option<& [crate::model::VariantStoreItem]> {
         self.variant_stores.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVariantStoresOutput`](crate::output::ListVariantStoresOutput).
 pub mod list_variant_stores_output {
-
+    
     /// A builder for [`ListVariantStoresOutput`](crate::output::ListVariantStoresOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) variant_stores:
-            std::option::Option<std::vec::Vec<crate::model::VariantStoreItem>>,
+        pub(crate) variant_stores: std::option::Option<std::vec::Vec<crate::model::VariantStoreItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -661,17 +611,13 @@ pub mod list_variant_stores_output {
         /// <p>A list of variant stores.</p>
         pub fn variant_stores(mut self, input: crate::model::VariantStoreItem) -> Self {
             let mut v = self.variant_stores.unwrap_or_default();
-            v.push(input);
-            self.variant_stores = Some(v);
-            self
+                            v.push(input);
+                            self.variant_stores = Some(v);
+                            self
         }
         /// <p>A list of variant stores.</p>
-        pub fn set_variant_stores(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VariantStoreItem>>,
-        ) -> Self {
-            self.variant_stores = input;
-            self
+        pub fn set_variant_stores(mut self, input: std::option::Option<std::vec::Vec<crate::model::VariantStoreItem>>) -> Self {
+            self.variant_stores = input; self
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -680,17 +626,20 @@ pub mod list_variant_stores_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVariantStoresOutput`](crate::output::ListVariantStoresOutput).
         pub fn build(self) -> crate::output::ListVariantStoresOutput {
             crate::output::ListVariantStoresOutput {
-                variant_stores: self.variant_stores,
-                next_token: self.next_token,
+                variant_stores: self.variant_stores
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVariantStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListVariantStoresOutput`](crate::output::ListVariantStoresOutput).
@@ -702,7 +651,7 @@ impl ListVariantStoresOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVariantStoreOutput {
+pub struct CreateVariantStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -721,29 +670,29 @@ pub struct CreateVariantStoreOutput {
 }
 impl CreateVariantStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> std::option::Option<&crate::model::ReferenceItem> {
+    pub fn reference(&self) -> std::option::Option<& crate::model::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`CreateVariantStoreOutput`](crate::output::CreateVariantStoreOutput).
 pub mod create_variant_store_output {
-
+    
     /// A builder for [`CreateVariantStoreOutput`](crate::output::CreateVariantStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -761,8 +710,7 @@ pub mod create_variant_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's genome reference.</p>
         pub fn reference(mut self, input: crate::model::ReferenceItem) -> Self {
@@ -770,12 +718,8 @@ pub mod create_variant_store_output {
             self
         }
         /// <p>The store's genome reference.</p>
-        pub fn set_reference(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceItem>,
-        ) -> Self {
-            self.reference = input;
-            self
+        pub fn set_reference(mut self, input: std::option::Option<crate::model::ReferenceItem>) -> Self {
+            self.reference = input; self
         }
         /// <p>The store's status.</p>
         pub fn status(mut self, input: crate::model::StoreStatus) -> Self {
@@ -784,8 +728,7 @@ pub mod create_variant_store_output {
         }
         /// <p>The store's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StoreStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -794,8 +737,7 @@ pub mod create_variant_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -803,24 +745,27 @@ pub mod create_variant_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateVariantStoreOutput`](crate::output::CreateVariantStoreOutput).
         pub fn build(self) -> crate::output::CreateVariantStoreOutput {
             crate::output::CreateVariantStoreOutput {
-                id: self.id,
-                reference: self.reference,
-                status: self.status,
-                name: self.name,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                reference: self.reference
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVariantStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateVariantStoreOutput`](crate::output::CreateVariantStoreOutput).
@@ -832,20 +777,20 @@ impl CreateVariantStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVariantStoreOutput {
+pub struct DeleteVariantStoreOutput  {
     /// <p>The store's status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StoreStatus>,
 }
 impl DeleteVariantStoreOutput {
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StoreStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DeleteVariantStoreOutput`](crate::output::DeleteVariantStoreOutput).
 pub mod delete_variant_store_output {
-
+    
     /// A builder for [`DeleteVariantStoreOutput`](crate::output::DeleteVariantStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -859,16 +804,18 @@ pub mod delete_variant_store_output {
         }
         /// <p>The store's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StoreStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVariantStoreOutput`](crate::output::DeleteVariantStoreOutput).
         pub fn build(self) -> crate::output::DeleteVariantStoreOutput {
             crate::output::DeleteVariantStoreOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVariantStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVariantStoreOutput`](crate::output::DeleteVariantStoreOutput).
@@ -880,7 +827,7 @@ impl DeleteVariantStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVariantStoreOutput {
+pub struct UpdateVariantStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -905,37 +852,37 @@ pub struct UpdateVariantStoreOutput {
 }
 impl UpdateVariantStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> std::option::Option<&crate::model::ReferenceItem> {
+    pub fn reference(&self) -> std::option::Option<& crate::model::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`UpdateVariantStoreOutput`](crate::output::UpdateVariantStoreOutput).
 pub mod update_variant_store_output {
-
+    
     /// A builder for [`UpdateVariantStoreOutput`](crate::output::UpdateVariantStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -955,8 +902,7 @@ pub mod update_variant_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's genome reference.</p>
         pub fn reference(mut self, input: crate::model::ReferenceItem) -> Self {
@@ -964,12 +910,8 @@ pub mod update_variant_store_output {
             self
         }
         /// <p>The store's genome reference.</p>
-        pub fn set_reference(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceItem>,
-        ) -> Self {
-            self.reference = input;
-            self
+        pub fn set_reference(mut self, input: std::option::Option<crate::model::ReferenceItem>) -> Self {
+            self.reference = input; self
         }
         /// <p>The store's status.</p>
         pub fn status(mut self, input: crate::model::StoreStatus) -> Self {
@@ -978,8 +920,7 @@ pub mod update_variant_store_output {
         }
         /// <p>The store's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StoreStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -988,8 +929,7 @@ pub mod update_variant_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The store's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -998,8 +938,7 @@ pub mod update_variant_store_output {
         }
         /// <p>The store's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1007,12 +946,8 @@ pub mod update_variant_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the store was updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1020,26 +955,31 @@ pub mod update_variant_store_output {
             self
         }
         /// <p>When the store was updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVariantStoreOutput`](crate::output::UpdateVariantStoreOutput).
         pub fn build(self) -> crate::output::UpdateVariantStoreOutput {
             crate::output::UpdateVariantStoreOutput {
-                id: self.id,
-                reference: self.reference,
-                status: self.status,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                update_time: self.update_time,
+                id: self.id
+                ,
+                reference: self.reference
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVariantStoreOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVariantStoreOutput`](crate::output::UpdateVariantStoreOutput).
@@ -1051,7 +991,7 @@ impl UpdateVariantStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVariantStoreOutput {
+pub struct GetVariantStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1081,8 +1021,7 @@ pub struct GetVariantStoreOutput {
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The store's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The store's status message.</p>
     #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
@@ -1092,50 +1031,47 @@ pub struct GetVariantStoreOutput {
 }
 impl GetVariantStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> std::option::Option<&crate::model::ReferenceItem> {
+    pub fn reference(&self) -> std::option::Option<& crate::model::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's ARN.</p>
-    pub fn store_arn(&self) -> std::option::Option<&str> {
+    pub fn store_arn(&self) -> std::option::Option<& str> {
         self.store_arn.as_deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    pub fn sse_config(&self) -> std::option::Option<&crate::model::SseConfig> {
+    pub fn sse_config(&self) -> std::option::Option<& crate::model::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The store's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The store's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The store's size in bytes.</p>
@@ -1145,7 +1081,7 @@ impl GetVariantStoreOutput {
 }
 /// See [`GetVariantStoreOutput`](crate::output::GetVariantStoreOutput).
 pub mod get_variant_store_output {
-
+    
     /// A builder for [`GetVariantStoreOutput`](crate::output::GetVariantStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1158,9 +1094,7 @@ pub mod get_variant_store_output {
         pub(crate) sse_config: std::option::Option<crate::model::SseConfig>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) store_size_bytes: std::option::Option<i64>,
     }
@@ -1172,8 +1106,7 @@ pub mod get_variant_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's genome reference.</p>
         pub fn reference(mut self, input: crate::model::ReferenceItem) -> Self {
@@ -1181,12 +1114,8 @@ pub mod get_variant_store_output {
             self
         }
         /// <p>The store's genome reference.</p>
-        pub fn set_reference(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceItem>,
-        ) -> Self {
-            self.reference = input;
-            self
+        pub fn set_reference(mut self, input: std::option::Option<crate::model::ReferenceItem>) -> Self {
+            self.reference = input; self
         }
         /// <p>The store's status.</p>
         pub fn status(mut self, input: crate::model::StoreStatus) -> Self {
@@ -1195,8 +1124,7 @@ pub mod get_variant_store_output {
         }
         /// <p>The store's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StoreStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The store's ARN.</p>
         pub fn store_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1205,8 +1133,7 @@ pub mod get_variant_store_output {
         }
         /// <p>The store's ARN.</p>
         pub fn set_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.store_arn = input;
-            self
+            self.store_arn = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1215,8 +1142,7 @@ pub mod get_variant_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The store's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1225,8 +1151,7 @@ pub mod get_variant_store_output {
         }
         /// <p>The store's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The store's server-side encryption (SSE) settings.</p>
         pub fn sse_config(mut self, input: crate::model::SseConfig) -> Self {
@@ -1234,12 +1159,8 @@ pub mod get_variant_store_output {
             self
         }
         /// <p>The store's server-side encryption (SSE) settings.</p>
-        pub fn set_sse_config(
-            mut self,
-            input: std::option::Option<crate::model::SseConfig>,
-        ) -> Self {
-            self.sse_config = input;
-            self
+        pub fn set_sse_config(mut self, input: std::option::Option<crate::model::SseConfig>) -> Self {
+            self.sse_config = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1247,12 +1168,8 @@ pub mod get_variant_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the store was updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1260,37 +1177,23 @@ pub mod get_variant_store_output {
             self
         }
         /// <p>When the store was updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The store's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The store's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The store's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1298,12 +1201,8 @@ pub mod get_variant_store_output {
             self
         }
         /// <p>The store's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The store's size in bytes.</p>
         pub fn store_size_bytes(mut self, input: i64) -> Self {
@@ -1312,27 +1211,40 @@ pub mod get_variant_store_output {
         }
         /// <p>The store's size in bytes.</p>
         pub fn set_store_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.store_size_bytes = input;
-            self
+            self.store_size_bytes = input; self
         }
         /// Consumes the builder and constructs a [`GetVariantStoreOutput`](crate::output::GetVariantStoreOutput).
         pub fn build(self) -> crate::output::GetVariantStoreOutput {
             crate::output::GetVariantStoreOutput {
-                id: self.id,
-                reference: self.reference,
-                status: self.status,
-                store_arn: self.store_arn,
-                name: self.name,
-                description: self.description,
-                sse_config: self.sse_config,
-                creation_time: self.creation_time,
-                update_time: self.update_time,
-                tags: self.tags,
-                status_message: self.status_message,
-                store_size_bytes: self.store_size_bytes,
+                id: self.id
+                ,
+                reference: self.reference
+                ,
+                status: self.status
+                ,
+                store_arn: self.store_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                creation_time: self.creation_time
+                ,
+                update_time: self.update_time
+                ,
+                tags: self.tags
+                ,
+                status_message: self.status_message
+                ,
+                store_size_bytes: self.store_size_bytes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVariantStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetVariantStoreOutput`](crate::output::GetVariantStoreOutput).
@@ -1344,7 +1256,7 @@ impl GetVariantStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVariantImportJobsOutput {
+pub struct ListVariantImportJobsOutput  {
     /// <p>A list of jobs.</p>
     #[doc(hidden)]
     pub variant_import_jobs: std::option::Option<std::vec::Vec<crate::model::VariantImportJobItem>>,
@@ -1354,24 +1266,21 @@ pub struct ListVariantImportJobsOutput {
 }
 impl ListVariantImportJobsOutput {
     /// <p>A list of jobs.</p>
-    pub fn variant_import_jobs(
-        &self,
-    ) -> std::option::Option<&[crate::model::VariantImportJobItem]> {
+    pub fn variant_import_jobs(&self) -> std::option::Option<& [crate::model::VariantImportJobItem]> {
         self.variant_import_jobs.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVariantImportJobsOutput`](crate::output::ListVariantImportJobsOutput).
 pub mod list_variant_import_jobs_output {
-
+    
     /// A builder for [`ListVariantImportJobsOutput`](crate::output::ListVariantImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) variant_import_jobs:
-            std::option::Option<std::vec::Vec<crate::model::VariantImportJobItem>>,
+        pub(crate) variant_import_jobs: std::option::Option<std::vec::Vec<crate::model::VariantImportJobItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1382,17 +1291,13 @@ pub mod list_variant_import_jobs_output {
         /// <p>A list of jobs.</p>
         pub fn variant_import_jobs(mut self, input: crate::model::VariantImportJobItem) -> Self {
             let mut v = self.variant_import_jobs.unwrap_or_default();
-            v.push(input);
-            self.variant_import_jobs = Some(v);
-            self
+                            v.push(input);
+                            self.variant_import_jobs = Some(v);
+                            self
         }
         /// <p>A list of jobs.</p>
-        pub fn set_variant_import_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VariantImportJobItem>>,
-        ) -> Self {
-            self.variant_import_jobs = input;
-            self
+        pub fn set_variant_import_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::VariantImportJobItem>>) -> Self {
+            self.variant_import_jobs = input; self
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1401,17 +1306,20 @@ pub mod list_variant_import_jobs_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVariantImportJobsOutput`](crate::output::ListVariantImportJobsOutput).
         pub fn build(self) -> crate::output::ListVariantImportJobsOutput {
             crate::output::ListVariantImportJobsOutput {
-                variant_import_jobs: self.variant_import_jobs,
-                next_token: self.next_token,
+                variant_import_jobs: self.variant_import_jobs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVariantImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListVariantImportJobsOutput`](crate::output::ListVariantImportJobsOutput).
@@ -1423,20 +1331,20 @@ impl ListVariantImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartVariantImportJobOutput {
+pub struct StartVariantImportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartVariantImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartVariantImportJobOutput`](crate::output::StartVariantImportJobOutput).
 pub mod start_variant_import_job_output {
-
+    
     /// A builder for [`StartVariantImportJobOutput`](crate::output::StartVariantImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1450,16 +1358,18 @@ pub mod start_variant_import_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartVariantImportJobOutput`](crate::output::StartVariantImportJobOutput).
         pub fn build(self) -> crate::output::StartVariantImportJobOutput {
             crate::output::StartVariantImportJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartVariantImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartVariantImportJobOutput`](crate::output::StartVariantImportJobOutput).
@@ -1471,19 +1381,24 @@ impl StartVariantImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelVariantImportJobOutput {}
+pub struct CancelVariantImportJobOutput  {
+}
 /// See [`CancelVariantImportJobOutput`](crate::output::CancelVariantImportJobOutput).
 pub mod cancel_variant_import_job_output {
-
+    
     /// A builder for [`CancelVariantImportJobOutput`](crate::output::CancelVariantImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelVariantImportJobOutput`](crate::output::CancelVariantImportJobOutput).
         pub fn build(self) -> crate::output::CancelVariantImportJobOutput {
-            crate::output::CancelVariantImportJobOutput {}
+            crate::output::CancelVariantImportJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelVariantImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelVariantImportJobOutput`](crate::output::CancelVariantImportJobOutput).
@@ -1495,7 +1410,7 @@ impl CancelVariantImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVariantImportJobOutput {
+pub struct GetVariantImportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1529,39 +1444,39 @@ pub struct GetVariantImportJobOutput {
 }
 impl GetVariantImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's destination variant store.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the job was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::VariantImportItemDetail]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::VariantImportItemDetail]> {
         self.items.as_deref()
     }
     /// <p>The job's left normalization setting.</p>
@@ -1571,7 +1486,7 @@ impl GetVariantImportJobOutput {
 }
 /// See [`GetVariantImportJobOutput`](crate::output::GetVariantImportJobOutput).
 pub mod get_variant_import_job_output {
-
+    
     /// A builder for [`GetVariantImportJobOutput`](crate::output::GetVariantImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1594,8 +1509,7 @@ pub mod get_variant_import_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The job's destination variant store.</p>
         pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1603,12 +1517,8 @@ pub mod get_variant_import_job_output {
             self
         }
         /// <p>The job's destination variant store.</p>
-        pub fn set_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_name = input;
-            self
+        pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_name = input; self
         }
         /// <p>The job's service role ARN.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1617,8 +1527,7 @@ pub mod get_variant_import_job_output {
         }
         /// <p>The job's service role ARN.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
@@ -1627,8 +1536,7 @@ pub mod get_variant_import_job_output {
         }
         /// <p>The job's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The job's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1636,12 +1544,8 @@ pub mod get_variant_import_job_output {
             self
         }
         /// <p>The job's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1649,12 +1553,8 @@ pub mod get_variant_import_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the job was updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1662,12 +1562,8 @@ pub mod get_variant_import_job_output {
             self
         }
         /// <p>When the job was updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>When the job completed.</p>
         pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1675,12 +1571,8 @@ pub mod get_variant_import_job_output {
             self
         }
         /// <p>When the job completed.</p>
-        pub fn set_completion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completion_time = input;
-            self
+        pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completion_time = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -1689,17 +1581,13 @@ pub mod get_variant_import_job_output {
         /// <p>The job's items.</p>
         pub fn items(mut self, input: crate::model::VariantImportItemDetail) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The job's items.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VariantImportItemDetail>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::VariantImportItemDetail>>) -> Self {
+            self.items = input; self
         }
         /// <p>The job's left normalization setting.</p>
         pub fn run_left_normalization(mut self, input: bool) -> Self {
@@ -1708,25 +1596,37 @@ pub mod get_variant_import_job_output {
         }
         /// <p>The job's left normalization setting.</p>
         pub fn set_run_left_normalization(mut self, input: std::option::Option<bool>) -> Self {
-            self.run_left_normalization = input;
-            self
+            self.run_left_normalization = input; self
         }
         /// Consumes the builder and constructs a [`GetVariantImportJobOutput`](crate::output::GetVariantImportJobOutput).
         pub fn build(self) -> crate::output::GetVariantImportJobOutput {
             crate::output::GetVariantImportJobOutput {
-                id: self.id,
-                destination_name: self.destination_name,
-                role_arn: self.role_arn,
-                status: self.status,
-                status_message: self.status_message,
-                creation_time: self.creation_time,
-                update_time: self.update_time,
-                completion_time: self.completion_time,
-                items: self.items,
-                run_left_normalization: self.run_left_normalization.unwrap_or_default(),
+                id: self.id
+                ,
+                destination_name: self.destination_name
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                ,
+                update_time: self.update_time
+                ,
+                completion_time: self.completion_time
+                ,
+                items: self.items
+                ,
+                run_left_normalization: self.run_left_normalization
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVariantImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetVariantImportJobOutput`](crate::output::GetVariantImportJobOutput).
@@ -1738,19 +1638,24 @@ impl GetVariantImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1762,19 +1667,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1786,30 +1696,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1817,31 +1721,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A list of tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1853,7 +1752,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReadSetImportJobOutput {
+pub struct StartReadSetImportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1872,29 +1771,29 @@ pub struct StartReadSetImportJobOutput {
 }
 impl StartReadSetImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReadSetImportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReadSetImportJobStatus> {
         self.status.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`StartReadSetImportJobOutput`](crate::output::StartReadSetImportJobOutput).
 pub mod start_read_set_import_job_output {
-
+    
     /// A builder for [`StartReadSetImportJobOutput`](crate::output::StartReadSetImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1912,8 +1811,7 @@ pub mod start_read_set_import_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The read set's sequence store ID.</p>
         pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1921,12 +1819,8 @@ pub mod start_read_set_import_job_output {
             self
         }
         /// <p>The read set's sequence store ID.</p>
-        pub fn set_sequence_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_store_id = input;
-            self
+        pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_store_id = input; self
         }
         /// <p>The job's service role ARN.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1935,8 +1829,7 @@ pub mod start_read_set_import_job_output {
         }
         /// <p>The job's service role ARN.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::ReadSetImportJobStatus) -> Self {
@@ -1944,12 +1837,8 @@ pub mod start_read_set_import_job_output {
             self
         }
         /// <p>The job's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReadSetImportJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReadSetImportJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1957,24 +1846,27 @@ pub mod start_read_set_import_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`StartReadSetImportJobOutput`](crate::output::StartReadSetImportJobOutput).
         pub fn build(self) -> crate::output::StartReadSetImportJobOutput {
             crate::output::StartReadSetImportJobOutput {
-                id: self.id,
-                sequence_store_id: self.sequence_store_id,
-                role_arn: self.role_arn,
-                status: self.status,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartReadSetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReadSetImportJobOutput`](crate::output::StartReadSetImportJobOutput).
@@ -1986,7 +1878,7 @@ impl StartReadSetImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReadSetExportJobOutput {
+pub struct StartReadSetExportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2005,29 +1897,29 @@ pub struct StartReadSetExportJobOutput {
 }
 impl StartReadSetExportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The job's output location.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReadSetExportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReadSetExportJobStatus> {
         self.status.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`StartReadSetExportJobOutput`](crate::output::StartReadSetExportJobOutput).
 pub mod start_read_set_export_job_output {
-
+    
     /// A builder for [`StartReadSetExportJobOutput`](crate::output::StartReadSetExportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2045,8 +1937,7 @@ pub mod start_read_set_export_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The read set's sequence store ID.</p>
         pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2054,12 +1945,8 @@ pub mod start_read_set_export_job_output {
             self
         }
         /// <p>The read set's sequence store ID.</p>
-        pub fn set_sequence_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_store_id = input;
-            self
+        pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_store_id = input; self
         }
         /// <p>The job's output location.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2068,8 +1955,7 @@ pub mod start_read_set_export_job_output {
         }
         /// <p>The job's output location.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::ReadSetExportJobStatus) -> Self {
@@ -2077,12 +1963,8 @@ pub mod start_read_set_export_job_output {
             self
         }
         /// <p>The job's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReadSetExportJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReadSetExportJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2090,24 +1972,27 @@ pub mod start_read_set_export_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`StartReadSetExportJobOutput`](crate::output::StartReadSetExportJobOutput).
         pub fn build(self) -> crate::output::StartReadSetExportJobOutput {
             crate::output::StartReadSetExportJobOutput {
-                id: self.id,
-                sequence_store_id: self.sequence_store_id,
-                destination: self.destination,
-                status: self.status,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+                destination: self.destination
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartReadSetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReadSetExportJobOutput`](crate::output::StartReadSetExportJobOutput).
@@ -2119,7 +2004,7 @@ impl StartReadSetExportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReadSetActivationJobOutput {
+pub struct StartReadSetActivationJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2135,25 +2020,25 @@ pub struct StartReadSetActivationJobOutput {
 }
 impl StartReadSetActivationJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReadSetActivationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReadSetActivationJobStatus> {
         self.status.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`StartReadSetActivationJobOutput`](crate::output::StartReadSetActivationJobOutput).
 pub mod start_read_set_activation_job_output {
-
+    
     /// A builder for [`StartReadSetActivationJobOutput`](crate::output::StartReadSetActivationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2170,8 +2055,7 @@ pub mod start_read_set_activation_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The read set's sequence store ID.</p>
         pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2179,12 +2063,8 @@ pub mod start_read_set_activation_job_output {
             self
         }
         /// <p>The read set's sequence store ID.</p>
-        pub fn set_sequence_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_store_id = input;
-            self
+        pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_store_id = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::ReadSetActivationJobStatus) -> Self {
@@ -2192,12 +2072,8 @@ pub mod start_read_set_activation_job_output {
             self
         }
         /// <p>The job's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReadSetActivationJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReadSetActivationJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2205,23 +2081,25 @@ pub mod start_read_set_activation_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`StartReadSetActivationJobOutput`](crate::output::StartReadSetActivationJobOutput).
         pub fn build(self) -> crate::output::StartReadSetActivationJobOutput {
             crate::output::StartReadSetActivationJobOutput {
-                id: self.id,
-                sequence_store_id: self.sequence_store_id,
-                status: self.status,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartReadSetActivationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReadSetActivationJobOutput`](crate::output::StartReadSetActivationJobOutput).
@@ -2233,7 +2111,7 @@ impl StartReadSetActivationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadSetImportJobsOutput {
+pub struct ListReadSetImportJobsOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2243,23 +2121,22 @@ pub struct ListReadSetImportJobsOutput {
 }
 impl ListReadSetImportJobsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of jobs.</p>
-    pub fn import_jobs(&self) -> std::option::Option<&[crate::model::ImportReadSetJobItem]> {
+    pub fn import_jobs(&self) -> std::option::Option<& [crate::model::ImportReadSetJobItem]> {
         self.import_jobs.as_deref()
     }
 }
 /// See [`ListReadSetImportJobsOutput`](crate::output::ListReadSetImportJobsOutput).
 pub mod list_read_set_import_jobs_output {
-
+    
     /// A builder for [`ListReadSetImportJobsOutput`](crate::output::ListReadSetImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) import_jobs:
-            std::option::Option<std::vec::Vec<crate::model::ImportReadSetJobItem>>,
+        pub(crate) import_jobs: std::option::Option<std::vec::Vec<crate::model::ImportReadSetJobItem>>,
     }
     impl Builder {
         /// <p>A pagination token that's included if more results are available.</p>
@@ -2269,8 +2146,7 @@ pub mod list_read_set_import_jobs_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `import_jobs`.
         ///
@@ -2279,26 +2155,26 @@ pub mod list_read_set_import_jobs_output {
         /// <p>A list of jobs.</p>
         pub fn import_jobs(mut self, input: crate::model::ImportReadSetJobItem) -> Self {
             let mut v = self.import_jobs.unwrap_or_default();
-            v.push(input);
-            self.import_jobs = Some(v);
-            self
+                            v.push(input);
+                            self.import_jobs = Some(v);
+                            self
         }
         /// <p>A list of jobs.</p>
-        pub fn set_import_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportReadSetJobItem>>,
-        ) -> Self {
-            self.import_jobs = input;
-            self
+        pub fn set_import_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportReadSetJobItem>>) -> Self {
+            self.import_jobs = input; self
         }
         /// Consumes the builder and constructs a [`ListReadSetImportJobsOutput`](crate::output::ListReadSetImportJobsOutput).
         pub fn build(self) -> crate::output::ListReadSetImportJobsOutput {
             crate::output::ListReadSetImportJobsOutput {
-                next_token: self.next_token,
-                import_jobs: self.import_jobs,
+                next_token: self.next_token
+                ,
+                import_jobs: self.import_jobs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReadSetImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetImportJobsOutput`](crate::output::ListReadSetImportJobsOutput).
@@ -2310,7 +2186,7 @@ impl ListReadSetImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadSetExportJobsOutput {
+pub struct ListReadSetExportJobsOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2320,23 +2196,22 @@ pub struct ListReadSetExportJobsOutput {
 }
 impl ListReadSetExportJobsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of jobs.</p>
-    pub fn export_jobs(&self) -> std::option::Option<&[crate::model::ExportReadSetJobDetail]> {
+    pub fn export_jobs(&self) -> std::option::Option<& [crate::model::ExportReadSetJobDetail]> {
         self.export_jobs.as_deref()
     }
 }
 /// See [`ListReadSetExportJobsOutput`](crate::output::ListReadSetExportJobsOutput).
 pub mod list_read_set_export_jobs_output {
-
+    
     /// A builder for [`ListReadSetExportJobsOutput`](crate::output::ListReadSetExportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) export_jobs:
-            std::option::Option<std::vec::Vec<crate::model::ExportReadSetJobDetail>>,
+        pub(crate) export_jobs: std::option::Option<std::vec::Vec<crate::model::ExportReadSetJobDetail>>,
     }
     impl Builder {
         /// <p>A pagination token that's included if more results are available.</p>
@@ -2346,8 +2221,7 @@ pub mod list_read_set_export_jobs_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `export_jobs`.
         ///
@@ -2356,26 +2230,26 @@ pub mod list_read_set_export_jobs_output {
         /// <p>A list of jobs.</p>
         pub fn export_jobs(mut self, input: crate::model::ExportReadSetJobDetail) -> Self {
             let mut v = self.export_jobs.unwrap_or_default();
-            v.push(input);
-            self.export_jobs = Some(v);
-            self
+                            v.push(input);
+                            self.export_jobs = Some(v);
+                            self
         }
         /// <p>A list of jobs.</p>
-        pub fn set_export_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExportReadSetJobDetail>>,
-        ) -> Self {
-            self.export_jobs = input;
-            self
+        pub fn set_export_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExportReadSetJobDetail>>) -> Self {
+            self.export_jobs = input; self
         }
         /// Consumes the builder and constructs a [`ListReadSetExportJobsOutput`](crate::output::ListReadSetExportJobsOutput).
         pub fn build(self) -> crate::output::ListReadSetExportJobsOutput {
             crate::output::ListReadSetExportJobsOutput {
-                next_token: self.next_token,
-                export_jobs: self.export_jobs,
+                next_token: self.next_token
+                ,
+                export_jobs: self.export_jobs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReadSetExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetExportJobsOutput`](crate::output::ListReadSetExportJobsOutput).
@@ -2387,7 +2261,7 @@ impl ListReadSetExportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadSetActivationJobsOutput {
+pub struct ListReadSetActivationJobsOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2397,23 +2271,22 @@ pub struct ListReadSetActivationJobsOutput {
 }
 impl ListReadSetActivationJobsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of jobs.</p>
-    pub fn activation_jobs(&self) -> std::option::Option<&[crate::model::ActivateReadSetJobItem]> {
+    pub fn activation_jobs(&self) -> std::option::Option<& [crate::model::ActivateReadSetJobItem]> {
         self.activation_jobs.as_deref()
     }
 }
 /// See [`ListReadSetActivationJobsOutput`](crate::output::ListReadSetActivationJobsOutput).
 pub mod list_read_set_activation_jobs_output {
-
+    
     /// A builder for [`ListReadSetActivationJobsOutput`](crate::output::ListReadSetActivationJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) activation_jobs:
-            std::option::Option<std::vec::Vec<crate::model::ActivateReadSetJobItem>>,
+        pub(crate) activation_jobs: std::option::Option<std::vec::Vec<crate::model::ActivateReadSetJobItem>>,
     }
     impl Builder {
         /// <p>A pagination token that's included if more results are available.</p>
@@ -2423,8 +2296,7 @@ pub mod list_read_set_activation_jobs_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `activation_jobs`.
         ///
@@ -2433,26 +2305,26 @@ pub mod list_read_set_activation_jobs_output {
         /// <p>A list of jobs.</p>
         pub fn activation_jobs(mut self, input: crate::model::ActivateReadSetJobItem) -> Self {
             let mut v = self.activation_jobs.unwrap_or_default();
-            v.push(input);
-            self.activation_jobs = Some(v);
-            self
+                            v.push(input);
+                            self.activation_jobs = Some(v);
+                            self
         }
         /// <p>A list of jobs.</p>
-        pub fn set_activation_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActivateReadSetJobItem>>,
-        ) -> Self {
-            self.activation_jobs = input;
-            self
+        pub fn set_activation_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActivateReadSetJobItem>>) -> Self {
+            self.activation_jobs = input; self
         }
         /// Consumes the builder and constructs a [`ListReadSetActivationJobsOutput`](crate::output::ListReadSetActivationJobsOutput).
         pub fn build(self) -> crate::output::ListReadSetActivationJobsOutput {
             crate::output::ListReadSetActivationJobsOutput {
-                next_token: self.next_token,
-                activation_jobs: self.activation_jobs,
+                next_token: self.next_token
+                ,
+                activation_jobs: self.activation_jobs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReadSetActivationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetActivationJobsOutput`](crate::output::ListReadSetActivationJobsOutput).
@@ -2464,7 +2336,7 @@ impl ListReadSetActivationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadSetImportJobOutput {
+pub struct GetReadSetImportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2492,41 +2364,41 @@ pub struct GetReadSetImportJobOutput {
 }
 impl GetReadSetImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReadSetImportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReadSetImportJobStatus> {
         self.status.as_ref()
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's sources.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::ImportReadSetSourceItem]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::ImportReadSetSourceItem]> {
         self.sources.as_deref()
     }
 }
 /// See [`GetReadSetImportJobOutput`](crate::output::GetReadSetImportJobOutput).
 pub mod get_read_set_import_job_output {
-
+    
     /// A builder for [`GetReadSetImportJobOutput`](crate::output::GetReadSetImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2537,8 +2409,7 @@ pub mod get_read_set_import_job_output {
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) sources:
-            std::option::Option<std::vec::Vec<crate::model::ImportReadSetSourceItem>>,
+        pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::ImportReadSetSourceItem>>,
     }
     impl Builder {
         /// <p>The job's ID.</p>
@@ -2548,8 +2419,7 @@ pub mod get_read_set_import_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The job's sequence store ID.</p>
         pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2557,12 +2427,8 @@ pub mod get_read_set_import_job_output {
             self
         }
         /// <p>The job's sequence store ID.</p>
-        pub fn set_sequence_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_store_id = input;
-            self
+        pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_store_id = input; self
         }
         /// <p>The job's service role ARN.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2571,8 +2437,7 @@ pub mod get_read_set_import_job_output {
         }
         /// <p>The job's service role ARN.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::ReadSetImportJobStatus) -> Self {
@@ -2580,12 +2445,8 @@ pub mod get_read_set_import_job_output {
             self
         }
         /// <p>The job's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReadSetImportJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReadSetImportJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The job's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2593,12 +2454,8 @@ pub mod get_read_set_import_job_output {
             self
         }
         /// <p>The job's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2606,12 +2463,8 @@ pub mod get_read_set_import_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the job completed.</p>
         pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2619,12 +2472,8 @@ pub mod get_read_set_import_job_output {
             self
         }
         /// <p>When the job completed.</p>
-        pub fn set_completion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completion_time = input;
-            self
+        pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completion_time = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -2633,32 +2482,38 @@ pub mod get_read_set_import_job_output {
         /// <p>The job's sources.</p>
         pub fn sources(mut self, input: crate::model::ImportReadSetSourceItem) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>The job's sources.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportReadSetSourceItem>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportReadSetSourceItem>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`GetReadSetImportJobOutput`](crate::output::GetReadSetImportJobOutput).
         pub fn build(self) -> crate::output::GetReadSetImportJobOutput {
             crate::output::GetReadSetImportJobOutput {
-                id: self.id,
-                sequence_store_id: self.sequence_store_id,
-                role_arn: self.role_arn,
-                status: self.status,
-                status_message: self.status_message,
-                creation_time: self.creation_time,
-                completion_time: self.completion_time,
-                sources: self.sources,
+                id: self.id
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                ,
+                completion_time: self.completion_time
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReadSetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetImportJobOutput`](crate::output::GetReadSetImportJobOutput).
@@ -2670,7 +2525,7 @@ impl GetReadSetImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadSetExportJobOutput {
+pub struct GetReadSetExportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2698,41 +2553,41 @@ pub struct GetReadSetExportJobOutput {
 }
 impl GetReadSetExportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The job's destination in Amazon S3.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReadSetExportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReadSetExportJobStatus> {
         self.status.as_ref()
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's read sets.</p>
-    pub fn read_sets(&self) -> std::option::Option<&[crate::model::ExportReadSetDetail]> {
+    pub fn read_sets(&self) -> std::option::Option<& [crate::model::ExportReadSetDetail]> {
         self.read_sets.as_deref()
     }
 }
 /// See [`GetReadSetExportJobOutput`](crate::output::GetReadSetExportJobOutput).
 pub mod get_read_set_export_job_output {
-
+    
     /// A builder for [`GetReadSetExportJobOutput`](crate::output::GetReadSetExportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2753,8 +2608,7 @@ pub mod get_read_set_export_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The job's sequence store ID.</p>
         pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2762,12 +2616,8 @@ pub mod get_read_set_export_job_output {
             self
         }
         /// <p>The job's sequence store ID.</p>
-        pub fn set_sequence_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_store_id = input;
-            self
+        pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_store_id = input; self
         }
         /// <p>The job's destination in Amazon S3.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2776,8 +2626,7 @@ pub mod get_read_set_export_job_output {
         }
         /// <p>The job's destination in Amazon S3.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::ReadSetExportJobStatus) -> Self {
@@ -2785,12 +2634,8 @@ pub mod get_read_set_export_job_output {
             self
         }
         /// <p>The job's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReadSetExportJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReadSetExportJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The job's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2798,12 +2643,8 @@ pub mod get_read_set_export_job_output {
             self
         }
         /// <p>The job's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2811,12 +2652,8 @@ pub mod get_read_set_export_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the job completed.</p>
         pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2824,12 +2661,8 @@ pub mod get_read_set_export_job_output {
             self
         }
         /// <p>When the job completed.</p>
-        pub fn set_completion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completion_time = input;
-            self
+        pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completion_time = input; self
         }
         /// Appends an item to `read_sets`.
         ///
@@ -2838,32 +2671,38 @@ pub mod get_read_set_export_job_output {
         /// <p>The job's read sets.</p>
         pub fn read_sets(mut self, input: crate::model::ExportReadSetDetail) -> Self {
             let mut v = self.read_sets.unwrap_or_default();
-            v.push(input);
-            self.read_sets = Some(v);
-            self
+                            v.push(input);
+                            self.read_sets = Some(v);
+                            self
         }
         /// <p>The job's read sets.</p>
-        pub fn set_read_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExportReadSetDetail>>,
-        ) -> Self {
-            self.read_sets = input;
-            self
+        pub fn set_read_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExportReadSetDetail>>) -> Self {
+            self.read_sets = input; self
         }
         /// Consumes the builder and constructs a [`GetReadSetExportJobOutput`](crate::output::GetReadSetExportJobOutput).
         pub fn build(self) -> crate::output::GetReadSetExportJobOutput {
             crate::output::GetReadSetExportJobOutput {
-                id: self.id,
-                sequence_store_id: self.sequence_store_id,
-                destination: self.destination,
-                status: self.status,
-                status_message: self.status_message,
-                creation_time: self.creation_time,
-                completion_time: self.completion_time,
-                read_sets: self.read_sets,
+                id: self.id
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+                destination: self.destination
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                ,
+                completion_time: self.completion_time
+                ,
+                read_sets: self.read_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReadSetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetExportJobOutput`](crate::output::GetReadSetExportJobOutput).
@@ -2875,7 +2714,7 @@ impl GetReadSetExportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadSetActivationJobOutput {
+pub struct GetReadSetActivationJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2900,37 +2739,37 @@ pub struct GetReadSetActivationJobOutput {
 }
 impl GetReadSetActivationJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReadSetActivationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReadSetActivationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's sources.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::ActivateReadSetSourceItem]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::ActivateReadSetSourceItem]> {
         self.sources.as_deref()
     }
 }
 /// See [`GetReadSetActivationJobOutput`](crate::output::GetReadSetActivationJobOutput).
 pub mod get_read_set_activation_job_output {
-
+    
     /// A builder for [`GetReadSetActivationJobOutput`](crate::output::GetReadSetActivationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2940,8 +2779,7 @@ pub mod get_read_set_activation_job_output {
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) sources:
-            std::option::Option<std::vec::Vec<crate::model::ActivateReadSetSourceItem>>,
+        pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::ActivateReadSetSourceItem>>,
     }
     impl Builder {
         /// <p>The job's ID.</p>
@@ -2951,8 +2789,7 @@ pub mod get_read_set_activation_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The job's sequence store ID.</p>
         pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2960,12 +2797,8 @@ pub mod get_read_set_activation_job_output {
             self
         }
         /// <p>The job's sequence store ID.</p>
-        pub fn set_sequence_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_store_id = input;
-            self
+        pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_store_id = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::ReadSetActivationJobStatus) -> Self {
@@ -2973,12 +2806,8 @@ pub mod get_read_set_activation_job_output {
             self
         }
         /// <p>The job's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReadSetActivationJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReadSetActivationJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The job's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2986,12 +2815,8 @@ pub mod get_read_set_activation_job_output {
             self
         }
         /// <p>The job's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2999,12 +2824,8 @@ pub mod get_read_set_activation_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the job completed.</p>
         pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3012,12 +2833,8 @@ pub mod get_read_set_activation_job_output {
             self
         }
         /// <p>When the job completed.</p>
-        pub fn set_completion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completion_time = input;
-            self
+        pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completion_time = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -3026,31 +2843,36 @@ pub mod get_read_set_activation_job_output {
         /// <p>The job's sources.</p>
         pub fn sources(mut self, input: crate::model::ActivateReadSetSourceItem) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>The job's sources.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActivateReadSetSourceItem>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActivateReadSetSourceItem>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`GetReadSetActivationJobOutput`](crate::output::GetReadSetActivationJobOutput).
         pub fn build(self) -> crate::output::GetReadSetActivationJobOutput {
             crate::output::GetReadSetActivationJobOutput {
-                id: self.id,
-                sequence_store_id: self.sequence_store_id,
-                status: self.status,
-                status_message: self.status_message,
-                creation_time: self.creation_time,
-                completion_time: self.completion_time,
-                sources: self.sources,
+                id: self.id
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                ,
+                completion_time: self.completion_time
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReadSetActivationJobOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetActivationJobOutput`](crate::output::GetReadSetActivationJobOutput).
@@ -3062,7 +2884,7 @@ impl GetReadSetActivationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSequenceStoresOutput {
+pub struct ListSequenceStoresOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -3072,23 +2894,22 @@ pub struct ListSequenceStoresOutput {
 }
 impl ListSequenceStoresOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of sequence stores.</p>
-    pub fn sequence_stores(&self) -> std::option::Option<&[crate::model::SequenceStoreDetail]> {
+    pub fn sequence_stores(&self) -> std::option::Option<& [crate::model::SequenceStoreDetail]> {
         self.sequence_stores.as_deref()
     }
 }
 /// See [`ListSequenceStoresOutput`](crate::output::ListSequenceStoresOutput).
 pub mod list_sequence_stores_output {
-
+    
     /// A builder for [`ListSequenceStoresOutput`](crate::output::ListSequenceStoresOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) sequence_stores:
-            std::option::Option<std::vec::Vec<crate::model::SequenceStoreDetail>>,
+        pub(crate) sequence_stores: std::option::Option<std::vec::Vec<crate::model::SequenceStoreDetail>>,
     }
     impl Builder {
         /// <p>A pagination token that's included if more results are available.</p>
@@ -3098,8 +2919,7 @@ pub mod list_sequence_stores_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `sequence_stores`.
         ///
@@ -3108,26 +2928,26 @@ pub mod list_sequence_stores_output {
         /// <p>A list of sequence stores.</p>
         pub fn sequence_stores(mut self, input: crate::model::SequenceStoreDetail) -> Self {
             let mut v = self.sequence_stores.unwrap_or_default();
-            v.push(input);
-            self.sequence_stores = Some(v);
-            self
+                            v.push(input);
+                            self.sequence_stores = Some(v);
+                            self
         }
         /// <p>A list of sequence stores.</p>
-        pub fn set_sequence_stores(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SequenceStoreDetail>>,
-        ) -> Self {
-            self.sequence_stores = input;
-            self
+        pub fn set_sequence_stores(mut self, input: std::option::Option<std::vec::Vec<crate::model::SequenceStoreDetail>>) -> Self {
+            self.sequence_stores = input; self
         }
         /// Consumes the builder and constructs a [`ListSequenceStoresOutput`](crate::output::ListSequenceStoresOutput).
         pub fn build(self) -> crate::output::ListSequenceStoresOutput {
             crate::output::ListSequenceStoresOutput {
-                next_token: self.next_token,
-                sequence_stores: self.sequence_stores,
+                next_token: self.next_token
+                ,
+                sequence_stores: self.sequence_stores
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSequenceStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListSequenceStoresOutput`](crate::output::ListSequenceStoresOutput).
@@ -3139,7 +2959,7 @@ impl ListSequenceStoresOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSequenceStoreOutput {
+pub struct CreateSequenceStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3161,33 +2981,33 @@ pub struct CreateSequenceStoreOutput {
 }
 impl CreateSequenceStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The store's SSE settings.</p>
-    pub fn sse_config(&self) -> std::option::Option<&crate::model::SseConfig> {
+    pub fn sse_config(&self) -> std::option::Option<& crate::model::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`CreateSequenceStoreOutput`](crate::output::CreateSequenceStoreOutput).
 pub mod create_sequence_store_output {
-
+    
     /// A builder for [`CreateSequenceStoreOutput`](crate::output::CreateSequenceStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3206,8 +3026,7 @@ pub mod create_sequence_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3216,8 +3035,7 @@ pub mod create_sequence_store_output {
         }
         /// <p>The store's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3226,8 +3044,7 @@ pub mod create_sequence_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The store's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3236,8 +3053,7 @@ pub mod create_sequence_store_output {
         }
         /// <p>The store's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The store's SSE settings.</p>
         pub fn sse_config(mut self, input: crate::model::SseConfig) -> Self {
@@ -3245,12 +3061,8 @@ pub mod create_sequence_store_output {
             self
         }
         /// <p>The store's SSE settings.</p>
-        pub fn set_sse_config(
-            mut self,
-            input: std::option::Option<crate::model::SseConfig>,
-        ) -> Self {
-            self.sse_config = input;
-            self
+        pub fn set_sse_config(mut self, input: std::option::Option<crate::model::SseConfig>) -> Self {
+            self.sse_config = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3258,25 +3070,29 @@ pub mod create_sequence_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateSequenceStoreOutput`](crate::output::CreateSequenceStoreOutput).
         pub fn build(self) -> crate::output::CreateSequenceStoreOutput {
             crate::output::CreateSequenceStoreOutput {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                sse_config: self.sse_config,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSequenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateSequenceStoreOutput`](crate::output::CreateSequenceStoreOutput).
@@ -3288,19 +3104,24 @@ impl CreateSequenceStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSequenceStoreOutput {}
+pub struct DeleteSequenceStoreOutput  {
+}
 /// See [`DeleteSequenceStoreOutput`](crate::output::DeleteSequenceStoreOutput).
 pub mod delete_sequence_store_output {
-
+    
     /// A builder for [`DeleteSequenceStoreOutput`](crate::output::DeleteSequenceStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSequenceStoreOutput`](crate::output::DeleteSequenceStoreOutput).
         pub fn build(self) -> crate::output::DeleteSequenceStoreOutput {
-            crate::output::DeleteSequenceStoreOutput {}
+            crate::output::DeleteSequenceStoreOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSequenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSequenceStoreOutput`](crate::output::DeleteSequenceStoreOutput).
@@ -3312,7 +3133,7 @@ impl DeleteSequenceStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSequenceStoreOutput {
+pub struct GetSequenceStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3334,33 +3155,33 @@ pub struct GetSequenceStoreOutput {
 }
 impl GetSequenceStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    pub fn sse_config(&self) -> std::option::Option<&crate::model::SseConfig> {
+    pub fn sse_config(&self) -> std::option::Option<& crate::model::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`GetSequenceStoreOutput`](crate::output::GetSequenceStoreOutput).
 pub mod get_sequence_store_output {
-
+    
     /// A builder for [`GetSequenceStoreOutput`](crate::output::GetSequenceStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3379,8 +3200,7 @@ pub mod get_sequence_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3389,8 +3209,7 @@ pub mod get_sequence_store_output {
         }
         /// <p>The store's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3399,8 +3218,7 @@ pub mod get_sequence_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The store's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3409,8 +3227,7 @@ pub mod get_sequence_store_output {
         }
         /// <p>The store's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The store's server-side encryption (SSE) settings.</p>
         pub fn sse_config(mut self, input: crate::model::SseConfig) -> Self {
@@ -3418,12 +3235,8 @@ pub mod get_sequence_store_output {
             self
         }
         /// <p>The store's server-side encryption (SSE) settings.</p>
-        pub fn set_sse_config(
-            mut self,
-            input: std::option::Option<crate::model::SseConfig>,
-        ) -> Self {
-            self.sse_config = input;
-            self
+        pub fn set_sse_config(mut self, input: std::option::Option<crate::model::SseConfig>) -> Self {
+            self.sse_config = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3431,25 +3244,29 @@ pub mod get_sequence_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`GetSequenceStoreOutput`](crate::output::GetSequenceStoreOutput).
         pub fn build(self) -> crate::output::GetSequenceStoreOutput {
             crate::output::GetSequenceStoreOutput {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                sse_config: self.sse_config,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSequenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetSequenceStoreOutput`](crate::output::GetSequenceStoreOutput).
@@ -3461,19 +3278,19 @@ impl GetSequenceStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetReadSetOutput {
+pub struct GetReadSetOutput  {
     /// <p>The read set file payload.</p>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
 }
 impl GetReadSetOutput {
     /// <p>The read set file payload.</p>
-    pub fn payload(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.payload
     }
 }
 /// See [`GetReadSetOutput`](crate::output::GetReadSetOutput).
 pub mod get_read_set_output {
-
+    
     /// A builder for [`GetReadSetOutput`](crate::output::GetReadSetOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3486,20 +3303,20 @@ pub mod get_read_set_output {
             self
         }
         /// <p>The read set file payload.</p>
-        pub fn set_payload(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.payload = input;
-            self
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.payload = input; self
         }
         /// Consumes the builder and constructs a [`GetReadSetOutput`](crate::output::GetReadSetOutput).
         pub fn build(self) -> crate::output::GetReadSetOutput {
             crate::output::GetReadSetOutput {
-                payload: self.payload.unwrap_or_default(),
+                payload: self.payload
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReadSetOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetOutput`](crate::output::GetReadSetOutput).
@@ -3511,20 +3328,20 @@ impl GetReadSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteReadSetOutput {
+pub struct BatchDeleteReadSetOutput  {
     /// <p>Errors returned by individual delete operations.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ReadSetBatchError>>,
 }
 impl BatchDeleteReadSetOutput {
     /// <p>Errors returned by individual delete operations.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::ReadSetBatchError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::ReadSetBatchError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchDeleteReadSetOutput`](crate::output::BatchDeleteReadSetOutput).
 pub mod batch_delete_read_set_output {
-
+    
     /// A builder for [`BatchDeleteReadSetOutput`](crate::output::BatchDeleteReadSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3538,25 +3355,24 @@ pub mod batch_delete_read_set_output {
         /// <p>Errors returned by individual delete operations.</p>
         pub fn errors(mut self, input: crate::model::ReadSetBatchError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Errors returned by individual delete operations.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReadSetBatchError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReadSetBatchError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteReadSetOutput`](crate::output::BatchDeleteReadSetOutput).
         pub fn build(self) -> crate::output::BatchDeleteReadSetOutput {
             crate::output::BatchDeleteReadSetOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteReadSetOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteReadSetOutput`](crate::output::BatchDeleteReadSetOutput).
@@ -3568,7 +3384,7 @@ impl BatchDeleteReadSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadSetsOutput {
+pub struct ListReadSetsOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -3578,17 +3394,17 @@ pub struct ListReadSetsOutput {
 }
 impl ListReadSetsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of read sets.</p>
-    pub fn read_sets(&self) -> std::option::Option<&[crate::model::ReadSetListItem]> {
+    pub fn read_sets(&self) -> std::option::Option<& [crate::model::ReadSetListItem]> {
         self.read_sets.as_deref()
     }
 }
 /// See [`ListReadSetsOutput`](crate::output::ListReadSetsOutput).
 pub mod list_read_sets_output {
-
+    
     /// A builder for [`ListReadSetsOutput`](crate::output::ListReadSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3603,8 +3419,7 @@ pub mod list_read_sets_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `read_sets`.
         ///
@@ -3613,26 +3428,26 @@ pub mod list_read_sets_output {
         /// <p>A list of read sets.</p>
         pub fn read_sets(mut self, input: crate::model::ReadSetListItem) -> Self {
             let mut v = self.read_sets.unwrap_or_default();
-            v.push(input);
-            self.read_sets = Some(v);
-            self
+                            v.push(input);
+                            self.read_sets = Some(v);
+                            self
         }
         /// <p>A list of read sets.</p>
-        pub fn set_read_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReadSetListItem>>,
-        ) -> Self {
-            self.read_sets = input;
-            self
+        pub fn set_read_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReadSetListItem>>) -> Self {
+            self.read_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListReadSetsOutput`](crate::output::ListReadSetsOutput).
         pub fn build(self) -> crate::output::ListReadSetsOutput {
             crate::output::ListReadSetsOutput {
-                next_token: self.next_token,
-                read_sets: self.read_sets,
+                next_token: self.next_token
+                ,
+                read_sets: self.read_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReadSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetsOutput`](crate::output::ListReadSetsOutput).
@@ -3644,7 +3459,7 @@ impl ListReadSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadSetMetadataOutput {
+pub struct GetReadSetMetadataOutput  {
     /// <p>The read set's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3687,61 +3502,61 @@ pub struct GetReadSetMetadataOutput {
 }
 impl GetReadSetMetadataOutput {
     /// <p>The read set's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The read set's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The read set's subject ID.</p>
-    pub fn subject_id(&self) -> std::option::Option<&str> {
+    pub fn subject_id(&self) -> std::option::Option<& str> {
         self.subject_id.as_deref()
     }
     /// <p>The read set's sample ID.</p>
-    pub fn sample_id(&self) -> std::option::Option<&str> {
+    pub fn sample_id(&self) -> std::option::Option<& str> {
         self.sample_id.as_deref()
     }
     /// <p>The read set's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReadSetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReadSetStatus> {
         self.status.as_ref()
     }
     /// <p>The read set's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The read set's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The read set's file type.</p>
-    pub fn file_type(&self) -> std::option::Option<&crate::model::FileType> {
+    pub fn file_type(&self) -> std::option::Option<& crate::model::FileType> {
         self.file_type.as_ref()
     }
     /// <p>When the read set was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The read set's sequence information.</p>
-    pub fn sequence_information(&self) -> std::option::Option<&crate::model::SequenceInformation> {
+    pub fn sequence_information(&self) -> std::option::Option<& crate::model::SequenceInformation> {
         self.sequence_information.as_ref()
     }
     /// <p>The read set's genome reference ARN.</p>
-    pub fn reference_arn(&self) -> std::option::Option<&str> {
+    pub fn reference_arn(&self) -> std::option::Option<& str> {
         self.reference_arn.as_deref()
     }
     /// <p>The read set's files.</p>
-    pub fn files(&self) -> std::option::Option<&crate::model::ReadSetFiles> {
+    pub fn files(&self) -> std::option::Option<& crate::model::ReadSetFiles> {
         self.files.as_ref()
     }
 }
 /// See [`GetReadSetMetadataOutput`](crate::output::GetReadSetMetadataOutput).
 pub mod get_read_set_metadata_output {
-
+    
     /// A builder for [`GetReadSetMetadataOutput`](crate::output::GetReadSetMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3767,8 +3582,7 @@ pub mod get_read_set_metadata_output {
         }
         /// <p>The read set's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The read set's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3777,8 +3591,7 @@ pub mod get_read_set_metadata_output {
         }
         /// <p>The read set's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The read set's sequence store ID.</p>
         pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3786,12 +3599,8 @@ pub mod get_read_set_metadata_output {
             self
         }
         /// <p>The read set's sequence store ID.</p>
-        pub fn set_sequence_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_store_id = input;
-            self
+        pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_store_id = input; self
         }
         /// <p>The read set's subject ID.</p>
         pub fn subject_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3800,8 +3609,7 @@ pub mod get_read_set_metadata_output {
         }
         /// <p>The read set's subject ID.</p>
         pub fn set_subject_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject_id = input;
-            self
+            self.subject_id = input; self
         }
         /// <p>The read set's sample ID.</p>
         pub fn sample_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3810,8 +3618,7 @@ pub mod get_read_set_metadata_output {
         }
         /// <p>The read set's sample ID.</p>
         pub fn set_sample_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sample_id = input;
-            self
+            self.sample_id = input; self
         }
         /// <p>The read set's status.</p>
         pub fn status(mut self, input: crate::model::ReadSetStatus) -> Self {
@@ -3819,12 +3626,8 @@ pub mod get_read_set_metadata_output {
             self
         }
         /// <p>The read set's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReadSetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReadSetStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The read set's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3833,8 +3636,7 @@ pub mod get_read_set_metadata_output {
         }
         /// <p>The read set's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The read set's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3843,8 +3645,7 @@ pub mod get_read_set_metadata_output {
         }
         /// <p>The read set's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The read set's file type.</p>
         pub fn file_type(mut self, input: crate::model::FileType) -> Self {
@@ -3853,8 +3654,7 @@ pub mod get_read_set_metadata_output {
         }
         /// <p>The read set's file type.</p>
         pub fn set_file_type(mut self, input: std::option::Option<crate::model::FileType>) -> Self {
-            self.file_type = input;
-            self
+            self.file_type = input; self
         }
         /// <p>When the read set was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3862,12 +3662,8 @@ pub mod get_read_set_metadata_output {
             self
         }
         /// <p>When the read set was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The read set's sequence information.</p>
         pub fn sequence_information(mut self, input: crate::model::SequenceInformation) -> Self {
@@ -3875,12 +3671,8 @@ pub mod get_read_set_metadata_output {
             self
         }
         /// <p>The read set's sequence information.</p>
-        pub fn set_sequence_information(
-            mut self,
-            input: std::option::Option<crate::model::SequenceInformation>,
-        ) -> Self {
-            self.sequence_information = input;
-            self
+        pub fn set_sequence_information(mut self, input: std::option::Option<crate::model::SequenceInformation>) -> Self {
+            self.sequence_information = input; self
         }
         /// <p>The read set's genome reference ARN.</p>
         pub fn reference_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3888,12 +3680,8 @@ pub mod get_read_set_metadata_output {
             self
         }
         /// <p>The read set's genome reference ARN.</p>
-        pub fn set_reference_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reference_arn = input;
-            self
+        pub fn set_reference_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reference_arn = input; self
         }
         /// <p>The read set's files.</p>
         pub fn files(mut self, input: crate::model::ReadSetFiles) -> Self {
@@ -3902,28 +3690,42 @@ pub mod get_read_set_metadata_output {
         }
         /// <p>The read set's files.</p>
         pub fn set_files(mut self, input: std::option::Option<crate::model::ReadSetFiles>) -> Self {
-            self.files = input;
-            self
+            self.files = input; self
         }
         /// Consumes the builder and constructs a [`GetReadSetMetadataOutput`](crate::output::GetReadSetMetadataOutput).
         pub fn build(self) -> crate::output::GetReadSetMetadataOutput {
             crate::output::GetReadSetMetadataOutput {
-                id: self.id,
-                arn: self.arn,
-                sequence_store_id: self.sequence_store_id,
-                subject_id: self.subject_id,
-                sample_id: self.sample_id,
-                status: self.status,
-                name: self.name,
-                description: self.description,
-                file_type: self.file_type,
-                creation_time: self.creation_time,
-                sequence_information: self.sequence_information,
-                reference_arn: self.reference_arn,
-                files: self.files,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+                subject_id: self.subject_id
+                ,
+                sample_id: self.sample_id
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                file_type: self.file_type
+                ,
+                creation_time: self.creation_time
+                ,
+                sequence_information: self.sequence_information
+                ,
+                reference_arn: self.reference_arn
+                ,
+                files: self.files
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReadSetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetMetadataOutput`](crate::output::GetReadSetMetadataOutput).
@@ -3935,19 +3737,24 @@ impl GetReadSetMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelRunOutput {}
+pub struct CancelRunOutput  {
+}
 /// See [`CancelRunOutput`](crate::output::CancelRunOutput).
 pub mod cancel_run_output {
-
+    
     /// A builder for [`CancelRunOutput`](crate::output::CancelRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelRunOutput`](crate::output::CancelRunOutput).
         pub fn build(self) -> crate::output::CancelRunOutput {
-            crate::output::CancelRunOutput {}
+            crate::output::CancelRunOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelRunOutput {
     /// Creates a new builder-style object to manufacture [`CancelRunOutput`](crate::output::CancelRunOutput).
@@ -3959,7 +3766,7 @@ impl CancelRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRunsOutput {
+pub struct ListRunsOutput  {
     /// <p>A list of runs.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RunListItem>>,
@@ -3969,17 +3776,17 @@ pub struct ListRunsOutput {
 }
 impl ListRunsOutput {
     /// <p>A list of runs.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::RunListItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::RunListItem]> {
         self.items.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRunsOutput`](crate::output::ListRunsOutput).
 pub mod list_runs_output {
-
+    
     /// A builder for [`ListRunsOutput`](crate::output::ListRunsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3994,17 +3801,13 @@ pub mod list_runs_output {
         /// <p>A list of runs.</p>
         pub fn items(mut self, input: crate::model::RunListItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>A list of runs.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RunListItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::RunListItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4013,17 +3816,20 @@ pub mod list_runs_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRunsOutput`](crate::output::ListRunsOutput).
         pub fn build(self) -> crate::output::ListRunsOutput {
             crate::output::ListRunsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListRunsOutput`](crate::output::ListRunsOutput).
@@ -4035,7 +3841,7 @@ impl ListRunsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRunOutput {
+pub struct StartRunOutput  {
     /// <p>The run's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4047,42 +3853,36 @@ pub struct StartRunOutput {
     pub status: std::option::Option<crate::model::RunStatus>,
     /// <p>The run's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartRunOutput {
     /// <p>The run's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The run's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RunStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RunStatus> {
         self.status.as_ref()
     }
     /// <p>The run's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`StartRunOutput`](crate::output::StartRunOutput).
 pub mod start_run_output {
-
+    
     /// A builder for [`StartRunOutput`](crate::output::StartRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RunStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The run's ARN.</p>
@@ -4092,8 +3892,7 @@ pub mod start_run_output {
         }
         /// <p>The run's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The run's ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4102,8 +3901,7 @@ pub mod start_run_output {
         }
         /// <p>The run's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The run's status.</p>
         pub fn status(mut self, input: crate::model::RunStatus) -> Self {
@@ -4112,44 +3910,39 @@ pub mod start_run_output {
         }
         /// <p>The run's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::RunStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The run's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The run's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`StartRunOutput`](crate::output::StartRunOutput).
         pub fn build(self) -> crate::output::StartRunOutput {
             crate::output::StartRunOutput {
-                arn: self.arn,
-                id: self.id,
-                status: self.status,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl StartRunOutput {
     /// Creates a new builder-style object to manufacture [`StartRunOutput`](crate::output::StartRunOutput).
@@ -4161,19 +3954,24 @@ impl StartRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRunOutput {}
+pub struct DeleteRunOutput  {
+}
 /// See [`DeleteRunOutput`](crate::output::DeleteRunOutput).
 pub mod delete_run_output {
-
+    
     /// A builder for [`DeleteRunOutput`](crate::output::DeleteRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRunOutput`](crate::output::DeleteRunOutput).
         pub fn build(self) -> crate::output::DeleteRunOutput {
-            crate::output::DeleteRunOutput {}
+            crate::output::DeleteRunOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRunOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRunOutput`](crate::output::DeleteRunOutput).
@@ -4185,7 +3983,7 @@ impl DeleteRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRunOutput {
+pub struct GetRunOutput  {
     /// <p>The run's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4236,8 +4034,7 @@ pub struct GetRunOutput {
     pub log_level: std::option::Option<crate::model::RunLogLevel>,
     /// <p>The run's resource digests.</p>
     #[doc(hidden)]
-    pub resource_digests:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_digests: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Who started the run.</p>
     #[doc(hidden)]
     pub started_by: std::option::Option<std::string::String>,
@@ -4255,44 +4052,43 @@ pub struct GetRunOutput {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The run's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetRunOutput {
     /// <p>The run's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The run's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RunStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RunStatus> {
         self.status.as_ref()
     }
     /// <p>The run's workflow ID.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The run's workflow type.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The run's ID.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The run's service role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The run's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The run's group ID.</p>
-    pub fn run_group_id(&self) -> std::option::Option<&str> {
+    pub fn run_group_id(&self) -> std::option::Option<& str> {
         self.run_group_id.as_deref()
     }
     /// <p>The run's priority.</p>
@@ -4300,15 +4096,15 @@ impl GetRunOutput {
         self.priority
     }
     /// <p>The run's definition.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The run's digest.</p>
-    pub fn digest(&self) -> std::option::Option<&str> {
+    pub fn digest(&self) -> std::option::Option<& str> {
         self.digest.as_deref()
     }
     /// <p>The run's parameters.</p>
-    pub fn parameters(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn parameters(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
     /// <p>The run's storage capacity.</p>
@@ -4316,51 +4112,45 @@ impl GetRunOutput {
         self.storage_capacity
     }
     /// <p>The run's output URI.</p>
-    pub fn output_uri(&self) -> std::option::Option<&str> {
+    pub fn output_uri(&self) -> std::option::Option<& str> {
         self.output_uri.as_deref()
     }
     /// <p>The run's log level.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::model::RunLogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::RunLogLevel> {
         self.log_level.as_ref()
     }
     /// <p>The run's resource digests.</p>
-    pub fn resource_digests(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_digests(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_digests.as_ref()
     }
     /// <p>Who started the run.</p>
-    pub fn started_by(&self) -> std::option::Option<&str> {
+    pub fn started_by(&self) -> std::option::Option<& str> {
         self.started_by.as_deref()
     }
     /// <p>When the run was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the run started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The run's stop time.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
     /// <p>The run's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The run's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetRunOutput`](crate::output::GetRunOutput).
 pub mod get_run_output {
-
+    
     /// A builder for [`GetRunOutput`](crate::output::GetRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4380,17 +4170,13 @@ pub mod get_run_output {
         pub(crate) storage_capacity: std::option::Option<i32>,
         pub(crate) output_uri: std::option::Option<std::string::String>,
         pub(crate) log_level: std::option::Option<crate::model::RunLogLevel>,
-        pub(crate) resource_digests: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) resource_digests: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) started_by: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The run's ARN.</p>
@@ -4400,8 +4186,7 @@ pub mod get_run_output {
         }
         /// <p>The run's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The run's ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4410,8 +4195,7 @@ pub mod get_run_output {
         }
         /// <p>The run's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The run's status.</p>
         pub fn status(mut self, input: crate::model::RunStatus) -> Self {
@@ -4420,8 +4204,7 @@ pub mod get_run_output {
         }
         /// <p>The run's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::RunStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The run's workflow ID.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4430,8 +4213,7 @@ pub mod get_run_output {
         }
         /// <p>The run's workflow ID.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The run's workflow type.</p>
         pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -4439,12 +4221,8 @@ pub mod get_run_output {
             self
         }
         /// <p>The run's workflow type.</p>
-        pub fn set_workflow_type(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowType>,
-        ) -> Self {
-            self.workflow_type = input;
-            self
+        pub fn set_workflow_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
+            self.workflow_type = input; self
         }
         /// <p>The run's ID.</p>
         pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4453,8 +4231,7 @@ pub mod get_run_output {
         }
         /// <p>The run's ID.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.run_id = input;
-            self
+            self.run_id = input; self
         }
         /// <p>The run's service role ARN.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4463,8 +4240,7 @@ pub mod get_run_output {
         }
         /// <p>The run's service role ARN.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The run's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4473,8 +4249,7 @@ pub mod get_run_output {
         }
         /// <p>The run's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The run's group ID.</p>
         pub fn run_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4483,8 +4258,7 @@ pub mod get_run_output {
         }
         /// <p>The run's group ID.</p>
         pub fn set_run_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.run_group_id = input;
-            self
+            self.run_group_id = input; self
         }
         /// <p>The run's priority.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -4493,8 +4267,7 @@ pub mod get_run_output {
         }
         /// <p>The run's priority.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>The run's definition.</p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4503,8 +4276,7 @@ pub mod get_run_output {
         }
         /// <p>The run's definition.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.definition = input;
-            self
+            self.definition = input; self
         }
         /// <p>The run's digest.</p>
         pub fn digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4513,8 +4285,7 @@ pub mod get_run_output {
         }
         /// <p>The run's digest.</p>
         pub fn set_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.digest = input;
-            self
+            self.digest = input; self
         }
         /// <p>The run's parameters.</p>
         pub fn parameters(mut self, input: aws_smithy_types::Document) -> Self {
@@ -4522,12 +4293,8 @@ pub mod get_run_output {
             self
         }
         /// <p>The run's parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Document>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The run's storage capacity.</p>
         pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -4536,8 +4303,7 @@ pub mod get_run_output {
         }
         /// <p>The run's storage capacity.</p>
         pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.storage_capacity = input;
-            self
+            self.storage_capacity = input; self
         }
         /// <p>The run's output URI.</p>
         pub fn output_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4546,8 +4312,7 @@ pub mod get_run_output {
         }
         /// <p>The run's output URI.</p>
         pub fn set_output_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output_uri = input;
-            self
+            self.output_uri = input; self
         }
         /// <p>The run's log level.</p>
         pub fn log_level(mut self, input: crate::model::RunLogLevel) -> Self {
@@ -4555,37 +4320,23 @@ pub mod get_run_output {
             self
         }
         /// <p>The run's log level.</p>
-        pub fn set_log_level(
-            mut self,
-            input: std::option::Option<crate::model::RunLogLevel>,
-        ) -> Self {
-            self.log_level = input;
-            self
+        pub fn set_log_level(mut self, input: std::option::Option<crate::model::RunLogLevel>) -> Self {
+            self.log_level = input; self
         }
         /// Adds a key-value pair to `resource_digests`.
         ///
         /// To override the contents of this collection use [`set_resource_digests`](Self::set_resource_digests).
         ///
         /// <p>The run's resource digests.</p>
-        pub fn resource_digests(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_digests(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_digests.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_digests = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_digests = Some(hash_map);
+                            self
         }
         /// <p>The run's resource digests.</p>
-        pub fn set_resource_digests(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_digests = input;
-            self
+        pub fn set_resource_digests(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_digests = input; self
         }
         /// <p>Who started the run.</p>
         pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4594,8 +4345,7 @@ pub mod get_run_output {
         }
         /// <p>Who started the run.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.started_by = input;
-            self
+            self.started_by = input; self
         }
         /// <p>When the run was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4603,12 +4353,8 @@ pub mod get_run_output {
             self
         }
         /// <p>When the run was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the run started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4616,12 +4362,8 @@ pub mod get_run_output {
             self
         }
         /// <p>When the run started.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The run's stop time.</p>
         pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4629,12 +4371,8 @@ pub mod get_run_output {
             self
         }
         /// <p>The run's stop time.</p>
-        pub fn set_stop_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stop_time = input;
-            self
+        pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stop_time = input; self
         }
         /// <p>The run's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4642,67 +4380,78 @@ pub mod get_run_output {
             self
         }
         /// <p>The run's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The run's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The run's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetRunOutput`](crate::output::GetRunOutput).
         pub fn build(self) -> crate::output::GetRunOutput {
             crate::output::GetRunOutput {
-                arn: self.arn,
-                id: self.id,
-                status: self.status,
-                workflow_id: self.workflow_id,
-                workflow_type: self.workflow_type,
-                run_id: self.run_id,
-                role_arn: self.role_arn,
-                name: self.name,
-                run_group_id: self.run_group_id,
-                priority: self.priority,
-                definition: self.definition,
-                digest: self.digest,
-                parameters: self.parameters,
-                storage_capacity: self.storage_capacity,
-                output_uri: self.output_uri,
-                log_level: self.log_level,
-                resource_digests: self.resource_digests,
-                started_by: self.started_by,
-                creation_time: self.creation_time,
-                start_time: self.start_time,
-                stop_time: self.stop_time,
-                status_message: self.status_message,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                status: self.status
+                ,
+                workflow_id: self.workflow_id
+                ,
+                workflow_type: self.workflow_type
+                ,
+                run_id: self.run_id
+                ,
+                role_arn: self.role_arn
+                ,
+                name: self.name
+                ,
+                run_group_id: self.run_group_id
+                ,
+                priority: self.priority
+                ,
+                definition: self.definition
+                ,
+                digest: self.digest
+                ,
+                parameters: self.parameters
+                ,
+                storage_capacity: self.storage_capacity
+                ,
+                output_uri: self.output_uri
+                ,
+                log_level: self.log_level
+                ,
+                resource_digests: self.resource_digests
+                ,
+                started_by: self.started_by
+                ,
+                creation_time: self.creation_time
+                ,
+                start_time: self.start_time
+                ,
+                stop_time: self.stop_time
+                ,
+                status_message: self.status_message
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRunOutput {
     /// Creates a new builder-style object to manufacture [`GetRunOutput`](crate::output::GetRunOutput).
@@ -4714,7 +4463,7 @@ impl GetRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRunTasksOutput {
+pub struct ListRunTasksOutput  {
     /// <p>A list of tasks.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::TaskListItem>>,
@@ -4724,17 +4473,17 @@ pub struct ListRunTasksOutput {
 }
 impl ListRunTasksOutput {
     /// <p>A list of tasks.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::TaskListItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::TaskListItem]> {
         self.items.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRunTasksOutput`](crate::output::ListRunTasksOutput).
 pub mod list_run_tasks_output {
-
+    
     /// A builder for [`ListRunTasksOutput`](crate::output::ListRunTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4749,17 +4498,13 @@ pub mod list_run_tasks_output {
         /// <p>A list of tasks.</p>
         pub fn items(mut self, input: crate::model::TaskListItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>A list of tasks.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TaskListItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::TaskListItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4768,17 +4513,20 @@ pub mod list_run_tasks_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRunTasksOutput`](crate::output::ListRunTasksOutput).
         pub fn build(self) -> crate::output::ListRunTasksOutput {
             crate::output::ListRunTasksOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRunTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListRunTasksOutput`](crate::output::ListRunTasksOutput).
@@ -4790,7 +4538,7 @@ impl ListRunTasksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRunTaskOutput {
+pub struct GetRunTaskOutput  {
     /// <p>The task's ID.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -4824,15 +4572,15 @@ pub struct GetRunTaskOutput {
 }
 impl GetRunTaskOutput {
     /// <p>The task's ID.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The task's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TaskStatus> {
         self.status.as_ref()
     }
     /// <p>The task's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The task's CPU usage.</p>
@@ -4844,29 +4592,29 @@ impl GetRunTaskOutput {
         self.memory
     }
     /// <p>When the task was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The task's start time.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The task's stop time.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
     /// <p>The task's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The task's log stream.</p>
-    pub fn log_stream(&self) -> std::option::Option<&str> {
+    pub fn log_stream(&self) -> std::option::Option<& str> {
         self.log_stream.as_deref()
     }
 }
 /// See [`GetRunTaskOutput`](crate::output::GetRunTaskOutput).
 pub mod get_run_task_output {
-
+    
     /// A builder for [`GetRunTaskOutput`](crate::output::GetRunTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4889,8 +4637,7 @@ pub mod get_run_task_output {
         }
         /// <p>The task's ID.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input;
-            self
+            self.task_id = input; self
         }
         /// <p>The task's status.</p>
         pub fn status(mut self, input: crate::model::TaskStatus) -> Self {
@@ -4899,8 +4646,7 @@ pub mod get_run_task_output {
         }
         /// <p>The task's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::TaskStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The task's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4909,8 +4655,7 @@ pub mod get_run_task_output {
         }
         /// <p>The task's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The task's CPU usage.</p>
         pub fn cpus(mut self, input: i32) -> Self {
@@ -4919,8 +4664,7 @@ pub mod get_run_task_output {
         }
         /// <p>The task's CPU usage.</p>
         pub fn set_cpus(mut self, input: std::option::Option<i32>) -> Self {
-            self.cpus = input;
-            self
+            self.cpus = input; self
         }
         /// <p>The task's memory setting.</p>
         pub fn memory(mut self, input: i32) -> Self {
@@ -4929,8 +4673,7 @@ pub mod get_run_task_output {
         }
         /// <p>The task's memory setting.</p>
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory = input;
-            self
+            self.memory = input; self
         }
         /// <p>When the task was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4938,12 +4681,8 @@ pub mod get_run_task_output {
             self
         }
         /// <p>When the task was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The task's start time.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4951,12 +4690,8 @@ pub mod get_run_task_output {
             self
         }
         /// <p>The task's start time.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The task's stop time.</p>
         pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4964,12 +4699,8 @@ pub mod get_run_task_output {
             self
         }
         /// <p>The task's stop time.</p>
-        pub fn set_stop_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stop_time = input;
-            self
+        pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stop_time = input; self
         }
         /// <p>The task's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4977,12 +4708,8 @@ pub mod get_run_task_output {
             self
         }
         /// <p>The task's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The task's log stream.</p>
         pub fn log_stream(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4991,25 +4718,36 @@ pub mod get_run_task_output {
         }
         /// <p>The task's log stream.</p>
         pub fn set_log_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_stream = input;
-            self
+            self.log_stream = input; self
         }
         /// Consumes the builder and constructs a [`GetRunTaskOutput`](crate::output::GetRunTaskOutput).
         pub fn build(self) -> crate::output::GetRunTaskOutput {
             crate::output::GetRunTaskOutput {
-                task_id: self.task_id,
-                status: self.status,
-                name: self.name,
-                cpus: self.cpus,
-                memory: self.memory,
-                creation_time: self.creation_time,
-                start_time: self.start_time,
-                stop_time: self.stop_time,
-                status_message: self.status_message,
-                log_stream: self.log_stream,
+                task_id: self.task_id
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                cpus: self.cpus
+                ,
+                memory: self.memory
+                ,
+                creation_time: self.creation_time
+                ,
+                start_time: self.start_time
+                ,
+                stop_time: self.stop_time
+                ,
+                status_message: self.status_message
+                ,
+                log_stream: self.log_stream
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRunTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetRunTaskOutput`](crate::output::GetRunTaskOutput).
@@ -5021,7 +4759,7 @@ impl GetRunTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRunGroupsOutput {
+pub struct ListRunGroupsOutput  {
     /// <p>A list of groups.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RunGroupListItem>>,
@@ -5031,17 +4769,17 @@ pub struct ListRunGroupsOutput {
 }
 impl ListRunGroupsOutput {
     /// <p>A list of groups.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::RunGroupListItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::RunGroupListItem]> {
         self.items.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRunGroupsOutput`](crate::output::ListRunGroupsOutput).
 pub mod list_run_groups_output {
-
+    
     /// A builder for [`ListRunGroupsOutput`](crate::output::ListRunGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5056,17 +4794,13 @@ pub mod list_run_groups_output {
         /// <p>A list of groups.</p>
         pub fn items(mut self, input: crate::model::RunGroupListItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>A list of groups.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RunGroupListItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::RunGroupListItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5075,17 +4809,20 @@ pub mod list_run_groups_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRunGroupsOutput`](crate::output::ListRunGroupsOutput).
         pub fn build(self) -> crate::output::ListRunGroupsOutput {
             crate::output::ListRunGroupsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRunGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListRunGroupsOutput`](crate::output::ListRunGroupsOutput).
@@ -5097,7 +4834,7 @@ impl ListRunGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRunGroupOutput {
+pub struct CreateRunGroupOutput  {
     /// <p>The group's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5106,37 +4843,31 @@ pub struct CreateRunGroupOutput {
     pub id: std::option::Option<std::string::String>,
     /// <p>Tags for the run group.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRunGroupOutput {
     /// <p>The group's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The group's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Tags for the run group.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateRunGroupOutput`](crate::output::CreateRunGroupOutput).
 pub mod create_run_group_output {
-
+    
     /// A builder for [`CreateRunGroupOutput`](crate::output::CreateRunGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The group's ARN.</p>
@@ -5146,8 +4877,7 @@ pub mod create_run_group_output {
         }
         /// <p>The group's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The group's ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5156,43 +4886,37 @@ pub mod create_run_group_output {
         }
         /// <p>The group's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags for the run group.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags for the run group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateRunGroupOutput`](crate::output::CreateRunGroupOutput).
         pub fn build(self) -> crate::output::CreateRunGroupOutput {
             crate::output::CreateRunGroupOutput {
-                arn: self.arn,
-                id: self.id,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRunGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRunGroupOutput`](crate::output::CreateRunGroupOutput).
@@ -5204,19 +4928,24 @@ impl CreateRunGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRunGroupOutput {}
+pub struct DeleteRunGroupOutput  {
+}
 /// See [`DeleteRunGroupOutput`](crate::output::DeleteRunGroupOutput).
 pub mod delete_run_group_output {
-
+    
     /// A builder for [`DeleteRunGroupOutput`](crate::output::DeleteRunGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRunGroupOutput`](crate::output::DeleteRunGroupOutput).
         pub fn build(self) -> crate::output::DeleteRunGroupOutput {
-            crate::output::DeleteRunGroupOutput {}
+            crate::output::DeleteRunGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRunGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRunGroupOutput`](crate::output::DeleteRunGroupOutput).
@@ -5228,19 +4957,24 @@ impl DeleteRunGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRunGroupOutput {}
+pub struct UpdateRunGroupOutput  {
+}
 /// See [`UpdateRunGroupOutput`](crate::output::UpdateRunGroupOutput).
 pub mod update_run_group_output {
-
+    
     /// A builder for [`UpdateRunGroupOutput`](crate::output::UpdateRunGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRunGroupOutput`](crate::output::UpdateRunGroupOutput).
         pub fn build(self) -> crate::output::UpdateRunGroupOutput {
-            crate::output::UpdateRunGroupOutput {}
+            crate::output::UpdateRunGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateRunGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRunGroupOutput`](crate::output::UpdateRunGroupOutput).
@@ -5252,7 +4986,7 @@ impl UpdateRunGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRunGroupOutput {
+pub struct GetRunGroupOutput  {
     /// <p>The group's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5276,20 +5010,19 @@ pub struct GetRunGroupOutput {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The group's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetRunGroupOutput {
     /// <p>The group's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The group's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The group's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The group's maximum number of CPUs to use.</p>
@@ -5305,20 +5038,17 @@ impl GetRunGroupOutput {
         self.max_duration
     }
     /// <p>When the group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The group's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetRunGroupOutput`](crate::output::GetRunGroupOutput).
 pub mod get_run_group_output {
-
+    
     /// A builder for [`GetRunGroupOutput`](crate::output::GetRunGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5329,9 +5059,7 @@ pub mod get_run_group_output {
         pub(crate) max_runs: std::option::Option<i32>,
         pub(crate) max_duration: std::option::Option<i32>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The group's ARN.</p>
@@ -5341,8 +5069,7 @@ pub mod get_run_group_output {
         }
         /// <p>The group's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The group's ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5351,8 +5078,7 @@ pub mod get_run_group_output {
         }
         /// <p>The group's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The group's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5361,8 +5087,7 @@ pub mod get_run_group_output {
         }
         /// <p>The group's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The group's maximum number of CPUs to use.</p>
         pub fn max_cpus(mut self, input: i32) -> Self {
@@ -5371,8 +5096,7 @@ pub mod get_run_group_output {
         }
         /// <p>The group's maximum number of CPUs to use.</p>
         pub fn set_max_cpus(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_cpus = input;
-            self
+            self.max_cpus = input; self
         }
         /// <p>The maximum number of concurrent runs for the group.</p>
         pub fn max_runs(mut self, input: i32) -> Self {
@@ -5381,8 +5105,7 @@ pub mod get_run_group_output {
         }
         /// <p>The maximum number of concurrent runs for the group.</p>
         pub fn set_max_runs(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_runs = input;
-            self
+            self.max_runs = input; self
         }
         /// <p>The group's maximum run duration.</p>
         pub fn max_duration(mut self, input: i32) -> Self {
@@ -5391,8 +5114,7 @@ pub mod get_run_group_output {
         }
         /// <p>The group's maximum run duration.</p>
         pub fn set_max_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_duration = input;
-            self
+            self.max_duration = input; self
         }
         /// <p>When the group was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5400,52 +5122,48 @@ pub mod get_run_group_output {
             self
         }
         /// <p>When the group was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The group's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The group's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetRunGroupOutput`](crate::output::GetRunGroupOutput).
         pub fn build(self) -> crate::output::GetRunGroupOutput {
             crate::output::GetRunGroupOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                max_cpus: self.max_cpus,
-                max_runs: self.max_runs,
-                max_duration: self.max_duration,
-                creation_time: self.creation_time,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                max_cpus: self.max_cpus
+                ,
+                max_runs: self.max_runs
+                ,
+                max_duration: self.max_duration
+                ,
+                creation_time: self.creation_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRunGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetRunGroupOutput`](crate::output::GetRunGroupOutput).
@@ -5457,7 +5175,7 @@ impl GetRunGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReferenceImportJobOutput {
+pub struct StartReferenceImportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5476,29 +5194,29 @@ pub struct StartReferenceImportJobOutput {
 }
 impl StartReferenceImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(&self) -> std::option::Option<&str> {
+    pub fn reference_store_id(&self) -> std::option::Option<& str> {
         self.reference_store_id.as_deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReferenceImportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReferenceImportJobStatus> {
         self.status.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`StartReferenceImportJobOutput`](crate::output::StartReferenceImportJobOutput).
 pub mod start_reference_import_job_output {
-
+    
     /// A builder for [`StartReferenceImportJobOutput`](crate::output::StartReferenceImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5516,8 +5234,7 @@ pub mod start_reference_import_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The job's reference store ID.</p>
         pub fn reference_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5525,12 +5242,8 @@ pub mod start_reference_import_job_output {
             self
         }
         /// <p>The job's reference store ID.</p>
-        pub fn set_reference_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reference_store_id = input;
-            self
+        pub fn set_reference_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reference_store_id = input; self
         }
         /// <p>The job's service role ARN.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5539,8 +5252,7 @@ pub mod start_reference_import_job_output {
         }
         /// <p>The job's service role ARN.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::ReferenceImportJobStatus) -> Self {
@@ -5548,12 +5260,8 @@ pub mod start_reference_import_job_output {
             self
         }
         /// <p>The job's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceImportJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReferenceImportJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5561,24 +5269,27 @@ pub mod start_reference_import_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`StartReferenceImportJobOutput`](crate::output::StartReferenceImportJobOutput).
         pub fn build(self) -> crate::output::StartReferenceImportJobOutput {
             crate::output::StartReferenceImportJobOutput {
-                id: self.id,
-                reference_store_id: self.reference_store_id,
-                role_arn: self.role_arn,
-                status: self.status,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                reference_store_id: self.reference_store_id
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartReferenceImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReferenceImportJobOutput`](crate::output::StartReferenceImportJobOutput).
@@ -5590,7 +5301,7 @@ impl StartReferenceImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReferenceImportJobsOutput {
+pub struct ListReferenceImportJobsOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -5600,23 +5311,22 @@ pub struct ListReferenceImportJobsOutput {
 }
 impl ListReferenceImportJobsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A lis of jobs.</p>
-    pub fn import_jobs(&self) -> std::option::Option<&[crate::model::ImportReferenceJobItem]> {
+    pub fn import_jobs(&self) -> std::option::Option<& [crate::model::ImportReferenceJobItem]> {
         self.import_jobs.as_deref()
     }
 }
 /// See [`ListReferenceImportJobsOutput`](crate::output::ListReferenceImportJobsOutput).
 pub mod list_reference_import_jobs_output {
-
+    
     /// A builder for [`ListReferenceImportJobsOutput`](crate::output::ListReferenceImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) import_jobs:
-            std::option::Option<std::vec::Vec<crate::model::ImportReferenceJobItem>>,
+        pub(crate) import_jobs: std::option::Option<std::vec::Vec<crate::model::ImportReferenceJobItem>>,
     }
     impl Builder {
         /// <p>A pagination token that's included if more results are available.</p>
@@ -5626,8 +5336,7 @@ pub mod list_reference_import_jobs_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `import_jobs`.
         ///
@@ -5636,26 +5345,26 @@ pub mod list_reference_import_jobs_output {
         /// <p>A lis of jobs.</p>
         pub fn import_jobs(mut self, input: crate::model::ImportReferenceJobItem) -> Self {
             let mut v = self.import_jobs.unwrap_or_default();
-            v.push(input);
-            self.import_jobs = Some(v);
-            self
+                            v.push(input);
+                            self.import_jobs = Some(v);
+                            self
         }
         /// <p>A lis of jobs.</p>
-        pub fn set_import_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportReferenceJobItem>>,
-        ) -> Self {
-            self.import_jobs = input;
-            self
+        pub fn set_import_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportReferenceJobItem>>) -> Self {
+            self.import_jobs = input; self
         }
         /// Consumes the builder and constructs a [`ListReferenceImportJobsOutput`](crate::output::ListReferenceImportJobsOutput).
         pub fn build(self) -> crate::output::ListReferenceImportJobsOutput {
             crate::output::ListReferenceImportJobsOutput {
-                next_token: self.next_token,
-                import_jobs: self.import_jobs,
+                next_token: self.next_token
+                ,
+                import_jobs: self.import_jobs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReferenceImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReferenceImportJobsOutput`](crate::output::ListReferenceImportJobsOutput).
@@ -5667,7 +5376,7 @@ impl ListReferenceImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReferenceImportJobOutput {
+pub struct GetReferenceImportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5695,41 +5404,41 @@ pub struct GetReferenceImportJobOutput {
 }
 impl GetReferenceImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(&self) -> std::option::Option<&str> {
+    pub fn reference_store_id(&self) -> std::option::Option<& str> {
         self.reference_store_id.as_deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReferenceImportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReferenceImportJobStatus> {
         self.status.as_ref()
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's sources.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::ImportReferenceSourceItem]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::ImportReferenceSourceItem]> {
         self.sources.as_deref()
     }
 }
 /// See [`GetReferenceImportJobOutput`](crate::output::GetReferenceImportJobOutput).
 pub mod get_reference_import_job_output {
-
+    
     /// A builder for [`GetReferenceImportJobOutput`](crate::output::GetReferenceImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5740,8 +5449,7 @@ pub mod get_reference_import_job_output {
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) sources:
-            std::option::Option<std::vec::Vec<crate::model::ImportReferenceSourceItem>>,
+        pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::ImportReferenceSourceItem>>,
     }
     impl Builder {
         /// <p>The job's ID.</p>
@@ -5751,8 +5459,7 @@ pub mod get_reference_import_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The job's reference store ID.</p>
         pub fn reference_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5760,12 +5467,8 @@ pub mod get_reference_import_job_output {
             self
         }
         /// <p>The job's reference store ID.</p>
-        pub fn set_reference_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reference_store_id = input;
-            self
+        pub fn set_reference_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reference_store_id = input; self
         }
         /// <p>The job's service role ARN.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5774,8 +5477,7 @@ pub mod get_reference_import_job_output {
         }
         /// <p>The job's service role ARN.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::ReferenceImportJobStatus) -> Self {
@@ -5783,12 +5485,8 @@ pub mod get_reference_import_job_output {
             self
         }
         /// <p>The job's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceImportJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReferenceImportJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The job's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5796,12 +5494,8 @@ pub mod get_reference_import_job_output {
             self
         }
         /// <p>The job's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5809,12 +5503,8 @@ pub mod get_reference_import_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the job completed.</p>
         pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5822,12 +5512,8 @@ pub mod get_reference_import_job_output {
             self
         }
         /// <p>When the job completed.</p>
-        pub fn set_completion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completion_time = input;
-            self
+        pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completion_time = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -5836,32 +5522,38 @@ pub mod get_reference_import_job_output {
         /// <p>The job's sources.</p>
         pub fn sources(mut self, input: crate::model::ImportReferenceSourceItem) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>The job's sources.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportReferenceSourceItem>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportReferenceSourceItem>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`GetReferenceImportJobOutput`](crate::output::GetReferenceImportJobOutput).
         pub fn build(self) -> crate::output::GetReferenceImportJobOutput {
             crate::output::GetReferenceImportJobOutput {
-                id: self.id,
-                reference_store_id: self.reference_store_id,
-                role_arn: self.role_arn,
-                status: self.status,
-                status_message: self.status_message,
-                creation_time: self.creation_time,
-                completion_time: self.completion_time,
-                sources: self.sources,
+                id: self.id
+                ,
+                reference_store_id: self.reference_store_id
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                ,
+                completion_time: self.completion_time
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReferenceImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetReferenceImportJobOutput`](crate::output::GetReferenceImportJobOutput).
@@ -5873,7 +5565,7 @@ impl GetReferenceImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReferenceStoresOutput {
+pub struct ListReferenceStoresOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -5883,23 +5575,22 @@ pub struct ListReferenceStoresOutput {
 }
 impl ListReferenceStoresOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of reference stores.</p>
-    pub fn reference_stores(&self) -> std::option::Option<&[crate::model::ReferenceStoreDetail]> {
+    pub fn reference_stores(&self) -> std::option::Option<& [crate::model::ReferenceStoreDetail]> {
         self.reference_stores.as_deref()
     }
 }
 /// See [`ListReferenceStoresOutput`](crate::output::ListReferenceStoresOutput).
 pub mod list_reference_stores_output {
-
+    
     /// A builder for [`ListReferenceStoresOutput`](crate::output::ListReferenceStoresOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) reference_stores:
-            std::option::Option<std::vec::Vec<crate::model::ReferenceStoreDetail>>,
+        pub(crate) reference_stores: std::option::Option<std::vec::Vec<crate::model::ReferenceStoreDetail>>,
     }
     impl Builder {
         /// <p>A pagination token that's included if more results are available.</p>
@@ -5909,8 +5600,7 @@ pub mod list_reference_stores_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `reference_stores`.
         ///
@@ -5919,26 +5609,26 @@ pub mod list_reference_stores_output {
         /// <p>A list of reference stores.</p>
         pub fn reference_stores(mut self, input: crate::model::ReferenceStoreDetail) -> Self {
             let mut v = self.reference_stores.unwrap_or_default();
-            v.push(input);
-            self.reference_stores = Some(v);
-            self
+                            v.push(input);
+                            self.reference_stores = Some(v);
+                            self
         }
         /// <p>A list of reference stores.</p>
-        pub fn set_reference_stores(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReferenceStoreDetail>>,
-        ) -> Self {
-            self.reference_stores = input;
-            self
+        pub fn set_reference_stores(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReferenceStoreDetail>>) -> Self {
+            self.reference_stores = input; self
         }
         /// Consumes the builder and constructs a [`ListReferenceStoresOutput`](crate::output::ListReferenceStoresOutput).
         pub fn build(self) -> crate::output::ListReferenceStoresOutput {
             crate::output::ListReferenceStoresOutput {
-                next_token: self.next_token,
-                reference_stores: self.reference_stores,
+                next_token: self.next_token
+                ,
+                reference_stores: self.reference_stores
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReferenceStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListReferenceStoresOutput`](crate::output::ListReferenceStoresOutput).
@@ -5950,7 +5640,7 @@ impl ListReferenceStoresOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReferenceStoreOutput {
+pub struct CreateReferenceStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5972,33 +5662,33 @@ pub struct CreateReferenceStoreOutput {
 }
 impl CreateReferenceStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The store's SSE settings.</p>
-    pub fn sse_config(&self) -> std::option::Option<&crate::model::SseConfig> {
+    pub fn sse_config(&self) -> std::option::Option<& crate::model::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`CreateReferenceStoreOutput`](crate::output::CreateReferenceStoreOutput).
 pub mod create_reference_store_output {
-
+    
     /// A builder for [`CreateReferenceStoreOutput`](crate::output::CreateReferenceStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6017,8 +5707,7 @@ pub mod create_reference_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6027,8 +5716,7 @@ pub mod create_reference_store_output {
         }
         /// <p>The store's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6037,8 +5725,7 @@ pub mod create_reference_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The store's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6047,8 +5734,7 @@ pub mod create_reference_store_output {
         }
         /// <p>The store's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The store's SSE settings.</p>
         pub fn sse_config(mut self, input: crate::model::SseConfig) -> Self {
@@ -6056,12 +5742,8 @@ pub mod create_reference_store_output {
             self
         }
         /// <p>The store's SSE settings.</p>
-        pub fn set_sse_config(
-            mut self,
-            input: std::option::Option<crate::model::SseConfig>,
-        ) -> Self {
-            self.sse_config = input;
-            self
+        pub fn set_sse_config(mut self, input: std::option::Option<crate::model::SseConfig>) -> Self {
+            self.sse_config = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6069,25 +5751,29 @@ pub mod create_reference_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateReferenceStoreOutput`](crate::output::CreateReferenceStoreOutput).
         pub fn build(self) -> crate::output::CreateReferenceStoreOutput {
             crate::output::CreateReferenceStoreOutput {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                sse_config: self.sse_config,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateReferenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateReferenceStoreOutput`](crate::output::CreateReferenceStoreOutput).
@@ -6099,19 +5785,24 @@ impl CreateReferenceStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReferenceStoreOutput {}
+pub struct DeleteReferenceStoreOutput  {
+}
 /// See [`DeleteReferenceStoreOutput`](crate::output::DeleteReferenceStoreOutput).
 pub mod delete_reference_store_output {
-
+    
     /// A builder for [`DeleteReferenceStoreOutput`](crate::output::DeleteReferenceStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReferenceStoreOutput`](crate::output::DeleteReferenceStoreOutput).
         pub fn build(self) -> crate::output::DeleteReferenceStoreOutput {
-            crate::output::DeleteReferenceStoreOutput {}
+            crate::output::DeleteReferenceStoreOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteReferenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReferenceStoreOutput`](crate::output::DeleteReferenceStoreOutput).
@@ -6123,7 +5814,7 @@ impl DeleteReferenceStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReferenceStoreOutput {
+pub struct GetReferenceStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6145,33 +5836,33 @@ pub struct GetReferenceStoreOutput {
 }
 impl GetReferenceStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    pub fn sse_config(&self) -> std::option::Option<&crate::model::SseConfig> {
+    pub fn sse_config(&self) -> std::option::Option<& crate::model::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`GetReferenceStoreOutput`](crate::output::GetReferenceStoreOutput).
 pub mod get_reference_store_output {
-
+    
     /// A builder for [`GetReferenceStoreOutput`](crate::output::GetReferenceStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6190,8 +5881,7 @@ pub mod get_reference_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6200,8 +5890,7 @@ pub mod get_reference_store_output {
         }
         /// <p>The store's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6210,8 +5899,7 @@ pub mod get_reference_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The store's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6220,8 +5908,7 @@ pub mod get_reference_store_output {
         }
         /// <p>The store's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The store's server-side encryption (SSE) settings.</p>
         pub fn sse_config(mut self, input: crate::model::SseConfig) -> Self {
@@ -6229,12 +5916,8 @@ pub mod get_reference_store_output {
             self
         }
         /// <p>The store's server-side encryption (SSE) settings.</p>
-        pub fn set_sse_config(
-            mut self,
-            input: std::option::Option<crate::model::SseConfig>,
-        ) -> Self {
-            self.sse_config = input;
-            self
+        pub fn set_sse_config(mut self, input: std::option::Option<crate::model::SseConfig>) -> Self {
+            self.sse_config = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6242,25 +5925,29 @@ pub mod get_reference_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`GetReferenceStoreOutput`](crate::output::GetReferenceStoreOutput).
         pub fn build(self) -> crate::output::GetReferenceStoreOutput {
             crate::output::GetReferenceStoreOutput {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                sse_config: self.sse_config,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReferenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetReferenceStoreOutput`](crate::output::GetReferenceStoreOutput).
@@ -6272,19 +5959,19 @@ impl GetReferenceStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetReferenceOutput {
+pub struct GetReferenceOutput  {
     /// <p>The reference file payload.</p>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
 }
 impl GetReferenceOutput {
     /// <p>The reference file payload.</p>
-    pub fn payload(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.payload
     }
 }
 /// See [`GetReferenceOutput`](crate::output::GetReferenceOutput).
 pub mod get_reference_output {
-
+    
     /// A builder for [`GetReferenceOutput`](crate::output::GetReferenceOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6297,20 +5984,20 @@ pub mod get_reference_output {
             self
         }
         /// <p>The reference file payload.</p>
-        pub fn set_payload(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.payload = input;
-            self
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.payload = input; self
         }
         /// Consumes the builder and constructs a [`GetReferenceOutput`](crate::output::GetReferenceOutput).
         pub fn build(self) -> crate::output::GetReferenceOutput {
             crate::output::GetReferenceOutput {
-                payload: self.payload.unwrap_or_default(),
+                payload: self.payload
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReferenceOutput {
     /// Creates a new builder-style object to manufacture [`GetReferenceOutput`](crate::output::GetReferenceOutput).
@@ -6322,7 +6009,7 @@ impl GetReferenceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReferencesOutput {
+pub struct ListReferencesOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -6332,17 +6019,17 @@ pub struct ListReferencesOutput {
 }
 impl ListReferencesOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of references.</p>
-    pub fn references(&self) -> std::option::Option<&[crate::model::ReferenceListItem]> {
+    pub fn references(&self) -> std::option::Option<& [crate::model::ReferenceListItem]> {
         self.references.as_deref()
     }
 }
 /// See [`ListReferencesOutput`](crate::output::ListReferencesOutput).
 pub mod list_references_output {
-
+    
     /// A builder for [`ListReferencesOutput`](crate::output::ListReferencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6357,8 +6044,7 @@ pub mod list_references_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `references`.
         ///
@@ -6367,26 +6053,26 @@ pub mod list_references_output {
         /// <p>A list of references.</p>
         pub fn references(mut self, input: crate::model::ReferenceListItem) -> Self {
             let mut v = self.references.unwrap_or_default();
-            v.push(input);
-            self.references = Some(v);
-            self
+                            v.push(input);
+                            self.references = Some(v);
+                            self
         }
         /// <p>A list of references.</p>
-        pub fn set_references(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReferenceListItem>>,
-        ) -> Self {
-            self.references = input;
-            self
+        pub fn set_references(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReferenceListItem>>) -> Self {
+            self.references = input; self
         }
         /// Consumes the builder and constructs a [`ListReferencesOutput`](crate::output::ListReferencesOutput).
         pub fn build(self) -> crate::output::ListReferencesOutput {
             crate::output::ListReferencesOutput {
-                next_token: self.next_token,
-                references: self.references,
+                next_token: self.next_token
+                ,
+                references: self.references
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReferencesOutput {
     /// Creates a new builder-style object to manufacture [`ListReferencesOutput`](crate::output::ListReferencesOutput).
@@ -6398,19 +6084,24 @@ impl ListReferencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReferenceOutput {}
+pub struct DeleteReferenceOutput  {
+}
 /// See [`DeleteReferenceOutput`](crate::output::DeleteReferenceOutput).
 pub mod delete_reference_output {
-
+    
     /// A builder for [`DeleteReferenceOutput`](crate::output::DeleteReferenceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReferenceOutput`](crate::output::DeleteReferenceOutput).
         pub fn build(self) -> crate::output::DeleteReferenceOutput {
-            crate::output::DeleteReferenceOutput {}
+            crate::output::DeleteReferenceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteReferenceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReferenceOutput`](crate::output::DeleteReferenceOutput).
@@ -6422,7 +6113,7 @@ impl DeleteReferenceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReferenceMetadataOutput {
+pub struct GetReferenceMetadataOutput  {
     /// <p>The reference's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6456,49 +6147,49 @@ pub struct GetReferenceMetadataOutput {
 }
 impl GetReferenceMetadataOutput {
     /// <p>The reference's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The reference's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The reference's reference store ID.</p>
-    pub fn reference_store_id(&self) -> std::option::Option<&str> {
+    pub fn reference_store_id(&self) -> std::option::Option<& str> {
         self.reference_store_id.as_deref()
     }
     /// <p>The reference's MD5 checksum.</p>
-    pub fn md5(&self) -> std::option::Option<&str> {
+    pub fn md5(&self) -> std::option::Option<& str> {
         self.md5.as_deref()
     }
     /// <p>The reference's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReferenceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReferenceStatus> {
         self.status.as_ref()
     }
     /// <p>The reference's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The reference's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>When the reference was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the reference was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The reference's files.</p>
-    pub fn files(&self) -> std::option::Option<&crate::model::ReferenceFiles> {
+    pub fn files(&self) -> std::option::Option<& crate::model::ReferenceFiles> {
         self.files.as_ref()
     }
 }
 /// See [`GetReferenceMetadataOutput`](crate::output::GetReferenceMetadataOutput).
 pub mod get_reference_metadata_output {
-
+    
     /// A builder for [`GetReferenceMetadataOutput`](crate::output::GetReferenceMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6521,8 +6212,7 @@ pub mod get_reference_metadata_output {
         }
         /// <p>The reference's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The reference's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6531,8 +6221,7 @@ pub mod get_reference_metadata_output {
         }
         /// <p>The reference's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The reference's reference store ID.</p>
         pub fn reference_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6540,12 +6229,8 @@ pub mod get_reference_metadata_output {
             self
         }
         /// <p>The reference's reference store ID.</p>
-        pub fn set_reference_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reference_store_id = input;
-            self
+        pub fn set_reference_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reference_store_id = input; self
         }
         /// <p>The reference's MD5 checksum.</p>
         pub fn md5(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6554,8 +6239,7 @@ pub mod get_reference_metadata_output {
         }
         /// <p>The reference's MD5 checksum.</p>
         pub fn set_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.md5 = input;
-            self
+            self.md5 = input; self
         }
         /// <p>The reference's status.</p>
         pub fn status(mut self, input: crate::model::ReferenceStatus) -> Self {
@@ -6563,12 +6247,8 @@ pub mod get_reference_metadata_output {
             self
         }
         /// <p>The reference's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReferenceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The reference's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6577,8 +6257,7 @@ pub mod get_reference_metadata_output {
         }
         /// <p>The reference's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The reference's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6587,8 +6266,7 @@ pub mod get_reference_metadata_output {
         }
         /// <p>The reference's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>When the reference was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6596,12 +6274,8 @@ pub mod get_reference_metadata_output {
             self
         }
         /// <p>When the reference was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the reference was updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6609,12 +6283,8 @@ pub mod get_reference_metadata_output {
             self
         }
         /// <p>When the reference was updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The reference's files.</p>
         pub fn files(mut self, input: crate::model::ReferenceFiles) -> Self {
@@ -6622,29 +6292,37 @@ pub mod get_reference_metadata_output {
             self
         }
         /// <p>The reference's files.</p>
-        pub fn set_files(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceFiles>,
-        ) -> Self {
-            self.files = input;
-            self
+        pub fn set_files(mut self, input: std::option::Option<crate::model::ReferenceFiles>) -> Self {
+            self.files = input; self
         }
         /// Consumes the builder and constructs a [`GetReferenceMetadataOutput`](crate::output::GetReferenceMetadataOutput).
         pub fn build(self) -> crate::output::GetReferenceMetadataOutput {
             crate::output::GetReferenceMetadataOutput {
-                id: self.id,
-                arn: self.arn,
-                reference_store_id: self.reference_store_id,
-                md5: self.md5,
-                status: self.status,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                update_time: self.update_time,
-                files: self.files,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                reference_store_id: self.reference_store_id
+                ,
+                md5: self.md5
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                update_time: self.update_time
+                ,
+                files: self.files
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReferenceMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetReferenceMetadataOutput`](crate::output::GetReferenceMetadataOutput).
@@ -6656,7 +6334,7 @@ impl GetReferenceMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnnotationStoresOutput {
+pub struct ListAnnotationStoresOutput  {
     /// <p>A list of stores.</p>
     #[doc(hidden)]
     pub annotation_stores: std::option::Option<std::vec::Vec<crate::model::AnnotationStoreItem>>,
@@ -6666,22 +6344,21 @@ pub struct ListAnnotationStoresOutput {
 }
 impl ListAnnotationStoresOutput {
     /// <p>A list of stores.</p>
-    pub fn annotation_stores(&self) -> std::option::Option<&[crate::model::AnnotationStoreItem]> {
+    pub fn annotation_stores(&self) -> std::option::Option<& [crate::model::AnnotationStoreItem]> {
         self.annotation_stores.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAnnotationStoresOutput`](crate::output::ListAnnotationStoresOutput).
 pub mod list_annotation_stores_output {
-
+    
     /// A builder for [`ListAnnotationStoresOutput`](crate::output::ListAnnotationStoresOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) annotation_stores:
-            std::option::Option<std::vec::Vec<crate::model::AnnotationStoreItem>>,
+        pub(crate) annotation_stores: std::option::Option<std::vec::Vec<crate::model::AnnotationStoreItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6692,17 +6369,13 @@ pub mod list_annotation_stores_output {
         /// <p>A list of stores.</p>
         pub fn annotation_stores(mut self, input: crate::model::AnnotationStoreItem) -> Self {
             let mut v = self.annotation_stores.unwrap_or_default();
-            v.push(input);
-            self.annotation_stores = Some(v);
-            self
+                            v.push(input);
+                            self.annotation_stores = Some(v);
+                            self
         }
         /// <p>A list of stores.</p>
-        pub fn set_annotation_stores(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnnotationStoreItem>>,
-        ) -> Self {
-            self.annotation_stores = input;
-            self
+        pub fn set_annotation_stores(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnnotationStoreItem>>) -> Self {
+            self.annotation_stores = input; self
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6711,17 +6384,20 @@ pub mod list_annotation_stores_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAnnotationStoresOutput`](crate::output::ListAnnotationStoresOutput).
         pub fn build(self) -> crate::output::ListAnnotationStoresOutput {
             crate::output::ListAnnotationStoresOutput {
-                annotation_stores: self.annotation_stores,
-                next_token: self.next_token,
+                annotation_stores: self.annotation_stores
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAnnotationStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListAnnotationStoresOutput`](crate::output::ListAnnotationStoresOutput).
@@ -6733,7 +6409,7 @@ impl ListAnnotationStoresOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAnnotationStoreOutput {
+pub struct CreateAnnotationStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6758,37 +6434,37 @@ pub struct CreateAnnotationStoreOutput {
 }
 impl CreateAnnotationStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> std::option::Option<&crate::model::ReferenceItem> {
+    pub fn reference(&self) -> std::option::Option<& crate::model::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn store_format(&self) -> std::option::Option<&crate::model::StoreFormat> {
+    pub fn store_format(&self) -> std::option::Option<& crate::model::StoreFormat> {
         self.store_format.as_ref()
     }
     /// <p>The store's file parsing options.</p>
-    pub fn store_options(&self) -> std::option::Option<&crate::model::StoreOptions> {
+    pub fn store_options(&self) -> std::option::Option<& crate::model::StoreOptions> {
         self.store_options.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`CreateAnnotationStoreOutput`](crate::output::CreateAnnotationStoreOutput).
 pub mod create_annotation_store_output {
-
+    
     /// A builder for [`CreateAnnotationStoreOutput`](crate::output::CreateAnnotationStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6808,8 +6484,7 @@ pub mod create_annotation_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's genome reference.</p>
         pub fn reference(mut self, input: crate::model::ReferenceItem) -> Self {
@@ -6817,12 +6492,8 @@ pub mod create_annotation_store_output {
             self
         }
         /// <p>The store's genome reference.</p>
-        pub fn set_reference(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceItem>,
-        ) -> Self {
-            self.reference = input;
-            self
+        pub fn set_reference(mut self, input: std::option::Option<crate::model::ReferenceItem>) -> Self {
+            self.reference = input; self
         }
         /// <p>The annotation file format of the store.</p>
         pub fn store_format(mut self, input: crate::model::StoreFormat) -> Self {
@@ -6830,12 +6501,8 @@ pub mod create_annotation_store_output {
             self
         }
         /// <p>The annotation file format of the store.</p>
-        pub fn set_store_format(
-            mut self,
-            input: std::option::Option<crate::model::StoreFormat>,
-        ) -> Self {
-            self.store_format = input;
-            self
+        pub fn set_store_format(mut self, input: std::option::Option<crate::model::StoreFormat>) -> Self {
+            self.store_format = input; self
         }
         /// <p>The store's file parsing options.</p>
         pub fn store_options(mut self, input: crate::model::StoreOptions) -> Self {
@@ -6843,12 +6510,8 @@ pub mod create_annotation_store_output {
             self
         }
         /// <p>The store's file parsing options.</p>
-        pub fn set_store_options(
-            mut self,
-            input: std::option::Option<crate::model::StoreOptions>,
-        ) -> Self {
-            self.store_options = input;
-            self
+        pub fn set_store_options(mut self, input: std::option::Option<crate::model::StoreOptions>) -> Self {
+            self.store_options = input; self
         }
         /// <p>The store's status.</p>
         pub fn status(mut self, input: crate::model::StoreStatus) -> Self {
@@ -6857,8 +6520,7 @@ pub mod create_annotation_store_output {
         }
         /// <p>The store's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StoreStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6867,8 +6529,7 @@ pub mod create_annotation_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6876,26 +6537,31 @@ pub mod create_annotation_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateAnnotationStoreOutput`](crate::output::CreateAnnotationStoreOutput).
         pub fn build(self) -> crate::output::CreateAnnotationStoreOutput {
             crate::output::CreateAnnotationStoreOutput {
-                id: self.id,
-                reference: self.reference,
-                store_format: self.store_format,
-                store_options: self.store_options,
-                status: self.status,
-                name: self.name,
-                creation_time: self.creation_time,
+                id: self.id
+                ,
+                reference: self.reference
+                ,
+                store_format: self.store_format
+                ,
+                store_options: self.store_options
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnnotationStoreOutput`](crate::output::CreateAnnotationStoreOutput).
@@ -6907,20 +6573,20 @@ impl CreateAnnotationStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnnotationStoreOutput {
+pub struct DeleteAnnotationStoreOutput  {
     /// <p>The store's status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StoreStatus>,
 }
 impl DeleteAnnotationStoreOutput {
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StoreStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DeleteAnnotationStoreOutput`](crate::output::DeleteAnnotationStoreOutput).
 pub mod delete_annotation_store_output {
-
+    
     /// A builder for [`DeleteAnnotationStoreOutput`](crate::output::DeleteAnnotationStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6934,16 +6600,18 @@ pub mod delete_annotation_store_output {
         }
         /// <p>The store's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StoreStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAnnotationStoreOutput`](crate::output::DeleteAnnotationStoreOutput).
         pub fn build(self) -> crate::output::DeleteAnnotationStoreOutput {
             crate::output::DeleteAnnotationStoreOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnnotationStoreOutput`](crate::output::DeleteAnnotationStoreOutput).
@@ -6955,7 +6623,7 @@ impl DeleteAnnotationStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnnotationStoreOutput {
+pub struct UpdateAnnotationStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6986,45 +6654,45 @@ pub struct UpdateAnnotationStoreOutput {
 }
 impl UpdateAnnotationStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> std::option::Option<&crate::model::ReferenceItem> {
+    pub fn reference(&self) -> std::option::Option<& crate::model::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>Parsing options for the store.</p>
-    pub fn store_options(&self) -> std::option::Option<&crate::model::StoreOptions> {
+    pub fn store_options(&self) -> std::option::Option<& crate::model::StoreOptions> {
         self.store_options.as_ref()
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn store_format(&self) -> std::option::Option<&crate::model::StoreFormat> {
+    pub fn store_format(&self) -> std::option::Option<& crate::model::StoreFormat> {
         self.store_format.as_ref()
     }
 }
 /// See [`UpdateAnnotationStoreOutput`](crate::output::UpdateAnnotationStoreOutput).
 pub mod update_annotation_store_output {
-
+    
     /// A builder for [`UpdateAnnotationStoreOutput`](crate::output::UpdateAnnotationStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7046,8 +6714,7 @@ pub mod update_annotation_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's genome reference.</p>
         pub fn reference(mut self, input: crate::model::ReferenceItem) -> Self {
@@ -7055,12 +6722,8 @@ pub mod update_annotation_store_output {
             self
         }
         /// <p>The store's genome reference.</p>
-        pub fn set_reference(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceItem>,
-        ) -> Self {
-            self.reference = input;
-            self
+        pub fn set_reference(mut self, input: std::option::Option<crate::model::ReferenceItem>) -> Self {
+            self.reference = input; self
         }
         /// <p>The store's status.</p>
         pub fn status(mut self, input: crate::model::StoreStatus) -> Self {
@@ -7069,8 +6732,7 @@ pub mod update_annotation_store_output {
         }
         /// <p>The store's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StoreStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7079,8 +6741,7 @@ pub mod update_annotation_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The store's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7089,8 +6750,7 @@ pub mod update_annotation_store_output {
         }
         /// <p>The store's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7098,12 +6758,8 @@ pub mod update_annotation_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the store was updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7111,12 +6767,8 @@ pub mod update_annotation_store_output {
             self
         }
         /// <p>When the store was updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>Parsing options for the store.</p>
         pub fn store_options(mut self, input: crate::model::StoreOptions) -> Self {
@@ -7124,12 +6776,8 @@ pub mod update_annotation_store_output {
             self
         }
         /// <p>Parsing options for the store.</p>
-        pub fn set_store_options(
-            mut self,
-            input: std::option::Option<crate::model::StoreOptions>,
-        ) -> Self {
-            self.store_options = input;
-            self
+        pub fn set_store_options(mut self, input: std::option::Option<crate::model::StoreOptions>) -> Self {
+            self.store_options = input; self
         }
         /// <p>The annotation file format of the store.</p>
         pub fn store_format(mut self, input: crate::model::StoreFormat) -> Self {
@@ -7137,28 +6785,35 @@ pub mod update_annotation_store_output {
             self
         }
         /// <p>The annotation file format of the store.</p>
-        pub fn set_store_format(
-            mut self,
-            input: std::option::Option<crate::model::StoreFormat>,
-        ) -> Self {
-            self.store_format = input;
-            self
+        pub fn set_store_format(mut self, input: std::option::Option<crate::model::StoreFormat>) -> Self {
+            self.store_format = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAnnotationStoreOutput`](crate::output::UpdateAnnotationStoreOutput).
         pub fn build(self) -> crate::output::UpdateAnnotationStoreOutput {
             crate::output::UpdateAnnotationStoreOutput {
-                id: self.id,
-                reference: self.reference,
-                status: self.status,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                update_time: self.update_time,
-                store_options: self.store_options,
-                store_format: self.store_format,
+                id: self.id
+                ,
+                reference: self.reference
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                update_time: self.update_time
+                ,
+                store_options: self.store_options
+                ,
+                store_format: self.store_format
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnnotationStoreOutput`](crate::output::UpdateAnnotationStoreOutput).
@@ -7170,7 +6825,7 @@ impl UpdateAnnotationStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnnotationStoreOutput {
+pub struct GetAnnotationStoreOutput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7200,8 +6855,7 @@ pub struct GetAnnotationStoreOutput {
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The store's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The store's parsing options.</p>
     #[doc(hidden)]
     pub store_options: std::option::Option<crate::model::StoreOptions>,
@@ -7217,58 +6871,55 @@ pub struct GetAnnotationStoreOutput {
 }
 impl GetAnnotationStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> std::option::Option<&crate::model::ReferenceItem> {
+    pub fn reference(&self) -> std::option::Option<& crate::model::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's ARN.</p>
-    pub fn store_arn(&self) -> std::option::Option<&str> {
+    pub fn store_arn(&self) -> std::option::Option<& str> {
         self.store_arn.as_deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    pub fn sse_config(&self) -> std::option::Option<&crate::model::SseConfig> {
+    pub fn sse_config(&self) -> std::option::Option<& crate::model::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The store's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The store's parsing options.</p>
-    pub fn store_options(&self) -> std::option::Option<&crate::model::StoreOptions> {
+    pub fn store_options(&self) -> std::option::Option<& crate::model::StoreOptions> {
         self.store_options.as_ref()
     }
     /// <p>The store's annotation file format.</p>
-    pub fn store_format(&self) -> std::option::Option<&crate::model::StoreFormat> {
+    pub fn store_format(&self) -> std::option::Option<& crate::model::StoreFormat> {
         self.store_format.as_ref()
     }
     /// <p>A status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The store's size in bytes.</p>
@@ -7278,7 +6929,7 @@ impl GetAnnotationStoreOutput {
 }
 /// See [`GetAnnotationStoreOutput`](crate::output::GetAnnotationStoreOutput).
 pub mod get_annotation_store_output {
-
+    
     /// A builder for [`GetAnnotationStoreOutput`](crate::output::GetAnnotationStoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7291,9 +6942,7 @@ pub mod get_annotation_store_output {
         pub(crate) sse_config: std::option::Option<crate::model::SseConfig>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) store_options: std::option::Option<crate::model::StoreOptions>,
         pub(crate) store_format: std::option::Option<crate::model::StoreFormat>,
         pub(crate) status_message: std::option::Option<std::string::String>,
@@ -7307,8 +6956,7 @@ pub mod get_annotation_store_output {
         }
         /// <p>The store's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The store's genome reference.</p>
         pub fn reference(mut self, input: crate::model::ReferenceItem) -> Self {
@@ -7316,12 +6964,8 @@ pub mod get_annotation_store_output {
             self
         }
         /// <p>The store's genome reference.</p>
-        pub fn set_reference(
-            mut self,
-            input: std::option::Option<crate::model::ReferenceItem>,
-        ) -> Self {
-            self.reference = input;
-            self
+        pub fn set_reference(mut self, input: std::option::Option<crate::model::ReferenceItem>) -> Self {
+            self.reference = input; self
         }
         /// <p>The store's status.</p>
         pub fn status(mut self, input: crate::model::StoreStatus) -> Self {
@@ -7330,8 +6974,7 @@ pub mod get_annotation_store_output {
         }
         /// <p>The store's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StoreStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The store's ARN.</p>
         pub fn store_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7340,8 +6983,7 @@ pub mod get_annotation_store_output {
         }
         /// <p>The store's ARN.</p>
         pub fn set_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.store_arn = input;
-            self
+            self.store_arn = input; self
         }
         /// <p>The store's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7350,8 +6992,7 @@ pub mod get_annotation_store_output {
         }
         /// <p>The store's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The store's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7360,8 +7001,7 @@ pub mod get_annotation_store_output {
         }
         /// <p>The store's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The store's server-side encryption (SSE) settings.</p>
         pub fn sse_config(mut self, input: crate::model::SseConfig) -> Self {
@@ -7369,12 +7009,8 @@ pub mod get_annotation_store_output {
             self
         }
         /// <p>The store's server-side encryption (SSE) settings.</p>
-        pub fn set_sse_config(
-            mut self,
-            input: std::option::Option<crate::model::SseConfig>,
-        ) -> Self {
-            self.sse_config = input;
-            self
+        pub fn set_sse_config(mut self, input: std::option::Option<crate::model::SseConfig>) -> Self {
+            self.sse_config = input; self
         }
         /// <p>When the store was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7382,12 +7018,8 @@ pub mod get_annotation_store_output {
             self
         }
         /// <p>When the store was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the store was updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7395,37 +7027,23 @@ pub mod get_annotation_store_output {
             self
         }
         /// <p>When the store was updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The store's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The store's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The store's parsing options.</p>
         pub fn store_options(mut self, input: crate::model::StoreOptions) -> Self {
@@ -7433,12 +7051,8 @@ pub mod get_annotation_store_output {
             self
         }
         /// <p>The store's parsing options.</p>
-        pub fn set_store_options(
-            mut self,
-            input: std::option::Option<crate::model::StoreOptions>,
-        ) -> Self {
-            self.store_options = input;
-            self
+        pub fn set_store_options(mut self, input: std::option::Option<crate::model::StoreOptions>) -> Self {
+            self.store_options = input; self
         }
         /// <p>The store's annotation file format.</p>
         pub fn store_format(mut self, input: crate::model::StoreFormat) -> Self {
@@ -7446,12 +7060,8 @@ pub mod get_annotation_store_output {
             self
         }
         /// <p>The store's annotation file format.</p>
-        pub fn set_store_format(
-            mut self,
-            input: std::option::Option<crate::model::StoreFormat>,
-        ) -> Self {
-            self.store_format = input;
-            self
+        pub fn set_store_format(mut self, input: std::option::Option<crate::model::StoreFormat>) -> Self {
+            self.store_format = input; self
         }
         /// <p>A status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7459,12 +7069,8 @@ pub mod get_annotation_store_output {
             self
         }
         /// <p>A status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The store's size in bytes.</p>
         pub fn store_size_bytes(mut self, input: i64) -> Self {
@@ -7473,29 +7079,44 @@ pub mod get_annotation_store_output {
         }
         /// <p>The store's size in bytes.</p>
         pub fn set_store_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.store_size_bytes = input;
-            self
+            self.store_size_bytes = input; self
         }
         /// Consumes the builder and constructs a [`GetAnnotationStoreOutput`](crate::output::GetAnnotationStoreOutput).
         pub fn build(self) -> crate::output::GetAnnotationStoreOutput {
             crate::output::GetAnnotationStoreOutput {
-                id: self.id,
-                reference: self.reference,
-                status: self.status,
-                store_arn: self.store_arn,
-                name: self.name,
-                description: self.description,
-                sse_config: self.sse_config,
-                creation_time: self.creation_time,
-                update_time: self.update_time,
-                tags: self.tags,
-                store_options: self.store_options,
-                store_format: self.store_format,
-                status_message: self.status_message,
-                store_size_bytes: self.store_size_bytes,
+                id: self.id
+                ,
+                reference: self.reference
+                ,
+                status: self.status
+                ,
+                store_arn: self.store_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                creation_time: self.creation_time
+                ,
+                update_time: self.update_time
+                ,
+                tags: self.tags
+                ,
+                store_options: self.store_options
+                ,
+                store_format: self.store_format
+                ,
+                status_message: self.status_message
+                ,
+                store_size_bytes: self.store_size_bytes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetAnnotationStoreOutput`](crate::output::GetAnnotationStoreOutput).
@@ -7507,35 +7128,31 @@ impl GetAnnotationStoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnnotationImportJobsOutput {
+pub struct ListAnnotationImportJobsOutput  {
     /// <p>A list of jobs.</p>
     #[doc(hidden)]
-    pub annotation_import_jobs:
-        std::option::Option<std::vec::Vec<crate::model::AnnotationImportJobItem>>,
+    pub annotation_import_jobs: std::option::Option<std::vec::Vec<crate::model::AnnotationImportJobItem>>,
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnnotationImportJobsOutput {
     /// <p>A list of jobs.</p>
-    pub fn annotation_import_jobs(
-        &self,
-    ) -> std::option::Option<&[crate::model::AnnotationImportJobItem]> {
+    pub fn annotation_import_jobs(&self) -> std::option::Option<& [crate::model::AnnotationImportJobItem]> {
         self.annotation_import_jobs.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAnnotationImportJobsOutput`](crate::output::ListAnnotationImportJobsOutput).
 pub mod list_annotation_import_jobs_output {
-
+    
     /// A builder for [`ListAnnotationImportJobsOutput`](crate::output::ListAnnotationImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) annotation_import_jobs:
-            std::option::Option<std::vec::Vec<crate::model::AnnotationImportJobItem>>,
+        pub(crate) annotation_import_jobs: std::option::Option<std::vec::Vec<crate::model::AnnotationImportJobItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7544,22 +7161,15 @@ pub mod list_annotation_import_jobs_output {
         /// To override the contents of this collection use [`set_annotation_import_jobs`](Self::set_annotation_import_jobs).
         ///
         /// <p>A list of jobs.</p>
-        pub fn annotation_import_jobs(
-            mut self,
-            input: crate::model::AnnotationImportJobItem,
-        ) -> Self {
+        pub fn annotation_import_jobs(mut self, input: crate::model::AnnotationImportJobItem) -> Self {
             let mut v = self.annotation_import_jobs.unwrap_or_default();
-            v.push(input);
-            self.annotation_import_jobs = Some(v);
-            self
+                            v.push(input);
+                            self.annotation_import_jobs = Some(v);
+                            self
         }
         /// <p>A list of jobs.</p>
-        pub fn set_annotation_import_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnnotationImportJobItem>>,
-        ) -> Self {
-            self.annotation_import_jobs = input;
-            self
+        pub fn set_annotation_import_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnnotationImportJobItem>>) -> Self {
+            self.annotation_import_jobs = input; self
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7568,17 +7178,20 @@ pub mod list_annotation_import_jobs_output {
         }
         /// <p>A pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAnnotationImportJobsOutput`](crate::output::ListAnnotationImportJobsOutput).
         pub fn build(self) -> crate::output::ListAnnotationImportJobsOutput {
             crate::output::ListAnnotationImportJobsOutput {
-                annotation_import_jobs: self.annotation_import_jobs,
-                next_token: self.next_token,
+                annotation_import_jobs: self.annotation_import_jobs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAnnotationImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListAnnotationImportJobsOutput`](crate::output::ListAnnotationImportJobsOutput).
@@ -7590,20 +7203,20 @@ impl ListAnnotationImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAnnotationImportJobOutput {
+pub struct StartAnnotationImportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartAnnotationImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartAnnotationImportJobOutput`](crate::output::StartAnnotationImportJobOutput).
 pub mod start_annotation_import_job_output {
-
+    
     /// A builder for [`StartAnnotationImportJobOutput`](crate::output::StartAnnotationImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7617,16 +7230,18 @@ pub mod start_annotation_import_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartAnnotationImportJobOutput`](crate::output::StartAnnotationImportJobOutput).
         pub fn build(self) -> crate::output::StartAnnotationImportJobOutput {
             crate::output::StartAnnotationImportJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartAnnotationImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartAnnotationImportJobOutput`](crate::output::StartAnnotationImportJobOutput).
@@ -7638,19 +7253,24 @@ impl StartAnnotationImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelAnnotationImportJobOutput {}
+pub struct CancelAnnotationImportJobOutput  {
+}
 /// See [`CancelAnnotationImportJobOutput`](crate::output::CancelAnnotationImportJobOutput).
 pub mod cancel_annotation_import_job_output {
-
+    
     /// A builder for [`CancelAnnotationImportJobOutput`](crate::output::CancelAnnotationImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelAnnotationImportJobOutput`](crate::output::CancelAnnotationImportJobOutput).
         pub fn build(self) -> crate::output::CancelAnnotationImportJobOutput {
-            crate::output::CancelAnnotationImportJobOutput {}
+            crate::output::CancelAnnotationImportJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelAnnotationImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelAnnotationImportJobOutput`](crate::output::CancelAnnotationImportJobOutput).
@@ -7662,7 +7282,7 @@ impl CancelAnnotationImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnnotationImportJobOutput {
+pub struct GetAnnotationImportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7699,39 +7319,39 @@ pub struct GetAnnotationImportJobOutput {
 }
 impl GetAnnotationImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's destination annotation store.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the job was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's imported items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::AnnotationImportItemDetail]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::AnnotationImportItemDetail]> {
         self.items.as_deref()
     }
     /// <p>The job's left normalization setting.</p>
@@ -7739,13 +7359,13 @@ impl GetAnnotationImportJobOutput {
         self.run_left_normalization
     }
     /// <p>Formatting options for a file.</p>
-    pub fn format_options(&self) -> std::option::Option<&crate::model::FormatOptions> {
+    pub fn format_options(&self) -> std::option::Option<& crate::model::FormatOptions> {
         self.format_options.as_ref()
     }
 }
 /// See [`GetAnnotationImportJobOutput`](crate::output::GetAnnotationImportJobOutput).
 pub mod get_annotation_import_job_output {
-
+    
     /// A builder for [`GetAnnotationImportJobOutput`](crate::output::GetAnnotationImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7757,8 +7377,7 @@ pub mod get_annotation_import_job_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::AnnotationImportItemDetail>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::AnnotationImportItemDetail>>,
         pub(crate) run_left_normalization: std::option::Option<bool>,
         pub(crate) format_options: std::option::Option<crate::model::FormatOptions>,
     }
@@ -7770,8 +7389,7 @@ pub mod get_annotation_import_job_output {
         }
         /// <p>The job's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The job's destination annotation store.</p>
         pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7779,12 +7397,8 @@ pub mod get_annotation_import_job_output {
             self
         }
         /// <p>The job's destination annotation store.</p>
-        pub fn set_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_name = input;
-            self
+        pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_name = input; self
         }
         /// <p>The job's service role ARN.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7793,8 +7407,7 @@ pub mod get_annotation_import_job_output {
         }
         /// <p>The job's service role ARN.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The job's status.</p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
@@ -7803,8 +7416,7 @@ pub mod get_annotation_import_job_output {
         }
         /// <p>The job's status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The job's status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7812,12 +7424,8 @@ pub mod get_annotation_import_job_output {
             self
         }
         /// <p>The job's status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>When the job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7825,12 +7433,8 @@ pub mod get_annotation_import_job_output {
             self
         }
         /// <p>When the job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the job was updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7838,12 +7442,8 @@ pub mod get_annotation_import_job_output {
             self
         }
         /// <p>When the job was updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>When the job completed.</p>
         pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7851,12 +7451,8 @@ pub mod get_annotation_import_job_output {
             self
         }
         /// <p>When the job completed.</p>
-        pub fn set_completion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completion_time = input;
-            self
+        pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completion_time = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -7865,17 +7461,13 @@ pub mod get_annotation_import_job_output {
         /// <p>The job's imported items.</p>
         pub fn items(mut self, input: crate::model::AnnotationImportItemDetail) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The job's imported items.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnnotationImportItemDetail>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnnotationImportItemDetail>>) -> Self {
+            self.items = input; self
         }
         /// <p>The job's left normalization setting.</p>
         pub fn run_left_normalization(mut self, input: bool) -> Self {
@@ -7884,8 +7476,7 @@ pub mod get_annotation_import_job_output {
         }
         /// <p>The job's left normalization setting.</p>
         pub fn set_run_left_normalization(mut self, input: std::option::Option<bool>) -> Self {
-            self.run_left_normalization = input;
-            self
+            self.run_left_normalization = input; self
         }
         /// <p>Formatting options for a file.</p>
         pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
@@ -7893,30 +7484,40 @@ pub mod get_annotation_import_job_output {
             self
         }
         /// <p>Formatting options for a file.</p>
-        pub fn set_format_options(
-            mut self,
-            input: std::option::Option<crate::model::FormatOptions>,
-        ) -> Self {
-            self.format_options = input;
-            self
+        pub fn set_format_options(mut self, input: std::option::Option<crate::model::FormatOptions>) -> Self {
+            self.format_options = input; self
         }
         /// Consumes the builder and constructs a [`GetAnnotationImportJobOutput`](crate::output::GetAnnotationImportJobOutput).
         pub fn build(self) -> crate::output::GetAnnotationImportJobOutput {
             crate::output::GetAnnotationImportJobOutput {
-                id: self.id,
-                destination_name: self.destination_name,
-                role_arn: self.role_arn,
-                status: self.status,
-                status_message: self.status_message,
-                creation_time: self.creation_time,
-                update_time: self.update_time,
-                completion_time: self.completion_time,
-                items: self.items,
-                run_left_normalization: self.run_left_normalization.unwrap_or_default(),
-                format_options: self.format_options,
+                id: self.id
+                ,
+                destination_name: self.destination_name
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                ,
+                update_time: self.update_time
+                ,
+                completion_time: self.completion_time
+                ,
+                items: self.items
+                ,
+                run_left_normalization: self.run_left_normalization
+                    .unwrap_or_default()
+                ,
+                format_options: self.format_options
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAnnotationImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetAnnotationImportJobOutput`](crate::output::GetAnnotationImportJobOutput).
@@ -7924,3 +7525,4 @@ impl GetAnnotationImportJobOutput {
         crate::output::get_annotation_import_job_output::Builder::default()
     }
 }
+

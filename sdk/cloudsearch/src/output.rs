@@ -3,20 +3,20 @@
 /// <p>The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceAccessPoliciesOutput {
+pub struct UpdateServiceAccessPoliciesOutput  {
     /// <p>The access rules configured for the domain.</p>
     #[doc(hidden)]
     pub access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
 }
 impl UpdateServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain.</p>
-    pub fn access_policies(&self) -> std::option::Option<&crate::model::AccessPoliciesStatus> {
+    pub fn access_policies(&self) -> std::option::Option<& crate::model::AccessPoliciesStatus> {
         self.access_policies.as_ref()
     }
 }
 /// See [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
 pub mod update_service_access_policies_output {
-
+    
     /// A builder for [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,20 +29,19 @@ pub mod update_service_access_policies_output {
             self
         }
         /// <p>The access rules configured for the domain.</p>
-        pub fn set_access_policies(
-            mut self,
-            input: std::option::Option<crate::model::AccessPoliciesStatus>,
-        ) -> Self {
-            self.access_policies = input;
-            self
+        pub fn set_access_policies(mut self, input: std::option::Option<crate::model::AccessPoliciesStatus>) -> Self {
+            self.access_policies = input; self
         }
         /// Consumes the builder and constructs a [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
         pub fn build(self) -> crate::output::UpdateServiceAccessPoliciesOutput {
             crate::output::UpdateServiceAccessPoliciesOutput {
-                access_policies: self.access_policies,
+                access_policies: self.access_policies
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateServiceAccessPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
@@ -54,22 +53,20 @@ impl UpdateServiceAccessPoliciesOutput {
 /// <p>The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateScalingParametersOutput {
+pub struct UpdateScalingParametersOutput  {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     #[doc(hidden)]
     pub scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
 }
 impl UpdateScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
-    pub fn scaling_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::ScalingParametersStatus> {
+    pub fn scaling_parameters(&self) -> std::option::Option<& crate::model::ScalingParametersStatus> {
         self.scaling_parameters.as_ref()
     }
 }
 /// See [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
 pub mod update_scaling_parameters_output {
-
+    
     /// A builder for [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -82,20 +79,19 @@ pub mod update_scaling_parameters_output {
             self
         }
         /// <p>The status and configuration of a search domain's scaling parameters. </p>
-        pub fn set_scaling_parameters(
-            mut self,
-            input: std::option::Option<crate::model::ScalingParametersStatus>,
-        ) -> Self {
-            self.scaling_parameters = input;
-            self
+        pub fn set_scaling_parameters(mut self, input: std::option::Option<crate::model::ScalingParametersStatus>) -> Self {
+            self.scaling_parameters = input; self
         }
         /// Consumes the builder and constructs a [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
         pub fn build(self) -> crate::output::UpdateScalingParametersOutput {
             crate::output::UpdateScalingParametersOutput {
-                scaling_parameters: self.scaling_parameters,
+                scaling_parameters: self.scaling_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateScalingParametersOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
@@ -107,52 +103,45 @@ impl UpdateScalingParametersOutput {
 /// <p>The result of a <code>UpdateDomainEndpointOptions</code> request. Contains the configuration and status of the domain's endpoint options. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainEndpointOptionsOutput {
+pub struct UpdateDomainEndpointOptionsOutput  {
     /// <p>The newly-configured domain endpoint options.</p>
     #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
 }
 impl UpdateDomainEndpointOptionsOutput {
     /// <p>The newly-configured domain endpoint options.</p>
-    pub fn domain_endpoint_options(
-        &self,
-    ) -> std::option::Option<&crate::model::DomainEndpointOptionsStatus> {
+    pub fn domain_endpoint_options(&self) -> std::option::Option<& crate::model::DomainEndpointOptionsStatus> {
         self.domain_endpoint_options.as_ref()
     }
 }
 /// See [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
 pub mod update_domain_endpoint_options_output {
-
+    
     /// A builder for [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_endpoint_options:
-            std::option::Option<crate::model::DomainEndpointOptionsStatus>,
+        pub(crate) domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
     }
     impl Builder {
         /// <p>The newly-configured domain endpoint options.</p>
-        pub fn domain_endpoint_options(
-            mut self,
-            input: crate::model::DomainEndpointOptionsStatus,
-        ) -> Self {
+        pub fn domain_endpoint_options(mut self, input: crate::model::DomainEndpointOptionsStatus) -> Self {
             self.domain_endpoint_options = Some(input);
             self
         }
         /// <p>The newly-configured domain endpoint options.</p>
-        pub fn set_domain_endpoint_options(
-            mut self,
-            input: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
-        ) -> Self {
-            self.domain_endpoint_options = input;
-            self
+        pub fn set_domain_endpoint_options(mut self, input: std::option::Option<crate::model::DomainEndpointOptionsStatus>) -> Self {
+            self.domain_endpoint_options = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
         pub fn build(self) -> crate::output::UpdateDomainEndpointOptionsOutput {
             crate::output::UpdateDomainEndpointOptionsOutput {
-                domain_endpoint_options: self.domain_endpoint_options,
+                domain_endpoint_options: self.domain_endpoint_options
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDomainEndpointOptionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
@@ -164,52 +153,45 @@ impl UpdateDomainEndpointOptionsOutput {
 /// <p>The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAvailabilityOptionsOutput {
+pub struct UpdateAvailabilityOptionsOutput  {
     /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
     #[doc(hidden)]
     pub availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
 }
 impl UpdateAvailabilityOptionsOutput {
     /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
-    pub fn availability_options(
-        &self,
-    ) -> std::option::Option<&crate::model::AvailabilityOptionsStatus> {
+    pub fn availability_options(&self) -> std::option::Option<& crate::model::AvailabilityOptionsStatus> {
         self.availability_options.as_ref()
     }
 }
 /// See [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
 pub mod update_availability_options_output {
-
+    
     /// A builder for [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) availability_options:
-            std::option::Option<crate::model::AvailabilityOptionsStatus>,
+        pub(crate) availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
     }
     impl Builder {
         /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
-        pub fn availability_options(
-            mut self,
-            input: crate::model::AvailabilityOptionsStatus,
-        ) -> Self {
+        pub fn availability_options(mut self, input: crate::model::AvailabilityOptionsStatus) -> Self {
             self.availability_options = Some(input);
             self
         }
         /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
-        pub fn set_availability_options(
-            mut self,
-            input: std::option::Option<crate::model::AvailabilityOptionsStatus>,
-        ) -> Self {
-            self.availability_options = input;
-            self
+        pub fn set_availability_options(mut self, input: std::option::Option<crate::model::AvailabilityOptionsStatus>) -> Self {
+            self.availability_options = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
         pub fn build(self) -> crate::output::UpdateAvailabilityOptionsOutput {
             crate::output::UpdateAvailabilityOptionsOutput {
-                availability_options: self.availability_options,
+                availability_options: self.availability_options
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAvailabilityOptionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
@@ -221,30 +203,24 @@ impl UpdateAvailabilityOptionsOutput {
 /// <p>The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainNamesOutput {
+pub struct ListDomainNamesOutput  {
     /// <p>The names of the search domains owned by an account.</p>
     #[doc(hidden)]
-    pub domain_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub domain_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListDomainNamesOutput {
     /// <p>The names of the search domains owned by an account.</p>
-    pub fn domain_names(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn domain_names(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.domain_names.as_ref()
     }
 }
 /// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
 pub mod list_domain_names_output {
-
+    
     /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_names: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) domain_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `domain_names`.
@@ -252,33 +228,26 @@ pub mod list_domain_names_output {
         /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
         ///
         /// <p>The names of the search domains owned by an account.</p>
-        pub fn domain_names(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn domain_names(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.domain_names.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.domain_names = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.domain_names = Some(hash_map);
+                            self
         }
         /// <p>The names of the search domains owned by an account.</p>
-        pub fn set_domain_names(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.domain_names = input;
-            self
+        pub fn set_domain_names(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.domain_names = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
         pub fn build(self) -> crate::output::ListDomainNamesOutput {
             crate::output::ListDomainNamesOutput {
-                domain_names: self.domain_names,
+                domain_names: self.domain_names
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
@@ -290,20 +259,20 @@ impl ListDomainNamesOutput {
 /// <p>The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexDocumentsOutput {
+pub struct IndexDocumentsOutput  {
     /// <p>The names of the fields that are currently being indexed.</p>
     #[doc(hidden)]
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IndexDocumentsOutput {
     /// <p>The names of the fields that are currently being indexed.</p>
-    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn field_names(&self) -> std::option::Option<& [std::string::String]> {
         self.field_names.as_deref()
     }
 }
 /// See [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
 pub mod index_documents_output {
-
+    
     /// A builder for [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -317,25 +286,24 @@ pub mod index_documents_output {
         /// <p>The names of the fields that are currently being indexed.</p>
         pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.field_names.unwrap_or_default();
-            v.push(input.into());
-            self.field_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.field_names = Some(v);
+                            self
         }
         /// <p>The names of the fields that are currently being indexed.</p>
-        pub fn set_field_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.field_names = input;
-            self
+        pub fn set_field_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.field_names = input; self
         }
         /// Consumes the builder and constructs a [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
         pub fn build(self) -> crate::output::IndexDocumentsOutput {
             crate::output::IndexDocumentsOutput {
-                field_names: self.field_names,
+                field_names: self.field_names
+                ,
             }
         }
     }
+    
+    
 }
 impl IndexDocumentsOutput {
     /// Creates a new builder-style object to manufacture [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
@@ -347,20 +315,20 @@ impl IndexDocumentsOutput {
 /// <p>The result of a <code>DescribeSuggesters</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSuggestersOutput {
+pub struct DescribeSuggestersOutput  {
     /// <p>The suggesters configured for the domain specified in the request.</p>
     #[doc(hidden)]
     pub suggesters: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
 }
 impl DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub fn suggesters(&self) -> std::option::Option<&[crate::model::SuggesterStatus]> {
+    pub fn suggesters(&self) -> std::option::Option<& [crate::model::SuggesterStatus]> {
         self.suggesters.as_deref()
     }
 }
 /// See [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
 pub mod describe_suggesters_output {
-
+    
     /// A builder for [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -374,25 +342,24 @@ pub mod describe_suggesters_output {
         /// <p>The suggesters configured for the domain specified in the request.</p>
         pub fn suggesters(mut self, input: crate::model::SuggesterStatus) -> Self {
             let mut v = self.suggesters.unwrap_or_default();
-            v.push(input);
-            self.suggesters = Some(v);
-            self
+                            v.push(input);
+                            self.suggesters = Some(v);
+                            self
         }
         /// <p>The suggesters configured for the domain specified in the request.</p>
-        pub fn set_suggesters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
-        ) -> Self {
-            self.suggesters = input;
-            self
+        pub fn set_suggesters(mut self, input: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>) -> Self {
+            self.suggesters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
         pub fn build(self) -> crate::output::DescribeSuggestersOutput {
             crate::output::DescribeSuggestersOutput {
-                suggesters: self.suggesters,
+                suggesters: self.suggesters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSuggestersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
@@ -404,20 +371,20 @@ impl DescribeSuggestersOutput {
 /// <p>The result of a <code>DescribeServiceAccessPolicies</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServiceAccessPoliciesOutput {
+pub struct DescribeServiceAccessPoliciesOutput  {
     /// <p>The access rules configured for the domain specified in the request.</p>
     #[doc(hidden)]
     pub access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
 }
 impl DescribeServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain specified in the request.</p>
-    pub fn access_policies(&self) -> std::option::Option<&crate::model::AccessPoliciesStatus> {
+    pub fn access_policies(&self) -> std::option::Option<& crate::model::AccessPoliciesStatus> {
         self.access_policies.as_ref()
     }
 }
 /// See [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
 pub mod describe_service_access_policies_output {
-
+    
     /// A builder for [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -430,20 +397,19 @@ pub mod describe_service_access_policies_output {
             self
         }
         /// <p>The access rules configured for the domain specified in the request.</p>
-        pub fn set_access_policies(
-            mut self,
-            input: std::option::Option<crate::model::AccessPoliciesStatus>,
-        ) -> Self {
-            self.access_policies = input;
-            self
+        pub fn set_access_policies(mut self, input: std::option::Option<crate::model::AccessPoliciesStatus>) -> Self {
+            self.access_policies = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
         pub fn build(self) -> crate::output::DescribeServiceAccessPoliciesOutput {
             crate::output::DescribeServiceAccessPoliciesOutput {
-                access_policies: self.access_policies,
+                access_policies: self.access_policies
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeServiceAccessPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
@@ -455,22 +421,20 @@ impl DescribeServiceAccessPoliciesOutput {
 /// <p>The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScalingParametersOutput {
+pub struct DescribeScalingParametersOutput  {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     #[doc(hidden)]
     pub scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
 }
 impl DescribeScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
-    pub fn scaling_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::ScalingParametersStatus> {
+    pub fn scaling_parameters(&self) -> std::option::Option<& crate::model::ScalingParametersStatus> {
         self.scaling_parameters.as_ref()
     }
 }
 /// See [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
 pub mod describe_scaling_parameters_output {
-
+    
     /// A builder for [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -483,20 +447,19 @@ pub mod describe_scaling_parameters_output {
             self
         }
         /// <p>The status and configuration of a search domain's scaling parameters. </p>
-        pub fn set_scaling_parameters(
-            mut self,
-            input: std::option::Option<crate::model::ScalingParametersStatus>,
-        ) -> Self {
-            self.scaling_parameters = input;
-            self
+        pub fn set_scaling_parameters(mut self, input: std::option::Option<crate::model::ScalingParametersStatus>) -> Self {
+            self.scaling_parameters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
         pub fn build(self) -> crate::output::DescribeScalingParametersOutput {
             crate::output::DescribeScalingParametersOutput {
-                scaling_parameters: self.scaling_parameters,
+                scaling_parameters: self.scaling_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScalingParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
@@ -508,20 +471,20 @@ impl DescribeScalingParametersOutput {
 /// <p>The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIndexFieldsOutput {
+pub struct DescribeIndexFieldsOutput  {
     /// <p>The index fields configured for the domain.</p>
     #[doc(hidden)]
     pub index_fields: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
 }
 impl DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
-    pub fn index_fields(&self) -> std::option::Option<&[crate::model::IndexFieldStatus]> {
+    pub fn index_fields(&self) -> std::option::Option<& [crate::model::IndexFieldStatus]> {
         self.index_fields.as_deref()
     }
 }
 /// See [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
 pub mod describe_index_fields_output {
-
+    
     /// A builder for [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -535,25 +498,24 @@ pub mod describe_index_fields_output {
         /// <p>The index fields configured for the domain.</p>
         pub fn index_fields(mut self, input: crate::model::IndexFieldStatus) -> Self {
             let mut v = self.index_fields.unwrap_or_default();
-            v.push(input);
-            self.index_fields = Some(v);
-            self
+                            v.push(input);
+                            self.index_fields = Some(v);
+                            self
         }
         /// <p>The index fields configured for the domain.</p>
-        pub fn set_index_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
-        ) -> Self {
-            self.index_fields = input;
-            self
+        pub fn set_index_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>) -> Self {
+            self.index_fields = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
         pub fn build(self) -> crate::output::DescribeIndexFieldsOutput {
             crate::output::DescribeIndexFieldsOutput {
-                index_fields: self.index_fields,
+                index_fields: self.index_fields
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeIndexFieldsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
@@ -565,20 +527,20 @@ impl DescribeIndexFieldsOutput {
 /// <p>The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExpressionsOutput {
+pub struct DescribeExpressionsOutput  {
     /// <p>The expressions configured for the domain.</p>
     #[doc(hidden)]
     pub expressions: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
 }
 impl DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
-    pub fn expressions(&self) -> std::option::Option<&[crate::model::ExpressionStatus]> {
+    pub fn expressions(&self) -> std::option::Option<& [crate::model::ExpressionStatus]> {
         self.expressions.as_deref()
     }
 }
 /// See [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
 pub mod describe_expressions_output {
-
+    
     /// A builder for [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -592,25 +554,24 @@ pub mod describe_expressions_output {
         /// <p>The expressions configured for the domain.</p>
         pub fn expressions(mut self, input: crate::model::ExpressionStatus) -> Self {
             let mut v = self.expressions.unwrap_or_default();
-            v.push(input);
-            self.expressions = Some(v);
-            self
+                            v.push(input);
+                            self.expressions = Some(v);
+                            self
         }
         /// <p>The expressions configured for the domain.</p>
-        pub fn set_expressions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
-        ) -> Self {
-            self.expressions = input;
-            self
+        pub fn set_expressions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>) -> Self {
+            self.expressions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
         pub fn build(self) -> crate::output::DescribeExpressionsOutput {
             crate::output::DescribeExpressionsOutput {
-                expressions: self.expressions,
+                expressions: self.expressions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeExpressionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
@@ -622,25 +583,24 @@ impl DescribeExpressionsOutput {
 /// <p>The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainsOutput {
+pub struct DescribeDomainsOutput  {
     /// <p>A list that contains the status of each requested domain.</p>
     #[doc(hidden)]
     pub domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
 }
 impl DescribeDomainsOutput {
     /// <p>A list that contains the status of each requested domain.</p>
-    pub fn domain_status_list(&self) -> std::option::Option<&[crate::model::DomainStatus]> {
+    pub fn domain_status_list(&self) -> std::option::Option<& [crate::model::DomainStatus]> {
         self.domain_status_list.as_deref()
     }
 }
 /// See [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
 pub mod describe_domains_output {
-
+    
     /// A builder for [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_status_list:
-            std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
+        pub(crate) domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
     }
     impl Builder {
         /// Appends an item to `domain_status_list`.
@@ -650,25 +610,24 @@ pub mod describe_domains_output {
         /// <p>A list that contains the status of each requested domain.</p>
         pub fn domain_status_list(mut self, input: crate::model::DomainStatus) -> Self {
             let mut v = self.domain_status_list.unwrap_or_default();
-            v.push(input);
-            self.domain_status_list = Some(v);
-            self
+                            v.push(input);
+                            self.domain_status_list = Some(v);
+                            self
         }
         /// <p>A list that contains the status of each requested domain.</p>
-        pub fn set_domain_status_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
-        ) -> Self {
-            self.domain_status_list = input;
-            self
+        pub fn set_domain_status_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>) -> Self {
+            self.domain_status_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
         pub fn build(self) -> crate::output::DescribeDomainsOutput {
             crate::output::DescribeDomainsOutput {
-                domain_status_list: self.domain_status_list,
+                domain_status_list: self.domain_status_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
@@ -680,52 +639,45 @@ impl DescribeDomainsOutput {
 /// <p>The result of a <code>DescribeDomainEndpointOptions</code> request. Contains the status and configuration of a search domain's endpoint options. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainEndpointOptionsOutput {
+pub struct DescribeDomainEndpointOptionsOutput  {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
     #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
 }
 impl DescribeDomainEndpointOptionsOutput {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
-    pub fn domain_endpoint_options(
-        &self,
-    ) -> std::option::Option<&crate::model::DomainEndpointOptionsStatus> {
+    pub fn domain_endpoint_options(&self) -> std::option::Option<& crate::model::DomainEndpointOptionsStatus> {
         self.domain_endpoint_options.as_ref()
     }
 }
 /// See [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
 pub mod describe_domain_endpoint_options_output {
-
+    
     /// A builder for [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_endpoint_options:
-            std::option::Option<crate::model::DomainEndpointOptionsStatus>,
+        pub(crate) domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
     }
     impl Builder {
         /// <p>The status and configuration of a search domain's endpoint options.</p>
-        pub fn domain_endpoint_options(
-            mut self,
-            input: crate::model::DomainEndpointOptionsStatus,
-        ) -> Self {
+        pub fn domain_endpoint_options(mut self, input: crate::model::DomainEndpointOptionsStatus) -> Self {
             self.domain_endpoint_options = Some(input);
             self
         }
         /// <p>The status and configuration of a search domain's endpoint options.</p>
-        pub fn set_domain_endpoint_options(
-            mut self,
-            input: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
-        ) -> Self {
-            self.domain_endpoint_options = input;
-            self
+        pub fn set_domain_endpoint_options(mut self, input: std::option::Option<crate::model::DomainEndpointOptionsStatus>) -> Self {
+            self.domain_endpoint_options = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
         pub fn build(self) -> crate::output::DescribeDomainEndpointOptionsOutput {
             crate::output::DescribeDomainEndpointOptionsOutput {
-                domain_endpoint_options: self.domain_endpoint_options,
+                domain_endpoint_options: self.domain_endpoint_options
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainEndpointOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
@@ -737,52 +689,45 @@ impl DescribeDomainEndpointOptionsOutput {
 /// <p>The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAvailabilityOptionsOutput {
+pub struct DescribeAvailabilityOptionsOutput  {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     #[doc(hidden)]
     pub availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
 }
 impl DescribeAvailabilityOptionsOutput {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
-    pub fn availability_options(
-        &self,
-    ) -> std::option::Option<&crate::model::AvailabilityOptionsStatus> {
+    pub fn availability_options(&self) -> std::option::Option<& crate::model::AvailabilityOptionsStatus> {
         self.availability_options.as_ref()
     }
 }
 /// See [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
 pub mod describe_availability_options_output {
-
+    
     /// A builder for [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) availability_options:
-            std::option::Option<crate::model::AvailabilityOptionsStatus>,
+        pub(crate) availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
     }
     impl Builder {
         /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
-        pub fn availability_options(
-            mut self,
-            input: crate::model::AvailabilityOptionsStatus,
-        ) -> Self {
+        pub fn availability_options(mut self, input: crate::model::AvailabilityOptionsStatus) -> Self {
             self.availability_options = Some(input);
             self
         }
         /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
-        pub fn set_availability_options(
-            mut self,
-            input: std::option::Option<crate::model::AvailabilityOptionsStatus>,
-        ) -> Self {
-            self.availability_options = input;
-            self
+        pub fn set_availability_options(mut self, input: std::option::Option<crate::model::AvailabilityOptionsStatus>) -> Self {
+            self.availability_options = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
         pub fn build(self) -> crate::output::DescribeAvailabilityOptionsOutput {
             crate::output::DescribeAvailabilityOptionsOutput {
-                availability_options: self.availability_options,
+                availability_options: self.availability_options
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAvailabilityOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
@@ -794,25 +739,24 @@ impl DescribeAvailabilityOptionsOutput {
 /// <p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnalysisSchemesOutput {
+pub struct DescribeAnalysisSchemesOutput  {
     /// <p>The analysis scheme descriptions.</p>
     #[doc(hidden)]
     pub analysis_schemes: std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
 }
 impl DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
-    pub fn analysis_schemes(&self) -> std::option::Option<&[crate::model::AnalysisSchemeStatus]> {
+    pub fn analysis_schemes(&self) -> std::option::Option<& [crate::model::AnalysisSchemeStatus]> {
         self.analysis_schemes.as_deref()
     }
 }
 /// See [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
 pub mod describe_analysis_schemes_output {
-
+    
     /// A builder for [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) analysis_schemes:
-            std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
+        pub(crate) analysis_schemes: std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
     }
     impl Builder {
         /// Appends an item to `analysis_schemes`.
@@ -822,25 +766,24 @@ pub mod describe_analysis_schemes_output {
         /// <p>The analysis scheme descriptions.</p>
         pub fn analysis_schemes(mut self, input: crate::model::AnalysisSchemeStatus) -> Self {
             let mut v = self.analysis_schemes.unwrap_or_default();
-            v.push(input);
-            self.analysis_schemes = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_schemes = Some(v);
+                            self
         }
         /// <p>The analysis scheme descriptions.</p>
-        pub fn set_analysis_schemes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
-        ) -> Self {
-            self.analysis_schemes = input;
-            self
+        pub fn set_analysis_schemes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>) -> Self {
+            self.analysis_schemes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
         pub fn build(self) -> crate::output::DescribeAnalysisSchemesOutput {
             crate::output::DescribeAnalysisSchemesOutput {
-                analysis_schemes: self.analysis_schemes,
+                analysis_schemes: self.analysis_schemes
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAnalysisSchemesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
@@ -852,20 +795,20 @@ impl DescribeAnalysisSchemesOutput {
 /// <p>The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSuggesterOutput {
+pub struct DeleteSuggesterOutput  {
     /// <p>The status of the suggester being deleted.</p>
     #[doc(hidden)]
     pub suggester: std::option::Option<crate::model::SuggesterStatus>,
 }
 impl DeleteSuggesterOutput {
     /// <p>The status of the suggester being deleted.</p>
-    pub fn suggester(&self) -> std::option::Option<&crate::model::SuggesterStatus> {
+    pub fn suggester(&self) -> std::option::Option<& crate::model::SuggesterStatus> {
         self.suggester.as_ref()
     }
 }
 /// See [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
 pub mod delete_suggester_output {
-
+    
     /// A builder for [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -878,20 +821,19 @@ pub mod delete_suggester_output {
             self
         }
         /// <p>The status of the suggester being deleted.</p>
-        pub fn set_suggester(
-            mut self,
-            input: std::option::Option<crate::model::SuggesterStatus>,
-        ) -> Self {
-            self.suggester = input;
-            self
+        pub fn set_suggester(mut self, input: std::option::Option<crate::model::SuggesterStatus>) -> Self {
+            self.suggester = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
         pub fn build(self) -> crate::output::DeleteSuggesterOutput {
             crate::output::DeleteSuggesterOutput {
-                suggester: self.suggester,
+                suggester: self.suggester
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSuggesterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
@@ -903,20 +845,20 @@ impl DeleteSuggesterOutput {
 /// <p>The result of a <code><code>DeleteIndexField</code></code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIndexFieldOutput {
+pub struct DeleteIndexFieldOutput  {
     /// <p>The status of the index field being deleted.</p>
     #[doc(hidden)]
     pub index_field: std::option::Option<crate::model::IndexFieldStatus>,
 }
 impl DeleteIndexFieldOutput {
     /// <p>The status of the index field being deleted.</p>
-    pub fn index_field(&self) -> std::option::Option<&crate::model::IndexFieldStatus> {
+    pub fn index_field(&self) -> std::option::Option<& crate::model::IndexFieldStatus> {
         self.index_field.as_ref()
     }
 }
 /// See [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
 pub mod delete_index_field_output {
-
+    
     /// A builder for [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -929,20 +871,19 @@ pub mod delete_index_field_output {
             self
         }
         /// <p>The status of the index field being deleted.</p>
-        pub fn set_index_field(
-            mut self,
-            input: std::option::Option<crate::model::IndexFieldStatus>,
-        ) -> Self {
-            self.index_field = input;
-            self
+        pub fn set_index_field(mut self, input: std::option::Option<crate::model::IndexFieldStatus>) -> Self {
+            self.index_field = input; self
         }
         /// Consumes the builder and constructs a [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
         pub fn build(self) -> crate::output::DeleteIndexFieldOutput {
             crate::output::DeleteIndexFieldOutput {
-                index_field: self.index_field,
+                index_field: self.index_field
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteIndexFieldOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
@@ -954,20 +895,20 @@ impl DeleteIndexFieldOutput {
 /// <p>The result of a <code><code>DeleteExpression</code></code> request. Specifies the expression being deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExpressionOutput {
+pub struct DeleteExpressionOutput  {
     /// <p>The status of the expression being deleted.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<crate::model::ExpressionStatus>,
 }
 impl DeleteExpressionOutput {
     /// <p>The status of the expression being deleted.</p>
-    pub fn expression(&self) -> std::option::Option<&crate::model::ExpressionStatus> {
+    pub fn expression(&self) -> std::option::Option<& crate::model::ExpressionStatus> {
         self.expression.as_ref()
     }
 }
 /// See [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
 pub mod delete_expression_output {
-
+    
     /// A builder for [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -980,20 +921,19 @@ pub mod delete_expression_output {
             self
         }
         /// <p>The status of the expression being deleted.</p>
-        pub fn set_expression(
-            mut self,
-            input: std::option::Option<crate::model::ExpressionStatus>,
-        ) -> Self {
-            self.expression = input;
-            self
+        pub fn set_expression(mut self, input: std::option::Option<crate::model::ExpressionStatus>) -> Self {
+            self.expression = input; self
         }
         /// Consumes the builder and constructs a [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
         pub fn build(self) -> crate::output::DeleteExpressionOutput {
             crate::output::DeleteExpressionOutput {
-                expression: self.expression,
+                expression: self.expression
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteExpressionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
@@ -1005,20 +945,20 @@ impl DeleteExpressionOutput {
 /// <p>The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainOutput {
+pub struct DeleteDomainOutput  {
     /// <p>The current status of the search domain.</p>
     #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl DeleteDomainOutput {
     /// <p>The current status of the search domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
-
+    
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1031,20 +971,19 @@ pub mod delete_domain_output {
             self
         }
         /// <p>The current status of the search domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
         pub fn build(self) -> crate::output::DeleteDomainOutput {
             crate::output::DeleteDomainOutput {
-                domain_status: self.domain_status,
+                domain_status: self.domain_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
@@ -1056,20 +995,20 @@ impl DeleteDomainOutput {
 /// <p>The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnalysisSchemeOutput {
+pub struct DeleteAnalysisSchemeOutput  {
     /// <p>The status of the analysis scheme being deleted.</p>
     #[doc(hidden)]
     pub analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
 }
 impl DeleteAnalysisSchemeOutput {
     /// <p>The status of the analysis scheme being deleted.</p>
-    pub fn analysis_scheme(&self) -> std::option::Option<&crate::model::AnalysisSchemeStatus> {
+    pub fn analysis_scheme(&self) -> std::option::Option<& crate::model::AnalysisSchemeStatus> {
         self.analysis_scheme.as_ref()
     }
 }
 /// See [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
 pub mod delete_analysis_scheme_output {
-
+    
     /// A builder for [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1082,20 +1021,19 @@ pub mod delete_analysis_scheme_output {
             self
         }
         /// <p>The status of the analysis scheme being deleted.</p>
-        pub fn set_analysis_scheme(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisSchemeStatus>,
-        ) -> Self {
-            self.analysis_scheme = input;
-            self
+        pub fn set_analysis_scheme(mut self, input: std::option::Option<crate::model::AnalysisSchemeStatus>) -> Self {
+            self.analysis_scheme = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
         pub fn build(self) -> crate::output::DeleteAnalysisSchemeOutput {
             crate::output::DeleteAnalysisSchemeOutput {
-                analysis_scheme: self.analysis_scheme,
+                analysis_scheme: self.analysis_scheme
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAnalysisSchemeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
@@ -1107,20 +1045,20 @@ impl DeleteAnalysisSchemeOutput {
 /// <p>The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefineSuggesterOutput {
+pub struct DefineSuggesterOutput  {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
     #[doc(hidden)]
     pub suggester: std::option::Option<crate::model::SuggesterStatus>,
 }
 impl DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
-    pub fn suggester(&self) -> std::option::Option<&crate::model::SuggesterStatus> {
+    pub fn suggester(&self) -> std::option::Option<& crate::model::SuggesterStatus> {
         self.suggester.as_ref()
     }
 }
 /// See [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
 pub mod define_suggester_output {
-
+    
     /// A builder for [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1133,20 +1071,19 @@ pub mod define_suggester_output {
             self
         }
         /// <p>The value of a <code>Suggester</code> and its current status.</p>
-        pub fn set_suggester(
-            mut self,
-            input: std::option::Option<crate::model::SuggesterStatus>,
-        ) -> Self {
-            self.suggester = input;
-            self
+        pub fn set_suggester(mut self, input: std::option::Option<crate::model::SuggesterStatus>) -> Self {
+            self.suggester = input; self
         }
         /// Consumes the builder and constructs a [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
         pub fn build(self) -> crate::output::DefineSuggesterOutput {
             crate::output::DefineSuggesterOutput {
-                suggester: self.suggester,
+                suggester: self.suggester
+                ,
             }
         }
     }
+    
+    
 }
 impl DefineSuggesterOutput {
     /// Creates a new builder-style object to manufacture [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
@@ -1158,20 +1095,20 @@ impl DefineSuggesterOutput {
 /// <p>The result of a <code><code>DefineIndexField</code></code> request. Contains the status of the newly-configured index field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefineIndexFieldOutput {
+pub struct DefineIndexFieldOutput  {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
     #[doc(hidden)]
     pub index_field: std::option::Option<crate::model::IndexFieldStatus>,
 }
 impl DefineIndexFieldOutput {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
-    pub fn index_field(&self) -> std::option::Option<&crate::model::IndexFieldStatus> {
+    pub fn index_field(&self) -> std::option::Option<& crate::model::IndexFieldStatus> {
         self.index_field.as_ref()
     }
 }
 /// See [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
 pub mod define_index_field_output {
-
+    
     /// A builder for [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1184,20 +1121,19 @@ pub mod define_index_field_output {
             self
         }
         /// <p>The value of an <code>IndexField</code> and its current status.</p>
-        pub fn set_index_field(
-            mut self,
-            input: std::option::Option<crate::model::IndexFieldStatus>,
-        ) -> Self {
-            self.index_field = input;
-            self
+        pub fn set_index_field(mut self, input: std::option::Option<crate::model::IndexFieldStatus>) -> Self {
+            self.index_field = input; self
         }
         /// Consumes the builder and constructs a [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
         pub fn build(self) -> crate::output::DefineIndexFieldOutput {
             crate::output::DefineIndexFieldOutput {
-                index_field: self.index_field,
+                index_field: self.index_field
+                ,
             }
         }
     }
+    
+    
 }
 impl DefineIndexFieldOutput {
     /// Creates a new builder-style object to manufacture [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
@@ -1209,20 +1145,20 @@ impl DefineIndexFieldOutput {
 /// <p>The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefineExpressionOutput {
+pub struct DefineExpressionOutput  {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<crate::model::ExpressionStatus>,
 }
 impl DefineExpressionOutput {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
-    pub fn expression(&self) -> std::option::Option<&crate::model::ExpressionStatus> {
+    pub fn expression(&self) -> std::option::Option<& crate::model::ExpressionStatus> {
         self.expression.as_ref()
     }
 }
 /// See [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
 pub mod define_expression_output {
-
+    
     /// A builder for [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1235,20 +1171,19 @@ pub mod define_expression_output {
             self
         }
         /// <p>The value of an <code>Expression</code> and its current status.</p>
-        pub fn set_expression(
-            mut self,
-            input: std::option::Option<crate::model::ExpressionStatus>,
-        ) -> Self {
-            self.expression = input;
-            self
+        pub fn set_expression(mut self, input: std::option::Option<crate::model::ExpressionStatus>) -> Self {
+            self.expression = input; self
         }
         /// Consumes the builder and constructs a [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
         pub fn build(self) -> crate::output::DefineExpressionOutput {
             crate::output::DefineExpressionOutput {
-                expression: self.expression,
+                expression: self.expression
+                ,
             }
         }
     }
+    
+    
 }
 impl DefineExpressionOutput {
     /// Creates a new builder-style object to manufacture [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
@@ -1260,20 +1195,20 @@ impl DefineExpressionOutput {
 /// <p>The result of a <code><code>DefineAnalysisScheme</code></code> request. Contains the status of the newly-configured analysis scheme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefineAnalysisSchemeOutput {
+pub struct DefineAnalysisSchemeOutput  {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     #[doc(hidden)]
     pub analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
 }
 impl DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
-    pub fn analysis_scheme(&self) -> std::option::Option<&crate::model::AnalysisSchemeStatus> {
+    pub fn analysis_scheme(&self) -> std::option::Option<& crate::model::AnalysisSchemeStatus> {
         self.analysis_scheme.as_ref()
     }
 }
 /// See [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
 pub mod define_analysis_scheme_output {
-
+    
     /// A builder for [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1286,20 +1221,19 @@ pub mod define_analysis_scheme_output {
             self
         }
         /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
-        pub fn set_analysis_scheme(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisSchemeStatus>,
-        ) -> Self {
-            self.analysis_scheme = input;
-            self
+        pub fn set_analysis_scheme(mut self, input: std::option::Option<crate::model::AnalysisSchemeStatus>) -> Self {
+            self.analysis_scheme = input; self
         }
         /// Consumes the builder and constructs a [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
         pub fn build(self) -> crate::output::DefineAnalysisSchemeOutput {
             crate::output::DefineAnalysisSchemeOutput {
-                analysis_scheme: self.analysis_scheme,
+                analysis_scheme: self.analysis_scheme
+                ,
             }
         }
     }
+    
+    
 }
 impl DefineAnalysisSchemeOutput {
     /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
@@ -1311,20 +1245,20 @@ impl DefineAnalysisSchemeOutput {
 /// <p>The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainOutput {
+pub struct CreateDomainOutput  {
     /// <p>The current status of the search domain.</p>
     #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl CreateDomainOutput {
     /// <p>The current status of the search domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
-
+    
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1337,20 +1271,19 @@ pub mod create_domain_output {
             self
         }
         /// <p>The current status of the search domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
         pub fn build(self) -> crate::output::CreateDomainOutput {
             crate::output::CreateDomainOutput {
-                domain_status: self.domain_status,
+                domain_status: self.domain_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
@@ -1362,20 +1295,20 @@ impl CreateDomainOutput {
 /// <p>The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuildSuggestersOutput {
+pub struct BuildSuggestersOutput  {
     /// <p>A list of field names.</p>
     #[doc(hidden)]
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BuildSuggestersOutput {
     /// <p>A list of field names.</p>
-    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn field_names(&self) -> std::option::Option<& [std::string::String]> {
         self.field_names.as_deref()
     }
 }
 /// See [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
 pub mod build_suggesters_output {
-
+    
     /// A builder for [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1389,25 +1322,24 @@ pub mod build_suggesters_output {
         /// <p>A list of field names.</p>
         pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.field_names.unwrap_or_default();
-            v.push(input.into());
-            self.field_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.field_names = Some(v);
+                            self
         }
         /// <p>A list of field names.</p>
-        pub fn set_field_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.field_names = input;
-            self
+        pub fn set_field_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.field_names = input; self
         }
         /// Consumes the builder and constructs a [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
         pub fn build(self) -> crate::output::BuildSuggestersOutput {
             crate::output::BuildSuggestersOutput {
-                field_names: self.field_names,
+                field_names: self.field_names
+                ,
             }
         }
     }
+    
+    
 }
 impl BuildSuggestersOutput {
     /// Creates a new builder-style object to manufacture [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
@@ -1415,3 +1347,4 @@ impl BuildSuggestersOutput {
         crate::output::build_suggesters_output::Builder::default()
     }
 }
+

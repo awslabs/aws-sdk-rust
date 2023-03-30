@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tabledataimportjobstatus = unimplemented!();
 /// match tabledataimportjobstatus {
@@ -32,22 +32,14 @@
 /// Specifically, when `tabledataimportjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TableDataImportJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TableDataImportJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -58,7 +50,7 @@ pub enum TableDataImportJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TableDataImportJobStatus {
     fn from(s: &str) -> Self {
@@ -67,19 +59,17 @@ impl std::convert::From<&str> for TableDataImportJobStatus {
             "FAILED" => TableDataImportJobStatus::Failed,
             "IN_PROGRESS" => TableDataImportJobStatus::InProgress,
             "SUBMITTED" => TableDataImportJobStatus::Submitted,
-            other => TableDataImportJobStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TableDataImportJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TableDataImportJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TableDataImportJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TableDataImportJobStatus::from(s))
+                }
+            }
 impl TableDataImportJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -88,12 +78,14 @@ impl TableDataImportJobStatus {
             TableDataImportJobStatus::Failed => "FAILED",
             TableDataImportJobStatus::InProgress => "IN_PROGRESS",
             TableDataImportJobStatus::Submitted => "SUBMITTED",
-            TableDataImportJobStatus::Unknown(value) => value.as_str(),
+            TableDataImportJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS", "SUBMITTED"]
+        &[
+            "COMPLETED", "FAILED", "IN_PROGRESS", "SUBMITTED"
+        ]
     }
 }
 impl AsRef<str> for TableDataImportJobStatus {
@@ -105,7 +97,7 @@ impl AsRef<str> for TableDataImportJobStatus {
 /// <p>An object that contains the options specified by the sumitter of the import request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportOptions {
+pub struct ImportOptions  {
     /// <p>Options relating to the destination of the import request.</p>
     #[doc(hidden)]
     pub destination_options: std::option::Option<crate::model::DestinationOptions>,
@@ -115,25 +107,22 @@ pub struct ImportOptions {
 }
 impl ImportOptions {
     /// <p>Options relating to the destination of the import request.</p>
-    pub fn destination_options(&self) -> std::option::Option<&crate::model::DestinationOptions> {
+    pub fn destination_options(&self) -> std::option::Option<& crate::model::DestinationOptions> {
         self.destination_options.as_ref()
     }
     /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
-    pub fn delimited_text_options(
-        &self,
-    ) -> std::option::Option<&crate::model::DelimitedTextImportOptions> {
+    pub fn delimited_text_options(&self) -> std::option::Option<& crate::model::DelimitedTextImportOptions> {
         self.delimited_text_options.as_ref()
     }
 }
 /// See [`ImportOptions`](crate::model::ImportOptions).
 pub mod import_options {
-
+    
     /// A builder for [`ImportOptions`](crate::model::ImportOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_options: std::option::Option<crate::model::DestinationOptions>,
-        pub(crate) delimited_text_options:
-            std::option::Option<crate::model::DelimitedTextImportOptions>,
+        pub(crate) delimited_text_options: std::option::Option<crate::model::DelimitedTextImportOptions>,
     }
     impl Builder {
         /// <p>Options relating to the destination of the import request.</p>
@@ -142,37 +131,30 @@ pub mod import_options {
             self
         }
         /// <p>Options relating to the destination of the import request.</p>
-        pub fn set_destination_options(
-            mut self,
-            input: std::option::Option<crate::model::DestinationOptions>,
-        ) -> Self {
-            self.destination_options = input;
-            self
+        pub fn set_destination_options(mut self, input: std::option::Option<crate::model::DestinationOptions>) -> Self {
+            self.destination_options = input; self
         }
         /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
-        pub fn delimited_text_options(
-            mut self,
-            input: crate::model::DelimitedTextImportOptions,
-        ) -> Self {
+        pub fn delimited_text_options(mut self, input: crate::model::DelimitedTextImportOptions) -> Self {
             self.delimited_text_options = Some(input);
             self
         }
         /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
-        pub fn set_delimited_text_options(
-            mut self,
-            input: std::option::Option<crate::model::DelimitedTextImportOptions>,
-        ) -> Self {
-            self.delimited_text_options = input;
-            self
+        pub fn set_delimited_text_options(mut self, input: std::option::Option<crate::model::DelimitedTextImportOptions>) -> Self {
+            self.delimited_text_options = input; self
         }
         /// Consumes the builder and constructs a [`ImportOptions`](crate::model::ImportOptions).
         pub fn build(self) -> crate::model::ImportOptions {
             crate::model::ImportOptions {
-                destination_options: self.destination_options,
-                delimited_text_options: self.delimited_text_options,
+                destination_options: self.destination_options
+                ,
+                delimited_text_options: self.delimited_text_options
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportOptions {
     /// Creates a new builder-style object to manufacture [`ImportOptions`](crate::model::ImportOptions).
@@ -184,7 +166,7 @@ impl ImportOptions {
 /// <p> An object that contains the options relating to parsing delimited text as part of an import request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DelimitedTextImportOptions {
+pub struct DelimitedTextImportOptions  {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
     #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
@@ -200,7 +182,7 @@ pub struct DelimitedTextImportOptions {
 }
 impl DelimitedTextImportOptions {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
@@ -212,23 +194,20 @@ impl DelimitedTextImportOptions {
         self.ignore_empty_rows
     }
     /// <p>The encoding of the data in the input file.</p>
-    pub fn data_character_encoding(
-        &self,
-    ) -> std::option::Option<&crate::model::ImportDataCharacterEncoding> {
+    pub fn data_character_encoding(&self) -> std::option::Option<& crate::model::ImportDataCharacterEncoding> {
         self.data_character_encoding.as_ref()
     }
 }
 /// See [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions).
 pub mod delimited_text_import_options {
-
+    
     /// A builder for [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delimiter: std::option::Option<std::string::String>,
         pub(crate) has_header_row: std::option::Option<bool>,
         pub(crate) ignore_empty_rows: std::option::Option<bool>,
-        pub(crate) data_character_encoding:
-            std::option::Option<crate::model::ImportDataCharacterEncoding>,
+        pub(crate) data_character_encoding: std::option::Option<crate::model::ImportDataCharacterEncoding>,
     }
     impl Builder {
         /// <p>The delimiter to use for separating columns in a single row of the input.</p>
@@ -238,8 +217,7 @@ pub mod delimited_text_import_options {
         }
         /// <p>The delimiter to use for separating columns in a single row of the input.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = input;
-            self
+            self.delimiter = input; self
         }
         /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
         pub fn has_header_row(mut self, input: bool) -> Self {
@@ -248,8 +226,7 @@ pub mod delimited_text_import_options {
         }
         /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
         pub fn set_has_header_row(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_header_row = input;
-            self
+            self.has_header_row = input; self
         }
         /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
         pub fn ignore_empty_rows(mut self, input: bool) -> Self {
@@ -258,35 +235,35 @@ pub mod delimited_text_import_options {
         }
         /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
         pub fn set_ignore_empty_rows(mut self, input: std::option::Option<bool>) -> Self {
-            self.ignore_empty_rows = input;
-            self
+            self.ignore_empty_rows = input; self
         }
         /// <p>The encoding of the data in the input file.</p>
-        pub fn data_character_encoding(
-            mut self,
-            input: crate::model::ImportDataCharacterEncoding,
-        ) -> Self {
+        pub fn data_character_encoding(mut self, input: crate::model::ImportDataCharacterEncoding) -> Self {
             self.data_character_encoding = Some(input);
             self
         }
         /// <p>The encoding of the data in the input file.</p>
-        pub fn set_data_character_encoding(
-            mut self,
-            input: std::option::Option<crate::model::ImportDataCharacterEncoding>,
-        ) -> Self {
-            self.data_character_encoding = input;
-            self
+        pub fn set_data_character_encoding(mut self, input: std::option::Option<crate::model::ImportDataCharacterEncoding>) -> Self {
+            self.data_character_encoding = input; self
         }
         /// Consumes the builder and constructs a [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions).
         pub fn build(self) -> crate::model::DelimitedTextImportOptions {
             crate::model::DelimitedTextImportOptions {
-                delimiter: self.delimiter,
-                has_header_row: self.has_header_row.unwrap_or_default(),
-                ignore_empty_rows: self.ignore_empty_rows.unwrap_or_default(),
-                data_character_encoding: self.data_character_encoding,
+                delimiter: self.delimiter
+                ,
+                has_header_row: self.has_header_row
+                    .unwrap_or_default()
+                ,
+                ignore_empty_rows: self.ignore_empty_rows
+                    .unwrap_or_default()
+                ,
+                data_character_encoding: self.data_character_encoding
+                ,
             }
         }
     }
+    
+    
 }
 impl DelimitedTextImportOptions {
     /// Creates a new builder-style object to manufacture [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions).
@@ -301,9 +278,9 @@ impl DelimitedTextImportOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importdatacharacterencoding = unimplemented!();
 /// match importdatacharacterencoding {
@@ -329,22 +306,14 @@ impl DelimitedTextImportOptions {
 /// Specifically, when `importdatacharacterencoding` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportDataCharacterEncoding::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportDataCharacterEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Iso88591,
@@ -359,7 +328,7 @@ pub enum ImportDataCharacterEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Utf8,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportDataCharacterEncoding {
     fn from(s: &str) -> Self {
@@ -370,19 +339,17 @@ impl std::convert::From<&str> for ImportDataCharacterEncoding {
             "UTF-16BE" => ImportDataCharacterEncoding::Utf16Be,
             "UTF-16LE" => ImportDataCharacterEncoding::Utf16Le,
             "UTF-8" => ImportDataCharacterEncoding::Utf8,
-            other => ImportDataCharacterEncoding::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ImportDataCharacterEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportDataCharacterEncoding {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportDataCharacterEncoding::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportDataCharacterEncoding::from(s))
+                }
+            }
 impl ImportDataCharacterEncoding {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -393,18 +360,13 @@ impl ImportDataCharacterEncoding {
             ImportDataCharacterEncoding::Utf16Be => "UTF-16BE",
             ImportDataCharacterEncoding::Utf16Le => "UTF-16LE",
             ImportDataCharacterEncoding::Utf8 => "UTF-8",
-            ImportDataCharacterEncoding::Unknown(value) => value.as_str(),
+            ImportDataCharacterEncoding::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ISO-8859-1",
-            "US-ASCII",
-            "UTF-16",
-            "UTF-16BE",
-            "UTF-16LE",
-            "UTF-8",
+            "ISO-8859-1", "US-ASCII", "UTF-16", "UTF-16BE", "UTF-16LE", "UTF-8"
         ]
     }
 }
@@ -417,35 +379,24 @@ impl AsRef<str> for ImportDataCharacterEncoding {
 /// <p>An object that contains the options relating to the destination of the import request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationOptions {
+pub struct DestinationOptions  {
     /// <p>A map of the column id to the import properties for each column.</p>
     #[doc(hidden)]
-    pub column_map: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>,
-    >,
+    pub column_map: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>>,
 }
 impl DestinationOptions {
     /// <p>A map of the column id to the import properties for each column.</p>
-    pub fn column_map(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>,
-    > {
+    pub fn column_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>> {
         self.column_map.as_ref()
     }
 }
 /// See [`DestinationOptions`](crate::model::DestinationOptions).
 pub mod destination_options {
-
+    
     /// A builder for [`DestinationOptions`](crate::model::DestinationOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) column_map: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::SourceDataColumnProperties,
-            >,
-        >,
+        pub(crate) column_map: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>>,
     }
     impl Builder {
         /// Adds a key-value pair to `column_map`.
@@ -453,36 +404,26 @@ pub mod destination_options {
         /// To override the contents of this collection use [`set_column_map`](Self::set_column_map).
         ///
         /// <p>A map of the column id to the import properties for each column.</p>
-        pub fn column_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::SourceDataColumnProperties,
-        ) -> Self {
+        pub fn column_map(mut self, k: impl Into<std::string::String>, v: crate::model::SourceDataColumnProperties) -> Self {
             let mut hash_map = self.column_map.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.column_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.column_map = Some(hash_map);
+                            self
         }
         /// <p>A map of the column id to the import properties for each column.</p>
-        pub fn set_column_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::SourceDataColumnProperties,
-                >,
-            >,
-        ) -> Self {
-            self.column_map = input;
-            self
+        pub fn set_column_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>>) -> Self {
+            self.column_map = input; self
         }
         /// Consumes the builder and constructs a [`DestinationOptions`](crate::model::DestinationOptions).
         pub fn build(self) -> crate::model::DestinationOptions {
             crate::model::DestinationOptions {
-                column_map: self.column_map,
+                column_map: self.column_map
+                ,
             }
         }
     }
+    
+    
 }
 impl DestinationOptions {
     /// Creates a new builder-style object to manufacture [`DestinationOptions`](crate::model::DestinationOptions).
@@ -494,7 +435,7 @@ impl DestinationOptions {
 /// <p>An object that contains the properties for importing data to a specific column in a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceDataColumnProperties {
+pub struct SourceDataColumnProperties  {
     /// <p>The index of the column in the input file.</p>
     #[doc(hidden)]
     pub column_index: i32,
@@ -507,7 +448,7 @@ impl SourceDataColumnProperties {
 }
 /// See [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties).
 pub mod source_data_column_properties {
-
+    
     /// A builder for [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -521,16 +462,19 @@ pub mod source_data_column_properties {
         }
         /// <p>The index of the column in the input file.</p>
         pub fn set_column_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.column_index = input;
-            self
+            self.column_index = input; self
         }
         /// Consumes the builder and constructs a [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties).
         pub fn build(self) -> crate::model::SourceDataColumnProperties {
             crate::model::SourceDataColumnProperties {
-                column_index: self.column_index.unwrap_or_default(),
+                column_index: self.column_index
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceDataColumnProperties {
     /// Creates a new builder-style object to manufacture [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties).
@@ -545,9 +489,9 @@ impl SourceDataColumnProperties {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importsourcedataformat = unimplemented!();
 /// match importsourcedataformat {
@@ -568,56 +512,48 @@ impl SourceDataColumnProperties {
 /// Specifically, when `importsourcedataformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportSourceDataFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportSourceDataFormat {
     #[allow(missing_docs)] // documentation missing in model
     DelimitedText,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportSourceDataFormat {
     fn from(s: &str) -> Self {
         match s {
             "DELIMITED_TEXT" => ImportSourceDataFormat::DelimitedText,
-            other => {
-                ImportSourceDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImportSourceDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportSourceDataFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportSourceDataFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportSourceDataFormat::from(s))
+                }
+            }
 impl ImportSourceDataFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportSourceDataFormat::DelimitedText => "DELIMITED_TEXT",
-            ImportSourceDataFormat::Unknown(value) => value.as_str(),
+            ImportSourceDataFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELIMITED_TEXT"]
+        &[
+            "DELIMITED_TEXT"
+        ]
     }
 }
 impl AsRef<str> for ImportSourceDataFormat {
@@ -629,20 +565,20 @@ impl AsRef<str> for ImportSourceDataFormat {
 /// <p>An object that has details about the source of the data that was submitted for import.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportDataSource {
+pub struct ImportDataSource  {
     /// <p>The configuration parameters for the data source of the import</p>
     #[doc(hidden)]
     pub data_source_config: std::option::Option<crate::model::ImportDataSourceConfig>,
 }
 impl ImportDataSource {
     /// <p>The configuration parameters for the data source of the import</p>
-    pub fn data_source_config(&self) -> std::option::Option<&crate::model::ImportDataSourceConfig> {
+    pub fn data_source_config(&self) -> std::option::Option<& crate::model::ImportDataSourceConfig> {
         self.data_source_config.as_ref()
     }
 }
 /// See [`ImportDataSource`](crate::model::ImportDataSource).
 pub mod import_data_source {
-
+    
     /// A builder for [`ImportDataSource`](crate::model::ImportDataSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -655,20 +591,19 @@ pub mod import_data_source {
             self
         }
         /// <p>The configuration parameters for the data source of the import</p>
-        pub fn set_data_source_config(
-            mut self,
-            input: std::option::Option<crate::model::ImportDataSourceConfig>,
-        ) -> Self {
-            self.data_source_config = input;
-            self
+        pub fn set_data_source_config(mut self, input: std::option::Option<crate::model::ImportDataSourceConfig>) -> Self {
+            self.data_source_config = input; self
         }
         /// Consumes the builder and constructs a [`ImportDataSource`](crate::model::ImportDataSource).
         pub fn build(self) -> crate::model::ImportDataSource {
             crate::model::ImportDataSource {
-                data_source_config: self.data_source_config,
+                data_source_config: self.data_source_config
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportDataSource {
     /// Creates a new builder-style object to manufacture [`ImportDataSource`](crate::model::ImportDataSource).
@@ -680,18 +615,18 @@ impl ImportDataSource {
 /// <p> An object that contains the configuration parameters for the data source of an import request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportDataSourceConfig {
+pub struct ImportDataSourceConfig  {
     /// <p> The URL from which source data will be downloaded for the import request. </p>
     #[doc(hidden)]
     pub data_source_url: std::option::Option<std::string::String>,
 }
 impl ImportDataSourceConfig {
     /// <p> The URL from which source data will be downloaded for the import request. </p>
-    pub fn data_source_url(&self) -> std::option::Option<&str> {
+    pub fn data_source_url(&self) -> std::option::Option<& str> {
         self.data_source_url.as_deref()
     }
 }
-impl std::fmt::Debug for ImportDataSourceConfig {
+impl  std::fmt::Debug for ImportDataSourceConfig  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportDataSourceConfig");
         formatter.field("data_source_url", &"*** Sensitive Data Redacted ***");
@@ -700,7 +635,7 @@ impl std::fmt::Debug for ImportDataSourceConfig {
 }
 /// See [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig).
 pub mod import_data_source_config {
-
+    
     /// A builder for [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -713,17 +648,14 @@ pub mod import_data_source_config {
             self
         }
         /// <p> The URL from which source data will be downloaded for the import request. </p>
-        pub fn set_data_source_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_url = input;
-            self
+        pub fn set_data_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_url = input; self
         }
         /// Consumes the builder and constructs a [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig).
         pub fn build(self) -> crate::model::ImportDataSourceConfig {
             crate::model::ImportDataSourceConfig {
-                data_source_url: self.data_source_url,
+                data_source_url: self.data_source_url
+                ,
             }
         }
     }
@@ -734,6 +666,8 @@ pub mod import_data_source_config {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ImportDataSourceConfig {
     /// Creates a new builder-style object to manufacture [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig).
@@ -745,7 +679,7 @@ impl ImportDataSourceConfig {
 /// <p>An object that contains attributes about a single row in a table</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableRow {
+pub struct TableRow  {
     /// <p>The id of the row in the table.</p>
     #[doc(hidden)]
     pub row_id: std::option::Option<std::string::String>,
@@ -755,17 +689,17 @@ pub struct TableRow {
 }
 impl TableRow {
     /// <p>The id of the row in the table.</p>
-    pub fn row_id(&self) -> std::option::Option<&str> {
+    pub fn row_id(&self) -> std::option::Option<& str> {
         self.row_id.as_deref()
     }
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
-    pub fn cells(&self) -> std::option::Option<&[crate::model::Cell]> {
+    pub fn cells(&self) -> std::option::Option<& [crate::model::Cell]> {
         self.cells.as_deref()
     }
 }
 /// See [`TableRow`](crate::model::TableRow).
 pub mod table_row {
-
+    
     /// A builder for [`TableRow`](crate::model::TableRow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -780,8 +714,7 @@ pub mod table_row {
         }
         /// <p>The id of the row in the table.</p>
         pub fn set_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.row_id = input;
-            self
+            self.row_id = input; self
         }
         /// Appends an item to `cells`.
         ///
@@ -790,26 +723,26 @@ pub mod table_row {
         /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
         pub fn cells(mut self, input: crate::model::Cell) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input);
-            self.cells = Some(v);
-            self
+                            v.push(input);
+                            self.cells = Some(v);
+                            self
         }
         /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
-        pub fn set_cells(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Cell>>,
-        ) -> Self {
-            self.cells = input;
-            self
+        pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<crate::model::Cell>>) -> Self {
+            self.cells = input; self
         }
         /// Consumes the builder and constructs a [`TableRow`](crate::model::TableRow).
         pub fn build(self) -> crate::model::TableRow {
             crate::model::TableRow {
-                row_id: self.row_id,
-                cells: self.cells,
+                row_id: self.row_id
+                ,
+                cells: self.cells
+                ,
             }
         }
     }
+    
+    
 }
 impl TableRow {
     /// Creates a new builder-style object to manufacture [`TableRow`](crate::model::TableRow).
@@ -821,25 +754,25 @@ impl TableRow {
 /// <p>An object that represents a single cell in a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Cell {
+pub struct Cell  {
     /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
     #[doc(hidden)]
     pub formula: std::option::Option<std::string::String>,
     /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
-    /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
-    /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
-    /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p>
-    /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
-    /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
-    /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
-    /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
-    /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+    /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p> 
+    /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p> 
+    /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p> 
+    /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p> 
+    /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p> 
+    /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> 
+    /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p> 
+    /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> 
     /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
     #[doc(hidden)]
     pub raw_value: std::option::Option<std::string::String>,
-    /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
+    /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p> 
     /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
     #[doc(hidden)]
     pub formatted_value: std::option::Option<std::string::String>,
@@ -849,36 +782,36 @@ pub struct Cell {
 }
 impl Cell {
     /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
-    pub fn formula(&self) -> std::option::Option<&str> {
+    pub fn formula(&self) -> std::option::Option<& str> {
         self.formula.as_deref()
     }
     /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::model::Format> {
         self.format.as_ref()
     }
-    /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
-    /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
-    /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p>
-    /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
-    /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
-    /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
-    /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
-    /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+    /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p> 
+    /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p> 
+    /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p> 
+    /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p> 
+    /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p> 
+    /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> 
+    /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p> 
+    /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> 
     /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
-    pub fn raw_value(&self) -> std::option::Option<&str> {
+    pub fn raw_value(&self) -> std::option::Option<& str> {
         self.raw_value.as_deref()
     }
-    /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
+    /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p> 
     /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
-    pub fn formatted_value(&self) -> std::option::Option<&str> {
+    pub fn formatted_value(&self) -> std::option::Option<& str> {
         self.formatted_value.as_deref()
     }
     /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
-    pub fn formatted_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn formatted_values(&self) -> std::option::Option<& [std::string::String]> {
         self.formatted_values.as_deref()
     }
 }
-impl std::fmt::Debug for Cell {
+impl  std::fmt::Debug for Cell  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Cell");
         formatter.field("formula", &"*** Sensitive Data Redacted ***");
@@ -891,7 +824,7 @@ impl std::fmt::Debug for Cell {
 }
 /// See [`Cell`](crate::model::Cell).
 pub mod cell {
-
+    
     /// A builder for [`Cell`](crate::model::Cell).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -909,8 +842,7 @@ pub mod cell {
         }
         /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
         pub fn set_formula(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.formula = input;
-            self
+            self.formula = input; self
         }
         /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
         pub fn format(mut self, input: crate::model::Format) -> Self {
@@ -919,49 +851,43 @@ pub mod cell {
         }
         /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
-        /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
-        /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
-        /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p>
-        /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
-        /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
-        /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
-        /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
-        /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+        /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p> 
+        /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p> 
+        /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p> 
+        /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p> 
+        /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p> 
+        /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> 
+        /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p> 
+        /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> 
         /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
         pub fn raw_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.raw_value = Some(input.into());
             self
         }
-        /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
-        /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
-        /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p>
-        /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
-        /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
-        /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
-        /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
-        /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+        /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p> 
+        /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p> 
+        /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p> 
+        /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p> 
+        /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p> 
+        /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> 
+        /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p> 
+        /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> 
         /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
         pub fn set_raw_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.raw_value = input;
-            self
+            self.raw_value = input; self
         }
-        /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
+        /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p> 
         /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
         pub fn formatted_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.formatted_value = Some(input.into());
             self
         }
-        /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
+        /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p> 
         /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
-        pub fn set_formatted_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.formatted_value = input;
-            self
+        pub fn set_formatted_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.formatted_value = input; self
         }
         /// Appends an item to `formatted_values`.
         ///
@@ -970,26 +896,27 @@ pub mod cell {
         /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
         pub fn formatted_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.formatted_values.unwrap_or_default();
-            v.push(input.into());
-            self.formatted_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.formatted_values = Some(v);
+                            self
         }
         /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
-        pub fn set_formatted_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.formatted_values = input;
-            self
+        pub fn set_formatted_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.formatted_values = input; self
         }
         /// Consumes the builder and constructs a [`Cell`](crate::model::Cell).
         pub fn build(self) -> crate::model::Cell {
             crate::model::Cell {
-                formula: self.formula,
-                format: self.format,
-                raw_value: self.raw_value,
-                formatted_value: self.formatted_value,
-                formatted_values: self.formatted_values,
+                formula: self.formula
+                ,
+                format: self.format
+                ,
+                raw_value: self.raw_value
+                ,
+                formatted_value: self.formatted_value
+                ,
+                formatted_values: self.formatted_values
+                ,
             }
         }
     }
@@ -1004,6 +931,8 @@ pub mod cell {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Cell {
     /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell).
@@ -1018,9 +947,9 @@ impl Cell {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let format = unimplemented!();
 /// match format {
@@ -1052,22 +981,14 @@ impl Cell {
 /// Specifically, when `format` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Format::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Accounting,
@@ -1094,7 +1015,7 @@ pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Time,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
@@ -1111,17 +1032,17 @@ impl std::convert::From<&str> for Format {
             "ROWSET" => Format::Rowset,
             "TEXT" => Format::Text,
             "TIME" => Format::Time,
-            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Format {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Format::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Format::from(s))
+                }
+            }
 impl Format {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1138,24 +1059,13 @@ impl Format {
             Format::Rowset => "ROWSET",
             Format::Text => "TEXT",
             Format::Time => "TIME",
-            Format::Unknown(value) => value.as_str(),
+            Format::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCOUNTING",
-            "AUTO",
-            "CONTACT",
-            "CURRENCY",
-            "DATE",
-            "DATE_TIME",
-            "NUMBER",
-            "PERCENTAGE",
-            "ROWLINK",
-            "ROWSET",
-            "TEXT",
-            "TIME",
+            "ACCOUNTING", "AUTO", "CONTACT", "CURRENCY", "DATE", "DATE_TIME", "NUMBER", "PERCENTAGE", "ROWLINK", "ROWSET", "TEXT", "TIME"
         ]
     }
 }
@@ -1168,7 +1078,7 @@ impl AsRef<str> for Format {
 /// <p> An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Filter {
+pub struct Filter  {
     /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
     #[doc(hidden)]
     pub formula: std::option::Option<std::string::String>,
@@ -1178,15 +1088,15 @@ pub struct Filter {
 }
 impl Filter {
     /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
-    pub fn formula(&self) -> std::option::Option<&str> {
+    pub fn formula(&self) -> std::option::Option<& str> {
         self.formula.as_deref()
     }
     /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
-    pub fn context_row_id(&self) -> std::option::Option<&str> {
+    pub fn context_row_id(&self) -> std::option::Option<& str> {
         self.context_row_id.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
+impl  std::fmt::Debug for Filter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("formula", &"*** Sensitive Data Redacted ***");
@@ -1196,7 +1106,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1211,8 +1121,7 @@ pub mod filter {
         }
         /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
         pub fn set_formula(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.formula = input;
-            self
+            self.formula = input; self
         }
         /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
         pub fn context_row_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1220,18 +1129,16 @@ pub mod filter {
             self
         }
         /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
-        pub fn set_context_row_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.context_row_id = input;
-            self
+        pub fn set_context_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.context_row_id = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                formula: self.formula,
-                context_row_id: self.context_row_id,
+                formula: self.formula
+                ,
+                context_row_id: self.context_row_id
+                ,
             }
         }
     }
@@ -1243,6 +1150,8 @@ pub mod filter {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -1254,7 +1163,7 @@ impl Filter {
 /// <p>An object representing the properties of a table in a workbook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Table {
+pub struct Table  {
     /// <p>The id of the table.</p>
     #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
@@ -1264,17 +1173,17 @@ pub struct Table {
 }
 impl Table {
     /// <p>The id of the table.</p>
-    pub fn table_id(&self) -> std::option::Option<&str> {
+    pub fn table_id(&self) -> std::option::Option<& str> {
         self.table_id.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
 /// See [`Table`](crate::model::Table).
 pub mod table {
-
+    
     /// A builder for [`Table`](crate::model::Table).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1289,8 +1198,7 @@ pub mod table {
         }
         /// <p>The id of the table.</p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input;
-            self
+            self.table_id = input; self
         }
         /// <p>The name of the table.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1299,17 +1207,20 @@ pub mod table {
         }
         /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// Consumes the builder and constructs a [`Table`](crate::model::Table).
         pub fn build(self) -> crate::model::Table {
             crate::model::Table {
-                table_id: self.table_id,
-                table_name: self.table_name,
+                table_id: self.table_id
+                ,
+                table_name: self.table_name
+                ,
             }
         }
     }
+    
+    
 }
 impl Table {
     /// Creates a new builder-style object to manufacture [`Table`](crate::model::Table).
@@ -1321,7 +1232,7 @@ impl Table {
 /// <p>An object that contains attributes about a single column in a table</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableColumn {
+pub struct TableColumn  {
     /// <p>The id of the column in the table.</p>
     #[doc(hidden)]
     pub table_column_id: std::option::Option<std::string::String>,
@@ -1334,21 +1245,21 @@ pub struct TableColumn {
 }
 impl TableColumn {
     /// <p>The id of the column in the table.</p>
-    pub fn table_column_id(&self) -> std::option::Option<&str> {
+    pub fn table_column_id(&self) -> std::option::Option<& str> {
         self.table_column_id.as_deref()
     }
     /// <p>The name of the column in the table.</p>
-    pub fn table_column_name(&self) -> std::option::Option<&str> {
+    pub fn table_column_name(&self) -> std::option::Option<& str> {
         self.table_column_name.as_deref()
     }
     /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
-    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::model::Format> {
         self.format.as_ref()
     }
 }
 /// See [`TableColumn`](crate::model::TableColumn).
 pub mod table_column {
-
+    
     /// A builder for [`TableColumn`](crate::model::TableColumn).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1363,12 +1274,8 @@ pub mod table_column {
             self
         }
         /// <p>The id of the column in the table.</p>
-        pub fn set_table_column_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.table_column_id = input;
-            self
+        pub fn set_table_column_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_column_id = input; self
         }
         /// <p>The name of the column in the table.</p>
         pub fn table_column_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1376,12 +1283,8 @@ pub mod table_column {
             self
         }
         /// <p>The name of the column in the table.</p>
-        pub fn set_table_column_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.table_column_name = input;
-            self
+        pub fn set_table_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_column_name = input; self
         }
         /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
         pub fn format(mut self, input: crate::model::Format) -> Self {
@@ -1390,18 +1293,22 @@ pub mod table_column {
         }
         /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// Consumes the builder and constructs a [`TableColumn`](crate::model::TableColumn).
         pub fn build(self) -> crate::model::TableColumn {
             crate::model::TableColumn {
-                table_column_id: self.table_column_id,
-                table_column_name: self.table_column_name,
-                format: self.format,
+                table_column_id: self.table_column_id
+                ,
+                table_column_name: self.table_column_name
+                ,
+                format: self.format
+                ,
             }
         }
     }
+    
+    
 }
 impl TableColumn {
     /// Creates a new builder-style object to manufacture [`TableColumn`](crate::model::TableColumn).
@@ -1413,18 +1320,18 @@ impl TableColumn {
 /// <p>The input variables to the app to be used by the InvokeScreenAutomation action request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VariableValue {
+pub struct VariableValue  {
     /// <p>Raw value of the variable.</p>
     #[doc(hidden)]
     pub raw_value: std::option::Option<std::string::String>,
 }
 impl VariableValue {
     /// <p>Raw value of the variable.</p>
-    pub fn raw_value(&self) -> std::option::Option<&str> {
+    pub fn raw_value(&self) -> std::option::Option<& str> {
         self.raw_value.as_deref()
     }
 }
-impl std::fmt::Debug for VariableValue {
+impl  std::fmt::Debug for VariableValue  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VariableValue");
         formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
@@ -1433,7 +1340,7 @@ impl std::fmt::Debug for VariableValue {
 }
 /// See [`VariableValue`](crate::model::VariableValue).
 pub mod variable_value {
-
+    
     /// A builder for [`VariableValue`](crate::model::VariableValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1447,13 +1354,13 @@ pub mod variable_value {
         }
         /// <p>Raw value of the variable.</p>
         pub fn set_raw_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.raw_value = input;
-            self
+            self.raw_value = input; self
         }
         /// Consumes the builder and constructs a [`VariableValue`](crate::model::VariableValue).
         pub fn build(self) -> crate::model::VariableValue {
             crate::model::VariableValue {
-                raw_value: self.raw_value,
+                raw_value: self.raw_value
+                ,
             }
         }
     }
@@ -1464,6 +1371,8 @@ pub mod variable_value {
             formatter.finish()
         }
     }
+    
+    
 }
 impl VariableValue {
     /// Creates a new builder-style object to manufacture [`VariableValue`](crate::model::VariableValue).
@@ -1475,8 +1384,8 @@ impl VariableValue {
 /// <p> ResultSet contains the results of the request for a single block or list defined on the screen. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultSet {
-    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
+pub struct ResultSet  {
+    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p> 
     /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
     #[doc(hidden)]
     pub headers: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
@@ -1485,19 +1394,19 @@ pub struct ResultSet {
     pub rows: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
 }
 impl ResultSet {
-    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
+    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p> 
     /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
-    pub fn headers(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+    pub fn headers(&self) -> std::option::Option<& [crate::model::ColumnMetadata]> {
         self.headers.as_deref()
     }
     /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
-    pub fn rows(&self) -> std::option::Option<&[crate::model::ResultRow]> {
+    pub fn rows(&self) -> std::option::Option<& [crate::model::ResultRow]> {
         self.rows.as_deref()
     }
 }
 /// See [`ResultSet`](crate::model::ResultSet).
 pub mod result_set {
-
+    
     /// A builder for [`ResultSet`](crate::model::ResultSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1509,22 +1418,18 @@ pub mod result_set {
         ///
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
-        /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
+        /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p> 
         /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
         pub fn headers(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input);
-            self.headers = Some(v);
-            self
+                            v.push(input);
+                            self.headers = Some(v);
+                            self
         }
-        /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
+        /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p> 
         /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
-        pub fn set_headers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
-        ) -> Self {
-            self.headers = input;
-            self
+        pub fn set_headers(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>) -> Self {
+            self.headers = input; self
         }
         /// Appends an item to `rows`.
         ///
@@ -1533,26 +1438,26 @@ pub mod result_set {
         /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
         pub fn rows(mut self, input: crate::model::ResultRow) -> Self {
             let mut v = self.rows.unwrap_or_default();
-            v.push(input);
-            self.rows = Some(v);
-            self
+                            v.push(input);
+                            self.rows = Some(v);
+                            self
         }
         /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
-        pub fn set_rows(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
-        ) -> Self {
-            self.rows = input;
-            self
+        pub fn set_rows(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResultRow>>) -> Self {
+            self.rows = input; self
         }
         /// Consumes the builder and constructs a [`ResultSet`](crate::model::ResultSet).
         pub fn build(self) -> crate::model::ResultSet {
             crate::model::ResultSet {
-                headers: self.headers,
-                rows: self.rows,
+                headers: self.headers
+                ,
+                rows: self.rows
+                ,
             }
         }
     }
+    
+    
 }
 impl ResultSet {
     /// Creates a new builder-style object to manufacture [`ResultSet`](crate::model::ResultSet).
@@ -1564,7 +1469,7 @@ impl ResultSet {
 /// <p>A single row in the ResultSet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultRow {
+pub struct ResultRow  {
     /// <p>The ID for a particular row.</p>
     #[doc(hidden)]
     pub row_id: std::option::Option<std::string::String>,
@@ -1574,17 +1479,17 @@ pub struct ResultRow {
 }
 impl ResultRow {
     /// <p>The ID for a particular row.</p>
-    pub fn row_id(&self) -> std::option::Option<&str> {
+    pub fn row_id(&self) -> std::option::Option<& str> {
         self.row_id.as_deref()
     }
     /// <p>List of all the data cells in a row.</p>
-    pub fn data_items(&self) -> std::option::Option<&[crate::model::DataItem]> {
+    pub fn data_items(&self) -> std::option::Option<& [crate::model::DataItem]> {
         self.data_items.as_deref()
     }
 }
 /// See [`ResultRow`](crate::model::ResultRow).
 pub mod result_row {
-
+    
     /// A builder for [`ResultRow`](crate::model::ResultRow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1599,8 +1504,7 @@ pub mod result_row {
         }
         /// <p>The ID for a particular row.</p>
         pub fn set_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.row_id = input;
-            self
+            self.row_id = input; self
         }
         /// Appends an item to `data_items`.
         ///
@@ -1609,26 +1513,26 @@ pub mod result_row {
         /// <p>List of all the data cells in a row.</p>
         pub fn data_items(mut self, input: crate::model::DataItem) -> Self {
             let mut v = self.data_items.unwrap_or_default();
-            v.push(input);
-            self.data_items = Some(v);
-            self
+                            v.push(input);
+                            self.data_items = Some(v);
+                            self
         }
         /// <p>List of all the data cells in a row.</p>
-        pub fn set_data_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataItem>>,
-        ) -> Self {
-            self.data_items = input;
-            self
+        pub fn set_data_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataItem>>) -> Self {
+            self.data_items = input; self
         }
         /// Consumes the builder and constructs a [`ResultRow`](crate::model::ResultRow).
         pub fn build(self) -> crate::model::ResultRow {
             crate::model::ResultRow {
-                row_id: self.row_id,
-                data_items: self.data_items,
+                row_id: self.row_id
+                ,
+                data_items: self.data_items
+                ,
             }
         }
     }
+    
+    
 }
 impl ResultRow {
     /// Creates a new builder-style object to manufacture [`ResultRow`](crate::model::ResultRow).
@@ -1640,7 +1544,7 @@ impl ResultRow {
 /// <p>The data in a particular data cell defined on the screen.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataItem {
+pub struct DataItem  {
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
     #[doc(hidden)]
     pub override_format: std::option::Option<crate::model::Format>,
@@ -1653,19 +1557,19 @@ pub struct DataItem {
 }
 impl DataItem {
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
-    pub fn override_format(&self) -> std::option::Option<&crate::model::Format> {
+    pub fn override_format(&self) -> std::option::Option<& crate::model::Format> {
         self.override_format.as_ref()
     }
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
-    pub fn raw_value(&self) -> std::option::Option<&str> {
+    pub fn raw_value(&self) -> std::option::Option<& str> {
         self.raw_value.as_deref()
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
-    pub fn formatted_value(&self) -> std::option::Option<&str> {
+    pub fn formatted_value(&self) -> std::option::Option<& str> {
         self.formatted_value.as_deref()
     }
 }
-impl std::fmt::Debug for DataItem {
+impl  std::fmt::Debug for DataItem  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataItem");
         formatter.field("override_format", &"*** Sensitive Data Redacted ***");
@@ -1676,7 +1580,7 @@ impl std::fmt::Debug for DataItem {
 }
 /// See [`DataItem`](crate::model::DataItem).
 pub mod data_item {
-
+    
     /// A builder for [`DataItem`](crate::model::DataItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1691,12 +1595,8 @@ pub mod data_item {
             self
         }
         /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
-        pub fn set_override_format(
-            mut self,
-            input: std::option::Option<crate::model::Format>,
-        ) -> Self {
-            self.override_format = input;
-            self
+        pub fn set_override_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
+            self.override_format = input; self
         }
         /// <p>The raw value of the data. e.g. jsmith@example.com</p>
         pub fn raw_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1705,8 +1605,7 @@ pub mod data_item {
         }
         /// <p>The raw value of the data. e.g. jsmith@example.com</p>
         pub fn set_raw_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.raw_value = input;
-            self
+            self.raw_value = input; self
         }
         /// <p>The formatted value of the data. e.g. John Smith.</p>
         pub fn formatted_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1714,19 +1613,18 @@ pub mod data_item {
             self
         }
         /// <p>The formatted value of the data. e.g. John Smith.</p>
-        pub fn set_formatted_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.formatted_value = input;
-            self
+        pub fn set_formatted_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.formatted_value = input; self
         }
         /// Consumes the builder and constructs a [`DataItem`](crate::model::DataItem).
         pub fn build(self) -> crate::model::DataItem {
             crate::model::DataItem {
-                override_format: self.override_format,
-                raw_value: self.raw_value,
-                formatted_value: self.formatted_value,
+                override_format: self.override_format
+                ,
+                raw_value: self.raw_value
+                ,
+                formatted_value: self.formatted_value
+                ,
             }
         }
     }
@@ -1739,6 +1637,8 @@ pub mod data_item {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DataItem {
     /// Creates a new builder-style object to manufacture [`DataItem`](crate::model::DataItem).
@@ -1750,7 +1650,7 @@ impl DataItem {
 /// <p>Metadata for column in the table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ColumnMetadata {
+pub struct ColumnMetadata  {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1760,15 +1660,15 @@ pub struct ColumnMetadata {
 }
 impl ColumnMetadata {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The format of the column.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::model::Format> {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for ColumnMetadata {
+impl  std::fmt::Debug for ColumnMetadata  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnMetadata");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -1778,7 +1678,7 @@ impl std::fmt::Debug for ColumnMetadata {
 }
 /// See [`ColumnMetadata`](crate::model::ColumnMetadata).
 pub mod column_metadata {
-
+    
     /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1793,8 +1693,7 @@ pub mod column_metadata {
         }
         /// <p>The name of the column.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The format of the column.</p>
         pub fn format(mut self, input: crate::model::Format) -> Self {
@@ -1803,14 +1702,15 @@ pub mod column_metadata {
         }
         /// <p>The format of the column.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// Consumes the builder and constructs a [`ColumnMetadata`](crate::model::ColumnMetadata).
         pub fn build(self) -> crate::model::ColumnMetadata {
             crate::model::ColumnMetadata {
-                name: self.name,
-                format: self.format,
+                name: self.name
+                ,
+                format: self.format
+                ,
             }
         }
     }
@@ -1822,6 +1722,8 @@ pub mod column_metadata {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ColumnMetadata {
     /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
@@ -1836,9 +1738,9 @@ impl ColumnMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -1872,22 +1774,14 @@ impl ColumnMetadata {
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -1918,7 +1812,7 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -1937,17 +1831,17 @@ impl std::convert::From<&str> for ErrorCode {
             "SYSTEM_LIMIT_ERROR" => ErrorCode::SystemLimitError,
             "TABLE_NOT_FOUND_ERROR" => ErrorCode::TableNotFoundError,
             "UNKNOWN_ERROR" => ErrorCode::UnknownError,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1966,26 +1860,13 @@ impl ErrorCode {
             ErrorCode::SystemLimitError => "SYSTEM_LIMIT_ERROR",
             ErrorCode::TableNotFoundError => "TABLE_NOT_FOUND_ERROR",
             ErrorCode::UnknownError => "UNKNOWN_ERROR",
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCESS_DENIED",
-            "FILE_EMPTY_ERROR",
-            "FILE_NOT_FOUND_ERROR",
-            "FILE_PARSING_ERROR",
-            "FILE_SIZE_LIMIT_ERROR",
-            "INVALID_FILE_TYPE_ERROR",
-            "INVALID_IMPORT_OPTIONS_ERROR",
-            "INVALID_TABLE_COLUMN_ID_ERROR",
-            "INVALID_TABLE_ID_ERROR",
-            "INVALID_URL_ERROR",
-            "RESOURCE_NOT_FOUND_ERROR",
-            "SYSTEM_LIMIT_ERROR",
-            "TABLE_NOT_FOUND_ERROR",
-            "UNKNOWN_ERROR",
+            "ACCESS_DENIED", "FILE_EMPTY_ERROR", "FILE_NOT_FOUND_ERROR", "FILE_PARSING_ERROR", "FILE_SIZE_LIMIT_ERROR", "INVALID_FILE_TYPE_ERROR", "INVALID_IMPORT_OPTIONS_ERROR", "INVALID_TABLE_COLUMN_ID_ERROR", "INVALID_TABLE_ID_ERROR", "INVALID_URL_ERROR", "RESOURCE_NOT_FOUND_ERROR", "SYSTEM_LIMIT_ERROR", "TABLE_NOT_FOUND_ERROR", "UNKNOWN_ERROR"
         ]
     }
 }
@@ -1998,7 +1879,7 @@ impl AsRef<str> for ErrorCode {
 /// <p>The metadata associated with the table data import job that was submitted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableDataImportJobMetadata {
+pub struct TableDataImportJobMetadata  {
     /// <p>Details about the submitter of the import request.</p>
     #[doc(hidden)]
     pub submitter: std::option::Option<crate::model::ImportJobSubmitter>,
@@ -2014,25 +1895,25 @@ pub struct TableDataImportJobMetadata {
 }
 impl TableDataImportJobMetadata {
     /// <p>Details about the submitter of the import request.</p>
-    pub fn submitter(&self) -> std::option::Option<&crate::model::ImportJobSubmitter> {
+    pub fn submitter(&self) -> std::option::Option<& crate::model::ImportJobSubmitter> {
         self.submitter.as_ref()
     }
     /// <p>The timestamp when the job was submitted for import.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The options that was specified at the time of submitting the import request.</p>
-    pub fn import_options(&self) -> std::option::Option<&crate::model::ImportOptions> {
+    pub fn import_options(&self) -> std::option::Option<& crate::model::ImportOptions> {
         self.import_options.as_ref()
     }
     /// <p>The source of the data that was submitted for import.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::model::ImportDataSource> {
+    pub fn data_source(&self) -> std::option::Option<& crate::model::ImportDataSource> {
         self.data_source.as_ref()
     }
 }
 /// See [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata).
 pub mod table_data_import_job_metadata {
-
+    
     /// A builder for [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2048,12 +1929,8 @@ pub mod table_data_import_job_metadata {
             self
         }
         /// <p>Details about the submitter of the import request.</p>
-        pub fn set_submitter(
-            mut self,
-            input: std::option::Option<crate::model::ImportJobSubmitter>,
-        ) -> Self {
-            self.submitter = input;
-            self
+        pub fn set_submitter(mut self, input: std::option::Option<crate::model::ImportJobSubmitter>) -> Self {
+            self.submitter = input; self
         }
         /// <p>The timestamp when the job was submitted for import.</p>
         pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2061,12 +1938,8 @@ pub mod table_data_import_job_metadata {
             self
         }
         /// <p>The timestamp when the job was submitted for import.</p>
-        pub fn set_submit_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.submit_time = input;
-            self
+        pub fn set_submit_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.submit_time = input; self
         }
         /// <p>The options that was specified at the time of submitting the import request.</p>
         pub fn import_options(mut self, input: crate::model::ImportOptions) -> Self {
@@ -2074,12 +1947,8 @@ pub mod table_data_import_job_metadata {
             self
         }
         /// <p>The options that was specified at the time of submitting the import request.</p>
-        pub fn set_import_options(
-            mut self,
-            input: std::option::Option<crate::model::ImportOptions>,
-        ) -> Self {
-            self.import_options = input;
-            self
+        pub fn set_import_options(mut self, input: std::option::Option<crate::model::ImportOptions>) -> Self {
+            self.import_options = input; self
         }
         /// <p>The source of the data that was submitted for import.</p>
         pub fn data_source(mut self, input: crate::model::ImportDataSource) -> Self {
@@ -2087,23 +1956,25 @@ pub mod table_data_import_job_metadata {
             self
         }
         /// <p>The source of the data that was submitted for import.</p>
-        pub fn set_data_source(
-            mut self,
-            input: std::option::Option<crate::model::ImportDataSource>,
-        ) -> Self {
-            self.data_source = input;
-            self
+        pub fn set_data_source(mut self, input: std::option::Option<crate::model::ImportDataSource>) -> Self {
+            self.data_source = input; self
         }
         /// Consumes the builder and constructs a [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata).
         pub fn build(self) -> crate::model::TableDataImportJobMetadata {
             crate::model::TableDataImportJobMetadata {
-                submitter: self.submitter,
-                submit_time: self.submit_time,
-                import_options: self.import_options,
-                data_source: self.data_source,
+                submitter: self.submitter
+                ,
+                submit_time: self.submit_time
+                ,
+                import_options: self.import_options
+                ,
+                data_source: self.data_source
+                ,
             }
         }
     }
+    
+    
 }
 impl TableDataImportJobMetadata {
     /// Creates a new builder-style object to manufacture [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata).
@@ -2115,7 +1986,7 @@ impl TableDataImportJobMetadata {
 /// <p>An object that contains the attributes of the submitter of the import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportJobSubmitter {
+pub struct ImportJobSubmitter  {
     /// <p>The email id of the submitter of the import job, if available.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
@@ -2125,15 +1996,15 @@ pub struct ImportJobSubmitter {
 }
 impl ImportJobSubmitter {
     /// <p>The email id of the submitter of the import job, if available.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> std::option::Option<& str> {
         self.user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ImportJobSubmitter {
+impl  std::fmt::Debug for ImportJobSubmitter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportJobSubmitter");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
@@ -2143,7 +2014,7 @@ impl std::fmt::Debug for ImportJobSubmitter {
 }
 /// See [`ImportJobSubmitter`](crate::model::ImportJobSubmitter).
 pub mod import_job_submitter {
-
+    
     /// A builder for [`ImportJobSubmitter`](crate::model::ImportJobSubmitter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2158,8 +2029,7 @@ pub mod import_job_submitter {
         }
         /// <p>The email id of the submitter of the import job, if available.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2168,14 +2038,15 @@ pub mod import_job_submitter {
         }
         /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_arn = input;
-            self
+            self.user_arn = input; self
         }
         /// Consumes the builder and constructs a [`ImportJobSubmitter`](crate::model::ImportJobSubmitter).
         pub fn build(self) -> crate::model::ImportJobSubmitter {
             crate::model::ImportJobSubmitter {
-                email: self.email,
-                user_arn: self.user_arn,
+                email: self.email
+                ,
+                user_arn: self.user_arn
+                ,
             }
         }
     }
@@ -2187,6 +2058,8 @@ pub mod import_job_submitter {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ImportJobSubmitter {
     /// Creates a new builder-style object to manufacture [`ImportJobSubmitter`](crate::model::ImportJobSubmitter).
@@ -2198,7 +2071,7 @@ impl ImportJobSubmitter {
 /// <p> A single item in a batch that failed to perform the intended action because of an error preventing it from succeeding. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedBatchItem {
+pub struct FailedBatchItem  {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2208,17 +2081,17 @@ pub struct FailedBatchItem {
 }
 impl FailedBatchItem {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The error message that indicates why the batch item failed. </p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`FailedBatchItem`](crate::model::FailedBatchItem).
 pub mod failed_batch_item {
-
+    
     /// A builder for [`FailedBatchItem`](crate::model::FailedBatchItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2233,8 +2106,7 @@ pub mod failed_batch_item {
         }
         /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p> The error message that indicates why the batch item failed. </p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2242,21 +2114,21 @@ pub mod failed_batch_item {
             self
         }
         /// <p> The error message that indicates why the batch item failed. </p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`FailedBatchItem`](crate::model::FailedBatchItem).
         pub fn build(self) -> crate::model::FailedBatchItem {
             crate::model::FailedBatchItem {
-                id: self.id,
-                error_message: self.error_message,
+                id: self.id
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl FailedBatchItem {
     /// Creates a new builder-style object to manufacture [`FailedBatchItem`](crate::model::FailedBatchItem).
@@ -2268,7 +2140,7 @@ impl FailedBatchItem {
 /// <p> An object that represents the result of a single upsert row request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpsertRowsResult {
+pub struct UpsertRowsResult  {
     /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
     #[doc(hidden)]
     pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2278,17 +2150,17 @@ pub struct UpsertRowsResult {
 }
 impl UpsertRowsResult {
     /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
-    pub fn row_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn row_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.row_ids.as_deref()
     }
     /// <p> The result of the upsert action. </p>
-    pub fn upsert_action(&self) -> std::option::Option<&crate::model::UpsertAction> {
+    pub fn upsert_action(&self) -> std::option::Option<& crate::model::UpsertAction> {
         self.upsert_action.as_ref()
     }
 }
 /// See [`UpsertRowsResult`](crate::model::UpsertRowsResult).
 pub mod upsert_rows_result {
-
+    
     /// A builder for [`UpsertRowsResult`](crate::model::UpsertRowsResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2303,17 +2175,13 @@ pub mod upsert_rows_result {
         /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
         pub fn row_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.row_ids.unwrap_or_default();
-            v.push(input.into());
-            self.row_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.row_ids = Some(v);
+                            self
         }
         /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
-        pub fn set_row_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.row_ids = input;
-            self
+        pub fn set_row_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.row_ids = input; self
         }
         /// <p> The result of the upsert action. </p>
         pub fn upsert_action(mut self, input: crate::model::UpsertAction) -> Self {
@@ -2321,21 +2189,21 @@ pub mod upsert_rows_result {
             self
         }
         /// <p> The result of the upsert action. </p>
-        pub fn set_upsert_action(
-            mut self,
-            input: std::option::Option<crate::model::UpsertAction>,
-        ) -> Self {
-            self.upsert_action = input;
-            self
+        pub fn set_upsert_action(mut self, input: std::option::Option<crate::model::UpsertAction>) -> Self {
+            self.upsert_action = input; self
         }
         /// Consumes the builder and constructs a [`UpsertRowsResult`](crate::model::UpsertRowsResult).
         pub fn build(self) -> crate::model::UpsertRowsResult {
             crate::model::UpsertRowsResult {
-                row_ids: self.row_ids,
-                upsert_action: self.upsert_action,
+                row_ids: self.row_ids
+                ,
+                upsert_action: self.upsert_action
+                ,
             }
         }
     }
+    
+    
 }
 impl UpsertRowsResult {
     /// Creates a new builder-style object to manufacture [`UpsertRowsResult`](crate::model::UpsertRowsResult).
@@ -2350,9 +2218,9 @@ impl UpsertRowsResult {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let upsertaction = unimplemented!();
 /// match upsertaction {
@@ -2374,58 +2242,52 @@ impl UpsertRowsResult {
 /// Specifically, when `upsertaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpsertAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpsertAction {
     #[allow(missing_docs)] // documentation missing in model
     Appended,
     #[allow(missing_docs)] // documentation missing in model
     Updated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpsertAction {
     fn from(s: &str) -> Self {
         match s {
             "APPENDED" => UpsertAction::Appended,
             "UPDATED" => UpsertAction::Updated,
-            other => UpsertAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UpsertAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpsertAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpsertAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpsertAction::from(s))
+                }
+            }
 impl UpsertAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpsertAction::Appended => "APPENDED",
             UpsertAction::Updated => "UPDATED",
-            UpsertAction::Unknown(value) => value.as_str(),
+            UpsertAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPENDED", "UPDATED"]
+        &[
+            "APPENDED", "UPDATED"
+        ]
     }
 }
 impl AsRef<str> for UpsertAction {
@@ -2437,49 +2299,42 @@ impl AsRef<str> for UpsertAction {
 /// <p> Data needed to upsert rows in a table as part of a single item in the BatchUpsertTableRows request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpsertRowData {
+pub struct UpsertRowData  {
     /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
     #[doc(hidden)]
     pub batch_item_id: std::option::Option<std::string::String>,
-    /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
+    /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p> 
     /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
     #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Filter>,
     /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     #[doc(hidden)]
-    pub cells_to_update: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::CellInput>,
-    >,
+    pub cells_to_update: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>,
 }
 impl UpsertRowData {
     /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-    pub fn batch_item_id(&self) -> std::option::Option<&str> {
+    pub fn batch_item_id(&self) -> std::option::Option<& str> {
         self.batch_item_id.as_deref()
     }
-    /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
+    /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p> 
     /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::Filter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::Filter> {
         self.filter.as_ref()
     }
     /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_update(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
-    {
+    pub fn cells_to_update(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::CellInput>> {
         self.cells_to_update.as_ref()
     }
 }
 /// See [`UpsertRowData`](crate::model::UpsertRowData).
 pub mod upsert_row_data {
-
+    
     /// A builder for [`UpsertRowData`](crate::model::UpsertRowData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_item_id: std::option::Option<std::string::String>,
         pub(crate) filter: std::option::Option<crate::model::Filter>,
-        pub(crate) cells_to_update: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::CellInput>,
-        >,
+        pub(crate) cells_to_update: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>,
     }
     impl Builder {
         /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
@@ -2488,59 +2343,49 @@ pub mod upsert_row_data {
             self
         }
         /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-        pub fn set_batch_item_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_item_id = input;
-            self
+        pub fn set_batch_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_item_id = input; self
         }
-        /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
+        /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p> 
         /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
         pub fn filter(mut self, input: crate::model::Filter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
+        /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p> 
         /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Filter>) -> Self {
-            self.filter = input;
-            self
+            self.filter = input; self
         }
         /// Adds a key-value pair to `cells_to_update`.
         ///
         /// To override the contents of this collection use [`set_cells_to_update`](Self::set_cells_to_update).
         ///
         /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-        pub fn cells_to_update(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::CellInput,
-        ) -> Self {
+        pub fn cells_to_update(mut self, k: impl Into<std::string::String>, v: crate::model::CellInput) -> Self {
             let mut hash_map = self.cells_to_update.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.cells_to_update = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.cells_to_update = Some(hash_map);
+                            self
         }
         /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-        pub fn set_cells_to_update(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::CellInput>,
-            >,
-        ) -> Self {
-            self.cells_to_update = input;
-            self
+        pub fn set_cells_to_update(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>) -> Self {
+            self.cells_to_update = input; self
         }
         /// Consumes the builder and constructs a [`UpsertRowData`](crate::model::UpsertRowData).
         pub fn build(self) -> crate::model::UpsertRowData {
             crate::model::UpsertRowData {
-                batch_item_id: self.batch_item_id,
-                filter: self.filter,
-                cells_to_update: self.cells_to_update,
+                batch_item_id: self.batch_item_id
+                ,
+                filter: self.filter
+                ,
+                cells_to_update: self.cells_to_update
+                ,
             }
         }
     }
+    
+    
 }
 impl UpsertRowData {
     /// Creates a new builder-style object to manufacture [`UpsertRowData`](crate::model::UpsertRowData).
@@ -2549,12 +2394,12 @@ impl UpsertRowData {
     }
 }
 
-/// <p> CellInput object contains the data needed to create or update cells in a table. </p> <note>
-/// <p> CellInput object has only a facts field or a fact field, but not both. A 400 bad request will be thrown if both fact and facts field are present. </p>
+/// <p> CellInput object contains the data needed to create or update cells in a table. </p> <note> 
+/// <p> CellInput object has only a facts field or a fact field, but not both. A 400 bad request will be thrown if both fact and facts field are present. </p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CellInput {
+pub struct CellInput  {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
     #[doc(hidden)]
     pub fact: std::option::Option<std::string::String>,
@@ -2564,15 +2409,15 @@ pub struct CellInput {
 }
 impl CellInput {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
-    pub fn fact(&self) -> std::option::Option<&str> {
+    pub fn fact(&self) -> std::option::Option<& str> {
         self.fact.as_deref()
     }
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
-    pub fn facts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn facts(&self) -> std::option::Option<& [std::string::String]> {
         self.facts.as_deref()
     }
 }
-impl std::fmt::Debug for CellInput {
+impl  std::fmt::Debug for CellInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CellInput");
         formatter.field("fact", &"*** Sensitive Data Redacted ***");
@@ -2582,7 +2427,7 @@ impl std::fmt::Debug for CellInput {
 }
 /// See [`CellInput`](crate::model::CellInput).
 pub mod cell_input {
-
+    
     /// A builder for [`CellInput`](crate::model::CellInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2597,8 +2442,7 @@ pub mod cell_input {
         }
         /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
         pub fn set_fact(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fact = input;
-            self
+            self.fact = input; self
         }
         /// Appends an item to `facts`.
         ///
@@ -2607,23 +2451,21 @@ pub mod cell_input {
         /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
         pub fn facts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.facts.unwrap_or_default();
-            v.push(input.into());
-            self.facts = Some(v);
-            self
+                            v.push(input.into());
+                            self.facts = Some(v);
+                            self
         }
         /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
-        pub fn set_facts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.facts = input;
-            self
+        pub fn set_facts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.facts = input; self
         }
         /// Consumes the builder and constructs a [`CellInput`](crate::model::CellInput).
         pub fn build(self) -> crate::model::CellInput {
             crate::model::CellInput {
-                fact: self.fact,
-                facts: self.facts,
+                fact: self.fact
+                ,
+                facts: self.facts
+                ,
             }
         }
     }
@@ -2635,6 +2477,8 @@ pub mod cell_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CellInput {
     /// Creates a new builder-style object to manufacture [`CellInput`](crate::model::CellInput).
@@ -2646,39 +2490,32 @@ impl CellInput {
 /// <p> Data needed to create a single row in a table as part of the BatchCreateTableRows request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRowData {
+pub struct UpdateRowData  {
     /// <p> The id of the row that needs to be updated. </p>
     #[doc(hidden)]
     pub row_id: std::option::Option<std::string::String>,
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     #[doc(hidden)]
-    pub cells_to_update: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::CellInput>,
-    >,
+    pub cells_to_update: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>,
 }
 impl UpdateRowData {
     /// <p> The id of the row that needs to be updated. </p>
-    pub fn row_id(&self) -> std::option::Option<&str> {
+    pub fn row_id(&self) -> std::option::Option<& str> {
         self.row_id.as_deref()
     }
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_update(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
-    {
+    pub fn cells_to_update(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::CellInput>> {
         self.cells_to_update.as_ref()
     }
 }
 /// See [`UpdateRowData`](crate::model::UpdateRowData).
 pub mod update_row_data {
-
+    
     /// A builder for [`UpdateRowData`](crate::model::UpdateRowData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) row_id: std::option::Option<std::string::String>,
-        pub(crate) cells_to_update: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::CellInput>,
-        >,
+        pub(crate) cells_to_update: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>,
     }
     impl Builder {
         /// <p> The id of the row that needs to be updated. </p>
@@ -2688,42 +2525,35 @@ pub mod update_row_data {
         }
         /// <p> The id of the row that needs to be updated. </p>
         pub fn set_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.row_id = input;
-            self
+            self.row_id = input; self
         }
         /// Adds a key-value pair to `cells_to_update`.
         ///
         /// To override the contents of this collection use [`set_cells_to_update`](Self::set_cells_to_update).
         ///
         /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-        pub fn cells_to_update(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::CellInput,
-        ) -> Self {
+        pub fn cells_to_update(mut self, k: impl Into<std::string::String>, v: crate::model::CellInput) -> Self {
             let mut hash_map = self.cells_to_update.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.cells_to_update = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.cells_to_update = Some(hash_map);
+                            self
         }
         /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-        pub fn set_cells_to_update(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::CellInput>,
-            >,
-        ) -> Self {
-            self.cells_to_update = input;
-            self
+        pub fn set_cells_to_update(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>) -> Self {
+            self.cells_to_update = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRowData`](crate::model::UpdateRowData).
         pub fn build(self) -> crate::model::UpdateRowData {
             crate::model::UpdateRowData {
-                row_id: self.row_id,
-                cells_to_update: self.cells_to_update,
+                row_id: self.row_id
+                ,
+                cells_to_update: self.cells_to_update
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRowData {
     /// Creates a new builder-style object to manufacture [`UpdateRowData`](crate::model::UpdateRowData).
@@ -2735,39 +2565,32 @@ impl UpdateRowData {
 /// <p> Data needed to create a single row in a table as part of the BatchCreateTableRows request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRowData {
+pub struct CreateRowData  {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
     #[doc(hidden)]
     pub batch_item_id: std::option::Option<std::string::String>,
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     #[doc(hidden)]
-    pub cells_to_create: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::CellInput>,
-    >,
+    pub cells_to_create: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>,
 }
 impl CreateRowData {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-    pub fn batch_item_id(&self) -> std::option::Option<&str> {
+    pub fn batch_item_id(&self) -> std::option::Option<& str> {
         self.batch_item_id.as_deref()
     }
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_create(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
-    {
+    pub fn cells_to_create(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::CellInput>> {
         self.cells_to_create.as_ref()
     }
 }
 /// See [`CreateRowData`](crate::model::CreateRowData).
 pub mod create_row_data {
-
+    
     /// A builder for [`CreateRowData`](crate::model::CreateRowData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_item_id: std::option::Option<std::string::String>,
-        pub(crate) cells_to_create: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::CellInput>,
-        >,
+        pub(crate) cells_to_create: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>,
     }
     impl Builder {
         /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
@@ -2776,46 +2599,36 @@ pub mod create_row_data {
             self
         }
         /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-        pub fn set_batch_item_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_item_id = input;
-            self
+        pub fn set_batch_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_item_id = input; self
         }
         /// Adds a key-value pair to `cells_to_create`.
         ///
         /// To override the contents of this collection use [`set_cells_to_create`](Self::set_cells_to_create).
         ///
         /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-        pub fn cells_to_create(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::CellInput,
-        ) -> Self {
+        pub fn cells_to_create(mut self, k: impl Into<std::string::String>, v: crate::model::CellInput) -> Self {
             let mut hash_map = self.cells_to_create.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.cells_to_create = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.cells_to_create = Some(hash_map);
+                            self
         }
         /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-        pub fn set_cells_to_create(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::CellInput>,
-            >,
-        ) -> Self {
-            self.cells_to_create = input;
-            self
+        pub fn set_cells_to_create(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CellInput>>) -> Self {
+            self.cells_to_create = input; self
         }
         /// Consumes the builder and constructs a [`CreateRowData`](crate::model::CreateRowData).
         pub fn build(self) -> crate::model::CreateRowData {
             crate::model::CreateRowData {
-                batch_item_id: self.batch_item_id,
-                cells_to_create: self.cells_to_create,
+                batch_item_id: self.batch_item_id
+                ,
+                cells_to_create: self.cells_to_create
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRowData {
     /// Creates a new builder-style object to manufacture [`CreateRowData`](crate::model::CreateRowData).
@@ -2823,3 +2636,4 @@ impl CreateRowData {
         crate::model::create_row_data::Builder::default()
     }
 }
+

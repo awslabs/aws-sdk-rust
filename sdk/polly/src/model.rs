@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let voiceid = unimplemented!();
 /// match voiceid {
@@ -107,22 +107,14 @@
 /// Specifically, when `voiceid` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VoiceId::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Aditi,
@@ -283,7 +275,7 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Zhiyu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VoiceId {
     fn from(s: &str) -> Self {
@@ -367,17 +359,17 @@ impl std::convert::From<&str> for VoiceId {
             "Vitoria" => VoiceId::Vitoria,
             "Zeina" => VoiceId::Zeina,
             "Zhiyu" => VoiceId::Zhiyu,
-            other => VoiceId::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VoiceId::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VoiceId {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VoiceId::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VoiceId::from(s))
+                }
+            }
 impl VoiceId {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -461,91 +453,13 @@ impl VoiceId {
             VoiceId::Vitoria => "Vitoria",
             VoiceId::Zeina => "Zeina",
             VoiceId::Zhiyu => "Zhiyu",
-            VoiceId::Unknown(value) => value.as_str(),
+            VoiceId::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Aditi",
-            "Amy",
-            "Aria",
-            "Arlet",
-            "Arthur",
-            "Astrid",
-            "Ayanda",
-            "Bianca",
-            "Brian",
-            "Camila",
-            "Carla",
-            "Carmen",
-            "Celine",
-            "Chantal",
-            "Conchita",
-            "Cristiano",
-            "Daniel",
-            "Dora",
-            "Elin",
-            "Emma",
-            "Enrique",
-            "Ewa",
-            "Filiz",
-            "Gabrielle",
-            "Geraint",
-            "Giorgio",
-            "Gwyneth",
-            "Hala",
-            "Hannah",
-            "Hans",
-            "Hiujin",
-            "Ida",
-            "Ines",
-            "Ivy",
-            "Jacek",
-            "Jan",
-            "Joanna",
-            "Joey",
-            "Justin",
-            "Kajal",
-            "Karl",
-            "Kendra",
-            "Kevin",
-            "Kimberly",
-            "Laura",
-            "Lea",
-            "Liam",
-            "Liv",
-            "Lotte",
-            "Lucia",
-            "Lupe",
-            "Mads",
-            "Maja",
-            "Marlene",
-            "Mathieu",
-            "Matthew",
-            "Maxim",
-            "Mia",
-            "Miguel",
-            "Mizuki",
-            "Naja",
-            "Nicole",
-            "Ola",
-            "Olivia",
-            "Pedro",
-            "Penelope",
-            "Raveena",
-            "Ricardo",
-            "Ruben",
-            "Russell",
-            "Salli",
-            "Seoyeon",
-            "Suvi",
-            "Takumi",
-            "Tatyana",
-            "Vicki",
-            "Vitoria",
-            "Zeina",
-            "Zhiyu",
+            "Aditi", "Amy", "Aria", "Arlet", "Arthur", "Astrid", "Ayanda", "Bianca", "Brian", "Camila", "Carla", "Carmen", "Celine", "Chantal", "Conchita", "Cristiano", "Daniel", "Dora", "Elin", "Emma", "Enrique", "Ewa", "Filiz", "Gabrielle", "Geraint", "Giorgio", "Gwyneth", "Hala", "Hannah", "Hans", "Hiujin", "Ida", "Ines", "Ivy", "Jacek", "Jan", "Joanna", "Joey", "Justin", "Kajal", "Karl", "Kendra", "Kevin", "Kimberly", "Laura", "Lea", "Liam", "Liv", "Lotte", "Lucia", "Lupe", "Mads", "Maja", "Marlene", "Mathieu", "Matthew", "Maxim", "Mia", "Miguel", "Mizuki", "Naja", "Nicole", "Ola", "Olivia", "Pedro", "Penelope", "Raveena", "Ricardo", "Ruben", "Russell", "Salli", "Seoyeon", "Suvi", "Takumi", "Tatyana", "Vicki", "Vitoria", "Zeina", "Zhiyu"
         ]
     }
 }
@@ -561,9 +475,9 @@ impl AsRef<str> for VoiceId {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let texttype = unimplemented!();
 /// match texttype {
@@ -585,58 +499,52 @@ impl AsRef<str> for VoiceId {
 /// Specifically, when `texttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TextType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TextType {
     #[allow(missing_docs)] // documentation missing in model
     Ssml,
     #[allow(missing_docs)] // documentation missing in model
     Text,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TextType {
     fn from(s: &str) -> Self {
         match s {
             "ssml" => TextType::Ssml,
             "text" => TextType::Text,
-            other => TextType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TextType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TextType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TextType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TextType::from(s))
+                }
+            }
 impl TextType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TextType::Ssml => "ssml",
             TextType::Text => "text",
-            TextType::Unknown(value) => value.as_str(),
+            TextType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ssml", "text"]
+        &[
+            "ssml", "text"
+        ]
     }
 }
 impl AsRef<str> for TextType {
@@ -651,9 +559,9 @@ impl AsRef<str> for TextType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let speechmarktype = unimplemented!();
 /// match speechmarktype {
@@ -677,22 +585,14 @@ impl AsRef<str> for TextType {
 /// Specifically, when `speechmarktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SpeechMarkType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SpeechMarkType {
     #[allow(missing_docs)] // documentation missing in model
     Sentence,
@@ -703,7 +603,7 @@ pub enum SpeechMarkType {
     #[allow(missing_docs)] // documentation missing in model
     Word,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SpeechMarkType {
     fn from(s: &str) -> Self {
@@ -712,17 +612,17 @@ impl std::convert::From<&str> for SpeechMarkType {
             "ssml" => SpeechMarkType::Ssml,
             "viseme" => SpeechMarkType::Viseme,
             "word" => SpeechMarkType::Word,
-            other => SpeechMarkType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SpeechMarkType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SpeechMarkType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpeechMarkType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SpeechMarkType::from(s))
+                }
+            }
 impl SpeechMarkType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -731,12 +631,14 @@ impl SpeechMarkType {
             SpeechMarkType::Ssml => "ssml",
             SpeechMarkType::Viseme => "viseme",
             SpeechMarkType::Word => "word",
-            SpeechMarkType::Unknown(value) => value.as_str(),
+            SpeechMarkType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["sentence", "ssml", "viseme", "word"]
+        &[
+            "sentence", "ssml", "viseme", "word"
+        ]
     }
 }
 impl AsRef<str> for SpeechMarkType {
@@ -751,9 +653,9 @@ impl AsRef<str> for SpeechMarkType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let outputformat = unimplemented!();
 /// match outputformat {
@@ -777,22 +679,14 @@ impl AsRef<str> for SpeechMarkType {
 /// Specifically, when `outputformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OutputFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Json,
@@ -803,7 +697,7 @@ pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Pcm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OutputFormat {
     fn from(s: &str) -> Self {
@@ -812,17 +706,17 @@ impl std::convert::From<&str> for OutputFormat {
             "mp3" => OutputFormat::Mp3,
             "ogg_vorbis" => OutputFormat::OggVorbis,
             "pcm" => OutputFormat::Pcm,
-            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OutputFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OutputFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OutputFormat::from(s))
+                }
+            }
 impl OutputFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -831,12 +725,14 @@ impl OutputFormat {
             OutputFormat::Mp3 => "mp3",
             OutputFormat::OggVorbis => "ogg_vorbis",
             OutputFormat::Pcm => "pcm",
-            OutputFormat::Unknown(value) => value.as_str(),
+            OutputFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["json", "mp3", "ogg_vorbis", "pcm"]
+        &[
+            "json", "mp3", "ogg_vorbis", "pcm"
+        ]
     }
 }
 impl AsRef<str> for OutputFormat {
@@ -851,9 +747,9 @@ impl AsRef<str> for OutputFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let languagecode = unimplemented!();
 /// match languagecode {
@@ -909,22 +805,14 @@ impl AsRef<str> for OutputFormat {
 /// Specifically, when `languagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LanguageCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ArAe,
@@ -999,7 +887,7 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     YueCn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LanguageCode {
     fn from(s: &str) -> Self {
@@ -1040,17 +928,17 @@ impl std::convert::From<&str> for LanguageCode {
             "sv-SE" => LanguageCode::SvSe,
             "tr-TR" => LanguageCode::TrTr,
             "yue-CN" => LanguageCode::YueCn,
-            other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LanguageCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LanguageCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LanguageCode::from(s))
+                }
+            }
 impl LanguageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1091,48 +979,13 @@ impl LanguageCode {
             LanguageCode::SvSe => "sv-SE",
             LanguageCode::TrTr => "tr-TR",
             LanguageCode::YueCn => "yue-CN",
-            LanguageCode::Unknown(value) => value.as_str(),
+            LanguageCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ar-AE",
-            "arb",
-            "ca-ES",
-            "cmn-CN",
-            "cy-GB",
-            "da-DK",
-            "de-AT",
-            "de-DE",
-            "en-AU",
-            "en-GB",
-            "en-GB-WLS",
-            "en-IN",
-            "en-NZ",
-            "en-US",
-            "en-ZA",
-            "es-ES",
-            "es-MX",
-            "es-US",
-            "fi-FI",
-            "fr-CA",
-            "fr-FR",
-            "hi-IN",
-            "is-IS",
-            "it-IT",
-            "ja-JP",
-            "ko-KR",
-            "nb-NO",
-            "nl-NL",
-            "pl-PL",
-            "pt-BR",
-            "pt-PT",
-            "ro-RO",
-            "ru-RU",
-            "sv-SE",
-            "tr-TR",
-            "yue-CN",
+            "ar-AE", "arb", "ca-ES", "cmn-CN", "cy-GB", "da-DK", "de-AT", "de-DE", "en-AU", "en-GB", "en-GB-WLS", "en-IN", "en-NZ", "en-US", "en-ZA", "es-ES", "es-MX", "es-US", "fi-FI", "fr-CA", "fr-FR", "hi-IN", "is-IS", "it-IT", "ja-JP", "ko-KR", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sv-SE", "tr-TR", "yue-CN"
         ]
     }
 }
@@ -1148,9 +1001,9 @@ impl AsRef<str> for LanguageCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let engine = unimplemented!();
 /// match engine {
@@ -1172,58 +1025,52 @@ impl AsRef<str> for LanguageCode {
 /// Specifically, when `engine` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Engine::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Engine {
     #[allow(missing_docs)] // documentation missing in model
     Neural,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Engine {
     fn from(s: &str) -> Self {
         match s {
             "neural" => Engine::Neural,
             "standard" => Engine::Standard,
-            other => Engine::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Engine::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Engine {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Engine::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Engine::from(s))
+                }
+            }
 impl Engine {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Engine::Neural => "neural",
             Engine::Standard => "standard",
-            Engine::Unknown(value) => value.as_str(),
+            Engine::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["neural", "standard"]
+        &[
+            "neural", "standard"
+        ]
     }
 }
 impl AsRef<str> for Engine {
@@ -1235,7 +1082,7 @@ impl AsRef<str> for Engine {
 /// <p>SynthesisTask object that provides information about a speech synthesis task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SynthesisTask {
+pub struct SynthesisTask  {
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<crate::model::Engine>,
@@ -1266,8 +1113,8 @@ pub struct SynthesisTask {
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     #[doc(hidden)]
     pub output_format: std::option::Option<crate::model::OutputFormat>,
-    /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The audio frequency specified in Hz.</p> 
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> 
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     #[doc(hidden)]
     pub sample_rate: std::option::Option<std::string::String>,
@@ -1280,34 +1127,34 @@ pub struct SynthesisTask {
     /// <p>Voice ID to use for the synthesis. </p>
     #[doc(hidden)]
     pub voice_id: std::option::Option<crate::model::VoiceId>,
-    /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+    /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> 
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl SynthesisTask {
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
-    pub fn engine(&self) -> std::option::Option<&crate::model::Engine> {
+    pub fn engine(&self) -> std::option::Option<& crate::model::Engine> {
         self.engine.as_ref()
     }
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>Current status of the individual speech synthesis task.</p>
-    pub fn task_status(&self) -> std::option::Option<&crate::model::TaskStatus> {
+    pub fn task_status(&self) -> std::option::Option<& crate::model::TaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
-    pub fn task_status_reason(&self) -> std::option::Option<&str> {
+    pub fn task_status_reason(&self) -> std::option::Option<& str> {
         self.task_status_reason.as_deref()
     }
     /// <p>Pathway for the output speech file.</p>
-    pub fn output_uri(&self) -> std::option::Option<&str> {
+    pub fn output_uri(&self) -> std::option::Option<& str> {
         self.output_uri.as_deref()
     }
     /// <p>Timestamp for the time the synthesis task was started.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Number of billable characters synthesized.</p>
@@ -1315,44 +1162,44 @@ impl SynthesisTask {
         self.request_characters
     }
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn lexicon_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn lexicon_names(&self) -> std::option::Option<& [std::string::String]> {
         self.lexicon_names.as_deref()
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-    pub fn output_format(&self) -> std::option::Option<&crate::model::OutputFormat> {
+    pub fn output_format(&self) -> std::option::Option<& crate::model::OutputFormat> {
         self.output_format.as_ref()
     }
-    /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The audio frequency specified in Hz.</p> 
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> 
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
-    pub fn sample_rate(&self) -> std::option::Option<&str> {
+    pub fn sample_rate(&self) -> std::option::Option<& str> {
         self.sample_rate.as_deref()
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn speech_mark_types(&self) -> std::option::Option<&[crate::model::SpeechMarkType]> {
+    pub fn speech_mark_types(&self) -> std::option::Option<& [crate::model::SpeechMarkType]> {
         self.speech_mark_types.as_deref()
     }
     /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
-    pub fn text_type(&self) -> std::option::Option<&crate::model::TextType> {
+    pub fn text_type(&self) -> std::option::Option<& crate::model::TextType> {
         self.text_type.as_ref()
     }
     /// <p>Voice ID to use for the synthesis. </p>
-    pub fn voice_id(&self) -> std::option::Option<&crate::model::VoiceId> {
+    pub fn voice_id(&self) -> std::option::Option<& crate::model::VoiceId> {
         self.voice_id.as_ref()
     }
-    /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+    /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> 
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
 }
 /// See [`SynthesisTask`](crate::model::SynthesisTask).
 pub mod synthesis_task {
-
+    
     /// A builder for [`SynthesisTask`](crate::model::SynthesisTask).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1367,8 +1214,7 @@ pub mod synthesis_task {
         pub(crate) lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) output_format: std::option::Option<crate::model::OutputFormat>,
         pub(crate) sample_rate: std::option::Option<std::string::String>,
-        pub(crate) speech_mark_types:
-            std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
+        pub(crate) speech_mark_types: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
         pub(crate) text_type: std::option::Option<crate::model::TextType>,
         pub(crate) voice_id: std::option::Option<crate::model::VoiceId>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -1381,8 +1227,7 @@ pub mod synthesis_task {
         }
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
         pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1391,8 +1236,7 @@ pub mod synthesis_task {
         }
         /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input;
-            self
+            self.task_id = input; self
         }
         /// <p>Current status of the individual speech synthesis task.</p>
         pub fn task_status(mut self, input: crate::model::TaskStatus) -> Self {
@@ -1400,12 +1244,8 @@ pub mod synthesis_task {
             self
         }
         /// <p>Current status of the individual speech synthesis task.</p>
-        pub fn set_task_status(
-            mut self,
-            input: std::option::Option<crate::model::TaskStatus>,
-        ) -> Self {
-            self.task_status = input;
-            self
+        pub fn set_task_status(mut self, input: std::option::Option<crate::model::TaskStatus>) -> Self {
+            self.task_status = input; self
         }
         /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
         pub fn task_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1413,12 +1253,8 @@ pub mod synthesis_task {
             self
         }
         /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
-        pub fn set_task_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_status_reason = input;
-            self
+        pub fn set_task_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_status_reason = input; self
         }
         /// <p>Pathway for the output speech file.</p>
         pub fn output_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1427,8 +1263,7 @@ pub mod synthesis_task {
         }
         /// <p>Pathway for the output speech file.</p>
         pub fn set_output_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output_uri = input;
-            self
+            self.output_uri = input; self
         }
         /// <p>Timestamp for the time the synthesis task was started.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1436,12 +1271,8 @@ pub mod synthesis_task {
             self
         }
         /// <p>Timestamp for the time the synthesis task was started.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>Number of billable characters synthesized.</p>
         pub fn request_characters(mut self, input: i32) -> Self {
@@ -1450,8 +1281,7 @@ pub mod synthesis_task {
         }
         /// <p>Number of billable characters synthesized.</p>
         pub fn set_request_characters(mut self, input: std::option::Option<i32>) -> Self {
-            self.request_characters = input;
-            self
+            self.request_characters = input; self
         }
         /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1459,12 +1289,8 @@ pub mod synthesis_task {
             self
         }
         /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// Appends an item to `lexicon_names`.
         ///
@@ -1473,17 +1299,13 @@ pub mod synthesis_task {
         /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
         pub fn lexicon_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lexicon_names.unwrap_or_default();
-            v.push(input.into());
-            self.lexicon_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.lexicon_names = Some(v);
+                            self
         }
         /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-        pub fn set_lexicon_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.lexicon_names = input;
-            self
+        pub fn set_lexicon_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.lexicon_names = input; self
         }
         /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
         pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
@@ -1491,26 +1313,21 @@ pub mod synthesis_task {
             self
         }
         /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-        pub fn set_output_format(
-            mut self,
-            input: std::option::Option<crate::model::OutputFormat>,
-        ) -> Self {
-            self.output_format = input;
-            self
+        pub fn set_output_format(mut self, input: std::option::Option<crate::model::OutputFormat>) -> Self {
+            self.output_format = input; self
         }
-        /// <p>The audio frequency specified in Hz.</p>
-        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+        /// <p>The audio frequency specified in Hz.</p> 
+        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> 
         /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
         pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
             self.sample_rate = Some(input.into());
             self
         }
-        /// <p>The audio frequency specified in Hz.</p>
-        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+        /// <p>The audio frequency specified in Hz.</p> 
+        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> 
         /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
         pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sample_rate = input;
-            self
+            self.sample_rate = input; self
         }
         /// Appends an item to `speech_mark_types`.
         ///
@@ -1519,17 +1336,13 @@ pub mod synthesis_task {
         /// <p>The type of speech marks returned for the input text.</p>
         pub fn speech_mark_types(mut self, input: crate::model::SpeechMarkType) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
-            v.push(input);
-            self.speech_mark_types = Some(v);
-            self
+                            v.push(input);
+                            self.speech_mark_types = Some(v);
+                            self
         }
         /// <p>The type of speech marks returned for the input text.</p>
-        pub fn set_speech_mark_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
-        ) -> Self {
-            self.speech_mark_types = input;
-            self
+        pub fn set_speech_mark_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>) -> Self {
+            self.speech_mark_types = input; self
         }
         /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
         pub fn text_type(mut self, input: crate::model::TextType) -> Self {
@@ -1538,8 +1351,7 @@ pub mod synthesis_task {
         }
         /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
         pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
-            self.text_type = input;
-            self
+            self.text_type = input; self
         }
         /// <p>Voice ID to use for the synthesis. </p>
         pub fn voice_id(mut self, input: crate::model::VoiceId) -> Self {
@@ -1548,45 +1360,58 @@ pub mod synthesis_task {
         }
         /// <p>Voice ID to use for the synthesis. </p>
         pub fn set_voice_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
-            self.voice_id = input;
-            self
+            self.voice_id = input; self
         }
-        /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+        /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> 
         /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+        /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> 
         /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<crate::model::LanguageCode>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
+            self.language_code = input; self
         }
         /// Consumes the builder and constructs a [`SynthesisTask`](crate::model::SynthesisTask).
         pub fn build(self) -> crate::model::SynthesisTask {
             crate::model::SynthesisTask {
-                engine: self.engine,
-                task_id: self.task_id,
-                task_status: self.task_status,
-                task_status_reason: self.task_status_reason,
-                output_uri: self.output_uri,
-                creation_time: self.creation_time,
-                request_characters: self.request_characters.unwrap_or_default(),
-                sns_topic_arn: self.sns_topic_arn,
-                lexicon_names: self.lexicon_names,
-                output_format: self.output_format,
-                sample_rate: self.sample_rate,
-                speech_mark_types: self.speech_mark_types,
-                text_type: self.text_type,
-                voice_id: self.voice_id,
-                language_code: self.language_code,
+                engine: self.engine
+                ,
+                task_id: self.task_id
+                ,
+                task_status: self.task_status
+                ,
+                task_status_reason: self.task_status_reason
+                ,
+                output_uri: self.output_uri
+                ,
+                creation_time: self.creation_time
+                ,
+                request_characters: self.request_characters
+                    .unwrap_or_default()
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                lexicon_names: self.lexicon_names
+                ,
+                output_format: self.output_format
+                ,
+                sample_rate: self.sample_rate
+                ,
+                speech_mark_types: self.speech_mark_types
+                ,
+                text_type: self.text_type
+                ,
+                voice_id: self.voice_id
+                ,
+                language_code: self.language_code
+                ,
             }
         }
     }
+    
+    
 }
 impl SynthesisTask {
     /// Creates a new builder-style object to manufacture [`SynthesisTask`](crate::model::SynthesisTask).
@@ -1601,9 +1426,9 @@ impl SynthesisTask {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let taskstatus = unimplemented!();
 /// match taskstatus {
@@ -1627,22 +1452,14 @@ impl SynthesisTask {
 /// Specifically, when `taskstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TaskStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -1653,7 +1470,7 @@ pub enum TaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaskStatus {
     fn from(s: &str) -> Self {
@@ -1662,17 +1479,17 @@ impl std::convert::From<&str> for TaskStatus {
             "failed" => TaskStatus::Failed,
             "inProgress" => TaskStatus::InProgress,
             "scheduled" => TaskStatus::Scheduled,
-            other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TaskStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TaskStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TaskStatus::from(s))
+                }
+            }
 impl TaskStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1681,12 +1498,14 @@ impl TaskStatus {
             TaskStatus::Failed => "failed",
             TaskStatus::InProgress => "inProgress",
             TaskStatus::Scheduled => "scheduled",
-            TaskStatus::Unknown(value) => value.as_str(),
+            TaskStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["completed", "failed", "inProgress", "scheduled"]
+        &[
+            "completed", "failed", "inProgress", "scheduled"
+        ]
     }
 }
 impl AsRef<str> for TaskStatus {
@@ -1698,7 +1517,7 @@ impl AsRef<str> for TaskStatus {
 /// <p>Describes the content of the lexicon.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexiconDescription {
+pub struct LexiconDescription  {
     /// <p>Name of the lexicon.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1708,17 +1527,17 @@ pub struct LexiconDescription {
 }
 impl LexiconDescription {
     /// <p>Name of the lexicon.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Provides lexicon metadata.</p>
-    pub fn attributes(&self) -> std::option::Option<&crate::model::LexiconAttributes> {
+    pub fn attributes(&self) -> std::option::Option<& crate::model::LexiconAttributes> {
         self.attributes.as_ref()
     }
 }
 /// See [`LexiconDescription`](crate::model::LexiconDescription).
 pub mod lexicon_description {
-
+    
     /// A builder for [`LexiconDescription`](crate::model::LexiconDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1733,8 +1552,7 @@ pub mod lexicon_description {
         }
         /// <p>Name of the lexicon.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Provides lexicon metadata.</p>
         pub fn attributes(mut self, input: crate::model::LexiconAttributes) -> Self {
@@ -1742,21 +1560,21 @@ pub mod lexicon_description {
             self
         }
         /// <p>Provides lexicon metadata.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<crate::model::LexiconAttributes>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<crate::model::LexiconAttributes>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`LexiconDescription`](crate::model::LexiconDescription).
         pub fn build(self) -> crate::model::LexiconDescription {
             crate::model::LexiconDescription {
-                name: self.name,
-                attributes: self.attributes,
+                name: self.name
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl LexiconDescription {
     /// Creates a new builder-style object to manufacture [`LexiconDescription`](crate::model::LexiconDescription).
@@ -1768,7 +1586,7 @@ impl LexiconDescription {
 /// <p>Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexiconAttributes {
+pub struct LexiconAttributes  {
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
     #[doc(hidden)]
     pub alphabet: std::option::Option<std::string::String>,
@@ -1790,19 +1608,19 @@ pub struct LexiconAttributes {
 }
 impl LexiconAttributes {
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
-    pub fn alphabet(&self) -> std::option::Option<&str> {
+    pub fn alphabet(&self) -> std::option::Option<& str> {
         self.alphabet.as_deref()
     }
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Date lexicon was last modified (a timestamp value).</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
-    pub fn lexicon_arn(&self) -> std::option::Option<&str> {
+    pub fn lexicon_arn(&self) -> std::option::Option<& str> {
         self.lexicon_arn.as_deref()
     }
     /// <p>Number of lexemes in the lexicon.</p>
@@ -1816,7 +1634,7 @@ impl LexiconAttributes {
 }
 /// See [`LexiconAttributes`](crate::model::LexiconAttributes).
 pub mod lexicon_attributes {
-
+    
     /// A builder for [`LexiconAttributes`](crate::model::LexiconAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1835,8 +1653,7 @@ pub mod lexicon_attributes {
         }
         /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
         pub fn set_alphabet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alphabet = input;
-            self
+            self.alphabet = input; self
         }
         /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
@@ -1844,12 +1661,8 @@ pub mod lexicon_attributes {
             self
         }
         /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<crate::model::LanguageCode>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
+            self.language_code = input; self
         }
         /// <p>Date lexicon was last modified (a timestamp value).</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1857,12 +1670,8 @@ pub mod lexicon_attributes {
             self
         }
         /// <p>Date lexicon was last modified (a timestamp value).</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
         pub fn lexicon_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1871,8 +1680,7 @@ pub mod lexicon_attributes {
         }
         /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
         pub fn set_lexicon_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lexicon_arn = input;
-            self
+            self.lexicon_arn = input; self
         }
         /// <p>Number of lexemes in the lexicon.</p>
         pub fn lexemes_count(mut self, input: i32) -> Self {
@@ -1881,8 +1689,7 @@ pub mod lexicon_attributes {
         }
         /// <p>Number of lexemes in the lexicon.</p>
         pub fn set_lexemes_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.lexemes_count = input;
-            self
+            self.lexemes_count = input; self
         }
         /// <p>Total size of the lexicon, in characters.</p>
         pub fn size(mut self, input: i32) -> Self {
@@ -1891,21 +1698,30 @@ pub mod lexicon_attributes {
         }
         /// <p>Total size of the lexicon, in characters.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// Consumes the builder and constructs a [`LexiconAttributes`](crate::model::LexiconAttributes).
         pub fn build(self) -> crate::model::LexiconAttributes {
             crate::model::LexiconAttributes {
-                alphabet: self.alphabet,
-                language_code: self.language_code,
-                last_modified: self.last_modified,
-                lexicon_arn: self.lexicon_arn,
-                lexemes_count: self.lexemes_count.unwrap_or_default(),
-                size: self.size.unwrap_or_default(),
+                alphabet: self.alphabet
+                ,
+                language_code: self.language_code
+                ,
+                last_modified: self.last_modified
+                ,
+                lexicon_arn: self.lexicon_arn
+                ,
+                lexemes_count: self.lexemes_count
+                    .unwrap_or_default()
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LexiconAttributes {
     /// Creates a new builder-style object to manufacture [`LexiconAttributes`](crate::model::LexiconAttributes).
@@ -1917,7 +1733,7 @@ impl LexiconAttributes {
 /// <p>Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Lexicon {
+pub struct Lexicon  {
     /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
@@ -1927,15 +1743,15 @@ pub struct Lexicon {
 }
 impl Lexicon {
     /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>Name of the lexicon.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for Lexicon {
+impl  std::fmt::Debug for Lexicon  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Lexicon");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -1945,7 +1761,7 @@ impl std::fmt::Debug for Lexicon {
 }
 /// See [`Lexicon`](crate::model::Lexicon).
 pub mod lexicon {
-
+    
     /// A builder for [`Lexicon`](crate::model::Lexicon).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1960,8 +1776,7 @@ pub mod lexicon {
         }
         /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>Name of the lexicon.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1970,14 +1785,15 @@ pub mod lexicon {
         }
         /// <p>Name of the lexicon.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`Lexicon`](crate::model::Lexicon).
         pub fn build(self) -> crate::model::Lexicon {
             crate::model::Lexicon {
-                content: self.content,
-                name: self.name,
+                content: self.content
+                ,
+                name: self.name
+                ,
             }
         }
     }
@@ -1989,6 +1805,8 @@ pub mod lexicon {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Lexicon {
     /// Creates a new builder-style object to manufacture [`Lexicon`](crate::model::Lexicon).
@@ -2000,7 +1818,7 @@ impl Lexicon {
 /// <p>Description of the voice.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Voice {
+pub struct Voice  {
     /// <p>Gender of the voice.</p>
     #[doc(hidden)]
     pub gender: std::option::Option<crate::model::Gender>,
@@ -2016,7 +1834,7 @@ pub struct Voice {
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p> 
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     #[doc(hidden)]
     pub additional_language_codes: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
@@ -2026,38 +1844,38 @@ pub struct Voice {
 }
 impl Voice {
     /// <p>Gender of the voice.</p>
-    pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
+    pub fn gender(&self) -> std::option::Option<& crate::model::Gender> {
         self.gender.as_ref()
     }
     /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
-    pub fn id(&self) -> std::option::Option<&crate::model::VoiceId> {
+    pub fn id(&self) -> std::option::Option<& crate::model::VoiceId> {
         self.id.as_ref()
     }
     /// <p>Language code of the voice.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Human readable name of the language in English.</p>
-    pub fn language_name(&self) -> std::option::Option<&str> {
+    pub fn language_name(&self) -> std::option::Option<& str> {
         self.language_name.as_deref()
     }
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p> 
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
-    pub fn additional_language_codes(&self) -> std::option::Option<&[crate::model::LanguageCode]> {
+    pub fn additional_language_codes(&self) -> std::option::Option<& [crate::model::LanguageCode]> {
         self.additional_language_codes.as_deref()
     }
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
-    pub fn supported_engines(&self) -> std::option::Option<&[crate::model::Engine]> {
+    pub fn supported_engines(&self) -> std::option::Option<& [crate::model::Engine]> {
         self.supported_engines.as_deref()
     }
 }
 /// See [`Voice`](crate::model::Voice).
 pub mod voice {
-
+    
     /// A builder for [`Voice`](crate::model::Voice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2066,8 +1884,7 @@ pub mod voice {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) language_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) additional_language_codes:
-            std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
+        pub(crate) additional_language_codes: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
         pub(crate) supported_engines: std::option::Option<std::vec::Vec<crate::model::Engine>>,
     }
     impl Builder {
@@ -2078,8 +1895,7 @@ pub mod voice {
         }
         /// <p>Gender of the voice.</p>
         pub fn set_gender(mut self, input: std::option::Option<crate::model::Gender>) -> Self {
-            self.gender = input;
-            self
+            self.gender = input; self
         }
         /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
         pub fn id(mut self, input: crate::model::VoiceId) -> Self {
@@ -2088,8 +1904,7 @@ pub mod voice {
         }
         /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
         pub fn set_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Language code of the voice.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
@@ -2097,12 +1912,8 @@ pub mod voice {
             self
         }
         /// <p>Language code of the voice.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<crate::model::LanguageCode>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
+            self.language_code = input; self
         }
         /// <p>Human readable name of the language in English.</p>
         pub fn language_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2110,12 +1921,8 @@ pub mod voice {
             self
         }
         /// <p>Human readable name of the language in English.</p>
-        pub fn set_language_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.language_name = input;
-            self
+        pub fn set_language_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language_name = input; self
         }
         /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2124,29 +1931,24 @@ pub mod voice {
         }
         /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `additional_language_codes`.
         ///
         /// To override the contents of this collection use [`set_additional_language_codes`](Self::set_additional_language_codes).
         ///
-        /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+        /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p> 
         /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
         pub fn additional_language_codes(mut self, input: crate::model::LanguageCode) -> Self {
             let mut v = self.additional_language_codes.unwrap_or_default();
-            v.push(input);
-            self.additional_language_codes = Some(v);
-            self
+                            v.push(input);
+                            self.additional_language_codes = Some(v);
+                            self
         }
-        /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+        /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p> 
         /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
-        pub fn set_additional_language_codes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
-        ) -> Self {
-            self.additional_language_codes = input;
-            self
+        pub fn set_additional_language_codes(mut self, input: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>) -> Self {
+            self.additional_language_codes = input; self
         }
         /// Appends an item to `supported_engines`.
         ///
@@ -2155,31 +1957,36 @@ pub mod voice {
         /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
         pub fn supported_engines(mut self, input: crate::model::Engine) -> Self {
             let mut v = self.supported_engines.unwrap_or_default();
-            v.push(input);
-            self.supported_engines = Some(v);
-            self
+                            v.push(input);
+                            self.supported_engines = Some(v);
+                            self
         }
         /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
-        pub fn set_supported_engines(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Engine>>,
-        ) -> Self {
-            self.supported_engines = input;
-            self
+        pub fn set_supported_engines(mut self, input: std::option::Option<std::vec::Vec<crate::model::Engine>>) -> Self {
+            self.supported_engines = input; self
         }
         /// Consumes the builder and constructs a [`Voice`](crate::model::Voice).
         pub fn build(self) -> crate::model::Voice {
             crate::model::Voice {
-                gender: self.gender,
-                id: self.id,
-                language_code: self.language_code,
-                language_name: self.language_name,
-                name: self.name,
-                additional_language_codes: self.additional_language_codes,
-                supported_engines: self.supported_engines,
+                gender: self.gender
+                ,
+                id: self.id
+                ,
+                language_code: self.language_code
+                ,
+                language_name: self.language_name
+                ,
+                name: self.name
+                ,
+                additional_language_codes: self.additional_language_codes
+                ,
+                supported_engines: self.supported_engines
+                ,
             }
         }
     }
+    
+    
 }
 impl Voice {
     /// Creates a new builder-style object to manufacture [`Voice`](crate::model::Voice).
@@ -2194,9 +2001,9 @@ impl Voice {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let gender = unimplemented!();
 /// match gender {
@@ -2218,58 +2025,52 @@ impl Voice {
 /// Specifically, when `gender` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Gender::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Gender {
     #[allow(missing_docs)] // documentation missing in model
     Female,
     #[allow(missing_docs)] // documentation missing in model
     Male,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Gender {
     fn from(s: &str) -> Self {
         match s {
             "Female" => Gender::Female,
             "Male" => Gender::Male,
-            other => Gender::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Gender::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Gender {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Gender::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Gender::from(s))
+                }
+            }
 impl Gender {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Gender::Female => "Female",
             Gender::Male => "Male",
-            Gender::Unknown(value) => value.as_str(),
+            Gender::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Female", "Male"]
+        &[
+            "Female", "Male"
+        ]
     }
 }
 impl AsRef<str> for Gender {
@@ -2277,3 +2078,4 @@ impl AsRef<str> for Gender {
         self.as_str()
     }
 }
+

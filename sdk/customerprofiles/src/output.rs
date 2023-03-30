@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProfileOutput {
+pub struct UpdateProfileOutput  {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl UpdateProfileOutput {
     /// <p>The unique identifier of a customer profile.</p>
-    pub fn profile_id(&self) -> std::option::Option<&str> {
+    pub fn profile_id(&self) -> std::option::Option<& str> {
         self.profile_id.as_deref()
     }
 }
 /// See [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
 pub mod update_profile_output {
-
+    
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod update_profile_output {
         }
         /// <p>The unique identifier of a customer profile.</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_id = input;
-            self
+            self.profile_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
         pub fn build(self) -> crate::output::UpdateProfileOutput {
             crate::output::UpdateProfileOutput {
-                profile_id: self.profile_id,
+                profile_id: self.profile_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
@@ -50,7 +52,7 @@ impl UpdateProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainOutput {
+pub struct UpdateDomainOutput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -63,7 +65,7 @@ pub struct UpdateDomainOutput {
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     #[doc(hidden)]
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     #[doc(hidden)]
     pub matching: std::option::Option<crate::model::MatchingResponse>,
@@ -75,12 +77,11 @@ pub struct UpdateDomainOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateDomainOutput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The default number of days until the data within the domain expires.</p>
@@ -88,37 +89,34 @@ impl UpdateDomainOutput {
         self.default_expiration_days
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-    pub fn default_encryption_key(&self) -> std::option::Option<&str> {
+    pub fn default_encryption_key(&self) -> std::option::Option<& str> {
         self.default_encryption_key.as_deref()
     }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
-    pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
+    pub fn dead_letter_queue_url(&self) -> std::option::Option<& str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-    pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
+    pub fn matching(&self) -> std::option::Option<& crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
 pub mod update_domain_output {
-
+    
     /// A builder for [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -129,9 +127,7 @@ pub mod update_domain_output {
         pub(crate) matching: std::option::Option<crate::model::MatchingResponse>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -141,8 +137,7 @@ pub mod update_domain_output {
         }
         /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
         pub fn default_expiration_days(mut self, input: i32) -> Self {
@@ -151,8 +146,7 @@ pub mod update_domain_output {
         }
         /// <p>The default number of days until the data within the domain expires.</p>
         pub fn set_default_expiration_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.default_expiration_days = input;
-            self
+            self.default_expiration_days = input; self
         }
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,12 +154,8 @@ pub mod update_domain_output {
             self
         }
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-        pub fn set_default_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_encryption_key = input;
-            self
+        pub fn set_default_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_encryption_key = input; self
         }
         /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,27 +163,19 @@ pub mod update_domain_output {
             self
         }
         /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
-        pub fn set_dead_letter_queue_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dead_letter_queue_url = input;
-            self
+        pub fn set_dead_letter_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dead_letter_queue_url = input; self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
         /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
         /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-        pub fn set_matching(
-            mut self,
-            input: std::option::Option<crate::model::MatchingResponse>,
-        ) -> Self {
-            self.matching = input;
-            self
+        pub fn set_matching(mut self, input: std::option::Option<crate::model::MatchingResponse>) -> Self {
+            self.matching = input; self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -201,12 +183,8 @@ pub mod update_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -214,52 +192,48 @@ pub mod update_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
         pub fn build(self) -> crate::output::UpdateDomainOutput {
             crate::output::UpdateDomainOutput {
-                domain_name: self.domain_name,
-                default_expiration_days: self.default_expiration_days,
-                default_encryption_key: self.default_encryption_key,
-                dead_letter_queue_url: self.dead_letter_queue_url,
-                matching: self.matching,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                tags: self.tags,
+                domain_name: self.domain_name
+                ,
+                default_expiration_days: self.default_expiration_days
+                ,
+                default_encryption_key: self.default_encryption_key
+                ,
+                dead_letter_queue_url: self.dead_letter_queue_url
+                ,
+                matching: self.matching
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
@@ -271,19 +245,24 @@ impl UpdateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -295,19 +274,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -319,7 +303,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchProfilesOutput {
+pub struct SearchProfilesOutput  {
     /// <p>The list of Profiles matching the search criteria.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Profile>>,
@@ -329,17 +313,17 @@ pub struct SearchProfilesOutput {
 }
 impl SearchProfilesOutput {
     /// <p>The list of Profiles matching the search criteria.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Profile]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::Profile]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`SearchProfilesOutput`](crate::output::SearchProfilesOutput).
 pub mod search_profiles_output {
-
+    
     /// A builder for [`SearchProfilesOutput`](crate::output::SearchProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -354,17 +338,13 @@ pub mod search_profiles_output {
         /// <p>The list of Profiles matching the search criteria.</p>
         pub fn items(mut self, input: crate::model::Profile) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of Profiles matching the search criteria.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Profile>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::Profile>>) -> Self {
+            self.items = input; self
         }
         /// <p>The pagination token from the previous SearchProfiles API call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -373,17 +353,20 @@ pub mod search_profiles_output {
         }
         /// <p>The pagination token from the previous SearchProfiles API call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`SearchProfilesOutput`](crate::output::SearchProfilesOutput).
         pub fn build(self) -> crate::output::SearchProfilesOutput {
             crate::output::SearchProfilesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchProfilesOutput {
     /// Creates a new builder-style object to manufacture [`SearchProfilesOutput`](crate::output::SearchProfilesOutput).
@@ -395,7 +378,7 @@ impl SearchProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutProfileObjectTypeOutput {
+pub struct PutProfileObjectTypeOutput  {
     /// <p>The name of the profile object type.</p>
     #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
@@ -419,14 +402,10 @@ pub struct PutProfileObjectTypeOutput {
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-    >,
+    pub fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     #[doc(hidden)]
-    pub keys: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
-    >,
+    pub keys: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>,
     /// <p>The timestamp of when the domain was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -435,20 +414,19 @@ pub struct PutProfileObjectTypeOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PutProfileObjectTypeOutput {
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> std::option::Option<&str> {
+    pub fn object_type_name(&self) -> std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>Description of the profile object type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for the object template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The number of days until the data in the object expires.</p>
@@ -456,7 +434,7 @@ impl PutProfileObjectTypeOutput {
         self.expiration_days
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
@@ -464,44 +442,33 @@ impl PutProfileObjectTypeOutput {
         self.allow_profile_creation
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
-    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
+    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<& str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-    > {
+    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>> {
         self.fields.as_ref()
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
-    > {
+    pub fn keys(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>> {
         self.keys.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`PutProfileObjectTypeOutput`](crate::output::PutProfileObjectTypeOutput).
 pub mod put_profile_object_type_output {
-
+    
     /// A builder for [`PutProfileObjectTypeOutput`](crate::output::PutProfileObjectTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -512,20 +479,11 @@ pub mod put_profile_object_type_output {
         pub(crate) encryption_key: std::option::Option<std::string::String>,
         pub(crate) allow_profile_creation: std::option::Option<bool>,
         pub(crate) source_last_updated_timestamp_format: std::option::Option<std::string::String>,
-        pub(crate) fields: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-        >,
-        pub(crate) keys: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::ObjectTypeKey>,
-            >,
-        >,
+        pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>,
+        pub(crate) keys: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the profile object type.</p>
@@ -534,12 +492,8 @@ pub mod put_profile_object_type_output {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn set_object_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_type_name = input;
-            self
+        pub fn set_object_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_type_name = input; self
         }
         /// <p>Description of the profile object type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -548,8 +502,7 @@ pub mod put_profile_object_type_output {
         }
         /// <p>Description of the profile object type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A unique identifier for the object template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -558,8 +511,7 @@ pub mod put_profile_object_type_output {
         }
         /// <p>A unique identifier for the object template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The number of days until the data in the object expires.</p>
         pub fn expiration_days(mut self, input: i32) -> Self {
@@ -568,8 +520,7 @@ pub mod put_profile_object_type_output {
         }
         /// <p>The number of days until the data in the object expires.</p>
         pub fn set_expiration_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.expiration_days = input;
-            self
+            self.expiration_days = input; self
         }
         /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -577,12 +528,8 @@ pub mod put_profile_object_type_output {
             self
         }
         /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
@@ -591,77 +538,46 @@ pub mod put_profile_object_type_output {
         }
         /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_profile_creation = input;
-            self
+            self.allow_profile_creation = input; self
         }
         /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
-        pub fn source_last_updated_timestamp_format(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn source_last_updated_timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_last_updated_timestamp_format = Some(input.into());
             self
         }
         /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
-        pub fn set_source_last_updated_timestamp_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_last_updated_timestamp_format = input;
-            self
+        pub fn set_source_last_updated_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_last_updated_timestamp_format = input; self
         }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A map of the name and ObjectType field.</p>
-        pub fn fields(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ObjectTypeField,
-        ) -> Self {
+        pub fn fields(mut self, k: impl Into<std::string::String>, v: crate::model::ObjectTypeField) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.fields = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.fields = Some(hash_map);
+                            self
         }
         /// <p>A map of the name and ObjectType field.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-            >,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>) -> Self {
+            self.fields = input; self
         }
         /// Adds a key-value pair to `keys`.
         ///
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
         /// <p>A list of unique keys that can be used to map data to the profile.</p>
-        pub fn keys(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::ObjectTypeKey>,
-        ) -> Self {
+        pub fn keys(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::ObjectTypeKey>) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.keys = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.keys = Some(hash_map);
+                            self
         }
         /// <p>A list of unique keys that can be used to map data to the profile.</p>
-        pub fn set_keys(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::ObjectTypeKey>,
-                >,
-            >,
-        ) -> Self {
-            self.keys = input;
-            self
+        pub fn set_keys(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>) -> Self {
+            self.keys = input; self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -669,12 +585,8 @@ pub mod put_profile_object_type_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -682,56 +594,57 @@ pub mod put_profile_object_type_output {
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PutProfileObjectTypeOutput`](crate::output::PutProfileObjectTypeOutput).
         pub fn build(self) -> crate::output::PutProfileObjectTypeOutput {
             crate::output::PutProfileObjectTypeOutput {
-                object_type_name: self.object_type_name,
-                description: self.description,
-                template_id: self.template_id,
-                expiration_days: self.expiration_days,
-                encryption_key: self.encryption_key,
-                allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
-                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
-                fields: self.fields,
-                keys: self.keys,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                tags: self.tags,
+                object_type_name: self.object_type_name
+                ,
+                description: self.description
+                ,
+                template_id: self.template_id
+                ,
+                expiration_days: self.expiration_days
+                ,
+                encryption_key: self.encryption_key
+                ,
+                allow_profile_creation: self.allow_profile_creation
+                    .unwrap_or_default()
+                ,
+                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format
+                ,
+                fields: self.fields
+                ,
+                keys: self.keys
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PutProfileObjectTypeOutput {
     /// Creates a new builder-style object to manufacture [`PutProfileObjectTypeOutput`](crate::output::PutProfileObjectTypeOutput).
@@ -743,20 +656,20 @@ impl PutProfileObjectTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutProfileObjectOutput {
+pub struct PutProfileObjectOutput  {
     /// <p>The unique identifier of the profile object generated by the service.</p>
     #[doc(hidden)]
     pub profile_object_unique_key: std::option::Option<std::string::String>,
 }
 impl PutProfileObjectOutput {
     /// <p>The unique identifier of the profile object generated by the service.</p>
-    pub fn profile_object_unique_key(&self) -> std::option::Option<&str> {
+    pub fn profile_object_unique_key(&self) -> std::option::Option<& str> {
         self.profile_object_unique_key.as_deref()
     }
 }
 /// See [`PutProfileObjectOutput`](crate::output::PutProfileObjectOutput).
 pub mod put_profile_object_output {
-
+    
     /// A builder for [`PutProfileObjectOutput`](crate::output::PutProfileObjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -769,20 +682,19 @@ pub mod put_profile_object_output {
             self
         }
         /// <p>The unique identifier of the profile object generated by the service.</p>
-        pub fn set_profile_object_unique_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profile_object_unique_key = input;
-            self
+        pub fn set_profile_object_unique_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_object_unique_key = input; self
         }
         /// Consumes the builder and constructs a [`PutProfileObjectOutput`](crate::output::PutProfileObjectOutput).
         pub fn build(self) -> crate::output::PutProfileObjectOutput {
             crate::output::PutProfileObjectOutput {
-                profile_object_unique_key: self.profile_object_unique_key,
+                profile_object_unique_key: self.profile_object_unique_key
+                ,
             }
         }
     }
+    
+    
 }
 impl PutProfileObjectOutput {
     /// Creates a new builder-style object to manufacture [`PutProfileObjectOutput`](crate::output::PutProfileObjectOutput).
@@ -794,7 +706,7 @@ impl PutProfileObjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutIntegrationOutput {
+pub struct PutIntegrationOutput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -812,12 +724,10 @@ pub struct PutIntegrationOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     #[doc(hidden)]
-    pub object_type_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub object_type_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -827,41 +737,35 @@ pub struct PutIntegrationOutput {
 }
 impl PutIntegrationOutput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> std::option::Option<&str> {
+    pub fn object_type_name(&self) -> std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn object_type_names(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn object_type_names(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.object_type_names.as_ref()
     }
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
@@ -871,7 +775,7 @@ impl PutIntegrationOutput {
 }
 /// See [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
 pub mod put_integration_output {
-
+    
     /// A builder for [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -880,12 +784,8 @@ pub mod put_integration_output {
         pub(crate) object_type_name: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) object_type_names: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) object_type_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) is_unstructured: std::option::Option<bool>,
     }
@@ -897,8 +797,7 @@ pub mod put_integration_output {
         }
         /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -907,8 +806,7 @@ pub mod put_integration_output {
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The name of the profile object type.</p>
         pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -916,12 +814,8 @@ pub mod put_integration_output {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn set_object_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_type_name = input;
-            self
+        pub fn set_object_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_type_name = input; self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -929,12 +823,8 @@ pub mod put_integration_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -942,62 +832,38 @@ pub mod put_integration_output {
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Adds a key-value pair to `object_type_names`.
         ///
         /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
         ///
         /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-        pub fn object_type_names(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn object_type_names(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.object_type_names.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.object_type_names = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.object_type_names = Some(hash_map);
+                            self
         }
         /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-        pub fn set_object_type_names(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.object_type_names = input;
-            self
+        pub fn set_object_type_names(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.object_type_names = input; self
         }
         /// <p>Unique identifier for the workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1006,8 +872,7 @@ pub mod put_integration_output {
         }
         /// <p>Unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
         pub fn is_unstructured(mut self, input: bool) -> Self {
@@ -1016,24 +881,34 @@ pub mod put_integration_output {
         }
         /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
         pub fn set_is_unstructured(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_unstructured = input;
-            self
+            self.is_unstructured = input; self
         }
         /// Consumes the builder and constructs a [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
         pub fn build(self) -> crate::output::PutIntegrationOutput {
             crate::output::PutIntegrationOutput {
-                domain_name: self.domain_name,
-                uri: self.uri,
-                object_type_name: self.object_type_name,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                tags: self.tags,
-                object_type_names: self.object_type_names,
-                workflow_id: self.workflow_id,
-                is_unstructured: self.is_unstructured,
+                domain_name: self.domain_name
+                ,
+                uri: self.uri
+                ,
+                object_type_name: self.object_type_name
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
+                object_type_names: self.object_type_names
+                ,
+                workflow_id: self.workflow_id
+                ,
+                is_unstructured: self.is_unstructured
+                ,
             }
         }
     }
+    
+    
 }
 impl PutIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
@@ -1045,20 +920,20 @@ impl PutIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergeProfilesOutput {
+pub struct MergeProfilesOutput  {
     /// <p>A message that indicates the merge request is complete.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MergeProfilesOutput {
     /// <p>A message that indicates the merge request is complete.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`MergeProfilesOutput`](crate::output::MergeProfilesOutput).
 pub mod merge_profiles_output {
-
+    
     /// A builder for [`MergeProfilesOutput`](crate::output::MergeProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1072,16 +947,18 @@ pub mod merge_profiles_output {
         }
         /// <p>A message that indicates the merge request is complete.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MergeProfilesOutput`](crate::output::MergeProfilesOutput).
         pub fn build(self) -> crate::output::MergeProfilesOutput {
             crate::output::MergeProfilesOutput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MergeProfilesOutput {
     /// Creates a new builder-style object to manufacture [`MergeProfilesOutput`](crate::output::MergeProfilesOutput).
@@ -1093,7 +970,7 @@ impl MergeProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowsOutput {
+pub struct ListWorkflowsOutput  {
     /// <p>List containing workflow details.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListWorkflowsItem>>,
@@ -1103,17 +980,17 @@ pub struct ListWorkflowsOutput {
 }
 impl ListWorkflowsOutput {
     /// <p>List containing workflow details.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListWorkflowsItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListWorkflowsItem]> {
         self.items.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
 pub mod list_workflows_output {
-
+    
     /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1128,17 +1005,13 @@ pub mod list_workflows_output {
         /// <p>List containing workflow details.</p>
         pub fn items(mut self, input: crate::model::ListWorkflowsItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>List containing workflow details.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListWorkflowsItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListWorkflowsItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1147,17 +1020,20 @@ pub mod list_workflows_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
         pub fn build(self) -> crate::output::ListWorkflowsOutput {
             crate::output::ListWorkflowsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
@@ -1169,30 +1045,24 @@ impl ListWorkflowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1200,31 +1070,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1236,7 +1101,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfileObjectTypeTemplatesOutput {
+pub struct ListProfileObjectTypeTemplatesOutput  {
     /// <p>The list of ListProfileObjectType template instances.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeTemplateItem>>,
@@ -1246,22 +1111,21 @@ pub struct ListProfileObjectTypeTemplatesOutput {
 }
 impl ListProfileObjectTypeTemplatesOutput {
     /// <p>The list of ListProfileObjectType template instances.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListProfileObjectTypeTemplateItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListProfileObjectTypeTemplateItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProfileObjectTypeTemplatesOutput`](crate::output::ListProfileObjectTypeTemplatesOutput).
 pub mod list_profile_object_type_templates_output {
-
+    
     /// A builder for [`ListProfileObjectTypeTemplatesOutput`](crate::output::ListProfileObjectTypeTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeTemplateItem>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeTemplateItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1272,19 +1136,13 @@ pub mod list_profile_object_type_templates_output {
         /// <p>The list of ListProfileObjectType template instances.</p>
         pub fn items(mut self, input: crate::model::ListProfileObjectTypeTemplateItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of ListProfileObjectType template instances.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListProfileObjectTypeTemplateItem>,
-            >,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeTemplateItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1293,17 +1151,20 @@ pub mod list_profile_object_type_templates_output {
         }
         /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProfileObjectTypeTemplatesOutput`](crate::output::ListProfileObjectTypeTemplatesOutput).
         pub fn build(self) -> crate::output::ListProfileObjectTypeTemplatesOutput {
             crate::output::ListProfileObjectTypeTemplatesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProfileObjectTypeTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeTemplatesOutput`](crate::output::ListProfileObjectTypeTemplatesOutput).
@@ -1315,7 +1176,7 @@ impl ListProfileObjectTypeTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfileObjectTypesOutput {
+pub struct ListProfileObjectTypesOutput  {
     /// <p>The list of ListProfileObjectTypes instances.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeItem>>,
@@ -1325,22 +1186,21 @@ pub struct ListProfileObjectTypesOutput {
 }
 impl ListProfileObjectTypesOutput {
     /// <p>The list of ListProfileObjectTypes instances.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListProfileObjectTypeItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListProfileObjectTypeItem]> {
         self.items.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProfileObjectTypesOutput`](crate::output::ListProfileObjectTypesOutput).
 pub mod list_profile_object_types_output {
-
+    
     /// A builder for [`ListProfileObjectTypesOutput`](crate::output::ListProfileObjectTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeItem>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1351,17 +1211,13 @@ pub mod list_profile_object_types_output {
         /// <p>The list of ListProfileObjectTypes instances.</p>
         pub fn items(mut self, input: crate::model::ListProfileObjectTypeItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of ListProfileObjectTypes instances.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1370,17 +1226,20 @@ pub mod list_profile_object_types_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProfileObjectTypesOutput`](crate::output::ListProfileObjectTypesOutput).
         pub fn build(self) -> crate::output::ListProfileObjectTypesOutput {
             crate::output::ListProfileObjectTypesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProfileObjectTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectTypesOutput`](crate::output::ListProfileObjectTypesOutput).
@@ -1392,7 +1251,7 @@ impl ListProfileObjectTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfileObjectsOutput {
+pub struct ListProfileObjectsOutput  {
     /// <p>The list of ListProfileObject instances.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectsItem>>,
@@ -1402,17 +1261,17 @@ pub struct ListProfileObjectsOutput {
 }
 impl ListProfileObjectsOutput {
     /// <p>The list of ListProfileObject instances.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListProfileObjectsItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListProfileObjectsItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProfileObjectsOutput`](crate::output::ListProfileObjectsOutput).
 pub mod list_profile_objects_output {
-
+    
     /// A builder for [`ListProfileObjectsOutput`](crate::output::ListProfileObjectsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1427,17 +1286,13 @@ pub mod list_profile_objects_output {
         /// <p>The list of ListProfileObject instances.</p>
         pub fn items(mut self, input: crate::model::ListProfileObjectsItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of ListProfileObject instances.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectsItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectsItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The pagination token from the previous call to ListProfileObjects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1446,17 +1301,20 @@ pub mod list_profile_objects_output {
         }
         /// <p>The pagination token from the previous call to ListProfileObjects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProfileObjectsOutput`](crate::output::ListProfileObjectsOutput).
         pub fn build(self) -> crate::output::ListProfileObjectsOutput {
             crate::output::ListProfileObjectsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProfileObjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectsOutput`](crate::output::ListProfileObjectsOutput).
@@ -1468,7 +1326,7 @@ impl ListProfileObjectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIntegrationsOutput {
+pub struct ListIntegrationsOutput  {
     /// <p>The list of ListIntegrations instances.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
@@ -1478,17 +1336,17 @@ pub struct ListIntegrationsOutput {
 }
 impl ListIntegrationsOutput {
     /// <p>The list of ListIntegrations instances.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListIntegrationItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListIntegrationItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput).
 pub mod list_integrations_output {
-
+    
     /// A builder for [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1503,17 +1361,13 @@ pub mod list_integrations_output {
         /// <p>The list of ListIntegrations instances.</p>
         pub fn items(mut self, input: crate::model::ListIntegrationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of ListIntegrations instances.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The pagination token from the previous ListIntegrations API call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1522,17 +1376,20 @@ pub mod list_integrations_output {
         }
         /// <p>The pagination token from the previous ListIntegrations API call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput).
         pub fn build(self) -> crate::output::ListIntegrationsOutput {
             crate::output::ListIntegrationsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput).
@@ -1544,35 +1401,31 @@ impl ListIntegrationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIdentityResolutionJobsOutput {
+pub struct ListIdentityResolutionJobsOutput  {
     /// <p>A list of Identity Resolution Jobs.</p>
     #[doc(hidden)]
-    pub identity_resolution_jobs_list:
-        std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
+    pub identity_resolution_jobs_list: std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityResolutionJobsOutput {
     /// <p>A list of Identity Resolution Jobs.</p>
-    pub fn identity_resolution_jobs_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::IdentityResolutionJob]> {
+    pub fn identity_resolution_jobs_list(&self) -> std::option::Option<& [crate::model::IdentityResolutionJob]> {
         self.identity_resolution_jobs_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput).
 pub mod list_identity_resolution_jobs_output {
-
+    
     /// A builder for [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) identity_resolution_jobs_list:
-            std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
+        pub(crate) identity_resolution_jobs_list: std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1581,22 +1434,15 @@ pub mod list_identity_resolution_jobs_output {
         /// To override the contents of this collection use [`set_identity_resolution_jobs_list`](Self::set_identity_resolution_jobs_list).
         ///
         /// <p>A list of Identity Resolution Jobs.</p>
-        pub fn identity_resolution_jobs_list(
-            mut self,
-            input: crate::model::IdentityResolutionJob,
-        ) -> Self {
+        pub fn identity_resolution_jobs_list(mut self, input: crate::model::IdentityResolutionJob) -> Self {
             let mut v = self.identity_resolution_jobs_list.unwrap_or_default();
-            v.push(input);
-            self.identity_resolution_jobs_list = Some(v);
-            self
+                            v.push(input);
+                            self.identity_resolution_jobs_list = Some(v);
+                            self
         }
         /// <p>A list of Identity Resolution Jobs.</p>
-        pub fn set_identity_resolution_jobs_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
-        ) -> Self {
-            self.identity_resolution_jobs_list = input;
-            self
+        pub fn set_identity_resolution_jobs_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>) -> Self {
+            self.identity_resolution_jobs_list = input; self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1605,17 +1451,20 @@ pub mod list_identity_resolution_jobs_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput).
         pub fn build(self) -> crate::output::ListIdentityResolutionJobsOutput {
             crate::output::ListIdentityResolutionJobsOutput {
-                identity_resolution_jobs_list: self.identity_resolution_jobs_list,
-                next_token: self.next_token,
+                identity_resolution_jobs_list: self.identity_resolution_jobs_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIdentityResolutionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput).
@@ -1627,7 +1476,7 @@ impl ListIdentityResolutionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainsOutput {
+pub struct ListDomainsOutput  {
     /// <p>The list of ListDomains instances.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListDomainItem>>,
@@ -1637,17 +1486,17 @@ pub struct ListDomainsOutput {
 }
 impl ListDomainsOutput {
     /// <p>The list of ListDomains instances.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListDomainItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListDomainItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous ListDomains API call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
-
+    
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1662,17 +1511,13 @@ pub mod list_domains_output {
         /// <p>The list of ListDomains instances.</p>
         pub fn items(mut self, input: crate::model::ListDomainItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of ListDomains instances.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListDomainItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListDomainItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The pagination token from the previous ListDomains API call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1681,17 +1526,20 @@ pub mod list_domains_output {
         }
         /// <p>The pagination token from the previous ListDomains API call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
@@ -1703,7 +1551,7 @@ impl ListDomainsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountIntegrationsOutput {
+pub struct ListAccountIntegrationsOutput  {
     /// <p>The list of ListAccountIntegration instances.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
@@ -1713,17 +1561,17 @@ pub struct ListAccountIntegrationsOutput {
 }
 impl ListAccountIntegrationsOutput {
     /// <p>The list of ListAccountIntegration instances.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListIntegrationItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListIntegrationItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput).
 pub mod list_account_integrations_output {
-
+    
     /// A builder for [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1738,17 +1586,13 @@ pub mod list_account_integrations_output {
         /// <p>The list of ListAccountIntegration instances.</p>
         pub fn items(mut self, input: crate::model::ListIntegrationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of ListAccountIntegration instances.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1757,17 +1601,20 @@ pub mod list_account_integrations_output {
         }
         /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput).
         pub fn build(self) -> crate::output::ListAccountIntegrationsOutput {
             crate::output::ListAccountIntegrationsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccountIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput).
@@ -1779,7 +1626,7 @@ impl ListAccountIntegrationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowStepsOutput {
+pub struct GetWorkflowStepsOutput  {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -1795,25 +1642,25 @@ pub struct GetWorkflowStepsOutput {
 }
 impl GetWorkflowStepsOutput {
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>List containing workflow step details.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::WorkflowStepItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::WorkflowStepItem]> {
         self.items.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput).
 pub mod get_workflow_steps_output {
-
+    
     /// A builder for [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1830,8 +1677,7 @@ pub mod get_workflow_steps_output {
         }
         /// <p>Unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
         pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -1839,12 +1685,8 @@ pub mod get_workflow_steps_output {
             self
         }
         /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-        pub fn set_workflow_type(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowType>,
-        ) -> Self {
-            self.workflow_type = input;
-            self
+        pub fn set_workflow_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
+            self.workflow_type = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -1853,17 +1695,13 @@ pub mod get_workflow_steps_output {
         /// <p>List containing workflow step details.</p>
         pub fn items(mut self, input: crate::model::WorkflowStepItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>List containing workflow step details.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStepItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkflowStepItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1872,19 +1710,24 @@ pub mod get_workflow_steps_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput).
         pub fn build(self) -> crate::output::GetWorkflowStepsOutput {
             crate::output::GetWorkflowStepsOutput {
-                workflow_id: self.workflow_id,
-                workflow_type: self.workflow_type,
-                items: self.items,
-                next_token: self.next_token,
+                workflow_id: self.workflow_id
+                ,
+                workflow_type: self.workflow_type
+                ,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWorkflowStepsOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput).
@@ -1896,7 +1739,7 @@ impl GetWorkflowStepsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowOutput {
+pub struct GetWorkflowOutput  {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -1924,41 +1767,41 @@ pub struct GetWorkflowOutput {
 }
 impl GetWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>Status of workflow execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>Workflow error messages during execution (if any).</p>
-    pub fn error_description(&self) -> std::option::Option<&str> {
+    pub fn error_description(&self) -> std::option::Option<& str> {
         self.error_description.as_deref()
     }
     /// <p>The timestamp that represents when workflow execution started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The timestamp that represents when workflow execution last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Attributes provided for workflow execution.</p>
-    pub fn attributes(&self) -> std::option::Option<&crate::model::WorkflowAttributes> {
+    pub fn attributes(&self) -> std::option::Option<& crate::model::WorkflowAttributes> {
         self.attributes.as_ref()
     }
     /// <p>Workflow specific execution metrics.</p>
-    pub fn metrics(&self) -> std::option::Option<&crate::model::WorkflowMetrics> {
+    pub fn metrics(&self) -> std::option::Option<& crate::model::WorkflowMetrics> {
         self.metrics.as_ref()
     }
 }
 /// See [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
 pub mod get_workflow_output {
-
+    
     /// A builder for [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1979,8 +1822,7 @@ pub mod get_workflow_output {
         }
         /// <p>Unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
         pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -1988,12 +1830,8 @@ pub mod get_workflow_output {
             self
         }
         /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-        pub fn set_workflow_type(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowType>,
-        ) -> Self {
-            self.workflow_type = input;
-            self
+        pub fn set_workflow_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
+            self.workflow_type = input; self
         }
         /// <p>Status of workflow execution.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -2002,8 +1840,7 @@ pub mod get_workflow_output {
         }
         /// <p>Status of workflow execution.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Workflow error messages during execution (if any).</p>
         pub fn error_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2011,12 +1848,8 @@ pub mod get_workflow_output {
             self
         }
         /// <p>Workflow error messages during execution (if any).</p>
-        pub fn set_error_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_description = input;
-            self
+        pub fn set_error_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_description = input; self
         }
         /// <p>The timestamp that represents when workflow execution started.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2024,12 +1857,8 @@ pub mod get_workflow_output {
             self
         }
         /// <p>The timestamp that represents when workflow execution started.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The timestamp that represents when workflow execution last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2037,12 +1866,8 @@ pub mod get_workflow_output {
             self
         }
         /// <p>The timestamp that represents when workflow execution last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>Attributes provided for workflow execution.</p>
         pub fn attributes(mut self, input: crate::model::WorkflowAttributes) -> Self {
@@ -2050,12 +1875,8 @@ pub mod get_workflow_output {
             self
         }
         /// <p>Attributes provided for workflow execution.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowAttributes>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<crate::model::WorkflowAttributes>) -> Self {
+            self.attributes = input; self
         }
         /// <p>Workflow specific execution metrics.</p>
         pub fn metrics(mut self, input: crate::model::WorkflowMetrics) -> Self {
@@ -2063,27 +1884,33 @@ pub mod get_workflow_output {
             self
         }
         /// <p>Workflow specific execution metrics.</p>
-        pub fn set_metrics(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowMetrics>,
-        ) -> Self {
-            self.metrics = input;
-            self
+        pub fn set_metrics(mut self, input: std::option::Option<crate::model::WorkflowMetrics>) -> Self {
+            self.metrics = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
         pub fn build(self) -> crate::output::GetWorkflowOutput {
             crate::output::GetWorkflowOutput {
-                workflow_id: self.workflow_id,
-                workflow_type: self.workflow_type,
-                status: self.status,
-                error_description: self.error_description,
-                start_date: self.start_date,
-                last_updated_at: self.last_updated_at,
-                attributes: self.attributes,
-                metrics: self.metrics,
+                workflow_id: self.workflow_id
+                ,
+                workflow_type: self.workflow_type
+                ,
+                status: self.status
+                ,
+                error_description: self.error_description
+                ,
+                start_date: self.start_date
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                attributes: self.attributes
+                ,
+                metrics: self.metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
@@ -2095,7 +1922,7 @@ impl GetWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProfileObjectTypeTemplateOutput {
+pub struct GetProfileObjectTypeTemplateOutput  {
     /// <p>A unique identifier for the object template.</p>
     #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
@@ -2113,26 +1940,22 @@ pub struct GetProfileObjectTypeTemplateOutput {
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-    >,
+    pub fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     #[doc(hidden)]
-    pub keys: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
-    >,
+    pub keys: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>,
 }
 impl GetProfileObjectTypeTemplateOutput {
     /// <p>A unique identifier for the object template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the source of the object template.</p>
-    pub fn source_name(&self) -> std::option::Option<&str> {
+    pub fn source_name(&self) -> std::option::Option<& str> {
         self.source_name.as_deref()
     }
     /// <p>The source of the object template.</p>
-    pub fn source_object(&self) -> std::option::Option<&str> {
+    pub fn source_object(&self) -> std::option::Option<& str> {
         self.source_object.as_deref()
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
@@ -2140,29 +1963,21 @@ impl GetProfileObjectTypeTemplateOutput {
         self.allow_profile_creation
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
+    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<& str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-    > {
+    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>> {
         self.fields.as_ref()
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
-    > {
+    pub fn keys(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>> {
         self.keys.as_ref()
     }
 }
 /// See [`GetProfileObjectTypeTemplateOutput`](crate::output::GetProfileObjectTypeTemplateOutput).
 pub mod get_profile_object_type_template_output {
-
+    
     /// A builder for [`GetProfileObjectTypeTemplateOutput`](crate::output::GetProfileObjectTypeTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2171,15 +1986,8 @@ pub mod get_profile_object_type_template_output {
         pub(crate) source_object: std::option::Option<std::string::String>,
         pub(crate) allow_profile_creation: std::option::Option<bool>,
         pub(crate) source_last_updated_timestamp_format: std::option::Option<std::string::String>,
-        pub(crate) fields: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-        >,
-        pub(crate) keys: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::ObjectTypeKey>,
-            >,
-        >,
+        pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>,
+        pub(crate) keys: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>,
     }
     impl Builder {
         /// <p>A unique identifier for the object template.</p>
@@ -2189,8 +1997,7 @@ pub mod get_profile_object_type_template_output {
         }
         /// <p>A unique identifier for the object template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The name of the source of the object template.</p>
         pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2199,8 +2006,7 @@ pub mod get_profile_object_type_template_output {
         }
         /// <p>The name of the source of the object template.</p>
         pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_name = input;
-            self
+            self.source_name = input; self
         }
         /// <p>The source of the object template.</p>
         pub fn source_object(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2208,12 +2014,8 @@ pub mod get_profile_object_type_template_output {
             self
         }
         /// <p>The source of the object template.</p>
-        pub fn set_source_object(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_object = input;
-            self
+        pub fn set_source_object(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_object = input; self
         }
         /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
@@ -2222,91 +2024,70 @@ pub mod get_profile_object_type_template_output {
         }
         /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_profile_creation = input;
-            self
+            self.allow_profile_creation = input; self
         }
         /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-        pub fn source_last_updated_timestamp_format(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn source_last_updated_timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_last_updated_timestamp_format = Some(input.into());
             self
         }
         /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-        pub fn set_source_last_updated_timestamp_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_last_updated_timestamp_format = input;
-            self
+        pub fn set_source_last_updated_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_last_updated_timestamp_format = input; self
         }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A map of the name and ObjectType field.</p>
-        pub fn fields(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ObjectTypeField,
-        ) -> Self {
+        pub fn fields(mut self, k: impl Into<std::string::String>, v: crate::model::ObjectTypeField) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.fields = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.fields = Some(hash_map);
+                            self
         }
         /// <p>A map of the name and ObjectType field.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-            >,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>) -> Self {
+            self.fields = input; self
         }
         /// Adds a key-value pair to `keys`.
         ///
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
         /// <p>A list of unique keys that can be used to map data to the profile.</p>
-        pub fn keys(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::ObjectTypeKey>,
-        ) -> Self {
+        pub fn keys(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::ObjectTypeKey>) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.keys = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.keys = Some(hash_map);
+                            self
         }
         /// <p>A list of unique keys that can be used to map data to the profile.</p>
-        pub fn set_keys(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::ObjectTypeKey>,
-                >,
-            >,
-        ) -> Self {
-            self.keys = input;
-            self
+        pub fn set_keys(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>) -> Self {
+            self.keys = input; self
         }
         /// Consumes the builder and constructs a [`GetProfileObjectTypeTemplateOutput`](crate::output::GetProfileObjectTypeTemplateOutput).
         pub fn build(self) -> crate::output::GetProfileObjectTypeTemplateOutput {
             crate::output::GetProfileObjectTypeTemplateOutput {
-                template_id: self.template_id,
-                source_name: self.source_name,
-                source_object: self.source_object,
-                allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
-                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
-                fields: self.fields,
-                keys: self.keys,
+                template_id: self.template_id
+                ,
+                source_name: self.source_name
+                ,
+                source_object: self.source_object
+                ,
+                allow_profile_creation: self.allow_profile_creation
+                    .unwrap_or_default()
+                ,
+                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format
+                ,
+                fields: self.fields
+                ,
+                keys: self.keys
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProfileObjectTypeTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileObjectTypeTemplateOutput`](crate::output::GetProfileObjectTypeTemplateOutput).
@@ -2318,7 +2099,7 @@ impl GetProfileObjectTypeTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProfileObjectTypeOutput {
+pub struct GetProfileObjectTypeOutput  {
     /// <p>The name of the profile object type.</p>
     #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
@@ -2342,14 +2123,10 @@ pub struct GetProfileObjectTypeOutput {
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-    >,
+    pub fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     #[doc(hidden)]
-    pub keys: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
-    >,
+    pub keys: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>,
     /// <p>The timestamp of when the domain was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2358,20 +2135,19 @@ pub struct GetProfileObjectTypeOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetProfileObjectTypeOutput {
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> std::option::Option<&str> {
+    pub fn object_type_name(&self) -> std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>The description of the profile object type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for the object template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The number of days until the data in the object expires.</p>
@@ -2379,7 +2155,7 @@ impl GetProfileObjectTypeOutput {
         self.expiration_days
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
@@ -2387,44 +2163,33 @@ impl GetProfileObjectTypeOutput {
         self.allow_profile_creation
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
+    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<& str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-    > {
+    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>> {
         self.fields.as_ref()
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
-    > {
+    pub fn keys(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>> {
         self.keys.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetProfileObjectTypeOutput`](crate::output::GetProfileObjectTypeOutput).
 pub mod get_profile_object_type_output {
-
+    
     /// A builder for [`GetProfileObjectTypeOutput`](crate::output::GetProfileObjectTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2435,20 +2200,11 @@ pub mod get_profile_object_type_output {
         pub(crate) encryption_key: std::option::Option<std::string::String>,
         pub(crate) allow_profile_creation: std::option::Option<bool>,
         pub(crate) source_last_updated_timestamp_format: std::option::Option<std::string::String>,
-        pub(crate) fields: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-        >,
-        pub(crate) keys: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::ObjectTypeKey>,
-            >,
-        >,
+        pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>,
+        pub(crate) keys: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the profile object type.</p>
@@ -2457,12 +2213,8 @@ pub mod get_profile_object_type_output {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn set_object_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_type_name = input;
-            self
+        pub fn set_object_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_type_name = input; self
         }
         /// <p>The description of the profile object type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2471,8 +2223,7 @@ pub mod get_profile_object_type_output {
         }
         /// <p>The description of the profile object type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A unique identifier for the object template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2481,8 +2232,7 @@ pub mod get_profile_object_type_output {
         }
         /// <p>A unique identifier for the object template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The number of days until the data in the object expires.</p>
         pub fn expiration_days(mut self, input: i32) -> Self {
@@ -2491,8 +2241,7 @@ pub mod get_profile_object_type_output {
         }
         /// <p>The number of days until the data in the object expires.</p>
         pub fn set_expiration_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.expiration_days = input;
-            self
+            self.expiration_days = input; self
         }
         /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2500,12 +2249,8 @@ pub mod get_profile_object_type_output {
             self
         }
         /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
@@ -2514,77 +2259,46 @@ pub mod get_profile_object_type_output {
         }
         /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_profile_creation = input;
-            self
+            self.allow_profile_creation = input; self
         }
         /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-        pub fn source_last_updated_timestamp_format(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn source_last_updated_timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_last_updated_timestamp_format = Some(input.into());
             self
         }
         /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-        pub fn set_source_last_updated_timestamp_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_last_updated_timestamp_format = input;
-            self
+        pub fn set_source_last_updated_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_last_updated_timestamp_format = input; self
         }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A map of the name and ObjectType field.</p>
-        pub fn fields(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ObjectTypeField,
-        ) -> Self {
+        pub fn fields(mut self, k: impl Into<std::string::String>, v: crate::model::ObjectTypeField) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.fields = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.fields = Some(hash_map);
+                            self
         }
         /// <p>A map of the name and ObjectType field.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
-            >,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>>) -> Self {
+            self.fields = input; self
         }
         /// Adds a key-value pair to `keys`.
         ///
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
         /// <p>A list of unique keys that can be used to map data to the profile.</p>
-        pub fn keys(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::ObjectTypeKey>,
-        ) -> Self {
+        pub fn keys(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::ObjectTypeKey>) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.keys = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.keys = Some(hash_map);
+                            self
         }
         /// <p>A list of unique keys that can be used to map data to the profile.</p>
-        pub fn set_keys(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::ObjectTypeKey>,
-                >,
-            >,
-        ) -> Self {
-            self.keys = input;
-            self
+        pub fn set_keys(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>>) -> Self {
+            self.keys = input; self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2592,12 +2306,8 @@ pub mod get_profile_object_type_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2605,56 +2315,57 @@ pub mod get_profile_object_type_output {
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetProfileObjectTypeOutput`](crate::output::GetProfileObjectTypeOutput).
         pub fn build(self) -> crate::output::GetProfileObjectTypeOutput {
             crate::output::GetProfileObjectTypeOutput {
-                object_type_name: self.object_type_name,
-                description: self.description,
-                template_id: self.template_id,
-                expiration_days: self.expiration_days,
-                encryption_key: self.encryption_key,
-                allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
-                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
-                fields: self.fields,
-                keys: self.keys,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                tags: self.tags,
+                object_type_name: self.object_type_name
+                ,
+                description: self.description
+                ,
+                template_id: self.template_id
+                ,
+                expiration_days: self.expiration_days
+                ,
+                encryption_key: self.encryption_key
+                ,
+                allow_profile_creation: self.allow_profile_creation
+                    .unwrap_or_default()
+                ,
+                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format
+                ,
+                fields: self.fields
+                ,
+                keys: self.keys
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProfileObjectTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileObjectTypeOutput`](crate::output::GetProfileObjectTypeOutput).
@@ -2666,7 +2377,7 @@ impl GetProfileObjectTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMatchesOutput {
+pub struct GetMatchesOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2682,11 +2393,11 @@ pub struct GetMatchesOutput {
 }
 impl GetMatchesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The timestamp this version of Match Result generated.</p>
-    pub fn match_generation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn match_generation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.match_generation_date.as_ref()
     }
     /// <p>The number of potential matches found.</p>
@@ -2694,13 +2405,13 @@ impl GetMatchesOutput {
         self.potential_matches
     }
     /// <p>The list of matched profiles for this instance.</p>
-    pub fn matches(&self) -> std::option::Option<&[crate::model::MatchItem]> {
+    pub fn matches(&self) -> std::option::Option<& [crate::model::MatchItem]> {
         self.matches.as_deref()
     }
 }
 /// See [`GetMatchesOutput`](crate::output::GetMatchesOutput).
 pub mod get_matches_output {
-
+    
     /// A builder for [`GetMatchesOutput`](crate::output::GetMatchesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2717,8 +2428,7 @@ pub mod get_matches_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The timestamp this version of Match Result generated.</p>
         pub fn match_generation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2726,12 +2436,8 @@ pub mod get_matches_output {
             self
         }
         /// <p>The timestamp this version of Match Result generated.</p>
-        pub fn set_match_generation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.match_generation_date = input;
-            self
+        pub fn set_match_generation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.match_generation_date = input; self
         }
         /// <p>The number of potential matches found.</p>
         pub fn potential_matches(mut self, input: i32) -> Self {
@@ -2740,8 +2446,7 @@ pub mod get_matches_output {
         }
         /// <p>The number of potential matches found.</p>
         pub fn set_potential_matches(mut self, input: std::option::Option<i32>) -> Self {
-            self.potential_matches = input;
-            self
+            self.potential_matches = input; self
         }
         /// Appends an item to `matches`.
         ///
@@ -2750,28 +2455,30 @@ pub mod get_matches_output {
         /// <p>The list of matched profiles for this instance.</p>
         pub fn matches(mut self, input: crate::model::MatchItem) -> Self {
             let mut v = self.matches.unwrap_or_default();
-            v.push(input);
-            self.matches = Some(v);
-            self
+                            v.push(input);
+                            self.matches = Some(v);
+                            self
         }
         /// <p>The list of matched profiles for this instance.</p>
-        pub fn set_matches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MatchItem>>,
-        ) -> Self {
-            self.matches = input;
-            self
+        pub fn set_matches(mut self, input: std::option::Option<std::vec::Vec<crate::model::MatchItem>>) -> Self {
+            self.matches = input; self
         }
         /// Consumes the builder and constructs a [`GetMatchesOutput`](crate::output::GetMatchesOutput).
         pub fn build(self) -> crate::output::GetMatchesOutput {
             crate::output::GetMatchesOutput {
-                next_token: self.next_token,
-                match_generation_date: self.match_generation_date,
-                potential_matches: self.potential_matches,
-                matches: self.matches,
+                next_token: self.next_token
+                ,
+                match_generation_date: self.match_generation_date
+                ,
+                potential_matches: self.potential_matches
+                ,
+                matches: self.matches
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMatchesOutput {
     /// Creates a new builder-style object to manufacture [`GetMatchesOutput`](crate::output::GetMatchesOutput).
@@ -2783,7 +2490,7 @@ impl GetMatchesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIntegrationOutput {
+pub struct GetIntegrationOutput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -2801,12 +2508,10 @@ pub struct GetIntegrationOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     #[doc(hidden)]
-    pub object_type_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub object_type_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -2816,41 +2521,35 @@ pub struct GetIntegrationOutput {
 }
 impl GetIntegrationOutput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> std::option::Option<&str> {
+    pub fn object_type_name(&self) -> std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn object_type_names(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn object_type_names(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.object_type_names.as_ref()
     }
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
@@ -2860,7 +2559,7 @@ impl GetIntegrationOutput {
 }
 /// See [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
 pub mod get_integration_output {
-
+    
     /// A builder for [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2869,12 +2568,8 @@ pub mod get_integration_output {
         pub(crate) object_type_name: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) object_type_names: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) object_type_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) is_unstructured: std::option::Option<bool>,
     }
@@ -2886,8 +2581,7 @@ pub mod get_integration_output {
         }
         /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2896,8 +2590,7 @@ pub mod get_integration_output {
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The name of the profile object type.</p>
         pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2905,12 +2598,8 @@ pub mod get_integration_output {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn set_object_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_type_name = input;
-            self
+        pub fn set_object_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_type_name = input; self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2918,12 +2607,8 @@ pub mod get_integration_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2931,62 +2616,38 @@ pub mod get_integration_output {
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Adds a key-value pair to `object_type_names`.
         ///
         /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
         ///
         /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-        pub fn object_type_names(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn object_type_names(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.object_type_names.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.object_type_names = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.object_type_names = Some(hash_map);
+                            self
         }
         /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-        pub fn set_object_type_names(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.object_type_names = input;
-            self
+        pub fn set_object_type_names(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.object_type_names = input; self
         }
         /// <p>Unique identifier for the workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2995,8 +2656,7 @@ pub mod get_integration_output {
         }
         /// <p>Unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
         pub fn is_unstructured(mut self, input: bool) -> Self {
@@ -3005,24 +2665,34 @@ pub mod get_integration_output {
         }
         /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
         pub fn set_is_unstructured(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_unstructured = input;
-            self
+            self.is_unstructured = input; self
         }
         /// Consumes the builder and constructs a [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
         pub fn build(self) -> crate::output::GetIntegrationOutput {
             crate::output::GetIntegrationOutput {
-                domain_name: self.domain_name,
-                uri: self.uri,
-                object_type_name: self.object_type_name,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                tags: self.tags,
-                object_type_names: self.object_type_names,
-                workflow_id: self.workflow_id,
-                is_unstructured: self.is_unstructured,
+                domain_name: self.domain_name
+                ,
+                uri: self.uri
+                ,
+                object_type_name: self.object_type_name
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
+                object_type_names: self.object_type_names
+                ,
+                workflow_id: self.workflow_id
+                ,
+                is_unstructured: self.is_unstructured
+                ,
             }
         }
     }
+    
+    
 }
 impl GetIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
@@ -3034,22 +2704,22 @@ impl GetIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIdentityResolutionJobOutput {
+pub struct GetIdentityResolutionJobOutput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Identity Resolution Job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The status of the Identity Resolution Job.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
-    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
-    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
-    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
-    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
-    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
+    /// <p>The status of the Identity Resolution Job.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li> 
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li> 
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li> 
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li> 
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li> 
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
@@ -3080,62 +2750,62 @@ pub struct GetIdentityResolutionJobOutput {
 }
 impl GetIdentityResolutionJobOutput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique identifier of the Identity Resolution Job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The status of the Identity Resolution Job.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
-    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
-    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
-    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
-    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
-    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
+    /// <p>The status of the Identity Resolution Job.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li> 
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li> 
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li> 
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li> 
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li> 
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::IdentityResolutionJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::IdentityResolutionJobStatus> {
         self.status.as_ref()
     }
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
-    pub fn job_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_start_time.as_ref()
     }
     /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
-    pub fn job_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_end_time.as_ref()
     }
     /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
-    pub fn job_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_expiration_time.as_ref()
     }
     /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
-    pub fn auto_merging(&self) -> std::option::Option<&crate::model::AutoMerging> {
+    pub fn auto_merging(&self) -> std::option::Option<& crate::model::AutoMerging> {
         self.auto_merging.as_ref()
     }
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-    pub fn exporting_location(&self) -> std::option::Option<&crate::model::ExportingLocation> {
+    pub fn exporting_location(&self) -> std::option::Option<& crate::model::ExportingLocation> {
         self.exporting_location.as_ref()
     }
     /// <p>Statistics about the Identity Resolution Job.</p>
-    pub fn job_stats(&self) -> std::option::Option<&crate::model::JobStats> {
+    pub fn job_stats(&self) -> std::option::Option<& crate::model::JobStats> {
         self.job_stats.as_ref()
     }
 }
 /// See [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput).
 pub mod get_identity_resolution_job_output {
-
+    
     /// A builder for [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3159,8 +2829,7 @@ pub mod get_identity_resolution_job_output {
         }
         /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The unique identifier of the Identity Resolution Job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3169,39 +2838,34 @@ pub mod get_identity_resolution_job_output {
         }
         /// <p>The unique identifier of the Identity Resolution Job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The status of the Identity Resolution Job.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
-        /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
-        /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
-        /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
-        /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
-        /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
-        /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
+        /// <p>The status of the Identity Resolution Job.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li> 
+        /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li> 
+        /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li> 
+        /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li> 
+        /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li> 
+        /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::IdentityResolutionJobStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the Identity Resolution Job.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
-        /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
-        /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
-        /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
-        /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
-        /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
-        /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
+        /// <p>The status of the Identity Resolution Job.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li> 
+        /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li> 
+        /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li> 
+        /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li> 
+        /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li> 
+        /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::IdentityResolutionJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::IdentityResolutionJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3210,8 +2874,7 @@ pub mod get_identity_resolution_job_output {
         }
         /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
         pub fn job_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3219,12 +2882,8 @@ pub mod get_identity_resolution_job_output {
             self
         }
         /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
-        pub fn set_job_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_start_time = input;
-            self
+        pub fn set_job_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_start_time = input; self
         }
         /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
         pub fn job_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3232,12 +2891,8 @@ pub mod get_identity_resolution_job_output {
             self
         }
         /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
-        pub fn set_job_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_end_time = input;
-            self
+        pub fn set_job_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_end_time = input; self
         }
         /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3245,12 +2900,8 @@ pub mod get_identity_resolution_job_output {
             self
         }
         /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
         pub fn job_expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3258,12 +2909,8 @@ pub mod get_identity_resolution_job_output {
             self
         }
         /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
-        pub fn set_job_expiration_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_expiration_time = input;
-            self
+        pub fn set_job_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_expiration_time = input; self
         }
         /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
         pub fn auto_merging(mut self, input: crate::model::AutoMerging) -> Self {
@@ -3271,12 +2918,8 @@ pub mod get_identity_resolution_job_output {
             self
         }
         /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
-        pub fn set_auto_merging(
-            mut self,
-            input: std::option::Option<crate::model::AutoMerging>,
-        ) -> Self {
-            self.auto_merging = input;
-            self
+        pub fn set_auto_merging(mut self, input: std::option::Option<crate::model::AutoMerging>) -> Self {
+            self.auto_merging = input; self
         }
         /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
         pub fn exporting_location(mut self, input: crate::model::ExportingLocation) -> Self {
@@ -3284,12 +2927,8 @@ pub mod get_identity_resolution_job_output {
             self
         }
         /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-        pub fn set_exporting_location(
-            mut self,
-            input: std::option::Option<crate::model::ExportingLocation>,
-        ) -> Self {
-            self.exporting_location = input;
-            self
+        pub fn set_exporting_location(mut self, input: std::option::Option<crate::model::ExportingLocation>) -> Self {
+            self.exporting_location = input; self
         }
         /// <p>Statistics about the Identity Resolution Job.</p>
         pub fn job_stats(mut self, input: crate::model::JobStats) -> Self {
@@ -3298,26 +2937,38 @@ pub mod get_identity_resolution_job_output {
         }
         /// <p>Statistics about the Identity Resolution Job.</p>
         pub fn set_job_stats(mut self, input: std::option::Option<crate::model::JobStats>) -> Self {
-            self.job_stats = input;
-            self
+            self.job_stats = input; self
         }
         /// Consumes the builder and constructs a [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput).
         pub fn build(self) -> crate::output::GetIdentityResolutionJobOutput {
             crate::output::GetIdentityResolutionJobOutput {
-                domain_name: self.domain_name,
-                job_id: self.job_id,
-                status: self.status,
-                message: self.message,
-                job_start_time: self.job_start_time,
-                job_end_time: self.job_end_time,
-                last_updated_at: self.last_updated_at,
-                job_expiration_time: self.job_expiration_time,
-                auto_merging: self.auto_merging,
-                exporting_location: self.exporting_location,
-                job_stats: self.job_stats,
+                domain_name: self.domain_name
+                ,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
+                message: self.message
+                ,
+                job_start_time: self.job_start_time
+                ,
+                job_end_time: self.job_end_time
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                job_expiration_time: self.job_expiration_time
+                ,
+                auto_merging: self.auto_merging
+                ,
+                exporting_location: self.exporting_location
+                ,
+                job_stats: self.job_stats
+                ,
             }
         }
     }
+    
+    
 }
 impl GetIdentityResolutionJobOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput).
@@ -3329,7 +2980,7 @@ impl GetIdentityResolutionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainOutput {
+pub struct GetDomainOutput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -3345,7 +2996,7 @@ pub struct GetDomainOutput {
     /// <p>Usage-specific statistics about the domain.</p>
     #[doc(hidden)]
     pub stats: std::option::Option<crate::model::DomainStats>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     #[doc(hidden)]
     pub matching: std::option::Option<crate::model::MatchingResponse>,
@@ -3357,12 +3008,11 @@ pub struct GetDomainOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDomainOutput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The default number of days until the data within the domain expires.</p>
@@ -3370,41 +3020,38 @@ impl GetDomainOutput {
         self.default_expiration_days
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-    pub fn default_encryption_key(&self) -> std::option::Option<&str> {
+    pub fn default_encryption_key(&self) -> std::option::Option<& str> {
         self.default_encryption_key.as_deref()
     }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
-    pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
+    pub fn dead_letter_queue_url(&self) -> std::option::Option<& str> {
         self.dead_letter_queue_url.as_deref()
     }
     /// <p>Usage-specific statistics about the domain.</p>
-    pub fn stats(&self) -> std::option::Option<&crate::model::DomainStats> {
+    pub fn stats(&self) -> std::option::Option<& crate::model::DomainStats> {
         self.stats.as_ref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-    pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
+    pub fn matching(&self) -> std::option::Option<& crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetDomainOutput`](crate::output::GetDomainOutput).
 pub mod get_domain_output {
-
+    
     /// A builder for [`GetDomainOutput`](crate::output::GetDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3416,9 +3063,7 @@ pub mod get_domain_output {
         pub(crate) matching: std::option::Option<crate::model::MatchingResponse>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -3428,8 +3073,7 @@ pub mod get_domain_output {
         }
         /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
         pub fn default_expiration_days(mut self, input: i32) -> Self {
@@ -3438,8 +3082,7 @@ pub mod get_domain_output {
         }
         /// <p>The default number of days until the data within the domain expires.</p>
         pub fn set_default_expiration_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.default_expiration_days = input;
-            self
+            self.default_expiration_days = input; self
         }
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3447,12 +3090,8 @@ pub mod get_domain_output {
             self
         }
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-        pub fn set_default_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_encryption_key = input;
-            self
+        pub fn set_default_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_encryption_key = input; self
         }
         /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3460,12 +3099,8 @@ pub mod get_domain_output {
             self
         }
         /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
-        pub fn set_dead_letter_queue_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dead_letter_queue_url = input;
-            self
+        pub fn set_dead_letter_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dead_letter_queue_url = input; self
         }
         /// <p>Usage-specific statistics about the domain.</p>
         pub fn stats(mut self, input: crate::model::DomainStats) -> Self {
@@ -3474,23 +3109,18 @@ pub mod get_domain_output {
         }
         /// <p>Usage-specific statistics about the domain.</p>
         pub fn set_stats(mut self, input: std::option::Option<crate::model::DomainStats>) -> Self {
-            self.stats = input;
-            self
+            self.stats = input; self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
         /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
         /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-        pub fn set_matching(
-            mut self,
-            input: std::option::Option<crate::model::MatchingResponse>,
-        ) -> Self {
-            self.matching = input;
-            self
+        pub fn set_matching(mut self, input: std::option::Option<crate::model::MatchingResponse>) -> Self {
+            self.matching = input; self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3498,12 +3128,8 @@ pub mod get_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3511,53 +3137,50 @@ pub mod get_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainOutput`](crate::output::GetDomainOutput).
         pub fn build(self) -> crate::output::GetDomainOutput {
             crate::output::GetDomainOutput {
-                domain_name: self.domain_name,
-                default_expiration_days: self.default_expiration_days,
-                default_encryption_key: self.default_encryption_key,
-                dead_letter_queue_url: self.dead_letter_queue_url,
-                stats: self.stats,
-                matching: self.matching,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                tags: self.tags,
+                domain_name: self.domain_name
+                ,
+                default_expiration_days: self.default_expiration_days
+                ,
+                default_encryption_key: self.default_encryption_key
+                ,
+                dead_letter_queue_url: self.dead_letter_queue_url
+                ,
+                stats: self.stats
+                ,
+                matching: self.matching
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDomainOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainOutput`](crate::output::GetDomainOutput).
@@ -3569,7 +3192,7 @@ impl GetDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAutoMergingPreviewOutput {
+pub struct GetAutoMergingPreviewOutput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -3585,7 +3208,7 @@ pub struct GetAutoMergingPreviewOutput {
 }
 impl GetAutoMergingPreviewOutput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
@@ -3603,7 +3226,7 @@ impl GetAutoMergingPreviewOutput {
 }
 /// See [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput).
 pub mod get_auto_merging_preview_output {
-
+    
     /// A builder for [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3620,8 +3243,7 @@ pub mod get_auto_merging_preview_output {
         }
         /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
         pub fn number_of_matches_in_sample(mut self, input: i64) -> Self {
@@ -3630,8 +3252,7 @@ pub mod get_auto_merging_preview_output {
         }
         /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
         pub fn set_number_of_matches_in_sample(mut self, input: std::option::Option<i64>) -> Self {
-            self.number_of_matches_in_sample = input;
-            self
+            self.number_of_matches_in_sample = input; self
         }
         /// <p>The number of profiles found in this preview dry run.</p>
         pub fn number_of_profiles_in_sample(mut self, input: i64) -> Self {
@@ -3640,8 +3261,7 @@ pub mod get_auto_merging_preview_output {
         }
         /// <p>The number of profiles found in this preview dry run.</p>
         pub fn set_number_of_profiles_in_sample(mut self, input: std::option::Option<i64>) -> Self {
-            self.number_of_profiles_in_sample = input;
-            self
+            self.number_of_profiles_in_sample = input; self
         }
         /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
         pub fn number_of_profiles_will_be_merged(mut self, input: i64) -> Self {
@@ -3649,25 +3269,28 @@ pub mod get_auto_merging_preview_output {
             self
         }
         /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
-        pub fn set_number_of_profiles_will_be_merged(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.number_of_profiles_will_be_merged = input;
-            self
+        pub fn set_number_of_profiles_will_be_merged(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_profiles_will_be_merged = input; self
         }
         /// Consumes the builder and constructs a [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput).
         pub fn build(self) -> crate::output::GetAutoMergingPreviewOutput {
             crate::output::GetAutoMergingPreviewOutput {
-                domain_name: self.domain_name,
-                number_of_matches_in_sample: self.number_of_matches_in_sample.unwrap_or_default(),
-                number_of_profiles_in_sample: self.number_of_profiles_in_sample.unwrap_or_default(),
-                number_of_profiles_will_be_merged: self
-                    .number_of_profiles_will_be_merged
-                    .unwrap_or_default(),
+                domain_name: self.domain_name
+                ,
+                number_of_matches_in_sample: self.number_of_matches_in_sample
+                    .unwrap_or_default()
+                ,
+                number_of_profiles_in_sample: self.number_of_profiles_in_sample
+                    .unwrap_or_default()
+                ,
+                number_of_profiles_will_be_merged: self.number_of_profiles_will_be_merged
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAutoMergingPreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput).
@@ -3679,19 +3302,24 @@ impl GetAutoMergingPreviewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkflowOutput {}
+pub struct DeleteWorkflowOutput  {
+}
 /// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
 pub mod delete_workflow_output {
-
+    
     /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
         pub fn build(self) -> crate::output::DeleteWorkflowOutput {
-            crate::output::DeleteWorkflowOutput {}
+            crate::output::DeleteWorkflowOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
@@ -3703,20 +3331,20 @@ impl DeleteWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProfileObjectTypeOutput {
+pub struct DeleteProfileObjectTypeOutput  {
     /// <p>A message that indicates the delete request is done.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteProfileObjectTypeOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DeleteProfileObjectTypeOutput`](crate::output::DeleteProfileObjectTypeOutput).
 pub mod delete_profile_object_type_output {
-
+    
     /// A builder for [`DeleteProfileObjectTypeOutput`](crate::output::DeleteProfileObjectTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3730,16 +3358,18 @@ pub mod delete_profile_object_type_output {
         }
         /// <p>A message that indicates the delete request is done.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeleteProfileObjectTypeOutput`](crate::output::DeleteProfileObjectTypeOutput).
         pub fn build(self) -> crate::output::DeleteProfileObjectTypeOutput {
             crate::output::DeleteProfileObjectTypeOutput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteProfileObjectTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileObjectTypeOutput`](crate::output::DeleteProfileObjectTypeOutput).
@@ -3751,20 +3381,20 @@ impl DeleteProfileObjectTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProfileObjectOutput {
+pub struct DeleteProfileObjectOutput  {
     /// <p>A message that indicates the delete request is done.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteProfileObjectOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DeleteProfileObjectOutput`](crate::output::DeleteProfileObjectOutput).
 pub mod delete_profile_object_output {
-
+    
     /// A builder for [`DeleteProfileObjectOutput`](crate::output::DeleteProfileObjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3778,16 +3408,18 @@ pub mod delete_profile_object_output {
         }
         /// <p>A message that indicates the delete request is done.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeleteProfileObjectOutput`](crate::output::DeleteProfileObjectOutput).
         pub fn build(self) -> crate::output::DeleteProfileObjectOutput {
             crate::output::DeleteProfileObjectOutput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteProfileObjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileObjectOutput`](crate::output::DeleteProfileObjectOutput).
@@ -3799,20 +3431,20 @@ impl DeleteProfileObjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProfileKeyOutput {
+pub struct DeleteProfileKeyOutput  {
     /// <p>A message that indicates the delete request is done.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteProfileKeyOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DeleteProfileKeyOutput`](crate::output::DeleteProfileKeyOutput).
 pub mod delete_profile_key_output {
-
+    
     /// A builder for [`DeleteProfileKeyOutput`](crate::output::DeleteProfileKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3826,16 +3458,18 @@ pub mod delete_profile_key_output {
         }
         /// <p>A message that indicates the delete request is done.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeleteProfileKeyOutput`](crate::output::DeleteProfileKeyOutput).
         pub fn build(self) -> crate::output::DeleteProfileKeyOutput {
             crate::output::DeleteProfileKeyOutput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteProfileKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileKeyOutput`](crate::output::DeleteProfileKeyOutput).
@@ -3847,20 +3481,20 @@ impl DeleteProfileKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProfileOutput {
+pub struct DeleteProfileOutput  {
     /// <p>A message that indicates the delete request is done.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteProfileOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
 pub mod delete_profile_output {
-
+    
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3874,16 +3508,18 @@ pub mod delete_profile_output {
         }
         /// <p>A message that indicates the delete request is done.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
         pub fn build(self) -> crate::output::DeleteProfileOutput {
             crate::output::DeleteProfileOutput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
@@ -3895,20 +3531,20 @@ impl DeleteProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIntegrationOutput {
+pub struct DeleteIntegrationOutput  {
     /// <p>A message that indicates the delete request is done.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteIntegrationOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
 pub mod delete_integration_output {
-
+    
     /// A builder for [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3922,16 +3558,18 @@ pub mod delete_integration_output {
         }
         /// <p>A message that indicates the delete request is done.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
         pub fn build(self) -> crate::output::DeleteIntegrationOutput {
             crate::output::DeleteIntegrationOutput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
@@ -3943,20 +3581,20 @@ impl DeleteIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainOutput {
+pub struct DeleteDomainOutput  {
     /// <p>A message that indicates the delete request is done.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteDomainOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
-
+    
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3970,16 +3608,18 @@ pub mod delete_domain_output {
         }
         /// <p>A message that indicates the delete request is done.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
         pub fn build(self) -> crate::output::DeleteDomainOutput {
             crate::output::DeleteDomainOutput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
@@ -3991,20 +3631,20 @@ impl DeleteDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProfileOutput {
+pub struct CreateProfileOutput  {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl CreateProfileOutput {
     /// <p>The unique identifier of a customer profile.</p>
-    pub fn profile_id(&self) -> std::option::Option<&str> {
+    pub fn profile_id(&self) -> std::option::Option<& str> {
         self.profile_id.as_deref()
     }
 }
 /// See [`CreateProfileOutput`](crate::output::CreateProfileOutput).
 pub mod create_profile_output {
-
+    
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4018,16 +3658,18 @@ pub mod create_profile_output {
         }
         /// <p>The unique identifier of a customer profile.</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_id = input;
-            self
+            self.profile_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateProfileOutput`](crate::output::CreateProfileOutput).
         pub fn build(self) -> crate::output::CreateProfileOutput {
             crate::output::CreateProfileOutput {
-                profile_id: self.profile_id,
+                profile_id: self.profile_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfileOutput`](crate::output::CreateProfileOutput).
@@ -4039,7 +3681,7 @@ impl CreateProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIntegrationWorkflowOutput {
+pub struct CreateIntegrationWorkflowOutput  {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -4049,17 +3691,17 @@ pub struct CreateIntegrationWorkflowOutput {
 }
 impl CreateIntegrationWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>A message indicating create request was received.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput).
 pub mod create_integration_workflow_output {
-
+    
     /// A builder for [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4074,8 +3716,7 @@ pub mod create_integration_workflow_output {
         }
         /// <p>Unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>A message indicating create request was received.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4084,17 +3725,20 @@ pub mod create_integration_workflow_output {
         }
         /// <p>A message indicating create request was received.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput).
         pub fn build(self) -> crate::output::CreateIntegrationWorkflowOutput {
             crate::output::CreateIntegrationWorkflowOutput {
-                workflow_id: self.workflow_id,
-                message: self.message,
+                workflow_id: self.workflow_id
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIntegrationWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput).
@@ -4106,7 +3750,7 @@ impl CreateIntegrationWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainOutput {
+pub struct CreateDomainOutput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -4119,7 +3763,7 @@ pub struct CreateDomainOutput {
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     #[doc(hidden)]
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     #[doc(hidden)]
     pub matching: std::option::Option<crate::model::MatchingResponse>,
@@ -4131,12 +3775,11 @@ pub struct CreateDomainOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDomainOutput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The default number of days until the data within the domain expires.</p>
@@ -4144,37 +3787,34 @@ impl CreateDomainOutput {
         self.default_expiration_days
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-    pub fn default_encryption_key(&self) -> std::option::Option<&str> {
+    pub fn default_encryption_key(&self) -> std::option::Option<& str> {
         self.default_encryption_key.as_deref()
     }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
-    pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
+    pub fn dead_letter_queue_url(&self) -> std::option::Option<& str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-    pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
+    pub fn matching(&self) -> std::option::Option<& crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
-
+    
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4185,9 +3825,7 @@ pub mod create_domain_output {
         pub(crate) matching: std::option::Option<crate::model::MatchingResponse>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -4197,8 +3835,7 @@ pub mod create_domain_output {
         }
         /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
         pub fn default_expiration_days(mut self, input: i32) -> Self {
@@ -4207,8 +3844,7 @@ pub mod create_domain_output {
         }
         /// <p>The default number of days until the data within the domain expires.</p>
         pub fn set_default_expiration_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.default_expiration_days = input;
-            self
+            self.default_expiration_days = input; self
         }
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4216,12 +3852,8 @@ pub mod create_domain_output {
             self
         }
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-        pub fn set_default_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_encryption_key = input;
-            self
+        pub fn set_default_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_encryption_key = input; self
         }
         /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4229,27 +3861,19 @@ pub mod create_domain_output {
             self
         }
         /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
-        pub fn set_dead_letter_queue_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dead_letter_queue_url = input;
-            self
+        pub fn set_dead_letter_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dead_letter_queue_url = input; self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
         /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> 
         /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-        pub fn set_matching(
-            mut self,
-            input: std::option::Option<crate::model::MatchingResponse>,
-        ) -> Self {
-            self.matching = input;
-            self
+        pub fn set_matching(mut self, input: std::option::Option<crate::model::MatchingResponse>) -> Self {
+            self.matching = input; self
         }
         /// <p>The timestamp of when the domain was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4257,12 +3881,8 @@ pub mod create_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4270,52 +3890,48 @@ pub mod create_domain_output {
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
         pub fn build(self) -> crate::output::CreateDomainOutput {
             crate::output::CreateDomainOutput {
-                domain_name: self.domain_name,
-                default_expiration_days: self.default_expiration_days,
-                default_encryption_key: self.default_encryption_key,
-                dead_letter_queue_url: self.dead_letter_queue_url,
-                matching: self.matching,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                tags: self.tags,
+                domain_name: self.domain_name
+                ,
+                default_expiration_days: self.default_expiration_days
+                ,
+                default_encryption_key: self.default_encryption_key
+                ,
+                dead_letter_queue_url: self.dead_letter_queue_url
+                ,
+                matching: self.matching
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
@@ -4327,7 +3943,7 @@ impl CreateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddProfileKeyOutput {
+pub struct AddProfileKeyOutput  {
     /// <p>A searchable identifier of a customer profile.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
@@ -4337,17 +3953,17 @@ pub struct AddProfileKeyOutput {
 }
 impl AddProfileKeyOutput {
     /// <p>A searchable identifier of a customer profile.</p>
-    pub fn key_name(&self) -> std::option::Option<&str> {
+    pub fn key_name(&self) -> std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>A list of key values.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput).
 pub mod add_profile_key_output {
-
+    
     /// A builder for [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4362,8 +3978,7 @@ pub mod add_profile_key_output {
         }
         /// <p>A searchable identifier of a customer profile.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_name = input;
-            self
+            self.key_name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -4372,26 +3987,26 @@ pub mod add_profile_key_output {
         /// <p>A list of key values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of key values.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput).
         pub fn build(self) -> crate::output::AddProfileKeyOutput {
             crate::output::AddProfileKeyOutput {
-                key_name: self.key_name,
-                values: self.values,
+                key_name: self.key_name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl AddProfileKeyOutput {
     /// Creates a new builder-style object to manufacture [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput).
@@ -4399,3 +4014,4 @@ impl AddProfileKeyOutput {
         crate::output::add_profile_key_output::Builder::default()
     }
 }
+

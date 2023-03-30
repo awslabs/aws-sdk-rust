@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -31,22 +31,14 @@
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsCloudwatchMetric,
@@ -55,7 +47,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsXrayTrace,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -63,17 +55,17 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::CloudWatch::Metric" => ResourceType::AwsCloudwatchMetric,
             "AWS::Logs::LogGroup" => ResourceType::AwsLogsLoggroup,
             "AWS::XRay::Trace" => ResourceType::AwsXrayTrace,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -81,15 +73,13 @@ impl ResourceType {
             ResourceType::AwsCloudwatchMetric => "AWS::CloudWatch::Metric",
             ResourceType::AwsLogsLoggroup => "AWS::Logs::LogGroup",
             ResourceType::AwsXrayTrace => "AWS::XRay::Trace",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWS::CloudWatch::Metric",
-            "AWS::Logs::LogGroup",
-            "AWS::XRay::Trace",
+            "AWS::CloudWatch::Metric", "AWS::Logs::LogGroup", "AWS::XRay::Trace"
         ]
     }
 }
@@ -102,7 +92,7 @@ impl AsRef<str> for ResourceType {
 /// <p>A structure that contains information about one of this monitoring account's sinks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSinksItem {
+pub struct ListSinksItem  {
     /// <p>The ARN of the sink.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -115,21 +105,21 @@ pub struct ListSinksItem {
 }
 impl ListSinksItem {
     /// <p>The ARN of the sink.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the sink.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`ListSinksItem`](crate::model::ListSinksItem).
 pub mod list_sinks_item {
-
+    
     /// A builder for [`ListSinksItem`](crate::model::ListSinksItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -145,8 +135,7 @@ pub mod list_sinks_item {
         }
         /// <p>The ARN of the sink.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,8 +144,7 @@ pub mod list_sinks_item {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the sink.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,18 +153,22 @@ pub mod list_sinks_item {
         }
         /// <p>The name of the sink.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ListSinksItem`](crate::model::ListSinksItem).
         pub fn build(self) -> crate::model::ListSinksItem {
             crate::model::ListSinksItem {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSinksItem {
     /// Creates a new builder-style object to manufacture [`ListSinksItem`](crate::model::ListSinksItem).
@@ -188,7 +180,7 @@ impl ListSinksItem {
 /// <p>A structure that contains information about one of this source account's links to a monitoring account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLinksItem {
+pub struct ListLinksItem  {
     /// <p>The ARN of the link.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -207,29 +199,29 @@ pub struct ListLinksItem {
 }
 impl ListLinksItem {
     /// <p>The ARN of the link.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The resource types supported by this link.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_types.as_deref()
     }
     /// <p>The ARN of the sink that this link is attached to.</p>
-    pub fn sink_arn(&self) -> std::option::Option<&str> {
+    pub fn sink_arn(&self) -> std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
 }
 /// See [`ListLinksItem`](crate::model::ListLinksItem).
 pub mod list_links_item {
-
+    
     /// A builder for [`ListLinksItem`](crate::model::ListLinksItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -247,8 +239,7 @@ pub mod list_links_item {
         }
         /// <p>The ARN of the link.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -257,8 +248,7 @@ pub mod list_links_item {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -267,8 +257,7 @@ pub mod list_links_item {
         }
         /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// Appends an item to `resource_types`.
         ///
@@ -277,17 +266,13 @@ pub mod list_links_item {
         /// <p>The resource types supported by this link.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
-            self.resource_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>The resource types supported by this link.</p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_types = input; self
         }
         /// <p>The ARN of the sink that this link is attached to.</p>
         pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -296,20 +281,26 @@ pub mod list_links_item {
         }
         /// <p>The ARN of the sink that this link is attached to.</p>
         pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sink_arn = input;
-            self
+            self.sink_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListLinksItem`](crate::model::ListLinksItem).
         pub fn build(self) -> crate::model::ListLinksItem {
             crate::model::ListLinksItem {
-                arn: self.arn,
-                id: self.id,
-                label: self.label,
-                resource_types: self.resource_types,
-                sink_arn: self.sink_arn,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                label: self.label
+                ,
+                resource_types: self.resource_types
+                ,
+                sink_arn: self.sink_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLinksItem {
     /// Creates a new builder-style object to manufacture [`ListLinksItem`](crate::model::ListLinksItem).
@@ -321,7 +312,7 @@ impl ListLinksItem {
 /// <p>A structure that contains information about one link attached to this monitoring account sink.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedLinksItem {
+pub struct ListAttachedLinksItem  {
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
@@ -334,21 +325,21 @@ pub struct ListAttachedLinksItem {
 }
 impl ListAttachedLinksItem {
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The ARN of the link.</p>
-    pub fn link_arn(&self) -> std::option::Option<&str> {
+    pub fn link_arn(&self) -> std::option::Option<& str> {
         self.link_arn.as_deref()
     }
     /// <p>The resource types supported by this link.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_types.as_deref()
     }
 }
 /// See [`ListAttachedLinksItem`](crate::model::ListAttachedLinksItem).
 pub mod list_attached_links_item {
-
+    
     /// A builder for [`ListAttachedLinksItem`](crate::model::ListAttachedLinksItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -364,8 +355,7 @@ pub mod list_attached_links_item {
         }
         /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>The ARN of the link.</p>
         pub fn link_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,8 +364,7 @@ pub mod list_attached_links_item {
         }
         /// <p>The ARN of the link.</p>
         pub fn set_link_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.link_arn = input;
-            self
+            self.link_arn = input; self
         }
         /// Appends an item to `resource_types`.
         ///
@@ -384,27 +373,28 @@ pub mod list_attached_links_item {
         /// <p>The resource types supported by this link.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
-            self.resource_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>The resource types supported by this link.</p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_types = input; self
         }
         /// Consumes the builder and constructs a [`ListAttachedLinksItem`](crate::model::ListAttachedLinksItem).
         pub fn build(self) -> crate::model::ListAttachedLinksItem {
             crate::model::ListAttachedLinksItem {
-                label: self.label,
-                link_arn: self.link_arn,
-                resource_types: self.resource_types,
+                label: self.label
+                ,
+                link_arn: self.link_arn
+                ,
+                resource_types: self.resource_types
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttachedLinksItem {
     /// Creates a new builder-style object to manufacture [`ListAttachedLinksItem`](crate::model::ListAttachedLinksItem).
@@ -412,3 +402,4 @@ impl ListAttachedLinksItem {
         crate::model::list_attached_links_item::Builder::default()
     }
 }
+

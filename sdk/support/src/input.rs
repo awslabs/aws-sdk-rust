@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`AddAttachmentsToSetInput`](crate::input::AddAttachmentsToSetInput).
 pub mod add_attachments_to_set_input {
-
+    
     /// A builder for [`AddAttachmentsToSetInput`](crate::input::AddAttachmentsToSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,173 +17,113 @@ pub mod add_attachments_to_set_input {
             self
         }
         /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
-        pub fn set_attachment_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attachment_set_id = input;
-            self
+        pub fn set_attachment_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attachment_set_id = input; self
         }
         /// Appends an item to `attachments`.
         ///
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
-        /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+        /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p> 
         /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
         pub fn attachments(mut self, input: crate::model::Attachment) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input);
-            self.attachments = Some(v);
-            self
+                            v.push(input);
+                            self.attachments = Some(v);
+                            self
         }
-        /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+        /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p> 
         /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-        pub fn set_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
-        ) -> Self {
-            self.attachments = input;
-            self
+        pub fn set_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attachment>>) -> Self {
+            self.attachments = input; self
         }
         /// Consumes the builder and constructs a [`AddAttachmentsToSetInput`](crate::input::AddAttachmentsToSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AddAttachmentsToSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::AddAttachmentsToSetInput {
-                attachment_set_id: self.attachment_set_id,
-                attachments: self.attachments,
-            })
+        pub fn build(self) -> Result<crate::input::AddAttachmentsToSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AddAttachmentsToSetInput {
+                    attachment_set_id: self.attachment_set_id
+                    ,
+                    attachments: self.attachments
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AddAttachmentsToSetInput {
     /// Consumes the builder and constructs an Operation<[`AddAttachmentsToSet`](crate::operation::AddAttachmentsToSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AddAttachmentsToSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddAttachmentsToSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AddAttachmentsToSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AddAttachmentsToSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AddAttachmentsToSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AddAttachmentsToSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.AddAttachmentsToSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.AddAttachmentsToSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_attachments_to_set(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_add_attachments_to_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AddAttachmentsToSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AddAttachmentsToSet",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddAttachmentsToSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddAttachmentsToSet", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -195,7 +135,7 @@ impl AddAttachmentsToSetInput {
 
 /// See [`AddCommunicationToCaseInput`](crate::input::AddCommunicationToCaseInput).
 pub mod add_communication_to_case_input {
-
+    
     /// A builder for [`AddCommunicationToCaseInput`](crate::input::AddCommunicationToCaseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -212,8 +152,7 @@ pub mod add_communication_to_case_input {
         }
         /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.case_id = input;
-            self
+            self.case_id = input; self
         }
         /// <p>The body of an email communication to add to the support case.</p>
         pub fn communication_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,12 +160,8 @@ pub mod add_communication_to_case_input {
             self
         }
         /// <p>The body of an email communication to add to the support case.</p>
-        pub fn set_communication_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.communication_body = input;
-            self
+        pub fn set_communication_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.communication_body = input; self
         }
         /// Appends an item to `cc_email_addresses`.
         ///
@@ -235,17 +170,13 @@ pub mod add_communication_to_case_input {
         /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
         pub fn cc_email_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cc_email_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.cc_email_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.cc_email_addresses = Some(v);
+                            self
         }
         /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-        pub fn set_cc_email_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cc_email_addresses = input;
-            self
+        pub fn set_cc_email_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cc_email_addresses = input; self
         }
         /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
         pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,154 +184,100 @@ pub mod add_communication_to_case_input {
             self
         }
         /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
-        pub fn set_attachment_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attachment_set_id = input;
-            self
+        pub fn set_attachment_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attachment_set_id = input; self
         }
         /// Consumes the builder and constructs a [`AddCommunicationToCaseInput`](crate::input::AddCommunicationToCaseInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AddCommunicationToCaseInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::AddCommunicationToCaseInput {
-                case_id: self.case_id,
-                communication_body: self.communication_body,
-                cc_email_addresses: self.cc_email_addresses,
-                attachment_set_id: self.attachment_set_id,
-            })
+        pub fn build(self) -> Result<crate::input::AddCommunicationToCaseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AddCommunicationToCaseInput {
+                    case_id: self.case_id
+                    ,
+                    communication_body: self.communication_body
+                    ,
+                    cc_email_addresses: self.cc_email_addresses
+                    ,
+                    attachment_set_id: self.attachment_set_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AddCommunicationToCaseInput {
     /// Consumes the builder and constructs an Operation<[`AddCommunicationToCase`](crate::operation::AddCommunicationToCase)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AddCommunicationToCase,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddCommunicationToCase, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AddCommunicationToCaseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AddCommunicationToCaseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AddCommunicationToCaseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AddCommunicationToCaseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.AddCommunicationToCase",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.AddCommunicationToCase"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_communication_to_case(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_add_communication_to_case(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AddCommunicationToCase::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AddCommunicationToCase",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddCommunicationToCase::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddCommunicationToCase", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -412,7 +289,7 @@ impl AddCommunicationToCaseInput {
 
 /// See [`CreateCaseInput`](crate::input::CreateCaseInput).
 pub mod create_case_input {
-
+    
     /// A builder for [`CreateCaseInput`](crate::input::CreateCaseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -434,8 +311,7 @@ pub mod create_case_input {
         }
         /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject = input;
-            self
+            self.subject = input; self
         }
         /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -444,27 +320,22 @@ pub mod create_case_input {
         }
         /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_code = input;
-            self
+            self.service_code = input; self
         }
-        /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
-        /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
-        /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
+        /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p> 
+        /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note> 
+        /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p> 
         /// </note>
         pub fn severity_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.severity_code = Some(input.into());
             self
         }
-        /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
-        /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
-        /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
+        /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p> 
+        /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note> 
+        /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p> 
         /// </note>
-        pub fn set_severity_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.severity_code = input;
-            self
+        pub fn set_severity_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.severity_code = input; self
         }
         /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
         pub fn category_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -472,12 +343,8 @@ pub mod create_case_input {
             self
         }
         /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-        pub fn set_category_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.category_code = input;
-            self
+        pub fn set_category_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.category_code = input; self
         }
         /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
         pub fn communication_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -485,12 +352,8 @@ pub mod create_case_input {
             self
         }
         /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-        pub fn set_communication_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.communication_body = input;
-            self
+        pub fn set_communication_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.communication_body = input; self
         }
         /// Appends an item to `cc_email_addresses`.
         ///
@@ -499,17 +362,13 @@ pub mod create_case_input {
         /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
         pub fn cc_email_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cc_email_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.cc_email_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.cc_email_addresses = Some(v);
+                            self
         }
         /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
-        pub fn set_cc_email_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cc_email_addresses = input;
-            self
+        pub fn set_cc_email_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cc_email_addresses = input; self
         }
         /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -518,8 +377,7 @@ pub mod create_case_input {
         }
         /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
         pub fn issue_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -528,8 +386,7 @@ pub mod create_case_input {
         }
         /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
         pub fn set_issue_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.issue_type = input;
-            self
+            self.issue_type = input; self
         }
         /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
         pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -537,155 +394,110 @@ pub mod create_case_input {
             self
         }
         /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
-        pub fn set_attachment_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attachment_set_id = input;
-            self
+        pub fn set_attachment_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attachment_set_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateCaseInput`](crate::input::CreateCaseInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateCaseInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateCaseInput {
-                subject: self.subject,
-                service_code: self.service_code,
-                severity_code: self.severity_code,
-                category_code: self.category_code,
-                communication_body: self.communication_body,
-                cc_email_addresses: self.cc_email_addresses,
-                language: self.language,
-                issue_type: self.issue_type,
-                attachment_set_id: self.attachment_set_id,
-            })
+        pub fn build(self) -> Result<crate::input::CreateCaseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateCaseInput {
+                    subject: self.subject
+                    ,
+                    service_code: self.service_code
+                    ,
+                    severity_code: self.severity_code
+                    ,
+                    category_code: self.category_code
+                    ,
+                    communication_body: self.communication_body
+                    ,
+                    cc_email_addresses: self.cc_email_addresses
+                    ,
+                    language: self.language
+                    ,
+                    issue_type: self.issue_type
+                    ,
+                    attachment_set_id: self.attachment_set_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateCaseInput {
     /// Consumes the builder and constructs an Operation<[`CreateCase`](crate::operation::CreateCase)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateCase,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateCase, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateCaseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateCaseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateCaseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateCaseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.CreateCase",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.CreateCase"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_case(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_case(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateCase::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateCase",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateCase::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateCase", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -697,7 +509,7 @@ impl CreateCaseInput {
 
 /// See [`DescribeAttachmentInput`](crate::input::DescribeAttachmentInput).
 pub mod describe_attachment_input {
-
+    
     /// A builder for [`DescribeAttachmentInput`](crate::input::DescribeAttachmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -710,149 +522,94 @@ pub mod describe_attachment_input {
             self
         }
         /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
-        pub fn set_attachment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attachment_id = input;
-            self
+        pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attachment_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAttachmentInput`](crate::input::DescribeAttachmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAttachmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeAttachmentInput {
-                attachment_id: self.attachment_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAttachmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAttachmentInput {
+                    attachment_id: self.attachment_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAttachment`](crate::operation::DescribeAttachment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAttachment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAttachment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAttachmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAttachmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAttachmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeAttachment",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeAttachment"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_attachment(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_attachment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAttachment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAttachment",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAttachment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAttachment", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -864,7 +621,7 @@ impl DescribeAttachmentInput {
 
 /// See [`DescribeCasesInput`](crate::input::DescribeCasesInput).
 pub mod describe_cases_input {
-
+    
     /// A builder for [`DescribeCasesInput`](crate::input::DescribeCasesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -886,17 +643,13 @@ pub mod describe_cases_input {
         /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
         pub fn case_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.case_id_list.unwrap_or_default();
-            v.push(input.into());
-            self.case_id_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.case_id_list = Some(v);
+                            self
         }
         /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-        pub fn set_case_id_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.case_id_list = input;
-            self
+        pub fn set_case_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.case_id_list = input; self
         }
         /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
         pub fn display_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -905,8 +658,7 @@ pub mod describe_cases_input {
         }
         /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
         pub fn set_display_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_id = input;
-            self
+            self.display_id = input; self
         }
         /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn after_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -915,8 +667,7 @@ pub mod describe_cases_input {
         }
         /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn set_after_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.after_time = input;
-            self
+            self.after_time = input; self
         }
         /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn before_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -925,8 +676,7 @@ pub mod describe_cases_input {
         }
         /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn set_before_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.before_time = input;
-            self
+            self.before_time = input; self
         }
         /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
         pub fn include_resolved_cases(mut self, input: bool) -> Self {
@@ -935,8 +685,7 @@ pub mod describe_cases_input {
         }
         /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
         pub fn set_include_resolved_cases(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_resolved_cases = input;
-            self
+            self.include_resolved_cases = input; self
         }
         /// <p>A resumption point for pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -945,8 +694,7 @@ pub mod describe_cases_input {
         }
         /// <p>A resumption point for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return before paginating.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -955,8 +703,7 @@ pub mod describe_cases_input {
         }
         /// <p>The maximum number of results to return before paginating.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -965,8 +712,7 @@ pub mod describe_cases_input {
         }
         /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
         pub fn include_communications(mut self, input: bool) -> Self {
@@ -975,151 +721,110 @@ pub mod describe_cases_input {
         }
         /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
         pub fn set_include_communications(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_communications = input;
-            self
+            self.include_communications = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCasesInput`](crate::input::DescribeCasesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeCasesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeCasesInput {
-                case_id_list: self.case_id_list,
-                display_id: self.display_id,
-                after_time: self.after_time,
-                before_time: self.before_time,
-                include_resolved_cases: self.include_resolved_cases.unwrap_or_default(),
-                next_token: self.next_token,
-                max_results: self.max_results,
-                language: self.language,
-                include_communications: self.include_communications,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeCasesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeCasesInput {
+                    case_id_list: self.case_id_list
+                    ,
+                    display_id: self.display_id
+                    ,
+                    after_time: self.after_time
+                    ,
+                    before_time: self.before_time
+                    ,
+                    include_resolved_cases: self.include_resolved_cases
+                        .unwrap_or_default()
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    language: self.language
+                    ,
+                    include_communications: self.include_communications
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeCasesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCases`](crate::operation::DescribeCases)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeCases,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeCases, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeCasesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeCasesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeCasesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeCasesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeCases",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeCases"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_cases(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_cases(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeCases::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeCases",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeCases::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeCases", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1131,7 +836,7 @@ impl DescribeCasesInput {
 
 /// See [`DescribeCommunicationsInput`](crate::input::DescribeCommunicationsInput).
 pub mod describe_communications_input {
-
+    
     /// A builder for [`DescribeCommunicationsInput`](crate::input::DescribeCommunicationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1149,8 +854,7 @@ pub mod describe_communications_input {
         }
         /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.case_id = input;
-            self
+            self.case_id = input; self
         }
         /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn before_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1159,8 +863,7 @@ pub mod describe_communications_input {
         }
         /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn set_before_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.before_time = input;
-            self
+            self.before_time = input; self
         }
         /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn after_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1169,8 +872,7 @@ pub mod describe_communications_input {
         }
         /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn set_after_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.after_time = input;
-            self
+            self.after_time = input; self
         }
         /// <p>A resumption point for pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1179,8 +881,7 @@ pub mod describe_communications_input {
         }
         /// <p>A resumption point for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return before paginating.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1189,151 +890,101 @@ pub mod describe_communications_input {
         }
         /// <p>The maximum number of results to return before paginating.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCommunicationsInput`](crate::input::DescribeCommunicationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeCommunicationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeCommunicationsInput {
-                case_id: self.case_id,
-                before_time: self.before_time,
-                after_time: self.after_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeCommunicationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeCommunicationsInput {
+                    case_id: self.case_id
+                    ,
+                    before_time: self.before_time
+                    ,
+                    after_time: self.after_time
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeCommunicationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCommunications`](crate::operation::DescribeCommunications)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeCommunications,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeCommunications, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeCommunicationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeCommunicationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeCommunicationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeCommunicationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeCommunications",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeCommunications"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_communications(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_communications(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeCommunications::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeCommunications",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeCommunications::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeCommunications", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1345,7 +996,7 @@ impl DescribeCommunicationsInput {
 
 /// See [`DescribeServicesInput`](crate::input::DescribeServicesInput).
 pub mod describe_services_input {
-
+    
     /// A builder for [`DescribeServicesInput`](crate::input::DescribeServicesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1360,17 +1011,13 @@ pub mod describe_services_input {
         /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
         pub fn service_code_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_code_list.unwrap_or_default();
-            v.push(input.into());
-            self.service_code_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.service_code_list = Some(v);
+                            self
         }
         /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-        pub fn set_service_code_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.service_code_list = input;
-            self
+        pub fn set_service_code_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.service_code_list = input; self
         }
         /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1379,146 +1026,95 @@ pub mod describe_services_input {
         }
         /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::input::DescribeServicesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeServicesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeServicesInput {
-                service_code_list: self.service_code_list,
-                language: self.language,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeServicesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeServicesInput {
+                    service_code_list: self.service_code_list
+                    ,
+                    language: self.language
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeServicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServices`](crate::operation::DescribeServices)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeServices,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeServices, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeServicesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeServicesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeServicesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeServicesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeServices",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeServices"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_services(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_services(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeServices::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeServices",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeServices::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeServices", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1530,7 +1126,7 @@ impl DescribeServicesInput {
 
 /// See [`DescribeSeverityLevelsInput`](crate::input::DescribeSeverityLevelsInput).
 pub mod describe_severity_levels_input {
-
+    
     /// A builder for [`DescribeSeverityLevelsInput`](crate::input::DescribeSeverityLevelsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1544,147 +1140,93 @@ pub mod describe_severity_levels_input {
         }
         /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSeverityLevelsInput`](crate::input::DescribeSeverityLevelsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeSeverityLevelsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeSeverityLevelsInput {
-                language: self.language,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeSeverityLevelsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeSeverityLevelsInput {
+                    language: self.language
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeSeverityLevelsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSeverityLevels`](crate::operation::DescribeSeverityLevels)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeSeverityLevels,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeSeverityLevels, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeSeverityLevelsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeSeverityLevelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeSeverityLevelsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeSeverityLevelsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeSeverityLevels",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeSeverityLevels"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_severity_levels(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_severity_levels(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeSeverityLevels::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeSeverityLevels",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeSeverityLevels::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeSeverityLevels", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1696,7 +1238,7 @@ impl DescribeSeverityLevelsInput {
 
 /// See [`DescribeTrustedAdvisorCheckRefreshStatusesInput`](crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput).
 pub mod describe_trusted_advisor_check_refresh_statuses_input {
-
+    
     /// A builder for [`DescribeTrustedAdvisorCheckRefreshStatusesInput`](crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1707,105 +1249,71 @@ pub mod describe_trusted_advisor_check_refresh_statuses_input {
         ///
         /// To override the contents of this collection use [`set_check_ids`](Self::set_check_ids).
         ///
-        /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
-        /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
+        /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note> 
+        /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p> 
         /// </note>
         pub fn check_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.check_ids.unwrap_or_default();
-            v.push(input.into());
-            self.check_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.check_ids = Some(v);
+                            self
         }
-        /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
-        /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
+        /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note> 
+        /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p> 
         /// </note>
-        pub fn set_check_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.check_ids = input;
-            self
+        pub fn set_check_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.check_ids = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckRefreshStatusesInput`](crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput {
-                    check_ids: self.check_ids,
-                },
+                    check_ids: self.check_ids
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckRefreshStatuses`](crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeTrustedAdvisorCheckRefreshStatuses",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeTrustedAdvisorCheckRefreshStatuses"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1814,69 +1322,45 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_refresh_statuses(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTrustedAdvisorCheckRefreshStatuses",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTrustedAdvisorCheckRefreshStatuses", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckRefreshStatusesInput`](crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput).
-    pub fn builder() -> crate::input::describe_trusted_advisor_check_refresh_statuses_input::Builder
-    {
+    pub fn builder() -> crate::input::describe_trusted_advisor_check_refresh_statuses_input::Builder {
         crate::input::describe_trusted_advisor_check_refresh_statuses_input::Builder::default()
     }
 }
 
 /// See [`DescribeTrustedAdvisorCheckResultInput`](crate::input::DescribeTrustedAdvisorCheckResultInput).
 pub mod describe_trusted_advisor_check_result_input {
-
+    
     /// A builder for [`DescribeTrustedAdvisorCheckResultInput`](crate::input::DescribeTrustedAdvisorCheckResultInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1891,126 +1375,97 @@ pub mod describe_trusted_advisor_check_result_input {
         }
         /// <p>The unique identifier for the Trusted Advisor check.</p>
         pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.check_id = input;
-            self
+            self.check_id = input; self
         }
-        /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
-        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-        /// <ul>
-        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-        /// <li> <p>English - <code>en</code> </p> </li>
-        /// <li> <p>French - <code>fr</code> </p> </li>
-        /// <li> <p>German - <code>de</code> </p> </li>
-        /// <li> <p>Indonesian - <code>id</code> </p> </li>
-        /// <li> <p>Italian - <code>it</code> </p> </li>
-        /// <li> <p>Japanese - <code>ja</code> </p> </li>
-        /// <li> <p>Korean - <code>ko</code> </p> </li>
-        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-        /// <li> <p>Spanish - <code>es</code> </p> </li>
+        /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p> 
+        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+        /// <ul> 
+        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+        /// <li> <p>English - <code>en</code> </p> </li> 
+        /// <li> <p>French - <code>fr</code> </p> </li> 
+        /// <li> <p>German - <code>de</code> </p> </li> 
+        /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+        /// <li> <p>Italian - <code>it</code> </p> </li> 
+        /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+        /// <li> <p>Korean - <code>ko</code> </p> </li> 
+        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+        /// <li> <p>Spanish - <code>es</code> </p> </li> 
         /// </ul>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
-        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-        /// <ul>
-        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-        /// <li> <p>English - <code>en</code> </p> </li>
-        /// <li> <p>French - <code>fr</code> </p> </li>
-        /// <li> <p>German - <code>de</code> </p> </li>
-        /// <li> <p>Indonesian - <code>id</code> </p> </li>
-        /// <li> <p>Italian - <code>it</code> </p> </li>
-        /// <li> <p>Japanese - <code>ja</code> </p> </li>
-        /// <li> <p>Korean - <code>ko</code> </p> </li>
-        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-        /// <li> <p>Spanish - <code>es</code> </p> </li>
+        /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p> 
+        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+        /// <ul> 
+        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+        /// <li> <p>English - <code>en</code> </p> </li> 
+        /// <li> <p>French - <code>fr</code> </p> </li> 
+        /// <li> <p>German - <code>de</code> </p> </li> 
+        /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+        /// <li> <p>Italian - <code>it</code> </p> </li> 
+        /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+        /// <li> <p>Korean - <code>ko</code> </p> </li> 
+        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+        /// <li> <p>Spanish - <code>es</code> </p> </li> 
         /// </ul>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckResultInput`](crate::input::DescribeTrustedAdvisorCheckResultInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeTrustedAdvisorCheckResultInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeTrustedAdvisorCheckResultInput {
-                check_id: self.check_id,
-                language: self.language,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTrustedAdvisorCheckResultInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeTrustedAdvisorCheckResultInput {
+                    check_id: self.check_id
+                    ,
+                    language: self.language
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTrustedAdvisorCheckResultInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckResult`](crate::operation::DescribeTrustedAdvisorCheckResult)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTrustedAdvisorCheckResult,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTrustedAdvisorCheckResult, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTrustedAdvisorCheckResultInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTrustedAdvisorCheckResultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeTrustedAdvisorCheckResultInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeTrustedAdvisorCheckResultInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeTrustedAdvisorCheckResult",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeTrustedAdvisorCheckResult"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2019,56 +1474,33 @@ impl DescribeTrustedAdvisorCheckResultInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_result(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTrustedAdvisorCheckResult::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTrustedAdvisorCheckResult",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTrustedAdvisorCheckResult::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTrustedAdvisorCheckResult", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2080,129 +1512,100 @@ impl DescribeTrustedAdvisorCheckResultInput {
 
 /// See [`DescribeTrustedAdvisorChecksInput`](crate::input::DescribeTrustedAdvisorChecksInput).
 pub mod describe_trusted_advisor_checks_input {
-
+    
     /// A builder for [`DescribeTrustedAdvisorChecksInput`](crate::input::DescribeTrustedAdvisorChecksInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
-        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-        /// <ul>
-        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-        /// <li> <p>English - <code>en</code> </p> </li>
-        /// <li> <p>French - <code>fr</code> </p> </li>
-        /// <li> <p>German - <code>de</code> </p> </li>
-        /// <li> <p>Indonesian - <code>id</code> </p> </li>
-        /// <li> <p>Italian - <code>it</code> </p> </li>
-        /// <li> <p>Japanese - <code>ja</code> </p> </li>
-        /// <li> <p>Korean - <code>ko</code> </p> </li>
-        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-        /// <li> <p>Spanish - <code>es</code> </p> </li>
+        /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p> 
+        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+        /// <ul> 
+        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+        /// <li> <p>English - <code>en</code> </p> </li> 
+        /// <li> <p>French - <code>fr</code> </p> </li> 
+        /// <li> <p>German - <code>de</code> </p> </li> 
+        /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+        /// <li> <p>Italian - <code>it</code> </p> </li> 
+        /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+        /// <li> <p>Korean - <code>ko</code> </p> </li> 
+        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+        /// <li> <p>Spanish - <code>es</code> </p> </li> 
         /// </ul>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
-        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-        /// <ul>
-        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-        /// <li> <p>English - <code>en</code> </p> </li>
-        /// <li> <p>French - <code>fr</code> </p> </li>
-        /// <li> <p>German - <code>de</code> </p> </li>
-        /// <li> <p>Indonesian - <code>id</code> </p> </li>
-        /// <li> <p>Italian - <code>it</code> </p> </li>
-        /// <li> <p>Japanese - <code>ja</code> </p> </li>
-        /// <li> <p>Korean - <code>ko</code> </p> </li>
-        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-        /// <li> <p>Spanish - <code>es</code> </p> </li>
+        /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p> 
+        /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+        /// <ul> 
+        /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+        /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+        /// <li> <p>English - <code>en</code> </p> </li> 
+        /// <li> <p>French - <code>fr</code> </p> </li> 
+        /// <li> <p>German - <code>de</code> </p> </li> 
+        /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+        /// <li> <p>Italian - <code>it</code> </p> </li> 
+        /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+        /// <li> <p>Korean - <code>ko</code> </p> </li> 
+        /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+        /// <li> <p>Spanish - <code>es</code> </p> </li> 
         /// </ul>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorChecksInput`](crate::input::DescribeTrustedAdvisorChecksInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeTrustedAdvisorChecksInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeTrustedAdvisorChecksInput {
-                language: self.language,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTrustedAdvisorChecksInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeTrustedAdvisorChecksInput {
+                    language: self.language
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTrustedAdvisorChecksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorChecks`](crate::operation::DescribeTrustedAdvisorChecks)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTrustedAdvisorChecks,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTrustedAdvisorChecks, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTrustedAdvisorChecksInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTrustedAdvisorChecksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeTrustedAdvisorChecksInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeTrustedAdvisorChecksInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeTrustedAdvisorChecks",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeTrustedAdvisorChecks"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2211,56 +1614,33 @@ impl DescribeTrustedAdvisorChecksInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_checks(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTrustedAdvisorChecks::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTrustedAdvisorChecks",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTrustedAdvisorChecks::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTrustedAdvisorChecks", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2272,7 +1652,7 @@ impl DescribeTrustedAdvisorChecksInput {
 
 /// See [`DescribeTrustedAdvisorCheckSummariesInput`](crate::input::DescribeTrustedAdvisorCheckSummariesInput).
 pub mod describe_trusted_advisor_check_summaries_input {
-
+    
     /// A builder for [`DescribeTrustedAdvisorCheckSummariesInput`](crate::input::DescribeTrustedAdvisorCheckSummariesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2286,96 +1666,64 @@ pub mod describe_trusted_advisor_check_summaries_input {
         /// <p>The IDs of the Trusted Advisor checks.</p>
         pub fn check_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.check_ids.unwrap_or_default();
-            v.push(input.into());
-            self.check_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.check_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the Trusted Advisor checks.</p>
-        pub fn set_check_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.check_ids = input;
-            self
+        pub fn set_check_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.check_ids = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesInput`](crate::input::DescribeTrustedAdvisorCheckSummariesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeTrustedAdvisorCheckSummariesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeTrustedAdvisorCheckSummariesInput {
-                check_ids: self.check_ids,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTrustedAdvisorCheckSummariesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeTrustedAdvisorCheckSummariesInput {
+                    check_ids: self.check_ids
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckSummaries`](crate::operation::DescribeTrustedAdvisorCheckSummaries)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTrustedAdvisorCheckSummaries,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTrustedAdvisorCheckSummaries, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTrustedAdvisorCheckSummariesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTrustedAdvisorCheckSummariesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeTrustedAdvisorCheckSummariesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeTrustedAdvisorCheckSummariesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2384,56 +1732,33 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_summaries(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTrustedAdvisorCheckSummaries::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTrustedAdvisorCheckSummaries",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTrustedAdvisorCheckSummaries::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTrustedAdvisorCheckSummaries", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2445,105 +1770,76 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
 
 /// See [`RefreshTrustedAdvisorCheckInput`](crate::input::RefreshTrustedAdvisorCheckInput).
 pub mod refresh_trusted_advisor_check_input {
-
+    
     /// A builder for [`RefreshTrustedAdvisorCheckInput`](crate::input::RefreshTrustedAdvisorCheckInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
-        /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+        /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+        /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
         /// </note>
         pub fn check_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
-        /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+        /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+        /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
         /// </note>
         pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.check_id = input;
-            self
+            self.check_id = input; self
         }
         /// Consumes the builder and constructs a [`RefreshTrustedAdvisorCheckInput`](crate::input::RefreshTrustedAdvisorCheckInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RefreshTrustedAdvisorCheckInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RefreshTrustedAdvisorCheckInput {
-                check_id: self.check_id,
-            })
+        pub fn build(self) -> Result<crate::input::RefreshTrustedAdvisorCheckInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RefreshTrustedAdvisorCheckInput {
+                    check_id: self.check_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RefreshTrustedAdvisorCheckInput {
     /// Consumes the builder and constructs an Operation<[`RefreshTrustedAdvisorCheck`](crate::operation::RefreshTrustedAdvisorCheck)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RefreshTrustedAdvisorCheck,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RefreshTrustedAdvisorCheck, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RefreshTrustedAdvisorCheckInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RefreshTrustedAdvisorCheckInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RefreshTrustedAdvisorCheckInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RefreshTrustedAdvisorCheckInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.RefreshTrustedAdvisorCheck",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.RefreshTrustedAdvisorCheck"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2552,56 +1848,33 @@ impl RefreshTrustedAdvisorCheckInput {
             crate::operation_ser::serialize_operation_crate_operation_refresh_trusted_advisor_check(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RefreshTrustedAdvisorCheck::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RefreshTrustedAdvisorCheck",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RefreshTrustedAdvisorCheck::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RefreshTrustedAdvisorCheck", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2613,7 +1886,7 @@ impl RefreshTrustedAdvisorCheckInput {
 
 /// See [`ResolveCaseInput`](crate::input::ResolveCaseInput).
 pub mod resolve_case_input {
-
+    
     /// A builder for [`ResolveCaseInput`](crate::input::ResolveCaseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2627,143 +1900,93 @@ pub mod resolve_case_input {
         }
         /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.case_id = input;
-            self
+            self.case_id = input; self
         }
         /// Consumes the builder and constructs a [`ResolveCaseInput`](crate::input::ResolveCaseInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ResolveCaseInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ResolveCaseInput {
-                case_id: self.case_id,
-            })
+        pub fn build(self) -> Result<crate::input::ResolveCaseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ResolveCaseInput {
+                    case_id: self.case_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ResolveCaseInput {
     /// Consumes the builder and constructs an Operation<[`ResolveCase`](crate::operation::ResolveCase)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ResolveCase,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ResolveCase, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ResolveCaseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ResolveCaseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ResolveCaseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ResolveCaseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSSupport_20130415.ResolveCase",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSSupport_20130415.ResolveCase"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_resolve_case(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_resolve_case(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ResolveCase::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ResolveCase",
-            "support",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ResolveCase::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ResolveCase", "support"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2776,14 +1999,14 @@ impl ResolveCaseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolveCaseInput {
+pub struct ResolveCaseInput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
 }
 impl ResolveCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
 }
@@ -2791,18 +2014,18 @@ impl ResolveCaseInput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RefreshTrustedAdvisorCheckInput {
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
-    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+pub struct RefreshTrustedAdvisorCheckInput  {
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
     /// </note>
     #[doc(hidden)]
     pub check_id: std::option::Option<std::string::String>,
 }
 impl RefreshTrustedAdvisorCheckInput {
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
-    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
     /// </note>
-    pub fn check_id(&self) -> std::option::Option<&str> {
+    pub fn check_id(&self) -> std::option::Option<& str> {
         self.check_id.as_deref()
     }
 }
@@ -2810,14 +2033,14 @@ impl RefreshTrustedAdvisorCheckInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckSummariesInput {
+pub struct DescribeTrustedAdvisorCheckSummariesInput  {
     /// <p>The IDs of the Trusted Advisor checks.</p>
     #[doc(hidden)]
     pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn check_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn check_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.check_ids.as_deref()
     }
 }
@@ -2825,42 +2048,42 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorChecksInput {
-    /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
-    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-    /// <ul>
-    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-    /// <li> <p>English - <code>en</code> </p> </li>
-    /// <li> <p>French - <code>fr</code> </p> </li>
-    /// <li> <p>German - <code>de</code> </p> </li>
-    /// <li> <p>Indonesian - <code>id</code> </p> </li>
-    /// <li> <p>Italian - <code>it</code> </p> </li>
-    /// <li> <p>Japanese - <code>ja</code> </p> </li>
-    /// <li> <p>Korean - <code>ko</code> </p> </li>
-    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-    /// <li> <p>Spanish - <code>es</code> </p> </li>
+pub struct DescribeTrustedAdvisorChecksInput  {
+    /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p> 
+    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+    /// <ul> 
+    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+    /// <li> <p>English - <code>en</code> </p> </li> 
+    /// <li> <p>French - <code>fr</code> </p> </li> 
+    /// <li> <p>German - <code>de</code> </p> </li> 
+    /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+    /// <li> <p>Italian - <code>it</code> </p> </li> 
+    /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+    /// <li> <p>Korean - <code>ko</code> </p> </li> 
+    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+    /// <li> <p>Spanish - <code>es</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeTrustedAdvisorChecksInput {
-    /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
-    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-    /// <ul>
-    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-    /// <li> <p>English - <code>en</code> </p> </li>
-    /// <li> <p>French - <code>fr</code> </p> </li>
-    /// <li> <p>German - <code>de</code> </p> </li>
-    /// <li> <p>Indonesian - <code>id</code> </p> </li>
-    /// <li> <p>Italian - <code>it</code> </p> </li>
-    /// <li> <p>Japanese - <code>ja</code> </p> </li>
-    /// <li> <p>Korean - <code>ko</code> </p> </li>
-    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-    /// <li> <p>Spanish - <code>es</code> </p> </li>
+    /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p> 
+    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+    /// <ul> 
+    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+    /// <li> <p>English - <code>en</code> </p> </li> 
+    /// <li> <p>French - <code>fr</code> </p> </li> 
+    /// <li> <p>German - <code>de</code> </p> </li> 
+    /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+    /// <li> <p>Italian - <code>it</code> </p> </li> 
+    /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+    /// <li> <p>Korean - <code>ko</code> </p> </li> 
+    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+    /// <li> <p>Spanish - <code>es</code> </p> </li> 
     /// </ul>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
 }
@@ -2868,49 +2091,49 @@ impl DescribeTrustedAdvisorChecksInput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckResultInput {
+pub struct DescribeTrustedAdvisorCheckResultInput  {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
     pub check_id: std::option::Option<std::string::String>,
-    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
-    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-    /// <ul>
-    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-    /// <li> <p>English - <code>en</code> </p> </li>
-    /// <li> <p>French - <code>fr</code> </p> </li>
-    /// <li> <p>German - <code>de</code> </p> </li>
-    /// <li> <p>Indonesian - <code>id</code> </p> </li>
-    /// <li> <p>Italian - <code>it</code> </p> </li>
-    /// <li> <p>Japanese - <code>ja</code> </p> </li>
-    /// <li> <p>Korean - <code>ko</code> </p> </li>
-    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-    /// <li> <p>Spanish - <code>es</code> </p> </li>
+    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p> 
+    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+    /// <ul> 
+    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+    /// <li> <p>English - <code>en</code> </p> </li> 
+    /// <li> <p>French - <code>fr</code> </p> </li> 
+    /// <li> <p>German - <code>de</code> </p> </li> 
+    /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+    /// <li> <p>Italian - <code>it</code> </p> </li> 
+    /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+    /// <li> <p>Korean - <code>ko</code> </p> </li> 
+    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+    /// <li> <p>Spanish - <code>es</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeTrustedAdvisorCheckResultInput {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(&self) -> std::option::Option<&str> {
+    pub fn check_id(&self) -> std::option::Option<& str> {
         self.check_id.as_deref()
     }
-    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
-    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-    /// <ul>
-    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-    /// <li> <p>English - <code>en</code> </p> </li>
-    /// <li> <p>French - <code>fr</code> </p> </li>
-    /// <li> <p>German - <code>de</code> </p> </li>
-    /// <li> <p>Indonesian - <code>id</code> </p> </li>
-    /// <li> <p>Italian - <code>it</code> </p> </li>
-    /// <li> <p>Japanese - <code>ja</code> </p> </li>
-    /// <li> <p>Korean - <code>ko</code> </p> </li>
-    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-    /// <li> <p>Spanish - <code>es</code> </p> </li>
+    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p> 
+    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+    /// <ul> 
+    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+    /// <li> <p>English - <code>en</code> </p> </li> 
+    /// <li> <p>French - <code>fr</code> </p> </li> 
+    /// <li> <p>German - <code>de</code> </p> </li> 
+    /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+    /// <li> <p>Italian - <code>it</code> </p> </li> 
+    /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+    /// <li> <p>Korean - <code>ko</code> </p> </li> 
+    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+    /// <li> <p>Spanish - <code>es</code> </p> </li> 
     /// </ul>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
 }
@@ -2918,18 +2141,18 @@ impl DescribeTrustedAdvisorCheckResultInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckRefreshStatusesInput {
-    /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
-    /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
+pub struct DescribeTrustedAdvisorCheckRefreshStatusesInput  {
+    /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note> 
+    /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p> 
     /// </note>
     #[doc(hidden)]
     pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
-    /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
-    /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note> 
+    /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p> 
     /// </note>
-    pub fn check_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn check_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.check_ids.as_deref()
     }
 }
@@ -2937,14 +2160,14 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSeverityLevelsInput {
+pub struct DescribeSeverityLevelsInput  {
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeSeverityLevelsInput {
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
 }
@@ -2952,7 +2175,7 @@ impl DescribeSeverityLevelsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServicesInput {
+pub struct DescribeServicesInput  {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
     #[doc(hidden)]
     pub service_code_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2962,11 +2185,11 @@ pub struct DescribeServicesInput {
 }
 impl DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    pub fn service_code_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn service_code_list(&self) -> std::option::Option<& [std::string::String]> {
         self.service_code_list.as_deref()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
 }
@@ -2974,7 +2197,7 @@ impl DescribeServicesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCommunicationsInput {
+pub struct DescribeCommunicationsInput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
@@ -2993,19 +2216,19 @@ pub struct DescribeCommunicationsInput {
 }
 impl DescribeCommunicationsInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    pub fn before_time(&self) -> std::option::Option<&str> {
+    pub fn before_time(&self) -> std::option::Option<& str> {
         self.before_time.as_deref()
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    pub fn after_time(&self) -> std::option::Option<&str> {
+    pub fn after_time(&self) -> std::option::Option<& str> {
         self.after_time.as_deref()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return before paginating.</p>
@@ -3017,7 +2240,7 @@ impl DescribeCommunicationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCasesInput {
+pub struct DescribeCasesInput  {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
     #[doc(hidden)]
     pub case_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3048,19 +2271,19 @@ pub struct DescribeCasesInput {
 }
 impl DescribeCasesInput {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn case_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn case_id_list(&self) -> std::option::Option<& [std::string::String]> {
         self.case_id_list.as_deref()
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
-    pub fn display_id(&self) -> std::option::Option<&str> {
+    pub fn display_id(&self) -> std::option::Option<& str> {
         self.display_id.as_deref()
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    pub fn after_time(&self) -> std::option::Option<&str> {
+    pub fn after_time(&self) -> std::option::Option<& str> {
         self.after_time.as_deref()
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    pub fn before_time(&self) -> std::option::Option<&str> {
+    pub fn before_time(&self) -> std::option::Option<& str> {
         self.before_time.as_deref()
     }
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
@@ -3068,7 +2291,7 @@ impl DescribeCasesInput {
         self.include_resolved_cases
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return before paginating.</p>
@@ -3076,7 +2299,7 @@ impl DescribeCasesInput {
         self.max_results
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
@@ -3088,14 +2311,14 @@ impl DescribeCasesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAttachmentInput {
+pub struct DescribeAttachmentInput  {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
     #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl DescribeAttachmentInput {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
 }
@@ -3103,16 +2326,16 @@ impl DescribeAttachmentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCaseInput {
+pub struct CreateCaseInput  {
     /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
     #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
-    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
-    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
-    /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
+    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p> 
+    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note> 
+    /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p> 
     /// </note>
     #[doc(hidden)]
     pub severity_code: std::option::Option<std::string::String>,
@@ -3137,42 +2360,42 @@ pub struct CreateCaseInput {
 }
 impl CreateCaseInput {
     /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> std::option::Option<& str> {
         self.service_code.as_deref()
     }
-    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
-    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
-    /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
+    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p> 
+    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note> 
+    /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p> 
     /// </note>
-    pub fn severity_code(&self) -> std::option::Option<&str> {
+    pub fn severity_code(&self) -> std::option::Option<& str> {
         self.severity_code.as_deref()
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn category_code(&self) -> std::option::Option<&str> {
+    pub fn category_code(&self) -> std::option::Option<& str> {
         self.category_code.as_deref()
     }
     /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-    pub fn communication_body(&self) -> std::option::Option<&str> {
+    pub fn communication_body(&self) -> std::option::Option<& str> {
         self.communication_body.as_deref()
     }
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
-    pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cc_email_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.cc_email_addresses.as_deref()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
-    pub fn issue_type(&self) -> std::option::Option<&str> {
+    pub fn issue_type(&self) -> std::option::Option<& str> {
         self.issue_type.as_deref()
     }
     /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
-    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_set_id(&self) -> std::option::Option<& str> {
         self.attachment_set_id.as_deref()
     }
 }
@@ -3180,7 +2403,7 @@ impl CreateCaseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddCommunicationToCaseInput {
+pub struct AddCommunicationToCaseInput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
@@ -3196,19 +2419,19 @@ pub struct AddCommunicationToCaseInput {
 }
 impl AddCommunicationToCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>The body of an email communication to add to the support case.</p>
-    pub fn communication_body(&self) -> std::option::Option<&str> {
+    pub fn communication_body(&self) -> std::option::Option<& str> {
         self.communication_body.as_deref()
     }
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cc_email_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.cc_email_addresses.as_deref()
     }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
-    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_set_id(&self) -> std::option::Option<& str> {
         self.attachment_set_id.as_deref()
     }
 }
@@ -3216,23 +2439,24 @@ impl AddCommunicationToCaseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddAttachmentsToSetInput {
+pub struct AddAttachmentsToSetInput  {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
     #[doc(hidden)]
     pub attachment_set_id: std::option::Option<std::string::String>,
-    /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+    /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p> 
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     #[doc(hidden)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
 }
 impl AddAttachmentsToSetInput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
-    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_set_id(&self) -> std::option::Option<& str> {
         self.attachment_set_id.as_deref()
     }
-    /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+    /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p> 
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn attachments(&self) -> std::option::Option<&[crate::model::Attachment]> {
+    pub fn attachments(&self) -> std::option::Option<& [crate::model::Attachment]> {
         self.attachments.as_deref()
     }
 }
+

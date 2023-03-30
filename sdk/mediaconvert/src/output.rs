@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateQueueOutput {
+pub struct UpdateQueueOutput  {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
 }
 impl UpdateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
-    pub fn queue(&self) -> std::option::Option<&crate::model::Queue> {
+    pub fn queue(&self) -> std::option::Option<& crate::model::Queue> {
         self.queue.as_ref()
     }
 }
 /// See [`UpdateQueueOutput`](crate::output::UpdateQueueOutput).
 pub mod update_queue_output {
-
+    
     /// A builder for [`UpdateQueueOutput`](crate::output::UpdateQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,14 +29,18 @@ pub mod update_queue_output {
         }
         /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
         pub fn set_queue(mut self, input: std::option::Option<crate::model::Queue>) -> Self {
-            self.queue = input;
-            self
+            self.queue = input; self
         }
         /// Consumes the builder and constructs a [`UpdateQueueOutput`](crate::output::UpdateQueueOutput).
         pub fn build(self) -> crate::output::UpdateQueueOutput {
-            crate::output::UpdateQueueOutput { queue: self.queue }
+            crate::output::UpdateQueueOutput {
+                queue: self.queue
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateQueueOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueOutput`](crate::output::UpdateQueueOutput).
@@ -48,20 +52,20 @@ impl UpdateQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePresetOutput {
+pub struct UpdatePresetOutput  {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
 }
 impl UpdatePresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
-    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+    pub fn preset(&self) -> std::option::Option<& crate::model::Preset> {
         self.preset.as_ref()
     }
 }
 /// See [`UpdatePresetOutput`](crate::output::UpdatePresetOutput).
 pub mod update_preset_output {
-
+    
     /// A builder for [`UpdatePresetOutput`](crate::output::UpdatePresetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -75,16 +79,18 @@ pub mod update_preset_output {
         }
         /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
-            self.preset = input;
-            self
+            self.preset = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePresetOutput`](crate::output::UpdatePresetOutput).
         pub fn build(self) -> crate::output::UpdatePresetOutput {
             crate::output::UpdatePresetOutput {
-                preset: self.preset,
+                preset: self.preset
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePresetOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePresetOutput`](crate::output::UpdatePresetOutput).
@@ -96,20 +102,20 @@ impl UpdatePresetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJobTemplateOutput {
+pub struct UpdateJobTemplateOutput  {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
 }
 impl UpdateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-    pub fn job_template(&self) -> std::option::Option<&crate::model::JobTemplate> {
+    pub fn job_template(&self) -> std::option::Option<& crate::model::JobTemplate> {
         self.job_template.as_ref()
     }
 }
 /// See [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput).
 pub mod update_job_template_output {
-
+    
     /// A builder for [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -122,20 +128,19 @@ pub mod update_job_template_output {
             self
         }
         /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-        pub fn set_job_template(
-            mut self,
-            input: std::option::Option<crate::model::JobTemplate>,
-        ) -> Self {
-            self.job_template = input;
-            self
+        pub fn set_job_template(mut self, input: std::option::Option<crate::model::JobTemplate>) -> Self {
+            self.job_template = input; self
         }
         /// Consumes the builder and constructs a [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput).
         pub fn build(self) -> crate::output::UpdateJobTemplateOutput {
             crate::output::UpdateJobTemplateOutput {
-                job_template: self.job_template,
+                job_template: self.job_template
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput).
@@ -147,19 +152,24 @@ impl UpdateJobTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -171,19 +181,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -195,20 +210,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPolicyOutput {
+pub struct PutPolicyOutput  {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl PutPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
 }
 /// See [`PutPolicyOutput`](crate::output::PutPolicyOutput).
 pub mod put_policy_output {
-
+    
     /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -222,16 +237,18 @@ pub mod put_policy_output {
         }
         /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutPolicyOutput`](crate::output::PutPolicyOutput).
         pub fn build(self) -> crate::output::PutPolicyOutput {
             crate::output::PutPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl PutPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutPolicyOutput`](crate::output::PutPolicyOutput).
@@ -243,20 +260,20 @@ impl PutPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
     #[doc(hidden)]
     pub resource_tags: std::option::Option<crate::model::ResourceTags>,
 }
 impl ListTagsForResourceOutput {
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
-    pub fn resource_tags(&self) -> std::option::Option<&crate::model::ResourceTags> {
+    pub fn resource_tags(&self) -> std::option::Option<& crate::model::ResourceTags> {
         self.resource_tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -269,20 +286,19 @@ pub mod list_tags_for_resource_output {
             self
         }
         /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<crate::model::ResourceTags>,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<crate::model::ResourceTags>) -> Self {
+            self.resource_tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                resource_tags: self.resource_tags,
+                resource_tags: self.resource_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -294,7 +310,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQueuesOutput {
+pub struct ListQueuesOutput  {
     /// Use this string to request the next batch of queues.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -304,17 +320,17 @@ pub struct ListQueuesOutput {
 }
 impl ListQueuesOutput {
     /// Use this string to request the next batch of queues.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of queues.
-    pub fn queues(&self) -> std::option::Option<&[crate::model::Queue]> {
+    pub fn queues(&self) -> std::option::Option<& [crate::model::Queue]> {
         self.queues.as_deref()
     }
 }
 /// See [`ListQueuesOutput`](crate::output::ListQueuesOutput).
 pub mod list_queues_output {
-
+    
     /// A builder for [`ListQueuesOutput`](crate::output::ListQueuesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -329,8 +345,7 @@ pub mod list_queues_output {
         }
         /// Use this string to request the next batch of queues.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `queues`.
         ///
@@ -339,26 +354,26 @@ pub mod list_queues_output {
         /// List of queues.
         pub fn queues(mut self, input: crate::model::Queue) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input);
-            self.queues = Some(v);
-            self
+                            v.push(input);
+                            self.queues = Some(v);
+                            self
         }
         /// List of queues.
-        pub fn set_queues(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Queue>>,
-        ) -> Self {
-            self.queues = input;
-            self
+        pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<crate::model::Queue>>) -> Self {
+            self.queues = input; self
         }
         /// Consumes the builder and constructs a [`ListQueuesOutput`](crate::output::ListQueuesOutput).
         pub fn build(self) -> crate::output::ListQueuesOutput {
             crate::output::ListQueuesOutput {
-                next_token: self.next_token,
-                queues: self.queues,
+                next_token: self.next_token
+                ,
+                queues: self.queues
+                ,
             }
         }
     }
+    
+    
 }
 impl ListQueuesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueuesOutput`](crate::output::ListQueuesOutput).
@@ -370,7 +385,7 @@ impl ListQueuesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPresetsOutput {
+pub struct ListPresetsOutput  {
     /// Use this string to request the next batch of presets.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -380,17 +395,17 @@ pub struct ListPresetsOutput {
 }
 impl ListPresetsOutput {
     /// Use this string to request the next batch of presets.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of presets
-    pub fn presets(&self) -> std::option::Option<&[crate::model::Preset]> {
+    pub fn presets(&self) -> std::option::Option<& [crate::model::Preset]> {
         self.presets.as_deref()
     }
 }
 /// See [`ListPresetsOutput`](crate::output::ListPresetsOutput).
 pub mod list_presets_output {
-
+    
     /// A builder for [`ListPresetsOutput`](crate::output::ListPresetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -405,8 +420,7 @@ pub mod list_presets_output {
         }
         /// Use this string to request the next batch of presets.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `presets`.
         ///
@@ -415,26 +429,26 @@ pub mod list_presets_output {
         /// List of presets
         pub fn presets(mut self, input: crate::model::Preset) -> Self {
             let mut v = self.presets.unwrap_or_default();
-            v.push(input);
-            self.presets = Some(v);
-            self
+                            v.push(input);
+                            self.presets = Some(v);
+                            self
         }
         /// List of presets
-        pub fn set_presets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Preset>>,
-        ) -> Self {
-            self.presets = input;
-            self
+        pub fn set_presets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Preset>>) -> Self {
+            self.presets = input; self
         }
         /// Consumes the builder and constructs a [`ListPresetsOutput`](crate::output::ListPresetsOutput).
         pub fn build(self) -> crate::output::ListPresetsOutput {
             crate::output::ListPresetsOutput {
-                next_token: self.next_token,
-                presets: self.presets,
+                next_token: self.next_token
+                ,
+                presets: self.presets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPresetsOutput {
     /// Creates a new builder-style object to manufacture [`ListPresetsOutput`](crate::output::ListPresetsOutput).
@@ -446,7 +460,7 @@ impl ListPresetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobTemplatesOutput {
+pub struct ListJobTemplatesOutput  {
     /// List of Job templates.
     #[doc(hidden)]
     pub job_templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
@@ -456,17 +470,17 @@ pub struct ListJobTemplatesOutput {
 }
 impl ListJobTemplatesOutput {
     /// List of Job templates.
-    pub fn job_templates(&self) -> std::option::Option<&[crate::model::JobTemplate]> {
+    pub fn job_templates(&self) -> std::option::Option<& [crate::model::JobTemplate]> {
         self.job_templates.as_deref()
     }
     /// Use this string to request the next batch of job templates.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
 pub mod list_job_templates_output {
-
+    
     /// A builder for [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -481,17 +495,13 @@ pub mod list_job_templates_output {
         /// List of Job templates.
         pub fn job_templates(mut self, input: crate::model::JobTemplate) -> Self {
             let mut v = self.job_templates.unwrap_or_default();
-            v.push(input);
-            self.job_templates = Some(v);
-            self
+                            v.push(input);
+                            self.job_templates = Some(v);
+                            self
         }
         /// List of Job templates.
-        pub fn set_job_templates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
-        ) -> Self {
-            self.job_templates = input;
-            self
+        pub fn set_job_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>) -> Self {
+            self.job_templates = input; self
         }
         /// Use this string to request the next batch of job templates.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -500,17 +510,20 @@ pub mod list_job_templates_output {
         }
         /// Use this string to request the next batch of job templates.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
         pub fn build(self) -> crate::output::ListJobTemplatesOutput {
             crate::output::ListJobTemplatesOutput {
-                job_templates: self.job_templates,
-                next_token: self.next_token,
+                job_templates: self.job_templates
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
@@ -522,7 +535,7 @@ impl ListJobTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsOutput {
+pub struct ListJobsOutput  {
     /// List of jobs
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -532,17 +545,17 @@ pub struct ListJobsOutput {
 }
 impl ListJobsOutput {
     /// List of jobs
-    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::model::Job]> {
         self.jobs.as_deref()
     }
     /// Use this string to request the next batch of jobs.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
-
+    
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -557,17 +570,13 @@ pub mod list_jobs_output {
         /// List of jobs
         pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input);
-            self.jobs = Some(v);
-            self
+                            v.push(input);
+                            self.jobs = Some(v);
+                            self
         }
         /// List of jobs
-        pub fn set_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Job>>,
-        ) -> Self {
-            self.jobs = input;
-            self
+        pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Job>>) -> Self {
+            self.jobs = input; self
         }
         /// Use this string to request the next batch of jobs.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -576,17 +585,20 @@ pub mod list_jobs_output {
         }
         /// Use this string to request the next batch of jobs.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
-                jobs: self.jobs,
-                next_token: self.next_token,
+                jobs: self.jobs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
@@ -598,20 +610,20 @@ impl ListJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQueueOutput {
+pub struct GetQueueOutput  {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
 }
 impl GetQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
-    pub fn queue(&self) -> std::option::Option<&crate::model::Queue> {
+    pub fn queue(&self) -> std::option::Option<& crate::model::Queue> {
         self.queue.as_ref()
     }
 }
 /// See [`GetQueueOutput`](crate::output::GetQueueOutput).
 pub mod get_queue_output {
-
+    
     /// A builder for [`GetQueueOutput`](crate::output::GetQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -625,14 +637,18 @@ pub mod get_queue_output {
         }
         /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
         pub fn set_queue(mut self, input: std::option::Option<crate::model::Queue>) -> Self {
-            self.queue = input;
-            self
+            self.queue = input; self
         }
         /// Consumes the builder and constructs a [`GetQueueOutput`](crate::output::GetQueueOutput).
         pub fn build(self) -> crate::output::GetQueueOutput {
-            crate::output::GetQueueOutput { queue: self.queue }
+            crate::output::GetQueueOutput {
+                queue: self.queue
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetQueueOutput {
     /// Creates a new builder-style object to manufacture [`GetQueueOutput`](crate::output::GetQueueOutput).
@@ -644,20 +660,20 @@ impl GetQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPresetOutput {
+pub struct GetPresetOutput  {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
 }
 impl GetPresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
-    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+    pub fn preset(&self) -> std::option::Option<& crate::model::Preset> {
         self.preset.as_ref()
     }
 }
 /// See [`GetPresetOutput`](crate::output::GetPresetOutput).
 pub mod get_preset_output {
-
+    
     /// A builder for [`GetPresetOutput`](crate::output::GetPresetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -671,16 +687,18 @@ pub mod get_preset_output {
         }
         /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
-            self.preset = input;
-            self
+            self.preset = input; self
         }
         /// Consumes the builder and constructs a [`GetPresetOutput`](crate::output::GetPresetOutput).
         pub fn build(self) -> crate::output::GetPresetOutput {
             crate::output::GetPresetOutput {
-                preset: self.preset,
+                preset: self.preset
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPresetOutput {
     /// Creates a new builder-style object to manufacture [`GetPresetOutput`](crate::output::GetPresetOutput).
@@ -692,20 +710,20 @@ impl GetPresetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl GetPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
-
+    
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -719,16 +737,18 @@ pub mod get_policy_output {
         }
         /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput).
         pub fn build(self) -> crate::output::GetPolicyOutput {
             crate::output::GetPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput).
@@ -740,20 +760,20 @@ impl GetPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobTemplateOutput {
+pub struct GetJobTemplateOutput  {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
 }
 impl GetJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-    pub fn job_template(&self) -> std::option::Option<&crate::model::JobTemplate> {
+    pub fn job_template(&self) -> std::option::Option<& crate::model::JobTemplate> {
         self.job_template.as_ref()
     }
 }
 /// See [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput).
 pub mod get_job_template_output {
-
+    
     /// A builder for [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -766,20 +786,19 @@ pub mod get_job_template_output {
             self
         }
         /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-        pub fn set_job_template(
-            mut self,
-            input: std::option::Option<crate::model::JobTemplate>,
-        ) -> Self {
-            self.job_template = input;
-            self
+        pub fn set_job_template(mut self, input: std::option::Option<crate::model::JobTemplate>) -> Self {
+            self.job_template = input; self
         }
         /// Consumes the builder and constructs a [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput).
         pub fn build(self) -> crate::output::GetJobTemplateOutput {
             crate::output::GetJobTemplateOutput {
-                job_template: self.job_template,
+                job_template: self.job_template
+                ,
             }
         }
     }
+    
+    
 }
 impl GetJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput).
@@ -791,20 +810,20 @@ impl GetJobTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobOutput {
+pub struct GetJobOutput  {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl GetJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+    pub fn job(&self) -> std::option::Option<& crate::model::Job> {
         self.job.as_ref()
     }
 }
 /// See [`GetJobOutput`](crate::output::GetJobOutput).
 pub mod get_job_output {
-
+    
     /// A builder for [`GetJobOutput`](crate::output::GetJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -818,14 +837,18 @@ pub mod get_job_output {
         }
         /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
-            self.job = input;
-            self
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`GetJobOutput`](crate::output::GetJobOutput).
         pub fn build(self) -> crate::output::GetJobOutput {
-            crate::output::GetJobOutput { job: self.job }
+            crate::output::GetJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetJobOutput {
     /// Creates a new builder-style object to manufacture [`GetJobOutput`](crate::output::GetJobOutput).
@@ -837,19 +860,24 @@ impl GetJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateCertificateOutput {}
+pub struct DisassociateCertificateOutput  {
+}
 /// See [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput).
 pub mod disassociate_certificate_output {
-
+    
     /// A builder for [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput).
         pub fn build(self) -> crate::output::DisassociateCertificateOutput {
-            crate::output::DisassociateCertificateOutput {}
+            crate::output::DisassociateCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput).
@@ -861,7 +889,7 @@ impl DisassociateCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointsOutput {
+pub struct DescribeEndpointsOutput  {
     /// List of endpoints
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -871,17 +899,17 @@ pub struct DescribeEndpointsOutput {
 }
 impl DescribeEndpointsOutput {
     /// List of endpoints
-    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::model::Endpoint]> {
         self.endpoints.as_deref()
     }
     /// Use this string to request the next batch of endpoints.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
 pub mod describe_endpoints_output {
-
+    
     /// A builder for [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -896,17 +924,13 @@ pub mod describe_endpoints_output {
         /// List of endpoints
         pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input);
-            self.endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.endpoints = Some(v);
+                            self
         }
         /// List of endpoints
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>) -> Self {
+            self.endpoints = input; self
         }
         /// Use this string to request the next batch of endpoints.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -915,17 +939,20 @@ pub mod describe_endpoints_output {
         }
         /// Use this string to request the next batch of endpoints.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeEndpointsOutput {
             crate::output::DescribeEndpointsOutput {
-                endpoints: self.endpoints,
-                next_token: self.next_token,
+                endpoints: self.endpoints
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
@@ -937,19 +964,24 @@ impl DescribeEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteQueueOutput {}
+pub struct DeleteQueueOutput  {
+}
 /// See [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
 pub mod delete_queue_output {
-
+    
     /// A builder for [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
         pub fn build(self) -> crate::output::DeleteQueueOutput {
-            crate::output::DeleteQueueOutput {}
+            crate::output::DeleteQueueOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteQueueOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
@@ -961,19 +993,24 @@ impl DeleteQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePresetOutput {}
+pub struct DeletePresetOutput  {
+}
 /// See [`DeletePresetOutput`](crate::output::DeletePresetOutput).
 pub mod delete_preset_output {
-
+    
     /// A builder for [`DeletePresetOutput`](crate::output::DeletePresetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePresetOutput`](crate::output::DeletePresetOutput).
         pub fn build(self) -> crate::output::DeletePresetOutput {
-            crate::output::DeletePresetOutput {}
+            crate::output::DeletePresetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePresetOutput {
     /// Creates a new builder-style object to manufacture [`DeletePresetOutput`](crate::output::DeletePresetOutput).
@@ -985,19 +1022,24 @@ impl DeletePresetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyOutput {}
+pub struct DeletePolicyOutput  {
+}
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
 pub mod delete_policy_output {
-
+    
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
         pub fn build(self) -> crate::output::DeletePolicyOutput {
-            crate::output::DeletePolicyOutput {}
+            crate::output::DeletePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
@@ -1009,19 +1051,24 @@ impl DeletePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobTemplateOutput {}
+pub struct DeleteJobTemplateOutput  {
+}
 /// See [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
 pub mod delete_job_template_output {
-
+    
     /// A builder for [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
         pub fn build(self) -> crate::output::DeleteJobTemplateOutput {
-            crate::output::DeleteJobTemplateOutput {}
+            crate::output::DeleteJobTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
@@ -1033,20 +1080,20 @@ impl DeleteJobTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateQueueOutput {
+pub struct CreateQueueOutput  {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
 }
 impl CreateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
-    pub fn queue(&self) -> std::option::Option<&crate::model::Queue> {
+    pub fn queue(&self) -> std::option::Option<& crate::model::Queue> {
         self.queue.as_ref()
     }
 }
 /// See [`CreateQueueOutput`](crate::output::CreateQueueOutput).
 pub mod create_queue_output {
-
+    
     /// A builder for [`CreateQueueOutput`](crate::output::CreateQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1060,14 +1107,18 @@ pub mod create_queue_output {
         }
         /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
         pub fn set_queue(mut self, input: std::option::Option<crate::model::Queue>) -> Self {
-            self.queue = input;
-            self
+            self.queue = input; self
         }
         /// Consumes the builder and constructs a [`CreateQueueOutput`](crate::output::CreateQueueOutput).
         pub fn build(self) -> crate::output::CreateQueueOutput {
-            crate::output::CreateQueueOutput { queue: self.queue }
+            crate::output::CreateQueueOutput {
+                queue: self.queue
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateQueueOutput {
     /// Creates a new builder-style object to manufacture [`CreateQueueOutput`](crate::output::CreateQueueOutput).
@@ -1079,20 +1130,20 @@ impl CreateQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePresetOutput {
+pub struct CreatePresetOutput  {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
 }
 impl CreatePresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
-    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+    pub fn preset(&self) -> std::option::Option<& crate::model::Preset> {
         self.preset.as_ref()
     }
 }
 /// See [`CreatePresetOutput`](crate::output::CreatePresetOutput).
 pub mod create_preset_output {
-
+    
     /// A builder for [`CreatePresetOutput`](crate::output::CreatePresetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1106,16 +1157,18 @@ pub mod create_preset_output {
         }
         /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
-            self.preset = input;
-            self
+            self.preset = input; self
         }
         /// Consumes the builder and constructs a [`CreatePresetOutput`](crate::output::CreatePresetOutput).
         pub fn build(self) -> crate::output::CreatePresetOutput {
             crate::output::CreatePresetOutput {
-                preset: self.preset,
+                preset: self.preset
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePresetOutput {
     /// Creates a new builder-style object to manufacture [`CreatePresetOutput`](crate::output::CreatePresetOutput).
@@ -1127,20 +1180,20 @@ impl CreatePresetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobTemplateOutput {
+pub struct CreateJobTemplateOutput  {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
 }
 impl CreateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-    pub fn job_template(&self) -> std::option::Option<&crate::model::JobTemplate> {
+    pub fn job_template(&self) -> std::option::Option<& crate::model::JobTemplate> {
         self.job_template.as_ref()
     }
 }
 /// See [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
 pub mod create_job_template_output {
-
+    
     /// A builder for [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1153,20 +1206,19 @@ pub mod create_job_template_output {
             self
         }
         /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-        pub fn set_job_template(
-            mut self,
-            input: std::option::Option<crate::model::JobTemplate>,
-        ) -> Self {
-            self.job_template = input;
-            self
+        pub fn set_job_template(mut self, input: std::option::Option<crate::model::JobTemplate>) -> Self {
+            self.job_template = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
         pub fn build(self) -> crate::output::CreateJobTemplateOutput {
             crate::output::CreateJobTemplateOutput {
-                job_template: self.job_template,
+                job_template: self.job_template
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
@@ -1178,20 +1230,20 @@ impl CreateJobTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobOutput {
+pub struct CreateJobOutput  {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl CreateJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+    pub fn job(&self) -> std::option::Option<& crate::model::Job> {
         self.job.as_ref()
     }
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
-
+    
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1205,14 +1257,18 @@ pub mod create_job_output {
         }
         /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
-            self.job = input;
-            self
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
-            crate::output::CreateJobOutput { job: self.job }
+            crate::output::CreateJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
@@ -1224,19 +1280,24 @@ impl CreateJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobOutput {}
+pub struct CancelJobOutput  {
+}
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
-
+    
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
         pub fn build(self) -> crate::output::CancelJobOutput {
-            crate::output::CancelJobOutput {}
+            crate::output::CancelJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelJobOutput`](crate::output::CancelJobOutput).
@@ -1248,19 +1309,24 @@ impl CancelJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateCertificateOutput {}
+pub struct AssociateCertificateOutput  {
+}
 /// See [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput).
 pub mod associate_certificate_output {
-
+    
     /// A builder for [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput).
         pub fn build(self) -> crate::output::AssociateCertificateOutput {
-            crate::output::AssociateCertificateOutput {}
+            crate::output::AssociateCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput).
@@ -1268,3 +1334,4 @@ impl AssociateCertificateOutput {
         crate::output::associate_certificate_output::Builder::default()
     }
 }
+

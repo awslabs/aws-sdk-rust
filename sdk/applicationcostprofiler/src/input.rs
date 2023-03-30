@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
 pub mod delete_report_definition_input {
-
+    
     /// A builder for [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,92 +17,53 @@ pub mod delete_report_definition_input {
         }
         /// <p>Required. ID of the report to delete.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteReportDefinitionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteReportDefinitionInput {
-                report_id: self.report_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteReportDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteReportDefinitionInput {
+                    report_id: self.report_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReportDefinition`](crate::operation::DeleteReportDefinition)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteReportDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteReportDefinition, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteReportDefinitionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteReportDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.report_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "report_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let report_id = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("report_id", "cannot be empty or unset"))?;
+                let report_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "report_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/reportDefinition/{reportId}", reportId = report_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("report_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/reportDefinition/{reportId}", reportId = report_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteReportDefinitionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteReportDefinitionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -112,51 +73,34 @@ impl DeleteReportDefinitionInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteReportDefinition::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteReportDefinition",
-            "applicationcostprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteReportDefinition::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteReportDefinition", "applicationcostprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -168,7 +112,7 @@ impl DeleteReportDefinitionInput {
 
 /// See [`GetReportDefinitionInput`](crate::input::GetReportDefinitionInput).
 pub mod get_report_definition_input {
-
+    
     /// A builder for [`GetReportDefinitionInput`](crate::input::GetReportDefinitionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -182,92 +126,53 @@ pub mod get_report_definition_input {
         }
         /// <p>ID of the report to retrieve.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// Consumes the builder and constructs a [`GetReportDefinitionInput`](crate::input::GetReportDefinitionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetReportDefinitionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetReportDefinitionInput {
-                report_id: self.report_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetReportDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetReportDefinitionInput {
+                    report_id: self.report_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetReportDefinition`](crate::operation::GetReportDefinition)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetReportDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetReportDefinition, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetReportDefinitionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetReportDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.report_id;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "report_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let report_id = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("report_id", "cannot be empty or unset"))?;
+                let report_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "report_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/reportDefinition/{reportId}", reportId = report_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("report_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/reportDefinition/{reportId}", reportId = report_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetReportDefinitionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetReportDefinitionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -277,51 +182,34 @@ impl GetReportDefinitionInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetReportDefinition::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetReportDefinition",
-            "applicationcostprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetReportDefinition::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetReportDefinition", "applicationcostprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -333,7 +221,7 @@ impl GetReportDefinitionInput {
 
 /// See [`ImportApplicationUsageInput`](crate::input::ImportApplicationUsageInput).
 pub mod import_application_usage_input {
-
+    
     /// A builder for [`ImportApplicationUsageInput`](crate::input::ImportApplicationUsageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -346,146 +234,89 @@ pub mod import_application_usage_input {
             self
         }
         /// <p>Amazon S3 location to import application usage data from.</p>
-        pub fn set_source_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::SourceS3Location>,
-        ) -> Self {
-            self.source_s3_location = input;
-            self
+        pub fn set_source_s3_location(mut self, input: std::option::Option<crate::model::SourceS3Location>) -> Self {
+            self.source_s3_location = input; self
         }
         /// Consumes the builder and constructs a [`ImportApplicationUsageInput`](crate::input::ImportApplicationUsageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ImportApplicationUsageInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ImportApplicationUsageInput {
-                source_s3_location: self.source_s3_location,
-            })
+        pub fn build(self) -> Result<crate::input::ImportApplicationUsageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ImportApplicationUsageInput {
+                    source_s3_location: self.source_s3_location
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ImportApplicationUsageInput {
     /// Consumes the builder and constructs an Operation<[`ImportApplicationUsage`](crate::operation::ImportApplicationUsage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ImportApplicationUsage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ImportApplicationUsage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ImportApplicationUsageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ImportApplicationUsageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/importApplicationUsage").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ImportApplicationUsageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ImportApplicationUsageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_import_application_usage(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_import_application_usage(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ImportApplicationUsage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ImportApplicationUsage",
-            "applicationcostprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ImportApplicationUsage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ImportApplicationUsage", "applicationcostprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -497,7 +328,7 @@ impl ImportApplicationUsageInput {
 
 /// See [`ListReportDefinitionsInput`](crate::input::ListReportDefinitionsInput).
 pub mod list_report_definitions_input {
-
+    
     /// A builder for [`ListReportDefinitionsInput`](crate::input::ListReportDefinitionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -512,8 +343,7 @@ pub mod list_report_definitions_input {
         }
         /// <p>The token value from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -522,93 +352,63 @@ pub mod list_report_definitions_input {
         }
         /// <p>The maximum number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListReportDefinitionsInput`](crate::input::ListReportDefinitionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListReportDefinitionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListReportDefinitionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListReportDefinitionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListReportDefinitionsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListReportDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListReportDefinitions`](crate::operation::ListReportDefinitions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListReportDefinitions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReportDefinitions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListReportDefinitionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListReportDefinitionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/reportDefinition").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListReportDefinitionsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListReportDefinitionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
                 if let Some(inner_4) = &_input.max_results {
                     if *inner_4 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListReportDefinitionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListReportDefinitionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -619,51 +419,34 @@ impl ListReportDefinitionsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListReportDefinitions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListReportDefinitions",
-            "applicationcostprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReportDefinitions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReportDefinitions", "applicationcostprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -675,7 +458,7 @@ impl ListReportDefinitionsInput {
 
 /// See [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
 pub mod put_report_definition_input {
-
+    
     /// A builder for [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -693,8 +476,7 @@ pub mod put_report_definition_input {
         }
         /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// <p>Required. Description of the report.</p>
         pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -702,12 +484,8 @@ pub mod put_report_definition_input {
             self
         }
         /// <p>Required. Description of the report.</p>
-        pub fn set_report_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.report_description = input;
-            self
+        pub fn set_report_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_description = input; self
         }
         /// <p>Required. The cadence to generate the report.</p>
         pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
@@ -715,12 +493,8 @@ pub mod put_report_definition_input {
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
-        pub fn set_report_frequency(
-            mut self,
-            input: std::option::Option<crate::model::ReportFrequency>,
-        ) -> Self {
-            self.report_frequency = input;
-            self
+        pub fn set_report_frequency(mut self, input: std::option::Option<crate::model::ReportFrequency>) -> Self {
+            self.report_frequency = input; self
         }
         /// <p>Required. The format to use for the generated report.</p>
         pub fn format(mut self, input: crate::model::Format) -> Self {
@@ -729,8 +503,7 @@ pub mod put_report_definition_input {
         }
         /// <p>Required. The format to use for the generated report.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
@@ -738,148 +511,97 @@ pub mod put_report_definition_input {
             self
         }
         /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-        pub fn set_destination_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.destination_s3_location = input;
-            self
+        pub fn set_destination_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.destination_s3_location = input; self
         }
         /// Consumes the builder and constructs a [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutReportDefinitionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutReportDefinitionInput {
-                report_id: self.report_id,
-                report_description: self.report_description,
-                report_frequency: self.report_frequency,
-                format: self.format,
-                destination_s3_location: self.destination_s3_location,
-            })
+        pub fn build(self) -> Result<crate::input::PutReportDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutReportDefinitionInput {
+                    report_id: self.report_id
+                    ,
+                    report_description: self.report_description
+                    ,
+                    report_frequency: self.report_frequency
+                    ,
+                    format: self.format
+                    ,
+                    destination_s3_location: self.destination_s3_location
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`PutReportDefinition`](crate::operation::PutReportDefinition)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutReportDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutReportDefinition, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutReportDefinitionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutReportDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/reportDefinition").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutReportDefinitionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutReportDefinitionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_report_definition(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_report_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutReportDefinition::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutReportDefinition",
-            "applicationcostprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutReportDefinition::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutReportDefinition", "applicationcostprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -891,7 +613,7 @@ impl PutReportDefinitionInput {
 
 /// See [`UpdateReportDefinitionInput`](crate::input::UpdateReportDefinitionInput).
 pub mod update_report_definition_input {
-
+    
     /// A builder for [`UpdateReportDefinitionInput`](crate::input::UpdateReportDefinitionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -909,8 +631,7 @@ pub mod update_report_definition_input {
         }
         /// <p>Required. ID of the report to update.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// <p>Required. Description of the report.</p>
         pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -918,12 +639,8 @@ pub mod update_report_definition_input {
             self
         }
         /// <p>Required. Description of the report.</p>
-        pub fn set_report_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.report_description = input;
-            self
+        pub fn set_report_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_description = input; self
         }
         /// <p>Required. The cadence to generate the report.</p>
         pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
@@ -931,12 +648,8 @@ pub mod update_report_definition_input {
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
-        pub fn set_report_frequency(
-            mut self,
-            input: std::option::Option<crate::model::ReportFrequency>,
-        ) -> Self {
-            self.report_frequency = input;
-            self
+        pub fn set_report_frequency(mut self, input: std::option::Option<crate::model::ReportFrequency>) -> Self {
+            self.report_frequency = input; self
         }
         /// <p>Required. The format to use for the generated report.</p>
         pub fn format(mut self, input: crate::model::Format) -> Self {
@@ -945,8 +658,7 @@ pub mod update_report_definition_input {
         }
         /// <p>Required. The format to use for the generated report.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
@@ -954,170 +666,103 @@ pub mod update_report_definition_input {
             self
         }
         /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-        pub fn set_destination_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.destination_s3_location = input;
-            self
+        pub fn set_destination_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.destination_s3_location = input; self
         }
         /// Consumes the builder and constructs a [`UpdateReportDefinitionInput`](crate::input::UpdateReportDefinitionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateReportDefinitionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateReportDefinitionInput {
-                report_id: self.report_id,
-                report_description: self.report_description,
-                report_frequency: self.report_frequency,
-                format: self.format,
-                destination_s3_location: self.destination_s3_location,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateReportDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateReportDefinitionInput {
+                    report_id: self.report_id
+                    ,
+                    report_description: self.report_description
+                    ,
+                    report_frequency: self.report_frequency
+                    ,
+                    format: self.format
+                    ,
+                    destination_s3_location: self.destination_s3_location
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReportDefinition`](crate::operation::UpdateReportDefinition)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateReportDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateReportDefinition, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateReportDefinitionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateReportDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.report_id;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "report_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let report_id = aws_smithy_http::label::fmt_string(
-                    input_5,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_5 = input_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("report_id", "cannot be empty or unset"))?;
+                let report_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "report_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/reportDefinition/{reportId}", reportId = report_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("report_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/reportDefinition/{reportId}", reportId = report_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateReportDefinitionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateReportDefinitionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_report_definition(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_report_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateReportDefinition::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateReportDefinition",
-            "applicationcostprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateReportDefinition::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateReportDefinition", "applicationcostprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1130,7 +775,7 @@ impl UpdateReportDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateReportDefinitionInput {
+pub struct UpdateReportDefinitionInput  {
     /// <p>Required. ID of the report to update.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
@@ -1149,23 +794,23 @@ pub struct UpdateReportDefinitionInput {
 }
 impl UpdateReportDefinitionInput {
     /// <p>Required. ID of the report to update.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>Required. Description of the report.</p>
-    pub fn report_description(&self) -> std::option::Option<&str> {
+    pub fn report_description(&self) -> std::option::Option<& str> {
         self.report_description.as_deref()
     }
     /// <p>Required. The cadence to generate the report.</p>
-    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+    pub fn report_frequency(&self) -> std::option::Option<& crate::model::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Required. The format to use for the generated report.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::model::Format> {
         self.format.as_ref()
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    pub fn destination_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn destination_s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.destination_s3_location.as_ref()
     }
 }
@@ -1173,7 +818,7 @@ impl UpdateReportDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutReportDefinitionInput {
+pub struct PutReportDefinitionInput  {
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
@@ -1192,23 +837,23 @@ pub struct PutReportDefinitionInput {
 }
 impl PutReportDefinitionInput {
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>Required. Description of the report.</p>
-    pub fn report_description(&self) -> std::option::Option<&str> {
+    pub fn report_description(&self) -> std::option::Option<& str> {
         self.report_description.as_deref()
     }
     /// <p>Required. The cadence to generate the report.</p>
-    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+    pub fn report_frequency(&self) -> std::option::Option<& crate::model::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Required. The format to use for the generated report.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::model::Format> {
         self.format.as_ref()
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    pub fn destination_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn destination_s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.destination_s3_location.as_ref()
     }
 }
@@ -1216,7 +861,7 @@ impl PutReportDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReportDefinitionsInput {
+pub struct ListReportDefinitionsInput  {
     /// <p>The token value from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1226,7 +871,7 @@ pub struct ListReportDefinitionsInput {
 }
 impl ListReportDefinitionsInput {
     /// <p>The token value from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -1238,14 +883,14 @@ impl ListReportDefinitionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportApplicationUsageInput {
+pub struct ImportApplicationUsageInput  {
     /// <p>Amazon S3 location to import application usage data from.</p>
     #[doc(hidden)]
     pub source_s3_location: std::option::Option<crate::model::SourceS3Location>,
 }
 impl ImportApplicationUsageInput {
     /// <p>Amazon S3 location to import application usage data from.</p>
-    pub fn source_s3_location(&self) -> std::option::Option<&crate::model::SourceS3Location> {
+    pub fn source_s3_location(&self) -> std::option::Option<& crate::model::SourceS3Location> {
         self.source_s3_location.as_ref()
     }
 }
@@ -1253,14 +898,14 @@ impl ImportApplicationUsageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReportDefinitionInput {
+pub struct GetReportDefinitionInput  {
     /// <p>ID of the report to retrieve.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl GetReportDefinitionInput {
     /// <p>ID of the report to retrieve.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
@@ -1268,14 +913,15 @@ impl GetReportDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReportDefinitionInput {
+pub struct DeleteReportDefinitionInput  {
     /// <p>Required. ID of the report to delete.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl DeleteReportDefinitionInput {
     /// <p>Required. ID of the report to delete.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a Amazon Web Services Service Catalog AppRegistry attribute group that is rich metadata which describes an application and its components.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeGroup {
+pub struct AttributeGroup  {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -24,45 +24,41 @@ pub struct AttributeGroup {
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AttributeGroup {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the attribute group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the attribute group that the user provides.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`AttributeGroup`](crate::model::AttributeGroup).
 pub mod attribute_group {
-
+    
     /// A builder for [`AttributeGroup`](crate::model::AttributeGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -72,9 +68,7 @@ pub mod attribute_group {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The globally unique attribute group identifier of the attribute group.</p>
@@ -84,8 +78,7 @@ pub mod attribute_group {
         }
         /// <p>The globally unique attribute group identifier of the attribute group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +87,7 @@ pub mod attribute_group {
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the attribute group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +96,7 @@ pub mod attribute_group {
         }
         /// <p>The name of the attribute group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the attribute group that the user provides.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +105,7 @@ pub mod attribute_group {
         }
         /// <p>The description of the attribute group that the user provides.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -123,12 +113,8 @@ pub mod attribute_group {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,51 +122,46 @@ pub mod attribute_group {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`AttributeGroup`](crate::model::AttributeGroup).
         pub fn build(self) -> crate::model::AttributeGroup {
             crate::model::AttributeGroup {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
-                tags: self.tags,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeGroup {
     /// Creates a new builder-style object to manufacture [`AttributeGroup`](crate::model::AttributeGroup).
@@ -192,7 +173,7 @@ impl AttributeGroup {
 /// <p>Represents a Amazon Web Services Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Application {
+pub struct Application  {
     /// <p>The identifier of the application.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -213,45 +194,41 @@ pub struct Application {
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the application.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Application {
     /// <p>The identifier of the application.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>Key-value pairs you can use to associate with the application.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`Application`](crate::model::Application).
 pub mod application {
-
+    
     /// A builder for [`Application`](crate::model::Application).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -261,9 +238,7 @@ pub mod application {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the application.</p>
@@ -273,8 +248,7 @@ pub mod application {
         }
         /// <p>The identifier of the application.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -283,8 +257,7 @@ pub mod application {
         }
         /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -293,8 +266,7 @@ pub mod application {
         }
         /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,8 +275,7 @@ pub mod application {
         }
         /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -312,12 +283,8 @@ pub mod application {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -325,51 +292,46 @@ pub mod application {
             self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs you can use to associate with the application.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Key-value pairs you can use to associate with the application.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Application`](crate::model::Application).
         pub fn build(self) -> crate::model::Application {
             crate::model::Application {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
-                tags: self.tags,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
@@ -384,9 +346,9 @@ impl Application {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let syncaction = unimplemented!();
 /// match syncaction {
@@ -408,58 +370,52 @@ impl Application {
 /// Specifically, when `syncaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SyncAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SyncAction {
     #[allow(missing_docs)] // documentation missing in model
     NoAction,
     #[allow(missing_docs)] // documentation missing in model
     StartSync,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SyncAction {
     fn from(s: &str) -> Self {
         match s {
             "NO_ACTION" => SyncAction::NoAction,
             "START_SYNC" => SyncAction::StartSync,
-            other => SyncAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SyncAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SyncAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SyncAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SyncAction::from(s))
+                }
+            }
 impl SyncAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SyncAction::NoAction => "NO_ACTION",
             SyncAction::StartSync => "START_SYNC",
-            SyncAction::Unknown(value) => value.as_str(),
+            SyncAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NO_ACTION", "START_SYNC"]
+        &[
+            "NO_ACTION", "START_SYNC"
+        ]
     }
 }
 impl AsRef<str> for SyncAction {
@@ -474,9 +430,9 @@ impl AsRef<str> for SyncAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -498,58 +454,52 @@ impl AsRef<str> for SyncAction {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CfnStack,
     #[allow(missing_docs)] // documentation missing in model
     ResourceTagValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "CFN_STACK" => ResourceType::CfnStack,
             "RESOURCE_TAG_VALUE" => ResourceType::ResourceTagValue,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::CfnStack => "CFN_STACK",
             ResourceType::ResourceTagValue => "RESOURCE_TAG_VALUE",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CFN_STACK", "RESOURCE_TAG_VALUE"]
+        &[
+            "CFN_STACK", "RESOURCE_TAG_VALUE"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -561,52 +511,45 @@ impl AsRef<str> for ResourceType {
 /// <p> Includes all of the Service Catalog AppRegistry settings. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppRegistryConfiguration {
+pub struct AppRegistryConfiguration  {
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
     #[doc(hidden)]
     pub tag_query_configuration: std::option::Option<crate::model::TagQueryConfiguration>,
 }
 impl AppRegistryConfiguration {
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
-    pub fn tag_query_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::TagQueryConfiguration> {
+    pub fn tag_query_configuration(&self) -> std::option::Option<& crate::model::TagQueryConfiguration> {
         self.tag_query_configuration.as_ref()
     }
 }
 /// See [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
 pub mod app_registry_configuration {
-
+    
     /// A builder for [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tag_query_configuration:
-            std::option::Option<crate::model::TagQueryConfiguration>,
+        pub(crate) tag_query_configuration: std::option::Option<crate::model::TagQueryConfiguration>,
     }
     impl Builder {
         /// <p> Includes the definition of a <code>tagQuery</code>. </p>
-        pub fn tag_query_configuration(
-            mut self,
-            input: crate::model::TagQueryConfiguration,
-        ) -> Self {
+        pub fn tag_query_configuration(mut self, input: crate::model::TagQueryConfiguration) -> Self {
             self.tag_query_configuration = Some(input);
             self
         }
         /// <p> Includes the definition of a <code>tagQuery</code>. </p>
-        pub fn set_tag_query_configuration(
-            mut self,
-            input: std::option::Option<crate::model::TagQueryConfiguration>,
-        ) -> Self {
-            self.tag_query_configuration = input;
-            self
+        pub fn set_tag_query_configuration(mut self, input: std::option::Option<crate::model::TagQueryConfiguration>) -> Self {
+            self.tag_query_configuration = input; self
         }
         /// Consumes the builder and constructs a [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
         pub fn build(self) -> crate::model::AppRegistryConfiguration {
             crate::model::AppRegistryConfiguration {
-                tag_query_configuration: self.tag_query_configuration,
+                tag_query_configuration: self.tag_query_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl AppRegistryConfiguration {
     /// Creates a new builder-style object to manufacture [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
@@ -618,20 +561,20 @@ impl AppRegistryConfiguration {
 /// <p> The definition of <code>tagQuery</code>. Specifies which resources are associated with an application. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagQueryConfiguration {
+pub struct TagQueryConfiguration  {
     /// <p> Condition in the IAM policy that associates resources to an application. </p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
 }
 impl TagQueryConfiguration {
     /// <p> Condition in the IAM policy that associates resources to an application. </p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
 }
 /// See [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
 pub mod tag_query_configuration {
-
+    
     /// A builder for [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -645,16 +588,18 @@ pub mod tag_query_configuration {
         }
         /// <p> Condition in the IAM policy that associates resources to an application. </p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// Consumes the builder and constructs a [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
         pub fn build(self) -> crate::model::TagQueryConfiguration {
             crate::model::TagQueryConfiguration {
-                tag_key: self.tag_key,
+                tag_key: self.tag_key
+                ,
             }
         }
     }
+    
+    
 }
 impl TagQueryConfiguration {
     /// Creates a new builder-style object to manufacture [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
@@ -666,46 +611,42 @@ impl TagQueryConfiguration {
 /// <p> The details related to a specific AttributeGroup. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeGroupDetails {
+pub struct AttributeGroupDetails  {
     /// <p>The unique identifier of the attribute group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <important>
-    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-    /// </important>
+    /// <important> 
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p> 
+    /// </important> 
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AttributeGroupDetails {
     /// <p>The unique identifier of the attribute group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <important>
-    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-    /// </important>
+    /// <important> 
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p> 
+    /// </important> 
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
-    pub fn name(&self) -> std::option::Option<&str> {
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
 pub mod attribute_group_details {
-
+    
     /// A builder for [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -721,8 +662,7 @@ pub mod attribute_group_details {
         }
         /// <p>The unique identifier of the attribute group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -731,40 +671,39 @@ pub mod attribute_group_details {
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <important>
-        /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-        /// </important>
+        /// <important> 
+        /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p> 
+        /// </important> 
         /// <p> The name of the attribute group. </p>
-        #[deprecated(
-            note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-        )]
+        #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <important>
-        /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-        /// </important>
+        /// <important> 
+        /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p> 
+        /// </important> 
         /// <p> The name of the attribute group. </p>
-        #[deprecated(
-            note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-        )]
+        #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
         pub fn build(self) -> crate::model::AttributeGroupDetails {
             crate::model::AttributeGroupDetails {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeGroupDetails {
     /// Creates a new builder-style object to manufacture [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
@@ -776,7 +715,7 @@ impl AttributeGroupDetails {
 /// <p>Summary of a Amazon Web Services Service Catalog AppRegistry attribute group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeGroupSummary {
+pub struct AttributeGroupSummary  {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -798,33 +737,33 @@ pub struct AttributeGroupSummary {
 }
 impl AttributeGroupSummary {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the attribute group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the attribute group that the user provides.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
 /// See [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
 pub mod attribute_group_summary {
-
+    
     /// A builder for [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -843,8 +782,7 @@ pub mod attribute_group_summary {
         }
         /// <p>The globally unique attribute group identifier of the attribute group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -853,8 +791,7 @@ pub mod attribute_group_summary {
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the attribute group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -863,8 +800,7 @@ pub mod attribute_group_summary {
         }
         /// <p>The name of the attribute group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the attribute group that the user provides.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -873,8 +809,7 @@ pub mod attribute_group_summary {
         }
         /// <p>The description of the attribute group that the user provides.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -882,12 +817,8 @@ pub mod attribute_group_summary {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -895,25 +826,29 @@ pub mod attribute_group_summary {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Consumes the builder and constructs a [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
         pub fn build(self) -> crate::model::AttributeGroupSummary {
             crate::model::AttributeGroupSummary {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeGroupSummary {
     /// Creates a new builder-style object to manufacture [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
@@ -925,7 +860,7 @@ impl AttributeGroupSummary {
 /// <p>The information about the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInfo {
+pub struct ResourceInfo  {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -941,25 +876,25 @@ pub struct ResourceInfo {
 }
 impl ResourceInfo {
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> Provides information about the Service Catalog App Registry resource type. </p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p> The details related to the resource. </p>
-    pub fn resource_details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+    pub fn resource_details(&self) -> std::option::Option<& crate::model::ResourceDetails> {
         self.resource_details.as_ref()
     }
 }
 /// See [`ResourceInfo`](crate::model::ResourceInfo).
 pub mod resource_info {
-
+    
     /// A builder for [`ResourceInfo`](crate::model::ResourceInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -976,8 +911,7 @@ pub mod resource_info {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -986,8 +920,7 @@ pub mod resource_info {
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> Provides information about the Service Catalog App Registry resource type. </p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -995,12 +928,8 @@ pub mod resource_info {
             self
         }
         /// <p> Provides information about the Service Catalog App Registry resource type. </p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p> The details related to the resource. </p>
         pub fn resource_details(mut self, input: crate::model::ResourceDetails) -> Self {
@@ -1008,23 +937,25 @@ pub mod resource_info {
             self
         }
         /// <p> The details related to the resource. </p>
-        pub fn set_resource_details(
-            mut self,
-            input: std::option::Option<crate::model::ResourceDetails>,
-        ) -> Self {
-            self.resource_details = input;
-            self
+        pub fn set_resource_details(mut self, input: std::option::Option<crate::model::ResourceDetails>) -> Self {
+            self.resource_details = input; self
         }
         /// Consumes the builder and constructs a [`ResourceInfo`](crate::model::ResourceInfo).
         pub fn build(self) -> crate::model::ResourceInfo {
             crate::model::ResourceInfo {
-                name: self.name,
-                arn: self.arn,
-                resource_type: self.resource_type,
-                resource_details: self.resource_details,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_details: self.resource_details
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceInfo {
     /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::model::ResourceInfo).
@@ -1036,20 +967,20 @@ impl ResourceInfo {
 /// <p> The details related to the resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDetails {
+pub struct ResourceDetails  {
     /// <p>The value of the tag.</p>
     #[doc(hidden)]
     pub tag_value: std::option::Option<std::string::String>,
 }
 impl ResourceDetails {
     /// <p>The value of the tag.</p>
-    pub fn tag_value(&self) -> std::option::Option<&str> {
+    pub fn tag_value(&self) -> std::option::Option<& str> {
         self.tag_value.as_deref()
     }
 }
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
 pub mod resource_details {
-
+    
     /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1063,16 +994,18 @@ pub mod resource_details {
         }
         /// <p>The value of the tag.</p>
         pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_value = input;
-            self
+            self.tag_value = input; self
         }
         /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails).
         pub fn build(self) -> crate::model::ResourceDetails {
             crate::model::ResourceDetails {
-                tag_value: self.tag_value,
+                tag_value: self.tag_value
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
@@ -1084,7 +1017,7 @@ impl ResourceDetails {
 /// <p>Summary of a Amazon Web Services Service Catalog AppRegistry application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The identifier of the application.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1106,33 +1039,33 @@ pub struct ApplicationSummary {
 }
 impl ApplicationSummary {
     /// <p>The identifier of the application.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
-
+    
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1151,8 +1084,7 @@ pub mod application_summary {
         }
         /// <p>The identifier of the application.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1161,8 +1093,7 @@ pub mod application_summary {
         }
         /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1171,8 +1102,7 @@ pub mod application_summary {
         }
         /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1181,8 +1111,7 @@ pub mod application_summary {
         }
         /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1190,12 +1119,8 @@ pub mod application_summary {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1203,25 +1128,29 @@ pub mod application_summary {
             self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationSummary`](crate::model::ApplicationSummary).
         pub fn build(self) -> crate::model::ApplicationSummary {
             crate::model::ApplicationSummary {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationSummary {
     /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
@@ -1233,7 +1162,7 @@ impl ApplicationSummary {
 /// <p> The information about the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1249,25 +1178,25 @@ pub struct Resource {
 }
 impl Resource {
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon resource name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time the resource was associated with the application.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn association_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>The service integration information about the resource. </p>
-    pub fn integrations(&self) -> std::option::Option<&crate::model::ResourceIntegrations> {
+    pub fn integrations(&self) -> std::option::Option<& crate::model::ResourceIntegrations> {
         self.integrations.as_ref()
     }
 }
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
-
+    
     /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1284,8 +1213,7 @@ pub mod resource {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon resource name (ARN) of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1294,8 +1222,7 @@ pub mod resource {
         }
         /// <p>The Amazon resource name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time the resource was associated with the application.</p>
         pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1303,12 +1230,8 @@ pub mod resource {
             self
         }
         /// <p>The time the resource was associated with the application.</p>
-        pub fn set_association_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.association_time = input;
-            self
+        pub fn set_association_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.association_time = input; self
         }
         /// <p>The service integration information about the resource. </p>
         pub fn integrations(mut self, input: crate::model::ResourceIntegrations) -> Self {
@@ -1316,23 +1239,25 @@ pub mod resource {
             self
         }
         /// <p>The service integration information about the resource. </p>
-        pub fn set_integrations(
-            mut self,
-            input: std::option::Option<crate::model::ResourceIntegrations>,
-        ) -> Self {
-            self.integrations = input;
-            self
+        pub fn set_integrations(mut self, input: std::option::Option<crate::model::ResourceIntegrations>) -> Self {
+            self.integrations = input; self
         }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
-                name: self.name,
-                arn: self.arn,
-                association_time: self.association_time,
-                integrations: self.integrations,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                association_time: self.association_time
+                ,
+                integrations: self.integrations
+                ,
             }
         }
     }
+    
+    
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
@@ -1344,20 +1269,20 @@ impl Resource {
 /// <p>The service integration information about the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceIntegrations {
+pub struct ResourceIntegrations  {
     /// <p>The information about the integration of Resource Groups.</p>
     #[doc(hidden)]
     pub resource_group: std::option::Option<crate::model::ResourceGroup>,
 }
 impl ResourceIntegrations {
     /// <p>The information about the integration of Resource Groups.</p>
-    pub fn resource_group(&self) -> std::option::Option<&crate::model::ResourceGroup> {
+    pub fn resource_group(&self) -> std::option::Option<& crate::model::ResourceGroup> {
         self.resource_group.as_ref()
     }
 }
 /// See [`ResourceIntegrations`](crate::model::ResourceIntegrations).
 pub mod resource_integrations {
-
+    
     /// A builder for [`ResourceIntegrations`](crate::model::ResourceIntegrations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1370,20 +1295,19 @@ pub mod resource_integrations {
             self
         }
         /// <p>The information about the integration of Resource Groups.</p>
-        pub fn set_resource_group(
-            mut self,
-            input: std::option::Option<crate::model::ResourceGroup>,
-        ) -> Self {
-            self.resource_group = input;
-            self
+        pub fn set_resource_group(mut self, input: std::option::Option<crate::model::ResourceGroup>) -> Self {
+            self.resource_group = input; self
         }
         /// Consumes the builder and constructs a [`ResourceIntegrations`](crate::model::ResourceIntegrations).
         pub fn build(self) -> crate::model::ResourceIntegrations {
             crate::model::ResourceIntegrations {
-                resource_group: self.resource_group,
+                resource_group: self.resource_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceIntegrations {
     /// Creates a new builder-style object to manufacture [`ResourceIntegrations`](crate::model::ResourceIntegrations).
@@ -1395,13 +1319,13 @@ impl ResourceIntegrations {
 /// <p>The information about the resource group integration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceGroup {
-    /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+pub struct ResourceGroup  {
+    /// <p>The state of the propagation process for the resource group. The states includes:</p> 
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p> 
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p> 
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p> 
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p> 
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p> 
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ResourceGroupState>,
@@ -1413,28 +1337,28 @@ pub struct ResourceGroup {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ResourceGroup {
-    /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p>The state of the propagation process for the resource group. The states includes:</p> 
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p> 
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p> 
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p> 
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p> 
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p> 
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ResourceGroupState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ResourceGroupState> {
         self.state.as_ref()
     }
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`ResourceGroup`](crate::model::ResourceGroup).
 pub mod resource_group {
-
+    
     /// A builder for [`ResourceGroup`](crate::model::ResourceGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1443,30 +1367,26 @@ pub mod resource_group {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The state of the propagation process for the resource group. The states includes:</p>
-        /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
-        /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-        /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-        /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
-        /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+        /// <p>The state of the propagation process for the resource group. The states includes:</p> 
+        /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p> 
+        /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p> 
+        /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p> 
+        /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p> 
+        /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p> 
         /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
         pub fn state(mut self, input: crate::model::ResourceGroupState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the propagation process for the resource group. The states includes:</p>
-        /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
-        /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-        /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-        /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
-        /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+        /// <p>The state of the propagation process for the resource group. The states includes:</p> 
+        /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p> 
+        /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p> 
+        /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p> 
+        /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p> 
+        /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p> 
         /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ResourceGroupState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ResourceGroupState>) -> Self {
+            self.state = input; self
         }
         /// <p>The Amazon resource name (ARN) of the resource group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1475,8 +1395,7 @@ pub mod resource_group {
         }
         /// <p>The Amazon resource name (ARN) of the resource group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The error message that generates when the propagation process for the resource group fails.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1484,22 +1403,23 @@ pub mod resource_group {
             self
         }
         /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceGroup`](crate::model::ResourceGroup).
         pub fn build(self) -> crate::model::ResourceGroup {
             crate::model::ResourceGroup {
-                state: self.state,
-                arn: self.arn,
-                error_message: self.error_message,
+                state: self.state
+                ,
+                arn: self.arn
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceGroup {
     /// Creates a new builder-style object to manufacture [`ResourceGroup`](crate::model::ResourceGroup).
@@ -1514,9 +1434,9 @@ impl ResourceGroup {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcegroupstate = unimplemented!();
 /// match resourcegroupstate {
@@ -1542,22 +1462,14 @@ impl ResourceGroup {
 /// Specifically, when `resourcegroupstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceGroupState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceGroupState {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -1572,7 +1484,7 @@ pub enum ResourceGroupState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceGroupState {
     fn from(s: &str) -> Self {
@@ -1583,19 +1495,17 @@ impl std::convert::From<&str> for ResourceGroupState {
             "UPDATE_COMPLETE" => ResourceGroupState::UpdateComplete,
             "UPDATE_FAILED" => ResourceGroupState::UpdateFailed,
             "UPDATING" => ResourceGroupState::Updating,
-            other => {
-                ResourceGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceGroupState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceGroupState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceGroupState::from(s))
+                }
+            }
 impl ResourceGroupState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1606,18 +1516,13 @@ impl ResourceGroupState {
             ResourceGroupState::UpdateComplete => "UPDATE_COMPLETE",
             ResourceGroupState::UpdateFailed => "UPDATE_FAILED",
             ResourceGroupState::Updating => "UPDATING",
-            ResourceGroupState::Unknown(value) => value.as_str(),
+            ResourceGroupState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATE_COMPLETE",
-            "CREATE_FAILED",
-            "CREATING",
-            "UPDATE_COMPLETE",
-            "UPDATE_FAILED",
-            "UPDATING",
+            "CREATE_COMPLETE", "CREATE_FAILED", "CREATING", "UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"
         ]
     }
 }
@@ -1630,20 +1535,20 @@ impl AsRef<str> for ResourceGroupState {
 /// <p> The information about the service integration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Integrations {
+pub struct Integrations  {
     /// <p> The information about the resource group integration.</p>
     #[doc(hidden)]
     pub resource_group: std::option::Option<crate::model::ResourceGroup>,
 }
 impl Integrations {
     /// <p> The information about the resource group integration.</p>
-    pub fn resource_group(&self) -> std::option::Option<&crate::model::ResourceGroup> {
+    pub fn resource_group(&self) -> std::option::Option<& crate::model::ResourceGroup> {
         self.resource_group.as_ref()
     }
 }
 /// See [`Integrations`](crate::model::Integrations).
 pub mod integrations {
-
+    
     /// A builder for [`Integrations`](crate::model::Integrations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1656,20 +1561,19 @@ pub mod integrations {
             self
         }
         /// <p> The information about the resource group integration.</p>
-        pub fn set_resource_group(
-            mut self,
-            input: std::option::Option<crate::model::ResourceGroup>,
-        ) -> Self {
-            self.resource_group = input;
-            self
+        pub fn set_resource_group(mut self, input: std::option::Option<crate::model::ResourceGroup>) -> Self {
+            self.resource_group = input; self
         }
         /// Consumes the builder and constructs a [`Integrations`](crate::model::Integrations).
         pub fn build(self) -> crate::model::Integrations {
             crate::model::Integrations {
-                resource_group: self.resource_group,
+                resource_group: self.resource_group
+                ,
             }
         }
     }
+    
+    
 }
 impl Integrations {
     /// Creates a new builder-style object to manufacture [`Integrations`](crate::model::Integrations).
@@ -1677,3 +1581,4 @@ impl Integrations {
         crate::model::integrations::Builder::default()
     }
 }
+

@@ -3,25 +3,24 @@
 /// <p>Represents the output of an <code>UpdateDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeploymentGroupOutput {
+pub struct UpdateDeploymentGroupOutput  {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
 impl UpdateDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
-    pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
+    pub fn hooks_not_cleaned_up(&self) -> std::option::Option<& [crate::model::AutoScalingGroup]> {
         self.hooks_not_cleaned_up.as_deref()
     }
 }
 /// See [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput).
 pub mod update_deployment_group_output {
-
+    
     /// A builder for [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) hooks_not_cleaned_up:
-            std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
+        pub(crate) hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
     }
     impl Builder {
         /// Appends an item to `hooks_not_cleaned_up`.
@@ -31,25 +30,24 @@ pub mod update_deployment_group_output {
         /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
         pub fn hooks_not_cleaned_up(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
-            v.push(input);
-            self.hooks_not_cleaned_up = Some(v);
-            self
+                            v.push(input);
+                            self.hooks_not_cleaned_up = Some(v);
+                            self
         }
         /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
-        pub fn set_hooks_not_cleaned_up(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
-        ) -> Self {
-            self.hooks_not_cleaned_up = input;
-            self
+        pub fn set_hooks_not_cleaned_up(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>) -> Self {
+            self.hooks_not_cleaned_up = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput).
         pub fn build(self) -> crate::output::UpdateDeploymentGroupOutput {
             crate::output::UpdateDeploymentGroupOutput {
-                hooks_not_cleaned_up: self.hooks_not_cleaned_up,
+                hooks_not_cleaned_up: self.hooks_not_cleaned_up
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDeploymentGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput).
@@ -61,19 +59,24 @@ impl UpdateDeploymentGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationOutput {}
+pub struct UpdateApplicationOutput  {
+}
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
-            crate::output::UpdateApplicationOutput {}
+            crate::output::UpdateApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -85,19 +88,24 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -109,19 +117,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -133,11 +146,11 @@ impl TagResourceOutput {
 /// <p> Represents the output of a <code>StopDeployment</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDeploymentOutput {
-    /// <p>The status of the stop deployment operation:</p>
-    /// <ul>
-    /// <li> <p>Pending: The stop operation is pending.</p> </li>
-    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+pub struct StopDeploymentOutput  {
+    /// <p>The status of the stop deployment operation:</p> 
+    /// <ul> 
+    /// <li> <p>Pending: The stop operation is pending.</p> </li> 
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StopStatus>,
@@ -146,22 +159,22 @@ pub struct StopDeploymentOutput {
     pub status_message: std::option::Option<std::string::String>,
 }
 impl StopDeploymentOutput {
-    /// <p>The status of the stop deployment operation:</p>
-    /// <ul>
-    /// <li> <p>Pending: The stop operation is pending.</p> </li>
-    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+    /// <p>The status of the stop deployment operation:</p> 
+    /// <ul> 
+    /// <li> <p>Pending: The stop operation is pending.</p> </li> 
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::StopStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StopStatus> {
         self.status.as_ref()
     }
     /// <p>An accompanying status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 /// See [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
 pub mod stop_deployment_output {
-
+    
     /// A builder for [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -169,23 +182,22 @@ pub mod stop_deployment_output {
         pub(crate) status_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of the stop deployment operation:</p>
-        /// <ul>
-        /// <li> <p>Pending: The stop operation is pending.</p> </li>
-        /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+        /// <p>The status of the stop deployment operation:</p> 
+        /// <ul> 
+        /// <li> <p>Pending: The stop operation is pending.</p> </li> 
+        /// <li> <p>Succeeded: The stop operation was successful.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::StopStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the stop deployment operation:</p>
-        /// <ul>
-        /// <li> <p>Pending: The stop operation is pending.</p> </li>
-        /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+        /// <p>The status of the stop deployment operation:</p> 
+        /// <ul> 
+        /// <li> <p>Pending: The stop operation is pending.</p> </li> 
+        /// <li> <p>Succeeded: The stop operation was successful.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StopStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>An accompanying status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,21 +205,21 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>An accompanying status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Consumes the builder and constructs a [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
         pub fn build(self) -> crate::output::StopDeploymentOutput {
             crate::output::StopDeploymentOutput {
-                status: self.status,
-                status_message: self.status_message,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
@@ -219,19 +231,24 @@ impl StopDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkipWaitTimeForInstanceTerminationOutput {}
+pub struct SkipWaitTimeForInstanceTerminationOutput  {
+}
 /// See [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput).
 pub mod skip_wait_time_for_instance_termination_output {
-
+    
     /// A builder for [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput).
         pub fn build(self) -> crate::output::SkipWaitTimeForInstanceTerminationOutput {
-            crate::output::SkipWaitTimeForInstanceTerminationOutput {}
+            crate::output::SkipWaitTimeForInstanceTerminationOutput {
+            }
         }
     }
+    
+    
 }
 impl SkipWaitTimeForInstanceTerminationOutput {
     /// Creates a new builder-style object to manufacture [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput).
@@ -243,19 +260,24 @@ impl SkipWaitTimeForInstanceTerminationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromOnPremisesInstancesOutput {}
+pub struct RemoveTagsFromOnPremisesInstancesOutput  {
+}
 /// See [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput).
 pub mod remove_tags_from_on_premises_instances_output {
-
+    
     /// A builder for [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromOnPremisesInstancesOutput {
-            crate::output::RemoveTagsFromOnPremisesInstancesOutput {}
+            crate::output::RemoveTagsFromOnPremisesInstancesOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsFromOnPremisesInstancesOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput).
@@ -267,19 +289,24 @@ impl RemoveTagsFromOnPremisesInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterOnPremisesInstanceOutput {}
+pub struct RegisterOnPremisesInstanceOutput  {
+}
 /// See [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput).
 pub mod register_on_premises_instance_output {
-
+    
     /// A builder for [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput).
         pub fn build(self) -> crate::output::RegisterOnPremisesInstanceOutput {
-            crate::output::RegisterOnPremisesInstanceOutput {}
+            crate::output::RegisterOnPremisesInstanceOutput {
+            }
         }
     }
+    
+    
 }
 impl RegisterOnPremisesInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput).
@@ -291,19 +318,24 @@ impl RegisterOnPremisesInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterApplicationRevisionOutput {}
+pub struct RegisterApplicationRevisionOutput  {
+}
 /// See [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput).
 pub mod register_application_revision_output {
-
+    
     /// A builder for [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput).
         pub fn build(self) -> crate::output::RegisterApplicationRevisionOutput {
-            crate::output::RegisterApplicationRevisionOutput {}
+            crate::output::RegisterApplicationRevisionOutput {
+            }
         }
     }
+    
+    
 }
 impl RegisterApplicationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput).
@@ -315,20 +347,20 @@ impl RegisterApplicationRevisionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLifecycleEventHookExecutionStatusOutput {
+pub struct PutLifecycleEventHookExecutionStatusOutput  {
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     #[doc(hidden)]
     pub lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
 }
 impl PutLifecycleEventHookExecutionStatusOutput {
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
-    pub fn lifecycle_event_hook_execution_id(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_event_hook_execution_id(&self) -> std::option::Option<& str> {
         self.lifecycle_event_hook_execution_id.as_deref()
     }
 }
 /// See [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput).
 pub mod put_lifecycle_event_hook_execution_status_output {
-
+    
     /// A builder for [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -336,28 +368,24 @@ pub mod put_lifecycle_event_hook_execution_status_output {
     }
     impl Builder {
         /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
-        pub fn lifecycle_event_hook_execution_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn lifecycle_event_hook_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_event_hook_execution_id = Some(input.into());
             self
         }
         /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
-        pub fn set_lifecycle_event_hook_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.lifecycle_event_hook_execution_id = input;
-            self
+        pub fn set_lifecycle_event_hook_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lifecycle_event_hook_execution_id = input; self
         }
         /// Consumes the builder and constructs a [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput).
         pub fn build(self) -> crate::output::PutLifecycleEventHookExecutionStatusOutput {
             crate::output::PutLifecycleEventHookExecutionStatusOutput {
-                lifecycle_event_hook_execution_id: self.lifecycle_event_hook_execution_id,
+                lifecycle_event_hook_execution_id: self.lifecycle_event_hook_execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PutLifecycleEventHookExecutionStatusOutput {
     /// Creates a new builder-style object to manufacture [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput).
@@ -369,7 +397,7 @@ impl PutLifecycleEventHookExecutionStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -379,17 +407,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -404,17 +432,13 @@ pub mod list_tags_for_resource_output {
         /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -423,17 +447,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -445,7 +472,7 @@ impl ListTagsForResourceOutput {
 /// <p>Represents the output of the list on-premises instances operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOnPremisesInstancesOutput {
+pub struct ListOnPremisesInstancesOutput  {
     /// <p>The list of matching on-premises instance names.</p>
     #[doc(hidden)]
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -455,17 +482,17 @@ pub struct ListOnPremisesInstancesOutput {
 }
 impl ListOnPremisesInstancesOutput {
     /// <p>The list of matching on-premises instance names.</p>
-    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_names(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_names.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListOnPremisesInstancesOutput`](crate::output::ListOnPremisesInstancesOutput).
 pub mod list_on_premises_instances_output {
-
+    
     /// A builder for [`ListOnPremisesInstancesOutput`](crate::output::ListOnPremisesInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -480,17 +507,13 @@ pub mod list_on_premises_instances_output {
         /// <p>The list of matching on-premises instance names.</p>
         pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_names.unwrap_or_default();
-            v.push(input.into());
-            self.instance_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.instance_names = Some(v);
+                            self
         }
         /// <p>The list of matching on-premises instance names.</p>
-        pub fn set_instance_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instance_names = input;
-            self
+        pub fn set_instance_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instance_names = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -499,17 +522,20 @@ pub mod list_on_premises_instances_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOnPremisesInstancesOutput`](crate::output::ListOnPremisesInstancesOutput).
         pub fn build(self) -> crate::output::ListOnPremisesInstancesOutput {
             crate::output::ListOnPremisesInstancesOutput {
-                instance_names: self.instance_names,
-                next_token: self.next_token,
+                instance_names: self.instance_names
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOnPremisesInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListOnPremisesInstancesOutput`](crate::output::ListOnPremisesInstancesOutput).
@@ -521,7 +547,7 @@ impl ListOnPremisesInstancesOutput {
 /// <p>Represents the output of a <code>ListGitHubAccountTokenNames</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGitHubAccountTokenNamesOutput {
+pub struct ListGitHubAccountTokenNamesOutput  {
     /// <p>A list of names of connections to GitHub accounts.</p>
     #[doc(hidden)]
     pub token_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -531,17 +557,17 @@ pub struct ListGitHubAccountTokenNamesOutput {
 }
 impl ListGitHubAccountTokenNamesOutput {
     /// <p>A list of names of connections to GitHub accounts.</p>
-    pub fn token_name_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn token_name_list(&self) -> std::option::Option<& [std::string::String]> {
         self.token_name_list.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGitHubAccountTokenNamesOutput`](crate::output::ListGitHubAccountTokenNamesOutput).
 pub mod list_git_hub_account_token_names_output {
-
+    
     /// A builder for [`ListGitHubAccountTokenNamesOutput`](crate::output::ListGitHubAccountTokenNamesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -556,17 +582,13 @@ pub mod list_git_hub_account_token_names_output {
         /// <p>A list of names of connections to GitHub accounts.</p>
         pub fn token_name_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_name_list.unwrap_or_default();
-            v.push(input.into());
-            self.token_name_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.token_name_list = Some(v);
+                            self
         }
         /// <p>A list of names of connections to GitHub accounts.</p>
-        pub fn set_token_name_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.token_name_list = input;
-            self
+        pub fn set_token_name_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.token_name_list = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -575,17 +597,20 @@ pub mod list_git_hub_account_token_names_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGitHubAccountTokenNamesOutput`](crate::output::ListGitHubAccountTokenNamesOutput).
         pub fn build(self) -> crate::output::ListGitHubAccountTokenNamesOutput {
             crate::output::ListGitHubAccountTokenNamesOutput {
-                token_name_list: self.token_name_list,
-                next_token: self.next_token,
+                token_name_list: self.token_name_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGitHubAccountTokenNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListGitHubAccountTokenNamesOutput`](crate::output::ListGitHubAccountTokenNamesOutput).
@@ -597,7 +622,7 @@ impl ListGitHubAccountTokenNamesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentTargetsOutput {
+pub struct ListDeploymentTargetsOutput  {
     /// <p> The unique IDs of deployment targets. </p>
     #[doc(hidden)]
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -607,17 +632,17 @@ pub struct ListDeploymentTargetsOutput {
 }
 impl ListDeploymentTargetsOutput {
     /// <p> The unique IDs of deployment targets. </p>
-    pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.target_ids.as_deref()
     }
     /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeploymentTargetsOutput`](crate::output::ListDeploymentTargetsOutput).
 pub mod list_deployment_targets_output {
-
+    
     /// A builder for [`ListDeploymentTargetsOutput`](crate::output::ListDeploymentTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -632,17 +657,13 @@ pub mod list_deployment_targets_output {
         /// <p> The unique IDs of deployment targets. </p>
         pub fn target_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_ids.unwrap_or_default();
-            v.push(input.into());
-            self.target_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.target_ids = Some(v);
+                            self
         }
         /// <p> The unique IDs of deployment targets. </p>
-        pub fn set_target_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.target_ids = input;
-            self
+        pub fn set_target_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.target_ids = input; self
         }
         /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -651,17 +672,20 @@ pub mod list_deployment_targets_output {
         }
         /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeploymentTargetsOutput`](crate::output::ListDeploymentTargetsOutput).
         pub fn build(self) -> crate::output::ListDeploymentTargetsOutput {
             crate::output::ListDeploymentTargetsOutput {
-                target_ids: self.target_ids,
-                next_token: self.next_token,
+                target_ids: self.target_ids
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeploymentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentTargetsOutput`](crate::output::ListDeploymentTargetsOutput).
@@ -673,7 +697,7 @@ impl ListDeploymentTargetsOutput {
 /// <p>Represents the output of a <code>ListDeployments</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentsOutput {
+pub struct ListDeploymentsOutput  {
     /// <p>A list of deployment IDs.</p>
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -683,17 +707,17 @@ pub struct ListDeploymentsOutput {
 }
 impl ListDeploymentsOutput {
     /// <p>A list of deployment IDs.</p>
-    pub fn deployments(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn deployments(&self) -> std::option::Option<& [std::string::String]> {
         self.deployments.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
 pub mod list_deployments_output {
-
+    
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -708,17 +732,13 @@ pub mod list_deployments_output {
         /// <p>A list of deployment IDs.</p>
         pub fn deployments(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
-            self.deployments = Some(v);
-            self
+                            v.push(input.into());
+                            self.deployments = Some(v);
+                            self
         }
         /// <p>A list of deployment IDs.</p>
-        pub fn set_deployments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.deployments = input;
-            self
+        pub fn set_deployments(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.deployments = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -727,17 +747,20 @@ pub mod list_deployments_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
         pub fn build(self) -> crate::output::ListDeploymentsOutput {
             crate::output::ListDeploymentsOutput {
-                deployments: self.deployments,
-                next_token: self.next_token,
+                deployments: self.deployments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
@@ -749,7 +772,7 @@ impl ListDeploymentsOutput {
 /// <p>Represents the output of a <code>ListDeploymentInstances</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentInstancesOutput {
+pub struct ListDeploymentInstancesOutput  {
     /// <p>A list of instance IDs.</p>
     #[doc(hidden)]
     pub instances_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -759,17 +782,17 @@ pub struct ListDeploymentInstancesOutput {
 }
 impl ListDeploymentInstancesOutput {
     /// <p>A list of instance IDs.</p>
-    pub fn instances_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instances_list(&self) -> std::option::Option<& [std::string::String]> {
         self.instances_list.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeploymentInstancesOutput`](crate::output::ListDeploymentInstancesOutput).
 pub mod list_deployment_instances_output {
-
+    
     /// A builder for [`ListDeploymentInstancesOutput`](crate::output::ListDeploymentInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -784,17 +807,13 @@ pub mod list_deployment_instances_output {
         /// <p>A list of instance IDs.</p>
         pub fn instances_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instances_list.unwrap_or_default();
-            v.push(input.into());
-            self.instances_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.instances_list = Some(v);
+                            self
         }
         /// <p>A list of instance IDs.</p>
-        pub fn set_instances_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instances_list = input;
-            self
+        pub fn set_instances_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instances_list = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -803,17 +822,20 @@ pub mod list_deployment_instances_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeploymentInstancesOutput`](crate::output::ListDeploymentInstancesOutput).
         pub fn build(self) -> crate::output::ListDeploymentInstancesOutput {
             crate::output::ListDeploymentInstancesOutput {
-                instances_list: self.instances_list,
-                next_token: self.next_token,
+                instances_list: self.instances_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeploymentInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentInstancesOutput`](crate::output::ListDeploymentInstancesOutput).
@@ -825,7 +847,7 @@ impl ListDeploymentInstancesOutput {
 /// <p>Represents the output of a <code>ListDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentGroupsOutput {
+pub struct ListDeploymentGroupsOutput  {
     /// <p>The application name.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -838,21 +860,21 @@ pub struct ListDeploymentGroupsOutput {
 }
 impl ListDeploymentGroupsOutput {
     /// <p>The application name.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>A list of deployment group names.</p>
-    pub fn deployment_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn deployment_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.deployment_groups.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput).
 pub mod list_deployment_groups_output {
-
+    
     /// A builder for [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -867,12 +889,8 @@ pub mod list_deployment_groups_output {
             self
         }
         /// <p>The application name.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// Appends an item to `deployment_groups`.
         ///
@@ -881,17 +899,13 @@ pub mod list_deployment_groups_output {
         /// <p>A list of deployment group names.</p>
         pub fn deployment_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_groups.unwrap_or_default();
-            v.push(input.into());
-            self.deployment_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.deployment_groups = Some(v);
+                            self
         }
         /// <p>A list of deployment group names.</p>
-        pub fn set_deployment_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.deployment_groups = input;
-            self
+        pub fn set_deployment_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.deployment_groups = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -900,18 +914,22 @@ pub mod list_deployment_groups_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput).
         pub fn build(self) -> crate::output::ListDeploymentGroupsOutput {
             crate::output::ListDeploymentGroupsOutput {
-                application_name: self.application_name,
-                deployment_groups: self.deployment_groups,
-                next_token: self.next_token,
+                application_name: self.application_name
+                ,
+                deployment_groups: self.deployment_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeploymentGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput).
@@ -923,7 +941,7 @@ impl ListDeploymentGroupsOutput {
 /// <p>Represents the output of a <code>ListDeploymentConfigs</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentConfigsOutput {
+pub struct ListDeploymentConfigsOutput  {
     /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
     #[doc(hidden)]
     pub deployment_configs_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -933,17 +951,17 @@ pub struct ListDeploymentConfigsOutput {
 }
 impl ListDeploymentConfigsOutput {
     /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
-    pub fn deployment_configs_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn deployment_configs_list(&self) -> std::option::Option<& [std::string::String]> {
         self.deployment_configs_list.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeploymentConfigsOutput`](crate::output::ListDeploymentConfigsOutput).
 pub mod list_deployment_configs_output {
-
+    
     /// A builder for [`ListDeploymentConfigsOutput`](crate::output::ListDeploymentConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -958,17 +976,13 @@ pub mod list_deployment_configs_output {
         /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
         pub fn deployment_configs_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_configs_list.unwrap_or_default();
-            v.push(input.into());
-            self.deployment_configs_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.deployment_configs_list = Some(v);
+                            self
         }
         /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
-        pub fn set_deployment_configs_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.deployment_configs_list = input;
-            self
+        pub fn set_deployment_configs_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.deployment_configs_list = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -977,17 +991,20 @@ pub mod list_deployment_configs_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeploymentConfigsOutput`](crate::output::ListDeploymentConfigsOutput).
         pub fn build(self) -> crate::output::ListDeploymentConfigsOutput {
             crate::output::ListDeploymentConfigsOutput {
-                deployment_configs_list: self.deployment_configs_list,
-                next_token: self.next_token,
+                deployment_configs_list: self.deployment_configs_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeploymentConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentConfigsOutput`](crate::output::ListDeploymentConfigsOutput).
@@ -999,7 +1016,7 @@ impl ListDeploymentConfigsOutput {
 /// <p>Represents the output of a ListApplications operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>A list of application names.</p>
     #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1009,17 +1026,17 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>A list of application names.</p>
-    pub fn applications(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn applications(&self) -> std::option::Option<& [std::string::String]> {
         self.applications.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1034,17 +1051,13 @@ pub mod list_applications_output {
         /// <p>A list of application names.</p>
         pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
-            self.applications = Some(v);
-            self
+                            v.push(input.into());
+                            self.applications = Some(v);
+                            self
         }
         /// <p>A list of application names.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.applications = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1053,17 +1066,20 @@ pub mod list_applications_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                applications: self.applications,
-                next_token: self.next_token,
+                applications: self.applications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -1075,7 +1091,7 @@ impl ListApplicationsOutput {
 /// <p>Represents the output of a <code>ListApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationRevisionsOutput {
+pub struct ListApplicationRevisionsOutput  {
     /// <p>A list of locations that contain the matching revisions.</p>
     #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
@@ -1085,17 +1101,17 @@ pub struct ListApplicationRevisionsOutput {
 }
 impl ListApplicationRevisionsOutput {
     /// <p>A list of locations that contain the matching revisions.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionLocation]> {
+    pub fn revisions(&self) -> std::option::Option<& [crate::model::RevisionLocation]> {
         self.revisions.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationRevisionsOutput`](crate::output::ListApplicationRevisionsOutput).
 pub mod list_application_revisions_output {
-
+    
     /// A builder for [`ListApplicationRevisionsOutput`](crate::output::ListApplicationRevisionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1110,17 +1126,13 @@ pub mod list_application_revisions_output {
         /// <p>A list of locations that contain the matching revisions.</p>
         pub fn revisions(mut self, input: crate::model::RevisionLocation) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input);
-            self.revisions = Some(v);
-            self
+                            v.push(input);
+                            self.revisions = Some(v);
+                            self
         }
         /// <p>A list of locations that contain the matching revisions.</p>
-        pub fn set_revisions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
-        ) -> Self {
-            self.revisions = input;
-            self
+        pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>) -> Self {
+            self.revisions = input; self
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1129,17 +1141,20 @@ pub mod list_application_revisions_output {
         }
         /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationRevisionsOutput`](crate::output::ListApplicationRevisionsOutput).
         pub fn build(self) -> crate::output::ListApplicationRevisionsOutput {
             crate::output::ListApplicationRevisionsOutput {
-                revisions: self.revisions,
-                next_token: self.next_token,
+                revisions: self.revisions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationRevisionsOutput`](crate::output::ListApplicationRevisionsOutput).
@@ -1151,20 +1166,20 @@ impl ListApplicationRevisionsOutput {
 /// <p> Represents the output of a <code>GetOnPremisesInstance</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOnPremisesInstanceOutput {
+pub struct GetOnPremisesInstanceOutput  {
     /// <p> Information about the on-premises instance. </p>
     #[doc(hidden)]
     pub instance_info: std::option::Option<crate::model::InstanceInfo>,
 }
 impl GetOnPremisesInstanceOutput {
     /// <p> Information about the on-premises instance. </p>
-    pub fn instance_info(&self) -> std::option::Option<&crate::model::InstanceInfo> {
+    pub fn instance_info(&self) -> std::option::Option<& crate::model::InstanceInfo> {
         self.instance_info.as_ref()
     }
 }
 /// See [`GetOnPremisesInstanceOutput`](crate::output::GetOnPremisesInstanceOutput).
 pub mod get_on_premises_instance_output {
-
+    
     /// A builder for [`GetOnPremisesInstanceOutput`](crate::output::GetOnPremisesInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1177,20 +1192,19 @@ pub mod get_on_premises_instance_output {
             self
         }
         /// <p> Information about the on-premises instance. </p>
-        pub fn set_instance_info(
-            mut self,
-            input: std::option::Option<crate::model::InstanceInfo>,
-        ) -> Self {
-            self.instance_info = input;
-            self
+        pub fn set_instance_info(mut self, input: std::option::Option<crate::model::InstanceInfo>) -> Self {
+            self.instance_info = input; self
         }
         /// Consumes the builder and constructs a [`GetOnPremisesInstanceOutput`](crate::output::GetOnPremisesInstanceOutput).
         pub fn build(self) -> crate::output::GetOnPremisesInstanceOutput {
             crate::output::GetOnPremisesInstanceOutput {
-                instance_info: self.instance_info,
+                instance_info: self.instance_info
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOnPremisesInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetOnPremisesInstanceOutput`](crate::output::GetOnPremisesInstanceOutput).
@@ -1202,20 +1216,20 @@ impl GetOnPremisesInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentTargetOutput {
+pub struct GetDeploymentTargetOutput  {
     /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
     #[doc(hidden)]
     pub deployment_target: std::option::Option<crate::model::DeploymentTarget>,
 }
 impl GetDeploymentTargetOutput {
     /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
-    pub fn deployment_target(&self) -> std::option::Option<&crate::model::DeploymentTarget> {
+    pub fn deployment_target(&self) -> std::option::Option<& crate::model::DeploymentTarget> {
         self.deployment_target.as_ref()
     }
 }
 /// See [`GetDeploymentTargetOutput`](crate::output::GetDeploymentTargetOutput).
 pub mod get_deployment_target_output {
-
+    
     /// A builder for [`GetDeploymentTargetOutput`](crate::output::GetDeploymentTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1228,20 +1242,19 @@ pub mod get_deployment_target_output {
             self
         }
         /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
-        pub fn set_deployment_target(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentTarget>,
-        ) -> Self {
-            self.deployment_target = input;
-            self
+        pub fn set_deployment_target(mut self, input: std::option::Option<crate::model::DeploymentTarget>) -> Self {
+            self.deployment_target = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentTargetOutput`](crate::output::GetDeploymentTargetOutput).
         pub fn build(self) -> crate::output::GetDeploymentTargetOutput {
             crate::output::GetDeploymentTargetOutput {
-                deployment_target: self.deployment_target,
+                deployment_target: self.deployment_target
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentTargetOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentTargetOutput`](crate::output::GetDeploymentTargetOutput).
@@ -1253,20 +1266,20 @@ impl GetDeploymentTargetOutput {
 /// <p> Represents the output of a <code>GetDeploymentInstance</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentInstanceOutput {
+pub struct GetDeploymentInstanceOutput  {
     /// <p> Information about the instance. </p>
     #[doc(hidden)]
     pub instance_summary: std::option::Option<crate::model::InstanceSummary>,
 }
 impl GetDeploymentInstanceOutput {
     /// <p> Information about the instance. </p>
-    pub fn instance_summary(&self) -> std::option::Option<&crate::model::InstanceSummary> {
+    pub fn instance_summary(&self) -> std::option::Option<& crate::model::InstanceSummary> {
         self.instance_summary.as_ref()
     }
 }
 /// See [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput).
 pub mod get_deployment_instance_output {
-
+    
     /// A builder for [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1279,20 +1292,19 @@ pub mod get_deployment_instance_output {
             self
         }
         /// <p> Information about the instance. </p>
-        pub fn set_instance_summary(
-            mut self,
-            input: std::option::Option<crate::model::InstanceSummary>,
-        ) -> Self {
-            self.instance_summary = input;
-            self
+        pub fn set_instance_summary(mut self, input: std::option::Option<crate::model::InstanceSummary>) -> Self {
+            self.instance_summary = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput).
         pub fn build(self) -> crate::output::GetDeploymentInstanceOutput {
             crate::output::GetDeploymentInstanceOutput {
-                instance_summary: self.instance_summary,
+                instance_summary: self.instance_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput).
@@ -1304,20 +1316,20 @@ impl GetDeploymentInstanceOutput {
 /// <p>Represents the output of a <code>GetDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentGroupOutput {
+pub struct GetDeploymentGroupOutput  {
     /// <p>Information about the deployment group.</p>
     #[doc(hidden)]
     pub deployment_group_info: std::option::Option<crate::model::DeploymentGroupInfo>,
 }
 impl GetDeploymentGroupOutput {
     /// <p>Information about the deployment group.</p>
-    pub fn deployment_group_info(&self) -> std::option::Option<&crate::model::DeploymentGroupInfo> {
+    pub fn deployment_group_info(&self) -> std::option::Option<& crate::model::DeploymentGroupInfo> {
         self.deployment_group_info.as_ref()
     }
 }
 /// See [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput).
 pub mod get_deployment_group_output {
-
+    
     /// A builder for [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1330,20 +1342,19 @@ pub mod get_deployment_group_output {
             self
         }
         /// <p>Information about the deployment group.</p>
-        pub fn set_deployment_group_info(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentGroupInfo>,
-        ) -> Self {
-            self.deployment_group_info = input;
-            self
+        pub fn set_deployment_group_info(mut self, input: std::option::Option<crate::model::DeploymentGroupInfo>) -> Self {
+            self.deployment_group_info = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput).
         pub fn build(self) -> crate::output::GetDeploymentGroupOutput {
             crate::output::GetDeploymentGroupOutput {
-                deployment_group_info: self.deployment_group_info,
+                deployment_group_info: self.deployment_group_info
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput).
@@ -1355,22 +1366,20 @@ impl GetDeploymentGroupOutput {
 /// <p>Represents the output of a <code>GetDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentConfigOutput {
+pub struct GetDeploymentConfigOutput  {
     /// <p>Information about the deployment configuration.</p>
     #[doc(hidden)]
     pub deployment_config_info: std::option::Option<crate::model::DeploymentConfigInfo>,
 }
 impl GetDeploymentConfigOutput {
     /// <p>Information about the deployment configuration.</p>
-    pub fn deployment_config_info(
-        &self,
-    ) -> std::option::Option<&crate::model::DeploymentConfigInfo> {
+    pub fn deployment_config_info(&self) -> std::option::Option<& crate::model::DeploymentConfigInfo> {
         self.deployment_config_info.as_ref()
     }
 }
 /// See [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput).
 pub mod get_deployment_config_output {
-
+    
     /// A builder for [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1383,20 +1392,19 @@ pub mod get_deployment_config_output {
             self
         }
         /// <p>Information about the deployment configuration.</p>
-        pub fn set_deployment_config_info(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentConfigInfo>,
-        ) -> Self {
-            self.deployment_config_info = input;
-            self
+        pub fn set_deployment_config_info(mut self, input: std::option::Option<crate::model::DeploymentConfigInfo>) -> Self {
+            self.deployment_config_info = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput).
         pub fn build(self) -> crate::output::GetDeploymentConfigOutput {
             crate::output::GetDeploymentConfigOutput {
-                deployment_config_info: self.deployment_config_info,
+                deployment_config_info: self.deployment_config_info
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput).
@@ -1408,20 +1416,20 @@ impl GetDeploymentConfigOutput {
 /// <p>Represents the output of a <code>GetDeployment</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentOutput {
+pub struct GetDeploymentOutput  {
     /// <p>Information about the deployment.</p>
     #[doc(hidden)]
     pub deployment_info: std::option::Option<crate::model::DeploymentInfo>,
 }
 impl GetDeploymentOutput {
     /// <p>Information about the deployment.</p>
-    pub fn deployment_info(&self) -> std::option::Option<&crate::model::DeploymentInfo> {
+    pub fn deployment_info(&self) -> std::option::Option<& crate::model::DeploymentInfo> {
         self.deployment_info.as_ref()
     }
 }
 /// See [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
 pub mod get_deployment_output {
-
+    
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1434,20 +1442,19 @@ pub mod get_deployment_output {
             self
         }
         /// <p>Information about the deployment.</p>
-        pub fn set_deployment_info(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentInfo>,
-        ) -> Self {
-            self.deployment_info = input;
-            self
+        pub fn set_deployment_info(mut self, input: std::option::Option<crate::model::DeploymentInfo>) -> Self {
+            self.deployment_info = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
         pub fn build(self) -> crate::output::GetDeploymentOutput {
             crate::output::GetDeploymentOutput {
-                deployment_info: self.deployment_info,
+                deployment_info: self.deployment_info
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
@@ -1459,7 +1466,7 @@ impl GetDeploymentOutput {
 /// <p>Represents the output of a <code>GetApplicationRevision</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationRevisionOutput {
+pub struct GetApplicationRevisionOutput  {
     /// <p>The name of the application that corresponds to the revision.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -1472,21 +1479,21 @@ pub struct GetApplicationRevisionOutput {
 }
 impl GetApplicationRevisionOutput {
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Additional information about the revision, including type and location.</p>
-    pub fn revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+    pub fn revision(&self) -> std::option::Option<& crate::model::RevisionLocation> {
         self.revision.as_ref()
     }
     /// <p>General information about the revision.</p>
-    pub fn revision_info(&self) -> std::option::Option<&crate::model::GenericRevisionInfo> {
+    pub fn revision_info(&self) -> std::option::Option<& crate::model::GenericRevisionInfo> {
         self.revision_info.as_ref()
     }
 }
 /// See [`GetApplicationRevisionOutput`](crate::output::GetApplicationRevisionOutput).
 pub mod get_application_revision_output {
-
+    
     /// A builder for [`GetApplicationRevisionOutput`](crate::output::GetApplicationRevisionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1501,12 +1508,8 @@ pub mod get_application_revision_output {
             self
         }
         /// <p>The name of the application that corresponds to the revision.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p>Additional information about the revision, including type and location.</p>
         pub fn revision(mut self, input: crate::model::RevisionLocation) -> Self {
@@ -1514,12 +1517,8 @@ pub mod get_application_revision_output {
             self
         }
         /// <p>Additional information about the revision, including type and location.</p>
-        pub fn set_revision(
-            mut self,
-            input: std::option::Option<crate::model::RevisionLocation>,
-        ) -> Self {
-            self.revision = input;
-            self
+        pub fn set_revision(mut self, input: std::option::Option<crate::model::RevisionLocation>) -> Self {
+            self.revision = input; self
         }
         /// <p>General information about the revision.</p>
         pub fn revision_info(mut self, input: crate::model::GenericRevisionInfo) -> Self {
@@ -1527,22 +1526,23 @@ pub mod get_application_revision_output {
             self
         }
         /// <p>General information about the revision.</p>
-        pub fn set_revision_info(
-            mut self,
-            input: std::option::Option<crate::model::GenericRevisionInfo>,
-        ) -> Self {
-            self.revision_info = input;
-            self
+        pub fn set_revision_info(mut self, input: std::option::Option<crate::model::GenericRevisionInfo>) -> Self {
+            self.revision_info = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationRevisionOutput`](crate::output::GetApplicationRevisionOutput).
         pub fn build(self) -> crate::output::GetApplicationRevisionOutput {
             crate::output::GetApplicationRevisionOutput {
-                application_name: self.application_name,
-                revision: self.revision,
-                revision_info: self.revision_info,
+                application_name: self.application_name
+                ,
+                revision: self.revision
+                ,
+                revision_info: self.revision_info
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationRevisionOutput`](crate::output::GetApplicationRevisionOutput).
@@ -1554,20 +1554,20 @@ impl GetApplicationRevisionOutput {
 /// <p>Represents the output of a <code>GetApplication</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>Information about the application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::ApplicationInfo>,
 }
 impl GetApplicationOutput {
     /// <p>Information about the application.</p>
-    pub fn application(&self) -> std::option::Option<&crate::model::ApplicationInfo> {
+    pub fn application(&self) -> std::option::Option<& crate::model::ApplicationInfo> {
         self.application.as_ref()
     }
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
-
+    
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1580,20 +1580,19 @@ pub mod get_application_output {
             self
         }
         /// <p>Information about the application.</p>
-        pub fn set_application(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationInfo>,
-        ) -> Self {
-            self.application = input;
-            self
+        pub fn set_application(mut self, input: std::option::Option<crate::model::ApplicationInfo>) -> Self {
+            self.application = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
-                application: self.application,
+                application: self.application
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -1605,19 +1604,24 @@ impl GetApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterOnPremisesInstanceOutput {}
+pub struct DeregisterOnPremisesInstanceOutput  {
+}
 /// See [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput).
 pub mod deregister_on_premises_instance_output {
-
+    
     /// A builder for [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput).
         pub fn build(self) -> crate::output::DeregisterOnPremisesInstanceOutput {
-            crate::output::DeregisterOnPremisesInstanceOutput {}
+            crate::output::DeregisterOnPremisesInstanceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterOnPremisesInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput).
@@ -1629,19 +1633,24 @@ impl DeregisterOnPremisesInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcesByExternalIdOutput {}
+pub struct DeleteResourcesByExternalIdOutput  {
+}
 /// See [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput).
 pub mod delete_resources_by_external_id_output {
-
+    
     /// A builder for [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput).
         pub fn build(self) -> crate::output::DeleteResourcesByExternalIdOutput {
-            crate::output::DeleteResourcesByExternalIdOutput {}
+            crate::output::DeleteResourcesByExternalIdOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourcesByExternalIdOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput).
@@ -1653,20 +1662,20 @@ impl DeleteResourcesByExternalIdOutput {
 /// <p>Represents the output of a <code>DeleteGitHubAccountToken</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGitHubAccountTokenOutput {
+pub struct DeleteGitHubAccountTokenOutput  {
     /// <p>The name of the GitHub account connection that was deleted.</p>
     #[doc(hidden)]
     pub token_name: std::option::Option<std::string::String>,
 }
 impl DeleteGitHubAccountTokenOutput {
     /// <p>The name of the GitHub account connection that was deleted.</p>
-    pub fn token_name(&self) -> std::option::Option<&str> {
+    pub fn token_name(&self) -> std::option::Option<& str> {
         self.token_name.as_deref()
     }
 }
 /// See [`DeleteGitHubAccountTokenOutput`](crate::output::DeleteGitHubAccountTokenOutput).
 pub mod delete_git_hub_account_token_output {
-
+    
     /// A builder for [`DeleteGitHubAccountTokenOutput`](crate::output::DeleteGitHubAccountTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1680,16 +1689,18 @@ pub mod delete_git_hub_account_token_output {
         }
         /// <p>The name of the GitHub account connection that was deleted.</p>
         pub fn set_token_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_name = input;
-            self
+            self.token_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGitHubAccountTokenOutput`](crate::output::DeleteGitHubAccountTokenOutput).
         pub fn build(self) -> crate::output::DeleteGitHubAccountTokenOutput {
             crate::output::DeleteGitHubAccountTokenOutput {
-                token_name: self.token_name,
+                token_name: self.token_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGitHubAccountTokenOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGitHubAccountTokenOutput`](crate::output::DeleteGitHubAccountTokenOutput).
@@ -1701,25 +1712,24 @@ impl DeleteGitHubAccountTokenOutput {
 /// <p>Represents the output of a <code>DeleteDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeploymentGroupOutput {
+pub struct DeleteDeploymentGroupOutput  {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     #[doc(hidden)]
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
 impl DeleteDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-    pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
+    pub fn hooks_not_cleaned_up(&self) -> std::option::Option<& [crate::model::AutoScalingGroup]> {
         self.hooks_not_cleaned_up.as_deref()
     }
 }
 /// See [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput).
 pub mod delete_deployment_group_output {
-
+    
     /// A builder for [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) hooks_not_cleaned_up:
-            std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
+        pub(crate) hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
     }
     impl Builder {
         /// Appends an item to `hooks_not_cleaned_up`.
@@ -1729,25 +1739,24 @@ pub mod delete_deployment_group_output {
         /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
         pub fn hooks_not_cleaned_up(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
-            v.push(input);
-            self.hooks_not_cleaned_up = Some(v);
-            self
+                            v.push(input);
+                            self.hooks_not_cleaned_up = Some(v);
+                            self
         }
         /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-        pub fn set_hooks_not_cleaned_up(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
-        ) -> Self {
-            self.hooks_not_cleaned_up = input;
-            self
+        pub fn set_hooks_not_cleaned_up(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>) -> Self {
+            self.hooks_not_cleaned_up = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput).
         pub fn build(self) -> crate::output::DeleteDeploymentGroupOutput {
             crate::output::DeleteDeploymentGroupOutput {
-                hooks_not_cleaned_up: self.hooks_not_cleaned_up,
+                hooks_not_cleaned_up: self.hooks_not_cleaned_up
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDeploymentGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput).
@@ -1759,19 +1768,24 @@ impl DeleteDeploymentGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeploymentConfigOutput {}
+pub struct DeleteDeploymentConfigOutput  {
+}
 /// See [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput).
 pub mod delete_deployment_config_output {
-
+    
     /// A builder for [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput).
         pub fn build(self) -> crate::output::DeleteDeploymentConfigOutput {
-            crate::output::DeleteDeploymentConfigOutput {}
+            crate::output::DeleteDeploymentConfigOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDeploymentConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput).
@@ -1783,19 +1797,24 @@ impl DeleteDeploymentConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {}
+pub struct DeleteApplicationOutput  {
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
-            crate::output::DeleteApplicationOutput {}
+            crate::output::DeleteApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -1807,20 +1826,20 @@ impl DeleteApplicationOutput {
 /// <p>Represents the output of a <code>CreateDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentGroupOutput {
+pub struct CreateDeploymentGroupOutput  {
     /// <p>A unique deployment group ID.</p>
     #[doc(hidden)]
     pub deployment_group_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentGroupOutput {
     /// <p>A unique deployment group ID.</p>
-    pub fn deployment_group_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_group_id(&self) -> std::option::Option<& str> {
         self.deployment_group_id.as_deref()
     }
 }
 /// See [`CreateDeploymentGroupOutput`](crate::output::CreateDeploymentGroupOutput).
 pub mod create_deployment_group_output {
-
+    
     /// A builder for [`CreateDeploymentGroupOutput`](crate::output::CreateDeploymentGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1833,20 +1852,19 @@ pub mod create_deployment_group_output {
             self
         }
         /// <p>A unique deployment group ID.</p>
-        pub fn set_deployment_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_group_id = input;
-            self
+        pub fn set_deployment_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_group_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentGroupOutput`](crate::output::CreateDeploymentGroupOutput).
         pub fn build(self) -> crate::output::CreateDeploymentGroupOutput {
             crate::output::CreateDeploymentGroupOutput {
-                deployment_group_id: self.deployment_group_id,
+                deployment_group_id: self.deployment_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeploymentGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentGroupOutput`](crate::output::CreateDeploymentGroupOutput).
@@ -1858,20 +1876,20 @@ impl CreateDeploymentGroupOutput {
 /// <p>Represents the output of a <code>CreateDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentConfigOutput {
+pub struct CreateDeploymentConfigOutput  {
     /// <p>A unique deployment configuration ID.</p>
     #[doc(hidden)]
     pub deployment_config_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentConfigOutput {
     /// <p>A unique deployment configuration ID.</p>
-    pub fn deployment_config_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_config_id(&self) -> std::option::Option<& str> {
         self.deployment_config_id.as_deref()
     }
 }
 /// See [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput).
 pub mod create_deployment_config_output {
-
+    
     /// A builder for [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1884,20 +1902,19 @@ pub mod create_deployment_config_output {
             self
         }
         /// <p>A unique deployment configuration ID.</p>
-        pub fn set_deployment_config_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_config_id = input;
-            self
+        pub fn set_deployment_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_config_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput).
         pub fn build(self) -> crate::output::CreateDeploymentConfigOutput {
             crate::output::CreateDeploymentConfigOutput {
-                deployment_config_id: self.deployment_config_id,
+                deployment_config_id: self.deployment_config_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeploymentConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput).
@@ -1909,20 +1926,20 @@ impl CreateDeploymentConfigOutput {
 /// <p> Represents the output of a <code>CreateDeployment</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentOutput {
+pub struct CreateDeploymentOutput  {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
 pub mod create_deployment_output {
-
+    
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1935,20 +1952,19 @@ pub mod create_deployment_output {
             self
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
         pub fn build(self) -> crate::output::CreateDeploymentOutput {
             crate::output::CreateDeploymentOutput {
-                deployment_id: self.deployment_id,
+                deployment_id: self.deployment_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
@@ -1960,20 +1976,20 @@ impl CreateDeploymentOutput {
 /// <p>Represents the output of a <code>CreateApplication</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>A unique application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl CreateApplicationOutput {
     /// <p>A unique application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1986,20 +2002,19 @@ pub mod create_application_output {
             self
         }
         /// <p>A unique application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                application_id: self.application_id,
+                application_id: self.application_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -2011,19 +2026,24 @@ impl CreateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinueDeploymentOutput {}
+pub struct ContinueDeploymentOutput  {
+}
 /// See [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput).
 pub mod continue_deployment_output {
-
+    
     /// A builder for [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput).
         pub fn build(self) -> crate::output::ContinueDeploymentOutput {
-            crate::output::ContinueDeploymentOutput {}
+            crate::output::ContinueDeploymentOutput {
+            }
         }
     }
+    
+    
 }
 impl ContinueDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput).
@@ -2035,20 +2055,20 @@ impl ContinueDeploymentOutput {
 /// <p>Represents the output of a <code>BatchGetOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetOnPremisesInstancesOutput {
+pub struct BatchGetOnPremisesInstancesOutput  {
     /// <p>Information about the on-premises instances.</p>
     #[doc(hidden)]
     pub instance_infos: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>,
 }
 impl BatchGetOnPremisesInstancesOutput {
     /// <p>Information about the on-premises instances.</p>
-    pub fn instance_infos(&self) -> std::option::Option<&[crate::model::InstanceInfo]> {
+    pub fn instance_infos(&self) -> std::option::Option<& [crate::model::InstanceInfo]> {
         self.instance_infos.as_deref()
     }
 }
 /// See [`BatchGetOnPremisesInstancesOutput`](crate::output::BatchGetOnPremisesInstancesOutput).
 pub mod batch_get_on_premises_instances_output {
-
+    
     /// A builder for [`BatchGetOnPremisesInstancesOutput`](crate::output::BatchGetOnPremisesInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2062,25 +2082,24 @@ pub mod batch_get_on_premises_instances_output {
         /// <p>Information about the on-premises instances.</p>
         pub fn instance_infos(mut self, input: crate::model::InstanceInfo) -> Self {
             let mut v = self.instance_infos.unwrap_or_default();
-            v.push(input);
-            self.instance_infos = Some(v);
-            self
+                            v.push(input);
+                            self.instance_infos = Some(v);
+                            self
         }
         /// <p>Information about the on-premises instances.</p>
-        pub fn set_instance_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>,
-        ) -> Self {
-            self.instance_infos = input;
-            self
+        pub fn set_instance_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>) -> Self {
+            self.instance_infos = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetOnPremisesInstancesOutput`](crate::output::BatchGetOnPremisesInstancesOutput).
         pub fn build(self) -> crate::output::BatchGetOnPremisesInstancesOutput {
             crate::output::BatchGetOnPremisesInstancesOutput {
-                instance_infos: self.instance_infos,
+                instance_infos: self.instance_infos
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetOnPremisesInstancesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetOnPremisesInstancesOutput`](crate::output::BatchGetOnPremisesInstancesOutput).
@@ -2092,77 +2111,75 @@ impl BatchGetOnPremisesInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDeploymentTargetsOutput {
-    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
-    /// <ul>
-    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
-    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
-    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
-    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
+pub struct BatchGetDeploymentTargetsOutput  {
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p> 
+    /// <ul> 
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li> 
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li> 
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li> 
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub deployment_targets: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
 }
 impl BatchGetDeploymentTargetsOutput {
-    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
-    /// <ul>
-    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
-    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
-    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
-    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p> 
+    /// <ul> 
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li> 
+    /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li> 
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li> 
+    /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li> 
     /// </ul>
-    pub fn deployment_targets(&self) -> std::option::Option<&[crate::model::DeploymentTarget]> {
+    pub fn deployment_targets(&self) -> std::option::Option<& [crate::model::DeploymentTarget]> {
         self.deployment_targets.as_deref()
     }
 }
 /// See [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput).
 pub mod batch_get_deployment_targets_output {
-
+    
     /// A builder for [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) deployment_targets:
-            std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
+        pub(crate) deployment_targets: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
     }
     impl Builder {
         /// Appends an item to `deployment_targets`.
         ///
         /// To override the contents of this collection use [`set_deployment_targets`](Self::set_deployment_targets).
         ///
-        /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
-        /// <ul>
-        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
-        /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
-        /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
-        /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
+        /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p> 
+        /// <ul> 
+        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li> 
+        /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li> 
+        /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li> 
+        /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li> 
         /// </ul>
         pub fn deployment_targets(mut self, input: crate::model::DeploymentTarget) -> Self {
             let mut v = self.deployment_targets.unwrap_or_default();
-            v.push(input);
-            self.deployment_targets = Some(v);
-            self
+                            v.push(input);
+                            self.deployment_targets = Some(v);
+                            self
         }
-        /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
-        /// <ul>
-        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>
-        /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>
-        /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
-        /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
+        /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p> 
+        /// <ul> 
+        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li> 
+        /// <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li> 
+        /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li> 
+        /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li> 
         /// </ul>
-        pub fn set_deployment_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
-        ) -> Self {
-            self.deployment_targets = input;
-            self
+        pub fn set_deployment_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>) -> Self {
+            self.deployment_targets = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput).
         pub fn build(self) -> crate::output::BatchGetDeploymentTargetsOutput {
             crate::output::BatchGetDeploymentTargetsOutput {
-                deployment_targets: self.deployment_targets,
+                deployment_targets: self.deployment_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetDeploymentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput).
@@ -2174,25 +2191,24 @@ impl BatchGetDeploymentTargetsOutput {
 /// <p> Represents the output of a <code>BatchGetDeployments</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDeploymentsOutput {
+pub struct BatchGetDeploymentsOutput  {
     /// <p> Information about the deployments. </p>
     #[doc(hidden)]
     pub deployments_info: std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
 }
 impl BatchGetDeploymentsOutput {
     /// <p> Information about the deployments. </p>
-    pub fn deployments_info(&self) -> std::option::Option<&[crate::model::DeploymentInfo]> {
+    pub fn deployments_info(&self) -> std::option::Option<& [crate::model::DeploymentInfo]> {
         self.deployments_info.as_deref()
     }
 }
 /// See [`BatchGetDeploymentsOutput`](crate::output::BatchGetDeploymentsOutput).
 pub mod batch_get_deployments_output {
-
+    
     /// A builder for [`BatchGetDeploymentsOutput`](crate::output::BatchGetDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) deployments_info:
-            std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
+        pub(crate) deployments_info: std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
     }
     impl Builder {
         /// Appends an item to `deployments_info`.
@@ -2202,25 +2218,24 @@ pub mod batch_get_deployments_output {
         /// <p> Information about the deployments. </p>
         pub fn deployments_info(mut self, input: crate::model::DeploymentInfo) -> Self {
             let mut v = self.deployments_info.unwrap_or_default();
-            v.push(input);
-            self.deployments_info = Some(v);
-            self
+                            v.push(input);
+                            self.deployments_info = Some(v);
+                            self
         }
         /// <p> Information about the deployments. </p>
-        pub fn set_deployments_info(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
-        ) -> Self {
-            self.deployments_info = input;
-            self
+        pub fn set_deployments_info(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>) -> Self {
+            self.deployments_info = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetDeploymentsOutput`](crate::output::BatchGetDeploymentsOutput).
         pub fn build(self) -> crate::output::BatchGetDeploymentsOutput {
             crate::output::BatchGetDeploymentsOutput {
-                deployments_info: self.deployments_info,
+                deployments_info: self.deployments_info
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentsOutput`](crate::output::BatchGetDeploymentsOutput).
@@ -2232,7 +2247,7 @@ impl BatchGetDeploymentsOutput {
 /// <p>Represents the output of a <code>BatchGetDeploymentInstances</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDeploymentInstancesOutput {
+pub struct BatchGetDeploymentInstancesOutput  {
     /// <p>Information about the instance.</p>
     #[doc(hidden)]
     pub instances_summary: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
@@ -2242,22 +2257,21 @@ pub struct BatchGetDeploymentInstancesOutput {
 }
 impl BatchGetDeploymentInstancesOutput {
     /// <p>Information about the instance.</p>
-    pub fn instances_summary(&self) -> std::option::Option<&[crate::model::InstanceSummary]> {
+    pub fn instances_summary(&self) -> std::option::Option<& [crate::model::InstanceSummary]> {
         self.instances_summary.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchGetDeploymentInstancesOutput`](crate::output::BatchGetDeploymentInstancesOutput).
 pub mod batch_get_deployment_instances_output {
-
+    
     /// A builder for [`BatchGetDeploymentInstancesOutput`](crate::output::BatchGetDeploymentInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instances_summary:
-            std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
+        pub(crate) instances_summary: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2268,17 +2282,13 @@ pub mod batch_get_deployment_instances_output {
         /// <p>Information about the instance.</p>
         pub fn instances_summary(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instances_summary.unwrap_or_default();
-            v.push(input);
-            self.instances_summary = Some(v);
-            self
+                            v.push(input);
+                            self.instances_summary = Some(v);
+                            self
         }
         /// <p>Information about the instance.</p>
-        pub fn set_instances_summary(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
-        ) -> Self {
-            self.instances_summary = input;
-            self
+        pub fn set_instances_summary(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>) -> Self {
+            self.instances_summary = input; self
         }
         /// <p>Information about errors that might have occurred during the API call.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2286,21 +2296,21 @@ pub mod batch_get_deployment_instances_output {
             self
         }
         /// <p>Information about errors that might have occurred during the API call.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetDeploymentInstancesOutput`](crate::output::BatchGetDeploymentInstancesOutput).
         pub fn build(self) -> crate::output::BatchGetDeploymentInstancesOutput {
             crate::output::BatchGetDeploymentInstancesOutput {
-                instances_summary: self.instances_summary,
-                error_message: self.error_message,
+                instances_summary: self.instances_summary
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetDeploymentInstancesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentInstancesOutput`](crate::output::BatchGetDeploymentInstancesOutput).
@@ -2312,35 +2322,31 @@ impl BatchGetDeploymentInstancesOutput {
 /// <p>Represents the output of a <code>BatchGetDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDeploymentGroupsOutput {
+pub struct BatchGetDeploymentGroupsOutput  {
     /// <p>Information about the deployment groups.</p>
     #[doc(hidden)]
-    pub deployment_groups_info:
-        std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>,
+    pub deployment_groups_info: std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchGetDeploymentGroupsOutput {
     /// <p>Information about the deployment groups.</p>
-    pub fn deployment_groups_info(
-        &self,
-    ) -> std::option::Option<&[crate::model::DeploymentGroupInfo]> {
+    pub fn deployment_groups_info(&self) -> std::option::Option<& [crate::model::DeploymentGroupInfo]> {
         self.deployment_groups_info.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput).
 pub mod batch_get_deployment_groups_output {
-
+    
     /// A builder for [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) deployment_groups_info:
-            std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>,
+        pub(crate) deployment_groups_info: std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>,
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2351,17 +2357,13 @@ pub mod batch_get_deployment_groups_output {
         /// <p>Information about the deployment groups.</p>
         pub fn deployment_groups_info(mut self, input: crate::model::DeploymentGroupInfo) -> Self {
             let mut v = self.deployment_groups_info.unwrap_or_default();
-            v.push(input);
-            self.deployment_groups_info = Some(v);
-            self
+                            v.push(input);
+                            self.deployment_groups_info = Some(v);
+                            self
         }
         /// <p>Information about the deployment groups.</p>
-        pub fn set_deployment_groups_info(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>,
-        ) -> Self {
-            self.deployment_groups_info = input;
-            self
+        pub fn set_deployment_groups_info(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>) -> Self {
+            self.deployment_groups_info = input; self
         }
         /// <p>Information about errors that might have occurred during the API call.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2369,21 +2371,21 @@ pub mod batch_get_deployment_groups_output {
             self
         }
         /// <p>Information about errors that might have occurred during the API call.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput).
         pub fn build(self) -> crate::output::BatchGetDeploymentGroupsOutput {
             crate::output::BatchGetDeploymentGroupsOutput {
-                deployment_groups_info: self.deployment_groups_info,
-                error_message: self.error_message,
+                deployment_groups_info: self.deployment_groups_info
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetDeploymentGroupsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput).
@@ -2395,25 +2397,24 @@ impl BatchGetDeploymentGroupsOutput {
 /// <p>Represents the output of a <code>BatchGetApplications</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetApplicationsOutput {
+pub struct BatchGetApplicationsOutput  {
     /// <p>Information about the applications.</p>
     #[doc(hidden)]
     pub applications_info: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
 }
 impl BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
-    pub fn applications_info(&self) -> std::option::Option<&[crate::model::ApplicationInfo]> {
+    pub fn applications_info(&self) -> std::option::Option<& [crate::model::ApplicationInfo]> {
         self.applications_info.as_deref()
     }
 }
 /// See [`BatchGetApplicationsOutput`](crate::output::BatchGetApplicationsOutput).
 pub mod batch_get_applications_output {
-
+    
     /// A builder for [`BatchGetApplicationsOutput`](crate::output::BatchGetApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) applications_info:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
+        pub(crate) applications_info: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
     }
     impl Builder {
         /// Appends an item to `applications_info`.
@@ -2423,25 +2424,24 @@ pub mod batch_get_applications_output {
         /// <p>Information about the applications.</p>
         pub fn applications_info(mut self, input: crate::model::ApplicationInfo) -> Self {
             let mut v = self.applications_info.unwrap_or_default();
-            v.push(input);
-            self.applications_info = Some(v);
-            self
+                            v.push(input);
+                            self.applications_info = Some(v);
+                            self
         }
         /// <p>Information about the applications.</p>
-        pub fn set_applications_info(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
-        ) -> Self {
-            self.applications_info = input;
-            self
+        pub fn set_applications_info(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>) -> Self {
+            self.applications_info = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetApplicationsOutput`](crate::output::BatchGetApplicationsOutput).
         pub fn build(self) -> crate::output::BatchGetApplicationsOutput {
             crate::output::BatchGetApplicationsOutput {
-                applications_info: self.applications_info,
+                applications_info: self.applications_info
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetApplicationsOutput`](crate::output::BatchGetApplicationsOutput).
@@ -2453,7 +2453,7 @@ impl BatchGetApplicationsOutput {
 /// <p>Represents the output of a <code>BatchGetApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetApplicationRevisionsOutput {
+pub struct BatchGetApplicationRevisionsOutput  {
     /// <p>The name of the application that corresponds to the revisions.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -2466,21 +2466,21 @@ pub struct BatchGetApplicationRevisionsOutput {
 }
 impl BatchGetApplicationRevisionsOutput {
     /// <p>The name of the application that corresponds to the revisions.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>Additional information about the revisions, including the type and location.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionInfo]> {
+    pub fn revisions(&self) -> std::option::Option<& [crate::model::RevisionInfo]> {
         self.revisions.as_deref()
     }
 }
 /// See [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput).
 pub mod batch_get_application_revisions_output {
-
+    
     /// A builder for [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2495,12 +2495,8 @@ pub mod batch_get_application_revisions_output {
             self
         }
         /// <p>The name of the application that corresponds to the revisions.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p>Information about errors that might have occurred during the API call.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2508,12 +2504,8 @@ pub mod batch_get_application_revisions_output {
             self
         }
         /// <p>Information about errors that might have occurred during the API call.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Appends an item to `revisions`.
         ///
@@ -2522,27 +2514,28 @@ pub mod batch_get_application_revisions_output {
         /// <p>Additional information about the revisions, including the type and location.</p>
         pub fn revisions(mut self, input: crate::model::RevisionInfo) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input);
-            self.revisions = Some(v);
-            self
+                            v.push(input);
+                            self.revisions = Some(v);
+                            self
         }
         /// <p>Additional information about the revisions, including the type and location.</p>
-        pub fn set_revisions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RevisionInfo>>,
-        ) -> Self {
-            self.revisions = input;
-            self
+        pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RevisionInfo>>) -> Self {
+            self.revisions = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput).
         pub fn build(self) -> crate::output::BatchGetApplicationRevisionsOutput {
             crate::output::BatchGetApplicationRevisionsOutput {
-                application_name: self.application_name,
-                error_message: self.error_message,
-                revisions: self.revisions,
+                application_name: self.application_name
+                ,
+                error_message: self.error_message
+                ,
+                revisions: self.revisions
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetApplicationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput).
@@ -2554,19 +2547,24 @@ impl BatchGetApplicationRevisionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToOnPremisesInstancesOutput {}
+pub struct AddTagsToOnPremisesInstancesOutput  {
+}
 /// See [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput).
 pub mod add_tags_to_on_premises_instances_output {
-
+    
     /// A builder for [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput).
         pub fn build(self) -> crate::output::AddTagsToOnPremisesInstancesOutput {
-            crate::output::AddTagsToOnPremisesInstancesOutput {}
+            crate::output::AddTagsToOnPremisesInstancesOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsToOnPremisesInstancesOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput).
@@ -2574,3 +2572,4 @@ impl AddTagsToOnPremisesInstancesOutput {
         crate::output::add_tags_to_on_premises_instances_output::Builder::default()
     }
 }
+

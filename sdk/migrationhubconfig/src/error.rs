@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct GetHomeRegionError {
     /// Kind of error that occurred.
-    pub kind: GetHomeRegionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetHomeRegionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetHomeRegionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetHomeRegionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -30,25 +30,37 @@ pub enum GetHomeRegionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetHomeRegionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetHomeRegionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetHomeRegionErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetHomeRegionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
-            GetHomeRegionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetHomeRegionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetHomeRegionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetHomeRegionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHomeRegionErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHomeRegionErrorKind::InvalidInputException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHomeRegionErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHomeRegionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHomeRegionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -62,46 +74,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetHomeRegionError {
 }
 impl GetHomeRegionError {
     /// Creates a new `GetHomeRegionError`.
-    pub fn new(kind: GetHomeRegionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetHomeRegionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetHomeRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetHomeRegionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetHomeRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetHomeRegionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetHomeRegionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetHomeRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetHomeRegionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetHomeRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetHomeRegionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetHomeRegionErrorKind::AccessDeniedException(_))
@@ -116,10 +128,7 @@ impl GetHomeRegionError {
     }
     /// Returns `true` if the error kind is `GetHomeRegionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHomeRegionErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetHomeRegionErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetHomeRegionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -129,12 +138,24 @@ impl GetHomeRegionError {
 impl std::error::Error for GetHomeRegionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetHomeRegionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetHomeRegionErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetHomeRegionErrorKind::InvalidInputException(_inner) => Some(_inner),
-            GetHomeRegionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetHomeRegionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetHomeRegionErrorKind::Unhandled(_inner) => Some(_inner),
+            GetHomeRegionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetHomeRegionErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetHomeRegionErrorKind::InvalidInputException(_inner) =>
+            Some(_inner)
+            ,
+            GetHomeRegionErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetHomeRegionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetHomeRegionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -142,7 +163,7 @@ impl std::error::Error for GetHomeRegionError {
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -158,15 +179,13 @@ impl ThrottlingException {
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -176,7 +195,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -191,8 +210,7 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The number of seconds the caller should wait before retrying.</p>
         pub fn retry_after_seconds(mut self, input: i32) -> Self {
@@ -201,17 +219,21 @@ pub mod throttling_exception {
         }
         /// <p>The number of seconds the caller should wait before retrying.</p>
         pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.retry_after_seconds = input;
-            self
+            self.retry_after_seconds = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
-                retry_after_seconds: self.retry_after_seconds.unwrap_or_default(),
+                message: self.message
+                ,
+                retry_after_seconds: self.retry_after_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -223,22 +245,20 @@ impl ThrottlingException {
 /// <p>Exception raised when a request fails due to temporary unavailability of the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUnavailableException {
+pub struct ServiceUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -248,7 +268,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
 pub mod service_unavailable_exception {
-
+    
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -262,16 +282,18 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
         pub fn build(self) -> crate::error::ServiceUnavailableException {
             crate::error::ServiceUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
@@ -283,22 +305,20 @@ impl ServiceUnavailableException {
 /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidInputException {
+pub struct InvalidInputException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidInputException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInputException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -308,7 +328,7 @@ impl std::fmt::Display for InvalidInputException {
 impl std::error::Error for InvalidInputException {}
 /// See [`InvalidInputException`](crate::error::InvalidInputException).
 pub mod invalid_input_exception {
-
+    
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -322,16 +342,18 @@ pub mod invalid_input_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidInputException`](crate::error::InvalidInputException).
         pub fn build(self) -> crate::error::InvalidInputException {
             crate::error::InvalidInputException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidInputException {
     /// Creates a new builder-style object to manufacture [`InvalidInputException`](crate::error::InvalidInputException).
@@ -343,22 +365,20 @@ impl InvalidInputException {
 /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerError {
+pub struct InternalServerError  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerError")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -368,7 +388,7 @@ impl std::fmt::Display for InternalServerError {
 impl std::error::Error for InternalServerError {}
 /// See [`InternalServerError`](crate::error::InternalServerError).
 pub mod internal_server_error {
-
+    
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -382,16 +402,18 @@ pub mod internal_server_error {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
         pub fn build(self) -> crate::error::InternalServerError {
             crate::error::InternalServerError {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerError {
     /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
@@ -403,22 +425,20 @@ impl InternalServerError {
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -428,7 +448,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -442,16 +462,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -465,17 +487,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsError {
     /// Kind of error that occurred.
-    pub kind: DescribeHomeRegionControlsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeHomeRegionControlsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeHomeRegionControlsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeHomeRegionControlsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeHomeRegionControlsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -493,27 +513,37 @@ pub enum DescribeHomeRegionControlsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHomeRegionControlsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeHomeRegionControlsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeHomeRegionControlsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeHomeRegionControlsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
-            DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(_inner) => {
+            DescribeHomeRegionControlsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHomeRegionControlsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHomeRegionControlsErrorKind::InvalidInputException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHomeRegionControlsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHomeRegionControlsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeHomeRegionControlsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeHomeRegionControlsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -527,97 +557,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeHomeRegionControlsErr
 }
 impl DescribeHomeRegionControlsError {
     /// Creates a new `DescribeHomeRegionControlsError`.
-    pub fn new(kind: DescribeHomeRegionControlsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeHomeRegionControlsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeHomeRegionControlsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeHomeRegionControlsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeHomeRegionControlsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeHomeRegionControlsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeHomeRegionControlsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeHomeRegionControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeHomeRegionControlsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeHomeRegionControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHomeRegionControlsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeHomeRegionControlsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHomeRegionControlsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DescribeHomeRegionControlsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHomeRegionControlsErrorKind::InvalidInputException(_)
-        )
+        matches!(&self.kind, DescribeHomeRegionControlsErrorKind::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHomeRegionControlsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeHomeRegionControlsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeHomeRegionControlsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeHomeRegionControlsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeHomeRegionControlsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeHomeRegionControlsErrorKind::InvalidInputException(_inner) => Some(_inner),
-            DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(_inner) => {
+            DescribeHomeRegionControlsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHomeRegionControlsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHomeRegionControlsErrorKind::InvalidInputException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHomeRegionControlsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHomeRegionControlsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeHomeRegionControlsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeHomeRegionControlsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -627,15 +648,15 @@ impl std::error::Error for DescribeHomeRegionControlsError {
 #[derive(std::fmt::Debug)]
 pub struct CreateHomeRegionControlError {
     /// Kind of error that occurred.
-    pub kind: CreateHomeRegionControlErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateHomeRegionControlErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateHomeRegionControlError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateHomeRegionControlErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -655,26 +676,40 @@ pub enum CreateHomeRegionControlErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHomeRegionControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateHomeRegionControlErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateHomeRegionControlErrorKind::DryRunOperation(_inner) => _inner.fmt(f),
-            CreateHomeRegionControlErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            CreateHomeRegionControlErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
-            CreateHomeRegionControlErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateHomeRegionControlErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateHomeRegionControlErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateHomeRegionControlErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHomeRegionControlErrorKind::DryRunOperation(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHomeRegionControlErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHomeRegionControlErrorKind::InvalidInputException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHomeRegionControlErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHomeRegionControlErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHomeRegionControlErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -688,103 +723,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateHomeRegionControlError 
 }
 impl CreateHomeRegionControlError {
     /// Creates a new `CreateHomeRegionControlError`.
-    pub fn new(kind: CreateHomeRegionControlErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateHomeRegionControlError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateHomeRegionControlErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateHomeRegionControlError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateHomeRegionControlErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateHomeRegionControlErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateHomeRegionControlError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateHomeRegionControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateHomeRegionControlError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateHomeRegionControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHomeRegionControlErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateHomeRegionControlErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHomeRegionControlErrorKind::DryRunOperation(_)
-        )
+        matches!(&self.kind, CreateHomeRegionControlErrorKind::DryRunOperation(_))
     }
     /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHomeRegionControlErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, CreateHomeRegionControlErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHomeRegionControlErrorKind::InvalidInputException(_)
-        )
+        matches!(&self.kind, CreateHomeRegionControlErrorKind::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHomeRegionControlErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateHomeRegionControlErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHomeRegionControlErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, CreateHomeRegionControlErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for CreateHomeRegionControlError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateHomeRegionControlErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateHomeRegionControlErrorKind::DryRunOperation(_inner) => Some(_inner),
-            CreateHomeRegionControlErrorKind::InternalServerError(_inner) => Some(_inner),
-            CreateHomeRegionControlErrorKind::InvalidInputException(_inner) => Some(_inner),
-            CreateHomeRegionControlErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateHomeRegionControlErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateHomeRegionControlErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateHomeRegionControlErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHomeRegionControlErrorKind::DryRunOperation(_inner) =>
+            Some(_inner)
+            ,
+            CreateHomeRegionControlErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            CreateHomeRegionControlErrorKind::InvalidInputException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHomeRegionControlErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHomeRegionControlErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHomeRegionControlErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -792,22 +819,20 @@ impl std::error::Error for CreateHomeRegionControlError {
 /// <p>Exception raised to indicate that authorization of an action was successful, when the <code>DryRun</code> flag is set to true.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DryRunOperation {
+pub struct DryRunOperation  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DryRunOperation {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DryRunOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DryRunOperation")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -817,7 +842,7 @@ impl std::fmt::Display for DryRunOperation {
 impl std::error::Error for DryRunOperation {}
 /// See [`DryRunOperation`](crate::error::DryRunOperation).
 pub mod dry_run_operation {
-
+    
     /// A builder for [`DryRunOperation`](crate::error::DryRunOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -831,16 +856,18 @@ pub mod dry_run_operation {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DryRunOperation`](crate::error::DryRunOperation).
         pub fn build(self) -> crate::error::DryRunOperation {
             crate::error::DryRunOperation {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DryRunOperation {
     /// Creates a new builder-style object to manufacture [`DryRunOperation`](crate::error::DryRunOperation).
@@ -849,31 +876,32 @@ impl DryRunOperation {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

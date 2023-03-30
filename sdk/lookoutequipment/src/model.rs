@@ -3,7 +3,7 @@
 /// <p> Specifies configuration information for the output results from for the inference, including KMS key ID and output S3 location. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceOutputConfiguration {
+pub struct InferenceOutputConfiguration  {
     /// <p> Specifies configuration information for the output results from for the inference, output S3 location. </p>
     #[doc(hidden)]
     pub s3_output_configuration: std::option::Option<crate::model::InferenceS3OutputConfiguration>,
@@ -13,42 +13,32 @@ pub struct InferenceOutputConfiguration {
 }
 impl InferenceOutputConfiguration {
     /// <p> Specifies configuration information for the output results from for the inference, output S3 location. </p>
-    pub fn s3_output_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InferenceS3OutputConfiguration> {
+    pub fn s3_output_configuration(&self) -> std::option::Option<& crate::model::InferenceS3OutputConfiguration> {
         self.s3_output_configuration.as_ref()
     }
     /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
 pub mod inference_output_configuration {
-
+    
     /// A builder for [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) s3_output_configuration:
-            std::option::Option<crate::model::InferenceS3OutputConfiguration>,
+        pub(crate) s3_output_configuration: std::option::Option<crate::model::InferenceS3OutputConfiguration>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> Specifies configuration information for the output results from for the inference, output S3 location. </p>
-        pub fn s3_output_configuration(
-            mut self,
-            input: crate::model::InferenceS3OutputConfiguration,
-        ) -> Self {
+        pub fn s3_output_configuration(mut self, input: crate::model::InferenceS3OutputConfiguration) -> Self {
             self.s3_output_configuration = Some(input);
             self
         }
         /// <p> Specifies configuration information for the output results from for the inference, output S3 location. </p>
-        pub fn set_s3_output_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InferenceS3OutputConfiguration>,
-        ) -> Self {
-            self.s3_output_configuration = input;
-            self
+        pub fn set_s3_output_configuration(mut self, input: std::option::Option<crate::model::InferenceS3OutputConfiguration>) -> Self {
+            self.s3_output_configuration = input; self
         }
         /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,17 +47,20 @@ pub mod inference_output_configuration {
         }
         /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
         pub fn build(self) -> crate::model::InferenceOutputConfiguration {
             crate::model::InferenceOutputConfiguration {
-                s3_output_configuration: self.s3_output_configuration,
-                kms_key_id: self.kms_key_id,
+                s3_output_configuration: self.s3_output_configuration
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InferenceOutputConfiguration {
     /// Creates a new builder-style object to manufacture [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
@@ -79,7 +72,7 @@ impl InferenceOutputConfiguration {
 /// <p> Specifies configuration information for the output results from the inference, including output S3 location. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceS3OutputConfiguration {
+pub struct InferenceS3OutputConfiguration  {
     /// <p> The bucket containing the output results from the inference </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -89,17 +82,17 @@ pub struct InferenceS3OutputConfiguration {
 }
 impl InferenceS3OutputConfiguration {
     /// <p> The bucket containing the output results from the inference </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
 pub mod inference_s3_output_configuration {
-
+    
     /// A builder for [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -114,8 +107,7 @@ pub mod inference_s3_output_configuration {
         }
         /// <p> The bucket containing the output results from the inference </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,17 +116,20 @@ pub mod inference_s3_output_configuration {
         }
         /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
         pub fn build(self) -> crate::model::InferenceS3OutputConfiguration {
             crate::model::InferenceS3OutputConfiguration {
-                bucket: self.bucket,
-                prefix: self.prefix,
+                bucket: self.bucket
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl InferenceS3OutputConfiguration {
     /// Creates a new builder-style object to manufacture [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
@@ -146,7 +141,7 @@ impl InferenceS3OutputConfiguration {
 /// <p>Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceInputConfiguration {
+pub struct InferenceInputConfiguration  {
     /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
     #[doc(hidden)]
     pub s3_input_configuration: std::option::Option<crate::model::InferenceS3InputConfiguration>,
@@ -155,55 +150,41 @@ pub struct InferenceInputConfiguration {
     pub input_time_zone_offset: std::option::Option<std::string::String>,
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
     #[doc(hidden)]
-    pub inference_input_name_configuration:
-        std::option::Option<crate::model::InferenceInputNameConfiguration>,
+    pub inference_input_name_configuration: std::option::Option<crate::model::InferenceInputNameConfiguration>,
 }
 impl InferenceInputConfiguration {
     /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
-    pub fn s3_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InferenceS3InputConfiguration> {
+    pub fn s3_input_configuration(&self) -> std::option::Option<& crate::model::InferenceS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
     /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
-    pub fn input_time_zone_offset(&self) -> std::option::Option<&str> {
+    pub fn input_time_zone_offset(&self) -> std::option::Option<& str> {
         self.input_time_zone_offset.as_deref()
     }
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
-    pub fn inference_input_name_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InferenceInputNameConfiguration> {
+    pub fn inference_input_name_configuration(&self) -> std::option::Option<& crate::model::InferenceInputNameConfiguration> {
         self.inference_input_name_configuration.as_ref()
     }
 }
 /// See [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
 pub mod inference_input_configuration {
-
+    
     /// A builder for [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) s3_input_configuration:
-            std::option::Option<crate::model::InferenceS3InputConfiguration>,
+        pub(crate) s3_input_configuration: std::option::Option<crate::model::InferenceS3InputConfiguration>,
         pub(crate) input_time_zone_offset: std::option::Option<std::string::String>,
-        pub(crate) inference_input_name_configuration:
-            std::option::Option<crate::model::InferenceInputNameConfiguration>,
+        pub(crate) inference_input_name_configuration: std::option::Option<crate::model::InferenceInputNameConfiguration>,
     }
     impl Builder {
         /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
-        pub fn s3_input_configuration(
-            mut self,
-            input: crate::model::InferenceS3InputConfiguration,
-        ) -> Self {
+        pub fn s3_input_configuration(mut self, input: crate::model::InferenceS3InputConfiguration) -> Self {
             self.s3_input_configuration = Some(input);
             self
         }
         /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
-        pub fn set_s3_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InferenceS3InputConfiguration>,
-        ) -> Self {
-            self.s3_input_configuration = input;
-            self
+        pub fn set_s3_input_configuration(mut self, input: std::option::Option<crate::model::InferenceS3InputConfiguration>) -> Self {
+            self.s3_input_configuration = input; self
         }
         /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
         pub fn input_time_zone_offset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,38 +192,32 @@ pub mod inference_input_configuration {
             self
         }
         /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
-        pub fn set_input_time_zone_offset(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.input_time_zone_offset = input;
-            self
+        pub fn set_input_time_zone_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_time_zone_offset = input; self
         }
         /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
-        pub fn inference_input_name_configuration(
-            mut self,
-            input: crate::model::InferenceInputNameConfiguration,
-        ) -> Self {
+        pub fn inference_input_name_configuration(mut self, input: crate::model::InferenceInputNameConfiguration) -> Self {
             self.inference_input_name_configuration = Some(input);
             self
         }
         /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
-        pub fn set_inference_input_name_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InferenceInputNameConfiguration>,
-        ) -> Self {
-            self.inference_input_name_configuration = input;
-            self
+        pub fn set_inference_input_name_configuration(mut self, input: std::option::Option<crate::model::InferenceInputNameConfiguration>) -> Self {
+            self.inference_input_name_configuration = input; self
         }
         /// Consumes the builder and constructs a [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
         pub fn build(self) -> crate::model::InferenceInputConfiguration {
             crate::model::InferenceInputConfiguration {
-                s3_input_configuration: self.s3_input_configuration,
-                input_time_zone_offset: self.input_time_zone_offset,
-                inference_input_name_configuration: self.inference_input_name_configuration,
+                s3_input_configuration: self.s3_input_configuration
+                ,
+                input_time_zone_offset: self.input_time_zone_offset
+                ,
+                inference_input_name_configuration: self.inference_input_name_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl InferenceInputConfiguration {
     /// Creates a new builder-style object to manufacture [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
@@ -254,7 +229,7 @@ impl InferenceInputConfiguration {
 /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceInputNameConfiguration {
+pub struct InferenceInputNameConfiguration  {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
     #[doc(hidden)]
     pub timestamp_format: std::option::Option<std::string::String>,
@@ -264,17 +239,17 @@ pub struct InferenceInputNameConfiguration {
 }
 impl InferenceInputNameConfiguration {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
-    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+    pub fn timestamp_format(&self) -> std::option::Option<& str> {
         self.timestamp_format.as_deref()
     }
     /// <p>Indicates the delimiter character used between items in the data. </p>
-    pub fn component_timestamp_delimiter(&self) -> std::option::Option<&str> {
+    pub fn component_timestamp_delimiter(&self) -> std::option::Option<& str> {
         self.component_timestamp_delimiter.as_deref()
     }
 }
 /// See [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
 pub mod inference_input_name_configuration {
-
+    
     /// A builder for [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -288,37 +263,30 @@ pub mod inference_input_name_configuration {
             self
         }
         /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
-        pub fn set_timestamp_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timestamp_format = input;
-            self
+        pub fn set_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timestamp_format = input; self
         }
         /// <p>Indicates the delimiter character used between items in the data. </p>
-        pub fn component_timestamp_delimiter(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn component_timestamp_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_timestamp_delimiter = Some(input.into());
             self
         }
         /// <p>Indicates the delimiter character used between items in the data. </p>
-        pub fn set_component_timestamp_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_timestamp_delimiter = input;
-            self
+        pub fn set_component_timestamp_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_timestamp_delimiter = input; self
         }
         /// Consumes the builder and constructs a [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
         pub fn build(self) -> crate::model::InferenceInputNameConfiguration {
             crate::model::InferenceInputNameConfiguration {
-                timestamp_format: self.timestamp_format,
-                component_timestamp_delimiter: self.component_timestamp_delimiter,
+                timestamp_format: self.timestamp_format
+                ,
+                component_timestamp_delimiter: self.component_timestamp_delimiter
+                ,
             }
         }
     }
+    
+    
 }
 impl InferenceInputNameConfiguration {
     /// Creates a new builder-style object to manufacture [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
@@ -330,7 +298,7 @@ impl InferenceInputNameConfiguration {
 /// <p> Specifies configuration information for the input data for the inference, including input data S3 location. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceS3InputConfiguration {
+pub struct InferenceS3InputConfiguration  {
     /// <p>The bucket containing the input dataset for the inference. </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -340,17 +308,17 @@ pub struct InferenceS3InputConfiguration {
 }
 impl InferenceS3InputConfiguration {
     /// <p>The bucket containing the input dataset for the inference. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
 pub mod inference_s3_input_configuration {
-
+    
     /// A builder for [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -365,8 +333,7 @@ pub mod inference_s3_input_configuration {
         }
         /// <p>The bucket containing the input dataset for the inference. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -375,17 +342,20 @@ pub mod inference_s3_input_configuration {
         }
         /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
         pub fn build(self) -> crate::model::InferenceS3InputConfiguration {
             crate::model::InferenceS3InputConfiguration {
-                bucket: self.bucket,
-                prefix: self.prefix,
+                bucket: self.bucket
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl InferenceS3InputConfiguration {
     /// Creates a new builder-style object to manufacture [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
@@ -400,9 +370,9 @@ impl InferenceS3InputConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datauploadfrequency = unimplemented!();
 /// match datauploadfrequency {
@@ -427,22 +397,14 @@ impl InferenceS3InputConfiguration {
 /// Specifically, when `datauploadfrequency` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataUploadFrequency::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataUploadFrequency {
     #[allow(missing_docs)] // documentation missing in model
     Pt10M,
@@ -455,7 +417,7 @@ pub enum DataUploadFrequency {
     #[allow(missing_docs)] // documentation missing in model
     Pt5M,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataUploadFrequency {
     fn from(s: &str) -> Self {
@@ -465,19 +427,17 @@ impl std::convert::From<&str> for DataUploadFrequency {
             "PT1H" => DataUploadFrequency::Pt1H,
             "PT30M" => DataUploadFrequency::Pt30M,
             "PT5M" => DataUploadFrequency::Pt5M,
-            other => {
-                DataUploadFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DataUploadFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataUploadFrequency {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataUploadFrequency::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataUploadFrequency::from(s))
+                }
+            }
 impl DataUploadFrequency {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -487,12 +447,14 @@ impl DataUploadFrequency {
             DataUploadFrequency::Pt1H => "PT1H",
             DataUploadFrequency::Pt30M => "PT30M",
             DataUploadFrequency::Pt5M => "PT5M",
-            DataUploadFrequency::Unknown(value) => value.as_str(),
+            DataUploadFrequency::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PT10M", "PT15M", "PT1H", "PT30M", "PT5M"]
+        &[
+            "PT10M", "PT15M", "PT1H", "PT30M", "PT5M"
+        ]
     }
 }
 impl AsRef<str> for DataUploadFrequency {
@@ -504,7 +466,7 @@ impl AsRef<str> for DataUploadFrequency {
 /// <p>A tag is a key-value pair that can be added to a resource as metadata. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key for the specified tag. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -514,17 +476,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key for the specified tag. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value for the specified tag. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -539,8 +501,7 @@ pub mod tag {
         }
         /// <p>The key for the specified tag. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value for the specified tag. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -549,17 +510,20 @@ pub mod tag {
         }
         /// <p>The value for the specified tag. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -574,9 +538,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inferenceschedulerstatus = unimplemented!();
 /// match inferenceschedulerstatus {
@@ -600,22 +564,14 @@ impl Tag {
 /// Specifically, when `inferenceschedulerstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InferenceSchedulerStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InferenceSchedulerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -626,7 +582,7 @@ pub enum InferenceSchedulerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InferenceSchedulerStatus {
     fn from(s: &str) -> Self {
@@ -635,19 +591,17 @@ impl std::convert::From<&str> for InferenceSchedulerStatus {
             "RUNNING" => InferenceSchedulerStatus::Running,
             "STOPPED" => InferenceSchedulerStatus::Stopped,
             "STOPPING" => InferenceSchedulerStatus::Stopping,
-            other => InferenceSchedulerStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InferenceSchedulerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InferenceSchedulerStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InferenceSchedulerStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InferenceSchedulerStatus::from(s))
+                }
+            }
 impl InferenceSchedulerStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -656,12 +610,14 @@ impl InferenceSchedulerStatus {
             InferenceSchedulerStatus::Running => "RUNNING",
             InferenceSchedulerStatus::Stopped => "STOPPED",
             InferenceSchedulerStatus::Stopping => "STOPPING",
-            InferenceSchedulerStatus::Unknown(value) => value.as_str(),
+            InferenceSchedulerStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PENDING", "RUNNING", "STOPPED", "STOPPING"]
+        &[
+            "PENDING", "RUNNING", "STOPPED", "STOPPING"
+        ]
     }
 }
 impl AsRef<str> for InferenceSchedulerStatus {
@@ -676,9 +632,9 @@ impl AsRef<str> for InferenceSchedulerStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ingestionjobstatus = unimplemented!();
 /// match ingestionjobstatus {
@@ -701,22 +657,14 @@ impl AsRef<str> for InferenceSchedulerStatus {
 /// Specifically, when `ingestionjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IngestionJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IngestionJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -725,7 +673,7 @@ pub enum IngestionJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IngestionJobStatus {
     fn from(s: &str) -> Self {
@@ -733,19 +681,17 @@ impl std::convert::From<&str> for IngestionJobStatus {
             "FAILED" => IngestionJobStatus::Failed,
             "IN_PROGRESS" => IngestionJobStatus::InProgress,
             "SUCCESS" => IngestionJobStatus::Success,
-            other => {
-                IngestionJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => IngestionJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IngestionJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IngestionJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IngestionJobStatus::from(s))
+                }
+            }
 impl IngestionJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -753,12 +699,14 @@ impl IngestionJobStatus {
             IngestionJobStatus::Failed => "FAILED",
             IngestionJobStatus::InProgress => "IN_PROGRESS",
             IngestionJobStatus::Success => "SUCCESS",
-            IngestionJobStatus::Unknown(value) => value.as_str(),
+            IngestionJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCESS"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for IngestionJobStatus {
@@ -770,52 +718,45 @@ impl AsRef<str> for IngestionJobStatus {
 /// <p> Specifies configuration information for the input data for the data ingestion job, including input data S3 location. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IngestionInputConfiguration {
+pub struct IngestionInputConfiguration  {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
     #[doc(hidden)]
     pub s3_input_configuration: std::option::Option<crate::model::IngestionS3InputConfiguration>,
 }
 impl IngestionInputConfiguration {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
-    pub fn s3_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::IngestionS3InputConfiguration> {
+    pub fn s3_input_configuration(&self) -> std::option::Option<& crate::model::IngestionS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
 }
 /// See [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
 pub mod ingestion_input_configuration {
-
+    
     /// A builder for [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) s3_input_configuration:
-            std::option::Option<crate::model::IngestionS3InputConfiguration>,
+        pub(crate) s3_input_configuration: std::option::Option<crate::model::IngestionS3InputConfiguration>,
     }
     impl Builder {
         /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
-        pub fn s3_input_configuration(
-            mut self,
-            input: crate::model::IngestionS3InputConfiguration,
-        ) -> Self {
+        pub fn s3_input_configuration(mut self, input: crate::model::IngestionS3InputConfiguration) -> Self {
             self.s3_input_configuration = Some(input);
             self
         }
         /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
-        pub fn set_s3_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::IngestionS3InputConfiguration>,
-        ) -> Self {
-            self.s3_input_configuration = input;
-            self
+        pub fn set_s3_input_configuration(mut self, input: std::option::Option<crate::model::IngestionS3InputConfiguration>) -> Self {
+            self.s3_input_configuration = input; self
         }
         /// Consumes the builder and constructs a [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
         pub fn build(self) -> crate::model::IngestionInputConfiguration {
             crate::model::IngestionInputConfiguration {
-                s3_input_configuration: self.s3_input_configuration,
+                s3_input_configuration: self.s3_input_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl IngestionInputConfiguration {
     /// Creates a new builder-style object to manufacture [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
@@ -827,7 +768,7 @@ impl IngestionInputConfiguration {
 /// <p> Specifies S3 configuration information for the input data for the data ingestion job. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IngestionS3InputConfiguration {
+pub struct IngestionS3InputConfiguration  {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -840,21 +781,21 @@ pub struct IngestionS3InputConfiguration {
 }
 impl IngestionS3InputConfiguration {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
-    pub fn key_pattern(&self) -> std::option::Option<&str> {
+    pub fn key_pattern(&self) -> std::option::Option<& str> {
         self.key_pattern.as_deref()
     }
 }
 /// See [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
 pub mod ingestion_s3_input_configuration {
-
+    
     /// A builder for [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -870,8 +811,7 @@ pub mod ingestion_s3_input_configuration {
         }
         /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -880,8 +820,7 @@ pub mod ingestion_s3_input_configuration {
         }
         /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
         pub fn key_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -890,18 +829,22 @@ pub mod ingestion_s3_input_configuration {
         }
         /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
         pub fn set_key_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_pattern = input;
-            self
+            self.key_pattern = input; self
         }
         /// Consumes the builder and constructs a [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
         pub fn build(self) -> crate::model::IngestionS3InputConfiguration {
             crate::model::IngestionS3InputConfiguration {
-                bucket: self.bucket,
-                prefix: self.prefix,
-                key_pattern: self.key_pattern,
+                bucket: self.bucket
+                ,
+                prefix: self.prefix
+                ,
+                key_pattern: self.key_pattern
+                ,
             }
         }
     }
+    
+    
 }
 impl IngestionS3InputConfiguration {
     /// Creates a new builder-style object to manufacture [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
@@ -913,7 +856,7 @@ impl IngestionS3InputConfiguration {
 /// <p> Summary of ingestion statistics like whether data exists, number of missing values, number of invalid values and so on related to the particular sensor. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SensorStatisticsSummary {
+pub struct SensorStatisticsSummary  {
     /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
     #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
@@ -956,11 +899,11 @@ pub struct SensorStatisticsSummary {
 }
 impl SensorStatisticsSummary {
     /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p> Name of the sensor that the statistics belong to. </p>
-    pub fn sensor_name(&self) -> std::option::Option<&str> {
+    pub fn sensor_name(&self) -> std::option::Option<& str> {
         self.sensor_name.as_deref()
     }
     /// <p> Parameter that indicates whether data exists for the sensor that the statistics belong to. </p>
@@ -968,51 +911,49 @@ impl SensorStatisticsSummary {
         self.data_exists
     }
     /// <p> Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to. </p>
-    pub fn missing_values(&self) -> std::option::Option<&crate::model::CountPercent> {
+    pub fn missing_values(&self) -> std::option::Option<& crate::model::CountPercent> {
         self.missing_values.as_ref()
     }
     /// <p> Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to. </p>
-    pub fn invalid_values(&self) -> std::option::Option<&crate::model::CountPercent> {
+    pub fn invalid_values(&self) -> std::option::Option<& crate::model::CountPercent> {
         self.invalid_values.as_ref()
     }
     /// <p> Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to. </p>
-    pub fn invalid_date_entries(&self) -> std::option::Option<&crate::model::CountPercent> {
+    pub fn invalid_date_entries(&self) -> std::option::Option<& crate::model::CountPercent> {
         self.invalid_date_entries.as_ref()
     }
     /// <p> Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to. </p>
-    pub fn duplicate_timestamps(&self) -> std::option::Option<&crate::model::CountPercent> {
+    pub fn duplicate_timestamps(&self) -> std::option::Option<& crate::model::CountPercent> {
         self.duplicate_timestamps.as_ref()
     }
     /// <p> Parameter that describes potential risk about whether data associated with the sensor is categorical. </p>
-    pub fn categorical_values(&self) -> std::option::Option<&crate::model::CategoricalValues> {
+    pub fn categorical_values(&self) -> std::option::Option<& crate::model::CategoricalValues> {
         self.categorical_values.as_ref()
     }
     /// <p> Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode. </p>
-    pub fn multiple_operating_modes(
-        &self,
-    ) -> std::option::Option<&crate::model::MultipleOperatingModes> {
+    pub fn multiple_operating_modes(&self) -> std::option::Option<& crate::model::MultipleOperatingModes> {
         self.multiple_operating_modes.as_ref()
     }
     /// <p> Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps. </p>
-    pub fn large_timestamp_gaps(&self) -> std::option::Option<&crate::model::LargeTimestampGaps> {
+    pub fn large_timestamp_gaps(&self) -> std::option::Option<& crate::model::LargeTimestampGaps> {
         self.large_timestamp_gaps.as_ref()
     }
     /// <p> Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic. </p>
-    pub fn monotonic_values(&self) -> std::option::Option<&crate::model::MonotonicValues> {
+    pub fn monotonic_values(&self) -> std::option::Option<& crate::model::MonotonicValues> {
         self.monotonic_values.as_ref()
     }
     /// <p> Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to. </p>
-    pub fn data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
-    pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
 }
 /// See [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
 pub mod sensor_statistics_summary {
-
+    
     /// A builder for [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1024,8 +965,7 @@ pub mod sensor_statistics_summary {
         pub(crate) invalid_date_entries: std::option::Option<crate::model::CountPercent>,
         pub(crate) duplicate_timestamps: std::option::Option<crate::model::CountPercent>,
         pub(crate) categorical_values: std::option::Option<crate::model::CategoricalValues>,
-        pub(crate) multiple_operating_modes:
-            std::option::Option<crate::model::MultipleOperatingModes>,
+        pub(crate) multiple_operating_modes: std::option::Option<crate::model::MultipleOperatingModes>,
         pub(crate) large_timestamp_gaps: std::option::Option<crate::model::LargeTimestampGaps>,
         pub(crate) monotonic_values: std::option::Option<crate::model::MonotonicValues>,
         pub(crate) data_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1038,12 +978,8 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
-        pub fn set_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_name = input;
-            self
+        pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_name = input; self
         }
         /// <p> Name of the sensor that the statistics belong to. </p>
         pub fn sensor_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1052,8 +988,7 @@ pub mod sensor_statistics_summary {
         }
         /// <p> Name of the sensor that the statistics belong to. </p>
         pub fn set_sensor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sensor_name = input;
-            self
+            self.sensor_name = input; self
         }
         /// <p> Parameter that indicates whether data exists for the sensor that the statistics belong to. </p>
         pub fn data_exists(mut self, input: bool) -> Self {
@@ -1062,8 +997,7 @@ pub mod sensor_statistics_summary {
         }
         /// <p> Parameter that indicates whether data exists for the sensor that the statistics belong to. </p>
         pub fn set_data_exists(mut self, input: std::option::Option<bool>) -> Self {
-            self.data_exists = input;
-            self
+            self.data_exists = input; self
         }
         /// <p> Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to. </p>
         pub fn missing_values(mut self, input: crate::model::CountPercent) -> Self {
@@ -1071,12 +1005,8 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to. </p>
-        pub fn set_missing_values(
-            mut self,
-            input: std::option::Option<crate::model::CountPercent>,
-        ) -> Self {
-            self.missing_values = input;
-            self
+        pub fn set_missing_values(mut self, input: std::option::Option<crate::model::CountPercent>) -> Self {
+            self.missing_values = input; self
         }
         /// <p> Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to. </p>
         pub fn invalid_values(mut self, input: crate::model::CountPercent) -> Self {
@@ -1084,12 +1014,8 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to. </p>
-        pub fn set_invalid_values(
-            mut self,
-            input: std::option::Option<crate::model::CountPercent>,
-        ) -> Self {
-            self.invalid_values = input;
-            self
+        pub fn set_invalid_values(mut self, input: std::option::Option<crate::model::CountPercent>) -> Self {
+            self.invalid_values = input; self
         }
         /// <p> Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to. </p>
         pub fn invalid_date_entries(mut self, input: crate::model::CountPercent) -> Self {
@@ -1097,12 +1023,8 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to. </p>
-        pub fn set_invalid_date_entries(
-            mut self,
-            input: std::option::Option<crate::model::CountPercent>,
-        ) -> Self {
-            self.invalid_date_entries = input;
-            self
+        pub fn set_invalid_date_entries(mut self, input: std::option::Option<crate::model::CountPercent>) -> Self {
+            self.invalid_date_entries = input; self
         }
         /// <p> Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to. </p>
         pub fn duplicate_timestamps(mut self, input: crate::model::CountPercent) -> Self {
@@ -1110,12 +1032,8 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to. </p>
-        pub fn set_duplicate_timestamps(
-            mut self,
-            input: std::option::Option<crate::model::CountPercent>,
-        ) -> Self {
-            self.duplicate_timestamps = input;
-            self
+        pub fn set_duplicate_timestamps(mut self, input: std::option::Option<crate::model::CountPercent>) -> Self {
+            self.duplicate_timestamps = input; self
         }
         /// <p> Parameter that describes potential risk about whether data associated with the sensor is categorical. </p>
         pub fn categorical_values(mut self, input: crate::model::CategoricalValues) -> Self {
@@ -1123,28 +1041,17 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Parameter that describes potential risk about whether data associated with the sensor is categorical. </p>
-        pub fn set_categorical_values(
-            mut self,
-            input: std::option::Option<crate::model::CategoricalValues>,
-        ) -> Self {
-            self.categorical_values = input;
-            self
+        pub fn set_categorical_values(mut self, input: std::option::Option<crate::model::CategoricalValues>) -> Self {
+            self.categorical_values = input; self
         }
         /// <p> Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode. </p>
-        pub fn multiple_operating_modes(
-            mut self,
-            input: crate::model::MultipleOperatingModes,
-        ) -> Self {
+        pub fn multiple_operating_modes(mut self, input: crate::model::MultipleOperatingModes) -> Self {
             self.multiple_operating_modes = Some(input);
             self
         }
         /// <p> Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode. </p>
-        pub fn set_multiple_operating_modes(
-            mut self,
-            input: std::option::Option<crate::model::MultipleOperatingModes>,
-        ) -> Self {
-            self.multiple_operating_modes = input;
-            self
+        pub fn set_multiple_operating_modes(mut self, input: std::option::Option<crate::model::MultipleOperatingModes>) -> Self {
+            self.multiple_operating_modes = input; self
         }
         /// <p> Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps. </p>
         pub fn large_timestamp_gaps(mut self, input: crate::model::LargeTimestampGaps) -> Self {
@@ -1152,12 +1059,8 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps. </p>
-        pub fn set_large_timestamp_gaps(
-            mut self,
-            input: std::option::Option<crate::model::LargeTimestampGaps>,
-        ) -> Self {
-            self.large_timestamp_gaps = input;
-            self
+        pub fn set_large_timestamp_gaps(mut self, input: std::option::Option<crate::model::LargeTimestampGaps>) -> Self {
+            self.large_timestamp_gaps = input; self
         }
         /// <p> Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic. </p>
         pub fn monotonic_values(mut self, input: crate::model::MonotonicValues) -> Self {
@@ -1165,12 +1068,8 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic. </p>
-        pub fn set_monotonic_values(
-            mut self,
-            input: std::option::Option<crate::model::MonotonicValues>,
-        ) -> Self {
-            self.monotonic_values = input;
-            self
+        pub fn set_monotonic_values(mut self, input: std::option::Option<crate::model::MonotonicValues>) -> Self {
+            self.monotonic_values = input; self
         }
         /// <p> Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to. </p>
         pub fn data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1178,12 +1077,8 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to. </p>
-        pub fn set_data_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.data_start_time = input;
-            self
+        pub fn set_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.data_start_time = input; self
         }
         /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
         pub fn data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1191,32 +1086,44 @@ pub mod sensor_statistics_summary {
             self
         }
         /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
-        pub fn set_data_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.data_end_time = input;
-            self
+        pub fn set_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.data_end_time = input; self
         }
         /// Consumes the builder and constructs a [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
         pub fn build(self) -> crate::model::SensorStatisticsSummary {
             crate::model::SensorStatisticsSummary {
-                component_name: self.component_name,
-                sensor_name: self.sensor_name,
-                data_exists: self.data_exists.unwrap_or_default(),
-                missing_values: self.missing_values,
-                invalid_values: self.invalid_values,
-                invalid_date_entries: self.invalid_date_entries,
-                duplicate_timestamps: self.duplicate_timestamps,
-                categorical_values: self.categorical_values,
-                multiple_operating_modes: self.multiple_operating_modes,
-                large_timestamp_gaps: self.large_timestamp_gaps,
-                monotonic_values: self.monotonic_values,
-                data_start_time: self.data_start_time,
-                data_end_time: self.data_end_time,
+                component_name: self.component_name
+                ,
+                sensor_name: self.sensor_name
+                ,
+                data_exists: self.data_exists
+                    .unwrap_or_default()
+                ,
+                missing_values: self.missing_values
+                ,
+                invalid_values: self.invalid_values
+                ,
+                invalid_date_entries: self.invalid_date_entries
+                ,
+                duplicate_timestamps: self.duplicate_timestamps
+                ,
+                categorical_values: self.categorical_values
+                ,
+                multiple_operating_modes: self.multiple_operating_modes
+                ,
+                large_timestamp_gaps: self.large_timestamp_gaps
+                ,
+                monotonic_values: self.monotonic_values
+                ,
+                data_start_time: self.data_start_time
+                ,
+                data_end_time: self.data_end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SensorStatisticsSummary {
     /// Creates a new builder-style object to manufacture [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
@@ -1228,7 +1135,7 @@ impl SensorStatisticsSummary {
 /// <p> Entity that comprises information on monotonic values in the data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonotonicValues {
+pub struct MonotonicValues  {
     /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatisticalIssueStatus>,
@@ -1238,17 +1145,17 @@ pub struct MonotonicValues {
 }
 impl MonotonicValues {
     /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatisticalIssueStatus> {
         self.status.as_ref()
     }
     /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
-    pub fn monotonicity(&self) -> std::option::Option<&crate::model::Monotonicity> {
+    pub fn monotonicity(&self) -> std::option::Option<& crate::model::Monotonicity> {
         self.monotonicity.as_ref()
     }
 }
 /// See [`MonotonicValues`](crate::model::MonotonicValues).
 pub mod monotonic_values {
-
+    
     /// A builder for [`MonotonicValues`](crate::model::MonotonicValues).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1262,12 +1169,8 @@ pub mod monotonic_values {
             self
         }
         /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatisticalIssueStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatisticalIssueStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
         pub fn monotonicity(mut self, input: crate::model::Monotonicity) -> Self {
@@ -1275,21 +1178,21 @@ pub mod monotonic_values {
             self
         }
         /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
-        pub fn set_monotonicity(
-            mut self,
-            input: std::option::Option<crate::model::Monotonicity>,
-        ) -> Self {
-            self.monotonicity = input;
-            self
+        pub fn set_monotonicity(mut self, input: std::option::Option<crate::model::Monotonicity>) -> Self {
+            self.monotonicity = input; self
         }
         /// Consumes the builder and constructs a [`MonotonicValues`](crate::model::MonotonicValues).
         pub fn build(self) -> crate::model::MonotonicValues {
             crate::model::MonotonicValues {
-                status: self.status,
-                monotonicity: self.monotonicity,
+                status: self.status
+                ,
+                monotonicity: self.monotonicity
+                ,
             }
         }
     }
+    
+    
 }
 impl MonotonicValues {
     /// Creates a new builder-style object to manufacture [`MonotonicValues`](crate::model::MonotonicValues).
@@ -1304,9 +1207,9 @@ impl MonotonicValues {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let monotonicity = unimplemented!();
 /// match monotonicity {
@@ -1329,22 +1232,14 @@ impl MonotonicValues {
 /// Specifically, when `monotonicity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Monotonicity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Monotonicity {
     #[allow(missing_docs)] // documentation missing in model
     Decreasing,
@@ -1353,7 +1248,7 @@ pub enum Monotonicity {
     #[allow(missing_docs)] // documentation missing in model
     Static,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Monotonicity {
     fn from(s: &str) -> Self {
@@ -1361,17 +1256,17 @@ impl std::convert::From<&str> for Monotonicity {
             "DECREASING" => Monotonicity::Decreasing,
             "INCREASING" => Monotonicity::Increasing,
             "STATIC" => Monotonicity::Static,
-            other => Monotonicity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Monotonicity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Monotonicity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Monotonicity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Monotonicity::from(s))
+                }
+            }
 impl Monotonicity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1379,12 +1274,14 @@ impl Monotonicity {
             Monotonicity::Decreasing => "DECREASING",
             Monotonicity::Increasing => "INCREASING",
             Monotonicity::Static => "STATIC",
-            Monotonicity::Unknown(value) => value.as_str(),
+            Monotonicity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DECREASING", "INCREASING", "STATIC"]
+        &[
+            "DECREASING", "INCREASING", "STATIC"
+        ]
     }
 }
 impl AsRef<str> for Monotonicity {
@@ -1399,9 +1296,9 @@ impl AsRef<str> for Monotonicity {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statisticalissuestatus = unimplemented!();
 /// match statisticalissuestatus {
@@ -1423,60 +1320,52 @@ impl AsRef<str> for Monotonicity {
 /// Specifically, when `statisticalissuestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StatisticalIssueStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StatisticalIssueStatus {
     #[allow(missing_docs)] // documentation missing in model
     NoIssueDetected,
     #[allow(missing_docs)] // documentation missing in model
     PotentialIssueDetected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StatisticalIssueStatus {
     fn from(s: &str) -> Self {
         match s {
             "NO_ISSUE_DETECTED" => StatisticalIssueStatus::NoIssueDetected,
             "POTENTIAL_ISSUE_DETECTED" => StatisticalIssueStatus::PotentialIssueDetected,
-            other => {
-                StatisticalIssueStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StatisticalIssueStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StatisticalIssueStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StatisticalIssueStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StatisticalIssueStatus::from(s))
+                }
+            }
 impl StatisticalIssueStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatisticalIssueStatus::NoIssueDetected => "NO_ISSUE_DETECTED",
             StatisticalIssueStatus::PotentialIssueDetected => "POTENTIAL_ISSUE_DETECTED",
-            StatisticalIssueStatus::Unknown(value) => value.as_str(),
+            StatisticalIssueStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NO_ISSUE_DETECTED", "POTENTIAL_ISSUE_DETECTED"]
+        &[
+            "NO_ISSUE_DETECTED", "POTENTIAL_ISSUE_DETECTED"
+        ]
     }
 }
 impl AsRef<str> for StatisticalIssueStatus {
@@ -1488,7 +1377,7 @@ impl AsRef<str> for StatisticalIssueStatus {
 /// <p> Entity that comprises information on large gaps between consecutive timestamps in data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LargeTimestampGaps {
+pub struct LargeTimestampGaps  {
     /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatisticalIssueStatus>,
@@ -1501,7 +1390,7 @@ pub struct LargeTimestampGaps {
 }
 impl LargeTimestampGaps {
     /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatisticalIssueStatus> {
         self.status.as_ref()
     }
     /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
@@ -1515,7 +1404,7 @@ impl LargeTimestampGaps {
 }
 /// See [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
 pub mod large_timestamp_gaps {
-
+    
     /// A builder for [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1530,12 +1419,8 @@ pub mod large_timestamp_gaps {
             self
         }
         /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatisticalIssueStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatisticalIssueStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
         pub fn number_of_large_timestamp_gaps(mut self, input: i32) -> Self {
@@ -1543,12 +1428,8 @@ pub mod large_timestamp_gaps {
             self
         }
         /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
-        pub fn set_number_of_large_timestamp_gaps(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.number_of_large_timestamp_gaps = input;
-            self
+        pub fn set_number_of_large_timestamp_gaps(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_large_timestamp_gaps = input; self
         }
         /// <p> Indicates the size of the largest timestamp gap, in days. </p>
         pub fn max_timestamp_gap_in_days(mut self, input: i32) -> Self {
@@ -1557,18 +1438,22 @@ pub mod large_timestamp_gaps {
         }
         /// <p> Indicates the size of the largest timestamp gap, in days. </p>
         pub fn set_max_timestamp_gap_in_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_timestamp_gap_in_days = input;
-            self
+            self.max_timestamp_gap_in_days = input; self
         }
         /// Consumes the builder and constructs a [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
         pub fn build(self) -> crate::model::LargeTimestampGaps {
             crate::model::LargeTimestampGaps {
-                status: self.status,
-                number_of_large_timestamp_gaps: self.number_of_large_timestamp_gaps,
-                max_timestamp_gap_in_days: self.max_timestamp_gap_in_days,
+                status: self.status
+                ,
+                number_of_large_timestamp_gaps: self.number_of_large_timestamp_gaps
+                ,
+                max_timestamp_gap_in_days: self.max_timestamp_gap_in_days
+                ,
             }
         }
     }
+    
+    
 }
 impl LargeTimestampGaps {
     /// Creates a new builder-style object to manufacture [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
@@ -1580,20 +1465,20 @@ impl LargeTimestampGaps {
 /// <p> Entity that comprises information on operating modes in data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultipleOperatingModes {
+pub struct MultipleOperatingModes  {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatisticalIssueStatus>,
 }
 impl MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatisticalIssueStatus> {
         self.status.as_ref()
     }
 }
 /// See [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
 pub mod multiple_operating_modes {
-
+    
     /// A builder for [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1606,20 +1491,19 @@ pub mod multiple_operating_modes {
             self
         }
         /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatisticalIssueStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatisticalIssueStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
         pub fn build(self) -> crate::model::MultipleOperatingModes {
             crate::model::MultipleOperatingModes {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl MultipleOperatingModes {
     /// Creates a new builder-style object to manufacture [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
@@ -1631,7 +1515,7 @@ impl MultipleOperatingModes {
 /// <p> Entity that comprises information on categorical values in data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoricalValues {
+pub struct CategoricalValues  {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatisticalIssueStatus>,
@@ -1641,7 +1525,7 @@ pub struct CategoricalValues {
 }
 impl CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatisticalIssueStatus> {
         self.status.as_ref()
     }
     /// <p> Indicates the number of categories in the data. </p>
@@ -1651,7 +1535,7 @@ impl CategoricalValues {
 }
 /// See [`CategoricalValues`](crate::model::CategoricalValues).
 pub mod categorical_values {
-
+    
     /// A builder for [`CategoricalValues`](crate::model::CategoricalValues).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1665,12 +1549,8 @@ pub mod categorical_values {
             self
         }
         /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatisticalIssueStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatisticalIssueStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> Indicates the number of categories in the data. </p>
         pub fn number_of_category(mut self, input: i32) -> Self {
@@ -1679,17 +1559,20 @@ pub mod categorical_values {
         }
         /// <p> Indicates the number of categories in the data. </p>
         pub fn set_number_of_category(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_category = input;
-            self
+            self.number_of_category = input; self
         }
         /// Consumes the builder and constructs a [`CategoricalValues`](crate::model::CategoricalValues).
         pub fn build(self) -> crate::model::CategoricalValues {
             crate::model::CategoricalValues {
-                status: self.status,
-                number_of_category: self.number_of_category,
+                status: self.status
+                ,
+                number_of_category: self.number_of_category
+                ,
             }
         }
     }
+    
+    
 }
 impl CategoricalValues {
     /// Creates a new builder-style object to manufacture [`CategoricalValues`](crate::model::CategoricalValues).
@@ -1701,7 +1584,7 @@ impl CategoricalValues {
 /// <p> Entity that comprises information of count and percentage. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountPercent {
+pub struct CountPercent  {
     /// <p> Indicates the count of occurences of the given statistic. </p>
     #[doc(hidden)]
     pub count: std::option::Option<i32>,
@@ -1721,7 +1604,7 @@ impl CountPercent {
 }
 /// See [`CountPercent`](crate::model::CountPercent).
 pub mod count_percent {
-
+    
     /// A builder for [`CountPercent`](crate::model::CountPercent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1736,8 +1619,7 @@ pub mod count_percent {
         }
         /// <p> Indicates the count of occurences of the given statistic. </p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// <p> Indicates the percentage of occurances of the given statistic. </p>
         pub fn percentage(mut self, input: f32) -> Self {
@@ -1746,17 +1628,21 @@ pub mod count_percent {
         }
         /// <p> Indicates the percentage of occurances of the given statistic. </p>
         pub fn set_percentage(mut self, input: std::option::Option<f32>) -> Self {
-            self.percentage = input;
-            self
+            self.percentage = input; self
         }
         /// Consumes the builder and constructs a [`CountPercent`](crate::model::CountPercent).
         pub fn build(self) -> crate::model::CountPercent {
             crate::model::CountPercent {
-                count: self.count,
-                percentage: self.percentage.unwrap_or_default(),
+                count: self.count
+                ,
+                percentage: self.percentage
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CountPercent {
     /// Creates a new builder-style object to manufacture [`CountPercent`](crate::model::CountPercent).
@@ -1768,7 +1654,7 @@ impl CountPercent {
 /// <p>Provides information about the specified ML model, including dataset and model names and ARNs, as well as status. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelSummary {
+pub struct ModelSummary  {
     /// <p>The name of the ML model. </p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
@@ -1790,33 +1676,33 @@ pub struct ModelSummary {
 }
 impl ModelSummary {
     /// <p>The name of the ML model. </p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the ML model. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the dataset being used for the ML model. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset used to create the model. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Indicates the status of the ML model. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ModelStatus> {
         self.status.as_ref()
     }
     /// <p>The time at which the specific model was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`ModelSummary`](crate::model::ModelSummary).
 pub mod model_summary {
-
+    
     /// A builder for [`ModelSummary`](crate::model::ModelSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1835,8 +1721,7 @@ pub mod model_summary {
         }
         /// <p>The name of the ML model. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the ML model. </p>
         pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1845,8 +1730,7 @@ pub mod model_summary {
         }
         /// <p> The Amazon Resource Name (ARN) of the ML model. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// <p>The name of the dataset being used for the ML model. </p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1855,8 +1739,7 @@ pub mod model_summary {
         }
         /// <p>The name of the dataset being used for the ML model. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the dataset used to create the model. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1865,8 +1748,7 @@ pub mod model_summary {
         }
         /// <p> The Amazon Resource Name (ARN) of the dataset used to create the model. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>Indicates the status of the ML model. </p>
         pub fn status(mut self, input: crate::model::ModelStatus) -> Self {
@@ -1875,8 +1757,7 @@ pub mod model_summary {
         }
         /// <p>Indicates the status of the ML model. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time at which the specific model was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1884,25 +1765,29 @@ pub mod model_summary {
             self
         }
         /// <p>The time at which the specific model was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`ModelSummary`](crate::model::ModelSummary).
         pub fn build(self) -> crate::model::ModelSummary {
             crate::model::ModelSummary {
-                model_name: self.model_name,
-                model_arn: self.model_arn,
-                dataset_name: self.dataset_name,
-                dataset_arn: self.dataset_arn,
-                status: self.status,
-                created_at: self.created_at,
+                model_name: self.model_name
+                ,
+                model_arn: self.model_arn
+                ,
+                dataset_name: self.dataset_name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl ModelSummary {
     /// Creates a new builder-style object to manufacture [`ModelSummary`](crate::model::ModelSummary).
@@ -1917,9 +1802,9 @@ impl ModelSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let modelstatus = unimplemented!();
 /// match modelstatus {
@@ -1942,22 +1827,14 @@ impl ModelSummary {
 /// Specifically, when `modelstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ModelStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ModelStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -1966,7 +1843,7 @@ pub enum ModelStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ModelStatus {
     fn from(s: &str) -> Self {
@@ -1974,17 +1851,17 @@ impl std::convert::From<&str> for ModelStatus {
             "FAILED" => ModelStatus::Failed,
             "IN_PROGRESS" => ModelStatus::InProgress,
             "SUCCESS" => ModelStatus::Success,
-            other => ModelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ModelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ModelStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ModelStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ModelStatus::from(s))
+                }
+            }
 impl ModelStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1992,12 +1869,14 @@ impl ModelStatus {
             ModelStatus::Failed => "FAILED",
             ModelStatus::InProgress => "IN_PROGRESS",
             ModelStatus::Success => "SUCCESS",
-            ModelStatus::Unknown(value) => value.as_str(),
+            ModelStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCESS"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for ModelStatus {
@@ -2009,7 +1888,7 @@ impl AsRef<str> for ModelStatus {
 /// <p> Information about the label. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelSummary {
+pub struct LabelSummary  {
     /// <p> The name of the label group. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
@@ -2028,7 +1907,7 @@ pub struct LabelSummary {
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     #[doc(hidden)]
     pub rating: std::option::Option<crate::model::LabelRating>,
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     #[doc(hidden)]
     pub fault_code: std::option::Option<std::string::String>,
@@ -2041,46 +1920,46 @@ pub struct LabelSummary {
 }
 impl LabelSummary {
     /// <p> The name of the label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ID of the label. </p>
-    pub fn label_id(&self) -> std::option::Option<&str> {
+    pub fn label_id(&self) -> std::option::Option<& str> {
         self.label_id.as_deref()
     }
     /// <p> The ARN of the label group. </p>
-    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
     /// <p> The timestamp indicating the start of the label. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The timestamp indicating the end of the label. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    pub fn rating(&self) -> std::option::Option<&crate::model::LabelRating> {
+    pub fn rating(&self) -> std::option::Option<& crate::model::LabelRating> {
         self.rating.as_ref()
     }
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_code(&self) -> std::option::Option<&str> {
+    pub fn fault_code(&self) -> std::option::Option<& str> {
         self.fault_code.as_deref()
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
-    pub fn equipment(&self) -> std::option::Option<&str> {
+    pub fn equipment(&self) -> std::option::Option<& str> {
         self.equipment.as_deref()
     }
     /// <p> The time at which the label was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`LabelSummary`](crate::model::LabelSummary).
 pub mod label_summary {
-
+    
     /// A builder for [`LabelSummary`](crate::model::LabelSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2101,12 +1980,8 @@ pub mod label_summary {
             self
         }
         /// <p> The name of the label group. </p>
-        pub fn set_label_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_name = input;
-            self
+        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_name = input; self
         }
         /// <p> The ID of the label. </p>
         pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2115,8 +1990,7 @@ pub mod label_summary {
         }
         /// <p> The ID of the label. </p>
         pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_id = input;
-            self
+            self.label_id = input; self
         }
         /// <p> The ARN of the label group. </p>
         pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2124,12 +1998,8 @@ pub mod label_summary {
             self
         }
         /// <p> The ARN of the label group. </p>
-        pub fn set_label_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_arn = input;
-            self
+        pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_arn = input; self
         }
         /// <p> The timestamp indicating the start of the label. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2137,12 +2007,8 @@ pub mod label_summary {
             self
         }
         /// <p> The timestamp indicating the start of the label. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The timestamp indicating the end of the label. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2150,12 +2016,8 @@ pub mod label_summary {
             self
         }
         /// <p> The timestamp indicating the end of the label. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p> Indicates whether a labeled event represents an anomaly. </p>
         pub fn rating(mut self, input: crate::model::LabelRating) -> Self {
@@ -2164,20 +2026,18 @@ pub mod label_summary {
         }
         /// <p> Indicates whether a labeled event represents an anomaly. </p>
         pub fn set_rating(mut self, input: std::option::Option<crate::model::LabelRating>) -> Self {
-            self.rating = input;
-            self
+            self.rating = input; self
         }
-        /// <p> Indicates the type of anomaly associated with the label. </p>
+        /// <p> Indicates the type of anomaly associated with the label. </p> 
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.fault_code = Some(input.into());
             self
         }
-        /// <p> Indicates the type of anomaly associated with the label. </p>
+        /// <p> Indicates the type of anomaly associated with the label. </p> 
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fault_code = input;
-            self
+            self.fault_code = input; self
         }
         /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
         pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2186,8 +2046,7 @@ pub mod label_summary {
         }
         /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
         pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.equipment = input;
-            self
+            self.equipment = input; self
         }
         /// <p> The time at which the label was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2195,28 +2054,35 @@ pub mod label_summary {
             self
         }
         /// <p> The time at which the label was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`LabelSummary`](crate::model::LabelSummary).
         pub fn build(self) -> crate::model::LabelSummary {
             crate::model::LabelSummary {
-                label_group_name: self.label_group_name,
-                label_id: self.label_id,
-                label_group_arn: self.label_group_arn,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                rating: self.rating,
-                fault_code: self.fault_code,
-                equipment: self.equipment,
-                created_at: self.created_at,
+                label_group_name: self.label_group_name
+                ,
+                label_id: self.label_id
+                ,
+                label_group_arn: self.label_group_arn
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                rating: self.rating
+                ,
+                fault_code: self.fault_code
+                ,
+                equipment: self.equipment
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl LabelSummary {
     /// Creates a new builder-style object to manufacture [`LabelSummary`](crate::model::LabelSummary).
@@ -2231,9 +2097,9 @@ impl LabelSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let labelrating = unimplemented!();
 /// match labelrating {
@@ -2256,22 +2122,14 @@ impl LabelSummary {
 /// Specifically, when `labelrating` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LabelRating::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LabelRating {
     #[allow(missing_docs)] // documentation missing in model
     Anomaly,
@@ -2280,7 +2138,7 @@ pub enum LabelRating {
     #[allow(missing_docs)] // documentation missing in model
     NoAnomaly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LabelRating {
     fn from(s: &str) -> Self {
@@ -2288,17 +2146,17 @@ impl std::convert::From<&str> for LabelRating {
             "ANOMALY" => LabelRating::Anomaly,
             "NEUTRAL" => LabelRating::Neutral,
             "NO_ANOMALY" => LabelRating::NoAnomaly,
-            other => LabelRating::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LabelRating::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LabelRating {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LabelRating::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LabelRating::from(s))
+                }
+            }
 impl LabelRating {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2306,12 +2164,14 @@ impl LabelRating {
             LabelRating::Anomaly => "ANOMALY",
             LabelRating::Neutral => "NEUTRAL",
             LabelRating::NoAnomaly => "NO_ANOMALY",
-            LabelRating::Unknown(value) => value.as_str(),
+            LabelRating::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANOMALY", "NEUTRAL", "NO_ANOMALY"]
+        &[
+            "ANOMALY", "NEUTRAL", "NO_ANOMALY"
+        ]
     }
 }
 impl AsRef<str> for LabelRating {
@@ -2323,7 +2183,7 @@ impl AsRef<str> for LabelRating {
 /// <p> Contains information about the label group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelGroupSummary {
+pub struct LabelGroupSummary  {
     /// <p> The name of the label group. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
@@ -2339,25 +2199,25 @@ pub struct LabelGroupSummary {
 }
 impl LabelGroupSummary {
     /// <p> The name of the label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ARN of the label group. </p>
-    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
     /// <p> The time at which the label group was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The time at which the label group was updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`LabelGroupSummary`](crate::model::LabelGroupSummary).
 pub mod label_group_summary {
-
+    
     /// A builder for [`LabelGroupSummary`](crate::model::LabelGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2373,12 +2233,8 @@ pub mod label_group_summary {
             self
         }
         /// <p> The name of the label group. </p>
-        pub fn set_label_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_name = input;
-            self
+        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_name = input; self
         }
         /// <p> The ARN of the label group. </p>
         pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2386,12 +2242,8 @@ pub mod label_group_summary {
             self
         }
         /// <p> The ARN of the label group. </p>
-        pub fn set_label_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_arn = input;
-            self
+        pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_arn = input; self
         }
         /// <p> The time at which the label group was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2399,12 +2251,8 @@ pub mod label_group_summary {
             self
         }
         /// <p> The time at which the label group was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p> The time at which the label group was updated. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2412,23 +2260,25 @@ pub mod label_group_summary {
             self
         }
         /// <p> The time at which the label group was updated. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`LabelGroupSummary`](crate::model::LabelGroupSummary).
         pub fn build(self) -> crate::model::LabelGroupSummary {
             crate::model::LabelGroupSummary {
-                label_group_name: self.label_group_name,
-                label_group_arn: self.label_group_arn,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                label_group_name: self.label_group_name
+                ,
+                label_group_arn: self.label_group_arn
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl LabelGroupSummary {
     /// Creates a new builder-style object to manufacture [`LabelGroupSummary`](crate::model::LabelGroupSummary).
@@ -2440,7 +2290,7 @@ impl LabelGroupSummary {
 /// <p>Contains information about the specific inference scheduler, including data delay offset, model name and ARN, status, and so on. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceSchedulerSummary {
+pub struct InferenceSchedulerSummary  {
     /// <p>The name of the ML model used for the inference scheduler. </p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
@@ -2468,23 +2318,23 @@ pub struct InferenceSchedulerSummary {
 }
 impl InferenceSchedulerSummary {
     /// <p>The name of the ML model used for the inference scheduler. </p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the inference scheduler. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
-    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>Indicates the status of the inference scheduler. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if an offset delay time of five minutes was selected, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
@@ -2492,19 +2342,17 @@ impl InferenceSchedulerSummary {
         self.data_delay_offset_in_minutes
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
+    pub fn data_upload_frequency(&self) -> std::option::Option<& crate::model::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-    pub fn latest_inference_result(
-        &self,
-    ) -> std::option::Option<&crate::model::LatestInferenceResult> {
+    pub fn latest_inference_result(&self) -> std::option::Option<& crate::model::LatestInferenceResult> {
         self.latest_inference_result.as_ref()
     }
 }
 /// See [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
 pub mod inference_scheduler_summary {
-
+    
     /// A builder for [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2515,8 +2363,7 @@ pub mod inference_scheduler_summary {
         pub(crate) status: std::option::Option<crate::model::InferenceSchedulerStatus>,
         pub(crate) data_delay_offset_in_minutes: std::option::Option<i64>,
         pub(crate) data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
-        pub(crate) latest_inference_result:
-            std::option::Option<crate::model::LatestInferenceResult>,
+        pub(crate) latest_inference_result: std::option::Option<crate::model::LatestInferenceResult>,
     }
     impl Builder {
         /// <p>The name of the ML model used for the inference scheduler. </p>
@@ -2526,8 +2373,7 @@ pub mod inference_scheduler_summary {
         }
         /// <p>The name of the ML model used for the inference scheduler. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
         pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2536,8 +2382,7 @@ pub mod inference_scheduler_summary {
         }
         /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// <p>The name of the inference scheduler. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2545,12 +2390,8 @@ pub mod inference_scheduler_summary {
             self
         }
         /// <p>The name of the inference scheduler. </p>
-        pub fn set_inference_scheduler_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_name = input;
-            self
+        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
         pub fn inference_scheduler_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2558,12 +2399,8 @@ pub mod inference_scheduler_summary {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
-        pub fn set_inference_scheduler_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_arn = input;
-            self
+        pub fn set_inference_scheduler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_arn = input; self
         }
         /// <p>Indicates the status of the inference scheduler. </p>
         pub fn status(mut self, input: crate::model::InferenceSchedulerStatus) -> Self {
@@ -2571,12 +2408,8 @@ pub mod inference_scheduler_summary {
             self
         }
         /// <p>Indicates the status of the inference scheduler. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InferenceSchedulerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceSchedulerStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if an offset delay time of five minutes was selected, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
         pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
@@ -2585,8 +2418,7 @@ pub mod inference_scheduler_summary {
         }
         /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if an offset delay time of five minutes was selected, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_delay_offset_in_minutes = input;
-            self
+            self.data_delay_offset_in_minutes = input; self
         }
         /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
         pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
@@ -2594,43 +2426,42 @@ pub mod inference_scheduler_summary {
             self
         }
         /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-        pub fn set_data_upload_frequency(
-            mut self,
-            input: std::option::Option<crate::model::DataUploadFrequency>,
-        ) -> Self {
-            self.data_upload_frequency = input;
-            self
+        pub fn set_data_upload_frequency(mut self, input: std::option::Option<crate::model::DataUploadFrequency>) -> Self {
+            self.data_upload_frequency = input; self
         }
         /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-        pub fn latest_inference_result(
-            mut self,
-            input: crate::model::LatestInferenceResult,
-        ) -> Self {
+        pub fn latest_inference_result(mut self, input: crate::model::LatestInferenceResult) -> Self {
             self.latest_inference_result = Some(input);
             self
         }
         /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-        pub fn set_latest_inference_result(
-            mut self,
-            input: std::option::Option<crate::model::LatestInferenceResult>,
-        ) -> Self {
-            self.latest_inference_result = input;
-            self
+        pub fn set_latest_inference_result(mut self, input: std::option::Option<crate::model::LatestInferenceResult>) -> Self {
+            self.latest_inference_result = input; self
         }
         /// Consumes the builder and constructs a [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
         pub fn build(self) -> crate::model::InferenceSchedulerSummary {
             crate::model::InferenceSchedulerSummary {
-                model_name: self.model_name,
-                model_arn: self.model_arn,
-                inference_scheduler_name: self.inference_scheduler_name,
-                inference_scheduler_arn: self.inference_scheduler_arn,
-                status: self.status,
-                data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
-                data_upload_frequency: self.data_upload_frequency,
-                latest_inference_result: self.latest_inference_result,
+                model_name: self.model_name
+                ,
+                model_arn: self.model_arn
+                ,
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+                inference_scheduler_arn: self.inference_scheduler_arn
+                ,
+                status: self.status
+                ,
+                data_delay_offset_in_minutes: self.data_delay_offset_in_minutes
+                ,
+                data_upload_frequency: self.data_upload_frequency
+                ,
+                latest_inference_result: self.latest_inference_result
+                ,
             }
         }
     }
+    
+    
 }
 impl InferenceSchedulerSummary {
     /// Creates a new builder-style object to manufacture [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
@@ -2645,9 +2476,9 @@ impl InferenceSchedulerSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let latestinferenceresult = unimplemented!();
 /// match latestinferenceresult {
@@ -2669,60 +2500,52 @@ impl InferenceSchedulerSummary {
 /// Specifically, when `latestinferenceresult` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LatestInferenceResult::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LatestInferenceResult {
     #[allow(missing_docs)] // documentation missing in model
     Anomalous,
     #[allow(missing_docs)] // documentation missing in model
     Normal,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LatestInferenceResult {
     fn from(s: &str) -> Self {
         match s {
             "ANOMALOUS" => LatestInferenceResult::Anomalous,
             "NORMAL" => LatestInferenceResult::Normal,
-            other => {
-                LatestInferenceResult::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LatestInferenceResult::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LatestInferenceResult {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LatestInferenceResult::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LatestInferenceResult::from(s))
+                }
+            }
 impl LatestInferenceResult {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LatestInferenceResult::Anomalous => "ANOMALOUS",
             LatestInferenceResult::Normal => "NORMAL",
-            LatestInferenceResult::Unknown(value) => value.as_str(),
+            LatestInferenceResult::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANOMALOUS", "NORMAL"]
+        &[
+            "ANOMALOUS", "NORMAL"
+        ]
     }
 }
 impl AsRef<str> for LatestInferenceResult {
@@ -2734,7 +2557,7 @@ impl AsRef<str> for LatestInferenceResult {
 /// <p>Contains information about the specific inference execution, including input and output data configuration, inference scheduling information, status, and so on. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceExecutionSummary {
+pub struct InferenceExecutionSummary  {
     /// <p>The name of the ML model being used for the inference execution. </p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
@@ -2774,61 +2597,57 @@ pub struct InferenceExecutionSummary {
 }
 impl InferenceExecutionSummary {
     /// <p>The name of the ML model being used for the inference execution. </p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the inference scheduler being used for the inference execution. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution. </p>
-    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>Indicates the start time at which the inference scheduler began the specific inference execution. </p>
-    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn scheduled_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution began. </p>
-    pub fn data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped. </p>
-    pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
     /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn data_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
+    pub fn data_input_configuration(&self) -> std::option::Option<& crate::model::InferenceInputConfiguration> {
         self.data_input_configuration.as_ref()
     }
     /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
-    pub fn data_output_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
+    pub fn data_output_configuration(&self) -> std::option::Option<& crate::model::InferenceOutputConfiguration> {
         self.data_output_configuration.as_ref()
     }
     /// <p> </p>
-    pub fn customer_result_object(&self) -> std::option::Option<&crate::model::S3Object> {
+    pub fn customer_result_object(&self) -> std::option::Option<& crate::model::S3Object> {
         self.customer_result_object.as_ref()
     }
     /// <p>Indicates the status of the inference execution. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InferenceExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InferenceExecutionStatus> {
         self.status.as_ref()
     }
     /// <p> Specifies the reason for failure when an inference execution has failed. </p>
-    pub fn failed_reason(&self) -> std::option::Option<&str> {
+    pub fn failed_reason(&self) -> std::option::Option<& str> {
         self.failed_reason.as_deref()
     }
 }
 /// See [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
 pub mod inference_execution_summary {
-
+    
     /// A builder for [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2839,10 +2658,8 @@ pub mod inference_execution_summary {
         pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) data_input_configuration:
-            std::option::Option<crate::model::InferenceInputConfiguration>,
-        pub(crate) data_output_configuration:
-            std::option::Option<crate::model::InferenceOutputConfiguration>,
+        pub(crate) data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
+        pub(crate) data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
         pub(crate) customer_result_object: std::option::Option<crate::model::S3Object>,
         pub(crate) status: std::option::Option<crate::model::InferenceExecutionStatus>,
         pub(crate) failed_reason: std::option::Option<std::string::String>,
@@ -2855,8 +2672,7 @@ pub mod inference_execution_summary {
         }
         /// <p>The name of the ML model being used for the inference execution. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
         pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2865,8 +2681,7 @@ pub mod inference_execution_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// <p>The name of the inference scheduler being used for the inference execution. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2874,12 +2689,8 @@ pub mod inference_execution_summary {
             self
         }
         /// <p>The name of the inference scheduler being used for the inference execution. </p>
-        pub fn set_inference_scheduler_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_name = input;
-            self
+        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution. </p>
         pub fn inference_scheduler_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2887,12 +2698,8 @@ pub mod inference_execution_summary {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution. </p>
-        pub fn set_inference_scheduler_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_arn = input;
-            self
+        pub fn set_inference_scheduler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_arn = input; self
         }
         /// <p>Indicates the start time at which the inference scheduler began the specific inference execution. </p>
         pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2900,12 +2707,8 @@ pub mod inference_execution_summary {
             self
         }
         /// <p>Indicates the start time at which the inference scheduler began the specific inference execution. </p>
-        pub fn set_scheduled_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.scheduled_start_time = input;
-            self
+        pub fn set_scheduled_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.scheduled_start_time = input; self
         }
         /// <p>Indicates the time reference in the dataset at which the inference execution began. </p>
         pub fn data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2913,12 +2716,8 @@ pub mod inference_execution_summary {
             self
         }
         /// <p>Indicates the time reference in the dataset at which the inference execution began. </p>
-        pub fn set_data_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.data_start_time = input;
-            self
+        pub fn set_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.data_start_time = input; self
         }
         /// <p>Indicates the time reference in the dataset at which the inference execution stopped. </p>
         pub fn data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2926,44 +2725,26 @@ pub mod inference_execution_summary {
             self
         }
         /// <p>Indicates the time reference in the dataset at which the inference execution stopped. </p>
-        pub fn set_data_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.data_end_time = input;
-            self
+        pub fn set_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.data_end_time = input; self
         }
         /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-        pub fn data_input_configuration(
-            mut self,
-            input: crate::model::InferenceInputConfiguration,
-        ) -> Self {
+        pub fn data_input_configuration(mut self, input: crate::model::InferenceInputConfiguration) -> Self {
             self.data_input_configuration = Some(input);
             self
         }
         /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-        pub fn set_data_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InferenceInputConfiguration>,
-        ) -> Self {
-            self.data_input_configuration = input;
-            self
+        pub fn set_data_input_configuration(mut self, input: std::option::Option<crate::model::InferenceInputConfiguration>) -> Self {
+            self.data_input_configuration = input; self
         }
         /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
-        pub fn data_output_configuration(
-            mut self,
-            input: crate::model::InferenceOutputConfiguration,
-        ) -> Self {
+        pub fn data_output_configuration(mut self, input: crate::model::InferenceOutputConfiguration) -> Self {
             self.data_output_configuration = Some(input);
             self
         }
         /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
-        pub fn set_data_output_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InferenceOutputConfiguration>,
-        ) -> Self {
-            self.data_output_configuration = input;
-            self
+        pub fn set_data_output_configuration(mut self, input: std::option::Option<crate::model::InferenceOutputConfiguration>) -> Self {
+            self.data_output_configuration = input; self
         }
         /// <p> </p>
         pub fn customer_result_object(mut self, input: crate::model::S3Object) -> Self {
@@ -2971,12 +2752,8 @@ pub mod inference_execution_summary {
             self
         }
         /// <p> </p>
-        pub fn set_customer_result_object(
-            mut self,
-            input: std::option::Option<crate::model::S3Object>,
-        ) -> Self {
-            self.customer_result_object = input;
-            self
+        pub fn set_customer_result_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
+            self.customer_result_object = input; self
         }
         /// <p>Indicates the status of the inference execution. </p>
         pub fn status(mut self, input: crate::model::InferenceExecutionStatus) -> Self {
@@ -2984,12 +2761,8 @@ pub mod inference_execution_summary {
             self
         }
         /// <p>Indicates the status of the inference execution. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InferenceExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> Specifies the reason for failure when an inference execution has failed. </p>
         pub fn failed_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2997,31 +2770,41 @@ pub mod inference_execution_summary {
             self
         }
         /// <p> Specifies the reason for failure when an inference execution has failed. </p>
-        pub fn set_failed_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failed_reason = input;
-            self
+        pub fn set_failed_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failed_reason = input; self
         }
         /// Consumes the builder and constructs a [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
         pub fn build(self) -> crate::model::InferenceExecutionSummary {
             crate::model::InferenceExecutionSummary {
-                model_name: self.model_name,
-                model_arn: self.model_arn,
-                inference_scheduler_name: self.inference_scheduler_name,
-                inference_scheduler_arn: self.inference_scheduler_arn,
-                scheduled_start_time: self.scheduled_start_time,
-                data_start_time: self.data_start_time,
-                data_end_time: self.data_end_time,
-                data_input_configuration: self.data_input_configuration,
-                data_output_configuration: self.data_output_configuration,
-                customer_result_object: self.customer_result_object,
-                status: self.status,
-                failed_reason: self.failed_reason,
+                model_name: self.model_name
+                ,
+                model_arn: self.model_arn
+                ,
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+                inference_scheduler_arn: self.inference_scheduler_arn
+                ,
+                scheduled_start_time: self.scheduled_start_time
+                ,
+                data_start_time: self.data_start_time
+                ,
+                data_end_time: self.data_end_time
+                ,
+                data_input_configuration: self.data_input_configuration
+                ,
+                data_output_configuration: self.data_output_configuration
+                ,
+                customer_result_object: self.customer_result_object
+                ,
+                status: self.status
+                ,
+                failed_reason: self.failed_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl InferenceExecutionSummary {
     /// Creates a new builder-style object to manufacture [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
@@ -3036,9 +2819,9 @@ impl InferenceExecutionSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inferenceexecutionstatus = unimplemented!();
 /// match inferenceexecutionstatus {
@@ -3061,22 +2844,14 @@ impl InferenceExecutionSummary {
 /// Specifically, when `inferenceexecutionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InferenceExecutionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InferenceExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3085,7 +2860,7 @@ pub enum InferenceExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InferenceExecutionStatus {
     fn from(s: &str) -> Self {
@@ -3093,19 +2868,17 @@ impl std::convert::From<&str> for InferenceExecutionStatus {
             "FAILED" => InferenceExecutionStatus::Failed,
             "IN_PROGRESS" => InferenceExecutionStatus::InProgress,
             "SUCCESS" => InferenceExecutionStatus::Success,
-            other => InferenceExecutionStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InferenceExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InferenceExecutionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InferenceExecutionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InferenceExecutionStatus::from(s))
+                }
+            }
 impl InferenceExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3113,12 +2886,14 @@ impl InferenceExecutionStatus {
             InferenceExecutionStatus::Failed => "FAILED",
             InferenceExecutionStatus::InProgress => "IN_PROGRESS",
             InferenceExecutionStatus::Success => "SUCCESS",
-            InferenceExecutionStatus::Unknown(value) => value.as_str(),
+            InferenceExecutionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCESS"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for InferenceExecutionStatus {
@@ -3130,7 +2905,7 @@ impl AsRef<str> for InferenceExecutionStatus {
 /// <p>Contains information about an S3 bucket. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Object {
+pub struct S3Object  {
     /// <p>The name of the specific S3 bucket. </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -3140,17 +2915,17 @@ pub struct S3Object {
 }
 impl S3Object {
     /// <p>The name of the specific S3 bucket. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
-
+    
     /// A builder for [`S3Object`](crate::model::S3Object).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3165,8 +2940,7 @@ pub mod s3_object {
         }
         /// <p>The name of the specific S3 bucket. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3175,17 +2949,20 @@ pub mod s3_object {
         }
         /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Consumes the builder and constructs a [`S3Object`](crate::model::S3Object).
         pub fn build(self) -> crate::model::S3Object {
             crate::model::S3Object {
-                bucket: self.bucket,
-                key: self.key,
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Object {
     /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
@@ -3197,7 +2974,7 @@ impl S3Object {
 /// <p>Contains information about the specific inference event, including start and end time, diagnostics information, event duration and so on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceEventSummary {
+pub struct InferenceEventSummary  {
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
     #[doc(hidden)]
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
@@ -3219,23 +2996,23 @@ pub struct InferenceEventSummary {
 }
 impl InferenceEventSummary {
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
-    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>The name of the inference scheduler being used for the inference events. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>Indicates the starting time of an inference event. </p>
-    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
     /// <p>Indicates the ending time of an inference event. </p>
-    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
     /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
-    pub fn diagnostics(&self) -> std::option::Option<&str> {
+    pub fn diagnostics(&self) -> std::option::Option<& str> {
         self.diagnostics.as_deref()
     }
     /// <p> Indicates the size of an inference event in seconds. </p>
@@ -3245,7 +3022,7 @@ impl InferenceEventSummary {
 }
 /// See [`InferenceEventSummary`](crate::model::InferenceEventSummary).
 pub mod inference_event_summary {
-
+    
     /// A builder for [`InferenceEventSummary`](crate::model::InferenceEventSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3263,12 +3040,8 @@ pub mod inference_event_summary {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
-        pub fn set_inference_scheduler_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_arn = input;
-            self
+        pub fn set_inference_scheduler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_arn = input; self
         }
         /// <p>The name of the inference scheduler being used for the inference events. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3276,12 +3049,8 @@ pub mod inference_event_summary {
             self
         }
         /// <p>The name of the inference scheduler being used for the inference events. </p>
-        pub fn set_inference_scheduler_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_name = input;
-            self
+        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_name = input; self
         }
         /// <p>Indicates the starting time of an inference event. </p>
         pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3289,12 +3058,8 @@ pub mod inference_event_summary {
             self
         }
         /// <p>Indicates the starting time of an inference event. </p>
-        pub fn set_event_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_start_time = input;
-            self
+        pub fn set_event_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_start_time = input; self
         }
         /// <p>Indicates the ending time of an inference event. </p>
         pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3302,12 +3067,8 @@ pub mod inference_event_summary {
             self
         }
         /// <p>Indicates the ending time of an inference event. </p>
-        pub fn set_event_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_end_time = input;
-            self
+        pub fn set_event_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_end_time = input; self
         }
         /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
         pub fn diagnostics(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3316,8 +3077,7 @@ pub mod inference_event_summary {
         }
         /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
         pub fn set_diagnostics(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.diagnostics = input;
-            self
+            self.diagnostics = input; self
         }
         /// <p> Indicates the size of an inference event in seconds. </p>
         pub fn event_duration_in_seconds(mut self, input: i64) -> Self {
@@ -3326,21 +3086,28 @@ pub mod inference_event_summary {
         }
         /// <p> Indicates the size of an inference event in seconds. </p>
         pub fn set_event_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.event_duration_in_seconds = input;
-            self
+            self.event_duration_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`InferenceEventSummary`](crate::model::InferenceEventSummary).
         pub fn build(self) -> crate::model::InferenceEventSummary {
             crate::model::InferenceEventSummary {
-                inference_scheduler_arn: self.inference_scheduler_arn,
-                inference_scheduler_name: self.inference_scheduler_name,
-                event_start_time: self.event_start_time,
-                event_end_time: self.event_end_time,
-                diagnostics: self.diagnostics,
-                event_duration_in_seconds: self.event_duration_in_seconds,
+                inference_scheduler_arn: self.inference_scheduler_arn
+                ,
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+                event_start_time: self.event_start_time
+                ,
+                event_end_time: self.event_end_time
+                ,
+                diagnostics: self.diagnostics
+                ,
+                event_duration_in_seconds: self.event_duration_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl InferenceEventSummary {
     /// Creates a new builder-style object to manufacture [`InferenceEventSummary`](crate::model::InferenceEventSummary).
@@ -3352,7 +3119,7 @@ impl InferenceEventSummary {
 /// <p>Contains information about the specific data set, including name, ARN, and status. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetSummary {
+pub struct DatasetSummary  {
     /// <p>The name of the dataset. </p>
     #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
@@ -3368,25 +3135,25 @@ pub struct DatasetSummary {
 }
 impl DatasetSummary {
     /// <p>The name of the dataset. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the specified dataset. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Indicates the status of the dataset. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
 pub mod dataset_summary {
-
+    
     /// A builder for [`DatasetSummary`](crate::model::DatasetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3403,8 +3170,7 @@ pub mod dataset_summary {
         }
         /// <p>The name of the dataset. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the specified dataset. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3413,8 +3179,7 @@ pub mod dataset_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the specified dataset. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>Indicates the status of the dataset. </p>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
@@ -3422,12 +3187,8 @@ pub mod dataset_summary {
             self
         }
         /// <p>Indicates the status of the dataset. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DatasetStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3435,23 +3196,25 @@ pub mod dataset_summary {
             self
         }
         /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`DatasetSummary`](crate::model::DatasetSummary).
         pub fn build(self) -> crate::model::DatasetSummary {
             crate::model::DatasetSummary {
-                dataset_name: self.dataset_name,
-                dataset_arn: self.dataset_arn,
-                status: self.status,
-                created_at: self.created_at,
+                dataset_name: self.dataset_name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetSummary {
     /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
@@ -3466,9 +3229,9 @@ impl DatasetSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasetstatus = unimplemented!();
 /// match datasetstatus {
@@ -3491,22 +3254,14 @@ impl DatasetSummary {
 /// Specifically, when `datasetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatasetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3515,7 +3270,7 @@ pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     IngestionInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatasetStatus {
     fn from(s: &str) -> Self {
@@ -3523,17 +3278,17 @@ impl std::convert::From<&str> for DatasetStatus {
             "ACTIVE" => DatasetStatus::Active,
             "CREATED" => DatasetStatus::Created,
             "INGESTION_IN_PROGRESS" => DatasetStatus::IngestionInProgress,
-            other => DatasetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DatasetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DatasetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatasetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatasetStatus::from(s))
+                }
+            }
 impl DatasetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3541,12 +3296,14 @@ impl DatasetStatus {
             DatasetStatus::Active => "ACTIVE",
             DatasetStatus::Created => "CREATED",
             DatasetStatus::IngestionInProgress => "INGESTION_IN_PROGRESS",
-            DatasetStatus::Unknown(value) => value.as_str(),
+            DatasetStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATED", "INGESTION_IN_PROGRESS"]
+        &[
+            "ACTIVE", "CREATED", "INGESTION_IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for DatasetStatus {
@@ -3558,7 +3315,7 @@ impl AsRef<str> for DatasetStatus {
 /// <p>Provides information about a specified data ingestion job, including dataset information, data ingestion configuration, and status. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataIngestionJobSummary {
+pub struct DataIngestionJobSummary  {
     /// <p>Indicates the job ID of the data ingestion job. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -3570,47 +3327,43 @@ pub struct DataIngestionJobSummary {
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
     #[doc(hidden)]
-    pub ingestion_input_configuration:
-        std::option::Option<crate::model::IngestionInputConfiguration>,
+    pub ingestion_input_configuration: std::option::Option<crate::model::IngestionInputConfiguration>,
     /// <p>Indicates the status of the data ingestion job. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
 }
 impl DataIngestionJobSummary {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the dataset used for the data ingestion job. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
-    pub fn ingestion_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> std::option::Option<& crate::model::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p>Indicates the status of the data ingestion job. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::IngestionJobStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
 pub mod data_ingestion_job_summary {
-
+    
     /// A builder for [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
-        pub(crate) ingestion_input_configuration:
-            std::option::Option<crate::model::IngestionInputConfiguration>,
+        pub(crate) ingestion_input_configuration: std::option::Option<crate::model::IngestionInputConfiguration>,
         pub(crate) status: std::option::Option<crate::model::IngestionJobStatus>,
     }
     impl Builder {
@@ -3621,8 +3374,7 @@ pub mod data_ingestion_job_summary {
         }
         /// <p>Indicates the job ID of the data ingestion job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the dataset used for the data ingestion job. </p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3631,8 +3383,7 @@ pub mod data_ingestion_job_summary {
         }
         /// <p>The name of the dataset used for the data ingestion job. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3641,24 +3392,16 @@ pub mod data_ingestion_job_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
-        pub fn ingestion_input_configuration(
-            mut self,
-            input: crate::model::IngestionInputConfiguration,
-        ) -> Self {
+        pub fn ingestion_input_configuration(mut self, input: crate::model::IngestionInputConfiguration) -> Self {
             self.ingestion_input_configuration = Some(input);
             self
         }
         /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
-        pub fn set_ingestion_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::IngestionInputConfiguration>,
-        ) -> Self {
-            self.ingestion_input_configuration = input;
-            self
+        pub fn set_ingestion_input_configuration(mut self, input: std::option::Option<crate::model::IngestionInputConfiguration>) -> Self {
+            self.ingestion_input_configuration = input; self
         }
         /// <p>Indicates the status of the data ingestion job. </p>
         pub fn status(mut self, input: crate::model::IngestionJobStatus) -> Self {
@@ -3666,24 +3409,27 @@ pub mod data_ingestion_job_summary {
             self
         }
         /// <p>Indicates the status of the data ingestion job. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::IngestionJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::IngestionJobStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
         pub fn build(self) -> crate::model::DataIngestionJobSummary {
             crate::model::DataIngestionJobSummary {
-                job_id: self.job_id,
-                dataset_name: self.dataset_name,
-                dataset_arn: self.dataset_arn,
-                ingestion_input_configuration: self.ingestion_input_configuration,
-                status: self.status,
+                job_id: self.job_id
+                ,
+                dataset_name: self.dataset_name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                ingestion_input_configuration: self.ingestion_input_configuration
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DataIngestionJobSummary {
     /// Creates a new builder-style object to manufacture [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
@@ -3692,54 +3438,53 @@ impl DataIngestionJobSummary {
     }
 }
 
-/// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+/// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
 /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataPreProcessingConfiguration {
-    /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+pub struct DataPreProcessingConfiguration  {
+    /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     #[doc(hidden)]
     pub target_sampling_rate: std::option::Option<crate::model::TargetSamplingRate>,
 }
 impl DataPreProcessingConfiguration {
-    /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn target_sampling_rate(&self) -> std::option::Option<&crate::model::TargetSamplingRate> {
+    pub fn target_sampling_rate(&self) -> std::option::Option<& crate::model::TargetSamplingRate> {
         self.target_sampling_rate.as_ref()
     }
 }
 /// See [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
 pub mod data_pre_processing_configuration {
-
+    
     /// A builder for [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_sampling_rate: std::option::Option<crate::model::TargetSamplingRate>,
     }
     impl Builder {
-        /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+        /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
         /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
         pub fn target_sampling_rate(mut self, input: crate::model::TargetSamplingRate) -> Self {
             self.target_sampling_rate = Some(input);
             self
         }
-        /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+        /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
         /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-        pub fn set_target_sampling_rate(
-            mut self,
-            input: std::option::Option<crate::model::TargetSamplingRate>,
-        ) -> Self {
-            self.target_sampling_rate = input;
-            self
+        pub fn set_target_sampling_rate(mut self, input: std::option::Option<crate::model::TargetSamplingRate>) -> Self {
+            self.target_sampling_rate = input; self
         }
         /// Consumes the builder and constructs a [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
         pub fn build(self) -> crate::model::DataPreProcessingConfiguration {
             crate::model::DataPreProcessingConfiguration {
-                target_sampling_rate: self.target_sampling_rate,
+                target_sampling_rate: self.target_sampling_rate
+                ,
             }
         }
     }
+    
+    
 }
 impl DataPreProcessingConfiguration {
     /// Creates a new builder-style object to manufacture [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
@@ -3754,9 +3499,9 @@ impl DataPreProcessingConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targetsamplingrate = unimplemented!();
 /// match targetsamplingrate {
@@ -3787,22 +3532,14 @@ impl DataPreProcessingConfiguration {
 /// Specifically, when `targetsamplingrate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetSamplingRate::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TargetSamplingRate {
     #[allow(missing_docs)] // documentation missing in model
     Pt10M,
@@ -3827,7 +3564,7 @@ pub enum TargetSamplingRate {
     #[allow(missing_docs)] // documentation missing in model
     Pt5S,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetSamplingRate {
     fn from(s: &str) -> Self {
@@ -3843,19 +3580,17 @@ impl std::convert::From<&str> for TargetSamplingRate {
             "PT30S" => TargetSamplingRate::Pt30S,
             "PT5M" => TargetSamplingRate::Pt5M,
             "PT5S" => TargetSamplingRate::Pt5S,
-            other => {
-                TargetSamplingRate::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TargetSamplingRate::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TargetSamplingRate {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetSamplingRate::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TargetSamplingRate::from(s))
+                }
+            }
 impl TargetSamplingRate {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3871,14 +3606,13 @@ impl TargetSamplingRate {
             TargetSamplingRate::Pt30S => "PT30S",
             TargetSamplingRate::Pt5M => "PT5M",
             TargetSamplingRate::Pt5S => "PT5S",
-            TargetSamplingRate::Unknown(value) => value.as_str(),
+            TargetSamplingRate::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "PT10M", "PT10S", "PT15M", "PT15S", "PT1H", "PT1M", "PT1S", "PT30M", "PT30S", "PT5M",
-            "PT5S",
+            "PT10M", "PT10S", "PT15M", "PT15S", "PT1H", "PT1M", "PT1S", "PT30M", "PT30S", "PT5M", "PT5S"
         ]
     }
 }
@@ -3891,7 +3625,7 @@ impl AsRef<str> for TargetSamplingRate {
 /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelsInputConfiguration {
+pub struct LabelsInputConfiguration  {
     /// <p>Contains location information for the S3 location being used for label data. </p>
     #[doc(hidden)]
     pub s3_input_configuration: std::option::Option<crate::model::LabelsS3InputConfiguration>,
@@ -3901,42 +3635,32 @@ pub struct LabelsInputConfiguration {
 }
 impl LabelsInputConfiguration {
     /// <p>Contains location information for the S3 location being used for label data. </p>
-    pub fn s3_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LabelsS3InputConfiguration> {
+    pub fn s3_input_configuration(&self) -> std::option::Option<& crate::model::LabelsS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
     /// <p> The name of the label group to be used for label data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
 }
 /// See [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
 pub mod labels_input_configuration {
-
+    
     /// A builder for [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) s3_input_configuration:
-            std::option::Option<crate::model::LabelsS3InputConfiguration>,
+        pub(crate) s3_input_configuration: std::option::Option<crate::model::LabelsS3InputConfiguration>,
         pub(crate) label_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Contains location information for the S3 location being used for label data. </p>
-        pub fn s3_input_configuration(
-            mut self,
-            input: crate::model::LabelsS3InputConfiguration,
-        ) -> Self {
+        pub fn s3_input_configuration(mut self, input: crate::model::LabelsS3InputConfiguration) -> Self {
             self.s3_input_configuration = Some(input);
             self
         }
         /// <p>Contains location information for the S3 location being used for label data. </p>
-        pub fn set_s3_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LabelsS3InputConfiguration>,
-        ) -> Self {
-            self.s3_input_configuration = input;
-            self
+        pub fn set_s3_input_configuration(mut self, input: std::option::Option<crate::model::LabelsS3InputConfiguration>) -> Self {
+            self.s3_input_configuration = input; self
         }
         /// <p> The name of the label group to be used for label data. </p>
         pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3944,21 +3668,21 @@ pub mod labels_input_configuration {
             self
         }
         /// <p> The name of the label group to be used for label data. </p>
-        pub fn set_label_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_name = input;
-            self
+        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_name = input; self
         }
         /// Consumes the builder and constructs a [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
         pub fn build(self) -> crate::model::LabelsInputConfiguration {
             crate::model::LabelsInputConfiguration {
-                s3_input_configuration: self.s3_input_configuration,
-                label_group_name: self.label_group_name,
+                s3_input_configuration: self.s3_input_configuration
+                ,
+                label_group_name: self.label_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl LabelsInputConfiguration {
     /// Creates a new builder-style object to manufacture [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
@@ -3970,7 +3694,7 @@ impl LabelsInputConfiguration {
 /// <p>The location information (prefix and bucket name) for the s3 location being used for label data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelsS3InputConfiguration {
+pub struct LabelsS3InputConfiguration  {
     /// <p>The name of the S3 bucket holding the label data. </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -3980,17 +3704,17 @@ pub struct LabelsS3InputConfiguration {
 }
 impl LabelsS3InputConfiguration {
     /// <p>The name of the S3 bucket holding the label data. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p> The prefix for the S3 bucket used for the label data. </p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
 pub mod labels_s3_input_configuration {
-
+    
     /// A builder for [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4005,8 +3729,7 @@ pub mod labels_s3_input_configuration {
         }
         /// <p>The name of the S3 bucket holding the label data. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p> The prefix for the S3 bucket used for the label data. </p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4015,17 +3738,20 @@ pub mod labels_s3_input_configuration {
         }
         /// <p> The prefix for the S3 bucket used for the label data. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
         pub fn build(self) -> crate::model::LabelsS3InputConfiguration {
             crate::model::LabelsS3InputConfiguration {
-                bucket: self.bucket,
-                prefix: self.prefix,
+                bucket: self.bucket
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl LabelsS3InputConfiguration {
     /// Creates a new builder-style object to manufacture [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
@@ -4037,7 +3763,7 @@ impl LabelsS3InputConfiguration {
 /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IngestedFilesSummary {
+pub struct IngestedFilesSummary  {
     /// <p>Indicates the total number of files that were submitted for ingestion.</p>
     #[doc(hidden)]
     pub total_number_of_files: std::option::Option<i32>,
@@ -4058,13 +3784,13 @@ impl IngestedFilesSummary {
         self.ingested_number_of_files
     }
     /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
-    pub fn discarded_files(&self) -> std::option::Option<&[crate::model::S3Object]> {
+    pub fn discarded_files(&self) -> std::option::Option<& [crate::model::S3Object]> {
         self.discarded_files.as_deref()
     }
 }
 /// See [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
 pub mod ingested_files_summary {
-
+    
     /// A builder for [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4080,8 +3806,7 @@ pub mod ingested_files_summary {
         }
         /// <p>Indicates the total number of files that were submitted for ingestion.</p>
         pub fn set_total_number_of_files(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_number_of_files = input;
-            self
+            self.total_number_of_files = input; self
         }
         /// <p>Indicates the number of files that were successfully ingested.</p>
         pub fn ingested_number_of_files(mut self, input: i32) -> Self {
@@ -4090,8 +3815,7 @@ pub mod ingested_files_summary {
         }
         /// <p>Indicates the number of files that were successfully ingested.</p>
         pub fn set_ingested_number_of_files(mut self, input: std::option::Option<i32>) -> Self {
-            self.ingested_number_of_files = input;
-            self
+            self.ingested_number_of_files = input; self
         }
         /// Appends an item to `discarded_files`.
         ///
@@ -4100,27 +3824,28 @@ pub mod ingested_files_summary {
         /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
         pub fn discarded_files(mut self, input: crate::model::S3Object) -> Self {
             let mut v = self.discarded_files.unwrap_or_default();
-            v.push(input);
-            self.discarded_files = Some(v);
-            self
+                            v.push(input);
+                            self.discarded_files = Some(v);
+                            self
         }
         /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
-        pub fn set_discarded_files(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Object>>,
-        ) -> Self {
-            self.discarded_files = input;
-            self
+        pub fn set_discarded_files(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Object>>) -> Self {
+            self.discarded_files = input; self
         }
         /// Consumes the builder and constructs a [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
         pub fn build(self) -> crate::model::IngestedFilesSummary {
             crate::model::IngestedFilesSummary {
-                total_number_of_files: self.total_number_of_files,
-                ingested_number_of_files: self.ingested_number_of_files,
-                discarded_files: self.discarded_files,
+                total_number_of_files: self.total_number_of_files
+                ,
+                ingested_number_of_files: self.ingested_number_of_files
+                ,
+                discarded_files: self.discarded_files
+                ,
             }
         }
     }
+    
+    
 }
 impl IngestedFilesSummary {
     /// Creates a new builder-style object to manufacture [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
@@ -4132,7 +3857,7 @@ impl IngestedFilesSummary {
 /// <p> DataQualitySummary gives aggregated statistics over all the sensors about a completed ingestion job. It primarily gives more information about statistics over different incorrect data like MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, DuplicateTimeStamps. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataQualitySummary {
+pub struct DataQualitySummary  {
     /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
     #[doc(hidden)]
     pub insufficient_sensor_data: std::option::Option<crate::model::InsufficientSensorData>,
@@ -4151,38 +3876,33 @@ pub struct DataQualitySummary {
 }
 impl DataQualitySummary {
     /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
-    pub fn insufficient_sensor_data(
-        &self,
-    ) -> std::option::Option<&crate::model::InsufficientSensorData> {
+    pub fn insufficient_sensor_data(&self) -> std::option::Option<& crate::model::InsufficientSensorData> {
         self.insufficient_sensor_data.as_ref()
     }
     /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
-    pub fn missing_sensor_data(&self) -> std::option::Option<&crate::model::MissingSensorData> {
+    pub fn missing_sensor_data(&self) -> std::option::Option<& crate::model::MissingSensorData> {
         self.missing_sensor_data.as_ref()
     }
     /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
-    pub fn invalid_sensor_data(&self) -> std::option::Option<&crate::model::InvalidSensorData> {
+    pub fn invalid_sensor_data(&self) -> std::option::Option<& crate::model::InvalidSensorData> {
         self.invalid_sensor_data.as_ref()
     }
     /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
-    pub fn unsupported_timestamps(
-        &self,
-    ) -> std::option::Option<&crate::model::UnsupportedTimestamps> {
+    pub fn unsupported_timestamps(&self) -> std::option::Option<& crate::model::UnsupportedTimestamps> {
         self.unsupported_timestamps.as_ref()
     }
     /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
-    pub fn duplicate_timestamps(&self) -> std::option::Option<&crate::model::DuplicateTimestamps> {
+    pub fn duplicate_timestamps(&self) -> std::option::Option<& crate::model::DuplicateTimestamps> {
         self.duplicate_timestamps.as_ref()
     }
 }
 /// See [`DataQualitySummary`](crate::model::DataQualitySummary).
 pub mod data_quality_summary {
-
+    
     /// A builder for [`DataQualitySummary`](crate::model::DataQualitySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) insufficient_sensor_data:
-            std::option::Option<crate::model::InsufficientSensorData>,
+        pub(crate) insufficient_sensor_data: std::option::Option<crate::model::InsufficientSensorData>,
         pub(crate) missing_sensor_data: std::option::Option<crate::model::MissingSensorData>,
         pub(crate) invalid_sensor_data: std::option::Option<crate::model::InvalidSensorData>,
         pub(crate) unsupported_timestamps: std::option::Option<crate::model::UnsupportedTimestamps>,
@@ -4190,20 +3910,13 @@ pub mod data_quality_summary {
     }
     impl Builder {
         /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
-        pub fn insufficient_sensor_data(
-            mut self,
-            input: crate::model::InsufficientSensorData,
-        ) -> Self {
+        pub fn insufficient_sensor_data(mut self, input: crate::model::InsufficientSensorData) -> Self {
             self.insufficient_sensor_data = Some(input);
             self
         }
         /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
-        pub fn set_insufficient_sensor_data(
-            mut self,
-            input: std::option::Option<crate::model::InsufficientSensorData>,
-        ) -> Self {
-            self.insufficient_sensor_data = input;
-            self
+        pub fn set_insufficient_sensor_data(mut self, input: std::option::Option<crate::model::InsufficientSensorData>) -> Self {
+            self.insufficient_sensor_data = input; self
         }
         /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
         pub fn missing_sensor_data(mut self, input: crate::model::MissingSensorData) -> Self {
@@ -4211,12 +3924,8 @@ pub mod data_quality_summary {
             self
         }
         /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
-        pub fn set_missing_sensor_data(
-            mut self,
-            input: std::option::Option<crate::model::MissingSensorData>,
-        ) -> Self {
-            self.missing_sensor_data = input;
-            self
+        pub fn set_missing_sensor_data(mut self, input: std::option::Option<crate::model::MissingSensorData>) -> Self {
+            self.missing_sensor_data = input; self
         }
         /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
         pub fn invalid_sensor_data(mut self, input: crate::model::InvalidSensorData) -> Self {
@@ -4224,28 +3933,17 @@ pub mod data_quality_summary {
             self
         }
         /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
-        pub fn set_invalid_sensor_data(
-            mut self,
-            input: std::option::Option<crate::model::InvalidSensorData>,
-        ) -> Self {
-            self.invalid_sensor_data = input;
-            self
+        pub fn set_invalid_sensor_data(mut self, input: std::option::Option<crate::model::InvalidSensorData>) -> Self {
+            self.invalid_sensor_data = input; self
         }
         /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
-        pub fn unsupported_timestamps(
-            mut self,
-            input: crate::model::UnsupportedTimestamps,
-        ) -> Self {
+        pub fn unsupported_timestamps(mut self, input: crate::model::UnsupportedTimestamps) -> Self {
             self.unsupported_timestamps = Some(input);
             self
         }
         /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
-        pub fn set_unsupported_timestamps(
-            mut self,
-            input: std::option::Option<crate::model::UnsupportedTimestamps>,
-        ) -> Self {
-            self.unsupported_timestamps = input;
-            self
+        pub fn set_unsupported_timestamps(mut self, input: std::option::Option<crate::model::UnsupportedTimestamps>) -> Self {
+            self.unsupported_timestamps = input; self
         }
         /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
         pub fn duplicate_timestamps(mut self, input: crate::model::DuplicateTimestamps) -> Self {
@@ -4253,24 +3951,27 @@ pub mod data_quality_summary {
             self
         }
         /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
-        pub fn set_duplicate_timestamps(
-            mut self,
-            input: std::option::Option<crate::model::DuplicateTimestamps>,
-        ) -> Self {
-            self.duplicate_timestamps = input;
-            self
+        pub fn set_duplicate_timestamps(mut self, input: std::option::Option<crate::model::DuplicateTimestamps>) -> Self {
+            self.duplicate_timestamps = input; self
         }
         /// Consumes the builder and constructs a [`DataQualitySummary`](crate::model::DataQualitySummary).
         pub fn build(self) -> crate::model::DataQualitySummary {
             crate::model::DataQualitySummary {
-                insufficient_sensor_data: self.insufficient_sensor_data,
-                missing_sensor_data: self.missing_sensor_data,
-                invalid_sensor_data: self.invalid_sensor_data,
-                unsupported_timestamps: self.unsupported_timestamps,
-                duplicate_timestamps: self.duplicate_timestamps,
+                insufficient_sensor_data: self.insufficient_sensor_data
+                ,
+                missing_sensor_data: self.missing_sensor_data
+                ,
+                invalid_sensor_data: self.invalid_sensor_data
+                ,
+                unsupported_timestamps: self.unsupported_timestamps
+                ,
+                duplicate_timestamps: self.duplicate_timestamps
+                ,
             }
         }
     }
+    
+    
 }
 impl DataQualitySummary {
     /// Creates a new builder-style object to manufacture [`DataQualitySummary`](crate::model::DataQualitySummary).
@@ -4282,7 +3983,7 @@ impl DataQualitySummary {
 /// <p> Entity that comprises information abount duplicate timestamps in the dataset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateTimestamps {
+pub struct DuplicateTimestamps  {
     /// <p> Indicates the total number of duplicate timestamps. </p>
     #[doc(hidden)]
     pub total_number_of_duplicate_timestamps: std::option::Option<i32>,
@@ -4295,7 +3996,7 @@ impl DuplicateTimestamps {
 }
 /// See [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
 pub mod duplicate_timestamps {
-
+    
     /// A builder for [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4308,20 +4009,19 @@ pub mod duplicate_timestamps {
             self
         }
         /// <p> Indicates the total number of duplicate timestamps. </p>
-        pub fn set_total_number_of_duplicate_timestamps(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.total_number_of_duplicate_timestamps = input;
-            self
+        pub fn set_total_number_of_duplicate_timestamps(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_number_of_duplicate_timestamps = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
         pub fn build(self) -> crate::model::DuplicateTimestamps {
             crate::model::DuplicateTimestamps {
-                total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps,
+                total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateTimestamps {
     /// Creates a new builder-style object to manufacture [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
@@ -4333,7 +4033,7 @@ impl DuplicateTimestamps {
 /// <p> Entity that comprises information abount unsupported timestamps in the dataset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedTimestamps {
+pub struct UnsupportedTimestamps  {
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
     #[doc(hidden)]
     pub total_number_of_unsupported_timestamps: std::option::Option<i32>,
@@ -4346,7 +4046,7 @@ impl UnsupportedTimestamps {
 }
 /// See [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
 pub mod unsupported_timestamps {
-
+    
     /// A builder for [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4359,20 +4059,19 @@ pub mod unsupported_timestamps {
             self
         }
         /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
-        pub fn set_total_number_of_unsupported_timestamps(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.total_number_of_unsupported_timestamps = input;
-            self
+        pub fn set_total_number_of_unsupported_timestamps(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_number_of_unsupported_timestamps = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
         pub fn build(self) -> crate::model::UnsupportedTimestamps {
             crate::model::UnsupportedTimestamps {
-                total_number_of_unsupported_timestamps: self.total_number_of_unsupported_timestamps,
+                total_number_of_unsupported_timestamps: self.total_number_of_unsupported_timestamps
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedTimestamps {
     /// Creates a new builder-style object to manufacture [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
@@ -4384,7 +4083,7 @@ impl UnsupportedTimestamps {
 /// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSensorData {
+pub struct InvalidSensorData  {
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
     #[doc(hidden)]
     pub affected_sensor_count: std::option::Option<i32>,
@@ -4404,7 +4103,7 @@ impl InvalidSensorData {
 }
 /// See [`InvalidSensorData`](crate::model::InvalidSensorData).
 pub mod invalid_sensor_data {
-
+    
     /// A builder for [`InvalidSensorData`](crate::model::InvalidSensorData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4419,8 +4118,7 @@ pub mod invalid_sensor_data {
         }
         /// <p> Indicates the number of sensors that have at least some invalid values. </p>
         pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.affected_sensor_count = input;
-            self
+            self.affected_sensor_count = input; self
         }
         /// <p> Indicates the total number of invalid values across all the sensors. </p>
         pub fn total_number_of_invalid_values(mut self, input: i32) -> Self {
@@ -4428,21 +4126,21 @@ pub mod invalid_sensor_data {
             self
         }
         /// <p> Indicates the total number of invalid values across all the sensors. </p>
-        pub fn set_total_number_of_invalid_values(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.total_number_of_invalid_values = input;
-            self
+        pub fn set_total_number_of_invalid_values(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_number_of_invalid_values = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSensorData`](crate::model::InvalidSensorData).
         pub fn build(self) -> crate::model::InvalidSensorData {
             crate::model::InvalidSensorData {
-                affected_sensor_count: self.affected_sensor_count,
-                total_number_of_invalid_values: self.total_number_of_invalid_values,
+                affected_sensor_count: self.affected_sensor_count
+                ,
+                total_number_of_invalid_values: self.total_number_of_invalid_values
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSensorData {
     /// Creates a new builder-style object to manufacture [`InvalidSensorData`](crate::model::InvalidSensorData).
@@ -4454,7 +4152,7 @@ impl InvalidSensorData {
 /// <p> Entity that comprises aggregated information on sensors having missing data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MissingSensorData {
+pub struct MissingSensorData  {
     /// <p> Indicates the number of sensors that have atleast some data missing. </p>
     #[doc(hidden)]
     pub affected_sensor_count: std::option::Option<i32>,
@@ -4474,7 +4172,7 @@ impl MissingSensorData {
 }
 /// See [`MissingSensorData`](crate::model::MissingSensorData).
 pub mod missing_sensor_data {
-
+    
     /// A builder for [`MissingSensorData`](crate::model::MissingSensorData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4489,8 +4187,7 @@ pub mod missing_sensor_data {
         }
         /// <p> Indicates the number of sensors that have atleast some data missing. </p>
         pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.affected_sensor_count = input;
-            self
+            self.affected_sensor_count = input; self
         }
         /// <p> Indicates the total number of missing values across all the sensors. </p>
         pub fn total_number_of_missing_values(mut self, input: i32) -> Self {
@@ -4498,21 +4195,21 @@ pub mod missing_sensor_data {
             self
         }
         /// <p> Indicates the total number of missing values across all the sensors. </p>
-        pub fn set_total_number_of_missing_values(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.total_number_of_missing_values = input;
-            self
+        pub fn set_total_number_of_missing_values(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_number_of_missing_values = input; self
         }
         /// Consumes the builder and constructs a [`MissingSensorData`](crate::model::MissingSensorData).
         pub fn build(self) -> crate::model::MissingSensorData {
             crate::model::MissingSensorData {
-                affected_sensor_count: self.affected_sensor_count,
-                total_number_of_missing_values: self.total_number_of_missing_values,
+                affected_sensor_count: self.affected_sensor_count
+                ,
+                total_number_of_missing_values: self.total_number_of_missing_values
+                ,
             }
         }
     }
+    
+    
 }
 impl MissingSensorData {
     /// Creates a new builder-style object to manufacture [`MissingSensorData`](crate::model::MissingSensorData).
@@ -4524,7 +4221,7 @@ impl MissingSensorData {
 /// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsufficientSensorData {
+pub struct InsufficientSensorData  {
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
     #[doc(hidden)]
     pub missing_complete_sensor_data: std::option::Option<crate::model::MissingCompleteSensorData>,
@@ -4534,70 +4231,54 @@ pub struct InsufficientSensorData {
 }
 impl InsufficientSensorData {
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
-    pub fn missing_complete_sensor_data(
-        &self,
-    ) -> std::option::Option<&crate::model::MissingCompleteSensorData> {
+    pub fn missing_complete_sensor_data(&self) -> std::option::Option<& crate::model::MissingCompleteSensorData> {
         self.missing_complete_sensor_data.as_ref()
     }
     /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
-    pub fn sensors_with_short_date_range(
-        &self,
-    ) -> std::option::Option<&crate::model::SensorsWithShortDateRange> {
+    pub fn sensors_with_short_date_range(&self) -> std::option::Option<& crate::model::SensorsWithShortDateRange> {
         self.sensors_with_short_date_range.as_ref()
     }
 }
 /// See [`InsufficientSensorData`](crate::model::InsufficientSensorData).
 pub mod insufficient_sensor_data {
-
+    
     /// A builder for [`InsufficientSensorData`](crate::model::InsufficientSensorData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) missing_complete_sensor_data:
-            std::option::Option<crate::model::MissingCompleteSensorData>,
-        pub(crate) sensors_with_short_date_range:
-            std::option::Option<crate::model::SensorsWithShortDateRange>,
+        pub(crate) missing_complete_sensor_data: std::option::Option<crate::model::MissingCompleteSensorData>,
+        pub(crate) sensors_with_short_date_range: std::option::Option<crate::model::SensorsWithShortDateRange>,
     }
     impl Builder {
         /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
-        pub fn missing_complete_sensor_data(
-            mut self,
-            input: crate::model::MissingCompleteSensorData,
-        ) -> Self {
+        pub fn missing_complete_sensor_data(mut self, input: crate::model::MissingCompleteSensorData) -> Self {
             self.missing_complete_sensor_data = Some(input);
             self
         }
         /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
-        pub fn set_missing_complete_sensor_data(
-            mut self,
-            input: std::option::Option<crate::model::MissingCompleteSensorData>,
-        ) -> Self {
-            self.missing_complete_sensor_data = input;
-            self
+        pub fn set_missing_complete_sensor_data(mut self, input: std::option::Option<crate::model::MissingCompleteSensorData>) -> Self {
+            self.missing_complete_sensor_data = input; self
         }
         /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
-        pub fn sensors_with_short_date_range(
-            mut self,
-            input: crate::model::SensorsWithShortDateRange,
-        ) -> Self {
+        pub fn sensors_with_short_date_range(mut self, input: crate::model::SensorsWithShortDateRange) -> Self {
             self.sensors_with_short_date_range = Some(input);
             self
         }
         /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
-        pub fn set_sensors_with_short_date_range(
-            mut self,
-            input: std::option::Option<crate::model::SensorsWithShortDateRange>,
-        ) -> Self {
-            self.sensors_with_short_date_range = input;
-            self
+        pub fn set_sensors_with_short_date_range(mut self, input: std::option::Option<crate::model::SensorsWithShortDateRange>) -> Self {
+            self.sensors_with_short_date_range = input; self
         }
         /// Consumes the builder and constructs a [`InsufficientSensorData`](crate::model::InsufficientSensorData).
         pub fn build(self) -> crate::model::InsufficientSensorData {
             crate::model::InsufficientSensorData {
-                missing_complete_sensor_data: self.missing_complete_sensor_data,
-                sensors_with_short_date_range: self.sensors_with_short_date_range,
+                missing_complete_sensor_data: self.missing_complete_sensor_data
+                ,
+                sensors_with_short_date_range: self.sensors_with_short_date_range
+                ,
             }
         }
     }
+    
+    
 }
 impl InsufficientSensorData {
     /// Creates a new builder-style object to manufacture [`InsufficientSensorData`](crate::model::InsufficientSensorData).
@@ -4609,7 +4290,7 @@ impl InsufficientSensorData {
 /// <p> Entity that comprises information on sensors that have shorter date range. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SensorsWithShortDateRange {
+pub struct SensorsWithShortDateRange  {
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
     #[doc(hidden)]
     pub affected_sensor_count: std::option::Option<i32>,
@@ -4622,7 +4303,7 @@ impl SensorsWithShortDateRange {
 }
 /// See [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
 pub mod sensors_with_short_date_range {
-
+    
     /// A builder for [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4636,16 +4317,18 @@ pub mod sensors_with_short_date_range {
         }
         /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
         pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.affected_sensor_count = input;
-            self
+            self.affected_sensor_count = input; self
         }
         /// Consumes the builder and constructs a [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
         pub fn build(self) -> crate::model::SensorsWithShortDateRange {
             crate::model::SensorsWithShortDateRange {
-                affected_sensor_count: self.affected_sensor_count,
+                affected_sensor_count: self.affected_sensor_count
+                ,
             }
         }
     }
+    
+    
 }
 impl SensorsWithShortDateRange {
     /// Creates a new builder-style object to manufacture [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
@@ -4657,7 +4340,7 @@ impl SensorsWithShortDateRange {
 /// <p> Entity that comprises information on sensors that have sensor data completely missing. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MissingCompleteSensorData {
+pub struct MissingCompleteSensorData  {
     /// <p> Indicates the number of sensors that have data missing completely. </p>
     #[doc(hidden)]
     pub affected_sensor_count: std::option::Option<i32>,
@@ -4670,7 +4353,7 @@ impl MissingCompleteSensorData {
 }
 /// See [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
 pub mod missing_complete_sensor_data {
-
+    
     /// A builder for [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4684,16 +4367,18 @@ pub mod missing_complete_sensor_data {
         }
         /// <p> Indicates the number of sensors that have data missing completely. </p>
         pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.affected_sensor_count = input;
-            self
+            self.affected_sensor_count = input; self
         }
         /// Consumes the builder and constructs a [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
         pub fn build(self) -> crate::model::MissingCompleteSensorData {
             crate::model::MissingCompleteSensorData {
-                affected_sensor_count: self.affected_sensor_count,
+                affected_sensor_count: self.affected_sensor_count
+                ,
             }
         }
     }
+    
+    
 }
 impl MissingCompleteSensorData {
     /// Creates a new builder-style object to manufacture [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
@@ -4705,20 +4390,20 @@ impl MissingCompleteSensorData {
 /// <p>Provides information about the data schema used with the given dataset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetSchema {
+pub struct DatasetSchema  {
     /// <p> </p>
     #[doc(hidden)]
     pub inline_data_schema: std::option::Option<std::string::String>,
 }
 impl DatasetSchema {
     /// <p> </p>
-    pub fn inline_data_schema(&self) -> std::option::Option<&str> {
+    pub fn inline_data_schema(&self) -> std::option::Option<& str> {
         self.inline_data_schema.as_deref()
     }
 }
 /// See [`DatasetSchema`](crate::model::DatasetSchema).
 pub mod dataset_schema {
-
+    
     /// A builder for [`DatasetSchema`](crate::model::DatasetSchema).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4731,20 +4416,19 @@ pub mod dataset_schema {
             self
         }
         /// <p> </p>
-        pub fn set_inline_data_schema(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inline_data_schema = input;
-            self
+        pub fn set_inline_data_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inline_data_schema = input; self
         }
         /// Consumes the builder and constructs a [`DatasetSchema`](crate::model::DatasetSchema).
         pub fn build(self) -> crate::model::DatasetSchema {
             crate::model::DatasetSchema {
-                inline_data_schema: self.inline_data_schema,
+                inline_data_schema: self.inline_data_schema
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetSchema {
     /// Creates a new builder-style object to manufacture [`DatasetSchema`](crate::model::DatasetSchema).
@@ -4752,3 +4436,4 @@ impl DatasetSchema {
         crate::model::dataset_schema::Builder::default()
     }
 }
+

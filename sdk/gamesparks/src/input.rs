@@ -3,16 +3,14 @@ use std::fmt::Write;
 
 /// See [`CreateGameInput`](crate::input::CreateGameInput).
 pub mod create_game_input {
-
+    
     /// A builder for [`CreateGameInput`](crate::input::CreateGameInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the game.</p>
@@ -22,8 +20,7 @@ pub mod create_game_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The description of the game.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -32,8 +29,7 @@ pub mod create_game_input {
         }
         /// <p>The description of the game.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -42,166 +38,109 @@ pub mod create_game_input {
         }
         /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to apply to the game.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags to apply to the game.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateGameInput`](crate::input::CreateGameInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateGameInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateGameInput {
-                game_name: self.game_name,
-                description: self.description,
-                client_token: self.client_token,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateGameInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateGameInput {
+                    game_name: self.game_name
+                    ,
+                    description: self.description
+                    ,
+                    client_token: self.client_token
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateGameInput {
     /// Consumes the builder and constructs an Operation<[`CreateGame`](crate::operation::CreateGame)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateGame,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateGame, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateGameInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateGameInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/game").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateGameInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateGameInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_game(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_game(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateGame::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateGame",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateGame::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateGame", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -213,7 +152,7 @@ impl CreateGameInput {
 
 /// See [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
 pub mod create_snapshot_input {
-
+    
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -228,8 +167,7 @@ pub mod create_snapshot_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The description of the snapshot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -238,159 +176,96 @@ pub mod create_snapshot_input {
         }
         /// <p>The description of the snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateSnapshotInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateSnapshotInput {
-                game_name: self.game_name,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::CreateSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateSnapshotInput {
+                    game_name: self.game_name
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CreateSnapshot`](crate::operation::CreateSnapshot)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateSnapshot,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateSnapshot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateSnapshotInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateSnapshotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.game_name;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/game/{GameName}/snapshot", GameName = game_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/snapshot", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateSnapshotInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateSnapshotInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_snapshot(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateSnapshot::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateSnapshot",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateSnapshot::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateSnapshot", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -402,7 +277,7 @@ impl CreateSnapshotInput {
 
 /// See [`CreateStageInput`](crate::input::CreateStageInput).
 pub mod create_stage_input {
-
+    
     /// A builder for [`CreateStageInput`](crate::input::CreateStageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -411,9 +286,7 @@ pub mod create_stage_input {
         pub(crate) role: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the game.</p>
@@ -423,8 +296,7 @@ pub mod create_stage_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -433,8 +305,7 @@ pub mod create_stage_input {
         }
         /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -443,8 +314,7 @@ pub mod create_stage_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The description of the stage.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -453,8 +323,7 @@ pub mod create_stage_input {
         }
         /// <p>The description of the stage.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -463,188 +332,119 @@ pub mod create_stage_input {
         }
         /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to apply to the stage.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags to apply to the stage.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateStageInput`](crate::input::CreateStageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateStageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateStageInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                role: self.role,
-                description: self.description,
-                client_token: self.client_token,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateStageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateStageInput {
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                    role: self.role
+                    ,
+                    description: self.description
+                    ,
+                    client_token: self.client_token
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateStageInput {
     /// Consumes the builder and constructs an Operation<[`CreateStage`](crate::operation::CreateStage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateStage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateStage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateStageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateStageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.game_name;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/game/{GameName}/stage", GameName = game_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/stage", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateStageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateStageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_stage(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_stage(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateStage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateStage",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateStage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateStage", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -656,7 +456,7 @@ impl CreateStageInput {
 
 /// See [`DeleteGameInput`](crate::input::DeleteGameInput).
 pub mod delete_game_input {
-
+    
     /// A builder for [`DeleteGameInput`](crate::input::DeleteGameInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -670,90 +470,53 @@ pub mod delete_game_input {
         }
         /// <p>The name of the game to delete.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGameInput`](crate::input::DeleteGameInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteGameInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteGameInput {
-                game_name: self.game_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteGameInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteGameInput {
+                    game_name: self.game_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteGameInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGame`](crate::operation::DeleteGame)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteGame,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteGame, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteGameInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteGameInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.game_name;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_3,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_3 = input_3.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/game/{GameName}", GameName = game_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteGameInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteGameInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -763,51 +526,34 @@ impl DeleteGameInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteGame::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteGame",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteGame::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteGame", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -819,7 +565,7 @@ impl DeleteGameInput {
 
 /// See [`DeleteStageInput`](crate::input::DeleteStageInput).
 pub mod delete_stage_input {
-
+    
     /// A builder for [`DeleteStageInput`](crate::input::DeleteStageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -834,8 +580,7 @@ pub mod delete_stage_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage to delete.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -844,115 +589,61 @@ pub mod delete_stage_input {
         }
         /// <p>The name of the stage to delete.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteStageInput`](crate::input::DeleteStageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteStageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteStageInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteStageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteStageInput {
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteStageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStage`](crate::operation::DeleteStage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteStage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteStage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteStageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteStageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.game_name;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_4 = input_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_5 = &_input.stage_name;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stage_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let stage_name = aws_smithy_http::label::fmt_string(
-                    input_5,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_5 = input_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))?;
+                let stage_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if stage_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "stage_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/stage/{StageName}",
-                    GameName = game_name,
-                    StageName = stage_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/stage/{StageName}", GameName = game_name, StageName = stage_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteStageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteStageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -962,51 +653,34 @@ impl DeleteStageInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteStage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteStage",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteStage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteStage", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1018,7 +692,7 @@ impl DeleteStageInput {
 
 /// See [`DisconnectPlayerInput`](crate::input::DisconnectPlayerInput).
 pub mod disconnect_player_input {
-
+    
     /// A builder for [`DisconnectPlayerInput`](crate::input::DisconnectPlayerInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1034,8 +708,7 @@ pub mod disconnect_player_input {
         }
         /// <p>The unique identifier representing a player.</p>
         pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.player_id = input;
-            self
+            self.player_id = input; self
         }
         /// <p>The name of the game.</p>
         pub fn game_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1044,8 +717,7 @@ pub mod disconnect_player_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1054,138 +726,69 @@ pub mod disconnect_player_input {
         }
         /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// Consumes the builder and constructs a [`DisconnectPlayerInput`](crate::input::DisconnectPlayerInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DisconnectPlayerInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DisconnectPlayerInput {
-                player_id: self.player_id,
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-            })
+        pub fn build(self) -> Result<crate::input::DisconnectPlayerInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DisconnectPlayerInput {
+                    player_id: self.player_id
+                    ,
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DisconnectPlayerInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectPlayer`](crate::operation::DisconnectPlayer)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DisconnectPlayer,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisconnectPlayer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DisconnectPlayerInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DisconnectPlayerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.game_name;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_6,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_6 = input_6.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_7 = &_input.stage_name;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stage_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let stage_name = aws_smithy_http::label::fmt_string(
-                    input_7,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_7 = input_7.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))?;
+                let stage_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if stage_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "stage_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))
+                            }
                 let input_8 = &_input.player_id;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "player_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let player_id = aws_smithy_http::label::fmt_string(
-                    input_8,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_8 = input_8.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("player_id", "cannot be empty or unset"))?;
+                let player_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if player_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "player_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/runtime/game/{GameName}/stage/{StageName}/player/{PlayerId}/disconnect",
-                    GameName = game_name,
-                    StageName = stage_name,
-                    PlayerId = player_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("player_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/runtime/game/{GameName}/stage/{StageName}/player/{PlayerId}/disconnect", GameName = game_name, StageName = stage_name, PlayerId = player_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DisconnectPlayerInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DisconnectPlayerInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1195,51 +798,34 @@ impl DisconnectPlayerInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DisconnectPlayer::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DisconnectPlayer",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisconnectPlayer::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisconnectPlayer", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1251,7 +837,7 @@ impl DisconnectPlayerInput {
 
 /// See [`ExportSnapshotInput`](crate::input::ExportSnapshotInput).
 pub mod export_snapshot_input {
-
+    
     /// A builder for [`ExportSnapshotInput`](crate::input::ExportSnapshotInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1266,8 +852,7 @@ pub mod export_snapshot_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The identifier of the snapshot to export.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1276,115 +861,61 @@ pub mod export_snapshot_input {
         }
         /// <p>The identifier of the snapshot to export.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// Consumes the builder and constructs a [`ExportSnapshotInput`](crate::input::ExportSnapshotInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ExportSnapshotInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ExportSnapshotInput {
-                game_name: self.game_name,
-                snapshot_id: self.snapshot_id,
-            })
+        pub fn build(self) -> Result<crate::input::ExportSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ExportSnapshotInput {
+                    game_name: self.game_name
+                    ,
+                    snapshot_id: self.snapshot_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ExportSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`ExportSnapshot`](crate::operation::ExportSnapshot)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ExportSnapshot,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ExportSnapshot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ExportSnapshotInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ExportSnapshotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.game_name;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_9,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_9 = input_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_10 = &_input.snapshot_id;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "snapshot_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(
-                    input_10,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_10 = input_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "snapshot_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/snapshot/{SnapshotId}/export",
-                    GameName = game_name,
-                    SnapshotId = snapshot_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/snapshot/{SnapshotId}/export", GameName = game_name, SnapshotId = snapshot_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ExportSnapshotInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ExportSnapshotInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1394,51 +925,34 @@ impl ExportSnapshotInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ExportSnapshot::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ExportSnapshot",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ExportSnapshot::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ExportSnapshot", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1450,7 +964,7 @@ impl ExportSnapshotInput {
 
 /// See [`GetExtensionInput`](crate::input::GetExtensionInput).
 pub mod get_extension_input {
-
+    
     /// A builder for [`GetExtensionInput`](crate::input::GetExtensionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1465,8 +979,7 @@ pub mod get_extension_input {
         }
         /// <p>The namespace (qualifier) of the extension.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1475,115 +988,61 @@ pub mod get_extension_input {
         }
         /// <p>The name of the extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`GetExtensionInput`](crate::input::GetExtensionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetExtensionInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetExtensionInput {
-                namespace: self.namespace,
-                name: self.name,
-            })
+        pub fn build(self) -> Result<crate::input::GetExtensionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetExtensionInput {
+                    namespace: self.namespace
+                    ,
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetExtensionInput {
     /// Consumes the builder and constructs an Operation<[`GetExtension`](crate::operation::GetExtension)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetExtension,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetExtension, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetExtensionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetExtensionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.namespace;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "namespace",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let namespace = aws_smithy_http::label::fmt_string(
-                    input_11,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_11 = input_11.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("namespace", "cannot be empty or unset"))?;
+                let namespace = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if namespace.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "namespace",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("namespace", "cannot be empty or unset"))
+                            }
                 let input_12 = &_input.name;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let name = aws_smithy_http::label::fmt_string(
-                    input_12,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_12 = input_12.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))?;
+                let name = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/extension/{Namespace}/{Name}",
-                    Namespace = namespace,
-                    Name = name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))
+                            }
+                write!(output, "/extension/{Namespace}/{Name}", Namespace = namespace, Name = name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetExtensionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetExtensionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1593,51 +1052,34 @@ impl GetExtensionInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetExtension::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetExtension",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetExtension::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetExtension", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1649,7 +1091,7 @@ impl GetExtensionInput {
 
 /// See [`GetExtensionVersionInput`](crate::input::GetExtensionVersionInput).
 pub mod get_extension_version_input {
-
+    
     /// A builder for [`GetExtensionVersionInput`](crate::input::GetExtensionVersionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1665,8 +1107,7 @@ pub mod get_extension_version_input {
         }
         /// <p>The namespace (qualifier) of the extension.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1675,8 +1116,7 @@ pub mod get_extension_version_input {
         }
         /// <p>The name of the extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the extension.</p>
         pub fn extension_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1684,142 +1124,70 @@ pub mod get_extension_version_input {
             self
         }
         /// <p>The version of the extension.</p>
-        pub fn set_extension_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.extension_version = input;
-            self
+        pub fn set_extension_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.extension_version = input; self
         }
         /// Consumes the builder and constructs a [`GetExtensionVersionInput`](crate::input::GetExtensionVersionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetExtensionVersionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetExtensionVersionInput {
-                namespace: self.namespace,
-                name: self.name,
-                extension_version: self.extension_version,
-            })
+        pub fn build(self) -> Result<crate::input::GetExtensionVersionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetExtensionVersionInput {
+                    namespace: self.namespace
+                    ,
+                    name: self.name
+                    ,
+                    extension_version: self.extension_version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetExtensionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetExtensionVersion`](crate::operation::GetExtensionVersion)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetExtensionVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetExtensionVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetExtensionVersionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetExtensionVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.namespace;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "namespace",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let namespace = aws_smithy_http::label::fmt_string(
-                    input_13,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_13 = input_13.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("namespace", "cannot be empty or unset"))?;
+                let namespace = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if namespace.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "namespace",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("namespace", "cannot be empty or unset"))
+                            }
                 let input_14 = &_input.name;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let name = aws_smithy_http::label::fmt_string(
-                    input_14,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_14 = input_14.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))?;
+                let name = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))
+                            }
                 let input_15 = &_input.extension_version;
-                let input_15 = input_15.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "extension_version",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let extension_version = aws_smithy_http::label::fmt_string(
-                    input_15,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_15 = input_15.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("extension_version", "cannot be empty or unset"))?;
+                let extension_version = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if extension_version.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "extension_version",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/extension/{Namespace}/{Name}/version/{ExtensionVersion}",
-                    Namespace = namespace,
-                    Name = name,
-                    ExtensionVersion = extension_version
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("extension_version", "cannot be empty or unset"))
+                            }
+                write!(output, "/extension/{Namespace}/{Name}/version/{ExtensionVersion}", Namespace = namespace, Name = name, ExtensionVersion = extension_version).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetExtensionVersionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetExtensionVersionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1829,51 +1197,34 @@ impl GetExtensionVersionInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetExtensionVersion::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetExtensionVersion",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetExtensionVersion::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetExtensionVersion", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1885,7 +1236,7 @@ impl GetExtensionVersionInput {
 
 /// See [`GetGameInput`](crate::input::GetGameInput).
 pub mod get_game_input {
-
+    
     /// A builder for [`GetGameInput`](crate::input::GetGameInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1899,90 +1250,53 @@ pub mod get_game_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// Consumes the builder and constructs a [`GetGameInput`](crate::input::GetGameInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetGameInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetGameInput {
-                game_name: self.game_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetGameInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetGameInput {
+                    game_name: self.game_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetGameInput {
     /// Consumes the builder and constructs an Operation<[`GetGame`](crate::operation::GetGame)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetGame,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetGame, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetGameInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetGameInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.game_name;
-                let input_16 = input_16.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_16,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_16 = input_16.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/game/{GameName}", GameName = game_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetGameInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetGameInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1992,49 +1306,34 @@ impl GetGameInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetGame::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetGame",
-                    "gamesparks",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetGame::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetGame", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2046,7 +1345,7 @@ impl GetGameInput {
 
 /// See [`GetGameConfigurationInput`](crate::input::GetGameConfigurationInput).
 pub mod get_game_configuration_input {
-
+    
     /// A builder for [`GetGameConfigurationInput`](crate::input::GetGameConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2061,8 +1360,7 @@ pub mod get_game_configuration_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// Appends an item to `sections`.
         ///
@@ -2071,110 +1369,62 @@ pub mod get_game_configuration_input {
         /// <p>The list of sections to return.</p>
         pub fn sections(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sections.unwrap_or_default();
-            v.push(input.into());
-            self.sections = Some(v);
-            self
+                            v.push(input.into());
+                            self.sections = Some(v);
+                            self
         }
         /// <p>The list of sections to return.</p>
-        pub fn set_sections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sections = input;
-            self
+        pub fn set_sections(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sections = input; self
         }
         /// Consumes the builder and constructs a [`GetGameConfigurationInput`](crate::input::GetGameConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetGameConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetGameConfigurationInput {
-                game_name: self.game_name,
-                sections: self.sections,
-            })
+        pub fn build(self) -> Result<crate::input::GetGameConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetGameConfigurationInput {
+                    game_name: self.game_name
+                    ,
+                    sections: self.sections
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetGameConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetGameConfiguration`](crate::operation::GetGameConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetGameConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetGameConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetGameConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetGameConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.game_name;
-                let input_17 = input_17.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_17,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_17 = input_17.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/configuration",
-                    GameName = game_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/configuration", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetGameConfigurationInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetGameConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.sections {
-                    {
+                     {
                         for inner_19 in inner_18 {
-                            query.push_kv(
-                                "Sections",
-                                &aws_smithy_http::query::fmt_string(&inner_19),
-                            );
+                            query.push_kv("Sections", &aws_smithy_http::query::fmt_string(&inner_19));
                         }
                     }
                 }
@@ -2182,12 +1432,9 @@ impl GetGameConfigurationInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetGameConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetGameConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2198,51 +1445,34 @@ impl GetGameConfigurationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetGameConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetGameConfiguration",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetGameConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetGameConfiguration", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2254,7 +1484,7 @@ impl GetGameConfigurationInput {
 
 /// See [`GetGeneratedCodeJobInput`](crate::input::GetGeneratedCodeJobInput).
 pub mod get_generated_code_job_input {
-
+    
     /// A builder for [`GetGeneratedCodeJobInput`](crate::input::GetGeneratedCodeJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2270,8 +1500,7 @@ pub mod get_generated_code_job_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The identifier of the snapshot for the code generation job.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2280,8 +1509,7 @@ pub mod get_generated_code_job_input {
         }
         /// <p>The identifier of the snapshot for the code generation job.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>The identifier of the code generation job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2290,138 +1518,69 @@ pub mod get_generated_code_job_input {
         }
         /// <p>The identifier of the code generation job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`GetGeneratedCodeJobInput`](crate::input::GetGeneratedCodeJobInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetGeneratedCodeJobInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetGeneratedCodeJobInput {
-                game_name: self.game_name,
-                snapshot_id: self.snapshot_id,
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetGeneratedCodeJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetGeneratedCodeJobInput {
+                    game_name: self.game_name
+                    ,
+                    snapshot_id: self.snapshot_id
+                    ,
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetGeneratedCodeJobInput {
     /// Consumes the builder and constructs an Operation<[`GetGeneratedCodeJob`](crate::operation::GetGeneratedCodeJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetGeneratedCodeJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetGeneratedCodeJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetGeneratedCodeJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetGeneratedCodeJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.game_name;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_20,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_20 = input_20.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_21 = &_input.snapshot_id;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "snapshot_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(
-                    input_21,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_21 = input_21.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "snapshot_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))
+                            }
                 let input_22 = &_input.job_id;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "job_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let job_id = aws_smithy_http::label::fmt_string(
-                    input_22,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_22 = input_22.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
+                let job_id = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "job_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-job/{JobId}",
-                    GameName = game_name,
-                    SnapshotId = snapshot_id,
-                    JobId = job_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-job/{JobId}", GameName = game_name, SnapshotId = snapshot_id, JobId = job_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetGeneratedCodeJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetGeneratedCodeJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2431,51 +1590,34 @@ impl GetGeneratedCodeJobInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetGeneratedCodeJob::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetGeneratedCodeJob",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetGeneratedCodeJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetGeneratedCodeJob", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2487,7 +1629,7 @@ impl GetGeneratedCodeJobInput {
 
 /// See [`GetPlayerConnectionStatusInput`](crate::input::GetPlayerConnectionStatusInput).
 pub mod get_player_connection_status_input {
-
+    
     /// A builder for [`GetPlayerConnectionStatusInput`](crate::input::GetPlayerConnectionStatusInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2503,8 +1645,7 @@ pub mod get_player_connection_status_input {
         }
         /// <p>The unique identifier representing a player.</p>
         pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.player_id = input;
-            self
+            self.player_id = input; self
         }
         /// <p>The name of the game.</p>
         pub fn game_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2513,8 +1654,7 @@ pub mod get_player_connection_status_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2523,138 +1663,69 @@ pub mod get_player_connection_status_input {
         }
         /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// Consumes the builder and constructs a [`GetPlayerConnectionStatusInput`](crate::input::GetPlayerConnectionStatusInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetPlayerConnectionStatusInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetPlayerConnectionStatusInput {
-                player_id: self.player_id,
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetPlayerConnectionStatusInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetPlayerConnectionStatusInput {
+                    player_id: self.player_id
+                    ,
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetPlayerConnectionStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetPlayerConnectionStatus`](crate::operation::GetPlayerConnectionStatus)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetPlayerConnectionStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetPlayerConnectionStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetPlayerConnectionStatusInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetPlayerConnectionStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.game_name;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_23,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_23 = input_23.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_24 = &_input.stage_name;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stage_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let stage_name = aws_smithy_http::label::fmt_string(
-                    input_24,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_24 = input_24.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))?;
+                let stage_name = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if stage_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "stage_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))
+                            }
                 let input_25 = &_input.player_id;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "player_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let player_id = aws_smithy_http::label::fmt_string(
-                    input_25,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_25 = input_25.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("player_id", "cannot be empty or unset"))?;
+                let player_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if player_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "player_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/runtime/game/{GameName}/stage/{StageName}/player/{PlayerId}/connection",
-                    GameName = game_name,
-                    StageName = stage_name,
-                    PlayerId = player_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("player_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/runtime/game/{GameName}/stage/{StageName}/player/{PlayerId}/connection", GameName = game_name, StageName = stage_name, PlayerId = player_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetPlayerConnectionStatusInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetPlayerConnectionStatusInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2664,51 +1735,34 @@ impl GetPlayerConnectionStatusInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetPlayerConnectionStatus::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetPlayerConnectionStatus",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetPlayerConnectionStatus::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetPlayerConnectionStatus", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2720,7 +1774,7 @@ impl GetPlayerConnectionStatusInput {
 
 /// See [`GetSnapshotInput`](crate::input::GetSnapshotInput).
 pub mod get_snapshot_input {
-
+    
     /// A builder for [`GetSnapshotInput`](crate::input::GetSnapshotInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2736,8 +1790,7 @@ pub mod get_snapshot_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The identifier of the snapshot.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2746,8 +1799,7 @@ pub mod get_snapshot_input {
         }
         /// <p>The identifier of the snapshot.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// Appends an item to `sections`.
         ///
@@ -2756,129 +1808,70 @@ pub mod get_snapshot_input {
         /// <p>The list of game configuration sections to be described.</p>
         pub fn sections(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sections.unwrap_or_default();
-            v.push(input.into());
-            self.sections = Some(v);
-            self
+                            v.push(input.into());
+                            self.sections = Some(v);
+                            self
         }
         /// <p>The list of game configuration sections to be described.</p>
-        pub fn set_sections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sections = input;
-            self
+        pub fn set_sections(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sections = input; self
         }
         /// Consumes the builder and constructs a [`GetSnapshotInput`](crate::input::GetSnapshotInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetSnapshotInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetSnapshotInput {
-                game_name: self.game_name,
-                snapshot_id: self.snapshot_id,
-                sections: self.sections,
-            })
+        pub fn build(self) -> Result<crate::input::GetSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetSnapshotInput {
+                    game_name: self.game_name
+                    ,
+                    snapshot_id: self.snapshot_id
+                    ,
+                    sections: self.sections
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`GetSnapshot`](crate::operation::GetSnapshot)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetSnapshot,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetSnapshot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetSnapshotInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetSnapshotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.game_name;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_26,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_26 = input_26.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_27 = &_input.snapshot_id;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "snapshot_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(
-                    input_27,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_27 = input_27.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "snapshot_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/snapshot/{SnapshotId}",
-                    GameName = game_name,
-                    SnapshotId = snapshot_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/snapshot/{SnapshotId}", GameName = game_name, SnapshotId = snapshot_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetSnapshotInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetSnapshotInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_28) = &_input.sections {
-                    {
+                     {
                         for inner_29 in inner_28 {
-                            query.push_kv(
-                                "Sections",
-                                &aws_smithy_http::query::fmt_string(&inner_29),
-                            );
+                            query.push_kv("Sections", &aws_smithy_http::query::fmt_string(&inner_29));
                         }
                     }
                 }
@@ -2886,12 +1879,9 @@ impl GetSnapshotInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetSnapshotInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetSnapshotInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2902,51 +1892,34 @@ impl GetSnapshotInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetSnapshot::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetSnapshot",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetSnapshot::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetSnapshot", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2958,7 +1931,7 @@ impl GetSnapshotInput {
 
 /// See [`GetStageInput`](crate::input::GetStageInput).
 pub mod get_stage_input {
-
+    
     /// A builder for [`GetStageInput`](crate::input::GetStageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2973,8 +1946,7 @@ pub mod get_stage_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2983,115 +1955,61 @@ pub mod get_stage_input {
         }
         /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// Consumes the builder and constructs a [`GetStageInput`](crate::input::GetStageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetStageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetStageInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetStageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetStageInput {
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetStageInput {
     /// Consumes the builder and constructs an Operation<[`GetStage`](crate::operation::GetStage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetStage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetStage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetStageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetStageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.game_name;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_30,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_30 = input_30.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_31 = &_input.stage_name;
-                let input_31 = input_31.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stage_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let stage_name = aws_smithy_http::label::fmt_string(
-                    input_31,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_31 = input_31.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))?;
+                let stage_name = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if stage_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "stage_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/stage/{StageName}",
-                    GameName = game_name,
-                    StageName = stage_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/stage/{StageName}", GameName = game_name, StageName = stage_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetStageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetStageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3101,49 +2019,34 @@ impl GetStageInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetStage::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetStage",
-                    "gamesparks",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetStage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetStage", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3155,7 +2058,7 @@ impl GetStageInput {
 
 /// See [`GetStageDeploymentInput`](crate::input::GetStageDeploymentInput).
 pub mod get_stage_deployment_input {
-
+    
     /// A builder for [`GetStageDeploymentInput`](crate::input::GetStageDeploymentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3171,8 +2074,7 @@ pub mod get_stage_deployment_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3181,8 +2083,7 @@ pub mod get_stage_deployment_input {
         }
         /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3190,137 +2091,73 @@ pub mod get_stage_deployment_input {
             self
         }
         /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// Consumes the builder and constructs a [`GetStageDeploymentInput`](crate::input::GetStageDeploymentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetStageDeploymentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetStageDeploymentInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                deployment_id: self.deployment_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetStageDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetStageDeploymentInput {
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                    deployment_id: self.deployment_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetStageDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`GetStageDeployment`](crate::operation::GetStageDeployment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetStageDeployment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetStageDeployment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetStageDeploymentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetStageDeploymentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.game_name;
-                let input_32 = input_32.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_32,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_32 = input_32.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_33 = &_input.stage_name;
-                let input_33 = input_33.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stage_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let stage_name = aws_smithy_http::label::fmt_string(
-                    input_33,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_33 = input_33.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))?;
+                let stage_name = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if stage_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "stage_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/stage/{StageName}/deployment",
-                    GameName = game_name,
-                    StageName = stage_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/stage/{StageName}/deployment", GameName = game_name, StageName = stage_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetStageDeploymentInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetStageDeploymentInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_34) = &_input.deployment_id {
-                    {
-                        query.push_kv(
-                            "DeploymentId",
-                            &aws_smithy_http::query::fmt_string(&inner_34),
-                        );
+                     {
+                        query.push_kv("DeploymentId", &aws_smithy_http::query::fmt_string(&inner_34));
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetStageDeploymentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetStageDeploymentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3331,51 +2168,34 @@ impl GetStageDeploymentInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetStageDeployment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetStageDeployment",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetStageDeployment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetStageDeployment", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3387,7 +2207,7 @@ impl GetStageDeploymentInput {
 
 /// See [`ImportGameConfigurationInput`](crate::input::ImportGameConfigurationInput).
 pub mod import_game_configuration_input {
-
+    
     /// A builder for [`ImportGameConfigurationInput`](crate::input::ImportGameConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3402,8 +2222,7 @@ pub mod import_game_configuration_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The source used to import configuration sections.</p>
         pub fn import_source(mut self, input: crate::model::ImportGameConfigurationSource) -> Self {
@@ -3411,171 +2230,97 @@ pub mod import_game_configuration_input {
             self
         }
         /// <p>The source used to import configuration sections.</p>
-        pub fn set_import_source(
-            mut self,
-            input: std::option::Option<crate::model::ImportGameConfigurationSource>,
-        ) -> Self {
-            self.import_source = input;
-            self
+        pub fn set_import_source(mut self, input: std::option::Option<crate::model::ImportGameConfigurationSource>) -> Self {
+            self.import_source = input; self
         }
         /// Consumes the builder and constructs a [`ImportGameConfigurationInput`](crate::input::ImportGameConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ImportGameConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ImportGameConfigurationInput {
-                game_name: self.game_name,
-                import_source: self.import_source,
-            })
+        pub fn build(self) -> Result<crate::input::ImportGameConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ImportGameConfigurationInput {
+                    game_name: self.game_name
+                    ,
+                    import_source: self.import_source
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ImportGameConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ImportGameConfiguration`](crate::operation::ImportGameConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ImportGameConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ImportGameConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ImportGameConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ImportGameConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.game_name;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_35,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_35 = input_35.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/configuration",
-                    GameName = game_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/configuration", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ImportGameConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ImportGameConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_import_game_configuration(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_import_game_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ImportGameConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ImportGameConfiguration",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ImportGameConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ImportGameConfiguration", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3587,7 +2332,7 @@ impl ImportGameConfigurationInput {
 
 /// See [`ListExtensionsInput`](crate::input::ListExtensionsInput).
 pub mod list_extensions_input {
-
+    
     /// A builder for [`ListExtensionsInput`](crate::input::ListExtensionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3595,99 +2340,73 @@ pub mod list_extensions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListExtensionsInput`](crate::input::ListExtensionsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListExtensionsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListExtensionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListExtensionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListExtensionsInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListExtensionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExtensions`](crate::operation::ListExtensions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListExtensions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListExtensions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListExtensionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListExtensionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/extension").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListExtensionsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListExtensionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.max_results {
                     if *inner_36 != 0 {
-                        query.push_kv(
-                            "MaxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
-                        );
+                        query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(*inner_36).encode());
                     }
                 }
                 if let Some(inner_37) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                     }
                 }
@@ -3695,12 +2414,9 @@ impl ListExtensionsInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListExtensionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListExtensionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3711,51 +2427,34 @@ impl ListExtensionsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListExtensions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListExtensions",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListExtensions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListExtensions", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3767,7 +2466,7 @@ impl ListExtensionsInput {
 
 /// See [`ListExtensionVersionsInput`](crate::input::ListExtensionVersionsInput).
 pub mod list_extension_versions_input {
-
+    
     /// A builder for [`ListExtensionVersionsInput`](crate::input::ListExtensionVersionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3784,8 +2483,7 @@ pub mod list_extension_versions_input {
         }
         /// <p>The namespace (qualifier) of the extension.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3794,163 +2492,101 @@ pub mod list_extension_versions_input {
         }
         /// <p>The name of the extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListExtensionVersionsInput`](crate::input::ListExtensionVersionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListExtensionVersionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListExtensionVersionsInput {
-                namespace: self.namespace,
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListExtensionVersionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListExtensionVersionsInput {
+                    namespace: self.namespace
+                    ,
+                    name: self.name
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListExtensionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExtensionVersions`](crate::operation::ListExtensionVersions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListExtensionVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListExtensionVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListExtensionVersionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListExtensionVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.namespace;
-                let input_38 = input_38.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "namespace",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let namespace = aws_smithy_http::label::fmt_string(
-                    input_38,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_38 = input_38.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("namespace", "cannot be empty or unset"))?;
+                let namespace = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if namespace.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "namespace",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("namespace", "cannot be empty or unset"))
+                            }
                 let input_39 = &_input.name;
-                let input_39 = input_39.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let name = aws_smithy_http::label::fmt_string(
-                    input_39,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_39 = input_39.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))?;
+                let name = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/extension/{Namespace}/{Name}/version",
-                    Namespace = namespace,
-                    Name = name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))
+                            }
+                write!(output, "/extension/{Namespace}/{Name}/version", Namespace = namespace, Name = name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListExtensionVersionsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListExtensionVersionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_40) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_40));
                     }
                 }
                 if let Some(inner_41) = &_input.max_results {
                     if *inner_41 != 0 {
-                        query.push_kv(
-                            "MaxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
-                        );
+                        query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(*inner_41).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListExtensionVersionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListExtensionVersionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3961,51 +2597,34 @@ impl ListExtensionVersionsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListExtensionVersions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListExtensionVersions",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListExtensionVersions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListExtensionVersions", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4017,7 +2636,7 @@ impl ListExtensionVersionsInput {
 
 /// See [`ListGamesInput`](crate::input::ListGamesInput).
 pub mod list_games_input {
-
+    
     /// A builder for [`ListGamesInput`](crate::input::ListGamesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4025,99 +2644,73 @@ pub mod list_games_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGamesInput`](crate::input::ListGamesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListGamesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListGamesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListGamesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListGamesInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListGamesInput {
     /// Consumes the builder and constructs an Operation<[`ListGames`](crate::operation::ListGames)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListGames,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListGames, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListGamesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListGamesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/game").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListGamesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListGamesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.max_results {
                     if *inner_42 != 0 {
-                        query.push_kv(
-                            "MaxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
-                        );
+                        query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(*inner_42).encode());
                     }
                 }
                 if let Some(inner_43) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                     }
                 }
@@ -4125,12 +2718,9 @@ impl ListGamesInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListGamesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListGamesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4141,49 +2731,34 @@ impl ListGamesInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::ListGames::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "ListGames",
-                    "gamesparks",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListGames::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListGames", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4195,7 +2770,7 @@ impl ListGamesInput {
 
 /// See [`ListGeneratedCodeJobsInput`](crate::input::ListGeneratedCodeJobsInput).
 pub mod list_generated_code_jobs_input {
-
+    
     /// A builder for [`ListGeneratedCodeJobsInput`](crate::input::ListGeneratedCodeJobsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4212,8 +2787,7 @@ pub mod list_generated_code_jobs_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The identifier of the snapshot.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4222,150 +2796,91 @@ pub mod list_generated_code_jobs_input {
         }
         /// <p>The identifier of the snapshot.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGeneratedCodeJobsInput`](crate::input::ListGeneratedCodeJobsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListGeneratedCodeJobsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListGeneratedCodeJobsInput {
-                game_name: self.game_name,
-                snapshot_id: self.snapshot_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListGeneratedCodeJobsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListGeneratedCodeJobsInput {
+                    game_name: self.game_name
+                    ,
+                    snapshot_id: self.snapshot_id
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListGeneratedCodeJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListGeneratedCodeJobs`](crate::operation::ListGeneratedCodeJobs)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListGeneratedCodeJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListGeneratedCodeJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListGeneratedCodeJobsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListGeneratedCodeJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.game_name;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_44,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_44 = input_44.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_45 = &_input.snapshot_id;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "snapshot_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(
-                    input_45,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_45 = input_45.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "snapshot_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-jobs",
-                    GameName = game_name,
-                    SnapshotId = snapshot_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-jobs", GameName = game_name, SnapshotId = snapshot_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListGeneratedCodeJobsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListGeneratedCodeJobsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_46) = &_input.max_results {
                     if *inner_46 != 0 {
-                        query.push_kv(
-                            "MaxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_46).encode(),
-                        );
+                        query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(*inner_46).encode());
                     }
                 }
                 if let Some(inner_47) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_47));
                     }
                 }
@@ -4373,12 +2888,9 @@ impl ListGeneratedCodeJobsInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListGeneratedCodeJobsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListGeneratedCodeJobsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4389,51 +2901,34 @@ impl ListGeneratedCodeJobsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListGeneratedCodeJobs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListGeneratedCodeJobs",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListGeneratedCodeJobs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListGeneratedCodeJobs", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4445,7 +2940,7 @@ impl ListGeneratedCodeJobsInput {
 
 /// See [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
 pub mod list_snapshots_input {
-
+    
     /// A builder for [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4461,123 +2956,83 @@ pub mod list_snapshots_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListSnapshotsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListSnapshotsInput {
-                game_name: self.game_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListSnapshotsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListSnapshotsInput {
+                    game_name: self.game_name
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`ListSnapshots`](crate::operation::ListSnapshots)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListSnapshots,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSnapshots, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListSnapshotsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListSnapshotsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.game_name;
-                let input_48 = input_48.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_48,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_48 = input_48.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_48, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/game/{GameName}/snapshot", GameName = game_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/snapshot", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListSnapshotsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListSnapshotsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_49) = &_input.max_results {
                     if *inner_49 != 0 {
-                        query.push_kv(
-                            "MaxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
-                        );
+                        query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(*inner_49).encode());
                     }
                 }
                 if let Some(inner_50) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_50));
                     }
                 }
@@ -4585,12 +3040,9 @@ impl ListSnapshotsInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListSnapshotsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListSnapshotsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4601,51 +3053,34 @@ impl ListSnapshotsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListSnapshots::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListSnapshots",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSnapshots::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSnapshots", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4657,7 +3092,7 @@ impl ListSnapshotsInput {
 
 /// See [`ListStageDeploymentsInput`](crate::input::ListStageDeploymentsInput).
 pub mod list_stage_deployments_input {
-
+    
     /// A builder for [`ListStageDeploymentsInput`](crate::input::ListStageDeploymentsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4674,8 +3109,7 @@ pub mod list_stage_deployments_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4684,163 +3118,101 @@ pub mod list_stage_deployments_input {
         }
         /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListStageDeploymentsInput`](crate::input::ListStageDeploymentsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListStageDeploymentsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListStageDeploymentsInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListStageDeploymentsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListStageDeploymentsInput {
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListStageDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListStageDeployments`](crate::operation::ListStageDeployments)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListStageDeployments,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListStageDeployments, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListStageDeploymentsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListStageDeploymentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.game_name;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_51,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_51 = input_51.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_52 = &_input.stage_name;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stage_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let stage_name = aws_smithy_http::label::fmt_string(
-                    input_52,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_52 = input_52.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))?;
+                let stage_name = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if stage_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "stage_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/stage/{StageName}/deployments",
-                    GameName = game_name,
-                    StageName = stage_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/stage/{StageName}/deployments", GameName = game_name, StageName = stage_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListStageDeploymentsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListStageDeploymentsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_53) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_53));
                     }
                 }
                 if let Some(inner_54) = &_input.max_results {
                     if *inner_54 != 0 {
-                        query.push_kv(
-                            "MaxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
-                        );
+                        query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(*inner_54).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListStageDeploymentsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListStageDeploymentsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4851,51 +3223,34 @@ impl ListStageDeploymentsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListStageDeployments::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListStageDeployments",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListStageDeployments::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListStageDeployments", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4907,7 +3262,7 @@ impl ListStageDeploymentsInput {
 
 /// See [`ListStagesInput`](crate::input::ListStagesInput).
 pub mod list_stages_input {
-
+    
     /// A builder for [`ListStagesInput`](crate::input::ListStagesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4923,123 +3278,83 @@ pub mod list_stages_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return.</p>
+        /// <p>The maximum number of results to return.</p> 
         /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that indicates the start of the next sequential page of results.</p>
+        /// <p>The token that indicates the start of the next sequential page of results.</p> 
         /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStagesInput`](crate::input::ListStagesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListStagesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListStagesInput {
-                game_name: self.game_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListStagesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListStagesInput {
+                    game_name: self.game_name
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListStagesInput {
     /// Consumes the builder and constructs an Operation<[`ListStages`](crate::operation::ListStages)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListStages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListStages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListStagesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListStagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_55 = &_input.game_name;
-                let input_55 = input_55.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_55,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_55 = input_55.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_55, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/game/{GameName}/stage", GameName = game_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/stage", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListStagesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListStagesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_56) = &_input.max_results {
                     if *inner_56 != 0 {
-                        query.push_kv(
-                            "MaxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
-                        );
+                        query.push_kv("MaxResults", aws_smithy_types::primitive::Encoder::from(*inner_56).encode());
                     }
                 }
                 if let Some(inner_57) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_57));
                     }
                 }
@@ -5047,12 +3362,9 @@ impl ListStagesInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListStagesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListStagesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5063,51 +3375,34 @@ impl ListStagesInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListStages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListStages",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListStages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListStages", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5119,7 +3414,7 @@ impl ListStagesInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5133,92 +3428,53 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the GameSparks resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_58 = &_input.resource_arn;
-                let input_58 = input_58.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_58,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_58 = input_58.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5228,51 +3484,34 @@ impl ListTagsForResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5284,7 +3523,7 @@ impl ListTagsForResourceInput {
 
 /// See [`StartGeneratedCodeJobInput`](crate::input::StartGeneratedCodeJobInput).
 pub mod start_generated_code_job_input {
-
+    
     /// A builder for [`StartGeneratedCodeJobInput`](crate::input::StartGeneratedCodeJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5300,8 +3539,7 @@ pub mod start_generated_code_job_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The identifier of the snapshot for which to generate code.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5310,8 +3548,7 @@ pub mod start_generated_code_job_input {
         }
         /// <p>The identifier of the snapshot for which to generate code.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>Properties of the generator to use for the job.</p>
         pub fn generator(mut self, input: crate::model::Generator) -> Self {
@@ -5319,192 +3556,105 @@ pub mod start_generated_code_job_input {
             self
         }
         /// <p>Properties of the generator to use for the job.</p>
-        pub fn set_generator(
-            mut self,
-            input: std::option::Option<crate::model::Generator>,
-        ) -> Self {
-            self.generator = input;
-            self
+        pub fn set_generator(mut self, input: std::option::Option<crate::model::Generator>) -> Self {
+            self.generator = input; self
         }
         /// Consumes the builder and constructs a [`StartGeneratedCodeJobInput`](crate::input::StartGeneratedCodeJobInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartGeneratedCodeJobInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::StartGeneratedCodeJobInput {
-                game_name: self.game_name,
-                snapshot_id: self.snapshot_id,
-                generator: self.generator,
-            })
+        pub fn build(self) -> Result<crate::input::StartGeneratedCodeJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartGeneratedCodeJobInput {
+                    game_name: self.game_name
+                    ,
+                    snapshot_id: self.snapshot_id
+                    ,
+                    generator: self.generator
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartGeneratedCodeJobInput {
     /// Consumes the builder and constructs an Operation<[`StartGeneratedCodeJob`](crate::operation::StartGeneratedCodeJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartGeneratedCodeJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartGeneratedCodeJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartGeneratedCodeJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartGeneratedCodeJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_59 = &_input.game_name;
-                let input_59 = input_59.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_59,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_59 = input_59.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_59, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_60 = &_input.snapshot_id;
-                let input_60 = input_60.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "snapshot_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(
-                    input_60,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_60 = input_60.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_60, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "snapshot_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-job",
-                    GameName = game_name,
-                    SnapshotId = snapshot_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-job", GameName = game_name, SnapshotId = snapshot_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartGeneratedCodeJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartGeneratedCodeJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_generated_code_job(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_start_generated_code_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartGeneratedCodeJob::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartGeneratedCodeJob",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartGeneratedCodeJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartGeneratedCodeJob", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5516,7 +3666,7 @@ impl StartGeneratedCodeJobInput {
 
 /// See [`StartStageDeploymentInput`](crate::input::StartStageDeploymentInput).
 pub mod start_stage_deployment_input {
-
+    
     /// A builder for [`StartStageDeploymentInput`](crate::input::StartStageDeploymentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5533,8 +3683,7 @@ pub mod start_stage_deployment_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage to deploy the snapshot onto.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5543,8 +3692,7 @@ pub mod start_stage_deployment_input {
         }
         /// <p>The name of the stage to deploy the snapshot onto.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// <p>The identifier of the snapshot to deploy.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5553,8 +3701,7 @@ pub mod start_stage_deployment_input {
         }
         /// <p>The identifier of the snapshot to deploy.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5563,189 +3710,106 @@ pub mod start_stage_deployment_input {
         }
         /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`StartStageDeploymentInput`](crate::input::StartStageDeploymentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartStageDeploymentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::StartStageDeploymentInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                snapshot_id: self.snapshot_id,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::StartStageDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartStageDeploymentInput {
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                    snapshot_id: self.snapshot_id
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartStageDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StartStageDeployment`](crate::operation::StartStageDeployment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartStageDeployment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartStageDeployment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartStageDeploymentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartStageDeploymentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_61 = &_input.game_name;
-                let input_61 = input_61.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_61,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_61 = input_61.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_61, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_62 = &_input.stage_name;
-                let input_62 = input_62.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stage_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let stage_name = aws_smithy_http::label::fmt_string(
-                    input_62,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_62 = input_62.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))?;
+                let stage_name = aws_smithy_http::label::fmt_string(input_62, aws_smithy_http::label::EncodingStrategy::Default);
                 if stage_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "stage_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/stage/{StageName}/deployment",
-                    GameName = game_name,
-                    StageName = stage_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/stage/{StageName}/deployment", GameName = game_name, StageName = stage_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartStageDeploymentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartStageDeploymentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_stage_deployment(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_start_stage_deployment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartStageDeployment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartStageDeployment",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartStageDeployment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartStageDeployment", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5757,14 +3821,12 @@ impl StartStageDeploymentInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource to add the tags to.</p>
@@ -5774,184 +3836,111 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to add the tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags to add to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_63 = &_input.resource_arn;
-                let input_63 = input_63.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_63,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_63 = input_63.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_63, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5963,7 +3952,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5978,8 +3967,7 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -5988,104 +3976,60 @@ pub mod untag_resource_input {
         /// <p>The keys of the tags to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The keys of the tags to remove.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_64 = &_input.resource_arn;
-                let input_64 = input_64.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_64,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_64 = input_64.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_64, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_65 = &_input.tag_keys;
-                let inner_65 = inner_65.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "tag_keys",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_65 = inner_65.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_66 in inner_65 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_66));
                 }
@@ -6093,12 +4037,9 @@ impl UntagResourceInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6109,51 +4050,34 @@ impl UntagResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6165,7 +4089,7 @@ impl UntagResourceInput {
 
 /// See [`UpdateGameInput`](crate::input::UpdateGameInput).
 pub mod update_game_input {
-
+    
     /// A builder for [`UpdateGameInput`](crate::input::UpdateGameInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6180,8 +4104,7 @@ pub mod update_game_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The description of the game.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6190,159 +4113,96 @@ pub mod update_game_input {
         }
         /// <p>The description of the game.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGameInput`](crate::input::UpdateGameInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateGameInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateGameInput {
-                game_name: self.game_name,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateGameInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateGameInput {
+                    game_name: self.game_name
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateGameInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGame`](crate::operation::UpdateGame)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateGame,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateGame, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateGameInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateGameInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_67 = &_input.game_name;
-                let input_67 = input_67.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_67,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_67 = input_67.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_67, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/game/{GameName}", GameName = game_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateGameInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateGameInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_game(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_game(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateGame::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateGame",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateGame::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateGame", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6354,13 +4214,12 @@ impl UpdateGameInput {
 
 /// See [`UpdateGameConfigurationInput`](crate::input::UpdateGameConfigurationInput).
 pub mod update_game_configuration_input {
-
+    
     /// A builder for [`UpdateGameConfigurationInput`](crate::input::UpdateGameConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
-        pub(crate) modifications:
-            std::option::Option<std::vec::Vec<crate::model::SectionModification>>,
+        pub(crate) modifications: std::option::Option<std::vec::Vec<crate::model::SectionModification>>,
     }
     impl Builder {
         /// <p>The name of the game.</p>
@@ -6370,8 +4229,7 @@ pub mod update_game_configuration_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// Appends an item to `modifications`.
         ///
@@ -6380,176 +4238,102 @@ pub mod update_game_configuration_input {
         /// <p>The list of modifications to make.</p>
         pub fn modifications(mut self, input: crate::model::SectionModification) -> Self {
             let mut v = self.modifications.unwrap_or_default();
-            v.push(input);
-            self.modifications = Some(v);
-            self
+                            v.push(input);
+                            self.modifications = Some(v);
+                            self
         }
         /// <p>The list of modifications to make.</p>
-        pub fn set_modifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SectionModification>>,
-        ) -> Self {
-            self.modifications = input;
-            self
+        pub fn set_modifications(mut self, input: std::option::Option<std::vec::Vec<crate::model::SectionModification>>) -> Self {
+            self.modifications = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGameConfigurationInput`](crate::input::UpdateGameConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateGameConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateGameConfigurationInput {
-                game_name: self.game_name,
-                modifications: self.modifications,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateGameConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateGameConfigurationInput {
+                    game_name: self.game_name
+                    ,
+                    modifications: self.modifications
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateGameConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameConfiguration`](crate::operation::UpdateGameConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateGameConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateGameConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateGameConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateGameConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_68 = &_input.game_name;
-                let input_68 = input_68.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_68,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_68 = input_68.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_68, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/configuration",
-                    GameName = game_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/configuration", GameName = game_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateGameConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateGameConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_game_configuration(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_game_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateGameConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateGameConfiguration",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateGameConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateGameConfiguration", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6561,7 +4345,7 @@ impl UpdateGameConfigurationInput {
 
 /// See [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
 pub mod update_snapshot_input {
-
+    
     /// A builder for [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6577,8 +4361,7 @@ pub mod update_snapshot_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The identifier of the snapshot.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6587,8 +4370,7 @@ pub mod update_snapshot_input {
         }
         /// <p>The identifier of the snapshot.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>The description of the snapshot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6597,184 +4379,104 @@ pub mod update_snapshot_input {
         }
         /// <p>The description of the snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateSnapshotInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateSnapshotInput {
-                game_name: self.game_name,
-                snapshot_id: self.snapshot_id,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateSnapshotInput {
+                    game_name: self.game_name
+                    ,
+                    snapshot_id: self.snapshot_id
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSnapshot`](crate::operation::UpdateSnapshot)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateSnapshot,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateSnapshot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateSnapshotInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateSnapshotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_69 = &_input.game_name;
-                let input_69 = input_69.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_69,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_69 = input_69.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_69, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_70 = &_input.snapshot_id;
-                let input_70 = input_70.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "snapshot_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(
-                    input_70,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_70 = input_70.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_70, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "snapshot_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/snapshot/{SnapshotId}",
-                    GameName = game_name,
-                    SnapshotId = snapshot_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/snapshot/{SnapshotId}", GameName = game_name, SnapshotId = snapshot_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateSnapshotInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateSnapshotInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_snapshot(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateSnapshot::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateSnapshot",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateSnapshot::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateSnapshot", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6786,7 +4488,7 @@ impl UpdateSnapshotInput {
 
 /// See [`UpdateStageInput`](crate::input::UpdateStageInput).
 pub mod update_stage_input {
-
+    
     /// A builder for [`UpdateStageInput`](crate::input::UpdateStageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6803,8 +4505,7 @@ pub mod update_stage_input {
         }
         /// <p>The name of the game.</p>
         pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_name = input;
-            self
+            self.game_name = input; self
         }
         /// <p>The name of the stage.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6813,8 +4514,7 @@ pub mod update_stage_input {
         }
         /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6823,8 +4523,7 @@ pub mod update_stage_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The description of the stage.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6833,185 +4532,106 @@ pub mod update_stage_input {
         }
         /// <p>The description of the stage.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateStageInput`](crate::input::UpdateStageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateStageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateStageInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                role: self.role,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateStageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateStageInput {
+                    game_name: self.game_name
+                    ,
+                    stage_name: self.stage_name
+                    ,
+                    role: self.role
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateStageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStage`](crate::operation::UpdateStage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateStage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateStage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateStageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateStageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_71 = &_input.game_name;
-                let input_71 = input_71.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "game_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let game_name = aws_smithy_http::label::fmt_string(
-                    input_71,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_71 = input_71.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))?;
+                let game_name = aws_smithy_http::label::fmt_string(input_71, aws_smithy_http::label::EncodingStrategy::Default);
                 if game_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "game_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("game_name", "cannot be empty or unset"))
+                            }
                 let input_72 = &_input.stage_name;
-                let input_72 = input_72.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stage_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let stage_name = aws_smithy_http::label::fmt_string(
-                    input_72,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_72 = input_72.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))?;
+                let stage_name = aws_smithy_http::label::fmt_string(input_72, aws_smithy_http::label::EncodingStrategy::Default);
                 if stage_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "stage_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/game/{GameName}/stage/{StageName}",
-                    GameName = game_name,
-                    StageName = stage_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("stage_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/game/{GameName}/stage/{StageName}", GameName = game_name, StageName = stage_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateStageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateStageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_stage(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_stage(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateStage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateStage",
-            "gamesparks",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateStage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateStage", "gamesparks"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7024,7 +4644,7 @@ impl UpdateStageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStageInput {
+pub struct UpdateStageInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7040,19 +4660,19 @@ pub struct UpdateStageInput {
 }
 impl UpdateStageInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The description of the stage.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -7060,7 +4680,7 @@ impl UpdateStageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSnapshotInput {
+pub struct UpdateSnapshotInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7073,15 +4693,15 @@ pub struct UpdateSnapshotInput {
 }
 impl UpdateSnapshotInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The identifier of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The description of the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -7089,7 +4709,7 @@ impl UpdateSnapshotInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameConfigurationInput {
+pub struct UpdateGameConfigurationInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7099,11 +4719,11 @@ pub struct UpdateGameConfigurationInput {
 }
 impl UpdateGameConfigurationInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The list of modifications to make.</p>
-    pub fn modifications(&self) -> std::option::Option<&[crate::model::SectionModification]> {
+    pub fn modifications(&self) -> std::option::Option<& [crate::model::SectionModification]> {
         self.modifications.as_deref()
     }
 }
@@ -7111,7 +4731,7 @@ impl UpdateGameConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameInput {
+pub struct UpdateGameInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7121,11 +4741,11 @@ pub struct UpdateGameInput {
 }
 impl UpdateGameInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The description of the game.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -7133,7 +4753,7 @@ impl UpdateGameInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -7143,11 +4763,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The keys of the tags to remove.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -7155,25 +4775,21 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource to add the tags to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add the tags to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags to add to the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -7181,7 +4797,7 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartStageDeploymentInput {
+pub struct StartStageDeploymentInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7197,19 +4813,19 @@ pub struct StartStageDeploymentInput {
 }
 impl StartStageDeploymentInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage to deploy the snapshot onto.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>The identifier of the snapshot to deploy.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -7217,7 +4833,7 @@ impl StartStageDeploymentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartGeneratedCodeJobInput {
+pub struct StartGeneratedCodeJobInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7230,15 +4846,15 @@ pub struct StartGeneratedCodeJobInput {
 }
 impl StartGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The identifier of the snapshot for which to generate code.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Properties of the generator to use for the job.</p>
-    pub fn generator(&self) -> std::option::Option<&crate::model::Generator> {
+    pub fn generator(&self) -> std::option::Option<& crate::model::Generator> {
         self.generator.as_ref()
     }
 }
@@ -7246,14 +4862,14 @@ impl StartGeneratedCodeJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the GameSparks resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the GameSparks resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -7261,32 +4877,32 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStagesInput {
+pub struct ListStagesInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStagesInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7294,37 +4910,37 @@ impl ListStagesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStageDeploymentsInput {
+pub struct ListStageDeploymentsInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListStageDeploymentsInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -7334,32 +4950,32 @@ impl ListStageDeploymentsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSnapshotsInput {
+pub struct ListSnapshotsInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSnapshotsInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7367,39 +4983,39 @@ impl ListSnapshotsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGeneratedCodeJobsInput {
+pub struct ListGeneratedCodeJobsInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeneratedCodeJobsInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The identifier of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7407,25 +5023,25 @@ impl ListGeneratedCodeJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGamesInput {
-    /// <p>The maximum number of results to return.</p>
+pub struct ListGamesInput  {
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGamesInput {
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7433,37 +5049,37 @@ impl ListGamesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExtensionVersionsInput {
+pub struct ListExtensionVersionsInput  {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListExtensionVersionsInput {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -7473,25 +5089,25 @@ impl ListExtensionVersionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExtensionsInput {
-    /// <p>The maximum number of results to return.</p>
+pub struct ListExtensionsInput  {
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExtensionsInput {
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7499,7 +5115,7 @@ impl ListExtensionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportGameConfigurationInput {
+pub struct ImportGameConfigurationInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7509,13 +5125,11 @@ pub struct ImportGameConfigurationInput {
 }
 impl ImportGameConfigurationInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The source used to import configuration sections.</p>
-    pub fn import_source(
-        &self,
-    ) -> std::option::Option<&crate::model::ImportGameConfigurationSource> {
+    pub fn import_source(&self) -> std::option::Option<& crate::model::ImportGameConfigurationSource> {
         self.import_source.as_ref()
     }
 }
@@ -7523,7 +5137,7 @@ impl ImportGameConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStageDeploymentInput {
+pub struct GetStageDeploymentInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7536,15 +5150,15 @@ pub struct GetStageDeploymentInput {
 }
 impl GetStageDeploymentInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
@@ -7552,7 +5166,7 @@ impl GetStageDeploymentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStageInput {
+pub struct GetStageInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7562,11 +5176,11 @@ pub struct GetStageInput {
 }
 impl GetStageInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -7574,7 +5188,7 @@ impl GetStageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSnapshotInput {
+pub struct GetSnapshotInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7587,15 +5201,15 @@ pub struct GetSnapshotInput {
 }
 impl GetSnapshotInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The identifier of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The list of game configuration sections to be described.</p>
-    pub fn sections(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sections(&self) -> std::option::Option<& [std::string::String]> {
         self.sections.as_deref()
     }
 }
@@ -7603,7 +5217,7 @@ impl GetSnapshotInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPlayerConnectionStatusInput {
+pub struct GetPlayerConnectionStatusInput  {
     /// <p>The unique identifier representing a player.</p>
     #[doc(hidden)]
     pub player_id: std::option::Option<std::string::String>,
@@ -7616,15 +5230,15 @@ pub struct GetPlayerConnectionStatusInput {
 }
 impl GetPlayerConnectionStatusInput {
     /// <p>The unique identifier representing a player.</p>
-    pub fn player_id(&self) -> std::option::Option<&str> {
+    pub fn player_id(&self) -> std::option::Option<& str> {
         self.player_id.as_deref()
     }
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -7632,7 +5246,7 @@ impl GetPlayerConnectionStatusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGeneratedCodeJobInput {
+pub struct GetGeneratedCodeJobInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7645,15 +5259,15 @@ pub struct GetGeneratedCodeJobInput {
 }
 impl GetGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The identifier of the snapshot for the code generation job.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The identifier of the code generation job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -7661,7 +5275,7 @@ impl GetGeneratedCodeJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGameConfigurationInput {
+pub struct GetGameConfigurationInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7671,11 +5285,11 @@ pub struct GetGameConfigurationInput {
 }
 impl GetGameConfigurationInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The list of sections to return.</p>
-    pub fn sections(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sections(&self) -> std::option::Option<& [std::string::String]> {
         self.sections.as_deref()
     }
 }
@@ -7683,14 +5297,14 @@ impl GetGameConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGameInput {
+pub struct GetGameInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
 }
 impl GetGameInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
 }
@@ -7698,7 +5312,7 @@ impl GetGameInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExtensionVersionInput {
+pub struct GetExtensionVersionInput  {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -7711,15 +5325,15 @@ pub struct GetExtensionVersionInput {
 }
 impl GetExtensionVersionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the extension.</p>
-    pub fn extension_version(&self) -> std::option::Option<&str> {
+    pub fn extension_version(&self) -> std::option::Option<& str> {
         self.extension_version.as_deref()
     }
 }
@@ -7727,7 +5341,7 @@ impl GetExtensionVersionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExtensionInput {
+pub struct GetExtensionInput  {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -7737,11 +5351,11 @@ pub struct GetExtensionInput {
 }
 impl GetExtensionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -7749,7 +5363,7 @@ impl GetExtensionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSnapshotInput {
+pub struct ExportSnapshotInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7759,11 +5373,11 @@ pub struct ExportSnapshotInput {
 }
 impl ExportSnapshotInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The identifier of the snapshot to export.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
 }
@@ -7771,7 +5385,7 @@ impl ExportSnapshotInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisconnectPlayerInput {
+pub struct DisconnectPlayerInput  {
     /// <p>The unique identifier representing a player.</p>
     #[doc(hidden)]
     pub player_id: std::option::Option<std::string::String>,
@@ -7784,15 +5398,15 @@ pub struct DisconnectPlayerInput {
 }
 impl DisconnectPlayerInput {
     /// <p>The unique identifier representing a player.</p>
-    pub fn player_id(&self) -> std::option::Option<&str> {
+    pub fn player_id(&self) -> std::option::Option<& str> {
         self.player_id.as_deref()
     }
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -7800,7 +5414,7 @@ impl DisconnectPlayerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStageInput {
+pub struct DeleteStageInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7810,11 +5424,11 @@ pub struct DeleteStageInput {
 }
 impl DeleteStageInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage to delete.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -7822,14 +5436,14 @@ impl DeleteStageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGameInput {
+pub struct DeleteGameInput  {
     /// <p>The name of the game to delete.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
 }
 impl DeleteGameInput {
     /// <p>The name of the game to delete.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
 }
@@ -7837,7 +5451,7 @@ impl DeleteGameInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStageInput {
+pub struct CreateStageInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7855,35 +5469,31 @@ pub struct CreateStageInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The list of tags to apply to the stage.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStageInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The description of the stage.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The list of tags to apply to the stage.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -7891,7 +5501,7 @@ impl CreateStageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotInput {
+pub struct CreateSnapshotInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7901,11 +5511,11 @@ pub struct CreateSnapshotInput {
 }
 impl CreateSnapshotInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The description of the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -7913,7 +5523,7 @@ impl CreateSnapshotInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGameInput {
+pub struct CreateGameInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -7925,27 +5535,24 @@ pub struct CreateGameInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The list of tags to apply to the game.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateGameInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The description of the game.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The list of tags to apply to the game.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
+

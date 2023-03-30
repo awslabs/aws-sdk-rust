@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRouteOutput {
+pub struct UpdateRouteOutput  {
     /// <p> The unique identifier of the route. </p>
     #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
@@ -24,33 +24,33 @@ pub struct UpdateRouteOutput {
 }
 impl UpdateRouteOutput {
     /// <p> The unique identifier of the route. </p>
-    pub fn route_id(&self) -> std::option::Option<&str> {
+    pub fn route_id(&self) -> std::option::Option<& str> {
         self.route_id.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p> The ID of the application in which the route is being updated. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p> The current state of the route. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RouteState> {
         self.state.as_ref()
     }
     /// <p> A timestamp that indicates when the route was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 /// See [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
 pub mod update_route_output {
-
+    
     /// A builder for [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -69,8 +69,7 @@ pub mod update_route_output {
         }
         /// <p> The unique identifier of the route. </p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.route_id = input;
-            self
+            self.route_id = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +78,7 @@ pub mod update_route_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
         pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +87,7 @@ pub mod update_route_output {
         }
         /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p> The ID of the application in which the route is being updated. </p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,12 +95,8 @@ pub mod update_route_output {
             self
         }
         /// <p> The ID of the application in which the route is being updated. </p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p> The current state of the route. </p>
         pub fn state(mut self, input: crate::model::RouteState) -> Self {
@@ -112,8 +105,7 @@ pub mod update_route_output {
         }
         /// <p> The current state of the route. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p> A timestamp that indicates when the route was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -121,25 +113,29 @@ pub mod update_route_output {
             self
         }
         /// <p> A timestamp that indicates when the route was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
         pub fn build(self) -> crate::output::UpdateRouteOutput {
             crate::output::UpdateRouteOutput {
-                route_id: self.route_id,
-                arn: self.arn,
-                service_id: self.service_id,
-                application_id: self.application_id,
-                state: self.state,
-                last_updated_time: self.last_updated_time,
+                route_id: self.route_id
+                ,
+                arn: self.arn
+                ,
+                service_id: self.service_id
+                ,
+                application_id: self.application_id
+                ,
+                state: self.state
+                ,
+                last_updated_time: self.last_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRouteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
@@ -151,19 +147,24 @@ impl UpdateRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -175,19 +176,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -199,19 +205,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {}
+pub struct PutResourcePolicyOutput  {
+}
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
-
+    
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
-            crate::output::PutResourcePolicyOutput {}
+            crate::output::PutResourcePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
@@ -223,22 +234,18 @@ impl PutResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags assigned to the resource. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
+impl  std::fmt::Debug for ListTagsForResourceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -247,13 +254,11 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -261,29 +266,22 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags assigned to the resource. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags assigned to the resource. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
     impl std::fmt::Debug for Builder {
@@ -293,6 +291,8 @@ pub mod list_tags_for_resource_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -304,7 +304,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServicesOutput {
+pub struct ListServicesOutput  {
     /// <p> The list of <code>ServiceSummary</code> objects. </p>
     #[doc(hidden)]
     pub service_summary_list: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
@@ -314,22 +314,21 @@ pub struct ListServicesOutput {
 }
 impl ListServicesOutput {
     /// <p> The list of <code>ServiceSummary</code> objects. </p>
-    pub fn service_summary_list(&self) -> std::option::Option<&[crate::model::ServiceSummary]> {
+    pub fn service_summary_list(&self) -> std::option::Option<& [crate::model::ServiceSummary]> {
         self.service_summary_list.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput).
 pub mod list_services_output {
-
+    
     /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
+        pub(crate) service_summary_list: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -340,17 +339,13 @@ pub mod list_services_output {
         /// <p> The list of <code>ServiceSummary</code> objects. </p>
         pub fn service_summary_list(mut self, input: crate::model::ServiceSummary) -> Self {
             let mut v = self.service_summary_list.unwrap_or_default();
-            v.push(input);
-            self.service_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.service_summary_list = Some(v);
+                            self
         }
         /// <p> The list of <code>ServiceSummary</code> objects. </p>
-        pub fn set_service_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
-        ) -> Self {
-            self.service_summary_list = input;
-            self
+        pub fn set_service_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>) -> Self {
+            self.service_summary_list = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -359,17 +354,20 @@ pub mod list_services_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput).
         pub fn build(self) -> crate::output::ListServicesOutput {
             crate::output::ListServicesOutput {
-                service_summary_list: self.service_summary_list,
-                next_token: self.next_token,
+                service_summary_list: self.service_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServicesOutput {
     /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput).
@@ -381,7 +379,7 @@ impl ListServicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRoutesOutput {
+pub struct ListRoutesOutput  {
     /// <p>The list of <code>RouteSummary</code> objects. </p>
     #[doc(hidden)]
     pub route_summary_list: std::option::Option<std::vec::Vec<crate::model::RouteSummary>>,
@@ -391,22 +389,21 @@ pub struct ListRoutesOutput {
 }
 impl ListRoutesOutput {
     /// <p>The list of <code>RouteSummary</code> objects. </p>
-    pub fn route_summary_list(&self) -> std::option::Option<&[crate::model::RouteSummary]> {
+    pub fn route_summary_list(&self) -> std::option::Option<& [crate::model::RouteSummary]> {
         self.route_summary_list.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRoutesOutput`](crate::output::ListRoutesOutput).
 pub mod list_routes_output {
-
+    
     /// A builder for [`ListRoutesOutput`](crate::output::ListRoutesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) route_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::RouteSummary>>,
+        pub(crate) route_summary_list: std::option::Option<std::vec::Vec<crate::model::RouteSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -417,17 +414,13 @@ pub mod list_routes_output {
         /// <p>The list of <code>RouteSummary</code> objects. </p>
         pub fn route_summary_list(mut self, input: crate::model::RouteSummary) -> Self {
             let mut v = self.route_summary_list.unwrap_or_default();
-            v.push(input);
-            self.route_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.route_summary_list = Some(v);
+                            self
         }
         /// <p>The list of <code>RouteSummary</code> objects. </p>
-        pub fn set_route_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RouteSummary>>,
-        ) -> Self {
-            self.route_summary_list = input;
-            self
+        pub fn set_route_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::RouteSummary>>) -> Self {
+            self.route_summary_list = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -436,17 +429,20 @@ pub mod list_routes_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRoutesOutput`](crate::output::ListRoutesOutput).
         pub fn build(self) -> crate::output::ListRoutesOutput {
             crate::output::ListRoutesOutput {
-                route_summary_list: self.route_summary_list,
-                next_token: self.next_token,
+                route_summary_list: self.route_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRoutesOutput {
     /// Creates a new builder-style object to manufacture [`ListRoutesOutput`](crate::output::ListRoutesOutput).
@@ -458,7 +454,7 @@ impl ListRoutesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentVpcsOutput {
+pub struct ListEnvironmentVpcsOutput  {
     /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
     #[doc(hidden)]
     pub environment_vpc_list: std::option::Option<std::vec::Vec<crate::model::EnvironmentVpc>>,
@@ -468,22 +464,21 @@ pub struct ListEnvironmentVpcsOutput {
 }
 impl ListEnvironmentVpcsOutput {
     /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
-    pub fn environment_vpc_list(&self) -> std::option::Option<&[crate::model::EnvironmentVpc]> {
+    pub fn environment_vpc_list(&self) -> std::option::Option<& [crate::model::EnvironmentVpc]> {
         self.environment_vpc_list.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEnvironmentVpcsOutput`](crate::output::ListEnvironmentVpcsOutput).
 pub mod list_environment_vpcs_output {
-
+    
     /// A builder for [`ListEnvironmentVpcsOutput`](crate::output::ListEnvironmentVpcsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) environment_vpc_list:
-            std::option::Option<std::vec::Vec<crate::model::EnvironmentVpc>>,
+        pub(crate) environment_vpc_list: std::option::Option<std::vec::Vec<crate::model::EnvironmentVpc>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -494,17 +489,13 @@ pub mod list_environment_vpcs_output {
         /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
         pub fn environment_vpc_list(mut self, input: crate::model::EnvironmentVpc) -> Self {
             let mut v = self.environment_vpc_list.unwrap_or_default();
-            v.push(input);
-            self.environment_vpc_list = Some(v);
-            self
+                            v.push(input);
+                            self.environment_vpc_list = Some(v);
+                            self
         }
         /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
-        pub fn set_environment_vpc_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVpc>>,
-        ) -> Self {
-            self.environment_vpc_list = input;
-            self
+        pub fn set_environment_vpc_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVpc>>) -> Self {
+            self.environment_vpc_list = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -513,17 +504,20 @@ pub mod list_environment_vpcs_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEnvironmentVpcsOutput`](crate::output::ListEnvironmentVpcsOutput).
         pub fn build(self) -> crate::output::ListEnvironmentVpcsOutput {
             crate::output::ListEnvironmentVpcsOutput {
-                environment_vpc_list: self.environment_vpc_list,
-                next_token: self.next_token,
+                environment_vpc_list: self.environment_vpc_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEnvironmentVpcsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentVpcsOutput`](crate::output::ListEnvironmentVpcsOutput).
@@ -535,35 +529,31 @@ impl ListEnvironmentVpcsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentsOutput {
+pub struct ListEnvironmentsOutput  {
     /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
     #[doc(hidden)]
-    pub environment_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
+    pub environment_summary_list: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
     /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
-    pub fn environment_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EnvironmentSummary]> {
+    pub fn environment_summary_list(&self) -> std::option::Option<& [crate::model::EnvironmentSummary]> {
         self.environment_summary_list.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
 pub mod list_environments_output {
-
+    
     /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) environment_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
+        pub(crate) environment_summary_list: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -574,17 +564,13 @@ pub mod list_environments_output {
         /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
         pub fn environment_summary_list(mut self, input: crate::model::EnvironmentSummary) -> Self {
             let mut v = self.environment_summary_list.unwrap_or_default();
-            v.push(input);
-            self.environment_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.environment_summary_list = Some(v);
+                            self
         }
         /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
-        pub fn set_environment_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
-        ) -> Self {
-            self.environment_summary_list = input;
-            self
+        pub fn set_environment_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>) -> Self {
+            self.environment_summary_list = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -593,17 +579,20 @@ pub mod list_environments_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
         pub fn build(self) -> crate::output::ListEnvironmentsOutput {
             crate::output::ListEnvironmentsOutput {
-                environment_summary_list: self.environment_summary_list,
-                next_token: self.next_token,
+                environment_summary_list: self.environment_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
@@ -615,35 +604,31 @@ impl ListEnvironmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>The list of <code>ApplicationSummary</code> objects. </p>
     #[doc(hidden)]
-    pub application_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+    pub application_summary_list: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
     /// <p>The list of <code>ApplicationSummary</code> objects. </p>
-    pub fn application_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+    pub fn application_summary_list(&self) -> std::option::Option<& [crate::model::ApplicationSummary]> {
         self.application_summary_list.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+        pub(crate) application_summary_list: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -654,17 +639,13 @@ pub mod list_applications_output {
         /// <p>The list of <code>ApplicationSummary</code> objects. </p>
         pub fn application_summary_list(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summary_list.unwrap_or_default();
-            v.push(input);
-            self.application_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.application_summary_list = Some(v);
+                            self
         }
         /// <p>The list of <code>ApplicationSummary</code> objects. </p>
-        pub fn set_application_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-        ) -> Self {
-            self.application_summary_list = input;
-            self
+        pub fn set_application_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>) -> Self {
+            self.application_summary_list = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -673,17 +654,20 @@ pub mod list_applications_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                application_summary_list: self.application_summary_list,
-                next_token: self.next_token,
+                application_summary_list: self.application_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -695,7 +679,7 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetServiceOutput {
+pub struct GetServiceOutput  {
     /// <p>The unique identifier of the service.</p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
@@ -726,12 +710,12 @@ pub struct GetServiceOutput {
     /// <p>The endpoint type of the service.</p>
     #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ServiceEndpointType>,
-    /// <p>The configuration for the URL endpoint type.</p>
-    /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
+    /// <p>The configuration for the URL endpoint type.</p> 
+    /// <p>The <b>Url</b> isthe URL of the endpoint type.</p> 
     /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
     #[doc(hidden)]
     pub url_endpoint: std::option::Option<crate::model::UrlEndpointConfig>,
-    /// <p>The configuration for the Lambda endpoint type.</p>
+    /// <p>The configuration for the Lambda endpoint type.</p> 
     /// <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
     #[doc(hidden)]
     pub lambda_endpoint: std::option::Option<crate::model::LambdaEndpointConfig>,
@@ -740,8 +724,7 @@ pub struct GetServiceOutput {
     pub state: std::option::Option<crate::model::ServiceState>,
     /// <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the service resource. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
@@ -754,81 +737,78 @@ pub struct GetServiceOutput {
 }
 impl GetServiceOutput {
     /// <p>The unique identifier of the service.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the service creator.</p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>The description of the service. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the virtual private cloud (VPC). </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The endpoint type of the service.</p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::ServiceEndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::model::ServiceEndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The configuration for the URL endpoint type.</p>
-    /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
+    /// <p>The configuration for the URL endpoint type.</p> 
+    /// <p>The <b>Url</b> isthe URL of the endpoint type.</p> 
     /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
-    pub fn url_endpoint(&self) -> std::option::Option<&crate::model::UrlEndpointConfig> {
+    pub fn url_endpoint(&self) -> std::option::Option<& crate::model::UrlEndpointConfig> {
         self.url_endpoint.as_ref()
     }
-    /// <p>The configuration for the Lambda endpoint type.</p>
+    /// <p>The configuration for the Lambda endpoint type.</p> 
     /// <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
-    pub fn lambda_endpoint(&self) -> std::option::Option<&crate::model::LambdaEndpointConfig> {
+    pub fn lambda_endpoint(&self) -> std::option::Option<& crate::model::LambdaEndpointConfig> {
         self.lambda_endpoint.as_ref()
     }
     /// <p>The current state of the service. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ServiceState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ServiceState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the service resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorResponse> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the service was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The timestamp of when the service is created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetServiceOutput {
+impl  std::fmt::Debug for GetServiceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceOutput");
         formatter.field("service_id", &self.service_id);
@@ -853,7 +833,7 @@ impl std::fmt::Debug for GetServiceOutput {
 }
 /// See [`GetServiceOutput`](crate::output::GetServiceOutput).
 pub mod get_service_output {
-
+    
     /// A builder for [`GetServiceOutput`](crate::output::GetServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -870,9 +850,7 @@ pub mod get_service_output {
         pub(crate) url_endpoint: std::option::Option<crate::model::UrlEndpointConfig>,
         pub(crate) lambda_endpoint: std::option::Option<crate::model::LambdaEndpointConfig>,
         pub(crate) state: std::option::Option<crate::model::ServiceState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -885,8 +863,7 @@ pub mod get_service_output {
         }
         /// <p>The unique identifier of the service.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p>The name of the service.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -895,8 +872,7 @@ pub mod get_service_output {
         }
         /// <p>The name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -905,8 +881,7 @@ pub mod get_service_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the service owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -914,12 +889,8 @@ pub mod get_service_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the service owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the service creator.</p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -927,12 +898,8 @@ pub mod get_service_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the service creator.</p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>The description of the service. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -941,8 +908,7 @@ pub mod get_service_output {
         }
         /// <p>The description of the service. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier of the environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -950,12 +916,8 @@ pub mod get_service_output {
             self
         }
         /// <p>The unique identifier of the environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -963,12 +925,8 @@ pub mod get_service_output {
             self
         }
         /// <p>The ID of the application.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ID of the virtual private cloud (VPC). </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -977,8 +935,7 @@ pub mod get_service_output {
         }
         /// <p>The ID of the virtual private cloud (VPC). </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The endpoint type of the service.</p>
         pub fn endpoint_type(mut self, input: crate::model::ServiceEndpointType) -> Self {
@@ -986,44 +943,32 @@ pub mod get_service_output {
             self
         }
         /// <p>The endpoint type of the service.</p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceEndpointType>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<crate::model::ServiceEndpointType>) -> Self {
+            self.endpoint_type = input; self
         }
-        /// <p>The configuration for the URL endpoint type.</p>
-        /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
+        /// <p>The configuration for the URL endpoint type.</p> 
+        /// <p>The <b>Url</b> isthe URL of the endpoint type.</p> 
         /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
         pub fn url_endpoint(mut self, input: crate::model::UrlEndpointConfig) -> Self {
             self.url_endpoint = Some(input);
             self
         }
-        /// <p>The configuration for the URL endpoint type.</p>
-        /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
+        /// <p>The configuration for the URL endpoint type.</p> 
+        /// <p>The <b>Url</b> isthe URL of the endpoint type.</p> 
         /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
-        pub fn set_url_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::UrlEndpointConfig>,
-        ) -> Self {
-            self.url_endpoint = input;
-            self
+        pub fn set_url_endpoint(mut self, input: std::option::Option<crate::model::UrlEndpointConfig>) -> Self {
+            self.url_endpoint = input; self
         }
-        /// <p>The configuration for the Lambda endpoint type.</p>
+        /// <p>The configuration for the Lambda endpoint type.</p> 
         /// <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
         pub fn lambda_endpoint(mut self, input: crate::model::LambdaEndpointConfig) -> Self {
             self.lambda_endpoint = Some(input);
             self
         }
-        /// <p>The configuration for the Lambda endpoint type.</p>
+        /// <p>The configuration for the Lambda endpoint type.</p> 
         /// <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
-        pub fn set_lambda_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::LambdaEndpointConfig>,
-        ) -> Self {
-            self.lambda_endpoint = input;
-            self
+        pub fn set_lambda_endpoint(mut self, input: std::option::Option<crate::model::LambdaEndpointConfig>) -> Self {
+            self.lambda_endpoint = input; self
         }
         /// <p>The current state of the service. </p>
         pub fn state(mut self, input: crate::model::ServiceState) -> Self {
@@ -1032,33 +977,22 @@ pub mod get_service_output {
         }
         /// <p>The current state of the service. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ServiceState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Any error associated with the service resource. </p>
         pub fn error(mut self, input: crate::model::ErrorResponse) -> Self {
@@ -1066,12 +1000,8 @@ pub mod get_service_output {
             self
         }
         /// <p>Any error associated with the service resource. </p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResponse>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorResponse>) -> Self {
+            self.error = input; self
         }
         /// <p>A timestamp that indicates when the service was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1079,12 +1009,8 @@ pub mod get_service_output {
             self
         }
         /// <p>A timestamp that indicates when the service was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The timestamp of when the service is created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1092,33 +1018,46 @@ pub mod get_service_output {
             self
         }
         /// <p>The timestamp of when the service is created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceOutput`](crate::output::GetServiceOutput).
         pub fn build(self) -> crate::output::GetServiceOutput {
             crate::output::GetServiceOutput {
-                service_id: self.service_id,
-                name: self.name,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                description: self.description,
-                environment_id: self.environment_id,
-                application_id: self.application_id,
-                vpc_id: self.vpc_id,
-                endpoint_type: self.endpoint_type,
-                url_endpoint: self.url_endpoint,
-                lambda_endpoint: self.lambda_endpoint,
-                state: self.state,
-                tags: self.tags,
-                error: self.error,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                service_id: self.service_id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                description: self.description
+                ,
+                environment_id: self.environment_id
+                ,
+                application_id: self.application_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                url_endpoint: self.url_endpoint
+                ,
+                lambda_endpoint: self.lambda_endpoint
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                error: self.error
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -1145,6 +1084,8 @@ pub mod get_service_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetServiceOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceOutput`](crate::output::GetServiceOutput).
@@ -1156,9 +1097,9 @@ impl GetServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetRouteOutput {
-    /// <p>The unique identifier of the route.</p>
-    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+pub struct GetRouteOutput  {
+    /// <p>The unique identifier of the route.</p> 
+    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p> 
     /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
     #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
@@ -1194,15 +1135,13 @@ pub struct GetRouteOutput {
     pub include_child_paths: std::option::Option<bool>,
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
     #[doc(hidden)]
-    pub path_resource_to_id:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub path_resource_to_id: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The current state of the route. </p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the route resource. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
@@ -1214,46 +1153,46 @@ pub struct GetRouteOutput {
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetRouteOutput {
-    /// <p>The unique identifier of the route.</p>
-    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p>The unique identifier of the route.</p> 
+    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p> 
     /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
-    pub fn route_id(&self) -> std::option::Option<&str> {
+    pub fn route_id(&self) -> std::option::Option<& str> {
         self.route_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the route owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the route creator.</p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>The type of route.</p>
-    pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
+    pub fn route_type(&self) -> std::option::Option<& crate::model::RouteType> {
         self.route_type.as_ref()
     }
     /// <p>The unique identifier of the service.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the application that the route belongs to. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> std::option::Option<& str> {
         self.source_path.as_deref()
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    pub fn methods(&self) -> std::option::Option<&[crate::model::HttpMethod]> {
+    pub fn methods(&self) -> std::option::Option<& [crate::model::HttpMethod]> {
         self.methods.as_deref()
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
@@ -1261,37 +1200,31 @@ impl GetRouteOutput {
         self.include_child_paths
     }
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
-    pub fn path_resource_to_id(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn path_resource_to_id(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.path_resource_to_id.as_ref()
     }
     /// <p>The current state of the route. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RouteState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the route resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorResponse> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the route was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The timestamp of when the route is created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetRouteOutput {
+impl  std::fmt::Debug for GetRouteOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRouteOutput");
         formatter.field("route_id", &self.route_id);
@@ -1316,7 +1249,7 @@ impl std::fmt::Debug for GetRouteOutput {
 }
 /// See [`GetRouteOutput`](crate::output::GetRouteOutput).
 pub mod get_route_output {
-
+    
     /// A builder for [`GetRouteOutput`](crate::output::GetRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1331,31 +1264,26 @@ pub mod get_route_output {
         pub(crate) source_path: std::option::Option<std::string::String>,
         pub(crate) methods: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
         pub(crate) include_child_paths: std::option::Option<bool>,
-        pub(crate) path_resource_to_id: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) path_resource_to_id: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) state: std::option::Option<crate::model::RouteState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The unique identifier of the route.</p>
-        /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+        /// <p>The unique identifier of the route.</p> 
+        /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p> 
         /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
         pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.route_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the route.</p>
-        /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+        /// <p>The unique identifier of the route.</p> 
+        /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p> 
         /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.route_id = input;
-            self
+            self.route_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the route.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1364,8 +1292,7 @@ pub mod get_route_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the route.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the route owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1373,12 +1300,8 @@ pub mod get_route_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the route owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the route creator.</p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1386,12 +1309,8 @@ pub mod get_route_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the route creator.</p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>The type of route.</p>
         pub fn route_type(mut self, input: crate::model::RouteType) -> Self {
@@ -1399,12 +1318,8 @@ pub mod get_route_output {
             self
         }
         /// <p>The type of route.</p>
-        pub fn set_route_type(
-            mut self,
-            input: std::option::Option<crate::model::RouteType>,
-        ) -> Self {
-            self.route_type = input;
-            self
+        pub fn set_route_type(mut self, input: std::option::Option<crate::model::RouteType>) -> Self {
+            self.route_type = input; self
         }
         /// <p>The unique identifier of the service.</p>
         pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1413,8 +1328,7 @@ pub mod get_route_output {
         }
         /// <p>The unique identifier of the service.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p>The ID of the application that the route belongs to. </p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1422,12 +1336,8 @@ pub mod get_route_output {
             self
         }
         /// <p>The ID of the application that the route belongs to. </p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>Unique identifier of the environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1435,12 +1345,8 @@ pub mod get_route_output {
             self
         }
         /// <p>Unique identifier of the environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
         pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1449,8 +1355,7 @@ pub mod get_route_output {
         }
         /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_path = input;
-            self
+            self.source_path = input; self
         }
         /// Appends an item to `methods`.
         ///
@@ -1459,17 +1364,13 @@ pub mod get_route_output {
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
         pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input);
-            self.methods = Some(v);
-            self
+                            v.push(input);
+                            self.methods = Some(v);
+                            self
         }
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn set_methods(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
-        ) -> Self {
-            self.methods = input;
-            self
+        pub fn set_methods(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>) -> Self {
+            self.methods = input; self
         }
         /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
         pub fn include_child_paths(mut self, input: bool) -> Self {
@@ -1478,33 +1379,22 @@ pub mod get_route_output {
         }
         /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
         pub fn set_include_child_paths(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_child_paths = input;
-            self
+            self.include_child_paths = input; self
         }
         /// Adds a key-value pair to `path_resource_to_id`.
         ///
         /// To override the contents of this collection use [`set_path_resource_to_id`](Self::set_path_resource_to_id).
         ///
         /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
-        pub fn path_resource_to_id(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn path_resource_to_id(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.path_resource_to_id.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.path_resource_to_id = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.path_resource_to_id = Some(hash_map);
+                            self
         }
         /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
-        pub fn set_path_resource_to_id(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.path_resource_to_id = input;
-            self
+        pub fn set_path_resource_to_id(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.path_resource_to_id = input; self
         }
         /// <p>The current state of the route. </p>
         pub fn state(mut self, input: crate::model::RouteState) -> Self {
@@ -1513,33 +1403,22 @@ pub mod get_route_output {
         }
         /// <p>The current state of the route. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Any error associated with the route resource. </p>
         pub fn error(mut self, input: crate::model::ErrorResponse) -> Self {
@@ -1547,12 +1426,8 @@ pub mod get_route_output {
             self
         }
         /// <p>Any error associated with the route resource. </p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResponse>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorResponse>) -> Self {
+            self.error = input; self
         }
         /// <p>A timestamp that indicates when the route was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1560,12 +1435,8 @@ pub mod get_route_output {
             self
         }
         /// <p>A timestamp that indicates when the route was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The timestamp of when the route is created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1573,33 +1444,46 @@ pub mod get_route_output {
             self
         }
         /// <p>The timestamp of when the route is created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`GetRouteOutput`](crate::output::GetRouteOutput).
         pub fn build(self) -> crate::output::GetRouteOutput {
             crate::output::GetRouteOutput {
-                route_id: self.route_id,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                route_type: self.route_type,
-                service_id: self.service_id,
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                source_path: self.source_path,
-                methods: self.methods,
-                include_child_paths: self.include_child_paths,
-                path_resource_to_id: self.path_resource_to_id,
-                state: self.state,
-                tags: self.tags,
-                error: self.error,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                route_id: self.route_id
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                route_type: self.route_type
+                ,
+                service_id: self.service_id
+                ,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                source_path: self.source_path
+                ,
+                methods: self.methods
+                ,
+                include_child_paths: self.include_child_paths
+                ,
+                path_resource_to_id: self.path_resource_to_id
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                error: self.error
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -1626,6 +1510,8 @@ pub mod get_route_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetRouteOutput {
     /// Creates a new builder-style object to manufacture [`GetRouteOutput`](crate::output::GetRouteOutput).
@@ -1637,20 +1523,20 @@ impl GetRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePolicyOutput {
+pub struct GetResourcePolicyOutput  {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyOutput {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
 pub mod get_resource_policy_output {
-
+    
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1664,16 +1550,18 @@ pub mod get_resource_policy_output {
         }
         /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
         pub fn build(self) -> crate::output::GetResourcePolicyOutput {
             crate::output::GetResourcePolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
@@ -1685,7 +1573,7 @@ impl GetResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetEnvironmentOutput {
+pub struct GetEnvironmentOutput  {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1712,8 +1600,7 @@ pub struct GetEnvironmentOutput {
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the environment resource. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
@@ -1726,58 +1613,55 @@ pub struct GetEnvironmentOutput {
 }
 impl GetEnvironmentOutput {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the environment. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The network fabric type of the environment. </p>
-    pub fn network_fabric_type(&self) -> std::option::Option<&crate::model::NetworkFabricType> {
+    pub fn network_fabric_type(&self) -> std::option::Option<& crate::model::NetworkFabricType> {
         self.network_fabric_type.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The ID of the transit gateway set up by the environment. </p>
-    pub fn transit_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The current state of the environment. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the environment resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorResponse> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the environment is created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetEnvironmentOutput {
+impl  std::fmt::Debug for GetEnvironmentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentOutput");
         formatter.field("name", &self.name);
@@ -1797,7 +1681,7 @@ impl std::fmt::Debug for GetEnvironmentOutput {
 }
 /// See [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
 pub mod get_environment_output {
-
+    
     /// A builder for [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1809,9 +1693,7 @@ pub mod get_environment_output {
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
         pub(crate) transit_gateway_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EnvironmentState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1824,8 +1706,7 @@ pub mod get_environment_output {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1834,8 +1715,7 @@ pub mod get_environment_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The description of the environment. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1844,8 +1724,7 @@ pub mod get_environment_output {
         }
         /// <p>The description of the environment. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier of the environment. </p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1853,12 +1732,8 @@ pub mod get_environment_output {
             self
         }
         /// <p>The unique identifier of the environment. </p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The network fabric type of the environment. </p>
         pub fn network_fabric_type(mut self, input: crate::model::NetworkFabricType) -> Self {
@@ -1866,12 +1741,8 @@ pub mod get_environment_output {
             self
         }
         /// <p>The network fabric type of the environment. </p>
-        pub fn set_network_fabric_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkFabricType>,
-        ) -> Self {
-            self.network_fabric_type = input;
-            self
+        pub fn set_network_fabric_type(mut self, input: std::option::Option<crate::model::NetworkFabricType>) -> Self {
+            self.network_fabric_type = input; self
         }
         /// <p>The Amazon Web Services account ID of the environment owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1879,12 +1750,8 @@ pub mod get_environment_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the environment owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The ID of the transit gateway set up by the environment. </p>
         pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1892,12 +1759,8 @@ pub mod get_environment_output {
             self
         }
         /// <p>The ID of the transit gateway set up by the environment. </p>
-        pub fn set_transit_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transit_gateway_id = input;
-            self
+        pub fn set_transit_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transit_gateway_id = input; self
         }
         /// <p>The current state of the environment. </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
@@ -1905,37 +1768,23 @@ pub mod get_environment_output {
             self
         }
         /// <p>The current state of the environment. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::EnvironmentState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Any error associated with the environment resource. </p>
         pub fn error(mut self, input: crate::model::ErrorResponse) -> Self {
@@ -1943,12 +1792,8 @@ pub mod get_environment_output {
             self
         }
         /// <p>Any error associated with the environment resource. </p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResponse>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorResponse>) -> Self {
+            self.error = input; self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1956,12 +1801,8 @@ pub mod get_environment_output {
             self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the environment is created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1969,28 +1810,36 @@ pub mod get_environment_output {
             self
         }
         /// <p>A timestamp that indicates when the environment is created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
         pub fn build(self) -> crate::output::GetEnvironmentOutput {
             crate::output::GetEnvironmentOutput {
-                name: self.name,
-                arn: self.arn,
-                description: self.description,
-                environment_id: self.environment_id,
-                network_fabric_type: self.network_fabric_type,
-                owner_account_id: self.owner_account_id,
-                transit_gateway_id: self.transit_gateway_id,
-                state: self.state,
-                tags: self.tags,
-                error: self.error,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                environment_id: self.environment_id
+                ,
+                network_fabric_type: self.network_fabric_type
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                transit_gateway_id: self.transit_gateway_id
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                error: self.error
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -2012,6 +1861,8 @@ pub mod get_environment_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
@@ -2023,7 +1874,7 @@ impl GetEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2056,8 +1907,7 @@ pub struct GetApplicationOutput {
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the application resource. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
@@ -2070,66 +1920,63 @@ pub struct GetApplicationOutput {
 }
 impl GetApplicationOutput {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the application creator. </p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the virtual private cloud (VPC). </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The proxy type of the proxy created within the application. </p>
-    pub fn proxy_type(&self) -> std::option::Option<&crate::model::ProxyType> {
+    pub fn proxy_type(&self) -> std::option::Option<& crate::model::ProxyType> {
         self.proxy_type.as_ref()
     }
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    pub fn api_gateway_proxy(&self) -> std::option::Option<&crate::model::ApiGatewayProxyConfig> {
+    pub fn api_gateway_proxy(&self) -> std::option::Option<& crate::model::ApiGatewayProxyConfig> {
         self.api_gateway_proxy.as_ref()
     }
     /// <p>The current state of the application. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ApplicationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ApplicationState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the application resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorResponse> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the application was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the application is created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetApplicationOutput {
+impl  std::fmt::Debug for GetApplicationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApplicationOutput");
         formatter.field("name", &self.name);
@@ -2151,7 +1998,7 @@ impl std::fmt::Debug for GetApplicationOutput {
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
-
+    
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2165,9 +2012,7 @@ pub mod get_application_output {
         pub(crate) proxy_type: std::option::Option<crate::model::ProxyType>,
         pub(crate) api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxyConfig>,
         pub(crate) state: std::option::Option<crate::model::ApplicationState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2180,8 +2025,7 @@ pub mod get_application_output {
         }
         /// <p>The name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2190,8 +2034,7 @@ pub mod get_application_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2199,12 +2042,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the application creator. </p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2212,12 +2051,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the application creator. </p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>The unique identifier of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2225,12 +2060,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The unique identifier of the application.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The unique identifier of the environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2238,12 +2069,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The unique identifier of the environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the virtual private cloud (VPC). </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2252,8 +2079,7 @@ pub mod get_application_output {
         }
         /// <p>The ID of the virtual private cloud (VPC). </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The proxy type of the proxy created within the application. </p>
         pub fn proxy_type(mut self, input: crate::model::ProxyType) -> Self {
@@ -2261,12 +2087,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The proxy type of the proxy created within the application. </p>
-        pub fn set_proxy_type(
-            mut self,
-            input: std::option::Option<crate::model::ProxyType>,
-        ) -> Self {
-            self.proxy_type = input;
-            self
+        pub fn set_proxy_type(mut self, input: std::option::Option<crate::model::ProxyType>) -> Self {
+            self.proxy_type = input; self
         }
         /// <p>The endpoint URL of the API Gateway proxy. </p>
         pub fn api_gateway_proxy(mut self, input: crate::model::ApiGatewayProxyConfig) -> Self {
@@ -2274,12 +2096,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The endpoint URL of the API Gateway proxy. </p>
-        pub fn set_api_gateway_proxy(
-            mut self,
-            input: std::option::Option<crate::model::ApiGatewayProxyConfig>,
-        ) -> Self {
-            self.api_gateway_proxy = input;
-            self
+        pub fn set_api_gateway_proxy(mut self, input: std::option::Option<crate::model::ApiGatewayProxyConfig>) -> Self {
+            self.api_gateway_proxy = input; self
         }
         /// <p>The current state of the application. </p>
         pub fn state(mut self, input: crate::model::ApplicationState) -> Self {
@@ -2287,37 +2105,23 @@ pub mod get_application_output {
             self
         }
         /// <p>The current state of the application. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ApplicationState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Any error associated with the application resource. </p>
         pub fn error(mut self, input: crate::model::ErrorResponse) -> Self {
@@ -2325,12 +2129,8 @@ pub mod get_application_output {
             self
         }
         /// <p>Any error associated with the application resource. </p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResponse>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorResponse>) -> Self {
+            self.error = input; self
         }
         /// <p>A timestamp that indicates when the application was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2338,12 +2138,8 @@ pub mod get_application_output {
             self
         }
         /// <p>A timestamp that indicates when the application was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the application is created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2351,30 +2147,40 @@ pub mod get_application_output {
             self
         }
         /// <p>A timestamp that indicates when the application is created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
-                name: self.name,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                vpc_id: self.vpc_id,
-                proxy_type: self.proxy_type,
-                api_gateway_proxy: self.api_gateway_proxy,
-                state: self.state,
-                tags: self.tags,
-                error: self.error,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                proxy_type: self.proxy_type
+                ,
+                api_gateway_proxy: self.api_gateway_proxy
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                error: self.error
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -2398,6 +2204,8 @@ pub mod get_application_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -2409,7 +2217,7 @@ impl GetApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceOutput {
+pub struct DeleteServiceOutput  {
     /// <p>The unique identifier of the service.</p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
@@ -2434,37 +2242,37 @@ pub struct DeleteServiceOutput {
 }
 impl DeleteServiceOutput {
     /// <p>The unique identifier of the service.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the application that the service is in.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The current state of the service. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ServiceState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ServiceState> {
         self.state.as_ref()
     }
     /// <p>A timestamp that indicates when the service was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 /// See [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
 pub mod delete_service_output {
-
+    
     /// A builder for [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2484,8 +2292,7 @@ pub mod delete_service_output {
         }
         /// <p>The unique identifier of the service.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p>The name of the service.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2494,8 +2301,7 @@ pub mod delete_service_output {
         }
         /// <p>The name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2504,8 +2310,7 @@ pub mod delete_service_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique identifier of the environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2513,12 +2318,8 @@ pub mod delete_service_output {
             self
         }
         /// <p>The unique identifier of the environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the application that the service is in.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2526,12 +2327,8 @@ pub mod delete_service_output {
             self
         }
         /// <p>The ID of the application that the service is in.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The current state of the service. </p>
         pub fn state(mut self, input: crate::model::ServiceState) -> Self {
@@ -2540,8 +2337,7 @@ pub mod delete_service_output {
         }
         /// <p>The current state of the service. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ServiceState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>A timestamp that indicates when the service was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2549,26 +2345,31 @@ pub mod delete_service_output {
             self
         }
         /// <p>A timestamp that indicates when the service was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
         pub fn build(self) -> crate::output::DeleteServiceOutput {
             crate::output::DeleteServiceOutput {
-                service_id: self.service_id,
-                name: self.name,
-                arn: self.arn,
-                environment_id: self.environment_id,
-                application_id: self.application_id,
-                state: self.state,
-                last_updated_time: self.last_updated_time,
+                service_id: self.service_id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                environment_id: self.environment_id
+                ,
+                application_id: self.application_id
+                ,
+                state: self.state
+                ,
+                last_updated_time: self.last_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteServiceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
@@ -2580,7 +2381,7 @@ impl DeleteServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRouteOutput {
+pub struct DeleteRouteOutput  {
     /// <p>The ID of the route to delete.</p>
     #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
@@ -2602,33 +2403,33 @@ pub struct DeleteRouteOutput {
 }
 impl DeleteRouteOutput {
     /// <p>The ID of the route to delete.</p>
-    pub fn route_id(&self) -> std::option::Option<&str> {
+    pub fn route_id(&self) -> std::option::Option<& str> {
         self.route_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the service that the route belongs to.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the application that the route belongs to.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The current state of the route. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RouteState> {
         self.state.as_ref()
     }
     /// <p>A timestamp that indicates when the route was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 /// See [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
 pub mod delete_route_output {
-
+    
     /// A builder for [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2647,8 +2448,7 @@ pub mod delete_route_output {
         }
         /// <p>The ID of the route to delete.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.route_id = input;
-            self
+            self.route_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the route.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2657,8 +2457,7 @@ pub mod delete_route_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the route.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the service that the route belongs to.</p>
         pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2667,8 +2466,7 @@ pub mod delete_route_output {
         }
         /// <p>The ID of the service that the route belongs to.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p>The ID of the application that the route belongs to.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2676,12 +2474,8 @@ pub mod delete_route_output {
             self
         }
         /// <p>The ID of the application that the route belongs to.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The current state of the route. </p>
         pub fn state(mut self, input: crate::model::RouteState) -> Self {
@@ -2690,8 +2484,7 @@ pub mod delete_route_output {
         }
         /// <p>The current state of the route. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>A timestamp that indicates when the route was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2699,25 +2492,29 @@ pub mod delete_route_output {
             self
         }
         /// <p>A timestamp that indicates when the route was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
         pub fn build(self) -> crate::output::DeleteRouteOutput {
             crate::output::DeleteRouteOutput {
-                route_id: self.route_id,
-                arn: self.arn,
-                service_id: self.service_id,
-                application_id: self.application_id,
-                state: self.state,
-                last_updated_time: self.last_updated_time,
+                route_id: self.route_id
+                ,
+                arn: self.arn
+                ,
+                service_id: self.service_id
+                ,
+                application_id: self.application_id
+                ,
+                state: self.state
+                ,
+                last_updated_time: self.last_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
@@ -2729,19 +2526,24 @@ impl DeleteRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {}
+pub struct DeleteResourcePolicyOutput  {
+}
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
-
+    
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
-            crate::output::DeleteResourcePolicyOutput {}
+            crate::output::DeleteResourcePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -2753,7 +2555,7 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEnvironmentOutput {
+pub struct DeleteEnvironmentOutput  {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2772,29 +2574,29 @@ pub struct DeleteEnvironmentOutput {
 }
 impl DeleteEnvironmentOutput {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The current state of the environment. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 /// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
 pub mod delete_environment_output {
-
+    
     /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2812,8 +2614,7 @@ pub mod delete_environment_output {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2822,8 +2623,7 @@ pub mod delete_environment_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique identifier of the environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2831,12 +2631,8 @@ pub mod delete_environment_output {
             self
         }
         /// <p>The unique identifier of the environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The current state of the environment. </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
@@ -2844,12 +2640,8 @@ pub mod delete_environment_output {
             self
         }
         /// <p>The current state of the environment. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::EnvironmentState>) -> Self {
+            self.state = input; self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2857,24 +2649,27 @@ pub mod delete_environment_output {
             self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
         pub fn build(self) -> crate::output::DeleteEnvironmentOutput {
             crate::output::DeleteEnvironmentOutput {
-                name: self.name,
-                arn: self.arn,
-                environment_id: self.environment_id,
-                state: self.state,
-                last_updated_time: self.last_updated_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                environment_id: self.environment_id
+                ,
+                state: self.state
+                ,
+                last_updated_time: self.last_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
@@ -2886,7 +2681,7 @@ impl DeleteEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {
+pub struct DeleteApplicationOutput  {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2908,33 +2703,33 @@ pub struct DeleteApplicationOutput {
 }
 impl DeleteApplicationOutput {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of the application’s environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The current state of the application. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ApplicationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ApplicationState> {
         self.state.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2953,8 +2748,7 @@ pub mod delete_application_output {
         }
         /// <p>The name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2963,8 +2757,7 @@ pub mod delete_application_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2972,12 +2765,8 @@ pub mod delete_application_output {
             self
         }
         /// <p>The ID of the application.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The unique identifier of the application’s environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2985,12 +2774,8 @@ pub mod delete_application_output {
             self
         }
         /// <p>The unique identifier of the application’s environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The current state of the application. </p>
         pub fn state(mut self, input: crate::model::ApplicationState) -> Self {
@@ -2998,12 +2783,8 @@ pub mod delete_application_output {
             self
         }
         /// <p>The current state of the application. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ApplicationState>) -> Self {
+            self.state = input; self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3011,25 +2792,29 @@ pub mod delete_application_output {
             self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
             crate::output::DeleteApplicationOutput {
-                name: self.name,
-                arn: self.arn,
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                state: self.state,
-                last_updated_time: self.last_updated_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                state: self.state
+                ,
+                last_updated_time: self.last_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -3041,7 +2826,7 @@ impl DeleteApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateServiceOutput {
+pub struct CreateServiceOutput  {
     /// <p>The unique identifier of the service.</p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
@@ -3083,8 +2868,7 @@ pub struct CreateServiceOutput {
     pub state: std::option::Option<crate::model::ServiceState>,
     /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A timestamp that indicates when the service was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3094,74 +2878,71 @@ pub struct CreateServiceOutput {
 }
 impl CreateServiceOutput {
     /// <p>The unique identifier of the service.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the service creator.</p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>The description of the created service.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the application that the created service belongs to. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the VPC. </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The endpoint type of the service.</p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::ServiceEndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::model::ServiceEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The configuration for the URL endpoint type. </p>
-    pub fn url_endpoint(&self) -> std::option::Option<&crate::model::UrlEndpointInput> {
+    pub fn url_endpoint(&self) -> std::option::Option<& crate::model::UrlEndpointInput> {
         self.url_endpoint.as_ref()
     }
     /// <p>The configuration for the Lambda endpoint type.</p>
-    pub fn lambda_endpoint(&self) -> std::option::Option<&crate::model::LambdaEndpointInput> {
+    pub fn lambda_endpoint(&self) -> std::option::Option<& crate::model::LambdaEndpointInput> {
         self.lambda_endpoint.as_ref()
     }
     /// <p>The current state of the service. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ServiceState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ServiceState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A timestamp that indicates when the service was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the service is created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for CreateServiceOutput {
+impl  std::fmt::Debug for CreateServiceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceOutput");
         formatter.field("service_id", &self.service_id);
@@ -3185,7 +2966,7 @@ impl std::fmt::Debug for CreateServiceOutput {
 }
 /// See [`CreateServiceOutput`](crate::output::CreateServiceOutput).
 pub mod create_service_output {
-
+    
     /// A builder for [`CreateServiceOutput`](crate::output::CreateServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3202,9 +2983,7 @@ pub mod create_service_output {
         pub(crate) url_endpoint: std::option::Option<crate::model::UrlEndpointInput>,
         pub(crate) lambda_endpoint: std::option::Option<crate::model::LambdaEndpointInput>,
         pub(crate) state: std::option::Option<crate::model::ServiceState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3216,8 +2995,7 @@ pub mod create_service_output {
         }
         /// <p>The unique identifier of the service.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p>The name of the service.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3226,8 +3004,7 @@ pub mod create_service_output {
         }
         /// <p>The name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3236,8 +3013,7 @@ pub mod create_service_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the service owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3245,12 +3021,8 @@ pub mod create_service_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the service owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the service creator.</p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3258,12 +3030,8 @@ pub mod create_service_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the service creator.</p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>The description of the created service.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3272,8 +3040,7 @@ pub mod create_service_output {
         }
         /// <p>The description of the created service.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier of the environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3281,12 +3048,8 @@ pub mod create_service_output {
             self
         }
         /// <p>The unique identifier of the environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the application that the created service belongs to. </p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3294,12 +3057,8 @@ pub mod create_service_output {
             self
         }
         /// <p>The ID of the application that the created service belongs to. </p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ID of the VPC. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3308,8 +3067,7 @@ pub mod create_service_output {
         }
         /// <p>The ID of the VPC. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The endpoint type of the service.</p>
         pub fn endpoint_type(mut self, input: crate::model::ServiceEndpointType) -> Self {
@@ -3317,12 +3075,8 @@ pub mod create_service_output {
             self
         }
         /// <p>The endpoint type of the service.</p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceEndpointType>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<crate::model::ServiceEndpointType>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The configuration for the URL endpoint type. </p>
         pub fn url_endpoint(mut self, input: crate::model::UrlEndpointInput) -> Self {
@@ -3330,12 +3084,8 @@ pub mod create_service_output {
             self
         }
         /// <p>The configuration for the URL endpoint type. </p>
-        pub fn set_url_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::UrlEndpointInput>,
-        ) -> Self {
-            self.url_endpoint = input;
-            self
+        pub fn set_url_endpoint(mut self, input: std::option::Option<crate::model::UrlEndpointInput>) -> Self {
+            self.url_endpoint = input; self
         }
         /// <p>The configuration for the Lambda endpoint type.</p>
         pub fn lambda_endpoint(mut self, input: crate::model::LambdaEndpointInput) -> Self {
@@ -3343,12 +3093,8 @@ pub mod create_service_output {
             self
         }
         /// <p>The configuration for the Lambda endpoint type.</p>
-        pub fn set_lambda_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::LambdaEndpointInput>,
-        ) -> Self {
-            self.lambda_endpoint = input;
-            self
+        pub fn set_lambda_endpoint(mut self, input: std::option::Option<crate::model::LambdaEndpointInput>) -> Self {
+            self.lambda_endpoint = input; self
         }
         /// <p>The current state of the service. </p>
         pub fn state(mut self, input: crate::model::ServiceState) -> Self {
@@ -3357,33 +3103,22 @@ pub mod create_service_output {
         }
         /// <p>The current state of the service. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ServiceState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A timestamp that indicates when the service was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3391,12 +3126,8 @@ pub mod create_service_output {
             self
         }
         /// <p>A timestamp that indicates when the service was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the service is created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3404,32 +3135,44 @@ pub mod create_service_output {
             self
         }
         /// <p>A timestamp that indicates when the service is created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateServiceOutput`](crate::output::CreateServiceOutput).
         pub fn build(self) -> crate::output::CreateServiceOutput {
             crate::output::CreateServiceOutput {
-                service_id: self.service_id,
-                name: self.name,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                description: self.description,
-                environment_id: self.environment_id,
-                application_id: self.application_id,
-                vpc_id: self.vpc_id,
-                endpoint_type: self.endpoint_type,
-                url_endpoint: self.url_endpoint,
-                lambda_endpoint: self.lambda_endpoint,
-                state: self.state,
-                tags: self.tags,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                service_id: self.service_id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                description: self.description
+                ,
+                environment_id: self.environment_id
+                ,
+                application_id: self.application_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                url_endpoint: self.url_endpoint
+                ,
+                lambda_endpoint: self.lambda_endpoint
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -3455,6 +3198,8 @@ pub mod create_service_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateServiceOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceOutput`](crate::output::CreateServiceOutput).
@@ -3466,7 +3211,7 @@ impl CreateServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateRouteOutput {
+pub struct CreateRouteOutput  {
     /// <p>The unique identifier of the route.</p>
     #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
@@ -3496,8 +3241,7 @@ pub struct CreateRouteOutput {
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A timestamp that indicates when the route was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3507,58 +3251,55 @@ pub struct CreateRouteOutput {
 }
 impl CreateRouteOutput {
     /// <p>The unique identifier of the route.</p>
-    pub fn route_id(&self) -> std::option::Option<&str> {
+    pub fn route_id(&self) -> std::option::Option<& str> {
         self.route_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the route owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the route creator.</p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>The route type of the route.</p>
-    pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
+    pub fn route_type(&self) -> std::option::Option<& crate::model::RouteType> {
         self.route_type.as_ref()
     }
     /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the application in which the route is created.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Configuration for the URI path route type. </p>
-    pub fn uri_path_route(&self) -> std::option::Option<&crate::model::UriPathRouteInput> {
+    pub fn uri_path_route(&self) -> std::option::Option<& crate::model::UriPathRouteInput> {
         self.uri_path_route.as_ref()
     }
     /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RouteState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A timestamp that indicates when the route was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the route is created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRouteOutput {
+impl  std::fmt::Debug for CreateRouteOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRouteOutput");
         formatter.field("route_id", &self.route_id);
@@ -3578,7 +3319,7 @@ impl std::fmt::Debug for CreateRouteOutput {
 }
 /// See [`CreateRouteOutput`](crate::output::CreateRouteOutput).
 pub mod create_route_output {
-
+    
     /// A builder for [`CreateRouteOutput`](crate::output::CreateRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3591,9 +3332,7 @@ pub mod create_route_output {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
         pub(crate) state: std::option::Option<crate::model::RouteState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3605,8 +3344,7 @@ pub mod create_route_output {
         }
         /// <p>The unique identifier of the route.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.route_id = input;
-            self
+            self.route_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3615,8 +3353,7 @@ pub mod create_route_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the route owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3624,12 +3361,8 @@ pub mod create_route_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the route owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the route creator.</p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3637,12 +3370,8 @@ pub mod create_route_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the route creator.</p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>The route type of the route.</p>
         pub fn route_type(mut self, input: crate::model::RouteType) -> Self {
@@ -3650,12 +3379,8 @@ pub mod create_route_output {
             self
         }
         /// <p>The route type of the route.</p>
-        pub fn set_route_type(
-            mut self,
-            input: std::option::Option<crate::model::RouteType>,
-        ) -> Self {
-            self.route_type = input;
-            self
+        pub fn set_route_type(mut self, input: std::option::Option<crate::model::RouteType>) -> Self {
+            self.route_type = input; self
         }
         /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3664,8 +3389,7 @@ pub mod create_route_output {
         }
         /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p>The ID of the application in which the route is created.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3673,12 +3397,8 @@ pub mod create_route_output {
             self
         }
         /// <p>The ID of the application in which the route is created.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>Configuration for the URI path route type. </p>
         pub fn uri_path_route(mut self, input: crate::model::UriPathRouteInput) -> Self {
@@ -3686,12 +3406,8 @@ pub mod create_route_output {
             self
         }
         /// <p>Configuration for the URI path route type. </p>
-        pub fn set_uri_path_route(
-            mut self,
-            input: std::option::Option<crate::model::UriPathRouteInput>,
-        ) -> Self {
-            self.uri_path_route = input;
-            self
+        pub fn set_uri_path_route(mut self, input: std::option::Option<crate::model::UriPathRouteInput>) -> Self {
+            self.uri_path_route = input; self
         }
         /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
         pub fn state(mut self, input: crate::model::RouteState) -> Self {
@@ -3700,33 +3416,22 @@ pub mod create_route_output {
         }
         /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A timestamp that indicates when the route was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3734,12 +3439,8 @@ pub mod create_route_output {
             self
         }
         /// <p>A timestamp that indicates when the route was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the route is created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3747,28 +3448,36 @@ pub mod create_route_output {
             self
         }
         /// <p>A timestamp that indicates when the route is created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateRouteOutput`](crate::output::CreateRouteOutput).
         pub fn build(self) -> crate::output::CreateRouteOutput {
             crate::output::CreateRouteOutput {
-                route_id: self.route_id,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                route_type: self.route_type,
-                service_id: self.service_id,
-                application_id: self.application_id,
-                uri_path_route: self.uri_path_route,
-                state: self.state,
-                tags: self.tags,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                route_id: self.route_id
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                route_type: self.route_type
+                ,
+                service_id: self.service_id
+                ,
+                application_id: self.application_id
+                ,
+                uri_path_route: self.uri_path_route
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -3790,6 +3499,8 @@ pub mod create_route_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateRouteOutput`](crate::output::CreateRouteOutput).
@@ -3801,7 +3512,7 @@ impl CreateRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateEnvironmentOutput {
+pub struct CreateEnvironmentOutput  {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3825,8 +3536,7 @@ pub struct CreateEnvironmentOutput {
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A timestamp that indicates when the environment was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3836,50 +3546,47 @@ pub struct CreateEnvironmentOutput {
 }
 impl CreateEnvironmentOutput {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn network_fabric_type(&self) -> std::option::Option<&crate::model::NetworkFabricType> {
+    pub fn network_fabric_type(&self) -> std::option::Option<& crate::model::NetworkFabricType> {
         self.network_fabric_type.as_ref()
     }
     /// <p>The Amazon Web Services account ID of environment owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The current state of the environment. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the environment is created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEnvironmentOutput {
+impl  std::fmt::Debug for CreateEnvironmentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentOutput");
         formatter.field("name", &self.name);
@@ -3897,7 +3604,7 @@ impl std::fmt::Debug for CreateEnvironmentOutput {
 }
 /// See [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
 pub mod create_environment_output {
-
+    
     /// A builder for [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3908,9 +3615,7 @@ pub mod create_environment_output {
         pub(crate) network_fabric_type: std::option::Option<crate::model::NetworkFabricType>,
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EnvironmentState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3922,8 +3627,7 @@ pub mod create_environment_output {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3932,8 +3636,7 @@ pub mod create_environment_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A description of the environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3942,8 +3645,7 @@ pub mod create_environment_output {
         }
         /// <p>A description of the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier of the environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3951,12 +3653,8 @@ pub mod create_environment_output {
             self
         }
         /// <p>The unique identifier of the environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The network fabric type of the environment.</p>
         pub fn network_fabric_type(mut self, input: crate::model::NetworkFabricType) -> Self {
@@ -3964,12 +3662,8 @@ pub mod create_environment_output {
             self
         }
         /// <p>The network fabric type of the environment.</p>
-        pub fn set_network_fabric_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkFabricType>,
-        ) -> Self {
-            self.network_fabric_type = input;
-            self
+        pub fn set_network_fabric_type(mut self, input: std::option::Option<crate::model::NetworkFabricType>) -> Self {
+            self.network_fabric_type = input; self
         }
         /// <p>The Amazon Web Services account ID of environment owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3977,12 +3671,8 @@ pub mod create_environment_output {
             self
         }
         /// <p>The Amazon Web Services account ID of environment owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The current state of the environment. </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
@@ -3990,37 +3680,23 @@ pub mod create_environment_output {
             self
         }
         /// <p>The current state of the environment. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::EnvironmentState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4028,12 +3704,8 @@ pub mod create_environment_output {
             self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the environment is created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4041,26 +3713,32 @@ pub mod create_environment_output {
             self
         }
         /// <p>A timestamp that indicates when the environment is created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
         pub fn build(self) -> crate::output::CreateEnvironmentOutput {
             crate::output::CreateEnvironmentOutput {
-                name: self.name,
-                arn: self.arn,
-                description: self.description,
-                environment_id: self.environment_id,
-                network_fabric_type: self.network_fabric_type,
-                owner_account_id: self.owner_account_id,
-                state: self.state,
-                tags: self.tags,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                environment_id: self.environment_id
+                ,
+                network_fabric_type: self.network_fabric_type
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -4080,6 +3758,8 @@ pub mod create_environment_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
@@ -4091,7 +3771,7 @@ impl CreateEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4124,8 +3804,7 @@ pub struct CreateApplicationOutput {
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A timestamp that indicates when the application was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4135,62 +3814,59 @@ pub struct CreateApplicationOutput {
 }
 impl CreateApplicationOutput {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of application creator.</p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the environment in which the application is created.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the Amazon VPC. </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The proxy type of the proxy created within the application. </p>
-    pub fn proxy_type(&self) -> std::option::Option<&crate::model::ProxyType> {
+    pub fn proxy_type(&self) -> std::option::Option<& crate::model::ProxyType> {
         self.proxy_type.as_ref()
     }
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
-    pub fn api_gateway_proxy(&self) -> std::option::Option<&crate::model::ApiGatewayProxyInput> {
+    pub fn api_gateway_proxy(&self) -> std::option::Option<& crate::model::ApiGatewayProxyInput> {
         self.api_gateway_proxy.as_ref()
     }
     /// <p>The current state of the application. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ApplicationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ApplicationState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A timestamp that indicates when the application was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the application is created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApplicationOutput {
+impl  std::fmt::Debug for CreateApplicationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationOutput");
         formatter.field("name", &self.name);
@@ -4211,7 +3887,7 @@ impl std::fmt::Debug for CreateApplicationOutput {
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4225,9 +3901,7 @@ pub mod create_application_output {
         pub(crate) proxy_type: std::option::Option<crate::model::ProxyType>,
         pub(crate) api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxyInput>,
         pub(crate) state: std::option::Option<crate::model::ApplicationState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -4239,8 +3913,7 @@ pub mod create_application_output {
         }
         /// <p>The name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4249,8 +3922,7 @@ pub mod create_application_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4258,12 +3930,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of application creator.</p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4271,12 +3939,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The Amazon Web Services account ID of application creator.</p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>The unique identifier of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4284,12 +3948,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The unique identifier of the application.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ID of the environment in which the application is created.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4297,12 +3957,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The ID of the environment in which the application is created.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the Amazon VPC. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4311,8 +3967,7 @@ pub mod create_application_output {
         }
         /// <p>The ID of the Amazon VPC. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The proxy type of the proxy created within the application. </p>
         pub fn proxy_type(mut self, input: crate::model::ProxyType) -> Self {
@@ -4320,12 +3975,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The proxy type of the proxy created within the application. </p>
-        pub fn set_proxy_type(
-            mut self,
-            input: std::option::Option<crate::model::ProxyType>,
-        ) -> Self {
-            self.proxy_type = input;
-            self
+        pub fn set_proxy_type(mut self, input: std::option::Option<crate::model::ProxyType>) -> Self {
+            self.proxy_type = input; self
         }
         /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn api_gateway_proxy(mut self, input: crate::model::ApiGatewayProxyInput) -> Self {
@@ -4333,12 +3984,8 @@ pub mod create_application_output {
             self
         }
         /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
-        pub fn set_api_gateway_proxy(
-            mut self,
-            input: std::option::Option<crate::model::ApiGatewayProxyInput>,
-        ) -> Self {
-            self.api_gateway_proxy = input;
-            self
+        pub fn set_api_gateway_proxy(mut self, input: std::option::Option<crate::model::ApiGatewayProxyInput>) -> Self {
+            self.api_gateway_proxy = input; self
         }
         /// <p>The current state of the application. </p>
         pub fn state(mut self, input: crate::model::ApplicationState) -> Self {
@@ -4346,37 +3993,23 @@ pub mod create_application_output {
             self
         }
         /// <p>The current state of the application. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ApplicationState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A timestamp that indicates when the application was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4384,12 +4017,8 @@ pub mod create_application_output {
             self
         }
         /// <p>A timestamp that indicates when the application was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the application is created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4397,29 +4026,38 @@ pub mod create_application_output {
             self
         }
         /// <p>A timestamp that indicates when the application is created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                name: self.name,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                vpc_id: self.vpc_id,
-                proxy_type: self.proxy_type,
-                api_gateway_proxy: self.api_gateway_proxy,
-                state: self.state,
-                tags: self.tags,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                proxy_type: self.proxy_type
+                ,
+                api_gateway_proxy: self.api_gateway_proxy
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -4442,6 +4080,8 @@ pub mod create_application_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -4449,3 +4089,4 @@ impl CreateApplicationOutput {
         crate::output::create_application_output::Builder::default()
     }
 }
+

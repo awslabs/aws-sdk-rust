@@ -3,19 +3,24 @@
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEmailTemplateOutput {}
+pub struct UpdateEmailTemplateOutput  {
+}
 /// See [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
 pub mod update_email_template_output {
-
+    
     /// A builder for [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
         pub fn build(self) -> crate::output::UpdateEmailTemplateOutput {
-            crate::output::UpdateEmailTemplateOutput {}
+            crate::output::UpdateEmailTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
@@ -27,19 +32,24 @@ impl UpdateEmailTemplateOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEmailIdentityPolicyOutput {}
+pub struct UpdateEmailIdentityPolicyOutput  {
+}
 /// See [`UpdateEmailIdentityPolicyOutput`](crate::output::UpdateEmailIdentityPolicyOutput).
 pub mod update_email_identity_policy_output {
-
+    
     /// A builder for [`UpdateEmailIdentityPolicyOutput`](crate::output::UpdateEmailIdentityPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEmailIdentityPolicyOutput`](crate::output::UpdateEmailIdentityPolicyOutput).
         pub fn build(self) -> crate::output::UpdateEmailIdentityPolicyOutput {
-            crate::output::UpdateEmailIdentityPolicyOutput {}
+            crate::output::UpdateEmailIdentityPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateEmailIdentityPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEmailIdentityPolicyOutput`](crate::output::UpdateEmailIdentityPolicyOutput).
@@ -51,19 +61,24 @@ impl UpdateEmailIdentityPolicyOutput {
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomVerificationEmailTemplateOutput {}
+pub struct UpdateCustomVerificationEmailTemplateOutput  {
+}
 /// See [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput).
 pub mod update_custom_verification_email_template_output {
-
+    
     /// A builder for [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput).
         pub fn build(self) -> crate::output::UpdateCustomVerificationEmailTemplateOutput {
-            crate::output::UpdateCustomVerificationEmailTemplateOutput {}
+            crate::output::UpdateCustomVerificationEmailTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateCustomVerificationEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput).
@@ -75,19 +90,24 @@ impl UpdateCustomVerificationEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContactListOutput {}
+pub struct UpdateContactListOutput  {
+}
 /// See [`UpdateContactListOutput`](crate::output::UpdateContactListOutput).
 pub mod update_contact_list_output {
-
+    
     /// A builder for [`UpdateContactListOutput`](crate::output::UpdateContactListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateContactListOutput`](crate::output::UpdateContactListOutput).
         pub fn build(self) -> crate::output::UpdateContactListOutput {
-            crate::output::UpdateContactListOutput {}
+            crate::output::UpdateContactListOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateContactListOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactListOutput`](crate::output::UpdateContactListOutput).
@@ -99,19 +119,24 @@ impl UpdateContactListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContactOutput {}
+pub struct UpdateContactOutput  {
+}
 /// See [`UpdateContactOutput`](crate::output::UpdateContactOutput).
 pub mod update_contact_output {
-
+    
     /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateContactOutput`](crate::output::UpdateContactOutput).
         pub fn build(self) -> crate::output::UpdateContactOutput {
-            crate::output::UpdateContactOutput {}
+            crate::output::UpdateContactOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateContactOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactOutput`](crate::output::UpdateContactOutput).
@@ -123,19 +148,24 @@ impl UpdateContactOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationSetEventDestinationOutput {}
+pub struct UpdateConfigurationSetEventDestinationOutput  {
+}
 /// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
 pub mod update_configuration_set_event_destination_output {
-
+    
     /// A builder for [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::UpdateConfigurationSetEventDestinationOutput {
-            crate::output::UpdateConfigurationSetEventDestinationOutput {}
+            crate::output::UpdateConfigurationSetEventDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateConfigurationSetEventDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
@@ -147,19 +177,24 @@ impl UpdateConfigurationSetEventDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -171,20 +206,20 @@ impl UntagResourceOutput {
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestRenderEmailTemplateOutput {
+pub struct TestRenderEmailTemplateOutput  {
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
     #[doc(hidden)]
     pub rendered_template: std::option::Option<std::string::String>,
 }
 impl TestRenderEmailTemplateOutput {
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
-    pub fn rendered_template(&self) -> std::option::Option<&str> {
+    pub fn rendered_template(&self) -> std::option::Option<& str> {
         self.rendered_template.as_deref()
     }
 }
 /// See [`TestRenderEmailTemplateOutput`](crate::output::TestRenderEmailTemplateOutput).
 pub mod test_render_email_template_output {
-
+    
     /// A builder for [`TestRenderEmailTemplateOutput`](crate::output::TestRenderEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -197,20 +232,19 @@ pub mod test_render_email_template_output {
             self
         }
         /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
-        pub fn set_rendered_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rendered_template = input;
-            self
+        pub fn set_rendered_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rendered_template = input; self
         }
         /// Consumes the builder and constructs a [`TestRenderEmailTemplateOutput`](crate::output::TestRenderEmailTemplateOutput).
         pub fn build(self) -> crate::output::TestRenderEmailTemplateOutput {
             crate::output::TestRenderEmailTemplateOutput {
-                rendered_template: self.rendered_template,
+                rendered_template: self.rendered_template
+                ,
             }
         }
     }
+    
+    
 }
 impl TestRenderEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`TestRenderEmailTemplateOutput`](crate::output::TestRenderEmailTemplateOutput).
@@ -222,19 +256,24 @@ impl TestRenderEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -246,51 +285,53 @@ impl TagResourceOutput {
 /// <p>A unique message ID that you receive when an email is accepted for sending.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendEmailOutput {
-    /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note>
-    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+pub struct SendEmailOutput  {
+    /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note> 
+    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p> 
     /// </note>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendEmailOutput {
-    /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note>
-    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+    /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note> 
+    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p> 
     /// </note>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 /// See [`SendEmailOutput`](crate::output::SendEmailOutput).
 pub mod send_email_output {
-
+    
     /// A builder for [`SendEmailOutput`](crate::output::SendEmailOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note>
-        /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+        /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note> 
+        /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p> 
         /// </note>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note>
-        /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+        /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note> 
+        /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p> 
         /// </note>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// Consumes the builder and constructs a [`SendEmailOutput`](crate::output::SendEmailOutput).
         pub fn build(self) -> crate::output::SendEmailOutput {
             crate::output::SendEmailOutput {
-                message_id: self.message_id,
+                message_id: self.message_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SendEmailOutput {
     /// Creates a new builder-style object to manufacture [`SendEmailOutput`](crate::output::SendEmailOutput).
@@ -302,20 +343,20 @@ impl SendEmailOutput {
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendCustomVerificationEmailOutput {
+pub struct SendCustomVerificationEmailOutput  {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 /// See [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput).
 pub mod send_custom_verification_email_output {
-
+    
     /// A builder for [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -329,16 +370,18 @@ pub mod send_custom_verification_email_output {
         }
         /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// Consumes the builder and constructs a [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput).
         pub fn build(self) -> crate::output::SendCustomVerificationEmailOutput {
             crate::output::SendCustomVerificationEmailOutput {
-                message_id: self.message_id,
+                message_id: self.message_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SendCustomVerificationEmailOutput {
     /// Creates a new builder-style object to manufacture [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput).
@@ -350,28 +393,24 @@ impl SendCustomVerificationEmailOutput {
 /// <p>The following data is returned in JSON format by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendBulkEmailOutput {
+pub struct SendBulkEmailOutput  {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
     #[doc(hidden)]
-    pub bulk_email_entry_results:
-        std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
+    pub bulk_email_entry_results: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
 }
 impl SendBulkEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
-    pub fn bulk_email_entry_results(
-        &self,
-    ) -> std::option::Option<&[crate::model::BulkEmailEntryResult]> {
+    pub fn bulk_email_entry_results(&self) -> std::option::Option<& [crate::model::BulkEmailEntryResult]> {
         self.bulk_email_entry_results.as_deref()
     }
 }
 /// See [`SendBulkEmailOutput`](crate::output::SendBulkEmailOutput).
 pub mod send_bulk_email_output {
-
+    
     /// A builder for [`SendBulkEmailOutput`](crate::output::SendBulkEmailOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bulk_email_entry_results:
-            std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
+        pub(crate) bulk_email_entry_results: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
     }
     impl Builder {
         /// Appends an item to `bulk_email_entry_results`.
@@ -379,30 +418,26 @@ pub mod send_bulk_email_output {
         /// To override the contents of this collection use [`set_bulk_email_entry_results`](Self::set_bulk_email_entry_results).
         ///
         /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
-        pub fn bulk_email_entry_results(
-            mut self,
-            input: crate::model::BulkEmailEntryResult,
-        ) -> Self {
+        pub fn bulk_email_entry_results(mut self, input: crate::model::BulkEmailEntryResult) -> Self {
             let mut v = self.bulk_email_entry_results.unwrap_or_default();
-            v.push(input);
-            self.bulk_email_entry_results = Some(v);
-            self
+                            v.push(input);
+                            self.bulk_email_entry_results = Some(v);
+                            self
         }
         /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
-        pub fn set_bulk_email_entry_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
-        ) -> Self {
-            self.bulk_email_entry_results = input;
-            self
+        pub fn set_bulk_email_entry_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>) -> Self {
+            self.bulk_email_entry_results = input; self
         }
         /// Consumes the builder and constructs a [`SendBulkEmailOutput`](crate::output::SendBulkEmailOutput).
         pub fn build(self) -> crate::output::SendBulkEmailOutput {
             crate::output::SendBulkEmailOutput {
-                bulk_email_entry_results: self.bulk_email_entry_results,
+                bulk_email_entry_results: self.bulk_email_entry_results
+                ,
             }
         }
     }
+    
+    
 }
 impl SendBulkEmailOutput {
     /// Creates a new builder-style object to manufacture [`SendBulkEmailOutput`](crate::output::SendBulkEmailOutput).
@@ -414,19 +449,24 @@ impl SendBulkEmailOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSuppressedDestinationOutput {}
+pub struct PutSuppressedDestinationOutput  {
+}
 /// See [`PutSuppressedDestinationOutput`](crate::output::PutSuppressedDestinationOutput).
 pub mod put_suppressed_destination_output {
-
+    
     /// A builder for [`PutSuppressedDestinationOutput`](crate::output::PutSuppressedDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutSuppressedDestinationOutput`](crate::output::PutSuppressedDestinationOutput).
         pub fn build(self) -> crate::output::PutSuppressedDestinationOutput {
-            crate::output::PutSuppressedDestinationOutput {}
+            crate::output::PutSuppressedDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutSuppressedDestinationOutput {
     /// Creates a new builder-style object to manufacture [`PutSuppressedDestinationOutput`](crate::output::PutSuppressedDestinationOutput).
@@ -438,19 +478,24 @@ impl PutSuppressedDestinationOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityMailFromAttributesOutput {}
+pub struct PutEmailIdentityMailFromAttributesOutput  {
+}
 /// See [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
 pub mod put_email_identity_mail_from_attributes_output {
-
+    
     /// A builder for [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
         pub fn build(self) -> crate::output::PutEmailIdentityMailFromAttributesOutput {
-            crate::output::PutEmailIdentityMailFromAttributesOutput {}
+            crate::output::PutEmailIdentityMailFromAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutEmailIdentityMailFromAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
@@ -462,19 +507,24 @@ impl PutEmailIdentityMailFromAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityFeedbackAttributesOutput {}
+pub struct PutEmailIdentityFeedbackAttributesOutput  {
+}
 /// See [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
 pub mod put_email_identity_feedback_attributes_output {
-
+    
     /// A builder for [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
         pub fn build(self) -> crate::output::PutEmailIdentityFeedbackAttributesOutput {
-            crate::output::PutEmailIdentityFeedbackAttributesOutput {}
+            crate::output::PutEmailIdentityFeedbackAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutEmailIdentityFeedbackAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
@@ -483,53 +533,53 @@ impl PutEmailIdentityFeedbackAttributesOutput {
     }
 }
 
-/// <p>If the action is successful, the service sends back an HTTP 200 response.</p>
+/// <p>If the action is successful, the service sends back an HTTP 200 response.</p> 
 /// <p>The following data is returned in JSON format by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityDkimSigningAttributesOutput {
-    /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p>
-    /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p>
-    /// <p>The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
+pub struct PutEmailIdentityDkimSigningAttributesOutput  {
+    /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p> 
+    /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p> 
+    /// <p>The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub dkim_status: std::option::Option<crate::model::DkimStatus>,
-    /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
-    /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
+    /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p> 
+    /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p> 
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
     #[doc(hidden)]
     pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutEmailIdentityDkimSigningAttributesOutput {
-    /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p>
-    /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p>
-    /// <p>The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
+    /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p> 
+    /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p> 
+    /// <p>The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> 
     /// </ul>
-    pub fn dkim_status(&self) -> std::option::Option<&crate::model::DkimStatus> {
+    pub fn dkim_status(&self) -> std::option::Option<& crate::model::DkimStatus> {
         self.dkim_status.as_ref()
     }
-    /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
-    /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
+    /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p> 
+    /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p> 
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    pub fn dkim_tokens(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dkim_tokens(&self) -> std::option::Option<& [std::string::String]> {
         self.dkim_tokens.as_deref()
     }
 }
 /// See [`PutEmailIdentityDkimSigningAttributesOutput`](crate::output::PutEmailIdentityDkimSigningAttributesOutput).
 pub mod put_email_identity_dkim_signing_attributes_output {
-
+    
     /// A builder for [`PutEmailIdentityDkimSigningAttributesOutput`](crate::output::PutEmailIdentityDkimSigningAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -537,68 +587,64 @@ pub mod put_email_identity_dkim_signing_attributes_output {
         pub(crate) dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p>
-        /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p>
-        /// <p>The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-        /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
-        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
-        /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
+        /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p> 
+        /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p> 
+        /// <p>The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li> 
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li> 
+        /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> 
         /// </ul>
         pub fn dkim_status(mut self, input: crate::model::DkimStatus) -> Self {
             self.dkim_status = Some(input);
             self
         }
-        /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p>
-        /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p>
-        /// <p>The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-        /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>
-        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
-        /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
+        /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p> 
+        /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p> 
+        /// <p>The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li> 
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li> 
+        /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> 
         /// </ul>
-        pub fn set_dkim_status(
-            mut self,
-            input: std::option::Option<crate::model::DkimStatus>,
-        ) -> Self {
-            self.dkim_status = input;
-            self
+        pub fn set_dkim_status(mut self, input: std::option::Option<crate::model::DkimStatus>) -> Self {
+            self.dkim_status = input; self
         }
         /// Appends an item to `dkim_tokens`.
         ///
         /// To override the contents of this collection use [`set_dkim_tokens`](Self::set_dkim_tokens).
         ///
-        /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
-        /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
+        /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p> 
+        /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p> 
         /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
         pub fn dkim_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dkim_tokens.unwrap_or_default();
-            v.push(input.into());
-            self.dkim_tokens = Some(v);
-            self
+                            v.push(input.into());
+                            self.dkim_tokens = Some(v);
+                            self
         }
-        /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
-        /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
+        /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p> 
+        /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p> 
         /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-        pub fn set_dkim_tokens(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.dkim_tokens = input;
-            self
+        pub fn set_dkim_tokens(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.dkim_tokens = input; self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityDkimSigningAttributesOutput`](crate::output::PutEmailIdentityDkimSigningAttributesOutput).
         pub fn build(self) -> crate::output::PutEmailIdentityDkimSigningAttributesOutput {
             crate::output::PutEmailIdentityDkimSigningAttributesOutput {
-                dkim_status: self.dkim_status,
-                dkim_tokens: self.dkim_tokens,
+                dkim_status: self.dkim_status
+                ,
+                dkim_tokens: self.dkim_tokens
+                ,
             }
         }
     }
+    
+    
 }
 impl PutEmailIdentityDkimSigningAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimSigningAttributesOutput`](crate::output::PutEmailIdentityDkimSigningAttributesOutput).
@@ -610,19 +656,24 @@ impl PutEmailIdentityDkimSigningAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityDkimAttributesOutput {}
+pub struct PutEmailIdentityDkimAttributesOutput  {
+}
 /// See [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
 pub mod put_email_identity_dkim_attributes_output {
-
+    
     /// A builder for [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
         pub fn build(self) -> crate::output::PutEmailIdentityDkimAttributesOutput {
-            crate::output::PutEmailIdentityDkimAttributesOutput {}
+            crate::output::PutEmailIdentityDkimAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutEmailIdentityDkimAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
@@ -634,24 +685,28 @@ impl PutEmailIdentityDkimAttributesOutput {
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityConfigurationSetAttributesOutput {}
+pub struct PutEmailIdentityConfigurationSetAttributesOutput  {
+}
 /// See [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::output::PutEmailIdentityConfigurationSetAttributesOutput).
 pub mod put_email_identity_configuration_set_attributes_output {
-
+    
     /// A builder for [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::output::PutEmailIdentityConfigurationSetAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::output::PutEmailIdentityConfigurationSetAttributesOutput).
         pub fn build(self) -> crate::output::PutEmailIdentityConfigurationSetAttributesOutput {
-            crate::output::PutEmailIdentityConfigurationSetAttributesOutput {}
+            crate::output::PutEmailIdentityConfigurationSetAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutEmailIdentityConfigurationSetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::output::PutEmailIdentityConfigurationSetAttributesOutput).
-    pub fn builder(
-    ) -> crate::output::put_email_identity_configuration_set_attributes_output::Builder {
+    pub fn builder() -> crate::output::put_email_identity_configuration_set_attributes_output::Builder {
         crate::output::put_email_identity_configuration_set_attributes_output::Builder::default()
     }
 }
@@ -659,19 +714,24 @@ impl PutEmailIdentityConfigurationSetAttributesOutput {
 /// <p>A response that indicates whether the Deliverability dashboard is enabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDeliverabilityDashboardOptionOutput {}
+pub struct PutDeliverabilityDashboardOptionOutput  {
+}
 /// See [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
 pub mod put_deliverability_dashboard_option_output {
-
+    
     /// A builder for [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
         pub fn build(self) -> crate::output::PutDeliverabilityDashboardOptionOutput {
-            crate::output::PutDeliverabilityDashboardOptionOutput {}
+            crate::output::PutDeliverabilityDashboardOptionOutput {
+            }
         }
     }
+    
+    
 }
 impl PutDeliverabilityDashboardOptionOutput {
     /// Creates a new builder-style object to manufacture [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
@@ -683,19 +743,24 @@ impl PutDeliverabilityDashboardOptionOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDedicatedIpWarmupAttributesOutput {}
+pub struct PutDedicatedIpWarmupAttributesOutput  {
+}
 /// See [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
 pub mod put_dedicated_ip_warmup_attributes_output {
-
+    
     /// A builder for [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
         pub fn build(self) -> crate::output::PutDedicatedIpWarmupAttributesOutput {
-            crate::output::PutDedicatedIpWarmupAttributesOutput {}
+            crate::output::PutDedicatedIpWarmupAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutDedicatedIpWarmupAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
@@ -707,19 +772,24 @@ impl PutDedicatedIpWarmupAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDedicatedIpInPoolOutput {}
+pub struct PutDedicatedIpInPoolOutput  {
+}
 /// See [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
 pub mod put_dedicated_ip_in_pool_output {
-
+    
     /// A builder for [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
         pub fn build(self) -> crate::output::PutDedicatedIpInPoolOutput {
-            crate::output::PutDedicatedIpInPoolOutput {}
+            crate::output::PutDedicatedIpInPoolOutput {
+            }
         }
     }
+    
+    
 }
 impl PutDedicatedIpInPoolOutput {
     /// Creates a new builder-style object to manufacture [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
@@ -731,19 +801,24 @@ impl PutDedicatedIpInPoolOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetVdmOptionsOutput {}
+pub struct PutConfigurationSetVdmOptionsOutput  {
+}
 /// See [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
 pub mod put_configuration_set_vdm_options_output {
-
+    
     /// A builder for [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetVdmOptionsOutput {
-            crate::output::PutConfigurationSetVdmOptionsOutput {}
+            crate::output::PutConfigurationSetVdmOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutConfigurationSetVdmOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
@@ -755,19 +830,24 @@ impl PutConfigurationSetVdmOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetTrackingOptionsOutput {}
+pub struct PutConfigurationSetTrackingOptionsOutput  {
+}
 /// See [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
 pub mod put_configuration_set_tracking_options_output {
-
+    
     /// A builder for [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetTrackingOptionsOutput {
-            crate::output::PutConfigurationSetTrackingOptionsOutput {}
+            crate::output::PutConfigurationSetTrackingOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutConfigurationSetTrackingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
@@ -779,19 +859,24 @@ impl PutConfigurationSetTrackingOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetSuppressionOptionsOutput {}
+pub struct PutConfigurationSetSuppressionOptionsOutput  {
+}
 /// See [`PutConfigurationSetSuppressionOptionsOutput`](crate::output::PutConfigurationSetSuppressionOptionsOutput).
 pub mod put_configuration_set_suppression_options_output {
-
+    
     /// A builder for [`PutConfigurationSetSuppressionOptionsOutput`](crate::output::PutConfigurationSetSuppressionOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutConfigurationSetSuppressionOptionsOutput`](crate::output::PutConfigurationSetSuppressionOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetSuppressionOptionsOutput {
-            crate::output::PutConfigurationSetSuppressionOptionsOutput {}
+            crate::output::PutConfigurationSetSuppressionOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutConfigurationSetSuppressionOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetSuppressionOptionsOutput`](crate::output::PutConfigurationSetSuppressionOptionsOutput).
@@ -803,19 +888,24 @@ impl PutConfigurationSetSuppressionOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetSendingOptionsOutput {}
+pub struct PutConfigurationSetSendingOptionsOutput  {
+}
 /// See [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
 pub mod put_configuration_set_sending_options_output {
-
+    
     /// A builder for [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetSendingOptionsOutput {
-            crate::output::PutConfigurationSetSendingOptionsOutput {}
+            crate::output::PutConfigurationSetSendingOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutConfigurationSetSendingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
@@ -827,19 +917,24 @@ impl PutConfigurationSetSendingOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetReputationOptionsOutput {}
+pub struct PutConfigurationSetReputationOptionsOutput  {
+}
 /// See [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
 pub mod put_configuration_set_reputation_options_output {
-
+    
     /// A builder for [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetReputationOptionsOutput {
-            crate::output::PutConfigurationSetReputationOptionsOutput {}
+            crate::output::PutConfigurationSetReputationOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutConfigurationSetReputationOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
@@ -851,19 +946,24 @@ impl PutConfigurationSetReputationOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetDeliveryOptionsOutput {}
+pub struct PutConfigurationSetDeliveryOptionsOutput  {
+}
 /// See [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
 pub mod put_configuration_set_delivery_options_output {
-
+    
     /// A builder for [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetDeliveryOptionsOutput {
-            crate::output::PutConfigurationSetDeliveryOptionsOutput {}
+            crate::output::PutConfigurationSetDeliveryOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutConfigurationSetDeliveryOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
@@ -875,19 +975,24 @@ impl PutConfigurationSetDeliveryOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountVdmAttributesOutput {}
+pub struct PutAccountVdmAttributesOutput  {
+}
 /// See [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
 pub mod put_account_vdm_attributes_output {
-
+    
     /// A builder for [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
         pub fn build(self) -> crate::output::PutAccountVdmAttributesOutput {
-            crate::output::PutAccountVdmAttributesOutput {}
+            crate::output::PutAccountVdmAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccountVdmAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
@@ -899,19 +1004,24 @@ impl PutAccountVdmAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountSuppressionAttributesOutput {}
+pub struct PutAccountSuppressionAttributesOutput  {
+}
 /// See [`PutAccountSuppressionAttributesOutput`](crate::output::PutAccountSuppressionAttributesOutput).
 pub mod put_account_suppression_attributes_output {
-
+    
     /// A builder for [`PutAccountSuppressionAttributesOutput`](crate::output::PutAccountSuppressionAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccountSuppressionAttributesOutput`](crate::output::PutAccountSuppressionAttributesOutput).
         pub fn build(self) -> crate::output::PutAccountSuppressionAttributesOutput {
-            crate::output::PutAccountSuppressionAttributesOutput {}
+            crate::output::PutAccountSuppressionAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccountSuppressionAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountSuppressionAttributesOutput`](crate::output::PutAccountSuppressionAttributesOutput).
@@ -923,19 +1033,24 @@ impl PutAccountSuppressionAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountSendingAttributesOutput {}
+pub struct PutAccountSendingAttributesOutput  {
+}
 /// See [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
 pub mod put_account_sending_attributes_output {
-
+    
     /// A builder for [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
         pub fn build(self) -> crate::output::PutAccountSendingAttributesOutput {
-            crate::output::PutAccountSendingAttributesOutput {}
+            crate::output::PutAccountSendingAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccountSendingAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
@@ -947,19 +1062,24 @@ impl PutAccountSendingAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountDetailsOutput {}
+pub struct PutAccountDetailsOutput  {
+}
 /// See [`PutAccountDetailsOutput`](crate::output::PutAccountDetailsOutput).
 pub mod put_account_details_output {
-
+    
     /// A builder for [`PutAccountDetailsOutput`](crate::output::PutAccountDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccountDetailsOutput`](crate::output::PutAccountDetailsOutput).
         pub fn build(self) -> crate::output::PutAccountDetailsOutput {
-            crate::output::PutAccountDetailsOutput {}
+            crate::output::PutAccountDetailsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccountDetailsOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountDetailsOutput`](crate::output::PutAccountDetailsOutput).
@@ -971,19 +1091,24 @@ impl PutAccountDetailsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountDedicatedIpWarmupAttributesOutput {}
+pub struct PutAccountDedicatedIpWarmupAttributesOutput  {
+}
 /// See [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
 pub mod put_account_dedicated_ip_warmup_attributes_output {
-
+    
     /// A builder for [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
         pub fn build(self) -> crate::output::PutAccountDedicatedIpWarmupAttributesOutput {
-            crate::output::PutAccountDedicatedIpWarmupAttributesOutput {}
+            crate::output::PutAccountDedicatedIpWarmupAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccountDedicatedIpWarmupAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
@@ -995,20 +1120,20 @@ impl PutAccountDedicatedIpWarmupAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1022,23 +1147,24 @@ pub mod list_tags_for_resource_output {
         /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1050,35 +1176,31 @@ impl ListTagsForResourceOutput {
 /// <p>A list of suppressed email addresses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSuppressedDestinationsOutput {
+pub struct ListSuppressedDestinationsOutput  {
     /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
     #[doc(hidden)]
-    pub suppressed_destination_summaries:
-        std::option::Option<std::vec::Vec<crate::model::SuppressedDestinationSummary>>,
+    pub suppressed_destination_summaries: std::option::Option<std::vec::Vec<crate::model::SuppressedDestinationSummary>>,
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuppressedDestinationsOutput {
     /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
-    pub fn suppressed_destination_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::SuppressedDestinationSummary]> {
+    pub fn suppressed_destination_summaries(&self) -> std::option::Option<& [crate::model::SuppressedDestinationSummary]> {
         self.suppressed_destination_summaries.as_deref()
     }
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput).
 pub mod list_suppressed_destinations_output {
-
+    
     /// A builder for [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) suppressed_destination_summaries:
-            std::option::Option<std::vec::Vec<crate::model::SuppressedDestinationSummary>>,
+        pub(crate) suppressed_destination_summaries: std::option::Option<std::vec::Vec<crate::model::SuppressedDestinationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1087,22 +1209,15 @@ pub mod list_suppressed_destinations_output {
         /// To override the contents of this collection use [`set_suppressed_destination_summaries`](Self::set_suppressed_destination_summaries).
         ///
         /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
-        pub fn suppressed_destination_summaries(
-            mut self,
-            input: crate::model::SuppressedDestinationSummary,
-        ) -> Self {
+        pub fn suppressed_destination_summaries(mut self, input: crate::model::SuppressedDestinationSummary) -> Self {
             let mut v = self.suppressed_destination_summaries.unwrap_or_default();
-            v.push(input);
-            self.suppressed_destination_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.suppressed_destination_summaries = Some(v);
+                            self
         }
         /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
-        pub fn set_suppressed_destination_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SuppressedDestinationSummary>>,
-        ) -> Self {
-            self.suppressed_destination_summaries = input;
-            self
+        pub fn set_suppressed_destination_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SuppressedDestinationSummary>>) -> Self {
+            self.suppressed_destination_summaries = input; self
         }
         /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1111,17 +1226,20 @@ pub mod list_suppressed_destinations_output {
         }
         /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput).
         pub fn build(self) -> crate::output::ListSuppressedDestinationsOutput {
             crate::output::ListSuppressedDestinationsOutput {
-                suppressed_destination_summaries: self.suppressed_destination_summaries,
-                next_token: self.next_token,
+                suppressed_destination_summaries: self.suppressed_destination_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSuppressedDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput).
@@ -1133,7 +1251,7 @@ impl ListSuppressedDestinationsOutput {
 /// <p>Contains the response to your request to retrieve the list of recommendations for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecommendationsOutput {
+pub struct ListRecommendationsOutput  {
     /// <p>The recommendations applicable to your account.</p>
     #[doc(hidden)]
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
@@ -1143,22 +1261,21 @@ pub struct ListRecommendationsOutput {
 }
 impl ListRecommendationsOutput {
     /// <p>The recommendations applicable to your account.</p>
-    pub fn recommendations(&self) -> std::option::Option<&[crate::model::Recommendation]> {
+    pub fn recommendations(&self) -> std::option::Option<& [crate::model::Recommendation]> {
         self.recommendations.as_deref()
     }
     /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
 pub mod list_recommendations_output {
-
+    
     /// A builder for [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommendations:
-            std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+        pub(crate) recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1169,17 +1286,13 @@ pub mod list_recommendations_output {
         /// <p>The recommendations applicable to your account.</p>
         pub fn recommendations(mut self, input: crate::model::Recommendation) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input);
-            self.recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.recommendations = Some(v);
+                            self
         }
         /// <p>The recommendations applicable to your account.</p>
-        pub fn set_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
-        ) -> Self {
-            self.recommendations = input;
-            self
+        pub fn set_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>) -> Self {
+            self.recommendations = input; self
         }
         /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1188,17 +1301,20 @@ pub mod list_recommendations_output {
         }
         /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
         pub fn build(self) -> crate::output::ListRecommendationsOutput {
             crate::output::ListRecommendationsOutput {
-                recommendations: self.recommendations,
-                next_token: self.next_token,
+                recommendations: self.recommendations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
@@ -1210,7 +1326,7 @@ impl ListRecommendationsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportJobsOutput {
+pub struct ListImportJobsOutput  {
     /// <p>A list of the import job summaries.</p>
     #[doc(hidden)]
     pub import_jobs: std::option::Option<std::vec::Vec<crate::model::ImportJobSummary>>,
@@ -1220,17 +1336,17 @@ pub struct ListImportJobsOutput {
 }
 impl ListImportJobsOutput {
     /// <p>A list of the import job summaries.</p>
-    pub fn import_jobs(&self) -> std::option::Option<&[crate::model::ImportJobSummary]> {
+    pub fn import_jobs(&self) -> std::option::Option<& [crate::model::ImportJobSummary]> {
         self.import_jobs.as_deref()
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListImportJobsOutput`](crate::output::ListImportJobsOutput).
 pub mod list_import_jobs_output {
-
+    
     /// A builder for [`ListImportJobsOutput`](crate::output::ListImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1245,17 +1361,13 @@ pub mod list_import_jobs_output {
         /// <p>A list of the import job summaries.</p>
         pub fn import_jobs(mut self, input: crate::model::ImportJobSummary) -> Self {
             let mut v = self.import_jobs.unwrap_or_default();
-            v.push(input);
-            self.import_jobs = Some(v);
-            self
+                            v.push(input);
+                            self.import_jobs = Some(v);
+                            self
         }
         /// <p>A list of the import job summaries.</p>
-        pub fn set_import_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportJobSummary>>,
-        ) -> Self {
-            self.import_jobs = input;
-            self
+        pub fn set_import_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportJobSummary>>) -> Self {
+            self.import_jobs = input; self
         }
         /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1264,17 +1376,20 @@ pub mod list_import_jobs_output {
         }
         /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImportJobsOutput`](crate::output::ListImportJobsOutput).
         pub fn build(self) -> crate::output::ListImportJobsOutput {
             crate::output::ListImportJobsOutput {
-                import_jobs: self.import_jobs,
-                next_token: self.next_token,
+                import_jobs: self.import_jobs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportJobsOutput`](crate::output::ListImportJobsOutput).
@@ -1286,7 +1401,7 @@ impl ListImportJobsOutput {
 /// <p>The following elements are returned by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEmailTemplatesOutput {
+pub struct ListEmailTemplatesOutput  {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     #[doc(hidden)]
     pub templates_metadata: std::option::Option<std::vec::Vec<crate::model::EmailTemplateMetadata>>,
@@ -1296,24 +1411,21 @@ pub struct ListEmailTemplatesOutput {
 }
 impl ListEmailTemplatesOutput {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
-    pub fn templates_metadata(
-        &self,
-    ) -> std::option::Option<&[crate::model::EmailTemplateMetadata]> {
+    pub fn templates_metadata(&self) -> std::option::Option<& [crate::model::EmailTemplateMetadata]> {
         self.templates_metadata.as_deref()
     }
     /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the next 10 email templates.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEmailTemplatesOutput`](crate::output::ListEmailTemplatesOutput).
 pub mod list_email_templates_output {
-
+    
     /// A builder for [`ListEmailTemplatesOutput`](crate::output::ListEmailTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) templates_metadata:
-            std::option::Option<std::vec::Vec<crate::model::EmailTemplateMetadata>>,
+        pub(crate) templates_metadata: std::option::Option<std::vec::Vec<crate::model::EmailTemplateMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1324,17 +1436,13 @@ pub mod list_email_templates_output {
         /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
         pub fn templates_metadata(mut self, input: crate::model::EmailTemplateMetadata) -> Self {
             let mut v = self.templates_metadata.unwrap_or_default();
-            v.push(input);
-            self.templates_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.templates_metadata = Some(v);
+                            self
         }
         /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
-        pub fn set_templates_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EmailTemplateMetadata>>,
-        ) -> Self {
-            self.templates_metadata = input;
-            self
+        pub fn set_templates_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::EmailTemplateMetadata>>) -> Self {
+            self.templates_metadata = input; self
         }
         /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the next 10 email templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1343,17 +1451,20 @@ pub mod list_email_templates_output {
         }
         /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the next 10 email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEmailTemplatesOutput`](crate::output::ListEmailTemplatesOutput).
         pub fn build(self) -> crate::output::ListEmailTemplatesOutput {
             crate::output::ListEmailTemplatesOutput {
-                templates_metadata: self.templates_metadata,
-                next_token: self.next_token,
+                templates_metadata: self.templates_metadata
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEmailTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListEmailTemplatesOutput`](crate::output::ListEmailTemplatesOutput).
@@ -1365,7 +1476,7 @@ impl ListEmailTemplatesOutput {
 /// <p>A list of all of the identities that you've attempted to verify, regardless of whether or not those identities were successfully verified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEmailIdentitiesOutput {
+pub struct ListEmailIdentitiesOutput  {
     /// <p>An array that includes all of the email identities associated with your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub email_identities: std::option::Option<std::vec::Vec<crate::model::IdentityInfo>>,
@@ -1375,17 +1486,17 @@ pub struct ListEmailIdentitiesOutput {
 }
 impl ListEmailIdentitiesOutput {
     /// <p>An array that includes all of the email identities associated with your Amazon Web Services account.</p>
-    pub fn email_identities(&self) -> std::option::Option<&[crate::model::IdentityInfo]> {
+    pub fn email_identities(&self) -> std::option::Option<& [crate::model::IdentityInfo]> {
         self.email_identities.as_deref()
     }
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
 pub mod list_email_identities_output {
-
+    
     /// A builder for [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1400,17 +1511,13 @@ pub mod list_email_identities_output {
         /// <p>An array that includes all of the email identities associated with your Amazon Web Services account.</p>
         pub fn email_identities(mut self, input: crate::model::IdentityInfo) -> Self {
             let mut v = self.email_identities.unwrap_or_default();
-            v.push(input);
-            self.email_identities = Some(v);
-            self
+                            v.push(input);
+                            self.email_identities = Some(v);
+                            self
         }
         /// <p>An array that includes all of the email identities associated with your Amazon Web Services account.</p>
-        pub fn set_email_identities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IdentityInfo>>,
-        ) -> Self {
-            self.email_identities = input;
-            self
+        pub fn set_email_identities(mut self, input: std::option::Option<std::vec::Vec<crate::model::IdentityInfo>>) -> Self {
+            self.email_identities = input; self
         }
         /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1419,17 +1526,20 @@ pub mod list_email_identities_output {
         }
         /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
         pub fn build(self) -> crate::output::ListEmailIdentitiesOutput {
             crate::output::ListEmailIdentitiesOutput {
-                email_identities: self.email_identities,
-                next_token: self.next_token,
+                email_identities: self.email_identities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEmailIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
@@ -1441,35 +1551,31 @@ impl ListEmailIdentitiesOutput {
 /// <p>An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainDeliverabilityCampaignsOutput {
+pub struct ListDomainDeliverabilityCampaignsOutput  {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
     #[doc(hidden)]
-    pub domain_deliverability_campaigns:
-        std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
+    pub domain_deliverability_campaigns: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-    pub fn domain_deliverability_campaigns(
-        &self,
-    ) -> std::option::Option<&[crate::model::DomainDeliverabilityCampaign]> {
+    pub fn domain_deliverability_campaigns(&self) -> std::option::Option<& [crate::model::DomainDeliverabilityCampaign]> {
         self.domain_deliverability_campaigns.as_deref()
     }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
 pub mod list_domain_deliverability_campaigns_output {
-
+    
     /// A builder for [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_deliverability_campaigns:
-            std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
+        pub(crate) domain_deliverability_campaigns: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1478,22 +1584,15 @@ pub mod list_domain_deliverability_campaigns_output {
         /// To override the contents of this collection use [`set_domain_deliverability_campaigns`](Self::set_domain_deliverability_campaigns).
         ///
         /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-        pub fn domain_deliverability_campaigns(
-            mut self,
-            input: crate::model::DomainDeliverabilityCampaign,
-        ) -> Self {
+        pub fn domain_deliverability_campaigns(mut self, input: crate::model::DomainDeliverabilityCampaign) -> Self {
             let mut v = self.domain_deliverability_campaigns.unwrap_or_default();
-            v.push(input);
-            self.domain_deliverability_campaigns = Some(v);
-            self
+                            v.push(input);
+                            self.domain_deliverability_campaigns = Some(v);
+                            self
         }
         /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-        pub fn set_domain_deliverability_campaigns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
-        ) -> Self {
-            self.domain_deliverability_campaigns = input;
-            self
+        pub fn set_domain_deliverability_campaigns(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>) -> Self {
+            self.domain_deliverability_campaigns = input; self
         }
         /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1502,17 +1601,20 @@ pub mod list_domain_deliverability_campaigns_output {
         }
         /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
         pub fn build(self) -> crate::output::ListDomainDeliverabilityCampaignsOutput {
             crate::output::ListDomainDeliverabilityCampaignsOutput {
-                domain_deliverability_campaigns: self.domain_deliverability_campaigns,
-                next_token: self.next_token,
+                domain_deliverability_campaigns: self.domain_deliverability_campaigns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainDeliverabilityCampaignsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
@@ -1524,35 +1626,31 @@ impl ListDomainDeliverabilityCampaignsOutput {
 /// <p>A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeliverabilityTestReportsOutput {
+pub struct ListDeliverabilityTestReportsOutput  {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
     #[doc(hidden)]
-    pub deliverability_test_reports:
-        std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
+    pub deliverability_test_reports: std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    pub fn deliverability_test_reports(
-        &self,
-    ) -> std::option::Option<&[crate::model::DeliverabilityTestReport]> {
+    pub fn deliverability_test_reports(&self) -> std::option::Option<& [crate::model::DeliverabilityTestReport]> {
         self.deliverability_test_reports.as_deref()
     }
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
 pub mod list_deliverability_test_reports_output {
-
+    
     /// A builder for [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) deliverability_test_reports:
-            std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
+        pub(crate) deliverability_test_reports: std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1561,22 +1659,15 @@ pub mod list_deliverability_test_reports_output {
         /// To override the contents of this collection use [`set_deliverability_test_reports`](Self::set_deliverability_test_reports).
         ///
         /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-        pub fn deliverability_test_reports(
-            mut self,
-            input: crate::model::DeliverabilityTestReport,
-        ) -> Self {
+        pub fn deliverability_test_reports(mut self, input: crate::model::DeliverabilityTestReport) -> Self {
             let mut v = self.deliverability_test_reports.unwrap_or_default();
-            v.push(input);
-            self.deliverability_test_reports = Some(v);
-            self
+                            v.push(input);
+                            self.deliverability_test_reports = Some(v);
+                            self
         }
         /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-        pub fn set_deliverability_test_reports(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
-        ) -> Self {
-            self.deliverability_test_reports = input;
-            self
+        pub fn set_deliverability_test_reports(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>) -> Self {
+            self.deliverability_test_reports = input; self
         }
         /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1585,17 +1676,20 @@ pub mod list_deliverability_test_reports_output {
         }
         /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
         pub fn build(self) -> crate::output::ListDeliverabilityTestReportsOutput {
             crate::output::ListDeliverabilityTestReportsOutput {
-                deliverability_test_reports: self.deliverability_test_reports,
-                next_token: self.next_token,
+                deliverability_test_reports: self.deliverability_test_reports
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeliverabilityTestReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
@@ -1607,7 +1701,7 @@ impl ListDeliverabilityTestReportsOutput {
 /// <p>A list of dedicated IP pools.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDedicatedIpPoolsOutput {
+pub struct ListDedicatedIpPoolsOutput  {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
     #[doc(hidden)]
     pub dedicated_ip_pools: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1617,17 +1711,17 @@ pub struct ListDedicatedIpPoolsOutput {
 }
 impl ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
-    pub fn dedicated_ip_pools(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dedicated_ip_pools(&self) -> std::option::Option<& [std::string::String]> {
         self.dedicated_ip_pools.as_deref()
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
 pub mod list_dedicated_ip_pools_output {
-
+    
     /// A builder for [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1642,17 +1736,13 @@ pub mod list_dedicated_ip_pools_output {
         /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
         pub fn dedicated_ip_pools(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dedicated_ip_pools.unwrap_or_default();
-            v.push(input.into());
-            self.dedicated_ip_pools = Some(v);
-            self
+                            v.push(input.into());
+                            self.dedicated_ip_pools = Some(v);
+                            self
         }
         /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
-        pub fn set_dedicated_ip_pools(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.dedicated_ip_pools = input;
-            self
+        pub fn set_dedicated_ip_pools(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.dedicated_ip_pools = input; self
         }
         /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1661,17 +1751,20 @@ pub mod list_dedicated_ip_pools_output {
         }
         /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
         pub fn build(self) -> crate::output::ListDedicatedIpPoolsOutput {
             crate::output::ListDedicatedIpPoolsOutput {
-                dedicated_ip_pools: self.dedicated_ip_pools,
-                next_token: self.next_token,
+                dedicated_ip_pools: self.dedicated_ip_pools
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDedicatedIpPoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
@@ -1683,36 +1776,31 @@ impl ListDedicatedIpPoolsOutput {
 /// <p>The following elements are returned by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomVerificationEmailTemplatesOutput {
+pub struct ListCustomVerificationEmailTemplatesOutput  {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
     #[doc(hidden)]
-    pub custom_verification_email_templates:
-        std::option::Option<std::vec::Vec<crate::model::CustomVerificationEmailTemplateMetadata>>,
+    pub custom_verification_email_templates: std::option::Option<std::vec::Vec<crate::model::CustomVerificationEmailTemplateMetadata>>,
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom verification email templates.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
-    pub fn custom_verification_email_templates(
-        &self,
-    ) -> std::option::Option<&[crate::model::CustomVerificationEmailTemplateMetadata]> {
+    pub fn custom_verification_email_templates(&self) -> std::option::Option<& [crate::model::CustomVerificationEmailTemplateMetadata]> {
         self.custom_verification_email_templates.as_deref()
     }
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom verification email templates.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput).
 pub mod list_custom_verification_email_templates_output {
-
+    
     /// A builder for [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) custom_verification_email_templates: std::option::Option<
-            std::vec::Vec<crate::model::CustomVerificationEmailTemplateMetadata>,
-        >,
+        pub(crate) custom_verification_email_templates: std::option::Option<std::vec::Vec<crate::model::CustomVerificationEmailTemplateMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1721,24 +1809,15 @@ pub mod list_custom_verification_email_templates_output {
         /// To override the contents of this collection use [`set_custom_verification_email_templates`](Self::set_custom_verification_email_templates).
         ///
         /// <p>A list of the custom verification email templates that exist in your account.</p>
-        pub fn custom_verification_email_templates(
-            mut self,
-            input: crate::model::CustomVerificationEmailTemplateMetadata,
-        ) -> Self {
+        pub fn custom_verification_email_templates(mut self, input: crate::model::CustomVerificationEmailTemplateMetadata) -> Self {
             let mut v = self.custom_verification_email_templates.unwrap_or_default();
-            v.push(input);
-            self.custom_verification_email_templates = Some(v);
-            self
+                            v.push(input);
+                            self.custom_verification_email_templates = Some(v);
+                            self
         }
         /// <p>A list of the custom verification email templates that exist in your account.</p>
-        pub fn set_custom_verification_email_templates(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::CustomVerificationEmailTemplateMetadata>,
-            >,
-        ) -> Self {
-            self.custom_verification_email_templates = input;
-            self
+        pub fn set_custom_verification_email_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomVerificationEmailTemplateMetadata>>) -> Self {
+            self.custom_verification_email_templates = input; self
         }
         /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom verification email templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1747,17 +1826,20 @@ pub mod list_custom_verification_email_templates_output {
         }
         /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom verification email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput).
         pub fn build(self) -> crate::output::ListCustomVerificationEmailTemplatesOutput {
             crate::output::ListCustomVerificationEmailTemplatesOutput {
-                custom_verification_email_templates: self.custom_verification_email_templates,
-                next_token: self.next_token,
+                custom_verification_email_templates: self.custom_verification_email_templates
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomVerificationEmailTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput).
@@ -1769,7 +1851,7 @@ impl ListCustomVerificationEmailTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactsOutput {
+pub struct ListContactsOutput  {
     /// <p>The contacts present in a specific contact list.</p>
     #[doc(hidden)]
     pub contacts: std::option::Option<std::vec::Vec<crate::model::Contact>>,
@@ -1779,17 +1861,17 @@ pub struct ListContactsOutput {
 }
 impl ListContactsOutput {
     /// <p>The contacts present in a specific contact list.</p>
-    pub fn contacts(&self) -> std::option::Option<&[crate::model::Contact]> {
+    pub fn contacts(&self) -> std::option::Option<& [crate::model::Contact]> {
         self.contacts.as_deref()
     }
     /// <p>A string token indicating that there might be additional contacts available to be listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same parameters to retrieve the next page of contacts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListContactsOutput`](crate::output::ListContactsOutput).
 pub mod list_contacts_output {
-
+    
     /// A builder for [`ListContactsOutput`](crate::output::ListContactsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1804,17 +1886,13 @@ pub mod list_contacts_output {
         /// <p>The contacts present in a specific contact list.</p>
         pub fn contacts(mut self, input: crate::model::Contact) -> Self {
             let mut v = self.contacts.unwrap_or_default();
-            v.push(input);
-            self.contacts = Some(v);
-            self
+                            v.push(input);
+                            self.contacts = Some(v);
+                            self
         }
         /// <p>The contacts present in a specific contact list.</p>
-        pub fn set_contacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Contact>>,
-        ) -> Self {
-            self.contacts = input;
-            self
+        pub fn set_contacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Contact>>) -> Self {
+            self.contacts = input; self
         }
         /// <p>A string token indicating that there might be additional contacts available to be listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same parameters to retrieve the next page of contacts.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1823,17 +1901,20 @@ pub mod list_contacts_output {
         }
         /// <p>A string token indicating that there might be additional contacts available to be listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same parameters to retrieve the next page of contacts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListContactsOutput`](crate::output::ListContactsOutput).
         pub fn build(self) -> crate::output::ListContactsOutput {
             crate::output::ListContactsOutput {
-                contacts: self.contacts,
-                next_token: self.next_token,
+                contacts: self.contacts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListContactsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactsOutput`](crate::output::ListContactsOutput).
@@ -1845,7 +1926,7 @@ impl ListContactsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactListsOutput {
+pub struct ListContactListsOutput  {
     /// <p>The available contact lists.</p>
     #[doc(hidden)]
     pub contact_lists: std::option::Option<std::vec::Vec<crate::model::ContactList>>,
@@ -1855,17 +1936,17 @@ pub struct ListContactListsOutput {
 }
 impl ListContactListsOutput {
     /// <p>The available contact lists.</p>
-    pub fn contact_lists(&self) -> std::option::Option<&[crate::model::ContactList]> {
+    pub fn contact_lists(&self) -> std::option::Option<& [crate::model::ContactList]> {
         self.contact_lists.as_deref()
     }
     /// <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListContactListsOutput`](crate::output::ListContactListsOutput).
 pub mod list_contact_lists_output {
-
+    
     /// A builder for [`ListContactListsOutput`](crate::output::ListContactListsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1880,17 +1961,13 @@ pub mod list_contact_lists_output {
         /// <p>The available contact lists.</p>
         pub fn contact_lists(mut self, input: crate::model::ContactList) -> Self {
             let mut v = self.contact_lists.unwrap_or_default();
-            v.push(input);
-            self.contact_lists = Some(v);
-            self
+                            v.push(input);
+                            self.contact_lists = Some(v);
+                            self
         }
         /// <p>The available contact lists.</p>
-        pub fn set_contact_lists(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContactList>>,
-        ) -> Self {
-            self.contact_lists = input;
-            self
+        pub fn set_contact_lists(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContactList>>) -> Self {
+            self.contact_lists = input; self
         }
         /// <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1899,17 +1976,20 @@ pub mod list_contact_lists_output {
         }
         /// <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListContactListsOutput`](crate::output::ListContactListsOutput).
         pub fn build(self) -> crate::output::ListContactListsOutput {
             crate::output::ListContactListsOutput {
-                contact_lists: self.contact_lists,
-                next_token: self.next_token,
+                contact_lists: self.contact_lists
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListContactListsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactListsOutput`](crate::output::ListContactListsOutput).
@@ -1921,7 +2001,7 @@ impl ListContactListsOutput {
 /// <p>A list of configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationSetsOutput {
+pub struct ListConfigurationSetsOutput  {
     /// <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub configuration_sets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1931,17 +2011,17 @@ pub struct ListConfigurationSetsOutput {
 }
 impl ListConfigurationSetsOutput {
     /// <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
-    pub fn configuration_sets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn configuration_sets(&self) -> std::option::Option<& [std::string::String]> {
         self.configuration_sets.as_deref()
     }
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
 pub mod list_configuration_sets_output {
-
+    
     /// A builder for [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1956,17 +2036,13 @@ pub mod list_configuration_sets_output {
         /// <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
         pub fn configuration_sets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.configuration_sets.unwrap_or_default();
-            v.push(input.into());
-            self.configuration_sets = Some(v);
-            self
+                            v.push(input.into());
+                            self.configuration_sets = Some(v);
+                            self
         }
         /// <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
-        pub fn set_configuration_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.configuration_sets = input;
-            self
+        pub fn set_configuration_sets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.configuration_sets = input; self
         }
         /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1975,17 +2051,20 @@ pub mod list_configuration_sets_output {
         }
         /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
         pub fn build(self) -> crate::output::ListConfigurationSetsOutput {
             crate::output::ListConfigurationSetsOutput {
-                configuration_sets: self.configuration_sets,
-                next_token: self.next_token,
+                configuration_sets: self.configuration_sets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConfigurationSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
@@ -1997,22 +2076,20 @@ impl ListConfigurationSetsOutput {
 /// <p>Information about the suppressed email address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSuppressedDestinationOutput {
+pub struct GetSuppressedDestinationOutput  {
     /// <p>An object containing information about the suppressed email address.</p>
     #[doc(hidden)]
     pub suppressed_destination: std::option::Option<crate::model::SuppressedDestination>,
 }
 impl GetSuppressedDestinationOutput {
     /// <p>An object containing information about the suppressed email address.</p>
-    pub fn suppressed_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::SuppressedDestination> {
+    pub fn suppressed_destination(&self) -> std::option::Option<& crate::model::SuppressedDestination> {
         self.suppressed_destination.as_ref()
     }
 }
 /// See [`GetSuppressedDestinationOutput`](crate::output::GetSuppressedDestinationOutput).
 pub mod get_suppressed_destination_output {
-
+    
     /// A builder for [`GetSuppressedDestinationOutput`](crate::output::GetSuppressedDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2020,28 +2097,24 @@ pub mod get_suppressed_destination_output {
     }
     impl Builder {
         /// <p>An object containing information about the suppressed email address.</p>
-        pub fn suppressed_destination(
-            mut self,
-            input: crate::model::SuppressedDestination,
-        ) -> Self {
+        pub fn suppressed_destination(mut self, input: crate::model::SuppressedDestination) -> Self {
             self.suppressed_destination = Some(input);
             self
         }
         /// <p>An object containing information about the suppressed email address.</p>
-        pub fn set_suppressed_destination(
-            mut self,
-            input: std::option::Option<crate::model::SuppressedDestination>,
-        ) -> Self {
-            self.suppressed_destination = input;
-            self
+        pub fn set_suppressed_destination(mut self, input: std::option::Option<crate::model::SuppressedDestination>) -> Self {
+            self.suppressed_destination = input; self
         }
         /// Consumes the builder and constructs a [`GetSuppressedDestinationOutput`](crate::output::GetSuppressedDestinationOutput).
         pub fn build(self) -> crate::output::GetSuppressedDestinationOutput {
             crate::output::GetSuppressedDestinationOutput {
-                suppressed_destination: self.suppressed_destination,
+                suppressed_destination: self.suppressed_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSuppressedDestinationOutput {
     /// Creates a new builder-style object to manufacture [`GetSuppressedDestinationOutput`](crate::output::GetSuppressedDestinationOutput).
@@ -2053,7 +2126,7 @@ impl GetSuppressedDestinationOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImportJobOutput {
+pub struct GetImportJobOutput  {
     /// <p>A string that represents the import job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -2084,31 +2157,31 @@ pub struct GetImportJobOutput {
 }
 impl GetImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The destination of the import job.</p>
-    pub fn import_destination(&self) -> std::option::Option<&crate::model::ImportDestination> {
+    pub fn import_destination(&self) -> std::option::Option<& crate::model::ImportDestination> {
         self.import_destination.as_ref()
     }
     /// <p>The data source of the import job.</p>
-    pub fn import_data_source(&self) -> std::option::Option<&crate::model::ImportDataSource> {
+    pub fn import_data_source(&self) -> std::option::Option<& crate::model::ImportDataSource> {
         self.import_data_source.as_ref()
     }
     /// <p>The failure details about an import job.</p>
-    pub fn failure_info(&self) -> std::option::Option<&crate::model::FailureInfo> {
+    pub fn failure_info(&self) -> std::option::Option<& crate::model::FailureInfo> {
         self.failure_info.as_ref()
     }
     /// <p>The status of the import job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The time stamp of when the import job was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time stamp of when the import job was completed.</p>
-    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_timestamp.as_ref()
     }
     /// <p>The current number of records processed.</p>
@@ -2122,7 +2195,7 @@ impl GetImportJobOutput {
 }
 /// See [`GetImportJobOutput`](crate::output::GetImportJobOutput).
 pub mod get_import_job_output {
-
+    
     /// A builder for [`GetImportJobOutput`](crate::output::GetImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2144,8 +2217,7 @@ pub mod get_import_job_output {
         }
         /// <p>A string that represents the import job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The destination of the import job.</p>
         pub fn import_destination(mut self, input: crate::model::ImportDestination) -> Self {
@@ -2153,12 +2225,8 @@ pub mod get_import_job_output {
             self
         }
         /// <p>The destination of the import job.</p>
-        pub fn set_import_destination(
-            mut self,
-            input: std::option::Option<crate::model::ImportDestination>,
-        ) -> Self {
-            self.import_destination = input;
-            self
+        pub fn set_import_destination(mut self, input: std::option::Option<crate::model::ImportDestination>) -> Self {
+            self.import_destination = input; self
         }
         /// <p>The data source of the import job.</p>
         pub fn import_data_source(mut self, input: crate::model::ImportDataSource) -> Self {
@@ -2166,12 +2234,8 @@ pub mod get_import_job_output {
             self
         }
         /// <p>The data source of the import job.</p>
-        pub fn set_import_data_source(
-            mut self,
-            input: std::option::Option<crate::model::ImportDataSource>,
-        ) -> Self {
-            self.import_data_source = input;
-            self
+        pub fn set_import_data_source(mut self, input: std::option::Option<crate::model::ImportDataSource>) -> Self {
+            self.import_data_source = input; self
         }
         /// <p>The failure details about an import job.</p>
         pub fn failure_info(mut self, input: crate::model::FailureInfo) -> Self {
@@ -2179,12 +2243,8 @@ pub mod get_import_job_output {
             self
         }
         /// <p>The failure details about an import job.</p>
-        pub fn set_failure_info(
-            mut self,
-            input: std::option::Option<crate::model::FailureInfo>,
-        ) -> Self {
-            self.failure_info = input;
-            self
+        pub fn set_failure_info(mut self, input: std::option::Option<crate::model::FailureInfo>) -> Self {
+            self.failure_info = input; self
         }
         /// <p>The status of the import job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -2192,12 +2252,8 @@ pub mod get_import_job_output {
             self
         }
         /// <p>The status of the import job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The time stamp of when the import job was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2205,12 +2261,8 @@ pub mod get_import_job_output {
             self
         }
         /// <p>The time stamp of when the import job was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The time stamp of when the import job was completed.</p>
         pub fn completed_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2218,12 +2270,8 @@ pub mod get_import_job_output {
             self
         }
         /// <p>The time stamp of when the import job was completed.</p>
-        pub fn set_completed_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_timestamp = input;
-            self
+        pub fn set_completed_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_timestamp = input; self
         }
         /// <p>The current number of records processed.</p>
         pub fn processed_records_count(mut self, input: i32) -> Self {
@@ -2232,8 +2280,7 @@ pub mod get_import_job_output {
         }
         /// <p>The current number of records processed.</p>
         pub fn set_processed_records_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.processed_records_count = input;
-            self
+            self.processed_records_count = input; self
         }
         /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
         pub fn failed_records_count(mut self, input: i32) -> Self {
@@ -2242,24 +2289,34 @@ pub mod get_import_job_output {
         }
         /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
         pub fn set_failed_records_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed_records_count = input;
-            self
+            self.failed_records_count = input; self
         }
         /// Consumes the builder and constructs a [`GetImportJobOutput`](crate::output::GetImportJobOutput).
         pub fn build(self) -> crate::output::GetImportJobOutput {
             crate::output::GetImportJobOutput {
-                job_id: self.job_id,
-                import_destination: self.import_destination,
-                import_data_source: self.import_data_source,
-                failure_info: self.failure_info,
-                job_status: self.job_status,
-                created_timestamp: self.created_timestamp,
-                completed_timestamp: self.completed_timestamp,
-                processed_records_count: self.processed_records_count,
-                failed_records_count: self.failed_records_count,
+                job_id: self.job_id
+                ,
+                import_destination: self.import_destination
+                ,
+                import_data_source: self.import_data_source
+                ,
+                failure_info: self.failure_info
+                ,
+                job_status: self.job_status
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                completed_timestamp: self.completed_timestamp
+                ,
+                processed_records_count: self.processed_records_count
+                ,
+                failed_records_count: self.failed_records_count
+                ,
             }
         }
     }
+    
+    
 }
 impl GetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetImportJobOutput`](crate::output::GetImportJobOutput).
@@ -2271,7 +2328,7 @@ impl GetImportJobOutput {
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEmailTemplateOutput {
+pub struct GetEmailTemplateOutput  {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -2281,17 +2338,17 @@ pub struct GetEmailTemplateOutput {
 }
 impl GetEmailTemplateOutput {
     /// <p>The name of the template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
-    pub fn template_content(&self) -> std::option::Option<&crate::model::EmailTemplateContent> {
+    pub fn template_content(&self) -> std::option::Option<& crate::model::EmailTemplateContent> {
         self.template_content.as_ref()
     }
 }
 /// See [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
 pub mod get_email_template_output {
-
+    
     /// A builder for [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2305,12 +2362,8 @@ pub mod get_email_template_output {
             self
         }
         /// <p>The name of the template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
@@ -2318,21 +2371,21 @@ pub mod get_email_template_output {
             self
         }
         /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
-        pub fn set_template_content(
-            mut self,
-            input: std::option::Option<crate::model::EmailTemplateContent>,
-        ) -> Self {
-            self.template_content = input;
-            self
+        pub fn set_template_content(mut self, input: std::option::Option<crate::model::EmailTemplateContent>) -> Self {
+            self.template_content = input; self
         }
         /// Consumes the builder and constructs a [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
         pub fn build(self) -> crate::output::GetEmailTemplateOutput {
             crate::output::GetEmailTemplateOutput {
-                template_name: self.template_name,
-                template_content: self.template_content,
+                template_name: self.template_name
+                ,
+                template_content: self.template_content
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
@@ -2344,30 +2397,24 @@ impl GetEmailTemplateOutput {
 /// <p>Identity policies associated with email identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEmailIdentityPoliciesOutput {
+pub struct GetEmailIdentityPoliciesOutput  {
     /// <p>A map of policy names to policies.</p>
     #[doc(hidden)]
-    pub policies:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub policies: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetEmailIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn policies(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.policies.as_ref()
     }
 }
 /// See [`GetEmailIdentityPoliciesOutput`](crate::output::GetEmailIdentityPoliciesOutput).
 pub mod get_email_identity_policies_output {
-
+    
     /// A builder for [`GetEmailIdentityPoliciesOutput`](crate::output::GetEmailIdentityPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policies: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) policies: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `policies`.
@@ -2375,33 +2422,26 @@ pub mod get_email_identity_policies_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>A map of policy names to policies.</p>
-        pub fn policies(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn policies(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.policies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.policies = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.policies = Some(hash_map);
+                            self
         }
         /// <p>A map of policy names to policies.</p>
-        pub fn set_policies(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.policies = input;
-            self
+        pub fn set_policies(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.policies = input; self
         }
         /// Consumes the builder and constructs a [`GetEmailIdentityPoliciesOutput`](crate::output::GetEmailIdentityPoliciesOutput).
         pub fn build(self) -> crate::output::GetEmailIdentityPoliciesOutput {
             crate::output::GetEmailIdentityPoliciesOutput {
-                policies: self.policies,
+                policies: self.policies
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEmailIdentityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailIdentityPoliciesOutput`](crate::output::GetEmailIdentityPoliciesOutput).
@@ -2413,12 +2453,12 @@ impl GetEmailIdentityPoliciesOutput {
 /// <p>Details about an email identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEmailIdentityOutput {
+pub struct GetEmailIdentityOutput  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
-    /// <p>The feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+    /// <p>The feedback forwarding configuration for the identity.</p> 
+    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p> 
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     #[doc(hidden)]
     pub feedback_forwarding_status: bool,
@@ -2433,32 +2473,31 @@ pub struct GetEmailIdentityOutput {
     pub mail_from_attributes: std::option::Option<crate::model::MailFromAttributes>,
     /// <p>A map of policy names to policies.</p>
     #[doc(hidden)]
-    pub policies:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub policies: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration set used by default when sending from this identity.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>The verification status of the identity. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <p>The verification status of the identity. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub verification_status: std::option::Option<crate::model::VerificationStatus>,
 }
 impl GetEmailIdentityOutput {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<& crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
-    /// <p>The feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+    /// <p>The feedback forwarding configuration for the identity.</p> 
+    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p> 
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     pub fn feedback_forwarding_status(&self) -> bool {
         self.feedback_forwarding_status
@@ -2468,43 +2507,40 @@ impl GetEmailIdentityOutput {
         self.verified_for_sending_status
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-    pub fn dkim_attributes(&self) -> std::option::Option<&crate::model::DkimAttributes> {
+    pub fn dkim_attributes(&self) -> std::option::Option<& crate::model::DkimAttributes> {
         self.dkim_attributes.as_ref()
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    pub fn mail_from_attributes(&self) -> std::option::Option<&crate::model::MailFromAttributes> {
+    pub fn mail_from_attributes(&self) -> std::option::Option<& crate::model::MailFromAttributes> {
         self.mail_from_attributes.as_ref()
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn policies(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.policies.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The configuration set used by default when sending from this identity.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>The verification status of the identity. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <p>The verification status of the identity. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
     /// </ul>
-    pub fn verification_status(&self) -> std::option::Option<&crate::model::VerificationStatus> {
+    pub fn verification_status(&self) -> std::option::Option<& crate::model::VerificationStatus> {
         self.verification_status.as_ref()
     }
 }
 /// See [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
 pub mod get_email_identity_output {
-
+    
     /// A builder for [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2513,9 +2549,7 @@ pub mod get_email_identity_output {
         pub(crate) verified_for_sending_status: std::option::Option<bool>,
         pub(crate) dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
         pub(crate) mail_from_attributes: std::option::Option<crate::model::MailFromAttributes>,
-        pub(crate) policies: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) policies: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) verification_status: std::option::Option<crate::model::VerificationStatus>,
@@ -2527,26 +2561,21 @@ pub mod get_email_identity_output {
             self
         }
         /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-        pub fn set_identity_type(
-            mut self,
-            input: std::option::Option<crate::model::IdentityType>,
-        ) -> Self {
-            self.identity_type = input;
-            self
+        pub fn set_identity_type(mut self, input: std::option::Option<crate::model::IdentityType>) -> Self {
+            self.identity_type = input; self
         }
-        /// <p>The feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+        /// <p>The feedback forwarding configuration for the identity.</p> 
+        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p> 
         /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
         pub fn feedback_forwarding_status(mut self, input: bool) -> Self {
             self.feedback_forwarding_status = Some(input);
             self
         }
-        /// <p>The feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+        /// <p>The feedback forwarding configuration for the identity.</p> 
+        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p> 
         /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
         pub fn set_feedback_forwarding_status(mut self, input: std::option::Option<bool>) -> Self {
-            self.feedback_forwarding_status = input;
-            self
+            self.feedback_forwarding_status = input; self
         }
         /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
         pub fn verified_for_sending_status(mut self, input: bool) -> Self {
@@ -2555,8 +2584,7 @@ pub mod get_email_identity_output {
         }
         /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
         pub fn set_verified_for_sending_status(mut self, input: std::option::Option<bool>) -> Self {
-            self.verified_for_sending_status = input;
-            self
+            self.verified_for_sending_status = input; self
         }
         /// <p>An object that contains information about the DKIM attributes for the identity.</p>
         pub fn dkim_attributes(mut self, input: crate::model::DkimAttributes) -> Self {
@@ -2564,12 +2592,8 @@ pub mod get_email_identity_output {
             self
         }
         /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-        pub fn set_dkim_attributes(
-            mut self,
-            input: std::option::Option<crate::model::DkimAttributes>,
-        ) -> Self {
-            self.dkim_attributes = input;
-            self
+        pub fn set_dkim_attributes(mut self, input: std::option::Option<crate::model::DkimAttributes>) -> Self {
+            self.dkim_attributes = input; self
         }
         /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
         pub fn mail_from_attributes(mut self, input: crate::model::MailFromAttributes) -> Self {
@@ -2577,37 +2601,23 @@ pub mod get_email_identity_output {
             self
         }
         /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-        pub fn set_mail_from_attributes(
-            mut self,
-            input: std::option::Option<crate::model::MailFromAttributes>,
-        ) -> Self {
-            self.mail_from_attributes = input;
-            self
+        pub fn set_mail_from_attributes(mut self, input: std::option::Option<crate::model::MailFromAttributes>) -> Self {
+            self.mail_from_attributes = input; self
         }
         /// Adds a key-value pair to `policies`.
         ///
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>A map of policy names to policies.</p>
-        pub fn policies(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn policies(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.policies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.policies = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.policies = Some(hash_map);
+                            self
         }
         /// <p>A map of policy names to policies.</p>
-        pub fn set_policies(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.policies = input;
-            self
+        pub fn set_policies(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.policies = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2616,17 +2626,13 @@ pub mod get_email_identity_output {
         /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The configuration set used by default when sending from this identity.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2634,55 +2640,60 @@ pub mod get_email_identity_output {
             self
         }
         /// <p>The configuration set used by default when sending from this identity.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
-        /// <p>The verification status of the identity. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-        /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-        /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+        /// <p>The verification status of the identity. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+        /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
         /// </ul>
         pub fn verification_status(mut self, input: crate::model::VerificationStatus) -> Self {
             self.verification_status = Some(input);
             self
         }
-        /// <p>The verification status of the identity. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-        /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-        /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+        /// <p>The verification status of the identity. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+        /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
         /// </ul>
-        pub fn set_verification_status(
-            mut self,
-            input: std::option::Option<crate::model::VerificationStatus>,
-        ) -> Self {
-            self.verification_status = input;
-            self
+        pub fn set_verification_status(mut self, input: std::option::Option<crate::model::VerificationStatus>) -> Self {
+            self.verification_status = input; self
         }
         /// Consumes the builder and constructs a [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
         pub fn build(self) -> crate::output::GetEmailIdentityOutput {
             crate::output::GetEmailIdentityOutput {
-                identity_type: self.identity_type,
-                feedback_forwarding_status: self.feedback_forwarding_status.unwrap_or_default(),
-                verified_for_sending_status: self.verified_for_sending_status.unwrap_or_default(),
-                dkim_attributes: self.dkim_attributes,
-                mail_from_attributes: self.mail_from_attributes,
-                policies: self.policies,
-                tags: self.tags,
-                configuration_set_name: self.configuration_set_name,
-                verification_status: self.verification_status,
+                identity_type: self.identity_type
+                ,
+                feedback_forwarding_status: self.feedback_forwarding_status
+                    .unwrap_or_default()
+                ,
+                verified_for_sending_status: self.verified_for_sending_status
+                    .unwrap_or_default()
+                ,
+                dkim_attributes: self.dkim_attributes
+                ,
+                mail_from_attributes: self.mail_from_attributes
+                ,
+                policies: self.policies
+                ,
+                tags: self.tags
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                verification_status: self.verification_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
@@ -2694,7 +2705,7 @@ impl GetEmailIdentityOutput {
 /// <p>An object that includes statistics that are related to the domain that you specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainStatisticsReportOutput {
+pub struct GetDomainStatisticsReportOutput  {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     #[doc(hidden)]
     pub overall_volume: std::option::Option<crate::model::OverallVolume>,
@@ -2704,17 +2715,17 @@ pub struct GetDomainStatisticsReportOutput {
 }
 impl GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-    pub fn overall_volume(&self) -> std::option::Option<&crate::model::OverallVolume> {
+    pub fn overall_volume(&self) -> std::option::Option<& crate::model::OverallVolume> {
         self.overall_volume.as_ref()
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    pub fn daily_volumes(&self) -> std::option::Option<&[crate::model::DailyVolume]> {
+    pub fn daily_volumes(&self) -> std::option::Option<& [crate::model::DailyVolume]> {
         self.daily_volumes.as_deref()
     }
 }
 /// See [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
 pub mod get_domain_statistics_report_output {
-
+    
     /// A builder for [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2728,12 +2739,8 @@ pub mod get_domain_statistics_report_output {
             self
         }
         /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-        pub fn set_overall_volume(
-            mut self,
-            input: std::option::Option<crate::model::OverallVolume>,
-        ) -> Self {
-            self.overall_volume = input;
-            self
+        pub fn set_overall_volume(mut self, input: std::option::Option<crate::model::OverallVolume>) -> Self {
+            self.overall_volume = input; self
         }
         /// Appends an item to `daily_volumes`.
         ///
@@ -2742,26 +2749,26 @@ pub mod get_domain_statistics_report_output {
         /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
         pub fn daily_volumes(mut self, input: crate::model::DailyVolume) -> Self {
             let mut v = self.daily_volumes.unwrap_or_default();
-            v.push(input);
-            self.daily_volumes = Some(v);
-            self
+                            v.push(input);
+                            self.daily_volumes = Some(v);
+                            self
         }
         /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-        pub fn set_daily_volumes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>,
-        ) -> Self {
-            self.daily_volumes = input;
-            self
+        pub fn set_daily_volumes(mut self, input: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>) -> Self {
+            self.daily_volumes = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
         pub fn build(self) -> crate::output::GetDomainStatisticsReportOutput {
             crate::output::GetDomainStatisticsReportOutput {
-                overall_volume: self.overall_volume,
-                daily_volumes: self.daily_volumes,
+                overall_volume: self.overall_volume
+                ,
+                daily_volumes: self.daily_volumes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDomainStatisticsReportOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
@@ -2773,53 +2780,45 @@ impl GetDomainStatisticsReportOutput {
 /// <p>An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainDeliverabilityCampaignOutput {
+pub struct GetDomainDeliverabilityCampaignOutput  {
     /// <p>An object that contains the deliverability data for the campaign.</p>
     #[doc(hidden)]
-    pub domain_deliverability_campaign:
-        std::option::Option<crate::model::DomainDeliverabilityCampaign>,
+    pub domain_deliverability_campaign: std::option::Option<crate::model::DomainDeliverabilityCampaign>,
 }
 impl GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
-    pub fn domain_deliverability_campaign(
-        &self,
-    ) -> std::option::Option<&crate::model::DomainDeliverabilityCampaign> {
+    pub fn domain_deliverability_campaign(&self) -> std::option::Option<& crate::model::DomainDeliverabilityCampaign> {
         self.domain_deliverability_campaign.as_ref()
     }
 }
 /// See [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
 pub mod get_domain_deliverability_campaign_output {
-
+    
     /// A builder for [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_deliverability_campaign:
-            std::option::Option<crate::model::DomainDeliverabilityCampaign>,
+        pub(crate) domain_deliverability_campaign: std::option::Option<crate::model::DomainDeliverabilityCampaign>,
     }
     impl Builder {
         /// <p>An object that contains the deliverability data for the campaign.</p>
-        pub fn domain_deliverability_campaign(
-            mut self,
-            input: crate::model::DomainDeliverabilityCampaign,
-        ) -> Self {
+        pub fn domain_deliverability_campaign(mut self, input: crate::model::DomainDeliverabilityCampaign) -> Self {
             self.domain_deliverability_campaign = Some(input);
             self
         }
         /// <p>An object that contains the deliverability data for the campaign.</p>
-        pub fn set_domain_deliverability_campaign(
-            mut self,
-            input: std::option::Option<crate::model::DomainDeliverabilityCampaign>,
-        ) -> Self {
-            self.domain_deliverability_campaign = input;
-            self
+        pub fn set_domain_deliverability_campaign(mut self, input: std::option::Option<crate::model::DomainDeliverabilityCampaign>) -> Self {
+            self.domain_deliverability_campaign = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
         pub fn build(self) -> crate::output::GetDomainDeliverabilityCampaignOutput {
             crate::output::GetDomainDeliverabilityCampaignOutput {
-                domain_deliverability_campaign: self.domain_deliverability_campaign,
+                domain_deliverability_campaign: self.domain_deliverability_campaign
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDomainDeliverabilityCampaignOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
@@ -2831,7 +2830,7 @@ impl GetDomainDeliverabilityCampaignOutput {
 /// <p>The results of the predictive inbox placement test.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeliverabilityTestReportOutput {
+pub struct GetDeliverabilityTestReportOutput  {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
     #[doc(hidden)]
     pub deliverability_test_report: std::option::Option<crate::model::DeliverabilityTestReport>,
@@ -2850,36 +2849,33 @@ pub struct GetDeliverabilityTestReportOutput {
 }
 impl GetDeliverabilityTestReportOutput {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
-    pub fn deliverability_test_report(
-        &self,
-    ) -> std::option::Option<&crate::model::DeliverabilityTestReport> {
+    pub fn deliverability_test_report(&self) -> std::option::Option<& crate::model::DeliverabilityTestReport> {
         self.deliverability_test_report.as_ref()
     }
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
-    pub fn overall_placement(&self) -> std::option::Option<&crate::model::PlacementStatistics> {
+    pub fn overall_placement(&self) -> std::option::Option<& crate::model::PlacementStatistics> {
         self.overall_placement.as_ref()
     }
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-    pub fn isp_placements(&self) -> std::option::Option<&[crate::model::IspPlacement]> {
+    pub fn isp_placements(&self) -> std::option::Option<& [crate::model::IspPlacement]> {
         self.isp_placements.as_deref()
     }
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
 pub mod get_deliverability_test_report_output {
-
+    
     /// A builder for [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) deliverability_test_report:
-            std::option::Option<crate::model::DeliverabilityTestReport>,
+        pub(crate) deliverability_test_report: std::option::Option<crate::model::DeliverabilityTestReport>,
         pub(crate) overall_placement: std::option::Option<crate::model::PlacementStatistics>,
         pub(crate) isp_placements: std::option::Option<std::vec::Vec<crate::model::IspPlacement>>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2887,20 +2883,13 @@ pub mod get_deliverability_test_report_output {
     }
     impl Builder {
         /// <p>An object that contains the results of the predictive inbox placement test.</p>
-        pub fn deliverability_test_report(
-            mut self,
-            input: crate::model::DeliverabilityTestReport,
-        ) -> Self {
+        pub fn deliverability_test_report(mut self, input: crate::model::DeliverabilityTestReport) -> Self {
             self.deliverability_test_report = Some(input);
             self
         }
         /// <p>An object that contains the results of the predictive inbox placement test.</p>
-        pub fn set_deliverability_test_report(
-            mut self,
-            input: std::option::Option<crate::model::DeliverabilityTestReport>,
-        ) -> Self {
-            self.deliverability_test_report = input;
-            self
+        pub fn set_deliverability_test_report(mut self, input: std::option::Option<crate::model::DeliverabilityTestReport>) -> Self {
+            self.deliverability_test_report = input; self
         }
         /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
         pub fn overall_placement(mut self, input: crate::model::PlacementStatistics) -> Self {
@@ -2908,12 +2897,8 @@ pub mod get_deliverability_test_report_output {
             self
         }
         /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
-        pub fn set_overall_placement(
-            mut self,
-            input: std::option::Option<crate::model::PlacementStatistics>,
-        ) -> Self {
-            self.overall_placement = input;
-            self
+        pub fn set_overall_placement(mut self, input: std::option::Option<crate::model::PlacementStatistics>) -> Self {
+            self.overall_placement = input; self
         }
         /// Appends an item to `isp_placements`.
         ///
@@ -2922,17 +2907,13 @@ pub mod get_deliverability_test_report_output {
         /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
         pub fn isp_placements(mut self, input: crate::model::IspPlacement) -> Self {
             let mut v = self.isp_placements.unwrap_or_default();
-            v.push(input);
-            self.isp_placements = Some(v);
-            self
+                            v.push(input);
+                            self.isp_placements = Some(v);
+                            self
         }
         /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-        pub fn set_isp_placements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IspPlacement>>,
-        ) -> Self {
-            self.isp_placements = input;
-            self
+        pub fn set_isp_placements(mut self, input: std::option::Option<std::vec::Vec<crate::model::IspPlacement>>) -> Self {
+            self.isp_placements = input; self
         }
         /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2941,8 +2922,7 @@ pub mod get_deliverability_test_report_output {
         }
         /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2951,29 +2931,32 @@ pub mod get_deliverability_test_report_output {
         /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
         pub fn build(self) -> crate::output::GetDeliverabilityTestReportOutput {
             crate::output::GetDeliverabilityTestReportOutput {
-                deliverability_test_report: self.deliverability_test_report,
-                overall_placement: self.overall_placement,
-                isp_placements: self.isp_placements,
-                message: self.message,
-                tags: self.tags,
+                deliverability_test_report: self.deliverability_test_report
+                ,
+                overall_placement: self.overall_placement
+                ,
+                isp_placements: self.isp_placements
+                ,
+                message: self.message
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeliverabilityTestReportOutput {
     /// Creates a new builder-style object to manufacture [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
@@ -2985,7 +2968,7 @@ impl GetDeliverabilityTestReportOutput {
 /// <p>An object that shows the status of the Deliverability dashboard.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeliverabilityDashboardOptionsOutput {
+pub struct GetDeliverabilityDashboardOptionsOutput  {
     /// <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>, the dashboard is enabled.</p>
     #[doc(hidden)]
     pub dashboard_enabled: bool,
@@ -2997,12 +2980,10 @@ pub struct GetDeliverabilityDashboardOptionsOutput {
     pub account_status: std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
     #[doc(hidden)]
-    pub active_subscribed_domains:
-        std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+    pub active_subscribed_domains: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
     #[doc(hidden)]
-    pub pending_expiration_subscribed_domains:
-        std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+    pub pending_expiration_subscribed_domains: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
 }
 impl GetDeliverabilityDashboardOptionsOutput {
     /// <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>, the dashboard is enabled.</p>
@@ -3010,42 +2991,33 @@ impl GetDeliverabilityDashboardOptionsOutput {
         self.dashboard_enabled
     }
     /// <p>The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
-    pub fn subscription_expiry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn subscription_expiry_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.subscription_expiry_date.as_ref()
     }
     /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
-    pub fn account_status(
-        &self,
-    ) -> std::option::Option<&crate::model::DeliverabilityDashboardAccountStatus> {
+    pub fn account_status(&self) -> std::option::Option<& crate::model::DeliverabilityDashboardAccountStatus> {
         self.account_status.as_ref()
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
-    pub fn active_subscribed_domains(
-        &self,
-    ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
+    pub fn active_subscribed_domains(&self) -> std::option::Option<& [crate::model::DomainDeliverabilityTrackingOption]> {
         self.active_subscribed_domains.as_deref()
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
-    pub fn pending_expiration_subscribed_domains(
-        &self,
-    ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
+    pub fn pending_expiration_subscribed_domains(&self) -> std::option::Option<& [crate::model::DomainDeliverabilityTrackingOption]> {
         self.pending_expiration_subscribed_domains.as_deref()
     }
 }
 /// See [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
 pub mod get_deliverability_dashboard_options_output {
-
+    
     /// A builder for [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_enabled: std::option::Option<bool>,
         pub(crate) subscription_expiry_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) account_status:
-            std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
-        pub(crate) active_subscribed_domains:
-            std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
-        pub(crate) pending_expiration_subscribed_domains:
-            std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+        pub(crate) account_status: std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
+        pub(crate) active_subscribed_domains: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+        pub(crate) pending_expiration_subscribed_domains: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
     }
     impl Builder {
         /// <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>, the dashboard is enabled.</p>
@@ -3055,8 +3027,7 @@ pub mod get_deliverability_dashboard_options_output {
         }
         /// <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>, the dashboard is enabled.</p>
         pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.dashboard_enabled = input;
-            self
+            self.dashboard_enabled = input; self
         }
         /// <p>The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
         pub fn subscription_expiry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3064,90 +3035,67 @@ pub mod get_deliverability_dashboard_options_output {
             self
         }
         /// <p>The date when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
-        pub fn set_subscription_expiry_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.subscription_expiry_date = input;
-            self
+        pub fn set_subscription_expiry_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.subscription_expiry_date = input; self
         }
         /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
-        pub fn account_status(
-            mut self,
-            input: crate::model::DeliverabilityDashboardAccountStatus,
-        ) -> Self {
+        pub fn account_status(mut self, input: crate::model::DeliverabilityDashboardAccountStatus) -> Self {
             self.account_status = Some(input);
             self
         }
         /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
-        pub fn set_account_status(
-            mut self,
-            input: std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
-        ) -> Self {
-            self.account_status = input;
-            self
+        pub fn set_account_status(mut self, input: std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>) -> Self {
+            self.account_status = input; self
         }
         /// Appends an item to `active_subscribed_domains`.
         ///
         /// To override the contents of this collection use [`set_active_subscribed_domains`](Self::set_active_subscribed_domains).
         ///
         /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
-        pub fn active_subscribed_domains(
-            mut self,
-            input: crate::model::DomainDeliverabilityTrackingOption,
-        ) -> Self {
+        pub fn active_subscribed_domains(mut self, input: crate::model::DomainDeliverabilityTrackingOption) -> Self {
             let mut v = self.active_subscribed_domains.unwrap_or_default();
-            v.push(input);
-            self.active_subscribed_domains = Some(v);
-            self
+                            v.push(input);
+                            self.active_subscribed_domains = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
-        pub fn set_active_subscribed_domains(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>,
-            >,
-        ) -> Self {
-            self.active_subscribed_domains = input;
-            self
+        pub fn set_active_subscribed_domains(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>) -> Self {
+            self.active_subscribed_domains = input; self
         }
         /// Appends an item to `pending_expiration_subscribed_domains`.
         ///
         /// To override the contents of this collection use [`set_pending_expiration_subscribed_domains`](Self::set_pending_expiration_subscribed_domains).
         ///
         /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
-        pub fn pending_expiration_subscribed_domains(
-            mut self,
-            input: crate::model::DomainDeliverabilityTrackingOption,
-        ) -> Self {
-            let mut v = self
-                .pending_expiration_subscribed_domains
-                .unwrap_or_default();
-            v.push(input);
-            self.pending_expiration_subscribed_domains = Some(v);
-            self
+        pub fn pending_expiration_subscribed_domains(mut self, input: crate::model::DomainDeliverabilityTrackingOption) -> Self {
+            let mut v = self.pending_expiration_subscribed_domains.unwrap_or_default();
+                            v.push(input);
+                            self.pending_expiration_subscribed_domains = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
-        pub fn set_pending_expiration_subscribed_domains(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>,
-            >,
-        ) -> Self {
-            self.pending_expiration_subscribed_domains = input;
-            self
+        pub fn set_pending_expiration_subscribed_domains(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>) -> Self {
+            self.pending_expiration_subscribed_domains = input; self
         }
         /// Consumes the builder and constructs a [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
         pub fn build(self) -> crate::output::GetDeliverabilityDashboardOptionsOutput {
             crate::output::GetDeliverabilityDashboardOptionsOutput {
-                dashboard_enabled: self.dashboard_enabled.unwrap_or_default(),
-                subscription_expiry_date: self.subscription_expiry_date,
-                account_status: self.account_status,
-                active_subscribed_domains: self.active_subscribed_domains,
-                pending_expiration_subscribed_domains: self.pending_expiration_subscribed_domains,
+                dashboard_enabled: self.dashboard_enabled
+                    .unwrap_or_default()
+                ,
+                subscription_expiry_date: self.subscription_expiry_date
+                ,
+                account_status: self.account_status
+                ,
+                active_subscribed_domains: self.active_subscribed_domains
+                ,
+                pending_expiration_subscribed_domains: self.pending_expiration_subscribed_domains
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeliverabilityDashboardOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
@@ -3159,7 +3107,7 @@ impl GetDeliverabilityDashboardOptionsOutput {
 /// <p>Information about the dedicated IP addresses that are associated with your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDedicatedIpsOutput {
+pub struct GetDedicatedIpsOutput  {
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub dedicated_ips: std::option::Option<std::vec::Vec<crate::model::DedicatedIp>>,
@@ -3169,17 +3117,17 @@ pub struct GetDedicatedIpsOutput {
 }
 impl GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
-    pub fn dedicated_ips(&self) -> std::option::Option<&[crate::model::DedicatedIp]> {
+    pub fn dedicated_ips(&self) -> std::option::Option<& [crate::model::DedicatedIp]> {
         self.dedicated_ips.as_deref()
     }
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
 pub mod get_dedicated_ips_output {
-
+    
     /// A builder for [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3194,17 +3142,13 @@ pub mod get_dedicated_ips_output {
         /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
         pub fn dedicated_ips(mut self, input: crate::model::DedicatedIp) -> Self {
             let mut v = self.dedicated_ips.unwrap_or_default();
-            v.push(input);
-            self.dedicated_ips = Some(v);
-            self
+                            v.push(input);
+                            self.dedicated_ips = Some(v);
+                            self
         }
         /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
-        pub fn set_dedicated_ips(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DedicatedIp>>,
-        ) -> Self {
-            self.dedicated_ips = input;
-            self
+        pub fn set_dedicated_ips(mut self, input: std::option::Option<std::vec::Vec<crate::model::DedicatedIp>>) -> Self {
+            self.dedicated_ips = input; self
         }
         /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3213,17 +3157,20 @@ pub mod get_dedicated_ips_output {
         }
         /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
         pub fn build(self) -> crate::output::GetDedicatedIpsOutput {
             crate::output::GetDedicatedIpsOutput {
-                dedicated_ips: self.dedicated_ips,
-                next_token: self.next_token,
+                dedicated_ips: self.dedicated_ips
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDedicatedIpsOutput {
     /// Creates a new builder-style object to manufacture [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
@@ -3235,20 +3182,20 @@ impl GetDedicatedIpsOutput {
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDedicatedIpPoolOutput {
+pub struct GetDedicatedIpPoolOutput  {
     /// <p>An object that contains information about a dedicated IP pool.</p>
     #[doc(hidden)]
     pub dedicated_ip_pool: std::option::Option<crate::model::DedicatedIpPool>,
 }
 impl GetDedicatedIpPoolOutput {
     /// <p>An object that contains information about a dedicated IP pool.</p>
-    pub fn dedicated_ip_pool(&self) -> std::option::Option<&crate::model::DedicatedIpPool> {
+    pub fn dedicated_ip_pool(&self) -> std::option::Option<& crate::model::DedicatedIpPool> {
         self.dedicated_ip_pool.as_ref()
     }
 }
 /// See [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
 pub mod get_dedicated_ip_pool_output {
-
+    
     /// A builder for [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3261,20 +3208,19 @@ pub mod get_dedicated_ip_pool_output {
             self
         }
         /// <p>An object that contains information about a dedicated IP pool.</p>
-        pub fn set_dedicated_ip_pool(
-            mut self,
-            input: std::option::Option<crate::model::DedicatedIpPool>,
-        ) -> Self {
-            self.dedicated_ip_pool = input;
-            self
+        pub fn set_dedicated_ip_pool(mut self, input: std::option::Option<crate::model::DedicatedIpPool>) -> Self {
+            self.dedicated_ip_pool = input; self
         }
         /// Consumes the builder and constructs a [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
         pub fn build(self) -> crate::output::GetDedicatedIpPoolOutput {
             crate::output::GetDedicatedIpPoolOutput {
-                dedicated_ip_pool: self.dedicated_ip_pool,
+                dedicated_ip_pool: self.dedicated_ip_pool
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDedicatedIpPoolOutput {
     /// Creates a new builder-style object to manufacture [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
@@ -3286,20 +3232,20 @@ impl GetDedicatedIpPoolOutput {
 /// <p>Information about a dedicated IP address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDedicatedIpOutput {
+pub struct GetDedicatedIpOutput  {
     /// <p>An object that contains information about a dedicated IP address.</p>
     #[doc(hidden)]
     pub dedicated_ip: std::option::Option<crate::model::DedicatedIp>,
 }
 impl GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
-    pub fn dedicated_ip(&self) -> std::option::Option<&crate::model::DedicatedIp> {
+    pub fn dedicated_ip(&self) -> std::option::Option<& crate::model::DedicatedIp> {
         self.dedicated_ip.as_ref()
     }
 }
 /// See [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
 pub mod get_dedicated_ip_output {
-
+    
     /// A builder for [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3312,20 +3258,19 @@ pub mod get_dedicated_ip_output {
             self
         }
         /// <p>An object that contains information about a dedicated IP address.</p>
-        pub fn set_dedicated_ip(
-            mut self,
-            input: std::option::Option<crate::model::DedicatedIp>,
-        ) -> Self {
-            self.dedicated_ip = input;
-            self
+        pub fn set_dedicated_ip(mut self, input: std::option::Option<crate::model::DedicatedIp>) -> Self {
+            self.dedicated_ip = input; self
         }
         /// Consumes the builder and constructs a [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
         pub fn build(self) -> crate::output::GetDedicatedIpOutput {
             crate::output::GetDedicatedIpOutput {
-                dedicated_ip: self.dedicated_ip,
+                dedicated_ip: self.dedicated_ip
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDedicatedIpOutput {
     /// Creates a new builder-style object to manufacture [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
@@ -3337,7 +3282,7 @@ impl GetDedicatedIpOutput {
 /// <p>The following elements are returned by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCustomVerificationEmailTemplateOutput {
+pub struct GetCustomVerificationEmailTemplateOutput  {
     /// <p>The name of the custom verification email template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -3359,33 +3304,33 @@ pub struct GetCustomVerificationEmailTemplateOutput {
 }
 impl GetCustomVerificationEmailTemplateOutput {
     /// <p>The name of the custom verification email template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The email address that the custom verification email is sent from.</p>
-    pub fn from_email_address(&self) -> std::option::Option<&str> {
+    pub fn from_email_address(&self) -> std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>The subject line of the custom verification email.</p>
-    pub fn template_subject(&self) -> std::option::Option<&str> {
+    pub fn template_subject(&self) -> std::option::Option<& str> {
         self.template_subject.as_deref()
     }
     /// <p>The content of the custom verification email.</p>
-    pub fn template_content(&self) -> std::option::Option<&str> {
+    pub fn template_content(&self) -> std::option::Option<& str> {
         self.template_content.as_deref()
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
-    pub fn success_redirection_url(&self) -> std::option::Option<&str> {
+    pub fn success_redirection_url(&self) -> std::option::Option<& str> {
         self.success_redirection_url.as_deref()
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
-    pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
+    pub fn failure_redirection_url(&self) -> std::option::Option<& str> {
         self.failure_redirection_url.as_deref()
     }
 }
 /// See [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput).
 pub mod get_custom_verification_email_template_output {
-
+    
     /// A builder for [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3403,12 +3348,8 @@ pub mod get_custom_verification_email_template_output {
             self
         }
         /// <p>The name of the custom verification email template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
         pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3416,12 +3357,8 @@ pub mod get_custom_verification_email_template_output {
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn set_from_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.from_email_address = input;
-            self
+        pub fn set_from_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from_email_address = input; self
         }
         /// <p>The subject line of the custom verification email.</p>
         pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3429,12 +3366,8 @@ pub mod get_custom_verification_email_template_output {
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn set_template_subject(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_subject = input;
-            self
+        pub fn set_template_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_subject = input; self
         }
         /// <p>The content of the custom verification email.</p>
         pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3442,12 +3375,8 @@ pub mod get_custom_verification_email_template_output {
             self
         }
         /// <p>The content of the custom verification email.</p>
-        pub fn set_template_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_content = input;
-            self
+        pub fn set_template_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_content = input; self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3455,12 +3384,8 @@ pub mod get_custom_verification_email_template_output {
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
-        pub fn set_success_redirection_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.success_redirection_url = input;
-            self
+        pub fn set_success_redirection_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.success_redirection_url = input; self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3468,25 +3393,29 @@ pub mod get_custom_verification_email_template_output {
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
-        pub fn set_failure_redirection_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_redirection_url = input;
-            self
+        pub fn set_failure_redirection_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_redirection_url = input; self
         }
         /// Consumes the builder and constructs a [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput).
         pub fn build(self) -> crate::output::GetCustomVerificationEmailTemplateOutput {
             crate::output::GetCustomVerificationEmailTemplateOutput {
-                template_name: self.template_name,
-                from_email_address: self.from_email_address,
-                template_subject: self.template_subject,
-                template_content: self.template_content,
-                success_redirection_url: self.success_redirection_url,
-                failure_redirection_url: self.failure_redirection_url,
+                template_name: self.template_name
+                ,
+                from_email_address: self.from_email_address
+                ,
+                template_subject: self.template_subject
+                ,
+                template_content: self.template_content
+                ,
+                success_redirection_url: self.success_redirection_url
+                ,
+                failure_redirection_url: self.failure_redirection_url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCustomVerificationEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput).
@@ -3498,7 +3427,7 @@ impl GetCustomVerificationEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactListOutput {
+pub struct GetContactListOutput  {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
@@ -3520,33 +3449,33 @@ pub struct GetContactListOutput {
 }
 impl GetContactListOutput {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn topics(&self) -> std::option::Option<&[crate::model::Topic]> {
+    pub fn topics(&self) -> std::option::Option<& [crate::model::Topic]> {
         self.topics.as_deref()
     }
     /// <p>A description of what the contact list is about.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A timestamp noting when the contact list was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The tags associated with a contact list.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`GetContactListOutput`](crate::output::GetContactListOutput).
 pub mod get_contact_list_output {
-
+    
     /// A builder for [`GetContactListOutput`](crate::output::GetContactListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3564,12 +3493,8 @@ pub mod get_contact_list_output {
             self
         }
         /// <p>The name of the contact list.</p>
-        pub fn set_contact_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_list_name = input;
-            self
+        pub fn set_contact_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_list_name = input; self
         }
         /// Appends an item to `topics`.
         ///
@@ -3578,17 +3503,13 @@ pub mod get_contact_list_output {
         /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
         pub fn topics(mut self, input: crate::model::Topic) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input);
-            self.topics = Some(v);
-            self
+                            v.push(input);
+                            self.topics = Some(v);
+                            self
         }
         /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-        pub fn set_topics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
-        ) -> Self {
-            self.topics = input;
-            self
+        pub fn set_topics(mut self, input: std::option::Option<std::vec::Vec<crate::model::Topic>>) -> Self {
+            self.topics = input; self
         }
         /// <p>A description of what the contact list is about.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3597,8 +3518,7 @@ pub mod get_contact_list_output {
         }
         /// <p>A description of what the contact list is about.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A timestamp noting when the contact list was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3606,12 +3526,8 @@ pub mod get_contact_list_output {
             self
         }
         /// <p>A timestamp noting when the contact list was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>A timestamp noting the last time the contact list was updated.</p>
         pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3619,12 +3535,8 @@ pub mod get_contact_list_output {
             self
         }
         /// <p>A timestamp noting the last time the contact list was updated.</p>
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -3633,30 +3545,34 @@ pub mod get_contact_list_output {
         /// <p>The tags associated with a contact list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with a contact list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetContactListOutput`](crate::output::GetContactListOutput).
         pub fn build(self) -> crate::output::GetContactListOutput {
             crate::output::GetContactListOutput {
-                contact_list_name: self.contact_list_name,
-                topics: self.topics,
-                description: self.description,
-                created_timestamp: self.created_timestamp,
-                last_updated_timestamp: self.last_updated_timestamp,
-                tags: self.tags,
+                contact_list_name: self.contact_list_name
+                ,
+                topics: self.topics
+                ,
+                description: self.description
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContactListOutput {
     /// Creates a new builder-style object to manufacture [`GetContactListOutput`](crate::output::GetContactListOutput).
@@ -3668,7 +3584,7 @@ impl GetContactListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactOutput {
+pub struct GetContactOutput  {
     /// <p>The name of the contact list to which the contact belongs.</p>
     #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
@@ -3680,8 +3596,7 @@ pub struct GetContactOutput {
     pub topic_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
     /// <p>The default topic preferences applied to the contact.</p>
     #[doc(hidden)]
-    pub topic_default_preferences:
-        std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+    pub topic_default_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     #[doc(hidden)]
     pub unsubscribe_all: bool,
@@ -3697,21 +3612,19 @@ pub struct GetContactOutput {
 }
 impl GetContactOutput {
     /// <p>The name of the contact list to which the contact belongs.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
     /// <p>The contact's email addres.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
-    pub fn topic_preferences(&self) -> std::option::Option<&[crate::model::TopicPreference]> {
+    pub fn topic_preferences(&self) -> std::option::Option<& [crate::model::TopicPreference]> {
         self.topic_preferences.as_deref()
     }
     /// <p>The default topic preferences applied to the contact.</p>
-    pub fn topic_default_preferences(
-        &self,
-    ) -> std::option::Option<&[crate::model::TopicPreference]> {
+    pub fn topic_default_preferences(&self) -> std::option::Option<& [crate::model::TopicPreference]> {
         self.topic_default_preferences.as_deref()
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
@@ -3719,30 +3632,28 @@ impl GetContactOutput {
         self.unsubscribe_all
     }
     /// <p>The attribute data attached to a contact.</p>
-    pub fn attributes_data(&self) -> std::option::Option<&str> {
+    pub fn attributes_data(&self) -> std::option::Option<& str> {
         self.attributes_data.as_deref()
     }
     /// <p>A timestamp noting when the contact was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
 /// See [`GetContactOutput`](crate::output::GetContactOutput).
 pub mod get_contact_output {
-
+    
     /// A builder for [`GetContactOutput`](crate::output::GetContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
         pub(crate) email_address: std::option::Option<std::string::String>,
-        pub(crate) topic_preferences:
-            std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
-        pub(crate) topic_default_preferences:
-            std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+        pub(crate) topic_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+        pub(crate) topic_default_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         pub(crate) unsubscribe_all: std::option::Option<bool>,
         pub(crate) attributes_data: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -3755,12 +3666,8 @@ pub mod get_contact_output {
             self
         }
         /// <p>The name of the contact list to which the contact belongs.</p>
-        pub fn set_contact_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_list_name = input;
-            self
+        pub fn set_contact_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_list_name = input; self
         }
         /// <p>The contact's email addres.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3768,12 +3675,8 @@ pub mod get_contact_output {
             self
         }
         /// <p>The contact's email addres.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
         /// Appends an item to `topic_preferences`.
         ///
@@ -3782,17 +3685,13 @@ pub mod get_contact_output {
         /// <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
         pub fn topic_preferences(mut self, input: crate::model::TopicPreference) -> Self {
             let mut v = self.topic_preferences.unwrap_or_default();
-            v.push(input);
-            self.topic_preferences = Some(v);
-            self
+                            v.push(input);
+                            self.topic_preferences = Some(v);
+                            self
         }
         /// <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
-        pub fn set_topic_preferences(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
-        ) -> Self {
-            self.topic_preferences = input;
-            self
+        pub fn set_topic_preferences(mut self, input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>) -> Self {
+            self.topic_preferences = input; self
         }
         /// Appends an item to `topic_default_preferences`.
         ///
@@ -3801,17 +3700,13 @@ pub mod get_contact_output {
         /// <p>The default topic preferences applied to the contact.</p>
         pub fn topic_default_preferences(mut self, input: crate::model::TopicPreference) -> Self {
             let mut v = self.topic_default_preferences.unwrap_or_default();
-            v.push(input);
-            self.topic_default_preferences = Some(v);
-            self
+                            v.push(input);
+                            self.topic_default_preferences = Some(v);
+                            self
         }
         /// <p>The default topic preferences applied to the contact.</p>
-        pub fn set_topic_default_preferences(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
-        ) -> Self {
-            self.topic_default_preferences = input;
-            self
+        pub fn set_topic_default_preferences(mut self, input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>) -> Self {
+            self.topic_default_preferences = input; self
         }
         /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
         pub fn unsubscribe_all(mut self, input: bool) -> Self {
@@ -3820,8 +3715,7 @@ pub mod get_contact_output {
         }
         /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
         pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
-            self.unsubscribe_all = input;
-            self
+            self.unsubscribe_all = input; self
         }
         /// <p>The attribute data attached to a contact.</p>
         pub fn attributes_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3829,12 +3723,8 @@ pub mod get_contact_output {
             self
         }
         /// <p>The attribute data attached to a contact.</p>
-        pub fn set_attributes_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attributes_data = input;
-            self
+        pub fn set_attributes_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attributes_data = input; self
         }
         /// <p>A timestamp noting when the contact was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3842,12 +3732,8 @@ pub mod get_contact_output {
             self
         }
         /// <p>A timestamp noting when the contact was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>A timestamp noting the last time the contact's information was updated.</p>
         pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3855,27 +3741,34 @@ pub mod get_contact_output {
             self
         }
         /// <p>A timestamp noting the last time the contact's information was updated.</p>
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`GetContactOutput`](crate::output::GetContactOutput).
         pub fn build(self) -> crate::output::GetContactOutput {
             crate::output::GetContactOutput {
-                contact_list_name: self.contact_list_name,
-                email_address: self.email_address,
-                topic_preferences: self.topic_preferences,
-                topic_default_preferences: self.topic_default_preferences,
-                unsubscribe_all: self.unsubscribe_all.unwrap_or_default(),
-                attributes_data: self.attributes_data,
-                created_timestamp: self.created_timestamp,
-                last_updated_timestamp: self.last_updated_timestamp,
+                contact_list_name: self.contact_list_name
+                ,
+                email_address: self.email_address
+                ,
+                topic_preferences: self.topic_preferences
+                ,
+                topic_default_preferences: self.topic_default_preferences
+                ,
+                unsubscribe_all: self.unsubscribe_all
+                    .unwrap_or_default()
+                ,
+                attributes_data: self.attributes_data
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContactOutput {
     /// Creates a new builder-style object to manufacture [`GetContactOutput`](crate::output::GetContactOutput).
@@ -3887,25 +3780,24 @@ impl GetContactOutput {
 /// <p>Information about an event destination for a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationSetEventDestinationsOutput {
+pub struct GetConfigurationSetEventDestinationsOutput  {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
     #[doc(hidden)]
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
 }
 impl GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
-    pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
+    pub fn event_destinations(&self) -> std::option::Option<& [crate::model::EventDestination]> {
         self.event_destinations.as_deref()
     }
 }
 /// See [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
 pub mod get_configuration_set_event_destinations_output {
-
+    
     /// A builder for [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_destinations:
-            std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
+        pub(crate) event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
     }
     impl Builder {
         /// Appends an item to `event_destinations`.
@@ -3915,25 +3807,24 @@ pub mod get_configuration_set_event_destinations_output {
         /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
         pub fn event_destinations(mut self, input: crate::model::EventDestination) -> Self {
             let mut v = self.event_destinations.unwrap_or_default();
-            v.push(input);
-            self.event_destinations = Some(v);
-            self
+                            v.push(input);
+                            self.event_destinations = Some(v);
+                            self
         }
         /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
-        pub fn set_event_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
-        ) -> Self {
-            self.event_destinations = input;
-            self
+        pub fn set_event_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventDestination>>) -> Self {
+            self.event_destinations = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
         pub fn build(self) -> crate::output::GetConfigurationSetEventDestinationsOutput {
             crate::output::GetConfigurationSetEventDestinationsOutput {
-                event_destinations: self.event_destinations,
+                event_destinations: self.event_destinations
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfigurationSetEventDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
@@ -3945,7 +3836,7 @@ impl GetConfigurationSetEventDestinationsOutput {
 /// <p>Information about a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationSetOutput {
+pub struct GetConfigurationSetOutput  {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -3973,41 +3864,41 @@ pub struct GetConfigurationSetOutput {
 }
 impl GetConfigurationSetOutput {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
+    pub fn tracking_options(&self) -> std::option::Option<& crate::model::TrackingOptions> {
         self.tracking_options.as_ref()
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
+    pub fn delivery_options(&self) -> std::option::Option<& crate::model::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
-    pub fn reputation_options(&self) -> std::option::Option<&crate::model::ReputationOptions> {
+    pub fn reputation_options(&self) -> std::option::Option<& crate::model::ReputationOptions> {
         self.reputation_options.as_ref()
     }
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
-    pub fn sending_options(&self) -> std::option::Option<&crate::model::SendingOptions> {
+    pub fn sending_options(&self) -> std::option::Option<& crate::model::SendingOptions> {
         self.sending_options.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
-    pub fn suppression_options(&self) -> std::option::Option<&crate::model::SuppressionOptions> {
+    pub fn suppression_options(&self) -> std::option::Option<& crate::model::SuppressionOptions> {
         self.suppression_options.as_ref()
     }
     /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
-    pub fn vdm_options(&self) -> std::option::Option<&crate::model::VdmOptions> {
+    pub fn vdm_options(&self) -> std::option::Option<& crate::model::VdmOptions> {
         self.vdm_options.as_ref()
     }
 }
 /// See [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
 pub mod get_configuration_set_output {
-
+    
     /// A builder for [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4027,12 +3918,8 @@ pub mod get_configuration_set_output {
             self
         }
         /// <p>The name of the configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
         pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
@@ -4040,12 +3927,8 @@ pub mod get_configuration_set_output {
             self
         }
         /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-        pub fn set_tracking_options(
-            mut self,
-            input: std::option::Option<crate::model::TrackingOptions>,
-        ) -> Self {
-            self.tracking_options = input;
-            self
+        pub fn set_tracking_options(mut self, input: std::option::Option<crate::model::TrackingOptions>) -> Self {
+            self.tracking_options = input; self
         }
         /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
         pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
@@ -4053,12 +3936,8 @@ pub mod get_configuration_set_output {
             self
         }
         /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-        pub fn set_delivery_options(
-            mut self,
-            input: std::option::Option<crate::model::DeliveryOptions>,
-        ) -> Self {
-            self.delivery_options = input;
-            self
+        pub fn set_delivery_options(mut self, input: std::option::Option<crate::model::DeliveryOptions>) -> Self {
+            self.delivery_options = input; self
         }
         /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
         pub fn reputation_options(mut self, input: crate::model::ReputationOptions) -> Self {
@@ -4066,12 +3945,8 @@ pub mod get_configuration_set_output {
             self
         }
         /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
-        pub fn set_reputation_options(
-            mut self,
-            input: std::option::Option<crate::model::ReputationOptions>,
-        ) -> Self {
-            self.reputation_options = input;
-            self
+        pub fn set_reputation_options(mut self, input: std::option::Option<crate::model::ReputationOptions>) -> Self {
+            self.reputation_options = input; self
         }
         /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
         pub fn sending_options(mut self, input: crate::model::SendingOptions) -> Self {
@@ -4079,12 +3954,8 @@ pub mod get_configuration_set_output {
             self
         }
         /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
-        pub fn set_sending_options(
-            mut self,
-            input: std::option::Option<crate::model::SendingOptions>,
-        ) -> Self {
-            self.sending_options = input;
-            self
+        pub fn set_sending_options(mut self, input: std::option::Option<crate::model::SendingOptions>) -> Self {
+            self.sending_options = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4093,17 +3964,13 @@ pub mod get_configuration_set_output {
         /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>An object that contains information about the suppression list preferences for your account.</p>
         pub fn suppression_options(mut self, input: crate::model::SuppressionOptions) -> Self {
@@ -4111,12 +3978,8 @@ pub mod get_configuration_set_output {
             self
         }
         /// <p>An object that contains information about the suppression list preferences for your account.</p>
-        pub fn set_suppression_options(
-            mut self,
-            input: std::option::Option<crate::model::SuppressionOptions>,
-        ) -> Self {
-            self.suppression_options = input;
-            self
+        pub fn set_suppression_options(mut self, input: std::option::Option<crate::model::SuppressionOptions>) -> Self {
+            self.suppression_options = input; self
         }
         /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
         pub fn vdm_options(mut self, input: crate::model::VdmOptions) -> Self {
@@ -4124,27 +3987,33 @@ pub mod get_configuration_set_output {
             self
         }
         /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
-        pub fn set_vdm_options(
-            mut self,
-            input: std::option::Option<crate::model::VdmOptions>,
-        ) -> Self {
-            self.vdm_options = input;
-            self
+        pub fn set_vdm_options(mut self, input: std::option::Option<crate::model::VdmOptions>) -> Self {
+            self.vdm_options = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
         pub fn build(self) -> crate::output::GetConfigurationSetOutput {
             crate::output::GetConfigurationSetOutput {
-                configuration_set_name: self.configuration_set_name,
-                tracking_options: self.tracking_options,
-                delivery_options: self.delivery_options,
-                reputation_options: self.reputation_options,
-                sending_options: self.sending_options,
-                tags: self.tags,
-                suppression_options: self.suppression_options,
-                vdm_options: self.vdm_options,
+                configuration_set_name: self.configuration_set_name
+                ,
+                tracking_options: self.tracking_options
+                ,
+                delivery_options: self.delivery_options
+                ,
+                reputation_options: self.reputation_options
+                ,
+                sending_options: self.sending_options
+                ,
+                tags: self.tags
+                ,
+                suppression_options: self.suppression_options
+                ,
+                vdm_options: self.vdm_options
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
@@ -4156,38 +4025,24 @@ impl GetConfigurationSetOutput {
 /// <p>An object that contains information about blacklist events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBlacklistReportsOutput {
+pub struct GetBlacklistReportsOutput  {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
     #[doc(hidden)]
-    pub blacklist_report: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>,
-    >,
+    pub blacklist_report: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>>,
 }
 impl GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
-    pub fn blacklist_report(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::BlacklistEntry>,
-        >,
-    > {
+    pub fn blacklist_report(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>> {
         self.blacklist_report.as_ref()
     }
 }
 /// See [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
 pub mod get_blacklist_reports_output {
-
+    
     /// A builder for [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) blacklist_report: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::BlacklistEntry>,
-            >,
-        >,
+        pub(crate) blacklist_report: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>>,
     }
     impl Builder {
         /// Adds a key-value pair to `blacklist_report`.
@@ -4195,36 +4050,26 @@ pub mod get_blacklist_reports_output {
         /// To override the contents of this collection use [`set_blacklist_report`](Self::set_blacklist_report).
         ///
         /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
-        pub fn blacklist_report(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::BlacklistEntry>,
-        ) -> Self {
+        pub fn blacklist_report(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::BlacklistEntry>) -> Self {
             let mut hash_map = self.blacklist_report.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.blacklist_report = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.blacklist_report = Some(hash_map);
+                            self
         }
         /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
-        pub fn set_blacklist_report(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::BlacklistEntry>,
-                >,
-            >,
-        ) -> Self {
-            self.blacklist_report = input;
-            self
+        pub fn set_blacklist_report(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>>) -> Self {
+            self.blacklist_report = input; self
         }
         /// Consumes the builder and constructs a [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
         pub fn build(self) -> crate::output::GetBlacklistReportsOutput {
             crate::output::GetBlacklistReportsOutput {
-                blacklist_report: self.blacklist_report,
+                blacklist_report: self.blacklist_report
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBlacklistReportsOutput {
     /// Creates a new builder-style object to manufacture [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
@@ -4236,20 +4081,20 @@ impl GetBlacklistReportsOutput {
 /// <p>A list of details about the email-sending capabilities of your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountOutput {
+pub struct GetAccountOutput  {
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
     #[doc(hidden)]
     pub dedicated_ip_auto_warmup_enabled: bool,
-    /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+    /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li> 
+    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li> 
+    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub enforcement_status: std::option::Option<std::string::String>,
-    /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p> 
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p> 
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     #[doc(hidden)]
     pub production_access_enabled: bool,
@@ -4274,23 +4119,23 @@ impl GetAccountOutput {
     pub fn dedicated_ip_auto_warmup_enabled(&self) -> bool {
         self.dedicated_ip_auto_warmup_enabled
     }
-    /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+    /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li> 
+    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li> 
+    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li> 
     /// </ul>
-    pub fn enforcement_status(&self) -> std::option::Option<&str> {
+    pub fn enforcement_status(&self) -> std::option::Option<& str> {
         self.enforcement_status.as_deref()
     }
-    /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p> 
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p> 
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn production_access_enabled(&self) -> bool {
         self.production_access_enabled
     }
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.</p>
-    pub fn send_quota(&self) -> std::option::Option<&crate::model::SendQuota> {
+    pub fn send_quota(&self) -> std::option::Option<& crate::model::SendQuota> {
         self.send_quota.as_ref()
     }
     /// <p>Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services Region.</p>
@@ -4298,23 +4143,21 @@ impl GetAccountOutput {
         self.sending_enabled
     }
     /// <p>An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.</p>
-    pub fn suppression_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::SuppressionAttributes> {
+    pub fn suppression_attributes(&self) -> std::option::Option<& crate::model::SuppressionAttributes> {
         self.suppression_attributes.as_ref()
     }
     /// <p>An object that defines your account details.</p>
-    pub fn details(&self) -> std::option::Option<&crate::model::AccountDetails> {
+    pub fn details(&self) -> std::option::Option<& crate::model::AccountDetails> {
         self.details.as_ref()
     }
     /// <p>The VDM attributes that apply to your Amazon SES account.</p>
-    pub fn vdm_attributes(&self) -> std::option::Option<&crate::model::VdmAttributes> {
+    pub fn vdm_attributes(&self) -> std::option::Option<& crate::model::VdmAttributes> {
         self.vdm_attributes.as_ref()
     }
 }
 /// See [`GetAccountOutput`](crate::output::GetAccountOutput).
 pub mod get_account_output {
-
+    
     /// A builder for [`GetAccountOutput`](crate::output::GetAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4334,49 +4177,40 @@ pub mod get_account_output {
             self
         }
         /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
-        pub fn set_dedicated_ip_auto_warmup_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.dedicated_ip_auto_warmup_enabled = input;
-            self
+        pub fn set_dedicated_ip_auto_warmup_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.dedicated_ip_auto_warmup_enabled = input; self
         }
-        /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-        /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-        /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+        /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li> 
+        /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li> 
+        /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li> 
         /// </ul>
         pub fn enforcement_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.enforcement_status = Some(input.into());
             self
         }
-        /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-        /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-        /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+        /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li> 
+        /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li> 
+        /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li> 
         /// </ul>
-        pub fn set_enforcement_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.enforcement_status = input;
-            self
+        pub fn set_enforcement_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.enforcement_status = input; self
         }
-        /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
-        /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+        /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p> 
+        /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p> 
         /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
         pub fn production_access_enabled(mut self, input: bool) -> Self {
             self.production_access_enabled = Some(input);
             self
         }
-        /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
-        /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+        /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p> 
+        /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p> 
         /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
         pub fn set_production_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.production_access_enabled = input;
-            self
+            self.production_access_enabled = input; self
         }
         /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.</p>
         pub fn send_quota(mut self, input: crate::model::SendQuota) -> Self {
@@ -4384,12 +4218,8 @@ pub mod get_account_output {
             self
         }
         /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.</p>
-        pub fn set_send_quota(
-            mut self,
-            input: std::option::Option<crate::model::SendQuota>,
-        ) -> Self {
-            self.send_quota = input;
-            self
+        pub fn set_send_quota(mut self, input: std::option::Option<crate::model::SendQuota>) -> Self {
+            self.send_quota = input; self
         }
         /// <p>Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services Region.</p>
         pub fn sending_enabled(mut self, input: bool) -> Self {
@@ -4398,24 +4228,16 @@ pub mod get_account_output {
         }
         /// <p>Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services Region.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sending_enabled = input;
-            self
+            self.sending_enabled = input; self
         }
         /// <p>An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.</p>
-        pub fn suppression_attributes(
-            mut self,
-            input: crate::model::SuppressionAttributes,
-        ) -> Self {
+        pub fn suppression_attributes(mut self, input: crate::model::SuppressionAttributes) -> Self {
             self.suppression_attributes = Some(input);
             self
         }
         /// <p>An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.</p>
-        pub fn set_suppression_attributes(
-            mut self,
-            input: std::option::Option<crate::model::SuppressionAttributes>,
-        ) -> Self {
-            self.suppression_attributes = input;
-            self
+        pub fn set_suppression_attributes(mut self, input: std::option::Option<crate::model::SuppressionAttributes>) -> Self {
+            self.suppression_attributes = input; self
         }
         /// <p>An object that defines your account details.</p>
         pub fn details(mut self, input: crate::model::AccountDetails) -> Self {
@@ -4423,12 +4245,8 @@ pub mod get_account_output {
             self
         }
         /// <p>An object that defines your account details.</p>
-        pub fn set_details(
-            mut self,
-            input: std::option::Option<crate::model::AccountDetails>,
-        ) -> Self {
-            self.details = input;
-            self
+        pub fn set_details(mut self, input: std::option::Option<crate::model::AccountDetails>) -> Self {
+            self.details = input; self
         }
         /// <p>The VDM attributes that apply to your Amazon SES account.</p>
         pub fn vdm_attributes(mut self, input: crate::model::VdmAttributes) -> Self {
@@ -4436,29 +4254,36 @@ pub mod get_account_output {
             self
         }
         /// <p>The VDM attributes that apply to your Amazon SES account.</p>
-        pub fn set_vdm_attributes(
-            mut self,
-            input: std::option::Option<crate::model::VdmAttributes>,
-        ) -> Self {
-            self.vdm_attributes = input;
-            self
+        pub fn set_vdm_attributes(mut self, input: std::option::Option<crate::model::VdmAttributes>) -> Self {
+            self.vdm_attributes = input; self
         }
         /// Consumes the builder and constructs a [`GetAccountOutput`](crate::output::GetAccountOutput).
         pub fn build(self) -> crate::output::GetAccountOutput {
             crate::output::GetAccountOutput {
-                dedicated_ip_auto_warmup_enabled: self
-                    .dedicated_ip_auto_warmup_enabled
-                    .unwrap_or_default(),
-                enforcement_status: self.enforcement_status,
-                production_access_enabled: self.production_access_enabled.unwrap_or_default(),
-                send_quota: self.send_quota,
-                sending_enabled: self.sending_enabled.unwrap_or_default(),
-                suppression_attributes: self.suppression_attributes,
-                details: self.details,
-                vdm_attributes: self.vdm_attributes,
+                dedicated_ip_auto_warmup_enabled: self.dedicated_ip_auto_warmup_enabled
+                    .unwrap_or_default()
+                ,
+                enforcement_status: self.enforcement_status
+                ,
+                production_access_enabled: self.production_access_enabled
+                    .unwrap_or_default()
+                ,
+                send_quota: self.send_quota
+                ,
+                sending_enabled: self.sending_enabled
+                    .unwrap_or_default()
+                ,
+                suppression_attributes: self.suppression_attributes
+                ,
+                details: self.details
+                ,
+                vdm_attributes: self.vdm_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountOutput`](crate::output::GetAccountOutput).
@@ -4470,19 +4295,24 @@ impl GetAccountOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSuppressedDestinationOutput {}
+pub struct DeleteSuppressedDestinationOutput  {
+}
 /// See [`DeleteSuppressedDestinationOutput`](crate::output::DeleteSuppressedDestinationOutput).
 pub mod delete_suppressed_destination_output {
-
+    
     /// A builder for [`DeleteSuppressedDestinationOutput`](crate::output::DeleteSuppressedDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSuppressedDestinationOutput`](crate::output::DeleteSuppressedDestinationOutput).
         pub fn build(self) -> crate::output::DeleteSuppressedDestinationOutput {
-            crate::output::DeleteSuppressedDestinationOutput {}
+            crate::output::DeleteSuppressedDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSuppressedDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSuppressedDestinationOutput`](crate::output::DeleteSuppressedDestinationOutput).
@@ -4494,19 +4324,24 @@ impl DeleteSuppressedDestinationOutput {
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEmailTemplateOutput {}
+pub struct DeleteEmailTemplateOutput  {
+}
 /// See [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
 pub mod delete_email_template_output {
-
+    
     /// A builder for [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
         pub fn build(self) -> crate::output::DeleteEmailTemplateOutput {
-            crate::output::DeleteEmailTemplateOutput {}
+            crate::output::DeleteEmailTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
@@ -4518,19 +4353,24 @@ impl DeleteEmailTemplateOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEmailIdentityPolicyOutput {}
+pub struct DeleteEmailIdentityPolicyOutput  {
+}
 /// See [`DeleteEmailIdentityPolicyOutput`](crate::output::DeleteEmailIdentityPolicyOutput).
 pub mod delete_email_identity_policy_output {
-
+    
     /// A builder for [`DeleteEmailIdentityPolicyOutput`](crate::output::DeleteEmailIdentityPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEmailIdentityPolicyOutput`](crate::output::DeleteEmailIdentityPolicyOutput).
         pub fn build(self) -> crate::output::DeleteEmailIdentityPolicyOutput {
-            crate::output::DeleteEmailIdentityPolicyOutput {}
+            crate::output::DeleteEmailIdentityPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEmailIdentityPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailIdentityPolicyOutput`](crate::output::DeleteEmailIdentityPolicyOutput).
@@ -4542,19 +4382,24 @@ impl DeleteEmailIdentityPolicyOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEmailIdentityOutput {}
+pub struct DeleteEmailIdentityOutput  {
+}
 /// See [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
 pub mod delete_email_identity_output {
-
+    
     /// A builder for [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
         pub fn build(self) -> crate::output::DeleteEmailIdentityOutput {
-            crate::output::DeleteEmailIdentityOutput {}
+            crate::output::DeleteEmailIdentityOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
@@ -4566,19 +4411,24 @@ impl DeleteEmailIdentityOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDedicatedIpPoolOutput {}
+pub struct DeleteDedicatedIpPoolOutput  {
+}
 /// See [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
 pub mod delete_dedicated_ip_pool_output {
-
+    
     /// A builder for [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
         pub fn build(self) -> crate::output::DeleteDedicatedIpPoolOutput {
-            crate::output::DeleteDedicatedIpPoolOutput {}
+            crate::output::DeleteDedicatedIpPoolOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDedicatedIpPoolOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
@@ -4590,19 +4440,24 @@ impl DeleteDedicatedIpPoolOutput {
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomVerificationEmailTemplateOutput {}
+pub struct DeleteCustomVerificationEmailTemplateOutput  {
+}
 /// See [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput).
 pub mod delete_custom_verification_email_template_output {
-
+    
     /// A builder for [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput).
         pub fn build(self) -> crate::output::DeleteCustomVerificationEmailTemplateOutput {
-            crate::output::DeleteCustomVerificationEmailTemplateOutput {}
+            crate::output::DeleteCustomVerificationEmailTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCustomVerificationEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput).
@@ -4614,19 +4469,24 @@ impl DeleteCustomVerificationEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactListOutput {}
+pub struct DeleteContactListOutput  {
+}
 /// See [`DeleteContactListOutput`](crate::output::DeleteContactListOutput).
 pub mod delete_contact_list_output {
-
+    
     /// A builder for [`DeleteContactListOutput`](crate::output::DeleteContactListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContactListOutput`](crate::output::DeleteContactListOutput).
         pub fn build(self) -> crate::output::DeleteContactListOutput {
-            crate::output::DeleteContactListOutput {}
+            crate::output::DeleteContactListOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteContactListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactListOutput`](crate::output::DeleteContactListOutput).
@@ -4638,19 +4498,24 @@ impl DeleteContactListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactOutput {}
+pub struct DeleteContactOutput  {
+}
 /// See [`DeleteContactOutput`](crate::output::DeleteContactOutput).
 pub mod delete_contact_output {
-
+    
     /// A builder for [`DeleteContactOutput`](crate::output::DeleteContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContactOutput`](crate::output::DeleteContactOutput).
         pub fn build(self) -> crate::output::DeleteContactOutput {
-            crate::output::DeleteContactOutput {}
+            crate::output::DeleteContactOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteContactOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactOutput`](crate::output::DeleteContactOutput).
@@ -4662,19 +4527,24 @@ impl DeleteContactOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetEventDestinationOutput {}
+pub struct DeleteConfigurationSetEventDestinationOutput  {
+}
 /// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
 pub mod delete_configuration_set_event_destination_output {
-
+    
     /// A builder for [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationSetEventDestinationOutput {
-            crate::output::DeleteConfigurationSetEventDestinationOutput {}
+            crate::output::DeleteConfigurationSetEventDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConfigurationSetEventDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
@@ -4686,19 +4556,24 @@ impl DeleteConfigurationSetEventDestinationOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetOutput {}
+pub struct DeleteConfigurationSetOutput  {
+}
 /// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
-
+    
     /// A builder for [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationSetOutput {
-            crate::output::DeleteConfigurationSetOutput {}
+            crate::output::DeleteConfigurationSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
@@ -4710,20 +4585,20 @@ impl DeleteConfigurationSetOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateImportJobOutput {
+pub struct CreateImportJobOutput  {
     /// <p>A string that represents the import job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
 pub mod create_import_job_output {
-
+    
     /// A builder for [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4737,16 +4612,18 @@ pub mod create_import_job_output {
         }
         /// <p>A string that represents the import job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
         pub fn build(self) -> crate::output::CreateImportJobOutput {
             crate::output::CreateImportJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
@@ -4758,19 +4635,24 @@ impl CreateImportJobOutput {
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEmailTemplateOutput {}
+pub struct CreateEmailTemplateOutput  {
+}
 /// See [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
 pub mod create_email_template_output {
-
+    
     /// A builder for [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
         pub fn build(self) -> crate::output::CreateEmailTemplateOutput {
-            crate::output::CreateEmailTemplateOutput {}
+            crate::output::CreateEmailTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
@@ -4782,19 +4664,24 @@ impl CreateEmailTemplateOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEmailIdentityPolicyOutput {}
+pub struct CreateEmailIdentityPolicyOutput  {
+}
 /// See [`CreateEmailIdentityPolicyOutput`](crate::output::CreateEmailIdentityPolicyOutput).
 pub mod create_email_identity_policy_output {
-
+    
     /// A builder for [`CreateEmailIdentityPolicyOutput`](crate::output::CreateEmailIdentityPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateEmailIdentityPolicyOutput`](crate::output::CreateEmailIdentityPolicyOutput).
         pub fn build(self) -> crate::output::CreateEmailIdentityPolicyOutput {
-            crate::output::CreateEmailIdentityPolicyOutput {}
+            crate::output::CreateEmailIdentityPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateEmailIdentityPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailIdentityPolicyOutput`](crate::output::CreateEmailIdentityPolicyOutput).
@@ -4803,11 +4690,11 @@ impl CreateEmailIdentityPolicyOutput {
     }
 }
 
-/// <p>If the email identity is a domain, this object contains information about the DKIM verification status for the domain.</p>
+/// <p>If the email identity is a domain, this object contains information about the DKIM verification status for the domain.</p> 
 /// <p>If the email identity is an email address, this object is empty. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEmailIdentityOutput {
+pub struct CreateEmailIdentityOutput  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
@@ -4820,7 +4707,7 @@ pub struct CreateEmailIdentityOutput {
 }
 impl CreateEmailIdentityOutput {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<& crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
@@ -4828,13 +4715,13 @@ impl CreateEmailIdentityOutput {
         self.verified_for_sending_status
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-    pub fn dkim_attributes(&self) -> std::option::Option<&crate::model::DkimAttributes> {
+    pub fn dkim_attributes(&self) -> std::option::Option<& crate::model::DkimAttributes> {
         self.dkim_attributes.as_ref()
     }
 }
 /// See [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
 pub mod create_email_identity_output {
-
+    
     /// A builder for [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4849,12 +4736,8 @@ pub mod create_email_identity_output {
             self
         }
         /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-        pub fn set_identity_type(
-            mut self,
-            input: std::option::Option<crate::model::IdentityType>,
-        ) -> Self {
-            self.identity_type = input;
-            self
+        pub fn set_identity_type(mut self, input: std::option::Option<crate::model::IdentityType>) -> Self {
+            self.identity_type = input; self
         }
         /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
         pub fn verified_for_sending_status(mut self, input: bool) -> Self {
@@ -4863,8 +4746,7 @@ pub mod create_email_identity_output {
         }
         /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
         pub fn set_verified_for_sending_status(mut self, input: std::option::Option<bool>) -> Self {
-            self.verified_for_sending_status = input;
-            self
+            self.verified_for_sending_status = input; self
         }
         /// <p>An object that contains information about the DKIM attributes for the identity.</p>
         pub fn dkim_attributes(mut self, input: crate::model::DkimAttributes) -> Self {
@@ -4872,22 +4754,24 @@ pub mod create_email_identity_output {
             self
         }
         /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-        pub fn set_dkim_attributes(
-            mut self,
-            input: std::option::Option<crate::model::DkimAttributes>,
-        ) -> Self {
-            self.dkim_attributes = input;
-            self
+        pub fn set_dkim_attributes(mut self, input: std::option::Option<crate::model::DkimAttributes>) -> Self {
+            self.dkim_attributes = input; self
         }
         /// Consumes the builder and constructs a [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
         pub fn build(self) -> crate::output::CreateEmailIdentityOutput {
             crate::output::CreateEmailIdentityOutput {
-                identity_type: self.identity_type,
-                verified_for_sending_status: self.verified_for_sending_status.unwrap_or_default(),
-                dkim_attributes: self.dkim_attributes,
+                identity_type: self.identity_type
+                ,
+                verified_for_sending_status: self.verified_for_sending_status
+                    .unwrap_or_default()
+                ,
+                dkim_attributes: self.dkim_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
@@ -4899,7 +4783,7 @@ impl CreateEmailIdentityOutput {
 /// <p>Information about the predictive inbox placement test that you created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeliverabilityTestReportOutput {
+pub struct CreateDeliverabilityTestReportOutput  {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
@@ -4909,25 +4793,22 @@ pub struct CreateDeliverabilityTestReportOutput {
 }
 impl CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-    pub fn deliverability_test_status(
-        &self,
-    ) -> std::option::Option<&crate::model::DeliverabilityTestStatus> {
+    pub fn deliverability_test_status(&self) -> std::option::Option<& crate::model::DeliverabilityTestStatus> {
         self.deliverability_test_status.as_ref()
     }
 }
 /// See [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
 pub mod create_deliverability_test_report_output {
-
+    
     /// A builder for [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
-        pub(crate) deliverability_test_status:
-            std::option::Option<crate::model::DeliverabilityTestStatus>,
+        pub(crate) deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
     }
     impl Builder {
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
@@ -4937,33 +4818,29 @@ pub mod create_deliverability_test_report_output {
         }
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-        pub fn deliverability_test_status(
-            mut self,
-            input: crate::model::DeliverabilityTestStatus,
-        ) -> Self {
+        pub fn deliverability_test_status(mut self, input: crate::model::DeliverabilityTestStatus) -> Self {
             self.deliverability_test_status = Some(input);
             self
         }
         /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-        pub fn set_deliverability_test_status(
-            mut self,
-            input: std::option::Option<crate::model::DeliverabilityTestStatus>,
-        ) -> Self {
-            self.deliverability_test_status = input;
-            self
+        pub fn set_deliverability_test_status(mut self, input: std::option::Option<crate::model::DeliverabilityTestStatus>) -> Self {
+            self.deliverability_test_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
         pub fn build(self) -> crate::output::CreateDeliverabilityTestReportOutput {
             crate::output::CreateDeliverabilityTestReportOutput {
-                report_id: self.report_id,
-                deliverability_test_status: self.deliverability_test_status,
+                report_id: self.report_id
+                ,
+                deliverability_test_status: self.deliverability_test_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeliverabilityTestReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
@@ -4975,19 +4852,24 @@ impl CreateDeliverabilityTestReportOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDedicatedIpPoolOutput {}
+pub struct CreateDedicatedIpPoolOutput  {
+}
 /// See [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
 pub mod create_dedicated_ip_pool_output {
-
+    
     /// A builder for [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
         pub fn build(self) -> crate::output::CreateDedicatedIpPoolOutput {
-            crate::output::CreateDedicatedIpPoolOutput {}
+            crate::output::CreateDedicatedIpPoolOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateDedicatedIpPoolOutput {
     /// Creates a new builder-style object to manufacture [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
@@ -4999,19 +4881,24 @@ impl CreateDedicatedIpPoolOutput {
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomVerificationEmailTemplateOutput {}
+pub struct CreateCustomVerificationEmailTemplateOutput  {
+}
 /// See [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput).
 pub mod create_custom_verification_email_template_output {
-
+    
     /// A builder for [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput).
         pub fn build(self) -> crate::output::CreateCustomVerificationEmailTemplateOutput {
-            crate::output::CreateCustomVerificationEmailTemplateOutput {}
+            crate::output::CreateCustomVerificationEmailTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateCustomVerificationEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput).
@@ -5023,19 +4910,24 @@ impl CreateCustomVerificationEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContactListOutput {}
+pub struct CreateContactListOutput  {
+}
 /// See [`CreateContactListOutput`](crate::output::CreateContactListOutput).
 pub mod create_contact_list_output {
-
+    
     /// A builder for [`CreateContactListOutput`](crate::output::CreateContactListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateContactListOutput`](crate::output::CreateContactListOutput).
         pub fn build(self) -> crate::output::CreateContactListOutput {
-            crate::output::CreateContactListOutput {}
+            crate::output::CreateContactListOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateContactListOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactListOutput`](crate::output::CreateContactListOutput).
@@ -5047,19 +4939,24 @@ impl CreateContactListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContactOutput {}
+pub struct CreateContactOutput  {
+}
 /// See [`CreateContactOutput`](crate::output::CreateContactOutput).
 pub mod create_contact_output {
-
+    
     /// A builder for [`CreateContactOutput`](crate::output::CreateContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateContactOutput`](crate::output::CreateContactOutput).
         pub fn build(self) -> crate::output::CreateContactOutput {
-            crate::output::CreateContactOutput {}
+            crate::output::CreateContactOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateContactOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactOutput`](crate::output::CreateContactOutput).
@@ -5071,19 +4968,24 @@ impl CreateContactOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationSetEventDestinationOutput {}
+pub struct CreateConfigurationSetEventDestinationOutput  {
+}
 /// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
 pub mod create_configuration_set_event_destination_output {
-
+    
     /// A builder for [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::CreateConfigurationSetEventDestinationOutput {
-            crate::output::CreateConfigurationSetEventDestinationOutput {}
+            crate::output::CreateConfigurationSetEventDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateConfigurationSetEventDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
@@ -5095,19 +4997,24 @@ impl CreateConfigurationSetEventDestinationOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationSetOutput {}
+pub struct CreateConfigurationSetOutput  {
+}
 /// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
-
+    
     /// A builder for [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
         pub fn build(self) -> crate::output::CreateConfigurationSetOutput {
-            crate::output::CreateConfigurationSetOutput {}
+            crate::output::CreateConfigurationSetOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
@@ -5119,7 +5026,7 @@ impl CreateConfigurationSetOutput {
 /// <p>Represents the result of processing your metric data batch request</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetMetricDataOutput {
+pub struct BatchGetMetricDataOutput  {
     /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
@@ -5129,17 +5036,17 @@ pub struct BatchGetMetricDataOutput {
 }
 impl BatchGetMetricDataOutput {
     /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::model::MetricDataResult]> {
+    pub fn results(&self) -> std::option::Option<& [crate::model::MetricDataResult]> {
         self.results.as_deref()
     }
     /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::MetricDataError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::MetricDataError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
 pub mod batch_get_metric_data_output {
-
+    
     /// A builder for [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5154,17 +5061,13 @@ pub mod batch_get_metric_data_output {
         /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
         pub fn results(mut self, input: crate::model::MetricDataResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input);
-            self.results = Some(v);
-            self
+                            v.push(input);
+                            self.results = Some(v);
+                            self
         }
         /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-        pub fn set_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
-        ) -> Self {
-            self.results = input;
-            self
+        pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>) -> Self {
+            self.results = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -5173,26 +5076,26 @@ pub mod batch_get_metric_data_output {
         /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
         pub fn errors(mut self, input: crate::model::MetricDataError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDataError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDataError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
         pub fn build(self) -> crate::output::BatchGetMetricDataOutput {
             crate::output::BatchGetMetricDataOutput {
-                results: self.results,
-                errors: self.errors,
+                results: self.results
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
@@ -5200,3 +5103,4 @@ impl BatchGetMetricDataOutput {
         crate::output::batch_get_metric_data_output::Builder::default()
     }
 }
+

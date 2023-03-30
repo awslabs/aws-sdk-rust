@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStreamOutput {}
+pub struct UpdateStreamOutput  {
+}
 /// See [`UpdateStreamOutput`](crate::output::UpdateStreamOutput).
 pub mod update_stream_output {
-
+    
     /// A builder for [`UpdateStreamOutput`](crate::output::UpdateStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateStreamOutput`](crate::output::UpdateStreamOutput).
         pub fn build(self) -> crate::output::UpdateStreamOutput {
-            crate::output::UpdateStreamOutput {}
+            crate::output::UpdateStreamOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateStreamOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamOutput`](crate::output::UpdateStreamOutput).
@@ -26,19 +31,24 @@ impl UpdateStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSignalingChannelOutput {}
+pub struct UpdateSignalingChannelOutput  {
+}
 /// See [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput).
 pub mod update_signaling_channel_output {
-
+    
     /// A builder for [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput).
         pub fn build(self) -> crate::output::UpdateSignalingChannelOutput {
-            crate::output::UpdateSignalingChannelOutput {}
+            crate::output::UpdateSignalingChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput).
@@ -50,19 +60,24 @@ impl UpdateSignalingChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationConfigurationOutput {}
+pub struct UpdateNotificationConfigurationOutput  {
+}
 /// See [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput).
 pub mod update_notification_configuration_output {
-
+    
     /// A builder for [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateNotificationConfigurationOutput {
-            crate::output::UpdateNotificationConfigurationOutput {}
+            crate::output::UpdateNotificationConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput).
@@ -74,19 +89,24 @@ impl UpdateNotificationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMediaStorageConfigurationOutput {}
+pub struct UpdateMediaStorageConfigurationOutput  {
+}
 /// See [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
 pub mod update_media_storage_configuration_output {
-
+    
     /// A builder for [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateMediaStorageConfigurationOutput {
-            crate::output::UpdateMediaStorageConfigurationOutput {}
+            crate::output::UpdateMediaStorageConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateMediaStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
@@ -98,19 +118,24 @@ impl UpdateMediaStorageConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateImageGenerationConfigurationOutput {}
+pub struct UpdateImageGenerationConfigurationOutput  {
+}
 /// See [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput).
 pub mod update_image_generation_configuration_output {
-
+    
     /// A builder for [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateImageGenerationConfigurationOutput {
-            crate::output::UpdateImageGenerationConfigurationOutput {}
+            crate::output::UpdateImageGenerationConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateImageGenerationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput).
@@ -122,19 +147,24 @@ impl UpdateImageGenerationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataRetentionOutput {}
+pub struct UpdateDataRetentionOutput  {
+}
 /// See [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput).
 pub mod update_data_retention_output {
-
+    
     /// A builder for [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput).
         pub fn build(self) -> crate::output::UpdateDataRetentionOutput {
-            crate::output::UpdateDataRetentionOutput {}
+            crate::output::UpdateDataRetentionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDataRetentionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput).
@@ -146,19 +176,24 @@ impl UpdateDataRetentionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagStreamOutput {}
+pub struct UntagStreamOutput  {
+}
 /// See [`UntagStreamOutput`](crate::output::UntagStreamOutput).
 pub mod untag_stream_output {
-
+    
     /// A builder for [`UntagStreamOutput`](crate::output::UntagStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagStreamOutput`](crate::output::UntagStreamOutput).
         pub fn build(self) -> crate::output::UntagStreamOutput {
-            crate::output::UntagStreamOutput {}
+            crate::output::UntagStreamOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagStreamOutput {
     /// Creates a new builder-style object to manufacture [`UntagStreamOutput`](crate::output::UntagStreamOutput).
@@ -170,19 +205,24 @@ impl UntagStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -194,19 +234,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagStreamOutput {}
+pub struct TagStreamOutput  {
+}
 /// See [`TagStreamOutput`](crate::output::TagStreamOutput).
 pub mod tag_stream_output {
-
+    
     /// A builder for [`TagStreamOutput`](crate::output::TagStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagStreamOutput`](crate::output::TagStreamOutput).
         pub fn build(self) -> crate::output::TagStreamOutput {
-            crate::output::TagStreamOutput {}
+            crate::output::TagStreamOutput {
+            }
         }
     }
+    
+    
 }
 impl TagStreamOutput {
     /// Creates a new builder-style object to manufacture [`TagStreamOutput`](crate::output::TagStreamOutput).
@@ -218,19 +263,24 @@ impl TagStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -242,7 +292,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartEdgeConfigurationUpdateOutput {
+pub struct StartEdgeConfigurationUpdateOutput  {
     /// <p>The name of the stream from which the edge configuration was updated.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -267,37 +317,37 @@ pub struct StartEdgeConfigurationUpdateOutput {
 }
 impl StartEdgeConfigurationUpdateOutput {
     /// <p>The name of the stream from which the edge configuration was updated.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
-    pub fn sync_status(&self) -> std::option::Option<&crate::model::SyncStatus> {
+    pub fn sync_status(&self) -> std::option::Option<& crate::model::SyncStatus> {
         self.sync_status.as_ref()
     }
     /// <p>A description of the generated failure status.</p>
-    pub fn failed_status_details(&self) -> std::option::Option<&str> {
+    pub fn failed_status_details(&self) -> std::option::Option<& str> {
         self.failed_status_details.as_deref()
     }
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-    pub fn edge_config(&self) -> std::option::Option<&crate::model::EdgeConfig> {
+    pub fn edge_config(&self) -> std::option::Option<& crate::model::EdgeConfig> {
         self.edge_config.as_ref()
     }
 }
 /// See [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
 pub mod start_edge_configuration_update_output {
-
+    
     /// A builder for [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -317,8 +367,7 @@ pub mod start_edge_configuration_update_output {
         }
         /// <p>The name of the stream from which the edge configuration was updated.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = input;
-            self
+            self.stream_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -327,8 +376,7 @@ pub mod start_edge_configuration_update_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -336,12 +384,8 @@ pub mod start_edge_configuration_update_output {
             self
         }
         /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -349,12 +393,8 @@ pub mod start_edge_configuration_update_output {
             self
         }
         /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
         pub fn sync_status(mut self, input: crate::model::SyncStatus) -> Self {
@@ -362,12 +402,8 @@ pub mod start_edge_configuration_update_output {
             self
         }
         /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
-        pub fn set_sync_status(
-            mut self,
-            input: std::option::Option<crate::model::SyncStatus>,
-        ) -> Self {
-            self.sync_status = input;
-            self
+        pub fn set_sync_status(mut self, input: std::option::Option<crate::model::SyncStatus>) -> Self {
+            self.sync_status = input; self
         }
         /// <p>A description of the generated failure status.</p>
         pub fn failed_status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -375,12 +411,8 @@ pub mod start_edge_configuration_update_output {
             self
         }
         /// <p>A description of the generated failure status.</p>
-        pub fn set_failed_status_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failed_status_details = input;
-            self
+        pub fn set_failed_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failed_status_details = input; self
         }
         /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
         pub fn edge_config(mut self, input: crate::model::EdgeConfig) -> Self {
@@ -388,26 +420,31 @@ pub mod start_edge_configuration_update_output {
             self
         }
         /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-        pub fn set_edge_config(
-            mut self,
-            input: std::option::Option<crate::model::EdgeConfig>,
-        ) -> Self {
-            self.edge_config = input;
-            self
+        pub fn set_edge_config(mut self, input: std::option::Option<crate::model::EdgeConfig>) -> Self {
+            self.edge_config = input; self
         }
         /// Consumes the builder and constructs a [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
         pub fn build(self) -> crate::output::StartEdgeConfigurationUpdateOutput {
             crate::output::StartEdgeConfigurationUpdateOutput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                creation_time: self.creation_time,
-                last_updated_time: self.last_updated_time,
-                sync_status: self.sync_status,
-                failed_status_details: self.failed_status_details,
-                edge_config: self.edge_config,
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                sync_status: self.sync_status
+                ,
+                failed_status_details: self.failed_status_details
+                ,
+                edge_config: self.edge_config
+                ,
             }
         }
     }
+    
+    
 }
 impl StartEdgeConfigurationUpdateOutput {
     /// Creates a new builder-style object to manufacture [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
@@ -419,38 +456,32 @@ impl StartEdgeConfigurationUpdateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForStreamOutput {
+pub struct ListTagsForStreamOutput  {
     /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A map of tag keys and values associated with the specified stream.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForStreamOutput {
     /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A map of tag keys and values associated with the specified stream.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput).
 pub mod list_tags_for_stream_output {
-
+    
     /// A builder for [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
@@ -460,42 +491,35 @@ pub mod list_tags_for_stream_output {
         }
         /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of tag keys and values associated with the specified stream.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of tag keys and values associated with the specified stream.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput).
         pub fn build(self) -> crate::output::ListTagsForStreamOutput {
             crate::output::ListTagsForStreamOutput {
-                next_token: self.next_token,
-                tags: self.tags,
+                next_token: self.next_token
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForStreamOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput).
@@ -507,38 +531,32 @@ impl ListTagsForStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A map of tag keys and values associated with the specified signaling channel.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A map of tag keys and values associated with the specified signaling channel.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
@@ -548,42 +566,35 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of tag keys and values associated with the specified signaling channel.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of tag keys and values associated with the specified signaling channel.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                next_token: self.next_token,
-                tags: self.tags,
+                next_token: self.next_token
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -595,7 +606,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamsOutput {
+pub struct ListStreamsOutput  {
     /// <p>An array of <code>StreamInfo</code> objects.</p>
     #[doc(hidden)]
     pub stream_info_list: std::option::Option<std::vec::Vec<crate::model::StreamInfo>>,
@@ -605,17 +616,17 @@ pub struct ListStreamsOutput {
 }
 impl ListStreamsOutput {
     /// <p>An array of <code>StreamInfo</code> objects.</p>
-    pub fn stream_info_list(&self) -> std::option::Option<&[crate::model::StreamInfo]> {
+    pub fn stream_info_list(&self) -> std::option::Option<& [crate::model::StreamInfo]> {
         self.stream_info_list.as_deref()
     }
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
 pub mod list_streams_output {
-
+    
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -630,17 +641,13 @@ pub mod list_streams_output {
         /// <p>An array of <code>StreamInfo</code> objects.</p>
         pub fn stream_info_list(mut self, input: crate::model::StreamInfo) -> Self {
             let mut v = self.stream_info_list.unwrap_or_default();
-            v.push(input);
-            self.stream_info_list = Some(v);
-            self
+                            v.push(input);
+                            self.stream_info_list = Some(v);
+                            self
         }
         /// <p>An array of <code>StreamInfo</code> objects.</p>
-        pub fn set_stream_info_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StreamInfo>>,
-        ) -> Self {
-            self.stream_info_list = input;
-            self
+        pub fn set_stream_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::StreamInfo>>) -> Self {
+            self.stream_info_list = input; self
         }
         /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -649,17 +656,20 @@ pub mod list_streams_output {
         }
         /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::output::ListStreamsOutput).
         pub fn build(self) -> crate::output::ListStreamsOutput {
             crate::output::ListStreamsOutput {
-                stream_info_list: self.stream_info_list,
-                next_token: self.next_token,
+                stream_info_list: self.stream_info_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::output::ListStreamsOutput).
@@ -671,7 +681,7 @@ impl ListStreamsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSignalingChannelsOutput {
+pub struct ListSignalingChannelsOutput  {
     /// <p>An array of <code>ChannelInfo</code> objects.</p>
     #[doc(hidden)]
     pub channel_info_list: std::option::Option<std::vec::Vec<crate::model::ChannelInfo>>,
@@ -681,17 +691,17 @@ pub struct ListSignalingChannelsOutput {
 }
 impl ListSignalingChannelsOutput {
     /// <p>An array of <code>ChannelInfo</code> objects.</p>
-    pub fn channel_info_list(&self) -> std::option::Option<&[crate::model::ChannelInfo]> {
+    pub fn channel_info_list(&self) -> std::option::Option<& [crate::model::ChannelInfo]> {
         self.channel_info_list.as_deref()
     }
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput).
 pub mod list_signaling_channels_output {
-
+    
     /// A builder for [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -706,17 +716,13 @@ pub mod list_signaling_channels_output {
         /// <p>An array of <code>ChannelInfo</code> objects.</p>
         pub fn channel_info_list(mut self, input: crate::model::ChannelInfo) -> Self {
             let mut v = self.channel_info_list.unwrap_or_default();
-            v.push(input);
-            self.channel_info_list = Some(v);
-            self
+                            v.push(input);
+                            self.channel_info_list = Some(v);
+                            self
         }
         /// <p>An array of <code>ChannelInfo</code> objects.</p>
-        pub fn set_channel_info_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelInfo>>,
-        ) -> Self {
-            self.channel_info_list = input;
-            self
+        pub fn set_channel_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelInfo>>) -> Self {
+            self.channel_info_list = input; self
         }
         /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -725,17 +731,20 @@ pub mod list_signaling_channels_output {
         }
         /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput).
         pub fn build(self) -> crate::output::ListSignalingChannelsOutput {
             crate::output::ListSignalingChannelsOutput {
-                channel_info_list: self.channel_info_list,
-                next_token: self.next_token,
+                channel_info_list: self.channel_info_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSignalingChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput).
@@ -747,28 +756,24 @@ impl ListSignalingChannelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSignalingChannelEndpointOutput {
+pub struct GetSignalingChannelEndpointOutput  {
     /// <p>A list of endpoints for the specified signaling channel.</p>
     #[doc(hidden)]
-    pub resource_endpoint_list:
-        std::option::Option<std::vec::Vec<crate::model::ResourceEndpointListItem>>,
+    pub resource_endpoint_list: std::option::Option<std::vec::Vec<crate::model::ResourceEndpointListItem>>,
 }
 impl GetSignalingChannelEndpointOutput {
     /// <p>A list of endpoints for the specified signaling channel.</p>
-    pub fn resource_endpoint_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourceEndpointListItem]> {
+    pub fn resource_endpoint_list(&self) -> std::option::Option<& [crate::model::ResourceEndpointListItem]> {
         self.resource_endpoint_list.as_deref()
     }
 }
 /// See [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput).
 pub mod get_signaling_channel_endpoint_output {
-
+    
     /// A builder for [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_endpoint_list:
-            std::option::Option<std::vec::Vec<crate::model::ResourceEndpointListItem>>,
+        pub(crate) resource_endpoint_list: std::option::Option<std::vec::Vec<crate::model::ResourceEndpointListItem>>,
     }
     impl Builder {
         /// Appends an item to `resource_endpoint_list`.
@@ -776,30 +781,26 @@ pub mod get_signaling_channel_endpoint_output {
         /// To override the contents of this collection use [`set_resource_endpoint_list`](Self::set_resource_endpoint_list).
         ///
         /// <p>A list of endpoints for the specified signaling channel.</p>
-        pub fn resource_endpoint_list(
-            mut self,
-            input: crate::model::ResourceEndpointListItem,
-        ) -> Self {
+        pub fn resource_endpoint_list(mut self, input: crate::model::ResourceEndpointListItem) -> Self {
             let mut v = self.resource_endpoint_list.unwrap_or_default();
-            v.push(input);
-            self.resource_endpoint_list = Some(v);
-            self
+                            v.push(input);
+                            self.resource_endpoint_list = Some(v);
+                            self
         }
         /// <p>A list of endpoints for the specified signaling channel.</p>
-        pub fn set_resource_endpoint_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceEndpointListItem>>,
-        ) -> Self {
-            self.resource_endpoint_list = input;
-            self
+        pub fn set_resource_endpoint_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceEndpointListItem>>) -> Self {
+            self.resource_endpoint_list = input; self
         }
         /// Consumes the builder and constructs a [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput).
         pub fn build(self) -> crate::output::GetSignalingChannelEndpointOutput {
             crate::output::GetSignalingChannelEndpointOutput {
-                resource_endpoint_list: self.resource_endpoint_list,
+                resource_endpoint_list: self.resource_endpoint_list
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSignalingChannelEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput).
@@ -811,20 +812,20 @@ impl GetSignalingChannelEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataEndpointOutput {
+pub struct GetDataEndpointOutput  {
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
     #[doc(hidden)]
     pub data_endpoint: std::option::Option<std::string::String>,
 }
 impl GetDataEndpointOutput {
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
-    pub fn data_endpoint(&self) -> std::option::Option<&str> {
+    pub fn data_endpoint(&self) -> std::option::Option<& str> {
         self.data_endpoint.as_deref()
     }
 }
 /// See [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput).
 pub mod get_data_endpoint_output {
-
+    
     /// A builder for [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -837,20 +838,19 @@ pub mod get_data_endpoint_output {
             self
         }
         /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
-        pub fn set_data_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_endpoint = input;
-            self
+        pub fn set_data_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput).
         pub fn build(self) -> crate::output::GetDataEndpointOutput {
             crate::output::GetDataEndpointOutput {
-                data_endpoint: self.data_endpoint,
+                data_endpoint: self.data_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDataEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput).
@@ -862,20 +862,20 @@ impl GetDataEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStreamOutput {
+pub struct DescribeStreamOutput  {
     /// <p>An object that describes the stream.</p>
     #[doc(hidden)]
     pub stream_info: std::option::Option<crate::model::StreamInfo>,
 }
 impl DescribeStreamOutput {
     /// <p>An object that describes the stream.</p>
-    pub fn stream_info(&self) -> std::option::Option<&crate::model::StreamInfo> {
+    pub fn stream_info(&self) -> std::option::Option<& crate::model::StreamInfo> {
         self.stream_info.as_ref()
     }
 }
 /// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
 pub mod describe_stream_output {
-
+    
     /// A builder for [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -888,20 +888,19 @@ pub mod describe_stream_output {
             self
         }
         /// <p>An object that describes the stream.</p>
-        pub fn set_stream_info(
-            mut self,
-            input: std::option::Option<crate::model::StreamInfo>,
-        ) -> Self {
-            self.stream_info = input;
-            self
+        pub fn set_stream_info(mut self, input: std::option::Option<crate::model::StreamInfo>) -> Self {
+            self.stream_info = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
         pub fn build(self) -> crate::output::DescribeStreamOutput {
             crate::output::DescribeStreamOutput {
-                stream_info: self.stream_info,
+                stream_info: self.stream_info
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStreamOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
@@ -913,20 +912,20 @@ impl DescribeStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSignalingChannelOutput {
+pub struct DescribeSignalingChannelOutput  {
     /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
     #[doc(hidden)]
     pub channel_info: std::option::Option<crate::model::ChannelInfo>,
 }
 impl DescribeSignalingChannelOutput {
     /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
-    pub fn channel_info(&self) -> std::option::Option<&crate::model::ChannelInfo> {
+    pub fn channel_info(&self) -> std::option::Option<& crate::model::ChannelInfo> {
         self.channel_info.as_ref()
     }
 }
 /// See [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput).
 pub mod describe_signaling_channel_output {
-
+    
     /// A builder for [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -939,20 +938,19 @@ pub mod describe_signaling_channel_output {
             self
         }
         /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
-        pub fn set_channel_info(
-            mut self,
-            input: std::option::Option<crate::model::ChannelInfo>,
-        ) -> Self {
-            self.channel_info = input;
-            self
+        pub fn set_channel_info(mut self, input: std::option::Option<crate::model::ChannelInfo>) -> Self {
+            self.channel_info = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput).
         pub fn build(self) -> crate::output::DescribeSignalingChannelOutput {
             crate::output::DescribeSignalingChannelOutput {
-                channel_info: self.channel_info,
+                channel_info: self.channel_info
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput).
@@ -964,52 +962,45 @@ impl DescribeSignalingChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNotificationConfigurationOutput {
+pub struct DescribeNotificationConfigurationOutput  {
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl DescribeNotificationConfigurationOutput {
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> std::option::Option<& crate::model::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
 /// See [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput).
 pub mod describe_notification_configuration_output {
-
+    
     /// A builder for [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) notification_configuration:
-            std::option::Option<crate::model::NotificationConfiguration>,
+        pub(crate) notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
     }
     impl Builder {
         /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-        pub fn notification_configuration(
-            mut self,
-            input: crate::model::NotificationConfiguration,
-        ) -> Self {
+        pub fn notification_configuration(mut self, input: crate::model::NotificationConfiguration) -> Self {
             self.notification_configuration = Some(input);
             self
         }
         /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-        pub fn set_notification_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NotificationConfiguration>,
-        ) -> Self {
-            self.notification_configuration = input;
-            self
+        pub fn set_notification_configuration(mut self, input: std::option::Option<crate::model::NotificationConfiguration>) -> Self {
+            self.notification_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeNotificationConfigurationOutput {
             crate::output::DescribeNotificationConfigurationOutput {
-                notification_configuration: self.notification_configuration,
+                notification_configuration: self.notification_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput).
@@ -1021,52 +1012,45 @@ impl DescribeNotificationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMediaStorageConfigurationOutput {
+pub struct DescribeMediaStorageConfigurationOutput  {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     #[doc(hidden)]
     pub media_storage_configuration: std::option::Option<crate::model::MediaStorageConfiguration>,
 }
 impl DescribeMediaStorageConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn media_storage_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::MediaStorageConfiguration> {
+    pub fn media_storage_configuration(&self) -> std::option::Option<& crate::model::MediaStorageConfiguration> {
         self.media_storage_configuration.as_ref()
     }
 }
 /// See [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
 pub mod describe_media_storage_configuration_output {
-
+    
     /// A builder for [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) media_storage_configuration:
-            std::option::Option<crate::model::MediaStorageConfiguration>,
+        pub(crate) media_storage_configuration: std::option::Option<crate::model::MediaStorageConfiguration>,
     }
     impl Builder {
         /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-        pub fn media_storage_configuration(
-            mut self,
-            input: crate::model::MediaStorageConfiguration,
-        ) -> Self {
+        pub fn media_storage_configuration(mut self, input: crate::model::MediaStorageConfiguration) -> Self {
             self.media_storage_configuration = Some(input);
             self
         }
         /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-        pub fn set_media_storage_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MediaStorageConfiguration>,
-        ) -> Self {
-            self.media_storage_configuration = input;
-            self
+        pub fn set_media_storage_configuration(mut self, input: std::option::Option<crate::model::MediaStorageConfiguration>) -> Self {
+            self.media_storage_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeMediaStorageConfigurationOutput {
             crate::output::DescribeMediaStorageConfigurationOutput {
-                media_storage_configuration: self.media_storage_configuration,
+                media_storage_configuration: self.media_storage_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMediaStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
@@ -1078,35 +1062,31 @@ impl DescribeMediaStorageConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMappedResourceConfigurationOutput {
+pub struct DescribeMappedResourceConfigurationOutput  {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     #[doc(hidden)]
-    pub mapped_resource_configuration_list:
-        std::option::Option<std::vec::Vec<crate::model::MappedResourceConfigurationListItem>>,
+    pub mapped_resource_configuration_list: std::option::Option<std::vec::Vec<crate::model::MappedResourceConfigurationListItem>>,
     /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMappedResourceConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn mapped_resource_configuration_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::MappedResourceConfigurationListItem]> {
+    pub fn mapped_resource_configuration_list(&self) -> std::option::Option<& [crate::model::MappedResourceConfigurationListItem]> {
         self.mapped_resource_configuration_list.as_deref()
     }
     /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
 pub mod describe_mapped_resource_configuration_output {
-
+    
     /// A builder for [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) mapped_resource_configuration_list:
-            std::option::Option<std::vec::Vec<crate::model::MappedResourceConfigurationListItem>>,
+        pub(crate) mapped_resource_configuration_list: std::option::Option<std::vec::Vec<crate::model::MappedResourceConfigurationListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1115,24 +1095,15 @@ pub mod describe_mapped_resource_configuration_output {
         /// To override the contents of this collection use [`set_mapped_resource_configuration_list`](Self::set_mapped_resource_configuration_list).
         ///
         /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-        pub fn mapped_resource_configuration_list(
-            mut self,
-            input: crate::model::MappedResourceConfigurationListItem,
-        ) -> Self {
+        pub fn mapped_resource_configuration_list(mut self, input: crate::model::MappedResourceConfigurationListItem) -> Self {
             let mut v = self.mapped_resource_configuration_list.unwrap_or_default();
-            v.push(input);
-            self.mapped_resource_configuration_list = Some(v);
-            self
+                            v.push(input);
+                            self.mapped_resource_configuration_list = Some(v);
+                            self
         }
         /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-        pub fn set_mapped_resource_configuration_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MappedResourceConfigurationListItem>,
-            >,
-        ) -> Self {
-            self.mapped_resource_configuration_list = input;
-            self
+        pub fn set_mapped_resource_configuration_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MappedResourceConfigurationListItem>>) -> Self {
+            self.mapped_resource_configuration_list = input; self
         }
         /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1141,17 +1112,20 @@ pub mod describe_mapped_resource_configuration_output {
         }
         /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeMappedResourceConfigurationOutput {
             crate::output::DescribeMappedResourceConfigurationOutput {
-                mapped_resource_configuration_list: self.mapped_resource_configuration_list,
-                next_token: self.next_token,
+                mapped_resource_configuration_list: self.mapped_resource_configuration_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMappedResourceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
@@ -1163,53 +1137,45 @@ impl DescribeMappedResourceConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImageGenerationConfigurationOutput {
+pub struct DescribeImageGenerationConfigurationOutput  {
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
     #[doc(hidden)]
-    pub image_generation_configuration:
-        std::option::Option<crate::model::ImageGenerationConfiguration>,
+    pub image_generation_configuration: std::option::Option<crate::model::ImageGenerationConfiguration>,
 }
 impl DescribeImageGenerationConfigurationOutput {
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
-    pub fn image_generation_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageGenerationConfiguration> {
+    pub fn image_generation_configuration(&self) -> std::option::Option<& crate::model::ImageGenerationConfiguration> {
         self.image_generation_configuration.as_ref()
     }
 }
 /// See [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput).
 pub mod describe_image_generation_configuration_output {
-
+    
     /// A builder for [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) image_generation_configuration:
-            std::option::Option<crate::model::ImageGenerationConfiguration>,
+        pub(crate) image_generation_configuration: std::option::Option<crate::model::ImageGenerationConfiguration>,
     }
     impl Builder {
         /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
-        pub fn image_generation_configuration(
-            mut self,
-            input: crate::model::ImageGenerationConfiguration,
-        ) -> Self {
+        pub fn image_generation_configuration(mut self, input: crate::model::ImageGenerationConfiguration) -> Self {
             self.image_generation_configuration = Some(input);
             self
         }
         /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
-        pub fn set_image_generation_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ImageGenerationConfiguration>,
-        ) -> Self {
-            self.image_generation_configuration = input;
-            self
+        pub fn set_image_generation_configuration(mut self, input: std::option::Option<crate::model::ImageGenerationConfiguration>) -> Self {
+            self.image_generation_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeImageGenerationConfigurationOutput {
             crate::output::DescribeImageGenerationConfigurationOutput {
-                image_generation_configuration: self.image_generation_configuration,
+                image_generation_configuration: self.image_generation_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeImageGenerationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput).
@@ -1221,7 +1187,7 @@ impl DescribeImageGenerationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEdgeConfigurationOutput {
+pub struct DescribeEdgeConfigurationOutput  {
     /// <p>The name of the stream from which the edge configuration was updated.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -1246,37 +1212,37 @@ pub struct DescribeEdgeConfigurationOutput {
 }
 impl DescribeEdgeConfigurationOutput {
     /// <p>The name of the stream from which the edge configuration was updated.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The latest status of the edge configuration update.</p>
-    pub fn sync_status(&self) -> std::option::Option<&crate::model::SyncStatus> {
+    pub fn sync_status(&self) -> std::option::Option<& crate::model::SyncStatus> {
         self.sync_status.as_ref()
     }
     /// <p>A description of the generated failure status.</p>
-    pub fn failed_status_details(&self) -> std::option::Option<&str> {
+    pub fn failed_status_details(&self) -> std::option::Option<& str> {
         self.failed_status_details.as_deref()
     }
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-    pub fn edge_config(&self) -> std::option::Option<&crate::model::EdgeConfig> {
+    pub fn edge_config(&self) -> std::option::Option<& crate::model::EdgeConfig> {
         self.edge_config.as_ref()
     }
 }
 /// See [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
 pub mod describe_edge_configuration_output {
-
+    
     /// A builder for [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1296,8 +1262,7 @@ pub mod describe_edge_configuration_output {
         }
         /// <p>The name of the stream from which the edge configuration was updated.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = input;
-            self
+            self.stream_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1306,8 +1271,7 @@ pub mod describe_edge_configuration_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1315,12 +1279,8 @@ pub mod describe_edge_configuration_output {
             self
         }
         /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1328,12 +1288,8 @@ pub mod describe_edge_configuration_output {
             self
         }
         /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The latest status of the edge configuration update.</p>
         pub fn sync_status(mut self, input: crate::model::SyncStatus) -> Self {
@@ -1341,12 +1297,8 @@ pub mod describe_edge_configuration_output {
             self
         }
         /// <p>The latest status of the edge configuration update.</p>
-        pub fn set_sync_status(
-            mut self,
-            input: std::option::Option<crate::model::SyncStatus>,
-        ) -> Self {
-            self.sync_status = input;
-            self
+        pub fn set_sync_status(mut self, input: std::option::Option<crate::model::SyncStatus>) -> Self {
+            self.sync_status = input; self
         }
         /// <p>A description of the generated failure status.</p>
         pub fn failed_status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1354,12 +1306,8 @@ pub mod describe_edge_configuration_output {
             self
         }
         /// <p>A description of the generated failure status.</p>
-        pub fn set_failed_status_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failed_status_details = input;
-            self
+        pub fn set_failed_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failed_status_details = input; self
         }
         /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
         pub fn edge_config(mut self, input: crate::model::EdgeConfig) -> Self {
@@ -1367,26 +1315,31 @@ pub mod describe_edge_configuration_output {
             self
         }
         /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-        pub fn set_edge_config(
-            mut self,
-            input: std::option::Option<crate::model::EdgeConfig>,
-        ) -> Self {
-            self.edge_config = input;
-            self
+        pub fn set_edge_config(mut self, input: std::option::Option<crate::model::EdgeConfig>) -> Self {
+            self.edge_config = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeEdgeConfigurationOutput {
             crate::output::DescribeEdgeConfigurationOutput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                creation_time: self.creation_time,
-                last_updated_time: self.last_updated_time,
-                sync_status: self.sync_status,
-                failed_status_details: self.failed_status_details,
-                edge_config: self.edge_config,
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                sync_status: self.sync_status
+                ,
+                failed_status_details: self.failed_status_details
+                ,
+                edge_config: self.edge_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEdgeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
@@ -1398,19 +1351,24 @@ impl DescribeEdgeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStreamOutput {}
+pub struct DeleteStreamOutput  {
+}
 /// See [`DeleteStreamOutput`](crate::output::DeleteStreamOutput).
 pub mod delete_stream_output {
-
+    
     /// A builder for [`DeleteStreamOutput`](crate::output::DeleteStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStreamOutput`](crate::output::DeleteStreamOutput).
         pub fn build(self) -> crate::output::DeleteStreamOutput {
-            crate::output::DeleteStreamOutput {}
+            crate::output::DeleteStreamOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteStreamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamOutput`](crate::output::DeleteStreamOutput).
@@ -1422,19 +1380,24 @@ impl DeleteStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSignalingChannelOutput {}
+pub struct DeleteSignalingChannelOutput  {
+}
 /// See [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput).
 pub mod delete_signaling_channel_output {
-
+    
     /// A builder for [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput).
         pub fn build(self) -> crate::output::DeleteSignalingChannelOutput {
-            crate::output::DeleteSignalingChannelOutput {}
+            crate::output::DeleteSignalingChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput).
@@ -1446,20 +1409,20 @@ impl DeleteSignalingChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStreamOutput {
+pub struct CreateStreamOutput  {
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
 }
 impl CreateStreamOutput {
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
 /// See [`CreateStreamOutput`](crate::output::CreateStreamOutput).
 pub mod create_stream_output {
-
+    
     /// A builder for [`CreateStreamOutput`](crate::output::CreateStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1473,16 +1436,18 @@ pub mod create_stream_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateStreamOutput`](crate::output::CreateStreamOutput).
         pub fn build(self) -> crate::output::CreateStreamOutput {
             crate::output::CreateStreamOutput {
-                stream_arn: self.stream_arn,
+                stream_arn: self.stream_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateStreamOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamOutput`](crate::output::CreateStreamOutput).
@@ -1494,20 +1459,20 @@ impl CreateStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSignalingChannelOutput {
+pub struct CreateSignalingChannelOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl CreateSignalingChannelOutput {
     /// <p>The Amazon Resource Name (ARN) of the created channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
 }
 /// See [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput).
 pub mod create_signaling_channel_output {
-
+    
     /// A builder for [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1521,16 +1486,18 @@ pub mod create_signaling_channel_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the created channel.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_arn = input;
-            self
+            self.channel_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput).
         pub fn build(self) -> crate::output::CreateSignalingChannelOutput {
             crate::output::CreateSignalingChannelOutput {
-                channel_arn: self.channel_arn,
+                channel_arn: self.channel_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput).
@@ -1538,3 +1505,4 @@ impl CreateSignalingChannelOutput {
         crate::output::create_signaling_channel_output::Builder::default()
     }
 }
+

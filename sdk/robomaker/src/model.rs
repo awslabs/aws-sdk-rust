@@ -3,7 +3,7 @@
 /// <p>Information about a template location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateLocation {
+pub struct TemplateLocation  {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct TemplateLocation {
 }
 impl TemplateLocation {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
 /// See [`TemplateLocation`](crate::model::TemplateLocation).
 pub mod template_location {
-
+    
     /// A builder for [`TemplateLocation`](crate::model::TemplateLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod template_location {
         }
         /// <p>The Amazon S3 bucket name.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The list of S3 keys identifying the data source files.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod template_location {
         }
         /// <p>The list of S3 keys identifying the data source files.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// Consumes the builder and constructs a [`TemplateLocation`](crate::model::TemplateLocation).
         pub fn build(self) -> crate::model::TemplateLocation {
             crate::model::TemplateLocation {
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateLocation {
     /// Creates a new builder-style object to manufacture [`TemplateLocation`](crate::model::TemplateLocation).
@@ -70,20 +72,20 @@ impl TemplateLocation {
 /// <p>The object that contains the Docker image URI for either your robot or simulation applications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Environment {
+pub struct Environment  {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl Environment {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
 }
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
-
+    
     /// A builder for [`Environment`](crate::model::Environment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -97,14 +99,18 @@ pub mod environment {
         }
         /// <p>The Docker image URI for either your robot or simulation applications.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// Consumes the builder and constructs a [`Environment`](crate::model::Environment).
         pub fn build(self) -> crate::model::Environment {
-            crate::model::Environment { uri: self.uri }
+            crate::model::Environment {
+                uri: self.uri
+                ,
+            }
         }
     }
+    
+    
 }
 impl Environment {
     /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
@@ -116,7 +122,7 @@ impl Environment {
 /// <p>Information about a rendering engine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenderingEngine {
+pub struct RenderingEngine  {
     /// <p>The name of the rendering engine.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::RenderingEngineType>,
@@ -126,17 +132,17 @@ pub struct RenderingEngine {
 }
 impl RenderingEngine {
     /// <p>The name of the rendering engine.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::RenderingEngineType> {
+    pub fn name(&self) -> std::option::Option<& crate::model::RenderingEngineType> {
         self.name.as_ref()
     }
     /// <p>The version of the rendering engine.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`RenderingEngine`](crate::model::RenderingEngine).
 pub mod rendering_engine {
-
+    
     /// A builder for [`RenderingEngine`](crate::model::RenderingEngine).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -150,12 +156,8 @@ pub mod rendering_engine {
             self
         }
         /// <p>The name of the rendering engine.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::RenderingEngineType>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::RenderingEngineType>) -> Self {
+            self.name = input; self
         }
         /// <p>The version of the rendering engine.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,17 +166,20 @@ pub mod rendering_engine {
         }
         /// <p>The version of the rendering engine.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`RenderingEngine`](crate::model::RenderingEngine).
         pub fn build(self) -> crate::model::RenderingEngine {
             crate::model::RenderingEngine {
-                name: self.name,
-                version: self.version,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl RenderingEngine {
     /// Creates a new builder-style object to manufacture [`RenderingEngine`](crate::model::RenderingEngine).
@@ -189,9 +194,9 @@ impl RenderingEngine {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let renderingenginetype = unimplemented!();
 /// match renderingenginetype {
@@ -212,56 +217,48 @@ impl RenderingEngine {
 /// Specifically, when `renderingenginetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RenderingEngineType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RenderingEngineType {
     #[allow(missing_docs)] // documentation missing in model
     Ogre,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RenderingEngineType {
     fn from(s: &str) -> Self {
         match s {
             "OGRE" => RenderingEngineType::Ogre,
-            other => {
-                RenderingEngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RenderingEngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RenderingEngineType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RenderingEngineType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RenderingEngineType::from(s))
+                }
+            }
 impl RenderingEngineType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RenderingEngineType::Ogre => "OGRE",
-            RenderingEngineType::Unknown(value) => value.as_str(),
+            RenderingEngineType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OGRE"]
+        &[
+            "OGRE"
+        ]
     }
 }
 impl AsRef<str> for RenderingEngineType {
@@ -273,7 +270,7 @@ impl AsRef<str> for RenderingEngineType {
 /// <p>Information about a robot software suite (ROS distribution).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RobotSoftwareSuite {
+pub struct RobotSoftwareSuite  {
     /// <p>The name of the robot software suite (ROS distribution).</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::RobotSoftwareSuiteType>,
@@ -283,17 +280,17 @@ pub struct RobotSoftwareSuite {
 }
 impl RobotSoftwareSuite {
     /// <p>The name of the robot software suite (ROS distribution).</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::RobotSoftwareSuiteType> {
+    pub fn name(&self) -> std::option::Option<& crate::model::RobotSoftwareSuiteType> {
         self.name.as_ref()
     }
     /// <p>The version of the robot software suite (ROS distribution).</p>
-    pub fn version(&self) -> std::option::Option<&crate::model::RobotSoftwareSuiteVersionType> {
+    pub fn version(&self) -> std::option::Option<& crate::model::RobotSoftwareSuiteVersionType> {
         self.version.as_ref()
     }
 }
 /// See [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
 pub mod robot_software_suite {
-
+    
     /// A builder for [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -307,12 +304,8 @@ pub mod robot_software_suite {
             self
         }
         /// <p>The name of the robot software suite (ROS distribution).</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::RobotSoftwareSuiteType>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::RobotSoftwareSuiteType>) -> Self {
+            self.name = input; self
         }
         /// <p>The version of the robot software suite (ROS distribution).</p>
         pub fn version(mut self, input: crate::model::RobotSoftwareSuiteVersionType) -> Self {
@@ -320,21 +313,21 @@ pub mod robot_software_suite {
             self
         }
         /// <p>The version of the robot software suite (ROS distribution).</p>
-        pub fn set_version(
-            mut self,
-            input: std::option::Option<crate::model::RobotSoftwareSuiteVersionType>,
-        ) -> Self {
-            self.version = input;
-            self
+        pub fn set_version(mut self, input: std::option::Option<crate::model::RobotSoftwareSuiteVersionType>) -> Self {
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
         pub fn build(self) -> crate::model::RobotSoftwareSuite {
             crate::model::RobotSoftwareSuite {
-                name: self.name,
-                version: self.version,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl RobotSoftwareSuite {
     /// Creates a new builder-style object to manufacture [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
@@ -349,9 +342,9 @@ impl RobotSoftwareSuite {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let robotsoftwaresuiteversiontype = unimplemented!();
 /// match robotsoftwaresuiteversiontype {
@@ -375,22 +368,14 @@ impl RobotSoftwareSuite {
 /// Specifically, when `robotsoftwaresuiteversiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RobotSoftwareSuiteVersionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RobotSoftwareSuiteVersionType {
     #[allow(missing_docs)] // documentation missing in model
     Dashing,
@@ -401,7 +386,7 @@ pub enum RobotSoftwareSuiteVersionType {
     #[allow(missing_docs)] // documentation missing in model
     Melodic,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RobotSoftwareSuiteVersionType {
     fn from(s: &str) -> Self {
@@ -410,19 +395,17 @@ impl std::convert::From<&str> for RobotSoftwareSuiteVersionType {
             "Foxy" => RobotSoftwareSuiteVersionType::Foxy,
             "Kinetic" => RobotSoftwareSuiteVersionType::Kinetic,
             "Melodic" => RobotSoftwareSuiteVersionType::Melodic,
-            other => RobotSoftwareSuiteVersionType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RobotSoftwareSuiteVersionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RobotSoftwareSuiteVersionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RobotSoftwareSuiteVersionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RobotSoftwareSuiteVersionType::from(s))
+                }
+            }
 impl RobotSoftwareSuiteVersionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -431,12 +414,14 @@ impl RobotSoftwareSuiteVersionType {
             RobotSoftwareSuiteVersionType::Foxy => "Foxy",
             RobotSoftwareSuiteVersionType::Kinetic => "Kinetic",
             RobotSoftwareSuiteVersionType::Melodic => "Melodic",
-            RobotSoftwareSuiteVersionType::Unknown(value) => value.as_str(),
+            RobotSoftwareSuiteVersionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Dashing", "Foxy", "Kinetic", "Melodic"]
+        &[
+            "Dashing", "Foxy", "Kinetic", "Melodic"
+        ]
     }
 }
 impl AsRef<str> for RobotSoftwareSuiteVersionType {
@@ -451,9 +436,9 @@ impl AsRef<str> for RobotSoftwareSuiteVersionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let robotsoftwaresuitetype = unimplemented!();
 /// match robotsoftwaresuitetype {
@@ -476,22 +461,14 @@ impl AsRef<str> for RobotSoftwareSuiteVersionType {
 /// Specifically, when `robotsoftwaresuitetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RobotSoftwareSuiteType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RobotSoftwareSuiteType {
     #[allow(missing_docs)] // documentation missing in model
     General,
@@ -500,7 +477,7 @@ pub enum RobotSoftwareSuiteType {
     #[allow(missing_docs)] // documentation missing in model
     Ros2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RobotSoftwareSuiteType {
     fn from(s: &str) -> Self {
@@ -508,19 +485,17 @@ impl std::convert::From<&str> for RobotSoftwareSuiteType {
             "General" => RobotSoftwareSuiteType::General,
             "ROS" => RobotSoftwareSuiteType::Ros,
             "ROS2" => RobotSoftwareSuiteType::Ros2,
-            other => {
-                RobotSoftwareSuiteType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RobotSoftwareSuiteType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RobotSoftwareSuiteType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RobotSoftwareSuiteType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RobotSoftwareSuiteType::from(s))
+                }
+            }
 impl RobotSoftwareSuiteType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -528,12 +503,14 @@ impl RobotSoftwareSuiteType {
             RobotSoftwareSuiteType::General => "General",
             RobotSoftwareSuiteType::Ros => "ROS",
             RobotSoftwareSuiteType::Ros2 => "ROS2",
-            RobotSoftwareSuiteType::Unknown(value) => value.as_str(),
+            RobotSoftwareSuiteType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["General", "ROS", "ROS2"]
+        &[
+            "General", "ROS", "ROS2"
+        ]
     }
 }
 impl AsRef<str> for RobotSoftwareSuiteType {
@@ -545,7 +522,7 @@ impl AsRef<str> for RobotSoftwareSuiteType {
 /// <p>Information about a simulation software suite.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationSoftwareSuite {
+pub struct SimulationSoftwareSuite  {
     /// <p>The name of the simulation software suite.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SimulationSoftwareSuiteType>,
@@ -555,17 +532,17 @@ pub struct SimulationSoftwareSuite {
 }
 impl SimulationSoftwareSuite {
     /// <p>The name of the simulation software suite.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SimulationSoftwareSuiteType> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SimulationSoftwareSuiteType> {
         self.name.as_ref()
     }
     /// <p>The version of the simulation software suite.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
 pub mod simulation_software_suite {
-
+    
     /// A builder for [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -579,12 +556,8 @@ pub mod simulation_software_suite {
             self
         }
         /// <p>The name of the simulation software suite.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SimulationSoftwareSuiteType>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SimulationSoftwareSuiteType>) -> Self {
+            self.name = input; self
         }
         /// <p>The version of the simulation software suite.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -593,17 +566,20 @@ pub mod simulation_software_suite {
         }
         /// <p>The version of the simulation software suite.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
         pub fn build(self) -> crate::model::SimulationSoftwareSuite {
             crate::model::SimulationSoftwareSuite {
-                name: self.name,
-                version: self.version,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationSoftwareSuite {
     /// Creates a new builder-style object to manufacture [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
@@ -618,9 +594,9 @@ impl SimulationSoftwareSuite {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationsoftwaresuitetype = unimplemented!();
 /// match simulationsoftwaresuitetype {
@@ -643,22 +619,14 @@ impl SimulationSoftwareSuite {
 /// Specifically, when `simulationsoftwaresuitetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationSoftwareSuiteType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationSoftwareSuiteType {
     #[allow(missing_docs)] // documentation missing in model
     Gazebo,
@@ -667,7 +635,7 @@ pub enum SimulationSoftwareSuiteType {
     #[allow(missing_docs)] // documentation missing in model
     SimulationRuntime,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationSoftwareSuiteType {
     fn from(s: &str) -> Self {
@@ -675,19 +643,17 @@ impl std::convert::From<&str> for SimulationSoftwareSuiteType {
             "Gazebo" => SimulationSoftwareSuiteType::Gazebo,
             "RosbagPlay" => SimulationSoftwareSuiteType::RosbagPlay,
             "SimulationRuntime" => SimulationSoftwareSuiteType::SimulationRuntime,
-            other => SimulationSoftwareSuiteType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SimulationSoftwareSuiteType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationSoftwareSuiteType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationSoftwareSuiteType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationSoftwareSuiteType::from(s))
+                }
+            }
 impl SimulationSoftwareSuiteType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -695,12 +661,14 @@ impl SimulationSoftwareSuiteType {
             SimulationSoftwareSuiteType::Gazebo => "Gazebo",
             SimulationSoftwareSuiteType::RosbagPlay => "RosbagPlay",
             SimulationSoftwareSuiteType::SimulationRuntime => "SimulationRuntime",
-            SimulationSoftwareSuiteType::Unknown(value) => value.as_str(),
+            SimulationSoftwareSuiteType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Gazebo", "RosbagPlay", "SimulationRuntime"]
+        &[
+            "Gazebo", "RosbagPlay", "SimulationRuntime"
+        ]
     }
 }
 impl AsRef<str> for SimulationSoftwareSuiteType {
@@ -712,7 +680,7 @@ impl AsRef<str> for SimulationSoftwareSuiteType {
 /// <p>Information about a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// <p>The s3 bucket name.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -728,25 +696,25 @@ pub struct Source {
 }
 impl Source {
     /// <p>The s3 bucket name.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The s3 object key.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
-    pub fn etag(&self) -> std::option::Option<&str> {
+    pub fn etag(&self) -> std::option::Option<& str> {
         self.etag.as_deref()
     }
     /// <p>The taget processor architecture for the application.</p>
-    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+    pub fn architecture(&self) -> std::option::Option<& crate::model::Architecture> {
         self.architecture.as_ref()
     }
 }
 /// See [`Source`](crate::model::Source).
 pub mod source {
-
+    
     /// A builder for [`Source`](crate::model::Source).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -763,8 +731,7 @@ pub mod source {
         }
         /// <p>The s3 bucket name.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The s3 object key.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -773,8 +740,7 @@ pub mod source {
         }
         /// <p>The s3 object key.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
         pub fn etag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -783,8 +749,7 @@ pub mod source {
         }
         /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
         pub fn set_etag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.etag = input;
-            self
+            self.etag = input; self
         }
         /// <p>The taget processor architecture for the application.</p>
         pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
@@ -792,23 +757,25 @@ pub mod source {
             self
         }
         /// <p>The taget processor architecture for the application.</p>
-        pub fn set_architecture(
-            mut self,
-            input: std::option::Option<crate::model::Architecture>,
-        ) -> Self {
-            self.architecture = input;
-            self
+        pub fn set_architecture(mut self, input: std::option::Option<crate::model::Architecture>) -> Self {
+            self.architecture = input; self
         }
         /// Consumes the builder and constructs a [`Source`](crate::model::Source).
         pub fn build(self) -> crate::model::Source {
             crate::model::Source {
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
-                etag: self.etag,
-                architecture: self.architecture,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
+                etag: self.etag
+                ,
+                architecture: self.architecture
+                ,
             }
         }
     }
+    
+    
 }
 impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
@@ -823,9 +790,9 @@ impl Source {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let architecture = unimplemented!();
 /// match architecture {
@@ -848,22 +815,14 @@ impl Source {
 /// Specifically, when `architecture` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Architecture::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Architecture {
     #[allow(missing_docs)] // documentation missing in model
     Arm64,
@@ -872,7 +831,7 @@ pub enum Architecture {
     #[allow(missing_docs)] // documentation missing in model
     X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Architecture {
     fn from(s: &str) -> Self {
@@ -880,17 +839,17 @@ impl std::convert::From<&str> for Architecture {
             "ARM64" => Architecture::Arm64,
             "ARMHF" => Architecture::Armhf,
             "X86_64" => Architecture::X8664,
-            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Architecture {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Architecture::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Architecture::from(s))
+                }
+            }
 impl Architecture {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -898,12 +857,14 @@ impl Architecture {
             Architecture::Arm64 => "ARM64",
             Architecture::Armhf => "ARMHF",
             Architecture::X8664 => "X86_64",
-            Architecture::Unknown(value) => value.as_str(),
+            Architecture::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ARM64", "ARMHF", "X86_64"]
+        &[
+            "ARM64", "ARMHF", "X86_64"
+        ]
     }
 }
 impl AsRef<str> for Architecture {
@@ -915,7 +876,7 @@ impl AsRef<str> for Architecture {
 /// <p>Information about a source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceConfig {
+pub struct SourceConfig  {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -928,21 +889,21 @@ pub struct SourceConfig {
 }
 impl SourceConfig {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The s3 object key.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>The target processor architecture for the application.</p>
-    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+    pub fn architecture(&self) -> std::option::Option<& crate::model::Architecture> {
         self.architecture.as_ref()
     }
 }
 /// See [`SourceConfig`](crate::model::SourceConfig).
 pub mod source_config {
-
+    
     /// A builder for [`SourceConfig`](crate::model::SourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -958,8 +919,7 @@ pub mod source_config {
         }
         /// <p>The Amazon S3 bucket name.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The s3 object key.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -968,8 +928,7 @@ pub mod source_config {
         }
         /// <p>The s3 object key.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// <p>The target processor architecture for the application.</p>
         pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
@@ -977,22 +936,23 @@ pub mod source_config {
             self
         }
         /// <p>The target processor architecture for the application.</p>
-        pub fn set_architecture(
-            mut self,
-            input: std::option::Option<crate::model::Architecture>,
-        ) -> Self {
-            self.architecture = input;
-            self
+        pub fn set_architecture(mut self, input: std::option::Option<crate::model::Architecture>) -> Self {
+            self.architecture = input; self
         }
         /// Consumes the builder and constructs a [`SourceConfig`](crate::model::SourceConfig).
         pub fn build(self) -> crate::model::SourceConfig {
             crate::model::SourceConfig {
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
-                architecture: self.architecture,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
+                architecture: self.architecture
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceConfig {
     /// Creates a new builder-style object to manufacture [`SourceConfig`](crate::model::SourceConfig).
@@ -1007,9 +967,9 @@ impl SourceConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentjoberrorcode = unimplemented!();
 /// match deploymentjoberrorcode {
@@ -1053,22 +1013,14 @@ impl SourceConfig {
 /// Specifically, when `deploymentjoberrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentJobErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     BadLambdaAssociated,
@@ -1119,7 +1071,7 @@ pub enum DeploymentJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     RobotDeploymentNoResponse,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentJobErrorCode {
     fn from(s: &str) -> Self {
@@ -1134,19 +1086,13 @@ impl std::convert::From<&str> for DeploymentJobErrorCode {
             "FailureThresholdBreached" => DeploymentJobErrorCode::FailureThresholdBreached,
             "FleetDeploymentTimeout" => DeploymentJobErrorCode::FleetDeploymentTimeout,
             "GreengrassDeploymentFailed" => DeploymentJobErrorCode::GreengrassDeploymentFailed,
-            "GreengrassGroupVersionDoesNotExist" => {
-                DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist
-            }
+            "GreengrassGroupVersionDoesNotExist" => DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist,
             "InternalServerError" => DeploymentJobErrorCode::InternalServerError,
             "InvalidGreengrassGroup" => DeploymentJobErrorCode::InvalidGreengrassGroup,
             "LambdaDeleted" => DeploymentJobErrorCode::LambdaDeleted,
-            "MissingRobotApplicationArchitecture" => {
-                DeploymentJobErrorCode::MissingRobotApplicationArchitecture
-            }
+            "MissingRobotApplicationArchitecture" => DeploymentJobErrorCode::MissingRobotApplicationArchitecture,
             "MissingRobotArchitecture" => DeploymentJobErrorCode::MissingRobotArchitecture,
-            "MissingRobotDeploymentResource" => {
-                DeploymentJobErrorCode::MissingRobotDeploymentResource
-            }
+            "MissingRobotDeploymentResource" => DeploymentJobErrorCode::MissingRobotDeploymentResource,
             "PostLaunchFileFailure" => DeploymentJobErrorCode::PostLaunchFileFailure,
             "PreLaunchFileFailure" => DeploymentJobErrorCode::PreLaunchFileFailure,
             "ResourceNotFound" => DeploymentJobErrorCode::ResourceNotFound,
@@ -1154,19 +1100,17 @@ impl std::convert::From<&str> for DeploymentJobErrorCode {
             "RobotApplicationDoesNotExist" => DeploymentJobErrorCode::RobotApplicationDoesNotExist,
             "RobotDeploymentAborted" => DeploymentJobErrorCode::RobotDeploymentAborted,
             "RobotDeploymentNoResponse" => DeploymentJobErrorCode::RobotDeploymentNoResponse,
-            other => {
-                DeploymentJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeploymentJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentJobErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentJobErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentJobErrorCode::from(s))
+                }
+            }
 impl DeploymentJobErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1181,19 +1125,13 @@ impl DeploymentJobErrorCode {
             DeploymentJobErrorCode::FailureThresholdBreached => "FailureThresholdBreached",
             DeploymentJobErrorCode::FleetDeploymentTimeout => "FleetDeploymentTimeout",
             DeploymentJobErrorCode::GreengrassDeploymentFailed => "GreengrassDeploymentFailed",
-            DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => {
-                "GreengrassGroupVersionDoesNotExist"
-            }
+            DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => "GreengrassGroupVersionDoesNotExist",
             DeploymentJobErrorCode::InternalServerError => "InternalServerError",
             DeploymentJobErrorCode::InvalidGreengrassGroup => "InvalidGreengrassGroup",
             DeploymentJobErrorCode::LambdaDeleted => "LambdaDeleted",
-            DeploymentJobErrorCode::MissingRobotApplicationArchitecture => {
-                "MissingRobotApplicationArchitecture"
-            }
+            DeploymentJobErrorCode::MissingRobotApplicationArchitecture => "MissingRobotApplicationArchitecture",
             DeploymentJobErrorCode::MissingRobotArchitecture => "MissingRobotArchitecture",
-            DeploymentJobErrorCode::MissingRobotDeploymentResource => {
-                "MissingRobotDeploymentResource"
-            }
+            DeploymentJobErrorCode::MissingRobotDeploymentResource => "MissingRobotDeploymentResource",
             DeploymentJobErrorCode::PostLaunchFileFailure => "PostLaunchFileFailure",
             DeploymentJobErrorCode::PreLaunchFileFailure => "PreLaunchFileFailure",
             DeploymentJobErrorCode::ResourceNotFound => "ResourceNotFound",
@@ -1201,36 +1139,13 @@ impl DeploymentJobErrorCode {
             DeploymentJobErrorCode::RobotApplicationDoesNotExist => "RobotApplicationDoesNotExist",
             DeploymentJobErrorCode::RobotDeploymentAborted => "RobotDeploymentAborted",
             DeploymentJobErrorCode::RobotDeploymentNoResponse => "RobotDeploymentNoResponse",
-            DeploymentJobErrorCode::Unknown(value) => value.as_str(),
+            DeploymentJobErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BadLambdaAssociated",
-            "BadPermissionError",
-            "DeploymentFleetDoesNotExist",
-            "DownloadConditionFailed",
-            "EnvironmentSetupError",
-            "EtagMismatch",
-            "ExtractingBundleFailure",
-            "FailureThresholdBreached",
-            "FleetDeploymentTimeout",
-            "GreengrassDeploymentFailed",
-            "GreengrassGroupVersionDoesNotExist",
-            "InternalServerError",
-            "InvalidGreengrassGroup",
-            "LambdaDeleted",
-            "MissingRobotApplicationArchitecture",
-            "MissingRobotArchitecture",
-            "MissingRobotDeploymentResource",
-            "PostLaunchFileFailure",
-            "PreLaunchFileFailure",
-            "ResourceNotFound",
-            "RobotAgentConnectionTimeout",
-            "RobotApplicationDoesNotExist",
-            "RobotDeploymentAborted",
-            "RobotDeploymentNoResponse",
+            "BadLambdaAssociated", "BadPermissionError", "DeploymentFleetDoesNotExist", "DownloadConditionFailed", "EnvironmentSetupError", "EtagMismatch", "ExtractingBundleFailure", "FailureThresholdBreached", "FleetDeploymentTimeout", "GreengrassDeploymentFailed", "GreengrassGroupVersionDoesNotExist", "InternalServerError", "InvalidGreengrassGroup", "LambdaDeleted", "MissingRobotApplicationArchitecture", "MissingRobotArchitecture", "MissingRobotDeploymentResource", "PostLaunchFileFailure", "PreLaunchFileFailure", "ResourceNotFound", "RobotAgentConnectionTimeout", "RobotApplicationDoesNotExist", "RobotDeploymentAborted", "RobotDeploymentNoResponse"
         ]
     }
 }
@@ -1243,7 +1158,7 @@ impl AsRef<str> for DeploymentJobErrorCode {
 /// <p>Information about a deployment application configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentApplicationConfig {
+pub struct DeploymentApplicationConfig  {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -1256,21 +1171,21 @@ pub struct DeploymentApplicationConfig {
 }
 impl DeploymentApplicationConfig {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn application_version(&self) -> std::option::Option<&str> {
+    pub fn application_version(&self) -> std::option::Option<& str> {
         self.application_version.as_deref()
     }
     /// <p>The launch configuration.</p>
-    pub fn launch_config(&self) -> std::option::Option<&crate::model::DeploymentLaunchConfig> {
+    pub fn launch_config(&self) -> std::option::Option<& crate::model::DeploymentLaunchConfig> {
         self.launch_config.as_ref()
     }
 }
 /// See [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
 pub mod deployment_application_config {
-
+    
     /// A builder for [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1286,8 +1201,7 @@ pub mod deployment_application_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input;
-            self
+            self.application = input; self
         }
         /// <p>The version of the application.</p>
         pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1295,12 +1209,8 @@ pub mod deployment_application_config {
             self
         }
         /// <p>The version of the application.</p>
-        pub fn set_application_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_version = input;
-            self
+        pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_version = input; self
         }
         /// <p>The launch configuration.</p>
         pub fn launch_config(mut self, input: crate::model::DeploymentLaunchConfig) -> Self {
@@ -1308,22 +1218,23 @@ pub mod deployment_application_config {
             self
         }
         /// <p>The launch configuration.</p>
-        pub fn set_launch_config(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentLaunchConfig>,
-        ) -> Self {
-            self.launch_config = input;
-            self
+        pub fn set_launch_config(mut self, input: std::option::Option<crate::model::DeploymentLaunchConfig>) -> Self {
+            self.launch_config = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
         pub fn build(self) -> crate::model::DeploymentApplicationConfig {
             crate::model::DeploymentApplicationConfig {
-                application: self.application,
-                application_version: self.application_version,
-                launch_config: self.launch_config,
+                application: self.application
+                ,
+                application_version: self.application_version
+                ,
+                launch_config: self.launch_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentApplicationConfig {
     /// Creates a new builder-style object to manufacture [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
@@ -1335,7 +1246,7 @@ impl DeploymentApplicationConfig {
 /// <p>Configuration information for a deployment launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentLaunchConfig {
+pub struct DeploymentLaunchConfig  {
     /// <p>The package name.</p>
     #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
@@ -1350,37 +1261,33 @@ pub struct DeploymentLaunchConfig {
     pub post_launch_file: std::option::Option<std::string::String>,
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DeploymentLaunchConfig {
     /// <p>The package name.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
-    pub fn pre_launch_file(&self) -> std::option::Option<&str> {
+    pub fn pre_launch_file(&self) -> std::option::Option<& str> {
         self.pre_launch_file.as_deref()
     }
     /// <p>The launch file name.</p>
-    pub fn launch_file(&self) -> std::option::Option<&str> {
+    pub fn launch_file(&self) -> std::option::Option<& str> {
         self.launch_file.as_deref()
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
-    pub fn post_launch_file(&self) -> std::option::Option<&str> {
+    pub fn post_launch_file(&self) -> std::option::Option<& str> {
         self.post_launch_file.as_deref()
     }
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-    pub fn environment_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment_variables.as_ref()
     }
 }
 /// See [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
 pub mod deployment_launch_config {
-
+    
     /// A builder for [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1388,9 +1295,7 @@ pub mod deployment_launch_config {
         pub(crate) pre_launch_file: std::option::Option<std::string::String>,
         pub(crate) launch_file: std::option::Option<std::string::String>,
         pub(crate) post_launch_file: std::option::Option<std::string::String>,
-        pub(crate) environment_variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The package name.</p>
@@ -1400,8 +1305,7 @@ pub mod deployment_launch_config {
         }
         /// <p>The package name.</p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_name = input;
-            self
+            self.package_name = input; self
         }
         /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
         pub fn pre_launch_file(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1409,12 +1313,8 @@ pub mod deployment_launch_config {
             self
         }
         /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
-        pub fn set_pre_launch_file(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pre_launch_file = input;
-            self
+        pub fn set_pre_launch_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pre_launch_file = input; self
         }
         /// <p>The launch file name.</p>
         pub fn launch_file(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1423,8 +1323,7 @@ pub mod deployment_launch_config {
         }
         /// <p>The launch file name.</p>
         pub fn set_launch_file(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.launch_file = input;
-            self
+            self.launch_file = input; self
         }
         /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
         pub fn post_launch_file(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1432,49 +1331,42 @@ pub mod deployment_launch_config {
             self
         }
         /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
-        pub fn set_post_launch_file(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.post_launch_file = input;
-            self
+        pub fn set_post_launch_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.post_launch_file = input; self
         }
         /// Adds a key-value pair to `environment_variables`.
         ///
         /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
         ///
         /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-        pub fn environment_variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.environment_variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.environment_variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.environment_variables = Some(hash_map);
+                            self
         }
         /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-        pub fn set_environment_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.environment_variables = input;
-            self
+        pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.environment_variables = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
         pub fn build(self) -> crate::model::DeploymentLaunchConfig {
             crate::model::DeploymentLaunchConfig {
-                package_name: self.package_name,
-                pre_launch_file: self.pre_launch_file,
-                launch_file: self.launch_file,
-                post_launch_file: self.post_launch_file,
-                environment_variables: self.environment_variables,
+                package_name: self.package_name
+                ,
+                pre_launch_file: self.pre_launch_file
+                ,
+                launch_file: self.launch_file
+                ,
+                post_launch_file: self.post_launch_file
+                ,
+                environment_variables: self.environment_variables
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentLaunchConfig {
     /// Creates a new builder-style object to manufacture [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
@@ -1486,7 +1378,7 @@ impl DeploymentLaunchConfig {
 /// <p>Information about a deployment configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentConfig {
+pub struct DeploymentConfig  {
     /// <p>The percentage of robots receiving the deployment at the same time.</p>
     #[doc(hidden)]
     pub concurrent_deployment_percentage: std::option::Option<i32>,
@@ -1514,13 +1406,13 @@ impl DeploymentConfig {
         self.robot_deployment_timeout_in_seconds
     }
     /// <p>The download condition file.</p>
-    pub fn download_condition_file(&self) -> std::option::Option<&crate::model::S3Object> {
+    pub fn download_condition_file(&self) -> std::option::Option<& crate::model::S3Object> {
         self.download_condition_file.as_ref()
     }
 }
 /// See [`DeploymentConfig`](crate::model::DeploymentConfig).
 pub mod deployment_config {
-
+    
     /// A builder for [`DeploymentConfig`](crate::model::DeploymentConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1536,12 +1428,8 @@ pub mod deployment_config {
             self
         }
         /// <p>The percentage of robots receiving the deployment at the same time.</p>
-        pub fn set_concurrent_deployment_percentage(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.concurrent_deployment_percentage = input;
-            self
+        pub fn set_concurrent_deployment_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.concurrent_deployment_percentage = input; self
         }
         /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
         pub fn failure_threshold_percentage(mut self, input: i32) -> Self {
@@ -1550,8 +1438,7 @@ pub mod deployment_config {
         }
         /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
         pub fn set_failure_threshold_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.failure_threshold_percentage = input;
-            self
+            self.failure_threshold_percentage = input; self
         }
         /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
         pub fn robot_deployment_timeout_in_seconds(mut self, input: i64) -> Self {
@@ -1559,12 +1446,8 @@ pub mod deployment_config {
             self
         }
         /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
-        pub fn set_robot_deployment_timeout_in_seconds(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.robot_deployment_timeout_in_seconds = input;
-            self
+        pub fn set_robot_deployment_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.robot_deployment_timeout_in_seconds = input; self
         }
         /// <p>The download condition file.</p>
         pub fn download_condition_file(mut self, input: crate::model::S3Object) -> Self {
@@ -1572,23 +1455,25 @@ pub mod deployment_config {
             self
         }
         /// <p>The download condition file.</p>
-        pub fn set_download_condition_file(
-            mut self,
-            input: std::option::Option<crate::model::S3Object>,
-        ) -> Self {
-            self.download_condition_file = input;
-            self
+        pub fn set_download_condition_file(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
+            self.download_condition_file = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentConfig`](crate::model::DeploymentConfig).
         pub fn build(self) -> crate::model::DeploymentConfig {
             crate::model::DeploymentConfig {
-                concurrent_deployment_percentage: self.concurrent_deployment_percentage,
-                failure_threshold_percentage: self.failure_threshold_percentage,
-                robot_deployment_timeout_in_seconds: self.robot_deployment_timeout_in_seconds,
-                download_condition_file: self.download_condition_file,
+                concurrent_deployment_percentage: self.concurrent_deployment_percentage
+                ,
+                failure_threshold_percentage: self.failure_threshold_percentage
+                ,
+                robot_deployment_timeout_in_seconds: self.robot_deployment_timeout_in_seconds
+                ,
+                download_condition_file: self.download_condition_file
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentConfig {
     /// Creates a new builder-style object to manufacture [`DeploymentConfig`](crate::model::DeploymentConfig).
@@ -1600,7 +1485,7 @@ impl DeploymentConfig {
 /// <p>Information about an S3 object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Object {
+pub struct S3Object  {
     /// <p>The bucket containing the object.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -1613,21 +1498,21 @@ pub struct S3Object {
 }
 impl S3Object {
     /// <p>The bucket containing the object.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The key of the object.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The etag of the object.</p>
-    pub fn etag(&self) -> std::option::Option<&str> {
+    pub fn etag(&self) -> std::option::Option<& str> {
         self.etag.as_deref()
     }
 }
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
-
+    
     /// A builder for [`S3Object`](crate::model::S3Object).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1643,8 +1528,7 @@ pub mod s3_object {
         }
         /// <p>The bucket containing the object.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The key of the object.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1653,8 +1537,7 @@ pub mod s3_object {
         }
         /// <p>The key of the object.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The etag of the object.</p>
         pub fn etag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1663,18 +1546,22 @@ pub mod s3_object {
         }
         /// <p>The etag of the object.</p>
         pub fn set_etag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.etag = input;
-            self
+            self.etag = input; self
         }
         /// Consumes the builder and constructs a [`S3Object`](crate::model::S3Object).
         pub fn build(self) -> crate::model::S3Object {
             crate::model::S3Object {
-                bucket: self.bucket,
-                key: self.key,
-                etag: self.etag,
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
+                etag: self.etag
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Object {
     /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
@@ -1689,9 +1576,9 @@ impl S3Object {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentstatus = unimplemented!();
 /// match deploymentstatus {
@@ -1717,22 +1604,14 @@ impl S3Object {
 /// Specifically, when `deploymentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -1747,7 +1626,7 @@ pub enum DeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentStatus {
     fn from(s: &str) -> Self {
@@ -1758,17 +1637,17 @@ impl std::convert::From<&str> for DeploymentStatus {
             "Pending" => DeploymentStatus::Pending,
             "Preparing" => DeploymentStatus::Preparing,
             "Succeeded" => DeploymentStatus::Succeeded,
-            other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentStatus::from(s))
+                }
+            }
 impl DeploymentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1779,18 +1658,13 @@ impl DeploymentStatus {
             DeploymentStatus::Pending => "Pending",
             DeploymentStatus::Preparing => "Preparing",
             DeploymentStatus::Succeeded => "Succeeded",
-            DeploymentStatus::Unknown(value) => value.as_str(),
+            DeploymentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Canceled",
-            "Failed",
-            "InProgress",
-            "Pending",
-            "Preparing",
-            "Succeeded",
+            "Canceled", "Failed", "InProgress", "Pending", "Preparing", "Succeeded"
         ]
     }
 }
@@ -1803,7 +1677,7 @@ impl AsRef<str> for DeploymentStatus {
 /// <p>Summary information for a simulation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationJobSummary {
+pub struct SimulationJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1831,41 +1705,41 @@ pub struct SimulationJobSummary {
 }
 impl SimulationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The name of the simulation job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the simulation job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SimulationJobStatus> {
         self.status.as_ref()
     }
     /// <p>A list of simulation job simulation application names.</p>
-    pub fn simulation_application_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn simulation_application_names(&self) -> std::option::Option<& [std::string::String]> {
         self.simulation_application_names.as_deref()
     }
     /// <p>A list of simulation job robot application names.</p>
-    pub fn robot_application_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn robot_application_names(&self) -> std::option::Option<& [std::string::String]> {
         self.robot_application_names.as_deref()
     }
     /// <p>The names of the data sources.</p>
-    pub fn data_source_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn data_source_names(&self) -> std::option::Option<& [std::string::String]> {
         self.data_source_names.as_deref()
     }
     /// <p>The compute type for the simulation job summary.</p>
-    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+    pub fn compute_type(&self) -> std::option::Option<& crate::model::ComputeType> {
         self.compute_type.as_ref()
     }
 }
 /// See [`SimulationJobSummary`](crate::model::SimulationJobSummary).
 pub mod simulation_job_summary {
-
+    
     /// A builder for [`SimulationJobSummary`](crate::model::SimulationJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1873,8 +1747,7 @@ pub mod simulation_job_summary {
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SimulationJobStatus>,
-        pub(crate) simulation_application_names:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) simulation_application_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) robot_application_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) data_source_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
@@ -1887,8 +1760,7 @@ pub mod simulation_job_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1896,12 +1768,8 @@ pub mod simulation_job_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>The name of the simulation job.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1910,8 +1778,7 @@ pub mod simulation_job_summary {
         }
         /// <p>The name of the simulation job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the simulation job.</p>
         pub fn status(mut self, input: crate::model::SimulationJobStatus) -> Self {
@@ -1919,34 +1786,23 @@ pub mod simulation_job_summary {
             self
         }
         /// <p>The status of the simulation job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SimulationJobStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `simulation_application_names`.
         ///
         /// To override the contents of this collection use [`set_simulation_application_names`](Self::set_simulation_application_names).
         ///
         /// <p>A list of simulation job simulation application names.</p>
-        pub fn simulation_application_names(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn simulation_application_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.simulation_application_names.unwrap_or_default();
-            v.push(input.into());
-            self.simulation_application_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.simulation_application_names = Some(v);
+                            self
         }
         /// <p>A list of simulation job simulation application names.</p>
-        pub fn set_simulation_application_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.simulation_application_names = input;
-            self
+        pub fn set_simulation_application_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.simulation_application_names = input; self
         }
         /// Appends an item to `robot_application_names`.
         ///
@@ -1955,17 +1811,13 @@ pub mod simulation_job_summary {
         /// <p>A list of simulation job robot application names.</p>
         pub fn robot_application_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.robot_application_names.unwrap_or_default();
-            v.push(input.into());
-            self.robot_application_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.robot_application_names = Some(v);
+                            self
         }
         /// <p>A list of simulation job robot application names.</p>
-        pub fn set_robot_application_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.robot_application_names = input;
-            self
+        pub fn set_robot_application_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.robot_application_names = input; self
         }
         /// Appends an item to `data_source_names`.
         ///
@@ -1974,17 +1826,13 @@ pub mod simulation_job_summary {
         /// <p>The names of the data sources.</p>
         pub fn data_source_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.data_source_names.unwrap_or_default();
-            v.push(input.into());
-            self.data_source_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.data_source_names = Some(v);
+                            self
         }
         /// <p>The names of the data sources.</p>
-        pub fn set_data_source_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.data_source_names = input;
-            self
+        pub fn set_data_source_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.data_source_names = input; self
         }
         /// <p>The compute type for the simulation job summary.</p>
         pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
@@ -1992,27 +1840,33 @@ pub mod simulation_job_summary {
             self
         }
         /// <p>The compute type for the simulation job summary.</p>
-        pub fn set_compute_type(
-            mut self,
-            input: std::option::Option<crate::model::ComputeType>,
-        ) -> Self {
-            self.compute_type = input;
-            self
+        pub fn set_compute_type(mut self, input: std::option::Option<crate::model::ComputeType>) -> Self {
+            self.compute_type = input; self
         }
         /// Consumes the builder and constructs a [`SimulationJobSummary`](crate::model::SimulationJobSummary).
         pub fn build(self) -> crate::model::SimulationJobSummary {
             crate::model::SimulationJobSummary {
-                arn: self.arn,
-                last_updated_at: self.last_updated_at,
-                name: self.name,
-                status: self.status,
-                simulation_application_names: self.simulation_application_names,
-                robot_application_names: self.robot_application_names,
-                data_source_names: self.data_source_names,
-                compute_type: self.compute_type,
+                arn: self.arn
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                simulation_application_names: self.simulation_application_names
+                ,
+                robot_application_names: self.robot_application_names
+                ,
+                data_source_names: self.data_source_names
+                ,
+                compute_type: self.compute_type
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationJobSummary {
     /// Creates a new builder-style object to manufacture [`SimulationJobSummary`](crate::model::SimulationJobSummary).
@@ -2027,9 +1881,9 @@ impl SimulationJobSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let computetype = unimplemented!();
 /// match computetype {
@@ -2051,58 +1905,52 @@ impl SimulationJobSummary {
 /// Specifically, when `computetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComputeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComputeType {
     #[allow(missing_docs)] // documentation missing in model
     Cpu,
     #[allow(missing_docs)] // documentation missing in model
     GpuAndCpu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputeType {
     fn from(s: &str) -> Self {
         match s {
             "CPU" => ComputeType::Cpu,
             "GPU_AND_CPU" => ComputeType::GpuAndCpu,
-            other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComputeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComputeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComputeType::from(s))
+                }
+            }
 impl ComputeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComputeType::Cpu => "CPU",
             ComputeType::GpuAndCpu => "GPU_AND_CPU",
-            ComputeType::Unknown(value) => value.as_str(),
+            ComputeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CPU", "GPU_AND_CPU"]
+        &[
+            "CPU", "GPU_AND_CPU"
+        ]
     }
 }
 impl AsRef<str> for ComputeType {
@@ -2117,9 +1965,9 @@ impl AsRef<str> for ComputeType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationjobstatus = unimplemented!();
 /// match simulationjobstatus {
@@ -2149,22 +1997,14 @@ impl AsRef<str> for ComputeType {
 /// Specifically, when `simulationjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -2187,7 +2027,7 @@ pub enum SimulationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Terminating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobStatus {
     fn from(s: &str) -> Self {
@@ -2202,19 +2042,17 @@ impl std::convert::From<&str> for SimulationJobStatus {
             "RunningFailed" => SimulationJobStatus::RunningFailed,
             "Terminated" => SimulationJobStatus::Terminated,
             "Terminating" => SimulationJobStatus::Terminating,
-            other => {
-                SimulationJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SimulationJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationJobStatus::from(s))
+                }
+            }
 impl SimulationJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2229,22 +2067,13 @@ impl SimulationJobStatus {
             SimulationJobStatus::RunningFailed => "RunningFailed",
             SimulationJobStatus::Terminated => "Terminated",
             SimulationJobStatus::Terminating => "Terminating",
-            SimulationJobStatus::Unknown(value) => value.as_str(),
+            SimulationJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Canceled",
-            "Completed",
-            "Failed",
-            "Pending",
-            "Preparing",
-            "Restarting",
-            "Running",
-            "RunningFailed",
-            "Terminated",
-            "Terminating",
+            "Canceled", "Completed", "Failed", "Pending", "Preparing", "Restarting", "Running", "RunningFailed", "Terminated", "Terminating"
         ]
     }
 }
@@ -2257,7 +2086,7 @@ impl AsRef<str> for SimulationJobStatus {
 /// <p>Information about a simulation job request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationJobRequest {
+pub struct SimulationJobRequest  {
     /// <p>The output location.</p>
     #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
@@ -2270,20 +2099,20 @@ pub struct SimulationJobRequest {
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
-    /// <p>The failure behavior the simulation job.</p>
-    /// <dl>
+    /// <p>The failure behavior the simulation job.</p> 
+    /// <dl> 
     /// <dt>
     /// Continue
-    /// </dt>
-    /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
+    /// </dd> 
     /// <dt>
     /// Fail
-    /// </dt>
-    /// <dd>
-    /// <p>Stop the simulation job and terminate the instance.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Stop the simulation job and terminate the instance.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
@@ -2292,14 +2121,12 @@ pub struct SimulationJobRequest {
     pub use_default_applications: std::option::Option<bool>,
     /// <p>The robot applications to use in the simulation job.</p>
     #[doc(hidden)]
-    pub robot_applications:
-        std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
+    pub robot_applications: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
     /// <p>The simulation applications to use in the simulation job.</p>
     #[doc(hidden)]
-    pub simulation_applications:
-        std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
+    pub simulation_applications: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> 
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> 
     /// </note>
     #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
@@ -2311,16 +2138,15 @@ pub struct SimulationJobRequest {
     pub compute: std::option::Option<crate::model::Compute>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SimulationJobRequest {
     /// <p>The output location.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<& crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The logging configuration.</p>
-    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+    pub fn logging_config(&self) -> std::option::Option<& crate::model::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
@@ -2328,25 +2154,25 @@ impl SimulationJobRequest {
         self.max_job_duration_in_seconds
     }
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
-    pub fn iam_role(&self) -> std::option::Option<&str> {
+    pub fn iam_role(&self) -> std::option::Option<& str> {
         self.iam_role.as_deref()
     }
-    /// <p>The failure behavior the simulation job.</p>
-    /// <dl>
+    /// <p>The failure behavior the simulation job.</p> 
+    /// <dl> 
     /// <dt>
     /// Continue
-    /// </dt>
-    /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
+    /// </dd> 
     /// <dt>
     /// Fail
-    /// </dt>
-    /// <dd>
-    /// <p>Stop the simulation job and terminate the instance.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Stop the simulation job and terminate the instance.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn failure_behavior(&self) -> std::option::Option<&crate::model::FailureBehavior> {
+    pub fn failure_behavior(&self) -> std::option::Option<& crate::model::FailureBehavior> {
         self.failure_behavior.as_ref()
     }
     /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
@@ -2354,42 +2180,35 @@ impl SimulationJobRequest {
         self.use_default_applications
     }
     /// <p>The robot applications to use in the simulation job.</p>
-    pub fn robot_applications(
-        &self,
-    ) -> std::option::Option<&[crate::model::RobotApplicationConfig]> {
+    pub fn robot_applications(&self) -> std::option::Option<& [crate::model::RobotApplicationConfig]> {
         self.robot_applications.as_deref()
     }
     /// <p>The simulation applications to use in the simulation job.</p>
-    pub fn simulation_applications(
-        &self,
-    ) -> std::option::Option<&[crate::model::SimulationApplicationConfig]> {
+    pub fn simulation_applications(&self) -> std::option::Option<& [crate::model::SimulationApplicationConfig]> {
         self.simulation_applications.as_deref()
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> 
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> 
     /// </note>
-    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSourceConfig]> {
+    pub fn data_sources(&self) -> std::option::Option<& [crate::model::DataSourceConfig]> {
         self.data_sources.as_deref()
     }
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Compute information for the simulation job</p>
-    pub fn compute(&self) -> std::option::Option<&crate::model::Compute> {
+    pub fn compute(&self) -> std::option::Option<& crate::model::Compute> {
         self.compute.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`SimulationJobRequest`](crate::model::SimulationJobRequest).
 pub mod simulation_job_request {
-
+    
     /// A builder for [`SimulationJobRequest`](crate::model::SimulationJobRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2399,16 +2218,12 @@ pub mod simulation_job_request {
         pub(crate) iam_role: std::option::Option<std::string::String>,
         pub(crate) failure_behavior: std::option::Option<crate::model::FailureBehavior>,
         pub(crate) use_default_applications: std::option::Option<bool>,
-        pub(crate) robot_applications:
-            std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
-        pub(crate) simulation_applications:
-            std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
+        pub(crate) robot_applications: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
+        pub(crate) simulation_applications: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
         pub(crate) data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) compute: std::option::Option<crate::model::Compute>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The output location.</p>
@@ -2417,12 +2232,8 @@ pub mod simulation_job_request {
             self
         }
         /// <p>The output location.</p>
-        pub fn set_output_location(
-            mut self,
-            input: std::option::Option<crate::model::OutputLocation>,
-        ) -> Self {
-            self.output_location = input;
-            self
+        pub fn set_output_location(mut self, input: std::option::Option<crate::model::OutputLocation>) -> Self {
+            self.output_location = input; self
         }
         /// <p>The logging configuration.</p>
         pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
@@ -2430,12 +2241,8 @@ pub mod simulation_job_request {
             self
         }
         /// <p>The logging configuration.</p>
-        pub fn set_logging_config(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfig>,
-        ) -> Self {
-            self.logging_config = input;
-            self
+        pub fn set_logging_config(mut self, input: std::option::Option<crate::model::LoggingConfig>) -> Self {
+            self.logging_config = input; self
         }
         /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
@@ -2444,8 +2251,7 @@ pub mod simulation_job_request {
         }
         /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_job_duration_in_seconds = input;
-            self
+            self.max_job_duration_in_seconds = input; self
         }
         /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2454,49 +2260,44 @@ pub mod simulation_job_request {
         }
         /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role = input;
-            self
+            self.iam_role = input; self
         }
-        /// <p>The failure behavior the simulation job.</p>
-        /// <dl>
+        /// <p>The failure behavior the simulation job.</p> 
+        /// <dl> 
         /// <dt>
         /// Continue
-        /// </dt>
-        /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
+        /// </dd> 
         /// <dt>
         /// Fail
-        /// </dt>
-        /// <dd>
-        /// <p>Stop the simulation job and terminate the instance.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Stop the simulation job and terminate the instance.</p> 
+        /// </dd> 
         /// </dl>
         pub fn failure_behavior(mut self, input: crate::model::FailureBehavior) -> Self {
             self.failure_behavior = Some(input);
             self
         }
-        /// <p>The failure behavior the simulation job.</p>
-        /// <dl>
+        /// <p>The failure behavior the simulation job.</p> 
+        /// <dl> 
         /// <dt>
         /// Continue
-        /// </dt>
-        /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
+        /// </dd> 
         /// <dt>
         /// Fail
-        /// </dt>
-        /// <dd>
-        /// <p>Stop the simulation job and terminate the instance.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Stop the simulation job and terminate the instance.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_failure_behavior(
-            mut self,
-            input: std::option::Option<crate::model::FailureBehavior>,
-        ) -> Self {
-            self.failure_behavior = input;
-            self
+        pub fn set_failure_behavior(mut self, input: std::option::Option<crate::model::FailureBehavior>) -> Self {
+            self.failure_behavior = input; self
         }
         /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
         pub fn use_default_applications(mut self, input: bool) -> Self {
@@ -2505,8 +2306,7 @@ pub mod simulation_job_request {
         }
         /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
         pub fn set_use_default_applications(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_default_applications = input;
-            self
+            self.use_default_applications = input; self
         }
         /// Appends an item to `robot_applications`.
         ///
@@ -2515,62 +2315,47 @@ pub mod simulation_job_request {
         /// <p>The robot applications to use in the simulation job.</p>
         pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input);
-            self.robot_applications = Some(v);
-            self
+                            v.push(input);
+                            self.robot_applications = Some(v);
+                            self
         }
         /// <p>The robot applications to use in the simulation job.</p>
-        pub fn set_robot_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
-        ) -> Self {
-            self.robot_applications = input;
-            self
+        pub fn set_robot_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>) -> Self {
+            self.robot_applications = input; self
         }
         /// Appends an item to `simulation_applications`.
         ///
         /// To override the contents of this collection use [`set_simulation_applications`](Self::set_simulation_applications).
         ///
         /// <p>The simulation applications to use in the simulation job.</p>
-        pub fn simulation_applications(
-            mut self,
-            input: crate::model::SimulationApplicationConfig,
-        ) -> Self {
+        pub fn simulation_applications(mut self, input: crate::model::SimulationApplicationConfig) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input);
-            self.simulation_applications = Some(v);
-            self
+                            v.push(input);
+                            self.simulation_applications = Some(v);
+                            self
         }
         /// <p>The simulation applications to use in the simulation job.</p>
-        pub fn set_simulation_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
-        ) -> Self {
-            self.simulation_applications = input;
-            self
+        pub fn set_simulation_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>) -> Self {
+            self.simulation_applications = input; self
         }
         /// Appends an item to `data_sources`.
         ///
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> 
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> 
         /// </note>
         pub fn data_sources(mut self, input: crate::model::DataSourceConfig) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input);
-            self.data_sources = Some(v);
-            self
+                            v.push(input);
+                            self.data_sources = Some(v);
+                            self
         }
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> 
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> 
         /// </note>
-        pub fn set_data_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
-        ) -> Self {
-            self.data_sources = input;
-            self
+        pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>) -> Self {
+            self.data_sources = input; self
         }
         /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
@@ -2578,12 +2363,8 @@ pub mod simulation_job_request {
             self
         }
         /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfig>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfig>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>Compute information for the simulation job</p>
         pub fn compute(mut self, input: crate::model::Compute) -> Self {
@@ -2592,52 +2373,56 @@ pub mod simulation_job_request {
         }
         /// <p>Compute information for the simulation job</p>
         pub fn set_compute(mut self, input: std::option::Option<crate::model::Compute>) -> Self {
-            self.compute = input;
-            self
+            self.compute = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`SimulationJobRequest`](crate::model::SimulationJobRequest).
         pub fn build(self) -> crate::model::SimulationJobRequest {
             crate::model::SimulationJobRequest {
-                output_location: self.output_location,
-                logging_config: self.logging_config,
-                max_job_duration_in_seconds: self.max_job_duration_in_seconds.unwrap_or_default(),
-                iam_role: self.iam_role,
-                failure_behavior: self.failure_behavior,
-                use_default_applications: self.use_default_applications,
-                robot_applications: self.robot_applications,
-                simulation_applications: self.simulation_applications,
-                data_sources: self.data_sources,
-                vpc_config: self.vpc_config,
-                compute: self.compute,
-                tags: self.tags,
+                output_location: self.output_location
+                ,
+                logging_config: self.logging_config
+                ,
+                max_job_duration_in_seconds: self.max_job_duration_in_seconds
+                    .unwrap_or_default()
+                ,
+                iam_role: self.iam_role
+                ,
+                failure_behavior: self.failure_behavior
+                ,
+                use_default_applications: self.use_default_applications
+                ,
+                robot_applications: self.robot_applications
+                ,
+                simulation_applications: self.simulation_applications
+                ,
+                data_sources: self.data_sources
+                ,
+                vpc_config: self.vpc_config
+                ,
+                compute: self.compute
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationJobRequest {
     /// Creates a new builder-style object to manufacture [`SimulationJobRequest`](crate::model::SimulationJobRequest).
@@ -2649,7 +2434,7 @@ impl SimulationJobRequest {
 /// <p>Compute information for the simulation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Compute {
+pub struct Compute  {
     /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
     #[doc(hidden)]
     pub simulation_unit_limit: std::option::Option<i32>,
@@ -2666,7 +2451,7 @@ impl Compute {
         self.simulation_unit_limit
     }
     /// <p>Compute type information for the simulation job.</p>
-    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+    pub fn compute_type(&self) -> std::option::Option<& crate::model::ComputeType> {
         self.compute_type.as_ref()
     }
     /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
@@ -2676,7 +2461,7 @@ impl Compute {
 }
 /// See [`Compute`](crate::model::Compute).
 pub mod compute {
-
+    
     /// A builder for [`Compute`](crate::model::Compute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2692,8 +2477,7 @@ pub mod compute {
         }
         /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
         pub fn set_simulation_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.simulation_unit_limit = input;
-            self
+            self.simulation_unit_limit = input; self
         }
         /// <p>Compute type information for the simulation job.</p>
         pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
@@ -2701,12 +2485,8 @@ pub mod compute {
             self
         }
         /// <p>Compute type information for the simulation job.</p>
-        pub fn set_compute_type(
-            mut self,
-            input: std::option::Option<crate::model::ComputeType>,
-        ) -> Self {
-            self.compute_type = input;
-            self
+        pub fn set_compute_type(mut self, input: std::option::Option<crate::model::ComputeType>) -> Self {
+            self.compute_type = input; self
         }
         /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
         pub fn gpu_unit_limit(mut self, input: i32) -> Self {
@@ -2715,18 +2495,22 @@ pub mod compute {
         }
         /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
         pub fn set_gpu_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.gpu_unit_limit = input;
-            self
+            self.gpu_unit_limit = input; self
         }
         /// Consumes the builder and constructs a [`Compute`](crate::model::Compute).
         pub fn build(self) -> crate::model::Compute {
             crate::model::Compute {
-                simulation_unit_limit: self.simulation_unit_limit,
-                compute_type: self.compute_type,
-                gpu_unit_limit: self.gpu_unit_limit,
+                simulation_unit_limit: self.simulation_unit_limit
+                ,
+                compute_type: self.compute_type
+                ,
+                gpu_unit_limit: self.gpu_unit_limit
+                ,
             }
         }
     }
+    
+    
 }
 impl Compute {
     /// Creates a new builder-style object to manufacture [`Compute`](crate::model::Compute).
@@ -2738,7 +2522,7 @@ impl Compute {
 /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfig {
+pub struct VpcConfig  {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2751,11 +2535,11 @@ pub struct VpcConfig {
 }
 impl VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
@@ -2765,7 +2549,7 @@ impl VpcConfig {
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
-
+    
     /// A builder for [`VpcConfig`](crate::model::VpcConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2781,17 +2565,13 @@ pub mod vpc_config {
         /// <p>A list of one or more subnet IDs in your VPC.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>A list of one or more subnet IDs in your VPC.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -2800,17 +2580,13 @@ pub mod vpc_config {
         /// <p>A list of one or more security groups IDs in your VPC.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>A list of one or more security groups IDs in your VPC.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// <p>A boolean indicating whether to assign a public IP address.</p>
         pub fn assign_public_ip(mut self, input: bool) -> Self {
@@ -2819,18 +2595,23 @@ pub mod vpc_config {
         }
         /// <p>A boolean indicating whether to assign a public IP address.</p>
         pub fn set_assign_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.assign_public_ip = input;
-            self
+            self.assign_public_ip = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfig`](crate::model::VpcConfig).
         pub fn build(self) -> crate::model::VpcConfig {
             crate::model::VpcConfig {
-                subnets: self.subnets,
-                security_groups: self.security_groups,
-                assign_public_ip: self.assign_public_ip.unwrap_or_default(),
+                subnets: self.subnets
+                ,
+                security_groups: self.security_groups
+                ,
+                assign_public_ip: self.assign_public_ip
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfig {
     /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
@@ -2842,7 +2623,7 @@ impl VpcConfig {
 /// <p>Information about a data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSourceConfig {
+pub struct DataSourceConfig  {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2852,46 +2633,46 @@ pub struct DataSourceConfig {
     /// <p>The list of S3 keys identifying the data source files.</p>
     #[doc(hidden)]
     pub s3_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>The location where your files are mounted in the container image.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>The location where your files are mounted in the container image.</p> 
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl DataSourceConfig {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The S3 bucket where the data files are located.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn s3_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.s3_keys.as_deref()
     }
-    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The location where your files are mounted in the container image.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>The location where your files are mounted in the container image.</p> 
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
 /// See [`DataSourceConfig`](crate::model::DataSourceConfig).
 pub mod data_source_config {
-
+    
     /// A builder for [`DataSourceConfig`](crate::model::DataSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2909,8 +2690,7 @@ pub mod data_source_config {
         }
         /// <p>The name of the data source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The S3 bucket where the data files are located.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2919,8 +2699,7 @@ pub mod data_source_config {
         }
         /// <p>The S3 bucket where the data files are located.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// Appends an item to `s3_keys`.
         ///
@@ -2929,60 +2708,58 @@ pub mod data_source_config {
         /// <p>The list of S3 keys identifying the data source files.</p>
         pub fn s3_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_keys.unwrap_or_default();
-            v.push(input.into());
-            self.s3_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.s3_keys = Some(v);
+                            self
         }
         /// <p>The list of S3 keys identifying the data source files.</p>
-        pub fn set_s3_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.s3_keys = input;
-            self
+        pub fn set_s3_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.s3_keys = input; self
         }
-        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
         /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
         /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::DataSourceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DataSourceType>) -> Self {
+            self.r#type = input; self
         }
-        /// <p>The location where your files are mounted in the container image.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+        /// <p>The location where your files are mounted in the container image.</p> 
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
         /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination = Some(input.into());
             self
         }
-        /// <p>The location where your files are mounted in the container image.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+        /// <p>The location where your files are mounted in the container image.</p> 
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
         /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`DataSourceConfig`](crate::model::DataSourceConfig).
         pub fn build(self) -> crate::model::DataSourceConfig {
             crate::model::DataSourceConfig {
-                name: self.name,
-                s3_bucket: self.s3_bucket,
-                s3_keys: self.s3_keys,
-                r#type: self.r#type,
-                destination: self.destination,
+                name: self.name
+                ,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_keys: self.s3_keys
+                ,
+                r#type: self.r#type
+                ,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl DataSourceConfig {
     /// Creates a new builder-style object to manufacture [`DataSourceConfig`](crate::model::DataSourceConfig).
@@ -2997,9 +2774,9 @@ impl DataSourceConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasourcetype = unimplemented!();
 /// match datasourcetype {
@@ -3022,22 +2799,14 @@ impl DataSourceConfig {
 /// Specifically, when `datasourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Archive,
@@ -3046,7 +2815,7 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Prefix,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataSourceType {
     fn from(s: &str) -> Self {
@@ -3054,17 +2823,17 @@ impl std::convert::From<&str> for DataSourceType {
             "Archive" => DataSourceType::Archive,
             "File" => DataSourceType::File,
             "Prefix" => DataSourceType::Prefix,
-            other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataSourceType::from(s))
+                }
+            }
 impl DataSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3072,12 +2841,14 @@ impl DataSourceType {
             DataSourceType::Archive => "Archive",
             DataSourceType::File => "File",
             DataSourceType::Prefix => "Prefix",
-            DataSourceType::Unknown(value) => value.as_str(),
+            DataSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Archive", "File", "Prefix"]
+        &[
+            "Archive", "File", "Prefix"
+        ]
     }
 }
 impl AsRef<str> for DataSourceType {
@@ -3089,7 +2860,7 @@ impl AsRef<str> for DataSourceType {
 /// <p>Information about a simulation application configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationApplicationConfig {
+pub struct SimulationApplicationConfig  {
     /// <p>The application information for the simulation application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -3101,90 +2872,78 @@ pub struct SimulationApplicationConfig {
     pub launch_config: std::option::Option<crate::model::LaunchConfig>,
     /// <p>Information about upload configurations for the simulation application.</p>
     #[doc(hidden)]
-    pub upload_configurations:
-        std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
+    pub upload_configurations: std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
     /// <p>A list of world configurations.</p>
     #[doc(hidden)]
     pub world_configs: std::option::Option<std::vec::Vec<crate::model::WorldConfig>>,
-    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> 
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     #[doc(hidden)]
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the simulation application.</p>
     #[doc(hidden)]
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     #[doc(hidden)]
     pub use_default_tools: std::option::Option<bool>,
 }
 impl SimulationApplicationConfig {
     /// <p>The application information for the simulation application.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The version of the simulation application.</p>
-    pub fn application_version(&self) -> std::option::Option<&str> {
+    pub fn application_version(&self) -> std::option::Option<& str> {
         self.application_version.as_deref()
     }
     /// <p>The launch configuration for the simulation application.</p>
-    pub fn launch_config(&self) -> std::option::Option<&crate::model::LaunchConfig> {
+    pub fn launch_config(&self) -> std::option::Option<& crate::model::LaunchConfig> {
         self.launch_config.as_ref()
     }
     /// <p>Information about upload configurations for the simulation application.</p>
-    pub fn upload_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::UploadConfiguration]> {
+    pub fn upload_configurations(&self) -> std::option::Option<& [crate::model::UploadConfiguration]> {
         self.upload_configurations.as_deref()
     }
     /// <p>A list of world configurations.</p>
-    pub fn world_configs(&self) -> std::option::Option<&[crate::model::WorldConfig]> {
+    pub fn world_configs(&self) -> std::option::Option<& [crate::model::WorldConfig]> {
         self.world_configs.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> 
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
         self.use_default_upload_configurations
     }
     /// <p>Information about tools configured for the simulation application.</p>
-    pub fn tools(&self) -> std::option::Option<&[crate::model::Tool]> {
+    pub fn tools(&self) -> std::option::Option<& [crate::model::Tool]> {
         self.tools.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
     }
 }
 /// See [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
 pub mod simulation_application_config {
-
+    
     /// A builder for [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) application_version: std::option::Option<std::string::String>,
         pub(crate) launch_config: std::option::Option<crate::model::LaunchConfig>,
-        pub(crate) upload_configurations:
-            std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
+        pub(crate) upload_configurations: std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
         pub(crate) world_configs: std::option::Option<std::vec::Vec<crate::model::WorldConfig>>,
         pub(crate) use_default_upload_configurations: std::option::Option<bool>,
         pub(crate) tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
@@ -3198,8 +2957,7 @@ pub mod simulation_application_config {
         }
         /// <p>The application information for the simulation application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input;
-            self
+            self.application = input; self
         }
         /// <p>The version of the simulation application.</p>
         pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3207,12 +2965,8 @@ pub mod simulation_application_config {
             self
         }
         /// <p>The version of the simulation application.</p>
-        pub fn set_application_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_version = input;
-            self
+        pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_version = input; self
         }
         /// <p>The launch configuration for the simulation application.</p>
         pub fn launch_config(mut self, input: crate::model::LaunchConfig) -> Self {
@@ -3220,12 +2974,8 @@ pub mod simulation_application_config {
             self
         }
         /// <p>The launch configuration for the simulation application.</p>
-        pub fn set_launch_config(
-            mut self,
-            input: std::option::Option<crate::model::LaunchConfig>,
-        ) -> Self {
-            self.launch_config = input;
-            self
+        pub fn set_launch_config(mut self, input: std::option::Option<crate::model::LaunchConfig>) -> Self {
+            self.launch_config = input; self
         }
         /// Appends an item to `upload_configurations`.
         ///
@@ -3234,17 +2984,13 @@ pub mod simulation_application_config {
         /// <p>Information about upload configurations for the simulation application.</p>
         pub fn upload_configurations(mut self, input: crate::model::UploadConfiguration) -> Self {
             let mut v = self.upload_configurations.unwrap_or_default();
-            v.push(input);
-            self.upload_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.upload_configurations = Some(v);
+                            self
         }
         /// <p>Information about upload configurations for the simulation application.</p>
-        pub fn set_upload_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
-        ) -> Self {
-            self.upload_configurations = input;
-            self
+        pub fn set_upload_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>) -> Self {
+            self.upload_configurations = input; self
         }
         /// Appends an item to `world_configs`.
         ///
@@ -3253,42 +2999,30 @@ pub mod simulation_application_config {
         /// <p>A list of world configurations.</p>
         pub fn world_configs(mut self, input: crate::model::WorldConfig) -> Self {
             let mut v = self.world_configs.unwrap_or_default();
-            v.push(input);
-            self.world_configs = Some(v);
-            self
+                            v.push(input);
+                            self.world_configs = Some(v);
+                            self
         }
         /// <p>A list of world configurations.</p>
-        pub fn set_world_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorldConfig>>,
-        ) -> Self {
-            self.world_configs = input;
-            self
+        pub fn set_world_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorldConfig>>) -> Self {
+            self.world_configs = input; self
         }
-        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> 
+        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
             self.use_default_upload_configurations = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> 
+        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
-        pub fn set_use_default_upload_configurations(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.use_default_upload_configurations = input;
-            self
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
+        pub fn set_use_default_upload_configurations(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_default_upload_configurations = input; self
         }
         /// Appends an item to `tools`.
         ///
@@ -3297,52 +3031,53 @@ pub mod simulation_application_config {
         /// <p>Information about tools configured for the simulation application.</p>
         pub fn tools(mut self, input: crate::model::Tool) -> Self {
             let mut v = self.tools.unwrap_or_default();
-            v.push(input);
-            self.tools = Some(v);
-            self
+                            v.push(input);
+                            self.tools = Some(v);
+                            self
         }
         /// <p>Information about tools configured for the simulation application.</p>
-        pub fn set_tools(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-        ) -> Self {
-            self.tools = input;
-            self
+        pub fn set_tools(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tool>>) -> Self {
+            self.tools = input; self
         }
-        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         pub fn set_use_default_tools(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_default_tools = input;
-            self
+            self.use_default_tools = input; self
         }
         /// Consumes the builder and constructs a [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
         pub fn build(self) -> crate::model::SimulationApplicationConfig {
             crate::model::SimulationApplicationConfig {
-                application: self.application,
-                application_version: self.application_version,
-                launch_config: self.launch_config,
-                upload_configurations: self.upload_configurations,
-                world_configs: self.world_configs,
-                use_default_upload_configurations: self.use_default_upload_configurations,
-                tools: self.tools,
-                use_default_tools: self.use_default_tools,
+                application: self.application
+                ,
+                application_version: self.application_version
+                ,
+                launch_config: self.launch_config
+                ,
+                upload_configurations: self.upload_configurations
+                ,
+                world_configs: self.world_configs
+                ,
+                use_default_upload_configurations: self.use_default_upload_configurations
+                ,
+                tools: self.tools
+                ,
+                use_default_tools: self.use_default_tools
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationApplicationConfig {
     /// Creates a new builder-style object to manufacture [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
@@ -3354,7 +3089,7 @@ impl SimulationApplicationConfig {
 /// <p>Information about a tool. Tools are used in a simulation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tool {
+pub struct Tool  {
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     #[doc(hidden)]
     pub stream_ui: std::option::Option<bool>,
@@ -3377,11 +3112,11 @@ impl Tool {
         self.stream_ui
     }
     /// <p>The name of the tool.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
-    pub fn command(&self) -> std::option::Option<&str> {
+    pub fn command(&self) -> std::option::Option<& str> {
         self.command.as_deref()
     }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
@@ -3389,13 +3124,13 @@ impl Tool {
         self.stream_output_to_cloud_watch
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
-    pub fn exit_behavior(&self) -> std::option::Option<&crate::model::ExitBehavior> {
+    pub fn exit_behavior(&self) -> std::option::Option<& crate::model::ExitBehavior> {
         self.exit_behavior.as_ref()
     }
 }
 /// See [`Tool`](crate::model::Tool).
 pub mod tool {
-
+    
     /// A builder for [`Tool`](crate::model::Tool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3413,8 +3148,7 @@ pub mod tool {
         }
         /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
         pub fn set_stream_ui(mut self, input: std::option::Option<bool>) -> Self {
-            self.stream_ui = input;
-            self
+            self.stream_ui = input; self
         }
         /// <p>The name of the tool.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3423,8 +3157,7 @@ pub mod tool {
         }
         /// <p>The name of the tool.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3433,8 +3166,7 @@ pub mod tool {
         }
         /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
         pub fn set_command(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.command = input;
-            self
+            self.command = input; self
         }
         /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
         pub fn stream_output_to_cloud_watch(mut self, input: bool) -> Self {
@@ -3442,12 +3174,8 @@ pub mod tool {
             self
         }
         /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
-        pub fn set_stream_output_to_cloud_watch(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.stream_output_to_cloud_watch = input;
-            self
+        pub fn set_stream_output_to_cloud_watch(mut self, input: std::option::Option<bool>) -> Self {
+            self.stream_output_to_cloud_watch = input; self
         }
         /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
         pub fn exit_behavior(mut self, input: crate::model::ExitBehavior) -> Self {
@@ -3455,24 +3183,27 @@ pub mod tool {
             self
         }
         /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
-        pub fn set_exit_behavior(
-            mut self,
-            input: std::option::Option<crate::model::ExitBehavior>,
-        ) -> Self {
-            self.exit_behavior = input;
-            self
+        pub fn set_exit_behavior(mut self, input: std::option::Option<crate::model::ExitBehavior>) -> Self {
+            self.exit_behavior = input; self
         }
         /// Consumes the builder and constructs a [`Tool`](crate::model::Tool).
         pub fn build(self) -> crate::model::Tool {
             crate::model::Tool {
-                stream_ui: self.stream_ui,
-                name: self.name,
-                command: self.command,
-                stream_output_to_cloud_watch: self.stream_output_to_cloud_watch,
-                exit_behavior: self.exit_behavior,
+                stream_ui: self.stream_ui
+                ,
+                name: self.name
+                ,
+                command: self.command
+                ,
+                stream_output_to_cloud_watch: self.stream_output_to_cloud_watch
+                ,
+                exit_behavior: self.exit_behavior
+                ,
             }
         }
     }
+    
+    
 }
 impl Tool {
     /// Creates a new builder-style object to manufacture [`Tool`](crate::model::Tool).
@@ -3487,9 +3218,9 @@ impl Tool {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exitbehavior = unimplemented!();
 /// match exitbehavior {
@@ -3511,58 +3242,52 @@ impl Tool {
 /// Specifically, when `exitbehavior` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExitBehavior::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExitBehavior {
     #[allow(missing_docs)] // documentation missing in model
     Fail,
     #[allow(missing_docs)] // documentation missing in model
     Restart,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExitBehavior {
     fn from(s: &str) -> Self {
         match s {
             "FAIL" => ExitBehavior::Fail,
             "RESTART" => ExitBehavior::Restart,
-            other => ExitBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExitBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExitBehavior {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExitBehavior::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExitBehavior::from(s))
+                }
+            }
 impl ExitBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExitBehavior::Fail => "FAIL",
             ExitBehavior::Restart => "RESTART",
-            ExitBehavior::Unknown(value) => value.as_str(),
+            ExitBehavior::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAIL", "RESTART"]
+        &[
+            "FAIL", "RESTART"
+        ]
     }
 }
 impl AsRef<str> for ExitBehavior {
@@ -3574,20 +3299,20 @@ impl AsRef<str> for ExitBehavior {
 /// <p>Configuration information for a world.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldConfig {
+pub struct WorldConfig  {
     /// <p>The world generated by Simulation WorldForge.</p>
     #[doc(hidden)]
     pub world: std::option::Option<std::string::String>,
 }
 impl WorldConfig {
     /// <p>The world generated by Simulation WorldForge.</p>
-    pub fn world(&self) -> std::option::Option<&str> {
+    pub fn world(&self) -> std::option::Option<& str> {
         self.world.as_deref()
     }
 }
 /// See [`WorldConfig`](crate::model::WorldConfig).
 pub mod world_config {
-
+    
     /// A builder for [`WorldConfig`](crate::model::WorldConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3601,14 +3326,18 @@ pub mod world_config {
         }
         /// <p>The world generated by Simulation WorldForge.</p>
         pub fn set_world(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.world = input;
-            self
+            self.world = input; self
         }
         /// Consumes the builder and constructs a [`WorldConfig`](crate::model::WorldConfig).
         pub fn build(self) -> crate::model::WorldConfig {
-            crate::model::WorldConfig { world: self.world }
+            crate::model::WorldConfig {
+                world: self.world
+                ,
+            }
         }
     }
+    
+    
 }
 impl WorldConfig {
     /// Creates a new builder-style object to manufacture [`WorldConfig`](crate::model::WorldConfig).
@@ -3620,8 +3349,8 @@ impl WorldConfig {
 /// <p>Provides upload configuration information. Files are uploaded from the simulation job to a location you specify. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadConfiguration {
-    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
+pub struct UploadConfiguration  {
+    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p> 
     /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
     /// <simid>
     /// /
@@ -3634,27 +3363,27 @@ pub struct UploadConfiguration {
     /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
-    /// <p>Specifies when to upload the files:</p>
-    /// <dl>
+    /// <p>Specifies when to upload the files:</p> 
+    /// <dl> 
     /// <dt>
     /// UPLOAD_ON_TERMINATE
-    /// </dt>
-    /// <dd>
-    /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p>
-    /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p> 
+    /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p> 
+    /// </dd> 
     /// <dt>
     /// UPLOAD_ROLLING_AUTO_REMOVE
-    /// </dt>
-    /// <dd>
-    /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub upload_behavior: std::option::Option<crate::model::UploadBehavior>,
 }
 impl UploadConfiguration {
-    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
+    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p> 
     /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
     /// <simid>
     /// /
@@ -3662,36 +3391,36 @@ impl UploadConfiguration {
     /// /robot-test
     /// </runid>
     /// </simid></code>. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
-    /// <p>Specifies when to upload the files:</p>
-    /// <dl>
+    /// <p>Specifies when to upload the files:</p> 
+    /// <dl> 
     /// <dt>
     /// UPLOAD_ON_TERMINATE
-    /// </dt>
-    /// <dd>
-    /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p>
-    /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p> 
+    /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p> 
+    /// </dd> 
     /// <dt>
     /// UPLOAD_ROLLING_AUTO_REMOVE
-    /// </dt>
-    /// <dd>
-    /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p> 
+    /// </dd> 
     /// </dl>
-    pub fn upload_behavior(&self) -> std::option::Option<&crate::model::UploadBehavior> {
+    pub fn upload_behavior(&self) -> std::option::Option<& crate::model::UploadBehavior> {
         self.upload_behavior.as_ref()
     }
 }
 /// See [`UploadConfiguration`](crate::model::UploadConfiguration).
 pub mod upload_configuration {
-
+    
     /// A builder for [`UploadConfiguration`](crate::model::UploadConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3700,7 +3429,7 @@ pub mod upload_configuration {
         pub(crate) upload_behavior: std::option::Option<crate::model::UploadBehavior>,
     }
     impl Builder {
-        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
+        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p> 
         /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
         /// <simid>
         /// /
@@ -3712,7 +3441,7 @@ pub mod upload_configuration {
             self.name = Some(input.into());
             self
         }
-        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
+        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p> 
         /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
         /// <simid>
         /// /
@@ -3721,8 +3450,7 @@ pub mod upload_configuration {
         /// </runid>
         /// </simid></code>. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3731,61 +3459,61 @@ pub mod upload_configuration {
         }
         /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
-        /// <p>Specifies when to upload the files:</p>
-        /// <dl>
+        /// <p>Specifies when to upload the files:</p> 
+        /// <dl> 
         /// <dt>
         /// UPLOAD_ON_TERMINATE
-        /// </dt>
-        /// <dd>
-        /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p>
-        /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p> 
+        /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p> 
+        /// </dd> 
         /// <dt>
         /// UPLOAD_ROLLING_AUTO_REMOVE
-        /// </dt>
-        /// <dd>
-        /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p> 
+        /// </dd> 
         /// </dl>
         pub fn upload_behavior(mut self, input: crate::model::UploadBehavior) -> Self {
             self.upload_behavior = Some(input);
             self
         }
-        /// <p>Specifies when to upload the files:</p>
-        /// <dl>
+        /// <p>Specifies when to upload the files:</p> 
+        /// <dl> 
         /// <dt>
         /// UPLOAD_ON_TERMINATE
-        /// </dt>
-        /// <dd>
-        /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p>
-        /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p> 
+        /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p> 
+        /// </dd> 
         /// <dt>
         /// UPLOAD_ROLLING_AUTO_REMOVE
-        /// </dt>
-        /// <dd>
-        /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_upload_behavior(
-            mut self,
-            input: std::option::Option<crate::model::UploadBehavior>,
-        ) -> Self {
-            self.upload_behavior = input;
-            self
+        pub fn set_upload_behavior(mut self, input: std::option::Option<crate::model::UploadBehavior>) -> Self {
+            self.upload_behavior = input; self
         }
         /// Consumes the builder and constructs a [`UploadConfiguration`](crate::model::UploadConfiguration).
         pub fn build(self) -> crate::model::UploadConfiguration {
             crate::model::UploadConfiguration {
-                name: self.name,
-                path: self.path,
-                upload_behavior: self.upload_behavior,
+                name: self.name
+                ,
+                path: self.path
+                ,
+                upload_behavior: self.upload_behavior
+                ,
             }
         }
     }
+    
+    
 }
 impl UploadConfiguration {
     /// Creates a new builder-style object to manufacture [`UploadConfiguration`](crate::model::UploadConfiguration).
@@ -3800,9 +3528,9 @@ impl UploadConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let uploadbehavior = unimplemented!();
 /// match uploadbehavior {
@@ -3824,58 +3552,52 @@ impl UploadConfiguration {
 /// Specifically, when `uploadbehavior` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UploadBehavior::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UploadBehavior {
     #[allow(missing_docs)] // documentation missing in model
     UploadOnTerminate,
     #[allow(missing_docs)] // documentation missing in model
     UploadRollingAutoRemove,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UploadBehavior {
     fn from(s: &str) -> Self {
         match s {
             "UPLOAD_ON_TERMINATE" => UploadBehavior::UploadOnTerminate,
             "UPLOAD_ROLLING_AUTO_REMOVE" => UploadBehavior::UploadRollingAutoRemove,
-            other => UploadBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UploadBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UploadBehavior {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UploadBehavior::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UploadBehavior::from(s))
+                }
+            }
 impl UploadBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UploadBehavior::UploadOnTerminate => "UPLOAD_ON_TERMINATE",
             UploadBehavior::UploadRollingAutoRemove => "UPLOAD_ROLLING_AUTO_REMOVE",
-            UploadBehavior::Unknown(value) => value.as_str(),
+            UploadBehavior::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UPLOAD_ON_TERMINATE", "UPLOAD_ROLLING_AUTO_REMOVE"]
+        &[
+            "UPLOAD_ON_TERMINATE", "UPLOAD_ROLLING_AUTO_REMOVE"
+        ]
     }
 }
 impl AsRef<str> for UploadBehavior {
@@ -3887,7 +3609,7 @@ impl AsRef<str> for UploadBehavior {
 /// <p>Information about a launch configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchConfig {
+pub struct LaunchConfig  {
     /// <p>The package name.</p>
     #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
@@ -3896,62 +3618,54 @@ pub struct LaunchConfig {
     pub launch_file: std::option::Option<std::string::String>,
     /// <p>The environment variables for the application launch.</p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The port forwarding configuration.</p>
     #[doc(hidden)]
     pub port_forwarding_config: std::option::Option<crate::model::PortForwardingConfig>,
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
     #[doc(hidden)]
     pub stream_ui: bool,
-    /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+    /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p> 
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     #[doc(hidden)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LaunchConfig {
     /// <p>The package name.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The launch file name.</p>
-    pub fn launch_file(&self) -> std::option::Option<&str> {
+    pub fn launch_file(&self) -> std::option::Option<& str> {
         self.launch_file.as_deref()
     }
     /// <p>The environment variables for the application launch.</p>
-    pub fn environment_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p>The port forwarding configuration.</p>
-    pub fn port_forwarding_config(
-        &self,
-    ) -> std::option::Option<&crate::model::PortForwardingConfig> {
+    pub fn port_forwarding_config(&self) -> std::option::Option<& crate::model::PortForwardingConfig> {
         self.port_forwarding_config.as_ref()
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
     pub fn stream_ui(&self) -> bool {
         self.stream_ui
     }
-    /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+    /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p> 
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> std::option::Option<& [std::string::String]> {
         self.command.as_deref()
     }
 }
 /// See [`LaunchConfig`](crate::model::LaunchConfig).
 pub mod launch_config {
-
+    
     /// A builder for [`LaunchConfig`](crate::model::LaunchConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
         pub(crate) launch_file: std::option::Option<std::string::String>,
-        pub(crate) environment_variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) port_forwarding_config: std::option::Option<crate::model::PortForwardingConfig>,
         pub(crate) stream_ui: std::option::Option<bool>,
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3964,8 +3678,7 @@ pub mod launch_config {
         }
         /// <p>The package name.</p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_name = input;
-            self
+            self.package_name = input; self
         }
         /// <p>The launch file name.</p>
         pub fn launch_file(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3974,33 +3687,22 @@ pub mod launch_config {
         }
         /// <p>The launch file name.</p>
         pub fn set_launch_file(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.launch_file = input;
-            self
+            self.launch_file = input; self
         }
         /// Adds a key-value pair to `environment_variables`.
         ///
         /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
         ///
         /// <p>The environment variables for the application launch.</p>
-        pub fn environment_variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.environment_variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.environment_variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.environment_variables = Some(hash_map);
+                            self
         }
         /// <p>The environment variables for the application launch.</p>
-        pub fn set_environment_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.environment_variables = input;
-            self
+        pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.environment_variables = input; self
         }
         /// <p>The port forwarding configuration.</p>
         pub fn port_forwarding_config(mut self, input: crate::model::PortForwardingConfig) -> Self {
@@ -4008,12 +3710,8 @@ pub mod launch_config {
             self
         }
         /// <p>The port forwarding configuration.</p>
-        pub fn set_port_forwarding_config(
-            mut self,
-            input: std::option::Option<crate::model::PortForwardingConfig>,
-        ) -> Self {
-            self.port_forwarding_config = input;
-            self
+        pub fn set_port_forwarding_config(mut self, input: std::option::Option<crate::model::PortForwardingConfig>) -> Self {
+            self.port_forwarding_config = input; self
         }
         /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
         pub fn stream_ui(mut self, input: bool) -> Self {
@@ -4022,42 +3720,46 @@ pub mod launch_config {
         }
         /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
         pub fn set_stream_ui(mut self, input: std::option::Option<bool>) -> Self {
-            self.stream_ui = input;
-            self
+            self.stream_ui = input; self
         }
         /// Appends an item to `command`.
         ///
         /// To override the contents of this collection use [`set_command`](Self::set_command).
         ///
-        /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+        /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p> 
         /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
-            v.push(input.into());
-            self.command = Some(v);
-            self
+                            v.push(input.into());
+                            self.command = Some(v);
+                            self
         }
-        /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+        /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p> 
         /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
-        pub fn set_command(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.command = input;
-            self
+        pub fn set_command(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.command = input; self
         }
         /// Consumes the builder and constructs a [`LaunchConfig`](crate::model::LaunchConfig).
         pub fn build(self) -> crate::model::LaunchConfig {
             crate::model::LaunchConfig {
-                package_name: self.package_name,
-                launch_file: self.launch_file,
-                environment_variables: self.environment_variables,
-                port_forwarding_config: self.port_forwarding_config,
-                stream_ui: self.stream_ui.unwrap_or_default(),
-                command: self.command,
+                package_name: self.package_name
+                ,
+                launch_file: self.launch_file
+                ,
+                environment_variables: self.environment_variables
+                ,
+                port_forwarding_config: self.port_forwarding_config
+                ,
+                stream_ui: self.stream_ui
+                    .unwrap_or_default()
+                ,
+                command: self.command
+                ,
             }
         }
     }
+    
+    
 }
 impl LaunchConfig {
     /// Creates a new builder-style object to manufacture [`LaunchConfig`](crate::model::LaunchConfig).
@@ -4069,20 +3771,20 @@ impl LaunchConfig {
 /// <p>Configuration information for port forwarding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortForwardingConfig {
+pub struct PortForwardingConfig  {
     /// <p>The port mappings for the configuration.</p>
     #[doc(hidden)]
     pub port_mappings: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
 }
 impl PortForwardingConfig {
     /// <p>The port mappings for the configuration.</p>
-    pub fn port_mappings(&self) -> std::option::Option<&[crate::model::PortMapping]> {
+    pub fn port_mappings(&self) -> std::option::Option<& [crate::model::PortMapping]> {
         self.port_mappings.as_deref()
     }
 }
 /// See [`PortForwardingConfig`](crate::model::PortForwardingConfig).
 pub mod port_forwarding_config {
-
+    
     /// A builder for [`PortForwardingConfig`](crate::model::PortForwardingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4096,25 +3798,24 @@ pub mod port_forwarding_config {
         /// <p>The port mappings for the configuration.</p>
         pub fn port_mappings(mut self, input: crate::model::PortMapping) -> Self {
             let mut v = self.port_mappings.unwrap_or_default();
-            v.push(input);
-            self.port_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.port_mappings = Some(v);
+                            self
         }
         /// <p>The port mappings for the configuration.</p>
-        pub fn set_port_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
-        ) -> Self {
-            self.port_mappings = input;
-            self
+        pub fn set_port_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::PortMapping>>) -> Self {
+            self.port_mappings = input; self
         }
         /// Consumes the builder and constructs a [`PortForwardingConfig`](crate::model::PortForwardingConfig).
         pub fn build(self) -> crate::model::PortForwardingConfig {
             crate::model::PortForwardingConfig {
-                port_mappings: self.port_mappings,
+                port_mappings: self.port_mappings
+                ,
             }
         }
     }
+    
+    
 }
 impl PortForwardingConfig {
     /// Creates a new builder-style object to manufacture [`PortForwardingConfig`](crate::model::PortForwardingConfig).
@@ -4126,7 +3827,7 @@ impl PortForwardingConfig {
 /// <p>An object representing a port mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortMapping {
+pub struct PortMapping  {
     /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
     #[doc(hidden)]
     pub job_port: i32,
@@ -4153,7 +3854,7 @@ impl PortMapping {
 }
 /// See [`PortMapping`](crate::model::PortMapping).
 pub mod port_mapping {
-
+    
     /// A builder for [`PortMapping`](crate::model::PortMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4169,8 +3870,7 @@ pub mod port_mapping {
         }
         /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
         pub fn set_job_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.job_port = input;
-            self
+            self.job_port = input; self
         }
         /// <p>The port number on the application.</p>
         pub fn application_port(mut self, input: i32) -> Self {
@@ -4179,8 +3879,7 @@ pub mod port_mapping {
         }
         /// <p>The port number on the application.</p>
         pub fn set_application_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.application_port = input;
-            self
+            self.application_port = input; self
         }
         /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
         pub fn enable_on_public_ip(mut self, input: bool) -> Self {
@@ -4189,18 +3888,25 @@ pub mod port_mapping {
         }
         /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
         pub fn set_enable_on_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_on_public_ip = input;
-            self
+            self.enable_on_public_ip = input; self
         }
         /// Consumes the builder and constructs a [`PortMapping`](crate::model::PortMapping).
         pub fn build(self) -> crate::model::PortMapping {
             crate::model::PortMapping {
-                job_port: self.job_port.unwrap_or_default(),
-                application_port: self.application_port.unwrap_or_default(),
-                enable_on_public_ip: self.enable_on_public_ip.unwrap_or_default(),
+                job_port: self.job_port
+                    .unwrap_or_default()
+                ,
+                application_port: self.application_port
+                    .unwrap_or_default()
+                ,
+                enable_on_public_ip: self.enable_on_public_ip
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PortMapping {
     /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
@@ -4212,7 +3918,7 @@ impl PortMapping {
 /// <p>Application configuration information for a robot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RobotApplicationConfig {
+pub struct RobotApplicationConfig  {
     /// <p>The application information for the robot application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -4224,83 +3930,71 @@ pub struct RobotApplicationConfig {
     pub launch_config: std::option::Option<crate::model::LaunchConfig>,
     /// <p>The upload configurations for the robot application.</p>
     #[doc(hidden)]
-    pub upload_configurations:
-        std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
-    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    pub upload_configurations: std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> 
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     #[doc(hidden)]
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the robot application.</p>
     #[doc(hidden)]
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     #[doc(hidden)]
     pub use_default_tools: std::option::Option<bool>,
 }
 impl RobotApplicationConfig {
     /// <p>The application information for the robot application.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The version of the robot application.</p>
-    pub fn application_version(&self) -> std::option::Option<&str> {
+    pub fn application_version(&self) -> std::option::Option<& str> {
         self.application_version.as_deref()
     }
     /// <p>The launch configuration for the robot application.</p>
-    pub fn launch_config(&self) -> std::option::Option<&crate::model::LaunchConfig> {
+    pub fn launch_config(&self) -> std::option::Option<& crate::model::LaunchConfig> {
         self.launch_config.as_ref()
     }
     /// <p>The upload configurations for the robot application.</p>
-    pub fn upload_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::UploadConfiguration]> {
+    pub fn upload_configurations(&self) -> std::option::Option<& [crate::model::UploadConfiguration]> {
         self.upload_configurations.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> 
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
         self.use_default_upload_configurations
     }
     /// <p>Information about tools configured for the robot application.</p>
-    pub fn tools(&self) -> std::option::Option<&[crate::model::Tool]> {
+    pub fn tools(&self) -> std::option::Option<& [crate::model::Tool]> {
         self.tools.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
     }
 }
 /// See [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
 pub mod robot_application_config {
-
+    
     /// A builder for [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) application_version: std::option::Option<std::string::String>,
         pub(crate) launch_config: std::option::Option<crate::model::LaunchConfig>,
-        pub(crate) upload_configurations:
-            std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
+        pub(crate) upload_configurations: std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
         pub(crate) use_default_upload_configurations: std::option::Option<bool>,
         pub(crate) tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
         pub(crate) use_default_tools: std::option::Option<bool>,
@@ -4313,8 +4007,7 @@ pub mod robot_application_config {
         }
         /// <p>The application information for the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input;
-            self
+            self.application = input; self
         }
         /// <p>The version of the robot application.</p>
         pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4322,12 +4015,8 @@ pub mod robot_application_config {
             self
         }
         /// <p>The version of the robot application.</p>
-        pub fn set_application_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_version = input;
-            self
+        pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_version = input; self
         }
         /// <p>The launch configuration for the robot application.</p>
         pub fn launch_config(mut self, input: crate::model::LaunchConfig) -> Self {
@@ -4335,12 +4024,8 @@ pub mod robot_application_config {
             self
         }
         /// <p>The launch configuration for the robot application.</p>
-        pub fn set_launch_config(
-            mut self,
-            input: std::option::Option<crate::model::LaunchConfig>,
-        ) -> Self {
-            self.launch_config = input;
-            self
+        pub fn set_launch_config(mut self, input: std::option::Option<crate::model::LaunchConfig>) -> Self {
+            self.launch_config = input; self
         }
         /// Appends an item to `upload_configurations`.
         ///
@@ -4349,42 +4034,30 @@ pub mod robot_application_config {
         /// <p>The upload configurations for the robot application.</p>
         pub fn upload_configurations(mut self, input: crate::model::UploadConfiguration) -> Self {
             let mut v = self.upload_configurations.unwrap_or_default();
-            v.push(input);
-            self.upload_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.upload_configurations = Some(v);
+                            self
         }
         /// <p>The upload configurations for the robot application.</p>
-        pub fn set_upload_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
-        ) -> Self {
-            self.upload_configurations = input;
-            self
+        pub fn set_upload_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>) -> Self {
+            self.upload_configurations = input; self
         }
-        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> 
+        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
             self.use_default_upload_configurations = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> 
+        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
-        pub fn set_use_default_upload_configurations(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.use_default_upload_configurations = input;
-            self
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
+        pub fn set_use_default_upload_configurations(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_default_upload_configurations = input; self
         }
         /// Appends an item to `tools`.
         ///
@@ -4393,51 +4066,51 @@ pub mod robot_application_config {
         /// <p>Information about tools configured for the robot application.</p>
         pub fn tools(mut self, input: crate::model::Tool) -> Self {
             let mut v = self.tools.unwrap_or_default();
-            v.push(input);
-            self.tools = Some(v);
-            self
+                            v.push(input);
+                            self.tools = Some(v);
+                            self
         }
         /// <p>Information about tools configured for the robot application.</p>
-        pub fn set_tools(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-        ) -> Self {
-            self.tools = input;
-            self
+        pub fn set_tools(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tool>>) -> Self {
+            self.tools = input; self
         }
-        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         pub fn set_use_default_tools(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_default_tools = input;
-            self
+            self.use_default_tools = input; self
         }
         /// Consumes the builder and constructs a [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
         pub fn build(self) -> crate::model::RobotApplicationConfig {
             crate::model::RobotApplicationConfig {
-                application: self.application,
-                application_version: self.application_version,
-                launch_config: self.launch_config,
-                upload_configurations: self.upload_configurations,
-                use_default_upload_configurations: self.use_default_upload_configurations,
-                tools: self.tools,
-                use_default_tools: self.use_default_tools,
+                application: self.application
+                ,
+                application_version: self.application_version
+                ,
+                launch_config: self.launch_config
+                ,
+                upload_configurations: self.upload_configurations
+                ,
+                use_default_upload_configurations: self.use_default_upload_configurations
+                ,
+                tools: self.tools
+                ,
+                use_default_tools: self.use_default_tools
+                ,
             }
         }
     }
+    
+    
 }
 impl RobotApplicationConfig {
     /// Creates a new builder-style object to manufacture [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
@@ -4452,9 +4125,9 @@ impl RobotApplicationConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failurebehavior = unimplemented!();
 /// match failurebehavior {
@@ -4476,58 +4149,52 @@ impl RobotApplicationConfig {
 /// Specifically, when `failurebehavior` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailureBehavior::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailureBehavior {
     #[allow(missing_docs)] // documentation missing in model
     Continue,
     #[allow(missing_docs)] // documentation missing in model
     Fail,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureBehavior {
     fn from(s: &str) -> Self {
         match s {
             "Continue" => FailureBehavior::Continue,
             "Fail" => FailureBehavior::Fail,
-            other => FailureBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FailureBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FailureBehavior {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailureBehavior::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailureBehavior::from(s))
+                }
+            }
 impl FailureBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailureBehavior::Continue => "Continue",
             FailureBehavior::Fail => "Fail",
-            FailureBehavior::Unknown(value) => value.as_str(),
+            FailureBehavior::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Continue", "Fail"]
+        &[
+            "Continue", "Fail"
+        ]
     }
 }
 impl AsRef<str> for FailureBehavior {
@@ -4539,63 +4206,57 @@ impl AsRef<str> for FailureBehavior {
 /// <p>The logging configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfig {
-    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+pub struct LoggingConfig  {
+    /// <p>A boolean indicating whether to record all ROS topics.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     #[doc(hidden)]
     pub record_all_ros_topics: std::option::Option<bool>,
 }
 impl LoggingConfig {
-    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
-    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// <p>A boolean indicating whether to record all ROS topics.</p> <important> 
+    /// <p>This API is no longer supported and will throw an error if used.</p> 
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn record_all_ros_topics(&self) -> std::option::Option<bool> {
         self.record_all_ros_topics
     }
 }
 /// See [`LoggingConfig`](crate::model::LoggingConfig).
 pub mod logging_config {
-
+    
     /// A builder for [`LoggingConfig`](crate::model::LoggingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_all_ros_topics: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A boolean indicating whether to record all ROS topics.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         pub fn record_all_ros_topics(mut self, input: bool) -> Self {
             self.record_all_ros_topics = Some(input);
             self
         }
-        /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
-        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// <p>A boolean indicating whether to record all ROS topics.</p> <important> 
+        /// <p>This API is no longer supported and will throw an error if used.</p> 
         /// </important>
-        #[deprecated(
-            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-        )]
+        #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         pub fn set_record_all_ros_topics(mut self, input: std::option::Option<bool>) -> Self {
-            self.record_all_ros_topics = input;
-            self
+            self.record_all_ros_topics = input; self
         }
         /// Consumes the builder and constructs a [`LoggingConfig`](crate::model::LoggingConfig).
         pub fn build(self) -> crate::model::LoggingConfig {
             crate::model::LoggingConfig {
-                record_all_ros_topics: self.record_all_ros_topics,
+                record_all_ros_topics: self.record_all_ros_topics
+                ,
             }
         }
     }
+    
+    
 }
 impl LoggingConfig {
     /// Creates a new builder-style object to manufacture [`LoggingConfig`](crate::model::LoggingConfig).
@@ -4607,7 +4268,7 @@ impl LoggingConfig {
 /// <p>The output location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputLocation {
+pub struct OutputLocation  {
     /// <p>The S3 bucket for output.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -4617,17 +4278,17 @@ pub struct OutputLocation {
 }
 impl OutputLocation {
     /// <p>The S3 bucket for output.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
 }
 /// See [`OutputLocation`](crate::model::OutputLocation).
 pub mod output_location {
-
+    
     /// A builder for [`OutputLocation`](crate::model::OutputLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4642,8 +4303,7 @@ pub mod output_location {
         }
         /// <p>The S3 bucket for output.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
         pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4652,17 +4312,20 @@ pub mod output_location {
         }
         /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = input;
-            self
+            self.s3_prefix = input; self
         }
         /// Consumes the builder and constructs a [`OutputLocation`](crate::model::OutputLocation).
         pub fn build(self) -> crate::model::OutputLocation {
             crate::model::OutputLocation {
-                s3_bucket: self.s3_bucket,
-                s3_prefix: self.s3_prefix,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_prefix: self.s3_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl OutputLocation {
     /// Creates a new builder-style object to manufacture [`OutputLocation`](crate::model::OutputLocation).
@@ -4674,7 +4337,7 @@ impl OutputLocation {
 /// <p>Information about a failed create simulation job request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedCreateSimulationJobRequest {
+pub struct FailedCreateSimulationJobRequest  {
     /// <p>The simulation job request.</p>
     #[doc(hidden)]
     pub request: std::option::Option<crate::model::SimulationJobRequest>,
@@ -4690,25 +4353,25 @@ pub struct FailedCreateSimulationJobRequest {
 }
 impl FailedCreateSimulationJobRequest {
     /// <p>The simulation job request.</p>
-    pub fn request(&self) -> std::option::Option<&crate::model::SimulationJobRequest> {
+    pub fn request(&self) -> std::option::Option<& crate::model::SimulationJobRequest> {
         self.request.as_ref()
     }
     /// <p>The failure reason of the simulation job request.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::SimulationJobErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::SimulationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
-    pub fn failed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn failed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.failed_at.as_ref()
     }
 }
 /// See [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
 pub mod failed_create_simulation_job_request {
-
+    
     /// A builder for [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4724,12 +4387,8 @@ pub mod failed_create_simulation_job_request {
             self
         }
         /// <p>The simulation job request.</p>
-        pub fn set_request(
-            mut self,
-            input: std::option::Option<crate::model::SimulationJobRequest>,
-        ) -> Self {
-            self.request = input;
-            self
+        pub fn set_request(mut self, input: std::option::Option<crate::model::SimulationJobRequest>) -> Self {
+            self.request = input; self
         }
         /// <p>The failure reason of the simulation job request.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4737,12 +4396,8 @@ pub mod failed_create_simulation_job_request {
             self
         }
         /// <p>The failure reason of the simulation job request.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The failure code.</p>
         pub fn failure_code(mut self, input: crate::model::SimulationJobErrorCode) -> Self {
@@ -4750,12 +4405,8 @@ pub mod failed_create_simulation_job_request {
             self
         }
         /// <p>The failure code.</p>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::SimulationJobErrorCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::SimulationJobErrorCode>) -> Self {
+            self.failure_code = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
         pub fn failed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4763,23 +4414,25 @@ pub mod failed_create_simulation_job_request {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
-        pub fn set_failed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.failed_at = input;
-            self
+        pub fn set_failed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.failed_at = input; self
         }
         /// Consumes the builder and constructs a [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
         pub fn build(self) -> crate::model::FailedCreateSimulationJobRequest {
             crate::model::FailedCreateSimulationJobRequest {
-                request: self.request,
-                failure_reason: self.failure_reason,
-                failure_code: self.failure_code,
-                failed_at: self.failed_at,
+                request: self.request
+                ,
+                failure_reason: self.failure_reason
+                ,
+                failure_code: self.failure_code
+                ,
+                failed_at: self.failed_at
+                ,
             }
         }
     }
+    
+    
 }
 impl FailedCreateSimulationJobRequest {
     /// Creates a new builder-style object to manufacture [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
@@ -4794,9 +4447,9 @@ impl FailedCreateSimulationJobRequest {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationjoberrorcode = unimplemented!();
 /// match simulationjoberrorcode {
@@ -4847,22 +4500,14 @@ impl FailedCreateSimulationJobRequest {
 /// Specifically, when `simulationjoberrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationJobErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     BadPermissionsCloudwatchLogs,
@@ -4927,33 +4572,23 @@ pub enum SimulationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     WrongRegionSimulationApplication,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "BadPermissionsCloudwatchLogs" => SimulationJobErrorCode::BadPermissionsCloudwatchLogs,
-            "BadPermissionsRobotApplication" => {
-                SimulationJobErrorCode::BadPermissionsRobotApplication
-            }
+            "BadPermissionsRobotApplication" => SimulationJobErrorCode::BadPermissionsRobotApplication,
             "BadPermissionsS3Object" => SimulationJobErrorCode::BadPermissionsS3Object,
             "BadPermissionsS3Output" => SimulationJobErrorCode::BadPermissionsS3Output,
-            "BadPermissionsSimulationApplication" => {
-                SimulationJobErrorCode::BadPermissionsSimulationApplication
-            }
-            "BadPermissionsUserCredentials" => {
-                SimulationJobErrorCode::BadPermissionsUserCredentials
-            }
+            "BadPermissionsSimulationApplication" => SimulationJobErrorCode::BadPermissionsSimulationApplication,
+            "BadPermissionsUserCredentials" => SimulationJobErrorCode::BadPermissionsUserCredentials,
             "BatchCanceled" => SimulationJobErrorCode::BatchCanceled,
             "BatchTimedOut" => SimulationJobErrorCode::BatchTimedOut,
             "ENILimitExceeded" => SimulationJobErrorCode::EniLimitExceeded,
             "InternalServiceError" => SimulationJobErrorCode::InternalServiceError,
-            "InvalidBundleRobotApplication" => {
-                SimulationJobErrorCode::InvalidBundleRobotApplication
-            }
-            "InvalidBundleSimulationApplication" => {
-                SimulationJobErrorCode::InvalidBundleSimulationApplication
-            }
+            "InvalidBundleRobotApplication" => SimulationJobErrorCode::InvalidBundleRobotApplication,
+            "InvalidBundleSimulationApplication" => SimulationJobErrorCode::InvalidBundleSimulationApplication,
             "InvalidInput" => SimulationJobErrorCode::InvalidInput,
             "InvalidS3Resource" => SimulationJobErrorCode::InvalidS3Resource,
             "LimitExceeded" => SimulationJobErrorCode::LimitExceeded,
@@ -4961,67 +4596,45 @@ impl std::convert::From<&str> for SimulationJobErrorCode {
             "RequestThrottled" => SimulationJobErrorCode::RequestThrottled,
             "ResourceNotFound" => SimulationJobErrorCode::ResourceNotFound,
             "RobotApplicationCrash" => SimulationJobErrorCode::RobotApplicationCrash,
-            "RobotApplicationHealthCheckFailure" => {
-                SimulationJobErrorCode::RobotApplicationHealthCheckFailure
-            }
-            "RobotApplicationVersionMismatchedEtag" => {
-                SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag
-            }
+            "RobotApplicationHealthCheckFailure" => SimulationJobErrorCode::RobotApplicationHealthCheckFailure,
+            "RobotApplicationVersionMismatchedEtag" => SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag,
             "SimulationApplicationCrash" => SimulationJobErrorCode::SimulationApplicationCrash,
-            "SimulationApplicationHealthCheckFailure" => {
-                SimulationJobErrorCode::SimulationApplicationHealthCheckFailure
-            }
-            "SimulationApplicationVersionMismatchedEtag" => {
-                SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag
-            }
+            "SimulationApplicationHealthCheckFailure" => SimulationJobErrorCode::SimulationApplicationHealthCheckFailure,
+            "SimulationApplicationVersionMismatchedEtag" => SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag,
             "SubnetIpLimitExceeded" => SimulationJobErrorCode::SubnetIpLimitExceeded,
             "ThrottlingError" => SimulationJobErrorCode::ThrottlingError,
             "UploadContentMismatchError" => SimulationJobErrorCode::UploadContentMismatchError,
             "WrongRegionRobotApplication" => SimulationJobErrorCode::WrongRegionRobotApplication,
             "WrongRegionS3Bucket" => SimulationJobErrorCode::WrongRegionS3Bucket,
             "WrongRegionS3Output" => SimulationJobErrorCode::WrongRegionS3Output,
-            "WrongRegionSimulationApplication" => {
-                SimulationJobErrorCode::WrongRegionSimulationApplication
-            }
-            other => {
-                SimulationJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            "WrongRegionSimulationApplication" => SimulationJobErrorCode::WrongRegionSimulationApplication,
+            other => SimulationJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationJobErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationJobErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationJobErrorCode::from(s))
+                }
+            }
 impl SimulationJobErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SimulationJobErrorCode::BadPermissionsCloudwatchLogs => "BadPermissionsCloudwatchLogs",
-            SimulationJobErrorCode::BadPermissionsRobotApplication => {
-                "BadPermissionsRobotApplication"
-            }
+            SimulationJobErrorCode::BadPermissionsRobotApplication => "BadPermissionsRobotApplication",
             SimulationJobErrorCode::BadPermissionsS3Object => "BadPermissionsS3Object",
             SimulationJobErrorCode::BadPermissionsS3Output => "BadPermissionsS3Output",
-            SimulationJobErrorCode::BadPermissionsSimulationApplication => {
-                "BadPermissionsSimulationApplication"
-            }
-            SimulationJobErrorCode::BadPermissionsUserCredentials => {
-                "BadPermissionsUserCredentials"
-            }
+            SimulationJobErrorCode::BadPermissionsSimulationApplication => "BadPermissionsSimulationApplication",
+            SimulationJobErrorCode::BadPermissionsUserCredentials => "BadPermissionsUserCredentials",
             SimulationJobErrorCode::BatchCanceled => "BatchCanceled",
             SimulationJobErrorCode::BatchTimedOut => "BatchTimedOut",
             SimulationJobErrorCode::EniLimitExceeded => "ENILimitExceeded",
             SimulationJobErrorCode::InternalServiceError => "InternalServiceError",
-            SimulationJobErrorCode::InvalidBundleRobotApplication => {
-                "InvalidBundleRobotApplication"
-            }
-            SimulationJobErrorCode::InvalidBundleSimulationApplication => {
-                "InvalidBundleSimulationApplication"
-            }
+            SimulationJobErrorCode::InvalidBundleRobotApplication => "InvalidBundleRobotApplication",
+            SimulationJobErrorCode::InvalidBundleSimulationApplication => "InvalidBundleSimulationApplication",
             SimulationJobErrorCode::InvalidInput => "InvalidInput",
             SimulationJobErrorCode::InvalidS3Resource => "InvalidS3Resource",
             SimulationJobErrorCode::LimitExceeded => "LimitExceeded",
@@ -5029,65 +4642,25 @@ impl SimulationJobErrorCode {
             SimulationJobErrorCode::RequestThrottled => "RequestThrottled",
             SimulationJobErrorCode::ResourceNotFound => "ResourceNotFound",
             SimulationJobErrorCode::RobotApplicationCrash => "RobotApplicationCrash",
-            SimulationJobErrorCode::RobotApplicationHealthCheckFailure => {
-                "RobotApplicationHealthCheckFailure"
-            }
-            SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => {
-                "RobotApplicationVersionMismatchedEtag"
-            }
+            SimulationJobErrorCode::RobotApplicationHealthCheckFailure => "RobotApplicationHealthCheckFailure",
+            SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => "RobotApplicationVersionMismatchedEtag",
             SimulationJobErrorCode::SimulationApplicationCrash => "SimulationApplicationCrash",
-            SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => {
-                "SimulationApplicationHealthCheckFailure"
-            }
-            SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => {
-                "SimulationApplicationVersionMismatchedEtag"
-            }
+            SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => "SimulationApplicationHealthCheckFailure",
+            SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => "SimulationApplicationVersionMismatchedEtag",
             SimulationJobErrorCode::SubnetIpLimitExceeded => "SubnetIpLimitExceeded",
             SimulationJobErrorCode::ThrottlingError => "ThrottlingError",
             SimulationJobErrorCode::UploadContentMismatchError => "UploadContentMismatchError",
             SimulationJobErrorCode::WrongRegionRobotApplication => "WrongRegionRobotApplication",
             SimulationJobErrorCode::WrongRegionS3Bucket => "WrongRegionS3Bucket",
             SimulationJobErrorCode::WrongRegionS3Output => "WrongRegionS3Output",
-            SimulationJobErrorCode::WrongRegionSimulationApplication => {
-                "WrongRegionSimulationApplication"
-            }
-            SimulationJobErrorCode::Unknown(value) => value.as_str(),
+            SimulationJobErrorCode::WrongRegionSimulationApplication => "WrongRegionSimulationApplication",
+            SimulationJobErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BadPermissionsCloudwatchLogs",
-            "BadPermissionsRobotApplication",
-            "BadPermissionsS3Object",
-            "BadPermissionsS3Output",
-            "BadPermissionsSimulationApplication",
-            "BadPermissionsUserCredentials",
-            "BatchCanceled",
-            "BatchTimedOut",
-            "ENILimitExceeded",
-            "InternalServiceError",
-            "InvalidBundleRobotApplication",
-            "InvalidBundleSimulationApplication",
-            "InvalidInput",
-            "InvalidS3Resource",
-            "LimitExceeded",
-            "MismatchedEtag",
-            "RequestThrottled",
-            "ResourceNotFound",
-            "RobotApplicationCrash",
-            "RobotApplicationHealthCheckFailure",
-            "RobotApplicationVersionMismatchedEtag",
-            "SimulationApplicationCrash",
-            "SimulationApplicationHealthCheckFailure",
-            "SimulationApplicationVersionMismatchedEtag",
-            "SubnetIpLimitExceeded",
-            "ThrottlingError",
-            "UploadContentMismatchError",
-            "WrongRegionRobotApplication",
-            "WrongRegionS3Bucket",
-            "WrongRegionS3Output",
-            "WrongRegionSimulationApplication",
+            "BadPermissionsCloudwatchLogs", "BadPermissionsRobotApplication", "BadPermissionsS3Object", "BadPermissionsS3Output", "BadPermissionsSimulationApplication", "BadPermissionsUserCredentials", "BatchCanceled", "BatchTimedOut", "ENILimitExceeded", "InternalServiceError", "InvalidBundleRobotApplication", "InvalidBundleSimulationApplication", "InvalidInput", "InvalidS3Resource", "LimitExceeded", "MismatchedEtag", "RequestThrottled", "ResourceNotFound", "RobotApplicationCrash", "RobotApplicationHealthCheckFailure", "RobotApplicationVersionMismatchedEtag", "SimulationApplicationCrash", "SimulationApplicationHealthCheckFailure", "SimulationApplicationVersionMismatchedEtag", "SubnetIpLimitExceeded", "ThrottlingError", "UploadContentMismatchError", "WrongRegionRobotApplication", "WrongRegionS3Bucket", "WrongRegionS3Output", "WrongRegionSimulationApplication"
         ]
     }
 }
@@ -5103,9 +4676,9 @@ impl AsRef<str> for SimulationJobErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationjobbatcherrorcode = unimplemented!();
 /// match simulationjobbatcherrorcode {
@@ -5126,56 +4699,48 @@ impl AsRef<str> for SimulationJobErrorCode {
 /// Specifically, when `simulationjobbatcherrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationJobBatchErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationJobBatchErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalServiceError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobBatchErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "InternalServiceError" => SimulationJobBatchErrorCode::InternalServiceError,
-            other => SimulationJobBatchErrorCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SimulationJobBatchErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationJobBatchErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationJobBatchErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationJobBatchErrorCode::from(s))
+                }
+            }
 impl SimulationJobBatchErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SimulationJobBatchErrorCode::InternalServiceError => "InternalServiceError",
-            SimulationJobBatchErrorCode::Unknown(value) => value.as_str(),
+            SimulationJobBatchErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["InternalServiceError"]
+        &[
+            "InternalServiceError"
+        ]
     }
 }
 impl AsRef<str> for SimulationJobBatchErrorCode {
@@ -5187,23 +4752,23 @@ impl AsRef<str> for SimulationJobBatchErrorCode {
 /// <p>Information about the batch policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPolicy {
-    /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+pub struct BatchPolicy  {
+    /// <p>The amount of time, in seconds, to wait for the batch to complete. </p> 
     /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
     #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i64>,
-    /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+    /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p> 
     /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
     #[doc(hidden)]
     pub max_concurrency: std::option::Option<i32>,
 }
 impl BatchPolicy {
-    /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+    /// <p>The amount of time, in seconds, to wait for the batch to complete. </p> 
     /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
     pub fn timeout_in_seconds(&self) -> std::option::Option<i64> {
         self.timeout_in_seconds
     }
-    /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+    /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p> 
     /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
     pub fn max_concurrency(&self) -> std::option::Option<i32> {
         self.max_concurrency
@@ -5211,7 +4776,7 @@ impl BatchPolicy {
 }
 /// See [`BatchPolicy`](crate::model::BatchPolicy).
 pub mod batch_policy {
-
+    
     /// A builder for [`BatchPolicy`](crate::model::BatchPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5219,38 +4784,40 @@ pub mod batch_policy {
         pub(crate) max_concurrency: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+        /// <p>The amount of time, in seconds, to wait for the batch to complete. </p> 
         /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
         pub fn timeout_in_seconds(mut self, input: i64) -> Self {
             self.timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+        /// <p>The amount of time, in seconds, to wait for the batch to complete. </p> 
         /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.timeout_in_seconds = input;
-            self
+            self.timeout_in_seconds = input; self
         }
-        /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+        /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p> 
         /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
         pub fn max_concurrency(mut self, input: i32) -> Self {
             self.max_concurrency = Some(input);
             self
         }
-        /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+        /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p> 
         /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
         pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_concurrency = input;
-            self
+            self.max_concurrency = input; self
         }
         /// Consumes the builder and constructs a [`BatchPolicy`](crate::model::BatchPolicy).
         pub fn build(self) -> crate::model::BatchPolicy {
             crate::model::BatchPolicy {
-                timeout_in_seconds: self.timeout_in_seconds,
-                max_concurrency: self.max_concurrency,
+                timeout_in_seconds: self.timeout_in_seconds
+                ,
+                max_concurrency: self.max_concurrency
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPolicy {
     /// Creates a new builder-style object to manufacture [`BatchPolicy`](crate::model::BatchPolicy).
@@ -5265,9 +4832,9 @@ impl BatchPolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationjobbatchstatus = unimplemented!();
 /// match simulationjobbatchstatus {
@@ -5296,22 +4863,14 @@ impl BatchPolicy {
 /// Specifically, when `simulationjobbatchstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationJobBatchStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationJobBatchStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -5332,7 +4891,7 @@ pub enum SimulationJobBatchStatus {
     #[allow(missing_docs)] // documentation missing in model
     TimingOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobBatchStatus {
     fn from(s: &str) -> Self {
@@ -5346,19 +4905,17 @@ impl std::convert::From<&str> for SimulationJobBatchStatus {
             "Pending" => SimulationJobBatchStatus::Pending,
             "TimedOut" => SimulationJobBatchStatus::TimedOut,
             "TimingOut" => SimulationJobBatchStatus::TimingOut,
-            other => SimulationJobBatchStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SimulationJobBatchStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationJobBatchStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationJobBatchStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationJobBatchStatus::from(s))
+                }
+            }
 impl SimulationJobBatchStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5372,21 +4929,13 @@ impl SimulationJobBatchStatus {
             SimulationJobBatchStatus::Pending => "Pending",
             SimulationJobBatchStatus::TimedOut => "TimedOut",
             SimulationJobBatchStatus::TimingOut => "TimingOut",
-            SimulationJobBatchStatus::Unknown(value) => value.as_str(),
+            SimulationJobBatchStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Canceled",
-            "Canceling",
-            "Completed",
-            "Completing",
-            "Failed",
-            "InProgress",
-            "Pending",
-            "TimedOut",
-            "TimingOut",
+            "Canceled", "Canceling", "Completed", "Completing", "Failed", "InProgress", "Pending", "TimedOut", "TimingOut"
         ]
     }
 }
@@ -5399,7 +4948,7 @@ impl AsRef<str> for SimulationJobBatchStatus {
 /// <p>Summary information for a template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateSummary {
+pub struct TemplateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5418,29 +4967,29 @@ pub struct TemplateSummary {
 }
 impl TemplateSummary {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the template was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the template that you're using.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
 pub mod template_summary {
-
+    
     /// A builder for [`TemplateSummary`](crate::model::TemplateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5458,8 +5007,7 @@ pub mod template_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5467,12 +5015,8 @@ pub mod template_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the template was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5480,12 +5024,8 @@ pub mod template_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the template was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>The name of the template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5494,8 +5034,7 @@ pub mod template_summary {
         }
         /// <p>The name of the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the template that you're using.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5504,20 +5043,26 @@ pub mod template_summary {
         }
         /// <p>The version of the template that you're using.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`TemplateSummary`](crate::model::TemplateSummary).
         pub fn build(self) -> crate::model::TemplateSummary {
             crate::model::TemplateSummary {
-                arn: self.arn,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                name: self.name,
-                version: self.version,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateSummary {
     /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
@@ -5529,7 +5074,7 @@ impl TemplateSummary {
 /// <p>Information about a world.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldSummary {
+pub struct WorldSummary  {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5545,25 +5090,25 @@ pub struct WorldSummary {
 }
 impl WorldSummary {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
-    pub fn generation_job(&self) -> std::option::Option<&str> {
+    pub fn generation_job(&self) -> std::option::Option<& str> {
         self.generation_job.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> std::option::Option<&str> {
+    pub fn template(&self) -> std::option::Option<& str> {
         self.template.as_deref()
     }
 }
 /// See [`WorldSummary`](crate::model::WorldSummary).
 pub mod world_summary {
-
+    
     /// A builder for [`WorldSummary`](crate::model::WorldSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5580,8 +5125,7 @@ pub mod world_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the world.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5589,12 +5133,8 @@ pub mod world_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
         pub fn generation_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5602,12 +5142,8 @@ pub mod world_summary {
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
-        pub fn set_generation_job(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generation_job = input;
-            self
+        pub fn set_generation_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generation_job = input; self
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
         pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5616,19 +5152,24 @@ pub mod world_summary {
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template = input;
-            self
+            self.template = input; self
         }
         /// Consumes the builder and constructs a [`WorldSummary`](crate::model::WorldSummary).
         pub fn build(self) -> crate::model::WorldSummary {
             crate::model::WorldSummary {
-                arn: self.arn,
-                created_at: self.created_at,
-                generation_job: self.generation_job,
-                template: self.template,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                generation_job: self.generation_job
+                ,
+                template: self.template
+                ,
             }
         }
     }
+    
+    
 }
 impl WorldSummary {
     /// Creates a new builder-style object to manufacture [`WorldSummary`](crate::model::WorldSummary).
@@ -5640,7 +5181,7 @@ impl WorldSummary {
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5650,17 +5191,17 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of values.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5675,8 +5216,7 @@ pub mod filter {
         }
         /// <p>The name of the filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -5685,26 +5225,26 @@ pub mod filter {
         /// <p>A list of values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of values.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -5716,7 +5256,7 @@ impl Filter {
 /// <p>Information about a world generator job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldGenerationJobSummary {
+pub struct WorldGenerationJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5726,50 +5266,50 @@ pub struct WorldGenerationJobSummary {
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the world generator job:</p>
-    /// <dl>
+    /// <p>The status of the world generator job:</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// PartialFailed
-    /// </dt>
-    /// <dd>
-    /// <p>Some worlds did not generate.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Some worlds did not generate.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorldGenerationJobStatus>,
@@ -5785,67 +5325,67 @@ pub struct WorldGenerationJobSummary {
 }
 impl WorldGenerationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> std::option::Option<&str> {
+    pub fn template(&self) -> std::option::Option<& str> {
         self.template.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The status of the world generator job:</p>
-    /// <dl>
+    /// <p>The status of the world generator job:</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// PartialFailed
-    /// </dt>
-    /// <dd>
-    /// <p>Some worlds did not generate.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Some worlds did not generate.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world generator job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generator job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::model::WorldGenerationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorldGenerationJobStatus> {
         self.status.as_ref()
     }
     /// <p>Information about the world count.</p>
-    pub fn world_count(&self) -> std::option::Option<&crate::model::WorldCount> {
+    pub fn world_count(&self) -> std::option::Option<& crate::model::WorldCount> {
         self.world_count.as_ref()
     }
     /// <p>The number of worlds that were generated.</p>
@@ -5859,7 +5399,7 @@ impl WorldGenerationJobSummary {
 }
 /// See [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
 pub mod world_generation_job_summary {
-
+    
     /// A builder for [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5879,8 +5419,7 @@ pub mod world_generation_job_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
         pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5889,8 +5428,7 @@ pub mod world_generation_job_summary {
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template = input;
-            self
+            self.template = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5898,113 +5436,105 @@ pub mod world_generation_job_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
-        /// <p>The status of the world generator job:</p>
-        /// <dl>
+        /// <p>The status of the world generator job:</p> 
+        /// <dl> 
         /// <dt>
         /// Pending
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job request is pending.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job request is pending.</p> 
+        /// </dd> 
         /// <dt>
         /// Running
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job is running. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job is running. </p> 
+        /// </dd> 
         /// <dt>
         /// Completed
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job completed. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job completed. </p> 
+        /// </dd> 
         /// <dt>
         /// Failed
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p> 
+        /// </dd> 
         /// <dt>
         /// PartialFailed
-        /// </dt>
-        /// <dd>
-        /// <p>Some worlds did not generate.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Some worlds did not generate.</p> 
+        /// </dd> 
         /// <dt>
         /// Canceled
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job was cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job was cancelled.</p> 
+        /// </dd> 
         /// <dt>
         /// Canceling
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job is being cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job is being cancelled.</p> 
+        /// </dd> 
         /// </dl>
         pub fn status(mut self, input: crate::model::WorldGenerationJobStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the world generator job:</p>
-        /// <dl>
+        /// <p>The status of the world generator job:</p> 
+        /// <dl> 
         /// <dt>
         /// Pending
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job request is pending.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job request is pending.</p> 
+        /// </dd> 
         /// <dt>
         /// Running
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job is running. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job is running. </p> 
+        /// </dd> 
         /// <dt>
         /// Completed
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job completed. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job completed. </p> 
+        /// </dd> 
         /// <dt>
         /// Failed
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p> 
+        /// </dd> 
         /// <dt>
         /// PartialFailed
-        /// </dt>
-        /// <dd>
-        /// <p>Some worlds did not generate.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Some worlds did not generate.</p> 
+        /// </dd> 
         /// <dt>
         /// Canceled
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job was cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job was cancelled.</p> 
+        /// </dd> 
         /// <dt>
         /// Canceling
-        /// </dt>
-        /// <dd>
-        /// <p>The world generator job is being cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world generator job is being cancelled.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorldGenerationJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorldGenerationJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Information about the world count.</p>
         pub fn world_count(mut self, input: crate::model::WorldCount) -> Self {
@@ -6012,12 +5542,8 @@ pub mod world_generation_job_summary {
             self
         }
         /// <p>Information about the world count.</p>
-        pub fn set_world_count(
-            mut self,
-            input: std::option::Option<crate::model::WorldCount>,
-        ) -> Self {
-            self.world_count = input;
-            self
+        pub fn set_world_count(mut self, input: std::option::Option<crate::model::WorldCount>) -> Self {
+            self.world_count = input; self
         }
         /// <p>The number of worlds that were generated.</p>
         pub fn succeeded_world_count(mut self, input: i32) -> Self {
@@ -6026,8 +5552,7 @@ pub mod world_generation_job_summary {
         }
         /// <p>The number of worlds that were generated.</p>
         pub fn set_succeeded_world_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.succeeded_world_count = input;
-            self
+            self.succeeded_world_count = input; self
         }
         /// <p>The number of worlds that failed.</p>
         pub fn failed_world_count(mut self, input: i32) -> Self {
@@ -6036,22 +5561,32 @@ pub mod world_generation_job_summary {
         }
         /// <p>The number of worlds that failed.</p>
         pub fn set_failed_world_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed_world_count = input;
-            self
+            self.failed_world_count = input; self
         }
         /// Consumes the builder and constructs a [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
         pub fn build(self) -> crate::model::WorldGenerationJobSummary {
             crate::model::WorldGenerationJobSummary {
-                arn: self.arn,
-                template: self.template,
-                created_at: self.created_at,
-                status: self.status,
-                world_count: self.world_count,
-                succeeded_world_count: self.succeeded_world_count.unwrap_or_default(),
-                failed_world_count: self.failed_world_count.unwrap_or_default(),
+                arn: self.arn
+                ,
+                template: self.template
+                ,
+                created_at: self.created_at
+                ,
+                status: self.status
+                ,
+                world_count: self.world_count
+                ,
+                succeeded_world_count: self.succeeded_world_count
+                    .unwrap_or_default()
+                ,
+                failed_world_count: self.failed_world_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl WorldGenerationJobSummary {
     /// Creates a new builder-style object to manufacture [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
@@ -6060,11 +5595,11 @@ impl WorldGenerationJobSummary {
     }
 }
 
-/// <p>The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p>
+/// <p>The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p> 
 /// <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldCount {
+pub struct WorldCount  {
     /// <p>The number of unique floorplans.</p>
     #[doc(hidden)]
     pub floorplan_count: std::option::Option<i32>,
@@ -6084,7 +5619,7 @@ impl WorldCount {
 }
 /// See [`WorldCount`](crate::model::WorldCount).
 pub mod world_count {
-
+    
     /// A builder for [`WorldCount`](crate::model::WorldCount).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6099,8 +5634,7 @@ pub mod world_count {
         }
         /// <p>The number of unique floorplans.</p>
         pub fn set_floorplan_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.floorplan_count = input;
-            self
+            self.floorplan_count = input; self
         }
         /// <p>The number of unique interiors per floorplan.</p>
         pub fn interior_count_per_floorplan(mut self, input: i32) -> Self {
@@ -6109,17 +5643,20 @@ pub mod world_count {
         }
         /// <p>The number of unique interiors per floorplan.</p>
         pub fn set_interior_count_per_floorplan(mut self, input: std::option::Option<i32>) -> Self {
-            self.interior_count_per_floorplan = input;
-            self
+            self.interior_count_per_floorplan = input; self
         }
         /// Consumes the builder and constructs a [`WorldCount`](crate::model::WorldCount).
         pub fn build(self) -> crate::model::WorldCount {
             crate::model::WorldCount {
-                floorplan_count: self.floorplan_count,
-                interior_count_per_floorplan: self.interior_count_per_floorplan,
+                floorplan_count: self.floorplan_count
+                ,
+                interior_count_per_floorplan: self.interior_count_per_floorplan
+                ,
             }
         }
     }
+    
+    
 }
 impl WorldCount {
     /// Creates a new builder-style object to manufacture [`WorldCount`](crate::model::WorldCount).
@@ -6134,9 +5671,9 @@ impl WorldCount {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let worldgenerationjobstatus = unimplemented!();
 /// match worldgenerationjobstatus {
@@ -6163,22 +5700,14 @@ impl WorldCount {
 /// Specifically, when `worldgenerationjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorldGenerationJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorldGenerationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -6195,7 +5724,7 @@ pub enum WorldGenerationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldGenerationJobStatus {
     fn from(s: &str) -> Self {
@@ -6207,19 +5736,17 @@ impl std::convert::From<&str> for WorldGenerationJobStatus {
             "PartialFailed" => WorldGenerationJobStatus::PartialFailed,
             "Pending" => WorldGenerationJobStatus::Pending,
             "Running" => WorldGenerationJobStatus::Running,
-            other => WorldGenerationJobStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WorldGenerationJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WorldGenerationJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorldGenerationJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorldGenerationJobStatus::from(s))
+                }
+            }
 impl WorldGenerationJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6231,19 +5758,13 @@ impl WorldGenerationJobStatus {
             WorldGenerationJobStatus::PartialFailed => "PartialFailed",
             WorldGenerationJobStatus::Pending => "Pending",
             WorldGenerationJobStatus::Running => "Running",
-            WorldGenerationJobStatus::Unknown(value) => value.as_str(),
+            WorldGenerationJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Canceled",
-            "Canceling",
-            "Completed",
-            "Failed",
-            "PartialFailed",
-            "Pending",
-            "Running",
+            "Canceled", "Canceling", "Completed", "Failed", "PartialFailed", "Pending", "Running"
         ]
     }
 }
@@ -6256,48 +5777,48 @@ impl AsRef<str> for WorldGenerationJobStatus {
 /// <p>Information about a world export job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldExportJobSummary {
+pub struct WorldExportJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The status of the world export job.</p>
-    /// <dl>
+    /// <p>The status of the world export job.</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorldExportJobStatus>,
@@ -6313,67 +5834,67 @@ pub struct WorldExportJobSummary {
 }
 impl WorldExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The status of the world export job.</p>
-    /// <dl>
+    /// <p>The status of the world export job.</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::model::WorldExportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorldExportJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A list of worlds.</p>
-    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn worlds(&self) -> std::option::Option<& [std::string::String]> {
         self.worlds.as_deref()
     }
     /// <p>The output location.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<& crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
 }
 /// See [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
 pub mod world_export_job_summary {
-
+    
     /// A builder for [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6391,97 +5912,92 @@ pub mod world_export_job_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The status of the world export job.</p>
-        /// <dl>
+        /// <p>The status of the world export job.</p> 
+        /// <dl> 
         /// <dt>
         /// Pending
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job request is pending.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job request is pending.</p> 
+        /// </dd> 
         /// <dt>
         /// Running
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job is running. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job is running. </p> 
+        /// </dd> 
         /// <dt>
         /// Completed
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job completed. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job completed. </p> 
+        /// </dd> 
         /// <dt>
         /// Failed
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job failed. See <code>failureCode</code> for more information. </p> 
+        /// </dd> 
         /// <dt>
         /// Canceled
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job was cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job was cancelled.</p> 
+        /// </dd> 
         /// <dt>
         /// Canceling
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job is being cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job is being cancelled.</p> 
+        /// </dd> 
         /// </dl>
         pub fn status(mut self, input: crate::model::WorldExportJobStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the world export job.</p>
-        /// <dl>
+        /// <p>The status of the world export job.</p> 
+        /// <dl> 
         /// <dt>
         /// Pending
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job request is pending.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job request is pending.</p> 
+        /// </dd> 
         /// <dt>
         /// Running
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job is running. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job is running. </p> 
+        /// </dd> 
         /// <dt>
         /// Completed
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job completed. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job completed. </p> 
+        /// </dd> 
         /// <dt>
         /// Failed
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job failed. See <code>failureCode</code> for more information. </p> 
+        /// </dd> 
         /// <dt>
         /// Canceled
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job was cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job was cancelled.</p> 
+        /// </dd> 
         /// <dt>
         /// Canceling
-        /// </dt>
-        /// <dd>
-        /// <p>The world export job is being cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The world export job is being cancelled.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorldExportJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorldExportJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6489,12 +6005,8 @@ pub mod world_export_job_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Appends an item to `worlds`.
         ///
@@ -6503,17 +6015,13 @@ pub mod world_export_job_summary {
         /// <p>A list of worlds.</p>
         pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.worlds.unwrap_or_default();
-            v.push(input.into());
-            self.worlds = Some(v);
-            self
+                            v.push(input.into());
+                            self.worlds = Some(v);
+                            self
         }
         /// <p>A list of worlds.</p>
-        pub fn set_worlds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.worlds = input;
-            self
+        pub fn set_worlds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.worlds = input; self
         }
         /// <p>The output location.</p>
         pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
@@ -6521,24 +6029,27 @@ pub mod world_export_job_summary {
             self
         }
         /// <p>The output location.</p>
-        pub fn set_output_location(
-            mut self,
-            input: std::option::Option<crate::model::OutputLocation>,
-        ) -> Self {
-            self.output_location = input;
-            self
+        pub fn set_output_location(mut self, input: std::option::Option<crate::model::OutputLocation>) -> Self {
+            self.output_location = input; self
         }
         /// Consumes the builder and constructs a [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
         pub fn build(self) -> crate::model::WorldExportJobSummary {
             crate::model::WorldExportJobSummary {
-                arn: self.arn,
-                status: self.status,
-                created_at: self.created_at,
-                worlds: self.worlds,
-                output_location: self.output_location,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                ,
+                worlds: self.worlds
+                ,
+                output_location: self.output_location
+                ,
             }
         }
     }
+    
+    
 }
 impl WorldExportJobSummary {
     /// Creates a new builder-style object to manufacture [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
@@ -6553,9 +6064,9 @@ impl WorldExportJobSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let worldexportjobstatus = unimplemented!();
 /// match worldexportjobstatus {
@@ -6581,22 +6092,14 @@ impl WorldExportJobSummary {
 /// Specifically, when `worldexportjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorldExportJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorldExportJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -6611,7 +6114,7 @@ pub enum WorldExportJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldExportJobStatus {
     fn from(s: &str) -> Self {
@@ -6622,19 +6125,17 @@ impl std::convert::From<&str> for WorldExportJobStatus {
             "Failed" => WorldExportJobStatus::Failed,
             "Pending" => WorldExportJobStatus::Pending,
             "Running" => WorldExportJobStatus::Running,
-            other => {
-                WorldExportJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WorldExportJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WorldExportJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorldExportJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorldExportJobStatus::from(s))
+                }
+            }
 impl WorldExportJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6645,18 +6146,13 @@ impl WorldExportJobStatus {
             WorldExportJobStatus::Failed => "Failed",
             WorldExportJobStatus::Pending => "Pending",
             WorldExportJobStatus::Running => "Running",
-            WorldExportJobStatus::Unknown(value) => value.as_str(),
+            WorldExportJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Canceled",
-            "Canceling",
-            "Completed",
-            "Failed",
-            "Pending",
-            "Running",
+            "Canceled", "Canceling", "Completed", "Failed", "Pending", "Running"
         ]
     }
 }
@@ -6669,7 +6165,7 @@ impl AsRef<str> for WorldExportJobStatus {
 /// <p>Information about a simulation job batch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationJobBatchSummary {
+pub struct SimulationJobBatchSummary  {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6679,63 +6175,63 @@ pub struct SimulationJobBatchSummary {
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the simulation job batch.</p>
-    /// <dl>
+    /// <p>The status of the simulation job batch.</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation job batch request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation job batch request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// InProgress
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation job batch is in progress. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation job batch is in progress. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job is being cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Completing
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job is completing.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job is completing.</p> 
+    /// </dd> 
     /// <dt>
     /// TimingOut
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation job batch is timing out.</p> 
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p> 
+    /// </dd> 
     /// <dt>
     /// TimedOut
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job timed out.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job timed out.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::SimulationJobBatchStatus>,
@@ -6751,76 +6247,76 @@ pub struct SimulationJobBatchSummary {
 }
 impl SimulationJobBatchSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The status of the simulation job batch.</p>
-    /// <dl>
+    /// <p>The status of the simulation job batch.</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation job batch request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation job batch request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// InProgress
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation job batch is in progress. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation job batch is in progress. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job is being cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Completing
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job is completing.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job is completing.</p> 
+    /// </dd> 
     /// <dt>
     /// TimingOut
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation job batch is timing out.</p> 
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p> 
+    /// </dd> 
     /// <dt>
     /// TimedOut
-    /// </dt>
-    /// <dd>
-    /// <p>The simulation batch job timed out.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The simulation batch job timed out.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobBatchStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SimulationJobBatchStatus> {
         self.status.as_ref()
     }
     /// <p>The number of failed simulation job requests.</p>
@@ -6838,7 +6334,7 @@ impl SimulationJobBatchSummary {
 }
 /// See [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
 pub mod simulation_job_batch_summary {
-
+    
     /// A builder for [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6858,8 +6354,7 @@ pub mod simulation_job_batch_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the batch.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6867,12 +6362,8 @@ pub mod simulation_job_batch_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6880,139 +6371,131 @@ pub mod simulation_job_batch_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
-        /// <p>The status of the simulation job batch.</p>
-        /// <dl>
+        /// <p>The status of the simulation job batch.</p> 
+        /// <dl> 
         /// <dt>
         /// Pending
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation job batch request is pending.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation job batch request is pending.</p> 
+        /// </dd> 
         /// <dt>
         /// InProgress
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation job batch is in progress. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation job batch is in progress. </p> 
+        /// </dd> 
         /// <dt>
         /// Failed
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p> 
+        /// </dd> 
         /// <dt>
         /// Completed
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p> 
+        /// </dd> 
         /// <dt>
         /// Canceled
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job was cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job was cancelled.</p> 
+        /// </dd> 
         /// <dt>
         /// Canceling
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job is being cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job is being cancelled.</p> 
+        /// </dd> 
         /// <dt>
         /// Completing
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job is completing.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job is completing.</p> 
+        /// </dd> 
         /// <dt>
         /// TimingOut
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation job batch is timing out.</p>
-        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation job batch is timing out.</p> 
+        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p> 
+        /// </dd> 
         /// <dt>
         /// TimedOut
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job timed out.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job timed out.</p> 
+        /// </dd> 
         /// </dl>
         pub fn status(mut self, input: crate::model::SimulationJobBatchStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the simulation job batch.</p>
-        /// <dl>
+        /// <p>The status of the simulation job batch.</p> 
+        /// <dl> 
         /// <dt>
         /// Pending
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation job batch request is pending.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation job batch request is pending.</p> 
+        /// </dd> 
         /// <dt>
         /// InProgress
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation job batch is in progress. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation job batch is in progress. </p> 
+        /// </dd> 
         /// <dt>
         /// Failed
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p> 
+        /// </dd> 
         /// <dt>
         /// Completed
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p> 
+        /// </dd> 
         /// <dt>
         /// Canceled
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job was cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job was cancelled.</p> 
+        /// </dd> 
         /// <dt>
         /// Canceling
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job is being cancelled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job is being cancelled.</p> 
+        /// </dd> 
         /// <dt>
         /// Completing
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job is completing.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job is completing.</p> 
+        /// </dd> 
         /// <dt>
         /// TimingOut
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation job batch is timing out.</p>
-        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation job batch is timing out.</p> 
+        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p> 
+        /// </dd> 
         /// <dt>
         /// TimedOut
-        /// </dt>
-        /// <dd>
-        /// <p>The simulation batch job timed out.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The simulation batch job timed out.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationJobBatchStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SimulationJobBatchStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The number of failed simulation job requests.</p>
         pub fn failed_request_count(mut self, input: i32) -> Self {
@@ -7021,8 +6504,7 @@ pub mod simulation_job_batch_summary {
         }
         /// <p>The number of failed simulation job requests.</p>
         pub fn set_failed_request_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed_request_count = input;
-            self
+            self.failed_request_count = input; self
         }
         /// <p>The number of pending simulation job requests.</p>
         pub fn pending_request_count(mut self, input: i32) -> Self {
@@ -7031,8 +6513,7 @@ pub mod simulation_job_batch_summary {
         }
         /// <p>The number of pending simulation job requests.</p>
         pub fn set_pending_request_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pending_request_count = input;
-            self
+            self.pending_request_count = input; self
         }
         /// <p>The number of created simulation job requests.</p>
         pub fn created_request_count(mut self, input: i32) -> Self {
@@ -7041,22 +6522,33 @@ pub mod simulation_job_batch_summary {
         }
         /// <p>The number of created simulation job requests.</p>
         pub fn set_created_request_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.created_request_count = input;
-            self
+            self.created_request_count = input; self
         }
         /// Consumes the builder and constructs a [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
         pub fn build(self) -> crate::model::SimulationJobBatchSummary {
             crate::model::SimulationJobBatchSummary {
-                arn: self.arn,
-                last_updated_at: self.last_updated_at,
-                created_at: self.created_at,
-                status: self.status,
-                failed_request_count: self.failed_request_count.unwrap_or_default(),
-                pending_request_count: self.pending_request_count.unwrap_or_default(),
-                created_request_count: self.created_request_count.unwrap_or_default(),
+                arn: self.arn
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                created_at: self.created_at
+                ,
+                status: self.status
+                ,
+                failed_request_count: self.failed_request_count
+                    .unwrap_or_default()
+                ,
+                pending_request_count: self.pending_request_count
+                    .unwrap_or_default()
+                ,
+                created_request_count: self.created_request_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationJobBatchSummary {
     /// Creates a new builder-style object to manufacture [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
@@ -7068,7 +6560,7 @@ impl SimulationJobBatchSummary {
 /// <p>Summary information for a simulation application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationApplicationSummary {
+pub struct SimulationApplicationSummary  {
     /// <p>The name of the simulation application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7090,35 +6582,33 @@ pub struct SimulationApplicationSummary {
 }
 impl SimulationApplicationSummary {
     /// <p>The name of the simulation application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the simulation application.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<& crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>Information about a simulation software suite.</p>
-    pub fn simulation_software_suite(
-        &self,
-    ) -> std::option::Option<&crate::model::SimulationSoftwareSuite> {
+    pub fn simulation_software_suite(&self) -> std::option::Option<& crate::model::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
 }
 /// See [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
 pub mod simulation_application_summary {
-
+    
     /// A builder for [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7127,8 +6617,7 @@ pub mod simulation_application_summary {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-        pub(crate) simulation_software_suite:
-            std::option::Option<crate::model::SimulationSoftwareSuite>,
+        pub(crate) simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     }
     impl Builder {
         /// <p>The name of the simulation application.</p>
@@ -7138,8 +6627,7 @@ pub mod simulation_application_summary {
         }
         /// <p>The name of the simulation application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7148,8 +6636,7 @@ pub mod simulation_application_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the simulation application.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7158,8 +6645,7 @@ pub mod simulation_application_summary {
         }
         /// <p>The version of the simulation application.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7167,12 +6653,8 @@ pub mod simulation_application_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>Information about a robot software suite (ROS distribution).</p>
         pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
@@ -7180,41 +6662,38 @@ pub mod simulation_application_summary {
             self
         }
         /// <p>Information about a robot software suite (ROS distribution).</p>
-        pub fn set_robot_software_suite(
-            mut self,
-            input: std::option::Option<crate::model::RobotSoftwareSuite>,
-        ) -> Self {
-            self.robot_software_suite = input;
-            self
+        pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::model::RobotSoftwareSuite>) -> Self {
+            self.robot_software_suite = input; self
         }
         /// <p>Information about a simulation software suite.</p>
-        pub fn simulation_software_suite(
-            mut self,
-            input: crate::model::SimulationSoftwareSuite,
-        ) -> Self {
+        pub fn simulation_software_suite(mut self, input: crate::model::SimulationSoftwareSuite) -> Self {
             self.simulation_software_suite = Some(input);
             self
         }
         /// <p>Information about a simulation software suite.</p>
-        pub fn set_simulation_software_suite(
-            mut self,
-            input: std::option::Option<crate::model::SimulationSoftwareSuite>,
-        ) -> Self {
-            self.simulation_software_suite = input;
-            self
+        pub fn set_simulation_software_suite(mut self, input: std::option::Option<crate::model::SimulationSoftwareSuite>) -> Self {
+            self.simulation_software_suite = input; self
         }
         /// Consumes the builder and constructs a [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
         pub fn build(self) -> crate::model::SimulationApplicationSummary {
             crate::model::SimulationApplicationSummary {
-                name: self.name,
-                arn: self.arn,
-                version: self.version,
-                last_updated_at: self.last_updated_at,
-                robot_software_suite: self.robot_software_suite,
-                simulation_software_suite: self.simulation_software_suite,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                robot_software_suite: self.robot_software_suite
+                ,
+                simulation_software_suite: self.simulation_software_suite
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationApplicationSummary {
     /// Creates a new builder-style object to manufacture [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
@@ -7226,7 +6705,7 @@ impl SimulationApplicationSummary {
 /// <p>Information about a robot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Robot {
+pub struct Robot  {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7257,45 +6736,45 @@ pub struct Robot {
 }
 impl Robot {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the robot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The status of the robot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RobotStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RobotStatus> {
         self.status.as_ref()
     }
     /// <p>The Greengrass group associated with the robot.</p>
-    pub fn green_grass_group_id(&self) -> std::option::Option<&str> {
+    pub fn green_grass_group_id(&self) -> std::option::Option<& str> {
         self.green_grass_group_id.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The architecture of the robot.</p>
-    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+    pub fn architecture(&self) -> std::option::Option<& crate::model::Architecture> {
         self.architecture.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(&self) -> std::option::Option<&str> {
+    pub fn last_deployment_job(&self) -> std::option::Option<& str> {
         self.last_deployment_job.as_deref()
     }
     /// <p>The time of the last deployment.</p>
-    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
     }
 }
 /// See [`Robot`](crate::model::Robot).
 pub mod robot {
-
+    
     /// A builder for [`Robot`](crate::model::Robot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7317,8 +6796,7 @@ pub mod robot {
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the robot.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7327,8 +6805,7 @@ pub mod robot {
         }
         /// <p>The name of the robot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7337,8 +6814,7 @@ pub mod robot {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// <p>The status of the robot.</p>
         pub fn status(mut self, input: crate::model::RobotStatus) -> Self {
@@ -7347,8 +6823,7 @@ pub mod robot {
         }
         /// <p>The status of the robot.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::RobotStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Greengrass group associated with the robot.</p>
         pub fn green_grass_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7356,12 +6831,8 @@ pub mod robot {
             self
         }
         /// <p>The Greengrass group associated with the robot.</p>
-        pub fn set_green_grass_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.green_grass_group_id = input;
-            self
+        pub fn set_green_grass_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.green_grass_group_id = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7369,12 +6840,8 @@ pub mod robot {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The architecture of the robot.</p>
         pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
@@ -7382,12 +6849,8 @@ pub mod robot {
             self
         }
         /// <p>The architecture of the robot.</p>
-        pub fn set_architecture(
-            mut self,
-            input: std::option::Option<crate::model::Architecture>,
-        ) -> Self {
-            self.architecture = input;
-            self
+        pub fn set_architecture(mut self, input: std::option::Option<crate::model::Architecture>) -> Self {
+            self.architecture = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
         pub fn last_deployment_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7395,12 +6858,8 @@ pub mod robot {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-        pub fn set_last_deployment_job(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_deployment_job = input;
-            self
+        pub fn set_last_deployment_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_deployment_job = input; self
         }
         /// <p>The time of the last deployment.</p>
         pub fn last_deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7408,28 +6867,35 @@ pub mod robot {
             self
         }
         /// <p>The time of the last deployment.</p>
-        pub fn set_last_deployment_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_time = input;
-            self
+        pub fn set_last_deployment_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_time = input; self
         }
         /// Consumes the builder and constructs a [`Robot`](crate::model::Robot).
         pub fn build(self) -> crate::model::Robot {
             crate::model::Robot {
-                arn: self.arn,
-                name: self.name,
-                fleet_arn: self.fleet_arn,
-                status: self.status,
-                green_grass_group_id: self.green_grass_group_id,
-                created_at: self.created_at,
-                architecture: self.architecture,
-                last_deployment_job: self.last_deployment_job,
-                last_deployment_time: self.last_deployment_time,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                fleet_arn: self.fleet_arn
+                ,
+                status: self.status
+                ,
+                green_grass_group_id: self.green_grass_group_id
+                ,
+                created_at: self.created_at
+                ,
+                architecture: self.architecture
+                ,
+                last_deployment_job: self.last_deployment_job
+                ,
+                last_deployment_time: self.last_deployment_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Robot {
     /// Creates a new builder-style object to manufacture [`Robot`](crate::model::Robot).
@@ -7444,9 +6910,9 @@ impl Robot {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let robotstatus = unimplemented!();
 /// match robotstatus {
@@ -7473,22 +6939,14 @@ impl Robot {
 /// Specifically, when `robotstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RobotStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RobotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -7505,7 +6963,7 @@ pub enum RobotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Registered,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RobotStatus {
     fn from(s: &str) -> Self {
@@ -7517,17 +6975,17 @@ impl std::convert::From<&str> for RobotStatus {
             "NoResponse" => RobotStatus::NoResponse,
             "PendingNewDeployment" => RobotStatus::PendingNewDeployment,
             "Registered" => RobotStatus::Registered,
-            other => RobotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RobotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RobotStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RobotStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RobotStatus::from(s))
+                }
+            }
 impl RobotStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7539,19 +6997,13 @@ impl RobotStatus {
             RobotStatus::NoResponse => "NoResponse",
             RobotStatus::PendingNewDeployment => "PendingNewDeployment",
             RobotStatus::Registered => "Registered",
-            RobotStatus::Unknown(value) => value.as_str(),
+            RobotStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Available",
-            "Deploying",
-            "Failed",
-            "InSync",
-            "NoResponse",
-            "PendingNewDeployment",
-            "Registered",
+            "Available", "Deploying", "Failed", "InSync", "NoResponse", "PendingNewDeployment", "Registered"
         ]
     }
 }
@@ -7564,7 +7016,7 @@ impl AsRef<str> for RobotStatus {
 /// <p>Summary information for a robot application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RobotApplicationSummary {
+pub struct RobotApplicationSummary  {
     /// <p>The name of the robot application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7583,29 +7035,29 @@ pub struct RobotApplicationSummary {
 }
 impl RobotApplicationSummary {
     /// <p>The name of the robot application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the robot application.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<& crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
 }
 /// See [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
 pub mod robot_application_summary {
-
+    
     /// A builder for [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7623,8 +7075,7 @@ pub mod robot_application_summary {
         }
         /// <p>The name of the robot application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7633,8 +7084,7 @@ pub mod robot_application_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the robot application.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7643,8 +7093,7 @@ pub mod robot_application_summary {
         }
         /// <p>The version of the robot application.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7652,12 +7101,8 @@ pub mod robot_application_summary {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>Information about a robot software suite (ROS distribution).</p>
         pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
@@ -7665,24 +7110,27 @@ pub mod robot_application_summary {
             self
         }
         /// <p>Information about a robot software suite (ROS distribution).</p>
-        pub fn set_robot_software_suite(
-            mut self,
-            input: std::option::Option<crate::model::RobotSoftwareSuite>,
-        ) -> Self {
-            self.robot_software_suite = input;
-            self
+        pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::model::RobotSoftwareSuite>) -> Self {
+            self.robot_software_suite = input; self
         }
         /// Consumes the builder and constructs a [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
         pub fn build(self) -> crate::model::RobotApplicationSummary {
             crate::model::RobotApplicationSummary {
-                name: self.name,
-                arn: self.arn,
-                version: self.version,
-                last_updated_at: self.last_updated_at,
-                robot_software_suite: self.robot_software_suite,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                robot_software_suite: self.robot_software_suite
+                ,
             }
         }
     }
+    
+    
 }
 impl RobotApplicationSummary {
     /// Creates a new builder-style object to manufacture [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
@@ -7694,7 +7142,7 @@ impl RobotApplicationSummary {
 /// <p>Information about a fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Fleet {
+pub struct Fleet  {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7716,33 +7164,33 @@ pub struct Fleet {
 }
 impl Fleet {
     /// <p>The name of the fleet.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the last fleet deployment.</p>
-    pub fn last_deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn last_deployment_status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.last_deployment_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(&self) -> std::option::Option<&str> {
+    pub fn last_deployment_job(&self) -> std::option::Option<& str> {
         self.last_deployment_job.as_deref()
     }
     /// <p>The time of the last deployment.</p>
-    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
     }
 }
 /// See [`Fleet`](crate::model::Fleet).
 pub mod fleet {
-
+    
     /// A builder for [`Fleet`](crate::model::Fleet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7761,8 +7209,7 @@ pub mod fleet {
         }
         /// <p>The name of the fleet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7771,8 +7218,7 @@ pub mod fleet {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7780,12 +7226,8 @@ pub mod fleet {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The status of the last fleet deployment.</p>
         pub fn last_deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -7793,12 +7235,8 @@ pub mod fleet {
             self
         }
         /// <p>The status of the last fleet deployment.</p>
-        pub fn set_last_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.last_deployment_status = input;
-            self
+        pub fn set_last_deployment_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.last_deployment_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
         pub fn last_deployment_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7806,12 +7244,8 @@ pub mod fleet {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-        pub fn set_last_deployment_job(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_deployment_job = input;
-            self
+        pub fn set_last_deployment_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_deployment_job = input; self
         }
         /// <p>The time of the last deployment.</p>
         pub fn last_deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7819,25 +7253,29 @@ pub mod fleet {
             self
         }
         /// <p>The time of the last deployment.</p>
-        pub fn set_last_deployment_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_time = input;
-            self
+        pub fn set_last_deployment_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_time = input; self
         }
         /// Consumes the builder and constructs a [`Fleet`](crate::model::Fleet).
         pub fn build(self) -> crate::model::Fleet {
             crate::model::Fleet {
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_deployment_status: self.last_deployment_status,
-                last_deployment_job: self.last_deployment_job,
-                last_deployment_time: self.last_deployment_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_deployment_status: self.last_deployment_status
+                ,
+                last_deployment_job: self.last_deployment_job
+                ,
+                last_deployment_time: self.last_deployment_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Fleet {
     /// Creates a new builder-style object to manufacture [`Fleet`](crate::model::Fleet).
@@ -7849,7 +7287,7 @@ impl Fleet {
 /// <p>Information about a deployment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentJob {
+pub struct DeploymentJob  {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7861,8 +7299,7 @@ pub struct DeploymentJob {
     pub status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The deployment application configuration.</p>
     #[doc(hidden)]
-    pub deployment_application_configs:
-        std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
+    pub deployment_application_configs: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
     /// <p>The deployment configuration.</p>
     #[doc(hidden)]
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
@@ -7878,51 +7315,48 @@ pub struct DeploymentJob {
 }
 impl DeploymentJob {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(&self) -> std::option::Option<&str> {
+    pub fn fleet(&self) -> std::option::Option<& str> {
         self.fleet.as_deref()
     }
     /// <p>The status of the deployment job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(
-        &self,
-    ) -> std::option::Option<&[crate::model::DeploymentApplicationConfig]> {
+    pub fn deployment_application_configs(&self) -> std::option::Option<& [crate::model::DeploymentApplicationConfig]> {
         self.deployment_application_configs.as_deref()
     }
     /// <p>The deployment configuration.</p>
-    pub fn deployment_config(&self) -> std::option::Option<&crate::model::DeploymentConfig> {
+    pub fn deployment_config(&self) -> std::option::Option<& crate::model::DeploymentConfig> {
         self.deployment_config.as_ref()
     }
     /// <p>A short description of the reason why the deployment job failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The deployment job failure code.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::DeploymentJobErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::DeploymentJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`DeploymentJob`](crate::model::DeploymentJob).
 pub mod deployment_job {
-
+    
     /// A builder for [`DeploymentJob`](crate::model::DeploymentJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) fleet: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DeploymentStatus>,
-        pub(crate) deployment_application_configs:
-            std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
+        pub(crate) deployment_application_configs: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
         pub(crate) deployment_config: std::option::Option<crate::model::DeploymentConfig>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
@@ -7936,8 +7370,7 @@ pub mod deployment_job {
         }
         /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7946,8 +7379,7 @@ pub mod deployment_job {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input;
-            self
+            self.fleet = input; self
         }
         /// <p>The status of the deployment job.</p>
         pub fn status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -7955,34 +7387,23 @@ pub mod deployment_job {
             self
         }
         /// <p>The status of the deployment job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `deployment_application_configs`.
         ///
         /// To override the contents of this collection use [`set_deployment_application_configs`](Self::set_deployment_application_configs).
         ///
         /// <p>The deployment application configuration.</p>
-        pub fn deployment_application_configs(
-            mut self,
-            input: crate::model::DeploymentApplicationConfig,
-        ) -> Self {
+        pub fn deployment_application_configs(mut self, input: crate::model::DeploymentApplicationConfig) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input);
-            self.deployment_application_configs = Some(v);
-            self
+                            v.push(input);
+                            self.deployment_application_configs = Some(v);
+                            self
         }
         /// <p>The deployment application configuration.</p>
-        pub fn set_deployment_application_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
-        ) -> Self {
-            self.deployment_application_configs = input;
-            self
+        pub fn set_deployment_application_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>) -> Self {
+            self.deployment_application_configs = input; self
         }
         /// <p>The deployment configuration.</p>
         pub fn deployment_config(mut self, input: crate::model::DeploymentConfig) -> Self {
@@ -7990,12 +7411,8 @@ pub mod deployment_job {
             self
         }
         /// <p>The deployment configuration.</p>
-        pub fn set_deployment_config(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentConfig>,
-        ) -> Self {
-            self.deployment_config = input;
-            self
+        pub fn set_deployment_config(mut self, input: std::option::Option<crate::model::DeploymentConfig>) -> Self {
+            self.deployment_config = input; self
         }
         /// <p>A short description of the reason why the deployment job failed.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8003,12 +7420,8 @@ pub mod deployment_job {
             self
         }
         /// <p>A short description of the reason why the deployment job failed.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The deployment job failure code.</p>
         pub fn failure_code(mut self, input: crate::model::DeploymentJobErrorCode) -> Self {
@@ -8016,12 +7429,8 @@ pub mod deployment_job {
             self
         }
         /// <p>The deployment job failure code.</p>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentJobErrorCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::DeploymentJobErrorCode>) -> Self {
+            self.failure_code = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8029,27 +7438,33 @@ pub mod deployment_job {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentJob`](crate::model::DeploymentJob).
         pub fn build(self) -> crate::model::DeploymentJob {
             crate::model::DeploymentJob {
-                arn: self.arn,
-                fleet: self.fleet,
-                status: self.status,
-                deployment_application_configs: self.deployment_application_configs,
-                deployment_config: self.deployment_config,
-                failure_reason: self.failure_reason,
-                failure_code: self.failure_code,
-                created_at: self.created_at,
+                arn: self.arn
+                ,
+                fleet: self.fleet
+                ,
+                status: self.status
+                ,
+                deployment_application_configs: self.deployment_application_configs
+                ,
+                deployment_config: self.deployment_config
+                ,
+                failure_reason: self.failure_reason
+                ,
+                failure_code: self.failure_code
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentJob {
     /// Creates a new builder-style object to manufacture [`DeploymentJob`](crate::model::DeploymentJob).
@@ -8061,7 +7476,7 @@ impl DeploymentJob {
 /// <p>Information about worlds that finished.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FinishedWorldsSummary {
+pub struct FinishedWorldsSummary  {
     /// <p>The total number of finished worlds.</p>
     #[doc(hidden)]
     pub finished_count: i32,
@@ -8078,17 +7493,17 @@ impl FinishedWorldsSummary {
         self.finished_count
     }
     /// <p>A list of worlds that succeeded.</p>
-    pub fn succeeded_worlds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn succeeded_worlds(&self) -> std::option::Option<& [std::string::String]> {
         self.succeeded_worlds.as_deref()
     }
     /// <p>Information about worlds that failed.</p>
-    pub fn failure_summary(&self) -> std::option::Option<&crate::model::FailureSummary> {
+    pub fn failure_summary(&self) -> std::option::Option<& crate::model::FailureSummary> {
         self.failure_summary.as_ref()
     }
 }
 /// See [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
 pub mod finished_worlds_summary {
-
+    
     /// A builder for [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8104,8 +7519,7 @@ pub mod finished_worlds_summary {
         }
         /// <p>The total number of finished worlds.</p>
         pub fn set_finished_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.finished_count = input;
-            self
+            self.finished_count = input; self
         }
         /// Appends an item to `succeeded_worlds`.
         ///
@@ -8114,17 +7528,13 @@ pub mod finished_worlds_summary {
         /// <p>A list of worlds that succeeded.</p>
         pub fn succeeded_worlds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.succeeded_worlds.unwrap_or_default();
-            v.push(input.into());
-            self.succeeded_worlds = Some(v);
-            self
+                            v.push(input.into());
+                            self.succeeded_worlds = Some(v);
+                            self
         }
         /// <p>A list of worlds that succeeded.</p>
-        pub fn set_succeeded_worlds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.succeeded_worlds = input;
-            self
+        pub fn set_succeeded_worlds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.succeeded_worlds = input; self
         }
         /// <p>Information about worlds that failed.</p>
         pub fn failure_summary(mut self, input: crate::model::FailureSummary) -> Self {
@@ -8132,22 +7542,24 @@ pub mod finished_worlds_summary {
             self
         }
         /// <p>Information about worlds that failed.</p>
-        pub fn set_failure_summary(
-            mut self,
-            input: std::option::Option<crate::model::FailureSummary>,
-        ) -> Self {
-            self.failure_summary = input;
-            self
+        pub fn set_failure_summary(mut self, input: std::option::Option<crate::model::FailureSummary>) -> Self {
+            self.failure_summary = input; self
         }
         /// Consumes the builder and constructs a [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
         pub fn build(self) -> crate::model::FinishedWorldsSummary {
             crate::model::FinishedWorldsSummary {
-                finished_count: self.finished_count.unwrap_or_default(),
-                succeeded_worlds: self.succeeded_worlds,
-                failure_summary: self.failure_summary,
+                finished_count: self.finished_count
+                    .unwrap_or_default()
+                ,
+                succeeded_worlds: self.succeeded_worlds
+                ,
+                failure_summary: self.failure_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl FinishedWorldsSummary {
     /// Creates a new builder-style object to manufacture [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
@@ -8159,7 +7571,7 @@ impl FinishedWorldsSummary {
 /// <p>Information about worlds that failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureSummary {
+pub struct FailureSummary  {
     /// <p>The total number of failures.</p>
     #[doc(hidden)]
     pub total_failure_count: i32,
@@ -8173,13 +7585,13 @@ impl FailureSummary {
         self.total_failure_count
     }
     /// <p>The worlds that failed.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::model::WorldFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::model::WorldFailure]> {
         self.failures.as_deref()
     }
 }
 /// See [`FailureSummary`](crate::model::FailureSummary).
 pub mod failure_summary {
-
+    
     /// A builder for [`FailureSummary`](crate::model::FailureSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8194,8 +7606,7 @@ pub mod failure_summary {
         }
         /// <p>The total number of failures.</p>
         pub fn set_total_failure_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_failure_count = input;
-            self
+            self.total_failure_count = input; self
         }
         /// Appends an item to `failures`.
         ///
@@ -8204,26 +7615,27 @@ pub mod failure_summary {
         /// <p>The worlds that failed.</p>
         pub fn failures(mut self, input: crate::model::WorldFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input);
-            self.failures = Some(v);
-            self
+                            v.push(input);
+                            self.failures = Some(v);
+                            self
         }
         /// <p>The worlds that failed.</p>
-        pub fn set_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorldFailure>>,
-        ) -> Self {
-            self.failures = input;
-            self
+        pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorldFailure>>) -> Self {
+            self.failures = input; self
         }
         /// Consumes the builder and constructs a [`FailureSummary`](crate::model::FailureSummary).
         pub fn build(self) -> crate::model::FailureSummary {
             crate::model::FailureSummary {
-                total_failure_count: self.total_failure_count.unwrap_or_default(),
-                failures: self.failures,
+                total_failure_count: self.total_failure_count
+                    .unwrap_or_default()
+                ,
+                failures: self.failures
+                ,
             }
         }
     }
+    
+    
 }
 impl FailureSummary {
     /// Creates a new builder-style object to manufacture [`FailureSummary`](crate::model::FailureSummary).
@@ -8235,39 +7647,39 @@ impl FailureSummary {
 /// <p>Information about a failed world.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldFailure {
-    /// <p>The failure code of the world export job if it failed:</p>
-    /// <dl>
+pub struct WorldFailure  {
+    /// <p>The failure code of the world export job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
@@ -8279,44 +7691,44 @@ pub struct WorldFailure {
     pub failure_count: i32,
 }
 impl WorldFailure {
-    /// <p>The failure code of the world export job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the world export job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::WorldGenerationJobErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
-    pub fn sample_failure_reason(&self) -> std::option::Option<&str> {
+    pub fn sample_failure_reason(&self) -> std::option::Option<& str> {
         self.sample_failure_reason.as_deref()
     }
     /// <p>The number of failed worlds.</p>
@@ -8326,7 +7738,7 @@ impl WorldFailure {
 }
 /// See [`WorldFailure`](crate::model::WorldFailure).
 pub mod world_failure {
-
+    
     /// A builder for [`WorldFailure`](crate::model::WorldFailure).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8335,82 +7747,78 @@ pub mod world_failure {
         pub(crate) failure_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The failure code of the world export job if it failed:</p>
-        /// <dl>
+        /// <p>The failure code of the world export job if it failed:</p> 
+        /// <dl> 
         /// <dt>
         /// InternalServiceError
-        /// </dt>
-        /// <dd>
-        /// <p>Internal service error.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Internal service error.</p> 
+        /// </dd> 
         /// <dt>
         /// LimitExceeded
-        /// </dt>
-        /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+        /// </dd> 
         /// <dt>
         /// ResourceNotFound
-        /// </dt>
-        /// <dd>
-        /// <p>The specified resource could not be found. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The specified resource could not be found. </p> 
+        /// </dd> 
         /// <dt>
         /// RequestThrottled
-        /// </dt>
-        /// <dd>
-        /// <p>The request was throttled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The request was throttled.</p> 
+        /// </dd> 
         /// <dt>
         /// InvalidInput
-        /// </dt>
-        /// <dd>
-        /// <p>An input parameter in the request is not valid.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>An input parameter in the request is not valid.</p> 
+        /// </dd> 
         /// </dl>
         pub fn failure_code(mut self, input: crate::model::WorldGenerationJobErrorCode) -> Self {
             self.failure_code = Some(input);
             self
         }
-        /// <p>The failure code of the world export job if it failed:</p>
-        /// <dl>
+        /// <p>The failure code of the world export job if it failed:</p> 
+        /// <dl> 
         /// <dt>
         /// InternalServiceError
-        /// </dt>
-        /// <dd>
-        /// <p>Internal service error.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Internal service error.</p> 
+        /// </dd> 
         /// <dt>
         /// LimitExceeded
-        /// </dt>
-        /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+        /// </dd> 
         /// <dt>
         /// ResourceNotFound
-        /// </dt>
-        /// <dd>
-        /// <p>The specified resource could not be found. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The specified resource could not be found. </p> 
+        /// </dd> 
         /// <dt>
         /// RequestThrottled
-        /// </dt>
-        /// <dd>
-        /// <p>The request was throttled.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The request was throttled.</p> 
+        /// </dd> 
         /// <dt>
         /// InvalidInput
-        /// </dt>
-        /// <dd>
-        /// <p>An input parameter in the request is not valid.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>An input parameter in the request is not valid.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::WorldGenerationJobErrorCode>) -> Self {
+            self.failure_code = input; self
         }
         /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
         pub fn sample_failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8418,12 +7826,8 @@ pub mod world_failure {
             self
         }
         /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
-        pub fn set_sample_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sample_failure_reason = input;
-            self
+        pub fn set_sample_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sample_failure_reason = input; self
         }
         /// <p>The number of failed worlds.</p>
         pub fn failure_count(mut self, input: i32) -> Self {
@@ -8432,18 +7836,23 @@ pub mod world_failure {
         }
         /// <p>The number of failed worlds.</p>
         pub fn set_failure_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.failure_count = input;
-            self
+            self.failure_count = input; self
         }
         /// Consumes the builder and constructs a [`WorldFailure`](crate::model::WorldFailure).
         pub fn build(self) -> crate::model::WorldFailure {
             crate::model::WorldFailure {
-                failure_code: self.failure_code,
-                sample_failure_reason: self.sample_failure_reason,
-                failure_count: self.failure_count.unwrap_or_default(),
+                failure_code: self.failure_code
+                ,
+                sample_failure_reason: self.sample_failure_reason
+                ,
+                failure_count: self.failure_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl WorldFailure {
     /// Creates a new builder-style object to manufacture [`WorldFailure`](crate::model::WorldFailure).
@@ -8458,9 +7867,9 @@ impl WorldFailure {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let worldgenerationjoberrorcode = unimplemented!();
 /// match worldgenerationjoberrorcode {
@@ -8486,22 +7895,14 @@ impl WorldFailure {
 /// Specifically, when `worldgenerationjoberrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorldGenerationJobErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorldGenerationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AllWorldGenerationFailed,
@@ -8516,7 +7917,7 @@ pub enum WorldGenerationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldGenerationJobErrorCode {
     fn from(s: &str) -> Self {
@@ -8527,19 +7928,17 @@ impl std::convert::From<&str> for WorldGenerationJobErrorCode {
             "LimitExceeded" => WorldGenerationJobErrorCode::LimitExceeded,
             "RequestThrottled" => WorldGenerationJobErrorCode::RequestThrottled,
             "ResourceNotFound" => WorldGenerationJobErrorCode::ResourceNotFound,
-            other => WorldGenerationJobErrorCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WorldGenerationJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WorldGenerationJobErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorldGenerationJobErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorldGenerationJobErrorCode::from(s))
+                }
+            }
 impl WorldGenerationJobErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8550,18 +7949,13 @@ impl WorldGenerationJobErrorCode {
             WorldGenerationJobErrorCode::LimitExceeded => "LimitExceeded",
             WorldGenerationJobErrorCode::RequestThrottled => "RequestThrottled",
             WorldGenerationJobErrorCode::ResourceNotFound => "ResourceNotFound",
-            WorldGenerationJobErrorCode::Unknown(value) => value.as_str(),
+            WorldGenerationJobErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AllWorldGenerationFailed",
-            "InternalServiceError",
-            "InvalidInput",
-            "LimitExceeded",
-            "RequestThrottled",
-            "ResourceNotFound",
+            "AllWorldGenerationFailed", "InternalServiceError", "InvalidInput", "LimitExceeded", "RequestThrottled", "ResourceNotFound"
         ]
     }
 }
@@ -8577,9 +7971,9 @@ impl AsRef<str> for WorldGenerationJobErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let worldexportjoberrorcode = unimplemented!();
 /// match worldexportjoberrorcode {
@@ -8605,22 +7999,14 @@ impl AsRef<str> for WorldGenerationJobErrorCode {
 /// Specifically, when `worldexportjoberrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorldExportJobErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorldExportJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -8635,7 +8021,7 @@ pub enum WorldExportJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldExportJobErrorCode {
     fn from(s: &str) -> Self {
@@ -8646,19 +8032,17 @@ impl std::convert::From<&str> for WorldExportJobErrorCode {
             "LimitExceeded" => WorldExportJobErrorCode::LimitExceeded,
             "RequestThrottled" => WorldExportJobErrorCode::RequestThrottled,
             "ResourceNotFound" => WorldExportJobErrorCode::ResourceNotFound,
-            other => WorldExportJobErrorCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WorldExportJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WorldExportJobErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorldExportJobErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorldExportJobErrorCode::from(s))
+                }
+            }
 impl WorldExportJobErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8669,18 +8053,13 @@ impl WorldExportJobErrorCode {
             WorldExportJobErrorCode::LimitExceeded => "LimitExceeded",
             WorldExportJobErrorCode::RequestThrottled => "RequestThrottled",
             WorldExportJobErrorCode::ResourceNotFound => "ResourceNotFound",
-            WorldExportJobErrorCode::Unknown(value) => value.as_str(),
+            WorldExportJobErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDenied",
-            "InternalServiceError",
-            "InvalidInput",
-            "LimitExceeded",
-            "RequestThrottled",
-            "ResourceNotFound",
+            "AccessDenied", "InternalServiceError", "InvalidInput", "LimitExceeded", "RequestThrottled", "ResourceNotFound"
         ]
     }
 }
@@ -8693,7 +8072,7 @@ impl AsRef<str> for WorldExportJobErrorCode {
 /// <p>Compute information for the simulation job</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeResponse {
+pub struct ComputeResponse  {
     /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
     #[doc(hidden)]
     pub simulation_unit_limit: std::option::Option<i32>,
@@ -8710,7 +8089,7 @@ impl ComputeResponse {
         self.simulation_unit_limit
     }
     /// <p>Compute type response information for the simulation job.</p>
-    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+    pub fn compute_type(&self) -> std::option::Option<& crate::model::ComputeType> {
         self.compute_type.as_ref()
     }
     /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
@@ -8720,7 +8099,7 @@ impl ComputeResponse {
 }
 /// See [`ComputeResponse`](crate::model::ComputeResponse).
 pub mod compute_response {
-
+    
     /// A builder for [`ComputeResponse`](crate::model::ComputeResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8736,8 +8115,7 @@ pub mod compute_response {
         }
         /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
         pub fn set_simulation_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.simulation_unit_limit = input;
-            self
+            self.simulation_unit_limit = input; self
         }
         /// <p>Compute type response information for the simulation job.</p>
         pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
@@ -8745,12 +8123,8 @@ pub mod compute_response {
             self
         }
         /// <p>Compute type response information for the simulation job.</p>
-        pub fn set_compute_type(
-            mut self,
-            input: std::option::Option<crate::model::ComputeType>,
-        ) -> Self {
-            self.compute_type = input;
-            self
+        pub fn set_compute_type(mut self, input: std::option::Option<crate::model::ComputeType>) -> Self {
+            self.compute_type = input; self
         }
         /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
         pub fn gpu_unit_limit(mut self, input: i32) -> Self {
@@ -8759,18 +8133,22 @@ pub mod compute_response {
         }
         /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
         pub fn set_gpu_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.gpu_unit_limit = input;
-            self
+            self.gpu_unit_limit = input; self
         }
         /// Consumes the builder and constructs a [`ComputeResponse`](crate::model::ComputeResponse).
         pub fn build(self) -> crate::model::ComputeResponse {
             crate::model::ComputeResponse {
-                simulation_unit_limit: self.simulation_unit_limit,
-                compute_type: self.compute_type,
-                gpu_unit_limit: self.gpu_unit_limit,
+                simulation_unit_limit: self.simulation_unit_limit
+                ,
+                compute_type: self.compute_type
+                ,
+                gpu_unit_limit: self.gpu_unit_limit
+                ,
             }
         }
     }
+    
+    
 }
 impl ComputeResponse {
     /// Creates a new builder-style object to manufacture [`ComputeResponse`](crate::model::ComputeResponse).
@@ -8782,7 +8160,7 @@ impl ComputeResponse {
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
@@ -8795,21 +8173,21 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The IPv4 public address of the network interface.</p>
-    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> std::option::Option<& str> {
         self.public_ip_address.as_deref()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
-
+    
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8824,12 +8202,8 @@ pub mod network_interface {
             self
         }
         /// <p>The ID of the network interface.</p>
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface_id = input;
-            self
+        pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface_id = input; self
         }
         /// <p>The IPv4 address of the network interface within the subnet.</p>
         pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8837,12 +8211,8 @@ pub mod network_interface {
             self
         }
         /// <p>The IPv4 address of the network interface within the subnet.</p>
-        pub fn set_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_ip_address = input;
-            self
+        pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_ip_address = input; self
         }
         /// <p>The IPv4 public address of the network interface.</p>
         pub fn public_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8850,22 +8220,23 @@ pub mod network_interface {
             self
         }
         /// <p>The IPv4 public address of the network interface.</p>
-        pub fn set_public_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_ip_address = input;
-            self
+        pub fn set_public_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_ip_address = input; self
         }
         /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface).
         pub fn build(self) -> crate::model::NetworkInterface {
             crate::model::NetworkInterface {
-                network_interface_id: self.network_interface_id,
-                private_ip_address: self.private_ip_address,
-                public_ip_address: self.public_ip_address,
+                network_interface_id: self.network_interface_id
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+                public_ip_address: self.public_ip_address
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
@@ -8877,7 +8248,7 @@ impl NetworkInterface {
 /// <p>VPC configuration associated with your simulation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfigResponse {
+pub struct VpcConfigResponse  {
     /// <p>A list of subnet IDs associated with the simulation job.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8893,15 +8264,15 @@ pub struct VpcConfigResponse {
 }
 impl VpcConfigResponse {
     /// <p>A list of subnet IDs associated with the simulation job.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>A list of security group IDs associated with the simulation job.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The VPC ID associated with your simulation job.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A boolean indicating if a public IP was assigned.</p>
@@ -8911,7 +8282,7 @@ impl VpcConfigResponse {
 }
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse).
 pub mod vpc_config_response {
-
+    
     /// A builder for [`VpcConfigResponse`](crate::model::VpcConfigResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8928,17 +8299,13 @@ pub mod vpc_config_response {
         /// <p>A list of subnet IDs associated with the simulation job.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>A list of subnet IDs associated with the simulation job.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -8947,17 +8314,13 @@ pub mod vpc_config_response {
         /// <p>A list of security group IDs associated with the simulation job.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>A list of security group IDs associated with the simulation job.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// <p>The VPC ID associated with your simulation job.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8966,8 +8329,7 @@ pub mod vpc_config_response {
         }
         /// <p>The VPC ID associated with your simulation job.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>A boolean indicating if a public IP was assigned.</p>
         pub fn assign_public_ip(mut self, input: bool) -> Self {
@@ -8976,19 +8338,25 @@ pub mod vpc_config_response {
         }
         /// <p>A boolean indicating if a public IP was assigned.</p>
         pub fn set_assign_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.assign_public_ip = input;
-            self
+            self.assign_public_ip = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfigResponse`](crate::model::VpcConfigResponse).
         pub fn build(self) -> crate::model::VpcConfigResponse {
             crate::model::VpcConfigResponse {
-                subnets: self.subnets,
-                security_groups: self.security_groups,
-                vpc_id: self.vpc_id,
-                assign_public_ip: self.assign_public_ip.unwrap_or_default(),
+                subnets: self.subnets
+                ,
+                security_groups: self.security_groups
+                ,
+                vpc_id: self.vpc_id
+                ,
+                assign_public_ip: self.assign_public_ip
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfigResponse {
     /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse).
@@ -9000,7 +8368,7 @@ impl VpcConfigResponse {
 /// <p>Information about a data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -9010,46 +8378,46 @@ pub struct DataSource {
     /// <p>The list of S3 keys identifying the data source files.</p>
     #[doc(hidden)]
     pub s3_keys: std::option::Option<std::vec::Vec<crate::model::S3KeyOutput>>,
-    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>The location where your files are mounted in the container image.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>The location where your files are mounted in the container image.</p> 
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl DataSource {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The S3 bucket where the data files are located.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_keys(&self) -> std::option::Option<&[crate::model::S3KeyOutput]> {
+    pub fn s3_keys(&self) -> std::option::Option<& [crate::model::S3KeyOutput]> {
         self.s3_keys.as_deref()
     }
-    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The location where your files are mounted in the container image.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>The location where your files are mounted in the container image.</p> 
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
-
+    
     /// A builder for [`DataSource`](crate::model::DataSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9067,8 +8435,7 @@ pub mod data_source {
         }
         /// <p>The name of the data source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The S3 bucket where the data files are located.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9077,8 +8444,7 @@ pub mod data_source {
         }
         /// <p>The S3 bucket where the data files are located.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// Appends an item to `s3_keys`.
         ///
@@ -9087,60 +8453,58 @@ pub mod data_source {
         /// <p>The list of S3 keys identifying the data source files.</p>
         pub fn s3_keys(mut self, input: crate::model::S3KeyOutput) -> Self {
             let mut v = self.s3_keys.unwrap_or_default();
-            v.push(input);
-            self.s3_keys = Some(v);
-            self
+                            v.push(input);
+                            self.s3_keys = Some(v);
+                            self
         }
         /// <p>The list of S3 keys identifying the data source files.</p>
-        pub fn set_s3_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3KeyOutput>>,
-        ) -> Self {
-            self.s3_keys = input;
-            self
+        pub fn set_s3_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3KeyOutput>>) -> Self {
+            self.s3_keys = input; self
         }
-        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
         /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
         /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::DataSourceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DataSourceType>) -> Self {
+            self.r#type = input; self
         }
-        /// <p>The location where your files are mounted in the container image.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+        /// <p>The location where your files are mounted in the container image.</p> 
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
         /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination = Some(input.into());
             self
         }
-        /// <p>The location where your files are mounted in the container image.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+        /// <p>The location where your files are mounted in the container image.</p> 
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
         /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
         pub fn build(self) -> crate::model::DataSource {
             crate::model::DataSource {
-                name: self.name,
-                s3_bucket: self.s3_bucket,
-                s3_keys: self.s3_keys,
-                r#type: self.r#type,
-                destination: self.destination,
+                name: self.name
+                ,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_keys: self.s3_keys
+                ,
+                r#type: self.r#type
+                ,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl DataSource {
     /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
@@ -9152,7 +8516,7 @@ impl DataSource {
 /// <p>Information about S3 keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3KeyOutput {
+pub struct S3KeyOutput  {
     /// <p>The S3 key.</p>
     #[doc(hidden)]
     pub s3_key: std::option::Option<std::string::String>,
@@ -9162,17 +8526,17 @@ pub struct S3KeyOutput {
 }
 impl S3KeyOutput {
     /// <p>The S3 key.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>The etag for the object.</p>
-    pub fn etag(&self) -> std::option::Option<&str> {
+    pub fn etag(&self) -> std::option::Option<& str> {
         self.etag.as_deref()
     }
 }
 /// See [`S3KeyOutput`](crate::model::S3KeyOutput).
 pub mod s3_key_output {
-
+    
     /// A builder for [`S3KeyOutput`](crate::model::S3KeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9187,8 +8551,7 @@ pub mod s3_key_output {
         }
         /// <p>The S3 key.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// <p>The etag for the object.</p>
         pub fn etag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9197,17 +8560,20 @@ pub mod s3_key_output {
         }
         /// <p>The etag for the object.</p>
         pub fn set_etag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.etag = input;
-            self
+            self.etag = input; self
         }
         /// Consumes the builder and constructs a [`S3KeyOutput`](crate::model::S3KeyOutput).
         pub fn build(self) -> crate::model::S3KeyOutput {
             crate::model::S3KeyOutput {
-                s3_key: self.s3_key,
-                etag: self.etag,
+                s3_key: self.s3_key
+                ,
+                etag: self.etag
+                ,
             }
         }
     }
+    
+    
 }
 impl S3KeyOutput {
     /// Creates a new builder-style object to manufacture [`S3KeyOutput`](crate::model::S3KeyOutput).
@@ -9219,7 +8585,7 @@ impl S3KeyOutput {
 /// <p>Information about a robot deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RobotDeployment {
+pub struct RobotDeployment  {
     /// <p>The robot deployment Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -9244,37 +8610,37 @@ pub struct RobotDeployment {
 }
 impl RobotDeployment {
     /// <p>The robot deployment Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
-    pub fn deployment_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deployment_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deployment_start_time.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-    pub fn deployment_finish_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deployment_finish_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deployment_finish_time.as_ref()
     }
     /// <p>The status of the robot deployment.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RobotStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RobotStatus> {
         self.status.as_ref()
     }
     /// <p>Information about how the deployment is progressing.</p>
-    pub fn progress_detail(&self) -> std::option::Option<&crate::model::ProgressDetail> {
+    pub fn progress_detail(&self) -> std::option::Option<& crate::model::ProgressDetail> {
         self.progress_detail.as_ref()
     }
     /// <p>A short description of the reason why the robot deployment failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The robot deployment failure code.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::DeploymentJobErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::DeploymentJobErrorCode> {
         self.failure_code.as_ref()
     }
 }
 /// See [`RobotDeployment`](crate::model::RobotDeployment).
 pub mod robot_deployment {
-
+    
     /// A builder for [`RobotDeployment`](crate::model::RobotDeployment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9294,8 +8660,7 @@ pub mod robot_deployment {
         }
         /// <p>The robot deployment Amazon Resource Name (ARN).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
         pub fn deployment_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9303,12 +8668,8 @@ pub mod robot_deployment {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
-        pub fn set_deployment_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deployment_start_time = input;
-            self
+        pub fn set_deployment_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deployment_start_time = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
         pub fn deployment_finish_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9316,12 +8677,8 @@ pub mod robot_deployment {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-        pub fn set_deployment_finish_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deployment_finish_time = input;
-            self
+        pub fn set_deployment_finish_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deployment_finish_time = input; self
         }
         /// <p>The status of the robot deployment.</p>
         pub fn status(mut self, input: crate::model::RobotStatus) -> Self {
@@ -9330,8 +8687,7 @@ pub mod robot_deployment {
         }
         /// <p>The status of the robot deployment.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::RobotStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Information about how the deployment is progressing.</p>
         pub fn progress_detail(mut self, input: crate::model::ProgressDetail) -> Self {
@@ -9339,12 +8695,8 @@ pub mod robot_deployment {
             self
         }
         /// <p>Information about how the deployment is progressing.</p>
-        pub fn set_progress_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProgressDetail>,
-        ) -> Self {
-            self.progress_detail = input;
-            self
+        pub fn set_progress_detail(mut self, input: std::option::Option<crate::model::ProgressDetail>) -> Self {
+            self.progress_detail = input; self
         }
         /// <p>A short description of the reason why the robot deployment failed.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9352,12 +8704,8 @@ pub mod robot_deployment {
             self
         }
         /// <p>A short description of the reason why the robot deployment failed.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The robot deployment failure code.</p>
         pub fn failure_code(mut self, input: crate::model::DeploymentJobErrorCode) -> Self {
@@ -9365,26 +8713,31 @@ pub mod robot_deployment {
             self
         }
         /// <p>The robot deployment failure code.</p>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentJobErrorCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::DeploymentJobErrorCode>) -> Self {
+            self.failure_code = input; self
         }
         /// Consumes the builder and constructs a [`RobotDeployment`](crate::model::RobotDeployment).
         pub fn build(self) -> crate::model::RobotDeployment {
             crate::model::RobotDeployment {
-                arn: self.arn,
-                deployment_start_time: self.deployment_start_time,
-                deployment_finish_time: self.deployment_finish_time,
-                status: self.status,
-                progress_detail: self.progress_detail,
-                failure_reason: self.failure_reason,
-                failure_code: self.failure_code,
+                arn: self.arn
+                ,
+                deployment_start_time: self.deployment_start_time
+                ,
+                deployment_finish_time: self.deployment_finish_time
+                ,
+                status: self.status
+                ,
+                progress_detail: self.progress_detail
+                ,
+                failure_reason: self.failure_reason
+                ,
+                failure_code: self.failure_code
+                ,
             }
         }
     }
+    
+    
 }
 impl RobotDeployment {
     /// Creates a new builder-style object to manufacture [`RobotDeployment`](crate::model::RobotDeployment).
@@ -9396,45 +8749,45 @@ impl RobotDeployment {
 /// <p>Information about the progress of a deployment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProgressDetail {
-    /// <p>The current progress status.</p>
-    /// <dl>
+pub struct ProgressDetail  {
+    /// <p>The current progress status.</p> 
+    /// <dl> 
     /// <dt>
     /// Validating
-    /// </dt>
-    /// <dd>
-    /// <p>Validating the deployment.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Validating the deployment.</p> 
+    /// </dd> 
     /// <dt>
     /// DownloadingExtracting
-    /// </dt>
-    /// <dd>
-    /// <p>Downloading and extracting the bundle on the robot.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Downloading and extracting the bundle on the robot.</p> 
+    /// </dd> 
     /// <dt>
     /// ExecutingPreLaunch
-    /// </dt>
-    /// <dd>
-    /// <p>Executing pre-launch script(s) if provided.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Executing pre-launch script(s) if provided.</p> 
+    /// </dd> 
     /// <dt>
     /// Launching
-    /// </dt>
-    /// <dd>
-    /// <p>Launching the robot application.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Launching the robot application.</p> 
+    /// </dd> 
     /// <dt>
     /// ExecutingPostLaunch
-    /// </dt>
-    /// <dd>
-    /// <p>Executing post-launch script(s) if provided.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Executing post-launch script(s) if provided.</p> 
+    /// </dd> 
     /// <dt>
     /// Finished
-    /// </dt>
-    /// <dd>
-    /// <p>Deployment is complete.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Deployment is complete.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub current_progress: std::option::Option<crate::model::RobotDeploymentStep>,
@@ -9449,46 +8802,46 @@ pub struct ProgressDetail {
     pub target_resource: std::option::Option<std::string::String>,
 }
 impl ProgressDetail {
-    /// <p>The current progress status.</p>
-    /// <dl>
+    /// <p>The current progress status.</p> 
+    /// <dl> 
     /// <dt>
     /// Validating
-    /// </dt>
-    /// <dd>
-    /// <p>Validating the deployment.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Validating the deployment.</p> 
+    /// </dd> 
     /// <dt>
     /// DownloadingExtracting
-    /// </dt>
-    /// <dd>
-    /// <p>Downloading and extracting the bundle on the robot.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Downloading and extracting the bundle on the robot.</p> 
+    /// </dd> 
     /// <dt>
     /// ExecutingPreLaunch
-    /// </dt>
-    /// <dd>
-    /// <p>Executing pre-launch script(s) if provided.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Executing pre-launch script(s) if provided.</p> 
+    /// </dd> 
     /// <dt>
     /// Launching
-    /// </dt>
-    /// <dd>
-    /// <p>Launching the robot application.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Launching the robot application.</p> 
+    /// </dd> 
     /// <dt>
     /// ExecutingPostLaunch
-    /// </dt>
-    /// <dd>
-    /// <p>Executing post-launch script(s) if provided.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Executing post-launch script(s) if provided.</p> 
+    /// </dd> 
     /// <dt>
     /// Finished
-    /// </dt>
-    /// <dd>
-    /// <p>Deployment is complete.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Deployment is complete.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn current_progress(&self) -> std::option::Option<&crate::model::RobotDeploymentStep> {
+    pub fn current_progress(&self) -> std::option::Option<& crate::model::RobotDeploymentStep> {
         self.current_progress.as_ref()
     }
     /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
@@ -9500,13 +8853,13 @@ impl ProgressDetail {
         self.estimated_time_remaining_seconds
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    pub fn target_resource(&self) -> std::option::Option<&str> {
+    pub fn target_resource(&self) -> std::option::Option<& str> {
         self.target_resource.as_deref()
     }
 }
 /// See [`ProgressDetail`](crate::model::ProgressDetail).
 pub mod progress_detail {
-
+    
     /// A builder for [`ProgressDetail`](crate::model::ProgressDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9516,94 +8869,90 @@ pub mod progress_detail {
         pub(crate) target_resource: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current progress status.</p>
-        /// <dl>
+        /// <p>The current progress status.</p> 
+        /// <dl> 
         /// <dt>
         /// Validating
-        /// </dt>
-        /// <dd>
-        /// <p>Validating the deployment.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Validating the deployment.</p> 
+        /// </dd> 
         /// <dt>
         /// DownloadingExtracting
-        /// </dt>
-        /// <dd>
-        /// <p>Downloading and extracting the bundle on the robot.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Downloading and extracting the bundle on the robot.</p> 
+        /// </dd> 
         /// <dt>
         /// ExecutingPreLaunch
-        /// </dt>
-        /// <dd>
-        /// <p>Executing pre-launch script(s) if provided.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Executing pre-launch script(s) if provided.</p> 
+        /// </dd> 
         /// <dt>
         /// Launching
-        /// </dt>
-        /// <dd>
-        /// <p>Launching the robot application.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Launching the robot application.</p> 
+        /// </dd> 
         /// <dt>
         /// ExecutingPostLaunch
-        /// </dt>
-        /// <dd>
-        /// <p>Executing post-launch script(s) if provided.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Executing post-launch script(s) if provided.</p> 
+        /// </dd> 
         /// <dt>
         /// Finished
-        /// </dt>
-        /// <dd>
-        /// <p>Deployment is complete.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Deployment is complete.</p> 
+        /// </dd> 
         /// </dl>
         pub fn current_progress(mut self, input: crate::model::RobotDeploymentStep) -> Self {
             self.current_progress = Some(input);
             self
         }
-        /// <p>The current progress status.</p>
-        /// <dl>
+        /// <p>The current progress status.</p> 
+        /// <dl> 
         /// <dt>
         /// Validating
-        /// </dt>
-        /// <dd>
-        /// <p>Validating the deployment.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Validating the deployment.</p> 
+        /// </dd> 
         /// <dt>
         /// DownloadingExtracting
-        /// </dt>
-        /// <dd>
-        /// <p>Downloading and extracting the bundle on the robot.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Downloading and extracting the bundle on the robot.</p> 
+        /// </dd> 
         /// <dt>
         /// ExecutingPreLaunch
-        /// </dt>
-        /// <dd>
-        /// <p>Executing pre-launch script(s) if provided.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Executing pre-launch script(s) if provided.</p> 
+        /// </dd> 
         /// <dt>
         /// Launching
-        /// </dt>
-        /// <dd>
-        /// <p>Launching the robot application.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Launching the robot application.</p> 
+        /// </dd> 
         /// <dt>
         /// ExecutingPostLaunch
-        /// </dt>
-        /// <dd>
-        /// <p>Executing post-launch script(s) if provided.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Executing post-launch script(s) if provided.</p> 
+        /// </dd> 
         /// <dt>
         /// Finished
-        /// </dt>
-        /// <dd>
-        /// <p>Deployment is complete.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Deployment is complete.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_current_progress(
-            mut self,
-            input: std::option::Option<crate::model::RobotDeploymentStep>,
-        ) -> Self {
-            self.current_progress = input;
-            self
+        pub fn set_current_progress(mut self, input: std::option::Option<crate::model::RobotDeploymentStep>) -> Self {
+            self.current_progress = input; self
         }
         /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
         pub fn percent_done(mut self, input: f32) -> Self {
@@ -9612,8 +8961,7 @@ pub mod progress_detail {
         }
         /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
         pub fn set_percent_done(mut self, input: std::option::Option<f32>) -> Self {
-            self.percent_done = input;
-            self
+            self.percent_done = input; self
         }
         /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
         pub fn estimated_time_remaining_seconds(mut self, input: i32) -> Self {
@@ -9621,12 +8969,8 @@ pub mod progress_detail {
             self
         }
         /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
-        pub fn set_estimated_time_remaining_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.estimated_time_remaining_seconds = input;
-            self
+        pub fn set_estimated_time_remaining_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.estimated_time_remaining_seconds = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
         pub fn target_resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9634,23 +8978,25 @@ pub mod progress_detail {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-        pub fn set_target_resource(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_resource = input;
-            self
+        pub fn set_target_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_resource = input; self
         }
         /// Consumes the builder and constructs a [`ProgressDetail`](crate::model::ProgressDetail).
         pub fn build(self) -> crate::model::ProgressDetail {
             crate::model::ProgressDetail {
-                current_progress: self.current_progress,
-                percent_done: self.percent_done,
-                estimated_time_remaining_seconds: self.estimated_time_remaining_seconds,
-                target_resource: self.target_resource,
+                current_progress: self.current_progress
+                ,
+                percent_done: self.percent_done
+                ,
+                estimated_time_remaining_seconds: self.estimated_time_remaining_seconds
+                ,
+                target_resource: self.target_resource
+                ,
             }
         }
     }
+    
+    
 }
 impl ProgressDetail {
     /// Creates a new builder-style object to manufacture [`ProgressDetail`](crate::model::ProgressDetail).
@@ -9665,9 +9011,9 @@ impl ProgressDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let robotdeploymentstep = unimplemented!();
 /// match robotdeploymentstep {
@@ -9694,22 +9040,14 @@ impl ProgressDetail {
 /// Specifically, when `robotdeploymentstep` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RobotDeploymentStep::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RobotDeploymentStep {
     #[allow(missing_docs)] // documentation missing in model
     DownloadingExtractingStep,
@@ -9726,7 +9064,7 @@ pub enum RobotDeploymentStep {
     #[allow(missing_docs)] // documentation missing in model
     ValidatingStep,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RobotDeploymentStep {
     fn from(s: &str) -> Self {
@@ -9738,19 +9076,17 @@ impl std::convert::From<&str> for RobotDeploymentStep {
             "Finished" => RobotDeploymentStep::FinishedStep,
             "Launching" => RobotDeploymentStep::LaunchingStep,
             "Validating" => RobotDeploymentStep::ValidatingStep,
-            other => {
-                RobotDeploymentStep::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RobotDeploymentStep::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RobotDeploymentStep {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RobotDeploymentStep::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RobotDeploymentStep::from(s))
+                }
+            }
 impl RobotDeploymentStep {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9762,19 +9098,13 @@ impl RobotDeploymentStep {
             RobotDeploymentStep::FinishedStep => "Finished",
             RobotDeploymentStep::LaunchingStep => "Launching",
             RobotDeploymentStep::ValidatingStep => "Validating",
-            RobotDeploymentStep::Unknown(value) => value.as_str(),
+            RobotDeploymentStep::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DownloadingExtracting",
-            "ExecutingDownloadCondition",
-            "ExecutingPostLaunch",
-            "ExecutingPreLaunch",
-            "Finished",
-            "Launching",
-            "Validating",
+            "DownloadingExtracting", "ExecutingDownloadCondition", "ExecutingPostLaunch", "ExecutingPreLaunch", "Finished", "Launching", "Validating"
         ]
     }
 }
@@ -9787,7 +9117,7 @@ impl AsRef<str> for RobotDeploymentStep {
 /// <p>Information about a simulation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationJob {
+pub struct SimulationJob  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -9803,20 +9133,20 @@ pub struct SimulationJob {
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The failure behavior the simulation job.</p>
-    /// <dl>
+    /// <p>The failure behavior the simulation job.</p> 
+    /// <dl> 
     /// <dt>
     /// Continue
-    /// </dt>
-    /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
+    /// </dd> 
     /// <dt>
     /// Fail
-    /// </dt>
-    /// <dd>
-    /// <p>Stop the simulation job and terminate the instance.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Stop the simulation job and terminate the instance.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
@@ -9846,19 +9176,16 @@ pub struct SimulationJob {
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>A list of robot applications.</p>
     #[doc(hidden)]
-    pub robot_applications:
-        std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
+    pub robot_applications: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
     /// <p>A list of simulation applications.</p>
     #[doc(hidden)]
-    pub simulation_applications:
-        std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
+    pub simulation_applications: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
     /// <p>The data sources for the simulation job.</p>
     #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>VPC configuration information.</p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
@@ -9871,61 +9198,61 @@ pub struct SimulationJob {
 }
 impl SimulationJob {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the simulation job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Status of the simulation job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SimulationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
-    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The failure behavior the simulation job.</p>
-    /// <dl>
+    /// <p>The failure behavior the simulation job.</p> 
+    /// <dl> 
     /// <dt>
     /// Continue
-    /// </dt>
-    /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
+    /// </dd> 
     /// <dt>
     /// Fail
-    /// </dt>
-    /// <dd>
-    /// <p>Stop the simulation job and terminate the instance.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Stop the simulation job and terminate the instance.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn failure_behavior(&self) -> std::option::Option<&crate::model::FailureBehavior> {
+    pub fn failure_behavior(&self) -> std::option::Option<& crate::model::FailureBehavior> {
         self.failure_behavior.as_ref()
     }
     /// <p>The failure code of the simulation job if it failed.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::SimulationJobErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::SimulationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The reason why the simulation job failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>A unique identifier for this <code>SimulationJob</code> request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Location for output files generated by the simulation job.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<& crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The logging configuration.</p>
-    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+    pub fn logging_config(&self) -> std::option::Option<& crate::model::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
@@ -9937,48 +9264,41 @@ impl SimulationJob {
         self.simulation_time_millis
     }
     /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
-    pub fn iam_role(&self) -> std::option::Option<&str> {
+    pub fn iam_role(&self) -> std::option::Option<& str> {
         self.iam_role.as_deref()
     }
     /// <p>A list of robot applications.</p>
-    pub fn robot_applications(
-        &self,
-    ) -> std::option::Option<&[crate::model::RobotApplicationConfig]> {
+    pub fn robot_applications(&self) -> std::option::Option<& [crate::model::RobotApplicationConfig]> {
         self.robot_applications.as_deref()
     }
     /// <p>A list of simulation applications.</p>
-    pub fn simulation_applications(
-        &self,
-    ) -> std::option::Option<&[crate::model::SimulationApplicationConfig]> {
+    pub fn simulation_applications(&self) -> std::option::Option<& [crate::model::SimulationApplicationConfig]> {
         self.simulation_applications.as_deref()
     }
     /// <p>The data sources for the simulation job.</p>
-    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+    pub fn data_sources(&self) -> std::option::Option<& [crate::model::DataSource]> {
         self.data_sources.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>VPC configuration information.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>Information about a network interface.</p>
-    pub fn network_interface(&self) -> std::option::Option<&crate::model::NetworkInterface> {
+    pub fn network_interface(&self) -> std::option::Option<& crate::model::NetworkInterface> {
         self.network_interface.as_ref()
     }
     /// <p>Compute information for the simulation job</p>
-    pub fn compute(&self) -> std::option::Option<&crate::model::ComputeResponse> {
+    pub fn compute(&self) -> std::option::Option<& crate::model::ComputeResponse> {
         self.compute.as_ref()
     }
 }
 /// See [`SimulationJob`](crate::model::SimulationJob).
 pub mod simulation_job {
-
+    
     /// A builder for [`SimulationJob`](crate::model::SimulationJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9996,14 +9316,10 @@ pub mod simulation_job {
         pub(crate) max_job_duration_in_seconds: std::option::Option<i64>,
         pub(crate) simulation_time_millis: std::option::Option<i64>,
         pub(crate) iam_role: std::option::Option<std::string::String>,
-        pub(crate) robot_applications:
-            std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
-        pub(crate) simulation_applications:
-            std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
+        pub(crate) robot_applications: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
+        pub(crate) simulation_applications: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
         pub(crate) data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
         pub(crate) network_interface: std::option::Option<crate::model::NetworkInterface>,
         pub(crate) compute: std::option::Option<crate::model::ComputeResponse>,
@@ -10016,8 +9332,7 @@ pub mod simulation_job {
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the simulation job.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10026,8 +9341,7 @@ pub mod simulation_job {
         }
         /// <p>The name of the simulation job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Status of the simulation job.</p>
         pub fn status(mut self, input: crate::model::SimulationJobStatus) -> Self {
@@ -10035,12 +9349,8 @@ pub mod simulation_job {
             self
         }
         /// <p>Status of the simulation job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SimulationJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
         pub fn last_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10048,12 +9358,8 @@ pub mod simulation_job {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
-        pub fn set_last_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_started_at = input;
-            self
+        pub fn set_last_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_started_at = input; self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10061,53 +9367,45 @@ pub mod simulation_job {
             self
         }
         /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
-        /// <p>The failure behavior the simulation job.</p>
-        /// <dl>
+        /// <p>The failure behavior the simulation job.</p> 
+        /// <dl> 
         /// <dt>
         /// Continue
-        /// </dt>
-        /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
+        /// </dd> 
         /// <dt>
         /// Fail
-        /// </dt>
-        /// <dd>
-        /// <p>Stop the simulation job and terminate the instance.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Stop the simulation job and terminate the instance.</p> 
+        /// </dd> 
         /// </dl>
         pub fn failure_behavior(mut self, input: crate::model::FailureBehavior) -> Self {
             self.failure_behavior = Some(input);
             self
         }
-        /// <p>The failure behavior the simulation job.</p>
-        /// <dl>
+        /// <p>The failure behavior the simulation job.</p> 
+        /// <dl> 
         /// <dt>
         /// Continue
-        /// </dt>
-        /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
+        /// </dd> 
         /// <dt>
         /// Fail
-        /// </dt>
-        /// <dd>
-        /// <p>Stop the simulation job and terminate the instance.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Stop the simulation job and terminate the instance.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_failure_behavior(
-            mut self,
-            input: std::option::Option<crate::model::FailureBehavior>,
-        ) -> Self {
-            self.failure_behavior = input;
-            self
+        pub fn set_failure_behavior(mut self, input: std::option::Option<crate::model::FailureBehavior>) -> Self {
+            self.failure_behavior = input; self
         }
         /// <p>The failure code of the simulation job if it failed.</p>
         pub fn failure_code(mut self, input: crate::model::SimulationJobErrorCode) -> Self {
@@ -10115,12 +9413,8 @@ pub mod simulation_job {
             self
         }
         /// <p>The failure code of the simulation job if it failed.</p>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::SimulationJobErrorCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::SimulationJobErrorCode>) -> Self {
+            self.failure_code = input; self
         }
         /// <p>The reason why the simulation job failed.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10128,12 +9422,8 @@ pub mod simulation_job {
             self
         }
         /// <p>The reason why the simulation job failed.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>A unique identifier for this <code>SimulationJob</code> request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10141,12 +9431,8 @@ pub mod simulation_job {
             self
         }
         /// <p>A unique identifier for this <code>SimulationJob</code> request.</p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
+        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_request_token = input; self
         }
         /// <p>Location for output files generated by the simulation job.</p>
         pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
@@ -10154,12 +9440,8 @@ pub mod simulation_job {
             self
         }
         /// <p>Location for output files generated by the simulation job.</p>
-        pub fn set_output_location(
-            mut self,
-            input: std::option::Option<crate::model::OutputLocation>,
-        ) -> Self {
-            self.output_location = input;
-            self
+        pub fn set_output_location(mut self, input: std::option::Option<crate::model::OutputLocation>) -> Self {
+            self.output_location = input; self
         }
         /// <p>The logging configuration.</p>
         pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
@@ -10167,12 +9449,8 @@ pub mod simulation_job {
             self
         }
         /// <p>The logging configuration.</p>
-        pub fn set_logging_config(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfig>,
-        ) -> Self {
-            self.logging_config = input;
-            self
+        pub fn set_logging_config(mut self, input: std::option::Option<crate::model::LoggingConfig>) -> Self {
+            self.logging_config = input; self
         }
         /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
@@ -10181,8 +9459,7 @@ pub mod simulation_job {
         }
         /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_job_duration_in_seconds = input;
-            self
+            self.max_job_duration_in_seconds = input; self
         }
         /// <p>The simulation job execution duration in milliseconds.</p>
         pub fn simulation_time_millis(mut self, input: i64) -> Self {
@@ -10191,8 +9468,7 @@ pub mod simulation_job {
         }
         /// <p>The simulation job execution duration in milliseconds.</p>
         pub fn set_simulation_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.simulation_time_millis = input;
-            self
+            self.simulation_time_millis = input; self
         }
         /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10201,8 +9477,7 @@ pub mod simulation_job {
         }
         /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role = input;
-            self
+            self.iam_role = input; self
         }
         /// Appends an item to `robot_applications`.
         ///
@@ -10211,39 +9486,28 @@ pub mod simulation_job {
         /// <p>A list of robot applications.</p>
         pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input);
-            self.robot_applications = Some(v);
-            self
+                            v.push(input);
+                            self.robot_applications = Some(v);
+                            self
         }
         /// <p>A list of robot applications.</p>
-        pub fn set_robot_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
-        ) -> Self {
-            self.robot_applications = input;
-            self
+        pub fn set_robot_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>) -> Self {
+            self.robot_applications = input; self
         }
         /// Appends an item to `simulation_applications`.
         ///
         /// To override the contents of this collection use [`set_simulation_applications`](Self::set_simulation_applications).
         ///
         /// <p>A list of simulation applications.</p>
-        pub fn simulation_applications(
-            mut self,
-            input: crate::model::SimulationApplicationConfig,
-        ) -> Self {
+        pub fn simulation_applications(mut self, input: crate::model::SimulationApplicationConfig) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input);
-            self.simulation_applications = Some(v);
-            self
+                            v.push(input);
+                            self.simulation_applications = Some(v);
+                            self
         }
         /// <p>A list of simulation applications.</p>
-        pub fn set_simulation_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
-        ) -> Self {
-            self.simulation_applications = input;
-            self
+        pub fn set_simulation_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>) -> Self {
+            self.simulation_applications = input; self
         }
         /// Appends an item to `data_sources`.
         ///
@@ -10252,42 +9516,28 @@ pub mod simulation_job {
         /// <p>The data sources for the simulation job.</p>
         pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input);
-            self.data_sources = Some(v);
-            self
+                            v.push(input);
+                            self.data_sources = Some(v);
+                            self
         }
         /// <p>The data sources for the simulation job.</p>
-        pub fn set_data_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
-        ) -> Self {
-            self.data_sources = input;
-            self
+        pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSource>>) -> Self {
+            self.data_sources = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>VPC configuration information.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
@@ -10295,12 +9545,8 @@ pub mod simulation_job {
             self
         }
         /// <p>VPC configuration information.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigResponse>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfigResponse>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>Information about a network interface.</p>
         pub fn network_interface(mut self, input: crate::model::NetworkInterface) -> Self {
@@ -10308,12 +9554,8 @@ pub mod simulation_job {
             self
         }
         /// <p>Information about a network interface.</p>
-        pub fn set_network_interface(
-            mut self,
-            input: std::option::Option<crate::model::NetworkInterface>,
-        ) -> Self {
-            self.network_interface = input;
-            self
+        pub fn set_network_interface(mut self, input: std::option::Option<crate::model::NetworkInterface>) -> Self {
+            self.network_interface = input; self
         }
         /// <p>Compute information for the simulation job</p>
         pub fn compute(mut self, input: crate::model::ComputeResponse) -> Self {
@@ -10321,40 +9563,61 @@ pub mod simulation_job {
             self
         }
         /// <p>Compute information for the simulation job</p>
-        pub fn set_compute(
-            mut self,
-            input: std::option::Option<crate::model::ComputeResponse>,
-        ) -> Self {
-            self.compute = input;
-            self
+        pub fn set_compute(mut self, input: std::option::Option<crate::model::ComputeResponse>) -> Self {
+            self.compute = input; self
         }
         /// Consumes the builder and constructs a [`SimulationJob`](crate::model::SimulationJob).
         pub fn build(self) -> crate::model::SimulationJob {
             crate::model::SimulationJob {
-                arn: self.arn,
-                name: self.name,
-                status: self.status,
-                last_started_at: self.last_started_at,
-                last_updated_at: self.last_updated_at,
-                failure_behavior: self.failure_behavior,
-                failure_code: self.failure_code,
-                failure_reason: self.failure_reason,
-                client_request_token: self.client_request_token,
-                output_location: self.output_location,
-                logging_config: self.logging_config,
-                max_job_duration_in_seconds: self.max_job_duration_in_seconds.unwrap_or_default(),
-                simulation_time_millis: self.simulation_time_millis.unwrap_or_default(),
-                iam_role: self.iam_role,
-                robot_applications: self.robot_applications,
-                simulation_applications: self.simulation_applications,
-                data_sources: self.data_sources,
-                tags: self.tags,
-                vpc_config: self.vpc_config,
-                network_interface: self.network_interface,
-                compute: self.compute,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                last_started_at: self.last_started_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                failure_behavior: self.failure_behavior
+                ,
+                failure_code: self.failure_code
+                ,
+                failure_reason: self.failure_reason
+                ,
+                client_request_token: self.client_request_token
+                ,
+                output_location: self.output_location
+                ,
+                logging_config: self.logging_config
+                ,
+                max_job_duration_in_seconds: self.max_job_duration_in_seconds
+                    .unwrap_or_default()
+                ,
+                simulation_time_millis: self.simulation_time_millis
+                    .unwrap_or_default()
+                ,
+                iam_role: self.iam_role
+                ,
+                robot_applications: self.robot_applications
+                ,
+                simulation_applications: self.simulation_applications
+                ,
+                data_sources: self.data_sources
+                ,
+                tags: self.tags
+                ,
+                vpc_config: self.vpc_config
+                ,
+                network_interface: self.network_interface
+                ,
+                compute: self.compute
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationJob {
     /// Creates a new builder-style object to manufacture [`SimulationJob`](crate::model::SimulationJob).
@@ -10362,3 +9625,4 @@ impl SimulationJob {
         crate::model::simulation_job::Builder::default()
     }
 }
+

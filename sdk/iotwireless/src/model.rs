@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let positioningconfigstatus = unimplemented!();
 /// match positioningconfigstatus {
@@ -30,60 +30,52 @@
 /// Specifically, when `positioningconfigstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PositioningConfigStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PositioningConfigStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PositioningConfigStatus {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => PositioningConfigStatus::Disabled,
             "Enabled" => PositioningConfigStatus::Enabled,
-            other => PositioningConfigStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PositioningConfigStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PositioningConfigStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PositioningConfigStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PositioningConfigStatus::from(s))
+                }
+            }
 impl PositioningConfigStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PositioningConfigStatus::Disabled => "Disabled",
             PositioningConfigStatus::Enabled => "Enabled",
-            PositioningConfigStatus::Unknown(value) => value.as_str(),
+            PositioningConfigStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for PositioningConfigStatus {
@@ -95,7 +87,7 @@ impl AsRef<str> for PositioningConfigStatus {
 /// <p>LoRaWAN object for update functions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanUpdateDevice {
+pub struct LoRaWanUpdateDevice  {
     /// <p>The ID of the device profile for the wireless device.</p>
     #[doc(hidden)]
     pub device_profile_id: std::option::Option<std::string::String>,
@@ -114,29 +106,29 @@ pub struct LoRaWanUpdateDevice {
 }
 impl LoRaWanUpdateDevice {
     /// <p>The ID of the device profile for the wireless device.</p>
-    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+    pub fn device_profile_id(&self) -> std::option::Option<& str> {
         self.device_profile_id.as_deref()
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(&self) -> std::option::Option<&str> {
+    pub fn service_profile_id(&self) -> std::option::Option<& str> {
         self.service_profile_id.as_deref()
     }
     /// <p>ABP device object for update APIs for v1.1</p>
-    pub fn abp_v1_1(&self) -> std::option::Option<&crate::model::UpdateAbpV11> {
+    pub fn abp_v1_1(&self) -> std::option::Option<& crate::model::UpdateAbpV11> {
         self.abp_v1_1.as_ref()
     }
     /// <p>ABP device object for update APIs for v1.0.x</p>
-    pub fn abp_v1_0_x(&self) -> std::option::Option<&crate::model::UpdateAbpV10X> {
+    pub fn abp_v1_0_x(&self) -> std::option::Option<& crate::model::UpdateAbpV10X> {
         self.abp_v1_0_x.as_ref()
     }
     /// <p>FPorts object for the positioning information of the device.</p>
-    pub fn f_ports(&self) -> std::option::Option<&crate::model::UpdateFPorts> {
+    pub fn f_ports(&self) -> std::option::Option<& crate::model::UpdateFPorts> {
         self.f_ports.as_ref()
     }
 }
 /// See [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
 pub mod lo_ra_wan_update_device {
-
+    
     /// A builder for [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -153,12 +145,8 @@ pub mod lo_ra_wan_update_device {
             self
         }
         /// <p>The ID of the device profile for the wireless device.</p>
-        pub fn set_device_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_profile_id = input;
-            self
+        pub fn set_device_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_profile_id = input; self
         }
         /// <p>The ID of the service profile.</p>
         pub fn service_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,12 +154,8 @@ pub mod lo_ra_wan_update_device {
             self
         }
         /// <p>The ID of the service profile.</p>
-        pub fn set_service_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_profile_id = input;
-            self
+        pub fn set_service_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_profile_id = input; self
         }
         /// <p>ABP device object for update APIs for v1.1</p>
         pub fn abp_v1_1(mut self, input: crate::model::UpdateAbpV11) -> Self {
@@ -179,12 +163,8 @@ pub mod lo_ra_wan_update_device {
             self
         }
         /// <p>ABP device object for update APIs for v1.1</p>
-        pub fn set_abp_v1_1(
-            mut self,
-            input: std::option::Option<crate::model::UpdateAbpV11>,
-        ) -> Self {
-            self.abp_v1_1 = input;
-            self
+        pub fn set_abp_v1_1(mut self, input: std::option::Option<crate::model::UpdateAbpV11>) -> Self {
+            self.abp_v1_1 = input; self
         }
         /// <p>ABP device object for update APIs for v1.0.x</p>
         pub fn abp_v1_0_x(mut self, input: crate::model::UpdateAbpV10X) -> Self {
@@ -192,12 +172,8 @@ pub mod lo_ra_wan_update_device {
             self
         }
         /// <p>ABP device object for update APIs for v1.0.x</p>
-        pub fn set_abp_v1_0_x(
-            mut self,
-            input: std::option::Option<crate::model::UpdateAbpV10X>,
-        ) -> Self {
-            self.abp_v1_0_x = input;
-            self
+        pub fn set_abp_v1_0_x(mut self, input: std::option::Option<crate::model::UpdateAbpV10X>) -> Self {
+            self.abp_v1_0_x = input; self
         }
         /// <p>FPorts object for the positioning information of the device.</p>
         pub fn f_ports(mut self, input: crate::model::UpdateFPorts) -> Self {
@@ -205,24 +181,27 @@ pub mod lo_ra_wan_update_device {
             self
         }
         /// <p>FPorts object for the positioning information of the device.</p>
-        pub fn set_f_ports(
-            mut self,
-            input: std::option::Option<crate::model::UpdateFPorts>,
-        ) -> Self {
-            self.f_ports = input;
-            self
+        pub fn set_f_ports(mut self, input: std::option::Option<crate::model::UpdateFPorts>) -> Self {
+            self.f_ports = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
         pub fn build(self) -> crate::model::LoRaWanUpdateDevice {
             crate::model::LoRaWanUpdateDevice {
-                device_profile_id: self.device_profile_id,
-                service_profile_id: self.service_profile_id,
-                abp_v1_1: self.abp_v1_1,
-                abp_v1_0_x: self.abp_v1_0_x,
-                f_ports: self.f_ports,
+                device_profile_id: self.device_profile_id
+                ,
+                service_profile_id: self.service_profile_id
+                ,
+                abp_v1_1: self.abp_v1_1
+                ,
+                abp_v1_0_x: self.abp_v1_0_x
+                ,
+                f_ports: self.f_ports
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanUpdateDevice {
     /// Creates a new builder-style object to manufacture [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
@@ -234,7 +213,7 @@ impl LoRaWanUpdateDevice {
 /// <p>Object for updating the FPorts information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFPorts {
+pub struct UpdateFPorts  {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
     #[doc(hidden)]
     pub positioning: std::option::Option<crate::model::Positioning>,
@@ -244,23 +223,22 @@ pub struct UpdateFPorts {
 }
 impl UpdateFPorts {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
-    pub fn positioning(&self) -> std::option::Option<&crate::model::Positioning> {
+    pub fn positioning(&self) -> std::option::Option<& crate::model::Positioning> {
         self.positioning.as_ref()
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationConfig]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::model::ApplicationConfig]> {
         self.applications.as_deref()
     }
 }
 /// See [`UpdateFPorts`](crate::model::UpdateFPorts).
 pub mod update_f_ports {
-
+    
     /// A builder for [`UpdateFPorts`](crate::model::UpdateFPorts).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) positioning: std::option::Option<crate::model::Positioning>,
-        pub(crate) applications:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationConfig>>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::ApplicationConfig>>,
     }
     impl Builder {
         /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
@@ -269,12 +247,8 @@ pub mod update_f_ports {
             self
         }
         /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
-        pub fn set_positioning(
-            mut self,
-            input: std::option::Option<crate::model::Positioning>,
-        ) -> Self {
-            self.positioning = input;
-            self
+        pub fn set_positioning(mut self, input: std::option::Option<crate::model::Positioning>) -> Self {
+            self.positioning = input; self
         }
         /// Appends an item to `applications`.
         ///
@@ -283,26 +257,26 @@ pub mod update_f_ports {
         /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
         pub fn applications(mut self, input: crate::model::ApplicationConfig) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input);
-            self.applications = Some(v);
-            self
+                            v.push(input);
+                            self.applications = Some(v);
+                            self
         }
         /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationConfig>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationConfig>>) -> Self {
+            self.applications = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFPorts`](crate::model::UpdateFPorts).
         pub fn build(self) -> crate::model::UpdateFPorts {
             crate::model::UpdateFPorts {
-                positioning: self.positioning,
-                applications: self.applications,
+                positioning: self.positioning
+                ,
+                applications: self.applications
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFPorts {
     /// Creates a new builder-style object to manufacture [`UpdateFPorts`](crate::model::UpdateFPorts).
@@ -314,7 +288,7 @@ impl UpdateFPorts {
 /// <p>LoRaWAN application configuration, which can be used to perform geolocation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationConfig {
+pub struct ApplicationConfig  {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub f_port: std::option::Option<i32>,
@@ -331,17 +305,17 @@ impl ApplicationConfig {
         self.f_port
     }
     /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ApplicationConfigType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ApplicationConfigType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
 }
 /// See [`ApplicationConfig`](crate::model::ApplicationConfig).
 pub mod application_config {
-
+    
     /// A builder for [`ApplicationConfig`](crate::model::ApplicationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -357,8 +331,7 @@ pub mod application_config {
         }
         /// <p>The Fport value.</p>
         pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.f_port = input;
-            self
+            self.f_port = input; self
         }
         /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
         pub fn r#type(mut self, input: crate::model::ApplicationConfigType) -> Self {
@@ -366,12 +339,8 @@ pub mod application_config {
             self
         }
         /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationConfigType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ApplicationConfigType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
         pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -379,22 +348,23 @@ pub mod application_config {
             self
         }
         /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-        pub fn set_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_name = input;
-            self
+        pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_name = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationConfig`](crate::model::ApplicationConfig).
         pub fn build(self) -> crate::model::ApplicationConfig {
             crate::model::ApplicationConfig {
-                f_port: self.f_port,
-                r#type: self.r#type,
-                destination_name: self.destination_name,
+                f_port: self.f_port
+                ,
+                r#type: self.r#type
+                ,
+                destination_name: self.destination_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationConfig {
     /// Creates a new builder-style object to manufacture [`ApplicationConfig`](crate::model::ApplicationConfig).
@@ -409,9 +379,9 @@ impl ApplicationConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applicationconfigtype = unimplemented!();
 /// match applicationconfigtype {
@@ -432,56 +402,48 @@ impl ApplicationConfig {
 /// Specifically, when `applicationconfigtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationConfigType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApplicationConfigType {
     #[allow(missing_docs)] // documentation missing in model
     SemtechGeoLocation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationConfigType {
     fn from(s: &str) -> Self {
         match s {
             "SemtechGeolocation" => ApplicationConfigType::SemtechGeoLocation,
-            other => {
-                ApplicationConfigType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ApplicationConfigType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApplicationConfigType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationConfigType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApplicationConfigType::from(s))
+                }
+            }
 impl ApplicationConfigType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationConfigType::SemtechGeoLocation => "SemtechGeolocation",
-            ApplicationConfigType::Unknown(value) => value.as_str(),
+            ApplicationConfigType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SemtechGeolocation"]
+        &[
+            "SemtechGeolocation"
+        ]
     }
 }
 impl AsRef<str> for ApplicationConfigType {
@@ -493,7 +455,7 @@ impl AsRef<str> for ApplicationConfigType {
 /// <p>The FPorts for the position information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Positioning {
+pub struct Positioning  {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub clock_sync: std::option::Option<i32>,
@@ -520,7 +482,7 @@ impl Positioning {
 }
 /// See [`Positioning`](crate::model::Positioning).
 pub mod positioning {
-
+    
     /// A builder for [`Positioning`](crate::model::Positioning).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -536,8 +498,7 @@ pub mod positioning {
         }
         /// <p>The Fport value.</p>
         pub fn set_clock_sync(mut self, input: std::option::Option<i32>) -> Self {
-            self.clock_sync = input;
-            self
+            self.clock_sync = input; self
         }
         /// <p>The Fport value.</p>
         pub fn stream(mut self, input: i32) -> Self {
@@ -546,8 +507,7 @@ pub mod positioning {
         }
         /// <p>The Fport value.</p>
         pub fn set_stream(mut self, input: std::option::Option<i32>) -> Self {
-            self.stream = input;
-            self
+            self.stream = input; self
         }
         /// <p>The Fport value.</p>
         pub fn gnss(mut self, input: i32) -> Self {
@@ -556,18 +516,22 @@ pub mod positioning {
         }
         /// <p>The Fport value.</p>
         pub fn set_gnss(mut self, input: std::option::Option<i32>) -> Self {
-            self.gnss = input;
-            self
+            self.gnss = input; self
         }
         /// Consumes the builder and constructs a [`Positioning`](crate::model::Positioning).
         pub fn build(self) -> crate::model::Positioning {
             crate::model::Positioning {
-                clock_sync: self.clock_sync,
-                stream: self.stream,
-                gnss: self.gnss,
+                clock_sync: self.clock_sync
+                ,
+                stream: self.stream
+                ,
+                gnss: self.gnss
+                ,
             }
         }
     }
+    
+    
 }
 impl Positioning {
     /// Creates a new builder-style object to manufacture [`Positioning`](crate::model::Positioning).
@@ -579,7 +543,7 @@ impl Positioning {
 /// <p>ABP device object for LoRaWAN specification v1.0.x</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAbpV10X {
+pub struct UpdateAbpV10X  {
     /// <p>The FCnt init value.</p>
     #[doc(hidden)]
     pub f_cnt_start: std::option::Option<i32>,
@@ -592,7 +556,7 @@ impl UpdateAbpV10X {
 }
 /// See [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
 pub mod update_abp_v10_x {
-
+    
     /// A builder for [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -606,16 +570,18 @@ pub mod update_abp_v10_x {
         }
         /// <p>The FCnt init value.</p>
         pub fn set_f_cnt_start(mut self, input: std::option::Option<i32>) -> Self {
-            self.f_cnt_start = input;
-            self
+            self.f_cnt_start = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
         pub fn build(self) -> crate::model::UpdateAbpV10X {
             crate::model::UpdateAbpV10X {
-                f_cnt_start: self.f_cnt_start,
+                f_cnt_start: self.f_cnt_start
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAbpV10X {
     /// Creates a new builder-style object to manufacture [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
@@ -627,7 +593,7 @@ impl UpdateAbpV10X {
 /// <p>ABP device object for LoRaWAN specification v1.1</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAbpV11 {
+pub struct UpdateAbpV11  {
     /// <p>The FCnt init value.</p>
     #[doc(hidden)]
     pub f_cnt_start: std::option::Option<i32>,
@@ -640,7 +606,7 @@ impl UpdateAbpV11 {
 }
 /// See [`UpdateAbpV11`](crate::model::UpdateAbpV11).
 pub mod update_abp_v11 {
-
+    
     /// A builder for [`UpdateAbpV11`](crate::model::UpdateAbpV11).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -654,16 +620,18 @@ pub mod update_abp_v11 {
         }
         /// <p>The FCnt init value.</p>
         pub fn set_f_cnt_start(mut self, input: std::option::Option<i32>) -> Self {
-            self.f_cnt_start = input;
-            self
+            self.f_cnt_start = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAbpV11`](crate::model::UpdateAbpV11).
         pub fn build(self) -> crate::model::UpdateAbpV11 {
             crate::model::UpdateAbpV11 {
-                f_cnt_start: self.f_cnt_start,
+                f_cnt_start: self.f_cnt_start
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAbpV11 {
     /// Creates a new builder-style object to manufacture [`UpdateAbpV11`](crate::model::UpdateAbpV11).
@@ -678,9 +646,9 @@ impl UpdateAbpV11 {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let positionresourcetype = unimplemented!();
 /// match positionresourcetype {
@@ -702,60 +670,52 @@ impl UpdateAbpV11 {
 /// Specifically, when `positionresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PositionResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PositionResourceType {
     #[allow(missing_docs)] // documentation missing in model
     WirelessDevice,
     #[allow(missing_docs)] // documentation missing in model
     WirelessGateway,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PositionResourceType {
     fn from(s: &str) -> Self {
         match s {
             "WirelessDevice" => PositionResourceType::WirelessDevice,
             "WirelessGateway" => PositionResourceType::WirelessGateway,
-            other => {
-                PositionResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PositionResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PositionResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PositionResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PositionResourceType::from(s))
+                }
+            }
 impl PositionResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PositionResourceType::WirelessDevice => "WirelessDevice",
             PositionResourceType::WirelessGateway => "WirelessGateway",
-            PositionResourceType::Unknown(value) => value.as_str(),
+            PositionResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["WirelessDevice", "WirelessGateway"]
+        &[
+            "WirelessDevice", "WirelessGateway"
+        ]
     }
 }
 impl AsRef<str> for PositionResourceType {
@@ -767,81 +727,64 @@ impl AsRef<str> for PositionResourceType {
 /// <p>Message delivery status event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageDeliveryStatusEventConfiguration {
+pub struct MessageDeliveryStatusEventConfiguration  {
     /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_device_id_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
+    pub wireless_device_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl MessageDeliveryStatusEventConfiguration {
     /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkEventNotificationConfigurations> {
         self.sidewalk.as_ref()
     }
     /// <p>Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.</p>
-    pub fn wireless_device_id_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn wireless_device_id_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
 /// See [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
 pub mod message_delivery_status_event_configuration {
-
+    
     /// A builder for [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sidewalk:
-            std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-        pub(crate) wireless_device_id_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+        pub(crate) wireless_device_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
-        pub fn sidewalk(
-            mut self,
-            input: crate::model::SidewalkEventNotificationConfigurations,
-        ) -> Self {
+        pub fn sidewalk(mut self, input: crate::model::SidewalkEventNotificationConfigurations) -> Self {
             self.sidewalk = Some(input);
             self
         }
         /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>) -> Self {
+            self.sidewalk = input; self
         }
         /// <p>Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.</p>
-        pub fn wireless_device_id_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn wireless_device_id_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.wireless_device_id_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.</p>
-        pub fn set_wireless_device_id_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_device_id_event_topic = input;
-            self
+        pub fn set_wireless_device_id_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.wireless_device_id_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
         pub fn build(self) -> crate::model::MessageDeliveryStatusEventConfiguration {
             crate::model::MessageDeliveryStatusEventConfiguration {
-                sidewalk: self.sidewalk,
-                wireless_device_id_event_topic: self.wireless_device_id_event_topic,
+                sidewalk: self.sidewalk
+                ,
+                wireless_device_id_event_topic: self.wireless_device_id_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl MessageDeliveryStatusEventConfiguration {
     /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
@@ -856,9 +799,9 @@ impl MessageDeliveryStatusEventConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventnotificationtopicstatus = unimplemented!();
 /// match eventnotificationtopicstatus {
@@ -880,60 +823,52 @@ impl MessageDeliveryStatusEventConfiguration {
 /// Specifically, when `eventnotificationtopicstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventNotificationTopicStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventNotificationTopicStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventNotificationTopicStatus {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => EventNotificationTopicStatus::Disabled,
             "Enabled" => EventNotificationTopicStatus::Enabled,
-            other => EventNotificationTopicStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EventNotificationTopicStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventNotificationTopicStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventNotificationTopicStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventNotificationTopicStatus::from(s))
+                }
+            }
 impl EventNotificationTopicStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventNotificationTopicStatus::Disabled => "Disabled",
             EventNotificationTopicStatus::Enabled => "Enabled",
-            EventNotificationTopicStatus::Unknown(value) => value.as_str(),
+            EventNotificationTopicStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for EventNotificationTopicStatus {
@@ -945,52 +880,45 @@ impl AsRef<str> for EventNotificationTopicStatus {
 /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkEventNotificationConfigurations {
+pub struct SidewalkEventNotificationConfigurations  {
     /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub amazon_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl SidewalkEventNotificationConfigurations {
     /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
-    pub fn amazon_id_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn amazon_id_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.amazon_id_event_topic.as_ref()
     }
 }
 /// See [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
 pub mod sidewalk_event_notification_configurations {
-
+    
     /// A builder for [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) amazon_id_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) amazon_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
-        pub fn amazon_id_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn amazon_id_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.amazon_id_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
-        pub fn set_amazon_id_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.amazon_id_event_topic = input;
-            self
+        pub fn set_amazon_id_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.amazon_id_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
         pub fn build(self) -> crate::model::SidewalkEventNotificationConfigurations {
             crate::model::SidewalkEventNotificationConfigurations {
-                amazon_id_event_topic: self.amazon_id_event_topic,
+                amazon_id_event_topic: self.amazon_id_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl SidewalkEventNotificationConfigurations {
     /// Creates a new builder-style object to manufacture [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
@@ -1002,86 +930,64 @@ impl SidewalkEventNotificationConfigurations {
 /// <p>Connection status event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionStatusEventConfiguration {
+pub struct ConnectionStatusEventConfiguration  {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
-    pub lo_ra_wan:
-        std::option::Option<crate::model::LoRaWanConnectionStatusEventNotificationConfigurations>,
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanConnectionStatusEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_gateway_id_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
+    pub wireless_gateway_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl ConnectionStatusEventConfiguration {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(
-        &self,
-    ) -> std::option::Option<&crate::model::LoRaWanConnectionStatusEventNotificationConfigurations>
-    {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanConnectionStatusEventNotificationConfigurations> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
-    pub fn wireless_gateway_id_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn wireless_gateway_id_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.wireless_gateway_id_event_topic.as_ref()
     }
 }
 /// See [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
 pub mod connection_status_event_configuration {
-
+    
     /// A builder for [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) lo_ra_wan: std::option::Option<
-            crate::model::LoRaWanConnectionStatusEventNotificationConfigurations,
-        >,
-        pub(crate) wireless_gateway_id_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanConnectionStatusEventNotificationConfigurations>,
+        pub(crate) wireless_gateway_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-        pub fn lo_ra_wan(
-            mut self,
-            input: crate::model::LoRaWanConnectionStatusEventNotificationConfigurations,
-        ) -> Self {
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanConnectionStatusEventNotificationConfigurations) -> Self {
             self.lo_ra_wan = Some(input);
             self
         }
         /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<
-                crate::model::LoRaWanConnectionStatusEventNotificationConfigurations,
-            >,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanConnectionStatusEventNotificationConfigurations>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
-        pub fn wireless_gateway_id_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn wireless_gateway_id_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.wireless_gateway_id_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
-        pub fn set_wireless_gateway_id_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_gateway_id_event_topic = input;
-            self
+        pub fn set_wireless_gateway_id_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.wireless_gateway_id_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
         pub fn build(self) -> crate::model::ConnectionStatusEventConfiguration {
             crate::model::ConnectionStatusEventConfiguration {
-                lo_ra_wan: self.lo_ra_wan,
-                wireless_gateway_id_event_topic: self.wireless_gateway_id_event_topic,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                wireless_gateway_id_event_topic: self.wireless_gateway_id_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectionStatusEventConfiguration {
     /// Creates a new builder-style object to manufacture [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
@@ -1093,57 +999,49 @@ impl ConnectionStatusEventConfiguration {
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanConnectionStatusEventNotificationConfigurations {
+pub struct LoRaWanConnectionStatusEventNotificationConfigurations  {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub gateway_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusEventNotificationConfigurations {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
-    pub fn gateway_eui_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn gateway_eui_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.gateway_eui_event_topic.as_ref()
     }
 }
 /// See [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
 pub mod lo_ra_wan_connection_status_event_notification_configurations {
-
+    
     /// A builder for [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) gateway_eui_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) gateway_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
-        pub fn gateway_eui_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn gateway_eui_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.gateway_eui_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
-        pub fn set_gateway_eui_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.gateway_eui_event_topic = input;
-            self
+        pub fn set_gateway_eui_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.gateway_eui_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
         pub fn build(self) -> crate::model::LoRaWanConnectionStatusEventNotificationConfigurations {
             crate::model::LoRaWanConnectionStatusEventNotificationConfigurations {
-                gateway_eui_event_topic: self.gateway_eui_event_topic,
+                gateway_eui_event_topic: self.gateway_eui_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanConnectionStatusEventNotificationConfigurations {
     /// Creates a new builder-style object to manufacture [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
-    pub fn builder(
-    ) -> crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder {
+    pub fn builder() -> crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder {
         crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder::default()
     }
 }
@@ -1151,81 +1049,64 @@ impl LoRaWanConnectionStatusEventNotificationConfigurations {
 /// <p>Join event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JoinEventConfiguration {
+pub struct JoinEventConfiguration  {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanJoinEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_device_id_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
+    pub wireless_device_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl JoinEventConfiguration {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(
-        &self,
-    ) -> std::option::Option<&crate::model::LoRaWanJoinEventNotificationConfigurations> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanJoinEventNotificationConfigurations> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
-    pub fn wireless_device_id_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn wireless_device_id_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
 /// See [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
 pub mod join_event_configuration {
-
+    
     /// A builder for [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) lo_ra_wan:
-            std::option::Option<crate::model::LoRaWanJoinEventNotificationConfigurations>,
-        pub(crate) wireless_device_id_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanJoinEventNotificationConfigurations>,
+        pub(crate) wireless_device_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-        pub fn lo_ra_wan(
-            mut self,
-            input: crate::model::LoRaWanJoinEventNotificationConfigurations,
-        ) -> Self {
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanJoinEventNotificationConfigurations) -> Self {
             self.lo_ra_wan = Some(input);
             self
         }
         /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanJoinEventNotificationConfigurations>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanJoinEventNotificationConfigurations>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
-        pub fn wireless_device_id_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn wireless_device_id_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.wireless_device_id_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
-        pub fn set_wireless_device_id_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_device_id_event_topic = input;
-            self
+        pub fn set_wireless_device_id_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.wireless_device_id_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
         pub fn build(self) -> crate::model::JoinEventConfiguration {
             crate::model::JoinEventConfiguration {
-                lo_ra_wan: self.lo_ra_wan,
-                wireless_device_id_event_topic: self.wireless_device_id_event_topic,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                wireless_device_id_event_topic: self.wireless_device_id_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl JoinEventConfiguration {
     /// Creates a new builder-style object to manufacture [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
@@ -1237,52 +1118,45 @@ impl JoinEventConfiguration {
 /// <p>Object for LoRaWAN join resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanJoinEventNotificationConfigurations {
+pub struct LoRaWanJoinEventNotificationConfigurations  {
     /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub dev_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinEventNotificationConfigurations {
     /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-    pub fn dev_eui_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn dev_eui_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.dev_eui_event_topic.as_ref()
     }
 }
 /// See [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
 pub mod lo_ra_wan_join_event_notification_configurations {
-
+    
     /// A builder for [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dev_eui_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) dev_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-        pub fn dev_eui_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn dev_eui_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.dev_eui_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-        pub fn set_dev_eui_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.dev_eui_event_topic = input;
-            self
+        pub fn set_dev_eui_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.dev_eui_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
         pub fn build(self) -> crate::model::LoRaWanJoinEventNotificationConfigurations {
             crate::model::LoRaWanJoinEventNotificationConfigurations {
-                dev_eui_event_topic: self.dev_eui_event_topic,
+                dev_eui_event_topic: self.dev_eui_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanJoinEventNotificationConfigurations {
     /// Creates a new builder-style object to manufacture [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
@@ -1294,81 +1168,64 @@ impl LoRaWanJoinEventNotificationConfigurations {
 /// <p>Proximity event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProximityEventConfiguration {
+pub struct ProximityEventConfiguration  {
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_device_id_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
+    pub wireless_device_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl ProximityEventConfiguration {
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkEventNotificationConfigurations> {
         self.sidewalk.as_ref()
     }
     /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
-    pub fn wireless_device_id_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn wireless_device_id_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
 /// See [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
 pub mod proximity_event_configuration {
-
+    
     /// A builder for [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sidewalk:
-            std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-        pub(crate) wireless_device_id_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+        pub(crate) wireless_device_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
-        pub fn sidewalk(
-            mut self,
-            input: crate::model::SidewalkEventNotificationConfigurations,
-        ) -> Self {
+        pub fn sidewalk(mut self, input: crate::model::SidewalkEventNotificationConfigurations) -> Self {
             self.sidewalk = Some(input);
             self
         }
         /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>) -> Self {
+            self.sidewalk = input; self
         }
         /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
-        pub fn wireless_device_id_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn wireless_device_id_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.wireless_device_id_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
-        pub fn set_wireless_device_id_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_device_id_event_topic = input;
-            self
+        pub fn set_wireless_device_id_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.wireless_device_id_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
         pub fn build(self) -> crate::model::ProximityEventConfiguration {
             crate::model::ProximityEventConfiguration {
-                sidewalk: self.sidewalk,
-                wireless_device_id_event_topic: self.wireless_device_id_event_topic,
+                sidewalk: self.sidewalk
+                ,
+                wireless_device_id_event_topic: self.wireless_device_id_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl ProximityEventConfiguration {
     /// Creates a new builder-style object to manufacture [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
@@ -1380,81 +1237,64 @@ impl ProximityEventConfiguration {
 /// <p>Device registration state event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceRegistrationStateEventConfiguration {
+pub struct DeviceRegistrationStateEventConfiguration  {
     /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_device_id_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
+    pub wireless_device_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl DeviceRegistrationStateEventConfiguration {
     /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkEventNotificationConfigurations> {
         self.sidewalk.as_ref()
     }
     /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
-    pub fn wireless_device_id_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn wireless_device_id_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
 /// See [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
 pub mod device_registration_state_event_configuration {
-
+    
     /// A builder for [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sidewalk:
-            std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-        pub(crate) wireless_device_id_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+        pub(crate) wireless_device_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-        pub fn sidewalk(
-            mut self,
-            input: crate::model::SidewalkEventNotificationConfigurations,
-        ) -> Self {
+        pub fn sidewalk(mut self, input: crate::model::SidewalkEventNotificationConfigurations) -> Self {
             self.sidewalk = Some(input);
             self
         }
         /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>) -> Self {
+            self.sidewalk = input; self
         }
         /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
-        pub fn wireless_device_id_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn wireless_device_id_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.wireless_device_id_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>
-        pub fn set_wireless_device_id_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_device_id_event_topic = input;
-            self
+        pub fn set_wireless_device_id_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.wireless_device_id_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
         pub fn build(self) -> crate::model::DeviceRegistrationStateEventConfiguration {
             crate::model::DeviceRegistrationStateEventConfiguration {
-                sidewalk: self.sidewalk,
-                wireless_device_id_event_topic: self.wireless_device_id_event_topic,
+                sidewalk: self.sidewalk
+                ,
+                wireless_device_id_event_topic: self.wireless_device_id_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceRegistrationStateEventConfiguration {
     /// Creates a new builder-style object to manufacture [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
@@ -1469,9 +1309,9 @@ impl DeviceRegistrationStateEventConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventnotificationpartnertype = unimplemented!();
 /// match eventnotificationpartnertype {
@@ -1492,56 +1332,48 @@ impl DeviceRegistrationStateEventConfiguration {
 /// Specifically, when `eventnotificationpartnertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventNotificationPartnerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventNotificationPartnerType {
     #[allow(missing_docs)] // documentation missing in model
     Sidewalk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventNotificationPartnerType {
     fn from(s: &str) -> Self {
         match s {
             "Sidewalk" => EventNotificationPartnerType::Sidewalk,
-            other => EventNotificationPartnerType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EventNotificationPartnerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventNotificationPartnerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventNotificationPartnerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventNotificationPartnerType::from(s))
+                }
+            }
 impl EventNotificationPartnerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventNotificationPartnerType::Sidewalk => "Sidewalk",
-            EventNotificationPartnerType::Unknown(value) => value.as_str(),
+            EventNotificationPartnerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Sidewalk"]
+        &[
+            "Sidewalk"
+        ]
     }
 }
 impl AsRef<str> for EventNotificationPartnerType {
@@ -1556,9 +1388,9 @@ impl AsRef<str> for EventNotificationPartnerType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let identifiertype = unimplemented!();
 /// match identifiertype {
@@ -1583,22 +1415,14 @@ impl AsRef<str> for EventNotificationPartnerType {
 /// Specifically, when `identifiertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IdentifierType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IdentifierType {
     #[allow(missing_docs)] // documentation missing in model
     DevEui,
@@ -1611,7 +1435,7 @@ pub enum IdentifierType {
     #[allow(missing_docs)] // documentation missing in model
     WirelessGatewayId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IdentifierType {
     fn from(s: &str) -> Self {
@@ -1621,17 +1445,17 @@ impl std::convert::From<&str> for IdentifierType {
             "PartnerAccountId" => IdentifierType::PartnerAccountId,
             "WirelessDeviceId" => IdentifierType::WirelessDeviceId,
             "WirelessGatewayId" => IdentifierType::WirelessGatewayId,
-            other => IdentifierType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IdentifierType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IdentifierType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IdentifierType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IdentifierType::from(s))
+                }
+            }
 impl IdentifierType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1641,17 +1465,13 @@ impl IdentifierType {
             IdentifierType::PartnerAccountId => "PartnerAccountId",
             IdentifierType::WirelessDeviceId => "WirelessDeviceId",
             IdentifierType::WirelessGatewayId => "WirelessGatewayId",
-            IdentifierType::Unknown(value) => value.as_str(),
+            IdentifierType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DevEui",
-            "GatewayEui",
-            "PartnerAccountId",
-            "WirelessDeviceId",
-            "WirelessGatewayId",
+            "DevEui", "GatewayEui", "PartnerAccountId", "WirelessDeviceId", "WirelessGatewayId"
         ]
     }
 }
@@ -1667,9 +1487,9 @@ impl AsRef<str> for IdentifierType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let partnertype = unimplemented!();
 /// match partnertype {
@@ -1690,54 +1510,48 @@ impl AsRef<str> for IdentifierType {
 /// Specifically, when `partnertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PartnerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PartnerType {
     #[allow(missing_docs)] // documentation missing in model
     Sidewalk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PartnerType {
     fn from(s: &str) -> Self {
         match s {
             "Sidewalk" => PartnerType::Sidewalk,
-            other => PartnerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PartnerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PartnerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PartnerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PartnerType::from(s))
+                }
+            }
 impl PartnerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PartnerType::Sidewalk => "Sidewalk",
-            PartnerType::Unknown(value) => value.as_str(),
+            PartnerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Sidewalk"]
+        &[
+            "Sidewalk"
+        ]
     }
 }
 impl AsRef<str> for PartnerType {
@@ -1749,18 +1563,18 @@ impl AsRef<str> for PartnerType {
 /// <p>Sidewalk update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SidewalkUpdateAccount {
+pub struct SidewalkUpdateAccount  {
     /// <p>The new Sidewalk application server private key.</p>
     #[doc(hidden)]
     pub app_server_private_key: std::option::Option<std::string::String>,
 }
 impl SidewalkUpdateAccount {
     /// <p>The new Sidewalk application server private key.</p>
-    pub fn app_server_private_key(&self) -> std::option::Option<&str> {
+    pub fn app_server_private_key(&self) -> std::option::Option<& str> {
         self.app_server_private_key.as_deref()
     }
 }
-impl std::fmt::Debug for SidewalkUpdateAccount {
+impl  std::fmt::Debug for SidewalkUpdateAccount  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkUpdateAccount");
         formatter.field("app_server_private_key", &"*** Sensitive Data Redacted ***");
@@ -1769,7 +1583,7 @@ impl std::fmt::Debug for SidewalkUpdateAccount {
 }
 /// See [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
 pub mod sidewalk_update_account {
-
+    
     /// A builder for [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1782,17 +1596,14 @@ pub mod sidewalk_update_account {
             self
         }
         /// <p>The new Sidewalk application server private key.</p>
-        pub fn set_app_server_private_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_server_private_key = input;
-            self
+        pub fn set_app_server_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_server_private_key = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
         pub fn build(self) -> crate::model::SidewalkUpdateAccount {
             crate::model::SidewalkUpdateAccount {
-                app_server_private_key: self.app_server_private_key,
+                app_server_private_key: self.app_server_private_key
+                ,
             }
         }
     }
@@ -1803,6 +1614,8 @@ pub mod sidewalk_update_account {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SidewalkUpdateAccount {
     /// Creates a new builder-style object to manufacture [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
@@ -1814,7 +1627,7 @@ impl SidewalkUpdateAccount {
 /// <p>Trace content for your wireless gateway and wireless device resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TraceContent {
+pub struct TraceContent  {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
     #[doc(hidden)]
     pub wireless_device_frame_info: std::option::Option<crate::model::WirelessDeviceFrameInfo>,
@@ -1824,42 +1637,32 @@ pub struct TraceContent {
 }
 impl TraceContent {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
-    pub fn wireless_device_frame_info(
-        &self,
-    ) -> std::option::Option<&crate::model::WirelessDeviceFrameInfo> {
+    pub fn wireless_device_frame_info(&self) -> std::option::Option<& crate::model::WirelessDeviceFrameInfo> {
         self.wireless_device_frame_info.as_ref()
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
 }
 /// See [`TraceContent`](crate::model::TraceContent).
 pub mod trace_content {
-
+    
     /// A builder for [`TraceContent`](crate::model::TraceContent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) wireless_device_frame_info:
-            std::option::Option<crate::model::WirelessDeviceFrameInfo>,
+        pub(crate) wireless_device_frame_info: std::option::Option<crate::model::WirelessDeviceFrameInfo>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
     }
     impl Builder {
         /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
-        pub fn wireless_device_frame_info(
-            mut self,
-            input: crate::model::WirelessDeviceFrameInfo,
-        ) -> Self {
+        pub fn wireless_device_frame_info(mut self, input: crate::model::WirelessDeviceFrameInfo) -> Self {
             self.wireless_device_frame_info = Some(input);
             self
         }
         /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
-        pub fn set_wireless_device_frame_info(
-            mut self,
-            input: std::option::Option<crate::model::WirelessDeviceFrameInfo>,
-        ) -> Self {
-            self.wireless_device_frame_info = input;
-            self
+        pub fn set_wireless_device_frame_info(mut self, input: std::option::Option<crate::model::WirelessDeviceFrameInfo>) -> Self {
+            self.wireless_device_frame_info = input; self
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -1868,17 +1671,20 @@ pub mod trace_content {
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Consumes the builder and constructs a [`TraceContent`](crate::model::TraceContent).
         pub fn build(self) -> crate::model::TraceContent {
             crate::model::TraceContent {
-                wireless_device_frame_info: self.wireless_device_frame_info,
-                log_level: self.log_level,
+                wireless_device_frame_info: self.wireless_device_frame_info
+                ,
+                log_level: self.log_level
+                ,
             }
         }
     }
+    
+    
 }
 impl TraceContent {
     /// Creates a new builder-style object to manufacture [`TraceContent`](crate::model::TraceContent).
@@ -1893,9 +1699,9 @@ impl TraceContent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let loglevel = unimplemented!();
 /// match loglevel {
@@ -1918,7 +1724,7 @@ impl TraceContent {
 /// Specifically, when `loglevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LogLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -1926,15 +1732,7 @@ impl TraceContent {
 /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display
 /// less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LogLevel {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -1943,7 +1741,7 @@ pub enum LogLevel {
     #[allow(missing_docs)] // documentation missing in model
     Info,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogLevel {
     fn from(s: &str) -> Self {
@@ -1951,17 +1749,17 @@ impl std::convert::From<&str> for LogLevel {
             "DISABLED" => LogLevel::Disabled,
             "ERROR" => LogLevel::Error,
             "INFO" => LogLevel::Info,
-            other => LogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LogLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LogLevel::from(s))
+                }
+            }
 impl LogLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1969,12 +1767,14 @@ impl LogLevel {
             LogLevel::Disabled => "DISABLED",
             LogLevel::Error => "ERROR",
             LogLevel::Info => "INFO",
-            LogLevel::Unknown(value) => value.as_str(),
+            LogLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ERROR", "INFO"]
+        &[
+            "DISABLED", "ERROR", "INFO"
+        ]
     }
 }
 impl AsRef<str> for LogLevel {
@@ -1989,9 +1789,9 @@ impl AsRef<str> for LogLevel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessdeviceframeinfo = unimplemented!();
 /// match wirelessdeviceframeinfo {
@@ -2013,7 +1813,7 @@ impl AsRef<str> for LogLevel {
 /// Specifically, when `wirelessdeviceframeinfo` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessDeviceFrameInfo::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -2022,53 +1822,45 @@ impl AsRef<str> for LogLevel {
 /// <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug
 /// the communication between your LoRaWAN end devices and the network server.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessDeviceFrameInfo {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessDeviceFrameInfo {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => WirelessDeviceFrameInfo::Disabled,
             "ENABLED" => WirelessDeviceFrameInfo::Enabled,
-            other => WirelessDeviceFrameInfo::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessDeviceFrameInfo::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessDeviceFrameInfo {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessDeviceFrameInfo::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessDeviceFrameInfo::from(s))
+                }
+            }
 impl WirelessDeviceFrameInfo {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessDeviceFrameInfo::Disabled => "DISABLED",
             WirelessDeviceFrameInfo::Enabled => "ENABLED",
-            WirelessDeviceFrameInfo::Unknown(value) => value.as_str(),
+            WirelessDeviceFrameInfo::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for WirelessDeviceFrameInfo {
@@ -2080,7 +1872,7 @@ impl AsRef<str> for WirelessDeviceFrameInfo {
 /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanMulticast {
+pub struct LoRaWanMulticast  {
     /// <p>Supported RfRegions</p>
     #[doc(hidden)]
     pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
@@ -2090,17 +1882,17 @@ pub struct LoRaWanMulticast {
 }
 impl LoRaWanMulticast {
     /// <p>Supported RfRegions</p>
-    pub fn rf_region(&self) -> std::option::Option<&crate::model::SupportedRfRegion> {
+    pub fn rf_region(&self) -> std::option::Option<& crate::model::SupportedRfRegion> {
         self.rf_region.as_ref()
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
-    pub fn dl_class(&self) -> std::option::Option<&crate::model::DlClass> {
+    pub fn dl_class(&self) -> std::option::Option<& crate::model::DlClass> {
         self.dl_class.as_ref()
     }
 }
 /// See [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
 pub mod lo_ra_wan_multicast {
-
+    
     /// A builder for [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2114,12 +1906,8 @@ pub mod lo_ra_wan_multicast {
             self
         }
         /// <p>Supported RfRegions</p>
-        pub fn set_rf_region(
-            mut self,
-            input: std::option::Option<crate::model::SupportedRfRegion>,
-        ) -> Self {
-            self.rf_region = input;
-            self
+        pub fn set_rf_region(mut self, input: std::option::Option<crate::model::SupportedRfRegion>) -> Self {
+            self.rf_region = input; self
         }
         /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
         pub fn dl_class(mut self, input: crate::model::DlClass) -> Self {
@@ -2128,17 +1916,20 @@ pub mod lo_ra_wan_multicast {
         }
         /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
         pub fn set_dl_class(mut self, input: std::option::Option<crate::model::DlClass>) -> Self {
-            self.dl_class = input;
-            self
+            self.dl_class = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
         pub fn build(self) -> crate::model::LoRaWanMulticast {
             crate::model::LoRaWanMulticast {
-                rf_region: self.rf_region,
-                dl_class: self.dl_class,
+                rf_region: self.rf_region
+                ,
+                dl_class: self.dl_class
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanMulticast {
     /// Creates a new builder-style object to manufacture [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
@@ -2153,9 +1944,9 @@ impl LoRaWanMulticast {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dlclass = unimplemented!();
 /// match dlclass {
@@ -2177,58 +1968,52 @@ impl LoRaWanMulticast {
 /// Specifically, when `dlclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DlClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DlClass {
     #[allow(missing_docs)] // documentation missing in model
     ClassB,
     #[allow(missing_docs)] // documentation missing in model
     ClassC,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DlClass {
     fn from(s: &str) -> Self {
         match s {
             "ClassB" => DlClass::ClassB,
             "ClassC" => DlClass::ClassC,
-            other => DlClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DlClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DlClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DlClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DlClass::from(s))
+                }
+            }
 impl DlClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DlClass::ClassB => "ClassB",
             DlClass::ClassC => "ClassC",
-            DlClass::Unknown(value) => value.as_str(),
+            DlClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ClassB", "ClassC"]
+        &[
+            "ClassB", "ClassC"
+        ]
     }
 }
 impl AsRef<str> for DlClass {
@@ -2243,9 +2028,9 @@ impl AsRef<str> for DlClass {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let supportedrfregion = unimplemented!();
 /// match supportedrfregion {
@@ -2269,22 +2054,14 @@ impl AsRef<str> for DlClass {
 /// Specifically, when `supportedrfregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SupportedRfRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Supported RfRegions</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SupportedRfRegion {
     #[allow(missing_docs)] // documentation missing in model
     As9231,
@@ -2295,7 +2072,7 @@ pub enum SupportedRfRegion {
     #[allow(missing_docs)] // documentation missing in model
     Us915,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SupportedRfRegion {
     fn from(s: &str) -> Self {
@@ -2304,19 +2081,17 @@ impl std::convert::From<&str> for SupportedRfRegion {
             "AU915" => SupportedRfRegion::Au915,
             "EU868" => SupportedRfRegion::Eu868,
             "US915" => SupportedRfRegion::Us915,
-            other => {
-                SupportedRfRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SupportedRfRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SupportedRfRegion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SupportedRfRegion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SupportedRfRegion::from(s))
+                }
+            }
 impl SupportedRfRegion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2325,12 +2100,14 @@ impl SupportedRfRegion {
             SupportedRfRegion::Au915 => "AU915",
             SupportedRfRegion::Eu868 => "EU868",
             SupportedRfRegion::Us915 => "US915",
-            SupportedRfRegion::Unknown(value) => value.as_str(),
+            SupportedRfRegion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AS923-1", "AU915", "EU868", "US915"]
+        &[
+            "AS923-1", "AU915", "EU868", "US915"
+        ]
     }
 }
 impl AsRef<str> for SupportedRfRegion {
@@ -2342,7 +2119,7 @@ impl AsRef<str> for SupportedRfRegion {
 /// <p>The log options for wireless gateways and can be used to set log levels for a specific type of wireless gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessGatewayLogOption {
+pub struct WirelessGatewayLogOption  {
     /// <p>The wireless gateway type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WirelessGatewayType>,
@@ -2355,28 +2132,27 @@ pub struct WirelessGatewayLogOption {
 }
 impl WirelessGatewayLogOption {
     /// <p>The wireless gateway type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessGatewayType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::WirelessGatewayType> {
         self.r#type.as_ref()
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
     /// <p>The list of wireless gateway event log options.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::WirelessGatewayEventLogOption]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::WirelessGatewayEventLogOption]> {
         self.events.as_deref()
     }
 }
 /// See [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
 pub mod wireless_gateway_log_option {
-
+    
     /// A builder for [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WirelessGatewayType>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
-        pub(crate) events:
-            std::option::Option<std::vec::Vec<crate::model::WirelessGatewayEventLogOption>>,
+        pub(crate) events: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayEventLogOption>>,
     }
     impl Builder {
         /// <p>The wireless gateway type.</p>
@@ -2385,12 +2161,8 @@ pub mod wireless_gateway_log_option {
             self
         }
         /// <p>The wireless gateway type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::WirelessGatewayType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::WirelessGatewayType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -2399,8 +2171,7 @@ pub mod wireless_gateway_log_option {
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -2409,27 +2180,28 @@ pub mod wireless_gateway_log_option {
         /// <p>The list of wireless gateway event log options.</p>
         pub fn events(mut self, input: crate::model::WirelessGatewayEventLogOption) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>The list of wireless gateway event log options.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayEventLogOption>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayEventLogOption>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
         pub fn build(self) -> crate::model::WirelessGatewayLogOption {
             crate::model::WirelessGatewayLogOption {
-                r#type: self.r#type,
-                log_level: self.log_level,
-                events: self.events,
+                r#type: self.r#type
+                ,
+                log_level: self.log_level
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl WirelessGatewayLogOption {
     /// Creates a new builder-style object to manufacture [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
@@ -2438,11 +2210,11 @@ impl WirelessGatewayLogOption {
     }
 }
 
-/// <p>The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event.</p>
+/// <p>The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event.</p> 
 /// <p>For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code> and <code>Certificate</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessGatewayEventLogOption {
+pub struct WirelessGatewayEventLogOption  {
     /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
     #[doc(hidden)]
     pub event: std::option::Option<crate::model::WirelessGatewayEvent>,
@@ -2452,17 +2224,17 @@ pub struct WirelessGatewayEventLogOption {
 }
 impl WirelessGatewayEventLogOption {
     /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::WirelessGatewayEvent> {
+    pub fn event(&self) -> std::option::Option<& crate::model::WirelessGatewayEvent> {
         self.event.as_ref()
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
 }
 /// See [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
 pub mod wireless_gateway_event_log_option {
-
+    
     /// A builder for [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2476,12 +2248,8 @@ pub mod wireless_gateway_event_log_option {
             self
         }
         /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
-        pub fn set_event(
-            mut self,
-            input: std::option::Option<crate::model::WirelessGatewayEvent>,
-        ) -> Self {
-            self.event = input;
-            self
+        pub fn set_event(mut self, input: std::option::Option<crate::model::WirelessGatewayEvent>) -> Self {
+            self.event = input; self
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -2490,17 +2258,20 @@ pub mod wireless_gateway_event_log_option {
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Consumes the builder and constructs a [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
         pub fn build(self) -> crate::model::WirelessGatewayEventLogOption {
             crate::model::WirelessGatewayEventLogOption {
-                event: self.event,
-                log_level: self.log_level,
+                event: self.event
+                ,
+                log_level: self.log_level
+                ,
             }
         }
     }
+    
+    
 }
 impl WirelessGatewayEventLogOption {
     /// Creates a new builder-style object to manufacture [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
@@ -2515,9 +2286,9 @@ impl WirelessGatewayEventLogOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessgatewayevent = unimplemented!();
 /// match wirelessgatewayevent {
@@ -2539,60 +2310,52 @@ impl WirelessGatewayEventLogOption {
 /// Specifically, when `wirelessgatewayevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessGatewayEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessGatewayEvent {
     #[allow(missing_docs)] // documentation missing in model
     CupsRequest,
     #[allow(missing_docs)] // documentation missing in model
     Certificate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessGatewayEvent {
     fn from(s: &str) -> Self {
         match s {
             "CUPS_Request" => WirelessGatewayEvent::CupsRequest,
             "Certificate" => WirelessGatewayEvent::Certificate,
-            other => {
-                WirelessGatewayEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WirelessGatewayEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessGatewayEvent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessGatewayEvent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessGatewayEvent::from(s))
+                }
+            }
 impl WirelessGatewayEvent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayEvent::CupsRequest => "CUPS_Request",
             WirelessGatewayEvent::Certificate => "Certificate",
-            WirelessGatewayEvent::Unknown(value) => value.as_str(),
+            WirelessGatewayEvent::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUPS_Request", "Certificate"]
+        &[
+            "CUPS_Request", "Certificate"
+        ]
     }
 }
 impl AsRef<str> for WirelessGatewayEvent {
@@ -2607,9 +2370,9 @@ impl AsRef<str> for WirelessGatewayEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessgatewaytype = unimplemented!();
 /// match wirelessgatewaytype {
@@ -2630,56 +2393,48 @@ impl AsRef<str> for WirelessGatewayEvent {
 /// Specifically, when `wirelessgatewaytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessGatewayType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The wireless gateway type.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessGatewayType {
     #[allow(missing_docs)] // documentation missing in model
     LoRaWan,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessGatewayType {
     fn from(s: &str) -> Self {
         match s {
             "LoRaWAN" => WirelessGatewayType::LoRaWan,
-            other => {
-                WirelessGatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WirelessGatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessGatewayType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessGatewayType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessGatewayType::from(s))
+                }
+            }
 impl WirelessGatewayType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayType::LoRaWan => "LoRaWAN",
-            WirelessGatewayType::Unknown(value) => value.as_str(),
+            WirelessGatewayType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LoRaWAN"]
+        &[
+            "LoRaWAN"
+        ]
     }
 }
 impl AsRef<str> for WirelessGatewayType {
@@ -2691,7 +2446,7 @@ impl AsRef<str> for WirelessGatewayType {
 /// <p>The log options for wireless devices and can be used to set log levels for a specific type of wireless device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessDeviceLogOption {
+pub struct WirelessDeviceLogOption  {
     /// <p>The wireless device type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WirelessDeviceType>,
@@ -2704,28 +2459,27 @@ pub struct WirelessDeviceLogOption {
 }
 impl WirelessDeviceLogOption {
     /// <p>The wireless device type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::WirelessDeviceType> {
         self.r#type.as_ref()
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
     /// <p>The list of wireless device event log options.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::WirelessDeviceEventLogOption]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::WirelessDeviceEventLogOption]> {
         self.events.as_deref()
     }
 }
 /// See [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
 pub mod wireless_device_log_option {
-
+    
     /// A builder for [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WirelessDeviceType>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
-        pub(crate) events:
-            std::option::Option<std::vec::Vec<crate::model::WirelessDeviceEventLogOption>>,
+        pub(crate) events: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceEventLogOption>>,
     }
     impl Builder {
         /// <p>The wireless device type.</p>
@@ -2734,12 +2488,8 @@ pub mod wireless_device_log_option {
             self
         }
         /// <p>The wireless device type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::WirelessDeviceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::WirelessDeviceType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -2748,8 +2498,7 @@ pub mod wireless_device_log_option {
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -2758,27 +2507,28 @@ pub mod wireless_device_log_option {
         /// <p>The list of wireless device event log options.</p>
         pub fn events(mut self, input: crate::model::WirelessDeviceEventLogOption) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>The list of wireless device event log options.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceEventLogOption>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceEventLogOption>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
         pub fn build(self) -> crate::model::WirelessDeviceLogOption {
             crate::model::WirelessDeviceLogOption {
-                r#type: self.r#type,
-                log_level: self.log_level,
-                events: self.events,
+                r#type: self.r#type
+                ,
+                log_level: self.log_level
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl WirelessDeviceLogOption {
     /// Creates a new builder-style object to manufacture [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
@@ -2787,11 +2537,11 @@ impl WirelessDeviceLogOption {
     }
 }
 
-/// <p>The log options for a wireless device event and can be used to set log levels for a specific wireless device event.</p>
+/// <p>The log options for a wireless device event and can be used to set log levels for a specific wireless device event.</p> 
 /// <p>For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessDeviceEventLogOption {
+pub struct WirelessDeviceEventLogOption  {
     /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
     #[doc(hidden)]
     pub event: std::option::Option<crate::model::WirelessDeviceEvent>,
@@ -2801,17 +2551,17 @@ pub struct WirelessDeviceEventLogOption {
 }
 impl WirelessDeviceEventLogOption {
     /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::WirelessDeviceEvent> {
+    pub fn event(&self) -> std::option::Option<& crate::model::WirelessDeviceEvent> {
         self.event.as_ref()
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
 }
 /// See [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
 pub mod wireless_device_event_log_option {
-
+    
     /// A builder for [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2825,12 +2575,8 @@ pub mod wireless_device_event_log_option {
             self
         }
         /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
-        pub fn set_event(
-            mut self,
-            input: std::option::Option<crate::model::WirelessDeviceEvent>,
-        ) -> Self {
-            self.event = input;
-            self
+        pub fn set_event(mut self, input: std::option::Option<crate::model::WirelessDeviceEvent>) -> Self {
+            self.event = input; self
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -2839,17 +2585,20 @@ pub mod wireless_device_event_log_option {
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Consumes the builder and constructs a [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
         pub fn build(self) -> crate::model::WirelessDeviceEventLogOption {
             crate::model::WirelessDeviceEventLogOption {
-                event: self.event,
-                log_level: self.log_level,
+                event: self.event
+                ,
+                log_level: self.log_level
+                ,
             }
         }
     }
+    
+    
 }
 impl WirelessDeviceEventLogOption {
     /// Creates a new builder-style object to manufacture [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
@@ -2864,9 +2613,9 @@ impl WirelessDeviceEventLogOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessdeviceevent = unimplemented!();
 /// match wirelessdeviceevent {
@@ -2891,22 +2640,14 @@ impl WirelessDeviceEventLogOption {
 /// Specifically, when `wirelessdeviceevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessDeviceEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessDeviceEvent {
     #[allow(missing_docs)] // documentation missing in model
     DownlinkData,
@@ -2919,7 +2660,7 @@ pub enum WirelessDeviceEvent {
     #[allow(missing_docs)] // documentation missing in model
     UplinkData,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessDeviceEvent {
     fn from(s: &str) -> Self {
@@ -2929,19 +2670,17 @@ impl std::convert::From<&str> for WirelessDeviceEvent {
             "Registration" => WirelessDeviceEvent::Registration,
             "Rejoin" => WirelessDeviceEvent::Rejoin,
             "Uplink_Data" => WirelessDeviceEvent::UplinkData,
-            other => {
-                WirelessDeviceEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WirelessDeviceEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessDeviceEvent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessDeviceEvent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessDeviceEvent::from(s))
+                }
+            }
 impl WirelessDeviceEvent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2951,17 +2690,13 @@ impl WirelessDeviceEvent {
             WirelessDeviceEvent::Registration => "Registration",
             WirelessDeviceEvent::Rejoin => "Rejoin",
             WirelessDeviceEvent::UplinkData => "Uplink_Data",
-            WirelessDeviceEvent::Unknown(value) => value.as_str(),
+            WirelessDeviceEvent::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Downlink_Data",
-            "Join",
-            "Registration",
-            "Rejoin",
-            "Uplink_Data",
+            "Downlink_Data", "Join", "Registration", "Rejoin", "Uplink_Data"
         ]
     }
 }
@@ -2977,9 +2712,9 @@ impl AsRef<str> for WirelessDeviceEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessdevicetype = unimplemented!();
 /// match wirelessdevicetype {
@@ -3001,60 +2736,52 @@ impl AsRef<str> for WirelessDeviceEvent {
 /// Specifically, when `wirelessdevicetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessDeviceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessDeviceType {
     #[allow(missing_docs)] // documentation missing in model
     LoRaWan,
     #[allow(missing_docs)] // documentation missing in model
     Sidewalk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessDeviceType {
     fn from(s: &str) -> Self {
         match s {
             "LoRaWAN" => WirelessDeviceType::LoRaWan,
             "Sidewalk" => WirelessDeviceType::Sidewalk,
-            other => {
-                WirelessDeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WirelessDeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessDeviceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessDeviceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessDeviceType::from(s))
+                }
+            }
 impl WirelessDeviceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessDeviceType::LoRaWan => "LoRaWAN",
             WirelessDeviceType::Sidewalk => "Sidewalk",
-            WirelessDeviceType::Unknown(value) => value.as_str(),
+            WirelessDeviceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LoRaWAN", "Sidewalk"]
+        &[
+            "LoRaWAN", "Sidewalk"
+        ]
     }
 }
 impl AsRef<str> for WirelessDeviceType {
@@ -3066,20 +2793,20 @@ impl AsRef<str> for WirelessDeviceType {
 /// <p>The LoRaWAN information used with a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanFuotaTask {
+pub struct LoRaWanFuotaTask  {
     /// <p>Supported RfRegions</p>
     #[doc(hidden)]
     pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
 }
 impl LoRaWanFuotaTask {
     /// <p>Supported RfRegions</p>
-    pub fn rf_region(&self) -> std::option::Option<&crate::model::SupportedRfRegion> {
+    pub fn rf_region(&self) -> std::option::Option<& crate::model::SupportedRfRegion> {
         self.rf_region.as_ref()
     }
 }
 /// See [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
 pub mod lo_ra_wan_fuota_task {
-
+    
     /// A builder for [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3092,20 +2819,19 @@ pub mod lo_ra_wan_fuota_task {
             self
         }
         /// <p>Supported RfRegions</p>
-        pub fn set_rf_region(
-            mut self,
-            input: std::option::Option<crate::model::SupportedRfRegion>,
-        ) -> Self {
-            self.rf_region = input;
-            self
+        pub fn set_rf_region(mut self, input: std::option::Option<crate::model::SupportedRfRegion>) -> Self {
+            self.rf_region = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
         pub fn build(self) -> crate::model::LoRaWanFuotaTask {
             crate::model::LoRaWanFuotaTask {
-                rf_region: self.rf_region,
+                rf_region: self.rf_region
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanFuotaTask {
     /// Creates a new builder-style object to manufacture [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
@@ -3117,57 +2843,49 @@ impl LoRaWanFuotaTask {
 /// <p>Message delivery status resource type event configuration object for enabling or disabling relevant topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageDeliveryStatusResourceTypeEventConfiguration {
+pub struct MessageDeliveryStatusResourceTypeEventConfiguration  {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
 }
 impl MessageDeliveryStatusResourceTypeEventConfiguration {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&crate::model::SidewalkResourceTypeEventConfiguration> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
     }
 }
 /// See [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
 pub mod message_delivery_status_resource_type_event_configuration {
-
+    
     /// A builder for [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sidewalk:
-            std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
+        pub(crate) sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
     }
     impl Builder {
         /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-        pub fn sidewalk(
-            mut self,
-            input: crate::model::SidewalkResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn sidewalk(mut self, input: crate::model::SidewalkResourceTypeEventConfiguration) -> Self {
             self.sidewalk = Some(input);
             self
         }
         /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>) -> Self {
+            self.sidewalk = input; self
         }
         /// Consumes the builder and constructs a [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
         pub fn build(self) -> crate::model::MessageDeliveryStatusResourceTypeEventConfiguration {
             crate::model::MessageDeliveryStatusResourceTypeEventConfiguration {
-                sidewalk: self.sidewalk,
+                sidewalk: self.sidewalk
+                ,
             }
         }
     }
+    
+    
 }
 impl MessageDeliveryStatusResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::model::message_delivery_status_resource_type_event_configuration::Builder {
+    pub fn builder() -> crate::model::message_delivery_status_resource_type_event_configuration::Builder {
         crate::model::message_delivery_status_resource_type_event_configuration::Builder::default()
     }
 }
@@ -3175,53 +2893,45 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
 /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkResourceTypeEventConfiguration {
+pub struct SidewalkResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_device_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
+    pub wireless_device_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl SidewalkResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-    pub fn wireless_device_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn wireless_device_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.wireless_device_event_topic.as_ref()
     }
 }
 /// See [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
 pub mod sidewalk_resource_type_event_configuration {
-
+    
     /// A builder for [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) wireless_device_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) wireless_device_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-        pub fn wireless_device_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn wireless_device_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.wireless_device_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-        pub fn set_wireless_device_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_device_event_topic = input;
-            self
+        pub fn set_wireless_device_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.wireless_device_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
         pub fn build(self) -> crate::model::SidewalkResourceTypeEventConfiguration {
             crate::model::SidewalkResourceTypeEventConfiguration {
-                wireless_device_event_topic: self.wireless_device_event_topic,
+                wireless_device_event_topic: self.wireless_device_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl SidewalkResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
@@ -3233,57 +2943,45 @@ impl SidewalkResourceTypeEventConfiguration {
 /// <p>Connection status resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionStatusResourceTypeEventConfiguration {
+pub struct ConnectionStatusResourceTypeEventConfiguration  {
     /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
-    pub lo_ra_wan:
-        std::option::Option<crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration>,
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration>,
 }
 impl ConnectionStatusResourceTypeEventConfiguration {
     /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(
-        &self,
-    ) -> std::option::Option<&crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration>
-    {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
 pub mod connection_status_resource_type_event_configuration {
-
+    
     /// A builder for [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) lo_ra_wan: std::option::Option<
-            crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration,
-        >,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration>,
     }
     impl Builder {
         /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-        pub fn lo_ra_wan(
-            mut self,
-            input: crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration) -> Self {
             self.lo_ra_wan = Some(input);
             self
         }
         /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<
-                crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration,
-            >,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
         pub fn build(self) -> crate::model::ConnectionStatusResourceTypeEventConfiguration {
             crate::model::ConnectionStatusResourceTypeEventConfiguration {
-                lo_ra_wan: self.lo_ra_wan,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectionStatusResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
@@ -3295,58 +2993,49 @@ impl ConnectionStatusResourceTypeEventConfiguration {
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration {
+pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_gateway_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
+    pub wireless_gateway_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
-    pub fn wireless_gateway_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn wireless_gateway_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.wireless_gateway_event_topic.as_ref()
     }
 }
 /// See [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
 pub mod lo_ra_wan_connection_status_resource_type_event_configuration {
-
+    
     /// A builder for [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) wireless_gateway_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) wireless_gateway_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
-        pub fn wireless_gateway_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn wireless_gateway_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.wireless_gateway_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
-        pub fn set_wireless_gateway_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_gateway_event_topic = input;
-            self
+        pub fn set_wireless_gateway_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.wireless_gateway_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
         pub fn build(self) -> crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration {
             crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration {
-                wireless_gateway_event_topic: self.wireless_gateway_event_topic,
+                wireless_gateway_event_topic: self.wireless_gateway_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder {
+    pub fn builder() -> crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder {
         crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder::default()
     }
 }
@@ -3354,52 +3043,45 @@ impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
 /// <p>Join resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JoinResourceTypeEventConfiguration {
+pub struct JoinResourceTypeEventConfiguration  {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanJoinResourceTypeEventConfiguration>,
 }
 impl JoinResourceTypeEventConfiguration {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(
-        &self,
-    ) -> std::option::Option<&crate::model::LoRaWanJoinResourceTypeEventConfiguration> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanJoinResourceTypeEventConfiguration> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
 pub mod join_resource_type_event_configuration {
-
+    
     /// A builder for [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) lo_ra_wan:
-            std::option::Option<crate::model::LoRaWanJoinResourceTypeEventConfiguration>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanJoinResourceTypeEventConfiguration>,
     }
     impl Builder {
         /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-        pub fn lo_ra_wan(
-            mut self,
-            input: crate::model::LoRaWanJoinResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanJoinResourceTypeEventConfiguration) -> Self {
             self.lo_ra_wan = Some(input);
             self
         }
         /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanJoinResourceTypeEventConfiguration>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanJoinResourceTypeEventConfiguration>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
         pub fn build(self) -> crate::model::JoinResourceTypeEventConfiguration {
             crate::model::JoinResourceTypeEventConfiguration {
-                lo_ra_wan: self.lo_ra_wan,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl JoinResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
@@ -3411,53 +3093,45 @@ impl JoinResourceTypeEventConfiguration {
 /// <p>Object for LoRaWAN join resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanJoinResourceTypeEventConfiguration {
+pub struct LoRaWanJoinResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_device_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
+    pub wireless_device_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-    pub fn wireless_device_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+    pub fn wireless_device_event_topic(&self) -> std::option::Option<& crate::model::EventNotificationTopicStatus> {
         self.wireless_device_event_topic.as_ref()
     }
 }
 /// See [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
 pub mod lo_ra_wan_join_resource_type_event_configuration {
-
+    
     /// A builder for [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) wireless_device_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
+        pub(crate) wireless_device_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
         /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-        pub fn wireless_device_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
+        pub fn wireless_device_event_topic(mut self, input: crate::model::EventNotificationTopicStatus) -> Self {
             self.wireless_device_event_topic = Some(input);
             self
         }
         /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-        pub fn set_wireless_device_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_device_event_topic = input;
-            self
+        pub fn set_wireless_device_event_topic(mut self, input: std::option::Option<crate::model::EventNotificationTopicStatus>) -> Self {
+            self.wireless_device_event_topic = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
         pub fn build(self) -> crate::model::LoRaWanJoinResourceTypeEventConfiguration {
             crate::model::LoRaWanJoinResourceTypeEventConfiguration {
-                wireless_device_event_topic: self.wireless_device_event_topic,
+                wireless_device_event_topic: self.wireless_device_event_topic
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanJoinResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
@@ -3469,52 +3143,45 @@ impl LoRaWanJoinResourceTypeEventConfiguration {
 /// <p>Proximity resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProximityResourceTypeEventConfiguration {
+pub struct ProximityResourceTypeEventConfiguration  {
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless device topic.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
 }
 impl ProximityResourceTypeEventConfiguration {
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless device topic.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&crate::model::SidewalkResourceTypeEventConfiguration> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
     }
 }
 /// See [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
 pub mod proximity_resource_type_event_configuration {
-
+    
     /// A builder for [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sidewalk:
-            std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
+        pub(crate) sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
     }
     impl Builder {
         /// <p>Proximity resource type event configuration object for enabling and disabling wireless device topic.</p>
-        pub fn sidewalk(
-            mut self,
-            input: crate::model::SidewalkResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn sidewalk(mut self, input: crate::model::SidewalkResourceTypeEventConfiguration) -> Self {
             self.sidewalk = Some(input);
             self
         }
         /// <p>Proximity resource type event configuration object for enabling and disabling wireless device topic.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>) -> Self {
+            self.sidewalk = input; self
         }
         /// Consumes the builder and constructs a [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
         pub fn build(self) -> crate::model::ProximityResourceTypeEventConfiguration {
             crate::model::ProximityResourceTypeEventConfiguration {
-                sidewalk: self.sidewalk,
+                sidewalk: self.sidewalk
+                ,
             }
         }
     }
+    
+    
 }
 impl ProximityResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
@@ -3526,59 +3193,50 @@ impl ProximityResourceTypeEventConfiguration {
 /// <p>Device registration state resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceRegistrationStateResourceTypeEventConfiguration {
+pub struct DeviceRegistrationStateResourceTypeEventConfiguration  {
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
 }
 impl DeviceRegistrationStateResourceTypeEventConfiguration {
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&crate::model::SidewalkResourceTypeEventConfiguration> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
     }
 }
 /// See [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
 pub mod device_registration_state_resource_type_event_configuration {
-
+    
     /// A builder for [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sidewalk:
-            std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
+        pub(crate) sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
     }
     impl Builder {
         /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-        pub fn sidewalk(
-            mut self,
-            input: crate::model::SidewalkResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn sidewalk(mut self, input: crate::model::SidewalkResourceTypeEventConfiguration) -> Self {
             self.sidewalk = Some(input);
             self
         }
         /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>) -> Self {
+            self.sidewalk = input; self
         }
         /// Consumes the builder and constructs a [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
         pub fn build(self) -> crate::model::DeviceRegistrationStateResourceTypeEventConfiguration {
             crate::model::DeviceRegistrationStateResourceTypeEventConfiguration {
-                sidewalk: self.sidewalk,
+                sidewalk: self.sidewalk
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceRegistrationStateResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::model::device_registration_state_resource_type_event_configuration::Builder {
-        crate::model::device_registration_state_resource_type_event_configuration::Builder::default(
-        )
+    pub fn builder() -> crate::model::device_registration_state_resource_type_event_configuration::Builder {
+        crate::model::device_registration_state_resource_type_event_configuration::Builder::default()
     }
 }
 
@@ -3588,9 +3246,9 @@ impl DeviceRegistrationStateResourceTypeEventConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let expressiontype = unimplemented!();
 /// match expressiontype {
@@ -3612,58 +3270,52 @@ impl DeviceRegistrationStateResourceTypeEventConfiguration {
 /// Specifically, when `expressiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExpressionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExpressionType {
     #[allow(missing_docs)] // documentation missing in model
     MqttTopic,
     #[allow(missing_docs)] // documentation missing in model
     RuleName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExpressionType {
     fn from(s: &str) -> Self {
         match s {
             "MqttTopic" => ExpressionType::MqttTopic,
             "RuleName" => ExpressionType::RuleName,
-            other => ExpressionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExpressionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExpressionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExpressionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExpressionType::from(s))
+                }
+            }
 impl ExpressionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExpressionType::MqttTopic => "MqttTopic",
             ExpressionType::RuleName => "RuleName",
-            ExpressionType::Unknown(value) => value.as_str(),
+            ExpressionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MqttTopic", "RuleName"]
+        &[
+            "MqttTopic", "RuleName"
+        ]
     }
 }
 impl AsRef<str> for ExpressionType {
@@ -3675,7 +3327,7 @@ impl AsRef<str> for ExpressionType {
 /// <p>A simple label consisting of a customer-defined key-value pair</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The tag's key value.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -3685,17 +3337,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The tag's key value.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag's value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3710,8 +3362,7 @@ pub mod tag {
         }
         /// <p>The tag's key value.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The tag's value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3720,17 +3371,20 @@ pub mod tag {
         }
         /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -3742,7 +3396,7 @@ impl Tag {
 /// <p>The LoRaWAN information used with the multicast session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanMulticastSession {
+pub struct LoRaWanMulticastSession  {
     /// <p>Downlink data rate.</p>
     #[doc(hidden)]
     pub dl_dr: std::option::Option<i32>,
@@ -3766,7 +3420,7 @@ impl LoRaWanMulticastSession {
         self.dl_freq
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
-    pub fn session_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn session_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.session_start_time.as_ref()
     }
     /// <p>How long before a multicast group session is to timeout.</p>
@@ -3776,7 +3430,7 @@ impl LoRaWanMulticastSession {
 }
 /// See [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
 pub mod lo_ra_wan_multicast_session {
-
+    
     /// A builder for [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3793,8 +3447,7 @@ pub mod lo_ra_wan_multicast_session {
         }
         /// <p>Downlink data rate.</p>
         pub fn set_dl_dr(mut self, input: std::option::Option<i32>) -> Self {
-            self.dl_dr = input;
-            self
+            self.dl_dr = input; self
         }
         /// <p>Downlink frequency.</p>
         pub fn dl_freq(mut self, input: i32) -> Self {
@@ -3803,8 +3456,7 @@ pub mod lo_ra_wan_multicast_session {
         }
         /// <p>Downlink frequency.</p>
         pub fn set_dl_freq(mut self, input: std::option::Option<i32>) -> Self {
-            self.dl_freq = input;
-            self
+            self.dl_freq = input; self
         }
         /// <p>Timestamp of when the multicast group session is to start.</p>
         pub fn session_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3812,12 +3464,8 @@ pub mod lo_ra_wan_multicast_session {
             self
         }
         /// <p>Timestamp of when the multicast group session is to start.</p>
-        pub fn set_session_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.session_start_time = input;
-            self
+        pub fn set_session_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.session_start_time = input; self
         }
         /// <p>How long before a multicast group session is to timeout.</p>
         pub fn session_timeout(mut self, input: i32) -> Self {
@@ -3826,19 +3474,24 @@ pub mod lo_ra_wan_multicast_session {
         }
         /// <p>How long before a multicast group session is to timeout.</p>
         pub fn set_session_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.session_timeout = input;
-            self
+            self.session_timeout = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
         pub fn build(self) -> crate::model::LoRaWanMulticastSession {
             crate::model::LoRaWanMulticastSession {
-                dl_dr: self.dl_dr,
-                dl_freq: self.dl_freq,
-                session_start_time: self.session_start_time,
-                session_timeout: self.session_timeout,
+                dl_dr: self.dl_dr
+                ,
+                dl_freq: self.dl_freq
+                ,
+                session_start_time: self.session_start_time
+                ,
+                session_timeout: self.session_timeout
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanMulticastSession {
     /// Creates a new builder-style object to manufacture [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
@@ -3850,20 +3503,20 @@ impl LoRaWanMulticastSession {
 /// <p>The LoRaWAN information used to start a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanStartFuotaTask {
+pub struct LoRaWanStartFuotaTask  {
     /// <p>Start time of a FUOTA task.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LoRaWanStartFuotaTask {
     /// <p>Start time of a FUOTA task.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
 /// See [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
 pub mod lo_ra_wan_start_fuota_task {
-
+    
     /// A builder for [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3876,20 +3529,19 @@ pub mod lo_ra_wan_start_fuota_task {
             self
         }
         /// <p>Start time of a FUOTA task.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
         pub fn build(self) -> crate::model::LoRaWanStartFuotaTask {
             crate::model::LoRaWanStartFuotaTask {
-                start_time: self.start_time,
+                start_time: self.start_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanStartFuotaTask {
     /// Creates a new builder-style object to manufacture [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
@@ -3901,7 +3553,7 @@ impl LoRaWanStartFuotaTask {
 /// <p>WirelessMetadata object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessMetadata {
+pub struct WirelessMetadata  {
     /// <p>LoRaWAN device info.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
@@ -3911,17 +3563,17 @@ pub struct WirelessMetadata {
 }
 impl WirelessMetadata {
     /// <p>LoRaWAN device info.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanSendDataToDevice> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanSendDataToDevice> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkSendDataToDevice> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkSendDataToDevice> {
         self.sidewalk.as_ref()
     }
 }
 /// See [`WirelessMetadata`](crate::model::WirelessMetadata).
 pub mod wireless_metadata {
-
+    
     /// A builder for [`WirelessMetadata`](crate::model::WirelessMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3935,12 +3587,8 @@ pub mod wireless_metadata {
             self
         }
         /// <p>LoRaWAN device info.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanSendDataToDevice>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>The Sidewalk account credentials.</p>
         pub fn sidewalk(mut self, input: crate::model::SidewalkSendDataToDevice) -> Self {
@@ -3948,21 +3596,21 @@ pub mod wireless_metadata {
             self
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkSendDataToDevice>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkSendDataToDevice>) -> Self {
+            self.sidewalk = input; self
         }
         /// Consumes the builder and constructs a [`WirelessMetadata`](crate::model::WirelessMetadata).
         pub fn build(self) -> crate::model::WirelessMetadata {
             crate::model::WirelessMetadata {
-                lo_ra_wan: self.lo_ra_wan,
-                sidewalk: self.sidewalk,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                sidewalk: self.sidewalk
+                ,
             }
         }
     }
+    
+    
 }
 impl WirelessMetadata {
     /// Creates a new builder-style object to manufacture [`WirelessMetadata`](crate::model::WirelessMetadata).
@@ -3974,7 +3622,7 @@ impl WirelessMetadata {
 /// <p>Information about a Sidewalk router.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkSendDataToDevice {
+pub struct SidewalkSendDataToDevice  {
     /// <p>The sequence number.</p>
     #[doc(hidden)]
     pub seq: std::option::Option<i32>,
@@ -3991,7 +3639,7 @@ impl SidewalkSendDataToDevice {
         self.seq
     }
     /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>The duration of time in seconds to retry sending the ACK.</p>
@@ -4001,7 +3649,7 @@ impl SidewalkSendDataToDevice {
 }
 /// See [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
 pub mod sidewalk_send_data_to_device {
-
+    
     /// A builder for [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4017,8 +3665,7 @@ pub mod sidewalk_send_data_to_device {
         }
         /// <p>The sequence number.</p>
         pub fn set_seq(mut self, input: std::option::Option<i32>) -> Self {
-            self.seq = input;
-            self
+            self.seq = input; self
         }
         /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -4026,12 +3673,8 @@ pub mod sidewalk_send_data_to_device {
             self
         }
         /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// <p>The duration of time in seconds to retry sending the ACK.</p>
         pub fn ack_mode_retry_duration_secs(mut self, input: i32) -> Self {
@@ -4040,18 +3683,22 @@ pub mod sidewalk_send_data_to_device {
         }
         /// <p>The duration of time in seconds to retry sending the ACK.</p>
         pub fn set_ack_mode_retry_duration_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.ack_mode_retry_duration_secs = input;
-            self
+            self.ack_mode_retry_duration_secs = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
         pub fn build(self) -> crate::model::SidewalkSendDataToDevice {
             crate::model::SidewalkSendDataToDevice {
-                seq: self.seq,
-                message_type: self.message_type,
-                ack_mode_retry_duration_secs: self.ack_mode_retry_duration_secs,
+                seq: self.seq
+                ,
+                message_type: self.message_type
+                ,
+                ack_mode_retry_duration_secs: self.ack_mode_retry_duration_secs
+                ,
             }
         }
     }
+    
+    
 }
 impl SidewalkSendDataToDevice {
     /// Creates a new builder-style object to manufacture [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
@@ -4066,9 +3713,9 @@ impl SidewalkSendDataToDevice {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let messagetype = unimplemented!();
 /// match messagetype {
@@ -4092,22 +3739,14 @@ impl SidewalkSendDataToDevice {
 /// Specifically, when `messagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MessageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
     CustomCommandIdGet,
@@ -4118,7 +3757,7 @@ pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
     CustomCommandIdSet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
@@ -4127,17 +3766,17 @@ impl std::convert::From<&str> for MessageType {
             "CUSTOM_COMMAND_ID_NOTIFY" => MessageType::CustomCommandIdNotify,
             "CUSTOM_COMMAND_ID_RESP" => MessageType::CustomCommandIdResp,
             "CUSTOM_COMMAND_ID_SET" => MessageType::CustomCommandIdSet,
-            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MessageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MessageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MessageType::from(s))
+                }
+            }
 impl MessageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4146,16 +3785,13 @@ impl MessageType {
             MessageType::CustomCommandIdNotify => "CUSTOM_COMMAND_ID_NOTIFY",
             MessageType::CustomCommandIdResp => "CUSTOM_COMMAND_ID_RESP",
             MessageType::CustomCommandIdSet => "CUSTOM_COMMAND_ID_SET",
-            MessageType::Unknown(value) => value.as_str(),
+            MessageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CUSTOM_COMMAND_ID_GET",
-            "CUSTOM_COMMAND_ID_NOTIFY",
-            "CUSTOM_COMMAND_ID_RESP",
-            "CUSTOM_COMMAND_ID_SET",
+            "CUSTOM_COMMAND_ID_GET", "CUSTOM_COMMAND_ID_NOTIFY", "CUSTOM_COMMAND_ID_RESP", "CUSTOM_COMMAND_ID_SET"
         ]
     }
 }
@@ -4168,7 +3804,7 @@ impl AsRef<str> for MessageType {
 /// <p>LoRaWAN router info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanSendDataToDevice {
+pub struct LoRaWanSendDataToDevice  {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub f_port: std::option::Option<i32>,
@@ -4182,15 +3818,13 @@ impl LoRaWanSendDataToDevice {
         self.f_port
     }
     /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
-    pub fn participating_gateways(
-        &self,
-    ) -> std::option::Option<&crate::model::ParticipatingGateways> {
+    pub fn participating_gateways(&self) -> std::option::Option<& crate::model::ParticipatingGateways> {
         self.participating_gateways.as_ref()
     }
 }
 /// See [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
 pub mod lo_ra_wan_send_data_to_device {
-
+    
     /// A builder for [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4205,33 +3839,29 @@ pub mod lo_ra_wan_send_data_to_device {
         }
         /// <p>The Fport value.</p>
         pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.f_port = input;
-            self
+            self.f_port = input; self
         }
         /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
-        pub fn participating_gateways(
-            mut self,
-            input: crate::model::ParticipatingGateways,
-        ) -> Self {
+        pub fn participating_gateways(mut self, input: crate::model::ParticipatingGateways) -> Self {
             self.participating_gateways = Some(input);
             self
         }
         /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
-        pub fn set_participating_gateways(
-            mut self,
-            input: std::option::Option<crate::model::ParticipatingGateways>,
-        ) -> Self {
-            self.participating_gateways = input;
-            self
+        pub fn set_participating_gateways(mut self, input: std::option::Option<crate::model::ParticipatingGateways>) -> Self {
+            self.participating_gateways = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
         pub fn build(self) -> crate::model::LoRaWanSendDataToDevice {
             crate::model::LoRaWanSendDataToDevice {
-                f_port: self.f_port,
-                participating_gateways: self.participating_gateways,
+                f_port: self.f_port
+                ,
+                participating_gateways: self.participating_gateways
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanSendDataToDevice {
     /// Creates a new builder-style object to manufacture [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
@@ -4243,7 +3873,7 @@ impl LoRaWanSendDataToDevice {
 /// <p>Specify the list of gateways to which you want to send downlink data traffic when the wireless device is running in class B or class C mode.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParticipatingGateways {
+pub struct ParticipatingGateways  {
     /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
     #[doc(hidden)]
     pub downlink_mode: std::option::Option<crate::model::DownlinkMode>,
@@ -4256,11 +3886,11 @@ pub struct ParticipatingGateways {
 }
 impl ParticipatingGateways {
     /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
-    pub fn downlink_mode(&self) -> std::option::Option<&crate::model::DownlinkMode> {
+    pub fn downlink_mode(&self) -> std::option::Option<& crate::model::DownlinkMode> {
         self.downlink_mode.as_ref()
     }
     /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
-    pub fn gateway_list(&self) -> std::option::Option<&[crate::model::GatewayListItem]> {
+    pub fn gateway_list(&self) -> std::option::Option<& [crate::model::GatewayListItem]> {
         self.gateway_list.as_deref()
     }
     /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
@@ -4270,7 +3900,7 @@ impl ParticipatingGateways {
 }
 /// See [`ParticipatingGateways`](crate::model::ParticipatingGateways).
 pub mod participating_gateways {
-
+    
     /// A builder for [`ParticipatingGateways`](crate::model::ParticipatingGateways).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4285,12 +3915,8 @@ pub mod participating_gateways {
             self
         }
         /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
-        pub fn set_downlink_mode(
-            mut self,
-            input: std::option::Option<crate::model::DownlinkMode>,
-        ) -> Self {
-            self.downlink_mode = input;
-            self
+        pub fn set_downlink_mode(mut self, input: std::option::Option<crate::model::DownlinkMode>) -> Self {
+            self.downlink_mode = input; self
         }
         /// Appends an item to `gateway_list`.
         ///
@@ -4299,17 +3925,13 @@ pub mod participating_gateways {
         /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
         pub fn gateway_list(mut self, input: crate::model::GatewayListItem) -> Self {
             let mut v = self.gateway_list.unwrap_or_default();
-            v.push(input);
-            self.gateway_list = Some(v);
-            self
+                            v.push(input);
+                            self.gateway_list = Some(v);
+                            self
         }
         /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
-        pub fn set_gateway_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GatewayListItem>>,
-        ) -> Self {
-            self.gateway_list = input;
-            self
+        pub fn set_gateway_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::GatewayListItem>>) -> Self {
+            self.gateway_list = input; self
         }
         /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
         pub fn transmission_interval(mut self, input: i32) -> Self {
@@ -4318,18 +3940,22 @@ pub mod participating_gateways {
         }
         /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
         pub fn set_transmission_interval(mut self, input: std::option::Option<i32>) -> Self {
-            self.transmission_interval = input;
-            self
+            self.transmission_interval = input; self
         }
         /// Consumes the builder and constructs a [`ParticipatingGateways`](crate::model::ParticipatingGateways).
         pub fn build(self) -> crate::model::ParticipatingGateways {
             crate::model::ParticipatingGateways {
-                downlink_mode: self.downlink_mode,
-                gateway_list: self.gateway_list,
-                transmission_interval: self.transmission_interval,
+                downlink_mode: self.downlink_mode
+                ,
+                gateway_list: self.gateway_list
+                ,
+                transmission_interval: self.transmission_interval
+                ,
             }
         }
     }
+    
+    
 }
 impl ParticipatingGateways {
     /// Creates a new builder-style object to manufacture [`ParticipatingGateways`](crate::model::ParticipatingGateways).
@@ -4341,7 +3967,7 @@ impl ParticipatingGateways {
 /// <p>Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayListItem {
+pub struct GatewayListItem  {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -4351,7 +3977,7 @@ pub struct GatewayListItem {
 }
 impl GatewayListItem {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
@@ -4361,7 +3987,7 @@ impl GatewayListItem {
 }
 /// See [`GatewayListItem`](crate::model::GatewayListItem).
 pub mod gateway_list_item {
-
+    
     /// A builder for [`GatewayListItem`](crate::model::GatewayListItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4376,8 +4002,7 @@ pub mod gateway_list_item {
         }
         /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
         pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_id = input;
-            self
+            self.gateway_id = input; self
         }
         /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
         pub fn downlink_frequency(mut self, input: i32) -> Self {
@@ -4386,17 +4011,20 @@ pub mod gateway_list_item {
         }
         /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
         pub fn set_downlink_frequency(mut self, input: std::option::Option<i32>) -> Self {
-            self.downlink_frequency = input;
-            self
+            self.downlink_frequency = input; self
         }
         /// Consumes the builder and constructs a [`GatewayListItem`](crate::model::GatewayListItem).
         pub fn build(self) -> crate::model::GatewayListItem {
             crate::model::GatewayListItem {
-                gateway_id: self.gateway_id,
-                downlink_frequency: self.downlink_frequency,
+                gateway_id: self.gateway_id
+                ,
+                downlink_frequency: self.downlink_frequency
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayListItem {
     /// Creates a new builder-style object to manufacture [`GatewayListItem`](crate::model::GatewayListItem).
@@ -4411,9 +4039,9 @@ impl GatewayListItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let downlinkmode = unimplemented!();
 /// match downlinkmode {
@@ -4436,22 +4064,14 @@ impl GatewayListItem {
 /// Specifically, when `downlinkmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DownlinkMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DownlinkMode {
     #[allow(missing_docs)] // documentation missing in model
     Concurrent,
@@ -4460,7 +4080,7 @@ pub enum DownlinkMode {
     #[allow(missing_docs)] // documentation missing in model
     UsingUplinkGateway,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DownlinkMode {
     fn from(s: &str) -> Self {
@@ -4468,17 +4088,17 @@ impl std::convert::From<&str> for DownlinkMode {
             "CONCURRENT" => DownlinkMode::Concurrent,
             "SEQUENTIAL" => DownlinkMode::Sequential,
             "USING_UPLINK_GATEWAY" => DownlinkMode::UsingUplinkGateway,
-            other => DownlinkMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DownlinkMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DownlinkMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DownlinkMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DownlinkMode::from(s))
+                }
+            }
 impl DownlinkMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4486,12 +4106,14 @@ impl DownlinkMode {
             DownlinkMode::Concurrent => "CONCURRENT",
             DownlinkMode::Sequential => "SEQUENTIAL",
             DownlinkMode::UsingUplinkGateway => "USING_UPLINK_GATEWAY",
-            DownlinkMode::Unknown(value) => value.as_str(),
+            DownlinkMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONCURRENT", "SEQUENTIAL", "USING_UPLINK_GATEWAY"]
+        &[
+            "CONCURRENT", "SEQUENTIAL", "USING_UPLINK_GATEWAY"
+        ]
     }
 }
 impl AsRef<str> for DownlinkMode {
@@ -4503,20 +4125,20 @@ impl AsRef<str> for DownlinkMode {
 /// <p>Wireless metadata that is to be sent to multicast group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MulticastWirelessMetadata {
+pub struct MulticastWirelessMetadata  {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastMetadata>,
 }
 impl MulticastWirelessMetadata {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticastMetadata> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanMulticastMetadata> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
 pub mod multicast_wireless_metadata {
-
+    
     /// A builder for [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4529,20 +4151,19 @@ pub mod multicast_wireless_metadata {
             self
         }
         /// <p>The metadata information of the LoRaWAN multicast group.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanMulticastMetadata>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanMulticastMetadata>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
         pub fn build(self) -> crate::model::MulticastWirelessMetadata {
             crate::model::MulticastWirelessMetadata {
-                lo_ra_wan: self.lo_ra_wan,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl MulticastWirelessMetadata {
     /// Creates a new builder-style object to manufacture [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
@@ -4554,7 +4175,7 @@ impl MulticastWirelessMetadata {
 /// <p>The metadata information of the LoRaWAN multicast group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanMulticastMetadata {
+pub struct LoRaWanMulticastMetadata  {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub f_port: std::option::Option<i32>,
@@ -4567,7 +4188,7 @@ impl LoRaWanMulticastMetadata {
 }
 /// See [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
 pub mod lo_ra_wan_multicast_metadata {
-
+    
     /// A builder for [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4581,16 +4202,18 @@ pub mod lo_ra_wan_multicast_metadata {
         }
         /// <p>The Fport value.</p>
         pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.f_port = input;
-            self
+            self.f_port = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
         pub fn build(self) -> crate::model::LoRaWanMulticastMetadata {
             crate::model::LoRaWanMulticastMetadata {
-                f_port: self.f_port,
+                f_port: self.f_port
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanMulticastMetadata {
     /// Creates a new builder-style object to manufacture [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
@@ -4602,20 +4225,20 @@ impl LoRaWanMulticastMetadata {
 /// <p>The wrapper for position solver configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PositionSolverConfigurations {
+pub struct PositionSolverConfigurations  {
     /// <p>The Semtech GNSS solver configuration object.</p>
     #[doc(hidden)]
     pub semtech_gnss: std::option::Option<crate::model::SemtechGnssConfiguration>,
 }
 impl PositionSolverConfigurations {
     /// <p>The Semtech GNSS solver configuration object.</p>
-    pub fn semtech_gnss(&self) -> std::option::Option<&crate::model::SemtechGnssConfiguration> {
+    pub fn semtech_gnss(&self) -> std::option::Option<& crate::model::SemtechGnssConfiguration> {
         self.semtech_gnss.as_ref()
     }
 }
 /// See [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
 pub mod position_solver_configurations {
-
+    
     /// A builder for [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4628,20 +4251,19 @@ pub mod position_solver_configurations {
             self
         }
         /// <p>The Semtech GNSS solver configuration object.</p>
-        pub fn set_semtech_gnss(
-            mut self,
-            input: std::option::Option<crate::model::SemtechGnssConfiguration>,
-        ) -> Self {
-            self.semtech_gnss = input;
-            self
+        pub fn set_semtech_gnss(mut self, input: std::option::Option<crate::model::SemtechGnssConfiguration>) -> Self {
+            self.semtech_gnss = input; self
         }
         /// Consumes the builder and constructs a [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
         pub fn build(self) -> crate::model::PositionSolverConfigurations {
             crate::model::PositionSolverConfigurations {
-                semtech_gnss: self.semtech_gnss,
+                semtech_gnss: self.semtech_gnss
+                ,
             }
         }
     }
+    
+    
 }
 impl PositionSolverConfigurations {
     /// Creates a new builder-style object to manufacture [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
@@ -4653,7 +4275,7 @@ impl PositionSolverConfigurations {
 /// <p>Information about the Semtech GNSS solver configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SemtechGnssConfiguration {
+pub struct SemtechGnssConfiguration  {
     /// <p>The status indicating whether the solver is enabled.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::PositionConfigurationStatus>,
@@ -4663,17 +4285,17 @@ pub struct SemtechGnssConfiguration {
 }
 impl SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PositionConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PositionConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> std::option::Option<&crate::model::PositionConfigurationFec> {
+    pub fn fec(&self) -> std::option::Option<& crate::model::PositionConfigurationFec> {
         self.fec.as_ref()
     }
 }
 /// See [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
 pub mod semtech_gnss_configuration {
-
+    
     /// A builder for [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4687,12 +4309,8 @@ pub mod semtech_gnss_configuration {
             self
         }
         /// <p>The status indicating whether the solver is enabled.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PositionConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PositionConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Whether forward error correction is enabled.</p>
         pub fn fec(mut self, input: crate::model::PositionConfigurationFec) -> Self {
@@ -4700,21 +4318,21 @@ pub mod semtech_gnss_configuration {
             self
         }
         /// <p>Whether forward error correction is enabled.</p>
-        pub fn set_fec(
-            mut self,
-            input: std::option::Option<crate::model::PositionConfigurationFec>,
-        ) -> Self {
-            self.fec = input;
-            self
+        pub fn set_fec(mut self, input: std::option::Option<crate::model::PositionConfigurationFec>) -> Self {
+            self.fec = input; self
         }
         /// Consumes the builder and constructs a [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
         pub fn build(self) -> crate::model::SemtechGnssConfiguration {
             crate::model::SemtechGnssConfiguration {
-                status: self.status,
-                fec: self.fec,
+                status: self.status
+                ,
+                fec: self.fec
+                ,
             }
         }
     }
+    
+    
 }
 impl SemtechGnssConfiguration {
     /// Creates a new builder-style object to manufacture [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
@@ -4729,9 +4347,9 @@ impl SemtechGnssConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let positionconfigurationfec = unimplemented!();
 /// match positionconfigurationfec {
@@ -4753,60 +4371,52 @@ impl SemtechGnssConfiguration {
 /// Specifically, when `positionconfigurationfec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PositionConfigurationFec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PositionConfigurationFec {
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Rose,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PositionConfigurationFec {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => PositionConfigurationFec::None,
             "ROSE" => PositionConfigurationFec::Rose,
-            other => PositionConfigurationFec::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PositionConfigurationFec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PositionConfigurationFec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PositionConfigurationFec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PositionConfigurationFec::from(s))
+                }
+            }
 impl PositionConfigurationFec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PositionConfigurationFec::None => "NONE",
             PositionConfigurationFec::Rose => "ROSE",
-            PositionConfigurationFec::Unknown(value) => value.as_str(),
+            PositionConfigurationFec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE", "ROSE"]
+        &[
+            "NONE", "ROSE"
+        ]
     }
 }
 impl AsRef<str> for PositionConfigurationFec {
@@ -4821,9 +4431,9 @@ impl AsRef<str> for PositionConfigurationFec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let positionconfigurationstatus = unimplemented!();
 /// match positionconfigurationstatus {
@@ -4845,60 +4455,52 @@ impl AsRef<str> for PositionConfigurationFec {
 /// Specifically, when `positionconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PositionConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PositionConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PositionConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => PositionConfigurationStatus::Disabled,
             "Enabled" => PositionConfigurationStatus::Enabled,
-            other => PositionConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PositionConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PositionConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PositionConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PositionConfigurationStatus::from(s))
+                }
+            }
 impl PositionConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PositionConfigurationStatus::Disabled => "Disabled",
             PositionConfigurationStatus::Enabled => "Enabled",
-            PositionConfigurationStatus::Unknown(value) => value.as_str(),
+            PositionConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for PositionConfigurationStatus {
@@ -4910,7 +4512,7 @@ impl AsRef<str> for PositionConfigurationStatus {
 /// <p>UpdateWirelessGatewayTaskEntry object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWirelessGatewayTaskEntry {
+pub struct UpdateWirelessGatewayTaskEntry  {
     /// <p>The ID of the new wireless gateway task entry.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4923,21 +4525,21 @@ pub struct UpdateWirelessGatewayTaskEntry {
 }
 impl UpdateWirelessGatewayTaskEntry {
     /// <p>The ID of the new wireless gateway task entry.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanUpdateGatewayTaskEntry> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanUpdateGatewayTaskEntry> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
 pub mod update_wireless_gateway_task_entry {
-
+    
     /// A builder for [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4953,8 +4555,7 @@ pub mod update_wireless_gateway_task_entry {
         }
         /// <p>The ID of the new wireless gateway task entry.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanUpdateGatewayTaskEntry) -> Self {
@@ -4962,12 +4563,8 @@ pub mod update_wireless_gateway_task_entry {
             self
         }
         /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskEntry>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskEntry>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4976,18 +4573,22 @@ pub mod update_wireless_gateway_task_entry {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
         pub fn build(self) -> crate::model::UpdateWirelessGatewayTaskEntry {
             crate::model::UpdateWirelessGatewayTaskEntry {
-                id: self.id,
-                lo_ra_wan: self.lo_ra_wan,
-                arn: self.arn,
+                id: self.id
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWirelessGatewayTaskEntry {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
@@ -4999,7 +4600,7 @@ impl UpdateWirelessGatewayTaskEntry {
 /// <p>LoRaWANUpdateGatewayTaskEntry object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanUpdateGatewayTaskEntry {
+pub struct LoRaWanUpdateGatewayTaskEntry  {
     /// <p>The version of the gateways that should receive the update.</p>
     #[doc(hidden)]
     pub current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
@@ -5009,17 +4610,17 @@ pub struct LoRaWanUpdateGatewayTaskEntry {
 }
 impl LoRaWanUpdateGatewayTaskEntry {
     /// <p>The version of the gateways that should receive the update.</p>
-    pub fn current_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+    pub fn current_version(&self) -> std::option::Option<& crate::model::LoRaWanGatewayVersion> {
         self.current_version.as_ref()
     }
     /// <p>The firmware version to update the gateway to.</p>
-    pub fn update_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+    pub fn update_version(&self) -> std::option::Option<& crate::model::LoRaWanGatewayVersion> {
         self.update_version.as_ref()
     }
 }
 /// See [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
 pub mod lo_ra_wan_update_gateway_task_entry {
-
+    
     /// A builder for [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5033,12 +4634,8 @@ pub mod lo_ra_wan_update_gateway_task_entry {
             self
         }
         /// <p>The version of the gateways that should receive the update.</p>
-        pub fn set_current_version(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
-        ) -> Self {
-            self.current_version = input;
-            self
+        pub fn set_current_version(mut self, input: std::option::Option<crate::model::LoRaWanGatewayVersion>) -> Self {
+            self.current_version = input; self
         }
         /// <p>The firmware version to update the gateway to.</p>
         pub fn update_version(mut self, input: crate::model::LoRaWanGatewayVersion) -> Self {
@@ -5046,21 +4643,21 @@ pub mod lo_ra_wan_update_gateway_task_entry {
             self
         }
         /// <p>The firmware version to update the gateway to.</p>
-        pub fn set_update_version(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
-        ) -> Self {
-            self.update_version = input;
-            self
+        pub fn set_update_version(mut self, input: std::option::Option<crate::model::LoRaWanGatewayVersion>) -> Self {
+            self.update_version = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
         pub fn build(self) -> crate::model::LoRaWanUpdateGatewayTaskEntry {
             crate::model::LoRaWanUpdateGatewayTaskEntry {
-                current_version: self.current_version,
-                update_version: self.update_version,
+                current_version: self.current_version
+                ,
+                update_version: self.update_version
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanUpdateGatewayTaskEntry {
     /// Creates a new builder-style object to manufacture [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
@@ -5072,7 +4669,7 @@ impl LoRaWanUpdateGatewayTaskEntry {
 /// <p>LoRaWANGatewayVersion object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanGatewayVersion {
+pub struct LoRaWanGatewayVersion  {
     /// <p>The version of the wireless gateway firmware.</p>
     #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
@@ -5085,21 +4682,21 @@ pub struct LoRaWanGatewayVersion {
 }
 impl LoRaWanGatewayVersion {
     /// <p>The version of the wireless gateway firmware.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The model number of the wireless gateway.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The basic station version of the wireless gateway.</p>
-    pub fn station(&self) -> std::option::Option<&str> {
+    pub fn station(&self) -> std::option::Option<& str> {
         self.station.as_deref()
     }
 }
 /// See [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
 pub mod lo_ra_wan_gateway_version {
-
+    
     /// A builder for [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5114,12 +4711,8 @@ pub mod lo_ra_wan_gateway_version {
             self
         }
         /// <p>The version of the wireless gateway firmware.</p>
-        pub fn set_package_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.package_version = input;
-            self
+        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.package_version = input; self
         }
         /// <p>The model number of the wireless gateway.</p>
         pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5128,8 +4721,7 @@ pub mod lo_ra_wan_gateway_version {
         }
         /// <p>The model number of the wireless gateway.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model = input;
-            self
+            self.model = input; self
         }
         /// <p>The basic station version of the wireless gateway.</p>
         pub fn station(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5138,18 +4730,22 @@ pub mod lo_ra_wan_gateway_version {
         }
         /// <p>The basic station version of the wireless gateway.</p>
         pub fn set_station(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.station = input;
-            self
+            self.station = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
         pub fn build(self) -> crate::model::LoRaWanGatewayVersion {
             crate::model::LoRaWanGatewayVersion {
-                package_version: self.package_version,
-                model: self.model,
-                station: self.station,
+                package_version: self.package_version
+                ,
+                model: self.model
+                ,
+                station: self.station
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanGatewayVersion {
     /// Creates a new builder-style object to manufacture [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
@@ -5164,9 +4760,9 @@ impl LoRaWanGatewayVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessgatewaytaskdefinitiontype = unimplemented!();
 /// match wirelessgatewaytaskdefinitiontype {
@@ -5187,56 +4783,48 @@ impl LoRaWanGatewayVersion {
 /// Specifically, when `wirelessgatewaytaskdefinitiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessGatewayTaskDefinitionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessGatewayTaskDefinitionType {
     #[allow(missing_docs)] // documentation missing in model
     Update,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessGatewayTaskDefinitionType {
     fn from(s: &str) -> Self {
         match s {
             "UPDATE" => WirelessGatewayTaskDefinitionType::Update,
-            other => WirelessGatewayTaskDefinitionType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessGatewayTaskDefinitionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessGatewayTaskDefinitionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessGatewayTaskDefinitionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessGatewayTaskDefinitionType::from(s))
+                }
+            }
 impl WirelessGatewayTaskDefinitionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayTaskDefinitionType::Update => "UPDATE",
-            WirelessGatewayTaskDefinitionType::Unknown(value) => value.as_str(),
+            WirelessGatewayTaskDefinitionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UPDATE"]
+        &[
+            "UPDATE"
+        ]
     }
 }
 impl AsRef<str> for WirelessGatewayTaskDefinitionType {
@@ -5248,7 +4836,7 @@ impl AsRef<str> for WirelessGatewayTaskDefinitionType {
 /// <p>Information about a wireless gateway's operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessGatewayStatistics {
+pub struct WirelessGatewayStatistics  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5270,33 +4858,33 @@ pub struct WirelessGatewayStatistics {
 }
 impl WirelessGatewayStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the wireless gateway reporting the data.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>LoRaWAN gateway info.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGateway> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanGateway> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+    pub fn last_uplink_received_at(&self) -> std::option::Option<& str> {
         self.last_uplink_received_at.as_deref()
     }
 }
 /// See [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
 pub mod wireless_gateway_statistics {
-
+    
     /// A builder for [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5315,8 +4903,7 @@ pub mod wireless_gateway_statistics {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the wireless gateway reporting the data.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5325,8 +4912,7 @@ pub mod wireless_gateway_statistics {
         }
         /// <p>The ID of the wireless gateway reporting the data.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5335,8 +4921,7 @@ pub mod wireless_gateway_statistics {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5345,8 +4930,7 @@ pub mod wireless_gateway_statistics {
         }
         /// <p>The description of the resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>LoRaWAN gateway info.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanGateway) -> Self {
@@ -5354,12 +4938,8 @@ pub mod wireless_gateway_statistics {
             self
         }
         /// <p>LoRaWAN gateway info.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGateway>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanGateway>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
         pub fn last_uplink_received_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5367,25 +4947,29 @@ pub mod wireless_gateway_statistics {
             self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
-        pub fn set_last_uplink_received_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_uplink_received_at = input;
-            self
+        pub fn set_last_uplink_received_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_uplink_received_at = input; self
         }
         /// Consumes the builder and constructs a [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
         pub fn build(self) -> crate::model::WirelessGatewayStatistics {
             crate::model::WirelessGatewayStatistics {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                lo_ra_wan: self.lo_ra_wan,
-                last_uplink_received_at: self.last_uplink_received_at,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                last_uplink_received_at: self.last_uplink_received_at
+                ,
             }
         }
     }
+    
+    
 }
 impl WirelessGatewayStatistics {
     /// Creates a new builder-style object to manufacture [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
@@ -5397,7 +4981,7 @@ impl WirelessGatewayStatistics {
 /// <p>LoRaWANGateway object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanGateway {
+pub struct LoRaWanGateway  {
     /// <p>The gateway's EUI value.</p>
     #[doc(hidden)]
     pub gateway_eui: std::option::Option<std::string::String>,
@@ -5419,40 +5003,39 @@ pub struct LoRaWanGateway {
 }
 impl LoRaWanGateway {
     /// <p>The gateway's EUI value.</p>
-    pub fn gateway_eui(&self) -> std::option::Option<&str> {
+    pub fn gateway_eui(&self) -> std::option::Option<& str> {
         self.gateway_eui.as_deref()
     }
     /// <p>The frequency band (RFRegion) value.</p>
-    pub fn rf_region(&self) -> std::option::Option<&str> {
+    pub fn rf_region(&self) -> std::option::Option<& str> {
         self.rf_region.as_deref()
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn join_eui_filters(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn join_eui_filters(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
         self.join_eui_filters.as_deref()
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn net_id_filters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn net_id_filters(&self) -> std::option::Option<& [std::string::String]> {
         self.net_id_filters.as_deref()
     }
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
-    pub fn sub_bands(&self) -> std::option::Option<&[i32]> {
+    pub fn sub_bands(&self) -> std::option::Option<& [i32]> {
         self.sub_bands.as_deref()
     }
     /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
-    pub fn beaconing(&self) -> std::option::Option<&crate::model::Beaconing> {
+    pub fn beaconing(&self) -> std::option::Option<& crate::model::Beaconing> {
         self.beaconing.as_ref()
     }
 }
 /// See [`LoRaWanGateway`](crate::model::LoRaWanGateway).
 pub mod lo_ra_wan_gateway {
-
+    
     /// A builder for [`LoRaWanGateway`](crate::model::LoRaWanGateway).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_eui: std::option::Option<std::string::String>,
         pub(crate) rf_region: std::option::Option<std::string::String>,
-        pub(crate) join_eui_filters:
-            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) join_eui_filters: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
         pub(crate) net_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) sub_bands: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) beaconing: std::option::Option<crate::model::Beaconing>,
@@ -5465,8 +5048,7 @@ pub mod lo_ra_wan_gateway {
         }
         /// <p>The gateway's EUI value.</p>
         pub fn set_gateway_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_eui = input;
-            self
+            self.gateway_eui = input; self
         }
         /// <p>The frequency band (RFRegion) value.</p>
         pub fn rf_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5475,8 +5057,7 @@ pub mod lo_ra_wan_gateway {
         }
         /// <p>The frequency band (RFRegion) value.</p>
         pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rf_region = input;
-            self
+            self.rf_region = input; self
         }
         /// Appends an item to `join_eui_filters`.
         ///
@@ -5485,17 +5066,13 @@ pub mod lo_ra_wan_gateway {
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
         pub fn join_eui_filters(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.join_eui_filters.unwrap_or_default();
-            v.push(input);
-            self.join_eui_filters = Some(v);
-            self
+                            v.push(input);
+                            self.join_eui_filters = Some(v);
+                            self
         }
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-        pub fn set_join_eui_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-        ) -> Self {
-            self.join_eui_filters = input;
-            self
+        pub fn set_join_eui_filters(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
+            self.join_eui_filters = input; self
         }
         /// Appends an item to `net_id_filters`.
         ///
@@ -5504,17 +5081,13 @@ pub mod lo_ra_wan_gateway {
         /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
         pub fn net_id_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.net_id_filters.unwrap_or_default();
-            v.push(input.into());
-            self.net_id_filters = Some(v);
-            self
+                            v.push(input.into());
+                            self.net_id_filters = Some(v);
+                            self
         }
         /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-        pub fn set_net_id_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.net_id_filters = input;
-            self
+        pub fn set_net_id_filters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.net_id_filters = input; self
         }
         /// Appends an item to `sub_bands`.
         ///
@@ -5523,14 +5096,13 @@ pub mod lo_ra_wan_gateway {
         /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
         pub fn sub_bands(mut self, input: i32) -> Self {
             let mut v = self.sub_bands.unwrap_or_default();
-            v.push(input);
-            self.sub_bands = Some(v);
-            self
+                            v.push(input);
+                            self.sub_bands = Some(v);
+                            self
         }
         /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
         pub fn set_sub_bands(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.sub_bands = input;
-            self
+            self.sub_bands = input; self
         }
         /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
         pub fn beaconing(mut self, input: crate::model::Beaconing) -> Self {
@@ -5538,25 +5110,29 @@ pub mod lo_ra_wan_gateway {
             self
         }
         /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
-        pub fn set_beaconing(
-            mut self,
-            input: std::option::Option<crate::model::Beaconing>,
-        ) -> Self {
-            self.beaconing = input;
-            self
+        pub fn set_beaconing(mut self, input: std::option::Option<crate::model::Beaconing>) -> Self {
+            self.beaconing = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanGateway`](crate::model::LoRaWanGateway).
         pub fn build(self) -> crate::model::LoRaWanGateway {
             crate::model::LoRaWanGateway {
-                gateway_eui: self.gateway_eui,
-                rf_region: self.rf_region,
-                join_eui_filters: self.join_eui_filters,
-                net_id_filters: self.net_id_filters,
-                sub_bands: self.sub_bands,
-                beaconing: self.beaconing,
+                gateway_eui: self.gateway_eui
+                ,
+                rf_region: self.rf_region
+                ,
+                join_eui_filters: self.join_eui_filters
+                ,
+                net_id_filters: self.net_id_filters
+                ,
+                sub_bands: self.sub_bands
+                ,
+                beaconing: self.beaconing
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanGateway {
     /// Creates a new builder-style object to manufacture [`LoRaWanGateway`](crate::model::LoRaWanGateway).
@@ -5568,7 +5144,7 @@ impl LoRaWanGateway {
 /// <p>Beaconing parameters for configuring the wireless gateways.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Beaconing {
+pub struct Beaconing  {
     /// <p>The data rate for gateways that are sending the beacons.</p>
     #[doc(hidden)]
     pub data_rate: std::option::Option<i32>,
@@ -5582,13 +5158,13 @@ impl Beaconing {
         self.data_rate
     }
     /// <p>The frequency list for the gateways to send the beacons.</p>
-    pub fn frequencies(&self) -> std::option::Option<&[i32]> {
+    pub fn frequencies(&self) -> std::option::Option<& [i32]> {
         self.frequencies.as_deref()
     }
 }
 /// See [`Beaconing`](crate::model::Beaconing).
 pub mod beaconing {
-
+    
     /// A builder for [`Beaconing`](crate::model::Beaconing).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5603,8 +5179,7 @@ pub mod beaconing {
         }
         /// <p>The data rate for gateways that are sending the beacons.</p>
         pub fn set_data_rate(mut self, input: std::option::Option<i32>) -> Self {
-            self.data_rate = input;
-            self
+            self.data_rate = input; self
         }
         /// Appends an item to `frequencies`.
         ///
@@ -5613,23 +5188,26 @@ pub mod beaconing {
         /// <p>The frequency list for the gateways to send the beacons.</p>
         pub fn frequencies(mut self, input: i32) -> Self {
             let mut v = self.frequencies.unwrap_or_default();
-            v.push(input);
-            self.frequencies = Some(v);
-            self
+                            v.push(input);
+                            self.frequencies = Some(v);
+                            self
         }
         /// <p>The frequency list for the gateways to send the beacons.</p>
         pub fn set_frequencies(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.frequencies = input;
-            self
+            self.frequencies = input; self
         }
         /// Consumes the builder and constructs a [`Beaconing`](crate::model::Beaconing).
         pub fn build(self) -> crate::model::Beaconing {
             crate::model::Beaconing {
-                data_rate: self.data_rate,
-                frequencies: self.frequencies,
+                data_rate: self.data_rate
+                ,
+                frequencies: self.frequencies
+                ,
             }
         }
     }
+    
+    
 }
 impl Beaconing {
     /// Creates a new builder-style object to manufacture [`Beaconing`](crate::model::Beaconing).
@@ -5641,7 +5219,7 @@ impl Beaconing {
 /// <p>Information about a wireless device's operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessDeviceStatistics {
+pub struct WirelessDeviceStatistics  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5678,43 +5256,43 @@ pub struct WirelessDeviceStatistics {
 }
 impl WirelessDeviceStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the wireless device reporting the data.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The wireless device type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::WirelessDeviceType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the destination to which the device is assigned.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+    pub fn last_uplink_received_at(&self) -> std::option::Option<& str> {
         self.last_uplink_received_at.as_deref()
     }
     /// <p>LoRaWAN device info.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanListDevice> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanListDevice> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkListDevice> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkListDevice> {
         self.sidewalk.as_ref()
     }
     /// <p>The status of a wireless device in a FUOTA task.</p>
-    pub fn fuota_device_status(&self) -> std::option::Option<&crate::model::FuotaDeviceStatus> {
+    pub fn fuota_device_status(&self) -> std::option::Option<& crate::model::FuotaDeviceStatus> {
         self.fuota_device_status.as_ref()
     }
     /// <p>The status of the wireless device in the multicast group.</p>
-    pub fn multicast_device_status(&self) -> std::option::Option<&str> {
+    pub fn multicast_device_status(&self) -> std::option::Option<& str> {
         self.multicast_device_status.as_deref()
     }
     /// <p>Id of the multicast group.</p>
@@ -5724,7 +5302,7 @@ impl WirelessDeviceStatistics {
 }
 /// See [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
 pub mod wireless_device_statistics {
-
+    
     /// A builder for [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5748,8 +5326,7 @@ pub mod wireless_device_statistics {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the wireless device reporting the data.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5758,8 +5335,7 @@ pub mod wireless_device_statistics {
         }
         /// <p>The ID of the wireless device reporting the data.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The wireless device type.</p>
         pub fn r#type(mut self, input: crate::model::WirelessDeviceType) -> Self {
@@ -5767,12 +5343,8 @@ pub mod wireless_device_statistics {
             self
         }
         /// <p>The wireless device type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::WirelessDeviceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::WirelessDeviceType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5781,8 +5353,7 @@ pub mod wireless_device_statistics {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the destination to which the device is assigned.</p>
         pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5790,12 +5361,8 @@ pub mod wireless_device_statistics {
             self
         }
         /// <p>The name of the destination to which the device is assigned.</p>
-        pub fn set_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_name = input;
-            self
+        pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_name = input; self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
         pub fn last_uplink_received_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5803,12 +5370,8 @@ pub mod wireless_device_statistics {
             self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
-        pub fn set_last_uplink_received_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_uplink_received_at = input;
-            self
+        pub fn set_last_uplink_received_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_uplink_received_at = input; self
         }
         /// <p>LoRaWAN device info.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanListDevice) -> Self {
@@ -5816,12 +5379,8 @@ pub mod wireless_device_statistics {
             self
         }
         /// <p>LoRaWAN device info.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanListDevice>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanListDevice>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>The Sidewalk account credentials.</p>
         pub fn sidewalk(mut self, input: crate::model::SidewalkListDevice) -> Self {
@@ -5829,12 +5388,8 @@ pub mod wireless_device_statistics {
             self
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkListDevice>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkListDevice>) -> Self {
+            self.sidewalk = input; self
         }
         /// <p>The status of a wireless device in a FUOTA task.</p>
         pub fn fuota_device_status(mut self, input: crate::model::FuotaDeviceStatus) -> Self {
@@ -5842,12 +5397,8 @@ pub mod wireless_device_statistics {
             self
         }
         /// <p>The status of a wireless device in a FUOTA task.</p>
-        pub fn set_fuota_device_status(
-            mut self,
-            input: std::option::Option<crate::model::FuotaDeviceStatus>,
-        ) -> Self {
-            self.fuota_device_status = input;
-            self
+        pub fn set_fuota_device_status(mut self, input: std::option::Option<crate::model::FuotaDeviceStatus>) -> Self {
+            self.fuota_device_status = input; self
         }
         /// <p>The status of the wireless device in the multicast group.</p>
         pub fn multicast_device_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5855,12 +5406,8 @@ pub mod wireless_device_statistics {
             self
         }
         /// <p>The status of the wireless device in the multicast group.</p>
-        pub fn set_multicast_device_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.multicast_device_status = input;
-            self
+        pub fn set_multicast_device_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multicast_device_status = input; self
         }
         /// <p>Id of the multicast group.</p>
         pub fn mc_group_id(mut self, input: i32) -> Self {
@@ -5869,26 +5416,38 @@ pub mod wireless_device_statistics {
         }
         /// <p>Id of the multicast group.</p>
         pub fn set_mc_group_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.mc_group_id = input;
-            self
+            self.mc_group_id = input; self
         }
         /// Consumes the builder and constructs a [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
         pub fn build(self) -> crate::model::WirelessDeviceStatistics {
             crate::model::WirelessDeviceStatistics {
-                arn: self.arn,
-                id: self.id,
-                r#type: self.r#type,
-                name: self.name,
-                destination_name: self.destination_name,
-                last_uplink_received_at: self.last_uplink_received_at,
-                lo_ra_wan: self.lo_ra_wan,
-                sidewalk: self.sidewalk,
-                fuota_device_status: self.fuota_device_status,
-                multicast_device_status: self.multicast_device_status,
-                mc_group_id: self.mc_group_id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                destination_name: self.destination_name
+                ,
+                last_uplink_received_at: self.last_uplink_received_at
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                sidewalk: self.sidewalk
+                ,
+                fuota_device_status: self.fuota_device_status
+                ,
+                multicast_device_status: self.multicast_device_status
+                ,
+                mc_group_id: self.mc_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl WirelessDeviceStatistics {
     /// Creates a new builder-style object to manufacture [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
@@ -5903,9 +5462,9 @@ impl WirelessDeviceStatistics {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fuotadevicestatus = unimplemented!();
 /// match fuotadevicestatus {
@@ -5936,22 +5495,14 @@ impl WirelessDeviceStatistics {
 /// Specifically, when `fuotadevicestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FuotaDeviceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The status of a wireless device in a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FuotaDeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
     FragAlgoUnsupported,
@@ -5976,7 +5527,7 @@ pub enum FuotaDeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
     WrongDescriptor,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FuotaDeviceStatus {
     fn from(s: &str) -> Self {
@@ -5992,19 +5543,17 @@ impl std::convert::From<&str> for FuotaDeviceStatus {
             "SessionCnt_replay" => FuotaDeviceStatus::SessionCntReplay,
             "Successful" => FuotaDeviceStatus::Successful,
             "Wrong_descriptor" => FuotaDeviceStatus::WrongDescriptor,
-            other => {
-                FuotaDeviceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FuotaDeviceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FuotaDeviceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FuotaDeviceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FuotaDeviceStatus::from(s))
+                }
+            }
 impl FuotaDeviceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6020,23 +5569,13 @@ impl FuotaDeviceStatus {
             FuotaDeviceStatus::SessionCntReplay => "SessionCnt_replay",
             FuotaDeviceStatus::Successful => "Successful",
             FuotaDeviceStatus::WrongDescriptor => "Wrong_descriptor",
-            FuotaDeviceStatus::Unknown(value) => value.as_str(),
+            FuotaDeviceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FragAlgo_unsupported",
-            "FragIndex_unsupported",
-            "Initial",
-            "MICError",
-            "MemoryError",
-            "MissingFrag",
-            "Not_enough_memory",
-            "Package_Not_Supported",
-            "SessionCnt_replay",
-            "Successful",
-            "Wrong_descriptor",
+            "FragAlgo_unsupported", "FragIndex_unsupported", "Initial", "MICError", "MemoryError", "MissingFrag", "Not_enough_memory", "Package_Not_Supported", "SessionCnt_replay", "Successful", "Wrong_descriptor"
         ]
     }
 }
@@ -6049,7 +5588,7 @@ impl AsRef<str> for FuotaDeviceStatus {
 /// <p>Sidewalk object used by list functions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkListDevice {
+pub struct SidewalkListDevice  {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
@@ -6065,33 +5604,32 @@ pub struct SidewalkListDevice {
 }
 impl SidewalkListDevice {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<&str> {
+    pub fn amazon_id(&self) -> std::option::Option<& str> {
         self.amazon_id.as_deref()
     }
     /// <p>The sidewalk device identification.</p>
-    pub fn sidewalk_id(&self) -> std::option::Option<&str> {
+    pub fn sidewalk_id(&self) -> std::option::Option<& str> {
         self.sidewalk_id.as_deref()
     }
     /// <p>The Sidewalk manufacturing series number.</p>
-    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<&str> {
+    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<& str> {
         self.sidewalk_manufacturing_sn.as_deref()
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn device_certificates(&self) -> std::option::Option<&[crate::model::CertificateList]> {
+    pub fn device_certificates(&self) -> std::option::Option<& [crate::model::CertificateList]> {
         self.device_certificates.as_deref()
     }
 }
 /// See [`SidewalkListDevice`](crate::model::SidewalkListDevice).
 pub mod sidewalk_list_device {
-
+    
     /// A builder for [`SidewalkListDevice`](crate::model::SidewalkListDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) sidewalk_id: std::option::Option<std::string::String>,
         pub(crate) sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
-        pub(crate) device_certificates:
-            std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
+        pub(crate) device_certificates: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
     }
     impl Builder {
         /// <p>The Sidewalk Amazon ID.</p>
@@ -6101,8 +5639,7 @@ pub mod sidewalk_list_device {
         }
         /// <p>The Sidewalk Amazon ID.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.amazon_id = input;
-            self
+            self.amazon_id = input; self
         }
         /// <p>The sidewalk device identification.</p>
         pub fn sidewalk_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6111,8 +5648,7 @@ pub mod sidewalk_list_device {
         }
         /// <p>The sidewalk device identification.</p>
         pub fn set_sidewalk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sidewalk_id = input;
-            self
+            self.sidewalk_id = input; self
         }
         /// <p>The Sidewalk manufacturing series number.</p>
         pub fn sidewalk_manufacturing_sn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6120,12 +5656,8 @@ pub mod sidewalk_list_device {
             self
         }
         /// <p>The Sidewalk manufacturing series number.</p>
-        pub fn set_sidewalk_manufacturing_sn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sidewalk_manufacturing_sn = input;
-            self
+        pub fn set_sidewalk_manufacturing_sn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sidewalk_manufacturing_sn = input; self
         }
         /// Appends an item to `device_certificates`.
         ///
@@ -6134,28 +5666,30 @@ pub mod sidewalk_list_device {
         /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
         pub fn device_certificates(mut self, input: crate::model::CertificateList) -> Self {
             let mut v = self.device_certificates.unwrap_or_default();
-            v.push(input);
-            self.device_certificates = Some(v);
-            self
+                            v.push(input);
+                            self.device_certificates = Some(v);
+                            self
         }
         /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-        pub fn set_device_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
-        ) -> Self {
-            self.device_certificates = input;
-            self
+        pub fn set_device_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::CertificateList>>) -> Self {
+            self.device_certificates = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkListDevice`](crate::model::SidewalkListDevice).
         pub fn build(self) -> crate::model::SidewalkListDevice {
             crate::model::SidewalkListDevice {
-                amazon_id: self.amazon_id,
-                sidewalk_id: self.sidewalk_id,
-                sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
-                device_certificates: self.device_certificates,
+                amazon_id: self.amazon_id
+                ,
+                sidewalk_id: self.sidewalk_id
+                ,
+                sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn
+                ,
+                device_certificates: self.device_certificates
+                ,
             }
         }
     }
+    
+    
 }
 impl SidewalkListDevice {
     /// Creates a new builder-style object to manufacture [`SidewalkListDevice`](crate::model::SidewalkListDevice).
@@ -6167,7 +5701,7 @@ impl SidewalkListDevice {
 /// <p>List of sidewalk certificates.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CertificateList {
+pub struct CertificateList  {
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
     #[doc(hidden)]
     pub signing_alg: std::option::Option<crate::model::SigningAlg>,
@@ -6177,17 +5711,17 @@ pub struct CertificateList {
 }
 impl CertificateList {
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
-    pub fn signing_alg(&self) -> std::option::Option<&crate::model::SigningAlg> {
+    pub fn signing_alg(&self) -> std::option::Option<& crate::model::SigningAlg> {
         self.signing_alg.as_ref()
     }
     /// <p>The value of the chosen sidewalk certificate.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`CertificateList`](crate::model::CertificateList).
 pub mod certificate_list {
-
+    
     /// A builder for [`CertificateList`](crate::model::CertificateList).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6201,12 +5735,8 @@ pub mod certificate_list {
             self
         }
         /// <p>The certificate chain algorithm provided by sidewalk.</p>
-        pub fn set_signing_alg(
-            mut self,
-            input: std::option::Option<crate::model::SigningAlg>,
-        ) -> Self {
-            self.signing_alg = input;
-            self
+        pub fn set_signing_alg(mut self, input: std::option::Option<crate::model::SigningAlg>) -> Self {
+            self.signing_alg = input; self
         }
         /// <p>The value of the chosen sidewalk certificate.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6215,17 +5745,20 @@ pub mod certificate_list {
         }
         /// <p>The value of the chosen sidewalk certificate.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`CertificateList`](crate::model::CertificateList).
         pub fn build(self) -> crate::model::CertificateList {
             crate::model::CertificateList {
-                signing_alg: self.signing_alg,
-                value: self.value,
+                signing_alg: self.signing_alg
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl CertificateList {
     /// Creates a new builder-style object to manufacture [`CertificateList`](crate::model::CertificateList).
@@ -6240,9 +5773,9 @@ impl CertificateList {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let signingalg = unimplemented!();
 /// match signingalg {
@@ -6264,58 +5797,52 @@ impl CertificateList {
 /// Specifically, when `signingalg` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SigningAlg::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The certificate chain algorithm provided by sidewalk.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SigningAlg {
     #[allow(missing_docs)] // documentation missing in model
     Ed25519,
     #[allow(missing_docs)] // documentation missing in model
     P256r1,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SigningAlg {
     fn from(s: &str) -> Self {
         match s {
             "Ed25519" => SigningAlg::Ed25519,
             "P256r1" => SigningAlg::P256r1,
-            other => SigningAlg::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SigningAlg::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SigningAlg {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SigningAlg::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SigningAlg::from(s))
+                }
+            }
 impl SigningAlg {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SigningAlg::Ed25519 => "Ed25519",
             SigningAlg::P256r1 => "P256r1",
-            SigningAlg::Unknown(value) => value.as_str(),
+            SigningAlg::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Ed25519", "P256r1"]
+        &[
+            "Ed25519", "P256r1"
+        ]
     }
 }
 impl AsRef<str> for SigningAlg {
@@ -6327,20 +5854,20 @@ impl AsRef<str> for SigningAlg {
 /// <p>LoRaWAN object for list functions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanListDevice {
+pub struct LoRaWanListDevice  {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
     pub dev_eui: std::option::Option<std::string::String>,
 }
 impl LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(&self) -> std::option::Option<&str> {
+    pub fn dev_eui(&self) -> std::option::Option<& str> {
         self.dev_eui.as_deref()
     }
 }
 /// See [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
 pub mod lo_ra_wan_list_device {
-
+    
     /// A builder for [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6354,16 +5881,18 @@ pub mod lo_ra_wan_list_device {
         }
         /// <p>The DevEUI value.</p>
         pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dev_eui = input;
-            self
+            self.dev_eui = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
         pub fn build(self) -> crate::model::LoRaWanListDevice {
             crate::model::LoRaWanListDevice {
-                dev_eui: self.dev_eui,
+                dev_eui: self.dev_eui
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanListDevice {
     /// Creates a new builder-style object to manufacture [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
@@ -6375,7 +5904,7 @@ impl LoRaWanListDevice {
 /// <p>Information about a service profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceProfile {
+pub struct ServiceProfile  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6388,21 +5917,21 @@ pub struct ServiceProfile {
 }
 impl ServiceProfile {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the service profile.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`ServiceProfile`](crate::model::ServiceProfile).
 pub mod service_profile {
-
+    
     /// A builder for [`ServiceProfile`](crate::model::ServiceProfile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6418,8 +5947,7 @@ pub mod service_profile {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6428,8 +5956,7 @@ pub mod service_profile {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the service profile.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6438,18 +5965,22 @@ pub mod service_profile {
         }
         /// <p>The ID of the service profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`ServiceProfile`](crate::model::ServiceProfile).
         pub fn build(self) -> crate::model::ServiceProfile {
             crate::model::ServiceProfile {
-                arn: self.arn,
-                name: self.name,
-                id: self.id,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceProfile {
     /// Creates a new builder-style object to manufacture [`ServiceProfile`](crate::model::ServiceProfile).
@@ -6461,7 +5992,7 @@ impl ServiceProfile {
 /// <p>The message in the downlink queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DownlinkQueueMessage {
+pub struct DownlinkQueueMessage  {
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -6477,7 +6008,7 @@ pub struct DownlinkQueueMessage {
 }
 impl DownlinkQueueMessage {
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
@@ -6485,17 +6016,17 @@ impl DownlinkQueueMessage {
         self.transmit_mode
     }
     /// <p>The time at which Iot Wireless received the downlink message.</p>
-    pub fn received_at(&self) -> std::option::Option<&str> {
+    pub fn received_at(&self) -> std::option::Option<& str> {
         self.received_at.as_deref()
     }
     /// <p>LoRaWAN router info.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanSendDataToDevice> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanSendDataToDevice> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
 pub mod downlink_queue_message {
-
+    
     /// A builder for [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6512,8 +6043,7 @@ pub mod downlink_queue_message {
         }
         /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
         pub fn transmit_mode(mut self, input: i32) -> Self {
@@ -6522,8 +6052,7 @@ pub mod downlink_queue_message {
         }
         /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
         pub fn set_transmit_mode(mut self, input: std::option::Option<i32>) -> Self {
-            self.transmit_mode = input;
-            self
+            self.transmit_mode = input; self
         }
         /// <p>The time at which Iot Wireless received the downlink message.</p>
         pub fn received_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6532,8 +6061,7 @@ pub mod downlink_queue_message {
         }
         /// <p>The time at which Iot Wireless received the downlink message.</p>
         pub fn set_received_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.received_at = input;
-            self
+            self.received_at = input; self
         }
         /// <p>LoRaWAN router info.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanSendDataToDevice) -> Self {
@@ -6541,23 +6069,25 @@ pub mod downlink_queue_message {
             self
         }
         /// <p>LoRaWAN router info.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanSendDataToDevice>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
         pub fn build(self) -> crate::model::DownlinkQueueMessage {
             crate::model::DownlinkQueueMessage {
-                message_id: self.message_id,
-                transmit_mode: self.transmit_mode,
-                received_at: self.received_at,
-                lo_ra_wan: self.lo_ra_wan,
+                message_id: self.message_id
+                ,
+                transmit_mode: self.transmit_mode
+                ,
+                received_at: self.received_at
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl DownlinkQueueMessage {
     /// Creates a new builder-style object to manufacture [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
@@ -6569,7 +6099,7 @@ impl DownlinkQueueMessage {
 /// <p>The wrapper for a position configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PositionConfigurationItem {
+pub struct PositionConfigurationItem  {
     /// <p>Resource identifier for the position configuration.</p>
     #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
@@ -6585,25 +6115,25 @@ pub struct PositionConfigurationItem {
 }
 impl PositionConfigurationItem {
     /// <p>Resource identifier for the position configuration.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>Resource type of the resource for the position configuration.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::PositionResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::PositionResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The details of the positioning solver object used to compute the location.</p>
-    pub fn solvers(&self) -> std::option::Option<&crate::model::PositionSolverDetails> {
+    pub fn solvers(&self) -> std::option::Option<& crate::model::PositionSolverDetails> {
         self.solvers.as_ref()
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
 /// See [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
 pub mod position_configuration_item {
-
+    
     /// A builder for [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6619,12 +6149,8 @@ pub mod position_configuration_item {
             self
         }
         /// <p>Resource identifier for the position configuration.</p>
-        pub fn set_resource_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_identifier = input;
-            self
+        pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_identifier = input; self
         }
         /// <p>Resource type of the resource for the position configuration.</p>
         pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
@@ -6632,12 +6158,8 @@ pub mod position_configuration_item {
             self
         }
         /// <p>Resource type of the resource for the position configuration.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::PositionResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::PositionResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The details of the positioning solver object used to compute the location.</p>
         pub fn solvers(mut self, input: crate::model::PositionSolverDetails) -> Self {
@@ -6645,12 +6167,8 @@ pub mod position_configuration_item {
             self
         }
         /// <p>The details of the positioning solver object used to compute the location.</p>
-        pub fn set_solvers(
-            mut self,
-            input: std::option::Option<crate::model::PositionSolverDetails>,
-        ) -> Self {
-            self.solvers = input;
-            self
+        pub fn set_solvers(mut self, input: std::option::Option<crate::model::PositionSolverDetails>) -> Self {
+            self.solvers = input; self
         }
         /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6659,19 +6177,24 @@ pub mod position_configuration_item {
         }
         /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
         pub fn build(self) -> crate::model::PositionConfigurationItem {
             crate::model::PositionConfigurationItem {
-                resource_identifier: self.resource_identifier,
-                resource_type: self.resource_type,
-                solvers: self.solvers,
-                destination: self.destination,
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+                solvers: self.solvers
+                ,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl PositionConfigurationItem {
     /// Creates a new builder-style object to manufacture [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
@@ -6683,20 +6206,20 @@ impl PositionConfigurationItem {
 /// <p>The wrapper for position solver details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PositionSolverDetails {
+pub struct PositionSolverDetails  {
     /// <p>The Semtech GNSS solver object details.</p>
     #[doc(hidden)]
     pub semtech_gnss: std::option::Option<crate::model::SemtechGnssDetail>,
 }
 impl PositionSolverDetails {
     /// <p>The Semtech GNSS solver object details.</p>
-    pub fn semtech_gnss(&self) -> std::option::Option<&crate::model::SemtechGnssDetail> {
+    pub fn semtech_gnss(&self) -> std::option::Option<& crate::model::SemtechGnssDetail> {
         self.semtech_gnss.as_ref()
     }
 }
 /// See [`PositionSolverDetails`](crate::model::PositionSolverDetails).
 pub mod position_solver_details {
-
+    
     /// A builder for [`PositionSolverDetails`](crate::model::PositionSolverDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6709,20 +6232,19 @@ pub mod position_solver_details {
             self
         }
         /// <p>The Semtech GNSS solver object details.</p>
-        pub fn set_semtech_gnss(
-            mut self,
-            input: std::option::Option<crate::model::SemtechGnssDetail>,
-        ) -> Self {
-            self.semtech_gnss = input;
-            self
+        pub fn set_semtech_gnss(mut self, input: std::option::Option<crate::model::SemtechGnssDetail>) -> Self {
+            self.semtech_gnss = input; self
         }
         /// Consumes the builder and constructs a [`PositionSolverDetails`](crate::model::PositionSolverDetails).
         pub fn build(self) -> crate::model::PositionSolverDetails {
             crate::model::PositionSolverDetails {
-                semtech_gnss: self.semtech_gnss,
+                semtech_gnss: self.semtech_gnss
+                ,
             }
         }
     }
+    
+    
 }
 impl PositionSolverDetails {
     /// Creates a new builder-style object to manufacture [`PositionSolverDetails`](crate::model::PositionSolverDetails).
@@ -6734,7 +6256,7 @@ impl PositionSolverDetails {
 /// <p>Details of the Semtech GNSS solver object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SemtechGnssDetail {
+pub struct SemtechGnssDetail  {
     /// <p>The vendor of the solver object.</p>
     #[doc(hidden)]
     pub provider: std::option::Option<crate::model::PositionSolverProvider>,
@@ -6750,25 +6272,25 @@ pub struct SemtechGnssDetail {
 }
 impl SemtechGnssDetail {
     /// <p>The vendor of the solver object.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::model::PositionSolverProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::model::PositionSolverProvider> {
         self.provider.as_ref()
     }
     /// <p>The type of positioning solver used.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PositionSolverType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PositionSolverType> {
         self.r#type.as_ref()
     }
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PositionConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PositionConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> std::option::Option<&crate::model::PositionConfigurationFec> {
+    pub fn fec(&self) -> std::option::Option<& crate::model::PositionConfigurationFec> {
         self.fec.as_ref()
     }
 }
 /// See [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
 pub mod semtech_gnss_detail {
-
+    
     /// A builder for [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6784,12 +6306,8 @@ pub mod semtech_gnss_detail {
             self
         }
         /// <p>The vendor of the solver object.</p>
-        pub fn set_provider(
-            mut self,
-            input: std::option::Option<crate::model::PositionSolverProvider>,
-        ) -> Self {
-            self.provider = input;
-            self
+        pub fn set_provider(mut self, input: std::option::Option<crate::model::PositionSolverProvider>) -> Self {
+            self.provider = input; self
         }
         /// <p>The type of positioning solver used.</p>
         pub fn r#type(mut self, input: crate::model::PositionSolverType) -> Self {
@@ -6797,12 +6315,8 @@ pub mod semtech_gnss_detail {
             self
         }
         /// <p>The type of positioning solver used.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PositionSolverType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PositionSolverType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The status indicating whether the solver is enabled.</p>
         pub fn status(mut self, input: crate::model::PositionConfigurationStatus) -> Self {
@@ -6810,12 +6324,8 @@ pub mod semtech_gnss_detail {
             self
         }
         /// <p>The status indicating whether the solver is enabled.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PositionConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PositionConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Whether forward error correction is enabled.</p>
         pub fn fec(mut self, input: crate::model::PositionConfigurationFec) -> Self {
@@ -6823,23 +6333,25 @@ pub mod semtech_gnss_detail {
             self
         }
         /// <p>Whether forward error correction is enabled.</p>
-        pub fn set_fec(
-            mut self,
-            input: std::option::Option<crate::model::PositionConfigurationFec>,
-        ) -> Self {
-            self.fec = input;
-            self
+        pub fn set_fec(mut self, input: std::option::Option<crate::model::PositionConfigurationFec>) -> Self {
+            self.fec = input; self
         }
         /// Consumes the builder and constructs a [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
         pub fn build(self) -> crate::model::SemtechGnssDetail {
             crate::model::SemtechGnssDetail {
-                provider: self.provider,
-                r#type: self.r#type,
-                status: self.status,
-                fec: self.fec,
+                provider: self.provider
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
+                fec: self.fec
+                ,
             }
         }
     }
+    
+    
 }
 impl SemtechGnssDetail {
     /// Creates a new builder-style object to manufacture [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
@@ -6854,9 +6366,9 @@ impl SemtechGnssDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let positionsolvertype = unimplemented!();
 /// match positionsolvertype {
@@ -6877,56 +6389,48 @@ impl SemtechGnssDetail {
 /// Specifically, when `positionsolvertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PositionSolverType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PositionSolverType {
     #[allow(missing_docs)] // documentation missing in model
     Gnss,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PositionSolverType {
     fn from(s: &str) -> Self {
         match s {
             "GNSS" => PositionSolverType::Gnss,
-            other => {
-                PositionSolverType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PositionSolverType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PositionSolverType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PositionSolverType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PositionSolverType::from(s))
+                }
+            }
 impl PositionSolverType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PositionSolverType::Gnss => "GNSS",
-            PositionSolverType::Unknown(value) => value.as_str(),
+            PositionSolverType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GNSS"]
+        &[
+            "GNSS"
+        ]
     }
 }
 impl AsRef<str> for PositionSolverType {
@@ -6941,9 +6445,9 @@ impl AsRef<str> for PositionSolverType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let positionsolverprovider = unimplemented!();
 /// match positionsolverprovider {
@@ -6964,56 +6468,48 @@ impl AsRef<str> for PositionSolverType {
 /// Specifically, when `positionsolverprovider` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PositionSolverProvider::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PositionSolverProvider {
     #[allow(missing_docs)] // documentation missing in model
     Semtech,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PositionSolverProvider {
     fn from(s: &str) -> Self {
         match s {
             "Semtech" => PositionSolverProvider::Semtech,
-            other => {
-                PositionSolverProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PositionSolverProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PositionSolverProvider {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PositionSolverProvider::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PositionSolverProvider::from(s))
+                }
+            }
 impl PositionSolverProvider {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PositionSolverProvider::Semtech => "Semtech",
-            PositionSolverProvider::Unknown(value) => value.as_str(),
+            PositionSolverProvider::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Semtech"]
+        &[
+            "Semtech"
+        ]
     }
 }
 impl AsRef<str> for PositionSolverProvider {
@@ -7025,7 +6521,7 @@ impl AsRef<str> for PositionSolverProvider {
 /// <p>Information about a Sidewalk account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SidewalkAccountInfoWithFingerprint {
+pub struct SidewalkAccountInfoWithFingerprint  {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
@@ -7038,19 +6534,19 @@ pub struct SidewalkAccountInfoWithFingerprint {
 }
 impl SidewalkAccountInfoWithFingerprint {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<&str> {
+    pub fn amazon_id(&self) -> std::option::Option<& str> {
         self.amazon_id.as_deref()
     }
     /// <p>The fingerprint of the Sidewalk application server private key.</p>
-    pub fn fingerprint(&self) -> std::option::Option<&str> {
+    pub fn fingerprint(&self) -> std::option::Option<& str> {
         self.fingerprint.as_deref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for SidewalkAccountInfoWithFingerprint {
+impl  std::fmt::Debug for SidewalkAccountInfoWithFingerprint  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkAccountInfoWithFingerprint");
         formatter.field("amazon_id", &self.amazon_id);
@@ -7061,7 +6557,7 @@ impl std::fmt::Debug for SidewalkAccountInfoWithFingerprint {
 }
 /// See [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
 pub mod sidewalk_account_info_with_fingerprint {
-
+    
     /// A builder for [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7077,8 +6573,7 @@ pub mod sidewalk_account_info_with_fingerprint {
         }
         /// <p>The Sidewalk Amazon ID.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.amazon_id = input;
-            self
+            self.amazon_id = input; self
         }
         /// <p>The fingerprint of the Sidewalk application server private key.</p>
         pub fn fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7087,8 +6582,7 @@ pub mod sidewalk_account_info_with_fingerprint {
         }
         /// <p>The fingerprint of the Sidewalk application server private key.</p>
         pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fingerprint = input;
-            self
+            self.fingerprint = input; self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7097,15 +6591,17 @@ pub mod sidewalk_account_info_with_fingerprint {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
         pub fn build(self) -> crate::model::SidewalkAccountInfoWithFingerprint {
             crate::model::SidewalkAccountInfoWithFingerprint {
-                amazon_id: self.amazon_id,
-                fingerprint: self.fingerprint,
-                arn: self.arn,
+                amazon_id: self.amazon_id
+                ,
+                fingerprint: self.fingerprint
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
@@ -7118,6 +6614,8 @@ pub mod sidewalk_account_info_with_fingerprint {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SidewalkAccountInfoWithFingerprint {
     /// Creates a new builder-style object to manufacture [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
@@ -7129,7 +6627,7 @@ impl SidewalkAccountInfoWithFingerprint {
 /// <p>Network analyzer configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkAnalyzerConfigurations {
+pub struct NetworkAnalyzerConfigurations  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7139,17 +6637,17 @@ pub struct NetworkAnalyzerConfigurations {
 }
 impl NetworkAnalyzerConfigurations {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
 pub mod network_analyzer_configurations {
-
+    
     /// A builder for [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7164,8 +6662,7 @@ pub mod network_analyzer_configurations {
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Name of the network analyzer configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7174,17 +6671,20 @@ pub mod network_analyzer_configurations {
         }
         /// <p>Name of the network analyzer configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
         pub fn build(self) -> crate::model::NetworkAnalyzerConfigurations {
             crate::model::NetworkAnalyzerConfigurations {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkAnalyzerConfigurations {
     /// Creates a new builder-style object to manufacture [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
@@ -7196,20 +6696,20 @@ impl NetworkAnalyzerConfigurations {
 /// <p>A multicast group that is associated with a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MulticastGroupByFuotaTask {
+pub struct MulticastGroupByFuotaTask  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl MulticastGroupByFuotaTask {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
 pub mod multicast_group_by_fuota_task {
-
+    
     /// A builder for [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7223,14 +6723,18 @@ pub mod multicast_group_by_fuota_task {
         }
         /// <p>The ID of the multicast group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
         pub fn build(self) -> crate::model::MulticastGroupByFuotaTask {
-            crate::model::MulticastGroupByFuotaTask { id: self.id }
+            crate::model::MulticastGroupByFuotaTask {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl MulticastGroupByFuotaTask {
     /// Creates a new builder-style object to manufacture [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
@@ -7242,7 +6746,7 @@ impl MulticastGroupByFuotaTask {
 /// <p>A multicast group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MulticastGroup {
+pub struct MulticastGroup  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7255,21 +6759,21 @@ pub struct MulticastGroup {
 }
 impl MulticastGroup {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The arn of the multicast group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the multicast group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`MulticastGroup`](crate::model::MulticastGroup).
 pub mod multicast_group {
-
+    
     /// A builder for [`MulticastGroup`](crate::model::MulticastGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7285,8 +6789,7 @@ pub mod multicast_group {
         }
         /// <p>The ID of the multicast group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The arn of the multicast group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7295,8 +6798,7 @@ pub mod multicast_group {
         }
         /// <p>The arn of the multicast group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the multicast group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7305,18 +6807,22 @@ pub mod multicast_group {
         }
         /// <p>The name of the multicast group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`MulticastGroup`](crate::model::MulticastGroup).
         pub fn build(self) -> crate::model::MulticastGroup {
             crate::model::MulticastGroup {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl MulticastGroup {
     /// Creates a new builder-style object to manufacture [`MulticastGroup`](crate::model::MulticastGroup).
@@ -7328,7 +6834,7 @@ impl MulticastGroup {
 /// <p>A FUOTA task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FuotaTask {
+pub struct FuotaTask  {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7341,21 +6847,21 @@ pub struct FuotaTask {
 }
 impl FuotaTask {
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The arn of a FUOTA task.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of a FUOTA task.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`FuotaTask`](crate::model::FuotaTask).
 pub mod fuota_task {
-
+    
     /// A builder for [`FuotaTask`](crate::model::FuotaTask).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7371,8 +6877,7 @@ pub mod fuota_task {
         }
         /// <p>The ID of a FUOTA task.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The arn of a FUOTA task.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7381,8 +6886,7 @@ pub mod fuota_task {
         }
         /// <p>The arn of a FUOTA task.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of a FUOTA task.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7391,18 +6895,22 @@ pub mod fuota_task {
         }
         /// <p>The name of a FUOTA task.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`FuotaTask`](crate::model::FuotaTask).
         pub fn build(self) -> crate::model::FuotaTask {
             crate::model::FuotaTask {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl FuotaTask {
     /// Creates a new builder-style object to manufacture [`FuotaTask`](crate::model::FuotaTask).
@@ -7414,7 +6922,7 @@ impl FuotaTask {
 /// <p>Event configuration object for a single resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventConfigurationItem {
+pub struct EventConfigurationItem  {
     /// <p>Resource identifier opted in for event messaging.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
@@ -7430,27 +6938,25 @@ pub struct EventConfigurationItem {
 }
 impl EventConfigurationItem {
     /// <p>Resource identifier opted in for event messaging.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn identifier_type(&self) -> std::option::Option<&crate::model::IdentifierType> {
+    pub fn identifier_type(&self) -> std::option::Option<& crate::model::IdentifierType> {
         self.identifier_type.as_ref()
     }
     /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
-    pub fn partner_type(&self) -> std::option::Option<&crate::model::EventNotificationPartnerType> {
+    pub fn partner_type(&self) -> std::option::Option<& crate::model::EventNotificationPartnerType> {
         self.partner_type.as_ref()
     }
     /// <p>Object of all event configurations and the status of the event topics.</p>
-    pub fn events(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationItemConfigurations> {
+    pub fn events(&self) -> std::option::Option<& crate::model::EventNotificationItemConfigurations> {
         self.events.as_ref()
     }
 }
 /// See [`EventConfigurationItem`](crate::model::EventConfigurationItem).
 pub mod event_configuration_item {
-
+    
     /// A builder for [`EventConfigurationItem`](crate::model::EventConfigurationItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7467,8 +6973,7 @@ pub mod event_configuration_item {
         }
         /// <p>Resource identifier opted in for event messaging.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identifier = input;
-            self
+            self.identifier = input; self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
         pub fn identifier_type(mut self, input: crate::model::IdentifierType) -> Self {
@@ -7476,12 +6981,8 @@ pub mod event_configuration_item {
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-        pub fn set_identifier_type(
-            mut self,
-            input: std::option::Option<crate::model::IdentifierType>,
-        ) -> Self {
-            self.identifier_type = input;
-            self
+        pub fn set_identifier_type(mut self, input: std::option::Option<crate::model::IdentifierType>) -> Self {
+            self.identifier_type = input; self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
         pub fn partner_type(mut self, input: crate::model::EventNotificationPartnerType) -> Self {
@@ -7489,12 +6990,8 @@ pub mod event_configuration_item {
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
-        pub fn set_partner_type(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationPartnerType>,
-        ) -> Self {
-            self.partner_type = input;
-            self
+        pub fn set_partner_type(mut self, input: std::option::Option<crate::model::EventNotificationPartnerType>) -> Self {
+            self.partner_type = input; self
         }
         /// <p>Object of all event configurations and the status of the event topics.</p>
         pub fn events(mut self, input: crate::model::EventNotificationItemConfigurations) -> Self {
@@ -7502,23 +6999,25 @@ pub mod event_configuration_item {
             self
         }
         /// <p>Object of all event configurations and the status of the event topics.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationItemConfigurations>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<crate::model::EventNotificationItemConfigurations>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`EventConfigurationItem`](crate::model::EventConfigurationItem).
         pub fn build(self) -> crate::model::EventConfigurationItem {
             crate::model::EventConfigurationItem {
-                identifier: self.identifier,
-                identifier_type: self.identifier_type,
-                partner_type: self.partner_type,
-                events: self.events,
+                identifier: self.identifier
+                ,
+                identifier_type: self.identifier_type
+                ,
+                partner_type: self.partner_type
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl EventConfigurationItem {
     /// Creates a new builder-style object to manufacture [`EventConfigurationItem`](crate::model::EventConfigurationItem).
@@ -7530,11 +7029,10 @@ impl EventConfigurationItem {
 /// <p>Object of all event configurations and the status of the event topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventNotificationItemConfigurations {
+pub struct EventNotificationItemConfigurations  {
     /// <p>Device registration state event configuration for an event configuration item.</p>
     #[doc(hidden)]
-    pub device_registration_state:
-        std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+    pub device_registration_state: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
     /// <p>Proximity event configuration for an event configuration item.</p>
     #[doc(hidden)]
     pub proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
@@ -7546,68 +7044,51 @@ pub struct EventNotificationItemConfigurations {
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
     /// <p>Message delivery status event configuration for an event configuration item.</p>
     #[doc(hidden)]
-    pub message_delivery_status:
-        std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+    pub message_delivery_status: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
 }
 impl EventNotificationItemConfigurations {
     /// <p>Device registration state event configuration for an event configuration item.</p>
-    pub fn device_registration_state(
-        &self,
-    ) -> std::option::Option<&crate::model::DeviceRegistrationStateEventConfiguration> {
+    pub fn device_registration_state(&self) -> std::option::Option<& crate::model::DeviceRegistrationStateEventConfiguration> {
         self.device_registration_state.as_ref()
     }
     /// <p>Proximity event configuration for an event configuration item.</p>
-    pub fn proximity(&self) -> std::option::Option<&crate::model::ProximityEventConfiguration> {
+    pub fn proximity(&self) -> std::option::Option<& crate::model::ProximityEventConfiguration> {
         self.proximity.as_ref()
     }
     /// <p>Join event configuration for an event configuration item.</p>
-    pub fn join(&self) -> std::option::Option<&crate::model::JoinEventConfiguration> {
+    pub fn join(&self) -> std::option::Option<& crate::model::JoinEventConfiguration> {
         self.join.as_ref()
     }
     /// <p>Connection status event configuration for an event configuration item.</p>
-    pub fn connection_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectionStatusEventConfiguration> {
+    pub fn connection_status(&self) -> std::option::Option<& crate::model::ConnectionStatusEventConfiguration> {
         self.connection_status.as_ref()
     }
     /// <p>Message delivery status event configuration for an event configuration item.</p>
-    pub fn message_delivery_status(
-        &self,
-    ) -> std::option::Option<&crate::model::MessageDeliveryStatusEventConfiguration> {
+    pub fn message_delivery_status(&self) -> std::option::Option<& crate::model::MessageDeliveryStatusEventConfiguration> {
         self.message_delivery_status.as_ref()
     }
 }
 /// See [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
 pub mod event_notification_item_configurations {
-
+    
     /// A builder for [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) device_registration_state:
-            std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+        pub(crate) device_registration_state: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
         pub(crate) proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
         pub(crate) join: std::option::Option<crate::model::JoinEventConfiguration>,
-        pub(crate) connection_status:
-            std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
-        pub(crate) message_delivery_status:
-            std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+        pub(crate) connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+        pub(crate) message_delivery_status: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
     }
     impl Builder {
         /// <p>Device registration state event configuration for an event configuration item.</p>
-        pub fn device_registration_state(
-            mut self,
-            input: crate::model::DeviceRegistrationStateEventConfiguration,
-        ) -> Self {
+        pub fn device_registration_state(mut self, input: crate::model::DeviceRegistrationStateEventConfiguration) -> Self {
             self.device_registration_state = Some(input);
             self
         }
         /// <p>Device registration state event configuration for an event configuration item.</p>
-        pub fn set_device_registration_state(
-            mut self,
-            input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
-        ) -> Self {
-            self.device_registration_state = input;
-            self
+        pub fn set_device_registration_state(mut self, input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>) -> Self {
+            self.device_registration_state = input; self
         }
         /// <p>Proximity event configuration for an event configuration item.</p>
         pub fn proximity(mut self, input: crate::model::ProximityEventConfiguration) -> Self {
@@ -7615,12 +7096,8 @@ pub mod event_notification_item_configurations {
             self
         }
         /// <p>Proximity event configuration for an event configuration item.</p>
-        pub fn set_proximity(
-            mut self,
-            input: std::option::Option<crate::model::ProximityEventConfiguration>,
-        ) -> Self {
-            self.proximity = input;
-            self
+        pub fn set_proximity(mut self, input: std::option::Option<crate::model::ProximityEventConfiguration>) -> Self {
+            self.proximity = input; self
         }
         /// <p>Join event configuration for an event configuration item.</p>
         pub fn join(mut self, input: crate::model::JoinEventConfiguration) -> Self {
@@ -7628,56 +7105,45 @@ pub mod event_notification_item_configurations {
             self
         }
         /// <p>Join event configuration for an event configuration item.</p>
-        pub fn set_join(
-            mut self,
-            input: std::option::Option<crate::model::JoinEventConfiguration>,
-        ) -> Self {
-            self.join = input;
-            self
+        pub fn set_join(mut self, input: std::option::Option<crate::model::JoinEventConfiguration>) -> Self {
+            self.join = input; self
         }
         /// <p>Connection status event configuration for an event configuration item.</p>
-        pub fn connection_status(
-            mut self,
-            input: crate::model::ConnectionStatusEventConfiguration,
-        ) -> Self {
+        pub fn connection_status(mut self, input: crate::model::ConnectionStatusEventConfiguration) -> Self {
             self.connection_status = Some(input);
             self
         }
         /// <p>Connection status event configuration for an event configuration item.</p>
-        pub fn set_connection_status(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
-        ) -> Self {
-            self.connection_status = input;
-            self
+        pub fn set_connection_status(mut self, input: std::option::Option<crate::model::ConnectionStatusEventConfiguration>) -> Self {
+            self.connection_status = input; self
         }
         /// <p>Message delivery status event configuration for an event configuration item.</p>
-        pub fn message_delivery_status(
-            mut self,
-            input: crate::model::MessageDeliveryStatusEventConfiguration,
-        ) -> Self {
+        pub fn message_delivery_status(mut self, input: crate::model::MessageDeliveryStatusEventConfiguration) -> Self {
             self.message_delivery_status = Some(input);
             self
         }
         /// <p>Message delivery status event configuration for an event configuration item.</p>
-        pub fn set_message_delivery_status(
-            mut self,
-            input: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
-        ) -> Self {
-            self.message_delivery_status = input;
-            self
+        pub fn set_message_delivery_status(mut self, input: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>) -> Self {
+            self.message_delivery_status = input; self
         }
         /// Consumes the builder and constructs a [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
         pub fn build(self) -> crate::model::EventNotificationItemConfigurations {
             crate::model::EventNotificationItemConfigurations {
-                device_registration_state: self.device_registration_state,
-                proximity: self.proximity,
-                join: self.join,
-                connection_status: self.connection_status,
-                message_delivery_status: self.message_delivery_status,
+                device_registration_state: self.device_registration_state
+                ,
+                proximity: self.proximity
+                ,
+                join: self.join
+                ,
+                connection_status: self.connection_status
+                ,
+                message_delivery_status: self.message_delivery_status
+                ,
             }
         }
     }
+    
+    
 }
 impl EventNotificationItemConfigurations {
     /// Creates a new builder-style object to manufacture [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
@@ -7692,9 +7158,9 @@ impl EventNotificationItemConfigurations {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventnotificationresourcetype = unimplemented!();
 /// match eventnotificationresourcetype {
@@ -7717,22 +7183,14 @@ impl EventNotificationItemConfigurations {
 /// Specifically, when `eventnotificationresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventNotificationResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventNotificationResourceType {
     #[allow(missing_docs)] // documentation missing in model
     SidewalkAccount,
@@ -7741,7 +7199,7 @@ pub enum EventNotificationResourceType {
     #[allow(missing_docs)] // documentation missing in model
     WirelessGateway,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventNotificationResourceType {
     fn from(s: &str) -> Self {
@@ -7749,19 +7207,17 @@ impl std::convert::From<&str> for EventNotificationResourceType {
             "SidewalkAccount" => EventNotificationResourceType::SidewalkAccount,
             "WirelessDevice" => EventNotificationResourceType::WirelessDevice,
             "WirelessGateway" => EventNotificationResourceType::WirelessGateway,
-            other => EventNotificationResourceType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EventNotificationResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventNotificationResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventNotificationResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventNotificationResourceType::from(s))
+                }
+            }
 impl EventNotificationResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7769,12 +7225,14 @@ impl EventNotificationResourceType {
             EventNotificationResourceType::SidewalkAccount => "SidewalkAccount",
             EventNotificationResourceType::WirelessDevice => "WirelessDevice",
             EventNotificationResourceType::WirelessGateway => "WirelessGateway",
-            EventNotificationResourceType::Unknown(value) => value.as_str(),
+            EventNotificationResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SidewalkAccount", "WirelessDevice", "WirelessGateway"]
+        &[
+            "SidewalkAccount", "WirelessDevice", "WirelessGateway"
+        ]
     }
 }
 impl AsRef<str> for EventNotificationResourceType {
@@ -7786,7 +7244,7 @@ impl AsRef<str> for EventNotificationResourceType {
 /// <p>Describes a device profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceProfile {
+pub struct DeviceProfile  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7799,21 +7257,21 @@ pub struct DeviceProfile {
 }
 impl DeviceProfile {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the device profile.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`DeviceProfile`](crate::model::DeviceProfile).
 pub mod device_profile {
-
+    
     /// A builder for [`DeviceProfile`](crate::model::DeviceProfile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7829,8 +7287,7 @@ pub mod device_profile {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7839,8 +7296,7 @@ pub mod device_profile {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the device profile.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7849,18 +7305,22 @@ pub mod device_profile {
         }
         /// <p>The ID of the device profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeviceProfile`](crate::model::DeviceProfile).
         pub fn build(self) -> crate::model::DeviceProfile {
             crate::model::DeviceProfile {
-                arn: self.arn,
-                name: self.name,
-                id: self.id,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceProfile {
     /// Creates a new builder-style object to manufacture [`DeviceProfile`](crate::model::DeviceProfile).
@@ -7872,7 +7332,7 @@ impl DeviceProfile {
 /// <p>Describes a destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Destinations {
+pub struct Destinations  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7894,33 +7354,33 @@ pub struct Destinations {
 }
 impl Destinations {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of value in <code>Expression</code>.</p>
-    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+    pub fn expression_type(&self) -> std::option::Option<& crate::model::ExpressionType> {
         self.expression_type.as_ref()
     }
     /// <p>The rule name or topic rule to send messages to.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The description of the resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`Destinations`](crate::model::Destinations).
 pub mod destinations {
-
+    
     /// A builder for [`Destinations`](crate::model::Destinations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7939,8 +7399,7 @@ pub mod destinations {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7949,8 +7408,7 @@ pub mod destinations {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
         pub fn expression_type(mut self, input: crate::model::ExpressionType) -> Self {
@@ -7958,12 +7416,8 @@ pub mod destinations {
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
-        pub fn set_expression_type(
-            mut self,
-            input: std::option::Option<crate::model::ExpressionType>,
-        ) -> Self {
-            self.expression_type = input;
-            self
+        pub fn set_expression_type(mut self, input: std::option::Option<crate::model::ExpressionType>) -> Self {
+            self.expression_type = input; self
         }
         /// <p>The rule name or topic rule to send messages to.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7972,8 +7426,7 @@ pub mod destinations {
         }
         /// <p>The rule name or topic rule to send messages to.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// <p>The description of the resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7982,8 +7435,7 @@ pub mod destinations {
         }
         /// <p>The description of the resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7992,21 +7444,28 @@ pub mod destinations {
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`Destinations`](crate::model::Destinations).
         pub fn build(self) -> crate::model::Destinations {
             crate::model::Destinations {
-                arn: self.arn,
-                name: self.name,
-                expression_type: self.expression_type,
-                expression: self.expression,
-                description: self.description,
-                role_arn: self.role_arn,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                expression_type: self.expression_type
+                ,
+                expression: self.expression
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Destinations {
     /// Creates a new builder-style object to manufacture [`Destinations`](crate::model::Destinations).
@@ -8018,7 +7477,7 @@ impl Destinations {
 /// <p>UpdateWirelessGatewayTaskCreate object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWirelessGatewayTaskCreate {
+pub struct UpdateWirelessGatewayTaskCreate  {
     /// <p>The link to the S3 bucket.</p>
     #[doc(hidden)]
     pub update_data_source: std::option::Option<std::string::String>,
@@ -8031,21 +7490,21 @@ pub struct UpdateWirelessGatewayTaskCreate {
 }
 impl UpdateWirelessGatewayTaskCreate {
     /// <p>The link to the S3 bucket.</p>
-    pub fn update_data_source(&self) -> std::option::Option<&str> {
+    pub fn update_data_source(&self) -> std::option::Option<& str> {
         self.update_data_source.as_deref()
     }
     /// <p>The IAM role used to read data from the S3 bucket.</p>
-    pub fn update_data_role(&self) -> std::option::Option<&str> {
+    pub fn update_data_role(&self) -> std::option::Option<& str> {
         self.update_data_role.as_deref()
     }
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanUpdateGatewayTaskCreate> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanUpdateGatewayTaskCreate> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
 pub mod update_wireless_gateway_task_create {
-
+    
     /// A builder for [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8060,12 +7519,8 @@ pub mod update_wireless_gateway_task_create {
             self
         }
         /// <p>The link to the S3 bucket.</p>
-        pub fn set_update_data_source(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.update_data_source = input;
-            self
+        pub fn set_update_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.update_data_source = input; self
         }
         /// <p>The IAM role used to read data from the S3 bucket.</p>
         pub fn update_data_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8073,12 +7528,8 @@ pub mod update_wireless_gateway_task_create {
             self
         }
         /// <p>The IAM role used to read data from the S3 bucket.</p>
-        pub fn set_update_data_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.update_data_role = input;
-            self
+        pub fn set_update_data_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.update_data_role = input; self
         }
         /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanUpdateGatewayTaskCreate) -> Self {
@@ -8086,22 +7537,23 @@ pub mod update_wireless_gateway_task_create {
             self
         }
         /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskCreate>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskCreate>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
         pub fn build(self) -> crate::model::UpdateWirelessGatewayTaskCreate {
             crate::model::UpdateWirelessGatewayTaskCreate {
-                update_data_source: self.update_data_source,
-                update_data_role: self.update_data_role,
-                lo_ra_wan: self.lo_ra_wan,
+                update_data_source: self.update_data_source
+                ,
+                update_data_role: self.update_data_role
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWirelessGatewayTaskCreate {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
@@ -8113,7 +7565,7 @@ impl UpdateWirelessGatewayTaskCreate {
 /// <p>LoRaWANUpdateGatewayTaskCreate object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanUpdateGatewayTaskCreate {
+pub struct LoRaWanUpdateGatewayTaskCreate  {
     /// <p>The signature used to verify the update firmware.</p>
     #[doc(hidden)]
     pub update_signature: std::option::Option<std::string::String>,
@@ -8129,7 +7581,7 @@ pub struct LoRaWanUpdateGatewayTaskCreate {
 }
 impl LoRaWanUpdateGatewayTaskCreate {
     /// <p>The signature used to verify the update firmware.</p>
-    pub fn update_signature(&self) -> std::option::Option<&str> {
+    pub fn update_signature(&self) -> std::option::Option<& str> {
         self.update_signature.as_deref()
     }
     /// <p>The CRC of the signature private key to check.</p>
@@ -8137,17 +7589,17 @@ impl LoRaWanUpdateGatewayTaskCreate {
         self.sig_key_crc
     }
     /// <p>The version of the gateways that should receive the update.</p>
-    pub fn current_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+    pub fn current_version(&self) -> std::option::Option<& crate::model::LoRaWanGatewayVersion> {
         self.current_version.as_ref()
     }
     /// <p>The firmware version to update the gateway to.</p>
-    pub fn update_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+    pub fn update_version(&self) -> std::option::Option<& crate::model::LoRaWanGatewayVersion> {
         self.update_version.as_ref()
     }
 }
 /// See [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
 pub mod lo_ra_wan_update_gateway_task_create {
-
+    
     /// A builder for [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8163,12 +7615,8 @@ pub mod lo_ra_wan_update_gateway_task_create {
             self
         }
         /// <p>The signature used to verify the update firmware.</p>
-        pub fn set_update_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.update_signature = input;
-            self
+        pub fn set_update_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.update_signature = input; self
         }
         /// <p>The CRC of the signature private key to check.</p>
         pub fn sig_key_crc(mut self, input: i64) -> Self {
@@ -8177,8 +7625,7 @@ pub mod lo_ra_wan_update_gateway_task_create {
         }
         /// <p>The CRC of the signature private key to check.</p>
         pub fn set_sig_key_crc(mut self, input: std::option::Option<i64>) -> Self {
-            self.sig_key_crc = input;
-            self
+            self.sig_key_crc = input; self
         }
         /// <p>The version of the gateways that should receive the update.</p>
         pub fn current_version(mut self, input: crate::model::LoRaWanGatewayVersion) -> Self {
@@ -8186,12 +7633,8 @@ pub mod lo_ra_wan_update_gateway_task_create {
             self
         }
         /// <p>The version of the gateways that should receive the update.</p>
-        pub fn set_current_version(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
-        ) -> Self {
-            self.current_version = input;
-            self
+        pub fn set_current_version(mut self, input: std::option::Option<crate::model::LoRaWanGatewayVersion>) -> Self {
+            self.current_version = input; self
         }
         /// <p>The firmware version to update the gateway to.</p>
         pub fn update_version(mut self, input: crate::model::LoRaWanGatewayVersion) -> Self {
@@ -8199,23 +7642,25 @@ pub mod lo_ra_wan_update_gateway_task_create {
             self
         }
         /// <p>The firmware version to update the gateway to.</p>
-        pub fn set_update_version(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
-        ) -> Self {
-            self.update_version = input;
-            self
+        pub fn set_update_version(mut self, input: std::option::Option<crate::model::LoRaWanGatewayVersion>) -> Self {
+            self.update_version = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
         pub fn build(self) -> crate::model::LoRaWanUpdateGatewayTaskCreate {
             crate::model::LoRaWanUpdateGatewayTaskCreate {
-                update_signature: self.update_signature,
-                sig_key_crc: self.sig_key_crc,
-                current_version: self.current_version,
-                update_version: self.update_version,
+                update_signature: self.update_signature
+                ,
+                sig_key_crc: self.sig_key_crc
+                ,
+                current_version: self.current_version
+                ,
+                update_version: self.update_version
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanUpdateGatewayTaskCreate {
     /// Creates a new builder-style object to manufacture [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
@@ -8230,9 +7675,9 @@ impl LoRaWanUpdateGatewayTaskCreate {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessgatewaytaskstatus = unimplemented!();
 /// match wirelessgatewaytaskstatus {
@@ -8258,22 +7703,14 @@ impl LoRaWanUpdateGatewayTaskCreate {
 /// Specifically, when `wirelessgatewaytaskstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessGatewayTaskStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessGatewayTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -8288,7 +7725,7 @@ pub enum WirelessGatewayTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     SecondRetry,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessGatewayTaskStatus {
     fn from(s: &str) -> Self {
@@ -8299,19 +7736,17 @@ impl std::convert::From<&str> for WirelessGatewayTaskStatus {
             "IN_PROGRESS" => WirelessGatewayTaskStatus::InProgress,
             "PENDING" => WirelessGatewayTaskStatus::Pending,
             "SECOND_RETRY" => WirelessGatewayTaskStatus::SecondRetry,
-            other => WirelessGatewayTaskStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessGatewayTaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessGatewayTaskStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessGatewayTaskStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessGatewayTaskStatus::from(s))
+                }
+            }
 impl WirelessGatewayTaskStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8322,18 +7757,13 @@ impl WirelessGatewayTaskStatus {
             WirelessGatewayTaskStatus::InProgress => "IN_PROGRESS",
             WirelessGatewayTaskStatus::Pending => "PENDING",
             WirelessGatewayTaskStatus::SecondRetry => "SECOND_RETRY",
-            WirelessGatewayTaskStatus::Unknown(value) => value.as_str(),
+            WirelessGatewayTaskStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COMPLETED",
-            "FAILED",
-            "FIRST_RETRY",
-            "IN_PROGRESS",
-            "PENDING",
-            "SECOND_RETRY",
+            "COMPLETED", "FAILED", "FIRST_RETRY", "IN_PROGRESS", "PENDING", "SECOND_RETRY"
         ]
     }
 }
@@ -8349,9 +7779,9 @@ impl AsRef<str> for WirelessGatewayTaskStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectionstatus = unimplemented!();
 /// match connectionstatus {
@@ -8373,58 +7803,52 @@ impl AsRef<str> for WirelessGatewayTaskStatus {
 /// Specifically, when `connectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Connected,
     #[allow(missing_docs)] // documentation missing in model
     Disconnected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionStatus {
     fn from(s: &str) -> Self {
         match s {
             "Connected" => ConnectionStatus::Connected,
             "Disconnected" => ConnectionStatus::Disconnected,
-            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectionStatus::from(s))
+                }
+            }
 impl ConnectionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionStatus::Connected => "Connected",
             ConnectionStatus::Disconnected => "Disconnected",
-            ConnectionStatus::Unknown(value) => value.as_str(),
+            ConnectionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Connected", "Disconnected"]
+        &[
+            "Connected", "Disconnected"
+        ]
     }
 }
 impl AsRef<str> for ConnectionStatus {
@@ -8436,20 +7860,20 @@ impl AsRef<str> for ConnectionStatus {
 /// <p>LoRaWANGatewayCurrentVersion object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanGatewayCurrentVersion {
+pub struct LoRaWanGatewayCurrentVersion  {
     /// <p>The version of the gateways that should receive the update.</p>
     #[doc(hidden)]
     pub current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
 }
 impl LoRaWanGatewayCurrentVersion {
     /// <p>The version of the gateways that should receive the update.</p>
-    pub fn current_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+    pub fn current_version(&self) -> std::option::Option<& crate::model::LoRaWanGatewayVersion> {
         self.current_version.as_ref()
     }
 }
 /// See [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
 pub mod lo_ra_wan_gateway_current_version {
-
+    
     /// A builder for [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8462,20 +7886,19 @@ pub mod lo_ra_wan_gateway_current_version {
             self
         }
         /// <p>The version of the gateways that should receive the update.</p>
-        pub fn set_current_version(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
-        ) -> Self {
-            self.current_version = input;
-            self
+        pub fn set_current_version(mut self, input: std::option::Option<crate::model::LoRaWanGatewayVersion>) -> Self {
+            self.current_version = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
         pub fn build(self) -> crate::model::LoRaWanGatewayCurrentVersion {
             crate::model::LoRaWanGatewayCurrentVersion {
-                current_version: self.current_version,
+                current_version: self.current_version
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanGatewayCurrentVersion {
     /// Creates a new builder-style object to manufacture [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
@@ -8490,9 +7913,9 @@ impl LoRaWanGatewayCurrentVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessgatewayidtype = unimplemented!();
 /// match wirelessgatewayidtype {
@@ -8515,22 +7938,14 @@ impl LoRaWanGatewayCurrentVersion {
 /// Specifically, when `wirelessgatewayidtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessGatewayIdType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessGatewayIdType {
     #[allow(missing_docs)] // documentation missing in model
     GatewayEui,
@@ -8539,7 +7954,7 @@ pub enum WirelessGatewayIdType {
     #[allow(missing_docs)] // documentation missing in model
     WirelessGatewayId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessGatewayIdType {
     fn from(s: &str) -> Self {
@@ -8547,19 +7962,17 @@ impl std::convert::From<&str> for WirelessGatewayIdType {
             "GatewayEui" => WirelessGatewayIdType::GatewayEui,
             "ThingName" => WirelessGatewayIdType::ThingName,
             "WirelessGatewayId" => WirelessGatewayIdType::WirelessGatewayId,
-            other => {
-                WirelessGatewayIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WirelessGatewayIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessGatewayIdType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessGatewayIdType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessGatewayIdType::from(s))
+                }
+            }
 impl WirelessGatewayIdType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8567,12 +7980,14 @@ impl WirelessGatewayIdType {
             WirelessGatewayIdType::GatewayEui => "GatewayEui",
             WirelessGatewayIdType::ThingName => "ThingName",
             WirelessGatewayIdType::WirelessGatewayId => "WirelessGatewayId",
-            WirelessGatewayIdType::Unknown(value) => value.as_str(),
+            WirelessGatewayIdType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GatewayEui", "ThingName", "WirelessGatewayId"]
+        &[
+            "GatewayEui", "ThingName", "WirelessGatewayId"
+        ]
     }
 }
 impl AsRef<str> for WirelessGatewayIdType {
@@ -8584,7 +7999,7 @@ impl AsRef<str> for WirelessGatewayIdType {
 /// <p>MetaData for Sidewalk device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkDeviceMetadata {
+pub struct SidewalkDeviceMetadata  {
     /// <p>The RSSI value.</p>
     #[doc(hidden)]
     pub rssi: std::option::Option<i32>,
@@ -8604,21 +8019,21 @@ impl SidewalkDeviceMetadata {
         self.rssi
     }
     /// <p>Sidewalk device battery level.</p>
-    pub fn battery_level(&self) -> std::option::Option<&crate::model::BatteryLevel> {
+    pub fn battery_level(&self) -> std::option::Option<& crate::model::BatteryLevel> {
         self.battery_level.as_ref()
     }
     /// <p>Sidewalk device status notification.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+    pub fn event(&self) -> std::option::Option<& crate::model::Event> {
         self.event.as_ref()
     }
     /// <p>Device state defines the device status of sidewalk device.</p>
-    pub fn device_state(&self) -> std::option::Option<&crate::model::DeviceState> {
+    pub fn device_state(&self) -> std::option::Option<& crate::model::DeviceState> {
         self.device_state.as_ref()
     }
 }
 /// See [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
 pub mod sidewalk_device_metadata {
-
+    
     /// A builder for [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8635,8 +8050,7 @@ pub mod sidewalk_device_metadata {
         }
         /// <p>The RSSI value.</p>
         pub fn set_rssi(mut self, input: std::option::Option<i32>) -> Self {
-            self.rssi = input;
-            self
+            self.rssi = input; self
         }
         /// <p>Sidewalk device battery level.</p>
         pub fn battery_level(mut self, input: crate::model::BatteryLevel) -> Self {
@@ -8644,12 +8058,8 @@ pub mod sidewalk_device_metadata {
             self
         }
         /// <p>Sidewalk device battery level.</p>
-        pub fn set_battery_level(
-            mut self,
-            input: std::option::Option<crate::model::BatteryLevel>,
-        ) -> Self {
-            self.battery_level = input;
-            self
+        pub fn set_battery_level(mut self, input: std::option::Option<crate::model::BatteryLevel>) -> Self {
+            self.battery_level = input; self
         }
         /// <p>Sidewalk device status notification.</p>
         pub fn event(mut self, input: crate::model::Event) -> Self {
@@ -8658,8 +8068,7 @@ pub mod sidewalk_device_metadata {
         }
         /// <p>Sidewalk device status notification.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// <p>Device state defines the device status of sidewalk device.</p>
         pub fn device_state(mut self, input: crate::model::DeviceState) -> Self {
@@ -8667,23 +8076,25 @@ pub mod sidewalk_device_metadata {
             self
         }
         /// <p>Device state defines the device status of sidewalk device.</p>
-        pub fn set_device_state(
-            mut self,
-            input: std::option::Option<crate::model::DeviceState>,
-        ) -> Self {
-            self.device_state = input;
-            self
+        pub fn set_device_state(mut self, input: std::option::Option<crate::model::DeviceState>) -> Self {
+            self.device_state = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
         pub fn build(self) -> crate::model::SidewalkDeviceMetadata {
             crate::model::SidewalkDeviceMetadata {
-                rssi: self.rssi,
-                battery_level: self.battery_level,
-                event: self.event,
-                device_state: self.device_state,
+                rssi: self.rssi
+                ,
+                battery_level: self.battery_level
+                ,
+                event: self.event
+                ,
+                device_state: self.device_state
+                ,
             }
         }
     }
+    
+    
 }
 impl SidewalkDeviceMetadata {
     /// Creates a new builder-style object to manufacture [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
@@ -8698,9 +8109,9 @@ impl SidewalkDeviceMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let devicestate = unimplemented!();
 /// match devicestate {
@@ -8724,22 +8135,14 @@ impl SidewalkDeviceMetadata {
 /// Specifically, when `devicestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Device state defines the device status of sidewalk device.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceState {
     #[allow(missing_docs)] // documentation missing in model
     Provisioned,
@@ -8750,7 +8153,7 @@ pub enum DeviceState {
     #[allow(missing_docs)] // documentation missing in model
     Registeredunreachable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceState {
     fn from(s: &str) -> Self {
@@ -8759,17 +8162,17 @@ impl std::convert::From<&str> for DeviceState {
             "RegisteredNotSeen" => DeviceState::Registerednotseen,
             "RegisteredReachable" => DeviceState::Registeredreachable,
             "RegisteredUnreachable" => DeviceState::Registeredunreachable,
-            other => DeviceState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeviceState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceState::from(s))
+                }
+            }
 impl DeviceState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8778,16 +8181,13 @@ impl DeviceState {
             DeviceState::Registerednotseen => "RegisteredNotSeen",
             DeviceState::Registeredreachable => "RegisteredReachable",
             DeviceState::Registeredunreachable => "RegisteredUnreachable",
-            DeviceState::Unknown(value) => value.as_str(),
+            DeviceState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Provisioned",
-            "RegisteredNotSeen",
-            "RegisteredReachable",
-            "RegisteredUnreachable",
+            "Provisioned", "RegisteredNotSeen", "RegisteredReachable", "RegisteredUnreachable"
         ]
     }
 }
@@ -8803,9 +8203,9 @@ impl AsRef<str> for DeviceState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let event = unimplemented!();
 /// match event {
@@ -8830,22 +8230,14 @@ impl AsRef<str> for DeviceState {
 /// Specifically, when `event` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Event::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Sidewalk device status notification.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Event {
     #[allow(missing_docs)] // documentation missing in model
     Ack,
@@ -8858,7 +8250,7 @@ pub enum Event {
     #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Event {
     fn from(s: &str) -> Self {
@@ -8868,17 +8260,17 @@ impl std::convert::From<&str> for Event {
             "lost" => Event::Lost,
             "nack" => Event::Nack,
             "passthrough" => Event::Passthrough,
-            other => Event::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Event::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Event {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Event::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Event::from(s))
+                }
+            }
 impl Event {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8888,12 +8280,14 @@ impl Event {
             Event::Lost => "lost",
             Event::Nack => "nack",
             Event::Passthrough => "passthrough",
-            Event::Unknown(value) => value.as_str(),
+            Event::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ack", "discovered", "lost", "nack", "passthrough"]
+        &[
+            "ack", "discovered", "lost", "nack", "passthrough"
+        ]
     }
 }
 impl AsRef<str> for Event {
@@ -8908,9 +8302,9 @@ impl AsRef<str> for Event {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batterylevel = unimplemented!();
 /// match batterylevel {
@@ -8933,22 +8327,14 @@ impl AsRef<str> for Event {
 /// Specifically, when `batterylevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatteryLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Sidewalk device battery level.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatteryLevel {
     #[allow(missing_docs)] // documentation missing in model
     Critical,
@@ -8957,7 +8343,7 @@ pub enum BatteryLevel {
     #[allow(missing_docs)] // documentation missing in model
     Normal,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatteryLevel {
     fn from(s: &str) -> Self {
@@ -8965,17 +8351,17 @@ impl std::convert::From<&str> for BatteryLevel {
             "critical" => BatteryLevel::Critical,
             "low" => BatteryLevel::Low,
             "normal" => BatteryLevel::Normal,
-            other => BatteryLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BatteryLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatteryLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatteryLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatteryLevel::from(s))
+                }
+            }
 impl BatteryLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8983,12 +8369,14 @@ impl BatteryLevel {
             BatteryLevel::Critical => "critical",
             BatteryLevel::Low => "low",
             BatteryLevel::Normal => "normal",
-            BatteryLevel::Unknown(value) => value.as_str(),
+            BatteryLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["critical", "low", "normal"]
+        &[
+            "critical", "low", "normal"
+        ]
     }
 }
 impl AsRef<str> for BatteryLevel {
@@ -9000,7 +8388,7 @@ impl AsRef<str> for BatteryLevel {
 /// <p>LoRaWAN device metatdata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanDeviceMetadata {
+pub struct LoRaWanDeviceMetadata  {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
     pub dev_eui: std::option::Option<std::string::String>,
@@ -9022,7 +8410,7 @@ pub struct LoRaWanDeviceMetadata {
 }
 impl LoRaWanDeviceMetadata {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(&self) -> std::option::Option<&str> {
+    pub fn dev_eui(&self) -> std::option::Option<& str> {
         self.dev_eui.as_deref()
     }
     /// <p>The FPort value.</p>
@@ -9038,17 +8426,17 @@ impl LoRaWanDeviceMetadata {
         self.frequency
     }
     /// <p>The date and time of the metadata.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> std::option::Option<& str> {
         self.timestamp.as_deref()
     }
     /// <p>Information about the gateways accessed by the device.</p>
-    pub fn gateways(&self) -> std::option::Option<&[crate::model::LoRaWanGatewayMetadata]> {
+    pub fn gateways(&self) -> std::option::Option<& [crate::model::LoRaWanGatewayMetadata]> {
         self.gateways.as_deref()
     }
 }
 /// See [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
 pub mod lo_ra_wan_device_metadata {
-
+    
     /// A builder for [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9057,8 +8445,7 @@ pub mod lo_ra_wan_device_metadata {
         pub(crate) data_rate: std::option::Option<i32>,
         pub(crate) frequency: std::option::Option<i32>,
         pub(crate) timestamp: std::option::Option<std::string::String>,
-        pub(crate) gateways:
-            std::option::Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>,
+        pub(crate) gateways: std::option::Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>,
     }
     impl Builder {
         /// <p>The DevEUI value.</p>
@@ -9068,8 +8455,7 @@ pub mod lo_ra_wan_device_metadata {
         }
         /// <p>The DevEUI value.</p>
         pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dev_eui = input;
-            self
+            self.dev_eui = input; self
         }
         /// <p>The FPort value.</p>
         pub fn f_port(mut self, input: i32) -> Self {
@@ -9078,8 +8464,7 @@ pub mod lo_ra_wan_device_metadata {
         }
         /// <p>The FPort value.</p>
         pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.f_port = input;
-            self
+            self.f_port = input; self
         }
         /// <p>The DataRate value.</p>
         pub fn data_rate(mut self, input: i32) -> Self {
@@ -9088,8 +8473,7 @@ pub mod lo_ra_wan_device_metadata {
         }
         /// <p>The DataRate value.</p>
         pub fn set_data_rate(mut self, input: std::option::Option<i32>) -> Self {
-            self.data_rate = input;
-            self
+            self.data_rate = input; self
         }
         /// <p>The device's channel frequency in Hz.</p>
         pub fn frequency(mut self, input: i32) -> Self {
@@ -9098,8 +8482,7 @@ pub mod lo_ra_wan_device_metadata {
         }
         /// <p>The device's channel frequency in Hz.</p>
         pub fn set_frequency(mut self, input: std::option::Option<i32>) -> Self {
-            self.frequency = input;
-            self
+            self.frequency = input; self
         }
         /// <p>The date and time of the metadata.</p>
         pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9108,8 +8491,7 @@ pub mod lo_ra_wan_device_metadata {
         }
         /// <p>The date and time of the metadata.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// Appends an item to `gateways`.
         ///
@@ -9118,30 +8500,34 @@ pub mod lo_ra_wan_device_metadata {
         /// <p>Information about the gateways accessed by the device.</p>
         pub fn gateways(mut self, input: crate::model::LoRaWanGatewayMetadata) -> Self {
             let mut v = self.gateways.unwrap_or_default();
-            v.push(input);
-            self.gateways = Some(v);
-            self
+                            v.push(input);
+                            self.gateways = Some(v);
+                            self
         }
         /// <p>Information about the gateways accessed by the device.</p>
-        pub fn set_gateways(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>,
-        ) -> Self {
-            self.gateways = input;
-            self
+        pub fn set_gateways(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>) -> Self {
+            self.gateways = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
         pub fn build(self) -> crate::model::LoRaWanDeviceMetadata {
             crate::model::LoRaWanDeviceMetadata {
-                dev_eui: self.dev_eui,
-                f_port: self.f_port,
-                data_rate: self.data_rate,
-                frequency: self.frequency,
-                timestamp: self.timestamp,
-                gateways: self.gateways,
+                dev_eui: self.dev_eui
+                ,
+                f_port: self.f_port
+                ,
+                data_rate: self.data_rate
+                ,
+                frequency: self.frequency
+                ,
+                timestamp: self.timestamp
+                ,
+                gateways: self.gateways
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanDeviceMetadata {
     /// Creates a new builder-style object to manufacture [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
@@ -9153,7 +8539,7 @@ impl LoRaWanDeviceMetadata {
 /// <p>LoRaWAN gateway metatdata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanGatewayMetadata {
+pub struct LoRaWanGatewayMetadata  {
     /// <p>The gateway's EUI value.</p>
     #[doc(hidden)]
     pub gateway_eui: std::option::Option<std::string::String>,
@@ -9166,7 +8552,7 @@ pub struct LoRaWanGatewayMetadata {
 }
 impl LoRaWanGatewayMetadata {
     /// <p>The gateway's EUI value.</p>
-    pub fn gateway_eui(&self) -> std::option::Option<&str> {
+    pub fn gateway_eui(&self) -> std::option::Option<& str> {
         self.gateway_eui.as_deref()
     }
     /// <p>The SNR value.</p>
@@ -9180,7 +8566,7 @@ impl LoRaWanGatewayMetadata {
 }
 /// See [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
 pub mod lo_ra_wan_gateway_metadata {
-
+    
     /// A builder for [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9196,8 +8582,7 @@ pub mod lo_ra_wan_gateway_metadata {
         }
         /// <p>The gateway's EUI value.</p>
         pub fn set_gateway_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_eui = input;
-            self
+            self.gateway_eui = input; self
         }
         /// <p>The SNR value.</p>
         pub fn snr(mut self, input: f64) -> Self {
@@ -9206,8 +8591,7 @@ pub mod lo_ra_wan_gateway_metadata {
         }
         /// <p>The SNR value.</p>
         pub fn set_snr(mut self, input: std::option::Option<f64>) -> Self {
-            self.snr = input;
-            self
+            self.snr = input; self
         }
         /// <p>The RSSI value.</p>
         pub fn rssi(mut self, input: f64) -> Self {
@@ -9216,18 +8600,22 @@ pub mod lo_ra_wan_gateway_metadata {
         }
         /// <p>The RSSI value.</p>
         pub fn set_rssi(mut self, input: std::option::Option<f64>) -> Self {
-            self.rssi = input;
-            self
+            self.rssi = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
         pub fn build(self) -> crate::model::LoRaWanGatewayMetadata {
             crate::model::LoRaWanGatewayMetadata {
-                gateway_eui: self.gateway_eui,
-                snr: self.snr,
-                rssi: self.rssi,
+                gateway_eui: self.gateway_eui
+                ,
+                snr: self.snr
+                ,
+                rssi: self.rssi
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanGatewayMetadata {
     /// Creates a new builder-style object to manufacture [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
@@ -9239,7 +8627,7 @@ impl LoRaWanGatewayMetadata {
 /// <p>Sidewalk device object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkDevice {
+pub struct SidewalkDevice  {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
@@ -9255,33 +8643,32 @@ pub struct SidewalkDevice {
 }
 impl SidewalkDevice {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<&str> {
+    pub fn amazon_id(&self) -> std::option::Option<& str> {
         self.amazon_id.as_deref()
     }
     /// <p>The sidewalk device identification.</p>
-    pub fn sidewalk_id(&self) -> std::option::Option<&str> {
+    pub fn sidewalk_id(&self) -> std::option::Option<& str> {
         self.sidewalk_id.as_deref()
     }
     /// <p>The Sidewalk manufacturing series number.</p>
-    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<&str> {
+    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<& str> {
         self.sidewalk_manufacturing_sn.as_deref()
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn device_certificates(&self) -> std::option::Option<&[crate::model::CertificateList]> {
+    pub fn device_certificates(&self) -> std::option::Option<& [crate::model::CertificateList]> {
         self.device_certificates.as_deref()
     }
 }
 /// See [`SidewalkDevice`](crate::model::SidewalkDevice).
 pub mod sidewalk_device {
-
+    
     /// A builder for [`SidewalkDevice`](crate::model::SidewalkDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) sidewalk_id: std::option::Option<std::string::String>,
         pub(crate) sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
-        pub(crate) device_certificates:
-            std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
+        pub(crate) device_certificates: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
     }
     impl Builder {
         /// <p>The Sidewalk Amazon ID.</p>
@@ -9291,8 +8678,7 @@ pub mod sidewalk_device {
         }
         /// <p>The Sidewalk Amazon ID.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.amazon_id = input;
-            self
+            self.amazon_id = input; self
         }
         /// <p>The sidewalk device identification.</p>
         pub fn sidewalk_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9301,8 +8687,7 @@ pub mod sidewalk_device {
         }
         /// <p>The sidewalk device identification.</p>
         pub fn set_sidewalk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sidewalk_id = input;
-            self
+            self.sidewalk_id = input; self
         }
         /// <p>The Sidewalk manufacturing series number.</p>
         pub fn sidewalk_manufacturing_sn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9310,12 +8695,8 @@ pub mod sidewalk_device {
             self
         }
         /// <p>The Sidewalk manufacturing series number.</p>
-        pub fn set_sidewalk_manufacturing_sn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sidewalk_manufacturing_sn = input;
-            self
+        pub fn set_sidewalk_manufacturing_sn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sidewalk_manufacturing_sn = input; self
         }
         /// Appends an item to `device_certificates`.
         ///
@@ -9324,28 +8705,30 @@ pub mod sidewalk_device {
         /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
         pub fn device_certificates(mut self, input: crate::model::CertificateList) -> Self {
             let mut v = self.device_certificates.unwrap_or_default();
-            v.push(input);
-            self.device_certificates = Some(v);
-            self
+                            v.push(input);
+                            self.device_certificates = Some(v);
+                            self
         }
         /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-        pub fn set_device_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
-        ) -> Self {
-            self.device_certificates = input;
-            self
+        pub fn set_device_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::CertificateList>>) -> Self {
+            self.device_certificates = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkDevice`](crate::model::SidewalkDevice).
         pub fn build(self) -> crate::model::SidewalkDevice {
             crate::model::SidewalkDevice {
-                amazon_id: self.amazon_id,
-                sidewalk_id: self.sidewalk_id,
-                sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
-                device_certificates: self.device_certificates,
+                amazon_id: self.amazon_id
+                ,
+                sidewalk_id: self.sidewalk_id
+                ,
+                sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn
+                ,
+                device_certificates: self.device_certificates
+                ,
             }
         }
     }
+    
+    
 }
 impl SidewalkDevice {
     /// Creates a new builder-style object to manufacture [`SidewalkDevice`](crate::model::SidewalkDevice).
@@ -9357,7 +8740,7 @@ impl SidewalkDevice {
 /// <p>LoRaWAN object for create functions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanDevice {
+pub struct LoRaWanDevice  {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
     pub dev_eui: std::option::Option<std::string::String>,
@@ -9385,41 +8768,41 @@ pub struct LoRaWanDevice {
 }
 impl LoRaWanDevice {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(&self) -> std::option::Option<&str> {
+    pub fn dev_eui(&self) -> std::option::Option<& str> {
         self.dev_eui.as_deref()
     }
     /// <p>The ID of the device profile for the new wireless device.</p>
-    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+    pub fn device_profile_id(&self) -> std::option::Option<& str> {
         self.device_profile_id.as_deref()
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(&self) -> std::option::Option<&str> {
+    pub fn service_profile_id(&self) -> std::option::Option<& str> {
         self.service_profile_id.as_deref()
     }
     /// <p>OTAA device object for v1.1 for create APIs</p>
-    pub fn otaa_v1_1(&self) -> std::option::Option<&crate::model::OtaaV11> {
+    pub fn otaa_v1_1(&self) -> std::option::Option<& crate::model::OtaaV11> {
         self.otaa_v1_1.as_ref()
     }
     /// <p>OTAA device object for create APIs for v1.0.x</p>
-    pub fn otaa_v1_0_x(&self) -> std::option::Option<&crate::model::OtaaV10X> {
+    pub fn otaa_v1_0_x(&self) -> std::option::Option<& crate::model::OtaaV10X> {
         self.otaa_v1_0_x.as_ref()
     }
     /// <p>ABP device object for create APIs for v1.1</p>
-    pub fn abp_v1_1(&self) -> std::option::Option<&crate::model::AbpV11> {
+    pub fn abp_v1_1(&self) -> std::option::Option<& crate::model::AbpV11> {
         self.abp_v1_1.as_ref()
     }
     /// <p>LoRaWAN object for create APIs</p>
-    pub fn abp_v1_0_x(&self) -> std::option::Option<&crate::model::AbpV10X> {
+    pub fn abp_v1_0_x(&self) -> std::option::Option<& crate::model::AbpV10X> {
         self.abp_v1_0_x.as_ref()
     }
     /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
-    pub fn f_ports(&self) -> std::option::Option<&crate::model::FPorts> {
+    pub fn f_ports(&self) -> std::option::Option<& crate::model::FPorts> {
         self.f_ports.as_ref()
     }
 }
 /// See [`LoRaWanDevice`](crate::model::LoRaWanDevice).
 pub mod lo_ra_wan_device {
-
+    
     /// A builder for [`LoRaWanDevice`](crate::model::LoRaWanDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9440,8 +8823,7 @@ pub mod lo_ra_wan_device {
         }
         /// <p>The DevEUI value.</p>
         pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dev_eui = input;
-            self
+            self.dev_eui = input; self
         }
         /// <p>The ID of the device profile for the new wireless device.</p>
         pub fn device_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9449,12 +8831,8 @@ pub mod lo_ra_wan_device {
             self
         }
         /// <p>The ID of the device profile for the new wireless device.</p>
-        pub fn set_device_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_profile_id = input;
-            self
+        pub fn set_device_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_profile_id = input; self
         }
         /// <p>The ID of the service profile.</p>
         pub fn service_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9462,12 +8840,8 @@ pub mod lo_ra_wan_device {
             self
         }
         /// <p>The ID of the service profile.</p>
-        pub fn set_service_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_profile_id = input;
-            self
+        pub fn set_service_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_profile_id = input; self
         }
         /// <p>OTAA device object for v1.1 for create APIs</p>
         pub fn otaa_v1_1(mut self, input: crate::model::OtaaV11) -> Self {
@@ -9476,8 +8850,7 @@ pub mod lo_ra_wan_device {
         }
         /// <p>OTAA device object for v1.1 for create APIs</p>
         pub fn set_otaa_v1_1(mut self, input: std::option::Option<crate::model::OtaaV11>) -> Self {
-            self.otaa_v1_1 = input;
-            self
+            self.otaa_v1_1 = input; self
         }
         /// <p>OTAA device object for create APIs for v1.0.x</p>
         pub fn otaa_v1_0_x(mut self, input: crate::model::OtaaV10X) -> Self {
@@ -9485,12 +8858,8 @@ pub mod lo_ra_wan_device {
             self
         }
         /// <p>OTAA device object for create APIs for v1.0.x</p>
-        pub fn set_otaa_v1_0_x(
-            mut self,
-            input: std::option::Option<crate::model::OtaaV10X>,
-        ) -> Self {
-            self.otaa_v1_0_x = input;
-            self
+        pub fn set_otaa_v1_0_x(mut self, input: std::option::Option<crate::model::OtaaV10X>) -> Self {
+            self.otaa_v1_0_x = input; self
         }
         /// <p>ABP device object for create APIs for v1.1</p>
         pub fn abp_v1_1(mut self, input: crate::model::AbpV11) -> Self {
@@ -9499,8 +8868,7 @@ pub mod lo_ra_wan_device {
         }
         /// <p>ABP device object for create APIs for v1.1</p>
         pub fn set_abp_v1_1(mut self, input: std::option::Option<crate::model::AbpV11>) -> Self {
-            self.abp_v1_1 = input;
-            self
+            self.abp_v1_1 = input; self
         }
         /// <p>LoRaWAN object for create APIs</p>
         pub fn abp_v1_0_x(mut self, input: crate::model::AbpV10X) -> Self {
@@ -9509,8 +8877,7 @@ pub mod lo_ra_wan_device {
         }
         /// <p>LoRaWAN object for create APIs</p>
         pub fn set_abp_v1_0_x(mut self, input: std::option::Option<crate::model::AbpV10X>) -> Self {
-            self.abp_v1_0_x = input;
-            self
+            self.abp_v1_0_x = input; self
         }
         /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
         pub fn f_ports(mut self, input: crate::model::FPorts) -> Self {
@@ -9519,23 +8886,32 @@ pub mod lo_ra_wan_device {
         }
         /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
         pub fn set_f_ports(mut self, input: std::option::Option<crate::model::FPorts>) -> Self {
-            self.f_ports = input;
-            self
+            self.f_ports = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanDevice`](crate::model::LoRaWanDevice).
         pub fn build(self) -> crate::model::LoRaWanDevice {
             crate::model::LoRaWanDevice {
-                dev_eui: self.dev_eui,
-                device_profile_id: self.device_profile_id,
-                service_profile_id: self.service_profile_id,
-                otaa_v1_1: self.otaa_v1_1,
-                otaa_v1_0_x: self.otaa_v1_0_x,
-                abp_v1_1: self.abp_v1_1,
-                abp_v1_0_x: self.abp_v1_0_x,
-                f_ports: self.f_ports,
+                dev_eui: self.dev_eui
+                ,
+                device_profile_id: self.device_profile_id
+                ,
+                service_profile_id: self.service_profile_id
+                ,
+                otaa_v1_1: self.otaa_v1_1
+                ,
+                otaa_v1_0_x: self.otaa_v1_0_x
+                ,
+                abp_v1_1: self.abp_v1_1
+                ,
+                abp_v1_0_x: self.abp_v1_0_x
+                ,
+                f_ports: self.f_ports
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanDevice {
     /// Creates a new builder-style object to manufacture [`LoRaWanDevice`](crate::model::LoRaWanDevice).
@@ -9547,7 +8923,7 @@ impl LoRaWanDevice {
 /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FPorts {
+pub struct FPorts  {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub fuota: std::option::Option<i32>,
@@ -9578,17 +8954,17 @@ impl FPorts {
         self.clock_sync
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn positioning(&self) -> std::option::Option<&crate::model::Positioning> {
+    pub fn positioning(&self) -> std::option::Option<& crate::model::Positioning> {
         self.positioning.as_ref()
     }
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationConfig]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::model::ApplicationConfig]> {
         self.applications.as_deref()
     }
 }
 /// See [`FPorts`](crate::model::FPorts).
 pub mod f_ports {
-
+    
     /// A builder for [`FPorts`](crate::model::FPorts).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9596,8 +8972,7 @@ pub mod f_ports {
         pub(crate) multicast: std::option::Option<i32>,
         pub(crate) clock_sync: std::option::Option<i32>,
         pub(crate) positioning: std::option::Option<crate::model::Positioning>,
-        pub(crate) applications:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationConfig>>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::ApplicationConfig>>,
     }
     impl Builder {
         /// <p>The Fport value.</p>
@@ -9607,8 +8982,7 @@ pub mod f_ports {
         }
         /// <p>The Fport value.</p>
         pub fn set_fuota(mut self, input: std::option::Option<i32>) -> Self {
-            self.fuota = input;
-            self
+            self.fuota = input; self
         }
         /// <p>The Fport value.</p>
         pub fn multicast(mut self, input: i32) -> Self {
@@ -9617,8 +8991,7 @@ pub mod f_ports {
         }
         /// <p>The Fport value.</p>
         pub fn set_multicast(mut self, input: std::option::Option<i32>) -> Self {
-            self.multicast = input;
-            self
+            self.multicast = input; self
         }
         /// <p>The Fport value.</p>
         pub fn clock_sync(mut self, input: i32) -> Self {
@@ -9627,8 +9000,7 @@ pub mod f_ports {
         }
         /// <p>The Fport value.</p>
         pub fn set_clock_sync(mut self, input: std::option::Option<i32>) -> Self {
-            self.clock_sync = input;
-            self
+            self.clock_sync = input; self
         }
         /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
         pub fn positioning(mut self, input: crate::model::Positioning) -> Self {
@@ -9636,12 +9008,8 @@ pub mod f_ports {
             self
         }
         /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-        pub fn set_positioning(
-            mut self,
-            input: std::option::Option<crate::model::Positioning>,
-        ) -> Self {
-            self.positioning = input;
-            self
+        pub fn set_positioning(mut self, input: std::option::Option<crate::model::Positioning>) -> Self {
+            self.positioning = input; self
         }
         /// Appends an item to `applications`.
         ///
@@ -9650,29 +9018,32 @@ pub mod f_ports {
         /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
         pub fn applications(mut self, input: crate::model::ApplicationConfig) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input);
-            self.applications = Some(v);
-            self
+                            v.push(input);
+                            self.applications = Some(v);
+                            self
         }
         /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationConfig>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationConfig>>) -> Self {
+            self.applications = input; self
         }
         /// Consumes the builder and constructs a [`FPorts`](crate::model::FPorts).
         pub fn build(self) -> crate::model::FPorts {
             crate::model::FPorts {
-                fuota: self.fuota,
-                multicast: self.multicast,
-                clock_sync: self.clock_sync,
-                positioning: self.positioning,
-                applications: self.applications,
+                fuota: self.fuota
+                ,
+                multicast: self.multicast
+                ,
+                clock_sync: self.clock_sync
+                ,
+                positioning: self.positioning
+                ,
+                applications: self.applications
+                ,
             }
         }
     }
+    
+    
 }
 impl FPorts {
     /// Creates a new builder-style object to manufacture [`FPorts`](crate::model::FPorts).
@@ -9684,7 +9055,7 @@ impl FPorts {
 /// <p>ABP device object for LoRaWAN specification v1.0.x</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbpV10X {
+pub struct AbpV10X  {
     /// <p>The DevAddr value.</p>
     #[doc(hidden)]
     pub dev_addr: std::option::Option<std::string::String>,
@@ -9697,11 +9068,11 @@ pub struct AbpV10X {
 }
 impl AbpV10X {
     /// <p>The DevAddr value.</p>
-    pub fn dev_addr(&self) -> std::option::Option<&str> {
+    pub fn dev_addr(&self) -> std::option::Option<& str> {
         self.dev_addr.as_deref()
     }
     /// <p>Session keys for ABP v1.0.x</p>
-    pub fn session_keys(&self) -> std::option::Option<&crate::model::SessionKeysAbpV10X> {
+    pub fn session_keys(&self) -> std::option::Option<& crate::model::SessionKeysAbpV10X> {
         self.session_keys.as_ref()
     }
     /// <p>The FCnt init value.</p>
@@ -9711,7 +9082,7 @@ impl AbpV10X {
 }
 /// See [`AbpV10X`](crate::model::AbpV10X).
 pub mod abp_v10_x {
-
+    
     /// A builder for [`AbpV10X`](crate::model::AbpV10X).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9727,8 +9098,7 @@ pub mod abp_v10_x {
         }
         /// <p>The DevAddr value.</p>
         pub fn set_dev_addr(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dev_addr = input;
-            self
+            self.dev_addr = input; self
         }
         /// <p>Session keys for ABP v1.0.x</p>
         pub fn session_keys(mut self, input: crate::model::SessionKeysAbpV10X) -> Self {
@@ -9736,12 +9106,8 @@ pub mod abp_v10_x {
             self
         }
         /// <p>Session keys for ABP v1.0.x</p>
-        pub fn set_session_keys(
-            mut self,
-            input: std::option::Option<crate::model::SessionKeysAbpV10X>,
-        ) -> Self {
-            self.session_keys = input;
-            self
+        pub fn set_session_keys(mut self, input: std::option::Option<crate::model::SessionKeysAbpV10X>) -> Self {
+            self.session_keys = input; self
         }
         /// <p>The FCnt init value.</p>
         pub fn f_cnt_start(mut self, input: i32) -> Self {
@@ -9750,18 +9116,22 @@ pub mod abp_v10_x {
         }
         /// <p>The FCnt init value.</p>
         pub fn set_f_cnt_start(mut self, input: std::option::Option<i32>) -> Self {
-            self.f_cnt_start = input;
-            self
+            self.f_cnt_start = input; self
         }
         /// Consumes the builder and constructs a [`AbpV10X`](crate::model::AbpV10X).
         pub fn build(self) -> crate::model::AbpV10X {
             crate::model::AbpV10X {
-                dev_addr: self.dev_addr,
-                session_keys: self.session_keys,
-                f_cnt_start: self.f_cnt_start,
+                dev_addr: self.dev_addr
+                ,
+                session_keys: self.session_keys
+                ,
+                f_cnt_start: self.f_cnt_start
+                ,
             }
         }
     }
+    
+    
 }
 impl AbpV10X {
     /// Creates a new builder-style object to manufacture [`AbpV10X`](crate::model::AbpV10X).
@@ -9773,7 +9143,7 @@ impl AbpV10X {
 /// <p>Session keys for ABP v1.1</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionKeysAbpV10X {
+pub struct SessionKeysAbpV10X  {
     /// <p>The NwkSKey value.</p>
     #[doc(hidden)]
     pub nwk_s_key: std::option::Option<std::string::String>,
@@ -9783,17 +9153,17 @@ pub struct SessionKeysAbpV10X {
 }
 impl SessionKeysAbpV10X {
     /// <p>The NwkSKey value.</p>
-    pub fn nwk_s_key(&self) -> std::option::Option<&str> {
+    pub fn nwk_s_key(&self) -> std::option::Option<& str> {
         self.nwk_s_key.as_deref()
     }
     /// <p>The AppSKey value.</p>
-    pub fn app_s_key(&self) -> std::option::Option<&str> {
+    pub fn app_s_key(&self) -> std::option::Option<& str> {
         self.app_s_key.as_deref()
     }
 }
 /// See [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
 pub mod session_keys_abp_v10_x {
-
+    
     /// A builder for [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9808,8 +9178,7 @@ pub mod session_keys_abp_v10_x {
         }
         /// <p>The NwkSKey value.</p>
         pub fn set_nwk_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nwk_s_key = input;
-            self
+            self.nwk_s_key = input; self
         }
         /// <p>The AppSKey value.</p>
         pub fn app_s_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9818,17 +9187,20 @@ pub mod session_keys_abp_v10_x {
         }
         /// <p>The AppSKey value.</p>
         pub fn set_app_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_s_key = input;
-            self
+            self.app_s_key = input; self
         }
         /// Consumes the builder and constructs a [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
         pub fn build(self) -> crate::model::SessionKeysAbpV10X {
             crate::model::SessionKeysAbpV10X {
-                nwk_s_key: self.nwk_s_key,
-                app_s_key: self.app_s_key,
+                nwk_s_key: self.nwk_s_key
+                ,
+                app_s_key: self.app_s_key
+                ,
             }
         }
     }
+    
+    
 }
 impl SessionKeysAbpV10X {
     /// Creates a new builder-style object to manufacture [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
@@ -9840,7 +9212,7 @@ impl SessionKeysAbpV10X {
 /// <p>ABP device object for LoRaWAN specification v1.1</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbpV11 {
+pub struct AbpV11  {
     /// <p>The DevAddr value.</p>
     #[doc(hidden)]
     pub dev_addr: std::option::Option<std::string::String>,
@@ -9853,11 +9225,11 @@ pub struct AbpV11 {
 }
 impl AbpV11 {
     /// <p>The DevAddr value.</p>
-    pub fn dev_addr(&self) -> std::option::Option<&str> {
+    pub fn dev_addr(&self) -> std::option::Option<& str> {
         self.dev_addr.as_deref()
     }
     /// <p>Session keys for ABP v1.1</p>
-    pub fn session_keys(&self) -> std::option::Option<&crate::model::SessionKeysAbpV11> {
+    pub fn session_keys(&self) -> std::option::Option<& crate::model::SessionKeysAbpV11> {
         self.session_keys.as_ref()
     }
     /// <p>The FCnt init value.</p>
@@ -9867,7 +9239,7 @@ impl AbpV11 {
 }
 /// See [`AbpV11`](crate::model::AbpV11).
 pub mod abp_v11 {
-
+    
     /// A builder for [`AbpV11`](crate::model::AbpV11).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9883,8 +9255,7 @@ pub mod abp_v11 {
         }
         /// <p>The DevAddr value.</p>
         pub fn set_dev_addr(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dev_addr = input;
-            self
+            self.dev_addr = input; self
         }
         /// <p>Session keys for ABP v1.1</p>
         pub fn session_keys(mut self, input: crate::model::SessionKeysAbpV11) -> Self {
@@ -9892,12 +9263,8 @@ pub mod abp_v11 {
             self
         }
         /// <p>Session keys for ABP v1.1</p>
-        pub fn set_session_keys(
-            mut self,
-            input: std::option::Option<crate::model::SessionKeysAbpV11>,
-        ) -> Self {
-            self.session_keys = input;
-            self
+        pub fn set_session_keys(mut self, input: std::option::Option<crate::model::SessionKeysAbpV11>) -> Self {
+            self.session_keys = input; self
         }
         /// <p>The FCnt init value.</p>
         pub fn f_cnt_start(mut self, input: i32) -> Self {
@@ -9906,18 +9273,22 @@ pub mod abp_v11 {
         }
         /// <p>The FCnt init value.</p>
         pub fn set_f_cnt_start(mut self, input: std::option::Option<i32>) -> Self {
-            self.f_cnt_start = input;
-            self
+            self.f_cnt_start = input; self
         }
         /// Consumes the builder and constructs a [`AbpV11`](crate::model::AbpV11).
         pub fn build(self) -> crate::model::AbpV11 {
             crate::model::AbpV11 {
-                dev_addr: self.dev_addr,
-                session_keys: self.session_keys,
-                f_cnt_start: self.f_cnt_start,
+                dev_addr: self.dev_addr
+                ,
+                session_keys: self.session_keys
+                ,
+                f_cnt_start: self.f_cnt_start
+                ,
             }
         }
     }
+    
+    
 }
 impl AbpV11 {
     /// Creates a new builder-style object to manufacture [`AbpV11`](crate::model::AbpV11).
@@ -9929,7 +9300,7 @@ impl AbpV11 {
 /// <p>Session keys for ABP v1.1</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionKeysAbpV11 {
+pub struct SessionKeysAbpV11  {
     /// <p>The FNwkSIntKey value.</p>
     #[doc(hidden)]
     pub f_nwk_s_int_key: std::option::Option<std::string::String>,
@@ -9945,25 +9316,25 @@ pub struct SessionKeysAbpV11 {
 }
 impl SessionKeysAbpV11 {
     /// <p>The FNwkSIntKey value.</p>
-    pub fn f_nwk_s_int_key(&self) -> std::option::Option<&str> {
+    pub fn f_nwk_s_int_key(&self) -> std::option::Option<& str> {
         self.f_nwk_s_int_key.as_deref()
     }
     /// <p>The SNwkSIntKey value.</p>
-    pub fn s_nwk_s_int_key(&self) -> std::option::Option<&str> {
+    pub fn s_nwk_s_int_key(&self) -> std::option::Option<& str> {
         self.s_nwk_s_int_key.as_deref()
     }
     /// <p>The NwkSEncKey value.</p>
-    pub fn nwk_s_enc_key(&self) -> std::option::Option<&str> {
+    pub fn nwk_s_enc_key(&self) -> std::option::Option<& str> {
         self.nwk_s_enc_key.as_deref()
     }
     /// <p>The AppSKey value.</p>
-    pub fn app_s_key(&self) -> std::option::Option<&str> {
+    pub fn app_s_key(&self) -> std::option::Option<& str> {
         self.app_s_key.as_deref()
     }
 }
 /// See [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
 pub mod session_keys_abp_v11 {
-
+    
     /// A builder for [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9979,12 +9350,8 @@ pub mod session_keys_abp_v11 {
             self
         }
         /// <p>The FNwkSIntKey value.</p>
-        pub fn set_f_nwk_s_int_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.f_nwk_s_int_key = input;
-            self
+        pub fn set_f_nwk_s_int_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.f_nwk_s_int_key = input; self
         }
         /// <p>The SNwkSIntKey value.</p>
         pub fn s_nwk_s_int_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9992,12 +9359,8 @@ pub mod session_keys_abp_v11 {
             self
         }
         /// <p>The SNwkSIntKey value.</p>
-        pub fn set_s_nwk_s_int_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s_nwk_s_int_key = input;
-            self
+        pub fn set_s_nwk_s_int_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s_nwk_s_int_key = input; self
         }
         /// <p>The NwkSEncKey value.</p>
         pub fn nwk_s_enc_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10005,12 +9368,8 @@ pub mod session_keys_abp_v11 {
             self
         }
         /// <p>The NwkSEncKey value.</p>
-        pub fn set_nwk_s_enc_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.nwk_s_enc_key = input;
-            self
+        pub fn set_nwk_s_enc_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.nwk_s_enc_key = input; self
         }
         /// <p>The AppSKey value.</p>
         pub fn app_s_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10019,19 +9378,24 @@ pub mod session_keys_abp_v11 {
         }
         /// <p>The AppSKey value.</p>
         pub fn set_app_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_s_key = input;
-            self
+            self.app_s_key = input; self
         }
         /// Consumes the builder and constructs a [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
         pub fn build(self) -> crate::model::SessionKeysAbpV11 {
             crate::model::SessionKeysAbpV11 {
-                f_nwk_s_int_key: self.f_nwk_s_int_key,
-                s_nwk_s_int_key: self.s_nwk_s_int_key,
-                nwk_s_enc_key: self.nwk_s_enc_key,
-                app_s_key: self.app_s_key,
+                f_nwk_s_int_key: self.f_nwk_s_int_key
+                ,
+                s_nwk_s_int_key: self.s_nwk_s_int_key
+                ,
+                nwk_s_enc_key: self.nwk_s_enc_key
+                ,
+                app_s_key: self.app_s_key
+                ,
             }
         }
     }
+    
+    
 }
 impl SessionKeysAbpV11 {
     /// Creates a new builder-style object to manufacture [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
@@ -10043,7 +9407,7 @@ impl SessionKeysAbpV11 {
 /// <p>OTAA device object for v1.0.x</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OtaaV10X {
+pub struct OtaaV10X  {
     /// <p>The AppKey value.</p>
     #[doc(hidden)]
     pub app_key: std::option::Option<std::string::String>,
@@ -10056,21 +9420,21 @@ pub struct OtaaV10X {
 }
 impl OtaaV10X {
     /// <p>The AppKey value.</p>
-    pub fn app_key(&self) -> std::option::Option<&str> {
+    pub fn app_key(&self) -> std::option::Option<& str> {
         self.app_key.as_deref()
     }
     /// <p>The AppEUI value.</p>
-    pub fn app_eui(&self) -> std::option::Option<&str> {
+    pub fn app_eui(&self) -> std::option::Option<& str> {
         self.app_eui.as_deref()
     }
     /// <p>The GenAppKey value.</p>
-    pub fn gen_app_key(&self) -> std::option::Option<&str> {
+    pub fn gen_app_key(&self) -> std::option::Option<& str> {
         self.gen_app_key.as_deref()
     }
 }
 /// See [`OtaaV10X`](crate::model::OtaaV10X).
 pub mod otaa_v10_x {
-
+    
     /// A builder for [`OtaaV10X`](crate::model::OtaaV10X).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10086,8 +9450,7 @@ pub mod otaa_v10_x {
         }
         /// <p>The AppKey value.</p>
         pub fn set_app_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_key = input;
-            self
+            self.app_key = input; self
         }
         /// <p>The AppEUI value.</p>
         pub fn app_eui(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10096,8 +9459,7 @@ pub mod otaa_v10_x {
         }
         /// <p>The AppEUI value.</p>
         pub fn set_app_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_eui = input;
-            self
+            self.app_eui = input; self
         }
         /// <p>The GenAppKey value.</p>
         pub fn gen_app_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10106,18 +9468,22 @@ pub mod otaa_v10_x {
         }
         /// <p>The GenAppKey value.</p>
         pub fn set_gen_app_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gen_app_key = input;
-            self
+            self.gen_app_key = input; self
         }
         /// Consumes the builder and constructs a [`OtaaV10X`](crate::model::OtaaV10X).
         pub fn build(self) -> crate::model::OtaaV10X {
             crate::model::OtaaV10X {
-                app_key: self.app_key,
-                app_eui: self.app_eui,
-                gen_app_key: self.gen_app_key,
+                app_key: self.app_key
+                ,
+                app_eui: self.app_eui
+                ,
+                gen_app_key: self.gen_app_key
+                ,
             }
         }
     }
+    
+    
 }
 impl OtaaV10X {
     /// Creates a new builder-style object to manufacture [`OtaaV10X`](crate::model::OtaaV10X).
@@ -10129,7 +9495,7 @@ impl OtaaV10X {
 /// <p>OTAA device object for v1.1</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OtaaV11 {
+pub struct OtaaV11  {
     /// <p>The AppKey value.</p>
     #[doc(hidden)]
     pub app_key: std::option::Option<std::string::String>,
@@ -10142,21 +9508,21 @@ pub struct OtaaV11 {
 }
 impl OtaaV11 {
     /// <p>The AppKey value.</p>
-    pub fn app_key(&self) -> std::option::Option<&str> {
+    pub fn app_key(&self) -> std::option::Option<& str> {
         self.app_key.as_deref()
     }
     /// <p>The NwkKey value.</p>
-    pub fn nwk_key(&self) -> std::option::Option<&str> {
+    pub fn nwk_key(&self) -> std::option::Option<& str> {
         self.nwk_key.as_deref()
     }
     /// <p>The JoinEUI value.</p>
-    pub fn join_eui(&self) -> std::option::Option<&str> {
+    pub fn join_eui(&self) -> std::option::Option<& str> {
         self.join_eui.as_deref()
     }
 }
 /// See [`OtaaV11`](crate::model::OtaaV11).
 pub mod otaa_v11 {
-
+    
     /// A builder for [`OtaaV11`](crate::model::OtaaV11).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10172,8 +9538,7 @@ pub mod otaa_v11 {
         }
         /// <p>The AppKey value.</p>
         pub fn set_app_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_key = input;
-            self
+            self.app_key = input; self
         }
         /// <p>The NwkKey value.</p>
         pub fn nwk_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10182,8 +9547,7 @@ pub mod otaa_v11 {
         }
         /// <p>The NwkKey value.</p>
         pub fn set_nwk_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nwk_key = input;
-            self
+            self.nwk_key = input; self
         }
         /// <p>The JoinEUI value.</p>
         pub fn join_eui(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10192,18 +9556,22 @@ pub mod otaa_v11 {
         }
         /// <p>The JoinEUI value.</p>
         pub fn set_join_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.join_eui = input;
-            self
+            self.join_eui = input; self
         }
         /// Consumes the builder and constructs a [`OtaaV11`](crate::model::OtaaV11).
         pub fn build(self) -> crate::model::OtaaV11 {
             crate::model::OtaaV11 {
-                app_key: self.app_key,
-                nwk_key: self.nwk_key,
-                join_eui: self.join_eui,
+                app_key: self.app_key
+                ,
+                nwk_key: self.nwk_key
+                ,
+                join_eui: self.join_eui
+                ,
             }
         }
     }
+    
+    
 }
 impl OtaaV11 {
     /// Creates a new builder-style object to manufacture [`OtaaV11`](crate::model::OtaaV11).
@@ -10218,9 +9586,9 @@ impl OtaaV11 {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessdeviceidtype = unimplemented!();
 /// match wirelessdeviceidtype {
@@ -10244,22 +9612,14 @@ impl OtaaV11 {
 /// Specifically, when `wirelessdeviceidtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessDeviceIdType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessDeviceIdType {
     #[allow(missing_docs)] // documentation missing in model
     DevEui,
@@ -10270,7 +9630,7 @@ pub enum WirelessDeviceIdType {
     #[allow(missing_docs)] // documentation missing in model
     WirelessDeviceId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessDeviceIdType {
     fn from(s: &str) -> Self {
@@ -10279,19 +9639,17 @@ impl std::convert::From<&str> for WirelessDeviceIdType {
             "SidewalkManufacturingSn" => WirelessDeviceIdType::SidewalkManufacturingSn,
             "ThingName" => WirelessDeviceIdType::ThingName,
             "WirelessDeviceId" => WirelessDeviceIdType::WirelessDeviceId,
-            other => {
-                WirelessDeviceIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WirelessDeviceIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessDeviceIdType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessDeviceIdType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessDeviceIdType::from(s))
+                }
+            }
 impl WirelessDeviceIdType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10300,16 +9658,13 @@ impl WirelessDeviceIdType {
             WirelessDeviceIdType::SidewalkManufacturingSn => "SidewalkManufacturingSn",
             WirelessDeviceIdType::ThingName => "ThingName",
             WirelessDeviceIdType::WirelessDeviceId => "WirelessDeviceId",
-            WirelessDeviceIdType::Unknown(value) => value.as_str(),
+            WirelessDeviceIdType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DevEui",
-            "SidewalkManufacturingSn",
-            "ThingName",
-            "WirelessDeviceId",
+            "DevEui", "SidewalkManufacturingSn", "ThingName", "WirelessDeviceId"
         ]
     }
 }
@@ -10322,7 +9677,7 @@ impl AsRef<str> for WirelessDeviceIdType {
 /// <p>LoRaWANGetServiceProfileInfo object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanGetServiceProfileInfo {
+pub struct LoRaWanGetServiceProfileInfo  {
     /// <p>The ULRate value.</p>
     #[doc(hidden)]
     pub ul_rate: std::option::Option<i32>,
@@ -10391,7 +9746,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.ul_bucket_size
     }
     /// <p>The ULRatePolicy value.</p>
-    pub fn ul_rate_policy(&self) -> std::option::Option<&str> {
+    pub fn ul_rate_policy(&self) -> std::option::Option<& str> {
         self.ul_rate_policy.as_deref()
     }
     /// <p>The DLRate value.</p>
@@ -10403,7 +9758,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.dl_bucket_size
     }
     /// <p>The DLRatePolicy value.</p>
-    pub fn dl_rate_policy(&self) -> std::option::Option<&str> {
+    pub fn dl_rate_policy(&self) -> std::option::Option<& str> {
         self.dl_rate_policy.as_deref()
     }
     /// <p>The AddGWMetaData value.</p>
@@ -10431,7 +9786,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.dr_max
     }
     /// <p>The ChannelMask value.</p>
-    pub fn channel_mask(&self) -> std::option::Option<&str> {
+    pub fn channel_mask(&self) -> std::option::Option<& str> {
         self.channel_mask.as_deref()
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
@@ -10461,7 +9816,7 @@ impl LoRaWanGetServiceProfileInfo {
 }
 /// See [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
 pub mod lo_ra_wan_get_service_profile_info {
-
+    
     /// A builder for [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10493,8 +9848,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The ULRate value.</p>
         pub fn set_ul_rate(mut self, input: std::option::Option<i32>) -> Self {
-            self.ul_rate = input;
-            self
+            self.ul_rate = input; self
         }
         /// <p>The ULBucketSize value.</p>
         pub fn ul_bucket_size(mut self, input: i32) -> Self {
@@ -10503,8 +9857,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The ULBucketSize value.</p>
         pub fn set_ul_bucket_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.ul_bucket_size = input;
-            self
+            self.ul_bucket_size = input; self
         }
         /// <p>The ULRatePolicy value.</p>
         pub fn ul_rate_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10512,12 +9865,8 @@ pub mod lo_ra_wan_get_service_profile_info {
             self
         }
         /// <p>The ULRatePolicy value.</p>
-        pub fn set_ul_rate_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ul_rate_policy = input;
-            self
+        pub fn set_ul_rate_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ul_rate_policy = input; self
         }
         /// <p>The DLRate value.</p>
         pub fn dl_rate(mut self, input: i32) -> Self {
@@ -10526,8 +9875,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The DLRate value.</p>
         pub fn set_dl_rate(mut self, input: std::option::Option<i32>) -> Self {
-            self.dl_rate = input;
-            self
+            self.dl_rate = input; self
         }
         /// <p>The DLBucketSize value.</p>
         pub fn dl_bucket_size(mut self, input: i32) -> Self {
@@ -10536,8 +9884,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The DLBucketSize value.</p>
         pub fn set_dl_bucket_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.dl_bucket_size = input;
-            self
+            self.dl_bucket_size = input; self
         }
         /// <p>The DLRatePolicy value.</p>
         pub fn dl_rate_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10545,12 +9892,8 @@ pub mod lo_ra_wan_get_service_profile_info {
             self
         }
         /// <p>The DLRatePolicy value.</p>
-        pub fn set_dl_rate_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dl_rate_policy = input;
-            self
+        pub fn set_dl_rate_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dl_rate_policy = input; self
         }
         /// <p>The AddGWMetaData value.</p>
         pub fn add_gw_metadata(mut self, input: bool) -> Self {
@@ -10559,8 +9902,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The AddGWMetaData value.</p>
         pub fn set_add_gw_metadata(mut self, input: std::option::Option<bool>) -> Self {
-            self.add_gw_metadata = input;
-            self
+            self.add_gw_metadata = input; self
         }
         /// <p>The DevStatusReqFreq value.</p>
         pub fn dev_status_req_freq(mut self, input: i32) -> Self {
@@ -10569,8 +9911,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The DevStatusReqFreq value.</p>
         pub fn set_dev_status_req_freq(mut self, input: std::option::Option<i32>) -> Self {
-            self.dev_status_req_freq = input;
-            self
+            self.dev_status_req_freq = input; self
         }
         /// <p>The ReportDevStatusBattery value.</p>
         pub fn report_dev_status_battery(mut self, input: bool) -> Self {
@@ -10579,8 +9920,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The ReportDevStatusBattery value.</p>
         pub fn set_report_dev_status_battery(mut self, input: std::option::Option<bool>) -> Self {
-            self.report_dev_status_battery = input;
-            self
+            self.report_dev_status_battery = input; self
         }
         /// <p>The ReportDevStatusMargin value.</p>
         pub fn report_dev_status_margin(mut self, input: bool) -> Self {
@@ -10589,8 +9929,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The ReportDevStatusMargin value.</p>
         pub fn set_report_dev_status_margin(mut self, input: std::option::Option<bool>) -> Self {
-            self.report_dev_status_margin = input;
-            self
+            self.report_dev_status_margin = input; self
         }
         /// <p>The DRMin value.</p>
         pub fn dr_min(mut self, input: i32) -> Self {
@@ -10599,8 +9938,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The DRMin value.</p>
         pub fn set_dr_min(mut self, input: std::option::Option<i32>) -> Self {
-            self.dr_min = input;
-            self
+            self.dr_min = input; self
         }
         /// <p>The DRMax value.</p>
         pub fn dr_max(mut self, input: i32) -> Self {
@@ -10609,8 +9947,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The DRMax value.</p>
         pub fn set_dr_max(mut self, input: std::option::Option<i32>) -> Self {
-            self.dr_max = input;
-            self
+            self.dr_max = input; self
         }
         /// <p>The ChannelMask value.</p>
         pub fn channel_mask(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10619,8 +9956,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The ChannelMask value.</p>
         pub fn set_channel_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_mask = input;
-            self
+            self.channel_mask = input; self
         }
         /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
         pub fn pr_allowed(mut self, input: bool) -> Self {
@@ -10629,8 +9965,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
         pub fn set_pr_allowed(mut self, input: std::option::Option<bool>) -> Self {
-            self.pr_allowed = input;
-            self
+            self.pr_allowed = input; self
         }
         /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
         pub fn hr_allowed(mut self, input: bool) -> Self {
@@ -10639,8 +9974,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
         pub fn set_hr_allowed(mut self, input: std::option::Option<bool>) -> Self {
-            self.hr_allowed = input;
-            self
+            self.hr_allowed = input; self
         }
         /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
         pub fn ra_allowed(mut self, input: bool) -> Self {
@@ -10649,8 +9983,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
         pub fn set_ra_allowed(mut self, input: std::option::Option<bool>) -> Self {
-            self.ra_allowed = input;
-            self
+            self.ra_allowed = input; self
         }
         /// <p>The NwkGeoLoc value.</p>
         pub fn nwk_geo_loc(mut self, input: bool) -> Self {
@@ -10659,8 +9992,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The NwkGeoLoc value.</p>
         pub fn set_nwk_geo_loc(mut self, input: std::option::Option<bool>) -> Self {
-            self.nwk_geo_loc = input;
-            self
+            self.nwk_geo_loc = input; self
         }
         /// <p>The TargetPER value.</p>
         pub fn target_per(mut self, input: i32) -> Self {
@@ -10669,8 +10001,7 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The TargetPER value.</p>
         pub fn set_target_per(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_per = input;
-            self
+            self.target_per = input; self
         }
         /// <p>The MinGwDiversity value.</p>
         pub fn min_gw_diversity(mut self, input: i32) -> Self {
@@ -10679,34 +10010,64 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
         /// <p>The MinGwDiversity value.</p>
         pub fn set_min_gw_diversity(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_gw_diversity = input;
-            self
+            self.min_gw_diversity = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
         pub fn build(self) -> crate::model::LoRaWanGetServiceProfileInfo {
             crate::model::LoRaWanGetServiceProfileInfo {
-                ul_rate: self.ul_rate,
-                ul_bucket_size: self.ul_bucket_size,
-                ul_rate_policy: self.ul_rate_policy,
-                dl_rate: self.dl_rate,
-                dl_bucket_size: self.dl_bucket_size,
-                dl_rate_policy: self.dl_rate_policy,
-                add_gw_metadata: self.add_gw_metadata.unwrap_or_default(),
-                dev_status_req_freq: self.dev_status_req_freq,
-                report_dev_status_battery: self.report_dev_status_battery.unwrap_or_default(),
-                report_dev_status_margin: self.report_dev_status_margin.unwrap_or_default(),
-                dr_min: self.dr_min.unwrap_or_default(),
-                dr_max: self.dr_max.unwrap_or_default(),
-                channel_mask: self.channel_mask,
-                pr_allowed: self.pr_allowed.unwrap_or_default(),
-                hr_allowed: self.hr_allowed.unwrap_or_default(),
-                ra_allowed: self.ra_allowed.unwrap_or_default(),
-                nwk_geo_loc: self.nwk_geo_loc.unwrap_or_default(),
-                target_per: self.target_per.unwrap_or_default(),
-                min_gw_diversity: self.min_gw_diversity,
+                ul_rate: self.ul_rate
+                ,
+                ul_bucket_size: self.ul_bucket_size
+                ,
+                ul_rate_policy: self.ul_rate_policy
+                ,
+                dl_rate: self.dl_rate
+                ,
+                dl_bucket_size: self.dl_bucket_size
+                ,
+                dl_rate_policy: self.dl_rate_policy
+                ,
+                add_gw_metadata: self.add_gw_metadata
+                    .unwrap_or_default()
+                ,
+                dev_status_req_freq: self.dev_status_req_freq
+                ,
+                report_dev_status_battery: self.report_dev_status_battery
+                    .unwrap_or_default()
+                ,
+                report_dev_status_margin: self.report_dev_status_margin
+                    .unwrap_or_default()
+                ,
+                dr_min: self.dr_min
+                    .unwrap_or_default()
+                ,
+                dr_max: self.dr_max
+                    .unwrap_or_default()
+                ,
+                channel_mask: self.channel_mask
+                ,
+                pr_allowed: self.pr_allowed
+                    .unwrap_or_default()
+                ,
+                hr_allowed: self.hr_allowed
+                    .unwrap_or_default()
+                ,
+                ra_allowed: self.ra_allowed
+                    .unwrap_or_default()
+                ,
+                nwk_geo_loc: self.nwk_geo_loc
+                    .unwrap_or_default()
+                ,
+                target_per: self.target_per
+                    .unwrap_or_default()
+                ,
+                min_gw_diversity: self.min_gw_diversity
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanGetServiceProfileInfo {
     /// Creates a new builder-style object to manufacture [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
@@ -10721,9 +10082,9 @@ impl LoRaWanGetServiceProfileInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wirelessgatewayservicetype = unimplemented!();
 /// match wirelessgatewayservicetype {
@@ -10745,60 +10106,52 @@ impl LoRaWanGetServiceProfileInfo {
 /// Specifically, when `wirelessgatewayservicetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WirelessGatewayServiceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WirelessGatewayServiceType {
     #[allow(missing_docs)] // documentation missing in model
     Cups,
     #[allow(missing_docs)] // documentation missing in model
     Lns,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WirelessGatewayServiceType {
     fn from(s: &str) -> Self {
         match s {
             "CUPS" => WirelessGatewayServiceType::Cups,
             "LNS" => WirelessGatewayServiceType::Lns,
-            other => WirelessGatewayServiceType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessGatewayServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WirelessGatewayServiceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessGatewayServiceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WirelessGatewayServiceType::from(s))
+                }
+            }
 impl WirelessGatewayServiceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayServiceType::Cups => "CUPS",
             WirelessGatewayServiceType::Lns => "LNS",
-            WirelessGatewayServiceType::Unknown(value) => value.as_str(),
+            WirelessGatewayServiceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUPS", "LNS"]
+        &[
+            "CUPS", "LNS"
+        ]
     }
 }
 impl AsRef<str> for WirelessGatewayServiceType {
@@ -10810,7 +10163,7 @@ impl AsRef<str> for WirelessGatewayServiceType {
 /// <p>Global navigation satellite system (GNSS) object used for positioning.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Gnss {
+pub struct Gnss  {
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<std::string::String>,
@@ -10832,7 +10185,7 @@ pub struct Gnss {
 }
 impl Gnss {
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
-    pub fn payload(&self) -> std::option::Option<&str> {
+    pub fn payload(&self) -> std::option::Option<& str> {
         self.payload.as_deref()
     }
     /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
@@ -10844,7 +10197,7 @@ impl Gnss {
         self.capture_time_accuracy
     }
     /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The co-ordinates are inside the WGS84 reference frame.</p>
-    pub fn assist_position(&self) -> std::option::Option<&[f32]> {
+    pub fn assist_position(&self) -> std::option::Option<& [f32]> {
         self.assist_position.as_deref()
     }
     /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
@@ -10858,7 +10211,7 @@ impl Gnss {
 }
 /// See [`Gnss`](crate::model::Gnss).
 pub mod gnss {
-
+    
     /// A builder for [`Gnss`](crate::model::Gnss).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10877,8 +10230,7 @@ pub mod gnss {
         }
         /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
         pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.payload = input;
-            self
+            self.payload = input; self
         }
         /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
         pub fn capture_time(mut self, input: f32) -> Self {
@@ -10887,8 +10239,7 @@ pub mod gnss {
         }
         /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
         pub fn set_capture_time(mut self, input: std::option::Option<f32>) -> Self {
-            self.capture_time = input;
-            self
+            self.capture_time = input; self
         }
         /// <p>Optional value that gives the capture time estimate accuracy, in seconds. If capture time accuracy is not specified, default value of 300 is used.</p>
         pub fn capture_time_accuracy(mut self, input: f32) -> Self {
@@ -10897,8 +10248,7 @@ pub mod gnss {
         }
         /// <p>Optional value that gives the capture time estimate accuracy, in seconds. If capture time accuracy is not specified, default value of 300 is used.</p>
         pub fn set_capture_time_accuracy(mut self, input: std::option::Option<f32>) -> Self {
-            self.capture_time_accuracy = input;
-            self
+            self.capture_time_accuracy = input; self
         }
         /// Appends an item to `assist_position`.
         ///
@@ -10907,17 +10257,13 @@ pub mod gnss {
         /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The co-ordinates are inside the WGS84 reference frame.</p>
         pub fn assist_position(mut self, input: f32) -> Self {
             let mut v = self.assist_position.unwrap_or_default();
-            v.push(input);
-            self.assist_position = Some(v);
-            self
+                            v.push(input);
+                            self.assist_position = Some(v);
+                            self
         }
         /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The co-ordinates are inside the WGS84 reference frame.</p>
-        pub fn set_assist_position(
-            mut self,
-            input: std::option::Option<std::vec::Vec<f32>>,
-        ) -> Self {
-            self.assist_position = input;
-            self
+        pub fn set_assist_position(mut self, input: std::option::Option<std::vec::Vec<f32>>) -> Self {
+            self.assist_position = input; self
         }
         /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
         pub fn assist_altitude(mut self, input: f32) -> Self {
@@ -10926,8 +10272,7 @@ pub mod gnss {
         }
         /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
         pub fn set_assist_altitude(mut self, input: std::option::Option<f32>) -> Self {
-            self.assist_altitude = input;
-            self
+            self.assist_altitude = input; self
         }
         /// <p>Optional parameter that forces 2D solve, which modifies the positioning algorithm to a 2D solution problem. When this parameter is specified, the assistance altitude should have an accuracy of at least 10 meters.</p>
         pub fn use2_d_solver(mut self, input: bool) -> Self {
@@ -10936,21 +10281,29 @@ pub mod gnss {
         }
         /// <p>Optional parameter that forces 2D solve, which modifies the positioning algorithm to a 2D solution problem. When this parameter is specified, the assistance altitude should have an accuracy of at least 10 meters.</p>
         pub fn set_use2_d_solver(mut self, input: std::option::Option<bool>) -> Self {
-            self.use2_d_solver = input;
-            self
+            self.use2_d_solver = input; self
         }
         /// Consumes the builder and constructs a [`Gnss`](crate::model::Gnss).
         pub fn build(self) -> crate::model::Gnss {
             crate::model::Gnss {
-                payload: self.payload,
-                capture_time: self.capture_time,
-                capture_time_accuracy: self.capture_time_accuracy,
-                assist_position: self.assist_position,
-                assist_altitude: self.assist_altitude,
-                use2_d_solver: self.use2_d_solver.unwrap_or_default(),
+                payload: self.payload
+                ,
+                capture_time: self.capture_time
+                ,
+                capture_time_accuracy: self.capture_time_accuracy
+                ,
+                assist_position: self.assist_position
+                ,
+                assist_altitude: self.assist_altitude
+                ,
+                use2_d_solver: self.use2_d_solver
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Gnss {
     /// Creates a new builder-style object to manufacture [`Gnss`](crate::model::Gnss).
@@ -10962,20 +10315,20 @@ impl Gnss {
 /// <p>IP address used for resolving device location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ip {
+pub struct Ip  {
     /// <p>IP address information.</p>
     #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
 }
 impl Ip {
     /// <p>IP address information.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
 }
 /// See [`Ip`](crate::model::Ip).
 pub mod ip {
-
+    
     /// A builder for [`Ip`](crate::model::Ip).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10989,16 +10342,18 @@ pub mod ip {
         }
         /// <p>IP address information.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
         /// Consumes the builder and constructs a [`Ip`](crate::model::Ip).
         pub fn build(self) -> crate::model::Ip {
             crate::model::Ip {
-                ip_address: self.ip_address,
+                ip_address: self.ip_address
+                ,
             }
         }
     }
+    
+    
 }
 impl Ip {
     /// Creates a new builder-style object to manufacture [`Ip`](crate::model::Ip).
@@ -11010,7 +10365,7 @@ impl Ip {
 /// <p>The cell towers that were used to perform the measurements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CellTowers {
+pub struct CellTowers  {
     /// <p>GSM object information.</p>
     #[doc(hidden)]
     pub gsm: std::option::Option<std::vec::Vec<crate::model::GsmObj>>,
@@ -11029,29 +10384,29 @@ pub struct CellTowers {
 }
 impl CellTowers {
     /// <p>GSM object information.</p>
-    pub fn gsm(&self) -> std::option::Option<&[crate::model::GsmObj]> {
+    pub fn gsm(&self) -> std::option::Option<& [crate::model::GsmObj]> {
         self.gsm.as_deref()
     }
     /// <p>WCDMA object information.</p>
-    pub fn wcdma(&self) -> std::option::Option<&[crate::model::WcdmaObj]> {
+    pub fn wcdma(&self) -> std::option::Option<& [crate::model::WcdmaObj]> {
         self.wcdma.as_deref()
     }
     /// <p>TD-SCDMA object information.</p>
-    pub fn tdscdma(&self) -> std::option::Option<&[crate::model::TdscdmaObj]> {
+    pub fn tdscdma(&self) -> std::option::Option<& [crate::model::TdscdmaObj]> {
         self.tdscdma.as_deref()
     }
     /// <p>LTE object information.</p>
-    pub fn lte(&self) -> std::option::Option<&[crate::model::LteObj]> {
+    pub fn lte(&self) -> std::option::Option<& [crate::model::LteObj]> {
         self.lte.as_deref()
     }
     /// <p>CDMA object information.</p>
-    pub fn cdma(&self) -> std::option::Option<&[crate::model::CdmaObj]> {
+    pub fn cdma(&self) -> std::option::Option<& [crate::model::CdmaObj]> {
         self.cdma.as_deref()
     }
 }
 /// See [`CellTowers`](crate::model::CellTowers).
 pub mod cell_towers {
-
+    
     /// A builder for [`CellTowers`](crate::model::CellTowers).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11069,17 +10424,13 @@ pub mod cell_towers {
         /// <p>GSM object information.</p>
         pub fn gsm(mut self, input: crate::model::GsmObj) -> Self {
             let mut v = self.gsm.unwrap_or_default();
-            v.push(input);
-            self.gsm = Some(v);
-            self
+                            v.push(input);
+                            self.gsm = Some(v);
+                            self
         }
         /// <p>GSM object information.</p>
-        pub fn set_gsm(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GsmObj>>,
-        ) -> Self {
-            self.gsm = input;
-            self
+        pub fn set_gsm(mut self, input: std::option::Option<std::vec::Vec<crate::model::GsmObj>>) -> Self {
+            self.gsm = input; self
         }
         /// Appends an item to `wcdma`.
         ///
@@ -11088,17 +10439,13 @@ pub mod cell_towers {
         /// <p>WCDMA object information.</p>
         pub fn wcdma(mut self, input: crate::model::WcdmaObj) -> Self {
             let mut v = self.wcdma.unwrap_or_default();
-            v.push(input);
-            self.wcdma = Some(v);
-            self
+                            v.push(input);
+                            self.wcdma = Some(v);
+                            self
         }
         /// <p>WCDMA object information.</p>
-        pub fn set_wcdma(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WcdmaObj>>,
-        ) -> Self {
-            self.wcdma = input;
-            self
+        pub fn set_wcdma(mut self, input: std::option::Option<std::vec::Vec<crate::model::WcdmaObj>>) -> Self {
+            self.wcdma = input; self
         }
         /// Appends an item to `tdscdma`.
         ///
@@ -11107,17 +10454,13 @@ pub mod cell_towers {
         /// <p>TD-SCDMA object information.</p>
         pub fn tdscdma(mut self, input: crate::model::TdscdmaObj) -> Self {
             let mut v = self.tdscdma.unwrap_or_default();
-            v.push(input);
-            self.tdscdma = Some(v);
-            self
+                            v.push(input);
+                            self.tdscdma = Some(v);
+                            self
         }
         /// <p>TD-SCDMA object information.</p>
-        pub fn set_tdscdma(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TdscdmaObj>>,
-        ) -> Self {
-            self.tdscdma = input;
-            self
+        pub fn set_tdscdma(mut self, input: std::option::Option<std::vec::Vec<crate::model::TdscdmaObj>>) -> Self {
+            self.tdscdma = input; self
         }
         /// Appends an item to `lte`.
         ///
@@ -11126,17 +10469,13 @@ pub mod cell_towers {
         /// <p>LTE object information.</p>
         pub fn lte(mut self, input: crate::model::LteObj) -> Self {
             let mut v = self.lte.unwrap_or_default();
-            v.push(input);
-            self.lte = Some(v);
-            self
+                            v.push(input);
+                            self.lte = Some(v);
+                            self
         }
         /// <p>LTE object information.</p>
-        pub fn set_lte(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LteObj>>,
-        ) -> Self {
-            self.lte = input;
-            self
+        pub fn set_lte(mut self, input: std::option::Option<std::vec::Vec<crate::model::LteObj>>) -> Self {
+            self.lte = input; self
         }
         /// Appends an item to `cdma`.
         ///
@@ -11145,29 +10484,32 @@ pub mod cell_towers {
         /// <p>CDMA object information.</p>
         pub fn cdma(mut self, input: crate::model::CdmaObj) -> Self {
             let mut v = self.cdma.unwrap_or_default();
-            v.push(input);
-            self.cdma = Some(v);
-            self
+                            v.push(input);
+                            self.cdma = Some(v);
+                            self
         }
         /// <p>CDMA object information.</p>
-        pub fn set_cdma(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CdmaObj>>,
-        ) -> Self {
-            self.cdma = input;
-            self
+        pub fn set_cdma(mut self, input: std::option::Option<std::vec::Vec<crate::model::CdmaObj>>) -> Self {
+            self.cdma = input; self
         }
         /// Consumes the builder and constructs a [`CellTowers`](crate::model::CellTowers).
         pub fn build(self) -> crate::model::CellTowers {
             crate::model::CellTowers {
-                gsm: self.gsm,
-                wcdma: self.wcdma,
-                tdscdma: self.tdscdma,
-                lte: self.lte,
-                cdma: self.cdma,
+                gsm: self.gsm
+                ,
+                wcdma: self.wcdma
+                ,
+                tdscdma: self.tdscdma
+                ,
+                lte: self.lte
+                ,
+                cdma: self.cdma
+                ,
             }
         }
     }
+    
+    
 }
 impl CellTowers {
     /// Creates a new builder-style object to manufacture [`CellTowers`](crate::model::CellTowers).
@@ -11179,7 +10521,7 @@ impl CellTowers {
 /// <p>CDMA (Code-division multiple access) object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CdmaObj {
+pub struct CdmaObj  {
     /// <p>CDMA system ID (SID).</p>
     #[doc(hidden)]
     pub system_id: std::option::Option<i32>,
@@ -11226,7 +10568,7 @@ impl CdmaObj {
         self.registration_zone
     }
     /// <p>CDMA local identification (local ID) parameters.</p>
-    pub fn cdma_local_id(&self) -> std::option::Option<&crate::model::CdmaLocalId> {
+    pub fn cdma_local_id(&self) -> std::option::Option<& crate::model::CdmaLocalId> {
         self.cdma_local_id.as_ref()
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
@@ -11242,13 +10584,13 @@ impl CdmaObj {
         self.base_lng
     }
     /// <p>CDMA network measurement reports.</p>
-    pub fn cdma_nmr(&self) -> std::option::Option<&[crate::model::CdmaNmrObj]> {
+    pub fn cdma_nmr(&self) -> std::option::Option<& [crate::model::CdmaNmrObj]> {
         self.cdma_nmr.as_deref()
     }
 }
 /// See [`CdmaObj`](crate::model::CdmaObj).
 pub mod cdma_obj {
-
+    
     /// A builder for [`CdmaObj`](crate::model::CdmaObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11270,8 +10612,7 @@ pub mod cdma_obj {
         }
         /// <p>CDMA system ID (SID).</p>
         pub fn set_system_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.system_id = input;
-            self
+            self.system_id = input; self
         }
         /// <p>CDMA network ID (NID).</p>
         pub fn network_id(mut self, input: i32) -> Self {
@@ -11280,8 +10621,7 @@ pub mod cdma_obj {
         }
         /// <p>CDMA network ID (NID).</p>
         pub fn set_network_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.network_id = input;
-            self
+            self.network_id = input; self
         }
         /// <p>CDMA base station ID (BSID).</p>
         pub fn base_station_id(mut self, input: i32) -> Self {
@@ -11290,8 +10630,7 @@ pub mod cdma_obj {
         }
         /// <p>CDMA base station ID (BSID).</p>
         pub fn set_base_station_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.base_station_id = input;
-            self
+            self.base_station_id = input; self
         }
         /// <p>CDMA registration zone (RZ).</p>
         pub fn registration_zone(mut self, input: i32) -> Self {
@@ -11300,8 +10639,7 @@ pub mod cdma_obj {
         }
         /// <p>CDMA registration zone (RZ).</p>
         pub fn set_registration_zone(mut self, input: std::option::Option<i32>) -> Self {
-            self.registration_zone = input;
-            self
+            self.registration_zone = input; self
         }
         /// <p>CDMA local identification (local ID) parameters.</p>
         pub fn cdma_local_id(mut self, input: crate::model::CdmaLocalId) -> Self {
@@ -11309,12 +10647,8 @@ pub mod cdma_obj {
             self
         }
         /// <p>CDMA local identification (local ID) parameters.</p>
-        pub fn set_cdma_local_id(
-            mut self,
-            input: std::option::Option<crate::model::CdmaLocalId>,
-        ) -> Self {
-            self.cdma_local_id = input;
-            self
+        pub fn set_cdma_local_id(mut self, input: std::option::Option<crate::model::CdmaLocalId>) -> Self {
+            self.cdma_local_id = input; self
         }
         /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
         pub fn pilot_power(mut self, input: i32) -> Self {
@@ -11323,8 +10657,7 @@ pub mod cdma_obj {
         }
         /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
         pub fn set_pilot_power(mut self, input: std::option::Option<i32>) -> Self {
-            self.pilot_power = input;
-            self
+            self.pilot_power = input; self
         }
         /// <p>CDMA base station latitude in degrees.</p>
         pub fn base_lat(mut self, input: f32) -> Self {
@@ -11333,8 +10666,7 @@ pub mod cdma_obj {
         }
         /// <p>CDMA base station latitude in degrees.</p>
         pub fn set_base_lat(mut self, input: std::option::Option<f32>) -> Self {
-            self.base_lat = input;
-            self
+            self.base_lat = input; self
         }
         /// <p>CDMA base station longtitude in degrees.</p>
         pub fn base_lng(mut self, input: f32) -> Self {
@@ -11343,8 +10675,7 @@ pub mod cdma_obj {
         }
         /// <p>CDMA base station longtitude in degrees.</p>
         pub fn set_base_lng(mut self, input: std::option::Option<f32>) -> Self {
-            self.base_lng = input;
-            self
+            self.base_lng = input; self
         }
         /// Appends an item to `cdma_nmr`.
         ///
@@ -11353,33 +10684,40 @@ pub mod cdma_obj {
         /// <p>CDMA network measurement reports.</p>
         pub fn cdma_nmr(mut self, input: crate::model::CdmaNmrObj) -> Self {
             let mut v = self.cdma_nmr.unwrap_or_default();
-            v.push(input);
-            self.cdma_nmr = Some(v);
-            self
+                            v.push(input);
+                            self.cdma_nmr = Some(v);
+                            self
         }
         /// <p>CDMA network measurement reports.</p>
-        pub fn set_cdma_nmr(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CdmaNmrObj>>,
-        ) -> Self {
-            self.cdma_nmr = input;
-            self
+        pub fn set_cdma_nmr(mut self, input: std::option::Option<std::vec::Vec<crate::model::CdmaNmrObj>>) -> Self {
+            self.cdma_nmr = input; self
         }
         /// Consumes the builder and constructs a [`CdmaObj`](crate::model::CdmaObj).
         pub fn build(self) -> crate::model::CdmaObj {
             crate::model::CdmaObj {
-                system_id: self.system_id,
-                network_id: self.network_id,
-                base_station_id: self.base_station_id,
-                registration_zone: self.registration_zone,
-                cdma_local_id: self.cdma_local_id,
-                pilot_power: self.pilot_power,
-                base_lat: self.base_lat,
-                base_lng: self.base_lng,
-                cdma_nmr: self.cdma_nmr,
+                system_id: self.system_id
+                ,
+                network_id: self.network_id
+                ,
+                base_station_id: self.base_station_id
+                ,
+                registration_zone: self.registration_zone
+                ,
+                cdma_local_id: self.cdma_local_id
+                ,
+                pilot_power: self.pilot_power
+                ,
+                base_lat: self.base_lat
+                ,
+                base_lng: self.base_lng
+                ,
+                cdma_nmr: self.cdma_nmr
+                ,
             }
         }
     }
+    
+    
 }
 impl CdmaObj {
     /// Creates a new builder-style object to manufacture [`CdmaObj`](crate::model::CdmaObj).
@@ -11391,7 +10729,7 @@ impl CdmaObj {
 /// <p>CDMA object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CdmaNmrObj {
+pub struct CdmaNmrObj  {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     #[doc(hidden)]
     pub pn_offset: std::option::Option<i32>,
@@ -11425,7 +10763,7 @@ impl CdmaNmrObj {
 }
 /// See [`CdmaNmrObj`](crate::model::CdmaNmrObj).
 pub mod cdma_nmr_obj {
-
+    
     /// A builder for [`CdmaNmrObj`](crate::model::CdmaNmrObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11442,8 +10780,7 @@ pub mod cdma_nmr_obj {
         }
         /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
         pub fn set_pn_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.pn_offset = input;
-            self
+            self.pn_offset = input; self
         }
         /// <p>CDMA channel information.</p>
         pub fn cdma_channel(mut self, input: i32) -> Self {
@@ -11452,8 +10789,7 @@ pub mod cdma_nmr_obj {
         }
         /// <p>CDMA channel information.</p>
         pub fn set_cdma_channel(mut self, input: std::option::Option<i32>) -> Self {
-            self.cdma_channel = input;
-            self
+            self.cdma_channel = input; self
         }
         /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
         pub fn pilot_power(mut self, input: i32) -> Self {
@@ -11462,8 +10798,7 @@ pub mod cdma_nmr_obj {
         }
         /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
         pub fn set_pilot_power(mut self, input: std::option::Option<i32>) -> Self {
-            self.pilot_power = input;
-            self
+            self.pilot_power = input; self
         }
         /// <p>CDMA base station ID (BSID).</p>
         pub fn base_station_id(mut self, input: i32) -> Self {
@@ -11472,19 +10807,24 @@ pub mod cdma_nmr_obj {
         }
         /// <p>CDMA base station ID (BSID).</p>
         pub fn set_base_station_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.base_station_id = input;
-            self
+            self.base_station_id = input; self
         }
         /// Consumes the builder and constructs a [`CdmaNmrObj`](crate::model::CdmaNmrObj).
         pub fn build(self) -> crate::model::CdmaNmrObj {
             crate::model::CdmaNmrObj {
-                pn_offset: self.pn_offset,
-                cdma_channel: self.cdma_channel,
-                pilot_power: self.pilot_power,
-                base_station_id: self.base_station_id,
+                pn_offset: self.pn_offset
+                ,
+                cdma_channel: self.cdma_channel
+                ,
+                pilot_power: self.pilot_power
+                ,
+                base_station_id: self.base_station_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CdmaNmrObj {
     /// Creates a new builder-style object to manufacture [`CdmaNmrObj`](crate::model::CdmaNmrObj).
@@ -11496,7 +10836,7 @@ impl CdmaNmrObj {
 /// <p>CDMA local ID information, which corresponds to the local identification parameters of a CDMA cell.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CdmaLocalId {
+pub struct CdmaLocalId  {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     #[doc(hidden)]
     pub pn_offset: std::option::Option<i32>,
@@ -11516,7 +10856,7 @@ impl CdmaLocalId {
 }
 /// See [`CdmaLocalId`](crate::model::CdmaLocalId).
 pub mod cdma_local_id {
-
+    
     /// A builder for [`CdmaLocalId`](crate::model::CdmaLocalId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11531,8 +10871,7 @@ pub mod cdma_local_id {
         }
         /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
         pub fn set_pn_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.pn_offset = input;
-            self
+            self.pn_offset = input; self
         }
         /// <p>CDMA channel information.</p>
         pub fn cdma_channel(mut self, input: i32) -> Self {
@@ -11541,17 +10880,20 @@ pub mod cdma_local_id {
         }
         /// <p>CDMA channel information.</p>
         pub fn set_cdma_channel(mut self, input: std::option::Option<i32>) -> Self {
-            self.cdma_channel = input;
-            self
+            self.cdma_channel = input; self
         }
         /// Consumes the builder and constructs a [`CdmaLocalId`](crate::model::CdmaLocalId).
         pub fn build(self) -> crate::model::CdmaLocalId {
             crate::model::CdmaLocalId {
-                pn_offset: self.pn_offset,
-                cdma_channel: self.cdma_channel,
+                pn_offset: self.pn_offset
+                ,
+                cdma_channel: self.cdma_channel
+                ,
             }
         }
     }
+    
+    
 }
 impl CdmaLocalId {
     /// Creates a new builder-style object to manufacture [`CdmaLocalId`](crate::model::CdmaLocalId).
@@ -11563,7 +10905,7 @@ impl CdmaLocalId {
 /// <p>LTE object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LteObj {
+pub struct LteObj  {
     /// <p>Mobile Country Code.</p>
     #[doc(hidden)]
     pub mcc: std::option::Option<i32>,
@@ -11613,7 +10955,7 @@ impl LteObj {
         self.tac
     }
     /// <p>LTE local identification (local ID) information.</p>
-    pub fn lte_local_id(&self) -> std::option::Option<&crate::model::LteLocalId> {
+    pub fn lte_local_id(&self) -> std::option::Option<& crate::model::LteLocalId> {
         self.lte_local_id.as_ref()
     }
     /// <p>LTE timing advance.</p>
@@ -11633,13 +10975,13 @@ impl LteObj {
         self.nr_capable
     }
     /// <p>LTE object for network measurement reports.</p>
-    pub fn lte_nmr(&self) -> std::option::Option<&[crate::model::LteNmrObj]> {
+    pub fn lte_nmr(&self) -> std::option::Option<& [crate::model::LteNmrObj]> {
         self.lte_nmr.as_deref()
     }
 }
 /// See [`LteObj`](crate::model::LteObj).
 pub mod lte_obj {
-
+    
     /// A builder for [`LteObj`](crate::model::LteObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11662,8 +11004,7 @@ pub mod lte_obj {
         }
         /// <p>Mobile Country Code.</p>
         pub fn set_mcc(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcc = input;
-            self
+            self.mcc = input; self
         }
         /// <p>Mobile Network Code.</p>
         pub fn mnc(mut self, input: i32) -> Self {
@@ -11672,8 +11013,7 @@ pub mod lte_obj {
         }
         /// <p>Mobile Network Code.</p>
         pub fn set_mnc(mut self, input: std::option::Option<i32>) -> Self {
-            self.mnc = input;
-            self
+            self.mnc = input; self
         }
         /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
         pub fn eutran_cid(mut self, input: i32) -> Self {
@@ -11682,8 +11022,7 @@ pub mod lte_obj {
         }
         /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
         pub fn set_eutran_cid(mut self, input: std::option::Option<i32>) -> Self {
-            self.eutran_cid = input;
-            self
+            self.eutran_cid = input; self
         }
         /// <p>LTE tracking area code.</p>
         pub fn tac(mut self, input: i32) -> Self {
@@ -11692,8 +11031,7 @@ pub mod lte_obj {
         }
         /// <p>LTE tracking area code.</p>
         pub fn set_tac(mut self, input: std::option::Option<i32>) -> Self {
-            self.tac = input;
-            self
+            self.tac = input; self
         }
         /// <p>LTE local identification (local ID) information.</p>
         pub fn lte_local_id(mut self, input: crate::model::LteLocalId) -> Self {
@@ -11701,12 +11039,8 @@ pub mod lte_obj {
             self
         }
         /// <p>LTE local identification (local ID) information.</p>
-        pub fn set_lte_local_id(
-            mut self,
-            input: std::option::Option<crate::model::LteLocalId>,
-        ) -> Self {
-            self.lte_local_id = input;
-            self
+        pub fn set_lte_local_id(mut self, input: std::option::Option<crate::model::LteLocalId>) -> Self {
+            self.lte_local_id = input; self
         }
         /// <p>LTE timing advance.</p>
         pub fn lte_timing_advance(mut self, input: i32) -> Self {
@@ -11715,8 +11049,7 @@ pub mod lte_obj {
         }
         /// <p>LTE timing advance.</p>
         pub fn set_lte_timing_advance(mut self, input: std::option::Option<i32>) -> Self {
-            self.lte_timing_advance = input;
-            self
+            self.lte_timing_advance = input; self
         }
         /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
         pub fn rsrp(mut self, input: i32) -> Self {
@@ -11725,8 +11058,7 @@ pub mod lte_obj {
         }
         /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
         pub fn set_rsrp(mut self, input: std::option::Option<i32>) -> Self {
-            self.rsrp = input;
-            self
+            self.rsrp = input; self
         }
         /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
         pub fn rsrq(mut self, input: f32) -> Self {
@@ -11735,8 +11067,7 @@ pub mod lte_obj {
         }
         /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
         pub fn set_rsrq(mut self, input: std::option::Option<f32>) -> Self {
-            self.rsrq = input;
-            self
+            self.rsrq = input; self
         }
         /// <p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>
         pub fn nr_capable(mut self, input: bool) -> Self {
@@ -11745,8 +11076,7 @@ pub mod lte_obj {
         }
         /// <p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>
         pub fn set_nr_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.nr_capable = input;
-            self
+            self.nr_capable = input; self
         }
         /// Appends an item to `lte_nmr`.
         ///
@@ -11755,34 +11085,43 @@ pub mod lte_obj {
         /// <p>LTE object for network measurement reports.</p>
         pub fn lte_nmr(mut self, input: crate::model::LteNmrObj) -> Self {
             let mut v = self.lte_nmr.unwrap_or_default();
-            v.push(input);
-            self.lte_nmr = Some(v);
-            self
+                            v.push(input);
+                            self.lte_nmr = Some(v);
+                            self
         }
         /// <p>LTE object for network measurement reports.</p>
-        pub fn set_lte_nmr(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LteNmrObj>>,
-        ) -> Self {
-            self.lte_nmr = input;
-            self
+        pub fn set_lte_nmr(mut self, input: std::option::Option<std::vec::Vec<crate::model::LteNmrObj>>) -> Self {
+            self.lte_nmr = input; self
         }
         /// Consumes the builder and constructs a [`LteObj`](crate::model::LteObj).
         pub fn build(self) -> crate::model::LteObj {
             crate::model::LteObj {
-                mcc: self.mcc,
-                mnc: self.mnc,
-                eutran_cid: self.eutran_cid,
-                tac: self.tac,
-                lte_local_id: self.lte_local_id,
-                lte_timing_advance: self.lte_timing_advance,
-                rsrp: self.rsrp,
-                rsrq: self.rsrq,
-                nr_capable: self.nr_capable.unwrap_or_default(),
-                lte_nmr: self.lte_nmr,
+                mcc: self.mcc
+                ,
+                mnc: self.mnc
+                ,
+                eutran_cid: self.eutran_cid
+                ,
+                tac: self.tac
+                ,
+                lte_local_id: self.lte_local_id
+                ,
+                lte_timing_advance: self.lte_timing_advance
+                ,
+                rsrp: self.rsrp
+                ,
+                rsrq: self.rsrq
+                ,
+                nr_capable: self.nr_capable
+                    .unwrap_or_default()
+                ,
+                lte_nmr: self.lte_nmr
+                ,
             }
         }
     }
+    
+    
 }
 impl LteObj {
     /// Creates a new builder-style object to manufacture [`LteObj`](crate::model::LteObj).
@@ -11794,7 +11133,7 @@ impl LteObj {
 /// <p>LTE object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LteNmrObj {
+pub struct LteNmrObj  {
     /// <p>Physical cell ID.</p>
     #[doc(hidden)]
     pub pci: std::option::Option<i32>,
@@ -11835,7 +11174,7 @@ impl LteNmrObj {
 }
 /// See [`LteNmrObj`](crate::model::LteNmrObj).
 pub mod lte_nmr_obj {
-
+    
     /// A builder for [`LteNmrObj`](crate::model::LteNmrObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11853,8 +11192,7 @@ pub mod lte_nmr_obj {
         }
         /// <p>Physical cell ID.</p>
         pub fn set_pci(mut self, input: std::option::Option<i32>) -> Self {
-            self.pci = input;
-            self
+            self.pci = input; self
         }
         /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
         pub fn earfcn(mut self, input: i32) -> Self {
@@ -11863,8 +11201,7 @@ pub mod lte_nmr_obj {
         }
         /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
         pub fn set_earfcn(mut self, input: std::option::Option<i32>) -> Self {
-            self.earfcn = input;
-            self
+            self.earfcn = input; self
         }
         /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
         pub fn eutran_cid(mut self, input: i32) -> Self {
@@ -11873,8 +11210,7 @@ pub mod lte_nmr_obj {
         }
         /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
         pub fn set_eutran_cid(mut self, input: std::option::Option<i32>) -> Self {
-            self.eutran_cid = input;
-            self
+            self.eutran_cid = input; self
         }
         /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
         pub fn rsrp(mut self, input: i32) -> Self {
@@ -11883,8 +11219,7 @@ pub mod lte_nmr_obj {
         }
         /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
         pub fn set_rsrp(mut self, input: std::option::Option<i32>) -> Self {
-            self.rsrp = input;
-            self
+            self.rsrp = input; self
         }
         /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
         pub fn rsrq(mut self, input: f32) -> Self {
@@ -11893,20 +11228,26 @@ pub mod lte_nmr_obj {
         }
         /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
         pub fn set_rsrq(mut self, input: std::option::Option<f32>) -> Self {
-            self.rsrq = input;
-            self
+            self.rsrq = input; self
         }
         /// Consumes the builder and constructs a [`LteNmrObj`](crate::model::LteNmrObj).
         pub fn build(self) -> crate::model::LteNmrObj {
             crate::model::LteNmrObj {
-                pci: self.pci,
-                earfcn: self.earfcn,
-                eutran_cid: self.eutran_cid,
-                rsrp: self.rsrp,
-                rsrq: self.rsrq,
+                pci: self.pci
+                ,
+                earfcn: self.earfcn
+                ,
+                eutran_cid: self.eutran_cid
+                ,
+                rsrp: self.rsrp
+                ,
+                rsrq: self.rsrq
+                ,
             }
         }
     }
+    
+    
 }
 impl LteNmrObj {
     /// Creates a new builder-style object to manufacture [`LteNmrObj`](crate::model::LteNmrObj).
@@ -11918,7 +11259,7 @@ impl LteNmrObj {
 /// <p>LTE local identification (local ID) information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LteLocalId {
+pub struct LteLocalId  {
     /// <p>Physical cell ID.</p>
     #[doc(hidden)]
     pub pci: std::option::Option<i32>,
@@ -11938,7 +11279,7 @@ impl LteLocalId {
 }
 /// See [`LteLocalId`](crate::model::LteLocalId).
 pub mod lte_local_id {
-
+    
     /// A builder for [`LteLocalId`](crate::model::LteLocalId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11953,8 +11294,7 @@ pub mod lte_local_id {
         }
         /// <p>Physical cell ID.</p>
         pub fn set_pci(mut self, input: std::option::Option<i32>) -> Self {
-            self.pci = input;
-            self
+            self.pci = input; self
         }
         /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
         pub fn earfcn(mut self, input: i32) -> Self {
@@ -11963,17 +11303,20 @@ pub mod lte_local_id {
         }
         /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
         pub fn set_earfcn(mut self, input: std::option::Option<i32>) -> Self {
-            self.earfcn = input;
-            self
+            self.earfcn = input; self
         }
         /// Consumes the builder and constructs a [`LteLocalId`](crate::model::LteLocalId).
         pub fn build(self) -> crate::model::LteLocalId {
             crate::model::LteLocalId {
-                pci: self.pci,
-                earfcn: self.earfcn,
+                pci: self.pci
+                ,
+                earfcn: self.earfcn
+                ,
             }
         }
     }
+    
+    
 }
 impl LteLocalId {
     /// Creates a new builder-style object to manufacture [`LteLocalId`](crate::model::LteLocalId).
@@ -11985,7 +11328,7 @@ impl LteLocalId {
 /// <p>TD-SCDMA object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TdscdmaObj {
+pub struct TdscdmaObj  {
     /// <p>Mobile Country Code.</p>
     #[doc(hidden)]
     pub mcc: std::option::Option<i32>,
@@ -12032,7 +11375,7 @@ impl TdscdmaObj {
         self.utran_cid
     }
     /// <p>TD-SCDMA local identification (local ID) information.</p>
-    pub fn tdscdma_local_id(&self) -> std::option::Option<&crate::model::TdscdmaLocalId> {
+    pub fn tdscdma_local_id(&self) -> std::option::Option<& crate::model::TdscdmaLocalId> {
         self.tdscdma_local_id.as_ref()
     }
     /// <p>TD-SCDMA Timing advance.</p>
@@ -12048,13 +11391,13 @@ impl TdscdmaObj {
         self.path_loss
     }
     /// <p>TD-SCDMA object for network measurement reports.</p>
-    pub fn tdscdma_nmr(&self) -> std::option::Option<&[crate::model::TdscdmaNmrObj]> {
+    pub fn tdscdma_nmr(&self) -> std::option::Option<& [crate::model::TdscdmaNmrObj]> {
         self.tdscdma_nmr.as_deref()
     }
 }
 /// See [`TdscdmaObj`](crate::model::TdscdmaObj).
 pub mod tdscdma_obj {
-
+    
     /// A builder for [`TdscdmaObj`](crate::model::TdscdmaObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12076,8 +11419,7 @@ pub mod tdscdma_obj {
         }
         /// <p>Mobile Country Code.</p>
         pub fn set_mcc(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcc = input;
-            self
+            self.mcc = input; self
         }
         /// <p>Mobile Network Code.</p>
         pub fn mnc(mut self, input: i32) -> Self {
@@ -12086,8 +11428,7 @@ pub mod tdscdma_obj {
         }
         /// <p>Mobile Network Code.</p>
         pub fn set_mnc(mut self, input: std::option::Option<i32>) -> Self {
-            self.mnc = input;
-            self
+            self.mnc = input; self
         }
         /// <p>Location Area Code.</p>
         pub fn lac(mut self, input: i32) -> Self {
@@ -12096,8 +11437,7 @@ pub mod tdscdma_obj {
         }
         /// <p>Location Area Code.</p>
         pub fn set_lac(mut self, input: std::option::Option<i32>) -> Self {
-            self.lac = input;
-            self
+            self.lac = input; self
         }
         /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
         pub fn utran_cid(mut self, input: i32) -> Self {
@@ -12106,8 +11446,7 @@ pub mod tdscdma_obj {
         }
         /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
         pub fn set_utran_cid(mut self, input: std::option::Option<i32>) -> Self {
-            self.utran_cid = input;
-            self
+            self.utran_cid = input; self
         }
         /// <p>TD-SCDMA local identification (local ID) information.</p>
         pub fn tdscdma_local_id(mut self, input: crate::model::TdscdmaLocalId) -> Self {
@@ -12115,12 +11454,8 @@ pub mod tdscdma_obj {
             self
         }
         /// <p>TD-SCDMA local identification (local ID) information.</p>
-        pub fn set_tdscdma_local_id(
-            mut self,
-            input: std::option::Option<crate::model::TdscdmaLocalId>,
-        ) -> Self {
-            self.tdscdma_local_id = input;
-            self
+        pub fn set_tdscdma_local_id(mut self, input: std::option::Option<crate::model::TdscdmaLocalId>) -> Self {
+            self.tdscdma_local_id = input; self
         }
         /// <p>TD-SCDMA Timing advance.</p>
         pub fn tdscdma_timing_advance(mut self, input: i32) -> Self {
@@ -12129,8 +11464,7 @@ pub mod tdscdma_obj {
         }
         /// <p>TD-SCDMA Timing advance.</p>
         pub fn set_tdscdma_timing_advance(mut self, input: std::option::Option<i32>) -> Self {
-            self.tdscdma_timing_advance = input;
-            self
+            self.tdscdma_timing_advance = input; self
         }
         /// <p>Signal power of the received signal (Received Signal Code Power), measured in decibel-milliwatts (dBm).</p>
         pub fn rscp(mut self, input: i32) -> Self {
@@ -12139,8 +11473,7 @@ pub mod tdscdma_obj {
         }
         /// <p>Signal power of the received signal (Received Signal Code Power), measured in decibel-milliwatts (dBm).</p>
         pub fn set_rscp(mut self, input: std::option::Option<i32>) -> Self {
-            self.rscp = input;
-            self
+            self.rscp = input; self
         }
         /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
         pub fn path_loss(mut self, input: i32) -> Self {
@@ -12149,8 +11482,7 @@ pub mod tdscdma_obj {
         }
         /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
         pub fn set_path_loss(mut self, input: std::option::Option<i32>) -> Self {
-            self.path_loss = input;
-            self
+            self.path_loss = input; self
         }
         /// Appends an item to `tdscdma_nmr`.
         ///
@@ -12159,33 +11491,40 @@ pub mod tdscdma_obj {
         /// <p>TD-SCDMA object for network measurement reports.</p>
         pub fn tdscdma_nmr(mut self, input: crate::model::TdscdmaNmrObj) -> Self {
             let mut v = self.tdscdma_nmr.unwrap_or_default();
-            v.push(input);
-            self.tdscdma_nmr = Some(v);
-            self
+                            v.push(input);
+                            self.tdscdma_nmr = Some(v);
+                            self
         }
         /// <p>TD-SCDMA object for network measurement reports.</p>
-        pub fn set_tdscdma_nmr(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TdscdmaNmrObj>>,
-        ) -> Self {
-            self.tdscdma_nmr = input;
-            self
+        pub fn set_tdscdma_nmr(mut self, input: std::option::Option<std::vec::Vec<crate::model::TdscdmaNmrObj>>) -> Self {
+            self.tdscdma_nmr = input; self
         }
         /// Consumes the builder and constructs a [`TdscdmaObj`](crate::model::TdscdmaObj).
         pub fn build(self) -> crate::model::TdscdmaObj {
             crate::model::TdscdmaObj {
-                mcc: self.mcc,
-                mnc: self.mnc,
-                lac: self.lac,
-                utran_cid: self.utran_cid,
-                tdscdma_local_id: self.tdscdma_local_id,
-                tdscdma_timing_advance: self.tdscdma_timing_advance,
-                rscp: self.rscp,
-                path_loss: self.path_loss,
-                tdscdma_nmr: self.tdscdma_nmr,
+                mcc: self.mcc
+                ,
+                mnc: self.mnc
+                ,
+                lac: self.lac
+                ,
+                utran_cid: self.utran_cid
+                ,
+                tdscdma_local_id: self.tdscdma_local_id
+                ,
+                tdscdma_timing_advance: self.tdscdma_timing_advance
+                ,
+                rscp: self.rscp
+                ,
+                path_loss: self.path_loss
+                ,
+                tdscdma_nmr: self.tdscdma_nmr
+                ,
             }
         }
     }
+    
+    
 }
 impl TdscdmaObj {
     /// Creates a new builder-style object to manufacture [`TdscdmaObj`](crate::model::TdscdmaObj).
@@ -12197,7 +11536,7 @@ impl TdscdmaObj {
 /// <p>TD-SCDMA object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TdscdmaNmrObj {
+pub struct TdscdmaNmrObj  {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     #[doc(hidden)]
     pub uarfcn: std::option::Option<i32>,
@@ -12238,7 +11577,7 @@ impl TdscdmaNmrObj {
 }
 /// See [`TdscdmaNmrObj`](crate::model::TdscdmaNmrObj).
 pub mod tdscdma_nmr_obj {
-
+    
     /// A builder for [`TdscdmaNmrObj`](crate::model::TdscdmaNmrObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12256,8 +11595,7 @@ pub mod tdscdma_nmr_obj {
         }
         /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
         pub fn set_uarfcn(mut self, input: std::option::Option<i32>) -> Self {
-            self.uarfcn = input;
-            self
+            self.uarfcn = input; self
         }
         /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
         pub fn cell_params(mut self, input: i32) -> Self {
@@ -12266,8 +11604,7 @@ pub mod tdscdma_nmr_obj {
         }
         /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
         pub fn set_cell_params(mut self, input: std::option::Option<i32>) -> Self {
-            self.cell_params = input;
-            self
+            self.cell_params = input; self
         }
         /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
         pub fn utran_cid(mut self, input: i32) -> Self {
@@ -12276,8 +11613,7 @@ pub mod tdscdma_nmr_obj {
         }
         /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
         pub fn set_utran_cid(mut self, input: std::option::Option<i32>) -> Self {
-            self.utran_cid = input;
-            self
+            self.utran_cid = input; self
         }
         /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
         pub fn rscp(mut self, input: i32) -> Self {
@@ -12286,8 +11622,7 @@ pub mod tdscdma_nmr_obj {
         }
         /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
         pub fn set_rscp(mut self, input: std::option::Option<i32>) -> Self {
-            self.rscp = input;
-            self
+            self.rscp = input; self
         }
         /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
         pub fn path_loss(mut self, input: i32) -> Self {
@@ -12296,20 +11631,26 @@ pub mod tdscdma_nmr_obj {
         }
         /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
         pub fn set_path_loss(mut self, input: std::option::Option<i32>) -> Self {
-            self.path_loss = input;
-            self
+            self.path_loss = input; self
         }
         /// Consumes the builder and constructs a [`TdscdmaNmrObj`](crate::model::TdscdmaNmrObj).
         pub fn build(self) -> crate::model::TdscdmaNmrObj {
             crate::model::TdscdmaNmrObj {
-                uarfcn: self.uarfcn,
-                cell_params: self.cell_params,
-                utran_cid: self.utran_cid,
-                rscp: self.rscp,
-                path_loss: self.path_loss,
+                uarfcn: self.uarfcn
+                ,
+                cell_params: self.cell_params
+                ,
+                utran_cid: self.utran_cid
+                ,
+                rscp: self.rscp
+                ,
+                path_loss: self.path_loss
+                ,
             }
         }
     }
+    
+    
 }
 impl TdscdmaNmrObj {
     /// Creates a new builder-style object to manufacture [`TdscdmaNmrObj`](crate::model::TdscdmaNmrObj).
@@ -12321,7 +11662,7 @@ impl TdscdmaNmrObj {
 /// <p>TD-SCDMA local identification (local Id) information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TdscdmaLocalId {
+pub struct TdscdmaLocalId  {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
     #[doc(hidden)]
     pub uarfcn: std::option::Option<i32>,
@@ -12341,7 +11682,7 @@ impl TdscdmaLocalId {
 }
 /// See [`TdscdmaLocalId`](crate::model::TdscdmaLocalId).
 pub mod tdscdma_local_id {
-
+    
     /// A builder for [`TdscdmaLocalId`](crate::model::TdscdmaLocalId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12356,8 +11697,7 @@ pub mod tdscdma_local_id {
         }
         /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
         pub fn set_uarfcn(mut self, input: std::option::Option<i32>) -> Self {
-            self.uarfcn = input;
-            self
+            self.uarfcn = input; self
         }
         /// <p>Cell parameters for TD-SCDMA.</p>
         pub fn cell_params(mut self, input: i32) -> Self {
@@ -12366,17 +11706,20 @@ pub mod tdscdma_local_id {
         }
         /// <p>Cell parameters for TD-SCDMA.</p>
         pub fn set_cell_params(mut self, input: std::option::Option<i32>) -> Self {
-            self.cell_params = input;
-            self
+            self.cell_params = input; self
         }
         /// Consumes the builder and constructs a [`TdscdmaLocalId`](crate::model::TdscdmaLocalId).
         pub fn build(self) -> crate::model::TdscdmaLocalId {
             crate::model::TdscdmaLocalId {
-                uarfcn: self.uarfcn,
-                cell_params: self.cell_params,
+                uarfcn: self.uarfcn
+                ,
+                cell_params: self.cell_params
+                ,
             }
         }
     }
+    
+    
 }
 impl TdscdmaLocalId {
     /// Creates a new builder-style object to manufacture [`TdscdmaLocalId`](crate::model::TdscdmaLocalId).
@@ -12388,7 +11731,7 @@ impl TdscdmaLocalId {
 /// <p>WCDMA.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WcdmaObj {
+pub struct WcdmaObj  {
     /// <p>Mobile Country Code.</p>
     #[doc(hidden)]
     pub mcc: std::option::Option<i32>,
@@ -12432,7 +11775,7 @@ impl WcdmaObj {
         self.utran_cid
     }
     /// <p>WCDMA local ID information.</p>
-    pub fn wcdma_local_id(&self) -> std::option::Option<&crate::model::WcdmaLocalId> {
+    pub fn wcdma_local_id(&self) -> std::option::Option<& crate::model::WcdmaLocalId> {
         self.wcdma_local_id.as_ref()
     }
     /// <p>Received Signal Code Power (signal power) (dBm).</p>
@@ -12444,13 +11787,13 @@ impl WcdmaObj {
         self.path_loss
     }
     /// <p>WCDMA object for network measurement reports.</p>
-    pub fn wcdma_nmr(&self) -> std::option::Option<&[crate::model::WcdmaNmrObj]> {
+    pub fn wcdma_nmr(&self) -> std::option::Option<& [crate::model::WcdmaNmrObj]> {
         self.wcdma_nmr.as_deref()
     }
 }
 /// See [`WcdmaObj`](crate::model::WcdmaObj).
 pub mod wcdma_obj {
-
+    
     /// A builder for [`WcdmaObj`](crate::model::WcdmaObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12471,8 +11814,7 @@ pub mod wcdma_obj {
         }
         /// <p>Mobile Country Code.</p>
         pub fn set_mcc(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcc = input;
-            self
+            self.mcc = input; self
         }
         /// <p>Mobile Network Code.</p>
         pub fn mnc(mut self, input: i32) -> Self {
@@ -12481,8 +11823,7 @@ pub mod wcdma_obj {
         }
         /// <p>Mobile Network Code.</p>
         pub fn set_mnc(mut self, input: std::option::Option<i32>) -> Self {
-            self.mnc = input;
-            self
+            self.mnc = input; self
         }
         /// <p>Location Area Code.</p>
         pub fn lac(mut self, input: i32) -> Self {
@@ -12491,8 +11832,7 @@ pub mod wcdma_obj {
         }
         /// <p>Location Area Code.</p>
         pub fn set_lac(mut self, input: std::option::Option<i32>) -> Self {
-            self.lac = input;
-            self
+            self.lac = input; self
         }
         /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
         pub fn utran_cid(mut self, input: i32) -> Self {
@@ -12501,8 +11841,7 @@ pub mod wcdma_obj {
         }
         /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
         pub fn set_utran_cid(mut self, input: std::option::Option<i32>) -> Self {
-            self.utran_cid = input;
-            self
+            self.utran_cid = input; self
         }
         /// <p>WCDMA local ID information.</p>
         pub fn wcdma_local_id(mut self, input: crate::model::WcdmaLocalId) -> Self {
@@ -12510,12 +11849,8 @@ pub mod wcdma_obj {
             self
         }
         /// <p>WCDMA local ID information.</p>
-        pub fn set_wcdma_local_id(
-            mut self,
-            input: std::option::Option<crate::model::WcdmaLocalId>,
-        ) -> Self {
-            self.wcdma_local_id = input;
-            self
+        pub fn set_wcdma_local_id(mut self, input: std::option::Option<crate::model::WcdmaLocalId>) -> Self {
+            self.wcdma_local_id = input; self
         }
         /// <p>Received Signal Code Power (signal power) (dBm).</p>
         pub fn rscp(mut self, input: i32) -> Self {
@@ -12524,8 +11859,7 @@ pub mod wcdma_obj {
         }
         /// <p>Received Signal Code Power (signal power) (dBm).</p>
         pub fn set_rscp(mut self, input: std::option::Option<i32>) -> Self {
-            self.rscp = input;
-            self
+            self.rscp = input; self
         }
         /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
         pub fn path_loss(mut self, input: i32) -> Self {
@@ -12534,8 +11868,7 @@ pub mod wcdma_obj {
         }
         /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
         pub fn set_path_loss(mut self, input: std::option::Option<i32>) -> Self {
-            self.path_loss = input;
-            self
+            self.path_loss = input; self
         }
         /// Appends an item to `wcdma_nmr`.
         ///
@@ -12544,32 +11877,38 @@ pub mod wcdma_obj {
         /// <p>WCDMA object for network measurement reports.</p>
         pub fn wcdma_nmr(mut self, input: crate::model::WcdmaNmrObj) -> Self {
             let mut v = self.wcdma_nmr.unwrap_or_default();
-            v.push(input);
-            self.wcdma_nmr = Some(v);
-            self
+                            v.push(input);
+                            self.wcdma_nmr = Some(v);
+                            self
         }
         /// <p>WCDMA object for network measurement reports.</p>
-        pub fn set_wcdma_nmr(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WcdmaNmrObj>>,
-        ) -> Self {
-            self.wcdma_nmr = input;
-            self
+        pub fn set_wcdma_nmr(mut self, input: std::option::Option<std::vec::Vec<crate::model::WcdmaNmrObj>>) -> Self {
+            self.wcdma_nmr = input; self
         }
         /// Consumes the builder and constructs a [`WcdmaObj`](crate::model::WcdmaObj).
         pub fn build(self) -> crate::model::WcdmaObj {
             crate::model::WcdmaObj {
-                mcc: self.mcc,
-                mnc: self.mnc,
-                lac: self.lac,
-                utran_cid: self.utran_cid,
-                wcdma_local_id: self.wcdma_local_id,
-                rscp: self.rscp,
-                path_loss: self.path_loss,
-                wcdma_nmr: self.wcdma_nmr,
+                mcc: self.mcc
+                ,
+                mnc: self.mnc
+                ,
+                lac: self.lac
+                ,
+                utran_cid: self.utran_cid
+                ,
+                wcdma_local_id: self.wcdma_local_id
+                ,
+                rscp: self.rscp
+                ,
+                path_loss: self.path_loss
+                ,
+                wcdma_nmr: self.wcdma_nmr
+                ,
             }
         }
     }
+    
+    
 }
 impl WcdmaObj {
     /// Creates a new builder-style object to manufacture [`WcdmaObj`](crate::model::WcdmaObj).
@@ -12581,7 +11920,7 @@ impl WcdmaObj {
 /// <p>Network Measurement Reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WcdmaNmrObj {
+pub struct WcdmaNmrObj  {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     #[doc(hidden)]
     pub uarfcndl: std::option::Option<i32>,
@@ -12622,7 +11961,7 @@ impl WcdmaNmrObj {
 }
 /// See [`WcdmaNmrObj`](crate::model::WcdmaNmrObj).
 pub mod wcdma_nmr_obj {
-
+    
     /// A builder for [`WcdmaNmrObj`](crate::model::WcdmaNmrObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12640,8 +11979,7 @@ pub mod wcdma_nmr_obj {
         }
         /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
         pub fn set_uarfcndl(mut self, input: std::option::Option<i32>) -> Self {
-            self.uarfcndl = input;
-            self
+            self.uarfcndl = input; self
         }
         /// <p>Primary Scrambling Code.</p>
         pub fn psc(mut self, input: i32) -> Self {
@@ -12650,8 +11988,7 @@ pub mod wcdma_nmr_obj {
         }
         /// <p>Primary Scrambling Code.</p>
         pub fn set_psc(mut self, input: std::option::Option<i32>) -> Self {
-            self.psc = input;
-            self
+            self.psc = input; self
         }
         /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
         pub fn utran_cid(mut self, input: i32) -> Self {
@@ -12660,8 +11997,7 @@ pub mod wcdma_nmr_obj {
         }
         /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
         pub fn set_utran_cid(mut self, input: std::option::Option<i32>) -> Self {
-            self.utran_cid = input;
-            self
+            self.utran_cid = input; self
         }
         /// <p>Received Signal Code Power (signal power) (dBm)</p>
         pub fn rscp(mut self, input: i32) -> Self {
@@ -12670,8 +12006,7 @@ pub mod wcdma_nmr_obj {
         }
         /// <p>Received Signal Code Power (signal power) (dBm)</p>
         pub fn set_rscp(mut self, input: std::option::Option<i32>) -> Self {
-            self.rscp = input;
-            self
+            self.rscp = input; self
         }
         /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
         pub fn path_loss(mut self, input: i32) -> Self {
@@ -12680,20 +12015,26 @@ pub mod wcdma_nmr_obj {
         }
         /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
         pub fn set_path_loss(mut self, input: std::option::Option<i32>) -> Self {
-            self.path_loss = input;
-            self
+            self.path_loss = input; self
         }
         /// Consumes the builder and constructs a [`WcdmaNmrObj`](crate::model::WcdmaNmrObj).
         pub fn build(self) -> crate::model::WcdmaNmrObj {
             crate::model::WcdmaNmrObj {
-                uarfcndl: self.uarfcndl,
-                psc: self.psc,
-                utran_cid: self.utran_cid,
-                rscp: self.rscp,
-                path_loss: self.path_loss,
+                uarfcndl: self.uarfcndl
+                ,
+                psc: self.psc
+                ,
+                utran_cid: self.utran_cid
+                ,
+                rscp: self.rscp
+                ,
+                path_loss: self.path_loss
+                ,
             }
         }
     }
+    
+    
 }
 impl WcdmaNmrObj {
     /// Creates a new builder-style object to manufacture [`WcdmaNmrObj`](crate::model::WcdmaNmrObj).
@@ -12705,7 +12046,7 @@ impl WcdmaNmrObj {
 /// <p>WCDMA local identification (local ID) information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WcdmaLocalId {
+pub struct WcdmaLocalId  {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     #[doc(hidden)]
     pub uarfcndl: std::option::Option<i32>,
@@ -12725,7 +12066,7 @@ impl WcdmaLocalId {
 }
 /// See [`WcdmaLocalId`](crate::model::WcdmaLocalId).
 pub mod wcdma_local_id {
-
+    
     /// A builder for [`WcdmaLocalId`](crate::model::WcdmaLocalId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12740,8 +12081,7 @@ pub mod wcdma_local_id {
         }
         /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
         pub fn set_uarfcndl(mut self, input: std::option::Option<i32>) -> Self {
-            self.uarfcndl = input;
-            self
+            self.uarfcndl = input; self
         }
         /// <p>Primary Scrambling Code.</p>
         pub fn psc(mut self, input: i32) -> Self {
@@ -12750,17 +12090,20 @@ pub mod wcdma_local_id {
         }
         /// <p>Primary Scrambling Code.</p>
         pub fn set_psc(mut self, input: std::option::Option<i32>) -> Self {
-            self.psc = input;
-            self
+            self.psc = input; self
         }
         /// Consumes the builder and constructs a [`WcdmaLocalId`](crate::model::WcdmaLocalId).
         pub fn build(self) -> crate::model::WcdmaLocalId {
             crate::model::WcdmaLocalId {
-                uarfcndl: self.uarfcndl,
-                psc: self.psc,
+                uarfcndl: self.uarfcndl
+                ,
+                psc: self.psc
+                ,
             }
         }
     }
+    
+    
 }
 impl WcdmaLocalId {
     /// Creates a new builder-style object to manufacture [`WcdmaLocalId`](crate::model::WcdmaLocalId).
@@ -12772,7 +12115,7 @@ impl WcdmaLocalId {
 /// <p>GSM object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GsmObj {
+pub struct GsmObj  {
     /// <p>Mobile Country Code.</p>
     #[doc(hidden)]
     pub mcc: std::option::Option<i32>,
@@ -12816,7 +12159,7 @@ impl GsmObj {
         self.geran_cid
     }
     /// <p>GSM local identification (local ID) information.</p>
-    pub fn gsm_local_id(&self) -> std::option::Option<&crate::model::GsmLocalId> {
+    pub fn gsm_local_id(&self) -> std::option::Option<& crate::model::GsmLocalId> {
         self.gsm_local_id.as_ref()
     }
     /// <p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>
@@ -12828,13 +12171,13 @@ impl GsmObj {
         self.rx_level
     }
     /// <p>GSM object for network measurement reports.</p>
-    pub fn gsm_nmr(&self) -> std::option::Option<&[crate::model::GsmNmrObj]> {
+    pub fn gsm_nmr(&self) -> std::option::Option<& [crate::model::GsmNmrObj]> {
         self.gsm_nmr.as_deref()
     }
 }
 /// See [`GsmObj`](crate::model::GsmObj).
 pub mod gsm_obj {
-
+    
     /// A builder for [`GsmObj`](crate::model::GsmObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12855,8 +12198,7 @@ pub mod gsm_obj {
         }
         /// <p>Mobile Country Code.</p>
         pub fn set_mcc(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcc = input;
-            self
+            self.mcc = input; self
         }
         /// <p>Mobile Network Code.</p>
         pub fn mnc(mut self, input: i32) -> Self {
@@ -12865,8 +12207,7 @@ pub mod gsm_obj {
         }
         /// <p>Mobile Network Code.</p>
         pub fn set_mnc(mut self, input: std::option::Option<i32>) -> Self {
-            self.mnc = input;
-            self
+            self.mnc = input; self
         }
         /// <p>Location area code.</p>
         pub fn lac(mut self, input: i32) -> Self {
@@ -12875,8 +12216,7 @@ pub mod gsm_obj {
         }
         /// <p>Location area code.</p>
         pub fn set_lac(mut self, input: std::option::Option<i32>) -> Self {
-            self.lac = input;
-            self
+            self.lac = input; self
         }
         /// <p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>
         pub fn geran_cid(mut self, input: i32) -> Self {
@@ -12885,8 +12225,7 @@ pub mod gsm_obj {
         }
         /// <p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>
         pub fn set_geran_cid(mut self, input: std::option::Option<i32>) -> Self {
-            self.geran_cid = input;
-            self
+            self.geran_cid = input; self
         }
         /// <p>GSM local identification (local ID) information.</p>
         pub fn gsm_local_id(mut self, input: crate::model::GsmLocalId) -> Self {
@@ -12894,12 +12233,8 @@ pub mod gsm_obj {
             self
         }
         /// <p>GSM local identification (local ID) information.</p>
-        pub fn set_gsm_local_id(
-            mut self,
-            input: std::option::Option<crate::model::GsmLocalId>,
-        ) -> Self {
-            self.gsm_local_id = input;
-            self
+        pub fn set_gsm_local_id(mut self, input: std::option::Option<crate::model::GsmLocalId>) -> Self {
+            self.gsm_local_id = input; self
         }
         /// <p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>
         pub fn gsm_timing_advance(mut self, input: i32) -> Self {
@@ -12908,8 +12243,7 @@ pub mod gsm_obj {
         }
         /// <p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>
         pub fn set_gsm_timing_advance(mut self, input: std::option::Option<i32>) -> Self {
-            self.gsm_timing_advance = input;
-            self
+            self.gsm_timing_advance = input; self
         }
         /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
         pub fn rx_level(mut self, input: i32) -> Self {
@@ -12918,8 +12252,7 @@ pub mod gsm_obj {
         }
         /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
         pub fn set_rx_level(mut self, input: std::option::Option<i32>) -> Self {
-            self.rx_level = input;
-            self
+            self.rx_level = input; self
         }
         /// Appends an item to `gsm_nmr`.
         ///
@@ -12928,32 +12261,38 @@ pub mod gsm_obj {
         /// <p>GSM object for network measurement reports.</p>
         pub fn gsm_nmr(mut self, input: crate::model::GsmNmrObj) -> Self {
             let mut v = self.gsm_nmr.unwrap_or_default();
-            v.push(input);
-            self.gsm_nmr = Some(v);
-            self
+                            v.push(input);
+                            self.gsm_nmr = Some(v);
+                            self
         }
         /// <p>GSM object for network measurement reports.</p>
-        pub fn set_gsm_nmr(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GsmNmrObj>>,
-        ) -> Self {
-            self.gsm_nmr = input;
-            self
+        pub fn set_gsm_nmr(mut self, input: std::option::Option<std::vec::Vec<crate::model::GsmNmrObj>>) -> Self {
+            self.gsm_nmr = input; self
         }
         /// Consumes the builder and constructs a [`GsmObj`](crate::model::GsmObj).
         pub fn build(self) -> crate::model::GsmObj {
             crate::model::GsmObj {
-                mcc: self.mcc,
-                mnc: self.mnc,
-                lac: self.lac,
-                geran_cid: self.geran_cid,
-                gsm_local_id: self.gsm_local_id,
-                gsm_timing_advance: self.gsm_timing_advance,
-                rx_level: self.rx_level,
-                gsm_nmr: self.gsm_nmr,
+                mcc: self.mcc
+                ,
+                mnc: self.mnc
+                ,
+                lac: self.lac
+                ,
+                geran_cid: self.geran_cid
+                ,
+                gsm_local_id: self.gsm_local_id
+                ,
+                gsm_timing_advance: self.gsm_timing_advance
+                ,
+                rx_level: self.rx_level
+                ,
+                gsm_nmr: self.gsm_nmr
+                ,
             }
         }
     }
+    
+    
 }
 impl GsmObj {
     /// Creates a new builder-style object to manufacture [`GsmObj`](crate::model::GsmObj).
@@ -12965,7 +12304,7 @@ impl GsmObj {
 /// <p>GSM object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GsmNmrObj {
+pub struct GsmNmrObj  {
     /// <p>GSM base station identity code (BSIC).</p>
     #[doc(hidden)]
     pub bsic: std::option::Option<i32>,
@@ -12993,13 +12332,13 @@ impl GsmNmrObj {
         self.rx_level
     }
     /// <p>Global identity information of the GSM object.</p>
-    pub fn global_identity(&self) -> std::option::Option<&crate::model::GlobalIdentity> {
+    pub fn global_identity(&self) -> std::option::Option<& crate::model::GlobalIdentity> {
         self.global_identity.as_ref()
     }
 }
 /// See [`GsmNmrObj`](crate::model::GsmNmrObj).
 pub mod gsm_nmr_obj {
-
+    
     /// A builder for [`GsmNmrObj`](crate::model::GsmNmrObj).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13016,8 +12355,7 @@ pub mod gsm_nmr_obj {
         }
         /// <p>GSM base station identity code (BSIC).</p>
         pub fn set_bsic(mut self, input: std::option::Option<i32>) -> Self {
-            self.bsic = input;
-            self
+            self.bsic = input; self
         }
         /// <p>GSM broadcast control channel.</p>
         pub fn bcch(mut self, input: i32) -> Self {
@@ -13026,8 +12364,7 @@ pub mod gsm_nmr_obj {
         }
         /// <p>GSM broadcast control channel.</p>
         pub fn set_bcch(mut self, input: std::option::Option<i32>) -> Self {
-            self.bcch = input;
-            self
+            self.bcch = input; self
         }
         /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
         pub fn rx_level(mut self, input: i32) -> Self {
@@ -13036,8 +12373,7 @@ pub mod gsm_nmr_obj {
         }
         /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
         pub fn set_rx_level(mut self, input: std::option::Option<i32>) -> Self {
-            self.rx_level = input;
-            self
+            self.rx_level = input; self
         }
         /// <p>Global identity information of the GSM object.</p>
         pub fn global_identity(mut self, input: crate::model::GlobalIdentity) -> Self {
@@ -13045,23 +12381,25 @@ pub mod gsm_nmr_obj {
             self
         }
         /// <p>Global identity information of the GSM object.</p>
-        pub fn set_global_identity(
-            mut self,
-            input: std::option::Option<crate::model::GlobalIdentity>,
-        ) -> Self {
-            self.global_identity = input;
-            self
+        pub fn set_global_identity(mut self, input: std::option::Option<crate::model::GlobalIdentity>) -> Self {
+            self.global_identity = input; self
         }
         /// Consumes the builder and constructs a [`GsmNmrObj`](crate::model::GsmNmrObj).
         pub fn build(self) -> crate::model::GsmNmrObj {
             crate::model::GsmNmrObj {
-                bsic: self.bsic,
-                bcch: self.bcch,
-                rx_level: self.rx_level,
-                global_identity: self.global_identity,
+                bsic: self.bsic
+                ,
+                bcch: self.bcch
+                ,
+                rx_level: self.rx_level
+                ,
+                global_identity: self.global_identity
+                ,
             }
         }
     }
+    
+    
 }
 impl GsmNmrObj {
     /// Creates a new builder-style object to manufacture [`GsmNmrObj`](crate::model::GsmNmrObj).
@@ -13073,7 +12411,7 @@ impl GsmNmrObj {
 /// <p>Global identity information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlobalIdentity {
+pub struct GlobalIdentity  {
     /// <p>Location area code of the global identity.</p>
     #[doc(hidden)]
     pub lac: std::option::Option<i32>,
@@ -13093,7 +12431,7 @@ impl GlobalIdentity {
 }
 /// See [`GlobalIdentity`](crate::model::GlobalIdentity).
 pub mod global_identity {
-
+    
     /// A builder for [`GlobalIdentity`](crate::model::GlobalIdentity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13108,8 +12446,7 @@ pub mod global_identity {
         }
         /// <p>Location area code of the global identity.</p>
         pub fn set_lac(mut self, input: std::option::Option<i32>) -> Self {
-            self.lac = input;
-            self
+            self.lac = input; self
         }
         /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
         pub fn geran_cid(mut self, input: i32) -> Self {
@@ -13118,17 +12455,20 @@ pub mod global_identity {
         }
         /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
         pub fn set_geran_cid(mut self, input: std::option::Option<i32>) -> Self {
-            self.geran_cid = input;
-            self
+            self.geran_cid = input; self
         }
         /// Consumes the builder and constructs a [`GlobalIdentity`](crate::model::GlobalIdentity).
         pub fn build(self) -> crate::model::GlobalIdentity {
             crate::model::GlobalIdentity {
-                lac: self.lac,
-                geran_cid: self.geran_cid,
+                lac: self.lac
+                ,
+                geran_cid: self.geran_cid
+                ,
             }
         }
     }
+    
+    
 }
 impl GlobalIdentity {
     /// Creates a new builder-style object to manufacture [`GlobalIdentity`](crate::model::GlobalIdentity).
@@ -13140,7 +12480,7 @@ impl GlobalIdentity {
 /// <p>GSM local ID information, which corresponds to the local identification parameters of a GSM cell.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GsmLocalId {
+pub struct GsmLocalId  {
     /// <p>GSM base station identity code (BSIC).</p>
     #[doc(hidden)]
     pub bsic: std::option::Option<i32>,
@@ -13160,7 +12500,7 @@ impl GsmLocalId {
 }
 /// See [`GsmLocalId`](crate::model::GsmLocalId).
 pub mod gsm_local_id {
-
+    
     /// A builder for [`GsmLocalId`](crate::model::GsmLocalId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13175,8 +12515,7 @@ pub mod gsm_local_id {
         }
         /// <p>GSM base station identity code (BSIC).</p>
         pub fn set_bsic(mut self, input: std::option::Option<i32>) -> Self {
-            self.bsic = input;
-            self
+            self.bsic = input; self
         }
         /// <p>GSM broadcast control channel.</p>
         pub fn bcch(mut self, input: i32) -> Self {
@@ -13185,17 +12524,20 @@ pub mod gsm_local_id {
         }
         /// <p>GSM broadcast control channel.</p>
         pub fn set_bcch(mut self, input: std::option::Option<i32>) -> Self {
-            self.bcch = input;
-            self
+            self.bcch = input; self
         }
         /// Consumes the builder and constructs a [`GsmLocalId`](crate::model::GsmLocalId).
         pub fn build(self) -> crate::model::GsmLocalId {
             crate::model::GsmLocalId {
-                bsic: self.bsic,
-                bcch: self.bcch,
+                bsic: self.bsic
+                ,
+                bcch: self.bcch
+                ,
             }
         }
     }
+    
+    
 }
 impl GsmLocalId {
     /// Creates a new builder-style object to manufacture [`GsmLocalId`](crate::model::GsmLocalId).
@@ -13207,7 +12549,7 @@ impl GsmLocalId {
 /// <p>Wi-Fi access point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WiFiAccessPoint {
+pub struct WiFiAccessPoint  {
     /// <p>Wi-Fi MAC Address.</p>
     #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
@@ -13217,7 +12559,7 @@ pub struct WiFiAccessPoint {
 }
 impl WiFiAccessPoint {
     /// <p>Wi-Fi MAC Address.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>Recived signal strength of the WLAN measurement data.</p>
@@ -13227,7 +12569,7 @@ impl WiFiAccessPoint {
 }
 /// See [`WiFiAccessPoint`](crate::model::WiFiAccessPoint).
 pub mod wi_fi_access_point {
-
+    
     /// A builder for [`WiFiAccessPoint`](crate::model::WiFiAccessPoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13242,8 +12584,7 @@ pub mod wi_fi_access_point {
         }
         /// <p>Wi-Fi MAC Address.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// <p>Recived signal strength of the WLAN measurement data.</p>
         pub fn rss(mut self, input: i32) -> Self {
@@ -13252,17 +12593,20 @@ pub mod wi_fi_access_point {
         }
         /// <p>Recived signal strength of the WLAN measurement data.</p>
         pub fn set_rss(mut self, input: std::option::Option<i32>) -> Self {
-            self.rss = input;
-            self
+            self.rss = input; self
         }
         /// Consumes the builder and constructs a [`WiFiAccessPoint`](crate::model::WiFiAccessPoint).
         pub fn build(self) -> crate::model::WiFiAccessPoint {
             crate::model::WiFiAccessPoint {
-                mac_address: self.mac_address,
-                rss: self.rss,
+                mac_address: self.mac_address
+                ,
+                rss: self.rss
+                ,
             }
         }
     }
+    
+    
 }
 impl WiFiAccessPoint {
     /// Creates a new builder-style object to manufacture [`WiFiAccessPoint`](crate::model::WiFiAccessPoint).
@@ -13274,7 +12618,7 @@ impl WiFiAccessPoint {
 /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Accuracy {
+pub struct Accuracy  {
     /// <p>The horizontal accuracy of the estimated position, which is the difference between the estimated location and the actual device location.</p>
     #[doc(hidden)]
     pub horizontal_accuracy: std::option::Option<f32>,
@@ -13294,7 +12638,7 @@ impl Accuracy {
 }
 /// See [`Accuracy`](crate::model::Accuracy).
 pub mod accuracy {
-
+    
     /// A builder for [`Accuracy`](crate::model::Accuracy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13309,8 +12653,7 @@ pub mod accuracy {
         }
         /// <p>The horizontal accuracy of the estimated position, which is the difference between the estimated location and the actual device location.</p>
         pub fn set_horizontal_accuracy(mut self, input: std::option::Option<f32>) -> Self {
-            self.horizontal_accuracy = input;
-            self
+            self.horizontal_accuracy = input; self
         }
         /// <p>The vertical accuracy of the estimated position, which is the difference between the estimated altitude and actual device latitude in meters.</p>
         pub fn vertical_accuracy(mut self, input: f32) -> Self {
@@ -13319,17 +12662,20 @@ pub mod accuracy {
         }
         /// <p>The vertical accuracy of the estimated position, which is the difference between the estimated altitude and actual device latitude in meters.</p>
         pub fn set_vertical_accuracy(mut self, input: std::option::Option<f32>) -> Self {
-            self.vertical_accuracy = input;
-            self
+            self.vertical_accuracy = input; self
         }
         /// Consumes the builder and constructs a [`Accuracy`](crate::model::Accuracy).
         pub fn build(self) -> crate::model::Accuracy {
             crate::model::Accuracy {
-                horizontal_accuracy: self.horizontal_accuracy,
-                vertical_accuracy: self.vertical_accuracy,
+                horizontal_accuracy: self.horizontal_accuracy
+                ,
+                vertical_accuracy: self.vertical_accuracy
+                ,
             }
         }
     }
+    
+    
 }
 impl Accuracy {
     /// Creates a new builder-style object to manufacture [`Accuracy`](crate::model::Accuracy).
@@ -13341,7 +12687,7 @@ impl Accuracy {
 /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanMulticastGet {
+pub struct LoRaWanMulticastGet  {
     /// <p>Supported RfRegions</p>
     #[doc(hidden)]
     pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
@@ -13357,11 +12703,11 @@ pub struct LoRaWanMulticastGet {
 }
 impl LoRaWanMulticastGet {
     /// <p>Supported RfRegions</p>
-    pub fn rf_region(&self) -> std::option::Option<&crate::model::SupportedRfRegion> {
+    pub fn rf_region(&self) -> std::option::Option<& crate::model::SupportedRfRegion> {
         self.rf_region.as_ref()
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
-    pub fn dl_class(&self) -> std::option::Option<&crate::model::DlClass> {
+    pub fn dl_class(&self) -> std::option::Option<& crate::model::DlClass> {
         self.dl_class.as_ref()
     }
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
@@ -13375,7 +12721,7 @@ impl LoRaWanMulticastGet {
 }
 /// See [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
 pub mod lo_ra_wan_multicast_get {
-
+    
     /// A builder for [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13391,12 +12737,8 @@ pub mod lo_ra_wan_multicast_get {
             self
         }
         /// <p>Supported RfRegions</p>
-        pub fn set_rf_region(
-            mut self,
-            input: std::option::Option<crate::model::SupportedRfRegion>,
-        ) -> Self {
-            self.rf_region = input;
-            self
+        pub fn set_rf_region(mut self, input: std::option::Option<crate::model::SupportedRfRegion>) -> Self {
+            self.rf_region = input; self
         }
         /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
         pub fn dl_class(mut self, input: crate::model::DlClass) -> Self {
@@ -13405,8 +12747,7 @@ pub mod lo_ra_wan_multicast_get {
         }
         /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
         pub fn set_dl_class(mut self, input: std::option::Option<crate::model::DlClass>) -> Self {
-            self.dl_class = input;
-            self
+            self.dl_class = input; self
         }
         /// <p>Number of devices that are requested to be associated with the multicast group.</p>
         pub fn number_of_devices_requested(mut self, input: i32) -> Self {
@@ -13415,8 +12756,7 @@ pub mod lo_ra_wan_multicast_get {
         }
         /// <p>Number of devices that are requested to be associated with the multicast group.</p>
         pub fn set_number_of_devices_requested(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_devices_requested = input;
-            self
+            self.number_of_devices_requested = input; self
         }
         /// <p>Number of devices that are associated to the multicast group.</p>
         pub fn number_of_devices_in_group(mut self, input: i32) -> Self {
@@ -13425,19 +12765,24 @@ pub mod lo_ra_wan_multicast_get {
         }
         /// <p>Number of devices that are associated to the multicast group.</p>
         pub fn set_number_of_devices_in_group(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_devices_in_group = input;
-            self
+            self.number_of_devices_in_group = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
         pub fn build(self) -> crate::model::LoRaWanMulticastGet {
             crate::model::LoRaWanMulticastGet {
-                rf_region: self.rf_region,
-                dl_class: self.dl_class,
-                number_of_devices_requested: self.number_of_devices_requested,
-                number_of_devices_in_group: self.number_of_devices_in_group,
+                rf_region: self.rf_region
+                ,
+                dl_class: self.dl_class
+                ,
+                number_of_devices_requested: self.number_of_devices_requested
+                ,
+                number_of_devices_in_group: self.number_of_devices_in_group
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanMulticastGet {
     /// Creates a new builder-style object to manufacture [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
@@ -13449,7 +12794,7 @@ impl LoRaWanMulticastGet {
 /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanFuotaTaskGetInfo {
+pub struct LoRaWanFuotaTaskGetInfo  {
     /// <p>The frequency band (RFRegion) value.</p>
     #[doc(hidden)]
     pub rf_region: std::option::Option<std::string::String>,
@@ -13459,17 +12804,17 @@ pub struct LoRaWanFuotaTaskGetInfo {
 }
 impl LoRaWanFuotaTaskGetInfo {
     /// <p>The frequency band (RFRegion) value.</p>
-    pub fn rf_region(&self) -> std::option::Option<&str> {
+    pub fn rf_region(&self) -> std::option::Option<& str> {
         self.rf_region.as_deref()
     }
     /// <p>Start time of a FUOTA task.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
 /// See [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
 pub mod lo_ra_wan_fuota_task_get_info {
-
+    
     /// A builder for [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13484,8 +12829,7 @@ pub mod lo_ra_wan_fuota_task_get_info {
         }
         /// <p>The frequency band (RFRegion) value.</p>
         pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rf_region = input;
-            self
+            self.rf_region = input; self
         }
         /// <p>Start time of a FUOTA task.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13493,21 +12837,21 @@ pub mod lo_ra_wan_fuota_task_get_info {
             self
         }
         /// <p>Start time of a FUOTA task.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
         pub fn build(self) -> crate::model::LoRaWanFuotaTaskGetInfo {
             crate::model::LoRaWanFuotaTaskGetInfo {
-                rf_region: self.rf_region,
-                start_time: self.start_time,
+                rf_region: self.rf_region
+                ,
+                start_time: self.start_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanFuotaTaskGetInfo {
     /// Creates a new builder-style object to manufacture [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
@@ -13522,9 +12866,9 @@ impl LoRaWanFuotaTaskGetInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fuotataskstatus = unimplemented!();
 /// match fuotataskstatus {
@@ -13549,22 +12893,14 @@ impl LoRaWanFuotaTaskGetInfo {
 /// Specifically, when `fuotataskstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FuotaTaskStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The status of a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FuotaTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     DeleteWaiting,
@@ -13577,7 +12913,7 @@ pub enum FuotaTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FuotaTaskStatus {
     fn from(s: &str) -> Self {
@@ -13587,17 +12923,17 @@ impl std::convert::From<&str> for FuotaTaskStatus {
             "FuotaSession_Waiting" => FuotaTaskStatus::FuotaSessionWaiting,
             "In_FuotaSession" => FuotaTaskStatus::InFuotaSession,
             "Pending" => FuotaTaskStatus::Pending,
-            other => FuotaTaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FuotaTaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FuotaTaskStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FuotaTaskStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FuotaTaskStatus::from(s))
+                }
+            }
 impl FuotaTaskStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -13607,17 +12943,13 @@ impl FuotaTaskStatus {
             FuotaTaskStatus::FuotaSessionWaiting => "FuotaSession_Waiting",
             FuotaTaskStatus::InFuotaSession => "In_FuotaSession",
             FuotaTaskStatus::Pending => "Pending",
-            FuotaTaskStatus::Unknown(value) => value.as_str(),
+            FuotaTaskStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Delete_Waiting",
-            "FuotaDone",
-            "FuotaSession_Waiting",
-            "In_FuotaSession",
-            "Pending",
+            "Delete_Waiting", "FuotaDone", "FuotaSession_Waiting", "In_FuotaSession", "Pending"
         ]
     }
 }
@@ -13630,7 +12962,7 @@ impl AsRef<str> for FuotaTaskStatus {
 /// <p>LoRaWANDeviceProfile object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanDeviceProfile {
+pub struct LoRaWanDeviceProfile  {
     /// <p>The SupportsClassB value.</p>
     #[doc(hidden)]
     pub supports_class_b: bool,
@@ -13719,11 +13051,11 @@ impl LoRaWanDeviceProfile {
         self.class_c_timeout
     }
     /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
-    pub fn mac_version(&self) -> std::option::Option<&str> {
+    pub fn mac_version(&self) -> std::option::Option<& str> {
         self.mac_version.as_deref()
     }
     /// <p>The version of regional parameters.</p>
-    pub fn reg_params_revision(&self) -> std::option::Option<&str> {
+    pub fn reg_params_revision(&self) -> std::option::Option<& str> {
         self.reg_params_revision.as_deref()
     }
     /// <p>The RXDelay1 value.</p>
@@ -13743,7 +13075,7 @@ impl LoRaWanDeviceProfile {
         self.rx_freq2
     }
     /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
-    pub fn factory_preset_freqs_list(&self) -> std::option::Option<&[i32]> {
+    pub fn factory_preset_freqs_list(&self) -> std::option::Option<& [i32]> {
         self.factory_preset_freqs_list.as_deref()
     }
     /// <p>The MaxEIRP value.</p>
@@ -13755,7 +13087,7 @@ impl LoRaWanDeviceProfile {
         self.max_duty_cycle
     }
     /// <p>The frequency band (RFRegion) value.</p>
-    pub fn rf_region(&self) -> std::option::Option<&str> {
+    pub fn rf_region(&self) -> std::option::Option<& str> {
         self.rf_region.as_deref()
     }
     /// <p>The SupportsJoin value.</p>
@@ -13769,7 +13101,7 @@ impl LoRaWanDeviceProfile {
 }
 /// See [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
 pub mod lo_ra_wan_device_profile {
-
+    
     /// A builder for [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13801,8 +13133,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The SupportsClassB value.</p>
         pub fn set_supports_class_b(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_class_b = input;
-            self
+            self.supports_class_b = input; self
         }
         /// <p>The ClassBTimeout value.</p>
         pub fn class_b_timeout(mut self, input: i32) -> Self {
@@ -13811,8 +13142,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The ClassBTimeout value.</p>
         pub fn set_class_b_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.class_b_timeout = input;
-            self
+            self.class_b_timeout = input; self
         }
         /// <p>The PingSlotPeriod value.</p>
         pub fn ping_slot_period(mut self, input: i32) -> Self {
@@ -13821,8 +13151,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The PingSlotPeriod value.</p>
         pub fn set_ping_slot_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.ping_slot_period = input;
-            self
+            self.ping_slot_period = input; self
         }
         /// <p>The PingSlotDR value.</p>
         pub fn ping_slot_dr(mut self, input: i32) -> Self {
@@ -13831,8 +13160,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The PingSlotDR value.</p>
         pub fn set_ping_slot_dr(mut self, input: std::option::Option<i32>) -> Self {
-            self.ping_slot_dr = input;
-            self
+            self.ping_slot_dr = input; self
         }
         /// <p>The PingSlotFreq value.</p>
         pub fn ping_slot_freq(mut self, input: i32) -> Self {
@@ -13841,8 +13169,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The PingSlotFreq value.</p>
         pub fn set_ping_slot_freq(mut self, input: std::option::Option<i32>) -> Self {
-            self.ping_slot_freq = input;
-            self
+            self.ping_slot_freq = input; self
         }
         /// <p>The SupportsClassC value.</p>
         pub fn supports_class_c(mut self, input: bool) -> Self {
@@ -13851,8 +13178,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The SupportsClassC value.</p>
         pub fn set_supports_class_c(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_class_c = input;
-            self
+            self.supports_class_c = input; self
         }
         /// <p>The ClassCTimeout value.</p>
         pub fn class_c_timeout(mut self, input: i32) -> Self {
@@ -13861,8 +13187,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The ClassCTimeout value.</p>
         pub fn set_class_c_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.class_c_timeout = input;
-            self
+            self.class_c_timeout = input; self
         }
         /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
         pub fn mac_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13871,8 +13196,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
         pub fn set_mac_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_version = input;
-            self
+            self.mac_version = input; self
         }
         /// <p>The version of regional parameters.</p>
         pub fn reg_params_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13880,12 +13204,8 @@ pub mod lo_ra_wan_device_profile {
             self
         }
         /// <p>The version of regional parameters.</p>
-        pub fn set_reg_params_revision(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reg_params_revision = input;
-            self
+        pub fn set_reg_params_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reg_params_revision = input; self
         }
         /// <p>The RXDelay1 value.</p>
         pub fn rx_delay1(mut self, input: i32) -> Self {
@@ -13894,8 +13214,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The RXDelay1 value.</p>
         pub fn set_rx_delay1(mut self, input: std::option::Option<i32>) -> Self {
-            self.rx_delay1 = input;
-            self
+            self.rx_delay1 = input; self
         }
         /// <p>The RXDROffset1 value.</p>
         pub fn rx_dr_offset1(mut self, input: i32) -> Self {
@@ -13904,8 +13223,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The RXDROffset1 value.</p>
         pub fn set_rx_dr_offset1(mut self, input: std::option::Option<i32>) -> Self {
-            self.rx_dr_offset1 = input;
-            self
+            self.rx_dr_offset1 = input; self
         }
         /// <p>The RXDataRate2 value.</p>
         pub fn rx_data_rate2(mut self, input: i32) -> Self {
@@ -13914,8 +13232,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The RXDataRate2 value.</p>
         pub fn set_rx_data_rate2(mut self, input: std::option::Option<i32>) -> Self {
-            self.rx_data_rate2 = input;
-            self
+            self.rx_data_rate2 = input; self
         }
         /// <p>The RXFreq2 value.</p>
         pub fn rx_freq2(mut self, input: i32) -> Self {
@@ -13924,8 +13241,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The RXFreq2 value.</p>
         pub fn set_rx_freq2(mut self, input: std::option::Option<i32>) -> Self {
-            self.rx_freq2 = input;
-            self
+            self.rx_freq2 = input; self
         }
         /// Appends an item to `factory_preset_freqs_list`.
         ///
@@ -13934,17 +13250,13 @@ pub mod lo_ra_wan_device_profile {
         /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
         pub fn factory_preset_freqs_list(mut self, input: i32) -> Self {
             let mut v = self.factory_preset_freqs_list.unwrap_or_default();
-            v.push(input);
-            self.factory_preset_freqs_list = Some(v);
-            self
+                            v.push(input);
+                            self.factory_preset_freqs_list = Some(v);
+                            self
         }
         /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
-        pub fn set_factory_preset_freqs_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i32>>,
-        ) -> Self {
-            self.factory_preset_freqs_list = input;
-            self
+        pub fn set_factory_preset_freqs_list(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.factory_preset_freqs_list = input; self
         }
         /// <p>The MaxEIRP value.</p>
         pub fn max_eirp(mut self, input: i32) -> Self {
@@ -13953,8 +13265,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The MaxEIRP value.</p>
         pub fn set_max_eirp(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_eirp = input;
-            self
+            self.max_eirp = input; self
         }
         /// <p>The MaxDutyCycle value.</p>
         pub fn max_duty_cycle(mut self, input: i32) -> Self {
@@ -13963,8 +13274,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The MaxDutyCycle value.</p>
         pub fn set_max_duty_cycle(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_duty_cycle = input;
-            self
+            self.max_duty_cycle = input; self
         }
         /// <p>The frequency band (RFRegion) value.</p>
         pub fn rf_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13973,8 +13283,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The frequency band (RFRegion) value.</p>
         pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rf_region = input;
-            self
+            self.rf_region = input; self
         }
         /// <p>The SupportsJoin value.</p>
         pub fn supports_join(mut self, input: bool) -> Self {
@@ -13983,8 +13292,7 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The SupportsJoin value.</p>
         pub fn set_supports_join(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_join = input;
-            self
+            self.supports_join = input; self
         }
         /// <p>The Supports32BitFCnt value.</p>
         pub fn supports32_bit_f_cnt(mut self, input: bool) -> Self {
@@ -13993,34 +13301,57 @@ pub mod lo_ra_wan_device_profile {
         }
         /// <p>The Supports32BitFCnt value.</p>
         pub fn set_supports32_bit_f_cnt(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports32_bit_f_cnt = input;
-            self
+            self.supports32_bit_f_cnt = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
         pub fn build(self) -> crate::model::LoRaWanDeviceProfile {
             crate::model::LoRaWanDeviceProfile {
-                supports_class_b: self.supports_class_b.unwrap_or_default(),
-                class_b_timeout: self.class_b_timeout,
-                ping_slot_period: self.ping_slot_period,
-                ping_slot_dr: self.ping_slot_dr,
-                ping_slot_freq: self.ping_slot_freq,
-                supports_class_c: self.supports_class_c.unwrap_or_default(),
-                class_c_timeout: self.class_c_timeout,
-                mac_version: self.mac_version,
-                reg_params_revision: self.reg_params_revision,
-                rx_delay1: self.rx_delay1,
-                rx_dr_offset1: self.rx_dr_offset1,
-                rx_data_rate2: self.rx_data_rate2,
-                rx_freq2: self.rx_freq2,
-                factory_preset_freqs_list: self.factory_preset_freqs_list,
-                max_eirp: self.max_eirp,
-                max_duty_cycle: self.max_duty_cycle,
-                rf_region: self.rf_region,
-                supports_join: self.supports_join,
-                supports32_bit_f_cnt: self.supports32_bit_f_cnt.unwrap_or_default(),
+                supports_class_b: self.supports_class_b
+                    .unwrap_or_default()
+                ,
+                class_b_timeout: self.class_b_timeout
+                ,
+                ping_slot_period: self.ping_slot_period
+                ,
+                ping_slot_dr: self.ping_slot_dr
+                ,
+                ping_slot_freq: self.ping_slot_freq
+                ,
+                supports_class_c: self.supports_class_c
+                    .unwrap_or_default()
+                ,
+                class_c_timeout: self.class_c_timeout
+                ,
+                mac_version: self.mac_version
+                ,
+                reg_params_revision: self.reg_params_revision
+                ,
+                rx_delay1: self.rx_delay1
+                ,
+                rx_dr_offset1: self.rx_dr_offset1
+                ,
+                rx_data_rate2: self.rx_data_rate2
+                ,
+                rx_freq2: self.rx_freq2
+                ,
+                factory_preset_freqs_list: self.factory_preset_freqs_list
+                ,
+                max_eirp: self.max_eirp
+                ,
+                max_duty_cycle: self.max_duty_cycle
+                ,
+                rf_region: self.rf_region
+                ,
+                supports_join: self.supports_join
+                ,
+                supports32_bit_f_cnt: self.supports32_bit_f_cnt
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanDeviceProfile {
     /// Creates a new builder-style object to manufacture [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
@@ -14032,7 +13363,7 @@ impl LoRaWanDeviceProfile {
 /// <p>LoRaWANServiceProfile object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanServiceProfile {
+pub struct LoRaWanServiceProfile  {
     /// <p>The AddGWMetaData value.</p>
     #[doc(hidden)]
     pub add_gw_metadata: bool,
@@ -14059,7 +13390,7 @@ impl LoRaWanServiceProfile {
 }
 /// See [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
 pub mod lo_ra_wan_service_profile {
-
+    
     /// A builder for [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14075,8 +13406,7 @@ pub mod lo_ra_wan_service_profile {
         }
         /// <p>The AddGWMetaData value.</p>
         pub fn set_add_gw_metadata(mut self, input: std::option::Option<bool>) -> Self {
-            self.add_gw_metadata = input;
-            self
+            self.add_gw_metadata = input; self
         }
         /// <p>The DrMin value.</p>
         pub fn dr_min(mut self, input: i32) -> Self {
@@ -14085,8 +13415,7 @@ pub mod lo_ra_wan_service_profile {
         }
         /// <p>The DrMin value.</p>
         pub fn set_dr_min(mut self, input: std::option::Option<i32>) -> Self {
-            self.dr_min = input;
-            self
+            self.dr_min = input; self
         }
         /// <p>The DrMax value.</p>
         pub fn dr_max(mut self, input: i32) -> Self {
@@ -14095,18 +13424,23 @@ pub mod lo_ra_wan_service_profile {
         }
         /// <p>The DrMax value.</p>
         pub fn set_dr_max(mut self, input: std::option::Option<i32>) -> Self {
-            self.dr_max = input;
-            self
+            self.dr_max = input; self
         }
         /// Consumes the builder and constructs a [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
         pub fn build(self) -> crate::model::LoRaWanServiceProfile {
             crate::model::LoRaWanServiceProfile {
-                add_gw_metadata: self.add_gw_metadata.unwrap_or_default(),
-                dr_min: self.dr_min,
-                dr_max: self.dr_max,
+                add_gw_metadata: self.add_gw_metadata
+                    .unwrap_or_default()
+                ,
+                dr_min: self.dr_min
+                ,
+                dr_max: self.dr_max
+                ,
             }
         }
     }
+    
+    
 }
 impl LoRaWanServiceProfile {
     /// Creates a new builder-style object to manufacture [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
@@ -14118,7 +13452,7 @@ impl LoRaWanServiceProfile {
 /// <p>Information about a Sidewalk account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SidewalkAccountInfo {
+pub struct SidewalkAccountInfo  {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
@@ -14128,15 +13462,15 @@ pub struct SidewalkAccountInfo {
 }
 impl SidewalkAccountInfo {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<&str> {
+    pub fn amazon_id(&self) -> std::option::Option<& str> {
         self.amazon_id.as_deref()
     }
     /// <p>The Sidewalk application server private key.</p>
-    pub fn app_server_private_key(&self) -> std::option::Option<&str> {
+    pub fn app_server_private_key(&self) -> std::option::Option<& str> {
         self.app_server_private_key.as_deref()
     }
 }
-impl std::fmt::Debug for SidewalkAccountInfo {
+impl  std::fmt::Debug for SidewalkAccountInfo  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkAccountInfo");
         formatter.field("amazon_id", &self.amazon_id);
@@ -14146,7 +13480,7 @@ impl std::fmt::Debug for SidewalkAccountInfo {
 }
 /// See [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
 pub mod sidewalk_account_info {
-
+    
     /// A builder for [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -14161,8 +13495,7 @@ pub mod sidewalk_account_info {
         }
         /// <p>The Sidewalk Amazon ID.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.amazon_id = input;
-            self
+            self.amazon_id = input; self
         }
         /// <p>The Sidewalk application server private key.</p>
         pub fn app_server_private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14170,18 +13503,16 @@ pub mod sidewalk_account_info {
             self
         }
         /// <p>The Sidewalk application server private key.</p>
-        pub fn set_app_server_private_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_server_private_key = input;
-            self
+        pub fn set_app_server_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_server_private_key = input; self
         }
         /// Consumes the builder and constructs a [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
         pub fn build(self) -> crate::model::SidewalkAccountInfo {
             crate::model::SidewalkAccountInfo {
-                amazon_id: self.amazon_id,
-                app_server_private_key: self.app_server_private_key,
+                amazon_id: self.amazon_id
+                ,
+                app_server_private_key: self.app_server_private_key
+                ,
             }
         }
     }
@@ -14193,6 +13524,8 @@ pub mod sidewalk_account_info {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SidewalkAccountInfo {
     /// Creates a new builder-style object to manufacture [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
@@ -14200,3 +13533,4 @@ impl SidewalkAccountInfo {
         crate::model::sidewalk_account_info::Builder::default()
     }
 }
+

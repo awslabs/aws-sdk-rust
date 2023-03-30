@@ -3,7 +3,7 @@
 /// <p>The details of a schedule group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduleGroupSummary {
+pub struct ScheduleGroupSummary  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,29 +22,29 @@ pub struct ScheduleGroupSummary {
 }
 impl ScheduleGroupSummary {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the schedule group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the state of the schedule group.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ScheduleGroupState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ScheduleGroupState> {
         self.state.as_ref()
     }
     /// <p>The time at which the schedule group was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time at which the schedule group was last modified.</p>
-    pub fn last_modification_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_date.as_ref()
     }
 }
 /// See [`ScheduleGroupSummary`](crate::model::ScheduleGroupSummary).
 pub mod schedule_group_summary {
-
+    
     /// A builder for [`ScheduleGroupSummary`](crate::model::ScheduleGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -62,8 +62,7 @@ pub mod schedule_group_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the schedule group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +71,7 @@ pub mod schedule_group_summary {
         }
         /// <p>The name of the schedule group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies the state of the schedule group.</p>
         pub fn state(mut self, input: crate::model::ScheduleGroupState) -> Self {
@@ -81,12 +79,8 @@ pub mod schedule_group_summary {
             self
         }
         /// <p>Specifies the state of the schedule group.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleGroupState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ScheduleGroupState>) -> Self {
+            self.state = input; self
         }
         /// <p>The time at which the schedule group was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,12 +88,8 @@ pub mod schedule_group_summary {
             self
         }
         /// <p>The time at which the schedule group was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The time at which the schedule group was last modified.</p>
         pub fn last_modification_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -107,24 +97,27 @@ pub mod schedule_group_summary {
             self
         }
         /// <p>The time at which the schedule group was last modified.</p>
-        pub fn set_last_modification_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_date = input;
-            self
+        pub fn set_last_modification_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_date = input; self
         }
         /// Consumes the builder and constructs a [`ScheduleGroupSummary`](crate::model::ScheduleGroupSummary).
         pub fn build(self) -> crate::model::ScheduleGroupSummary {
             crate::model::ScheduleGroupSummary {
-                arn: self.arn,
-                name: self.name,
-                state: self.state,
-                creation_date: self.creation_date,
-                last_modification_date: self.last_modification_date,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                state: self.state
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modification_date: self.last_modification_date
+                ,
             }
         }
     }
+    
+    
 }
 impl ScheduleGroupSummary {
     /// Creates a new builder-style object to manufacture [`ScheduleGroupSummary`](crate::model::ScheduleGroupSummary).
@@ -139,9 +132,9 @@ impl ScheduleGroupSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let schedulegroupstate = unimplemented!();
 /// match schedulegroupstate {
@@ -163,60 +156,52 @@ impl ScheduleGroupSummary {
 /// Specifically, when `schedulegroupstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScheduleGroupState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScheduleGroupState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScheduleGroupState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ScheduleGroupState::Active,
             "DELETING" => ScheduleGroupState::Deleting,
-            other => {
-                ScheduleGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScheduleGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScheduleGroupState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduleGroupState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScheduleGroupState::from(s))
+                }
+            }
 impl ScheduleGroupState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScheduleGroupState::Active => "ACTIVE",
             ScheduleGroupState::Deleting => "DELETING",
-            ScheduleGroupState::Unknown(value) => value.as_str(),
+            ScheduleGroupState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETING"]
+        &[
+            "ACTIVE", "DELETING"
+        ]
     }
 }
 impl AsRef<str> for ScheduleGroupState {
@@ -228,7 +213,7 @@ impl AsRef<str> for ScheduleGroupState {
 /// <p>Tag to associate with a schedule group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key for the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -238,17 +223,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key for the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value for the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -263,8 +248,7 @@ pub mod tag {
         }
         /// <p>The key for the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value for the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -273,17 +257,20 @@ pub mod tag {
         }
         /// <p>The value for the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -295,7 +282,7 @@ impl Tag {
 /// <p>The details of a schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduleSummary {
+pub struct ScheduleSummary  {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -320,37 +307,37 @@ pub struct ScheduleSummary {
 }
 impl ScheduleSummary {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the schedule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the schedule group associated with this schedule.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>Specifies whether the schedule is enabled or disabled.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ScheduleState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ScheduleState> {
         self.state.as_ref()
     }
     /// <p>The time at which the schedule was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time at which the schedule was last modified.</p>
-    pub fn last_modification_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_date.as_ref()
     }
     /// <p>The schedule's target details.</p>
-    pub fn target(&self) -> std::option::Option<&crate::model::TargetSummary> {
+    pub fn target(&self) -> std::option::Option<& crate::model::TargetSummary> {
         self.target.as_ref()
     }
 }
 /// See [`ScheduleSummary`](crate::model::ScheduleSummary).
 pub mod schedule_summary {
-
+    
     /// A builder for [`ScheduleSummary`](crate::model::ScheduleSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -370,8 +357,7 @@ pub mod schedule_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the schedule.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -380,8 +366,7 @@ pub mod schedule_summary {
         }
         /// <p>The name of the schedule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the schedule group associated with this schedule.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -390,8 +375,7 @@ pub mod schedule_summary {
         }
         /// <p>The name of the schedule group associated with this schedule.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p>Specifies whether the schedule is enabled or disabled.</p>
         pub fn state(mut self, input: crate::model::ScheduleState) -> Self {
@@ -399,12 +383,8 @@ pub mod schedule_summary {
             self
         }
         /// <p>Specifies whether the schedule is enabled or disabled.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ScheduleState>) -> Self {
+            self.state = input; self
         }
         /// <p>The time at which the schedule was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -412,12 +392,8 @@ pub mod schedule_summary {
             self
         }
         /// <p>The time at which the schedule was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The time at which the schedule was last modified.</p>
         pub fn last_modification_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -425,12 +401,8 @@ pub mod schedule_summary {
             self
         }
         /// <p>The time at which the schedule was last modified.</p>
-        pub fn set_last_modification_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_date = input;
-            self
+        pub fn set_last_modification_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_date = input; self
         }
         /// <p>The schedule's target details.</p>
         pub fn target(mut self, input: crate::model::TargetSummary) -> Self {
@@ -438,26 +410,31 @@ pub mod schedule_summary {
             self
         }
         /// <p>The schedule's target details.</p>
-        pub fn set_target(
-            mut self,
-            input: std::option::Option<crate::model::TargetSummary>,
-        ) -> Self {
-            self.target = input;
-            self
+        pub fn set_target(mut self, input: std::option::Option<crate::model::TargetSummary>) -> Self {
+            self.target = input; self
         }
         /// Consumes the builder and constructs a [`ScheduleSummary`](crate::model::ScheduleSummary).
         pub fn build(self) -> crate::model::ScheduleSummary {
             crate::model::ScheduleSummary {
-                arn: self.arn,
-                name: self.name,
-                group_name: self.group_name,
-                state: self.state,
-                creation_date: self.creation_date,
-                last_modification_date: self.last_modification_date,
-                target: self.target,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                group_name: self.group_name
+                ,
+                state: self.state
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modification_date: self.last_modification_date
+                ,
+                target: self.target
+                ,
             }
         }
     }
+    
+    
 }
 impl ScheduleSummary {
     /// Creates a new builder-style object to manufacture [`ScheduleSummary`](crate::model::ScheduleSummary).
@@ -469,20 +446,20 @@ impl ScheduleSummary {
 /// <p>The details of a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetSummary {
+pub struct TargetSummary  {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl TargetSummary {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`TargetSummary`](crate::model::TargetSummary).
 pub mod target_summary {
-
+    
     /// A builder for [`TargetSummary`](crate::model::TargetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -496,14 +473,18 @@ pub mod target_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the target.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`TargetSummary`](crate::model::TargetSummary).
         pub fn build(self) -> crate::model::TargetSummary {
-            crate::model::TargetSummary { arn: self.arn }
+            crate::model::TargetSummary {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl TargetSummary {
     /// Creates a new builder-style object to manufacture [`TargetSummary`](crate::model::TargetSummary).
@@ -518,9 +499,9 @@ impl TargetSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let schedulestate = unimplemented!();
 /// match schedulestate {
@@ -542,58 +523,52 @@ impl TargetSummary {
 /// Specifically, when `schedulestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScheduleState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScheduleState {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScheduleState {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ScheduleState::Disabled,
             "ENABLED" => ScheduleState::Enabled,
-            other => ScheduleState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ScheduleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScheduleState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduleState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScheduleState::from(s))
+                }
+            }
 impl ScheduleState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScheduleState::Disabled => "DISABLED",
             ScheduleState::Enabled => "ENABLED",
-            ScheduleState::Unknown(value) => value.as_str(),
+            ScheduleState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for ScheduleState {
@@ -605,7 +580,7 @@ impl AsRef<str> for ScheduleState {
 /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlexibleTimeWindow {
+pub struct FlexibleTimeWindow  {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::model::FlexibleTimeWindowMode>,
@@ -615,7 +590,7 @@ pub struct FlexibleTimeWindow {
 }
 impl FlexibleTimeWindow {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::model::FlexibleTimeWindowMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::FlexibleTimeWindowMode> {
         self.mode.as_ref()
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
@@ -625,7 +600,7 @@ impl FlexibleTimeWindow {
 }
 /// See [`FlexibleTimeWindow`](crate::model::FlexibleTimeWindow).
 pub mod flexible_time_window {
-
+    
     /// A builder for [`FlexibleTimeWindow`](crate::model::FlexibleTimeWindow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -639,12 +614,8 @@ pub mod flexible_time_window {
             self
         }
         /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-        pub fn set_mode(
-            mut self,
-            input: std::option::Option<crate::model::FlexibleTimeWindowMode>,
-        ) -> Self {
-            self.mode = input;
-            self
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::FlexibleTimeWindowMode>) -> Self {
+            self.mode = input; self
         }
         /// <p>The maximum time window during which a schedule can be invoked.</p>
         pub fn maximum_window_in_minutes(mut self, input: i32) -> Self {
@@ -653,17 +624,20 @@ pub mod flexible_time_window {
         }
         /// <p>The maximum time window during which a schedule can be invoked.</p>
         pub fn set_maximum_window_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_window_in_minutes = input;
-            self
+            self.maximum_window_in_minutes = input; self
         }
         /// Consumes the builder and constructs a [`FlexibleTimeWindow`](crate::model::FlexibleTimeWindow).
         pub fn build(self) -> crate::model::FlexibleTimeWindow {
             crate::model::FlexibleTimeWindow {
-                mode: self.mode,
-                maximum_window_in_minutes: self.maximum_window_in_minutes,
+                mode: self.mode
+                ,
+                maximum_window_in_minutes: self.maximum_window_in_minutes
+                ,
             }
         }
     }
+    
+    
 }
 impl FlexibleTimeWindow {
     /// Creates a new builder-style object to manufacture [`FlexibleTimeWindow`](crate::model::FlexibleTimeWindow).
@@ -678,9 +652,9 @@ impl FlexibleTimeWindow {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let flexibletimewindowmode = unimplemented!();
 /// match flexibletimewindowmode {
@@ -702,60 +676,52 @@ impl FlexibleTimeWindow {
 /// Specifically, when `flexibletimewindowmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FlexibleTimeWindowMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FlexibleTimeWindowMode {
     #[allow(missing_docs)] // documentation missing in model
     Flexible,
     #[allow(missing_docs)] // documentation missing in model
     Off,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FlexibleTimeWindowMode {
     fn from(s: &str) -> Self {
         match s {
             "FLEXIBLE" => FlexibleTimeWindowMode::Flexible,
             "OFF" => FlexibleTimeWindowMode::Off,
-            other => {
-                FlexibleTimeWindowMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FlexibleTimeWindowMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FlexibleTimeWindowMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FlexibleTimeWindowMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FlexibleTimeWindowMode::from(s))
+                }
+            }
 impl FlexibleTimeWindowMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FlexibleTimeWindowMode::Flexible => "FLEXIBLE",
             FlexibleTimeWindowMode::Off => "OFF",
-            FlexibleTimeWindowMode::Unknown(value) => value.as_str(),
+            FlexibleTimeWindowMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FLEXIBLE", "OFF"]
+        &[
+            "FLEXIBLE", "OFF"
+        ]
     }
 }
 impl AsRef<str> for FlexibleTimeWindowMode {
@@ -767,7 +733,7 @@ impl AsRef<str> for FlexibleTimeWindowMode {
 /// <p>The schedule's target. EventBridge Scheduler supports templated target that invoke common API operations, as well as universal targets that you can customize to invoke over 6,000 API operations across more than 270 services. You can only specify one templated or universal target for a schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Target {
+pub struct Target  {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -794,61 +760,56 @@ pub struct Target {
     pub kinesis_parameters: std::option::Option<crate::model::KinesisParameters>,
     /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
     #[doc(hidden)]
-    pub sage_maker_pipeline_parameters:
-        std::option::Option<crate::model::SageMakerPipelineParameters>,
+    pub sage_maker_pipeline_parameters: std::option::Option<crate::model::SageMakerPipelineParameters>,
     /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     #[doc(hidden)]
     pub sqs_parameters: std::option::Option<crate::model::SqsParameters>,
 }
 impl Target {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
-    pub fn retry_policy(&self) -> std::option::Option<&crate::model::RetryPolicy> {
+    pub fn retry_policy(&self) -> std::option::Option<& crate::model::RetryPolicy> {
         self.retry_policy.as_ref()
     }
     /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
-    pub fn ecs_parameters(&self) -> std::option::Option<&crate::model::EcsParameters> {
+    pub fn ecs_parameters(&self) -> std::option::Option<& crate::model::EcsParameters> {
         self.ecs_parameters.as_ref()
     }
     /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
-    pub fn event_bridge_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::EventBridgeParameters> {
+    pub fn event_bridge_parameters(&self) -> std::option::Option<& crate::model::EventBridgeParameters> {
         self.event_bridge_parameters.as_ref()
     }
     /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
-    pub fn kinesis_parameters(&self) -> std::option::Option<&crate::model::KinesisParameters> {
+    pub fn kinesis_parameters(&self) -> std::option::Option<& crate::model::KinesisParameters> {
         self.kinesis_parameters.as_ref()
     }
     /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
-    pub fn sage_maker_pipeline_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::SageMakerPipelineParameters> {
+    pub fn sage_maker_pipeline_parameters(&self) -> std::option::Option<& crate::model::SageMakerPipelineParameters> {
         self.sage_maker_pipeline_parameters.as_ref()
     }
     /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn sqs_parameters(&self) -> std::option::Option<&crate::model::SqsParameters> {
+    pub fn sqs_parameters(&self) -> std::option::Option<& crate::model::SqsParameters> {
         self.sqs_parameters.as_ref()
     }
 }
 /// See [`Target`](crate::model::Target).
 pub mod target {
-
+    
     /// A builder for [`Target`](crate::model::Target).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -858,11 +819,9 @@ pub mod target {
         pub(crate) retry_policy: std::option::Option<crate::model::RetryPolicy>,
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) ecs_parameters: std::option::Option<crate::model::EcsParameters>,
-        pub(crate) event_bridge_parameters:
-            std::option::Option<crate::model::EventBridgeParameters>,
+        pub(crate) event_bridge_parameters: std::option::Option<crate::model::EventBridgeParameters>,
         pub(crate) kinesis_parameters: std::option::Option<crate::model::KinesisParameters>,
-        pub(crate) sage_maker_pipeline_parameters:
-            std::option::Option<crate::model::SageMakerPipelineParameters>,
+        pub(crate) sage_maker_pipeline_parameters: std::option::Option<crate::model::SageMakerPipelineParameters>,
         pub(crate) sqs_parameters: std::option::Option<crate::model::SqsParameters>,
     }
     impl Builder {
@@ -873,8 +832,7 @@ pub mod target {
         }
         /// <p>The Amazon Resource Name (ARN) of the target.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -883,8 +841,7 @@ pub mod target {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -892,12 +849,8 @@ pub mod target {
             self
         }
         /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
         pub fn retry_policy(mut self, input: crate::model::RetryPolicy) -> Self {
@@ -905,12 +858,8 @@ pub mod target {
             self
         }
         /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
-        pub fn set_retry_policy(
-            mut self,
-            input: std::option::Option<crate::model::RetryPolicy>,
-        ) -> Self {
-            self.retry_policy = input;
-            self
+        pub fn set_retry_policy(mut self, input: std::option::Option<crate::model::RetryPolicy>) -> Self {
+            self.retry_policy = input; self
         }
         /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -919,8 +868,7 @@ pub mod target {
         }
         /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
         pub fn ecs_parameters(mut self, input: crate::model::EcsParameters) -> Self {
@@ -928,28 +876,17 @@ pub mod target {
             self
         }
         /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
-        pub fn set_ecs_parameters(
-            mut self,
-            input: std::option::Option<crate::model::EcsParameters>,
-        ) -> Self {
-            self.ecs_parameters = input;
-            self
+        pub fn set_ecs_parameters(mut self, input: std::option::Option<crate::model::EcsParameters>) -> Self {
+            self.ecs_parameters = input; self
         }
         /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
-        pub fn event_bridge_parameters(
-            mut self,
-            input: crate::model::EventBridgeParameters,
-        ) -> Self {
+        pub fn event_bridge_parameters(mut self, input: crate::model::EventBridgeParameters) -> Self {
             self.event_bridge_parameters = Some(input);
             self
         }
         /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
-        pub fn set_event_bridge_parameters(
-            mut self,
-            input: std::option::Option<crate::model::EventBridgeParameters>,
-        ) -> Self {
-            self.event_bridge_parameters = input;
-            self
+        pub fn set_event_bridge_parameters(mut self, input: std::option::Option<crate::model::EventBridgeParameters>) -> Self {
+            self.event_bridge_parameters = input; self
         }
         /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
         pub fn kinesis_parameters(mut self, input: crate::model::KinesisParameters) -> Self {
@@ -957,28 +894,17 @@ pub mod target {
             self
         }
         /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
-        pub fn set_kinesis_parameters(
-            mut self,
-            input: std::option::Option<crate::model::KinesisParameters>,
-        ) -> Self {
-            self.kinesis_parameters = input;
-            self
+        pub fn set_kinesis_parameters(mut self, input: std::option::Option<crate::model::KinesisParameters>) -> Self {
+            self.kinesis_parameters = input; self
         }
         /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
-        pub fn sage_maker_pipeline_parameters(
-            mut self,
-            input: crate::model::SageMakerPipelineParameters,
-        ) -> Self {
+        pub fn sage_maker_pipeline_parameters(mut self, input: crate::model::SageMakerPipelineParameters) -> Self {
             self.sage_maker_pipeline_parameters = Some(input);
             self
         }
         /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
-        pub fn set_sage_maker_pipeline_parameters(
-            mut self,
-            input: std::option::Option<crate::model::SageMakerPipelineParameters>,
-        ) -> Self {
-            self.sage_maker_pipeline_parameters = input;
-            self
+        pub fn set_sage_maker_pipeline_parameters(mut self, input: std::option::Option<crate::model::SageMakerPipelineParameters>) -> Self {
+            self.sage_maker_pipeline_parameters = input; self
         }
         /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn sqs_parameters(mut self, input: crate::model::SqsParameters) -> Self {
@@ -986,29 +912,37 @@ pub mod target {
             self
         }
         /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        pub fn set_sqs_parameters(
-            mut self,
-            input: std::option::Option<crate::model::SqsParameters>,
-        ) -> Self {
-            self.sqs_parameters = input;
-            self
+        pub fn set_sqs_parameters(mut self, input: std::option::Option<crate::model::SqsParameters>) -> Self {
+            self.sqs_parameters = input; self
         }
         /// Consumes the builder and constructs a [`Target`](crate::model::Target).
         pub fn build(self) -> crate::model::Target {
             crate::model::Target {
-                arn: self.arn,
-                role_arn: self.role_arn,
-                dead_letter_config: self.dead_letter_config,
-                retry_policy: self.retry_policy,
-                input: self.input,
-                ecs_parameters: self.ecs_parameters,
-                event_bridge_parameters: self.event_bridge_parameters,
-                kinesis_parameters: self.kinesis_parameters,
-                sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
-                sqs_parameters: self.sqs_parameters,
+                arn: self.arn
+                ,
+                role_arn: self.role_arn
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                retry_policy: self.retry_policy
+                ,
+                input: self.input
+                ,
+                ecs_parameters: self.ecs_parameters
+                ,
+                event_bridge_parameters: self.event_bridge_parameters
+                ,
+                kinesis_parameters: self.kinesis_parameters
+                ,
+                sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters
+                ,
+                sqs_parameters: self.sqs_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl Target {
     /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
@@ -1020,20 +954,20 @@ impl Target {
 /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqsParameters {
+pub struct SqsParameters  {
     /// <p>The FIFO message group ID to use as the target.</p>
     #[doc(hidden)]
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl SqsParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn message_group_id(&self) -> std::option::Option<&str> {
+    pub fn message_group_id(&self) -> std::option::Option<& str> {
         self.message_group_id.as_deref()
     }
 }
 /// See [`SqsParameters`](crate::model::SqsParameters).
 pub mod sqs_parameters {
-
+    
     /// A builder for [`SqsParameters`](crate::model::SqsParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1046,20 +980,19 @@ pub mod sqs_parameters {
             self
         }
         /// <p>The FIFO message group ID to use as the target.</p>
-        pub fn set_message_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.message_group_id = input;
-            self
+        pub fn set_message_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_group_id = input; self
         }
         /// Consumes the builder and constructs a [`SqsParameters`](crate::model::SqsParameters).
         pub fn build(self) -> crate::model::SqsParameters {
             crate::model::SqsParameters {
-                message_group_id: self.message_group_id,
+                message_group_id: self.message_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SqsParameters {
     /// Creates a new builder-style object to manufacture [`SqsParameters`](crate::model::SqsParameters).
@@ -1071,28 +1004,24 @@ impl SqsParameters {
 /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SageMakerPipelineParameters {
+pub struct SageMakerPipelineParameters  {
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_parameter_list:
-        std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
+    pub pipeline_parameter_list: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
 }
 impl SageMakerPipelineParameters {
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-    pub fn pipeline_parameter_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::SageMakerPipelineParameter]> {
+    pub fn pipeline_parameter_list(&self) -> std::option::Option<& [crate::model::SageMakerPipelineParameter]> {
         self.pipeline_parameter_list.as_deref()
     }
 }
 /// See [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
 pub mod sage_maker_pipeline_parameters {
-
+    
     /// A builder for [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pipeline_parameter_list:
-            std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
+        pub(crate) pipeline_parameter_list: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
     }
     impl Builder {
         /// Appends an item to `pipeline_parameter_list`.
@@ -1100,30 +1029,26 @@ pub mod sage_maker_pipeline_parameters {
         /// To override the contents of this collection use [`set_pipeline_parameter_list`](Self::set_pipeline_parameter_list).
         ///
         /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-        pub fn pipeline_parameter_list(
-            mut self,
-            input: crate::model::SageMakerPipelineParameter,
-        ) -> Self {
+        pub fn pipeline_parameter_list(mut self, input: crate::model::SageMakerPipelineParameter) -> Self {
             let mut v = self.pipeline_parameter_list.unwrap_or_default();
-            v.push(input);
-            self.pipeline_parameter_list = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_parameter_list = Some(v);
+                            self
         }
         /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-        pub fn set_pipeline_parameter_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
-        ) -> Self {
-            self.pipeline_parameter_list = input;
-            self
+        pub fn set_pipeline_parameter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>) -> Self {
+            self.pipeline_parameter_list = input; self
         }
         /// Consumes the builder and constructs a [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
         pub fn build(self) -> crate::model::SageMakerPipelineParameters {
             crate::model::SageMakerPipelineParameters {
-                pipeline_parameter_list: self.pipeline_parameter_list,
+                pipeline_parameter_list: self.pipeline_parameter_list
+                ,
             }
         }
     }
+    
+    
 }
 impl SageMakerPipelineParameters {
     /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
@@ -1135,7 +1060,7 @@ impl SageMakerPipelineParameters {
 /// <p>The name and value pair of a parameter to use to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SageMakerPipelineParameter {
+pub struct SageMakerPipelineParameter  {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1145,17 +1070,17 @@ pub struct SageMakerPipelineParameter {
 }
 impl SageMakerPipelineParameter {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
 pub mod sage_maker_pipeline_parameter {
-
+    
     /// A builder for [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1170,8 +1095,7 @@ pub mod sage_maker_pipeline_parameter {
         }
         /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1180,17 +1104,20 @@ pub mod sage_maker_pipeline_parameter {
         }
         /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
         pub fn build(self) -> crate::model::SageMakerPipelineParameter {
             crate::model::SageMakerPipelineParameter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl SageMakerPipelineParameter {
     /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
@@ -1202,20 +1129,20 @@ impl SageMakerPipelineParameter {
 /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisParameters {
+pub struct KinesisParameters  {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     #[doc(hidden)]
     pub partition_key: std::option::Option<std::string::String>,
 }
 impl KinesisParameters {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> std::option::Option<& str> {
         self.partition_key.as_deref()
     }
 }
 /// See [`KinesisParameters`](crate::model::KinesisParameters).
 pub mod kinesis_parameters {
-
+    
     /// A builder for [`KinesisParameters`](crate::model::KinesisParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1228,20 +1155,19 @@ pub mod kinesis_parameters {
             self
         }
         /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-        pub fn set_partition_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.partition_key = input;
-            self
+        pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.partition_key = input; self
         }
         /// Consumes the builder and constructs a [`KinesisParameters`](crate::model::KinesisParameters).
         pub fn build(self) -> crate::model::KinesisParameters {
             crate::model::KinesisParameters {
-                partition_key: self.partition_key,
+                partition_key: self.partition_key
+                ,
             }
         }
     }
+    
+    
 }
 impl KinesisParameters {
     /// Creates a new builder-style object to manufacture [`KinesisParameters`](crate::model::KinesisParameters).
@@ -1253,7 +1179,7 @@ impl KinesisParameters {
 /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventBridgeParameters {
+pub struct EventBridgeParameters  {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
     #[doc(hidden)]
     pub detail_type: std::option::Option<std::string::String>,
@@ -1263,17 +1189,17 @@ pub struct EventBridgeParameters {
 }
 impl EventBridgeParameters {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    pub fn detail_type(&self) -> std::option::Option<&str> {
+    pub fn detail_type(&self) -> std::option::Option<& str> {
         self.detail_type.as_deref()
     }
     /// <p>The source of the event.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
 }
 /// See [`EventBridgeParameters`](crate::model::EventBridgeParameters).
 pub mod event_bridge_parameters {
-
+    
     /// A builder for [`EventBridgeParameters`](crate::model::EventBridgeParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1288,8 +1214,7 @@ pub mod event_bridge_parameters {
         }
         /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
         pub fn set_detail_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.detail_type = input;
-            self
+            self.detail_type = input; self
         }
         /// <p>The source of the event.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1298,17 +1223,20 @@ pub mod event_bridge_parameters {
         }
         /// <p>The source of the event.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// Consumes the builder and constructs a [`EventBridgeParameters`](crate::model::EventBridgeParameters).
         pub fn build(self) -> crate::model::EventBridgeParameters {
             crate::model::EventBridgeParameters {
-                detail_type: self.detail_type,
-                source: self.source,
+                detail_type: self.detail_type
+                ,
+                source: self.source
+                ,
             }
         }
     }
+    
+    
 }
 impl EventBridgeParameters {
     /// Creates a new builder-style object to manufacture [`EventBridgeParameters`](crate::model::EventBridgeParameters).
@@ -1320,7 +1248,7 @@ impl EventBridgeParameters {
 /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsParameters {
+pub struct EcsParameters  {
     /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
     #[doc(hidden)]
     pub task_definition_arn: std::option::Option<std::string::String>,
@@ -1341,8 +1269,7 @@ pub struct EcsParameters {
     pub group: std::option::Option<std::string::String>,
     /// <p>The capacity provider strategy to use for the task.</p>
     #[doc(hidden)]
-    pub capacity_provider_strategy:
-        std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
+    pub capacity_provider_strategy: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     #[doc(hidden)]
     pub enable_ecs_managed_tags: std::option::Option<bool>,
@@ -1351,8 +1278,7 @@ pub struct EcsParameters {
     pub enable_execute_command: std::option::Option<bool>,
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
     #[doc(hidden)]
-    pub placement_constraints:
-        std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
+    pub placement_constraints: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
     /// <p>The task placement strategy for a task or service.</p>
     #[doc(hidden)]
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -1364,13 +1290,11 @@ pub struct EcsParameters {
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
 }
 impl EcsParameters {
     /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
-    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+    pub fn task_definition_arn(&self) -> std::option::Option<& str> {
         self.task_definition_arn.as_deref()
     }
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is <code>1</code>.</p>
@@ -1378,27 +1302,23 @@ impl EcsParameters {
         self.task_count
     }
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
+    pub fn launch_type(&self) -> std::option::Option<& crate::model::LaunchType> {
         self.launch_type.as_ref()
     }
     /// <p>This structure specifies the network configuration for an ECS task.</p>
-    pub fn network_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> std::option::Option<& crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
-    pub fn platform_version(&self) -> std::option::Option<&str> {
+    pub fn platform_version(&self) -> std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
-    pub fn group(&self) -> std::option::Option<&str> {
+    pub fn group(&self) -> std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The capacity provider strategy to use for the task.</p>
-    pub fn capacity_provider_strategy(
-        &self,
-    ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
+    pub fn capacity_provider_strategy(&self) -> std::option::Option<& [crate::model::CapacityProviderStrategyItem]> {
         self.capacity_provider_strategy.as_deref()
     }
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -1410,34 +1330,29 @@ impl EcsParameters {
         self.enable_execute_command
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-    pub fn placement_constraints(
-        &self,
-    ) -> std::option::Option<&[crate::model::PlacementConstraint]> {
+    pub fn placement_constraints(&self) -> std::option::Option<& [crate::model::PlacementConstraint]> {
         self.placement_constraints.as_deref()
     }
     /// <p>The task placement strategy for a task or service.</p>
-    pub fn placement_strategy(&self) -> std::option::Option<&[crate::model::PlacementStrategy]> {
+    pub fn placement_strategy(&self) -> std::option::Option<& [crate::model::PlacementStrategy]> {
         self.placement_strategy.as_deref()
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action. </p>
-    pub fn propagate_tags(&self) -> std::option::Option<&crate::model::PropagateTags> {
+    pub fn propagate_tags(&self) -> std::option::Option<& crate::model::PropagateTags> {
         self.propagate_tags.as_ref()
     }
     /// <p>The reference ID to use for the task.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
-    {
+    pub fn tags(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, std::string::String>]> {
         self.tags.as_deref()
     }
 }
 /// See [`EcsParameters`](crate::model::EcsParameters).
 pub mod ecs_parameters {
-
+    
     /// A builder for [`EcsParameters`](crate::model::EcsParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1447,19 +1362,14 @@ pub mod ecs_parameters {
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
         pub(crate) platform_version: std::option::Option<std::string::String>,
         pub(crate) group: std::option::Option<std::string::String>,
-        pub(crate) capacity_provider_strategy:
-            std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
+        pub(crate) capacity_provider_strategy: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         pub(crate) enable_ecs_managed_tags: std::option::Option<bool>,
         pub(crate) enable_execute_command: std::option::Option<bool>,
-        pub(crate) placement_constraints:
-            std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
-        pub(crate) placement_strategy:
-            std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
+        pub(crate) placement_constraints: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
+        pub(crate) placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
         pub(crate) propagate_tags: std::option::Option<crate::model::PropagateTags>,
         pub(crate) reference_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-        >,
+        pub(crate) tags: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
@@ -1468,12 +1378,8 @@ pub mod ecs_parameters {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
-        pub fn set_task_definition_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_definition_arn = input;
-            self
+        pub fn set_task_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_definition_arn = input; self
         }
         /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is <code>1</code>.</p>
         pub fn task_count(mut self, input: i32) -> Self {
@@ -1482,8 +1388,7 @@ pub mod ecs_parameters {
         }
         /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is <code>1</code>.</p>
         pub fn set_task_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.task_count = input;
-            self
+            self.task_count = input; self
         }
         /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
         pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
@@ -1491,12 +1396,8 @@ pub mod ecs_parameters {
             self
         }
         /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-        pub fn set_launch_type(
-            mut self,
-            input: std::option::Option<crate::model::LaunchType>,
-        ) -> Self {
-            self.launch_type = input;
-            self
+        pub fn set_launch_type(mut self, input: std::option::Option<crate::model::LaunchType>) -> Self {
+            self.launch_type = input; self
         }
         /// <p>This structure specifies the network configuration for an ECS task.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
@@ -1504,12 +1405,8 @@ pub mod ecs_parameters {
             self
         }
         /// <p>This structure specifies the network configuration for an ECS task.</p>
-        pub fn set_network_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NetworkConfiguration>,
-        ) -> Self {
-            self.network_configuration = input;
-            self
+        pub fn set_network_configuration(mut self, input: std::option::Option<crate::model::NetworkConfiguration>) -> Self {
+            self.network_configuration = input; self
         }
         /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1517,12 +1414,8 @@ pub mod ecs_parameters {
             self
         }
         /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
-        pub fn set_platform_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_version = input;
-            self
+        pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_version = input; self
         }
         /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
         pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1531,30 +1424,22 @@ pub mod ecs_parameters {
         }
         /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Appends an item to `capacity_provider_strategy`.
         ///
         /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
         ///
         /// <p>The capacity provider strategy to use for the task.</p>
-        pub fn capacity_provider_strategy(
-            mut self,
-            input: crate::model::CapacityProviderStrategyItem,
-        ) -> Self {
+        pub fn capacity_provider_strategy(mut self, input: crate::model::CapacityProviderStrategyItem) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input);
-            self.capacity_provider_strategy = Some(v);
-            self
+                            v.push(input);
+                            self.capacity_provider_strategy = Some(v);
+                            self
         }
         /// <p>The capacity provider strategy to use for the task.</p>
-        pub fn set_capacity_provider_strategy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
-        ) -> Self {
-            self.capacity_provider_strategy = input;
-            self
+        pub fn set_capacity_provider_strategy(mut self, input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>) -> Self {
+            self.capacity_provider_strategy = input; self
         }
         /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
         pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
@@ -1563,8 +1448,7 @@ pub mod ecs_parameters {
         }
         /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_ecs_managed_tags = input;
-            self
+            self.enable_ecs_managed_tags = input; self
         }
         /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
         pub fn enable_execute_command(mut self, input: bool) -> Self {
@@ -1573,8 +1457,7 @@ pub mod ecs_parameters {
         }
         /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_execute_command = input;
-            self
+            self.enable_execute_command = input; self
         }
         /// Appends an item to `placement_constraints`.
         ///
@@ -1583,17 +1466,13 @@ pub mod ecs_parameters {
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
         pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input);
-            self.placement_constraints = Some(v);
-            self
+                            v.push(input);
+                            self.placement_constraints = Some(v);
+                            self
         }
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-        pub fn set_placement_constraints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
-        ) -> Self {
-            self.placement_constraints = input;
-            self
+        pub fn set_placement_constraints(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>) -> Self {
+            self.placement_constraints = input; self
         }
         /// Appends an item to `placement_strategy`.
         ///
@@ -1602,17 +1481,13 @@ pub mod ecs_parameters {
         /// <p>The task placement strategy for a task or service.</p>
         pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
-            v.push(input);
-            self.placement_strategy = Some(v);
-            self
+                            v.push(input);
+                            self.placement_strategy = Some(v);
+                            self
         }
         /// <p>The task placement strategy for a task or service.</p>
-        pub fn set_placement_strategy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
-        ) -> Self {
-            self.placement_strategy = input;
-            self
+        pub fn set_placement_strategy(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>) -> Self {
+            self.placement_strategy = input; self
         }
         /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action. </p>
         pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
@@ -1620,12 +1495,8 @@ pub mod ecs_parameters {
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action. </p>
-        pub fn set_propagate_tags(
-            mut self,
-            input: std::option::Option<crate::model::PropagateTags>,
-        ) -> Self {
-            self.propagate_tags = input;
-            self
+        pub fn set_propagate_tags(mut self, input: std::option::Option<crate::model::PropagateTags>) -> Self {
+            self.propagate_tags = input; self
         }
         /// <p>The reference ID to use for the task.</p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1634,53 +1505,59 @@ pub mod ecs_parameters {
         }
         /// <p>The reference ID to use for the task.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
-        pub fn tags(
-            mut self,
-            input: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, input: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`EcsParameters`](crate::model::EcsParameters).
         pub fn build(self) -> crate::model::EcsParameters {
             crate::model::EcsParameters {
-                task_definition_arn: self.task_definition_arn,
-                task_count: self.task_count,
-                launch_type: self.launch_type,
-                network_configuration: self.network_configuration,
-                platform_version: self.platform_version,
-                group: self.group,
-                capacity_provider_strategy: self.capacity_provider_strategy,
-                enable_ecs_managed_tags: self.enable_ecs_managed_tags,
-                enable_execute_command: self.enable_execute_command,
-                placement_constraints: self.placement_constraints,
-                placement_strategy: self.placement_strategy,
-                propagate_tags: self.propagate_tags,
-                reference_id: self.reference_id,
-                tags: self.tags,
+                task_definition_arn: self.task_definition_arn
+                ,
+                task_count: self.task_count
+                ,
+                launch_type: self.launch_type
+                ,
+                network_configuration: self.network_configuration
+                ,
+                platform_version: self.platform_version
+                ,
+                group: self.group
+                ,
+                capacity_provider_strategy: self.capacity_provider_strategy
+                ,
+                enable_ecs_managed_tags: self.enable_ecs_managed_tags
+                ,
+                enable_execute_command: self.enable_execute_command
+                ,
+                placement_constraints: self.placement_constraints
+                ,
+                placement_strategy: self.placement_strategy
+                ,
+                propagate_tags: self.propagate_tags
+                ,
+                reference_id: self.reference_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsParameters {
     /// Creates a new builder-style object to manufacture [`EcsParameters`](crate::model::EcsParameters).
@@ -1695,9 +1572,9 @@ impl EcsParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let propagatetags = unimplemented!();
 /// match propagatetags {
@@ -1718,54 +1595,48 @@ impl EcsParameters {
 /// Specifically, when `propagatetags` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PropagateTags::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PropagateTags {
     #[allow(missing_docs)] // documentation missing in model
     TaskDefinition,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PropagateTags {
     fn from(s: &str) -> Self {
         match s {
             "TASK_DEFINITION" => PropagateTags::TaskDefinition,
-            other => PropagateTags::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PropagateTags::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PropagateTags {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PropagateTags::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PropagateTags::from(s))
+                }
+            }
 impl PropagateTags {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PropagateTags::TaskDefinition => "TASK_DEFINITION",
-            PropagateTags::Unknown(value) => value.as_str(),
+            PropagateTags::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TASK_DEFINITION"]
+        &[
+            "TASK_DEFINITION"
+        ]
     }
 }
 impl AsRef<str> for PropagateTags {
@@ -1777,7 +1648,7 @@ impl AsRef<str> for PropagateTags {
 /// <p>The task placement strategy for a task or service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlacementStrategy {
+pub struct PlacementStrategy  {
     /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task).</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PlacementStrategyType>,
@@ -1787,17 +1658,17 @@ pub struct PlacementStrategy {
 }
 impl PlacementStrategy {
     /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task).</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementStrategyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PlacementStrategyType> {
         self.r#type.as_ref()
     }
     /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are <code>instanceId</code> (or <code>instanceId</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the binpack placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the random placement strategy, this field is not used.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
 }
 /// See [`PlacementStrategy`](crate::model::PlacementStrategy).
 pub mod placement_strategy {
-
+    
     /// A builder for [`PlacementStrategy`](crate::model::PlacementStrategy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1811,12 +1682,8 @@ pub mod placement_strategy {
             self
         }
         /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task).</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PlacementStrategyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PlacementStrategyType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are <code>instanceId</code> (or <code>instanceId</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the binpack placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the random placement strategy, this field is not used.</p>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1825,17 +1692,20 @@ pub mod placement_strategy {
         }
         /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are <code>instanceId</code> (or <code>instanceId</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the binpack placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the random placement strategy, this field is not used.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// Consumes the builder and constructs a [`PlacementStrategy`](crate::model::PlacementStrategy).
         pub fn build(self) -> crate::model::PlacementStrategy {
             crate::model::PlacementStrategy {
-                r#type: self.r#type,
-                field: self.field,
+                r#type: self.r#type
+                ,
+                field: self.field
+                ,
             }
         }
     }
+    
+    
 }
 impl PlacementStrategy {
     /// Creates a new builder-style object to manufacture [`PlacementStrategy`](crate::model::PlacementStrategy).
@@ -1850,9 +1720,9 @@ impl PlacementStrategy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let placementstrategytype = unimplemented!();
 /// match placementstrategytype {
@@ -1875,22 +1745,14 @@ impl PlacementStrategy {
 /// Specifically, when `placementstrategytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PlacementStrategyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PlacementStrategyType {
     #[allow(missing_docs)] // documentation missing in model
     Binpack,
@@ -1899,7 +1761,7 @@ pub enum PlacementStrategyType {
     #[allow(missing_docs)] // documentation missing in model
     Spread,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlacementStrategyType {
     fn from(s: &str) -> Self {
@@ -1907,19 +1769,17 @@ impl std::convert::From<&str> for PlacementStrategyType {
             "binpack" => PlacementStrategyType::Binpack,
             "random" => PlacementStrategyType::Random,
             "spread" => PlacementStrategyType::Spread,
-            other => {
-                PlacementStrategyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PlacementStrategyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PlacementStrategyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlacementStrategyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PlacementStrategyType::from(s))
+                }
+            }
 impl PlacementStrategyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1927,12 +1787,14 @@ impl PlacementStrategyType {
             PlacementStrategyType::Binpack => "binpack",
             PlacementStrategyType::Random => "random",
             PlacementStrategyType::Spread => "spread",
-            PlacementStrategyType::Unknown(value) => value.as_str(),
+            PlacementStrategyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["binpack", "random", "spread"]
+        &[
+            "binpack", "random", "spread"
+        ]
     }
 }
 impl AsRef<str> for PlacementStrategyType {
@@ -1944,7 +1806,7 @@ impl AsRef<str> for PlacementStrategyType {
 /// <p>An object representing a constraint on task placement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlacementConstraint {
+pub struct PlacementConstraint  {
     /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PlacementConstraintType>,
@@ -1954,17 +1816,17 @@ pub struct PlacementConstraint {
 }
 impl PlacementConstraint {
     /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementConstraintType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PlacementConstraintType> {
         self.r#type.as_ref()
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
 }
 /// See [`PlacementConstraint`](crate::model::PlacementConstraint).
 pub mod placement_constraint {
-
+    
     /// A builder for [`PlacementConstraint`](crate::model::PlacementConstraint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1978,12 +1840,8 @@ pub mod placement_constraint {
             self
         }
         /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PlacementConstraintType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PlacementConstraintType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1992,17 +1850,20 @@ pub mod placement_constraint {
         }
         /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// Consumes the builder and constructs a [`PlacementConstraint`](crate::model::PlacementConstraint).
         pub fn build(self) -> crate::model::PlacementConstraint {
             crate::model::PlacementConstraint {
-                r#type: self.r#type,
-                expression: self.expression,
+                r#type: self.r#type
+                ,
+                expression: self.expression
+                ,
             }
         }
     }
+    
+    
 }
 impl PlacementConstraint {
     /// Creates a new builder-style object to manufacture [`PlacementConstraint`](crate::model::PlacementConstraint).
@@ -2017,9 +1878,9 @@ impl PlacementConstraint {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let placementconstrainttype = unimplemented!();
 /// match placementconstrainttype {
@@ -2041,60 +1902,52 @@ impl PlacementConstraint {
 /// Specifically, when `placementconstrainttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PlacementConstraintType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PlacementConstraintType {
     #[allow(missing_docs)] // documentation missing in model
     DistinctInstance,
     #[allow(missing_docs)] // documentation missing in model
     MemberOf,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlacementConstraintType {
     fn from(s: &str) -> Self {
         match s {
             "distinctInstance" => PlacementConstraintType::DistinctInstance,
             "memberOf" => PlacementConstraintType::MemberOf,
-            other => PlacementConstraintType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PlacementConstraintType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PlacementConstraintType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlacementConstraintType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PlacementConstraintType::from(s))
+                }
+            }
 impl PlacementConstraintType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlacementConstraintType::DistinctInstance => "distinctInstance",
             PlacementConstraintType::MemberOf => "memberOf",
-            PlacementConstraintType::Unknown(value) => value.as_str(),
+            PlacementConstraintType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["distinctInstance", "memberOf"]
+        &[
+            "distinctInstance", "memberOf"
+        ]
     }
 }
 impl AsRef<str> for PlacementConstraintType {
@@ -2106,7 +1959,7 @@ impl AsRef<str> for PlacementConstraintType {
 /// <p>The details of a capacity provider strategy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CapacityProviderStrategyItem {
+pub struct CapacityProviderStrategyItem  {
     /// <p>The short name of the capacity provider.</p>
     #[doc(hidden)]
     pub capacity_provider: std::option::Option<std::string::String>,
@@ -2119,7 +1972,7 @@ pub struct CapacityProviderStrategyItem {
 }
 impl CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
-    pub fn capacity_provider(&self) -> std::option::Option<&str> {
+    pub fn capacity_provider(&self) -> std::option::Option<& str> {
         self.capacity_provider.as_deref()
     }
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
@@ -2133,7 +1986,7 @@ impl CapacityProviderStrategyItem {
 }
 /// See [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
 pub mod capacity_provider_strategy_item {
-
+    
     /// A builder for [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2148,12 +2001,8 @@ pub mod capacity_provider_strategy_item {
             self
         }
         /// <p>The short name of the capacity provider.</p>
-        pub fn set_capacity_provider(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capacity_provider = input;
-            self
+        pub fn set_capacity_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capacity_provider = input; self
         }
         /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
         pub fn weight(mut self, input: i32) -> Self {
@@ -2162,8 +2011,7 @@ pub mod capacity_provider_strategy_item {
         }
         /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
         /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of <code>0</code> is used.</p>
         pub fn base(mut self, input: i32) -> Self {
@@ -2172,18 +2020,24 @@ pub mod capacity_provider_strategy_item {
         }
         /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of <code>0</code> is used.</p>
         pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
-            self.base = input;
-            self
+            self.base = input; self
         }
         /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
         pub fn build(self) -> crate::model::CapacityProviderStrategyItem {
             crate::model::CapacityProviderStrategyItem {
-                capacity_provider: self.capacity_provider,
-                weight: self.weight.unwrap_or_default(),
-                base: self.base.unwrap_or_default(),
+                capacity_provider: self.capacity_provider
+                ,
+                weight: self.weight
+                    .unwrap_or_default()
+                ,
+                base: self.base
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CapacityProviderStrategyItem {
     /// Creates a new builder-style object to manufacture [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
@@ -2195,20 +2049,20 @@ impl CapacityProviderStrategyItem {
 /// <p>Specifies the network configuration for an ECS task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkConfiguration {
+pub struct NetworkConfiguration  {
     /// <p>Specifies the Amazon VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
     #[doc(hidden)]
     pub awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
 }
 impl NetworkConfiguration {
     /// <p>Specifies the Amazon VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
-    pub fn awsvpc_configuration(&self) -> std::option::Option<&crate::model::AwsVpcConfiguration> {
+    pub fn awsvpc_configuration(&self) -> std::option::Option<& crate::model::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
     }
 }
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
-
+    
     /// A builder for [`NetworkConfiguration`](crate::model::NetworkConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2221,20 +2075,19 @@ pub mod network_configuration {
             self
         }
         /// <p>Specifies the Amazon VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
-        pub fn set_awsvpc_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AwsVpcConfiguration>,
-        ) -> Self {
-            self.awsvpc_configuration = input;
-            self
+        pub fn set_awsvpc_configuration(mut self, input: std::option::Option<crate::model::AwsVpcConfiguration>) -> Self {
+            self.awsvpc_configuration = input; self
         }
         /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::model::NetworkConfiguration).
         pub fn build(self) -> crate::model::NetworkConfiguration {
             crate::model::NetworkConfiguration {
-                awsvpc_configuration: self.awsvpc_configuration,
+                awsvpc_configuration: self.awsvpc_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkConfiguration {
     /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
@@ -2246,7 +2099,7 @@ impl NetworkConfiguration {
 /// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsVpcConfiguration {
+pub struct AwsVpcConfiguration  {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2259,21 +2112,21 @@ pub struct AwsVpcConfiguration {
 }
 impl AwsVpcConfiguration {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
-    pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
+    pub fn assign_public_ip(&self) -> std::option::Option<& crate::model::AssignPublicIp> {
         self.assign_public_ip.as_ref()
     }
 }
 /// See [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
 pub mod aws_vpc_configuration {
-
+    
     /// A builder for [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2289,17 +2142,13 @@ pub mod aws_vpc_configuration {
         /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -2308,17 +2157,13 @@ pub mod aws_vpc_configuration {
         /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
         pub fn assign_public_ip(mut self, input: crate::model::AssignPublicIp) -> Self {
@@ -2326,22 +2171,23 @@ pub mod aws_vpc_configuration {
             self
         }
         /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
-        pub fn set_assign_public_ip(
-            mut self,
-            input: std::option::Option<crate::model::AssignPublicIp>,
-        ) -> Self {
-            self.assign_public_ip = input;
-            self
+        pub fn set_assign_public_ip(mut self, input: std::option::Option<crate::model::AssignPublicIp>) -> Self {
+            self.assign_public_ip = input; self
         }
         /// Consumes the builder and constructs a [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
         pub fn build(self) -> crate::model::AwsVpcConfiguration {
             crate::model::AwsVpcConfiguration {
-                subnets: self.subnets,
-                security_groups: self.security_groups,
-                assign_public_ip: self.assign_public_ip,
+                subnets: self.subnets
+                ,
+                security_groups: self.security_groups
+                ,
+                assign_public_ip: self.assign_public_ip
+                ,
             }
         }
     }
+    
+    
 }
 impl AwsVpcConfiguration {
     /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
@@ -2356,9 +2202,9 @@ impl AwsVpcConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assignpublicip = unimplemented!();
 /// match assignpublicip {
@@ -2380,58 +2226,52 @@ impl AwsVpcConfiguration {
 /// Specifically, when `assignpublicip` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssignPublicIp::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssignPublicIp {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssignPublicIp {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AssignPublicIp::Disabled,
             "ENABLED" => AssignPublicIp::Enabled,
-            other => AssignPublicIp::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssignPublicIp::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssignPublicIp {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssignPublicIp::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssignPublicIp::from(s))
+                }
+            }
 impl AssignPublicIp {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssignPublicIp::Disabled => "DISABLED",
             AssignPublicIp::Enabled => "ENABLED",
-            AssignPublicIp::Unknown(value) => value.as_str(),
+            AssignPublicIp::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for AssignPublicIp {
@@ -2446,9 +2286,9 @@ impl AsRef<str> for AssignPublicIp {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let launchtype = unimplemented!();
 /// match launchtype {
@@ -2471,22 +2311,14 @@ impl AsRef<str> for AssignPublicIp {
 /// Specifically, when `launchtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LaunchType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LaunchType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
@@ -2495,7 +2327,7 @@ pub enum LaunchType {
     #[allow(missing_docs)] // documentation missing in model
     Fargate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchType {
     fn from(s: &str) -> Self {
@@ -2503,17 +2335,17 @@ impl std::convert::From<&str> for LaunchType {
             "EC2" => LaunchType::Ec2,
             "EXTERNAL" => LaunchType::External,
             "FARGATE" => LaunchType::Fargate,
-            other => LaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LaunchType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LaunchType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LaunchType::from(s))
+                }
+            }
 impl LaunchType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2521,12 +2353,14 @@ impl LaunchType {
             LaunchType::Ec2 => "EC2",
             LaunchType::External => "EXTERNAL",
             LaunchType::Fargate => "FARGATE",
-            LaunchType::Unknown(value) => value.as_str(),
+            LaunchType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "EXTERNAL", "FARGATE"]
+        &[
+            "EC2", "EXTERNAL", "FARGATE"
+        ]
     }
 }
 impl AsRef<str> for LaunchType {
@@ -2538,7 +2372,7 @@ impl AsRef<str> for LaunchType {
 /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetryPolicy {
+pub struct RetryPolicy  {
     /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
     #[doc(hidden)]
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
@@ -2558,7 +2392,7 @@ impl RetryPolicy {
 }
 /// See [`RetryPolicy`](crate::model::RetryPolicy).
 pub mod retry_policy {
-
+    
     /// A builder for [`RetryPolicy`](crate::model::RetryPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2573,8 +2407,7 @@ pub mod retry_policy {
         }
         /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
         pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_event_age_in_seconds = input;
-            self
+            self.maximum_event_age_in_seconds = input; self
         }
         /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts with exponential backoff continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is reached.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -2583,17 +2416,20 @@ pub mod retry_policy {
         }
         /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts with exponential backoff continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is reached.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// Consumes the builder and constructs a [`RetryPolicy`](crate::model::RetryPolicy).
         pub fn build(self) -> crate::model::RetryPolicy {
             crate::model::RetryPolicy {
-                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
-                maximum_retry_attempts: self.maximum_retry_attempts,
+                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
             }
         }
     }
+    
+    
 }
 impl RetryPolicy {
     /// Creates a new builder-style object to manufacture [`RetryPolicy`](crate::model::RetryPolicy).
@@ -2605,20 +2441,20 @@ impl RetryPolicy {
 /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeadLetterConfig {
+pub struct DeadLetterConfig  {
     /// <p>The Amazon Resource Name (ARN) of the SQS queue specified as the destination for the dead-letter queue.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeadLetterConfig {
     /// <p>The Amazon Resource Name (ARN) of the SQS queue specified as the destination for the dead-letter queue.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
 pub mod dead_letter_config {
-
+    
     /// A builder for [`DeadLetterConfig`](crate::model::DeadLetterConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2632,14 +2468,18 @@ pub mod dead_letter_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the SQS queue specified as the destination for the dead-letter queue.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeadLetterConfig`](crate::model::DeadLetterConfig).
         pub fn build(self) -> crate::model::DeadLetterConfig {
-            crate::model::DeadLetterConfig { arn: self.arn }
+            crate::model::DeadLetterConfig {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeadLetterConfig {
     /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
@@ -2647,3 +2487,4 @@ impl DeadLetterConfig {
         crate::model::dead_letter_config::Builder::default()
     }
 }
+

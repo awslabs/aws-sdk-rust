@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateWaveOutput {
+pub struct UpdateWaveOutput  {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
@@ -29,24 +29,23 @@ pub struct UpdateWaveOutput {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Wave tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateWaveOutput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Wave ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Wave name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Wave archival status.</p>
@@ -54,28 +53,23 @@ impl UpdateWaveOutput {
         self.is_archived
     }
     /// <p>Wave aggregated status.</p>
-    pub fn wave_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::WaveAggregatedStatus> {
+    pub fn wave_aggregated_status(&self) -> std::option::Option<& crate::model::WaveAggregatedStatus> {
         self.wave_aggregated_status.as_ref()
     }
     /// <p>Wave creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Wave last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Wave tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWaveOutput {
+impl  std::fmt::Debug for UpdateWaveOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWaveOutput");
         formatter.field("wave_id", &self.wave_id);
@@ -92,7 +86,7 @@ impl std::fmt::Debug for UpdateWaveOutput {
 }
 /// See [`UpdateWaveOutput`](crate::output::UpdateWaveOutput).
 pub mod update_wave_output {
-
+    
     /// A builder for [`UpdateWaveOutput`](crate::output::UpdateWaveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -104,9 +98,7 @@ pub mod update_wave_output {
         pub(crate) wave_aggregated_status: std::option::Option<crate::model::WaveAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Wave ID.</p>
@@ -116,8 +108,7 @@ pub mod update_wave_output {
         }
         /// <p>Wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// <p>Wave ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +117,7 @@ pub mod update_wave_output {
         }
         /// <p>Wave ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Wave name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +126,7 @@ pub mod update_wave_output {
         }
         /// <p>Wave name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Wave description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,8 +135,7 @@ pub mod update_wave_output {
         }
         /// <p>Wave description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Wave archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -156,8 +144,7 @@ pub mod update_wave_output {
         }
         /// <p>Wave archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Wave aggregated status.</p>
         pub fn wave_aggregated_status(mut self, input: crate::model::WaveAggregatedStatus) -> Self {
@@ -165,12 +152,8 @@ pub mod update_wave_output {
             self
         }
         /// <p>Wave aggregated status.</p>
-        pub fn set_wave_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::WaveAggregatedStatus>,
-        ) -> Self {
-            self.wave_aggregated_status = input;
-            self
+        pub fn set_wave_aggregated_status(mut self, input: std::option::Option<crate::model::WaveAggregatedStatus>) -> Self {
+            self.wave_aggregated_status = input; self
         }
         /// <p>Wave creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,12 +161,8 @@ pub mod update_wave_output {
             self
         }
         /// <p>Wave creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Wave last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,50 +170,45 @@ pub mod update_wave_output {
             self
         }
         /// <p>Wave last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Wave tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Wave tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWaveOutput`](crate::output::UpdateWaveOutput).
         pub fn build(self) -> crate::output::UpdateWaveOutput {
             crate::output::UpdateWaveOutput {
-                wave_id: self.wave_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                wave_aggregated_status: self.wave_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
+                wave_id: self.wave_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                wave_aggregated_status: self.wave_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -253,6 +227,8 @@ pub mod update_wave_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateWaveOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWaveOutput`](crate::output::UpdateWaveOutput).
@@ -264,7 +240,7 @@ impl UpdateWaveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnarchiveWaveOutput {
+pub struct UnarchiveWaveOutput  {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
@@ -291,24 +267,23 @@ pub struct UnarchiveWaveOutput {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Wave tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UnarchiveWaveOutput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Wave ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Wave name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Wave archival status.</p>
@@ -316,28 +291,23 @@ impl UnarchiveWaveOutput {
         self.is_archived
     }
     /// <p>Wave aggregated status.</p>
-    pub fn wave_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::WaveAggregatedStatus> {
+    pub fn wave_aggregated_status(&self) -> std::option::Option<& crate::model::WaveAggregatedStatus> {
         self.wave_aggregated_status.as_ref()
     }
     /// <p>Wave creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Wave last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Wave tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UnarchiveWaveOutput {
+impl  std::fmt::Debug for UnarchiveWaveOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnarchiveWaveOutput");
         formatter.field("wave_id", &self.wave_id);
@@ -354,7 +324,7 @@ impl std::fmt::Debug for UnarchiveWaveOutput {
 }
 /// See [`UnarchiveWaveOutput`](crate::output::UnarchiveWaveOutput).
 pub mod unarchive_wave_output {
-
+    
     /// A builder for [`UnarchiveWaveOutput`](crate::output::UnarchiveWaveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -366,9 +336,7 @@ pub mod unarchive_wave_output {
         pub(crate) wave_aggregated_status: std::option::Option<crate::model::WaveAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Wave ID.</p>
@@ -378,8 +346,7 @@ pub mod unarchive_wave_output {
         }
         /// <p>Wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// <p>Wave ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -388,8 +355,7 @@ pub mod unarchive_wave_output {
         }
         /// <p>Wave ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Wave name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -398,8 +364,7 @@ pub mod unarchive_wave_output {
         }
         /// <p>Wave name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Wave description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -408,8 +373,7 @@ pub mod unarchive_wave_output {
         }
         /// <p>Wave description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Wave archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -418,8 +382,7 @@ pub mod unarchive_wave_output {
         }
         /// <p>Wave archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Wave aggregated status.</p>
         pub fn wave_aggregated_status(mut self, input: crate::model::WaveAggregatedStatus) -> Self {
@@ -427,12 +390,8 @@ pub mod unarchive_wave_output {
             self
         }
         /// <p>Wave aggregated status.</p>
-        pub fn set_wave_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::WaveAggregatedStatus>,
-        ) -> Self {
-            self.wave_aggregated_status = input;
-            self
+        pub fn set_wave_aggregated_status(mut self, input: std::option::Option<crate::model::WaveAggregatedStatus>) -> Self {
+            self.wave_aggregated_status = input; self
         }
         /// <p>Wave creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -440,12 +399,8 @@ pub mod unarchive_wave_output {
             self
         }
         /// <p>Wave creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Wave last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -453,50 +408,45 @@ pub mod unarchive_wave_output {
             self
         }
         /// <p>Wave last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Wave tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Wave tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UnarchiveWaveOutput`](crate::output::UnarchiveWaveOutput).
         pub fn build(self) -> crate::output::UnarchiveWaveOutput {
             crate::output::UnarchiveWaveOutput {
-                wave_id: self.wave_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                wave_aggregated_status: self.wave_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
+                wave_id: self.wave_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                wave_aggregated_status: self.wave_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -515,6 +465,8 @@ pub mod unarchive_wave_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UnarchiveWaveOutput {
     /// Creates a new builder-style object to manufacture [`UnarchiveWaveOutput`](crate::output::UnarchiveWaveOutput).
@@ -526,19 +478,24 @@ impl UnarchiveWaveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateApplicationsOutput {}
+pub struct DisassociateApplicationsOutput  {
+}
 /// See [`DisassociateApplicationsOutput`](crate::output::DisassociateApplicationsOutput).
 pub mod disassociate_applications_output {
-
+    
     /// A builder for [`DisassociateApplicationsOutput`](crate::output::DisassociateApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateApplicationsOutput`](crate::output::DisassociateApplicationsOutput).
         pub fn build(self) -> crate::output::DisassociateApplicationsOutput {
-            crate::output::DisassociateApplicationsOutput {}
+            crate::output::DisassociateApplicationsOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationsOutput`](crate::output::DisassociateApplicationsOutput).
@@ -550,19 +507,24 @@ impl DisassociateApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateApplicationsOutput {}
+pub struct AssociateApplicationsOutput  {
+}
 /// See [`AssociateApplicationsOutput`](crate::output::AssociateApplicationsOutput).
 pub mod associate_applications_output {
-
+    
     /// A builder for [`AssociateApplicationsOutput`](crate::output::AssociateApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateApplicationsOutput`](crate::output::AssociateApplicationsOutput).
         pub fn build(self) -> crate::output::AssociateApplicationsOutput {
-            crate::output::AssociateApplicationsOutput {}
+            crate::output::AssociateApplicationsOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateApplicationsOutput`](crate::output::AssociateApplicationsOutput).
@@ -574,7 +536,7 @@ impl AssociateApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ArchiveWaveOutput {
+pub struct ArchiveWaveOutput  {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
@@ -601,24 +563,23 @@ pub struct ArchiveWaveOutput {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Wave tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ArchiveWaveOutput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Wave ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Wave name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Wave archival status.</p>
@@ -626,28 +587,23 @@ impl ArchiveWaveOutput {
         self.is_archived
     }
     /// <p>Wave aggregated status.</p>
-    pub fn wave_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::WaveAggregatedStatus> {
+    pub fn wave_aggregated_status(&self) -> std::option::Option<& crate::model::WaveAggregatedStatus> {
         self.wave_aggregated_status.as_ref()
     }
     /// <p>Wave creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Wave last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Wave tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ArchiveWaveOutput {
+impl  std::fmt::Debug for ArchiveWaveOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArchiveWaveOutput");
         formatter.field("wave_id", &self.wave_id);
@@ -664,7 +620,7 @@ impl std::fmt::Debug for ArchiveWaveOutput {
 }
 /// See [`ArchiveWaveOutput`](crate::output::ArchiveWaveOutput).
 pub mod archive_wave_output {
-
+    
     /// A builder for [`ArchiveWaveOutput`](crate::output::ArchiveWaveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -676,9 +632,7 @@ pub mod archive_wave_output {
         pub(crate) wave_aggregated_status: std::option::Option<crate::model::WaveAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Wave ID.</p>
@@ -688,8 +642,7 @@ pub mod archive_wave_output {
         }
         /// <p>Wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// <p>Wave ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -698,8 +651,7 @@ pub mod archive_wave_output {
         }
         /// <p>Wave ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Wave name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -708,8 +660,7 @@ pub mod archive_wave_output {
         }
         /// <p>Wave name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Wave description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -718,8 +669,7 @@ pub mod archive_wave_output {
         }
         /// <p>Wave description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Wave archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -728,8 +678,7 @@ pub mod archive_wave_output {
         }
         /// <p>Wave archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Wave aggregated status.</p>
         pub fn wave_aggregated_status(mut self, input: crate::model::WaveAggregatedStatus) -> Self {
@@ -737,12 +686,8 @@ pub mod archive_wave_output {
             self
         }
         /// <p>Wave aggregated status.</p>
-        pub fn set_wave_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::WaveAggregatedStatus>,
-        ) -> Self {
-            self.wave_aggregated_status = input;
-            self
+        pub fn set_wave_aggregated_status(mut self, input: std::option::Option<crate::model::WaveAggregatedStatus>) -> Self {
+            self.wave_aggregated_status = input; self
         }
         /// <p>Wave creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -750,12 +695,8 @@ pub mod archive_wave_output {
             self
         }
         /// <p>Wave creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Wave last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -763,50 +704,45 @@ pub mod archive_wave_output {
             self
         }
         /// <p>Wave last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Wave tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Wave tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ArchiveWaveOutput`](crate::output::ArchiveWaveOutput).
         pub fn build(self) -> crate::output::ArchiveWaveOutput {
             crate::output::ArchiveWaveOutput {
-                wave_id: self.wave_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                wave_aggregated_status: self.wave_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
+                wave_id: self.wave_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                wave_aggregated_status: self.wave_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -825,6 +761,8 @@ pub mod archive_wave_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ArchiveWaveOutput {
     /// Creates a new builder-style object to manufacture [`ArchiveWaveOutput`](crate::output::ArchiveWaveOutput).
@@ -836,7 +774,7 @@ impl ArchiveWaveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWavesOutput {
+pub struct ListWavesOutput  {
     /// <p>Waves list.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Wave>>,
@@ -846,17 +784,17 @@ pub struct ListWavesOutput {
 }
 impl ListWavesOutput {
     /// <p>Waves list.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Wave]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::Wave]> {
         self.items.as_deref()
     }
     /// <p>Response next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWavesOutput`](crate::output::ListWavesOutput).
 pub mod list_waves_output {
-
+    
     /// A builder for [`ListWavesOutput`](crate::output::ListWavesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -871,17 +809,13 @@ pub mod list_waves_output {
         /// <p>Waves list.</p>
         pub fn items(mut self, input: crate::model::Wave) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Waves list.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Wave>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::Wave>>) -> Self {
+            self.items = input; self
         }
         /// <p>Response next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -890,17 +824,20 @@ pub mod list_waves_output {
         }
         /// <p>Response next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWavesOutput`](crate::output::ListWavesOutput).
         pub fn build(self) -> crate::output::ListWavesOutput {
             crate::output::ListWavesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWavesOutput {
     /// Creates a new builder-style object to manufacture [`ListWavesOutput`](crate::output::ListWavesOutput).
@@ -912,7 +849,7 @@ impl ListWavesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateWaveOutput {
+pub struct CreateWaveOutput  {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
@@ -939,24 +876,23 @@ pub struct CreateWaveOutput {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Wave tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWaveOutput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Wave ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Wave name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Wave archival status.</p>
@@ -964,28 +900,23 @@ impl CreateWaveOutput {
         self.is_archived
     }
     /// <p>Wave aggregated status.</p>
-    pub fn wave_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::WaveAggregatedStatus> {
+    pub fn wave_aggregated_status(&self) -> std::option::Option<& crate::model::WaveAggregatedStatus> {
         self.wave_aggregated_status.as_ref()
     }
     /// <p>Wave creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Wave last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Wave tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWaveOutput {
+impl  std::fmt::Debug for CreateWaveOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWaveOutput");
         formatter.field("wave_id", &self.wave_id);
@@ -1002,7 +933,7 @@ impl std::fmt::Debug for CreateWaveOutput {
 }
 /// See [`CreateWaveOutput`](crate::output::CreateWaveOutput).
 pub mod create_wave_output {
-
+    
     /// A builder for [`CreateWaveOutput`](crate::output::CreateWaveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1014,9 +945,7 @@ pub mod create_wave_output {
         pub(crate) wave_aggregated_status: std::option::Option<crate::model::WaveAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Wave ID.</p>
@@ -1026,8 +955,7 @@ pub mod create_wave_output {
         }
         /// <p>Wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// <p>Wave ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1036,8 +964,7 @@ pub mod create_wave_output {
         }
         /// <p>Wave ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Wave name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1046,8 +973,7 @@ pub mod create_wave_output {
         }
         /// <p>Wave name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Wave description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1056,8 +982,7 @@ pub mod create_wave_output {
         }
         /// <p>Wave description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Wave archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -1066,8 +991,7 @@ pub mod create_wave_output {
         }
         /// <p>Wave archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Wave aggregated status.</p>
         pub fn wave_aggregated_status(mut self, input: crate::model::WaveAggregatedStatus) -> Self {
@@ -1075,12 +999,8 @@ pub mod create_wave_output {
             self
         }
         /// <p>Wave aggregated status.</p>
-        pub fn set_wave_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::WaveAggregatedStatus>,
-        ) -> Self {
-            self.wave_aggregated_status = input;
-            self
+        pub fn set_wave_aggregated_status(mut self, input: std::option::Option<crate::model::WaveAggregatedStatus>) -> Self {
+            self.wave_aggregated_status = input; self
         }
         /// <p>Wave creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1088,12 +1008,8 @@ pub mod create_wave_output {
             self
         }
         /// <p>Wave creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Wave last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1101,50 +1017,45 @@ pub mod create_wave_output {
             self
         }
         /// <p>Wave last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Wave tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Wave tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateWaveOutput`](crate::output::CreateWaveOutput).
         pub fn build(self) -> crate::output::CreateWaveOutput {
             crate::output::CreateWaveOutput {
-                wave_id: self.wave_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                wave_aggregated_status: self.wave_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
+                wave_id: self.wave_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                wave_aggregated_status: self.wave_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -1163,6 +1074,8 @@ pub mod create_wave_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateWaveOutput {
     /// Creates a new builder-style object to manufacture [`CreateWaveOutput`](crate::output::CreateWaveOutput).
@@ -1174,19 +1087,24 @@ impl CreateWaveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWaveOutput {}
+pub struct DeleteWaveOutput  {
+}
 /// See [`DeleteWaveOutput`](crate::output::DeleteWaveOutput).
 pub mod delete_wave_output {
-
+    
     /// A builder for [`DeleteWaveOutput`](crate::output::DeleteWaveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWaveOutput`](crate::output::DeleteWaveOutput).
         pub fn build(self) -> crate::output::DeleteWaveOutput {
-            crate::output::DeleteWaveOutput {}
+            crate::output::DeleteWaveOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWaveOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWaveOutput`](crate::output::DeleteWaveOutput).
@@ -1198,7 +1116,7 @@ impl DeleteWaveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVcenterClientsOutput {
+pub struct DescribeVcenterClientsOutput  {
     /// <p>List of items returned by DescribeVcenterClients.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::VcenterClient>>,
@@ -1208,17 +1126,17 @@ pub struct DescribeVcenterClientsOutput {
 }
 impl DescribeVcenterClientsOutput {
     /// <p>List of items returned by DescribeVcenterClients.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::VcenterClient]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::VcenterClient]> {
         self.items.as_deref()
     }
     /// <p>Next pagination token returned from DescribeVcenterClients.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput).
 pub mod describe_vcenter_clients_output {
-
+    
     /// A builder for [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1233,17 +1151,13 @@ pub mod describe_vcenter_clients_output {
         /// <p>List of items returned by DescribeVcenterClients.</p>
         pub fn items(mut self, input: crate::model::VcenterClient) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>List of items returned by DescribeVcenterClients.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VcenterClient>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::VcenterClient>>) -> Self {
+            self.items = input; self
         }
         /// <p>Next pagination token returned from DescribeVcenterClients.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1252,17 +1166,20 @@ pub mod describe_vcenter_clients_output {
         }
         /// <p>Next pagination token returned from DescribeVcenterClients.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput).
         pub fn build(self) -> crate::output::DescribeVcenterClientsOutput {
             crate::output::DescribeVcenterClientsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVcenterClientsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput).
@@ -1274,19 +1191,24 @@ impl DescribeVcenterClientsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVcenterClientOutput {}
+pub struct DeleteVcenterClientOutput  {
+}
 /// See [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput).
 pub mod delete_vcenter_client_output {
-
+    
     /// A builder for [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput).
         pub fn build(self) -> crate::output::DeleteVcenterClientOutput {
-            crate::output::DeleteVcenterClientOutput {}
+            crate::output::DeleteVcenterClientOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVcenterClientOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput).
@@ -1298,7 +1220,7 @@ impl DeleteVcenterClientOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateSourceServerReplicationTypeOutput {
+pub struct UpdateSourceServerReplicationTypeOutput  {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -1310,8 +1232,7 @@ pub struct UpdateSourceServerReplicationTypeOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
@@ -1336,11 +1257,11 @@ pub struct UpdateSourceServerReplicationTypeOutput {
 }
 impl UpdateSourceServerReplicationTypeOutput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -1348,42 +1269,39 @@ impl UpdateSourceServerReplicationTypeOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<& crate::model::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<& crate::model::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<& crate::model::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<& crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<& crate::model::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSourceServerReplicationTypeOutput {
+impl  std::fmt::Debug for UpdateSourceServerReplicationTypeOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSourceServerReplicationTypeOutput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -1402,16 +1320,14 @@ impl std::fmt::Debug for UpdateSourceServerReplicationTypeOutput {
 }
 /// See [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput).
 pub mod update_source_server_replication_type_output {
-
+    
     /// A builder for [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
@@ -1427,12 +1343,8 @@ pub mod update_source_server_replication_type_output {
             self
         }
         /// <p>Source server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Source server ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1441,8 +1353,7 @@ pub mod update_source_server_replication_type_output {
         }
         /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Source server archived status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -1451,33 +1362,22 @@ pub mod update_source_server_replication_type_output {
         }
         /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Source server Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Source server Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Source server launched instance.</p>
         pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
@@ -1485,12 +1385,8 @@ pub mod update_source_server_replication_type_output {
             self
         }
         /// <p>Source server launched instance.</p>
-        pub fn set_launched_instance(
-            mut self,
-            input: std::option::Option<crate::model::LaunchedInstance>,
-        ) -> Self {
-            self.launched_instance = input;
-            self
+        pub fn set_launched_instance(mut self, input: std::option::Option<crate::model::LaunchedInstance>) -> Self {
+            self.launched_instance = input; self
         }
         /// <p>Source server data replication info.</p>
         pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
@@ -1498,12 +1394,8 @@ pub mod update_source_server_replication_type_output {
             self
         }
         /// <p>Source server data replication info.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
+        pub fn set_data_replication_info(mut self, input: std::option::Option<crate::model::DataReplicationInfo>) -> Self {
+            self.data_replication_info = input; self
         }
         /// <p>Source server lifecycle state.</p>
         pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
@@ -1511,12 +1403,8 @@ pub mod update_source_server_replication_type_output {
             self
         }
         /// <p>Source server lifecycle state.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
+        pub fn set_life_cycle(mut self, input: std::option::Option<crate::model::LifeCycle>) -> Self {
+            self.life_cycle = input; self
         }
         /// <p>Source server properties.</p>
         pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
@@ -1524,12 +1412,8 @@ pub mod update_source_server_replication_type_output {
             self
         }
         /// <p>Source server properties.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
+        pub fn set_source_properties(mut self, input: std::option::Option<crate::model::SourceProperties>) -> Self {
+            self.source_properties = input; self
         }
         /// <p>Source server replication type.</p>
         pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
@@ -1537,12 +1421,8 @@ pub mod update_source_server_replication_type_output {
             self
         }
         /// <p>Source server replication type.</p>
-        pub fn set_replication_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationType>,
-        ) -> Self {
-            self.replication_type = input;
-            self
+        pub fn set_replication_type(mut self, input: std::option::Option<crate::model::ReplicationType>) -> Self {
+            self.replication_type = input; self
         }
         /// <p>Source server vCenter client id.</p>
         pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1550,12 +1430,8 @@ pub mod update_source_server_replication_type_output {
             self
         }
         /// <p>Source server vCenter client id.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Source server application ID.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1563,27 +1439,34 @@ pub mod update_source_server_replication_type_output {
             self
         }
         /// <p>Source server application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput).
         pub fn build(self) -> crate::output::UpdateSourceServerReplicationTypeOutput {
             crate::output::UpdateSourceServerReplicationTypeOutput {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                is_archived: self.is_archived,
-                tags: self.tags,
-                launched_instance: self.launched_instance,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                replication_type: self.replication_type,
-                vcenter_client_id: self.vcenter_client_id,
-                application_id: self.application_id,
+                source_server_id: self.source_server_id
+                ,
+                arn: self.arn
+                ,
+                is_archived: self.is_archived
+                ,
+                tags: self.tags
+                ,
+                launched_instance: self.launched_instance
+                ,
+                data_replication_info: self.data_replication_info
+                ,
+                life_cycle: self.life_cycle
+                ,
+                source_properties: self.source_properties
+                ,
+                replication_type: self.replication_type
+                ,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                application_id: self.application_id
+                ,
             }
         }
     }
@@ -1604,6 +1487,8 @@ pub mod update_source_server_replication_type_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateSourceServerReplicationTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput).
@@ -1615,7 +1500,7 @@ impl UpdateSourceServerReplicationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateReplicationConfigurationOutput {
+pub struct UpdateReplicationConfigurationOutput  {
     /// <p>Replication Configuration Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -1630,8 +1515,7 @@ pub struct UpdateReplicationConfigurationOutput {
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration Replication Server Security Group IDs.</p>
     #[doc(hidden)]
-    pub replication_servers_security_groups_i_ds:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration Replication Server instance type.</p>
     #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
@@ -1640,12 +1524,10 @@ pub struct UpdateReplicationConfigurationOutput {
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration use default large Staging Disks.</p>
     #[doc(hidden)]
-    pub default_large_staging_disk_type:
-        std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration replicated disks.</p>
     #[doc(hidden)]
-    pub replicated_disks:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
+    pub replicated_disks: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
     /// <p>Replication Configuration EBS encryption.</p>
     #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
@@ -1657,27 +1539,25 @@ pub struct UpdateReplicationConfigurationOutput {
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration data plane routing.</p>
     #[doc(hidden)]
-    pub data_plane_routing:
-        std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+    pub data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration create Public IP.</p>
     #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration Staging Area tags.</p>
     #[doc(hidden)]
-    pub staging_area_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateReplicationConfigurationOutput {
     /// <p>Replication Configuration Source Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Replication Configuration name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Replication Configuration Staging Area subnet ID.</p>
-    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<& str> {
         self.staging_area_subnet_id.as_deref()
     }
     /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
@@ -1685,13 +1565,11 @@ impl UpdateReplicationConfigurationOutput {
         self.associate_default_security_group
     }
     /// <p>Replication Configuration Replication Server Security Group IDs.</p>
-    pub fn replication_servers_security_groups_i_ds(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn replication_servers_security_groups_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.replication_servers_security_groups_i_ds.as_deref()
     }
     /// <p>Replication Configuration Replication Server instance type.</p>
-    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+    pub fn replication_server_instance_type(&self) -> std::option::Option<& str> {
         self.replication_server_instance_type.as_deref()
     }
     /// <p>Replication Configuration use Dedicated Replication Server.</p>
@@ -1699,26 +1577,19 @@ impl UpdateReplicationConfigurationOutput {
         self.use_dedicated_replication_server
     }
     /// <p>Replication Configuration use default large Staging Disks.</p>
-    pub fn default_large_staging_disk_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
-    {
+    pub fn default_large_staging_disk_type(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDefaultLargeStagingDiskType> {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration replicated disks.</p>
-    pub fn replicated_disks(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationConfigurationReplicatedDisk]> {
+    pub fn replicated_disks(&self) -> std::option::Option<& [crate::model::ReplicationConfigurationReplicatedDisk]> {
         self.replicated_disks.as_deref()
     }
     /// <p>Replication Configuration EBS encryption.</p>
-    pub fn ebs_encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+    pub fn ebs_encryption(&self) -> std::option::Option<& crate::model::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
     /// <p>Replication Configuration EBS encryption key ARN.</p>
-    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<& str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Replication Configuration set bandwidth throttling.</p>
@@ -1726,9 +1597,7 @@ impl UpdateReplicationConfigurationOutput {
         self.bandwidth_throttling
     }
     /// <p>Replication Configuration data plane routing.</p>
-    pub fn data_plane_routing(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+    pub fn data_plane_routing(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDataPlaneRouting> {
         self.data_plane_routing.as_ref()
     }
     /// <p>Replication Configuration create Public IP.</p>
@@ -1736,39 +1605,21 @@ impl UpdateReplicationConfigurationOutput {
         self.create_public_ip
     }
     /// <p>Replication Configuration Staging Area tags.</p>
-    pub fn staging_area_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn staging_area_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.staging_area_tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateReplicationConfigurationOutput {
+impl  std::fmt::Debug for UpdateReplicationConfigurationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReplicationConfigurationOutput");
         formatter.field("source_server_id", &self.source_server_id);
         formatter.field("name", &self.name);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field(
-            "associate_default_security_group",
-            &self.associate_default_security_group,
-        );
-        formatter.field(
-            "replication_servers_security_groups_i_ds",
-            &self.replication_servers_security_groups_i_ds,
-        );
-        formatter.field(
-            "replication_server_instance_type",
-            &self.replication_server_instance_type,
-        );
-        formatter.field(
-            "use_dedicated_replication_server",
-            &self.use_dedicated_replication_server,
-        );
-        formatter.field(
-            "default_large_staging_disk_type",
-            &self.default_large_staging_disk_type,
-        );
+        formatter.field("associate_default_security_group", &self.associate_default_security_group);
+        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
         formatter.field("replicated_disks", &self.replicated_disks);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
@@ -1781,7 +1632,7 @@ impl std::fmt::Debug for UpdateReplicationConfigurationOutput {
 }
 /// See [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput).
 pub mod update_replication_configuration_output {
-
+    
     /// A builder for [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1789,25 +1640,17 @@ pub mod update_replication_configuration_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
         pub(crate) associate_default_security_group: std::option::Option<bool>,
-        pub(crate) replication_servers_security_groups_i_ds:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) replication_server_instance_type: std::option::Option<std::string::String>,
         pub(crate) use_dedicated_replication_server: std::option::Option<bool>,
-        pub(crate) default_large_staging_disk_type:
-            std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
-        pub(crate) replicated_disks: std::option::Option<
-            std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>,
-        >,
-        pub(crate) ebs_encryption:
-            std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
+        pub(crate) default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+        pub(crate) replicated_disks: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
+        pub(crate) ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
         pub(crate) ebs_encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) bandwidth_throttling: std::option::Option<i64>,
-        pub(crate) data_plane_routing:
-            std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+        pub(crate) data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
         pub(crate) create_public_ip: std::option::Option<bool>,
-        pub(crate) staging_area_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Replication Configuration Source Server ID.</p>
@@ -1816,12 +1659,8 @@ pub mod update_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration Source Server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Replication Configuration name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1830,8 +1669,7 @@ pub mod update_replication_configuration_output {
         }
         /// <p>Replication Configuration name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Replication Configuration Staging Area subnet ID.</p>
         pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1839,12 +1677,8 @@ pub mod update_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration Staging Area subnet ID.</p>
-        pub fn set_staging_area_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.staging_area_subnet_id = input;
-            self
+        pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.staging_area_subnet_id = input; self
         }
         /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
         pub fn associate_default_security_group(mut self, input: bool) -> Self {
@@ -1852,52 +1686,32 @@ pub mod update_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
-        pub fn set_associate_default_security_group(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.associate_default_security_group = input;
-            self
+        pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
+            self.associate_default_security_group = input; self
         }
         /// Appends an item to `replication_servers_security_groups_i_ds`.
         ///
         /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
         ///
         /// <p>Replication Configuration Replication Server Security Group IDs.</p>
-        pub fn replication_servers_security_groups_i_ds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .replication_servers_security_groups_i_ds
-                .unwrap_or_default();
-            v.push(input.into());
-            self.replication_servers_security_groups_i_ds = Some(v);
-            self
+        pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
+                            v.push(input.into());
+                            self.replication_servers_security_groups_i_ds = Some(v);
+                            self
         }
         /// <p>Replication Configuration Replication Server Security Group IDs.</p>
-        pub fn set_replication_servers_security_groups_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replication_servers_security_groups_i_ds = input;
-            self
+        pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replication_servers_security_groups_i_ds = input; self
         }
         /// <p>Replication Configuration Replication Server instance type.</p>
-        pub fn replication_server_instance_type(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_server_instance_type = Some(input.into());
             self
         }
         /// <p>Replication Configuration Replication Server instance type.</p>
-        pub fn set_replication_server_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_server_instance_type = input;
-            self
+        pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_server_instance_type = input; self
         }
         /// <p>Replication Configuration use Dedicated Replication Server.</p>
         pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
@@ -1905,70 +1719,41 @@ pub mod update_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration use Dedicated Replication Server.</p>
-        pub fn set_use_dedicated_replication_server(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.use_dedicated_replication_server = input;
-            self
+        pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_dedicated_replication_server = input; self
         }
         /// <p>Replication Configuration use default large Staging Disks.</p>
-        pub fn default_large_staging_disk_type(
-            mut self,
-            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-        ) -> Self {
+        pub fn default_large_staging_disk_type(mut self, input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
             self.default_large_staging_disk_type = Some(input);
             self
         }
         /// <p>Replication Configuration use default large Staging Disks.</p>
-        pub fn set_default_large_staging_disk_type(
-            mut self,
-            input: std::option::Option<
-                crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-            >,
-        ) -> Self {
-            self.default_large_staging_disk_type = input;
-            self
+        pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
+            self.default_large_staging_disk_type = input; self
         }
         /// Appends an item to `replicated_disks`.
         ///
         /// To override the contents of this collection use [`set_replicated_disks`](Self::set_replicated_disks).
         ///
         /// <p>Replication Configuration replicated disks.</p>
-        pub fn replicated_disks(
-            mut self,
-            input: crate::model::ReplicationConfigurationReplicatedDisk,
-        ) -> Self {
+        pub fn replicated_disks(mut self, input: crate::model::ReplicationConfigurationReplicatedDisk) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input);
-            self.replicated_disks = Some(v);
-            self
+                            v.push(input);
+                            self.replicated_disks = Some(v);
+                            self
         }
         /// <p>Replication Configuration replicated disks.</p>
-        pub fn set_replicated_disks(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>,
-            >,
-        ) -> Self {
-            self.replicated_disks = input;
-            self
+        pub fn set_replicated_disks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>) -> Self {
+            self.replicated_disks = input; self
         }
         /// <p>Replication Configuration EBS encryption.</p>
-        pub fn ebs_encryption(
-            mut self,
-            input: crate::model::ReplicationConfigurationEbsEncryption,
-        ) -> Self {
+        pub fn ebs_encryption(mut self, input: crate::model::ReplicationConfigurationEbsEncryption) -> Self {
             self.ebs_encryption = Some(input);
             self
         }
         /// <p>Replication Configuration EBS encryption.</p>
-        pub fn set_ebs_encryption(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
-        ) -> Self {
-            self.ebs_encryption = input;
-            self
+        pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>) -> Self {
+            self.ebs_encryption = input; self
         }
         /// <p>Replication Configuration EBS encryption key ARN.</p>
         pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1976,12 +1761,8 @@ pub mod update_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration EBS encryption key ARN.</p>
-        pub fn set_ebs_encryption_key_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_encryption_key_arn = input;
-            self
+        pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_encryption_key_arn = input; self
         }
         /// <p>Replication Configuration set bandwidth throttling.</p>
         pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -1990,24 +1771,16 @@ pub mod update_replication_configuration_output {
         }
         /// <p>Replication Configuration set bandwidth throttling.</p>
         pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.bandwidth_throttling = input;
-            self
+            self.bandwidth_throttling = input; self
         }
         /// <p>Replication Configuration data plane routing.</p>
-        pub fn data_plane_routing(
-            mut self,
-            input: crate::model::ReplicationConfigurationDataPlaneRouting,
-        ) -> Self {
+        pub fn data_plane_routing(mut self, input: crate::model::ReplicationConfigurationDataPlaneRouting) -> Self {
             self.data_plane_routing = Some(input);
             self
         }
         /// <p>Replication Configuration data plane routing.</p>
-        pub fn set_data_plane_routing(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
-        ) -> Self {
-            self.data_plane_routing = input;
-            self
+        pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>) -> Self {
+            self.data_plane_routing = input; self
         }
         /// <p>Replication Configuration create Public IP.</p>
         pub fn create_public_ip(mut self, input: bool) -> Self {
@@ -2016,53 +1789,57 @@ pub mod update_replication_configuration_output {
         }
         /// <p>Replication Configuration create Public IP.</p>
         pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_public_ip = input;
-            self
+            self.create_public_ip = input; self
         }
         /// Adds a key-value pair to `staging_area_tags`.
         ///
         /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
         ///
         /// <p>Replication Configuration Staging Area tags.</p>
-        pub fn staging_area_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.staging_area_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.staging_area_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.staging_area_tags = Some(hash_map);
+                            self
         }
         /// <p>Replication Configuration Staging Area tags.</p>
-        pub fn set_staging_area_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.staging_area_tags = input;
-            self
+        pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.staging_area_tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateReplicationConfigurationOutput {
             crate::output::UpdateReplicationConfigurationOutput {
-                source_server_id: self.source_server_id,
-                name: self.name,
-                staging_area_subnet_id: self.staging_area_subnet_id,
-                associate_default_security_group: self.associate_default_security_group,
-                replication_servers_security_groups_i_ds: self
-                    .replication_servers_security_groups_i_ds,
-                replication_server_instance_type: self.replication_server_instance_type,
-                use_dedicated_replication_server: self.use_dedicated_replication_server,
-                default_large_staging_disk_type: self.default_large_staging_disk_type,
-                replicated_disks: self.replicated_disks,
-                ebs_encryption: self.ebs_encryption,
-                ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-                bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
-                data_plane_routing: self.data_plane_routing,
-                create_public_ip: self.create_public_ip,
-                staging_area_tags: self.staging_area_tags,
+                source_server_id: self.source_server_id
+                ,
+                name: self.name
+                ,
+                staging_area_subnet_id: self.staging_area_subnet_id
+                ,
+                associate_default_security_group: self.associate_default_security_group
+                ,
+                replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds
+                ,
+                replication_server_instance_type: self.replication_server_instance_type
+                ,
+                use_dedicated_replication_server: self.use_dedicated_replication_server
+                ,
+                default_large_staging_disk_type: self.default_large_staging_disk_type
+                ,
+                replicated_disks: self.replicated_disks
+                ,
+                ebs_encryption: self.ebs_encryption
+                ,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn
+                ,
+                bandwidth_throttling: self.bandwidth_throttling
+                    .unwrap_or_default()
+                ,
+                data_plane_routing: self.data_plane_routing
+                ,
+                create_public_ip: self.create_public_ip
+                ,
+                staging_area_tags: self.staging_area_tags
+                ,
             }
         }
     }
@@ -2072,26 +1849,11 @@ pub mod update_replication_configuration_output {
             formatter.field("source_server_id", &self.source_server_id);
             formatter.field("name", &self.name);
             formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-            formatter.field(
-                "associate_default_security_group",
-                &self.associate_default_security_group,
-            );
-            formatter.field(
-                "replication_servers_security_groups_i_ds",
-                &self.replication_servers_security_groups_i_ds,
-            );
-            formatter.field(
-                "replication_server_instance_type",
-                &self.replication_server_instance_type,
-            );
-            formatter.field(
-                "use_dedicated_replication_server",
-                &self.use_dedicated_replication_server,
-            );
-            formatter.field(
-                "default_large_staging_disk_type",
-                &self.default_large_staging_disk_type,
-            );
+            formatter.field("associate_default_security_group", &self.associate_default_security_group);
+            formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+            formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+            formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+            formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
             formatter.field("replicated_disks", &self.replicated_disks);
             formatter.field("ebs_encryption", &self.ebs_encryption);
             formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
@@ -2102,6 +1864,8 @@ pub mod update_replication_configuration_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput).
@@ -2113,7 +1877,7 @@ impl UpdateReplicationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLaunchConfigurationOutput {
+pub struct UpdateLaunchConfigurationOutput  {
     /// <p>Launch configuration Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -2128,8 +1892,7 @@ pub struct UpdateLaunchConfigurationOutput {
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Launch configuration Target instance type right sizing method.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method:
-        std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy Private IP during Launch Configuration.</p>
     #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
@@ -2154,25 +1917,23 @@ pub struct UpdateLaunchConfigurationOutput {
 }
 impl UpdateLaunchConfigurationOutput {
     /// <p>Launch configuration Source Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Launch configuration name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Launch configuration EC2 Launch template ID.</p>
-    pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_launch_template_id(&self) -> std::option::Option<& str> {
         self.ec2_launch_template_id.as_deref()
     }
     /// <p>Launch disposition for launch configuration.</p>
-    pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> std::option::Option<& crate::model::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Launch configuration Target instance type right sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> std::option::Option<& crate::model::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy Private IP during Launch Configuration.</p>
@@ -2184,15 +1945,15 @@ impl UpdateLaunchConfigurationOutput {
         self.copy_tags
     }
     /// <p>Launch configuration OS licensing.</p>
-    pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
+    pub fn licensing(&self) -> std::option::Option<& crate::model::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>Launch configuration boot mode.</p>
-    pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
+    pub fn boot_mode(&self) -> std::option::Option<& crate::model::BootMode> {
         self.boot_mode.as_ref()
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+    pub fn post_launch_actions(&self) -> std::option::Option<& crate::model::PostLaunchActions> {
         self.post_launch_actions.as_ref()
     }
     /// <p>Enable map auto tagging.</p>
@@ -2200,13 +1961,13 @@ impl UpdateLaunchConfigurationOutput {
         self.enable_map_auto_tagging
     }
     /// <p>Map auto tagging MPE ID.</p>
-    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<&str> {
+    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<& str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
 }
 /// See [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput).
 pub mod update_launch_configuration_output {
-
+    
     /// A builder for [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2214,8 +1975,7 @@ pub mod update_launch_configuration_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) ec2_launch_template_id: std::option::Option<std::string::String>,
         pub(crate) launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
-        pub(crate) target_instance_type_right_sizing_method:
-            std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+        pub(crate) target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
         pub(crate) copy_private_ip: std::option::Option<bool>,
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) licensing: std::option::Option<crate::model::Licensing>,
@@ -2231,12 +1991,8 @@ pub mod update_launch_configuration_output {
             self
         }
         /// <p>Launch configuration Source Server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Launch configuration name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2245,8 +2001,7 @@ pub mod update_launch_configuration_output {
         }
         /// <p>Launch configuration name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Launch configuration EC2 Launch template ID.</p>
         pub fn ec2_launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2254,12 +2009,8 @@ pub mod update_launch_configuration_output {
             self
         }
         /// <p>Launch configuration EC2 Launch template ID.</p>
-        pub fn set_ec2_launch_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_launch_template_id = input;
-            self
+        pub fn set_ec2_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_launch_template_id = input; self
         }
         /// <p>Launch disposition for launch configuration.</p>
         pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
@@ -2267,28 +2018,17 @@ pub mod update_launch_configuration_output {
             self
         }
         /// <p>Launch disposition for launch configuration.</p>
-        pub fn set_launch_disposition(
-            mut self,
-            input: std::option::Option<crate::model::LaunchDisposition>,
-        ) -> Self {
-            self.launch_disposition = input;
-            self
+        pub fn set_launch_disposition(mut self, input: std::option::Option<crate::model::LaunchDisposition>) -> Self {
+            self.launch_disposition = input; self
         }
         /// <p>Launch configuration Target instance type right sizing method.</p>
-        pub fn target_instance_type_right_sizing_method(
-            mut self,
-            input: crate::model::TargetInstanceTypeRightSizingMethod,
-        ) -> Self {
+        pub fn target_instance_type_right_sizing_method(mut self, input: crate::model::TargetInstanceTypeRightSizingMethod) -> Self {
             self.target_instance_type_right_sizing_method = Some(input);
             self
         }
         /// <p>Launch configuration Target instance type right sizing method.</p>
-        pub fn set_target_instance_type_right_sizing_method(
-            mut self,
-            input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
-        ) -> Self {
-            self.target_instance_type_right_sizing_method = input;
-            self
+        pub fn set_target_instance_type_right_sizing_method(mut self, input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>) -> Self {
+            self.target_instance_type_right_sizing_method = input; self
         }
         /// <p>Copy Private IP during Launch Configuration.</p>
         pub fn copy_private_ip(mut self, input: bool) -> Self {
@@ -2297,8 +2037,7 @@ pub mod update_launch_configuration_output {
         }
         /// <p>Copy Private IP during Launch Configuration.</p>
         pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_private_ip = input;
-            self
+            self.copy_private_ip = input; self
         }
         /// <p>Copy Tags during Launch Configuration.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
@@ -2307,8 +2046,7 @@ pub mod update_launch_configuration_output {
         }
         /// <p>Copy Tags during Launch Configuration.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_tags = input;
-            self
+            self.copy_tags = input; self
         }
         /// <p>Launch configuration OS licensing.</p>
         pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
@@ -2316,12 +2054,8 @@ pub mod update_launch_configuration_output {
             self
         }
         /// <p>Launch configuration OS licensing.</p>
-        pub fn set_licensing(
-            mut self,
-            input: std::option::Option<crate::model::Licensing>,
-        ) -> Self {
-            self.licensing = input;
-            self
+        pub fn set_licensing(mut self, input: std::option::Option<crate::model::Licensing>) -> Self {
+            self.licensing = input; self
         }
         /// <p>Launch configuration boot mode.</p>
         pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
@@ -2330,8 +2064,7 @@ pub mod update_launch_configuration_output {
         }
         /// <p>Launch configuration boot mode.</p>
         pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
-            self.boot_mode = input;
-            self
+            self.boot_mode = input; self
         }
         /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
         pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
@@ -2339,12 +2072,8 @@ pub mod update_launch_configuration_output {
             self
         }
         /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-        pub fn set_post_launch_actions(
-            mut self,
-            input: std::option::Option<crate::model::PostLaunchActions>,
-        ) -> Self {
-            self.post_launch_actions = input;
-            self
+        pub fn set_post_launch_actions(mut self, input: std::option::Option<crate::model::PostLaunchActions>) -> Self {
+            self.post_launch_actions = input; self
         }
         /// <p>Enable map auto tagging.</p>
         pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
@@ -2353,8 +2082,7 @@ pub mod update_launch_configuration_output {
         }
         /// <p>Enable map auto tagging.</p>
         pub fn set_enable_map_auto_tagging(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_map_auto_tagging = input;
-            self
+            self.enable_map_auto_tagging = input; self
         }
         /// <p>Map auto tagging MPE ID.</p>
         pub fn map_auto_tagging_mpe_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2362,32 +2090,41 @@ pub mod update_launch_configuration_output {
             self
         }
         /// <p>Map auto tagging MPE ID.</p>
-        pub fn set_map_auto_tagging_mpe_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.map_auto_tagging_mpe_id = input;
-            self
+        pub fn set_map_auto_tagging_mpe_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_auto_tagging_mpe_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateLaunchConfigurationOutput {
             crate::output::UpdateLaunchConfigurationOutput {
-                source_server_id: self.source_server_id,
-                name: self.name,
-                ec2_launch_template_id: self.ec2_launch_template_id,
-                launch_disposition: self.launch_disposition,
-                target_instance_type_right_sizing_method: self
-                    .target_instance_type_right_sizing_method,
-                copy_private_ip: self.copy_private_ip,
-                copy_tags: self.copy_tags,
-                licensing: self.licensing,
-                boot_mode: self.boot_mode,
-                post_launch_actions: self.post_launch_actions,
-                enable_map_auto_tagging: self.enable_map_auto_tagging,
-                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+                source_server_id: self.source_server_id
+                ,
+                name: self.name
+                ,
+                ec2_launch_template_id: self.ec2_launch_template_id
+                ,
+                launch_disposition: self.launch_disposition
+                ,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+                ,
+                copy_private_ip: self.copy_private_ip
+                ,
+                copy_tags: self.copy_tags
+                ,
+                licensing: self.licensing
+                ,
+                boot_mode: self.boot_mode
+                ,
+                post_launch_actions: self.post_launch_actions
+                ,
+                enable_map_auto_tagging: self.enable_map_auto_tagging
+                ,
+                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput).
@@ -2399,7 +2136,7 @@ impl UpdateLaunchConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartReplicationOutput {
+pub struct StartReplicationOutput  {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -2411,8 +2148,7 @@ pub struct StartReplicationOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
@@ -2437,11 +2173,11 @@ pub struct StartReplicationOutput {
 }
 impl StartReplicationOutput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -2449,42 +2185,39 @@ impl StartReplicationOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<& crate::model::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<& crate::model::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<& crate::model::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<& crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<& crate::model::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartReplicationOutput {
+impl  std::fmt::Debug for StartReplicationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartReplicationOutput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -2503,16 +2236,14 @@ impl std::fmt::Debug for StartReplicationOutput {
 }
 /// See [`StartReplicationOutput`](crate::output::StartReplicationOutput).
 pub mod start_replication_output {
-
+    
     /// A builder for [`StartReplicationOutput`](crate::output::StartReplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
@@ -2528,12 +2259,8 @@ pub mod start_replication_output {
             self
         }
         /// <p>Source server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Source server ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2542,8 +2269,7 @@ pub mod start_replication_output {
         }
         /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Source server archived status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -2552,33 +2278,22 @@ pub mod start_replication_output {
         }
         /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Source server Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Source server Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Source server launched instance.</p>
         pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
@@ -2586,12 +2301,8 @@ pub mod start_replication_output {
             self
         }
         /// <p>Source server launched instance.</p>
-        pub fn set_launched_instance(
-            mut self,
-            input: std::option::Option<crate::model::LaunchedInstance>,
-        ) -> Self {
-            self.launched_instance = input;
-            self
+        pub fn set_launched_instance(mut self, input: std::option::Option<crate::model::LaunchedInstance>) -> Self {
+            self.launched_instance = input; self
         }
         /// <p>Source server data replication info.</p>
         pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
@@ -2599,12 +2310,8 @@ pub mod start_replication_output {
             self
         }
         /// <p>Source server data replication info.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
+        pub fn set_data_replication_info(mut self, input: std::option::Option<crate::model::DataReplicationInfo>) -> Self {
+            self.data_replication_info = input; self
         }
         /// <p>Source server lifecycle state.</p>
         pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
@@ -2612,12 +2319,8 @@ pub mod start_replication_output {
             self
         }
         /// <p>Source server lifecycle state.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
+        pub fn set_life_cycle(mut self, input: std::option::Option<crate::model::LifeCycle>) -> Self {
+            self.life_cycle = input; self
         }
         /// <p>Source server properties.</p>
         pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
@@ -2625,12 +2328,8 @@ pub mod start_replication_output {
             self
         }
         /// <p>Source server properties.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
+        pub fn set_source_properties(mut self, input: std::option::Option<crate::model::SourceProperties>) -> Self {
+            self.source_properties = input; self
         }
         /// <p>Source server replication type.</p>
         pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
@@ -2638,12 +2337,8 @@ pub mod start_replication_output {
             self
         }
         /// <p>Source server replication type.</p>
-        pub fn set_replication_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationType>,
-        ) -> Self {
-            self.replication_type = input;
-            self
+        pub fn set_replication_type(mut self, input: std::option::Option<crate::model::ReplicationType>) -> Self {
+            self.replication_type = input; self
         }
         /// <p>Source server vCenter client id.</p>
         pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2651,12 +2346,8 @@ pub mod start_replication_output {
             self
         }
         /// <p>Source server vCenter client id.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Source server application ID.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2664,27 +2355,34 @@ pub mod start_replication_output {
             self
         }
         /// <p>Source server application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`StartReplicationOutput`](crate::output::StartReplicationOutput).
         pub fn build(self) -> crate::output::StartReplicationOutput {
             crate::output::StartReplicationOutput {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                is_archived: self.is_archived,
-                tags: self.tags,
-                launched_instance: self.launched_instance,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                replication_type: self.replication_type,
-                vcenter_client_id: self.vcenter_client_id,
-                application_id: self.application_id,
+                source_server_id: self.source_server_id
+                ,
+                arn: self.arn
+                ,
+                is_archived: self.is_archived
+                ,
+                tags: self.tags
+                ,
+                launched_instance: self.launched_instance
+                ,
+                data_replication_info: self.data_replication_info
+                ,
+                life_cycle: self.life_cycle
+                ,
+                source_properties: self.source_properties
+                ,
+                replication_type: self.replication_type
+                ,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                application_id: self.application_id
+                ,
             }
         }
     }
@@ -2705,6 +2403,8 @@ pub mod start_replication_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl StartReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationOutput`](crate::output::StartReplicationOutput).
@@ -2716,7 +2416,7 @@ impl StartReplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RetryDataReplicationOutput {
+pub struct RetryDataReplicationOutput  {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -2728,8 +2428,7 @@ pub struct RetryDataReplicationOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
@@ -2754,11 +2453,11 @@ pub struct RetryDataReplicationOutput {
 }
 impl RetryDataReplicationOutput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -2766,42 +2465,39 @@ impl RetryDataReplicationOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<& crate::model::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<& crate::model::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<& crate::model::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<& crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<& crate::model::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for RetryDataReplicationOutput {
+impl  std::fmt::Debug for RetryDataReplicationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryDataReplicationOutput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -2820,16 +2516,14 @@ impl std::fmt::Debug for RetryDataReplicationOutput {
 }
 /// See [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput).
 pub mod retry_data_replication_output {
-
+    
     /// A builder for [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
@@ -2845,12 +2539,8 @@ pub mod retry_data_replication_output {
             self
         }
         /// <p>Source server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Source server ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2859,8 +2549,7 @@ pub mod retry_data_replication_output {
         }
         /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Source server archived status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -2869,33 +2558,22 @@ pub mod retry_data_replication_output {
         }
         /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Source server Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Source server Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Source server launched instance.</p>
         pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
@@ -2903,12 +2581,8 @@ pub mod retry_data_replication_output {
             self
         }
         /// <p>Source server launched instance.</p>
-        pub fn set_launched_instance(
-            mut self,
-            input: std::option::Option<crate::model::LaunchedInstance>,
-        ) -> Self {
-            self.launched_instance = input;
-            self
+        pub fn set_launched_instance(mut self, input: std::option::Option<crate::model::LaunchedInstance>) -> Self {
+            self.launched_instance = input; self
         }
         /// <p>Source server data replication info.</p>
         pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
@@ -2916,12 +2590,8 @@ pub mod retry_data_replication_output {
             self
         }
         /// <p>Source server data replication info.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
+        pub fn set_data_replication_info(mut self, input: std::option::Option<crate::model::DataReplicationInfo>) -> Self {
+            self.data_replication_info = input; self
         }
         /// <p>Source server lifecycle state.</p>
         pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
@@ -2929,12 +2599,8 @@ pub mod retry_data_replication_output {
             self
         }
         /// <p>Source server lifecycle state.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
+        pub fn set_life_cycle(mut self, input: std::option::Option<crate::model::LifeCycle>) -> Self {
+            self.life_cycle = input; self
         }
         /// <p>Source server properties.</p>
         pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
@@ -2942,12 +2608,8 @@ pub mod retry_data_replication_output {
             self
         }
         /// <p>Source server properties.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
+        pub fn set_source_properties(mut self, input: std::option::Option<crate::model::SourceProperties>) -> Self {
+            self.source_properties = input; self
         }
         /// <p>Source server replication type.</p>
         pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
@@ -2955,12 +2617,8 @@ pub mod retry_data_replication_output {
             self
         }
         /// <p>Source server replication type.</p>
-        pub fn set_replication_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationType>,
-        ) -> Self {
-            self.replication_type = input;
-            self
+        pub fn set_replication_type(mut self, input: std::option::Option<crate::model::ReplicationType>) -> Self {
+            self.replication_type = input; self
         }
         /// <p>Source server vCenter client id.</p>
         pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2968,12 +2626,8 @@ pub mod retry_data_replication_output {
             self
         }
         /// <p>Source server vCenter client id.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Source server application ID.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2981,27 +2635,34 @@ pub mod retry_data_replication_output {
             self
         }
         /// <p>Source server application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput).
         pub fn build(self) -> crate::output::RetryDataReplicationOutput {
             crate::output::RetryDataReplicationOutput {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                is_archived: self.is_archived,
-                tags: self.tags,
-                launched_instance: self.launched_instance,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                replication_type: self.replication_type,
-                vcenter_client_id: self.vcenter_client_id,
-                application_id: self.application_id,
+                source_server_id: self.source_server_id
+                ,
+                arn: self.arn
+                ,
+                is_archived: self.is_archived
+                ,
+                tags: self.tags
+                ,
+                launched_instance: self.launched_instance
+                ,
+                data_replication_info: self.data_replication_info
+                ,
+                life_cycle: self.life_cycle
+                ,
+                source_properties: self.source_properties
+                ,
+                replication_type: self.replication_type
+                ,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                application_id: self.application_id
+                ,
             }
         }
     }
@@ -3022,6 +2683,8 @@ pub mod retry_data_replication_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RetryDataReplicationOutput {
     /// Creates a new builder-style object to manufacture [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput).
@@ -3033,19 +2696,24 @@ impl RetryDataReplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveSourceServerActionOutput {}
+pub struct RemoveSourceServerActionOutput  {
+}
 /// See [`RemoveSourceServerActionOutput`](crate::output::RemoveSourceServerActionOutput).
 pub mod remove_source_server_action_output {
-
+    
     /// A builder for [`RemoveSourceServerActionOutput`](crate::output::RemoveSourceServerActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveSourceServerActionOutput`](crate::output::RemoveSourceServerActionOutput).
         pub fn build(self) -> crate::output::RemoveSourceServerActionOutput {
-            crate::output::RemoveSourceServerActionOutput {}
+            crate::output::RemoveSourceServerActionOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveSourceServerActionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveSourceServerActionOutput`](crate::output::RemoveSourceServerActionOutput).
@@ -3057,7 +2725,7 @@ impl RemoveSourceServerActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSourceServerActionOutput {
+pub struct PutSourceServerActionOutput  {
     /// <p>Source server post migration custom action ID.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -3084,24 +2752,19 @@ pub struct PutSourceServerActionOutput {
     pub must_succeed_for_cutover: std::option::Option<bool>,
     /// <p>Source server post migration custom action parameters.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
 }
 impl PutSourceServerActionOutput {
     /// <p>Source server post migration custom action ID.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>Source server post migration custom action name.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>Source server post migration custom action document identifier.</p>
-    pub fn document_identifier(&self) -> std::option::Option<&str> {
+    pub fn document_identifier(&self) -> std::option::Option<& str> {
         self.document_identifier.as_deref()
     }
     /// <p>Source server post migration custom action order.</p>
@@ -3109,7 +2772,7 @@ impl PutSourceServerActionOutput {
         self.order
     }
     /// <p>Source server post migration custom action document version.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>Source server post migration custom action active status.</p>
@@ -3125,20 +2788,13 @@ impl PutSourceServerActionOutput {
         self.must_succeed_for_cutover
     }
     /// <p>Source server post migration custom action parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>> {
         self.parameters.as_ref()
     }
 }
 /// See [`PutSourceServerActionOutput`](crate::output::PutSourceServerActionOutput).
 pub mod put_source_server_action_output {
-
+    
     /// A builder for [`PutSourceServerActionOutput`](crate::output::PutSourceServerActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3150,12 +2806,7 @@ pub mod put_source_server_action_output {
         pub(crate) active: std::option::Option<bool>,
         pub(crate) timeout_seconds: std::option::Option<i32>,
         pub(crate) must_succeed_for_cutover: std::option::Option<bool>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-            >,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
     }
     impl Builder {
         /// <p>Source server post migration custom action ID.</p>
@@ -3165,8 +2816,7 @@ pub mod put_source_server_action_output {
         }
         /// <p>Source server post migration custom action ID.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>Source server post migration custom action name.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3175,8 +2825,7 @@ pub mod put_source_server_action_output {
         }
         /// <p>Source server post migration custom action name.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_name = input;
-            self
+            self.action_name = input; self
         }
         /// <p>Source server post migration custom action document identifier.</p>
         pub fn document_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3184,12 +2833,8 @@ pub mod put_source_server_action_output {
             self
         }
         /// <p>Source server post migration custom action document identifier.</p>
-        pub fn set_document_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_identifier = input;
-            self
+        pub fn set_document_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_identifier = input; self
         }
         /// <p>Source server post migration custom action order.</p>
         pub fn order(mut self, input: i32) -> Self {
@@ -3198,8 +2843,7 @@ pub mod put_source_server_action_output {
         }
         /// <p>Source server post migration custom action order.</p>
         pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// <p>Source server post migration custom action document version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3207,12 +2851,8 @@ pub mod put_source_server_action_output {
             self
         }
         /// <p>Source server post migration custom action document version.</p>
-        pub fn set_document_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_version = input;
-            self
+        pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_version = input; self
         }
         /// <p>Source server post migration custom action active status.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -3221,8 +2861,7 @@ pub mod put_source_server_action_output {
         }
         /// <p>Source server post migration custom action active status.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// <p>Source server post migration custom action timeout in seconds.</p>
         pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -3231,8 +2870,7 @@ pub mod put_source_server_action_output {
         }
         /// <p>Source server post migration custom action timeout in seconds.</p>
         pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_seconds = input;
-            self
+            self.timeout_seconds = input; self
         }
         /// <p>Source server post migration custom action must succeed for cutover.</p>
         pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
@@ -3241,52 +2879,51 @@ pub mod put_source_server_action_output {
         }
         /// <p>Source server post migration custom action must succeed for cutover.</p>
         pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
-            self.must_succeed_for_cutover = input;
-            self
+            self.must_succeed_for_cutover = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Source server post migration custom action parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::SsmParameterStoreParameter>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>Source server post migration custom action parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-                >,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`PutSourceServerActionOutput`](crate::output::PutSourceServerActionOutput).
         pub fn build(self) -> crate::output::PutSourceServerActionOutput {
             crate::output::PutSourceServerActionOutput {
-                action_id: self.action_id,
-                action_name: self.action_name,
-                document_identifier: self.document_identifier,
-                order: self.order.unwrap_or_default(),
-                document_version: self.document_version,
-                active: self.active,
-                timeout_seconds: self.timeout_seconds.unwrap_or_default(),
-                must_succeed_for_cutover: self.must_succeed_for_cutover,
-                parameters: self.parameters,
+                action_id: self.action_id
+                ,
+                action_name: self.action_name
+                ,
+                document_identifier: self.document_identifier
+                ,
+                order: self.order
+                    .unwrap_or_default()
+                ,
+                document_version: self.document_version
+                ,
+                active: self.active
+                ,
+                timeout_seconds: self.timeout_seconds
+                    .unwrap_or_default()
+                ,
+                must_succeed_for_cutover: self.must_succeed_for_cutover
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl PutSourceServerActionOutput {
     /// Creates a new builder-style object to manufacture [`PutSourceServerActionOutput`](crate::output::PutSourceServerActionOutput).
@@ -3298,7 +2935,7 @@ impl PutSourceServerActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MarkAsArchivedOutput {
+pub struct MarkAsArchivedOutput  {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -3310,8 +2947,7 @@ pub struct MarkAsArchivedOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
@@ -3336,11 +2972,11 @@ pub struct MarkAsArchivedOutput {
 }
 impl MarkAsArchivedOutput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -3348,42 +2984,39 @@ impl MarkAsArchivedOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<& crate::model::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<& crate::model::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<& crate::model::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<& crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<& crate::model::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for MarkAsArchivedOutput {
+impl  std::fmt::Debug for MarkAsArchivedOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MarkAsArchivedOutput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -3402,16 +3035,14 @@ impl std::fmt::Debug for MarkAsArchivedOutput {
 }
 /// See [`MarkAsArchivedOutput`](crate::output::MarkAsArchivedOutput).
 pub mod mark_as_archived_output {
-
+    
     /// A builder for [`MarkAsArchivedOutput`](crate::output::MarkAsArchivedOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
@@ -3427,12 +3058,8 @@ pub mod mark_as_archived_output {
             self
         }
         /// <p>Source server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Source server ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3441,8 +3068,7 @@ pub mod mark_as_archived_output {
         }
         /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Source server archived status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -3451,33 +3077,22 @@ pub mod mark_as_archived_output {
         }
         /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Source server Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Source server Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Source server launched instance.</p>
         pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
@@ -3485,12 +3100,8 @@ pub mod mark_as_archived_output {
             self
         }
         /// <p>Source server launched instance.</p>
-        pub fn set_launched_instance(
-            mut self,
-            input: std::option::Option<crate::model::LaunchedInstance>,
-        ) -> Self {
-            self.launched_instance = input;
-            self
+        pub fn set_launched_instance(mut self, input: std::option::Option<crate::model::LaunchedInstance>) -> Self {
+            self.launched_instance = input; self
         }
         /// <p>Source server data replication info.</p>
         pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
@@ -3498,12 +3109,8 @@ pub mod mark_as_archived_output {
             self
         }
         /// <p>Source server data replication info.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
+        pub fn set_data_replication_info(mut self, input: std::option::Option<crate::model::DataReplicationInfo>) -> Self {
+            self.data_replication_info = input; self
         }
         /// <p>Source server lifecycle state.</p>
         pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
@@ -3511,12 +3118,8 @@ pub mod mark_as_archived_output {
             self
         }
         /// <p>Source server lifecycle state.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
+        pub fn set_life_cycle(mut self, input: std::option::Option<crate::model::LifeCycle>) -> Self {
+            self.life_cycle = input; self
         }
         /// <p>Source server properties.</p>
         pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
@@ -3524,12 +3127,8 @@ pub mod mark_as_archived_output {
             self
         }
         /// <p>Source server properties.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
+        pub fn set_source_properties(mut self, input: std::option::Option<crate::model::SourceProperties>) -> Self {
+            self.source_properties = input; self
         }
         /// <p>Source server replication type.</p>
         pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
@@ -3537,12 +3136,8 @@ pub mod mark_as_archived_output {
             self
         }
         /// <p>Source server replication type.</p>
-        pub fn set_replication_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationType>,
-        ) -> Self {
-            self.replication_type = input;
-            self
+        pub fn set_replication_type(mut self, input: std::option::Option<crate::model::ReplicationType>) -> Self {
+            self.replication_type = input; self
         }
         /// <p>Source server vCenter client id.</p>
         pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3550,12 +3145,8 @@ pub mod mark_as_archived_output {
             self
         }
         /// <p>Source server vCenter client id.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Source server application ID.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3563,27 +3154,34 @@ pub mod mark_as_archived_output {
             self
         }
         /// <p>Source server application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`MarkAsArchivedOutput`](crate::output::MarkAsArchivedOutput).
         pub fn build(self) -> crate::output::MarkAsArchivedOutput {
             crate::output::MarkAsArchivedOutput {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                is_archived: self.is_archived,
-                tags: self.tags,
-                launched_instance: self.launched_instance,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                replication_type: self.replication_type,
-                vcenter_client_id: self.vcenter_client_id,
-                application_id: self.application_id,
+                source_server_id: self.source_server_id
+                ,
+                arn: self.arn
+                ,
+                is_archived: self.is_archived
+                ,
+                tags: self.tags
+                ,
+                launched_instance: self.launched_instance
+                ,
+                data_replication_info: self.data_replication_info
+                ,
+                life_cycle: self.life_cycle
+                ,
+                source_properties: self.source_properties
+                ,
+                replication_type: self.replication_type
+                ,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                application_id: self.application_id
+                ,
             }
         }
     }
@@ -3604,6 +3202,8 @@ pub mod mark_as_archived_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl MarkAsArchivedOutput {
     /// Creates a new builder-style object to manufacture [`MarkAsArchivedOutput`](crate::output::MarkAsArchivedOutput).
@@ -3615,7 +3215,7 @@ impl MarkAsArchivedOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceServerActionsOutput {
+pub struct ListSourceServerActionsOutput  {
     /// <p>List of source server post migration custom actions.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::SourceServerActionDocument>>,
@@ -3625,22 +3225,21 @@ pub struct ListSourceServerActionsOutput {
 }
 impl ListSourceServerActionsOutput {
     /// <p>List of source server post migration custom actions.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::SourceServerActionDocument]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::SourceServerActionDocument]> {
         self.items.as_deref()
     }
     /// <p>Next token returned when listing source server post migration custom actions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSourceServerActionsOutput`](crate::output::ListSourceServerActionsOutput).
 pub mod list_source_server_actions_output {
-
+    
     /// A builder for [`ListSourceServerActionsOutput`](crate::output::ListSourceServerActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::SourceServerActionDocument>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SourceServerActionDocument>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3651,17 +3250,13 @@ pub mod list_source_server_actions_output {
         /// <p>List of source server post migration custom actions.</p>
         pub fn items(mut self, input: crate::model::SourceServerActionDocument) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>List of source server post migration custom actions.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceServerActionDocument>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceServerActionDocument>>) -> Self {
+            self.items = input; self
         }
         /// <p>Next token returned when listing source server post migration custom actions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3670,17 +3265,20 @@ pub mod list_source_server_actions_output {
         }
         /// <p>Next token returned when listing source server post migration custom actions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSourceServerActionsOutput`](crate::output::ListSourceServerActionsOutput).
         pub fn build(self) -> crate::output::ListSourceServerActionsOutput {
             crate::output::ListSourceServerActionsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSourceServerActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceServerActionsOutput`](crate::output::ListSourceServerActionsOutput).
@@ -3692,7 +3290,7 @@ impl ListSourceServerActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetReplicationConfigurationOutput {
+pub struct GetReplicationConfigurationOutput  {
     /// <p>Replication Configuration Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -3707,8 +3305,7 @@ pub struct GetReplicationConfigurationOutput {
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration Replication Server Security Group IDs.</p>
     #[doc(hidden)]
-    pub replication_servers_security_groups_i_ds:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration Replication Server instance type.</p>
     #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
@@ -3717,12 +3314,10 @@ pub struct GetReplicationConfigurationOutput {
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration use default large Staging Disks.</p>
     #[doc(hidden)]
-    pub default_large_staging_disk_type:
-        std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration replicated disks.</p>
     #[doc(hidden)]
-    pub replicated_disks:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
+    pub replicated_disks: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
     /// <p>Replication Configuration EBS encryption.</p>
     #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
@@ -3734,27 +3329,25 @@ pub struct GetReplicationConfigurationOutput {
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration data plane routing.</p>
     #[doc(hidden)]
-    pub data_plane_routing:
-        std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+    pub data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration create Public IP.</p>
     #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration Staging Area tags.</p>
     #[doc(hidden)]
-    pub staging_area_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetReplicationConfigurationOutput {
     /// <p>Replication Configuration Source Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Replication Configuration name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Replication Configuration Staging Area subnet ID.</p>
-    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<& str> {
         self.staging_area_subnet_id.as_deref()
     }
     /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
@@ -3762,13 +3355,11 @@ impl GetReplicationConfigurationOutput {
         self.associate_default_security_group
     }
     /// <p>Replication Configuration Replication Server Security Group IDs.</p>
-    pub fn replication_servers_security_groups_i_ds(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn replication_servers_security_groups_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.replication_servers_security_groups_i_ds.as_deref()
     }
     /// <p>Replication Configuration Replication Server instance type.</p>
-    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+    pub fn replication_server_instance_type(&self) -> std::option::Option<& str> {
         self.replication_server_instance_type.as_deref()
     }
     /// <p>Replication Configuration use Dedicated Replication Server.</p>
@@ -3776,26 +3367,19 @@ impl GetReplicationConfigurationOutput {
         self.use_dedicated_replication_server
     }
     /// <p>Replication Configuration use default large Staging Disks.</p>
-    pub fn default_large_staging_disk_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
-    {
+    pub fn default_large_staging_disk_type(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDefaultLargeStagingDiskType> {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration replicated disks.</p>
-    pub fn replicated_disks(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationConfigurationReplicatedDisk]> {
+    pub fn replicated_disks(&self) -> std::option::Option<& [crate::model::ReplicationConfigurationReplicatedDisk]> {
         self.replicated_disks.as_deref()
     }
     /// <p>Replication Configuration EBS encryption.</p>
-    pub fn ebs_encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+    pub fn ebs_encryption(&self) -> std::option::Option<& crate::model::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
     /// <p>Replication Configuration EBS encryption key ARN.</p>
-    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<& str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Replication Configuration set bandwidth throttling.</p>
@@ -3803,9 +3387,7 @@ impl GetReplicationConfigurationOutput {
         self.bandwidth_throttling
     }
     /// <p>Replication Configuration data plane routing.</p>
-    pub fn data_plane_routing(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+    pub fn data_plane_routing(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDataPlaneRouting> {
         self.data_plane_routing.as_ref()
     }
     /// <p>Replication Configuration create Public IP.</p>
@@ -3813,39 +3395,21 @@ impl GetReplicationConfigurationOutput {
         self.create_public_ip
     }
     /// <p>Replication Configuration Staging Area tags.</p>
-    pub fn staging_area_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn staging_area_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.staging_area_tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetReplicationConfigurationOutput {
+impl  std::fmt::Debug for GetReplicationConfigurationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationConfigurationOutput");
         formatter.field("source_server_id", &self.source_server_id);
         formatter.field("name", &self.name);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field(
-            "associate_default_security_group",
-            &self.associate_default_security_group,
-        );
-        formatter.field(
-            "replication_servers_security_groups_i_ds",
-            &self.replication_servers_security_groups_i_ds,
-        );
-        formatter.field(
-            "replication_server_instance_type",
-            &self.replication_server_instance_type,
-        );
-        formatter.field(
-            "use_dedicated_replication_server",
-            &self.use_dedicated_replication_server,
-        );
-        formatter.field(
-            "default_large_staging_disk_type",
-            &self.default_large_staging_disk_type,
-        );
+        formatter.field("associate_default_security_group", &self.associate_default_security_group);
+        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
         formatter.field("replicated_disks", &self.replicated_disks);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
@@ -3858,7 +3422,7 @@ impl std::fmt::Debug for GetReplicationConfigurationOutput {
 }
 /// See [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput).
 pub mod get_replication_configuration_output {
-
+    
     /// A builder for [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3866,25 +3430,17 @@ pub mod get_replication_configuration_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
         pub(crate) associate_default_security_group: std::option::Option<bool>,
-        pub(crate) replication_servers_security_groups_i_ds:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) replication_server_instance_type: std::option::Option<std::string::String>,
         pub(crate) use_dedicated_replication_server: std::option::Option<bool>,
-        pub(crate) default_large_staging_disk_type:
-            std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
-        pub(crate) replicated_disks: std::option::Option<
-            std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>,
-        >,
-        pub(crate) ebs_encryption:
-            std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
+        pub(crate) default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+        pub(crate) replicated_disks: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
+        pub(crate) ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
         pub(crate) ebs_encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) bandwidth_throttling: std::option::Option<i64>,
-        pub(crate) data_plane_routing:
-            std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+        pub(crate) data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
         pub(crate) create_public_ip: std::option::Option<bool>,
-        pub(crate) staging_area_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Replication Configuration Source Server ID.</p>
@@ -3893,12 +3449,8 @@ pub mod get_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration Source Server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Replication Configuration name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3907,8 +3459,7 @@ pub mod get_replication_configuration_output {
         }
         /// <p>Replication Configuration name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Replication Configuration Staging Area subnet ID.</p>
         pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3916,12 +3467,8 @@ pub mod get_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration Staging Area subnet ID.</p>
-        pub fn set_staging_area_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.staging_area_subnet_id = input;
-            self
+        pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.staging_area_subnet_id = input; self
         }
         /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
         pub fn associate_default_security_group(mut self, input: bool) -> Self {
@@ -3929,52 +3476,32 @@ pub mod get_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
-        pub fn set_associate_default_security_group(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.associate_default_security_group = input;
-            self
+        pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
+            self.associate_default_security_group = input; self
         }
         /// Appends an item to `replication_servers_security_groups_i_ds`.
         ///
         /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
         ///
         /// <p>Replication Configuration Replication Server Security Group IDs.</p>
-        pub fn replication_servers_security_groups_i_ds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .replication_servers_security_groups_i_ds
-                .unwrap_or_default();
-            v.push(input.into());
-            self.replication_servers_security_groups_i_ds = Some(v);
-            self
+        pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
+                            v.push(input.into());
+                            self.replication_servers_security_groups_i_ds = Some(v);
+                            self
         }
         /// <p>Replication Configuration Replication Server Security Group IDs.</p>
-        pub fn set_replication_servers_security_groups_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replication_servers_security_groups_i_ds = input;
-            self
+        pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replication_servers_security_groups_i_ds = input; self
         }
         /// <p>Replication Configuration Replication Server instance type.</p>
-        pub fn replication_server_instance_type(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_server_instance_type = Some(input.into());
             self
         }
         /// <p>Replication Configuration Replication Server instance type.</p>
-        pub fn set_replication_server_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_server_instance_type = input;
-            self
+        pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_server_instance_type = input; self
         }
         /// <p>Replication Configuration use Dedicated Replication Server.</p>
         pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
@@ -3982,70 +3509,41 @@ pub mod get_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration use Dedicated Replication Server.</p>
-        pub fn set_use_dedicated_replication_server(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.use_dedicated_replication_server = input;
-            self
+        pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_dedicated_replication_server = input; self
         }
         /// <p>Replication Configuration use default large Staging Disks.</p>
-        pub fn default_large_staging_disk_type(
-            mut self,
-            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-        ) -> Self {
+        pub fn default_large_staging_disk_type(mut self, input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
             self.default_large_staging_disk_type = Some(input);
             self
         }
         /// <p>Replication Configuration use default large Staging Disks.</p>
-        pub fn set_default_large_staging_disk_type(
-            mut self,
-            input: std::option::Option<
-                crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-            >,
-        ) -> Self {
-            self.default_large_staging_disk_type = input;
-            self
+        pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
+            self.default_large_staging_disk_type = input; self
         }
         /// Appends an item to `replicated_disks`.
         ///
         /// To override the contents of this collection use [`set_replicated_disks`](Self::set_replicated_disks).
         ///
         /// <p>Replication Configuration replicated disks.</p>
-        pub fn replicated_disks(
-            mut self,
-            input: crate::model::ReplicationConfigurationReplicatedDisk,
-        ) -> Self {
+        pub fn replicated_disks(mut self, input: crate::model::ReplicationConfigurationReplicatedDisk) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input);
-            self.replicated_disks = Some(v);
-            self
+                            v.push(input);
+                            self.replicated_disks = Some(v);
+                            self
         }
         /// <p>Replication Configuration replicated disks.</p>
-        pub fn set_replicated_disks(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>,
-            >,
-        ) -> Self {
-            self.replicated_disks = input;
-            self
+        pub fn set_replicated_disks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>) -> Self {
+            self.replicated_disks = input; self
         }
         /// <p>Replication Configuration EBS encryption.</p>
-        pub fn ebs_encryption(
-            mut self,
-            input: crate::model::ReplicationConfigurationEbsEncryption,
-        ) -> Self {
+        pub fn ebs_encryption(mut self, input: crate::model::ReplicationConfigurationEbsEncryption) -> Self {
             self.ebs_encryption = Some(input);
             self
         }
         /// <p>Replication Configuration EBS encryption.</p>
-        pub fn set_ebs_encryption(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
-        ) -> Self {
-            self.ebs_encryption = input;
-            self
+        pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>) -> Self {
+            self.ebs_encryption = input; self
         }
         /// <p>Replication Configuration EBS encryption key ARN.</p>
         pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4053,12 +3551,8 @@ pub mod get_replication_configuration_output {
             self
         }
         /// <p>Replication Configuration EBS encryption key ARN.</p>
-        pub fn set_ebs_encryption_key_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_encryption_key_arn = input;
-            self
+        pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_encryption_key_arn = input; self
         }
         /// <p>Replication Configuration set bandwidth throttling.</p>
         pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -4067,24 +3561,16 @@ pub mod get_replication_configuration_output {
         }
         /// <p>Replication Configuration set bandwidth throttling.</p>
         pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.bandwidth_throttling = input;
-            self
+            self.bandwidth_throttling = input; self
         }
         /// <p>Replication Configuration data plane routing.</p>
-        pub fn data_plane_routing(
-            mut self,
-            input: crate::model::ReplicationConfigurationDataPlaneRouting,
-        ) -> Self {
+        pub fn data_plane_routing(mut self, input: crate::model::ReplicationConfigurationDataPlaneRouting) -> Self {
             self.data_plane_routing = Some(input);
             self
         }
         /// <p>Replication Configuration data plane routing.</p>
-        pub fn set_data_plane_routing(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
-        ) -> Self {
-            self.data_plane_routing = input;
-            self
+        pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>) -> Self {
+            self.data_plane_routing = input; self
         }
         /// <p>Replication Configuration create Public IP.</p>
         pub fn create_public_ip(mut self, input: bool) -> Self {
@@ -4093,53 +3579,57 @@ pub mod get_replication_configuration_output {
         }
         /// <p>Replication Configuration create Public IP.</p>
         pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_public_ip = input;
-            self
+            self.create_public_ip = input; self
         }
         /// Adds a key-value pair to `staging_area_tags`.
         ///
         /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
         ///
         /// <p>Replication Configuration Staging Area tags.</p>
-        pub fn staging_area_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.staging_area_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.staging_area_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.staging_area_tags = Some(hash_map);
+                            self
         }
         /// <p>Replication Configuration Staging Area tags.</p>
-        pub fn set_staging_area_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.staging_area_tags = input;
-            self
+        pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.staging_area_tags = input; self
         }
         /// Consumes the builder and constructs a [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput).
         pub fn build(self) -> crate::output::GetReplicationConfigurationOutput {
             crate::output::GetReplicationConfigurationOutput {
-                source_server_id: self.source_server_id,
-                name: self.name,
-                staging_area_subnet_id: self.staging_area_subnet_id,
-                associate_default_security_group: self.associate_default_security_group,
-                replication_servers_security_groups_i_ds: self
-                    .replication_servers_security_groups_i_ds,
-                replication_server_instance_type: self.replication_server_instance_type,
-                use_dedicated_replication_server: self.use_dedicated_replication_server,
-                default_large_staging_disk_type: self.default_large_staging_disk_type,
-                replicated_disks: self.replicated_disks,
-                ebs_encryption: self.ebs_encryption,
-                ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-                bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
-                data_plane_routing: self.data_plane_routing,
-                create_public_ip: self.create_public_ip,
-                staging_area_tags: self.staging_area_tags,
+                source_server_id: self.source_server_id
+                ,
+                name: self.name
+                ,
+                staging_area_subnet_id: self.staging_area_subnet_id
+                ,
+                associate_default_security_group: self.associate_default_security_group
+                ,
+                replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds
+                ,
+                replication_server_instance_type: self.replication_server_instance_type
+                ,
+                use_dedicated_replication_server: self.use_dedicated_replication_server
+                ,
+                default_large_staging_disk_type: self.default_large_staging_disk_type
+                ,
+                replicated_disks: self.replicated_disks
+                ,
+                ebs_encryption: self.ebs_encryption
+                ,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn
+                ,
+                bandwidth_throttling: self.bandwidth_throttling
+                    .unwrap_or_default()
+                ,
+                data_plane_routing: self.data_plane_routing
+                ,
+                create_public_ip: self.create_public_ip
+                ,
+                staging_area_tags: self.staging_area_tags
+                ,
             }
         }
     }
@@ -4149,26 +3639,11 @@ pub mod get_replication_configuration_output {
             formatter.field("source_server_id", &self.source_server_id);
             formatter.field("name", &self.name);
             formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-            formatter.field(
-                "associate_default_security_group",
-                &self.associate_default_security_group,
-            );
-            formatter.field(
-                "replication_servers_security_groups_i_ds",
-                &self.replication_servers_security_groups_i_ds,
-            );
-            formatter.field(
-                "replication_server_instance_type",
-                &self.replication_server_instance_type,
-            );
-            formatter.field(
-                "use_dedicated_replication_server",
-                &self.use_dedicated_replication_server,
-            );
-            formatter.field(
-                "default_large_staging_disk_type",
-                &self.default_large_staging_disk_type,
-            );
+            formatter.field("associate_default_security_group", &self.associate_default_security_group);
+            formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+            formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+            formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+            formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
             formatter.field("replicated_disks", &self.replicated_disks);
             formatter.field("ebs_encryption", &self.ebs_encryption);
             formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
@@ -4179,6 +3654,8 @@ pub mod get_replication_configuration_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput).
@@ -4190,7 +3667,7 @@ impl GetReplicationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLaunchConfigurationOutput {
+pub struct GetLaunchConfigurationOutput  {
     /// <p>Launch configuration Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -4205,8 +3682,7 @@ pub struct GetLaunchConfigurationOutput {
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Launch configuration Target instance type right sizing method.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method:
-        std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy Private IP during Launch Configuration.</p>
     #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
@@ -4231,25 +3707,23 @@ pub struct GetLaunchConfigurationOutput {
 }
 impl GetLaunchConfigurationOutput {
     /// <p>Launch configuration Source Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Launch configuration name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Launch configuration EC2 Launch template ID.</p>
-    pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_launch_template_id(&self) -> std::option::Option<& str> {
         self.ec2_launch_template_id.as_deref()
     }
     /// <p>Launch disposition for launch configuration.</p>
-    pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> std::option::Option<& crate::model::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Launch configuration Target instance type right sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> std::option::Option<& crate::model::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy Private IP during Launch Configuration.</p>
@@ -4261,15 +3735,15 @@ impl GetLaunchConfigurationOutput {
         self.copy_tags
     }
     /// <p>Launch configuration OS licensing.</p>
-    pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
+    pub fn licensing(&self) -> std::option::Option<& crate::model::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>Launch configuration boot mode.</p>
-    pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
+    pub fn boot_mode(&self) -> std::option::Option<& crate::model::BootMode> {
         self.boot_mode.as_ref()
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+    pub fn post_launch_actions(&self) -> std::option::Option<& crate::model::PostLaunchActions> {
         self.post_launch_actions.as_ref()
     }
     /// <p>Enable map auto tagging.</p>
@@ -4277,13 +3751,13 @@ impl GetLaunchConfigurationOutput {
         self.enable_map_auto_tagging
     }
     /// <p>Map auto tagging MPE ID.</p>
-    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<&str> {
+    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<& str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
 }
 /// See [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput).
 pub mod get_launch_configuration_output {
-
+    
     /// A builder for [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4291,8 +3765,7 @@ pub mod get_launch_configuration_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) ec2_launch_template_id: std::option::Option<std::string::String>,
         pub(crate) launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
-        pub(crate) target_instance_type_right_sizing_method:
-            std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+        pub(crate) target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
         pub(crate) copy_private_ip: std::option::Option<bool>,
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) licensing: std::option::Option<crate::model::Licensing>,
@@ -4308,12 +3781,8 @@ pub mod get_launch_configuration_output {
             self
         }
         /// <p>Launch configuration Source Server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Launch configuration name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4322,8 +3791,7 @@ pub mod get_launch_configuration_output {
         }
         /// <p>Launch configuration name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Launch configuration EC2 Launch template ID.</p>
         pub fn ec2_launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4331,12 +3799,8 @@ pub mod get_launch_configuration_output {
             self
         }
         /// <p>Launch configuration EC2 Launch template ID.</p>
-        pub fn set_ec2_launch_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_launch_template_id = input;
-            self
+        pub fn set_ec2_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_launch_template_id = input; self
         }
         /// <p>Launch disposition for launch configuration.</p>
         pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
@@ -4344,28 +3808,17 @@ pub mod get_launch_configuration_output {
             self
         }
         /// <p>Launch disposition for launch configuration.</p>
-        pub fn set_launch_disposition(
-            mut self,
-            input: std::option::Option<crate::model::LaunchDisposition>,
-        ) -> Self {
-            self.launch_disposition = input;
-            self
+        pub fn set_launch_disposition(mut self, input: std::option::Option<crate::model::LaunchDisposition>) -> Self {
+            self.launch_disposition = input; self
         }
         /// <p>Launch configuration Target instance type right sizing method.</p>
-        pub fn target_instance_type_right_sizing_method(
-            mut self,
-            input: crate::model::TargetInstanceTypeRightSizingMethod,
-        ) -> Self {
+        pub fn target_instance_type_right_sizing_method(mut self, input: crate::model::TargetInstanceTypeRightSizingMethod) -> Self {
             self.target_instance_type_right_sizing_method = Some(input);
             self
         }
         /// <p>Launch configuration Target instance type right sizing method.</p>
-        pub fn set_target_instance_type_right_sizing_method(
-            mut self,
-            input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
-        ) -> Self {
-            self.target_instance_type_right_sizing_method = input;
-            self
+        pub fn set_target_instance_type_right_sizing_method(mut self, input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>) -> Self {
+            self.target_instance_type_right_sizing_method = input; self
         }
         /// <p>Copy Private IP during Launch Configuration.</p>
         pub fn copy_private_ip(mut self, input: bool) -> Self {
@@ -4374,8 +3827,7 @@ pub mod get_launch_configuration_output {
         }
         /// <p>Copy Private IP during Launch Configuration.</p>
         pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_private_ip = input;
-            self
+            self.copy_private_ip = input; self
         }
         /// <p>Copy Tags during Launch Configuration.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
@@ -4384,8 +3836,7 @@ pub mod get_launch_configuration_output {
         }
         /// <p>Copy Tags during Launch Configuration.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_tags = input;
-            self
+            self.copy_tags = input; self
         }
         /// <p>Launch configuration OS licensing.</p>
         pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
@@ -4393,12 +3844,8 @@ pub mod get_launch_configuration_output {
             self
         }
         /// <p>Launch configuration OS licensing.</p>
-        pub fn set_licensing(
-            mut self,
-            input: std::option::Option<crate::model::Licensing>,
-        ) -> Self {
-            self.licensing = input;
-            self
+        pub fn set_licensing(mut self, input: std::option::Option<crate::model::Licensing>) -> Self {
+            self.licensing = input; self
         }
         /// <p>Launch configuration boot mode.</p>
         pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
@@ -4407,8 +3854,7 @@ pub mod get_launch_configuration_output {
         }
         /// <p>Launch configuration boot mode.</p>
         pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
-            self.boot_mode = input;
-            self
+            self.boot_mode = input; self
         }
         /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
         pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
@@ -4416,12 +3862,8 @@ pub mod get_launch_configuration_output {
             self
         }
         /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-        pub fn set_post_launch_actions(
-            mut self,
-            input: std::option::Option<crate::model::PostLaunchActions>,
-        ) -> Self {
-            self.post_launch_actions = input;
-            self
+        pub fn set_post_launch_actions(mut self, input: std::option::Option<crate::model::PostLaunchActions>) -> Self {
+            self.post_launch_actions = input; self
         }
         /// <p>Enable map auto tagging.</p>
         pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
@@ -4430,8 +3872,7 @@ pub mod get_launch_configuration_output {
         }
         /// <p>Enable map auto tagging.</p>
         pub fn set_enable_map_auto_tagging(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_map_auto_tagging = input;
-            self
+            self.enable_map_auto_tagging = input; self
         }
         /// <p>Map auto tagging MPE ID.</p>
         pub fn map_auto_tagging_mpe_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4439,32 +3880,41 @@ pub mod get_launch_configuration_output {
             self
         }
         /// <p>Map auto tagging MPE ID.</p>
-        pub fn set_map_auto_tagging_mpe_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.map_auto_tagging_mpe_id = input;
-            self
+        pub fn set_map_auto_tagging_mpe_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_auto_tagging_mpe_id = input; self
         }
         /// Consumes the builder and constructs a [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput).
         pub fn build(self) -> crate::output::GetLaunchConfigurationOutput {
             crate::output::GetLaunchConfigurationOutput {
-                source_server_id: self.source_server_id,
-                name: self.name,
-                ec2_launch_template_id: self.ec2_launch_template_id,
-                launch_disposition: self.launch_disposition,
-                target_instance_type_right_sizing_method: self
-                    .target_instance_type_right_sizing_method,
-                copy_private_ip: self.copy_private_ip,
-                copy_tags: self.copy_tags,
-                licensing: self.licensing,
-                boot_mode: self.boot_mode,
-                post_launch_actions: self.post_launch_actions,
-                enable_map_auto_tagging: self.enable_map_auto_tagging,
-                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+                source_server_id: self.source_server_id
+                ,
+                name: self.name
+                ,
+                ec2_launch_template_id: self.ec2_launch_template_id
+                ,
+                launch_disposition: self.launch_disposition
+                ,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+                ,
+                copy_private_ip: self.copy_private_ip
+                ,
+                copy_tags: self.copy_tags
+                ,
+                licensing: self.licensing
+                ,
+                boot_mode: self.boot_mode
+                ,
+                post_launch_actions: self.post_launch_actions
+                ,
+                enable_map_auto_tagging: self.enable_map_auto_tagging
+                ,
+                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput).
@@ -4476,7 +3926,7 @@ impl GetLaunchConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FinalizeCutoverOutput {
+pub struct FinalizeCutoverOutput  {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -4488,8 +3938,7 @@ pub struct FinalizeCutoverOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
@@ -4514,11 +3963,11 @@ pub struct FinalizeCutoverOutput {
 }
 impl FinalizeCutoverOutput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -4526,42 +3975,39 @@ impl FinalizeCutoverOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<& crate::model::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<& crate::model::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<& crate::model::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<& crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<& crate::model::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for FinalizeCutoverOutput {
+impl  std::fmt::Debug for FinalizeCutoverOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FinalizeCutoverOutput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -4580,16 +4026,14 @@ impl std::fmt::Debug for FinalizeCutoverOutput {
 }
 /// See [`FinalizeCutoverOutput`](crate::output::FinalizeCutoverOutput).
 pub mod finalize_cutover_output {
-
+    
     /// A builder for [`FinalizeCutoverOutput`](crate::output::FinalizeCutoverOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
@@ -4605,12 +4049,8 @@ pub mod finalize_cutover_output {
             self
         }
         /// <p>Source server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Source server ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4619,8 +4059,7 @@ pub mod finalize_cutover_output {
         }
         /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Source server archived status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -4629,33 +4068,22 @@ pub mod finalize_cutover_output {
         }
         /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Source server Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Source server Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Source server launched instance.</p>
         pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
@@ -4663,12 +4091,8 @@ pub mod finalize_cutover_output {
             self
         }
         /// <p>Source server launched instance.</p>
-        pub fn set_launched_instance(
-            mut self,
-            input: std::option::Option<crate::model::LaunchedInstance>,
-        ) -> Self {
-            self.launched_instance = input;
-            self
+        pub fn set_launched_instance(mut self, input: std::option::Option<crate::model::LaunchedInstance>) -> Self {
+            self.launched_instance = input; self
         }
         /// <p>Source server data replication info.</p>
         pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
@@ -4676,12 +4100,8 @@ pub mod finalize_cutover_output {
             self
         }
         /// <p>Source server data replication info.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
+        pub fn set_data_replication_info(mut self, input: std::option::Option<crate::model::DataReplicationInfo>) -> Self {
+            self.data_replication_info = input; self
         }
         /// <p>Source server lifecycle state.</p>
         pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
@@ -4689,12 +4109,8 @@ pub mod finalize_cutover_output {
             self
         }
         /// <p>Source server lifecycle state.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
+        pub fn set_life_cycle(mut self, input: std::option::Option<crate::model::LifeCycle>) -> Self {
+            self.life_cycle = input; self
         }
         /// <p>Source server properties.</p>
         pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
@@ -4702,12 +4118,8 @@ pub mod finalize_cutover_output {
             self
         }
         /// <p>Source server properties.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
+        pub fn set_source_properties(mut self, input: std::option::Option<crate::model::SourceProperties>) -> Self {
+            self.source_properties = input; self
         }
         /// <p>Source server replication type.</p>
         pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
@@ -4715,12 +4127,8 @@ pub mod finalize_cutover_output {
             self
         }
         /// <p>Source server replication type.</p>
-        pub fn set_replication_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationType>,
-        ) -> Self {
-            self.replication_type = input;
-            self
+        pub fn set_replication_type(mut self, input: std::option::Option<crate::model::ReplicationType>) -> Self {
+            self.replication_type = input; self
         }
         /// <p>Source server vCenter client id.</p>
         pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4728,12 +4136,8 @@ pub mod finalize_cutover_output {
             self
         }
         /// <p>Source server vCenter client id.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Source server application ID.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4741,27 +4145,34 @@ pub mod finalize_cutover_output {
             self
         }
         /// <p>Source server application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`FinalizeCutoverOutput`](crate::output::FinalizeCutoverOutput).
         pub fn build(self) -> crate::output::FinalizeCutoverOutput {
             crate::output::FinalizeCutoverOutput {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                is_archived: self.is_archived,
-                tags: self.tags,
-                launched_instance: self.launched_instance,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                replication_type: self.replication_type,
-                vcenter_client_id: self.vcenter_client_id,
-                application_id: self.application_id,
+                source_server_id: self.source_server_id
+                ,
+                arn: self.arn
+                ,
+                is_archived: self.is_archived
+                ,
+                tags: self.tags
+                ,
+                launched_instance: self.launched_instance
+                ,
+                data_replication_info: self.data_replication_info
+                ,
+                life_cycle: self.life_cycle
+                ,
+                source_properties: self.source_properties
+                ,
+                replication_type: self.replication_type
+                ,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                application_id: self.application_id
+                ,
             }
         }
     }
@@ -4782,6 +4193,8 @@ pub mod finalize_cutover_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl FinalizeCutoverOutput {
     /// Creates a new builder-style object to manufacture [`FinalizeCutoverOutput`](crate::output::FinalizeCutoverOutput).
@@ -4793,7 +4206,7 @@ impl FinalizeCutoverOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DisconnectFromServiceOutput {
+pub struct DisconnectFromServiceOutput  {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -4805,8 +4218,7 @@ pub struct DisconnectFromServiceOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
@@ -4831,11 +4243,11 @@ pub struct DisconnectFromServiceOutput {
 }
 impl DisconnectFromServiceOutput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -4843,42 +4255,39 @@ impl DisconnectFromServiceOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<& crate::model::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<& crate::model::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<& crate::model::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<& crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<& crate::model::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisconnectFromServiceOutput {
+impl  std::fmt::Debug for DisconnectFromServiceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisconnectFromServiceOutput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -4897,16 +4306,14 @@ impl std::fmt::Debug for DisconnectFromServiceOutput {
 }
 /// See [`DisconnectFromServiceOutput`](crate::output::DisconnectFromServiceOutput).
 pub mod disconnect_from_service_output {
-
+    
     /// A builder for [`DisconnectFromServiceOutput`](crate::output::DisconnectFromServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
@@ -4922,12 +4329,8 @@ pub mod disconnect_from_service_output {
             self
         }
         /// <p>Source server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Source server ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4936,8 +4339,7 @@ pub mod disconnect_from_service_output {
         }
         /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Source server archived status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -4946,33 +4348,22 @@ pub mod disconnect_from_service_output {
         }
         /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Source server Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Source server Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Source server launched instance.</p>
         pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
@@ -4980,12 +4371,8 @@ pub mod disconnect_from_service_output {
             self
         }
         /// <p>Source server launched instance.</p>
-        pub fn set_launched_instance(
-            mut self,
-            input: std::option::Option<crate::model::LaunchedInstance>,
-        ) -> Self {
-            self.launched_instance = input;
-            self
+        pub fn set_launched_instance(mut self, input: std::option::Option<crate::model::LaunchedInstance>) -> Self {
+            self.launched_instance = input; self
         }
         /// <p>Source server data replication info.</p>
         pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
@@ -4993,12 +4380,8 @@ pub mod disconnect_from_service_output {
             self
         }
         /// <p>Source server data replication info.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
+        pub fn set_data_replication_info(mut self, input: std::option::Option<crate::model::DataReplicationInfo>) -> Self {
+            self.data_replication_info = input; self
         }
         /// <p>Source server lifecycle state.</p>
         pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
@@ -5006,12 +4389,8 @@ pub mod disconnect_from_service_output {
             self
         }
         /// <p>Source server lifecycle state.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
+        pub fn set_life_cycle(mut self, input: std::option::Option<crate::model::LifeCycle>) -> Self {
+            self.life_cycle = input; self
         }
         /// <p>Source server properties.</p>
         pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
@@ -5019,12 +4398,8 @@ pub mod disconnect_from_service_output {
             self
         }
         /// <p>Source server properties.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
+        pub fn set_source_properties(mut self, input: std::option::Option<crate::model::SourceProperties>) -> Self {
+            self.source_properties = input; self
         }
         /// <p>Source server replication type.</p>
         pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
@@ -5032,12 +4407,8 @@ pub mod disconnect_from_service_output {
             self
         }
         /// <p>Source server replication type.</p>
-        pub fn set_replication_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationType>,
-        ) -> Self {
-            self.replication_type = input;
-            self
+        pub fn set_replication_type(mut self, input: std::option::Option<crate::model::ReplicationType>) -> Self {
+            self.replication_type = input; self
         }
         /// <p>Source server vCenter client id.</p>
         pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5045,12 +4416,8 @@ pub mod disconnect_from_service_output {
             self
         }
         /// <p>Source server vCenter client id.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Source server application ID.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5058,27 +4425,34 @@ pub mod disconnect_from_service_output {
             self
         }
         /// <p>Source server application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`DisconnectFromServiceOutput`](crate::output::DisconnectFromServiceOutput).
         pub fn build(self) -> crate::output::DisconnectFromServiceOutput {
             crate::output::DisconnectFromServiceOutput {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                is_archived: self.is_archived,
-                tags: self.tags,
-                launched_instance: self.launched_instance,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                replication_type: self.replication_type,
-                vcenter_client_id: self.vcenter_client_id,
-                application_id: self.application_id,
+                source_server_id: self.source_server_id
+                ,
+                arn: self.arn
+                ,
+                is_archived: self.is_archived
+                ,
+                tags: self.tags
+                ,
+                launched_instance: self.launched_instance
+                ,
+                data_replication_info: self.data_replication_info
+                ,
+                life_cycle: self.life_cycle
+                ,
+                source_properties: self.source_properties
+                ,
+                replication_type: self.replication_type
+                ,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                application_id: self.application_id
+                ,
             }
         }
     }
@@ -5099,6 +4473,8 @@ pub mod disconnect_from_service_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DisconnectFromServiceOutput {
     /// Creates a new builder-style object to manufacture [`DisconnectFromServiceOutput`](crate::output::DisconnectFromServiceOutput).
@@ -5110,7 +4486,7 @@ impl DisconnectFromServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChangeServerLifeCycleStateOutput {
+pub struct ChangeServerLifeCycleStateOutput  {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -5122,8 +4498,7 @@ pub struct ChangeServerLifeCycleStateOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
@@ -5148,11 +4523,11 @@ pub struct ChangeServerLifeCycleStateOutput {
 }
 impl ChangeServerLifeCycleStateOutput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -5160,42 +4535,39 @@ impl ChangeServerLifeCycleStateOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<& crate::model::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<& crate::model::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<& crate::model::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<& crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<& crate::model::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for ChangeServerLifeCycleStateOutput {
+impl  std::fmt::Debug for ChangeServerLifeCycleStateOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangeServerLifeCycleStateOutput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -5214,16 +4586,14 @@ impl std::fmt::Debug for ChangeServerLifeCycleStateOutput {
 }
 /// See [`ChangeServerLifeCycleStateOutput`](crate::output::ChangeServerLifeCycleStateOutput).
 pub mod change_server_life_cycle_state_output {
-
+    
     /// A builder for [`ChangeServerLifeCycleStateOutput`](crate::output::ChangeServerLifeCycleStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
@@ -5239,12 +4609,8 @@ pub mod change_server_life_cycle_state_output {
             self
         }
         /// <p>Source server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Source server ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5253,8 +4619,7 @@ pub mod change_server_life_cycle_state_output {
         }
         /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Source server archived status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -5263,33 +4628,22 @@ pub mod change_server_life_cycle_state_output {
         }
         /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Source server Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Source server Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Source server launched instance.</p>
         pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
@@ -5297,12 +4651,8 @@ pub mod change_server_life_cycle_state_output {
             self
         }
         /// <p>Source server launched instance.</p>
-        pub fn set_launched_instance(
-            mut self,
-            input: std::option::Option<crate::model::LaunchedInstance>,
-        ) -> Self {
-            self.launched_instance = input;
-            self
+        pub fn set_launched_instance(mut self, input: std::option::Option<crate::model::LaunchedInstance>) -> Self {
+            self.launched_instance = input; self
         }
         /// <p>Source server data replication info.</p>
         pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
@@ -5310,12 +4660,8 @@ pub mod change_server_life_cycle_state_output {
             self
         }
         /// <p>Source server data replication info.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
+        pub fn set_data_replication_info(mut self, input: std::option::Option<crate::model::DataReplicationInfo>) -> Self {
+            self.data_replication_info = input; self
         }
         /// <p>Source server lifecycle state.</p>
         pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
@@ -5323,12 +4669,8 @@ pub mod change_server_life_cycle_state_output {
             self
         }
         /// <p>Source server lifecycle state.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
+        pub fn set_life_cycle(mut self, input: std::option::Option<crate::model::LifeCycle>) -> Self {
+            self.life_cycle = input; self
         }
         /// <p>Source server properties.</p>
         pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
@@ -5336,12 +4678,8 @@ pub mod change_server_life_cycle_state_output {
             self
         }
         /// <p>Source server properties.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
+        pub fn set_source_properties(mut self, input: std::option::Option<crate::model::SourceProperties>) -> Self {
+            self.source_properties = input; self
         }
         /// <p>Source server replication type.</p>
         pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
@@ -5349,12 +4687,8 @@ pub mod change_server_life_cycle_state_output {
             self
         }
         /// <p>Source server replication type.</p>
-        pub fn set_replication_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationType>,
-        ) -> Self {
-            self.replication_type = input;
-            self
+        pub fn set_replication_type(mut self, input: std::option::Option<crate::model::ReplicationType>) -> Self {
+            self.replication_type = input; self
         }
         /// <p>Source server vCenter client id.</p>
         pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5362,12 +4696,8 @@ pub mod change_server_life_cycle_state_output {
             self
         }
         /// <p>Source server vCenter client id.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Source server application ID.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5375,27 +4705,34 @@ pub mod change_server_life_cycle_state_output {
             self
         }
         /// <p>Source server application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateOutput`](crate::output::ChangeServerLifeCycleStateOutput).
         pub fn build(self) -> crate::output::ChangeServerLifeCycleStateOutput {
             crate::output::ChangeServerLifeCycleStateOutput {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                is_archived: self.is_archived,
-                tags: self.tags,
-                launched_instance: self.launched_instance,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                replication_type: self.replication_type,
-                vcenter_client_id: self.vcenter_client_id,
-                application_id: self.application_id,
+                source_server_id: self.source_server_id
+                ,
+                arn: self.arn
+                ,
+                is_archived: self.is_archived
+                ,
+                tags: self.tags
+                ,
+                launched_instance: self.launched_instance
+                ,
+                data_replication_info: self.data_replication_info
+                ,
+                life_cycle: self.life_cycle
+                ,
+                source_properties: self.source_properties
+                ,
+                replication_type: self.replication_type
+                ,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                application_id: self.application_id
+                ,
             }
         }
     }
@@ -5416,6 +4753,8 @@ pub mod change_server_life_cycle_state_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ChangeServerLifeCycleStateOutput {
     /// Creates a new builder-style object to manufacture [`ChangeServerLifeCycleStateOutput`](crate::output::ChangeServerLifeCycleStateOutput).
@@ -5427,20 +4766,20 @@ impl ChangeServerLifeCycleStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateTargetInstancesOutput {
+pub struct TerminateTargetInstancesOutput  {
     /// <p>Terminate Target instance Job response.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl TerminateTargetInstancesOutput {
     /// <p>Terminate Target instance Job response.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+    pub fn job(&self) -> std::option::Option<& crate::model::Job> {
         self.job.as_ref()
     }
 }
 /// See [`TerminateTargetInstancesOutput`](crate::output::TerminateTargetInstancesOutput).
 pub mod terminate_target_instances_output {
-
+    
     /// A builder for [`TerminateTargetInstancesOutput`](crate::output::TerminateTargetInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5454,14 +4793,18 @@ pub mod terminate_target_instances_output {
         }
         /// <p>Terminate Target instance Job response.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
-            self.job = input;
-            self
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`TerminateTargetInstancesOutput`](crate::output::TerminateTargetInstancesOutput).
         pub fn build(self) -> crate::output::TerminateTargetInstancesOutput {
-            crate::output::TerminateTargetInstancesOutput { job: self.job }
+            crate::output::TerminateTargetInstancesOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl TerminateTargetInstancesOutput {
     /// Creates a new builder-style object to manufacture [`TerminateTargetInstancesOutput`](crate::output::TerminateTargetInstancesOutput).
@@ -5473,20 +4816,20 @@ impl TerminateTargetInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTestOutput {
+pub struct StartTestOutput  {
     /// <p>Start Test Job response.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl StartTestOutput {
     /// <p>Start Test Job response.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+    pub fn job(&self) -> std::option::Option<& crate::model::Job> {
         self.job.as_ref()
     }
 }
 /// See [`StartTestOutput`](crate::output::StartTestOutput).
 pub mod start_test_output {
-
+    
     /// A builder for [`StartTestOutput`](crate::output::StartTestOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5500,14 +4843,18 @@ pub mod start_test_output {
         }
         /// <p>Start Test Job response.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
-            self.job = input;
-            self
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`StartTestOutput`](crate::output::StartTestOutput).
         pub fn build(self) -> crate::output::StartTestOutput {
-            crate::output::StartTestOutput { job: self.job }
+            crate::output::StartTestOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl StartTestOutput {
     /// Creates a new builder-style object to manufacture [`StartTestOutput`](crate::output::StartTestOutput).
@@ -5519,20 +4866,20 @@ impl StartTestOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartCutoverOutput {
+pub struct StartCutoverOutput  {
     /// <p>Start Cutover Job response.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl StartCutoverOutput {
     /// <p>Start Cutover Job response.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+    pub fn job(&self) -> std::option::Option<& crate::model::Job> {
         self.job.as_ref()
     }
 }
 /// See [`StartCutoverOutput`](crate::output::StartCutoverOutput).
 pub mod start_cutover_output {
-
+    
     /// A builder for [`StartCutoverOutput`](crate::output::StartCutoverOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5546,14 +4893,18 @@ pub mod start_cutover_output {
         }
         /// <p>Start Cutover Job response.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
-            self.job = input;
-            self
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`StartCutoverOutput`](crate::output::StartCutoverOutput).
         pub fn build(self) -> crate::output::StartCutoverOutput {
-            crate::output::StartCutoverOutput { job: self.job }
+            crate::output::StartCutoverOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl StartCutoverOutput {
     /// Creates a new builder-style object to manufacture [`StartCutoverOutput`](crate::output::StartCutoverOutput).
@@ -5565,7 +4916,7 @@ impl StartCutoverOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceServersOutput {
+pub struct DescribeSourceServersOutput  {
     /// <p>Request to filter Source Servers list by item.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::SourceServer>>,
@@ -5575,17 +4926,17 @@ pub struct DescribeSourceServersOutput {
 }
 impl DescribeSourceServersOutput {
     /// <p>Request to filter Source Servers list by item.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::SourceServer]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::SourceServer]> {
         self.items.as_deref()
     }
     /// <p>Request to filter Source Servers next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeSourceServersOutput`](crate::output::DescribeSourceServersOutput).
 pub mod describe_source_servers_output {
-
+    
     /// A builder for [`DescribeSourceServersOutput`](crate::output::DescribeSourceServersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5600,17 +4951,13 @@ pub mod describe_source_servers_output {
         /// <p>Request to filter Source Servers list by item.</p>
         pub fn items(mut self, input: crate::model::SourceServer) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Request to filter Source Servers list by item.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceServer>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceServer>>) -> Self {
+            self.items = input; self
         }
         /// <p>Request to filter Source Servers next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5619,17 +4966,20 @@ pub mod describe_source_servers_output {
         }
         /// <p>Request to filter Source Servers next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSourceServersOutput`](crate::output::DescribeSourceServersOutput).
         pub fn build(self) -> crate::output::DescribeSourceServersOutput {
             crate::output::DescribeSourceServersOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSourceServersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceServersOutput`](crate::output::DescribeSourceServersOutput).
@@ -5641,19 +4991,24 @@ impl DescribeSourceServersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSourceServerOutput {}
+pub struct DeleteSourceServerOutput  {
+}
 /// See [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput).
 pub mod delete_source_server_output {
-
+    
     /// A builder for [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput).
         pub fn build(self) -> crate::output::DeleteSourceServerOutput {
-            crate::output::DeleteSourceServerOutput {}
+            crate::output::DeleteSourceServerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSourceServerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput).
@@ -5665,7 +5020,7 @@ impl DeleteSourceServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationConfigurationTemplatesOutput {
+pub struct DescribeReplicationConfigurationTemplatesOutput  {
     /// <p>Request to describe Replication Configuration template by items.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationTemplate>>,
@@ -5675,22 +5030,21 @@ pub struct DescribeReplicationConfigurationTemplatesOutput {
 }
 impl DescribeReplicationConfigurationTemplatesOutput {
     /// <p>Request to describe Replication Configuration template by items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ReplicationConfigurationTemplate]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ReplicationConfigurationTemplate]> {
         self.items.as_deref()
     }
     /// <p>Request to describe Replication Configuration template by next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeReplicationConfigurationTemplatesOutput`](crate::output::DescribeReplicationConfigurationTemplatesOutput).
 pub mod describe_replication_configuration_templates_output {
-
+    
     /// A builder for [`DescribeReplicationConfigurationTemplatesOutput`](crate::output::DescribeReplicationConfigurationTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationTemplate>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationTemplate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5701,19 +5055,13 @@ pub mod describe_replication_configuration_templates_output {
         /// <p>Request to describe Replication Configuration template by items.</p>
         pub fn items(mut self, input: crate::model::ReplicationConfigurationTemplate) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Request to describe Replication Configuration template by items.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ReplicationConfigurationTemplate>,
-            >,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationTemplate>>) -> Self {
+            self.items = input; self
         }
         /// <p>Request to describe Replication Configuration template by next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5722,22 +5070,24 @@ pub mod describe_replication_configuration_templates_output {
         }
         /// <p>Request to describe Replication Configuration template by next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationConfigurationTemplatesOutput`](crate::output::DescribeReplicationConfigurationTemplatesOutput).
         pub fn build(self) -> crate::output::DescribeReplicationConfigurationTemplatesOutput {
             crate::output::DescribeReplicationConfigurationTemplatesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationConfigurationTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationTemplatesOutput`](crate::output::DescribeReplicationConfigurationTemplatesOutput).
-    pub fn builder() -> crate::output::describe_replication_configuration_templates_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_replication_configuration_templates_output::Builder {
         crate::output::describe_replication_configuration_templates_output::Builder::default()
     }
 }
@@ -5745,7 +5095,7 @@ impl DescribeReplicationConfigurationTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateReplicationConfigurationTemplateOutput {
+pub struct CreateReplicationConfigurationTemplateOutput  {
     /// <p>Replication Configuration template ID.</p>
     #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
@@ -5760,8 +5110,7 @@ pub struct CreateReplicationConfigurationTemplateOutput {
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration template server Security Groups IDs.</p>
     #[doc(hidden)]
-    pub replication_servers_security_groups_i_ds:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration template server instance type.</p>
     #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
@@ -5770,8 +5119,7 @@ pub struct CreateReplicationConfigurationTemplateOutput {
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
     #[doc(hidden)]
-    pub default_large_staging_disk_type:
-        std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
     #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
@@ -5783,31 +5131,28 @@ pub struct CreateReplicationConfigurationTemplateOutput {
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
     #[doc(hidden)]
-    pub data_plane_routing:
-        std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+    pub data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration template create Public IP.</p>
     #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration template Staging Area Tags.</p>
     #[doc(hidden)]
-    pub staging_area_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Replication Configuration template Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateReplicationConfigurationTemplateOutput {
     /// <p>Replication Configuration template ID.</p>
-    pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
+    pub fn replication_configuration_template_id(&self) -> std::option::Option<& str> {
         self.replication_configuration_template_id.as_deref()
     }
     /// <p>Replication Configuration template ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
-    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<& str> {
         self.staging_area_subnet_id.as_deref()
     }
     /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
@@ -5815,13 +5160,11 @@ impl CreateReplicationConfigurationTemplateOutput {
         self.associate_default_security_group
     }
     /// <p>Replication Configuration template server Security Groups IDs.</p>
-    pub fn replication_servers_security_groups_i_ds(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn replication_servers_security_groups_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.replication_servers_security_groups_i_ds.as_deref()
     }
     /// <p>Replication Configuration template server instance type.</p>
-    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+    pub fn replication_server_instance_type(&self) -> std::option::Option<& str> {
         self.replication_server_instance_type.as_deref()
     }
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
@@ -5829,20 +5172,15 @@ impl CreateReplicationConfigurationTemplateOutput {
         self.use_dedicated_replication_server
     }
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
-    pub fn default_large_staging_disk_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
-    {
+    pub fn default_large_staging_disk_type(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDefaultLargeStagingDiskType> {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration template EBS encryption.</p>
-    pub fn ebs_encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+    pub fn ebs_encryption(&self) -> std::option::Option<& crate::model::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
-    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<& str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Replication Configuration template bandwidth throttling.</p>
@@ -5850,9 +5188,7 @@ impl CreateReplicationConfigurationTemplateOutput {
         self.bandwidth_throttling
     }
     /// <p>Replication Configuration template data plane routing.</p>
-    pub fn data_plane_routing(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+    pub fn data_plane_routing(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDataPlaneRouting> {
         self.data_plane_routing.as_ref()
     }
     /// <p>Replication Configuration template create Public IP.</p>
@@ -5860,49 +5196,25 @@ impl CreateReplicationConfigurationTemplateOutput {
         self.create_public_ip
     }
     /// <p>Replication Configuration template Staging Area Tags.</p>
-    pub fn staging_area_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn staging_area_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.staging_area_tags.as_ref()
     }
     /// <p>Replication Configuration template Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateReplicationConfigurationTemplateOutput {
+impl  std::fmt::Debug for CreateReplicationConfigurationTemplateOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationConfigurationTemplateOutput");
-        formatter.field(
-            "replication_configuration_template_id",
-            &self.replication_configuration_template_id,
-        );
+        formatter.field("replication_configuration_template_id", &self.replication_configuration_template_id);
         formatter.field("arn", &self.arn);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field(
-            "associate_default_security_group",
-            &self.associate_default_security_group,
-        );
-        formatter.field(
-            "replication_servers_security_groups_i_ds",
-            &self.replication_servers_security_groups_i_ds,
-        );
-        formatter.field(
-            "replication_server_instance_type",
-            &self.replication_server_instance_type,
-        );
-        formatter.field(
-            "use_dedicated_replication_server",
-            &self.use_dedicated_replication_server,
-        );
-        formatter.field(
-            "default_large_staging_disk_type",
-            &self.default_large_staging_disk_type,
-        );
+        formatter.field("associate_default_security_group", &self.associate_default_security_group);
+        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
         formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
@@ -5915,7 +5227,7 @@ impl std::fmt::Debug for CreateReplicationConfigurationTemplateOutput {
 }
 /// See [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput).
 pub mod create_replication_configuration_template_output {
-
+    
     /// A builder for [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5923,42 +5235,27 @@ pub mod create_replication_configuration_template_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
         pub(crate) associate_default_security_group: std::option::Option<bool>,
-        pub(crate) replication_servers_security_groups_i_ds:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) replication_server_instance_type: std::option::Option<std::string::String>,
         pub(crate) use_dedicated_replication_server: std::option::Option<bool>,
-        pub(crate) default_large_staging_disk_type:
-            std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
-        pub(crate) ebs_encryption:
-            std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
+        pub(crate) default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+        pub(crate) ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
         pub(crate) ebs_encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) bandwidth_throttling: std::option::Option<i64>,
-        pub(crate) data_plane_routing:
-            std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+        pub(crate) data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
         pub(crate) create_public_ip: std::option::Option<bool>,
-        pub(crate) staging_area_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Replication Configuration template ID.</p>
-        pub fn replication_configuration_template_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_configuration_template_id = Some(input.into());
             self
         }
         /// <p>Replication Configuration template ID.</p>
-        pub fn set_replication_configuration_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_configuration_template_id = input;
-            self
+        pub fn set_replication_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_configuration_template_id = input; self
         }
         /// <p>Replication Configuration template ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5967,8 +5264,7 @@ pub mod create_replication_configuration_template_output {
         }
         /// <p>Replication Configuration template ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Replication Configuration template Staging Area subnet ID.</p>
         pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5976,12 +5272,8 @@ pub mod create_replication_configuration_template_output {
             self
         }
         /// <p>Replication Configuration template Staging Area subnet ID.</p>
-        pub fn set_staging_area_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.staging_area_subnet_id = input;
-            self
+        pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.staging_area_subnet_id = input; self
         }
         /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
         pub fn associate_default_security_group(mut self, input: bool) -> Self {
@@ -5989,52 +5281,32 @@ pub mod create_replication_configuration_template_output {
             self
         }
         /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
-        pub fn set_associate_default_security_group(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.associate_default_security_group = input;
-            self
+        pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
+            self.associate_default_security_group = input; self
         }
         /// Appends an item to `replication_servers_security_groups_i_ds`.
         ///
         /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
         ///
         /// <p>Replication Configuration template server Security Groups IDs.</p>
-        pub fn replication_servers_security_groups_i_ds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .replication_servers_security_groups_i_ds
-                .unwrap_or_default();
-            v.push(input.into());
-            self.replication_servers_security_groups_i_ds = Some(v);
-            self
+        pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
+                            v.push(input.into());
+                            self.replication_servers_security_groups_i_ds = Some(v);
+                            self
         }
         /// <p>Replication Configuration template server Security Groups IDs.</p>
-        pub fn set_replication_servers_security_groups_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replication_servers_security_groups_i_ds = input;
-            self
+        pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replication_servers_security_groups_i_ds = input; self
         }
         /// <p>Replication Configuration template server instance type.</p>
-        pub fn replication_server_instance_type(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_server_instance_type = Some(input.into());
             self
         }
         /// <p>Replication Configuration template server instance type.</p>
-        pub fn set_replication_server_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_server_instance_type = input;
-            self
+        pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_server_instance_type = input; self
         }
         /// <p>Replication Configuration template use Dedicated Replication Server.</p>
         pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
@@ -6042,46 +5314,26 @@ pub mod create_replication_configuration_template_output {
             self
         }
         /// <p>Replication Configuration template use Dedicated Replication Server.</p>
-        pub fn set_use_dedicated_replication_server(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.use_dedicated_replication_server = input;
-            self
+        pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_dedicated_replication_server = input; self
         }
         /// <p>Replication Configuration template use default large Staging Disk type.</p>
-        pub fn default_large_staging_disk_type(
-            mut self,
-            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-        ) -> Self {
+        pub fn default_large_staging_disk_type(mut self, input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
             self.default_large_staging_disk_type = Some(input);
             self
         }
         /// <p>Replication Configuration template use default large Staging Disk type.</p>
-        pub fn set_default_large_staging_disk_type(
-            mut self,
-            input: std::option::Option<
-                crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-            >,
-        ) -> Self {
-            self.default_large_staging_disk_type = input;
-            self
+        pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
+            self.default_large_staging_disk_type = input; self
         }
         /// <p>Replication Configuration template EBS encryption.</p>
-        pub fn ebs_encryption(
-            mut self,
-            input: crate::model::ReplicationConfigurationEbsEncryption,
-        ) -> Self {
+        pub fn ebs_encryption(mut self, input: crate::model::ReplicationConfigurationEbsEncryption) -> Self {
             self.ebs_encryption = Some(input);
             self
         }
         /// <p>Replication Configuration template EBS encryption.</p>
-        pub fn set_ebs_encryption(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
-        ) -> Self {
-            self.ebs_encryption = input;
-            self
+        pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>) -> Self {
+            self.ebs_encryption = input; self
         }
         /// <p>Replication Configuration template EBS encryption key ARN.</p>
         pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6089,12 +5341,8 @@ pub mod create_replication_configuration_template_output {
             self
         }
         /// <p>Replication Configuration template EBS encryption key ARN.</p>
-        pub fn set_ebs_encryption_key_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_encryption_key_arn = input;
-            self
+        pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_encryption_key_arn = input; self
         }
         /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -6103,24 +5351,16 @@ pub mod create_replication_configuration_template_output {
         }
         /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.bandwidth_throttling = input;
-            self
+            self.bandwidth_throttling = input; self
         }
         /// <p>Replication Configuration template data plane routing.</p>
-        pub fn data_plane_routing(
-            mut self,
-            input: crate::model::ReplicationConfigurationDataPlaneRouting,
-        ) -> Self {
+        pub fn data_plane_routing(mut self, input: crate::model::ReplicationConfigurationDataPlaneRouting) -> Self {
             self.data_plane_routing = Some(input);
             self
         }
         /// <p>Replication Configuration template data plane routing.</p>
-        pub fn set_data_plane_routing(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
-        ) -> Self {
-            self.data_plane_routing = input;
-            self
+        pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>) -> Self {
+            self.data_plane_routing = input; self
         }
         /// <p>Replication Configuration template create Public IP.</p>
         pub fn create_public_ip(mut self, input: bool) -> Self {
@@ -6129,110 +5369,86 @@ pub mod create_replication_configuration_template_output {
         }
         /// <p>Replication Configuration template create Public IP.</p>
         pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_public_ip = input;
-            self
+            self.create_public_ip = input; self
         }
         /// Adds a key-value pair to `staging_area_tags`.
         ///
         /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
         ///
         /// <p>Replication Configuration template Staging Area Tags.</p>
-        pub fn staging_area_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.staging_area_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.staging_area_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.staging_area_tags = Some(hash_map);
+                            self
         }
         /// <p>Replication Configuration template Staging Area Tags.</p>
-        pub fn set_staging_area_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.staging_area_tags = input;
-            self
+        pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.staging_area_tags = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Replication Configuration template Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Replication Configuration template Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput).
         pub fn build(self) -> crate::output::CreateReplicationConfigurationTemplateOutput {
             crate::output::CreateReplicationConfigurationTemplateOutput {
-                replication_configuration_template_id: self.replication_configuration_template_id,
-                arn: self.arn,
-                staging_area_subnet_id: self.staging_area_subnet_id,
-                associate_default_security_group: self.associate_default_security_group,
-                replication_servers_security_groups_i_ds: self
-                    .replication_servers_security_groups_i_ds,
-                replication_server_instance_type: self.replication_server_instance_type,
-                use_dedicated_replication_server: self.use_dedicated_replication_server,
-                default_large_staging_disk_type: self.default_large_staging_disk_type,
-                ebs_encryption: self.ebs_encryption,
-                ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-                bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
-                data_plane_routing: self.data_plane_routing,
-                create_public_ip: self.create_public_ip,
-                staging_area_tags: self.staging_area_tags,
-                tags: self.tags,
+                replication_configuration_template_id: self.replication_configuration_template_id
+                ,
+                arn: self.arn
+                ,
+                staging_area_subnet_id: self.staging_area_subnet_id
+                ,
+                associate_default_security_group: self.associate_default_security_group
+                ,
+                replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds
+                ,
+                replication_server_instance_type: self.replication_server_instance_type
+                ,
+                use_dedicated_replication_server: self.use_dedicated_replication_server
+                ,
+                default_large_staging_disk_type: self.default_large_staging_disk_type
+                ,
+                ebs_encryption: self.ebs_encryption
+                ,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn
+                ,
+                bandwidth_throttling: self.bandwidth_throttling
+                    .unwrap_or_default()
+                ,
+                data_plane_routing: self.data_plane_routing
+                ,
+                create_public_ip: self.create_public_ip
+                ,
+                staging_area_tags: self.staging_area_tags
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "replication_configuration_template_id",
-                &self.replication_configuration_template_id,
-            );
+            formatter.field("replication_configuration_template_id", &self.replication_configuration_template_id);
             formatter.field("arn", &self.arn);
             formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-            formatter.field(
-                "associate_default_security_group",
-                &self.associate_default_security_group,
-            );
-            formatter.field(
-                "replication_servers_security_groups_i_ds",
-                &self.replication_servers_security_groups_i_ds,
-            );
-            formatter.field(
-                "replication_server_instance_type",
-                &self.replication_server_instance_type,
-            );
-            formatter.field(
-                "use_dedicated_replication_server",
-                &self.use_dedicated_replication_server,
-            );
-            formatter.field(
-                "default_large_staging_disk_type",
-                &self.default_large_staging_disk_type,
-            );
+            formatter.field("associate_default_security_group", &self.associate_default_security_group);
+            formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+            formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+            formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+            formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
             formatter.field("ebs_encryption", &self.ebs_encryption);
             formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
             formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
@@ -6243,6 +5459,8 @@ pub mod create_replication_configuration_template_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateReplicationConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput).
@@ -6254,19 +5472,24 @@ impl CreateReplicationConfigurationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationConfigurationTemplateOutput {}
+pub struct DeleteReplicationConfigurationTemplateOutput  {
+}
 /// See [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput).
 pub mod delete_replication_configuration_template_output {
-
+    
     /// A builder for [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput).
         pub fn build(self) -> crate::output::DeleteReplicationConfigurationTemplateOutput {
-            crate::output::DeleteReplicationConfigurationTemplateOutput {}
+            crate::output::DeleteReplicationConfigurationTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteReplicationConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput).
@@ -6278,7 +5501,7 @@ impl DeleteReplicationConfigurationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateReplicationConfigurationTemplateOutput {
+pub struct UpdateReplicationConfigurationTemplateOutput  {
     /// <p>Replication Configuration template ID.</p>
     #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
@@ -6293,8 +5516,7 @@ pub struct UpdateReplicationConfigurationTemplateOutput {
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration template server Security Groups IDs.</p>
     #[doc(hidden)]
-    pub replication_servers_security_groups_i_ds:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration template server instance type.</p>
     #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
@@ -6303,8 +5525,7 @@ pub struct UpdateReplicationConfigurationTemplateOutput {
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
     #[doc(hidden)]
-    pub default_large_staging_disk_type:
-        std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
     #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
@@ -6316,31 +5537,28 @@ pub struct UpdateReplicationConfigurationTemplateOutput {
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
     #[doc(hidden)]
-    pub data_plane_routing:
-        std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+    pub data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration template create Public IP.</p>
     #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration template Staging Area Tags.</p>
     #[doc(hidden)]
-    pub staging_area_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Replication Configuration template Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateReplicationConfigurationTemplateOutput {
     /// <p>Replication Configuration template ID.</p>
-    pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
+    pub fn replication_configuration_template_id(&self) -> std::option::Option<& str> {
         self.replication_configuration_template_id.as_deref()
     }
     /// <p>Replication Configuration template ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
-    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<& str> {
         self.staging_area_subnet_id.as_deref()
     }
     /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
@@ -6348,13 +5566,11 @@ impl UpdateReplicationConfigurationTemplateOutput {
         self.associate_default_security_group
     }
     /// <p>Replication Configuration template server Security Groups IDs.</p>
-    pub fn replication_servers_security_groups_i_ds(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn replication_servers_security_groups_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.replication_servers_security_groups_i_ds.as_deref()
     }
     /// <p>Replication Configuration template server instance type.</p>
-    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+    pub fn replication_server_instance_type(&self) -> std::option::Option<& str> {
         self.replication_server_instance_type.as_deref()
     }
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
@@ -6362,20 +5578,15 @@ impl UpdateReplicationConfigurationTemplateOutput {
         self.use_dedicated_replication_server
     }
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
-    pub fn default_large_staging_disk_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
-    {
+    pub fn default_large_staging_disk_type(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDefaultLargeStagingDiskType> {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration template EBS encryption.</p>
-    pub fn ebs_encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+    pub fn ebs_encryption(&self) -> std::option::Option<& crate::model::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
-    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<& str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Replication Configuration template bandwidth throttling.</p>
@@ -6383,9 +5594,7 @@ impl UpdateReplicationConfigurationTemplateOutput {
         self.bandwidth_throttling
     }
     /// <p>Replication Configuration template data plane routing.</p>
-    pub fn data_plane_routing(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+    pub fn data_plane_routing(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDataPlaneRouting> {
         self.data_plane_routing.as_ref()
     }
     /// <p>Replication Configuration template create Public IP.</p>
@@ -6393,49 +5602,25 @@ impl UpdateReplicationConfigurationTemplateOutput {
         self.create_public_ip
     }
     /// <p>Replication Configuration template Staging Area Tags.</p>
-    pub fn staging_area_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn staging_area_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.staging_area_tags.as_ref()
     }
     /// <p>Replication Configuration template Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateReplicationConfigurationTemplateOutput {
+impl  std::fmt::Debug for UpdateReplicationConfigurationTemplateOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReplicationConfigurationTemplateOutput");
-        formatter.field(
-            "replication_configuration_template_id",
-            &self.replication_configuration_template_id,
-        );
+        formatter.field("replication_configuration_template_id", &self.replication_configuration_template_id);
         formatter.field("arn", &self.arn);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field(
-            "associate_default_security_group",
-            &self.associate_default_security_group,
-        );
-        formatter.field(
-            "replication_servers_security_groups_i_ds",
-            &self.replication_servers_security_groups_i_ds,
-        );
-        formatter.field(
-            "replication_server_instance_type",
-            &self.replication_server_instance_type,
-        );
-        formatter.field(
-            "use_dedicated_replication_server",
-            &self.use_dedicated_replication_server,
-        );
-        formatter.field(
-            "default_large_staging_disk_type",
-            &self.default_large_staging_disk_type,
-        );
+        formatter.field("associate_default_security_group", &self.associate_default_security_group);
+        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
         formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
@@ -6448,7 +5633,7 @@ impl std::fmt::Debug for UpdateReplicationConfigurationTemplateOutput {
 }
 /// See [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput).
 pub mod update_replication_configuration_template_output {
-
+    
     /// A builder for [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6456,42 +5641,27 @@ pub mod update_replication_configuration_template_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
         pub(crate) associate_default_security_group: std::option::Option<bool>,
-        pub(crate) replication_servers_security_groups_i_ds:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) replication_server_instance_type: std::option::Option<std::string::String>,
         pub(crate) use_dedicated_replication_server: std::option::Option<bool>,
-        pub(crate) default_large_staging_disk_type:
-            std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
-        pub(crate) ebs_encryption:
-            std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
+        pub(crate) default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+        pub(crate) ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
         pub(crate) ebs_encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) bandwidth_throttling: std::option::Option<i64>,
-        pub(crate) data_plane_routing:
-            std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+        pub(crate) data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
         pub(crate) create_public_ip: std::option::Option<bool>,
-        pub(crate) staging_area_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Replication Configuration template ID.</p>
-        pub fn replication_configuration_template_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_configuration_template_id = Some(input.into());
             self
         }
         /// <p>Replication Configuration template ID.</p>
-        pub fn set_replication_configuration_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_configuration_template_id = input;
-            self
+        pub fn set_replication_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_configuration_template_id = input; self
         }
         /// <p>Replication Configuration template ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6500,8 +5670,7 @@ pub mod update_replication_configuration_template_output {
         }
         /// <p>Replication Configuration template ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Replication Configuration template Staging Area subnet ID.</p>
         pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6509,12 +5678,8 @@ pub mod update_replication_configuration_template_output {
             self
         }
         /// <p>Replication Configuration template Staging Area subnet ID.</p>
-        pub fn set_staging_area_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.staging_area_subnet_id = input;
-            self
+        pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.staging_area_subnet_id = input; self
         }
         /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
         pub fn associate_default_security_group(mut self, input: bool) -> Self {
@@ -6522,52 +5687,32 @@ pub mod update_replication_configuration_template_output {
             self
         }
         /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
-        pub fn set_associate_default_security_group(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.associate_default_security_group = input;
-            self
+        pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
+            self.associate_default_security_group = input; self
         }
         /// Appends an item to `replication_servers_security_groups_i_ds`.
         ///
         /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
         ///
         /// <p>Replication Configuration template server Security Groups IDs.</p>
-        pub fn replication_servers_security_groups_i_ds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .replication_servers_security_groups_i_ds
-                .unwrap_or_default();
-            v.push(input.into());
-            self.replication_servers_security_groups_i_ds = Some(v);
-            self
+        pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
+                            v.push(input.into());
+                            self.replication_servers_security_groups_i_ds = Some(v);
+                            self
         }
         /// <p>Replication Configuration template server Security Groups IDs.</p>
-        pub fn set_replication_servers_security_groups_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replication_servers_security_groups_i_ds = input;
-            self
+        pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replication_servers_security_groups_i_ds = input; self
         }
         /// <p>Replication Configuration template server instance type.</p>
-        pub fn replication_server_instance_type(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_server_instance_type = Some(input.into());
             self
         }
         /// <p>Replication Configuration template server instance type.</p>
-        pub fn set_replication_server_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_server_instance_type = input;
-            self
+        pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_server_instance_type = input; self
         }
         /// <p>Replication Configuration template use Dedicated Replication Server.</p>
         pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
@@ -6575,46 +5720,26 @@ pub mod update_replication_configuration_template_output {
             self
         }
         /// <p>Replication Configuration template use Dedicated Replication Server.</p>
-        pub fn set_use_dedicated_replication_server(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.use_dedicated_replication_server = input;
-            self
+        pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_dedicated_replication_server = input; self
         }
         /// <p>Replication Configuration template use default large Staging Disk type.</p>
-        pub fn default_large_staging_disk_type(
-            mut self,
-            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-        ) -> Self {
+        pub fn default_large_staging_disk_type(mut self, input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
             self.default_large_staging_disk_type = Some(input);
             self
         }
         /// <p>Replication Configuration template use default large Staging Disk type.</p>
-        pub fn set_default_large_staging_disk_type(
-            mut self,
-            input: std::option::Option<
-                crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-            >,
-        ) -> Self {
-            self.default_large_staging_disk_type = input;
-            self
+        pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
+            self.default_large_staging_disk_type = input; self
         }
         /// <p>Replication Configuration template EBS encryption.</p>
-        pub fn ebs_encryption(
-            mut self,
-            input: crate::model::ReplicationConfigurationEbsEncryption,
-        ) -> Self {
+        pub fn ebs_encryption(mut self, input: crate::model::ReplicationConfigurationEbsEncryption) -> Self {
             self.ebs_encryption = Some(input);
             self
         }
         /// <p>Replication Configuration template EBS encryption.</p>
-        pub fn set_ebs_encryption(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
-        ) -> Self {
-            self.ebs_encryption = input;
-            self
+        pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>) -> Self {
+            self.ebs_encryption = input; self
         }
         /// <p>Replication Configuration template EBS encryption key ARN.</p>
         pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6622,12 +5747,8 @@ pub mod update_replication_configuration_template_output {
             self
         }
         /// <p>Replication Configuration template EBS encryption key ARN.</p>
-        pub fn set_ebs_encryption_key_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_encryption_key_arn = input;
-            self
+        pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_encryption_key_arn = input; self
         }
         /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -6636,24 +5757,16 @@ pub mod update_replication_configuration_template_output {
         }
         /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.bandwidth_throttling = input;
-            self
+            self.bandwidth_throttling = input; self
         }
         /// <p>Replication Configuration template data plane routing.</p>
-        pub fn data_plane_routing(
-            mut self,
-            input: crate::model::ReplicationConfigurationDataPlaneRouting,
-        ) -> Self {
+        pub fn data_plane_routing(mut self, input: crate::model::ReplicationConfigurationDataPlaneRouting) -> Self {
             self.data_plane_routing = Some(input);
             self
         }
         /// <p>Replication Configuration template data plane routing.</p>
-        pub fn set_data_plane_routing(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
-        ) -> Self {
-            self.data_plane_routing = input;
-            self
+        pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>) -> Self {
+            self.data_plane_routing = input; self
         }
         /// <p>Replication Configuration template create Public IP.</p>
         pub fn create_public_ip(mut self, input: bool) -> Self {
@@ -6662,110 +5775,86 @@ pub mod update_replication_configuration_template_output {
         }
         /// <p>Replication Configuration template create Public IP.</p>
         pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_public_ip = input;
-            self
+            self.create_public_ip = input; self
         }
         /// Adds a key-value pair to `staging_area_tags`.
         ///
         /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
         ///
         /// <p>Replication Configuration template Staging Area Tags.</p>
-        pub fn staging_area_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.staging_area_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.staging_area_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.staging_area_tags = Some(hash_map);
+                            self
         }
         /// <p>Replication Configuration template Staging Area Tags.</p>
-        pub fn set_staging_area_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.staging_area_tags = input;
-            self
+        pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.staging_area_tags = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Replication Configuration template Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Replication Configuration template Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput).
         pub fn build(self) -> crate::output::UpdateReplicationConfigurationTemplateOutput {
             crate::output::UpdateReplicationConfigurationTemplateOutput {
-                replication_configuration_template_id: self.replication_configuration_template_id,
-                arn: self.arn,
-                staging_area_subnet_id: self.staging_area_subnet_id,
-                associate_default_security_group: self.associate_default_security_group,
-                replication_servers_security_groups_i_ds: self
-                    .replication_servers_security_groups_i_ds,
-                replication_server_instance_type: self.replication_server_instance_type,
-                use_dedicated_replication_server: self.use_dedicated_replication_server,
-                default_large_staging_disk_type: self.default_large_staging_disk_type,
-                ebs_encryption: self.ebs_encryption,
-                ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-                bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
-                data_plane_routing: self.data_plane_routing,
-                create_public_ip: self.create_public_ip,
-                staging_area_tags: self.staging_area_tags,
-                tags: self.tags,
+                replication_configuration_template_id: self.replication_configuration_template_id
+                ,
+                arn: self.arn
+                ,
+                staging_area_subnet_id: self.staging_area_subnet_id
+                ,
+                associate_default_security_group: self.associate_default_security_group
+                ,
+                replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds
+                ,
+                replication_server_instance_type: self.replication_server_instance_type
+                ,
+                use_dedicated_replication_server: self.use_dedicated_replication_server
+                ,
+                default_large_staging_disk_type: self.default_large_staging_disk_type
+                ,
+                ebs_encryption: self.ebs_encryption
+                ,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn
+                ,
+                bandwidth_throttling: self.bandwidth_throttling
+                    .unwrap_or_default()
+                ,
+                data_plane_routing: self.data_plane_routing
+                ,
+                create_public_ip: self.create_public_ip
+                ,
+                staging_area_tags: self.staging_area_tags
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "replication_configuration_template_id",
-                &self.replication_configuration_template_id,
-            );
+            formatter.field("replication_configuration_template_id", &self.replication_configuration_template_id);
             formatter.field("arn", &self.arn);
             formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-            formatter.field(
-                "associate_default_security_group",
-                &self.associate_default_security_group,
-            );
-            formatter.field(
-                "replication_servers_security_groups_i_ds",
-                &self.replication_servers_security_groups_i_ds,
-            );
-            formatter.field(
-                "replication_server_instance_type",
-                &self.replication_server_instance_type,
-            );
-            formatter.field(
-                "use_dedicated_replication_server",
-                &self.use_dedicated_replication_server,
-            );
-            formatter.field(
-                "default_large_staging_disk_type",
-                &self.default_large_staging_disk_type,
-            );
+            formatter.field("associate_default_security_group", &self.associate_default_security_group);
+            formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+            formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+            formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+            formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
             formatter.field("ebs_encryption", &self.ebs_encryption);
             formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
             formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
@@ -6776,6 +5865,8 @@ pub mod update_replication_configuration_template_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateReplicationConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput).
@@ -6787,19 +5878,24 @@ impl UpdateReplicationConfigurationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTemplateActionOutput {}
+pub struct RemoveTemplateActionOutput  {
+}
 /// See [`RemoveTemplateActionOutput`](crate::output::RemoveTemplateActionOutput).
 pub mod remove_template_action_output {
-
+    
     /// A builder for [`RemoveTemplateActionOutput`](crate::output::RemoveTemplateActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTemplateActionOutput`](crate::output::RemoveTemplateActionOutput).
         pub fn build(self) -> crate::output::RemoveTemplateActionOutput {
-            crate::output::RemoveTemplateActionOutput {}
+            crate::output::RemoveTemplateActionOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTemplateActionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTemplateActionOutput`](crate::output::RemoveTemplateActionOutput).
@@ -6811,7 +5907,7 @@ impl RemoveTemplateActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutTemplateActionOutput {
+pub struct PutTemplateActionOutput  {
     /// <p>Template post migration custom action ID.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -6838,27 +5934,22 @@ pub struct PutTemplateActionOutput {
     pub must_succeed_for_cutover: std::option::Option<bool>,
     /// <p>Template post migration custom action parameters.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
     /// <p>Operating system eligible for this template post migration custom action.</p>
     #[doc(hidden)]
     pub operating_system: std::option::Option<std::string::String>,
 }
 impl PutTemplateActionOutput {
     /// <p>Template post migration custom action ID.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>Template post migration custom action name.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn document_identifier(&self) -> std::option::Option<&str> {
+    pub fn document_identifier(&self) -> std::option::Option<& str> {
         self.document_identifier.as_deref()
     }
     /// <p>Template post migration custom action order.</p>
@@ -6866,7 +5957,7 @@ impl PutTemplateActionOutput {
         self.order
     }
     /// <p>Template post migration custom action document version.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>Template post migration custom action active status.</p>
@@ -6882,24 +5973,17 @@ impl PutTemplateActionOutput {
         self.must_succeed_for_cutover
     }
     /// <p>Template post migration custom action parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>> {
         self.parameters.as_ref()
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
-    pub fn operating_system(&self) -> std::option::Option<&str> {
+    pub fn operating_system(&self) -> std::option::Option<& str> {
         self.operating_system.as_deref()
     }
 }
 /// See [`PutTemplateActionOutput`](crate::output::PutTemplateActionOutput).
 pub mod put_template_action_output {
-
+    
     /// A builder for [`PutTemplateActionOutput`](crate::output::PutTemplateActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6911,12 +5995,7 @@ pub mod put_template_action_output {
         pub(crate) active: std::option::Option<bool>,
         pub(crate) timeout_seconds: std::option::Option<i32>,
         pub(crate) must_succeed_for_cutover: std::option::Option<bool>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-            >,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
         pub(crate) operating_system: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6927,8 +6006,7 @@ pub mod put_template_action_output {
         }
         /// <p>Template post migration custom action ID.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>Template post migration custom action name.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6937,8 +6015,7 @@ pub mod put_template_action_output {
         }
         /// <p>Template post migration custom action name.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_name = input;
-            self
+            self.action_name = input; self
         }
         /// <p>Template post migration custom action document identifier.</p>
         pub fn document_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6946,12 +6023,8 @@ pub mod put_template_action_output {
             self
         }
         /// <p>Template post migration custom action document identifier.</p>
-        pub fn set_document_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_identifier = input;
-            self
+        pub fn set_document_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_identifier = input; self
         }
         /// <p>Template post migration custom action order.</p>
         pub fn order(mut self, input: i32) -> Self {
@@ -6960,8 +6033,7 @@ pub mod put_template_action_output {
         }
         /// <p>Template post migration custom action order.</p>
         pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// <p>Template post migration custom action document version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6969,12 +6041,8 @@ pub mod put_template_action_output {
             self
         }
         /// <p>Template post migration custom action document version.</p>
-        pub fn set_document_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_version = input;
-            self
+        pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_version = input; self
         }
         /// <p>Template post migration custom action active status.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -6983,8 +6051,7 @@ pub mod put_template_action_output {
         }
         /// <p>Template post migration custom action active status.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// <p>Template post migration custom action timeout in seconds.</p>
         pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -6993,8 +6060,7 @@ pub mod put_template_action_output {
         }
         /// <p>Template post migration custom action timeout in seconds.</p>
         pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_seconds = input;
-            self
+            self.timeout_seconds = input; self
         }
         /// <p>Template post migration custom action must succeed for cutover.</p>
         pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
@@ -7003,36 +6069,22 @@ pub mod put_template_action_output {
         }
         /// <p>Template post migration custom action must succeed for cutover.</p>
         pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
-            self.must_succeed_for_cutover = input;
-            self
+            self.must_succeed_for_cutover = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Template post migration custom action parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::SsmParameterStoreParameter>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>Template post migration custom action parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-                >,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>Operating system eligible for this template post migration custom action.</p>
         pub fn operating_system(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7040,29 +6092,39 @@ pub mod put_template_action_output {
             self
         }
         /// <p>Operating system eligible for this template post migration custom action.</p>
-        pub fn set_operating_system(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system = input;
-            self
+        pub fn set_operating_system(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system = input; self
         }
         /// Consumes the builder and constructs a [`PutTemplateActionOutput`](crate::output::PutTemplateActionOutput).
         pub fn build(self) -> crate::output::PutTemplateActionOutput {
             crate::output::PutTemplateActionOutput {
-                action_id: self.action_id,
-                action_name: self.action_name,
-                document_identifier: self.document_identifier,
-                order: self.order.unwrap_or_default(),
-                document_version: self.document_version,
-                active: self.active,
-                timeout_seconds: self.timeout_seconds.unwrap_or_default(),
-                must_succeed_for_cutover: self.must_succeed_for_cutover,
-                parameters: self.parameters,
-                operating_system: self.operating_system,
+                action_id: self.action_id
+                ,
+                action_name: self.action_name
+                ,
+                document_identifier: self.document_identifier
+                ,
+                order: self.order
+                    .unwrap_or_default()
+                ,
+                document_version: self.document_version
+                ,
+                active: self.active
+                ,
+                timeout_seconds: self.timeout_seconds
+                    .unwrap_or_default()
+                ,
+                must_succeed_for_cutover: self.must_succeed_for_cutover
+                ,
+                parameters: self.parameters
+                ,
+                operating_system: self.operating_system
+                ,
             }
         }
     }
+    
+    
 }
 impl PutTemplateActionOutput {
     /// Creates a new builder-style object to manufacture [`PutTemplateActionOutput`](crate::output::PutTemplateActionOutput).
@@ -7074,7 +6136,7 @@ impl PutTemplateActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplateActionsOutput {
+pub struct ListTemplateActionsOutput  {
     /// <p>List of template post migration custom actions.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::TemplateActionDocument>>,
@@ -7084,17 +6146,17 @@ pub struct ListTemplateActionsOutput {
 }
 impl ListTemplateActionsOutput {
     /// <p>List of template post migration custom actions.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::TemplateActionDocument]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::TemplateActionDocument]> {
         self.items.as_deref()
     }
     /// <p>Next token returned when listing template post migration custom actions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTemplateActionsOutput`](crate::output::ListTemplateActionsOutput).
 pub mod list_template_actions_output {
-
+    
     /// A builder for [`ListTemplateActionsOutput`](crate::output::ListTemplateActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7109,17 +6171,13 @@ pub mod list_template_actions_output {
         /// <p>List of template post migration custom actions.</p>
         pub fn items(mut self, input: crate::model::TemplateActionDocument) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>List of template post migration custom actions.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TemplateActionDocument>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::TemplateActionDocument>>) -> Self {
+            self.items = input; self
         }
         /// <p>Next token returned when listing template post migration custom actions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7128,17 +6186,20 @@ pub mod list_template_actions_output {
         }
         /// <p>Next token returned when listing template post migration custom actions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplateActionsOutput`](crate::output::ListTemplateActionsOutput).
         pub fn build(self) -> crate::output::ListTemplateActionsOutput {
             crate::output::ListTemplateActionsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTemplateActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateActionsOutput`](crate::output::ListTemplateActionsOutput).
@@ -7150,7 +6211,7 @@ impl ListTemplateActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLaunchConfigurationTemplatesOutput {
+pub struct DescribeLaunchConfigurationTemplatesOutput  {
     /// <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>,
@@ -7160,22 +6221,21 @@ pub struct DescribeLaunchConfigurationTemplatesOutput {
 }
 impl DescribeLaunchConfigurationTemplatesOutput {
     /// <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::LaunchConfigurationTemplate]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::LaunchConfigurationTemplate]> {
         self.items.as_deref()
     }
     /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput).
 pub mod describe_launch_configuration_templates_output {
-
+    
     /// A builder for [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7186,17 +6246,13 @@ pub mod describe_launch_configuration_templates_output {
         /// <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
         pub fn items(mut self, input: crate::model::LaunchConfigurationTemplate) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>) -> Self {
+            self.items = input; self
         }
         /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7205,17 +6261,20 @@ pub mod describe_launch_configuration_templates_output {
         }
         /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput).
         pub fn build(self) -> crate::output::DescribeLaunchConfigurationTemplatesOutput {
             crate::output::DescribeLaunchConfigurationTemplatesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLaunchConfigurationTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput).
@@ -7227,7 +6286,7 @@ impl DescribeLaunchConfigurationTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLaunchConfigurationTemplateOutput {
+pub struct CreateLaunchConfigurationTemplateOutput  {
     /// <p>ID of the Launch Configuration Template.</p>
     #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
@@ -7245,8 +6304,7 @@ pub struct CreateLaunchConfigurationTemplateOutput {
     pub map_auto_tagging_mpe_id: std::option::Option<std::string::String>,
     /// <p>Tags of the Launch Configuration Template.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>EC2 launch template ID.</p>
     #[doc(hidden)]
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
@@ -7255,8 +6313,7 @@ pub struct CreateLaunchConfigurationTemplateOutput {
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method:
-        std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy private Ip.</p>
     #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
@@ -7284,15 +6341,15 @@ pub struct CreateLaunchConfigurationTemplateOutput {
 }
 impl CreateLaunchConfigurationTemplateOutput {
     /// <p>ID of the Launch Configuration Template.</p>
-    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<& str> {
         self.launch_configuration_template_id.as_deref()
     }
     /// <p>ARN of the Launch Configuration Template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Post Launch Actions of the Launch Configuration Template.</p>
-    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+    pub fn post_launch_actions(&self) -> std::option::Option<& crate::model::PostLaunchActions> {
         self.post_launch_actions.as_ref()
     }
     /// <p>Enable map auto tagging.</p>
@@ -7300,28 +6357,23 @@ impl CreateLaunchConfigurationTemplateOutput {
         self.enable_map_auto_tagging
     }
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
-    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<&str> {
+    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<& str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
     /// <p>Tags of the Launch Configuration Template.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>EC2 launch template ID.</p>
-    pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_launch_template_id(&self) -> std::option::Option<& str> {
         self.ec2_launch_template_id.as_deref()
     }
     /// <p>Launch disposition.</p>
-    pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> std::option::Option<& crate::model::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> std::option::Option<& crate::model::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy private Ip.</p>
@@ -7337,11 +6389,11 @@ impl CreateLaunchConfigurationTemplateOutput {
         self.copy_tags
     }
     /// <p>Configure Licensing.</p>
-    pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
+    pub fn licensing(&self) -> std::option::Option<& crate::model::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>Launch configuration template boot mode.</p>
-    pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
+    pub fn boot_mode(&self) -> std::option::Option<& crate::model::BootMode> {
         self.boot_mode.as_ref()
     }
     /// <p>Small volume maximum size.</p>
@@ -7349,21 +6401,18 @@ impl CreateLaunchConfigurationTemplateOutput {
         self.small_volume_max_size
     }
     /// <p>Small volume config.</p>
-    pub fn small_volume_conf(&self) -> std::option::Option<&crate::model::LaunchTemplateDiskConf> {
+    pub fn small_volume_conf(&self) -> std::option::Option<& crate::model::LaunchTemplateDiskConf> {
         self.small_volume_conf.as_ref()
     }
     /// <p>Large volume config.</p>
-    pub fn large_volume_conf(&self) -> std::option::Option<&crate::model::LaunchTemplateDiskConf> {
+    pub fn large_volume_conf(&self) -> std::option::Option<& crate::model::LaunchTemplateDiskConf> {
         self.large_volume_conf.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLaunchConfigurationTemplateOutput {
+impl  std::fmt::Debug for CreateLaunchConfigurationTemplateOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLaunchConfigurationTemplateOutput");
-        formatter.field(
-            "launch_configuration_template_id",
-            &self.launch_configuration_template_id,
-        );
+        formatter.field("launch_configuration_template_id", &self.launch_configuration_template_id);
         formatter.field("arn", &self.arn);
         formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.field("enable_map_auto_tagging", &self.enable_map_auto_tagging);
@@ -7371,15 +6420,9 @@ impl std::fmt::Debug for CreateLaunchConfigurationTemplateOutput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("ec2_launch_template_id", &self.ec2_launch_template_id);
         formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field(
-            "target_instance_type_right_sizing_method",
-            &self.target_instance_type_right_sizing_method,
-        );
+        formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
         formatter.field("copy_private_ip", &self.copy_private_ip);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
+        formatter.field("associate_public_ip_address", &self.associate_public_ip_address);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("boot_mode", &self.boot_mode);
@@ -7391,7 +6434,7 @@ impl std::fmt::Debug for CreateLaunchConfigurationTemplateOutput {
 }
 /// See [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput).
 pub mod create_launch_configuration_template_output {
-
+    
     /// A builder for [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7400,13 +6443,10 @@ pub mod create_launch_configuration_template_output {
         pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
         pub(crate) enable_map_auto_tagging: std::option::Option<bool>,
         pub(crate) map_auto_tagging_mpe_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) ec2_launch_template_id: std::option::Option<std::string::String>,
         pub(crate) launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
-        pub(crate) target_instance_type_right_sizing_method:
-            std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+        pub(crate) target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
         pub(crate) copy_private_ip: std::option::Option<bool>,
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) copy_tags: std::option::Option<bool>,
@@ -7418,20 +6458,13 @@ pub mod create_launch_configuration_template_output {
     }
     impl Builder {
         /// <p>ID of the Launch Configuration Template.</p>
-        pub fn launch_configuration_template_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn launch_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_configuration_template_id = Some(input.into());
             self
         }
         /// <p>ID of the Launch Configuration Template.</p>
-        pub fn set_launch_configuration_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_configuration_template_id = input;
-            self
+        pub fn set_launch_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_configuration_template_id = input; self
         }
         /// <p>ARN of the Launch Configuration Template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7440,8 +6473,7 @@ pub mod create_launch_configuration_template_output {
         }
         /// <p>ARN of the Launch Configuration Template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Post Launch Actions of the Launch Configuration Template.</p>
         pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
@@ -7449,12 +6481,8 @@ pub mod create_launch_configuration_template_output {
             self
         }
         /// <p>Post Launch Actions of the Launch Configuration Template.</p>
-        pub fn set_post_launch_actions(
-            mut self,
-            input: std::option::Option<crate::model::PostLaunchActions>,
-        ) -> Self {
-            self.post_launch_actions = input;
-            self
+        pub fn set_post_launch_actions(mut self, input: std::option::Option<crate::model::PostLaunchActions>) -> Self {
+            self.post_launch_actions = input; self
         }
         /// <p>Enable map auto tagging.</p>
         pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
@@ -7463,8 +6491,7 @@ pub mod create_launch_configuration_template_output {
         }
         /// <p>Enable map auto tagging.</p>
         pub fn set_enable_map_auto_tagging(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_map_auto_tagging = input;
-            self
+            self.enable_map_auto_tagging = input; self
         }
         /// <p>Launch configuration template map auto tagging MPE ID.</p>
         pub fn map_auto_tagging_mpe_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7472,37 +6499,23 @@ pub mod create_launch_configuration_template_output {
             self
         }
         /// <p>Launch configuration template map auto tagging MPE ID.</p>
-        pub fn set_map_auto_tagging_mpe_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.map_auto_tagging_mpe_id = input;
-            self
+        pub fn set_map_auto_tagging_mpe_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_auto_tagging_mpe_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags of the Launch Configuration Template.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags of the Launch Configuration Template.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>EC2 launch template ID.</p>
         pub fn ec2_launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7510,12 +6523,8 @@ pub mod create_launch_configuration_template_output {
             self
         }
         /// <p>EC2 launch template ID.</p>
-        pub fn set_ec2_launch_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_launch_template_id = input;
-            self
+        pub fn set_ec2_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_launch_template_id = input; self
         }
         /// <p>Launch disposition.</p>
         pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
@@ -7523,28 +6532,17 @@ pub mod create_launch_configuration_template_output {
             self
         }
         /// <p>Launch disposition.</p>
-        pub fn set_launch_disposition(
-            mut self,
-            input: std::option::Option<crate::model::LaunchDisposition>,
-        ) -> Self {
-            self.launch_disposition = input;
-            self
+        pub fn set_launch_disposition(mut self, input: std::option::Option<crate::model::LaunchDisposition>) -> Self {
+            self.launch_disposition = input; self
         }
         /// <p>Target instance type right-sizing method.</p>
-        pub fn target_instance_type_right_sizing_method(
-            mut self,
-            input: crate::model::TargetInstanceTypeRightSizingMethod,
-        ) -> Self {
+        pub fn target_instance_type_right_sizing_method(mut self, input: crate::model::TargetInstanceTypeRightSizingMethod) -> Self {
             self.target_instance_type_right_sizing_method = Some(input);
             self
         }
         /// <p>Target instance type right-sizing method.</p>
-        pub fn set_target_instance_type_right_sizing_method(
-            mut self,
-            input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
-        ) -> Self {
-            self.target_instance_type_right_sizing_method = input;
-            self
+        pub fn set_target_instance_type_right_sizing_method(mut self, input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>) -> Self {
+            self.target_instance_type_right_sizing_method = input; self
         }
         /// <p>Copy private Ip.</p>
         pub fn copy_private_ip(mut self, input: bool) -> Self {
@@ -7553,8 +6551,7 @@ pub mod create_launch_configuration_template_output {
         }
         /// <p>Copy private Ip.</p>
         pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_private_ip = input;
-            self
+            self.copy_private_ip = input; self
         }
         /// <p>Associate public Ip address.</p>
         pub fn associate_public_ip_address(mut self, input: bool) -> Self {
@@ -7563,8 +6560,7 @@ pub mod create_launch_configuration_template_output {
         }
         /// <p>Associate public Ip address.</p>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
-            self.associate_public_ip_address = input;
-            self
+            self.associate_public_ip_address = input; self
         }
         /// <p>Copy tags.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
@@ -7573,8 +6569,7 @@ pub mod create_launch_configuration_template_output {
         }
         /// <p>Copy tags.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_tags = input;
-            self
+            self.copy_tags = input; self
         }
         /// <p>Configure Licensing.</p>
         pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
@@ -7582,12 +6577,8 @@ pub mod create_launch_configuration_template_output {
             self
         }
         /// <p>Configure Licensing.</p>
-        pub fn set_licensing(
-            mut self,
-            input: std::option::Option<crate::model::Licensing>,
-        ) -> Self {
-            self.licensing = input;
-            self
+        pub fn set_licensing(mut self, input: std::option::Option<crate::model::Licensing>) -> Self {
+            self.licensing = input; self
         }
         /// <p>Launch configuration template boot mode.</p>
         pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
@@ -7596,8 +6587,7 @@ pub mod create_launch_configuration_template_output {
         }
         /// <p>Launch configuration template boot mode.</p>
         pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
-            self.boot_mode = input;
-            self
+            self.boot_mode = input; self
         }
         /// <p>Small volume maximum size.</p>
         pub fn small_volume_max_size(mut self, input: i64) -> Self {
@@ -7606,8 +6596,7 @@ pub mod create_launch_configuration_template_output {
         }
         /// <p>Small volume maximum size.</p>
         pub fn set_small_volume_max_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.small_volume_max_size = input;
-            self
+            self.small_volume_max_size = input; self
         }
         /// <p>Small volume config.</p>
         pub fn small_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
@@ -7615,12 +6604,8 @@ pub mod create_launch_configuration_template_output {
             self
         }
         /// <p>Small volume config.</p>
-        pub fn set_small_volume_conf(
-            mut self,
-            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
-        ) -> Self {
-            self.small_volume_conf = input;
-            self
+        pub fn set_small_volume_conf(mut self, input: std::option::Option<crate::model::LaunchTemplateDiskConf>) -> Self {
+            self.small_volume_conf = input; self
         }
         /// <p>Large volume config.</p>
         pub fn large_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
@@ -7628,44 +6613,54 @@ pub mod create_launch_configuration_template_output {
             self
         }
         /// <p>Large volume config.</p>
-        pub fn set_large_volume_conf(
-            mut self,
-            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
-        ) -> Self {
-            self.large_volume_conf = input;
-            self
+        pub fn set_large_volume_conf(mut self, input: std::option::Option<crate::model::LaunchTemplateDiskConf>) -> Self {
+            self.large_volume_conf = input; self
         }
         /// Consumes the builder and constructs a [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput).
         pub fn build(self) -> crate::output::CreateLaunchConfigurationTemplateOutput {
             crate::output::CreateLaunchConfigurationTemplateOutput {
-                launch_configuration_template_id: self.launch_configuration_template_id,
-                arn: self.arn,
-                post_launch_actions: self.post_launch_actions,
-                enable_map_auto_tagging: self.enable_map_auto_tagging,
-                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
-                tags: self.tags,
-                ec2_launch_template_id: self.ec2_launch_template_id,
-                launch_disposition: self.launch_disposition,
-                target_instance_type_right_sizing_method: self
-                    .target_instance_type_right_sizing_method,
-                copy_private_ip: self.copy_private_ip,
-                associate_public_ip_address: self.associate_public_ip_address,
-                copy_tags: self.copy_tags,
-                licensing: self.licensing,
-                boot_mode: self.boot_mode,
-                small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
-                small_volume_conf: self.small_volume_conf,
-                large_volume_conf: self.large_volume_conf,
+                launch_configuration_template_id: self.launch_configuration_template_id
+                ,
+                arn: self.arn
+                ,
+                post_launch_actions: self.post_launch_actions
+                ,
+                enable_map_auto_tagging: self.enable_map_auto_tagging
+                ,
+                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id
+                ,
+                tags: self.tags
+                ,
+                ec2_launch_template_id: self.ec2_launch_template_id
+                ,
+                launch_disposition: self.launch_disposition
+                ,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+                ,
+                copy_private_ip: self.copy_private_ip
+                ,
+                associate_public_ip_address: self.associate_public_ip_address
+                ,
+                copy_tags: self.copy_tags
+                ,
+                licensing: self.licensing
+                ,
+                boot_mode: self.boot_mode
+                ,
+                small_volume_max_size: self.small_volume_max_size
+                    .unwrap_or_default()
+                ,
+                small_volume_conf: self.small_volume_conf
+                ,
+                large_volume_conf: self.large_volume_conf
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "launch_configuration_template_id",
-                &self.launch_configuration_template_id,
-            );
+            formatter.field("launch_configuration_template_id", &self.launch_configuration_template_id);
             formatter.field("arn", &self.arn);
             formatter.field("post_launch_actions", &self.post_launch_actions);
             formatter.field("enable_map_auto_tagging", &self.enable_map_auto_tagging);
@@ -7673,15 +6668,9 @@ pub mod create_launch_configuration_template_output {
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
             formatter.field("ec2_launch_template_id", &self.ec2_launch_template_id);
             formatter.field("launch_disposition", &self.launch_disposition);
-            formatter.field(
-                "target_instance_type_right_sizing_method",
-                &self.target_instance_type_right_sizing_method,
-            );
+            formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
             formatter.field("copy_private_ip", &self.copy_private_ip);
-            formatter.field(
-                "associate_public_ip_address",
-                &self.associate_public_ip_address,
-            );
+            formatter.field("associate_public_ip_address", &self.associate_public_ip_address);
             formatter.field("copy_tags", &self.copy_tags);
             formatter.field("licensing", &self.licensing);
             formatter.field("boot_mode", &self.boot_mode);
@@ -7691,6 +6680,8 @@ pub mod create_launch_configuration_template_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateLaunchConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput).
@@ -7702,19 +6693,24 @@ impl CreateLaunchConfigurationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLaunchConfigurationTemplateOutput {}
+pub struct DeleteLaunchConfigurationTemplateOutput  {
+}
 /// See [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput).
 pub mod delete_launch_configuration_template_output {
-
+    
     /// A builder for [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput).
         pub fn build(self) -> crate::output::DeleteLaunchConfigurationTemplateOutput {
-            crate::output::DeleteLaunchConfigurationTemplateOutput {}
+            crate::output::DeleteLaunchConfigurationTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLaunchConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput).
@@ -7726,7 +6722,7 @@ impl DeleteLaunchConfigurationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLaunchConfigurationTemplateOutput {
+pub struct UpdateLaunchConfigurationTemplateOutput  {
     /// <p>ID of the Launch Configuration Template.</p>
     #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
@@ -7744,8 +6740,7 @@ pub struct UpdateLaunchConfigurationTemplateOutput {
     pub map_auto_tagging_mpe_id: std::option::Option<std::string::String>,
     /// <p>Tags of the Launch Configuration Template.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>EC2 launch template ID.</p>
     #[doc(hidden)]
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
@@ -7754,8 +6749,7 @@ pub struct UpdateLaunchConfigurationTemplateOutput {
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method:
-        std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy private Ip.</p>
     #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
@@ -7783,15 +6777,15 @@ pub struct UpdateLaunchConfigurationTemplateOutput {
 }
 impl UpdateLaunchConfigurationTemplateOutput {
     /// <p>ID of the Launch Configuration Template.</p>
-    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<& str> {
         self.launch_configuration_template_id.as_deref()
     }
     /// <p>ARN of the Launch Configuration Template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Post Launch Actions of the Launch Configuration Template.</p>
-    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+    pub fn post_launch_actions(&self) -> std::option::Option<& crate::model::PostLaunchActions> {
         self.post_launch_actions.as_ref()
     }
     /// <p>Enable map auto tagging.</p>
@@ -7799,28 +6793,23 @@ impl UpdateLaunchConfigurationTemplateOutput {
         self.enable_map_auto_tagging
     }
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
-    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<&str> {
+    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<& str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
     /// <p>Tags of the Launch Configuration Template.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>EC2 launch template ID.</p>
-    pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_launch_template_id(&self) -> std::option::Option<& str> {
         self.ec2_launch_template_id.as_deref()
     }
     /// <p>Launch disposition.</p>
-    pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> std::option::Option<& crate::model::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> std::option::Option<& crate::model::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy private Ip.</p>
@@ -7836,11 +6825,11 @@ impl UpdateLaunchConfigurationTemplateOutput {
         self.copy_tags
     }
     /// <p>Configure Licensing.</p>
-    pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
+    pub fn licensing(&self) -> std::option::Option<& crate::model::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>Launch configuration template boot mode.</p>
-    pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
+    pub fn boot_mode(&self) -> std::option::Option<& crate::model::BootMode> {
         self.boot_mode.as_ref()
     }
     /// <p>Small volume maximum size.</p>
@@ -7848,21 +6837,18 @@ impl UpdateLaunchConfigurationTemplateOutput {
         self.small_volume_max_size
     }
     /// <p>Small volume config.</p>
-    pub fn small_volume_conf(&self) -> std::option::Option<&crate::model::LaunchTemplateDiskConf> {
+    pub fn small_volume_conf(&self) -> std::option::Option<& crate::model::LaunchTemplateDiskConf> {
         self.small_volume_conf.as_ref()
     }
     /// <p>Large volume config.</p>
-    pub fn large_volume_conf(&self) -> std::option::Option<&crate::model::LaunchTemplateDiskConf> {
+    pub fn large_volume_conf(&self) -> std::option::Option<& crate::model::LaunchTemplateDiskConf> {
         self.large_volume_conf.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLaunchConfigurationTemplateOutput {
+impl  std::fmt::Debug for UpdateLaunchConfigurationTemplateOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLaunchConfigurationTemplateOutput");
-        formatter.field(
-            "launch_configuration_template_id",
-            &self.launch_configuration_template_id,
-        );
+        formatter.field("launch_configuration_template_id", &self.launch_configuration_template_id);
         formatter.field("arn", &self.arn);
         formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.field("enable_map_auto_tagging", &self.enable_map_auto_tagging);
@@ -7870,15 +6856,9 @@ impl std::fmt::Debug for UpdateLaunchConfigurationTemplateOutput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("ec2_launch_template_id", &self.ec2_launch_template_id);
         formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field(
-            "target_instance_type_right_sizing_method",
-            &self.target_instance_type_right_sizing_method,
-        );
+        formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
         formatter.field("copy_private_ip", &self.copy_private_ip);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
+        formatter.field("associate_public_ip_address", &self.associate_public_ip_address);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("boot_mode", &self.boot_mode);
@@ -7890,7 +6870,7 @@ impl std::fmt::Debug for UpdateLaunchConfigurationTemplateOutput {
 }
 /// See [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput).
 pub mod update_launch_configuration_template_output {
-
+    
     /// A builder for [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7899,13 +6879,10 @@ pub mod update_launch_configuration_template_output {
         pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
         pub(crate) enable_map_auto_tagging: std::option::Option<bool>,
         pub(crate) map_auto_tagging_mpe_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) ec2_launch_template_id: std::option::Option<std::string::String>,
         pub(crate) launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
-        pub(crate) target_instance_type_right_sizing_method:
-            std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+        pub(crate) target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
         pub(crate) copy_private_ip: std::option::Option<bool>,
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) copy_tags: std::option::Option<bool>,
@@ -7917,20 +6894,13 @@ pub mod update_launch_configuration_template_output {
     }
     impl Builder {
         /// <p>ID of the Launch Configuration Template.</p>
-        pub fn launch_configuration_template_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn launch_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_configuration_template_id = Some(input.into());
             self
         }
         /// <p>ID of the Launch Configuration Template.</p>
-        pub fn set_launch_configuration_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_configuration_template_id = input;
-            self
+        pub fn set_launch_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_configuration_template_id = input; self
         }
         /// <p>ARN of the Launch Configuration Template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7939,8 +6909,7 @@ pub mod update_launch_configuration_template_output {
         }
         /// <p>ARN of the Launch Configuration Template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Post Launch Actions of the Launch Configuration Template.</p>
         pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
@@ -7948,12 +6917,8 @@ pub mod update_launch_configuration_template_output {
             self
         }
         /// <p>Post Launch Actions of the Launch Configuration Template.</p>
-        pub fn set_post_launch_actions(
-            mut self,
-            input: std::option::Option<crate::model::PostLaunchActions>,
-        ) -> Self {
-            self.post_launch_actions = input;
-            self
+        pub fn set_post_launch_actions(mut self, input: std::option::Option<crate::model::PostLaunchActions>) -> Self {
+            self.post_launch_actions = input; self
         }
         /// <p>Enable map auto tagging.</p>
         pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
@@ -7962,8 +6927,7 @@ pub mod update_launch_configuration_template_output {
         }
         /// <p>Enable map auto tagging.</p>
         pub fn set_enable_map_auto_tagging(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_map_auto_tagging = input;
-            self
+            self.enable_map_auto_tagging = input; self
         }
         /// <p>Launch configuration template map auto tagging MPE ID.</p>
         pub fn map_auto_tagging_mpe_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7971,37 +6935,23 @@ pub mod update_launch_configuration_template_output {
             self
         }
         /// <p>Launch configuration template map auto tagging MPE ID.</p>
-        pub fn set_map_auto_tagging_mpe_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.map_auto_tagging_mpe_id = input;
-            self
+        pub fn set_map_auto_tagging_mpe_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_auto_tagging_mpe_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags of the Launch Configuration Template.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags of the Launch Configuration Template.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>EC2 launch template ID.</p>
         pub fn ec2_launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8009,12 +6959,8 @@ pub mod update_launch_configuration_template_output {
             self
         }
         /// <p>EC2 launch template ID.</p>
-        pub fn set_ec2_launch_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_launch_template_id = input;
-            self
+        pub fn set_ec2_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_launch_template_id = input; self
         }
         /// <p>Launch disposition.</p>
         pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
@@ -8022,28 +6968,17 @@ pub mod update_launch_configuration_template_output {
             self
         }
         /// <p>Launch disposition.</p>
-        pub fn set_launch_disposition(
-            mut self,
-            input: std::option::Option<crate::model::LaunchDisposition>,
-        ) -> Self {
-            self.launch_disposition = input;
-            self
+        pub fn set_launch_disposition(mut self, input: std::option::Option<crate::model::LaunchDisposition>) -> Self {
+            self.launch_disposition = input; self
         }
         /// <p>Target instance type right-sizing method.</p>
-        pub fn target_instance_type_right_sizing_method(
-            mut self,
-            input: crate::model::TargetInstanceTypeRightSizingMethod,
-        ) -> Self {
+        pub fn target_instance_type_right_sizing_method(mut self, input: crate::model::TargetInstanceTypeRightSizingMethod) -> Self {
             self.target_instance_type_right_sizing_method = Some(input);
             self
         }
         /// <p>Target instance type right-sizing method.</p>
-        pub fn set_target_instance_type_right_sizing_method(
-            mut self,
-            input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
-        ) -> Self {
-            self.target_instance_type_right_sizing_method = input;
-            self
+        pub fn set_target_instance_type_right_sizing_method(mut self, input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>) -> Self {
+            self.target_instance_type_right_sizing_method = input; self
         }
         /// <p>Copy private Ip.</p>
         pub fn copy_private_ip(mut self, input: bool) -> Self {
@@ -8052,8 +6987,7 @@ pub mod update_launch_configuration_template_output {
         }
         /// <p>Copy private Ip.</p>
         pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_private_ip = input;
-            self
+            self.copy_private_ip = input; self
         }
         /// <p>Associate public Ip address.</p>
         pub fn associate_public_ip_address(mut self, input: bool) -> Self {
@@ -8062,8 +6996,7 @@ pub mod update_launch_configuration_template_output {
         }
         /// <p>Associate public Ip address.</p>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
-            self.associate_public_ip_address = input;
-            self
+            self.associate_public_ip_address = input; self
         }
         /// <p>Copy tags.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
@@ -8072,8 +7005,7 @@ pub mod update_launch_configuration_template_output {
         }
         /// <p>Copy tags.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_tags = input;
-            self
+            self.copy_tags = input; self
         }
         /// <p>Configure Licensing.</p>
         pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
@@ -8081,12 +7013,8 @@ pub mod update_launch_configuration_template_output {
             self
         }
         /// <p>Configure Licensing.</p>
-        pub fn set_licensing(
-            mut self,
-            input: std::option::Option<crate::model::Licensing>,
-        ) -> Self {
-            self.licensing = input;
-            self
+        pub fn set_licensing(mut self, input: std::option::Option<crate::model::Licensing>) -> Self {
+            self.licensing = input; self
         }
         /// <p>Launch configuration template boot mode.</p>
         pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
@@ -8095,8 +7023,7 @@ pub mod update_launch_configuration_template_output {
         }
         /// <p>Launch configuration template boot mode.</p>
         pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
-            self.boot_mode = input;
-            self
+            self.boot_mode = input; self
         }
         /// <p>Small volume maximum size.</p>
         pub fn small_volume_max_size(mut self, input: i64) -> Self {
@@ -8105,8 +7032,7 @@ pub mod update_launch_configuration_template_output {
         }
         /// <p>Small volume maximum size.</p>
         pub fn set_small_volume_max_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.small_volume_max_size = input;
-            self
+            self.small_volume_max_size = input; self
         }
         /// <p>Small volume config.</p>
         pub fn small_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
@@ -8114,12 +7040,8 @@ pub mod update_launch_configuration_template_output {
             self
         }
         /// <p>Small volume config.</p>
-        pub fn set_small_volume_conf(
-            mut self,
-            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
-        ) -> Self {
-            self.small_volume_conf = input;
-            self
+        pub fn set_small_volume_conf(mut self, input: std::option::Option<crate::model::LaunchTemplateDiskConf>) -> Self {
+            self.small_volume_conf = input; self
         }
         /// <p>Large volume config.</p>
         pub fn large_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
@@ -8127,44 +7049,54 @@ pub mod update_launch_configuration_template_output {
             self
         }
         /// <p>Large volume config.</p>
-        pub fn set_large_volume_conf(
-            mut self,
-            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
-        ) -> Self {
-            self.large_volume_conf = input;
-            self
+        pub fn set_large_volume_conf(mut self, input: std::option::Option<crate::model::LaunchTemplateDiskConf>) -> Self {
+            self.large_volume_conf = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput).
         pub fn build(self) -> crate::output::UpdateLaunchConfigurationTemplateOutput {
             crate::output::UpdateLaunchConfigurationTemplateOutput {
-                launch_configuration_template_id: self.launch_configuration_template_id,
-                arn: self.arn,
-                post_launch_actions: self.post_launch_actions,
-                enable_map_auto_tagging: self.enable_map_auto_tagging,
-                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
-                tags: self.tags,
-                ec2_launch_template_id: self.ec2_launch_template_id,
-                launch_disposition: self.launch_disposition,
-                target_instance_type_right_sizing_method: self
-                    .target_instance_type_right_sizing_method,
-                copy_private_ip: self.copy_private_ip,
-                associate_public_ip_address: self.associate_public_ip_address,
-                copy_tags: self.copy_tags,
-                licensing: self.licensing,
-                boot_mode: self.boot_mode,
-                small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
-                small_volume_conf: self.small_volume_conf,
-                large_volume_conf: self.large_volume_conf,
+                launch_configuration_template_id: self.launch_configuration_template_id
+                ,
+                arn: self.arn
+                ,
+                post_launch_actions: self.post_launch_actions
+                ,
+                enable_map_auto_tagging: self.enable_map_auto_tagging
+                ,
+                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id
+                ,
+                tags: self.tags
+                ,
+                ec2_launch_template_id: self.ec2_launch_template_id
+                ,
+                launch_disposition: self.launch_disposition
+                ,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+                ,
+                copy_private_ip: self.copy_private_ip
+                ,
+                associate_public_ip_address: self.associate_public_ip_address
+                ,
+                copy_tags: self.copy_tags
+                ,
+                licensing: self.licensing
+                ,
+                boot_mode: self.boot_mode
+                ,
+                small_volume_max_size: self.small_volume_max_size
+                    .unwrap_or_default()
+                ,
+                small_volume_conf: self.small_volume_conf
+                ,
+                large_volume_conf: self.large_volume_conf
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "launch_configuration_template_id",
-                &self.launch_configuration_template_id,
-            );
+            formatter.field("launch_configuration_template_id", &self.launch_configuration_template_id);
             formatter.field("arn", &self.arn);
             formatter.field("post_launch_actions", &self.post_launch_actions);
             formatter.field("enable_map_auto_tagging", &self.enable_map_auto_tagging);
@@ -8172,15 +7104,9 @@ pub mod update_launch_configuration_template_output {
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
             formatter.field("ec2_launch_template_id", &self.ec2_launch_template_id);
             formatter.field("launch_disposition", &self.launch_disposition);
-            formatter.field(
-                "target_instance_type_right_sizing_method",
-                &self.target_instance_type_right_sizing_method,
-            );
+            formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
             formatter.field("copy_private_ip", &self.copy_private_ip);
-            formatter.field(
-                "associate_public_ip_address",
-                &self.associate_public_ip_address,
-            );
+            formatter.field("associate_public_ip_address", &self.associate_public_ip_address);
             formatter.field("copy_tags", &self.copy_tags);
             formatter.field("licensing", &self.licensing);
             formatter.field("boot_mode", &self.boot_mode);
@@ -8190,6 +7116,8 @@ pub mod update_launch_configuration_template_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateLaunchConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput).
@@ -8201,7 +7129,7 @@ impl UpdateLaunchConfigurationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobLogItemsOutput {
+pub struct DescribeJobLogItemsOutput  {
     /// <p>Request to describe Job log response items.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::JobLog>>,
@@ -8211,17 +7139,17 @@ pub struct DescribeJobLogItemsOutput {
 }
 impl DescribeJobLogItemsOutput {
     /// <p>Request to describe Job log response items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::JobLog]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::JobLog]> {
         self.items.as_deref()
     }
     /// <p>Request to describe Job log response next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeJobLogItemsOutput`](crate::output::DescribeJobLogItemsOutput).
 pub mod describe_job_log_items_output {
-
+    
     /// A builder for [`DescribeJobLogItemsOutput`](crate::output::DescribeJobLogItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8236,17 +7164,13 @@ pub mod describe_job_log_items_output {
         /// <p>Request to describe Job log response items.</p>
         pub fn items(mut self, input: crate::model::JobLog) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Request to describe Job log response items.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobLog>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobLog>>) -> Self {
+            self.items = input; self
         }
         /// <p>Request to describe Job log response next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8255,17 +7179,20 @@ pub mod describe_job_log_items_output {
         }
         /// <p>Request to describe Job log response next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobLogItemsOutput`](crate::output::DescribeJobLogItemsOutput).
         pub fn build(self) -> crate::output::DescribeJobLogItemsOutput {
             crate::output::DescribeJobLogItemsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeJobLogItemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobLogItemsOutput`](crate::output::DescribeJobLogItemsOutput).
@@ -8277,7 +7204,7 @@ impl DescribeJobLogItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobsOutput {
+pub struct DescribeJobsOutput  {
     /// <p>Request to describe Job log items.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -8287,17 +7214,17 @@ pub struct DescribeJobsOutput {
 }
 impl DescribeJobsOutput {
     /// <p>Request to describe Job log items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Job]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::Job]> {
         self.items.as_deref()
     }
     /// <p>Request to describe Job response by next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeJobsOutput`](crate::output::DescribeJobsOutput).
 pub mod describe_jobs_output {
-
+    
     /// A builder for [`DescribeJobsOutput`](crate::output::DescribeJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8312,17 +7239,13 @@ pub mod describe_jobs_output {
         /// <p>Request to describe Job log items.</p>
         pub fn items(mut self, input: crate::model::Job) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Request to describe Job log items.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Job>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::Job>>) -> Self {
+            self.items = input; self
         }
         /// <p>Request to describe Job response by next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8331,17 +7254,20 @@ pub mod describe_jobs_output {
         }
         /// <p>Request to describe Job response by next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobsOutput`](crate::output::DescribeJobsOutput).
         pub fn build(self) -> crate::output::DescribeJobsOutput {
             crate::output::DescribeJobsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeJobsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobsOutput`](crate::output::DescribeJobsOutput).
@@ -8353,19 +7279,24 @@ impl DescribeJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobOutput {}
+pub struct DeleteJobOutput  {
+}
 /// See [`DeleteJobOutput`](crate::output::DeleteJobOutput).
 pub mod delete_job_output {
-
+    
     /// A builder for [`DeleteJobOutput`](crate::output::DeleteJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteJobOutput`](crate::output::DeleteJobOutput).
         pub fn build(self) -> crate::output::DeleteJobOutput {
-            crate::output::DeleteJobOutput {}
+            crate::output::DeleteJobOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteJobOutput`](crate::output::DeleteJobOutput).
@@ -8377,7 +7308,7 @@ impl DeleteJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateApplicationOutput {
+pub struct UpdateApplicationOutput  {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -8395,8 +7326,7 @@ pub struct UpdateApplicationOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Application aggregated status.</p>
     #[doc(hidden)]
-    pub application_aggregated_status:
-        std::option::Option<crate::model::ApplicationAggregatedStatus>,
+    pub application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
     /// <p>Application creation dateTime.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<std::string::String>,
@@ -8405,27 +7335,26 @@ pub struct UpdateApplicationOutput {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Application tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Application wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationOutput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Application ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Application name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Application description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Application archival status.</p>
@@ -8433,32 +7362,27 @@ impl UpdateApplicationOutput {
         self.is_archived
     }
     /// <p>Application aggregated status.</p>
-    pub fn application_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationAggregatedStatus> {
+    pub fn application_aggregated_status(&self) -> std::option::Option<& crate::model::ApplicationAggregatedStatus> {
         self.application_aggregated_status.as_ref()
     }
     /// <p>Application creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Application last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Application tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Application wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationOutput {
+impl  std::fmt::Debug for UpdateApplicationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationOutput");
         formatter.field("application_id", &self.application_id);
@@ -8466,10 +7390,7 @@ impl std::fmt::Debug for UpdateApplicationOutput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("is_archived", &self.is_archived);
-        formatter.field(
-            "application_aggregated_status",
-            &self.application_aggregated_status,
-        );
+        formatter.field("application_aggregated_status", &self.application_aggregated_status);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_modified_date_time", &self.last_modified_date_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -8479,7 +7400,7 @@ impl std::fmt::Debug for UpdateApplicationOutput {
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -8488,13 +7409,10 @@ pub mod update_application_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) application_aggregated_status:
-            std::option::Option<crate::model::ApplicationAggregatedStatus>,
+        pub(crate) application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) wave_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8504,12 +7422,8 @@ pub mod update_application_output {
             self
         }
         /// <p>Application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>Application ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8518,8 +7432,7 @@ pub mod update_application_output {
         }
         /// <p>Application ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Application name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8528,8 +7441,7 @@ pub mod update_application_output {
         }
         /// <p>Application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Application description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8538,8 +7450,7 @@ pub mod update_application_output {
         }
         /// <p>Application description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Application archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -8548,24 +7459,16 @@ pub mod update_application_output {
         }
         /// <p>Application archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Application aggregated status.</p>
-        pub fn application_aggregated_status(
-            mut self,
-            input: crate::model::ApplicationAggregatedStatus,
-        ) -> Self {
+        pub fn application_aggregated_status(mut self, input: crate::model::ApplicationAggregatedStatus) -> Self {
             self.application_aggregated_status = Some(input);
             self
         }
         /// <p>Application aggregated status.</p>
-        pub fn set_application_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationAggregatedStatus>,
-        ) -> Self {
-            self.application_aggregated_status = input;
-            self
+        pub fn set_application_aggregated_status(mut self, input: std::option::Option<crate::model::ApplicationAggregatedStatus>) -> Self {
+            self.application_aggregated_status = input; self
         }
         /// <p>Application creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8573,12 +7476,8 @@ pub mod update_application_output {
             self
         }
         /// <p>Application creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Application last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8586,37 +7485,23 @@ pub mod update_application_output {
             self
         }
         /// <p>Application last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Application tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Application tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Application wave ID.</p>
         pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8625,22 +7510,31 @@ pub mod update_application_output {
         }
         /// <p>Application wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
             crate::output::UpdateApplicationOutput {
-                application_id: self.application_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                application_aggregated_status: self.application_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
-                wave_id: self.wave_id,
+                application_id: self.application_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                application_aggregated_status: self.application_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
+                wave_id: self.wave_id
+                ,
             }
         }
     }
@@ -8652,10 +7546,7 @@ pub mod update_application_output {
             formatter.field("name", &self.name);
             formatter.field("description", &self.description);
             formatter.field("is_archived", &self.is_archived);
-            formatter.field(
-                "application_aggregated_status",
-                &self.application_aggregated_status,
-            );
+            formatter.field("application_aggregated_status", &self.application_aggregated_status);
             formatter.field("creation_date_time", &self.creation_date_time);
             formatter.field("last_modified_date_time", &self.last_modified_date_time);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -8663,6 +7554,8 @@ pub mod update_application_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -8674,7 +7567,7 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnarchiveApplicationOutput {
+pub struct UnarchiveApplicationOutput  {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -8692,8 +7585,7 @@ pub struct UnarchiveApplicationOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Application aggregated status.</p>
     #[doc(hidden)]
-    pub application_aggregated_status:
-        std::option::Option<crate::model::ApplicationAggregatedStatus>,
+    pub application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
     /// <p>Application creation dateTime.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<std::string::String>,
@@ -8702,27 +7594,26 @@ pub struct UnarchiveApplicationOutput {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Application tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Application wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
 }
 impl UnarchiveApplicationOutput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Application ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Application name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Application description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Application archival status.</p>
@@ -8730,32 +7621,27 @@ impl UnarchiveApplicationOutput {
         self.is_archived
     }
     /// <p>Application aggregated status.</p>
-    pub fn application_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationAggregatedStatus> {
+    pub fn application_aggregated_status(&self) -> std::option::Option<& crate::model::ApplicationAggregatedStatus> {
         self.application_aggregated_status.as_ref()
     }
     /// <p>Application creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Application last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Application tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Application wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
 }
-impl std::fmt::Debug for UnarchiveApplicationOutput {
+impl  std::fmt::Debug for UnarchiveApplicationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnarchiveApplicationOutput");
         formatter.field("application_id", &self.application_id);
@@ -8763,10 +7649,7 @@ impl std::fmt::Debug for UnarchiveApplicationOutput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("is_archived", &self.is_archived);
-        formatter.field(
-            "application_aggregated_status",
-            &self.application_aggregated_status,
-        );
+        formatter.field("application_aggregated_status", &self.application_aggregated_status);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_modified_date_time", &self.last_modified_date_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -8776,7 +7659,7 @@ impl std::fmt::Debug for UnarchiveApplicationOutput {
 }
 /// See [`UnarchiveApplicationOutput`](crate::output::UnarchiveApplicationOutput).
 pub mod unarchive_application_output {
-
+    
     /// A builder for [`UnarchiveApplicationOutput`](crate::output::UnarchiveApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -8785,13 +7668,10 @@ pub mod unarchive_application_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) application_aggregated_status:
-            std::option::Option<crate::model::ApplicationAggregatedStatus>,
+        pub(crate) application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) wave_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8801,12 +7681,8 @@ pub mod unarchive_application_output {
             self
         }
         /// <p>Application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>Application ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8815,8 +7691,7 @@ pub mod unarchive_application_output {
         }
         /// <p>Application ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Application name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8825,8 +7700,7 @@ pub mod unarchive_application_output {
         }
         /// <p>Application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Application description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8835,8 +7709,7 @@ pub mod unarchive_application_output {
         }
         /// <p>Application description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Application archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -8845,24 +7718,16 @@ pub mod unarchive_application_output {
         }
         /// <p>Application archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Application aggregated status.</p>
-        pub fn application_aggregated_status(
-            mut self,
-            input: crate::model::ApplicationAggregatedStatus,
-        ) -> Self {
+        pub fn application_aggregated_status(mut self, input: crate::model::ApplicationAggregatedStatus) -> Self {
             self.application_aggregated_status = Some(input);
             self
         }
         /// <p>Application aggregated status.</p>
-        pub fn set_application_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationAggregatedStatus>,
-        ) -> Self {
-            self.application_aggregated_status = input;
-            self
+        pub fn set_application_aggregated_status(mut self, input: std::option::Option<crate::model::ApplicationAggregatedStatus>) -> Self {
+            self.application_aggregated_status = input; self
         }
         /// <p>Application creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8870,12 +7735,8 @@ pub mod unarchive_application_output {
             self
         }
         /// <p>Application creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Application last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8883,37 +7744,23 @@ pub mod unarchive_application_output {
             self
         }
         /// <p>Application last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Application tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Application tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Application wave ID.</p>
         pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8922,22 +7769,31 @@ pub mod unarchive_application_output {
         }
         /// <p>Application wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// Consumes the builder and constructs a [`UnarchiveApplicationOutput`](crate::output::UnarchiveApplicationOutput).
         pub fn build(self) -> crate::output::UnarchiveApplicationOutput {
             crate::output::UnarchiveApplicationOutput {
-                application_id: self.application_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                application_aggregated_status: self.application_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
-                wave_id: self.wave_id,
+                application_id: self.application_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                application_aggregated_status: self.application_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
+                wave_id: self.wave_id
+                ,
             }
         }
     }
@@ -8949,10 +7805,7 @@ pub mod unarchive_application_output {
             formatter.field("name", &self.name);
             formatter.field("description", &self.description);
             formatter.field("is_archived", &self.is_archived);
-            formatter.field(
-                "application_aggregated_status",
-                &self.application_aggregated_status,
-            );
+            formatter.field("application_aggregated_status", &self.application_aggregated_status);
             formatter.field("creation_date_time", &self.creation_date_time);
             formatter.field("last_modified_date_time", &self.last_modified_date_time);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -8960,6 +7813,8 @@ pub mod unarchive_application_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UnarchiveApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UnarchiveApplicationOutput`](crate::output::UnarchiveApplicationOutput).
@@ -8971,19 +7826,24 @@ impl UnarchiveApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateSourceServersOutput {}
+pub struct DisassociateSourceServersOutput  {
+}
 /// See [`DisassociateSourceServersOutput`](crate::output::DisassociateSourceServersOutput).
 pub mod disassociate_source_servers_output {
-
+    
     /// A builder for [`DisassociateSourceServersOutput`](crate::output::DisassociateSourceServersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateSourceServersOutput`](crate::output::DisassociateSourceServersOutput).
         pub fn build(self) -> crate::output::DisassociateSourceServersOutput {
-            crate::output::DisassociateSourceServersOutput {}
+            crate::output::DisassociateSourceServersOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateSourceServersOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSourceServersOutput`](crate::output::DisassociateSourceServersOutput).
@@ -8995,19 +7855,24 @@ impl DisassociateSourceServersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateSourceServersOutput {}
+pub struct AssociateSourceServersOutput  {
+}
 /// See [`AssociateSourceServersOutput`](crate::output::AssociateSourceServersOutput).
 pub mod associate_source_servers_output {
-
+    
     /// A builder for [`AssociateSourceServersOutput`](crate::output::AssociateSourceServersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateSourceServersOutput`](crate::output::AssociateSourceServersOutput).
         pub fn build(self) -> crate::output::AssociateSourceServersOutput {
-            crate::output::AssociateSourceServersOutput {}
+            crate::output::AssociateSourceServersOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateSourceServersOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSourceServersOutput`](crate::output::AssociateSourceServersOutput).
@@ -9019,7 +7884,7 @@ impl AssociateSourceServersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ArchiveApplicationOutput {
+pub struct ArchiveApplicationOutput  {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -9037,8 +7902,7 @@ pub struct ArchiveApplicationOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Application aggregated status.</p>
     #[doc(hidden)]
-    pub application_aggregated_status:
-        std::option::Option<crate::model::ApplicationAggregatedStatus>,
+    pub application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
     /// <p>Application creation dateTime.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<std::string::String>,
@@ -9047,27 +7911,26 @@ pub struct ArchiveApplicationOutput {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Application tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Application wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
 }
 impl ArchiveApplicationOutput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Application ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Application name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Application description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Application archival status.</p>
@@ -9075,32 +7938,27 @@ impl ArchiveApplicationOutput {
         self.is_archived
     }
     /// <p>Application aggregated status.</p>
-    pub fn application_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationAggregatedStatus> {
+    pub fn application_aggregated_status(&self) -> std::option::Option<& crate::model::ApplicationAggregatedStatus> {
         self.application_aggregated_status.as_ref()
     }
     /// <p>Application creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Application last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Application tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Application wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
 }
-impl std::fmt::Debug for ArchiveApplicationOutput {
+impl  std::fmt::Debug for ArchiveApplicationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArchiveApplicationOutput");
         formatter.field("application_id", &self.application_id);
@@ -9108,10 +7966,7 @@ impl std::fmt::Debug for ArchiveApplicationOutput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("is_archived", &self.is_archived);
-        formatter.field(
-            "application_aggregated_status",
-            &self.application_aggregated_status,
-        );
+        formatter.field("application_aggregated_status", &self.application_aggregated_status);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_modified_date_time", &self.last_modified_date_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -9121,7 +7976,7 @@ impl std::fmt::Debug for ArchiveApplicationOutput {
 }
 /// See [`ArchiveApplicationOutput`](crate::output::ArchiveApplicationOutput).
 pub mod archive_application_output {
-
+    
     /// A builder for [`ArchiveApplicationOutput`](crate::output::ArchiveApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -9130,13 +7985,10 @@ pub mod archive_application_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) application_aggregated_status:
-            std::option::Option<crate::model::ApplicationAggregatedStatus>,
+        pub(crate) application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) wave_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9146,12 +7998,8 @@ pub mod archive_application_output {
             self
         }
         /// <p>Application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>Application ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9160,8 +8008,7 @@ pub mod archive_application_output {
         }
         /// <p>Application ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Application name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9170,8 +8017,7 @@ pub mod archive_application_output {
         }
         /// <p>Application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Application description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9180,8 +8026,7 @@ pub mod archive_application_output {
         }
         /// <p>Application description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Application archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -9190,24 +8035,16 @@ pub mod archive_application_output {
         }
         /// <p>Application archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Application aggregated status.</p>
-        pub fn application_aggregated_status(
-            mut self,
-            input: crate::model::ApplicationAggregatedStatus,
-        ) -> Self {
+        pub fn application_aggregated_status(mut self, input: crate::model::ApplicationAggregatedStatus) -> Self {
             self.application_aggregated_status = Some(input);
             self
         }
         /// <p>Application aggregated status.</p>
-        pub fn set_application_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationAggregatedStatus>,
-        ) -> Self {
-            self.application_aggregated_status = input;
-            self
+        pub fn set_application_aggregated_status(mut self, input: std::option::Option<crate::model::ApplicationAggregatedStatus>) -> Self {
+            self.application_aggregated_status = input; self
         }
         /// <p>Application creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9215,12 +8052,8 @@ pub mod archive_application_output {
             self
         }
         /// <p>Application creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Application last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9228,37 +8061,23 @@ pub mod archive_application_output {
             self
         }
         /// <p>Application last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Application tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Application tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Application wave ID.</p>
         pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9267,22 +8086,31 @@ pub mod archive_application_output {
         }
         /// <p>Application wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// Consumes the builder and constructs a [`ArchiveApplicationOutput`](crate::output::ArchiveApplicationOutput).
         pub fn build(self) -> crate::output::ArchiveApplicationOutput {
             crate::output::ArchiveApplicationOutput {
-                application_id: self.application_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                application_aggregated_status: self.application_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
-                wave_id: self.wave_id,
+                application_id: self.application_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                application_aggregated_status: self.application_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
+                wave_id: self.wave_id
+                ,
             }
         }
     }
@@ -9294,10 +8122,7 @@ pub mod archive_application_output {
             formatter.field("name", &self.name);
             formatter.field("description", &self.description);
             formatter.field("is_archived", &self.is_archived);
-            formatter.field(
-                "application_aggregated_status",
-                &self.application_aggregated_status,
-            );
+            formatter.field("application_aggregated_status", &self.application_aggregated_status);
             formatter.field("creation_date_time", &self.creation_date_time);
             formatter.field("last_modified_date_time", &self.last_modified_date_time);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -9305,6 +8130,8 @@ pub mod archive_application_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ArchiveApplicationOutput {
     /// Creates a new builder-style object to manufacture [`ArchiveApplicationOutput`](crate::output::ArchiveApplicationOutput).
@@ -9316,7 +8143,7 @@ impl ArchiveApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>Applications list.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -9326,17 +8153,17 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>Applications list.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Application]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::Application]> {
         self.items.as_deref()
     }
     /// <p>Response next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9351,17 +8178,13 @@ pub mod list_applications_output {
         /// <p>Applications list.</p>
         pub fn items(mut self, input: crate::model::Application) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Applications list.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Application>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::Application>>) -> Self {
+            self.items = input; self
         }
         /// <p>Response next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9370,17 +8193,20 @@ pub mod list_applications_output {
         }
         /// <p>Response next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -9392,7 +8218,7 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -9410,8 +8236,7 @@ pub struct CreateApplicationOutput {
     pub is_archived: std::option::Option<bool>,
     /// <p>Application aggregated status.</p>
     #[doc(hidden)]
-    pub application_aggregated_status:
-        std::option::Option<crate::model::ApplicationAggregatedStatus>,
+    pub application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
     /// <p>Application creation dateTime.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<std::string::String>,
@@ -9420,27 +8245,26 @@ pub struct CreateApplicationOutput {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Application tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Application wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
 }
 impl CreateApplicationOutput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Application ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Application name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Application description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Application archival status.</p>
@@ -9448,32 +8272,27 @@ impl CreateApplicationOutput {
         self.is_archived
     }
     /// <p>Application aggregated status.</p>
-    pub fn application_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationAggregatedStatus> {
+    pub fn application_aggregated_status(&self) -> std::option::Option<& crate::model::ApplicationAggregatedStatus> {
         self.application_aggregated_status.as_ref()
     }
     /// <p>Application creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Application last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Application tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Application wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationOutput {
+impl  std::fmt::Debug for CreateApplicationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationOutput");
         formatter.field("application_id", &self.application_id);
@@ -9481,10 +8300,7 @@ impl std::fmt::Debug for CreateApplicationOutput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("is_archived", &self.is_archived);
-        formatter.field(
-            "application_aggregated_status",
-            &self.application_aggregated_status,
-        );
+        formatter.field("application_aggregated_status", &self.application_aggregated_status);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_modified_date_time", &self.last_modified_date_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -9494,7 +8310,7 @@ impl std::fmt::Debug for CreateApplicationOutput {
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -9503,13 +8319,10 @@ pub mod create_application_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) application_aggregated_status:
-            std::option::Option<crate::model::ApplicationAggregatedStatus>,
+        pub(crate) application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) wave_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9519,12 +8332,8 @@ pub mod create_application_output {
             self
         }
         /// <p>Application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>Application ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9533,8 +8342,7 @@ pub mod create_application_output {
         }
         /// <p>Application ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Application name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9543,8 +8351,7 @@ pub mod create_application_output {
         }
         /// <p>Application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Application description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9553,8 +8360,7 @@ pub mod create_application_output {
         }
         /// <p>Application description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Application archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -9563,24 +8369,16 @@ pub mod create_application_output {
         }
         /// <p>Application archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Application aggregated status.</p>
-        pub fn application_aggregated_status(
-            mut self,
-            input: crate::model::ApplicationAggregatedStatus,
-        ) -> Self {
+        pub fn application_aggregated_status(mut self, input: crate::model::ApplicationAggregatedStatus) -> Self {
             self.application_aggregated_status = Some(input);
             self
         }
         /// <p>Application aggregated status.</p>
-        pub fn set_application_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationAggregatedStatus>,
-        ) -> Self {
-            self.application_aggregated_status = input;
-            self
+        pub fn set_application_aggregated_status(mut self, input: std::option::Option<crate::model::ApplicationAggregatedStatus>) -> Self {
+            self.application_aggregated_status = input; self
         }
         /// <p>Application creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9588,12 +8386,8 @@ pub mod create_application_output {
             self
         }
         /// <p>Application creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Application last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9601,37 +8395,23 @@ pub mod create_application_output {
             self
         }
         /// <p>Application last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Application tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Application tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Application wave ID.</p>
         pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9640,22 +8420,31 @@ pub mod create_application_output {
         }
         /// <p>Application wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                application_id: self.application_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                application_aggregated_status: self.application_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
-                wave_id: self.wave_id,
+                application_id: self.application_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                application_aggregated_status: self.application_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
+                wave_id: self.wave_id
+                ,
             }
         }
     }
@@ -9667,10 +8456,7 @@ pub mod create_application_output {
             formatter.field("name", &self.name);
             formatter.field("description", &self.description);
             formatter.field("is_archived", &self.is_archived);
-            formatter.field(
-                "application_aggregated_status",
-                &self.application_aggregated_status,
-            );
+            formatter.field("application_aggregated_status", &self.application_aggregated_status);
             formatter.field("creation_date_time", &self.creation_date_time);
             formatter.field("last_modified_date_time", &self.last_modified_date_time);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -9678,6 +8464,8 @@ pub mod create_application_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -9689,19 +8477,24 @@ impl CreateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {}
+pub struct DeleteApplicationOutput  {
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
-            crate::output::DeleteApplicationOutput {}
+            crate::output::DeleteApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -9713,19 +8506,24 @@ impl DeleteApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -9737,19 +8535,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -9761,22 +8564,18 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>List tags for resource response.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>List tags for resource response.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
+impl  std::fmt::Debug for ListTagsForResourceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -9785,13 +8584,11 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -9799,29 +8596,22 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>List tags for resource response.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>List tags for resource response.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
     impl std::fmt::Debug for Builder {
@@ -9831,6 +8621,8 @@ pub mod list_tags_for_resource_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -9842,19 +8634,24 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitializeServiceOutput {}
+pub struct InitializeServiceOutput  {
+}
 /// See [`InitializeServiceOutput`](crate::output::InitializeServiceOutput).
 pub mod initialize_service_output {
-
+    
     /// A builder for [`InitializeServiceOutput`](crate::output::InitializeServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`InitializeServiceOutput`](crate::output::InitializeServiceOutput).
         pub fn build(self) -> crate::output::InitializeServiceOutput {
-            crate::output::InitializeServiceOutput {}
+            crate::output::InitializeServiceOutput {
+            }
         }
     }
+    
+    
 }
 impl InitializeServiceOutput {
     /// Creates a new builder-style object to manufacture [`InitializeServiceOutput`](crate::output::InitializeServiceOutput).
@@ -9862,3 +8659,4 @@ impl InitializeServiceOutput {
         crate::output::initialize_service_output::Builder::default()
     }
 }
+

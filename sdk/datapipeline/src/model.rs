@@ -3,7 +3,7 @@
 /// <p>Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationWarning {
+pub struct ValidationWarning  {
     /// <p>The identifier of the object that contains the validation warning.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationWarning {
 }
 impl ValidationWarning {
     /// <p>The identifier of the object that contains the validation warning.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the validation warning.</p>
-    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn warnings(&self) -> std::option::Option<& [std::string::String]> {
         self.warnings.as_deref()
     }
 }
 /// See [`ValidationWarning`](crate::model::ValidationWarning).
 pub mod validation_warning {
-
+    
     /// A builder for [`ValidationWarning`](crate::model::ValidationWarning).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_warning {
         }
         /// <p>The identifier of the object that contains the validation warning.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `warnings`.
         ///
@@ -48,26 +47,26 @@ pub mod validation_warning {
         /// <p>A description of the validation warning.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
-            self.warnings = Some(v);
-            self
+                            v.push(input.into());
+                            self.warnings = Some(v);
+                            self
         }
         /// <p>A description of the validation warning.</p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.warnings = input; self
         }
         /// Consumes the builder and constructs a [`ValidationWarning`](crate::model::ValidationWarning).
         pub fn build(self) -> crate::model::ValidationWarning {
             crate::model::ValidationWarning {
-                id: self.id,
-                warnings: self.warnings,
+                id: self.id
+                ,
+                warnings: self.warnings
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationWarning {
     /// Creates a new builder-style object to manufacture [`ValidationWarning`](crate::model::ValidationWarning).
@@ -79,7 +78,7 @@ impl ValidationWarning {
 /// <p>Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationError {
+pub struct ValidationError  {
     /// <p>The identifier of the object that contains the validation error.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -89,17 +88,17 @@ pub struct ValidationError {
 }
 impl ValidationError {
     /// <p>The identifier of the object that contains the validation error.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the validation error.</p>
-    pub fn errors(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn errors(&self) -> std::option::Option<& [std::string::String]> {
         self.errors.as_deref()
     }
 }
 /// See [`ValidationError`](crate::model::ValidationError).
 pub mod validation_error {
-
+    
     /// A builder for [`ValidationError`](crate::model::ValidationError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -114,8 +113,7 @@ pub mod validation_error {
         }
         /// <p>The identifier of the object that contains the validation error.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -124,26 +122,26 @@ pub mod validation_error {
         /// <p>A description of the validation error.</p>
         pub fn errors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
-            self.errors = Some(v);
-            self
+                            v.push(input.into());
+                            self.errors = Some(v);
+                            self
         }
         /// <p>A description of the validation error.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`ValidationError`](crate::model::ValidationError).
         pub fn build(self) -> crate::model::ValidationError {
             crate::model::ValidationError {
-                id: self.id,
-                errors: self.errors,
+                id: self.id
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationError {
     /// Creates a new builder-style object to manufacture [`ValidationError`](crate::model::ValidationError).
@@ -155,7 +153,7 @@ impl ValidationError {
 /// <p>A value or list of parameter values. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterValue {
+pub struct ParameterValue  {
     /// <p>The ID of the parameter value.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -165,17 +163,17 @@ pub struct ParameterValue {
 }
 impl ParameterValue {
     /// <p>The ID of the parameter value.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
+    pub fn string_value(&self) -> std::option::Option<& str> {
         self.string_value.as_deref()
     }
 }
 /// See [`ParameterValue`](crate::model::ParameterValue).
 pub mod parameter_value {
-
+    
     /// A builder for [`ParameterValue`](crate::model::ParameterValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -190,8 +188,7 @@ pub mod parameter_value {
         }
         /// <p>The ID of the parameter value.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The field value, expressed as a String.</p>
         pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,17 +197,20 @@ pub mod parameter_value {
         }
         /// <p>The field value, expressed as a String.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.string_value = input;
-            self
+            self.string_value = input; self
         }
         /// Consumes the builder and constructs a [`ParameterValue`](crate::model::ParameterValue).
         pub fn build(self) -> crate::model::ParameterValue {
             crate::model::ParameterValue {
-                id: self.id,
-                string_value: self.string_value,
+                id: self.id
+                ,
+                string_value: self.string_value
+                ,
             }
         }
     }
+    
+    
 }
 impl ParameterValue {
     /// Creates a new builder-style object to manufacture [`ParameterValue`](crate::model::ParameterValue).
@@ -222,7 +222,7 @@ impl ParameterValue {
 /// <p>Contains information about a parameter object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterObject {
+pub struct ParameterObject  {
     /// <p>The ID of the parameter object. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -232,17 +232,17 @@ pub struct ParameterObject {
 }
 impl ParameterObject {
     /// <p>The ID of the parameter object. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The attributes of the parameter object.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::ParameterAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::ParameterAttribute]> {
         self.attributes.as_deref()
     }
 }
 /// See [`ParameterObject`](crate::model::ParameterObject).
 pub mod parameter_object {
-
+    
     /// A builder for [`ParameterObject`](crate::model::ParameterObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -257,8 +257,7 @@ pub mod parameter_object {
         }
         /// <p>The ID of the parameter object. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -267,26 +266,26 @@ pub mod parameter_object {
         /// <p>The attributes of the parameter object.</p>
         pub fn attributes(mut self, input: crate::model::ParameterAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes of the parameter object.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParameterAttribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterAttribute>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`ParameterObject`](crate::model::ParameterObject).
         pub fn build(self) -> crate::model::ParameterObject {
             crate::model::ParameterObject {
-                id: self.id,
-                attributes: self.attributes,
+                id: self.id
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl ParameterObject {
     /// Creates a new builder-style object to manufacture [`ParameterObject`](crate::model::ParameterObject).
@@ -298,7 +297,7 @@ impl ParameterObject {
 /// <p>The attributes allowed or specified with a parameter object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterAttribute {
+pub struct ParameterAttribute  {
     /// <p>The field identifier.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -308,17 +307,17 @@ pub struct ParameterAttribute {
 }
 impl ParameterAttribute {
     /// <p>The field identifier.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
+    pub fn string_value(&self) -> std::option::Option<& str> {
         self.string_value.as_deref()
     }
 }
 /// See [`ParameterAttribute`](crate::model::ParameterAttribute).
 pub mod parameter_attribute {
-
+    
     /// A builder for [`ParameterAttribute`](crate::model::ParameterAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -333,8 +332,7 @@ pub mod parameter_attribute {
         }
         /// <p>The field identifier.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The field value, expressed as a String.</p>
         pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -343,17 +341,20 @@ pub mod parameter_attribute {
         }
         /// <p>The field value, expressed as a String.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.string_value = input;
-            self
+            self.string_value = input; self
         }
         /// Consumes the builder and constructs a [`ParameterAttribute`](crate::model::ParameterAttribute).
         pub fn build(self) -> crate::model::ParameterAttribute {
             crate::model::ParameterAttribute {
-                key: self.key,
-                string_value: self.string_value,
+                key: self.key
+                ,
+                string_value: self.string_value
+                ,
             }
         }
     }
+    
+    
 }
 impl ParameterAttribute {
     /// Creates a new builder-style object to manufacture [`ParameterAttribute`](crate::model::ParameterAttribute).
@@ -365,7 +366,7 @@ impl ParameterAttribute {
 /// <p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineObject {
+pub struct PipelineObject  {
     /// <p>The ID of the object.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -378,21 +379,21 @@ pub struct PipelineObject {
 }
 impl PipelineObject {
     /// <p>The ID of the object.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the object.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::Field]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::Field]> {
         self.fields.as_deref()
     }
 }
 /// See [`PipelineObject`](crate::model::PipelineObject).
 pub mod pipeline_object {
-
+    
     /// A builder for [`PipelineObject`](crate::model::PipelineObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -408,8 +409,7 @@ pub mod pipeline_object {
         }
         /// <p>The ID of the object.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the object.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,8 +418,7 @@ pub mod pipeline_object {
         }
         /// <p>The name of the object.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `fields`.
         ///
@@ -428,27 +427,28 @@ pub mod pipeline_object {
         /// <p>Key-value pairs that define the properties of the object.</p>
         pub fn fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>Key-value pairs that define the properties of the object.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Field>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::Field>>) -> Self {
+            self.fields = input; self
         }
         /// Consumes the builder and constructs a [`PipelineObject`](crate::model::PipelineObject).
         pub fn build(self) -> crate::model::PipelineObject {
             crate::model::PipelineObject {
-                id: self.id,
-                name: self.name,
-                fields: self.fields,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                fields: self.fields
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineObject {
     /// Creates a new builder-style object to manufacture [`PipelineObject`](crate::model::PipelineObject).
@@ -460,7 +460,7 @@ impl PipelineObject {
 /// <p>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Field {
+pub struct Field  {
     /// <p>The field identifier.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -473,21 +473,21 @@ pub struct Field {
 }
 impl Field {
     /// <p>The field identifier.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
+    pub fn string_value(&self) -> std::option::Option<& str> {
         self.string_value.as_deref()
     }
     /// <p>The field value, expressed as the identifier of another object.</p>
-    pub fn ref_value(&self) -> std::option::Option<&str> {
+    pub fn ref_value(&self) -> std::option::Option<& str> {
         self.ref_value.as_deref()
     }
 }
 /// See [`Field`](crate::model::Field).
 pub mod field {
-
+    
     /// A builder for [`Field`](crate::model::Field).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -503,8 +503,7 @@ pub mod field {
         }
         /// <p>The field identifier.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The field value, expressed as a String.</p>
         pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -513,8 +512,7 @@ pub mod field {
         }
         /// <p>The field value, expressed as a String.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.string_value = input;
-            self
+            self.string_value = input; self
         }
         /// <p>The field value, expressed as the identifier of another object.</p>
         pub fn ref_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -523,18 +521,22 @@ pub mod field {
         }
         /// <p>The field value, expressed as the identifier of another object.</p>
         pub fn set_ref_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ref_value = input;
-            self
+            self.ref_value = input; self
         }
         /// Consumes the builder and constructs a [`Field`](crate::model::Field).
         pub fn build(self) -> crate::model::Field {
             crate::model::Field {
-                key: self.key,
-                string_value: self.string_value,
-                ref_value: self.ref_value,
+                key: self.key
+                ,
+                string_value: self.string_value
+                ,
+                ref_value: self.ref_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Field {
     /// Creates a new builder-style object to manufacture [`Field`](crate::model::Field).
@@ -549,9 +551,9 @@ impl Field {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let taskstatus = unimplemented!();
 /// match taskstatus {
@@ -574,22 +576,14 @@ impl Field {
 /// Specifically, when `taskstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TaskStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -598,7 +592,7 @@ pub enum TaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Finished,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaskStatus {
     fn from(s: &str) -> Self {
@@ -606,17 +600,17 @@ impl std::convert::From<&str> for TaskStatus {
             "FAILED" => TaskStatus::Failed,
             "FALSE" => TaskStatus::False,
             "FINISHED" => TaskStatus::Finished,
-            other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TaskStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TaskStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TaskStatus::from(s))
+                }
+            }
 impl TaskStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -624,12 +618,14 @@ impl TaskStatus {
             TaskStatus::Failed => "FAILED",
             TaskStatus::False => "FALSE",
             TaskStatus::Finished => "FINISHED",
-            TaskStatus::Unknown(value) => value.as_str(),
+            TaskStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "FALSE", "FINISHED"]
+        &[
+            "FAILED", "FALSE", "FINISHED"
+        ]
     }
 }
 impl AsRef<str> for TaskStatus {
@@ -641,20 +637,20 @@ impl AsRef<str> for TaskStatus {
 /// <p>Defines the query to run against an object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Query {
+pub struct Query  {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
     #[doc(hidden)]
     pub selectors: std::option::Option<std::vec::Vec<crate::model::Selector>>,
 }
 impl Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    pub fn selectors(&self) -> std::option::Option<&[crate::model::Selector]> {
+    pub fn selectors(&self) -> std::option::Option<& [crate::model::Selector]> {
         self.selectors.as_deref()
     }
 }
 /// See [`Query`](crate::model::Query).
 pub mod query {
-
+    
     /// A builder for [`Query`](crate::model::Query).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -668,25 +664,24 @@ pub mod query {
         /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
         pub fn selectors(mut self, input: crate::model::Selector) -> Self {
             let mut v = self.selectors.unwrap_or_default();
-            v.push(input);
-            self.selectors = Some(v);
-            self
+                            v.push(input);
+                            self.selectors = Some(v);
+                            self
         }
         /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-        pub fn set_selectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Selector>>,
-        ) -> Self {
-            self.selectors = input;
-            self
+        pub fn set_selectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Selector>>) -> Self {
+            self.selectors = input; self
         }
         /// Consumes the builder and constructs a [`Query`](crate::model::Query).
         pub fn build(self) -> crate::model::Query {
             crate::model::Query {
-                selectors: self.selectors,
+                selectors: self.selectors
+                ,
             }
         }
     }
+    
+    
 }
 impl Query {
     /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query).
@@ -698,7 +693,7 @@ impl Query {
 /// <p>A comparision that is used to determine whether a query should return this object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Selector {
+pub struct Selector  {
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
     #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
@@ -708,17 +703,17 @@ pub struct Selector {
 }
 impl Selector {
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
-    pub fn field_name(&self) -> std::option::Option<&str> {
+    pub fn field_name(&self) -> std::option::Option<& str> {
         self.field_name.as_deref()
     }
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::Operator> {
         self.operator.as_ref()
     }
 }
 /// See [`Selector`](crate::model::Selector).
 pub mod selector {
-
+    
     /// A builder for [`Selector`](crate::model::Selector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -733,8 +728,7 @@ pub mod selector {
         }
         /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
         pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_name = input;
-            self
+            self.field_name = input; self
         }
         /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
         pub fn operator(mut self, input: crate::model::Operator) -> Self {
@@ -743,17 +737,20 @@ pub mod selector {
         }
         /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
-            self.operator = input;
-            self
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`Selector`](crate::model::Selector).
         pub fn build(self) -> crate::model::Selector {
             crate::model::Selector {
-                field_name: self.field_name,
-                operator: self.operator,
+                field_name: self.field_name
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl Selector {
     /// Creates a new builder-style object to manufacture [`Selector`](crate::model::Selector).
@@ -765,28 +762,28 @@ impl Selector {
 /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Operator {
-    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
-    /// <ul>
-    /// <li>name</li>
-    /// <li>@sphere</li>
-    /// <li>parent</li>
-    /// <li>@componentParent</li>
-    /// <li>@instanceParent</li>
-    /// <li>@status</li>
-    /// <li>@scheduledStartTime</li>
-    /// <li>@scheduledEndTime</li>
-    /// <li>@actualStartTime</li>
-    /// <li>@actualEndTime</li>
-    /// </ul>
-    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
-    /// <ul>
-    /// <li>@scheduledStartTime</li>
-    /// <li>@scheduledEndTime</li>
-    /// <li>@actualStartTime</li>
-    /// <li>@actualEndTime</li>
-    /// </ul>
+pub struct Operator  {
+    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> 
+    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p> 
+    /// <ul> 
+    /// <li>name</li> 
+    /// <li>@sphere</li> 
+    /// <li>parent</li> 
+    /// <li>@componentParent</li> 
+    /// <li>@instanceParent</li> 
+    /// <li>@status</li> 
+    /// <li>@scheduledStartTime</li> 
+    /// <li>@scheduledEndTime</li> 
+    /// <li>@actualStartTime</li> 
+    /// <li>@actualEndTime</li> 
+    /// </ul> 
+    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> 
+    /// <ul> 
+    /// <li>@scheduledStartTime</li> 
+    /// <li>@scheduledEndTime</li> 
+    /// <li>@actualStartTime</li> 
+    /// <li>@actualEndTime</li> 
+    /// </ul> 
     /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OperatorType>,
@@ -795,39 +792,39 @@ pub struct Operator {
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Operator {
-    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
-    /// <ul>
-    /// <li>name</li>
-    /// <li>@sphere</li>
-    /// <li>parent</li>
-    /// <li>@componentParent</li>
-    /// <li>@instanceParent</li>
-    /// <li>@status</li>
-    /// <li>@scheduledStartTime</li>
-    /// <li>@scheduledEndTime</li>
-    /// <li>@actualStartTime</li>
-    /// <li>@actualEndTime</li>
-    /// </ul>
-    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
-    /// <ul>
-    /// <li>@scheduledStartTime</li>
-    /// <li>@scheduledEndTime</li>
-    /// <li>@actualStartTime</li>
-    /// <li>@actualEndTime</li>
-    /// </ul>
+    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> 
+    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p> 
+    /// <ul> 
+    /// <li>name</li> 
+    /// <li>@sphere</li> 
+    /// <li>parent</li> 
+    /// <li>@componentParent</li> 
+    /// <li>@instanceParent</li> 
+    /// <li>@status</li> 
+    /// <li>@scheduledStartTime</li> 
+    /// <li>@scheduledEndTime</li> 
+    /// <li>@actualStartTime</li> 
+    /// <li>@actualEndTime</li> 
+    /// </ul> 
+    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> 
+    /// <ul> 
+    /// <li>@scheduledStartTime</li> 
+    /// <li>@scheduledEndTime</li> 
+    /// <li>@actualStartTime</li> 
+    /// <li>@actualEndTime</li> 
+    /// </ul> 
     /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::OperatorType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::OperatorType> {
         self.r#type.as_ref()
     }
     /// <p>The value that the actual field value will be compared with.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`Operator`](crate::model::Operator).
 pub mod operator {
-
+    
     /// A builder for [`Operator`](crate::model::Operator).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -835,57 +832,56 @@ pub mod operator {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-        /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
-        /// <ul>
-        /// <li>name</li>
-        /// <li>@sphere</li>
-        /// <li>parent</li>
-        /// <li>@componentParent</li>
-        /// <li>@instanceParent</li>
-        /// <li>@status</li>
-        /// <li>@scheduledStartTime</li>
-        /// <li>@scheduledEndTime</li>
-        /// <li>@actualStartTime</li>
-        /// <li>@actualEndTime</li>
-        /// </ul>
-        /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
-        /// <ul>
-        /// <li>@scheduledStartTime</li>
-        /// <li>@scheduledEndTime</li>
-        /// <li>@actualStartTime</li>
-        /// <li>@actualEndTime</li>
-        /// </ul>
+        /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> 
+        /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p> 
+        /// <ul> 
+        /// <li>name</li> 
+        /// <li>@sphere</li> 
+        /// <li>parent</li> 
+        /// <li>@componentParent</li> 
+        /// <li>@instanceParent</li> 
+        /// <li>@status</li> 
+        /// <li>@scheduledStartTime</li> 
+        /// <li>@scheduledEndTime</li> 
+        /// <li>@actualStartTime</li> 
+        /// <li>@actualEndTime</li> 
+        /// </ul> 
+        /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> 
+        /// <ul> 
+        /// <li>@scheduledStartTime</li> 
+        /// <li>@scheduledEndTime</li> 
+        /// <li>@actualStartTime</li> 
+        /// <li>@actualEndTime</li> 
+        /// </ul> 
         /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
         pub fn r#type(mut self, input: crate::model::OperatorType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-        /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
-        /// <ul>
-        /// <li>name</li>
-        /// <li>@sphere</li>
-        /// <li>parent</li>
-        /// <li>@componentParent</li>
-        /// <li>@instanceParent</li>
-        /// <li>@status</li>
-        /// <li>@scheduledStartTime</li>
-        /// <li>@scheduledEndTime</li>
-        /// <li>@actualStartTime</li>
-        /// <li>@actualEndTime</li>
-        /// </ul>
-        /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
-        /// <ul>
-        /// <li>@scheduledStartTime</li>
-        /// <li>@scheduledEndTime</li>
-        /// <li>@actualStartTime</li>
-        /// <li>@actualEndTime</li>
-        /// </ul>
+        /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> 
+        /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p> 
+        /// <ul> 
+        /// <li>name</li> 
+        /// <li>@sphere</li> 
+        /// <li>parent</li> 
+        /// <li>@componentParent</li> 
+        /// <li>@instanceParent</li> 
+        /// <li>@status</li> 
+        /// <li>@scheduledStartTime</li> 
+        /// <li>@scheduledEndTime</li> 
+        /// <li>@actualStartTime</li> 
+        /// <li>@actualEndTime</li> 
+        /// </ul> 
+        /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> 
+        /// <ul> 
+        /// <li>@scheduledStartTime</li> 
+        /// <li>@scheduledEndTime</li> 
+        /// <li>@actualStartTime</li> 
+        /// <li>@actualEndTime</li> 
+        /// </ul> 
         /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::OperatorType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -894,26 +890,26 @@ pub mod operator {
         /// <p>The value that the actual field value will be compared with.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value that the actual field value will be compared with.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`Operator`](crate::model::Operator).
         pub fn build(self) -> crate::model::Operator {
             crate::model::Operator {
-                r#type: self.r#type,
-                values: self.values,
+                r#type: self.r#type
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl Operator {
     /// Creates a new builder-style object to manufacture [`Operator`](crate::model::Operator).
@@ -928,9 +924,9 @@ impl Operator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operatortype = unimplemented!();
 /// match operatortype {
@@ -955,22 +951,14 @@ impl Operator {
 /// Specifically, when `operatortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperatorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OperatorType {
     #[allow(missing_docs)] // documentation missing in model
     Between,
@@ -983,7 +971,7 @@ pub enum OperatorType {
     #[allow(missing_docs)] // documentation missing in model
     ReferenceEqual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperatorType {
     fn from(s: &str) -> Self {
@@ -993,17 +981,17 @@ impl std::convert::From<&str> for OperatorType {
             "GE" => OperatorType::GreaterThanOrEqual,
             "LE" => OperatorType::LessThanOrEqual,
             "REF_EQ" => OperatorType::ReferenceEqual,
-            other => OperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OperatorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OperatorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OperatorType::from(s))
+                }
+            }
 impl OperatorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1013,12 +1001,14 @@ impl OperatorType {
             OperatorType::GreaterThanOrEqual => "GE",
             OperatorType::LessThanOrEqual => "LE",
             OperatorType::ReferenceEqual => "REF_EQ",
-            OperatorType::Unknown(value) => value.as_str(),
+            OperatorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BETWEEN", "EQ", "GE", "LE", "REF_EQ"]
+        &[
+            "BETWEEN", "EQ", "GE", "LE", "REF_EQ"
+        ]
     }
 }
 impl AsRef<str> for OperatorType {
@@ -1030,7 +1020,7 @@ impl AsRef<str> for OperatorType {
 /// <p>Contains information about a pipeline task that is assigned to a task runner.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskObject {
+pub struct TaskObject  {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -1042,44 +1032,36 @@ pub struct TaskObject {
     pub attempt_id: std::option::Option<std::string::String>,
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
     #[doc(hidden)]
-    pub objects: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::PipelineObject>,
-    >,
+    pub objects: std::option::Option<std::collections::HashMap<std::string::String, crate::model::PipelineObject>>,
 }
 impl TaskObject {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The ID of the pipeline that provided the task.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
-    pub fn attempt_id(&self) -> std::option::Option<&str> {
+    pub fn attempt_id(&self) -> std::option::Option<& str> {
         self.attempt_id.as_deref()
     }
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    pub fn objects(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::PipelineObject>,
-    > {
+    pub fn objects(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::PipelineObject>> {
         self.objects.as_ref()
     }
 }
 /// See [`TaskObject`](crate::model::TaskObject).
 pub mod task_object {
-
+    
     /// A builder for [`TaskObject`](crate::model::TaskObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) attempt_id: std::option::Option<std::string::String>,
-        pub(crate) objects: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::PipelineObject>,
-        >,
+        pub(crate) objects: std::option::Option<std::collections::HashMap<std::string::String, crate::model::PipelineObject>>,
     }
     impl Builder {
         /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
@@ -1089,8 +1071,7 @@ pub mod task_object {
         }
         /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input;
-            self
+            self.task_id = input; self
         }
         /// <p>The ID of the pipeline that provided the task.</p>
         pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1099,8 +1080,7 @@ pub mod task_object {
         }
         /// <p>The ID of the pipeline that provided the task.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input;
-            self
+            self.pipeline_id = input; self
         }
         /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
         pub fn attempt_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1109,44 +1089,39 @@ pub mod task_object {
         }
         /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
         pub fn set_attempt_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attempt_id = input;
-            self
+            self.attempt_id = input; self
         }
         /// Adds a key-value pair to `objects`.
         ///
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-        pub fn objects(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::PipelineObject,
-        ) -> Self {
+        pub fn objects(mut self, k: impl Into<std::string::String>, v: crate::model::PipelineObject) -> Self {
             let mut hash_map = self.objects.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.objects = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.objects = Some(hash_map);
+                            self
         }
         /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-        pub fn set_objects(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::PipelineObject>,
-            >,
-        ) -> Self {
-            self.objects = input;
-            self
+        pub fn set_objects(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::PipelineObject>>) -> Self {
+            self.objects = input; self
         }
         /// Consumes the builder and constructs a [`TaskObject`](crate::model::TaskObject).
         pub fn build(self) -> crate::model::TaskObject {
             crate::model::TaskObject {
-                task_id: self.task_id,
-                pipeline_id: self.pipeline_id,
-                attempt_id: self.attempt_id,
-                objects: self.objects,
+                task_id: self.task_id
+                ,
+                pipeline_id: self.pipeline_id
+                ,
+                attempt_id: self.attempt_id
+                ,
+                objects: self.objects
+                ,
             }
         }
     }
+    
+    
 }
 impl TaskObject {
     /// Creates a new builder-style object to manufacture [`TaskObject`](crate::model::TaskObject).
@@ -1160,7 +1135,7 @@ impl TaskObject {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceIdentity {
+pub struct InstanceIdentity  {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
@@ -1170,17 +1145,17 @@ pub struct InstanceIdentity {
 }
 impl InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> std::option::Option<& str> {
         self.signature.as_deref()
     }
 }
 /// See [`InstanceIdentity`](crate::model::InstanceIdentity).
 pub mod instance_identity {
-
+    
     /// A builder for [`InstanceIdentity`](crate::model::InstanceIdentity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1195,8 +1170,7 @@ pub mod instance_identity {
         }
         /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
         pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
         pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1205,17 +1179,20 @@ pub mod instance_identity {
         }
         /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.signature = input;
-            self
+            self.signature = input; self
         }
         /// Consumes the builder and constructs a [`InstanceIdentity`](crate::model::InstanceIdentity).
         pub fn build(self) -> crate::model::InstanceIdentity {
             crate::model::InstanceIdentity {
-                document: self.document,
-                signature: self.signature,
+                document: self.document
+                ,
+                signature: self.signature
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceIdentity {
     /// Creates a new builder-style object to manufacture [`InstanceIdentity`](crate::model::InstanceIdentity).
@@ -1227,7 +1204,7 @@ impl InstanceIdentity {
 /// <p>Contains the name and identifier of a pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineIdName {
+pub struct PipelineIdName  {
     /// <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1237,17 +1214,17 @@ pub struct PipelineIdName {
 }
 impl PipelineIdName {
     /// <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`PipelineIdName`](crate::model::PipelineIdName).
 pub mod pipeline_id_name {
-
+    
     /// A builder for [`PipelineIdName`](crate::model::PipelineIdName).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1262,8 +1239,7 @@ pub mod pipeline_id_name {
         }
         /// <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the pipeline.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1272,17 +1248,20 @@ pub mod pipeline_id_name {
         }
         /// <p>The name of the pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`PipelineIdName`](crate::model::PipelineIdName).
         pub fn build(self) -> crate::model::PipelineIdName {
             crate::model::PipelineIdName {
-                id: self.id,
-                name: self.name,
+                id: self.id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineIdName {
     /// Creates a new builder-style object to manufacture [`PipelineIdName`](crate::model::PipelineIdName).
@@ -1294,7 +1273,7 @@ impl PipelineIdName {
 /// <p>Contains pipeline metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineDescription {
+pub struct PipelineDescription  {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
@@ -1313,29 +1292,29 @@ pub struct PipelineDescription {
 }
 impl PipelineDescription {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::Field]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::Field]> {
         self.fields.as_deref()
     }
     /// <p>Description of the pipeline.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`PipelineDescription`](crate::model::PipelineDescription).
 pub mod pipeline_description {
-
+    
     /// A builder for [`PipelineDescription`](crate::model::PipelineDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1353,8 +1332,7 @@ pub mod pipeline_description {
         }
         /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input;
-            self
+            self.pipeline_id = input; self
         }
         /// <p>The name of the pipeline.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1363,8 +1341,7 @@ pub mod pipeline_description {
         }
         /// <p>The name of the pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `fields`.
         ///
@@ -1373,17 +1350,13 @@ pub mod pipeline_description {
         /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
         pub fn fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Field>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::Field>>) -> Self {
+            self.fields = input; self
         }
         /// <p>Description of the pipeline.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1392,8 +1365,7 @@ pub mod pipeline_description {
         }
         /// <p>Description of the pipeline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1402,29 +1374,32 @@ pub mod pipeline_description {
         /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PipelineDescription`](crate::model::PipelineDescription).
         pub fn build(self) -> crate::model::PipelineDescription {
             crate::model::PipelineDescription {
-                pipeline_id: self.pipeline_id,
-                name: self.name,
-                fields: self.fields,
-                description: self.description,
-                tags: self.tags,
+                pipeline_id: self.pipeline_id
+                ,
+                name: self.name
+                ,
+                fields: self.fields
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineDescription {
     /// Creates a new builder-style object to manufacture [`PipelineDescription`](crate::model::PipelineDescription).
@@ -1436,7 +1411,7 @@ impl PipelineDescription {
 /// <p>Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key name of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1446,17 +1421,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key name of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The optional value portion of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1471,8 +1446,7 @@ pub mod tag {
         }
         /// <p>The key name of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The optional value portion of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1481,17 +1455,20 @@ pub mod tag {
         }
         /// <p>The optional value portion of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1499,3 +1476,4 @@ impl Tag {
         crate::model::tag::Builder::default()
     }
 }
+

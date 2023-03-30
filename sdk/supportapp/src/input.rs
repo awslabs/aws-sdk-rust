@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`CreateSlackChannelConfigurationInput`](crate::input::CreateSlackChannelConfigurationInput).
 pub mod create_slack_channel_configuration_input {
-
+    
     /// A builder for [`CreateSlackChannelConfigurationInput`](crate::input::CreateSlackChannelConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13,8 +13,7 @@ pub mod create_slack_channel_configuration_input {
         pub(crate) notify_on_create_or_reopen_case: std::option::Option<bool>,
         pub(crate) notify_on_add_correspondence_to_case: std::option::Option<bool>,
         pub(crate) notify_on_resolve_case: std::option::Option<bool>,
-        pub(crate) notify_on_case_severity:
-            std::option::Option<crate::model::NotificationSeverityLevel>,
+        pub(crate) notify_on_case_severity: std::option::Option<crate::model::NotificationSeverityLevel>,
         pub(crate) channel_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -25,8 +24,7 @@ pub mod create_slack_channel_configuration_input {
         }
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_id = input;
-            self
+            self.team_id = input; self
         }
         /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -35,8 +33,7 @@ pub mod create_slack_channel_configuration_input {
         }
         /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -45,8 +42,7 @@ pub mod create_slack_channel_configuration_input {
         }
         /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
+            self.channel_name = input; self
         }
         /// <p>Whether you want to get notified when a support case is created or reopened.</p>
         pub fn notify_on_create_or_reopen_case(mut self, input: bool) -> Self {
@@ -54,12 +50,8 @@ pub mod create_slack_channel_configuration_input {
             self
         }
         /// <p>Whether you want to get notified when a support case is created or reopened.</p>
-        pub fn set_notify_on_create_or_reopen_case(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.notify_on_create_or_reopen_case = input;
-            self
+        pub fn set_notify_on_create_or_reopen_case(mut self, input: std::option::Option<bool>) -> Self {
+            self.notify_on_create_or_reopen_case = input; self
         }
         /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
         pub fn notify_on_add_correspondence_to_case(mut self, input: bool) -> Self {
@@ -67,12 +59,8 @@ pub mod create_slack_channel_configuration_input {
             self
         }
         /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-        pub fn set_notify_on_add_correspondence_to_case(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.notify_on_add_correspondence_to_case = input;
-            self
+        pub fn set_notify_on_add_correspondence_to_case(mut self, input: std::option::Option<bool>) -> Self {
+            self.notify_on_add_correspondence_to_case = input; self
         }
         /// <p>Whether you want to get notified when a support case is resolved.</p>
         pub fn notify_on_resolve_case(mut self, input: bool) -> Self {
@@ -81,52 +69,44 @@ pub mod create_slack_channel_configuration_input {
         }
         /// <p>Whether you want to get notified when a support case is resolved.</p>
         pub fn set_notify_on_resolve_case(mut self, input: std::option::Option<bool>) -> Self {
-            self.notify_on_resolve_case = input;
-            self
+            self.notify_on_resolve_case = input; self
         }
-        /// <p>The case severity for a support case that you want to receive notifications.</p>
-        /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
-        /// <ul>
-        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-        /// </ul>
-        /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-        /// </ul> <note>
-        /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
+        /// <p>The case severity for a support case that you want to receive notifications.</p> 
+        /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p> 
+        /// <ul> 
+        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+        /// </ul> 
+        /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+        /// </ul> <note> 
+        /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p> 
         /// </note>
-        pub fn notify_on_case_severity(
-            mut self,
-            input: crate::model::NotificationSeverityLevel,
-        ) -> Self {
+        pub fn notify_on_case_severity(mut self, input: crate::model::NotificationSeverityLevel) -> Self {
             self.notify_on_case_severity = Some(input);
             self
         }
-        /// <p>The case severity for a support case that you want to receive notifications.</p>
-        /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
-        /// <ul>
-        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-        /// </ul>
-        /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-        /// </ul> <note>
-        /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
+        /// <p>The case severity for a support case that you want to receive notifications.</p> 
+        /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p> 
+        /// <ul> 
+        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+        /// </ul> 
+        /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+        /// </ul> <note> 
+        /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p> 
         /// </note>
-        pub fn set_notify_on_case_severity(
-            mut self,
-            input: std::option::Option<crate::model::NotificationSeverityLevel>,
-        ) -> Self {
-            self.notify_on_case_severity = input;
-            self
+        pub fn set_notify_on_case_severity(mut self, input: std::option::Option<crate::model::NotificationSeverityLevel>) -> Self {
+            self.notify_on_case_severity = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
         pub fn channel_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,94 +114,68 @@ pub mod create_slack_channel_configuration_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-        pub fn set_channel_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.channel_role_arn = input;
-            self
+        pub fn set_channel_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateSlackChannelConfigurationInput`](crate::input::CreateSlackChannelConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateSlackChannelConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateSlackChannelConfigurationInput {
-                team_id: self.team_id,
-                channel_id: self.channel_id,
-                channel_name: self.channel_name,
-                notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case,
-                notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case,
-                notify_on_resolve_case: self.notify_on_resolve_case,
-                notify_on_case_severity: self.notify_on_case_severity,
-                channel_role_arn: self.channel_role_arn,
-            })
+        pub fn build(self) -> Result<crate::input::CreateSlackChannelConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateSlackChannelConfigurationInput {
+                    team_id: self.team_id
+                    ,
+                    channel_id: self.channel_id
+                    ,
+                    channel_name: self.channel_name
+                    ,
+                    notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case
+                    ,
+                    notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case
+                    ,
+                    notify_on_resolve_case: self.notify_on_resolve_case
+                    ,
+                    notify_on_case_severity: self.notify_on_case_severity
+                    ,
+                    channel_role_arn: self.channel_role_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateSlackChannelConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSlackChannelConfiguration`](crate::operation::CreateSlackChannelConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateSlackChannelConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateSlackChannelConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateSlackChannelConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/control/create-slack-channel-configuration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::CreateSlackChannelConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/control/create-slack-channel-configuration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateSlackChannelConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateSlackChannelConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -230,56 +184,33 @@ impl CreateSlackChannelConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_create_slack_channel_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateSlackChannelConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateSlackChannelConfiguration",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateSlackChannelConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateSlackChannelConfiguration", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -291,72 +222,49 @@ impl CreateSlackChannelConfigurationInput {
 
 /// See [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
 pub mod delete_account_alias_input {
-
+    
     /// A builder for [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteAccountAliasInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteAccountAliasInput {})
+        pub fn build(self) -> Result<crate::input::DeleteAccountAliasInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteAccountAliasInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteAccountAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccountAlias`](crate::operation::DeleteAccountAlias)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteAccountAlias,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAccountAlias, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteAccountAliasInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteAccountAliasInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/delete-account-alias").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteAccountAliasInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteAccountAliasInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -366,51 +274,34 @@ impl DeleteAccountAliasInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteAccountAlias::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteAccountAlias",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAccountAlias::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAccountAlias", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -422,7 +313,7 @@ impl DeleteAccountAliasInput {
 
 /// See [`DeleteSlackChannelConfigurationInput`](crate::input::DeleteSlackChannelConfigurationInput).
 pub mod delete_slack_channel_configuration_input {
-
+    
     /// A builder for [`DeleteSlackChannelConfigurationInput`](crate::input::DeleteSlackChannelConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -437,8 +328,7 @@ pub mod delete_slack_channel_configuration_input {
         }
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_id = input;
-            self
+            self.team_id = input; self
         }
         /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -447,84 +337,55 @@ pub mod delete_slack_channel_configuration_input {
         }
         /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSlackChannelConfigurationInput`](crate::input::DeleteSlackChannelConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteSlackChannelConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteSlackChannelConfigurationInput {
-                team_id: self.team_id,
-                channel_id: self.channel_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteSlackChannelConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteSlackChannelConfigurationInput {
+                    team_id: self.team_id
+                    ,
+                    channel_id: self.channel_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteSlackChannelConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSlackChannelConfiguration`](crate::operation::DeleteSlackChannelConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteSlackChannelConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteSlackChannelConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteSlackChannelConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/control/delete-slack-channel-configuration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::DeleteSlackChannelConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/control/delete-slack-channel-configuration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteSlackChannelConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteSlackChannelConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -533,56 +394,33 @@ impl DeleteSlackChannelConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_delete_slack_channel_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteSlackChannelConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteSlackChannelConfiguration",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteSlackChannelConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteSlackChannelConfiguration", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -594,7 +432,7 @@ impl DeleteSlackChannelConfigurationInput {
 
 /// See [`DeleteSlackWorkspaceConfigurationInput`](crate::input::DeleteSlackWorkspaceConfigurationInput).
 pub mod delete_slack_workspace_configuration_input {
-
+    
     /// A builder for [`DeleteSlackWorkspaceConfigurationInput`](crate::input::DeleteSlackWorkspaceConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -608,83 +446,53 @@ pub mod delete_slack_workspace_configuration_input {
         }
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_id = input;
-            self
+            self.team_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSlackWorkspaceConfigurationInput`](crate::input::DeleteSlackWorkspaceConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteSlackWorkspaceConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteSlackWorkspaceConfigurationInput {
-                team_id: self.team_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteSlackWorkspaceConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteSlackWorkspaceConfigurationInput {
+                    team_id: self.team_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteSlackWorkspaceConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSlackWorkspaceConfiguration`](crate::operation::DeleteSlackWorkspaceConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteSlackWorkspaceConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteSlackWorkspaceConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteSlackWorkspaceConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/control/delete-slack-workspace-configuration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::DeleteSlackWorkspaceConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/control/delete-slack-workspace-configuration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteSlackWorkspaceConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteSlackWorkspaceConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -693,56 +501,33 @@ impl DeleteSlackWorkspaceConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_delete_slack_workspace_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteSlackWorkspaceConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteSlackWorkspaceConfiguration",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteSlackWorkspaceConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteSlackWorkspaceConfiguration", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -754,70 +539,49 @@ impl DeleteSlackWorkspaceConfigurationInput {
 
 /// See [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
 pub mod get_account_alias_input {
-
+    
     /// A builder for [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetAccountAliasInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetAccountAliasInput {})
+        pub fn build(self) -> Result<crate::input::GetAccountAliasInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetAccountAliasInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl GetAccountAliasInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountAlias`](crate::operation::GetAccountAlias)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetAccountAlias,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetAccountAlias, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetAccountAliasInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetAccountAliasInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/get-account-alias").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetAccountAliasInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetAccountAliasInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -827,51 +591,34 @@ impl GetAccountAliasInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetAccountAlias::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetAccountAlias",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetAccountAlias::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetAccountAlias", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -883,7 +630,7 @@ impl GetAccountAliasInput {
 
 /// See [`ListSlackChannelConfigurationsInput`](crate::input::ListSlackChannelConfigurationsInput).
 pub mod list_slack_channel_configurations_input {
-
+    
     /// A builder for [`ListSlackChannelConfigurationsInput`](crate::input::ListSlackChannelConfigurationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -897,83 +644,53 @@ pub mod list_slack_channel_configurations_input {
         }
         /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSlackChannelConfigurationsInput`](crate::input::ListSlackChannelConfigurationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListSlackChannelConfigurationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListSlackChannelConfigurationsInput {
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListSlackChannelConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListSlackChannelConfigurationsInput {
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListSlackChannelConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSlackChannelConfigurations`](crate::operation::ListSlackChannelConfigurations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListSlackChannelConfigurations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSlackChannelConfigurations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListSlackChannelConfigurationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/control/list-slack-channel-configurations")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListSlackChannelConfigurationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/control/list-slack-channel-configurations").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListSlackChannelConfigurationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListSlackChannelConfigurationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -982,56 +699,33 @@ impl ListSlackChannelConfigurationsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_slack_channel_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListSlackChannelConfigurations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListSlackChannelConfigurations",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSlackChannelConfigurations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSlackChannelConfigurations", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1043,7 +737,7 @@ impl ListSlackChannelConfigurationsInput {
 
 /// See [`ListSlackWorkspaceConfigurationsInput`](crate::input::ListSlackWorkspaceConfigurationsInput).
 pub mod list_slack_workspace_configurations_input {
-
+    
     /// A builder for [`ListSlackWorkspaceConfigurationsInput`](crate::input::ListSlackWorkspaceConfigurationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1057,83 +751,53 @@ pub mod list_slack_workspace_configurations_input {
         }
         /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSlackWorkspaceConfigurationsInput`](crate::input::ListSlackWorkspaceConfigurationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListSlackWorkspaceConfigurationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListSlackWorkspaceConfigurationsInput {
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListSlackWorkspaceConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListSlackWorkspaceConfigurationsInput {
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListSlackWorkspaceConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSlackWorkspaceConfigurations`](crate::operation::ListSlackWorkspaceConfigurations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListSlackWorkspaceConfigurations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSlackWorkspaceConfigurations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListSlackWorkspaceConfigurationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/control/list-slack-workspace-configurations")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListSlackWorkspaceConfigurationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/control/list-slack-workspace-configurations").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListSlackWorkspaceConfigurationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListSlackWorkspaceConfigurationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1142,56 +806,33 @@ impl ListSlackWorkspaceConfigurationsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_slack_workspace_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListSlackWorkspaceConfigurations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListSlackWorkspaceConfigurations",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSlackWorkspaceConfigurations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSlackWorkspaceConfigurations", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1203,7 +844,7 @@ impl ListSlackWorkspaceConfigurationsInput {
 
 /// See [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
 pub mod put_account_alias_input {
-
+    
     /// A builder for [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1216,142 +857,89 @@ pub mod put_account_alias_input {
             self
         }
         /// <p>An alias or short name for an Amazon Web Services account.</p>
-        pub fn set_account_alias(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.account_alias = input;
-            self
+        pub fn set_account_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_alias = input; self
         }
         /// Consumes the builder and constructs a [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutAccountAliasInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PutAccountAliasInput {
-                account_alias: self.account_alias,
-            })
+        pub fn build(self) -> Result<crate::input::PutAccountAliasInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutAccountAliasInput {
+                    account_alias: self.account_alias
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutAccountAliasInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountAlias`](crate::operation::PutAccountAlias)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutAccountAlias,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutAccountAlias, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutAccountAliasInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutAccountAliasInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/put-account-alias").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutAccountAliasInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutAccountAliasInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_account_alias(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_account_alias(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutAccountAlias::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutAccountAlias",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutAccountAlias::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutAccountAlias", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1363,7 +951,7 @@ impl PutAccountAliasInput {
 
 /// See [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
 pub mod register_slack_workspace_for_organization_input {
-
+    
     /// A builder for [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1377,83 +965,53 @@ pub mod register_slack_workspace_for_organization_input {
         }
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_id = input;
-            self
+            self.team_id = input; self
         }
         /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RegisterSlackWorkspaceForOrganizationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RegisterSlackWorkspaceForOrganizationInput {
-                team_id: self.team_id,
-            })
+        pub fn build(self) -> Result<crate::input::RegisterSlackWorkspaceForOrganizationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RegisterSlackWorkspaceForOrganizationInput {
+                    team_id: self.team_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RegisterSlackWorkspaceForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`RegisterSlackWorkspaceForOrganization`](crate::operation::RegisterSlackWorkspaceForOrganization)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RegisterSlackWorkspaceForOrganization,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterSlackWorkspaceForOrganization, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RegisterSlackWorkspaceForOrganizationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/control/register-slack-workspace-for-organization")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::RegisterSlackWorkspaceForOrganizationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/control/register-slack-workspace-for-organization").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RegisterSlackWorkspaceForOrganizationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RegisterSlackWorkspaceForOrganizationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1462,56 +1020,33 @@ impl RegisterSlackWorkspaceForOrganizationInput {
             crate::operation_ser::serialize_operation_crate_operation_register_slack_workspace_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RegisterSlackWorkspaceForOrganization::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RegisterSlackWorkspaceForOrganization",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterSlackWorkspaceForOrganization::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterSlackWorkspaceForOrganization", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1523,7 +1058,7 @@ impl RegisterSlackWorkspaceForOrganizationInput {
 
 /// See [`UpdateSlackChannelConfigurationInput`](crate::input::UpdateSlackChannelConfigurationInput).
 pub mod update_slack_channel_configuration_input {
-
+    
     /// A builder for [`UpdateSlackChannelConfigurationInput`](crate::input::UpdateSlackChannelConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1533,8 +1068,7 @@ pub mod update_slack_channel_configuration_input {
         pub(crate) notify_on_create_or_reopen_case: std::option::Option<bool>,
         pub(crate) notify_on_add_correspondence_to_case: std::option::Option<bool>,
         pub(crate) notify_on_resolve_case: std::option::Option<bool>,
-        pub(crate) notify_on_case_severity:
-            std::option::Option<crate::model::NotificationSeverityLevel>,
+        pub(crate) notify_on_case_severity: std::option::Option<crate::model::NotificationSeverityLevel>,
         pub(crate) channel_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1545,8 +1079,7 @@ pub mod update_slack_channel_configuration_input {
         }
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_id = input;
-            self
+            self.team_id = input; self
         }
         /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1555,8 +1088,7 @@ pub mod update_slack_channel_configuration_input {
         }
         /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// <p>The Slack channel name that you want to update.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1565,8 +1097,7 @@ pub mod update_slack_channel_configuration_input {
         }
         /// <p>The Slack channel name that you want to update.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
+            self.channel_name = input; self
         }
         /// <p>Whether you want to get notified when a support case is created or reopened.</p>
         pub fn notify_on_create_or_reopen_case(mut self, input: bool) -> Self {
@@ -1574,12 +1105,8 @@ pub mod update_slack_channel_configuration_input {
             self
         }
         /// <p>Whether you want to get notified when a support case is created or reopened.</p>
-        pub fn set_notify_on_create_or_reopen_case(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.notify_on_create_or_reopen_case = input;
-            self
+        pub fn set_notify_on_create_or_reopen_case(mut self, input: std::option::Option<bool>) -> Self {
+            self.notify_on_create_or_reopen_case = input; self
         }
         /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
         pub fn notify_on_add_correspondence_to_case(mut self, input: bool) -> Self {
@@ -1587,12 +1114,8 @@ pub mod update_slack_channel_configuration_input {
             self
         }
         /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-        pub fn set_notify_on_add_correspondence_to_case(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.notify_on_add_correspondence_to_case = input;
-            self
+        pub fn set_notify_on_add_correspondence_to_case(mut self, input: std::option::Option<bool>) -> Self {
+            self.notify_on_add_correspondence_to_case = input; self
         }
         /// <p>Whether you want to get notified when a support case is resolved.</p>
         pub fn notify_on_resolve_case(mut self, input: bool) -> Self {
@@ -1601,52 +1124,44 @@ pub mod update_slack_channel_configuration_input {
         }
         /// <p>Whether you want to get notified when a support case is resolved.</p>
         pub fn set_notify_on_resolve_case(mut self, input: std::option::Option<bool>) -> Self {
-            self.notify_on_resolve_case = input;
-            self
+            self.notify_on_resolve_case = input; self
         }
-        /// <p>The case severity for a support case that you want to receive notifications.</p>
-        /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-        /// </ul>
-        /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-        /// </ul> <note>
-        /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+        /// <p>The case severity for a support case that you want to receive notifications.</p> 
+        /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+        /// </ul> 
+        /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+        /// </ul> <note> 
+        /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
         /// </note>
-        pub fn notify_on_case_severity(
-            mut self,
-            input: crate::model::NotificationSeverityLevel,
-        ) -> Self {
+        pub fn notify_on_case_severity(mut self, input: crate::model::NotificationSeverityLevel) -> Self {
             self.notify_on_case_severity = Some(input);
             self
         }
-        /// <p>The case severity for a support case that you want to receive notifications.</p>
-        /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-        /// </ul>
-        /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-        /// </ul> <note>
-        /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+        /// <p>The case severity for a support case that you want to receive notifications.</p> 
+        /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+        /// </ul> 
+        /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+        /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+        /// </ul> <note> 
+        /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
         /// </note>
-        pub fn set_notify_on_case_severity(
-            mut self,
-            input: std::option::Option<crate::model::NotificationSeverityLevel>,
-        ) -> Self {
-            self.notify_on_case_severity = input;
-            self
+        pub fn set_notify_on_case_severity(mut self, input: std::option::Option<crate::model::NotificationSeverityLevel>) -> Self {
+            self.notify_on_case_severity = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
         pub fn channel_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1654,94 +1169,68 @@ pub mod update_slack_channel_configuration_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-        pub fn set_channel_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.channel_role_arn = input;
-            self
+        pub fn set_channel_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSlackChannelConfigurationInput`](crate::input::UpdateSlackChannelConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateSlackChannelConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateSlackChannelConfigurationInput {
-                team_id: self.team_id,
-                channel_id: self.channel_id,
-                channel_name: self.channel_name,
-                notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case,
-                notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case,
-                notify_on_resolve_case: self.notify_on_resolve_case,
-                notify_on_case_severity: self.notify_on_case_severity,
-                channel_role_arn: self.channel_role_arn,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateSlackChannelConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateSlackChannelConfigurationInput {
+                    team_id: self.team_id
+                    ,
+                    channel_id: self.channel_id
+                    ,
+                    channel_name: self.channel_name
+                    ,
+                    notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case
+                    ,
+                    notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case
+                    ,
+                    notify_on_resolve_case: self.notify_on_resolve_case
+                    ,
+                    notify_on_case_severity: self.notify_on_case_severity
+                    ,
+                    channel_role_arn: self.channel_role_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateSlackChannelConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSlackChannelConfiguration`](crate::operation::UpdateSlackChannelConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateSlackChannelConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateSlackChannelConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateSlackChannelConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/control/update-slack-channel-configuration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::UpdateSlackChannelConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/control/update-slack-channel-configuration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateSlackChannelConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateSlackChannelConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1750,56 +1239,33 @@ impl UpdateSlackChannelConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_slack_channel_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateSlackChannelConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateSlackChannelConfiguration",
-            "supportapp",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateSlackChannelConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateSlackChannelConfiguration", "supportapp"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1812,7 +1278,7 @@ impl UpdateSlackChannelConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSlackChannelConfigurationInput {
+pub struct UpdateSlackChannelConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
@@ -1831,20 +1297,20 @@ pub struct UpdateSlackChannelConfigurationInput {
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     #[doc(hidden)]
     pub notify_on_resolve_case: std::option::Option<bool>,
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
     /// </note>
     #[doc(hidden)]
     pub notify_on_case_severity: std::option::Option<crate::model::NotificationSeverityLevel>,
@@ -1854,15 +1320,15 @@ pub struct UpdateSlackChannelConfigurationInput {
 }
 impl UpdateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// <p>The Slack channel name that you want to update.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -1877,28 +1343,26 @@ impl UpdateSlackChannelConfigurationInput {
     pub fn notify_on_resolve_case(&self) -> std::option::Option<bool> {
         self.notify_on_resolve_case
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
     /// </note>
-    pub fn notify_on_case_severity(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationSeverityLevel> {
+    pub fn notify_on_case_severity(&self) -> std::option::Option<& crate::model::NotificationSeverityLevel> {
         self.notify_on_case_severity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn channel_role_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_role_arn(&self) -> std::option::Option<& str> {
         self.channel_role_arn.as_deref()
     }
 }
@@ -1906,14 +1370,14 @@ impl UpdateSlackChannelConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterSlackWorkspaceForOrganizationInput {
+pub struct RegisterSlackWorkspaceForOrganizationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
 }
 impl RegisterSlackWorkspaceForOrganizationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
 }
@@ -1921,14 +1385,14 @@ impl RegisterSlackWorkspaceForOrganizationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountAliasInput {
+pub struct PutAccountAliasInput  {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account_alias: std::option::Option<std::string::String>,
 }
 impl PutAccountAliasInput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
-    pub fn account_alias(&self) -> std::option::Option<&str> {
+    pub fn account_alias(&self) -> std::option::Option<& str> {
         self.account_alias.as_deref()
     }
 }
@@ -1936,14 +1400,14 @@ impl PutAccountAliasInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSlackWorkspaceConfigurationsInput {
+pub struct ListSlackWorkspaceConfigurationsInput  {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSlackWorkspaceConfigurationsInput {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -1951,14 +1415,14 @@ impl ListSlackWorkspaceConfigurationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSlackChannelConfigurationsInput {
+pub struct ListSlackChannelConfigurationsInput  {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSlackChannelConfigurationsInput {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -1966,19 +1430,20 @@ impl ListSlackChannelConfigurationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountAliasInput {}
+pub struct GetAccountAliasInput  {
+}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlackWorkspaceConfigurationInput {
+pub struct DeleteSlackWorkspaceConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
 }
 impl DeleteSlackWorkspaceConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
 }
@@ -1986,7 +1451,7 @@ impl DeleteSlackWorkspaceConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlackChannelConfigurationInput {
+pub struct DeleteSlackChannelConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
@@ -1996,11 +1461,11 @@ pub struct DeleteSlackChannelConfigurationInput {
 }
 impl DeleteSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
@@ -2008,12 +1473,13 @@ impl DeleteSlackChannelConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountAliasInput {}
+pub struct DeleteAccountAliasInput  {
+}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSlackChannelConfigurationInput {
+pub struct CreateSlackChannelConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
@@ -2032,20 +1498,20 @@ pub struct CreateSlackChannelConfigurationInput {
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     #[doc(hidden)]
     pub notify_on_resolve_case: std::option::Option<bool>,
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub notify_on_case_severity: std::option::Option<crate::model::NotificationSeverityLevel>,
@@ -2055,15 +1521,15 @@ pub struct CreateSlackChannelConfigurationInput {
 }
 impl CreateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -2078,28 +1544,27 @@ impl CreateSlackChannelConfigurationInput {
     pub fn notify_on_resolve_case(&self) -> std::option::Option<bool> {
         self.notify_on_resolve_case
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p> 
     /// </note>
-    pub fn notify_on_case_severity(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationSeverityLevel> {
+    pub fn notify_on_case_severity(&self) -> std::option::Option<& crate::model::NotificationSeverityLevel> {
         self.notify_on_case_severity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn channel_role_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_role_arn(&self) -> std::option::Option<& str> {
         self.channel_role_arn.as_deref()
     }
 }
+

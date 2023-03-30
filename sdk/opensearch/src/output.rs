@@ -3,7 +3,7 @@
 /// <p>Container for the response returned by <code>UpgradeDomain</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpgradeDomainOutput {
+pub struct UpgradeDomainOutput  {
     /// <p>The unique identifier of the domain upgrade.</p>
     #[doc(hidden)]
     pub upgrade_id: std::option::Option<std::string::String>,
@@ -18,23 +18,22 @@ pub struct UpgradeDomainOutput {
     pub perform_check_only: std::option::Option<bool>,
     /// <p>The advanced options configuration for the domain.</p>
     #[doc(hidden)]
-    pub advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub advanced_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Container for information about a configuration change happening on a domain.</p>
     #[doc(hidden)]
     pub change_progress_details: std::option::Option<crate::model::ChangeProgressDetails>,
 }
 impl UpgradeDomainOutput {
     /// <p>The unique identifier of the domain upgrade.</p>
-    pub fn upgrade_id(&self) -> std::option::Option<&str> {
+    pub fn upgrade_id(&self) -> std::option::Option<& str> {
         self.upgrade_id.as_deref()
     }
     /// <p>The name of the domain that was upgraded.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
-    pub fn target_version(&self) -> std::option::Option<&str> {
+    pub fn target_version(&self) -> std::option::Option<& str> {
         self.target_version.as_deref()
     }
     /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
@@ -42,22 +41,17 @@ impl UpgradeDomainOutput {
         self.perform_check_only
     }
     /// <p>The advanced options configuration for the domain.</p>
-    pub fn advanced_options(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn advanced_options(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.advanced_options.as_ref()
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
-    pub fn change_progress_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ChangeProgressDetails> {
+    pub fn change_progress_details(&self) -> std::option::Option<& crate::model::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
 }
 /// See [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput).
 pub mod upgrade_domain_output {
-
+    
     /// A builder for [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -65,11 +59,8 @@ pub mod upgrade_domain_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) target_version: std::option::Option<std::string::String>,
         pub(crate) perform_check_only: std::option::Option<bool>,
-        pub(crate) advanced_options: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) change_progress_details:
-            std::option::Option<crate::model::ChangeProgressDetails>,
+        pub(crate) advanced_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) change_progress_details: std::option::Option<crate::model::ChangeProgressDetails>,
     }
     impl Builder {
         /// <p>The unique identifier of the domain upgrade.</p>
@@ -79,8 +70,7 @@ pub mod upgrade_domain_output {
         }
         /// <p>The unique identifier of the domain upgrade.</p>
         pub fn set_upgrade_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upgrade_id = input;
-            self
+            self.upgrade_id = input; self
         }
         /// <p>The name of the domain that was upgraded.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +79,7 @@ pub mod upgrade_domain_output {
         }
         /// <p>The name of the domain that was upgraded.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
         pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,12 +87,8 @@ pub mod upgrade_domain_output {
             self
         }
         /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
-        pub fn set_target_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_version = input;
-            self
+        pub fn set_target_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_version = input; self
         }
         /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
         pub fn perform_check_only(mut self, input: bool) -> Self {
@@ -112,62 +97,52 @@ pub mod upgrade_domain_output {
         }
         /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
         pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
-            self.perform_check_only = input;
-            self
+            self.perform_check_only = input; self
         }
         /// Adds a key-value pair to `advanced_options`.
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
         /// <p>The advanced options configuration for the domain.</p>
-        pub fn advanced_options(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn advanced_options(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.advanced_options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.advanced_options = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.advanced_options = Some(hash_map);
+                            self
         }
         /// <p>The advanced options configuration for the domain.</p>
-        pub fn set_advanced_options(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.advanced_options = input;
-            self
+        pub fn set_advanced_options(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.advanced_options = input; self
         }
         /// <p>Container for information about a configuration change happening on a domain.</p>
-        pub fn change_progress_details(
-            mut self,
-            input: crate::model::ChangeProgressDetails,
-        ) -> Self {
+        pub fn change_progress_details(mut self, input: crate::model::ChangeProgressDetails) -> Self {
             self.change_progress_details = Some(input);
             self
         }
         /// <p>Container for information about a configuration change happening on a domain.</p>
-        pub fn set_change_progress_details(
-            mut self,
-            input: std::option::Option<crate::model::ChangeProgressDetails>,
-        ) -> Self {
-            self.change_progress_details = input;
-            self
+        pub fn set_change_progress_details(mut self, input: std::option::Option<crate::model::ChangeProgressDetails>) -> Self {
+            self.change_progress_details = input; self
         }
         /// Consumes the builder and constructs a [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput).
         pub fn build(self) -> crate::output::UpgradeDomainOutput {
             crate::output::UpgradeDomainOutput {
-                upgrade_id: self.upgrade_id,
-                domain_name: self.domain_name,
-                target_version: self.target_version,
-                perform_check_only: self.perform_check_only,
-                advanced_options: self.advanced_options,
-                change_progress_details: self.change_progress_details,
+                upgrade_id: self.upgrade_id
+                ,
+                domain_name: self.domain_name
+                ,
+                target_version: self.target_version
+                ,
+                perform_check_only: self.perform_check_only
+                ,
+                advanced_options: self.advanced_options
+                ,
+                change_progress_details: self.change_progress_details
+                ,
             }
         }
     }
+    
+    
 }
 impl UpgradeDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput).
@@ -179,20 +154,20 @@ impl UpgradeDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVpcEndpointOutput {
+pub struct UpdateVpcEndpointOutput  {
     /// <p>The endpoint to be updated.</p>
     #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
 }
 impl UpdateVpcEndpointOutput {
     /// <p>The endpoint to be updated.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+    pub fn vpc_endpoint(&self) -> std::option::Option<& crate::model::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
 }
 /// See [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
 pub mod update_vpc_endpoint_output {
-
+    
     /// A builder for [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -205,20 +180,19 @@ pub mod update_vpc_endpoint_output {
             self
         }
         /// <p>The endpoint to be updated.</p>
-        pub fn set_vpc_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpoint>,
-        ) -> Self {
-            self.vpc_endpoint = input;
-            self
+        pub fn set_vpc_endpoint(mut self, input: std::option::Option<crate::model::VpcEndpoint>) -> Self {
+            self.vpc_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
         pub fn build(self) -> crate::output::UpdateVpcEndpointOutput {
             crate::output::UpdateVpcEndpointOutput {
-                vpc_endpoint: self.vpc_endpoint,
+                vpc_endpoint: self.vpc_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
@@ -230,20 +204,20 @@ impl UpdateVpcEndpointOutput {
 /// <p>Container for the response returned by the <code>UpdatePackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePackageOutput {
+pub struct UpdatePackageOutput  {
     /// <p>Information about a package.</p>
     #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl UpdatePackageOutput {
     /// <p>Information about a package.</p>
-    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+    pub fn package_details(&self) -> std::option::Option<& crate::model::PackageDetails> {
         self.package_details.as_ref()
     }
 }
 /// See [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
 pub mod update_package_output {
-
+    
     /// A builder for [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -256,20 +230,19 @@ pub mod update_package_output {
             self
         }
         /// <p>Information about a package.</p>
-        pub fn set_package_details(
-            mut self,
-            input: std::option::Option<crate::model::PackageDetails>,
-        ) -> Self {
-            self.package_details = input;
-            self
+        pub fn set_package_details(mut self, input: std::option::Option<crate::model::PackageDetails>) -> Self {
+            self.package_details = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
         pub fn build(self) -> crate::output::UpdatePackageOutput {
             crate::output::UpdatePackageOutput {
-                package_details: self.package_details,
+                package_details: self.package_details
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePackageOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
@@ -281,7 +254,7 @@ impl UpdatePackageOutput {
 /// <p>The results of an <code>UpdateDomain</code> request. Contains the status of the domain being updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainConfigOutput {
+pub struct UpdateDomainConfigOutput  {
     /// <p>The status of the updated domain.</p>
     #[doc(hidden)]
     pub domain_config: std::option::Option<crate::model::DomainConfig>,
@@ -294,23 +267,21 @@ pub struct UpdateDomainConfigOutput {
 }
 impl UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
-    pub fn domain_config(&self) -> std::option::Option<&crate::model::DomainConfig> {
+    pub fn domain_config(&self) -> std::option::Option<& crate::model::DomainConfig> {
         self.domain_config.as_ref()
     }
     /// <p>Results of the dry run performed in the update domain request.</p>
-    pub fn dry_run_results(&self) -> std::option::Option<&crate::model::DryRunResults> {
+    pub fn dry_run_results(&self) -> std::option::Option<& crate::model::DryRunResults> {
         self.dry_run_results.as_ref()
     }
     /// <p>The status of the dry run being performed on the domain, if any.</p>
-    pub fn dry_run_progress_status(
-        &self,
-    ) -> std::option::Option<&crate::model::DryRunProgressStatus> {
+    pub fn dry_run_progress_status(&self) -> std::option::Option<& crate::model::DryRunProgressStatus> {
         self.dry_run_progress_status.as_ref()
     }
 }
 /// See [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
 pub mod update_domain_config_output {
-
+    
     /// A builder for [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -325,12 +296,8 @@ pub mod update_domain_config_output {
             self
         }
         /// <p>The status of the updated domain.</p>
-        pub fn set_domain_config(
-            mut self,
-            input: std::option::Option<crate::model::DomainConfig>,
-        ) -> Self {
-            self.domain_config = input;
-            self
+        pub fn set_domain_config(mut self, input: std::option::Option<crate::model::DomainConfig>) -> Self {
+            self.domain_config = input; self
         }
         /// <p>Results of the dry run performed in the update domain request.</p>
         pub fn dry_run_results(mut self, input: crate::model::DryRunResults) -> Self {
@@ -338,38 +305,32 @@ pub mod update_domain_config_output {
             self
         }
         /// <p>Results of the dry run performed in the update domain request.</p>
-        pub fn set_dry_run_results(
-            mut self,
-            input: std::option::Option<crate::model::DryRunResults>,
-        ) -> Self {
-            self.dry_run_results = input;
-            self
+        pub fn set_dry_run_results(mut self, input: std::option::Option<crate::model::DryRunResults>) -> Self {
+            self.dry_run_results = input; self
         }
         /// <p>The status of the dry run being performed on the domain, if any.</p>
-        pub fn dry_run_progress_status(
-            mut self,
-            input: crate::model::DryRunProgressStatus,
-        ) -> Self {
+        pub fn dry_run_progress_status(mut self, input: crate::model::DryRunProgressStatus) -> Self {
             self.dry_run_progress_status = Some(input);
             self
         }
         /// <p>The status of the dry run being performed on the domain, if any.</p>
-        pub fn set_dry_run_progress_status(
-            mut self,
-            input: std::option::Option<crate::model::DryRunProgressStatus>,
-        ) -> Self {
-            self.dry_run_progress_status = input;
-            self
+        pub fn set_dry_run_progress_status(mut self, input: std::option::Option<crate::model::DryRunProgressStatus>) -> Self {
+            self.dry_run_progress_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
         pub fn build(self) -> crate::output::UpdateDomainConfigOutput {
             crate::output::UpdateDomainConfigOutput {
-                domain_config: self.domain_config,
-                dry_run_results: self.dry_run_results,
-                dry_run_progress_status: self.dry_run_progress_status,
+                domain_config: self.domain_config
+                ,
+                dry_run_results: self.dry_run_results
+                ,
+                dry_run_progress_status: self.dry_run_progress_status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDomainConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
@@ -381,52 +342,45 @@ impl UpdateDomainConfigOutput {
 /// <p>Represents the output of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartServiceSoftwareUpdateOutput {
+pub struct StartServiceSoftwareUpdateOutput  {
     /// <p>The current status of the OpenSearch Service software update.</p>
     #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
 }
 impl StartServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch Service software update.</p>
-    pub fn service_software_options(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
+    pub fn service_software_options(&self) -> std::option::Option<& crate::model::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
 }
 /// See [`StartServiceSoftwareUpdateOutput`](crate::output::StartServiceSoftwareUpdateOutput).
 pub mod start_service_software_update_output {
-
+    
     /// A builder for [`StartServiceSoftwareUpdateOutput`](crate::output::StartServiceSoftwareUpdateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_software_options:
-            std::option::Option<crate::model::ServiceSoftwareOptions>,
+        pub(crate) service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
     }
     impl Builder {
         /// <p>The current status of the OpenSearch Service software update.</p>
-        pub fn service_software_options(
-            mut self,
-            input: crate::model::ServiceSoftwareOptions,
-        ) -> Self {
+        pub fn service_software_options(mut self, input: crate::model::ServiceSoftwareOptions) -> Self {
             self.service_software_options = Some(input);
             self
         }
         /// <p>The current status of the OpenSearch Service software update.</p>
-        pub fn set_service_software_options(
-            mut self,
-            input: std::option::Option<crate::model::ServiceSoftwareOptions>,
-        ) -> Self {
-            self.service_software_options = input;
-            self
+        pub fn set_service_software_options(mut self, input: std::option::Option<crate::model::ServiceSoftwareOptions>) -> Self {
+            self.service_software_options = input; self
         }
         /// Consumes the builder and constructs a [`StartServiceSoftwareUpdateOutput`](crate::output::StartServiceSoftwareUpdateOutput).
         pub fn build(self) -> crate::output::StartServiceSoftwareUpdateOutput {
             crate::output::StartServiceSoftwareUpdateOutput {
-                service_software_options: self.service_software_options,
+                service_software_options: self.service_software_options
+                ,
             }
         }
     }
+    
+    
 }
 impl StartServiceSoftwareUpdateOutput {
     /// Creates a new builder-style object to manufacture [`StartServiceSoftwareUpdateOutput`](crate::output::StartServiceSoftwareUpdateOutput).
@@ -438,19 +392,24 @@ impl StartServiceSoftwareUpdateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeVpcEndpointAccessOutput {}
+pub struct RevokeVpcEndpointAccessOutput  {
+}
 /// See [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
 pub mod revoke_vpc_endpoint_access_output {
-
+    
     /// A builder for [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
         pub fn build(self) -> crate::output::RevokeVpcEndpointAccessOutput {
-            crate::output::RevokeVpcEndpointAccessOutput {}
+            crate::output::RevokeVpcEndpointAccessOutput {
+            }
         }
     }
+    
+    
 }
 impl RevokeVpcEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
@@ -462,19 +421,24 @@ impl RevokeVpcEndpointAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsOutput {}
+pub struct RemoveTagsOutput  {
+}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
-
+    
     /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
         pub fn build(self) -> crate::output::RemoveTagsOutput {
-            crate::output::RemoveTagsOutput {}
+            crate::output::RemoveTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
@@ -486,20 +450,20 @@ impl RemoveTagsOutput {
 /// <p>Represents the output of a <code>RejectInboundConnection</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectInboundConnectionOutput {
+pub struct RejectInboundConnectionOutput  {
     /// <p>Contains details about the rejected inbound connection.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::InboundConnection>,
 }
 impl RejectInboundConnectionOutput {
     /// <p>Contains details about the rejected inbound connection.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
+    pub fn connection(&self) -> std::option::Option<& crate::model::InboundConnection> {
         self.connection.as_ref()
     }
 }
 /// See [`RejectInboundConnectionOutput`](crate::output::RejectInboundConnectionOutput).
 pub mod reject_inbound_connection_output {
-
+    
     /// A builder for [`RejectInboundConnectionOutput`](crate::output::RejectInboundConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -512,20 +476,19 @@ pub mod reject_inbound_connection_output {
             self
         }
         /// <p>Contains details about the rejected inbound connection.</p>
-        pub fn set_connection(
-            mut self,
-            input: std::option::Option<crate::model::InboundConnection>,
-        ) -> Self {
-            self.connection = input;
-            self
+        pub fn set_connection(mut self, input: std::option::Option<crate::model::InboundConnection>) -> Self {
+            self.connection = input; self
         }
         /// Consumes the builder and constructs a [`RejectInboundConnectionOutput`](crate::output::RejectInboundConnectionOutput).
         pub fn build(self) -> crate::output::RejectInboundConnectionOutput {
             crate::output::RejectInboundConnectionOutput {
-                connection: self.connection,
+                connection: self.connection
+                ,
             }
         }
     }
+    
+    
 }
 impl RejectInboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`RejectInboundConnectionOutput`](crate::output::RejectInboundConnectionOutput).
@@ -537,7 +500,7 @@ impl RejectInboundConnectionOutput {
 /// <p>Represents the output of a <code>PurchaseReservedInstanceOffering</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseReservedInstanceOfferingOutput {
+pub struct PurchaseReservedInstanceOfferingOutput  {
     /// <p>The ID of the Reserved Instance offering that was purchased.</p>
     #[doc(hidden)]
     pub reserved_instance_id: std::option::Option<std::string::String>,
@@ -547,17 +510,17 @@ pub struct PurchaseReservedInstanceOfferingOutput {
 }
 impl PurchaseReservedInstanceOfferingOutput {
     /// <p>The ID of the Reserved Instance offering that was purchased.</p>
-    pub fn reserved_instance_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instance_id(&self) -> std::option::Option<& str> {
         self.reserved_instance_id.as_deref()
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
-    pub fn reservation_name(&self) -> std::option::Option<&str> {
+    pub fn reservation_name(&self) -> std::option::Option<& str> {
         self.reservation_name.as_deref()
     }
 }
 /// See [`PurchaseReservedInstanceOfferingOutput`](crate::output::PurchaseReservedInstanceOfferingOutput).
 pub mod purchase_reserved_instance_offering_output {
-
+    
     /// A builder for [`PurchaseReservedInstanceOfferingOutput`](crate::output::PurchaseReservedInstanceOfferingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -571,12 +534,8 @@ pub mod purchase_reserved_instance_offering_output {
             self
         }
         /// <p>The ID of the Reserved Instance offering that was purchased.</p>
-        pub fn set_reserved_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reserved_instance_id = input;
-            self
+        pub fn set_reserved_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved_instance_id = input; self
         }
         /// <p>The customer-specified identifier used to track this reservation.</p>
         pub fn reservation_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -584,21 +543,21 @@ pub mod purchase_reserved_instance_offering_output {
             self
         }
         /// <p>The customer-specified identifier used to track this reservation.</p>
-        pub fn set_reservation_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reservation_name = input;
-            self
+        pub fn set_reservation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reservation_name = input; self
         }
         /// Consumes the builder and constructs a [`PurchaseReservedInstanceOfferingOutput`](crate::output::PurchaseReservedInstanceOfferingOutput).
         pub fn build(self) -> crate::output::PurchaseReservedInstanceOfferingOutput {
             crate::output::PurchaseReservedInstanceOfferingOutput {
-                reserved_instance_id: self.reserved_instance_id,
-                reservation_name: self.reservation_name,
+                reserved_instance_id: self.reserved_instance_id
+                ,
+                reservation_name: self.reservation_name
+                ,
             }
         }
     }
+    
+    
 }
 impl PurchaseReservedInstanceOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedInstanceOfferingOutput`](crate::output::PurchaseReservedInstanceOfferingOutput).
@@ -610,35 +569,31 @@ impl PurchaseReservedInstanceOfferingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVpcEndpointsForDomainOutput {
+pub struct ListVpcEndpointsForDomainOutput  {
     /// <p>Information about each endpoint associated with the domain.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+    pub vpc_endpoint_summary_list: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpcEndpointsForDomainOutput {
     /// <p>Information about each endpoint associated with the domain.</p>
-    pub fn vpc_endpoint_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::VpcEndpointSummary]> {
+    pub fn vpc_endpoint_summary_list(&self) -> std::option::Option<& [crate::model::VpcEndpointSummary]> {
         self.vpc_endpoint_summary_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
 pub mod list_vpc_endpoints_for_domain_output {
-
+    
     /// A builder for [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) vpc_endpoint_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+        pub(crate) vpc_endpoint_summary_list: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -647,22 +602,15 @@ pub mod list_vpc_endpoints_for_domain_output {
         /// To override the contents of this collection use [`set_vpc_endpoint_summary_list`](Self::set_vpc_endpoint_summary_list).
         ///
         /// <p>Information about each endpoint associated with the domain.</p>
-        pub fn vpc_endpoint_summary_list(
-            mut self,
-            input: crate::model::VpcEndpointSummary,
-        ) -> Self {
+        pub fn vpc_endpoint_summary_list(mut self, input: crate::model::VpcEndpointSummary) -> Self {
             let mut v = self.vpc_endpoint_summary_list.unwrap_or_default();
-            v.push(input);
-            self.vpc_endpoint_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_endpoint_summary_list = Some(v);
+                            self
         }
         /// <p>Information about each endpoint associated with the domain.</p>
-        pub fn set_vpc_endpoint_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
-        ) -> Self {
-            self.vpc_endpoint_summary_list = input;
-            self
+        pub fn set_vpc_endpoint_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>) -> Self {
+            self.vpc_endpoint_summary_list = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -671,17 +619,20 @@ pub mod list_vpc_endpoints_for_domain_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
         pub fn build(self) -> crate::output::ListVpcEndpointsForDomainOutput {
             crate::output::ListVpcEndpointsForDomainOutput {
-                vpc_endpoint_summary_list: self.vpc_endpoint_summary_list,
-                next_token: self.next_token,
+                vpc_endpoint_summary_list: self.vpc_endpoint_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVpcEndpointsForDomainOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
@@ -693,35 +644,31 @@ impl ListVpcEndpointsForDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVpcEndpointsOutput {
+pub struct ListVpcEndpointsOutput  {
     /// <p>Information about each endpoint.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+    pub vpc_endpoint_summary_list: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpcEndpointsOutput {
     /// <p>Information about each endpoint.</p>
-    pub fn vpc_endpoint_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::VpcEndpointSummary]> {
+    pub fn vpc_endpoint_summary_list(&self) -> std::option::Option<& [crate::model::VpcEndpointSummary]> {
         self.vpc_endpoint_summary_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
 pub mod list_vpc_endpoints_output {
-
+    
     /// A builder for [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) vpc_endpoint_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+        pub(crate) vpc_endpoint_summary_list: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -730,22 +677,15 @@ pub mod list_vpc_endpoints_output {
         /// To override the contents of this collection use [`set_vpc_endpoint_summary_list`](Self::set_vpc_endpoint_summary_list).
         ///
         /// <p>Information about each endpoint.</p>
-        pub fn vpc_endpoint_summary_list(
-            mut self,
-            input: crate::model::VpcEndpointSummary,
-        ) -> Self {
+        pub fn vpc_endpoint_summary_list(mut self, input: crate::model::VpcEndpointSummary) -> Self {
             let mut v = self.vpc_endpoint_summary_list.unwrap_or_default();
-            v.push(input);
-            self.vpc_endpoint_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_endpoint_summary_list = Some(v);
+                            self
         }
         /// <p>Information about each endpoint.</p>
-        pub fn set_vpc_endpoint_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
-        ) -> Self {
-            self.vpc_endpoint_summary_list = input;
-            self
+        pub fn set_vpc_endpoint_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>) -> Self {
+            self.vpc_endpoint_summary_list = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -754,17 +694,20 @@ pub mod list_vpc_endpoints_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
         pub fn build(self) -> crate::output::ListVpcEndpointsOutput {
             crate::output::ListVpcEndpointsOutput {
-                vpc_endpoint_summary_list: self.vpc_endpoint_summary_list,
-                next_token: self.next_token,
+                vpc_endpoint_summary_list: self.vpc_endpoint_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVpcEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
@@ -776,35 +719,31 @@ impl ListVpcEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVpcEndpointAccessOutput {
+pub struct ListVpcEndpointAccessOutput  {
     /// <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
     #[doc(hidden)]
-    pub authorized_principal_list:
-        std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
+    pub authorized_principal_list: std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpcEndpointAccessOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
-    pub fn authorized_principal_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::AuthorizedPrincipal]> {
+    pub fn authorized_principal_list(&self) -> std::option::Option<& [crate::model::AuthorizedPrincipal]> {
         self.authorized_principal_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
 pub mod list_vpc_endpoint_access_output {
-
+    
     /// A builder for [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) authorized_principal_list:
-            std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
+        pub(crate) authorized_principal_list: std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -813,22 +752,15 @@ pub mod list_vpc_endpoint_access_output {
         /// To override the contents of this collection use [`set_authorized_principal_list`](Self::set_authorized_principal_list).
         ///
         /// <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
-        pub fn authorized_principal_list(
-            mut self,
-            input: crate::model::AuthorizedPrincipal,
-        ) -> Self {
+        pub fn authorized_principal_list(mut self, input: crate::model::AuthorizedPrincipal) -> Self {
             let mut v = self.authorized_principal_list.unwrap_or_default();
-            v.push(input);
-            self.authorized_principal_list = Some(v);
-            self
+                            v.push(input);
+                            self.authorized_principal_list = Some(v);
+                            self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
-        pub fn set_authorized_principal_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
-        ) -> Self {
-            self.authorized_principal_list = input;
-            self
+        pub fn set_authorized_principal_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>) -> Self {
+            self.authorized_principal_list = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -837,17 +769,20 @@ pub mod list_vpc_endpoint_access_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
         pub fn build(self) -> crate::output::ListVpcEndpointAccessOutput {
             crate::output::ListVpcEndpointAccessOutput {
-                authorized_principal_list: self.authorized_principal_list,
-                next_token: self.next_token,
+                authorized_principal_list: self.authorized_principal_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVpcEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
@@ -859,7 +794,7 @@ impl ListVpcEndpointAccessOutput {
 /// <p>Container for the parameters for response received from the <code>ListVersions</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVersionsOutput {
+pub struct ListVersionsOutput  {
     /// <p>A list of all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.</p>
     #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -869,17 +804,17 @@ pub struct ListVersionsOutput {
 }
 impl ListVersionsOutput {
     /// <p>A list of all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.</p>
-    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn versions(&self) -> std::option::Option<& [std::string::String]> {
         self.versions.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVersionsOutput`](crate::output::ListVersionsOutput).
 pub mod list_versions_output {
-
+    
     /// A builder for [`ListVersionsOutput`](crate::output::ListVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -894,17 +829,13 @@ pub mod list_versions_output {
         /// <p>A list of all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.</p>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
-            self.versions = Some(v);
-            self
+                            v.push(input.into());
+                            self.versions = Some(v);
+                            self
         }
         /// <p>A list of all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.</p>
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.versions = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -913,17 +844,20 @@ pub mod list_versions_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVersionsOutput`](crate::output::ListVersionsOutput).
         pub fn build(self) -> crate::output::ListVersionsOutput {
             crate::output::ListVersionsOutput {
-                versions: self.versions,
-                next_token: self.next_token,
+                versions: self.versions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListVersionsOutput`](crate::output::ListVersionsOutput).
@@ -935,20 +869,20 @@ impl ListVersionsOutput {
 /// <p>The results of a <code>ListTags</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsOutput {
+pub struct ListTagsOutput  {
     /// <p>List of resource tags associated with the specified domain.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsOutput {
     /// <p>List of resource tags associated with the specified domain.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
-
+    
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -962,25 +896,24 @@ pub mod list_tags_output {
         /// <p>List of resource tags associated with the specified domain.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>List of resource tags associated with the specified domain.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
             crate::output::ListTagsOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput).
@@ -992,35 +925,31 @@ impl ListTagsOutput {
 /// <p>Container for the response parameters to the <code>ListPackagesForDomain</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackagesForDomainOutput {
+pub struct ListPackagesForDomainOutput  {
     /// <p>List of all packages associated with a domain.</p>
     #[doc(hidden)]
-    pub domain_package_details_list:
-        std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
+    pub domain_package_details_list: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesForDomainOutput {
     /// <p>List of all packages associated with a domain.</p>
-    pub fn domain_package_details_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DomainPackageDetails]> {
+    pub fn domain_package_details_list(&self) -> std::option::Option<& [crate::model::DomainPackageDetails]> {
         self.domain_package_details_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
 pub mod list_packages_for_domain_output {
-
+    
     /// A builder for [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_package_details_list:
-            std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
+        pub(crate) domain_package_details_list: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1029,22 +958,15 @@ pub mod list_packages_for_domain_output {
         /// To override the contents of this collection use [`set_domain_package_details_list`](Self::set_domain_package_details_list).
         ///
         /// <p>List of all packages associated with a domain.</p>
-        pub fn domain_package_details_list(
-            mut self,
-            input: crate::model::DomainPackageDetails,
-        ) -> Self {
+        pub fn domain_package_details_list(mut self, input: crate::model::DomainPackageDetails) -> Self {
             let mut v = self.domain_package_details_list.unwrap_or_default();
-            v.push(input);
-            self.domain_package_details_list = Some(v);
-            self
+                            v.push(input);
+                            self.domain_package_details_list = Some(v);
+                            self
         }
         /// <p>List of all packages associated with a domain.</p>
-        pub fn set_domain_package_details_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
-        ) -> Self {
-            self.domain_package_details_list = input;
-            self
+        pub fn set_domain_package_details_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>) -> Self {
+            self.domain_package_details_list = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1053,17 +975,20 @@ pub mod list_packages_for_domain_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
         pub fn build(self) -> crate::output::ListPackagesForDomainOutput {
             crate::output::ListPackagesForDomainOutput {
-                domain_package_details_list: self.domain_package_details_list,
-                next_token: self.next_token,
+                domain_package_details_list: self.domain_package_details_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPackagesForDomainOutput {
     /// Creates a new builder-style object to manufacture [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
@@ -1075,35 +1000,31 @@ impl ListPackagesForDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstanceTypeDetailsOutput {
+pub struct ListInstanceTypeDetailsOutput  {
     /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
     #[doc(hidden)]
-    pub instance_type_details:
-        std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
+    pub instance_type_details: std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceTypeDetailsOutput {
     /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
-    pub fn instance_type_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceTypeDetails]> {
+    pub fn instance_type_details(&self) -> std::option::Option<& [crate::model::InstanceTypeDetails]> {
         self.instance_type_details.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInstanceTypeDetailsOutput`](crate::output::ListInstanceTypeDetailsOutput).
 pub mod list_instance_type_details_output {
-
+    
     /// A builder for [`ListInstanceTypeDetailsOutput`](crate::output::ListInstanceTypeDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_type_details:
-            std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
+        pub(crate) instance_type_details: std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1114,17 +1035,13 @@ pub mod list_instance_type_details_output {
         /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
         pub fn instance_type_details(mut self, input: crate::model::InstanceTypeDetails) -> Self {
             let mut v = self.instance_type_details.unwrap_or_default();
-            v.push(input);
-            self.instance_type_details = Some(v);
-            self
+                            v.push(input);
+                            self.instance_type_details = Some(v);
+                            self
         }
         /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
-        pub fn set_instance_type_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
-        ) -> Self {
-            self.instance_type_details = input;
-            self
+        pub fn set_instance_type_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>) -> Self {
+            self.instance_type_details = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1133,17 +1050,20 @@ pub mod list_instance_type_details_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInstanceTypeDetailsOutput`](crate::output::ListInstanceTypeDetailsOutput).
         pub fn build(self) -> crate::output::ListInstanceTypeDetailsOutput {
             crate::output::ListInstanceTypeDetailsOutput {
-                instance_type_details: self.instance_type_details,
-                next_token: self.next_token,
+                instance_type_details: self.instance_type_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInstanceTypeDetailsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceTypeDetailsOutput`](crate::output::ListInstanceTypeDetailsOutput).
@@ -1155,35 +1075,31 @@ impl ListInstanceTypeDetailsOutput {
 /// <p>Container for the response parameters to the <code>ListDomainsForPackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainsForPackageOutput {
+pub struct ListDomainsForPackageOutput  {
     /// <p>Information about all domains associated with a package.</p>
     #[doc(hidden)]
-    pub domain_package_details_list:
-        std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
+    pub domain_package_details_list: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsForPackageOutput {
     /// <p>Information about all domains associated with a package.</p>
-    pub fn domain_package_details_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DomainPackageDetails]> {
+    pub fn domain_package_details_list(&self) -> std::option::Option<& [crate::model::DomainPackageDetails]> {
         self.domain_package_details_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
 pub mod list_domains_for_package_output {
-
+    
     /// A builder for [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_package_details_list:
-            std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
+        pub(crate) domain_package_details_list: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1192,22 +1108,15 @@ pub mod list_domains_for_package_output {
         /// To override the contents of this collection use [`set_domain_package_details_list`](Self::set_domain_package_details_list).
         ///
         /// <p>Information about all domains associated with a package.</p>
-        pub fn domain_package_details_list(
-            mut self,
-            input: crate::model::DomainPackageDetails,
-        ) -> Self {
+        pub fn domain_package_details_list(mut self, input: crate::model::DomainPackageDetails) -> Self {
             let mut v = self.domain_package_details_list.unwrap_or_default();
-            v.push(input);
-            self.domain_package_details_list = Some(v);
-            self
+                            v.push(input);
+                            self.domain_package_details_list = Some(v);
+                            self
         }
         /// <p>Information about all domains associated with a package.</p>
-        pub fn set_domain_package_details_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
-        ) -> Self {
-            self.domain_package_details_list = input;
-            self
+        pub fn set_domain_package_details_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>) -> Self {
+            self.domain_package_details_list = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1216,17 +1125,20 @@ pub mod list_domains_for_package_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
         pub fn build(self) -> crate::output::ListDomainsForPackageOutput {
             crate::output::ListDomainsForPackageOutput {
-                domain_package_details_list: self.domain_package_details_list,
-                next_token: self.next_token,
+                domain_package_details_list: self.domain_package_details_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainsForPackageOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
@@ -1238,20 +1150,20 @@ impl ListDomainsForPackageOutput {
 /// <p>The results of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainNamesOutput {
+pub struct ListDomainNamesOutput  {
     /// <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
     #[doc(hidden)]
     pub domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
 }
 impl ListDomainNamesOutput {
     /// <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
-    pub fn domain_names(&self) -> std::option::Option<&[crate::model::DomainInfo]> {
+    pub fn domain_names(&self) -> std::option::Option<& [crate::model::DomainInfo]> {
         self.domain_names.as_deref()
     }
 }
 /// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
 pub mod list_domain_names_output {
-
+    
     /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1265,25 +1177,24 @@ pub mod list_domain_names_output {
         /// <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
         pub fn domain_names(mut self, input: crate::model::DomainInfo) -> Self {
             let mut v = self.domain_names.unwrap_or_default();
-            v.push(input);
-            self.domain_names = Some(v);
-            self
+                            v.push(input);
+                            self.domain_names = Some(v);
+                            self
         }
         /// <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
-        pub fn set_domain_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
-        ) -> Self {
-            self.domain_names = input;
-            self
+        pub fn set_domain_names(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>) -> Self {
+            self.domain_names = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
         pub fn build(self) -> crate::output::ListDomainNamesOutput {
             crate::output::ListDomainNamesOutput {
-                domain_names: self.domain_names,
+                domain_names: self.domain_names
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
@@ -1295,7 +1206,7 @@ impl ListDomainNamesOutput {
 /// <p>Container for the response returned by the <code>GetUpgradeStatus</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUpgradeStatusOutput {
+pub struct GetUpgradeStatusOutput  {
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
     #[doc(hidden)]
     pub upgrade_step: std::option::Option<crate::model::UpgradeStep>,
@@ -1308,21 +1219,21 @@ pub struct GetUpgradeStatusOutput {
 }
 impl GetUpgradeStatusOutput {
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
-    pub fn upgrade_step(&self) -> std::option::Option<&crate::model::UpgradeStep> {
+    pub fn upgrade_step(&self) -> std::option::Option<& crate::model::UpgradeStep> {
         self.upgrade_step.as_ref()
     }
     /// <p>The status of the current step that an upgrade is on.</p>
-    pub fn step_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
+    pub fn step_status(&self) -> std::option::Option<& crate::model::UpgradeStatus> {
         self.step_status.as_ref()
     }
     /// <p>A string that describes the update.</p>
-    pub fn upgrade_name(&self) -> std::option::Option<&str> {
+    pub fn upgrade_name(&self) -> std::option::Option<& str> {
         self.upgrade_name.as_deref()
     }
 }
 /// See [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
 pub mod get_upgrade_status_output {
-
+    
     /// A builder for [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1337,12 +1248,8 @@ pub mod get_upgrade_status_output {
             self
         }
         /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
-        pub fn set_upgrade_step(
-            mut self,
-            input: std::option::Option<crate::model::UpgradeStep>,
-        ) -> Self {
-            self.upgrade_step = input;
-            self
+        pub fn set_upgrade_step(mut self, input: std::option::Option<crate::model::UpgradeStep>) -> Self {
+            self.upgrade_step = input; self
         }
         /// <p>The status of the current step that an upgrade is on.</p>
         pub fn step_status(mut self, input: crate::model::UpgradeStatus) -> Self {
@@ -1350,12 +1257,8 @@ pub mod get_upgrade_status_output {
             self
         }
         /// <p>The status of the current step that an upgrade is on.</p>
-        pub fn set_step_status(
-            mut self,
-            input: std::option::Option<crate::model::UpgradeStatus>,
-        ) -> Self {
-            self.step_status = input;
-            self
+        pub fn set_step_status(mut self, input: std::option::Option<crate::model::UpgradeStatus>) -> Self {
+            self.step_status = input; self
         }
         /// <p>A string that describes the update.</p>
         pub fn upgrade_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1364,18 +1267,22 @@ pub mod get_upgrade_status_output {
         }
         /// <p>A string that describes the update.</p>
         pub fn set_upgrade_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upgrade_name = input;
-            self
+            self.upgrade_name = input; self
         }
         /// Consumes the builder and constructs a [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
         pub fn build(self) -> crate::output::GetUpgradeStatusOutput {
             crate::output::GetUpgradeStatusOutput {
-                upgrade_step: self.upgrade_step,
-                step_status: self.step_status,
-                upgrade_name: self.upgrade_name,
+                upgrade_step: self.upgrade_step
+                ,
+                step_status: self.step_status
+                ,
+                upgrade_name: self.upgrade_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUpgradeStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
@@ -1387,7 +1294,7 @@ impl GetUpgradeStatusOutput {
 /// <p>Container for the response returned by the <code>GetUpgradeHistory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUpgradeHistoryOutput {
+pub struct GetUpgradeHistoryOutput  {
     /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
     #[doc(hidden)]
     pub upgrade_histories: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
@@ -1397,22 +1304,21 @@ pub struct GetUpgradeHistoryOutput {
 }
 impl GetUpgradeHistoryOutput {
     /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
-    pub fn upgrade_histories(&self) -> std::option::Option<&[crate::model::UpgradeHistory]> {
+    pub fn upgrade_histories(&self) -> std::option::Option<& [crate::model::UpgradeHistory]> {
         self.upgrade_histories.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
 pub mod get_upgrade_history_output {
-
+    
     /// A builder for [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) upgrade_histories:
-            std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
+        pub(crate) upgrade_histories: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1423,17 +1329,13 @@ pub mod get_upgrade_history_output {
         /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
         pub fn upgrade_histories(mut self, input: crate::model::UpgradeHistory) -> Self {
             let mut v = self.upgrade_histories.unwrap_or_default();
-            v.push(input);
-            self.upgrade_histories = Some(v);
-            self
+                            v.push(input);
+                            self.upgrade_histories = Some(v);
+                            self
         }
         /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
-        pub fn set_upgrade_histories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
-        ) -> Self {
-            self.upgrade_histories = input;
-            self
+        pub fn set_upgrade_histories(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>) -> Self {
+            self.upgrade_histories = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1442,17 +1344,20 @@ pub mod get_upgrade_history_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
         pub fn build(self) -> crate::output::GetUpgradeHistoryOutput {
             crate::output::GetUpgradeHistoryOutput {
-                upgrade_histories: self.upgrade_histories,
-                next_token: self.next_token,
+                upgrade_histories: self.upgrade_histories
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUpgradeHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
@@ -1464,43 +1369,39 @@ impl GetUpgradeHistoryOutput {
 /// <p>Container for response returned by <code>GetPackageVersionHistory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPackageVersionHistoryOutput {
+pub struct GetPackageVersionHistoryOutput  {
     /// <p>The unique identifier of the package.</p>
     #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>A list of package versions, along with their creation time and commit message.</p>
     #[doc(hidden)]
-    pub package_version_history_list:
-        std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
+    pub package_version_history_list: std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionHistoryOutput {
     /// <p>The unique identifier of the package.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>A list of package versions, along with their creation time and commit message.</p>
-    pub fn package_version_history_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::PackageVersionHistory]> {
+    pub fn package_version_history_list(&self) -> std::option::Option<& [crate::model::PackageVersionHistory]> {
         self.package_version_history_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
 pub mod get_package_version_history_output {
-
+    
     /// A builder for [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
-        pub(crate) package_version_history_list:
-            std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
+        pub(crate) package_version_history_list: std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1511,30 +1412,22 @@ pub mod get_package_version_history_output {
         }
         /// <p>The unique identifier of the package.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_id = input;
-            self
+            self.package_id = input; self
         }
         /// Appends an item to `package_version_history_list`.
         ///
         /// To override the contents of this collection use [`set_package_version_history_list`](Self::set_package_version_history_list).
         ///
         /// <p>A list of package versions, along with their creation time and commit message.</p>
-        pub fn package_version_history_list(
-            mut self,
-            input: crate::model::PackageVersionHistory,
-        ) -> Self {
+        pub fn package_version_history_list(mut self, input: crate::model::PackageVersionHistory) -> Self {
             let mut v = self.package_version_history_list.unwrap_or_default();
-            v.push(input);
-            self.package_version_history_list = Some(v);
-            self
+                            v.push(input);
+                            self.package_version_history_list = Some(v);
+                            self
         }
         /// <p>A list of package versions, along with their creation time and commit message.</p>
-        pub fn set_package_version_history_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
-        ) -> Self {
-            self.package_version_history_list = input;
-            self
+        pub fn set_package_version_history_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>) -> Self {
+            self.package_version_history_list = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1543,18 +1436,22 @@ pub mod get_package_version_history_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
         pub fn build(self) -> crate::output::GetPackageVersionHistoryOutput {
             crate::output::GetPackageVersionHistoryOutput {
-                package_id: self.package_id,
-                package_version_history_list: self.package_version_history_list,
-                next_token: self.next_token,
+                package_id: self.package_id
+                ,
+                package_version_history_list: self.package_version_history_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPackageVersionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
@@ -1566,28 +1463,24 @@ impl GetPackageVersionHistoryOutput {
 /// <p>Container for the response returned by the <code>GetCompatibleVersions</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCompatibleVersionsOutput {
+pub struct GetCompatibleVersionsOutput  {
     /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
     #[doc(hidden)]
-    pub compatible_versions:
-        std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
+    pub compatible_versions: std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
 }
 impl GetCompatibleVersionsOutput {
     /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
-    pub fn compatible_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::CompatibleVersionsMap]> {
+    pub fn compatible_versions(&self) -> std::option::Option<& [crate::model::CompatibleVersionsMap]> {
         self.compatible_versions.as_deref()
     }
 }
 /// See [`GetCompatibleVersionsOutput`](crate::output::GetCompatibleVersionsOutput).
 pub mod get_compatible_versions_output {
-
+    
     /// A builder for [`GetCompatibleVersionsOutput`](crate::output::GetCompatibleVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) compatible_versions:
-            std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
+        pub(crate) compatible_versions: std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
     }
     impl Builder {
         /// Appends an item to `compatible_versions`.
@@ -1597,25 +1490,24 @@ pub mod get_compatible_versions_output {
         /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
         pub fn compatible_versions(mut self, input: crate::model::CompatibleVersionsMap) -> Self {
             let mut v = self.compatible_versions.unwrap_or_default();
-            v.push(input);
-            self.compatible_versions = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_versions = Some(v);
+                            self
         }
         /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
-        pub fn set_compatible_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
-        ) -> Self {
-            self.compatible_versions = input;
-            self
+        pub fn set_compatible_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>) -> Self {
+            self.compatible_versions = input; self
         }
         /// Consumes the builder and constructs a [`GetCompatibleVersionsOutput`](crate::output::GetCompatibleVersionsOutput).
         pub fn build(self) -> crate::output::GetCompatibleVersionsOutput {
             crate::output::GetCompatibleVersionsOutput {
-                compatible_versions: self.compatible_versions,
+                compatible_versions: self.compatible_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCompatibleVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleVersionsOutput`](crate::output::GetCompatibleVersionsOutput).
@@ -1627,22 +1519,20 @@ impl GetCompatibleVersionsOutput {
 /// <p>Container for the response returned by an <code>DissociatePackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DissociatePackageOutput {
+pub struct DissociatePackageOutput  {
     /// <p> Information about a package that has been dissociated from the domain.</p>
     #[doc(hidden)]
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
 }
 impl DissociatePackageOutput {
     /// <p> Information about a package that has been dissociated from the domain.</p>
-    pub fn domain_package_details(
-        &self,
-    ) -> std::option::Option<&crate::model::DomainPackageDetails> {
+    pub fn domain_package_details(&self) -> std::option::Option<& crate::model::DomainPackageDetails> {
         self.domain_package_details.as_ref()
     }
 }
 /// See [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
 pub mod dissociate_package_output {
-
+    
     /// A builder for [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1655,20 +1545,19 @@ pub mod dissociate_package_output {
             self
         }
         /// <p> Information about a package that has been dissociated from the domain.</p>
-        pub fn set_domain_package_details(
-            mut self,
-            input: std::option::Option<crate::model::DomainPackageDetails>,
-        ) -> Self {
-            self.domain_package_details = input;
-            self
+        pub fn set_domain_package_details(mut self, input: std::option::Option<crate::model::DomainPackageDetails>) -> Self {
+            self.domain_package_details = input; self
         }
         /// Consumes the builder and constructs a [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
         pub fn build(self) -> crate::output::DissociatePackageOutput {
             crate::output::DissociatePackageOutput {
-                domain_package_details: self.domain_package_details,
+                domain_package_details: self.domain_package_details
+                ,
             }
         }
     }
+    
+    
 }
 impl DissociatePackageOutput {
     /// Creates a new builder-style object to manufacture [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
@@ -1680,7 +1569,7 @@ impl DissociatePackageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcEndpointsOutput {
+pub struct DescribeVpcEndpointsOutput  {
     /// <p>Information about each requested VPC endpoint.</p>
     #[doc(hidden)]
     pub vpc_endpoints: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
@@ -1690,23 +1579,22 @@ pub struct DescribeVpcEndpointsOutput {
 }
 impl DescribeVpcEndpointsOutput {
     /// <p>Information about each requested VPC endpoint.</p>
-    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::model::VpcEndpoint]> {
+    pub fn vpc_endpoints(&self) -> std::option::Option<& [crate::model::VpcEndpoint]> {
         self.vpc_endpoints.as_deref()
     }
     /// <p>Any errors associated with the request.</p>
-    pub fn vpc_endpoint_errors(&self) -> std::option::Option<&[crate::model::VpcEndpointError]> {
+    pub fn vpc_endpoint_errors(&self) -> std::option::Option<& [crate::model::VpcEndpointError]> {
         self.vpc_endpoint_errors.as_deref()
     }
 }
 /// See [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
 pub mod describe_vpc_endpoints_output {
-
+    
     /// A builder for [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoints: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
-        pub(crate) vpc_endpoint_errors:
-            std::option::Option<std::vec::Vec<crate::model::VpcEndpointError>>,
+        pub(crate) vpc_endpoint_errors: std::option::Option<std::vec::Vec<crate::model::VpcEndpointError>>,
     }
     impl Builder {
         /// Appends an item to `vpc_endpoints`.
@@ -1716,17 +1604,13 @@ pub mod describe_vpc_endpoints_output {
         /// <p>Information about each requested VPC endpoint.</p>
         pub fn vpc_endpoints(mut self, input: crate::model::VpcEndpoint) -> Self {
             let mut v = self.vpc_endpoints.unwrap_or_default();
-            v.push(input);
-            self.vpc_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_endpoints = Some(v);
+                            self
         }
         /// <p>Information about each requested VPC endpoint.</p>
-        pub fn set_vpc_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
-        ) -> Self {
-            self.vpc_endpoints = input;
-            self
+        pub fn set_vpc_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>) -> Self {
+            self.vpc_endpoints = input; self
         }
         /// Appends an item to `vpc_endpoint_errors`.
         ///
@@ -1735,26 +1619,26 @@ pub mod describe_vpc_endpoints_output {
         /// <p>Any errors associated with the request.</p>
         pub fn vpc_endpoint_errors(mut self, input: crate::model::VpcEndpointError) -> Self {
             let mut v = self.vpc_endpoint_errors.unwrap_or_default();
-            v.push(input);
-            self.vpc_endpoint_errors = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_endpoint_errors = Some(v);
+                            self
         }
         /// <p>Any errors associated with the request.</p>
-        pub fn set_vpc_endpoint_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointError>>,
-        ) -> Self {
-            self.vpc_endpoint_errors = input;
-            self
+        pub fn set_vpc_endpoint_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointError>>) -> Self {
+            self.vpc_endpoint_errors = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeVpcEndpointsOutput {
             crate::output::DescribeVpcEndpointsOutput {
-                vpc_endpoints: self.vpc_endpoints,
-                vpc_endpoint_errors: self.vpc_endpoint_errors,
+                vpc_endpoints: self.vpc_endpoints
+                ,
+                vpc_endpoint_errors: self.vpc_endpoint_errors
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVpcEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
@@ -1766,7 +1650,7 @@ impl DescribeVpcEndpointsOutput {
 /// <p>Container for results from <code>DescribeReservedInstances</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedInstancesOutput {
+pub struct DescribeReservedInstancesOutput  {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1776,23 +1660,22 @@ pub struct DescribeReservedInstancesOutput {
 }
 impl DescribeReservedInstancesOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of Reserved Instances in the current Region.</p>
-    pub fn reserved_instances(&self) -> std::option::Option<&[crate::model::ReservedInstance]> {
+    pub fn reserved_instances(&self) -> std::option::Option<& [crate::model::ReservedInstance]> {
         self.reserved_instances.as_deref()
     }
 }
 /// See [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput).
 pub mod describe_reserved_instances_output {
-
+    
     /// A builder for [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) reserved_instances:
-            std::option::Option<std::vec::Vec<crate::model::ReservedInstance>>,
+        pub(crate) reserved_instances: std::option::Option<std::vec::Vec<crate::model::ReservedInstance>>,
     }
     impl Builder {
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -1802,8 +1685,7 @@ pub mod describe_reserved_instances_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `reserved_instances`.
         ///
@@ -1812,26 +1694,26 @@ pub mod describe_reserved_instances_output {
         /// <p>List of Reserved Instances in the current Region.</p>
         pub fn reserved_instances(mut self, input: crate::model::ReservedInstance) -> Self {
             let mut v = self.reserved_instances.unwrap_or_default();
-            v.push(input);
-            self.reserved_instances = Some(v);
-            self
+                            v.push(input);
+                            self.reserved_instances = Some(v);
+                            self
         }
         /// <p>List of Reserved Instances in the current Region.</p>
-        pub fn set_reserved_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReservedInstance>>,
-        ) -> Self {
-            self.reserved_instances = input;
-            self
+        pub fn set_reserved_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservedInstance>>) -> Self {
+            self.reserved_instances = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput).
         pub fn build(self) -> crate::output::DescribeReservedInstancesOutput {
             crate::output::DescribeReservedInstancesOutput {
-                next_token: self.next_token,
-                reserved_instances: self.reserved_instances,
+                next_token: self.next_token
+                ,
+                reserved_instances: self.reserved_instances
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReservedInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput).
@@ -1843,36 +1725,32 @@ impl DescribeReservedInstancesOutput {
 /// <p>Container for results of a <code>DescribeReservedInstanceOfferings</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedInstanceOfferingsOutput {
+pub struct DescribeReservedInstanceOfferingsOutput  {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of Reserved Instance offerings.</p>
     #[doc(hidden)]
-    pub reserved_instance_offerings:
-        std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>,
+    pub reserved_instance_offerings: std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>,
 }
 impl DescribeReservedInstanceOfferingsOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of Reserved Instance offerings.</p>
-    pub fn reserved_instance_offerings(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReservedInstanceOffering]> {
+    pub fn reserved_instance_offerings(&self) -> std::option::Option<& [crate::model::ReservedInstanceOffering]> {
         self.reserved_instance_offerings.as_deref()
     }
 }
 /// See [`DescribeReservedInstanceOfferingsOutput`](crate::output::DescribeReservedInstanceOfferingsOutput).
 pub mod describe_reserved_instance_offerings_output {
-
+    
     /// A builder for [`DescribeReservedInstanceOfferingsOutput`](crate::output::DescribeReservedInstanceOfferingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) reserved_instance_offerings:
-            std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>,
+        pub(crate) reserved_instance_offerings: std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>,
     }
     impl Builder {
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -1882,39 +1760,35 @@ pub mod describe_reserved_instance_offerings_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `reserved_instance_offerings`.
         ///
         /// To override the contents of this collection use [`set_reserved_instance_offerings`](Self::set_reserved_instance_offerings).
         ///
         /// <p>List of Reserved Instance offerings.</p>
-        pub fn reserved_instance_offerings(
-            mut self,
-            input: crate::model::ReservedInstanceOffering,
-        ) -> Self {
+        pub fn reserved_instance_offerings(mut self, input: crate::model::ReservedInstanceOffering) -> Self {
             let mut v = self.reserved_instance_offerings.unwrap_or_default();
-            v.push(input);
-            self.reserved_instance_offerings = Some(v);
-            self
+                            v.push(input);
+                            self.reserved_instance_offerings = Some(v);
+                            self
         }
         /// <p>List of Reserved Instance offerings.</p>
-        pub fn set_reserved_instance_offerings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>,
-        ) -> Self {
-            self.reserved_instance_offerings = input;
-            self
+        pub fn set_reserved_instance_offerings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>) -> Self {
+            self.reserved_instance_offerings = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReservedInstanceOfferingsOutput`](crate::output::DescribeReservedInstanceOfferingsOutput).
         pub fn build(self) -> crate::output::DescribeReservedInstanceOfferingsOutput {
             crate::output::DescribeReservedInstanceOfferingsOutput {
-                next_token: self.next_token,
-                reserved_instance_offerings: self.reserved_instance_offerings,
+                next_token: self.next_token
+                ,
+                reserved_instance_offerings: self.reserved_instance_offerings
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReservedInstanceOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstanceOfferingsOutput`](crate::output::DescribeReservedInstanceOfferingsOutput).
@@ -1926,7 +1800,7 @@ impl DescribeReservedInstanceOfferingsOutput {
 /// <p>Container for the response returned by the <code>DescribePackages</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackagesOutput {
+pub struct DescribePackagesOutput  {
     /// <p>Basic information about a package.</p>
     #[doc(hidden)]
     pub package_details_list: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
@@ -1936,22 +1810,21 @@ pub struct DescribePackagesOutput {
 }
 impl DescribePackagesOutput {
     /// <p>Basic information about a package.</p>
-    pub fn package_details_list(&self) -> std::option::Option<&[crate::model::PackageDetails]> {
+    pub fn package_details_list(&self) -> std::option::Option<& [crate::model::PackageDetails]> {
         self.package_details_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
 pub mod describe_packages_output {
-
+    
     /// A builder for [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) package_details_list:
-            std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
+        pub(crate) package_details_list: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1962,17 +1835,13 @@ pub mod describe_packages_output {
         /// <p>Basic information about a package.</p>
         pub fn package_details_list(mut self, input: crate::model::PackageDetails) -> Self {
             let mut v = self.package_details_list.unwrap_or_default();
-            v.push(input);
-            self.package_details_list = Some(v);
-            self
+                            v.push(input);
+                            self.package_details_list = Some(v);
+                            self
         }
         /// <p>Basic information about a package.</p>
-        pub fn set_package_details_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
-        ) -> Self {
-            self.package_details_list = input;
-            self
+        pub fn set_package_details_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>) -> Self {
+            self.package_details_list = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1981,17 +1850,20 @@ pub mod describe_packages_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
         pub fn build(self) -> crate::output::DescribePackagesOutput {
             crate::output::DescribePackagesOutput {
-                package_details_list: self.package_details_list,
-                next_token: self.next_token,
+                package_details_list: self.package_details_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePackagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
@@ -2003,7 +1875,7 @@ impl DescribePackagesOutput {
 /// <p>Contains a list of connections matching the filter criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOutboundConnectionsOutput {
+pub struct DescribeOutboundConnectionsOutput  {
     /// <p>List of outbound connections that match the filter criteria.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>,
@@ -2013,22 +1885,21 @@ pub struct DescribeOutboundConnectionsOutput {
 }
 impl DescribeOutboundConnectionsOutput {
     /// <p>List of outbound connections that match the filter criteria.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::OutboundConnection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::OutboundConnection]> {
         self.connections.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeOutboundConnectionsOutput`](crate::output::DescribeOutboundConnectionsOutput).
 pub mod describe_outbound_connections_output {
-
+    
     /// A builder for [`DescribeOutboundConnectionsOutput`](crate::output::DescribeOutboundConnectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connections:
-            std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>,
+        pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2039,17 +1910,13 @@ pub mod describe_outbound_connections_output {
         /// <p>List of outbound connections that match the filter criteria.</p>
         pub fn connections(mut self, input: crate::model::OutboundConnection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>List of outbound connections that match the filter criteria.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>) -> Self {
+            self.connections = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2058,17 +1925,20 @@ pub mod describe_outbound_connections_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOutboundConnectionsOutput`](crate::output::DescribeOutboundConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeOutboundConnectionsOutput {
             crate::output::DescribeOutboundConnectionsOutput {
-                connections: self.connections,
-                next_token: self.next_token,
+                connections: self.connections
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOutboundConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOutboundConnectionsOutput`](crate::output::DescribeOutboundConnectionsOutput).
@@ -2080,30 +1950,24 @@ impl DescribeOutboundConnectionsOutput {
 /// <p>Container for the parameters received from the <code>DescribeInstanceTypeLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceTypeLimitsOutput {
+pub struct DescribeInstanceTypeLimitsOutput  {
     /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
     #[doc(hidden)]
-    pub limits_by_role:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
+    pub limits_by_role: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
 }
 impl DescribeInstanceTypeLimitsOutput {
     /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
-    pub fn limits_by_role(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Limits>>
-    {
+    pub fn limits_by_role(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Limits>> {
         self.limits_by_role.as_ref()
     }
 }
 /// See [`DescribeInstanceTypeLimitsOutput`](crate::output::DescribeInstanceTypeLimitsOutput).
 pub mod describe_instance_type_limits_output {
-
+    
     /// A builder for [`DescribeInstanceTypeLimitsOutput`](crate::output::DescribeInstanceTypeLimitsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) limits_by_role: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Limits>,
-        >,
+        pub(crate) limits_by_role: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
     }
     impl Builder {
         /// Adds a key-value pair to `limits_by_role`.
@@ -2111,33 +1975,26 @@ pub mod describe_instance_type_limits_output {
         /// To override the contents of this collection use [`set_limits_by_role`](Self::set_limits_by_role).
         ///
         /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
-        pub fn limits_by_role(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Limits,
-        ) -> Self {
+        pub fn limits_by_role(mut self, k: impl Into<std::string::String>, v: crate::model::Limits) -> Self {
             let mut hash_map = self.limits_by_role.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.limits_by_role = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.limits_by_role = Some(hash_map);
+                            self
         }
         /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
-        pub fn set_limits_by_role(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Limits>,
-            >,
-        ) -> Self {
-            self.limits_by_role = input;
-            self
+        pub fn set_limits_by_role(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>) -> Self {
+            self.limits_by_role = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceTypeLimitsOutput`](crate::output::DescribeInstanceTypeLimitsOutput).
         pub fn build(self) -> crate::output::DescribeInstanceTypeLimitsOutput {
             crate::output::DescribeInstanceTypeLimitsOutput {
-                limits_by_role: self.limits_by_role,
+                limits_by_role: self.limits_by_role
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInstanceTypeLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceTypeLimitsOutput`](crate::output::DescribeInstanceTypeLimitsOutput).
@@ -2149,7 +2006,7 @@ impl DescribeInstanceTypeLimitsOutput {
 /// <p>Contains a list of connections matching the filter criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInboundConnectionsOutput {
+pub struct DescribeInboundConnectionsOutput  {
     /// <p>List of inbound connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::InboundConnection>>,
@@ -2159,17 +2016,17 @@ pub struct DescribeInboundConnectionsOutput {
 }
 impl DescribeInboundConnectionsOutput {
     /// <p>List of inbound connections.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::InboundConnection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::InboundConnection]> {
         self.connections.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput).
 pub mod describe_inbound_connections_output {
-
+    
     /// A builder for [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2184,17 +2041,13 @@ pub mod describe_inbound_connections_output {
         /// <p>List of inbound connections.</p>
         pub fn connections(mut self, input: crate::model::InboundConnection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>List of inbound connections.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InboundConnection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::InboundConnection>>) -> Self {
+            self.connections = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2203,17 +2056,20 @@ pub mod describe_inbound_connections_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeInboundConnectionsOutput {
             crate::output::DescribeInboundConnectionsOutput {
-                connections: self.connections,
-                next_token: self.next_token,
+                connections: self.connections
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInboundConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput).
@@ -2225,7 +2081,7 @@ impl DescribeInboundConnectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDryRunProgressOutput {
+pub struct DescribeDryRunProgressOutput  {
     /// <p>The current status of the dry run, including any validation errors.</p>
     #[doc(hidden)]
     pub dry_run_progress_status: std::option::Option<crate::model::DryRunProgressStatus>,
@@ -2238,23 +2094,21 @@ pub struct DescribeDryRunProgressOutput {
 }
 impl DescribeDryRunProgressOutput {
     /// <p>The current status of the dry run, including any validation errors.</p>
-    pub fn dry_run_progress_status(
-        &self,
-    ) -> std::option::Option<&crate::model::DryRunProgressStatus> {
+    pub fn dry_run_progress_status(&self) -> std::option::Option<& crate::model::DryRunProgressStatus> {
         self.dry_run_progress_status.as_ref()
     }
     /// <p>Details about the changes you're planning to make on the domain.</p>
-    pub fn dry_run_config(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn dry_run_config(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.dry_run_config.as_ref()
     }
     /// <p>The results of the dry run. </p>
-    pub fn dry_run_results(&self) -> std::option::Option<&crate::model::DryRunResults> {
+    pub fn dry_run_results(&self) -> std::option::Option<& crate::model::DryRunResults> {
         self.dry_run_results.as_ref()
     }
 }
 /// See [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
 pub mod describe_dry_run_progress_output {
-
+    
     /// A builder for [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2264,20 +2118,13 @@ pub mod describe_dry_run_progress_output {
     }
     impl Builder {
         /// <p>The current status of the dry run, including any validation errors.</p>
-        pub fn dry_run_progress_status(
-            mut self,
-            input: crate::model::DryRunProgressStatus,
-        ) -> Self {
+        pub fn dry_run_progress_status(mut self, input: crate::model::DryRunProgressStatus) -> Self {
             self.dry_run_progress_status = Some(input);
             self
         }
         /// <p>The current status of the dry run, including any validation errors.</p>
-        pub fn set_dry_run_progress_status(
-            mut self,
-            input: std::option::Option<crate::model::DryRunProgressStatus>,
-        ) -> Self {
-            self.dry_run_progress_status = input;
-            self
+        pub fn set_dry_run_progress_status(mut self, input: std::option::Option<crate::model::DryRunProgressStatus>) -> Self {
+            self.dry_run_progress_status = input; self
         }
         /// <p>Details about the changes you're planning to make on the domain.</p>
         pub fn dry_run_config(mut self, input: crate::model::DomainStatus) -> Self {
@@ -2285,12 +2132,8 @@ pub mod describe_dry_run_progress_output {
             self
         }
         /// <p>Details about the changes you're planning to make on the domain.</p>
-        pub fn set_dry_run_config(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.dry_run_config = input;
-            self
+        pub fn set_dry_run_config(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.dry_run_config = input; self
         }
         /// <p>The results of the dry run. </p>
         pub fn dry_run_results(mut self, input: crate::model::DryRunResults) -> Self {
@@ -2298,22 +2141,23 @@ pub mod describe_dry_run_progress_output {
             self
         }
         /// <p>The results of the dry run. </p>
-        pub fn set_dry_run_results(
-            mut self,
-            input: std::option::Option<crate::model::DryRunResults>,
-        ) -> Self {
-            self.dry_run_results = input;
-            self
+        pub fn set_dry_run_results(mut self, input: std::option::Option<crate::model::DryRunResults>) -> Self {
+            self.dry_run_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
         pub fn build(self) -> crate::output::DescribeDryRunProgressOutput {
             crate::output::DescribeDryRunProgressOutput {
-                dry_run_progress_status: self.dry_run_progress_status,
-                dry_run_config: self.dry_run_config,
-                dry_run_results: self.dry_run_results,
+                dry_run_progress_status: self.dry_run_progress_status
+                ,
+                dry_run_config: self.dry_run_config
+                ,
+                dry_run_results: self.dry_run_results
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDryRunProgressOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
@@ -2325,25 +2169,24 @@ impl DescribeDryRunProgressOutput {
 /// <p>Contains the status of the specified domains or all domains owned by the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainsOutput {
+pub struct DescribeDomainsOutput  {
     /// <p>The status of the requested domains.</p>
     #[doc(hidden)]
     pub domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
 }
 impl DescribeDomainsOutput {
     /// <p>The status of the requested domains.</p>
-    pub fn domain_status_list(&self) -> std::option::Option<&[crate::model::DomainStatus]> {
+    pub fn domain_status_list(&self) -> std::option::Option<& [crate::model::DomainStatus]> {
         self.domain_status_list.as_deref()
     }
 }
 /// See [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
 pub mod describe_domains_output {
-
+    
     /// A builder for [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_status_list:
-            std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
+        pub(crate) domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
     }
     impl Builder {
         /// Appends an item to `domain_status_list`.
@@ -2353,25 +2196,24 @@ pub mod describe_domains_output {
         /// <p>The status of the requested domains.</p>
         pub fn domain_status_list(mut self, input: crate::model::DomainStatus) -> Self {
             let mut v = self.domain_status_list.unwrap_or_default();
-            v.push(input);
-            self.domain_status_list = Some(v);
-            self
+                            v.push(input);
+                            self.domain_status_list = Some(v);
+                            self
         }
         /// <p>The status of the requested domains.</p>
-        pub fn set_domain_status_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
-        ) -> Self {
-            self.domain_status_list = input;
-            self
+        pub fn set_domain_status_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>) -> Self {
+            self.domain_status_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
         pub fn build(self) -> crate::output::DescribeDomainsOutput {
             crate::output::DescribeDomainsOutput {
-                domain_status_list: self.domain_status_list,
+                domain_status_list: self.domain_status_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
@@ -2383,20 +2225,20 @@ impl DescribeDomainsOutput {
 /// <p>Contains the configuration information of the requested domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainConfigOutput {
+pub struct DescribeDomainConfigOutput  {
     /// <p>Container for the configuration of the OpenSearch Service domain.</p>
     #[doc(hidden)]
     pub domain_config: std::option::Option<crate::model::DomainConfig>,
 }
 impl DescribeDomainConfigOutput {
     /// <p>Container for the configuration of the OpenSearch Service domain.</p>
-    pub fn domain_config(&self) -> std::option::Option<&crate::model::DomainConfig> {
+    pub fn domain_config(&self) -> std::option::Option<& crate::model::DomainConfig> {
         self.domain_config.as_ref()
     }
 }
 /// See [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput).
 pub mod describe_domain_config_output {
-
+    
     /// A builder for [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2409,20 +2251,19 @@ pub mod describe_domain_config_output {
             self
         }
         /// <p>Container for the configuration of the OpenSearch Service domain.</p>
-        pub fn set_domain_config(
-            mut self,
-            input: std::option::Option<crate::model::DomainConfig>,
-        ) -> Self {
-            self.domain_config = input;
-            self
+        pub fn set_domain_config(mut self, input: std::option::Option<crate::model::DomainConfig>) -> Self {
+            self.domain_config = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput).
         pub fn build(self) -> crate::output::DescribeDomainConfigOutput {
             crate::output::DescribeDomainConfigOutput {
-                domain_config: self.domain_config,
+                domain_config: self.domain_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput).
@@ -2434,52 +2275,45 @@ impl DescribeDomainConfigOutput {
 /// <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains progress information for the requested domain change.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainChangeProgressOutput {
+pub struct DescribeDomainChangeProgressOutput  {
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
     #[doc(hidden)]
     pub change_progress_status: std::option::Option<crate::model::ChangeProgressStatusDetails>,
 }
 impl DescribeDomainChangeProgressOutput {
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
-    pub fn change_progress_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ChangeProgressStatusDetails> {
+    pub fn change_progress_status(&self) -> std::option::Option<& crate::model::ChangeProgressStatusDetails> {
         self.change_progress_status.as_ref()
     }
 }
 /// See [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
 pub mod describe_domain_change_progress_output {
-
+    
     /// A builder for [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) change_progress_status:
-            std::option::Option<crate::model::ChangeProgressStatusDetails>,
+        pub(crate) change_progress_status: std::option::Option<crate::model::ChangeProgressStatusDetails>,
     }
     impl Builder {
         /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
-        pub fn change_progress_status(
-            mut self,
-            input: crate::model::ChangeProgressStatusDetails,
-        ) -> Self {
+        pub fn change_progress_status(mut self, input: crate::model::ChangeProgressStatusDetails) -> Self {
             self.change_progress_status = Some(input);
             self
         }
         /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
-        pub fn set_change_progress_status(
-            mut self,
-            input: std::option::Option<crate::model::ChangeProgressStatusDetails>,
-        ) -> Self {
-            self.change_progress_status = input;
-            self
+        pub fn set_change_progress_status(mut self, input: std::option::Option<crate::model::ChangeProgressStatusDetails>) -> Self {
+            self.change_progress_status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
         pub fn build(self) -> crate::output::DescribeDomainChangeProgressOutput {
             crate::output::DescribeDomainChangeProgressOutput {
-                change_progress_status: self.change_progress_status,
+                change_progress_status: self.change_progress_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainChangeProgressOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
@@ -2491,7 +2325,7 @@ impl DescribeDomainChangeProgressOutput {
 /// <p>The result of a <code>DescribeDomainAutoTunes</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainAutoTunesOutput {
+pub struct DescribeDomainAutoTunesOutput  {
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
     #[doc(hidden)]
     pub auto_tunes: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
@@ -2501,17 +2335,17 @@ pub struct DescribeDomainAutoTunesOutput {
 }
 impl DescribeDomainAutoTunesOutput {
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
-    pub fn auto_tunes(&self) -> std::option::Option<&[crate::model::AutoTune]> {
+    pub fn auto_tunes(&self) -> std::option::Option<& [crate::model::AutoTune]> {
         self.auto_tunes.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
 pub mod describe_domain_auto_tunes_output {
-
+    
     /// A builder for [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2526,17 +2360,13 @@ pub mod describe_domain_auto_tunes_output {
         /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
         pub fn auto_tunes(mut self, input: crate::model::AutoTune) -> Self {
             let mut v = self.auto_tunes.unwrap_or_default();
-            v.push(input);
-            self.auto_tunes = Some(v);
-            self
+                            v.push(input);
+                            self.auto_tunes = Some(v);
+                            self
         }
         /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
-        pub fn set_auto_tunes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
-        ) -> Self {
-            self.auto_tunes = input;
-            self
+        pub fn set_auto_tunes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoTune>>) -> Self {
+            self.auto_tunes = input; self
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2545,17 +2375,20 @@ pub mod describe_domain_auto_tunes_output {
         }
         /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
         pub fn build(self) -> crate::output::DescribeDomainAutoTunesOutput {
             crate::output::DescribeDomainAutoTunesOutput {
-                auto_tunes: self.auto_tunes,
-                next_token: self.next_token,
+                auto_tunes: self.auto_tunes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainAutoTunesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
@@ -2567,20 +2400,20 @@ impl DescribeDomainAutoTunesOutput {
 /// <p>Contains the status of the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainOutput {
+pub struct DescribeDomainOutput  {
     /// <p>List that contains the status of each specified OpenSearch Service domain.</p>
     #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl DescribeDomainOutput {
     /// <p>List that contains the status of each specified OpenSearch Service domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
-
+    
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2593,20 +2426,19 @@ pub mod describe_domain_output {
             self
         }
         /// <p>List that contains the status of each specified OpenSearch Service domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
         pub fn build(self) -> crate::output::DescribeDomainOutput {
             crate::output::DescribeDomainOutput {
-                domain_status: self.domain_status,
+                domain_status: self.domain_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
@@ -2618,20 +2450,20 @@ impl DescribeDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcEndpointOutput {
+pub struct DeleteVpcEndpointOutput  {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
     #[doc(hidden)]
     pub vpc_endpoint_summary: std::option::Option<crate::model::VpcEndpointSummary>,
 }
 impl DeleteVpcEndpointOutput {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-    pub fn vpc_endpoint_summary(&self) -> std::option::Option<&crate::model::VpcEndpointSummary> {
+    pub fn vpc_endpoint_summary(&self) -> std::option::Option<& crate::model::VpcEndpointSummary> {
         self.vpc_endpoint_summary.as_ref()
     }
 }
 /// See [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
 pub mod delete_vpc_endpoint_output {
-
+    
     /// A builder for [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2644,20 +2476,19 @@ pub mod delete_vpc_endpoint_output {
             self
         }
         /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-        pub fn set_vpc_endpoint_summary(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpointSummary>,
-        ) -> Self {
-            self.vpc_endpoint_summary = input;
-            self
+        pub fn set_vpc_endpoint_summary(mut self, input: std::option::Option<crate::model::VpcEndpointSummary>) -> Self {
+            self.vpc_endpoint_summary = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
         pub fn build(self) -> crate::output::DeleteVpcEndpointOutput {
             crate::output::DeleteVpcEndpointOutput {
-                vpc_endpoint_summary: self.vpc_endpoint_summary,
+                vpc_endpoint_summary: self.vpc_endpoint_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
@@ -2669,20 +2500,20 @@ impl DeleteVpcEndpointOutput {
 /// <p>Container for the response parameters to the <code>DeletePackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePackageOutput {
+pub struct DeletePackageOutput  {
     /// <p> Information about the deleted package.</p>
     #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl DeletePackageOutput {
     /// <p> Information about the deleted package.</p>
-    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+    pub fn package_details(&self) -> std::option::Option<& crate::model::PackageDetails> {
         self.package_details.as_ref()
     }
 }
 /// See [`DeletePackageOutput`](crate::output::DeletePackageOutput).
 pub mod delete_package_output {
-
+    
     /// A builder for [`DeletePackageOutput`](crate::output::DeletePackageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2695,20 +2526,19 @@ pub mod delete_package_output {
             self
         }
         /// <p> Information about the deleted package.</p>
-        pub fn set_package_details(
-            mut self,
-            input: std::option::Option<crate::model::PackageDetails>,
-        ) -> Self {
-            self.package_details = input;
-            self
+        pub fn set_package_details(mut self, input: std::option::Option<crate::model::PackageDetails>) -> Self {
+            self.package_details = input; self
         }
         /// Consumes the builder and constructs a [`DeletePackageOutput`](crate::output::DeletePackageOutput).
         pub fn build(self) -> crate::output::DeletePackageOutput {
             crate::output::DeletePackageOutput {
-                package_details: self.package_details,
+                package_details: self.package_details
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletePackageOutput {
     /// Creates a new builder-style object to manufacture [`DeletePackageOutput`](crate::output::DeletePackageOutput).
@@ -2720,20 +2550,20 @@ impl DeletePackageOutput {
 /// <p>Details about the deleted outbound connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOutboundConnectionOutput {
+pub struct DeleteOutboundConnectionOutput  {
     /// <p>The deleted inbound connection.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::OutboundConnection>,
 }
 impl DeleteOutboundConnectionOutput {
     /// <p>The deleted inbound connection.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::model::OutboundConnection> {
+    pub fn connection(&self) -> std::option::Option<& crate::model::OutboundConnection> {
         self.connection.as_ref()
     }
 }
 /// See [`DeleteOutboundConnectionOutput`](crate::output::DeleteOutboundConnectionOutput).
 pub mod delete_outbound_connection_output {
-
+    
     /// A builder for [`DeleteOutboundConnectionOutput`](crate::output::DeleteOutboundConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2746,20 +2576,19 @@ pub mod delete_outbound_connection_output {
             self
         }
         /// <p>The deleted inbound connection.</p>
-        pub fn set_connection(
-            mut self,
-            input: std::option::Option<crate::model::OutboundConnection>,
-        ) -> Self {
-            self.connection = input;
-            self
+        pub fn set_connection(mut self, input: std::option::Option<crate::model::OutboundConnection>) -> Self {
+            self.connection = input; self
         }
         /// Consumes the builder and constructs a [`DeleteOutboundConnectionOutput`](crate::output::DeleteOutboundConnectionOutput).
         pub fn build(self) -> crate::output::DeleteOutboundConnectionOutput {
             crate::output::DeleteOutboundConnectionOutput {
-                connection: self.connection,
+                connection: self.connection
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteOutboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOutboundConnectionOutput`](crate::output::DeleteOutboundConnectionOutput).
@@ -2771,20 +2600,20 @@ impl DeleteOutboundConnectionOutput {
 /// <p>The results of a <code>DeleteInboundConnection</code> operation. Contains details about the deleted inbound connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInboundConnectionOutput {
+pub struct DeleteInboundConnectionOutput  {
     /// <p>The deleted inbound connection.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::InboundConnection>,
 }
 impl DeleteInboundConnectionOutput {
     /// <p>The deleted inbound connection.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
+    pub fn connection(&self) -> std::option::Option<& crate::model::InboundConnection> {
         self.connection.as_ref()
     }
 }
 /// See [`DeleteInboundConnectionOutput`](crate::output::DeleteInboundConnectionOutput).
 pub mod delete_inbound_connection_output {
-
+    
     /// A builder for [`DeleteInboundConnectionOutput`](crate::output::DeleteInboundConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2797,20 +2626,19 @@ pub mod delete_inbound_connection_output {
             self
         }
         /// <p>The deleted inbound connection.</p>
-        pub fn set_connection(
-            mut self,
-            input: std::option::Option<crate::model::InboundConnection>,
-        ) -> Self {
-            self.connection = input;
-            self
+        pub fn set_connection(mut self, input: std::option::Option<crate::model::InboundConnection>) -> Self {
+            self.connection = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInboundConnectionOutput`](crate::output::DeleteInboundConnectionOutput).
         pub fn build(self) -> crate::output::DeleteInboundConnectionOutput {
             crate::output::DeleteInboundConnectionOutput {
-                connection: self.connection,
+                connection: self.connection
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteInboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInboundConnectionOutput`](crate::output::DeleteInboundConnectionOutput).
@@ -2822,20 +2650,20 @@ impl DeleteInboundConnectionOutput {
 /// <p>The results of a <code>DeleteDomain</code> request. Contains the status of the pending deletion, or a "domain not found" error if the domain and all of its resources have been deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainOutput {
+pub struct DeleteDomainOutput  {
     /// <p>The status of the domain being deleted.</p>
     #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl DeleteDomainOutput {
     /// <p>The status of the domain being deleted.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
-
+    
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2848,20 +2676,19 @@ pub mod delete_domain_output {
             self
         }
         /// <p>The status of the domain being deleted.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
         pub fn build(self) -> crate::output::DeleteDomainOutput {
             crate::output::DeleteDomainOutput {
-                domain_status: self.domain_status,
+                domain_status: self.domain_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
@@ -2873,20 +2700,20 @@ impl DeleteDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVpcEndpointOutput {
+pub struct CreateVpcEndpointOutput  {
     /// <p>Information about the newly created VPC endpoint.</p>
     #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
 }
 impl CreateVpcEndpointOutput {
     /// <p>Information about the newly created VPC endpoint.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+    pub fn vpc_endpoint(&self) -> std::option::Option<& crate::model::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
 }
 /// See [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
 pub mod create_vpc_endpoint_output {
-
+    
     /// A builder for [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2899,20 +2726,19 @@ pub mod create_vpc_endpoint_output {
             self
         }
         /// <p>Information about the newly created VPC endpoint.</p>
-        pub fn set_vpc_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpoint>,
-        ) -> Self {
-            self.vpc_endpoint = input;
-            self
+        pub fn set_vpc_endpoint(mut self, input: std::option::Option<crate::model::VpcEndpoint>) -> Self {
+            self.vpc_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
         pub fn build(self) -> crate::output::CreateVpcEndpointOutput {
             crate::output::CreateVpcEndpointOutput {
-                vpc_endpoint: self.vpc_endpoint,
+                vpc_endpoint: self.vpc_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
@@ -2924,20 +2750,20 @@ impl CreateVpcEndpointOutput {
 /// <p>Container for the response returned by the <code>CreatePackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePackageOutput {
+pub struct CreatePackageOutput  {
     /// <p>Basic information about an OpenSearch Service package.</p>
     #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl CreatePackageOutput {
     /// <p>Basic information about an OpenSearch Service package.</p>
-    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+    pub fn package_details(&self) -> std::option::Option<& crate::model::PackageDetails> {
         self.package_details.as_ref()
     }
 }
 /// See [`CreatePackageOutput`](crate::output::CreatePackageOutput).
 pub mod create_package_output {
-
+    
     /// A builder for [`CreatePackageOutput`](crate::output::CreatePackageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2950,20 +2776,19 @@ pub mod create_package_output {
             self
         }
         /// <p>Basic information about an OpenSearch Service package.</p>
-        pub fn set_package_details(
-            mut self,
-            input: std::option::Option<crate::model::PackageDetails>,
-        ) -> Self {
-            self.package_details = input;
-            self
+        pub fn set_package_details(mut self, input: std::option::Option<crate::model::PackageDetails>) -> Self {
+            self.package_details = input; self
         }
         /// Consumes the builder and constructs a [`CreatePackageOutput`](crate::output::CreatePackageOutput).
         pub fn build(self) -> crate::output::CreatePackageOutput {
             crate::output::CreatePackageOutput {
-                package_details: self.package_details,
+                package_details: self.package_details
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePackageOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackageOutput`](crate::output::CreatePackageOutput).
@@ -2975,7 +2800,7 @@ impl CreatePackageOutput {
 /// <p>The result of a <code>CreateOutboundConnection</code> request. Contains details about the newly created cross-cluster connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOutboundConnectionOutput {
+pub struct CreateOutboundConnectionOutput  {
     /// <p>Information about the source (local) domain.</p>
     #[doc(hidden)]
     pub local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
@@ -2994,77 +2819,56 @@ pub struct CreateOutboundConnectionOutput {
 }
 impl CreateOutboundConnectionOutput {
     /// <p>Information about the source (local) domain.</p>
-    pub fn local_domain_info(
-        &self,
-    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+    pub fn local_domain_info(&self) -> std::option::Option<& crate::model::DomainInformationContainer> {
         self.local_domain_info.as_ref()
     }
     /// <p>Information about the destination (remote) domain.</p>
-    pub fn remote_domain_info(
-        &self,
-    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+    pub fn remote_domain_info(&self) -> std::option::Option<& crate::model::DomainInformationContainer> {
         self.remote_domain_info.as_ref()
     }
     /// <p>Name of the connection.</p>
-    pub fn connection_alias(&self) -> std::option::Option<&str> {
+    pub fn connection_alias(&self) -> std::option::Option<& str> {
         self.connection_alias.as_deref()
     }
     /// <p>The status of the connection.</p>
-    pub fn connection_status(
-        &self,
-    ) -> std::option::Option<&crate::model::OutboundConnectionStatus> {
+    pub fn connection_status(&self) -> std::option::Option<& crate::model::OutboundConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>The unique identifier for the created outbound connection, which is used for subsequent operations on the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
 }
 /// See [`CreateOutboundConnectionOutput`](crate::output::CreateOutboundConnectionOutput).
 pub mod create_outbound_connection_output {
-
+    
     /// A builder for [`CreateOutboundConnectionOutput`](crate::output::CreateOutboundConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
-        pub(crate) remote_domain_info:
-            std::option::Option<crate::model::DomainInformationContainer>,
+        pub(crate) remote_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
         pub(crate) connection_alias: std::option::Option<std::string::String>,
         pub(crate) connection_status: std::option::Option<crate::model::OutboundConnectionStatus>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Information about the source (local) domain.</p>
-        pub fn local_domain_info(
-            mut self,
-            input: crate::model::DomainInformationContainer,
-        ) -> Self {
+        pub fn local_domain_info(mut self, input: crate::model::DomainInformationContainer) -> Self {
             self.local_domain_info = Some(input);
             self
         }
         /// <p>Information about the source (local) domain.</p>
-        pub fn set_local_domain_info(
-            mut self,
-            input: std::option::Option<crate::model::DomainInformationContainer>,
-        ) -> Self {
-            self.local_domain_info = input;
-            self
+        pub fn set_local_domain_info(mut self, input: std::option::Option<crate::model::DomainInformationContainer>) -> Self {
+            self.local_domain_info = input; self
         }
         /// <p>Information about the destination (remote) domain.</p>
-        pub fn remote_domain_info(
-            mut self,
-            input: crate::model::DomainInformationContainer,
-        ) -> Self {
+        pub fn remote_domain_info(mut self, input: crate::model::DomainInformationContainer) -> Self {
             self.remote_domain_info = Some(input);
             self
         }
         /// <p>Information about the destination (remote) domain.</p>
-        pub fn set_remote_domain_info(
-            mut self,
-            input: std::option::Option<crate::model::DomainInformationContainer>,
-        ) -> Self {
-            self.remote_domain_info = input;
-            self
+        pub fn set_remote_domain_info(mut self, input: std::option::Option<crate::model::DomainInformationContainer>) -> Self {
+            self.remote_domain_info = input; self
         }
         /// <p>Name of the connection.</p>
         pub fn connection_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3072,12 +2876,8 @@ pub mod create_outbound_connection_output {
             self
         }
         /// <p>Name of the connection.</p>
-        pub fn set_connection_alias(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_alias = input;
-            self
+        pub fn set_connection_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_alias = input; self
         }
         /// <p>The status of the connection.</p>
         pub fn connection_status(mut self, input: crate::model::OutboundConnectionStatus) -> Self {
@@ -3085,12 +2885,8 @@ pub mod create_outbound_connection_output {
             self
         }
         /// <p>The status of the connection.</p>
-        pub fn set_connection_status(
-            mut self,
-            input: std::option::Option<crate::model::OutboundConnectionStatus>,
-        ) -> Self {
-            self.connection_status = input;
-            self
+        pub fn set_connection_status(mut self, input: std::option::Option<crate::model::OutboundConnectionStatus>) -> Self {
+            self.connection_status = input; self
         }
         /// <p>The unique identifier for the created outbound connection, which is used for subsequent operations on the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3098,24 +2894,27 @@ pub mod create_outbound_connection_output {
             self
         }
         /// <p>The unique identifier for the created outbound connection, which is used for subsequent operations on the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateOutboundConnectionOutput`](crate::output::CreateOutboundConnectionOutput).
         pub fn build(self) -> crate::output::CreateOutboundConnectionOutput {
             crate::output::CreateOutboundConnectionOutput {
-                local_domain_info: self.local_domain_info,
-                remote_domain_info: self.remote_domain_info,
-                connection_alias: self.connection_alias,
-                connection_status: self.connection_status,
-                connection_id: self.connection_id,
+                local_domain_info: self.local_domain_info
+                ,
+                remote_domain_info: self.remote_domain_info
+                ,
+                connection_alias: self.connection_alias
+                ,
+                connection_status: self.connection_status
+                ,
+                connection_id: self.connection_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOutboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateOutboundConnectionOutput`](crate::output::CreateOutboundConnectionOutput).
@@ -3127,20 +2926,20 @@ impl CreateOutboundConnectionOutput {
 /// <p>The result of a <code>CreateDomain</code> operation. Contains the status of the newly created domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainOutput {
+pub struct CreateDomainOutput  {
     /// <p>The status of the newly created domain.</p>
     #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl CreateDomainOutput {
     /// <p>The status of the newly created domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
-
+    
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3153,20 +2952,19 @@ pub mod create_domain_output {
             self
         }
         /// <p>The status of the newly created domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
         pub fn build(self) -> crate::output::CreateDomainOutput {
             crate::output::CreateDomainOutput {
-                domain_status: self.domain_status,
+                domain_status: self.domain_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
@@ -3178,52 +2976,45 @@ impl CreateDomainOutput {
 /// <p>Container for the response to a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelServiceSoftwareUpdateOutput {
+pub struct CancelServiceSoftwareUpdateOutput  {
     /// <p>Container for the state of your domain relative to the latest service software.</p>
     #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
 }
 impl CancelServiceSoftwareUpdateOutput {
     /// <p>Container for the state of your domain relative to the latest service software.</p>
-    pub fn service_software_options(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
+    pub fn service_software_options(&self) -> std::option::Option<& crate::model::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
 }
 /// See [`CancelServiceSoftwareUpdateOutput`](crate::output::CancelServiceSoftwareUpdateOutput).
 pub mod cancel_service_software_update_output {
-
+    
     /// A builder for [`CancelServiceSoftwareUpdateOutput`](crate::output::CancelServiceSoftwareUpdateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_software_options:
-            std::option::Option<crate::model::ServiceSoftwareOptions>,
+        pub(crate) service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
     }
     impl Builder {
         /// <p>Container for the state of your domain relative to the latest service software.</p>
-        pub fn service_software_options(
-            mut self,
-            input: crate::model::ServiceSoftwareOptions,
-        ) -> Self {
+        pub fn service_software_options(mut self, input: crate::model::ServiceSoftwareOptions) -> Self {
             self.service_software_options = Some(input);
             self
         }
         /// <p>Container for the state of your domain relative to the latest service software.</p>
-        pub fn set_service_software_options(
-            mut self,
-            input: std::option::Option<crate::model::ServiceSoftwareOptions>,
-        ) -> Self {
-            self.service_software_options = input;
-            self
+        pub fn set_service_software_options(mut self, input: std::option::Option<crate::model::ServiceSoftwareOptions>) -> Self {
+            self.service_software_options = input; self
         }
         /// Consumes the builder and constructs a [`CancelServiceSoftwareUpdateOutput`](crate::output::CancelServiceSoftwareUpdateOutput).
         pub fn build(self) -> crate::output::CancelServiceSoftwareUpdateOutput {
             crate::output::CancelServiceSoftwareUpdateOutput {
-                service_software_options: self.service_software_options,
+                service_software_options: self.service_software_options
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelServiceSoftwareUpdateOutput {
     /// Creates a new builder-style object to manufacture [`CancelServiceSoftwareUpdateOutput`](crate::output::CancelServiceSoftwareUpdateOutput).
@@ -3235,20 +3026,20 @@ impl CancelServiceSoftwareUpdateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizeVpcEndpointAccessOutput {
+pub struct AuthorizeVpcEndpointAccessOutput  {
     /// <p>Information about the Amazon Web Services account or service that was provided access to the domain.</p>
     #[doc(hidden)]
     pub authorized_principal: std::option::Option<crate::model::AuthorizedPrincipal>,
 }
 impl AuthorizeVpcEndpointAccessOutput {
     /// <p>Information about the Amazon Web Services account or service that was provided access to the domain.</p>
-    pub fn authorized_principal(&self) -> std::option::Option<&crate::model::AuthorizedPrincipal> {
+    pub fn authorized_principal(&self) -> std::option::Option<& crate::model::AuthorizedPrincipal> {
         self.authorized_principal.as_ref()
     }
 }
 /// See [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
 pub mod authorize_vpc_endpoint_access_output {
-
+    
     /// A builder for [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3261,20 +3052,19 @@ pub mod authorize_vpc_endpoint_access_output {
             self
         }
         /// <p>Information about the Amazon Web Services account or service that was provided access to the domain.</p>
-        pub fn set_authorized_principal(
-            mut self,
-            input: std::option::Option<crate::model::AuthorizedPrincipal>,
-        ) -> Self {
-            self.authorized_principal = input;
-            self
+        pub fn set_authorized_principal(mut self, input: std::option::Option<crate::model::AuthorizedPrincipal>) -> Self {
+            self.authorized_principal = input; self
         }
         /// Consumes the builder and constructs a [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
         pub fn build(self) -> crate::output::AuthorizeVpcEndpointAccessOutput {
             crate::output::AuthorizeVpcEndpointAccessOutput {
-                authorized_principal: self.authorized_principal,
+                authorized_principal: self.authorized_principal
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthorizeVpcEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
@@ -3286,22 +3076,20 @@ impl AuthorizeVpcEndpointAccessOutput {
 /// <p>Container for the response returned by the <code>AssociatePackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePackageOutput {
+pub struct AssociatePackageOutput  {
     /// <p>Information about a package that is associated with a domain.</p>
     #[doc(hidden)]
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
 }
 impl AssociatePackageOutput {
     /// <p>Information about a package that is associated with a domain.</p>
-    pub fn domain_package_details(
-        &self,
-    ) -> std::option::Option<&crate::model::DomainPackageDetails> {
+    pub fn domain_package_details(&self) -> std::option::Option<& crate::model::DomainPackageDetails> {
         self.domain_package_details.as_ref()
     }
 }
 /// See [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
 pub mod associate_package_output {
-
+    
     /// A builder for [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3314,20 +3102,19 @@ pub mod associate_package_output {
             self
         }
         /// <p>Information about a package that is associated with a domain.</p>
-        pub fn set_domain_package_details(
-            mut self,
-            input: std::option::Option<crate::model::DomainPackageDetails>,
-        ) -> Self {
-            self.domain_package_details = input;
-            self
+        pub fn set_domain_package_details(mut self, input: std::option::Option<crate::model::DomainPackageDetails>) -> Self {
+            self.domain_package_details = input; self
         }
         /// Consumes the builder and constructs a [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
         pub fn build(self) -> crate::output::AssociatePackageOutput {
             crate::output::AssociatePackageOutput {
-                domain_package_details: self.domain_package_details,
+                domain_package_details: self.domain_package_details
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociatePackageOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
@@ -3339,19 +3126,24 @@ impl AssociatePackageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsOutput {}
+pub struct AddTagsOutput  {
+}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
-
+    
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
         pub fn build(self) -> crate::output::AddTagsOutput {
-            crate::output::AddTagsOutput {}
+            crate::output::AddTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
@@ -3363,20 +3155,20 @@ impl AddTagsOutput {
 /// <p>Contains details about the accepted inbound connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptInboundConnectionOutput {
+pub struct AcceptInboundConnectionOutput  {
     /// <p>Information about the accepted inbound connection.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::InboundConnection>,
 }
 impl AcceptInboundConnectionOutput {
     /// <p>Information about the accepted inbound connection.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
+    pub fn connection(&self) -> std::option::Option<& crate::model::InboundConnection> {
         self.connection.as_ref()
     }
 }
 /// See [`AcceptInboundConnectionOutput`](crate::output::AcceptInboundConnectionOutput).
 pub mod accept_inbound_connection_output {
-
+    
     /// A builder for [`AcceptInboundConnectionOutput`](crate::output::AcceptInboundConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3389,20 +3181,19 @@ pub mod accept_inbound_connection_output {
             self
         }
         /// <p>Information about the accepted inbound connection.</p>
-        pub fn set_connection(
-            mut self,
-            input: std::option::Option<crate::model::InboundConnection>,
-        ) -> Self {
-            self.connection = input;
-            self
+        pub fn set_connection(mut self, input: std::option::Option<crate::model::InboundConnection>) -> Self {
+            self.connection = input; self
         }
         /// Consumes the builder and constructs a [`AcceptInboundConnectionOutput`](crate::output::AcceptInboundConnectionOutput).
         pub fn build(self) -> crate::output::AcceptInboundConnectionOutput {
             crate::output::AcceptInboundConnectionOutput {
-                connection: self.connection,
+                connection: self.connection
+                ,
             }
         }
     }
+    
+    
 }
 impl AcceptInboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInboundConnectionOutput`](crate::output::AcceptInboundConnectionOutput).
@@ -3410,3 +3201,4 @@ impl AcceptInboundConnectionOutput {
         crate::output::accept_inbound_connection_output::Builder::default()
     }
 }
+

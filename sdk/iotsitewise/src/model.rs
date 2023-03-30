@@ -3,7 +3,7 @@
 /// <p>Contains information about the current status of a portal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortalStatus {
+pub struct PortalStatus  {
     /// <p>The current state of the portal.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::PortalState>,
@@ -13,17 +13,17 @@ pub struct PortalStatus {
 }
 impl PortalStatus {
     /// <p>The current state of the portal.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::PortalState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::PortalState> {
         self.state.as_ref()
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::MonitorErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::model::MonitorErrorDetails> {
         self.error.as_ref()
     }
 }
 /// See [`PortalStatus`](crate::model::PortalStatus).
 pub mod portal_status {
-
+    
     /// A builder for [`PortalStatus`](crate::model::PortalStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod portal_status {
         }
         /// <p>The current state of the portal.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::PortalState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Contains associated error information, if any.</p>
         pub fn error(mut self, input: crate::model::MonitorErrorDetails) -> Self {
@@ -47,21 +46,21 @@ pub mod portal_status {
             self
         }
         /// <p>Contains associated error information, if any.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::MonitorErrorDetails>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::MonitorErrorDetails>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`PortalStatus`](crate::model::PortalStatus).
         pub fn build(self) -> crate::model::PortalStatus {
             crate::model::PortalStatus {
-                state: self.state,
-                error: self.error,
+                state: self.state
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl PortalStatus {
     /// Creates a new builder-style object to manufacture [`PortalStatus`](crate::model::PortalStatus).
@@ -73,7 +72,7 @@ impl PortalStatus {
 /// <p>Contains IoT SiteWise Monitor error details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonitorErrorDetails {
+pub struct MonitorErrorDetails  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::MonitorErrorCode>,
@@ -83,17 +82,17 @@ pub struct MonitorErrorDetails {
 }
 impl MonitorErrorDetails {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::MonitorErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::MonitorErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`MonitorErrorDetails`](crate::model::MonitorErrorDetails).
 pub mod monitor_error_details {
-
+    
     /// A builder for [`MonitorErrorDetails`](crate::model::MonitorErrorDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -107,12 +106,8 @@ pub mod monitor_error_details {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::MonitorErrorCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::MonitorErrorCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,17 +116,20 @@ pub mod monitor_error_details {
         }
         /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MonitorErrorDetails`](crate::model::MonitorErrorDetails).
         pub fn build(self) -> crate::model::MonitorErrorDetails {
             crate::model::MonitorErrorDetails {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MonitorErrorDetails {
     /// Creates a new builder-style object to manufacture [`MonitorErrorDetails`](crate::model::MonitorErrorDetails).
@@ -146,9 +144,9 @@ impl MonitorErrorDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let monitorerrorcode = unimplemented!();
 /// match monitorerrorcode {
@@ -171,22 +169,14 @@ impl MonitorErrorDetails {
 /// Specifically, when `monitorerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MonitorErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MonitorErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
@@ -195,7 +185,7 @@ pub enum MonitorErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MonitorErrorCode {
     fn from(s: &str) -> Self {
@@ -203,17 +193,17 @@ impl std::convert::From<&str> for MonitorErrorCode {
             "INTERNAL_FAILURE" => MonitorErrorCode::InternalFailure,
             "LIMIT_EXCEEDED" => MonitorErrorCode::LimitExceeded,
             "VALIDATION_ERROR" => MonitorErrorCode::ValidationError,
-            other => MonitorErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MonitorErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MonitorErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MonitorErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MonitorErrorCode::from(s))
+                }
+            }
 impl MonitorErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -221,12 +211,14 @@ impl MonitorErrorCode {
             MonitorErrorCode::InternalFailure => "INTERNAL_FAILURE",
             MonitorErrorCode::LimitExceeded => "LIMIT_EXCEEDED",
             MonitorErrorCode::ValidationError => "VALIDATION_ERROR",
-            MonitorErrorCode::Unknown(value) => value.as_str(),
+            MonitorErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INTERNAL_FAILURE", "LIMIT_EXCEEDED", "VALIDATION_ERROR"]
+        &[
+            "INTERNAL_FAILURE", "LIMIT_EXCEEDED", "VALIDATION_ERROR"
+        ]
     }
 }
 impl AsRef<str> for MonitorErrorCode {
@@ -241,9 +233,9 @@ impl AsRef<str> for MonitorErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let portalstate = unimplemented!();
 /// match portalstate {
@@ -268,22 +260,14 @@ impl AsRef<str> for MonitorErrorCode {
 /// Specifically, when `portalstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PortalState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PortalState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -296,7 +280,7 @@ pub enum PortalState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PortalState {
     fn from(s: &str) -> Self {
@@ -306,17 +290,17 @@ impl std::convert::From<&str> for PortalState {
             "DELETING" => PortalState::Deleting,
             "FAILED" => PortalState::Failed,
             "UPDATING" => PortalState::Updating,
-            other => PortalState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PortalState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PortalState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PortalState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PortalState::from(s))
+                }
+            }
 impl PortalState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -326,12 +310,14 @@ impl PortalState {
             PortalState::Deleting => "DELETING",
             PortalState::Failed => "FAILED",
             PortalState::Updating => "UPDATING",
-            PortalState::Unknown(value) => value.as_str(),
+            PortalState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for PortalState {
@@ -343,7 +329,7 @@ impl AsRef<str> for PortalState {
 /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Alarms {
+pub struct Alarms  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
     #[doc(hidden)]
     pub alarm_role_arn: std::option::Option<std::string::String>,
@@ -353,17 +339,17 @@ pub struct Alarms {
 }
 impl Alarms {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
-    pub fn alarm_role_arn(&self) -> std::option::Option<&str> {
+    pub fn alarm_role_arn(&self) -> std::option::Option<& str> {
         self.alarm_role_arn.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
-    pub fn notification_lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn notification_lambda_arn(&self) -> std::option::Option<& str> {
         self.notification_lambda_arn.as_deref()
     }
 }
 /// See [`Alarms`](crate::model::Alarms).
 pub mod alarms {
-
+    
     /// A builder for [`Alarms`](crate::model::Alarms).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -377,12 +363,8 @@ pub mod alarms {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
-        pub fn set_alarm_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_role_arn = input;
-            self
+        pub fn set_alarm_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_role_arn = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
         pub fn notification_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -390,21 +372,21 @@ pub mod alarms {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
-        pub fn set_notification_lambda_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notification_lambda_arn = input;
-            self
+        pub fn set_notification_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notification_lambda_arn = input; self
         }
         /// Consumes the builder and constructs a [`Alarms`](crate::model::Alarms).
         pub fn build(self) -> crate::model::Alarms {
             crate::model::Alarms {
-                alarm_role_arn: self.alarm_role_arn,
-                notification_lambda_arn: self.notification_lambda_arn,
+                alarm_role_arn: self.alarm_role_arn
+                ,
+                notification_lambda_arn: self.notification_lambda_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Alarms {
     /// Creates a new builder-style object to manufacture [`Alarms`](crate::model::Alarms).
@@ -413,14 +395,14 @@ impl Alarms {
     }
 }
 
-/// <p>Contains an image that is one of the following:</p>
-/// <ul>
-/// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
-/// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
+/// <p>Contains an image that is one of the following:</p> 
+/// <ul> 
+/// <li> <p>An image file. Choose this option to upload a new image.</p> </li> 
+/// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Image {
+pub struct Image  {
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -430,17 +412,17 @@ pub struct Image {
 }
 impl Image {
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Contains an image file.</p>
-    pub fn file(&self) -> std::option::Option<&crate::model::ImageFile> {
+    pub fn file(&self) -> std::option::Option<& crate::model::ImageFile> {
         self.file.as_ref()
     }
 }
 /// See [`Image`](crate::model::Image).
 pub mod image {
-
+    
     /// A builder for [`Image`](crate::model::Image).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -455,8 +437,7 @@ pub mod image {
         }
         /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Contains an image file.</p>
         pub fn file(mut self, input: crate::model::ImageFile) -> Self {
@@ -465,17 +446,20 @@ pub mod image {
         }
         /// <p>Contains an image file.</p>
         pub fn set_file(mut self, input: std::option::Option<crate::model::ImageFile>) -> Self {
-            self.file = input;
-            self
+            self.file = input; self
         }
         /// Consumes the builder and constructs a [`Image`](crate::model::Image).
         pub fn build(self) -> crate::model::Image {
             crate::model::Image {
-                id: self.id,
-                file: self.file,
+                id: self.id
+                ,
+                file: self.file
+                ,
             }
         }
     }
+    
+    
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
@@ -487,7 +471,7 @@ impl Image {
 /// <p>Contains an image file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageFile {
+pub struct ImageFile  {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
@@ -497,17 +481,17 @@ pub struct ImageFile {
 }
 impl ImageFile {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>The file type of the image.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageFileType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ImageFileType> {
         self.r#type.as_ref()
     }
 }
 /// See [`ImageFile`](crate::model::ImageFile).
 pub mod image_file {
-
+    
     /// A builder for [`ImageFile`](crate::model::ImageFile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -522,8 +506,7 @@ pub mod image_file {
         }
         /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// <p>The file type of the image.</p>
         pub fn r#type(mut self, input: crate::model::ImageFileType) -> Self {
@@ -532,17 +515,20 @@ pub mod image_file {
         }
         /// <p>The file type of the image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageFileType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`ImageFile`](crate::model::ImageFile).
         pub fn build(self) -> crate::model::ImageFile {
             crate::model::ImageFile {
-                data: self.data,
-                r#type: self.r#type,
+                data: self.data
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageFile {
     /// Creates a new builder-style object to manufacture [`ImageFile`](crate::model::ImageFile).
@@ -557,9 +543,9 @@ impl ImageFile {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagefiletype = unimplemented!();
 /// match imagefiletype {
@@ -580,54 +566,48 @@ impl ImageFile {
 /// Specifically, when `imagefiletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageFileType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageFileType {
     #[allow(missing_docs)] // documentation missing in model
     Png,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageFileType {
     fn from(s: &str) -> Self {
         match s {
             "PNG" => ImageFileType::Png,
-            other => ImageFileType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImageFileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageFileType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageFileType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageFileType::from(s))
+                }
+            }
 impl ImageFileType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageFileType::Png => "PNG",
-            ImageFileType::Unknown(value) => value.as_str(),
+            ImageFileType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PNG"]
+        &[
+            "PNG"
+        ]
     }
 }
 impl AsRef<str> for ImageFileType {
@@ -642,9 +622,9 @@ impl AsRef<str> for ImageFileType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let capabilitysyncstatus = unimplemented!();
 /// match capabilitysyncstatus {
@@ -668,22 +648,14 @@ impl AsRef<str> for ImageFileType {
 /// Specifically, when `capabilitysyncstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CapabilitySyncStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `CapabilitySyncStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CapabilitySyncStatus {
     #[allow(missing_docs)] // documentation missing in model
     InSync,
@@ -694,7 +666,7 @@ pub enum CapabilitySyncStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CapabilitySyncStatus {
     fn from(s: &str) -> Self {
@@ -703,19 +675,17 @@ impl std::convert::From<&str> for CapabilitySyncStatus {
             "OUT_OF_SYNC" => CapabilitySyncStatus::OutOfSync,
             "SYNC_FAILED" => CapabilitySyncStatus::SyncFailed,
             "UNKNOWN" => CapabilitySyncStatus::UnknownValue,
-            other => {
-                CapabilitySyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CapabilitySyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CapabilitySyncStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CapabilitySyncStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CapabilitySyncStatus::from(s))
+                }
+            }
 impl CapabilitySyncStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -724,12 +694,14 @@ impl CapabilitySyncStatus {
             CapabilitySyncStatus::OutOfSync => "OUT_OF_SYNC",
             CapabilitySyncStatus::SyncFailed => "SYNC_FAILED",
             CapabilitySyncStatus::UnknownValue => "UNKNOWN",
-            CapabilitySyncStatus::Unknown(value) => value.as_str(),
+            CapabilitySyncStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IN_SYNC", "OUT_OF_SYNC", "SYNC_FAILED", "UNKNOWN"]
+        &[
+            "IN_SYNC", "OUT_OF_SYNC", "SYNC_FAILED", "UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for CapabilitySyncStatus {
@@ -744,9 +716,9 @@ impl AsRef<str> for CapabilitySyncStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let propertynotificationstate = unimplemented!();
 /// match propertynotificationstate {
@@ -768,60 +740,52 @@ impl AsRef<str> for CapabilitySyncStatus {
 /// Specifically, when `propertynotificationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PropertyNotificationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PropertyNotificationState {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PropertyNotificationState {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => PropertyNotificationState::Disabled,
             "ENABLED" => PropertyNotificationState::Enabled,
-            other => PropertyNotificationState::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PropertyNotificationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PropertyNotificationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PropertyNotificationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PropertyNotificationState::from(s))
+                }
+            }
 impl PropertyNotificationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PropertyNotificationState::Disabled => "DISABLED",
             PropertyNotificationState::Enabled => "ENABLED",
-            PropertyNotificationState::Unknown(value) => value.as_str(),
+            PropertyNotificationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for PropertyNotificationState {
@@ -833,7 +797,7 @@ impl AsRef<str> for PropertyNotificationState {
 /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelStatus {
+pub struct AssetModelStatus  {
     /// <p>The current state of the asset model.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::AssetModelState>,
@@ -843,17 +807,17 @@ pub struct AssetModelStatus {
 }
 impl AssetModelStatus {
     /// <p>The current state of the asset model.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::AssetModelState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::AssetModelState> {
         self.state.as_ref()
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorDetails> {
         self.error.as_ref()
     }
 }
 /// See [`AssetModelStatus`](crate::model::AssetModelStatus).
 pub mod asset_model_status {
-
+    
     /// A builder for [`AssetModelStatus`](crate::model::AssetModelStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -867,12 +831,8 @@ pub mod asset_model_status {
             self
         }
         /// <p>The current state of the asset model.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::AssetModelState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::AssetModelState>) -> Self {
+            self.state = input; self
         }
         /// <p>Contains associated error information, if any.</p>
         pub fn error(mut self, input: crate::model::ErrorDetails) -> Self {
@@ -881,17 +841,20 @@ pub mod asset_model_status {
         }
         /// <p>Contains associated error information, if any.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelStatus`](crate::model::AssetModelStatus).
         pub fn build(self) -> crate::model::AssetModelStatus {
             crate::model::AssetModelStatus {
-                state: self.state,
-                error: self.error,
+                state: self.state
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelStatus {
     /// Creates a new builder-style object to manufacture [`AssetModelStatus`](crate::model::AssetModelStatus).
@@ -903,7 +866,7 @@ impl AssetModelStatus {
 /// <p>Contains the details of an IoT SiteWise error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetails {
+pub struct ErrorDetails  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -916,21 +879,21 @@ pub struct ErrorDetails {
 }
 impl ErrorDetails {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p> A list of detailed errors. </p>
-    pub fn details(&self) -> std::option::Option<&[crate::model::DetailedError]> {
+    pub fn details(&self) -> std::option::Option<& [crate::model::DetailedError]> {
         self.details.as_deref()
     }
 }
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
-
+    
     /// A builder for [`ErrorDetails`](crate::model::ErrorDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -946,8 +909,7 @@ pub mod error_details {
         }
         /// <p>The error code.</p>
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>The error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -956,8 +918,7 @@ pub mod error_details {
         }
         /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Appends an item to `details`.
         ///
@@ -966,27 +927,28 @@ pub mod error_details {
         /// <p> A list of detailed errors. </p>
         pub fn details(mut self, input: crate::model::DetailedError) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(input);
-            self.details = Some(v);
-            self
+                            v.push(input);
+                            self.details = Some(v);
+                            self
         }
         /// <p> A list of detailed errors. </p>
-        pub fn set_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DetailedError>>,
-        ) -> Self {
-            self.details = input;
-            self
+        pub fn set_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::DetailedError>>) -> Self {
+            self.details = input; self
         }
         /// Consumes the builder and constructs a [`ErrorDetails`](crate::model::ErrorDetails).
         pub fn build(self) -> crate::model::ErrorDetails {
             crate::model::ErrorDetails {
-                code: self.code,
-                message: self.message,
-                details: self.details,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                details: self.details
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorDetails {
     /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
@@ -998,7 +960,7 @@ impl ErrorDetails {
 /// <p>Contains detailed error information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetailedError {
+pub struct DetailedError  {
     /// <p>The error code. </p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::DetailedErrorCode>,
@@ -1008,17 +970,17 @@ pub struct DetailedError {
 }
 impl DetailedError {
     /// <p>The error code. </p>
-    pub fn code(&self) -> std::option::Option<&crate::model::DetailedErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::DetailedErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DetailedError`](crate::model::DetailedError).
 pub mod detailed_error {
-
+    
     /// A builder for [`DetailedError`](crate::model::DetailedError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1032,12 +994,8 @@ pub mod detailed_error {
             self
         }
         /// <p>The error code. </p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::DetailedErrorCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::DetailedErrorCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The error message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1046,17 +1004,20 @@ pub mod detailed_error {
         }
         /// <p>The error message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DetailedError`](crate::model::DetailedError).
         pub fn build(self) -> crate::model::DetailedError {
             crate::model::DetailedError {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DetailedError {
     /// Creates a new builder-style object to manufacture [`DetailedError`](crate::model::DetailedError).
@@ -1071,9 +1032,9 @@ impl DetailedError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let detailederrorcode = unimplemented!();
 /// match detailederrorcode {
@@ -1095,66 +1056,51 @@ impl DetailedError {
 /// Specifically, when `detailederrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DetailedErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DetailedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     IncompatibleComputeLocation,
     #[allow(missing_docs)] // documentation missing in model
     IncompatibleForwardingConfiguration,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DetailedErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "INCOMPATIBLE_COMPUTE_LOCATION" => DetailedErrorCode::IncompatibleComputeLocation,
-            "INCOMPATIBLE_FORWARDING_CONFIGURATION" => {
-                DetailedErrorCode::IncompatibleForwardingConfiguration
-            }
-            other => {
-                DetailedErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            "INCOMPATIBLE_FORWARDING_CONFIGURATION" => DetailedErrorCode::IncompatibleForwardingConfiguration,
+            other => DetailedErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DetailedErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DetailedErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DetailedErrorCode::from(s))
+                }
+            }
 impl DetailedErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DetailedErrorCode::IncompatibleComputeLocation => "INCOMPATIBLE_COMPUTE_LOCATION",
-            DetailedErrorCode::IncompatibleForwardingConfiguration => {
-                "INCOMPATIBLE_FORWARDING_CONFIGURATION"
-            }
-            DetailedErrorCode::Unknown(value) => value.as_str(),
+            DetailedErrorCode::IncompatibleForwardingConfiguration => "INCOMPATIBLE_FORWARDING_CONFIGURATION",
+            DetailedErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "INCOMPATIBLE_COMPUTE_LOCATION",
-            "INCOMPATIBLE_FORWARDING_CONFIGURATION",
+            "INCOMPATIBLE_COMPUTE_LOCATION", "INCOMPATIBLE_FORWARDING_CONFIGURATION"
         ]
     }
 }
@@ -1170,9 +1116,9 @@ impl AsRef<str> for DetailedErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -1194,58 +1140,52 @@ impl AsRef<str> for DetailedErrorCode {
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
     #[allow(missing_docs)] // documentation missing in model
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "INTERNAL_FAILURE" => ErrorCode::InternalFailure,
             "VALIDATION_ERROR" => ErrorCode::ValidationError,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::InternalFailure => "INTERNAL_FAILURE",
             ErrorCode::ValidationError => "VALIDATION_ERROR",
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INTERNAL_FAILURE", "VALIDATION_ERROR"]
+        &[
+            "INTERNAL_FAILURE", "VALIDATION_ERROR"
+        ]
     }
 }
 impl AsRef<str> for ErrorCode {
@@ -1260,9 +1200,9 @@ impl AsRef<str> for ErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assetmodelstate = unimplemented!();
 /// match assetmodelstate {
@@ -1288,22 +1228,14 @@ impl AsRef<str> for ErrorCode {
 /// Specifically, when `assetmodelstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssetModelState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssetModelState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1318,7 +1250,7 @@ pub enum AssetModelState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetModelState {
     fn from(s: &str) -> Self {
@@ -1329,17 +1261,17 @@ impl std::convert::From<&str> for AssetModelState {
             "FAILED" => AssetModelState::Failed,
             "PROPAGATING" => AssetModelState::Propagating,
             "UPDATING" => AssetModelState::Updating,
-            other => AssetModelState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssetModelState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssetModelState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssetModelState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssetModelState::from(s))
+                }
+            }
 impl AssetModelState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1350,18 +1282,13 @@ impl AssetModelState {
             AssetModelState::Failed => "FAILED",
             AssetModelState::Propagating => "PROPAGATING",
             AssetModelState::Updating => "UPDATING",
-            AssetModelState::Unknown(value) => value.as_str(),
+            AssetModelState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "DELETING",
-            "FAILED",
-            "PROPAGATING",
-            "UPDATING",
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "PROPAGATING", "UPDATING"
         ]
     }
 }
@@ -1374,7 +1301,7 @@ impl AsRef<str> for AssetModelState {
 /// <p>Contains information about a composite model in an asset model. This object contains the asset property definitions that you define in the composite model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelCompositeModel {
+pub struct AssetModelCompositeModel  {
     /// <p>The name of the composite model.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1393,29 +1320,29 @@ pub struct AssetModelCompositeModel {
 }
 impl AssetModelCompositeModel {
     /// <p>The name of the composite model.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the composite model.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::model::AssetModelProperty]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::AssetModelProperty]> {
         self.properties.as_deref()
     }
     /// <p> The ID of the asset model composite model. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
 pub mod asset_model_composite_model {
-
+    
     /// A builder for [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1433,8 +1360,7 @@ pub mod asset_model_composite_model {
         }
         /// <p>The name of the composite model.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the composite model.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1443,8 +1369,7 @@ pub mod asset_model_composite_model {
         }
         /// <p>The description of the composite model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1453,8 +1378,7 @@ pub mod asset_model_composite_model {
         }
         /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `properties`.
         ///
@@ -1463,17 +1387,13 @@ pub mod asset_model_composite_model {
         /// <p>The asset property definitions for this composite model.</p>
         pub fn properties(mut self, input: crate::model::AssetModelProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>The asset property definitions for this composite model.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>) -> Self {
+            self.properties = input; self
         }
         /// <p> The ID of the asset model composite model. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1482,20 +1402,26 @@ pub mod asset_model_composite_model {
         }
         /// <p> The ID of the asset model composite model. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
         pub fn build(self) -> crate::model::AssetModelCompositeModel {
             crate::model::AssetModelCompositeModel {
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                properties: self.properties,
-                id: self.id,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                properties: self.properties
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelCompositeModel {
     /// Creates a new builder-style object to manufacture [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
@@ -1507,7 +1433,7 @@ impl AssetModelCompositeModel {
 /// <p>Contains information about an asset model property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelProperty {
+pub struct AssetModelProperty  {
     /// <p>The ID of the asset model property.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1529,33 +1455,33 @@ pub struct AssetModelProperty {
 }
 impl AssetModelProperty {
     /// <p>The ID of the asset model property.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the asset model property.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the asset model property.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The property type (see <code>PropertyType</code>).</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PropertyType> {
         self.r#type.as_ref()
     }
 }
 /// See [`AssetModelProperty`](crate::model::AssetModelProperty).
 pub mod asset_model_property {
-
+    
     /// A builder for [`AssetModelProperty`](crate::model::AssetModelProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1574,8 +1500,7 @@ pub mod asset_model_property {
         }
         /// <p>The ID of the asset model property.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the asset model property.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1584,8 +1509,7 @@ pub mod asset_model_property {
         }
         /// <p>The name of the asset model property.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The data type of the asset model property.</p>
         pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
@@ -1593,12 +1517,8 @@ pub mod asset_model_property {
             self
         }
         /// <p>The data type of the asset model property.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::PropertyDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::PropertyDataType>) -> Self {
+            self.data_type = input; self
         }
         /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1606,12 +1526,8 @@ pub mod asset_model_property {
             self
         }
         /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-        pub fn set_data_type_spec(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_type_spec = input;
-            self
+        pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type_spec = input; self
         }
         /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1620,8 +1536,7 @@ pub mod asset_model_property {
         }
         /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// <p>The property type (see <code>PropertyType</code>).</p>
         pub fn r#type(mut self, input: crate::model::PropertyType) -> Self {
@@ -1630,21 +1545,28 @@ pub mod asset_model_property {
         }
         /// <p>The property type (see <code>PropertyType</code>).</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PropertyType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelProperty`](crate::model::AssetModelProperty).
         pub fn build(self) -> crate::model::AssetModelProperty {
             crate::model::AssetModelProperty {
-                id: self.id,
-                name: self.name,
-                data_type: self.data_type,
-                data_type_spec: self.data_type_spec,
-                unit: self.unit,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                data_type: self.data_type
+                ,
+                data_type_spec: self.data_type_spec
+                ,
+                unit: self.unit
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelProperty {
     /// Creates a new builder-style object to manufacture [`AssetModelProperty`](crate::model::AssetModelProperty).
@@ -1656,7 +1578,7 @@ impl AssetModelProperty {
 /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyType {
+pub struct PropertyType  {
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::Attribute>,
@@ -1672,25 +1594,25 @@ pub struct PropertyType {
 }
 impl PropertyType {
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::Attribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::Attribute> {
         self.attribute.as_ref()
     }
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
-    pub fn measurement(&self) -> std::option::Option<&crate::model::Measurement> {
+    pub fn measurement(&self) -> std::option::Option<& crate::model::Measurement> {
         self.measurement.as_ref()
     }
     /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
-    pub fn transform(&self) -> std::option::Option<&crate::model::Transform> {
+    pub fn transform(&self) -> std::option::Option<& crate::model::Transform> {
         self.transform.as_ref()
     }
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
-    pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
+    pub fn metric(&self) -> std::option::Option<& crate::model::Metric> {
         self.metric.as_ref()
     }
 }
 /// See [`PropertyType`](crate::model::PropertyType).
 pub mod property_type {
-
+    
     /// A builder for [`PropertyType`](crate::model::PropertyType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1706,12 +1628,8 @@ pub mod property_type {
             self
         }
         /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::Attribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::Attribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
         pub fn measurement(mut self, input: crate::model::Measurement) -> Self {
@@ -1719,12 +1637,8 @@ pub mod property_type {
             self
         }
         /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
-        pub fn set_measurement(
-            mut self,
-            input: std::option::Option<crate::model::Measurement>,
-        ) -> Self {
-            self.measurement = input;
-            self
+        pub fn set_measurement(mut self, input: std::option::Option<crate::model::Measurement>) -> Self {
+            self.measurement = input; self
         }
         /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
         pub fn transform(mut self, input: crate::model::Transform) -> Self {
@@ -1732,12 +1646,8 @@ pub mod property_type {
             self
         }
         /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
-        pub fn set_transform(
-            mut self,
-            input: std::option::Option<crate::model::Transform>,
-        ) -> Self {
-            self.transform = input;
-            self
+        pub fn set_transform(mut self, input: std::option::Option<crate::model::Transform>) -> Self {
+            self.transform = input; self
         }
         /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
         pub fn metric(mut self, input: crate::model::Metric) -> Self {
@@ -1746,19 +1656,24 @@ pub mod property_type {
         }
         /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
         pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
-            self.metric = input;
-            self
+            self.metric = input; self
         }
         /// Consumes the builder and constructs a [`PropertyType`](crate::model::PropertyType).
         pub fn build(self) -> crate::model::PropertyType {
             crate::model::PropertyType {
-                attribute: self.attribute,
-                measurement: self.measurement,
-                transform: self.transform,
-                metric: self.metric,
+                attribute: self.attribute
+                ,
+                measurement: self.measurement
+                ,
+                transform: self.transform
+                ,
+                metric: self.metric
+                ,
             }
         }
     }
+    
+    
 }
 impl PropertyType {
     /// Creates a new builder-style object to manufacture [`PropertyType`](crate::model::PropertyType).
@@ -1767,13 +1682,13 @@ impl PropertyType {
     }
 }
 
-/// <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p>
-/// <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
+/// <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p> 
+/// <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metric {
-    /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+pub struct Metric  {
+    /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
@@ -1788,27 +1703,27 @@ pub struct Metric {
     pub processing_config: std::option::Option<crate::model::MetricProcessingConfig>,
 }
 impl Metric {
-    /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+    /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn variables(&self) -> std::option::Option<&[crate::model::ExpressionVariable]> {
+    pub fn variables(&self) -> std::option::Option<& [crate::model::ExpressionVariable]> {
         self.variables.as_deref()
     }
     /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
-    pub fn window(&self) -> std::option::Option<&crate::model::MetricWindow> {
+    pub fn window(&self) -> std::option::Option<& crate::model::MetricWindow> {
         self.window.as_ref()
     }
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
-    pub fn processing_config(&self) -> std::option::Option<&crate::model::MetricProcessingConfig> {
+    pub fn processing_config(&self) -> std::option::Option<& crate::model::MetricProcessingConfig> {
         self.processing_config.as_ref()
     }
 }
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
-
+    
     /// A builder for [`Metric`](crate::model::Metric).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1818,17 +1733,16 @@ pub mod metric {
         pub(crate) processing_config: std::option::Option<crate::model::MetricProcessingConfig>,
     }
     impl Builder {
-        /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+        /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+        /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// Appends an item to `variables`.
         ///
@@ -1837,17 +1751,13 @@ pub mod metric {
         /// <p>The list of variables used in the expression.</p>
         pub fn variables(mut self, input: crate::model::ExpressionVariable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input);
-            self.variables = Some(v);
-            self
+                            v.push(input);
+                            self.variables = Some(v);
+                            self
         }
         /// <p>The list of variables used in the expression.</p>
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>) -> Self {
+            self.variables = input; self
         }
         /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
         pub fn window(mut self, input: crate::model::MetricWindow) -> Self {
@@ -1855,12 +1765,8 @@ pub mod metric {
             self
         }
         /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
-        pub fn set_window(
-            mut self,
-            input: std::option::Option<crate::model::MetricWindow>,
-        ) -> Self {
-            self.window = input;
-            self
+        pub fn set_window(mut self, input: std::option::Option<crate::model::MetricWindow>) -> Self {
+            self.window = input; self
         }
         /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
         pub fn processing_config(mut self, input: crate::model::MetricProcessingConfig) -> Self {
@@ -1868,23 +1774,25 @@ pub mod metric {
             self
         }
         /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
-        pub fn set_processing_config(
-            mut self,
-            input: std::option::Option<crate::model::MetricProcessingConfig>,
-        ) -> Self {
-            self.processing_config = input;
-            self
+        pub fn set_processing_config(mut self, input: std::option::Option<crate::model::MetricProcessingConfig>) -> Self {
+            self.processing_config = input; self
         }
         /// Consumes the builder and constructs a [`Metric`](crate::model::Metric).
         pub fn build(self) -> crate::model::Metric {
             crate::model::Metric {
-                expression: self.expression,
-                variables: self.variables,
-                window: self.window,
-                processing_config: self.processing_config,
+                expression: self.expression
+                ,
+                variables: self.variables
+                ,
+                window: self.window
+                ,
+                processing_config: self.processing_config
+                ,
             }
         }
     }
+    
+    
 }
 impl Metric {
     /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
@@ -1896,20 +1804,20 @@ impl Metric {
 /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricProcessingConfig {
+pub struct MetricProcessingConfig  {
     /// <p>The compute location for the given metric property. </p>
     #[doc(hidden)]
     pub compute_location: std::option::Option<crate::model::ComputeLocation>,
 }
 impl MetricProcessingConfig {
     /// <p>The compute location for the given metric property. </p>
-    pub fn compute_location(&self) -> std::option::Option<&crate::model::ComputeLocation> {
+    pub fn compute_location(&self) -> std::option::Option<& crate::model::ComputeLocation> {
         self.compute_location.as_ref()
     }
 }
 /// See [`MetricProcessingConfig`](crate::model::MetricProcessingConfig).
 pub mod metric_processing_config {
-
+    
     /// A builder for [`MetricProcessingConfig`](crate::model::MetricProcessingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1922,20 +1830,19 @@ pub mod metric_processing_config {
             self
         }
         /// <p>The compute location for the given metric property. </p>
-        pub fn set_compute_location(
-            mut self,
-            input: std::option::Option<crate::model::ComputeLocation>,
-        ) -> Self {
-            self.compute_location = input;
-            self
+        pub fn set_compute_location(mut self, input: std::option::Option<crate::model::ComputeLocation>) -> Self {
+            self.compute_location = input; self
         }
         /// Consumes the builder and constructs a [`MetricProcessingConfig`](crate::model::MetricProcessingConfig).
         pub fn build(self) -> crate::model::MetricProcessingConfig {
             crate::model::MetricProcessingConfig {
-                compute_location: self.compute_location,
+                compute_location: self.compute_location
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricProcessingConfig {
     /// Creates a new builder-style object to manufacture [`MetricProcessingConfig`](crate::model::MetricProcessingConfig).
@@ -1950,9 +1857,9 @@ impl MetricProcessingConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let computelocation = unimplemented!();
 /// match computelocation {
@@ -1974,58 +1881,52 @@ impl MetricProcessingConfig {
 /// Specifically, when `computelocation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComputeLocation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComputeLocation {
     #[allow(missing_docs)] // documentation missing in model
     Cloud,
     #[allow(missing_docs)] // documentation missing in model
     Edge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputeLocation {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD" => ComputeLocation::Cloud,
             "EDGE" => ComputeLocation::Edge,
-            other => ComputeLocation::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ComputeLocation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComputeLocation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComputeLocation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComputeLocation::from(s))
+                }
+            }
 impl ComputeLocation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComputeLocation::Cloud => "CLOUD",
             ComputeLocation::Edge => "EDGE",
-            ComputeLocation::Unknown(value) => value.as_str(),
+            ComputeLocation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD", "EDGE"]
+        &[
+            "CLOUD", "EDGE"
+        ]
     }
 }
 impl AsRef<str> for ComputeLocation {
@@ -2037,20 +1938,20 @@ impl AsRef<str> for ComputeLocation {
 /// <p>Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricWindow {
+pub struct MetricWindow  {
     /// <p>The tumbling time interval window.</p>
     #[doc(hidden)]
     pub tumbling: std::option::Option<crate::model::TumblingWindow>,
 }
 impl MetricWindow {
     /// <p>The tumbling time interval window.</p>
-    pub fn tumbling(&self) -> std::option::Option<&crate::model::TumblingWindow> {
+    pub fn tumbling(&self) -> std::option::Option<& crate::model::TumblingWindow> {
         self.tumbling.as_ref()
     }
 }
 /// See [`MetricWindow`](crate::model::MetricWindow).
 pub mod metric_window {
-
+    
     /// A builder for [`MetricWindow`](crate::model::MetricWindow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2063,20 +1964,19 @@ pub mod metric_window {
             self
         }
         /// <p>The tumbling time interval window.</p>
-        pub fn set_tumbling(
-            mut self,
-            input: std::option::Option<crate::model::TumblingWindow>,
-        ) -> Self {
-            self.tumbling = input;
-            self
+        pub fn set_tumbling(mut self, input: std::option::Option<crate::model::TumblingWindow>) -> Self {
+            self.tumbling = input; self
         }
         /// Consumes the builder and constructs a [`MetricWindow`](crate::model::MetricWindow).
         pub fn build(self) -> crate::model::MetricWindow {
             crate::model::MetricWindow {
-                tumbling: self.tumbling,
+                tumbling: self.tumbling
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricWindow {
     /// Creates a new builder-style object to manufacture [`MetricWindow`](crate::model::MetricWindow).
@@ -2085,72 +1985,72 @@ impl MetricWindow {
     }
 }
 
-/// <p>Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time window. You can use this window in metrics to aggregate data from properties and other assets.</p>
-/// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code> represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds in <code>offset</code>.</p>
+/// <p>Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time window. You can use this window in metrics to aggregate data from properties and other assets.</p> 
+/// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code> represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds in <code>offset</code>.</p> 
 /// <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and <code>PT5H</code> represents 5 hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TumblingWindow {
-    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
-    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
+pub struct TumblingWindow  {
+    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p> 
+    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p> 
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
     #[doc(hidden)]
     pub interval: std::option::Option<std::string::String>,
-    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
-    /// <ul>
-    /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-    /// <ul>
-    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
-    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-    /// <ul>
-    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
-    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li>
-    /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-    /// <ul>
-    /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li>
-    /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
-    /// </ul> </li>
+    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p> 
+    /// <ul> 
+    /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+    /// <ul> 
+    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> 
+    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+    /// <ul> 
+    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> 
+    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li> 
+    /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+    /// <ul> 
+    /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li> 
+    /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
     #[doc(hidden)]
     pub offset: std::option::Option<std::string::String>,
 }
 impl TumblingWindow {
-    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
-    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
+    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p> 
+    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p> 
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
-    pub fn interval(&self) -> std::option::Option<&str> {
+    pub fn interval(&self) -> std::option::Option<& str> {
         self.interval.as_deref()
     }
-    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
-    /// <ul>
-    /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-    /// <ul>
-    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
-    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-    /// <ul>
-    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
-    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li>
-    /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-    /// <ul>
-    /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li>
-    /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
-    /// </ul> </li>
+    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p> 
+    /// <ul> 
+    /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+    /// <ul> 
+    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> 
+    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+    /// <ul> 
+    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> 
+    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li> 
+    /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+    /// <ul> 
+    /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li> 
+    /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn offset(&self) -> std::option::Option<&str> {
+    pub fn offset(&self) -> std::option::Option<& str> {
         self.offset.as_deref()
     }
 }
 /// See [`TumblingWindow`](crate::model::TumblingWindow).
 pub mod tumbling_window {
-
+    
     /// A builder for [`TumblingWindow`](crate::model::TumblingWindow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2158,74 +2058,76 @@ pub mod tumbling_window {
         pub(crate) offset: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
-        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
+        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p> 
+        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p> 
         /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
         pub fn interval(mut self, input: impl Into<std::string::String>) -> Self {
             self.interval = Some(input.into());
             self
         }
-        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
-        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
+        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p> 
+        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p> 
         /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
         pub fn set_interval(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.interval = input;
-            self
+            self.interval = input; self
         }
-        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
-        /// <ul>
-        /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-        /// <ul>
-        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
-        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-        /// <ul>
-        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
-        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li>
-        /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-        /// <ul>
-        /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li>
-        /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
-        /// </ul> </li>
+        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p> 
+        /// <ul> 
+        /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+        /// <ul> 
+        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> 
+        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+        /// <ul> 
+        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> 
+        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li> 
+        /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+        /// <ul> 
+        /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li> 
+        /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li> 
+        /// </ul> </li> 
         /// </ul>
         pub fn offset(mut self, input: impl Into<std::string::String>) -> Self {
             self.offset = Some(input.into());
             self
         }
-        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
-        /// <ul>
-        /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-        /// <ul>
-        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
-        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-        /// <ul>
-        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
-        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li>
-        /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
-        /// <ul>
-        /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li>
-        /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
-        /// </ul> </li>
+        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p> 
+        /// <ul> 
+        /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+        /// <ul> 
+        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> 
+        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+        /// <ul> 
+        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li> 
+        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li> 
+        /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p> 
+        /// <ul> 
+        /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li> 
+        /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li> 
+        /// </ul> </li> 
         /// </ul>
         pub fn set_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offset = input;
-            self
+            self.offset = input; self
         }
         /// Consumes the builder and constructs a [`TumblingWindow`](crate::model::TumblingWindow).
         pub fn build(self) -> crate::model::TumblingWindow {
             crate::model::TumblingWindow {
-                interval: self.interval,
-                offset: self.offset,
+                interval: self.interval
+                ,
+                offset: self.offset
+                ,
             }
         }
     }
+    
+    
 }
 impl TumblingWindow {
     /// Creates a new builder-style object to manufacture [`TumblingWindow`](crate::model::TumblingWindow).
@@ -2237,7 +2139,7 @@ impl TumblingWindow {
 /// <p>Contains expression variable information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpressionVariable {
+pub struct ExpressionVariable  {
     /// <p>The friendly name of the variable to be used in the expression.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2247,17 +2149,17 @@ pub struct ExpressionVariable {
 }
 impl ExpressionVariable {
     /// <p>The friendly name of the variable to be used in the expression.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The variable that identifies an asset property from which to use values.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::VariableValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::VariableValue> {
         self.value.as_ref()
     }
 }
 /// See [`ExpressionVariable`](crate::model::ExpressionVariable).
 pub mod expression_variable {
-
+    
     /// A builder for [`ExpressionVariable`](crate::model::ExpressionVariable).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2272,8 +2174,7 @@ pub mod expression_variable {
         }
         /// <p>The friendly name of the variable to be used in the expression.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The variable that identifies an asset property from which to use values.</p>
         pub fn value(mut self, input: crate::model::VariableValue) -> Self {
@@ -2281,21 +2182,21 @@ pub mod expression_variable {
             self
         }
         /// <p>The variable that identifies an asset property from which to use values.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::VariableValue>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::VariableValue>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ExpressionVariable`](crate::model::ExpressionVariable).
         pub fn build(self) -> crate::model::ExpressionVariable {
             crate::model::ExpressionVariable {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ExpressionVariable {
     /// Creates a new builder-style object to manufacture [`ExpressionVariable`](crate::model::ExpressionVariable).
@@ -2307,29 +2208,29 @@ impl ExpressionVariable {
 /// <p>Identifies a property value used in an expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VariableValue {
+pub struct VariableValue  {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
     #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p> 
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
     pub hierarchy_id: std::option::Option<std::string::String>,
 }
 impl VariableValue {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> std::option::Option<& str> {
         self.property_id.as_deref()
     }
-    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p> 
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
 }
 /// See [`VariableValue`](crate::model::VariableValue).
 pub mod variable_value {
-
+    
     /// A builder for [`VariableValue`](crate::model::VariableValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2344,29 +2245,31 @@ pub mod variable_value {
         }
         /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property_id = input;
-            self
+            self.property_id = input; self
         }
-        /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+        /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p> 
         /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hierarchy_id = Some(input.into());
             self
         }
-        /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+        /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p> 
         /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hierarchy_id = input;
-            self
+            self.hierarchy_id = input; self
         }
         /// Consumes the builder and constructs a [`VariableValue`](crate::model::VariableValue).
         pub fn build(self) -> crate::model::VariableValue {
             crate::model::VariableValue {
-                property_id: self.property_id,
-                hierarchy_id: self.hierarchy_id,
+                property_id: self.property_id
+                ,
+                hierarchy_id: self.hierarchy_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VariableValue {
     /// Creates a new builder-style object to manufacture [`VariableValue`](crate::model::VariableValue).
@@ -2375,12 +2278,12 @@ impl VariableValue {
     }
 }
 
-/// <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
+/// <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Transform {
-    /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+pub struct Transform  {
+    /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
@@ -2392,25 +2295,23 @@ pub struct Transform {
     pub processing_config: std::option::Option<crate::model::TransformProcessingConfig>,
 }
 impl Transform {
-    /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+    /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn variables(&self) -> std::option::Option<&[crate::model::ExpressionVariable]> {
+    pub fn variables(&self) -> std::option::Option<& [crate::model::ExpressionVariable]> {
         self.variables.as_deref()
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
-    pub fn processing_config(
-        &self,
-    ) -> std::option::Option<&crate::model::TransformProcessingConfig> {
+    pub fn processing_config(&self) -> std::option::Option<& crate::model::TransformProcessingConfig> {
         self.processing_config.as_ref()
     }
 }
 /// See [`Transform`](crate::model::Transform).
 pub mod transform {
-
+    
     /// A builder for [`Transform`](crate::model::Transform).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2419,17 +2320,16 @@ pub mod transform {
         pub(crate) processing_config: std::option::Option<crate::model::TransformProcessingConfig>,
     }
     impl Builder {
-        /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+        /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
+        /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// Appends an item to `variables`.
         ///
@@ -2438,17 +2338,13 @@ pub mod transform {
         /// <p>The list of variables used in the expression.</p>
         pub fn variables(mut self, input: crate::model::ExpressionVariable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input);
-            self.variables = Some(v);
-            self
+                            v.push(input);
+                            self.variables = Some(v);
+                            self
         }
         /// <p>The list of variables used in the expression.</p>
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>) -> Self {
+            self.variables = input; self
         }
         /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
         pub fn processing_config(mut self, input: crate::model::TransformProcessingConfig) -> Self {
@@ -2456,22 +2352,23 @@ pub mod transform {
             self
         }
         /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
-        pub fn set_processing_config(
-            mut self,
-            input: std::option::Option<crate::model::TransformProcessingConfig>,
-        ) -> Self {
-            self.processing_config = input;
-            self
+        pub fn set_processing_config(mut self, input: std::option::Option<crate::model::TransformProcessingConfig>) -> Self {
+            self.processing_config = input; self
         }
         /// Consumes the builder and constructs a [`Transform`](crate::model::Transform).
         pub fn build(self) -> crate::model::Transform {
             crate::model::Transform {
-                expression: self.expression,
-                variables: self.variables,
-                processing_config: self.processing_config,
+                expression: self.expression
+                ,
+                variables: self.variables
+                ,
+                processing_config: self.processing_config
+                ,
             }
         }
     }
+    
+    
 }
 impl Transform {
     /// Creates a new builder-style object to manufacture [`Transform`](crate::model::Transform).
@@ -2483,7 +2380,7 @@ impl Transform {
 /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransformProcessingConfig {
+pub struct TransformProcessingConfig  {
     /// <p>The compute location for the given transform property. </p>
     #[doc(hidden)]
     pub compute_location: std::option::Option<crate::model::ComputeLocation>,
@@ -2493,17 +2390,17 @@ pub struct TransformProcessingConfig {
 }
 impl TransformProcessingConfig {
     /// <p>The compute location for the given transform property. </p>
-    pub fn compute_location(&self) -> std::option::Option<&crate::model::ComputeLocation> {
+    pub fn compute_location(&self) -> std::option::Option<& crate::model::ComputeLocation> {
         self.compute_location.as_ref()
     }
     /// <p>The forwarding configuration for a given property.</p>
-    pub fn forwarding_config(&self) -> std::option::Option<&crate::model::ForwardingConfig> {
+    pub fn forwarding_config(&self) -> std::option::Option<& crate::model::ForwardingConfig> {
         self.forwarding_config.as_ref()
     }
 }
 /// See [`TransformProcessingConfig`](crate::model::TransformProcessingConfig).
 pub mod transform_processing_config {
-
+    
     /// A builder for [`TransformProcessingConfig`](crate::model::TransformProcessingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2517,12 +2414,8 @@ pub mod transform_processing_config {
             self
         }
         /// <p>The compute location for the given transform property. </p>
-        pub fn set_compute_location(
-            mut self,
-            input: std::option::Option<crate::model::ComputeLocation>,
-        ) -> Self {
-            self.compute_location = input;
-            self
+        pub fn set_compute_location(mut self, input: std::option::Option<crate::model::ComputeLocation>) -> Self {
+            self.compute_location = input; self
         }
         /// <p>The forwarding configuration for a given property.</p>
         pub fn forwarding_config(mut self, input: crate::model::ForwardingConfig) -> Self {
@@ -2530,21 +2423,21 @@ pub mod transform_processing_config {
             self
         }
         /// <p>The forwarding configuration for a given property.</p>
-        pub fn set_forwarding_config(
-            mut self,
-            input: std::option::Option<crate::model::ForwardingConfig>,
-        ) -> Self {
-            self.forwarding_config = input;
-            self
+        pub fn set_forwarding_config(mut self, input: std::option::Option<crate::model::ForwardingConfig>) -> Self {
+            self.forwarding_config = input; self
         }
         /// Consumes the builder and constructs a [`TransformProcessingConfig`](crate::model::TransformProcessingConfig).
         pub fn build(self) -> crate::model::TransformProcessingConfig {
             crate::model::TransformProcessingConfig {
-                compute_location: self.compute_location,
-                forwarding_config: self.forwarding_config,
+                compute_location: self.compute_location
+                ,
+                forwarding_config: self.forwarding_config
+                ,
             }
         }
     }
+    
+    
 }
 impl TransformProcessingConfig {
     /// Creates a new builder-style object to manufacture [`TransformProcessingConfig`](crate::model::TransformProcessingConfig).
@@ -2556,20 +2449,20 @@ impl TransformProcessingConfig {
 /// <p>The forwarding configuration for a given property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForwardingConfig {
+pub struct ForwardingConfig  {
     /// <p>The forwarding state for the given property. </p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ForwardingConfigState>,
 }
 impl ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ForwardingConfigState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ForwardingConfigState> {
         self.state.as_ref()
     }
 }
 /// See [`ForwardingConfig`](crate::model::ForwardingConfig).
 pub mod forwarding_config {
-
+    
     /// A builder for [`ForwardingConfig`](crate::model::ForwardingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2582,18 +2475,19 @@ pub mod forwarding_config {
             self
         }
         /// <p>The forwarding state for the given property. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ForwardingConfigState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ForwardingConfigState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`ForwardingConfig`](crate::model::ForwardingConfig).
         pub fn build(self) -> crate::model::ForwardingConfig {
-            crate::model::ForwardingConfig { state: self.state }
+            crate::model::ForwardingConfig {
+                state: self.state
+                ,
+            }
         }
     }
+    
+    
 }
 impl ForwardingConfig {
     /// Creates a new builder-style object to manufacture [`ForwardingConfig`](crate::model::ForwardingConfig).
@@ -2608,9 +2502,9 @@ impl ForwardingConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let forwardingconfigstate = unimplemented!();
 /// match forwardingconfigstate {
@@ -2632,60 +2526,52 @@ impl ForwardingConfig {
 /// Specifically, when `forwardingconfigstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ForwardingConfigState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ForwardingConfigState {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ForwardingConfigState {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ForwardingConfigState::Disabled,
             "ENABLED" => ForwardingConfigState::Enabled,
-            other => {
-                ForwardingConfigState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ForwardingConfigState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ForwardingConfigState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ForwardingConfigState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ForwardingConfigState::from(s))
+                }
+            }
 impl ForwardingConfigState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ForwardingConfigState::Disabled => "DISABLED",
             ForwardingConfigState::Enabled => "ENABLED",
-            ForwardingConfigState::Unknown(value) => value.as_str(),
+            ForwardingConfigState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for ForwardingConfigState {
@@ -2697,52 +2583,45 @@ impl AsRef<str> for ForwardingConfigState {
 /// <p>Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Measurement {
+pub struct Measurement  {
     /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
     #[doc(hidden)]
     pub processing_config: std::option::Option<crate::model::MeasurementProcessingConfig>,
 }
 impl Measurement {
     /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
-    pub fn processing_config(
-        &self,
-    ) -> std::option::Option<&crate::model::MeasurementProcessingConfig> {
+    pub fn processing_config(&self) -> std::option::Option<& crate::model::MeasurementProcessingConfig> {
         self.processing_config.as_ref()
     }
 }
 /// See [`Measurement`](crate::model::Measurement).
 pub mod measurement {
-
+    
     /// A builder for [`Measurement`](crate::model::Measurement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) processing_config:
-            std::option::Option<crate::model::MeasurementProcessingConfig>,
+        pub(crate) processing_config: std::option::Option<crate::model::MeasurementProcessingConfig>,
     }
     impl Builder {
         /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
-        pub fn processing_config(
-            mut self,
-            input: crate::model::MeasurementProcessingConfig,
-        ) -> Self {
+        pub fn processing_config(mut self, input: crate::model::MeasurementProcessingConfig) -> Self {
             self.processing_config = Some(input);
             self
         }
         /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
-        pub fn set_processing_config(
-            mut self,
-            input: std::option::Option<crate::model::MeasurementProcessingConfig>,
-        ) -> Self {
-            self.processing_config = input;
-            self
+        pub fn set_processing_config(mut self, input: std::option::Option<crate::model::MeasurementProcessingConfig>) -> Self {
+            self.processing_config = input; self
         }
         /// Consumes the builder and constructs a [`Measurement`](crate::model::Measurement).
         pub fn build(self) -> crate::model::Measurement {
             crate::model::Measurement {
-                processing_config: self.processing_config,
+                processing_config: self.processing_config
+                ,
             }
         }
     }
+    
+    
 }
 impl Measurement {
     /// Creates a new builder-style object to manufacture [`Measurement`](crate::model::Measurement).
@@ -2754,20 +2633,20 @@ impl Measurement {
 /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeasurementProcessingConfig {
+pub struct MeasurementProcessingConfig  {
     /// <p>The forwarding configuration for the given measurement property. </p>
     #[doc(hidden)]
     pub forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
 }
 impl MeasurementProcessingConfig {
     /// <p>The forwarding configuration for the given measurement property. </p>
-    pub fn forwarding_config(&self) -> std::option::Option<&crate::model::ForwardingConfig> {
+    pub fn forwarding_config(&self) -> std::option::Option<& crate::model::ForwardingConfig> {
         self.forwarding_config.as_ref()
     }
 }
 /// See [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig).
 pub mod measurement_processing_config {
-
+    
     /// A builder for [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2780,20 +2659,19 @@ pub mod measurement_processing_config {
             self
         }
         /// <p>The forwarding configuration for the given measurement property. </p>
-        pub fn set_forwarding_config(
-            mut self,
-            input: std::option::Option<crate::model::ForwardingConfig>,
-        ) -> Self {
-            self.forwarding_config = input;
-            self
+        pub fn set_forwarding_config(mut self, input: std::option::Option<crate::model::ForwardingConfig>) -> Self {
+            self.forwarding_config = input; self
         }
         /// Consumes the builder and constructs a [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig).
         pub fn build(self) -> crate::model::MeasurementProcessingConfig {
             crate::model::MeasurementProcessingConfig {
-                forwarding_config: self.forwarding_config,
+                forwarding_config: self.forwarding_config
+                ,
             }
         }
     }
+    
+    
 }
 impl MeasurementProcessingConfig {
     /// Creates a new builder-style object to manufacture [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig).
@@ -2805,20 +2683,20 @@ impl MeasurementProcessingConfig {
 /// <p>Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl Attribute {
     /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
-
+    
     /// A builder for [`Attribute`](crate::model::Attribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2831,20 +2709,19 @@ pub mod attribute {
             self
         }
         /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// Consumes the builder and constructs a [`Attribute`](crate::model::Attribute).
         pub fn build(self) -> crate::model::Attribute {
             crate::model::Attribute {
-                default_value: self.default_value,
+                default_value: self.default_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Attribute {
     /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
@@ -2859,9 +2736,9 @@ impl Attribute {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let propertydatatype = unimplemented!();
 /// match propertydatatype {
@@ -2886,22 +2763,14 @@ impl Attribute {
 /// Specifically, when `propertydatatype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PropertyDataType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PropertyDataType {
     #[allow(missing_docs)] // documentation missing in model
     Boolean,
@@ -2914,7 +2783,7 @@ pub enum PropertyDataType {
     #[allow(missing_docs)] // documentation missing in model
     Struct,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PropertyDataType {
     fn from(s: &str) -> Self {
@@ -2924,17 +2793,17 @@ impl std::convert::From<&str> for PropertyDataType {
             "INTEGER" => PropertyDataType::Integer,
             "STRING" => PropertyDataType::String,
             "STRUCT" => PropertyDataType::Struct,
-            other => PropertyDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PropertyDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PropertyDataType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PropertyDataType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PropertyDataType::from(s))
+                }
+            }
 impl PropertyDataType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2944,12 +2813,14 @@ impl PropertyDataType {
             PropertyDataType::Integer => "INTEGER",
             PropertyDataType::String => "STRING",
             PropertyDataType::Struct => "STRUCT",
-            PropertyDataType::Unknown(value) => value.as_str(),
+            PropertyDataType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BOOLEAN", "DOUBLE", "INTEGER", "STRING", "STRUCT"]
+        &[
+            "BOOLEAN", "DOUBLE", "INTEGER", "STRING", "STRUCT"
+        ]
     }
 }
 impl AsRef<str> for PropertyDataType {
@@ -2961,7 +2832,7 @@ impl AsRef<str> for PropertyDataType {
 /// <p>Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelHierarchy {
+pub struct AssetModelHierarchy  {
     /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2974,21 +2845,21 @@ pub struct AssetModelHierarchy {
 }
 impl AssetModelHierarchy {
     /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
-    pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn child_asset_model_id(&self) -> std::option::Option<& str> {
         self.child_asset_model_id.as_deref()
     }
 }
 /// See [`AssetModelHierarchy`](crate::model::AssetModelHierarchy).
 pub mod asset_model_hierarchy {
-
+    
     /// A builder for [`AssetModelHierarchy`](crate::model::AssetModelHierarchy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3004,8 +2875,7 @@ pub mod asset_model_hierarchy {
         }
         /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3014,8 +2884,7 @@ pub mod asset_model_hierarchy {
         }
         /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
         pub fn child_asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3023,22 +2892,23 @@ pub mod asset_model_hierarchy {
             self
         }
         /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
-        pub fn set_child_asset_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.child_asset_model_id = input;
-            self
+        pub fn set_child_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.child_asset_model_id = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelHierarchy`](crate::model::AssetModelHierarchy).
         pub fn build(self) -> crate::model::AssetModelHierarchy {
             crate::model::AssetModelHierarchy {
-                id: self.id,
-                name: self.name,
-                child_asset_model_id: self.child_asset_model_id,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                child_asset_model_id: self.child_asset_model_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelHierarchy {
     /// Creates a new builder-style object to manufacture [`AssetModelHierarchy`](crate::model::AssetModelHierarchy).
@@ -3050,7 +2920,7 @@ impl AssetModelHierarchy {
 /// <p>Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetStatus {
+pub struct AssetStatus  {
     /// <p>The current status of the asset.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::AssetState>,
@@ -3060,17 +2930,17 @@ pub struct AssetStatus {
 }
 impl AssetStatus {
     /// <p>The current status of the asset.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::AssetState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::AssetState> {
         self.state.as_ref()
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorDetails> {
         self.error.as_ref()
     }
 }
 /// See [`AssetStatus`](crate::model::AssetStatus).
 pub mod asset_status {
-
+    
     /// A builder for [`AssetStatus`](crate::model::AssetStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3085,8 +2955,7 @@ pub mod asset_status {
         }
         /// <p>The current status of the asset.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::AssetState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Contains associated error information, if any.</p>
         pub fn error(mut self, input: crate::model::ErrorDetails) -> Self {
@@ -3095,17 +2964,20 @@ pub mod asset_status {
         }
         /// <p>Contains associated error information, if any.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`AssetStatus`](crate::model::AssetStatus).
         pub fn build(self) -> crate::model::AssetStatus {
             crate::model::AssetStatus {
-                state: self.state,
-                error: self.error,
+                state: self.state
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetStatus {
     /// Creates a new builder-style object to manufacture [`AssetStatus`](crate::model::AssetStatus).
@@ -3120,9 +2992,9 @@ impl AssetStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assetstate = unimplemented!();
 /// match assetstate {
@@ -3147,22 +3019,14 @@ impl AssetStatus {
 /// Specifically, when `assetstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssetState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssetState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3175,7 +3039,7 @@ pub enum AssetState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetState {
     fn from(s: &str) -> Self {
@@ -3185,17 +3049,17 @@ impl std::convert::From<&str> for AssetState {
             "DELETING" => AssetState::Deleting,
             "FAILED" => AssetState::Failed,
             "UPDATING" => AssetState::Updating,
-            other => AssetState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssetState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssetState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssetState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssetState::from(s))
+                }
+            }
 impl AssetState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3205,12 +3069,14 @@ impl AssetState {
             AssetState::Deleting => "DELETING",
             AssetState::Failed => "FAILED",
             AssetState::Updating => "UPDATING",
-            AssetState::Unknown(value) => value.as_str(),
+            AssetState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for AssetState {
@@ -3225,9 +3091,9 @@ impl AsRef<str> for AssetState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permission = unimplemented!();
 /// match permission {
@@ -3249,58 +3115,52 @@ impl AsRef<str> for AssetState {
 /// Specifically, when `permission` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Permission::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     Administrator,
     #[allow(missing_docs)] // documentation missing in model
     Viewer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Permission {
     fn from(s: &str) -> Self {
         match s {
             "ADMINISTRATOR" => Permission::Administrator,
             "VIEWER" => Permission::Viewer,
-            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Permission {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Permission::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Permission::from(s))
+                }
+            }
 impl Permission {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Permission::Administrator => "ADMINISTRATOR",
             Permission::Viewer => "VIEWER",
-            Permission::Unknown(value) => value.as_str(),
+            Permission::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADMINISTRATOR", "VIEWER"]
+        &[
+            "ADMINISTRATOR", "VIEWER"
+        ]
     }
 }
 impl AsRef<str> for Permission {
@@ -3312,7 +3172,7 @@ impl AsRef<str> for Permission {
 /// <p>Contains an IoT SiteWise Monitor resource ID for a portal or project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>A portal resource.</p>
     #[doc(hidden)]
     pub portal: std::option::Option<crate::model::PortalResource>,
@@ -3322,17 +3182,17 @@ pub struct Resource {
 }
 impl Resource {
     /// <p>A portal resource.</p>
-    pub fn portal(&self) -> std::option::Option<&crate::model::PortalResource> {
+    pub fn portal(&self) -> std::option::Option<& crate::model::PortalResource> {
         self.portal.as_ref()
     }
     /// <p>A project resource.</p>
-    pub fn project(&self) -> std::option::Option<&crate::model::ProjectResource> {
+    pub fn project(&self) -> std::option::Option<& crate::model::ProjectResource> {
         self.project.as_ref()
     }
 }
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
-
+    
     /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3346,12 +3206,8 @@ pub mod resource {
             self
         }
         /// <p>A portal resource.</p>
-        pub fn set_portal(
-            mut self,
-            input: std::option::Option<crate::model::PortalResource>,
-        ) -> Self {
-            self.portal = input;
-            self
+        pub fn set_portal(mut self, input: std::option::Option<crate::model::PortalResource>) -> Self {
+            self.portal = input; self
         }
         /// <p>A project resource.</p>
         pub fn project(mut self, input: crate::model::ProjectResource) -> Self {
@@ -3359,21 +3215,21 @@ pub mod resource {
             self
         }
         /// <p>A project resource.</p>
-        pub fn set_project(
-            mut self,
-            input: std::option::Option<crate::model::ProjectResource>,
-        ) -> Self {
-            self.project = input;
-            self
+        pub fn set_project(mut self, input: std::option::Option<crate::model::ProjectResource>) -> Self {
+            self.project = input; self
         }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
-                portal: self.portal,
-                project: self.project,
+                portal: self.portal
+                ,
+                project: self.project
+                ,
             }
         }
     }
+    
+    
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
@@ -3385,20 +3241,20 @@ impl Resource {
 /// <p>Identifies a specific IoT SiteWise Monitor project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectResource {
+pub struct ProjectResource  {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ProjectResource {
     /// <p>The ID of the project.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`ProjectResource`](crate::model::ProjectResource).
 pub mod project_resource {
-
+    
     /// A builder for [`ProjectResource`](crate::model::ProjectResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3412,14 +3268,18 @@ pub mod project_resource {
         }
         /// <p>The ID of the project.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`ProjectResource`](crate::model::ProjectResource).
         pub fn build(self) -> crate::model::ProjectResource {
-            crate::model::ProjectResource { id: self.id }
+            crate::model::ProjectResource {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl ProjectResource {
     /// Creates a new builder-style object to manufacture [`ProjectResource`](crate::model::ProjectResource).
@@ -3431,20 +3291,20 @@ impl ProjectResource {
 /// <p>Identifies an IoT SiteWise Monitor portal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortalResource {
+pub struct PortalResource  {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl PortalResource {
     /// <p>The ID of the portal.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`PortalResource`](crate::model::PortalResource).
 pub mod portal_resource {
-
+    
     /// A builder for [`PortalResource`](crate::model::PortalResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3458,14 +3318,18 @@ pub mod portal_resource {
         }
         /// <p>The ID of the portal.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`PortalResource`](crate::model::PortalResource).
         pub fn build(self) -> crate::model::PortalResource {
-            crate::model::PortalResource { id: self.id }
+            crate::model::PortalResource {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl PortalResource {
     /// Creates a new builder-style object to manufacture [`PortalResource`](crate::model::PortalResource).
@@ -3474,12 +3338,12 @@ impl PortalResource {
     }
 }
 
-/// <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p> <note>
-/// <p>Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM Identity Center identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">IAM Identity Center console</a>.</p>
+/// <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p> <note> 
+/// <p>Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM Identity Center identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">IAM Identity Center console</a>.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Identity {
+pub struct Identity  {
     /// <p>An IAM Identity Center user identity.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::UserIdentity>,
@@ -3495,25 +3359,25 @@ pub struct Identity {
 }
 impl Identity {
     /// <p>An IAM Identity Center user identity.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::UserIdentity> {
+    pub fn user(&self) -> std::option::Option<& crate::model::UserIdentity> {
         self.user.as_ref()
     }
     /// <p>An IAM Identity Center group identity.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::GroupIdentity> {
+    pub fn group(&self) -> std::option::Option<& crate::model::GroupIdentity> {
         self.group.as_ref()
     }
     /// <p>An IAM user identity.</p>
-    pub fn iam_user(&self) -> std::option::Option<&crate::model::IamUserIdentity> {
+    pub fn iam_user(&self) -> std::option::Option<& crate::model::IamUserIdentity> {
         self.iam_user.as_ref()
     }
     /// <p>An IAM role identity.</p>
-    pub fn iam_role(&self) -> std::option::Option<&crate::model::IamRoleIdentity> {
+    pub fn iam_role(&self) -> std::option::Option<& crate::model::IamRoleIdentity> {
         self.iam_role.as_ref()
     }
 }
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
-
+    
     /// A builder for [`Identity`](crate::model::Identity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3530,8 +3394,7 @@ pub mod identity {
         }
         /// <p>An IAM Identity Center user identity.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::UserIdentity>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>An IAM Identity Center group identity.</p>
         pub fn group(mut self, input: crate::model::GroupIdentity) -> Self {
@@ -3539,12 +3402,8 @@ pub mod identity {
             self
         }
         /// <p>An IAM Identity Center group identity.</p>
-        pub fn set_group(
-            mut self,
-            input: std::option::Option<crate::model::GroupIdentity>,
-        ) -> Self {
-            self.group = input;
-            self
+        pub fn set_group(mut self, input: std::option::Option<crate::model::GroupIdentity>) -> Self {
+            self.group = input; self
         }
         /// <p>An IAM user identity.</p>
         pub fn iam_user(mut self, input: crate::model::IamUserIdentity) -> Self {
@@ -3552,12 +3411,8 @@ pub mod identity {
             self
         }
         /// <p>An IAM user identity.</p>
-        pub fn set_iam_user(
-            mut self,
-            input: std::option::Option<crate::model::IamUserIdentity>,
-        ) -> Self {
-            self.iam_user = input;
-            self
+        pub fn set_iam_user(mut self, input: std::option::Option<crate::model::IamUserIdentity>) -> Self {
+            self.iam_user = input; self
         }
         /// <p>An IAM role identity.</p>
         pub fn iam_role(mut self, input: crate::model::IamRoleIdentity) -> Self {
@@ -3565,23 +3420,25 @@ pub mod identity {
             self
         }
         /// <p>An IAM role identity.</p>
-        pub fn set_iam_role(
-            mut self,
-            input: std::option::Option<crate::model::IamRoleIdentity>,
-        ) -> Self {
-            self.iam_role = input;
-            self
+        pub fn set_iam_role(mut self, input: std::option::Option<crate::model::IamRoleIdentity>) -> Self {
+            self.iam_role = input; self
         }
         /// Consumes the builder and constructs a [`Identity`](crate::model::Identity).
         pub fn build(self) -> crate::model::Identity {
             crate::model::Identity {
-                user: self.user,
-                group: self.group,
-                iam_user: self.iam_user,
-                iam_role: self.iam_role,
+                user: self.user
+                ,
+                group: self.group
+                ,
+                iam_user: self.iam_user
+                ,
+                iam_role: self.iam_role
+                ,
             }
         }
     }
+    
+    
 }
 impl Identity {
     /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
@@ -3593,20 +3450,20 @@ impl Identity {
 /// <p>Contains information about an Identity and Access Management role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamRoleIdentity {
+pub struct IamRoleIdentity  {
     /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl IamRoleIdentity {
     /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`IamRoleIdentity`](crate::model::IamRoleIdentity).
 pub mod iam_role_identity {
-
+    
     /// A builder for [`IamRoleIdentity`](crate::model::IamRoleIdentity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3620,14 +3477,18 @@ pub mod iam_role_identity {
         }
         /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`IamRoleIdentity`](crate::model::IamRoleIdentity).
         pub fn build(self) -> crate::model::IamRoleIdentity {
-            crate::model::IamRoleIdentity { arn: self.arn }
+            crate::model::IamRoleIdentity {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl IamRoleIdentity {
     /// Creates a new builder-style object to manufacture [`IamRoleIdentity`](crate::model::IamRoleIdentity).
@@ -3639,49 +3500,53 @@ impl IamRoleIdentity {
 /// <p>Contains information about an Identity and Access Management user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamUserIdentity {
-    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
-    /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
+pub struct IamUserIdentity  {
+    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note> 
+    /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p> 
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl IamUserIdentity {
-    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
-    /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
+    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note> 
+    /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p> 
     /// </note>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`IamUserIdentity`](crate::model::IamUserIdentity).
 pub mod iam_user_identity {
-
+    
     /// A builder for [`IamUserIdentity`](crate::model::IamUserIdentity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
-        /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
+        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note> 
+        /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p> 
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
-        /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
+        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note> 
+        /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p> 
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`IamUserIdentity`](crate::model::IamUserIdentity).
         pub fn build(self) -> crate::model::IamUserIdentity {
-            crate::model::IamUserIdentity { arn: self.arn }
+            crate::model::IamUserIdentity {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl IamUserIdentity {
     /// Creates a new builder-style object to manufacture [`IamUserIdentity`](crate::model::IamUserIdentity).
@@ -3693,20 +3558,20 @@ impl IamUserIdentity {
 /// <p>Contains information for a group identity in an access policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupIdentity {
+pub struct GroupIdentity  {
     /// <p>The IAM Identity Center ID of the group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GroupIdentity {
     /// <p>The IAM Identity Center ID of the group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`GroupIdentity`](crate::model::GroupIdentity).
 pub mod group_identity {
-
+    
     /// A builder for [`GroupIdentity`](crate::model::GroupIdentity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3720,14 +3585,18 @@ pub mod group_identity {
         }
         /// <p>The IAM Identity Center ID of the group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`GroupIdentity`](crate::model::GroupIdentity).
         pub fn build(self) -> crate::model::GroupIdentity {
-            crate::model::GroupIdentity { id: self.id }
+            crate::model::GroupIdentity {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl GroupIdentity {
     /// Creates a new builder-style object to manufacture [`GroupIdentity`](crate::model::GroupIdentity).
@@ -3739,20 +3608,20 @@ impl GroupIdentity {
 /// <p>Contains information for a user identity in an access policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserIdentity {
+pub struct UserIdentity  {
     /// <p>The IAM Identity Center ID of the user.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl UserIdentity {
     /// <p>The IAM Identity Center ID of the user.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`UserIdentity`](crate::model::UserIdentity).
 pub mod user_identity {
-
+    
     /// A builder for [`UserIdentity`](crate::model::UserIdentity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3766,14 +3635,18 @@ pub mod user_identity {
         }
         /// <p>The IAM Identity Center ID of the user.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`UserIdentity`](crate::model::UserIdentity).
         pub fn build(self) -> crate::model::UserIdentity {
-            crate::model::UserIdentity { id: self.id }
+            crate::model::UserIdentity {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl UserIdentity {
     /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity).
@@ -3785,7 +3658,7 @@ impl UserIdentity {
 /// <p>Contains current status information for the configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationStatus {
+pub struct ConfigurationStatus  {
     /// <p>The current state of the configuration.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConfigurationState>,
@@ -3795,17 +3668,17 @@ pub struct ConfigurationStatus {
 }
 impl ConfigurationStatus {
     /// <p>The current state of the configuration.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ConfigurationState> {
         self.state.as_ref()
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ConfigurationErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ConfigurationErrorDetails> {
         self.error.as_ref()
     }
 }
 /// See [`ConfigurationStatus`](crate::model::ConfigurationStatus).
 pub mod configuration_status {
-
+    
     /// A builder for [`ConfigurationStatus`](crate::model::ConfigurationStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3819,12 +3692,8 @@ pub mod configuration_status {
             self
         }
         /// <p>The current state of the configuration.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ConfigurationState>) -> Self {
+            self.state = input; self
         }
         /// <p>Contains associated error information, if any.</p>
         pub fn error(mut self, input: crate::model::ConfigurationErrorDetails) -> Self {
@@ -3832,21 +3701,21 @@ pub mod configuration_status {
             self
         }
         /// <p>Contains associated error information, if any.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationErrorDetails>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ConfigurationErrorDetails>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationStatus`](crate::model::ConfigurationStatus).
         pub fn build(self) -> crate::model::ConfigurationStatus {
             crate::model::ConfigurationStatus {
-                state: self.state,
-                error: self.error,
+                state: self.state
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationStatus {
     /// Creates a new builder-style object to manufacture [`ConfigurationStatus`](crate::model::ConfigurationStatus).
@@ -3858,7 +3727,7 @@ impl ConfigurationStatus {
 /// <p>Contains the details of an IoT SiteWise configuration error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationErrorDetails {
+pub struct ConfigurationErrorDetails  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -3868,17 +3737,17 @@ pub struct ConfigurationErrorDetails {
 }
 impl ConfigurationErrorDetails {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ConfigurationErrorDetails`](crate::model::ConfigurationErrorDetails).
 pub mod configuration_error_details {
-
+    
     /// A builder for [`ConfigurationErrorDetails`](crate::model::ConfigurationErrorDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3893,8 +3762,7 @@ pub mod configuration_error_details {
         }
         /// <p>The error code.</p>
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>The error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3903,17 +3771,20 @@ pub mod configuration_error_details {
         }
         /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationErrorDetails`](crate::model::ConfigurationErrorDetails).
         pub fn build(self) -> crate::model::ConfigurationErrorDetails {
             crate::model::ConfigurationErrorDetails {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationErrorDetails {
     /// Creates a new builder-style object to manufacture [`ConfigurationErrorDetails`](crate::model::ConfigurationErrorDetails).
@@ -3928,9 +3799,9 @@ impl ConfigurationErrorDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationstate = unimplemented!();
 /// match configurationstate {
@@ -3953,22 +3824,14 @@ impl ConfigurationErrorDetails {
 /// Specifically, when `configurationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3977,7 +3840,7 @@ pub enum ConfigurationState {
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationState {
     fn from(s: &str) -> Self {
@@ -3985,19 +3848,17 @@ impl std::convert::From<&str> for ConfigurationState {
             "ACTIVE" => ConfigurationState::Active,
             "UPDATE_FAILED" => ConfigurationState::UpdateFailed,
             "UPDATE_IN_PROGRESS" => ConfigurationState::UpdateInProgress,
-            other => {
-                ConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigurationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationState::from(s))
+                }
+            }
 impl ConfigurationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4005,12 +3866,14 @@ impl ConfigurationState {
             ConfigurationState::Active => "ACTIVE",
             ConfigurationState::UpdateFailed => "UPDATE_FAILED",
             ConfigurationState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            ConfigurationState::Unknown(value) => value.as_str(),
+            ConfigurationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
+        &[
+            "ACTIVE", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for ConfigurationState {
@@ -4022,27 +3885,27 @@ impl AsRef<str> for ConfigurationState {
 /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetentionPeriod {
-    /// <p>The number of days that your data is kept.</p> <note>
-    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
+pub struct RetentionPeriod  {
+    /// <p>The number of days that your data is kept.</p> <note> 
+    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub number_of_days: std::option::Option<i32>,
-    /// <p>If true, your data is kept indefinitely.</p> <note>
-    /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
+    /// <p>If true, your data is kept indefinitely.</p> <note> 
+    /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> 
     /// </note>
     #[doc(hidden)]
     pub unlimited: std::option::Option<bool>,
 }
 impl RetentionPeriod {
-    /// <p>The number of days that your data is kept.</p> <note>
-    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
+    /// <p>The number of days that your data is kept.</p> <note> 
+    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> 
     /// </note>
     pub fn number_of_days(&self) -> std::option::Option<i32> {
         self.number_of_days
     }
-    /// <p>If true, your data is kept indefinitely.</p> <note>
-    /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
+    /// <p>If true, your data is kept indefinitely.</p> <note> 
+    /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> 
     /// </note>
     pub fn unlimited(&self) -> std::option::Option<bool> {
         self.unlimited
@@ -4050,7 +3913,7 @@ impl RetentionPeriod {
 }
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
 pub mod retention_period {
-
+    
     /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4058,42 +3921,44 @@ pub mod retention_period {
         pub(crate) unlimited: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The number of days that your data is kept.</p> <note>
-        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
+        /// <p>The number of days that your data is kept.</p> <note> 
+        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> 
         /// </note>
         pub fn number_of_days(mut self, input: i32) -> Self {
             self.number_of_days = Some(input);
             self
         }
-        /// <p>The number of days that your data is kept.</p> <note>
-        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
+        /// <p>The number of days that your data is kept.</p> <note> 
+        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p> 
         /// </note>
         pub fn set_number_of_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_days = input;
-            self
+            self.number_of_days = input; self
         }
-        /// <p>If true, your data is kept indefinitely.</p> <note>
-        /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
+        /// <p>If true, your data is kept indefinitely.</p> <note> 
+        /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> 
         /// </note>
         pub fn unlimited(mut self, input: bool) -> Self {
             self.unlimited = Some(input);
             self
         }
-        /// <p>If true, your data is kept indefinitely.</p> <note>
-        /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
+        /// <p>If true, your data is kept indefinitely.</p> <note> 
+        /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p> 
         /// </note>
         pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
-            self.unlimited = input;
-            self
+            self.unlimited = input; self
         }
         /// Consumes the builder and constructs a [`RetentionPeriod`](crate::model::RetentionPeriod).
         pub fn build(self) -> crate::model::RetentionPeriod {
             crate::model::RetentionPeriod {
-                number_of_days: self.number_of_days,
-                unlimited: self.unlimited,
+                number_of_days: self.number_of_days
+                ,
+                unlimited: self.unlimited
+                ,
             }
         }
     }
+    
+    
 }
 impl RetentionPeriod {
     /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
@@ -4108,9 +3973,9 @@ impl RetentionPeriod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let disassociateddatastoragestate = unimplemented!();
 /// match disassociateddatastoragestate {
@@ -4132,60 +3997,52 @@ impl RetentionPeriod {
 /// Specifically, when `disassociateddatastoragestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DisassociatedDataStorageState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DisassociatedDataStorageState {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DisassociatedDataStorageState {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => DisassociatedDataStorageState::Disabled,
             "ENABLED" => DisassociatedDataStorageState::Enabled,
-            other => DisassociatedDataStorageState::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DisassociatedDataStorageState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DisassociatedDataStorageState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DisassociatedDataStorageState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DisassociatedDataStorageState::from(s))
+                }
+            }
 impl DisassociatedDataStorageState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DisassociatedDataStorageState::Disabled => "DISABLED",
             DisassociatedDataStorageState::Enabled => "ENABLED",
-            DisassociatedDataStorageState::Unknown(value) => value.as_str(),
+            DisassociatedDataStorageState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for DisassociatedDataStorageState {
@@ -4197,52 +4054,45 @@ impl AsRef<str> for DisassociatedDataStorageState {
 /// <p>Contains information about the storage destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiLayerStorage {
+pub struct MultiLayerStorage  {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub customer_managed_s3_storage: std::option::Option<crate::model::CustomerManagedS3Storage>,
 }
 impl MultiLayerStorage {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
-    pub fn customer_managed_s3_storage(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomerManagedS3Storage> {
+    pub fn customer_managed_s3_storage(&self) -> std::option::Option<& crate::model::CustomerManagedS3Storage> {
         self.customer_managed_s3_storage.as_ref()
     }
 }
 /// See [`MultiLayerStorage`](crate::model::MultiLayerStorage).
 pub mod multi_layer_storage {
-
+    
     /// A builder for [`MultiLayerStorage`](crate::model::MultiLayerStorage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) customer_managed_s3_storage:
-            std::option::Option<crate::model::CustomerManagedS3Storage>,
+        pub(crate) customer_managed_s3_storage: std::option::Option<crate::model::CustomerManagedS3Storage>,
     }
     impl Builder {
         /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
-        pub fn customer_managed_s3_storage(
-            mut self,
-            input: crate::model::CustomerManagedS3Storage,
-        ) -> Self {
+        pub fn customer_managed_s3_storage(mut self, input: crate::model::CustomerManagedS3Storage) -> Self {
             self.customer_managed_s3_storage = Some(input);
             self
         }
         /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
-        pub fn set_customer_managed_s3_storage(
-            mut self,
-            input: std::option::Option<crate::model::CustomerManagedS3Storage>,
-        ) -> Self {
-            self.customer_managed_s3_storage = input;
-            self
+        pub fn set_customer_managed_s3_storage(mut self, input: std::option::Option<crate::model::CustomerManagedS3Storage>) -> Self {
+            self.customer_managed_s3_storage = input; self
         }
         /// Consumes the builder and constructs a [`MultiLayerStorage`](crate::model::MultiLayerStorage).
         pub fn build(self) -> crate::model::MultiLayerStorage {
             crate::model::MultiLayerStorage {
-                customer_managed_s3_storage: self.customer_managed_s3_storage,
+                customer_managed_s3_storage: self.customer_managed_s3_storage
+                ,
             }
         }
     }
+    
+    
 }
 impl MultiLayerStorage {
     /// Creates a new builder-style object to manufacture [`MultiLayerStorage`](crate::model::MultiLayerStorage).
@@ -4254,7 +4104,7 @@ impl MultiLayerStorage {
 /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomerManagedS3Storage {
+pub struct CustomerManagedS3Storage  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     #[doc(hidden)]
     pub s3_resource_arn: std::option::Option<std::string::String>,
@@ -4264,17 +4114,17 @@ pub struct CustomerManagedS3Storage {
 }
 impl CustomerManagedS3Storage {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn s3_resource_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_resource_arn(&self) -> std::option::Option<& str> {
         self.s3_resource_arn.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage).
 pub mod customer_managed_s3_storage {
-
+    
     /// A builder for [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4288,12 +4138,8 @@ pub mod customer_managed_s3_storage {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-        pub fn set_s3_resource_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_resource_arn = input;
-            self
+        pub fn set_s3_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_resource_arn = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4302,17 +4148,20 @@ pub mod customer_managed_s3_storage {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage).
         pub fn build(self) -> crate::model::CustomerManagedS3Storage {
             crate::model::CustomerManagedS3Storage {
-                s3_resource_arn: self.s3_resource_arn,
-                role_arn: self.role_arn,
+                s3_resource_arn: self.s3_resource_arn
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomerManagedS3Storage {
     /// Creates a new builder-style object to manufacture [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage).
@@ -4327,9 +4176,9 @@ impl CustomerManagedS3Storage {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storagetype = unimplemented!();
 /// match storagetype {
@@ -4351,58 +4200,52 @@ impl CustomerManagedS3Storage {
 /// Specifically, when `storagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StorageType {
     #[allow(missing_docs)] // documentation missing in model
     MultiLayerStorage,
     #[allow(missing_docs)] // documentation missing in model
     SitewiseDefaultStorage,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageType {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_LAYER_STORAGE" => StorageType::MultiLayerStorage,
             "SITEWISE_DEFAULT_STORAGE" => StorageType::SitewiseDefaultStorage,
-            other => StorageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StorageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StorageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StorageType::from(s))
+                }
+            }
 impl StorageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageType::MultiLayerStorage => "MULTI_LAYER_STORAGE",
             StorageType::SitewiseDefaultStorage => "SITEWISE_DEFAULT_STORAGE",
-            StorageType::Unknown(value) => value.as_str(),
+            StorageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MULTI_LAYER_STORAGE", "SITEWISE_DEFAULT_STORAGE"]
+        &[
+            "MULTI_LAYER_STORAGE", "SITEWISE_DEFAULT_STORAGE"
+        ]
     }
 }
 impl AsRef<str> for StorageType {
@@ -4414,20 +4257,20 @@ impl AsRef<str> for StorageType {
 /// <p>Contains logging options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingOptions {
+pub struct LoggingOptions  {
     /// <p>The IoT SiteWise logging verbosity level.</p>
     #[doc(hidden)]
     pub level: std::option::Option<crate::model::LoggingLevel>,
 }
 impl LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
-    pub fn level(&self) -> std::option::Option<&crate::model::LoggingLevel> {
+    pub fn level(&self) -> std::option::Option<& crate::model::LoggingLevel> {
         self.level.as_ref()
     }
 }
 /// See [`LoggingOptions`](crate::model::LoggingOptions).
 pub mod logging_options {
-
+    
     /// A builder for [`LoggingOptions`](crate::model::LoggingOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4441,14 +4284,18 @@ pub mod logging_options {
         }
         /// <p>The IoT SiteWise logging verbosity level.</p>
         pub fn set_level(mut self, input: std::option::Option<crate::model::LoggingLevel>) -> Self {
-            self.level = input;
-            self
+            self.level = input; self
         }
         /// Consumes the builder and constructs a [`LoggingOptions`](crate::model::LoggingOptions).
         pub fn build(self) -> crate::model::LoggingOptions {
-            crate::model::LoggingOptions { level: self.level }
+            crate::model::LoggingOptions {
+                level: self.level
+                ,
+            }
         }
     }
+    
+    
 }
 impl LoggingOptions {
     /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions).
@@ -4463,9 +4310,9 @@ impl LoggingOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let logginglevel = unimplemented!();
 /// match logginglevel {
@@ -4488,22 +4335,14 @@ impl LoggingOptions {
 /// Specifically, when `logginglevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoggingLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LoggingLevel {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -4512,7 +4351,7 @@ pub enum LoggingLevel {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoggingLevel {
     fn from(s: &str) -> Self {
@@ -4520,17 +4359,17 @@ impl std::convert::From<&str> for LoggingLevel {
             "ERROR" => LoggingLevel::Error,
             "INFO" => LoggingLevel::Info,
             "OFF" => LoggingLevel::Off,
-            other => LoggingLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LoggingLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LoggingLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoggingLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LoggingLevel::from(s))
+                }
+            }
 impl LoggingLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4538,12 +4377,14 @@ impl LoggingLevel {
             LoggingLevel::Error => "ERROR",
             LoggingLevel::Info => "INFO",
             LoggingLevel::Off => "OFF",
-            LoggingLevel::Unknown(value) => value.as_str(),
+            LoggingLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "INFO", "OFF"]
+        &[
+            "ERROR", "INFO", "OFF"
+        ]
     }
 }
 impl AsRef<str> for LoggingLevel {
@@ -4558,9 +4399,9 @@ impl AsRef<str> for LoggingLevel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptiontype = unimplemented!();
 /// match encryptiontype {
@@ -4582,58 +4423,52 @@ impl AsRef<str> for LoggingLevel {
 /// Specifically, when `encryptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionType {
     #[allow(missing_docs)] // documentation missing in model
     KmsBasedEncryption,
     #[allow(missing_docs)] // documentation missing in model
     SitewiseDefaultEncryption,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "KMS_BASED_ENCRYPTION" => EncryptionType::KmsBasedEncryption,
             "SITEWISE_DEFAULT_ENCRYPTION" => EncryptionType::SitewiseDefaultEncryption,
-            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionType::from(s))
+                }
+            }
 impl EncryptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionType::KmsBasedEncryption => "KMS_BASED_ENCRYPTION",
             EncryptionType::SitewiseDefaultEncryption => "SITEWISE_DEFAULT_ENCRYPTION",
-            EncryptionType::Unknown(value) => value.as_str(),
+            EncryptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KMS_BASED_ENCRYPTION", "SITEWISE_DEFAULT_ENCRYPTION"]
+        &[
+            "KMS_BASED_ENCRYPTION", "SITEWISE_DEFAULT_ENCRYPTION"
+        ]
     }
 }
 impl AsRef<str> for EncryptionType {
@@ -4645,7 +4480,7 @@ impl AsRef<str> for EncryptionType {
 /// <p>Contains a summary of a time series (data stream).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeSeriesSummary {
+pub struct TimeSeriesSummary  {
     /// <p>The ID of the asset in which the asset property was created.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -4658,11 +4493,11 @@ pub struct TimeSeriesSummary {
     /// <p>The ID of the time series.</p>
     #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
-    /// <p>The data type of the time series.</p>
+    /// <p>The data type of the time series.</p> 
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
     #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
-    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> 
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
@@ -4675,43 +4510,43 @@ pub struct TimeSeriesSummary {
 }
 impl TimeSeriesSummary {
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the time series.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The ID of the time series.</p>
-    pub fn time_series_id(&self) -> std::option::Option<&str> {
+    pub fn time_series_id(&self) -> std::option::Option<& str> {
         self.time_series_id.as_deref()
     }
-    /// <p>The data type of the time series.</p>
+    /// <p>The data type of the time series.</p> 
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> 
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The date that the time series was created, in Unix epoch time.</p>
-    pub fn time_series_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_series_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time_series_creation_date.as_ref()
     }
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
-    pub fn time_series_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_series_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time_series_last_update_date.as_ref()
     }
 }
 /// See [`TimeSeriesSummary`](crate::model::TimeSeriesSummary).
 pub mod time_series_summary {
-
+    
     /// A builder for [`TimeSeriesSummary`](crate::model::TimeSeriesSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4732,8 +4567,7 @@ pub mod time_series_summary {
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p>The ID of the asset property.</p>
         pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4742,8 +4576,7 @@ pub mod time_series_summary {
         }
         /// <p>The ID of the asset property.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property_id = input;
-            self
+            self.property_id = input; self
         }
         /// <p>The alias that identifies the time series.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4752,8 +4585,7 @@ pub mod time_series_summary {
         }
         /// <p>The alias that identifies the time series.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The ID of the time series.</p>
         pub fn time_series_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4761,42 +4593,30 @@ pub mod time_series_summary {
             self
         }
         /// <p>The ID of the time series.</p>
-        pub fn set_time_series_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.time_series_id = input;
-            self
+        pub fn set_time_series_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time_series_id = input; self
         }
-        /// <p>The data type of the time series.</p>
+        /// <p>The data type of the time series.</p> 
         /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
         pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
             self.data_type = Some(input);
             self
         }
-        /// <p>The data type of the time series.</p>
+        /// <p>The data type of the time series.</p> 
         /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::PropertyDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::PropertyDataType>) -> Self {
+            self.data_type = input; self
         }
-        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> 
         /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type_spec = Some(input.into());
             self
         }
-        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> 
         /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-        pub fn set_data_type_spec(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_type_spec = input;
-            self
+        pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type_spec = input; self
         }
         /// <p>The date that the time series was created, in Unix epoch time.</p>
         pub fn time_series_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4804,12 +4624,8 @@ pub mod time_series_summary {
             self
         }
         /// <p>The date that the time series was created, in Unix epoch time.</p>
-        pub fn set_time_series_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.time_series_creation_date = input;
-            self
+        pub fn set_time_series_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.time_series_creation_date = input; self
         }
         /// <p>The date that the time series was last updated, in Unix epoch time.</p>
         pub fn time_series_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4817,27 +4633,33 @@ pub mod time_series_summary {
             self
         }
         /// <p>The date that the time series was last updated, in Unix epoch time.</p>
-        pub fn set_time_series_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.time_series_last_update_date = input;
-            self
+        pub fn set_time_series_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.time_series_last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`TimeSeriesSummary`](crate::model::TimeSeriesSummary).
         pub fn build(self) -> crate::model::TimeSeriesSummary {
             crate::model::TimeSeriesSummary {
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                alias: self.alias,
-                time_series_id: self.time_series_id,
-                data_type: self.data_type,
-                data_type_spec: self.data_type_spec,
-                time_series_creation_date: self.time_series_creation_date,
-                time_series_last_update_date: self.time_series_last_update_date,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                alias: self.alias
+                ,
+                time_series_id: self.time_series_id
+                ,
+                data_type: self.data_type
+                ,
+                data_type_spec: self.data_type_spec
+                ,
+                time_series_creation_date: self.time_series_creation_date
+                ,
+                time_series_last_update_date: self.time_series_last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeSeriesSummary {
     /// Creates a new builder-style object to manufacture [`TimeSeriesSummary`](crate::model::TimeSeriesSummary).
@@ -4852,9 +4674,9 @@ impl TimeSeriesSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listtimeseriestype = unimplemented!();
 /// match listtimeseriestype {
@@ -4876,60 +4698,52 @@ impl TimeSeriesSummary {
 /// Specifically, when `listtimeseriestype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListTimeSeriesType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListTimeSeriesType {
     #[allow(missing_docs)] // documentation missing in model
     Associated,
     #[allow(missing_docs)] // documentation missing in model
     Disassociated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListTimeSeriesType {
     fn from(s: &str) -> Self {
         match s {
             "ASSOCIATED" => ListTimeSeriesType::Associated,
             "DISASSOCIATED" => ListTimeSeriesType::Disassociated,
-            other => {
-                ListTimeSeriesType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ListTimeSeriesType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListTimeSeriesType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListTimeSeriesType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListTimeSeriesType::from(s))
+                }
+            }
 impl ListTimeSeriesType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListTimeSeriesType::Associated => "ASSOCIATED",
             ListTimeSeriesType::Disassociated => "DISASSOCIATED",
-            ListTimeSeriesType::Unknown(value) => value.as_str(),
+            ListTimeSeriesType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSOCIATED", "DISASSOCIATED"]
+        &[
+            "ASSOCIATED", "DISASSOCIATED"
+        ]
     }
 }
 impl AsRef<str> for ListTimeSeriesType {
@@ -4941,7 +4755,7 @@ impl AsRef<str> for ListTimeSeriesType {
 /// <p>Contains project summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectSummary {
+pub struct ProjectSummary  {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4960,29 +4774,29 @@ pub struct ProjectSummary {
 }
 impl ProjectSummary {
     /// <p>The ID of the project.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The project's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
-
+    
     /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5000,8 +4814,7 @@ pub mod project_summary {
         }
         /// <p>The ID of the project.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the project.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5010,8 +4823,7 @@ pub mod project_summary {
         }
         /// <p>The name of the project.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The project's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5020,8 +4832,7 @@ pub mod project_summary {
         }
         /// <p>The project's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date the project was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5029,12 +4840,8 @@ pub mod project_summary {
             self
         }
         /// <p>The date the project was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the project was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5042,24 +4849,27 @@ pub mod project_summary {
             self
         }
         /// <p>The date the project was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`ProjectSummary`](crate::model::ProjectSummary).
         pub fn build(self) -> crate::model::ProjectSummary {
             crate::model::ProjectSummary {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl ProjectSummary {
     /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
@@ -5071,7 +4881,7 @@ impl ProjectSummary {
 /// <p>Contains a portal summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortalSummary {
+pub struct PortalSummary  {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5099,41 +4909,41 @@ pub struct PortalSummary {
 }
 impl PortalSummary {
     /// <p>The ID of the portal.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the portal.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The portal's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn start_url(&self) -> std::option::Option<&str> {
+    pub fn start_url(&self) -> std::option::Option<& str> {
         self.start_url.as_deref()
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Contains information about the current status of a portal.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PortalStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PortalStatus> {
         self.status.as_ref()
     }
 }
 /// See [`PortalSummary`](crate::model::PortalSummary).
 pub mod portal_summary {
-
+    
     /// A builder for [`PortalSummary`](crate::model::PortalSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5154,8 +4964,7 @@ pub mod portal_summary {
         }
         /// <p>The ID of the portal.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the portal.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5164,8 +4973,7 @@ pub mod portal_summary {
         }
         /// <p>The name of the portal.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The portal's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5174,8 +4982,7 @@ pub mod portal_summary {
         }
         /// <p>The portal's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5184,8 +4991,7 @@ pub mod portal_summary {
         }
         /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_url = input;
-            self
+            self.start_url = input; self
         }
         /// <p>The date the portal was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5193,12 +4999,8 @@ pub mod portal_summary {
             self
         }
         /// <p>The date the portal was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the portal was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5206,12 +5008,8 @@ pub mod portal_summary {
             self
         }
         /// <p>The date the portal was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5220,8 +5018,7 @@ pub mod portal_summary {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>Contains information about the current status of a portal.</p>
         pub fn status(mut self, input: crate::model::PortalStatus) -> Self {
@@ -5229,27 +5026,33 @@ pub mod portal_summary {
             self
         }
         /// <p>Contains information about the current status of a portal.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PortalStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PortalStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`PortalSummary`](crate::model::PortalSummary).
         pub fn build(self) -> crate::model::PortalSummary {
             crate::model::PortalSummary {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                start_url: self.start_url,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
-                role_arn: self.role_arn,
-                status: self.status,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                start_url: self.start_url
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl PortalSummary {
     /// Creates a new builder-style object to manufacture [`PortalSummary`](crate::model::PortalSummary).
@@ -5261,7 +5064,7 @@ impl PortalSummary {
 /// <p>Contains a summary of a gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewaySummary {
+pub struct GatewaySummary  {
     /// <p>The ID of the gateway device.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -5273,8 +5076,7 @@ pub struct GatewaySummary {
     pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     #[doc(hidden)]
-    pub gateway_capability_summaries:
-        std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
+    pub gateway_capability_summaries: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -5284,43 +5086,40 @@ pub struct GatewaySummary {
 }
 impl GatewaySummary {
     /// <p>The ID of the gateway device.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn gateway_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_name(&self) -> std::option::Option<& str> {
         self.gateway_name.as_deref()
     }
     /// <p>Contains a gateway's platform information.</p>
-    pub fn gateway_platform(&self) -> std::option::Option<&crate::model::GatewayPlatform> {
+    pub fn gateway_platform(&self) -> std::option::Option<& crate::model::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-    pub fn gateway_capability_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::GatewayCapabilitySummary]> {
+    pub fn gateway_capability_summaries(&self) -> std::option::Option<& [crate::model::GatewayCapabilitySummary]> {
         self.gateway_capability_summaries.as_deref()
     }
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
 /// See [`GatewaySummary`](crate::model::GatewaySummary).
 pub mod gateway_summary {
-
+    
     /// A builder for [`GatewaySummary`](crate::model::GatewaySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
         pub(crate) gateway_name: std::option::Option<std::string::String>,
         pub(crate) gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
-        pub(crate) gateway_capability_summaries:
-            std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
+        pub(crate) gateway_capability_summaries: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -5332,8 +5131,7 @@ pub mod gateway_summary {
         }
         /// <p>The ID of the gateway device.</p>
         pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_id = input;
-            self
+            self.gateway_id = input; self
         }
         /// <p>The name of the asset.</p>
         pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5342,8 +5140,7 @@ pub mod gateway_summary {
         }
         /// <p>The name of the asset.</p>
         pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_name = input;
-            self
+            self.gateway_name = input; self
         }
         /// <p>Contains a gateway's platform information.</p>
         pub fn gateway_platform(mut self, input: crate::model::GatewayPlatform) -> Self {
@@ -5351,34 +5148,23 @@ pub mod gateway_summary {
             self
         }
         /// <p>Contains a gateway's platform information.</p>
-        pub fn set_gateway_platform(
-            mut self,
-            input: std::option::Option<crate::model::GatewayPlatform>,
-        ) -> Self {
-            self.gateway_platform = input;
-            self
+        pub fn set_gateway_platform(mut self, input: std::option::Option<crate::model::GatewayPlatform>) -> Self {
+            self.gateway_platform = input; self
         }
         /// Appends an item to `gateway_capability_summaries`.
         ///
         /// To override the contents of this collection use [`set_gateway_capability_summaries`](Self::set_gateway_capability_summaries).
         ///
         /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-        pub fn gateway_capability_summaries(
-            mut self,
-            input: crate::model::GatewayCapabilitySummary,
-        ) -> Self {
+        pub fn gateway_capability_summaries(mut self, input: crate::model::GatewayCapabilitySummary) -> Self {
             let mut v = self.gateway_capability_summaries.unwrap_or_default();
-            v.push(input);
-            self.gateway_capability_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.gateway_capability_summaries = Some(v);
+                            self
         }
         /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-        pub fn set_gateway_capability_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
-        ) -> Self {
-            self.gateway_capability_summaries = input;
-            self
+        pub fn set_gateway_capability_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>) -> Self {
+            self.gateway_capability_summaries = input; self
         }
         /// <p>The date the gateway was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5386,12 +5172,8 @@ pub mod gateway_summary {
             self
         }
         /// <p>The date the gateway was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the gateway was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5399,25 +5181,29 @@ pub mod gateway_summary {
             self
         }
         /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`GatewaySummary`](crate::model::GatewaySummary).
         pub fn build(self) -> crate::model::GatewaySummary {
             crate::model::GatewaySummary {
-                gateway_id: self.gateway_id,
-                gateway_name: self.gateway_name,
-                gateway_platform: self.gateway_platform,
-                gateway_capability_summaries: self.gateway_capability_summaries,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
+                gateway_id: self.gateway_id
+                ,
+                gateway_name: self.gateway_name
+                ,
+                gateway_platform: self.gateway_platform
+                ,
+                gateway_capability_summaries: self.gateway_capability_summaries
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewaySummary {
     /// Creates a new builder-style object to manufacture [`GatewaySummary`](crate::model::GatewaySummary).
@@ -5429,39 +5215,37 @@ impl GatewaySummary {
 /// <p>Contains a summary of a gateway capability configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayCapabilitySummary {
+pub struct GatewayCapabilitySummary  {
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     #[doc(hidden)]
     pub capability_namespace: std::option::Option<std::string::String>,
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
 impl GatewayCapabilitySummary {
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn capability_namespace(&self) -> std::option::Option<&str> {
+    pub fn capability_namespace(&self) -> std::option::Option<& str> {
         self.capability_namespace.as_deref()
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
     /// </ul>
-    pub fn capability_sync_status(
-        &self,
-    ) -> std::option::Option<&crate::model::CapabilitySyncStatus> {
+    pub fn capability_sync_status(&self) -> std::option::Option<& crate::model::CapabilitySyncStatus> {
         self.capability_sync_status.as_ref()
     }
 }
 /// See [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary).
 pub mod gateway_capability_summary {
-
+    
     /// A builder for [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5475,44 +5259,40 @@ pub mod gateway_capability_summary {
             self
         }
         /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-        pub fn set_capability_namespace(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capability_namespace = input;
-            self
+        pub fn set_capability_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capability_namespace = input; self
         }
-        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
         /// </ul>
         pub fn capability_sync_status(mut self, input: crate::model::CapabilitySyncStatus) -> Self {
             self.capability_sync_status = Some(input);
             self
         }
-        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
         /// </ul>
-        pub fn set_capability_sync_status(
-            mut self,
-            input: std::option::Option<crate::model::CapabilitySyncStatus>,
-        ) -> Self {
-            self.capability_sync_status = input;
-            self
+        pub fn set_capability_sync_status(mut self, input: std::option::Option<crate::model::CapabilitySyncStatus>) -> Self {
+            self.capability_sync_status = input; self
         }
         /// Consumes the builder and constructs a [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary).
         pub fn build(self) -> crate::model::GatewayCapabilitySummary {
             crate::model::GatewayCapabilitySummary {
-                capability_namespace: self.capability_namespace,
-                capability_sync_status: self.capability_sync_status,
+                capability_namespace: self.capability_namespace
+                ,
+                capability_sync_status: self.capability_sync_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayCapabilitySummary {
     /// Creates a new builder-style object to manufacture [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary).
@@ -5524,7 +5304,7 @@ impl GatewayCapabilitySummary {
 /// <p>Contains a gateway's platform information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayPlatform {
+pub struct GatewayPlatform  {
     /// <p>A gateway that runs on IoT Greengrass.</p>
     #[doc(hidden)]
     pub greengrass: std::option::Option<crate::model::Greengrass>,
@@ -5534,17 +5314,17 @@ pub struct GatewayPlatform {
 }
 impl GatewayPlatform {
     /// <p>A gateway that runs on IoT Greengrass.</p>
-    pub fn greengrass(&self) -> std::option::Option<&crate::model::Greengrass> {
+    pub fn greengrass(&self) -> std::option::Option<& crate::model::Greengrass> {
         self.greengrass.as_ref()
     }
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
-    pub fn greengrass_v2(&self) -> std::option::Option<&crate::model::GreengrassV2> {
+    pub fn greengrass_v2(&self) -> std::option::Option<& crate::model::GreengrassV2> {
         self.greengrass_v2.as_ref()
     }
 }
 /// See [`GatewayPlatform`](crate::model::GatewayPlatform).
 pub mod gateway_platform {
-
+    
     /// A builder for [`GatewayPlatform`](crate::model::GatewayPlatform).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5558,12 +5338,8 @@ pub mod gateway_platform {
             self
         }
         /// <p>A gateway that runs on IoT Greengrass.</p>
-        pub fn set_greengrass(
-            mut self,
-            input: std::option::Option<crate::model::Greengrass>,
-        ) -> Self {
-            self.greengrass = input;
-            self
+        pub fn set_greengrass(mut self, input: std::option::Option<crate::model::Greengrass>) -> Self {
+            self.greengrass = input; self
         }
         /// <p>A gateway that runs on IoT Greengrass V2.</p>
         pub fn greengrass_v2(mut self, input: crate::model::GreengrassV2) -> Self {
@@ -5571,21 +5347,21 @@ pub mod gateway_platform {
             self
         }
         /// <p>A gateway that runs on IoT Greengrass V2.</p>
-        pub fn set_greengrass_v2(
-            mut self,
-            input: std::option::Option<crate::model::GreengrassV2>,
-        ) -> Self {
-            self.greengrass_v2 = input;
-            self
+        pub fn set_greengrass_v2(mut self, input: std::option::Option<crate::model::GreengrassV2>) -> Self {
+            self.greengrass_v2 = input; self
         }
         /// Consumes the builder and constructs a [`GatewayPlatform`](crate::model::GatewayPlatform).
         pub fn build(self) -> crate::model::GatewayPlatform {
             crate::model::GatewayPlatform {
-                greengrass: self.greengrass,
-                greengrass_v2: self.greengrass_v2,
+                greengrass: self.greengrass
+                ,
+                greengrass_v2: self.greengrass_v2
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayPlatform {
     /// Creates a new builder-style object to manufacture [`GatewayPlatform`](crate::model::GatewayPlatform).
@@ -5597,20 +5373,20 @@ impl GatewayPlatform {
 /// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GreengrassV2 {
+pub struct GreengrassV2  {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
-    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+    pub fn core_device_thing_name(&self) -> std::option::Option<& str> {
         self.core_device_thing_name.as_deref()
     }
 }
 /// See [`GreengrassV2`](crate::model::GreengrassV2).
 pub mod greengrass_v2 {
-
+    
     /// A builder for [`GreengrassV2`](crate::model::GreengrassV2).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5623,20 +5399,19 @@ pub mod greengrass_v2 {
             self
         }
         /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
-        pub fn set_core_device_thing_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.core_device_thing_name = input;
-            self
+        pub fn set_core_device_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.core_device_thing_name = input; self
         }
         /// Consumes the builder and constructs a [`GreengrassV2`](crate::model::GreengrassV2).
         pub fn build(self) -> crate::model::GreengrassV2 {
             crate::model::GreengrassV2 {
-                core_device_thing_name: self.core_device_thing_name,
+                core_device_thing_name: self.core_device_thing_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GreengrassV2 {
     /// Creates a new builder-style object to manufacture [`GreengrassV2`](crate::model::GreengrassV2).
@@ -5648,20 +5423,20 @@ impl GreengrassV2 {
 /// <p>Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Greengrass {
+pub struct Greengrass  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
     #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl Greengrass {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
 }
 /// See [`Greengrass`](crate::model::Greengrass).
 pub mod greengrass {
-
+    
     /// A builder for [`Greengrass`](crate::model::Greengrass).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5675,16 +5450,18 @@ pub mod greengrass {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// Consumes the builder and constructs a [`Greengrass`](crate::model::Greengrass).
         pub fn build(self) -> crate::model::Greengrass {
             crate::model::Greengrass {
-                group_arn: self.group_arn,
+                group_arn: self.group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Greengrass {
     /// Creates a new builder-style object to manufacture [`Greengrass`](crate::model::Greengrass).
@@ -5696,7 +5473,7 @@ impl Greengrass {
 /// <p>Contains a dashboard summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashboardSummary {
+pub struct DashboardSummary  {
     /// <p>The ID of the dashboard.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5715,29 +5492,29 @@ pub struct DashboardSummary {
 }
 impl DashboardSummary {
     /// <p>The ID of the dashboard.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the dashboard</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The dashboard's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
 /// See [`DashboardSummary`](crate::model::DashboardSummary).
 pub mod dashboard_summary {
-
+    
     /// A builder for [`DashboardSummary`](crate::model::DashboardSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5755,8 +5532,7 @@ pub mod dashboard_summary {
         }
         /// <p>The ID of the dashboard.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the dashboard</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5765,8 +5541,7 @@ pub mod dashboard_summary {
         }
         /// <p>The name of the dashboard</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The dashboard's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5775,8 +5550,7 @@ pub mod dashboard_summary {
         }
         /// <p>The dashboard's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date the dashboard was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5784,12 +5558,8 @@ pub mod dashboard_summary {
             self
         }
         /// <p>The date the dashboard was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5797,24 +5567,27 @@ pub mod dashboard_summary {
             self
         }
         /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`DashboardSummary`](crate::model::DashboardSummary).
         pub fn build(self) -> crate::model::DashboardSummary {
             crate::model::DashboardSummary {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DashboardSummary {
     /// Creates a new builder-style object to manufacture [`DashboardSummary`](crate::model::DashboardSummary).
@@ -5826,50 +5599,50 @@ impl DashboardSummary {
 /// <p>Contains a job summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobSummary {
+pub struct JobSummary  {
     /// <p>The ID of the job.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The unique name that helps identify the job request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The status of the bulk import job can be one of following values.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <p>The status of the bulk import job can be one of following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
 }
 impl JobSummary {
     /// <p>The ID of the job.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique name that helps identify the job request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <p>The status of the bulk import job can be one of following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
 }
 /// See [`JobSummary`](crate::model::JobSummary).
 pub mod job_summary {
-
+    
     /// A builder for [`JobSummary`](crate::model::JobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5885,8 +5658,7 @@ pub mod job_summary {
         }
         /// <p>The ID of the job.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique name that helps identify the job request.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5895,44 +5667,47 @@ pub mod job_summary {
         }
         /// <p>The unique name that helps identify the job request.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The status of the bulk import job can be one of following values.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <p>The status of the bulk import job can be one of following values.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the bulk import job can be one of following values.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <p>The status of the bulk import job can be one of following values.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`JobSummary`](crate::model::JobSummary).
         pub fn build(self) -> crate::model::JobSummary {
             crate::model::JobSummary {
-                id: self.id,
-                name: self.name,
-                status: self.status,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl JobSummary {
     /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
@@ -5947,9 +5722,9 @@ impl JobSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
@@ -5975,22 +5750,14 @@ impl JobSummary {
 /// Specifically, when `jobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -6005,7 +5772,7 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -6016,17 +5783,17 @@ impl std::convert::From<&str> for JobStatus {
             "FAILED" => JobStatus::Failed,
             "PENDING" => JobStatus::Pending,
             "RUNNING" => JobStatus::Running,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobStatus::from(s))
+                }
+            }
 impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6037,18 +5804,13 @@ impl JobStatus {
             JobStatus::Failed => "FAILED",
             JobStatus::Pending => "PENDING",
             JobStatus::Running => "RUNNING",
-            JobStatus::Unknown(value) => value.as_str(),
+            JobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELLED",
-            "COMPLETED",
-            "COMPLETED_WITH_FAILURES",
-            "FAILED",
-            "PENDING",
-            "RUNNING",
+            "CANCELLED", "COMPLETED", "COMPLETED_WITH_FAILURES", "FAILED", "PENDING", "RUNNING"
         ]
     }
 }
@@ -6064,9 +5826,9 @@ impl AsRef<str> for JobStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listbulkimportjobsfilter = unimplemented!();
 /// match listbulkimportjobsfilter {
@@ -6093,22 +5855,14 @@ impl AsRef<str> for JobStatus {
 /// Specifically, when `listbulkimportjobsfilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListBulkImportJobsFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListBulkImportJobsFilter {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -6125,7 +5879,7 @@ pub enum ListBulkImportJobsFilter {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListBulkImportJobsFilter {
     fn from(s: &str) -> Self {
@@ -6137,19 +5891,17 @@ impl std::convert::From<&str> for ListBulkImportJobsFilter {
             "FAILED" => ListBulkImportJobsFilter::Failed,
             "PENDING" => ListBulkImportJobsFilter::Pending,
             "RUNNING" => ListBulkImportJobsFilter::Running,
-            other => ListBulkImportJobsFilter::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListBulkImportJobsFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListBulkImportJobsFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListBulkImportJobsFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListBulkImportJobsFilter::from(s))
+                }
+            }
 impl ListBulkImportJobsFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6161,19 +5913,13 @@ impl ListBulkImportJobsFilter {
             ListBulkImportJobsFilter::Failed => "FAILED",
             ListBulkImportJobsFilter::Pending => "PENDING",
             ListBulkImportJobsFilter::Running => "RUNNING",
-            ListBulkImportJobsFilter::Unknown(value) => value.as_str(),
+            ListBulkImportJobsFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALL",
-            "CANCELLED",
-            "COMPLETED",
-            "COMPLETED_WITH_FAILURES",
-            "FAILED",
-            "PENDING",
-            "RUNNING",
+            "ALL", "CANCELLED", "COMPLETED", "COMPLETED_WITH_FAILURES", "FAILED", "PENDING", "RUNNING"
         ]
     }
 }
@@ -6186,11 +5932,11 @@ impl AsRef<str> for ListBulkImportJobsFilter {
 /// <p>Contains a summary of an associated asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedAssetsSummary {
+pub struct AssociatedAssetsSummary  {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6218,46 +5964,46 @@ pub struct AssociatedAssetsSummary {
 }
 impl AssociatedAssetsSummary {
     /// <p>The ID of the asset.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the asset model used to create the asset.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The current status of the asset.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AssetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AssetStatus> {
         self.status.as_ref()
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn hierarchies(&self) -> std::option::Option<&[crate::model::AssetHierarchy]> {
+    pub fn hierarchies(&self) -> std::option::Option<& [crate::model::AssetHierarchy]> {
         self.hierarchies.as_deref()
     }
     /// <p>A description for the asset.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary).
 pub mod associated_assets_summary {
-
+    
     /// A builder for [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6279,20 +6025,18 @@ pub mod associated_assets_summary {
         }
         /// <p>The ID of the asset.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the asset.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6301,8 +6045,7 @@ pub mod associated_assets_summary {
         }
         /// <p>The name of the asset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the asset model used to create the asset.</p>
         pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6310,12 +6053,8 @@ pub mod associated_assets_summary {
             self
         }
         /// <p>The ID of the asset model used to create the asset.</p>
-        pub fn set_asset_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_id = input;
-            self
+        pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_id = input; self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6323,12 +6062,8 @@ pub mod associated_assets_summary {
             self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6336,12 +6071,8 @@ pub mod associated_assets_summary {
             self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// <p>The current status of the asset.</p>
         pub fn status(mut self, input: crate::model::AssetStatus) -> Self {
@@ -6350,8 +6081,7 @@ pub mod associated_assets_summary {
         }
         /// <p>The current status of the asset.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::AssetStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `hierarchies`.
         ///
@@ -6360,17 +6090,13 @@ pub mod associated_assets_summary {
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
         pub fn hierarchies(mut self, input: crate::model::AssetHierarchy) -> Self {
             let mut v = self.hierarchies.unwrap_or_default();
-            v.push(input);
-            self.hierarchies = Some(v);
-            self
+                            v.push(input);
+                            self.hierarchies = Some(v);
+                            self
         }
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-        pub fn set_hierarchies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
-        ) -> Self {
-            self.hierarchies = input;
-            self
+        pub fn set_hierarchies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>) -> Self {
+            self.hierarchies = input; self
         }
         /// <p>A description for the asset.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6379,24 +6105,34 @@ pub mod associated_assets_summary {
         }
         /// <p>A description for the asset.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary).
         pub fn build(self) -> crate::model::AssociatedAssetsSummary {
             crate::model::AssociatedAssetsSummary {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                asset_model_id: self.asset_model_id,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
-                status: self.status,
-                hierarchies: self.hierarchies,
-                description: self.description,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                asset_model_id: self.asset_model_id
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
+                status: self.status
+                ,
+                hierarchies: self.hierarchies
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociatedAssetsSummary {
     /// Creates a new builder-style object to manufacture [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary).
@@ -6408,7 +6144,7 @@ impl AssociatedAssetsSummary {
 /// <p>Describes an asset hierarchy that contains a hierarchy's name and ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetHierarchy {
+pub struct AssetHierarchy  {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6418,17 +6154,17 @@ pub struct AssetHierarchy {
 }
 impl AssetHierarchy {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`AssetHierarchy`](crate::model::AssetHierarchy).
 pub mod asset_hierarchy {
-
+    
     /// A builder for [`AssetHierarchy`](crate::model::AssetHierarchy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6443,8 +6179,7 @@ pub mod asset_hierarchy {
         }
         /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6453,17 +6188,20 @@ pub mod asset_hierarchy {
         }
         /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`AssetHierarchy`](crate::model::AssetHierarchy).
         pub fn build(self) -> crate::model::AssetHierarchy {
             crate::model::AssetHierarchy {
-                id: self.id,
-                name: self.name,
+                id: self.id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetHierarchy {
     /// Creates a new builder-style object to manufacture [`AssetHierarchy`](crate::model::AssetHierarchy).
@@ -6478,9 +6216,9 @@ impl AssetHierarchy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let traversaldirection = unimplemented!();
 /// match traversaldirection {
@@ -6502,60 +6240,52 @@ impl AssetHierarchy {
 /// Specifically, when `traversaldirection` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TraversalDirection::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TraversalDirection {
     #[allow(missing_docs)] // documentation missing in model
     Child,
     #[allow(missing_docs)] // documentation missing in model
     Parent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TraversalDirection {
     fn from(s: &str) -> Self {
         match s {
             "CHILD" => TraversalDirection::Child,
             "PARENT" => TraversalDirection::Parent,
-            other => {
-                TraversalDirection::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TraversalDirection::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TraversalDirection {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TraversalDirection::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TraversalDirection::from(s))
+                }
+            }
 impl TraversalDirection {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TraversalDirection::Child => "CHILD",
             TraversalDirection::Parent => "PARENT",
-            TraversalDirection::Unknown(value) => value.as_str(),
+            TraversalDirection::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHILD", "PARENT"]
+        &[
+            "CHILD", "PARENT"
+        ]
     }
 }
 impl AsRef<str> for TraversalDirection {
@@ -6567,11 +6297,11 @@ impl AsRef<str> for TraversalDirection {
 /// <p>Contains a summary of an asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetSummary {
+pub struct AssetSummary  {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6599,46 +6329,46 @@ pub struct AssetSummary {
 }
 impl AssetSummary {
     /// <p>The ID of the asset.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the asset model used to create this asset.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The current status of the asset.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AssetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AssetStatus> {
         self.status.as_ref()
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn hierarchies(&self) -> std::option::Option<&[crate::model::AssetHierarchy]> {
+    pub fn hierarchies(&self) -> std::option::Option<& [crate::model::AssetHierarchy]> {
         self.hierarchies.as_deref()
     }
     /// <p>A description for the asset.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`AssetSummary`](crate::model::AssetSummary).
 pub mod asset_summary {
-
+    
     /// A builder for [`AssetSummary`](crate::model::AssetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6660,20 +6390,18 @@ pub mod asset_summary {
         }
         /// <p>The ID of the asset.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the asset.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6682,8 +6410,7 @@ pub mod asset_summary {
         }
         /// <p>The name of the asset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the asset model used to create this asset.</p>
         pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6691,12 +6418,8 @@ pub mod asset_summary {
             self
         }
         /// <p>The ID of the asset model used to create this asset.</p>
-        pub fn set_asset_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_id = input;
-            self
+        pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_id = input; self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6704,12 +6427,8 @@ pub mod asset_summary {
             self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6717,12 +6436,8 @@ pub mod asset_summary {
             self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// <p>The current status of the asset.</p>
         pub fn status(mut self, input: crate::model::AssetStatus) -> Self {
@@ -6731,8 +6446,7 @@ pub mod asset_summary {
         }
         /// <p>The current status of the asset.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::AssetStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `hierarchies`.
         ///
@@ -6741,17 +6455,13 @@ pub mod asset_summary {
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
         pub fn hierarchies(mut self, input: crate::model::AssetHierarchy) -> Self {
             let mut v = self.hierarchies.unwrap_or_default();
-            v.push(input);
-            self.hierarchies = Some(v);
-            self
+                            v.push(input);
+                            self.hierarchies = Some(v);
+                            self
         }
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-        pub fn set_hierarchies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
-        ) -> Self {
-            self.hierarchies = input;
-            self
+        pub fn set_hierarchies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>) -> Self {
+            self.hierarchies = input; self
         }
         /// <p>A description for the asset.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6760,24 +6470,34 @@ pub mod asset_summary {
         }
         /// <p>A description for the asset.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`AssetSummary`](crate::model::AssetSummary).
         pub fn build(self) -> crate::model::AssetSummary {
             crate::model::AssetSummary {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                asset_model_id: self.asset_model_id,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
-                status: self.status,
-                hierarchies: self.hierarchies,
-                description: self.description,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                asset_model_id: self.asset_model_id
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
+                status: self.status
+                ,
+                hierarchies: self.hierarchies
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetSummary {
     /// Creates a new builder-style object to manufacture [`AssetSummary`](crate::model::AssetSummary).
@@ -6792,9 +6512,9 @@ impl AssetSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listassetsfilter = unimplemented!();
 /// match listassetsfilter {
@@ -6816,58 +6536,52 @@ impl AssetSummary {
 /// Specifically, when `listassetsfilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListAssetsFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListAssetsFilter {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     TopLevel,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListAssetsFilter {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => ListAssetsFilter::All,
             "TOP_LEVEL" => ListAssetsFilter::TopLevel,
-            other => ListAssetsFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ListAssetsFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListAssetsFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListAssetsFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListAssetsFilter::from(s))
+                }
+            }
 impl ListAssetsFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListAssetsFilter::All => "ALL",
             ListAssetsFilter::TopLevel => "TOP_LEVEL",
-            ListAssetsFilter::Unknown(value) => value.as_str(),
+            ListAssetsFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "TOP_LEVEL"]
+        &[
+            "ALL", "TOP_LEVEL"
+        ]
     }
 }
 impl AsRef<str> for ListAssetsFilter {
@@ -6879,35 +6593,35 @@ impl AsRef<str> for ListAssetsFilter {
 /// <p>Contains information about assets that are related to one another.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetRelationshipSummary {
-    /// <p>The assets that are related through an asset hierarchy.</p>
+pub struct AssetRelationshipSummary  {
+    /// <p>The assets that are related through an asset hierarchy.</p> 
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
     #[doc(hidden)]
     pub hierarchy_info: std::option::Option<crate::model::AssetHierarchyInfo>,
-    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub relationship_type: std::option::Option<crate::model::AssetRelationshipType>,
 }
 impl AssetRelationshipSummary {
-    /// <p>The assets that are related through an asset hierarchy.</p>
+    /// <p>The assets that are related through an asset hierarchy.</p> 
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
-    pub fn hierarchy_info(&self) -> std::option::Option<&crate::model::AssetHierarchyInfo> {
+    pub fn hierarchy_info(&self) -> std::option::Option<& crate::model::AssetHierarchyInfo> {
         self.hierarchy_info.as_ref()
     }
-    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> 
     /// </ul>
-    pub fn relationship_type(&self) -> std::option::Option<&crate::model::AssetRelationshipType> {
+    pub fn relationship_type(&self) -> std::option::Option<& crate::model::AssetRelationshipType> {
         self.relationship_type.as_ref()
     }
 }
 /// See [`AssetRelationshipSummary`](crate::model::AssetRelationshipSummary).
 pub mod asset_relationship_summary {
-
+    
     /// A builder for [`AssetRelationshipSummary`](crate::model::AssetRelationshipSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6915,48 +6629,44 @@ pub mod asset_relationship_summary {
         pub(crate) relationship_type: std::option::Option<crate::model::AssetRelationshipType>,
     }
     impl Builder {
-        /// <p>The assets that are related through an asset hierarchy.</p>
+        /// <p>The assets that are related through an asset hierarchy.</p> 
         /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
         pub fn hierarchy_info(mut self, input: crate::model::AssetHierarchyInfo) -> Self {
             self.hierarchy_info = Some(input);
             self
         }
-        /// <p>The assets that are related through an asset hierarchy.</p>
+        /// <p>The assets that are related through an asset hierarchy.</p> 
         /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
-        pub fn set_hierarchy_info(
-            mut self,
-            input: std::option::Option<crate::model::AssetHierarchyInfo>,
-        ) -> Self {
-            self.hierarchy_info = input;
-            self
+        pub fn set_hierarchy_info(mut self, input: std::option::Option<crate::model::AssetHierarchyInfo>) -> Self {
+            self.hierarchy_info = input; self
         }
-        /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+        /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> 
         /// </ul>
         pub fn relationship_type(mut self, input: crate::model::AssetRelationshipType) -> Self {
             self.relationship_type = Some(input);
             self
         }
-        /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+        /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> 
         /// </ul>
-        pub fn set_relationship_type(
-            mut self,
-            input: std::option::Option<crate::model::AssetRelationshipType>,
-        ) -> Self {
-            self.relationship_type = input;
-            self
+        pub fn set_relationship_type(mut self, input: std::option::Option<crate::model::AssetRelationshipType>) -> Self {
+            self.relationship_type = input; self
         }
         /// Consumes the builder and constructs a [`AssetRelationshipSummary`](crate::model::AssetRelationshipSummary).
         pub fn build(self) -> crate::model::AssetRelationshipSummary {
             crate::model::AssetRelationshipSummary {
-                hierarchy_info: self.hierarchy_info,
-                relationship_type: self.relationship_type,
+                hierarchy_info: self.hierarchy_info
+                ,
+                relationship_type: self.relationship_type
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetRelationshipSummary {
     /// Creates a new builder-style object to manufacture [`AssetRelationshipSummary`](crate::model::AssetRelationshipSummary).
@@ -6971,9 +6681,9 @@ impl AssetRelationshipSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assetrelationshiptype = unimplemented!();
 /// match assetrelationshiptype {
@@ -6994,56 +6704,48 @@ impl AssetRelationshipSummary {
 /// Specifically, when `assetrelationshiptype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssetRelationshipType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssetRelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     Hierarchy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetRelationshipType {
     fn from(s: &str) -> Self {
         match s {
             "HIERARCHY" => AssetRelationshipType::Hierarchy,
-            other => {
-                AssetRelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AssetRelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssetRelationshipType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssetRelationshipType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssetRelationshipType::from(s))
+                }
+            }
 impl AssetRelationshipType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssetRelationshipType::Hierarchy => "HIERARCHY",
-            AssetRelationshipType::Unknown(value) => value.as_str(),
+            AssetRelationshipType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HIERARCHY"]
+        &[
+            "HIERARCHY"
+        ]
     }
 }
 impl AsRef<str> for AssetRelationshipType {
@@ -7055,7 +6757,7 @@ impl AsRef<str> for AssetRelationshipType {
 /// <p>Contains information about a parent asset and a child asset that are related through an asset hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetHierarchyInfo {
+pub struct AssetHierarchyInfo  {
     /// <p>The ID of the parent asset in this asset relationship.</p>
     #[doc(hidden)]
     pub parent_asset_id: std::option::Option<std::string::String>,
@@ -7065,17 +6767,17 @@ pub struct AssetHierarchyInfo {
 }
 impl AssetHierarchyInfo {
     /// <p>The ID of the parent asset in this asset relationship.</p>
-    pub fn parent_asset_id(&self) -> std::option::Option<&str> {
+    pub fn parent_asset_id(&self) -> std::option::Option<& str> {
         self.parent_asset_id.as_deref()
     }
     /// <p>The ID of the child asset in this asset relationship.</p>
-    pub fn child_asset_id(&self) -> std::option::Option<&str> {
+    pub fn child_asset_id(&self) -> std::option::Option<& str> {
         self.child_asset_id.as_deref()
     }
 }
 /// See [`AssetHierarchyInfo`](crate::model::AssetHierarchyInfo).
 pub mod asset_hierarchy_info {
-
+    
     /// A builder for [`AssetHierarchyInfo`](crate::model::AssetHierarchyInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7089,12 +6791,8 @@ pub mod asset_hierarchy_info {
             self
         }
         /// <p>The ID of the parent asset in this asset relationship.</p>
-        pub fn set_parent_asset_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_asset_id = input;
-            self
+        pub fn set_parent_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_asset_id = input; self
         }
         /// <p>The ID of the child asset in this asset relationship.</p>
         pub fn child_asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7102,21 +6800,21 @@ pub mod asset_hierarchy_info {
             self
         }
         /// <p>The ID of the child asset in this asset relationship.</p>
-        pub fn set_child_asset_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.child_asset_id = input;
-            self
+        pub fn set_child_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.child_asset_id = input; self
         }
         /// Consumes the builder and constructs a [`AssetHierarchyInfo`](crate::model::AssetHierarchyInfo).
         pub fn build(self) -> crate::model::AssetHierarchyInfo {
             crate::model::AssetHierarchyInfo {
-                parent_asset_id: self.parent_asset_id,
-                child_asset_id: self.child_asset_id,
+                parent_asset_id: self.parent_asset_id
+                ,
+                child_asset_id: self.child_asset_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetHierarchyInfo {
     /// Creates a new builder-style object to manufacture [`AssetHierarchyInfo`](crate::model::AssetHierarchyInfo).
@@ -7131,9 +6829,9 @@ impl AssetHierarchyInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let traversaltype = unimplemented!();
 /// match traversaltype {
@@ -7154,54 +6852,48 @@ impl AssetHierarchyInfo {
 /// Specifically, when `traversaltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TraversalType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TraversalType {
     #[allow(missing_docs)] // documentation missing in model
     PathToRoot,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TraversalType {
     fn from(s: &str) -> Self {
         match s {
             "PATH_TO_ROOT" => TraversalType::PathToRoot,
-            other => TraversalType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TraversalType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TraversalType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TraversalType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TraversalType::from(s))
+                }
+            }
 impl TraversalType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TraversalType::PathToRoot => "PATH_TO_ROOT",
-            TraversalType::Unknown(value) => value.as_str(),
+            TraversalType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PATH_TO_ROOT"]
+        &[
+            "PATH_TO_ROOT"
+        ]
     }
 }
 impl AsRef<str> for TraversalType {
@@ -7213,7 +6905,7 @@ impl AsRef<str> for TraversalType {
 /// <p>Contains a summary of a property associated with an asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetPropertySummary {
+pub struct AssetPropertySummary  {
     /// <p>The ID of the property.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7232,29 +6924,29 @@ pub struct AssetPropertySummary {
 }
 impl AssetPropertySummary {
     /// <p>The ID of the property.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::PropertyNotification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::PropertyNotification> {
         self.notification.as_ref()
     }
     /// <p> The ID of the composite model that contains the asset property. </p>
-    pub fn asset_composite_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_composite_model_id(&self) -> std::option::Option<& str> {
         self.asset_composite_model_id.as_deref()
     }
 }
 /// See [`AssetPropertySummary`](crate::model::AssetPropertySummary).
 pub mod asset_property_summary {
-
+    
     /// A builder for [`AssetPropertySummary`](crate::model::AssetPropertySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7272,8 +6964,7 @@ pub mod asset_property_summary {
         }
         /// <p>The ID of the property.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7282,8 +6973,7 @@ pub mod asset_property_summary {
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7292,8 +6982,7 @@ pub mod asset_property_summary {
         }
         /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn notification(mut self, input: crate::model::PropertyNotification) -> Self {
@@ -7301,12 +6990,8 @@ pub mod asset_property_summary {
             self
         }
         /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::PropertyNotification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::PropertyNotification>) -> Self {
+            self.notification = input; self
         }
         /// <p> The ID of the composite model that contains the asset property. </p>
         pub fn asset_composite_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7314,24 +6999,27 @@ pub mod asset_property_summary {
             self
         }
         /// <p> The ID of the composite model that contains the asset property. </p>
-        pub fn set_asset_composite_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_composite_model_id = input;
-            self
+        pub fn set_asset_composite_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_composite_model_id = input; self
         }
         /// Consumes the builder and constructs a [`AssetPropertySummary`](crate::model::AssetPropertySummary).
         pub fn build(self) -> crate::model::AssetPropertySummary {
             crate::model::AssetPropertySummary {
-                id: self.id,
-                alias: self.alias,
-                unit: self.unit,
-                notification: self.notification,
-                asset_composite_model_id: self.asset_composite_model_id,
+                id: self.id
+                ,
+                alias: self.alias
+                ,
+                unit: self.unit
+                ,
+                notification: self.notification
+                ,
+                asset_composite_model_id: self.asset_composite_model_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetPropertySummary {
     /// Creates a new builder-style object to manufacture [`AssetPropertySummary`](crate::model::AssetPropertySummary).
@@ -7343,7 +7031,7 @@ impl AssetPropertySummary {
 /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyNotification {
+pub struct PropertyNotification  {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
@@ -7353,17 +7041,17 @@ pub struct PropertyNotification {
 }
 impl PropertyNotification {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> std::option::Option<& str> {
         self.topic.as_deref()
     }
     /// <p>The current notification state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::PropertyNotificationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::PropertyNotificationState> {
         self.state.as_ref()
     }
 }
 /// See [`PropertyNotification`](crate::model::PropertyNotification).
 pub mod property_notification {
-
+    
     /// A builder for [`PropertyNotification`](crate::model::PropertyNotification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7378,8 +7066,7 @@ pub mod property_notification {
         }
         /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
         pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic = input;
-            self
+            self.topic = input; self
         }
         /// <p>The current notification state.</p>
         pub fn state(mut self, input: crate::model::PropertyNotificationState) -> Self {
@@ -7387,21 +7074,21 @@ pub mod property_notification {
             self
         }
         /// <p>The current notification state.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::PropertyNotificationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::PropertyNotificationState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`PropertyNotification`](crate::model::PropertyNotification).
         pub fn build(self) -> crate::model::PropertyNotification {
             crate::model::PropertyNotification {
-                topic: self.topic,
-                state: self.state,
+                topic: self.topic
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl PropertyNotification {
     /// Creates a new builder-style object to manufacture [`PropertyNotification`](crate::model::PropertyNotification).
@@ -7416,9 +7103,9 @@ impl PropertyNotification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listassetpropertiesfilter = unimplemented!();
 /// match listassetpropertiesfilter {
@@ -7440,60 +7127,52 @@ impl PropertyNotification {
 /// Specifically, when `listassetpropertiesfilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListAssetPropertiesFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListAssetPropertiesFilter {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     Base,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListAssetPropertiesFilter {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => ListAssetPropertiesFilter::All,
             "BASE" => ListAssetPropertiesFilter::Base,
-            other => ListAssetPropertiesFilter::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListAssetPropertiesFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListAssetPropertiesFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListAssetPropertiesFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListAssetPropertiesFilter::from(s))
+                }
+            }
 impl ListAssetPropertiesFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListAssetPropertiesFilter::All => "ALL",
             ListAssetPropertiesFilter::Base => "BASE",
-            ListAssetPropertiesFilter::Unknown(value) => value.as_str(),
+            ListAssetPropertiesFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "BASE"]
+        &[
+            "ALL", "BASE"
+        ]
     }
 }
 impl AsRef<str> for ListAssetPropertiesFilter {
@@ -7505,11 +7184,11 @@ impl AsRef<str> for ListAssetPropertiesFilter {
 /// <p>Contains a summary of an asset model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelSummary {
+pub struct AssetModelSummary  {
     /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7531,38 +7210,38 @@ pub struct AssetModelSummary {
 }
 impl AssetModelSummary {
     /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the asset model.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The asset model description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date the asset model was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The current status of the asset model.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AssetModelStatus> {
         self.status.as_ref()
     }
 }
 /// See [`AssetModelSummary`](crate::model::AssetModelSummary).
 pub mod asset_model_summary {
-
+    
     /// A builder for [`AssetModelSummary`](crate::model::AssetModelSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7582,20 +7261,18 @@ pub mod asset_model_summary {
         }
         /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the asset model.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7604,8 +7281,7 @@ pub mod asset_model_summary {
         }
         /// <p>The name of the asset model.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The asset model description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7614,8 +7290,7 @@ pub mod asset_model_summary {
         }
         /// <p>The asset model description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date the asset model was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7623,12 +7298,8 @@ pub mod asset_model_summary {
             self
         }
         /// <p>The date the asset model was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the asset model was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7636,12 +7307,8 @@ pub mod asset_model_summary {
             self
         }
         /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// <p>The current status of the asset model.</p>
         pub fn status(mut self, input: crate::model::AssetModelStatus) -> Self {
@@ -7649,26 +7316,31 @@ pub mod asset_model_summary {
             self
         }
         /// <p>The current status of the asset model.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetModelStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AssetModelStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelSummary`](crate::model::AssetModelSummary).
         pub fn build(self) -> crate::model::AssetModelSummary {
             crate::model::AssetModelSummary {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
-                status: self.status,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelSummary {
     /// Creates a new builder-style object to manufacture [`AssetModelSummary`](crate::model::AssetModelSummary).
@@ -7680,7 +7352,7 @@ impl AssetModelSummary {
 /// <p>Contains a summary of a property associated with a model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelPropertySummary {
+pub struct AssetModelPropertySummary  {
     /// <p>The ID of the property.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7705,37 +7377,37 @@ pub struct AssetModelPropertySummary {
 }
 impl AssetModelPropertySummary {
     /// <p>The ID of the property.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the property.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PropertyType> {
         self.r#type.as_ref()
     }
     /// <p> The ID of the composite model that contains the asset model property. </p>
-    pub fn asset_model_composite_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_composite_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_composite_model_id.as_deref()
     }
 }
 /// See [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
 pub mod asset_model_property_summary {
-
+    
     /// A builder for [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7755,8 +7427,7 @@ pub mod asset_model_property_summary {
         }
         /// <p>The ID of the property.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the property.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7765,8 +7436,7 @@ pub mod asset_model_property_summary {
         }
         /// <p>The name of the property.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The data type of the property.</p>
         pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
@@ -7774,12 +7444,8 @@ pub mod asset_model_property_summary {
             self
         }
         /// <p>The data type of the property.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::PropertyDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::PropertyDataType>) -> Self {
+            self.data_type = input; self
         }
         /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7787,12 +7453,8 @@ pub mod asset_model_property_summary {
             self
         }
         /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-        pub fn set_data_type_spec(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_type_spec = input;
-            self
+        pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type_spec = input; self
         }
         /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7801,8 +7463,7 @@ pub mod asset_model_property_summary {
         }
         /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
         pub fn r#type(mut self, input: crate::model::PropertyType) -> Self {
@@ -7811,38 +7472,39 @@ pub mod asset_model_property_summary {
         }
         /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PropertyType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p> The ID of the composite model that contains the asset model property. </p>
-        pub fn asset_model_composite_model_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn asset_model_composite_model_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_model_composite_model_id = Some(input.into());
             self
         }
         /// <p> The ID of the composite model that contains the asset model property. </p>
-        pub fn set_asset_model_composite_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_composite_model_id = input;
-            self
+        pub fn set_asset_model_composite_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_composite_model_id = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
         pub fn build(self) -> crate::model::AssetModelPropertySummary {
             crate::model::AssetModelPropertySummary {
-                id: self.id,
-                name: self.name,
-                data_type: self.data_type,
-                data_type_spec: self.data_type_spec,
-                unit: self.unit,
-                r#type: self.r#type,
-                asset_model_composite_model_id: self.asset_model_composite_model_id,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                data_type: self.data_type
+                ,
+                data_type_spec: self.data_type_spec
+                ,
+                unit: self.unit
+                ,
+                r#type: self.r#type
+                ,
+                asset_model_composite_model_id: self.asset_model_composite_model_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelPropertySummary {
     /// Creates a new builder-style object to manufacture [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
@@ -7857,9 +7519,9 @@ impl AssetModelPropertySummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listassetmodelpropertiesfilter = unimplemented!();
 /// match listassetmodelpropertiesfilter {
@@ -7881,60 +7543,52 @@ impl AssetModelPropertySummary {
 /// Specifically, when `listassetmodelpropertiesfilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListAssetModelPropertiesFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListAssetModelPropertiesFilter {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     Base,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListAssetModelPropertiesFilter {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => ListAssetModelPropertiesFilter::All,
             "BASE" => ListAssetModelPropertiesFilter::Base,
-            other => ListAssetModelPropertiesFilter::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListAssetModelPropertiesFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListAssetModelPropertiesFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListAssetModelPropertiesFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListAssetModelPropertiesFilter::from(s))
+                }
+            }
 impl ListAssetModelPropertiesFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListAssetModelPropertiesFilter::All => "ALL",
             ListAssetModelPropertiesFilter::Base => "BASE",
-            ListAssetModelPropertiesFilter::Unknown(value) => value.as_str(),
+            ListAssetModelPropertiesFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "BASE"]
+        &[
+            "ALL", "BASE"
+        ]
     }
 }
 impl AsRef<str> for ListAssetModelPropertiesFilter {
@@ -7946,7 +7600,7 @@ impl AsRef<str> for ListAssetModelPropertiesFilter {
 /// <p>Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPolicySummary {
+pub struct AccessPolicySummary  {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7968,33 +7622,33 @@ pub struct AccessPolicySummary {
 }
 impl AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
-    pub fn identity(&self) -> std::option::Option<&crate::model::Identity> {
+    pub fn identity(&self) -> std::option::Option<& crate::model::Identity> {
         self.identity.as_ref()
     }
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
-    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+    pub fn resource(&self) -> std::option::Option<& crate::model::Resource> {
         self.resource.as_ref()
     }
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+    pub fn permission(&self) -> std::option::Option<& crate::model::Permission> {
         self.permission.as_ref()
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
 /// See [`AccessPolicySummary`](crate::model::AccessPolicySummary).
 pub mod access_policy_summary {
-
+    
     /// A builder for [`AccessPolicySummary`](crate::model::AccessPolicySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8013,8 +7667,7 @@ pub mod access_policy_summary {
         }
         /// <p>The ID of the access policy.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
         pub fn identity(mut self, input: crate::model::Identity) -> Self {
@@ -8023,8 +7676,7 @@ pub mod access_policy_summary {
         }
         /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
         pub fn set_identity(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
-            self.identity = input;
-            self
+            self.identity = input; self
         }
         /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
         pub fn resource(mut self, input: crate::model::Resource) -> Self {
@@ -8033,8 +7685,7 @@ pub mod access_policy_summary {
         }
         /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
         pub fn permission(mut self, input: crate::model::Permission) -> Self {
@@ -8042,12 +7693,8 @@ pub mod access_policy_summary {
             self
         }
         /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-        pub fn set_permission(
-            mut self,
-            input: std::option::Option<crate::model::Permission>,
-        ) -> Self {
-            self.permission = input;
-            self
+        pub fn set_permission(mut self, input: std::option::Option<crate::model::Permission>) -> Self {
+            self.permission = input; self
         }
         /// <p>The date the access policy was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8055,12 +7702,8 @@ pub mod access_policy_summary {
             self
         }
         /// <p>The date the access policy was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the access policy was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8068,25 +7711,29 @@ pub mod access_policy_summary {
             self
         }
         /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`AccessPolicySummary`](crate::model::AccessPolicySummary).
         pub fn build(self) -> crate::model::AccessPolicySummary {
             crate::model::AccessPolicySummary {
-                id: self.id,
-                identity: self.identity,
-                resource: self.resource,
-                permission: self.permission,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
+                id: self.id
+                ,
+                identity: self.identity
+                ,
+                resource: self.resource
+                ,
+                permission: self.permission
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPolicySummary {
     /// Creates a new builder-style object to manufacture [`AccessPolicySummary`](crate::model::AccessPolicySummary).
@@ -8101,9 +7748,9 @@ impl AccessPolicySummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -8125,58 +7772,52 @@ impl AccessPolicySummary {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Portal,
     #[allow(missing_docs)] // documentation missing in model
     Project,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "PORTAL" => ResourceType::Portal,
             "PROJECT" => ResourceType::Project,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Portal => "PORTAL",
             ResourceType::Project => "PROJECT",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PORTAL", "PROJECT"]
+        &[
+            "PORTAL", "PROJECT"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -8191,9 +7832,9 @@ impl AsRef<str> for ResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let identitytype = unimplemented!();
 /// match identitytype {
@@ -8216,22 +7857,14 @@ impl AsRef<str> for ResourceType {
 /// Specifically, when `identitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IdentityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IdentityType {
     #[allow(missing_docs)] // documentation missing in model
     Group,
@@ -8240,7 +7873,7 @@ pub enum IdentityType {
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IdentityType {
     fn from(s: &str) -> Self {
@@ -8248,17 +7881,17 @@ impl std::convert::From<&str> for IdentityType {
             "GROUP" => IdentityType::Group,
             "IAM" => IdentityType::Iam,
             "USER" => IdentityType::User,
-            other => IdentityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IdentityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IdentityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IdentityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IdentityType::from(s))
+                }
+            }
 impl IdentityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8266,12 +7899,14 @@ impl IdentityType {
             IdentityType::Group => "GROUP",
             IdentityType::Iam => "IAM",
             IdentityType::User => "USER",
-            IdentityType::Unknown(value) => value.as_str(),
+            IdentityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GROUP", "IAM", "USER"]
+        &[
+            "GROUP", "IAM", "USER"
+        ]
     }
 }
 impl AsRef<str> for IdentityType {
@@ -8283,7 +7918,7 @@ impl AsRef<str> for IdentityType {
 /// <p>Contains information about an interpolated asset property value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InterpolatedAssetPropertyValue {
+pub struct InterpolatedAssetPropertyValue  {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<crate::model::TimeInNanos>,
@@ -8293,17 +7928,17 @@ pub struct InterpolatedAssetPropertyValue {
 }
 impl InterpolatedAssetPropertyValue {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
-    pub fn timestamp(&self) -> std::option::Option<&crate::model::TimeInNanos> {
+    pub fn timestamp(&self) -> std::option::Option<& crate::model::TimeInNanos> {
         self.timestamp.as_ref()
     }
     /// <p>Contains an asset property value (of a single type only).</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::Variant> {
+    pub fn value(&self) -> std::option::Option<& crate::model::Variant> {
         self.value.as_ref()
     }
 }
 /// See [`InterpolatedAssetPropertyValue`](crate::model::InterpolatedAssetPropertyValue).
 pub mod interpolated_asset_property_value {
-
+    
     /// A builder for [`InterpolatedAssetPropertyValue`](crate::model::InterpolatedAssetPropertyValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8317,12 +7952,8 @@ pub mod interpolated_asset_property_value {
             self
         }
         /// <p>Contains a timestamp with optional nanosecond granularity.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<crate::model::TimeInNanos>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<crate::model::TimeInNanos>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>Contains an asset property value (of a single type only).</p>
         pub fn value(mut self, input: crate::model::Variant) -> Self {
@@ -8331,17 +7962,20 @@ pub mod interpolated_asset_property_value {
         }
         /// <p>Contains an asset property value (of a single type only).</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::Variant>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`InterpolatedAssetPropertyValue`](crate::model::InterpolatedAssetPropertyValue).
         pub fn build(self) -> crate::model::InterpolatedAssetPropertyValue {
             crate::model::InterpolatedAssetPropertyValue {
-                timestamp: self.timestamp,
-                value: self.value,
+                timestamp: self.timestamp
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl InterpolatedAssetPropertyValue {
     /// Creates a new builder-style object to manufacture [`InterpolatedAssetPropertyValue`](crate::model::InterpolatedAssetPropertyValue).
@@ -8353,7 +7987,7 @@ impl InterpolatedAssetPropertyValue {
 /// <p>Contains an asset property value (of a single type only).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Variant {
+pub struct Variant  {
     /// <p>Asset property data of type string (sequence of characters).</p>
     #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
@@ -8369,7 +8003,7 @@ pub struct Variant {
 }
 impl Variant {
     /// <p>Asset property data of type string (sequence of characters).</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
+    pub fn string_value(&self) -> std::option::Option<& str> {
         self.string_value.as_deref()
     }
     /// <p>Asset property data of type integer (whole number).</p>
@@ -8387,7 +8021,7 @@ impl Variant {
 }
 /// See [`Variant`](crate::model::Variant).
 pub mod variant {
-
+    
     /// A builder for [`Variant`](crate::model::Variant).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8404,8 +8038,7 @@ pub mod variant {
         }
         /// <p>Asset property data of type string (sequence of characters).</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.string_value = input;
-            self
+            self.string_value = input; self
         }
         /// <p>Asset property data of type integer (whole number).</p>
         pub fn integer_value(mut self, input: i32) -> Self {
@@ -8414,8 +8047,7 @@ pub mod variant {
         }
         /// <p>Asset property data of type integer (whole number).</p>
         pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.integer_value = input;
-            self
+            self.integer_value = input; self
         }
         /// <p>Asset property data of type double (floating point number).</p>
         pub fn double_value(mut self, input: f64) -> Self {
@@ -8424,8 +8056,7 @@ pub mod variant {
         }
         /// <p>Asset property data of type double (floating point number).</p>
         pub fn set_double_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.double_value = input;
-            self
+            self.double_value = input; self
         }
         /// <p>Asset property data of type Boolean (true or false).</p>
         pub fn boolean_value(mut self, input: bool) -> Self {
@@ -8434,19 +8065,24 @@ pub mod variant {
         }
         /// <p>Asset property data of type Boolean (true or false).</p>
         pub fn set_boolean_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.boolean_value = input;
-            self
+            self.boolean_value = input; self
         }
         /// Consumes the builder and constructs a [`Variant`](crate::model::Variant).
         pub fn build(self) -> crate::model::Variant {
             crate::model::Variant {
-                string_value: self.string_value,
-                integer_value: self.integer_value,
-                double_value: self.double_value,
-                boolean_value: self.boolean_value,
+                string_value: self.string_value
+                ,
+                integer_value: self.integer_value
+                ,
+                double_value: self.double_value
+                ,
+                boolean_value: self.boolean_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Variant {
     /// Creates a new builder-style object to manufacture [`Variant`](crate::model::Variant).
@@ -8458,7 +8094,7 @@ impl Variant {
 /// <p>Contains a timestamp with optional nanosecond granularity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeInNanos {
+pub struct TimeInNanos  {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     #[doc(hidden)]
     pub time_in_seconds: std::option::Option<i64>,
@@ -8478,7 +8114,7 @@ impl TimeInNanos {
 }
 /// See [`TimeInNanos`](crate::model::TimeInNanos).
 pub mod time_in_nanos {
-
+    
     /// A builder for [`TimeInNanos`](crate::model::TimeInNanos).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8493,8 +8129,7 @@ pub mod time_in_nanos {
         }
         /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
         pub fn set_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.time_in_seconds = input;
-            self
+            self.time_in_seconds = input; self
         }
         /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
         pub fn offset_in_nanos(mut self, input: i32) -> Self {
@@ -8503,17 +8138,20 @@ pub mod time_in_nanos {
         }
         /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
         pub fn set_offset_in_nanos(mut self, input: std::option::Option<i32>) -> Self {
-            self.offset_in_nanos = input;
-            self
+            self.offset_in_nanos = input; self
         }
         /// Consumes the builder and constructs a [`TimeInNanos`](crate::model::TimeInNanos).
         pub fn build(self) -> crate::model::TimeInNanos {
             crate::model::TimeInNanos {
-                time_in_seconds: self.time_in_seconds,
-                offset_in_nanos: self.offset_in_nanos,
+                time_in_seconds: self.time_in_seconds
+                ,
+                offset_in_nanos: self.offset_in_nanos
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeInNanos {
     /// Creates a new builder-style object to manufacture [`TimeInNanos`](crate::model::TimeInNanos).
@@ -8528,9 +8166,9 @@ impl TimeInNanos {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let quality = unimplemented!();
 /// match quality {
@@ -8553,22 +8191,14 @@ impl TimeInNanos {
 /// Specifically, when `quality` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Quality::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Quality {
     #[allow(missing_docs)] // documentation missing in model
     Bad,
@@ -8577,7 +8207,7 @@ pub enum Quality {
     #[allow(missing_docs)] // documentation missing in model
     Uncertain,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Quality {
     fn from(s: &str) -> Self {
@@ -8585,17 +8215,17 @@ impl std::convert::From<&str> for Quality {
             "BAD" => Quality::Bad,
             "GOOD" => Quality::Good,
             "UNCERTAIN" => Quality::Uncertain,
-            other => Quality::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Quality::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Quality {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Quality::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Quality::from(s))
+                }
+            }
 impl Quality {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8603,12 +8233,14 @@ impl Quality {
             Quality::Bad => "BAD",
             Quality::Good => "GOOD",
             Quality::Uncertain => "UNCERTAIN",
-            Quality::Unknown(value) => value.as_str(),
+            Quality::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BAD", "GOOD", "UNCERTAIN"]
+        &[
+            "BAD", "GOOD", "UNCERTAIN"
+        ]
     }
 }
 impl AsRef<str> for Quality {
@@ -8620,7 +8252,7 @@ impl AsRef<str> for Quality {
 /// <p>Contains asset property value information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetPropertyValue {
+pub struct AssetPropertyValue  {
     /// <p>The value of the asset property (see <code>Variant</code>).</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::model::Variant>,
@@ -8633,21 +8265,21 @@ pub struct AssetPropertyValue {
 }
 impl AssetPropertyValue {
     /// <p>The value of the asset property (see <code>Variant</code>).</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::Variant> {
+    pub fn value(&self) -> std::option::Option<& crate::model::Variant> {
         self.value.as_ref()
     }
     /// <p>The timestamp of the asset property value.</p>
-    pub fn timestamp(&self) -> std::option::Option<&crate::model::TimeInNanos> {
+    pub fn timestamp(&self) -> std::option::Option<& crate::model::TimeInNanos> {
         self.timestamp.as_ref()
     }
     /// <p>The quality of the asset property value.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::model::Quality> {
+    pub fn quality(&self) -> std::option::Option<& crate::model::Quality> {
         self.quality.as_ref()
     }
 }
 /// See [`AssetPropertyValue`](crate::model::AssetPropertyValue).
 pub mod asset_property_value {
-
+    
     /// A builder for [`AssetPropertyValue`](crate::model::AssetPropertyValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8663,8 +8295,7 @@ pub mod asset_property_value {
         }
         /// <p>The value of the asset property (see <code>Variant</code>).</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::Variant>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The timestamp of the asset property value.</p>
         pub fn timestamp(mut self, input: crate::model::TimeInNanos) -> Self {
@@ -8672,12 +8303,8 @@ pub mod asset_property_value {
             self
         }
         /// <p>The timestamp of the asset property value.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<crate::model::TimeInNanos>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<crate::model::TimeInNanos>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>The quality of the asset property value.</p>
         pub fn quality(mut self, input: crate::model::Quality) -> Self {
@@ -8686,18 +8313,22 @@ pub mod asset_property_value {
         }
         /// <p>The quality of the asset property value.</p>
         pub fn set_quality(mut self, input: std::option::Option<crate::model::Quality>) -> Self {
-            self.quality = input;
-            self
+            self.quality = input; self
         }
         /// Consumes the builder and constructs a [`AssetPropertyValue`](crate::model::AssetPropertyValue).
         pub fn build(self) -> crate::model::AssetPropertyValue {
             crate::model::AssetPropertyValue {
-                value: self.value,
-                timestamp: self.timestamp,
-                quality: self.quality,
+                value: self.value
+                ,
+                timestamp: self.timestamp
+                ,
+                quality: self.quality
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetPropertyValue {
     /// Creates a new builder-style object to manufacture [`AssetPropertyValue`](crate::model::AssetPropertyValue).
@@ -8712,9 +8343,9 @@ impl AssetPropertyValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let timeordering = unimplemented!();
 /// match timeordering {
@@ -8736,58 +8367,52 @@ impl AssetPropertyValue {
 /// Specifically, when `timeordering` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimeOrdering::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TimeOrdering {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TimeOrdering {
     fn from(s: &str) -> Self {
         match s {
             "ASCENDING" => TimeOrdering::Ascending,
             "DESCENDING" => TimeOrdering::Descending,
-            other => TimeOrdering::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TimeOrdering::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TimeOrdering {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimeOrdering::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TimeOrdering::from(s))
+                }
+            }
 impl TimeOrdering {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TimeOrdering::Ascending => "ASCENDING",
             TimeOrdering::Descending => "DESCENDING",
-            TimeOrdering::Unknown(value) => value.as_str(),
+            TimeOrdering::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASCENDING", "DESCENDING"]
+        &[
+            "ASCENDING", "DESCENDING"
+        ]
     }
 }
 impl AsRef<str> for TimeOrdering {
@@ -8799,7 +8424,7 @@ impl AsRef<str> for TimeOrdering {
 /// <p>Contains aggregated asset property values (for example, average, minimum, and maximum).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregatedValue {
+pub struct AggregatedValue  {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -8812,21 +8437,21 @@ pub struct AggregatedValue {
 }
 impl AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The quality of the aggregated data.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::model::Quality> {
+    pub fn quality(&self) -> std::option::Option<& crate::model::Quality> {
         self.quality.as_ref()
     }
     /// <p>The value of the aggregates.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::Aggregates> {
+    pub fn value(&self) -> std::option::Option<& crate::model::Aggregates> {
         self.value.as_ref()
     }
 }
 /// See [`AggregatedValue`](crate::model::AggregatedValue).
 pub mod aggregated_value {
-
+    
     /// A builder for [`AggregatedValue`](crate::model::AggregatedValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8841,12 +8466,8 @@ pub mod aggregated_value {
             self
         }
         /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>The quality of the aggregated data.</p>
         pub fn quality(mut self, input: crate::model::Quality) -> Self {
@@ -8855,8 +8476,7 @@ pub mod aggregated_value {
         }
         /// <p>The quality of the aggregated data.</p>
         pub fn set_quality(mut self, input: std::option::Option<crate::model::Quality>) -> Self {
-            self.quality = input;
-            self
+            self.quality = input; self
         }
         /// <p>The value of the aggregates.</p>
         pub fn value(mut self, input: crate::model::Aggregates) -> Self {
@@ -8865,18 +8485,22 @@ pub mod aggregated_value {
         }
         /// <p>The value of the aggregates.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::Aggregates>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AggregatedValue`](crate::model::AggregatedValue).
         pub fn build(self) -> crate::model::AggregatedValue {
             crate::model::AggregatedValue {
-                timestamp: self.timestamp,
-                quality: self.quality,
-                value: self.value,
+                timestamp: self.timestamp
+                ,
+                quality: self.quality
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl AggregatedValue {
     /// Creates a new builder-style object to manufacture [`AggregatedValue`](crate::model::AggregatedValue).
@@ -8888,7 +8512,7 @@ impl AggregatedValue {
 /// <p>Contains the (pre-calculated) aggregate values for an asset property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Aggregates {
+pub struct Aggregates  {
     /// <p>The average (mean) value of the time series over a time interval window.</p>
     #[doc(hidden)]
     pub average: std::option::Option<f64>,
@@ -8936,7 +8560,7 @@ impl Aggregates {
 }
 /// See [`Aggregates`](crate::model::Aggregates).
 pub mod aggregates {
-
+    
     /// A builder for [`Aggregates`](crate::model::Aggregates).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8955,8 +8579,7 @@ pub mod aggregates {
         }
         /// <p>The average (mean) value of the time series over a time interval window.</p>
         pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
-            self.average = input;
-            self
+            self.average = input; self
         }
         /// <p>The count of data points in the time series over a time interval window.</p>
         pub fn count(mut self, input: f64) -> Self {
@@ -8965,8 +8588,7 @@ pub mod aggregates {
         }
         /// <p>The count of data points in the time series over a time interval window.</p>
         pub fn set_count(mut self, input: std::option::Option<f64>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// <p>The maximum value of the time series over a time interval window.</p>
         pub fn maximum(mut self, input: f64) -> Self {
@@ -8975,8 +8597,7 @@ pub mod aggregates {
         }
         /// <p>The maximum value of the time series over a time interval window.</p>
         pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
-            self.maximum = input;
-            self
+            self.maximum = input; self
         }
         /// <p>The minimum value of the time series over a time interval window.</p>
         pub fn minimum(mut self, input: f64) -> Self {
@@ -8985,8 +8606,7 @@ pub mod aggregates {
         }
         /// <p>The minimum value of the time series over a time interval window.</p>
         pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
-            self.minimum = input;
-            self
+            self.minimum = input; self
         }
         /// <p>The sum of the time series over a time interval window.</p>
         pub fn sum(mut self, input: f64) -> Self {
@@ -8995,8 +8615,7 @@ pub mod aggregates {
         }
         /// <p>The sum of the time series over a time interval window.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
-            self.sum = input;
-            self
+            self.sum = input; self
         }
         /// <p>The standard deviation of the time series over a time interval window.</p>
         pub fn standard_deviation(mut self, input: f64) -> Self {
@@ -9005,21 +8624,28 @@ pub mod aggregates {
         }
         /// <p>The standard deviation of the time series over a time interval window.</p>
         pub fn set_standard_deviation(mut self, input: std::option::Option<f64>) -> Self {
-            self.standard_deviation = input;
-            self
+            self.standard_deviation = input; self
         }
         /// Consumes the builder and constructs a [`Aggregates`](crate::model::Aggregates).
         pub fn build(self) -> crate::model::Aggregates {
             crate::model::Aggregates {
-                average: self.average,
-                count: self.count,
-                maximum: self.maximum,
-                minimum: self.minimum,
-                sum: self.sum,
-                standard_deviation: self.standard_deviation,
+                average: self.average
+                ,
+                count: self.count
+                ,
+                maximum: self.maximum
+                ,
+                minimum: self.minimum
+                ,
+                sum: self.sum
+                ,
+                standard_deviation: self.standard_deviation
+                ,
             }
         }
     }
+    
+    
 }
 impl Aggregates {
     /// Creates a new builder-style object to manufacture [`Aggregates`](crate::model::Aggregates).
@@ -9034,9 +8660,9 @@ impl Aggregates {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggregatetype = unimplemented!();
 /// match aggregatetype {
@@ -9062,22 +8688,14 @@ impl Aggregates {
 /// Specifically, when `aggregatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AggregateType {
     #[allow(missing_docs)] // documentation missing in model
     Average,
@@ -9092,7 +8710,7 @@ pub enum AggregateType {
     #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregateType {
     fn from(s: &str) -> Self {
@@ -9103,17 +8721,17 @@ impl std::convert::From<&str> for AggregateType {
             "MINIMUM" => AggregateType::Minimum,
             "STANDARD_DEVIATION" => AggregateType::StandardDeviation,
             "SUM" => AggregateType::Sum,
-            other => AggregateType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AggregateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AggregateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AggregateType::from(s))
+                }
+            }
 impl AggregateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9124,18 +8742,13 @@ impl AggregateType {
             AggregateType::Minimum => "MINIMUM",
             AggregateType::StandardDeviation => "STANDARD_DEVIATION",
             AggregateType::Sum => "SUM",
-            AggregateType::Unknown(value) => value.as_str(),
+            AggregateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVERAGE",
-            "COUNT",
-            "MAXIMUM",
-            "MINIMUM",
-            "STANDARD_DEVIATION",
-            "SUM",
+            "AVERAGE", "COUNT", "MAXIMUM", "MINIMUM", "STANDARD_DEVIATION", "SUM"
         ]
     }
 }
@@ -9151,9 +8764,9 @@ impl AsRef<str> for AggregateType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authmode = unimplemented!();
 /// match authmode {
@@ -9175,58 +8788,52 @@ impl AsRef<str> for AggregateType {
 /// Specifically, when `authmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthMode {
     #[allow(missing_docs)] // documentation missing in model
     Iam,
     #[allow(missing_docs)] // documentation missing in model
     Sso,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthMode {
     fn from(s: &str) -> Self {
         match s {
             "IAM" => AuthMode::Iam,
             "SSO" => AuthMode::Sso,
-            other => AuthMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AuthMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthMode::from(s))
+                }
+            }
 impl AuthMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthMode::Iam => "IAM",
             AuthMode::Sso => "SSO",
-            AuthMode::Unknown(value) => value.as_str(),
+            AuthMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IAM", "SSO"]
+        &[
+            "IAM", "SSO"
+        ]
     }
 }
 impl AsRef<str> for AuthMode {
@@ -9238,7 +8845,7 @@ impl AsRef<str> for AuthMode {
 /// <p>Contains an image that is uploaded to IoT SiteWise and available at a URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageLocation {
+pub struct ImageLocation  {
     /// <p>The ID of the image.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -9248,17 +8855,17 @@ pub struct ImageLocation {
 }
 impl ImageLocation {
     /// <p>The ID of the image.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`ImageLocation`](crate::model::ImageLocation).
 pub mod image_location {
-
+    
     /// A builder for [`ImageLocation`](crate::model::ImageLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9273,8 +8880,7 @@ pub mod image_location {
         }
         /// <p>The ID of the image.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9283,17 +8889,20 @@ pub mod image_location {
         }
         /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`ImageLocation`](crate::model::ImageLocation).
         pub fn build(self) -> crate::model::ImageLocation {
             crate::model::ImageLocation {
-                id: self.id,
-                url: self.url,
+                id: self.id
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageLocation {
     /// Creates a new builder-style object to manufacture [`ImageLocation`](crate::model::ImageLocation).
@@ -9305,20 +8914,20 @@ impl ImageLocation {
 /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobConfiguration {
+pub struct JobConfiguration  {
     /// <p>The file format of the data in Amazon S3.</p>
     #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FileFormat>,
 }
 impl JobConfiguration {
     /// <p>The file format of the data in Amazon S3.</p>
-    pub fn file_format(&self) -> std::option::Option<&crate::model::FileFormat> {
+    pub fn file_format(&self) -> std::option::Option<& crate::model::FileFormat> {
         self.file_format.as_ref()
     }
 }
 /// See [`JobConfiguration`](crate::model::JobConfiguration).
 pub mod job_configuration {
-
+    
     /// A builder for [`JobConfiguration`](crate::model::JobConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9331,20 +8940,19 @@ pub mod job_configuration {
             self
         }
         /// <p>The file format of the data in Amazon S3.</p>
-        pub fn set_file_format(
-            mut self,
-            input: std::option::Option<crate::model::FileFormat>,
-        ) -> Self {
-            self.file_format = input;
-            self
+        pub fn set_file_format(mut self, input: std::option::Option<crate::model::FileFormat>) -> Self {
+            self.file_format = input; self
         }
         /// Consumes the builder and constructs a [`JobConfiguration`](crate::model::JobConfiguration).
         pub fn build(self) -> crate::model::JobConfiguration {
             crate::model::JobConfiguration {
-                file_format: self.file_format,
+                file_format: self.file_format
+                ,
             }
         }
     }
+    
+    
 }
 impl JobConfiguration {
     /// Creates a new builder-style object to manufacture [`JobConfiguration`](crate::model::JobConfiguration).
@@ -9356,20 +8964,20 @@ impl JobConfiguration {
 /// <p>The file format of the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileFormat {
+pub struct FileFormat  {
     /// <p>The .csv file format.</p>
     #[doc(hidden)]
     pub csv: std::option::Option<crate::model::Csv>,
 }
 impl FileFormat {
     /// <p>The .csv file format.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::model::Csv> {
+    pub fn csv(&self) -> std::option::Option<& crate::model::Csv> {
         self.csv.as_ref()
     }
 }
 /// See [`FileFormat`](crate::model::FileFormat).
 pub mod file_format {
-
+    
     /// A builder for [`FileFormat`](crate::model::FileFormat).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9383,14 +8991,18 @@ pub mod file_format {
         }
         /// <p>The .csv file format.</p>
         pub fn set_csv(mut self, input: std::option::Option<crate::model::Csv>) -> Self {
-            self.csv = input;
-            self
+            self.csv = input; self
         }
         /// Consumes the builder and constructs a [`FileFormat`](crate::model::FileFormat).
         pub fn build(self) -> crate::model::FileFormat {
-            crate::model::FileFormat { csv: self.csv }
+            crate::model::FileFormat {
+                csv: self.csv
+                ,
+            }
         }
     }
+    
+    
 }
 impl FileFormat {
     /// Creates a new builder-style object to manufacture [`FileFormat`](crate::model::FileFormat).
@@ -9402,20 +9014,20 @@ impl FileFormat {
 /// <p>A .csv file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Csv {
+pub struct Csv  {
     /// <p>The column names specified in the .csv file.</p>
     #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<crate::model::ColumnName>>,
 }
 impl Csv {
     /// <p>The column names specified in the .csv file.</p>
-    pub fn column_names(&self) -> std::option::Option<&[crate::model::ColumnName]> {
+    pub fn column_names(&self) -> std::option::Option<& [crate::model::ColumnName]> {
         self.column_names.as_deref()
     }
 }
 /// See [`Csv`](crate::model::Csv).
 pub mod csv {
-
+    
     /// A builder for [`Csv`](crate::model::Csv).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9429,25 +9041,24 @@ pub mod csv {
         /// <p>The column names specified in the .csv file.</p>
         pub fn column_names(mut self, input: crate::model::ColumnName) -> Self {
             let mut v = self.column_names.unwrap_or_default();
-            v.push(input);
-            self.column_names = Some(v);
-            self
+                            v.push(input);
+                            self.column_names = Some(v);
+                            self
         }
         /// <p>The column names specified in the .csv file.</p>
-        pub fn set_column_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnName>>,
-        ) -> Self {
-            self.column_names = input;
-            self
+        pub fn set_column_names(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnName>>) -> Self {
+            self.column_names = input; self
         }
         /// Consumes the builder and constructs a [`Csv`](crate::model::Csv).
         pub fn build(self) -> crate::model::Csv {
             crate::model::Csv {
-                column_names: self.column_names,
+                column_names: self.column_names
+                ,
             }
         }
     }
+    
+    
 }
 impl Csv {
     /// Creates a new builder-style object to manufacture [`Csv`](crate::model::Csv).
@@ -9462,9 +9073,9 @@ impl Csv {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let columnname = unimplemented!();
 /// match columnname {
@@ -9492,22 +9103,14 @@ impl Csv {
 /// Specifically, when `columnname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ColumnName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ColumnName {
     #[allow(missing_docs)] // documentation missing in model
     Alias,
@@ -9526,7 +9129,7 @@ pub enum ColumnName {
     #[allow(missing_docs)] // documentation missing in model
     Value,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ColumnName {
     fn from(s: &str) -> Self {
@@ -9539,17 +9142,17 @@ impl std::convert::From<&str> for ColumnName {
             "TIMESTAMP_NANO_OFFSET" => ColumnName::TimestampNanoOffset,
             "TIMESTAMP_SECONDS" => ColumnName::TimestampSeconds,
             "VALUE" => ColumnName::Value,
-            other => ColumnName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ColumnName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ColumnName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ColumnName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ColumnName::from(s))
+                }
+            }
 impl ColumnName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9562,20 +9165,13 @@ impl ColumnName {
             ColumnName::TimestampNanoOffset => "TIMESTAMP_NANO_OFFSET",
             ColumnName::TimestampSeconds => "TIMESTAMP_SECONDS",
             ColumnName::Value => "VALUE",
-            ColumnName::Unknown(value) => value.as_str(),
+            ColumnName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALIAS",
-            "ASSET_ID",
-            "DATA_TYPE",
-            "PROPERTY_ID",
-            "QUALITY",
-            "TIMESTAMP_NANO_OFFSET",
-            "TIMESTAMP_SECONDS",
-            "VALUE",
+            "ALIAS", "ASSET_ID", "DATA_TYPE", "PROPERTY_ID", "QUALITY", "TIMESTAMP_NANO_OFFSET", "TIMESTAMP_SECONDS", "VALUE"
         ]
     }
 }
@@ -9588,7 +9184,7 @@ impl AsRef<str> for ColumnName {
 /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorReportLocation {
+pub struct ErrorReportLocation  {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -9598,17 +9194,17 @@ pub struct ErrorReportLocation {
 }
 impl ErrorReportLocation {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`ErrorReportLocation`](crate::model::ErrorReportLocation).
 pub mod error_report_location {
-
+    
     /// A builder for [`ErrorReportLocation`](crate::model::ErrorReportLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9623,8 +9219,7 @@ pub mod error_report_location {
         }
         /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9633,17 +9228,20 @@ pub mod error_report_location {
         }
         /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`ErrorReportLocation`](crate::model::ErrorReportLocation).
         pub fn build(self) -> crate::model::ErrorReportLocation {
             crate::model::ErrorReportLocation {
-                bucket: self.bucket,
-                prefix: self.prefix,
+                bucket: self.bucket
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorReportLocation {
     /// Creates a new builder-style object to manufacture [`ErrorReportLocation`](crate::model::ErrorReportLocation).
@@ -9655,7 +9253,7 @@ impl ErrorReportLocation {
 /// <p>The file in Amazon S3 where your data is saved. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct File {
+pub struct File  {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -9668,21 +9266,21 @@ pub struct File {
 }
 impl File {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
 /// See [`File`](crate::model::File).
 pub mod file {
-
+    
     /// A builder for [`File`](crate::model::File).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9698,8 +9296,7 @@ pub mod file {
         }
         /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9708,8 +9305,7 @@ pub mod file {
         }
         /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9718,18 +9314,22 @@ pub mod file {
         }
         /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_id = input;
-            self
+            self.version_id = input; self
         }
         /// Consumes the builder and constructs a [`File`](crate::model::File).
         pub fn build(self) -> crate::model::File {
             crate::model::File {
-                bucket: self.bucket,
-                key: self.key,
-                version_id: self.version_id,
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
+                version_id: self.version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl File {
     /// Creates a new builder-style object to manufacture [`File`](crate::model::File).
@@ -9741,7 +9341,7 @@ impl File {
 /// <p>Contains information about a composite model property on an asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompositeModelProperty {
+pub struct CompositeModelProperty  {
     /// <p>The name of the property.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -9757,25 +9357,25 @@ pub struct CompositeModelProperty {
 }
 impl CompositeModelProperty {
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the composite model that defines this property.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Contains asset property information.</p>
-    pub fn asset_property(&self) -> std::option::Option<&crate::model::Property> {
+    pub fn asset_property(&self) -> std::option::Option<& crate::model::Property> {
         self.asset_property.as_ref()
     }
     /// <p> The ID of the composite model that contains the property. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CompositeModelProperty`](crate::model::CompositeModelProperty).
 pub mod composite_model_property {
-
+    
     /// A builder for [`CompositeModelProperty`](crate::model::CompositeModelProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9792,8 +9392,7 @@ pub mod composite_model_property {
         }
         /// <p>The name of the property.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the composite model that defines this property.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9802,8 +9401,7 @@ pub mod composite_model_property {
         }
         /// <p>The type of the composite model that defines this property.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Contains asset property information.</p>
         pub fn asset_property(mut self, input: crate::model::Property) -> Self {
@@ -9811,12 +9409,8 @@ pub mod composite_model_property {
             self
         }
         /// <p>Contains asset property information.</p>
-        pub fn set_asset_property(
-            mut self,
-            input: std::option::Option<crate::model::Property>,
-        ) -> Self {
-            self.asset_property = input;
-            self
+        pub fn set_asset_property(mut self, input: std::option::Option<crate::model::Property>) -> Self {
+            self.asset_property = input; self
         }
         /// <p> The ID of the composite model that contains the property. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9825,19 +9419,24 @@ pub mod composite_model_property {
         }
         /// <p> The ID of the composite model that contains the property. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CompositeModelProperty`](crate::model::CompositeModelProperty).
         pub fn build(self) -> crate::model::CompositeModelProperty {
             crate::model::CompositeModelProperty {
-                name: self.name,
-                r#type: self.r#type,
-                asset_property: self.asset_property,
-                id: self.id,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                asset_property: self.asset_property
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CompositeModelProperty {
     /// Creates a new builder-style object to manufacture [`CompositeModelProperty`](crate::model::CompositeModelProperty).
@@ -9849,7 +9448,7 @@ impl CompositeModelProperty {
 /// <p>Contains asset property information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Property {
+pub struct Property  {
     /// <p>The ID of the asset property.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -9874,37 +9473,37 @@ pub struct Property {
 }
 impl Property {
     /// <p>The ID of the asset property.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::PropertyNotification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::PropertyNotification> {
         self.notification.as_ref()
     }
     /// <p>The property data type.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PropertyType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Property`](crate::model::Property).
 pub mod property {
-
+    
     /// A builder for [`Property`](crate::model::Property).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9924,8 +9523,7 @@ pub mod property {
         }
         /// <p>The ID of the asset property.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the property.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9934,8 +9532,7 @@ pub mod property {
         }
         /// <p>The name of the property.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9944,8 +9541,7 @@ pub mod property {
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
         pub fn notification(mut self, input: crate::model::PropertyNotification) -> Self {
@@ -9953,12 +9549,8 @@ pub mod property {
             self
         }
         /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::PropertyNotification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::PropertyNotification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The property data type.</p>
         pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
@@ -9966,12 +9558,8 @@ pub mod property {
             self
         }
         /// <p>The property data type.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::PropertyDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::PropertyDataType>) -> Self {
+            self.data_type = input; self
         }
         /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9980,8 +9568,7 @@ pub mod property {
         }
         /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
         pub fn r#type(mut self, input: crate::model::PropertyType) -> Self {
@@ -9990,22 +9577,30 @@ pub mod property {
         }
         /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PropertyType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Property`](crate::model::Property).
         pub fn build(self) -> crate::model::Property {
             crate::model::Property {
-                id: self.id,
-                name: self.name,
-                alias: self.alias,
-                notification: self.notification,
-                data_type: self.data_type,
-                unit: self.unit,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                alias: self.alias
+                ,
+                notification: self.notification
+                ,
+                data_type: self.data_type
+                ,
+                unit: self.unit
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Property {
     /// Creates a new builder-style object to manufacture [`Property`](crate::model::Property).
@@ -10017,7 +9612,7 @@ impl Property {
 /// <p>Contains information about a composite model in an asset. This object contains the asset's properties that you define in the composite model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetCompositeModel {
+pub struct AssetCompositeModel  {
     /// <p>The name of the composite model.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10036,29 +9631,29 @@ pub struct AssetCompositeModel {
 }
 impl AssetCompositeModel {
     /// <p>The name of the composite model.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the composite model.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The asset properties that this composite model defines.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::model::AssetProperty]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::AssetProperty]> {
         self.properties.as_deref()
     }
     /// <p> The ID of the asset composite model. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`AssetCompositeModel`](crate::model::AssetCompositeModel).
 pub mod asset_composite_model {
-
+    
     /// A builder for [`AssetCompositeModel`](crate::model::AssetCompositeModel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10076,8 +9671,7 @@ pub mod asset_composite_model {
         }
         /// <p>The name of the composite model.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the composite model.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10086,8 +9680,7 @@ pub mod asset_composite_model {
         }
         /// <p>The description of the composite model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10096,8 +9689,7 @@ pub mod asset_composite_model {
         }
         /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `properties`.
         ///
@@ -10106,17 +9698,13 @@ pub mod asset_composite_model {
         /// <p>The asset properties that this composite model defines.</p>
         pub fn properties(mut self, input: crate::model::AssetProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>The asset properties that this composite model defines.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>) -> Self {
+            self.properties = input; self
         }
         /// <p> The ID of the asset composite model. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10125,20 +9713,26 @@ pub mod asset_composite_model {
         }
         /// <p> The ID of the asset composite model. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`AssetCompositeModel`](crate::model::AssetCompositeModel).
         pub fn build(self) -> crate::model::AssetCompositeModel {
             crate::model::AssetCompositeModel {
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                properties: self.properties,
-                id: self.id,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                properties: self.properties
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetCompositeModel {
     /// Creates a new builder-style object to manufacture [`AssetCompositeModel`](crate::model::AssetCompositeModel).
@@ -10150,7 +9744,7 @@ impl AssetCompositeModel {
 /// <p>Contains asset property information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetProperty {
+pub struct AssetProperty  {
     /// <p>The ID of the asset property.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -10175,37 +9769,37 @@ pub struct AssetProperty {
 }
 impl AssetProperty {
     /// <p>The ID of the asset property.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::PropertyNotification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::PropertyNotification> {
         self.notification.as_ref()
     }
     /// <p>The data type of the asset property.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
 /// See [`AssetProperty`](crate::model::AssetProperty).
 pub mod asset_property {
-
+    
     /// A builder for [`AssetProperty`](crate::model::AssetProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10225,8 +9819,7 @@ pub mod asset_property {
         }
         /// <p>The ID of the asset property.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the property.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10235,8 +9828,7 @@ pub mod asset_property {
         }
         /// <p>The name of the property.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10245,8 +9837,7 @@ pub mod asset_property {
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
         pub fn notification(mut self, input: crate::model::PropertyNotification) -> Self {
@@ -10254,12 +9845,8 @@ pub mod asset_property {
             self
         }
         /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::PropertyNotification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::PropertyNotification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The data type of the asset property.</p>
         pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
@@ -10267,12 +9854,8 @@ pub mod asset_property {
             self
         }
         /// <p>The data type of the asset property.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::PropertyDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::PropertyDataType>) -> Self {
+            self.data_type = input; self
         }
         /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10280,12 +9863,8 @@ pub mod asset_property {
             self
         }
         /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-        pub fn set_data_type_spec(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_type_spec = input;
-            self
+        pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type_spec = input; self
         }
         /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10294,22 +9873,30 @@ pub mod asset_property {
         }
         /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`AssetProperty`](crate::model::AssetProperty).
         pub fn build(self) -> crate::model::AssetProperty {
             crate::model::AssetProperty {
-                id: self.id,
-                name: self.name,
-                alias: self.alias,
-                notification: self.notification,
-                data_type: self.data_type,
-                data_type_spec: self.data_type_spec,
-                unit: self.unit,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                alias: self.alias
+                ,
+                notification: self.notification
+                ,
+                data_type: self.data_type
+                ,
+                data_type_spec: self.data_type_spec
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetProperty {
     /// Creates a new builder-style object to manufacture [`AssetProperty`](crate::model::AssetProperty).
@@ -10321,7 +9908,7 @@ impl AssetProperty {
 /// <p>Contains a composite model definition in an asset model. This composite model definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelCompositeModelDefinition {
+pub struct AssetModelCompositeModelDefinition  {
     /// <p>The name of the composite model.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10337,33 +9924,32 @@ pub struct AssetModelCompositeModelDefinition {
 }
 impl AssetModelCompositeModelDefinition {
     /// <p>The name of the composite model.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the composite model.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::model::AssetModelPropertyDefinition]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::AssetModelPropertyDefinition]> {
         self.properties.as_deref()
     }
 }
 /// See [`AssetModelCompositeModelDefinition`](crate::model::AssetModelCompositeModelDefinition).
 pub mod asset_model_composite_model_definition {
-
+    
     /// A builder for [`AssetModelCompositeModelDefinition`](crate::model::AssetModelCompositeModelDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) properties:
-            std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
+        pub(crate) properties: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
     }
     impl Builder {
         /// <p>The name of the composite model.</p>
@@ -10373,8 +9959,7 @@ pub mod asset_model_composite_model_definition {
         }
         /// <p>The name of the composite model.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the composite model.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10383,8 +9968,7 @@ pub mod asset_model_composite_model_definition {
         }
         /// <p>The description of the composite model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10393,8 +9977,7 @@ pub mod asset_model_composite_model_definition {
         }
         /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `properties`.
         ///
@@ -10403,28 +9986,30 @@ pub mod asset_model_composite_model_definition {
         /// <p>The asset property definitions for this composite model.</p>
         pub fn properties(mut self, input: crate::model::AssetModelPropertyDefinition) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>The asset property definitions for this composite model.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>) -> Self {
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelCompositeModelDefinition`](crate::model::AssetModelCompositeModelDefinition).
         pub fn build(self) -> crate::model::AssetModelCompositeModelDefinition {
             crate::model::AssetModelCompositeModelDefinition {
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                properties: self.properties,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelCompositeModelDefinition {
     /// Creates a new builder-style object to manufacture [`AssetModelCompositeModelDefinition`](crate::model::AssetModelCompositeModelDefinition).
@@ -10436,15 +10021,15 @@ impl AssetModelCompositeModelDefinition {
 /// <p>Contains an asset model property definition. This property definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelPropertyDefinition {
+pub struct AssetModelPropertyDefinition  {
     /// <p>The name of the property definition.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The data type of the property definition.</p>
+    /// <p>The data type of the property definition.</p> 
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
-    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> 
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
@@ -10457,31 +10042,31 @@ pub struct AssetModelPropertyDefinition {
 }
 impl AssetModelPropertyDefinition {
     /// <p>The name of the property definition.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The data type of the property definition.</p>
+    /// <p>The data type of the property definition.</p> 
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> 
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PropertyType> {
         self.r#type.as_ref()
     }
 }
 /// See [`AssetModelPropertyDefinition`](crate::model::AssetModelPropertyDefinition).
 pub mod asset_model_property_definition {
-
+    
     /// A builder for [`AssetModelPropertyDefinition`](crate::model::AssetModelPropertyDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10499,38 +10084,29 @@ pub mod asset_model_property_definition {
         }
         /// <p>The name of the property definition.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The data type of the property definition.</p>
+        /// <p>The data type of the property definition.</p> 
         /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
         pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
             self.data_type = Some(input);
             self
         }
-        /// <p>The data type of the property definition.</p>
+        /// <p>The data type of the property definition.</p> 
         /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::PropertyDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::PropertyDataType>) -> Self {
+            self.data_type = input; self
         }
-        /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> 
         /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type_spec = Some(input.into());
             self
         }
-        /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> 
         /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-        pub fn set_data_type_spec(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_type_spec = input;
-            self
+        pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type_spec = input; self
         }
         /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10539,8 +10115,7 @@ pub mod asset_model_property_definition {
         }
         /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
         pub fn r#type(mut self, input: crate::model::PropertyType) -> Self {
@@ -10549,20 +10124,26 @@ pub mod asset_model_property_definition {
         }
         /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PropertyType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelPropertyDefinition`](crate::model::AssetModelPropertyDefinition).
         pub fn build(self) -> crate::model::AssetModelPropertyDefinition {
             crate::model::AssetModelPropertyDefinition {
-                name: self.name,
-                data_type: self.data_type,
-                data_type_spec: self.data_type_spec,
-                unit: self.unit,
-                r#type: self.r#type,
+                name: self.name
+                ,
+                data_type: self.data_type
+                ,
+                data_type_spec: self.data_type_spec
+                ,
+                unit: self.unit
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelPropertyDefinition {
     /// Creates a new builder-style object to manufacture [`AssetModelPropertyDefinition`](crate::model::AssetModelPropertyDefinition).
@@ -10574,7 +10155,7 @@ impl AssetModelPropertyDefinition {
 /// <p>Contains an asset model hierarchy used in asset model creation. An asset model hierarchy determines the kind (or type) of asset that can belong to a hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelHierarchyDefinition {
+pub struct AssetModelHierarchyDefinition  {
     /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10584,17 +10165,17 @@ pub struct AssetModelHierarchyDefinition {
 }
 impl AssetModelHierarchyDefinition {
     /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of an asset model for this hierarchy.</p>
-    pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn child_asset_model_id(&self) -> std::option::Option<& str> {
         self.child_asset_model_id.as_deref()
     }
 }
 /// See [`AssetModelHierarchyDefinition`](crate::model::AssetModelHierarchyDefinition).
 pub mod asset_model_hierarchy_definition {
-
+    
     /// A builder for [`AssetModelHierarchyDefinition`](crate::model::AssetModelHierarchyDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10609,8 +10190,7 @@ pub mod asset_model_hierarchy_definition {
         }
         /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of an asset model for this hierarchy.</p>
         pub fn child_asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10618,21 +10198,21 @@ pub mod asset_model_hierarchy_definition {
             self
         }
         /// <p>The ID of an asset model for this hierarchy.</p>
-        pub fn set_child_asset_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.child_asset_model_id = input;
-            self
+        pub fn set_child_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.child_asset_model_id = input; self
         }
         /// Consumes the builder and constructs a [`AssetModelHierarchyDefinition`](crate::model::AssetModelHierarchyDefinition).
         pub fn build(self) -> crate::model::AssetModelHierarchyDefinition {
             crate::model::AssetModelHierarchyDefinition {
-                name: self.name,
-                child_asset_model_id: self.child_asset_model_id,
+                name: self.name
+                ,
+                child_asset_model_id: self.child_asset_model_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetModelHierarchyDefinition {
     /// Creates a new builder-style object to manufacture [`AssetModelHierarchyDefinition`](crate::model::AssetModelHierarchyDefinition).
@@ -10644,7 +10224,7 @@ impl AssetModelHierarchyDefinition {
 /// <p>Contains error information for asset property value entries that are associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutAssetPropertyErrorEntry {
+pub struct BatchPutAssetPropertyErrorEntry  {
     /// <p>The ID of the failed entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -10654,23 +10234,22 @@ pub struct BatchPutAssetPropertyErrorEntry {
 }
 impl BatchPutAssetPropertyErrorEntry {
     /// <p>The ID of the failed entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The list of update property value errors.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchPutAssetPropertyError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchPutAssetPropertyError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchPutAssetPropertyErrorEntry`](crate::model::BatchPutAssetPropertyErrorEntry).
 pub mod batch_put_asset_property_error_entry {
-
+    
     /// A builder for [`BatchPutAssetPropertyErrorEntry`](crate::model::BatchPutAssetPropertyErrorEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_id: std::option::Option<std::string::String>,
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyError>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyError>>,
     }
     impl Builder {
         /// <p>The ID of the failed entry.</p>
@@ -10680,8 +10259,7 @@ pub mod batch_put_asset_property_error_entry {
         }
         /// <p>The ID of the failed entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -10690,26 +10268,26 @@ pub mod batch_put_asset_property_error_entry {
         /// <p>The list of update property value errors.</p>
         pub fn errors(mut self, input: crate::model::BatchPutAssetPropertyError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>The list of update property value errors.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutAssetPropertyErrorEntry`](crate::model::BatchPutAssetPropertyErrorEntry).
         pub fn build(self) -> crate::model::BatchPutAssetPropertyErrorEntry {
             crate::model::BatchPutAssetPropertyErrorEntry {
-                entry_id: self.entry_id,
-                errors: self.errors,
+                entry_id: self.entry_id
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutAssetPropertyErrorEntry {
     /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyErrorEntry`](crate::model::BatchPutAssetPropertyErrorEntry).
@@ -10721,7 +10299,7 @@ impl BatchPutAssetPropertyErrorEntry {
 /// <p>Contains error information from updating a batch of asset property values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutAssetPropertyError {
+pub struct BatchPutAssetPropertyError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchPutAssetPropertyValueErrorCode>,
@@ -10734,47 +10312,37 @@ pub struct BatchPutAssetPropertyError {
 }
 impl BatchPutAssetPropertyError {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchPutAssetPropertyValueErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::BatchPutAssetPropertyValueErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>A list of timestamps for each error, if any.</p>
-    pub fn timestamps(&self) -> std::option::Option<&[crate::model::TimeInNanos]> {
+    pub fn timestamps(&self) -> std::option::Option<& [crate::model::TimeInNanos]> {
         self.timestamps.as_deref()
     }
 }
 /// See [`BatchPutAssetPropertyError`](crate::model::BatchPutAssetPropertyError).
 pub mod batch_put_asset_property_error {
-
+    
     /// A builder for [`BatchPutAssetPropertyError`](crate::model::BatchPutAssetPropertyError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_code:
-            std::option::Option<crate::model::BatchPutAssetPropertyValueErrorCode>,
+        pub(crate) error_code: std::option::Option<crate::model::BatchPutAssetPropertyValueErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) timestamps: std::option::Option<std::vec::Vec<crate::model::TimeInNanos>>,
     }
     impl Builder {
         /// <p>The error code.</p>
-        pub fn error_code(
-            mut self,
-            input: crate::model::BatchPutAssetPropertyValueErrorCode,
-        ) -> Self {
+        pub fn error_code(mut self, input: crate::model::BatchPutAssetPropertyValueErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::BatchPutAssetPropertyValueErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::BatchPutAssetPropertyValueErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The associated error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10782,12 +10350,8 @@ pub mod batch_put_asset_property_error {
             self
         }
         /// <p>The associated error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Appends an item to `timestamps`.
         ///
@@ -10796,27 +10360,28 @@ pub mod batch_put_asset_property_error {
         /// <p>A list of timestamps for each error, if any.</p>
         pub fn timestamps(mut self, input: crate::model::TimeInNanos) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
-            v.push(input);
-            self.timestamps = Some(v);
-            self
+                            v.push(input);
+                            self.timestamps = Some(v);
+                            self
         }
         /// <p>A list of timestamps for each error, if any.</p>
-        pub fn set_timestamps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TimeInNanos>>,
-        ) -> Self {
-            self.timestamps = input;
-            self
+        pub fn set_timestamps(mut self, input: std::option::Option<std::vec::Vec<crate::model::TimeInNanos>>) -> Self {
+            self.timestamps = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutAssetPropertyError`](crate::model::BatchPutAssetPropertyError).
         pub fn build(self) -> crate::model::BatchPutAssetPropertyError {
             crate::model::BatchPutAssetPropertyError {
-                error_code: self.error_code,
-                error_message: self.error_message,
-                timestamps: self.timestamps,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
+                timestamps: self.timestamps
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutAssetPropertyError {
     /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyError`](crate::model::BatchPutAssetPropertyError).
@@ -10831,9 +10396,9 @@ impl BatchPutAssetPropertyError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchputassetpropertyvalueerrorcode = unimplemented!();
 /// match batchputassetpropertyvalueerrorcode {
@@ -10862,22 +10427,14 @@ impl BatchPutAssetPropertyError {
 /// Specifically, when `batchputassetpropertyvalueerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchPutAssetPropertyValueErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchPutAssetPropertyValueErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -10898,85 +10455,51 @@ pub enum BatchPutAssetPropertyValueErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     TimestampOutOfRangeException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchPutAssetPropertyValueErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "AccessDeniedException" => BatchPutAssetPropertyValueErrorCode::AccessDeniedException,
-            "ConflictingOperationException" => {
-                BatchPutAssetPropertyValueErrorCode::ConflictingOperationException
-            }
-            "InternalFailureException" => {
-                BatchPutAssetPropertyValueErrorCode::InternalFailureException
-            }
-            "InvalidRequestException" => {
-                BatchPutAssetPropertyValueErrorCode::InvalidRequestException
-            }
+            "ConflictingOperationException" => BatchPutAssetPropertyValueErrorCode::ConflictingOperationException,
+            "InternalFailureException" => BatchPutAssetPropertyValueErrorCode::InternalFailureException,
+            "InvalidRequestException" => BatchPutAssetPropertyValueErrorCode::InvalidRequestException,
             "LimitExceededException" => BatchPutAssetPropertyValueErrorCode::LimitExceededException,
-            "ResourceNotFoundException" => {
-                BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException
-            }
-            "ServiceUnavailableException" => {
-                BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException
-            }
+            "ResourceNotFoundException" => BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException,
+            "ServiceUnavailableException" => BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException,
             "ThrottlingException" => BatchPutAssetPropertyValueErrorCode::ThrottlingException,
-            "TimestampOutOfRangeException" => {
-                BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException
-            }
-            other => BatchPutAssetPropertyValueErrorCode::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "TimestampOutOfRangeException" => BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException,
+            other => BatchPutAssetPropertyValueErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchPutAssetPropertyValueErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchPutAssetPropertyValueErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchPutAssetPropertyValueErrorCode::from(s))
+                }
+            }
 impl BatchPutAssetPropertyValueErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BatchPutAssetPropertyValueErrorCode::AccessDeniedException => "AccessDeniedException",
-            BatchPutAssetPropertyValueErrorCode::ConflictingOperationException => {
-                "ConflictingOperationException"
-            }
-            BatchPutAssetPropertyValueErrorCode::InternalFailureException => {
-                "InternalFailureException"
-            }
-            BatchPutAssetPropertyValueErrorCode::InvalidRequestException => {
-                "InvalidRequestException"
-            }
+            BatchPutAssetPropertyValueErrorCode::ConflictingOperationException => "ConflictingOperationException",
+            BatchPutAssetPropertyValueErrorCode::InternalFailureException => "InternalFailureException",
+            BatchPutAssetPropertyValueErrorCode::InvalidRequestException => "InvalidRequestException",
             BatchPutAssetPropertyValueErrorCode::LimitExceededException => "LimitExceededException",
-            BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException => {
-                "ResourceNotFoundException"
-            }
-            BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException => {
-                "ServiceUnavailableException"
-            }
+            BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
+            BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException => "ServiceUnavailableException",
             BatchPutAssetPropertyValueErrorCode::ThrottlingException => "ThrottlingException",
-            BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException => {
-                "TimestampOutOfRangeException"
-            }
-            BatchPutAssetPropertyValueErrorCode::Unknown(value) => value.as_str(),
+            BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException => "TimestampOutOfRangeException",
+            BatchPutAssetPropertyValueErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDeniedException",
-            "ConflictingOperationException",
-            "InternalFailureException",
-            "InvalidRequestException",
-            "LimitExceededException",
-            "ResourceNotFoundException",
-            "ServiceUnavailableException",
-            "ThrottlingException",
-            "TimestampOutOfRangeException",
+            "AccessDeniedException", "ConflictingOperationException", "InternalFailureException", "InvalidRequestException", "LimitExceededException", "ResourceNotFoundException", "ServiceUnavailableException", "ThrottlingException", "TimestampOutOfRangeException"
         ]
     }
 }
@@ -10989,7 +10512,7 @@ impl AsRef<str> for BatchPutAssetPropertyValueErrorCode {
 /// <p>Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAssetPropertyValueEntry {
+pub struct PutAssetPropertyValueEntry  {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -11008,29 +10531,29 @@ pub struct PutAssetPropertyValueEntry {
 }
 impl PutAssetPropertyValueEntry {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The ID of the asset to update.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property for this entry.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> std::option::Option<&str> {
+    pub fn property_alias(&self) -> std::option::Option<& str> {
         self.property_alias.as_deref()
     }
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
-    pub fn property_values(&self) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
+    pub fn property_values(&self) -> std::option::Option<& [crate::model::AssetPropertyValue]> {
         self.property_values.as_deref()
     }
 }
 /// See [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
 pub mod put_asset_property_value_entry {
-
+    
     /// A builder for [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11038,8 +10561,7 @@ pub mod put_asset_property_value_entry {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) property_id: std::option::Option<std::string::String>,
         pub(crate) property_alias: std::option::Option<std::string::String>,
-        pub(crate) property_values:
-            std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+        pub(crate) property_values: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
     }
     impl Builder {
         /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
@@ -11049,8 +10571,7 @@ pub mod put_asset_property_value_entry {
         }
         /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// <p>The ID of the asset to update.</p>
         pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11059,8 +10580,7 @@ pub mod put_asset_property_value_entry {
         }
         /// <p>The ID of the asset to update.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p>The ID of the asset property for this entry.</p>
         pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11069,8 +10589,7 @@ pub mod put_asset_property_value_entry {
         }
         /// <p>The ID of the asset property for this entry.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property_id = input;
-            self
+            self.property_id = input; self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11078,12 +10597,8 @@ pub mod put_asset_property_value_entry {
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_property_alias(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.property_alias = input;
-            self
+        pub fn set_property_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_alias = input; self
         }
         /// Appends an item to `property_values`.
         ///
@@ -11092,29 +10607,32 @@ pub mod put_asset_property_value_entry {
         /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
         pub fn property_values(mut self, input: crate::model::AssetPropertyValue) -> Self {
             let mut v = self.property_values.unwrap_or_default();
-            v.push(input);
-            self.property_values = Some(v);
-            self
+                            v.push(input);
+                            self.property_values = Some(v);
+                            self
         }
         /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
-        pub fn set_property_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
-        ) -> Self {
-            self.property_values = input;
-            self
+        pub fn set_property_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>) -> Self {
+            self.property_values = input; self
         }
         /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
         pub fn build(self) -> crate::model::PutAssetPropertyValueEntry {
             crate::model::PutAssetPropertyValueEntry {
-                entry_id: self.entry_id,
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                property_alias: self.property_alias,
-                property_values: self.property_values,
+                entry_id: self.entry_id
+                ,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                property_alias: self.property_alias
+                ,
+                property_values: self.property_values
+                ,
             }
         }
     }
+    
+    
 }
 impl PutAssetPropertyValueEntry {
     /// Creates a new builder-style object to manufacture [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
@@ -11126,7 +10644,7 @@ impl PutAssetPropertyValueEntry {
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistorySkippedEntry {
+pub struct BatchGetAssetPropertyValueHistorySkippedEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -11139,32 +10657,27 @@ pub struct BatchGetAssetPropertyValueHistorySkippedEntry {
 }
 impl BatchGetAssetPropertyValueHistorySkippedEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
-    pub fn completion_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchEntryCompletionStatus> {
+    pub fn completion_status(&self) -> std::option::Option<& crate::model::BatchEntryCompletionStatus> {
         self.completion_status.as_ref()
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn error_info(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueHistoryErrorInfo> {
+    pub fn error_info(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyValueHistoryErrorInfo> {
         self.error_info.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry).
 pub mod batch_get_asset_property_value_history_skipped_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_id: std::option::Option<std::string::String>,
         pub(crate) completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
-        pub(crate) error_info:
-            std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorInfo>,
+        pub(crate) error_info: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorInfo>,
     }
     impl Builder {
         /// <p>The ID of the entry.</p>
@@ -11174,55 +10687,44 @@ pub mod batch_get_asset_property_value_history_skipped_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
-        pub fn completion_status(
-            mut self,
-            input: crate::model::BatchEntryCompletionStatus,
-        ) -> Self {
+        pub fn completion_status(mut self, input: crate::model::BatchEntryCompletionStatus) -> Self {
             self.completion_status = Some(input);
             self
         }
         /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
-        pub fn set_completion_status(
-            mut self,
-            input: std::option::Option<crate::model::BatchEntryCompletionStatus>,
-        ) -> Self {
-            self.completion_status = input;
-            self
+        pub fn set_completion_status(mut self, input: std::option::Option<crate::model::BatchEntryCompletionStatus>) -> Self {
+            self.completion_status = input; self
         }
         /// <p>The error information, such as the error code and the timestamp.</p>
-        pub fn error_info(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueHistoryErrorInfo,
-        ) -> Self {
+        pub fn error_info(mut self, input: crate::model::BatchGetAssetPropertyValueHistoryErrorInfo) -> Self {
             self.error_info = Some(input);
             self
         }
         /// <p>The error information, such as the error code and the timestamp.</p>
-        pub fn set_error_info(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorInfo>,
-        ) -> Self {
-            self.error_info = input;
-            self
+        pub fn set_error_info(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorInfo>) -> Self {
+            self.error_info = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistorySkippedEntry {
             crate::model::BatchGetAssetPropertyValueHistorySkippedEntry {
-                entry_id: self.entry_id,
-                completion_status: self.completion_status,
-                error_info: self.error_info,
+                entry_id: self.entry_id
+                ,
+                completion_status: self.completion_status
+                ,
+                error_info: self.error_info
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueHistorySkippedEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_history_skipped_entry::Builder
-    {
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_skipped_entry::Builder {
         crate::model::batch_get_asset_property_value_history_skipped_entry::Builder::default()
     }
 }
@@ -11230,7 +10732,7 @@ impl BatchGetAssetPropertyValueHistorySkippedEntry {
 /// <p>The error information, such as the error code and the timestamp.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistoryErrorInfo {
+pub struct BatchGetAssetPropertyValueHistoryErrorInfo  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
@@ -11240,42 +10742,32 @@ pub struct BatchGetAssetPropertyValueHistoryErrorInfo {
 }
 impl BatchGetAssetPropertyValueHistoryErrorInfo {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueHistoryErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyValueHistoryErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn error_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo).
 pub mod batch_get_asset_property_value_history_error_info {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_code:
-            std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
+        pub(crate) error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
         pub(crate) error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The error code.</p>
-        pub fn error_code(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueHistoryErrorCode,
-        ) -> Self {
+        pub fn error_code(mut self, input: crate::model::BatchGetAssetPropertyValueHistoryErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The date the error occurred, in Unix epoch time.</p>
         pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11283,21 +10775,21 @@ pub mod batch_get_asset_property_value_history_error_info {
             self
         }
         /// <p>The date the error occurred, in Unix epoch time.</p>
-        pub fn set_error_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.error_timestamp = input;
-            self
+        pub fn set_error_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.error_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistoryErrorInfo {
             crate::model::BatchGetAssetPropertyValueHistoryErrorInfo {
-                error_code: self.error_code,
-                error_timestamp: self.error_timestamp,
+                error_code: self.error_code
+                ,
+                error_timestamp: self.error_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueHistoryErrorInfo {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo).
@@ -11312,9 +10804,9 @@ impl BatchGetAssetPropertyValueHistoryErrorInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchgetassetpropertyvaluehistoryerrorcode = unimplemented!();
 /// match batchgetassetpropertyvaluehistoryerrorcode {
@@ -11337,22 +10829,14 @@ impl BatchGetAssetPropertyValueHistoryErrorInfo {
 /// Specifically, when `batchgetassetpropertyvaluehistoryerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchGetAssetPropertyValueHistoryErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchGetAssetPropertyValueHistoryErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -11361,55 +10845,39 @@ pub enum BatchGetAssetPropertyValueHistoryErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchGetAssetPropertyValueHistoryErrorCode {
     fn from(s: &str) -> Self {
         match s {
-            "AccessDeniedException" => {
-                BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException
-            }
-            "InvalidRequestException" => {
-                BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException
-            }
-            "ResourceNotFoundException" => {
-                BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException
-            }
-            other => BatchGetAssetPropertyValueHistoryErrorCode::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "AccessDeniedException" => BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException,
+            "InvalidRequestException" => BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException,
+            "ResourceNotFoundException" => BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException,
+            other => BatchGetAssetPropertyValueHistoryErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchGetAssetPropertyValueHistoryErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchGetAssetPropertyValueHistoryErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchGetAssetPropertyValueHistoryErrorCode::from(s))
+                }
+            }
 impl BatchGetAssetPropertyValueHistoryErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException => {
-                "AccessDeniedException"
-            }
-            BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException => {
-                "InvalidRequestException"
-            }
-            BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException => {
-                "ResourceNotFoundException"
-            }
-            BatchGetAssetPropertyValueHistoryErrorCode::Unknown(value) => value.as_str(),
+            BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException => "AccessDeniedException",
+            BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException => "InvalidRequestException",
+            BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
+            BatchGetAssetPropertyValueHistoryErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDeniedException",
-            "InvalidRequestException",
-            "ResourceNotFoundException",
+            "AccessDeniedException", "InvalidRequestException", "ResourceNotFoundException"
         ]
     }
 }
@@ -11425,9 +10893,9 @@ impl AsRef<str> for BatchGetAssetPropertyValueHistoryErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchentrycompletionstatus = unimplemented!();
 /// match batchentrycompletionstatus {
@@ -11449,60 +10917,52 @@ impl AsRef<str> for BatchGetAssetPropertyValueHistoryErrorCode {
 /// Specifically, when `batchentrycompletionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchEntryCompletionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchEntryCompletionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchEntryCompletionStatus {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => BatchEntryCompletionStatus::Error,
             "SUCCESS" => BatchEntryCompletionStatus::Success,
-            other => BatchEntryCompletionStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BatchEntryCompletionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchEntryCompletionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchEntryCompletionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchEntryCompletionStatus::from(s))
+                }
+            }
 impl BatchEntryCompletionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BatchEntryCompletionStatus::Error => "ERROR",
             BatchEntryCompletionStatus::Success => "SUCCESS",
-            BatchEntryCompletionStatus::Unknown(value) => value.as_str(),
+            BatchEntryCompletionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "SUCCESS"]
+        &[
+            "ERROR", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for BatchEntryCompletionStatus {
@@ -11514,36 +10974,32 @@ impl AsRef<str> for BatchEntryCompletionStatus {
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistorySuccessEntry {
+pub struct BatchGetAssetPropertyValueHistorySuccessEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The requested historical values for the specified asset property.</p>
     #[doc(hidden)]
-    pub asset_property_value_history:
-        std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+    pub asset_property_value_history: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
 }
 impl BatchGetAssetPropertyValueHistorySuccessEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The requested historical values for the specified asset property.</p>
-    pub fn asset_property_value_history(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
+    pub fn asset_property_value_history(&self) -> std::option::Option<& [crate::model::AssetPropertyValue]> {
         self.asset_property_value_history.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry).
 pub mod batch_get_asset_property_value_history_success_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_id: std::option::Option<std::string::String>,
-        pub(crate) asset_property_value_history:
-            std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+        pub(crate) asset_property_value_history: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
     }
     impl Builder {
         /// <p>The ID of the entry.</p>
@@ -11553,44 +11009,39 @@ pub mod batch_get_asset_property_value_history_success_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// Appends an item to `asset_property_value_history`.
         ///
         /// To override the contents of this collection use [`set_asset_property_value_history`](Self::set_asset_property_value_history).
         ///
         /// <p>The requested historical values for the specified asset property.</p>
-        pub fn asset_property_value_history(
-            mut self,
-            input: crate::model::AssetPropertyValue,
-        ) -> Self {
+        pub fn asset_property_value_history(mut self, input: crate::model::AssetPropertyValue) -> Self {
             let mut v = self.asset_property_value_history.unwrap_or_default();
-            v.push(input);
-            self.asset_property_value_history = Some(v);
-            self
+                            v.push(input);
+                            self.asset_property_value_history = Some(v);
+                            self
         }
         /// <p>The requested historical values for the specified asset property.</p>
-        pub fn set_asset_property_value_history(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
-        ) -> Self {
-            self.asset_property_value_history = input;
-            self
+        pub fn set_asset_property_value_history(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>) -> Self {
+            self.asset_property_value_history = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistorySuccessEntry {
             crate::model::BatchGetAssetPropertyValueHistorySuccessEntry {
-                entry_id: self.entry_id,
-                asset_property_value_history: self.asset_property_value_history,
+                entry_id: self.entry_id
+                ,
+                asset_property_value_history: self.asset_property_value_history
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueHistorySuccessEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_history_success_entry::Builder
-    {
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_success_entry::Builder {
         crate::model::batch_get_asset_property_value_history_success_entry::Builder::default()
     }
 }
@@ -11598,7 +11049,7 @@ impl BatchGetAssetPropertyValueHistorySuccessEntry {
 /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
+pub struct BatchGetAssetPropertyValueHistoryErrorEntry  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
@@ -11611,47 +11062,37 @@ pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueHistoryErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyValueHistoryErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry).
 pub mod batch_get_asset_property_value_history_error_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_code:
-            std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
+        pub(crate) error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) entry_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The error code.</p>
-        pub fn error_code(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueHistoryErrorCode,
-        ) -> Self {
+        pub fn error_code(mut self, input: crate::model::BatchGetAssetPropertyValueHistoryErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The associated error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11659,12 +11100,8 @@ pub mod batch_get_asset_property_value_history_error_entry {
             self
         }
         /// <p>The associated error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The ID of the entry.</p>
         pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11673,18 +11110,22 @@ pub mod batch_get_asset_property_value_history_error_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistoryErrorEntry {
             crate::model::BatchGetAssetPropertyValueHistoryErrorEntry {
-                error_code: self.error_code,
-                error_message: self.error_message,
-                entry_id: self.entry_id,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
+                entry_id: self.entry_id
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry).
@@ -11693,15 +11134,15 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
     }
 }
 
-/// <p>Contains information for an asset property historical value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p>
-/// <p>To identify an asset property, you must specify one of the following:</p>
-/// <ul>
-/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
-/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+/// <p>Contains information for an asset property historical value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p> 
+/// <p>To identify an asset property, you must specify one of the following:</p> 
+/// <ul> 
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> 
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistoryEntry {
+pub struct BatchGetAssetPropertyValueHistoryEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -11723,49 +11164,49 @@ pub struct BatchGetAssetPropertyValueHistoryEntry {
     /// <p>The quality by which to filter asset data.</p>
     #[doc(hidden)]
     pub qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
-    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>The chronological sorting order of the requested information.</p> 
     /// <p>Default: <code>ASCENDING</code> </p>
     #[doc(hidden)]
     pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
 }
 impl BatchGetAssetPropertyValueHistoryEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> std::option::Option<&str> {
+    pub fn property_alias(&self) -> std::option::Option<& str> {
         self.property_alias.as_deref()
     }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The quality by which to filter asset data.</p>
-    pub fn qualities(&self) -> std::option::Option<&[crate::model::Quality]> {
+    pub fn qualities(&self) -> std::option::Option<& [crate::model::Quality]> {
         self.qualities.as_deref()
     }
-    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>The chronological sorting order of the requested information.</p> 
     /// <p>Default: <code>ASCENDING</code> </p>
-    pub fn time_ordering(&self) -> std::option::Option<&crate::model::TimeOrdering> {
+    pub fn time_ordering(&self) -> std::option::Option<& crate::model::TimeOrdering> {
         self.time_ordering.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry).
 pub mod batch_get_asset_property_value_history_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11786,8 +11227,7 @@ pub mod batch_get_asset_property_value_history_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
         pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11796,8 +11236,7 @@ pub mod batch_get_asset_property_value_history_entry {
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p>The ID of the asset property.</p>
         pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11806,8 +11245,7 @@ pub mod batch_get_asset_property_value_history_entry {
         }
         /// <p>The ID of the asset property.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property_id = input;
-            self
+            self.property_id = input; self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11815,12 +11253,8 @@ pub mod batch_get_asset_property_value_history_entry {
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_property_alias(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.property_alias = input;
-            self
+        pub fn set_property_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_alias = input; self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11828,12 +11262,8 @@ pub mod batch_get_asset_property_value_history_entry {
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11841,12 +11271,8 @@ pub mod batch_get_asset_property_value_history_entry {
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn set_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date = input;
-            self
+        pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date = input; self
         }
         /// Appends an item to `qualities`.
         ///
@@ -11855,47 +11281,49 @@ pub mod batch_get_asset_property_value_history_entry {
         /// <p>The quality by which to filter asset data.</p>
         pub fn qualities(mut self, input: crate::model::Quality) -> Self {
             let mut v = self.qualities.unwrap_or_default();
-            v.push(input);
-            self.qualities = Some(v);
-            self
+                            v.push(input);
+                            self.qualities = Some(v);
+                            self
         }
         /// <p>The quality by which to filter asset data.</p>
-        pub fn set_qualities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Quality>>,
-        ) -> Self {
-            self.qualities = input;
-            self
+        pub fn set_qualities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Quality>>) -> Self {
+            self.qualities = input; self
         }
-        /// <p>The chronological sorting order of the requested information.</p>
+        /// <p>The chronological sorting order of the requested information.</p> 
         /// <p>Default: <code>ASCENDING</code> </p>
         pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
             self.time_ordering = Some(input);
             self
         }
-        /// <p>The chronological sorting order of the requested information.</p>
+        /// <p>The chronological sorting order of the requested information.</p> 
         /// <p>Default: <code>ASCENDING</code> </p>
-        pub fn set_time_ordering(
-            mut self,
-            input: std::option::Option<crate::model::TimeOrdering>,
-        ) -> Self {
-            self.time_ordering = input;
-            self
+        pub fn set_time_ordering(mut self, input: std::option::Option<crate::model::TimeOrdering>) -> Self {
+            self.time_ordering = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistoryEntry {
             crate::model::BatchGetAssetPropertyValueHistoryEntry {
-                entry_id: self.entry_id,
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                property_alias: self.property_alias,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                qualities: self.qualities,
-                time_ordering: self.time_ordering,
+                entry_id: self.entry_id
+                ,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                property_alias: self.property_alias
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+                qualities: self.qualities
+                ,
+                time_ordering: self.time_ordering
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueHistoryEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry).
@@ -11907,7 +11335,7 @@ impl BatchGetAssetPropertyValueHistoryEntry {
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueSkippedEntry {
+pub struct BatchGetAssetPropertyValueSkippedEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -11920,32 +11348,27 @@ pub struct BatchGetAssetPropertyValueSkippedEntry {
 }
 impl BatchGetAssetPropertyValueSkippedEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
-    pub fn completion_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchEntryCompletionStatus> {
+    pub fn completion_status(&self) -> std::option::Option<& crate::model::BatchEntryCompletionStatus> {
         self.completion_status.as_ref()
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn error_info(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueErrorInfo> {
+    pub fn error_info(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyValueErrorInfo> {
         self.error_info.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry).
 pub mod batch_get_asset_property_value_skipped_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_id: std::option::Option<std::string::String>,
         pub(crate) completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
-        pub(crate) error_info:
-            std::option::Option<crate::model::BatchGetAssetPropertyValueErrorInfo>,
+        pub(crate) error_info: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorInfo>,
     }
     impl Builder {
         /// <p>The ID of the entry.</p>
@@ -11955,50 +11378,40 @@ pub mod batch_get_asset_property_value_skipped_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
-        pub fn completion_status(
-            mut self,
-            input: crate::model::BatchEntryCompletionStatus,
-        ) -> Self {
+        pub fn completion_status(mut self, input: crate::model::BatchEntryCompletionStatus) -> Self {
             self.completion_status = Some(input);
             self
         }
         /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
-        pub fn set_completion_status(
-            mut self,
-            input: std::option::Option<crate::model::BatchEntryCompletionStatus>,
-        ) -> Self {
-            self.completion_status = input;
-            self
+        pub fn set_completion_status(mut self, input: std::option::Option<crate::model::BatchEntryCompletionStatus>) -> Self {
+            self.completion_status = input; self
         }
         /// <p>The error information, such as the error code and the timestamp.</p>
-        pub fn error_info(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueErrorInfo,
-        ) -> Self {
+        pub fn error_info(mut self, input: crate::model::BatchGetAssetPropertyValueErrorInfo) -> Self {
             self.error_info = Some(input);
             self
         }
         /// <p>The error information, such as the error code and the timestamp.</p>
-        pub fn set_error_info(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorInfo>,
-        ) -> Self {
-            self.error_info = input;
-            self
+        pub fn set_error_info(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorInfo>) -> Self {
+            self.error_info = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueSkippedEntry {
             crate::model::BatchGetAssetPropertyValueSkippedEntry {
-                entry_id: self.entry_id,
-                completion_status: self.completion_status,
-                error_info: self.error_info,
+                entry_id: self.entry_id
+                ,
+                completion_status: self.completion_status
+                ,
+                error_info: self.error_info
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueSkippedEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry).
@@ -12010,7 +11423,7 @@ impl BatchGetAssetPropertyValueSkippedEntry {
 /// <p>The error information, such as the error code and the timestamp.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueErrorInfo {
+pub struct BatchGetAssetPropertyValueErrorInfo  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
@@ -12020,42 +11433,32 @@ pub struct BatchGetAssetPropertyValueErrorInfo {
 }
 impl BatchGetAssetPropertyValueErrorInfo {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyValueErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn error_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo).
 pub mod batch_get_asset_property_value_error_info {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_code:
-            std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
+        pub(crate) error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
         pub(crate) error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The error code.</p>
-        pub fn error_code(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueErrorCode,
-        ) -> Self {
+        pub fn error_code(mut self, input: crate::model::BatchGetAssetPropertyValueErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The date the error occurred, in Unix epoch time.</p>
         pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12063,21 +11466,21 @@ pub mod batch_get_asset_property_value_error_info {
             self
         }
         /// <p>The date the error occurred, in Unix epoch time.</p>
-        pub fn set_error_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.error_timestamp = input;
-            self
+        pub fn set_error_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.error_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueErrorInfo {
             crate::model::BatchGetAssetPropertyValueErrorInfo {
-                error_code: self.error_code,
-                error_timestamp: self.error_timestamp,
+                error_code: self.error_code
+                ,
+                error_timestamp: self.error_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueErrorInfo {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo).
@@ -12092,9 +11495,9 @@ impl BatchGetAssetPropertyValueErrorInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchgetassetpropertyvalueerrorcode = unimplemented!();
 /// match batchgetassetpropertyvalueerrorcode {
@@ -12117,22 +11520,14 @@ impl BatchGetAssetPropertyValueErrorInfo {
 /// Specifically, when `batchgetassetpropertyvalueerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchGetAssetPropertyValueErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchGetAssetPropertyValueErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -12141,51 +11536,39 @@ pub enum BatchGetAssetPropertyValueErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchGetAssetPropertyValueErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "AccessDeniedException" => BatchGetAssetPropertyValueErrorCode::AccessDeniedException,
-            "InvalidRequestException" => {
-                BatchGetAssetPropertyValueErrorCode::InvalidRequestException
-            }
-            "ResourceNotFoundException" => {
-                BatchGetAssetPropertyValueErrorCode::ResourceNotFoundException
-            }
-            other => BatchGetAssetPropertyValueErrorCode::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "InvalidRequestException" => BatchGetAssetPropertyValueErrorCode::InvalidRequestException,
+            "ResourceNotFoundException" => BatchGetAssetPropertyValueErrorCode::ResourceNotFoundException,
+            other => BatchGetAssetPropertyValueErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchGetAssetPropertyValueErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchGetAssetPropertyValueErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchGetAssetPropertyValueErrorCode::from(s))
+                }
+            }
 impl BatchGetAssetPropertyValueErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BatchGetAssetPropertyValueErrorCode::AccessDeniedException => "AccessDeniedException",
-            BatchGetAssetPropertyValueErrorCode::InvalidRequestException => {
-                "InvalidRequestException"
-            }
-            BatchGetAssetPropertyValueErrorCode::ResourceNotFoundException => {
-                "ResourceNotFoundException"
-            }
-            BatchGetAssetPropertyValueErrorCode::Unknown(value) => value.as_str(),
+            BatchGetAssetPropertyValueErrorCode::InvalidRequestException => "InvalidRequestException",
+            BatchGetAssetPropertyValueErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
+            BatchGetAssetPropertyValueErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDeniedException",
-            "InvalidRequestException",
-            "ResourceNotFoundException",
+            "AccessDeniedException", "InvalidRequestException", "ResourceNotFoundException"
         ]
     }
 }
@@ -12198,7 +11581,7 @@ impl AsRef<str> for BatchGetAssetPropertyValueErrorCode {
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueSuccessEntry {
+pub struct BatchGetAssetPropertyValueSuccessEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -12208,17 +11591,17 @@ pub struct BatchGetAssetPropertyValueSuccessEntry {
 }
 impl BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>Contains asset property value information.</p>
-    pub fn asset_property_value(&self) -> std::option::Option<&crate::model::AssetPropertyValue> {
+    pub fn asset_property_value(&self) -> std::option::Option<& crate::model::AssetPropertyValue> {
         self.asset_property_value.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry).
 pub mod batch_get_asset_property_value_success_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12233,8 +11616,7 @@ pub mod batch_get_asset_property_value_success_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// <p>Contains asset property value information.</p>
         pub fn asset_property_value(mut self, input: crate::model::AssetPropertyValue) -> Self {
@@ -12242,21 +11624,21 @@ pub mod batch_get_asset_property_value_success_entry {
             self
         }
         /// <p>Contains asset property value information.</p>
-        pub fn set_asset_property_value(
-            mut self,
-            input: std::option::Option<crate::model::AssetPropertyValue>,
-        ) -> Self {
-            self.asset_property_value = input;
-            self
+        pub fn set_asset_property_value(mut self, input: std::option::Option<crate::model::AssetPropertyValue>) -> Self {
+            self.asset_property_value = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueSuccessEntry {
             crate::model::BatchGetAssetPropertyValueSuccessEntry {
-                entry_id: self.entry_id,
-                asset_property_value: self.asset_property_value,
+                entry_id: self.entry_id
+                ,
+                asset_property_value: self.asset_property_value
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueSuccessEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry).
@@ -12268,7 +11650,7 @@ impl BatchGetAssetPropertyValueSuccessEntry {
 /// <p>Contains error information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueErrorEntry {
+pub struct BatchGetAssetPropertyValueErrorEntry  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
@@ -12281,47 +11663,37 @@ pub struct BatchGetAssetPropertyValueErrorEntry {
 }
 impl BatchGetAssetPropertyValueErrorEntry {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyValueErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry).
 pub mod batch_get_asset_property_value_error_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_code:
-            std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
+        pub(crate) error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) entry_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The error code.</p>
-        pub fn error_code(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueErrorCode,
-        ) -> Self {
+        pub fn error_code(mut self, input: crate::model::BatchGetAssetPropertyValueErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The associated error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12329,12 +11701,8 @@ pub mod batch_get_asset_property_value_error_entry {
             self
         }
         /// <p>The associated error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The ID of the entry.</p>
         pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12343,18 +11711,22 @@ pub mod batch_get_asset_property_value_error_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueErrorEntry {
             crate::model::BatchGetAssetPropertyValueErrorEntry {
-                error_code: self.error_code,
-                error_message: self.error_message,
-                entry_id: self.entry_id,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
+                entry_id: self.entry_id
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueErrorEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry).
@@ -12363,15 +11735,15 @@ impl BatchGetAssetPropertyValueErrorEntry {
     }
 }
 
-/// <p>Contains information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
-/// <p>To identify an asset property, you must specify one of the following:</p>
-/// <ul>
-/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
-/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+/// <p>Contains information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p> 
+/// <p>To identify an asset property, you must specify one of the following:</p> 
+/// <ul> 
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> 
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueEntry {
+pub struct BatchGetAssetPropertyValueEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -12387,25 +11759,25 @@ pub struct BatchGetAssetPropertyValueEntry {
 }
 impl BatchGetAssetPropertyValueEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> std::option::Option<&str> {
+    pub fn property_alias(&self) -> std::option::Option<& str> {
         self.property_alias.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry).
 pub mod batch_get_asset_property_value_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12422,8 +11794,7 @@ pub mod batch_get_asset_property_value_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
         pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12432,8 +11803,7 @@ pub mod batch_get_asset_property_value_entry {
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p>The ID of the asset property.</p>
         pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12442,8 +11812,7 @@ pub mod batch_get_asset_property_value_entry {
         }
         /// <p>The ID of the asset property.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property_id = input;
-            self
+            self.property_id = input; self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12451,23 +11820,25 @@ pub mod batch_get_asset_property_value_entry {
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_property_alias(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.property_alias = input;
-            self
+        pub fn set_property_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_alias = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyValueEntry {
             crate::model::BatchGetAssetPropertyValueEntry {
-                entry_id: self.entry_id,
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                property_alias: self.property_alias,
+                entry_id: self.entry_id
+                ,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                property_alias: self.property_alias
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry).
@@ -12479,7 +11850,7 @@ impl BatchGetAssetPropertyValueEntry {
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
+pub struct BatchGetAssetPropertyAggregatesSkippedEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -12492,32 +11863,27 @@ pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
 }
 impl BatchGetAssetPropertyAggregatesSkippedEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
-    pub fn completion_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchEntryCompletionStatus> {
+    pub fn completion_status(&self) -> std::option::Option<& crate::model::BatchEntryCompletionStatus> {
         self.completion_status.as_ref()
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn error_info(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyAggregatesErrorInfo> {
+    pub fn error_info(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyAggregatesErrorInfo> {
         self.error_info.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry).
 pub mod batch_get_asset_property_aggregates_skipped_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_id: std::option::Option<std::string::String>,
         pub(crate) completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
-        pub(crate) error_info:
-            std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>,
+        pub(crate) error_info: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>,
     }
     impl Builder {
         /// <p>The ID of the entry.</p>
@@ -12527,50 +11893,40 @@ pub mod batch_get_asset_property_aggregates_skipped_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
-        pub fn completion_status(
-            mut self,
-            input: crate::model::BatchEntryCompletionStatus,
-        ) -> Self {
+        pub fn completion_status(mut self, input: crate::model::BatchEntryCompletionStatus) -> Self {
             self.completion_status = Some(input);
             self
         }
         /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
-        pub fn set_completion_status(
-            mut self,
-            input: std::option::Option<crate::model::BatchEntryCompletionStatus>,
-        ) -> Self {
-            self.completion_status = input;
-            self
+        pub fn set_completion_status(mut self, input: std::option::Option<crate::model::BatchEntryCompletionStatus>) -> Self {
+            self.completion_status = input; self
         }
         /// <p>The error information, such as the error code and the timestamp.</p>
-        pub fn error_info(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyAggregatesErrorInfo,
-        ) -> Self {
+        pub fn error_info(mut self, input: crate::model::BatchGetAssetPropertyAggregatesErrorInfo) -> Self {
             self.error_info = Some(input);
             self
         }
         /// <p>The error information, such as the error code and the timestamp.</p>
-        pub fn set_error_info(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>,
-        ) -> Self {
-            self.error_info = input;
-            self
+        pub fn set_error_info(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>) -> Self {
+            self.error_info = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesSkippedEntry {
             crate::model::BatchGetAssetPropertyAggregatesSkippedEntry {
-                entry_id: self.entry_id,
-                completion_status: self.completion_status,
-                error_info: self.error_info,
+                entry_id: self.entry_id
+                ,
+                completion_status: self.completion_status
+                ,
+                error_info: self.error_info
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyAggregatesSkippedEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry).
@@ -12582,7 +11938,7 @@ impl BatchGetAssetPropertyAggregatesSkippedEntry {
 /// <p>Contains the error code and the timestamp for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesErrorInfo {
+pub struct BatchGetAssetPropertyAggregatesErrorInfo  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
@@ -12592,42 +11948,32 @@ pub struct BatchGetAssetPropertyAggregatesErrorInfo {
 }
 impl BatchGetAssetPropertyAggregatesErrorInfo {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyAggregatesErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyAggregatesErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn error_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo).
 pub mod batch_get_asset_property_aggregates_error_info {
-
+    
     /// A builder for [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_code:
-            std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
+        pub(crate) error_code: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
         pub(crate) error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The error code.</p>
-        pub fn error_code(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyAggregatesErrorCode,
-        ) -> Self {
+        pub fn error_code(mut self, input: crate::model::BatchGetAssetPropertyAggregatesErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The date the error occurred, in Unix epoch time.</p>
         pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12635,21 +11981,21 @@ pub mod batch_get_asset_property_aggregates_error_info {
             self
         }
         /// <p>The date the error occurred, in Unix epoch time.</p>
-        pub fn set_error_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.error_timestamp = input;
-            self
+        pub fn set_error_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.error_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesErrorInfo {
             crate::model::BatchGetAssetPropertyAggregatesErrorInfo {
-                error_code: self.error_code,
-                error_timestamp: self.error_timestamp,
+                error_code: self.error_code
+                ,
+                error_timestamp: self.error_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyAggregatesErrorInfo {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo).
@@ -12664,9 +12010,9 @@ impl BatchGetAssetPropertyAggregatesErrorInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchgetassetpropertyaggregateserrorcode = unimplemented!();
 /// match batchgetassetpropertyaggregateserrorcode {
@@ -12689,22 +12035,14 @@ impl BatchGetAssetPropertyAggregatesErrorInfo {
 /// Specifically, when `batchgetassetpropertyaggregateserrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchGetAssetPropertyAggregatesErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchGetAssetPropertyAggregatesErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -12713,55 +12051,39 @@ pub enum BatchGetAssetPropertyAggregatesErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchGetAssetPropertyAggregatesErrorCode {
     fn from(s: &str) -> Self {
         match s {
-            "AccessDeniedException" => {
-                BatchGetAssetPropertyAggregatesErrorCode::AccessDeniedException
-            }
-            "InvalidRequestException" => {
-                BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException
-            }
-            "ResourceNotFoundException" => {
-                BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException
-            }
-            other => BatchGetAssetPropertyAggregatesErrorCode::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "AccessDeniedException" => BatchGetAssetPropertyAggregatesErrorCode::AccessDeniedException,
+            "InvalidRequestException" => BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException,
+            "ResourceNotFoundException" => BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException,
+            other => BatchGetAssetPropertyAggregatesErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchGetAssetPropertyAggregatesErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchGetAssetPropertyAggregatesErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchGetAssetPropertyAggregatesErrorCode::from(s))
+                }
+            }
 impl BatchGetAssetPropertyAggregatesErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            BatchGetAssetPropertyAggregatesErrorCode::AccessDeniedException => {
-                "AccessDeniedException"
-            }
-            BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException => {
-                "InvalidRequestException"
-            }
-            BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException => {
-                "ResourceNotFoundException"
-            }
-            BatchGetAssetPropertyAggregatesErrorCode::Unknown(value) => value.as_str(),
+            BatchGetAssetPropertyAggregatesErrorCode::AccessDeniedException => "AccessDeniedException",
+            BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException => "InvalidRequestException",
+            BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
+            BatchGetAssetPropertyAggregatesErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDeniedException",
-            "InvalidRequestException",
-            "ResourceNotFoundException",
+            "AccessDeniedException", "InvalidRequestException", "ResourceNotFoundException"
         ]
     }
 }
@@ -12774,7 +12096,7 @@ impl AsRef<str> for BatchGetAssetPropertyAggregatesErrorCode {
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesSuccessEntry {
+pub struct BatchGetAssetPropertyAggregatesSuccessEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -12784,23 +12106,22 @@ pub struct BatchGetAssetPropertyAggregatesSuccessEntry {
 }
 impl BatchGetAssetPropertyAggregatesSuccessEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-    pub fn aggregated_values(&self) -> std::option::Option<&[crate::model::AggregatedValue]> {
+    pub fn aggregated_values(&self) -> std::option::Option<& [crate::model::AggregatedValue]> {
         self.aggregated_values.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry).
 pub mod batch_get_asset_property_aggregates_success_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_id: std::option::Option<std::string::String>,
-        pub(crate) aggregated_values:
-            std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
+        pub(crate) aggregated_values: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
     }
     impl Builder {
         /// <p>The ID of the entry.</p>
@@ -12810,8 +12131,7 @@ pub mod batch_get_asset_property_aggregates_success_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// Appends an item to `aggregated_values`.
         ///
@@ -12820,26 +12140,26 @@ pub mod batch_get_asset_property_aggregates_success_entry {
         /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
         pub fn aggregated_values(mut self, input: crate::model::AggregatedValue) -> Self {
             let mut v = self.aggregated_values.unwrap_or_default();
-            v.push(input);
-            self.aggregated_values = Some(v);
-            self
+                            v.push(input);
+                            self.aggregated_values = Some(v);
+                            self
         }
         /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-        pub fn set_aggregated_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
-        ) -> Self {
-            self.aggregated_values = input;
-            self
+        pub fn set_aggregated_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>) -> Self {
+            self.aggregated_values = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesSuccessEntry {
             crate::model::BatchGetAssetPropertyAggregatesSuccessEntry {
-                entry_id: self.entry_id,
-                aggregated_values: self.aggregated_values,
+                entry_id: self.entry_id
+                ,
+                aggregated_values: self.aggregated_values
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyAggregatesSuccessEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry).
@@ -12851,7 +12171,7 @@ impl BatchGetAssetPropertyAggregatesSuccessEntry {
 /// <p>Contains error information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesErrorEntry {
+pub struct BatchGetAssetPropertyAggregatesErrorEntry  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
@@ -12864,47 +12184,37 @@ pub struct BatchGetAssetPropertyAggregatesErrorEntry {
 }
 impl BatchGetAssetPropertyAggregatesErrorEntry {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyAggregatesErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::BatchGetAssetPropertyAggregatesErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry).
 pub mod batch_get_asset_property_aggregates_error_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_code:
-            std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
+        pub(crate) error_code: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) entry_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The error code.</p>
-        pub fn error_code(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyAggregatesErrorCode,
-        ) -> Self {
+        pub fn error_code(mut self, input: crate::model::BatchGetAssetPropertyAggregatesErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The associated error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12912,12 +12222,8 @@ pub mod batch_get_asset_property_aggregates_error_entry {
             self
         }
         /// <p>The associated error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The ID of the entry.</p>
         pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12926,18 +12232,22 @@ pub mod batch_get_asset_property_aggregates_error_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesErrorEntry {
             crate::model::BatchGetAssetPropertyAggregatesErrorEntry {
-                error_code: self.error_code,
-                error_message: self.error_message,
-                entry_id: self.entry_id,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
+                entry_id: self.entry_id
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyAggregatesErrorEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry).
@@ -12946,15 +12256,15 @@ impl BatchGetAssetPropertyAggregatesErrorEntry {
     }
 }
 
-/// <p>Contains information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
-/// <p>To identify an asset property, you must specify one of the following:</p>
-/// <ul>
-/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
-/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+/// <p>Contains information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p> 
+/// <p>To identify an asset property, you must specify one of the following:</p> 
+/// <ul> 
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> 
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesEntry {
+pub struct BatchGetAssetPropertyAggregatesEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -12982,57 +12292,57 @@ pub struct BatchGetAssetPropertyAggregatesEntry {
     /// <p>The quality by which to filter asset data.</p>
     #[doc(hidden)]
     pub qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
-    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>The chronological sorting order of the requested information.</p> 
     /// <p>Default: <code>ASCENDING</code> </p>
     #[doc(hidden)]
     pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
 }
 impl BatchGetAssetPropertyAggregatesEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> std::option::Option<&str> {
+    pub fn property_alias(&self) -> std::option::Option<& str> {
         self.property_alias.as_deref()
     }
     /// <p>The data aggregating function.</p>
-    pub fn aggregate_types(&self) -> std::option::Option<&[crate::model::AggregateType]> {
+    pub fn aggregate_types(&self) -> std::option::Option<& [crate::model::AggregateType]> {
         self.aggregate_types.as_deref()
     }
     /// <p>The time interval over which to aggregate data.</p>
-    pub fn resolution(&self) -> std::option::Option<&str> {
+    pub fn resolution(&self) -> std::option::Option<& str> {
         self.resolution.as_deref()
     }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The quality by which to filter asset data.</p>
-    pub fn qualities(&self) -> std::option::Option<&[crate::model::Quality]> {
+    pub fn qualities(&self) -> std::option::Option<& [crate::model::Quality]> {
         self.qualities.as_deref()
     }
-    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>The chronological sorting order of the requested information.</p> 
     /// <p>Default: <code>ASCENDING</code> </p>
-    pub fn time_ordering(&self) -> std::option::Option<&crate::model::TimeOrdering> {
+    pub fn time_ordering(&self) -> std::option::Option<& crate::model::TimeOrdering> {
         self.time_ordering.as_ref()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry).
 pub mod batch_get_asset_property_aggregates_entry {
-
+    
     /// A builder for [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13055,8 +12365,7 @@ pub mod batch_get_asset_property_aggregates_entry {
         }
         /// <p>The ID of the entry.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entry_id = input;
-            self
+            self.entry_id = input; self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
         pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13065,8 +12374,7 @@ pub mod batch_get_asset_property_aggregates_entry {
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p>The ID of the asset property.</p>
         pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13075,8 +12383,7 @@ pub mod batch_get_asset_property_aggregates_entry {
         }
         /// <p>The ID of the asset property.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property_id = input;
-            self
+            self.property_id = input; self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13084,12 +12391,8 @@ pub mod batch_get_asset_property_aggregates_entry {
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_property_alias(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.property_alias = input;
-            self
+        pub fn set_property_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_alias = input; self
         }
         /// Appends an item to `aggregate_types`.
         ///
@@ -13098,17 +12401,13 @@ pub mod batch_get_asset_property_aggregates_entry {
         /// <p>The data aggregating function.</p>
         pub fn aggregate_types(mut self, input: crate::model::AggregateType) -> Self {
             let mut v = self.aggregate_types.unwrap_or_default();
-            v.push(input);
-            self.aggregate_types = Some(v);
-            self
+                            v.push(input);
+                            self.aggregate_types = Some(v);
+                            self
         }
         /// <p>The data aggregating function.</p>
-        pub fn set_aggregate_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AggregateType>>,
-        ) -> Self {
-            self.aggregate_types = input;
-            self
+        pub fn set_aggregate_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AggregateType>>) -> Self {
+            self.aggregate_types = input; self
         }
         /// <p>The time interval over which to aggregate data.</p>
         pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13117,8 +12416,7 @@ pub mod batch_get_asset_property_aggregates_entry {
         }
         /// <p>The time interval over which to aggregate data.</p>
         pub fn set_resolution(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resolution = input;
-            self
+            self.resolution = input; self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13126,12 +12424,8 @@ pub mod batch_get_asset_property_aggregates_entry {
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13139,12 +12433,8 @@ pub mod batch_get_asset_property_aggregates_entry {
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn set_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date = input;
-            self
+        pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date = input; self
         }
         /// Appends an item to `qualities`.
         ///
@@ -13153,49 +12443,53 @@ pub mod batch_get_asset_property_aggregates_entry {
         /// <p>The quality by which to filter asset data.</p>
         pub fn qualities(mut self, input: crate::model::Quality) -> Self {
             let mut v = self.qualities.unwrap_or_default();
-            v.push(input);
-            self.qualities = Some(v);
-            self
+                            v.push(input);
+                            self.qualities = Some(v);
+                            self
         }
         /// <p>The quality by which to filter asset data.</p>
-        pub fn set_qualities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Quality>>,
-        ) -> Self {
-            self.qualities = input;
-            self
+        pub fn set_qualities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Quality>>) -> Self {
+            self.qualities = input; self
         }
-        /// <p>The chronological sorting order of the requested information.</p>
+        /// <p>The chronological sorting order of the requested information.</p> 
         /// <p>Default: <code>ASCENDING</code> </p>
         pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
             self.time_ordering = Some(input);
             self
         }
-        /// <p>The chronological sorting order of the requested information.</p>
+        /// <p>The chronological sorting order of the requested information.</p> 
         /// <p>Default: <code>ASCENDING</code> </p>
-        pub fn set_time_ordering(
-            mut self,
-            input: std::option::Option<crate::model::TimeOrdering>,
-        ) -> Self {
-            self.time_ordering = input;
-            self
+        pub fn set_time_ordering(mut self, input: std::option::Option<crate::model::TimeOrdering>) -> Self {
+            self.time_ordering = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry).
         pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesEntry {
             crate::model::BatchGetAssetPropertyAggregatesEntry {
-                entry_id: self.entry_id,
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                property_alias: self.property_alias,
-                aggregate_types: self.aggregate_types,
-                resolution: self.resolution,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                qualities: self.qualities,
-                time_ordering: self.time_ordering,
+                entry_id: self.entry_id
+                ,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                property_alias: self.property_alias
+                ,
+                aggregate_types: self.aggregate_types
+                ,
+                resolution: self.resolution
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+                qualities: self.qualities
+                ,
+                time_ordering: self.time_ordering
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyAggregatesEntry {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry).
@@ -13207,7 +12501,7 @@ impl BatchGetAssetPropertyAggregatesEntry {
 /// <p>Contains error details for the requested associate project asset action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetErrorDetails {
+pub struct AssetErrorDetails  {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -13220,21 +12514,21 @@ pub struct AssetErrorDetails {
 }
 impl AssetErrorDetails {
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::AssetErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::AssetErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`AssetErrorDetails`](crate::model::AssetErrorDetails).
 pub mod asset_error_details {
-
+    
     /// A builder for [`AssetErrorDetails`](crate::model::AssetErrorDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13250,8 +12544,7 @@ pub mod asset_error_details {
         }
         /// <p>The ID of the asset.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p>The error code.</p>
         pub fn code(mut self, input: crate::model::AssetErrorCode) -> Self {
@@ -13259,12 +12552,8 @@ pub mod asset_error_details {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::AssetErrorCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::AssetErrorCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13273,18 +12562,22 @@ pub mod asset_error_details {
         }
         /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AssetErrorDetails`](crate::model::AssetErrorDetails).
         pub fn build(self) -> crate::model::AssetErrorDetails {
             crate::model::AssetErrorDetails {
-                asset_id: self.asset_id,
-                code: self.code,
-                message: self.message,
+                asset_id: self.asset_id
+                ,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetErrorDetails {
     /// Creates a new builder-style object to manufacture [`AssetErrorDetails`](crate::model::AssetErrorDetails).
@@ -13299,9 +12592,9 @@ impl AssetErrorDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let asseterrorcode = unimplemented!();
 /// match asseterrorcode {
@@ -13322,54 +12615,48 @@ impl AssetErrorDetails {
 /// Specifically, when `asseterrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssetErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssetErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "INTERNAL_FAILURE" => AssetErrorCode::InternalFailure,
-            other => AssetErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssetErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssetErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssetErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssetErrorCode::from(s))
+                }
+            }
 impl AssetErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssetErrorCode::InternalFailure => "INTERNAL_FAILURE",
-            AssetErrorCode::Unknown(value) => value.as_str(),
+            AssetErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INTERNAL_FAILURE"]
+        &[
+            "INTERNAL_FAILURE"
+        ]
     }
 }
 impl AsRef<str> for AssetErrorCode {
@@ -13377,3 +12664,4 @@ impl AsRef<str> for AssetErrorCode {
         self.as_str()
     }
 }
+

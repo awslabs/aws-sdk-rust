@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
@@ -41,22 +41,14 @@
 /// Specifically, when `jobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -85,7 +77,7 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -103,17 +95,17 @@ impl std::convert::From<&str> for JobStatus {
             "Preparing" => JobStatus::Preparing,
             "Ready" => JobStatus::Ready,
             "Suspended" => JobStatus::Suspended,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobStatus::from(s))
+                }
+            }
 impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -131,25 +123,13 @@ impl JobStatus {
             JobStatus::Preparing => "Preparing",
             JobStatus::Ready => "Ready",
             JobStatus::Suspended => "Suspended",
-            JobStatus::Unknown(value) => value.as_str(),
+            JobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Active",
-            "Cancelled",
-            "Cancelling",
-            "Complete",
-            "Completing",
-            "Failed",
-            "Failing",
-            "New",
-            "Paused",
-            "Pausing",
-            "Preparing",
-            "Ready",
-            "Suspended",
+            "Active", "Cancelled", "Cancelling", "Complete", "Completing", "Failed", "Failing", "New", "Paused", "Pausing", "Preparing", "Ready", "Suspended"
         ]
     }
 }
@@ -165,9 +145,9 @@ impl AsRef<str> for JobStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let requestedjobstatus = unimplemented!();
 /// match requestedjobstatus {
@@ -189,60 +169,52 @@ impl AsRef<str> for JobStatus {
 /// Specifically, when `requestedjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RequestedJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RequestedJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequestedJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "Cancelled" => RequestedJobStatus::Cancelled,
             "Ready" => RequestedJobStatus::Ready,
-            other => {
-                RequestedJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RequestedJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RequestedJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequestedJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RequestedJobStatus::from(s))
+                }
+            }
 impl RequestedJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequestedJobStatus::Cancelled => "Cancelled",
             RequestedJobStatus::Ready => "Ready",
-            RequestedJobStatus::Unknown(value) => value.as_str(),
+            RequestedJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Cancelled", "Ready"]
+        &[
+            "Cancelled", "Ready"
+        ]
     }
 }
 impl AsRef<str> for RequestedJobStatus {
@@ -251,38 +223,38 @@ impl AsRef<str> for RequestedJobStatus {
     }
 }
 
-/// <p>A structure for a Multi-Region Access Point that indicates where Amazon S3 traffic can be routed. Routes can be either active or passive. Active routes can process Amazon S3 requests through the Multi-Region Access Point, but passive routes are not eligible to process Amazon S3 requests. </p>
+/// <p>A structure for a Multi-Region Access Point that indicates where Amazon S3 traffic can be routed. Routes can be either active or passive. Active routes can process Amazon S3 requests through the Multi-Region Access Point, but passive routes are not eligible to process Amazon S3 requests. </p> 
 /// <p>Each route contains the Amazon S3 bucket name and the Amazon Web Services Region that the bucket is located in. The route also includes the <code>TrafficDialPercentage</code> value, which shows whether the bucket and Region are active (indicated by a value of <code>100</code>) or passive (indicated by a value of <code>0</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiRegionAccessPointRoute {
+pub struct MultiRegionAccessPointRoute  {
     /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
-    /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
-    /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
-    /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
-    /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+    /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p> 
+    /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p> 
+    /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p> 
+    /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p> 
     /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
     #[doc(hidden)]
     pub traffic_dial_percentage: std::option::Option<i32>,
 }
 impl MultiRegionAccessPointRoute {
     /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
-    /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
-    /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
-    /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
-    /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+    /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p> 
+    /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p> 
+    /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p> 
+    /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p> 
     /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
     pub fn traffic_dial_percentage(&self) -> std::option::Option<i32> {
         self.traffic_dial_percentage
@@ -290,7 +262,7 @@ impl MultiRegionAccessPointRoute {
 }
 /// See [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
 pub mod multi_region_access_point_route {
-
+    
     /// A builder for [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -306,8 +278,7 @@ pub mod multi_region_access_point_route {
         }
         /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -316,36 +287,39 @@ pub mod multi_region_access_point_route {
         }
         /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
-        /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
-        /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
-        /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
-        /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+        /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p> 
+        /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p> 
+        /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p> 
+        /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p> 
         /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
         pub fn traffic_dial_percentage(mut self, input: i32) -> Self {
             self.traffic_dial_percentage = Some(input);
             self
         }
-        /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
-        /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
-        /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
-        /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+        /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p> 
+        /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p> 
+        /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p> 
+        /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p> 
         /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error. </p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.traffic_dial_percentage = input;
-            self
+            self.traffic_dial_percentage = input; self
         }
         /// Consumes the builder and constructs a [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
         pub fn build(self) -> crate::model::MultiRegionAccessPointRoute {
             crate::model::MultiRegionAccessPointRoute {
-                bucket: self.bucket,
-                region: self.region,
-                traffic_dial_percentage: self.traffic_dial_percentage,
+                bucket: self.bucket
+                ,
+                region: self.region
+                ,
+                traffic_dial_percentage: self.traffic_dial_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl MultiRegionAccessPointRoute {
     /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
@@ -357,7 +331,7 @@ impl MultiRegionAccessPointRoute {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageLensTag {
+pub struct StorageLensTag  {
     /// <p></p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -367,17 +341,17 @@ pub struct StorageLensTag {
 }
 impl StorageLensTag {
     /// <p></p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p></p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`StorageLensTag`](crate::model::StorageLensTag).
 pub mod storage_lens_tag {
-
+    
     /// A builder for [`StorageLensTag`](crate::model::StorageLensTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -392,8 +366,7 @@ pub mod storage_lens_tag {
         }
         /// <p></p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p></p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -402,17 +375,20 @@ pub mod storage_lens_tag {
         }
         /// <p></p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`StorageLensTag`](crate::model::StorageLensTag).
         pub fn build(self) -> crate::model::StorageLensTag {
             crate::model::StorageLensTag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl StorageLensTag {
     /// Creates a new builder-style object to manufacture [`StorageLensTag`](crate::model::StorageLensTag).
@@ -424,7 +400,7 @@ impl StorageLensTag {
 /// <p>A container for the Amazon S3 Storage Lens configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageLensConfiguration {
+pub struct StorageLensConfiguration  {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -452,23 +428,23 @@ pub struct StorageLensConfiguration {
 }
 impl StorageLensConfiguration {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
-    pub fn account_level(&self) -> std::option::Option<&crate::model::AccountLevel> {
+    pub fn account_level(&self) -> std::option::Option<& crate::model::AccountLevel> {
         self.account_level.as_ref()
     }
     /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
-    pub fn include(&self) -> std::option::Option<&crate::model::Include> {
+    pub fn include(&self) -> std::option::Option<& crate::model::Include> {
         self.include.as_ref()
     }
     /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
-    pub fn exclude(&self) -> std::option::Option<&crate::model::Exclude> {
+    pub fn exclude(&self) -> std::option::Option<& crate::model::Exclude> {
         self.exclude.as_ref()
     }
     /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>
-    pub fn data_export(&self) -> std::option::Option<&crate::model::StorageLensDataExport> {
+    pub fn data_export(&self) -> std::option::Option<& crate::model::StorageLensDataExport> {
         self.data_export.as_ref()
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
@@ -476,17 +452,17 @@ impl StorageLensConfiguration {
         self.is_enabled
     }
     /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
-    pub fn aws_org(&self) -> std::option::Option<&crate::model::StorageLensAwsOrg> {
+    pub fn aws_org(&self) -> std::option::Option<& crate::model::StorageLensAwsOrg> {
         self.aws_org.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
-    pub fn storage_lens_arn(&self) -> std::option::Option<&str> {
+    pub fn storage_lens_arn(&self) -> std::option::Option<& str> {
         self.storage_lens_arn.as_deref()
     }
 }
 /// See [`StorageLensConfiguration`](crate::model::StorageLensConfiguration).
 pub mod storage_lens_configuration {
-
+    
     /// A builder for [`StorageLensConfiguration`](crate::model::StorageLensConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -507,8 +483,7 @@ pub mod storage_lens_configuration {
         }
         /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
         pub fn account_level(mut self, input: crate::model::AccountLevel) -> Self {
@@ -516,12 +491,8 @@ pub mod storage_lens_configuration {
             self
         }
         /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
-        pub fn set_account_level(
-            mut self,
-            input: std::option::Option<crate::model::AccountLevel>,
-        ) -> Self {
-            self.account_level = input;
-            self
+        pub fn set_account_level(mut self, input: std::option::Option<crate::model::AccountLevel>) -> Self {
+            self.account_level = input; self
         }
         /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
         pub fn include(mut self, input: crate::model::Include) -> Self {
@@ -530,8 +501,7 @@ pub mod storage_lens_configuration {
         }
         /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
         pub fn set_include(mut self, input: std::option::Option<crate::model::Include>) -> Self {
-            self.include = input;
-            self
+            self.include = input; self
         }
         /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
         pub fn exclude(mut self, input: crate::model::Exclude) -> Self {
@@ -540,8 +510,7 @@ pub mod storage_lens_configuration {
         }
         /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
         pub fn set_exclude(mut self, input: std::option::Option<crate::model::Exclude>) -> Self {
-            self.exclude = input;
-            self
+            self.exclude = input; self
         }
         /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>
         pub fn data_export(mut self, input: crate::model::StorageLensDataExport) -> Self {
@@ -549,12 +518,8 @@ pub mod storage_lens_configuration {
             self
         }
         /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>
-        pub fn set_data_export(
-            mut self,
-            input: std::option::Option<crate::model::StorageLensDataExport>,
-        ) -> Self {
-            self.data_export = input;
-            self
+        pub fn set_data_export(mut self, input: std::option::Option<crate::model::StorageLensDataExport>) -> Self {
+            self.data_export = input; self
         }
         /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
         pub fn is_enabled(mut self, input: bool) -> Self {
@@ -563,8 +528,7 @@ pub mod storage_lens_configuration {
         }
         /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_enabled = input;
-            self
+            self.is_enabled = input; self
         }
         /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
         pub fn aws_org(mut self, input: crate::model::StorageLensAwsOrg) -> Self {
@@ -572,12 +536,8 @@ pub mod storage_lens_configuration {
             self
         }
         /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
-        pub fn set_aws_org(
-            mut self,
-            input: std::option::Option<crate::model::StorageLensAwsOrg>,
-        ) -> Self {
-            self.aws_org = input;
-            self
+        pub fn set_aws_org(mut self, input: std::option::Option<crate::model::StorageLensAwsOrg>) -> Self {
+            self.aws_org = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
         pub fn storage_lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -585,27 +545,34 @@ pub mod storage_lens_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
-        pub fn set_storage_lens_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.storage_lens_arn = input;
-            self
+        pub fn set_storage_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_lens_arn = input; self
         }
         /// Consumes the builder and constructs a [`StorageLensConfiguration`](crate::model::StorageLensConfiguration).
         pub fn build(self) -> crate::model::StorageLensConfiguration {
             crate::model::StorageLensConfiguration {
-                id: self.id,
-                account_level: self.account_level,
-                include: self.include,
-                exclude: self.exclude,
-                data_export: self.data_export,
-                is_enabled: self.is_enabled.unwrap_or_default(),
-                aws_org: self.aws_org,
-                storage_lens_arn: self.storage_lens_arn,
+                id: self.id
+                ,
+                account_level: self.account_level
+                ,
+                include: self.include
+                ,
+                exclude: self.exclude
+                ,
+                data_export: self.data_export
+                ,
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
+                aws_org: self.aws_org
+                ,
+                storage_lens_arn: self.storage_lens_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StorageLensConfiguration {
     /// Creates a new builder-style object to manufacture [`StorageLensConfiguration`](crate::model::StorageLensConfiguration).
@@ -617,20 +584,20 @@ impl StorageLensConfiguration {
 /// <p>The Amazon Web Services organization for your S3 Storage Lens.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageLensAwsOrg {
+pub struct StorageLensAwsOrg  {
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StorageLensAwsOrg {
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`StorageLensAwsOrg`](crate::model::StorageLensAwsOrg).
 pub mod storage_lens_aws_org {
-
+    
     /// A builder for [`StorageLensAwsOrg`](crate::model::StorageLensAwsOrg).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -644,14 +611,18 @@ pub mod storage_lens_aws_org {
         }
         /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`StorageLensAwsOrg`](crate::model::StorageLensAwsOrg).
         pub fn build(self) -> crate::model::StorageLensAwsOrg {
-            crate::model::StorageLensAwsOrg { arn: self.arn }
+            crate::model::StorageLensAwsOrg {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl StorageLensAwsOrg {
     /// Creates a new builder-style object to manufacture [`StorageLensAwsOrg`](crate::model::StorageLensAwsOrg).
@@ -663,9 +634,9 @@ impl StorageLensAwsOrg {
 /// <p>A container to specify the properties of your S3 Storage Lens metrics export, including the destination, schema, and format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageLensDataExport {
-    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
-    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
+pub struct StorageLensDataExport  {
+    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note> 
+    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p> 
     /// </note>
     #[doc(hidden)]
     pub s3_bucket_destination: std::option::Option<crate::model::S3BucketDestination>,
@@ -674,20 +645,20 @@ pub struct StorageLensDataExport {
     pub cloud_watch_metrics: std::option::Option<crate::model::CloudWatchMetrics>,
 }
 impl StorageLensDataExport {
-    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
-    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
+    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note> 
+    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p> 
     /// </note>
-    pub fn s3_bucket_destination(&self) -> std::option::Option<&crate::model::S3BucketDestination> {
+    pub fn s3_bucket_destination(&self) -> std::option::Option<& crate::model::S3BucketDestination> {
         self.s3_bucket_destination.as_ref()
     }
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
-    pub fn cloud_watch_metrics(&self) -> std::option::Option<&crate::model::CloudWatchMetrics> {
+    pub fn cloud_watch_metrics(&self) -> std::option::Option<& crate::model::CloudWatchMetrics> {
         self.cloud_watch_metrics.as_ref()
     }
 }
 /// See [`StorageLensDataExport`](crate::model::StorageLensDataExport).
 pub mod storage_lens_data_export {
-
+    
     /// A builder for [`StorageLensDataExport`](crate::model::StorageLensDataExport).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -695,22 +666,18 @@ pub mod storage_lens_data_export {
         pub(crate) cloud_watch_metrics: std::option::Option<crate::model::CloudWatchMetrics>,
     }
     impl Builder {
-        /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
-        /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
+        /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note> 
+        /// <p>This bucket must be located in the same Region as the storage lens configuration. </p> 
         /// </note>
         pub fn s3_bucket_destination(mut self, input: crate::model::S3BucketDestination) -> Self {
             self.s3_bucket_destination = Some(input);
             self
         }
-        /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
-        /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
+        /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note> 
+        /// <p>This bucket must be located in the same Region as the storage lens configuration. </p> 
         /// </note>
-        pub fn set_s3_bucket_destination(
-            mut self,
-            input: std::option::Option<crate::model::S3BucketDestination>,
-        ) -> Self {
-            self.s3_bucket_destination = input;
-            self
+        pub fn set_s3_bucket_destination(mut self, input: std::option::Option<crate::model::S3BucketDestination>) -> Self {
+            self.s3_bucket_destination = input; self
         }
         /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
         pub fn cloud_watch_metrics(mut self, input: crate::model::CloudWatchMetrics) -> Self {
@@ -718,21 +685,21 @@ pub mod storage_lens_data_export {
             self
         }
         /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
-        pub fn set_cloud_watch_metrics(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchMetrics>,
-        ) -> Self {
-            self.cloud_watch_metrics = input;
-            self
+        pub fn set_cloud_watch_metrics(mut self, input: std::option::Option<crate::model::CloudWatchMetrics>) -> Self {
+            self.cloud_watch_metrics = input; self
         }
         /// Consumes the builder and constructs a [`StorageLensDataExport`](crate::model::StorageLensDataExport).
         pub fn build(self) -> crate::model::StorageLensDataExport {
             crate::model::StorageLensDataExport {
-                s3_bucket_destination: self.s3_bucket_destination,
-                cloud_watch_metrics: self.cloud_watch_metrics,
+                s3_bucket_destination: self.s3_bucket_destination
+                ,
+                cloud_watch_metrics: self.cloud_watch_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl StorageLensDataExport {
     /// Creates a new builder-style object to manufacture [`StorageLensDataExport`](crate::model::StorageLensDataExport).
@@ -741,11 +708,11 @@ impl StorageLensDataExport {
     }
 }
 
-/// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
+/// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p> 
 /// <p>For more information about publishing S3 Storage Lens metrics to CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_view_metrics_cloudwatch.html">Monitor S3 Storage Lens metrics in CloudWatch</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchMetrics {
+pub struct CloudWatchMetrics  {
     /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
     #[doc(hidden)]
     pub is_enabled: bool,
@@ -758,7 +725,7 @@ impl CloudWatchMetrics {
 }
 /// See [`CloudWatchMetrics`](crate::model::CloudWatchMetrics).
 pub mod cloud_watch_metrics {
-
+    
     /// A builder for [`CloudWatchMetrics`](crate::model::CloudWatchMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -772,16 +739,19 @@ pub mod cloud_watch_metrics {
         }
         /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_enabled = input;
-            self
+            self.is_enabled = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchMetrics`](crate::model::CloudWatchMetrics).
         pub fn build(self) -> crate::model::CloudWatchMetrics {
             crate::model::CloudWatchMetrics {
-                is_enabled: self.is_enabled.unwrap_or_default(),
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchMetrics {
     /// Creates a new builder-style object to manufacture [`CloudWatchMetrics`](crate::model::CloudWatchMetrics).
@@ -793,7 +763,7 @@ impl CloudWatchMetrics {
 /// <p>A container for the bucket where the Amazon S3 Storage Lens metrics export files are located.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketDestination {
+pub struct S3BucketDestination  {
     /// <p></p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
@@ -815,35 +785,33 @@ pub struct S3BucketDestination {
 }
 impl S3BucketDestination {
     /// <p></p>
-    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::model::Format> {
         self.format.as_ref()
     }
     /// <p>The schema version of the export file.</p>
-    pub fn output_schema_version(&self) -> std::option::Option<&crate::model::OutputSchemaVersion> {
+    pub fn output_schema_version(&self) -> std::option::Option<& crate::model::OutputSchemaVersion> {
         self.output_schema_version.as_ref()
     }
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
-    pub fn encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::StorageLensDataExportEncryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::StorageLensDataExportEncryption> {
         self.encryption.as_ref()
     }
 }
 /// See [`S3BucketDestination`](crate::model::S3BucketDestination).
 pub mod s3_bucket_destination {
-
+    
     /// A builder for [`S3BucketDestination`](crate::model::S3BucketDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -862,8 +830,7 @@ pub mod s3_bucket_destination {
         }
         /// <p></p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// <p>The schema version of the export file.</p>
         pub fn output_schema_version(mut self, input: crate::model::OutputSchemaVersion) -> Self {
@@ -871,12 +838,8 @@ pub mod s3_bucket_destination {
             self
         }
         /// <p>The schema version of the export file.</p>
-        pub fn set_output_schema_version(
-            mut self,
-            input: std::option::Option<crate::model::OutputSchemaVersion>,
-        ) -> Self {
-            self.output_schema_version = input;
-            self
+        pub fn set_output_schema_version(mut self, input: std::option::Option<crate::model::OutputSchemaVersion>) -> Self {
+            self.output_schema_version = input; self
         }
         /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -885,8 +848,7 @@ pub mod s3_bucket_destination {
         }
         /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -895,8 +857,7 @@ pub mod s3_bucket_destination {
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -905,8 +866,7 @@ pub mod s3_bucket_destination {
         }
         /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
         pub fn encryption(mut self, input: crate::model::StorageLensDataExportEncryption) -> Self {
@@ -914,25 +874,29 @@ pub mod s3_bucket_destination {
             self
         }
         /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::StorageLensDataExportEncryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::StorageLensDataExportEncryption>) -> Self {
+            self.encryption = input; self
         }
         /// Consumes the builder and constructs a [`S3BucketDestination`](crate::model::S3BucketDestination).
         pub fn build(self) -> crate::model::S3BucketDestination {
             crate::model::S3BucketDestination {
-                format: self.format,
-                output_schema_version: self.output_schema_version,
-                account_id: self.account_id,
-                arn: self.arn,
-                prefix: self.prefix,
-                encryption: self.encryption,
+                format: self.format
+                ,
+                output_schema_version: self.output_schema_version
+                ,
+                account_id: self.account_id
+                ,
+                arn: self.arn
+                ,
+                prefix: self.prefix
+                ,
+                encryption: self.encryption
+                ,
             }
         }
     }
+    
+    
 }
 impl S3BucketDestination {
     /// Creates a new builder-style object to manufacture [`S3BucketDestination`](crate::model::S3BucketDestination).
@@ -944,7 +908,7 @@ impl S3BucketDestination {
 /// <p>A container for the encryption of the S3 Storage Lens metrics exports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageLensDataExportEncryption {
+pub struct StorageLensDataExportEncryption  {
     /// <p></p>
     #[doc(hidden)]
     pub sses3: std::option::Option<crate::model::Sses3>,
@@ -954,17 +918,17 @@ pub struct StorageLensDataExportEncryption {
 }
 impl StorageLensDataExportEncryption {
     /// <p></p>
-    pub fn sses3(&self) -> std::option::Option<&crate::model::Sses3> {
+    pub fn sses3(&self) -> std::option::Option<& crate::model::Sses3> {
         self.sses3.as_ref()
     }
     /// <p></p>
-    pub fn ssekms(&self) -> std::option::Option<&crate::model::Ssekms> {
+    pub fn ssekms(&self) -> std::option::Option<& crate::model::Ssekms> {
         self.ssekms.as_ref()
     }
 }
 /// See [`StorageLensDataExportEncryption`](crate::model::StorageLensDataExportEncryption).
 pub mod storage_lens_data_export_encryption {
-
+    
     /// A builder for [`StorageLensDataExportEncryption`](crate::model::StorageLensDataExportEncryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -979,8 +943,7 @@ pub mod storage_lens_data_export_encryption {
         }
         /// <p></p>
         pub fn set_sses3(mut self, input: std::option::Option<crate::model::Sses3>) -> Self {
-            self.sses3 = input;
-            self
+            self.sses3 = input; self
         }
         /// <p></p>
         pub fn ssekms(mut self, input: crate::model::Ssekms) -> Self {
@@ -989,17 +952,20 @@ pub mod storage_lens_data_export_encryption {
         }
         /// <p></p>
         pub fn set_ssekms(mut self, input: std::option::Option<crate::model::Ssekms>) -> Self {
-            self.ssekms = input;
-            self
+            self.ssekms = input; self
         }
         /// Consumes the builder and constructs a [`StorageLensDataExportEncryption`](crate::model::StorageLensDataExportEncryption).
         pub fn build(self) -> crate::model::StorageLensDataExportEncryption {
             crate::model::StorageLensDataExportEncryption {
-                sses3: self.sses3,
-                ssekms: self.ssekms,
+                sses3: self.sses3
+                ,
+                ssekms: self.ssekms
+                ,
             }
         }
     }
+    
+    
 }
 impl StorageLensDataExportEncryption {
     /// Creates a new builder-style object to manufacture [`StorageLensDataExportEncryption`](crate::model::StorageLensDataExportEncryption).
@@ -1011,20 +977,20 @@ impl StorageLensDataExportEncryption {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ssekms {
+pub struct Ssekms  {
     /// <p>A container for the ARN of the SSE-KMS encryption. This property is read-only and follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i> </code> </p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl Ssekms {
     /// <p>A container for the ARN of the SSE-KMS encryption. This property is read-only and follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i> </code> </p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
 }
 /// See [`Ssekms`](crate::model::Ssekms).
 pub mod ssekms {
-
+    
     /// A builder for [`Ssekms`](crate::model::Ssekms).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1038,16 +1004,18 @@ pub mod ssekms {
         }
         /// <p>A container for the ARN of the SSE-KMS encryption. This property is read-only and follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i> </code> </p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// Consumes the builder and constructs a [`Ssekms`](crate::model::Ssekms).
         pub fn build(self) -> crate::model::Ssekms {
             crate::model::Ssekms {
-                key_id: self.key_id,
+                key_id: self.key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Ssekms {
     /// Creates a new builder-style object to manufacture [`Ssekms`](crate::model::Ssekms).
@@ -1059,19 +1027,24 @@ impl Ssekms {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sses3 {}
+pub struct Sses3  {
+}
 /// See [`Sses3`](crate::model::Sses3).
 pub mod sses3 {
-
+    
     /// A builder for [`Sses3`](crate::model::Sses3).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`Sses3`](crate::model::Sses3).
         pub fn build(self) -> crate::model::Sses3 {
-            crate::model::Sses3 {}
+            crate::model::Sses3 {
+            }
         }
     }
+    
+    
 }
 impl Sses3 {
     /// Creates a new builder-style object to manufacture [`Sses3`](crate::model::Sses3).
@@ -1086,9 +1059,9 @@ impl Sses3 {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let outputschemaversion = unimplemented!();
 /// match outputschemaversion {
@@ -1109,56 +1082,48 @@ impl Sses3 {
 /// Specifically, when `outputschemaversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OutputSchemaVersion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OutputSchemaVersion {
     #[allow(missing_docs)] // documentation missing in model
     V1,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OutputSchemaVersion {
     fn from(s: &str) -> Self {
         match s {
             "V_1" => OutputSchemaVersion::V1,
-            other => {
-                OutputSchemaVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => OutputSchemaVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OutputSchemaVersion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OutputSchemaVersion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OutputSchemaVersion::from(s))
+                }
+            }
 impl OutputSchemaVersion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OutputSchemaVersion::V1 => "V_1",
-            OutputSchemaVersion::Unknown(value) => value.as_str(),
+            OutputSchemaVersion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["V_1"]
+        &[
+            "V_1"
+        ]
     }
 }
 impl AsRef<str> for OutputSchemaVersion {
@@ -1173,9 +1138,9 @@ impl AsRef<str> for OutputSchemaVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let format = unimplemented!();
 /// match format {
@@ -1197,58 +1162,52 @@ impl AsRef<str> for OutputSchemaVersion {
 /// Specifically, when `format` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Format::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
     #[allow(missing_docs)] // documentation missing in model
     Parquet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => Format::Csv,
             "Parquet" => Format::Parquet,
-            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Format {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Format::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Format::from(s))
+                }
+            }
 impl Format {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Format::Csv => "CSV",
             Format::Parquet => "Parquet",
-            Format::Unknown(value) => value.as_str(),
+            Format::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CSV", "Parquet"]
+        &[
+            "CSV", "Parquet"
+        ]
     }
 }
 impl AsRef<str> for Format {
@@ -1260,7 +1219,7 @@ impl AsRef<str> for Format {
 /// <p>A container for what Amazon S3 Storage Lens will exclude.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Exclude {
+pub struct Exclude  {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1270,17 +1229,17 @@ pub struct Exclude {
 }
 impl Exclude {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
-    pub fn buckets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn buckets(&self) -> std::option::Option<& [std::string::String]> {
         self.buckets.as_deref()
     }
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
 }
 /// See [`Exclude`](crate::model::Exclude).
 pub mod exclude {
-
+    
     /// A builder for [`Exclude`](crate::model::Exclude).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1295,17 +1254,13 @@ pub mod exclude {
         /// <p>A container for the S3 Storage Lens bucket excludes.</p>
         pub fn buckets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
-            self.buckets = Some(v);
-            self
+                            v.push(input.into());
+                            self.buckets = Some(v);
+                            self
         }
         /// <p>A container for the S3 Storage Lens bucket excludes.</p>
-        pub fn set_buckets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.buckets = input;
-            self
+        pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.buckets = input; self
         }
         /// Appends an item to `regions`.
         ///
@@ -1314,26 +1269,26 @@ pub mod exclude {
         /// <p>A container for the S3 Storage Lens Region excludes.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
-            self.regions = Some(v);
-            self
+                            v.push(input.into());
+                            self.regions = Some(v);
+                            self
         }
         /// <p>A container for the S3 Storage Lens Region excludes.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.regions = input; self
         }
         /// Consumes the builder and constructs a [`Exclude`](crate::model::Exclude).
         pub fn build(self) -> crate::model::Exclude {
             crate::model::Exclude {
-                buckets: self.buckets,
-                regions: self.regions,
+                buckets: self.buckets
+                ,
+                regions: self.regions
+                ,
             }
         }
     }
+    
+    
 }
 impl Exclude {
     /// Creates a new builder-style object to manufacture [`Exclude`](crate::model::Exclude).
@@ -1345,7 +1300,7 @@ impl Exclude {
 /// <p>A container for what Amazon S3 Storage Lens configuration includes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Include {
+pub struct Include  {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1355,17 +1310,17 @@ pub struct Include {
 }
 impl Include {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
-    pub fn buckets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn buckets(&self) -> std::option::Option<& [std::string::String]> {
         self.buckets.as_deref()
     }
     /// <p>A container for the S3 Storage Lens Region includes.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
 }
 /// See [`Include`](crate::model::Include).
 pub mod include {
-
+    
     /// A builder for [`Include`](crate::model::Include).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1380,17 +1335,13 @@ pub mod include {
         /// <p>A container for the S3 Storage Lens bucket includes.</p>
         pub fn buckets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
-            self.buckets = Some(v);
-            self
+                            v.push(input.into());
+                            self.buckets = Some(v);
+                            self
         }
         /// <p>A container for the S3 Storage Lens bucket includes.</p>
-        pub fn set_buckets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.buckets = input;
-            self
+        pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.buckets = input; self
         }
         /// Appends an item to `regions`.
         ///
@@ -1399,26 +1350,26 @@ pub mod include {
         /// <p>A container for the S3 Storage Lens Region includes.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
-            self.regions = Some(v);
-            self
+                            v.push(input.into());
+                            self.regions = Some(v);
+                            self
         }
         /// <p>A container for the S3 Storage Lens Region includes.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.regions = input; self
         }
         /// Consumes the builder and constructs a [`Include`](crate::model::Include).
         pub fn build(self) -> crate::model::Include {
             crate::model::Include {
-                buckets: self.buckets,
-                regions: self.regions,
+                buckets: self.buckets
+                ,
+                regions: self.regions
+                ,
             }
         }
     }
+    
+    
 }
 impl Include {
     /// Creates a new builder-style object to manufacture [`Include`](crate::model::Include).
@@ -1427,11 +1378,11 @@ impl Include {
     }
 }
 
-/// <p>A container for the account-level Amazon S3 Storage Lens configuration.</p>
+/// <p>A container for the account-level Amazon S3 Storage Lens configuration.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountLevel {
+pub struct AccountLevel  {
     /// <p>A container for S3 Storage Lens activity metrics.</p>
     #[doc(hidden)]
     pub activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
@@ -1440,59 +1391,47 @@ pub struct AccountLevel {
     pub bucket_level: std::option::Option<crate::model::BucketLevel>,
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
     #[doc(hidden)]
-    pub advanced_cost_optimization_metrics:
-        std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+    pub advanced_cost_optimization_metrics: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
     #[doc(hidden)]
-    pub advanced_data_protection_metrics:
-        std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+    pub advanced_data_protection_metrics: std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
     /// <p>A container for detailed status code metrics. </p>
     #[doc(hidden)]
-    pub detailed_status_codes_metrics:
-        std::option::Option<crate::model::DetailedStatusCodesMetrics>,
+    pub detailed_status_codes_metrics: std::option::Option<crate::model::DetailedStatusCodesMetrics>,
 }
 impl AccountLevel {
     /// <p>A container for S3 Storage Lens activity metrics.</p>
-    pub fn activity_metrics(&self) -> std::option::Option<&crate::model::ActivityMetrics> {
+    pub fn activity_metrics(&self) -> std::option::Option<& crate::model::ActivityMetrics> {
         self.activity_metrics.as_ref()
     }
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
-    pub fn bucket_level(&self) -> std::option::Option<&crate::model::BucketLevel> {
+    pub fn bucket_level(&self) -> std::option::Option<& crate::model::BucketLevel> {
         self.bucket_level.as_ref()
     }
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
-    pub fn advanced_cost_optimization_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::AdvancedCostOptimizationMetrics> {
+    pub fn advanced_cost_optimization_metrics(&self) -> std::option::Option<& crate::model::AdvancedCostOptimizationMetrics> {
         self.advanced_cost_optimization_metrics.as_ref()
     }
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
-    pub fn advanced_data_protection_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::AdvancedDataProtectionMetrics> {
+    pub fn advanced_data_protection_metrics(&self) -> std::option::Option<& crate::model::AdvancedDataProtectionMetrics> {
         self.advanced_data_protection_metrics.as_ref()
     }
     /// <p>A container for detailed status code metrics. </p>
-    pub fn detailed_status_codes_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::DetailedStatusCodesMetrics> {
+    pub fn detailed_status_codes_metrics(&self) -> std::option::Option<& crate::model::DetailedStatusCodesMetrics> {
         self.detailed_status_codes_metrics.as_ref()
     }
 }
 /// See [`AccountLevel`](crate::model::AccountLevel).
 pub mod account_level {
-
+    
     /// A builder for [`AccountLevel`](crate::model::AccountLevel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
         pub(crate) bucket_level: std::option::Option<crate::model::BucketLevel>,
-        pub(crate) advanced_cost_optimization_metrics:
-            std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
-        pub(crate) advanced_data_protection_metrics:
-            std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
-        pub(crate) detailed_status_codes_metrics:
-            std::option::Option<crate::model::DetailedStatusCodesMetrics>,
+        pub(crate) advanced_cost_optimization_metrics: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+        pub(crate) advanced_data_protection_metrics: std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+        pub(crate) detailed_status_codes_metrics: std::option::Option<crate::model::DetailedStatusCodesMetrics>,
     }
     impl Builder {
         /// <p>A container for S3 Storage Lens activity metrics.</p>
@@ -1501,12 +1440,8 @@ pub mod account_level {
             self
         }
         /// <p>A container for S3 Storage Lens activity metrics.</p>
-        pub fn set_activity_metrics(
-            mut self,
-            input: std::option::Option<crate::model::ActivityMetrics>,
-        ) -> Self {
-            self.activity_metrics = input;
-            self
+        pub fn set_activity_metrics(mut self, input: std::option::Option<crate::model::ActivityMetrics>) -> Self {
+            self.activity_metrics = input; self
         }
         /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
         pub fn bucket_level(mut self, input: crate::model::BucketLevel) -> Self {
@@ -1514,72 +1449,54 @@ pub mod account_level {
             self
         }
         /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
-        pub fn set_bucket_level(
-            mut self,
-            input: std::option::Option<crate::model::BucketLevel>,
-        ) -> Self {
-            self.bucket_level = input;
-            self
+        pub fn set_bucket_level(mut self, input: std::option::Option<crate::model::BucketLevel>) -> Self {
+            self.bucket_level = input; self
         }
         /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
-        pub fn advanced_cost_optimization_metrics(
-            mut self,
-            input: crate::model::AdvancedCostOptimizationMetrics,
-        ) -> Self {
+        pub fn advanced_cost_optimization_metrics(mut self, input: crate::model::AdvancedCostOptimizationMetrics) -> Self {
             self.advanced_cost_optimization_metrics = Some(input);
             self
         }
         /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
-        pub fn set_advanced_cost_optimization_metrics(
-            mut self,
-            input: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
-        ) -> Self {
-            self.advanced_cost_optimization_metrics = input;
-            self
+        pub fn set_advanced_cost_optimization_metrics(mut self, input: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>) -> Self {
+            self.advanced_cost_optimization_metrics = input; self
         }
         /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
-        pub fn advanced_data_protection_metrics(
-            mut self,
-            input: crate::model::AdvancedDataProtectionMetrics,
-        ) -> Self {
+        pub fn advanced_data_protection_metrics(mut self, input: crate::model::AdvancedDataProtectionMetrics) -> Self {
             self.advanced_data_protection_metrics = Some(input);
             self
         }
         /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
-        pub fn set_advanced_data_protection_metrics(
-            mut self,
-            input: std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
-        ) -> Self {
-            self.advanced_data_protection_metrics = input;
-            self
+        pub fn set_advanced_data_protection_metrics(mut self, input: std::option::Option<crate::model::AdvancedDataProtectionMetrics>) -> Self {
+            self.advanced_data_protection_metrics = input; self
         }
         /// <p>A container for detailed status code metrics. </p>
-        pub fn detailed_status_codes_metrics(
-            mut self,
-            input: crate::model::DetailedStatusCodesMetrics,
-        ) -> Self {
+        pub fn detailed_status_codes_metrics(mut self, input: crate::model::DetailedStatusCodesMetrics) -> Self {
             self.detailed_status_codes_metrics = Some(input);
             self
         }
         /// <p>A container for detailed status code metrics. </p>
-        pub fn set_detailed_status_codes_metrics(
-            mut self,
-            input: std::option::Option<crate::model::DetailedStatusCodesMetrics>,
-        ) -> Self {
-            self.detailed_status_codes_metrics = input;
-            self
+        pub fn set_detailed_status_codes_metrics(mut self, input: std::option::Option<crate::model::DetailedStatusCodesMetrics>) -> Self {
+            self.detailed_status_codes_metrics = input; self
         }
         /// Consumes the builder and constructs a [`AccountLevel`](crate::model::AccountLevel).
         pub fn build(self) -> crate::model::AccountLevel {
             crate::model::AccountLevel {
-                activity_metrics: self.activity_metrics,
-                bucket_level: self.bucket_level,
-                advanced_cost_optimization_metrics: self.advanced_cost_optimization_metrics,
-                advanced_data_protection_metrics: self.advanced_data_protection_metrics,
-                detailed_status_codes_metrics: self.detailed_status_codes_metrics,
+                activity_metrics: self.activity_metrics
+                ,
+                bucket_level: self.bucket_level
+                ,
+                advanced_cost_optimization_metrics: self.advanced_cost_optimization_metrics
+                ,
+                advanced_data_protection_metrics: self.advanced_data_protection_metrics
+                ,
+                detailed_status_codes_metrics: self.detailed_status_codes_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountLevel {
     /// Creates a new builder-style object to manufacture [`AccountLevel`](crate::model::AccountLevel).
@@ -1588,11 +1505,11 @@ impl AccountLevel {
     }
 }
 
-/// <p>The container element for Amazon S3 Storage Lens detailed status code metrics. Detailed status code metrics generate metrics for HTTP status codes, such as <code>200 OK</code>, <code>403 Forbidden</code>, <code>503 Service Unavailable</code> and others. </p>
+/// <p>The container element for Amazon S3 Storage Lens detailed status code metrics. Detailed status code metrics generate metrics for HTTP status codes, such as <code>200 OK</code>, <code>403 Forbidden</code>, <code>503 Service Unavailable</code> and others. </p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetailedStatusCodesMetrics {
+pub struct DetailedStatusCodesMetrics  {
     /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
     #[doc(hidden)]
     pub is_enabled: bool,
@@ -1605,7 +1522,7 @@ impl DetailedStatusCodesMetrics {
 }
 /// See [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
 pub mod detailed_status_codes_metrics {
-
+    
     /// A builder for [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1619,16 +1536,19 @@ pub mod detailed_status_codes_metrics {
         }
         /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_enabled = input;
-            self
+            self.is_enabled = input; self
         }
         /// Consumes the builder and constructs a [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
         pub fn build(self) -> crate::model::DetailedStatusCodesMetrics {
             crate::model::DetailedStatusCodesMetrics {
-                is_enabled: self.is_enabled.unwrap_or_default(),
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DetailedStatusCodesMetrics {
     /// Creates a new builder-style object to manufacture [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
@@ -1637,11 +1557,11 @@ impl DetailedStatusCodesMetrics {
     }
 }
 
-/// <p>The container element for Amazon S3 Storage Lens advanced data-protection metrics. Advanced data-protection metrics provide insights that you can use to perform audits and protect your data, for example replication rule counts within and across Regions.</p>
+/// <p>The container element for Amazon S3 Storage Lens advanced data-protection metrics. Advanced data-protection metrics provide insights that you can use to perform audits and protect your data, for example replication rule counts within and across Regions.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdvancedDataProtectionMetrics {
+pub struct AdvancedDataProtectionMetrics  {
     /// <p>A container that indicates whether advanced data-protection metrics are enabled.</p>
     #[doc(hidden)]
     pub is_enabled: bool,
@@ -1654,7 +1574,7 @@ impl AdvancedDataProtectionMetrics {
 }
 /// See [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
 pub mod advanced_data_protection_metrics {
-
+    
     /// A builder for [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1668,16 +1588,19 @@ pub mod advanced_data_protection_metrics {
         }
         /// <p>A container that indicates whether advanced data-protection metrics are enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_enabled = input;
-            self
+            self.is_enabled = input; self
         }
         /// Consumes the builder and constructs a [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
         pub fn build(self) -> crate::model::AdvancedDataProtectionMetrics {
             crate::model::AdvancedDataProtectionMetrics {
-                is_enabled: self.is_enabled.unwrap_or_default(),
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AdvancedDataProtectionMetrics {
     /// Creates a new builder-style object to manufacture [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
@@ -1686,11 +1609,11 @@ impl AdvancedDataProtectionMetrics {
     }
 }
 
-/// <p>The container element for Amazon S3 Storage Lens advanced cost-optimization metrics. Advanced cost-optimization metrics provide insights that you can use to manage and optimize your storage costs, for example, lifecycle rule counts for transitions, expirations, and incomplete multipart uploads.</p>
+/// <p>The container element for Amazon S3 Storage Lens advanced cost-optimization metrics. Advanced cost-optimization metrics provide insights that you can use to manage and optimize your storage costs, for example, lifecycle rule counts for transitions, expirations, and incomplete multipart uploads.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdvancedCostOptimizationMetrics {
+pub struct AdvancedCostOptimizationMetrics  {
     /// <p>A container that indicates whether advanced cost-optimization metrics are enabled.</p>
     #[doc(hidden)]
     pub is_enabled: bool,
@@ -1703,7 +1626,7 @@ impl AdvancedCostOptimizationMetrics {
 }
 /// See [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
 pub mod advanced_cost_optimization_metrics {
-
+    
     /// A builder for [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1717,16 +1640,19 @@ pub mod advanced_cost_optimization_metrics {
         }
         /// <p>A container that indicates whether advanced cost-optimization metrics are enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_enabled = input;
-            self
+            self.is_enabled = input; self
         }
         /// Consumes the builder and constructs a [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
         pub fn build(self) -> crate::model::AdvancedCostOptimizationMetrics {
             crate::model::AdvancedCostOptimizationMetrics {
-                is_enabled: self.is_enabled.unwrap_or_default(),
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AdvancedCostOptimizationMetrics {
     /// Creates a new builder-style object to manufacture [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
@@ -1735,11 +1661,11 @@ impl AdvancedCostOptimizationMetrics {
     }
 }
 
-/// <p>A container for the bucket-level configuration for Amazon S3 Storage Lens.</p>
+/// <p>A container for the bucket-level configuration for Amazon S3 Storage Lens.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketLevel {
+pub struct BucketLevel  {
     /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
     #[doc(hidden)]
     pub activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
@@ -1748,59 +1674,47 @@ pub struct BucketLevel {
     pub prefix_level: std::option::Option<crate::model::PrefixLevel>,
     /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
     #[doc(hidden)]
-    pub advanced_cost_optimization_metrics:
-        std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+    pub advanced_cost_optimization_metrics: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
     /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
     #[doc(hidden)]
-    pub advanced_data_protection_metrics:
-        std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+    pub advanced_data_protection_metrics: std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
     /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
     #[doc(hidden)]
-    pub detailed_status_codes_metrics:
-        std::option::Option<crate::model::DetailedStatusCodesMetrics>,
+    pub detailed_status_codes_metrics: std::option::Option<crate::model::DetailedStatusCodesMetrics>,
 }
 impl BucketLevel {
     /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
-    pub fn activity_metrics(&self) -> std::option::Option<&crate::model::ActivityMetrics> {
+    pub fn activity_metrics(&self) -> std::option::Option<& crate::model::ActivityMetrics> {
         self.activity_metrics.as_ref()
     }
     /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
-    pub fn prefix_level(&self) -> std::option::Option<&crate::model::PrefixLevel> {
+    pub fn prefix_level(&self) -> std::option::Option<& crate::model::PrefixLevel> {
         self.prefix_level.as_ref()
     }
     /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
-    pub fn advanced_cost_optimization_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::AdvancedCostOptimizationMetrics> {
+    pub fn advanced_cost_optimization_metrics(&self) -> std::option::Option<& crate::model::AdvancedCostOptimizationMetrics> {
         self.advanced_cost_optimization_metrics.as_ref()
     }
     /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
-    pub fn advanced_data_protection_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::AdvancedDataProtectionMetrics> {
+    pub fn advanced_data_protection_metrics(&self) -> std::option::Option<& crate::model::AdvancedDataProtectionMetrics> {
         self.advanced_data_protection_metrics.as_ref()
     }
     /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
-    pub fn detailed_status_codes_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::DetailedStatusCodesMetrics> {
+    pub fn detailed_status_codes_metrics(&self) -> std::option::Option<& crate::model::DetailedStatusCodesMetrics> {
         self.detailed_status_codes_metrics.as_ref()
     }
 }
 /// See [`BucketLevel`](crate::model::BucketLevel).
 pub mod bucket_level {
-
+    
     /// A builder for [`BucketLevel`](crate::model::BucketLevel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
         pub(crate) prefix_level: std::option::Option<crate::model::PrefixLevel>,
-        pub(crate) advanced_cost_optimization_metrics:
-            std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
-        pub(crate) advanced_data_protection_metrics:
-            std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
-        pub(crate) detailed_status_codes_metrics:
-            std::option::Option<crate::model::DetailedStatusCodesMetrics>,
+        pub(crate) advanced_cost_optimization_metrics: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
+        pub(crate) advanced_data_protection_metrics: std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
+        pub(crate) detailed_status_codes_metrics: std::option::Option<crate::model::DetailedStatusCodesMetrics>,
     }
     impl Builder {
         /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
@@ -1809,12 +1723,8 @@ pub mod bucket_level {
             self
         }
         /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
-        pub fn set_activity_metrics(
-            mut self,
-            input: std::option::Option<crate::model::ActivityMetrics>,
-        ) -> Self {
-            self.activity_metrics = input;
-            self
+        pub fn set_activity_metrics(mut self, input: std::option::Option<crate::model::ActivityMetrics>) -> Self {
+            self.activity_metrics = input; self
         }
         /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
         pub fn prefix_level(mut self, input: crate::model::PrefixLevel) -> Self {
@@ -1822,72 +1732,54 @@ pub mod bucket_level {
             self
         }
         /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
-        pub fn set_prefix_level(
-            mut self,
-            input: std::option::Option<crate::model::PrefixLevel>,
-        ) -> Self {
-            self.prefix_level = input;
-            self
+        pub fn set_prefix_level(mut self, input: std::option::Option<crate::model::PrefixLevel>) -> Self {
+            self.prefix_level = input; self
         }
         /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
-        pub fn advanced_cost_optimization_metrics(
-            mut self,
-            input: crate::model::AdvancedCostOptimizationMetrics,
-        ) -> Self {
+        pub fn advanced_cost_optimization_metrics(mut self, input: crate::model::AdvancedCostOptimizationMetrics) -> Self {
             self.advanced_cost_optimization_metrics = Some(input);
             self
         }
         /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
-        pub fn set_advanced_cost_optimization_metrics(
-            mut self,
-            input: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>,
-        ) -> Self {
-            self.advanced_cost_optimization_metrics = input;
-            self
+        pub fn set_advanced_cost_optimization_metrics(mut self, input: std::option::Option<crate::model::AdvancedCostOptimizationMetrics>) -> Self {
+            self.advanced_cost_optimization_metrics = input; self
         }
         /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
-        pub fn advanced_data_protection_metrics(
-            mut self,
-            input: crate::model::AdvancedDataProtectionMetrics,
-        ) -> Self {
+        pub fn advanced_data_protection_metrics(mut self, input: crate::model::AdvancedDataProtectionMetrics) -> Self {
             self.advanced_data_protection_metrics = Some(input);
             self
         }
         /// <p>A container for bucket-level advanced data-protection metrics for S3 Storage Lens.</p>
-        pub fn set_advanced_data_protection_metrics(
-            mut self,
-            input: std::option::Option<crate::model::AdvancedDataProtectionMetrics>,
-        ) -> Self {
-            self.advanced_data_protection_metrics = input;
-            self
+        pub fn set_advanced_data_protection_metrics(mut self, input: std::option::Option<crate::model::AdvancedDataProtectionMetrics>) -> Self {
+            self.advanced_data_protection_metrics = input; self
         }
         /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
-        pub fn detailed_status_codes_metrics(
-            mut self,
-            input: crate::model::DetailedStatusCodesMetrics,
-        ) -> Self {
+        pub fn detailed_status_codes_metrics(mut self, input: crate::model::DetailedStatusCodesMetrics) -> Self {
             self.detailed_status_codes_metrics = Some(input);
             self
         }
         /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
-        pub fn set_detailed_status_codes_metrics(
-            mut self,
-            input: std::option::Option<crate::model::DetailedStatusCodesMetrics>,
-        ) -> Self {
-            self.detailed_status_codes_metrics = input;
-            self
+        pub fn set_detailed_status_codes_metrics(mut self, input: std::option::Option<crate::model::DetailedStatusCodesMetrics>) -> Self {
+            self.detailed_status_codes_metrics = input; self
         }
         /// Consumes the builder and constructs a [`BucketLevel`](crate::model::BucketLevel).
         pub fn build(self) -> crate::model::BucketLevel {
             crate::model::BucketLevel {
-                activity_metrics: self.activity_metrics,
-                prefix_level: self.prefix_level,
-                advanced_cost_optimization_metrics: self.advanced_cost_optimization_metrics,
-                advanced_data_protection_metrics: self.advanced_data_protection_metrics,
-                detailed_status_codes_metrics: self.detailed_status_codes_metrics,
+                activity_metrics: self.activity_metrics
+                ,
+                prefix_level: self.prefix_level
+                ,
+                advanced_cost_optimization_metrics: self.advanced_cost_optimization_metrics
+                ,
+                advanced_data_protection_metrics: self.advanced_data_protection_metrics
+                ,
+                detailed_status_codes_metrics: self.detailed_status_codes_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl BucketLevel {
     /// Creates a new builder-style object to manufacture [`BucketLevel`](crate::model::BucketLevel).
@@ -1899,20 +1791,20 @@ impl BucketLevel {
 /// <p>A container for the prefix-level configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrefixLevel {
+pub struct PrefixLevel  {
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
     #[doc(hidden)]
     pub storage_metrics: std::option::Option<crate::model::PrefixLevelStorageMetrics>,
 }
 impl PrefixLevel {
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-    pub fn storage_metrics(&self) -> std::option::Option<&crate::model::PrefixLevelStorageMetrics> {
+    pub fn storage_metrics(&self) -> std::option::Option<& crate::model::PrefixLevelStorageMetrics> {
         self.storage_metrics.as_ref()
     }
 }
 /// See [`PrefixLevel`](crate::model::PrefixLevel).
 pub mod prefix_level {
-
+    
     /// A builder for [`PrefixLevel`](crate::model::PrefixLevel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1925,20 +1817,19 @@ pub mod prefix_level {
             self
         }
         /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-        pub fn set_storage_metrics(
-            mut self,
-            input: std::option::Option<crate::model::PrefixLevelStorageMetrics>,
-        ) -> Self {
-            self.storage_metrics = input;
-            self
+        pub fn set_storage_metrics(mut self, input: std::option::Option<crate::model::PrefixLevelStorageMetrics>) -> Self {
+            self.storage_metrics = input; self
         }
         /// Consumes the builder and constructs a [`PrefixLevel`](crate::model::PrefixLevel).
         pub fn build(self) -> crate::model::PrefixLevel {
             crate::model::PrefixLevel {
-                storage_metrics: self.storage_metrics,
+                storage_metrics: self.storage_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl PrefixLevel {
     /// Creates a new builder-style object to manufacture [`PrefixLevel`](crate::model::PrefixLevel).
@@ -1950,7 +1841,7 @@ impl PrefixLevel {
 /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrefixLevelStorageMetrics {
+pub struct PrefixLevelStorageMetrics  {
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
     #[doc(hidden)]
     pub is_enabled: bool,
@@ -1964,13 +1855,13 @@ impl PrefixLevelStorageMetrics {
         self.is_enabled
     }
     /// <p></p>
-    pub fn selection_criteria(&self) -> std::option::Option<&crate::model::SelectionCriteria> {
+    pub fn selection_criteria(&self) -> std::option::Option<& crate::model::SelectionCriteria> {
         self.selection_criteria.as_ref()
     }
 }
 /// See [`PrefixLevelStorageMetrics`](crate::model::PrefixLevelStorageMetrics).
 pub mod prefix_level_storage_metrics {
-
+    
     /// A builder for [`PrefixLevelStorageMetrics`](crate::model::PrefixLevelStorageMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1985,8 +1876,7 @@ pub mod prefix_level_storage_metrics {
         }
         /// <p>A container for whether prefix-level storage metrics are enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_enabled = input;
-            self
+            self.is_enabled = input; self
         }
         /// <p></p>
         pub fn selection_criteria(mut self, input: crate::model::SelectionCriteria) -> Self {
@@ -1994,21 +1884,22 @@ pub mod prefix_level_storage_metrics {
             self
         }
         /// <p></p>
-        pub fn set_selection_criteria(
-            mut self,
-            input: std::option::Option<crate::model::SelectionCriteria>,
-        ) -> Self {
-            self.selection_criteria = input;
-            self
+        pub fn set_selection_criteria(mut self, input: std::option::Option<crate::model::SelectionCriteria>) -> Self {
+            self.selection_criteria = input; self
         }
         /// Consumes the builder and constructs a [`PrefixLevelStorageMetrics`](crate::model::PrefixLevelStorageMetrics).
         pub fn build(self) -> crate::model::PrefixLevelStorageMetrics {
             crate::model::PrefixLevelStorageMetrics {
-                is_enabled: self.is_enabled.unwrap_or_default(),
-                selection_criteria: self.selection_criteria,
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
+                selection_criteria: self.selection_criteria
+                ,
             }
         }
     }
+    
+    
 }
 impl PrefixLevelStorageMetrics {
     /// Creates a new builder-style object to manufacture [`PrefixLevelStorageMetrics`](crate::model::PrefixLevelStorageMetrics).
@@ -2020,30 +1911,30 @@ impl PrefixLevelStorageMetrics {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelectionCriteria {
+pub struct SelectionCriteria  {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
     #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>The max depth of the selection criteria</p>
     #[doc(hidden)]
     pub max_depth: i32,
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
-    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note> 
+    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub min_storage_bytes_percentage: f64,
 }
 impl SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>The max depth of the selection criteria</p>
     pub fn max_depth(&self) -> i32 {
         self.max_depth
     }
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
-    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note> 
+    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p> 
     /// </note>
     pub fn min_storage_bytes_percentage(&self) -> f64 {
         self.min_storage_bytes_percentage
@@ -2051,7 +1942,7 @@ impl SelectionCriteria {
 }
 /// See [`SelectionCriteria`](crate::model::SelectionCriteria).
 pub mod selection_criteria {
-
+    
     /// A builder for [`SelectionCriteria`](crate::model::SelectionCriteria).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2067,8 +1958,7 @@ pub mod selection_criteria {
         }
         /// <p>A container for the delimiter of the selection criteria being used.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = input;
-            self
+            self.delimiter = input; self
         }
         /// <p>The max depth of the selection criteria</p>
         pub fn max_depth(mut self, input: i32) -> Self {
@@ -2077,32 +1967,37 @@ pub mod selection_criteria {
         }
         /// <p>The max depth of the selection criteria</p>
         pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_depth = input;
-            self
+            self.max_depth = input; self
         }
-        /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
-        /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
+        /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note> 
+        /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p> 
         /// </note>
         pub fn min_storage_bytes_percentage(mut self, input: f64) -> Self {
             self.min_storage_bytes_percentage = Some(input);
             self
         }
-        /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
-        /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
+        /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note> 
+        /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p> 
         /// </note>
         pub fn set_min_storage_bytes_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.min_storage_bytes_percentage = input;
-            self
+            self.min_storage_bytes_percentage = input; self
         }
         /// Consumes the builder and constructs a [`SelectionCriteria`](crate::model::SelectionCriteria).
         pub fn build(self) -> crate::model::SelectionCriteria {
             crate::model::SelectionCriteria {
-                delimiter: self.delimiter,
-                max_depth: self.max_depth.unwrap_or_default(),
-                min_storage_bytes_percentage: self.min_storage_bytes_percentage.unwrap_or_default(),
+                delimiter: self.delimiter
+                ,
+                max_depth: self.max_depth
+                    .unwrap_or_default()
+                ,
+                min_storage_bytes_percentage: self.min_storage_bytes_percentage
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SelectionCriteria {
     /// Creates a new builder-style object to manufacture [`SelectionCriteria`](crate::model::SelectionCriteria).
@@ -2111,11 +2006,11 @@ impl SelectionCriteria {
     }
 }
 
-/// <p>The container element for Amazon S3 Storage Lens activity metrics. Activity metrics show details about how your storage is requested, such as requests (for example, All requests, Get requests, Put requests), bytes uploaded or downloaded, and errors.</p>
+/// <p>The container element for Amazon S3 Storage Lens activity metrics. Activity metrics show details about how your storage is requested, such as requests (for example, All requests, Get requests, Put requests), bytes uploaded or downloaded, and errors.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivityMetrics {
+pub struct ActivityMetrics  {
     /// <p>A container that indicates whether activity metrics are enabled.</p>
     #[doc(hidden)]
     pub is_enabled: bool,
@@ -2128,7 +2023,7 @@ impl ActivityMetrics {
 }
 /// See [`ActivityMetrics`](crate::model::ActivityMetrics).
 pub mod activity_metrics {
-
+    
     /// A builder for [`ActivityMetrics`](crate::model::ActivityMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2142,16 +2037,19 @@ pub mod activity_metrics {
         }
         /// <p>A container that indicates whether activity metrics are enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_enabled = input;
-            self
+            self.is_enabled = input; self
         }
         /// Consumes the builder and constructs a [`ActivityMetrics`](crate::model::ActivityMetrics).
         pub fn build(self) -> crate::model::ActivityMetrics {
             crate::model::ActivityMetrics {
-                is_enabled: self.is_enabled.unwrap_or_default(),
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ActivityMetrics {
     /// Creates a new builder-style object to manufacture [`ActivityMetrics`](crate::model::ActivityMetrics).
@@ -2160,63 +2058,63 @@ impl ActivityMetrics {
     }
 }
 
-/// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
 /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublicAccessBlockConfiguration {
-    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
-    /// <ul>
-    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
-    /// </ul>
-    /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
+pub struct PublicAccessBlockConfiguration  {
+    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li> 
+    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li> 
+    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li> 
+    /// </ul> 
+    /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p> 
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub block_public_acls: bool,
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
-    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p> 
+    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p> 
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub ignore_public_acls: bool,
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
-    /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p> 
+    /// <p>Enabling this setting doesn't affect existing bucket policies.</p> 
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub block_public_policy: bool,
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
-    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p> 
+    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p> 
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub restrict_public_buckets: bool,
 }
 impl PublicAccessBlockConfiguration {
-    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
-    /// <ul>
-    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
-    /// </ul>
-    /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
+    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li> 
+    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li> 
+    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li> 
+    /// </ul> 
+    /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p> 
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn block_public_acls(&self) -> bool {
         self.block_public_acls
     }
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
-    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p> 
+    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p> 
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn ignore_public_acls(&self) -> bool {
         self.ignore_public_acls
     }
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
-    /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p> 
+    /// <p>Enabling this setting doesn't affect existing bucket policies.</p> 
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn block_public_policy(&self) -> bool {
         self.block_public_policy
     }
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
-    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p> 
+    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p> 
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn restrict_public_buckets(&self) -> bool {
         self.restrict_public_buckets
@@ -2224,7 +2122,7 @@ impl PublicAccessBlockConfiguration {
 }
 /// See [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration).
 pub mod public_access_block_configuration {
-
+    
     /// A builder for [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2234,82 +2132,88 @@ pub mod public_access_block_configuration {
         pub(crate) restrict_public_buckets: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
-        /// <ul>
-        /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-        /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-        /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
-        /// </ul>
-        /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
+        /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li> 
+        /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li> 
+        /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li> 
+        /// </ul> 
+        /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p> 
         /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn block_public_acls(mut self, input: bool) -> Self {
             self.block_public_acls = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
-        /// <ul>
-        /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li>
-        /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
-        /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
-        /// </ul>
-        /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
+        /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p> </li> 
+        /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li> 
+        /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li> 
+        /// </ul> 
+        /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p> 
         /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn set_block_public_acls(mut self, input: std::option::Option<bool>) -> Self {
-            self.block_public_acls = input;
-            self
+            self.block_public_acls = input; self
         }
-        /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
-        /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
+        /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p> 
+        /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p> 
         /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn ignore_public_acls(mut self, input: bool) -> Self {
             self.ignore_public_acls = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
-        /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
+        /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p> 
+        /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p> 
         /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
-            self.ignore_public_acls = input;
-            self
+            self.ignore_public_acls = input; self
         }
-        /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
-        /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
+        /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p> 
+        /// <p>Enabling this setting doesn't affect existing bucket policies.</p> 
         /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn block_public_policy(mut self, input: bool) -> Self {
             self.block_public_policy = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
-        /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
+        /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p> 
+        /// <p>Enabling this setting doesn't affect existing bucket policies.</p> 
         /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
-            self.block_public_policy = input;
-            self
+            self.block_public_policy = input; self
         }
-        /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
-        /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
+        /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p> 
+        /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p> 
         /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn restrict_public_buckets(mut self, input: bool) -> Self {
             self.restrict_public_buckets = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
-        /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
+        /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p> 
+        /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p> 
         /// <p>This property is not supported for Amazon S3 on Outposts.</p>
         pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
-            self.restrict_public_buckets = input;
-            self
+            self.restrict_public_buckets = input; self
         }
         /// Consumes the builder and constructs a [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration).
         pub fn build(self) -> crate::model::PublicAccessBlockConfiguration {
             crate::model::PublicAccessBlockConfiguration {
-                block_public_acls: self.block_public_acls.unwrap_or_default(),
-                ignore_public_acls: self.ignore_public_acls.unwrap_or_default(),
-                block_public_policy: self.block_public_policy.unwrap_or_default(),
-                restrict_public_buckets: self.restrict_public_buckets.unwrap_or_default(),
+                block_public_acls: self.block_public_acls
+                    .unwrap_or_default()
+                ,
+                ignore_public_acls: self.ignore_public_acls
+                    .unwrap_or_default()
+                ,
+                block_public_policy: self.block_public_policy
+                    .unwrap_or_default()
+                ,
+                restrict_public_buckets: self.restrict_public_buckets
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PublicAccessBlockConfiguration {
     /// Creates a new builder-style object to manufacture [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration).
@@ -2321,7 +2225,7 @@ impl PublicAccessBlockConfiguration {
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMultiRegionAccessPointPolicyInput {
+pub struct PutMultiRegionAccessPointPolicyInput  {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2331,17 +2235,17 @@ pub struct PutMultiRegionAccessPointPolicyInput {
 }
 impl PutMultiRegionAccessPointPolicyInput {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput).
 pub mod put_multi_region_access_point_policy_input {
-
+    
     /// A builder for [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2356,8 +2260,7 @@ pub mod put_multi_region_access_point_policy_input {
         }
         /// <p>The name of the Multi-Region Access Point associated with the request.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2366,17 +2269,20 @@ pub mod put_multi_region_access_point_policy_input {
         }
         /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput).
         pub fn build(self) -> crate::model::PutMultiRegionAccessPointPolicyInput {
             crate::model::PutMultiRegionAccessPointPolicyInput {
-                name: self.name,
-                policy: self.policy,
+                name: self.name
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl PutMultiRegionAccessPointPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput).
@@ -2388,7 +2294,7 @@ impl PutMultiRegionAccessPointPolicyInput {
 /// <p>A container for a key-value name pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Tag {
+pub struct S3Tag  {
     /// <p>Key of the tag</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2398,17 +2304,17 @@ pub struct S3Tag {
 }
 impl S3Tag {
     /// <p>Key of the tag</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Value of the tag</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`S3Tag`](crate::model::S3Tag).
 pub mod s3_tag {
-
+    
     /// A builder for [`S3Tag`](crate::model::S3Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2423,8 +2329,7 @@ pub mod s3_tag {
         }
         /// <p>Key of the tag</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>Value of the tag</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2433,17 +2338,20 @@ pub mod s3_tag {
         }
         /// <p>Value of the tag</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`S3Tag`](crate::model::S3Tag).
         pub fn build(self) -> crate::model::S3Tag {
             crate::model::S3Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Tag {
     /// Creates a new builder-style object to manufacture [`S3Tag`](crate::model::S3Tag).
@@ -2455,7 +2363,7 @@ impl S3Tag {
 /// <p>Describes the versioning state of an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html">PutBucketVersioning</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VersioningConfiguration {
+pub struct VersioningConfiguration  {
     /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
     #[doc(hidden)]
     pub mfa_delete: std::option::Option<crate::model::MfaDelete>,
@@ -2465,17 +2373,17 @@ pub struct VersioningConfiguration {
 }
 impl VersioningConfiguration {
     /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
-    pub fn mfa_delete(&self) -> std::option::Option<&crate::model::MfaDelete> {
+    pub fn mfa_delete(&self) -> std::option::Option<& crate::model::MfaDelete> {
         self.mfa_delete.as_ref()
     }
     /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::BucketVersioningStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::BucketVersioningStatus> {
         self.status.as_ref()
     }
 }
 /// See [`VersioningConfiguration`](crate::model::VersioningConfiguration).
 pub mod versioning_configuration {
-
+    
     /// A builder for [`VersioningConfiguration`](crate::model::VersioningConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2489,12 +2397,8 @@ pub mod versioning_configuration {
             self
         }
         /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
-        pub fn set_mfa_delete(
-            mut self,
-            input: std::option::Option<crate::model::MfaDelete>,
-        ) -> Self {
-            self.mfa_delete = input;
-            self
+        pub fn set_mfa_delete(mut self, input: std::option::Option<crate::model::MfaDelete>) -> Self {
+            self.mfa_delete = input; self
         }
         /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
         pub fn status(mut self, input: crate::model::BucketVersioningStatus) -> Self {
@@ -2502,21 +2406,21 @@ pub mod versioning_configuration {
             self
         }
         /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::BucketVersioningStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::BucketVersioningStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VersioningConfiguration`](crate::model::VersioningConfiguration).
         pub fn build(self) -> crate::model::VersioningConfiguration {
             crate::model::VersioningConfiguration {
-                mfa_delete: self.mfa_delete,
-                status: self.status,
+                mfa_delete: self.mfa_delete
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VersioningConfiguration {
     /// Creates a new builder-style object to manufacture [`VersioningConfiguration`](crate::model::VersioningConfiguration).
@@ -2531,9 +2435,9 @@ impl VersioningConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let bucketversioningstatus = unimplemented!();
 /// match bucketversioningstatus {
@@ -2555,60 +2459,52 @@ impl VersioningConfiguration {
 /// Specifically, when `bucketversioningstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BucketVersioningStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BucketVersioningStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BucketVersioningStatus {
     fn from(s: &str) -> Self {
         match s {
             "Enabled" => BucketVersioningStatus::Enabled,
             "Suspended" => BucketVersioningStatus::Suspended,
-            other => {
-                BucketVersioningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BucketVersioningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BucketVersioningStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BucketVersioningStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BucketVersioningStatus::from(s))
+                }
+            }
 impl BucketVersioningStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BucketVersioningStatus::Enabled => "Enabled",
             BucketVersioningStatus::Suspended => "Suspended",
-            BucketVersioningStatus::Unknown(value) => value.as_str(),
+            BucketVersioningStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Enabled", "Suspended"]
+        &[
+            "Enabled", "Suspended"
+        ]
     }
 }
 impl AsRef<str> for BucketVersioningStatus {
@@ -2623,9 +2519,9 @@ impl AsRef<str> for BucketVersioningStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mfadelete = unimplemented!();
 /// match mfadelete {
@@ -2647,58 +2543,52 @@ impl AsRef<str> for BucketVersioningStatus {
 /// Specifically, when `mfadelete` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MfaDelete::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MfaDelete {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MfaDelete {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => MfaDelete::Disabled,
             "Enabled" => MfaDelete::Enabled,
-            other => MfaDelete::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MfaDelete::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MfaDelete {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MfaDelete::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MfaDelete::from(s))
+                }
+            }
 impl MfaDelete {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MfaDelete::Disabled => "Disabled",
             MfaDelete::Enabled => "Enabled",
-            MfaDelete::Unknown(value) => value.as_str(),
+            MfaDelete::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for MfaDelete {
@@ -2710,20 +2600,20 @@ impl AsRef<str> for MfaDelete {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tagging {
+pub struct Tagging  {
     /// <p>A collection for a set of tags.</p>
     #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl Tagging {
     /// <p>A collection for a set of tags.</p>
-    pub fn tag_set(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+    pub fn tag_set(&self) -> std::option::Option<& [crate::model::S3Tag]> {
         self.tag_set.as_deref()
     }
 }
 /// See [`Tagging`](crate::model::Tagging).
 pub mod tagging {
-
+    
     /// A builder for [`Tagging`](crate::model::Tagging).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2737,25 +2627,24 @@ pub mod tagging {
         /// <p>A collection for a set of tags.</p>
         pub fn tag_set(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input);
-            self.tag_set = Some(v);
-            self
+                            v.push(input);
+                            self.tag_set = Some(v);
+                            self
         }
         /// <p>A collection for a set of tags.</p>
-        pub fn set_tag_set(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
-        ) -> Self {
-            self.tag_set = input;
-            self
+        pub fn set_tag_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>) -> Self {
+            self.tag_set = input; self
         }
         /// Consumes the builder and constructs a [`Tagging`](crate::model::Tagging).
         pub fn build(self) -> crate::model::Tagging {
             crate::model::Tagging {
-                tag_set: self.tag_set,
+                tag_set: self.tag_set
+                ,
             }
         }
     }
+    
+    
 }
 impl Tagging {
     /// Creates a new builder-style object to manufacture [`Tagging`](crate::model::Tagging).
@@ -2767,20 +2656,20 @@ impl Tagging {
 /// <p>The container for the Outposts bucket lifecycle configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleConfiguration {
+pub struct LifecycleConfiguration  {
     /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
 }
 impl LifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::LifecycleRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::LifecycleRule]> {
         self.rules.as_deref()
     }
 }
 /// See [`LifecycleConfiguration`](crate::model::LifecycleConfiguration).
 pub mod lifecycle_configuration {
-
+    
     /// A builder for [`LifecycleConfiguration`](crate::model::LifecycleConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2794,23 +2683,24 @@ pub mod lifecycle_configuration {
         /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
         pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`LifecycleConfiguration`](crate::model::LifecycleConfiguration).
         pub fn build(self) -> crate::model::LifecycleConfiguration {
-            crate::model::LifecycleConfiguration { rules: self.rules }
+            crate::model::LifecycleConfiguration {
+                rules: self.rules
+                ,
+            }
         }
     }
+    
+    
 }
 impl LifecycleConfiguration {
     /// Creates a new builder-style object to manufacture [`LifecycleConfiguration`](crate::model::LifecycleConfiguration).
@@ -2822,7 +2712,7 @@ impl LifecycleConfiguration {
 /// <p>The container for the Outposts bucket lifecycle rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleRule {
+pub struct LifecycleRule  {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
     #[doc(hidden)]
     pub expiration: std::option::Option<crate::model::LifecycleExpiration>,
@@ -2835,73 +2725,64 @@ pub struct LifecycleRule {
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExpirationStatus>,
-    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     #[doc(hidden)]
     pub transitions: std::option::Option<std::vec::Vec<crate::model::Transition>>,
-    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     #[doc(hidden)]
-    pub noncurrent_version_transitions:
-        std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
+    pub noncurrent_version_transitions: std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
     /// <p>The noncurrent version expiration of the lifecycle rule.</p>
     #[doc(hidden)]
-    pub noncurrent_version_expiration:
-        std::option::Option<crate::model::NoncurrentVersionExpiration>,
+    pub noncurrent_version_expiration: std::option::Option<crate::model::NoncurrentVersionExpiration>,
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
-    pub abort_incomplete_multipart_upload:
-        std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
+    pub abort_incomplete_multipart_upload: std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
 }
 impl LifecycleRule {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
-    pub fn expiration(&self) -> std::option::Option<&crate::model::LifecycleExpiration> {
+    pub fn expiration(&self) -> std::option::Option<& crate::model::LifecycleExpiration> {
         self.expiration.as_ref()
     }
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The container for the filter of lifecycle rule.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::LifecycleRuleFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::LifecycleRuleFilter> {
         self.filter.as_ref()
     }
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ExpirationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ExpirationStatus> {
         self.status.as_ref()
     }
-    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn transitions(&self) -> std::option::Option<&[crate::model::Transition]> {
+    pub fn transitions(&self) -> std::option::Option<& [crate::model::Transition]> {
         self.transitions.as_deref()
     }
-    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn noncurrent_version_transitions(
-        &self,
-    ) -> std::option::Option<&[crate::model::NoncurrentVersionTransition]> {
+    pub fn noncurrent_version_transitions(&self) -> std::option::Option<& [crate::model::NoncurrentVersionTransition]> {
         self.noncurrent_version_transitions.as_deref()
     }
     /// <p>The noncurrent version expiration of the lifecycle rule.</p>
-    pub fn noncurrent_version_expiration(
-        &self,
-    ) -> std::option::Option<&crate::model::NoncurrentVersionExpiration> {
+    pub fn noncurrent_version_expiration(&self) -> std::option::Option<& crate::model::NoncurrentVersionExpiration> {
         self.noncurrent_version_expiration.as_ref()
     }
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn abort_incomplete_multipart_upload(
-        &self,
-    ) -> std::option::Option<&crate::model::AbortIncompleteMultipartUpload> {
+    pub fn abort_incomplete_multipart_upload(&self) -> std::option::Option<& crate::model::AbortIncompleteMultipartUpload> {
         self.abort_incomplete_multipart_upload.as_ref()
     }
 }
 /// See [`LifecycleRule`](crate::model::LifecycleRule).
 pub mod lifecycle_rule {
-
+    
     /// A builder for [`LifecycleRule`](crate::model::LifecycleRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2910,12 +2791,9 @@ pub mod lifecycle_rule {
         pub(crate) filter: std::option::Option<crate::model::LifecycleRuleFilter>,
         pub(crate) status: std::option::Option<crate::model::ExpirationStatus>,
         pub(crate) transitions: std::option::Option<std::vec::Vec<crate::model::Transition>>,
-        pub(crate) noncurrent_version_transitions:
-            std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
-        pub(crate) noncurrent_version_expiration:
-            std::option::Option<crate::model::NoncurrentVersionExpiration>,
-        pub(crate) abort_incomplete_multipart_upload:
-            std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
+        pub(crate) noncurrent_version_transitions: std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
+        pub(crate) noncurrent_version_expiration: std::option::Option<crate::model::NoncurrentVersionExpiration>,
+        pub(crate) abort_incomplete_multipart_upload: std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
     }
     impl Builder {
         /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
@@ -2924,12 +2802,8 @@ pub mod lifecycle_rule {
             self
         }
         /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
-        pub fn set_expiration(
-            mut self,
-            input: std::option::Option<crate::model::LifecycleExpiration>,
-        ) -> Self {
-            self.expiration = input;
-            self
+        pub fn set_expiration(mut self, input: std::option::Option<crate::model::LifecycleExpiration>) -> Self {
+            self.expiration = input; self
         }
         /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2938,8 +2812,7 @@ pub mod lifecycle_rule {
         }
         /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The container for the filter of lifecycle rule.</p>
         pub fn filter(mut self, input: crate::model::LifecycleRuleFilter) -> Self {
@@ -2947,12 +2820,8 @@ pub mod lifecycle_rule {
             self
         }
         /// <p>The container for the filter of lifecycle rule.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::LifecycleRuleFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::LifecycleRuleFilter>) -> Self {
+            self.filter = input; self
         }
         /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
         pub fn status(mut self, input: crate::model::ExpirationStatus) -> Self {
@@ -2960,108 +2829,89 @@ pub mod lifecycle_rule {
             self
         }
         /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ExpirationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ExpirationStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `transitions`.
         ///
         /// To override the contents of this collection use [`set_transitions`](Self::set_transitions).
         ///
-        /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note> 
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
         /// </note>
         pub fn transitions(mut self, input: crate::model::Transition) -> Self {
             let mut v = self.transitions.unwrap_or_default();
-            v.push(input);
-            self.transitions = Some(v);
-            self
+                            v.push(input);
+                            self.transitions = Some(v);
+                            self
         }
-        /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note> 
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
         /// </note>
-        pub fn set_transitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Transition>>,
-        ) -> Self {
-            self.transitions = input;
-            self
+        pub fn set_transitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Transition>>) -> Self {
+            self.transitions = input; self
         }
         /// Appends an item to `noncurrent_version_transitions`.
         ///
         /// To override the contents of this collection use [`set_noncurrent_version_transitions`](Self::set_noncurrent_version_transitions).
         ///
-        /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note> 
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
         /// </note>
-        pub fn noncurrent_version_transitions(
-            mut self,
-            input: crate::model::NoncurrentVersionTransition,
-        ) -> Self {
+        pub fn noncurrent_version_transitions(mut self, input: crate::model::NoncurrentVersionTransition) -> Self {
             let mut v = self.noncurrent_version_transitions.unwrap_or_default();
-            v.push(input);
-            self.noncurrent_version_transitions = Some(v);
-            self
+                            v.push(input);
+                            self.noncurrent_version_transitions = Some(v);
+                            self
         }
-        /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note> 
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
         /// </note>
-        pub fn set_noncurrent_version_transitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
-        ) -> Self {
-            self.noncurrent_version_transitions = input;
-            self
+        pub fn set_noncurrent_version_transitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>) -> Self {
+            self.noncurrent_version_transitions = input; self
         }
         /// <p>The noncurrent version expiration of the lifecycle rule.</p>
-        pub fn noncurrent_version_expiration(
-            mut self,
-            input: crate::model::NoncurrentVersionExpiration,
-        ) -> Self {
+        pub fn noncurrent_version_expiration(mut self, input: crate::model::NoncurrentVersionExpiration) -> Self {
             self.noncurrent_version_expiration = Some(input);
             self
         }
         /// <p>The noncurrent version expiration of the lifecycle rule.</p>
-        pub fn set_noncurrent_version_expiration(
-            mut self,
-            input: std::option::Option<crate::model::NoncurrentVersionExpiration>,
-        ) -> Self {
-            self.noncurrent_version_expiration = input;
-            self
+        pub fn set_noncurrent_version_expiration(mut self, input: std::option::Option<crate::model::NoncurrentVersionExpiration>) -> Self {
+            self.noncurrent_version_expiration = input; self
         }
         /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn abort_incomplete_multipart_upload(
-            mut self,
-            input: crate::model::AbortIncompleteMultipartUpload,
-        ) -> Self {
+        pub fn abort_incomplete_multipart_upload(mut self, input: crate::model::AbortIncompleteMultipartUpload) -> Self {
             self.abort_incomplete_multipart_upload = Some(input);
             self
         }
         /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn set_abort_incomplete_multipart_upload(
-            mut self,
-            input: std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
-        ) -> Self {
-            self.abort_incomplete_multipart_upload = input;
-            self
+        pub fn set_abort_incomplete_multipart_upload(mut self, input: std::option::Option<crate::model::AbortIncompleteMultipartUpload>) -> Self {
+            self.abort_incomplete_multipart_upload = input; self
         }
         /// Consumes the builder and constructs a [`LifecycleRule`](crate::model::LifecycleRule).
         pub fn build(self) -> crate::model::LifecycleRule {
             crate::model::LifecycleRule {
-                expiration: self.expiration,
-                id: self.id,
-                filter: self.filter,
-                status: self.status,
-                transitions: self.transitions,
-                noncurrent_version_transitions: self.noncurrent_version_transitions,
-                noncurrent_version_expiration: self.noncurrent_version_expiration,
-                abort_incomplete_multipart_upload: self.abort_incomplete_multipart_upload,
+                expiration: self.expiration
+                ,
+                id: self.id
+                ,
+                filter: self.filter
+                ,
+                status: self.status
+                ,
+                transitions: self.transitions
+                ,
+                noncurrent_version_transitions: self.noncurrent_version_transitions
+                ,
+                noncurrent_version_expiration: self.noncurrent_version_expiration
+                ,
+                abort_incomplete_multipart_upload: self.abort_incomplete_multipart_upload
+                ,
             }
         }
     }
+    
+    
 }
 impl LifecycleRule {
     /// Creates a new builder-style object to manufacture [`LifecycleRule`](crate::model::LifecycleRule).
@@ -3073,7 +2923,7 @@ impl LifecycleRule {
 /// <p>The container for abort incomplete multipart upload</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortIncompleteMultipartUpload {
+pub struct AbortIncompleteMultipartUpload  {
     /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload to the Outposts bucket.</p>
     #[doc(hidden)]
     pub days_after_initiation: i32,
@@ -3086,7 +2936,7 @@ impl AbortIncompleteMultipartUpload {
 }
 /// See [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload).
 pub mod abort_incomplete_multipart_upload {
-
+    
     /// A builder for [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3100,16 +2950,19 @@ pub mod abort_incomplete_multipart_upload {
         }
         /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload to the Outposts bucket.</p>
         pub fn set_days_after_initiation(mut self, input: std::option::Option<i32>) -> Self {
-            self.days_after_initiation = input;
-            self
+            self.days_after_initiation = input; self
         }
         /// Consumes the builder and constructs a [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload).
         pub fn build(self) -> crate::model::AbortIncompleteMultipartUpload {
             crate::model::AbortIncompleteMultipartUpload {
-                days_after_initiation: self.days_after_initiation.unwrap_or_default(),
+                days_after_initiation: self.days_after_initiation
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AbortIncompleteMultipartUpload {
     /// Creates a new builder-style object to manufacture [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload).
@@ -3121,7 +2974,7 @@ impl AbortIncompleteMultipartUpload {
 /// <p>The container of the noncurrent version expiration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoncurrentVersionExpiration {
+pub struct NoncurrentVersionExpiration  {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub noncurrent_days: i32,
@@ -3141,7 +2994,7 @@ impl NoncurrentVersionExpiration {
 }
 /// See [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
 pub mod noncurrent_version_expiration {
-
+    
     /// A builder for [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3156,8 +3009,7 @@ pub mod noncurrent_version_expiration {
         }
         /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_noncurrent_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.noncurrent_days = input;
-            self
+            self.noncurrent_days = input; self
         }
         /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn newer_noncurrent_versions(mut self, input: i32) -> Self {
@@ -3166,17 +3018,21 @@ pub mod noncurrent_version_expiration {
         }
         /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_newer_noncurrent_versions(mut self, input: std::option::Option<i32>) -> Self {
-            self.newer_noncurrent_versions = input;
-            self
+            self.newer_noncurrent_versions = input; self
         }
         /// Consumes the builder and constructs a [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
         pub fn build(self) -> crate::model::NoncurrentVersionExpiration {
             crate::model::NoncurrentVersionExpiration {
-                noncurrent_days: self.noncurrent_days.unwrap_or_default(),
-                newer_noncurrent_versions: self.newer_noncurrent_versions,
+                noncurrent_days: self.noncurrent_days
+                    .unwrap_or_default()
+                ,
+                newer_noncurrent_versions: self.newer_noncurrent_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl NoncurrentVersionExpiration {
     /// Creates a new builder-style object to manufacture [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
@@ -3188,7 +3044,7 @@ impl NoncurrentVersionExpiration {
 /// <p>The container for the noncurrent version transition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoncurrentVersionTransition {
+pub struct NoncurrentVersionTransition  {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"> How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub noncurrent_days: i32,
@@ -3202,13 +3058,13 @@ impl NoncurrentVersionTransition {
         self.noncurrent_days
     }
     /// <p>The class of storage used to store the object.</p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::model::TransitionStorageClass> {
         self.storage_class.as_ref()
     }
 }
 /// See [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition).
 pub mod noncurrent_version_transition {
-
+    
     /// A builder for [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3223,8 +3079,7 @@ pub mod noncurrent_version_transition {
         }
         /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"> How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_noncurrent_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.noncurrent_days = input;
-            self
+            self.noncurrent_days = input; self
         }
         /// <p>The class of storage used to store the object.</p>
         pub fn storage_class(mut self, input: crate::model::TransitionStorageClass) -> Self {
@@ -3232,21 +3087,22 @@ pub mod noncurrent_version_transition {
             self
         }
         /// <p>The class of storage used to store the object.</p>
-        pub fn set_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::TransitionStorageClass>,
-        ) -> Self {
-            self.storage_class = input;
-            self
+        pub fn set_storage_class(mut self, input: std::option::Option<crate::model::TransitionStorageClass>) -> Self {
+            self.storage_class = input; self
         }
         /// Consumes the builder and constructs a [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition).
         pub fn build(self) -> crate::model::NoncurrentVersionTransition {
             crate::model::NoncurrentVersionTransition {
-                noncurrent_days: self.noncurrent_days.unwrap_or_default(),
-                storage_class: self.storage_class,
+                noncurrent_days: self.noncurrent_days
+                    .unwrap_or_default()
+                ,
+                storage_class: self.storage_class
+                ,
             }
         }
     }
+    
+    
 }
 impl NoncurrentVersionTransition {
     /// Creates a new builder-style object to manufacture [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition).
@@ -3261,9 +3117,9 @@ impl NoncurrentVersionTransition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transitionstorageclass = unimplemented!();
 /// match transitionstorageclass {
@@ -3288,22 +3144,14 @@ impl NoncurrentVersionTransition {
 /// Specifically, when `transitionstorageclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransitionStorageClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TransitionStorageClass {
     #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
@@ -3316,7 +3164,7 @@ pub enum TransitionStorageClass {
     #[allow(missing_docs)] // documentation missing in model
     StandardIa,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TransitionStorageClass {
     fn from(s: &str) -> Self {
@@ -3326,19 +3174,17 @@ impl std::convert::From<&str> for TransitionStorageClass {
             "INTELLIGENT_TIERING" => TransitionStorageClass::IntelligentTiering,
             "ONEZONE_IA" => TransitionStorageClass::OnezoneIa,
             "STANDARD_IA" => TransitionStorageClass::StandardIa,
-            other => {
-                TransitionStorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TransitionStorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TransitionStorageClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransitionStorageClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TransitionStorageClass::from(s))
+                }
+            }
 impl TransitionStorageClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3348,17 +3194,13 @@ impl TransitionStorageClass {
             TransitionStorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
             TransitionStorageClass::OnezoneIa => "ONEZONE_IA",
             TransitionStorageClass::StandardIa => "STANDARD_IA",
-            TransitionStorageClass::Unknown(value) => value.as_str(),
+            TransitionStorageClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DEEP_ARCHIVE",
-            "GLACIER",
-            "INTELLIGENT_TIERING",
-            "ONEZONE_IA",
-            "STANDARD_IA",
+            "DEEP_ARCHIVE", "GLACIER", "INTELLIGENT_TIERING", "ONEZONE_IA", "STANDARD_IA"
         ]
     }
 }
@@ -3371,7 +3213,7 @@ impl AsRef<str> for TransitionStorageClass {
 /// <p>Specifies when an object transitions to a specified storage class. For more information about Amazon S3 Lifecycle configuration rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html"> Transitioning objects using Amazon S3 Lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Transition {
+pub struct Transition  {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
     #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
@@ -3384,7 +3226,7 @@ pub struct Transition {
 }
 impl Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
@@ -3392,13 +3234,13 @@ impl Transition {
         self.days
     }
     /// <p>The storage class to which you want the object to transition.</p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::model::TransitionStorageClass> {
         self.storage_class.as_ref()
     }
 }
 /// See [`Transition`](crate::model::Transition).
 pub mod transition {
-
+    
     /// A builder for [`Transition`](crate::model::Transition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3414,8 +3256,7 @@ pub mod transition {
         }
         /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
         pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.date = input;
-            self
+            self.date = input; self
         }
         /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
         pub fn days(mut self, input: i32) -> Self {
@@ -3424,8 +3265,7 @@ pub mod transition {
         }
         /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
         pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.days = input;
-            self
+            self.days = input; self
         }
         /// <p>The storage class to which you want the object to transition.</p>
         pub fn storage_class(mut self, input: crate::model::TransitionStorageClass) -> Self {
@@ -3433,22 +3273,24 @@ pub mod transition {
             self
         }
         /// <p>The storage class to which you want the object to transition.</p>
-        pub fn set_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::TransitionStorageClass>,
-        ) -> Self {
-            self.storage_class = input;
-            self
+        pub fn set_storage_class(mut self, input: std::option::Option<crate::model::TransitionStorageClass>) -> Self {
+            self.storage_class = input; self
         }
         /// Consumes the builder and constructs a [`Transition`](crate::model::Transition).
         pub fn build(self) -> crate::model::Transition {
             crate::model::Transition {
-                date: self.date,
-                days: self.days.unwrap_or_default(),
-                storage_class: self.storage_class,
+                date: self.date
+                ,
+                days: self.days
+                    .unwrap_or_default()
+                ,
+                storage_class: self.storage_class
+                ,
             }
         }
     }
+    
+    
 }
 impl Transition {
     /// Creates a new builder-style object to manufacture [`Transition`](crate::model::Transition).
@@ -3463,9 +3305,9 @@ impl Transition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let expirationstatus = unimplemented!();
 /// match expirationstatus {
@@ -3487,58 +3329,52 @@ impl Transition {
 /// Specifically, when `expirationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExpirationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExpirationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExpirationStatus {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => ExpirationStatus::Disabled,
             "Enabled" => ExpirationStatus::Enabled,
-            other => ExpirationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExpirationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExpirationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExpirationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExpirationStatus::from(s))
+                }
+            }
 impl ExpirationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExpirationStatus::Disabled => "Disabled",
             ExpirationStatus::Enabled => "Enabled",
-            ExpirationStatus::Unknown(value) => value.as_str(),
+            ExpirationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for ExpirationStatus {
@@ -3550,9 +3386,9 @@ impl AsRef<str> for ExpirationStatus {
 /// <p>The container for the filter of the lifecycle rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleRuleFilter {
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+pub struct LifecycleRuleFilter  {
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important> 
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
     /// </important>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -3570,18 +3406,18 @@ pub struct LifecycleRuleFilter {
     pub object_size_less_than: std::option::Option<i64>,
 }
 impl LifecycleRuleFilter {
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important> 
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
     /// </important>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>A container for a key-value name pair.</p>
-    pub fn tag(&self) -> std::option::Option<&crate::model::S3Tag> {
+    pub fn tag(&self) -> std::option::Option<& crate::model::S3Tag> {
         self.tag.as_ref()
     }
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
-    pub fn and(&self) -> std::option::Option<&crate::model::LifecycleRuleAndOperator> {
+    pub fn and(&self) -> std::option::Option<& crate::model::LifecycleRuleAndOperator> {
         self.and.as_ref()
     }
     /// <p>Minimum object size to which the rule applies.</p>
@@ -3595,7 +3431,7 @@ impl LifecycleRuleFilter {
 }
 /// See [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
 pub mod lifecycle_rule_filter {
-
+    
     /// A builder for [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3606,19 +3442,18 @@ pub mod lifecycle_rule_filter {
         pub(crate) object_size_less_than: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+        /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important> 
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
         /// </important>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+        /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important> 
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
         /// </important>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p>A container for a key-value name pair.</p>
         pub fn tag(mut self, input: crate::model::S3Tag) -> Self {
@@ -3627,8 +3462,7 @@ pub mod lifecycle_rule_filter {
         }
         /// <p>A container for a key-value name pair.</p>
         pub fn set_tag(mut self, input: std::option::Option<crate::model::S3Tag>) -> Self {
-            self.tag = input;
-            self
+            self.tag = input; self
         }
         /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
         pub fn and(mut self, input: crate::model::LifecycleRuleAndOperator) -> Self {
@@ -3636,12 +3470,8 @@ pub mod lifecycle_rule_filter {
             self
         }
         /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
-        pub fn set_and(
-            mut self,
-            input: std::option::Option<crate::model::LifecycleRuleAndOperator>,
-        ) -> Self {
-            self.and = input;
-            self
+        pub fn set_and(mut self, input: std::option::Option<crate::model::LifecycleRuleAndOperator>) -> Self {
+            self.and = input; self
         }
         /// <p>Minimum object size to which the rule applies.</p>
         pub fn object_size_greater_than(mut self, input: i64) -> Self {
@@ -3650,8 +3480,7 @@ pub mod lifecycle_rule_filter {
         }
         /// <p>Minimum object size to which the rule applies.</p>
         pub fn set_object_size_greater_than(mut self, input: std::option::Option<i64>) -> Self {
-            self.object_size_greater_than = input;
-            self
+            self.object_size_greater_than = input; self
         }
         /// <p>Maximum object size to which the rule applies.</p>
         pub fn object_size_less_than(mut self, input: i64) -> Self {
@@ -3660,20 +3489,26 @@ pub mod lifecycle_rule_filter {
         }
         /// <p>Maximum object size to which the rule applies.</p>
         pub fn set_object_size_less_than(mut self, input: std::option::Option<i64>) -> Self {
-            self.object_size_less_than = input;
-            self
+            self.object_size_less_than = input; self
         }
         /// Consumes the builder and constructs a [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
         pub fn build(self) -> crate::model::LifecycleRuleFilter {
             crate::model::LifecycleRuleFilter {
-                prefix: self.prefix,
-                tag: self.tag,
-                and: self.and,
-                object_size_greater_than: self.object_size_greater_than,
-                object_size_less_than: self.object_size_less_than,
+                prefix: self.prefix
+                ,
+                tag: self.tag
+                ,
+                and: self.and
+                ,
+                object_size_greater_than: self.object_size_greater_than
+                ,
+                object_size_less_than: self.object_size_less_than
+                ,
             }
         }
     }
+    
+    
 }
 impl LifecycleRuleFilter {
     /// Creates a new builder-style object to manufacture [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
@@ -3685,7 +3520,7 @@ impl LifecycleRuleFilter {
 /// <p>The container for the Outposts bucket lifecycle rule and operator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleRuleAndOperator {
+pub struct LifecycleRuleAndOperator  {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -3701,11 +3536,11 @@ pub struct LifecycleRuleAndOperator {
 }
 impl LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::S3Tag]> {
         self.tags.as_deref()
     }
     /// <p>Minimum object size to which the rule applies.</p>
@@ -3719,7 +3554,7 @@ impl LifecycleRuleAndOperator {
 }
 /// See [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
 pub mod lifecycle_rule_and_operator {
-
+    
     /// A builder for [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3736,8 +3571,7 @@ pub mod lifecycle_rule_and_operator {
         }
         /// <p>Prefix identifying one or more objects to which the rule applies.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -3746,17 +3580,13 @@ pub mod lifecycle_rule_and_operator {
         /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
         pub fn tags(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Minimum object size to which the rule applies.</p>
         pub fn object_size_greater_than(mut self, input: i64) -> Self {
@@ -3765,8 +3595,7 @@ pub mod lifecycle_rule_and_operator {
         }
         /// <p>Minimum object size to which the rule applies.</p>
         pub fn set_object_size_greater_than(mut self, input: std::option::Option<i64>) -> Self {
-            self.object_size_greater_than = input;
-            self
+            self.object_size_greater_than = input; self
         }
         /// <p>Maximum object size to which the rule applies.</p>
         pub fn object_size_less_than(mut self, input: i64) -> Self {
@@ -3775,19 +3604,24 @@ pub mod lifecycle_rule_and_operator {
         }
         /// <p>Maximum object size to which the rule applies.</p>
         pub fn set_object_size_less_than(mut self, input: std::option::Option<i64>) -> Self {
-            self.object_size_less_than = input;
-            self
+            self.object_size_less_than = input; self
         }
         /// Consumes the builder and constructs a [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
         pub fn build(self) -> crate::model::LifecycleRuleAndOperator {
             crate::model::LifecycleRuleAndOperator {
-                prefix: self.prefix,
-                tags: self.tags,
-                object_size_greater_than: self.object_size_greater_than,
-                object_size_less_than: self.object_size_less_than,
+                prefix: self.prefix
+                ,
+                tags: self.tags
+                ,
+                object_size_greater_than: self.object_size_greater_than
+                ,
+                object_size_less_than: self.object_size_less_than
+                ,
             }
         }
     }
+    
+    
 }
 impl LifecycleRuleAndOperator {
     /// Creates a new builder-style object to manufacture [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
@@ -3799,7 +3633,7 @@ impl LifecycleRuleAndOperator {
 /// <p>The container of the Outposts bucket lifecycle expiration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleExpiration {
+pub struct LifecycleExpiration  {
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.</p>
     #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
@@ -3812,7 +3646,7 @@ pub struct LifecycleExpiration {
 }
 impl LifecycleExpiration {
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
@@ -3826,7 +3660,7 @@ impl LifecycleExpiration {
 }
 /// See [`LifecycleExpiration`](crate::model::LifecycleExpiration).
 pub mod lifecycle_expiration {
-
+    
     /// A builder for [`LifecycleExpiration`](crate::model::LifecycleExpiration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3842,8 +3676,7 @@ pub mod lifecycle_expiration {
         }
         /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.</p>
         pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.date = input;
-            self
+            self.date = input; self
         }
         /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
         pub fn days(mut self, input: i32) -> Self {
@@ -3852,8 +3685,7 @@ pub mod lifecycle_expiration {
         }
         /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
         pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.days = input;
-            self
+            self.days = input; self
         }
         /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired. If set to false, the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
         pub fn expired_object_delete_marker(mut self, input: bool) -> Self {
@@ -3861,22 +3693,25 @@ pub mod lifecycle_expiration {
             self
         }
         /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired. If set to false, the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
-        pub fn set_expired_object_delete_marker(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.expired_object_delete_marker = input;
-            self
+        pub fn set_expired_object_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
+            self.expired_object_delete_marker = input; self
         }
         /// Consumes the builder and constructs a [`LifecycleExpiration`](crate::model::LifecycleExpiration).
         pub fn build(self) -> crate::model::LifecycleExpiration {
             crate::model::LifecycleExpiration {
-                date: self.date,
-                days: self.days.unwrap_or_default(),
-                expired_object_delete_marker: self.expired_object_delete_marker.unwrap_or_default(),
+                date: self.date
+                ,
+                days: self.days
+                    .unwrap_or_default()
+                ,
+                expired_object_delete_marker: self.expired_object_delete_marker
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LifecycleExpiration {
     /// Creates a new builder-style object to manufacture [`LifecycleExpiration`](crate::model::LifecycleExpiration).
@@ -3888,7 +3723,7 @@ impl LifecycleExpiration {
 /// <p>A configuration used when creating an Object Lambda Access Point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectLambdaConfiguration {
+pub struct ObjectLambdaConfiguration  {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub supporting_access_point: std::option::Option<std::string::String>,
@@ -3897,16 +3732,14 @@ pub struct ObjectLambdaConfiguration {
     pub cloud_watch_metrics_enabled: bool,
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
     #[doc(hidden)]
-    pub allowed_features:
-        std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>,
+    pub allowed_features: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>,
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
     #[doc(hidden)]
-    pub transformation_configurations:
-        std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfiguration>>,
+    pub transformation_configurations: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfiguration>>,
 }
 impl ObjectLambdaConfiguration {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
-    pub fn supporting_access_point(&self) -> std::option::Option<&str> {
+    pub fn supporting_access_point(&self) -> std::option::Option<& str> {
         self.supporting_access_point.as_deref()
     }
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
@@ -3914,31 +3747,24 @@ impl ObjectLambdaConfiguration {
         self.cloud_watch_metrics_enabled
     }
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
-    pub fn allowed_features(
-        &self,
-    ) -> std::option::Option<&[crate::model::ObjectLambdaAllowedFeature]> {
+    pub fn allowed_features(&self) -> std::option::Option<& [crate::model::ObjectLambdaAllowedFeature]> {
         self.allowed_features.as_deref()
     }
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-    pub fn transformation_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ObjectLambdaTransformationConfiguration]> {
+    pub fn transformation_configurations(&self) -> std::option::Option<& [crate::model::ObjectLambdaTransformationConfiguration]> {
         self.transformation_configurations.as_deref()
     }
 }
 /// See [`ObjectLambdaConfiguration`](crate::model::ObjectLambdaConfiguration).
 pub mod object_lambda_configuration {
-
+    
     /// A builder for [`ObjectLambdaConfiguration`](crate::model::ObjectLambdaConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) supporting_access_point: std::option::Option<std::string::String>,
         pub(crate) cloud_watch_metrics_enabled: std::option::Option<bool>,
-        pub(crate) allowed_features:
-            std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>,
-        pub(crate) transformation_configurations: std::option::Option<
-            std::vec::Vec<crate::model::ObjectLambdaTransformationConfiguration>,
-        >,
+        pub(crate) allowed_features: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>,
+        pub(crate) transformation_configurations: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfiguration>>,
     }
     impl Builder {
         /// <p>Standard access point associated with the Object Lambda Access Point.</p>
@@ -3947,12 +3773,8 @@ pub mod object_lambda_configuration {
             self
         }
         /// <p>Standard access point associated with the Object Lambda Access Point.</p>
-        pub fn set_supporting_access_point(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.supporting_access_point = input;
-            self
+        pub fn set_supporting_access_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.supporting_access_point = input; self
         }
         /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
         pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
@@ -3961,8 +3783,7 @@ pub mod object_lambda_configuration {
         }
         /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
         pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.cloud_watch_metrics_enabled = input;
-            self
+            self.cloud_watch_metrics_enabled = input; self
         }
         /// Appends an item to `allowed_features`.
         ///
@@ -3971,52 +3792,46 @@ pub mod object_lambda_configuration {
         /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
         pub fn allowed_features(mut self, input: crate::model::ObjectLambdaAllowedFeature) -> Self {
             let mut v = self.allowed_features.unwrap_or_default();
-            v.push(input);
-            self.allowed_features = Some(v);
-            self
+                            v.push(input);
+                            self.allowed_features = Some(v);
+                            self
         }
         /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
-        pub fn set_allowed_features(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>,
-        ) -> Self {
-            self.allowed_features = input;
-            self
+        pub fn set_allowed_features(mut self, input: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>) -> Self {
+            self.allowed_features = input; self
         }
         /// Appends an item to `transformation_configurations`.
         ///
         /// To override the contents of this collection use [`set_transformation_configurations`](Self::set_transformation_configurations).
         ///
         /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-        pub fn transformation_configurations(
-            mut self,
-            input: crate::model::ObjectLambdaTransformationConfiguration,
-        ) -> Self {
+        pub fn transformation_configurations(mut self, input: crate::model::ObjectLambdaTransformationConfiguration) -> Self {
             let mut v = self.transformation_configurations.unwrap_or_default();
-            v.push(input);
-            self.transformation_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.transformation_configurations = Some(v);
+                            self
         }
         /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-        pub fn set_transformation_configurations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ObjectLambdaTransformationConfiguration>,
-            >,
-        ) -> Self {
-            self.transformation_configurations = input;
-            self
+        pub fn set_transformation_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfiguration>>) -> Self {
+            self.transformation_configurations = input; self
         }
         /// Consumes the builder and constructs a [`ObjectLambdaConfiguration`](crate::model::ObjectLambdaConfiguration).
         pub fn build(self) -> crate::model::ObjectLambdaConfiguration {
             crate::model::ObjectLambdaConfiguration {
-                supporting_access_point: self.supporting_access_point,
-                cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled.unwrap_or_default(),
-                allowed_features: self.allowed_features,
-                transformation_configurations: self.transformation_configurations,
+                supporting_access_point: self.supporting_access_point
+                ,
+                cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled
+                    .unwrap_or_default()
+                ,
+                allowed_features: self.allowed_features
+                ,
+                transformation_configurations: self.transformation_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectLambdaConfiguration {
     /// Creates a new builder-style object to manufacture [`ObjectLambdaConfiguration`](crate::model::ObjectLambdaConfiguration).
@@ -4028,42 +3843,32 @@ impl ObjectLambdaConfiguration {
 /// <p>A configuration used when creating an Object Lambda Access Point transformation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectLambdaTransformationConfiguration {
+pub struct ObjectLambdaTransformationConfiguration  {
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<
-        std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>,
-    >,
+    pub actions: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>>,
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
     #[doc(hidden)]
-    pub content_transformation:
-        std::option::Option<crate::model::ObjectLambdaContentTransformation>,
+    pub content_transformation: std::option::Option<crate::model::ObjectLambdaContentTransformation>,
 }
 impl ObjectLambdaTransformationConfiguration {
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
-    pub fn actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ObjectLambdaTransformationConfigurationAction]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::model::ObjectLambdaTransformationConfigurationAction]> {
         self.actions.as_deref()
     }
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
-    pub fn content_transformation(
-        &self,
-    ) -> std::option::Option<&crate::model::ObjectLambdaContentTransformation> {
+    pub fn content_transformation(&self) -> std::option::Option<& crate::model::ObjectLambdaContentTransformation> {
         self.content_transformation.as_ref()
     }
 }
 /// See [`ObjectLambdaTransformationConfiguration`](crate::model::ObjectLambdaTransformationConfiguration).
 pub mod object_lambda_transformation_configuration {
-
+    
     /// A builder for [`ObjectLambdaTransformationConfiguration`](crate::model::ObjectLambdaTransformationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) actions: std::option::Option<
-            std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>,
-        >,
-        pub(crate) content_transformation:
-            std::option::Option<crate::model::ObjectLambdaContentTransformation>,
+        pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>>,
+        pub(crate) content_transformation: std::option::Option<crate::model::ObjectLambdaContentTransformation>,
     }
     impl Builder {
         /// Appends an item to `actions`.
@@ -4071,49 +3876,37 @@ pub mod object_lambda_transformation_configuration {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
-        pub fn actions(
-            mut self,
-            input: crate::model::ObjectLambdaTransformationConfigurationAction,
-        ) -> Self {
+        pub fn actions(mut self, input: crate::model::ObjectLambdaTransformationConfigurationAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input);
-            self.actions = Some(v);
-            self
+                            v.push(input);
+                            self.actions = Some(v);
+                            self
         }
         /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>,
-            >,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>>) -> Self {
+            self.actions = input; self
         }
         /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
-        pub fn content_transformation(
-            mut self,
-            input: crate::model::ObjectLambdaContentTransformation,
-        ) -> Self {
+        pub fn content_transformation(mut self, input: crate::model::ObjectLambdaContentTransformation) -> Self {
             self.content_transformation = Some(input);
             self
         }
         /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
-        pub fn set_content_transformation(
-            mut self,
-            input: std::option::Option<crate::model::ObjectLambdaContentTransformation>,
-        ) -> Self {
-            self.content_transformation = input;
-            self
+        pub fn set_content_transformation(mut self, input: std::option::Option<crate::model::ObjectLambdaContentTransformation>) -> Self {
+            self.content_transformation = input; self
         }
         /// Consumes the builder and constructs a [`ObjectLambdaTransformationConfiguration`](crate::model::ObjectLambdaTransformationConfiguration).
         pub fn build(self) -> crate::model::ObjectLambdaTransformationConfiguration {
             crate::model::ObjectLambdaTransformationConfiguration {
-                actions: self.actions,
-                content_transformation: self.content_transformation,
+                actions: self.actions
+                ,
+                content_transformation: self.content_transformation
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectLambdaTransformationConfiguration {
     /// Creates a new builder-style object to manufacture [`ObjectLambdaTransformationConfiguration`](crate::model::ObjectLambdaTransformationConfiguration).
@@ -4142,14 +3935,8 @@ impl ObjectLambdaContentTransformation {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AwsLambda`](crate::model::ObjectLambdaContentTransformation::AwsLambda), extracting the inner [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_lambda(
-        &self,
-    ) -> std::result::Result<&crate::model::AwsLambdaTransformation, &Self> {
-        if let ObjectLambdaContentTransformation::AwsLambda(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_aws_lambda(&self) -> std::result::Result<&crate::model::AwsLambdaTransformation, &Self> {
+        if let ObjectLambdaContentTransformation::AwsLambda(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AwsLambda`](crate::model::ObjectLambdaContentTransformation::AwsLambda).
     pub fn is_aws_lambda(&self) -> bool {
@@ -4164,7 +3951,7 @@ impl ObjectLambdaContentTransformation {
 /// <p>Lambda function used to transform objects through an Object Lambda Access Point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsLambdaTransformation {
+pub struct AwsLambdaTransformation  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
@@ -4174,17 +3961,17 @@ pub struct AwsLambdaTransformation {
 }
 impl AwsLambdaTransformation {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
-    pub fn function_payload(&self) -> std::option::Option<&str> {
+    pub fn function_payload(&self) -> std::option::Option<& str> {
         self.function_payload.as_deref()
     }
 }
 /// See [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
 pub mod aws_lambda_transformation {
-
+    
     /// A builder for [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4199,8 +3986,7 @@ pub mod aws_lambda_transformation {
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
         pub fn function_payload(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4208,21 +3994,21 @@ pub mod aws_lambda_transformation {
             self
         }
         /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
-        pub fn set_function_payload(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_payload = input;
-            self
+        pub fn set_function_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_payload = input; self
         }
         /// Consumes the builder and constructs a [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
         pub fn build(self) -> crate::model::AwsLambdaTransformation {
             crate::model::AwsLambdaTransformation {
-                function_arn: self.function_arn,
-                function_payload: self.function_payload,
+                function_arn: self.function_arn
+                ,
+                function_payload: self.function_payload
+                ,
             }
         }
     }
+    
+    
 }
 impl AwsLambdaTransformation {
     /// Creates a new builder-style object to manufacture [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
@@ -4237,9 +4023,9 @@ impl AwsLambdaTransformation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objectlambdatransformationconfigurationaction = unimplemented!();
 /// match objectlambdatransformationconfigurationaction {
@@ -4263,22 +4049,14 @@ impl AwsLambdaTransformation {
 /// Specifically, when `objectlambdatransformationconfigurationaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectLambdaTransformationConfigurationAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObjectLambdaTransformationConfigurationAction {
     #[allow(missing_docs)] // documentation missing in model
     GetObject,
@@ -4289,7 +4067,7 @@ pub enum ObjectLambdaTransformationConfigurationAction {
     #[allow(missing_docs)] // documentation missing in model
     ListObjectsV2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectLambdaTransformationConfigurationAction {
     fn from(s: &str) -> Self {
@@ -4298,19 +4076,17 @@ impl std::convert::From<&str> for ObjectLambdaTransformationConfigurationAction 
             "HeadObject" => ObjectLambdaTransformationConfigurationAction::HeadObject,
             "ListObjects" => ObjectLambdaTransformationConfigurationAction::ListObjects,
             "ListObjectsV2" => ObjectLambdaTransformationConfigurationAction::ListObjectsV2,
-            other => ObjectLambdaTransformationConfigurationAction::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ObjectLambdaTransformationConfigurationAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ObjectLambdaTransformationConfigurationAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectLambdaTransformationConfigurationAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObjectLambdaTransformationConfigurationAction::from(s))
+                }
+            }
 impl ObjectLambdaTransformationConfigurationAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4319,12 +4095,14 @@ impl ObjectLambdaTransformationConfigurationAction {
             ObjectLambdaTransformationConfigurationAction::HeadObject => "HeadObject",
             ObjectLambdaTransformationConfigurationAction::ListObjects => "ListObjects",
             ObjectLambdaTransformationConfigurationAction::ListObjectsV2 => "ListObjectsV2",
-            ObjectLambdaTransformationConfigurationAction::Unknown(value) => value.as_str(),
+            ObjectLambdaTransformationConfigurationAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GetObject", "HeadObject", "ListObjects", "ListObjectsV2"]
+        &[
+            "GetObject", "HeadObject", "ListObjects", "ListObjectsV2"
+        ]
     }
 }
 impl AsRef<str> for ObjectLambdaTransformationConfigurationAction {
@@ -4339,9 +4117,9 @@ impl AsRef<str> for ObjectLambdaTransformationConfigurationAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objectlambdaallowedfeature = unimplemented!();
 /// match objectlambdaallowedfeature {
@@ -4365,22 +4143,14 @@ impl AsRef<str> for ObjectLambdaTransformationConfigurationAction {
 /// Specifically, when `objectlambdaallowedfeature` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectLambdaAllowedFeature::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObjectLambdaAllowedFeature {
     #[allow(missing_docs)] // documentation missing in model
     GetObjectPartNumber,
@@ -4391,7 +4161,7 @@ pub enum ObjectLambdaAllowedFeature {
     #[allow(missing_docs)] // documentation missing in model
     HeadObjectRange,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectLambdaAllowedFeature {
     fn from(s: &str) -> Self {
@@ -4400,19 +4170,17 @@ impl std::convert::From<&str> for ObjectLambdaAllowedFeature {
             "GetObject-Range" => ObjectLambdaAllowedFeature::GetObjectRange,
             "HeadObject-PartNumber" => ObjectLambdaAllowedFeature::HeadObjectPartNumber,
             "HeadObject-Range" => ObjectLambdaAllowedFeature::HeadObjectRange,
-            other => ObjectLambdaAllowedFeature::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ObjectLambdaAllowedFeature::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ObjectLambdaAllowedFeature {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectLambdaAllowedFeature::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObjectLambdaAllowedFeature::from(s))
+                }
+            }
 impl ObjectLambdaAllowedFeature {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4421,16 +4189,13 @@ impl ObjectLambdaAllowedFeature {
             ObjectLambdaAllowedFeature::GetObjectRange => "GetObject-Range",
             ObjectLambdaAllowedFeature::HeadObjectPartNumber => "HeadObject-PartNumber",
             ObjectLambdaAllowedFeature::HeadObjectRange => "HeadObject-Range",
-            ObjectLambdaAllowedFeature::Unknown(value) => value.as_str(),
+            ObjectLambdaAllowedFeature::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "GetObject-PartNumber",
-            "GetObject-Range",
-            "HeadObject-PartNumber",
-            "HeadObject-Range",
+            "GetObject-PartNumber", "GetObject-Range", "HeadObject-PartNumber", "HeadObject-Range"
         ]
     }
 }
@@ -4443,7 +4208,7 @@ impl AsRef<str> for ObjectLambdaAllowedFeature {
 /// <p>Part of <code>ListStorageLensConfigurationResult</code>. Each entry includes the description of the S3 Storage Lens configuration, its home Region, whether it is enabled, its Amazon Resource Name (ARN), and config ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStorageLensConfigurationEntry {
+pub struct ListStorageLensConfigurationEntry  {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4459,15 +4224,15 @@ pub struct ListStorageLensConfigurationEntry {
 }
 impl ListStorageLensConfigurationEntry {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-    pub fn storage_lens_arn(&self) -> std::option::Option<&str> {
+    pub fn storage_lens_arn(&self) -> std::option::Option<& str> {
         self.storage_lens_arn.as_deref()
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
@@ -4477,7 +4242,7 @@ impl ListStorageLensConfigurationEntry {
 }
 /// See [`ListStorageLensConfigurationEntry`](crate::model::ListStorageLensConfigurationEntry).
 pub mod list_storage_lens_configuration_entry {
-
+    
     /// A builder for [`ListStorageLensConfigurationEntry`](crate::model::ListStorageLensConfigurationEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4494,8 +4259,7 @@ pub mod list_storage_lens_configuration_entry {
         }
         /// <p>A container for the S3 Storage Lens configuration ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
         pub fn storage_lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4503,12 +4267,8 @@ pub mod list_storage_lens_configuration_entry {
             self
         }
         /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-        pub fn set_storage_lens_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.storage_lens_arn = input;
-            self
+        pub fn set_storage_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_lens_arn = input; self
         }
         /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
         pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4517,8 +4277,7 @@ pub mod list_storage_lens_configuration_entry {
         }
         /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.home_region = input;
-            self
+            self.home_region = input; self
         }
         /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
         pub fn is_enabled(mut self, input: bool) -> Self {
@@ -4527,19 +4286,25 @@ pub mod list_storage_lens_configuration_entry {
         }
         /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_enabled = input;
-            self
+            self.is_enabled = input; self
         }
         /// Consumes the builder and constructs a [`ListStorageLensConfigurationEntry`](crate::model::ListStorageLensConfigurationEntry).
         pub fn build(self) -> crate::model::ListStorageLensConfigurationEntry {
             crate::model::ListStorageLensConfigurationEntry {
-                id: self.id,
-                storage_lens_arn: self.storage_lens_arn,
-                home_region: self.home_region,
-                is_enabled: self.is_enabled.unwrap_or_default(),
+                id: self.id
+                ,
+                storage_lens_arn: self.storage_lens_arn
+                ,
+                home_region: self.home_region
+                ,
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStorageLensConfigurationEntry {
     /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationEntry`](crate::model::ListStorageLensConfigurationEntry).
@@ -4551,7 +4316,7 @@ impl ListStorageLensConfigurationEntry {
 /// <p>The container for the regional bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionalBucket {
+pub struct RegionalBucket  {
     /// <p></p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -4570,11 +4335,11 @@ pub struct RegionalBucket {
 }
 impl RegionalBucket {
     /// <p></p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p></p>
@@ -4582,17 +4347,17 @@ impl RegionalBucket {
         self.public_access_block_enabled
     }
     /// <p>The creation date of the regional bucket</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Outposts ID of the regional bucket.</p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
 }
 /// See [`RegionalBucket`](crate::model::RegionalBucket).
 pub mod regional_bucket {
-
+    
     /// A builder for [`RegionalBucket`](crate::model::RegionalBucket).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4610,8 +4375,7 @@ pub mod regional_bucket {
         }
         /// <p></p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4620,8 +4384,7 @@ pub mod regional_bucket {
         }
         /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_arn = input;
-            self
+            self.bucket_arn = input; self
         }
         /// <p></p>
         pub fn public_access_block_enabled(mut self, input: bool) -> Self {
@@ -4630,8 +4393,7 @@ pub mod regional_bucket {
         }
         /// <p></p>
         pub fn set_public_access_block_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.public_access_block_enabled = input;
-            self
+            self.public_access_block_enabled = input; self
         }
         /// <p>The creation date of the regional bucket</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4639,12 +4401,8 @@ pub mod regional_bucket {
             self
         }
         /// <p>The creation date of the regional bucket</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Outposts ID of the regional bucket.</p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4653,20 +4411,27 @@ pub mod regional_bucket {
         }
         /// <p>The Outposts ID of the regional bucket.</p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outpost_id = input;
-            self
+            self.outpost_id = input; self
         }
         /// Consumes the builder and constructs a [`RegionalBucket`](crate::model::RegionalBucket).
         pub fn build(self) -> crate::model::RegionalBucket {
             crate::model::RegionalBucket {
-                bucket: self.bucket,
-                bucket_arn: self.bucket_arn,
-                public_access_block_enabled: self.public_access_block_enabled.unwrap_or_default(),
-                creation_date: self.creation_date,
-                outpost_id: self.outpost_id,
+                bucket: self.bucket
+                ,
+                bucket_arn: self.bucket_arn
+                ,
+                public_access_block_enabled: self.public_access_block_enabled
+                    .unwrap_or_default()
+                ,
+                creation_date: self.creation_date
+                ,
+                outpost_id: self.outpost_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegionalBucket {
     /// Creates a new builder-style object to manufacture [`RegionalBucket`](crate::model::RegionalBucket).
@@ -4678,7 +4443,7 @@ impl RegionalBucket {
 /// <p>A collection of statuses for a Multi-Region Access Point in the various Regions it supports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiRegionAccessPointReport {
+pub struct MultiRegionAccessPointReport  {
     /// <p>The name of the Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4688,11 +4453,11 @@ pub struct MultiRegionAccessPointReport {
     /// <p>When the Multi-Region Access Point create request was received.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-    /// <p>The current status of the Multi-Region Access Point.</p>
+    /// <p>The current status of the Multi-Region Access Point.</p> 
     /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
@@ -4702,45 +4467,42 @@ pub struct MultiRegionAccessPointReport {
 }
 impl MultiRegionAccessPointReport {
     /// <p>The name of the Multi-Region Access Point.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>When the Multi-Region Access Point create request was received.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn public_access_block(
-        &self,
-    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+    pub fn public_access_block(&self) -> std::option::Option<& crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block.as_ref()
     }
-    /// <p>The current status of the Multi-Region Access Point.</p>
+    /// <p>The current status of the Multi-Region Access Point.</p> 
     /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MultiRegionAccessPointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MultiRegionAccessPointStatus> {
         self.status.as_ref()
     }
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-    pub fn regions(&self) -> std::option::Option<&[crate::model::RegionReport]> {
+    pub fn regions(&self) -> std::option::Option<& [crate::model::RegionReport]> {
         self.regions.as_deref()
     }
 }
 /// See [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport).
 pub mod multi_region_access_point_report {
-
+    
     /// A builder for [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) public_access_block:
-            std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         pub(crate) status: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
         pub(crate) regions: std::option::Option<std::vec::Vec<crate::model::RegionReport>>,
     }
@@ -4752,8 +4514,7 @@ pub mod multi_region_access_point_report {
         }
         /// <p>The name of the Multi-Region Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4762,8 +4523,7 @@ pub mod multi_region_access_point_report {
         }
         /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>When the Multi-Region Access Point create request was received.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4771,45 +4531,30 @@ pub mod multi_region_access_point_report {
             self
         }
         /// <p>When the Multi-Region Access Point create request was received.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
         /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-        pub fn public_access_block(
-            mut self,
-            input: crate::model::PublicAccessBlockConfiguration,
-        ) -> Self {
+        pub fn public_access_block(mut self, input: crate::model::PublicAccessBlockConfiguration) -> Self {
             self.public_access_block = Some(input);
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
         /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-        pub fn set_public_access_block(
-            mut self,
-            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-        ) -> Self {
-            self.public_access_block = input;
-            self
+        pub fn set_public_access_block(mut self, input: std::option::Option<crate::model::PublicAccessBlockConfiguration>) -> Self {
+            self.public_access_block = input; self
         }
-        /// <p>The current status of the Multi-Region Access Point.</p>
+        /// <p>The current status of the Multi-Region Access Point.</p> 
         /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
         pub fn status(mut self, input: crate::model::MultiRegionAccessPointStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the Multi-Region Access Point.</p>
+        /// <p>The current status of the Multi-Region Access Point.</p> 
         /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MultiRegionAccessPointStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `regions`.
         ///
@@ -4818,30 +4563,34 @@ pub mod multi_region_access_point_report {
         /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
         pub fn regions(mut self, input: crate::model::RegionReport) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input);
-            self.regions = Some(v);
-            self
+                            v.push(input);
+                            self.regions = Some(v);
+                            self
         }
         /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegionReport>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegionReport>>) -> Self {
+            self.regions = input; self
         }
         /// Consumes the builder and constructs a [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport).
         pub fn build(self) -> crate::model::MultiRegionAccessPointReport {
             crate::model::MultiRegionAccessPointReport {
-                name: self.name,
-                alias: self.alias,
-                created_at: self.created_at,
-                public_access_block: self.public_access_block,
-                status: self.status,
-                regions: self.regions,
+                name: self.name
+                ,
+                alias: self.alias
+                ,
+                created_at: self.created_at
+                ,
+                public_access_block: self.public_access_block
+                ,
+                status: self.status
+                ,
+                regions: self.regions
+                ,
             }
         }
     }
+    
+    
 }
 impl MultiRegionAccessPointReport {
     /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport).
@@ -4853,7 +4602,7 @@ impl MultiRegionAccessPointReport {
 /// <p>A combination of a bucket and Region that's part of a Multi-Region Access Point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionReport {
+pub struct RegionReport  {
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -4863,17 +4612,17 @@ pub struct RegionReport {
 }
 impl RegionReport {
     /// <p>The name of the bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The name of the Region.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
 }
 /// See [`RegionReport`](crate::model::RegionReport).
 pub mod region_report {
-
+    
     /// A builder for [`RegionReport`](crate::model::RegionReport).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4888,8 +4637,7 @@ pub mod region_report {
         }
         /// <p>The name of the bucket.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The name of the Region.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4898,17 +4646,20 @@ pub mod region_report {
         }
         /// <p>The name of the Region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Consumes the builder and constructs a [`RegionReport`](crate::model::RegionReport).
         pub fn build(self) -> crate::model::RegionReport {
             crate::model::RegionReport {
-                bucket: self.bucket,
-                region: self.region,
+                bucket: self.bucket
+                ,
+                region: self.region
+                ,
             }
         }
     }
+    
+    
 }
 impl RegionReport {
     /// Creates a new builder-style object to manufacture [`RegionReport`](crate::model::RegionReport).
@@ -4923,9 +4674,9 @@ impl RegionReport {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let multiregionaccesspointstatus = unimplemented!();
 /// match multiregionaccesspointstatus {
@@ -4951,22 +4702,14 @@ impl RegionReport {
 /// Specifically, when `multiregionaccesspointstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MultiRegionAccessPointStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MultiRegionAccessPointStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -4981,56 +4724,45 @@ pub enum MultiRegionAccessPointStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MultiRegionAccessPointStatus {
     fn from(s: &str) -> Self {
         match s {
             "CREATING" => MultiRegionAccessPointStatus::Creating,
             "DELETING" => MultiRegionAccessPointStatus::Deleting,
-            "INCONSISTENT_ACROSS_REGIONS" => {
-                MultiRegionAccessPointStatus::InconsistentAcrossRegions
-            }
+            "INCONSISTENT_ACROSS_REGIONS" => MultiRegionAccessPointStatus::InconsistentAcrossRegions,
             "PARTIALLY_CREATED" => MultiRegionAccessPointStatus::PartiallyCreated,
             "PARTIALLY_DELETED" => MultiRegionAccessPointStatus::PartiallyDeleted,
             "READY" => MultiRegionAccessPointStatus::Ready,
-            other => MultiRegionAccessPointStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MultiRegionAccessPointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MultiRegionAccessPointStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MultiRegionAccessPointStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MultiRegionAccessPointStatus::from(s))
+                }
+            }
 impl MultiRegionAccessPointStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MultiRegionAccessPointStatus::Creating => "CREATING",
             MultiRegionAccessPointStatus::Deleting => "DELETING",
-            MultiRegionAccessPointStatus::InconsistentAcrossRegions => {
-                "INCONSISTENT_ACROSS_REGIONS"
-            }
+            MultiRegionAccessPointStatus::InconsistentAcrossRegions => "INCONSISTENT_ACROSS_REGIONS",
             MultiRegionAccessPointStatus::PartiallyCreated => "PARTIALLY_CREATED",
             MultiRegionAccessPointStatus::PartiallyDeleted => "PARTIALLY_DELETED",
             MultiRegionAccessPointStatus::Ready => "READY",
-            MultiRegionAccessPointStatus::Unknown(value) => value.as_str(),
+            MultiRegionAccessPointStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATING",
-            "DELETING",
-            "INCONSISTENT_ACROSS_REGIONS",
-            "PARTIALLY_CREATED",
-            "PARTIALLY_DELETED",
-            "READY",
+            "CREATING", "DELETING", "INCONSISTENT_ACROSS_REGIONS", "PARTIALLY_CREATED", "PARTIALLY_DELETED", "READY"
         ]
     }
 }
@@ -5043,7 +4775,7 @@ impl AsRef<str> for MultiRegionAccessPointStatus {
 /// <p>Contains the configuration and status information for a single job retrieved as part of a job list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobListDescriptor {
+pub struct JobListDescriptor  {
     /// <p>The ID for the specified job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -5071,15 +4803,15 @@ pub struct JobListDescriptor {
 }
 impl JobListDescriptor {
     /// <p>The ID for the specified job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::OperationName> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::OperationName> {
         self.operation.as_ref()
     }
     /// <p>The current priority for the specified job.</p>
@@ -5087,25 +4819,25 @@ impl JobListDescriptor {
         self.priority
     }
     /// <p>The specified job's current status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp indicating when the specified job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn termination_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.termination_date.as_ref()
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-    pub fn progress_summary(&self) -> std::option::Option<&crate::model::JobProgressSummary> {
+    pub fn progress_summary(&self) -> std::option::Option<& crate::model::JobProgressSummary> {
         self.progress_summary.as_ref()
     }
 }
 /// See [`JobListDescriptor`](crate::model::JobListDescriptor).
 pub mod job_list_descriptor {
-
+    
     /// A builder for [`JobListDescriptor`](crate::model::JobListDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5126,8 +4858,7 @@ pub mod job_list_descriptor {
         }
         /// <p>The ID for the specified job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5136,8 +4867,7 @@ pub mod job_list_descriptor {
         }
         /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
         pub fn operation(mut self, input: crate::model::OperationName) -> Self {
@@ -5145,12 +4875,8 @@ pub mod job_list_descriptor {
             self
         }
         /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::OperationName>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::OperationName>) -> Self {
+            self.operation = input; self
         }
         /// <p>The current priority for the specified job.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -5159,8 +4885,7 @@ pub mod job_list_descriptor {
         }
         /// <p>The current priority for the specified job.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>The specified job's current status.</p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
@@ -5169,8 +4894,7 @@ pub mod job_list_descriptor {
         }
         /// <p>The specified job's current status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A timestamp indicating when the specified job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5178,12 +4902,8 @@ pub mod job_list_descriptor {
             self
         }
         /// <p>A timestamp indicating when the specified job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
         pub fn termination_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5191,12 +4911,8 @@ pub mod job_list_descriptor {
             self
         }
         /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-        pub fn set_termination_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.termination_date = input;
-            self
+        pub fn set_termination_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.termination_date = input; self
         }
         /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
         pub fn progress_summary(mut self, input: crate::model::JobProgressSummary) -> Self {
@@ -5204,27 +4920,34 @@ pub mod job_list_descriptor {
             self
         }
         /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-        pub fn set_progress_summary(
-            mut self,
-            input: std::option::Option<crate::model::JobProgressSummary>,
-        ) -> Self {
-            self.progress_summary = input;
-            self
+        pub fn set_progress_summary(mut self, input: std::option::Option<crate::model::JobProgressSummary>) -> Self {
+            self.progress_summary = input; self
         }
         /// Consumes the builder and constructs a [`JobListDescriptor`](crate::model::JobListDescriptor).
         pub fn build(self) -> crate::model::JobListDescriptor {
             crate::model::JobListDescriptor {
-                job_id: self.job_id,
-                description: self.description,
-                operation: self.operation,
-                priority: self.priority.unwrap_or_default(),
-                status: self.status,
-                creation_time: self.creation_time,
-                termination_date: self.termination_date,
-                progress_summary: self.progress_summary,
+                job_id: self.job_id
+                ,
+                description: self.description
+                ,
+                operation: self.operation
+                ,
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
+                termination_date: self.termination_date
+                ,
+                progress_summary: self.progress_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl JobListDescriptor {
     /// Creates a new builder-style object to manufacture [`JobListDescriptor`](crate::model::JobListDescriptor).
@@ -5236,7 +4959,7 @@ impl JobListDescriptor {
 /// <p>Describes the total number of tasks that the specified job has started, the number of tasks that succeeded, and the number of tasks that failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobProgressSummary {
+pub struct JobProgressSummary  {
     /// <p></p>
     #[doc(hidden)]
     pub total_number_of_tasks: std::option::Option<i64>,
@@ -5264,13 +4987,13 @@ impl JobProgressSummary {
         self.number_of_tasks_failed
     }
     /// <p>The JobTimers attribute of a job's progress summary.</p>
-    pub fn timers(&self) -> std::option::Option<&crate::model::JobTimers> {
+    pub fn timers(&self) -> std::option::Option<& crate::model::JobTimers> {
         self.timers.as_ref()
     }
 }
 /// See [`JobProgressSummary`](crate::model::JobProgressSummary).
 pub mod job_progress_summary {
-
+    
     /// A builder for [`JobProgressSummary`](crate::model::JobProgressSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5287,8 +5010,7 @@ pub mod job_progress_summary {
         }
         /// <p></p>
         pub fn set_total_number_of_tasks(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_number_of_tasks = input;
-            self
+            self.total_number_of_tasks = input; self
         }
         /// <p></p>
         pub fn number_of_tasks_succeeded(mut self, input: i64) -> Self {
@@ -5297,8 +5019,7 @@ pub mod job_progress_summary {
         }
         /// <p></p>
         pub fn set_number_of_tasks_succeeded(mut self, input: std::option::Option<i64>) -> Self {
-            self.number_of_tasks_succeeded = input;
-            self
+            self.number_of_tasks_succeeded = input; self
         }
         /// <p></p>
         pub fn number_of_tasks_failed(mut self, input: i64) -> Self {
@@ -5307,8 +5028,7 @@ pub mod job_progress_summary {
         }
         /// <p></p>
         pub fn set_number_of_tasks_failed(mut self, input: std::option::Option<i64>) -> Self {
-            self.number_of_tasks_failed = input;
-            self
+            self.number_of_tasks_failed = input; self
         }
         /// <p>The JobTimers attribute of a job's progress summary.</p>
         pub fn timers(mut self, input: crate::model::JobTimers) -> Self {
@@ -5317,19 +5037,24 @@ pub mod job_progress_summary {
         }
         /// <p>The JobTimers attribute of a job's progress summary.</p>
         pub fn set_timers(mut self, input: std::option::Option<crate::model::JobTimers>) -> Self {
-            self.timers = input;
-            self
+            self.timers = input; self
         }
         /// Consumes the builder and constructs a [`JobProgressSummary`](crate::model::JobProgressSummary).
         pub fn build(self) -> crate::model::JobProgressSummary {
             crate::model::JobProgressSummary {
-                total_number_of_tasks: self.total_number_of_tasks,
-                number_of_tasks_succeeded: self.number_of_tasks_succeeded,
-                number_of_tasks_failed: self.number_of_tasks_failed,
-                timers: self.timers,
+                total_number_of_tasks: self.total_number_of_tasks
+                ,
+                number_of_tasks_succeeded: self.number_of_tasks_succeeded
+                ,
+                number_of_tasks_failed: self.number_of_tasks_failed
+                ,
+                timers: self.timers
+                ,
             }
         }
     }
+    
+    
 }
 impl JobProgressSummary {
     /// Creates a new builder-style object to manufacture [`JobProgressSummary`](crate::model::JobProgressSummary).
@@ -5341,7 +5066,7 @@ impl JobProgressSummary {
 /// <p>Provides timing details for the job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobTimers {
+pub struct JobTimers  {
     /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
     #[doc(hidden)]
     pub elapsed_time_in_active_seconds: std::option::Option<i64>,
@@ -5354,7 +5079,7 @@ impl JobTimers {
 }
 /// See [`JobTimers`](crate::model::JobTimers).
 pub mod job_timers {
-
+    
     /// A builder for [`JobTimers`](crate::model::JobTimers).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5367,20 +5092,19 @@ pub mod job_timers {
             self
         }
         /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
-        pub fn set_elapsed_time_in_active_seconds(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.elapsed_time_in_active_seconds = input;
-            self
+        pub fn set_elapsed_time_in_active_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.elapsed_time_in_active_seconds = input; self
         }
         /// Consumes the builder and constructs a [`JobTimers`](crate::model::JobTimers).
         pub fn build(self) -> crate::model::JobTimers {
             crate::model::JobTimers {
-                elapsed_time_in_active_seconds: self.elapsed_time_in_active_seconds,
+                elapsed_time_in_active_seconds: self.elapsed_time_in_active_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl JobTimers {
     /// Creates a new builder-style object to manufacture [`JobTimers`](crate::model::JobTimers).
@@ -5395,9 +5119,9 @@ impl JobTimers {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operationname = unimplemented!();
 /// match operationname {
@@ -5426,22 +5150,14 @@ impl JobTimers {
 /// Specifically, when `operationname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperationName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OperationName {
     #[allow(missing_docs)] // documentation missing in model
     LambdaInvoke,
@@ -5462,7 +5178,7 @@ pub enum OperationName {
     #[allow(missing_docs)] // documentation missing in model
     S3ReplicateObject,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperationName {
     fn from(s: &str) -> Self {
@@ -5476,17 +5192,17 @@ impl std::convert::From<&str> for OperationName {
             "S3PutObjectRetention" => OperationName::S3PutObjectRetention,
             "S3PutObjectTagging" => OperationName::S3PutObjectTagging,
             "S3ReplicateObject" => OperationName::S3ReplicateObject,
-            other => OperationName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OperationName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OperationName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OperationName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OperationName::from(s))
+                }
+            }
 impl OperationName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5500,21 +5216,13 @@ impl OperationName {
             OperationName::S3PutObjectRetention => "S3PutObjectRetention",
             OperationName::S3PutObjectTagging => "S3PutObjectTagging",
             OperationName::S3ReplicateObject => "S3ReplicateObject",
-            OperationName::Unknown(value) => value.as_str(),
+            OperationName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "LambdaInvoke",
-            "S3DeleteObjectTagging",
-            "S3InitiateRestoreObject",
-            "S3PutObjectAcl",
-            "S3PutObjectCopy",
-            "S3PutObjectLegalHold",
-            "S3PutObjectRetention",
-            "S3PutObjectTagging",
-            "S3ReplicateObject",
+            "LambdaInvoke", "S3DeleteObjectTagging", "S3InitiateRestoreObject", "S3PutObjectAcl", "S3PutObjectCopy", "S3PutObjectLegalHold", "S3PutObjectRetention", "S3PutObjectTagging", "S3ReplicateObject"
         ]
     }
 }
@@ -5527,7 +5235,7 @@ impl AsRef<str> for OperationName {
 /// <p>An access point with an attached Lambda function used to access transformed data from an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectLambdaAccessPoint {
+pub struct ObjectLambdaAccessPoint  {
     /// <p>The name of the Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5537,17 +5245,17 @@ pub struct ObjectLambdaAccessPoint {
 }
 impl ObjectLambdaAccessPoint {
     /// <p>The name of the Object Lambda Access Point.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn object_lambda_access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn object_lambda_access_point_arn(&self) -> std::option::Option<& str> {
         self.object_lambda_access_point_arn.as_deref()
     }
 }
 /// See [`ObjectLambdaAccessPoint`](crate::model::ObjectLambdaAccessPoint).
 pub mod object_lambda_access_point {
-
+    
     /// A builder for [`ObjectLambdaAccessPoint`](crate::model::ObjectLambdaAccessPoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5562,33 +5270,29 @@ pub mod object_lambda_access_point {
         }
         /// <p>The name of the Object Lambda Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-        pub fn object_lambda_access_point_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn object_lambda_access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.object_lambda_access_point_arn = Some(input.into());
             self
         }
         /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-        pub fn set_object_lambda_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_lambda_access_point_arn = input;
-            self
+        pub fn set_object_lambda_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_lambda_access_point_arn = input; self
         }
         /// Consumes the builder and constructs a [`ObjectLambdaAccessPoint`](crate::model::ObjectLambdaAccessPoint).
         pub fn build(self) -> crate::model::ObjectLambdaAccessPoint {
             crate::model::ObjectLambdaAccessPoint {
-                name: self.name,
-                object_lambda_access_point_arn: self.object_lambda_access_point_arn,
+                name: self.name
+                ,
+                object_lambda_access_point_arn: self.object_lambda_access_point_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectLambdaAccessPoint {
     /// Creates a new builder-style object to manufacture [`ObjectLambdaAccessPoint`](crate::model::ObjectLambdaAccessPoint).
@@ -5600,15 +5304,15 @@ impl ObjectLambdaAccessPoint {
 /// <p>An access point used to access a bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPoint {
+pub struct AccessPoint  {
     /// <p>The name of this access point.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
     #[doc(hidden)]
     pub network_origin: std::option::Option<crate::model::NetworkOrigin>,
-    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
-    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note> 
+    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> 
     /// </note>
     #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
@@ -5627,39 +5331,39 @@ pub struct AccessPoint {
 }
 impl AccessPoint {
     /// <p>The name of this access point.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
-    pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOrigin> {
+    pub fn network_origin(&self) -> std::option::Option<& crate::model::NetworkOrigin> {
         self.network_origin.as_ref()
     }
-    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
-    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note> 
+    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> 
     /// </note>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<& crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The name of the bucket associated with this access point.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The ARN for the access point.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The name or alias of the access point.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    pub fn bucket_account_id(&self) -> std::option::Option<&str> {
+    pub fn bucket_account_id(&self) -> std::option::Option<& str> {
         self.bucket_account_id.as_deref()
     }
 }
 /// See [`AccessPoint`](crate::model::AccessPoint).
 pub mod access_point {
-
+    
     /// A builder for [`AccessPoint`](crate::model::AccessPoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5679,8 +5383,7 @@ pub mod access_point {
         }
         /// <p>The name of this access point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
         pub fn network_origin(mut self, input: crate::model::NetworkOrigin) -> Self {
@@ -5688,29 +5391,21 @@ pub mod access_point {
             self
         }
         /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
-        pub fn set_network_origin(
-            mut self,
-            input: std::option::Option<crate::model::NetworkOrigin>,
-        ) -> Self {
-            self.network_origin = input;
-            self
+        pub fn set_network_origin(mut self, input: std::option::Option<crate::model::NetworkOrigin>) -> Self {
+            self.network_origin = input; self
         }
-        /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
-        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+        /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note> 
+        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> 
         /// </note>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
-        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+        /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note> 
+        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> 
         /// </note>
-        pub fn set_vpc_configuration(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfiguration>,
-        ) -> Self {
-            self.vpc_configuration = input;
-            self
+        pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::model::VpcConfiguration>) -> Self {
+            self.vpc_configuration = input; self
         }
         /// <p>The name of the bucket associated with this access point.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5719,8 +5414,7 @@ pub mod access_point {
         }
         /// <p>The name of the bucket associated with this access point.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The ARN for the access point.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5728,12 +5422,8 @@ pub mod access_point {
             self
         }
         /// <p>The ARN for the access point.</p>
-        pub fn set_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_arn = input;
-            self
+        pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_arn = input; self
         }
         /// <p>The name or alias of the access point.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5742,8 +5432,7 @@ pub mod access_point {
         }
         /// <p>The name or alias of the access point.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
         pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5751,26 +5440,31 @@ pub mod access_point {
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-        pub fn set_bucket_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bucket_account_id = input;
-            self
+        pub fn set_bucket_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_account_id = input; self
         }
         /// Consumes the builder and constructs a [`AccessPoint`](crate::model::AccessPoint).
         pub fn build(self) -> crate::model::AccessPoint {
             crate::model::AccessPoint {
-                name: self.name,
-                network_origin: self.network_origin,
-                vpc_configuration: self.vpc_configuration,
-                bucket: self.bucket,
-                access_point_arn: self.access_point_arn,
-                alias: self.alias,
-                bucket_account_id: self.bucket_account_id,
+                name: self.name
+                ,
+                network_origin: self.network_origin
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                bucket: self.bucket
+                ,
+                access_point_arn: self.access_point_arn
+                ,
+                alias: self.alias
+                ,
+                bucket_account_id: self.bucket_account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPoint {
     /// Creates a new builder-style object to manufacture [`AccessPoint`](crate::model::AccessPoint).
@@ -5782,20 +5476,20 @@ impl AccessPoint {
 /// <p>The virtual private cloud (VPC) configuration for an access point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfiguration {
+pub struct VpcConfiguration  {
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl VpcConfiguration {
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
-
+    
     /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5809,16 +5503,18 @@ pub mod vpc_configuration {
         }
         /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfiguration`](crate::model::VpcConfiguration).
         pub fn build(self) -> crate::model::VpcConfiguration {
             crate::model::VpcConfiguration {
-                vpc_id: self.vpc_id,
+                vpc_id: self.vpc_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfiguration {
     /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -5833,9 +5529,9 @@ impl VpcConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkorigin = unimplemented!();
 /// match networkorigin {
@@ -5857,58 +5553,52 @@ impl VpcConfiguration {
 /// Specifically, when `networkorigin` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkOrigin::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkOrigin {
     #[allow(missing_docs)] // documentation missing in model
     Internet,
     #[allow(missing_docs)] // documentation missing in model
     Vpc,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkOrigin {
     fn from(s: &str) -> Self {
         match s {
             "Internet" => NetworkOrigin::Internet,
             "VPC" => NetworkOrigin::Vpc,
-            other => NetworkOrigin::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NetworkOrigin::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkOrigin {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkOrigin::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkOrigin::from(s))
+                }
+            }
 impl NetworkOrigin {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkOrigin::Internet => "Internet",
             NetworkOrigin::Vpc => "VPC",
-            NetworkOrigin::Unknown(value) => value.as_str(),
+            NetworkOrigin::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Internet", "VPC"]
+        &[
+            "Internet", "VPC"
+        ]
     }
 }
 impl AsRef<str> for NetworkOrigin {
@@ -5920,7 +5610,7 @@ impl AsRef<str> for NetworkOrigin {
 /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyStatus {
+pub struct PolicyStatus  {
     /// <p></p>
     #[doc(hidden)]
     pub is_public: bool,
@@ -5933,7 +5623,7 @@ impl PolicyStatus {
 }
 /// See [`PolicyStatus`](crate::model::PolicyStatus).
 pub mod policy_status {
-
+    
     /// A builder for [`PolicyStatus`](crate::model::PolicyStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5947,16 +5637,19 @@ pub mod policy_status {
         }
         /// <p></p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_public = input;
-            self
+            self.is_public = input; self
         }
         /// Consumes the builder and constructs a [`PolicyStatus`](crate::model::PolicyStatus).
         pub fn build(self) -> crate::model::PolicyStatus {
             crate::model::PolicyStatus {
-                is_public: self.is_public.unwrap_or_default(),
+                is_public: self.is_public
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyStatus {
     /// Creates a new builder-style object to manufacture [`PolicyStatus`](crate::model::PolicyStatus).
@@ -5965,11 +5658,11 @@ impl PolicyStatus {
     }
 }
 
-/// <p>The Multi-Region Access Point access control policy.</p>
+/// <p>The Multi-Region Access Point access control policy.</p> 
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiRegionAccessPointPolicyDocument {
+pub struct MultiRegionAccessPointPolicyDocument  {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub established: std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
@@ -5979,70 +5672,54 @@ pub struct MultiRegionAccessPointPolicyDocument {
 }
 impl MultiRegionAccessPointPolicyDocument {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
-    pub fn established(
-        &self,
-    ) -> std::option::Option<&crate::model::EstablishedMultiRegionAccessPointPolicy> {
+    pub fn established(&self) -> std::option::Option<& crate::model::EstablishedMultiRegionAccessPointPolicy> {
         self.established.as_ref()
     }
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
-    pub fn proposed(
-        &self,
-    ) -> std::option::Option<&crate::model::ProposedMultiRegionAccessPointPolicy> {
+    pub fn proposed(&self) -> std::option::Option<& crate::model::ProposedMultiRegionAccessPointPolicy> {
         self.proposed.as_ref()
     }
 }
 /// See [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument).
 pub mod multi_region_access_point_policy_document {
-
+    
     /// A builder for [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) established:
-            std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
-        pub(crate) proposed:
-            std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>,
+        pub(crate) established: std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
+        pub(crate) proposed: std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>,
     }
     impl Builder {
         /// <p>The last established policy for the Multi-Region Access Point.</p>
-        pub fn established(
-            mut self,
-            input: crate::model::EstablishedMultiRegionAccessPointPolicy,
-        ) -> Self {
+        pub fn established(mut self, input: crate::model::EstablishedMultiRegionAccessPointPolicy) -> Self {
             self.established = Some(input);
             self
         }
         /// <p>The last established policy for the Multi-Region Access Point.</p>
-        pub fn set_established(
-            mut self,
-            input: std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
-        ) -> Self {
-            self.established = input;
-            self
+        pub fn set_established(mut self, input: std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>) -> Self {
+            self.established = input; self
         }
         /// <p>The proposed policy for the Multi-Region Access Point.</p>
-        pub fn proposed(
-            mut self,
-            input: crate::model::ProposedMultiRegionAccessPointPolicy,
-        ) -> Self {
+        pub fn proposed(mut self, input: crate::model::ProposedMultiRegionAccessPointPolicy) -> Self {
             self.proposed = Some(input);
             self
         }
         /// <p>The proposed policy for the Multi-Region Access Point.</p>
-        pub fn set_proposed(
-            mut self,
-            input: std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>,
-        ) -> Self {
-            self.proposed = input;
-            self
+        pub fn set_proposed(mut self, input: std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>) -> Self {
+            self.proposed = input; self
         }
         /// Consumes the builder and constructs a [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument).
         pub fn build(self) -> crate::model::MultiRegionAccessPointPolicyDocument {
             crate::model::MultiRegionAccessPointPolicyDocument {
-                established: self.established,
-                proposed: self.proposed,
+                established: self.established
+                ,
+                proposed: self.proposed
+                ,
             }
         }
     }
+    
+    
 }
 impl MultiRegionAccessPointPolicyDocument {
     /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument).
@@ -6051,24 +5728,24 @@ impl MultiRegionAccessPointPolicyDocument {
     }
 }
 
-/// <p>The proposed access control policy for the Multi-Region Access Point.</p>
+/// <p>The proposed access control policy for the Multi-Region Access Point.</p> 
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProposedMultiRegionAccessPointPolicy {
+pub struct ProposedMultiRegionAccessPointPolicy  {
     /// <p>The details of the proposed policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl ProposedMultiRegionAccessPointPolicy {
     /// <p>The details of the proposed policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy).
 pub mod proposed_multi_region_access_point_policy {
-
+    
     /// A builder for [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6082,16 +5759,18 @@ pub mod proposed_multi_region_access_point_policy {
         }
         /// <p>The details of the proposed policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy).
         pub fn build(self) -> crate::model::ProposedMultiRegionAccessPointPolicy {
             crate::model::ProposedMultiRegionAccessPointPolicy {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl ProposedMultiRegionAccessPointPolicy {
     /// Creates a new builder-style object to manufacture [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy).
@@ -6100,24 +5779,24 @@ impl ProposedMultiRegionAccessPointPolicy {
     }
 }
 
-/// <p>The last established access control policy for a Multi-Region Access Point.</p>
+/// <p>The last established access control policy for a Multi-Region Access Point.</p> 
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EstablishedMultiRegionAccessPointPolicy {
+pub struct EstablishedMultiRegionAccessPointPolicy  {
     /// <p>The details of the last established policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl EstablishedMultiRegionAccessPointPolicy {
     /// <p>The details of the last established policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy).
 pub mod established_multi_region_access_point_policy {
-
+    
     /// A builder for [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6131,16 +5810,18 @@ pub mod established_multi_region_access_point_policy {
         }
         /// <p>The details of the last established policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy).
         pub fn build(self) -> crate::model::EstablishedMultiRegionAccessPointPolicy {
             crate::model::EstablishedMultiRegionAccessPointPolicy {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl EstablishedMultiRegionAccessPointPolicy {
     /// Creates a new builder-style object to manufacture [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy).
@@ -6155,9 +5836,9 @@ impl EstablishedMultiRegionAccessPointPolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mfadeletestatus = unimplemented!();
 /// match mfadeletestatus {
@@ -6179,58 +5860,52 @@ impl EstablishedMultiRegionAccessPointPolicy {
 /// Specifically, when `mfadeletestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MfaDeleteStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MfaDeleteStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MfaDeleteStatus {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => MfaDeleteStatus::Disabled,
             "Enabled" => MfaDeleteStatus::Enabled,
-            other => MfaDeleteStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MfaDeleteStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MfaDeleteStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MfaDeleteStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MfaDeleteStatus::from(s))
+                }
+            }
 impl MfaDeleteStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MfaDeleteStatus::Disabled => "Disabled",
             MfaDeleteStatus::Enabled => "Enabled",
-            MfaDeleteStatus::Unknown(value) => value.as_str(),
+            MfaDeleteStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for MfaDeleteStatus {
@@ -6242,7 +5917,7 @@ impl AsRef<str> for MfaDeleteStatus {
 /// <p>A container for the information about an asynchronous operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AsyncOperation {
+pub struct AsyncOperation  {
     /// <p>The time that the request was sent to the service.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6264,33 +5939,33 @@ pub struct AsyncOperation {
 }
 impl AsyncOperation {
     /// <p>The time that the request was sent to the service.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The specific operation for the asynchronous request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::AsyncOperationName> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::AsyncOperationName> {
         self.operation.as_ref()
     }
     /// <p>The request token associated with the request.</p>
-    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+    pub fn request_token_arn(&self) -> std::option::Option<& str> {
         self.request_token_arn.as_deref()
     }
     /// <p>The parameters associated with the request.</p>
-    pub fn request_parameters(&self) -> std::option::Option<&crate::model::AsyncRequestParameters> {
+    pub fn request_parameters(&self) -> std::option::Option<& crate::model::AsyncRequestParameters> {
         self.request_parameters.as_ref()
     }
     /// <p>The current status of the request.</p>
-    pub fn request_status(&self) -> std::option::Option<&str> {
+    pub fn request_status(&self) -> std::option::Option<& str> {
         self.request_status.as_deref()
     }
     /// <p>The details of the response.</p>
-    pub fn response_details(&self) -> std::option::Option<&crate::model::AsyncResponseDetails> {
+    pub fn response_details(&self) -> std::option::Option<& crate::model::AsyncResponseDetails> {
         self.response_details.as_ref()
     }
 }
 /// See [`AsyncOperation`](crate::model::AsyncOperation).
 pub mod async_operation {
-
+    
     /// A builder for [`AsyncOperation`](crate::model::AsyncOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6308,12 +5983,8 @@ pub mod async_operation {
             self
         }
         /// <p>The time that the request was sent to the service.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The specific operation for the asynchronous request.</p>
         pub fn operation(mut self, input: crate::model::AsyncOperationName) -> Self {
@@ -6321,12 +5992,8 @@ pub mod async_operation {
             self
         }
         /// <p>The specific operation for the asynchronous request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::AsyncOperationName>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::AsyncOperationName>) -> Self {
+            self.operation = input; self
         }
         /// <p>The request token associated with the request.</p>
         pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6334,12 +6001,8 @@ pub mod async_operation {
             self
         }
         /// <p>The request token associated with the request.</p>
-        pub fn set_request_token_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_token_arn = input;
-            self
+        pub fn set_request_token_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_token_arn = input; self
         }
         /// <p>The parameters associated with the request.</p>
         pub fn request_parameters(mut self, input: crate::model::AsyncRequestParameters) -> Self {
@@ -6347,12 +6010,8 @@ pub mod async_operation {
             self
         }
         /// <p>The parameters associated with the request.</p>
-        pub fn set_request_parameters(
-            mut self,
-            input: std::option::Option<crate::model::AsyncRequestParameters>,
-        ) -> Self {
-            self.request_parameters = input;
-            self
+        pub fn set_request_parameters(mut self, input: std::option::Option<crate::model::AsyncRequestParameters>) -> Self {
+            self.request_parameters = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn request_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6360,12 +6019,8 @@ pub mod async_operation {
             self
         }
         /// <p>The current status of the request.</p>
-        pub fn set_request_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_status = input;
-            self
+        pub fn set_request_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_status = input; self
         }
         /// <p>The details of the response.</p>
         pub fn response_details(mut self, input: crate::model::AsyncResponseDetails) -> Self {
@@ -6373,25 +6028,29 @@ pub mod async_operation {
             self
         }
         /// <p>The details of the response.</p>
-        pub fn set_response_details(
-            mut self,
-            input: std::option::Option<crate::model::AsyncResponseDetails>,
-        ) -> Self {
-            self.response_details = input;
-            self
+        pub fn set_response_details(mut self, input: std::option::Option<crate::model::AsyncResponseDetails>) -> Self {
+            self.response_details = input; self
         }
         /// Consumes the builder and constructs a [`AsyncOperation`](crate::model::AsyncOperation).
         pub fn build(self) -> crate::model::AsyncOperation {
             crate::model::AsyncOperation {
-                creation_time: self.creation_time,
-                operation: self.operation,
-                request_token_arn: self.request_token_arn,
-                request_parameters: self.request_parameters,
-                request_status: self.request_status,
-                response_details: self.response_details,
+                creation_time: self.creation_time
+                ,
+                operation: self.operation
+                ,
+                request_token_arn: self.request_token_arn
+                ,
+                request_parameters: self.request_parameters
+                ,
+                request_status: self.request_status
+                ,
+                response_details: self.response_details
+                ,
             }
         }
     }
+    
+    
 }
 impl AsyncOperation {
     /// Creates a new builder-style object to manufacture [`AsyncOperation`](crate::model::AsyncOperation).
@@ -6403,53 +6062,42 @@ impl AsyncOperation {
 /// <p>A container for the response details that are returned when querying about an asynchronous request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AsyncResponseDetails {
+pub struct AsyncResponseDetails  {
     /// <p>The details for the Multi-Region Access Point.</p>
     #[doc(hidden)]
-    pub multi_region_access_point_details:
-        std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
+    pub multi_region_access_point_details: std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
     /// <p>Error details for an asynchronous request.</p>
     #[doc(hidden)]
     pub error_details: std::option::Option<crate::model::AsyncErrorDetails>,
 }
 impl AsyncResponseDetails {
     /// <p>The details for the Multi-Region Access Point.</p>
-    pub fn multi_region_access_point_details(
-        &self,
-    ) -> std::option::Option<&crate::model::MultiRegionAccessPointsAsyncResponse> {
+    pub fn multi_region_access_point_details(&self) -> std::option::Option<& crate::model::MultiRegionAccessPointsAsyncResponse> {
         self.multi_region_access_point_details.as_ref()
     }
     /// <p>Error details for an asynchronous request.</p>
-    pub fn error_details(&self) -> std::option::Option<&crate::model::AsyncErrorDetails> {
+    pub fn error_details(&self) -> std::option::Option<& crate::model::AsyncErrorDetails> {
         self.error_details.as_ref()
     }
 }
 /// See [`AsyncResponseDetails`](crate::model::AsyncResponseDetails).
 pub mod async_response_details {
-
+    
     /// A builder for [`AsyncResponseDetails`](crate::model::AsyncResponseDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) multi_region_access_point_details:
-            std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
+        pub(crate) multi_region_access_point_details: std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
         pub(crate) error_details: std::option::Option<crate::model::AsyncErrorDetails>,
     }
     impl Builder {
         /// <p>The details for the Multi-Region Access Point.</p>
-        pub fn multi_region_access_point_details(
-            mut self,
-            input: crate::model::MultiRegionAccessPointsAsyncResponse,
-        ) -> Self {
+        pub fn multi_region_access_point_details(mut self, input: crate::model::MultiRegionAccessPointsAsyncResponse) -> Self {
             self.multi_region_access_point_details = Some(input);
             self
         }
         /// <p>The details for the Multi-Region Access Point.</p>
-        pub fn set_multi_region_access_point_details(
-            mut self,
-            input: std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
-        ) -> Self {
-            self.multi_region_access_point_details = input;
-            self
+        pub fn set_multi_region_access_point_details(mut self, input: std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>) -> Self {
+            self.multi_region_access_point_details = input; self
         }
         /// <p>Error details for an asynchronous request.</p>
         pub fn error_details(mut self, input: crate::model::AsyncErrorDetails) -> Self {
@@ -6457,21 +6105,21 @@ pub mod async_response_details {
             self
         }
         /// <p>Error details for an asynchronous request.</p>
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<crate::model::AsyncErrorDetails>,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<crate::model::AsyncErrorDetails>) -> Self {
+            self.error_details = input; self
         }
         /// Consumes the builder and constructs a [`AsyncResponseDetails`](crate::model::AsyncResponseDetails).
         pub fn build(self) -> crate::model::AsyncResponseDetails {
             crate::model::AsyncResponseDetails {
-                multi_region_access_point_details: self.multi_region_access_point_details,
-                error_details: self.error_details,
+                multi_region_access_point_details: self.multi_region_access_point_details
+                ,
+                error_details: self.error_details
+                ,
             }
         }
     }
+    
+    
 }
 impl AsyncResponseDetails {
     /// Creates a new builder-style object to manufacture [`AsyncResponseDetails`](crate::model::AsyncResponseDetails).
@@ -6483,7 +6131,7 @@ impl AsyncResponseDetails {
 /// <p>Error details for the failed asynchronous operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AsyncErrorDetails {
+pub struct AsyncErrorDetails  {
     /// <p>A string that uniquely identifies the error condition.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -6499,25 +6147,25 @@ pub struct AsyncErrorDetails {
 }
 impl AsyncErrorDetails {
     /// <p>A string that uniquely identifies the error condition.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A generic description of the error condition in English.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The identifier of the resource associated with the error.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>The ID of the request associated with the error.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`AsyncErrorDetails`](crate::model::AsyncErrorDetails).
 pub mod async_error_details {
-
+    
     /// A builder for [`AsyncErrorDetails`](crate::model::AsyncErrorDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6534,8 +6182,7 @@ pub mod async_error_details {
         }
         /// <p>A string that uniquely identifies the error condition.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>A generic description of the error condition in English.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6544,8 +6191,7 @@ pub mod async_error_details {
         }
         /// <p>A generic description of the error condition in English.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The identifier of the resource associated with the error.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6554,8 +6200,7 @@ pub mod async_error_details {
         }
         /// <p>The identifier of the resource associated with the error.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// <p>The ID of the request associated with the error.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6564,19 +6209,24 @@ pub mod async_error_details {
         }
         /// <p>The ID of the request associated with the error.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`AsyncErrorDetails`](crate::model::AsyncErrorDetails).
         pub fn build(self) -> crate::model::AsyncErrorDetails {
             crate::model::AsyncErrorDetails {
-                code: self.code,
-                message: self.message,
-                resource: self.resource,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                resource: self.resource
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AsyncErrorDetails {
     /// Creates a new builder-style object to manufacture [`AsyncErrorDetails`](crate::model::AsyncErrorDetails).
@@ -6588,29 +6238,24 @@ impl AsyncErrorDetails {
 /// <p>The Multi-Region Access Point details that are returned when querying about an asynchronous request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiRegionAccessPointsAsyncResponse {
+pub struct MultiRegionAccessPointsAsyncResponse  {
     /// <p>A collection of status information for the different Regions that a Multi-Region Access Point supports.</p>
     #[doc(hidden)]
-    pub regions:
-        std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>>,
+    pub regions: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>>,
 }
 impl MultiRegionAccessPointsAsyncResponse {
     /// <p>A collection of status information for the different Regions that a Multi-Region Access Point supports.</p>
-    pub fn regions(
-        &self,
-    ) -> std::option::Option<&[crate::model::MultiRegionAccessPointRegionalResponse]> {
+    pub fn regions(&self) -> std::option::Option<& [crate::model::MultiRegionAccessPointRegionalResponse]> {
         self.regions.as_deref()
     }
 }
 /// See [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse).
 pub mod multi_region_access_points_async_response {
-
+    
     /// A builder for [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) regions: std::option::Option<
-            std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>,
-        >,
+        pub(crate) regions: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>>,
     }
     impl Builder {
         /// Appends an item to `regions`.
@@ -6618,32 +6263,26 @@ pub mod multi_region_access_points_async_response {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>A collection of status information for the different Regions that a Multi-Region Access Point supports.</p>
-        pub fn regions(
-            mut self,
-            input: crate::model::MultiRegionAccessPointRegionalResponse,
-        ) -> Self {
+        pub fn regions(mut self, input: crate::model::MultiRegionAccessPointRegionalResponse) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input);
-            self.regions = Some(v);
-            self
+                            v.push(input);
+                            self.regions = Some(v);
+                            self
         }
         /// <p>A collection of status information for the different Regions that a Multi-Region Access Point supports.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>,
-            >,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>>) -> Self {
+            self.regions = input; self
         }
         /// Consumes the builder and constructs a [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse).
         pub fn build(self) -> crate::model::MultiRegionAccessPointsAsyncResponse {
             crate::model::MultiRegionAccessPointsAsyncResponse {
-                regions: self.regions,
+                regions: self.regions
+                ,
             }
         }
     }
+    
+    
 }
 impl MultiRegionAccessPointsAsyncResponse {
     /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse).
@@ -6655,7 +6294,7 @@ impl MultiRegionAccessPointsAsyncResponse {
 /// <p>Status information for a single Multi-Region Access Point Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiRegionAccessPointRegionalResponse {
+pub struct MultiRegionAccessPointRegionalResponse  {
     /// <p>The name of the Region in the Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6665,17 +6304,17 @@ pub struct MultiRegionAccessPointRegionalResponse {
 }
 impl MultiRegionAccessPointRegionalResponse {
     /// <p>The name of the Region in the Multi-Region Access Point.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
-    pub fn request_status(&self) -> std::option::Option<&str> {
+    pub fn request_status(&self) -> std::option::Option<& str> {
         self.request_status.as_deref()
     }
 }
 /// See [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse).
 pub mod multi_region_access_point_regional_response {
-
+    
     /// A builder for [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6690,8 +6329,7 @@ pub mod multi_region_access_point_regional_response {
         }
         /// <p>The name of the Region in the Multi-Region Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the Multi-Region Access Point in this Region.</p>
         pub fn request_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6699,21 +6337,21 @@ pub mod multi_region_access_point_regional_response {
             self
         }
         /// <p>The current status of the Multi-Region Access Point in this Region.</p>
-        pub fn set_request_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_status = input;
-            self
+        pub fn set_request_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_status = input; self
         }
         /// Consumes the builder and constructs a [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse).
         pub fn build(self) -> crate::model::MultiRegionAccessPointRegionalResponse {
             crate::model::MultiRegionAccessPointRegionalResponse {
-                name: self.name,
-                request_status: self.request_status,
+                name: self.name
+                ,
+                request_status: self.request_status
+                ,
             }
         }
     }
+    
+    
 }
 impl MultiRegionAccessPointRegionalResponse {
     /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse).
@@ -6725,114 +6363,83 @@ impl MultiRegionAccessPointRegionalResponse {
 /// <p>A container for the request parameters associated with an asynchronous request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AsyncRequestParameters {
+pub struct AsyncRequestParameters  {
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request.</p>
     #[doc(hidden)]
-    pub create_multi_region_access_point_request:
-        std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+    pub create_multi_region_access_point_request: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
     #[doc(hidden)]
-    pub delete_multi_region_access_point_request:
-        std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+    pub delete_multi_region_access_point_request: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
     #[doc(hidden)]
-    pub put_multi_region_access_point_policy_request:
-        std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+    pub put_multi_region_access_point_policy_request: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
 }
 impl AsyncRequestParameters {
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request.</p>
-    pub fn create_multi_region_access_point_request(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateMultiRegionAccessPointInput> {
+    pub fn create_multi_region_access_point_request(&self) -> std::option::Option<& crate::model::CreateMultiRegionAccessPointInput> {
         self.create_multi_region_access_point_request.as_ref()
     }
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
-    pub fn delete_multi_region_access_point_request(
-        &self,
-    ) -> std::option::Option<&crate::model::DeleteMultiRegionAccessPointInput> {
+    pub fn delete_multi_region_access_point_request(&self) -> std::option::Option<& crate::model::DeleteMultiRegionAccessPointInput> {
         self.delete_multi_region_access_point_request.as_ref()
     }
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
-    pub fn put_multi_region_access_point_policy_request(
-        &self,
-    ) -> std::option::Option<&crate::model::PutMultiRegionAccessPointPolicyInput> {
+    pub fn put_multi_region_access_point_policy_request(&self) -> std::option::Option<& crate::model::PutMultiRegionAccessPointPolicyInput> {
         self.put_multi_region_access_point_policy_request.as_ref()
     }
 }
 /// See [`AsyncRequestParameters`](crate::model::AsyncRequestParameters).
 pub mod async_request_parameters {
-
+    
     /// A builder for [`AsyncRequestParameters`](crate::model::AsyncRequestParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_multi_region_access_point_request:
-            std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
-        pub(crate) delete_multi_region_access_point_request:
-            std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
-        pub(crate) put_multi_region_access_point_policy_request:
-            std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+        pub(crate) create_multi_region_access_point_request: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+        pub(crate) delete_multi_region_access_point_request: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+        pub(crate) put_multi_region_access_point_policy_request: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
     }
     impl Builder {
         /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request.</p>
-        pub fn create_multi_region_access_point_request(
-            mut self,
-            input: crate::model::CreateMultiRegionAccessPointInput,
-        ) -> Self {
+        pub fn create_multi_region_access_point_request(mut self, input: crate::model::CreateMultiRegionAccessPointInput) -> Self {
             self.create_multi_region_access_point_request = Some(input);
             self
         }
         /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request.</p>
-        pub fn set_create_multi_region_access_point_request(
-            mut self,
-            input: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
-        ) -> Self {
-            self.create_multi_region_access_point_request = input;
-            self
+        pub fn set_create_multi_region_access_point_request(mut self, input: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>) -> Self {
+            self.create_multi_region_access_point_request = input; self
         }
         /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
-        pub fn delete_multi_region_access_point_request(
-            mut self,
-            input: crate::model::DeleteMultiRegionAccessPointInput,
-        ) -> Self {
+        pub fn delete_multi_region_access_point_request(mut self, input: crate::model::DeleteMultiRegionAccessPointInput) -> Self {
             self.delete_multi_region_access_point_request = Some(input);
             self
         }
         /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
-        pub fn set_delete_multi_region_access_point_request(
-            mut self,
-            input: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
-        ) -> Self {
-            self.delete_multi_region_access_point_request = input;
-            self
+        pub fn set_delete_multi_region_access_point_request(mut self, input: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>) -> Self {
+            self.delete_multi_region_access_point_request = input; self
         }
         /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
-        pub fn put_multi_region_access_point_policy_request(
-            mut self,
-            input: crate::model::PutMultiRegionAccessPointPolicyInput,
-        ) -> Self {
+        pub fn put_multi_region_access_point_policy_request(mut self, input: crate::model::PutMultiRegionAccessPointPolicyInput) -> Self {
             self.put_multi_region_access_point_policy_request = Some(input);
             self
         }
         /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
-        pub fn set_put_multi_region_access_point_policy_request(
-            mut self,
-            input: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
-        ) -> Self {
-            self.put_multi_region_access_point_policy_request = input;
-            self
+        pub fn set_put_multi_region_access_point_policy_request(mut self, input: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>) -> Self {
+            self.put_multi_region_access_point_policy_request = input; self
         }
         /// Consumes the builder and constructs a [`AsyncRequestParameters`](crate::model::AsyncRequestParameters).
         pub fn build(self) -> crate::model::AsyncRequestParameters {
             crate::model::AsyncRequestParameters {
-                create_multi_region_access_point_request: self
-                    .create_multi_region_access_point_request,
-                delete_multi_region_access_point_request: self
-                    .delete_multi_region_access_point_request,
-                put_multi_region_access_point_policy_request: self
-                    .put_multi_region_access_point_policy_request,
+                create_multi_region_access_point_request: self.create_multi_region_access_point_request
+                ,
+                delete_multi_region_access_point_request: self.delete_multi_region_access_point_request
+                ,
+                put_multi_region_access_point_policy_request: self.put_multi_region_access_point_policy_request
+                ,
             }
         }
     }
+    
+    
 }
 impl AsyncRequestParameters {
     /// Creates a new builder-style object to manufacture [`AsyncRequestParameters`](crate::model::AsyncRequestParameters).
@@ -6844,20 +6451,20 @@ impl AsyncRequestParameters {
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMultiRegionAccessPointInput {
+pub struct DeleteMultiRegionAccessPointInput  {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput).
 pub mod delete_multi_region_access_point_input {
-
+    
     /// A builder for [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6871,14 +6478,18 @@ pub mod delete_multi_region_access_point_input {
         }
         /// <p>The name of the Multi-Region Access Point associated with this request.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput).
         pub fn build(self) -> crate::model::DeleteMultiRegionAccessPointInput {
-            crate::model::DeleteMultiRegionAccessPointInput { name: self.name }
+            crate::model::DeleteMultiRegionAccessPointInput {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteMultiRegionAccessPointInput {
     /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput).
@@ -6890,11 +6501,11 @@ impl DeleteMultiRegionAccessPointInput {
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMultiRegionAccessPointInput {
+pub struct CreateMultiRegionAccessPointInput  {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -6904,30 +6515,27 @@ pub struct CreateMultiRegionAccessPointInput {
 }
 impl CreateMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn public_access_block(
-        &self,
-    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+    pub fn public_access_block(&self) -> std::option::Option<& crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block.as_ref()
     }
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
-    pub fn regions(&self) -> std::option::Option<&[crate::model::Region]> {
+    pub fn regions(&self) -> std::option::Option<& [crate::model::Region]> {
         self.regions.as_deref()
     }
 }
 /// See [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput).
 pub mod create_multi_region_access_point_input {
-
+    
     /// A builder for [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) public_access_block:
-            std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         pub(crate) regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
     }
     impl Builder {
@@ -6938,26 +6546,18 @@ pub mod create_multi_region_access_point_input {
         }
         /// <p>The name of the Multi-Region Access Point associated with this request.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
         /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-        pub fn public_access_block(
-            mut self,
-            input: crate::model::PublicAccessBlockConfiguration,
-        ) -> Self {
+        pub fn public_access_block(mut self, input: crate::model::PublicAccessBlockConfiguration) -> Self {
             self.public_access_block = Some(input);
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
         /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-        pub fn set_public_access_block(
-            mut self,
-            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-        ) -> Self {
-            self.public_access_block = input;
-            self
+        pub fn set_public_access_block(mut self, input: std::option::Option<crate::model::PublicAccessBlockConfiguration>) -> Self {
+            self.public_access_block = input; self
         }
         /// Appends an item to `regions`.
         ///
@@ -6966,27 +6566,28 @@ pub mod create_multi_region_access_point_input {
         /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
         pub fn regions(mut self, input: crate::model::Region) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input);
-            self.regions = Some(v);
-            self
+                            v.push(input);
+                            self.regions = Some(v);
+                            self
         }
         /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Region>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Region>>) -> Self {
+            self.regions = input; self
         }
         /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput).
         pub fn build(self) -> crate::model::CreateMultiRegionAccessPointInput {
             crate::model::CreateMultiRegionAccessPointInput {
-                name: self.name,
-                public_access_block: self.public_access_block,
-                regions: self.regions,
+                name: self.name
+                ,
+                public_access_block: self.public_access_block
+                ,
+                regions: self.regions
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMultiRegionAccessPointInput {
     /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput).
@@ -6998,20 +6599,20 @@ impl CreateMultiRegionAccessPointInput {
 /// <p>A Region that supports a Multi-Region Access Point as well as the associated bucket for the Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Region {
+pub struct Region  {
     /// <p>The name of the associated bucket for the Region.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl Region {
     /// <p>The name of the associated bucket for the Region.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
 }
 /// See [`Region`](crate::model::Region).
 pub mod region {
-
+    
     /// A builder for [`Region`](crate::model::Region).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7025,16 +6626,18 @@ pub mod region {
         }
         /// <p>The name of the associated bucket for the Region.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// Consumes the builder and constructs a [`Region`](crate::model::Region).
         pub fn build(self) -> crate::model::Region {
             crate::model::Region {
-                bucket: self.bucket,
+                bucket: self.bucket
+                ,
             }
         }
     }
+    
+    
 }
 impl Region {
     /// Creates a new builder-style object to manufacture [`Region`](crate::model::Region).
@@ -7049,9 +6652,9 @@ impl Region {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let asyncoperationname = unimplemented!();
 /// match asyncoperationname {
@@ -7074,22 +6677,14 @@ impl Region {
 /// Specifically, when `asyncoperationname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AsyncOperationName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AsyncOperationName {
     #[allow(missing_docs)] // documentation missing in model
     CreateMultiRegionAccessPoint,
@@ -7098,47 +6693,39 @@ pub enum AsyncOperationName {
     #[allow(missing_docs)] // documentation missing in model
     PutMultiRegionAccessPointPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AsyncOperationName {
     fn from(s: &str) -> Self {
         match s {
             "CreateMultiRegionAccessPoint" => AsyncOperationName::CreateMultiRegionAccessPoint,
             "DeleteMultiRegionAccessPoint" => AsyncOperationName::DeleteMultiRegionAccessPoint,
-            "PutMultiRegionAccessPointPolicy" => {
-                AsyncOperationName::PutMultiRegionAccessPointPolicy
-            }
-            other => {
-                AsyncOperationName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            "PutMultiRegionAccessPointPolicy" => AsyncOperationName::PutMultiRegionAccessPointPolicy,
+            other => AsyncOperationName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AsyncOperationName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AsyncOperationName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AsyncOperationName::from(s))
+                }
+            }
 impl AsyncOperationName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AsyncOperationName::CreateMultiRegionAccessPoint => "CreateMultiRegionAccessPoint",
             AsyncOperationName::DeleteMultiRegionAccessPoint => "DeleteMultiRegionAccessPoint",
-            AsyncOperationName::PutMultiRegionAccessPointPolicy => {
-                "PutMultiRegionAccessPointPolicy"
-            }
-            AsyncOperationName::Unknown(value) => value.as_str(),
+            AsyncOperationName::PutMultiRegionAccessPointPolicy => "PutMultiRegionAccessPointPolicy",
+            AsyncOperationName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CreateMultiRegionAccessPoint",
-            "DeleteMultiRegionAccessPoint",
-            "PutMultiRegionAccessPointPolicy",
+            "CreateMultiRegionAccessPoint", "DeleteMultiRegionAccessPoint", "PutMultiRegionAccessPointPolicy"
         ]
     }
 }
@@ -7151,7 +6738,7 @@ impl AsRef<str> for AsyncOperationName {
 /// <p>A container element for the job configuration and status information returned by a <code>Describe Job</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobDescriptor {
+pub struct JobDescriptor  {
     /// <p>The ID for the specified job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -7208,12 +6795,11 @@ pub struct JobDescriptor {
     pub manifest_generator: std::option::Option<crate::model::JobManifestGenerator>,
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
     #[doc(hidden)]
-    pub generated_manifest_descriptor:
-        std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
+    pub generated_manifest_descriptor: std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
 }
 impl JobDescriptor {
     /// <p>The ID for the specified job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Indicates whether confirmation is required before Amazon S3 begins running the specified job. Confirmation is required only for jobs created through the Amazon S3 console.</p>
@@ -7221,23 +6807,23 @@ impl JobDescriptor {
         self.confirmation_required
     }
     /// <p>The description for this job, if one was provided in this job's <code>Create Job</code> request.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for this job.</p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The current status of the specified job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
     /// <p>The configuration information for the specified job's manifest object.</p>
-    pub fn manifest(&self) -> std::option::Option<&crate::model::JobManifest> {
+    pub fn manifest(&self) -> std::option::Option<& crate::model::JobManifest> {
         self.manifest.as_ref()
     }
     /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::JobOperation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::JobOperation> {
         self.operation.as_ref()
     }
     /// <p>The priority of the specified job.</p>
@@ -7245,55 +6831,53 @@ impl JobDescriptor {
         self.priority
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-    pub fn progress_summary(&self) -> std::option::Option<&crate::model::JobProgressSummary> {
+    pub fn progress_summary(&self) -> std::option::Option<& crate::model::JobProgressSummary> {
         self.progress_summary.as_ref()
     }
     /// <p>The reason for updating the job.</p>
-    pub fn status_update_reason(&self) -> std::option::Option<&str> {
+    pub fn status_update_reason(&self) -> std::option::Option<& str> {
         self.status_update_reason.as_deref()
     }
     /// <p>If the specified job failed, this field contains information describing the failure.</p>
-    pub fn failure_reasons(&self) -> std::option::Option<&[crate::model::JobFailure]> {
+    pub fn failure_reasons(&self) -> std::option::Option<& [crate::model::JobFailure]> {
         self.failure_reasons.as_deref()
     }
     /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
-    pub fn report(&self) -> std::option::Option<&crate::model::JobReport> {
+    pub fn report(&self) -> std::option::Option<& crate::model::JobReport> {
         self.report.as_ref()
     }
     /// <p>A timestamp indicating when this job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn termination_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.termination_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for this job.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
-    pub fn suspended_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn suspended_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.suspended_date.as_ref()
     }
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
-    pub fn suspended_cause(&self) -> std::option::Option<&str> {
+    pub fn suspended_cause(&self) -> std::option::Option<& str> {
         self.suspended_cause.as_deref()
     }
     /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
-    pub fn manifest_generator(&self) -> std::option::Option<&crate::model::JobManifestGenerator> {
+    pub fn manifest_generator(&self) -> std::option::Option<& crate::model::JobManifestGenerator> {
         self.manifest_generator.as_ref()
     }
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
-    pub fn generated_manifest_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::model::S3GeneratedManifestDescriptor> {
+    pub fn generated_manifest_descriptor(&self) -> std::option::Option<& crate::model::S3GeneratedManifestDescriptor> {
         self.generated_manifest_descriptor.as_ref()
     }
 }
 /// See [`JobDescriptor`](crate::model::JobDescriptor).
 pub mod job_descriptor {
-
+    
     /// A builder for [`JobDescriptor`](crate::model::JobDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7315,8 +6899,7 @@ pub mod job_descriptor {
         pub(crate) suspended_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) suspended_cause: std::option::Option<std::string::String>,
         pub(crate) manifest_generator: std::option::Option<crate::model::JobManifestGenerator>,
-        pub(crate) generated_manifest_descriptor:
-            std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
+        pub(crate) generated_manifest_descriptor: std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
     }
     impl Builder {
         /// <p>The ID for the specified job.</p>
@@ -7326,8 +6909,7 @@ pub mod job_descriptor {
         }
         /// <p>The ID for the specified job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>Indicates whether confirmation is required before Amazon S3 begins running the specified job. Confirmation is required only for jobs created through the Amazon S3 console.</p>
         pub fn confirmation_required(mut self, input: bool) -> Self {
@@ -7336,8 +6918,7 @@ pub mod job_descriptor {
         }
         /// <p>Indicates whether confirmation is required before Amazon S3 begins running the specified job. Confirmation is required only for jobs created through the Amazon S3 console.</p>
         pub fn set_confirmation_required(mut self, input: std::option::Option<bool>) -> Self {
-            self.confirmation_required = input;
-            self
+            self.confirmation_required = input; self
         }
         /// <p>The description for this job, if one was provided in this job's <code>Create Job</code> request.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7346,8 +6927,7 @@ pub mod job_descriptor {
         }
         /// <p>The description for this job, if one was provided in this job's <code>Create Job</code> request.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for this job.</p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7356,8 +6936,7 @@ pub mod job_descriptor {
         }
         /// <p>The Amazon Resource Name (ARN) for this job.</p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
         /// <p>The current status of the specified job.</p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
@@ -7366,8 +6945,7 @@ pub mod job_descriptor {
         }
         /// <p>The current status of the specified job.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The configuration information for the specified job's manifest object.</p>
         pub fn manifest(mut self, input: crate::model::JobManifest) -> Self {
@@ -7375,12 +6953,8 @@ pub mod job_descriptor {
             self
         }
         /// <p>The configuration information for the specified job's manifest object.</p>
-        pub fn set_manifest(
-            mut self,
-            input: std::option::Option<crate::model::JobManifest>,
-        ) -> Self {
-            self.manifest = input;
-            self
+        pub fn set_manifest(mut self, input: std::option::Option<crate::model::JobManifest>) -> Self {
+            self.manifest = input; self
         }
         /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
         pub fn operation(mut self, input: crate::model::JobOperation) -> Self {
@@ -7388,12 +6962,8 @@ pub mod job_descriptor {
             self
         }
         /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::JobOperation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::JobOperation>) -> Self {
+            self.operation = input; self
         }
         /// <p>The priority of the specified job.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -7402,8 +6972,7 @@ pub mod job_descriptor {
         }
         /// <p>The priority of the specified job.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
         pub fn progress_summary(mut self, input: crate::model::JobProgressSummary) -> Self {
@@ -7411,12 +6980,8 @@ pub mod job_descriptor {
             self
         }
         /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-        pub fn set_progress_summary(
-            mut self,
-            input: std::option::Option<crate::model::JobProgressSummary>,
-        ) -> Self {
-            self.progress_summary = input;
-            self
+        pub fn set_progress_summary(mut self, input: std::option::Option<crate::model::JobProgressSummary>) -> Self {
+            self.progress_summary = input; self
         }
         /// <p>The reason for updating the job.</p>
         pub fn status_update_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7424,12 +6989,8 @@ pub mod job_descriptor {
             self
         }
         /// <p>The reason for updating the job.</p>
-        pub fn set_status_update_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_update_reason = input;
-            self
+        pub fn set_status_update_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_update_reason = input; self
         }
         /// Appends an item to `failure_reasons`.
         ///
@@ -7438,17 +6999,13 @@ pub mod job_descriptor {
         /// <p>If the specified job failed, this field contains information describing the failure.</p>
         pub fn failure_reasons(mut self, input: crate::model::JobFailure) -> Self {
             let mut v = self.failure_reasons.unwrap_or_default();
-            v.push(input);
-            self.failure_reasons = Some(v);
-            self
+                            v.push(input);
+                            self.failure_reasons = Some(v);
+                            self
         }
         /// <p>If the specified job failed, this field contains information describing the failure.</p>
-        pub fn set_failure_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobFailure>>,
-        ) -> Self {
-            self.failure_reasons = input;
-            self
+        pub fn set_failure_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobFailure>>) -> Self {
+            self.failure_reasons = input; self
         }
         /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
         pub fn report(mut self, input: crate::model::JobReport) -> Self {
@@ -7457,8 +7014,7 @@ pub mod job_descriptor {
         }
         /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
         pub fn set_report(mut self, input: std::option::Option<crate::model::JobReport>) -> Self {
-            self.report = input;
-            self
+            self.report = input; self
         }
         /// <p>A timestamp indicating when this job was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7466,12 +7022,8 @@ pub mod job_descriptor {
             self
         }
         /// <p>A timestamp indicating when this job was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
         pub fn termination_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7479,12 +7031,8 @@ pub mod job_descriptor {
             self
         }
         /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-        pub fn set_termination_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.termination_date = input;
-            self
+        pub fn set_termination_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.termination_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for this job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7493,8 +7041,7 @@ pub mod job_descriptor {
         }
         /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for this job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
         pub fn suspended_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7502,12 +7049,8 @@ pub mod job_descriptor {
             self
         }
         /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
-        pub fn set_suspended_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.suspended_date = input;
-            self
+        pub fn set_suspended_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.suspended_date = input; self
         }
         /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
         pub fn suspended_cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7515,12 +7058,8 @@ pub mod job_descriptor {
             self
         }
         /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
-        pub fn set_suspended_cause(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.suspended_cause = input;
-            self
+        pub fn set_suspended_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suspended_cause = input; self
         }
         /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
         pub fn manifest_generator(mut self, input: crate::model::JobManifestGenerator) -> Self {
@@ -7528,54 +7067,65 @@ pub mod job_descriptor {
             self
         }
         /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
-        pub fn set_manifest_generator(
-            mut self,
-            input: std::option::Option<crate::model::JobManifestGenerator>,
-        ) -> Self {
-            self.manifest_generator = input;
-            self
+        pub fn set_manifest_generator(mut self, input: std::option::Option<crate::model::JobManifestGenerator>) -> Self {
+            self.manifest_generator = input; self
         }
         /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
-        pub fn generated_manifest_descriptor(
-            mut self,
-            input: crate::model::S3GeneratedManifestDescriptor,
-        ) -> Self {
+        pub fn generated_manifest_descriptor(mut self, input: crate::model::S3GeneratedManifestDescriptor) -> Self {
             self.generated_manifest_descriptor = Some(input);
             self
         }
         /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
-        pub fn set_generated_manifest_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
-        ) -> Self {
-            self.generated_manifest_descriptor = input;
-            self
+        pub fn set_generated_manifest_descriptor(mut self, input: std::option::Option<crate::model::S3GeneratedManifestDescriptor>) -> Self {
+            self.generated_manifest_descriptor = input; self
         }
         /// Consumes the builder and constructs a [`JobDescriptor`](crate::model::JobDescriptor).
         pub fn build(self) -> crate::model::JobDescriptor {
             crate::model::JobDescriptor {
-                job_id: self.job_id,
-                confirmation_required: self.confirmation_required,
-                description: self.description,
-                job_arn: self.job_arn,
-                status: self.status,
-                manifest: self.manifest,
-                operation: self.operation,
-                priority: self.priority.unwrap_or_default(),
-                progress_summary: self.progress_summary,
-                status_update_reason: self.status_update_reason,
-                failure_reasons: self.failure_reasons,
-                report: self.report,
-                creation_time: self.creation_time,
-                termination_date: self.termination_date,
-                role_arn: self.role_arn,
-                suspended_date: self.suspended_date,
-                suspended_cause: self.suspended_cause,
-                manifest_generator: self.manifest_generator,
-                generated_manifest_descriptor: self.generated_manifest_descriptor,
+                job_id: self.job_id
+                ,
+                confirmation_required: self.confirmation_required
+                ,
+                description: self.description
+                ,
+                job_arn: self.job_arn
+                ,
+                status: self.status
+                ,
+                manifest: self.manifest
+                ,
+                operation: self.operation
+                ,
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
+                progress_summary: self.progress_summary
+                ,
+                status_update_reason: self.status_update_reason
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+                report: self.report
+                ,
+                creation_time: self.creation_time
+                ,
+                termination_date: self.termination_date
+                ,
+                role_arn: self.role_arn
+                ,
+                suspended_date: self.suspended_date
+                ,
+                suspended_cause: self.suspended_cause
+                ,
+                manifest_generator: self.manifest_generator
+                ,
+                generated_manifest_descriptor: self.generated_manifest_descriptor
+                ,
             }
         }
     }
+    
+    
 }
 impl JobDescriptor {
     /// Creates a new builder-style object to manufacture [`JobDescriptor`](crate::model::JobDescriptor).
@@ -7587,7 +7137,7 @@ impl JobDescriptor {
 /// <p>Describes the specified job's generated manifest. Batch Operations jobs created with a ManifestGenerator populate details of this descriptor after execution of the ManifestGenerator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3GeneratedManifestDescriptor {
+pub struct S3GeneratedManifestDescriptor  {
     /// <p>The format of the generated manifest.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::GeneratedManifestFormat>,
@@ -7597,17 +7147,17 @@ pub struct S3GeneratedManifestDescriptor {
 }
 impl S3GeneratedManifestDescriptor {
     /// <p>The format of the generated manifest.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::GeneratedManifestFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::GeneratedManifestFormat> {
         self.format.as_ref()
     }
     /// <p>Contains the information required to locate a manifest object.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::JobManifestLocation> {
+    pub fn location(&self) -> std::option::Option<& crate::model::JobManifestLocation> {
         self.location.as_ref()
     }
 }
 /// See [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor).
 pub mod s3_generated_manifest_descriptor {
-
+    
     /// A builder for [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7621,12 +7171,8 @@ pub mod s3_generated_manifest_descriptor {
             self
         }
         /// <p>The format of the generated manifest.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::GeneratedManifestFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::GeneratedManifestFormat>) -> Self {
+            self.format = input; self
         }
         /// <p>Contains the information required to locate a manifest object.</p>
         pub fn location(mut self, input: crate::model::JobManifestLocation) -> Self {
@@ -7634,21 +7180,21 @@ pub mod s3_generated_manifest_descriptor {
             self
         }
         /// <p>Contains the information required to locate a manifest object.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::JobManifestLocation>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::JobManifestLocation>) -> Self {
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor).
         pub fn build(self) -> crate::model::S3GeneratedManifestDescriptor {
             crate::model::S3GeneratedManifestDescriptor {
-                format: self.format,
-                location: self.location,
+                format: self.format
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl S3GeneratedManifestDescriptor {
     /// Creates a new builder-style object to manufacture [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor).
@@ -7660,9 +7206,9 @@ impl S3GeneratedManifestDescriptor {
 /// <p>Contains the information required to locate a manifest object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobManifestLocation {
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+pub struct JobManifestLocation  {
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important> 
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
     /// </important>
     #[doc(hidden)]
     pub object_arn: std::option::Option<std::string::String>,
@@ -7674,24 +7220,24 @@ pub struct JobManifestLocation {
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl JobManifestLocation {
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important> 
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
     /// </important>
-    pub fn object_arn(&self) -> std::option::Option<&str> {
+    pub fn object_arn(&self) -> std::option::Option<& str> {
         self.object_arn.as_deref()
     }
     /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-    pub fn object_version_id(&self) -> std::option::Option<&str> {
+    pub fn object_version_id(&self) -> std::option::Option<& str> {
         self.object_version_id.as_deref()
     }
     /// <p>The ETag for the specified manifest object.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 /// See [`JobManifestLocation`](crate::model::JobManifestLocation).
 pub mod job_manifest_location {
-
+    
     /// A builder for [`JobManifestLocation`](crate::model::JobManifestLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7700,19 +7246,18 @@ pub mod job_manifest_location {
         pub(crate) e_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important> 
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
         /// </important>
         pub fn object_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.object_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important> 
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
         /// </important>
         pub fn set_object_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_arn = input;
-            self
+            self.object_arn = input; self
         }
         /// <p>The optional version ID to identify a specific version of the manifest object.</p>
         pub fn object_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7720,12 +7265,8 @@ pub mod job_manifest_location {
             self
         }
         /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-        pub fn set_object_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_version_id = input;
-            self
+        pub fn set_object_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_version_id = input; self
         }
         /// <p>The ETag for the specified manifest object.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7734,18 +7275,22 @@ pub mod job_manifest_location {
         }
         /// <p>The ETag for the specified manifest object.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = input;
-            self
+            self.e_tag = input; self
         }
         /// Consumes the builder and constructs a [`JobManifestLocation`](crate::model::JobManifestLocation).
         pub fn build(self) -> crate::model::JobManifestLocation {
             crate::model::JobManifestLocation {
-                object_arn: self.object_arn,
-                object_version_id: self.object_version_id,
-                e_tag: self.e_tag,
+                object_arn: self.object_arn
+                ,
+                object_version_id: self.object_version_id
+                ,
+                e_tag: self.e_tag
+                ,
             }
         }
     }
+    
+    
 }
 impl JobManifestLocation {
     /// Creates a new builder-style object to manufacture [`JobManifestLocation`](crate::model::JobManifestLocation).
@@ -7760,9 +7305,9 @@ impl JobManifestLocation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let generatedmanifestformat = unimplemented!();
 /// match generatedmanifestformat {
@@ -7783,60 +7328,48 @@ impl JobManifestLocation {
 /// Specifically, when `generatedmanifestformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GeneratedManifestFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GeneratedManifestFormat {
     #[allow(missing_docs)] // documentation missing in model
     S3InventoryReportCsv20211130,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GeneratedManifestFormat {
     fn from(s: &str) -> Self {
         match s {
-            "S3InventoryReport_CSV_20211130" => {
-                GeneratedManifestFormat::S3InventoryReportCsv20211130
-            }
-            other => GeneratedManifestFormat::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "S3InventoryReport_CSV_20211130" => GeneratedManifestFormat::S3InventoryReportCsv20211130,
+            other => GeneratedManifestFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GeneratedManifestFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GeneratedManifestFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GeneratedManifestFormat::from(s))
+                }
+            }
 impl GeneratedManifestFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            GeneratedManifestFormat::S3InventoryReportCsv20211130 => {
-                "S3InventoryReport_CSV_20211130"
-            }
-            GeneratedManifestFormat::Unknown(value) => value.as_str(),
+            GeneratedManifestFormat::S3InventoryReportCsv20211130 => "S3InventoryReport_CSV_20211130",
+            GeneratedManifestFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["S3InventoryReport_CSV_20211130"]
+        &[
+            "S3InventoryReport_CSV_20211130"
+        ]
     }
 }
 impl AsRef<str> for GeneratedManifestFormat {
@@ -7865,14 +7398,8 @@ impl JobManifestGenerator {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`S3JobManifestGenerator`](crate::model::JobManifestGenerator::S3JobManifestGenerator), extracting the inner [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_job_manifest_generator(
-        &self,
-    ) -> std::result::Result<&crate::model::S3JobManifestGenerator, &Self> {
-        if let JobManifestGenerator::S3JobManifestGenerator(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_s3_job_manifest_generator(&self) -> std::result::Result<&crate::model::S3JobManifestGenerator, &Self> {
+        if let JobManifestGenerator::S3JobManifestGenerator(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3JobManifestGenerator`](crate::model::JobManifestGenerator::S3JobManifestGenerator).
     pub fn is_s3_job_manifest_generator(&self) -> bool {
@@ -7887,7 +7414,7 @@ impl JobManifestGenerator {
 /// <p>The container for the service that will create the S3 manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3JobManifestGenerator {
+pub struct S3JobManifestGenerator  {
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
     #[doc(hidden)]
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -7906,21 +7433,19 @@ pub struct S3JobManifestGenerator {
 }
 impl S3JobManifestGenerator {
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>The source bucket used by the ManifestGenerator.</p>
-    pub fn source_bucket(&self) -> std::option::Option<&str> {
+    pub fn source_bucket(&self) -> std::option::Option<& str> {
         self.source_bucket.as_deref()
     }
     /// <p>Specifies the location the generated manifest will be written to.</p>
-    pub fn manifest_output_location(
-        &self,
-    ) -> std::option::Option<&crate::model::S3ManifestOutputLocation> {
+    pub fn manifest_output_location(&self) -> std::option::Option<& crate::model::S3ManifestOutputLocation> {
         self.manifest_output_location.as_ref()
     }
     /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::JobManifestGeneratorFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::JobManifestGeneratorFilter> {
         self.filter.as_ref()
     }
     /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
@@ -7930,14 +7455,13 @@ impl S3JobManifestGenerator {
 }
 /// See [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
 pub mod s3_job_manifest_generator {
-
+    
     /// A builder for [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
         pub(crate) source_bucket: std::option::Option<std::string::String>,
-        pub(crate) manifest_output_location:
-            std::option::Option<crate::model::S3ManifestOutputLocation>,
+        pub(crate) manifest_output_location: std::option::Option<crate::model::S3ManifestOutputLocation>,
         pub(crate) filter: std::option::Option<crate::model::JobManifestGeneratorFilter>,
         pub(crate) enable_manifest_output: std::option::Option<bool>,
     }
@@ -7948,12 +7472,8 @@ pub mod s3_job_manifest_generator {
             self
         }
         /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expected_bucket_owner = input;
-            self
+        pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expected_bucket_owner = input; self
         }
         /// <p>The source bucket used by the ManifestGenerator.</p>
         pub fn source_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7961,28 +7481,17 @@ pub mod s3_job_manifest_generator {
             self
         }
         /// <p>The source bucket used by the ManifestGenerator.</p>
-        pub fn set_source_bucket(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_bucket = input;
-            self
+        pub fn set_source_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_bucket = input; self
         }
         /// <p>Specifies the location the generated manifest will be written to.</p>
-        pub fn manifest_output_location(
-            mut self,
-            input: crate::model::S3ManifestOutputLocation,
-        ) -> Self {
+        pub fn manifest_output_location(mut self, input: crate::model::S3ManifestOutputLocation) -> Self {
             self.manifest_output_location = Some(input);
             self
         }
         /// <p>Specifies the location the generated manifest will be written to.</p>
-        pub fn set_manifest_output_location(
-            mut self,
-            input: std::option::Option<crate::model::S3ManifestOutputLocation>,
-        ) -> Self {
-            self.manifest_output_location = input;
-            self
+        pub fn set_manifest_output_location(mut self, input: std::option::Option<crate::model::S3ManifestOutputLocation>) -> Self {
+            self.manifest_output_location = input; self
         }
         /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
         pub fn filter(mut self, input: crate::model::JobManifestGeneratorFilter) -> Self {
@@ -7990,12 +7499,8 @@ pub mod s3_job_manifest_generator {
             self
         }
         /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::JobManifestGeneratorFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::JobManifestGeneratorFilter>) -> Self {
+            self.filter = input; self
         }
         /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
         pub fn enable_manifest_output(mut self, input: bool) -> Self {
@@ -8004,20 +7509,27 @@ pub mod s3_job_manifest_generator {
         }
         /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
         pub fn set_enable_manifest_output(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_manifest_output = input;
-            self
+            self.enable_manifest_output = input; self
         }
         /// Consumes the builder and constructs a [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
         pub fn build(self) -> crate::model::S3JobManifestGenerator {
             crate::model::S3JobManifestGenerator {
-                expected_bucket_owner: self.expected_bucket_owner,
-                source_bucket: self.source_bucket,
-                manifest_output_location: self.manifest_output_location,
-                filter: self.filter,
-                enable_manifest_output: self.enable_manifest_output.unwrap_or_default(),
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+                source_bucket: self.source_bucket
+                ,
+                manifest_output_location: self.manifest_output_location
+                ,
+                filter: self.filter
+                ,
+                enable_manifest_output: self.enable_manifest_output
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl S3JobManifestGenerator {
     /// Creates a new builder-style object to manufacture [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
@@ -8029,7 +7541,7 @@ impl S3JobManifestGenerator {
 /// <p>The filter used to describe a set of objects for the job's manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobManifestGeneratorFilter {
+pub struct JobManifestGeneratorFilter  {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
     #[doc(hidden)]
     pub eligible_for_replication: std::option::Option<bool>,
@@ -8041,8 +7553,7 @@ pub struct JobManifestGeneratorFilter {
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
     #[doc(hidden)]
-    pub object_replication_statuses:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
+    pub object_replication_statuses: std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
 }
 impl JobManifestGeneratorFilter {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
@@ -8050,31 +7561,28 @@ impl JobManifestGeneratorFilter {
         self.eligible_for_replication
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
-    pub fn object_replication_statuses(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationStatus]> {
+    pub fn object_replication_statuses(&self) -> std::option::Option<& [crate::model::ReplicationStatus]> {
         self.object_replication_statuses.as_deref()
     }
 }
 /// See [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter).
 pub mod job_manifest_generator_filter {
-
+    
     /// A builder for [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) eligible_for_replication: std::option::Option<bool>,
         pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) object_replication_statuses:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
+        pub(crate) object_replication_statuses: std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
     }
     impl Builder {
         /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
@@ -8084,8 +7592,7 @@ pub mod job_manifest_generator_filter {
         }
         /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
         pub fn set_eligible_for_replication(mut self, input: std::option::Option<bool>) -> Self {
-            self.eligible_for_replication = input;
-            self
+            self.eligible_for_replication = input; self
         }
         /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8093,12 +7600,8 @@ pub mod job_manifest_generator_filter {
             self
         }
         /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
-        pub fn set_created_after(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_after = input;
-            self
+        pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_after = input; self
         }
         /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8106,45 +7609,40 @@ pub mod job_manifest_generator_filter {
             self
         }
         /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
-        pub fn set_created_before(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_before = input;
-            self
+        pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_before = input; self
         }
         /// Appends an item to `object_replication_statuses`.
         ///
         /// To override the contents of this collection use [`set_object_replication_statuses`](Self::set_object_replication_statuses).
         ///
         /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
-        pub fn object_replication_statuses(
-            mut self,
-            input: crate::model::ReplicationStatus,
-        ) -> Self {
+        pub fn object_replication_statuses(mut self, input: crate::model::ReplicationStatus) -> Self {
             let mut v = self.object_replication_statuses.unwrap_or_default();
-            v.push(input);
-            self.object_replication_statuses = Some(v);
-            self
+                            v.push(input);
+                            self.object_replication_statuses = Some(v);
+                            self
         }
         /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
-        pub fn set_object_replication_statuses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
-        ) -> Self {
-            self.object_replication_statuses = input;
-            self
+        pub fn set_object_replication_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>) -> Self {
+            self.object_replication_statuses = input; self
         }
         /// Consumes the builder and constructs a [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter).
         pub fn build(self) -> crate::model::JobManifestGeneratorFilter {
             crate::model::JobManifestGeneratorFilter {
-                eligible_for_replication: self.eligible_for_replication,
-                created_after: self.created_after,
-                created_before: self.created_before,
-                object_replication_statuses: self.object_replication_statuses,
+                eligible_for_replication: self.eligible_for_replication
+                ,
+                created_after: self.created_after
+                ,
+                created_before: self.created_before
+                ,
+                object_replication_statuses: self.object_replication_statuses
+                ,
             }
         }
     }
+    
+    
 }
 impl JobManifestGeneratorFilter {
     /// Creates a new builder-style object to manufacture [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter).
@@ -8159,9 +7657,9 @@ impl JobManifestGeneratorFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationstatus = unimplemented!();
 /// match replicationstatus {
@@ -8185,22 +7683,14 @@ impl JobManifestGeneratorFilter {
 /// Specifically, when `replicationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -8211,7 +7701,7 @@ pub enum ReplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Replica,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationStatus {
     fn from(s: &str) -> Self {
@@ -8220,19 +7710,17 @@ impl std::convert::From<&str> for ReplicationStatus {
             "FAILED" => ReplicationStatus::Failed,
             "NONE" => ReplicationStatus::None,
             "REPLICA" => ReplicationStatus::Replica,
-            other => {
-                ReplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationStatus::from(s))
+                }
+            }
 impl ReplicationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8241,12 +7729,14 @@ impl ReplicationStatus {
             ReplicationStatus::Failed => "FAILED",
             ReplicationStatus::None => "NONE",
             ReplicationStatus::Replica => "REPLICA",
-            ReplicationStatus::Unknown(value) => value.as_str(),
+            ReplicationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "NONE", "REPLICA"]
+        &[
+            "COMPLETED", "FAILED", "NONE", "REPLICA"
+        ]
     }
 }
 impl AsRef<str> for ReplicationStatus {
@@ -8258,7 +7748,7 @@ impl AsRef<str> for ReplicationStatus {
 /// <p>Location details for where the generated manifest should be written.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ManifestOutputLocation {
+pub struct S3ManifestOutputLocation  {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
     #[doc(hidden)]
     pub expected_manifest_bucket_owner: std::option::Option<std::string::String>,
@@ -8277,57 +7767,47 @@ pub struct S3ManifestOutputLocation {
 }
 impl S3ManifestOutputLocation {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
-    pub fn expected_manifest_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn expected_manifest_bucket_owner(&self) -> std::option::Option<& str> {
         self.expected_manifest_bucket_owner.as_deref()
     }
     /// <p>The bucket ARN the generated manifest should be written to.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
-    pub fn manifest_prefix(&self) -> std::option::Option<&str> {
+    pub fn manifest_prefix(&self) -> std::option::Option<& str> {
         self.manifest_prefix.as_deref()
     }
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
-    pub fn manifest_encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::GeneratedManifestEncryption> {
+    pub fn manifest_encryption(&self) -> std::option::Option<& crate::model::GeneratedManifestEncryption> {
         self.manifest_encryption.as_ref()
     }
     /// <p>The format of the generated manifest.</p>
-    pub fn manifest_format(&self) -> std::option::Option<&crate::model::GeneratedManifestFormat> {
+    pub fn manifest_format(&self) -> std::option::Option<& crate::model::GeneratedManifestFormat> {
         self.manifest_format.as_ref()
     }
 }
 /// See [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation).
 pub mod s3_manifest_output_location {
-
+    
     /// A builder for [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expected_manifest_bucket_owner: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) manifest_prefix: std::option::Option<std::string::String>,
-        pub(crate) manifest_encryption:
-            std::option::Option<crate::model::GeneratedManifestEncryption>,
+        pub(crate) manifest_encryption: std::option::Option<crate::model::GeneratedManifestEncryption>,
         pub(crate) manifest_format: std::option::Option<crate::model::GeneratedManifestFormat>,
     }
     impl Builder {
         /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
-        pub fn expected_manifest_bucket_owner(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn expected_manifest_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_manifest_bucket_owner = Some(input.into());
             self
         }
         /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
-        pub fn set_expected_manifest_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expected_manifest_bucket_owner = input;
-            self
+        pub fn set_expected_manifest_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expected_manifest_bucket_owner = input; self
         }
         /// <p>The bucket ARN the generated manifest should be written to.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8336,8 +7816,7 @@ pub mod s3_manifest_output_location {
         }
         /// <p>The bucket ARN the generated manifest should be written to.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
         pub fn manifest_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8345,28 +7824,17 @@ pub mod s3_manifest_output_location {
             self
         }
         /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
-        pub fn set_manifest_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manifest_prefix = input;
-            self
+        pub fn set_manifest_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest_prefix = input; self
         }
         /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
-        pub fn manifest_encryption(
-            mut self,
-            input: crate::model::GeneratedManifestEncryption,
-        ) -> Self {
+        pub fn manifest_encryption(mut self, input: crate::model::GeneratedManifestEncryption) -> Self {
             self.manifest_encryption = Some(input);
             self
         }
         /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
-        pub fn set_manifest_encryption(
-            mut self,
-            input: std::option::Option<crate::model::GeneratedManifestEncryption>,
-        ) -> Self {
-            self.manifest_encryption = input;
-            self
+        pub fn set_manifest_encryption(mut self, input: std::option::Option<crate::model::GeneratedManifestEncryption>) -> Self {
+            self.manifest_encryption = input; self
         }
         /// <p>The format of the generated manifest.</p>
         pub fn manifest_format(mut self, input: crate::model::GeneratedManifestFormat) -> Self {
@@ -8374,24 +7842,27 @@ pub mod s3_manifest_output_location {
             self
         }
         /// <p>The format of the generated manifest.</p>
-        pub fn set_manifest_format(
-            mut self,
-            input: std::option::Option<crate::model::GeneratedManifestFormat>,
-        ) -> Self {
-            self.manifest_format = input;
-            self
+        pub fn set_manifest_format(mut self, input: std::option::Option<crate::model::GeneratedManifestFormat>) -> Self {
+            self.manifest_format = input; self
         }
         /// Consumes the builder and constructs a [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation).
         pub fn build(self) -> crate::model::S3ManifestOutputLocation {
             crate::model::S3ManifestOutputLocation {
-                expected_manifest_bucket_owner: self.expected_manifest_bucket_owner,
-                bucket: self.bucket,
-                manifest_prefix: self.manifest_prefix,
-                manifest_encryption: self.manifest_encryption,
-                manifest_format: self.manifest_format,
+                expected_manifest_bucket_owner: self.expected_manifest_bucket_owner
+                ,
+                bucket: self.bucket
+                ,
+                manifest_prefix: self.manifest_prefix
+                ,
+                manifest_encryption: self.manifest_encryption
+                ,
+                manifest_format: self.manifest_format
+                ,
             }
         }
     }
+    
+    
 }
 impl S3ManifestOutputLocation {
     /// Creates a new builder-style object to manufacture [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation).
@@ -8403,7 +7874,7 @@ impl S3ManifestOutputLocation {
 /// <p>The encryption configuration to use when storing the generated manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneratedManifestEncryption {
+pub struct GeneratedManifestEncryption  {
     /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
     #[doc(hidden)]
     pub sses3: std::option::Option<crate::model::Sses3Encryption>,
@@ -8413,17 +7884,17 @@ pub struct GeneratedManifestEncryption {
 }
 impl GeneratedManifestEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
-    pub fn sses3(&self) -> std::option::Option<&crate::model::Sses3Encryption> {
+    pub fn sses3(&self) -> std::option::Option<& crate::model::Sses3Encryption> {
         self.sses3.as_ref()
     }
     /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
-    pub fn ssekms(&self) -> std::option::Option<&crate::model::SsekmsEncryption> {
+    pub fn ssekms(&self) -> std::option::Option<& crate::model::SsekmsEncryption> {
         self.ssekms.as_ref()
     }
 }
 /// See [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption).
 pub mod generated_manifest_encryption {
-
+    
     /// A builder for [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8437,12 +7908,8 @@ pub mod generated_manifest_encryption {
             self
         }
         /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
-        pub fn set_sses3(
-            mut self,
-            input: std::option::Option<crate::model::Sses3Encryption>,
-        ) -> Self {
-            self.sses3 = input;
-            self
+        pub fn set_sses3(mut self, input: std::option::Option<crate::model::Sses3Encryption>) -> Self {
+            self.sses3 = input; self
         }
         /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
         pub fn ssekms(mut self, input: crate::model::SsekmsEncryption) -> Self {
@@ -8450,21 +7917,21 @@ pub mod generated_manifest_encryption {
             self
         }
         /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
-        pub fn set_ssekms(
-            mut self,
-            input: std::option::Option<crate::model::SsekmsEncryption>,
-        ) -> Self {
-            self.ssekms = input;
-            self
+        pub fn set_ssekms(mut self, input: std::option::Option<crate::model::SsekmsEncryption>) -> Self {
+            self.ssekms = input; self
         }
         /// Consumes the builder and constructs a [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption).
         pub fn build(self) -> crate::model::GeneratedManifestEncryption {
             crate::model::GeneratedManifestEncryption {
-                sses3: self.sses3,
-                ssekms: self.ssekms,
+                sses3: self.sses3
+                ,
+                ssekms: self.ssekms
+                ,
             }
         }
     }
+    
+    
 }
 impl GeneratedManifestEncryption {
     /// Creates a new builder-style object to manufacture [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption).
@@ -8476,20 +7943,20 @@ impl GeneratedManifestEncryption {
 /// <p>Configuration for the use of SSE-KMS to encrypt generated manifest objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsekmsEncryption {
+pub struct SsekmsEncryption  {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl SsekmsEncryption {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
 }
 /// See [`SsekmsEncryption`](crate::model::SsekmsEncryption).
 pub mod ssekms_encryption {
-
+    
     /// A builder for [`SsekmsEncryption`](crate::model::SsekmsEncryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8503,16 +7970,18 @@ pub mod ssekms_encryption {
         }
         /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// Consumes the builder and constructs a [`SsekmsEncryption`](crate::model::SsekmsEncryption).
         pub fn build(self) -> crate::model::SsekmsEncryption {
             crate::model::SsekmsEncryption {
-                key_id: self.key_id,
+                key_id: self.key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SsekmsEncryption {
     /// Creates a new builder-style object to manufacture [`SsekmsEncryption`](crate::model::SsekmsEncryption).
@@ -8524,19 +7993,24 @@ impl SsekmsEncryption {
 /// <p>Configuration for the use of SSE-S3 to encrypt generated manifest objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sses3Encryption {}
+pub struct Sses3Encryption  {
+}
 /// See [`Sses3Encryption`](crate::model::Sses3Encryption).
 pub mod sses3_encryption {
-
+    
     /// A builder for [`Sses3Encryption`](crate::model::Sses3Encryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`Sses3Encryption`](crate::model::Sses3Encryption).
         pub fn build(self) -> crate::model::Sses3Encryption {
-            crate::model::Sses3Encryption {}
+            crate::model::Sses3Encryption {
+            }
         }
     }
+    
+    
 }
 impl Sses3Encryption {
     /// Creates a new builder-style object to manufacture [`Sses3Encryption`](crate::model::Sses3Encryption).
@@ -8548,7 +8022,7 @@ impl Sses3Encryption {
 /// <p>Contains the configuration parameters for a job-completion report.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobReport {
+pub struct JobReport  {
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -8573,11 +8047,11 @@ pub struct JobReport {
 }
 impl JobReport {
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The format of the specified job-completion report.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::JobReportFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::JobReportFormat> {
         self.format.as_ref()
     }
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
@@ -8591,17 +8065,17 @@ impl JobReport {
     /// /report.json
     /// </job-id>
     /// </prefix></code>.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
-    pub fn report_scope(&self) -> std::option::Option<&crate::model::JobReportScope> {
+    pub fn report_scope(&self) -> std::option::Option<& crate::model::JobReportScope> {
         self.report_scope.as_ref()
     }
 }
 /// See [`JobReport`](crate::model::JobReport).
 pub mod job_report {
-
+    
     /// A builder for [`JobReport`](crate::model::JobReport).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8619,8 +8093,7 @@ pub mod job_report {
         }
         /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The format of the specified job-completion report.</p>
         pub fn format(mut self, input: crate::model::JobReportFormat) -> Self {
@@ -8628,12 +8101,8 @@ pub mod job_report {
             self
         }
         /// <p>The format of the specified job-completion report.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::JobReportFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::JobReportFormat>) -> Self {
+            self.format = input; self
         }
         /// <p>Indicates whether the specified job will generate a job-completion report.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -8642,8 +8111,7 @@ pub mod job_report {
         }
         /// <p>Indicates whether the specified job will generate a job-completion report.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
         /// <prefix>
@@ -8664,8 +8132,7 @@ pub mod job_report {
         /// </job-id>
         /// </prefix></code>.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
         pub fn report_scope(mut self, input: crate::model::JobReportScope) -> Self {
@@ -8673,24 +8140,28 @@ pub mod job_report {
             self
         }
         /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
-        pub fn set_report_scope(
-            mut self,
-            input: std::option::Option<crate::model::JobReportScope>,
-        ) -> Self {
-            self.report_scope = input;
-            self
+        pub fn set_report_scope(mut self, input: std::option::Option<crate::model::JobReportScope>) -> Self {
+            self.report_scope = input; self
         }
         /// Consumes the builder and constructs a [`JobReport`](crate::model::JobReport).
         pub fn build(self) -> crate::model::JobReport {
             crate::model::JobReport {
-                bucket: self.bucket,
-                format: self.format,
-                enabled: self.enabled.unwrap_or_default(),
-                prefix: self.prefix,
-                report_scope: self.report_scope,
+                bucket: self.bucket
+                ,
+                format: self.format
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                prefix: self.prefix
+                ,
+                report_scope: self.report_scope
+                ,
             }
         }
     }
+    
+    
 }
 impl JobReport {
     /// Creates a new builder-style object to manufacture [`JobReport`](crate::model::JobReport).
@@ -8705,9 +8176,9 @@ impl JobReport {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobreportscope = unimplemented!();
 /// match jobreportscope {
@@ -8729,58 +8200,52 @@ impl JobReport {
 /// Specifically, when `jobreportscope` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobReportScope::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobReportScope {
     #[allow(missing_docs)] // documentation missing in model
     AllTasks,
     #[allow(missing_docs)] // documentation missing in model
     FailedTasksOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobReportScope {
     fn from(s: &str) -> Self {
         match s {
             "AllTasks" => JobReportScope::AllTasks,
             "FailedTasksOnly" => JobReportScope::FailedTasksOnly,
-            other => JobReportScope::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobReportScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobReportScope {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobReportScope::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobReportScope::from(s))
+                }
+            }
 impl JobReportScope {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobReportScope::AllTasks => "AllTasks",
             JobReportScope::FailedTasksOnly => "FailedTasksOnly",
-            JobReportScope::Unknown(value) => value.as_str(),
+            JobReportScope::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AllTasks", "FailedTasksOnly"]
+        &[
+            "AllTasks", "FailedTasksOnly"
+        ]
     }
 }
 impl AsRef<str> for JobReportScope {
@@ -8795,9 +8260,9 @@ impl AsRef<str> for JobReportScope {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobreportformat = unimplemented!();
 /// match jobreportformat {
@@ -8818,54 +8283,48 @@ impl AsRef<str> for JobReportScope {
 /// Specifically, when `jobreportformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobReportFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobReportFormat {
     #[allow(missing_docs)] // documentation missing in model
     ReportCsv20180820,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobReportFormat {
     fn from(s: &str) -> Self {
         match s {
             "Report_CSV_20180820" => JobReportFormat::ReportCsv20180820,
-            other => JobReportFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobReportFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobReportFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobReportFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobReportFormat::from(s))
+                }
+            }
 impl JobReportFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobReportFormat::ReportCsv20180820 => "Report_CSV_20180820",
-            JobReportFormat::Unknown(value) => value.as_str(),
+            JobReportFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Report_CSV_20180820"]
+        &[
+            "Report_CSV_20180820"
+        ]
     }
 }
 impl AsRef<str> for JobReportFormat {
@@ -8877,7 +8336,7 @@ impl AsRef<str> for JobReportFormat {
 /// <p>If this job failed, this element indicates why the job failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobFailure {
+pub struct JobFailure  {
     /// <p>The failure code, if any, for the specified job.</p>
     #[doc(hidden)]
     pub failure_code: std::option::Option<std::string::String>,
@@ -8887,17 +8346,17 @@ pub struct JobFailure {
 }
 impl JobFailure {
     /// <p>The failure code, if any, for the specified job.</p>
-    pub fn failure_code(&self) -> std::option::Option<&str> {
+    pub fn failure_code(&self) -> std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The failure reason, if any, for the specified job.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`JobFailure`](crate::model::JobFailure).
 pub mod job_failure {
-
+    
     /// A builder for [`JobFailure`](crate::model::JobFailure).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8912,8 +8371,7 @@ pub mod job_failure {
         }
         /// <p>The failure code, if any, for the specified job.</p>
         pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.failure_code = input;
-            self
+            self.failure_code = input; self
         }
         /// <p>The failure reason, if any, for the specified job.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8921,21 +8379,21 @@ pub mod job_failure {
             self
         }
         /// <p>The failure reason, if any, for the specified job.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`JobFailure`](crate::model::JobFailure).
         pub fn build(self) -> crate::model::JobFailure {
             crate::model::JobFailure {
-                failure_code: self.failure_code,
-                failure_reason: self.failure_reason,
+                failure_code: self.failure_code
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl JobFailure {
     /// Creates a new builder-style object to manufacture [`JobFailure`](crate::model::JobFailure).
@@ -8947,7 +8405,7 @@ impl JobFailure {
 /// <p>The operation that you want this job to perform on every object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobOperation {
+pub struct JobOperation  {
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
     #[doc(hidden)]
     pub lambda_invoke: std::option::Option<crate::model::LambdaInvokeOperation>,
@@ -8965,8 +8423,7 @@ pub struct JobOperation {
     pub s3_delete_object_tagging: std::option::Option<crate::model::S3DeleteObjectTaggingOperation>,
     /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
     #[doc(hidden)]
-    pub s3_initiate_restore_object:
-        std::option::Option<crate::model::S3InitiateRestoreObjectOperation>,
+    pub s3_initiate_restore_object: std::option::Option<crate::model::S3InitiateRestoreObjectOperation>,
     /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub s3_put_object_legal_hold: std::option::Option<crate::model::S3SetObjectLegalHoldOperation>,
@@ -8979,75 +8436,57 @@ pub struct JobOperation {
 }
 impl JobOperation {
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
-    pub fn lambda_invoke(&self) -> std::option::Option<&crate::model::LambdaInvokeOperation> {
+    pub fn lambda_invoke(&self) -> std::option::Option<& crate::model::LambdaInvokeOperation> {
         self.lambda_invoke.as_ref()
     }
     /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
-    pub fn s3_put_object_copy(&self) -> std::option::Option<&crate::model::S3CopyObjectOperation> {
+    pub fn s3_put_object_copy(&self) -> std::option::Option<& crate::model::S3CopyObjectOperation> {
         self.s3_put_object_copy.as_ref()
     }
     /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
-    pub fn s3_put_object_acl(&self) -> std::option::Option<&crate::model::S3SetObjectAclOperation> {
+    pub fn s3_put_object_acl(&self) -> std::option::Option<& crate::model::S3SetObjectAclOperation> {
         self.s3_put_object_acl.as_ref()
     }
     /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
-    pub fn s3_put_object_tagging(
-        &self,
-    ) -> std::option::Option<&crate::model::S3SetObjectTaggingOperation> {
+    pub fn s3_put_object_tagging(&self) -> std::option::Option<& crate::model::S3SetObjectTaggingOperation> {
         self.s3_put_object_tagging.as_ref()
     }
     /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
-    pub fn s3_delete_object_tagging(
-        &self,
-    ) -> std::option::Option<&crate::model::S3DeleteObjectTaggingOperation> {
+    pub fn s3_delete_object_tagging(&self) -> std::option::Option<& crate::model::S3DeleteObjectTaggingOperation> {
         self.s3_delete_object_tagging.as_ref()
     }
     /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
-    pub fn s3_initiate_restore_object(
-        &self,
-    ) -> std::option::Option<&crate::model::S3InitiateRestoreObjectOperation> {
+    pub fn s3_initiate_restore_object(&self) -> std::option::Option<& crate::model::S3InitiateRestoreObjectOperation> {
         self.s3_initiate_restore_object.as_ref()
     }
     /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn s3_put_object_legal_hold(
-        &self,
-    ) -> std::option::Option<&crate::model::S3SetObjectLegalHoldOperation> {
+    pub fn s3_put_object_legal_hold(&self) -> std::option::Option<& crate::model::S3SetObjectLegalHoldOperation> {
         self.s3_put_object_legal_hold.as_ref()
     }
     /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn s3_put_object_retention(
-        &self,
-    ) -> std::option::Option<&crate::model::S3SetObjectRetentionOperation> {
+    pub fn s3_put_object_retention(&self) -> std::option::Option<& crate::model::S3SetObjectRetentionOperation> {
         self.s3_put_object_retention.as_ref()
     }
     /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
-    pub fn s3_replicate_object(
-        &self,
-    ) -> std::option::Option<&crate::model::S3ReplicateObjectOperation> {
+    pub fn s3_replicate_object(&self) -> std::option::Option<& crate::model::S3ReplicateObjectOperation> {
         self.s3_replicate_object.as_ref()
     }
 }
 /// See [`JobOperation`](crate::model::JobOperation).
 pub mod job_operation {
-
+    
     /// A builder for [`JobOperation`](crate::model::JobOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_invoke: std::option::Option<crate::model::LambdaInvokeOperation>,
         pub(crate) s3_put_object_copy: std::option::Option<crate::model::S3CopyObjectOperation>,
         pub(crate) s3_put_object_acl: std::option::Option<crate::model::S3SetObjectAclOperation>,
-        pub(crate) s3_put_object_tagging:
-            std::option::Option<crate::model::S3SetObjectTaggingOperation>,
-        pub(crate) s3_delete_object_tagging:
-            std::option::Option<crate::model::S3DeleteObjectTaggingOperation>,
-        pub(crate) s3_initiate_restore_object:
-            std::option::Option<crate::model::S3InitiateRestoreObjectOperation>,
-        pub(crate) s3_put_object_legal_hold:
-            std::option::Option<crate::model::S3SetObjectLegalHoldOperation>,
-        pub(crate) s3_put_object_retention:
-            std::option::Option<crate::model::S3SetObjectRetentionOperation>,
-        pub(crate) s3_replicate_object:
-            std::option::Option<crate::model::S3ReplicateObjectOperation>,
+        pub(crate) s3_put_object_tagging: std::option::Option<crate::model::S3SetObjectTaggingOperation>,
+        pub(crate) s3_delete_object_tagging: std::option::Option<crate::model::S3DeleteObjectTaggingOperation>,
+        pub(crate) s3_initiate_restore_object: std::option::Option<crate::model::S3InitiateRestoreObjectOperation>,
+        pub(crate) s3_put_object_legal_hold: std::option::Option<crate::model::S3SetObjectLegalHoldOperation>,
+        pub(crate) s3_put_object_retention: std::option::Option<crate::model::S3SetObjectRetentionOperation>,
+        pub(crate) s3_replicate_object: std::option::Option<crate::model::S3ReplicateObjectOperation>,
     }
     impl Builder {
         /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
@@ -9056,12 +8495,8 @@ pub mod job_operation {
             self
         }
         /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
-        pub fn set_lambda_invoke(
-            mut self,
-            input: std::option::Option<crate::model::LambdaInvokeOperation>,
-        ) -> Self {
-            self.lambda_invoke = input;
-            self
+        pub fn set_lambda_invoke(mut self, input: std::option::Option<crate::model::LambdaInvokeOperation>) -> Self {
+            self.lambda_invoke = input; self
         }
         /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
         pub fn s3_put_object_copy(mut self, input: crate::model::S3CopyObjectOperation) -> Self {
@@ -9069,12 +8504,8 @@ pub mod job_operation {
             self
         }
         /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
-        pub fn set_s3_put_object_copy(
-            mut self,
-            input: std::option::Option<crate::model::S3CopyObjectOperation>,
-        ) -> Self {
-            self.s3_put_object_copy = input;
-            self
+        pub fn set_s3_put_object_copy(mut self, input: std::option::Option<crate::model::S3CopyObjectOperation>) -> Self {
+            self.s3_put_object_copy = input; self
         }
         /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
         pub fn s3_put_object_acl(mut self, input: crate::model::S3SetObjectAclOperation) -> Self {
@@ -9082,124 +8513,89 @@ pub mod job_operation {
             self
         }
         /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
-        pub fn set_s3_put_object_acl(
-            mut self,
-            input: std::option::Option<crate::model::S3SetObjectAclOperation>,
-        ) -> Self {
-            self.s3_put_object_acl = input;
-            self
+        pub fn set_s3_put_object_acl(mut self, input: std::option::Option<crate::model::S3SetObjectAclOperation>) -> Self {
+            self.s3_put_object_acl = input; self
         }
         /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
-        pub fn s3_put_object_tagging(
-            mut self,
-            input: crate::model::S3SetObjectTaggingOperation,
-        ) -> Self {
+        pub fn s3_put_object_tagging(mut self, input: crate::model::S3SetObjectTaggingOperation) -> Self {
             self.s3_put_object_tagging = Some(input);
             self
         }
         /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
-        pub fn set_s3_put_object_tagging(
-            mut self,
-            input: std::option::Option<crate::model::S3SetObjectTaggingOperation>,
-        ) -> Self {
-            self.s3_put_object_tagging = input;
-            self
+        pub fn set_s3_put_object_tagging(mut self, input: std::option::Option<crate::model::S3SetObjectTaggingOperation>) -> Self {
+            self.s3_put_object_tagging = input; self
         }
         /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
-        pub fn s3_delete_object_tagging(
-            mut self,
-            input: crate::model::S3DeleteObjectTaggingOperation,
-        ) -> Self {
+        pub fn s3_delete_object_tagging(mut self, input: crate::model::S3DeleteObjectTaggingOperation) -> Self {
             self.s3_delete_object_tagging = Some(input);
             self
         }
         /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
-        pub fn set_s3_delete_object_tagging(
-            mut self,
-            input: std::option::Option<crate::model::S3DeleteObjectTaggingOperation>,
-        ) -> Self {
-            self.s3_delete_object_tagging = input;
-            self
+        pub fn set_s3_delete_object_tagging(mut self, input: std::option::Option<crate::model::S3DeleteObjectTaggingOperation>) -> Self {
+            self.s3_delete_object_tagging = input; self
         }
         /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
-        pub fn s3_initiate_restore_object(
-            mut self,
-            input: crate::model::S3InitiateRestoreObjectOperation,
-        ) -> Self {
+        pub fn s3_initiate_restore_object(mut self, input: crate::model::S3InitiateRestoreObjectOperation) -> Self {
             self.s3_initiate_restore_object = Some(input);
             self
         }
         /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
-        pub fn set_s3_initiate_restore_object(
-            mut self,
-            input: std::option::Option<crate::model::S3InitiateRestoreObjectOperation>,
-        ) -> Self {
-            self.s3_initiate_restore_object = input;
-            self
+        pub fn set_s3_initiate_restore_object(mut self, input: std::option::Option<crate::model::S3InitiateRestoreObjectOperation>) -> Self {
+            self.s3_initiate_restore_object = input; self
         }
         /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn s3_put_object_legal_hold(
-            mut self,
-            input: crate::model::S3SetObjectLegalHoldOperation,
-        ) -> Self {
+        pub fn s3_put_object_legal_hold(mut self, input: crate::model::S3SetObjectLegalHoldOperation) -> Self {
             self.s3_put_object_legal_hold = Some(input);
             self
         }
         /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn set_s3_put_object_legal_hold(
-            mut self,
-            input: std::option::Option<crate::model::S3SetObjectLegalHoldOperation>,
-        ) -> Self {
-            self.s3_put_object_legal_hold = input;
-            self
+        pub fn set_s3_put_object_legal_hold(mut self, input: std::option::Option<crate::model::S3SetObjectLegalHoldOperation>) -> Self {
+            self.s3_put_object_legal_hold = input; self
         }
         /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn s3_put_object_retention(
-            mut self,
-            input: crate::model::S3SetObjectRetentionOperation,
-        ) -> Self {
+        pub fn s3_put_object_retention(mut self, input: crate::model::S3SetObjectRetentionOperation) -> Self {
             self.s3_put_object_retention = Some(input);
             self
         }
         /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn set_s3_put_object_retention(
-            mut self,
-            input: std::option::Option<crate::model::S3SetObjectRetentionOperation>,
-        ) -> Self {
-            self.s3_put_object_retention = input;
-            self
+        pub fn set_s3_put_object_retention(mut self, input: std::option::Option<crate::model::S3SetObjectRetentionOperation>) -> Self {
+            self.s3_put_object_retention = input; self
         }
         /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
-        pub fn s3_replicate_object(
-            mut self,
-            input: crate::model::S3ReplicateObjectOperation,
-        ) -> Self {
+        pub fn s3_replicate_object(mut self, input: crate::model::S3ReplicateObjectOperation) -> Self {
             self.s3_replicate_object = Some(input);
             self
         }
         /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
-        pub fn set_s3_replicate_object(
-            mut self,
-            input: std::option::Option<crate::model::S3ReplicateObjectOperation>,
-        ) -> Self {
-            self.s3_replicate_object = input;
-            self
+        pub fn set_s3_replicate_object(mut self, input: std::option::Option<crate::model::S3ReplicateObjectOperation>) -> Self {
+            self.s3_replicate_object = input; self
         }
         /// Consumes the builder and constructs a [`JobOperation`](crate::model::JobOperation).
         pub fn build(self) -> crate::model::JobOperation {
             crate::model::JobOperation {
-                lambda_invoke: self.lambda_invoke,
-                s3_put_object_copy: self.s3_put_object_copy,
-                s3_put_object_acl: self.s3_put_object_acl,
-                s3_put_object_tagging: self.s3_put_object_tagging,
-                s3_delete_object_tagging: self.s3_delete_object_tagging,
-                s3_initiate_restore_object: self.s3_initiate_restore_object,
-                s3_put_object_legal_hold: self.s3_put_object_legal_hold,
-                s3_put_object_retention: self.s3_put_object_retention,
-                s3_replicate_object: self.s3_replicate_object,
+                lambda_invoke: self.lambda_invoke
+                ,
+                s3_put_object_copy: self.s3_put_object_copy
+                ,
+                s3_put_object_acl: self.s3_put_object_acl
+                ,
+                s3_put_object_tagging: self.s3_put_object_tagging
+                ,
+                s3_delete_object_tagging: self.s3_delete_object_tagging
+                ,
+                s3_initiate_restore_object: self.s3_initiate_restore_object
+                ,
+                s3_put_object_legal_hold: self.s3_put_object_legal_hold
+                ,
+                s3_put_object_retention: self.s3_put_object_retention
+                ,
+                s3_replicate_object: self.s3_replicate_object
+                ,
             }
         }
     }
+    
+    
 }
 impl JobOperation {
     /// Creates a new builder-style object to manufacture [`JobOperation`](crate::model::JobOperation).
@@ -9211,19 +8607,24 @@ impl JobOperation {
 /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ReplicateObjectOperation {}
+pub struct S3ReplicateObjectOperation  {
+}
 /// See [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation).
 pub mod s3_replicate_object_operation {
-
+    
     /// A builder for [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation).
         pub fn build(self) -> crate::model::S3ReplicateObjectOperation {
-            crate::model::S3ReplicateObjectOperation {}
+            crate::model::S3ReplicateObjectOperation {
+            }
         }
     }
+    
+    
 }
 impl S3ReplicateObjectOperation {
     /// Creates a new builder-style object to manufacture [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation).
@@ -9235,7 +8636,7 @@ impl S3ReplicateObjectOperation {
 /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3SetObjectRetentionOperation {
+pub struct S3SetObjectRetentionOperation  {
     /// <p>Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
     #[doc(hidden)]
     pub bypass_governance_retention: std::option::Option<bool>,
@@ -9249,13 +8650,13 @@ impl S3SetObjectRetentionOperation {
         self.bypass_governance_retention
     }
     /// <p>Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn retention(&self) -> std::option::Option<&crate::model::S3Retention> {
+    pub fn retention(&self) -> std::option::Option<& crate::model::S3Retention> {
         self.retention.as_ref()
     }
 }
 /// See [`S3SetObjectRetentionOperation`](crate::model::S3SetObjectRetentionOperation).
 pub mod s3_set_object_retention_operation {
-
+    
     /// A builder for [`S3SetObjectRetentionOperation`](crate::model::S3SetObjectRetentionOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9270,8 +8671,7 @@ pub mod s3_set_object_retention_operation {
         }
         /// <p>Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
         pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
-            self.bypass_governance_retention = input;
-            self
+            self.bypass_governance_retention = input; self
         }
         /// <p>Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn retention(mut self, input: crate::model::S3Retention) -> Self {
@@ -9279,21 +8679,21 @@ pub mod s3_set_object_retention_operation {
             self
         }
         /// <p>Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn set_retention(
-            mut self,
-            input: std::option::Option<crate::model::S3Retention>,
-        ) -> Self {
-            self.retention = input;
-            self
+        pub fn set_retention(mut self, input: std::option::Option<crate::model::S3Retention>) -> Self {
+            self.retention = input; self
         }
         /// Consumes the builder and constructs a [`S3SetObjectRetentionOperation`](crate::model::S3SetObjectRetentionOperation).
         pub fn build(self) -> crate::model::S3SetObjectRetentionOperation {
             crate::model::S3SetObjectRetentionOperation {
-                bypass_governance_retention: self.bypass_governance_retention,
-                retention: self.retention,
+                bypass_governance_retention: self.bypass_governance_retention
+                ,
+                retention: self.retention
+                ,
             }
         }
     }
+    
+    
 }
 impl S3SetObjectRetentionOperation {
     /// Creates a new builder-style object to manufacture [`S3SetObjectRetentionOperation`](crate::model::S3SetObjectRetentionOperation).
@@ -9305,7 +8705,7 @@ impl S3SetObjectRetentionOperation {
 /// <p>Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the retention from your objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Retention {
+pub struct S3Retention  {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
     #[doc(hidden)]
     pub retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -9315,17 +8715,17 @@ pub struct S3Retention {
 }
 impl S3Retention {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn retain_until_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.retain_until_date.as_ref()
     }
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::model::S3ObjectLockRetentionMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::S3ObjectLockRetentionMode> {
         self.mode.as_ref()
     }
 }
 /// See [`S3Retention`](crate::model::S3Retention).
 pub mod s3_retention {
-
+    
     /// A builder for [`S3Retention`](crate::model::S3Retention).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9339,12 +8739,8 @@ pub mod s3_retention {
             self
         }
         /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-        pub fn set_retain_until_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.retain_until_date = input;
-            self
+        pub fn set_retain_until_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.retain_until_date = input; self
         }
         /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
         pub fn mode(mut self, input: crate::model::S3ObjectLockRetentionMode) -> Self {
@@ -9352,21 +8748,21 @@ pub mod s3_retention {
             self
         }
         /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
-        pub fn set_mode(
-            mut self,
-            input: std::option::Option<crate::model::S3ObjectLockRetentionMode>,
-        ) -> Self {
-            self.mode = input;
-            self
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::S3ObjectLockRetentionMode>) -> Self {
+            self.mode = input; self
         }
         /// Consumes the builder and constructs a [`S3Retention`](crate::model::S3Retention).
         pub fn build(self) -> crate::model::S3Retention {
             crate::model::S3Retention {
-                retain_until_date: self.retain_until_date,
-                mode: self.mode,
+                retain_until_date: self.retain_until_date
+                ,
+                mode: self.mode
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Retention {
     /// Creates a new builder-style object to manufacture [`S3Retention`](crate::model::S3Retention).
@@ -9381,9 +8777,9 @@ impl S3Retention {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3objectlockretentionmode = unimplemented!();
 /// match s3objectlockretentionmode {
@@ -9405,60 +8801,52 @@ impl S3Retention {
 /// Specifically, when `s3objectlockretentionmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3ObjectLockRetentionMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3ObjectLockRetentionMode {
     #[allow(missing_docs)] // documentation missing in model
     Compliance,
     #[allow(missing_docs)] // documentation missing in model
     Governance,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3ObjectLockRetentionMode {
     fn from(s: &str) -> Self {
         match s {
             "COMPLIANCE" => S3ObjectLockRetentionMode::Compliance,
             "GOVERNANCE" => S3ObjectLockRetentionMode::Governance,
-            other => S3ObjectLockRetentionMode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => S3ObjectLockRetentionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3ObjectLockRetentionMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3ObjectLockRetentionMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3ObjectLockRetentionMode::from(s))
+                }
+            }
 impl S3ObjectLockRetentionMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3ObjectLockRetentionMode::Compliance => "COMPLIANCE",
             S3ObjectLockRetentionMode::Governance => "GOVERNANCE",
-            S3ObjectLockRetentionMode::Unknown(value) => value.as_str(),
+            S3ObjectLockRetentionMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLIANCE", "GOVERNANCE"]
+        &[
+            "COMPLIANCE", "GOVERNANCE"
+        ]
     }
 }
 impl AsRef<str> for S3ObjectLockRetentionMode {
@@ -9470,20 +8858,20 @@ impl AsRef<str> for S3ObjectLockRetentionMode {
 /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3SetObjectLegalHoldOperation {
+pub struct S3SetObjectLegalHoldOperation  {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     #[doc(hidden)]
     pub legal_hold: std::option::Option<crate::model::S3ObjectLockLegalHold>,
 }
 impl S3SetObjectLegalHoldOperation {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-    pub fn legal_hold(&self) -> std::option::Option<&crate::model::S3ObjectLockLegalHold> {
+    pub fn legal_hold(&self) -> std::option::Option<& crate::model::S3ObjectLockLegalHold> {
         self.legal_hold.as_ref()
     }
 }
 /// See [`S3SetObjectLegalHoldOperation`](crate::model::S3SetObjectLegalHoldOperation).
 pub mod s3_set_object_legal_hold_operation {
-
+    
     /// A builder for [`S3SetObjectLegalHoldOperation`](crate::model::S3SetObjectLegalHoldOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9496,20 +8884,19 @@ pub mod s3_set_object_legal_hold_operation {
             self
         }
         /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-        pub fn set_legal_hold(
-            mut self,
-            input: std::option::Option<crate::model::S3ObjectLockLegalHold>,
-        ) -> Self {
-            self.legal_hold = input;
-            self
+        pub fn set_legal_hold(mut self, input: std::option::Option<crate::model::S3ObjectLockLegalHold>) -> Self {
+            self.legal_hold = input; self
         }
         /// Consumes the builder and constructs a [`S3SetObjectLegalHoldOperation`](crate::model::S3SetObjectLegalHoldOperation).
         pub fn build(self) -> crate::model::S3SetObjectLegalHoldOperation {
             crate::model::S3SetObjectLegalHoldOperation {
-                legal_hold: self.legal_hold,
+                legal_hold: self.legal_hold
+                ,
             }
         }
     }
+    
+    
 }
 impl S3SetObjectLegalHoldOperation {
     /// Creates a new builder-style object to manufacture [`S3SetObjectLegalHoldOperation`](crate::model::S3SetObjectLegalHoldOperation).
@@ -9521,20 +8908,20 @@ impl S3SetObjectLegalHoldOperation {
 /// <p>Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch Operations job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ObjectLockLegalHold {
+pub struct S3ObjectLockLegalHold  {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
 }
 impl S3ObjectLockLegalHold {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::S3ObjectLockLegalHoldStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::S3ObjectLockLegalHoldStatus> {
         self.status.as_ref()
     }
 }
 /// See [`S3ObjectLockLegalHold`](crate::model::S3ObjectLockLegalHold).
 pub mod s3_object_lock_legal_hold {
-
+    
     /// A builder for [`S3ObjectLockLegalHold`](crate::model::S3ObjectLockLegalHold).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9547,20 +8934,19 @@ pub mod s3_object_lock_legal_hold {
             self
         }
         /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`S3ObjectLockLegalHold`](crate::model::S3ObjectLockLegalHold).
         pub fn build(self) -> crate::model::S3ObjectLockLegalHold {
             crate::model::S3ObjectLockLegalHold {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl S3ObjectLockLegalHold {
     /// Creates a new builder-style object to manufacture [`S3ObjectLockLegalHold`](crate::model::S3ObjectLockLegalHold).
@@ -9575,9 +8961,9 @@ impl S3ObjectLockLegalHold {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3objectlocklegalholdstatus = unimplemented!();
 /// match s3objectlocklegalholdstatus {
@@ -9599,60 +8985,52 @@ impl S3ObjectLockLegalHold {
 /// Specifically, when `s3objectlocklegalholdstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3ObjectLockLegalHoldStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3ObjectLockLegalHoldStatus {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     #[allow(missing_docs)] // documentation missing in model
     On,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3ObjectLockLegalHoldStatus {
     fn from(s: &str) -> Self {
         match s {
             "OFF" => S3ObjectLockLegalHoldStatus::Off,
             "ON" => S3ObjectLockLegalHoldStatus::On,
-            other => S3ObjectLockLegalHoldStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => S3ObjectLockLegalHoldStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3ObjectLockLegalHoldStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3ObjectLockLegalHoldStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3ObjectLockLegalHoldStatus::from(s))
+                }
+            }
 impl S3ObjectLockLegalHoldStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3ObjectLockLegalHoldStatus::Off => "OFF",
             S3ObjectLockLegalHoldStatus::On => "ON",
-            S3ObjectLockLegalHoldStatus::Unknown(value) => value.as_str(),
+            S3ObjectLockLegalHoldStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OFF", "ON"]
+        &[
+            "OFF", "ON"
+        ]
     }
 }
 impl AsRef<str> for S3ObjectLockLegalHoldStatus {
@@ -9664,9 +9042,9 @@ impl AsRef<str> for S3ObjectLockLegalHoldStatus {
 /// <p>Contains the configuration parameters for an S3 Initiate Restore Object job. S3 Batch Operations passes every object to the underlying POST Object restore API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">RestoreObject</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3InitiateRestoreObjectOperation {
-    /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
-    /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
+pub struct S3InitiateRestoreObjectOperation  {
+    /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p> 
+    /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p> 
     /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
     #[doc(hidden)]
     pub expiration_in_days: std::option::Option<i32>,
@@ -9675,20 +9053,20 @@ pub struct S3InitiateRestoreObjectOperation {
     pub glacier_job_tier: std::option::Option<crate::model::S3GlacierJobTier>,
 }
 impl S3InitiateRestoreObjectOperation {
-    /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
-    /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
+    /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p> 
+    /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p> 
     /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
     pub fn expiration_in_days(&self) -> std::option::Option<i32> {
         self.expiration_in_days
     }
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
-    pub fn glacier_job_tier(&self) -> std::option::Option<&crate::model::S3GlacierJobTier> {
+    pub fn glacier_job_tier(&self) -> std::option::Option<& crate::model::S3GlacierJobTier> {
         self.glacier_job_tier.as_ref()
     }
 }
 /// See [`S3InitiateRestoreObjectOperation`](crate::model::S3InitiateRestoreObjectOperation).
 pub mod s3_initiate_restore_object_operation {
-
+    
     /// A builder for [`S3InitiateRestoreObjectOperation`](crate::model::S3InitiateRestoreObjectOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9696,19 +9074,18 @@ pub mod s3_initiate_restore_object_operation {
         pub(crate) glacier_job_tier: std::option::Option<crate::model::S3GlacierJobTier>,
     }
     impl Builder {
-        /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
-        /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
+        /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p> 
+        /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p> 
         /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
         pub fn expiration_in_days(mut self, input: i32) -> Self {
             self.expiration_in_days = Some(input);
             self
         }
-        /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
-        /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
+        /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p> 
+        /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p> 
         /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
         pub fn set_expiration_in_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.expiration_in_days = input;
-            self
+            self.expiration_in_days = input; self
         }
         /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
         pub fn glacier_job_tier(mut self, input: crate::model::S3GlacierJobTier) -> Self {
@@ -9716,21 +9093,21 @@ pub mod s3_initiate_restore_object_operation {
             self
         }
         /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
-        pub fn set_glacier_job_tier(
-            mut self,
-            input: std::option::Option<crate::model::S3GlacierJobTier>,
-        ) -> Self {
-            self.glacier_job_tier = input;
-            self
+        pub fn set_glacier_job_tier(mut self, input: std::option::Option<crate::model::S3GlacierJobTier>) -> Self {
+            self.glacier_job_tier = input; self
         }
         /// Consumes the builder and constructs a [`S3InitiateRestoreObjectOperation`](crate::model::S3InitiateRestoreObjectOperation).
         pub fn build(self) -> crate::model::S3InitiateRestoreObjectOperation {
             crate::model::S3InitiateRestoreObjectOperation {
-                expiration_in_days: self.expiration_in_days,
-                glacier_job_tier: self.glacier_job_tier,
+                expiration_in_days: self.expiration_in_days
+                ,
+                glacier_job_tier: self.glacier_job_tier
+                ,
             }
         }
     }
+    
+    
 }
 impl S3InitiateRestoreObjectOperation {
     /// Creates a new builder-style object to manufacture [`S3InitiateRestoreObjectOperation`](crate::model::S3InitiateRestoreObjectOperation).
@@ -9745,9 +9122,9 @@ impl S3InitiateRestoreObjectOperation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3glacierjobtier = unimplemented!();
 /// match s3glacierjobtier {
@@ -9769,58 +9146,52 @@ impl S3InitiateRestoreObjectOperation {
 /// Specifically, when `s3glacierjobtier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3GlacierJobTier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3GlacierJobTier {
     #[allow(missing_docs)] // documentation missing in model
     Bulk,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3GlacierJobTier {
     fn from(s: &str) -> Self {
         match s {
             "BULK" => S3GlacierJobTier::Bulk,
             "STANDARD" => S3GlacierJobTier::Standard,
-            other => S3GlacierJobTier::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => S3GlacierJobTier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3GlacierJobTier {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3GlacierJobTier::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3GlacierJobTier::from(s))
+                }
+            }
 impl S3GlacierJobTier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3GlacierJobTier::Bulk => "BULK",
             S3GlacierJobTier::Standard => "STANDARD",
-            S3GlacierJobTier::Unknown(value) => value.as_str(),
+            S3GlacierJobTier::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BULK", "STANDARD"]
+        &[
+            "BULK", "STANDARD"
+        ]
     }
 }
 impl AsRef<str> for S3GlacierJobTier {
@@ -9832,19 +9203,24 @@ impl AsRef<str> for S3GlacierJobTier {
 /// <p>Contains no configuration parameters because the DELETE Object tagging API only accepts the bucket name and key name as parameters, which are defined in the job's manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DeleteObjectTaggingOperation {}
+pub struct S3DeleteObjectTaggingOperation  {
+}
 /// See [`S3DeleteObjectTaggingOperation`](crate::model::S3DeleteObjectTaggingOperation).
 pub mod s3_delete_object_tagging_operation {
-
+    
     /// A builder for [`S3DeleteObjectTaggingOperation`](crate::model::S3DeleteObjectTaggingOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`S3DeleteObjectTaggingOperation`](crate::model::S3DeleteObjectTaggingOperation).
         pub fn build(self) -> crate::model::S3DeleteObjectTaggingOperation {
-            crate::model::S3DeleteObjectTaggingOperation {}
+            crate::model::S3DeleteObjectTaggingOperation {
+            }
         }
     }
+    
+    
 }
 impl S3DeleteObjectTaggingOperation {
     /// Creates a new builder-style object to manufacture [`S3DeleteObjectTaggingOperation`](crate::model::S3DeleteObjectTaggingOperation).
@@ -9856,20 +9232,20 @@ impl S3DeleteObjectTaggingOperation {
 /// <p>Contains the configuration parameters for a Set Object Tagging operation. S3 Batch Operations passes every object to the underlying PUT Object tagging API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT Object tagging</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3SetObjectTaggingOperation {
+pub struct S3SetObjectTaggingOperation  {
     /// <p></p>
     #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl S3SetObjectTaggingOperation {
     /// <p></p>
-    pub fn tag_set(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+    pub fn tag_set(&self) -> std::option::Option<& [crate::model::S3Tag]> {
         self.tag_set.as_deref()
     }
 }
 /// See [`S3SetObjectTaggingOperation`](crate::model::S3SetObjectTaggingOperation).
 pub mod s3_set_object_tagging_operation {
-
+    
     /// A builder for [`S3SetObjectTaggingOperation`](crate::model::S3SetObjectTaggingOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9883,25 +9259,24 @@ pub mod s3_set_object_tagging_operation {
         /// <p></p>
         pub fn tag_set(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input);
-            self.tag_set = Some(v);
-            self
+                            v.push(input);
+                            self.tag_set = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_tag_set(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
-        ) -> Self {
-            self.tag_set = input;
-            self
+        pub fn set_tag_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>) -> Self {
+            self.tag_set = input; self
         }
         /// Consumes the builder and constructs a [`S3SetObjectTaggingOperation`](crate::model::S3SetObjectTaggingOperation).
         pub fn build(self) -> crate::model::S3SetObjectTaggingOperation {
             crate::model::S3SetObjectTaggingOperation {
-                tag_set: self.tag_set,
+                tag_set: self.tag_set
+                ,
             }
         }
     }
+    
+    
 }
 impl S3SetObjectTaggingOperation {
     /// Creates a new builder-style object to manufacture [`S3SetObjectTaggingOperation`](crate::model::S3SetObjectTaggingOperation).
@@ -9913,22 +9288,20 @@ impl S3SetObjectTaggingOperation {
 /// <p>Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations passes every object to the underlying <code>PutObjectAcl</code> API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html"> <code>PutObjectAcl</code> </a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3SetObjectAclOperation {
+pub struct S3SetObjectAclOperation  {
     /// <p></p>
     #[doc(hidden)]
     pub access_control_policy: std::option::Option<crate::model::S3AccessControlPolicy>,
 }
 impl S3SetObjectAclOperation {
     /// <p></p>
-    pub fn access_control_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::S3AccessControlPolicy> {
+    pub fn access_control_policy(&self) -> std::option::Option<& crate::model::S3AccessControlPolicy> {
         self.access_control_policy.as_ref()
     }
 }
 /// See [`S3SetObjectAclOperation`](crate::model::S3SetObjectAclOperation).
 pub mod s3_set_object_acl_operation {
-
+    
     /// A builder for [`S3SetObjectAclOperation`](crate::model::S3SetObjectAclOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9941,20 +9314,19 @@ pub mod s3_set_object_acl_operation {
             self
         }
         /// <p></p>
-        pub fn set_access_control_policy(
-            mut self,
-            input: std::option::Option<crate::model::S3AccessControlPolicy>,
-        ) -> Self {
-            self.access_control_policy = input;
-            self
+        pub fn set_access_control_policy(mut self, input: std::option::Option<crate::model::S3AccessControlPolicy>) -> Self {
+            self.access_control_policy = input; self
         }
         /// Consumes the builder and constructs a [`S3SetObjectAclOperation`](crate::model::S3SetObjectAclOperation).
         pub fn build(self) -> crate::model::S3SetObjectAclOperation {
             crate::model::S3SetObjectAclOperation {
-                access_control_policy: self.access_control_policy,
+                access_control_policy: self.access_control_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl S3SetObjectAclOperation {
     /// Creates a new builder-style object to manufacture [`S3SetObjectAclOperation`](crate::model::S3SetObjectAclOperation).
@@ -9966,7 +9338,7 @@ impl S3SetObjectAclOperation {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3AccessControlPolicy {
+pub struct S3AccessControlPolicy  {
     /// <p></p>
     #[doc(hidden)]
     pub access_control_list: std::option::Option<crate::model::S3AccessControlList>,
@@ -9976,25 +9348,22 @@ pub struct S3AccessControlPolicy {
 }
 impl S3AccessControlPolicy {
     /// <p></p>
-    pub fn access_control_list(&self) -> std::option::Option<&crate::model::S3AccessControlList> {
+    pub fn access_control_list(&self) -> std::option::Option<& crate::model::S3AccessControlList> {
         self.access_control_list.as_ref()
     }
     /// <p></p>
-    pub fn canned_access_control_list(
-        &self,
-    ) -> std::option::Option<&crate::model::S3CannedAccessControlList> {
+    pub fn canned_access_control_list(&self) -> std::option::Option<& crate::model::S3CannedAccessControlList> {
         self.canned_access_control_list.as_ref()
     }
 }
 /// See [`S3AccessControlPolicy`](crate::model::S3AccessControlPolicy).
 pub mod s3_access_control_policy {
-
+    
     /// A builder for [`S3AccessControlPolicy`](crate::model::S3AccessControlPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_control_list: std::option::Option<crate::model::S3AccessControlList>,
-        pub(crate) canned_access_control_list:
-            std::option::Option<crate::model::S3CannedAccessControlList>,
+        pub(crate) canned_access_control_list: std::option::Option<crate::model::S3CannedAccessControlList>,
     }
     impl Builder {
         /// <p></p>
@@ -10003,37 +9372,30 @@ pub mod s3_access_control_policy {
             self
         }
         /// <p></p>
-        pub fn set_access_control_list(
-            mut self,
-            input: std::option::Option<crate::model::S3AccessControlList>,
-        ) -> Self {
-            self.access_control_list = input;
-            self
+        pub fn set_access_control_list(mut self, input: std::option::Option<crate::model::S3AccessControlList>) -> Self {
+            self.access_control_list = input; self
         }
         /// <p></p>
-        pub fn canned_access_control_list(
-            mut self,
-            input: crate::model::S3CannedAccessControlList,
-        ) -> Self {
+        pub fn canned_access_control_list(mut self, input: crate::model::S3CannedAccessControlList) -> Self {
             self.canned_access_control_list = Some(input);
             self
         }
         /// <p></p>
-        pub fn set_canned_access_control_list(
-            mut self,
-            input: std::option::Option<crate::model::S3CannedAccessControlList>,
-        ) -> Self {
-            self.canned_access_control_list = input;
-            self
+        pub fn set_canned_access_control_list(mut self, input: std::option::Option<crate::model::S3CannedAccessControlList>) -> Self {
+            self.canned_access_control_list = input; self
         }
         /// Consumes the builder and constructs a [`S3AccessControlPolicy`](crate::model::S3AccessControlPolicy).
         pub fn build(self) -> crate::model::S3AccessControlPolicy {
             crate::model::S3AccessControlPolicy {
-                access_control_list: self.access_control_list,
-                canned_access_control_list: self.canned_access_control_list,
+                access_control_list: self.access_control_list
+                ,
+                canned_access_control_list: self.canned_access_control_list
+                ,
             }
         }
     }
+    
+    
 }
 impl S3AccessControlPolicy {
     /// Creates a new builder-style object to manufacture [`S3AccessControlPolicy`](crate::model::S3AccessControlPolicy).
@@ -10048,9 +9410,9 @@ impl S3AccessControlPolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3cannedaccesscontrollist = unimplemented!();
 /// match s3cannedaccesscontrollist {
@@ -10077,22 +9439,14 @@ impl S3AccessControlPolicy {
 /// Specifically, when `s3cannedaccesscontrollist` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3CannedAccessControlList::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3CannedAccessControlList {
     #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
@@ -10109,7 +9463,7 @@ pub enum S3CannedAccessControlList {
     #[allow(missing_docs)] // documentation missing in model
     PublicReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3CannedAccessControlList {
     fn from(s: &str) -> Self {
@@ -10121,19 +9475,17 @@ impl std::convert::From<&str> for S3CannedAccessControlList {
             "private" => S3CannedAccessControlList::Private,
             "public-read" => S3CannedAccessControlList::PublicRead,
             "public-read-write" => S3CannedAccessControlList::PublicReadWrite,
-            other => S3CannedAccessControlList::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => S3CannedAccessControlList::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3CannedAccessControlList {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3CannedAccessControlList::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3CannedAccessControlList::from(s))
+                }
+            }
 impl S3CannedAccessControlList {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10145,19 +9497,13 @@ impl S3CannedAccessControlList {
             S3CannedAccessControlList::Private => "private",
             S3CannedAccessControlList::PublicRead => "public-read",
             S3CannedAccessControlList::PublicReadWrite => "public-read-write",
-            S3CannedAccessControlList::Unknown(value) => value.as_str(),
+            S3CannedAccessControlList::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "authenticated-read",
-            "aws-exec-read",
-            "bucket-owner-full-control",
-            "bucket-owner-read",
-            "private",
-            "public-read",
-            "public-read-write",
+            "authenticated-read", "aws-exec-read", "bucket-owner-full-control", "bucket-owner-read", "private", "public-read", "public-read-write"
         ]
     }
 }
@@ -10170,7 +9516,7 @@ impl AsRef<str> for S3CannedAccessControlList {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3AccessControlList {
+pub struct S3AccessControlList  {
     /// <p></p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::model::S3ObjectOwner>,
@@ -10180,17 +9526,17 @@ pub struct S3AccessControlList {
 }
 impl S3AccessControlList {
     /// <p></p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::S3ObjectOwner> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::S3ObjectOwner> {
         self.owner.as_ref()
     }
     /// <p></p>
-    pub fn grants(&self) -> std::option::Option<&[crate::model::S3Grant]> {
+    pub fn grants(&self) -> std::option::Option<& [crate::model::S3Grant]> {
         self.grants.as_deref()
     }
 }
 /// See [`S3AccessControlList`](crate::model::S3AccessControlList).
 pub mod s3_access_control_list {
-
+    
     /// A builder for [`S3AccessControlList`](crate::model::S3AccessControlList).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10204,12 +9550,8 @@ pub mod s3_access_control_list {
             self
         }
         /// <p></p>
-        pub fn set_owner(
-            mut self,
-            input: std::option::Option<crate::model::S3ObjectOwner>,
-        ) -> Self {
-            self.owner = input;
-            self
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::S3ObjectOwner>) -> Self {
+            self.owner = input; self
         }
         /// Appends an item to `grants`.
         ///
@@ -10218,26 +9560,26 @@ pub mod s3_access_control_list {
         /// <p></p>
         pub fn grants(mut self, input: crate::model::S3Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input);
-            self.grants = Some(v);
-            self
+                            v.push(input);
+                            self.grants = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_grants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Grant>>,
-        ) -> Self {
-            self.grants = input;
-            self
+        pub fn set_grants(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Grant>>) -> Self {
+            self.grants = input; self
         }
         /// Consumes the builder and constructs a [`S3AccessControlList`](crate::model::S3AccessControlList).
         pub fn build(self) -> crate::model::S3AccessControlList {
             crate::model::S3AccessControlList {
-                owner: self.owner,
-                grants: self.grants,
+                owner: self.owner
+                ,
+                grants: self.grants
+                ,
             }
         }
     }
+    
+    
 }
 impl S3AccessControlList {
     /// Creates a new builder-style object to manufacture [`S3AccessControlList`](crate::model::S3AccessControlList).
@@ -10249,7 +9591,7 @@ impl S3AccessControlList {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Grant {
+pub struct S3Grant  {
     /// <p></p>
     #[doc(hidden)]
     pub grantee: std::option::Option<crate::model::S3Grantee>,
@@ -10259,17 +9601,17 @@ pub struct S3Grant {
 }
 impl S3Grant {
     /// <p></p>
-    pub fn grantee(&self) -> std::option::Option<&crate::model::S3Grantee> {
+    pub fn grantee(&self) -> std::option::Option<& crate::model::S3Grantee> {
         self.grantee.as_ref()
     }
     /// <p></p>
-    pub fn permission(&self) -> std::option::Option<&crate::model::S3Permission> {
+    pub fn permission(&self) -> std::option::Option<& crate::model::S3Permission> {
         self.permission.as_ref()
     }
 }
 /// See [`S3Grant`](crate::model::S3Grant).
 pub mod s3_grant {
-
+    
     /// A builder for [`S3Grant`](crate::model::S3Grant).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10284,8 +9626,7 @@ pub mod s3_grant {
         }
         /// <p></p>
         pub fn set_grantee(mut self, input: std::option::Option<crate::model::S3Grantee>) -> Self {
-            self.grantee = input;
-            self
+            self.grantee = input; self
         }
         /// <p></p>
         pub fn permission(mut self, input: crate::model::S3Permission) -> Self {
@@ -10293,21 +9634,21 @@ pub mod s3_grant {
             self
         }
         /// <p></p>
-        pub fn set_permission(
-            mut self,
-            input: std::option::Option<crate::model::S3Permission>,
-        ) -> Self {
-            self.permission = input;
-            self
+        pub fn set_permission(mut self, input: std::option::Option<crate::model::S3Permission>) -> Self {
+            self.permission = input; self
         }
         /// Consumes the builder and constructs a [`S3Grant`](crate::model::S3Grant).
         pub fn build(self) -> crate::model::S3Grant {
             crate::model::S3Grant {
-                grantee: self.grantee,
-                permission: self.permission,
+                grantee: self.grantee
+                ,
+                permission: self.permission
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Grant {
     /// Creates a new builder-style object to manufacture [`S3Grant`](crate::model::S3Grant).
@@ -10322,9 +9663,9 @@ impl S3Grant {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3permission = unimplemented!();
 /// match s3permission {
@@ -10349,22 +9690,14 @@ impl S3Grant {
 /// Specifically, when `s3permission` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3Permission::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3Permission {
     #[allow(missing_docs)] // documentation missing in model
     FullControl,
@@ -10377,7 +9710,7 @@ pub enum S3Permission {
     #[allow(missing_docs)] // documentation missing in model
     WriteAcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3Permission {
     fn from(s: &str) -> Self {
@@ -10387,17 +9720,17 @@ impl std::convert::From<&str> for S3Permission {
             "READ_ACP" => S3Permission::ReadAcp,
             "WRITE" => S3Permission::Write,
             "WRITE_ACP" => S3Permission::WriteAcp,
-            other => S3Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => S3Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3Permission {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3Permission::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3Permission::from(s))
+                }
+            }
 impl S3Permission {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10407,12 +9740,14 @@ impl S3Permission {
             S3Permission::ReadAcp => "READ_ACP",
             S3Permission::Write => "WRITE",
             S3Permission::WriteAcp => "WRITE_ACP",
-            S3Permission::Unknown(value) => value.as_str(),
+            S3Permission::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"]
+        &[
+            "FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"
+        ]
     }
 }
 impl AsRef<str> for S3Permission {
@@ -10424,7 +9759,7 @@ impl AsRef<str> for S3Permission {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Grantee {
+pub struct S3Grantee  {
     /// <p></p>
     #[doc(hidden)]
     pub type_identifier: std::option::Option<crate::model::S3GranteeTypeIdentifier>,
@@ -10437,21 +9772,21 @@ pub struct S3Grantee {
 }
 impl S3Grantee {
     /// <p></p>
-    pub fn type_identifier(&self) -> std::option::Option<&crate::model::S3GranteeTypeIdentifier> {
+    pub fn type_identifier(&self) -> std::option::Option<& crate::model::S3GranteeTypeIdentifier> {
         self.type_identifier.as_ref()
     }
     /// <p></p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p></p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 /// See [`S3Grantee`](crate::model::S3Grantee).
 pub mod s3_grantee {
-
+    
     /// A builder for [`S3Grantee`](crate::model::S3Grantee).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10466,12 +9801,8 @@ pub mod s3_grantee {
             self
         }
         /// <p></p>
-        pub fn set_type_identifier(
-            mut self,
-            input: std::option::Option<crate::model::S3GranteeTypeIdentifier>,
-        ) -> Self {
-            self.type_identifier = input;
-            self
+        pub fn set_type_identifier(mut self, input: std::option::Option<crate::model::S3GranteeTypeIdentifier>) -> Self {
+            self.type_identifier = input; self
         }
         /// <p></p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10480,8 +9811,7 @@ pub mod s3_grantee {
         }
         /// <p></p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identifier = input;
-            self
+            self.identifier = input; self
         }
         /// <p></p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10490,18 +9820,22 @@ pub mod s3_grantee {
         }
         /// <p></p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// Consumes the builder and constructs a [`S3Grantee`](crate::model::S3Grantee).
         pub fn build(self) -> crate::model::S3Grantee {
             crate::model::S3Grantee {
-                type_identifier: self.type_identifier,
-                identifier: self.identifier,
-                display_name: self.display_name,
+                type_identifier: self.type_identifier
+                ,
+                identifier: self.identifier
+                ,
+                display_name: self.display_name
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Grantee {
     /// Creates a new builder-style object to manufacture [`S3Grantee`](crate::model::S3Grantee).
@@ -10516,9 +9850,9 @@ impl S3Grantee {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3granteetypeidentifier = unimplemented!();
 /// match s3granteetypeidentifier {
@@ -10541,22 +9875,14 @@ impl S3Grantee {
 /// Specifically, when `s3granteetypeidentifier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3GranteeTypeIdentifier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3GranteeTypeIdentifier {
     #[allow(missing_docs)] // documentation missing in model
     EmailAddress,
@@ -10565,7 +9891,7 @@ pub enum S3GranteeTypeIdentifier {
     #[allow(missing_docs)] // documentation missing in model
     Group,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3GranteeTypeIdentifier {
     fn from(s: &str) -> Self {
@@ -10573,19 +9899,17 @@ impl std::convert::From<&str> for S3GranteeTypeIdentifier {
             "emailAddress" => S3GranteeTypeIdentifier::EmailAddress,
             "id" => S3GranteeTypeIdentifier::Canonical,
             "uri" => S3GranteeTypeIdentifier::Group,
-            other => S3GranteeTypeIdentifier::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => S3GranteeTypeIdentifier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3GranteeTypeIdentifier {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3GranteeTypeIdentifier::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3GranteeTypeIdentifier::from(s))
+                }
+            }
 impl S3GranteeTypeIdentifier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10593,12 +9917,14 @@ impl S3GranteeTypeIdentifier {
             S3GranteeTypeIdentifier::EmailAddress => "emailAddress",
             S3GranteeTypeIdentifier::Canonical => "id",
             S3GranteeTypeIdentifier::Group => "uri",
-            S3GranteeTypeIdentifier::Unknown(value) => value.as_str(),
+            S3GranteeTypeIdentifier::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["emailAddress", "id", "uri"]
+        &[
+            "emailAddress", "id", "uri"
+        ]
     }
 }
 impl AsRef<str> for S3GranteeTypeIdentifier {
@@ -10610,7 +9936,7 @@ impl AsRef<str> for S3GranteeTypeIdentifier {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ObjectOwner {
+pub struct S3ObjectOwner  {
     /// <p></p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -10620,17 +9946,17 @@ pub struct S3ObjectOwner {
 }
 impl S3ObjectOwner {
     /// <p></p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p></p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 /// See [`S3ObjectOwner`](crate::model::S3ObjectOwner).
 pub mod s3_object_owner {
-
+    
     /// A builder for [`S3ObjectOwner`](crate::model::S3ObjectOwner).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10645,8 +9971,7 @@ pub mod s3_object_owner {
         }
         /// <p></p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p></p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10655,17 +9980,20 @@ pub mod s3_object_owner {
         }
         /// <p></p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// Consumes the builder and constructs a [`S3ObjectOwner`](crate::model::S3ObjectOwner).
         pub fn build(self) -> crate::model::S3ObjectOwner {
             crate::model::S3ObjectOwner {
-                id: self.id,
-                display_name: self.display_name,
+                id: self.id
+                ,
+                display_name: self.display_name
+                ,
             }
         }
     }
+    
+    
 }
 impl S3ObjectOwner {
     /// Creates a new builder-style object to manufacture [`S3ObjectOwner`](crate::model::S3ObjectOwner).
@@ -10677,7 +10005,7 @@ impl S3ObjectOwner {
 /// <p>Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations passes every object to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3CopyObjectOperation {
+pub struct S3CopyObjectOperation  {
     /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
     #[doc(hidden)]
     pub target_resource: std::option::Option<std::string::String>,
@@ -10719,15 +10047,14 @@ pub struct S3CopyObjectOperation {
     pub target_key_prefix: std::option::Option<std::string::String>,
     /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
     #[doc(hidden)]
-    pub object_lock_legal_hold_status:
-        std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
+    pub object_lock_legal_hold_status: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
     /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
     #[doc(hidden)]
     pub object_lock_mode: std::option::Option<crate::model::S3ObjectLockMode>,
     /// <p>The date when the applied object retention configuration expires on all objects in the Batch Operations job.</p>
     #[doc(hidden)]
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p> 
     /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
     #[doc(hidden)]
     pub bucket_key_enabled: bool,
@@ -10737,37 +10064,35 @@ pub struct S3CopyObjectOperation {
 }
 impl S3CopyObjectOperation {
     /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
-    pub fn target_resource(&self) -> std::option::Option<&str> {
+    pub fn target_resource(&self) -> std::option::Option<& str> {
         self.target_resource.as_deref()
     }
     /// <p></p>
-    pub fn canned_access_control_list(
-        &self,
-    ) -> std::option::Option<&crate::model::S3CannedAccessControlList> {
+    pub fn canned_access_control_list(&self) -> std::option::Option<& crate::model::S3CannedAccessControlList> {
         self.canned_access_control_list.as_ref()
     }
     /// <p></p>
-    pub fn access_control_grants(&self) -> std::option::Option<&[crate::model::S3Grant]> {
+    pub fn access_control_grants(&self) -> std::option::Option<& [crate::model::S3Grant]> {
         self.access_control_grants.as_deref()
     }
     /// <p></p>
-    pub fn metadata_directive(&self) -> std::option::Option<&crate::model::S3MetadataDirective> {
+    pub fn metadata_directive(&self) -> std::option::Option<& crate::model::S3MetadataDirective> {
         self.metadata_directive.as_ref()
     }
     /// <p></p>
-    pub fn modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_since_constraint(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_since_constraint.as_ref()
     }
     /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
-    pub fn new_object_metadata(&self) -> std::option::Option<&crate::model::S3ObjectMetadata> {
+    pub fn new_object_metadata(&self) -> std::option::Option<& crate::model::S3ObjectMetadata> {
         self.new_object_metadata.as_ref()
     }
     /// <p></p>
-    pub fn new_object_tagging(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+    pub fn new_object_tagging(&self) -> std::option::Option<& [crate::model::S3Tag]> {
         self.new_object_tagging.as_deref()
     }
     /// <p>Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a website endpoint.</p>
-    pub fn redirect_location(&self) -> std::option::Option<&str> {
+    pub fn redirect_location(&self) -> std::option::Option<& str> {
         self.redirect_location.as_deref()
     }
     /// <p></p>
@@ -10775,56 +10100,51 @@ impl S3CopyObjectOperation {
         self.requester_pays
     }
     /// <p></p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::model::S3StorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::model::S3StorageClass> {
         self.storage_class.as_ref()
     }
     /// <p></p>
-    pub fn un_modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn un_modified_since_constraint(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.un_modified_since_constraint.as_ref()
     }
     /// <p></p>
-    pub fn sse_aws_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn sse_aws_kms_key_id(&self) -> std::option::Option<& str> {
         self.sse_aws_kms_key_id.as_deref()
     }
     /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
-    pub fn target_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn target_key_prefix(&self) -> std::option::Option<& str> {
         self.target_key_prefix.as_deref()
     }
     /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
-    pub fn object_lock_legal_hold_status(
-        &self,
-    ) -> std::option::Option<&crate::model::S3ObjectLockLegalHoldStatus> {
+    pub fn object_lock_legal_hold_status(&self) -> std::option::Option<& crate::model::S3ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
     /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
-    pub fn object_lock_mode(&self) -> std::option::Option<&crate::model::S3ObjectLockMode> {
+    pub fn object_lock_mode(&self) -> std::option::Option<& crate::model::S3ObjectLockMode> {
         self.object_lock_mode.as_ref()
     }
     /// <p>The date when the applied object retention configuration expires on all objects in the Batch Operations job.</p>
-    pub fn object_lock_retain_until_date(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn object_lock_retain_until_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p> 
     /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
     /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::S3ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<& crate::model::S3ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
 /// See [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation).
 pub mod s3_copy_object_operation {
-
+    
     /// A builder for [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_resource: std::option::Option<std::string::String>,
-        pub(crate) canned_access_control_list:
-            std::option::Option<crate::model::S3CannedAccessControlList>,
+        pub(crate) canned_access_control_list: std::option::Option<crate::model::S3CannedAccessControlList>,
         pub(crate) access_control_grants: std::option::Option<std::vec::Vec<crate::model::S3Grant>>,
         pub(crate) metadata_directive: std::option::Option<crate::model::S3MetadataDirective>,
         pub(crate) modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
@@ -10836,8 +10156,7 @@ pub mod s3_copy_object_operation {
         pub(crate) un_modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sse_aws_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) target_key_prefix: std::option::Option<std::string::String>,
-        pub(crate) object_lock_legal_hold_status:
-            std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
+        pub(crate) object_lock_legal_hold_status: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
         pub(crate) object_lock_mode: std::option::Option<crate::model::S3ObjectLockMode>,
         pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
@@ -10850,28 +10169,17 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
-        pub fn set_target_resource(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_resource = input;
-            self
+        pub fn set_target_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_resource = input; self
         }
         /// <p></p>
-        pub fn canned_access_control_list(
-            mut self,
-            input: crate::model::S3CannedAccessControlList,
-        ) -> Self {
+        pub fn canned_access_control_list(mut self, input: crate::model::S3CannedAccessControlList) -> Self {
             self.canned_access_control_list = Some(input);
             self
         }
         /// <p></p>
-        pub fn set_canned_access_control_list(
-            mut self,
-            input: std::option::Option<crate::model::S3CannedAccessControlList>,
-        ) -> Self {
-            self.canned_access_control_list = input;
-            self
+        pub fn set_canned_access_control_list(mut self, input: std::option::Option<crate::model::S3CannedAccessControlList>) -> Self {
+            self.canned_access_control_list = input; self
         }
         /// Appends an item to `access_control_grants`.
         ///
@@ -10880,17 +10188,13 @@ pub mod s3_copy_object_operation {
         /// <p></p>
         pub fn access_control_grants(mut self, input: crate::model::S3Grant) -> Self {
             let mut v = self.access_control_grants.unwrap_or_default();
-            v.push(input);
-            self.access_control_grants = Some(v);
-            self
+                            v.push(input);
+                            self.access_control_grants = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_access_control_grants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Grant>>,
-        ) -> Self {
-            self.access_control_grants = input;
-            self
+        pub fn set_access_control_grants(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Grant>>) -> Self {
+            self.access_control_grants = input; self
         }
         /// <p></p>
         pub fn metadata_directive(mut self, input: crate::model::S3MetadataDirective) -> Self {
@@ -10898,12 +10202,8 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p></p>
-        pub fn set_metadata_directive(
-            mut self,
-            input: std::option::Option<crate::model::S3MetadataDirective>,
-        ) -> Self {
-            self.metadata_directive = input;
-            self
+        pub fn set_metadata_directive(mut self, input: std::option::Option<crate::model::S3MetadataDirective>) -> Self {
+            self.metadata_directive = input; self
         }
         /// <p></p>
         pub fn modified_since_constraint(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10911,12 +10211,8 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p></p>
-        pub fn set_modified_since_constraint(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_since_constraint = input;
-            self
+        pub fn set_modified_since_constraint(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_since_constraint = input; self
         }
         /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
         pub fn new_object_metadata(mut self, input: crate::model::S3ObjectMetadata) -> Self {
@@ -10924,12 +10220,8 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
-        pub fn set_new_object_metadata(
-            mut self,
-            input: std::option::Option<crate::model::S3ObjectMetadata>,
-        ) -> Self {
-            self.new_object_metadata = input;
-            self
+        pub fn set_new_object_metadata(mut self, input: std::option::Option<crate::model::S3ObjectMetadata>) -> Self {
+            self.new_object_metadata = input; self
         }
         /// Appends an item to `new_object_tagging`.
         ///
@@ -10938,17 +10230,13 @@ pub mod s3_copy_object_operation {
         /// <p></p>
         pub fn new_object_tagging(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.new_object_tagging.unwrap_or_default();
-            v.push(input);
-            self.new_object_tagging = Some(v);
-            self
+                            v.push(input);
+                            self.new_object_tagging = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_new_object_tagging(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
-        ) -> Self {
-            self.new_object_tagging = input;
-            self
+        pub fn set_new_object_tagging(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>) -> Self {
+            self.new_object_tagging = input; self
         }
         /// <p>Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a website endpoint.</p>
         pub fn redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10956,12 +10244,8 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p>Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a website endpoint.</p>
-        pub fn set_redirect_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.redirect_location = input;
-            self
+        pub fn set_redirect_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.redirect_location = input; self
         }
         /// <p></p>
         pub fn requester_pays(mut self, input: bool) -> Self {
@@ -10970,8 +10254,7 @@ pub mod s3_copy_object_operation {
         }
         /// <p></p>
         pub fn set_requester_pays(mut self, input: std::option::Option<bool>) -> Self {
-            self.requester_pays = input;
-            self
+            self.requester_pays = input; self
         }
         /// <p></p>
         pub fn storage_class(mut self, input: crate::model::S3StorageClass) -> Self {
@@ -10979,12 +10262,8 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p></p>
-        pub fn set_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::S3StorageClass>,
-        ) -> Self {
-            self.storage_class = input;
-            self
+        pub fn set_storage_class(mut self, input: std::option::Option<crate::model::S3StorageClass>) -> Self {
+            self.storage_class = input; self
         }
         /// <p></p>
         pub fn un_modified_since_constraint(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10992,12 +10271,8 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p></p>
-        pub fn set_un_modified_since_constraint(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.un_modified_since_constraint = input;
-            self
+        pub fn set_un_modified_since_constraint(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.un_modified_since_constraint = input; self
         }
         /// <p></p>
         pub fn sse_aws_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11005,12 +10280,8 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p></p>
-        pub fn set_sse_aws_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sse_aws_kms_key_id = input;
-            self
+        pub fn set_sse_aws_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sse_aws_kms_key_id = input; self
         }
         /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
         pub fn target_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11018,28 +10289,17 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
-        pub fn set_target_key_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_key_prefix = input;
-            self
+        pub fn set_target_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_key_prefix = input; self
         }
         /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
-        pub fn object_lock_legal_hold_status(
-            mut self,
-            input: crate::model::S3ObjectLockLegalHoldStatus,
-        ) -> Self {
+        pub fn object_lock_legal_hold_status(mut self, input: crate::model::S3ObjectLockLegalHoldStatus) -> Self {
             self.object_lock_legal_hold_status = Some(input);
             self
         }
         /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
-        pub fn set_object_lock_legal_hold_status(
-            mut self,
-            input: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
-        ) -> Self {
-            self.object_lock_legal_hold_status = input;
-            self
+        pub fn set_object_lock_legal_hold_status(mut self, input: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>) -> Self {
+            self.object_lock_legal_hold_status = input; self
         }
         /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
         pub fn object_lock_mode(mut self, input: crate::model::S3ObjectLockMode) -> Self {
@@ -11047,12 +10307,8 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
-        pub fn set_object_lock_mode(
-            mut self,
-            input: std::option::Option<crate::model::S3ObjectLockMode>,
-        ) -> Self {
-            self.object_lock_mode = input;
-            self
+        pub fn set_object_lock_mode(mut self, input: std::option::Option<crate::model::S3ObjectLockMode>) -> Self {
+            self.object_lock_mode = input; self
         }
         /// <p>The date when the applied object retention configuration expires on all objects in the Batch Operations job.</p>
         pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11060,24 +10316,19 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p>The date when the applied object retention configuration expires on all objects in the Batch Operations job.</p>
-        pub fn set_object_lock_retain_until_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.object_lock_retain_until_date = input;
-            self
+        pub fn set_object_lock_retain_until_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.object_lock_retain_until_date = input; self
         }
-        /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
+        /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p> 
         /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
+        /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p> 
         /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
         pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.bucket_key_enabled = input;
-            self
+            self.bucket_key_enabled = input; self
         }
         /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn checksum_algorithm(mut self, input: crate::model::S3ChecksumAlgorithm) -> Self {
@@ -11085,37 +10336,55 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn set_checksum_algorithm(
-            mut self,
-            input: std::option::Option<crate::model::S3ChecksumAlgorithm>,
-        ) -> Self {
-            self.checksum_algorithm = input;
-            self
+        pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::S3ChecksumAlgorithm>) -> Self {
+            self.checksum_algorithm = input; self
         }
         /// Consumes the builder and constructs a [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation).
         pub fn build(self) -> crate::model::S3CopyObjectOperation {
             crate::model::S3CopyObjectOperation {
-                target_resource: self.target_resource,
-                canned_access_control_list: self.canned_access_control_list,
-                access_control_grants: self.access_control_grants,
-                metadata_directive: self.metadata_directive,
-                modified_since_constraint: self.modified_since_constraint,
-                new_object_metadata: self.new_object_metadata,
-                new_object_tagging: self.new_object_tagging,
-                redirect_location: self.redirect_location,
-                requester_pays: self.requester_pays.unwrap_or_default(),
-                storage_class: self.storage_class,
-                un_modified_since_constraint: self.un_modified_since_constraint,
-                sse_aws_kms_key_id: self.sse_aws_kms_key_id,
-                target_key_prefix: self.target_key_prefix,
-                object_lock_legal_hold_status: self.object_lock_legal_hold_status,
-                object_lock_mode: self.object_lock_mode,
-                object_lock_retain_until_date: self.object_lock_retain_until_date,
-                bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
-                checksum_algorithm: self.checksum_algorithm,
+                target_resource: self.target_resource
+                ,
+                canned_access_control_list: self.canned_access_control_list
+                ,
+                access_control_grants: self.access_control_grants
+                ,
+                metadata_directive: self.metadata_directive
+                ,
+                modified_since_constraint: self.modified_since_constraint
+                ,
+                new_object_metadata: self.new_object_metadata
+                ,
+                new_object_tagging: self.new_object_tagging
+                ,
+                redirect_location: self.redirect_location
+                ,
+                requester_pays: self.requester_pays
+                    .unwrap_or_default()
+                ,
+                storage_class: self.storage_class
+                ,
+                un_modified_since_constraint: self.un_modified_since_constraint
+                ,
+                sse_aws_kms_key_id: self.sse_aws_kms_key_id
+                ,
+                target_key_prefix: self.target_key_prefix
+                ,
+                object_lock_legal_hold_status: self.object_lock_legal_hold_status
+                ,
+                object_lock_mode: self.object_lock_mode
+                ,
+                object_lock_retain_until_date: self.object_lock_retain_until_date
+                ,
+                bucket_key_enabled: self.bucket_key_enabled
+                    .unwrap_or_default()
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                ,
             }
         }
     }
+    
+    
 }
 impl S3CopyObjectOperation {
     /// Creates a new builder-style object to manufacture [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation).
@@ -11130,9 +10399,9 @@ impl S3CopyObjectOperation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3checksumalgorithm = unimplemented!();
 /// match s3checksumalgorithm {
@@ -11156,22 +10425,14 @@ impl S3CopyObjectOperation {
 /// Specifically, when `s3checksumalgorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3ChecksumAlgorithm::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3ChecksumAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Crc32,
@@ -11182,7 +10443,7 @@ pub enum S3ChecksumAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Sha256,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3ChecksumAlgorithm {
     fn from(s: &str) -> Self {
@@ -11191,19 +10452,17 @@ impl std::convert::From<&str> for S3ChecksumAlgorithm {
             "CRC32C" => S3ChecksumAlgorithm::Crc32C,
             "SHA1" => S3ChecksumAlgorithm::Sha1,
             "SHA256" => S3ChecksumAlgorithm::Sha256,
-            other => {
-                S3ChecksumAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => S3ChecksumAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3ChecksumAlgorithm {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3ChecksumAlgorithm::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3ChecksumAlgorithm::from(s))
+                }
+            }
 impl S3ChecksumAlgorithm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11212,12 +10471,14 @@ impl S3ChecksumAlgorithm {
             S3ChecksumAlgorithm::Crc32C => "CRC32C",
             S3ChecksumAlgorithm::Sha1 => "SHA1",
             S3ChecksumAlgorithm::Sha256 => "SHA256",
-            S3ChecksumAlgorithm::Unknown(value) => value.as_str(),
+            S3ChecksumAlgorithm::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CRC32", "CRC32C", "SHA1", "SHA256"]
+        &[
+            "CRC32", "CRC32C", "SHA1", "SHA256"
+        ]
     }
 }
 impl AsRef<str> for S3ChecksumAlgorithm {
@@ -11232,9 +10493,9 @@ impl AsRef<str> for S3ChecksumAlgorithm {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3objectlockmode = unimplemented!();
 /// match s3objectlockmode {
@@ -11256,58 +10517,52 @@ impl AsRef<str> for S3ChecksumAlgorithm {
 /// Specifically, when `s3objectlockmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3ObjectLockMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3ObjectLockMode {
     #[allow(missing_docs)] // documentation missing in model
     Compliance,
     #[allow(missing_docs)] // documentation missing in model
     Governance,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3ObjectLockMode {
     fn from(s: &str) -> Self {
         match s {
             "COMPLIANCE" => S3ObjectLockMode::Compliance,
             "GOVERNANCE" => S3ObjectLockMode::Governance,
-            other => S3ObjectLockMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => S3ObjectLockMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3ObjectLockMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3ObjectLockMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3ObjectLockMode::from(s))
+                }
+            }
 impl S3ObjectLockMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3ObjectLockMode::Compliance => "COMPLIANCE",
             S3ObjectLockMode::Governance => "GOVERNANCE",
-            S3ObjectLockMode::Unknown(value) => value.as_str(),
+            S3ObjectLockMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLIANCE", "GOVERNANCE"]
+        &[
+            "COMPLIANCE", "GOVERNANCE"
+        ]
     }
 }
 impl AsRef<str> for S3ObjectLockMode {
@@ -11322,9 +10577,9 @@ impl AsRef<str> for S3ObjectLockMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3storageclass = unimplemented!();
 /// match s3storageclass {
@@ -11351,22 +10606,14 @@ impl AsRef<str> for S3ObjectLockMode {
 /// Specifically, when `s3storageclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3StorageClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
@@ -11383,7 +10630,7 @@ pub enum S3StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     StandardIa,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3StorageClass {
     fn from(s: &str) -> Self {
@@ -11395,17 +10642,17 @@ impl std::convert::From<&str> for S3StorageClass {
             "ONEZONE_IA" => S3StorageClass::OnezoneIa,
             "STANDARD" => S3StorageClass::Standard,
             "STANDARD_IA" => S3StorageClass::StandardIa,
-            other => S3StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => S3StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3StorageClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3StorageClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3StorageClass::from(s))
+                }
+            }
 impl S3StorageClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11417,19 +10664,13 @@ impl S3StorageClass {
             S3StorageClass::OnezoneIa => "ONEZONE_IA",
             S3StorageClass::Standard => "STANDARD",
             S3StorageClass::StandardIa => "STANDARD_IA",
-            S3StorageClass::Unknown(value) => value.as_str(),
+            S3StorageClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DEEP_ARCHIVE",
-            "GLACIER",
-            "GLACIER_IR",
-            "INTELLIGENT_TIERING",
-            "ONEZONE_IA",
-            "STANDARD",
-            "STANDARD_IA",
+            "DEEP_ARCHIVE", "GLACIER", "GLACIER_IR", "INTELLIGENT_TIERING", "ONEZONE_IA", "STANDARD", "STANDARD_IA"
         ]
     }
 }
@@ -11442,7 +10683,7 @@ impl AsRef<str> for S3StorageClass {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ObjectMetadata {
+pub struct S3ObjectMetadata  {
     /// <p></p>
     #[doc(hidden)]
     pub cache_control: std::option::Option<std::string::String>,
@@ -11457,8 +10698,7 @@ pub struct S3ObjectMetadata {
     pub content_language: std::option::Option<std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub user_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub user_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p></p>
     #[doc(hidden)]
     pub content_length: std::option::Option<i64>,
@@ -11480,26 +10720,23 @@ pub struct S3ObjectMetadata {
 }
 impl S3ObjectMetadata {
     /// <p></p>
-    pub fn cache_control(&self) -> std::option::Option<&str> {
+    pub fn cache_control(&self) -> std::option::Option<& str> {
         self.cache_control.as_deref()
     }
     /// <p></p>
-    pub fn content_disposition(&self) -> std::option::Option<&str> {
+    pub fn content_disposition(&self) -> std::option::Option<& str> {
         self.content_disposition.as_deref()
     }
     /// <p></p>
-    pub fn content_encoding(&self) -> std::option::Option<&str> {
+    pub fn content_encoding(&self) -> std::option::Option<& str> {
         self.content_encoding.as_deref()
     }
     /// <p></p>
-    pub fn content_language(&self) -> std::option::Option<&str> {
+    pub fn content_language(&self) -> std::option::Option<& str> {
         self.content_language.as_deref()
     }
     /// <p></p>
-    pub fn user_metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn user_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.user_metadata.as_ref()
     }
     /// <p></p>
@@ -11507,15 +10744,15 @@ impl S3ObjectMetadata {
         self.content_length
     }
     /// <p></p>
-    pub fn content_md5(&self) -> std::option::Option<&str> {
+    pub fn content_md5(&self) -> std::option::Option<& str> {
         self.content_md5.as_deref()
     }
     /// <p></p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p></p>
-    pub fn http_expires_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn http_expires_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.http_expires_date.as_ref()
     }
     /// <p></p>
@@ -11523,13 +10760,13 @@ impl S3ObjectMetadata {
         self.requester_charged
     }
     /// <p></p>
-    pub fn sse_algorithm(&self) -> std::option::Option<&crate::model::S3SseAlgorithm> {
+    pub fn sse_algorithm(&self) -> std::option::Option<& crate::model::S3SseAlgorithm> {
         self.sse_algorithm.as_ref()
     }
 }
 /// See [`S3ObjectMetadata`](crate::model::S3ObjectMetadata).
 pub mod s3_object_metadata {
-
+    
     /// A builder for [`S3ObjectMetadata`](crate::model::S3ObjectMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11537,9 +10774,7 @@ pub mod s3_object_metadata {
         pub(crate) content_disposition: std::option::Option<std::string::String>,
         pub(crate) content_encoding: std::option::Option<std::string::String>,
         pub(crate) content_language: std::option::Option<std::string::String>,
-        pub(crate) user_metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) user_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -11554,12 +10789,8 @@ pub mod s3_object_metadata {
             self
         }
         /// <p></p>
-        pub fn set_cache_control(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cache_control = input;
-            self
+        pub fn set_cache_control(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cache_control = input; self
         }
         /// <p></p>
         pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11567,12 +10798,8 @@ pub mod s3_object_metadata {
             self
         }
         /// <p></p>
-        pub fn set_content_disposition(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.content_disposition = input;
-            self
+        pub fn set_content_disposition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_disposition = input; self
         }
         /// <p></p>
         pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11580,12 +10807,8 @@ pub mod s3_object_metadata {
             self
         }
         /// <p></p>
-        pub fn set_content_encoding(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.content_encoding = input;
-            self
+        pub fn set_content_encoding(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_encoding = input; self
         }
         /// <p></p>
         pub fn content_language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11593,37 +10816,23 @@ pub mod s3_object_metadata {
             self
         }
         /// <p></p>
-        pub fn set_content_language(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.content_language = input;
-            self
+        pub fn set_content_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_language = input; self
         }
         /// Adds a key-value pair to `user_metadata`.
         ///
         /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
         ///
         /// <p></p>
-        pub fn user_metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn user_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.user_metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.user_metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.user_metadata = Some(hash_map);
+                            self
         }
         /// <p></p>
-        pub fn set_user_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.user_metadata = input;
-            self
+        pub fn set_user_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.user_metadata = input; self
         }
         /// <p></p>
         pub fn content_length(mut self, input: i64) -> Self {
@@ -11632,8 +10841,7 @@ pub mod s3_object_metadata {
         }
         /// <p></p>
         pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
-            self.content_length = input;
-            self
+            self.content_length = input; self
         }
         /// <p></p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11642,8 +10850,7 @@ pub mod s3_object_metadata {
         }
         /// <p></p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_md5 = input;
-            self
+            self.content_md5 = input; self
         }
         /// <p></p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11652,8 +10859,7 @@ pub mod s3_object_metadata {
         }
         /// <p></p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p></p>
         pub fn http_expires_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11661,12 +10867,8 @@ pub mod s3_object_metadata {
             self
         }
         /// <p></p>
-        pub fn set_http_expires_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.http_expires_date = input;
-            self
+        pub fn set_http_expires_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.http_expires_date = input; self
         }
         /// <p></p>
         pub fn requester_charged(mut self, input: bool) -> Self {
@@ -11675,8 +10877,7 @@ pub mod s3_object_metadata {
         }
         /// <p></p>
         pub fn set_requester_charged(mut self, input: std::option::Option<bool>) -> Self {
-            self.requester_charged = input;
-            self
+            self.requester_charged = input; self
         }
         /// <p></p>
         pub fn sse_algorithm(mut self, input: crate::model::S3SseAlgorithm) -> Self {
@@ -11684,30 +10885,40 @@ pub mod s3_object_metadata {
             self
         }
         /// <p></p>
-        pub fn set_sse_algorithm(
-            mut self,
-            input: std::option::Option<crate::model::S3SseAlgorithm>,
-        ) -> Self {
-            self.sse_algorithm = input;
-            self
+        pub fn set_sse_algorithm(mut self, input: std::option::Option<crate::model::S3SseAlgorithm>) -> Self {
+            self.sse_algorithm = input; self
         }
         /// Consumes the builder and constructs a [`S3ObjectMetadata`](crate::model::S3ObjectMetadata).
         pub fn build(self) -> crate::model::S3ObjectMetadata {
             crate::model::S3ObjectMetadata {
-                cache_control: self.cache_control,
-                content_disposition: self.content_disposition,
-                content_encoding: self.content_encoding,
-                content_language: self.content_language,
-                user_metadata: self.user_metadata,
-                content_length: self.content_length,
-                content_md5: self.content_md5,
-                content_type: self.content_type,
-                http_expires_date: self.http_expires_date,
-                requester_charged: self.requester_charged.unwrap_or_default(),
-                sse_algorithm: self.sse_algorithm,
+                cache_control: self.cache_control
+                ,
+                content_disposition: self.content_disposition
+                ,
+                content_encoding: self.content_encoding
+                ,
+                content_language: self.content_language
+                ,
+                user_metadata: self.user_metadata
+                ,
+                content_length: self.content_length
+                ,
+                content_md5: self.content_md5
+                ,
+                content_type: self.content_type
+                ,
+                http_expires_date: self.http_expires_date
+                ,
+                requester_charged: self.requester_charged
+                    .unwrap_or_default()
+                ,
+                sse_algorithm: self.sse_algorithm
+                ,
             }
         }
     }
+    
+    
 }
 impl S3ObjectMetadata {
     /// Creates a new builder-style object to manufacture [`S3ObjectMetadata`](crate::model::S3ObjectMetadata).
@@ -11722,9 +10933,9 @@ impl S3ObjectMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3ssealgorithm = unimplemented!();
 /// match s3ssealgorithm {
@@ -11746,58 +10957,52 @@ impl S3ObjectMetadata {
 /// Specifically, when `s3ssealgorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3SseAlgorithm::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3SseAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Aes256,
     #[allow(missing_docs)] // documentation missing in model
     Kms,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3SseAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "AES256" => S3SseAlgorithm::Aes256,
             "KMS" => S3SseAlgorithm::Kms,
-            other => S3SseAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => S3SseAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3SseAlgorithm {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3SseAlgorithm::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3SseAlgorithm::from(s))
+                }
+            }
 impl S3SseAlgorithm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3SseAlgorithm::Aes256 => "AES256",
             S3SseAlgorithm::Kms => "KMS",
-            S3SseAlgorithm::Unknown(value) => value.as_str(),
+            S3SseAlgorithm::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES256", "KMS"]
+        &[
+            "AES256", "KMS"
+        ]
     }
 }
 impl AsRef<str> for S3SseAlgorithm {
@@ -11812,9 +11017,9 @@ impl AsRef<str> for S3SseAlgorithm {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3metadatadirective = unimplemented!();
 /// match s3metadatadirective {
@@ -11836,60 +11041,52 @@ impl AsRef<str> for S3SseAlgorithm {
 /// Specifically, when `s3metadatadirective` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3MetadataDirective::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3MetadataDirective {
     #[allow(missing_docs)] // documentation missing in model
     Copy,
     #[allow(missing_docs)] // documentation missing in model
     Replace,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3MetadataDirective {
     fn from(s: &str) -> Self {
         match s {
             "COPY" => S3MetadataDirective::Copy,
             "REPLACE" => S3MetadataDirective::Replace,
-            other => {
-                S3MetadataDirective::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => S3MetadataDirective::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for S3MetadataDirective {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3MetadataDirective::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3MetadataDirective::from(s))
+                }
+            }
 impl S3MetadataDirective {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3MetadataDirective::Copy => "COPY",
             S3MetadataDirective::Replace => "REPLACE",
-            S3MetadataDirective::Unknown(value) => value.as_str(),
+            S3MetadataDirective::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COPY", "REPLACE"]
+        &[
+            "COPY", "REPLACE"
+        ]
     }
 }
 impl AsRef<str> for S3MetadataDirective {
@@ -11901,20 +11098,20 @@ impl AsRef<str> for S3MetadataDirective {
 /// <p>Contains the configuration parameters for a <code>Lambda Invoke</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaInvokeOperation {
+pub struct LambdaInvokeOperation  {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
     #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
 }
 impl LambdaInvokeOperation {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
 }
 /// See [`LambdaInvokeOperation`](crate::model::LambdaInvokeOperation).
 pub mod lambda_invoke_operation {
-
+    
     /// A builder for [`LambdaInvokeOperation`](crate::model::LambdaInvokeOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11928,16 +11125,18 @@ pub mod lambda_invoke_operation {
         }
         /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaInvokeOperation`](crate::model::LambdaInvokeOperation).
         pub fn build(self) -> crate::model::LambdaInvokeOperation {
             crate::model::LambdaInvokeOperation {
-                function_arn: self.function_arn,
+                function_arn: self.function_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaInvokeOperation {
     /// Creates a new builder-style object to manufacture [`LambdaInvokeOperation`](crate::model::LambdaInvokeOperation).
@@ -11949,7 +11148,7 @@ impl LambdaInvokeOperation {
 /// <p>Contains the configuration information for a job's manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobManifest {
+pub struct JobManifest  {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
     #[doc(hidden)]
     pub spec: std::option::Option<crate::model::JobManifestSpec>,
@@ -11959,17 +11158,17 @@ pub struct JobManifest {
 }
 impl JobManifest {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::model::JobManifestSpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::model::JobManifestSpec> {
         self.spec.as_ref()
     }
     /// <p>Contains the information required to locate the specified job's manifest.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::JobManifestLocation> {
+    pub fn location(&self) -> std::option::Option<& crate::model::JobManifestLocation> {
         self.location.as_ref()
     }
 }
 /// See [`JobManifest`](crate::model::JobManifest).
 pub mod job_manifest {
-
+    
     /// A builder for [`JobManifest`](crate::model::JobManifest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11983,12 +11182,8 @@ pub mod job_manifest {
             self
         }
         /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
-        pub fn set_spec(
-            mut self,
-            input: std::option::Option<crate::model::JobManifestSpec>,
-        ) -> Self {
-            self.spec = input;
-            self
+        pub fn set_spec(mut self, input: std::option::Option<crate::model::JobManifestSpec>) -> Self {
+            self.spec = input; self
         }
         /// <p>Contains the information required to locate the specified job's manifest.</p>
         pub fn location(mut self, input: crate::model::JobManifestLocation) -> Self {
@@ -11996,21 +11191,21 @@ pub mod job_manifest {
             self
         }
         /// <p>Contains the information required to locate the specified job's manifest.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::JobManifestLocation>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::JobManifestLocation>) -> Self {
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`JobManifest`](crate::model::JobManifest).
         pub fn build(self) -> crate::model::JobManifest {
             crate::model::JobManifest {
-                spec: self.spec,
-                location: self.location,
+                spec: self.spec
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl JobManifest {
     /// Creates a new builder-style object to manufacture [`JobManifest`](crate::model::JobManifest).
@@ -12022,7 +11217,7 @@ impl JobManifest {
 /// <p>Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobManifestSpec {
+pub struct JobManifestSpec  {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::JobManifestFormat>,
@@ -12032,17 +11227,17 @@ pub struct JobManifestSpec {
 }
 impl JobManifestSpec {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::JobManifestFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::JobManifestFormat> {
         self.format.as_ref()
     }
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::JobManifestFieldName]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::JobManifestFieldName]> {
         self.fields.as_deref()
     }
 }
 /// See [`JobManifestSpec`](crate::model::JobManifestSpec).
 pub mod job_manifest_spec {
-
+    
     /// A builder for [`JobManifestSpec`](crate::model::JobManifestSpec).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12056,12 +11251,8 @@ pub mod job_manifest_spec {
             self
         }
         /// <p>Indicates which of the available formats the specified manifest uses.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::JobManifestFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::JobManifestFormat>) -> Self {
+            self.format = input; self
         }
         /// Appends an item to `fields`.
         ///
@@ -12070,26 +11261,26 @@ pub mod job_manifest_spec {
         /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
         pub fn fields(mut self, input: crate::model::JobManifestFieldName) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobManifestFieldName>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobManifestFieldName>>) -> Self {
+            self.fields = input; self
         }
         /// Consumes the builder and constructs a [`JobManifestSpec`](crate::model::JobManifestSpec).
         pub fn build(self) -> crate::model::JobManifestSpec {
             crate::model::JobManifestSpec {
-                format: self.format,
-                fields: self.fields,
+                format: self.format
+                ,
+                fields: self.fields
+                ,
             }
         }
     }
+    
+    
 }
 impl JobManifestSpec {
     /// Creates a new builder-style object to manufacture [`JobManifestSpec`](crate::model::JobManifestSpec).
@@ -12104,9 +11295,9 @@ impl JobManifestSpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobmanifestfieldname = unimplemented!();
 /// match jobmanifestfieldname {
@@ -12130,22 +11321,14 @@ impl JobManifestSpec {
 /// Specifically, when `jobmanifestfieldname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobManifestFieldName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobManifestFieldName {
     #[allow(missing_docs)] // documentation missing in model
     Bucket,
@@ -12156,7 +11339,7 @@ pub enum JobManifestFieldName {
     #[allow(missing_docs)] // documentation missing in model
     VersionId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobManifestFieldName {
     fn from(s: &str) -> Self {
@@ -12165,19 +11348,17 @@ impl std::convert::From<&str> for JobManifestFieldName {
             "Ignore" => JobManifestFieldName::Ignore,
             "Key" => JobManifestFieldName::Key,
             "VersionId" => JobManifestFieldName::VersionId,
-            other => {
-                JobManifestFieldName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobManifestFieldName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobManifestFieldName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobManifestFieldName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobManifestFieldName::from(s))
+                }
+            }
 impl JobManifestFieldName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12186,12 +11367,14 @@ impl JobManifestFieldName {
             JobManifestFieldName::Ignore => "Ignore",
             JobManifestFieldName::Key => "Key",
             JobManifestFieldName::VersionId => "VersionId",
-            JobManifestFieldName::Unknown(value) => value.as_str(),
+            JobManifestFieldName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Bucket", "Ignore", "Key", "VersionId"]
+        &[
+            "Bucket", "Ignore", "Key", "VersionId"
+        ]
     }
 }
 impl AsRef<str> for JobManifestFieldName {
@@ -12206,9 +11389,9 @@ impl AsRef<str> for JobManifestFieldName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobmanifestformat = unimplemented!();
 /// match jobmanifestformat {
@@ -12230,62 +11413,51 @@ impl AsRef<str> for JobManifestFieldName {
 /// Specifically, when `jobmanifestformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobManifestFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobManifestFormat {
     #[allow(missing_docs)] // documentation missing in model
     S3BatchOperationsCsv20180820,
     #[allow(missing_docs)] // documentation missing in model
     S3InventoryReportCsv20161130,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobManifestFormat {
     fn from(s: &str) -> Self {
         match s {
             "S3BatchOperations_CSV_20180820" => JobManifestFormat::S3BatchOperationsCsv20180820,
             "S3InventoryReport_CSV_20161130" => JobManifestFormat::S3InventoryReportCsv20161130,
-            other => {
-                JobManifestFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobManifestFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobManifestFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobManifestFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobManifestFormat::from(s))
+                }
+            }
 impl JobManifestFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobManifestFormat::S3BatchOperationsCsv20180820 => "S3BatchOperations_CSV_20180820",
             JobManifestFormat::S3InventoryReportCsv20161130 => "S3InventoryReport_CSV_20161130",
-            JobManifestFormat::Unknown(value) => value.as_str(),
+            JobManifestFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "S3BatchOperations_CSV_20180820",
-            "S3InventoryReport_CSV_20161130",
+            "S3BatchOperations_CSV_20180820", "S3InventoryReport_CSV_20161130"
         ]
     }
 }
@@ -12295,64 +11467,58 @@ impl AsRef<str> for JobManifestFormat {
     }
 }
 
-/// <p>The container for the bucket configuration.</p> <note>
-/// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+/// <p>The container for the bucket configuration.</p> <note> 
+/// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBucketConfiguration {
-    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+pub struct CreateBucketConfiguration  {
+    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     #[doc(hidden)]
     pub location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
 }
 impl CreateBucketConfiguration {
-    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn location_constraint(
-        &self,
-    ) -> std::option::Option<&crate::model::BucketLocationConstraint> {
+    pub fn location_constraint(&self) -> std::option::Option<& crate::model::BucketLocationConstraint> {
         self.location_constraint.as_ref()
     }
 }
 /// See [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration).
 pub mod create_bucket_configuration {
-
+    
     /// A builder for [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
     }
     impl Builder {
-        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note> 
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
         /// </note>
-        pub fn location_constraint(
-            mut self,
-            input: crate::model::BucketLocationConstraint,
-        ) -> Self {
+        pub fn location_constraint(mut self, input: crate::model::BucketLocationConstraint) -> Self {
             self.location_constraint = Some(input);
             self
         }
-        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note> 
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
         /// </note>
-        pub fn set_location_constraint(
-            mut self,
-            input: std::option::Option<crate::model::BucketLocationConstraint>,
-        ) -> Self {
-            self.location_constraint = input;
-            self
+        pub fn set_location_constraint(mut self, input: std::option::Option<crate::model::BucketLocationConstraint>) -> Self {
+            self.location_constraint = input; self
         }
         /// Consumes the builder and constructs a [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration).
         pub fn build(self) -> crate::model::CreateBucketConfiguration {
             crate::model::CreateBucketConfiguration {
-                location_constraint: self.location_constraint,
+                location_constraint: self.location_constraint
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBucketConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration).
@@ -12367,9 +11533,9 @@ impl CreateBucketConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let bucketlocationconstraint = unimplemented!();
 /// match bucketlocationconstraint {
@@ -12400,22 +11566,14 @@ impl CreateBucketConfiguration {
 /// Specifically, when `bucketlocationconstraint` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BucketLocationConstraint::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     Eu,
@@ -12440,7 +11598,7 @@ pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BucketLocationConstraint {
     fn from(s: &str) -> Self {
@@ -12456,19 +11614,17 @@ impl std::convert::From<&str> for BucketLocationConstraint {
             "sa-east-1" => BucketLocationConstraint::SaEast1,
             "us-west-1" => BucketLocationConstraint::UsWest1,
             "us-west-2" => BucketLocationConstraint::UsWest2,
-            other => BucketLocationConstraint::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BucketLocationConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BucketLocationConstraint {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BucketLocationConstraint::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BucketLocationConstraint::from(s))
+                }
+            }
 impl BucketLocationConstraint {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12484,23 +11640,13 @@ impl BucketLocationConstraint {
             BucketLocationConstraint::SaEast1 => "sa-east-1",
             BucketLocationConstraint::UsWest1 => "us-west-1",
             BucketLocationConstraint::UsWest2 => "us-west-2",
-            BucketLocationConstraint::Unknown(value) => value.as_str(),
+            BucketLocationConstraint::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EU",
-            "ap-northeast-1",
-            "ap-south-1",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "cn-north-1",
-            "eu-central-1",
-            "eu-west-1",
-            "sa-east-1",
-            "us-west-1",
-            "us-west-2",
+            "EU", "ap-northeast-1", "ap-south-1", "ap-southeast-1", "ap-southeast-2", "cn-north-1", "eu-central-1", "eu-west-1", "sa-east-1", "us-west-1", "us-west-2"
         ]
     }
 }
@@ -12516,9 +11662,9 @@ impl AsRef<str> for BucketLocationConstraint {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let bucketcannedacl = unimplemented!();
 /// match bucketcannedacl {
@@ -12542,22 +11688,14 @@ impl AsRef<str> for BucketLocationConstraint {
 /// Specifically, when `bucketcannedacl` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BucketCannedAcl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BucketCannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
@@ -12568,7 +11706,7 @@ pub enum BucketCannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     PublicReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BucketCannedAcl {
     fn from(s: &str) -> Self {
@@ -12577,17 +11715,17 @@ impl std::convert::From<&str> for BucketCannedAcl {
             "private" => BucketCannedAcl::Private,
             "public-read" => BucketCannedAcl::PublicRead,
             "public-read-write" => BucketCannedAcl::PublicReadWrite,
-            other => BucketCannedAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BucketCannedAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BucketCannedAcl {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BucketCannedAcl::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BucketCannedAcl::from(s))
+                }
+            }
 impl BucketCannedAcl {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12596,16 +11734,13 @@ impl BucketCannedAcl {
             BucketCannedAcl::Private => "private",
             BucketCannedAcl::PublicRead => "public-read",
             BucketCannedAcl::PublicReadWrite => "public-read-write",
-            BucketCannedAcl::Unknown(value) => value.as_str(),
+            BucketCannedAcl::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "authenticated-read",
-            "private",
-            "public-read",
-            "public-read-write",
+            "authenticated-read", "private", "public-read", "public-read-write"
         ]
     }
 }
@@ -12614,3 +11749,4 @@ impl AsRef<str> for BucketCannedAcl {
         self.as_str()
     }
 }
+

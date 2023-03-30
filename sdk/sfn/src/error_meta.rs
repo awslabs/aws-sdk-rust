@@ -9,8 +9,8 @@ pub enum Error {
     ActivityLimitExceeded(crate::error::ActivityLimitExceeded),
     /// <p>The maximum number of workers concurrently polling for activity tasks has been reached.</p>
     ActivityWorkerLimitExceeded(crate::error::ActivityWorkerLimitExceeded),
-    /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note>
-    /// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p>
+    /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note> 
+    /// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p> 
     /// </note>
     ExecutionAlreadyExists(crate::error::ExecutionAlreadyExists),
     /// <p>The specified execution does not exist.</p>
@@ -55,15 +55,15 @@ pub enum Error {
     TooManyTags(crate::error::TooManyTags),
     /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -93,19 +93,14 @@ impl std::fmt::Display for Error {
             Error::TaskTimedOut(inner) => inner.fmt(f),
             Error::TooManyTags(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateActivityError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateActivityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateActivityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -113,28 +108,17 @@ where
 impl From<crate::error::CreateActivityError> for Error {
     fn from(err: crate::error::CreateActivityError) -> Self {
         match err.kind {
-            crate::error::CreateActivityErrorKind::ActivityLimitExceeded(inner) => {
-                Error::ActivityLimitExceeded(inner)
-            }
+            crate::error::CreateActivityErrorKind::ActivityLimitExceeded(inner) => Error::ActivityLimitExceeded(inner),
             crate::error::CreateActivityErrorKind::InvalidName(inner) => Error::InvalidName(inner),
             crate::error::CreateActivityErrorKind::TooManyTags(inner) => Error::TooManyTags(inner),
-            crate::error::CreateActivityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateActivityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateStateMachineError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateStateMachineError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateStateMachineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateStateMachineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -142,51 +126,24 @@ where
 impl From<crate::error::CreateStateMachineError> for Error {
     fn from(err: crate::error::CreateStateMachineError) -> Self {
         match err.kind {
-            crate::error::CreateStateMachineErrorKind::InvalidArn(inner) => {
-                Error::InvalidArn(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::InvalidDefinition(inner) => {
-                Error::InvalidDefinition(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::InvalidLoggingConfiguration(inner) => {
-                Error::InvalidLoggingConfiguration(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::InvalidName(inner) => {
-                Error::InvalidName(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::InvalidTracingConfiguration(inner) => {
-                Error::InvalidTracingConfiguration(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::StateMachineAlreadyExists(inner) => {
-                Error::StateMachineAlreadyExists(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::StateMachineDeleting(inner) => {
-                Error::StateMachineDeleting(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::StateMachineLimitExceeded(inner) => {
-                Error::StateMachineLimitExceeded(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::StateMachineTypeNotSupported(inner) => {
-                Error::StateMachineTypeNotSupported(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::TooManyTags(inner) => {
-                Error::TooManyTags(inner)
-            }
-            crate::error::CreateStateMachineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateStateMachineErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::CreateStateMachineErrorKind::InvalidDefinition(inner) => Error::InvalidDefinition(inner),
+            crate::error::CreateStateMachineErrorKind::InvalidLoggingConfiguration(inner) => Error::InvalidLoggingConfiguration(inner),
+            crate::error::CreateStateMachineErrorKind::InvalidName(inner) => Error::InvalidName(inner),
+            crate::error::CreateStateMachineErrorKind::InvalidTracingConfiguration(inner) => Error::InvalidTracingConfiguration(inner),
+            crate::error::CreateStateMachineErrorKind::StateMachineAlreadyExists(inner) => Error::StateMachineAlreadyExists(inner),
+            crate::error::CreateStateMachineErrorKind::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
+            crate::error::CreateStateMachineErrorKind::StateMachineLimitExceeded(inner) => Error::StateMachineLimitExceeded(inner),
+            crate::error::CreateStateMachineErrorKind::StateMachineTypeNotSupported(inner) => Error::StateMachineTypeNotSupported(inner),
+            crate::error::CreateStateMachineErrorKind::TooManyTags(inner) => Error::TooManyTags(inner),
+            crate::error::CreateStateMachineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteActivityError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteActivityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteActivityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -195,23 +152,14 @@ impl From<crate::error::DeleteActivityError> for Error {
     fn from(err: crate::error::DeleteActivityError) -> Self {
         match err.kind {
             crate::error::DeleteActivityErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::DeleteActivityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteActivityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteStateMachineError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteStateMachineError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteStateMachineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteStateMachineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -219,29 +167,16 @@ where
 impl From<crate::error::DeleteStateMachineError> for Error {
     fn from(err: crate::error::DeleteStateMachineError) -> Self {
         match err.kind {
-            crate::error::DeleteStateMachineErrorKind::InvalidArn(inner) => {
-                Error::InvalidArn(inner)
-            }
-            crate::error::DeleteStateMachineErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteStateMachineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteStateMachineErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::DeleteStateMachineErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteStateMachineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeActivityError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeActivityError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeActivityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeActivityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -249,27 +184,16 @@ where
 impl From<crate::error::DescribeActivityError> for Error {
     fn from(err: crate::error::DescribeActivityError) -> Self {
         match err.kind {
-            crate::error::DescribeActivityErrorKind::ActivityDoesNotExist(inner) => {
-                Error::ActivityDoesNotExist(inner)
-            }
+            crate::error::DescribeActivityErrorKind::ActivityDoesNotExist(inner) => Error::ActivityDoesNotExist(inner),
             crate::error::DescribeActivityErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::DescribeActivityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeActivityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeExecutionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeExecutionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -277,25 +201,16 @@ where
 impl From<crate::error::DescribeExecutionError> for Error {
     fn from(err: crate::error::DescribeExecutionError) -> Self {
         match err.kind {
-            crate::error::DescribeExecutionErrorKind::ExecutionDoesNotExist(inner) => {
-                Error::ExecutionDoesNotExist(inner)
-            }
+            crate::error::DescribeExecutionErrorKind::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
             crate::error::DescribeExecutionErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::DescribeExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMapRunError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMapRunError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeMapRunError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -304,27 +219,15 @@ impl From<crate::error::DescribeMapRunError> for Error {
     fn from(err: crate::error::DescribeMapRunError) -> Self {
         match err.kind {
             crate::error::DescribeMapRunErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::DescribeMapRunErrorKind::ResourceNotFound(inner) => {
-                Error::ResourceNotFound(inner)
-            }
-            crate::error::DescribeMapRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeMapRunErrorKind::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::error::DescribeMapRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeStateMachineError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeStateMachineError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeStateMachineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeStateMachineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -332,34 +235,16 @@ where
 impl From<crate::error::DescribeStateMachineError> for Error {
     fn from(err: crate::error::DescribeStateMachineError) -> Self {
         match err.kind {
-            crate::error::DescribeStateMachineErrorKind::InvalidArn(inner) => {
-                Error::InvalidArn(inner)
-            }
-            crate::error::DescribeStateMachineErrorKind::StateMachineDoesNotExist(inner) => {
-                Error::StateMachineDoesNotExist(inner)
-            }
-            crate::error::DescribeStateMachineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeStateMachineErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::DescribeStateMachineErrorKind::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
+            crate::error::DescribeStateMachineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeStateMachineForExecutionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeStateMachineForExecutionError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeStateMachineForExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeStateMachineForExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -367,27 +252,16 @@ where
 impl From<crate::error::DescribeStateMachineForExecutionError> for Error {
     fn from(err: crate::error::DescribeStateMachineForExecutionError) -> Self {
         match err.kind {
-            crate::error::DescribeStateMachineForExecutionErrorKind::ExecutionDoesNotExist(
-                inner,
-            ) => Error::ExecutionDoesNotExist(inner),
-            crate::error::DescribeStateMachineForExecutionErrorKind::InvalidArn(inner) => {
-                Error::InvalidArn(inner)
-            }
-            crate::error::DescribeStateMachineForExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeStateMachineForExecutionErrorKind::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
+            crate::error::DescribeStateMachineForExecutionErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::DescribeStateMachineForExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetActivityTaskError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetActivityTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetActivityTaskError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -395,30 +269,17 @@ where
 impl From<crate::error::GetActivityTaskError> for Error {
     fn from(err: crate::error::GetActivityTaskError) -> Self {
         match err.kind {
-            crate::error::GetActivityTaskErrorKind::ActivityDoesNotExist(inner) => {
-                Error::ActivityDoesNotExist(inner)
-            }
-            crate::error::GetActivityTaskErrorKind::ActivityWorkerLimitExceeded(inner) => {
-                Error::ActivityWorkerLimitExceeded(inner)
-            }
+            crate::error::GetActivityTaskErrorKind::ActivityDoesNotExist(inner) => Error::ActivityDoesNotExist(inner),
+            crate::error::GetActivityTaskErrorKind::ActivityWorkerLimitExceeded(inner) => Error::ActivityWorkerLimitExceeded(inner),
             crate::error::GetActivityTaskErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::GetActivityTaskErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetActivityTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExecutionHistoryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetExecutionHistoryError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExecutionHistoryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetExecutionHistoryError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -426,30 +287,17 @@ where
 impl From<crate::error::GetExecutionHistoryError> for Error {
     fn from(err: crate::error::GetExecutionHistoryError) -> Self {
         match err.kind {
-            crate::error::GetExecutionHistoryErrorKind::ExecutionDoesNotExist(inner) => {
-                Error::ExecutionDoesNotExist(inner)
-            }
-            crate::error::GetExecutionHistoryErrorKind::InvalidArn(inner) => {
-                Error::InvalidArn(inner)
-            }
-            crate::error::GetExecutionHistoryErrorKind::InvalidToken(inner) => {
-                Error::InvalidToken(inner)
-            }
-            crate::error::GetExecutionHistoryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetExecutionHistoryErrorKind::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
+            crate::error::GetExecutionHistoryErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::GetExecutionHistoryErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::error::GetExecutionHistoryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListActivitiesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListActivitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListActivitiesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -457,24 +305,15 @@ where
 impl From<crate::error::ListActivitiesError> for Error {
     fn from(err: crate::error::ListActivitiesError) -> Self {
         match err.kind {
-            crate::error::ListActivitiesErrorKind::InvalidToken(inner) => {
-                Error::InvalidToken(inner)
-            }
-            crate::error::ListActivitiesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListActivitiesErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::error::ListActivitiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListExecutionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListExecutionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListExecutionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -483,36 +322,19 @@ impl From<crate::error::ListExecutionsError> for Error {
     fn from(err: crate::error::ListExecutionsError) -> Self {
         match err.kind {
             crate::error::ListExecutionsErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::ListExecutionsErrorKind::InvalidToken(inner) => {
-                Error::InvalidToken(inner)
-            }
-            crate::error::ListExecutionsErrorKind::ResourceNotFound(inner) => {
-                Error::ResourceNotFound(inner)
-            }
-            crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist(inner) => {
-                Error::StateMachineDoesNotExist(inner)
-            }
-            crate::error::ListExecutionsErrorKind::StateMachineTypeNotSupported(inner) => {
-                Error::StateMachineTypeNotSupported(inner)
-            }
-            crate::error::ListExecutionsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListExecutionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListExecutionsErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::error::ListExecutionsErrorKind::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
+            crate::error::ListExecutionsErrorKind::StateMachineTypeNotSupported(inner) => Error::StateMachineTypeNotSupported(inner),
+            crate::error::ListExecutionsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListExecutionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMapRunsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMapRunsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMapRunsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -520,28 +342,17 @@ where
 impl From<crate::error::ListMapRunsError> for Error {
     fn from(err: crate::error::ListMapRunsError) -> Self {
         match err.kind {
-            crate::error::ListMapRunsErrorKind::ExecutionDoesNotExist(inner) => {
-                Error::ExecutionDoesNotExist(inner)
-            }
+            crate::error::ListMapRunsErrorKind::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
             crate::error::ListMapRunsErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::error::ListMapRunsErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
-            crate::error::ListMapRunsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMapRunsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStateMachinesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListStateMachinesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStateMachinesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStateMachinesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -549,26 +360,15 @@ where
 impl From<crate::error::ListStateMachinesError> for Error {
     fn from(err: crate::error::ListStateMachinesError) -> Self {
         match err.kind {
-            crate::error::ListStateMachinesErrorKind::InvalidToken(inner) => {
-                Error::InvalidToken(inner)
-            }
-            crate::error::ListStateMachinesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListStateMachinesErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::error::ListStateMachinesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -576,27 +376,16 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InvalidArn(inner) => {
-                Error::InvalidArn(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFound(inner) => {
-                Error::ResourceNotFound(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::ListTagsForResourceErrorKind::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendTaskFailureError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendTaskFailureError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendTaskFailureError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -604,32 +393,17 @@ where
 impl From<crate::error::SendTaskFailureError> for Error {
     fn from(err: crate::error::SendTaskFailureError) -> Self {
         match err.kind {
-            crate::error::SendTaskFailureErrorKind::InvalidToken(inner) => {
-                Error::InvalidToken(inner)
-            }
-            crate::error::SendTaskFailureErrorKind::TaskDoesNotExist(inner) => {
-                Error::TaskDoesNotExist(inner)
-            }
-            crate::error::SendTaskFailureErrorKind::TaskTimedOut(inner) => {
-                Error::TaskTimedOut(inner)
-            }
-            crate::error::SendTaskFailureErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SendTaskFailureErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::error::SendTaskFailureErrorKind::TaskDoesNotExist(inner) => Error::TaskDoesNotExist(inner),
+            crate::error::SendTaskFailureErrorKind::TaskTimedOut(inner) => Error::TaskTimedOut(inner),
+            crate::error::SendTaskFailureErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendTaskHeartbeatError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SendTaskHeartbeatError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendTaskHeartbeatError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendTaskHeartbeatError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -637,30 +411,17 @@ where
 impl From<crate::error::SendTaskHeartbeatError> for Error {
     fn from(err: crate::error::SendTaskHeartbeatError) -> Self {
         match err.kind {
-            crate::error::SendTaskHeartbeatErrorKind::InvalidToken(inner) => {
-                Error::InvalidToken(inner)
-            }
-            crate::error::SendTaskHeartbeatErrorKind::TaskDoesNotExist(inner) => {
-                Error::TaskDoesNotExist(inner)
-            }
-            crate::error::SendTaskHeartbeatErrorKind::TaskTimedOut(inner) => {
-                Error::TaskTimedOut(inner)
-            }
-            crate::error::SendTaskHeartbeatErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SendTaskHeartbeatErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::error::SendTaskHeartbeatErrorKind::TaskDoesNotExist(inner) => Error::TaskDoesNotExist(inner),
+            crate::error::SendTaskHeartbeatErrorKind::TaskTimedOut(inner) => Error::TaskTimedOut(inner),
+            crate::error::SendTaskHeartbeatErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendTaskSuccessError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendTaskSuccessError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendTaskSuccessError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -668,33 +429,18 @@ where
 impl From<crate::error::SendTaskSuccessError> for Error {
     fn from(err: crate::error::SendTaskSuccessError) -> Self {
         match err.kind {
-            crate::error::SendTaskSuccessErrorKind::InvalidOutput(inner) => {
-                Error::InvalidOutput(inner)
-            }
-            crate::error::SendTaskSuccessErrorKind::InvalidToken(inner) => {
-                Error::InvalidToken(inner)
-            }
-            crate::error::SendTaskSuccessErrorKind::TaskDoesNotExist(inner) => {
-                Error::TaskDoesNotExist(inner)
-            }
-            crate::error::SendTaskSuccessErrorKind::TaskTimedOut(inner) => {
-                Error::TaskTimedOut(inner)
-            }
-            crate::error::SendTaskSuccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SendTaskSuccessErrorKind::InvalidOutput(inner) => Error::InvalidOutput(inner),
+            crate::error::SendTaskSuccessErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::error::SendTaskSuccessErrorKind::TaskDoesNotExist(inner) => Error::TaskDoesNotExist(inner),
+            crate::error::SendTaskSuccessErrorKind::TaskTimedOut(inner) => Error::TaskTimedOut(inner),
+            crate::error::SendTaskSuccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartExecutionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -702,43 +448,22 @@ where
 impl From<crate::error::StartExecutionError> for Error {
     fn from(err: crate::error::StartExecutionError) -> Self {
         match err.kind {
-            crate::error::StartExecutionErrorKind::ExecutionAlreadyExists(inner) => {
-                Error::ExecutionAlreadyExists(inner)
-            }
-            crate::error::StartExecutionErrorKind::ExecutionLimitExceeded(inner) => {
-                Error::ExecutionLimitExceeded(inner)
-            }
+            crate::error::StartExecutionErrorKind::ExecutionAlreadyExists(inner) => Error::ExecutionAlreadyExists(inner),
+            crate::error::StartExecutionErrorKind::ExecutionLimitExceeded(inner) => Error::ExecutionLimitExceeded(inner),
             crate::error::StartExecutionErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::StartExecutionErrorKind::InvalidExecutionInput(inner) => {
-                Error::InvalidExecutionInput(inner)
-            }
+            crate::error::StartExecutionErrorKind::InvalidExecutionInput(inner) => Error::InvalidExecutionInput(inner),
             crate::error::StartExecutionErrorKind::InvalidName(inner) => Error::InvalidName(inner),
-            crate::error::StartExecutionErrorKind::StateMachineDeleting(inner) => {
-                Error::StateMachineDeleting(inner)
-            }
-            crate::error::StartExecutionErrorKind::StateMachineDoesNotExist(inner) => {
-                Error::StateMachineDoesNotExist(inner)
-            }
-            crate::error::StartExecutionErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StartExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartExecutionErrorKind::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
+            crate::error::StartExecutionErrorKind::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
+            crate::error::StartExecutionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StartExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSyncExecutionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartSyncExecutionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSyncExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartSyncExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -746,39 +471,20 @@ where
 impl From<crate::error::StartSyncExecutionError> for Error {
     fn from(err: crate::error::StartSyncExecutionError) -> Self {
         match err.kind {
-            crate::error::StartSyncExecutionErrorKind::InvalidArn(inner) => {
-                Error::InvalidArn(inner)
-            }
-            crate::error::StartSyncExecutionErrorKind::InvalidExecutionInput(inner) => {
-                Error::InvalidExecutionInput(inner)
-            }
-            crate::error::StartSyncExecutionErrorKind::InvalidName(inner) => {
-                Error::InvalidName(inner)
-            }
-            crate::error::StartSyncExecutionErrorKind::StateMachineDeleting(inner) => {
-                Error::StateMachineDeleting(inner)
-            }
-            crate::error::StartSyncExecutionErrorKind::StateMachineDoesNotExist(inner) => {
-                Error::StateMachineDoesNotExist(inner)
-            }
-            crate::error::StartSyncExecutionErrorKind::StateMachineTypeNotSupported(inner) => {
-                Error::StateMachineTypeNotSupported(inner)
-            }
-            crate::error::StartSyncExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartSyncExecutionErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::StartSyncExecutionErrorKind::InvalidExecutionInput(inner) => Error::InvalidExecutionInput(inner),
+            crate::error::StartSyncExecutionErrorKind::InvalidName(inner) => Error::InvalidName(inner),
+            crate::error::StartSyncExecutionErrorKind::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
+            crate::error::StartSyncExecutionErrorKind::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
+            crate::error::StartSyncExecutionErrorKind::StateMachineTypeNotSupported(inner) => Error::StateMachineTypeNotSupported(inner),
+            crate::error::StartSyncExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopExecutionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -786,28 +492,17 @@ where
 impl From<crate::error::StopExecutionError> for Error {
     fn from(err: crate::error::StopExecutionError) -> Self {
         match err.kind {
-            crate::error::StopExecutionErrorKind::ExecutionDoesNotExist(inner) => {
-                Error::ExecutionDoesNotExist(inner)
-            }
+            crate::error::StopExecutionErrorKind::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
             crate::error::StopExecutionErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::StopExecutionErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StopExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopExecutionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StopExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -816,25 +511,16 @@ impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
             crate::error::TagResourceErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::TagResourceErrorKind::ResourceNotFound(inner) => {
-                Error::ResourceNotFound(inner)
-            }
+            crate::error::TagResourceErrorKind::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::error::TagResourceErrorKind::TooManyTags(inner) => Error::TooManyTags(inner),
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -843,24 +529,15 @@ impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
             crate::error::UntagResourceErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::UntagResourceErrorKind::ResourceNotFound(inner) => {
-                Error::ResourceNotFound(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMapRunError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMapRunError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateMapRunError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -869,29 +546,16 @@ impl From<crate::error::UpdateMapRunError> for Error {
     fn from(err: crate::error::UpdateMapRunError) -> Self {
         match err.kind {
             crate::error::UpdateMapRunErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-            crate::error::UpdateMapRunErrorKind::ResourceNotFound(inner) => {
-                Error::ResourceNotFound(inner)
-            }
-            crate::error::UpdateMapRunErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateMapRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateMapRunErrorKind::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::error::UpdateMapRunErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateMapRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStateMachineError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateStateMachineError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStateMachineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateStateMachineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -899,34 +563,17 @@ where
 impl From<crate::error::UpdateStateMachineError> for Error {
     fn from(err: crate::error::UpdateStateMachineError) -> Self {
         match err.kind {
-            crate::error::UpdateStateMachineErrorKind::InvalidArn(inner) => {
-                Error::InvalidArn(inner)
-            }
-            crate::error::UpdateStateMachineErrorKind::InvalidDefinition(inner) => {
-                Error::InvalidDefinition(inner)
-            }
-            crate::error::UpdateStateMachineErrorKind::InvalidLoggingConfiguration(inner) => {
-                Error::InvalidLoggingConfiguration(inner)
-            }
-            crate::error::UpdateStateMachineErrorKind::InvalidTracingConfiguration(inner) => {
-                Error::InvalidTracingConfiguration(inner)
-            }
-            crate::error::UpdateStateMachineErrorKind::MissingRequiredParameter(inner) => {
-                Error::MissingRequiredParameter(inner)
-            }
-            crate::error::UpdateStateMachineErrorKind::StateMachineDeleting(inner) => {
-                Error::StateMachineDeleting(inner)
-            }
-            crate::error::UpdateStateMachineErrorKind::StateMachineDoesNotExist(inner) => {
-                Error::StateMachineDoesNotExist(inner)
-            }
-            crate::error::UpdateStateMachineErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateStateMachineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateStateMachineErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::UpdateStateMachineErrorKind::InvalidDefinition(inner) => Error::InvalidDefinition(inner),
+            crate::error::UpdateStateMachineErrorKind::InvalidLoggingConfiguration(inner) => Error::InvalidLoggingConfiguration(inner),
+            crate::error::UpdateStateMachineErrorKind::InvalidTracingConfiguration(inner) => Error::InvalidTracingConfiguration(inner),
+            crate::error::UpdateStateMachineErrorKind::MissingRequiredParameter(inner) => Error::MissingRequiredParameter(inner),
+            crate::error::UpdateStateMachineErrorKind::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
+            crate::error::UpdateStateMachineErrorKind::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
+            crate::error::UpdateStateMachineErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateStateMachineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

@@ -3,7 +3,7 @@
 /// <p>Returns information about a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PullRequest {
+pub struct PullRequest  {
     /// <p>The system-generated ID of the pull request. </p>
     #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
@@ -40,53 +40,53 @@ pub struct PullRequest {
 }
 impl PullRequest {
     /// <p>The system-generated ID of the pull request. </p>
-    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-    pub fn last_activity_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_activity_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_activity_date.as_ref()
     }
     /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
-    pub fn pull_request_status(&self) -> std::option::Option<&crate::model::PullRequestStatusEnum> {
+    pub fn pull_request_status(&self) -> std::option::Option<& crate::model::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
-    pub fn author_arn(&self) -> std::option::Option<&str> {
+    pub fn author_arn(&self) -> std::option::Option<& str> {
         self.author_arn.as_deref()
     }
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
-    pub fn pull_request_targets(&self) -> std::option::Option<&[crate::model::PullRequestTarget]> {
+    pub fn pull_request_targets(&self) -> std::option::Option<& [crate::model::PullRequestTarget]> {
         self.pull_request_targets.as_deref()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The system-generated revision ID for the pull request.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The approval rules applied to the pull request.</p>
-    pub fn approval_rules(&self) -> std::option::Option<&[crate::model::ApprovalRule]> {
+    pub fn approval_rules(&self) -> std::option::Option<& [crate::model::ApprovalRule]> {
         self.approval_rules.as_deref()
     }
 }
 /// See [`PullRequest`](crate::model::PullRequest).
 pub mod pull_request {
-
+    
     /// A builder for [`PullRequest`](crate::model::PullRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -97,8 +97,7 @@ pub mod pull_request {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
         pub(crate) author_arn: std::option::Option<std::string::String>,
-        pub(crate) pull_request_targets:
-            std::option::Option<std::vec::Vec<crate::model::PullRequestTarget>>,
+        pub(crate) pull_request_targets: std::option::Option<std::vec::Vec<crate::model::PullRequestTarget>>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) approval_rules: std::option::Option<std::vec::Vec<crate::model::ApprovalRule>>,
@@ -110,12 +109,8 @@ pub mod pull_request {
             self
         }
         /// <p>The system-generated ID of the pull request. </p>
-        pub fn set_pull_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pull_request_id = input;
-            self
+        pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pull_request_id = input; self
         }
         /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +119,7 @@ pub mod pull_request {
         }
         /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +128,7 @@ pub mod pull_request {
         }
         /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
         pub fn last_activity_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -143,12 +136,8 @@ pub mod pull_request {
             self
         }
         /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-        pub fn set_last_activity_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_activity_date = input;
-            self
+        pub fn set_last_activity_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_activity_date = input; self
         }
         /// <p>The date and time the pull request was originally created, in timestamp format.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -156,12 +145,8 @@ pub mod pull_request {
             self
         }
         /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
         pub fn pull_request_status(mut self, input: crate::model::PullRequestStatusEnum) -> Self {
@@ -169,12 +154,8 @@ pub mod pull_request {
             self
         }
         /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
-        pub fn set_pull_request_status(
-            mut self,
-            input: std::option::Option<crate::model::PullRequestStatusEnum>,
-        ) -> Self {
-            self.pull_request_status = input;
-            self
+        pub fn set_pull_request_status(mut self, input: std::option::Option<crate::model::PullRequestStatusEnum>) -> Self {
+            self.pull_request_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
         pub fn author_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,8 +164,7 @@ pub mod pull_request {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
         pub fn set_author_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.author_arn = input;
-            self
+            self.author_arn = input; self
         }
         /// Appends an item to `pull_request_targets`.
         ///
@@ -193,17 +173,13 @@ pub mod pull_request {
         /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
         pub fn pull_request_targets(mut self, input: crate::model::PullRequestTarget) -> Self {
             let mut v = self.pull_request_targets.unwrap_or_default();
-            v.push(input);
-            self.pull_request_targets = Some(v);
-            self
+                            v.push(input);
+                            self.pull_request_targets = Some(v);
+                            self
         }
         /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
-        pub fn set_pull_request_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PullRequestTarget>>,
-        ) -> Self {
-            self.pull_request_targets = input;
-            self
+        pub fn set_pull_request_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::PullRequestTarget>>) -> Self {
+            self.pull_request_targets = input; self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,12 +187,8 @@ pub mod pull_request {
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
+        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_request_token = input; self
         }
         /// <p>The system-generated revision ID for the pull request.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,8 +197,7 @@ pub mod pull_request {
         }
         /// <p>The system-generated revision ID for the pull request.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Appends an item to `approval_rules`.
         ///
@@ -235,35 +206,44 @@ pub mod pull_request {
         /// <p>The approval rules applied to the pull request.</p>
         pub fn approval_rules(mut self, input: crate::model::ApprovalRule) -> Self {
             let mut v = self.approval_rules.unwrap_or_default();
-            v.push(input);
-            self.approval_rules = Some(v);
-            self
+                            v.push(input);
+                            self.approval_rules = Some(v);
+                            self
         }
         /// <p>The approval rules applied to the pull request.</p>
-        pub fn set_approval_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApprovalRule>>,
-        ) -> Self {
-            self.approval_rules = input;
-            self
+        pub fn set_approval_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApprovalRule>>) -> Self {
+            self.approval_rules = input; self
         }
         /// Consumes the builder and constructs a [`PullRequest`](crate::model::PullRequest).
         pub fn build(self) -> crate::model::PullRequest {
             crate::model::PullRequest {
-                pull_request_id: self.pull_request_id,
-                title: self.title,
-                description: self.description,
-                last_activity_date: self.last_activity_date,
-                creation_date: self.creation_date,
-                pull_request_status: self.pull_request_status,
-                author_arn: self.author_arn,
-                pull_request_targets: self.pull_request_targets,
-                client_request_token: self.client_request_token,
-                revision_id: self.revision_id,
-                approval_rules: self.approval_rules,
+                pull_request_id: self.pull_request_id
+                ,
+                title: self.title
+                ,
+                description: self.description
+                ,
+                last_activity_date: self.last_activity_date
+                ,
+                creation_date: self.creation_date
+                ,
+                pull_request_status: self.pull_request_status
+                ,
+                author_arn: self.author_arn
+                ,
+                pull_request_targets: self.pull_request_targets
+                ,
+                client_request_token: self.client_request_token
+                ,
+                revision_id: self.revision_id
+                ,
+                approval_rules: self.approval_rules
+                ,
             }
         }
     }
+    
+    
 }
 impl PullRequest {
     /// Creates a new builder-style object to manufacture [`PullRequest`](crate::model::PullRequest).
@@ -275,7 +255,7 @@ impl PullRequest {
 /// <p>Returns information about an approval rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalRule {
+pub struct ApprovalRule  {
     /// <p>The system-generated ID of the approval rule.</p>
     #[doc(hidden)]
     pub approval_rule_id: std::option::Option<std::string::String>,
@@ -299,48 +279,45 @@ pub struct ApprovalRule {
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>The approval rule template used to create the rule.</p>
     #[doc(hidden)]
-    pub origin_approval_rule_template:
-        std::option::Option<crate::model::OriginApprovalRuleTemplate>,
+    pub origin_approval_rule_template: std::option::Option<crate::model::OriginApprovalRuleTemplate>,
 }
 impl ApprovalRule {
     /// <p>The system-generated ID of the approval rule.</p>
-    pub fn approval_rule_id(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_id(&self) -> std::option::Option<& str> {
         self.approval_rule_id.as_deref()
     }
     /// <p>The name of the approval rule.</p>
-    pub fn approval_rule_name(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_name(&self) -> std::option::Option<& str> {
         self.approval_rule_name.as_deref()
     }
     /// <p>The content of the approval rule.</p>
-    pub fn approval_rule_content(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_content(&self) -> std::option::Option<& str> {
         self.approval_rule_content.as_deref()
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
-    pub fn rule_content_sha256(&self) -> std::option::Option<&str> {
+    pub fn rule_content_sha256(&self) -> std::option::Option<& str> {
         self.rule_content_sha256.as_deref()
     }
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the approval rule was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
-    pub fn last_modified_user(&self) -> std::option::Option<&str> {
+    pub fn last_modified_user(&self) -> std::option::Option<& str> {
         self.last_modified_user.as_deref()
     }
     /// <p>The approval rule template used to create the rule.</p>
-    pub fn origin_approval_rule_template(
-        &self,
-    ) -> std::option::Option<&crate::model::OriginApprovalRuleTemplate> {
+    pub fn origin_approval_rule_template(&self) -> std::option::Option<& crate::model::OriginApprovalRuleTemplate> {
         self.origin_approval_rule_template.as_ref()
     }
 }
 /// See [`ApprovalRule`](crate::model::ApprovalRule).
 pub mod approval_rule {
-
+    
     /// A builder for [`ApprovalRule`](crate::model::ApprovalRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -351,8 +328,7 @@ pub mod approval_rule {
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_user: std::option::Option<std::string::String>,
-        pub(crate) origin_approval_rule_template:
-            std::option::Option<crate::model::OriginApprovalRuleTemplate>,
+        pub(crate) origin_approval_rule_template: std::option::Option<crate::model::OriginApprovalRuleTemplate>,
     }
     impl Builder {
         /// <p>The system-generated ID of the approval rule.</p>
@@ -361,12 +337,8 @@ pub mod approval_rule {
             self
         }
         /// <p>The system-generated ID of the approval rule.</p>
-        pub fn set_approval_rule_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_id = input;
-            self
+        pub fn set_approval_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_id = input; self
         }
         /// <p>The name of the approval rule.</p>
         pub fn approval_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,12 +346,8 @@ pub mod approval_rule {
             self
         }
         /// <p>The name of the approval rule.</p>
-        pub fn set_approval_rule_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_name = input;
-            self
+        pub fn set_approval_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_name = input; self
         }
         /// <p>The content of the approval rule.</p>
         pub fn approval_rule_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -387,12 +355,8 @@ pub mod approval_rule {
             self
         }
         /// <p>The content of the approval rule.</p>
-        pub fn set_approval_rule_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_content = input;
-            self
+        pub fn set_approval_rule_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_content = input; self
         }
         /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
         pub fn rule_content_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -400,12 +364,8 @@ pub mod approval_rule {
             self
         }
         /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
-        pub fn set_rule_content_sha256(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_content_sha256 = input;
-            self
+        pub fn set_rule_content_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_content_sha256 = input; self
         }
         /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -413,12 +373,8 @@ pub mod approval_rule {
             self
         }
         /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The date the approval rule was created, in timestamp format.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -426,12 +382,8 @@ pub mod approval_rule {
             self
         }
         /// <p>The date the approval rule was created, in timestamp format.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
         pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -439,43 +391,42 @@ pub mod approval_rule {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
-        pub fn set_last_modified_user(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_user = input;
-            self
+        pub fn set_last_modified_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_user = input; self
         }
         /// <p>The approval rule template used to create the rule.</p>
-        pub fn origin_approval_rule_template(
-            mut self,
-            input: crate::model::OriginApprovalRuleTemplate,
-        ) -> Self {
+        pub fn origin_approval_rule_template(mut self, input: crate::model::OriginApprovalRuleTemplate) -> Self {
             self.origin_approval_rule_template = Some(input);
             self
         }
         /// <p>The approval rule template used to create the rule.</p>
-        pub fn set_origin_approval_rule_template(
-            mut self,
-            input: std::option::Option<crate::model::OriginApprovalRuleTemplate>,
-        ) -> Self {
-            self.origin_approval_rule_template = input;
-            self
+        pub fn set_origin_approval_rule_template(mut self, input: std::option::Option<crate::model::OriginApprovalRuleTemplate>) -> Self {
+            self.origin_approval_rule_template = input; self
         }
         /// Consumes the builder and constructs a [`ApprovalRule`](crate::model::ApprovalRule).
         pub fn build(self) -> crate::model::ApprovalRule {
             crate::model::ApprovalRule {
-                approval_rule_id: self.approval_rule_id,
-                approval_rule_name: self.approval_rule_name,
-                approval_rule_content: self.approval_rule_content,
-                rule_content_sha256: self.rule_content_sha256,
-                last_modified_date: self.last_modified_date,
-                creation_date: self.creation_date,
-                last_modified_user: self.last_modified_user,
-                origin_approval_rule_template: self.origin_approval_rule_template,
+                approval_rule_id: self.approval_rule_id
+                ,
+                approval_rule_name: self.approval_rule_name
+                ,
+                approval_rule_content: self.approval_rule_content
+                ,
+                rule_content_sha256: self.rule_content_sha256
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modified_user: self.last_modified_user
+                ,
+                origin_approval_rule_template: self.origin_approval_rule_template
+                ,
             }
         }
     }
+    
+    
 }
 impl ApprovalRule {
     /// Creates a new builder-style object to manufacture [`ApprovalRule`](crate::model::ApprovalRule).
@@ -487,7 +438,7 @@ impl ApprovalRule {
 /// <p>Returns information about the template that created the approval rule for a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginApprovalRuleTemplate {
+pub struct OriginApprovalRuleTemplate  {
     /// <p>The ID of the template that created the approval rule.</p>
     #[doc(hidden)]
     pub approval_rule_template_id: std::option::Option<std::string::String>,
@@ -497,17 +448,17 @@ pub struct OriginApprovalRuleTemplate {
 }
 impl OriginApprovalRuleTemplate {
     /// <p>The ID of the template that created the approval rule.</p>
-    pub fn approval_rule_template_id(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_id(&self) -> std::option::Option<& str> {
         self.approval_rule_template_id.as_deref()
     }
     /// <p>The name of the template that created the approval rule.</p>
-    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
 }
 /// See [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
 pub mod origin_approval_rule_template {
-
+    
     /// A builder for [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -521,37 +472,30 @@ pub mod origin_approval_rule_template {
             self
         }
         /// <p>The ID of the template that created the approval rule.</p>
-        pub fn set_approval_rule_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_template_id = input;
-            self
+        pub fn set_approval_rule_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_template_id = input; self
         }
         /// <p>The name of the template that created the approval rule.</p>
-        pub fn approval_rule_template_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn approval_rule_template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.approval_rule_template_name = Some(input.into());
             self
         }
         /// <p>The name of the template that created the approval rule.</p>
-        pub fn set_approval_rule_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_template_name = input;
-            self
+        pub fn set_approval_rule_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_template_name = input; self
         }
         /// Consumes the builder and constructs a [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
         pub fn build(self) -> crate::model::OriginApprovalRuleTemplate {
             crate::model::OriginApprovalRuleTemplate {
-                approval_rule_template_id: self.approval_rule_template_id,
-                approval_rule_template_name: self.approval_rule_template_name,
+                approval_rule_template_id: self.approval_rule_template_id
+                ,
+                approval_rule_template_name: self.approval_rule_template_name
+                ,
             }
         }
     }
+    
+    
 }
 impl OriginApprovalRuleTemplate {
     /// Creates a new builder-style object to manufacture [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
@@ -563,7 +507,7 @@ impl OriginApprovalRuleTemplate {
 /// <p>Returns information about a pull request target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PullRequestTarget {
+pub struct PullRequestTarget  {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -588,37 +532,37 @@ pub struct PullRequestTarget {
 }
 impl PullRequestTarget {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn source_reference(&self) -> std::option::Option<&str> {
+    pub fn source_reference(&self) -> std::option::Option<& str> {
         self.source_reference.as_deref()
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
-    pub fn destination_reference(&self) -> std::option::Option<&str> {
+    pub fn destination_reference(&self) -> std::option::Option<& str> {
         self.destination_reference.as_deref()
     }
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
-    pub fn destination_commit(&self) -> std::option::Option<&str> {
+    pub fn destination_commit(&self) -> std::option::Option<& str> {
         self.destination_commit.as_deref()
     }
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
-    pub fn source_commit(&self) -> std::option::Option<&str> {
+    pub fn source_commit(&self) -> std::option::Option<& str> {
         self.source_commit.as_deref()
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
-    pub fn merge_base(&self) -> std::option::Option<&str> {
+    pub fn merge_base(&self) -> std::option::Option<& str> {
         self.merge_base.as_deref()
     }
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
-    pub fn merge_metadata(&self) -> std::option::Option<&crate::model::MergeMetadata> {
+    pub fn merge_metadata(&self) -> std::option::Option<& crate::model::MergeMetadata> {
         self.merge_metadata.as_ref()
     }
 }
 /// See [`PullRequestTarget`](crate::model::PullRequestTarget).
 pub mod pull_request_target {
-
+    
     /// A builder for [`PullRequestTarget`](crate::model::PullRequestTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -637,12 +581,8 @@ pub mod pull_request_target {
             self
         }
         /// <p>The name of the repository that contains the pull request source and destination branches.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
         pub fn source_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -650,12 +590,8 @@ pub mod pull_request_target {
             self
         }
         /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-        pub fn set_source_reference(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_reference = input;
-            self
+        pub fn set_source_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_reference = input; self
         }
         /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
         pub fn destination_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -663,12 +599,8 @@ pub mod pull_request_target {
             self
         }
         /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
-        pub fn set_destination_reference(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_reference = input;
-            self
+        pub fn set_destination_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_reference = input; self
         }
         /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
         pub fn destination_commit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -676,12 +608,8 @@ pub mod pull_request_target {
             self
         }
         /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
-        pub fn set_destination_commit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_commit = input;
-            self
+        pub fn set_destination_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_commit = input; self
         }
         /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
         pub fn source_commit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -689,12 +617,8 @@ pub mod pull_request_target {
             self
         }
         /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
-        pub fn set_source_commit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_commit = input;
-            self
+        pub fn set_source_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_commit = input; self
         }
         /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn merge_base(mut self, input: impl Into<std::string::String>) -> Self {
@@ -703,8 +627,7 @@ pub mod pull_request_target {
         }
         /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn set_merge_base(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.merge_base = input;
-            self
+            self.merge_base = input; self
         }
         /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
         pub fn merge_metadata(mut self, input: crate::model::MergeMetadata) -> Self {
@@ -712,26 +635,31 @@ pub mod pull_request_target {
             self
         }
         /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
-        pub fn set_merge_metadata(
-            mut self,
-            input: std::option::Option<crate::model::MergeMetadata>,
-        ) -> Self {
-            self.merge_metadata = input;
-            self
+        pub fn set_merge_metadata(mut self, input: std::option::Option<crate::model::MergeMetadata>) -> Self {
+            self.merge_metadata = input; self
         }
         /// Consumes the builder and constructs a [`PullRequestTarget`](crate::model::PullRequestTarget).
         pub fn build(self) -> crate::model::PullRequestTarget {
             crate::model::PullRequestTarget {
-                repository_name: self.repository_name,
-                source_reference: self.source_reference,
-                destination_reference: self.destination_reference,
-                destination_commit: self.destination_commit,
-                source_commit: self.source_commit,
-                merge_base: self.merge_base,
-                merge_metadata: self.merge_metadata,
+                repository_name: self.repository_name
+                ,
+                source_reference: self.source_reference
+                ,
+                destination_reference: self.destination_reference
+                ,
+                destination_commit: self.destination_commit
+                ,
+                source_commit: self.source_commit
+                ,
+                merge_base: self.merge_base
+                ,
+                merge_metadata: self.merge_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl PullRequestTarget {
     /// Creates a new builder-style object to manufacture [`PullRequestTarget`](crate::model::PullRequestTarget).
@@ -743,7 +671,7 @@ impl PullRequestTarget {
 /// <p>Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergeMetadata {
+pub struct MergeMetadata  {
     /// <p>A Boolean value indicating whether the merge has been made.</p>
     #[doc(hidden)]
     pub is_merged: bool,
@@ -763,21 +691,21 @@ impl MergeMetadata {
         self.is_merged
     }
     /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
-    pub fn merged_by(&self) -> std::option::Option<&str> {
+    pub fn merged_by(&self) -> std::option::Option<& str> {
         self.merged_by.as_deref()
     }
     /// <p>The commit ID for the merge commit, if any.</p>
-    pub fn merge_commit_id(&self) -> std::option::Option<&str> {
+    pub fn merge_commit_id(&self) -> std::option::Option<& str> {
         self.merge_commit_id.as_deref()
     }
     /// <p>The merge strategy used in the merge.</p>
-    pub fn merge_option(&self) -> std::option::Option<&crate::model::MergeOptionTypeEnum> {
+    pub fn merge_option(&self) -> std::option::Option<& crate::model::MergeOptionTypeEnum> {
         self.merge_option.as_ref()
     }
 }
 /// See [`MergeMetadata`](crate::model::MergeMetadata).
 pub mod merge_metadata {
-
+    
     /// A builder for [`MergeMetadata`](crate::model::MergeMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -794,8 +722,7 @@ pub mod merge_metadata {
         }
         /// <p>A Boolean value indicating whether the merge has been made.</p>
         pub fn set_is_merged(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_merged = input;
-            self
+            self.is_merged = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
         pub fn merged_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -804,8 +731,7 @@ pub mod merge_metadata {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
         pub fn set_merged_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.merged_by = input;
-            self
+            self.merged_by = input; self
         }
         /// <p>The commit ID for the merge commit, if any.</p>
         pub fn merge_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -813,12 +739,8 @@ pub mod merge_metadata {
             self
         }
         /// <p>The commit ID for the merge commit, if any.</p>
-        pub fn set_merge_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.merge_commit_id = input;
-            self
+        pub fn set_merge_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.merge_commit_id = input; self
         }
         /// <p>The merge strategy used in the merge.</p>
         pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
@@ -826,23 +748,26 @@ pub mod merge_metadata {
             self
         }
         /// <p>The merge strategy used in the merge.</p>
-        pub fn set_merge_option(
-            mut self,
-            input: std::option::Option<crate::model::MergeOptionTypeEnum>,
-        ) -> Self {
-            self.merge_option = input;
-            self
+        pub fn set_merge_option(mut self, input: std::option::Option<crate::model::MergeOptionTypeEnum>) -> Self {
+            self.merge_option = input; self
         }
         /// Consumes the builder and constructs a [`MergeMetadata`](crate::model::MergeMetadata).
         pub fn build(self) -> crate::model::MergeMetadata {
             crate::model::MergeMetadata {
-                is_merged: self.is_merged.unwrap_or_default(),
-                merged_by: self.merged_by,
-                merge_commit_id: self.merge_commit_id,
-                merge_option: self.merge_option,
+                is_merged: self.is_merged
+                    .unwrap_or_default()
+                ,
+                merged_by: self.merged_by
+                ,
+                merge_commit_id: self.merge_commit_id
+                ,
+                merge_option: self.merge_option
+                ,
             }
         }
     }
+    
+    
 }
 impl MergeMetadata {
     /// Creates a new builder-style object to manufacture [`MergeMetadata`](crate::model::MergeMetadata).
@@ -857,9 +782,9 @@ impl MergeMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mergeoptiontypeenum = unimplemented!();
 /// match mergeoptiontypeenum {
@@ -882,22 +807,14 @@ impl MergeMetadata {
 /// Specifically, when `mergeoptiontypeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MergeOptionTypeEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MergeOptionTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     FastForwardMerge,
@@ -906,7 +823,7 @@ pub enum MergeOptionTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     ThreeWayMerge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MergeOptionTypeEnum {
     fn from(s: &str) -> Self {
@@ -914,19 +831,17 @@ impl std::convert::From<&str> for MergeOptionTypeEnum {
             "FAST_FORWARD_MERGE" => MergeOptionTypeEnum::FastForwardMerge,
             "SQUASH_MERGE" => MergeOptionTypeEnum::SquashMerge,
             "THREE_WAY_MERGE" => MergeOptionTypeEnum::ThreeWayMerge,
-            other => {
-                MergeOptionTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MergeOptionTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MergeOptionTypeEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MergeOptionTypeEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MergeOptionTypeEnum::from(s))
+                }
+            }
 impl MergeOptionTypeEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -934,12 +849,14 @@ impl MergeOptionTypeEnum {
             MergeOptionTypeEnum::FastForwardMerge => "FAST_FORWARD_MERGE",
             MergeOptionTypeEnum::SquashMerge => "SQUASH_MERGE",
             MergeOptionTypeEnum::ThreeWayMerge => "THREE_WAY_MERGE",
-            MergeOptionTypeEnum::Unknown(value) => value.as_str(),
+            MergeOptionTypeEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAST_FORWARD_MERGE", "SQUASH_MERGE", "THREE_WAY_MERGE"]
+        &[
+            "FAST_FORWARD_MERGE", "SQUASH_MERGE", "THREE_WAY_MERGE"
+        ]
     }
 }
 impl AsRef<str> for MergeOptionTypeEnum {
@@ -954,9 +871,9 @@ impl AsRef<str> for MergeOptionTypeEnum {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pullrequeststatusenum = unimplemented!();
 /// match pullrequeststatusenum {
@@ -978,60 +895,52 @@ impl AsRef<str> for MergeOptionTypeEnum {
 /// Specifically, when `pullrequeststatusenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PullRequestStatusEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PullRequestStatusEnum {
     #[allow(missing_docs)] // documentation missing in model
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Open,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PullRequestStatusEnum {
     fn from(s: &str) -> Self {
         match s {
             "CLOSED" => PullRequestStatusEnum::Closed,
             "OPEN" => PullRequestStatusEnum::Open,
-            other => {
-                PullRequestStatusEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PullRequestStatusEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PullRequestStatusEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PullRequestStatusEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PullRequestStatusEnum::from(s))
+                }
+            }
 impl PullRequestStatusEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PullRequestStatusEnum::Closed => "CLOSED",
             PullRequestStatusEnum::Open => "OPEN",
-            PullRequestStatusEnum::Unknown(value) => value.as_str(),
+            PullRequestStatusEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOSED", "OPEN"]
+        &[
+            "CLOSED", "OPEN"
+        ]
     }
 }
 impl AsRef<str> for PullRequestStatusEnum {
@@ -1046,9 +955,9 @@ impl AsRef<str> for PullRequestStatusEnum {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let approvalstate = unimplemented!();
 /// match approvalstate {
@@ -1070,58 +979,52 @@ impl AsRef<str> for PullRequestStatusEnum {
 /// Specifically, when `approvalstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApprovalState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApprovalState {
     #[allow(missing_docs)] // documentation missing in model
     Approve,
     #[allow(missing_docs)] // documentation missing in model
     Revoke,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApprovalState {
     fn from(s: &str) -> Self {
         match s {
             "APPROVE" => ApprovalState::Approve,
             "REVOKE" => ApprovalState::Revoke,
-            other => ApprovalState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ApprovalState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApprovalState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApprovalState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApprovalState::from(s))
+                }
+            }
 impl ApprovalState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApprovalState::Approve => "APPROVE",
             ApprovalState::Revoke => "REVOKE",
-            ApprovalState::Unknown(value) => value.as_str(),
+            ApprovalState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPROVE", "REVOKE"]
+        &[
+            "APPROVE", "REVOKE"
+        ]
     }
 }
 impl AsRef<str> for ApprovalState {
@@ -1133,7 +1036,7 @@ impl AsRef<str> for ApprovalState {
 /// <p>Returns information about a specific comment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Comment {
+pub struct Comment  {
     /// <p>The system-generated comment ID.</p>
     #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
@@ -1167,27 +1070,27 @@ pub struct Comment {
 }
 impl Comment {
     /// <p>The system-generated comment ID.</p>
-    pub fn comment_id(&self) -> std::option::Option<&str> {
+    pub fn comment_id(&self) -> std::option::Option<& str> {
         self.comment_id.as_deref()
     }
     /// <p>The content of the comment.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
-    pub fn in_reply_to(&self) -> std::option::Option<&str> {
+    pub fn in_reply_to(&self) -> std::option::Option<& str> {
         self.in_reply_to.as_deref()
     }
     /// <p>The date and time the comment was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
-    pub fn author_arn(&self) -> std::option::Option<&str> {
+    pub fn author_arn(&self) -> std::option::Option<& str> {
         self.author_arn.as_deref()
     }
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
@@ -1195,23 +1098,21 @@ impl Comment {
         self.deleted
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    pub fn caller_reactions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn caller_reactions(&self) -> std::option::Option<& [std::string::String]> {
         self.caller_reactions.as_deref()
     }
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub fn reaction_counts(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
+    pub fn reaction_counts(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, i32>> {
         self.reaction_counts.as_ref()
     }
 }
 /// See [`Comment`](crate::model::Comment).
 pub mod comment {
-
+    
     /// A builder for [`Comment`](crate::model::Comment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1224,8 +1125,7 @@ pub mod comment {
         pub(crate) deleted: std::option::Option<bool>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) caller_reactions: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) reaction_counts:
-            std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+        pub(crate) reaction_counts: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
     }
     impl Builder {
         /// <p>The system-generated comment ID.</p>
@@ -1235,8 +1135,7 @@ pub mod comment {
         }
         /// <p>The system-generated comment ID.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment_id = input;
-            self
+            self.comment_id = input; self
         }
         /// <p>The content of the comment.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1245,8 +1144,7 @@ pub mod comment {
         }
         /// <p>The content of the comment.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The ID of the comment for which this comment is a reply, if any.</p>
         pub fn in_reply_to(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1255,8 +1153,7 @@ pub mod comment {
         }
         /// <p>The ID of the comment for which this comment is a reply, if any.</p>
         pub fn set_in_reply_to(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.in_reply_to = input;
-            self
+            self.in_reply_to = input; self
         }
         /// <p>The date and time the comment was created, in timestamp format.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1264,12 +1161,8 @@ pub mod comment {
             self
         }
         /// <p>The date and time the comment was created, in timestamp format.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1277,12 +1170,8 @@ pub mod comment {
             self
         }
         /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
         pub fn author_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1291,8 +1180,7 @@ pub mod comment {
         }
         /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
         pub fn set_author_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.author_arn = input;
-            self
+            self.author_arn = input; self
         }
         /// <p>A Boolean value indicating whether the comment has been deleted.</p>
         pub fn deleted(mut self, input: bool) -> Self {
@@ -1301,8 +1189,7 @@ pub mod comment {
         }
         /// <p>A Boolean value indicating whether the comment has been deleted.</p>
         pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
-            self.deleted = input;
-            self
+            self.deleted = input; self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1310,12 +1197,8 @@ pub mod comment {
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
+        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_request_token = input; self
         }
         /// Appends an item to `caller_reactions`.
         ///
@@ -1324,17 +1207,13 @@ pub mod comment {
         /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
         pub fn caller_reactions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.caller_reactions.unwrap_or_default();
-            v.push(input.into());
-            self.caller_reactions = Some(v);
-            self
+                            v.push(input.into());
+                            self.caller_reactions = Some(v);
+                            self
         }
         /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-        pub fn set_caller_reactions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.caller_reactions = input;
-            self
+        pub fn set_caller_reactions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.caller_reactions = input; self
         }
         /// Adds a key-value pair to `reaction_counts`.
         ///
@@ -1343,34 +1222,43 @@ pub mod comment {
         /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
         pub fn reaction_counts(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.reaction_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.reaction_counts = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.reaction_counts = Some(hash_map);
+                            self
         }
         /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-        pub fn set_reaction_counts(
-            mut self,
-            input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
-        ) -> Self {
-            self.reaction_counts = input;
-            self
+        pub fn set_reaction_counts(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, i32>>) -> Self {
+            self.reaction_counts = input; self
         }
         /// Consumes the builder and constructs a [`Comment`](crate::model::Comment).
         pub fn build(self) -> crate::model::Comment {
             crate::model::Comment {
-                comment_id: self.comment_id,
-                content: self.content,
-                in_reply_to: self.in_reply_to,
-                creation_date: self.creation_date,
-                last_modified_date: self.last_modified_date,
-                author_arn: self.author_arn,
-                deleted: self.deleted.unwrap_or_default(),
-                client_request_token: self.client_request_token,
-                caller_reactions: self.caller_reactions,
-                reaction_counts: self.reaction_counts,
+                comment_id: self.comment_id
+                ,
+                content: self.content
+                ,
+                in_reply_to: self.in_reply_to
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                author_arn: self.author_arn
+                ,
+                deleted: self.deleted
+                    .unwrap_or_default()
+                ,
+                client_request_token: self.client_request_token
+                ,
+                caller_reactions: self.caller_reactions
+                ,
+                reaction_counts: self.reaction_counts
+                ,
             }
         }
     }
+    
+    
 }
 impl Comment {
     /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
@@ -1382,7 +1270,7 @@ impl Comment {
 /// <p>Returns information about an approval rule template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalRuleTemplate {
+pub struct ApprovalRuleTemplate  {
     /// <p>The system-generated ID of the approval rule template.</p>
     #[doc(hidden)]
     pub approval_rule_template_id: std::option::Option<std::string::String>,
@@ -1410,41 +1298,41 @@ pub struct ApprovalRuleTemplate {
 }
 impl ApprovalRuleTemplate {
     /// <p>The system-generated ID of the approval rule template.</p>
-    pub fn approval_rule_template_id(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_id(&self) -> std::option::Option<& str> {
         self.approval_rule_template_id.as_deref()
     }
     /// <p>The name of the approval rule template.</p>
-    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
     /// <p>The description of the approval rule template.</p>
-    pub fn approval_rule_template_description(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_description(&self) -> std::option::Option<& str> {
         self.approval_rule_template_description.as_deref()
     }
     /// <p>The content of the approval rule template.</p>
-    pub fn approval_rule_template_content(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_content(&self) -> std::option::Option<& str> {
         self.approval_rule_template_content.as_deref()
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
-    pub fn rule_content_sha256(&self) -> std::option::Option<&str> {
+    pub fn rule_content_sha256(&self) -> std::option::Option<& str> {
         self.rule_content_sha256.as_deref()
     }
     /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the approval rule template was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
-    pub fn last_modified_user(&self) -> std::option::Option<&str> {
+    pub fn last_modified_user(&self) -> std::option::Option<& str> {
         self.last_modified_user.as_deref()
     }
 }
 /// See [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
 pub mod approval_rule_template {
-
+    
     /// A builder for [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1464,60 +1352,35 @@ pub mod approval_rule_template {
             self
         }
         /// <p>The system-generated ID of the approval rule template.</p>
-        pub fn set_approval_rule_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_template_id = input;
-            self
+        pub fn set_approval_rule_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_template_id = input; self
         }
         /// <p>The name of the approval rule template.</p>
-        pub fn approval_rule_template_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn approval_rule_template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.approval_rule_template_name = Some(input.into());
             self
         }
         /// <p>The name of the approval rule template.</p>
-        pub fn set_approval_rule_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_template_name = input;
-            self
+        pub fn set_approval_rule_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_template_name = input; self
         }
         /// <p>The description of the approval rule template.</p>
-        pub fn approval_rule_template_description(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn approval_rule_template_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.approval_rule_template_description = Some(input.into());
             self
         }
         /// <p>The description of the approval rule template.</p>
-        pub fn set_approval_rule_template_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_template_description = input;
-            self
+        pub fn set_approval_rule_template_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_template_description = input; self
         }
         /// <p>The content of the approval rule template.</p>
-        pub fn approval_rule_template_content(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn approval_rule_template_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.approval_rule_template_content = Some(input.into());
             self
         }
         /// <p>The content of the approval rule template.</p>
-        pub fn set_approval_rule_template_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_template_content = input;
-            self
+        pub fn set_approval_rule_template_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_template_content = input; self
         }
         /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
         pub fn rule_content_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1525,12 +1388,8 @@ pub mod approval_rule_template {
             self
         }
         /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
-        pub fn set_rule_content_sha256(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_content_sha256 = input;
-            self
+        pub fn set_rule_content_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_content_sha256 = input; self
         }
         /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1538,12 +1397,8 @@ pub mod approval_rule_template {
             self
         }
         /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The date the approval rule template was created, in timestamp format.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1551,12 +1406,8 @@ pub mod approval_rule_template {
             self
         }
         /// <p>The date the approval rule template was created, in timestamp format.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
         pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1564,27 +1415,33 @@ pub mod approval_rule_template {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
-        pub fn set_last_modified_user(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_user = input;
-            self
+        pub fn set_last_modified_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_user = input; self
         }
         /// Consumes the builder and constructs a [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
         pub fn build(self) -> crate::model::ApprovalRuleTemplate {
             crate::model::ApprovalRuleTemplate {
-                approval_rule_template_id: self.approval_rule_template_id,
-                approval_rule_template_name: self.approval_rule_template_name,
-                approval_rule_template_description: self.approval_rule_template_description,
-                approval_rule_template_content: self.approval_rule_template_content,
-                rule_content_sha256: self.rule_content_sha256,
-                last_modified_date: self.last_modified_date,
-                creation_date: self.creation_date,
-                last_modified_user: self.last_modified_user,
+                approval_rule_template_id: self.approval_rule_template_id
+                ,
+                approval_rule_template_name: self.approval_rule_template_name
+                ,
+                approval_rule_template_description: self.approval_rule_template_description
+                ,
+                approval_rule_template_content: self.approval_rule_template_content
+                ,
+                rule_content_sha256: self.rule_content_sha256
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modified_user: self.last_modified_user
+                ,
             }
         }
     }
+    
+    
 }
 impl ApprovalRuleTemplate {
     /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
@@ -1596,7 +1453,7 @@ impl ApprovalRuleTemplate {
 /// <p>A trigger failed to run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryTriggerExecutionFailure {
+pub struct RepositoryTriggerExecutionFailure  {
     /// <p>The name of the trigger that did not run.</p>
     #[doc(hidden)]
     pub trigger: std::option::Option<std::string::String>,
@@ -1606,17 +1463,17 @@ pub struct RepositoryTriggerExecutionFailure {
 }
 impl RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
-    pub fn trigger(&self) -> std::option::Option<&str> {
+    pub fn trigger(&self) -> std::option::Option<& str> {
         self.trigger.as_deref()
     }
     /// <p>Message information about the trigger that did not run.</p>
-    pub fn failure_message(&self) -> std::option::Option<&str> {
+    pub fn failure_message(&self) -> std::option::Option<& str> {
         self.failure_message.as_deref()
     }
 }
 /// See [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
 pub mod repository_trigger_execution_failure {
-
+    
     /// A builder for [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1631,8 +1488,7 @@ pub mod repository_trigger_execution_failure {
         }
         /// <p>The name of the trigger that did not run.</p>
         pub fn set_trigger(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.trigger = input;
-            self
+            self.trigger = input; self
         }
         /// <p>Message information about the trigger that did not run.</p>
         pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1640,21 +1496,21 @@ pub mod repository_trigger_execution_failure {
             self
         }
         /// <p>Message information about the trigger that did not run.</p>
-        pub fn set_failure_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_message = input;
-            self
+        pub fn set_failure_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_message = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
         pub fn build(self) -> crate::model::RepositoryTriggerExecutionFailure {
             crate::model::RepositoryTriggerExecutionFailure {
-                trigger: self.trigger,
-                failure_message: self.failure_message,
+                trigger: self.trigger
+                ,
+                failure_message: self.failure_message
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryTriggerExecutionFailure {
     /// Creates a new builder-style object to manufacture [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
@@ -1666,7 +1522,7 @@ impl RepositoryTriggerExecutionFailure {
 /// <p>Information about a trigger for a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryTrigger {
+pub struct RepositoryTrigger  {
     /// <p>The name of the trigger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1676,46 +1532,46 @@ pub struct RepositoryTrigger {
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     #[doc(hidden)]
     pub custom_data: std::option::Option<std::string::String>,
-    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
-    /// <p>Although no content is required in the array, you must include the array itself.</p>
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note> 
+    /// <p>Although no content is required in the array, you must include the array itself.</p> 
     /// </note>
     #[doc(hidden)]
     pub branches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
-    /// <p>The valid value "all" cannot be used with any other values.</p>
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note> 
+    /// <p>The valid value "all" cannot be used with any other values.</p> 
     /// </note>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>,
 }
 impl RepositoryTrigger {
     /// <p>The name of the trigger.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
-    pub fn custom_data(&self) -> std::option::Option<&str> {
+    pub fn custom_data(&self) -> std::option::Option<& str> {
         self.custom_data.as_deref()
     }
-    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
-    /// <p>Although no content is required in the array, you must include the array itself.</p>
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note> 
+    /// <p>Although no content is required in the array, you must include the array itself.</p> 
     /// </note>
-    pub fn branches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn branches(&self) -> std::option::Option<& [std::string::String]> {
         self.branches.as_deref()
     }
-    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
-    /// <p>The valid value "all" cannot be used with any other values.</p>
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note> 
+    /// <p>The valid value "all" cannot be used with any other values.</p> 
     /// </note>
-    pub fn events(&self) -> std::option::Option<&[crate::model::RepositoryTriggerEventEnum]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::RepositoryTriggerEventEnum]> {
         self.events.as_deref()
     }
 }
 /// See [`RepositoryTrigger`](crate::model::RepositoryTrigger).
 pub mod repository_trigger {
-
+    
     /// A builder for [`RepositoryTrigger`](crate::model::RepositoryTrigger).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1723,8 +1579,7 @@ pub mod repository_trigger {
         pub(crate) destination_arn: std::option::Option<std::string::String>,
         pub(crate) custom_data: std::option::Option<std::string::String>,
         pub(crate) branches: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) events:
-            std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>,
+        pub(crate) events: std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>,
     }
     impl Builder {
         /// <p>The name of the trigger.</p>
@@ -1734,8 +1589,7 @@ pub mod repository_trigger {
         }
         /// <p>The name of the trigger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
         pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1743,12 +1597,8 @@ pub mod repository_trigger {
             self
         }
         /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
-        pub fn set_destination_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_arn = input;
-            self
+        pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_arn = input; self
         }
         /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
         pub fn custom_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1757,66 +1607,64 @@ pub mod repository_trigger {
         }
         /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
         pub fn set_custom_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.custom_data = input;
-            self
+            self.custom_data = input; self
         }
         /// Appends an item to `branches`.
         ///
         /// To override the contents of this collection use [`set_branches`](Self::set_branches).
         ///
-        /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
-        /// <p>Although no content is required in the array, you must include the array itself.</p>
+        /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note> 
+        /// <p>Although no content is required in the array, you must include the array itself.</p> 
         /// </note>
         pub fn branches(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.branches.unwrap_or_default();
-            v.push(input.into());
-            self.branches = Some(v);
-            self
+                            v.push(input.into());
+                            self.branches = Some(v);
+                            self
         }
-        /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
-        /// <p>Although no content is required in the array, you must include the array itself.</p>
+        /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note> 
+        /// <p>Although no content is required in the array, you must include the array itself.</p> 
         /// </note>
-        pub fn set_branches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.branches = input;
-            self
+        pub fn set_branches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.branches = input; self
         }
         /// Appends an item to `events`.
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
-        /// <p>The valid value "all" cannot be used with any other values.</p>
+        /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note> 
+        /// <p>The valid value "all" cannot be used with any other values.</p> 
         /// </note>
         pub fn events(mut self, input: crate::model::RepositoryTriggerEventEnum) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
-        /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
-        /// <p>The valid value "all" cannot be used with any other values.</p>
+        /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note> 
+        /// <p>The valid value "all" cannot be used with any other values.</p> 
         /// </note>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryTrigger`](crate::model::RepositoryTrigger).
         pub fn build(self) -> crate::model::RepositoryTrigger {
             crate::model::RepositoryTrigger {
-                name: self.name,
-                destination_arn: self.destination_arn,
-                custom_data: self.custom_data,
-                branches: self.branches,
-                events: self.events,
+                name: self.name
+                ,
+                destination_arn: self.destination_arn
+                ,
+                custom_data: self.custom_data
+                ,
+                branches: self.branches
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryTrigger {
     /// Creates a new builder-style object to manufacture [`RepositoryTrigger`](crate::model::RepositoryTrigger).
@@ -1831,9 +1679,9 @@ impl RepositoryTrigger {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let repositorytriggereventenum = unimplemented!();
 /// match repositorytriggereventenum {
@@ -1857,22 +1705,14 @@ impl RepositoryTrigger {
 /// Specifically, when `repositorytriggereventenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RepositoryTriggerEventEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RepositoryTriggerEventEnum {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -1883,7 +1723,7 @@ pub enum RepositoryTriggerEventEnum {
     #[allow(missing_docs)] // documentation missing in model
     UpdateReference,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepositoryTriggerEventEnum {
     fn from(s: &str) -> Self {
@@ -1892,19 +1732,17 @@ impl std::convert::From<&str> for RepositoryTriggerEventEnum {
             "createReference" => RepositoryTriggerEventEnum::CreateReference,
             "deleteReference" => RepositoryTriggerEventEnum::DeleteReference,
             "updateReference" => RepositoryTriggerEventEnum::UpdateReference,
-            other => RepositoryTriggerEventEnum::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RepositoryTriggerEventEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RepositoryTriggerEventEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RepositoryTriggerEventEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RepositoryTriggerEventEnum::from(s))
+                }
+            }
 impl RepositoryTriggerEventEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1913,16 +1751,13 @@ impl RepositoryTriggerEventEnum {
             RepositoryTriggerEventEnum::CreateReference => "createReference",
             RepositoryTriggerEventEnum::DeleteReference => "deleteReference",
             RepositoryTriggerEventEnum::UpdateReference => "updateReference",
-            RepositoryTriggerEventEnum::Unknown(value) => value.as_str(),
+            RepositoryTriggerEventEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "all",
-            "createReference",
-            "deleteReference",
-            "updateReference",
+            "all", "createReference", "deleteReference", "updateReference"
         ]
     }
 }
@@ -1938,9 +1773,9 @@ impl AsRef<str> for RepositoryTriggerEventEnum {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filemodetypeenum = unimplemented!();
 /// match filemodetypeenum {
@@ -1963,22 +1798,14 @@ impl AsRef<str> for RepositoryTriggerEventEnum {
 /// Specifically, when `filemodetypeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FileModeTypeEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FileModeTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     Executable,
@@ -1987,7 +1814,7 @@ pub enum FileModeTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     Symlink,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FileModeTypeEnum {
     fn from(s: &str) -> Self {
@@ -1995,17 +1822,17 @@ impl std::convert::From<&str> for FileModeTypeEnum {
             "EXECUTABLE" => FileModeTypeEnum::Executable,
             "NORMAL" => FileModeTypeEnum::Normal,
             "SYMLINK" => FileModeTypeEnum::Symlink,
-            other => FileModeTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FileModeTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FileModeTypeEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileModeTypeEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FileModeTypeEnum::from(s))
+                }
+            }
 impl FileModeTypeEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2013,12 +1840,14 @@ impl FileModeTypeEnum {
             FileModeTypeEnum::Executable => "EXECUTABLE",
             FileModeTypeEnum::Normal => "NORMAL",
             FileModeTypeEnum::Symlink => "SYMLINK",
-            FileModeTypeEnum::Unknown(value) => value.as_str(),
+            FileModeTypeEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXECUTABLE", "NORMAL", "SYMLINK"]
+        &[
+            "EXECUTABLE", "NORMAL", "SYMLINK"
+        ]
     }
 }
 impl AsRef<str> for FileModeTypeEnum {
@@ -2030,7 +1859,7 @@ impl AsRef<str> for FileModeTypeEnum {
 /// <p>Returns information about the location of a change or comment in the comparison between two commits or a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Location {
+pub struct Location  {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -2043,7 +1872,7 @@ pub struct Location {
 }
 impl Location {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The position of a change in a compared file, in line number format.</p>
@@ -2051,22 +1880,19 @@ impl Location {
         self.file_position
     }
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
-    pub fn relative_file_version(
-        &self,
-    ) -> std::option::Option<&crate::model::RelativeFileVersionEnum> {
+    pub fn relative_file_version(&self) -> std::option::Option<& crate::model::RelativeFileVersionEnum> {
         self.relative_file_version.as_ref()
     }
 }
 /// See [`Location`](crate::model::Location).
 pub mod location {
-
+    
     /// A builder for [`Location`](crate::model::Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_position: std::option::Option<i64>,
-        pub(crate) relative_file_version:
-            std::option::Option<crate::model::RelativeFileVersionEnum>,
+        pub(crate) relative_file_version: std::option::Option<crate::model::RelativeFileVersionEnum>,
     }
     impl Builder {
         /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
@@ -2076,8 +1902,7 @@ pub mod location {
         }
         /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// <p>The position of a change in a compared file, in line number format.</p>
         pub fn file_position(mut self, input: i64) -> Self {
@@ -2086,34 +1911,31 @@ pub mod location {
         }
         /// <p>The position of a change in a compared file, in line number format.</p>
         pub fn set_file_position(mut self, input: std::option::Option<i64>) -> Self {
-            self.file_position = input;
-            self
+            self.file_position = input; self
         }
         /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
-        pub fn relative_file_version(
-            mut self,
-            input: crate::model::RelativeFileVersionEnum,
-        ) -> Self {
+        pub fn relative_file_version(mut self, input: crate::model::RelativeFileVersionEnum) -> Self {
             self.relative_file_version = Some(input);
             self
         }
         /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
-        pub fn set_relative_file_version(
-            mut self,
-            input: std::option::Option<crate::model::RelativeFileVersionEnum>,
-        ) -> Self {
-            self.relative_file_version = input;
-            self
+        pub fn set_relative_file_version(mut self, input: std::option::Option<crate::model::RelativeFileVersionEnum>) -> Self {
+            self.relative_file_version = input; self
         }
         /// Consumes the builder and constructs a [`Location`](crate::model::Location).
         pub fn build(self) -> crate::model::Location {
             crate::model::Location {
-                file_path: self.file_path,
-                file_position: self.file_position,
-                relative_file_version: self.relative_file_version,
+                file_path: self.file_path
+                ,
+                file_position: self.file_position
+                ,
+                relative_file_version: self.relative_file_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Location {
     /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
@@ -2128,9 +1950,9 @@ impl Location {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let relativefileversionenum = unimplemented!();
 /// match relativefileversionenum {
@@ -2152,60 +1974,52 @@ impl Location {
 /// Specifically, when `relativefileversionenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RelativeFileVersionEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RelativeFileVersionEnum {
     #[allow(missing_docs)] // documentation missing in model
     After,
     #[allow(missing_docs)] // documentation missing in model
     Before,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RelativeFileVersionEnum {
     fn from(s: &str) -> Self {
         match s {
             "AFTER" => RelativeFileVersionEnum::After,
             "BEFORE" => RelativeFileVersionEnum::Before,
-            other => RelativeFileVersionEnum::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RelativeFileVersionEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RelativeFileVersionEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RelativeFileVersionEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RelativeFileVersionEnum::from(s))
+                }
+            }
 impl RelativeFileVersionEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelativeFileVersionEnum::After => "AFTER",
             RelativeFileVersionEnum::Before => "BEFORE",
-            RelativeFileVersionEnum::Unknown(value) => value.as_str(),
+            RelativeFileVersionEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AFTER", "BEFORE"]
+        &[
+            "AFTER", "BEFORE"
+        ]
     }
 }
 impl AsRef<str> for RelativeFileVersionEnum {
@@ -2220,9 +2034,9 @@ impl AsRef<str> for RelativeFileVersionEnum {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let overridestatus = unimplemented!();
 /// match overridestatus {
@@ -2244,58 +2058,52 @@ impl AsRef<str> for RelativeFileVersionEnum {
 /// Specifically, when `overridestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OverrideStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OverrideStatus {
     #[allow(missing_docs)] // documentation missing in model
     Override,
     #[allow(missing_docs)] // documentation missing in model
     Revoke,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OverrideStatus {
     fn from(s: &str) -> Self {
         match s {
             "OVERRIDE" => OverrideStatus::Override,
             "REVOKE" => OverrideStatus::Revoke,
-            other => OverrideStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OverrideStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OverrideStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OverrideStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OverrideStatus::from(s))
+                }
+            }
 impl OverrideStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OverrideStatus::Override => "OVERRIDE",
             OverrideStatus::Revoke => "REVOKE",
-            OverrideStatus::Unknown(value) => value.as_str(),
+            OverrideStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OVERRIDE", "REVOKE"]
+        &[
+            "OVERRIDE", "REVOKE"
+        ]
     }
 }
 impl AsRef<str> for OverrideStatus {
@@ -2307,7 +2115,7 @@ impl AsRef<str> for OverrideStatus {
 /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictResolution {
+pub struct ConflictResolution  {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
     #[doc(hidden)]
     pub replace_contents: std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>,
@@ -2320,29 +2128,27 @@ pub struct ConflictResolution {
 }
 impl ConflictResolution {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
-    pub fn replace_contents(&self) -> std::option::Option<&[crate::model::ReplaceContentEntry]> {
+    pub fn replace_contents(&self) -> std::option::Option<& [crate::model::ReplaceContentEntry]> {
         self.replace_contents.as_deref()
     }
     /// <p>Files to be deleted as part of the merge conflict resolution.</p>
-    pub fn delete_files(&self) -> std::option::Option<&[crate::model::DeleteFileEntry]> {
+    pub fn delete_files(&self) -> std::option::Option<& [crate::model::DeleteFileEntry]> {
         self.delete_files.as_deref()
     }
     /// <p>File modes that are set as part of the merge conflict resolution.</p>
-    pub fn set_file_modes(&self) -> std::option::Option<&[crate::model::SetFileModeEntry]> {
+    pub fn set_file_modes(&self) -> std::option::Option<& [crate::model::SetFileModeEntry]> {
         self.set_file_modes.as_deref()
     }
 }
 /// See [`ConflictResolution`](crate::model::ConflictResolution).
 pub mod conflict_resolution {
-
+    
     /// A builder for [`ConflictResolution`](crate::model::ConflictResolution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) replace_contents:
-            std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>,
+        pub(crate) replace_contents: std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>,
         pub(crate) delete_files: std::option::Option<std::vec::Vec<crate::model::DeleteFileEntry>>,
-        pub(crate) set_file_modes:
-            std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>,
+        pub(crate) set_file_modes: std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>,
     }
     impl Builder {
         /// Appends an item to `replace_contents`.
@@ -2352,17 +2158,13 @@ pub mod conflict_resolution {
         /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
         pub fn replace_contents(mut self, input: crate::model::ReplaceContentEntry) -> Self {
             let mut v = self.replace_contents.unwrap_or_default();
-            v.push(input);
-            self.replace_contents = Some(v);
-            self
+                            v.push(input);
+                            self.replace_contents = Some(v);
+                            self
         }
         /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
-        pub fn set_replace_contents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>,
-        ) -> Self {
-            self.replace_contents = input;
-            self
+        pub fn set_replace_contents(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>) -> Self {
+            self.replace_contents = input; self
         }
         /// Appends an item to `delete_files`.
         ///
@@ -2371,17 +2173,13 @@ pub mod conflict_resolution {
         /// <p>Files to be deleted as part of the merge conflict resolution.</p>
         pub fn delete_files(mut self, input: crate::model::DeleteFileEntry) -> Self {
             let mut v = self.delete_files.unwrap_or_default();
-            v.push(input);
-            self.delete_files = Some(v);
-            self
+                            v.push(input);
+                            self.delete_files = Some(v);
+                            self
         }
         /// <p>Files to be deleted as part of the merge conflict resolution.</p>
-        pub fn set_delete_files(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeleteFileEntry>>,
-        ) -> Self {
-            self.delete_files = input;
-            self
+        pub fn set_delete_files(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeleteFileEntry>>) -> Self {
+            self.delete_files = input; self
         }
         /// Appends an item to `set_file_modes`.
         ///
@@ -2390,27 +2188,28 @@ pub mod conflict_resolution {
         /// <p>File modes that are set as part of the merge conflict resolution.</p>
         pub fn set_file_modes(mut self, input: crate::model::SetFileModeEntry) -> Self {
             let mut v = self.set_file_modes.unwrap_or_default();
-            v.push(input);
-            self.set_file_modes = Some(v);
-            self
+                            v.push(input);
+                            self.set_file_modes = Some(v);
+                            self
         }
         /// <p>File modes that are set as part of the merge conflict resolution.</p>
-        pub fn set_set_file_modes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>,
-        ) -> Self {
-            self.set_file_modes = input;
-            self
+        pub fn set_set_file_modes(mut self, input: std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>) -> Self {
+            self.set_file_modes = input; self
         }
         /// Consumes the builder and constructs a [`ConflictResolution`](crate::model::ConflictResolution).
         pub fn build(self) -> crate::model::ConflictResolution {
             crate::model::ConflictResolution {
-                replace_contents: self.replace_contents,
-                delete_files: self.delete_files,
-                set_file_modes: self.set_file_modes,
+                replace_contents: self.replace_contents
+                ,
+                delete_files: self.delete_files
+                ,
+                set_file_modes: self.set_file_modes
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictResolution {
     /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::model::ConflictResolution).
@@ -2422,7 +2221,7 @@ impl ConflictResolution {
 /// <p>Information about the file mode changes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetFileModeEntry {
+pub struct SetFileModeEntry  {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -2432,17 +2231,17 @@ pub struct SetFileModeEntry {
 }
 impl SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The file mode for the file.</p>
-    pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
 /// See [`SetFileModeEntry`](crate::model::SetFileModeEntry).
 pub mod set_file_mode_entry {
-
+    
     /// A builder for [`SetFileModeEntry`](crate::model::SetFileModeEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2457,8 +2256,7 @@ pub mod set_file_mode_entry {
         }
         /// <p>The full path to the file, including the name of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// <p>The file mode for the file.</p>
         pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
@@ -2466,21 +2264,21 @@ pub mod set_file_mode_entry {
             self
         }
         /// <p>The file mode for the file.</p>
-        pub fn set_file_mode(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.file_mode = input;
-            self
+        pub fn set_file_mode(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.file_mode = input; self
         }
         /// Consumes the builder and constructs a [`SetFileModeEntry`](crate::model::SetFileModeEntry).
         pub fn build(self) -> crate::model::SetFileModeEntry {
             crate::model::SetFileModeEntry {
-                file_path: self.file_path,
-                file_mode: self.file_mode,
+                file_path: self.file_path
+                ,
+                file_mode: self.file_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl SetFileModeEntry {
     /// Creates a new builder-style object to manufacture [`SetFileModeEntry`](crate::model::SetFileModeEntry).
@@ -2492,20 +2290,20 @@ impl SetFileModeEntry {
 /// <p>A file that is deleted as part of a commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileEntry {
+pub struct DeleteFileEntry  {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
 }
 impl DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
 }
 /// See [`DeleteFileEntry`](crate::model::DeleteFileEntry).
 pub mod delete_file_entry {
-
+    
     /// A builder for [`DeleteFileEntry`](crate::model::DeleteFileEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2519,16 +2317,18 @@ pub mod delete_file_entry {
         }
         /// <p>The full path of the file to be deleted, including the name of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFileEntry`](crate::model::DeleteFileEntry).
         pub fn build(self) -> crate::model::DeleteFileEntry {
             crate::model::DeleteFileEntry {
-                file_path: self.file_path,
+                file_path: self.file_path
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFileEntry {
     /// Creates a new builder-style object to manufacture [`DeleteFileEntry`](crate::model::DeleteFileEntry).
@@ -2540,7 +2340,7 @@ impl DeleteFileEntry {
 /// <p>Information about a replacement content entry in the conflict of a merge or pull request operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplaceContentEntry {
+pub struct ReplaceContentEntry  {
     /// <p>The path of the conflicting file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -2556,25 +2356,25 @@ pub struct ReplaceContentEntry {
 }
 impl ReplaceContentEntry {
     /// <p>The path of the conflicting file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
-    pub fn replacement_type(&self) -> std::option::Option<&crate::model::ReplacementTypeEnum> {
+    pub fn replacement_type(&self) -> std::option::Option<& crate::model::ReplacementTypeEnum> {
         self.replacement_type.as_ref()
     }
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
-    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>The file mode to apply during conflict resoltion.</p>
-    pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
 /// See [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
 pub mod replace_content_entry {
-
+    
     /// A builder for [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2591,8 +2391,7 @@ pub mod replace_content_entry {
         }
         /// <p>The path of the conflicting file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// <p>The replacement type to use when determining how to resolve the conflict.</p>
         pub fn replacement_type(mut self, input: crate::model::ReplacementTypeEnum) -> Self {
@@ -2600,12 +2399,8 @@ pub mod replace_content_entry {
             self
         }
         /// <p>The replacement type to use when determining how to resolve the conflict.</p>
-        pub fn set_replacement_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplacementTypeEnum>,
-        ) -> Self {
-            self.replacement_type = input;
-            self
+        pub fn set_replacement_type(mut self, input: std::option::Option<crate::model::ReplacementTypeEnum>) -> Self {
+            self.replacement_type = input; self
         }
         /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
         pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -2614,8 +2409,7 @@ pub mod replace_content_entry {
         }
         /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
         pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The file mode to apply during conflict resoltion.</p>
         pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
@@ -2623,23 +2417,25 @@ pub mod replace_content_entry {
             self
         }
         /// <p>The file mode to apply during conflict resoltion.</p>
-        pub fn set_file_mode(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.file_mode = input;
-            self
+        pub fn set_file_mode(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.file_mode = input; self
         }
         /// Consumes the builder and constructs a [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
         pub fn build(self) -> crate::model::ReplaceContentEntry {
             crate::model::ReplaceContentEntry {
-                file_path: self.file_path,
-                replacement_type: self.replacement_type,
-                content: self.content,
-                file_mode: self.file_mode,
+                file_path: self.file_path
+                ,
+                replacement_type: self.replacement_type
+                ,
+                content: self.content
+                ,
+                file_mode: self.file_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplaceContentEntry {
     /// Creates a new builder-style object to manufacture [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
@@ -2654,9 +2450,9 @@ impl ReplaceContentEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replacementtypeenum = unimplemented!();
 /// match replacementtypeenum {
@@ -2680,22 +2476,14 @@ impl ReplaceContentEntry {
 /// Specifically, when `replacementtypeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplacementTypeEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplacementTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     KeepBase,
@@ -2706,7 +2494,7 @@ pub enum ReplacementTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     UseNewContent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplacementTypeEnum {
     fn from(s: &str) -> Self {
@@ -2715,19 +2503,17 @@ impl std::convert::From<&str> for ReplacementTypeEnum {
             "KEEP_DESTINATION" => ReplacementTypeEnum::KeepDestination,
             "KEEP_SOURCE" => ReplacementTypeEnum::KeepSource,
             "USE_NEW_CONTENT" => ReplacementTypeEnum::UseNewContent,
-            other => {
-                ReplacementTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReplacementTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplacementTypeEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplacementTypeEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplacementTypeEnum::from(s))
+                }
+            }
 impl ReplacementTypeEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2736,16 +2522,13 @@ impl ReplacementTypeEnum {
             ReplacementTypeEnum::KeepDestination => "KEEP_DESTINATION",
             ReplacementTypeEnum::KeepSource => "KEEP_SOURCE",
             ReplacementTypeEnum::UseNewContent => "USE_NEW_CONTENT",
-            ReplacementTypeEnum::Unknown(value) => value.as_str(),
+            ReplacementTypeEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "KEEP_BASE",
-            "KEEP_DESTINATION",
-            "KEEP_SOURCE",
-            "USE_NEW_CONTENT",
+            "KEEP_BASE", "KEEP_DESTINATION", "KEEP_SOURCE", "USE_NEW_CONTENT"
         ]
     }
 }
@@ -2761,9 +2544,9 @@ impl AsRef<str> for ReplacementTypeEnum {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflictresolutionstrategytypeenum = unimplemented!();
 /// match conflictresolutionstrategytypeenum {
@@ -2787,22 +2570,14 @@ impl AsRef<str> for ReplacementTypeEnum {
 /// Specifically, when `conflictresolutionstrategytypeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictResolutionStrategyTypeEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictResolutionStrategyTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     AcceptDestination,
@@ -2813,7 +2588,7 @@ pub enum ConflictResolutionStrategyTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictResolutionStrategyTypeEnum {
     fn from(s: &str) -> Self {
@@ -2822,19 +2597,17 @@ impl std::convert::From<&str> for ConflictResolutionStrategyTypeEnum {
             "ACCEPT_SOURCE" => ConflictResolutionStrategyTypeEnum::AcceptSource,
             "AUTOMERGE" => ConflictResolutionStrategyTypeEnum::Automerge,
             "NONE" => ConflictResolutionStrategyTypeEnum::None,
-            other => ConflictResolutionStrategyTypeEnum::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ConflictResolutionStrategyTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictResolutionStrategyTypeEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictResolutionStrategyTypeEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictResolutionStrategyTypeEnum::from(s))
+                }
+            }
 impl ConflictResolutionStrategyTypeEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2843,12 +2616,14 @@ impl ConflictResolutionStrategyTypeEnum {
             ConflictResolutionStrategyTypeEnum::AcceptSource => "ACCEPT_SOURCE",
             ConflictResolutionStrategyTypeEnum::Automerge => "AUTOMERGE",
             ConflictResolutionStrategyTypeEnum::None => "NONE",
-            ConflictResolutionStrategyTypeEnum::Unknown(value) => value.as_str(),
+            ConflictResolutionStrategyTypeEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCEPT_DESTINATION", "ACCEPT_SOURCE", "AUTOMERGE", "NONE"]
+        &[
+            "ACCEPT_DESTINATION", "ACCEPT_SOURCE", "AUTOMERGE", "NONE"
+        ]
     }
 }
 impl AsRef<str> for ConflictResolutionStrategyTypeEnum {
@@ -2863,9 +2638,9 @@ impl AsRef<str> for ConflictResolutionStrategyTypeEnum {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflictdetailleveltypeenum = unimplemented!();
 /// match conflictdetailleveltypeenum {
@@ -2887,60 +2662,52 @@ impl AsRef<str> for ConflictResolutionStrategyTypeEnum {
 /// Specifically, when `conflictdetailleveltypeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictDetailLevelTypeEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictDetailLevelTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     FileLevel,
     #[allow(missing_docs)] // documentation missing in model
     LineLevel,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictDetailLevelTypeEnum {
     fn from(s: &str) -> Self {
         match s {
             "FILE_LEVEL" => ConflictDetailLevelTypeEnum::FileLevel,
             "LINE_LEVEL" => ConflictDetailLevelTypeEnum::LineLevel,
-            other => ConflictDetailLevelTypeEnum::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConflictDetailLevelTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictDetailLevelTypeEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictDetailLevelTypeEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictDetailLevelTypeEnum::from(s))
+                }
+            }
 impl ConflictDetailLevelTypeEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictDetailLevelTypeEnum::FileLevel => "FILE_LEVEL",
             ConflictDetailLevelTypeEnum::LineLevel => "LINE_LEVEL",
-            ConflictDetailLevelTypeEnum::Unknown(value) => value.as_str(),
+            ConflictDetailLevelTypeEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FILE_LEVEL", "LINE_LEVEL"]
+        &[
+            "FILE_LEVEL", "LINE_LEVEL"
+        ]
     }
 }
 impl AsRef<str> for ConflictDetailLevelTypeEnum {
@@ -2952,7 +2719,7 @@ impl AsRef<str> for ConflictDetailLevelTypeEnum {
 /// <p>Information about a repository name and ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryNameIdPair {
+pub struct RepositoryNameIdPair  {
     /// <p>The name associated with the repository.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -2962,17 +2729,17 @@ pub struct RepositoryNameIdPair {
 }
 impl RepositoryNameIdPair {
     /// <p>The name associated with the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The ID associated with the repository.</p>
-    pub fn repository_id(&self) -> std::option::Option<&str> {
+    pub fn repository_id(&self) -> std::option::Option<& str> {
         self.repository_id.as_deref()
     }
 }
 /// See [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
 pub mod repository_name_id_pair {
-
+    
     /// A builder for [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2986,12 +2753,8 @@ pub mod repository_name_id_pair {
             self
         }
         /// <p>The name associated with the repository.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The ID associated with the repository.</p>
         pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2999,21 +2762,21 @@ pub mod repository_name_id_pair {
             self
         }
         /// <p>The ID associated with the repository.</p>
-        pub fn set_repository_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_id = input;
-            self
+        pub fn set_repository_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_id = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
         pub fn build(self) -> crate::model::RepositoryNameIdPair {
             crate::model::RepositoryNameIdPair {
-                repository_name: self.repository_name,
-                repository_id: self.repository_id,
+                repository_name: self.repository_name
+                ,
+                repository_id: self.repository_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryNameIdPair {
     /// Creates a new builder-style object to manufacture [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
@@ -3028,9 +2791,9 @@ impl RepositoryNameIdPair {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderenum = unimplemented!();
 /// match orderenum {
@@ -3052,58 +2815,52 @@ impl RepositoryNameIdPair {
 /// Specifically, when `orderenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderEnum {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderEnum {
     fn from(s: &str) -> Self {
         match s {
             "ascending" => OrderEnum::Ascending,
             "descending" => OrderEnum::Descending,
-            other => OrderEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderEnum::from(s))
+                }
+            }
 impl OrderEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderEnum::Ascending => "ascending",
             OrderEnum::Descending => "descending",
-            OrderEnum::Unknown(value) => value.as_str(),
+            OrderEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ascending", "descending"]
+        &[
+            "ascending", "descending"
+        ]
     }
 }
 impl AsRef<str> for OrderEnum {
@@ -3118,9 +2875,9 @@ impl AsRef<str> for OrderEnum {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortbyenum = unimplemented!();
 /// match sortbyenum {
@@ -3142,58 +2899,52 @@ impl AsRef<str> for OrderEnum {
 /// Specifically, when `sortbyenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortByEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortByEnum {
     #[allow(missing_docs)] // documentation missing in model
     ModifiedDate,
     #[allow(missing_docs)] // documentation missing in model
     RepositoryName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortByEnum {
     fn from(s: &str) -> Self {
         match s {
             "lastModifiedDate" => SortByEnum::ModifiedDate,
             "repositoryName" => SortByEnum::RepositoryName,
-            other => SortByEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortByEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortByEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortByEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortByEnum::from(s))
+                }
+            }
 impl SortByEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortByEnum::ModifiedDate => "lastModifiedDate",
             SortByEnum::RepositoryName => "repositoryName",
-            SortByEnum::Unknown(value) => value.as_str(),
+            SortByEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["lastModifiedDate", "repositoryName"]
+        &[
+            "lastModifiedDate", "repositoryName"
+        ]
     }
 }
 impl AsRef<str> for SortByEnum {
@@ -3205,7 +2956,7 @@ impl AsRef<str> for SortByEnum {
 /// <p>Information about a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryMetadata {
+pub struct RepositoryMetadata  {
     /// <p>The ID of the AWS account associated with the repository.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -3239,49 +2990,49 @@ pub struct RepositoryMetadata {
 }
 impl RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the repository.</p>
-    pub fn repository_id(&self) -> std::option::Option<&str> {
+    pub fn repository_id(&self) -> std::option::Option<& str> {
         self.repository_id.as_deref()
     }
     /// <p>The repository's name.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>A comment or description about the repository.</p>
-    pub fn repository_description(&self) -> std::option::Option<&str> {
+    pub fn repository_description(&self) -> std::option::Option<& str> {
         self.repository_description.as_deref()
     }
     /// <p>The repository's default branch name.</p>
-    pub fn default_branch(&self) -> std::option::Option<&str> {
+    pub fn default_branch(&self) -> std::option::Option<& str> {
         self.default_branch.as_deref()
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
-    pub fn clone_url_http(&self) -> std::option::Option<&str> {
+    pub fn clone_url_http(&self) -> std::option::Option<& str> {
         self.clone_url_http.as_deref()
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
-    pub fn clone_url_ssh(&self) -> std::option::Option<&str> {
+    pub fn clone_url_ssh(&self) -> std::option::Option<& str> {
         self.clone_url_ssh.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`RepositoryMetadata`](crate::model::RepositoryMetadata).
 pub mod repository_metadata {
-
+    
     /// A builder for [`RepositoryMetadata`](crate::model::RepositoryMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3304,8 +3055,7 @@ pub mod repository_metadata {
         }
         /// <p>The ID of the AWS account associated with the repository.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The ID of the repository.</p>
         pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3313,12 +3063,8 @@ pub mod repository_metadata {
             self
         }
         /// <p>The ID of the repository.</p>
-        pub fn set_repository_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_id = input;
-            self
+        pub fn set_repository_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_id = input; self
         }
         /// <p>The repository's name.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3326,12 +3072,8 @@ pub mod repository_metadata {
             self
         }
         /// <p>The repository's name.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>A comment or description about the repository.</p>
         pub fn repository_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3339,12 +3081,8 @@ pub mod repository_metadata {
             self
         }
         /// <p>A comment or description about the repository.</p>
-        pub fn set_repository_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_description = input;
-            self
+        pub fn set_repository_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_description = input; self
         }
         /// <p>The repository's default branch name.</p>
         pub fn default_branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3352,12 +3090,8 @@ pub mod repository_metadata {
             self
         }
         /// <p>The repository's default branch name.</p>
-        pub fn set_default_branch(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_branch = input;
-            self
+        pub fn set_default_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_branch = input; self
         }
         /// <p>The date and time the repository was last modified, in timestamp format.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3365,12 +3099,8 @@ pub mod repository_metadata {
             self
         }
         /// <p>The date and time the repository was last modified, in timestamp format.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The date and time the repository was created, in timestamp format.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3378,12 +3108,8 @@ pub mod repository_metadata {
             self
         }
         /// <p>The date and time the repository was created, in timestamp format.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The URL to use for cloning the repository over HTTPS.</p>
         pub fn clone_url_http(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3391,12 +3117,8 @@ pub mod repository_metadata {
             self
         }
         /// <p>The URL to use for cloning the repository over HTTPS.</p>
-        pub fn set_clone_url_http(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.clone_url_http = input;
-            self
+        pub fn set_clone_url_http(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.clone_url_http = input; self
         }
         /// <p>The URL to use for cloning the repository over SSH.</p>
         pub fn clone_url_ssh(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3404,12 +3126,8 @@ pub mod repository_metadata {
             self
         }
         /// <p>The URL to use for cloning the repository over SSH.</p>
-        pub fn set_clone_url_ssh(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.clone_url_ssh = input;
-            self
+        pub fn set_clone_url_ssh(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.clone_url_ssh = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the repository.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3418,25 +3136,36 @@ pub mod repository_metadata {
         }
         /// <p>The Amazon Resource Name (ARN) of the repository.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryMetadata`](crate::model::RepositoryMetadata).
         pub fn build(self) -> crate::model::RepositoryMetadata {
             crate::model::RepositoryMetadata {
-                account_id: self.account_id,
-                repository_id: self.repository_id,
-                repository_name: self.repository_name,
-                repository_description: self.repository_description,
-                default_branch: self.default_branch,
-                last_modified_date: self.last_modified_date,
-                creation_date: self.creation_date,
-                clone_url_http: self.clone_url_http,
-                clone_url_ssh: self.clone_url_ssh,
-                arn: self.arn,
+                account_id: self.account_id
+                ,
+                repository_id: self.repository_id
+                ,
+                repository_name: self.repository_name
+                ,
+                repository_description: self.repository_description
+                ,
+                default_branch: self.default_branch
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                creation_date: self.creation_date
+                ,
+                clone_url_http: self.clone_url_http
+                ,
+                clone_url_ssh: self.clone_url_ssh
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryMetadata {
     /// Creates a new builder-style object to manufacture [`RepositoryMetadata`](crate::model::RepositoryMetadata).
@@ -3448,7 +3177,7 @@ impl RepositoryMetadata {
 /// <p>Returns information about a specific approval on a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Approval {
+pub struct Approval  {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
@@ -3458,17 +3187,17 @@ pub struct Approval {
 }
 impl Approval {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
-    pub fn approval_state(&self) -> std::option::Option<&crate::model::ApprovalState> {
+    pub fn approval_state(&self) -> std::option::Option<& crate::model::ApprovalState> {
         self.approval_state.as_ref()
     }
 }
 /// See [`Approval`](crate::model::Approval).
 pub mod approval {
-
+    
     /// A builder for [`Approval`](crate::model::Approval).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3483,8 +3212,7 @@ pub mod approval {
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_arn = input;
-            self
+            self.user_arn = input; self
         }
         /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
         pub fn approval_state(mut self, input: crate::model::ApprovalState) -> Self {
@@ -3492,21 +3220,21 @@ pub mod approval {
             self
         }
         /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
-        pub fn set_approval_state(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalState>,
-        ) -> Self {
-            self.approval_state = input;
-            self
+        pub fn set_approval_state(mut self, input: std::option::Option<crate::model::ApprovalState>) -> Self {
+            self.approval_state = input; self
         }
         /// Consumes the builder and constructs a [`Approval`](crate::model::Approval).
         pub fn build(self) -> crate::model::Approval {
             crate::model::Approval {
-                user_arn: self.user_arn,
-                approval_state: self.approval_state,
+                user_arn: self.user_arn
+                ,
+                approval_state: self.approval_state
+                ,
             }
         }
     }
+    
+    
 }
 impl Approval {
     /// Creates a new builder-style object to manufacture [`Approval`](crate::model::Approval).
@@ -3518,7 +3246,7 @@ impl Approval {
 /// <p>Information about the metadata for a conflict in a merge operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictMetadata {
+pub struct ConflictMetadata  {
     /// <p>The path of the file that contains conflicts.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -3552,19 +3280,19 @@ pub struct ConflictMetadata {
 }
 impl ConflictMetadata {
     /// <p>The path of the file that contains conflicts.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
-    pub fn file_sizes(&self) -> std::option::Option<&crate::model::FileSizes> {
+    pub fn file_sizes(&self) -> std::option::Option<& crate::model::FileSizes> {
         self.file_sizes.as_ref()
     }
     /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
-    pub fn file_modes(&self) -> std::option::Option<&crate::model::FileModes> {
+    pub fn file_modes(&self) -> std::option::Option<& crate::model::FileModes> {
         self.file_modes.as_ref()
     }
     /// <p>Information about any object type conflicts in a merge operation.</p>
-    pub fn object_types(&self) -> std::option::Option<&crate::model::ObjectTypes> {
+    pub fn object_types(&self) -> std::option::Option<& crate::model::ObjectTypes> {
         self.object_types.as_ref()
     }
     /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
@@ -3572,7 +3300,7 @@ impl ConflictMetadata {
         self.number_of_conflicts
     }
     /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
-    pub fn is_binary_file(&self) -> std::option::Option<&crate::model::IsBinaryFile> {
+    pub fn is_binary_file(&self) -> std::option::Option<& crate::model::IsBinaryFile> {
         self.is_binary_file.as_ref()
     }
     /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
@@ -3588,13 +3316,13 @@ impl ConflictMetadata {
         self.object_type_conflict
     }
     /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
-    pub fn merge_operations(&self) -> std::option::Option<&crate::model::MergeOperations> {
+    pub fn merge_operations(&self) -> std::option::Option<& crate::model::MergeOperations> {
         self.merge_operations.as_ref()
     }
 }
 /// See [`ConflictMetadata`](crate::model::ConflictMetadata).
 pub mod conflict_metadata {
-
+    
     /// A builder for [`ConflictMetadata`](crate::model::ConflictMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3617,8 +3345,7 @@ pub mod conflict_metadata {
         }
         /// <p>The path of the file that contains conflicts.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
         pub fn file_sizes(mut self, input: crate::model::FileSizes) -> Self {
@@ -3626,12 +3353,8 @@ pub mod conflict_metadata {
             self
         }
         /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
-        pub fn set_file_sizes(
-            mut self,
-            input: std::option::Option<crate::model::FileSizes>,
-        ) -> Self {
-            self.file_sizes = input;
-            self
+        pub fn set_file_sizes(mut self, input: std::option::Option<crate::model::FileSizes>) -> Self {
+            self.file_sizes = input; self
         }
         /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
         pub fn file_modes(mut self, input: crate::model::FileModes) -> Self {
@@ -3639,12 +3362,8 @@ pub mod conflict_metadata {
             self
         }
         /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
-        pub fn set_file_modes(
-            mut self,
-            input: std::option::Option<crate::model::FileModes>,
-        ) -> Self {
-            self.file_modes = input;
-            self
+        pub fn set_file_modes(mut self, input: std::option::Option<crate::model::FileModes>) -> Self {
+            self.file_modes = input; self
         }
         /// <p>Information about any object type conflicts in a merge operation.</p>
         pub fn object_types(mut self, input: crate::model::ObjectTypes) -> Self {
@@ -3652,12 +3371,8 @@ pub mod conflict_metadata {
             self
         }
         /// <p>Information about any object type conflicts in a merge operation.</p>
-        pub fn set_object_types(
-            mut self,
-            input: std::option::Option<crate::model::ObjectTypes>,
-        ) -> Self {
-            self.object_types = input;
-            self
+        pub fn set_object_types(mut self, input: std::option::Option<crate::model::ObjectTypes>) -> Self {
+            self.object_types = input; self
         }
         /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
         pub fn number_of_conflicts(mut self, input: i32) -> Self {
@@ -3666,8 +3381,7 @@ pub mod conflict_metadata {
         }
         /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
         pub fn set_number_of_conflicts(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_conflicts = input;
-            self
+            self.number_of_conflicts = input; self
         }
         /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
         pub fn is_binary_file(mut self, input: crate::model::IsBinaryFile) -> Self {
@@ -3675,12 +3389,8 @@ pub mod conflict_metadata {
             self
         }
         /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
-        pub fn set_is_binary_file(
-            mut self,
-            input: std::option::Option<crate::model::IsBinaryFile>,
-        ) -> Self {
-            self.is_binary_file = input;
-            self
+        pub fn set_is_binary_file(mut self, input: std::option::Option<crate::model::IsBinaryFile>) -> Self {
+            self.is_binary_file = input; self
         }
         /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
         pub fn content_conflict(mut self, input: bool) -> Self {
@@ -3689,8 +3399,7 @@ pub mod conflict_metadata {
         }
         /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
         pub fn set_content_conflict(mut self, input: std::option::Option<bool>) -> Self {
-            self.content_conflict = input;
-            self
+            self.content_conflict = input; self
         }
         /// <p>A boolean value indicating whether there are conflicts in the file mode of a file.</p>
         pub fn file_mode_conflict(mut self, input: bool) -> Self {
@@ -3699,8 +3408,7 @@ pub mod conflict_metadata {
         }
         /// <p>A boolean value indicating whether there are conflicts in the file mode of a file.</p>
         pub fn set_file_mode_conflict(mut self, input: std::option::Option<bool>) -> Self {
-            self.file_mode_conflict = input;
-            self
+            self.file_mode_conflict = input; self
         }
         /// <p>A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of a file, folder, or submodule.</p>
         pub fn object_type_conflict(mut self, input: bool) -> Self {
@@ -3709,8 +3417,7 @@ pub mod conflict_metadata {
         }
         /// <p>A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of a file, folder, or submodule.</p>
         pub fn set_object_type_conflict(mut self, input: std::option::Option<bool>) -> Self {
-            self.object_type_conflict = input;
-            self
+            self.object_type_conflict = input; self
         }
         /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
         pub fn merge_operations(mut self, input: crate::model::MergeOperations) -> Self {
@@ -3718,29 +3425,41 @@ pub mod conflict_metadata {
             self
         }
         /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
-        pub fn set_merge_operations(
-            mut self,
-            input: std::option::Option<crate::model::MergeOperations>,
-        ) -> Self {
-            self.merge_operations = input;
-            self
+        pub fn set_merge_operations(mut self, input: std::option::Option<crate::model::MergeOperations>) -> Self {
+            self.merge_operations = input; self
         }
         /// Consumes the builder and constructs a [`ConflictMetadata`](crate::model::ConflictMetadata).
         pub fn build(self) -> crate::model::ConflictMetadata {
             crate::model::ConflictMetadata {
-                file_path: self.file_path,
-                file_sizes: self.file_sizes,
-                file_modes: self.file_modes,
-                object_types: self.object_types,
-                number_of_conflicts: self.number_of_conflicts.unwrap_or_default(),
-                is_binary_file: self.is_binary_file,
-                content_conflict: self.content_conflict.unwrap_or_default(),
-                file_mode_conflict: self.file_mode_conflict.unwrap_or_default(),
-                object_type_conflict: self.object_type_conflict.unwrap_or_default(),
-                merge_operations: self.merge_operations,
+                file_path: self.file_path
+                ,
+                file_sizes: self.file_sizes
+                ,
+                file_modes: self.file_modes
+                ,
+                object_types: self.object_types
+                ,
+                number_of_conflicts: self.number_of_conflicts
+                    .unwrap_or_default()
+                ,
+                is_binary_file: self.is_binary_file
+                ,
+                content_conflict: self.content_conflict
+                    .unwrap_or_default()
+                ,
+                file_mode_conflict: self.file_mode_conflict
+                    .unwrap_or_default()
+                ,
+                object_type_conflict: self.object_type_conflict
+                    .unwrap_or_default()
+                ,
+                merge_operations: self.merge_operations
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictMetadata {
     /// Creates a new builder-style object to manufacture [`ConflictMetadata`](crate::model::ConflictMetadata).
@@ -3752,7 +3471,7 @@ impl ConflictMetadata {
 /// <p>Information about the file operation conflicts in a merge operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergeOperations {
+pub struct MergeOperations  {
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::ChangeTypeEnum>,
@@ -3762,17 +3481,17 @@ pub struct MergeOperations {
 }
 impl MergeOperations {
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::ChangeTypeEnum> {
+    pub fn source(&self) -> std::option::Option<& crate::model::ChangeTypeEnum> {
         self.source.as_ref()
     }
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::ChangeTypeEnum> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::ChangeTypeEnum> {
         self.destination.as_ref()
     }
 }
 /// See [`MergeOperations`](crate::model::MergeOperations).
 pub mod merge_operations {
-
+    
     /// A builder for [`MergeOperations`](crate::model::MergeOperations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3786,12 +3505,8 @@ pub mod merge_operations {
             self
         }
         /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<crate::model::ChangeTypeEnum>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<crate::model::ChangeTypeEnum>) -> Self {
+            self.source = input; self
         }
         /// <p>The operation on a file in the destination of a merge or pull request.</p>
         pub fn destination(mut self, input: crate::model::ChangeTypeEnum) -> Self {
@@ -3799,21 +3514,21 @@ pub mod merge_operations {
             self
         }
         /// <p>The operation on a file in the destination of a merge or pull request.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::ChangeTypeEnum>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::ChangeTypeEnum>) -> Self {
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`MergeOperations`](crate::model::MergeOperations).
         pub fn build(self) -> crate::model::MergeOperations {
             crate::model::MergeOperations {
-                source: self.source,
-                destination: self.destination,
+                source: self.source
+                ,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl MergeOperations {
     /// Creates a new builder-style object to manufacture [`MergeOperations`](crate::model::MergeOperations).
@@ -3828,9 +3543,9 @@ impl MergeOperations {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changetypeenum = unimplemented!();
 /// match changetypeenum {
@@ -3853,22 +3568,14 @@ impl MergeOperations {
 /// Specifically, when `changetypeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeTypeEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     Added,
@@ -3877,7 +3584,7 @@ pub enum ChangeTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     Modified,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeTypeEnum {
     fn from(s: &str) -> Self {
@@ -3885,17 +3592,17 @@ impl std::convert::From<&str> for ChangeTypeEnum {
             "A" => ChangeTypeEnum::Added,
             "D" => ChangeTypeEnum::Deleted,
             "M" => ChangeTypeEnum::Modified,
-            other => ChangeTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChangeTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChangeTypeEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeTypeEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeTypeEnum::from(s))
+                }
+            }
 impl ChangeTypeEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3903,12 +3610,14 @@ impl ChangeTypeEnum {
             ChangeTypeEnum::Added => "A",
             ChangeTypeEnum::Deleted => "D",
             ChangeTypeEnum::Modified => "M",
-            ChangeTypeEnum::Unknown(value) => value.as_str(),
+            ChangeTypeEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["A", "D", "M"]
+        &[
+            "A", "D", "M"
+        ]
     }
 }
 impl AsRef<str> for ChangeTypeEnum {
@@ -3920,7 +3629,7 @@ impl AsRef<str> for ChangeTypeEnum {
 /// <p>Information about whether a file is binary or textual in a merge or pull request operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IsBinaryFile {
+pub struct IsBinaryFile  {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     #[doc(hidden)]
     pub source: std::option::Option<bool>,
@@ -3947,7 +3656,7 @@ impl IsBinaryFile {
 }
 /// See [`IsBinaryFile`](crate::model::IsBinaryFile).
 pub mod is_binary_file {
-
+    
     /// A builder for [`IsBinaryFile`](crate::model::IsBinaryFile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3963,8 +3672,7 @@ pub mod is_binary_file {
         }
         /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
         pub fn set_source(mut self, input: std::option::Option<bool>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
         pub fn destination(mut self, input: bool) -> Self {
@@ -3973,8 +3681,7 @@ pub mod is_binary_file {
         }
         /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
         pub fn set_destination(mut self, input: std::option::Option<bool>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
         pub fn base(mut self, input: bool) -> Self {
@@ -3983,18 +3690,22 @@ pub mod is_binary_file {
         }
         /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
         pub fn set_base(mut self, input: std::option::Option<bool>) -> Self {
-            self.base = input;
-            self
+            self.base = input; self
         }
         /// Consumes the builder and constructs a [`IsBinaryFile`](crate::model::IsBinaryFile).
         pub fn build(self) -> crate::model::IsBinaryFile {
             crate::model::IsBinaryFile {
-                source: self.source,
-                destination: self.destination,
-                base: self.base,
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+                base: self.base
+                ,
             }
         }
     }
+    
+    
 }
 impl IsBinaryFile {
     /// Creates a new builder-style object to manufacture [`IsBinaryFile`](crate::model::IsBinaryFile).
@@ -4006,7 +3717,7 @@ impl IsBinaryFile {
 /// <p>Information about the type of an object in a merge operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectTypes {
+pub struct ObjectTypes  {
     /// <p>The type of the object in the source branch.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::ObjectTypeEnum>,
@@ -4019,21 +3730,21 @@ pub struct ObjectTypes {
 }
 impl ObjectTypes {
     /// <p>The type of the object in the source branch.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::ObjectTypeEnum> {
+    pub fn source(&self) -> std::option::Option<& crate::model::ObjectTypeEnum> {
         self.source.as_ref()
     }
     /// <p>The type of the object in the destination branch.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::ObjectTypeEnum> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::ObjectTypeEnum> {
         self.destination.as_ref()
     }
     /// <p>The type of the object in the base commit of the merge.</p>
-    pub fn base(&self) -> std::option::Option<&crate::model::ObjectTypeEnum> {
+    pub fn base(&self) -> std::option::Option<& crate::model::ObjectTypeEnum> {
         self.base.as_ref()
     }
 }
 /// See [`ObjectTypes`](crate::model::ObjectTypes).
 pub mod object_types {
-
+    
     /// A builder for [`ObjectTypes`](crate::model::ObjectTypes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4048,12 +3759,8 @@ pub mod object_types {
             self
         }
         /// <p>The type of the object in the source branch.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<crate::model::ObjectTypeEnum>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<crate::model::ObjectTypeEnum>) -> Self {
+            self.source = input; self
         }
         /// <p>The type of the object in the destination branch.</p>
         pub fn destination(mut self, input: crate::model::ObjectTypeEnum) -> Self {
@@ -4061,12 +3768,8 @@ pub mod object_types {
             self
         }
         /// <p>The type of the object in the destination branch.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::ObjectTypeEnum>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::ObjectTypeEnum>) -> Self {
+            self.destination = input; self
         }
         /// <p>The type of the object in the base commit of the merge.</p>
         pub fn base(mut self, input: crate::model::ObjectTypeEnum) -> Self {
@@ -4074,22 +3777,23 @@ pub mod object_types {
             self
         }
         /// <p>The type of the object in the base commit of the merge.</p>
-        pub fn set_base(
-            mut self,
-            input: std::option::Option<crate::model::ObjectTypeEnum>,
-        ) -> Self {
-            self.base = input;
-            self
+        pub fn set_base(mut self, input: std::option::Option<crate::model::ObjectTypeEnum>) -> Self {
+            self.base = input; self
         }
         /// Consumes the builder and constructs a [`ObjectTypes`](crate::model::ObjectTypes).
         pub fn build(self) -> crate::model::ObjectTypes {
             crate::model::ObjectTypes {
-                source: self.source,
-                destination: self.destination,
-                base: self.base,
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+                base: self.base
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectTypes {
     /// Creates a new builder-style object to manufacture [`ObjectTypes`](crate::model::ObjectTypes).
@@ -4104,9 +3808,9 @@ impl ObjectTypes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objecttypeenum = unimplemented!();
 /// match objecttypeenum {
@@ -4130,22 +3834,14 @@ impl ObjectTypes {
 /// Specifically, when `objecttypeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectTypeEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObjectTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     Directory,
@@ -4156,7 +3852,7 @@ pub enum ObjectTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     SymbolicLink,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectTypeEnum {
     fn from(s: &str) -> Self {
@@ -4165,17 +3861,17 @@ impl std::convert::From<&str> for ObjectTypeEnum {
             "FILE" => ObjectTypeEnum::File,
             "GIT_LINK" => ObjectTypeEnum::GitLink,
             "SYMBOLIC_LINK" => ObjectTypeEnum::SymbolicLink,
-            other => ObjectTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ObjectTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ObjectTypeEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectTypeEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObjectTypeEnum::from(s))
+                }
+            }
 impl ObjectTypeEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4184,12 +3880,14 @@ impl ObjectTypeEnum {
             ObjectTypeEnum::File => "FILE",
             ObjectTypeEnum::GitLink => "GIT_LINK",
             ObjectTypeEnum::SymbolicLink => "SYMBOLIC_LINK",
-            ObjectTypeEnum::Unknown(value) => value.as_str(),
+            ObjectTypeEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIRECTORY", "FILE", "GIT_LINK", "SYMBOLIC_LINK"]
+        &[
+            "DIRECTORY", "FILE", "GIT_LINK", "SYMBOLIC_LINK"
+        ]
     }
 }
 impl AsRef<str> for ObjectTypeEnum {
@@ -4201,7 +3899,7 @@ impl AsRef<str> for ObjectTypeEnum {
 /// <p>Information about file modes in a merge or pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileModes {
+pub struct FileModes  {
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -4214,21 +3912,21 @@ pub struct FileModes {
 }
 impl FileModes {
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn source(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.source.as_ref()
     }
     /// <p>The file mode of a file in the destination of a merge or pull request.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.destination.as_ref()
     }
     /// <p>The file mode of a file in the base of a merge or pull request.</p>
-    pub fn base(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn base(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.base.as_ref()
     }
 }
 /// See [`FileModes`](crate::model::FileModes).
 pub mod file_modes {
-
+    
     /// A builder for [`FileModes`](crate::model::FileModes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4243,12 +3941,8 @@ pub mod file_modes {
             self
         }
         /// <p>The file mode of a file in the source of a merge or pull request.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.source = input; self
         }
         /// <p>The file mode of a file in the destination of a merge or pull request.</p>
         pub fn destination(mut self, input: crate::model::FileModeTypeEnum) -> Self {
@@ -4256,12 +3950,8 @@ pub mod file_modes {
             self
         }
         /// <p>The file mode of a file in the destination of a merge or pull request.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.destination = input; self
         }
         /// <p>The file mode of a file in the base of a merge or pull request.</p>
         pub fn base(mut self, input: crate::model::FileModeTypeEnum) -> Self {
@@ -4269,22 +3959,23 @@ pub mod file_modes {
             self
         }
         /// <p>The file mode of a file in the base of a merge or pull request.</p>
-        pub fn set_base(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.base = input;
-            self
+        pub fn set_base(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.base = input; self
         }
         /// Consumes the builder and constructs a [`FileModes`](crate::model::FileModes).
         pub fn build(self) -> crate::model::FileModes {
             crate::model::FileModes {
-                source: self.source,
-                destination: self.destination,
-                base: self.base,
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+                base: self.base
+                ,
             }
         }
     }
+    
+    
 }
 impl FileModes {
     /// Creates a new builder-style object to manufacture [`FileModes`](crate::model::FileModes).
@@ -4296,7 +3987,7 @@ impl FileModes {
 /// <p>Information about the size of files in a merge or pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSizes {
+pub struct FileSizes  {
     /// <p>The size of a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
     pub source: i64,
@@ -4323,7 +4014,7 @@ impl FileSizes {
 }
 /// See [`FileSizes`](crate::model::FileSizes).
 pub mod file_sizes {
-
+    
     /// A builder for [`FileSizes`](crate::model::FileSizes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4339,8 +4030,7 @@ pub mod file_sizes {
         }
         /// <p>The size of a file in the source of a merge or pull request.</p>
         pub fn set_source(mut self, input: std::option::Option<i64>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The size of a file in the destination of a merge or pull request.</p>
         pub fn destination(mut self, input: i64) -> Self {
@@ -4349,8 +4039,7 @@ pub mod file_sizes {
         }
         /// <p>The size of a file in the destination of a merge or pull request.</p>
         pub fn set_destination(mut self, input: std::option::Option<i64>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// <p>The size of a file in the base of a merge or pull request.</p>
         pub fn base(mut self, input: i64) -> Self {
@@ -4359,18 +4048,25 @@ pub mod file_sizes {
         }
         /// <p>The size of a file in the base of a merge or pull request.</p>
         pub fn set_base(mut self, input: std::option::Option<i64>) -> Self {
-            self.base = input;
-            self
+            self.base = input; self
         }
         /// Consumes the builder and constructs a [`FileSizes`](crate::model::FileSizes).
         pub fn build(self) -> crate::model::FileSizes {
             crate::model::FileSizes {
-                source: self.source.unwrap_or_default(),
-                destination: self.destination.unwrap_or_default(),
-                base: self.base.unwrap_or_default(),
+                source: self.source
+                    .unwrap_or_default()
+                ,
+                destination: self.destination
+                    .unwrap_or_default()
+                ,
+                base: self.base
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl FileSizes {
     /// Creates a new builder-style object to manufacture [`FileSizes`](crate::model::FileSizes).
@@ -4382,7 +4078,7 @@ impl FileSizes {
 /// <p>Returns information about a submodule reference in a repository folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubModule {
+pub struct SubModule  {
     /// <p>The commit ID that contains the reference to the submodule.</p>
     #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
@@ -4395,21 +4091,21 @@ pub struct SubModule {
 }
 impl SubModule {
     /// <p>The commit ID that contains the reference to the submodule.</p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> std::option::Option<& str> {
         self.commit_id.as_deref()
     }
     /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
-    pub fn absolute_path(&self) -> std::option::Option<&str> {
+    pub fn absolute_path(&self) -> std::option::Option<& str> {
         self.absolute_path.as_deref()
     }
     /// <p>The relative path of the submodule from the folder where the query originated.</p>
-    pub fn relative_path(&self) -> std::option::Option<&str> {
+    pub fn relative_path(&self) -> std::option::Option<& str> {
         self.relative_path.as_deref()
     }
 }
 /// See [`SubModule`](crate::model::SubModule).
 pub mod sub_module {
-
+    
     /// A builder for [`SubModule`](crate::model::SubModule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4425,8 +4121,7 @@ pub mod sub_module {
         }
         /// <p>The commit ID that contains the reference to the submodule.</p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.commit_id = input;
-            self
+            self.commit_id = input; self
         }
         /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
         pub fn absolute_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4434,12 +4129,8 @@ pub mod sub_module {
             self
         }
         /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
-        pub fn set_absolute_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.absolute_path = input;
-            self
+        pub fn set_absolute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.absolute_path = input; self
         }
         /// <p>The relative path of the submodule from the folder where the query originated.</p>
         pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4447,22 +4138,23 @@ pub mod sub_module {
             self
         }
         /// <p>The relative path of the submodule from the folder where the query originated.</p>
-        pub fn set_relative_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.relative_path = input;
-            self
+        pub fn set_relative_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.relative_path = input; self
         }
         /// Consumes the builder and constructs a [`SubModule`](crate::model::SubModule).
         pub fn build(self) -> crate::model::SubModule {
             crate::model::SubModule {
-                commit_id: self.commit_id,
-                absolute_path: self.absolute_path,
-                relative_path: self.relative_path,
+                commit_id: self.commit_id
+                ,
+                absolute_path: self.absolute_path
+                ,
+                relative_path: self.relative_path
+                ,
             }
         }
     }
+    
+    
 }
 impl SubModule {
     /// Creates a new builder-style object to manufacture [`SubModule`](crate::model::SubModule).
@@ -4474,7 +4166,7 @@ impl SubModule {
 /// <p>Returns information about a symbolic link in a repository folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SymbolicLink {
+pub struct SymbolicLink  {
     /// <p>The blob ID that contains the information about the symbolic link.</p>
     #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
@@ -4490,25 +4182,25 @@ pub struct SymbolicLink {
 }
 impl SymbolicLink {
     /// <p>The blob ID that contains the information about the symbolic link.</p>
-    pub fn blob_id(&self) -> std::option::Option<&str> {
+    pub fn blob_id(&self) -> std::option::Option<& str> {
         self.blob_id.as_deref()
     }
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
-    pub fn absolute_path(&self) -> std::option::Option<&str> {
+    pub fn absolute_path(&self) -> std::option::Option<& str> {
         self.absolute_path.as_deref()
     }
     /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
-    pub fn relative_path(&self) -> std::option::Option<&str> {
+    pub fn relative_path(&self) -> std::option::Option<& str> {
         self.relative_path.as_deref()
     }
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
-    pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
 /// See [`SymbolicLink`](crate::model::SymbolicLink).
 pub mod symbolic_link {
-
+    
     /// A builder for [`SymbolicLink`](crate::model::SymbolicLink).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4525,8 +4217,7 @@ pub mod symbolic_link {
         }
         /// <p>The blob ID that contains the information about the symbolic link.</p>
         pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.blob_id = input;
-            self
+            self.blob_id = input; self
         }
         /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
         pub fn absolute_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4534,12 +4225,8 @@ pub mod symbolic_link {
             self
         }
         /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
-        pub fn set_absolute_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.absolute_path = input;
-            self
+        pub fn set_absolute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.absolute_path = input; self
         }
         /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
         pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4547,12 +4234,8 @@ pub mod symbolic_link {
             self
         }
         /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
-        pub fn set_relative_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.relative_path = input;
-            self
+        pub fn set_relative_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.relative_path = input; self
         }
         /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
         pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
@@ -4560,23 +4243,25 @@ pub mod symbolic_link {
             self
         }
         /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
-        pub fn set_file_mode(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.file_mode = input;
-            self
+        pub fn set_file_mode(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.file_mode = input; self
         }
         /// Consumes the builder and constructs a [`SymbolicLink`](crate::model::SymbolicLink).
         pub fn build(self) -> crate::model::SymbolicLink {
             crate::model::SymbolicLink {
-                blob_id: self.blob_id,
-                absolute_path: self.absolute_path,
-                relative_path: self.relative_path,
-                file_mode: self.file_mode,
+                blob_id: self.blob_id
+                ,
+                absolute_path: self.absolute_path
+                ,
+                relative_path: self.relative_path
+                ,
+                file_mode: self.file_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl SymbolicLink {
     /// Creates a new builder-style object to manufacture [`SymbolicLink`](crate::model::SymbolicLink).
@@ -4588,7 +4273,7 @@ impl SymbolicLink {
 /// <p>Returns information about a file in a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct File {
+pub struct File  {
     /// <p>The blob ID that contains the file information.</p>
     #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
@@ -4604,25 +4289,25 @@ pub struct File {
 }
 impl File {
     /// <p>The blob ID that contains the file information.</p>
-    pub fn blob_id(&self) -> std::option::Option<&str> {
+    pub fn blob_id(&self) -> std::option::Option<& str> {
         self.blob_id.as_deref()
     }
     /// <p>The fully qualified path to the file in the repository.</p>
-    pub fn absolute_path(&self) -> std::option::Option<&str> {
+    pub fn absolute_path(&self) -> std::option::Option<& str> {
         self.absolute_path.as_deref()
     }
     /// <p>The relative path of the file from the folder where the query originated.</p>
-    pub fn relative_path(&self) -> std::option::Option<&str> {
+    pub fn relative_path(&self) -> std::option::Option<& str> {
         self.relative_path.as_deref()
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
 /// See [`File`](crate::model::File).
 pub mod file {
-
+    
     /// A builder for [`File`](crate::model::File).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4639,8 +4324,7 @@ pub mod file {
         }
         /// <p>The blob ID that contains the file information.</p>
         pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.blob_id = input;
-            self
+            self.blob_id = input; self
         }
         /// <p>The fully qualified path to the file in the repository.</p>
         pub fn absolute_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4648,12 +4332,8 @@ pub mod file {
             self
         }
         /// <p>The fully qualified path to the file in the repository.</p>
-        pub fn set_absolute_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.absolute_path = input;
-            self
+        pub fn set_absolute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.absolute_path = input; self
         }
         /// <p>The relative path of the file from the folder where the query originated.</p>
         pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4661,12 +4341,8 @@ pub mod file {
             self
         }
         /// <p>The relative path of the file from the folder where the query originated.</p>
-        pub fn set_relative_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.relative_path = input;
-            self
+        pub fn set_relative_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.relative_path = input; self
         }
         /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
         pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
@@ -4674,23 +4350,25 @@ pub mod file {
             self
         }
         /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-        pub fn set_file_mode(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.file_mode = input;
-            self
+        pub fn set_file_mode(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.file_mode = input; self
         }
         /// Consumes the builder and constructs a [`File`](crate::model::File).
         pub fn build(self) -> crate::model::File {
             crate::model::File {
-                blob_id: self.blob_id,
-                absolute_path: self.absolute_path,
-                relative_path: self.relative_path,
-                file_mode: self.file_mode,
+                blob_id: self.blob_id
+                ,
+                absolute_path: self.absolute_path
+                ,
+                relative_path: self.relative_path
+                ,
+                file_mode: self.file_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl File {
     /// Creates a new builder-style object to manufacture [`File`](crate::model::File).
@@ -4702,7 +4380,7 @@ impl File {
 /// <p>Returns information about a folder in a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Folder {
+pub struct Folder  {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
@@ -4715,21 +4393,21 @@ pub struct Folder {
 }
 impl Folder {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
-    pub fn tree_id(&self) -> std::option::Option<&str> {
+    pub fn tree_id(&self) -> std::option::Option<& str> {
         self.tree_id.as_deref()
     }
     /// <p>The fully qualified path of the folder in the repository.</p>
-    pub fn absolute_path(&self) -> std::option::Option<&str> {
+    pub fn absolute_path(&self) -> std::option::Option<& str> {
         self.absolute_path.as_deref()
     }
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
-    pub fn relative_path(&self) -> std::option::Option<&str> {
+    pub fn relative_path(&self) -> std::option::Option<& str> {
         self.relative_path.as_deref()
     }
 }
 /// See [`Folder`](crate::model::Folder).
 pub mod folder {
-
+    
     /// A builder for [`Folder`](crate::model::Folder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4745,8 +4423,7 @@ pub mod folder {
         }
         /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
         pub fn set_tree_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tree_id = input;
-            self
+            self.tree_id = input; self
         }
         /// <p>The fully qualified path of the folder in the repository.</p>
         pub fn absolute_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4754,12 +4431,8 @@ pub mod folder {
             self
         }
         /// <p>The fully qualified path of the folder in the repository.</p>
-        pub fn set_absolute_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.absolute_path = input;
-            self
+        pub fn set_absolute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.absolute_path = input; self
         }
         /// <p>The relative path of the specified folder from the folder where the query originated.</p>
         pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4767,22 +4440,23 @@ pub mod folder {
             self
         }
         /// <p>The relative path of the specified folder from the folder where the query originated.</p>
-        pub fn set_relative_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.relative_path = input;
-            self
+        pub fn set_relative_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.relative_path = input; self
         }
         /// Consumes the builder and constructs a [`Folder`](crate::model::Folder).
         pub fn build(self) -> crate::model::Folder {
             crate::model::Folder {
-                tree_id: self.tree_id,
-                absolute_path: self.absolute_path,
-                relative_path: self.relative_path,
+                tree_id: self.tree_id
+                ,
+                absolute_path: self.absolute_path
+                ,
+                relative_path: self.relative_path
+                ,
             }
         }
     }
+    
+    
 }
 impl Folder {
     /// Creates a new builder-style object to manufacture [`Folder`](crate::model::Folder).
@@ -4794,7 +4468,7 @@ impl Folder {
 /// <p>Returns information about a set of differences for a commit specifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Difference {
+pub struct Difference  {
     /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
     #[doc(hidden)]
     pub before_blob: std::option::Option<crate::model::BlobMetadata>,
@@ -4807,21 +4481,21 @@ pub struct Difference {
 }
 impl Difference {
     /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
-    pub fn before_blob(&self) -> std::option::Option<&crate::model::BlobMetadata> {
+    pub fn before_blob(&self) -> std::option::Option<& crate::model::BlobMetadata> {
         self.before_blob.as_ref()
     }
     /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
-    pub fn after_blob(&self) -> std::option::Option<&crate::model::BlobMetadata> {
+    pub fn after_blob(&self) -> std::option::Option<& crate::model::BlobMetadata> {
         self.after_blob.as_ref()
     }
     /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
-    pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeTypeEnum> {
+    pub fn change_type(&self) -> std::option::Option<& crate::model::ChangeTypeEnum> {
         self.change_type.as_ref()
     }
 }
 /// See [`Difference`](crate::model::Difference).
 pub mod difference {
-
+    
     /// A builder for [`Difference`](crate::model::Difference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4836,12 +4510,8 @@ pub mod difference {
             self
         }
         /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
-        pub fn set_before_blob(
-            mut self,
-            input: std::option::Option<crate::model::BlobMetadata>,
-        ) -> Self {
-            self.before_blob = input;
-            self
+        pub fn set_before_blob(mut self, input: std::option::Option<crate::model::BlobMetadata>) -> Self {
+            self.before_blob = input; self
         }
         /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
         pub fn after_blob(mut self, input: crate::model::BlobMetadata) -> Self {
@@ -4849,12 +4519,8 @@ pub mod difference {
             self
         }
         /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
-        pub fn set_after_blob(
-            mut self,
-            input: std::option::Option<crate::model::BlobMetadata>,
-        ) -> Self {
-            self.after_blob = input;
-            self
+        pub fn set_after_blob(mut self, input: std::option::Option<crate::model::BlobMetadata>) -> Self {
+            self.after_blob = input; self
         }
         /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
         pub fn change_type(mut self, input: crate::model::ChangeTypeEnum) -> Self {
@@ -4862,22 +4528,23 @@ pub mod difference {
             self
         }
         /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
-        pub fn set_change_type(
-            mut self,
-            input: std::option::Option<crate::model::ChangeTypeEnum>,
-        ) -> Self {
-            self.change_type = input;
-            self
+        pub fn set_change_type(mut self, input: std::option::Option<crate::model::ChangeTypeEnum>) -> Self {
+            self.change_type = input; self
         }
         /// Consumes the builder and constructs a [`Difference`](crate::model::Difference).
         pub fn build(self) -> crate::model::Difference {
             crate::model::Difference {
-                before_blob: self.before_blob,
-                after_blob: self.after_blob,
-                change_type: self.change_type,
+                before_blob: self.before_blob
+                ,
+                after_blob: self.after_blob
+                ,
+                change_type: self.change_type
+                ,
             }
         }
     }
+    
+    
 }
 impl Difference {
     /// Creates a new builder-style object to manufacture [`Difference`](crate::model::Difference).
@@ -4889,46 +4556,46 @@ impl Difference {
 /// <p>Returns information about a specific Git blob object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlobMetadata {
+pub struct BlobMetadata  {
     /// <p>The full ID of the blob.</p>
     #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The path to the blob and associated file name, if any.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
-    /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
-    /// <ul>
-    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
-    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
-    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
-    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
+    /// <p>The file mode permissions of the blob. File mode permission codes include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li> 
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li> 
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li> 
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub mode: std::option::Option<std::string::String>,
 }
 impl BlobMetadata {
     /// <p>The full ID of the blob.</p>
-    pub fn blob_id(&self) -> std::option::Option<&str> {
+    pub fn blob_id(&self) -> std::option::Option<& str> {
         self.blob_id.as_deref()
     }
     /// <p>The path to the blob and associated file name, if any.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
-    /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
-    /// <ul>
-    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
-    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
-    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
-    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
+    /// <p>The file mode permissions of the blob. File mode permission codes include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li> 
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li> 
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li> 
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li> 
     /// </ul>
-    pub fn mode(&self) -> std::option::Option<&str> {
+    pub fn mode(&self) -> std::option::Option<& str> {
         self.mode.as_deref()
     }
 }
 /// See [`BlobMetadata`](crate::model::BlobMetadata).
 pub mod blob_metadata {
-
+    
     /// A builder for [`BlobMetadata`](crate::model::BlobMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4944,8 +4611,7 @@ pub mod blob_metadata {
         }
         /// <p>The full ID of the blob.</p>
         pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.blob_id = input;
-            self
+            self.blob_id = input; self
         }
         /// <p>The path to the blob and associated file name, if any.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4954,40 +4620,43 @@ pub mod blob_metadata {
         }
         /// <p>The path to the blob and associated file name, if any.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
-        /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
-        /// <ul>
-        /// <li> <p> <code>100644</code> indicates read/write</p> </li>
-        /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
-        /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
-        /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
+        /// <p>The file mode permissions of the blob. File mode permission codes include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>100644</code> indicates read/write</p> </li> 
+        /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li> 
+        /// <li> <p> <code>160000</code> indicates a submodule</p> </li> 
+        /// <li> <p> <code>120000</code> indicates a symlink</p> </li> 
         /// </ul>
         pub fn mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.mode = Some(input.into());
             self
         }
-        /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
-        /// <ul>
-        /// <li> <p> <code>100644</code> indicates read/write</p> </li>
-        /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
-        /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
-        /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
+        /// <p>The file mode permissions of the blob. File mode permission codes include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>100644</code> indicates read/write</p> </li> 
+        /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li> 
+        /// <li> <p> <code>160000</code> indicates a submodule</p> </li> 
+        /// <li> <p> <code>120000</code> indicates a symlink</p> </li> 
         /// </ul>
         pub fn set_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mode = input;
-            self
+            self.mode = input; self
         }
         /// Consumes the builder and constructs a [`BlobMetadata`](crate::model::BlobMetadata).
         pub fn build(self) -> crate::model::BlobMetadata {
             crate::model::BlobMetadata {
-                blob_id: self.blob_id,
-                path: self.path,
-                mode: self.mode,
+                blob_id: self.blob_id
+                ,
+                path: self.path
+                ,
+                mode: self.mode
+                ,
             }
         }
     }
+    
+    
 }
 impl BlobMetadata {
     /// Creates a new builder-style object to manufacture [`BlobMetadata`](crate::model::BlobMetadata).
@@ -4999,7 +4668,7 @@ impl BlobMetadata {
 /// <p>Returns information about a specific commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Commit {
+pub struct Commit  {
     /// <p>The full SHA ID of the specified commit. </p>
     #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
@@ -5015,7 +4684,7 @@ pub struct Commit {
     /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
     #[doc(hidden)]
     pub author: std::option::Option<crate::model::UserInfo>,
-    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> 
     /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
     #[doc(hidden)]
     pub committer: std::option::Option<crate::model::UserInfo>,
@@ -5025,38 +4694,38 @@ pub struct Commit {
 }
 impl Commit {
     /// <p>The full SHA ID of the specified commit. </p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> std::option::Option<& str> {
         self.commit_id.as_deref()
     }
     /// <p>Tree information for the specified commit.</p>
-    pub fn tree_id(&self) -> std::option::Option<&str> {
+    pub fn tree_id(&self) -> std::option::Option<& str> {
         self.tree_id.as_deref()
     }
     /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
-    pub fn parents(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parents(&self) -> std::option::Option<& [std::string::String]> {
         self.parents.as_deref()
     }
     /// <p>The commit message associated with the specified commit.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
-    pub fn author(&self) -> std::option::Option<&crate::model::UserInfo> {
+    pub fn author(&self) -> std::option::Option<& crate::model::UserInfo> {
         self.author.as_ref()
     }
-    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> 
     /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
-    pub fn committer(&self) -> std::option::Option<&crate::model::UserInfo> {
+    pub fn committer(&self) -> std::option::Option<& crate::model::UserInfo> {
         self.committer.as_ref()
     }
     /// <p>Any other data associated with the specified commit.</p>
-    pub fn additional_data(&self) -> std::option::Option<&str> {
+    pub fn additional_data(&self) -> std::option::Option<& str> {
         self.additional_data.as_deref()
     }
 }
 /// See [`Commit`](crate::model::Commit).
 pub mod commit {
-
+    
     /// A builder for [`Commit`](crate::model::Commit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5076,8 +4745,7 @@ pub mod commit {
         }
         /// <p>The full SHA ID of the specified commit. </p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.commit_id = input;
-            self
+            self.commit_id = input; self
         }
         /// <p>Tree information for the specified commit.</p>
         pub fn tree_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5086,8 +4754,7 @@ pub mod commit {
         }
         /// <p>Tree information for the specified commit.</p>
         pub fn set_tree_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tree_id = input;
-            self
+            self.tree_id = input; self
         }
         /// Appends an item to `parents`.
         ///
@@ -5096,17 +4763,13 @@ pub mod commit {
         /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
         pub fn parents(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parents.unwrap_or_default();
-            v.push(input.into());
-            self.parents = Some(v);
-            self
+                            v.push(input.into());
+                            self.parents = Some(v);
+                            self
         }
         /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
-        pub fn set_parents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.parents = input;
-            self
+        pub fn set_parents(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.parents = input; self
         }
         /// <p>The commit message associated with the specified commit.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5115,8 +4778,7 @@ pub mod commit {
         }
         /// <p>The commit message associated with the specified commit.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
         pub fn author(mut self, input: crate::model::UserInfo) -> Self {
@@ -5125,20 +4787,18 @@ pub mod commit {
         }
         /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
         pub fn set_author(mut self, input: std::option::Option<crate::model::UserInfo>) -> Self {
-            self.author = input;
-            self
+            self.author = input; self
         }
-        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> 
         /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
         pub fn committer(mut self, input: crate::model::UserInfo) -> Self {
             self.committer = Some(input);
             self
         }
-        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> 
         /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
         pub fn set_committer(mut self, input: std::option::Option<crate::model::UserInfo>) -> Self {
-            self.committer = input;
-            self
+            self.committer = input; self
         }
         /// <p>Any other data associated with the specified commit.</p>
         pub fn additional_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5146,26 +4806,31 @@ pub mod commit {
             self
         }
         /// <p>Any other data associated with the specified commit.</p>
-        pub fn set_additional_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_data = input;
-            self
+        pub fn set_additional_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_data = input; self
         }
         /// Consumes the builder and constructs a [`Commit`](crate::model::Commit).
         pub fn build(self) -> crate::model::Commit {
             crate::model::Commit {
-                commit_id: self.commit_id,
-                tree_id: self.tree_id,
-                parents: self.parents,
-                message: self.message,
-                author: self.author,
-                committer: self.committer,
-                additional_data: self.additional_data,
+                commit_id: self.commit_id
+                ,
+                tree_id: self.tree_id
+                ,
+                parents: self.parents
+                ,
+                message: self.message
+                ,
+                author: self.author
+                ,
+                committer: self.committer
+                ,
+                additional_data: self.additional_data
+                ,
             }
         }
     }
+    
+    
 }
 impl Commit {
     /// Creates a new builder-style object to manufacture [`Commit`](crate::model::Commit).
@@ -5177,7 +4842,7 @@ impl Commit {
 /// <p>Information about the user who made a specified commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserInfo {
+pub struct UserInfo  {
     /// <p>The name of the user who made the specified commit.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5190,21 +4855,21 @@ pub struct UserInfo {
 }
 impl UserInfo {
     /// <p>The name of the user who made the specified commit.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The email address associated with the user who made the commit, if any.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
-    pub fn date(&self) -> std::option::Option<&str> {
+    pub fn date(&self) -> std::option::Option<& str> {
         self.date.as_deref()
     }
 }
 /// See [`UserInfo`](crate::model::UserInfo).
 pub mod user_info {
-
+    
     /// A builder for [`UserInfo`](crate::model::UserInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5220,8 +4885,7 @@ pub mod user_info {
         }
         /// <p>The name of the user who made the specified commit.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The email address associated with the user who made the commit, if any.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5230,8 +4894,7 @@ pub mod user_info {
         }
         /// <p>The email address associated with the user who made the commit, if any.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
         pub fn date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5240,18 +4903,22 @@ pub mod user_info {
         }
         /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
         pub fn set_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.date = input;
-            self
+            self.date = input; self
         }
         /// Consumes the builder and constructs a [`UserInfo`](crate::model::UserInfo).
         pub fn build(self) -> crate::model::UserInfo {
             crate::model::UserInfo {
-                name: self.name,
-                email: self.email,
-                date: self.date,
+                name: self.name
+                ,
+                email: self.email
+                ,
+                date: self.date
+                ,
             }
         }
     }
+    
+    
 }
 impl UserInfo {
     /// Creates a new builder-style object to manufacture [`UserInfo`](crate::model::UserInfo).
@@ -5263,7 +4930,7 @@ impl UserInfo {
 /// <p>Returns information about comments on a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommentsForPullRequest {
+pub struct CommentsForPullRequest  {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
@@ -5291,41 +4958,41 @@ pub struct CommentsForPullRequest {
 }
 impl CommentsForPullRequest {
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
-    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+    pub fn before_commit_id(&self) -> std::option::Option<& str> {
         self.before_commit_id.as_deref()
     }
     /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
-    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+    pub fn after_commit_id(&self) -> std::option::Option<& str> {
         self.after_commit_id.as_deref()
     }
     /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
-    pub fn before_blob_id(&self) -> std::option::Option<&str> {
+    pub fn before_blob_id(&self) -> std::option::Option<& str> {
         self.before_blob_id.as_deref()
     }
     /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
-    pub fn after_blob_id(&self) -> std::option::Option<&str> {
+    pub fn after_blob_id(&self) -> std::option::Option<& str> {
         self.after_blob_id.as_deref()
     }
     /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+    pub fn location(&self) -> std::option::Option<& crate::model::Location> {
         self.location.as_ref()
     }
     /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
-    pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
+    pub fn comments(&self) -> std::option::Option<& [crate::model::Comment]> {
         self.comments.as_deref()
     }
 }
 /// See [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
 pub mod comments_for_pull_request {
-
+    
     /// A builder for [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5345,12 +5012,8 @@ pub mod comments_for_pull_request {
             self
         }
         /// <p>The system-generated ID of the pull request.</p>
-        pub fn set_pull_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pull_request_id = input;
-            self
+        pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pull_request_id = input; self
         }
         /// <p>The name of the repository that contains the pull request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5358,12 +5021,8 @@ pub mod comments_for_pull_request {
             self
         }
         /// <p>The name of the repository that contains the pull request.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
         pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5371,12 +5030,8 @@ pub mod comments_for_pull_request {
             self
         }
         /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
-        pub fn set_before_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.before_commit_id = input;
-            self
+        pub fn set_before_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.before_commit_id = input; self
         }
         /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
         pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5384,12 +5039,8 @@ pub mod comments_for_pull_request {
             self
         }
         /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
-        pub fn set_after_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.after_commit_id = input;
-            self
+        pub fn set_after_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.after_commit_id = input; self
         }
         /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
         pub fn before_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5397,12 +5048,8 @@ pub mod comments_for_pull_request {
             self
         }
         /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
-        pub fn set_before_blob_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.before_blob_id = input;
-            self
+        pub fn set_before_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.before_blob_id = input; self
         }
         /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
         pub fn after_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5410,12 +5057,8 @@ pub mod comments_for_pull_request {
             self
         }
         /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
-        pub fn set_after_blob_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.after_blob_id = input;
-            self
+        pub fn set_after_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.after_blob_id = input; self
         }
         /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
         pub fn location(mut self, input: crate::model::Location) -> Self {
@@ -5424,8 +5067,7 @@ pub mod comments_for_pull_request {
         }
         /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Appends an item to `comments`.
         ///
@@ -5434,32 +5076,38 @@ pub mod comments_for_pull_request {
         /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
         pub fn comments(mut self, input: crate::model::Comment) -> Self {
             let mut v = self.comments.unwrap_or_default();
-            v.push(input);
-            self.comments = Some(v);
-            self
+                            v.push(input);
+                            self.comments = Some(v);
+                            self
         }
         /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
-        pub fn set_comments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Comment>>,
-        ) -> Self {
-            self.comments = input;
-            self
+        pub fn set_comments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Comment>>) -> Self {
+            self.comments = input; self
         }
         /// Consumes the builder and constructs a [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
         pub fn build(self) -> crate::model::CommentsForPullRequest {
             crate::model::CommentsForPullRequest {
-                pull_request_id: self.pull_request_id,
-                repository_name: self.repository_name,
-                before_commit_id: self.before_commit_id,
-                after_commit_id: self.after_commit_id,
-                before_blob_id: self.before_blob_id,
-                after_blob_id: self.after_blob_id,
-                location: self.location,
-                comments: self.comments,
+                pull_request_id: self.pull_request_id
+                ,
+                repository_name: self.repository_name
+                ,
+                before_commit_id: self.before_commit_id
+                ,
+                after_commit_id: self.after_commit_id
+                ,
+                before_blob_id: self.before_blob_id
+                ,
+                after_blob_id: self.after_blob_id
+                ,
+                location: self.location
+                ,
+                comments: self.comments
+                ,
             }
         }
     }
+    
+    
 }
 impl CommentsForPullRequest {
     /// Creates a new builder-style object to manufacture [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
@@ -5471,7 +5119,7 @@ impl CommentsForPullRequest {
 /// <p>Returns information about comments on the comparison between two commits.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommentsForComparedCommit {
+pub struct CommentsForComparedCommit  {
     /// <p>The name of the repository that contains the compared commits.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -5496,37 +5144,37 @@ pub struct CommentsForComparedCommit {
 }
 impl CommentsForComparedCommit {
     /// <p>The name of the repository that contains the compared commits.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
-    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+    pub fn before_commit_id(&self) -> std::option::Option<& str> {
         self.before_commit_id.as_deref()
     }
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
-    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+    pub fn after_commit_id(&self) -> std::option::Option<& str> {
         self.after_commit_id.as_deref()
     }
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
-    pub fn before_blob_id(&self) -> std::option::Option<&str> {
+    pub fn before_blob_id(&self) -> std::option::Option<& str> {
         self.before_blob_id.as_deref()
     }
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
-    pub fn after_blob_id(&self) -> std::option::Option<&str> {
+    pub fn after_blob_id(&self) -> std::option::Option<& str> {
         self.after_blob_id.as_deref()
     }
     /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+    pub fn location(&self) -> std::option::Option<& crate::model::Location> {
         self.location.as_ref()
     }
     /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
-    pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
+    pub fn comments(&self) -> std::option::Option<& [crate::model::Comment]> {
         self.comments.as_deref()
     }
 }
 /// See [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
 pub mod comments_for_compared_commit {
-
+    
     /// A builder for [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5545,12 +5193,8 @@ pub mod comments_for_compared_commit {
             self
         }
         /// <p>The name of the repository that contains the compared commits.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
         pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5558,12 +5202,8 @@ pub mod comments_for_compared_commit {
             self
         }
         /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
-        pub fn set_before_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.before_commit_id = input;
-            self
+        pub fn set_before_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.before_commit_id = input; self
         }
         /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
         pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5571,12 +5211,8 @@ pub mod comments_for_compared_commit {
             self
         }
         /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
-        pub fn set_after_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.after_commit_id = input;
-            self
+        pub fn set_after_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.after_commit_id = input; self
         }
         /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
         pub fn before_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5584,12 +5220,8 @@ pub mod comments_for_compared_commit {
             self
         }
         /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
-        pub fn set_before_blob_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.before_blob_id = input;
-            self
+        pub fn set_before_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.before_blob_id = input; self
         }
         /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
         pub fn after_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5597,12 +5229,8 @@ pub mod comments_for_compared_commit {
             self
         }
         /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
-        pub fn set_after_blob_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.after_blob_id = input;
-            self
+        pub fn set_after_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.after_blob_id = input; self
         }
         /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
         pub fn location(mut self, input: crate::model::Location) -> Self {
@@ -5611,8 +5239,7 @@ pub mod comments_for_compared_commit {
         }
         /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Appends an item to `comments`.
         ///
@@ -5621,31 +5248,36 @@ pub mod comments_for_compared_commit {
         /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
         pub fn comments(mut self, input: crate::model::Comment) -> Self {
             let mut v = self.comments.unwrap_or_default();
-            v.push(input);
-            self.comments = Some(v);
-            self
+                            v.push(input);
+                            self.comments = Some(v);
+                            self
         }
         /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
-        pub fn set_comments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Comment>>,
-        ) -> Self {
-            self.comments = input;
-            self
+        pub fn set_comments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Comment>>) -> Self {
+            self.comments = input; self
         }
         /// Consumes the builder and constructs a [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
         pub fn build(self) -> crate::model::CommentsForComparedCommit {
             crate::model::CommentsForComparedCommit {
-                repository_name: self.repository_name,
-                before_commit_id: self.before_commit_id,
-                after_commit_id: self.after_commit_id,
-                before_blob_id: self.before_blob_id,
-                after_blob_id: self.after_blob_id,
-                location: self.location,
-                comments: self.comments,
+                repository_name: self.repository_name
+                ,
+                before_commit_id: self.before_commit_id
+                ,
+                after_commit_id: self.after_commit_id
+                ,
+                before_blob_id: self.before_blob_id
+                ,
+                after_blob_id: self.after_blob_id
+                ,
+                location: self.location
+                ,
+                comments: self.comments
+                ,
             }
         }
     }
+    
+    
 }
 impl CommentsForComparedCommit {
     /// Creates a new builder-style object to manufacture [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
@@ -5657,7 +5289,7 @@ impl CommentsForComparedCommit {
 /// <p>Information about the reaction values provided by users on a comment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReactionForComment {
+pub struct ReactionForComment  {
     /// <p>The reaction for a specified comment.</p>
     #[doc(hidden)]
     pub reaction: std::option::Option<crate::model::ReactionValueFormats>,
@@ -5670,11 +5302,11 @@ pub struct ReactionForComment {
 }
 impl ReactionForComment {
     /// <p>The reaction for a specified comment.</p>
-    pub fn reaction(&self) -> std::option::Option<&crate::model::ReactionValueFormats> {
+    pub fn reaction(&self) -> std::option::Option<& crate::model::ReactionValueFormats> {
         self.reaction.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn reaction_users(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn reaction_users(&self) -> std::option::Option<& [std::string::String]> {
         self.reaction_users.as_deref()
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
@@ -5684,7 +5316,7 @@ impl ReactionForComment {
 }
 /// See [`ReactionForComment`](crate::model::ReactionForComment).
 pub mod reaction_for_comment {
-
+    
     /// A builder for [`ReactionForComment`](crate::model::ReactionForComment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5699,12 +5331,8 @@ pub mod reaction_for_comment {
             self
         }
         /// <p>The reaction for a specified comment.</p>
-        pub fn set_reaction(
-            mut self,
-            input: std::option::Option<crate::model::ReactionValueFormats>,
-        ) -> Self {
-            self.reaction = input;
-            self
+        pub fn set_reaction(mut self, input: std::option::Option<crate::model::ReactionValueFormats>) -> Self {
+            self.reaction = input; self
         }
         /// Appends an item to `reaction_users`.
         ///
@@ -5713,17 +5341,13 @@ pub mod reaction_for_comment {
         /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
         pub fn reaction_users(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reaction_users.unwrap_or_default();
-            v.push(input.into());
-            self.reaction_users = Some(v);
-            self
+                            v.push(input.into());
+                            self.reaction_users = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-        pub fn set_reaction_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.reaction_users = input;
-            self
+        pub fn set_reaction_users(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.reaction_users = input; self
         }
         /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
         pub fn reactions_from_deleted_users_count(mut self, input: i32) -> Self {
@@ -5731,22 +5355,23 @@ pub mod reaction_for_comment {
             self
         }
         /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
-        pub fn set_reactions_from_deleted_users_count(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.reactions_from_deleted_users_count = input;
-            self
+        pub fn set_reactions_from_deleted_users_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.reactions_from_deleted_users_count = input; self
         }
         /// Consumes the builder and constructs a [`ReactionForComment`](crate::model::ReactionForComment).
         pub fn build(self) -> crate::model::ReactionForComment {
             crate::model::ReactionForComment {
-                reaction: self.reaction,
-                reaction_users: self.reaction_users,
-                reactions_from_deleted_users_count: self.reactions_from_deleted_users_count,
+                reaction: self.reaction
+                ,
+                reaction_users: self.reaction_users
+                ,
+                reactions_from_deleted_users_count: self.reactions_from_deleted_users_count
+                ,
             }
         }
     }
+    
+    
 }
 impl ReactionForComment {
     /// Creates a new builder-style object to manufacture [`ReactionForComment`](crate::model::ReactionForComment).
@@ -5758,7 +5383,7 @@ impl ReactionForComment {
 /// <p>Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReactionValueFormats {
+pub struct ReactionValueFormats  {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
     #[doc(hidden)]
     pub emoji: std::option::Option<std::string::String>,
@@ -5771,21 +5396,21 @@ pub struct ReactionValueFormats {
 }
 impl ReactionValueFormats {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
-    pub fn emoji(&self) -> std::option::Option<&str> {
+    pub fn emoji(&self) -> std::option::Option<& str> {
         self.emoji.as_deref()
     }
     /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
-    pub fn short_code(&self) -> std::option::Option<&str> {
+    pub fn short_code(&self) -> std::option::Option<& str> {
         self.short_code.as_deref()
     }
     /// <p>The Unicode codepoint for the reaction.</p>
-    pub fn unicode(&self) -> std::option::Option<&str> {
+    pub fn unicode(&self) -> std::option::Option<& str> {
         self.unicode.as_deref()
     }
 }
 /// See [`ReactionValueFormats`](crate::model::ReactionValueFormats).
 pub mod reaction_value_formats {
-
+    
     /// A builder for [`ReactionValueFormats`](crate::model::ReactionValueFormats).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5801,8 +5426,7 @@ pub mod reaction_value_formats {
         }
         /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
         pub fn set_emoji(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.emoji = input;
-            self
+            self.emoji = input; self
         }
         /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
         pub fn short_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5811,8 +5435,7 @@ pub mod reaction_value_formats {
         }
         /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
         pub fn set_short_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.short_code = input;
-            self
+            self.short_code = input; self
         }
         /// <p>The Unicode codepoint for the reaction.</p>
         pub fn unicode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5821,18 +5444,22 @@ pub mod reaction_value_formats {
         }
         /// <p>The Unicode codepoint for the reaction.</p>
         pub fn set_unicode(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unicode = input;
-            self
+            self.unicode = input; self
         }
         /// Consumes the builder and constructs a [`ReactionValueFormats`](crate::model::ReactionValueFormats).
         pub fn build(self) -> crate::model::ReactionValueFormats {
             crate::model::ReactionValueFormats {
-                emoji: self.emoji,
-                short_code: self.short_code,
-                unicode: self.unicode,
+                emoji: self.emoji
+                ,
+                short_code: self.short_code
+                ,
+                unicode: self.unicode
+                ,
             }
         }
     }
+    
+    
 }
 impl ReactionValueFormats {
     /// Creates a new builder-style object to manufacture [`ReactionValueFormats`](crate::model::ReactionValueFormats).
@@ -5844,7 +5471,7 @@ impl ReactionValueFormats {
 /// <p>Returns information about a branch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BranchInfo {
+pub struct BranchInfo  {
     /// <p>The name of the branch.</p>
     #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
@@ -5854,17 +5481,17 @@ pub struct BranchInfo {
 }
 impl BranchInfo {
     /// <p>The name of the branch.</p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p>The ID of the last commit made to the branch.</p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> std::option::Option<& str> {
         self.commit_id.as_deref()
     }
 }
 /// See [`BranchInfo`](crate::model::BranchInfo).
 pub mod branch_info {
-
+    
     /// A builder for [`BranchInfo`](crate::model::BranchInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5879,8 +5506,7 @@ pub mod branch_info {
         }
         /// <p>The name of the branch.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p>The ID of the last commit made to the branch.</p>
         pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5889,17 +5515,20 @@ pub mod branch_info {
         }
         /// <p>The ID of the last commit made to the branch.</p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.commit_id = input;
-            self
+            self.commit_id = input; self
         }
         /// Consumes the builder and constructs a [`BranchInfo`](crate::model::BranchInfo).
         pub fn build(self) -> crate::model::BranchInfo {
             crate::model::BranchInfo {
-                branch_name: self.branch_name,
-                commit_id: self.commit_id,
+                branch_name: self.branch_name
+                ,
+                commit_id: self.commit_id
+                ,
             }
         }
     }
+    
+    
 }
 impl BranchInfo {
     /// Creates a new builder-style object to manufacture [`BranchInfo`](crate::model::BranchInfo).
@@ -5911,7 +5540,7 @@ impl BranchInfo {
 /// <p>Returns information about the approval rules applied to a pull request and whether conditions have been met.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Evaluation {
+pub struct Evaluation  {
     /// <p>Whether the state of the pull request is approved.</p>
     #[doc(hidden)]
     pub approved: bool,
@@ -5935,26 +5564,24 @@ impl Evaluation {
         self.overridden
     }
     /// <p>The names of the approval rules that have had their conditions met.</p>
-    pub fn approval_rules_satisfied(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn approval_rules_satisfied(&self) -> std::option::Option<& [std::string::String]> {
         self.approval_rules_satisfied.as_deref()
     }
     /// <p>The names of the approval rules that have not had their conditions met.</p>
-    pub fn approval_rules_not_satisfied(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn approval_rules_not_satisfied(&self) -> std::option::Option<& [std::string::String]> {
         self.approval_rules_not_satisfied.as_deref()
     }
 }
 /// See [`Evaluation`](crate::model::Evaluation).
 pub mod evaluation {
-
+    
     /// A builder for [`Evaluation`](crate::model::Evaluation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approved: std::option::Option<bool>,
         pub(crate) overridden: std::option::Option<bool>,
-        pub(crate) approval_rules_satisfied:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) approval_rules_not_satisfied:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) approval_rules_satisfied: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) approval_rules_not_satisfied: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>Whether the state of the pull request is approved.</p>
@@ -5964,8 +5591,7 @@ pub mod evaluation {
         }
         /// <p>Whether the state of the pull request is approved.</p>
         pub fn set_approved(mut self, input: std::option::Option<bool>) -> Self {
-            self.approved = input;
-            self
+            self.approved = input; self
         }
         /// <p>Whether the approval rule requirements for the pull request have been overridden and no longer need to be met.</p>
         pub fn overridden(mut self, input: bool) -> Self {
@@ -5974,8 +5600,7 @@ pub mod evaluation {
         }
         /// <p>Whether the approval rule requirements for the pull request have been overridden and no longer need to be met.</p>
         pub fn set_overridden(mut self, input: std::option::Option<bool>) -> Self {
-            self.overridden = input;
-            self
+            self.overridden = input; self
         }
         /// Appends an item to `approval_rules_satisfied`.
         ///
@@ -5984,50 +5609,47 @@ pub mod evaluation {
         /// <p>The names of the approval rules that have had their conditions met.</p>
         pub fn approval_rules_satisfied(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.approval_rules_satisfied.unwrap_or_default();
-            v.push(input.into());
-            self.approval_rules_satisfied = Some(v);
-            self
+                            v.push(input.into());
+                            self.approval_rules_satisfied = Some(v);
+                            self
         }
         /// <p>The names of the approval rules that have had their conditions met.</p>
-        pub fn set_approval_rules_satisfied(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.approval_rules_satisfied = input;
-            self
+        pub fn set_approval_rules_satisfied(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.approval_rules_satisfied = input; self
         }
         /// Appends an item to `approval_rules_not_satisfied`.
         ///
         /// To override the contents of this collection use [`set_approval_rules_not_satisfied`](Self::set_approval_rules_not_satisfied).
         ///
         /// <p>The names of the approval rules that have not had their conditions met.</p>
-        pub fn approval_rules_not_satisfied(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn approval_rules_not_satisfied(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.approval_rules_not_satisfied.unwrap_or_default();
-            v.push(input.into());
-            self.approval_rules_not_satisfied = Some(v);
-            self
+                            v.push(input.into());
+                            self.approval_rules_not_satisfied = Some(v);
+                            self
         }
         /// <p>The names of the approval rules that have not had their conditions met.</p>
-        pub fn set_approval_rules_not_satisfied(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.approval_rules_not_satisfied = input;
-            self
+        pub fn set_approval_rules_not_satisfied(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.approval_rules_not_satisfied = input; self
         }
         /// Consumes the builder and constructs a [`Evaluation`](crate::model::Evaluation).
         pub fn build(self) -> crate::model::Evaluation {
             crate::model::Evaluation {
-                approved: self.approved.unwrap_or_default(),
-                overridden: self.overridden.unwrap_or_default(),
-                approval_rules_satisfied: self.approval_rules_satisfied,
-                approval_rules_not_satisfied: self.approval_rules_not_satisfied,
+                approved: self.approved
+                    .unwrap_or_default()
+                ,
+                overridden: self.overridden
+                    .unwrap_or_default()
+                ,
+                approval_rules_satisfied: self.approval_rules_satisfied
+                ,
+                approval_rules_not_satisfied: self.approval_rules_not_satisfied
+                ,
             }
         }
     }
+    
+    
 }
 impl Evaluation {
     /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
@@ -6039,7 +5661,7 @@ impl Evaluation {
 /// <p>Returns information about a pull request event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PullRequestEvent {
+pub struct PullRequestEvent  {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
@@ -6054,99 +5676,75 @@ pub struct PullRequestEvent {
     pub actor_arn: std::option::Option<std::string::String>,
     /// <p>Information about the source and destination branches for the pull request.</p>
     #[doc(hidden)]
-    pub pull_request_created_event_metadata:
-        std::option::Option<crate::model::PullRequestCreatedEventMetadata>,
+    pub pull_request_created_event_metadata: std::option::Option<crate::model::PullRequestCreatedEventMetadata>,
     /// <p>Information about the change in status for the pull request event.</p>
     #[doc(hidden)]
-    pub pull_request_status_changed_event_metadata:
-        std::option::Option<crate::model::PullRequestStatusChangedEventMetadata>,
+    pub pull_request_status_changed_event_metadata: std::option::Option<crate::model::PullRequestStatusChangedEventMetadata>,
     /// <p>Information about the updated source branch for the pull request event. </p>
     #[doc(hidden)]
-    pub pull_request_source_reference_updated_event_metadata:
-        std::option::Option<crate::model::PullRequestSourceReferenceUpdatedEventMetadata>,
+    pub pull_request_source_reference_updated_event_metadata: std::option::Option<crate::model::PullRequestSourceReferenceUpdatedEventMetadata>,
     /// <p>Information about the change in mergability state for the pull request event.</p>
     #[doc(hidden)]
-    pub pull_request_merged_state_changed_event_metadata:
-        std::option::Option<crate::model::PullRequestMergedStateChangedEventMetadata>,
+    pub pull_request_merged_state_changed_event_metadata: std::option::Option<crate::model::PullRequestMergedStateChangedEventMetadata>,
     /// <p>Information about a pull request event.</p>
     #[doc(hidden)]
     pub approval_rule_event_metadata: std::option::Option<crate::model::ApprovalRuleEventMetadata>,
     /// <p>Information about an approval state change for a pull request.</p>
     #[doc(hidden)]
-    pub approval_state_changed_event_metadata:
-        std::option::Option<crate::model::ApprovalStateChangedEventMetadata>,
+    pub approval_state_changed_event_metadata: std::option::Option<crate::model::ApprovalStateChangedEventMetadata>,
     /// <p>Information about an approval rule override event for a pull request.</p>
     #[doc(hidden)]
-    pub approval_rule_overridden_event_metadata:
-        std::option::Option<crate::model::ApprovalRuleOverriddenEventMetadata>,
+    pub approval_rule_overridden_event_metadata: std::option::Option<crate::model::ApprovalRuleOverriddenEventMetadata>,
 }
 impl PullRequestEvent {
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The day and time of the pull request event, in timestamp format.</p>
-    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
     /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
-    pub fn pull_request_event_type(
-        &self,
-    ) -> std::option::Option<&crate::model::PullRequestEventType> {
+    pub fn pull_request_event_type(&self) -> std::option::Option<& crate::model::PullRequestEventType> {
         self.pull_request_event_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
-    pub fn actor_arn(&self) -> std::option::Option<&str> {
+    pub fn actor_arn(&self) -> std::option::Option<& str> {
         self.actor_arn.as_deref()
     }
     /// <p>Information about the source and destination branches for the pull request.</p>
-    pub fn pull_request_created_event_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::PullRequestCreatedEventMetadata> {
+    pub fn pull_request_created_event_metadata(&self) -> std::option::Option<& crate::model::PullRequestCreatedEventMetadata> {
         self.pull_request_created_event_metadata.as_ref()
     }
     /// <p>Information about the change in status for the pull request event.</p>
-    pub fn pull_request_status_changed_event_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::PullRequestStatusChangedEventMetadata> {
+    pub fn pull_request_status_changed_event_metadata(&self) -> std::option::Option<& crate::model::PullRequestStatusChangedEventMetadata> {
         self.pull_request_status_changed_event_metadata.as_ref()
     }
     /// <p>Information about the updated source branch for the pull request event. </p>
-    pub fn pull_request_source_reference_updated_event_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::PullRequestSourceReferenceUpdatedEventMetadata> {
-        self.pull_request_source_reference_updated_event_metadata
-            .as_ref()
+    pub fn pull_request_source_reference_updated_event_metadata(&self) -> std::option::Option<& crate::model::PullRequestSourceReferenceUpdatedEventMetadata> {
+        self.pull_request_source_reference_updated_event_metadata.as_ref()
     }
     /// <p>Information about the change in mergability state for the pull request event.</p>
-    pub fn pull_request_merged_state_changed_event_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::PullRequestMergedStateChangedEventMetadata> {
-        self.pull_request_merged_state_changed_event_metadata
-            .as_ref()
+    pub fn pull_request_merged_state_changed_event_metadata(&self) -> std::option::Option<& crate::model::PullRequestMergedStateChangedEventMetadata> {
+        self.pull_request_merged_state_changed_event_metadata.as_ref()
     }
     /// <p>Information about a pull request event.</p>
-    pub fn approval_rule_event_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::ApprovalRuleEventMetadata> {
+    pub fn approval_rule_event_metadata(&self) -> std::option::Option<& crate::model::ApprovalRuleEventMetadata> {
         self.approval_rule_event_metadata.as_ref()
     }
     /// <p>Information about an approval state change for a pull request.</p>
-    pub fn approval_state_changed_event_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::ApprovalStateChangedEventMetadata> {
+    pub fn approval_state_changed_event_metadata(&self) -> std::option::Option<& crate::model::ApprovalStateChangedEventMetadata> {
         self.approval_state_changed_event_metadata.as_ref()
     }
     /// <p>Information about an approval rule override event for a pull request.</p>
-    pub fn approval_rule_overridden_event_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::ApprovalRuleOverriddenEventMetadata> {
+    pub fn approval_rule_overridden_event_metadata(&self) -> std::option::Option<& crate::model::ApprovalRuleOverriddenEventMetadata> {
         self.approval_rule_overridden_event_metadata.as_ref()
     }
 }
 /// See [`PullRequestEvent`](crate::model::PullRequestEvent).
 pub mod pull_request_event {
-
+    
     /// A builder for [`PullRequestEvent`](crate::model::PullRequestEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6154,20 +5752,13 @@ pub mod pull_request_event {
         pub(crate) event_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) pull_request_event_type: std::option::Option<crate::model::PullRequestEventType>,
         pub(crate) actor_arn: std::option::Option<std::string::String>,
-        pub(crate) pull_request_created_event_metadata:
-            std::option::Option<crate::model::PullRequestCreatedEventMetadata>,
-        pub(crate) pull_request_status_changed_event_metadata:
-            std::option::Option<crate::model::PullRequestStatusChangedEventMetadata>,
-        pub(crate) pull_request_source_reference_updated_event_metadata:
-            std::option::Option<crate::model::PullRequestSourceReferenceUpdatedEventMetadata>,
-        pub(crate) pull_request_merged_state_changed_event_metadata:
-            std::option::Option<crate::model::PullRequestMergedStateChangedEventMetadata>,
-        pub(crate) approval_rule_event_metadata:
-            std::option::Option<crate::model::ApprovalRuleEventMetadata>,
-        pub(crate) approval_state_changed_event_metadata:
-            std::option::Option<crate::model::ApprovalStateChangedEventMetadata>,
-        pub(crate) approval_rule_overridden_event_metadata:
-            std::option::Option<crate::model::ApprovalRuleOverriddenEventMetadata>,
+        pub(crate) pull_request_created_event_metadata: std::option::Option<crate::model::PullRequestCreatedEventMetadata>,
+        pub(crate) pull_request_status_changed_event_metadata: std::option::Option<crate::model::PullRequestStatusChangedEventMetadata>,
+        pub(crate) pull_request_source_reference_updated_event_metadata: std::option::Option<crate::model::PullRequestSourceReferenceUpdatedEventMetadata>,
+        pub(crate) pull_request_merged_state_changed_event_metadata: std::option::Option<crate::model::PullRequestMergedStateChangedEventMetadata>,
+        pub(crate) approval_rule_event_metadata: std::option::Option<crate::model::ApprovalRuleEventMetadata>,
+        pub(crate) approval_state_changed_event_metadata: std::option::Option<crate::model::ApprovalStateChangedEventMetadata>,
+        pub(crate) approval_rule_overridden_event_metadata: std::option::Option<crate::model::ApprovalRuleOverriddenEventMetadata>,
     }
     impl Builder {
         /// <p>The system-generated ID of the pull request.</p>
@@ -6176,12 +5767,8 @@ pub mod pull_request_event {
             self
         }
         /// <p>The system-generated ID of the pull request.</p>
-        pub fn set_pull_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pull_request_id = input;
-            self
+        pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pull_request_id = input; self
         }
         /// <p>The day and time of the pull request event, in timestamp format.</p>
         pub fn event_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6189,28 +5776,17 @@ pub mod pull_request_event {
             self
         }
         /// <p>The day and time of the pull request event, in timestamp format.</p>
-        pub fn set_event_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_date = input;
-            self
+        pub fn set_event_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_date = input; self
         }
         /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
-        pub fn pull_request_event_type(
-            mut self,
-            input: crate::model::PullRequestEventType,
-        ) -> Self {
+        pub fn pull_request_event_type(mut self, input: crate::model::PullRequestEventType) -> Self {
             self.pull_request_event_type = Some(input);
             self
         }
         /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
-        pub fn set_pull_request_event_type(
-            mut self,
-            input: std::option::Option<crate::model::PullRequestEventType>,
-        ) -> Self {
-            self.pull_request_event_type = input;
-            self
+        pub fn set_pull_request_event_type(mut self, input: std::option::Option<crate::model::PullRequestEventType>) -> Self {
+            self.pull_request_event_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
         pub fn actor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6219,144 +5795,101 @@ pub mod pull_request_event {
         }
         /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
         pub fn set_actor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.actor_arn = input;
-            self
+            self.actor_arn = input; self
         }
         /// <p>Information about the source and destination branches for the pull request.</p>
-        pub fn pull_request_created_event_metadata(
-            mut self,
-            input: crate::model::PullRequestCreatedEventMetadata,
-        ) -> Self {
+        pub fn pull_request_created_event_metadata(mut self, input: crate::model::PullRequestCreatedEventMetadata) -> Self {
             self.pull_request_created_event_metadata = Some(input);
             self
         }
         /// <p>Information about the source and destination branches for the pull request.</p>
-        pub fn set_pull_request_created_event_metadata(
-            mut self,
-            input: std::option::Option<crate::model::PullRequestCreatedEventMetadata>,
-        ) -> Self {
-            self.pull_request_created_event_metadata = input;
-            self
+        pub fn set_pull_request_created_event_metadata(mut self, input: std::option::Option<crate::model::PullRequestCreatedEventMetadata>) -> Self {
+            self.pull_request_created_event_metadata = input; self
         }
         /// <p>Information about the change in status for the pull request event.</p>
-        pub fn pull_request_status_changed_event_metadata(
-            mut self,
-            input: crate::model::PullRequestStatusChangedEventMetadata,
-        ) -> Self {
+        pub fn pull_request_status_changed_event_metadata(mut self, input: crate::model::PullRequestStatusChangedEventMetadata) -> Self {
             self.pull_request_status_changed_event_metadata = Some(input);
             self
         }
         /// <p>Information about the change in status for the pull request event.</p>
-        pub fn set_pull_request_status_changed_event_metadata(
-            mut self,
-            input: std::option::Option<crate::model::PullRequestStatusChangedEventMetadata>,
-        ) -> Self {
-            self.pull_request_status_changed_event_metadata = input;
-            self
+        pub fn set_pull_request_status_changed_event_metadata(mut self, input: std::option::Option<crate::model::PullRequestStatusChangedEventMetadata>) -> Self {
+            self.pull_request_status_changed_event_metadata = input; self
         }
         /// <p>Information about the updated source branch for the pull request event. </p>
-        pub fn pull_request_source_reference_updated_event_metadata(
-            mut self,
-            input: crate::model::PullRequestSourceReferenceUpdatedEventMetadata,
-        ) -> Self {
+        pub fn pull_request_source_reference_updated_event_metadata(mut self, input: crate::model::PullRequestSourceReferenceUpdatedEventMetadata) -> Self {
             self.pull_request_source_reference_updated_event_metadata = Some(input);
             self
         }
         /// <p>Information about the updated source branch for the pull request event. </p>
-        pub fn set_pull_request_source_reference_updated_event_metadata(
-            mut self,
-            input: std::option::Option<
-                crate::model::PullRequestSourceReferenceUpdatedEventMetadata,
-            >,
-        ) -> Self {
-            self.pull_request_source_reference_updated_event_metadata = input;
-            self
+        pub fn set_pull_request_source_reference_updated_event_metadata(mut self, input: std::option::Option<crate::model::PullRequestSourceReferenceUpdatedEventMetadata>) -> Self {
+            self.pull_request_source_reference_updated_event_metadata = input; self
         }
         /// <p>Information about the change in mergability state for the pull request event.</p>
-        pub fn pull_request_merged_state_changed_event_metadata(
-            mut self,
-            input: crate::model::PullRequestMergedStateChangedEventMetadata,
-        ) -> Self {
+        pub fn pull_request_merged_state_changed_event_metadata(mut self, input: crate::model::PullRequestMergedStateChangedEventMetadata) -> Self {
             self.pull_request_merged_state_changed_event_metadata = Some(input);
             self
         }
         /// <p>Information about the change in mergability state for the pull request event.</p>
-        pub fn set_pull_request_merged_state_changed_event_metadata(
-            mut self,
-            input: std::option::Option<crate::model::PullRequestMergedStateChangedEventMetadata>,
-        ) -> Self {
-            self.pull_request_merged_state_changed_event_metadata = input;
-            self
+        pub fn set_pull_request_merged_state_changed_event_metadata(mut self, input: std::option::Option<crate::model::PullRequestMergedStateChangedEventMetadata>) -> Self {
+            self.pull_request_merged_state_changed_event_metadata = input; self
         }
         /// <p>Information about a pull request event.</p>
-        pub fn approval_rule_event_metadata(
-            mut self,
-            input: crate::model::ApprovalRuleEventMetadata,
-        ) -> Self {
+        pub fn approval_rule_event_metadata(mut self, input: crate::model::ApprovalRuleEventMetadata) -> Self {
             self.approval_rule_event_metadata = Some(input);
             self
         }
         /// <p>Information about a pull request event.</p>
-        pub fn set_approval_rule_event_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalRuleEventMetadata>,
-        ) -> Self {
-            self.approval_rule_event_metadata = input;
-            self
+        pub fn set_approval_rule_event_metadata(mut self, input: std::option::Option<crate::model::ApprovalRuleEventMetadata>) -> Self {
+            self.approval_rule_event_metadata = input; self
         }
         /// <p>Information about an approval state change for a pull request.</p>
-        pub fn approval_state_changed_event_metadata(
-            mut self,
-            input: crate::model::ApprovalStateChangedEventMetadata,
-        ) -> Self {
+        pub fn approval_state_changed_event_metadata(mut self, input: crate::model::ApprovalStateChangedEventMetadata) -> Self {
             self.approval_state_changed_event_metadata = Some(input);
             self
         }
         /// <p>Information about an approval state change for a pull request.</p>
-        pub fn set_approval_state_changed_event_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalStateChangedEventMetadata>,
-        ) -> Self {
-            self.approval_state_changed_event_metadata = input;
-            self
+        pub fn set_approval_state_changed_event_metadata(mut self, input: std::option::Option<crate::model::ApprovalStateChangedEventMetadata>) -> Self {
+            self.approval_state_changed_event_metadata = input; self
         }
         /// <p>Information about an approval rule override event for a pull request.</p>
-        pub fn approval_rule_overridden_event_metadata(
-            mut self,
-            input: crate::model::ApprovalRuleOverriddenEventMetadata,
-        ) -> Self {
+        pub fn approval_rule_overridden_event_metadata(mut self, input: crate::model::ApprovalRuleOverriddenEventMetadata) -> Self {
             self.approval_rule_overridden_event_metadata = Some(input);
             self
         }
         /// <p>Information about an approval rule override event for a pull request.</p>
-        pub fn set_approval_rule_overridden_event_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalRuleOverriddenEventMetadata>,
-        ) -> Self {
-            self.approval_rule_overridden_event_metadata = input;
-            self
+        pub fn set_approval_rule_overridden_event_metadata(mut self, input: std::option::Option<crate::model::ApprovalRuleOverriddenEventMetadata>) -> Self {
+            self.approval_rule_overridden_event_metadata = input; self
         }
         /// Consumes the builder and constructs a [`PullRequestEvent`](crate::model::PullRequestEvent).
         pub fn build(self) -> crate::model::PullRequestEvent {
             crate::model::PullRequestEvent {
-                pull_request_id: self.pull_request_id,
-                event_date: self.event_date,
-                pull_request_event_type: self.pull_request_event_type,
-                actor_arn: self.actor_arn,
-                pull_request_created_event_metadata: self.pull_request_created_event_metadata,
-                pull_request_status_changed_event_metadata: self
-                    .pull_request_status_changed_event_metadata,
-                pull_request_source_reference_updated_event_metadata: self
-                    .pull_request_source_reference_updated_event_metadata,
-                pull_request_merged_state_changed_event_metadata: self
-                    .pull_request_merged_state_changed_event_metadata,
-                approval_rule_event_metadata: self.approval_rule_event_metadata,
-                approval_state_changed_event_metadata: self.approval_state_changed_event_metadata,
-                approval_rule_overridden_event_metadata: self
-                    .approval_rule_overridden_event_metadata,
+                pull_request_id: self.pull_request_id
+                ,
+                event_date: self.event_date
+                ,
+                pull_request_event_type: self.pull_request_event_type
+                ,
+                actor_arn: self.actor_arn
+                ,
+                pull_request_created_event_metadata: self.pull_request_created_event_metadata
+                ,
+                pull_request_status_changed_event_metadata: self.pull_request_status_changed_event_metadata
+                ,
+                pull_request_source_reference_updated_event_metadata: self.pull_request_source_reference_updated_event_metadata
+                ,
+                pull_request_merged_state_changed_event_metadata: self.pull_request_merged_state_changed_event_metadata
+                ,
+                approval_rule_event_metadata: self.approval_rule_event_metadata
+                ,
+                approval_state_changed_event_metadata: self.approval_state_changed_event_metadata
+                ,
+                approval_rule_overridden_event_metadata: self.approval_rule_overridden_event_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl PullRequestEvent {
     /// Creates a new builder-style object to manufacture [`PullRequestEvent`](crate::model::PullRequestEvent).
@@ -6368,7 +5901,7 @@ impl PullRequestEvent {
 /// <p>Returns information about an override event for approval rules for a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalRuleOverriddenEventMetadata {
+pub struct ApprovalRuleOverriddenEventMetadata  {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
@@ -6378,17 +5911,17 @@ pub struct ApprovalRuleOverriddenEventMetadata {
 }
 impl ApprovalRuleOverriddenEventMetadata {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The status of the override event.</p>
-    pub fn override_status(&self) -> std::option::Option<&crate::model::OverrideStatus> {
+    pub fn override_status(&self) -> std::option::Option<& crate::model::OverrideStatus> {
         self.override_status.as_ref()
     }
 }
 /// See [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
 pub mod approval_rule_overridden_event_metadata {
-
+    
     /// A builder for [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6403,8 +5936,7 @@ pub mod approval_rule_overridden_event_metadata {
         }
         /// <p>The revision ID of the pull request when the override event occurred.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>The status of the override event.</p>
         pub fn override_status(mut self, input: crate::model::OverrideStatus) -> Self {
@@ -6412,21 +5944,21 @@ pub mod approval_rule_overridden_event_metadata {
             self
         }
         /// <p>The status of the override event.</p>
-        pub fn set_override_status(
-            mut self,
-            input: std::option::Option<crate::model::OverrideStatus>,
-        ) -> Self {
-            self.override_status = input;
-            self
+        pub fn set_override_status(mut self, input: std::option::Option<crate::model::OverrideStatus>) -> Self {
+            self.override_status = input; self
         }
         /// Consumes the builder and constructs a [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
         pub fn build(self) -> crate::model::ApprovalRuleOverriddenEventMetadata {
             crate::model::ApprovalRuleOverriddenEventMetadata {
-                revision_id: self.revision_id,
-                override_status: self.override_status,
+                revision_id: self.revision_id
+                ,
+                override_status: self.override_status
+                ,
             }
         }
     }
+    
+    
 }
 impl ApprovalRuleOverriddenEventMetadata {
     /// Creates a new builder-style object to manufacture [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
@@ -6438,7 +5970,7 @@ impl ApprovalRuleOverriddenEventMetadata {
 /// <p>Returns information about a change in the approval state for a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalStateChangedEventMetadata {
+pub struct ApprovalStateChangedEventMetadata  {
     /// <p>The revision ID of the pull request when the approval state changed.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
@@ -6448,17 +5980,17 @@ pub struct ApprovalStateChangedEventMetadata {
 }
 impl ApprovalStateChangedEventMetadata {
     /// <p>The revision ID of the pull request when the approval state changed.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The approval status for the pull request.</p>
-    pub fn approval_status(&self) -> std::option::Option<&crate::model::ApprovalState> {
+    pub fn approval_status(&self) -> std::option::Option<& crate::model::ApprovalState> {
         self.approval_status.as_ref()
     }
 }
 /// See [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
 pub mod approval_state_changed_event_metadata {
-
+    
     /// A builder for [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6473,8 +6005,7 @@ pub mod approval_state_changed_event_metadata {
         }
         /// <p>The revision ID of the pull request when the approval state changed.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>The approval status for the pull request.</p>
         pub fn approval_status(mut self, input: crate::model::ApprovalState) -> Self {
@@ -6482,21 +6013,21 @@ pub mod approval_state_changed_event_metadata {
             self
         }
         /// <p>The approval status for the pull request.</p>
-        pub fn set_approval_status(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalState>,
-        ) -> Self {
-            self.approval_status = input;
-            self
+        pub fn set_approval_status(mut self, input: std::option::Option<crate::model::ApprovalState>) -> Self {
+            self.approval_status = input; self
         }
         /// Consumes the builder and constructs a [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
         pub fn build(self) -> crate::model::ApprovalStateChangedEventMetadata {
             crate::model::ApprovalStateChangedEventMetadata {
-                revision_id: self.revision_id,
-                approval_status: self.approval_status,
+                revision_id: self.revision_id
+                ,
+                approval_status: self.approval_status
+                ,
             }
         }
     }
+    
+    
 }
 impl ApprovalStateChangedEventMetadata {
     /// Creates a new builder-style object to manufacture [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
@@ -6508,7 +6039,7 @@ impl ApprovalStateChangedEventMetadata {
 /// <p>Returns information about an event for an approval rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalRuleEventMetadata {
+pub struct ApprovalRuleEventMetadata  {
     /// <p>The name of the approval rule.</p>
     #[doc(hidden)]
     pub approval_rule_name: std::option::Option<std::string::String>,
@@ -6521,21 +6052,21 @@ pub struct ApprovalRuleEventMetadata {
 }
 impl ApprovalRuleEventMetadata {
     /// <p>The name of the approval rule.</p>
-    pub fn approval_rule_name(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_name(&self) -> std::option::Option<& str> {
         self.approval_rule_name.as_deref()
     }
     /// <p>The system-generated ID of the approval rule.</p>
-    pub fn approval_rule_id(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_id(&self) -> std::option::Option<& str> {
         self.approval_rule_id.as_deref()
     }
     /// <p>The content of the approval rule.</p>
-    pub fn approval_rule_content(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_content(&self) -> std::option::Option<& str> {
         self.approval_rule_content.as_deref()
     }
 }
 /// See [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
 pub mod approval_rule_event_metadata {
-
+    
     /// A builder for [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6550,12 +6081,8 @@ pub mod approval_rule_event_metadata {
             self
         }
         /// <p>The name of the approval rule.</p>
-        pub fn set_approval_rule_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_name = input;
-            self
+        pub fn set_approval_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_name = input; self
         }
         /// <p>The system-generated ID of the approval rule.</p>
         pub fn approval_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6563,12 +6090,8 @@ pub mod approval_rule_event_metadata {
             self
         }
         /// <p>The system-generated ID of the approval rule.</p>
-        pub fn set_approval_rule_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_id = input;
-            self
+        pub fn set_approval_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_id = input; self
         }
         /// <p>The content of the approval rule.</p>
         pub fn approval_rule_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6576,22 +6099,23 @@ pub mod approval_rule_event_metadata {
             self
         }
         /// <p>The content of the approval rule.</p>
-        pub fn set_approval_rule_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.approval_rule_content = input;
-            self
+        pub fn set_approval_rule_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.approval_rule_content = input; self
         }
         /// Consumes the builder and constructs a [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
         pub fn build(self) -> crate::model::ApprovalRuleEventMetadata {
             crate::model::ApprovalRuleEventMetadata {
-                approval_rule_name: self.approval_rule_name,
-                approval_rule_id: self.approval_rule_id,
-                approval_rule_content: self.approval_rule_content,
+                approval_rule_name: self.approval_rule_name
+                ,
+                approval_rule_id: self.approval_rule_id
+                ,
+                approval_rule_content: self.approval_rule_content
+                ,
             }
         }
     }
+    
+    
 }
 impl ApprovalRuleEventMetadata {
     /// Creates a new builder-style object to manufacture [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
@@ -6603,7 +6127,7 @@ impl ApprovalRuleEventMetadata {
 /// <p>Returns information about the change in the merge state for a pull request event. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PullRequestMergedStateChangedEventMetadata {
+pub struct PullRequestMergedStateChangedEventMetadata  {
     /// <p>The name of the repository where the pull request was created.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -6616,21 +6140,21 @@ pub struct PullRequestMergedStateChangedEventMetadata {
 }
 impl PullRequestMergedStateChangedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch that the pull request is merged into.</p>
-    pub fn destination_reference(&self) -> std::option::Option<&str> {
+    pub fn destination_reference(&self) -> std::option::Option<& str> {
         self.destination_reference.as_deref()
     }
     /// <p>Information about the merge state change event.</p>
-    pub fn merge_metadata(&self) -> std::option::Option<&crate::model::MergeMetadata> {
+    pub fn merge_metadata(&self) -> std::option::Option<& crate::model::MergeMetadata> {
         self.merge_metadata.as_ref()
     }
 }
 /// See [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
 pub mod pull_request_merged_state_changed_event_metadata {
-
+    
     /// A builder for [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6645,12 +6169,8 @@ pub mod pull_request_merged_state_changed_event_metadata {
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The name of the branch that the pull request is merged into.</p>
         pub fn destination_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6658,12 +6178,8 @@ pub mod pull_request_merged_state_changed_event_metadata {
             self
         }
         /// <p>The name of the branch that the pull request is merged into.</p>
-        pub fn set_destination_reference(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_reference = input;
-            self
+        pub fn set_destination_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_reference = input; self
         }
         /// <p>Information about the merge state change event.</p>
         pub fn merge_metadata(mut self, input: crate::model::MergeMetadata) -> Self {
@@ -6671,22 +6187,23 @@ pub mod pull_request_merged_state_changed_event_metadata {
             self
         }
         /// <p>Information about the merge state change event.</p>
-        pub fn set_merge_metadata(
-            mut self,
-            input: std::option::Option<crate::model::MergeMetadata>,
-        ) -> Self {
-            self.merge_metadata = input;
-            self
+        pub fn set_merge_metadata(mut self, input: std::option::Option<crate::model::MergeMetadata>) -> Self {
+            self.merge_metadata = input; self
         }
         /// Consumes the builder and constructs a [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
         pub fn build(self) -> crate::model::PullRequestMergedStateChangedEventMetadata {
             crate::model::PullRequestMergedStateChangedEventMetadata {
-                repository_name: self.repository_name,
-                destination_reference: self.destination_reference,
-                merge_metadata: self.merge_metadata,
+                repository_name: self.repository_name
+                ,
+                destination_reference: self.destination_reference
+                ,
+                merge_metadata: self.merge_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl PullRequestMergedStateChangedEventMetadata {
     /// Creates a new builder-style object to manufacture [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
@@ -6698,7 +6215,7 @@ impl PullRequestMergedStateChangedEventMetadata {
 /// <p>Information about an update to the source branch of a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PullRequestSourceReferenceUpdatedEventMetadata {
+pub struct PullRequestSourceReferenceUpdatedEventMetadata  {
     /// <p>The name of the repository where the pull request was updated.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -6714,25 +6231,25 @@ pub struct PullRequestSourceReferenceUpdatedEventMetadata {
 }
 impl PullRequestSourceReferenceUpdatedEventMetadata {
     /// <p>The name of the repository where the pull request was updated.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was updated.</p>
-    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+    pub fn before_commit_id(&self) -> std::option::Option<& str> {
         self.before_commit_id.as_deref()
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>
-    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+    pub fn after_commit_id(&self) -> std::option::Option<& str> {
         self.after_commit_id.as_deref()
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
-    pub fn merge_base(&self) -> std::option::Option<&str> {
+    pub fn merge_base(&self) -> std::option::Option<& str> {
         self.merge_base.as_deref()
     }
 }
 /// See [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
 pub mod pull_request_source_reference_updated_event_metadata {
-
+    
     /// A builder for [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6748,12 +6265,8 @@ pub mod pull_request_source_reference_updated_event_metadata {
             self
         }
         /// <p>The name of the repository where the pull request was updated.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was updated.</p>
         pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6761,12 +6274,8 @@ pub mod pull_request_source_reference_updated_event_metadata {
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was updated.</p>
-        pub fn set_before_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.before_commit_id = input;
-            self
+        pub fn set_before_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.before_commit_id = input; self
         }
         /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>
         pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6774,12 +6283,8 @@ pub mod pull_request_source_reference_updated_event_metadata {
             self
         }
         /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>
-        pub fn set_after_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.after_commit_id = input;
-            self
+        pub fn set_after_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.after_commit_id = input; self
         }
         /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn merge_base(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6788,24 +6293,28 @@ pub mod pull_request_source_reference_updated_event_metadata {
         }
         /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn set_merge_base(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.merge_base = input;
-            self
+            self.merge_base = input; self
         }
         /// Consumes the builder and constructs a [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
         pub fn build(self) -> crate::model::PullRequestSourceReferenceUpdatedEventMetadata {
             crate::model::PullRequestSourceReferenceUpdatedEventMetadata {
-                repository_name: self.repository_name,
-                before_commit_id: self.before_commit_id,
-                after_commit_id: self.after_commit_id,
-                merge_base: self.merge_base,
+                repository_name: self.repository_name
+                ,
+                before_commit_id: self.before_commit_id
+                ,
+                after_commit_id: self.after_commit_id
+                ,
+                merge_base: self.merge_base
+                ,
             }
         }
     }
+    
+    
 }
 impl PullRequestSourceReferenceUpdatedEventMetadata {
     /// Creates a new builder-style object to manufacture [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
-    pub fn builder() -> crate::model::pull_request_source_reference_updated_event_metadata::Builder
-    {
+    pub fn builder() -> crate::model::pull_request_source_reference_updated_event_metadata::Builder {
         crate::model::pull_request_source_reference_updated_event_metadata::Builder::default()
     }
 }
@@ -6813,20 +6322,20 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
 /// <p>Information about a change to the status of a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PullRequestStatusChangedEventMetadata {
+pub struct PullRequestStatusChangedEventMetadata  {
     /// <p>The changed status of the pull request.</p>
     #[doc(hidden)]
     pub pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
 }
 impl PullRequestStatusChangedEventMetadata {
     /// <p>The changed status of the pull request.</p>
-    pub fn pull_request_status(&self) -> std::option::Option<&crate::model::PullRequestStatusEnum> {
+    pub fn pull_request_status(&self) -> std::option::Option<& crate::model::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
     }
 }
 /// See [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
 pub mod pull_request_status_changed_event_metadata {
-
+    
     /// A builder for [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6839,20 +6348,19 @@ pub mod pull_request_status_changed_event_metadata {
             self
         }
         /// <p>The changed status of the pull request.</p>
-        pub fn set_pull_request_status(
-            mut self,
-            input: std::option::Option<crate::model::PullRequestStatusEnum>,
-        ) -> Self {
-            self.pull_request_status = input;
-            self
+        pub fn set_pull_request_status(mut self, input: std::option::Option<crate::model::PullRequestStatusEnum>) -> Self {
+            self.pull_request_status = input; self
         }
         /// Consumes the builder and constructs a [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
         pub fn build(self) -> crate::model::PullRequestStatusChangedEventMetadata {
             crate::model::PullRequestStatusChangedEventMetadata {
-                pull_request_status: self.pull_request_status,
+                pull_request_status: self.pull_request_status
+                ,
             }
         }
     }
+    
+    
 }
 impl PullRequestStatusChangedEventMetadata {
     /// Creates a new builder-style object to manufacture [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
@@ -6864,7 +6372,7 @@ impl PullRequestStatusChangedEventMetadata {
 /// <p>Metadata about the pull request that is used when comparing the pull request source with its destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PullRequestCreatedEventMetadata {
+pub struct PullRequestCreatedEventMetadata  {
     /// <p>The name of the repository where the pull request was created.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -6880,25 +6388,25 @@ pub struct PullRequestCreatedEventMetadata {
 }
 impl PullRequestCreatedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
-    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+    pub fn source_commit_id(&self) -> std::option::Option<& str> {
         self.source_commit_id.as_deref()
     }
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
-    pub fn destination_commit_id(&self) -> std::option::Option<&str> {
+    pub fn destination_commit_id(&self) -> std::option::Option<& str> {
         self.destination_commit_id.as_deref()
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
-    pub fn merge_base(&self) -> std::option::Option<&str> {
+    pub fn merge_base(&self) -> std::option::Option<& str> {
         self.merge_base.as_deref()
     }
 }
 /// See [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
 pub mod pull_request_created_event_metadata {
-
+    
     /// A builder for [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6914,12 +6422,8 @@ pub mod pull_request_created_event_metadata {
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The commit ID on the source branch used when the pull request was created.</p>
         pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6927,12 +6431,8 @@ pub mod pull_request_created_event_metadata {
             self
         }
         /// <p>The commit ID on the source branch used when the pull request was created.</p>
-        pub fn set_source_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_commit_id = input;
-            self
+        pub fn set_source_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_commit_id = input; self
         }
         /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
         pub fn destination_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6940,12 +6440,8 @@ pub mod pull_request_created_event_metadata {
             self
         }
         /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
-        pub fn set_destination_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_commit_id = input;
-            self
+        pub fn set_destination_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_commit_id = input; self
         }
         /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn merge_base(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6954,19 +6450,24 @@ pub mod pull_request_created_event_metadata {
         }
         /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn set_merge_base(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.merge_base = input;
-            self
+            self.merge_base = input; self
         }
         /// Consumes the builder and constructs a [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
         pub fn build(self) -> crate::model::PullRequestCreatedEventMetadata {
             crate::model::PullRequestCreatedEventMetadata {
-                repository_name: self.repository_name,
-                source_commit_id: self.source_commit_id,
-                destination_commit_id: self.destination_commit_id,
-                merge_base: self.merge_base,
+                repository_name: self.repository_name
+                ,
+                source_commit_id: self.source_commit_id
+                ,
+                destination_commit_id: self.destination_commit_id
+                ,
+                merge_base: self.merge_base
+                ,
             }
         }
     }
+    
+    
 }
 impl PullRequestCreatedEventMetadata {
     /// Creates a new builder-style object to manufacture [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
@@ -6981,9 +6482,9 @@ impl PullRequestCreatedEventMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pullrequesteventtype = unimplemented!();
 /// match pullrequesteventtype {
@@ -7012,22 +6513,14 @@ impl PullRequestCreatedEventMetadata {
 /// Specifically, when `pullrequesteventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PullRequestEventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PullRequestEventType {
     #[allow(missing_docs)] // documentation missing in model
     PullRequestApprovalRuleCreated,
@@ -7048,89 +6541,51 @@ pub enum PullRequestEventType {
     #[allow(missing_docs)] // documentation missing in model
     PullRequestStatusChanged,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PullRequestEventType {
     fn from(s: &str) -> Self {
         match s {
-            "PULL_REQUEST_APPROVAL_RULE_CREATED" => {
-                PullRequestEventType::PullRequestApprovalRuleCreated
-            }
-            "PULL_REQUEST_APPROVAL_RULE_DELETED" => {
-                PullRequestEventType::PullRequestApprovalRuleDeleted
-            }
-            "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN" => {
-                PullRequestEventType::PullRequestApprovalRuleOverridden
-            }
-            "PULL_REQUEST_APPROVAL_RULE_UPDATED" => {
-                PullRequestEventType::PullRequestApprovalRuleUpdated
-            }
-            "PULL_REQUEST_APPROVAL_STATE_CHANGED" => {
-                PullRequestEventType::PullRequestApprovalStateChanged
-            }
+            "PULL_REQUEST_APPROVAL_RULE_CREATED" => PullRequestEventType::PullRequestApprovalRuleCreated,
+            "PULL_REQUEST_APPROVAL_RULE_DELETED" => PullRequestEventType::PullRequestApprovalRuleDeleted,
+            "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN" => PullRequestEventType::PullRequestApprovalRuleOverridden,
+            "PULL_REQUEST_APPROVAL_RULE_UPDATED" => PullRequestEventType::PullRequestApprovalRuleUpdated,
+            "PULL_REQUEST_APPROVAL_STATE_CHANGED" => PullRequestEventType::PullRequestApprovalStateChanged,
             "PULL_REQUEST_CREATED" => PullRequestEventType::PullRequestCreated,
-            "PULL_REQUEST_MERGE_STATE_CHANGED" => {
-                PullRequestEventType::PullRequestMergeStateChanged
-            }
-            "PULL_REQUEST_SOURCE_REFERENCE_UPDATED" => {
-                PullRequestEventType::PullRequestSourceReferenceUpdated
-            }
+            "PULL_REQUEST_MERGE_STATE_CHANGED" => PullRequestEventType::PullRequestMergeStateChanged,
+            "PULL_REQUEST_SOURCE_REFERENCE_UPDATED" => PullRequestEventType::PullRequestSourceReferenceUpdated,
             "PULL_REQUEST_STATUS_CHANGED" => PullRequestEventType::PullRequestStatusChanged,
-            other => {
-                PullRequestEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PullRequestEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PullRequestEventType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PullRequestEventType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PullRequestEventType::from(s))
+                }
+            }
 impl PullRequestEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            PullRequestEventType::PullRequestApprovalRuleCreated => {
-                "PULL_REQUEST_APPROVAL_RULE_CREATED"
-            }
-            PullRequestEventType::PullRequestApprovalRuleDeleted => {
-                "PULL_REQUEST_APPROVAL_RULE_DELETED"
-            }
-            PullRequestEventType::PullRequestApprovalRuleOverridden => {
-                "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN"
-            }
-            PullRequestEventType::PullRequestApprovalRuleUpdated => {
-                "PULL_REQUEST_APPROVAL_RULE_UPDATED"
-            }
-            PullRequestEventType::PullRequestApprovalStateChanged => {
-                "PULL_REQUEST_APPROVAL_STATE_CHANGED"
-            }
+            PullRequestEventType::PullRequestApprovalRuleCreated => "PULL_REQUEST_APPROVAL_RULE_CREATED",
+            PullRequestEventType::PullRequestApprovalRuleDeleted => "PULL_REQUEST_APPROVAL_RULE_DELETED",
+            PullRequestEventType::PullRequestApprovalRuleOverridden => "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN",
+            PullRequestEventType::PullRequestApprovalRuleUpdated => "PULL_REQUEST_APPROVAL_RULE_UPDATED",
+            PullRequestEventType::PullRequestApprovalStateChanged => "PULL_REQUEST_APPROVAL_STATE_CHANGED",
             PullRequestEventType::PullRequestCreated => "PULL_REQUEST_CREATED",
-            PullRequestEventType::PullRequestMergeStateChanged => {
-                "PULL_REQUEST_MERGE_STATE_CHANGED"
-            }
-            PullRequestEventType::PullRequestSourceReferenceUpdated => {
-                "PULL_REQUEST_SOURCE_REFERENCE_UPDATED"
-            }
+            PullRequestEventType::PullRequestMergeStateChanged => "PULL_REQUEST_MERGE_STATE_CHANGED",
+            PullRequestEventType::PullRequestSourceReferenceUpdated => "PULL_REQUEST_SOURCE_REFERENCE_UPDATED",
             PullRequestEventType::PullRequestStatusChanged => "PULL_REQUEST_STATUS_CHANGED",
-            PullRequestEventType::Unknown(value) => value.as_str(),
+            PullRequestEventType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "PULL_REQUEST_APPROVAL_RULE_CREATED",
-            "PULL_REQUEST_APPROVAL_RULE_DELETED",
-            "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN",
-            "PULL_REQUEST_APPROVAL_RULE_UPDATED",
-            "PULL_REQUEST_APPROVAL_STATE_CHANGED",
-            "PULL_REQUEST_CREATED",
-            "PULL_REQUEST_MERGE_STATE_CHANGED",
-            "PULL_REQUEST_SOURCE_REFERENCE_UPDATED",
-            "PULL_REQUEST_STATUS_CHANGED",
+            "PULL_REQUEST_APPROVAL_RULE_CREATED", "PULL_REQUEST_APPROVAL_RULE_DELETED", "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN", "PULL_REQUEST_APPROVAL_RULE_UPDATED", "PULL_REQUEST_APPROVAL_STATE_CHANGED", "PULL_REQUEST_CREATED", "PULL_REQUEST_MERGE_STATE_CHANGED", "PULL_REQUEST_SOURCE_REFERENCE_UPDATED", "PULL_REQUEST_STATUS_CHANGED"
         ]
     }
 }
@@ -7143,7 +6598,7 @@ impl AsRef<str> for PullRequestEventType {
 /// <p>Information about merge hunks in a merge or pull request operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergeHunk {
+pub struct MergeHunk  {
     /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
     #[doc(hidden)]
     pub is_conflict: bool,
@@ -7163,21 +6618,21 @@ impl MergeHunk {
         self.is_conflict
     }
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::MergeHunkDetail> {
+    pub fn source(&self) -> std::option::Option<& crate::model::MergeHunkDetail> {
         self.source.as_ref()
     }
     /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::MergeHunkDetail> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::MergeHunkDetail> {
         self.destination.as_ref()
     }
     /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
-    pub fn base(&self) -> std::option::Option<&crate::model::MergeHunkDetail> {
+    pub fn base(&self) -> std::option::Option<& crate::model::MergeHunkDetail> {
         self.base.as_ref()
     }
 }
 /// See [`MergeHunk`](crate::model::MergeHunk).
 pub mod merge_hunk {
-
+    
     /// A builder for [`MergeHunk`](crate::model::MergeHunk).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7194,8 +6649,7 @@ pub mod merge_hunk {
         }
         /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
         pub fn set_is_conflict(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_conflict = input;
-            self
+            self.is_conflict = input; self
         }
         /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
         pub fn source(mut self, input: crate::model::MergeHunkDetail) -> Self {
@@ -7203,12 +6657,8 @@ pub mod merge_hunk {
             self
         }
         /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<crate::model::MergeHunkDetail>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<crate::model::MergeHunkDetail>) -> Self {
+            self.source = input; self
         }
         /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
         pub fn destination(mut self, input: crate::model::MergeHunkDetail) -> Self {
@@ -7216,12 +6666,8 @@ pub mod merge_hunk {
             self
         }
         /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::MergeHunkDetail>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::MergeHunkDetail>) -> Self {
+            self.destination = input; self
         }
         /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
         pub fn base(mut self, input: crate::model::MergeHunkDetail) -> Self {
@@ -7229,23 +6675,26 @@ pub mod merge_hunk {
             self
         }
         /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
-        pub fn set_base(
-            mut self,
-            input: std::option::Option<crate::model::MergeHunkDetail>,
-        ) -> Self {
-            self.base = input;
-            self
+        pub fn set_base(mut self, input: std::option::Option<crate::model::MergeHunkDetail>) -> Self {
+            self.base = input; self
         }
         /// Consumes the builder and constructs a [`MergeHunk`](crate::model::MergeHunk).
         pub fn build(self) -> crate::model::MergeHunk {
             crate::model::MergeHunk {
-                is_conflict: self.is_conflict.unwrap_or_default(),
-                source: self.source,
-                destination: self.destination,
-                base: self.base,
+                is_conflict: self.is_conflict
+                    .unwrap_or_default()
+                ,
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+                base: self.base
+                ,
             }
         }
     }
+    
+    
 }
 impl MergeHunk {
     /// Creates a new builder-style object to manufacture [`MergeHunk`](crate::model::MergeHunk).
@@ -7257,7 +6706,7 @@ impl MergeHunk {
 /// <p>Information about the details of a merge hunk that contains a conflict in a merge or pull request operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergeHunkDetail {
+pub struct MergeHunkDetail  {
     /// <p>The start position of the hunk in the merge result.</p>
     #[doc(hidden)]
     pub start_line: std::option::Option<i32>,
@@ -7278,13 +6727,13 @@ impl MergeHunkDetail {
         self.end_line
     }
     /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
-    pub fn hunk_content(&self) -> std::option::Option<&str> {
+    pub fn hunk_content(&self) -> std::option::Option<& str> {
         self.hunk_content.as_deref()
     }
 }
 /// See [`MergeHunkDetail`](crate::model::MergeHunkDetail).
 pub mod merge_hunk_detail {
-
+    
     /// A builder for [`MergeHunkDetail`](crate::model::MergeHunkDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7300,8 +6749,7 @@ pub mod merge_hunk_detail {
         }
         /// <p>The start position of the hunk in the merge result.</p>
         pub fn set_start_line(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_line = input;
-            self
+            self.start_line = input; self
         }
         /// <p>The end position of the hunk in the merge result.</p>
         pub fn end_line(mut self, input: i32) -> Self {
@@ -7310,8 +6758,7 @@ pub mod merge_hunk_detail {
         }
         /// <p>The end position of the hunk in the merge result.</p>
         pub fn set_end_line(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_line = input;
-            self
+            self.end_line = input; self
         }
         /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
         pub fn hunk_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7320,18 +6767,22 @@ pub mod merge_hunk_detail {
         }
         /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
         pub fn set_hunk_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hunk_content = input;
-            self
+            self.hunk_content = input; self
         }
         /// Consumes the builder and constructs a [`MergeHunkDetail`](crate::model::MergeHunkDetail).
         pub fn build(self) -> crate::model::MergeHunkDetail {
             crate::model::MergeHunkDetail {
-                start_line: self.start_line,
-                end_line: self.end_line,
-                hunk_content: self.hunk_content,
+                start_line: self.start_line
+                ,
+                end_line: self.end_line
+                ,
+                hunk_content: self.hunk_content
+                ,
             }
         }
     }
+    
+    
 }
 impl MergeHunkDetail {
     /// Creates a new builder-style object to manufacture [`MergeHunkDetail`](crate::model::MergeHunkDetail).
@@ -7343,7 +6794,7 @@ impl MergeHunkDetail {
 /// <p>Returns information about a target for a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Target {
+pub struct Target  {
     /// <p>The name of the repository that contains the pull request.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -7356,21 +6807,21 @@ pub struct Target {
 }
 impl Target {
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn source_reference(&self) -> std::option::Option<&str> {
+    pub fn source_reference(&self) -> std::option::Option<& str> {
         self.source_reference.as_deref()
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
-    pub fn destination_reference(&self) -> std::option::Option<&str> {
+    pub fn destination_reference(&self) -> std::option::Option<& str> {
         self.destination_reference.as_deref()
     }
 }
 /// See [`Target`](crate::model::Target).
 pub mod target {
-
+    
     /// A builder for [`Target`](crate::model::Target).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7385,12 +6836,8 @@ pub mod target {
             self
         }
         /// <p>The name of the repository that contains the pull request.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
         pub fn source_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7398,12 +6845,8 @@ pub mod target {
             self
         }
         /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-        pub fn set_source_reference(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_reference = input;
-            self
+        pub fn set_source_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_reference = input; self
         }
         /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
         pub fn destination_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7411,22 +6854,23 @@ pub mod target {
             self
         }
         /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
-        pub fn set_destination_reference(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_reference = input;
-            self
+        pub fn set_destination_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_reference = input; self
         }
         /// Consumes the builder and constructs a [`Target`](crate::model::Target).
         pub fn build(self) -> crate::model::Target {
             crate::model::Target {
-                repository_name: self.repository_name,
-                source_reference: self.source_reference,
-                destination_reference: self.destination_reference,
+                repository_name: self.repository_name
+                ,
+                source_reference: self.source_reference
+                ,
+                destination_reference: self.destination_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl Target {
     /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
@@ -7438,7 +6882,7 @@ impl Target {
 /// <p>A file to be added, updated, or deleted as part of a commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileMetadata {
+pub struct FileMetadata  {
     /// <p>The full path to the file to be added or updated, including the name of the file.</p>
     #[doc(hidden)]
     pub absolute_path: std::option::Option<std::string::String>,
@@ -7451,21 +6895,21 @@ pub struct FileMetadata {
 }
 impl FileMetadata {
     /// <p>The full path to the file to be added or updated, including the name of the file.</p>
-    pub fn absolute_path(&self) -> std::option::Option<&str> {
+    pub fn absolute_path(&self) -> std::option::Option<& str> {
         self.absolute_path.as_deref()
     }
     /// <p>The blob ID that contains the file information.</p>
-    pub fn blob_id(&self) -> std::option::Option<&str> {
+    pub fn blob_id(&self) -> std::option::Option<& str> {
         self.blob_id.as_deref()
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
 /// See [`FileMetadata`](crate::model::FileMetadata).
 pub mod file_metadata {
-
+    
     /// A builder for [`FileMetadata`](crate::model::FileMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7480,12 +6924,8 @@ pub mod file_metadata {
             self
         }
         /// <p>The full path to the file to be added or updated, including the name of the file.</p>
-        pub fn set_absolute_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.absolute_path = input;
-            self
+        pub fn set_absolute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.absolute_path = input; self
         }
         /// <p>The blob ID that contains the file information.</p>
         pub fn blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7494,8 +6934,7 @@ pub mod file_metadata {
         }
         /// <p>The blob ID that contains the file information.</p>
         pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.blob_id = input;
-            self
+            self.blob_id = input; self
         }
         /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
         pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
@@ -7503,22 +6942,23 @@ pub mod file_metadata {
             self
         }
         /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-        pub fn set_file_mode(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.file_mode = input;
-            self
+        pub fn set_file_mode(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.file_mode = input; self
         }
         /// Consumes the builder and constructs a [`FileMetadata`](crate::model::FileMetadata).
         pub fn build(self) -> crate::model::FileMetadata {
             crate::model::FileMetadata {
-                absolute_path: self.absolute_path,
-                blob_id: self.blob_id,
-                file_mode: self.file_mode,
+                absolute_path: self.absolute_path
+                ,
+                blob_id: self.blob_id
+                ,
+                file_mode: self.file_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl FileMetadata {
     /// Creates a new builder-style object to manufacture [`FileMetadata`](crate::model::FileMetadata).
@@ -7530,7 +6970,7 @@ impl FileMetadata {
 /// <p>Information about a file added or updated as part of a commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFileEntry {
+pub struct PutFileEntry  {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -7546,25 +6986,25 @@ pub struct PutFileEntry {
 }
 impl PutFileEntry {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<& crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
     /// <p>The content of the file, if a source file is not specified.</p>
-    pub fn file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn file_content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.file_content.as_ref()
     }
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
-    pub fn source_file(&self) -> std::option::Option<&crate::model::SourceFileSpecifier> {
+    pub fn source_file(&self) -> std::option::Option<& crate::model::SourceFileSpecifier> {
         self.source_file.as_ref()
     }
 }
 /// See [`PutFileEntry`](crate::model::PutFileEntry).
 pub mod put_file_entry {
-
+    
     /// A builder for [`PutFileEntry`](crate::model::PutFileEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7581,8 +7021,7 @@ pub mod put_file_entry {
         }
         /// <p>The full path to the file in the repository, including the name of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
         pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
@@ -7590,12 +7029,8 @@ pub mod put_file_entry {
             self
         }
         /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-        pub fn set_file_mode(
-            mut self,
-            input: std::option::Option<crate::model::FileModeTypeEnum>,
-        ) -> Self {
-            self.file_mode = input;
-            self
+        pub fn set_file_mode(mut self, input: std::option::Option<crate::model::FileModeTypeEnum>) -> Self {
+            self.file_mode = input; self
         }
         /// <p>The content of the file, if a source file is not specified.</p>
         pub fn file_content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -7603,12 +7038,8 @@ pub mod put_file_entry {
             self
         }
         /// <p>The content of the file, if a source file is not specified.</p>
-        pub fn set_file_content(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.file_content = input;
-            self
+        pub fn set_file_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.file_content = input; self
         }
         /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
         pub fn source_file(mut self, input: crate::model::SourceFileSpecifier) -> Self {
@@ -7616,23 +7047,25 @@ pub mod put_file_entry {
             self
         }
         /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
-        pub fn set_source_file(
-            mut self,
-            input: std::option::Option<crate::model::SourceFileSpecifier>,
-        ) -> Self {
-            self.source_file = input;
-            self
+        pub fn set_source_file(mut self, input: std::option::Option<crate::model::SourceFileSpecifier>) -> Self {
+            self.source_file = input; self
         }
         /// Consumes the builder and constructs a [`PutFileEntry`](crate::model::PutFileEntry).
         pub fn build(self) -> crate::model::PutFileEntry {
             crate::model::PutFileEntry {
-                file_path: self.file_path,
-                file_mode: self.file_mode,
-                file_content: self.file_content,
-                source_file: self.source_file,
+                file_path: self.file_path
+                ,
+                file_mode: self.file_mode
+                ,
+                file_content: self.file_content
+                ,
+                source_file: self.source_file
+                ,
             }
         }
     }
+    
+    
 }
 impl PutFileEntry {
     /// Creates a new builder-style object to manufacture [`PutFileEntry`](crate::model::PutFileEntry).
@@ -7644,7 +7077,7 @@ impl PutFileEntry {
 /// <p>Information about a source file that is part of changes made in a commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceFileSpecifier {
+pub struct SourceFileSpecifier  {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -7654,7 +7087,7 @@ pub struct SourceFileSpecifier {
 }
 impl SourceFileSpecifier {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>Whether to remove the source file from the parent commit.</p>
@@ -7664,7 +7097,7 @@ impl SourceFileSpecifier {
 }
 /// See [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
 pub mod source_file_specifier {
-
+    
     /// A builder for [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7679,8 +7112,7 @@ pub mod source_file_specifier {
         }
         /// <p>The full path to the file, including the name of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// <p>Whether to remove the source file from the parent commit.</p>
         pub fn is_move(mut self, input: bool) -> Self {
@@ -7689,17 +7121,21 @@ pub mod source_file_specifier {
         }
         /// <p>Whether to remove the source file from the parent commit.</p>
         pub fn set_is_move(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_move = input;
-            self
+            self.is_move = input; self
         }
         /// Consumes the builder and constructs a [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
         pub fn build(self) -> crate::model::SourceFileSpecifier {
             crate::model::SourceFileSpecifier {
-                file_path: self.file_path,
-                is_move: self.is_move.unwrap_or_default(),
+                file_path: self.file_path
+                ,
+                is_move: self.is_move
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceFileSpecifier {
     /// Creates a new builder-style object to manufacture [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
@@ -7711,7 +7147,7 @@ impl SourceFileSpecifier {
 /// <p>Returns information about errors in a BatchGetCommits operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetCommitsError {
+pub struct BatchGetCommitsError  {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
     #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
@@ -7724,21 +7160,21 @@ pub struct BatchGetCommitsError {
 }
 impl BatchGetCommitsError {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> std::option::Option<& str> {
         self.commit_id.as_deref()
     }
     /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
 pub mod batch_get_commits_error {
-
+    
     /// A builder for [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7754,8 +7190,7 @@ pub mod batch_get_commits_error {
         }
         /// <p>A commit ID that either could not be found or was not in a valid format.</p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.commit_id = input;
-            self
+            self.commit_id = input; self
         }
         /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7764,8 +7199,7 @@ pub mod batch_get_commits_error {
         }
         /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7773,22 +7207,23 @@ pub mod batch_get_commits_error {
             self
         }
         /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
         pub fn build(self) -> crate::model::BatchGetCommitsError {
             crate::model::BatchGetCommitsError {
-                commit_id: self.commit_id,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                commit_id: self.commit_id
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetCommitsError {
     /// Creates a new builder-style object to manufacture [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
@@ -7800,7 +7235,7 @@ impl BatchGetCommitsError {
 /// <p>Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
+pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError  {
     /// <p>The name of the repository where the association with the template was not able to be removed.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -7813,21 +7248,21 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     /// <p>The name of the repository where the association with the template was not able to be removed.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
 pub mod batch_disassociate_approval_rule_template_from_repositories_error {
-
+    
     /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7842,12 +7277,8 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
             self
         }
         /// <p>The name of the repository where the association with the template was not able to be removed.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7856,8 +7287,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
         }
         /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7865,30 +7295,27 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
             self
         }
         /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
-        pub fn build(
-            self,
-        ) -> crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
+        pub fn build(self) -> crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
             crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
-                repository_name: self.repository_name,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                repository_name: self.repository_name
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
-    pub fn builder(
-    ) -> crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder
-    {
+    pub fn builder() -> crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder {
         crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder::default()
     }
 }
@@ -7896,7 +7323,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
 /// <p>Returns information about errors in a BatchDescribeMergeConflicts operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDescribeMergeConflictsError {
+pub struct BatchDescribeMergeConflictsError  {
     /// <p>The path to the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -7909,21 +7336,21 @@ pub struct BatchDescribeMergeConflictsError {
 }
 impl BatchDescribeMergeConflictsError {
     /// <p>The path to the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The name of the exception.</p>
-    pub fn exception_name(&self) -> std::option::Option<&str> {
+    pub fn exception_name(&self) -> std::option::Option<& str> {
         self.exception_name.as_deref()
     }
     /// <p>The message provided by the exception.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
 pub mod batch_describe_merge_conflicts_error {
-
+    
     /// A builder for [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7939,8 +7366,7 @@ pub mod batch_describe_merge_conflicts_error {
         }
         /// <p>The path to the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_path = input;
-            self
+            self.file_path = input; self
         }
         /// <p>The name of the exception.</p>
         pub fn exception_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7948,12 +7374,8 @@ pub mod batch_describe_merge_conflicts_error {
             self
         }
         /// <p>The name of the exception.</p>
-        pub fn set_exception_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exception_name = input;
-            self
+        pub fn set_exception_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.exception_name = input; self
         }
         /// <p>The message provided by the exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7962,18 +7384,22 @@ pub mod batch_describe_merge_conflicts_error {
         }
         /// <p>The message provided by the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
         pub fn build(self) -> crate::model::BatchDescribeMergeConflictsError {
             crate::model::BatchDescribeMergeConflictsError {
-                file_path: self.file_path,
-                exception_name: self.exception_name,
-                message: self.message,
+                file_path: self.file_path
+                ,
+                exception_name: self.exception_name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDescribeMergeConflictsError {
     /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
@@ -7985,7 +7411,7 @@ impl BatchDescribeMergeConflictsError {
 /// <p>Information about conflicts in a merge operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Conflict {
+pub struct Conflict  {
     /// <p>Metadata about a conflict in a merge operation.</p>
     #[doc(hidden)]
     pub conflict_metadata: std::option::Option<crate::model::ConflictMetadata>,
@@ -7995,17 +7421,17 @@ pub struct Conflict {
 }
 impl Conflict {
     /// <p>Metadata about a conflict in a merge operation.</p>
-    pub fn conflict_metadata(&self) -> std::option::Option<&crate::model::ConflictMetadata> {
+    pub fn conflict_metadata(&self) -> std::option::Option<& crate::model::ConflictMetadata> {
         self.conflict_metadata.as_ref()
     }
     /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
-    pub fn merge_hunks(&self) -> std::option::Option<&[crate::model::MergeHunk]> {
+    pub fn merge_hunks(&self) -> std::option::Option<& [crate::model::MergeHunk]> {
         self.merge_hunks.as_deref()
     }
 }
 /// See [`Conflict`](crate::model::Conflict).
 pub mod conflict {
-
+    
     /// A builder for [`Conflict`](crate::model::Conflict).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8019,12 +7445,8 @@ pub mod conflict {
             self
         }
         /// <p>Metadata about a conflict in a merge operation.</p>
-        pub fn set_conflict_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ConflictMetadata>,
-        ) -> Self {
-            self.conflict_metadata = input;
-            self
+        pub fn set_conflict_metadata(mut self, input: std::option::Option<crate::model::ConflictMetadata>) -> Self {
+            self.conflict_metadata = input; self
         }
         /// Appends an item to `merge_hunks`.
         ///
@@ -8033,26 +7455,26 @@ pub mod conflict {
         /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
         pub fn merge_hunks(mut self, input: crate::model::MergeHunk) -> Self {
             let mut v = self.merge_hunks.unwrap_or_default();
-            v.push(input);
-            self.merge_hunks = Some(v);
-            self
+                            v.push(input);
+                            self.merge_hunks = Some(v);
+                            self
         }
         /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
-        pub fn set_merge_hunks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MergeHunk>>,
-        ) -> Self {
-            self.merge_hunks = input;
-            self
+        pub fn set_merge_hunks(mut self, input: std::option::Option<std::vec::Vec<crate::model::MergeHunk>>) -> Self {
+            self.merge_hunks = input; self
         }
         /// Consumes the builder and constructs a [`Conflict`](crate::model::Conflict).
         pub fn build(self) -> crate::model::Conflict {
             crate::model::Conflict {
-                conflict_metadata: self.conflict_metadata,
-                merge_hunks: self.merge_hunks,
+                conflict_metadata: self.conflict_metadata
+                ,
+                merge_hunks: self.merge_hunks
+                ,
             }
         }
     }
+    
+    
 }
 impl Conflict {
     /// Creates a new builder-style object to manufacture [`Conflict`](crate::model::Conflict).
@@ -8064,7 +7486,7 @@ impl Conflict {
 /// <p>Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
+pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError  {
     /// <p>The name of the repository where the association was not made.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -8077,21 +7499,21 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// <p>The name of the repository where the association was not made.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
 pub mod batch_associate_approval_rule_template_with_repositories_error {
-
+    
     /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8106,12 +7528,8 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
             self
         }
         /// <p>The name of the repository where the association was not made.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8120,8 +7538,7 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
         }
         /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8129,29 +7546,28 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
             self
         }
         /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
-        pub fn build(
-            self,
-        ) -> crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError {
+        pub fn build(self) -> crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError {
             crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-                repository_name: self.repository_name,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                repository_name: self.repository_name
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
-    pub fn builder(
-    ) -> crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder {
+    pub fn builder() -> crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder {
         crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder::default()
     }
 }
+

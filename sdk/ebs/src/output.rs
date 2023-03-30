@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartSnapshotOutput {
+pub struct StartSnapshotOutput  {
     /// <p>The description of the snapshot.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -36,23 +36,23 @@ pub struct StartSnapshotOutput {
 }
 impl StartSnapshotOutput {
     /// <p>The description of the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The status of the snapshot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the snapshot was created.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The size of the volume, in GiB.</p>
@@ -64,19 +64,19 @@ impl StartSnapshotOutput {
         self.block_size
     }
     /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the parent snapshot.</p>
-    pub fn parent_snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn parent_snapshot_id(&self) -> std::option::Option<& str> {
         self.parent_snapshot_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartSnapshotOutput {
+impl  std::fmt::Debug for StartSnapshotOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSnapshotOutput");
         formatter.field("description", &self.description);
@@ -94,7 +94,7 @@ impl std::fmt::Debug for StartSnapshotOutput {
 }
 /// See [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
 pub mod start_snapshot_output {
-
+    
     /// A builder for [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -117,8 +117,7 @@ pub mod start_snapshot_output {
         }
         /// <p>The description of the snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ID of the snapshot.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +126,7 @@ pub mod start_snapshot_output {
         }
         /// <p>The ID of the snapshot.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +135,7 @@ pub mod start_snapshot_output {
         }
         /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>The status of the snapshot.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -147,8 +144,7 @@ pub mod start_snapshot_output {
         }
         /// <p>The status of the snapshot.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The timestamp when the snapshot was created.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -156,12 +152,8 @@ pub mod start_snapshot_output {
             self
         }
         /// <p>The timestamp when the snapshot was created.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The size of the volume, in GiB.</p>
         pub fn volume_size(mut self, input: i64) -> Self {
@@ -170,8 +162,7 @@ pub mod start_snapshot_output {
         }
         /// <p>The size of the volume, in GiB.</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_size = input;
-            self
+            self.volume_size = input; self
         }
         /// <p>The size of the blocks in the snapshot, in bytes.</p>
         pub fn block_size(mut self, input: i32) -> Self {
@@ -180,8 +171,7 @@ pub mod start_snapshot_output {
         }
         /// <p>The size of the blocks in the snapshot, in bytes.</p>
         pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_size = input;
-            self
+            self.block_size = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -190,17 +180,13 @@ pub mod start_snapshot_output {
         /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The ID of the parent snapshot.</p>
         pub fn parent_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,12 +194,8 @@ pub mod start_snapshot_output {
             self
         }
         /// <p>The ID of the parent snapshot.</p>
-        pub fn set_parent_snapshot_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_snapshot_id = input;
-            self
+        pub fn set_parent_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_snapshot_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,22 +204,31 @@ pub mod start_snapshot_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
         pub fn build(self) -> crate::output::StartSnapshotOutput {
             crate::output::StartSnapshotOutput {
-                description: self.description,
-                snapshot_id: self.snapshot_id,
-                owner_id: self.owner_id,
-                status: self.status,
-                start_time: self.start_time,
-                volume_size: self.volume_size,
-                block_size: self.block_size,
-                tags: self.tags,
-                parent_snapshot_id: self.parent_snapshot_id,
-                kms_key_arn: self.kms_key_arn,
+                description: self.description
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                owner_id: self.owner_id
+                ,
+                status: self.status
+                ,
+                start_time: self.start_time
+                ,
+                volume_size: self.volume_size
+                ,
+                block_size: self.block_size
+                ,
+                tags: self.tags
+                ,
+                parent_snapshot_id: self.parent_snapshot_id
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
@@ -257,6 +248,8 @@ pub mod start_snapshot_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl StartSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
@@ -268,7 +261,7 @@ impl StartSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSnapshotBlockOutput {
+pub struct PutSnapshotBlockOutput  {
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
     #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
@@ -278,17 +271,17 @@ pub struct PutSnapshotBlockOutput {
 }
 impl PutSnapshotBlockOutput {
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<& crate::model::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
 /// See [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
 pub mod put_snapshot_block_output {
-
+    
     /// A builder for [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -303,8 +296,7 @@ pub mod put_snapshot_block_output {
         }
         /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
         pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
@@ -312,21 +304,21 @@ pub mod put_snapshot_block_output {
             self
         }
         /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-        pub fn set_checksum_algorithm(
-            mut self,
-            input: std::option::Option<crate::model::ChecksumAlgorithm>,
-        ) -> Self {
-            self.checksum_algorithm = input;
-            self
+        pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::ChecksumAlgorithm>) -> Self {
+            self.checksum_algorithm = input; self
         }
         /// Consumes the builder and constructs a [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
         pub fn build(self) -> crate::output::PutSnapshotBlockOutput {
             crate::output::PutSnapshotBlockOutput {
-                checksum: self.checksum,
-                checksum_algorithm: self.checksum_algorithm,
+                checksum: self.checksum
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                ,
             }
         }
     }
+    
+    
 }
 impl PutSnapshotBlockOutput {
     /// Creates a new builder-style object to manufacture [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
@@ -338,7 +330,7 @@ impl PutSnapshotBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSnapshotBlocksOutput {
+pub struct ListSnapshotBlocksOutput  {
     /// <p>An array of objects containing information about the blocks.</p>
     #[doc(hidden)]
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
@@ -357,11 +349,11 @@ pub struct ListSnapshotBlocksOutput {
 }
 impl ListSnapshotBlocksOutput {
     /// <p>An array of objects containing information about the blocks.</p>
-    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+    pub fn blocks(&self) -> std::option::Option<& [crate::model::Block]> {
         self.blocks.as_deref()
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiry_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
     /// <p>The size of the volume in GB.</p>
@@ -373,11 +365,11 @@ impl ListSnapshotBlocksOutput {
         self.block_size
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSnapshotBlocksOutput {
+impl  std::fmt::Debug for ListSnapshotBlocksOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSnapshotBlocksOutput");
         formatter.field("blocks", &"*** Sensitive Data Redacted ***");
@@ -390,7 +382,7 @@ impl std::fmt::Debug for ListSnapshotBlocksOutput {
 }
 /// See [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
 pub mod list_snapshot_blocks_output {
-
+    
     /// A builder for [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -408,17 +400,13 @@ pub mod list_snapshot_blocks_output {
         /// <p>An array of objects containing information about the blocks.</p>
         pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input);
-            self.blocks = Some(v);
-            self
+                            v.push(input);
+                            self.blocks = Some(v);
+                            self
         }
         /// <p>An array of objects containing information about the blocks.</p>
-        pub fn set_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Block>>,
-        ) -> Self {
-            self.blocks = input;
-            self
+        pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Block>>) -> Self {
+            self.blocks = input; self
         }
         /// <p>The time when the <code>BlockToken</code> expires.</p>
         pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -426,12 +414,8 @@ pub mod list_snapshot_blocks_output {
             self
         }
         /// <p>The time when the <code>BlockToken</code> expires.</p>
-        pub fn set_expiry_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiry_time = input;
-            self
+        pub fn set_expiry_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiry_time = input; self
         }
         /// <p>The size of the volume in GB.</p>
         pub fn volume_size(mut self, input: i64) -> Self {
@@ -440,8 +424,7 @@ pub mod list_snapshot_blocks_output {
         }
         /// <p>The size of the volume in GB.</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_size = input;
-            self
+            self.volume_size = input; self
         }
         /// <p>The size of the blocks in the snapshot, in bytes.</p>
         pub fn block_size(mut self, input: i32) -> Self {
@@ -450,8 +433,7 @@ pub mod list_snapshot_blocks_output {
         }
         /// <p>The size of the blocks in the snapshot, in bytes.</p>
         pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_size = input;
-            self
+            self.block_size = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -460,17 +442,21 @@ pub mod list_snapshot_blocks_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
         pub fn build(self) -> crate::output::ListSnapshotBlocksOutput {
             crate::output::ListSnapshotBlocksOutput {
-                blocks: self.blocks,
-                expiry_time: self.expiry_time,
-                volume_size: self.volume_size,
-                block_size: self.block_size,
-                next_token: self.next_token,
+                blocks: self.blocks
+                ,
+                expiry_time: self.expiry_time
+                ,
+                volume_size: self.volume_size
+                ,
+                block_size: self.block_size
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
@@ -485,6 +471,8 @@ pub mod list_snapshot_blocks_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListSnapshotBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
@@ -496,7 +484,7 @@ impl ListSnapshotBlocksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChangedBlocksOutput {
+pub struct ListChangedBlocksOutput  {
     /// <p>An array of objects containing information about the changed blocks.</p>
     #[doc(hidden)]
     pub changed_blocks: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
@@ -515,11 +503,11 @@ pub struct ListChangedBlocksOutput {
 }
 impl ListChangedBlocksOutput {
     /// <p>An array of objects containing information about the changed blocks.</p>
-    pub fn changed_blocks(&self) -> std::option::Option<&[crate::model::ChangedBlock]> {
+    pub fn changed_blocks(&self) -> std::option::Option<& [crate::model::ChangedBlock]> {
         self.changed_blocks.as_deref()
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiry_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
     /// <p>The size of the volume in GB.</p>
@@ -531,13 +519,13 @@ impl ListChangedBlocksOutput {
         self.block_size
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
 pub mod list_changed_blocks_output {
-
+    
     /// A builder for [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -555,17 +543,13 @@ pub mod list_changed_blocks_output {
         /// <p>An array of objects containing information about the changed blocks.</p>
         pub fn changed_blocks(mut self, input: crate::model::ChangedBlock) -> Self {
             let mut v = self.changed_blocks.unwrap_or_default();
-            v.push(input);
-            self.changed_blocks = Some(v);
-            self
+                            v.push(input);
+                            self.changed_blocks = Some(v);
+                            self
         }
         /// <p>An array of objects containing information about the changed blocks.</p>
-        pub fn set_changed_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
-        ) -> Self {
-            self.changed_blocks = input;
-            self
+        pub fn set_changed_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>) -> Self {
+            self.changed_blocks = input; self
         }
         /// <p>The time when the <code>BlockToken</code> expires.</p>
         pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -573,12 +557,8 @@ pub mod list_changed_blocks_output {
             self
         }
         /// <p>The time when the <code>BlockToken</code> expires.</p>
-        pub fn set_expiry_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiry_time = input;
-            self
+        pub fn set_expiry_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiry_time = input; self
         }
         /// <p>The size of the volume in GB.</p>
         pub fn volume_size(mut self, input: i64) -> Self {
@@ -587,8 +567,7 @@ pub mod list_changed_blocks_output {
         }
         /// <p>The size of the volume in GB.</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_size = input;
-            self
+            self.volume_size = input; self
         }
         /// <p>The size of the blocks in the snapshot, in bytes.</p>
         pub fn block_size(mut self, input: i32) -> Self {
@@ -597,8 +576,7 @@ pub mod list_changed_blocks_output {
         }
         /// <p>The size of the blocks in the snapshot, in bytes.</p>
         pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_size = input;
-            self
+            self.block_size = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -607,20 +585,26 @@ pub mod list_changed_blocks_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
         pub fn build(self) -> crate::output::ListChangedBlocksOutput {
             crate::output::ListChangedBlocksOutput {
-                changed_blocks: self.changed_blocks,
-                expiry_time: self.expiry_time,
-                volume_size: self.volume_size,
-                block_size: self.block_size,
-                next_token: self.next_token,
+                changed_blocks: self.changed_blocks
+                ,
+                expiry_time: self.expiry_time
+                ,
+                volume_size: self.volume_size
+                ,
+                block_size: self.block_size
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListChangedBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
@@ -631,7 +615,7 @@ impl ListChangedBlocksOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-pub struct GetSnapshotBlockOutput {
+pub struct GetSnapshotBlockOutput  {
     /// <p>The size of the data in the block.</p>
     #[doc(hidden)]
     pub data_length: std::option::Option<i32>,
@@ -650,19 +634,19 @@ impl GetSnapshotBlockOutput {
         self.data_length
     }
     /// <p>The data content of the block.</p>
-    pub fn block_data(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn block_data(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.block_data
     }
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
-    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<& crate::model::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for GetSnapshotBlockOutput {
+impl  std::fmt::Debug for GetSnapshotBlockOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSnapshotBlockOutput");
         formatter.field("data_length", &self.data_length);
@@ -674,7 +658,7 @@ impl std::fmt::Debug for GetSnapshotBlockOutput {
 }
 /// See [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
 pub mod get_snapshot_block_output {
-
+    
     /// A builder for [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
     #[derive(std::default::Default)]
     pub struct Builder {
@@ -691,8 +675,7 @@ pub mod get_snapshot_block_output {
         }
         /// <p>The size of the data in the block.</p>
         pub fn set_data_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.data_length = input;
-            self
+            self.data_length = input; self
         }
         /// <p>The data content of the block.</p>
         pub fn block_data(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -700,12 +683,8 @@ pub mod get_snapshot_block_output {
             self
         }
         /// <p>The data content of the block.</p>
-        pub fn set_block_data(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.block_data = input;
-            self
+        pub fn set_block_data(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.block_data = input; self
         }
         /// <p>The checksum generated for the block, which is Base64 encoded.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -714,8 +693,7 @@ pub mod get_snapshot_block_output {
         }
         /// <p>The checksum generated for the block, which is Base64 encoded.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
         pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
@@ -723,20 +701,21 @@ pub mod get_snapshot_block_output {
             self
         }
         /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
-        pub fn set_checksum_algorithm(
-            mut self,
-            input: std::option::Option<crate::model::ChecksumAlgorithm>,
-        ) -> Self {
-            self.checksum_algorithm = input;
-            self
+        pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::ChecksumAlgorithm>) -> Self {
+            self.checksum_algorithm = input; self
         }
         /// Consumes the builder and constructs a [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
         pub fn build(self) -> crate::output::GetSnapshotBlockOutput {
             crate::output::GetSnapshotBlockOutput {
-                data_length: self.data_length,
-                block_data: self.block_data.unwrap_or_default(),
-                checksum: self.checksum,
-                checksum_algorithm: self.checksum_algorithm,
+                data_length: self.data_length
+                ,
+                block_data: self.block_data
+                    .unwrap_or_default()
+                ,
+                checksum: self.checksum
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                ,
             }
         }
     }
@@ -750,6 +729,8 @@ pub mod get_snapshot_block_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetSnapshotBlockOutput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
@@ -761,20 +742,20 @@ impl GetSnapshotBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompleteSnapshotOutput {
+pub struct CompleteSnapshotOutput  {
     /// <p>The status of the snapshot.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl CompleteSnapshotOutput {
     /// <p>The status of the snapshot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
 pub mod complete_snapshot_output {
-
+    
     /// A builder for [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -788,16 +769,18 @@ pub mod complete_snapshot_output {
         }
         /// <p>The status of the snapshot.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
         pub fn build(self) -> crate::output::CompleteSnapshotOutput {
             crate::output::CompleteSnapshotOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CompleteSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
@@ -805,3 +788,4 @@ impl CompleteSnapshotOutput {
         crate::output::complete_snapshot_output::Builder::default()
     }
 }
+

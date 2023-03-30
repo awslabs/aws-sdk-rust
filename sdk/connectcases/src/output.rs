@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplatesOutput {
+pub struct ListTemplatesOutput  {
     /// <p>List of template summary objects.</p>
     #[doc(hidden)]
     pub templates: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
@@ -12,17 +12,17 @@ pub struct ListTemplatesOutput {
 }
 impl ListTemplatesOutput {
     /// <p>List of template summary objects.</p>
-    pub fn templates(&self) -> std::option::Option<&[crate::model::TemplateSummary]> {
+    pub fn templates(&self) -> std::option::Option<& [crate::model::TemplateSummary]> {
         self.templates.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
 pub mod list_templates_output {
-
+    
     /// A builder for [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod list_templates_output {
         /// <p>List of template summary objects.</p>
         pub fn templates(mut self, input: crate::model::TemplateSummary) -> Self {
             let mut v = self.templates.unwrap_or_default();
-            v.push(input);
-            self.templates = Some(v);
-            self
+                            v.push(input);
+                            self.templates = Some(v);
+                            self
         }
         /// <p>List of template summary objects.</p>
-        pub fn set_templates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
-        ) -> Self {
-            self.templates = input;
-            self
+        pub fn set_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>) -> Self {
+            self.templates = input; self
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod list_templates_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
         pub fn build(self) -> crate::output::ListTemplatesOutput {
             crate::output::ListTemplatesOutput {
-                templates: self.templates,
-                next_token: self.next_token,
+                templates: self.templates
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
@@ -78,7 +77,7 @@ impl ListTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTemplateOutput {
+pub struct CreateTemplateOutput  {
     /// <p>A unique identifier of a template.</p>
     #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
@@ -88,17 +87,17 @@ pub struct CreateTemplateOutput {
 }
 impl CreateTemplateOutput {
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-    pub fn template_arn(&self) -> std::option::Option<&str> {
+    pub fn template_arn(&self) -> std::option::Option<& str> {
         self.template_arn.as_deref()
     }
 }
 /// See [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
 pub mod create_template_output {
-
+    
     /// A builder for [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -113,8 +112,7 @@ pub mod create_template_output {
         }
         /// <p>A unique identifier of a template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
         pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,17 +121,20 @@ pub mod create_template_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_arn = input;
-            self
+            self.template_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
         pub fn build(self) -> crate::output::CreateTemplateOutput {
             crate::output::CreateTemplateOutput {
-                template_id: self.template_id,
-                template_arn: self.template_arn,
+                template_id: self.template_id
+                ,
+                template_arn: self.template_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
@@ -145,19 +146,24 @@ impl CreateTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTemplateOutput {}
+pub struct UpdateTemplateOutput  {
+}
 /// See [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
 pub mod update_template_output {
-
+    
     /// A builder for [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
         pub fn build(self) -> crate::output::UpdateTemplateOutput {
-            crate::output::UpdateTemplateOutput {}
+            crate::output::UpdateTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
@@ -169,7 +175,7 @@ impl UpdateTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTemplateOutput {
+pub struct GetTemplateOutput  {
     /// <p>A unique identifier of a template.</p>
     #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
@@ -190,54 +196,48 @@ pub struct GetTemplateOutput {
     pub required_fields: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
     /// <p>The status of the template.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TemplateStatus>,
 }
 impl GetTemplateOutput {
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> std::option::Option<&str> {
+    pub fn template_arn(&self) -> std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn layout_configuration(&self) -> std::option::Option<&crate::model::LayoutConfiguration> {
+    pub fn layout_configuration(&self) -> std::option::Option<& crate::model::LayoutConfiguration> {
         self.layout_configuration.as_ref()
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn required_fields(&self) -> std::option::Option<&[crate::model::RequiredField]> {
+    pub fn required_fields(&self) -> std::option::Option<& [crate::model::RequiredField]> {
         self.required_fields.as_deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
     /// <p>The status of the template.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TemplateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TemplateStatus> {
         self.status.as_ref()
     }
 }
 /// See [`GetTemplateOutput`](crate::output::GetTemplateOutput).
 pub mod get_template_output {
-
+    
     /// A builder for [`GetTemplateOutput`](crate::output::GetTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -247,12 +247,7 @@ pub mod get_template_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) layout_configuration: std::option::Option<crate::model::LayoutConfiguration>,
         pub(crate) required_fields: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
         pub(crate) status: std::option::Option<crate::model::TemplateStatus>,
     }
     impl Builder {
@@ -263,8 +258,7 @@ pub mod get_template_output {
         }
         /// <p>A unique identifier of a template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -273,8 +267,7 @@ pub mod get_template_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_arn = input;
-            self
+            self.template_arn = input; self
         }
         /// <p>The name of the template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -283,8 +276,7 @@ pub mod get_template_output {
         }
         /// <p>The name of the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A brief description of the template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -293,8 +285,7 @@ pub mod get_template_output {
         }
         /// <p>A brief description of the template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Configuration of layouts associated to the template.</p>
         pub fn layout_configuration(mut self, input: crate::model::LayoutConfiguration) -> Self {
@@ -302,12 +293,8 @@ pub mod get_template_output {
             self
         }
         /// <p>Configuration of layouts associated to the template.</p>
-        pub fn set_layout_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LayoutConfiguration>,
-        ) -> Self {
-            self.layout_configuration = input;
-            self
+        pub fn set_layout_configuration(mut self, input: std::option::Option<crate::model::LayoutConfiguration>) -> Self {
+            self.layout_configuration = input; self
         }
         /// Appends an item to `required_fields`.
         ///
@@ -316,45 +303,28 @@ pub mod get_template_output {
         /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
         pub fn required_fields(mut self, input: crate::model::RequiredField) -> Self {
             let mut v = self.required_fields.unwrap_or_default();
-            v.push(input);
-            self.required_fields = Some(v);
-            self
+                            v.push(input);
+                            self.required_fields = Some(v);
+                            self
         }
         /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-        pub fn set_required_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RequiredField>>,
-        ) -> Self {
-            self.required_fields = input;
-            self
+        pub fn set_required_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::RequiredField>>) -> Self {
+            self.required_fields = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::option::Option<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::option::Option<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The status of the template.</p>
         pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
@@ -362,27 +332,33 @@ pub mod get_template_output {
             self
         }
         /// <p>The status of the template.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TemplateStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TemplateStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::output::GetTemplateOutput).
         pub fn build(self) -> crate::output::GetTemplateOutput {
             crate::output::GetTemplateOutput {
-                template_id: self.template_id,
-                template_arn: self.template_arn,
-                name: self.name,
-                description: self.description,
-                layout_configuration: self.layout_configuration,
-                required_fields: self.required_fields,
-                tags: self.tags,
-                status: self.status,
+                template_id: self.template_id
+                ,
+                template_arn: self.template_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                layout_configuration: self.layout_configuration
+                ,
+                required_fields: self.required_fields
+                ,
+                tags: self.tags
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateOutput`](crate::output::GetTemplateOutput).
@@ -394,7 +370,7 @@ impl GetTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLayoutsOutput {
+pub struct ListLayoutsOutput  {
     /// <p>The layouts for the domain.</p>
     #[doc(hidden)]
     pub layouts: std::option::Option<std::vec::Vec<crate::model::LayoutSummary>>,
@@ -404,17 +380,17 @@ pub struct ListLayoutsOutput {
 }
 impl ListLayoutsOutput {
     /// <p>The layouts for the domain.</p>
-    pub fn layouts(&self) -> std::option::Option<&[crate::model::LayoutSummary]> {
+    pub fn layouts(&self) -> std::option::Option<& [crate::model::LayoutSummary]> {
         self.layouts.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLayoutsOutput`](crate::output::ListLayoutsOutput).
 pub mod list_layouts_output {
-
+    
     /// A builder for [`ListLayoutsOutput`](crate::output::ListLayoutsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -429,17 +405,13 @@ pub mod list_layouts_output {
         /// <p>The layouts for the domain.</p>
         pub fn layouts(mut self, input: crate::model::LayoutSummary) -> Self {
             let mut v = self.layouts.unwrap_or_default();
-            v.push(input);
-            self.layouts = Some(v);
-            self
+                            v.push(input);
+                            self.layouts = Some(v);
+                            self
         }
         /// <p>The layouts for the domain.</p>
-        pub fn set_layouts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LayoutSummary>>,
-        ) -> Self {
-            self.layouts = input;
-            self
+        pub fn set_layouts(mut self, input: std::option::Option<std::vec::Vec<crate::model::LayoutSummary>>) -> Self {
+            self.layouts = input; self
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -448,17 +420,20 @@ pub mod list_layouts_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLayoutsOutput`](crate::output::ListLayoutsOutput).
         pub fn build(self) -> crate::output::ListLayoutsOutput {
             crate::output::ListLayoutsOutput {
-                layouts: self.layouts,
-                next_token: self.next_token,
+                layouts: self.layouts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLayoutsOutput {
     /// Creates a new builder-style object to manufacture [`ListLayoutsOutput`](crate::output::ListLayoutsOutput).
@@ -470,7 +445,7 @@ impl ListLayoutsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLayoutOutput {
+pub struct CreateLayoutOutput  {
     /// <p>The unique identifier of the layout.</p>
     #[doc(hidden)]
     pub layout_id: std::option::Option<std::string::String>,
@@ -480,17 +455,17 @@ pub struct CreateLayoutOutput {
 }
 impl CreateLayoutOutput {
     /// <p>The unique identifier of the layout.</p>
-    pub fn layout_id(&self) -> std::option::Option<&str> {
+    pub fn layout_id(&self) -> std::option::Option<& str> {
         self.layout_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
-    pub fn layout_arn(&self) -> std::option::Option<&str> {
+    pub fn layout_arn(&self) -> std::option::Option<& str> {
         self.layout_arn.as_deref()
     }
 }
 /// See [`CreateLayoutOutput`](crate::output::CreateLayoutOutput).
 pub mod create_layout_output {
-
+    
     /// A builder for [`CreateLayoutOutput`](crate::output::CreateLayoutOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -505,8 +480,7 @@ pub mod create_layout_output {
         }
         /// <p>The unique identifier of the layout.</p>
         pub fn set_layout_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layout_id = input;
-            self
+            self.layout_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
         pub fn layout_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -515,17 +489,20 @@ pub mod create_layout_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
         pub fn set_layout_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layout_arn = input;
-            self
+            self.layout_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLayoutOutput`](crate::output::CreateLayoutOutput).
         pub fn build(self) -> crate::output::CreateLayoutOutput {
             crate::output::CreateLayoutOutput {
-                layout_id: self.layout_id,
-                layout_arn: self.layout_arn,
+                layout_id: self.layout_id
+                ,
+                layout_arn: self.layout_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLayoutOutput {
     /// Creates a new builder-style object to manufacture [`CreateLayoutOutput`](crate::output::CreateLayoutOutput).
@@ -537,19 +514,24 @@ impl CreateLayoutOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLayoutOutput {}
+pub struct UpdateLayoutOutput  {
+}
 /// See [`UpdateLayoutOutput`](crate::output::UpdateLayoutOutput).
 pub mod update_layout_output {
-
+    
     /// A builder for [`UpdateLayoutOutput`](crate::output::UpdateLayoutOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLayoutOutput`](crate::output::UpdateLayoutOutput).
         pub fn build(self) -> crate::output::UpdateLayoutOutput {
-            crate::output::UpdateLayoutOutput {}
+            crate::output::UpdateLayoutOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLayoutOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLayoutOutput`](crate::output::UpdateLayoutOutput).
@@ -561,7 +543,7 @@ impl UpdateLayoutOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLayoutOutput {
+pub struct GetLayoutOutput  {
     /// <p>The unique identifier of the layout.</p>
     #[doc(hidden)]
     pub layout_id: std::option::Option<std::string::String>,
@@ -576,39 +558,33 @@ pub struct GetLayoutOutput {
     pub content: std::option::Option<crate::model::LayoutContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl GetLayoutOutput {
     /// <p>The unique identifier of the layout.</p>
-    pub fn layout_id(&self) -> std::option::Option<&str> {
+    pub fn layout_id(&self) -> std::option::Option<& str> {
         self.layout_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
-    pub fn layout_arn(&self) -> std::option::Option<&str> {
+    pub fn layout_arn(&self) -> std::option::Option<& str> {
         self.layout_arn.as_deref()
     }
     /// <p>The name of the layout. It must be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
-    pub fn content(&self) -> std::option::Option<&crate::model::LayoutContent> {
+    pub fn content(&self) -> std::option::Option<& crate::model::LayoutContent> {
         self.content.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetLayoutOutput`](crate::output::GetLayoutOutput).
 pub mod get_layout_output {
-
+    
     /// A builder for [`GetLayoutOutput`](crate::output::GetLayoutOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -616,12 +592,7 @@ pub mod get_layout_output {
         pub(crate) layout_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<crate::model::LayoutContent>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
     }
     impl Builder {
         /// <p>The unique identifier of the layout.</p>
@@ -631,8 +602,7 @@ pub mod get_layout_output {
         }
         /// <p>The unique identifier of the layout.</p>
         pub fn set_layout_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layout_id = input;
-            self
+            self.layout_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
         pub fn layout_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -641,8 +611,7 @@ pub mod get_layout_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
         pub fn set_layout_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layout_arn = input;
-            self
+            self.layout_arn = input; self
         }
         /// <p>The name of the layout. It must be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -651,8 +620,7 @@ pub mod get_layout_output {
         }
         /// <p>The name of the layout. It must be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
         pub fn content(mut self, input: crate::model::LayoutContent) -> Self {
@@ -660,52 +628,42 @@ pub mod get_layout_output {
             self
         }
         /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
-        pub fn set_content(
-            mut self,
-            input: std::option::Option<crate::model::LayoutContent>,
-        ) -> Self {
-            self.content = input;
-            self
+        pub fn set_content(mut self, input: std::option::Option<crate::model::LayoutContent>) -> Self {
+            self.content = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::option::Option<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::option::Option<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetLayoutOutput`](crate::output::GetLayoutOutput).
         pub fn build(self) -> crate::output::GetLayoutOutput {
             crate::output::GetLayoutOutput {
-                layout_id: self.layout_id,
-                layout_arn: self.layout_arn,
-                name: self.name,
-                content: self.content,
-                tags: self.tags,
+                layout_id: self.layout_id
+                ,
+                layout_arn: self.layout_arn
+                ,
+                name: self.name
+                ,
+                content: self.content
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLayoutOutput {
     /// Creates a new builder-style object to manufacture [`GetLayoutOutput`](crate::output::GetLayoutOutput).
@@ -717,7 +675,7 @@ impl GetLayoutOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFieldOptionsOutput {
+pub struct ListFieldOptionsOutput  {
     /// <p>A list of <code>FieldOption</code> objects.</p>
     #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::model::FieldOption>>,
@@ -727,17 +685,17 @@ pub struct ListFieldOptionsOutput {
 }
 impl ListFieldOptionsOutput {
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::model::FieldOption]> {
+    pub fn options(&self) -> std::option::Option<& [crate::model::FieldOption]> {
         self.options.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFieldOptionsOutput`](crate::output::ListFieldOptionsOutput).
 pub mod list_field_options_output {
-
+    
     /// A builder for [`ListFieldOptionsOutput`](crate::output::ListFieldOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -752,17 +710,13 @@ pub mod list_field_options_output {
         /// <p>A list of <code>FieldOption</code> objects.</p>
         pub fn options(mut self, input: crate::model::FieldOption) -> Self {
             let mut v = self.options.unwrap_or_default();
-            v.push(input);
-            self.options = Some(v);
-            self
+                            v.push(input);
+                            self.options = Some(v);
+                            self
         }
         /// <p>A list of <code>FieldOption</code> objects.</p>
-        pub fn set_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldOption>>,
-        ) -> Self {
-            self.options = input;
-            self
+        pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldOption>>) -> Self {
+            self.options = input; self
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -771,17 +725,20 @@ pub mod list_field_options_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFieldOptionsOutput`](crate::output::ListFieldOptionsOutput).
         pub fn build(self) -> crate::output::ListFieldOptionsOutput {
             crate::output::ListFieldOptionsOutput {
-                options: self.options,
-                next_token: self.next_token,
+                options: self.options
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFieldOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFieldOptionsOutput`](crate::output::ListFieldOptionsOutput).
@@ -793,20 +750,20 @@ impl ListFieldOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutFieldOptionsOutput {
+pub struct BatchPutFieldOptionsOutput  {
     /// <p>A list of field errors. </p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::FieldOptionError>>,
 }
 impl BatchPutFieldOptionsOutput {
     /// <p>A list of field errors. </p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::FieldOptionError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::FieldOptionError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchPutFieldOptionsOutput`](crate::output::BatchPutFieldOptionsOutput).
 pub mod batch_put_field_options_output {
-
+    
     /// A builder for [`BatchPutFieldOptionsOutput`](crate::output::BatchPutFieldOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -820,25 +777,24 @@ pub mod batch_put_field_options_output {
         /// <p>A list of field errors. </p>
         pub fn errors(mut self, input: crate::model::FieldOptionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>A list of field errors. </p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldOptionError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldOptionError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutFieldOptionsOutput`](crate::output::BatchPutFieldOptionsOutput).
         pub fn build(self) -> crate::output::BatchPutFieldOptionsOutput {
             crate::output::BatchPutFieldOptionsOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutFieldOptionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutFieldOptionsOutput`](crate::output::BatchPutFieldOptionsOutput).
@@ -850,7 +806,7 @@ impl BatchPutFieldOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetFieldOutput {
+pub struct BatchGetFieldOutput  {
     /// <p>A list of detailed field information. </p>
     #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::GetFieldResponse>>,
@@ -860,17 +816,17 @@ pub struct BatchGetFieldOutput {
 }
 impl BatchGetFieldOutput {
     /// <p>A list of detailed field information. </p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::GetFieldResponse]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::GetFieldResponse]> {
         self.fields.as_deref()
     }
     /// <p>A list of field errors. </p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::FieldError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::FieldError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchGetFieldOutput`](crate::output::BatchGetFieldOutput).
 pub mod batch_get_field_output {
-
+    
     /// A builder for [`BatchGetFieldOutput`](crate::output::BatchGetFieldOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -885,17 +841,13 @@ pub mod batch_get_field_output {
         /// <p>A list of detailed field information. </p>
         pub fn fields(mut self, input: crate::model::GetFieldResponse) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>A list of detailed field information. </p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GetFieldResponse>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::GetFieldResponse>>) -> Self {
+            self.fields = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -904,26 +856,26 @@ pub mod batch_get_field_output {
         /// <p>A list of field errors. </p>
         pub fn errors(mut self, input: crate::model::FieldError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>A list of field errors. </p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetFieldOutput`](crate::output::BatchGetFieldOutput).
         pub fn build(self) -> crate::output::BatchGetFieldOutput {
             crate::output::BatchGetFieldOutput {
-                fields: self.fields,
-                errors: self.errors,
+                fields: self.fields
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetFieldOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetFieldOutput`](crate::output::BatchGetFieldOutput).
@@ -935,7 +887,7 @@ impl BatchGetFieldOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFieldsOutput {
+pub struct ListFieldsOutput  {
     /// <p>List of detailed field information.</p>
     #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::FieldSummary>>,
@@ -945,17 +897,17 @@ pub struct ListFieldsOutput {
 }
 impl ListFieldsOutput {
     /// <p>List of detailed field information.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::FieldSummary]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::FieldSummary]> {
         self.fields.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFieldsOutput`](crate::output::ListFieldsOutput).
 pub mod list_fields_output {
-
+    
     /// A builder for [`ListFieldsOutput`](crate::output::ListFieldsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -970,17 +922,13 @@ pub mod list_fields_output {
         /// <p>List of detailed field information.</p>
         pub fn fields(mut self, input: crate::model::FieldSummary) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>List of detailed field information.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldSummary>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldSummary>>) -> Self {
+            self.fields = input; self
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -989,17 +937,20 @@ pub mod list_fields_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFieldsOutput`](crate::output::ListFieldsOutput).
         pub fn build(self) -> crate::output::ListFieldsOutput {
             crate::output::ListFieldsOutput {
-                fields: self.fields,
-                next_token: self.next_token,
+                fields: self.fields
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFieldsOutput {
     /// Creates a new builder-style object to manufacture [`ListFieldsOutput`](crate::output::ListFieldsOutput).
@@ -1011,7 +962,7 @@ impl ListFieldsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFieldOutput {
+pub struct CreateFieldOutput  {
     /// <p>The unique identifier of a field.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -1021,17 +972,17 @@ pub struct CreateFieldOutput {
 }
 impl CreateFieldOutput {
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(&self) -> std::option::Option<&str> {
+    pub fn field_arn(&self) -> std::option::Option<& str> {
         self.field_arn.as_deref()
     }
 }
 /// See [`CreateFieldOutput`](crate::output::CreateFieldOutput).
 pub mod create_field_output {
-
+    
     /// A builder for [`CreateFieldOutput`](crate::output::CreateFieldOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1046,8 +997,7 @@ pub mod create_field_output {
         }
         /// <p>The unique identifier of a field.</p>
         pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_id = input;
-            self
+            self.field_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the field.</p>
         pub fn field_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1056,17 +1006,20 @@ pub mod create_field_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the field.</p>
         pub fn set_field_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_arn = input;
-            self
+            self.field_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateFieldOutput`](crate::output::CreateFieldOutput).
         pub fn build(self) -> crate::output::CreateFieldOutput {
             crate::output::CreateFieldOutput {
-                field_id: self.field_id,
-                field_arn: self.field_arn,
+                field_id: self.field_id
+                ,
+                field_arn: self.field_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFieldOutput {
     /// Creates a new builder-style object to manufacture [`CreateFieldOutput`](crate::output::CreateFieldOutput).
@@ -1078,19 +1031,24 @@ impl CreateFieldOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFieldOutput {}
+pub struct UpdateFieldOutput  {
+}
 /// See [`UpdateFieldOutput`](crate::output::UpdateFieldOutput).
 pub mod update_field_output {
-
+    
     /// A builder for [`UpdateFieldOutput`](crate::output::UpdateFieldOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFieldOutput`](crate::output::UpdateFieldOutput).
         pub fn build(self) -> crate::output::UpdateFieldOutput {
-            crate::output::UpdateFieldOutput {}
+            crate::output::UpdateFieldOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateFieldOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFieldOutput`](crate::output::UpdateFieldOutput).
@@ -1102,19 +1060,24 @@ impl UpdateFieldOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCaseEventConfigurationOutput {}
+pub struct PutCaseEventConfigurationOutput  {
+}
 /// See [`PutCaseEventConfigurationOutput`](crate::output::PutCaseEventConfigurationOutput).
 pub mod put_case_event_configuration_output {
-
+    
     /// A builder for [`PutCaseEventConfigurationOutput`](crate::output::PutCaseEventConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutCaseEventConfigurationOutput`](crate::output::PutCaseEventConfigurationOutput).
         pub fn build(self) -> crate::output::PutCaseEventConfigurationOutput {
-            crate::output::PutCaseEventConfigurationOutput {}
+            crate::output::PutCaseEventConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutCaseEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutCaseEventConfigurationOutput`](crate::output::PutCaseEventConfigurationOutput).
@@ -1126,20 +1089,20 @@ impl PutCaseEventConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCaseEventConfigurationOutput {
+pub struct GetCaseEventConfigurationOutput  {
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     #[doc(hidden)]
     pub event_bridge: std::option::Option<crate::model::EventBridgeConfiguration>,
 }
 impl GetCaseEventConfigurationOutput {
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn event_bridge(&self) -> std::option::Option<&crate::model::EventBridgeConfiguration> {
+    pub fn event_bridge(&self) -> std::option::Option<& crate::model::EventBridgeConfiguration> {
         self.event_bridge.as_ref()
     }
 }
 /// See [`GetCaseEventConfigurationOutput`](crate::output::GetCaseEventConfigurationOutput).
 pub mod get_case_event_configuration_output {
-
+    
     /// A builder for [`GetCaseEventConfigurationOutput`](crate::output::GetCaseEventConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1152,20 +1115,19 @@ pub mod get_case_event_configuration_output {
             self
         }
         /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-        pub fn set_event_bridge(
-            mut self,
-            input: std::option::Option<crate::model::EventBridgeConfiguration>,
-        ) -> Self {
-            self.event_bridge = input;
-            self
+        pub fn set_event_bridge(mut self, input: std::option::Option<crate::model::EventBridgeConfiguration>) -> Self {
+            self.event_bridge = input; self
         }
         /// Consumes the builder and constructs a [`GetCaseEventConfigurationOutput`](crate::output::GetCaseEventConfigurationOutput).
         pub fn build(self) -> crate::output::GetCaseEventConfigurationOutput {
             crate::output::GetCaseEventConfigurationOutput {
-                event_bridge: self.event_bridge,
+                event_bridge: self.event_bridge
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCaseEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetCaseEventConfigurationOutput`](crate::output::GetCaseEventConfigurationOutput).
@@ -1177,7 +1139,7 @@ impl GetCaseEventConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainsOutput {
+pub struct ListDomainsOutput  {
     /// <p>The Cases domain.</p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -1187,17 +1149,17 @@ pub struct ListDomainsOutput {
 }
 impl ListDomainsOutput {
     /// <p>The Cases domain.</p>
-    pub fn domains(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
+    pub fn domains(&self) -> std::option::Option<& [crate::model::DomainSummary]> {
         self.domains.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
-
+    
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1212,17 +1174,13 @@ pub mod list_domains_output {
         /// <p>The Cases domain.</p>
         pub fn domains(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input);
-            self.domains = Some(v);
-            self
+                            v.push(input);
+                            self.domains = Some(v);
+                            self
         }
         /// <p>The Cases domain.</p>
-        pub fn set_domains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-        ) -> Self {
-            self.domains = input;
-            self
+        pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>) -> Self {
+            self.domains = input; self
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1231,17 +1189,20 @@ pub mod list_domains_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
-                domains: self.domains,
-                next_token: self.next_token,
+                domains: self.domains
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
@@ -1253,7 +1214,7 @@ impl ListDomainsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainOutput {
+pub struct CreateDomainOutput  {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -1266,21 +1227,21 @@ pub struct CreateDomainOutput {
 }
 impl CreateDomainOutput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
-    pub fn domain_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_arn(&self) -> std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>The status of the domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
-
+    
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1296,8 +1257,7 @@ pub mod create_domain_output {
         }
         /// <p>The unique identifier of the Cases domain. </p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
         pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1306,8 +1266,7 @@ pub mod create_domain_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
         pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_arn = input;
-            self
+            self.domain_arn = input; self
         }
         /// <p>The status of the domain.</p>
         pub fn domain_status(mut self, input: crate::model::DomainStatus) -> Self {
@@ -1315,22 +1274,23 @@ pub mod create_domain_output {
             self
         }
         /// <p>The status of the domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
         pub fn build(self) -> crate::output::CreateDomainOutput {
             crate::output::CreateDomainOutput {
-                domain_id: self.domain_id,
-                domain_arn: self.domain_arn,
-                domain_status: self.domain_status,
+                domain_id: self.domain_id
+                ,
+                domain_arn: self.domain_arn
+                ,
+                domain_status: self.domain_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
@@ -1342,7 +1302,7 @@ impl CreateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainOutput {
+pub struct GetDomainOutput  {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -1360,43 +1320,37 @@ pub struct GetDomainOutput {
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl GetDomainOutput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
-    pub fn domain_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_arn(&self) -> std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>The name of the Cases domain.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The timestamp when the Cases domain was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The status of the Cases domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetDomainOutput`](crate::output::GetDomainOutput).
 pub mod get_domain_output {
-
+    
     /// A builder for [`GetDomainOutput`](crate::output::GetDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1405,12 +1359,7 @@ pub mod get_domain_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
     }
     impl Builder {
         /// <p>The unique identifier of the Cases domain. </p>
@@ -1420,8 +1369,7 @@ pub mod get_domain_output {
         }
         /// <p>The unique identifier of the Cases domain. </p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
         pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1430,8 +1378,7 @@ pub mod get_domain_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
         pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_arn = input;
-            self
+            self.domain_arn = input; self
         }
         /// <p>The name of the Cases domain.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1440,8 +1387,7 @@ pub mod get_domain_output {
         }
         /// <p>The name of the Cases domain.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The timestamp when the Cases domain was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1449,12 +1395,8 @@ pub mod get_domain_output {
             self
         }
         /// <p>The timestamp when the Cases domain was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The status of the Cases domain.</p>
         pub fn domain_status(mut self, input: crate::model::DomainStatus) -> Self {
@@ -1462,53 +1404,44 @@ pub mod get_domain_output {
             self
         }
         /// <p>The status of the Cases domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::option::Option<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::option::Option<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainOutput`](crate::output::GetDomainOutput).
         pub fn build(self) -> crate::output::GetDomainOutput {
             crate::output::GetDomainOutput {
-                domain_id: self.domain_id,
-                domain_arn: self.domain_arn,
-                name: self.name,
-                created_time: self.created_time,
-                domain_status: self.domain_status,
-                tags: self.tags,
+                domain_id: self.domain_id
+                ,
+                domain_arn: self.domain_arn
+                ,
+                name: self.name
+                ,
+                created_time: self.created_time
+                ,
+                domain_status: self.domain_status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDomainOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainOutput`](crate::output::GetDomainOutput).
@@ -1520,38 +1453,32 @@ impl GetDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchCasesOutput {
+pub struct SearchCasesOutput  {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
     #[doc(hidden)]
-    pub cases: std::option::Option<
-        std::vec::Vec<std::option::Option<crate::model::SearchCasesResponseItem>>,
-    >,
+    pub cases: std::option::Option<std::vec::Vec<std::option::Option<crate::model::SearchCasesResponseItem>>>,
 }
 impl SearchCasesOutput {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
-    pub fn cases(
-        &self,
-    ) -> std::option::Option<&[std::option::Option<crate::model::SearchCasesResponseItem>]> {
+    pub fn cases(&self) -> std::option::Option<& [std::option::Option<crate::model::SearchCasesResponseItem>]> {
         self.cases.as_deref()
     }
 }
 /// See [`SearchCasesOutput`](crate::output::SearchCasesOutput).
 pub mod search_cases_output {
-
+    
     /// A builder for [`SearchCasesOutput`](crate::output::SearchCasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) cases: std::option::Option<
-            std::vec::Vec<std::option::Option<crate::model::SearchCasesResponseItem>>,
-        >,
+        pub(crate) cases: std::option::Option<std::vec::Vec<std::option::Option<crate::model::SearchCasesResponseItem>>>,
     }
     impl Builder {
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
@@ -1561,41 +1488,35 @@ pub mod search_cases_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `cases`.
         ///
         /// To override the contents of this collection use [`set_cases`](Self::set_cases).
         ///
         /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
-        pub fn cases(
-            mut self,
-            input: std::option::Option<crate::model::SearchCasesResponseItem>,
-        ) -> Self {
+        pub fn cases(mut self, input: std::option::Option<crate::model::SearchCasesResponseItem>) -> Self {
             let mut v = self.cases.unwrap_or_default();
-            v.push(input);
-            self.cases = Some(v);
-            self
+                            v.push(input);
+                            self.cases = Some(v);
+                            self
         }
         /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
-        pub fn set_cases(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<std::option::Option<crate::model::SearchCasesResponseItem>>,
-            >,
-        ) -> Self {
-            self.cases = input;
-            self
+        pub fn set_cases(mut self, input: std::option::Option<std::vec::Vec<std::option::Option<crate::model::SearchCasesResponseItem>>>) -> Self {
+            self.cases = input; self
         }
         /// Consumes the builder and constructs a [`SearchCasesOutput`](crate::output::SearchCasesOutput).
         pub fn build(self) -> crate::output::SearchCasesOutput {
             crate::output::SearchCasesOutput {
-                next_token: self.next_token,
-                cases: self.cases,
+                next_token: self.next_token
+                ,
+                cases: self.cases
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchCasesOutput {
     /// Creates a new builder-style object to manufacture [`SearchCasesOutput`](crate::output::SearchCasesOutput).
@@ -1607,7 +1528,7 @@ impl SearchCasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCasesForContactOutput {
+pub struct ListCasesForContactOutput  {
     /// <p>A list of Case summary information.</p>
     #[doc(hidden)]
     pub cases: std::option::Option<std::vec::Vec<crate::model::CaseSummary>>,
@@ -1617,17 +1538,17 @@ pub struct ListCasesForContactOutput {
 }
 impl ListCasesForContactOutput {
     /// <p>A list of Case summary information.</p>
-    pub fn cases(&self) -> std::option::Option<&[crate::model::CaseSummary]> {
+    pub fn cases(&self) -> std::option::Option<& [crate::model::CaseSummary]> {
         self.cases.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCasesForContactOutput`](crate::output::ListCasesForContactOutput).
 pub mod list_cases_for_contact_output {
-
+    
     /// A builder for [`ListCasesForContactOutput`](crate::output::ListCasesForContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1642,17 +1563,13 @@ pub mod list_cases_for_contact_output {
         /// <p>A list of Case summary information.</p>
         pub fn cases(mut self, input: crate::model::CaseSummary) -> Self {
             let mut v = self.cases.unwrap_or_default();
-            v.push(input);
-            self.cases = Some(v);
-            self
+                            v.push(input);
+                            self.cases = Some(v);
+                            self
         }
         /// <p>A list of Case summary information.</p>
-        pub fn set_cases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CaseSummary>>,
-        ) -> Self {
-            self.cases = input;
-            self
+        pub fn set_cases(mut self, input: std::option::Option<std::vec::Vec<crate::model::CaseSummary>>) -> Self {
+            self.cases = input; self
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1661,17 +1578,20 @@ pub mod list_cases_for_contact_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCasesForContactOutput`](crate::output::ListCasesForContactOutput).
         pub fn build(self) -> crate::output::ListCasesForContactOutput {
             crate::output::ListCasesForContactOutput {
-                cases: self.cases,
-                next_token: self.next_token,
+                cases: self.cases
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCasesForContactOutput {
     /// Creates a new builder-style object to manufacture [`ListCasesForContactOutput`](crate::output::ListCasesForContactOutput).
@@ -1683,7 +1603,7 @@ impl ListCasesForContactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCaseOutput {
+pub struct CreateCaseOutput  {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
@@ -1693,17 +1613,17 @@ pub struct CreateCaseOutput {
 }
 impl CreateCaseOutput {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the case.</p>
-    pub fn case_arn(&self) -> std::option::Option<&str> {
+    pub fn case_arn(&self) -> std::option::Option<& str> {
         self.case_arn.as_deref()
     }
 }
 /// See [`CreateCaseOutput`](crate::output::CreateCaseOutput).
 pub mod create_case_output {
-
+    
     /// A builder for [`CreateCaseOutput`](crate::output::CreateCaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1718,8 +1638,7 @@ pub mod create_case_output {
         }
         /// <p>A unique identifier of the case.</p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.case_id = input;
-            self
+            self.case_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the case.</p>
         pub fn case_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1728,17 +1647,20 @@ pub mod create_case_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the case.</p>
         pub fn set_case_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.case_arn = input;
-            self
+            self.case_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateCaseOutput`](crate::output::CreateCaseOutput).
         pub fn build(self) -> crate::output::CreateCaseOutput {
             crate::output::CreateCaseOutput {
-                case_id: self.case_id,
-                case_arn: self.case_arn,
+                case_id: self.case_id
+                ,
+                case_arn: self.case_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateCaseOutput`](crate::output::CreateCaseOutput).
@@ -1750,19 +1672,24 @@ impl CreateCaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCaseOutput {}
+pub struct UpdateCaseOutput  {
+}
 /// See [`UpdateCaseOutput`](crate::output::UpdateCaseOutput).
 pub mod update_case_output {
-
+    
     /// A builder for [`UpdateCaseOutput`](crate::output::UpdateCaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCaseOutput`](crate::output::UpdateCaseOutput).
         pub fn build(self) -> crate::output::UpdateCaseOutput {
-            crate::output::UpdateCaseOutput {}
+            crate::output::UpdateCaseOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateCaseOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCaseOutput`](crate::output::UpdateCaseOutput).
@@ -1774,7 +1701,7 @@ impl UpdateCaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCaseOutput {
+pub struct GetCaseOutput  {
     /// <p>A list of detailed field information. </p>
     #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::FieldValue>>,
@@ -1786,47 +1713,36 @@ pub struct GetCaseOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl GetCaseOutput {
     /// <p>A list of detailed field information. </p>
-    pub fn fields(&self) -> std::option::Option<&[crate::model::FieldValue]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::FieldValue]> {
         self.fields.as_deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetCaseOutput`](crate::output::GetCaseOutput).
 pub mod get_case_output {
-
+    
     /// A builder for [`GetCaseOutput`](crate::output::GetCaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::FieldValue>>,
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
     }
     impl Builder {
         /// Appends an item to `fields`.
@@ -1836,17 +1752,13 @@ pub mod get_case_output {
         /// <p>A list of detailed field information. </p>
         pub fn fields(mut self, input: crate::model::FieldValue) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// <p>A list of detailed field information. </p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldValue>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldValue>>) -> Self {
+            self.fields = input; self
         }
         /// <p>A unique identifier of a template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1855,8 +1767,7 @@ pub mod get_case_output {
         }
         /// <p>A unique identifier of a template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1865,47 +1776,39 @@ pub mod get_case_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::option::Option<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::option::Option<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetCaseOutput`](crate::output::GetCaseOutput).
         pub fn build(self) -> crate::output::GetCaseOutput {
             crate::output::GetCaseOutput {
-                fields: self.fields,
-                template_id: self.template_id,
-                next_token: self.next_token,
-                tags: self.tags,
+                fields: self.fields
+                ,
+                template_id: self.template_id
+                ,
+                next_token: self.next_token
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCaseOutput {
     /// Creates a new builder-style object to manufacture [`GetCaseOutput`](crate::output::GetCaseOutput).
@@ -1917,39 +1820,32 @@ impl GetCaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchRelatedItemsOutput {
+pub struct SearchRelatedItemsOutput  {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of items related to a case. </p>
     #[doc(hidden)]
-    pub related_items: std::option::Option<
-        std::vec::Vec<std::option::Option<crate::model::SearchRelatedItemsResponseItem>>,
-    >,
+    pub related_items: std::option::Option<std::vec::Vec<std::option::Option<crate::model::SearchRelatedItemsResponseItem>>>,
 }
 impl SearchRelatedItemsOutput {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of items related to a case. </p>
-    pub fn related_items(
-        &self,
-    ) -> std::option::Option<&[std::option::Option<crate::model::SearchRelatedItemsResponseItem>]>
-    {
+    pub fn related_items(&self) -> std::option::Option<& [std::option::Option<crate::model::SearchRelatedItemsResponseItem>]> {
         self.related_items.as_deref()
     }
 }
 /// See [`SearchRelatedItemsOutput`](crate::output::SearchRelatedItemsOutput).
 pub mod search_related_items_output {
-
+    
     /// A builder for [`SearchRelatedItemsOutput`](crate::output::SearchRelatedItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) related_items: std::option::Option<
-            std::vec::Vec<std::option::Option<crate::model::SearchRelatedItemsResponseItem>>,
-        >,
+        pub(crate) related_items: std::option::Option<std::vec::Vec<std::option::Option<crate::model::SearchRelatedItemsResponseItem>>>,
     }
     impl Builder {
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
@@ -1959,41 +1855,35 @@ pub mod search_related_items_output {
         }
         /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `related_items`.
         ///
         /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
         ///
         /// <p>A list of items related to a case. </p>
-        pub fn related_items(
-            mut self,
-            input: std::option::Option<crate::model::SearchRelatedItemsResponseItem>,
-        ) -> Self {
+        pub fn related_items(mut self, input: std::option::Option<crate::model::SearchRelatedItemsResponseItem>) -> Self {
             let mut v = self.related_items.unwrap_or_default();
-            v.push(input);
-            self.related_items = Some(v);
-            self
+                            v.push(input);
+                            self.related_items = Some(v);
+                            self
         }
         /// <p>A list of items related to a case. </p>
-        pub fn set_related_items(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<std::option::Option<crate::model::SearchRelatedItemsResponseItem>>,
-            >,
-        ) -> Self {
-            self.related_items = input;
-            self
+        pub fn set_related_items(mut self, input: std::option::Option<std::vec::Vec<std::option::Option<crate::model::SearchRelatedItemsResponseItem>>>) -> Self {
+            self.related_items = input; self
         }
         /// Consumes the builder and constructs a [`SearchRelatedItemsOutput`](crate::output::SearchRelatedItemsOutput).
         pub fn build(self) -> crate::output::SearchRelatedItemsOutput {
             crate::output::SearchRelatedItemsOutput {
-                next_token: self.next_token,
-                related_items: self.related_items,
+                next_token: self.next_token
+                ,
+                related_items: self.related_items
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchRelatedItemsOutput {
     /// Creates a new builder-style object to manufacture [`SearchRelatedItemsOutput`](crate::output::SearchRelatedItemsOutput).
@@ -2005,7 +1895,7 @@ impl SearchRelatedItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRelatedItemOutput {
+pub struct CreateRelatedItemOutput  {
     /// <p>The unique identifier of the related item.</p>
     #[doc(hidden)]
     pub related_item_id: std::option::Option<std::string::String>,
@@ -2015,17 +1905,17 @@ pub struct CreateRelatedItemOutput {
 }
 impl CreateRelatedItemOutput {
     /// <p>The unique identifier of the related item.</p>
-    pub fn related_item_id(&self) -> std::option::Option<&str> {
+    pub fn related_item_id(&self) -> std::option::Option<& str> {
         self.related_item_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
-    pub fn related_item_arn(&self) -> std::option::Option<&str> {
+    pub fn related_item_arn(&self) -> std::option::Option<& str> {
         self.related_item_arn.as_deref()
     }
 }
 /// See [`CreateRelatedItemOutput`](crate::output::CreateRelatedItemOutput).
 pub mod create_related_item_output {
-
+    
     /// A builder for [`CreateRelatedItemOutput`](crate::output::CreateRelatedItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2039,12 +1929,8 @@ pub mod create_related_item_output {
             self
         }
         /// <p>The unique identifier of the related item.</p>
-        pub fn set_related_item_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.related_item_id = input;
-            self
+        pub fn set_related_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.related_item_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the related item.</p>
         pub fn related_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2052,21 +1938,21 @@ pub mod create_related_item_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the related item.</p>
-        pub fn set_related_item_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.related_item_arn = input;
-            self
+        pub fn set_related_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.related_item_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateRelatedItemOutput`](crate::output::CreateRelatedItemOutput).
         pub fn build(self) -> crate::output::CreateRelatedItemOutput {
             crate::output::CreateRelatedItemOutput {
-                related_item_id: self.related_item_id,
-                related_item_arn: self.related_item_arn,
+                related_item_id: self.related_item_id
+                ,
+                related_item_arn: self.related_item_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRelatedItemOutput {
     /// Creates a new builder-style object to manufacture [`CreateRelatedItemOutput`](crate::output::CreateRelatedItemOutput).
@@ -2078,19 +1964,24 @@ impl CreateRelatedItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2102,19 +1993,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2126,35 +2022,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -2162,34 +2047,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::option::Option<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::option::Option<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2197,3 +2074,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

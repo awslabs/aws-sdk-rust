@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDefaultViewOutput {
+pub struct AssociateDefaultViewOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that the operation set as the default for queries made in the Amazon Web Services Region and Amazon Web Services account in which you called this operation.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
 }
 impl AssociateDefaultViewOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that the operation set as the default for queries made in the Amazon Web Services Region and Amazon Web Services account in which you called this operation.</p>
-    pub fn view_arn(&self) -> std::option::Option<&str> {
+    pub fn view_arn(&self) -> std::option::Option<& str> {
         self.view_arn.as_deref()
     }
 }
 /// See [`AssociateDefaultViewOutput`](crate::output::AssociateDefaultViewOutput).
 pub mod associate_default_view_output {
-
+    
     /// A builder for [`AssociateDefaultViewOutput`](crate::output::AssociateDefaultViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod associate_default_view_output {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that the operation set as the default for queries made in the Amazon Web Services Region and Amazon Web Services account in which you called this operation.</p>
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.view_arn = input;
-            self
+            self.view_arn = input; self
         }
         /// Consumes the builder and constructs a [`AssociateDefaultViewOutput`](crate::output::AssociateDefaultViewOutput).
         pub fn build(self) -> crate::output::AssociateDefaultViewOutput {
             crate::output::AssociateDefaultViewOutput {
-                view_arn: self.view_arn,
+                view_arn: self.view_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateDefaultViewOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDefaultViewOutput`](crate::output::AssociateDefaultViewOutput).
@@ -50,7 +52,7 @@ impl AssociateDefaultViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListViewsOutput {
+pub struct ListViewsOutput  {
     /// <p>The list of views available in the Amazon Web Services Region in which you called this operation.</p>
     #[doc(hidden)]
     pub views: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -60,17 +62,17 @@ pub struct ListViewsOutput {
 }
 impl ListViewsOutput {
     /// <p>The list of views available in the Amazon Web Services Region in which you called this operation.</p>
-    pub fn views(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn views(&self) -> std::option::Option<& [std::string::String]> {
         self.views.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListViewsOutput`](crate::output::ListViewsOutput).
 pub mod list_views_output {
-
+    
     /// A builder for [`ListViewsOutput`](crate::output::ListViewsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -85,17 +87,13 @@ pub mod list_views_output {
         /// <p>The list of views available in the Amazon Web Services Region in which you called this operation.</p>
         pub fn views(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.views.unwrap_or_default();
-            v.push(input.into());
-            self.views = Some(v);
-            self
+                            v.push(input.into());
+                            self.views = Some(v);
+                            self
         }
         /// <p>The list of views available in the Amazon Web Services Region in which you called this operation.</p>
-        pub fn set_views(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.views = input;
-            self
+        pub fn set_views(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.views = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,17 +102,20 @@ pub mod list_views_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListViewsOutput`](crate::output::ListViewsOutput).
         pub fn build(self) -> crate::output::ListViewsOutput {
             crate::output::ListViewsOutput {
-                views: self.views,
-                next_token: self.next_token,
+                views: self.views
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListViewsOutput {
     /// Creates a new builder-style object to manufacture [`ListViewsOutput`](crate::output::ListViewsOutput).
@@ -126,20 +127,20 @@ impl ListViewsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateViewOutput {
+pub struct CreateViewOutput  {
     /// <p>A structure that contains the details about the new view.</p>
     #[doc(hidden)]
     pub view: std::option::Option<crate::model::View>,
 }
 impl CreateViewOutput {
     /// <p>A structure that contains the details about the new view.</p>
-    pub fn view(&self) -> std::option::Option<&crate::model::View> {
+    pub fn view(&self) -> std::option::Option<& crate::model::View> {
         self.view.as_ref()
     }
 }
 /// See [`CreateViewOutput`](crate::output::CreateViewOutput).
 pub mod create_view_output {
-
+    
     /// A builder for [`CreateViewOutput`](crate::output::CreateViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -153,14 +154,18 @@ pub mod create_view_output {
         }
         /// <p>A structure that contains the details about the new view.</p>
         pub fn set_view(mut self, input: std::option::Option<crate::model::View>) -> Self {
-            self.view = input;
-            self
+            self.view = input; self
         }
         /// Consumes the builder and constructs a [`CreateViewOutput`](crate::output::CreateViewOutput).
         pub fn build(self) -> crate::output::CreateViewOutput {
-            crate::output::CreateViewOutput { view: self.view }
+            crate::output::CreateViewOutput {
+                view: self.view
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateViewOutput {
     /// Creates a new builder-style object to manufacture [`CreateViewOutput`](crate::output::CreateViewOutput).
@@ -172,20 +177,20 @@ impl CreateViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteViewOutput {
+pub struct DeleteViewOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you successfully deleted.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
 }
 impl DeleteViewOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you successfully deleted.</p>
-    pub fn view_arn(&self) -> std::option::Option<&str> {
+    pub fn view_arn(&self) -> std::option::Option<& str> {
         self.view_arn.as_deref()
     }
 }
 /// See [`DeleteViewOutput`](crate::output::DeleteViewOutput).
 pub mod delete_view_output {
-
+    
     /// A builder for [`DeleteViewOutput`](crate::output::DeleteViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -199,16 +204,18 @@ pub mod delete_view_output {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you successfully deleted.</p>
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.view_arn = input;
-            self
+            self.view_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteViewOutput`](crate::output::DeleteViewOutput).
         pub fn build(self) -> crate::output::DeleteViewOutput {
             crate::output::DeleteViewOutput {
-                view_arn: self.view_arn,
+                view_arn: self.view_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteViewOutput {
     /// Creates a new builder-style object to manufacture [`DeleteViewOutput`](crate::output::DeleteViewOutput).
@@ -220,20 +227,20 @@ impl DeleteViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateViewOutput {
+pub struct UpdateViewOutput  {
     /// <p>Details about the view that you changed with this operation.</p>
     #[doc(hidden)]
     pub view: std::option::Option<crate::model::View>,
 }
 impl UpdateViewOutput {
     /// <p>Details about the view that you changed with this operation.</p>
-    pub fn view(&self) -> std::option::Option<&crate::model::View> {
+    pub fn view(&self) -> std::option::Option<& crate::model::View> {
         self.view.as_ref()
     }
 }
 /// See [`UpdateViewOutput`](crate::output::UpdateViewOutput).
 pub mod update_view_output {
-
+    
     /// A builder for [`UpdateViewOutput`](crate::output::UpdateViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -247,14 +254,18 @@ pub mod update_view_output {
         }
         /// <p>Details about the view that you changed with this operation.</p>
         pub fn set_view(mut self, input: std::option::Option<crate::model::View>) -> Self {
-            self.view = input;
-            self
+            self.view = input; self
         }
         /// Consumes the builder and constructs a [`UpdateViewOutput`](crate::output::UpdateViewOutput).
         pub fn build(self) -> crate::output::UpdateViewOutput {
-            crate::output::UpdateViewOutput { view: self.view }
+            crate::output::UpdateViewOutput {
+                view: self.view
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateViewOutput {
     /// Creates a new builder-style object to manufacture [`UpdateViewOutput`](crate::output::UpdateViewOutput).
@@ -266,38 +277,32 @@ impl UpdateViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetViewOutput {
+pub struct GetViewOutput  {
     /// <p>A structure that contains the details for the requested view.</p>
     #[doc(hidden)]
     pub view: std::option::Option<crate::model::View>,
     /// <p>Tag key and value pairs that are attached to the view.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetViewOutput {
     /// <p>A structure that contains the details for the requested view.</p>
-    pub fn view(&self) -> std::option::Option<&crate::model::View> {
+    pub fn view(&self) -> std::option::Option<& crate::model::View> {
         self.view.as_ref()
     }
     /// <p>Tag key and value pairs that are attached to the view.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetViewOutput`](crate::output::GetViewOutput).
 pub mod get_view_output {
-
+    
     /// A builder for [`GetViewOutput`](crate::output::GetViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view: std::option::Option<crate::model::View>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>A structure that contains the details for the requested view.</p>
@@ -307,42 +312,35 @@ pub mod get_view_output {
         }
         /// <p>A structure that contains the details for the requested view.</p>
         pub fn set_view(mut self, input: std::option::Option<crate::model::View>) -> Self {
-            self.view = input;
-            self
+            self.view = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tag key and value pairs that are attached to the view.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tag key and value pairs that are attached to the view.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetViewOutput`](crate::output::GetViewOutput).
         pub fn build(self) -> crate::output::GetViewOutput {
             crate::output::GetViewOutput {
-                view: self.view,
-                tags: self.tags,
+                view: self.view
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetViewOutput {
     /// Creates a new builder-style object to manufacture [`GetViewOutput`](crate::output::GetViewOutput).
@@ -354,7 +352,7 @@ impl GetViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIndexesOutput {
+pub struct ListIndexesOutput  {
     /// <p>A structure that contains the details and status of each index.</p>
     #[doc(hidden)]
     pub indexes: std::option::Option<std::vec::Vec<crate::model::Index>>,
@@ -364,17 +362,17 @@ pub struct ListIndexesOutput {
 }
 impl ListIndexesOutput {
     /// <p>A structure that contains the details and status of each index.</p>
-    pub fn indexes(&self) -> std::option::Option<&[crate::model::Index]> {
+    pub fn indexes(&self) -> std::option::Option<& [crate::model::Index]> {
         self.indexes.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListIndexesOutput`](crate::output::ListIndexesOutput).
 pub mod list_indexes_output {
-
+    
     /// A builder for [`ListIndexesOutput`](crate::output::ListIndexesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -389,17 +387,13 @@ pub mod list_indexes_output {
         /// <p>A structure that contains the details and status of each index.</p>
         pub fn indexes(mut self, input: crate::model::Index) -> Self {
             let mut v = self.indexes.unwrap_or_default();
-            v.push(input);
-            self.indexes = Some(v);
-            self
+                            v.push(input);
+                            self.indexes = Some(v);
+                            self
         }
         /// <p>A structure that contains the details and status of each index.</p>
-        pub fn set_indexes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Index>>,
-        ) -> Self {
-            self.indexes = input;
-            self
+        pub fn set_indexes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Index>>) -> Self {
+            self.indexes = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -408,17 +402,20 @@ pub mod list_indexes_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListIndexesOutput`](crate::output::ListIndexesOutput).
         pub fn build(self) -> crate::output::ListIndexesOutput {
             crate::output::ListIndexesOutput {
-                indexes: self.indexes,
-                next_token: self.next_token,
+                indexes: self.indexes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIndexesOutput {
     /// Creates a new builder-style object to manufacture [`ListIndexesOutput`](crate::output::ListIndexesOutput).
@@ -430,12 +427,12 @@ impl ListIndexesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIndexOutput {
+pub struct CreateIndexOutput  {
     /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>
-    /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
+    /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note> 
+    /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p> 
     /// </note>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::IndexState>,
@@ -445,23 +442,23 @@ pub struct CreateIndexOutput {
 }
 impl CreateIndexOutput {
     /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>
-    /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
+    /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note> 
+    /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p> 
     /// </note>
-    pub fn state(&self) -> std::option::Option<&crate::model::IndexState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::IndexState> {
         self.state.as_ref()
     }
     /// <p>The date and timestamp when the index was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`CreateIndexOutput`](crate::output::CreateIndexOutput).
 pub mod create_index_output {
-
+    
     /// A builder for [`CreateIndexOutput`](crate::output::CreateIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -477,22 +474,20 @@ pub mod create_index_output {
         }
         /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>
-        /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
+        /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note> 
+        /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p> 
         /// </note>
         pub fn state(mut self, input: crate::model::IndexState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>
-        /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
+        /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note> 
+        /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p> 
         /// </note>
         pub fn set_state(mut self, input: std::option::Option<crate::model::IndexState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The date and timestamp when the index was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -500,22 +495,23 @@ pub mod create_index_output {
             self
         }
         /// <p>The date and timestamp when the index was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`CreateIndexOutput`](crate::output::CreateIndexOutput).
         pub fn build(self) -> crate::output::CreateIndexOutput {
             crate::output::CreateIndexOutput {
-                arn: self.arn,
-                state: self.state,
-                created_at: self.created_at,
+                arn: self.arn
+                ,
+                state: self.state
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIndexOutput {
     /// Creates a new builder-style object to manufacture [`CreateIndexOutput`](crate::output::CreateIndexOutput).
@@ -527,9 +523,9 @@ impl CreateIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIndexOutput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
-    /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
+pub struct DeleteIndexOutput  {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note> 
+    /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p> 
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -541,24 +537,24 @@ pub struct DeleteIndexOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteIndexOutput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
-    /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note> 
+    /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p> 
     /// </note>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Indicates the current state of the index. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::IndexState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::IndexState> {
         self.state.as_ref()
     }
     /// <p>The date and time when you last updated this index.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`DeleteIndexOutput`](crate::output::DeleteIndexOutput).
 pub mod delete_index_output {
-
+    
     /// A builder for [`DeleteIndexOutput`](crate::output::DeleteIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -567,19 +563,18 @@ pub mod delete_index_output {
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
-        /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note> 
+        /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p> 
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
-        /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note> 
+        /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p> 
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Indicates the current state of the index. </p>
         pub fn state(mut self, input: crate::model::IndexState) -> Self {
@@ -588,8 +583,7 @@ pub mod delete_index_output {
         }
         /// <p>Indicates the current state of the index. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::IndexState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The date and time when you last updated this index.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -597,22 +591,23 @@ pub mod delete_index_output {
             self
         }
         /// <p>The date and time when you last updated this index.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`DeleteIndexOutput`](crate::output::DeleteIndexOutput).
         pub fn build(self) -> crate::output::DeleteIndexOutput {
             crate::output::DeleteIndexOutput {
-                arn: self.arn,
-                state: self.state,
-                last_updated_at: self.last_updated_at,
+                arn: self.arn
+                ,
+                state: self.state
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteIndexOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIndexOutput`](crate::output::DeleteIndexOutput).
@@ -624,7 +619,7 @@ impl DeleteIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIndexTypeOutput {
+pub struct UpdateIndexTypeOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -640,25 +635,25 @@ pub struct UpdateIndexTypeOutput {
 }
 impl UpdateIndexTypeOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies the type of the specified index after the operation completes.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::IndexType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::IndexType> {
         self.r#type.as_ref()
     }
     /// <p>Indicates the state of the request to update the index. This operation is asynchronous. Call the <code>GetIndex</code> operation to check for changes.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::IndexState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::IndexState> {
         self.state.as_ref()
     }
     /// <p>The date and timestamp when the index was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`UpdateIndexTypeOutput`](crate::output::UpdateIndexTypeOutput).
 pub mod update_index_type_output {
-
+    
     /// A builder for [`UpdateIndexTypeOutput`](crate::output::UpdateIndexTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -675,8 +670,7 @@ pub mod update_index_type_output {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Specifies the type of the specified index after the operation completes.</p>
         pub fn r#type(mut self, input: crate::model::IndexType) -> Self {
@@ -685,8 +679,7 @@ pub mod update_index_type_output {
         }
         /// <p>Specifies the type of the specified index after the operation completes.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::IndexType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Indicates the state of the request to update the index. This operation is asynchronous. Call the <code>GetIndex</code> operation to check for changes.</p>
         pub fn state(mut self, input: crate::model::IndexState) -> Self {
@@ -695,8 +688,7 @@ pub mod update_index_type_output {
         }
         /// <p>Indicates the state of the request to update the index. This operation is asynchronous. Call the <code>GetIndex</code> operation to check for changes.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::IndexState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The date and timestamp when the index was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -704,23 +696,25 @@ pub mod update_index_type_output {
             self
         }
         /// <p>The date and timestamp when the index was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`UpdateIndexTypeOutput`](crate::output::UpdateIndexTypeOutput).
         pub fn build(self) -> crate::output::UpdateIndexTypeOutput {
             crate::output::UpdateIndexTypeOutput {
-                arn: self.arn,
-                r#type: self.r#type,
-                state: self.state,
-                last_updated_at: self.last_updated_at,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                state: self.state
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateIndexTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIndexTypeOutput`](crate::output::UpdateIndexTypeOutput).
@@ -732,19 +726,24 @@ impl UpdateIndexTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -756,19 +755,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -780,7 +784,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchOutput {
+pub struct SearchOutput  {
     /// <p>The list of structures that describe the resources that match the query.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -796,25 +800,25 @@ pub struct SearchOutput {
 }
 impl SearchOutput {
     /// <p>The list of structures that describe the resources that match the query.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::Resource]> {
         self.resources.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that this operation used to perform the search.</p>
-    pub fn view_arn(&self) -> std::option::Option<&str> {
+    pub fn view_arn(&self) -> std::option::Option<& str> {
         self.view_arn.as_deref()
     }
     /// <p>The number of resources that match the query.</p>
-    pub fn count(&self) -> std::option::Option<&crate::model::ResourceCount> {
+    pub fn count(&self) -> std::option::Option<& crate::model::ResourceCount> {
         self.count.as_ref()
     }
 }
 /// See [`SearchOutput`](crate::output::SearchOutput).
 pub mod search_output {
-
+    
     /// A builder for [`SearchOutput`](crate::output::SearchOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -831,17 +835,13 @@ pub mod search_output {
         /// <p>The list of structures that describe the resources that match the query.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>The list of structures that describe the resources that match the query.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Resource>>) -> Self {
+            self.resources = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -850,8 +850,7 @@ pub mod search_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that this operation used to perform the search.</p>
         pub fn view_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -860,8 +859,7 @@ pub mod search_output {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that this operation used to perform the search.</p>
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.view_arn = input;
-            self
+            self.view_arn = input; self
         }
         /// <p>The number of resources that match the query.</p>
         pub fn count(mut self, input: crate::model::ResourceCount) -> Self {
@@ -869,23 +867,25 @@ pub mod search_output {
             self
         }
         /// <p>The number of resources that match the query.</p>
-        pub fn set_count(
-            mut self,
-            input: std::option::Option<crate::model::ResourceCount>,
-        ) -> Self {
-            self.count = input;
-            self
+        pub fn set_count(mut self, input: std::option::Option<crate::model::ResourceCount>) -> Self {
+            self.count = input; self
         }
         /// Consumes the builder and constructs a [`SearchOutput`](crate::output::SearchOutput).
         pub fn build(self) -> crate::output::SearchOutput {
             crate::output::SearchOutput {
-                resources: self.resources,
-                next_token: self.next_token,
-                view_arn: self.view_arn,
-                count: self.count,
+                resources: self.resources
+                ,
+                next_token: self.next_token
+                ,
+                view_arn: self.view_arn
+                ,
+                count: self.count
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchOutput {
     /// Creates a new builder-style object to manufacture [`SearchOutput`](crate::output::SearchOutput).
@@ -897,30 +897,24 @@ impl SearchOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tag key and value pairs that you want to attach to the specified view or index.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tag key and value pairs that you want to attach to the specified view or index.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -928,31 +922,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key and value pairs that you want to attach to the specified view or index.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tag key and value pairs that you want to attach to the specified view or index.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -964,7 +953,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSupportedResourceTypesOutput {
+pub struct ListSupportedResourceTypesOutput  {
     /// <p>The list of resource types supported by Resource Explorer.</p>
     #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::SupportedResourceType>>,
@@ -974,22 +963,21 @@ pub struct ListSupportedResourceTypesOutput {
 }
 impl ListSupportedResourceTypesOutput {
     /// <p>The list of resource types supported by Resource Explorer.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[crate::model::SupportedResourceType]> {
+    pub fn resource_types(&self) -> std::option::Option<& [crate::model::SupportedResourceType]> {
         self.resource_types.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSupportedResourceTypesOutput`](crate::output::ListSupportedResourceTypesOutput).
 pub mod list_supported_resource_types_output {
-
+    
     /// A builder for [`ListSupportedResourceTypesOutput`](crate::output::ListSupportedResourceTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_types:
-            std::option::Option<std::vec::Vec<crate::model::SupportedResourceType>>,
+        pub(crate) resource_types: std::option::Option<std::vec::Vec<crate::model::SupportedResourceType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1000,17 +988,13 @@ pub mod list_supported_resource_types_output {
         /// <p>The list of resource types supported by Resource Explorer.</p>
         pub fn resource_types(mut self, input: crate::model::SupportedResourceType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input);
-            self.resource_types = Some(v);
-            self
+                            v.push(input);
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>The list of resource types supported by Resource Explorer.</p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SupportedResourceType>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SupportedResourceType>>) -> Self {
+            self.resource_types = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1019,17 +1003,20 @@ pub mod list_supported_resource_types_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSupportedResourceTypesOutput`](crate::output::ListSupportedResourceTypesOutput).
         pub fn build(self) -> crate::output::ListSupportedResourceTypesOutput {
             crate::output::ListSupportedResourceTypesOutput {
-                resource_types: self.resource_types,
-                next_token: self.next_token,
+                resource_types: self.resource_types
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSupportedResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListSupportedResourceTypesOutput`](crate::output::ListSupportedResourceTypesOutput).
@@ -1041,7 +1028,7 @@ impl ListSupportedResourceTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIndexOutput {
+pub struct GetIndexOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1051,11 +1038,11 @@ pub struct GetIndexOutput {
     /// <p>The current state of the index in this Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::IndexState>,
-    /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
+    /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p> 
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
     #[doc(hidden)]
     pub replicating_from: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
+    /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p> 
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
     #[doc(hidden)]
     pub replicating_to: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1067,51 +1054,47 @@ pub struct GetIndexOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tag key and value pairs that are attached to the index.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetIndexOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of the index in this Region. For information about the aggregator index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::IndexType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::IndexType> {
         self.r#type.as_ref()
     }
     /// <p>The current state of the index in this Amazon Web Services Region.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::IndexState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::IndexState> {
         self.state.as_ref()
     }
-    /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
+    /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p> 
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    pub fn replicating_from(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn replicating_from(&self) -> std::option::Option<& [std::string::String]> {
         self.replicating_from.as_deref()
     }
-    /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
+    /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p> 
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
-    pub fn replicating_to(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn replicating_to(&self) -> std::option::Option<& [std::string::String]> {
         self.replicating_to.as_deref()
     }
     /// <p>The date and time when the index was originally created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the index was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetIndexOutput`](crate::output::GetIndexOutput).
 pub mod get_index_output {
-
+    
     /// A builder for [`GetIndexOutput`](crate::output::GetIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1122,9 +1105,7 @@ pub mod get_index_output {
         pub(crate) replicating_to: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
@@ -1134,8 +1115,7 @@ pub mod get_index_output {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The type of the index in this Region. For information about the aggregator index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a>.</p>
         pub fn r#type(mut self, input: crate::model::IndexType) -> Self {
@@ -1144,8 +1124,7 @@ pub mod get_index_output {
         }
         /// <p>The type of the index in this Region. For information about the aggregator index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::IndexType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The current state of the index in this Amazon Web Services Region.</p>
         pub fn state(mut self, input: crate::model::IndexState) -> Self {
@@ -1154,50 +1133,41 @@ pub mod get_index_output {
         }
         /// <p>The current state of the index in this Amazon Web Services Region.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::IndexState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Appends an item to `replicating_from`.
         ///
         /// To override the contents of this collection use [`set_replicating_from`](Self::set_replicating_from).
         ///
-        /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
+        /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p> 
         /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
         pub fn replicating_from(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replicating_from.unwrap_or_default();
-            v.push(input.into());
-            self.replicating_from = Some(v);
-            self
+                            v.push(input.into());
+                            self.replicating_from = Some(v);
+                            self
         }
-        /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
+        /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p> 
         /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-        pub fn set_replicating_from(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replicating_from = input;
-            self
+        pub fn set_replicating_from(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replicating_from = input; self
         }
         /// Appends an item to `replicating_to`.
         ///
         /// To override the contents of this collection use [`set_replicating_to`](Self::set_replicating_to).
         ///
-        /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
+        /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p> 
         /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
         pub fn replicating_to(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replicating_to.unwrap_or_default();
-            v.push(input.into());
-            self.replicating_to = Some(v);
-            self
+                            v.push(input.into());
+                            self.replicating_to = Some(v);
+                            self
         }
-        /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
+        /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p> 
         /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
-        pub fn set_replicating_to(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replicating_to = input;
-            self
+        pub fn set_replicating_to(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replicating_to = input; self
         }
         /// <p>The date and time when the index was originally created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1205,12 +1175,8 @@ pub mod get_index_output {
             self
         }
         /// <p>The date and time when the index was originally created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The date and time when the index was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1218,52 +1184,48 @@ pub mod get_index_output {
             self
         }
         /// <p>The date and time when the index was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tag key and value pairs that are attached to the index.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tag key and value pairs that are attached to the index.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetIndexOutput`](crate::output::GetIndexOutput).
         pub fn build(self) -> crate::output::GetIndexOutput {
             crate::output::GetIndexOutput {
-                arn: self.arn,
-                r#type: self.r#type,
-                state: self.state,
-                replicating_from: self.replicating_from,
-                replicating_to: self.replicating_to,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                state: self.state
+                ,
+                replicating_from: self.replicating_from
+                ,
+                replicating_to: self.replicating_to
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetIndexOutput {
     /// Creates a new builder-style object to manufacture [`GetIndexOutput`](crate::output::GetIndexOutput).
@@ -1275,20 +1237,20 @@ impl GetIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDefaultViewOutput {
+pub struct GetDefaultViewOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that is the current default for the Amazon Web Services Region in which you called this operation.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
 }
 impl GetDefaultViewOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that is the current default for the Amazon Web Services Region in which you called this operation.</p>
-    pub fn view_arn(&self) -> std::option::Option<&str> {
+    pub fn view_arn(&self) -> std::option::Option<& str> {
         self.view_arn.as_deref()
     }
 }
 /// See [`GetDefaultViewOutput`](crate::output::GetDefaultViewOutput).
 pub mod get_default_view_output {
-
+    
     /// A builder for [`GetDefaultViewOutput`](crate::output::GetDefaultViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1302,16 +1264,18 @@ pub mod get_default_view_output {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that is the current default for the Amazon Web Services Region in which you called this operation.</p>
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.view_arn = input;
-            self
+            self.view_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetDefaultViewOutput`](crate::output::GetDefaultViewOutput).
         pub fn build(self) -> crate::output::GetDefaultViewOutput {
             crate::output::GetDefaultViewOutput {
-                view_arn: self.view_arn,
+                view_arn: self.view_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDefaultViewOutput {
     /// Creates a new builder-style object to manufacture [`GetDefaultViewOutput`](crate::output::GetDefaultViewOutput).
@@ -1323,19 +1287,24 @@ impl GetDefaultViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDefaultViewOutput {}
+pub struct DisassociateDefaultViewOutput  {
+}
 /// See [`DisassociateDefaultViewOutput`](crate::output::DisassociateDefaultViewOutput).
 pub mod disassociate_default_view_output {
-
+    
     /// A builder for [`DisassociateDefaultViewOutput`](crate::output::DisassociateDefaultViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDefaultViewOutput`](crate::output::DisassociateDefaultViewOutput).
         pub fn build(self) -> crate::output::DisassociateDefaultViewOutput {
-            crate::output::DisassociateDefaultViewOutput {}
+            crate::output::DisassociateDefaultViewOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateDefaultViewOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDefaultViewOutput`](crate::output::DisassociateDefaultViewOutput).
@@ -1347,7 +1316,7 @@ impl DisassociateDefaultViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetViewOutput {
+pub struct BatchGetViewOutput  {
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
     #[doc(hidden)]
     pub views: std::option::Option<std::vec::Vec<crate::model::View>>,
@@ -1357,17 +1326,17 @@ pub struct BatchGetViewOutput {
 }
 impl BatchGetViewOutput {
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
-    pub fn views(&self) -> std::option::Option<&[crate::model::View]> {
+    pub fn views(&self) -> std::option::Option<& [crate::model::View]> {
         self.views.as_deref()
     }
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetViewError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchGetViewError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchGetViewOutput`](crate::output::BatchGetViewOutput).
 pub mod batch_get_view_output {
-
+    
     /// A builder for [`BatchGetViewOutput`](crate::output::BatchGetViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1382,17 +1351,13 @@ pub mod batch_get_view_output {
         /// <p>A structure with a list of objects with details for each of the specified views.</p>
         pub fn views(mut self, input: crate::model::View) -> Self {
             let mut v = self.views.unwrap_or_default();
-            v.push(input);
-            self.views = Some(v);
-            self
+                            v.push(input);
+                            self.views = Some(v);
+                            self
         }
         /// <p>A structure with a list of objects with details for each of the specified views.</p>
-        pub fn set_views(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::View>>,
-        ) -> Self {
-            self.views = input;
-            self
+        pub fn set_views(mut self, input: std::option::Option<std::vec::Vec<crate::model::View>>) -> Self {
+            self.views = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -1401,26 +1366,26 @@ pub mod batch_get_view_output {
         /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
         pub fn errors(mut self, input: crate::model::BatchGetViewError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchGetViewError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetViewError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetViewOutput`](crate::output::BatchGetViewOutput).
         pub fn build(self) -> crate::output::BatchGetViewOutput {
             crate::output::BatchGetViewOutput {
-                views: self.views,
-                errors: self.errors,
+                views: self.views
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetViewOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetViewOutput`](crate::output::BatchGetViewOutput).
@@ -1428,3 +1393,4 @@ impl BatchGetViewOutput {
         crate::output::batch_get_view_output::Builder::default()
     }
 }
+

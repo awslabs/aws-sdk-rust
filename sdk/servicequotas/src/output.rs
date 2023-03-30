@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,22 +60,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestServiceQuotaIncreaseOutput {
+pub struct RequestServiceQuotaIncreaseOutput  {
     /// <p>Information about the quota increase request.</p>
     #[doc(hidden)]
     pub requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
 }
 impl RequestServiceQuotaIncreaseOutput {
     /// <p>Information about the quota increase request.</p>
-    pub fn requested_quota(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestedServiceQuotaChange> {
+    pub fn requested_quota(&self) -> std::option::Option<& crate::model::RequestedServiceQuotaChange> {
         self.requested_quota.as_ref()
     }
 }
 /// See [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
 pub mod request_service_quota_increase_output {
-
+    
     /// A builder for [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -78,20 +86,19 @@ pub mod request_service_quota_increase_output {
             self
         }
         /// <p>Information about the quota increase request.</p>
-        pub fn set_requested_quota(
-            mut self,
-            input: std::option::Option<crate::model::RequestedServiceQuotaChange>,
-        ) -> Self {
-            self.requested_quota = input;
-            self
+        pub fn set_requested_quota(mut self, input: std::option::Option<crate::model::RequestedServiceQuotaChange>) -> Self {
+            self.requested_quota = input; self
         }
         /// Consumes the builder and constructs a [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
         pub fn build(self) -> crate::output::RequestServiceQuotaIncreaseOutput {
             crate::output::RequestServiceQuotaIncreaseOutput {
-                requested_quota: self.requested_quota,
+                requested_quota: self.requested_quota
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestServiceQuotaIncreaseOutput {
     /// Creates a new builder-style object to manufacture [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
@@ -103,59 +110,49 @@ impl RequestServiceQuotaIncreaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutput {
+pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutput  {
     /// <p>Information about the quota increase request.</p>
     #[doc(hidden)]
-    pub service_quota_increase_request_in_template:
-        std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+    pub service_quota_increase_request_in_template: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     /// <p>Information about the quota increase request.</p>
-    pub fn service_quota_increase_request_in_template(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceQuotaIncreaseRequestInTemplate> {
+    pub fn service_quota_increase_request_in_template(&self) -> std::option::Option<& crate::model::ServiceQuotaIncreaseRequestInTemplate> {
         self.service_quota_increase_request_in_template.as_ref()
     }
 }
 /// See [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
 pub mod put_service_quota_increase_request_into_template_output {
-
+    
     /// A builder for [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_quota_increase_request_in_template:
-            std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+        pub(crate) service_quota_increase_request_in_template: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
     }
     impl Builder {
         /// <p>Information about the quota increase request.</p>
-        pub fn service_quota_increase_request_in_template(
-            mut self,
-            input: crate::model::ServiceQuotaIncreaseRequestInTemplate,
-        ) -> Self {
+        pub fn service_quota_increase_request_in_template(mut self, input: crate::model::ServiceQuotaIncreaseRequestInTemplate) -> Self {
             self.service_quota_increase_request_in_template = Some(input);
             self
         }
         /// <p>Information about the quota increase request.</p>
-        pub fn set_service_quota_increase_request_in_template(
-            mut self,
-            input: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
-        ) -> Self {
-            self.service_quota_increase_request_in_template = input;
-            self
+        pub fn set_service_quota_increase_request_in_template(mut self, input: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>) -> Self {
+            self.service_quota_increase_request_in_template = input; self
         }
         /// Consumes the builder and constructs a [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
         pub fn build(self) -> crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput {
             crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput {
-                service_quota_increase_request_in_template: self
-                    .service_quota_increase_request_in_template,
+                service_quota_increase_request_in_template: self.service_quota_increase_request_in_template
+                ,
             }
         }
     }
+    
+    
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
-    pub fn builder(
-    ) -> crate::output::put_service_quota_increase_request_into_template_output::Builder {
+    pub fn builder() -> crate::output::put_service_quota_increase_request_into_template_output::Builder {
         crate::output::put_service_quota_increase_request_into_template_output::Builder::default()
     }
 }
@@ -163,20 +160,20 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A complex data type that contains zero or more tag elements.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A complex data type that contains zero or more tag elements.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -190,23 +187,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A complex data type that contains zero or more tag elements.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A complex data type that contains zero or more tag elements.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -218,7 +216,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServicesOutput {
+pub struct ListServicesOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -228,17 +226,17 @@ pub struct ListServicesOutput {
 }
 impl ListServicesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the services.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::ServiceInfo]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::ServiceInfo]> {
         self.services.as_deref()
     }
 }
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput).
 pub mod list_services_output {
-
+    
     /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -253,8 +251,7 @@ pub mod list_services_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `services`.
         ///
@@ -263,26 +260,26 @@ pub mod list_services_output {
         /// <p>Information about the services.</p>
         pub fn services(mut self, input: crate::model::ServiceInfo) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>Information about the services.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceInfo>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceInfo>>) -> Self {
+            self.services = input; self
         }
         /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput).
         pub fn build(self) -> crate::output::ListServicesOutput {
             crate::output::ListServicesOutput {
-                next_token: self.next_token,
-                services: self.services,
+                next_token: self.next_token
+                ,
+                services: self.services
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServicesOutput {
     /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput).
@@ -294,7 +291,7 @@ impl ListServicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceQuotasOutput {
+pub struct ListServiceQuotasOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -304,17 +301,17 @@ pub struct ListServiceQuotasOutput {
 }
 impl ListServiceQuotasOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the quotas.</p>
-    pub fn quotas(&self) -> std::option::Option<&[crate::model::ServiceQuota]> {
+    pub fn quotas(&self) -> std::option::Option<& [crate::model::ServiceQuota]> {
         self.quotas.as_deref()
     }
 }
 /// See [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
 pub mod list_service_quotas_output {
-
+    
     /// A builder for [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -329,8 +326,7 @@ pub mod list_service_quotas_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `quotas`.
         ///
@@ -339,26 +335,26 @@ pub mod list_service_quotas_output {
         /// <p>Information about the quotas.</p>
         pub fn quotas(mut self, input: crate::model::ServiceQuota) -> Self {
             let mut v = self.quotas.unwrap_or_default();
-            v.push(input);
-            self.quotas = Some(v);
-            self
+                            v.push(input);
+                            self.quotas = Some(v);
+                            self
         }
         /// <p>Information about the quotas.</p>
-        pub fn set_quotas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
-        ) -> Self {
-            self.quotas = input;
-            self
+        pub fn set_quotas(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>) -> Self {
+            self.quotas = input; self
         }
         /// Consumes the builder and constructs a [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
         pub fn build(self) -> crate::output::ListServiceQuotasOutput {
             crate::output::ListServiceQuotasOutput {
-                next_token: self.next_token,
-                quotas: self.quotas,
+                next_token: self.next_token
+                ,
+                quotas: self.quotas
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServiceQuotasOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
@@ -370,36 +366,31 @@ impl ListServiceQuotasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceQuotaIncreaseRequestsInTemplateOutput {
+pub struct ListServiceQuotaIncreaseRequestsInTemplateOutput  {
     /// <p>Information about the quota increase requests.</p>
     #[doc(hidden)]
-    pub service_quota_increase_request_in_template_list:
-        std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
+    pub service_quota_increase_request_in_template_list: std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// <p>Information about the quota increase requests.</p>
-    pub fn service_quota_increase_request_in_template_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServiceQuotaIncreaseRequestInTemplate]> {
-        self.service_quota_increase_request_in_template_list
-            .as_deref()
+    pub fn service_quota_increase_request_in_template_list(&self) -> std::option::Option<& [crate::model::ServiceQuotaIncreaseRequestInTemplate]> {
+        self.service_quota_increase_request_in_template_list.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
 pub mod list_service_quota_increase_requests_in_template_output {
-
+    
     /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_quota_increase_request_in_template_list:
-            std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
+        pub(crate) service_quota_increase_request_in_template_list: std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -408,26 +399,15 @@ pub mod list_service_quota_increase_requests_in_template_output {
         /// To override the contents of this collection use [`set_service_quota_increase_request_in_template_list`](Self::set_service_quota_increase_request_in_template_list).
         ///
         /// <p>Information about the quota increase requests.</p>
-        pub fn service_quota_increase_request_in_template_list(
-            mut self,
-            input: crate::model::ServiceQuotaIncreaseRequestInTemplate,
-        ) -> Self {
-            let mut v = self
-                .service_quota_increase_request_in_template_list
-                .unwrap_or_default();
-            v.push(input);
-            self.service_quota_increase_request_in_template_list = Some(v);
-            self
+        pub fn service_quota_increase_request_in_template_list(mut self, input: crate::model::ServiceQuotaIncreaseRequestInTemplate) -> Self {
+            let mut v = self.service_quota_increase_request_in_template_list.unwrap_or_default();
+                            v.push(input);
+                            self.service_quota_increase_request_in_template_list = Some(v);
+                            self
         }
         /// <p>Information about the quota increase requests.</p>
-        pub fn set_service_quota_increase_request_in_template_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
-            >,
-        ) -> Self {
-            self.service_quota_increase_request_in_template_list = input;
-            self
+        pub fn set_service_quota_increase_request_in_template_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>) -> Self {
+            self.service_quota_increase_request_in_template_list = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -436,23 +416,24 @@ pub mod list_service_quota_increase_requests_in_template_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
         pub fn build(self) -> crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput {
             crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput {
-                service_quota_increase_request_in_template_list: self
-                    .service_quota_increase_request_in_template_list,
-                next_token: self.next_token,
+                service_quota_increase_request_in_template_list: self.service_quota_increase_request_in_template_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
-    pub fn builder(
-    ) -> crate::output::list_service_quota_increase_requests_in_template_output::Builder {
+    pub fn builder() -> crate::output::list_service_quota_increase_requests_in_template_output::Builder {
         crate::output::list_service_quota_increase_requests_in_template_output::Builder::default()
     }
 }
@@ -460,36 +441,32 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
+pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quota increase requests.</p>
     #[doc(hidden)]
-    pub requested_quotas:
-        std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+    pub requested_quotas: std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the quota increase requests.</p>
-    pub fn requested_quotas(
-        &self,
-    ) -> std::option::Option<&[crate::model::RequestedServiceQuotaChange]> {
+    pub fn requested_quotas(&self) -> std::option::Option<& [crate::model::RequestedServiceQuotaChange]> {
         self.requested_quotas.as_deref()
     }
 }
 /// See [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
 pub mod list_requested_service_quota_change_history_by_quota_output {
-
+    
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) requested_quotas:
-            std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+        pub(crate) requested_quotas: std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -499,82 +476,72 @@ pub mod list_requested_service_quota_change_history_by_quota_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `requested_quotas`.
         ///
         /// To override the contents of this collection use [`set_requested_quotas`](Self::set_requested_quotas).
         ///
         /// <p>Information about the quota increase requests.</p>
-        pub fn requested_quotas(
-            mut self,
-            input: crate::model::RequestedServiceQuotaChange,
-        ) -> Self {
+        pub fn requested_quotas(mut self, input: crate::model::RequestedServiceQuotaChange) -> Self {
             let mut v = self.requested_quotas.unwrap_or_default();
-            v.push(input);
-            self.requested_quotas = Some(v);
-            self
+                            v.push(input);
+                            self.requested_quotas = Some(v);
+                            self
         }
         /// <p>Information about the quota increase requests.</p>
-        pub fn set_requested_quotas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
-        ) -> Self {
-            self.requested_quotas = input;
-            self
+        pub fn set_requested_quotas(mut self, input: std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>) -> Self {
+            self.requested_quotas = input; self
         }
         /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
         pub fn build(self) -> crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
             crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
-                next_token: self.next_token,
-                requested_quotas: self.requested_quotas,
+                next_token: self.next_token
+                ,
+                requested_quotas: self.requested_quotas
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
-    pub fn builder(
-    ) -> crate::output::list_requested_service_quota_change_history_by_quota_output::Builder {
-        crate::output::list_requested_service_quota_change_history_by_quota_output::Builder::default(
-        )
+    pub fn builder() -> crate::output::list_requested_service_quota_change_history_by_quota_output::Builder {
+        crate::output::list_requested_service_quota_change_history_by_quota_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRequestedServiceQuotaChangeHistoryOutput {
+pub struct ListRequestedServiceQuotaChangeHistoryOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quota increase requests.</p>
     #[doc(hidden)]
-    pub requested_quotas:
-        std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+    pub requested_quotas: std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
 }
 impl ListRequestedServiceQuotaChangeHistoryOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the quota increase requests.</p>
-    pub fn requested_quotas(
-        &self,
-    ) -> std::option::Option<&[crate::model::RequestedServiceQuotaChange]> {
+    pub fn requested_quotas(&self) -> std::option::Option<& [crate::model::RequestedServiceQuotaChange]> {
         self.requested_quotas.as_deref()
     }
 }
 /// See [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
 pub mod list_requested_service_quota_change_history_output {
-
+    
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) requested_quotas:
-            std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+        pub(crate) requested_quotas: std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -584,39 +551,35 @@ pub mod list_requested_service_quota_change_history_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `requested_quotas`.
         ///
         /// To override the contents of this collection use [`set_requested_quotas`](Self::set_requested_quotas).
         ///
         /// <p>Information about the quota increase requests.</p>
-        pub fn requested_quotas(
-            mut self,
-            input: crate::model::RequestedServiceQuotaChange,
-        ) -> Self {
+        pub fn requested_quotas(mut self, input: crate::model::RequestedServiceQuotaChange) -> Self {
             let mut v = self.requested_quotas.unwrap_or_default();
-            v.push(input);
-            self.requested_quotas = Some(v);
-            self
+                            v.push(input);
+                            self.requested_quotas = Some(v);
+                            self
         }
         /// <p>Information about the quota increase requests.</p>
-        pub fn set_requested_quotas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
-        ) -> Self {
-            self.requested_quotas = input;
-            self
+        pub fn set_requested_quotas(mut self, input: std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>) -> Self {
+            self.requested_quotas = input; self
         }
         /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
         pub fn build(self) -> crate::output::ListRequestedServiceQuotaChangeHistoryOutput {
             crate::output::ListRequestedServiceQuotaChangeHistoryOutput {
-                next_token: self.next_token,
-                requested_quotas: self.requested_quotas,
+                next_token: self.next_token
+                ,
+                requested_quotas: self.requested_quotas
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRequestedServiceQuotaChangeHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
@@ -628,7 +591,7 @@ impl ListRequestedServiceQuotaChangeHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAwsDefaultServiceQuotasOutput {
+pub struct ListAwsDefaultServiceQuotasOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -638,17 +601,17 @@ pub struct ListAwsDefaultServiceQuotasOutput {
 }
 impl ListAwsDefaultServiceQuotasOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the quotas.</p>
-    pub fn quotas(&self) -> std::option::Option<&[crate::model::ServiceQuota]> {
+    pub fn quotas(&self) -> std::option::Option<& [crate::model::ServiceQuota]> {
         self.quotas.as_deref()
     }
 }
 /// See [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
 pub mod list_aws_default_service_quotas_output {
-
+    
     /// A builder for [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -663,8 +626,7 @@ pub mod list_aws_default_service_quotas_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `quotas`.
         ///
@@ -673,26 +635,26 @@ pub mod list_aws_default_service_quotas_output {
         /// <p>Information about the quotas.</p>
         pub fn quotas(mut self, input: crate::model::ServiceQuota) -> Self {
             let mut v = self.quotas.unwrap_or_default();
-            v.push(input);
-            self.quotas = Some(v);
-            self
+                            v.push(input);
+                            self.quotas = Some(v);
+                            self
         }
         /// <p>Information about the quotas.</p>
-        pub fn set_quotas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
-        ) -> Self {
-            self.quotas = input;
-            self
+        pub fn set_quotas(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>) -> Self {
+            self.quotas = input; self
         }
         /// Consumes the builder and constructs a [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
         pub fn build(self) -> crate::output::ListAwsDefaultServiceQuotasOutput {
             crate::output::ListAwsDefaultServiceQuotasOutput {
-                next_token: self.next_token,
-                quotas: self.quotas,
+                next_token: self.next_token
+                ,
+                quotas: self.quotas
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAwsDefaultServiceQuotasOutput {
     /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
@@ -704,59 +666,49 @@ impl ListAwsDefaultServiceQuotasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceQuotaIncreaseRequestFromTemplateOutput {
+pub struct GetServiceQuotaIncreaseRequestFromTemplateOutput  {
     /// <p>Information about the quota increase request.</p>
     #[doc(hidden)]
-    pub service_quota_increase_request_in_template:
-        std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+    pub service_quota_increase_request_in_template: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
 }
 impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
     /// <p>Information about the quota increase request.</p>
-    pub fn service_quota_increase_request_in_template(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceQuotaIncreaseRequestInTemplate> {
+    pub fn service_quota_increase_request_in_template(&self) -> std::option::Option<& crate::model::ServiceQuotaIncreaseRequestInTemplate> {
         self.service_quota_increase_request_in_template.as_ref()
     }
 }
 /// See [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
 pub mod get_service_quota_increase_request_from_template_output {
-
+    
     /// A builder for [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_quota_increase_request_in_template:
-            std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+        pub(crate) service_quota_increase_request_in_template: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
     }
     impl Builder {
         /// <p>Information about the quota increase request.</p>
-        pub fn service_quota_increase_request_in_template(
-            mut self,
-            input: crate::model::ServiceQuotaIncreaseRequestInTemplate,
-        ) -> Self {
+        pub fn service_quota_increase_request_in_template(mut self, input: crate::model::ServiceQuotaIncreaseRequestInTemplate) -> Self {
             self.service_quota_increase_request_in_template = Some(input);
             self
         }
         /// <p>Information about the quota increase request.</p>
-        pub fn set_service_quota_increase_request_in_template(
-            mut self,
-            input: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
-        ) -> Self {
-            self.service_quota_increase_request_in_template = input;
-            self
+        pub fn set_service_quota_increase_request_in_template(mut self, input: std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>) -> Self {
+            self.service_quota_increase_request_in_template = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
         pub fn build(self) -> crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput {
             crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput {
-                service_quota_increase_request_in_template: self
-                    .service_quota_increase_request_in_template,
+                service_quota_increase_request_in_template: self.service_quota_increase_request_in_template
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
-    pub fn builder(
-    ) -> crate::output::get_service_quota_increase_request_from_template_output::Builder {
+    pub fn builder() -> crate::output::get_service_quota_increase_request_from_template_output::Builder {
         crate::output::get_service_quota_increase_request_from_template_output::Builder::default()
     }
 }
@@ -764,20 +716,20 @@ impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceQuotaOutput {
+pub struct GetServiceQuotaOutput  {
     /// <p>Information about the quota.</p>
     #[doc(hidden)]
     pub quota: std::option::Option<crate::model::ServiceQuota>,
 }
 impl GetServiceQuotaOutput {
     /// <p>Information about the quota.</p>
-    pub fn quota(&self) -> std::option::Option<&crate::model::ServiceQuota> {
+    pub fn quota(&self) -> std::option::Option<& crate::model::ServiceQuota> {
         self.quota.as_ref()
     }
 }
 /// See [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
 pub mod get_service_quota_output {
-
+    
     /// A builder for [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -791,14 +743,18 @@ pub mod get_service_quota_output {
         }
         /// <p>Information about the quota.</p>
         pub fn set_quota(mut self, input: std::option::Option<crate::model::ServiceQuota>) -> Self {
-            self.quota = input;
-            self
+            self.quota = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
         pub fn build(self) -> crate::output::GetServiceQuotaOutput {
-            crate::output::GetServiceQuotaOutput { quota: self.quota }
+            crate::output::GetServiceQuotaOutput {
+                quota: self.quota
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetServiceQuotaOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
@@ -810,22 +766,20 @@ impl GetServiceQuotaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRequestedServiceQuotaChangeOutput {
+pub struct GetRequestedServiceQuotaChangeOutput  {
     /// <p>Information about the quota increase request.</p>
     #[doc(hidden)]
     pub requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
 }
 impl GetRequestedServiceQuotaChangeOutput {
     /// <p>Information about the quota increase request.</p>
-    pub fn requested_quota(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestedServiceQuotaChange> {
+    pub fn requested_quota(&self) -> std::option::Option<& crate::model::RequestedServiceQuotaChange> {
         self.requested_quota.as_ref()
     }
 }
 /// See [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
 pub mod get_requested_service_quota_change_output {
-
+    
     /// A builder for [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -838,20 +792,19 @@ pub mod get_requested_service_quota_change_output {
             self
         }
         /// <p>Information about the quota increase request.</p>
-        pub fn set_requested_quota(
-            mut self,
-            input: std::option::Option<crate::model::RequestedServiceQuotaChange>,
-        ) -> Self {
-            self.requested_quota = input;
-            self
+        pub fn set_requested_quota(mut self, input: std::option::Option<crate::model::RequestedServiceQuotaChange>) -> Self {
+            self.requested_quota = input; self
         }
         /// Consumes the builder and constructs a [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
         pub fn build(self) -> crate::output::GetRequestedServiceQuotaChangeOutput {
             crate::output::GetRequestedServiceQuotaChangeOutput {
-                requested_quota: self.requested_quota,
+                requested_quota: self.requested_quota
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRequestedServiceQuotaChangeOutput {
     /// Creates a new builder-style object to manufacture [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
@@ -863,20 +816,20 @@ impl GetRequestedServiceQuotaChangeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAwsDefaultServiceQuotaOutput {
+pub struct GetAwsDefaultServiceQuotaOutput  {
     /// <p>Information about the quota.</p>
     #[doc(hidden)]
     pub quota: std::option::Option<crate::model::ServiceQuota>,
 }
 impl GetAwsDefaultServiceQuotaOutput {
     /// <p>Information about the quota.</p>
-    pub fn quota(&self) -> std::option::Option<&crate::model::ServiceQuota> {
+    pub fn quota(&self) -> std::option::Option<& crate::model::ServiceQuota> {
         self.quota.as_ref()
     }
 }
 /// See [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
 pub mod get_aws_default_service_quota_output {
-
+    
     /// A builder for [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -890,14 +843,18 @@ pub mod get_aws_default_service_quota_output {
         }
         /// <p>Information about the quota.</p>
         pub fn set_quota(mut self, input: std::option::Option<crate::model::ServiceQuota>) -> Self {
-            self.quota = input;
-            self
+            self.quota = input; self
         }
         /// Consumes the builder and constructs a [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
         pub fn build(self) -> crate::output::GetAwsDefaultServiceQuotaOutput {
-            crate::output::GetAwsDefaultServiceQuotaOutput { quota: self.quota }
+            crate::output::GetAwsDefaultServiceQuotaOutput {
+                quota: self.quota
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetAwsDefaultServiceQuotaOutput {
     /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
@@ -909,54 +866,45 @@ impl GetAwsDefaultServiceQuotaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssociationForServiceQuotaTemplateOutput {
+pub struct GetAssociationForServiceQuotaTemplateOutput  {
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
     #[doc(hidden)]
-    pub service_quota_template_association_status:
-        std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
+    pub service_quota_template_association_status: std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
 }
 impl GetAssociationForServiceQuotaTemplateOutput {
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
-    pub fn service_quota_template_association_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceQuotaTemplateAssociationStatus> {
+    pub fn service_quota_template_association_status(&self) -> std::option::Option<& crate::model::ServiceQuotaTemplateAssociationStatus> {
         self.service_quota_template_association_status.as_ref()
     }
 }
 /// See [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
 pub mod get_association_for_service_quota_template_output {
-
+    
     /// A builder for [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_quota_template_association_status:
-            std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
+        pub(crate) service_quota_template_association_status: std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
     }
     impl Builder {
         /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
-        pub fn service_quota_template_association_status(
-            mut self,
-            input: crate::model::ServiceQuotaTemplateAssociationStatus,
-        ) -> Self {
+        pub fn service_quota_template_association_status(mut self, input: crate::model::ServiceQuotaTemplateAssociationStatus) -> Self {
             self.service_quota_template_association_status = Some(input);
             self
         }
         /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
-        pub fn set_service_quota_template_association_status(
-            mut self,
-            input: std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
-        ) -> Self {
-            self.service_quota_template_association_status = input;
-            self
+        pub fn set_service_quota_template_association_status(mut self, input: std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>) -> Self {
+            self.service_quota_template_association_status = input; self
         }
         /// Consumes the builder and constructs a [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
         pub fn build(self) -> crate::output::GetAssociationForServiceQuotaTemplateOutput {
             crate::output::GetAssociationForServiceQuotaTemplateOutput {
-                service_quota_template_association_status: self
-                    .service_quota_template_association_status,
+                service_quota_template_association_status: self.service_quota_template_association_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssociationForServiceQuotaTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
@@ -968,19 +916,24 @@ impl GetAssociationForServiceQuotaTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateServiceQuotaTemplateOutput {}
+pub struct DisassociateServiceQuotaTemplateOutput  {
+}
 /// See [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
 pub mod disassociate_service_quota_template_output {
-
+    
     /// A builder for [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
         pub fn build(self) -> crate::output::DisassociateServiceQuotaTemplateOutput {
-            crate::output::DisassociateServiceQuotaTemplateOutput {}
+            crate::output::DisassociateServiceQuotaTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateServiceQuotaTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
@@ -992,45 +945,53 @@ impl DisassociateServiceQuotaTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceQuotaIncreaseRequestFromTemplateOutput {}
+pub struct DeleteServiceQuotaIncreaseRequestFromTemplateOutput  {
+}
 /// See [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
 pub mod delete_service_quota_increase_request_from_template_output {
-
+    
     /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
         pub fn build(self) -> crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
-            crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput {}
+            crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
-    pub fn builder(
-    ) -> crate::output::delete_service_quota_increase_request_from_template_output::Builder {
-        crate::output::delete_service_quota_increase_request_from_template_output::Builder::default(
-        )
+    pub fn builder() -> crate::output::delete_service_quota_increase_request_from_template_output::Builder {
+        crate::output::delete_service_quota_increase_request_from_template_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateServiceQuotaTemplateOutput {}
+pub struct AssociateServiceQuotaTemplateOutput  {
+}
 /// See [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
 pub mod associate_service_quota_template_output {
-
+    
     /// A builder for [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
         pub fn build(self) -> crate::output::AssociateServiceQuotaTemplateOutput {
-            crate::output::AssociateServiceQuotaTemplateOutput {}
+            crate::output::AssociateServiceQuotaTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateServiceQuotaTemplateOutput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
@@ -1038,3 +999,4 @@ impl AssociateServiceQuotaTemplateOutput {
         crate::output::associate_service_quota_template_output::Builder::default()
     }
 }
+

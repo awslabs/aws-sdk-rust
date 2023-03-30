@@ -3,7 +3,7 @@
 /// <p>An arbitary key/value pair used to add searchable metadata to secure tunnel resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod tag {
         }
         /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -70,7 +72,7 @@ impl Tag {
 /// <p>The destination configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationConfig {
+pub struct DestinationConfig  {
     /// <p>The name of the IoT thing to which you want to connect.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -80,17 +82,17 @@ pub struct DestinationConfig {
 }
 impl DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
-    pub fn services(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn services(&self) -> std::option::Option<& [std::string::String]> {
         self.services.as_deref()
     }
 }
 /// See [`DestinationConfig`](crate::model::DestinationConfig).
 pub mod destination_config {
-
+    
     /// A builder for [`DestinationConfig`](crate::model::DestinationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -105,8 +107,7 @@ pub mod destination_config {
         }
         /// <p>The name of the IoT thing to which you want to connect.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
+            self.thing_name = input; self
         }
         /// Appends an item to `services`.
         ///
@@ -115,26 +116,26 @@ pub mod destination_config {
         /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
         pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
-            self.services = Some(v);
-            self
+                            v.push(input.into());
+                            self.services = Some(v);
+                            self
         }
         /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.services = input; self
         }
         /// Consumes the builder and constructs a [`DestinationConfig`](crate::model::DestinationConfig).
         pub fn build(self) -> crate::model::DestinationConfig {
             crate::model::DestinationConfig {
-                thing_name: self.thing_name,
-                services: self.services,
+                thing_name: self.thing_name
+                ,
+                services: self.services
+                ,
             }
         }
     }
+    
+    
 }
 impl DestinationConfig {
     /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig).
@@ -149,9 +150,9 @@ impl DestinationConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clientmode = unimplemented!();
 /// match clientmode {
@@ -174,22 +175,14 @@ impl DestinationConfig {
 /// Specifically, when `clientmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClientMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClientMode {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -198,7 +191,7 @@ pub enum ClientMode {
     #[allow(missing_docs)] // documentation missing in model
     Source,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClientMode {
     fn from(s: &str) -> Self {
@@ -206,17 +199,17 @@ impl std::convert::From<&str> for ClientMode {
             "ALL" => ClientMode::All,
             "DESTINATION" => ClientMode::Destination,
             "SOURCE" => ClientMode::Source,
-            other => ClientMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ClientMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClientMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClientMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClientMode::from(s))
+                }
+            }
 impl ClientMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -224,12 +217,14 @@ impl ClientMode {
             ClientMode::All => "ALL",
             ClientMode::Destination => "DESTINATION",
             ClientMode::Source => "SOURCE",
-            ClientMode::Unknown(value) => value.as_str(),
+            ClientMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "DESTINATION", "SOURCE"]
+        &[
+            "ALL", "DESTINATION", "SOURCE"
+        ]
     }
 }
 impl AsRef<str> for ClientMode {
@@ -241,7 +236,7 @@ impl AsRef<str> for ClientMode {
 /// <p>Tunnel timeout configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeoutConfig {
+pub struct TimeoutConfig  {
     /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
     #[doc(hidden)]
     pub max_lifetime_timeout_minutes: std::option::Option<i32>,
@@ -254,7 +249,7 @@ impl TimeoutConfig {
 }
 /// See [`TimeoutConfig`](crate::model::TimeoutConfig).
 pub mod timeout_config {
-
+    
     /// A builder for [`TimeoutConfig`](crate::model::TimeoutConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -268,16 +263,18 @@ pub mod timeout_config {
         }
         /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
         pub fn set_max_lifetime_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_lifetime_timeout_minutes = input;
-            self
+            self.max_lifetime_timeout_minutes = input; self
         }
         /// Consumes the builder and constructs a [`TimeoutConfig`](crate::model::TimeoutConfig).
         pub fn build(self) -> crate::model::TimeoutConfig {
             crate::model::TimeoutConfig {
-                max_lifetime_timeout_minutes: self.max_lifetime_timeout_minutes,
+                max_lifetime_timeout_minutes: self.max_lifetime_timeout_minutes
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeoutConfig {
     /// Creates a new builder-style object to manufacture [`TimeoutConfig`](crate::model::TimeoutConfig).
@@ -289,7 +286,7 @@ impl TimeoutConfig {
 /// <p>Information about the tunnel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TunnelSummary {
+pub struct TunnelSummary  {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
     #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
@@ -311,33 +308,33 @@ pub struct TunnelSummary {
 }
 impl TunnelSummary {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
-    pub fn tunnel_id(&self) -> std::option::Option<&str> {
+    pub fn tunnel_id(&self) -> std::option::Option<& str> {
         self.tunnel_id.as_deref()
     }
     /// <p>The Amazon Resource Name of the tunnel. </p>
-    pub fn tunnel_arn(&self) -> std::option::Option<&str> {
+    pub fn tunnel_arn(&self) -> std::option::Option<& str> {
         self.tunnel_arn.as_deref()
     }
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TunnelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TunnelStatus> {
         self.status.as_ref()
     }
     /// <p>A description of the tunnel.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time the tunnel was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time the tunnel was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`TunnelSummary`](crate::model::TunnelSummary).
 pub mod tunnel_summary {
-
+    
     /// A builder for [`TunnelSummary`](crate::model::TunnelSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -356,8 +353,7 @@ pub mod tunnel_summary {
         }
         /// <p>The unique alpha-numeric identifier for the tunnel.</p>
         pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tunnel_id = input;
-            self
+            self.tunnel_id = input; self
         }
         /// <p>The Amazon Resource Name of the tunnel. </p>
         pub fn tunnel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -366,8 +362,7 @@ pub mod tunnel_summary {
         }
         /// <p>The Amazon Resource Name of the tunnel. </p>
         pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tunnel_arn = input;
-            self
+            self.tunnel_arn = input; self
         }
         /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
         pub fn status(mut self, input: crate::model::TunnelStatus) -> Self {
@@ -375,12 +370,8 @@ pub mod tunnel_summary {
             self
         }
         /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TunnelStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TunnelStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A description of the tunnel.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -389,8 +380,7 @@ pub mod tunnel_summary {
         }
         /// <p>A description of the tunnel.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The time the tunnel was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -398,12 +388,8 @@ pub mod tunnel_summary {
             self
         }
         /// <p>The time the tunnel was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time the tunnel was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -411,25 +397,29 @@ pub mod tunnel_summary {
             self
         }
         /// <p>The time the tunnel was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`TunnelSummary`](crate::model::TunnelSummary).
         pub fn build(self) -> crate::model::TunnelSummary {
             crate::model::TunnelSummary {
-                tunnel_id: self.tunnel_id,
-                tunnel_arn: self.tunnel_arn,
-                status: self.status,
-                description: self.description,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                tunnel_id: self.tunnel_id
+                ,
+                tunnel_arn: self.tunnel_arn
+                ,
+                status: self.status
+                ,
+                description: self.description
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl TunnelSummary {
     /// Creates a new builder-style object to manufacture [`TunnelSummary`](crate::model::TunnelSummary).
@@ -444,9 +434,9 @@ impl TunnelSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tunnelstatus = unimplemented!();
 /// match tunnelstatus {
@@ -468,58 +458,52 @@ impl TunnelSummary {
 /// Specifically, when `tunnelstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TunnelStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TunnelStatus {
     #[allow(missing_docs)] // documentation missing in model
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Open,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TunnelStatus {
     fn from(s: &str) -> Self {
         match s {
             "CLOSED" => TunnelStatus::Closed,
             "OPEN" => TunnelStatus::Open,
-            other => TunnelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TunnelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TunnelStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TunnelStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TunnelStatus::from(s))
+                }
+            }
 impl TunnelStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TunnelStatus::Closed => "CLOSED",
             TunnelStatus::Open => "OPEN",
-            TunnelStatus::Unknown(value) => value.as_str(),
+            TunnelStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOSED", "OPEN"]
+        &[
+            "CLOSED", "OPEN"
+        ]
     }
 }
 impl AsRef<str> for TunnelStatus {
@@ -531,7 +515,7 @@ impl AsRef<str> for TunnelStatus {
 /// <p>A connection between a source computer and a destination device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tunnel {
+pub struct Tunnel  {
     /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
     #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
@@ -568,55 +552,53 @@ pub struct Tunnel {
 }
 impl Tunnel {
     /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
-    pub fn tunnel_id(&self) -> std::option::Option<&str> {
+    pub fn tunnel_id(&self) -> std::option::Option<& str> {
         self.tunnel_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
-    pub fn tunnel_arn(&self) -> std::option::Option<&str> {
+    pub fn tunnel_arn(&self) -> std::option::Option<& str> {
         self.tunnel_arn.as_deref()
     }
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TunnelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TunnelStatus> {
         self.status.as_ref()
     }
     /// <p>The connection state of the source application.</p>
-    pub fn source_connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn source_connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.source_connection_state.as_ref()
     }
     /// <p>The connection state of the destination application.</p>
-    pub fn destination_connection_state(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn destination_connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.destination_connection_state.as_ref()
     }
     /// <p>A description of the tunnel.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>Timeout configuration for the tunnel.</p>
-    pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
+    pub fn timeout_config(&self) -> std::option::Option<& crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// <p>A list of tag metadata associated with the secure tunnel.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The time when the tunnel was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The last time the tunnel was updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`Tunnel`](crate::model::Tunnel).
 pub mod tunnel {
-
+    
     /// A builder for [`Tunnel`](crate::model::Tunnel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -640,8 +622,7 @@ pub mod tunnel {
         }
         /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
         pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tunnel_id = input;
-            self
+            self.tunnel_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
         pub fn tunnel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -650,8 +631,7 @@ pub mod tunnel {
         }
         /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
         pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tunnel_arn = input;
-            self
+            self.tunnel_arn = input; self
         }
         /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
         pub fn status(mut self, input: crate::model::TunnelStatus) -> Self {
@@ -659,12 +639,8 @@ pub mod tunnel {
             self
         }
         /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TunnelStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TunnelStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The connection state of the source application.</p>
         pub fn source_connection_state(mut self, input: crate::model::ConnectionState) -> Self {
@@ -672,28 +648,17 @@ pub mod tunnel {
             self
         }
         /// <p>The connection state of the source application.</p>
-        pub fn set_source_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.source_connection_state = input;
-            self
+        pub fn set_source_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.source_connection_state = input; self
         }
         /// <p>The connection state of the destination application.</p>
-        pub fn destination_connection_state(
-            mut self,
-            input: crate::model::ConnectionState,
-        ) -> Self {
+        pub fn destination_connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.destination_connection_state = Some(input);
             self
         }
         /// <p>The connection state of the destination application.</p>
-        pub fn set_destination_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.destination_connection_state = input;
-            self
+        pub fn set_destination_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.destination_connection_state = input; self
         }
         /// <p>A description of the tunnel.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -702,8 +667,7 @@ pub mod tunnel {
         }
         /// <p>A description of the tunnel.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
@@ -711,12 +675,8 @@ pub mod tunnel {
             self
         }
         /// <p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// <p>Timeout configuration for the tunnel.</p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
@@ -724,12 +684,8 @@ pub mod tunnel {
             self
         }
         /// <p>Timeout configuration for the tunnel.</p>
-        pub fn set_timeout_config(
-            mut self,
-            input: std::option::Option<crate::model::TimeoutConfig>,
-        ) -> Self {
-            self.timeout_config = input;
-            self
+        pub fn set_timeout_config(mut self, input: std::option::Option<crate::model::TimeoutConfig>) -> Self {
+            self.timeout_config = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -738,17 +694,13 @@ pub mod tunnel {
         /// <p>A list of tag metadata associated with the secure tunnel.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tag metadata associated with the secure tunnel.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The time when the tunnel was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -756,12 +708,8 @@ pub mod tunnel {
             self
         }
         /// <p>The time when the tunnel was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The last time the tunnel was updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -769,30 +717,39 @@ pub mod tunnel {
             self
         }
         /// <p>The last time the tunnel was updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`Tunnel`](crate::model::Tunnel).
         pub fn build(self) -> crate::model::Tunnel {
             crate::model::Tunnel {
-                tunnel_id: self.tunnel_id,
-                tunnel_arn: self.tunnel_arn,
-                status: self.status,
-                source_connection_state: self.source_connection_state,
-                destination_connection_state: self.destination_connection_state,
-                description: self.description,
-                destination_config: self.destination_config,
-                timeout_config: self.timeout_config,
-                tags: self.tags,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                tunnel_id: self.tunnel_id
+                ,
+                tunnel_arn: self.tunnel_arn
+                ,
+                status: self.status
+                ,
+                source_connection_state: self.source_connection_state
+                ,
+                destination_connection_state: self.destination_connection_state
+                ,
+                description: self.description
+                ,
+                destination_config: self.destination_config
+                ,
+                timeout_config: self.timeout_config
+                ,
+                tags: self.tags
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl Tunnel {
     /// Creates a new builder-style object to manufacture [`Tunnel`](crate::model::Tunnel).
@@ -804,7 +761,7 @@ impl Tunnel {
 /// <p>The state of a connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionState {
+pub struct ConnectionState  {
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConnectionStatus>,
@@ -814,17 +771,17 @@ pub struct ConnectionState {
 }
 impl ConnectionState {
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ConnectionStatus> {
         self.status.as_ref()
     }
     /// <p>The last time the connection status was updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`ConnectionState`](crate::model::ConnectionState).
 pub mod connection_state {
-
+    
     /// A builder for [`ConnectionState`](crate::model::ConnectionState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -838,12 +795,8 @@ pub mod connection_state {
             self
         }
         /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ConnectionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The last time the connection status was updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -851,21 +804,21 @@ pub mod connection_state {
             self
         }
         /// <p>The last time the connection status was updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`ConnectionState`](crate::model::ConnectionState).
         pub fn build(self) -> crate::model::ConnectionState {
             crate::model::ConnectionState {
-                status: self.status,
-                last_updated_at: self.last_updated_at,
+                status: self.status
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectionState {
     /// Creates a new builder-style object to manufacture [`ConnectionState`](crate::model::ConnectionState).
@@ -880,9 +833,9 @@ impl ConnectionState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectionstatus = unimplemented!();
 /// match connectionstatus {
@@ -904,58 +857,52 @@ impl ConnectionState {
 /// Specifically, when `connectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Connected,
     #[allow(missing_docs)] // documentation missing in model
     Disconnected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionStatus {
     fn from(s: &str) -> Self {
         match s {
             "CONNECTED" => ConnectionStatus::Connected,
             "DISCONNECTED" => ConnectionStatus::Disconnected,
-            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectionStatus::from(s))
+                }
+            }
 impl ConnectionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionStatus::Connected => "CONNECTED",
             ConnectionStatus::Disconnected => "DISCONNECTED",
-            ConnectionStatus::Unknown(value) => value.as_str(),
+            ConnectionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONNECTED", "DISCONNECTED"]
+        &[
+            "CONNECTED", "DISCONNECTED"
+        ]
     }
 }
 impl AsRef<str> for ConnectionStatus {
@@ -963,3 +910,4 @@ impl AsRef<str> for ConnectionStatus {
         self.as_str()
     }
 }
+

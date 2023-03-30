@@ -7,82 +7,82 @@ pub enum Error {
     WafBadRequestException(crate::error::WafBadRequestException),
     /// <p>The name specified is invalid.</p>
     WafDisallowedNameException(crate::error::WafDisallowedNameException),
-    /// <p>The operation failed due to a problem with the migration. The failure cause is provided in the exception, in the <code>MigrationErrorType</code>: </p>
-    /// <ul>
-    /// <li> <p> <code>ENTITY_NOT_SUPPORTED</code> - The web ACL has an unsupported entity but the <code>IgnoreUnsupportedType</code> is not set to true.</p> </li>
-    /// <li> <p> <code>ENTITY_NOT_FOUND</code> - The web ACL doesn't exist. </p> </li>
-    /// <li> <p> <code>S3_BUCKET_NO_PERMISSION</code> - You don't have permission to perform the <code>PutObject</code> action to the specified Amazon S3 bucket.</p> </li>
-    /// <li> <p> <code>S3_BUCKET_NOT_ACCESSIBLE</code> - The bucket policy doesn't allow AWS WAF to perform the <code>PutObject</code> action in the bucket.</p> </li>
-    /// <li> <p> <code>S3_BUCKET_NOT_FOUND</code> - The S3 bucket doesn't exist. </p> </li>
-    /// <li> <p> <code>S3_BUCKET_INVALID_REGION</code> - The S3 bucket is not in the same Region as the web ACL.</p> </li>
-    /// <li> <p> <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3 bucket for another reason.</p> </li>
+    /// <p>The operation failed due to a problem with the migration. The failure cause is provided in the exception, in the <code>MigrationErrorType</code>: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ENTITY_NOT_SUPPORTED</code> - The web ACL has an unsupported entity but the <code>IgnoreUnsupportedType</code> is not set to true.</p> </li> 
+    /// <li> <p> <code>ENTITY_NOT_FOUND</code> - The web ACL doesn't exist. </p> </li> 
+    /// <li> <p> <code>S3_BUCKET_NO_PERMISSION</code> - You don't have permission to perform the <code>PutObject</code> action to the specified Amazon S3 bucket.</p> </li> 
+    /// <li> <p> <code>S3_BUCKET_NOT_ACCESSIBLE</code> - The bucket policy doesn't allow AWS WAF to perform the <code>PutObject</code> action in the bucket.</p> </li> 
+    /// <li> <p> <code>S3_BUCKET_NOT_FOUND</code> - The S3 bucket doesn't exist. </p> </li> 
+    /// <li> <p> <code>S3_BUCKET_INVALID_REGION</code> - The S3 bucket is not in the same Region as the web ACL.</p> </li> 
+    /// <li> <p> <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3 bucket for another reason.</p> </li> 
     /// </ul>
     WafEntityMigrationException(crate::error::WafEntityMigrationException),
     /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// <p>The operation failed because there was nothing to do. For example:</p>
-    /// <ul>
-    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
-    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
-    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
-    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
-    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <p>The operation failed because there was nothing to do. For example:</p> 
+    /// <ul> 
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li> 
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li> 
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li> 
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li> 
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li> 
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
-    /// <ul>
-    /// <li> <p>You specified an invalid parameter name.</p> </li>
-    /// <li> <p>You specified an invalid value.</p> </li>
-    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
-    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
-    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
-    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
-    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
-    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
+    /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p> 
+    /// <ul> 
+    /// <li> <p>You specified an invalid parameter name.</p> </li> 
+    /// <li> <p>You specified an invalid value.</p> </li> 
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li> 
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li> 
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li> 
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li> 
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li> 
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li> 
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li> 
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation failed because the specified policy is not in the proper format. </p>
-    /// <p>The policy is subject to the following restrictions:</p>
-    /// <ul>
-    /// <li> <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p> </li>
-    /// <li> <p>The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>. </p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p>The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the policy will be rejected.</p> </li>
-    /// <li> <p>The policy cannot include a <code>Resource</code> parameter.</p> </li>
-    /// <li> <p>The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.</p> </li>
-    /// <li> <p>The user making the request must be the owner of the RuleGroup.</p> </li>
-    /// <li> <p>Your policy must be composed using IAM Policy version 2012-10-17.</p> </li>
+    /// <p>The operation failed because the specified policy is not in the proper format. </p> 
+    /// <p>The policy is subject to the following restrictions:</p> 
+    /// <ul> 
+    /// <li> <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p> </li> 
+    /// <li> <p>The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>. </p> </li> 
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li> 
+    /// <li> <p>The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the policy will be rejected.</p> </li> 
+    /// <li> <p>The policy cannot include a <code>Resource</code> parameter.</p> </li> 
+    /// <li> <p>The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.</p> </li> 
+    /// <li> <p>The user making the request must be the owner of the RuleGroup.</p> </li> 
+    /// <li> <p>Your policy must be composed using IAM Policy version 2012-10-17.</p> </li> 
     /// </ul>
     WafInvalidPermissionPolicyException(crate::error::WafInvalidPermissionPolicyException),
     /// <p>The regular expression (regex) you specified in <code>RegexPatternString</code> is invalid.</p>
     WafInvalidRegexPatternException(crate::error::WafInvalidRegexPatternException),
     /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
-    /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
-    /// <ul>
-    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
-    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
-    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
-    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
+    /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p> 
+    /// <ul> 
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li> 
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li> 
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li> 
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li> 
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
-    /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
-    /// <ul>
-    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
-    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
-    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
-    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
+    /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p> 
+    /// <ul> 
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li> 
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li> 
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li> 
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li> 
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
-    /// <ul>
-    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
-    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
+    /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p> 
+    /// <ul> 
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li> 
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li> 
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>AWS WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
@@ -95,15 +95,15 @@ pub enum Error {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -127,21 +127,14 @@ impl std::fmt::Display for Error {
             Error::WafSubscriptionNotFoundException(inner) => inner.fmt(f),
             Error::WafTagOperationException(inner) => inner.fmt(f),
             Error::WafTagOperationInternalErrorException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateByteMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateByteMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateByteMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateByteMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -149,41 +142,20 @@ where
 impl From<crate::error::CreateByteMatchSetError> for Error {
     fn from(err: crate::error::CreateByteMatchSetError) -> Self {
         match err.kind {
-            crate::error::CreateByteMatchSetErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateByteMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateByteMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::CreateByteMatchSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::CreateByteMatchSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateByteMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateByteMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateByteMatchSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateByteMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateByteMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::CreateByteMatchSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateByteMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateByteMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateByteMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGeoMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGeoMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGeoMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGeoMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -191,39 +163,20 @@ where
 impl From<crate::error::CreateGeoMatchSetError> for Error {
     fn from(err: crate::error::CreateGeoMatchSetError) -> Self {
         match err.kind {
-            crate::error::CreateGeoMatchSetErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateGeoMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateGeoMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::CreateGeoMatchSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::CreateGeoMatchSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateGeoMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateGeoMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGeoMatchSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateGeoMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateGeoMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::CreateGeoMatchSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateGeoMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateGeoMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateGeoMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateIPSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateIPSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateIPSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -231,41 +184,20 @@ where
 impl From<crate::error::CreateIPSetError> for Error {
     fn from(err: crate::error::CreateIPSetError) -> Self {
         match err.kind {
-            crate::error::CreateIPSetErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateIPSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateIPSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::CreateIPSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::CreateIPSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateIPSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateIPSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateIPSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateIPSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateIPSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::CreateIPSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateIPSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateIPSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateIPSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRateBasedRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateRateBasedRuleError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRateBasedRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRateBasedRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -273,47 +205,22 @@ where
 impl From<crate::error::CreateRateBasedRuleError> for Error {
     fn from(err: crate::error::CreateRateBasedRuleError) -> Self {
         match err.kind {
-            crate::error::CreateRateBasedRuleErrorKind::WafBadRequestException(inner) => {
-                Error::WafBadRequestException(inner)
-            }
-            crate::error::CreateRateBasedRuleErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateRateBasedRuleErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateRateBasedRuleErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::CreateRateBasedRuleErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateRateBasedRuleErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateRateBasedRuleErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::CreateRateBasedRuleErrorKind::WafTagOperationInternalErrorException(
-                inner,
-            ) => Error::WafTagOperationInternalErrorException(inner),
-            crate::error::CreateRateBasedRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRateBasedRuleErrorKind::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
+            crate::error::CreateRateBasedRuleErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateRateBasedRuleErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateRateBasedRuleErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateRateBasedRuleErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateRateBasedRuleErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateRateBasedRuleErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::CreateRateBasedRuleErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::CreateRateBasedRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRegexMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateRegexMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRegexMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRegexMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -321,36 +228,18 @@ where
 impl From<crate::error::CreateRegexMatchSetError> for Error {
     fn from(err: crate::error::CreateRegexMatchSetError) -> Self {
         match err.kind {
-            crate::error::CreateRegexMatchSetErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateRegexMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateRegexMatchSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateRegexMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateRegexMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRegexMatchSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateRegexMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateRegexMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateRegexMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateRegexMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRegexPatternSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateRegexPatternSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRegexPatternSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRegexPatternSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -358,33 +247,18 @@ where
 impl From<crate::error::CreateRegexPatternSetError> for Error {
     fn from(err: crate::error::CreateRegexPatternSetError) -> Self {
         match err.kind {
-            crate::error::CreateRegexPatternSetErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateRegexPatternSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateRegexPatternSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateRegexPatternSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRegexPatternSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateRegexPatternSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateRegexPatternSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateRegexPatternSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -392,45 +266,22 @@ where
 impl From<crate::error::CreateRuleError> for Error {
     fn from(err: crate::error::CreateRuleError) -> Self {
         match err.kind {
-            crate::error::CreateRuleErrorKind::WafBadRequestException(inner) => {
-                Error::WafBadRequestException(inner)
-            }
-            crate::error::CreateRuleErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateRuleErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateRuleErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::CreateRuleErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateRuleErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateRuleErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::CreateRuleErrorKind::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
-            crate::error::CreateRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRuleErrorKind::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
+            crate::error::CreateRuleErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateRuleErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateRuleErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateRuleErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateRuleErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateRuleErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::CreateRuleErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::CreateRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRuleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRuleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -438,45 +289,21 @@ where
 impl From<crate::error::CreateRuleGroupError> for Error {
     fn from(err: crate::error::CreateRuleGroupError) -> Self {
         match err.kind {
-            crate::error::CreateRuleGroupErrorKind::WafBadRequestException(inner) => {
-                Error::WafBadRequestException(inner)
-            }
-            crate::error::CreateRuleGroupErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateRuleGroupErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateRuleGroupErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateRuleGroupErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateRuleGroupErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(
-                inner,
-            ) => Error::WafTagOperationInternalErrorException(inner),
-            crate::error::CreateRuleGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRuleGroupErrorKind::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
+            crate::error::CreateRuleGroupErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateRuleGroupErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateRuleGroupErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateRuleGroupErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateRuleGroupErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::CreateRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSizeConstraintSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSizeConstraintSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSizeConstraintSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSizeConstraintSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -484,42 +311,20 @@ where
 impl From<crate::error::CreateSizeConstraintSetError> for Error {
     fn from(err: crate::error::CreateSizeConstraintSetError) -> Self {
         match err.kind {
-            crate::error::CreateSizeConstraintSetErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateSizeConstraintSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateSizeConstraintSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::CreateSizeConstraintSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::CreateSizeConstraintSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateSizeConstraintSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateSizeConstraintSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateSizeConstraintSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateSizeConstraintSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateSizeConstraintSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::CreateSizeConstraintSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateSizeConstraintSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateSizeConstraintSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateSizeConstraintSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSqlInjectionMatchSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSqlInjectionMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSqlInjectionMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSqlInjectionMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -527,39 +332,20 @@ where
 impl From<crate::error::CreateSqlInjectionMatchSetError> for Error {
     fn from(err: crate::error::CreateSqlInjectionMatchSetError) -> Self {
         match err.kind {
-            crate::error::CreateSqlInjectionMatchSetErrorKind::WafDisallowedNameException(
-                inner,
-            ) => Error::WafDisallowedNameException(inner),
-            crate::error::CreateSqlInjectionMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateSqlInjectionMatchSetErrorKind::WafInvalidAccountException(
-                inner,
-            ) => Error::WafInvalidAccountException(inner),
-            crate::error::CreateSqlInjectionMatchSetErrorKind::WafInvalidParameterException(
-                inner,
-            ) => Error::WafInvalidParameterException(inner),
-            crate::error::CreateSqlInjectionMatchSetErrorKind::WafLimitsExceededException(
-                inner,
-            ) => Error::WafLimitsExceededException(inner),
-            crate::error::CreateSqlInjectionMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateSqlInjectionMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateSqlInjectionMatchSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateSqlInjectionMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateSqlInjectionMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::CreateSqlInjectionMatchSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateSqlInjectionMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateSqlInjectionMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateSqlInjectionMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWebACLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWebACLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateWebACLError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -567,51 +353,23 @@ where
 impl From<crate::error::CreateWebACLError> for Error {
     fn from(err: crate::error::CreateWebACLError) -> Self {
         match err.kind {
-            crate::error::CreateWebACLErrorKind::WafBadRequestException(inner) => {
-                Error::WafBadRequestException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
-            crate::error::CreateWebACLErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateWebACLErrorKind::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
+            crate::error::CreateWebACLErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateWebACLErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateWebACLErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::CreateWebACLErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateWebACLErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateWebACLErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateWebACLErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::CreateWebACLErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::CreateWebACLErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWebACLMigrationStackError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateWebACLMigrationStackError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWebACLMigrationStackError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateWebACLMigrationStackError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -619,38 +377,19 @@ where
 impl From<crate::error::CreateWebACLMigrationStackError> for Error {
     fn from(err: crate::error::CreateWebACLMigrationStackError) -> Self {
         match err.kind {
-            crate::error::CreateWebACLMigrationStackErrorKind::WafEntityMigrationException(
-                inner,
-            ) => Error::WafEntityMigrationException(inner),
-            crate::error::CreateWebACLMigrationStackErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateWebACLMigrationStackErrorKind::WafInvalidOperationException(
-                inner,
-            ) => Error::WafInvalidOperationException(inner),
-            crate::error::CreateWebACLMigrationStackErrorKind::WafInvalidParameterException(
-                inner,
-            ) => Error::WafInvalidParameterException(inner),
-            crate::error::CreateWebACLMigrationStackErrorKind::WafNonexistentItemException(
-                inner,
-            ) => Error::WafNonexistentItemException(inner),
-            crate::error::CreateWebACLMigrationStackErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateWebACLMigrationStackErrorKind::WafEntityMigrationException(inner) => Error::WafEntityMigrationException(inner),
+            crate::error::CreateWebACLMigrationStackErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateWebACLMigrationStackErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::CreateWebACLMigrationStackErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateWebACLMigrationStackErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::CreateWebACLMigrationStackErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateXssMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateXssMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateXssMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateXssMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -658,41 +397,20 @@ where
 impl From<crate::error::CreateXssMatchSetError> for Error {
     fn from(err: crate::error::CreateXssMatchSetError) -> Self {
         match err.kind {
-            crate::error::CreateXssMatchSetErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::CreateXssMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::CreateXssMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::CreateXssMatchSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::CreateXssMatchSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::CreateXssMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::CreateXssMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateXssMatchSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::CreateXssMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::CreateXssMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::CreateXssMatchSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::CreateXssMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::CreateXssMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::CreateXssMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteByteMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteByteMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteByteMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteByteMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -700,41 +418,20 @@ where
 impl From<crate::error::DeleteByteMatchSetError> for Error {
     fn from(err: crate::error::DeleteByteMatchSetError) -> Self {
         match err.kind {
-            crate::error::DeleteByteMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteByteMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteByteMatchSetErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteByteMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteByteMatchSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteByteMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteByteMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteByteMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteByteMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteByteMatchSetErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteByteMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteByteMatchSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteByteMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteByteMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGeoMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteGeoMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGeoMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteGeoMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -742,39 +439,20 @@ where
 impl From<crate::error::DeleteGeoMatchSetError> for Error {
     fn from(err: crate::error::DeleteGeoMatchSetError) -> Self {
         match err.kind {
-            crate::error::DeleteGeoMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteGeoMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteGeoMatchSetErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteGeoMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteGeoMatchSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteGeoMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteGeoMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteGeoMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteGeoMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteGeoMatchSetErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteGeoMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteGeoMatchSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteGeoMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteGeoMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIPSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIPSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteIPSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -782,42 +460,20 @@ where
 impl From<crate::error::DeleteIPSetError> for Error {
     fn from(err: crate::error::DeleteIPSetError) -> Self {
         match err.kind {
-            crate::error::DeleteIPSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteIPSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteIPSetErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteIPSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteIPSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteIPSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteIPSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteIPSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteIPSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteIPSetErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteIPSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteIPSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteIPSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteIPSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -825,33 +481,17 @@ where
 impl From<crate::error::DeleteLoggingConfigurationError> for Error {
     fn from(err: crate::error::DeleteLoggingConfigurationError) -> Self {
         match err.kind {
-            crate::error::DeleteLoggingConfigurationErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(
-                inner,
-            ) => Error::WafNonexistentItemException(inner),
-            crate::error::DeleteLoggingConfigurationErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteLoggingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteLoggingConfigurationErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteLoggingConfigurationErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteLoggingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePermissionPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeletePermissionPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePermissionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePermissionPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -859,32 +499,17 @@ where
 impl From<crate::error::DeletePermissionPolicyError> for Error {
     fn from(err: crate::error::DeletePermissionPolicyError) -> Self {
         match err.kind {
-            crate::error::DeletePermissionPolicyErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeletePermissionPolicyErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeletePermissionPolicyErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeletePermissionPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeletePermissionPolicyErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeletePermissionPolicyErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeletePermissionPolicyErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeletePermissionPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRateBasedRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRateBasedRuleError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRateBasedRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRateBasedRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -892,47 +517,22 @@ where
 impl From<crate::error::DeleteRateBasedRuleError> for Error {
     fn from(err: crate::error::DeleteRateBasedRuleError) -> Self {
         match err.kind {
-            crate::error::DeleteRateBasedRuleErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteRateBasedRuleErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteRateBasedRuleErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteRateBasedRuleErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteRateBasedRuleErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteRateBasedRuleErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteRateBasedRuleErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::DeleteRateBasedRuleErrorKind::WafTagOperationInternalErrorException(
-                inner,
-            ) => Error::WafTagOperationInternalErrorException(inner),
-            crate::error::DeleteRateBasedRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRateBasedRuleErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteRateBasedRuleErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteRateBasedRuleErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteRateBasedRuleErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteRateBasedRuleErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteRateBasedRuleErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteRateBasedRuleErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::DeleteRateBasedRuleErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::DeleteRateBasedRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRegexMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRegexMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRegexMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRegexMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -940,42 +540,20 @@ where
 impl From<crate::error::DeleteRegexMatchSetError> for Error {
     fn from(err: crate::error::DeleteRegexMatchSetError) -> Self {
         match err.kind {
-            crate::error::DeleteRegexMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteRegexMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteRegexMatchSetErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteRegexMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteRegexMatchSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteRegexMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteRegexMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRegexMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteRegexMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteRegexMatchSetErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteRegexMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteRegexMatchSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteRegexMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteRegexMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRegexPatternSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRegexPatternSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRegexPatternSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRegexPatternSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -983,39 +561,20 @@ where
 impl From<crate::error::DeleteRegexPatternSetError> for Error {
     fn from(err: crate::error::DeleteRegexPatternSetError) -> Self {
         match err.kind {
-            crate::error::DeleteRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteRegexPatternSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteRegexPatternSetErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteRegexPatternSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteRegexPatternSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteRegexPatternSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteRegexPatternSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRegexPatternSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteRegexPatternSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteRegexPatternSetErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteRegexPatternSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteRegexPatternSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteRegexPatternSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1023,45 +582,22 @@ where
 impl From<crate::error::DeleteRuleError> for Error {
     fn from(err: crate::error::DeleteRuleError) -> Self {
         match err.kind {
-            crate::error::DeleteRuleErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteRuleErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteRuleErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteRuleErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteRuleErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteRuleErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteRuleErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::DeleteRuleErrorKind::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
-            crate::error::DeleteRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRuleErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteRuleErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteRuleErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteRuleErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteRuleErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteRuleErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteRuleErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::DeleteRuleErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::DeleteRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRuleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRuleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1069,48 +605,22 @@ where
 impl From<crate::error::DeleteRuleGroupError> for Error {
     fn from(err: crate::error::DeleteRuleGroupError) -> Self {
         match err.kind {
-            crate::error::DeleteRuleGroupErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteRuleGroupErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::DeleteRuleGroupErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteRuleGroupErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteRuleGroupErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteRuleGroupErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteRuleGroupErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(
-                inner,
-            ) => Error::WafTagOperationInternalErrorException(inner),
-            crate::error::DeleteRuleGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRuleGroupErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteRuleGroupErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::DeleteRuleGroupErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteRuleGroupErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteRuleGroupErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteRuleGroupErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteRuleGroupErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::DeleteRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSizeConstraintSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSizeConstraintSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSizeConstraintSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSizeConstraintSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1118,42 +628,20 @@ where
 impl From<crate::error::DeleteSizeConstraintSetError> for Error {
     fn from(err: crate::error::DeleteSizeConstraintSetError) -> Self {
         match err.kind {
-            crate::error::DeleteSizeConstraintSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteSizeConstraintSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteSizeConstraintSetErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteSizeConstraintSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteSizeConstraintSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteSizeConstraintSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteSizeConstraintSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteSizeConstraintSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteSizeConstraintSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteSizeConstraintSetErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteSizeConstraintSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteSizeConstraintSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteSizeConstraintSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteSizeConstraintSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSqlInjectionMatchSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSqlInjectionMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSqlInjectionMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSqlInjectionMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1161,39 +649,20 @@ where
 impl From<crate::error::DeleteSqlInjectionMatchSetError> for Error {
     fn from(err: crate::error::DeleteSqlInjectionMatchSetError) -> Self {
         match err.kind {
-            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafInvalidAccountException(
-                inner,
-            ) => Error::WafInvalidAccountException(inner),
-            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafNonEmptyEntityException(
-                inner,
-            ) => Error::WafNonEmptyEntityException(inner),
-            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafNonexistentItemException(
-                inner,
-            ) => Error::WafNonexistentItemException(inner),
-            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafReferencedItemException(
-                inner,
-            ) => Error::WafReferencedItemException(inner),
-            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteSqlInjectionMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteSqlInjectionMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteSqlInjectionMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteWebACLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteWebACLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteWebACLError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1201,47 +670,22 @@ where
 impl From<crate::error::DeleteWebACLError> for Error {
     fn from(err: crate::error::DeleteWebACLError) -> Self {
         match err.kind {
-            crate::error::DeleteWebACLErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteWebACLErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteWebACLErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteWebACLErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteWebACLErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteWebACLErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteWebACLErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::DeleteWebACLErrorKind::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
-            crate::error::DeleteWebACLErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteWebACLErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteWebACLErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteWebACLErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteWebACLErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteWebACLErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteWebACLErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteWebACLErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::DeleteWebACLErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::DeleteWebACLErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteXssMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteXssMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteXssMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteXssMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1249,39 +693,20 @@ where
 impl From<crate::error::DeleteXssMatchSetError> for Error {
     fn from(err: crate::error::DeleteXssMatchSetError) -> Self {
         match err.kind {
-            crate::error::DeleteXssMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::DeleteXssMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::DeleteXssMatchSetErrorKind::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::error::DeleteXssMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::DeleteXssMatchSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::DeleteXssMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::DeleteXssMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteXssMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteXssMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::DeleteXssMatchSetErrorKind::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::error::DeleteXssMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteXssMatchSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::DeleteXssMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::DeleteXssMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetByteMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetByteMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetByteMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1289,30 +714,17 @@ where
 impl From<crate::error::GetByteMatchSetError> for Error {
     fn from(err: crate::error::GetByteMatchSetError) -> Self {
         match err.kind {
-            crate::error::GetByteMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetByteMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetByteMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetByteMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetByteMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetByteMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetByteMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetByteMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChangeTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChangeTokenError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetChangeTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1320,27 +732,15 @@ where
 impl From<crate::error::GetChangeTokenError> for Error {
     fn from(err: crate::error::GetChangeTokenError) -> Self {
         match err.kind {
-            crate::error::GetChangeTokenErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetChangeTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetChangeTokenErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetChangeTokenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChangeTokenStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetChangeTokenStatusError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChangeTokenStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetChangeTokenStatusError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1348,27 +748,16 @@ where
 impl From<crate::error::GetChangeTokenStatusError> for Error {
     fn from(err: crate::error::GetChangeTokenStatusError) -> Self {
         match err.kind {
-            crate::error::GetChangeTokenStatusErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetChangeTokenStatusErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetChangeTokenStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetChangeTokenStatusErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetChangeTokenStatusErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetChangeTokenStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGeoMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGeoMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetGeoMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1376,30 +765,17 @@ where
 impl From<crate::error::GetGeoMatchSetError> for Error {
     fn from(err: crate::error::GetGeoMatchSetError) -> Self {
         match err.kind {
-            crate::error::GetGeoMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetGeoMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetGeoMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetGeoMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGeoMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetGeoMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetGeoMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetGeoMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIPSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIPSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetIPSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1407,33 +783,17 @@ where
 impl From<crate::error::GetIPSetError> for Error {
     fn from(err: crate::error::GetIPSetError) -> Self {
         match err.kind {
-            crate::error::GetIPSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetIPSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetIPSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetIPSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetIPSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetIPSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetIPSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetIPSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoggingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetLoggingConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLoggingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1441,29 +801,16 @@ where
 impl From<crate::error::GetLoggingConfigurationError> for Error {
     fn from(err: crate::error::GetLoggingConfigurationError) -> Self {
         match err.kind {
-            crate::error::GetLoggingConfigurationErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetLoggingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetLoggingConfigurationErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetLoggingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPermissionPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetPermissionPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPermissionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPermissionPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1471,29 +818,16 @@ where
 impl From<crate::error::GetPermissionPolicyError> for Error {
     fn from(err: crate::error::GetPermissionPolicyError) -> Self {
         match err.kind {
-            crate::error::GetPermissionPolicyErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetPermissionPolicyErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetPermissionPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetPermissionPolicyErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetPermissionPolicyErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetPermissionPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRateBasedRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRateBasedRuleError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRateBasedRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRateBasedRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1501,33 +835,17 @@ where
 impl From<crate::error::GetRateBasedRuleError> for Error {
     fn from(err: crate::error::GetRateBasedRuleError) -> Self {
         match err.kind {
-            crate::error::GetRateBasedRuleErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetRateBasedRuleErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetRateBasedRuleErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetRateBasedRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRateBasedRuleErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetRateBasedRuleErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetRateBasedRuleErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetRateBasedRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRateBasedRuleManagedKeysError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRateBasedRuleManagedKeysError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRateBasedRuleManagedKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRateBasedRuleManagedKeysError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1535,35 +853,18 @@ where
 impl From<crate::error::GetRateBasedRuleManagedKeysError> for Error {
     fn from(err: crate::error::GetRateBasedRuleManagedKeysError) -> Self {
         match err.kind {
-            crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInternalErrorException(
-                inner,
-            ) => Error::WafInternalErrorException(inner),
-            crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInvalidAccountException(
-                inner,
-            ) => Error::WafInvalidAccountException(inner),
-            crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInvalidParameterException(
-                inner,
-            ) => Error::WafInvalidParameterException(inner),
-            crate::error::GetRateBasedRuleManagedKeysErrorKind::WafNonexistentItemException(
-                inner,
-            ) => Error::WafNonexistentItemException(inner),
-            crate::error::GetRateBasedRuleManagedKeysErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::GetRateBasedRuleManagedKeysErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetRateBasedRuleManagedKeysErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRegexMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRegexMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRegexMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRegexMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1571,32 +872,17 @@ where
 impl From<crate::error::GetRegexMatchSetError> for Error {
     fn from(err: crate::error::GetRegexMatchSetError) -> Self {
         match err.kind {
-            crate::error::GetRegexMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetRegexMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetRegexMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetRegexMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRegexMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetRegexMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetRegexMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetRegexMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRegexPatternSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRegexPatternSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRegexPatternSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRegexPatternSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1604,30 +890,17 @@ where
 impl From<crate::error::GetRegexPatternSetError> for Error {
     fn from(err: crate::error::GetRegexPatternSetError) -> Self {
         match err.kind {
-            crate::error::GetRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetRegexPatternSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetRegexPatternSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetRegexPatternSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRegexPatternSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetRegexPatternSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetRegexPatternSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1635,30 +908,17 @@ where
 impl From<crate::error::GetRuleError> for Error {
     fn from(err: crate::error::GetRuleError) -> Self {
         match err.kind {
-            crate::error::GetRuleErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetRuleErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetRuleErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRuleErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetRuleErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetRuleErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRuleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRuleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1666,29 +926,16 @@ where
 impl From<crate::error::GetRuleGroupError> for Error {
     fn from(err: crate::error::GetRuleGroupError) -> Self {
         match err.kind {
-            crate::error::GetRuleGroupErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetRuleGroupErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetRuleGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRuleGroupErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetRuleGroupErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSampledRequestsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSampledRequestsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSampledRequestsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSampledRequestsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1696,30 +943,16 @@ where
 impl From<crate::error::GetSampledRequestsError> for Error {
     fn from(err: crate::error::GetSampledRequestsError) -> Self {
         match err.kind {
-            crate::error::GetSampledRequestsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetSampledRequestsErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetSampledRequestsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSampledRequestsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetSampledRequestsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetSampledRequestsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSizeConstraintSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSizeConstraintSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSizeConstraintSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSizeConstraintSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1727,33 +960,17 @@ where
 impl From<crate::error::GetSizeConstraintSetError> for Error {
     fn from(err: crate::error::GetSizeConstraintSetError) -> Self {
         match err.kind {
-            crate::error::GetSizeConstraintSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetSizeConstraintSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetSizeConstraintSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetSizeConstraintSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSizeConstraintSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetSizeConstraintSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetSizeConstraintSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetSizeConstraintSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSqlInjectionMatchSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSqlInjectionMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSqlInjectionMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSqlInjectionMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1761,30 +978,17 @@ where
 impl From<crate::error::GetSqlInjectionMatchSetError> for Error {
     fn from(err: crate::error::GetSqlInjectionMatchSetError) -> Self {
         match err.kind {
-            crate::error::GetSqlInjectionMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetSqlInjectionMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetSqlInjectionMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetSqlInjectionMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSqlInjectionMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetSqlInjectionMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetSqlInjectionMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetSqlInjectionMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetWebACLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetWebACLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetWebACLError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1792,30 +996,17 @@ where
 impl From<crate::error::GetWebACLError> for Error {
     fn from(err: crate::error::GetWebACLError) -> Self {
         match err.kind {
-            crate::error::GetWebACLErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetWebACLErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetWebACLErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetWebACLErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetWebACLErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetWebACLErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetWebACLErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetWebACLErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetXssMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetXssMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetXssMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1823,33 +1014,17 @@ where
 impl From<crate::error::GetXssMatchSetError> for Error {
     fn from(err: crate::error::GetXssMatchSetError) -> Self {
         match err.kind {
-            crate::error::GetXssMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::GetXssMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::GetXssMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::GetXssMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetXssMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetXssMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::GetXssMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetXssMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListActivatedRulesInRuleGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListActivatedRulesInRuleGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListActivatedRulesInRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListActivatedRulesInRuleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1857,32 +1032,17 @@ where
 impl From<crate::error::ListActivatedRulesInRuleGroupError> for Error {
     fn from(err: crate::error::ListActivatedRulesInRuleGroupError) -> Self {
         match err.kind {
-            crate::error::ListActivatedRulesInRuleGroupErrorKind::WafInternalErrorException(
-                inner,
-            ) => Error::WafInternalErrorException(inner),
-            crate::error::ListActivatedRulesInRuleGroupErrorKind::WafInvalidParameterException(
-                inner,
-            ) => Error::WafInvalidParameterException(inner),
-            crate::error::ListActivatedRulesInRuleGroupErrorKind::WafNonexistentItemException(
-                inner,
-            ) => Error::WafNonexistentItemException(inner),
-            crate::error::ListActivatedRulesInRuleGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListActivatedRulesInRuleGroupErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListActivatedRulesInRuleGroupErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::ListActivatedRulesInRuleGroupErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::ListActivatedRulesInRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListByteMatchSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListByteMatchSetsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListByteMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListByteMatchSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1890,29 +1050,16 @@ where
 impl From<crate::error::ListByteMatchSetsError> for Error {
     fn from(err: crate::error::ListByteMatchSetsError) -> Self {
         match err.kind {
-            crate::error::ListByteMatchSetsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListByteMatchSetsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListByteMatchSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListByteMatchSetsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListByteMatchSetsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListByteMatchSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGeoMatchSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListGeoMatchSetsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGeoMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGeoMatchSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1920,27 +1067,16 @@ where
 impl From<crate::error::ListGeoMatchSetsError> for Error {
     fn from(err: crate::error::ListGeoMatchSetsError) -> Self {
         match err.kind {
-            crate::error::ListGeoMatchSetsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListGeoMatchSetsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListGeoMatchSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListGeoMatchSetsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListGeoMatchSetsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListGeoMatchSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIPSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIPSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListIPSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1948,30 +1084,16 @@ where
 impl From<crate::error::ListIPSetsError> for Error {
     fn from(err: crate::error::ListIPSetsError) -> Self {
         match err.kind {
-            crate::error::ListIPSetsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListIPSetsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListIPSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListIPSetsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListIPSetsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListIPSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1979,32 +1101,17 @@ where
 impl From<crate::error::ListLoggingConfigurationsError> for Error {
     fn from(err: crate::error::ListLoggingConfigurationsError) -> Self {
         match err.kind {
-            crate::error::ListLoggingConfigurationsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListLoggingConfigurationsErrorKind::WafInvalidParameterException(
-                inner,
-            ) => Error::WafInvalidParameterException(inner),
-            crate::error::ListLoggingConfigurationsErrorKind::WafNonexistentItemException(
-                inner,
-            ) => Error::WafNonexistentItemException(inner),
-            crate::error::ListLoggingConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListLoggingConfigurationsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListLoggingConfigurationsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::ListLoggingConfigurationsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::ListLoggingConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRateBasedRulesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRateBasedRulesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRateBasedRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRateBasedRulesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2012,29 +1119,16 @@ where
 impl From<crate::error::ListRateBasedRulesError> for Error {
     fn from(err: crate::error::ListRateBasedRulesError) -> Self {
         match err.kind {
-            crate::error::ListRateBasedRulesErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListRateBasedRulesErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListRateBasedRulesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRateBasedRulesErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListRateBasedRulesErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListRateBasedRulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRegexMatchSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRegexMatchSetsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRegexMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRegexMatchSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2042,30 +1136,16 @@ where
 impl From<crate::error::ListRegexMatchSetsError> for Error {
     fn from(err: crate::error::ListRegexMatchSetsError) -> Self {
         match err.kind {
-            crate::error::ListRegexMatchSetsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListRegexMatchSetsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListRegexMatchSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRegexMatchSetsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListRegexMatchSetsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListRegexMatchSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRegexPatternSetsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRegexPatternSetsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRegexPatternSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRegexPatternSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2073,27 +1153,16 @@ where
 impl From<crate::error::ListRegexPatternSetsError> for Error {
     fn from(err: crate::error::ListRegexPatternSetsError) -> Self {
         match err.kind {
-            crate::error::ListRegexPatternSetsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListRegexPatternSetsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListRegexPatternSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRegexPatternSetsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListRegexPatternSetsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListRegexPatternSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRuleGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRuleGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRuleGroupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2101,24 +1170,15 @@ where
 impl From<crate::error::ListRuleGroupsError> for Error {
     fn from(err: crate::error::ListRuleGroupsError) -> Self {
         match err.kind {
-            crate::error::ListRuleGroupsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListRuleGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRuleGroupsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRulesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRulesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2126,30 +1186,16 @@ where
 impl From<crate::error::ListRulesError> for Error {
     fn from(err: crate::error::ListRulesError) -> Self {
         match err.kind {
-            crate::error::ListRulesErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListRulesErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListRulesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRulesErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListRulesErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListRulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSizeConstraintSetsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSizeConstraintSetsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSizeConstraintSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSizeConstraintSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2157,30 +1203,16 @@ where
 impl From<crate::error::ListSizeConstraintSetsError> for Error {
     fn from(err: crate::error::ListSizeConstraintSetsError) -> Self {
         match err.kind {
-            crate::error::ListSizeConstraintSetsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListSizeConstraintSetsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListSizeConstraintSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSizeConstraintSetsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListSizeConstraintSetsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListSizeConstraintSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSqlInjectionMatchSetsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSqlInjectionMatchSetsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSqlInjectionMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSqlInjectionMatchSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2188,30 +1220,16 @@ where
 impl From<crate::error::ListSqlInjectionMatchSetsError> for Error {
     fn from(err: crate::error::ListSqlInjectionMatchSetsError) -> Self {
         match err.kind {
-            crate::error::ListSqlInjectionMatchSetsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListSqlInjectionMatchSetsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListSqlInjectionMatchSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSqlInjectionMatchSetsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListSqlInjectionMatchSetsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListSqlInjectionMatchSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSubscribedRuleGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSubscribedRuleGroupsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSubscribedRuleGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSubscribedRuleGroupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2219,29 +1237,16 @@ where
 impl From<crate::error::ListSubscribedRuleGroupsError> for Error {
     fn from(err: crate::error::ListSubscribedRuleGroupsError) -> Self {
         match err.kind {
-            crate::error::ListSubscribedRuleGroupsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListSubscribedRuleGroupsErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::ListSubscribedRuleGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSubscribedRuleGroupsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListSubscribedRuleGroupsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::ListSubscribedRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2249,39 +1254,20 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::WafBadRequestException(inner) => {
-                Error::WafBadRequestException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(
-                inner,
-            ) => Error::WafTagOperationInternalErrorException(inner),
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
+            crate::error::ListTagsForResourceErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListTagsForResourceErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::ListTagsForResourceErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::ListTagsForResourceErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWebACLsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWebACLsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListWebACLsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2289,29 +1275,16 @@ where
 impl From<crate::error::ListWebACLsError> for Error {
     fn from(err: crate::error::ListWebACLsError) -> Self {
         match err.kind {
-            crate::error::ListWebACLsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListWebACLsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListWebACLsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListWebACLsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListWebACLsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListWebACLsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListXssMatchSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListXssMatchSetsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListXssMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListXssMatchSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2319,30 +1292,16 @@ where
 impl From<crate::error::ListXssMatchSetsError> for Error {
     fn from(err: crate::error::ListXssMatchSetsError) -> Self {
         match err.kind {
-            crate::error::ListXssMatchSetsErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::ListXssMatchSetsErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::ListXssMatchSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListXssMatchSetsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListXssMatchSetsErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::ListXssMatchSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutLoggingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutLoggingConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutLoggingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2350,35 +1309,18 @@ where
 impl From<crate::error::PutLoggingConfigurationError> for Error {
     fn from(err: crate::error::PutLoggingConfigurationError) -> Self {
         match err.kind {
-            crate::error::PutLoggingConfigurationErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(
-                inner,
-            ) => Error::WafServiceLinkedRoleErrorException(inner),
-            crate::error::PutLoggingConfigurationErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::PutLoggingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutLoggingConfigurationErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(inner) => Error::WafServiceLinkedRoleErrorException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPermissionPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutPermissionPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPermissionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutPermissionPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2386,33 +1328,18 @@ where
 impl From<crate::error::PutPermissionPolicyError> for Error {
     fn from(err: crate::error::PutPermissionPolicyError) -> Self {
         match err.kind {
-            crate::error::PutPermissionPolicyErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(
-                inner,
-            ) => Error::WafInvalidPermissionPolicyException(inner),
-            crate::error::PutPermissionPolicyErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::PutPermissionPolicyErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::PutPermissionPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutPermissionPolicyErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(inner) => Error::WafInvalidPermissionPolicyException(inner),
+            crate::error::PutPermissionPolicyErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::PutPermissionPolicyErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::PutPermissionPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2420,42 +1347,21 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::WafBadRequestException(inner) => {
-                Error::WafBadRequestException(inner)
-            }
-            crate::error::TagResourceErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::TagResourceErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::TagResourceErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::TagResourceErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::TagResourceErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::TagResourceErrorKind::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
+            crate::error::TagResourceErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::TagResourceErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::TagResourceErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::TagResourceErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::TagResourceErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::TagResourceErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2463,41 +1369,20 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::WafBadRequestException(inner) => {
-                Error::WafBadRequestException(inner)
-            }
-            crate::error::UntagResourceErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UntagResourceErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UntagResourceErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UntagResourceErrorKind::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::error::UntagResourceErrorKind::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
+            crate::error::UntagResourceErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UntagResourceErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UntagResourceErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UntagResourceErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::error::UntagResourceErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateByteMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateByteMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateByteMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateByteMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2505,47 +1390,22 @@ where
 impl From<crate::error::UpdateByteMatchSetError> for Error {
     fn from(err: crate::error::UpdateByteMatchSetError) -> Self {
         match err.kind {
-            crate::error::UpdateByteMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateByteMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateByteMatchSetErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateByteMatchSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateByteMatchSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateByteMatchSetErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateByteMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateByteMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateByteMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateByteMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateByteMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateByteMatchSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateByteMatchSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateByteMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateByteMatchSetErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateByteMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateByteMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateByteMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGeoMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGeoMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGeoMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateGeoMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2553,48 +1413,23 @@ where
 impl From<crate::error::UpdateGeoMatchSetError> for Error {
     fn from(err: crate::error::UpdateGeoMatchSetError) -> Self {
         match err.kind {
-            crate::error::UpdateGeoMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateGeoMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGeoMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateGeoMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateIPSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateIPSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateIPSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2602,50 +1437,23 @@ where
 impl From<crate::error::UpdateIPSetError> for Error {
     fn from(err: crate::error::UpdateIPSetError) -> Self {
         match err.kind {
-            crate::error::UpdateIPSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateIPSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateIPSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateIPSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateIPSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateIPSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateIPSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateIPSetErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateIPSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateIPSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::UpdateIPSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateIPSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRateBasedRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRateBasedRuleError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRateBasedRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRateBasedRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2653,50 +1461,23 @@ where
 impl From<crate::error::UpdateRateBasedRuleError> for Error {
     fn from(err: crate::error::UpdateRateBasedRuleError) -> Self {
         match err.kind {
-            crate::error::UpdateRateBasedRuleErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateRateBasedRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRateBasedRuleErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateRateBasedRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRegexMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRegexMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRegexMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRegexMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2704,48 +1485,22 @@ where
 impl From<crate::error::UpdateRegexMatchSetError> for Error {
     fn from(err: crate::error::UpdateRegexMatchSetError) -> Self {
         match err.kind {
-            crate::error::UpdateRegexMatchSetErrorKind::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::error::UpdateRegexMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateRegexMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateRegexMatchSetErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateRegexMatchSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateRegexMatchSetErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateRegexMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateRegexMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateRegexMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRegexMatchSetErrorKind::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::error::UpdateRegexMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateRegexMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateRegexMatchSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateRegexMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateRegexMatchSetErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateRegexMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateRegexMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateRegexMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRegexPatternSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRegexPatternSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRegexPatternSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRegexPatternSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2753,45 +1508,22 @@ where
 impl From<crate::error::UpdateRegexPatternSetError> for Error {
     fn from(err: crate::error::UpdateRegexPatternSetError) -> Self {
         match err.kind {
-            crate::error::UpdateRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateRegexPatternSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateRegexPatternSetErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateRegexPatternSetErrorKind::WafInvalidRegexPatternException(
-                inner,
-            ) => Error::WafInvalidRegexPatternException(inner),
-            crate::error::UpdateRegexPatternSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateRegexPatternSetErrorKind::WafNonexistentContainerException(
-                inner,
-            ) => Error::WafNonexistentContainerException(inner),
-            crate::error::UpdateRegexPatternSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateRegexPatternSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateRegexPatternSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRegexPatternSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateRegexPatternSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateRegexPatternSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateRegexPatternSetErrorKind::WafInvalidRegexPatternException(inner) => Error::WafInvalidRegexPatternException(inner),
+            crate::error::UpdateRegexPatternSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateRegexPatternSetErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateRegexPatternSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateRegexPatternSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2799,48 +1531,23 @@ where
 impl From<crate::error::UpdateRuleError> for Error {
     fn from(err: crate::error::UpdateRuleError) -> Self {
         match err.kind {
-            crate::error::UpdateRuleErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRuleErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateRuleErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateRuleErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateRuleErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateRuleErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateRuleErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateRuleErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateRuleErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::UpdateRuleErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRuleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRuleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2848,45 +1555,21 @@ where
 impl From<crate::error::UpdateRuleGroupError> for Error {
     fn from(err: crate::error::UpdateRuleGroupError) -> Self {
         match err.kind {
-            crate::error::UpdateRuleGroupErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateRuleGroupErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateRuleGroupErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateRuleGroupErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateRuleGroupErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateRuleGroupErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateRuleGroupErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateRuleGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRuleGroupErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateRuleGroupErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateRuleGroupErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateRuleGroupErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateRuleGroupErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateRuleGroupErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateRuleGroupErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSizeConstraintSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSizeConstraintSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSizeConstraintSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSizeConstraintSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2894,51 +1577,23 @@ where
 impl From<crate::error::UpdateSizeConstraintSetError> for Error {
     fn from(err: crate::error::UpdateSizeConstraintSetError) -> Self {
         match err.kind {
-            crate::error::UpdateSizeConstraintSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateSizeConstraintSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateSizeConstraintSetErrorKind::WafNonexistentContainerException(
-                inner,
-            ) => Error::WafNonexistentContainerException(inner),
-            crate::error::UpdateSizeConstraintSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateSizeConstraintSetErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::UpdateSizeConstraintSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateSizeConstraintSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateSizeConstraintSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateSizeConstraintSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSqlInjectionMatchSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSqlInjectionMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSqlInjectionMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSqlInjectionMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2946,45 +1601,22 @@ where
 impl From<crate::error::UpdateSqlInjectionMatchSetError> for Error {
     fn from(err: crate::error::UpdateSqlInjectionMatchSetError) -> Self {
         match err.kind {
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidAccountException(
-                inner,
-            ) => Error::WafInvalidAccountException(inner),
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidOperationException(
-                inner,
-            ) => Error::WafInvalidOperationException(inner),
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidParameterException(
-                inner,
-            ) => Error::WafInvalidParameterException(inner),
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafLimitsExceededException(
-                inner,
-            ) => Error::WafLimitsExceededException(inner),
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafNonexistentContainerException(
-                inner,
-            ) => Error::WafNonexistentContainerException(inner),
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafNonexistentItemException(
-                inner,
-            ) => Error::WafNonexistentItemException(inner),
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateSqlInjectionMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateSqlInjectionMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateWebACLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateWebACLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateWebACLError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2992,53 +1624,24 @@ where
 impl From<crate::error::UpdateWebACLError> for Error {
     fn from(err: crate::error::UpdateWebACLError) -> Self {
         match err.kind {
-            crate::error::UpdateWebACLErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::WafSubscriptionNotFoundException(inner) => {
-                Error::WafSubscriptionNotFoundException(inner)
-            }
-            crate::error::UpdateWebACLErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateWebACLErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateWebACLErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateWebACLErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateWebACLErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateWebACLErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateWebACLErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateWebACLErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateWebACLErrorKind::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::error::UpdateWebACLErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateWebACLErrorKind::WafSubscriptionNotFoundException(inner) => Error::WafSubscriptionNotFoundException(inner),
+            crate::error::UpdateWebACLErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateXssMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateXssMatchSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateXssMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateXssMatchSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3046,34 +1649,17 @@ where
 impl From<crate::error::UpdateXssMatchSetError> for Error {
     fn from(err: crate::error::UpdateXssMatchSetError) -> Self {
         match err.kind {
-            crate::error::UpdateXssMatchSetErrorKind::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::error::UpdateXssMatchSetErrorKind::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::error::UpdateXssMatchSetErrorKind::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::error::UpdateXssMatchSetErrorKind::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::error::UpdateXssMatchSetErrorKind::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::error::UpdateXssMatchSetErrorKind::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::error::UpdateXssMatchSetErrorKind::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::error::UpdateXssMatchSetErrorKind::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
-            crate::error::UpdateXssMatchSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateXssMatchSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateXssMatchSetErrorKind::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::error::UpdateXssMatchSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateXssMatchSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateXssMatchSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::UpdateXssMatchSetErrorKind::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::error::UpdateXssMatchSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateXssMatchSetErrorKind::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
+            crate::error::UpdateXssMatchSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

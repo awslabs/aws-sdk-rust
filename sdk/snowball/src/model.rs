@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let shipmentstate = unimplemented!();
 /// match shipmentstate {
@@ -30,58 +30,52 @@
 /// Specifically, when `shipmentstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShipmentState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShipmentState {
     #[allow(missing_docs)] // documentation missing in model
     Received,
     #[allow(missing_docs)] // documentation missing in model
     Returned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShipmentState {
     fn from(s: &str) -> Self {
         match s {
             "RECEIVED" => ShipmentState::Received,
             "RETURNED" => ShipmentState::Returned,
-            other => ShipmentState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ShipmentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShipmentState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShipmentState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShipmentState::from(s))
+                }
+            }
 impl ShipmentState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ShipmentState::Received => "RECEIVED",
             ShipmentState::Returned => "RETURNED",
-            ShipmentState::Unknown(value) => value.as_str(),
+            ShipmentState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RECEIVED", "RETURNED"]
+        &[
+            "RECEIVED", "RETURNED"
+        ]
     }
 }
 impl AsRef<str> for ShipmentState {
@@ -96,9 +90,9 @@ impl AsRef<str> for ShipmentState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snowballcapacity = unimplemented!();
 /// match snowballcapacity {
@@ -127,22 +121,14 @@ impl AsRef<str> for ShipmentState {
 /// Specifically, when `snowballcapacity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnowballCapacity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnowballCapacity {
     #[allow(missing_docs)] // documentation missing in model
     NoPreference,
@@ -163,7 +149,7 @@ pub enum SnowballCapacity {
     #[allow(missing_docs)] // documentation missing in model
     T98,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnowballCapacity {
     fn from(s: &str) -> Self {
@@ -177,17 +163,17 @@ impl std::convert::From<&str> for SnowballCapacity {
             "T8" => SnowballCapacity::T8,
             "T80" => SnowballCapacity::T80,
             "T98" => SnowballCapacity::T98,
-            other => SnowballCapacity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SnowballCapacity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnowballCapacity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnowballCapacity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnowballCapacity::from(s))
+                }
+            }
 impl SnowballCapacity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -201,21 +187,13 @@ impl SnowballCapacity {
             SnowballCapacity::T8 => "T8",
             SnowballCapacity::T80 => "T80",
             SnowballCapacity::T98 => "T98",
-            SnowballCapacity::Unknown(value) => value.as_str(),
+            SnowballCapacity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "NoPreference",
-            "T100",
-            "T14",
-            "T32",
-            "T42",
-            "T50",
-            "T8",
-            "T80",
-            "T98",
+            "NoPreference", "T100", "T14", "T32", "T42", "T50", "T8", "T80", "T98"
         ]
     }
 }
@@ -231,9 +209,9 @@ impl AsRef<str> for SnowballCapacity {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let shippingoption = unimplemented!();
 /// match shippingoption {
@@ -257,22 +235,14 @@ impl AsRef<str> for SnowballCapacity {
 /// Specifically, when `shippingoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShippingOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShippingOption {
     #[allow(missing_docs)] // documentation missing in model
     Express,
@@ -283,7 +253,7 @@ pub enum ShippingOption {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShippingOption {
     fn from(s: &str) -> Self {
@@ -292,17 +262,17 @@ impl std::convert::From<&str> for ShippingOption {
             "NEXT_DAY" => ShippingOption::NextDay,
             "SECOND_DAY" => ShippingOption::SecondDay,
             "STANDARD" => ShippingOption::Standard,
-            other => ShippingOption::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ShippingOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShippingOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShippingOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShippingOption::from(s))
+                }
+            }
 impl ShippingOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -311,12 +281,14 @@ impl ShippingOption {
             ShippingOption::NextDay => "NEXT_DAY",
             ShippingOption::SecondDay => "SECOND_DAY",
             ShippingOption::Standard => "STANDARD",
-            ShippingOption::Unknown(value) => value.as_str(),
+            ShippingOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXPRESS", "NEXT_DAY", "SECOND_DAY", "STANDARD"]
+        &[
+            "EXPRESS", "NEXT_DAY", "SECOND_DAY", "STANDARD"
+        ]
     }
 }
 impl AsRef<str> for ShippingOption {
@@ -328,7 +300,7 @@ impl AsRef<str> for ShippingOption {
 /// <p>An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OnDeviceServiceConfiguration {
+pub struct OnDeviceServiceConfiguration  {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
     #[doc(hidden)]
     pub nfs_on_device_service: std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
@@ -338,70 +310,54 @@ pub struct OnDeviceServiceConfiguration {
 }
 impl OnDeviceServiceConfiguration {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
-    pub fn nfs_on_device_service(
-        &self,
-    ) -> std::option::Option<&crate::model::NfsOnDeviceServiceConfiguration> {
+    pub fn nfs_on_device_service(&self) -> std::option::Option<& crate::model::NfsOnDeviceServiceConfiguration> {
         self.nfs_on_device_service.as_ref()
     }
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
-    pub fn tgw_on_device_service(
-        &self,
-    ) -> std::option::Option<&crate::model::TgwOnDeviceServiceConfiguration> {
+    pub fn tgw_on_device_service(&self) -> std::option::Option<& crate::model::TgwOnDeviceServiceConfiguration> {
         self.tgw_on_device_service.as_ref()
     }
 }
 /// See [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
 pub mod on_device_service_configuration {
-
+    
     /// A builder for [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) nfs_on_device_service:
-            std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
-        pub(crate) tgw_on_device_service:
-            std::option::Option<crate::model::TgwOnDeviceServiceConfiguration>,
+        pub(crate) nfs_on_device_service: std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
+        pub(crate) tgw_on_device_service: std::option::Option<crate::model::TgwOnDeviceServiceConfiguration>,
     }
     impl Builder {
         /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
-        pub fn nfs_on_device_service(
-            mut self,
-            input: crate::model::NfsOnDeviceServiceConfiguration,
-        ) -> Self {
+        pub fn nfs_on_device_service(mut self, input: crate::model::NfsOnDeviceServiceConfiguration) -> Self {
             self.nfs_on_device_service = Some(input);
             self
         }
         /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
-        pub fn set_nfs_on_device_service(
-            mut self,
-            input: std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
-        ) -> Self {
-            self.nfs_on_device_service = input;
-            self
+        pub fn set_nfs_on_device_service(mut self, input: std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>) -> Self {
+            self.nfs_on_device_service = input; self
         }
         /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
-        pub fn tgw_on_device_service(
-            mut self,
-            input: crate::model::TgwOnDeviceServiceConfiguration,
-        ) -> Self {
+        pub fn tgw_on_device_service(mut self, input: crate::model::TgwOnDeviceServiceConfiguration) -> Self {
             self.tgw_on_device_service = Some(input);
             self
         }
         /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
-        pub fn set_tgw_on_device_service(
-            mut self,
-            input: std::option::Option<crate::model::TgwOnDeviceServiceConfiguration>,
-        ) -> Self {
-            self.tgw_on_device_service = input;
-            self
+        pub fn set_tgw_on_device_service(mut self, input: std::option::Option<crate::model::TgwOnDeviceServiceConfiguration>) -> Self {
+            self.tgw_on_device_service = input; self
         }
         /// Consumes the builder and constructs a [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
         pub fn build(self) -> crate::model::OnDeviceServiceConfiguration {
             crate::model::OnDeviceServiceConfiguration {
-                nfs_on_device_service: self.nfs_on_device_service,
-                tgw_on_device_service: self.tgw_on_device_service,
+                nfs_on_device_service: self.nfs_on_device_service
+                ,
+                tgw_on_device_service: self.tgw_on_device_service
+                ,
             }
         }
     }
+    
+    
 }
 impl OnDeviceServiceConfiguration {
     /// Creates a new builder-style object to manufacture [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
@@ -413,7 +369,7 @@ impl OnDeviceServiceConfiguration {
 /// <p>An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TgwOnDeviceServiceConfiguration {
+pub struct TgwOnDeviceServiceConfiguration  {
     /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.</p>
     #[doc(hidden)]
     pub storage_limit: i32,
@@ -427,13 +383,13 @@ impl TgwOnDeviceServiceConfiguration {
         self.storage_limit
     }
     /// <p>The scale unit of the virtual tapes on the device.</p>
-    pub fn storage_unit(&self) -> std::option::Option<&crate::model::StorageUnit> {
+    pub fn storage_unit(&self) -> std::option::Option<& crate::model::StorageUnit> {
         self.storage_unit.as_ref()
     }
 }
 /// See [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
 pub mod tgw_on_device_service_configuration {
-
+    
     /// A builder for [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -448,8 +404,7 @@ pub mod tgw_on_device_service_configuration {
         }
         /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.</p>
         pub fn set_storage_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.storage_limit = input;
-            self
+            self.storage_limit = input; self
         }
         /// <p>The scale unit of the virtual tapes on the device.</p>
         pub fn storage_unit(mut self, input: crate::model::StorageUnit) -> Self {
@@ -457,21 +412,22 @@ pub mod tgw_on_device_service_configuration {
             self
         }
         /// <p>The scale unit of the virtual tapes on the device.</p>
-        pub fn set_storage_unit(
-            mut self,
-            input: std::option::Option<crate::model::StorageUnit>,
-        ) -> Self {
-            self.storage_unit = input;
-            self
+        pub fn set_storage_unit(mut self, input: std::option::Option<crate::model::StorageUnit>) -> Self {
+            self.storage_unit = input; self
         }
         /// Consumes the builder and constructs a [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
         pub fn build(self) -> crate::model::TgwOnDeviceServiceConfiguration {
             crate::model::TgwOnDeviceServiceConfiguration {
-                storage_limit: self.storage_limit.unwrap_or_default(),
-                storage_unit: self.storage_unit,
+                storage_limit: self.storage_limit
+                    .unwrap_or_default()
+                ,
+                storage_unit: self.storage_unit
+                ,
             }
         }
     }
+    
+    
 }
 impl TgwOnDeviceServiceConfiguration {
     /// Creates a new builder-style object to manufacture [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
@@ -486,9 +442,9 @@ impl TgwOnDeviceServiceConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storageunit = unimplemented!();
 /// match storageunit {
@@ -509,54 +465,48 @@ impl TgwOnDeviceServiceConfiguration {
 /// Specifically, when `storageunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StorageUnit {
     #[allow(missing_docs)] // documentation missing in model
     Tb,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageUnit {
     fn from(s: &str) -> Self {
         match s {
             "TB" => StorageUnit::Tb,
-            other => StorageUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StorageUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StorageUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StorageUnit::from(s))
+                }
+            }
 impl StorageUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageUnit::Tb => "TB",
-            StorageUnit::Unknown(value) => value.as_str(),
+            StorageUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TB"]
+        &[
+            "TB"
+        ]
     }
 }
 impl AsRef<str> for StorageUnit {
@@ -568,11 +518,11 @@ impl AsRef<str> for StorageUnit {
 /// <p>An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NfsOnDeviceServiceConfiguration {
+pub struct NfsOnDeviceServiceConfiguration  {
     /// <p>The maximum NFS storage for one Snow Family device.</p>
     #[doc(hidden)]
     pub storage_limit: i32,
-    /// <p>The scale unit of the NFS storage on the device.</p>
+    /// <p>The scale unit of the NFS storage on the device.</p> 
     /// <p>Valid values: TB.</p>
     #[doc(hidden)]
     pub storage_unit: std::option::Option<crate::model::StorageUnit>,
@@ -582,15 +532,15 @@ impl NfsOnDeviceServiceConfiguration {
     pub fn storage_limit(&self) -> i32 {
         self.storage_limit
     }
-    /// <p>The scale unit of the NFS storage on the device.</p>
+    /// <p>The scale unit of the NFS storage on the device.</p> 
     /// <p>Valid values: TB.</p>
-    pub fn storage_unit(&self) -> std::option::Option<&crate::model::StorageUnit> {
+    pub fn storage_unit(&self) -> std::option::Option<& crate::model::StorageUnit> {
         self.storage_unit.as_ref()
     }
 }
 /// See [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
 pub mod nfs_on_device_service_configuration {
-
+    
     /// A builder for [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -605,32 +555,32 @@ pub mod nfs_on_device_service_configuration {
         }
         /// <p>The maximum NFS storage for one Snow Family device.</p>
         pub fn set_storage_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.storage_limit = input;
-            self
+            self.storage_limit = input; self
         }
-        /// <p>The scale unit of the NFS storage on the device.</p>
+        /// <p>The scale unit of the NFS storage on the device.</p> 
         /// <p>Valid values: TB.</p>
         pub fn storage_unit(mut self, input: crate::model::StorageUnit) -> Self {
             self.storage_unit = Some(input);
             self
         }
-        /// <p>The scale unit of the NFS storage on the device.</p>
+        /// <p>The scale unit of the NFS storage on the device.</p> 
         /// <p>Valid values: TB.</p>
-        pub fn set_storage_unit(
-            mut self,
-            input: std::option::Option<crate::model::StorageUnit>,
-        ) -> Self {
-            self.storage_unit = input;
-            self
+        pub fn set_storage_unit(mut self, input: std::option::Option<crate::model::StorageUnit>) -> Self {
+            self.storage_unit = input; self
         }
         /// Consumes the builder and constructs a [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
         pub fn build(self) -> crate::model::NfsOnDeviceServiceConfiguration {
             crate::model::NfsOnDeviceServiceConfiguration {
-                storage_limit: self.storage_limit.unwrap_or_default(),
-                storage_unit: self.storage_unit,
+                storage_limit: self.storage_limit
+                    .unwrap_or_default()
+                ,
+                storage_unit: self.storage_unit
+                ,
             }
         }
     }
+    
+    
 }
 impl NfsOnDeviceServiceConfiguration {
     /// Creates a new builder-style object to manufacture [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
@@ -642,7 +592,7 @@ impl NfsOnDeviceServiceConfiguration {
 /// <p>Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobResource {
+pub struct JobResource  {
     /// <p>An array of <code>S3Resource</code> objects.</p>
     #[doc(hidden)]
     pub s3_resources: std::option::Option<std::vec::Vec<crate::model::S3Resource>>,
@@ -655,29 +605,27 @@ pub struct JobResource {
 }
 impl JobResource {
     /// <p>An array of <code>S3Resource</code> objects.</p>
-    pub fn s3_resources(&self) -> std::option::Option<&[crate::model::S3Resource]> {
+    pub fn s3_resources(&self) -> std::option::Option<& [crate::model::S3Resource]> {
         self.s3_resources.as_deref()
     }
     /// <p>The Python-language Lambda functions for this job.</p>
-    pub fn lambda_resources(&self) -> std::option::Option<&[crate::model::LambdaResource]> {
+    pub fn lambda_resources(&self) -> std::option::Option<& [crate::model::LambdaResource]> {
         self.lambda_resources.as_deref()
     }
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
-    pub fn ec2_ami_resources(&self) -> std::option::Option<&[crate::model::Ec2AmiResource]> {
+    pub fn ec2_ami_resources(&self) -> std::option::Option<& [crate::model::Ec2AmiResource]> {
         self.ec2_ami_resources.as_deref()
     }
 }
 /// See [`JobResource`](crate::model::JobResource).
 pub mod job_resource {
-
+    
     /// A builder for [`JobResource`](crate::model::JobResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_resources: std::option::Option<std::vec::Vec<crate::model::S3Resource>>,
-        pub(crate) lambda_resources:
-            std::option::Option<std::vec::Vec<crate::model::LambdaResource>>,
-        pub(crate) ec2_ami_resources:
-            std::option::Option<std::vec::Vec<crate::model::Ec2AmiResource>>,
+        pub(crate) lambda_resources: std::option::Option<std::vec::Vec<crate::model::LambdaResource>>,
+        pub(crate) ec2_ami_resources: std::option::Option<std::vec::Vec<crate::model::Ec2AmiResource>>,
     }
     impl Builder {
         /// Appends an item to `s3_resources`.
@@ -687,17 +635,13 @@ pub mod job_resource {
         /// <p>An array of <code>S3Resource</code> objects.</p>
         pub fn s3_resources(mut self, input: crate::model::S3Resource) -> Self {
             let mut v = self.s3_resources.unwrap_or_default();
-            v.push(input);
-            self.s3_resources = Some(v);
-            self
+                            v.push(input);
+                            self.s3_resources = Some(v);
+                            self
         }
         /// <p>An array of <code>S3Resource</code> objects.</p>
-        pub fn set_s3_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Resource>>,
-        ) -> Self {
-            self.s3_resources = input;
-            self
+        pub fn set_s3_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Resource>>) -> Self {
+            self.s3_resources = input; self
         }
         /// Appends an item to `lambda_resources`.
         ///
@@ -706,17 +650,13 @@ pub mod job_resource {
         /// <p>The Python-language Lambda functions for this job.</p>
         pub fn lambda_resources(mut self, input: crate::model::LambdaResource) -> Self {
             let mut v = self.lambda_resources.unwrap_or_default();
-            v.push(input);
-            self.lambda_resources = Some(v);
-            self
+                            v.push(input);
+                            self.lambda_resources = Some(v);
+                            self
         }
         /// <p>The Python-language Lambda functions for this job.</p>
-        pub fn set_lambda_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LambdaResource>>,
-        ) -> Self {
-            self.lambda_resources = input;
-            self
+        pub fn set_lambda_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::LambdaResource>>) -> Self {
+            self.lambda_resources = input; self
         }
         /// Appends an item to `ec2_ami_resources`.
         ///
@@ -725,27 +665,28 @@ pub mod job_resource {
         /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
         pub fn ec2_ami_resources(mut self, input: crate::model::Ec2AmiResource) -> Self {
             let mut v = self.ec2_ami_resources.unwrap_or_default();
-            v.push(input);
-            self.ec2_ami_resources = Some(v);
-            self
+                            v.push(input);
+                            self.ec2_ami_resources = Some(v);
+                            self
         }
         /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
-        pub fn set_ec2_ami_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ec2AmiResource>>,
-        ) -> Self {
-            self.ec2_ami_resources = input;
-            self
+        pub fn set_ec2_ami_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ec2AmiResource>>) -> Self {
+            self.ec2_ami_resources = input; self
         }
         /// Consumes the builder and constructs a [`JobResource`](crate::model::JobResource).
         pub fn build(self) -> crate::model::JobResource {
             crate::model::JobResource {
-                s3_resources: self.s3_resources,
-                lambda_resources: self.lambda_resources,
-                ec2_ami_resources: self.ec2_ami_resources,
+                s3_resources: self.s3_resources
+                ,
+                lambda_resources: self.lambda_resources
+                ,
+                ec2_ami_resources: self.ec2_ami_resources
+                ,
             }
         }
     }
+    
+    
 }
 impl JobResource {
     /// Creates a new builder-style object to manufacture [`JobResource`](crate::model::JobResource).
@@ -757,7 +698,7 @@ impl JobResource {
 /// <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2AmiResource {
+pub struct Ec2AmiResource  {
     /// <p>The ID of the AMI in Amazon EC2.</p>
     #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
@@ -767,17 +708,17 @@ pub struct Ec2AmiResource {
 }
 impl Ec2AmiResource {
     /// <p>The ID of the AMI in Amazon EC2.</p>
-    pub fn ami_id(&self) -> std::option::Option<&str> {
+    pub fn ami_id(&self) -> std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The ID of the AMI on the Snow device.</p>
-    pub fn snowball_ami_id(&self) -> std::option::Option<&str> {
+    pub fn snowball_ami_id(&self) -> std::option::Option<& str> {
         self.snowball_ami_id.as_deref()
     }
 }
 /// See [`Ec2AmiResource`](crate::model::Ec2AmiResource).
 pub mod ec2_ami_resource {
-
+    
     /// A builder for [`Ec2AmiResource`](crate::model::Ec2AmiResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -792,8 +733,7 @@ pub mod ec2_ami_resource {
         }
         /// <p>The ID of the AMI in Amazon EC2.</p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ami_id = input;
-            self
+            self.ami_id = input; self
         }
         /// <p>The ID of the AMI on the Snow device.</p>
         pub fn snowball_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -801,21 +741,21 @@ pub mod ec2_ami_resource {
             self
         }
         /// <p>The ID of the AMI on the Snow device.</p>
-        pub fn set_snowball_ami_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snowball_ami_id = input;
-            self
+        pub fn set_snowball_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snowball_ami_id = input; self
         }
         /// Consumes the builder and constructs a [`Ec2AmiResource`](crate::model::Ec2AmiResource).
         pub fn build(self) -> crate::model::Ec2AmiResource {
             crate::model::Ec2AmiResource {
-                ami_id: self.ami_id,
-                snowball_ami_id: self.snowball_ami_id,
+                ami_id: self.ami_id
+                ,
+                snowball_ami_id: self.snowball_ami_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2AmiResource {
     /// Creates a new builder-style object to manufacture [`Ec2AmiResource`](crate::model::Ec2AmiResource).
@@ -827,7 +767,7 @@ impl Ec2AmiResource {
 /// <p>Identifies </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaResource {
+pub struct LambdaResource  {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
     #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
@@ -837,23 +777,22 @@ pub struct LambdaResource {
 }
 impl LambdaResource {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> std::option::Option<& str> {
         self.lambda_arn.as_deref()
     }
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-    pub fn event_triggers(&self) -> std::option::Option<&[crate::model::EventTriggerDefinition]> {
+    pub fn event_triggers(&self) -> std::option::Option<& [crate::model::EventTriggerDefinition]> {
         self.event_triggers.as_deref()
     }
 }
 /// See [`LambdaResource`](crate::model::LambdaResource).
 pub mod lambda_resource {
-
+    
     /// A builder for [`LambdaResource`](crate::model::LambdaResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_arn: std::option::Option<std::string::String>,
-        pub(crate) event_triggers:
-            std::option::Option<std::vec::Vec<crate::model::EventTriggerDefinition>>,
+        pub(crate) event_triggers: std::option::Option<std::vec::Vec<crate::model::EventTriggerDefinition>>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
@@ -863,8 +802,7 @@ pub mod lambda_resource {
         }
         /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lambda_arn = input;
-            self
+            self.lambda_arn = input; self
         }
         /// Appends an item to `event_triggers`.
         ///
@@ -873,26 +811,26 @@ pub mod lambda_resource {
         /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
         pub fn event_triggers(mut self, input: crate::model::EventTriggerDefinition) -> Self {
             let mut v = self.event_triggers.unwrap_or_default();
-            v.push(input);
-            self.event_triggers = Some(v);
-            self
+                            v.push(input);
+                            self.event_triggers = Some(v);
+                            self
         }
         /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-        pub fn set_event_triggers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventTriggerDefinition>>,
-        ) -> Self {
-            self.event_triggers = input;
-            self
+        pub fn set_event_triggers(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventTriggerDefinition>>) -> Self {
+            self.event_triggers = input; self
         }
         /// Consumes the builder and constructs a [`LambdaResource`](crate::model::LambdaResource).
         pub fn build(self) -> crate::model::LambdaResource {
             crate::model::LambdaResource {
-                lambda_arn: self.lambda_arn,
-                event_triggers: self.event_triggers,
+                lambda_arn: self.lambda_arn
+                ,
+                event_triggers: self.event_triggers
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaResource {
     /// Creates a new builder-style object to manufacture [`LambdaResource`](crate::model::LambdaResource).
@@ -904,20 +842,20 @@ impl LambdaResource {
 /// <p>The container for the <code>EventTriggerDefinition$EventResourceARN</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventTriggerDefinition {
+pub struct EventTriggerDefinition  {
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
     #[doc(hidden)]
     pub event_resource_arn: std::option::Option<std::string::String>,
 }
 impl EventTriggerDefinition {
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
-    pub fn event_resource_arn(&self) -> std::option::Option<&str> {
+    pub fn event_resource_arn(&self) -> std::option::Option<& str> {
         self.event_resource_arn.as_deref()
     }
 }
 /// See [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
 pub mod event_trigger_definition {
-
+    
     /// A builder for [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -930,20 +868,19 @@ pub mod event_trigger_definition {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
-        pub fn set_event_resource_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_resource_arn = input;
-            self
+        pub fn set_event_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
         pub fn build(self) -> crate::model::EventTriggerDefinition {
             crate::model::EventTriggerDefinition {
-                event_resource_arn: self.event_resource_arn,
+                event_resource_arn: self.event_resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl EventTriggerDefinition {
     /// Creates a new builder-style object to manufacture [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
@@ -955,7 +892,7 @@ impl EventTriggerDefinition {
 /// <p>Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Resource {
+pub struct S3Resource  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
@@ -964,35 +901,31 @@ pub struct S3Resource {
     pub key_range: std::option::Option<crate::model::KeyRange>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
     #[doc(hidden)]
-    pub target_on_device_services:
-        std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
+    pub target_on_device_services: std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
 }
 impl S3Resource {
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
-    pub fn key_range(&self) -> std::option::Option<&crate::model::KeyRange> {
+    pub fn key_range(&self) -> std::option::Option<& crate::model::KeyRange> {
         self.key_range.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
-    pub fn target_on_device_services(
-        &self,
-    ) -> std::option::Option<&[crate::model::TargetOnDeviceService]> {
+    pub fn target_on_device_services(&self) -> std::option::Option<& [crate::model::TargetOnDeviceService]> {
         self.target_on_device_services.as_deref()
     }
 }
 /// See [`S3Resource`](crate::model::S3Resource).
 pub mod s3_resource {
-
+    
     /// A builder for [`S3Resource`](crate::model::S3Resource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
         pub(crate) key_range: std::option::Option<crate::model::KeyRange>,
-        pub(crate) target_on_device_services:
-            std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
+        pub(crate) target_on_device_services: std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
@@ -1002,8 +935,7 @@ pub mod s3_resource {
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_arn = input;
-            self
+            self.bucket_arn = input; self
         }
         /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
         pub fn key_range(mut self, input: crate::model::KeyRange) -> Self {
@@ -1012,40 +944,37 @@ pub mod s3_resource {
         }
         /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
         pub fn set_key_range(mut self, input: std::option::Option<crate::model::KeyRange>) -> Self {
-            self.key_range = input;
-            self
+            self.key_range = input; self
         }
         /// Appends an item to `target_on_device_services`.
         ///
         /// To override the contents of this collection use [`set_target_on_device_services`](Self::set_target_on_device_services).
         ///
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
-        pub fn target_on_device_services(
-            mut self,
-            input: crate::model::TargetOnDeviceService,
-        ) -> Self {
+        pub fn target_on_device_services(mut self, input: crate::model::TargetOnDeviceService) -> Self {
             let mut v = self.target_on_device_services.unwrap_or_default();
-            v.push(input);
-            self.target_on_device_services = Some(v);
-            self
+                            v.push(input);
+                            self.target_on_device_services = Some(v);
+                            self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
-        pub fn set_target_on_device_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
-        ) -> Self {
-            self.target_on_device_services = input;
-            self
+        pub fn set_target_on_device_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>) -> Self {
+            self.target_on_device_services = input; self
         }
         /// Consumes the builder and constructs a [`S3Resource`](crate::model::S3Resource).
         pub fn build(self) -> crate::model::S3Resource {
             crate::model::S3Resource {
-                bucket_arn: self.bucket_arn,
-                key_range: self.key_range,
-                target_on_device_services: self.target_on_device_services,
+                bucket_arn: self.bucket_arn
+                ,
+                key_range: self.key_range
+                ,
+                target_on_device_services: self.target_on_device_services
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Resource {
     /// Creates a new builder-style object to manufacture [`S3Resource`](crate::model::S3Resource).
@@ -1057,7 +986,7 @@ impl S3Resource {
 /// <p>An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetOnDeviceService {
+pub struct TargetOnDeviceService  {
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<crate::model::DeviceServiceName>,
@@ -1067,17 +996,17 @@ pub struct TargetOnDeviceService {
 }
 impl TargetOnDeviceService {
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
-    pub fn service_name(&self) -> std::option::Option<&crate::model::DeviceServiceName> {
+    pub fn service_name(&self) -> std::option::Option<& crate::model::DeviceServiceName> {
         self.service_name.as_ref()
     }
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
-    pub fn transfer_option(&self) -> std::option::Option<&crate::model::TransferOption> {
+    pub fn transfer_option(&self) -> std::option::Option<& crate::model::TransferOption> {
         self.transfer_option.as_ref()
     }
 }
 /// See [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
 pub mod target_on_device_service {
-
+    
     /// A builder for [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1091,12 +1020,8 @@ pub mod target_on_device_service {
             self
         }
         /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
-        pub fn set_service_name(
-            mut self,
-            input: std::option::Option<crate::model::DeviceServiceName>,
-        ) -> Self {
-            self.service_name = input;
-            self
+        pub fn set_service_name(mut self, input: std::option::Option<crate::model::DeviceServiceName>) -> Self {
+            self.service_name = input; self
         }
         /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
         pub fn transfer_option(mut self, input: crate::model::TransferOption) -> Self {
@@ -1104,21 +1029,21 @@ pub mod target_on_device_service {
             self
         }
         /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
-        pub fn set_transfer_option(
-            mut self,
-            input: std::option::Option<crate::model::TransferOption>,
-        ) -> Self {
-            self.transfer_option = input;
-            self
+        pub fn set_transfer_option(mut self, input: std::option::Option<crate::model::TransferOption>) -> Self {
+            self.transfer_option = input; self
         }
         /// Consumes the builder and constructs a [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
         pub fn build(self) -> crate::model::TargetOnDeviceService {
             crate::model::TargetOnDeviceService {
-                service_name: self.service_name,
-                transfer_option: self.transfer_option,
+                service_name: self.service_name
+                ,
+                transfer_option: self.transfer_option
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetOnDeviceService {
     /// Creates a new builder-style object to manufacture [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
@@ -1133,9 +1058,9 @@ impl TargetOnDeviceService {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transferoption = unimplemented!();
 /// match transferoption {
@@ -1158,22 +1083,14 @@ impl TargetOnDeviceService {
 /// Specifically, when `transferoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransferOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TransferOption {
     #[allow(missing_docs)] // documentation missing in model
     Export,
@@ -1182,7 +1099,7 @@ pub enum TransferOption {
     #[allow(missing_docs)] // documentation missing in model
     LocalUse,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TransferOption {
     fn from(s: &str) -> Self {
@@ -1190,17 +1107,17 @@ impl std::convert::From<&str> for TransferOption {
             "EXPORT" => TransferOption::Export,
             "IMPORT" => TransferOption::Import,
             "LOCAL_USE" => TransferOption::LocalUse,
-            other => TransferOption::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TransferOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TransferOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransferOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TransferOption::from(s))
+                }
+            }
 impl TransferOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1208,12 +1125,14 @@ impl TransferOption {
             TransferOption::Export => "EXPORT",
             TransferOption::Import => "IMPORT",
             TransferOption::LocalUse => "LOCAL_USE",
-            TransferOption::Unknown(value) => value.as_str(),
+            TransferOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXPORT", "IMPORT", "LOCAL_USE"]
+        &[
+            "EXPORT", "IMPORT", "LOCAL_USE"
+        ]
     }
 }
 impl AsRef<str> for TransferOption {
@@ -1228,9 +1147,9 @@ impl AsRef<str> for TransferOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deviceservicename = unimplemented!();
 /// match deviceservicename {
@@ -1252,60 +1171,52 @@ impl AsRef<str> for TransferOption {
 /// Specifically, when `deviceservicename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceServiceName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceServiceName {
     #[allow(missing_docs)] // documentation missing in model
     NfsOnDeviceService,
     #[allow(missing_docs)] // documentation missing in model
     S3OnDeviceService,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceServiceName {
     fn from(s: &str) -> Self {
         match s {
             "NFS_ON_DEVICE_SERVICE" => DeviceServiceName::NfsOnDeviceService,
             "S3_ON_DEVICE_SERVICE" => DeviceServiceName::S3OnDeviceService,
-            other => {
-                DeviceServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeviceServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceServiceName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceServiceName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceServiceName::from(s))
+                }
+            }
 impl DeviceServiceName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceServiceName::NfsOnDeviceService => "NFS_ON_DEVICE_SERVICE",
             DeviceServiceName::S3OnDeviceService => "S3_ON_DEVICE_SERVICE",
-            DeviceServiceName::Unknown(value) => value.as_str(),
+            DeviceServiceName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NFS_ON_DEVICE_SERVICE", "S3_ON_DEVICE_SERVICE"]
+        &[
+            "NFS_ON_DEVICE_SERVICE", "S3_ON_DEVICE_SERVICE"
+        ]
     }
 }
 impl AsRef<str> for DeviceServiceName {
@@ -1317,7 +1228,7 @@ impl AsRef<str> for DeviceServiceName {
 /// <p>Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyRange {
+pub struct KeyRange  {
     /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
     #[doc(hidden)]
     pub begin_marker: std::option::Option<std::string::String>,
@@ -1327,17 +1238,17 @@ pub struct KeyRange {
 }
 impl KeyRange {
     /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
-    pub fn begin_marker(&self) -> std::option::Option<&str> {
+    pub fn begin_marker(&self) -> std::option::Option<& str> {
         self.begin_marker.as_deref()
     }
     /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
-    pub fn end_marker(&self) -> std::option::Option<&str> {
+    pub fn end_marker(&self) -> std::option::Option<& str> {
         self.end_marker.as_deref()
     }
 }
 /// See [`KeyRange`](crate::model::KeyRange).
 pub mod key_range {
-
+    
     /// A builder for [`KeyRange`](crate::model::KeyRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1352,8 +1263,7 @@ pub mod key_range {
         }
         /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
         pub fn set_begin_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.begin_marker = input;
-            self
+            self.begin_marker = input; self
         }
         /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
         pub fn end_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1362,17 +1272,20 @@ pub mod key_range {
         }
         /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
         pub fn set_end_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_marker = input;
-            self
+            self.end_marker = input; self
         }
         /// Consumes the builder and constructs a [`KeyRange`](crate::model::KeyRange).
         pub fn build(self) -> crate::model::KeyRange {
             crate::model::KeyRange {
-                begin_marker: self.begin_marker,
-                end_marker: self.end_marker,
+                begin_marker: self.begin_marker
+                ,
+                end_marker: self.end_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl KeyRange {
     /// Creates a new builder-style object to manufacture [`KeyRange`](crate::model::KeyRange).
@@ -1381,12 +1294,12 @@ impl KeyRange {
     }
 }
 
-/// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p>
+/// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> 
 /// <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Notification {
-    /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
+pub struct Notification  {
+    /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p> 
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
@@ -1398,13 +1311,13 @@ pub struct Notification {
     pub notify_all: bool,
 }
 impl Notification {
-    /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
+    /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p> 
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    pub fn job_states_to_notify(&self) -> std::option::Option<&[crate::model::JobState]> {
+    pub fn job_states_to_notify(&self) -> std::option::Option<& [crate::model::JobState]> {
         self.job_states_to_notify.as_deref()
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
@@ -1414,7 +1327,7 @@ impl Notification {
 }
 /// See [`Notification`](crate::model::Notification).
 pub mod notification {
-
+    
     /// A builder for [`Notification`](crate::model::Notification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1423,20 +1336,16 @@ pub mod notification {
         pub(crate) notify_all: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
+        /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p> 
         /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
+        /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p> 
         /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// Appends an item to `job_states_to_notify`.
         ///
@@ -1445,17 +1354,13 @@ pub mod notification {
         /// <p>The list of job states that will trigger a notification for this job.</p>
         pub fn job_states_to_notify(mut self, input: crate::model::JobState) -> Self {
             let mut v = self.job_states_to_notify.unwrap_or_default();
-            v.push(input);
-            self.job_states_to_notify = Some(v);
-            self
+                            v.push(input);
+                            self.job_states_to_notify = Some(v);
+                            self
         }
         /// <p>The list of job states that will trigger a notification for this job.</p>
-        pub fn set_job_states_to_notify(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobState>>,
-        ) -> Self {
-            self.job_states_to_notify = input;
-            self
+        pub fn set_job_states_to_notify(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobState>>) -> Self {
+            self.job_states_to_notify = input; self
         }
         /// <p>Any change in job state will trigger a notification for this job.</p>
         pub fn notify_all(mut self, input: bool) -> Self {
@@ -1464,18 +1369,23 @@ pub mod notification {
         }
         /// <p>Any change in job state will trigger a notification for this job.</p>
         pub fn set_notify_all(mut self, input: std::option::Option<bool>) -> Self {
-            self.notify_all = input;
-            self
+            self.notify_all = input; self
         }
         /// Consumes the builder and constructs a [`Notification`](crate::model::Notification).
         pub fn build(self) -> crate::model::Notification {
             crate::model::Notification {
-                sns_topic_arn: self.sns_topic_arn,
-                job_states_to_notify: self.job_states_to_notify,
-                notify_all: self.notify_all.unwrap_or_default(),
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                job_states_to_notify: self.job_states_to_notify
+                ,
+                notify_all: self.notify_all
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Notification {
     /// Creates a new builder-style object to manufacture [`Notification`](crate::model::Notification).
@@ -1490,9 +1400,9 @@ impl Notification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstate = unimplemented!();
 /// match jobstate {
@@ -1525,22 +1435,14 @@ impl Notification {
 /// Specifically, when `jobstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobState {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -1569,7 +1471,7 @@ pub enum JobState {
     #[allow(missing_docs)] // documentation missing in model
     WithCustomer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobState {
     fn from(s: &str) -> Self {
@@ -1587,17 +1489,17 @@ impl std::convert::From<&str> for JobState {
             "WithAWS" => JobState::WithAws,
             "WithAWSSortingFacility" => JobState::WithAwsSortingFacility,
             "WithCustomer" => JobState::WithCustomer,
-            other => JobState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobState::from(s))
+                }
+            }
 impl JobState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1615,25 +1517,13 @@ impl JobState {
             JobState::WithAws => "WithAWS",
             JobState::WithAwsSortingFacility => "WithAWSSortingFacility",
             JobState::WithCustomer => "WithCustomer",
-            JobState::Unknown(value) => value.as_str(),
+            JobState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Cancelled",
-            "Complete",
-            "InProgress",
-            "InTransitToAWS",
-            "InTransitToCustomer",
-            "Listing",
-            "New",
-            "Pending",
-            "PreparingAppliance",
-            "PreparingShipment",
-            "WithAWS",
-            "WithAWSSortingFacility",
-            "WithCustomer",
+            "Cancelled", "Complete", "InProgress", "InTransitToAWS", "InTransitToCustomer", "Listing", "New", "Pending", "PreparingAppliance", "PreparingShipment", "WithAWS", "WithAWSSortingFacility", "WithCustomer"
         ]
     }
 }
@@ -1646,7 +1536,7 @@ impl AsRef<str> for JobState {
 /// <p>Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LongTermPricingListEntry {
+pub struct LongTermPricingListEntry  {
     /// <p>The ID of the long-term pricing type for the device.</p>
     #[doc(hidden)]
     pub long_term_pricing_id: std::option::Option<std::string::String>,
@@ -1680,29 +1570,27 @@ pub struct LongTermPricingListEntry {
 }
 impl LongTermPricingListEntry {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+    pub fn long_term_pricing_id(&self) -> std::option::Option<& str> {
         self.long_term_pricing_id.as_deref()
     }
     /// <p>The end date the long-term pricing contract.</p>
-    pub fn long_term_pricing_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn long_term_pricing_end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.long_term_pricing_end_date.as_ref()
     }
     /// <p>The start date of the long-term pricing contract.</p>
-    pub fn long_term_pricing_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn long_term_pricing_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.long_term_pricing_start_date.as_ref()
     }
     /// <p>The type of long-term pricing that was selected for the device.</p>
-    pub fn long_term_pricing_type(
-        &self,
-    ) -> std::option::Option<&crate::model::LongTermPricingType> {
+    pub fn long_term_pricing_type(&self) -> std::option::Option<& crate::model::LongTermPricingType> {
         self.long_term_pricing_type.as_ref()
     }
     /// <p>The current active jobs on the device the long-term pricing type.</p>
-    pub fn current_active_job(&self) -> std::option::Option<&str> {
+    pub fn current_active_job(&self) -> std::option::Option<& str> {
         self.current_active_job.as_deref()
     }
     /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
-    pub fn replacement_job(&self) -> std::option::Option<&str> {
+    pub fn replacement_job(&self) -> std::option::Option<& str> {
         self.replacement_job.as_deref()
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
@@ -1710,21 +1598,21 @@ impl LongTermPricingListEntry {
         self.is_long_term_pricing_auto_renew
     }
     /// <p>The status of the long-term pricing type.</p>
-    pub fn long_term_pricing_status(&self) -> std::option::Option<&str> {
+    pub fn long_term_pricing_status(&self) -> std::option::Option<& str> {
         self.long_term_pricing_status.as_deref()
     }
     /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<& crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
-    pub fn job_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.job_ids.as_deref()
     }
 }
 /// See [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
 pub mod long_term_pricing_list_entry {
-
+    
     /// A builder for [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1746,12 +1634,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
-        pub fn set_long_term_pricing_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.long_term_pricing_id = input;
-            self
+        pub fn set_long_term_pricing_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.long_term_pricing_id = input; self
         }
         /// <p>The end date the long-term pricing contract.</p>
         pub fn long_term_pricing_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1759,12 +1643,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>The end date the long-term pricing contract.</p>
-        pub fn set_long_term_pricing_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.long_term_pricing_end_date = input;
-            self
+        pub fn set_long_term_pricing_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.long_term_pricing_end_date = input; self
         }
         /// <p>The start date of the long-term pricing contract.</p>
         pub fn long_term_pricing_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1772,12 +1652,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>The start date of the long-term pricing contract.</p>
-        pub fn set_long_term_pricing_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.long_term_pricing_start_date = input;
-            self
+        pub fn set_long_term_pricing_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.long_term_pricing_start_date = input; self
         }
         /// <p>The type of long-term pricing that was selected for the device.</p>
         pub fn long_term_pricing_type(mut self, input: crate::model::LongTermPricingType) -> Self {
@@ -1785,12 +1661,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>The type of long-term pricing that was selected for the device.</p>
-        pub fn set_long_term_pricing_type(
-            mut self,
-            input: std::option::Option<crate::model::LongTermPricingType>,
-        ) -> Self {
-            self.long_term_pricing_type = input;
-            self
+        pub fn set_long_term_pricing_type(mut self, input: std::option::Option<crate::model::LongTermPricingType>) -> Self {
+            self.long_term_pricing_type = input; self
         }
         /// <p>The current active jobs on the device the long-term pricing type.</p>
         pub fn current_active_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1798,12 +1670,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>The current active jobs on the device the long-term pricing type.</p>
-        pub fn set_current_active_job(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_active_job = input;
-            self
+        pub fn set_current_active_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_active_job = input; self
         }
         /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
         pub fn replacement_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1811,12 +1679,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
-        pub fn set_replacement_job(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replacement_job = input;
-            self
+        pub fn set_replacement_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replacement_job = input; self
         }
         /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
@@ -1824,12 +1688,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
-        pub fn set_is_long_term_pricing_auto_renew(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.is_long_term_pricing_auto_renew = input;
-            self
+        pub fn set_is_long_term_pricing_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_long_term_pricing_auto_renew = input; self
         }
         /// <p>The status of the long-term pricing type.</p>
         pub fn long_term_pricing_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1837,12 +1697,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>The status of the long-term pricing type.</p>
-        pub fn set_long_term_pricing_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.long_term_pricing_status = input;
-            self
+        pub fn set_long_term_pricing_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.long_term_pricing_status = input; self
         }
         /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
@@ -1850,12 +1706,8 @@ pub mod long_term_pricing_list_entry {
             self
         }
         /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
-        pub fn set_snowball_type(
-            mut self,
-            input: std::option::Option<crate::model::SnowballType>,
-        ) -> Self {
-            self.snowball_type = input;
-            self
+        pub fn set_snowball_type(mut self, input: std::option::Option<crate::model::SnowballType>) -> Self {
+            self.snowball_type = input; self
         }
         /// Appends an item to `job_ids`.
         ///
@@ -1864,34 +1716,42 @@ pub mod long_term_pricing_list_entry {
         /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
         pub fn job_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_ids.unwrap_or_default();
-            v.push(input.into());
-            self.job_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.job_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
-        pub fn set_job_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.job_ids = input;
-            self
+        pub fn set_job_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.job_ids = input; self
         }
         /// Consumes the builder and constructs a [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
         pub fn build(self) -> crate::model::LongTermPricingListEntry {
             crate::model::LongTermPricingListEntry {
-                long_term_pricing_id: self.long_term_pricing_id,
-                long_term_pricing_end_date: self.long_term_pricing_end_date,
-                long_term_pricing_start_date: self.long_term_pricing_start_date,
-                long_term_pricing_type: self.long_term_pricing_type,
-                current_active_job: self.current_active_job,
-                replacement_job: self.replacement_job,
-                is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew,
-                long_term_pricing_status: self.long_term_pricing_status,
-                snowball_type: self.snowball_type,
-                job_ids: self.job_ids,
+                long_term_pricing_id: self.long_term_pricing_id
+                ,
+                long_term_pricing_end_date: self.long_term_pricing_end_date
+                ,
+                long_term_pricing_start_date: self.long_term_pricing_start_date
+                ,
+                long_term_pricing_type: self.long_term_pricing_type
+                ,
+                current_active_job: self.current_active_job
+                ,
+                replacement_job: self.replacement_job
+                ,
+                is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew
+                ,
+                long_term_pricing_status: self.long_term_pricing_status
+                ,
+                snowball_type: self.snowball_type
+                ,
+                job_ids: self.job_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl LongTermPricingListEntry {
     /// Creates a new builder-style object to manufacture [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
@@ -1906,9 +1766,9 @@ impl LongTermPricingListEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snowballtype = unimplemented!();
 /// match snowballtype {
@@ -1936,22 +1796,14 @@ impl LongTermPricingListEntry {
 /// Specifically, when `snowballtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnowballType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnowballType {
     #[allow(missing_docs)] // documentation missing in model
     Edge,
@@ -1970,7 +1822,7 @@ pub enum SnowballType {
     #[allow(missing_docs)] // documentation missing in model
     V35C,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnowballType {
     fn from(s: &str) -> Self {
@@ -1983,17 +1835,17 @@ impl std::convert::From<&str> for SnowballType {
             "SNC1_SSD" => SnowballType::Snc1Ssd,
             "STANDARD" => SnowballType::Standard,
             "V3_5C" => SnowballType::V35C,
-            other => SnowballType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SnowballType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnowballType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnowballType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnowballType::from(s))
+                }
+            }
 impl SnowballType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2006,13 +1858,13 @@ impl SnowballType {
             SnowballType::Snc1Ssd => "SNC1_SSD",
             SnowballType::Standard => "STANDARD",
             SnowballType::V35C => "V3_5C",
-            SnowballType::Unknown(value) => value.as_str(),
+            SnowballType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EDGE", "EDGE_C", "EDGE_CG", "EDGE_S", "SNC1_HDD", "SNC1_SSD", "STANDARD", "V3_5C",
+            "EDGE", "EDGE_C", "EDGE_CG", "EDGE_S", "SNC1_HDD", "SNC1_SSD", "STANDARD", "V3_5C"
         ]
     }
 }
@@ -2028,9 +1880,9 @@ impl AsRef<str> for SnowballType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let longtermpricingtype = unimplemented!();
 /// match longtermpricingtype {
@@ -2052,60 +1904,52 @@ impl AsRef<str> for SnowballType {
 /// Specifically, when `longtermpricingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LongTermPricingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LongTermPricingType {
     #[allow(missing_docs)] // documentation missing in model
     OneYear,
     #[allow(missing_docs)] // documentation missing in model
     ThreeYear,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LongTermPricingType {
     fn from(s: &str) -> Self {
         match s {
             "OneYear" => LongTermPricingType::OneYear,
             "ThreeYear" => LongTermPricingType::ThreeYear,
-            other => {
-                LongTermPricingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LongTermPricingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LongTermPricingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LongTermPricingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LongTermPricingType::from(s))
+                }
+            }
 impl LongTermPricingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LongTermPricingType::OneYear => "OneYear",
             LongTermPricingType::ThreeYear => "ThreeYear",
-            LongTermPricingType::Unknown(value) => value.as_str(),
+            LongTermPricingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OneYear", "ThreeYear"]
+        &[
+            "OneYear", "ThreeYear"
+        ]
     }
 }
 impl AsRef<str> for LongTermPricingType {
@@ -2117,7 +1961,7 @@ impl AsRef<str> for LongTermPricingType {
 /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobListEntry {
+pub struct JobListEntry  {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -2142,11 +1986,11 @@ pub struct JobListEntry {
 }
 impl JobListEntry {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current state of this job.</p>
-    pub fn job_state(&self) -> std::option::Option<&crate::model::JobState> {
+    pub fn job_state(&self) -> std::option::Option<& crate::model::JobState> {
         self.job_state.as_ref()
     }
     /// <p>A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.</p>
@@ -2154,25 +1998,25 @@ impl JobListEntry {
         self.is_master
     }
     /// <p>The type of job.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::JobType> {
         self.job_type.as_ref()
     }
     /// <p>The type of device used with this job.</p>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<& crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this job.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`JobListEntry`](crate::model::JobListEntry).
 pub mod job_list_entry {
-
+    
     /// A builder for [`JobListEntry`](crate::model::JobListEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2192,8 +2036,7 @@ pub mod job_list_entry {
         }
         /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current state of this job.</p>
         pub fn job_state(mut self, input: crate::model::JobState) -> Self {
@@ -2202,8 +2045,7 @@ pub mod job_list_entry {
         }
         /// <p>The current state of this job.</p>
         pub fn set_job_state(mut self, input: std::option::Option<crate::model::JobState>) -> Self {
-            self.job_state = input;
-            self
+            self.job_state = input; self
         }
         /// <p>A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.</p>
         pub fn is_master(mut self, input: bool) -> Self {
@@ -2212,8 +2054,7 @@ pub mod job_list_entry {
         }
         /// <p>A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.</p>
         pub fn set_is_master(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_master = input;
-            self
+            self.is_master = input; self
         }
         /// <p>The type of job.</p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
@@ -2222,8 +2063,7 @@ pub mod job_list_entry {
         }
         /// <p>The type of job.</p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.job_type = input;
-            self
+            self.job_type = input; self
         }
         /// <p>The type of device used with this job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
@@ -2231,12 +2071,8 @@ pub mod job_list_entry {
             self
         }
         /// <p>The type of device used with this job.</p>
-        pub fn set_snowball_type(
-            mut self,
-            input: std::option::Option<crate::model::SnowballType>,
-        ) -> Self {
-            self.snowball_type = input;
-            self
+        pub fn set_snowball_type(mut self, input: std::option::Option<crate::model::SnowballType>) -> Self {
+            self.snowball_type = input; self
         }
         /// <p>The creation date for this job.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2244,12 +2080,8 @@ pub mod job_list_entry {
             self
         }
         /// <p>The creation date for this job.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2258,22 +2090,31 @@ pub mod job_list_entry {
         }
         /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`JobListEntry`](crate::model::JobListEntry).
         pub fn build(self) -> crate::model::JobListEntry {
             crate::model::JobListEntry {
-                job_id: self.job_id,
-                job_state: self.job_state,
-                is_master: self.is_master.unwrap_or_default(),
-                job_type: self.job_type,
-                snowball_type: self.snowball_type,
-                creation_date: self.creation_date,
-                description: self.description,
+                job_id: self.job_id
+                ,
+                job_state: self.job_state
+                ,
+                is_master: self.is_master
+                    .unwrap_or_default()
+                ,
+                job_type: self.job_type
+                ,
+                snowball_type: self.snowball_type
+                ,
+                creation_date: self.creation_date
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl JobListEntry {
     /// Creates a new builder-style object to manufacture [`JobListEntry`](crate::model::JobListEntry).
@@ -2288,9 +2129,9 @@ impl JobListEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobtype = unimplemented!();
 /// match jobtype {
@@ -2313,22 +2154,14 @@ impl JobListEntry {
 /// Specifically, when `jobtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobType {
     #[allow(missing_docs)] // documentation missing in model
     Export,
@@ -2337,7 +2170,7 @@ pub enum JobType {
     #[allow(missing_docs)] // documentation missing in model
     LocalUse,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobType {
     fn from(s: &str) -> Self {
@@ -2345,17 +2178,17 @@ impl std::convert::From<&str> for JobType {
             "EXPORT" => JobType::Export,
             "IMPORT" => JobType::Import,
             "LOCAL_USE" => JobType::LocalUse,
-            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobType::from(s))
+                }
+            }
 impl JobType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2363,12 +2196,14 @@ impl JobType {
             JobType::Export => "EXPORT",
             JobType::Import => "IMPORT",
             JobType::LocalUse => "LOCAL_USE",
-            JobType::Unknown(value) => value.as_str(),
+            JobType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXPORT", "IMPORT", "LOCAL_USE"]
+        &[
+            "EXPORT", "IMPORT", "LOCAL_USE"
+        ]
     }
 }
 impl AsRef<str> for JobType {
@@ -2380,7 +2215,7 @@ impl AsRef<str> for JobType {
 /// <p>A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snow device AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompatibleImage {
+pub struct CompatibleImage  {
     /// <p>The unique identifier for an individual Snow device AMI.</p>
     #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
@@ -2390,17 +2225,17 @@ pub struct CompatibleImage {
 }
 impl CompatibleImage {
     /// <p>The unique identifier for an individual Snow device AMI.</p>
-    pub fn ami_id(&self) -> std::option::Option<&str> {
+    pub fn ami_id(&self) -> std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The optional name of a compatible image.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CompatibleImage`](crate::model::CompatibleImage).
 pub mod compatible_image {
-
+    
     /// A builder for [`CompatibleImage`](crate::model::CompatibleImage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2415,8 +2250,7 @@ pub mod compatible_image {
         }
         /// <p>The unique identifier for an individual Snow device AMI.</p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ami_id = input;
-            self
+            self.ami_id = input; self
         }
         /// <p>The optional name of a compatible image.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2425,17 +2259,20 @@ pub mod compatible_image {
         }
         /// <p>The optional name of a compatible image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CompatibleImage`](crate::model::CompatibleImage).
         pub fn build(self) -> crate::model::CompatibleImage {
             crate::model::CompatibleImage {
-                ami_id: self.ami_id,
-                name: self.name,
+                ami_id: self.ami_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CompatibleImage {
     /// Creates a new builder-style object to manufacture [`CompatibleImage`](crate::model::CompatibleImage).
@@ -2447,7 +2284,7 @@ impl CompatibleImage {
 /// <p>Contains a cluster's state, a cluster's ID, and other important information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterListEntry {
+pub struct ClusterListEntry  {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -2463,25 +2300,25 @@ pub struct ClusterListEntry {
 }
 impl ClusterListEntry {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
-    pub fn cluster_state(&self) -> std::option::Option<&crate::model::ClusterState> {
+    pub fn cluster_state(&self) -> std::option::Option<& crate::model::ClusterState> {
         self.cluster_state.as_ref()
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`ClusterListEntry`](crate::model::ClusterListEntry).
 pub mod cluster_list_entry {
-
+    
     /// A builder for [`ClusterListEntry`](crate::model::ClusterListEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2498,8 +2335,7 @@ pub mod cluster_list_entry {
         }
         /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
         pub fn cluster_state(mut self, input: crate::model::ClusterState) -> Self {
@@ -2507,12 +2343,8 @@ pub mod cluster_list_entry {
             self
         }
         /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
-        pub fn set_cluster_state(
-            mut self,
-            input: std::option::Option<crate::model::ClusterState>,
-        ) -> Self {
-            self.cluster_state = input;
-            self
+        pub fn set_cluster_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
+            self.cluster_state = input; self
         }
         /// <p>The creation date for this cluster.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2520,12 +2352,8 @@ pub mod cluster_list_entry {
             self
         }
         /// <p>The creation date for this cluster.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2534,19 +2362,24 @@ pub mod cluster_list_entry {
         }
         /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`ClusterListEntry`](crate::model::ClusterListEntry).
         pub fn build(self) -> crate::model::ClusterListEntry {
             crate::model::ClusterListEntry {
-                cluster_id: self.cluster_id,
-                cluster_state: self.cluster_state,
-                creation_date: self.creation_date,
-                description: self.description,
+                cluster_id: self.cluster_id
+                ,
+                cluster_state: self.cluster_state
+                ,
+                creation_date: self.creation_date
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterListEntry {
     /// Creates a new builder-style object to manufacture [`ClusterListEntry`](crate::model::ClusterListEntry).
@@ -2561,9 +2394,9 @@ impl ClusterListEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clusterstate = unimplemented!();
 /// match clusterstate {
@@ -2588,22 +2421,14 @@ impl ClusterListEntry {
 /// Specifically, when `clusterstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClusterState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
     AwaitingQuorum,
@@ -2616,7 +2441,7 @@ pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClusterState {
     fn from(s: &str) -> Self {
@@ -2626,17 +2451,17 @@ impl std::convert::From<&str> for ClusterState {
             "Complete" => ClusterState::Complete,
             "InUse" => ClusterState::InUse,
             "Pending" => ClusterState::Pending,
-            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClusterState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClusterState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClusterState::from(s))
+                }
+            }
 impl ClusterState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2646,17 +2471,13 @@ impl ClusterState {
             ClusterState::Complete => "Complete",
             ClusterState::InUse => "InUse",
             ClusterState::Pending => "Pending",
-            ClusterState::Unknown(value) => value.as_str(),
+            ClusterState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AwaitingQuorum",
-            "Cancelled",
-            "Complete",
-            "InUse",
-            "Pending",
+            "AwaitingQuorum", "Cancelled", "Complete", "InUse", "Pending"
         ]
     }
 }
@@ -2672,9 +2493,9 @@ impl AsRef<str> for ClusterState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let shippinglabelstatus = unimplemented!();
 /// match shippinglabelstatus {
@@ -2698,22 +2519,14 @@ impl AsRef<str> for ClusterState {
 /// Specifically, when `shippinglabelstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShippingLabelStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShippingLabelStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -2724,7 +2537,7 @@ pub enum ShippingLabelStatus {
     #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShippingLabelStatus {
     fn from(s: &str) -> Self {
@@ -2733,19 +2546,17 @@ impl std::convert::From<&str> for ShippingLabelStatus {
             "InProgress" => ShippingLabelStatus::InProgress,
             "Succeeded" => ShippingLabelStatus::Succeeded,
             "TimedOut" => ShippingLabelStatus::TimedOut,
-            other => {
-                ShippingLabelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ShippingLabelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShippingLabelStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShippingLabelStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShippingLabelStatus::from(s))
+                }
+            }
 impl ShippingLabelStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2754,12 +2565,14 @@ impl ShippingLabelStatus {
             ShippingLabelStatus::InProgress => "InProgress",
             ShippingLabelStatus::Succeeded => "Succeeded",
             ShippingLabelStatus::TimedOut => "TimedOut",
-            ShippingLabelStatus::Unknown(value) => value.as_str(),
+            ShippingLabelStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Succeeded", "TimedOut"]
+        &[
+            "Failed", "InProgress", "Succeeded", "TimedOut"
+        ]
     }
 }
 impl AsRef<str> for ShippingLabelStatus {
@@ -2771,7 +2584,7 @@ impl AsRef<str> for ShippingLabelStatus {
 /// <p>Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobMetadata {
+pub struct JobMetadata  {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -2805,7 +2618,7 @@ pub struct JobMetadata {
     /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
     #[doc(hidden)]
     pub shipping_details: std::option::Option<crate::model::ShippingDetails>,
-    /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+    /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     #[doc(hidden)]
     pub snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
@@ -2838,107 +2651,102 @@ pub struct JobMetadata {
     pub long_term_pricing_id: std::option::Option<std::string::String>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
     #[doc(hidden)]
-    pub on_device_service_configuration:
-        std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
 }
 impl JobMetadata {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the jobs.</p>
-    pub fn job_state(&self) -> std::option::Option<&crate::model::JobState> {
+    pub fn job_state(&self) -> std::option::Option<& crate::model::JobState> {
         self.job_state.as_ref()
     }
     /// <p>The type of job.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::JobType> {
         self.job_type.as_ref()
     }
     /// <p>The type of device used with this job.</p>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<& crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this job.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into.</p>
-    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+    pub fn resources(&self) -> std::option::Option<& crate::model::JobResource> {
         self.resources.as_ref()
     }
     /// <p>The description of the job, provided at job creation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
-    pub fn shipping_details(&self) -> std::option::Option<&crate::model::ShippingDetails> {
+    pub fn shipping_details(&self) -> std::option::Option<& crate::model::ShippingDetails> {
         self.shipping_details.as_ref()
     }
-    /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+    /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p> 
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn snowball_capacity_preference(
-        &self,
-    ) -> std::option::Option<&crate::model::SnowballCapacity> {
+    pub fn snowball_capacity_preference(&self) -> std::option::Option<& crate::model::SnowballCapacity> {
         self.snowball_capacity_preference.as_ref()
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>A value that defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
-    pub fn data_transfer_progress(&self) -> std::option::Option<&crate::model::DataTransfer> {
+    pub fn data_transfer_progress(&self) -> std::option::Option<& crate::model::DataTransfer> {
         self.data_transfer_progress.as_ref()
     }
     /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p>
-    pub fn job_log_info(&self) -> std::option::Option<&crate::model::JobLogs> {
+    pub fn job_log_info(&self) -> std::option::Option<& crate::model::JobLogs> {
         self.job_log_info.as_ref()
     }
     /// <p>The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> std::option::Option<& str> {
         self.forwarding_address_id.as_deref()
     }
     /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
-    pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
+    pub fn tax_documents(&self) -> std::option::Option<& crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }
     /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
-    pub fn device_configuration(&self) -> std::option::Option<&crate::model::DeviceConfiguration> {
+    pub fn device_configuration(&self) -> std::option::Option<& crate::model::DeviceConfiguration> {
         self.device_configuration.as_ref()
     }
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-    pub fn remote_management(&self) -> std::option::Option<&crate::model::RemoteManagement> {
+    pub fn remote_management(&self) -> std::option::Option<& crate::model::RemoteManagement> {
         self.remote_management.as_ref()
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+    pub fn long_term_pricing_id(&self) -> std::option::Option<& str> {
         self.long_term_pricing_id.as_deref()
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn on_device_service_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> std::option::Option<& crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
 }
 /// See [`JobMetadata`](crate::model::JobMetadata).
 pub mod job_metadata {
-
+    
     /// A builder for [`JobMetadata`](crate::model::JobMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2953,8 +2761,7 @@ pub mod job_metadata {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) address_id: std::option::Option<std::string::String>,
         pub(crate) shipping_details: std::option::Option<crate::model::ShippingDetails>,
-        pub(crate) snowball_capacity_preference:
-            std::option::Option<crate::model::SnowballCapacity>,
+        pub(crate) snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
         pub(crate) notification: std::option::Option<crate::model::Notification>,
         pub(crate) data_transfer_progress: std::option::Option<crate::model::DataTransfer>,
         pub(crate) job_log_info: std::option::Option<crate::model::JobLogs>,
@@ -2964,8 +2771,7 @@ pub mod job_metadata {
         pub(crate) device_configuration: std::option::Option<crate::model::DeviceConfiguration>,
         pub(crate) remote_management: std::option::Option<crate::model::RemoteManagement>,
         pub(crate) long_term_pricing_id: std::option::Option<std::string::String>,
-        pub(crate) on_device_service_configuration:
-            std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+        pub(crate) on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     }
     impl Builder {
         /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -2975,8 +2781,7 @@ pub mod job_metadata {
         }
         /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the jobs.</p>
         pub fn job_state(mut self, input: crate::model::JobState) -> Self {
@@ -2985,8 +2790,7 @@ pub mod job_metadata {
         }
         /// <p>The current status of the jobs.</p>
         pub fn set_job_state(mut self, input: std::option::Option<crate::model::JobState>) -> Self {
-            self.job_state = input;
-            self
+            self.job_state = input; self
         }
         /// <p>The type of job.</p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
@@ -2995,8 +2799,7 @@ pub mod job_metadata {
         }
         /// <p>The type of job.</p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.job_type = input;
-            self
+            self.job_type = input; self
         }
         /// <p>The type of device used with this job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
@@ -3004,12 +2807,8 @@ pub mod job_metadata {
             self
         }
         /// <p>The type of device used with this job.</p>
-        pub fn set_snowball_type(
-            mut self,
-            input: std::option::Option<crate::model::SnowballType>,
-        ) -> Self {
-            self.snowball_type = input;
-            self
+        pub fn set_snowball_type(mut self, input: std::option::Option<crate::model::SnowballType>) -> Self {
+            self.snowball_type = input; self
         }
         /// <p>The creation date for this job.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3017,12 +2816,8 @@ pub mod job_metadata {
             self
         }
         /// <p>The creation date for this job.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into.</p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
@@ -3030,12 +2825,8 @@ pub mod job_metadata {
             self
         }
         /// <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<crate::model::JobResource>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<crate::model::JobResource>) -> Self {
+            self.resources = input; self
         }
         /// <p>The description of the job, provided at job creation.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3044,8 +2835,7 @@ pub mod job_metadata {
         }
         /// <p>The description of the job, provided at job creation.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3054,8 +2844,7 @@ pub mod job_metadata {
         }
         /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3064,8 +2853,7 @@ pub mod job_metadata {
         }
         /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The ID for the address that you want the Snow device shipped to.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3074,8 +2862,7 @@ pub mod job_metadata {
         }
         /// <p>The ID for the address that you want the Snow device shipped to.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address_id = input;
-            self
+            self.address_id = input; self
         }
         /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
         pub fn shipping_details(mut self, input: crate::model::ShippingDetails) -> Self {
@@ -3083,30 +2870,19 @@ pub mod job_metadata {
             self
         }
         /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
-        pub fn set_shipping_details(
-            mut self,
-            input: std::option::Option<crate::model::ShippingDetails>,
-        ) -> Self {
-            self.shipping_details = input;
-            self
+        pub fn set_shipping_details(mut self, input: std::option::Option<crate::model::ShippingDetails>) -> Self {
+            self.shipping_details = input; self
         }
-        /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+        /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn snowball_capacity_preference(
-            mut self,
-            input: crate::model::SnowballCapacity,
-        ) -> Self {
+        pub fn snowball_capacity_preference(mut self, input: crate::model::SnowballCapacity) -> Self {
             self.snowball_capacity_preference = Some(input);
             self
         }
-        /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+        /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p> 
         /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn set_snowball_capacity_preference(
-            mut self,
-            input: std::option::Option<crate::model::SnowballCapacity>,
-        ) -> Self {
-            self.snowball_capacity_preference = input;
-            self
+        pub fn set_snowball_capacity_preference(mut self, input: std::option::Option<crate::model::SnowballCapacity>) -> Self {
+            self.snowball_capacity_preference = input; self
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -3114,12 +2890,8 @@ pub mod job_metadata {
             self
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>A value that defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
         pub fn data_transfer_progress(mut self, input: crate::model::DataTransfer) -> Self {
@@ -3127,12 +2899,8 @@ pub mod job_metadata {
             self
         }
         /// <p>A value that defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
-        pub fn set_data_transfer_progress(
-            mut self,
-            input: std::option::Option<crate::model::DataTransfer>,
-        ) -> Self {
-            self.data_transfer_progress = input;
-            self
+        pub fn set_data_transfer_progress(mut self, input: std::option::Option<crate::model::DataTransfer>) -> Self {
+            self.data_transfer_progress = input; self
         }
         /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p>
         pub fn job_log_info(mut self, input: crate::model::JobLogs) -> Self {
@@ -3140,12 +2908,8 @@ pub mod job_metadata {
             self
         }
         /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p>
-        pub fn set_job_log_info(
-            mut self,
-            input: std::option::Option<crate::model::JobLogs>,
-        ) -> Self {
-            self.job_log_info = input;
-            self
+        pub fn set_job_log_info(mut self, input: std::option::Option<crate::model::JobLogs>) -> Self {
+            self.job_log_info = input; self
         }
         /// <p>The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3154,8 +2918,7 @@ pub mod job_metadata {
         }
         /// <p>The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// <p>The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3163,12 +2926,8 @@ pub mod job_metadata {
             self
         }
         /// <p>The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-        pub fn set_forwarding_address_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.forwarding_address_id = input;
-            self
+        pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forwarding_address_id = input; self
         }
         /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
@@ -3176,12 +2935,8 @@ pub mod job_metadata {
             self
         }
         /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
-        pub fn set_tax_documents(
-            mut self,
-            input: std::option::Option<crate::model::TaxDocuments>,
-        ) -> Self {
-            self.tax_documents = input;
-            self
+        pub fn set_tax_documents(mut self, input: std::option::Option<crate::model::TaxDocuments>) -> Self {
+            self.tax_documents = input; self
         }
         /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
         pub fn device_configuration(mut self, input: crate::model::DeviceConfiguration) -> Self {
@@ -3189,12 +2944,8 @@ pub mod job_metadata {
             self
         }
         /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
-        pub fn set_device_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DeviceConfiguration>,
-        ) -> Self {
-            self.device_configuration = input;
-            self
+        pub fn set_device_configuration(mut self, input: std::option::Option<crate::model::DeviceConfiguration>) -> Self {
+            self.device_configuration = input; self
         }
         /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
@@ -3202,12 +2953,8 @@ pub mod job_metadata {
             self
         }
         /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-        pub fn set_remote_management(
-            mut self,
-            input: std::option::Option<crate::model::RemoteManagement>,
-        ) -> Self {
-            self.remote_management = input;
-            self
+        pub fn set_remote_management(mut self, input: std::option::Option<crate::model::RemoteManagement>) -> Self {
+            self.remote_management = input; self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
         pub fn long_term_pricing_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3215,57 +2962,70 @@ pub mod job_metadata {
             self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
-        pub fn set_long_term_pricing_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.long_term_pricing_id = input;
-            self
+        pub fn set_long_term_pricing_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.long_term_pricing_id = input; self
         }
         /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-        pub fn on_device_service_configuration(
-            mut self,
-            input: crate::model::OnDeviceServiceConfiguration,
-        ) -> Self {
+        pub fn on_device_service_configuration(mut self, input: crate::model::OnDeviceServiceConfiguration) -> Self {
             self.on_device_service_configuration = Some(input);
             self
         }
         /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-        pub fn set_on_device_service_configuration(
-            mut self,
-            input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-        ) -> Self {
-            self.on_device_service_configuration = input;
-            self
+        pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::model::OnDeviceServiceConfiguration>) -> Self {
+            self.on_device_service_configuration = input; self
         }
         /// Consumes the builder and constructs a [`JobMetadata`](crate::model::JobMetadata).
         pub fn build(self) -> crate::model::JobMetadata {
             crate::model::JobMetadata {
-                job_id: self.job_id,
-                job_state: self.job_state,
-                job_type: self.job_type,
-                snowball_type: self.snowball_type,
-                creation_date: self.creation_date,
-                resources: self.resources,
-                description: self.description,
-                kms_key_arn: self.kms_key_arn,
-                role_arn: self.role_arn,
-                address_id: self.address_id,
-                shipping_details: self.shipping_details,
-                snowball_capacity_preference: self.snowball_capacity_preference,
-                notification: self.notification,
-                data_transfer_progress: self.data_transfer_progress,
-                job_log_info: self.job_log_info,
-                cluster_id: self.cluster_id,
-                forwarding_address_id: self.forwarding_address_id,
-                tax_documents: self.tax_documents,
-                device_configuration: self.device_configuration,
-                remote_management: self.remote_management,
-                long_term_pricing_id: self.long_term_pricing_id,
-                on_device_service_configuration: self.on_device_service_configuration,
+                job_id: self.job_id
+                ,
+                job_state: self.job_state
+                ,
+                job_type: self.job_type
+                ,
+                snowball_type: self.snowball_type
+                ,
+                creation_date: self.creation_date
+                ,
+                resources: self.resources
+                ,
+                description: self.description
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                address_id: self.address_id
+                ,
+                shipping_details: self.shipping_details
+                ,
+                snowball_capacity_preference: self.snowball_capacity_preference
+                ,
+                notification: self.notification
+                ,
+                data_transfer_progress: self.data_transfer_progress
+                ,
+                job_log_info: self.job_log_info
+                ,
+                cluster_id: self.cluster_id
+                ,
+                forwarding_address_id: self.forwarding_address_id
+                ,
+                tax_documents: self.tax_documents
+                ,
+                device_configuration: self.device_configuration
+                ,
+                remote_management: self.remote_management
+                ,
+                long_term_pricing_id: self.long_term_pricing_id
+                ,
+                on_device_service_configuration: self.on_device_service_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl JobMetadata {
     /// Creates a new builder-style object to manufacture [`JobMetadata`](crate::model::JobMetadata).
@@ -3280,9 +3040,9 @@ impl JobMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let remotemanagement = unimplemented!();
 /// match remotemanagement {
@@ -3304,58 +3064,52 @@ impl JobMetadata {
 /// Specifically, when `remotemanagement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RemoteManagement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RemoteManagement {
     #[allow(missing_docs)] // documentation missing in model
     InstalledAutostart,
     #[allow(missing_docs)] // documentation missing in model
     InstalledOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RemoteManagement {
     fn from(s: &str) -> Self {
         match s {
             "INSTALLED_AUTOSTART" => RemoteManagement::InstalledAutostart,
             "INSTALLED_ONLY" => RemoteManagement::InstalledOnly,
-            other => RemoteManagement::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RemoteManagement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RemoteManagement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RemoteManagement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RemoteManagement::from(s))
+                }
+            }
 impl RemoteManagement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RemoteManagement::InstalledAutostart => "INSTALLED_AUTOSTART",
             RemoteManagement::InstalledOnly => "INSTALLED_ONLY",
-            RemoteManagement::Unknown(value) => value.as_str(),
+            RemoteManagement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSTALLED_AUTOSTART", "INSTALLED_ONLY"]
+        &[
+            "INSTALLED_AUTOSTART", "INSTALLED_ONLY"
+        ]
     }
 }
 impl AsRef<str> for RemoteManagement {
@@ -3367,53 +3121,45 @@ impl AsRef<str> for RemoteManagement {
 /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceConfiguration {
+pub struct DeviceConfiguration  {
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
     #[doc(hidden)]
-    pub snowcone_device_configuration:
-        std::option::Option<crate::model::SnowconeDeviceConfiguration>,
+    pub snowcone_device_configuration: std::option::Option<crate::model::SnowconeDeviceConfiguration>,
 }
 impl DeviceConfiguration {
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
-    pub fn snowcone_device_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::SnowconeDeviceConfiguration> {
+    pub fn snowcone_device_configuration(&self) -> std::option::Option<& crate::model::SnowconeDeviceConfiguration> {
         self.snowcone_device_configuration.as_ref()
     }
 }
 /// See [`DeviceConfiguration`](crate::model::DeviceConfiguration).
 pub mod device_configuration {
-
+    
     /// A builder for [`DeviceConfiguration`](crate::model::DeviceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) snowcone_device_configuration:
-            std::option::Option<crate::model::SnowconeDeviceConfiguration>,
+        pub(crate) snowcone_device_configuration: std::option::Option<crate::model::SnowconeDeviceConfiguration>,
     }
     impl Builder {
         /// <p>Returns information about the device configuration for an Snowcone job.</p>
-        pub fn snowcone_device_configuration(
-            mut self,
-            input: crate::model::SnowconeDeviceConfiguration,
-        ) -> Self {
+        pub fn snowcone_device_configuration(mut self, input: crate::model::SnowconeDeviceConfiguration) -> Self {
             self.snowcone_device_configuration = Some(input);
             self
         }
         /// <p>Returns information about the device configuration for an Snowcone job.</p>
-        pub fn set_snowcone_device_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SnowconeDeviceConfiguration>,
-        ) -> Self {
-            self.snowcone_device_configuration = input;
-            self
+        pub fn set_snowcone_device_configuration(mut self, input: std::option::Option<crate::model::SnowconeDeviceConfiguration>) -> Self {
+            self.snowcone_device_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DeviceConfiguration`](crate::model::DeviceConfiguration).
         pub fn build(self) -> crate::model::DeviceConfiguration {
             crate::model::DeviceConfiguration {
-                snowcone_device_configuration: self.snowcone_device_configuration,
+                snowcone_device_configuration: self.snowcone_device_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceConfiguration {
     /// Creates a new builder-style object to manufacture [`DeviceConfiguration`](crate::model::DeviceConfiguration).
@@ -3425,20 +3171,20 @@ impl DeviceConfiguration {
 /// <p>Specifies the device configuration for an Snowcone job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnowconeDeviceConfiguration {
+pub struct SnowconeDeviceConfiguration  {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
     #[doc(hidden)]
     pub wireless_connection: std::option::Option<crate::model::WirelessConnection>,
 }
 impl SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
-    pub fn wireless_connection(&self) -> std::option::Option<&crate::model::WirelessConnection> {
+    pub fn wireless_connection(&self) -> std::option::Option<& crate::model::WirelessConnection> {
         self.wireless_connection.as_ref()
     }
 }
 /// See [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
 pub mod snowcone_device_configuration {
-
+    
     /// A builder for [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3451,20 +3197,19 @@ pub mod snowcone_device_configuration {
             self
         }
         /// <p>Configures the wireless connection for the Snowcone device.</p>
-        pub fn set_wireless_connection(
-            mut self,
-            input: std::option::Option<crate::model::WirelessConnection>,
-        ) -> Self {
-            self.wireless_connection = input;
-            self
+        pub fn set_wireless_connection(mut self, input: std::option::Option<crate::model::WirelessConnection>) -> Self {
+            self.wireless_connection = input; self
         }
         /// Consumes the builder and constructs a [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
         pub fn build(self) -> crate::model::SnowconeDeviceConfiguration {
             crate::model::SnowconeDeviceConfiguration {
-                wireless_connection: self.wireless_connection,
+                wireless_connection: self.wireless_connection
+                ,
             }
         }
     }
+    
+    
 }
 impl SnowconeDeviceConfiguration {
     /// Creates a new builder-style object to manufacture [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
@@ -3476,7 +3221,7 @@ impl SnowconeDeviceConfiguration {
 /// <p>Configures the wireless connection on an Snowcone device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessConnection {
+pub struct WirelessConnection  {
     /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
     #[doc(hidden)]
     pub is_wifi_enabled: bool,
@@ -3489,7 +3234,7 @@ impl WirelessConnection {
 }
 /// See [`WirelessConnection`](crate::model::WirelessConnection).
 pub mod wireless_connection {
-
+    
     /// A builder for [`WirelessConnection`](crate::model::WirelessConnection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3503,16 +3248,19 @@ pub mod wireless_connection {
         }
         /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
         pub fn set_is_wifi_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_wifi_enabled = input;
-            self
+            self.is_wifi_enabled = input; self
         }
         /// Consumes the builder and constructs a [`WirelessConnection`](crate::model::WirelessConnection).
         pub fn build(self) -> crate::model::WirelessConnection {
             crate::model::WirelessConnection {
-                is_wifi_enabled: self.is_wifi_enabled.unwrap_or_default(),
+                is_wifi_enabled: self.is_wifi_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl WirelessConnection {
     /// Creates a new builder-style object to manufacture [`WirelessConnection`](crate::model::WirelessConnection).
@@ -3524,20 +3272,20 @@ impl WirelessConnection {
 /// <p>The tax documents required in your Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaxDocuments {
+pub struct TaxDocuments  {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     #[doc(hidden)]
     pub ind: std::option::Option<crate::model::IndTaxDocuments>,
 }
 impl TaxDocuments {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
-    pub fn ind(&self) -> std::option::Option<&crate::model::IndTaxDocuments> {
+    pub fn ind(&self) -> std::option::Option<& crate::model::IndTaxDocuments> {
         self.ind.as_ref()
     }
 }
 /// See [`TaxDocuments`](crate::model::TaxDocuments).
 pub mod tax_documents {
-
+    
     /// A builder for [`TaxDocuments`](crate::model::TaxDocuments).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3550,18 +3298,19 @@ pub mod tax_documents {
             self
         }
         /// <p>The tax documents required in Amazon Web Services Region in India.</p>
-        pub fn set_ind(
-            mut self,
-            input: std::option::Option<crate::model::IndTaxDocuments>,
-        ) -> Self {
-            self.ind = input;
-            self
+        pub fn set_ind(mut self, input: std::option::Option<crate::model::IndTaxDocuments>) -> Self {
+            self.ind = input; self
         }
         /// Consumes the builder and constructs a [`TaxDocuments`](crate::model::TaxDocuments).
         pub fn build(self) -> crate::model::TaxDocuments {
-            crate::model::TaxDocuments { ind: self.ind }
+            crate::model::TaxDocuments {
+                ind: self.ind
+                ,
+            }
         }
     }
+    
+    
 }
 impl TaxDocuments {
     /// Creates a new builder-style object to manufacture [`TaxDocuments`](crate::model::TaxDocuments).
@@ -3573,20 +3322,20 @@ impl TaxDocuments {
 /// <p>The tax documents required in Amazon Web Services Region in India.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndTaxDocuments {
+pub struct IndTaxDocuments  {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
     #[doc(hidden)]
     pub gstin: std::option::Option<std::string::String>,
 }
 impl IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
-    pub fn gstin(&self) -> std::option::Option<&str> {
+    pub fn gstin(&self) -> std::option::Option<& str> {
         self.gstin.as_deref()
     }
 }
 /// See [`IndTaxDocuments`](crate::model::IndTaxDocuments).
 pub mod ind_tax_documents {
-
+    
     /// A builder for [`IndTaxDocuments`](crate::model::IndTaxDocuments).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3600,14 +3349,18 @@ pub mod ind_tax_documents {
         }
         /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
         pub fn set_gstin(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gstin = input;
-            self
+            self.gstin = input; self
         }
         /// Consumes the builder and constructs a [`IndTaxDocuments`](crate::model::IndTaxDocuments).
         pub fn build(self) -> crate::model::IndTaxDocuments {
-            crate::model::IndTaxDocuments { gstin: self.gstin }
+            crate::model::IndTaxDocuments {
+                gstin: self.gstin
+                ,
+            }
         }
     }
+    
+    
 }
 impl IndTaxDocuments {
     /// Creates a new builder-style object to manufacture [`IndTaxDocuments`](crate::model::IndTaxDocuments).
@@ -3616,13 +3369,13 @@ impl IndTaxDocuments {
     }
 }
 
-/// <p>Contains job logs. Whenever a Snow device is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p>
-/// <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p>
-/// <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p>
+/// <p>Contains job logs. Whenever a Snow device is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> 
+/// <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p> 
+/// <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> 
 /// <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobLogs {
+pub struct JobLogs  {
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
     #[doc(hidden)]
     pub job_completion_report_uri: std::option::Option<std::string::String>,
@@ -3635,21 +3388,21 @@ pub struct JobLogs {
 }
 impl JobLogs {
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
-    pub fn job_completion_report_uri(&self) -> std::option::Option<&str> {
+    pub fn job_completion_report_uri(&self) -> std::option::Option<& str> {
         self.job_completion_report_uri.as_deref()
     }
     /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
-    pub fn job_success_log_uri(&self) -> std::option::Option<&str> {
+    pub fn job_success_log_uri(&self) -> std::option::Option<& str> {
         self.job_success_log_uri.as_deref()
     }
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
-    pub fn job_failure_log_uri(&self) -> std::option::Option<&str> {
+    pub fn job_failure_log_uri(&self) -> std::option::Option<& str> {
         self.job_failure_log_uri.as_deref()
     }
 }
 /// See [`JobLogs`](crate::model::JobLogs).
 pub mod job_logs {
-
+    
     /// A builder for [`JobLogs`](crate::model::JobLogs).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3664,12 +3417,8 @@ pub mod job_logs {
             self
         }
         /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
-        pub fn set_job_completion_report_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_completion_report_uri = input;
-            self
+        pub fn set_job_completion_report_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_completion_report_uri = input; self
         }
         /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
         pub fn job_success_log_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3677,12 +3426,8 @@ pub mod job_logs {
             self
         }
         /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
-        pub fn set_job_success_log_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_success_log_uri = input;
-            self
+        pub fn set_job_success_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_success_log_uri = input; self
         }
         /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
         pub fn job_failure_log_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3690,22 +3435,23 @@ pub mod job_logs {
             self
         }
         /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
-        pub fn set_job_failure_log_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_failure_log_uri = input;
-            self
+        pub fn set_job_failure_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_failure_log_uri = input; self
         }
         /// Consumes the builder and constructs a [`JobLogs`](crate::model::JobLogs).
         pub fn build(self) -> crate::model::JobLogs {
             crate::model::JobLogs {
-                job_completion_report_uri: self.job_completion_report_uri,
-                job_success_log_uri: self.job_success_log_uri,
-                job_failure_log_uri: self.job_failure_log_uri,
+                job_completion_report_uri: self.job_completion_report_uri
+                ,
+                job_success_log_uri: self.job_success_log_uri
+                ,
+                job_failure_log_uri: self.job_failure_log_uri
+                ,
             }
         }
     }
+    
+    
 }
 impl JobLogs {
     /// Creates a new builder-style object to manufacture [`JobLogs`](crate::model::JobLogs).
@@ -3717,7 +3463,7 @@ impl JobLogs {
 /// <p>Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataTransfer {
+pub struct DataTransfer  {
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
     #[doc(hidden)]
     pub bytes_transferred: i64,
@@ -3751,7 +3497,7 @@ impl DataTransfer {
 }
 /// See [`DataTransfer`](crate::model::DataTransfer).
 pub mod data_transfer {
-
+    
     /// A builder for [`DataTransfer`](crate::model::DataTransfer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3768,8 +3514,7 @@ pub mod data_transfer {
         }
         /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
         pub fn set_bytes_transferred(mut self, input: std::option::Option<i64>) -> Self {
-            self.bytes_transferred = input;
-            self
+            self.bytes_transferred = input; self
         }
         /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
         pub fn objects_transferred(mut self, input: i64) -> Self {
@@ -3778,8 +3523,7 @@ pub mod data_transfer {
         }
         /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
         pub fn set_objects_transferred(mut self, input: std::option::Option<i64>) -> Self {
-            self.objects_transferred = input;
-            self
+            self.objects_transferred = input; self
         }
         /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
         pub fn total_bytes(mut self, input: i64) -> Self {
@@ -3788,8 +3532,7 @@ pub mod data_transfer {
         }
         /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
         pub fn set_total_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_bytes = input;
-            self
+            self.total_bytes = input; self
         }
         /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
         pub fn total_objects(mut self, input: i64) -> Self {
@@ -3798,19 +3541,28 @@ pub mod data_transfer {
         }
         /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
         pub fn set_total_objects(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_objects = input;
-            self
+            self.total_objects = input; self
         }
         /// Consumes the builder and constructs a [`DataTransfer`](crate::model::DataTransfer).
         pub fn build(self) -> crate::model::DataTransfer {
             crate::model::DataTransfer {
-                bytes_transferred: self.bytes_transferred.unwrap_or_default(),
-                objects_transferred: self.objects_transferred.unwrap_or_default(),
-                total_bytes: self.total_bytes.unwrap_or_default(),
-                total_objects: self.total_objects.unwrap_or_default(),
+                bytes_transferred: self.bytes_transferred
+                    .unwrap_or_default()
+                ,
+                objects_transferred: self.objects_transferred
+                    .unwrap_or_default()
+                ,
+                total_bytes: self.total_bytes
+                    .unwrap_or_default()
+                ,
+                total_objects: self.total_objects
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DataTransfer {
     /// Creates a new builder-style object to manufacture [`DataTransfer`](crate::model::DataTransfer).
@@ -3822,13 +3574,13 @@ impl DataTransfer {
 /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShippingDetails {
-    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
+pub struct ShippingDetails  {
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
@@ -3840,28 +3592,28 @@ pub struct ShippingDetails {
     pub outbound_shipment: std::option::Option<crate::model::Shipment>,
 }
 impl ShippingDetails {
-    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
     /// </ul>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<& crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
-    pub fn inbound_shipment(&self) -> std::option::Option<&crate::model::Shipment> {
+    pub fn inbound_shipment(&self) -> std::option::Option<& crate::model::Shipment> {
         self.inbound_shipment.as_ref()
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
-    pub fn outbound_shipment(&self) -> std::option::Option<&crate::model::Shipment> {
+    pub fn outbound_shipment(&self) -> std::option::Option<& crate::model::Shipment> {
         self.outbound_shipment.as_ref()
     }
 }
 /// See [`ShippingDetails`](crate::model::ShippingDetails).
 pub mod shipping_details {
-
+    
     /// A builder for [`ShippingDetails`](crate::model::ShippingDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3870,30 +3622,26 @@ pub mod shipping_details {
         pub(crate) outbound_shipment: std::option::Option<crate::model::Shipment>,
     }
     impl Builder {
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
         /// </ul>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
         /// </ul>
-        pub fn set_shipping_option(
-            mut self,
-            input: std::option::Option<crate::model::ShippingOption>,
-        ) -> Self {
-            self.shipping_option = input;
-            self
+        pub fn set_shipping_option(mut self, input: std::option::Option<crate::model::ShippingOption>) -> Self {
+            self.shipping_option = input; self
         }
         /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
         pub fn inbound_shipment(mut self, input: crate::model::Shipment) -> Self {
@@ -3901,12 +3649,8 @@ pub mod shipping_details {
             self
         }
         /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
-        pub fn set_inbound_shipment(
-            mut self,
-            input: std::option::Option<crate::model::Shipment>,
-        ) -> Self {
-            self.inbound_shipment = input;
-            self
+        pub fn set_inbound_shipment(mut self, input: std::option::Option<crate::model::Shipment>) -> Self {
+            self.inbound_shipment = input; self
         }
         /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
         pub fn outbound_shipment(mut self, input: crate::model::Shipment) -> Self {
@@ -3914,22 +3658,23 @@ pub mod shipping_details {
             self
         }
         /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
-        pub fn set_outbound_shipment(
-            mut self,
-            input: std::option::Option<crate::model::Shipment>,
-        ) -> Self {
-            self.outbound_shipment = input;
-            self
+        pub fn set_outbound_shipment(mut self, input: std::option::Option<crate::model::Shipment>) -> Self {
+            self.outbound_shipment = input; self
         }
         /// Consumes the builder and constructs a [`ShippingDetails`](crate::model::ShippingDetails).
         pub fn build(self) -> crate::model::ShippingDetails {
             crate::model::ShippingDetails {
-                shipping_option: self.shipping_option,
-                inbound_shipment: self.inbound_shipment,
-                outbound_shipment: self.outbound_shipment,
+                shipping_option: self.shipping_option
+                ,
+                inbound_shipment: self.inbound_shipment
+                ,
+                outbound_shipment: self.outbound_shipment
+                ,
             }
         }
     }
+    
+    
 }
 impl ShippingDetails {
     /// Creates a new builder-style object to manufacture [`ShippingDetails`](crate::model::ShippingDetails).
@@ -3941,29 +3686,29 @@ impl ShippingDetails {
 /// <p>The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Shipment {
+pub struct Shipment  {
     /// <p>Status information for a shipment.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
+    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> 
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
     #[doc(hidden)]
     pub tracking_number: std::option::Option<std::string::String>,
 }
 impl Shipment {
     /// <p>Status information for a shipment.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
-    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
+    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> 
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
-    pub fn tracking_number(&self) -> std::option::Option<&str> {
+    pub fn tracking_number(&self) -> std::option::Option<& str> {
         self.tracking_number.as_deref()
     }
 }
 /// See [`Shipment`](crate::model::Shipment).
 pub mod shipment {
-
+    
     /// A builder for [`Shipment`](crate::model::Shipment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3978,32 +3723,31 @@ pub mod shipment {
         }
         /// <p>Status information for a shipment.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
-        /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
+        /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> 
         /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
         pub fn tracking_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracking_number = Some(input.into());
             self
         }
-        /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
+        /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> 
         /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
-        pub fn set_tracking_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.tracking_number = input;
-            self
+        pub fn set_tracking_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tracking_number = input; self
         }
         /// Consumes the builder and constructs a [`Shipment`](crate::model::Shipment).
         pub fn build(self) -> crate::model::Shipment {
             crate::model::Shipment {
-                status: self.status,
-                tracking_number: self.tracking_number,
+                status: self.status
+                ,
+                tracking_number: self.tracking_number
+                ,
             }
         }
     }
+    
+    
 }
 impl Shipment {
     /// Creates a new builder-style object to manufacture [`Shipment`](crate::model::Shipment).
@@ -4015,7 +3759,7 @@ impl Shipment {
 /// <p>Contains metadata about a specific cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterMetadata {
+pub struct ClusterMetadata  {
     /// <p>The automatically generated ID for a cluster.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -4034,8 +3778,8 @@ pub struct ClusterMetadata {
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
-    /// <p>The type of Snowcone device to use for this cluster. </p> <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// <p>The type of Snowcone device to use for this cluster. </p> <note> 
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
     /// </note>
     #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
@@ -4048,12 +3792,12 @@ pub struct ClusterMetadata {
     /// <p>The automatically generated ID for a specific address.</p>
     #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
@@ -4068,84 +3812,81 @@ pub struct ClusterMetadata {
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
     #[doc(hidden)]
-    pub on_device_service_configuration:
-        std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
 }
 impl ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The optional description of the cluster.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The current status of the cluster.</p>
-    pub fn cluster_state(&self) -> std::option::Option<&crate::model::ClusterState> {
+    pub fn cluster_state(&self) -> std::option::Option<& crate::model::ClusterState> {
         self.cluster_state.as_ref()
     }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::JobType> {
         self.job_type.as_ref()
     }
-    /// <p>The type of Snowcone device to use for this cluster. </p> <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// <p>The type of Snowcone device to use for this cluster. </p> <note> 
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
     /// </note>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<& crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+    pub fn resources(&self) -> std::option::Option<& crate::model::JobResource> {
         self.resources.as_ref()
     }
     /// <p>The automatically generated ID for a specific address.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> std::option::Option<& str> {
         self.address_id.as_deref()
     }
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    /// <ul>
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+    /// <ul> 
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
     /// </ul>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<& crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::model::Notification> {
         self.notification.as_ref()
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> std::option::Option<& str> {
         self.forwarding_address_id.as_deref()
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
+    pub fn tax_documents(&self) -> std::option::Option<& crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn on_device_service_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> std::option::Option<& crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
 }
 /// See [`ClusterMetadata`](crate::model::ClusterMetadata).
 pub mod cluster_metadata {
-
+    
     /// A builder for [`ClusterMetadata`](crate::model::ClusterMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4163,8 +3904,7 @@ pub mod cluster_metadata {
         pub(crate) notification: std::option::Option<crate::model::Notification>,
         pub(crate) forwarding_address_id: std::option::Option<std::string::String>,
         pub(crate) tax_documents: std::option::Option<crate::model::TaxDocuments>,
-        pub(crate) on_device_service_configuration:
-            std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+        pub(crate) on_device_service_configuration: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     }
     impl Builder {
         /// <p>The automatically generated ID for a cluster.</p>
@@ -4174,8 +3914,7 @@ pub mod cluster_metadata {
         }
         /// <p>The automatically generated ID for a cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// <p>The optional description of the cluster.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4184,8 +3923,7 @@ pub mod cluster_metadata {
         }
         /// <p>The optional description of the cluster.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4194,8 +3932,7 @@ pub mod cluster_metadata {
         }
         /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4204,8 +3941,7 @@ pub mod cluster_metadata {
         }
         /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The current status of the cluster.</p>
         pub fn cluster_state(mut self, input: crate::model::ClusterState) -> Self {
@@ -4213,12 +3949,8 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The current status of the cluster.</p>
-        pub fn set_cluster_state(
-            mut self,
-            input: std::option::Option<crate::model::ClusterState>,
-        ) -> Self {
-            self.cluster_state = input;
-            self
+        pub fn set_cluster_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
+            self.cluster_state = input; self
         }
         /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
@@ -4227,25 +3959,20 @@ pub mod cluster_metadata {
         }
         /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.job_type = input;
-            self
+            self.job_type = input; self
         }
-        /// <p>The type of Snowcone device to use for this cluster. </p> <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>The type of Snowcone device to use for this cluster. </p> <note> 
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
         /// </note>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snowcone device to use for this cluster. </p> <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>The type of Snowcone device to use for this cluster. </p> <note> 
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
         /// </note>
-        pub fn set_snowball_type(
-            mut self,
-            input: std::option::Option<crate::model::SnowballType>,
-        ) -> Self {
-            self.snowball_type = input;
-            self
+        pub fn set_snowball_type(mut self, input: std::option::Option<crate::model::SnowballType>) -> Self {
+            self.snowball_type = input; self
         }
         /// <p>The creation date for this cluster.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4253,12 +3980,8 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The creation date for this cluster.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
@@ -4266,12 +3989,8 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<crate::model::JobResource>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<crate::model::JobResource>) -> Self {
+            self.resources = input; self
         }
         /// <p>The automatically generated ID for a specific address.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4280,33 +3999,28 @@ pub mod cluster_metadata {
         }
         /// <p>The automatically generated ID for a specific address.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address_id = input;
-            self
+            self.address_id = input; self
         }
-        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
         /// </ul>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-        /// <ul>
-        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
-        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
-        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
-        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
+        /// <ul> 
+        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
         /// </ul>
-        pub fn set_shipping_option(
-            mut self,
-            input: std::option::Option<crate::model::ShippingOption>,
-        ) -> Self {
-            self.shipping_option = input;
-            self
+        pub fn set_shipping_option(mut self, input: std::option::Option<crate::model::ShippingOption>) -> Self {
+            self.shipping_option = input; self
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
@@ -4314,12 +4028,8 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-        pub fn set_notification(
-            mut self,
-            input: std::option::Option<crate::model::Notification>,
-        ) -> Self {
-            self.notification = input;
-            self
+        pub fn set_notification(mut self, input: std::option::Option<crate::model::Notification>) -> Self {
+            self.notification = input; self
         }
         /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4327,12 +4037,8 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-        pub fn set_forwarding_address_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.forwarding_address_id = input;
-            self
+        pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forwarding_address_id = input; self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
@@ -4340,50 +4046,56 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
-        pub fn set_tax_documents(
-            mut self,
-            input: std::option::Option<crate::model::TaxDocuments>,
-        ) -> Self {
-            self.tax_documents = input;
-            self
+        pub fn set_tax_documents(mut self, input: std::option::Option<crate::model::TaxDocuments>) -> Self {
+            self.tax_documents = input; self
         }
         /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-        pub fn on_device_service_configuration(
-            mut self,
-            input: crate::model::OnDeviceServiceConfiguration,
-        ) -> Self {
+        pub fn on_device_service_configuration(mut self, input: crate::model::OnDeviceServiceConfiguration) -> Self {
             self.on_device_service_configuration = Some(input);
             self
         }
         /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-        pub fn set_on_device_service_configuration(
-            mut self,
-            input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-        ) -> Self {
-            self.on_device_service_configuration = input;
-            self
+        pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::model::OnDeviceServiceConfiguration>) -> Self {
+            self.on_device_service_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ClusterMetadata`](crate::model::ClusterMetadata).
         pub fn build(self) -> crate::model::ClusterMetadata {
             crate::model::ClusterMetadata {
-                cluster_id: self.cluster_id,
-                description: self.description,
-                kms_key_arn: self.kms_key_arn,
-                role_arn: self.role_arn,
-                cluster_state: self.cluster_state,
-                job_type: self.job_type,
-                snowball_type: self.snowball_type,
-                creation_date: self.creation_date,
-                resources: self.resources,
-                address_id: self.address_id,
-                shipping_option: self.shipping_option,
-                notification: self.notification,
-                forwarding_address_id: self.forwarding_address_id,
-                tax_documents: self.tax_documents,
-                on_device_service_configuration: self.on_device_service_configuration,
+                cluster_id: self.cluster_id
+                ,
+                description: self.description
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                cluster_state: self.cluster_state
+                ,
+                job_type: self.job_type
+                ,
+                snowball_type: self.snowball_type
+                ,
+                creation_date: self.creation_date
+                ,
+                resources: self.resources
+                ,
+                address_id: self.address_id
+                ,
+                shipping_option: self.shipping_option
+                ,
+                notification: self.notification
+                ,
+                forwarding_address_id: self.forwarding_address_id
+                ,
+                tax_documents: self.tax_documents
+                ,
+                on_device_service_configuration: self.on_device_service_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterMetadata {
     /// Creates a new builder-style object to manufacture [`ClusterMetadata`](crate::model::ClusterMetadata).
@@ -4395,7 +4107,7 @@ impl ClusterMetadata {
 /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Address {
+pub struct Address  {
     /// <p>The unique ID for an address.</p>
     #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
@@ -4441,55 +4153,55 @@ pub struct Address {
 }
 impl Address {
     /// <p>The unique ID for an address.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>The name of a person to receive a Snow device at an address.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the company to receive a Snow device at an address.</p>
-    pub fn company(&self) -> std::option::Option<&str> {
+    pub fn company(&self) -> std::option::Option<& str> {
         self.company.as_deref()
     }
     /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
-    pub fn street1(&self) -> std::option::Option<&str> {
+    pub fn street1(&self) -> std::option::Option<& str> {
         self.street1.as_deref()
     }
     /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
-    pub fn street2(&self) -> std::option::Option<&str> {
+    pub fn street2(&self) -> std::option::Option<& str> {
         self.street2.as_deref()
     }
     /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
-    pub fn street3(&self) -> std::option::Option<&str> {
+    pub fn street3(&self) -> std::option::Option<& str> {
         self.street3.as_deref()
     }
     /// <p>The city in an address that a Snow device is to be delivered to.</p>
-    pub fn city(&self) -> std::option::Option<&str> {
+    pub fn city(&self) -> std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
-    pub fn state_or_province(&self) -> std::option::Option<&str> {
+    pub fn state_or_province(&self) -> std::option::Option<& str> {
         self.state_or_province.as_deref()
     }
     /// <p>This field is no longer used and the value is ignored.</p>
-    pub fn prefecture_or_district(&self) -> std::option::Option<&str> {
+    pub fn prefecture_or_district(&self) -> std::option::Option<& str> {
         self.prefecture_or_district.as_deref()
     }
     /// <p>This field is no longer used and the value is ignored.</p>
-    pub fn landmark(&self) -> std::option::Option<&str> {
+    pub fn landmark(&self) -> std::option::Option<& str> {
         self.landmark.as_deref()
     }
     /// <p>The country in an address that a Snow device is to be delivered to.</p>
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
-    pub fn postal_code(&self) -> std::option::Option<&str> {
+    pub fn postal_code(&self) -> std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
@@ -4499,7 +4211,7 @@ impl Address {
 }
 /// See [`Address`](crate::model::Address).
 pub mod address {
-
+    
     /// A builder for [`Address`](crate::model::Address).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4526,8 +4238,7 @@ pub mod address {
         }
         /// <p>The unique ID for an address.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address_id = input;
-            self
+            self.address_id = input; self
         }
         /// <p>The name of a person to receive a Snow device at an address.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4536,8 +4247,7 @@ pub mod address {
         }
         /// <p>The name of a person to receive a Snow device at an address.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the company to receive a Snow device at an address.</p>
         pub fn company(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4546,8 +4256,7 @@ pub mod address {
         }
         /// <p>The name of the company to receive a Snow device at an address.</p>
         pub fn set_company(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.company = input;
-            self
+            self.company = input; self
         }
         /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
         pub fn street1(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4556,8 +4265,7 @@ pub mod address {
         }
         /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
         pub fn set_street1(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street1 = input;
-            self
+            self.street1 = input; self
         }
         /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
         pub fn street2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4566,8 +4274,7 @@ pub mod address {
         }
         /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
         pub fn set_street2(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street2 = input;
-            self
+            self.street2 = input; self
         }
         /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
         pub fn street3(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4576,8 +4283,7 @@ pub mod address {
         }
         /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
         pub fn set_street3(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street3 = input;
-            self
+            self.street3 = input; self
         }
         /// <p>The city in an address that a Snow device is to be delivered to.</p>
         pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4586,8 +4292,7 @@ pub mod address {
         }
         /// <p>The city in an address that a Snow device is to be delivered to.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.city = input;
-            self
+            self.city = input; self
         }
         /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
         pub fn state_or_province(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4595,12 +4300,8 @@ pub mod address {
             self
         }
         /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
-        pub fn set_state_or_province(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_or_province = input;
-            self
+        pub fn set_state_or_province(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_or_province = input; self
         }
         /// <p>This field is no longer used and the value is ignored.</p>
         pub fn prefecture_or_district(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4608,12 +4309,8 @@ pub mod address {
             self
         }
         /// <p>This field is no longer used and the value is ignored.</p>
-        pub fn set_prefecture_or_district(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.prefecture_or_district = input;
-            self
+        pub fn set_prefecture_or_district(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefecture_or_district = input; self
         }
         /// <p>This field is no longer used and the value is ignored.</p>
         pub fn landmark(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4622,8 +4319,7 @@ pub mod address {
         }
         /// <p>This field is no longer used and the value is ignored.</p>
         pub fn set_landmark(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.landmark = input;
-            self
+            self.landmark = input; self
         }
         /// <p>The country in an address that a Snow device is to be delivered to.</p>
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4632,8 +4328,7 @@ pub mod address {
         }
         /// <p>The country in an address that a Snow device is to be delivered to.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
         pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4642,8 +4337,7 @@ pub mod address {
         }
         /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.postal_code = input;
-            self
+            self.postal_code = input; self
         }
         /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4652,8 +4346,7 @@ pub mod address {
         }
         /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
         pub fn is_restricted(mut self, input: bool) -> Self {
@@ -4662,29 +4355,45 @@ pub mod address {
         }
         /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
         pub fn set_is_restricted(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_restricted = input;
-            self
+            self.is_restricted = input; self
         }
         /// Consumes the builder and constructs a [`Address`](crate::model::Address).
         pub fn build(self) -> crate::model::Address {
             crate::model::Address {
-                address_id: self.address_id,
-                name: self.name,
-                company: self.company,
-                street1: self.street1,
-                street2: self.street2,
-                street3: self.street3,
-                city: self.city,
-                state_or_province: self.state_or_province,
-                prefecture_or_district: self.prefecture_or_district,
-                landmark: self.landmark,
-                country: self.country,
-                postal_code: self.postal_code,
-                phone_number: self.phone_number,
-                is_restricted: self.is_restricted.unwrap_or_default(),
+                address_id: self.address_id
+                ,
+                name: self.name
+                ,
+                company: self.company
+                ,
+                street1: self.street1
+                ,
+                street2: self.street2
+                ,
+                street3: self.street3
+                ,
+                city: self.city
+                ,
+                state_or_province: self.state_or_province
+                ,
+                prefecture_or_district: self.prefecture_or_district
+                ,
+                landmark: self.landmark
+                ,
+                country: self.country
+                ,
+                postal_code: self.postal_code
+                ,
+                phone_number: self.phone_number
+                ,
+                is_restricted: self.is_restricted
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
@@ -4692,3 +4401,4 @@ impl Address {
         crate::model::address::Builder::default()
     }
 }
+

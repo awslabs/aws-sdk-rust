@@ -3,7 +3,7 @@
 /// <p>A structure that contains some information about one workspace in the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct WorkspaceSummary {
+pub struct WorkspaceSummary  {
     /// <p>The date that the workspace was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -27,8 +27,7 @@ pub struct WorkspaceSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
     #[doc(hidden)]
-    pub notification_destinations:
-        std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
+    pub notification_destinations: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
     /// <p>The current status of the workspace.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
@@ -37,61 +36,55 @@ pub struct WorkspaceSummary {
     pub authentication: std::option::Option<crate::model::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The customer-entered description of the workspace.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The Grafana version that the workspace is running.</p>
-    pub fn grafana_version(&self) -> std::option::Option<&str> {
+    pub fn grafana_version(&self) -> std::option::Option<& str> {
         self.grafana_version.as_deref()
     }
     /// <p>The unique ID of the workspace.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified.as_ref()
     }
     /// <p>The name of the workspace.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub fn notification_destinations(
-        &self,
-    ) -> std::option::Option<&[crate::model::NotificationDestinationType]> {
+    pub fn notification_destinations(&self) -> std::option::Option<& [crate::model::NotificationDestinationType]> {
         self.notification_destinations.as_deref()
     }
     /// <p>The current status of the workspace.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::WorkspaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationSummary> {
+    pub fn authentication(&self) -> std::option::Option<& crate::model::AuthenticationSummary> {
         self.authentication.as_ref()
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for WorkspaceSummary {
+impl  std::fmt::Debug for WorkspaceSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceSummary");
         formatter.field("created", &self.created);
@@ -110,7 +103,7 @@ impl std::fmt::Debug for WorkspaceSummary {
 }
 /// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
 pub mod workspace_summary {
-
+    
     /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -121,13 +114,10 @@ pub mod workspace_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) notification_destinations:
-            std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
+        pub(crate) notification_destinations: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationSummary>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The date that the workspace was created.</p>
@@ -136,12 +126,8 @@ pub mod workspace_summary {
             self
         }
         /// <p>The date that the workspace was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The customer-entered description of the workspace.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +136,7 @@ pub mod workspace_summary {
         }
         /// <p>The customer-entered description of the workspace.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,8 +145,7 @@ pub mod workspace_summary {
         }
         /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The Grafana version that the workspace is running.</p>
         pub fn grafana_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,12 +153,8 @@ pub mod workspace_summary {
             self
         }
         /// <p>The Grafana version that the workspace is running.</p>
-        pub fn set_grafana_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.grafana_version = input;
-            self
+        pub fn set_grafana_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grafana_version = input; self
         }
         /// <p>The unique ID of the workspace.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,8 +163,7 @@ pub mod workspace_summary {
         }
         /// <p>The unique ID of the workspace.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The most recent date that the workspace was modified.</p>
         pub fn modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,12 +171,8 @@ pub mod workspace_summary {
             self
         }
         /// <p>The most recent date that the workspace was modified.</p>
-        pub fn set_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified = input;
-            self
+        pub fn set_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified = input; self
         }
         /// <p>The name of the workspace.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,30 +181,22 @@ pub mod workspace_summary {
         }
         /// <p>The name of the workspace.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `notification_destinations`.
         ///
         /// To override the contents of this collection use [`set_notification_destinations`](Self::set_notification_destinations).
         ///
         /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-        pub fn notification_destinations(
-            mut self,
-            input: crate::model::NotificationDestinationType,
-        ) -> Self {
+        pub fn notification_destinations(mut self, input: crate::model::NotificationDestinationType) -> Self {
             let mut v = self.notification_destinations.unwrap_or_default();
-            v.push(input);
-            self.notification_destinations = Some(v);
-            self
+                            v.push(input);
+                            self.notification_destinations = Some(v);
+                            self
         }
         /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-        pub fn set_notification_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
-        ) -> Self {
-            self.notification_destinations = input;
-            self
+        pub fn set_notification_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>) -> Self {
+            self.notification_destinations = input; self
         }
         /// <p>The current status of the workspace.</p>
         pub fn status(mut self, input: crate::model::WorkspaceStatus) -> Self {
@@ -237,12 +204,8 @@ pub mod workspace_summary {
             self
         }
         /// <p>The current status of the workspace.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorkspaceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A structure containing information about the authentication methods used in the workspace.</p>
         pub fn authentication(mut self, input: crate::model::AuthenticationSummary) -> Self {
@@ -250,52 +213,49 @@ pub mod workspace_summary {
             self
         }
         /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationSummary>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<crate::model::AuthenticationSummary>) -> Self {
+            self.authentication = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the workspace.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags associated with the workspace.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::model::WorkspaceSummary).
         pub fn build(self) -> crate::model::WorkspaceSummary {
             crate::model::WorkspaceSummary {
-                created: self.created,
-                description: self.description,
-                endpoint: self.endpoint,
-                grafana_version: self.grafana_version,
-                id: self.id,
-                modified: self.modified,
-                name: self.name,
-                notification_destinations: self.notification_destinations,
-                status: self.status,
-                authentication: self.authentication,
-                tags: self.tags,
+                created: self.created
+                ,
+                description: self.description
+                ,
+                endpoint: self.endpoint
+                ,
+                grafana_version: self.grafana_version
+                ,
+                id: self.id
+                ,
+                modified: self.modified
+                ,
+                name: self.name
+                ,
+                notification_destinations: self.notification_destinations
+                ,
+                status: self.status
+                ,
+                authentication: self.authentication
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -316,6 +276,8 @@ pub mod workspace_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl WorkspaceSummary {
     /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
@@ -327,7 +289,7 @@ impl WorkspaceSummary {
 /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication, and whether that authentication is fully configured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationSummary {
+pub struct AuthenticationSummary  {
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     #[doc(hidden)]
     pub providers: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -337,26 +299,22 @@ pub struct AuthenticationSummary {
 }
 impl AuthenticationSummary {
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub fn providers(&self) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
+    pub fn providers(&self) -> std::option::Option<& [crate::model::AuthenticationProviderTypes]> {
         self.providers.as_deref()
     }
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
-    pub fn saml_configuration_status(
-        &self,
-    ) -> std::option::Option<&crate::model::SamlConfigurationStatus> {
+    pub fn saml_configuration_status(&self) -> std::option::Option<& crate::model::SamlConfigurationStatus> {
         self.saml_configuration_status.as_ref()
     }
 }
 /// See [`AuthenticationSummary`](crate::model::AuthenticationSummary).
 pub mod authentication_summary {
-
+    
     /// A builder for [`AuthenticationSummary`](crate::model::AuthenticationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) providers:
-            std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
-        pub(crate) saml_configuration_status:
-            std::option::Option<crate::model::SamlConfigurationStatus>,
+        pub(crate) providers: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
+        pub(crate) saml_configuration_status: std::option::Option<crate::model::SamlConfigurationStatus>,
     }
     impl Builder {
         /// Appends an item to `providers`.
@@ -366,42 +324,35 @@ pub mod authentication_summary {
         /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
         pub fn providers(mut self, input: crate::model::AuthenticationProviderTypes) -> Self {
             let mut v = self.providers.unwrap_or_default();
-            v.push(input);
-            self.providers = Some(v);
-            self
+                            v.push(input);
+                            self.providers = Some(v);
+                            self
         }
         /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-        pub fn set_providers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
-        ) -> Self {
-            self.providers = input;
-            self
+        pub fn set_providers(mut self, input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>) -> Self {
+            self.providers = input; self
         }
         /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
-        pub fn saml_configuration_status(
-            mut self,
-            input: crate::model::SamlConfigurationStatus,
-        ) -> Self {
+        pub fn saml_configuration_status(mut self, input: crate::model::SamlConfigurationStatus) -> Self {
             self.saml_configuration_status = Some(input);
             self
         }
         /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
-        pub fn set_saml_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::SamlConfigurationStatus>,
-        ) -> Self {
-            self.saml_configuration_status = input;
-            self
+        pub fn set_saml_configuration_status(mut self, input: std::option::Option<crate::model::SamlConfigurationStatus>) -> Self {
+            self.saml_configuration_status = input; self
         }
         /// Consumes the builder and constructs a [`AuthenticationSummary`](crate::model::AuthenticationSummary).
         pub fn build(self) -> crate::model::AuthenticationSummary {
             crate::model::AuthenticationSummary {
-                providers: self.providers,
-                saml_configuration_status: self.saml_configuration_status,
+                providers: self.providers
+                ,
+                saml_configuration_status: self.saml_configuration_status
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthenticationSummary {
     /// Creates a new builder-style object to manufacture [`AuthenticationSummary`](crate::model::AuthenticationSummary).
@@ -416,9 +367,9 @@ impl AuthenticationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let samlconfigurationstatus = unimplemented!();
 /// match samlconfigurationstatus {
@@ -440,60 +391,52 @@ impl AuthenticationSummary {
 /// Specifically, when `samlconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SamlConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SamlConfigurationStatus {
     /// Indicates that SAML on an AMG workspace is enabled and has been configured.
     Configured,
     /// Indicates that SAML on an AMG workspace is enabled but has not been configured.
     NotConfigured,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SamlConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "CONFIGURED" => SamlConfigurationStatus::Configured,
             "NOT_CONFIGURED" => SamlConfigurationStatus::NotConfigured,
-            other => SamlConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SamlConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SamlConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SamlConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SamlConfigurationStatus::from(s))
+                }
+            }
 impl SamlConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SamlConfigurationStatus::Configured => "CONFIGURED",
             SamlConfigurationStatus::NotConfigured => "NOT_CONFIGURED",
-            SamlConfigurationStatus::Unknown(value) => value.as_str(),
+            SamlConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFIGURED", "NOT_CONFIGURED"]
+        &[
+            "CONFIGURED", "NOT_CONFIGURED"
+        ]
     }
 }
 impl AsRef<str> for SamlConfigurationStatus {
@@ -508,9 +451,9 @@ impl AsRef<str> for SamlConfigurationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authenticationprovidertypes = unimplemented!();
 /// match authenticationprovidertypes {
@@ -532,60 +475,52 @@ impl AsRef<str> for SamlConfigurationStatus {
 /// Specifically, when `authenticationprovidertypes` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthenticationProviderTypes::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthenticationProviderTypes {
     /// Indicates that AMG workspace has AWS SSO enabled as its authentication provider.
     AwsSso,
     /// Indicates that the AMG workspace has SAML enabled as its authentication provider.
     Saml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthenticationProviderTypes {
     fn from(s: &str) -> Self {
         match s {
             "AWS_SSO" => AuthenticationProviderTypes::AwsSso,
             "SAML" => AuthenticationProviderTypes::Saml,
-            other => AuthenticationProviderTypes::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AuthenticationProviderTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthenticationProviderTypes {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthenticationProviderTypes::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthenticationProviderTypes::from(s))
+                }
+            }
 impl AuthenticationProviderTypes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthenticationProviderTypes::AwsSso => "AWS_SSO",
             AuthenticationProviderTypes::Saml => "SAML",
-            AuthenticationProviderTypes::Unknown(value) => value.as_str(),
+            AuthenticationProviderTypes::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_SSO", "SAML"]
+        &[
+            "AWS_SSO", "SAML"
+        ]
     }
 }
 impl AsRef<str> for AuthenticationProviderTypes {
@@ -600,9 +535,9 @@ impl AsRef<str> for AuthenticationProviderTypes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let workspacestatus = unimplemented!();
 /// match workspacestatus {
@@ -633,22 +568,14 @@ impl AsRef<str> for AuthenticationProviderTypes {
 /// Specifically, when `workspacestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorkspaceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorkspaceStatus {
     /// Workspace is active.
     Active,
@@ -673,7 +600,7 @@ pub enum WorkspaceStatus {
     /// Workspace is being upgraded to enterprise.
     Upgrading,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorkspaceStatus {
     fn from(s: &str) -> Self {
@@ -689,17 +616,17 @@ impl std::convert::From<&str> for WorkspaceStatus {
             "UPDATING" => WorkspaceStatus::Updating,
             "UPGRADE_FAILED" => WorkspaceStatus::UpgradeFailed,
             "UPGRADING" => WorkspaceStatus::Upgrading,
-            other => WorkspaceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => WorkspaceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WorkspaceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkspaceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorkspaceStatus::from(s))
+                }
+            }
 impl WorkspaceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -715,23 +642,13 @@ impl WorkspaceStatus {
             WorkspaceStatus::Updating => "UPDATING",
             WorkspaceStatus::UpgradeFailed => "UPGRADE_FAILED",
             WorkspaceStatus::Upgrading => "UPGRADING",
-            WorkspaceStatus::Unknown(value) => value.as_str(),
+            WorkspaceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETING",
-            "DELETION_FAILED",
-            "FAILED",
-            "LICENSE_REMOVAL_FAILED",
-            "UPDATE_FAILED",
-            "UPDATING",
-            "UPGRADE_FAILED",
-            "UPGRADING",
+            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "DELETION_FAILED", "FAILED", "LICENSE_REMOVAL_FAILED", "UPDATE_FAILED", "UPDATING", "UPGRADE_FAILED", "UPGRADING"
         ]
     }
 }
@@ -747,9 +664,9 @@ impl AsRef<str> for WorkspaceStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let notificationdestinationtype = unimplemented!();
 /// match notificationdestinationtype {
@@ -770,56 +687,48 @@ impl AsRef<str> for WorkspaceStatus {
 /// Specifically, when `notificationdestinationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotificationDestinationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NotificationDestinationType {
     /// AWS Simple Notification Service
     Sns,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotificationDestinationType {
     fn from(s: &str) -> Self {
         match s {
             "SNS" => NotificationDestinationType::Sns,
-            other => NotificationDestinationType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NotificationDestinationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NotificationDestinationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationDestinationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NotificationDestinationType::from(s))
+                }
+            }
 impl NotificationDestinationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NotificationDestinationType::Sns => "SNS",
-            NotificationDestinationType::Unknown(value) => value.as_str(),
+            NotificationDestinationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SNS"]
+        &[
+            "SNS"
+        ]
     }
 }
 impl AsRef<str> for NotificationDestinationType {
@@ -831,7 +740,7 @@ impl AsRef<str> for NotificationDestinationType {
 /// <p>A structure that contains information about a request parameter that caused an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the field that caused the validation error.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -841,17 +750,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the field that caused the validation error.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A message describing why this field couldn't be validated.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -866,8 +775,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the field that caused the validation error.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A message describing why this field couldn't be validated.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -876,17 +784,20 @@ pub mod validation_exception_field {
         }
         /// <p>A message describing why this field couldn't be validated.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -901,9 +812,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -927,22 +838,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -953,7 +856,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -962,19 +865,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -983,16 +884,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANNOT_PARSE",
-            "FIELD_VALIDATION_FAILED",
-            "OTHER",
-            "UNKNOWN_OPERATION",
+            "CANNOT_PARSE", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
         ]
     }
 }
@@ -1005,7 +903,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>A structure containing information about an Amazon Managed Grafana workspace in your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct WorkspaceDescription {
+pub struct WorkspaceDescription  {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
     #[doc(hidden)]
     pub account_access_type: std::option::Option<crate::model::AccountAccessType>,
@@ -1038,13 +936,12 @@ pub struct WorkspaceDescription {
     pub organization_role_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
     #[doc(hidden)]
-    pub notification_destinations:
-        std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
+    pub notification_destinations: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
     #[doc(hidden)]
     pub organizational_units: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
-    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
+    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
     #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::PermissionType>,
@@ -1074,83 +971,80 @@ pub struct WorkspaceDescription {
     pub authentication: std::option::Option<crate::model::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
     #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
 impl WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
-    pub fn account_access_type(&self) -> std::option::Option<&crate::model::AccountAccessType> {
+    pub fn account_access_type(&self) -> std::option::Option<& crate::model::AccountAccessType> {
         self.account_access_type.as_ref()
     }
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
-    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSourceType]> {
+    pub fn data_sources(&self) -> std::option::Option<& [crate::model::DataSourceType]> {
         self.data_sources.as_deref()
     }
     /// <p>The user-defined description of the workspace.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The version of Grafana supported in this workspace.</p>
-    pub fn grafana_version(&self) -> std::option::Option<&str> {
+    pub fn grafana_version(&self) -> std::option::Option<& str> {
         self.grafana_version.as_deref()
     }
     /// <p>The unique ID of this workspace.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified.as_ref()
     }
     /// <p>The name of the workspace.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
-    pub fn organization_role_name(&self) -> std::option::Option<&str> {
+    pub fn organization_role_name(&self) -> std::option::Option<& str> {
         self.organization_role_name.as_deref()
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
-    pub fn notification_destinations(
-        &self,
-    ) -> std::option::Option<&[crate::model::NotificationDestinationType]> {
+    pub fn notification_destinations(&self) -> std::option::Option<& [crate::model::NotificationDestinationType]> {
         self.notification_destinations.as_deref()
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn organizational_units(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn organizational_units(&self) -> std::option::Option<& [std::string::String]> {
         self.organizational_units.as_deref()
     }
-    /// <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
-    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
+    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
-    pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
+    pub fn permission_type(&self) -> std::option::Option<& crate::model::PermissionType> {
         self.permission_type.as_ref()
     }
     /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
-    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+    pub fn stack_set_name(&self) -> std::option::Option<& str> {
         self.stack_set_name.as_deref()
     }
     /// <p>The current status of the workspace.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::WorkspaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
-    pub fn workspace_role_arn(&self) -> std::option::Option<&str> {
+    pub fn workspace_role_arn(&self) -> std::option::Option<& str> {
         self.workspace_role_arn.as_deref()
     }
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
-    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+    pub fn license_type(&self) -> std::option::Option<& crate::model::LicenseType> {
         self.license_type.as_ref()
     }
     /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
@@ -1158,30 +1052,27 @@ impl WorkspaceDescription {
         self.free_trial_consumed
     }
     /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
-    pub fn license_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn license_expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.license_expiration.as_ref()
     }
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
-    pub fn free_trial_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn free_trial_expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.free_trial_expiration.as_ref()
     }
     /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationSummary> {
+    pub fn authentication(&self) -> std::option::Option<& crate::model::AuthenticationSummary> {
         self.authentication.as_ref()
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<& crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for WorkspaceDescription {
+impl  std::fmt::Debug for WorkspaceDescription  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceDescription");
         formatter.field("account_access_type", &self.account_access_type);
@@ -1212,7 +1103,7 @@ impl std::fmt::Debug for WorkspaceDescription {
 }
 /// See [`WorkspaceDescription`](crate::model::WorkspaceDescription).
 pub mod workspace_description {
-
+    
     /// A builder for [`WorkspaceDescription`](crate::model::WorkspaceDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1226,8 +1117,7 @@ pub mod workspace_description {
         pub(crate) modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) organization_role_name: std::option::Option<std::string::String>,
-        pub(crate) notification_destinations:
-            std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
+        pub(crate) notification_destinations: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
         pub(crate) organizational_units: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) permission_type: std::option::Option<crate::model::PermissionType>,
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -1238,9 +1128,7 @@ pub mod workspace_description {
         pub(crate) license_expiration: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) free_trial_expiration: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationSummary>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     }
     impl Builder {
@@ -1250,12 +1138,8 @@ pub mod workspace_description {
             self
         }
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
-        pub fn set_account_access_type(
-            mut self,
-            input: std::option::Option<crate::model::AccountAccessType>,
-        ) -> Self {
-            self.account_access_type = input;
-            self
+        pub fn set_account_access_type(mut self, input: std::option::Option<crate::model::AccountAccessType>) -> Self {
+            self.account_access_type = input; self
         }
         /// <p>The date that the workspace was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1263,12 +1147,8 @@ pub mod workspace_description {
             self
         }
         /// <p>The date that the workspace was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// Appends an item to `data_sources`.
         ///
@@ -1277,17 +1157,13 @@ pub mod workspace_description {
         /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
         pub fn data_sources(mut self, input: crate::model::DataSourceType) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input);
-            self.data_sources = Some(v);
-            self
+                            v.push(input);
+                            self.data_sources = Some(v);
+                            self
         }
         /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
-        pub fn set_data_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>,
-        ) -> Self {
-            self.data_sources = input;
-            self
+        pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>) -> Self {
+            self.data_sources = input; self
         }
         /// <p>The user-defined description of the workspace.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1296,8 +1172,7 @@ pub mod workspace_description {
         }
         /// <p>The user-defined description of the workspace.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1306,8 +1181,7 @@ pub mod workspace_description {
         }
         /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The version of Grafana supported in this workspace.</p>
         pub fn grafana_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1315,12 +1189,8 @@ pub mod workspace_description {
             self
         }
         /// <p>The version of Grafana supported in this workspace.</p>
-        pub fn set_grafana_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.grafana_version = input;
-            self
+        pub fn set_grafana_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grafana_version = input; self
         }
         /// <p>The unique ID of this workspace.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1329,8 +1199,7 @@ pub mod workspace_description {
         }
         /// <p>The unique ID of this workspace.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The most recent date that the workspace was modified.</p>
         pub fn modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1338,12 +1207,8 @@ pub mod workspace_description {
             self
         }
         /// <p>The most recent date that the workspace was modified.</p>
-        pub fn set_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified = input;
-            self
+        pub fn set_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified = input; self
         }
         /// <p>The name of the workspace.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1352,8 +1217,7 @@ pub mod workspace_description {
         }
         /// <p>The name of the workspace.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
         pub fn organization_role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1361,34 +1225,23 @@ pub mod workspace_description {
             self
         }
         /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
-        pub fn set_organization_role_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.organization_role_name = input;
-            self
+        pub fn set_organization_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.organization_role_name = input; self
         }
         /// Appends an item to `notification_destinations`.
         ///
         /// To override the contents of this collection use [`set_notification_destinations`](Self::set_notification_destinations).
         ///
         /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
-        pub fn notification_destinations(
-            mut self,
-            input: crate::model::NotificationDestinationType,
-        ) -> Self {
+        pub fn notification_destinations(mut self, input: crate::model::NotificationDestinationType) -> Self {
             let mut v = self.notification_destinations.unwrap_or_default();
-            v.push(input);
-            self.notification_destinations = Some(v);
-            self
+                            v.push(input);
+                            self.notification_destinations = Some(v);
+                            self
         }
         /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
-        pub fn set_notification_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
-        ) -> Self {
-            self.notification_destinations = input;
-            self
+        pub fn set_notification_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>) -> Self {
+            self.notification_destinations = input; self
         }
         /// Appends an item to `organizational_units`.
         ///
@@ -1397,34 +1250,26 @@ pub mod workspace_description {
         /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
         pub fn organizational_units(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.organizational_units.unwrap_or_default();
-            v.push(input.into());
-            self.organizational_units = Some(v);
-            self
+                            v.push(input.into());
+                            self.organizational_units = Some(v);
+                            self
         }
         /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-        pub fn set_organizational_units(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.organizational_units = input;
-            self
+        pub fn set_organizational_units(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.organizational_units = input; self
         }
-        /// <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
-        /// <p>If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+        /// <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
+        /// <p>If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
         pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
             self.permission_type = Some(input);
             self
         }
-        /// <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
-        /// <p>If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+        /// <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
+        /// <p>If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
-        pub fn set_permission_type(
-            mut self,
-            input: std::option::Option<crate::model::PermissionType>,
-        ) -> Self {
-            self.permission_type = input;
-            self
+        pub fn set_permission_type(mut self, input: std::option::Option<crate::model::PermissionType>) -> Self {
+            self.permission_type = input; self
         }
         /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
         pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1432,12 +1277,8 @@ pub mod workspace_description {
             self
         }
         /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
-        pub fn set_stack_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.stack_set_name = input;
-            self
+        pub fn set_stack_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_set_name = input; self
         }
         /// <p>The current status of the workspace.</p>
         pub fn status(mut self, input: crate::model::WorkspaceStatus) -> Self {
@@ -1445,12 +1286,8 @@ pub mod workspace_description {
             self
         }
         /// <p>The current status of the workspace.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorkspaceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
         pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1458,12 +1295,8 @@ pub mod workspace_description {
             self
         }
         /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
-        pub fn set_workspace_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workspace_role_arn = input;
-            self
+        pub fn set_workspace_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_role_arn = input; self
         }
         /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
@@ -1471,12 +1304,8 @@ pub mod workspace_description {
             self
         }
         /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
-        pub fn set_license_type(
-            mut self,
-            input: std::option::Option<crate::model::LicenseType>,
-        ) -> Self {
-            self.license_type = input;
-            self
+        pub fn set_license_type(mut self, input: std::option::Option<crate::model::LicenseType>) -> Self {
+            self.license_type = input; self
         }
         /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
         pub fn free_trial_consumed(mut self, input: bool) -> Self {
@@ -1485,8 +1314,7 @@ pub mod workspace_description {
         }
         /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
         pub fn set_free_trial_consumed(mut self, input: std::option::Option<bool>) -> Self {
-            self.free_trial_consumed = input;
-            self
+            self.free_trial_consumed = input; self
         }
         /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
         pub fn license_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1494,12 +1322,8 @@ pub mod workspace_description {
             self
         }
         /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
-        pub fn set_license_expiration(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.license_expiration = input;
-            self
+        pub fn set_license_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.license_expiration = input; self
         }
         /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
         pub fn free_trial_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1507,12 +1331,8 @@ pub mod workspace_description {
             self
         }
         /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
-        pub fn set_free_trial_expiration(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.free_trial_expiration = input;
-            self
+        pub fn set_free_trial_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.free_trial_expiration = input; self
         }
         /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
         pub fn authentication(mut self, input: crate::model::AuthenticationSummary) -> Self {
@@ -1520,37 +1340,23 @@ pub mod workspace_description {
             self
         }
         /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationSummary>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<crate::model::AuthenticationSummary>) -> Self {
+            self.authentication = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the workspace.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags associated with the workspace.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
@@ -1558,39 +1364,58 @@ pub mod workspace_description {
             self
         }
         /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
-        pub fn set_vpc_configuration(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfiguration>,
-        ) -> Self {
-            self.vpc_configuration = input;
-            self
+        pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::model::VpcConfiguration>) -> Self {
+            self.vpc_configuration = input; self
         }
         /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::model::WorkspaceDescription).
         pub fn build(self) -> crate::model::WorkspaceDescription {
             crate::model::WorkspaceDescription {
-                account_access_type: self.account_access_type,
-                created: self.created,
-                data_sources: self.data_sources,
-                description: self.description,
-                endpoint: self.endpoint,
-                grafana_version: self.grafana_version,
-                id: self.id,
-                modified: self.modified,
-                name: self.name,
-                organization_role_name: self.organization_role_name,
-                notification_destinations: self.notification_destinations,
-                organizational_units: self.organizational_units,
-                permission_type: self.permission_type,
-                stack_set_name: self.stack_set_name,
-                status: self.status,
-                workspace_role_arn: self.workspace_role_arn,
-                license_type: self.license_type,
-                free_trial_consumed: self.free_trial_consumed,
-                license_expiration: self.license_expiration,
-                free_trial_expiration: self.free_trial_expiration,
-                authentication: self.authentication,
-                tags: self.tags,
-                vpc_configuration: self.vpc_configuration,
+                account_access_type: self.account_access_type
+                ,
+                created: self.created
+                ,
+                data_sources: self.data_sources
+                ,
+                description: self.description
+                ,
+                endpoint: self.endpoint
+                ,
+                grafana_version: self.grafana_version
+                ,
+                id: self.id
+                ,
+                modified: self.modified
+                ,
+                name: self.name
+                ,
+                organization_role_name: self.organization_role_name
+                ,
+                notification_destinations: self.notification_destinations
+                ,
+                organizational_units: self.organizational_units
+                ,
+                permission_type: self.permission_type
+                ,
+                stack_set_name: self.stack_set_name
+                ,
+                status: self.status
+                ,
+                workspace_role_arn: self.workspace_role_arn
+                ,
+                license_type: self.license_type
+                ,
+                free_trial_consumed: self.free_trial_consumed
+                ,
+                license_expiration: self.license_expiration
+                ,
+                free_trial_expiration: self.free_trial_expiration
+                ,
+                authentication: self.authentication
+                ,
+                tags: self.tags
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
             }
         }
     }
@@ -1623,6 +1448,8 @@ pub mod workspace_description {
             formatter.finish()
         }
     }
+    
+    
 }
 impl WorkspaceDescription {
     /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription).
@@ -1634,7 +1461,7 @@ impl WorkspaceDescription {
 /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfiguration {
+pub struct VpcConfiguration  {
     /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1644,17 +1471,17 @@ pub struct VpcConfiguration {
 }
 impl VpcConfiguration {
     /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
-
+    
     /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1669,17 +1496,13 @@ pub mod vpc_configuration {
         /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -1688,26 +1511,26 @@ pub mod vpc_configuration {
         /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfiguration`](crate::model::VpcConfiguration).
         pub fn build(self) -> crate::model::VpcConfiguration {
             crate::model::VpcConfiguration {
-                security_group_ids: self.security_group_ids,
-                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids
+                ,
+                subnet_ids: self.subnet_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfiguration {
     /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -1722,9 +1545,9 @@ impl VpcConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let licensetype = unimplemented!();
 /// match licensetype {
@@ -1746,58 +1569,52 @@ impl VpcConfiguration {
 /// Specifically, when `licensetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LicenseType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LicenseType {
     /// Grafana Enterprise License.
     Enterprise,
     /// Grafana Enterprise Free Trial License.
     EnterpriseFreeTrial,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LicenseType {
     fn from(s: &str) -> Self {
         match s {
             "ENTERPRISE" => LicenseType::Enterprise,
             "ENTERPRISE_FREE_TRIAL" => LicenseType::EnterpriseFreeTrial,
-            other => LicenseType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LicenseType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LicenseType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LicenseType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LicenseType::from(s))
+                }
+            }
 impl LicenseType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseType::Enterprise => "ENTERPRISE",
             LicenseType::EnterpriseFreeTrial => "ENTERPRISE_FREE_TRIAL",
-            LicenseType::Unknown(value) => value.as_str(),
+            LicenseType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENTERPRISE", "ENTERPRISE_FREE_TRIAL"]
+        &[
+            "ENTERPRISE", "ENTERPRISE_FREE_TRIAL"
+        ]
     }
 }
 impl AsRef<str> for LicenseType {
@@ -1812,9 +1629,9 @@ impl AsRef<str> for LicenseType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permissiontype = unimplemented!();
 /// match permissiontype {
@@ -1836,58 +1653,52 @@ impl AsRef<str> for LicenseType {
 /// Specifically, when `permissiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PermissionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PermissionType {
     /// Customer Managed
     CustomerManaged,
     /// Service Managed
     ServiceManaged,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PermissionType {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOMER_MANAGED" => PermissionType::CustomerManaged,
             "SERVICE_MANAGED" => PermissionType::ServiceManaged,
-            other => PermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PermissionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PermissionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PermissionType::from(s))
+                }
+            }
 impl PermissionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PermissionType::CustomerManaged => "CUSTOMER_MANAGED",
             PermissionType::ServiceManaged => "SERVICE_MANAGED",
-            PermissionType::Unknown(value) => value.as_str(),
+            PermissionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOMER_MANAGED", "SERVICE_MANAGED"]
+        &[
+            "CUSTOMER_MANAGED", "SERVICE_MANAGED"
+        ]
     }
 }
 impl AsRef<str> for PermissionType {
@@ -1902,9 +1713,9 @@ impl AsRef<str> for PermissionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasourcetype = unimplemented!();
 /// match datasourcetype {
@@ -1933,22 +1744,14 @@ impl AsRef<str> for PermissionType {
 /// Specifically, when `datasourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataSourceType {
     /// Amazon OpenSearch Service
     AmazonOpensearchService,
@@ -1969,7 +1772,7 @@ pub enum DataSourceType {
     /// X-Ray
     Xray,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataSourceType {
     fn from(s: &str) -> Self {
@@ -1983,17 +1786,17 @@ impl std::convert::From<&str> for DataSourceType {
             "TIMESTREAM" => DataSourceType::Timestream,
             "TWINMAKER" => DataSourceType::Twinmaker,
             "XRAY" => DataSourceType::Xray,
-            other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataSourceType::from(s))
+                }
+            }
 impl DataSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2007,21 +1810,13 @@ impl DataSourceType {
             DataSourceType::Timestream => "TIMESTREAM",
             DataSourceType::Twinmaker => "TWINMAKER",
             DataSourceType::Xray => "XRAY",
-            DataSourceType::Unknown(value) => value.as_str(),
+            DataSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AMAZON_OPENSEARCH_SERVICE",
-            "ATHENA",
-            "CLOUDWATCH",
-            "PROMETHEUS",
-            "REDSHIFT",
-            "SITEWISE",
-            "TIMESTREAM",
-            "TWINMAKER",
-            "XRAY",
+            "AMAZON_OPENSEARCH_SERVICE", "ATHENA", "CLOUDWATCH", "PROMETHEUS", "REDSHIFT", "SITEWISE", "TIMESTREAM", "TWINMAKER", "XRAY"
         ]
     }
 }
@@ -2037,9 +1832,9 @@ impl AsRef<str> for DataSourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountaccesstype = unimplemented!();
 /// match accountaccesstype {
@@ -2061,60 +1856,52 @@ impl AsRef<str> for DataSourceType {
 /// Specifically, when `accountaccesstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountAccessType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountAccessType {
     /// Indicates that the customer is using Grafana to monitor resources in their current account.
     CurrentAccount,
     /// Indicates that the customer is using Grafana to monitor resources in organizational units.
     Organization,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountAccessType {
     fn from(s: &str) -> Self {
         match s {
             "CURRENT_ACCOUNT" => AccountAccessType::CurrentAccount,
             "ORGANIZATION" => AccountAccessType::Organization,
-            other => {
-                AccountAccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccountAccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccountAccessType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountAccessType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountAccessType::from(s))
+                }
+            }
 impl AccountAccessType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccountAccessType::CurrentAccount => "CURRENT_ACCOUNT",
             AccountAccessType::Organization => "ORGANIZATION",
-            AccountAccessType::Unknown(value) => value.as_str(),
+            AccountAccessType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CURRENT_ACCOUNT", "ORGANIZATION"]
+        &[
+            "CURRENT_ACCOUNT", "ORGANIZATION"
+        ]
     }
 }
 impl AsRef<str> for AccountAccessType {
@@ -2126,7 +1913,7 @@ impl AsRef<str> for AccountAccessType {
 /// <p>A structure containing information about one error encountered while performing an <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateError {
+pub struct UpdateError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<i32>,
@@ -2143,17 +1930,17 @@ impl UpdateError {
         self.code
     }
     /// <p>The message for this error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Specifies which permission update caused the error.</p>
-    pub fn caused_by(&self) -> std::option::Option<&crate::model::UpdateInstruction> {
+    pub fn caused_by(&self) -> std::option::Option<& crate::model::UpdateInstruction> {
         self.caused_by.as_ref()
     }
 }
 /// See [`UpdateError`](crate::model::UpdateError).
 pub mod update_error {
-
+    
     /// A builder for [`UpdateError`](crate::model::UpdateError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2169,8 +1956,7 @@ pub mod update_error {
         }
         /// <p>The error code.</p>
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>The message for this error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2179,8 +1965,7 @@ pub mod update_error {
         }
         /// <p>The message for this error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>Specifies which permission update caused the error.</p>
         pub fn caused_by(mut self, input: crate::model::UpdateInstruction) -> Self {
@@ -2188,22 +1973,23 @@ pub mod update_error {
             self
         }
         /// <p>Specifies which permission update caused the error.</p>
-        pub fn set_caused_by(
-            mut self,
-            input: std::option::Option<crate::model::UpdateInstruction>,
-        ) -> Self {
-            self.caused_by = input;
-            self
+        pub fn set_caused_by(mut self, input: std::option::Option<crate::model::UpdateInstruction>) -> Self {
+            self.caused_by = input; self
         }
         /// Consumes the builder and constructs a [`UpdateError`](crate::model::UpdateError).
         pub fn build(self) -> crate::model::UpdateError {
             crate::model::UpdateError {
-                code: self.code,
-                message: self.message,
-                caused_by: self.caused_by,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                caused_by: self.caused_by
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateError {
     /// Creates a new builder-style object to manufacture [`UpdateError`](crate::model::UpdateError).
@@ -2215,7 +2001,7 @@ impl UpdateError {
 /// <p>Contains the instructions for one Grafana role permission update in a <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstruction {
+pub struct UpdateInstruction  {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::UpdateAction>,
@@ -2228,21 +2014,21 @@ pub struct UpdateInstruction {
 }
 impl UpdateInstruction {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::UpdateAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::UpdateAction> {
         self.action.as_ref()
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+    pub fn role(&self) -> std::option::Option<& crate::model::Role> {
         self.role.as_ref()
     }
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::User]> {
         self.users.as_deref()
     }
 }
 /// See [`UpdateInstruction`](crate::model::UpdateInstruction).
 pub mod update_instruction {
-
+    
     /// A builder for [`UpdateInstruction`](crate::model::UpdateInstruction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2257,12 +2043,8 @@ pub mod update_instruction {
             self
         }
         /// <p>Specifies whether this update is to add or revoke role permissions.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::UpdateAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::UpdateAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
         pub fn role(mut self, input: crate::model::Role) -> Self {
@@ -2271,8 +2053,7 @@ pub mod update_instruction {
         }
         /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// Appends an item to `users`.
         ///
@@ -2281,27 +2062,28 @@ pub mod update_instruction {
         /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
         pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::User>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::User>>) -> Self {
+            self.users = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInstruction`](crate::model::UpdateInstruction).
         pub fn build(self) -> crate::model::UpdateInstruction {
             crate::model::UpdateInstruction {
-                action: self.action,
-                role: self.role,
-                users: self.users,
+                action: self.action
+                ,
+                role: self.role
+                ,
+                users: self.users
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInstruction {
     /// Creates a new builder-style object to manufacture [`UpdateInstruction`](crate::model::UpdateInstruction).
@@ -2313,8 +2095,8 @@ impl UpdateInstruction {
 /// <p>A structure that specifies one user or group in the workspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct User {
-    /// <p>The ID of the user or group.</p>
+pub struct User  {
+    /// <p>The ID of the user or group.</p> 
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2323,19 +2105,19 @@ pub struct User {
     pub r#type: std::option::Option<crate::model::UserType>,
 }
 impl User {
-    /// <p>The ID of the user or group.</p>
+    /// <p>The ID of the user or group.</p> 
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Specifies whether this is a single user or a group.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::UserType> {
         self.r#type.as_ref()
     }
 }
 /// See [`User`](crate::model::User).
 pub mod user {
-
+    
     /// A builder for [`User`](crate::model::User).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2343,17 +2125,16 @@ pub mod user {
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
     }
     impl Builder {
-        /// <p>The ID of the user or group.</p>
+        /// <p>The ID of the user or group.</p> 
         /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The ID of the user or group.</p>
+        /// <p>The ID of the user or group.</p> 
         /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Specifies whether this is a single user or a group.</p>
         pub fn r#type(mut self, input: crate::model::UserType) -> Self {
@@ -2362,17 +2143,20 @@ pub mod user {
         }
         /// <p>Specifies whether this is a single user or a group.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`User`](crate::model::User).
         pub fn build(self) -> crate::model::User {
             crate::model::User {
-                id: self.id,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -2387,9 +2171,9 @@ impl User {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usertype = unimplemented!();
 /// match usertype {
@@ -2411,58 +2195,52 @@ impl User {
 /// Specifically, when `usertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UserType {
     /// SSO group.
     SsoGroup,
     /// SSO user.
     SsoUser,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UserType {
     fn from(s: &str) -> Self {
         match s {
             "SSO_GROUP" => UserType::SsoGroup,
             "SSO_USER" => UserType::SsoUser,
-            other => UserType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UserType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UserType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UserType::from(s))
+                }
+            }
 impl UserType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserType::SsoGroup => "SSO_GROUP",
             UserType::SsoUser => "SSO_USER",
-            UserType::Unknown(value) => value.as_str(),
+            UserType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SSO_GROUP", "SSO_USER"]
+        &[
+            "SSO_GROUP", "SSO_USER"
+        ]
     }
 }
 impl AsRef<str> for UserType {
@@ -2477,9 +2255,9 @@ impl AsRef<str> for UserType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let role = unimplemented!();
 /// match role {
@@ -2502,22 +2280,14 @@ impl AsRef<str> for UserType {
 /// Specifically, when `role` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Role::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Role {
     /// Role Admin.
     Admin,
@@ -2526,7 +2296,7 @@ pub enum Role {
     /// Role Viewer.
     Viewer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Role {
     fn from(s: &str) -> Self {
@@ -2534,17 +2304,17 @@ impl std::convert::From<&str> for Role {
             "ADMIN" => Role::Admin,
             "EDITOR" => Role::Editor,
             "VIEWER" => Role::Viewer,
-            other => Role::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Role::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Role {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Role::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Role::from(s))
+                }
+            }
 impl Role {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2552,12 +2322,14 @@ impl Role {
             Role::Admin => "ADMIN",
             Role::Editor => "EDITOR",
             Role::Viewer => "VIEWER",
-            Role::Unknown(value) => value.as_str(),
+            Role::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADMIN", "EDITOR", "VIEWER"]
+        &[
+            "ADMIN", "EDITOR", "VIEWER"
+        ]
     }
 }
 impl AsRef<str> for Role {
@@ -2572,9 +2344,9 @@ impl AsRef<str> for Role {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updateaction = unimplemented!();
 /// match updateaction {
@@ -2596,58 +2368,52 @@ impl AsRef<str> for Role {
 /// Specifically, when `updateaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateAction {
     /// Add permissions.
     Add,
     /// Revoke permissions.
     Revoke,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateAction {
     fn from(s: &str) -> Self {
         match s {
             "ADD" => UpdateAction::Add,
             "REVOKE" => UpdateAction::Revoke,
-            other => UpdateAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UpdateAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateAction::from(s))
+                }
+            }
 impl UpdateAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateAction::Add => "ADD",
             UpdateAction::Revoke => "REVOKE",
-            UpdateAction::Unknown(value) => value.as_str(),
+            UpdateAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADD", "REVOKE"]
+        &[
+            "ADD", "REVOKE"
+        ]
     }
 }
 impl AsRef<str> for UpdateAction {
@@ -2659,7 +2425,7 @@ impl AsRef<str> for UpdateAction {
 /// <p>A structure containing the identity of one user or group and the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role that they have.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PermissionEntry {
+pub struct PermissionEntry  {
     /// <p>A structure with the ID of the user or group with this role.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
@@ -2669,17 +2435,17 @@ pub struct PermissionEntry {
 }
 impl PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+    pub fn role(&self) -> std::option::Option<& crate::model::Role> {
         self.role.as_ref()
     }
 }
 /// See [`PermissionEntry`](crate::model::PermissionEntry).
 pub mod permission_entry {
-
+    
     /// A builder for [`PermissionEntry`](crate::model::PermissionEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2694,8 +2460,7 @@ pub mod permission_entry {
         }
         /// <p>A structure with the ID of the user or group with this role.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
         pub fn role(mut self, input: crate::model::Role) -> Self {
@@ -2704,17 +2469,20 @@ pub mod permission_entry {
         }
         /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// Consumes the builder and constructs a [`PermissionEntry`](crate::model::PermissionEntry).
         pub fn build(self) -> crate::model::PermissionEntry {
             crate::model::PermissionEntry {
-                user: self.user,
-                role: self.role,
+                user: self.user
+                ,
+                role: self.role
+                ,
             }
         }
     }
+    
+    
 }
 impl PermissionEntry {
     /// Creates a new builder-style object to manufacture [`PermissionEntry`](crate::model::PermissionEntry).
@@ -2726,7 +2494,7 @@ impl PermissionEntry {
 /// <p>A structure containing information about the user authentication methods used by the workspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationDescription {
+pub struct AuthenticationDescription  {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
     #[doc(hidden)]
     pub providers: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -2739,26 +2507,25 @@ pub struct AuthenticationDescription {
 }
 impl AuthenticationDescription {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
-    pub fn providers(&self) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
+    pub fn providers(&self) -> std::option::Option<& [crate::model::AuthenticationProviderTypes]> {
         self.providers.as_deref()
     }
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
-    pub fn saml(&self) -> std::option::Option<&crate::model::SamlAuthentication> {
+    pub fn saml(&self) -> std::option::Option<& crate::model::SamlAuthentication> {
         self.saml.as_ref()
     }
     /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
-    pub fn aws_sso(&self) -> std::option::Option<&crate::model::AwsSsoAuthentication> {
+    pub fn aws_sso(&self) -> std::option::Option<& crate::model::AwsSsoAuthentication> {
         self.aws_sso.as_ref()
     }
 }
 /// See [`AuthenticationDescription`](crate::model::AuthenticationDescription).
 pub mod authentication_description {
-
+    
     /// A builder for [`AuthenticationDescription`](crate::model::AuthenticationDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) providers:
-            std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
+        pub(crate) providers: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
         pub(crate) saml: std::option::Option<crate::model::SamlAuthentication>,
         pub(crate) aws_sso: std::option::Option<crate::model::AwsSsoAuthentication>,
     }
@@ -2770,17 +2537,13 @@ pub mod authentication_description {
         /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
         pub fn providers(mut self, input: crate::model::AuthenticationProviderTypes) -> Self {
             let mut v = self.providers.unwrap_or_default();
-            v.push(input);
-            self.providers = Some(v);
-            self
+                            v.push(input);
+                            self.providers = Some(v);
+                            self
         }
         /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
-        pub fn set_providers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
-        ) -> Self {
-            self.providers = input;
-            self
+        pub fn set_providers(mut self, input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>) -> Self {
+            self.providers = input; self
         }
         /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
         pub fn saml(mut self, input: crate::model::SamlAuthentication) -> Self {
@@ -2788,12 +2551,8 @@ pub mod authentication_description {
             self
         }
         /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
-        pub fn set_saml(
-            mut self,
-            input: std::option::Option<crate::model::SamlAuthentication>,
-        ) -> Self {
-            self.saml = input;
-            self
+        pub fn set_saml(mut self, input: std::option::Option<crate::model::SamlAuthentication>) -> Self {
+            self.saml = input; self
         }
         /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
         pub fn aws_sso(mut self, input: crate::model::AwsSsoAuthentication) -> Self {
@@ -2801,22 +2560,23 @@ pub mod authentication_description {
             self
         }
         /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
-        pub fn set_aws_sso(
-            mut self,
-            input: std::option::Option<crate::model::AwsSsoAuthentication>,
-        ) -> Self {
-            self.aws_sso = input;
-            self
+        pub fn set_aws_sso(mut self, input: std::option::Option<crate::model::AwsSsoAuthentication>) -> Self {
+            self.aws_sso = input; self
         }
         /// Consumes the builder and constructs a [`AuthenticationDescription`](crate::model::AuthenticationDescription).
         pub fn build(self) -> crate::model::AuthenticationDescription {
             crate::model::AuthenticationDescription {
-                providers: self.providers,
-                saml: self.saml,
-                aws_sso: self.aws_sso,
+                providers: self.providers
+                ,
+                saml: self.saml
+                ,
+                aws_sso: self.aws_sso
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthenticationDescription {
     /// Creates a new builder-style object to manufacture [`AuthenticationDescription`](crate::model::AuthenticationDescription).
@@ -2828,20 +2588,20 @@ impl AuthenticationDescription {
 /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsSsoAuthentication {
+pub struct AwsSsoAuthentication  {
     /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
     #[doc(hidden)]
     pub sso_client_id: std::option::Option<std::string::String>,
 }
 impl AwsSsoAuthentication {
     /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
-    pub fn sso_client_id(&self) -> std::option::Option<&str> {
+    pub fn sso_client_id(&self) -> std::option::Option<& str> {
         self.sso_client_id.as_deref()
     }
 }
 /// See [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
 pub mod aws_sso_authentication {
-
+    
     /// A builder for [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2854,20 +2614,19 @@ pub mod aws_sso_authentication {
             self
         }
         /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
-        pub fn set_sso_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sso_client_id = input;
-            self
+        pub fn set_sso_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sso_client_id = input; self
         }
         /// Consumes the builder and constructs a [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
         pub fn build(self) -> crate::model::AwsSsoAuthentication {
             crate::model::AwsSsoAuthentication {
-                sso_client_id: self.sso_client_id,
+                sso_client_id: self.sso_client_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AwsSsoAuthentication {
     /// Creates a new builder-style object to manufacture [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
@@ -2879,7 +2638,7 @@ impl AwsSsoAuthentication {
 /// <p>A structure containing information about how this workspace works with SAML. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamlAuthentication {
+pub struct SamlAuthentication  {
     /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::SamlConfigurationStatus>,
@@ -2889,17 +2648,17 @@ pub struct SamlAuthentication {
 }
 impl SamlAuthentication {
     /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SamlConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SamlConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>A structure containing details about how this workspace works with SAML. </p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::SamlConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::SamlConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`SamlAuthentication`](crate::model::SamlAuthentication).
 pub mod saml_authentication {
-
+    
     /// A builder for [`SamlAuthentication`](crate::model::SamlAuthentication).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2913,12 +2672,8 @@ pub mod saml_authentication {
             self
         }
         /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SamlConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SamlConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A structure containing details about how this workspace works with SAML. </p>
         pub fn configuration(mut self, input: crate::model::SamlConfiguration) -> Self {
@@ -2926,21 +2681,21 @@ pub mod saml_authentication {
             self
         }
         /// <p>A structure containing details about how this workspace works with SAML. </p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SamlConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::SamlConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`SamlAuthentication`](crate::model::SamlAuthentication).
         pub fn build(self) -> crate::model::SamlAuthentication {
             crate::model::SamlAuthentication {
-                status: self.status,
-                configuration: self.configuration,
+                status: self.status
+                ,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl SamlAuthentication {
     /// Creates a new builder-style object to manufacture [`SamlAuthentication`](crate::model::SamlAuthentication).
@@ -2952,7 +2707,7 @@ impl SamlAuthentication {
 /// <p>A structure containing information about how this workspace works with SAML. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamlConfiguration {
+pub struct SamlConfiguration  {
     /// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace.</p>
     #[doc(hidden)]
     pub idp_metadata: std::option::Option<crate::model::IdpMetadata>,
@@ -2971,19 +2726,19 @@ pub struct SamlConfiguration {
 }
 impl SamlConfiguration {
     /// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace.</p>
-    pub fn idp_metadata(&self) -> std::option::Option<&crate::model::IdpMetadata> {
+    pub fn idp_metadata(&self) -> std::option::Option<& crate::model::IdpMetadata> {
         self.idp_metadata.as_ref()
     }
     /// <p>A structure that defines which attributes in the SAML assertion are to be used to define information about the users authenticated by that IdP to use the workspace.</p>
-    pub fn assertion_attributes(&self) -> std::option::Option<&crate::model::AssertionAttributes> {
+    pub fn assertion_attributes(&self) -> std::option::Option<& crate::model::AssertionAttributes> {
         self.assertion_attributes.as_ref()
     }
     /// <p>A structure containing arrays that map group names in the SAML assertion to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    pub fn role_values(&self) -> std::option::Option<&crate::model::RoleValues> {
+    pub fn role_values(&self) -> std::option::Option<& crate::model::RoleValues> {
         self.role_values.as_ref()
     }
     /// <p>Lists which organizations defined in the SAML assertion are allowed to use the Amazon Managed Grafana workspace. If this is empty, all organizations in the assertion attribute have access.</p>
-    pub fn allowed_organizations(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_organizations(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_organizations.as_deref()
     }
     /// <p>How long a sign-on session by a SAML user is valid, before the user has to sign on again.</p>
@@ -2993,7 +2748,7 @@ impl SamlConfiguration {
 }
 /// See [`SamlConfiguration`](crate::model::SamlConfiguration).
 pub mod saml_configuration {
-
+    
     /// A builder for [`SamlConfiguration`](crate::model::SamlConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3010,12 +2765,8 @@ pub mod saml_configuration {
             self
         }
         /// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace.</p>
-        pub fn set_idp_metadata(
-            mut self,
-            input: std::option::Option<crate::model::IdpMetadata>,
-        ) -> Self {
-            self.idp_metadata = input;
-            self
+        pub fn set_idp_metadata(mut self, input: std::option::Option<crate::model::IdpMetadata>) -> Self {
+            self.idp_metadata = input; self
         }
         /// <p>A structure that defines which attributes in the SAML assertion are to be used to define information about the users authenticated by that IdP to use the workspace.</p>
         pub fn assertion_attributes(mut self, input: crate::model::AssertionAttributes) -> Self {
@@ -3023,12 +2774,8 @@ pub mod saml_configuration {
             self
         }
         /// <p>A structure that defines which attributes in the SAML assertion are to be used to define information about the users authenticated by that IdP to use the workspace.</p>
-        pub fn set_assertion_attributes(
-            mut self,
-            input: std::option::Option<crate::model::AssertionAttributes>,
-        ) -> Self {
-            self.assertion_attributes = input;
-            self
+        pub fn set_assertion_attributes(mut self, input: std::option::Option<crate::model::AssertionAttributes>) -> Self {
+            self.assertion_attributes = input; self
         }
         /// <p>A structure containing arrays that map group names in the SAML assertion to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
         pub fn role_values(mut self, input: crate::model::RoleValues) -> Self {
@@ -3036,12 +2783,8 @@ pub mod saml_configuration {
             self
         }
         /// <p>A structure containing arrays that map group names in the SAML assertion to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-        pub fn set_role_values(
-            mut self,
-            input: std::option::Option<crate::model::RoleValues>,
-        ) -> Self {
-            self.role_values = input;
-            self
+        pub fn set_role_values(mut self, input: std::option::Option<crate::model::RoleValues>) -> Self {
+            self.role_values = input; self
         }
         /// Appends an item to `allowed_organizations`.
         ///
@@ -3050,17 +2793,13 @@ pub mod saml_configuration {
         /// <p>Lists which organizations defined in the SAML assertion are allowed to use the Amazon Managed Grafana workspace. If this is empty, all organizations in the assertion attribute have access.</p>
         pub fn allowed_organizations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_organizations.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_organizations = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_organizations = Some(v);
+                            self
         }
         /// <p>Lists which organizations defined in the SAML assertion are allowed to use the Amazon Managed Grafana workspace. If this is empty, all organizations in the assertion attribute have access.</p>
-        pub fn set_allowed_organizations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_organizations = input;
-            self
+        pub fn set_allowed_organizations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_organizations = input; self
         }
         /// <p>How long a sign-on session by a SAML user is valid, before the user has to sign on again.</p>
         pub fn login_validity_duration(mut self, input: i32) -> Self {
@@ -3069,20 +2808,27 @@ pub mod saml_configuration {
         }
         /// <p>How long a sign-on session by a SAML user is valid, before the user has to sign on again.</p>
         pub fn set_login_validity_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.login_validity_duration = input;
-            self
+            self.login_validity_duration = input; self
         }
         /// Consumes the builder and constructs a [`SamlConfiguration`](crate::model::SamlConfiguration).
         pub fn build(self) -> crate::model::SamlConfiguration {
             crate::model::SamlConfiguration {
-                idp_metadata: self.idp_metadata,
-                assertion_attributes: self.assertion_attributes,
-                role_values: self.role_values,
-                allowed_organizations: self.allowed_organizations,
-                login_validity_duration: self.login_validity_duration.unwrap_or_default(),
+                idp_metadata: self.idp_metadata
+                ,
+                assertion_attributes: self.assertion_attributes
+                ,
+                role_values: self.role_values
+                ,
+                allowed_organizations: self.allowed_organizations
+                ,
+                login_validity_duration: self.login_validity_duration
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SamlConfiguration {
     /// Creates a new builder-style object to manufacture [`SamlConfiguration`](crate::model::SamlConfiguration).
@@ -3094,7 +2840,7 @@ impl SamlConfiguration {
 /// <p>This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace. SAML authenticated users not part of <code>Admin</code> or <code>Editor</code> role groups have <code>Viewer</code> permission over the workspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoleValues {
+pub struct RoleValues  {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
     #[doc(hidden)]
     pub editor: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3104,17 +2850,17 @@ pub struct RoleValues {
 }
 impl RoleValues {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
-    pub fn editor(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn editor(&self) -> std::option::Option<& [std::string::String]> {
         self.editor.as_deref()
     }
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
-    pub fn admin(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn admin(&self) -> std::option::Option<& [std::string::String]> {
         self.admin.as_deref()
     }
 }
 /// See [`RoleValues`](crate::model::RoleValues).
 pub mod role_values {
-
+    
     /// A builder for [`RoleValues`](crate::model::RoleValues).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3129,17 +2875,13 @@ pub mod role_values {
         /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
         pub fn editor(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.editor.unwrap_or_default();
-            v.push(input.into());
-            self.editor = Some(v);
-            self
+                            v.push(input.into());
+                            self.editor = Some(v);
+                            self
         }
         /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
-        pub fn set_editor(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.editor = input;
-            self
+        pub fn set_editor(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.editor = input; self
         }
         /// Appends an item to `admin`.
         ///
@@ -3148,26 +2890,26 @@ pub mod role_values {
         /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
         pub fn admin(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.admin.unwrap_or_default();
-            v.push(input.into());
-            self.admin = Some(v);
-            self
+                            v.push(input.into());
+                            self.admin = Some(v);
+                            self
         }
         /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
-        pub fn set_admin(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.admin = input;
-            self
+        pub fn set_admin(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.admin = input; self
         }
         /// Consumes the builder and constructs a [`RoleValues`](crate::model::RoleValues).
         pub fn build(self) -> crate::model::RoleValues {
             crate::model::RoleValues {
-                editor: self.editor,
-                admin: self.admin,
+                editor: self.editor
+                ,
+                admin: self.admin
+                ,
             }
         }
     }
+    
+    
 }
 impl RoleValues {
     /// Creates a new builder-style object to manufacture [`RoleValues`](crate::model::RoleValues).
@@ -3179,7 +2921,7 @@ impl RoleValues {
 /// <p>A structure that defines which attributes in the IdP assertion are to be used to define information about the users authenticated by the IdP to use the workspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssertionAttributes {
+pub struct AssertionAttributes  {
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for SAML users.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3201,33 +2943,33 @@ pub struct AssertionAttributes {
 }
 impl AssertionAttributes {
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for SAML users.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the attribute within the SAML assertion to use as the login names for SAML users.</p>
-    pub fn login(&self) -> std::option::Option<&str> {
+    pub fn login(&self) -> std::option::Option<& str> {
         self.login.as_deref()
     }
     /// <p>The name of the attribute within the SAML assertion to use as the email names for SAML users.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for user groups.</p>
-    pub fn groups(&self) -> std::option::Option<&str> {
+    pub fn groups(&self) -> std::option::Option<& str> {
         self.groups.as_deref()
     }
     /// <p>The name of the attribute within the SAML assertion to use as the user roles.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for the users' organizations.</p>
-    pub fn org(&self) -> std::option::Option<&str> {
+    pub fn org(&self) -> std::option::Option<& str> {
         self.org.as_deref()
     }
 }
 /// See [`AssertionAttributes`](crate::model::AssertionAttributes).
 pub mod assertion_attributes {
-
+    
     /// A builder for [`AssertionAttributes`](crate::model::AssertionAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3246,8 +2988,7 @@ pub mod assertion_attributes {
         }
         /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for SAML users.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the attribute within the SAML assertion to use as the login names for SAML users.</p>
         pub fn login(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3256,8 +2997,7 @@ pub mod assertion_attributes {
         }
         /// <p>The name of the attribute within the SAML assertion to use as the login names for SAML users.</p>
         pub fn set_login(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.login = input;
-            self
+            self.login = input; self
         }
         /// <p>The name of the attribute within the SAML assertion to use as the email names for SAML users.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3266,8 +3006,7 @@ pub mod assertion_attributes {
         }
         /// <p>The name of the attribute within the SAML assertion to use as the email names for SAML users.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for user groups.</p>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3276,8 +3015,7 @@ pub mod assertion_attributes {
         }
         /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for user groups.</p>
         pub fn set_groups(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.groups = input;
-            self
+            self.groups = input; self
         }
         /// <p>The name of the attribute within the SAML assertion to use as the user roles.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3286,8 +3024,7 @@ pub mod assertion_attributes {
         }
         /// <p>The name of the attribute within the SAML assertion to use as the user roles.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for the users' organizations.</p>
         pub fn org(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3296,21 +3033,28 @@ pub mod assertion_attributes {
         }
         /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for the users' organizations.</p>
         pub fn set_org(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.org = input;
-            self
+            self.org = input; self
         }
         /// Consumes the builder and constructs a [`AssertionAttributes`](crate::model::AssertionAttributes).
         pub fn build(self) -> crate::model::AssertionAttributes {
             crate::model::AssertionAttributes {
-                name: self.name,
-                login: self.login,
-                email: self.email,
-                groups: self.groups,
-                role: self.role,
-                org: self.org,
+                name: self.name
+                ,
+                login: self.login
+                ,
+                email: self.email
+                ,
+                groups: self.groups
+                ,
+                role: self.role
+                ,
+                org: self.org
+                ,
             }
         }
     }
+    
+    
 }
 impl AssertionAttributes {
     /// Creates a new builder-style object to manufacture [`AssertionAttributes`](crate::model::AssertionAttributes).
@@ -3341,11 +3085,7 @@ impl IdpMetadata {
     /// Tries to convert the enum instance into [`Url`](crate::model::IdpMetadata::Url), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let IdpMetadata::Url(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let IdpMetadata::Url(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Url`](crate::model::IdpMetadata::Url).
     pub fn is_url(&self) -> bool {
@@ -3354,11 +3094,7 @@ impl IdpMetadata {
     /// Tries to convert the enum instance into [`Xml`](crate::model::IdpMetadata::Xml), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_xml(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let IdpMetadata::Xml(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let IdpMetadata::Xml(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Xml`](crate::model::IdpMetadata::Xml).
     pub fn is_xml(&self) -> bool {
@@ -3369,3 +3105,4 @@ impl IdpMetadata {
         matches!(self, Self::Unknown)
     }
 }
+

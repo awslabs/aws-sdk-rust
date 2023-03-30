@@ -3,19 +3,24 @@
 /// <p> Response of UpdateSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriberOutput {}
+pub struct UpdateSubscriberOutput  {
+}
 /// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
 pub mod update_subscriber_output {
-
+    
     /// A builder for [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
         pub fn build(self) -> crate::output::UpdateSubscriberOutput {
-            crate::output::UpdateSubscriberOutput {}
+            crate::output::UpdateSubscriberOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
@@ -27,19 +32,24 @@ impl UpdateSubscriberOutput {
 /// <p> Response of UpdateNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationOutput {}
+pub struct UpdateNotificationOutput  {
+}
 /// See [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
 pub mod update_notification_output {
-
+    
     /// A builder for [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
         pub fn build(self) -> crate::output::UpdateNotificationOutput {
-            crate::output::UpdateNotificationOutput {}
+            crate::output::UpdateNotificationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateNotificationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
@@ -51,7 +61,7 @@ impl UpdateNotificationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBudgetActionOutput {
+pub struct UpdateBudgetActionOutput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -67,25 +77,25 @@ pub struct UpdateBudgetActionOutput {
 }
 impl UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> The previous action resource information. </p>
-    pub fn old_action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn old_action(&self) -> std::option::Option<& crate::model::Action> {
         self.old_action.as_ref()
     }
     /// <p> The updated action resource information. </p>
-    pub fn new_action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn new_action(&self) -> std::option::Option<& crate::model::Action> {
         self.new_action.as_ref()
     }
 }
 /// See [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
 pub mod update_budget_action_output {
-
+    
     /// A builder for [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -102,8 +112,7 @@ pub mod update_budget_action_output {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +121,7 @@ pub mod update_budget_action_output {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> The previous action resource information. </p>
         pub fn old_action(mut self, input: crate::model::Action) -> Self {
@@ -122,8 +130,7 @@ pub mod update_budget_action_output {
         }
         /// <p> The previous action resource information. </p>
         pub fn set_old_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.old_action = input;
-            self
+            self.old_action = input; self
         }
         /// <p> The updated action resource information. </p>
         pub fn new_action(mut self, input: crate::model::Action) -> Self {
@@ -132,19 +139,24 @@ pub mod update_budget_action_output {
         }
         /// <p> The updated action resource information. </p>
         pub fn set_new_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.new_action = input;
-            self
+            self.new_action = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
         pub fn build(self) -> crate::output::UpdateBudgetActionOutput {
             crate::output::UpdateBudgetActionOutput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                old_action: self.old_action,
-                new_action: self.new_action,
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                old_action: self.old_action
+                ,
+                new_action: self.new_action
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
@@ -156,19 +168,24 @@ impl UpdateBudgetActionOutput {
 /// <p> Response of UpdateBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBudgetOutput {}
+pub struct UpdateBudgetOutput  {
+}
 /// See [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
 pub mod update_budget_output {
-
+    
     /// A builder for [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
         pub fn build(self) -> crate::output::UpdateBudgetOutput {
-            crate::output::UpdateBudgetOutput {}
+            crate::output::UpdateBudgetOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateBudgetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
@@ -180,7 +197,7 @@ impl UpdateBudgetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteBudgetActionOutput {
+pub struct ExecuteBudgetActionOutput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -196,25 +213,25 @@ pub struct ExecuteBudgetActionOutput {
 }
 impl ExecuteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p> The type of execution. </p>
-    pub fn execution_type(&self) -> std::option::Option<&crate::model::ExecutionType> {
+    pub fn execution_type(&self) -> std::option::Option<& crate::model::ExecutionType> {
         self.execution_type.as_ref()
     }
 }
 /// See [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
 pub mod execute_budget_action_output {
-
+    
     /// A builder for [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -231,8 +248,7 @@ pub mod execute_budget_action_output {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,8 +257,7 @@ pub mod execute_budget_action_output {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,8 +266,7 @@ pub mod execute_budget_action_output {
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p> The type of execution. </p>
         pub fn execution_type(mut self, input: crate::model::ExecutionType) -> Self {
@@ -260,23 +274,25 @@ pub mod execute_budget_action_output {
             self
         }
         /// <p> The type of execution. </p>
-        pub fn set_execution_type(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionType>,
-        ) -> Self {
-            self.execution_type = input;
-            self
+        pub fn set_execution_type(mut self, input: std::option::Option<crate::model::ExecutionType>) -> Self {
+            self.execution_type = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
         pub fn build(self) -> crate::output::ExecuteBudgetActionOutput {
             crate::output::ExecuteBudgetActionOutput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-                execution_type: self.execution_type,
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                action_id: self.action_id
+                ,
+                execution_type: self.execution_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
@@ -288,7 +304,7 @@ impl ExecuteBudgetActionOutput {
 /// <p> Response of DescribeSubscribersForNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSubscribersForNotificationOutput {
+pub struct DescribeSubscribersForNotificationOutput  {
     /// <p>A list of subscribers that are associated with a notification.</p>
     #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -298,17 +314,17 @@ pub struct DescribeSubscribersForNotificationOutput {
 }
 impl DescribeSubscribersForNotificationOutput {
     /// <p>A list of subscribers that are associated with a notification.</p>
-    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+    pub fn subscribers(&self) -> std::option::Option<& [crate::model::Subscriber]> {
         self.subscribers.as_deref()
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
 pub mod describe_subscribers_for_notification_output {
-
+    
     /// A builder for [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -323,17 +339,13 @@ pub mod describe_subscribers_for_notification_output {
         /// <p>A list of subscribers that are associated with a notification.</p>
         pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input);
-            self.subscribers = Some(v);
-            self
+                            v.push(input);
+                            self.subscribers = Some(v);
+                            self
         }
         /// <p>A list of subscribers that are associated with a notification.</p>
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
+        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>) -> Self {
+            self.subscribers = input; self
         }
         /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -342,17 +354,20 @@ pub mod describe_subscribers_for_notification_output {
         }
         /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
         pub fn build(self) -> crate::output::DescribeSubscribersForNotificationOutput {
             crate::output::DescribeSubscribersForNotificationOutput {
-                subscribers: self.subscribers,
-                next_token: self.next_token,
+                subscribers: self.subscribers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSubscribersForNotificationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
@@ -364,7 +379,7 @@ impl DescribeSubscribersForNotificationOutput {
 /// <p> Response of GetNotificationsForBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNotificationsForBudgetOutput {
+pub struct DescribeNotificationsForBudgetOutput  {
     /// <p>A list of notifications that are associated with a budget.</p>
     #[doc(hidden)]
     pub notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
@@ -374,17 +389,17 @@ pub struct DescribeNotificationsForBudgetOutput {
 }
 impl DescribeNotificationsForBudgetOutput {
     /// <p>A list of notifications that are associated with a budget.</p>
-    pub fn notifications(&self) -> std::option::Option<&[crate::model::Notification]> {
+    pub fn notifications(&self) -> std::option::Option<& [crate::model::Notification]> {
         self.notifications.as_deref()
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
 pub mod describe_notifications_for_budget_output {
-
+    
     /// A builder for [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -399,17 +414,13 @@ pub mod describe_notifications_for_budget_output {
         /// <p>A list of notifications that are associated with a budget.</p>
         pub fn notifications(mut self, input: crate::model::Notification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input);
-            self.notifications = Some(v);
-            self
+                            v.push(input);
+                            self.notifications = Some(v);
+                            self
         }
         /// <p>A list of notifications that are associated with a budget.</p>
-        pub fn set_notifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Notification>>,
-        ) -> Self {
-            self.notifications = input;
-            self
+        pub fn set_notifications(mut self, input: std::option::Option<std::vec::Vec<crate::model::Notification>>) -> Self {
+            self.notifications = input; self
         }
         /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,17 +429,20 @@ pub mod describe_notifications_for_budget_output {
         }
         /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
         pub fn build(self) -> crate::output::DescribeNotificationsForBudgetOutput {
             crate::output::DescribeNotificationsForBudgetOutput {
-                notifications: self.notifications,
-                next_token: self.next_token,
+                notifications: self.notifications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeNotificationsForBudgetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
@@ -440,7 +454,7 @@ impl DescribeNotificationsForBudgetOutput {
 /// <p> Response of DescribeBudgets </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetsOutput {
+pub struct DescribeBudgetsOutput  {
     /// <p>A list of budgets.</p>
     #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::model::Budget>>,
@@ -450,17 +464,17 @@ pub struct DescribeBudgetsOutput {
 }
 impl DescribeBudgetsOutput {
     /// <p>A list of budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<&[crate::model::Budget]> {
+    pub fn budgets(&self) -> std::option::Option<& [crate::model::Budget]> {
         self.budgets.as_deref()
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
 pub mod describe_budgets_output {
-
+    
     /// A builder for [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -475,17 +489,13 @@ pub mod describe_budgets_output {
         /// <p>A list of budgets.</p>
         pub fn budgets(mut self, input: crate::model::Budget) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input);
-            self.budgets = Some(v);
-            self
+                            v.push(input);
+                            self.budgets = Some(v);
+                            self
         }
         /// <p>A list of budgets.</p>
-        pub fn set_budgets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Budget>>,
-        ) -> Self {
-            self.budgets = input;
-            self
+        pub fn set_budgets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Budget>>) -> Self {
+            self.budgets = input; self
         }
         /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -494,17 +504,20 @@ pub mod describe_budgets_output {
         }
         /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
         pub fn build(self) -> crate::output::DescribeBudgetsOutput {
             crate::output::DescribeBudgetsOutput {
-                budgets: self.budgets,
-                next_token: self.next_token,
+                budgets: self.budgets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBudgetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
@@ -516,8 +529,8 @@ impl DescribeBudgetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetPerformanceHistoryOutput {
-    /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
+pub struct DescribeBudgetPerformanceHistoryOutput  {
+    /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p> 
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
     #[doc(hidden)]
     pub budget_performance_history: std::option::Option<crate::model::BudgetPerformanceHistory>,
@@ -526,46 +539,36 @@ pub struct DescribeBudgetPerformanceHistoryOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetPerformanceHistoryOutput {
-    /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
+    /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p> 
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
-    pub fn budget_performance_history(
-        &self,
-    ) -> std::option::Option<&crate::model::BudgetPerformanceHistory> {
+    pub fn budget_performance_history(&self) -> std::option::Option<& crate::model::BudgetPerformanceHistory> {
         self.budget_performance_history.as_ref()
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
 pub mod describe_budget_performance_history_output {
-
+    
     /// A builder for [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) budget_performance_history:
-            std::option::Option<crate::model::BudgetPerformanceHistory>,
+        pub(crate) budget_performance_history: std::option::Option<crate::model::BudgetPerformanceHistory>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
+        /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p> 
         /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
-        pub fn budget_performance_history(
-            mut self,
-            input: crate::model::BudgetPerformanceHistory,
-        ) -> Self {
+        pub fn budget_performance_history(mut self, input: crate::model::BudgetPerformanceHistory) -> Self {
             self.budget_performance_history = Some(input);
             self
         }
-        /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
+        /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p> 
         /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
-        pub fn set_budget_performance_history(
-            mut self,
-            input: std::option::Option<crate::model::BudgetPerformanceHistory>,
-        ) -> Self {
-            self.budget_performance_history = input;
-            self
+        pub fn set_budget_performance_history(mut self, input: std::option::Option<crate::model::BudgetPerformanceHistory>) -> Self {
+            self.budget_performance_history = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -574,17 +577,20 @@ pub mod describe_budget_performance_history_output {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
         pub fn build(self) -> crate::output::DescribeBudgetPerformanceHistoryOutput {
             crate::output::DescribeBudgetPerformanceHistoryOutput {
-                budget_performance_history: self.budget_performance_history,
-                next_token: self.next_token,
+                budget_performance_history: self.budget_performance_history
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBudgetPerformanceHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
@@ -596,35 +602,31 @@ impl DescribeBudgetPerformanceHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetNotificationsForAccountOutput {
+pub struct DescribeBudgetNotificationsForAccountOutput  {
     /// <p> A list of budget names and associated notifications for an account. </p>
     #[doc(hidden)]
-    pub budget_notifications_for_account:
-        std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
+    pub budget_notifications_for_account: std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
     /// <p> A generic string.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetNotificationsForAccountOutput {
     /// <p> A list of budget names and associated notifications for an account. </p>
-    pub fn budget_notifications_for_account(
-        &self,
-    ) -> std::option::Option<&[crate::model::BudgetNotificationsForAccount]> {
+    pub fn budget_notifications_for_account(&self) -> std::option::Option<& [crate::model::BudgetNotificationsForAccount]> {
         self.budget_notifications_for_account.as_deref()
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
 pub mod describe_budget_notifications_for_account_output {
-
+    
     /// A builder for [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) budget_notifications_for_account:
-            std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
+        pub(crate) budget_notifications_for_account: std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -633,22 +635,15 @@ pub mod describe_budget_notifications_for_account_output {
         /// To override the contents of this collection use [`set_budget_notifications_for_account`](Self::set_budget_notifications_for_account).
         ///
         /// <p> A list of budget names and associated notifications for an account. </p>
-        pub fn budget_notifications_for_account(
-            mut self,
-            input: crate::model::BudgetNotificationsForAccount,
-        ) -> Self {
+        pub fn budget_notifications_for_account(mut self, input: crate::model::BudgetNotificationsForAccount) -> Self {
             let mut v = self.budget_notifications_for_account.unwrap_or_default();
-            v.push(input);
-            self.budget_notifications_for_account = Some(v);
-            self
+                            v.push(input);
+                            self.budget_notifications_for_account = Some(v);
+                            self
         }
         /// <p> A list of budget names and associated notifications for an account. </p>
-        pub fn set_budget_notifications_for_account(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
-        ) -> Self {
-            self.budget_notifications_for_account = input;
-            self
+        pub fn set_budget_notifications_for_account(mut self, input: std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>) -> Self {
+            self.budget_notifications_for_account = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -657,17 +652,20 @@ pub mod describe_budget_notifications_for_account_output {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
         pub fn build(self) -> crate::output::DescribeBudgetNotificationsForAccountOutput {
             crate::output::DescribeBudgetNotificationsForAccountOutput {
-                budget_notifications_for_account: self.budget_notifications_for_account,
-                next_token: self.next_token,
+                budget_notifications_for_account: self.budget_notifications_for_account
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBudgetNotificationsForAccountOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
@@ -679,7 +677,7 @@ impl DescribeBudgetNotificationsForAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionsForBudgetOutput {
+pub struct DescribeBudgetActionsForBudgetOutput  {
     /// <p> A list of the budget action resources information. </p>
     #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -689,17 +687,17 @@ pub struct DescribeBudgetActionsForBudgetOutput {
 }
 impl DescribeBudgetActionsForBudgetOutput {
     /// <p> A list of the budget action resources information. </p>
-    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::model::Action]> {
         self.actions.as_deref()
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
 pub mod describe_budget_actions_for_budget_output {
-
+    
     /// A builder for [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -714,17 +712,13 @@ pub mod describe_budget_actions_for_budget_output {
         /// <p> A list of the budget action resources information. </p>
         pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input);
-            self.actions = Some(v);
-            self
+                            v.push(input);
+                            self.actions = Some(v);
+                            self
         }
         /// <p> A list of the budget action resources information. </p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Action>>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Action>>) -> Self {
+            self.actions = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -733,17 +727,20 @@ pub mod describe_budget_actions_for_budget_output {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionsForBudgetOutput {
             crate::output::DescribeBudgetActionsForBudgetOutput {
-                actions: self.actions,
-                next_token: self.next_token,
+                actions: self.actions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBudgetActionsForBudgetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
@@ -755,7 +752,7 @@ impl DescribeBudgetActionsForBudgetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionsForAccountOutput {
+pub struct DescribeBudgetActionsForAccountOutput  {
     /// <p> A list of the budget action resources information. </p>
     #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -765,17 +762,17 @@ pub struct DescribeBudgetActionsForAccountOutput {
 }
 impl DescribeBudgetActionsForAccountOutput {
     /// <p> A list of the budget action resources information. </p>
-    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::model::Action]> {
         self.actions.as_deref()
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
 pub mod describe_budget_actions_for_account_output {
-
+    
     /// A builder for [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -790,17 +787,13 @@ pub mod describe_budget_actions_for_account_output {
         /// <p> A list of the budget action resources information. </p>
         pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input);
-            self.actions = Some(v);
-            self
+                            v.push(input);
+                            self.actions = Some(v);
+                            self
         }
         /// <p> A list of the budget action resources information. </p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Action>>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Action>>) -> Self {
+            self.actions = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -809,17 +802,20 @@ pub mod describe_budget_actions_for_account_output {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionsForAccountOutput {
             crate::output::DescribeBudgetActionsForAccountOutput {
-                actions: self.actions,
-                next_token: self.next_token,
+                actions: self.actions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBudgetActionsForAccountOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
@@ -831,7 +827,7 @@ impl DescribeBudgetActionsForAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionHistoriesOutput {
+pub struct DescribeBudgetActionHistoriesOutput  {
     /// <p> The historical record of the budget action resource. </p>
     #[doc(hidden)]
     pub action_histories: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
@@ -841,22 +837,21 @@ pub struct DescribeBudgetActionHistoriesOutput {
 }
 impl DescribeBudgetActionHistoriesOutput {
     /// <p> The historical record of the budget action resource. </p>
-    pub fn action_histories(&self) -> std::option::Option<&[crate::model::ActionHistory]> {
+    pub fn action_histories(&self) -> std::option::Option<& [crate::model::ActionHistory]> {
         self.action_histories.as_deref()
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
 pub mod describe_budget_action_histories_output {
-
+    
     /// A builder for [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) action_histories:
-            std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
+        pub(crate) action_histories: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -867,17 +862,13 @@ pub mod describe_budget_action_histories_output {
         /// <p> The historical record of the budget action resource. </p>
         pub fn action_histories(mut self, input: crate::model::ActionHistory) -> Self {
             let mut v = self.action_histories.unwrap_or_default();
-            v.push(input);
-            self.action_histories = Some(v);
-            self
+                            v.push(input);
+                            self.action_histories = Some(v);
+                            self
         }
         /// <p> The historical record of the budget action resource. </p>
-        pub fn set_action_histories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
-        ) -> Self {
-            self.action_histories = input;
-            self
+        pub fn set_action_histories(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>) -> Self {
+            self.action_histories = input; self
         }
         /// <p> A generic string.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -886,17 +877,20 @@ pub mod describe_budget_action_histories_output {
         }
         /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionHistoriesOutput {
             crate::output::DescribeBudgetActionHistoriesOutput {
-                action_histories: self.action_histories,
-                next_token: self.next_token,
+                action_histories: self.action_histories
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBudgetActionHistoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
@@ -908,7 +902,7 @@ impl DescribeBudgetActionHistoriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionOutput {
+pub struct DescribeBudgetActionOutput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -921,21 +915,21 @@ pub struct DescribeBudgetActionOutput {
 }
 impl DescribeBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A budget action resource. </p>
-    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::model::Action> {
         self.action.as_ref()
     }
 }
 /// See [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
 pub mod describe_budget_action_output {
-
+    
     /// A builder for [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -951,8 +945,7 @@ pub mod describe_budget_action_output {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -961,8 +954,7 @@ pub mod describe_budget_action_output {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> A budget action resource. </p>
         pub fn action(mut self, input: crate::model::Action) -> Self {
@@ -971,18 +963,22 @@ pub mod describe_budget_action_output {
         }
         /// <p> A budget action resource. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionOutput {
             crate::output::DescribeBudgetActionOutput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action: self.action,
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                action: self.action
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
@@ -994,20 +990,20 @@ impl DescribeBudgetActionOutput {
 /// <p> Response of DescribeBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetOutput {
+pub struct DescribeBudgetOutput  {
     /// <p>The description of the budget.</p>
     #[doc(hidden)]
     pub budget: std::option::Option<crate::model::Budget>,
 }
 impl DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
-    pub fn budget(&self) -> std::option::Option<&crate::model::Budget> {
+    pub fn budget(&self) -> std::option::Option<& crate::model::Budget> {
         self.budget.as_ref()
     }
 }
 /// See [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
 pub mod describe_budget_output {
-
+    
     /// A builder for [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1021,16 +1017,18 @@ pub mod describe_budget_output {
         }
         /// <p>The description of the budget.</p>
         pub fn set_budget(mut self, input: std::option::Option<crate::model::Budget>) -> Self {
-            self.budget = input;
-            self
+            self.budget = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
         pub fn build(self) -> crate::output::DescribeBudgetOutput {
             crate::output::DescribeBudgetOutput {
-                budget: self.budget,
+                budget: self.budget
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBudgetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
@@ -1042,19 +1040,24 @@ impl DescribeBudgetOutput {
 /// <p> Response of DeleteSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriberOutput {}
+pub struct DeleteSubscriberOutput  {
+}
 /// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
 pub mod delete_subscriber_output {
-
+    
     /// A builder for [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
         pub fn build(self) -> crate::output::DeleteSubscriberOutput {
-            crate::output::DeleteSubscriberOutput {}
+            crate::output::DeleteSubscriberOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
@@ -1066,19 +1069,24 @@ impl DeleteSubscriberOutput {
 /// <p> Response of DeleteNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotificationOutput {}
+pub struct DeleteNotificationOutput  {
+}
 /// See [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
 pub mod delete_notification_output {
-
+    
     /// A builder for [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
         pub fn build(self) -> crate::output::DeleteNotificationOutput {
-            crate::output::DeleteNotificationOutput {}
+            crate::output::DeleteNotificationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteNotificationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
@@ -1090,7 +1098,7 @@ impl DeleteNotificationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBudgetActionOutput {
+pub struct DeleteBudgetActionOutput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -1103,21 +1111,21 @@ pub struct DeleteBudgetActionOutput {
 }
 impl DeleteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>A budget action resource. </p>
-    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::model::Action> {
         self.action.as_ref()
     }
 }
 /// See [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
 pub mod delete_budget_action_output {
-
+    
     /// A builder for [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1133,8 +1141,7 @@ pub mod delete_budget_action_output {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1143,8 +1150,7 @@ pub mod delete_budget_action_output {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p>A budget action resource. </p>
         pub fn action(mut self, input: crate::model::Action) -> Self {
@@ -1153,18 +1159,22 @@ pub mod delete_budget_action_output {
         }
         /// <p>A budget action resource. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
         pub fn build(self) -> crate::output::DeleteBudgetActionOutput {
             crate::output::DeleteBudgetActionOutput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action: self.action,
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                action: self.action
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
@@ -1176,19 +1186,24 @@ impl DeleteBudgetActionOutput {
 /// <p> Response of DeleteBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBudgetOutput {}
+pub struct DeleteBudgetOutput  {
+}
 /// See [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
 pub mod delete_budget_output {
-
+    
     /// A builder for [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
         pub fn build(self) -> crate::output::DeleteBudgetOutput {
-            crate::output::DeleteBudgetOutput {}
+            crate::output::DeleteBudgetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBudgetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
@@ -1200,19 +1215,24 @@ impl DeleteBudgetOutput {
 /// <p> Response of CreateSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriberOutput {}
+pub struct CreateSubscriberOutput  {
+}
 /// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
 pub mod create_subscriber_output {
-
+    
     /// A builder for [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
         pub fn build(self) -> crate::output::CreateSubscriberOutput {
-            crate::output::CreateSubscriberOutput {}
+            crate::output::CreateSubscriberOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
@@ -1224,19 +1244,24 @@ impl CreateSubscriberOutput {
 /// <p> Response of CreateNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNotificationOutput {}
+pub struct CreateNotificationOutput  {
+}
 /// See [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
 pub mod create_notification_output {
-
+    
     /// A builder for [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
         pub fn build(self) -> crate::output::CreateNotificationOutput {
-            crate::output::CreateNotificationOutput {}
+            crate::output::CreateNotificationOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateNotificationOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
@@ -1248,7 +1273,7 @@ impl CreateNotificationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBudgetActionOutput {
+pub struct CreateBudgetActionOutput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -1261,21 +1286,21 @@ pub struct CreateBudgetActionOutput {
 }
 impl CreateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
 }
 /// See [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
 pub mod create_budget_action_output {
-
+    
     /// A builder for [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1291,8 +1316,7 @@ pub mod create_budget_action_output {
         }
         /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1301,8 +1325,7 @@ pub mod create_budget_action_output {
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.budget_name = input;
-            self
+            self.budget_name = input; self
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1311,18 +1334,22 @@ pub mod create_budget_action_output {
         }
         /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
         pub fn build(self) -> crate::output::CreateBudgetActionOutput {
             crate::output::CreateBudgetActionOutput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                action_id: self.action_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
@@ -1334,19 +1361,24 @@ impl CreateBudgetActionOutput {
 /// <p> Response of CreateBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBudgetOutput {}
+pub struct CreateBudgetOutput  {
+}
 /// See [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
 pub mod create_budget_output {
-
+    
     /// A builder for [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
         pub fn build(self) -> crate::output::CreateBudgetOutput {
-            crate::output::CreateBudgetOutput {}
+            crate::output::CreateBudgetOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateBudgetOutput {
     /// Creates a new builder-style object to manufacture [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
@@ -1354,3 +1386,4 @@ impl CreateBudgetOutput {
         crate::output::create_budget_output::Builder::default()
     }
 }
+

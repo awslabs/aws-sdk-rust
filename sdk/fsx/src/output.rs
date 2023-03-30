@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVolumeOutput {
+pub struct UpdateVolumeOutput  {
     /// <p>A description of the volume just updated. Returned after a successful <code>UpdateVolume</code> API operation.</p>
     #[doc(hidden)]
     pub volume: std::option::Option<crate::model::Volume>,
 }
 impl UpdateVolumeOutput {
     /// <p>A description of the volume just updated. Returned after a successful <code>UpdateVolume</code> API operation.</p>
-    pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
+    pub fn volume(&self) -> std::option::Option<& crate::model::Volume> {
         self.volume.as_ref()
     }
 }
 /// See [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
 pub mod update_volume_output {
-
+    
     /// A builder for [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod update_volume_output {
         }
         /// <p>A description of the volume just updated. Returned after a successful <code>UpdateVolume</code> API operation.</p>
         pub fn set_volume(mut self, input: std::option::Option<crate::model::Volume>) -> Self {
-            self.volume = input;
-            self
+            self.volume = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
         pub fn build(self) -> crate::output::UpdateVolumeOutput {
             crate::output::UpdateVolumeOutput {
-                volume: self.volume,
+                volume: self.volume
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVolumeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
@@ -50,52 +52,45 @@ impl UpdateVolumeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStorageVirtualMachineOutput {
+pub struct UpdateStorageVirtualMachineOutput  {
     /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
     #[doc(hidden)]
     pub storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
 }
 impl UpdateStorageVirtualMachineOutput {
     /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
-    pub fn storage_virtual_machine(
-        &self,
-    ) -> std::option::Option<&crate::model::StorageVirtualMachine> {
+    pub fn storage_virtual_machine(&self) -> std::option::Option<& crate::model::StorageVirtualMachine> {
         self.storage_virtual_machine.as_ref()
     }
 }
 /// See [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput).
 pub mod update_storage_virtual_machine_output {
-
+    
     /// A builder for [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) storage_virtual_machine:
-            std::option::Option<crate::model::StorageVirtualMachine>,
+        pub(crate) storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
     }
     impl Builder {
         /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
-        pub fn storage_virtual_machine(
-            mut self,
-            input: crate::model::StorageVirtualMachine,
-        ) -> Self {
+        pub fn storage_virtual_machine(mut self, input: crate::model::StorageVirtualMachine) -> Self {
             self.storage_virtual_machine = Some(input);
             self
         }
         /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
-        pub fn set_storage_virtual_machine(
-            mut self,
-            input: std::option::Option<crate::model::StorageVirtualMachine>,
-        ) -> Self {
-            self.storage_virtual_machine = input;
-            self
+        pub fn set_storage_virtual_machine(mut self, input: std::option::Option<crate::model::StorageVirtualMachine>) -> Self {
+            self.storage_virtual_machine = input; self
         }
         /// Consumes the builder and constructs a [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput).
         pub fn build(self) -> crate::output::UpdateStorageVirtualMachineOutput {
             crate::output::UpdateStorageVirtualMachineOutput {
-                storage_virtual_machine: self.storage_virtual_machine,
+                storage_virtual_machine: self.storage_virtual_machine
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateStorageVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput).
@@ -107,20 +102,20 @@ impl UpdateStorageVirtualMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSnapshotOutput {
+pub struct UpdateSnapshotOutput  {
     /// <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the snapshot that you updated.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl UpdateSnapshotOutput {
     /// <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the snapshot that you updated.</p>
-    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+    pub fn snapshot(&self) -> std::option::Option<& crate::model::Snapshot> {
         self.snapshot.as_ref()
     }
 }
 /// See [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
 pub mod update_snapshot_output {
-
+    
     /// A builder for [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -134,16 +129,18 @@ pub mod update_snapshot_output {
         }
         /// <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the snapshot that you updated.</p>
         pub fn set_snapshot(mut self, input: std::option::Option<crate::model::Snapshot>) -> Self {
-            self.snapshot = input;
-            self
+            self.snapshot = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
         pub fn build(self) -> crate::output::UpdateSnapshotOutput {
             crate::output::UpdateSnapshotOutput {
-                snapshot: self.snapshot,
+                snapshot: self.snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
@@ -155,20 +152,20 @@ impl UpdateSnapshotOutput {
 /// <p>The response object for the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFileSystemOutput {
+pub struct UpdateFileSystemOutput  {
     /// <p>A description of the file system that was updated.</p>
     #[doc(hidden)]
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
 impl UpdateFileSystemOutput {
     /// <p>A description of the file system that was updated.</p>
-    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+    pub fn file_system(&self) -> std::option::Option<& crate::model::FileSystem> {
         self.file_system.as_ref()
     }
 }
 /// See [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
 pub mod update_file_system_output {
-
+    
     /// A builder for [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -181,20 +178,19 @@ pub mod update_file_system_output {
             self
         }
         /// <p>A description of the file system that was updated.</p>
-        pub fn set_file_system(
-            mut self,
-            input: std::option::Option<crate::model::FileSystem>,
-        ) -> Self {
-            self.file_system = input;
-            self
+        pub fn set_file_system(mut self, input: std::option::Option<crate::model::FileSystem>) -> Self {
+            self.file_system = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
         pub fn build(self) -> crate::output::UpdateFileSystemOutput {
             crate::output::UpdateFileSystemOutput {
-                file_system: self.file_system,
+                file_system: self.file_system
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
@@ -206,20 +202,20 @@ impl UpdateFileSystemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFileCacheOutput {
+pub struct UpdateFileCacheOutput  {
     /// <p>A description of the cache that was updated.</p>
     #[doc(hidden)]
     pub file_cache: std::option::Option<crate::model::FileCache>,
 }
 impl UpdateFileCacheOutput {
     /// <p>A description of the cache that was updated.</p>
-    pub fn file_cache(&self) -> std::option::Option<&crate::model::FileCache> {
+    pub fn file_cache(&self) -> std::option::Option<& crate::model::FileCache> {
         self.file_cache.as_ref()
     }
 }
 /// See [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
 pub mod update_file_cache_output {
-
+    
     /// A builder for [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -232,20 +228,19 @@ pub mod update_file_cache_output {
             self
         }
         /// <p>A description of the cache that was updated.</p>
-        pub fn set_file_cache(
-            mut self,
-            input: std::option::Option<crate::model::FileCache>,
-        ) -> Self {
-            self.file_cache = input;
-            self
+        pub fn set_file_cache(mut self, input: std::option::Option<crate::model::FileCache>) -> Self {
+            self.file_cache = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
         pub fn build(self) -> crate::output::UpdateFileCacheOutput {
             crate::output::UpdateFileCacheOutput {
-                file_cache: self.file_cache,
+                file_cache: self.file_cache
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFileCacheOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
@@ -257,20 +252,20 @@ impl UpdateFileCacheOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataRepositoryAssociationOutput {
+pub struct UpdateDataRepositoryAssociationOutput  {
     /// <p>The response object returned after the data repository association is updated.</p>
     #[doc(hidden)]
     pub association: std::option::Option<crate::model::DataRepositoryAssociation>,
 }
 impl UpdateDataRepositoryAssociationOutput {
     /// <p>The response object returned after the data repository association is updated.</p>
-    pub fn association(&self) -> std::option::Option<&crate::model::DataRepositoryAssociation> {
+    pub fn association(&self) -> std::option::Option<& crate::model::DataRepositoryAssociation> {
         self.association.as_ref()
     }
 }
 /// See [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput).
 pub mod update_data_repository_association_output {
-
+    
     /// A builder for [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -283,20 +278,19 @@ pub mod update_data_repository_association_output {
             self
         }
         /// <p>The response object returned after the data repository association is updated.</p>
-        pub fn set_association(
-            mut self,
-            input: std::option::Option<crate::model::DataRepositoryAssociation>,
-        ) -> Self {
-            self.association = input;
-            self
+        pub fn set_association(mut self, input: std::option::Option<crate::model::DataRepositoryAssociation>) -> Self {
+            self.association = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput).
         pub fn build(self) -> crate::output::UpdateDataRepositoryAssociationOutput {
             crate::output::UpdateDataRepositoryAssociationOutput {
-                association: self.association,
+                association: self.association
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDataRepositoryAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput).
@@ -308,19 +302,24 @@ impl UpdateDataRepositoryAssociationOutput {
 /// <p>The response object for <code>UntagResource</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -332,19 +331,24 @@ impl UntagResourceOutput {
 /// <p>The response object for the <code>TagResource</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -356,7 +360,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreVolumeFromSnapshotOutput {
+pub struct RestoreVolumeFromSnapshotOutput  {
     /// <p>The ID of the volume that you restored.</p>
     #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
@@ -365,35 +369,31 @@ pub struct RestoreVolumeFromSnapshotOutput {
     pub lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
     #[doc(hidden)]
-    pub administrative_actions:
-        std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
+    pub administrative_actions: std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
 }
 impl RestoreVolumeFromSnapshotOutput {
     /// <p>The ID of the volume that you restored.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The lifecycle state of the volume being restored.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::VolumeLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::VolumeLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    pub fn administrative_actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::AdministrativeAction]> {
+    pub fn administrative_actions(&self) -> std::option::Option<& [crate::model::AdministrativeAction]> {
         self.administrative_actions.as_deref()
     }
 }
 /// See [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput).
 pub mod restore_volume_from_snapshot_output {
-
+    
     /// A builder for [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
-        pub(crate) administrative_actions:
-            std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
+        pub(crate) administrative_actions: std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
     }
     impl Builder {
         /// <p>The ID of the volume that you restored.</p>
@@ -403,8 +403,7 @@ pub mod restore_volume_from_snapshot_output {
         }
         /// <p>The ID of the volume that you restored.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = input;
-            self
+            self.volume_id = input; self
         }
         /// <p>The lifecycle state of the volume being restored.</p>
         pub fn lifecycle(mut self, input: crate::model::VolumeLifecycle) -> Self {
@@ -412,12 +411,8 @@ pub mod restore_volume_from_snapshot_output {
             self
         }
         /// <p>The lifecycle state of the volume being restored.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::VolumeLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::VolumeLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// Appends an item to `administrative_actions`.
         ///
@@ -426,27 +421,28 @@ pub mod restore_volume_from_snapshot_output {
         /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
         pub fn administrative_actions(mut self, input: crate::model::AdministrativeAction) -> Self {
             let mut v = self.administrative_actions.unwrap_or_default();
-            v.push(input);
-            self.administrative_actions = Some(v);
-            self
+                            v.push(input);
+                            self.administrative_actions = Some(v);
+                            self
         }
         /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-        pub fn set_administrative_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
-        ) -> Self {
-            self.administrative_actions = input;
-            self
+        pub fn set_administrative_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>) -> Self {
+            self.administrative_actions = input; self
         }
         /// Consumes the builder and constructs a [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput).
         pub fn build(self) -> crate::output::RestoreVolumeFromSnapshotOutput {
             crate::output::RestoreVolumeFromSnapshotOutput {
-                volume_id: self.volume_id,
-                lifecycle: self.lifecycle,
-                administrative_actions: self.administrative_actions,
+                volume_id: self.volume_id
+                ,
+                lifecycle: self.lifecycle
+                ,
+                administrative_actions: self.administrative_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreVolumeFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput).
@@ -458,20 +454,20 @@ impl RestoreVolumeFromSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReleaseFileSystemNfsV3LocksOutput {
+pub struct ReleaseFileSystemNfsV3LocksOutput  {
     /// <p>A description of a specific Amazon FSx file system.</p>
     #[doc(hidden)]
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
 impl ReleaseFileSystemNfsV3LocksOutput {
     /// <p>A description of a specific Amazon FSx file system.</p>
-    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+    pub fn file_system(&self) -> std::option::Option<& crate::model::FileSystem> {
         self.file_system.as_ref()
     }
 }
 /// See [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput).
 pub mod release_file_system_nfs_v3_locks_output {
-
+    
     /// A builder for [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -484,20 +480,19 @@ pub mod release_file_system_nfs_v3_locks_output {
             self
         }
         /// <p>A description of a specific Amazon FSx file system.</p>
-        pub fn set_file_system(
-            mut self,
-            input: std::option::Option<crate::model::FileSystem>,
-        ) -> Self {
-            self.file_system = input;
-            self
+        pub fn set_file_system(mut self, input: std::option::Option<crate::model::FileSystem>) -> Self {
+            self.file_system = input; self
         }
         /// Consumes the builder and constructs a [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput).
         pub fn build(self) -> crate::output::ReleaseFileSystemNfsV3LocksOutput {
             crate::output::ReleaseFileSystemNfsV3LocksOutput {
-                file_system: self.file_system,
+                file_system: self.file_system
+                ,
             }
         }
     }
+    
+    
 }
 impl ReleaseFileSystemNfsV3LocksOutput {
     /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput).
@@ -509,7 +504,7 @@ impl ReleaseFileSystemNfsV3LocksOutput {
 /// <p>The response object for <code>ListTagsForResource</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags on the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -519,17 +514,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags on the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -544,17 +539,13 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tags on the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags on the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -563,17 +554,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -585,20 +579,20 @@ impl ListTagsForResourceOutput {
 /// <p>The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file system. Use the API operation to monitor the status of the aliases Amazon FSx is removing from the file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateFileSystemAliasesOutput {
+pub struct DisassociateFileSystemAliasesOutput  {
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
     #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
 }
 impl DisassociateFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+    pub fn aliases(&self) -> std::option::Option<& [crate::model::Alias]> {
         self.aliases.as_deref()
     }
 }
 /// See [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput).
 pub mod disassociate_file_system_aliases_output {
-
+    
     /// A builder for [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -612,25 +606,24 @@ pub mod disassociate_file_system_aliases_output {
         /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
         pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input);
-            self.aliases = Some(v);
-            self
+                            v.push(input);
+                            self.aliases = Some(v);
+                            self
         }
         /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
-        pub fn set_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alias>>,
-        ) -> Self {
-            self.aliases = input;
-            self
+        pub fn set_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alias>>) -> Self {
+            self.aliases = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput).
         pub fn build(self) -> crate::output::DisassociateFileSystemAliasesOutput {
             crate::output::DisassociateFileSystemAliasesOutput {
-                aliases: self.aliases,
+                aliases: self.aliases
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateFileSystemAliasesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput).
@@ -642,7 +635,7 @@ impl DisassociateFileSystemAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVolumesOutput {
+pub struct DescribeVolumesOutput  {
     /// <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
     #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
@@ -652,17 +645,17 @@ pub struct DescribeVolumesOutput {
 }
 impl DescribeVolumesOutput {
     /// <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
-    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+    pub fn volumes(&self) -> std::option::Option<& [crate::model::Volume]> {
         self.volumes.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
 pub mod describe_volumes_output {
-
+    
     /// A builder for [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -677,17 +670,13 @@ pub mod describe_volumes_output {
         /// <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
         pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input);
-            self.volumes = Some(v);
-            self
+                            v.push(input);
+                            self.volumes = Some(v);
+                            self
         }
         /// <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
-        pub fn set_volumes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
-        ) -> Self {
-            self.volumes = input;
-            self
+        pub fn set_volumes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Volume>>) -> Self {
+            self.volumes = input; self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -696,17 +685,20 @@ pub mod describe_volumes_output {
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
         pub fn build(self) -> crate::output::DescribeVolumesOutput {
             crate::output::DescribeVolumesOutput {
-                volumes: self.volumes,
-                next_token: self.next_token,
+                volumes: self.volumes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVolumesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
@@ -718,35 +710,31 @@ impl DescribeVolumesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStorageVirtualMachinesOutput {
+pub struct DescribeStorageVirtualMachinesOutput  {
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
     #[doc(hidden)]
-    pub storage_virtual_machines:
-        std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>>,
+    pub storage_virtual_machines: std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStorageVirtualMachinesOutput {
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
-    pub fn storage_virtual_machines(
-        &self,
-    ) -> std::option::Option<&[crate::model::StorageVirtualMachine]> {
+    pub fn storage_virtual_machines(&self) -> std::option::Option<& [crate::model::StorageVirtualMachine]> {
         self.storage_virtual_machines.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput).
 pub mod describe_storage_virtual_machines_output {
-
+    
     /// A builder for [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) storage_virtual_machines:
-            std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>>,
+        pub(crate) storage_virtual_machines: std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -755,22 +743,15 @@ pub mod describe_storage_virtual_machines_output {
         /// To override the contents of this collection use [`set_storage_virtual_machines`](Self::set_storage_virtual_machines).
         ///
         /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
-        pub fn storage_virtual_machines(
-            mut self,
-            input: crate::model::StorageVirtualMachine,
-        ) -> Self {
+        pub fn storage_virtual_machines(mut self, input: crate::model::StorageVirtualMachine) -> Self {
             let mut v = self.storage_virtual_machines.unwrap_or_default();
-            v.push(input);
-            self.storage_virtual_machines = Some(v);
-            self
+                            v.push(input);
+                            self.storage_virtual_machines = Some(v);
+                            self
         }
         /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
-        pub fn set_storage_virtual_machines(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>>,
-        ) -> Self {
-            self.storage_virtual_machines = input;
-            self
+        pub fn set_storage_virtual_machines(mut self, input: std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>>) -> Self {
+            self.storage_virtual_machines = input; self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -779,17 +760,20 @@ pub mod describe_storage_virtual_machines_output {
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput).
         pub fn build(self) -> crate::output::DescribeStorageVirtualMachinesOutput {
             crate::output::DescribeStorageVirtualMachinesOutput {
-                storage_virtual_machines: self.storage_virtual_machines,
-                next_token: self.next_token,
+                storage_virtual_machines: self.storage_virtual_machines
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStorageVirtualMachinesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput).
@@ -801,7 +785,7 @@ impl DescribeStorageVirtualMachinesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnapshotsOutput {
+pub struct DescribeSnapshotsOutput  {
     /// <p>An array of snapshots.</p>
     #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -811,17 +795,17 @@ pub struct DescribeSnapshotsOutput {
 }
 impl DescribeSnapshotsOutput {
     /// <p>An array of snapshots.</p>
-    pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+    pub fn snapshots(&self) -> std::option::Option<& [crate::model::Snapshot]> {
         self.snapshots.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
 pub mod describe_snapshots_output {
-
+    
     /// A builder for [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -836,17 +820,13 @@ pub mod describe_snapshots_output {
         /// <p>An array of snapshots.</p>
         pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input);
-            self.snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.snapshots = Some(v);
+                            self
         }
         /// <p>An array of snapshots.</p>
-        pub fn set_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
-        ) -> Self {
-            self.snapshots = input;
-            self
+        pub fn set_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>) -> Self {
+            self.snapshots = input; self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -855,17 +835,20 @@ pub mod describe_snapshots_output {
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
         pub fn build(self) -> crate::output::DescribeSnapshotsOutput {
             crate::output::DescribeSnapshotsOutput {
-                snapshots: self.snapshots,
-                next_token: self.next_token,
+                snapshots: self.snapshots
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
@@ -877,7 +860,7 @@ impl DescribeSnapshotsOutput {
 /// <p>The response object for <code>DescribeFileSystems</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFileSystemsOutput {
+pub struct DescribeFileSystemsOutput  {
     /// <p>An array of file system descriptions.</p>
     #[doc(hidden)]
     pub file_systems: std::option::Option<std::vec::Vec<crate::model::FileSystem>>,
@@ -887,17 +870,17 @@ pub struct DescribeFileSystemsOutput {
 }
 impl DescribeFileSystemsOutput {
     /// <p>An array of file system descriptions.</p>
-    pub fn file_systems(&self) -> std::option::Option<&[crate::model::FileSystem]> {
+    pub fn file_systems(&self) -> std::option::Option<& [crate::model::FileSystem]> {
         self.file_systems.as_deref()
     }
     /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
 pub mod describe_file_systems_output {
-
+    
     /// A builder for [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -912,17 +895,13 @@ pub mod describe_file_systems_output {
         /// <p>An array of file system descriptions.</p>
         pub fn file_systems(mut self, input: crate::model::FileSystem) -> Self {
             let mut v = self.file_systems.unwrap_or_default();
-            v.push(input);
-            self.file_systems = Some(v);
-            self
+                            v.push(input);
+                            self.file_systems = Some(v);
+                            self
         }
         /// <p>An array of file system descriptions.</p>
-        pub fn set_file_systems(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileSystem>>,
-        ) -> Self {
-            self.file_systems = input;
-            self
+        pub fn set_file_systems(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystem>>) -> Self {
+            self.file_systems = input; self
         }
         /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -931,17 +910,20 @@ pub mod describe_file_systems_output {
         }
         /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
         pub fn build(self) -> crate::output::DescribeFileSystemsOutput {
             crate::output::DescribeFileSystemsOutput {
-                file_systems: self.file_systems,
-                next_token: self.next_token,
+                file_systems: self.file_systems
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFileSystemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
@@ -953,7 +935,7 @@ impl DescribeFileSystemsOutput {
 /// <p>The response object for <code>DescribeFileSystemAliases</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFileSystemAliasesOutput {
+pub struct DescribeFileSystemAliasesOutput  {
     /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
     #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
@@ -963,17 +945,17 @@ pub struct DescribeFileSystemAliasesOutput {
 }
 impl DescribeFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+    pub fn aliases(&self) -> std::option::Option<& [crate::model::Alias]> {
         self.aliases.as_deref()
     }
     /// <p>Present if there are more DNS aliases than returned in the response (String). You can use the <code>NextToken</code> value in a later request to fetch additional descriptions. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput).
 pub mod describe_file_system_aliases_output {
-
+    
     /// A builder for [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -988,17 +970,13 @@ pub mod describe_file_system_aliases_output {
         /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
         pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input);
-            self.aliases = Some(v);
-            self
+                            v.push(input);
+                            self.aliases = Some(v);
+                            self
         }
         /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
-        pub fn set_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alias>>,
-        ) -> Self {
-            self.aliases = input;
-            self
+        pub fn set_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alias>>) -> Self {
+            self.aliases = input; self
         }
         /// <p>Present if there are more DNS aliases than returned in the response (String). You can use the <code>NextToken</code> value in a later request to fetch additional descriptions. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1007,17 +985,20 @@ pub mod describe_file_system_aliases_output {
         }
         /// <p>Present if there are more DNS aliases than returned in the response (String). You can use the <code>NextToken</code> value in a later request to fetch additional descriptions. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput).
         pub fn build(self) -> crate::output::DescribeFileSystemAliasesOutput {
             crate::output::DescribeFileSystemAliasesOutput {
-                aliases: self.aliases,
-                next_token: self.next_token,
+                aliases: self.aliases
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFileSystemAliasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput).
@@ -1029,7 +1010,7 @@ impl DescribeFileSystemAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFileCachesOutput {
+pub struct DescribeFileCachesOutput  {
     /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
     #[doc(hidden)]
     pub file_caches: std::option::Option<std::vec::Vec<crate::model::FileCache>>,
@@ -1039,17 +1020,17 @@ pub struct DescribeFileCachesOutput {
 }
 impl DescribeFileCachesOutput {
     /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
-    pub fn file_caches(&self) -> std::option::Option<&[crate::model::FileCache]> {
+    pub fn file_caches(&self) -> std::option::Option<& [crate::model::FileCache]> {
         self.file_caches.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
 pub mod describe_file_caches_output {
-
+    
     /// A builder for [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1064,17 +1045,13 @@ pub mod describe_file_caches_output {
         /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
         pub fn file_caches(mut self, input: crate::model::FileCache) -> Self {
             let mut v = self.file_caches.unwrap_or_default();
-            v.push(input);
-            self.file_caches = Some(v);
-            self
+                            v.push(input);
+                            self.file_caches = Some(v);
+                            self
         }
         /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
-        pub fn set_file_caches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileCache>>,
-        ) -> Self {
-            self.file_caches = input;
-            self
+        pub fn set_file_caches(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileCache>>) -> Self {
+            self.file_caches = input; self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1083,17 +1060,20 @@ pub mod describe_file_caches_output {
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
         pub fn build(self) -> crate::output::DescribeFileCachesOutput {
             crate::output::DescribeFileCachesOutput {
-                file_caches: self.file_caches,
-                next_token: self.next_token,
+                file_caches: self.file_caches
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFileCachesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
@@ -1105,7 +1085,7 @@ impl DescribeFileCachesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataRepositoryTasksOutput {
+pub struct DescribeDataRepositoryTasksOutput  {
     /// <p>The collection of data repository task descriptions returned.</p>
     #[doc(hidden)]
     pub data_repository_tasks: std::option::Option<std::vec::Vec<crate::model::DataRepositoryTask>>,
@@ -1115,24 +1095,21 @@ pub struct DescribeDataRepositoryTasksOutput {
 }
 impl DescribeDataRepositoryTasksOutput {
     /// <p>The collection of data repository task descriptions returned.</p>
-    pub fn data_repository_tasks(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataRepositoryTask]> {
+    pub fn data_repository_tasks(&self) -> std::option::Option<& [crate::model::DataRepositoryTask]> {
         self.data_repository_tasks.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput).
 pub mod describe_data_repository_tasks_output {
-
+    
     /// A builder for [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data_repository_tasks:
-            std::option::Option<std::vec::Vec<crate::model::DataRepositoryTask>>,
+        pub(crate) data_repository_tasks: std::option::Option<std::vec::Vec<crate::model::DataRepositoryTask>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1143,17 +1120,13 @@ pub mod describe_data_repository_tasks_output {
         /// <p>The collection of data repository task descriptions returned.</p>
         pub fn data_repository_tasks(mut self, input: crate::model::DataRepositoryTask) -> Self {
             let mut v = self.data_repository_tasks.unwrap_or_default();
-            v.push(input);
-            self.data_repository_tasks = Some(v);
-            self
+                            v.push(input);
+                            self.data_repository_tasks = Some(v);
+                            self
         }
         /// <p>The collection of data repository task descriptions returned.</p>
-        pub fn set_data_repository_tasks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataRepositoryTask>>,
-        ) -> Self {
-            self.data_repository_tasks = input;
-            self
+        pub fn set_data_repository_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataRepositoryTask>>) -> Self {
+            self.data_repository_tasks = input; self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1162,17 +1135,20 @@ pub mod describe_data_repository_tasks_output {
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput).
         pub fn build(self) -> crate::output::DescribeDataRepositoryTasksOutput {
             crate::output::DescribeDataRepositoryTasksOutput {
-                data_repository_tasks: self.data_repository_tasks,
-                next_token: self.next_token,
+                data_repository_tasks: self.data_repository_tasks
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDataRepositoryTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput).
@@ -1184,7 +1160,7 @@ impl DescribeDataRepositoryTasksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataRepositoryAssociationsOutput {
+pub struct DescribeDataRepositoryAssociationsOutput  {
     /// <p>An array of one or more data repository association descriptions.</p>
     #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
@@ -1194,22 +1170,21 @@ pub struct DescribeDataRepositoryAssociationsOutput {
 }
 impl DescribeDataRepositoryAssociationsOutput {
     /// <p>An array of one or more data repository association descriptions.</p>
-    pub fn associations(&self) -> std::option::Option<&[crate::model::DataRepositoryAssociation]> {
+    pub fn associations(&self) -> std::option::Option<& [crate::model::DataRepositoryAssociation]> {
         self.associations.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput).
 pub mod describe_data_repository_associations_output {
-
+    
     /// A builder for [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) associations:
-            std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
+        pub(crate) associations: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1220,17 +1195,13 @@ pub mod describe_data_repository_associations_output {
         /// <p>An array of one or more data repository association descriptions.</p>
         pub fn associations(mut self, input: crate::model::DataRepositoryAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input);
-            self.associations = Some(v);
-            self
+                            v.push(input);
+                            self.associations = Some(v);
+                            self
         }
         /// <p>An array of one or more data repository association descriptions.</p>
-        pub fn set_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
-        ) -> Self {
-            self.associations = input;
-            self
+        pub fn set_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>) -> Self {
+            self.associations = input; self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1239,17 +1210,20 @@ pub mod describe_data_repository_associations_output {
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput).
         pub fn build(self) -> crate::output::DescribeDataRepositoryAssociationsOutput {
             crate::output::DescribeDataRepositoryAssociationsOutput {
-                associations: self.associations,
-                next_token: self.next_token,
+                associations: self.associations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDataRepositoryAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput).
@@ -1261,7 +1235,7 @@ impl DescribeDataRepositoryAssociationsOutput {
 /// <p>Response object for the <code>DescribeBackups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBackupsOutput {
+pub struct DescribeBackupsOutput  {
     /// <p>An array of backups.</p>
     #[doc(hidden)]
     pub backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
@@ -1271,17 +1245,17 @@ pub struct DescribeBackupsOutput {
 }
 impl DescribeBackupsOutput {
     /// <p>An array of backups.</p>
-    pub fn backups(&self) -> std::option::Option<&[crate::model::Backup]> {
+    pub fn backups(&self) -> std::option::Option<& [crate::model::Backup]> {
         self.backups.as_deref()
     }
     /// <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
 pub mod describe_backups_output {
-
+    
     /// A builder for [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1296,17 +1270,13 @@ pub mod describe_backups_output {
         /// <p>An array of backups.</p>
         pub fn backups(mut self, input: crate::model::Backup) -> Self {
             let mut v = self.backups.unwrap_or_default();
-            v.push(input);
-            self.backups = Some(v);
-            self
+                            v.push(input);
+                            self.backups = Some(v);
+                            self
         }
         /// <p>An array of backups.</p>
-        pub fn set_backups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Backup>>,
-        ) -> Self {
-            self.backups = input;
-            self
+        pub fn set_backups(mut self, input: std::option::Option<std::vec::Vec<crate::model::Backup>>) -> Self {
+            self.backups = input; self
         }
         /// <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1315,17 +1285,20 @@ pub mod describe_backups_output {
         }
         /// <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
         pub fn build(self) -> crate::output::DescribeBackupsOutput {
             crate::output::DescribeBackupsOutput {
-                backups: self.backups,
-                next_token: self.next_token,
+                backups: self.backups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBackupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
@@ -1337,7 +1310,7 @@ impl DescribeBackupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVolumeOutput {
+pub struct DeleteVolumeOutput  {
     /// <p>The ID of the volume that's being deleted.</p>
     #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
@@ -1350,21 +1323,21 @@ pub struct DeleteVolumeOutput {
 }
 impl DeleteVolumeOutput {
     /// <p>The ID of the volume that's being deleted.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::VolumeLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::VolumeLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
-    pub fn ontap_response(&self) -> std::option::Option<&crate::model::DeleteVolumeOntapResponse> {
+    pub fn ontap_response(&self) -> std::option::Option<& crate::model::DeleteVolumeOntapResponse> {
         self.ontap_response.as_ref()
     }
 }
 /// See [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
 pub mod delete_volume_output {
-
+    
     /// A builder for [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1380,8 +1353,7 @@ pub mod delete_volume_output {
         }
         /// <p>The ID of the volume that's being deleted.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = input;
-            self
+            self.volume_id = input; self
         }
         /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
         pub fn lifecycle(mut self, input: crate::model::VolumeLifecycle) -> Self {
@@ -1389,12 +1361,8 @@ pub mod delete_volume_output {
             self
         }
         /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::VolumeLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::VolumeLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
         pub fn ontap_response(mut self, input: crate::model::DeleteVolumeOntapResponse) -> Self {
@@ -1402,22 +1370,23 @@ pub mod delete_volume_output {
             self
         }
         /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
-        pub fn set_ontap_response(
-            mut self,
-            input: std::option::Option<crate::model::DeleteVolumeOntapResponse>,
-        ) -> Self {
-            self.ontap_response = input;
-            self
+        pub fn set_ontap_response(mut self, input: std::option::Option<crate::model::DeleteVolumeOntapResponse>) -> Self {
+            self.ontap_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
         pub fn build(self) -> crate::output::DeleteVolumeOutput {
             crate::output::DeleteVolumeOutput {
-                volume_id: self.volume_id,
-                lifecycle: self.lifecycle,
-                ontap_response: self.ontap_response,
+                volume_id: self.volume_id
+                ,
+                lifecycle: self.lifecycle
+                ,
+                ontap_response: self.ontap_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVolumeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
@@ -1429,7 +1398,7 @@ impl DeleteVolumeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStorageVirtualMachineOutput {
+pub struct DeleteStorageVirtualMachineOutput  {
     /// <p>The ID of the SVM Amazon FSx is deleting.</p>
     #[doc(hidden)]
     pub storage_virtual_machine_id: std::option::Option<std::string::String>,
@@ -1439,17 +1408,17 @@ pub struct DeleteStorageVirtualMachineOutput {
 }
 impl DeleteStorageVirtualMachineOutput {
     /// <p>The ID of the SVM Amazon FSx is deleting.</p>
-    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<& str> {
         self.storage_virtual_machine_id.as_deref()
     }
     /// <p>Describes the lifecycle state of the SVM being deleted.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::StorageVirtualMachineLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::StorageVirtualMachineLifecycle> {
         self.lifecycle.as_ref()
     }
 }
 /// See [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput).
 pub mod delete_storage_virtual_machine_output {
-
+    
     /// A builder for [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1463,12 +1432,8 @@ pub mod delete_storage_virtual_machine_output {
             self
         }
         /// <p>The ID of the SVM Amazon FSx is deleting.</p>
-        pub fn set_storage_virtual_machine_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.storage_virtual_machine_id = input;
-            self
+        pub fn set_storage_virtual_machine_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_virtual_machine_id = input; self
         }
         /// <p>Describes the lifecycle state of the SVM being deleted.</p>
         pub fn lifecycle(mut self, input: crate::model::StorageVirtualMachineLifecycle) -> Self {
@@ -1476,21 +1441,21 @@ pub mod delete_storage_virtual_machine_output {
             self
         }
         /// <p>Describes the lifecycle state of the SVM being deleted.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::StorageVirtualMachineLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::StorageVirtualMachineLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// Consumes the builder and constructs a [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput).
         pub fn build(self) -> crate::output::DeleteStorageVirtualMachineOutput {
             crate::output::DeleteStorageVirtualMachineOutput {
-                storage_virtual_machine_id: self.storage_virtual_machine_id,
-                lifecycle: self.lifecycle,
+                storage_virtual_machine_id: self.storage_virtual_machine_id
+                ,
+                lifecycle: self.lifecycle
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteStorageVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput).
@@ -1502,7 +1467,7 @@ impl DeleteStorageVirtualMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSnapshotOutput {
+pub struct DeleteSnapshotOutput  {
     /// <p>The ID of the deleted snapshot.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -1512,17 +1477,17 @@ pub struct DeleteSnapshotOutput {
 }
 impl DeleteSnapshotOutput {
     /// <p>The ID of the deleted snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::SnapshotLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::SnapshotLifecycle> {
         self.lifecycle.as_ref()
     }
 }
 /// See [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
 pub mod delete_snapshot_output {
-
+    
     /// A builder for [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1537,8 +1502,7 @@ pub mod delete_snapshot_output {
         }
         /// <p>The ID of the deleted snapshot.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
         pub fn lifecycle(mut self, input: crate::model::SnapshotLifecycle) -> Self {
@@ -1546,21 +1510,21 @@ pub mod delete_snapshot_output {
             self
         }
         /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::SnapshotLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::SnapshotLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteSnapshotOutput {
             crate::output::DeleteSnapshotOutput {
-                snapshot_id: self.snapshot_id,
-                lifecycle: self.lifecycle,
+                snapshot_id: self.snapshot_id
+                ,
+                lifecycle: self.lifecycle
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
@@ -1572,7 +1536,7 @@ impl DeleteSnapshotOutput {
 /// <p>The response object for the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileSystemOutput {
+pub struct DeleteFileSystemOutput  {
     /// <p>The ID of the file system that's being deleted.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
@@ -1591,46 +1555,37 @@ pub struct DeleteFileSystemOutput {
 }
 impl DeleteFileSystemOutput {
     /// <p>The ID of the file system that's being deleted.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileSystemLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::FileSystemLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
-    pub fn windows_response(
-        &self,
-    ) -> std::option::Option<&crate::model::DeleteFileSystemWindowsResponse> {
+    pub fn windows_response(&self) -> std::option::Option<& crate::model::DeleteFileSystemWindowsResponse> {
         self.windows_response.as_ref()
     }
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
-    pub fn lustre_response(
-        &self,
-    ) -> std::option::Option<&crate::model::DeleteFileSystemLustreResponse> {
+    pub fn lustre_response(&self) -> std::option::Option<& crate::model::DeleteFileSystemLustreResponse> {
         self.lustre_response.as_ref()
     }
     /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
-    pub fn open_zfs_response(
-        &self,
-    ) -> std::option::Option<&crate::model::DeleteFileSystemOpenZfsResponse> {
+    pub fn open_zfs_response(&self) -> std::option::Option<& crate::model::DeleteFileSystemOpenZfsResponse> {
         self.open_zfs_response.as_ref()
     }
 }
 /// See [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
 pub mod delete_file_system_output {
-
+    
     /// A builder for [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::FileSystemLifecycle>,
-        pub(crate) windows_response:
-            std::option::Option<crate::model::DeleteFileSystemWindowsResponse>,
-        pub(crate) lustre_response:
-            std::option::Option<crate::model::DeleteFileSystemLustreResponse>,
-        pub(crate) open_zfs_response:
-            std::option::Option<crate::model::DeleteFileSystemOpenZfsResponse>,
+        pub(crate) windows_response: std::option::Option<crate::model::DeleteFileSystemWindowsResponse>,
+        pub(crate) lustre_response: std::option::Option<crate::model::DeleteFileSystemLustreResponse>,
+        pub(crate) open_zfs_response: std::option::Option<crate::model::DeleteFileSystemOpenZfsResponse>,
     }
     impl Builder {
         /// <p>The ID of the file system that's being deleted.</p>
@@ -1639,12 +1594,8 @@ pub mod delete_file_system_output {
             self
         }
         /// <p>The ID of the file system that's being deleted.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
         pub fn lifecycle(mut self, input: crate::model::FileSystemLifecycle) -> Self {
@@ -1652,72 +1603,54 @@ pub mod delete_file_system_output {
             self
         }
         /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::FileSystemLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::FileSystemLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
-        pub fn windows_response(
-            mut self,
-            input: crate::model::DeleteFileSystemWindowsResponse,
-        ) -> Self {
+        pub fn windows_response(mut self, input: crate::model::DeleteFileSystemWindowsResponse) -> Self {
             self.windows_response = Some(input);
             self
         }
         /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
-        pub fn set_windows_response(
-            mut self,
-            input: std::option::Option<crate::model::DeleteFileSystemWindowsResponse>,
-        ) -> Self {
-            self.windows_response = input;
-            self
+        pub fn set_windows_response(mut self, input: std::option::Option<crate::model::DeleteFileSystemWindowsResponse>) -> Self {
+            self.windows_response = input; self
         }
         /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
-        pub fn lustre_response(
-            mut self,
-            input: crate::model::DeleteFileSystemLustreResponse,
-        ) -> Self {
+        pub fn lustre_response(mut self, input: crate::model::DeleteFileSystemLustreResponse) -> Self {
             self.lustre_response = Some(input);
             self
         }
         /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
-        pub fn set_lustre_response(
-            mut self,
-            input: std::option::Option<crate::model::DeleteFileSystemLustreResponse>,
-        ) -> Self {
-            self.lustre_response = input;
-            self
+        pub fn set_lustre_response(mut self, input: std::option::Option<crate::model::DeleteFileSystemLustreResponse>) -> Self {
+            self.lustre_response = input; self
         }
         /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
-        pub fn open_zfs_response(
-            mut self,
-            input: crate::model::DeleteFileSystemOpenZfsResponse,
-        ) -> Self {
+        pub fn open_zfs_response(mut self, input: crate::model::DeleteFileSystemOpenZfsResponse) -> Self {
             self.open_zfs_response = Some(input);
             self
         }
         /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
-        pub fn set_open_zfs_response(
-            mut self,
-            input: std::option::Option<crate::model::DeleteFileSystemOpenZfsResponse>,
-        ) -> Self {
-            self.open_zfs_response = input;
-            self
+        pub fn set_open_zfs_response(mut self, input: std::option::Option<crate::model::DeleteFileSystemOpenZfsResponse>) -> Self {
+            self.open_zfs_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
         pub fn build(self) -> crate::output::DeleteFileSystemOutput {
             crate::output::DeleteFileSystemOutput {
-                file_system_id: self.file_system_id,
-                lifecycle: self.lifecycle,
-                windows_response: self.windows_response,
-                lustre_response: self.lustre_response,
-                open_zfs_response: self.open_zfs_response,
+                file_system_id: self.file_system_id
+                ,
+                lifecycle: self.lifecycle
+                ,
+                windows_response: self.windows_response
+                ,
+                lustre_response: self.lustre_response
+                ,
+                open_zfs_response: self.open_zfs_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
@@ -1729,7 +1662,7 @@ impl DeleteFileSystemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileCacheOutput {
+pub struct DeleteFileCacheOutput  {
     /// <p>The ID of the cache that's being deleted.</p>
     #[doc(hidden)]
     pub file_cache_id: std::option::Option<std::string::String>,
@@ -1739,17 +1672,17 @@ pub struct DeleteFileCacheOutput {
 }
 impl DeleteFileCacheOutput {
     /// <p>The ID of the cache that's being deleted.</p>
-    pub fn file_cache_id(&self) -> std::option::Option<&str> {
+    pub fn file_cache_id(&self) -> std::option::Option<& str> {
         self.file_cache_id.as_deref()
     }
     /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileCacheLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::FileCacheLifecycle> {
         self.lifecycle.as_ref()
     }
 }
 /// See [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
 pub mod delete_file_cache_output {
-
+    
     /// A builder for [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1763,12 +1696,8 @@ pub mod delete_file_cache_output {
             self
         }
         /// <p>The ID of the cache that's being deleted.</p>
-        pub fn set_file_cache_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_cache_id = input;
-            self
+        pub fn set_file_cache_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_cache_id = input; self
         }
         /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
         pub fn lifecycle(mut self, input: crate::model::FileCacheLifecycle) -> Self {
@@ -1776,21 +1705,21 @@ pub mod delete_file_cache_output {
             self
         }
         /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::FileCacheLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::FileCacheLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
         pub fn build(self) -> crate::output::DeleteFileCacheOutput {
             crate::output::DeleteFileCacheOutput {
-                file_cache_id: self.file_cache_id,
-                lifecycle: self.lifecycle,
+                file_cache_id: self.file_cache_id
+                ,
+                lifecycle: self.lifecycle
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFileCacheOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
@@ -1802,7 +1731,7 @@ impl DeleteFileCacheOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataRepositoryAssociationOutput {
+pub struct DeleteDataRepositoryAssociationOutput  {
     /// <p>The ID of the data repository association being deleted.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -1815,11 +1744,11 @@ pub struct DeleteDataRepositoryAssociationOutput {
 }
 impl DeleteDataRepositoryAssociationOutput {
     /// <p>The ID of the data repository association being deleted.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::DataRepositoryLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::DataRepositoryLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
@@ -1829,7 +1758,7 @@ impl DeleteDataRepositoryAssociationOutput {
 }
 /// See [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput).
 pub mod delete_data_repository_association_output {
-
+    
     /// A builder for [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1844,12 +1773,8 @@ pub mod delete_data_repository_association_output {
             self
         }
         /// <p>The ID of the data repository association being deleted.</p>
-        pub fn set_association_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.association_id = input;
-            self
+        pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.association_id = input; self
         }
         /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
         pub fn lifecycle(mut self, input: crate::model::DataRepositoryLifecycle) -> Self {
@@ -1857,12 +1782,8 @@ pub mod delete_data_repository_association_output {
             self
         }
         /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::DataRepositoryLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::DataRepositoryLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
         pub fn delete_data_in_file_system(mut self, input: bool) -> Self {
@@ -1871,18 +1792,22 @@ pub mod delete_data_repository_association_output {
         }
         /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
         pub fn set_delete_data_in_file_system(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_data_in_file_system = input;
-            self
+            self.delete_data_in_file_system = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput).
         pub fn build(self) -> crate::output::DeleteDataRepositoryAssociationOutput {
             crate::output::DeleteDataRepositoryAssociationOutput {
-                association_id: self.association_id,
-                lifecycle: self.lifecycle,
-                delete_data_in_file_system: self.delete_data_in_file_system,
+                association_id: self.association_id
+                ,
+                lifecycle: self.lifecycle
+                ,
+                delete_data_in_file_system: self.delete_data_in_file_system
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDataRepositoryAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput).
@@ -1894,7 +1819,7 @@ impl DeleteDataRepositoryAssociationOutput {
 /// <p>The response object for the <code>DeleteBackup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackupOutput {
+pub struct DeleteBackupOutput  {
     /// <p>The ID of the backup that was deleted.</p>
     #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
@@ -1904,17 +1829,17 @@ pub struct DeleteBackupOutput {
 }
 impl DeleteBackupOutput {
     /// <p>The ID of the backup that was deleted.</p>
-    pub fn backup_id(&self) -> std::option::Option<&str> {
+    pub fn backup_id(&self) -> std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::BackupLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::BackupLifecycle> {
         self.lifecycle.as_ref()
     }
 }
 /// See [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
 pub mod delete_backup_output {
-
+    
     /// A builder for [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1929,8 +1854,7 @@ pub mod delete_backup_output {
         }
         /// <p>The ID of the backup that was deleted.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.backup_id = input;
-            self
+            self.backup_id = input; self
         }
         /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
         pub fn lifecycle(mut self, input: crate::model::BackupLifecycle) -> Self {
@@ -1938,21 +1862,21 @@ pub mod delete_backup_output {
             self
         }
         /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::BackupLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::BackupLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
         pub fn build(self) -> crate::output::DeleteBackupOutput {
             crate::output::DeleteBackupOutput {
-                backup_id: self.backup_id,
-                lifecycle: self.lifecycle,
+                backup_id: self.backup_id
+                ,
+                lifecycle: self.lifecycle
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBackupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
@@ -1964,20 +1888,20 @@ impl DeleteBackupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVolumeFromBackupOutput {
+pub struct CreateVolumeFromBackupOutput  {
     /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
     #[doc(hidden)]
     pub volume: std::option::Option<crate::model::Volume>,
 }
 impl CreateVolumeFromBackupOutput {
     /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
-    pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
+    pub fn volume(&self) -> std::option::Option<& crate::model::Volume> {
         self.volume.as_ref()
     }
 }
 /// See [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput).
 pub mod create_volume_from_backup_output {
-
+    
     /// A builder for [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1991,16 +1915,18 @@ pub mod create_volume_from_backup_output {
         }
         /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
         pub fn set_volume(mut self, input: std::option::Option<crate::model::Volume>) -> Self {
-            self.volume = input;
-            self
+            self.volume = input; self
         }
         /// Consumes the builder and constructs a [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput).
         pub fn build(self) -> crate::output::CreateVolumeFromBackupOutput {
             crate::output::CreateVolumeFromBackupOutput {
-                volume: self.volume,
+                volume: self.volume
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVolumeFromBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput).
@@ -2012,20 +1938,20 @@ impl CreateVolumeFromBackupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVolumeOutput {
+pub struct CreateVolumeOutput  {
     /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
     #[doc(hidden)]
     pub volume: std::option::Option<crate::model::Volume>,
 }
 impl CreateVolumeOutput {
     /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
-    pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
+    pub fn volume(&self) -> std::option::Option<& crate::model::Volume> {
         self.volume.as_ref()
     }
 }
 /// See [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
 pub mod create_volume_output {
-
+    
     /// A builder for [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2039,16 +1965,18 @@ pub mod create_volume_output {
         }
         /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
         pub fn set_volume(mut self, input: std::option::Option<crate::model::Volume>) -> Self {
-            self.volume = input;
-            self
+            self.volume = input; self
         }
         /// Consumes the builder and constructs a [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
         pub fn build(self) -> crate::output::CreateVolumeOutput {
             crate::output::CreateVolumeOutput {
-                volume: self.volume,
+                volume: self.volume
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVolumeOutput {
     /// Creates a new builder-style object to manufacture [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
@@ -2060,52 +1988,45 @@ impl CreateVolumeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStorageVirtualMachineOutput {
+pub struct CreateStorageVirtualMachineOutput  {
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
     #[doc(hidden)]
     pub storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
 }
 impl CreateStorageVirtualMachineOutput {
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
-    pub fn storage_virtual_machine(
-        &self,
-    ) -> std::option::Option<&crate::model::StorageVirtualMachine> {
+    pub fn storage_virtual_machine(&self) -> std::option::Option<& crate::model::StorageVirtualMachine> {
         self.storage_virtual_machine.as_ref()
     }
 }
 /// See [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput).
 pub mod create_storage_virtual_machine_output {
-
+    
     /// A builder for [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) storage_virtual_machine:
-            std::option::Option<crate::model::StorageVirtualMachine>,
+        pub(crate) storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
     }
     impl Builder {
         /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
-        pub fn storage_virtual_machine(
-            mut self,
-            input: crate::model::StorageVirtualMachine,
-        ) -> Self {
+        pub fn storage_virtual_machine(mut self, input: crate::model::StorageVirtualMachine) -> Self {
             self.storage_virtual_machine = Some(input);
             self
         }
         /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
-        pub fn set_storage_virtual_machine(
-            mut self,
-            input: std::option::Option<crate::model::StorageVirtualMachine>,
-        ) -> Self {
-            self.storage_virtual_machine = input;
-            self
+        pub fn set_storage_virtual_machine(mut self, input: std::option::Option<crate::model::StorageVirtualMachine>) -> Self {
+            self.storage_virtual_machine = input; self
         }
         /// Consumes the builder and constructs a [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput).
         pub fn build(self) -> crate::output::CreateStorageVirtualMachineOutput {
             crate::output::CreateStorageVirtualMachineOutput {
-                storage_virtual_machine: self.storage_virtual_machine,
+                storage_virtual_machine: self.storage_virtual_machine
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateStorageVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput).
@@ -2117,20 +2038,20 @@ impl CreateStorageVirtualMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotOutput {
+pub struct CreateSnapshotOutput  {
     /// <p>A description of the snapshot.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CreateSnapshotOutput {
     /// <p>A description of the snapshot.</p>
-    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+    pub fn snapshot(&self) -> std::option::Option<& crate::model::Snapshot> {
         self.snapshot.as_ref()
     }
 }
 /// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
 pub mod create_snapshot_output {
-
+    
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2144,16 +2065,18 @@ pub mod create_snapshot_output {
         }
         /// <p>A description of the snapshot.</p>
         pub fn set_snapshot(mut self, input: std::option::Option<crate::model::Snapshot>) -> Self {
-            self.snapshot = input;
-            self
+            self.snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
         pub fn build(self) -> crate::output::CreateSnapshotOutput {
             crate::output::CreateSnapshotOutput {
-                snapshot: self.snapshot,
+                snapshot: self.snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
@@ -2165,20 +2088,20 @@ impl CreateSnapshotOutput {
 /// <p>The response object for the <code>CreateFileSystemFromBackup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFileSystemFromBackupOutput {
+pub struct CreateFileSystemFromBackupOutput  {
     /// <p>A description of the file system.</p>
     #[doc(hidden)]
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
 impl CreateFileSystemFromBackupOutput {
     /// <p>A description of the file system.</p>
-    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+    pub fn file_system(&self) -> std::option::Option<& crate::model::FileSystem> {
         self.file_system.as_ref()
     }
 }
 /// See [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput).
 pub mod create_file_system_from_backup_output {
-
+    
     /// A builder for [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2191,20 +2114,19 @@ pub mod create_file_system_from_backup_output {
             self
         }
         /// <p>A description of the file system.</p>
-        pub fn set_file_system(
-            mut self,
-            input: std::option::Option<crate::model::FileSystem>,
-        ) -> Self {
-            self.file_system = input;
-            self
+        pub fn set_file_system(mut self, input: std::option::Option<crate::model::FileSystem>) -> Self {
+            self.file_system = input; self
         }
         /// Consumes the builder and constructs a [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput).
         pub fn build(self) -> crate::output::CreateFileSystemFromBackupOutput {
             crate::output::CreateFileSystemFromBackupOutput {
-                file_system: self.file_system,
+                file_system: self.file_system
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFileSystemFromBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput).
@@ -2216,20 +2138,20 @@ impl CreateFileSystemFromBackupOutput {
 /// <p>The response object returned after the file system is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFileSystemOutput {
+pub struct CreateFileSystemOutput  {
     /// <p>The configuration of the file system that was created.</p>
     #[doc(hidden)]
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
 impl CreateFileSystemOutput {
     /// <p>The configuration of the file system that was created.</p>
-    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+    pub fn file_system(&self) -> std::option::Option<& crate::model::FileSystem> {
         self.file_system.as_ref()
     }
 }
 /// See [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
 pub mod create_file_system_output {
-
+    
     /// A builder for [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2242,20 +2164,19 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The configuration of the file system that was created.</p>
-        pub fn set_file_system(
-            mut self,
-            input: std::option::Option<crate::model::FileSystem>,
-        ) -> Self {
-            self.file_system = input;
-            self
+        pub fn set_file_system(mut self, input: std::option::Option<crate::model::FileSystem>) -> Self {
+            self.file_system = input; self
         }
         /// Consumes the builder and constructs a [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
         pub fn build(self) -> crate::output::CreateFileSystemOutput {
             crate::output::CreateFileSystemOutput {
-                file_system: self.file_system,
+                file_system: self.file_system
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
@@ -2267,20 +2188,20 @@ impl CreateFileSystemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFileCacheOutput {
+pub struct CreateFileCacheOutput  {
     /// <p>A description of the cache that was created.</p>
     #[doc(hidden)]
     pub file_cache: std::option::Option<crate::model::FileCacheCreating>,
 }
 impl CreateFileCacheOutput {
     /// <p>A description of the cache that was created.</p>
-    pub fn file_cache(&self) -> std::option::Option<&crate::model::FileCacheCreating> {
+    pub fn file_cache(&self) -> std::option::Option<& crate::model::FileCacheCreating> {
         self.file_cache.as_ref()
     }
 }
 /// See [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
 pub mod create_file_cache_output {
-
+    
     /// A builder for [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2293,20 +2214,19 @@ pub mod create_file_cache_output {
             self
         }
         /// <p>A description of the cache that was created.</p>
-        pub fn set_file_cache(
-            mut self,
-            input: std::option::Option<crate::model::FileCacheCreating>,
-        ) -> Self {
-            self.file_cache = input;
-            self
+        pub fn set_file_cache(mut self, input: std::option::Option<crate::model::FileCacheCreating>) -> Self {
+            self.file_cache = input; self
         }
         /// Consumes the builder and constructs a [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
         pub fn build(self) -> crate::output::CreateFileCacheOutput {
             crate::output::CreateFileCacheOutput {
-                file_cache: self.file_cache,
+                file_cache: self.file_cache
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFileCacheOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
@@ -2318,20 +2238,20 @@ impl CreateFileCacheOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataRepositoryTaskOutput {
+pub struct CreateDataRepositoryTaskOutput  {
     /// <p>The description of the data repository task that you just created.</p>
     #[doc(hidden)]
     pub data_repository_task: std::option::Option<crate::model::DataRepositoryTask>,
 }
 impl CreateDataRepositoryTaskOutput {
     /// <p>The description of the data repository task that you just created.</p>
-    pub fn data_repository_task(&self) -> std::option::Option<&crate::model::DataRepositoryTask> {
+    pub fn data_repository_task(&self) -> std::option::Option<& crate::model::DataRepositoryTask> {
         self.data_repository_task.as_ref()
     }
 }
 /// See [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput).
 pub mod create_data_repository_task_output {
-
+    
     /// A builder for [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2344,20 +2264,19 @@ pub mod create_data_repository_task_output {
             self
         }
         /// <p>The description of the data repository task that you just created.</p>
-        pub fn set_data_repository_task(
-            mut self,
-            input: std::option::Option<crate::model::DataRepositoryTask>,
-        ) -> Self {
-            self.data_repository_task = input;
-            self
+        pub fn set_data_repository_task(mut self, input: std::option::Option<crate::model::DataRepositoryTask>) -> Self {
+            self.data_repository_task = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput).
         pub fn build(self) -> crate::output::CreateDataRepositoryTaskOutput {
             crate::output::CreateDataRepositoryTaskOutput {
-                data_repository_task: self.data_repository_task,
+                data_repository_task: self.data_repository_task
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDataRepositoryTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput).
@@ -2369,20 +2288,20 @@ impl CreateDataRepositoryTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataRepositoryAssociationOutput {
+pub struct CreateDataRepositoryAssociationOutput  {
     /// <p>The response object returned after the data repository association is created.</p>
     #[doc(hidden)]
     pub association: std::option::Option<crate::model::DataRepositoryAssociation>,
 }
 impl CreateDataRepositoryAssociationOutput {
     /// <p>The response object returned after the data repository association is created.</p>
-    pub fn association(&self) -> std::option::Option<&crate::model::DataRepositoryAssociation> {
+    pub fn association(&self) -> std::option::Option<& crate::model::DataRepositoryAssociation> {
         self.association.as_ref()
     }
 }
 /// See [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput).
 pub mod create_data_repository_association_output {
-
+    
     /// A builder for [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2395,20 +2314,19 @@ pub mod create_data_repository_association_output {
             self
         }
         /// <p>The response object returned after the data repository association is created.</p>
-        pub fn set_association(
-            mut self,
-            input: std::option::Option<crate::model::DataRepositoryAssociation>,
-        ) -> Self {
-            self.association = input;
-            self
+        pub fn set_association(mut self, input: std::option::Option<crate::model::DataRepositoryAssociation>) -> Self {
+            self.association = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput).
         pub fn build(self) -> crate::output::CreateDataRepositoryAssociationOutput {
             crate::output::CreateDataRepositoryAssociationOutput {
-                association: self.association,
+                association: self.association
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDataRepositoryAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput).
@@ -2420,20 +2338,20 @@ impl CreateDataRepositoryAssociationOutput {
 /// <p>The response object for the <code>CreateBackup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackupOutput {
+pub struct CreateBackupOutput  {
     /// <p>A description of the backup.</p>
     #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl CreateBackupOutput {
     /// <p>A description of the backup.</p>
-    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+    pub fn backup(&self) -> std::option::Option<& crate::model::Backup> {
         self.backup.as_ref()
     }
 }
 /// See [`CreateBackupOutput`](crate::output::CreateBackupOutput).
 pub mod create_backup_output {
-
+    
     /// A builder for [`CreateBackupOutput`](crate::output::CreateBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2447,16 +2365,18 @@ pub mod create_backup_output {
         }
         /// <p>A description of the backup.</p>
         pub fn set_backup(mut self, input: std::option::Option<crate::model::Backup>) -> Self {
-            self.backup = input;
-            self
+            self.backup = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackupOutput`](crate::output::CreateBackupOutput).
         pub fn build(self) -> crate::output::CreateBackupOutput {
             crate::output::CreateBackupOutput {
-                backup: self.backup,
+                backup: self.backup
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackupOutput`](crate::output::CreateBackupOutput).
@@ -2468,20 +2388,20 @@ impl CreateBackupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyBackupOutput {
+pub struct CopyBackupOutput  {
     /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
     #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl CopyBackupOutput {
     /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
-    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+    pub fn backup(&self) -> std::option::Option<& crate::model::Backup> {
         self.backup.as_ref()
     }
 }
 /// See [`CopyBackupOutput`](crate::output::CopyBackupOutput).
 pub mod copy_backup_output {
-
+    
     /// A builder for [`CopyBackupOutput`](crate::output::CopyBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2495,16 +2415,18 @@ pub mod copy_backup_output {
         }
         /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
         pub fn set_backup(mut self, input: std::option::Option<crate::model::Backup>) -> Self {
-            self.backup = input;
-            self
+            self.backup = input; self
         }
         /// Consumes the builder and constructs a [`CopyBackupOutput`](crate::output::CopyBackupOutput).
         pub fn build(self) -> crate::output::CopyBackupOutput {
             crate::output::CopyBackupOutput {
-                backup: self.backup,
+                backup: self.backup
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyBackupOutput {
     /// Creates a new builder-style object to manufacture [`CopyBackupOutput`](crate::output::CopyBackupOutput).
@@ -2516,15 +2438,15 @@ impl CopyBackupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelDataRepositoryTaskOutput {
-    /// <p>The lifecycle status of the data repository task, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+pub struct CancelDataRepositoryTaskOutput  {
+    /// <p>The lifecycle status of the data repository task, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li> 
+    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li> 
+    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li> 
+    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li> 
+    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
@@ -2533,26 +2455,26 @@ pub struct CancelDataRepositoryTaskOutput {
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelDataRepositoryTaskOutput {
-    /// <p>The lifecycle status of the data repository task, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+    /// <p>The lifecycle status of the data repository task, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li> 
+    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li> 
+    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li> 
+    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li> 
+    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li> 
     /// </ul>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::DataRepositoryTaskLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::DataRepositoryTaskLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The ID of the task being canceled.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 /// See [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput).
 pub mod cancel_data_repository_task_output {
-
+    
     /// A builder for [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2560,34 +2482,30 @@ pub mod cancel_data_repository_task_output {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The lifecycle status of the data repository task, as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-        /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-        /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-        /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-        /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-        /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+        /// <p>The lifecycle status of the data repository task, as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li> 
+        /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li> 
+        /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li> 
+        /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li> 
+        /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li> 
         /// </ul>
         pub fn lifecycle(mut self, input: crate::model::DataRepositoryTaskLifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
-        /// <p>The lifecycle status of the data repository task, as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-        /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-        /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-        /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-        /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-        /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+        /// <p>The lifecycle status of the data repository task, as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li> 
+        /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li> 
+        /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li> 
+        /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li> 
+        /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li> 
         /// </ul>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::DataRepositoryTaskLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
         /// <p>The ID of the task being canceled.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2596,17 +2514,20 @@ pub mod cancel_data_repository_task_output {
         }
         /// <p>The ID of the task being canceled.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input;
-            self
+            self.task_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput).
         pub fn build(self) -> crate::output::CancelDataRepositoryTaskOutput {
             crate::output::CancelDataRepositoryTaskOutput {
-                lifecycle: self.lifecycle,
-                task_id: self.task_id,
+                lifecycle: self.lifecycle
+                ,
+                task_id: self.task_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelDataRepositoryTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput).
@@ -2618,20 +2539,20 @@ impl CancelDataRepositoryTaskOutput {
 /// <p>The system generated response showing the DNS aliases that Amazon FSx is attempting to associate with the file system. Use the API operation to monitor the status of the aliases Amazon FSx is associating with the file system. It can take up to 2.5 minutes for the alias status to change from <code>CREATING</code> to <code>AVAILABLE</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateFileSystemAliasesOutput {
+pub struct AssociateFileSystemAliasesOutput  {
     /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
     #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
 }
 impl AssociateFileSystemAliasesOutput {
     /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+    pub fn aliases(&self) -> std::option::Option<& [crate::model::Alias]> {
         self.aliases.as_deref()
     }
 }
 /// See [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput).
 pub mod associate_file_system_aliases_output {
-
+    
     /// A builder for [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2645,25 +2566,24 @@ pub mod associate_file_system_aliases_output {
         /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
         pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input);
-            self.aliases = Some(v);
-            self
+                            v.push(input);
+                            self.aliases = Some(v);
+                            self
         }
         /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
-        pub fn set_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alias>>,
-        ) -> Self {
-            self.aliases = input;
-            self
+        pub fn set_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alias>>) -> Self {
+            self.aliases = input; self
         }
         /// Consumes the builder and constructs a [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput).
         pub fn build(self) -> crate::output::AssociateFileSystemAliasesOutput {
             crate::output::AssociateFileSystemAliasesOutput {
-                aliases: self.aliases,
+                aliases: self.aliases
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateFileSystemAliasesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput).
@@ -2671,3 +2591,4 @@ impl AssociateFileSystemAliasesOutput {
         crate::output::associate_file_system_aliases_output::Builder::default()
     }
 }
+

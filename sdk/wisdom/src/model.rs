@@ -3,7 +3,7 @@
 /// <p>Information about the knowledge base.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KnowledgeBaseData {
+pub struct KnowledgeBaseData  {
     /// <p>The identifier of the knowledge base.</p>
     #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
@@ -30,74 +30,63 @@ pub struct KnowledgeBaseData {
     pub rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
     /// <p>The KMS key used for encryption.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KnowledgeBaseData {
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> std::option::Option<& str> {
         self.knowledge_base_arn.as_deref()
     }
     /// <p>The name of the knowledge base.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of knowledge base.</p>
-    pub fn knowledge_base_type(&self) -> std::option::Option<&crate::model::KnowledgeBaseType> {
+    pub fn knowledge_base_type(&self) -> std::option::Option<& crate::model::KnowledgeBaseType> {
         self.knowledge_base_type.as_ref()
     }
     /// <p>The status of the knowledge base.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::KnowledgeBaseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::KnowledgeBaseStatus> {
         self.status.as_ref()
     }
     /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
-    pub fn last_content_modification_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_content_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_content_modification_time.as_ref()
     }
     /// <p>Source configuration information about the knowledge base.</p>
-    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+    pub fn source_configuration(&self) -> std::option::Option<& crate::model::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>Information about how to render the content.</p>
-    pub fn rendering_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RenderingConfiguration> {
+    pub fn rendering_configuration(&self) -> std::option::Option<& crate::model::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
 pub mod knowledge_base_data {
-
+    
     /// A builder for [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -108,14 +97,10 @@ pub mod knowledge_base_data {
         pub(crate) status: std::option::Option<crate::model::KnowledgeBaseStatus>,
         pub(crate) last_content_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
-        pub(crate) rendering_configuration:
-            std::option::Option<crate::model::RenderingConfiguration>,
-        pub(crate) server_side_encryption_configuration:
-            std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+        pub(crate) rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
+        pub(crate) server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the knowledge base.</p>
@@ -124,12 +109,8 @@ pub mod knowledge_base_data {
             self
         }
         /// <p>The identifier of the knowledge base.</p>
-        pub fn set_knowledge_base_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_id = input;
-            self
+        pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn knowledge_base_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,12 +118,8 @@ pub mod knowledge_base_data {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-        pub fn set_knowledge_base_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_arn = input;
-            self
+        pub fn set_knowledge_base_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_arn = input; self
         }
         /// <p>The name of the knowledge base.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +128,7 @@ pub mod knowledge_base_data {
         }
         /// <p>The name of the knowledge base.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of knowledge base.</p>
         pub fn knowledge_base_type(mut self, input: crate::model::KnowledgeBaseType) -> Self {
@@ -160,12 +136,8 @@ pub mod knowledge_base_data {
             self
         }
         /// <p>The type of knowledge base.</p>
-        pub fn set_knowledge_base_type(
-            mut self,
-            input: std::option::Option<crate::model::KnowledgeBaseType>,
-        ) -> Self {
-            self.knowledge_base_type = input;
-            self
+        pub fn set_knowledge_base_type(mut self, input: std::option::Option<crate::model::KnowledgeBaseType>) -> Self {
+            self.knowledge_base_type = input; self
         }
         /// <p>The status of the knowledge base.</p>
         pub fn status(mut self, input: crate::model::KnowledgeBaseStatus) -> Self {
@@ -173,12 +145,8 @@ pub mod knowledge_base_data {
             self
         }
         /// <p>The status of the knowledge base.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::KnowledgeBaseStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::KnowledgeBaseStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
         pub fn last_content_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -186,12 +154,8 @@ pub mod knowledge_base_data {
             self
         }
         /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
-        pub fn set_last_content_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_content_modification_time = input;
-            self
+        pub fn set_last_content_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_content_modification_time = input; self
         }
         /// <p>Source configuration information about the knowledge base.</p>
         pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
@@ -199,44 +163,26 @@ pub mod knowledge_base_data {
             self
         }
         /// <p>Source configuration information about the knowledge base.</p>
-        pub fn set_source_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SourceConfiguration>,
-        ) -> Self {
-            self.source_configuration = input;
-            self
+        pub fn set_source_configuration(mut self, input: std::option::Option<crate::model::SourceConfiguration>) -> Self {
+            self.source_configuration = input; self
         }
         /// <p>Information about how to render the content.</p>
-        pub fn rendering_configuration(
-            mut self,
-            input: crate::model::RenderingConfiguration,
-        ) -> Self {
+        pub fn rendering_configuration(mut self, input: crate::model::RenderingConfiguration) -> Self {
             self.rendering_configuration = Some(input);
             self
         }
         /// <p>Information about how to render the content.</p>
-        pub fn set_rendering_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RenderingConfiguration>,
-        ) -> Self {
-            self.rendering_configuration = input;
-            self
+        pub fn set_rendering_configuration(mut self, input: std::option::Option<crate::model::RenderingConfiguration>) -> Self {
+            self.rendering_configuration = input; self
         }
         /// <p>The KMS key used for encryption.</p>
-        pub fn server_side_encryption_configuration(
-            mut self,
-            input: crate::model::ServerSideEncryptionConfiguration,
-        ) -> Self {
+        pub fn server_side_encryption_configuration(mut self, input: crate::model::ServerSideEncryptionConfiguration) -> Self {
             self.server_side_encryption_configuration = Some(input);
             self
         }
         /// <p>The KMS key used for encryption.</p>
-        pub fn set_server_side_encryption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-        ) -> Self {
-            self.server_side_encryption_configuration = input;
-            self
+        pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>) -> Self {
+            self.server_side_encryption_configuration = input; self
         }
         /// <p>The description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,51 +191,53 @@ pub mod knowledge_base_data {
         }
         /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
         pub fn build(self) -> crate::model::KnowledgeBaseData {
             crate::model::KnowledgeBaseData {
-                knowledge_base_id: self.knowledge_base_id,
-                knowledge_base_arn: self.knowledge_base_arn,
-                name: self.name,
-                knowledge_base_type: self.knowledge_base_type,
-                status: self.status,
-                last_content_modification_time: self.last_content_modification_time,
-                source_configuration: self.source_configuration,
-                rendering_configuration: self.rendering_configuration,
-                server_side_encryption_configuration: self.server_side_encryption_configuration,
-                description: self.description,
-                tags: self.tags,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                knowledge_base_arn: self.knowledge_base_arn
+                ,
+                name: self.name
+                ,
+                knowledge_base_type: self.knowledge_base_type
+                ,
+                status: self.status
+                ,
+                last_content_modification_time: self.last_content_modification_time
+                ,
+                source_configuration: self.source_configuration
+                ,
+                rendering_configuration: self.rendering_configuration
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl KnowledgeBaseData {
     /// Creates a new builder-style object to manufacture [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
@@ -301,20 +249,20 @@ impl KnowledgeBaseData {
 /// <p>The KMS key used for encryption.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerSideEncryptionConfiguration {
+pub struct ServerSideEncryptionConfiguration  {
     /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
     /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
 pub mod server_side_encryption_configuration {
-
+    
     /// A builder for [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -328,16 +276,18 @@ pub mod server_side_encryption_configuration {
         }
         /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
         pub fn build(self) -> crate::model::ServerSideEncryptionConfiguration {
             crate::model::ServerSideEncryptionConfiguration {
-                kms_key_id: self.kms_key_id,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerSideEncryptionConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
@@ -349,63 +299,65 @@ impl ServerSideEncryptionConfiguration {
 /// <p>Information about how to render the content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenderingConfiguration {
-    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li>
-    /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
-    /// </ul>
+pub struct RenderingConfiguration  {
+    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> 
+    /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li> 
+    /// </ul> 
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
     #[doc(hidden)]
     pub template_uri: std::option::Option<std::string::String>,
 }
 impl RenderingConfiguration {
-    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li>
-    /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
-    /// </ul>
+    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> 
+    /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li> 
+    /// </ul> 
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
-    pub fn template_uri(&self) -> std::option::Option<&str> {
+    pub fn template_uri(&self) -> std::option::Option<& str> {
         self.template_uri.as_deref()
     }
 }
 /// See [`RenderingConfiguration`](crate::model::RenderingConfiguration).
 pub mod rendering_configuration {
-
+    
     /// A builder for [`RenderingConfiguration`](crate::model::RenderingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li>
-        /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
-        /// </ul>
+        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> 
+        /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li> 
+        /// </ul> 
         /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
         pub fn template_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_uri = Some(input.into());
             self
         }
-        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li>
-        /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
-        /// </ul>
+        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> 
+        /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li> 
+        /// </ul> 
         /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
         pub fn set_template_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_uri = input;
-            self
+            self.template_uri = input; self
         }
         /// Consumes the builder and constructs a [`RenderingConfiguration`](crate::model::RenderingConfiguration).
         pub fn build(self) -> crate::model::RenderingConfiguration {
             crate::model::RenderingConfiguration {
-                template_uri: self.template_uri,
+                template_uri: self.template_uri
+                ,
             }
         }
     }
+    
+    
 }
 impl RenderingConfiguration {
     /// Creates a new builder-style object to manufacture [`RenderingConfiguration`](crate::model::RenderingConfiguration).
@@ -434,14 +386,8 @@ impl SourceConfiguration {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AppIntegrations`](crate::model::SourceConfiguration::AppIntegrations), extracting the inner [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_app_integrations(
-        &self,
-    ) -> std::result::Result<&crate::model::AppIntegrationsConfiguration, &Self> {
-        if let SourceConfiguration::AppIntegrations(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_app_integrations(&self) -> std::result::Result<&crate::model::AppIntegrationsConfiguration, &Self> {
+        if let SourceConfiguration::AppIntegrations(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AppIntegrations`](crate::model::SourceConfiguration::AppIntegrations).
     pub fn is_app_integrations(&self) -> bool {
@@ -456,37 +402,37 @@ impl SourceConfiguration {
 /// <p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppIntegrationsConfiguration {
+pub struct AppIntegrationsConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
     #[doc(hidden)]
     pub app_integration_arn: std::option::Option<std::string::String>,
-    /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
-    /// <ul>
-    /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
-    /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
-    /// </ul>
+    /// <p>The fields from the source that are made available to your agents in Wisdom. </p> 
+    /// <ul> 
+    /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li> 
+    /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li> 
+    /// </ul> 
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
     #[doc(hidden)]
     pub object_fields: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AppIntegrationsConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
-    pub fn app_integration_arn(&self) -> std::option::Option<&str> {
+    pub fn app_integration_arn(&self) -> std::option::Option<& str> {
         self.app_integration_arn.as_deref()
     }
-    /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
-    /// <ul>
-    /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
-    /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
-    /// </ul>
+    /// <p>The fields from the source that are made available to your agents in Wisdom. </p> 
+    /// <ul> 
+    /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li> 
+    /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li> 
+    /// </ul> 
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
-    pub fn object_fields(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_fields(&self) -> std::option::Option<& [std::string::String]> {
         self.object_fields.as_deref()
     }
 }
 /// See [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
 pub mod app_integrations_configuration {
-
+    
     /// A builder for [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -500,50 +446,46 @@ pub mod app_integrations_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
-        pub fn set_app_integration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_integration_arn = input;
-            self
+        pub fn set_app_integration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_integration_arn = input; self
         }
         /// Appends an item to `object_fields`.
         ///
         /// To override the contents of this collection use [`set_object_fields`](Self::set_object_fields).
         ///
-        /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
-        /// <ul>
-        /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
-        /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
-        /// </ul>
+        /// <p>The fields from the source that are made available to your agents in Wisdom. </p> 
+        /// <ul> 
+        /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li> 
+        /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li> 
+        /// </ul> 
         /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
         pub fn object_fields(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_fields.unwrap_or_default();
-            v.push(input.into());
-            self.object_fields = Some(v);
-            self
+                            v.push(input.into());
+                            self.object_fields = Some(v);
+                            self
         }
-        /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
-        /// <ul>
-        /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
-        /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
-        /// </ul>
+        /// <p>The fields from the source that are made available to your agents in Wisdom. </p> 
+        /// <ul> 
+        /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li> 
+        /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li> 
+        /// </ul> 
         /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
-        pub fn set_object_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.object_fields = input;
-            self
+        pub fn set_object_fields(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.object_fields = input; self
         }
         /// Consumes the builder and constructs a [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
         pub fn build(self) -> crate::model::AppIntegrationsConfiguration {
             crate::model::AppIntegrationsConfiguration {
-                app_integration_arn: self.app_integration_arn,
-                object_fields: self.object_fields,
+                app_integration_arn: self.app_integration_arn
+                ,
+                object_fields: self.object_fields
+                ,
             }
         }
     }
+    
+    
 }
 impl AppIntegrationsConfiguration {
     /// Creates a new builder-style object to manufacture [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
@@ -558,9 +500,9 @@ impl AppIntegrationsConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let knowledgebasestatus = unimplemented!();
 /// match knowledgebasestatus {
@@ -586,22 +528,14 @@ impl AppIntegrationsConfiguration {
 /// Specifically, when `knowledgebasestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KnowledgeBaseStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KnowledgeBaseStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -616,7 +550,7 @@ pub enum KnowledgeBaseStatus {
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KnowledgeBaseStatus {
     fn from(s: &str) -> Self {
@@ -627,19 +561,17 @@ impl std::convert::From<&str> for KnowledgeBaseStatus {
             "DELETED" => KnowledgeBaseStatus::Deleted,
             "DELETE_FAILED" => KnowledgeBaseStatus::DeleteFailed,
             "DELETE_IN_PROGRESS" => KnowledgeBaseStatus::DeleteInProgress,
-            other => {
-                KnowledgeBaseStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => KnowledgeBaseStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KnowledgeBaseStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KnowledgeBaseStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KnowledgeBaseStatus::from(s))
+                }
+            }
 impl KnowledgeBaseStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -650,18 +582,13 @@ impl KnowledgeBaseStatus {
             KnowledgeBaseStatus::Deleted => "DELETED",
             KnowledgeBaseStatus::DeleteFailed => "DELETE_FAILED",
             KnowledgeBaseStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            KnowledgeBaseStatus::Unknown(value) => value.as_str(),
+            KnowledgeBaseStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETED",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
+            "ACTIVE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS"
         ]
     }
 }
@@ -677,9 +604,9 @@ impl AsRef<str> for KnowledgeBaseStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let knowledgebasetype = unimplemented!();
 /// match knowledgebasetype {
@@ -701,60 +628,52 @@ impl AsRef<str> for KnowledgeBaseStatus {
 /// Specifically, when `knowledgebasetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KnowledgeBaseType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KnowledgeBaseType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     External,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KnowledgeBaseType {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM" => KnowledgeBaseType::Custom,
             "EXTERNAL" => KnowledgeBaseType::External,
-            other => {
-                KnowledgeBaseType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => KnowledgeBaseType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KnowledgeBaseType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KnowledgeBaseType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KnowledgeBaseType::from(s))
+                }
+            }
 impl KnowledgeBaseType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KnowledgeBaseType::Custom => "CUSTOM",
             KnowledgeBaseType::External => "EXTERNAL",
-            KnowledgeBaseType::Unknown(value) => value.as_str(),
+            KnowledgeBaseType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "EXTERNAL"]
+        &[
+            "CUSTOM", "EXTERNAL"
+        ]
     }
 }
 impl AsRef<str> for KnowledgeBaseType {
@@ -766,7 +685,7 @@ impl AsRef<str> for KnowledgeBaseType {
 /// <p>Summary information about the content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContentSummary {
+pub struct ContentSummary  {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
     #[doc(hidden)]
     pub content_arn: std::option::Option<std::string::String>,
@@ -796,68 +715,60 @@ pub struct ContentSummary {
     pub status: std::option::Option<crate::model::ContentStatus>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     #[doc(hidden)]
-    pub metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ContentSummary {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn content_arn(&self) -> std::option::Option<&str> {
+    pub fn content_arn(&self) -> std::option::Option<& str> {
         self.content_arn.as_deref()
     }
     /// <p>The identifier of the content.</p>
-    pub fn content_id(&self) -> std::option::Option<&str> {
+    pub fn content_id(&self) -> std::option::Option<& str> {
         self.content_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> std::option::Option<& str> {
         self.knowledge_base_arn.as_deref()
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The name of the content.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the revision of the content.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The title of the content.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The media type of the content.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The status of the content.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ContentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ContentStatus> {
         self.status.as_ref()
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ContentSummary`](crate::model::ContentSummary).
 pub mod content_summary {
-
+    
     /// A builder for [`ContentSummary`](crate::model::ContentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -870,12 +781,8 @@ pub mod content_summary {
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ContentStatus>,
-        pub(crate) metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the content.</p>
@@ -885,8 +792,7 @@ pub mod content_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the content.</p>
         pub fn set_content_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_arn = input;
-            self
+            self.content_arn = input; self
         }
         /// <p>The identifier of the content.</p>
         pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -895,8 +801,7 @@ pub mod content_summary {
         }
         /// <p>The identifier of the content.</p>
         pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_id = input;
-            self
+            self.content_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn knowledge_base_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -904,12 +809,8 @@ pub mod content_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-        pub fn set_knowledge_base_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_arn = input;
-            self
+        pub fn set_knowledge_base_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_arn = input; self
         }
         /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -917,12 +818,8 @@ pub mod content_summary {
             self
         }
         /// <p>The identifier of the knowledge base.</p>
-        pub fn set_knowledge_base_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_id = input;
-            self
+        pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_id = input; self
         }
         /// <p>The name of the content.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -931,8 +828,7 @@ pub mod content_summary {
         }
         /// <p>The name of the content.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The identifier of the revision of the content.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -941,8 +837,7 @@ pub mod content_summary {
         }
         /// <p>The identifier of the revision of the content.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>The title of the content.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -951,8 +846,7 @@ pub mod content_summary {
         }
         /// <p>The title of the content.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The media type of the content.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -961,8 +855,7 @@ pub mod content_summary {
         }
         /// <p>The media type of the content.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>The status of the content.</p>
         pub fn status(mut self, input: crate::model::ContentStatus) -> Self {
@@ -970,80 +863,69 @@ pub mod content_summary {
             self
         }
         /// <p>The status of the content.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ContentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ContentStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `metadata`.
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-        pub fn metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.metadata = Some(hash_map);
+                            self
         }
         /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.metadata = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ContentSummary`](crate::model::ContentSummary).
         pub fn build(self) -> crate::model::ContentSummary {
             crate::model::ContentSummary {
-                content_arn: self.content_arn,
-                content_id: self.content_id,
-                knowledge_base_arn: self.knowledge_base_arn,
-                knowledge_base_id: self.knowledge_base_id,
-                name: self.name,
-                revision_id: self.revision_id,
-                title: self.title,
-                content_type: self.content_type,
-                status: self.status,
-                metadata: self.metadata,
-                tags: self.tags,
+                content_arn: self.content_arn
+                ,
+                content_id: self.content_id
+                ,
+                knowledge_base_arn: self.knowledge_base_arn
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                name: self.name
+                ,
+                revision_id: self.revision_id
+                ,
+                title: self.title
+                ,
+                content_type: self.content_type
+                ,
+                status: self.status
+                ,
+                metadata: self.metadata
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ContentSummary {
     /// Creates a new builder-style object to manufacture [`ContentSummary`](crate::model::ContentSummary).
@@ -1058,9 +940,9 @@ impl ContentSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contentstatus = unimplemented!();
 /// match contentstatus {
@@ -1087,22 +969,14 @@ impl ContentSummary {
 /// Specifically, when `contentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1119,7 +993,7 @@ pub enum ContentStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentStatus {
     fn from(s: &str) -> Self {
@@ -1131,17 +1005,17 @@ impl std::convert::From<&str> for ContentStatus {
             "DELETE_FAILED" => ContentStatus::DeleteFailed,
             "DELETE_IN_PROGRESS" => ContentStatus::DeleteInProgress,
             "UPDATE_FAILED" => ContentStatus::UpdateFailed,
-            other => ContentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ContentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContentStatus::from(s))
+                }
+            }
 impl ContentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1153,19 +1027,13 @@ impl ContentStatus {
             ContentStatus::DeleteFailed => "DELETE_FAILED",
             ContentStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
             ContentStatus::UpdateFailed => "UPDATE_FAILED",
-            ContentStatus::Unknown(value) => value.as_str(),
+            ContentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETED",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "UPDATE_FAILED",
+            "ACTIVE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "UPDATE_FAILED"
         ]
     }
 }
@@ -1178,20 +1046,20 @@ impl AsRef<str> for ContentStatus {
 /// <p>The search expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchExpression {
+pub struct SearchExpression  {
     /// <p>The search expression filters.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl SearchExpression {
     /// <p>The search expression filters.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
 /// See [`SearchExpression`](crate::model::SearchExpression).
 pub mod search_expression {
-
+    
     /// A builder for [`SearchExpression`](crate::model::SearchExpression).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1205,25 +1073,24 @@ pub mod search_expression {
         /// <p>The search expression filters.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>The search expression filters.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`SearchExpression`](crate::model::SearchExpression).
         pub fn build(self) -> crate::model::SearchExpression {
             crate::model::SearchExpression {
-                filters: self.filters,
+                filters: self.filters
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchExpression {
     /// Creates a new builder-style object to manufacture [`SearchExpression`](crate::model::SearchExpression).
@@ -1235,7 +1102,7 @@ impl SearchExpression {
 /// <p>A search filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The field on which to filter.</p>
     #[doc(hidden)]
     pub field: std::option::Option<crate::model::FilterField>,
@@ -1248,21 +1115,21 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The field on which to filter.</p>
-    pub fn field(&self) -> std::option::Option<&crate::model::FilterField> {
+    pub fn field(&self) -> std::option::Option<& crate::model::FilterField> {
         self.field.as_ref()
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::FilterOperator> {
         self.operator.as_ref()
     }
     /// <p>The desired field value on which to filter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1278,8 +1145,7 @@ pub mod filter {
         }
         /// <p>The field on which to filter.</p>
         pub fn set_field(mut self, input: std::option::Option<crate::model::FilterField>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// <p>The operator to use for comparing the field’s value with the provided value.</p>
         pub fn operator(mut self, input: crate::model::FilterOperator) -> Self {
@@ -1287,12 +1153,8 @@ pub mod filter {
             self
         }
         /// <p>The operator to use for comparing the field’s value with the provided value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::FilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::FilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// <p>The desired field value on which to filter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1301,18 +1163,22 @@ pub mod filter {
         }
         /// <p>The desired field value on which to filter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                field: self.field,
-                operator: self.operator,
-                value: self.value,
+                field: self.field
+                ,
+                operator: self.operator
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -1327,9 +1193,9 @@ impl Filter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filteroperator = unimplemented!();
 /// match filteroperator {
@@ -1350,54 +1216,48 @@ impl Filter {
 /// Specifically, when `filteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "EQUALS" => FilterOperator::Equals,
-            other => FilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FilterOperator::from(s))
+                }
+            }
 impl FilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterOperator::Equals => "EQUALS",
-            FilterOperator::Unknown(value) => value.as_str(),
+            FilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EQUALS"]
+        &[
+            "EQUALS"
+        ]
     }
 }
 impl AsRef<str> for FilterOperator {
@@ -1412,9 +1272,9 @@ impl AsRef<str> for FilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filterfield = unimplemented!();
 /// match filterfield {
@@ -1435,54 +1295,48 @@ impl AsRef<str> for FilterOperator {
 /// Specifically, when `filterfield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FilterField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FilterField {
     #[allow(missing_docs)] // documentation missing in model
     Name,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterField {
     fn from(s: &str) -> Self {
         match s {
             "NAME" => FilterField::Name,
-            other => FilterField::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FilterField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FilterField {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterField::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FilterField::from(s))
+                }
+            }
 impl FilterField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterField::Name => "NAME",
-            FilterField::Unknown(value) => value.as_str(),
+            FilterField::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NAME"]
+        &[
+            "NAME"
+        ]
     }
 }
 impl AsRef<str> for FilterField {
@@ -1494,7 +1348,7 @@ impl AsRef<str> for FilterField {
 /// <p>Summary information about the knowledge base.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KnowledgeBaseSummary {
+pub struct KnowledgeBaseSummary  {
     /// <p>The identifier of the knowledge base.</p>
     #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
@@ -1518,68 +1372,59 @@ pub struct KnowledgeBaseSummary {
     pub rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
     /// <p>The KMS key used for encryption.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The description of the knowledge base.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KnowledgeBaseSummary {
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> std::option::Option<& str> {
         self.knowledge_base_arn.as_deref()
     }
     /// <p>The name of the knowledge base.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of knowledge base.</p>
-    pub fn knowledge_base_type(&self) -> std::option::Option<&crate::model::KnowledgeBaseType> {
+    pub fn knowledge_base_type(&self) -> std::option::Option<& crate::model::KnowledgeBaseType> {
         self.knowledge_base_type.as_ref()
     }
     /// <p>The status of the knowledge base summary.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::KnowledgeBaseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::KnowledgeBaseStatus> {
         self.status.as_ref()
     }
     /// <p>Configuration information about the external data source.</p>
-    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+    pub fn source_configuration(&self) -> std::option::Option<& crate::model::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>Information about how to render the content.</p>
-    pub fn rendering_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RenderingConfiguration> {
+    pub fn rendering_configuration(&self) -> std::option::Option<& crate::model::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The description of the knowledge base.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
 pub mod knowledge_base_summary {
-
+    
     /// A builder for [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1589,14 +1434,10 @@ pub mod knowledge_base_summary {
         pub(crate) knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
         pub(crate) status: std::option::Option<crate::model::KnowledgeBaseStatus>,
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
-        pub(crate) rendering_configuration:
-            std::option::Option<crate::model::RenderingConfiguration>,
-        pub(crate) server_side_encryption_configuration:
-            std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+        pub(crate) rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
+        pub(crate) server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the knowledge base.</p>
@@ -1605,12 +1446,8 @@ pub mod knowledge_base_summary {
             self
         }
         /// <p>The identifier of the knowledge base.</p>
-        pub fn set_knowledge_base_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_id = input;
-            self
+        pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn knowledge_base_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1618,12 +1455,8 @@ pub mod knowledge_base_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-        pub fn set_knowledge_base_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_arn = input;
-            self
+        pub fn set_knowledge_base_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_arn = input; self
         }
         /// <p>The name of the knowledge base.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1632,8 +1465,7 @@ pub mod knowledge_base_summary {
         }
         /// <p>The name of the knowledge base.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of knowledge base.</p>
         pub fn knowledge_base_type(mut self, input: crate::model::KnowledgeBaseType) -> Self {
@@ -1641,12 +1473,8 @@ pub mod knowledge_base_summary {
             self
         }
         /// <p>The type of knowledge base.</p>
-        pub fn set_knowledge_base_type(
-            mut self,
-            input: std::option::Option<crate::model::KnowledgeBaseType>,
-        ) -> Self {
-            self.knowledge_base_type = input;
-            self
+        pub fn set_knowledge_base_type(mut self, input: std::option::Option<crate::model::KnowledgeBaseType>) -> Self {
+            self.knowledge_base_type = input; self
         }
         /// <p>The status of the knowledge base summary.</p>
         pub fn status(mut self, input: crate::model::KnowledgeBaseStatus) -> Self {
@@ -1654,12 +1482,8 @@ pub mod knowledge_base_summary {
             self
         }
         /// <p>The status of the knowledge base summary.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::KnowledgeBaseStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::KnowledgeBaseStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Configuration information about the external data source.</p>
         pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
@@ -1667,44 +1491,26 @@ pub mod knowledge_base_summary {
             self
         }
         /// <p>Configuration information about the external data source.</p>
-        pub fn set_source_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SourceConfiguration>,
-        ) -> Self {
-            self.source_configuration = input;
-            self
+        pub fn set_source_configuration(mut self, input: std::option::Option<crate::model::SourceConfiguration>) -> Self {
+            self.source_configuration = input; self
         }
         /// <p>Information about how to render the content.</p>
-        pub fn rendering_configuration(
-            mut self,
-            input: crate::model::RenderingConfiguration,
-        ) -> Self {
+        pub fn rendering_configuration(mut self, input: crate::model::RenderingConfiguration) -> Self {
             self.rendering_configuration = Some(input);
             self
         }
         /// <p>Information about how to render the content.</p>
-        pub fn set_rendering_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RenderingConfiguration>,
-        ) -> Self {
-            self.rendering_configuration = input;
-            self
+        pub fn set_rendering_configuration(mut self, input: std::option::Option<crate::model::RenderingConfiguration>) -> Self {
+            self.rendering_configuration = input; self
         }
         /// <p>The KMS key used for encryption.</p>
-        pub fn server_side_encryption_configuration(
-            mut self,
-            input: crate::model::ServerSideEncryptionConfiguration,
-        ) -> Self {
+        pub fn server_side_encryption_configuration(mut self, input: crate::model::ServerSideEncryptionConfiguration) -> Self {
             self.server_side_encryption_configuration = Some(input);
             self
         }
         /// <p>The KMS key used for encryption.</p>
-        pub fn set_server_side_encryption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-        ) -> Self {
-            self.server_side_encryption_configuration = input;
-            self
+        pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>) -> Self {
+            self.server_side_encryption_configuration = input; self
         }
         /// <p>The description of the knowledge base.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1713,50 +1519,51 @@ pub mod knowledge_base_summary {
         }
         /// <p>The description of the knowledge base.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
         pub fn build(self) -> crate::model::KnowledgeBaseSummary {
             crate::model::KnowledgeBaseSummary {
-                knowledge_base_id: self.knowledge_base_id,
-                knowledge_base_arn: self.knowledge_base_arn,
-                name: self.name,
-                knowledge_base_type: self.knowledge_base_type,
-                status: self.status,
-                source_configuration: self.source_configuration,
-                rendering_configuration: self.rendering_configuration,
-                server_side_encryption_configuration: self.server_side_encryption_configuration,
-                description: self.description,
-                tags: self.tags,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                knowledge_base_arn: self.knowledge_base_arn
+                ,
+                name: self.name
+                ,
+                knowledge_base_type: self.knowledge_base_type
+                ,
+                status: self.status
+                ,
+                source_configuration: self.source_configuration
+                ,
+                rendering_configuration: self.rendering_configuration
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl KnowledgeBaseSummary {
     /// Creates a new builder-style object to manufacture [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
@@ -1768,7 +1575,7 @@ impl KnowledgeBaseSummary {
 /// <p>Information about the content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ContentData {
+pub struct ContentData  {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
     #[doc(hidden)]
     pub content_arn: std::option::Option<std::string::String>,
@@ -1798,12 +1605,10 @@ pub struct ContentData {
     pub status: std::option::Option<crate::model::ContentStatus>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     #[doc(hidden)]
-    pub metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The URI of the content.</p>
     #[doc(hidden)]
     pub link_out_uri: std::option::Option<std::string::String>,
@@ -1816,69 +1621,63 @@ pub struct ContentData {
 }
 impl ContentData {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn content_arn(&self) -> std::option::Option<&str> {
+    pub fn content_arn(&self) -> std::option::Option<& str> {
         self.content_arn.as_deref()
     }
     /// <p>The identifier of the content.</p>
-    pub fn content_id(&self) -> std::option::Option<&str> {
+    pub fn content_id(&self) -> std::option::Option<& str> {
         self.content_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> std::option::Option<& str> {
         self.knowledge_base_arn.as_deref()
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The name of the content.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the content revision.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The title of the content.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The media type of the content.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The status of the content.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ContentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ContentStatus> {
         self.status.as_ref()
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The URI of the content.</p>
-    pub fn link_out_uri(&self) -> std::option::Option<&str> {
+    pub fn link_out_uri(&self) -> std::option::Option<& str> {
         self.link_out_uri.as_deref()
     }
     /// <p>The URL of the content.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn url_expiry(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn url_expiry(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.url_expiry.as_ref()
     }
 }
-impl std::fmt::Debug for ContentData {
+impl  std::fmt::Debug for ContentData  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContentData");
         formatter.field("content_arn", &self.content_arn);
@@ -1900,7 +1699,7 @@ impl std::fmt::Debug for ContentData {
 }
 /// See [`ContentData`](crate::model::ContentData).
 pub mod content_data {
-
+    
     /// A builder for [`ContentData`](crate::model::ContentData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1913,12 +1712,8 @@ pub mod content_data {
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ContentStatus>,
-        pub(crate) metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) link_out_uri: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) url_expiry: std::option::Option<aws_smithy_types::DateTime>,
@@ -1931,8 +1726,7 @@ pub mod content_data {
         }
         /// <p>The Amazon Resource Name (ARN) of the content.</p>
         pub fn set_content_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_arn = input;
-            self
+            self.content_arn = input; self
         }
         /// <p>The identifier of the content.</p>
         pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1941,8 +1735,7 @@ pub mod content_data {
         }
         /// <p>The identifier of the content.</p>
         pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_id = input;
-            self
+            self.content_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn knowledge_base_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1950,12 +1743,8 @@ pub mod content_data {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-        pub fn set_knowledge_base_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_arn = input;
-            self
+        pub fn set_knowledge_base_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_arn = input; self
         }
         /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1963,12 +1752,8 @@ pub mod content_data {
             self
         }
         /// <p>The identifier of the knowledge base.</p>
-        pub fn set_knowledge_base_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_id = input;
-            self
+        pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_id = input; self
         }
         /// <p>The name of the content.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1977,8 +1762,7 @@ pub mod content_data {
         }
         /// <p>The name of the content.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The identifier of the content revision.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1987,8 +1771,7 @@ pub mod content_data {
         }
         /// <p>The identifier of the content revision.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>The title of the content.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1997,8 +1780,7 @@ pub mod content_data {
         }
         /// <p>The title of the content.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The media type of the content.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2007,8 +1789,7 @@ pub mod content_data {
         }
         /// <p>The media type of the content.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>The status of the content.</p>
         pub fn status(mut self, input: crate::model::ContentStatus) -> Self {
@@ -2016,62 +1797,38 @@ pub mod content_data {
             self
         }
         /// <p>The status of the content.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ContentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ContentStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `metadata`.
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-        pub fn metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.metadata = Some(hash_map);
+                            self
         }
         /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.metadata = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The URI of the content.</p>
         pub fn link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2080,8 +1837,7 @@ pub mod content_data {
         }
         /// <p>The URI of the content.</p>
         pub fn set_link_out_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.link_out_uri = input;
-            self
+            self.link_out_uri = input; self
         }
         /// <p>The URL of the content.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2090,8 +1846,7 @@ pub mod content_data {
         }
         /// <p>The URL of the content.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// <p>The expiration time of the URL as an epoch timestamp.</p>
         pub fn url_expiry(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2099,30 +1854,40 @@ pub mod content_data {
             self
         }
         /// <p>The expiration time of the URL as an epoch timestamp.</p>
-        pub fn set_url_expiry(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.url_expiry = input;
-            self
+        pub fn set_url_expiry(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.url_expiry = input; self
         }
         /// Consumes the builder and constructs a [`ContentData`](crate::model::ContentData).
         pub fn build(self) -> crate::model::ContentData {
             crate::model::ContentData {
-                content_arn: self.content_arn,
-                content_id: self.content_id,
-                knowledge_base_arn: self.knowledge_base_arn,
-                knowledge_base_id: self.knowledge_base_id,
-                name: self.name,
-                revision_id: self.revision_id,
-                title: self.title,
-                content_type: self.content_type,
-                status: self.status,
-                metadata: self.metadata,
-                tags: self.tags,
-                link_out_uri: self.link_out_uri,
-                url: self.url,
-                url_expiry: self.url_expiry,
+                content_arn: self.content_arn
+                ,
+                content_id: self.content_id
+                ,
+                knowledge_base_arn: self.knowledge_base_arn
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                name: self.name
+                ,
+                revision_id: self.revision_id
+                ,
+                title: self.title
+                ,
+                content_type: self.content_type
+                ,
+                status: self.status
+                ,
+                metadata: self.metadata
+                ,
+                tags: self.tags
+                ,
+                link_out_uri: self.link_out_uri
+                ,
+                url: self.url
+                ,
+                url_expiry: self.url_expiry
+                ,
             }
         }
     }
@@ -2146,6 +1911,8 @@ pub mod content_data {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ContentData {
     /// Creates a new builder-style object to manufacture [`ContentData`](crate::model::ContentData).
@@ -2157,7 +1924,7 @@ impl ContentData {
 /// <p>Summary information about the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionSummary {
+pub struct SessionSummary  {
     /// <p>The identifier of the session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -2173,25 +1940,25 @@ pub struct SessionSummary {
 }
 impl SessionSummary {
     /// <p>The identifier of the session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(&self) -> std::option::Option<&str> {
+    pub fn session_arn(&self) -> std::option::Option<& str> {
         self.session_arn.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_arn(&self) -> std::option::Option<& str> {
         self.assistant_arn.as_deref()
     }
 }
 /// See [`SessionSummary`](crate::model::SessionSummary).
 pub mod session_summary {
-
+    
     /// A builder for [`SessionSummary`](crate::model::SessionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2208,8 +1975,7 @@ pub mod session_summary {
         }
         /// <p>The identifier of the session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the session.</p>
         pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2218,8 +1984,7 @@ pub mod session_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the session.</p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_arn = input;
-            self
+            self.session_arn = input; self
         }
         /// <p>The identifier of the Wisdom assistant.</p>
         pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2228,8 +1993,7 @@ pub mod session_summary {
         }
         /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assistant_id = input;
-            self
+            self.assistant_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2237,23 +2001,25 @@ pub mod session_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-        pub fn set_assistant_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_arn = input;
-            self
+        pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_arn = input; self
         }
         /// Consumes the builder and constructs a [`SessionSummary`](crate::model::SessionSummary).
         pub fn build(self) -> crate::model::SessionSummary {
             crate::model::SessionSummary {
-                session_id: self.session_id,
-                session_arn: self.session_arn,
-                assistant_id: self.assistant_id,
-                assistant_arn: self.assistant_arn,
+                session_id: self.session_id
+                ,
+                session_arn: self.session_arn
+                ,
+                assistant_id: self.assistant_id
+                ,
+                assistant_arn: self.assistant_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SessionSummary {
     /// Creates a new builder-style object to manufacture [`SessionSummary`](crate::model::SessionSummary).
@@ -2265,7 +2031,7 @@ impl SessionSummary {
 /// <p>Information about the result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultData {
+pub struct ResultData  {
     /// <p>The identifier of the result data.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
@@ -2278,11 +2044,11 @@ pub struct ResultData {
 }
 impl ResultData {
     /// <p>The identifier of the result data.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> std::option::Option<& str> {
         self.result_id.as_deref()
     }
     /// <p>The document.</p>
-    pub fn document(&self) -> std::option::Option<&crate::model::Document> {
+    pub fn document(&self) -> std::option::Option<& crate::model::Document> {
         self.document.as_ref()
     }
     /// <p>The relevance score of the results.</p>
@@ -2292,7 +2058,7 @@ impl ResultData {
 }
 /// See [`ResultData`](crate::model::ResultData).
 pub mod result_data {
-
+    
     /// A builder for [`ResultData`](crate::model::ResultData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2308,8 +2074,7 @@ pub mod result_data {
         }
         /// <p>The identifier of the result data.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.result_id = input;
-            self
+            self.result_id = input; self
         }
         /// <p>The document.</p>
         pub fn document(mut self, input: crate::model::Document) -> Self {
@@ -2318,8 +2083,7 @@ pub mod result_data {
         }
         /// <p>The document.</p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// <p>The relevance score of the results.</p>
         pub fn relevance_score(mut self, input: f64) -> Self {
@@ -2328,18 +2092,23 @@ pub mod result_data {
         }
         /// <p>The relevance score of the results.</p>
         pub fn set_relevance_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.relevance_score = input;
-            self
+            self.relevance_score = input; self
         }
         /// Consumes the builder and constructs a [`ResultData`](crate::model::ResultData).
         pub fn build(self) -> crate::model::ResultData {
             crate::model::ResultData {
-                result_id: self.result_id,
-                document: self.document,
-                relevance_score: self.relevance_score.unwrap_or_default(),
+                result_id: self.result_id
+                ,
+                document: self.document
+                ,
+                relevance_score: self.relevance_score
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ResultData {
     /// Creates a new builder-style object to manufacture [`ResultData`](crate::model::ResultData).
@@ -2351,7 +2120,7 @@ impl ResultData {
 /// <p>The document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Document {
+pub struct Document  {
     /// <p>A reference to the content resource.</p>
     #[doc(hidden)]
     pub content_reference: std::option::Option<crate::model::ContentReference>,
@@ -2364,21 +2133,21 @@ pub struct Document {
 }
 impl Document {
     /// <p>A reference to the content resource.</p>
-    pub fn content_reference(&self) -> std::option::Option<&crate::model::ContentReference> {
+    pub fn content_reference(&self) -> std::option::Option<& crate::model::ContentReference> {
         self.content_reference.as_ref()
     }
     /// <p>The title of the document.</p>
-    pub fn title(&self) -> std::option::Option<&crate::model::DocumentText> {
+    pub fn title(&self) -> std::option::Option<& crate::model::DocumentText> {
         self.title.as_ref()
     }
     /// <p>The excerpt from the document.</p>
-    pub fn excerpt(&self) -> std::option::Option<&crate::model::DocumentText> {
+    pub fn excerpt(&self) -> std::option::Option<& crate::model::DocumentText> {
         self.excerpt.as_ref()
     }
 }
 /// See [`Document`](crate::model::Document).
 pub mod document {
-
+    
     /// A builder for [`Document`](crate::model::Document).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2393,12 +2162,8 @@ pub mod document {
             self
         }
         /// <p>A reference to the content resource.</p>
-        pub fn set_content_reference(
-            mut self,
-            input: std::option::Option<crate::model::ContentReference>,
-        ) -> Self {
-            self.content_reference = input;
-            self
+        pub fn set_content_reference(mut self, input: std::option::Option<crate::model::ContentReference>) -> Self {
+            self.content_reference = input; self
         }
         /// <p>The title of the document.</p>
         pub fn title(mut self, input: crate::model::DocumentText) -> Self {
@@ -2407,8 +2172,7 @@ pub mod document {
         }
         /// <p>The title of the document.</p>
         pub fn set_title(mut self, input: std::option::Option<crate::model::DocumentText>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The excerpt from the document.</p>
         pub fn excerpt(mut self, input: crate::model::DocumentText) -> Self {
@@ -2416,22 +2180,23 @@ pub mod document {
             self
         }
         /// <p>The excerpt from the document.</p>
-        pub fn set_excerpt(
-            mut self,
-            input: std::option::Option<crate::model::DocumentText>,
-        ) -> Self {
-            self.excerpt = input;
-            self
+        pub fn set_excerpt(mut self, input: std::option::Option<crate::model::DocumentText>) -> Self {
+            self.excerpt = input; self
         }
         /// Consumes the builder and constructs a [`Document`](crate::model::Document).
         pub fn build(self) -> crate::model::Document {
             crate::model::Document {
-                content_reference: self.content_reference,
-                title: self.title,
-                excerpt: self.excerpt,
+                content_reference: self.content_reference
+                ,
+                title: self.title
+                ,
+                excerpt: self.excerpt
+                ,
             }
         }
     }
+    
+    
 }
 impl Document {
     /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
@@ -2443,7 +2208,7 @@ impl Document {
 /// <p>The text of the document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DocumentText {
+pub struct DocumentText  {
     /// <p>Text in the document.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
@@ -2453,15 +2218,15 @@ pub struct DocumentText {
 }
 impl DocumentText {
     /// <p>Text in the document.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>Highlights in the document text.</p>
-    pub fn highlights(&self) -> std::option::Option<&[crate::model::Highlight]> {
+    pub fn highlights(&self) -> std::option::Option<& [crate::model::Highlight]> {
         self.highlights.as_deref()
     }
 }
-impl std::fmt::Debug for DocumentText {
+impl  std::fmt::Debug for DocumentText  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentText");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -2471,7 +2236,7 @@ impl std::fmt::Debug for DocumentText {
 }
 /// See [`DocumentText`](crate::model::DocumentText).
 pub mod document_text {
-
+    
     /// A builder for [`DocumentText`](crate::model::DocumentText).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2486,8 +2251,7 @@ pub mod document_text {
         }
         /// <p>Text in the document.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// Appends an item to `highlights`.
         ///
@@ -2496,23 +2260,21 @@ pub mod document_text {
         /// <p>Highlights in the document text.</p>
         pub fn highlights(mut self, input: crate::model::Highlight) -> Self {
             let mut v = self.highlights.unwrap_or_default();
-            v.push(input);
-            self.highlights = Some(v);
-            self
+                            v.push(input);
+                            self.highlights = Some(v);
+                            self
         }
         /// <p>Highlights in the document text.</p>
-        pub fn set_highlights(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Highlight>>,
-        ) -> Self {
-            self.highlights = input;
-            self
+        pub fn set_highlights(mut self, input: std::option::Option<std::vec::Vec<crate::model::Highlight>>) -> Self {
+            self.highlights = input; self
         }
         /// Consumes the builder and constructs a [`DocumentText`](crate::model::DocumentText).
         pub fn build(self) -> crate::model::DocumentText {
             crate::model::DocumentText {
-                text: self.text,
-                highlights: self.highlights,
+                text: self.text
+                ,
+                highlights: self.highlights
+                ,
             }
         }
     }
@@ -2524,6 +2286,8 @@ pub mod document_text {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DocumentText {
     /// Creates a new builder-style object to manufacture [`DocumentText`](crate::model::DocumentText).
@@ -2535,7 +2299,7 @@ impl DocumentText {
 /// <p>Offset specification to describe highlighting of document excerpts for rendering search results and recommendations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Highlight {
+pub struct Highlight  {
     /// <p>The offset for the start of the highlight.</p>
     #[doc(hidden)]
     pub begin_offset_inclusive: i32,
@@ -2555,7 +2319,7 @@ impl Highlight {
 }
 /// See [`Highlight`](crate::model::Highlight).
 pub mod highlight {
-
+    
     /// A builder for [`Highlight`](crate::model::Highlight).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2570,8 +2334,7 @@ pub mod highlight {
         }
         /// <p>The offset for the start of the highlight.</p>
         pub fn set_begin_offset_inclusive(mut self, input: std::option::Option<i32>) -> Self {
-            self.begin_offset_inclusive = input;
-            self
+            self.begin_offset_inclusive = input; self
         }
         /// <p>The offset for the end of the highlight.</p>
         pub fn end_offset_exclusive(mut self, input: i32) -> Self {
@@ -2580,17 +2343,22 @@ pub mod highlight {
         }
         /// <p>The offset for the end of the highlight.</p>
         pub fn set_end_offset_exclusive(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_offset_exclusive = input;
-            self
+            self.end_offset_exclusive = input; self
         }
         /// Consumes the builder and constructs a [`Highlight`](crate::model::Highlight).
         pub fn build(self) -> crate::model::Highlight {
             crate::model::Highlight {
-                begin_offset_inclusive: self.begin_offset_inclusive.unwrap_or_default(),
-                end_offset_exclusive: self.end_offset_exclusive.unwrap_or_default(),
+                begin_offset_inclusive: self.begin_offset_inclusive
+                    .unwrap_or_default()
+                ,
+                end_offset_exclusive: self.end_offset_exclusive
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Highlight {
     /// Creates a new builder-style object to manufacture [`Highlight`](crate::model::Highlight).
@@ -2602,7 +2370,7 @@ impl Highlight {
 /// <p>Reference information about the content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContentReference {
+pub struct ContentReference  {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     #[doc(hidden)]
     pub knowledge_base_arn: std::option::Option<std::string::String>,
@@ -2618,25 +2386,25 @@ pub struct ContentReference {
 }
 impl ContentReference {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> std::option::Option<& str> {
         self.knowledge_base_arn.as_deref()
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn content_arn(&self) -> std::option::Option<&str> {
+    pub fn content_arn(&self) -> std::option::Option<& str> {
         self.content_arn.as_deref()
     }
     /// <p>The identifier of the content.</p>
-    pub fn content_id(&self) -> std::option::Option<&str> {
+    pub fn content_id(&self) -> std::option::Option<& str> {
         self.content_id.as_deref()
     }
 }
 /// See [`ContentReference`](crate::model::ContentReference).
 pub mod content_reference {
-
+    
     /// A builder for [`ContentReference`](crate::model::ContentReference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2652,12 +2420,8 @@ pub mod content_reference {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-        pub fn set_knowledge_base_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_arn = input;
-            self
+        pub fn set_knowledge_base_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_arn = input; self
         }
         /// <p>The identifier of the knowledge base.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2665,12 +2429,8 @@ pub mod content_reference {
             self
         }
         /// <p>The identifier of the knowledge base.</p>
-        pub fn set_knowledge_base_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_id = input;
-            self
+        pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the content.</p>
         pub fn content_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2679,8 +2439,7 @@ pub mod content_reference {
         }
         /// <p>The Amazon Resource Name (ARN) of the content.</p>
         pub fn set_content_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_arn = input;
-            self
+            self.content_arn = input; self
         }
         /// <p>The identifier of the content.</p>
         pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2689,19 +2448,24 @@ pub mod content_reference {
         }
         /// <p>The identifier of the content.</p>
         pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_id = input;
-            self
+            self.content_id = input; self
         }
         /// Consumes the builder and constructs a [`ContentReference`](crate::model::ContentReference).
         pub fn build(self) -> crate::model::ContentReference {
             crate::model::ContentReference {
-                knowledge_base_arn: self.knowledge_base_arn,
-                knowledge_base_id: self.knowledge_base_id,
-                content_arn: self.content_arn,
-                content_id: self.content_id,
+                knowledge_base_arn: self.knowledge_base_arn
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                content_arn: self.content_arn
+                ,
+                content_id: self.content_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ContentReference {
     /// Creates a new builder-style object to manufacture [`ContentReference`](crate::model::ContentReference).
@@ -2713,7 +2477,7 @@ impl ContentReference {
 /// <p>An error occurred when creating a recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotifyRecommendationsReceivedError {
+pub struct NotifyRecommendationsReceivedError  {
     /// <p>The identifier of the recommendation that is in error.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -2723,17 +2487,17 @@ pub struct NotifyRecommendationsReceivedError {
 }
 impl NotifyRecommendationsReceivedError {
     /// <p>The identifier of the recommendation that is in error.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>A recommendation is causing an error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
 pub mod notify_recommendations_received_error {
-
+    
     /// A builder for [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2747,12 +2511,8 @@ pub mod notify_recommendations_received_error {
             self
         }
         /// <p>The identifier of the recommendation that is in error.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>A recommendation is causing an error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2761,17 +2521,20 @@ pub mod notify_recommendations_received_error {
         }
         /// <p>A recommendation is causing an error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
         pub fn build(self) -> crate::model::NotifyRecommendationsReceivedError {
             crate::model::NotifyRecommendationsReceivedError {
-                recommendation_id: self.recommendation_id,
-                message: self.message,
+                recommendation_id: self.recommendation_id
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotifyRecommendationsReceivedError {
     /// Creates a new builder-style object to manufacture [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
@@ -2783,17 +2546,17 @@ impl NotifyRecommendationsReceivedError {
 /// <p>A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationTrigger {
+pub struct RecommendationTrigger  {
     /// <p>The identifier of the recommendation trigger.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of recommendation trigger.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RecommendationTriggerType>,
-    /// <p>The source of the recommendation trigger.</p>
-    /// <ul>
-    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
-    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// <p>The source of the recommendation trigger.</p> 
+    /// <ul> 
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::RecommendationSourceType>,
@@ -2806,33 +2569,33 @@ pub struct RecommendationTrigger {
 }
 impl RecommendationTrigger {
     /// <p>The identifier of the recommendation trigger.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of recommendation trigger.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RecommendationTriggerType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RecommendationTriggerType> {
         self.r#type.as_ref()
     }
-    /// <p>The source of the recommendation trigger.</p>
-    /// <ul>
-    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
-    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// <p>The source of the recommendation trigger.</p> 
+    /// <ul> 
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
     /// </ul>
-    pub fn source(&self) -> std::option::Option<&crate::model::RecommendationSourceType> {
+    pub fn source(&self) -> std::option::Option<& crate::model::RecommendationSourceType> {
         self.source.as_ref()
     }
     /// <p>A union type containing information related to the trigger.</p>
-    pub fn data(&self) -> std::option::Option<&crate::model::RecommendationTriggerData> {
+    pub fn data(&self) -> std::option::Option<& crate::model::RecommendationTriggerData> {
         self.data.as_ref()
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recommendation_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.recommendation_ids.as_deref()
     }
 }
 /// See [`RecommendationTrigger`](crate::model::RecommendationTrigger).
 pub mod recommendation_trigger {
-
+    
     /// A builder for [`RecommendationTrigger`](crate::model::RecommendationTrigger).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2850,8 +2613,7 @@ pub mod recommendation_trigger {
         }
         /// <p>The identifier of the recommendation trigger.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of recommendation trigger.</p>
         pub fn r#type(mut self, input: crate::model::RecommendationTriggerType) -> Self {
@@ -2859,33 +2621,25 @@ pub mod recommendation_trigger {
             self
         }
         /// <p>The type of recommendation trigger.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationTriggerType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RecommendationTriggerType>) -> Self {
+            self.r#type = input; self
         }
-        /// <p>The source of the recommendation trigger.</p>
-        /// <ul>
-        /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
-        /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+        /// <p>The source of the recommendation trigger.</p> 
+        /// <ul> 
+        /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+        /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
         /// </ul>
         pub fn source(mut self, input: crate::model::RecommendationSourceType) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The source of the recommendation trigger.</p>
-        /// <ul>
-        /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
-        /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+        /// <p>The source of the recommendation trigger.</p> 
+        /// <ul> 
+        /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+        /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
         /// </ul>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationSourceType>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<crate::model::RecommendationSourceType>) -> Self {
+            self.source = input; self
         }
         /// <p>A union type containing information related to the trigger.</p>
         pub fn data(mut self, input: crate::model::RecommendationTriggerData) -> Self {
@@ -2893,12 +2647,8 @@ pub mod recommendation_trigger {
             self
         }
         /// <p>A union type containing information related to the trigger.</p>
-        pub fn set_data(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationTriggerData>,
-        ) -> Self {
-            self.data = input;
-            self
+        pub fn set_data(mut self, input: std::option::Option<crate::model::RecommendationTriggerData>) -> Self {
+            self.data = input; self
         }
         /// Appends an item to `recommendation_ids`.
         ///
@@ -2907,29 +2657,32 @@ pub mod recommendation_trigger {
         /// <p>The identifiers of the recommendations.</p>
         pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.recommendation_ids.unwrap_or_default();
-            v.push(input.into());
-            self.recommendation_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.recommendation_ids = Some(v);
+                            self
         }
         /// <p>The identifiers of the recommendations.</p>
-        pub fn set_recommendation_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.recommendation_ids = input;
-            self
+        pub fn set_recommendation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.recommendation_ids = input; self
         }
         /// Consumes the builder and constructs a [`RecommendationTrigger`](crate::model::RecommendationTrigger).
         pub fn build(self) -> crate::model::RecommendationTrigger {
             crate::model::RecommendationTrigger {
-                id: self.id,
-                r#type: self.r#type,
-                source: self.source,
-                data: self.data,
-                recommendation_ids: self.recommendation_ids,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                source: self.source
+                ,
+                data: self.data
+                ,
+                recommendation_ids: self.recommendation_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommendationTrigger {
     /// Creates a new builder-style object to manufacture [`RecommendationTrigger`](crate::model::RecommendationTrigger).
@@ -2958,14 +2711,8 @@ impl RecommendationTriggerData {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Query`](crate::model::RecommendationTriggerData::Query), extracting the inner [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_query(
-        &self,
-    ) -> std::result::Result<&crate::model::QueryRecommendationTriggerData, &Self> {
-        if let RecommendationTriggerData::Query(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_query(&self) -> std::result::Result<&crate::model::QueryRecommendationTriggerData, &Self> {
+        if let RecommendationTriggerData::Query(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Query`](crate::model::RecommendationTriggerData::Query).
     pub fn is_query(&self) -> bool {
@@ -2980,18 +2727,18 @@ impl RecommendationTriggerData {
 /// <p>Data associated with the QUERY RecommendationTriggerType.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct QueryRecommendationTriggerData {
+pub struct QueryRecommendationTriggerData  {
     /// <p>The text associated with the recommendation trigger.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl QueryRecommendationTriggerData {
     /// <p>The text associated with the recommendation trigger.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for QueryRecommendationTriggerData {
+impl  std::fmt::Debug for QueryRecommendationTriggerData  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryRecommendationTriggerData");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -3000,7 +2747,7 @@ impl std::fmt::Debug for QueryRecommendationTriggerData {
 }
 /// See [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
 pub mod query_recommendation_trigger_data {
-
+    
     /// A builder for [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3014,12 +2761,14 @@ pub mod query_recommendation_trigger_data {
         }
         /// <p>The text associated with the recommendation trigger.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// Consumes the builder and constructs a [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
         pub fn build(self) -> crate::model::QueryRecommendationTriggerData {
-            crate::model::QueryRecommendationTriggerData { text: self.text }
+            crate::model::QueryRecommendationTriggerData {
+                text: self.text
+                ,
+            }
         }
     }
     impl std::fmt::Debug for Builder {
@@ -3029,6 +2778,8 @@ pub mod query_recommendation_trigger_data {
             formatter.finish()
         }
     }
+    
+    
 }
 impl QueryRecommendationTriggerData {
     /// Creates a new builder-style object to manufacture [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
@@ -3043,9 +2794,9 @@ impl QueryRecommendationTriggerData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationsourcetype = unimplemented!();
 /// match recommendationsourcetype {
@@ -3068,22 +2819,14 @@ impl QueryRecommendationTriggerData {
 /// Specifically, when `recommendationsourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecommendationSourceType {
     #[allow(missing_docs)] // documentation missing in model
     IssueDetection,
@@ -3092,7 +2835,7 @@ pub enum RecommendationSourceType {
     #[allow(missing_docs)] // documentation missing in model
     RuleEvaluation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationSourceType {
     fn from(s: &str) -> Self {
@@ -3100,19 +2843,17 @@ impl std::convert::From<&str> for RecommendationSourceType {
             "ISSUE_DETECTION" => RecommendationSourceType::IssueDetection,
             "OTHER" => RecommendationSourceType::Other,
             "RULE_EVALUATION" => RecommendationSourceType::RuleEvaluation,
-            other => RecommendationSourceType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RecommendationSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecommendationSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecommendationSourceType::from(s))
+                }
+            }
 impl RecommendationSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3120,12 +2861,14 @@ impl RecommendationSourceType {
             RecommendationSourceType::IssueDetection => "ISSUE_DETECTION",
             RecommendationSourceType::Other => "OTHER",
             RecommendationSourceType::RuleEvaluation => "RULE_EVALUATION",
-            RecommendationSourceType::Unknown(value) => value.as_str(),
+            RecommendationSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ISSUE_DETECTION", "OTHER", "RULE_EVALUATION"]
+        &[
+            "ISSUE_DETECTION", "OTHER", "RULE_EVALUATION"
+        ]
     }
 }
 impl AsRef<str> for RecommendationSourceType {
@@ -3140,9 +2883,9 @@ impl AsRef<str> for RecommendationSourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationtriggertype = unimplemented!();
 /// match recommendationtriggertype {
@@ -3163,56 +2906,48 @@ impl AsRef<str> for RecommendationSourceType {
 /// Specifically, when `recommendationtriggertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationTriggerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecommendationTriggerType {
     #[allow(missing_docs)] // documentation missing in model
     Query,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationTriggerType {
     fn from(s: &str) -> Self {
         match s {
             "QUERY" => RecommendationTriggerType::Query,
-            other => RecommendationTriggerType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RecommendationTriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecommendationTriggerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationTriggerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecommendationTriggerType::from(s))
+                }
+            }
 impl RecommendationTriggerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecommendationTriggerType::Query => "QUERY",
-            RecommendationTriggerType::Unknown(value) => value.as_str(),
+            RecommendationTriggerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["QUERY"]
+        &[
+            "QUERY"
+        ]
     }
 }
 impl AsRef<str> for RecommendationTriggerType {
@@ -3224,7 +2959,7 @@ impl AsRef<str> for RecommendationTriggerType {
 /// <p>Information about the recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationData {
+pub struct RecommendationData  {
     /// <p>The identifier of the recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -3243,11 +2978,11 @@ pub struct RecommendationData {
 }
 impl RecommendationData {
     /// <p>The identifier of the recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The recommended document.</p>
-    pub fn document(&self) -> std::option::Option<&crate::model::Document> {
+    pub fn document(&self) -> std::option::Option<& crate::model::Document> {
         self.document.as_ref()
     }
     /// <p>The relevance score of the recommendation.</p>
@@ -3255,17 +2990,17 @@ impl RecommendationData {
         self.relevance_score
     }
     /// <p>The relevance level of the recommendation.</p>
-    pub fn relevance_level(&self) -> std::option::Option<&crate::model::RelevanceLevel> {
+    pub fn relevance_level(&self) -> std::option::Option<& crate::model::RelevanceLevel> {
         self.relevance_level.as_ref()
     }
     /// <p>The type of recommendation.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RecommendationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RecommendationType> {
         self.r#type.as_ref()
     }
 }
 /// See [`RecommendationData`](crate::model::RecommendationData).
 pub mod recommendation_data {
-
+    
     /// A builder for [`RecommendationData`](crate::model::RecommendationData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3282,12 +3017,8 @@ pub mod recommendation_data {
             self
         }
         /// <p>The identifier of the recommendation.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>The recommended document.</p>
         pub fn document(mut self, input: crate::model::Document) -> Self {
@@ -3296,8 +3027,7 @@ pub mod recommendation_data {
         }
         /// <p>The recommended document.</p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// <p>The relevance score of the recommendation.</p>
         pub fn relevance_score(mut self, input: f64) -> Self {
@@ -3306,8 +3036,7 @@ pub mod recommendation_data {
         }
         /// <p>The relevance score of the recommendation.</p>
         pub fn set_relevance_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.relevance_score = input;
-            self
+            self.relevance_score = input; self
         }
         /// <p>The relevance level of the recommendation.</p>
         pub fn relevance_level(mut self, input: crate::model::RelevanceLevel) -> Self {
@@ -3315,12 +3044,8 @@ pub mod recommendation_data {
             self
         }
         /// <p>The relevance level of the recommendation.</p>
-        pub fn set_relevance_level(
-            mut self,
-            input: std::option::Option<crate::model::RelevanceLevel>,
-        ) -> Self {
-            self.relevance_level = input;
-            self
+        pub fn set_relevance_level(mut self, input: std::option::Option<crate::model::RelevanceLevel>) -> Self {
+            self.relevance_level = input; self
         }
         /// <p>The type of recommendation.</p>
         pub fn r#type(mut self, input: crate::model::RecommendationType) -> Self {
@@ -3328,24 +3053,28 @@ pub mod recommendation_data {
             self
         }
         /// <p>The type of recommendation.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RecommendationType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`RecommendationData`](crate::model::RecommendationData).
         pub fn build(self) -> crate::model::RecommendationData {
             crate::model::RecommendationData {
-                recommendation_id: self.recommendation_id,
-                document: self.document,
-                relevance_score: self.relevance_score.unwrap_or_default(),
-                relevance_level: self.relevance_level,
-                r#type: self.r#type,
+                recommendation_id: self.recommendation_id
+                ,
+                document: self.document
+                ,
+                relevance_score: self.relevance_score
+                    .unwrap_or_default()
+                ,
+                relevance_level: self.relevance_level
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommendationData {
     /// Creates a new builder-style object to manufacture [`RecommendationData`](crate::model::RecommendationData).
@@ -3360,9 +3089,9 @@ impl RecommendationData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationtype = unimplemented!();
 /// match recommendationtype {
@@ -3383,56 +3112,48 @@ impl RecommendationData {
 /// Specifically, when `recommendationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
     KnowledgeContent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationType {
     fn from(s: &str) -> Self {
         match s {
             "KNOWLEDGE_CONTENT" => RecommendationType::KnowledgeContent,
-            other => {
-                RecommendationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RecommendationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecommendationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecommendationType::from(s))
+                }
+            }
 impl RecommendationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecommendationType::KnowledgeContent => "KNOWLEDGE_CONTENT",
-            RecommendationType::Unknown(value) => value.as_str(),
+            RecommendationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KNOWLEDGE_CONTENT"]
+        &[
+            "KNOWLEDGE_CONTENT"
+        ]
     }
 }
 impl AsRef<str> for RecommendationType {
@@ -3447,9 +3168,9 @@ impl AsRef<str> for RecommendationType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let relevancelevel = unimplemented!();
 /// match relevancelevel {
@@ -3472,22 +3193,14 @@ impl AsRef<str> for RecommendationType {
 /// Specifically, when `relevancelevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RelevanceLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RelevanceLevel {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -3496,7 +3209,7 @@ pub enum RelevanceLevel {
     #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RelevanceLevel {
     fn from(s: &str) -> Self {
@@ -3504,17 +3217,17 @@ impl std::convert::From<&str> for RelevanceLevel {
             "HIGH" => RelevanceLevel::High,
             "LOW" => RelevanceLevel::Low,
             "MEDIUM" => RelevanceLevel::Medium,
-            other => RelevanceLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RelevanceLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RelevanceLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RelevanceLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RelevanceLevel::from(s))
+                }
+            }
 impl RelevanceLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3522,12 +3235,14 @@ impl RelevanceLevel {
             RelevanceLevel::High => "HIGH",
             RelevanceLevel::Low => "LOW",
             RelevanceLevel::Medium => "MEDIUM",
-            RelevanceLevel::Unknown(value) => value.as_str(),
+            RelevanceLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HIGH", "LOW", "MEDIUM"]
+        &[
+            "HIGH", "LOW", "MEDIUM"
+        ]
     }
 }
 impl AsRef<str> for RelevanceLevel {
@@ -3539,7 +3254,7 @@ impl AsRef<str> for RelevanceLevel {
 /// <p>Summary information about the assistant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssistantSummary {
+pub struct AssistantSummary  {
     /// <p>The identifier of the Wisdom assistant.</p>
     #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
@@ -3560,55 +3275,48 @@ pub struct AssistantSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key used for encryption.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
 impl AssistantSummary {
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_arn(&self) -> std::option::Option<& str> {
         self.assistant_arn.as_deref()
     }
     /// <p>The name of the assistant.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the assistant.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AssistantType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AssistantType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the assistant.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AssistantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AssistantStatus> {
         self.status.as_ref()
     }
     /// <p>The description of the assistant.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
 }
 /// See [`AssistantSummary`](crate::model::AssistantSummary).
 pub mod assistant_summary {
-
+    
     /// A builder for [`AssistantSummary`](crate::model::AssistantSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3618,11 +3326,8 @@ pub mod assistant_summary {
         pub(crate) r#type: std::option::Option<crate::model::AssistantType>,
         pub(crate) status: std::option::Option<crate::model::AssistantStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) server_side_encryption_configuration:
-            std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The identifier of the Wisdom assistant.</p>
@@ -3632,8 +3337,7 @@ pub mod assistant_summary {
         }
         /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assistant_id = input;
-            self
+            self.assistant_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3641,12 +3345,8 @@ pub mod assistant_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-        pub fn set_assistant_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_arn = input;
-            self
+        pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_arn = input; self
         }
         /// <p>The name of the assistant.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3655,8 +3355,7 @@ pub mod assistant_summary {
         }
         /// <p>The name of the assistant.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the assistant.</p>
         pub fn r#type(mut self, input: crate::model::AssistantType) -> Self {
@@ -3665,8 +3364,7 @@ pub mod assistant_summary {
         }
         /// <p>The type of the assistant.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AssistantType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The status of the assistant.</p>
         pub fn status(mut self, input: crate::model::AssistantStatus) -> Self {
@@ -3674,12 +3372,8 @@ pub mod assistant_summary {
             self
         }
         /// <p>The status of the assistant.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AssistantStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AssistantStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The description of the assistant.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3688,64 +3382,56 @@ pub mod assistant_summary {
         }
         /// <p>The description of the assistant.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The KMS key used for encryption.</p>
-        pub fn server_side_encryption_configuration(
-            mut self,
-            input: crate::model::ServerSideEncryptionConfiguration,
-        ) -> Self {
+        pub fn server_side_encryption_configuration(mut self, input: crate::model::ServerSideEncryptionConfiguration) -> Self {
             self.server_side_encryption_configuration = Some(input);
             self
         }
         /// <p>The KMS key used for encryption.</p>
-        pub fn set_server_side_encryption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-        ) -> Self {
-            self.server_side_encryption_configuration = input;
-            self
+        pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>) -> Self {
+            self.server_side_encryption_configuration = input; self
         }
         /// Consumes the builder and constructs a [`AssistantSummary`](crate::model::AssistantSummary).
         pub fn build(self) -> crate::model::AssistantSummary {
             crate::model::AssistantSummary {
-                assistant_id: self.assistant_id,
-                assistant_arn: self.assistant_arn,
-                name: self.name,
-                r#type: self.r#type,
-                status: self.status,
-                description: self.description,
-                tags: self.tags,
-                server_side_encryption_configuration: self.server_side_encryption_configuration,
+                assistant_id: self.assistant_id
+                ,
+                assistant_arn: self.assistant_arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl AssistantSummary {
     /// Creates a new builder-style object to manufacture [`AssistantSummary`](crate::model::AssistantSummary).
@@ -3760,9 +3446,9 @@ impl AssistantSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assistantstatus = unimplemented!();
 /// match assistantstatus {
@@ -3788,22 +3474,14 @@ impl AssistantSummary {
 /// Specifically, when `assistantstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssistantStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssistantStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3818,7 +3496,7 @@ pub enum AssistantStatus {
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssistantStatus {
     fn from(s: &str) -> Self {
@@ -3829,17 +3507,17 @@ impl std::convert::From<&str> for AssistantStatus {
             "DELETED" => AssistantStatus::Deleted,
             "DELETE_FAILED" => AssistantStatus::DeleteFailed,
             "DELETE_IN_PROGRESS" => AssistantStatus::DeleteInProgress,
-            other => AssistantStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssistantStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssistantStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssistantStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssistantStatus::from(s))
+                }
+            }
 impl AssistantStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3850,18 +3528,13 @@ impl AssistantStatus {
             AssistantStatus::Deleted => "DELETED",
             AssistantStatus::DeleteFailed => "DELETE_FAILED",
             AssistantStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            AssistantStatus::Unknown(value) => value.as_str(),
+            AssistantStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETED",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
+            "ACTIVE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS"
         ]
     }
 }
@@ -3877,9 +3550,9 @@ impl AsRef<str> for AssistantStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assistanttype = unimplemented!();
 /// match assistanttype {
@@ -3900,54 +3573,48 @@ impl AsRef<str> for AssistantStatus {
 /// Specifically, when `assistanttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssistantType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssistantType {
     #[allow(missing_docs)] // documentation missing in model
     Agent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssistantType {
     fn from(s: &str) -> Self {
         match s {
             "AGENT" => AssistantType::Agent,
-            other => AssistantType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssistantType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssistantType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssistantType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssistantType::from(s))
+                }
+            }
 impl AssistantType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssistantType::Agent => "AGENT",
-            AssistantType::Unknown(value) => value.as_str(),
+            AssistantType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT"]
+        &[
+            "AGENT"
+        ]
     }
 }
 impl AsRef<str> for AssistantType {
@@ -3959,7 +3626,7 @@ impl AsRef<str> for AssistantType {
 /// <p>The assistant data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssistantData {
+pub struct AssistantData  {
     /// <p>The identifier of the Wisdom assistant.</p>
     #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
@@ -3980,55 +3647,48 @@ pub struct AssistantData {
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key used for encryption.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
 impl AssistantData {
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_arn(&self) -> std::option::Option<& str> {
         self.assistant_arn.as_deref()
     }
     /// <p>The name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of assistant.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AssistantType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AssistantType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the assistant.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AssistantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AssistantStatus> {
         self.status.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
 }
 /// See [`AssistantData`](crate::model::AssistantData).
 pub mod assistant_data {
-
+    
     /// A builder for [`AssistantData`](crate::model::AssistantData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4038,11 +3698,8 @@ pub mod assistant_data {
         pub(crate) r#type: std::option::Option<crate::model::AssistantType>,
         pub(crate) status: std::option::Option<crate::model::AssistantStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) server_side_encryption_configuration:
-            std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The identifier of the Wisdom assistant.</p>
@@ -4052,8 +3709,7 @@ pub mod assistant_data {
         }
         /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assistant_id = input;
-            self
+            self.assistant_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4061,12 +3717,8 @@ pub mod assistant_data {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-        pub fn set_assistant_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_arn = input;
-            self
+        pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_arn = input; self
         }
         /// <p>The name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4075,8 +3727,7 @@ pub mod assistant_data {
         }
         /// <p>The name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of assistant.</p>
         pub fn r#type(mut self, input: crate::model::AssistantType) -> Self {
@@ -4085,8 +3736,7 @@ pub mod assistant_data {
         }
         /// <p>The type of assistant.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AssistantType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The status of the assistant.</p>
         pub fn status(mut self, input: crate::model::AssistantStatus) -> Self {
@@ -4094,12 +3744,8 @@ pub mod assistant_data {
             self
         }
         /// <p>The status of the assistant.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AssistantStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AssistantStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4108,64 +3754,56 @@ pub mod assistant_data {
         }
         /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The KMS key used for encryption.</p>
-        pub fn server_side_encryption_configuration(
-            mut self,
-            input: crate::model::ServerSideEncryptionConfiguration,
-        ) -> Self {
+        pub fn server_side_encryption_configuration(mut self, input: crate::model::ServerSideEncryptionConfiguration) -> Self {
             self.server_side_encryption_configuration = Some(input);
             self
         }
         /// <p>The KMS key used for encryption.</p>
-        pub fn set_server_side_encryption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-        ) -> Self {
-            self.server_side_encryption_configuration = input;
-            self
+        pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>) -> Self {
+            self.server_side_encryption_configuration = input; self
         }
         /// Consumes the builder and constructs a [`AssistantData`](crate::model::AssistantData).
         pub fn build(self) -> crate::model::AssistantData {
             crate::model::AssistantData {
-                assistant_id: self.assistant_id,
-                assistant_arn: self.assistant_arn,
-                name: self.name,
-                r#type: self.r#type,
-                status: self.status,
-                description: self.description,
-                tags: self.tags,
-                server_side_encryption_configuration: self.server_side_encryption_configuration,
+                assistant_id: self.assistant_id
+                ,
+                assistant_arn: self.assistant_arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl AssistantData {
     /// Creates a new builder-style object to manufacture [`AssistantData`](crate::model::AssistantData).
@@ -4177,7 +3815,7 @@ impl AssistantData {
 /// <p>Information about the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionData {
+pub struct SessionData  {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     #[doc(hidden)]
     pub session_arn: std::option::Option<std::string::String>,
@@ -4192,37 +3830,33 @@ pub struct SessionData {
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(&self) -> std::option::Option<&str> {
+    pub fn session_arn(&self) -> std::option::Option<& str> {
         self.session_arn.as_deref()
     }
     /// <p>The identifier of the session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The name of the session.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the session.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`SessionData`](crate::model::SessionData).
 pub mod session_data {
-
+    
     /// A builder for [`SessionData`](crate::model::SessionData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4230,9 +3864,7 @@ pub mod session_data {
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -4242,8 +3874,7 @@ pub mod session_data {
         }
         /// <p>The Amazon Resource Name (ARN) of the session.</p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_arn = input;
-            self
+            self.session_arn = input; self
         }
         /// <p>The identifier of the session.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4252,8 +3883,7 @@ pub mod session_data {
         }
         /// <p>The identifier of the session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>The name of the session.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4262,8 +3892,7 @@ pub mod session_data {
         }
         /// <p>The name of the session.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the session.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4272,45 +3901,41 @@ pub mod session_data {
         }
         /// <p>The description of the session.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`SessionData`](crate::model::SessionData).
         pub fn build(self) -> crate::model::SessionData {
             crate::model::SessionData {
-                session_arn: self.session_arn,
-                session_id: self.session_id,
-                name: self.name,
-                description: self.description,
-                tags: self.tags,
+                session_arn: self.session_arn
+                ,
+                session_id: self.session_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl SessionData {
     /// Creates a new builder-style object to manufacture [`SessionData`](crate::model::SessionData).
@@ -4322,7 +3947,7 @@ impl SessionData {
 /// <p>Summary information about the assistant association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssistantAssociationSummary {
+pub struct AssistantAssociationSummary  {
     /// <p>The identifier of the assistant association.</p>
     #[doc(hidden)]
     pub assistant_association_id: std::option::Option<std::string::String>,
@@ -4343,47 +3968,41 @@ pub struct AssistantAssociationSummary {
     pub association_data: std::option::Option<crate::model::AssistantAssociationOutputData>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AssistantAssociationSummary {
     /// <p>The identifier of the assistant association.</p>
-    pub fn assistant_association_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_association_id(&self) -> std::option::Option<& str> {
         self.assistant_association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-    pub fn assistant_association_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_association_arn(&self) -> std::option::Option<& str> {
         self.assistant_association_arn.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_arn(&self) -> std::option::Option<& str> {
         self.assistant_arn.as_deref()
     }
     /// <p>The type of association.</p>
-    pub fn association_type(&self) -> std::option::Option<&crate::model::AssociationType> {
+    pub fn association_type(&self) -> std::option::Option<& crate::model::AssociationType> {
         self.association_type.as_ref()
     }
     /// <p>The association data.</p>
-    pub fn association_data(
-        &self,
-    ) -> std::option::Option<&crate::model::AssistantAssociationOutputData> {
+    pub fn association_data(&self) -> std::option::Option<& crate::model::AssistantAssociationOutputData> {
         self.association_data.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
 pub mod assistant_association_summary {
-
+    
     /// A builder for [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4392,11 +4011,8 @@ pub mod assistant_association_summary {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
         pub(crate) assistant_arn: std::option::Option<std::string::String>,
         pub(crate) association_type: std::option::Option<crate::model::AssociationType>,
-        pub(crate) association_data:
-            std::option::Option<crate::model::AssistantAssociationOutputData>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) association_data: std::option::Option<crate::model::AssistantAssociationOutputData>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the assistant association.</p>
@@ -4405,12 +4021,8 @@ pub mod assistant_association_summary {
             self
         }
         /// <p>The identifier of the assistant association.</p>
-        pub fn set_assistant_association_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_association_id = input;
-            self
+        pub fn set_assistant_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_association_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
         pub fn assistant_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4418,12 +4030,8 @@ pub mod assistant_association_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-        pub fn set_assistant_association_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_association_arn = input;
-            self
+        pub fn set_assistant_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_association_arn = input; self
         }
         /// <p>The identifier of the Wisdom assistant.</p>
         pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4432,8 +4040,7 @@ pub mod assistant_association_summary {
         }
         /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assistant_id = input;
-            self
+            self.assistant_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4441,12 +4048,8 @@ pub mod assistant_association_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-        pub fn set_assistant_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_arn = input;
-            self
+        pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_arn = input; self
         }
         /// <p>The type of association.</p>
         pub fn association_type(mut self, input: crate::model::AssociationType) -> Self {
@@ -4454,67 +4057,55 @@ pub mod assistant_association_summary {
             self
         }
         /// <p>The type of association.</p>
-        pub fn set_association_type(
-            mut self,
-            input: std::option::Option<crate::model::AssociationType>,
-        ) -> Self {
-            self.association_type = input;
-            self
+        pub fn set_association_type(mut self, input: std::option::Option<crate::model::AssociationType>) -> Self {
+            self.association_type = input; self
         }
         /// <p>The association data.</p>
-        pub fn association_data(
-            mut self,
-            input: crate::model::AssistantAssociationOutputData,
-        ) -> Self {
+        pub fn association_data(mut self, input: crate::model::AssistantAssociationOutputData) -> Self {
             self.association_data = Some(input);
             self
         }
         /// <p>The association data.</p>
-        pub fn set_association_data(
-            mut self,
-            input: std::option::Option<crate::model::AssistantAssociationOutputData>,
-        ) -> Self {
-            self.association_data = input;
-            self
+        pub fn set_association_data(mut self, input: std::option::Option<crate::model::AssistantAssociationOutputData>) -> Self {
+            self.association_data = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
         pub fn build(self) -> crate::model::AssistantAssociationSummary {
             crate::model::AssistantAssociationSummary {
-                assistant_association_id: self.assistant_association_id,
-                assistant_association_arn: self.assistant_association_arn,
-                assistant_id: self.assistant_id,
-                assistant_arn: self.assistant_arn,
-                association_type: self.association_type,
-                association_data: self.association_data,
-                tags: self.tags,
+                assistant_association_id: self.assistant_association_id
+                ,
+                assistant_association_arn: self.assistant_association_arn
+                ,
+                assistant_id: self.assistant_id
+                ,
+                assistant_arn: self.assistant_arn
+                ,
+                association_type: self.association_type
+                ,
+                association_data: self.association_data
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl AssistantAssociationSummary {
     /// Creates a new builder-style object to manufacture [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
@@ -4543,14 +4134,8 @@ impl AssistantAssociationOutputData {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`KnowledgeBaseAssociation`](crate::model::AssistantAssociationOutputData::KnowledgeBaseAssociation), extracting the inner [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_knowledge_base_association(
-        &self,
-    ) -> std::result::Result<&crate::model::KnowledgeBaseAssociationData, &Self> {
-        if let AssistantAssociationOutputData::KnowledgeBaseAssociation(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_knowledge_base_association(&self) -> std::result::Result<&crate::model::KnowledgeBaseAssociationData, &Self> {
+        if let AssistantAssociationOutputData::KnowledgeBaseAssociation(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`KnowledgeBaseAssociation`](crate::model::AssistantAssociationOutputData::KnowledgeBaseAssociation).
     pub fn is_knowledge_base_association(&self) -> bool {
@@ -4565,7 +4150,7 @@ impl AssistantAssociationOutputData {
 /// <p>Association information about the knowledge base.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KnowledgeBaseAssociationData {
+pub struct KnowledgeBaseAssociationData  {
     /// <p>The identifier of the knowledge base.</p>
     #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
@@ -4575,17 +4160,17 @@ pub struct KnowledgeBaseAssociationData {
 }
 impl KnowledgeBaseAssociationData {
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> std::option::Option<& str> {
         self.knowledge_base_arn.as_deref()
     }
 }
 /// See [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
 pub mod knowledge_base_association_data {
-
+    
     /// A builder for [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4599,12 +4184,8 @@ pub mod knowledge_base_association_data {
             self
         }
         /// <p>The identifier of the knowledge base.</p>
-        pub fn set_knowledge_base_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_id = input;
-            self
+        pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn knowledge_base_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4612,21 +4193,21 @@ pub mod knowledge_base_association_data {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-        pub fn set_knowledge_base_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.knowledge_base_arn = input;
-            self
+        pub fn set_knowledge_base_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.knowledge_base_arn = input; self
         }
         /// Consumes the builder and constructs a [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
         pub fn build(self) -> crate::model::KnowledgeBaseAssociationData {
             crate::model::KnowledgeBaseAssociationData {
-                knowledge_base_id: self.knowledge_base_id,
-                knowledge_base_arn: self.knowledge_base_arn,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                knowledge_base_arn: self.knowledge_base_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl KnowledgeBaseAssociationData {
     /// Creates a new builder-style object to manufacture [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
@@ -4641,9 +4222,9 @@ impl KnowledgeBaseAssociationData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let associationtype = unimplemented!();
 /// match associationtype {
@@ -4664,54 +4245,48 @@ impl KnowledgeBaseAssociationData {
 /// Specifically, when `associationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssociationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssociationType {
     #[allow(missing_docs)] // documentation missing in model
     KnowledgeBase,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssociationType {
     fn from(s: &str) -> Self {
         match s {
             "KNOWLEDGE_BASE" => AssociationType::KnowledgeBase,
-            other => AssociationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssociationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssociationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssociationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssociationType::from(s))
+                }
+            }
 impl AssociationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssociationType::KnowledgeBase => "KNOWLEDGE_BASE",
-            AssociationType::Unknown(value) => value.as_str(),
+            AssociationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KNOWLEDGE_BASE"]
+        &[
+            "KNOWLEDGE_BASE"
+        ]
     }
 }
 impl AsRef<str> for AssociationType {
@@ -4723,7 +4298,7 @@ impl AsRef<str> for AssociationType {
 /// <p>Information about the assistant association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssistantAssociationData {
+pub struct AssistantAssociationData  {
     /// <p>The identifier of the assistant association.</p>
     #[doc(hidden)]
     pub assistant_association_id: std::option::Option<std::string::String>,
@@ -4744,47 +4319,41 @@ pub struct AssistantAssociationData {
     pub association_data: std::option::Option<crate::model::AssistantAssociationOutputData>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AssistantAssociationData {
     /// <p>The identifier of the assistant association.</p>
-    pub fn assistant_association_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_association_id(&self) -> std::option::Option<& str> {
         self.assistant_association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-    pub fn assistant_association_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_association_arn(&self) -> std::option::Option<& str> {
         self.assistant_association_arn.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_arn(&self) -> std::option::Option<& str> {
         self.assistant_arn.as_deref()
     }
     /// <p>The type of association.</p>
-    pub fn association_type(&self) -> std::option::Option<&crate::model::AssociationType> {
+    pub fn association_type(&self) -> std::option::Option<& crate::model::AssociationType> {
         self.association_type.as_ref()
     }
     /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
-    pub fn association_data(
-        &self,
-    ) -> std::option::Option<&crate::model::AssistantAssociationOutputData> {
+    pub fn association_data(&self) -> std::option::Option<& crate::model::AssistantAssociationOutputData> {
         self.association_data.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`AssistantAssociationData`](crate::model::AssistantAssociationData).
 pub mod assistant_association_data {
-
+    
     /// A builder for [`AssistantAssociationData`](crate::model::AssistantAssociationData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4793,11 +4362,8 @@ pub mod assistant_association_data {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
         pub(crate) assistant_arn: std::option::Option<std::string::String>,
         pub(crate) association_type: std::option::Option<crate::model::AssociationType>,
-        pub(crate) association_data:
-            std::option::Option<crate::model::AssistantAssociationOutputData>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) association_data: std::option::Option<crate::model::AssistantAssociationOutputData>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the assistant association.</p>
@@ -4806,12 +4372,8 @@ pub mod assistant_association_data {
             self
         }
         /// <p>The identifier of the assistant association.</p>
-        pub fn set_assistant_association_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_association_id = input;
-            self
+        pub fn set_assistant_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_association_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
         pub fn assistant_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4819,12 +4381,8 @@ pub mod assistant_association_data {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-        pub fn set_assistant_association_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_association_arn = input;
-            self
+        pub fn set_assistant_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_association_arn = input; self
         }
         /// <p>The identifier of the Wisdom assistant.</p>
         pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4833,8 +4391,7 @@ pub mod assistant_association_data {
         }
         /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assistant_id = input;
-            self
+            self.assistant_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
         pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4842,12 +4399,8 @@ pub mod assistant_association_data {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-        pub fn set_assistant_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assistant_arn = input;
-            self
+        pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_arn = input; self
         }
         /// <p>The type of association.</p>
         pub fn association_type(mut self, input: crate::model::AssociationType) -> Self {
@@ -4855,67 +4408,55 @@ pub mod assistant_association_data {
             self
         }
         /// <p>The type of association.</p>
-        pub fn set_association_type(
-            mut self,
-            input: std::option::Option<crate::model::AssociationType>,
-        ) -> Self {
-            self.association_type = input;
-            self
+        pub fn set_association_type(mut self, input: std::option::Option<crate::model::AssociationType>) -> Self {
+            self.association_type = input; self
         }
         /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
-        pub fn association_data(
-            mut self,
-            input: crate::model::AssistantAssociationOutputData,
-        ) -> Self {
+        pub fn association_data(mut self, input: crate::model::AssistantAssociationOutputData) -> Self {
             self.association_data = Some(input);
             self
         }
         /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
-        pub fn set_association_data(
-            mut self,
-            input: std::option::Option<crate::model::AssistantAssociationOutputData>,
-        ) -> Self {
-            self.association_data = input;
-            self
+        pub fn set_association_data(mut self, input: std::option::Option<crate::model::AssistantAssociationOutputData>) -> Self {
+            self.association_data = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`AssistantAssociationData`](crate::model::AssistantAssociationData).
         pub fn build(self) -> crate::model::AssistantAssociationData {
             crate::model::AssistantAssociationData {
-                assistant_association_id: self.assistant_association_id,
-                assistant_association_arn: self.assistant_association_arn,
-                assistant_id: self.assistant_id,
-                assistant_arn: self.assistant_arn,
-                association_type: self.association_type,
-                association_data: self.association_data,
-                tags: self.tags,
+                assistant_association_id: self.assistant_association_id
+                ,
+                assistant_association_arn: self.assistant_association_arn
+                ,
+                assistant_id: self.assistant_id
+                ,
+                assistant_arn: self.assistant_arn
+                ,
+                association_type: self.association_type
+                ,
+                association_data: self.association_data
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl AssistantAssociationData {
     /// Creates a new builder-style object to manufacture [`AssistantAssociationData`](crate::model::AssistantAssociationData).
@@ -4945,11 +4486,7 @@ impl AssistantAssociationInputData {
     /// Tries to convert the enum instance into [`KnowledgeBaseId`](crate::model::AssistantAssociationInputData::KnowledgeBaseId), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_id(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let AssistantAssociationInputData::KnowledgeBaseId(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AssistantAssociationInputData::KnowledgeBaseId(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`KnowledgeBaseId`](crate::model::AssistantAssociationInputData::KnowledgeBaseId).
     pub fn is_knowledge_base_id(&self) -> bool {
@@ -4960,3 +4497,4 @@ impl AssistantAssociationInputData {
         matches!(self, Self::Unknown)
     }
 }
+

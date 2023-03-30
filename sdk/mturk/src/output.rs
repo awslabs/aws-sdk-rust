@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateQualificationTypeOutput {
+pub struct UpdateQualificationTypeOutput  {
     /// <p> Contains a QualificationType data structure.</p>
     #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
 impl UpdateQualificationTypeOutput {
     /// <p> Contains a QualificationType data structure.</p>
-    pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
+    pub fn qualification_type(&self) -> std::option::Option<& crate::model::QualificationType> {
         self.qualification_type.as_ref()
     }
 }
 /// See [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
 pub mod update_qualification_type_output {
-
+    
     /// A builder for [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_qualification_type_output {
             self
         }
         /// <p> Contains a QualificationType data structure.</p>
-        pub fn set_qualification_type(
-            mut self,
-            input: std::option::Option<crate::model::QualificationType>,
-        ) -> Self {
-            self.qualification_type = input;
-            self
+        pub fn set_qualification_type(mut self, input: std::option::Option<crate::model::QualificationType>) -> Self {
+            self.qualification_type = input; self
         }
         /// Consumes the builder and constructs a [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
         pub fn build(self) -> crate::output::UpdateQualificationTypeOutput {
             crate::output::UpdateQualificationTypeOutput {
-                qualification_type: self.qualification_type,
+                qualification_type: self.qualification_type
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
@@ -53,19 +52,24 @@ impl UpdateQualificationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationSettingsOutput {}
+pub struct UpdateNotificationSettingsOutput  {
+}
 /// See [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
 pub mod update_notification_settings_output {
-
+    
     /// A builder for [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
         pub fn build(self) -> crate::output::UpdateNotificationSettingsOutput {
-            crate::output::UpdateNotificationSettingsOutput {}
+            crate::output::UpdateNotificationSettingsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateNotificationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
@@ -77,19 +81,24 @@ impl UpdateNotificationSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHitTypeOfHitOutput {}
+pub struct UpdateHitTypeOfHitOutput  {
+}
 /// See [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
 pub mod update_hit_type_of_hit_output {
-
+    
     /// A builder for [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
         pub fn build(self) -> crate::output::UpdateHitTypeOfHitOutput {
-            crate::output::UpdateHitTypeOfHitOutput {}
+            crate::output::UpdateHitTypeOfHitOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateHitTypeOfHitOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
@@ -101,19 +110,24 @@ impl UpdateHitTypeOfHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHitReviewStatusOutput {}
+pub struct UpdateHitReviewStatusOutput  {
+}
 /// See [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
 pub mod update_hit_review_status_output {
-
+    
     /// A builder for [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
         pub fn build(self) -> crate::output::UpdateHitReviewStatusOutput {
-            crate::output::UpdateHitReviewStatusOutput {}
+            crate::output::UpdateHitReviewStatusOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateHitReviewStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
@@ -125,19 +139,24 @@ impl UpdateHitReviewStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExpirationForHitOutput {}
+pub struct UpdateExpirationForHitOutput  {
+}
 /// See [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
 pub mod update_expiration_for_hit_output {
-
+    
     /// A builder for [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
         pub fn build(self) -> crate::output::UpdateExpirationForHitOutput {
-            crate::output::UpdateExpirationForHitOutput {}
+            crate::output::UpdateExpirationForHitOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateExpirationForHitOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
@@ -149,19 +168,24 @@ impl UpdateExpirationForHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendTestEventNotificationOutput {}
+pub struct SendTestEventNotificationOutput  {
+}
 /// See [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
 pub mod send_test_event_notification_output {
-
+    
     /// A builder for [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
         pub fn build(self) -> crate::output::SendTestEventNotificationOutput {
-            crate::output::SendTestEventNotificationOutput {}
+            crate::output::SendTestEventNotificationOutput {
+            }
         }
     }
+    
+    
 }
 impl SendTestEventNotificationOutput {
     /// Creates a new builder-style object to manufacture [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
@@ -173,19 +197,24 @@ impl SendTestEventNotificationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendBonusOutput {}
+pub struct SendBonusOutput  {
+}
 /// See [`SendBonusOutput`](crate::output::SendBonusOutput).
 pub mod send_bonus_output {
-
+    
     /// A builder for [`SendBonusOutput`](crate::output::SendBonusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendBonusOutput`](crate::output::SendBonusOutput).
         pub fn build(self) -> crate::output::SendBonusOutput {
-            crate::output::SendBonusOutput {}
+            crate::output::SendBonusOutput {
+            }
         }
     }
+    
+    
 }
 impl SendBonusOutput {
     /// Creates a new builder-style object to manufacture [`SendBonusOutput`](crate::output::SendBonusOutput).
@@ -197,19 +226,24 @@ impl SendBonusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectQualificationRequestOutput {}
+pub struct RejectQualificationRequestOutput  {
+}
 /// See [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
 pub mod reject_qualification_request_output {
-
+    
     /// A builder for [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
         pub fn build(self) -> crate::output::RejectQualificationRequestOutput {
-            crate::output::RejectQualificationRequestOutput {}
+            crate::output::RejectQualificationRequestOutput {
+            }
         }
     }
+    
+    
 }
 impl RejectQualificationRequestOutput {
     /// Creates a new builder-style object to manufacture [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
@@ -221,19 +255,24 @@ impl RejectQualificationRequestOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectAssignmentOutput {}
+pub struct RejectAssignmentOutput  {
+}
 /// See [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
 pub mod reject_assignment_output {
-
+    
     /// A builder for [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
         pub fn build(self) -> crate::output::RejectAssignmentOutput {
-            crate::output::RejectAssignmentOutput {}
+            crate::output::RejectAssignmentOutput {
+            }
         }
     }
+    
+    
 }
 impl RejectAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
@@ -245,28 +284,24 @@ impl RejectAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotifyWorkersOutput {
+pub struct NotifyWorkersOutput  {
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
     #[doc(hidden)]
-    pub notify_workers_failure_statuses:
-        std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
+    pub notify_workers_failure_statuses: std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
 }
 impl NotifyWorkersOutput {
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
-    pub fn notify_workers_failure_statuses(
-        &self,
-    ) -> std::option::Option<&[crate::model::NotifyWorkersFailureStatus]> {
+    pub fn notify_workers_failure_statuses(&self) -> std::option::Option<& [crate::model::NotifyWorkersFailureStatus]> {
         self.notify_workers_failure_statuses.as_deref()
     }
 }
 /// See [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
 pub mod notify_workers_output {
-
+    
     /// A builder for [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) notify_workers_failure_statuses:
-            std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
+        pub(crate) notify_workers_failure_statuses: std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
     }
     impl Builder {
         /// Appends an item to `notify_workers_failure_statuses`.
@@ -274,30 +309,26 @@ pub mod notify_workers_output {
         /// To override the contents of this collection use [`set_notify_workers_failure_statuses`](Self::set_notify_workers_failure_statuses).
         ///
         /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
-        pub fn notify_workers_failure_statuses(
-            mut self,
-            input: crate::model::NotifyWorkersFailureStatus,
-        ) -> Self {
+        pub fn notify_workers_failure_statuses(mut self, input: crate::model::NotifyWorkersFailureStatus) -> Self {
             let mut v = self.notify_workers_failure_statuses.unwrap_or_default();
-            v.push(input);
-            self.notify_workers_failure_statuses = Some(v);
-            self
+                            v.push(input);
+                            self.notify_workers_failure_statuses = Some(v);
+                            self
         }
         /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
-        pub fn set_notify_workers_failure_statuses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
-        ) -> Self {
-            self.notify_workers_failure_statuses = input;
-            self
+        pub fn set_notify_workers_failure_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>) -> Self {
+            self.notify_workers_failure_statuses = input; self
         }
         /// Consumes the builder and constructs a [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
         pub fn build(self) -> crate::output::NotifyWorkersOutput {
             crate::output::NotifyWorkersOutput {
-                notify_workers_failure_statuses: self.notify_workers_failure_statuses,
+                notify_workers_failure_statuses: self.notify_workers_failure_statuses
+                ,
             }
         }
     }
+    
+    
 }
 impl NotifyWorkersOutput {
     /// Creates a new builder-style object to manufacture [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
@@ -309,7 +340,7 @@ impl NotifyWorkersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkersWithQualificationTypeOutput {
+pub struct ListWorkersWithQualificationTypeOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -322,7 +353,7 @@ pub struct ListWorkersWithQualificationTypeOutput {
 }
 impl ListWorkersWithQualificationTypeOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
@@ -330,13 +361,13 @@ impl ListWorkersWithQualificationTypeOutput {
         self.num_results
     }
     /// <p> The list of Qualification elements returned by this call. </p>
-    pub fn qualifications(&self) -> std::option::Option<&[crate::model::Qualification]> {
+    pub fn qualifications(&self) -> std::option::Option<& [crate::model::Qualification]> {
         self.qualifications.as_deref()
     }
 }
 /// See [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
 pub mod list_workers_with_qualification_type_output {
-
+    
     /// A builder for [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -352,8 +383,7 @@ pub mod list_workers_with_qualification_type_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
@@ -362,8 +392,7 @@ pub mod list_workers_with_qualification_type_output {
         }
         /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// Appends an item to `qualifications`.
         ///
@@ -372,27 +401,28 @@ pub mod list_workers_with_qualification_type_output {
         /// <p> The list of Qualification elements returned by this call. </p>
         pub fn qualifications(mut self, input: crate::model::Qualification) -> Self {
             let mut v = self.qualifications.unwrap_or_default();
-            v.push(input);
-            self.qualifications = Some(v);
-            self
+                            v.push(input);
+                            self.qualifications = Some(v);
+                            self
         }
         /// <p> The list of Qualification elements returned by this call. </p>
-        pub fn set_qualifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Qualification>>,
-        ) -> Self {
-            self.qualifications = input;
-            self
+        pub fn set_qualifications(mut self, input: std::option::Option<std::vec::Vec<crate::model::Qualification>>) -> Self {
+            self.qualifications = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
         pub fn build(self) -> crate::output::ListWorkersWithQualificationTypeOutput {
             crate::output::ListWorkersWithQualificationTypeOutput {
-                next_token: self.next_token,
-                num_results: self.num_results,
-                qualifications: self.qualifications,
+                next_token: self.next_token
+                ,
+                num_results: self.num_results
+                ,
+                qualifications: self.qualifications
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkersWithQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
@@ -404,7 +434,7 @@ impl ListWorkersWithQualificationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkerBlocksOutput {
+pub struct ListWorkerBlocksOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -417,7 +447,7 @@ pub struct ListWorkerBlocksOutput {
 }
 impl ListWorkerBlocksOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
@@ -425,13 +455,13 @@ impl ListWorkerBlocksOutput {
         self.num_results
     }
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
-    pub fn worker_blocks(&self) -> std::option::Option<&[crate::model::WorkerBlock]> {
+    pub fn worker_blocks(&self) -> std::option::Option<& [crate::model::WorkerBlock]> {
         self.worker_blocks.as_deref()
     }
 }
 /// See [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
 pub mod list_worker_blocks_output {
-
+    
     /// A builder for [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -447,8 +477,7 @@ pub mod list_worker_blocks_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
@@ -457,8 +486,7 @@ pub mod list_worker_blocks_output {
         }
         /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// Appends an item to `worker_blocks`.
         ///
@@ -467,27 +495,28 @@ pub mod list_worker_blocks_output {
         /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
         pub fn worker_blocks(mut self, input: crate::model::WorkerBlock) -> Self {
             let mut v = self.worker_blocks.unwrap_or_default();
-            v.push(input);
-            self.worker_blocks = Some(v);
-            self
+                            v.push(input);
+                            self.worker_blocks = Some(v);
+                            self
         }
         /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
-        pub fn set_worker_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>,
-        ) -> Self {
-            self.worker_blocks = input;
-            self
+        pub fn set_worker_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>) -> Self {
+            self.worker_blocks = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
         pub fn build(self) -> crate::output::ListWorkerBlocksOutput {
             crate::output::ListWorkerBlocksOutput {
-                next_token: self.next_token,
-                num_results: self.num_results,
-                worker_blocks: self.worker_blocks,
+                next_token: self.next_token
+                ,
+                num_results: self.num_results
+                ,
+                worker_blocks: self.worker_blocks
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkerBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
@@ -499,7 +528,7 @@ impl ListWorkerBlocksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReviewPolicyResultsForHitOutput {
+pub struct ListReviewPolicyResultsForHitOutput  {
     /// <p>The HITId of the HIT for which results have been returned.</p>
     #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
@@ -521,33 +550,33 @@ pub struct ListReviewPolicyResultsForHitOutput {
 }
 impl ListReviewPolicyResultsForHitOutput {
     /// <p>The HITId of the HIT for which results have been returned.</p>
-    pub fn hit_id(&self) -> std::option::Option<&str> {
+    pub fn hit_id(&self) -> std::option::Option<& str> {
         self.hit_id.as_deref()
     }
     /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
-    pub fn assignment_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
+    pub fn assignment_review_policy(&self) -> std::option::Option<& crate::model::ReviewPolicy> {
         self.assignment_review_policy.as_ref()
     }
     /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
-    pub fn hit_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
+    pub fn hit_review_policy(&self) -> std::option::Option<& crate::model::ReviewPolicy> {
         self.hit_review_policy.as_ref()
     }
     /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
-    pub fn assignment_review_report(&self) -> std::option::Option<&crate::model::ReviewReport> {
+    pub fn assignment_review_report(&self) -> std::option::Option<& crate::model::ReviewReport> {
         self.assignment_review_report.as_ref()
     }
     /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
-    pub fn hit_review_report(&self) -> std::option::Option<&crate::model::ReviewReport> {
+    pub fn hit_review_report(&self) -> std::option::Option<& crate::model::ReviewReport> {
         self.hit_review_report.as_ref()
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
 pub mod list_review_policy_results_for_hit_output {
-
+    
     /// A builder for [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -566,8 +595,7 @@ pub mod list_review_policy_results_for_hit_output {
         }
         /// <p>The HITId of the HIT for which results have been returned.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hit_id = input;
-            self
+            self.hit_id = input; self
         }
         /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
         pub fn assignment_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
@@ -575,12 +603,8 @@ pub mod list_review_policy_results_for_hit_output {
             self
         }
         /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
-        pub fn set_assignment_review_policy(
-            mut self,
-            input: std::option::Option<crate::model::ReviewPolicy>,
-        ) -> Self {
-            self.assignment_review_policy = input;
-            self
+        pub fn set_assignment_review_policy(mut self, input: std::option::Option<crate::model::ReviewPolicy>) -> Self {
+            self.assignment_review_policy = input; self
         }
         /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
         pub fn hit_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
@@ -588,12 +612,8 @@ pub mod list_review_policy_results_for_hit_output {
             self
         }
         /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
-        pub fn set_hit_review_policy(
-            mut self,
-            input: std::option::Option<crate::model::ReviewPolicy>,
-        ) -> Self {
-            self.hit_review_policy = input;
-            self
+        pub fn set_hit_review_policy(mut self, input: std::option::Option<crate::model::ReviewPolicy>) -> Self {
+            self.hit_review_policy = input; self
         }
         /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
         pub fn assignment_review_report(mut self, input: crate::model::ReviewReport) -> Self {
@@ -601,12 +621,8 @@ pub mod list_review_policy_results_for_hit_output {
             self
         }
         /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
-        pub fn set_assignment_review_report(
-            mut self,
-            input: std::option::Option<crate::model::ReviewReport>,
-        ) -> Self {
-            self.assignment_review_report = input;
-            self
+        pub fn set_assignment_review_report(mut self, input: std::option::Option<crate::model::ReviewReport>) -> Self {
+            self.assignment_review_report = input; self
         }
         /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
         pub fn hit_review_report(mut self, input: crate::model::ReviewReport) -> Self {
@@ -614,12 +630,8 @@ pub mod list_review_policy_results_for_hit_output {
             self
         }
         /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
-        pub fn set_hit_review_report(
-            mut self,
-            input: std::option::Option<crate::model::ReviewReport>,
-        ) -> Self {
-            self.hit_review_report = input;
-            self
+        pub fn set_hit_review_report(mut self, input: std::option::Option<crate::model::ReviewReport>) -> Self {
+            self.hit_review_report = input; self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -628,21 +640,28 @@ pub mod list_review_policy_results_for_hit_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
         pub fn build(self) -> crate::output::ListReviewPolicyResultsForHitOutput {
             crate::output::ListReviewPolicyResultsForHitOutput {
-                hit_id: self.hit_id,
-                assignment_review_policy: self.assignment_review_policy,
-                hit_review_policy: self.hit_review_policy,
-                assignment_review_report: self.assignment_review_report,
-                hit_review_report: self.hit_review_report,
-                next_token: self.next_token,
+                hit_id: self.hit_id
+                ,
+                assignment_review_policy: self.assignment_review_policy
+                ,
+                hit_review_policy: self.hit_review_policy
+                ,
+                assignment_review_report: self.assignment_review_report
+                ,
+                hit_review_report: self.hit_review_report
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReviewPolicyResultsForHitOutput {
     /// Creates a new builder-style object to manufacture [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
@@ -654,7 +673,7 @@ impl ListReviewPolicyResultsForHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReviewableHiTsOutput {
+pub struct ListReviewableHiTsOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -667,7 +686,7 @@ pub struct ListReviewableHiTsOutput {
 }
 impl ListReviewableHiTsOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
@@ -675,13 +694,13 @@ impl ListReviewableHiTsOutput {
         self.num_results
     }
     /// <p> The list of HIT elements returned by the query.</p>
-    pub fn hi_ts(&self) -> std::option::Option<&[crate::model::Hit]> {
+    pub fn hi_ts(&self) -> std::option::Option<& [crate::model::Hit]> {
         self.hi_ts.as_deref()
     }
 }
 /// See [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
 pub mod list_reviewable_hi_ts_output {
-
+    
     /// A builder for [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -697,8 +716,7 @@ pub mod list_reviewable_hi_ts_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
         pub fn num_results(mut self, input: i32) -> Self {
@@ -707,8 +725,7 @@ pub mod list_reviewable_hi_ts_output {
         }
         /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// Appends an item to `hi_ts`.
         ///
@@ -717,27 +734,28 @@ pub mod list_reviewable_hi_ts_output {
         /// <p> The list of HIT elements returned by the query.</p>
         pub fn hi_ts(mut self, input: crate::model::Hit) -> Self {
             let mut v = self.hi_ts.unwrap_or_default();
-            v.push(input);
-            self.hi_ts = Some(v);
-            self
+                            v.push(input);
+                            self.hi_ts = Some(v);
+                            self
         }
         /// <p> The list of HIT elements returned by the query.</p>
-        pub fn set_hi_ts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Hit>>,
-        ) -> Self {
-            self.hi_ts = input;
-            self
+        pub fn set_hi_ts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Hit>>) -> Self {
+            self.hi_ts = input; self
         }
         /// Consumes the builder and constructs a [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
         pub fn build(self) -> crate::output::ListReviewableHiTsOutput {
             crate::output::ListReviewableHiTsOutput {
-                next_token: self.next_token,
-                num_results: self.num_results,
-                hi_ts: self.hi_ts,
+                next_token: self.next_token
+                ,
+                num_results: self.num_results
+                ,
+                hi_ts: self.hi_ts
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReviewableHiTsOutput {
     /// Creates a new builder-style object to manufacture [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
@@ -749,7 +767,7 @@ impl ListReviewableHiTsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQualificationTypesOutput {
+pub struct ListQualificationTypesOutput  {
     /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
     #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
@@ -766,24 +784,23 @@ impl ListQualificationTypesOutput {
         self.num_results
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The list of QualificationType elements returned by the query. </p>
-    pub fn qualification_types(&self) -> std::option::Option<&[crate::model::QualificationType]> {
+    pub fn qualification_types(&self) -> std::option::Option<& [crate::model::QualificationType]> {
         self.qualification_types.as_deref()
     }
 }
 /// See [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
 pub mod list_qualification_types_output {
-
+    
     /// A builder for [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) qualification_types:
-            std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
+        pub(crate) qualification_types: std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
     }
     impl Builder {
         /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
@@ -793,8 +810,7 @@ pub mod list_qualification_types_output {
         }
         /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -803,8 +819,7 @@ pub mod list_qualification_types_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `qualification_types`.
         ///
@@ -813,27 +828,28 @@ pub mod list_qualification_types_output {
         /// <p> The list of QualificationType elements returned by the query. </p>
         pub fn qualification_types(mut self, input: crate::model::QualificationType) -> Self {
             let mut v = self.qualification_types.unwrap_or_default();
-            v.push(input);
-            self.qualification_types = Some(v);
-            self
+                            v.push(input);
+                            self.qualification_types = Some(v);
+                            self
         }
         /// <p> The list of QualificationType elements returned by the query. </p>
-        pub fn set_qualification_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
-        ) -> Self {
-            self.qualification_types = input;
-            self
+        pub fn set_qualification_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::QualificationType>>) -> Self {
+            self.qualification_types = input; self
         }
         /// Consumes the builder and constructs a [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
         pub fn build(self) -> crate::output::ListQualificationTypesOutput {
             crate::output::ListQualificationTypesOutput {
-                num_results: self.num_results,
-                next_token: self.next_token,
-                qualification_types: self.qualification_types,
+                num_results: self.num_results
+                ,
+                next_token: self.next_token
+                ,
+                qualification_types: self.qualification_types
+                ,
             }
         }
     }
+    
+    
 }
 impl ListQualificationTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
@@ -845,7 +861,7 @@ impl ListQualificationTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQualificationRequestsOutput {
+pub struct ListQualificationRequestsOutput  {
     /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
     #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
@@ -854,8 +870,7 @@ pub struct ListQualificationRequestsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
     #[doc(hidden)]
-    pub qualification_requests:
-        std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
+    pub qualification_requests: std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
 }
 impl ListQualificationRequestsOutput {
     /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
@@ -863,26 +878,23 @@ impl ListQualificationRequestsOutput {
         self.num_results
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-    pub fn qualification_requests(
-        &self,
-    ) -> std::option::Option<&[crate::model::QualificationRequest]> {
+    pub fn qualification_requests(&self) -> std::option::Option<& [crate::model::QualificationRequest]> {
         self.qualification_requests.as_deref()
     }
 }
 /// See [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
 pub mod list_qualification_requests_output {
-
+    
     /// A builder for [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) qualification_requests:
-            std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
+        pub(crate) qualification_requests: std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
     }
     impl Builder {
         /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
@@ -892,8 +904,7 @@ pub mod list_qualification_requests_output {
         }
         /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -902,8 +913,7 @@ pub mod list_qualification_requests_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `qualification_requests`.
         ///
@@ -912,27 +922,28 @@ pub mod list_qualification_requests_output {
         /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
         pub fn qualification_requests(mut self, input: crate::model::QualificationRequest) -> Self {
             let mut v = self.qualification_requests.unwrap_or_default();
-            v.push(input);
-            self.qualification_requests = Some(v);
-            self
+                            v.push(input);
+                            self.qualification_requests = Some(v);
+                            self
         }
         /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-        pub fn set_qualification_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
-        ) -> Self {
-            self.qualification_requests = input;
-            self
+        pub fn set_qualification_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>) -> Self {
+            self.qualification_requests = input; self
         }
         /// Consumes the builder and constructs a [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
         pub fn build(self) -> crate::output::ListQualificationRequestsOutput {
             crate::output::ListQualificationRequestsOutput {
-                num_results: self.num_results,
-                next_token: self.next_token,
-                qualification_requests: self.qualification_requests,
+                num_results: self.num_results
+                ,
+                next_token: self.next_token
+                ,
+                qualification_requests: self.qualification_requests
+                ,
             }
         }
     }
+    
+    
 }
 impl ListQualificationRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
@@ -944,7 +955,7 @@ impl ListQualificationRequestsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHiTsForQualificationTypeOutput {
+pub struct ListHiTsForQualificationTypeOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -957,7 +968,7 @@ pub struct ListHiTsForQualificationTypeOutput {
 }
 impl ListHiTsForQualificationTypeOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
@@ -965,13 +976,13 @@ impl ListHiTsForQualificationTypeOutput {
         self.num_results
     }
     /// <p> The list of HIT elements returned by the query.</p>
-    pub fn hi_ts(&self) -> std::option::Option<&[crate::model::Hit]> {
+    pub fn hi_ts(&self) -> std::option::Option<& [crate::model::Hit]> {
         self.hi_ts.as_deref()
     }
 }
 /// See [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
 pub mod list_hi_ts_for_qualification_type_output {
-
+    
     /// A builder for [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -987,8 +998,7 @@ pub mod list_hi_ts_for_qualification_type_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
         pub fn num_results(mut self, input: i32) -> Self {
@@ -997,8 +1007,7 @@ pub mod list_hi_ts_for_qualification_type_output {
         }
         /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// Appends an item to `hi_ts`.
         ///
@@ -1007,27 +1016,28 @@ pub mod list_hi_ts_for_qualification_type_output {
         /// <p> The list of HIT elements returned by the query.</p>
         pub fn hi_ts(mut self, input: crate::model::Hit) -> Self {
             let mut v = self.hi_ts.unwrap_or_default();
-            v.push(input);
-            self.hi_ts = Some(v);
-            self
+                            v.push(input);
+                            self.hi_ts = Some(v);
+                            self
         }
         /// <p> The list of HIT elements returned by the query.</p>
-        pub fn set_hi_ts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Hit>>,
-        ) -> Self {
-            self.hi_ts = input;
-            self
+        pub fn set_hi_ts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Hit>>) -> Self {
+            self.hi_ts = input; self
         }
         /// Consumes the builder and constructs a [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
         pub fn build(self) -> crate::output::ListHiTsForQualificationTypeOutput {
             crate::output::ListHiTsForQualificationTypeOutput {
-                next_token: self.next_token,
-                num_results: self.num_results,
-                hi_ts: self.hi_ts,
+                next_token: self.next_token
+                ,
+                num_results: self.num_results
+                ,
+                hi_ts: self.hi_ts
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHiTsForQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
@@ -1039,7 +1049,7 @@ impl ListHiTsForQualificationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHiTsOutput {
+pub struct ListHiTsOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1052,7 +1062,7 @@ pub struct ListHiTsOutput {
 }
 impl ListHiTsOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
@@ -1060,13 +1070,13 @@ impl ListHiTsOutput {
         self.num_results
     }
     /// <p> The list of HIT elements returned by the query.</p>
-    pub fn hi_ts(&self) -> std::option::Option<&[crate::model::Hit]> {
+    pub fn hi_ts(&self) -> std::option::Option<& [crate::model::Hit]> {
         self.hi_ts.as_deref()
     }
 }
 /// See [`ListHiTsOutput`](crate::output::ListHiTsOutput).
 pub mod list_hi_ts_output {
-
+    
     /// A builder for [`ListHiTsOutput`](crate::output::ListHiTsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1082,8 +1092,7 @@ pub mod list_hi_ts_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
@@ -1092,8 +1101,7 @@ pub mod list_hi_ts_output {
         }
         /// <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// Appends an item to `hi_ts`.
         ///
@@ -1102,27 +1110,28 @@ pub mod list_hi_ts_output {
         /// <p> The list of HIT elements returned by the query.</p>
         pub fn hi_ts(mut self, input: crate::model::Hit) -> Self {
             let mut v = self.hi_ts.unwrap_or_default();
-            v.push(input);
-            self.hi_ts = Some(v);
-            self
+                            v.push(input);
+                            self.hi_ts = Some(v);
+                            self
         }
         /// <p> The list of HIT elements returned by the query.</p>
-        pub fn set_hi_ts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Hit>>,
-        ) -> Self {
-            self.hi_ts = input;
-            self
+        pub fn set_hi_ts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Hit>>) -> Self {
+            self.hi_ts = input; self
         }
         /// Consumes the builder and constructs a [`ListHiTsOutput`](crate::output::ListHiTsOutput).
         pub fn build(self) -> crate::output::ListHiTsOutput {
             crate::output::ListHiTsOutput {
-                next_token: self.next_token,
-                num_results: self.num_results,
-                hi_ts: self.hi_ts,
+                next_token: self.next_token
+                ,
+                num_results: self.num_results
+                ,
+                hi_ts: self.hi_ts
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHiTsOutput {
     /// Creates a new builder-style object to manufacture [`ListHiTsOutput`](crate::output::ListHiTsOutput).
@@ -1134,7 +1143,7 @@ impl ListHiTsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBonusPaymentsOutput {
+pub struct ListBonusPaymentsOutput  {
     /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
     #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
@@ -1151,17 +1160,17 @@ impl ListBonusPaymentsOutput {
         self.num_results
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
-    pub fn bonus_payments(&self) -> std::option::Option<&[crate::model::BonusPayment]> {
+    pub fn bonus_payments(&self) -> std::option::Option<& [crate::model::BonusPayment]> {
         self.bonus_payments.as_deref()
     }
 }
 /// See [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
 pub mod list_bonus_payments_output {
-
+    
     /// A builder for [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1177,8 +1186,7 @@ pub mod list_bonus_payments_output {
         }
         /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1187,8 +1195,7 @@ pub mod list_bonus_payments_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `bonus_payments`.
         ///
@@ -1197,27 +1204,28 @@ pub mod list_bonus_payments_output {
         /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
         pub fn bonus_payments(mut self, input: crate::model::BonusPayment) -> Self {
             let mut v = self.bonus_payments.unwrap_or_default();
-            v.push(input);
-            self.bonus_payments = Some(v);
-            self
+                            v.push(input);
+                            self.bonus_payments = Some(v);
+                            self
         }
         /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
-        pub fn set_bonus_payments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>,
-        ) -> Self {
-            self.bonus_payments = input;
-            self
+        pub fn set_bonus_payments(mut self, input: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>) -> Self {
+            self.bonus_payments = input; self
         }
         /// Consumes the builder and constructs a [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
         pub fn build(self) -> crate::output::ListBonusPaymentsOutput {
             crate::output::ListBonusPaymentsOutput {
-                num_results: self.num_results,
-                next_token: self.next_token,
-                bonus_payments: self.bonus_payments,
+                num_results: self.num_results
+                ,
+                next_token: self.next_token
+                ,
+                bonus_payments: self.bonus_payments
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBonusPaymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
@@ -1229,7 +1237,7 @@ impl ListBonusPaymentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssignmentsForHitOutput {
+pub struct ListAssignmentsForHitOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1242,7 +1250,7 @@ pub struct ListAssignmentsForHitOutput {
 }
 impl ListAssignmentsForHitOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
@@ -1250,13 +1258,13 @@ impl ListAssignmentsForHitOutput {
         self.num_results
     }
     /// <p> The collection of Assignment data structures returned by this call.</p>
-    pub fn assignments(&self) -> std::option::Option<&[crate::model::Assignment]> {
+    pub fn assignments(&self) -> std::option::Option<& [crate::model::Assignment]> {
         self.assignments.as_deref()
     }
 }
 /// See [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
 pub mod list_assignments_for_hit_output {
-
+    
     /// A builder for [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1272,8 +1280,7 @@ pub mod list_assignments_for_hit_output {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
@@ -1282,8 +1289,7 @@ pub mod list_assignments_for_hit_output {
         }
         /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// Appends an item to `assignments`.
         ///
@@ -1292,27 +1298,28 @@ pub mod list_assignments_for_hit_output {
         /// <p> The collection of Assignment data structures returned by this call.</p>
         pub fn assignments(mut self, input: crate::model::Assignment) -> Self {
             let mut v = self.assignments.unwrap_or_default();
-            v.push(input);
-            self.assignments = Some(v);
-            self
+                            v.push(input);
+                            self.assignments = Some(v);
+                            self
         }
         /// <p> The collection of Assignment data structures returned by this call.</p>
-        pub fn set_assignments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Assignment>>,
-        ) -> Self {
-            self.assignments = input;
-            self
+        pub fn set_assignments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Assignment>>) -> Self {
+            self.assignments = input; self
         }
         /// Consumes the builder and constructs a [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
         pub fn build(self) -> crate::output::ListAssignmentsForHitOutput {
             crate::output::ListAssignmentsForHitOutput {
-                next_token: self.next_token,
-                num_results: self.num_results,
-                assignments: self.assignments,
+                next_token: self.next_token
+                ,
+                num_results: self.num_results
+                ,
+                assignments: self.assignments
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssignmentsForHitOutput {
     /// Creates a new builder-style object to manufacture [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
@@ -1324,20 +1331,20 @@ impl ListAssignmentsForHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQualificationTypeOutput {
+pub struct GetQualificationTypeOutput  {
     /// <p> The returned Qualification Type</p>
     #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
 impl GetQualificationTypeOutput {
     /// <p> The returned Qualification Type</p>
-    pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
+    pub fn qualification_type(&self) -> std::option::Option<& crate::model::QualificationType> {
         self.qualification_type.as_ref()
     }
 }
 /// See [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
 pub mod get_qualification_type_output {
-
+    
     /// A builder for [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1350,20 +1357,19 @@ pub mod get_qualification_type_output {
             self
         }
         /// <p> The returned Qualification Type</p>
-        pub fn set_qualification_type(
-            mut self,
-            input: std::option::Option<crate::model::QualificationType>,
-        ) -> Self {
-            self.qualification_type = input;
-            self
+        pub fn set_qualification_type(mut self, input: std::option::Option<crate::model::QualificationType>) -> Self {
+            self.qualification_type = input; self
         }
         /// Consumes the builder and constructs a [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
         pub fn build(self) -> crate::output::GetQualificationTypeOutput {
             crate::output::GetQualificationTypeOutput {
-                qualification_type: self.qualification_type,
+                qualification_type: self.qualification_type
+                ,
             }
         }
     }
+    
+    
 }
 impl GetQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
@@ -1375,20 +1381,20 @@ impl GetQualificationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQualificationScoreOutput {
+pub struct GetQualificationScoreOutput  {
     /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     #[doc(hidden)]
     pub qualification: std::option::Option<crate::model::Qualification>,
 }
 impl GetQualificationScoreOutput {
     /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
-    pub fn qualification(&self) -> std::option::Option<&crate::model::Qualification> {
+    pub fn qualification(&self) -> std::option::Option<& crate::model::Qualification> {
         self.qualification.as_ref()
     }
 }
 /// See [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
 pub mod get_qualification_score_output {
-
+    
     /// A builder for [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1401,20 +1407,19 @@ pub mod get_qualification_score_output {
             self
         }
         /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
-        pub fn set_qualification(
-            mut self,
-            input: std::option::Option<crate::model::Qualification>,
-        ) -> Self {
-            self.qualification = input;
-            self
+        pub fn set_qualification(mut self, input: std::option::Option<crate::model::Qualification>) -> Self {
+            self.qualification = input; self
         }
         /// Consumes the builder and constructs a [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
         pub fn build(self) -> crate::output::GetQualificationScoreOutput {
             crate::output::GetQualificationScoreOutput {
-                qualification: self.qualification,
+                qualification: self.qualification
+                ,
             }
         }
     }
+    
+    
 }
 impl GetQualificationScoreOutput {
     /// Creates a new builder-style object to manufacture [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
@@ -1426,20 +1431,20 @@ impl GetQualificationScoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHitOutput {
+pub struct GetHitOutput  {
     /// <p> Contains the requested HIT data.</p>
     #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl GetHitOutput {
     /// <p> Contains the requested HIT data.</p>
-    pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
+    pub fn hit(&self) -> std::option::Option<& crate::model::Hit> {
         self.hit.as_ref()
     }
 }
 /// See [`GetHitOutput`](crate::output::GetHitOutput).
 pub mod get_hit_output {
-
+    
     /// A builder for [`GetHitOutput`](crate::output::GetHitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1453,14 +1458,18 @@ pub mod get_hit_output {
         }
         /// <p> Contains the requested HIT data.</p>
         pub fn set_hit(mut self, input: std::option::Option<crate::model::Hit>) -> Self {
-            self.hit = input;
-            self
+            self.hit = input; self
         }
         /// Consumes the builder and constructs a [`GetHitOutput`](crate::output::GetHitOutput).
         pub fn build(self) -> crate::output::GetHitOutput {
-            crate::output::GetHitOutput { hit: self.hit }
+            crate::output::GetHitOutput {
+                hit: self.hit
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetHitOutput {
     /// Creates a new builder-style object to manufacture [`GetHitOutput`](crate::output::GetHitOutput).
@@ -1472,20 +1481,20 @@ impl GetHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFileUploadUrlOutput {
+pub struct GetFileUploadUrlOutput  {
     /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
     #[doc(hidden)]
     pub file_upload_url: std::option::Option<std::string::String>,
 }
 impl GetFileUploadUrlOutput {
     /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
-    pub fn file_upload_url(&self) -> std::option::Option<&str> {
+    pub fn file_upload_url(&self) -> std::option::Option<& str> {
         self.file_upload_url.as_deref()
     }
 }
 /// See [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
 pub mod get_file_upload_url_output {
-
+    
     /// A builder for [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1498,20 +1507,19 @@ pub mod get_file_upload_url_output {
             self
         }
         /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
-        pub fn set_file_upload_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_upload_url = input;
-            self
+        pub fn set_file_upload_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_upload_url = input; self
         }
         /// Consumes the builder and constructs a [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
         pub fn build(self) -> crate::output::GetFileUploadUrlOutput {
             crate::output::GetFileUploadUrlOutput {
-                file_upload_url: self.file_upload_url,
+                file_upload_url: self.file_upload_url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFileUploadUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
@@ -1523,7 +1531,7 @@ impl GetFileUploadUrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssignmentOutput {
+pub struct GetAssignmentOutput  {
     /// <p> The assignment. The response includes one Assignment element. </p>
     #[doc(hidden)]
     pub assignment: std::option::Option<crate::model::Assignment>,
@@ -1533,17 +1541,17 @@ pub struct GetAssignmentOutput {
 }
 impl GetAssignmentOutput {
     /// <p> The assignment. The response includes one Assignment element. </p>
-    pub fn assignment(&self) -> std::option::Option<&crate::model::Assignment> {
+    pub fn assignment(&self) -> std::option::Option<& crate::model::Assignment> {
         self.assignment.as_ref()
     }
     /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
-    pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
+    pub fn hit(&self) -> std::option::Option<& crate::model::Hit> {
         self.hit.as_ref()
     }
 }
 /// See [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
 pub mod get_assignment_output {
-
+    
     /// A builder for [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1557,12 +1565,8 @@ pub mod get_assignment_output {
             self
         }
         /// <p> The assignment. The response includes one Assignment element. </p>
-        pub fn set_assignment(
-            mut self,
-            input: std::option::Option<crate::model::Assignment>,
-        ) -> Self {
-            self.assignment = input;
-            self
+        pub fn set_assignment(mut self, input: std::option::Option<crate::model::Assignment>) -> Self {
+            self.assignment = input; self
         }
         /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
         pub fn hit(mut self, input: crate::model::Hit) -> Self {
@@ -1571,17 +1575,20 @@ pub mod get_assignment_output {
         }
         /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
         pub fn set_hit(mut self, input: std::option::Option<crate::model::Hit>) -> Self {
-            self.hit = input;
-            self
+            self.hit = input; self
         }
         /// Consumes the builder and constructs a [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
         pub fn build(self) -> crate::output::GetAssignmentOutput {
             crate::output::GetAssignmentOutput {
-                assignment: self.assignment,
-                hit: self.hit,
+                assignment: self.assignment
+                ,
+                hit: self.hit
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
@@ -1593,7 +1600,7 @@ impl GetAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountBalanceOutput {
+pub struct GetAccountBalanceOutput  {
     /// <p>A string representing a currency amount.</p>
     #[doc(hidden)]
     pub available_balance: std::option::Option<std::string::String>,
@@ -1603,17 +1610,17 @@ pub struct GetAccountBalanceOutput {
 }
 impl GetAccountBalanceOutput {
     /// <p>A string representing a currency amount.</p>
-    pub fn available_balance(&self) -> std::option::Option<&str> {
+    pub fn available_balance(&self) -> std::option::Option<& str> {
         self.available_balance.as_deref()
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn on_hold_balance(&self) -> std::option::Option<&str> {
+    pub fn on_hold_balance(&self) -> std::option::Option<& str> {
         self.on_hold_balance.as_deref()
     }
 }
 /// See [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
 pub mod get_account_balance_output {
-
+    
     /// A builder for [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1627,12 +1634,8 @@ pub mod get_account_balance_output {
             self
         }
         /// <p>A string representing a currency amount.</p>
-        pub fn set_available_balance(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.available_balance = input;
-            self
+        pub fn set_available_balance(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.available_balance = input; self
         }
         /// <p>A string representing a currency amount.</p>
         pub fn on_hold_balance(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1640,21 +1643,21 @@ pub mod get_account_balance_output {
             self
         }
         /// <p>A string representing a currency amount.</p>
-        pub fn set_on_hold_balance(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.on_hold_balance = input;
-            self
+        pub fn set_on_hold_balance(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_hold_balance = input; self
         }
         /// Consumes the builder and constructs a [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
         pub fn build(self) -> crate::output::GetAccountBalanceOutput {
             crate::output::GetAccountBalanceOutput {
-                available_balance: self.available_balance,
-                on_hold_balance: self.on_hold_balance,
+                available_balance: self.available_balance
+                ,
+                on_hold_balance: self.on_hold_balance
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccountBalanceOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
@@ -1666,19 +1669,24 @@ impl GetAccountBalanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateQualificationFromWorkerOutput {}
+pub struct DisassociateQualificationFromWorkerOutput  {
+}
 /// See [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
 pub mod disassociate_qualification_from_worker_output {
-
+    
     /// A builder for [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
         pub fn build(self) -> crate::output::DisassociateQualificationFromWorkerOutput {
-            crate::output::DisassociateQualificationFromWorkerOutput {}
+            crate::output::DisassociateQualificationFromWorkerOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateQualificationFromWorkerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
@@ -1690,19 +1698,24 @@ impl DisassociateQualificationFromWorkerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkerBlockOutput {}
+pub struct DeleteWorkerBlockOutput  {
+}
 /// See [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
 pub mod delete_worker_block_output {
-
+    
     /// A builder for [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
         pub fn build(self) -> crate::output::DeleteWorkerBlockOutput {
-            crate::output::DeleteWorkerBlockOutput {}
+            crate::output::DeleteWorkerBlockOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkerBlockOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
@@ -1714,19 +1727,24 @@ impl DeleteWorkerBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteQualificationTypeOutput {}
+pub struct DeleteQualificationTypeOutput  {
+}
 /// See [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
 pub mod delete_qualification_type_output {
-
+    
     /// A builder for [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
         pub fn build(self) -> crate::output::DeleteQualificationTypeOutput {
-            crate::output::DeleteQualificationTypeOutput {}
+            crate::output::DeleteQualificationTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
@@ -1738,19 +1756,24 @@ impl DeleteQualificationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHitOutput {}
+pub struct DeleteHitOutput  {
+}
 /// See [`DeleteHitOutput`](crate::output::DeleteHitOutput).
 pub mod delete_hit_output {
-
+    
     /// A builder for [`DeleteHitOutput`](crate::output::DeleteHitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHitOutput`](crate::output::DeleteHitOutput).
         pub fn build(self) -> crate::output::DeleteHitOutput {
-            crate::output::DeleteHitOutput {}
+            crate::output::DeleteHitOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteHitOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHitOutput`](crate::output::DeleteHitOutput).
@@ -1762,19 +1785,24 @@ impl DeleteHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkerBlockOutput {}
+pub struct CreateWorkerBlockOutput  {
+}
 /// See [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
 pub mod create_worker_block_output {
-
+    
     /// A builder for [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
         pub fn build(self) -> crate::output::CreateWorkerBlockOutput {
-            crate::output::CreateWorkerBlockOutput {}
+            crate::output::CreateWorkerBlockOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateWorkerBlockOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
@@ -1786,20 +1814,20 @@ impl CreateWorkerBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateQualificationTypeOutput {
+pub struct CreateQualificationTypeOutput  {
     /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
     #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
 impl CreateQualificationTypeOutput {
     /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
-    pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
+    pub fn qualification_type(&self) -> std::option::Option<& crate::model::QualificationType> {
         self.qualification_type.as_ref()
     }
 }
 /// See [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
 pub mod create_qualification_type_output {
-
+    
     /// A builder for [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1812,20 +1840,19 @@ pub mod create_qualification_type_output {
             self
         }
         /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
-        pub fn set_qualification_type(
-            mut self,
-            input: std::option::Option<crate::model::QualificationType>,
-        ) -> Self {
-            self.qualification_type = input;
-            self
+        pub fn set_qualification_type(mut self, input: std::option::Option<crate::model::QualificationType>) -> Self {
+            self.qualification_type = input; self
         }
         /// Consumes the builder and constructs a [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
         pub fn build(self) -> crate::output::CreateQualificationTypeOutput {
             crate::output::CreateQualificationTypeOutput {
-                qualification_type: self.qualification_type,
+                qualification_type: self.qualification_type
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
@@ -1837,20 +1864,20 @@ impl CreateQualificationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHitWithHitTypeOutput {
+pub struct CreateHitWithHitTypeOutput  {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl CreateHitWithHitTypeOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
-    pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
+    pub fn hit(&self) -> std::option::Option<& crate::model::Hit> {
         self.hit.as_ref()
     }
 }
 /// See [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
 pub mod create_hit_with_hit_type_output {
-
+    
     /// A builder for [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1864,14 +1891,18 @@ pub mod create_hit_with_hit_type_output {
         }
         /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
         pub fn set_hit(mut self, input: std::option::Option<crate::model::Hit>) -> Self {
-            self.hit = input;
-            self
+            self.hit = input; self
         }
         /// Consumes the builder and constructs a [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
         pub fn build(self) -> crate::output::CreateHitWithHitTypeOutput {
-            crate::output::CreateHitWithHitTypeOutput { hit: self.hit }
+            crate::output::CreateHitWithHitTypeOutput {
+                hit: self.hit
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateHitWithHitTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
@@ -1883,20 +1914,20 @@ impl CreateHitWithHitTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHitTypeOutput {
+pub struct CreateHitTypeOutput  {
     /// <p> The ID of the newly registered HIT type.</p>
     #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
 }
 impl CreateHitTypeOutput {
     /// <p> The ID of the newly registered HIT type.</p>
-    pub fn hit_type_id(&self) -> std::option::Option<&str> {
+    pub fn hit_type_id(&self) -> std::option::Option<& str> {
         self.hit_type_id.as_deref()
     }
 }
 /// See [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
 pub mod create_hit_type_output {
-
+    
     /// A builder for [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1910,16 +1941,18 @@ pub mod create_hit_type_output {
         }
         /// <p> The ID of the newly registered HIT type.</p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hit_type_id = input;
-            self
+            self.hit_type_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
         pub fn build(self) -> crate::output::CreateHitTypeOutput {
             crate::output::CreateHitTypeOutput {
-                hit_type_id: self.hit_type_id,
+                hit_type_id: self.hit_type_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateHitTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
@@ -1931,20 +1964,20 @@ impl CreateHitTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHitOutput {
+pub struct CreateHitOutput  {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl CreateHitOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
-    pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
+    pub fn hit(&self) -> std::option::Option<& crate::model::Hit> {
         self.hit.as_ref()
     }
 }
 /// See [`CreateHitOutput`](crate::output::CreateHitOutput).
 pub mod create_hit_output {
-
+    
     /// A builder for [`CreateHitOutput`](crate::output::CreateHitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1958,14 +1991,18 @@ pub mod create_hit_output {
         }
         /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
         pub fn set_hit(mut self, input: std::option::Option<crate::model::Hit>) -> Self {
-            self.hit = input;
-            self
+            self.hit = input; self
         }
         /// Consumes the builder and constructs a [`CreateHitOutput`](crate::output::CreateHitOutput).
         pub fn build(self) -> crate::output::CreateHitOutput {
-            crate::output::CreateHitOutput { hit: self.hit }
+            crate::output::CreateHitOutput {
+                hit: self.hit
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateHitOutput {
     /// Creates a new builder-style object to manufacture [`CreateHitOutput`](crate::output::CreateHitOutput).
@@ -1977,19 +2014,24 @@ impl CreateHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAdditionalAssignmentsForHitOutput {}
+pub struct CreateAdditionalAssignmentsForHitOutput  {
+}
 /// See [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
 pub mod create_additional_assignments_for_hit_output {
-
+    
     /// A builder for [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
         pub fn build(self) -> crate::output::CreateAdditionalAssignmentsForHitOutput {
-            crate::output::CreateAdditionalAssignmentsForHitOutput {}
+            crate::output::CreateAdditionalAssignmentsForHitOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateAdditionalAssignmentsForHitOutput {
     /// Creates a new builder-style object to manufacture [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
@@ -2001,19 +2043,24 @@ impl CreateAdditionalAssignmentsForHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateQualificationWithWorkerOutput {}
+pub struct AssociateQualificationWithWorkerOutput  {
+}
 /// See [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
 pub mod associate_qualification_with_worker_output {
-
+    
     /// A builder for [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
         pub fn build(self) -> crate::output::AssociateQualificationWithWorkerOutput {
-            crate::output::AssociateQualificationWithWorkerOutput {}
+            crate::output::AssociateQualificationWithWorkerOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateQualificationWithWorkerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
@@ -2025,19 +2072,24 @@ impl AssociateQualificationWithWorkerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApproveAssignmentOutput {}
+pub struct ApproveAssignmentOutput  {
+}
 /// See [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
 pub mod approve_assignment_output {
-
+    
     /// A builder for [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
         pub fn build(self) -> crate::output::ApproveAssignmentOutput {
-            crate::output::ApproveAssignmentOutput {}
+            crate::output::ApproveAssignmentOutput {
+            }
         }
     }
+    
+    
 }
 impl ApproveAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
@@ -2049,19 +2101,24 @@ impl ApproveAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptQualificationRequestOutput {}
+pub struct AcceptQualificationRequestOutput  {
+}
 /// See [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
 pub mod accept_qualification_request_output {
-
+    
     /// A builder for [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
         pub fn build(self) -> crate::output::AcceptQualificationRequestOutput {
-            crate::output::AcceptQualificationRequestOutput {}
+            crate::output::AcceptQualificationRequestOutput {
+            }
         }
     }
+    
+    
 }
 impl AcceptQualificationRequestOutput {
     /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
@@ -2069,3 +2126,4 @@ impl AcceptQualificationRequestOutput {
         crate::output::accept_qualification_request_output::Builder::default()
     }
 }
+

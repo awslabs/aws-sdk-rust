@@ -3,7 +3,7 @@
 /// <p>Represents a segment of video or other time-delimited data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Fragment {
+pub struct Fragment  {
     /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
     #[doc(hidden)]
     pub fragment_number: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct Fragment {
 }
 impl Fragment {
     /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
-    pub fn fragment_number(&self) -> std::option::Option<&str> {
+    pub fn fragment_number(&self) -> std::option::Option<& str> {
         self.fragment_number.as_deref()
     }
     /// <p>The total fragment size, including information about the fragment and contained media data.</p>
@@ -30,11 +30,11 @@ impl Fragment {
         self.fragment_size_in_bytes
     }
     /// <p>The timestamp from the producer corresponding to the fragment.</p>
-    pub fn producer_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn producer_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.producer_timestamp.as_ref()
     }
     /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
-    pub fn server_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn server_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.server_timestamp.as_ref()
     }
     /// <p>The playback duration or other time value associated with the fragment.</p>
@@ -44,7 +44,7 @@ impl Fragment {
 }
 /// See [`Fragment`](crate::model::Fragment).
 pub mod fragment {
-
+    
     /// A builder for [`Fragment`](crate::model::Fragment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -61,12 +61,8 @@ pub mod fragment {
             self
         }
         /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
-        pub fn set_fragment_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fragment_number = input;
-            self
+        pub fn set_fragment_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fragment_number = input; self
         }
         /// <p>The total fragment size, including information about the fragment and contained media data.</p>
         pub fn fragment_size_in_bytes(mut self, input: i64) -> Self {
@@ -75,8 +71,7 @@ pub mod fragment {
         }
         /// <p>The total fragment size, including information about the fragment and contained media data.</p>
         pub fn set_fragment_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.fragment_size_in_bytes = input;
-            self
+            self.fragment_size_in_bytes = input; self
         }
         /// <p>The timestamp from the producer corresponding to the fragment.</p>
         pub fn producer_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,12 +79,8 @@ pub mod fragment {
             self
         }
         /// <p>The timestamp from the producer corresponding to the fragment.</p>
-        pub fn set_producer_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.producer_timestamp = input;
-            self
+        pub fn set_producer_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.producer_timestamp = input; self
         }
         /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
         pub fn server_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -97,12 +88,8 @@ pub mod fragment {
             self
         }
         /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
-        pub fn set_server_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.server_timestamp = input;
-            self
+        pub fn set_server_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.server_timestamp = input; self
         }
         /// <p>The playback duration or other time value associated with the fragment.</p>
         pub fn fragment_length_in_milliseconds(mut self, input: i64) -> Self {
@@ -110,26 +97,29 @@ pub mod fragment {
             self
         }
         /// <p>The playback duration or other time value associated with the fragment.</p>
-        pub fn set_fragment_length_in_milliseconds(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.fragment_length_in_milliseconds = input;
-            self
+        pub fn set_fragment_length_in_milliseconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.fragment_length_in_milliseconds = input; self
         }
         /// Consumes the builder and constructs a [`Fragment`](crate::model::Fragment).
         pub fn build(self) -> crate::model::Fragment {
             crate::model::Fragment {
-                fragment_number: self.fragment_number,
-                fragment_size_in_bytes: self.fragment_size_in_bytes.unwrap_or_default(),
-                producer_timestamp: self.producer_timestamp,
-                server_timestamp: self.server_timestamp,
-                fragment_length_in_milliseconds: self
-                    .fragment_length_in_milliseconds
-                    .unwrap_or_default(),
+                fragment_number: self.fragment_number
+                ,
+                fragment_size_in_bytes: self.fragment_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                producer_timestamp: self.producer_timestamp
+                ,
+                server_timestamp: self.server_timestamp
+                ,
+                fragment_length_in_milliseconds: self.fragment_length_in_milliseconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Fragment {
     /// Creates a new builder-style object to manufacture [`Fragment`](crate::model::Fragment).
@@ -138,18 +128,18 @@ impl Fragment {
     }
 }
 
-/// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p>
-/// <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p>
-/// <ul>
-/// <li> <p>00:00:00</p> </li>
-/// <li> <p>00:00:02</p> </li>
-/// <li> <p>00:00:04</p> </li>
-/// <li> <p>00:00:06</p> </li>
-/// </ul>
+/// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> 
+/// <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> 
+/// <ul> 
+/// <li> <p>00:00:00</p> </li> 
+/// <li> <p>00:00:02</p> </li> 
+/// <li> <p>00:00:04</p> </li> 
+/// <li> <p>00:00:06</p> </li> 
+/// </ul> 
 /// <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FragmentSelector {
+pub struct FragmentSelector  {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     #[doc(hidden)]
     pub fragment_selector_type: std::option::Option<crate::model::FragmentSelectorType>,
@@ -159,19 +149,17 @@ pub struct FragmentSelector {
 }
 impl FragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    pub fn fragment_selector_type(
-        &self,
-    ) -> std::option::Option<&crate::model::FragmentSelectorType> {
+    pub fn fragment_selector_type(&self) -> std::option::Option<& crate::model::FragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
     /// <p>The range of timestamps to return.</p>
-    pub fn timestamp_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+    pub fn timestamp_range(&self) -> std::option::Option<& crate::model::TimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
 /// See [`FragmentSelector`](crate::model::FragmentSelector).
 pub mod fragment_selector {
-
+    
     /// A builder for [`FragmentSelector`](crate::model::FragmentSelector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -185,12 +173,8 @@ pub mod fragment_selector {
             self
         }
         /// <p>The origin of the timestamps to use (Server or Producer).</p>
-        pub fn set_fragment_selector_type(
-            mut self,
-            input: std::option::Option<crate::model::FragmentSelectorType>,
-        ) -> Self {
-            self.fragment_selector_type = input;
-            self
+        pub fn set_fragment_selector_type(mut self, input: std::option::Option<crate::model::FragmentSelectorType>) -> Self {
+            self.fragment_selector_type = input; self
         }
         /// <p>The range of timestamps to return.</p>
         pub fn timestamp_range(mut self, input: crate::model::TimestampRange) -> Self {
@@ -198,21 +182,21 @@ pub mod fragment_selector {
             self
         }
         /// <p>The range of timestamps to return.</p>
-        pub fn set_timestamp_range(
-            mut self,
-            input: std::option::Option<crate::model::TimestampRange>,
-        ) -> Self {
-            self.timestamp_range = input;
-            self
+        pub fn set_timestamp_range(mut self, input: std::option::Option<crate::model::TimestampRange>) -> Self {
+            self.timestamp_range = input; self
         }
         /// Consumes the builder and constructs a [`FragmentSelector`](crate::model::FragmentSelector).
         pub fn build(self) -> crate::model::FragmentSelector {
             crate::model::FragmentSelector {
-                fragment_selector_type: self.fragment_selector_type,
-                timestamp_range: self.timestamp_range,
+                fragment_selector_type: self.fragment_selector_type
+                ,
+                timestamp_range: self.timestamp_range
+                ,
             }
         }
     }
+    
+    
 }
 impl FragmentSelector {
     /// Creates a new builder-style object to manufacture [`FragmentSelector`](crate::model::FragmentSelector).
@@ -224,7 +208,7 @@ impl FragmentSelector {
 /// <p>The range of timestamps for which to return fragments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampRange {
+pub struct TimestampRange  {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
     #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -234,17 +218,17 @@ pub struct TimestampRange {
 }
 impl TimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
 /// See [`TimestampRange`](crate::model::TimestampRange).
 pub mod timestamp_range {
-
+    
     /// A builder for [`TimestampRange`](crate::model::TimestampRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -258,12 +242,8 @@ pub mod timestamp_range {
             self
         }
         /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
-        pub fn set_start_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_timestamp = input;
-            self
+        pub fn set_start_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_timestamp = input; self
         }
         /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
         pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -271,21 +251,21 @@ pub mod timestamp_range {
             self
         }
         /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
-        pub fn set_end_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_timestamp = input;
-            self
+        pub fn set_end_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`TimestampRange`](crate::model::TimestampRange).
         pub fn build(self) -> crate::model::TimestampRange {
             crate::model::TimestampRange {
-                start_timestamp: self.start_timestamp,
-                end_timestamp: self.end_timestamp,
+                start_timestamp: self.start_timestamp
+                ,
+                end_timestamp: self.end_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestampRange {
     /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
@@ -300,9 +280,9 @@ impl TimestampRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fragmentselectortype = unimplemented!();
 /// match fragmentselectortype {
@@ -324,60 +304,52 @@ impl TimestampRange {
 /// Specifically, when `fragmentselectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FragmentSelectorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FragmentSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => FragmentSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => FragmentSelectorType::ServerTimestamp,
-            other => {
-                FragmentSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FragmentSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FragmentSelectorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FragmentSelectorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FragmentSelectorType::from(s))
+                }
+            }
 impl FragmentSelectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FragmentSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             FragmentSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            FragmentSelectorType::Unknown(value) => value.as_str(),
+            FragmentSelectorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+        &[
+            "PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for FragmentSelectorType {
@@ -389,16 +361,16 @@ impl AsRef<str> for FragmentSelectorType {
 /// <p>A structure that contains the <code>Timestamp</code>, <code>Error</code>, and <code>ImageContent</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Image {
+pub struct Image  {
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
     #[doc(hidden)]
     pub time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
-    /// <ul>
-    /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
+    /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p> 
+    /// <ul> 
+    /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ImageError>,
@@ -408,27 +380,27 @@ pub struct Image {
 }
 impl Image {
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
-    pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time_stamp.as_ref()
     }
-    /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
-    /// <ul>
-    /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
+    /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p> 
+    /// <ul> 
+    /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li> 
     /// </ul>
-    /// <ul>
-    /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
-    /// </ul>
-    pub fn error(&self) -> std::option::Option<&crate::model::ImageError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ImageError> {
         self.error.as_ref()
     }
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
-    pub fn image_content(&self) -> std::option::Option<&str> {
+    pub fn image_content(&self) -> std::option::Option<& str> {
         self.image_content.as_deref()
     }
 }
 /// See [`Image`](crate::model::Image).
 pub mod image {
-
+    
     /// A builder for [`Image`](crate::model::Image).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -443,34 +415,29 @@ pub mod image {
             self
         }
         /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
-        pub fn set_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.time_stamp = input;
-            self
+        pub fn set_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.time_stamp = input; self
         }
-        /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
-        /// <ul>
-        /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
+        /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p> 
+        /// <ul> 
+        /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li> 
         /// </ul>
         pub fn error(mut self, input: crate::model::ImageError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
-        /// <ul>
-        /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
+        /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p> 
+        /// <ul> 
+        /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li> 
         /// </ul>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ImageError>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
         pub fn image_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -478,22 +445,23 @@ pub mod image {
             self
         }
         /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
-        pub fn set_image_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_content = input;
-            self
+        pub fn set_image_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_content = input; self
         }
         /// Consumes the builder and constructs a [`Image`](crate::model::Image).
         pub fn build(self) -> crate::model::Image {
             crate::model::Image {
-                time_stamp: self.time_stamp,
-                error: self.error,
-                image_content: self.image_content,
+                time_stamp: self.time_stamp
+                ,
+                error: self.error
+                ,
+                image_content: self.image_content
+                ,
             }
         }
     }
+    
+    
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
@@ -508,9 +476,9 @@ impl Image {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imageerror = unimplemented!();
 /// match imageerror {
@@ -532,58 +500,52 @@ impl Image {
 /// Specifically, when `imageerror` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageError::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageError {
     #[allow(missing_docs)] // documentation missing in model
     MediaError,
     #[allow(missing_docs)] // documentation missing in model
     NoMedia,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageError {
     fn from(s: &str) -> Self {
         match s {
             "MEDIA_ERROR" => ImageError::MediaError,
             "NO_MEDIA" => ImageError::NoMedia,
-            other => ImageError::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImageError::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageError {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageError::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageError::from(s))
+                }
+            }
 impl ImageError {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageError::MediaError => "MEDIA_ERROR",
             ImageError::NoMedia => "NO_MEDIA",
-            ImageError::Unknown(value) => value.as_str(),
+            ImageError::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MEDIA_ERROR", "NO_MEDIA"]
+        &[
+            "MEDIA_ERROR", "NO_MEDIA"
+        ]
     }
 }
 impl AsRef<str> for ImageError {
@@ -598,9 +560,9 @@ impl AsRef<str> for ImageError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let formatconfigkey = unimplemented!();
 /// match formatconfigkey {
@@ -621,54 +583,48 @@ impl AsRef<str> for ImageError {
 /// Specifically, when `formatconfigkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FormatConfigKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FormatConfigKey {
     #[allow(missing_docs)] // documentation missing in model
     JpegQuality,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FormatConfigKey {
     fn from(s: &str) -> Self {
         match s {
             "JPEGQuality" => FormatConfigKey::JpegQuality,
-            other => FormatConfigKey::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FormatConfigKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FormatConfigKey {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FormatConfigKey::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FormatConfigKey::from(s))
+                }
+            }
 impl FormatConfigKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FormatConfigKey::JpegQuality => "JPEGQuality",
-            FormatConfigKey::Unknown(value) => value.as_str(),
+            FormatConfigKey::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JPEGQuality"]
+        &[
+            "JPEGQuality"
+        ]
     }
 }
 impl AsRef<str> for FormatConfigKey {
@@ -683,9 +639,9 @@ impl AsRef<str> for FormatConfigKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let format = unimplemented!();
 /// match format {
@@ -707,58 +663,52 @@ impl AsRef<str> for FormatConfigKey {
 /// Specifically, when `format` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Format::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Jpeg,
     #[allow(missing_docs)] // documentation missing in model
     Png,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
         match s {
             "JPEG" => Format::Jpeg,
             "PNG" => Format::Png,
-            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Format {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Format::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Format::from(s))
+                }
+            }
 impl Format {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Format::Jpeg => "JPEG",
             Format::Png => "PNG",
-            Format::Unknown(value) => value.as_str(),
+            Format::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JPEG", "PNG"]
+        &[
+            "JPEG", "PNG"
+        ]
     }
 }
 impl AsRef<str> for Format {
@@ -773,9 +723,9 @@ impl AsRef<str> for Format {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imageselectortype = unimplemented!();
 /// match imageselectortype {
@@ -797,60 +747,52 @@ impl AsRef<str> for Format {
 /// Specifically, when `imageselectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageSelectorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => ImageSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => ImageSelectorType::ServerTimestamp,
-            other => {
-                ImageSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImageSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageSelectorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageSelectorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageSelectorType::from(s))
+                }
+            }
 impl ImageSelectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             ImageSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            ImageSelectorType::Unknown(value) => value.as_str(),
+            ImageSelectorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+        &[
+            "PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for ImageSelectorType {
@@ -865,9 +807,9 @@ impl AsRef<str> for ImageSelectorType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hlsdisplayfragmenttimestamp = unimplemented!();
 /// match hlsdisplayfragmenttimestamp {
@@ -889,60 +831,52 @@ impl AsRef<str> for ImageSelectorType {
 /// Specifically, when `hlsdisplayfragmenttimestamp` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HlsDisplayFragmentTimestamp::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HlsDisplayFragmentTimestamp {
     #[allow(missing_docs)] // documentation missing in model
     Always,
     #[allow(missing_docs)] // documentation missing in model
     Never,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HlsDisplayFragmentTimestamp {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS" => HlsDisplayFragmentTimestamp::Always,
             "NEVER" => HlsDisplayFragmentTimestamp::Never,
-            other => HlsDisplayFragmentTimestamp::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsDisplayFragmentTimestamp::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HlsDisplayFragmentTimestamp {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsDisplayFragmentTimestamp::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HlsDisplayFragmentTimestamp::from(s))
+                }
+            }
 impl HlsDisplayFragmentTimestamp {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsDisplayFragmentTimestamp::Always => "ALWAYS",
             HlsDisplayFragmentTimestamp::Never => "NEVER",
-            HlsDisplayFragmentTimestamp::Unknown(value) => value.as_str(),
+            HlsDisplayFragmentTimestamp::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALWAYS", "NEVER"]
+        &[
+            "ALWAYS", "NEVER"
+        ]
     }
 }
 impl AsRef<str> for HlsDisplayFragmentTimestamp {
@@ -957,9 +891,9 @@ impl AsRef<str> for HlsDisplayFragmentTimestamp {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hlsdiscontinuitymode = unimplemented!();
 /// match hlsdiscontinuitymode {
@@ -982,22 +916,14 @@ impl AsRef<str> for HlsDisplayFragmentTimestamp {
 /// Specifically, when `hlsdiscontinuitymode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HlsDiscontinuityMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HlsDiscontinuityMode {
     #[allow(missing_docs)] // documentation missing in model
     Always,
@@ -1006,7 +932,7 @@ pub enum HlsDiscontinuityMode {
     #[allow(missing_docs)] // documentation missing in model
     OnDiscontinuity,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HlsDiscontinuityMode {
     fn from(s: &str) -> Self {
@@ -1014,19 +940,17 @@ impl std::convert::From<&str> for HlsDiscontinuityMode {
             "ALWAYS" => HlsDiscontinuityMode::Always,
             "NEVER" => HlsDiscontinuityMode::Never,
             "ON_DISCONTINUITY" => HlsDiscontinuityMode::OnDiscontinuity,
-            other => {
-                HlsDiscontinuityMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => HlsDiscontinuityMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HlsDiscontinuityMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsDiscontinuityMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HlsDiscontinuityMode::from(s))
+                }
+            }
 impl HlsDiscontinuityMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1034,12 +958,14 @@ impl HlsDiscontinuityMode {
             HlsDiscontinuityMode::Always => "ALWAYS",
             HlsDiscontinuityMode::Never => "NEVER",
             HlsDiscontinuityMode::OnDiscontinuity => "ON_DISCONTINUITY",
-            HlsDiscontinuityMode::Unknown(value) => value.as_str(),
+            HlsDiscontinuityMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALWAYS", "NEVER", "ON_DISCONTINUITY"]
+        &[
+            "ALWAYS", "NEVER", "ON_DISCONTINUITY"
+        ]
     }
 }
 impl AsRef<str> for HlsDiscontinuityMode {
@@ -1054,9 +980,9 @@ impl AsRef<str> for HlsDiscontinuityMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let containerformat = unimplemented!();
 /// match containerformat {
@@ -1078,58 +1004,52 @@ impl AsRef<str> for HlsDiscontinuityMode {
 /// Specifically, when `containerformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContainerFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContainerFormat {
     #[allow(missing_docs)] // documentation missing in model
     FragmentedMp4,
     #[allow(missing_docs)] // documentation missing in model
     MpegTs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContainerFormat {
     fn from(s: &str) -> Self {
         match s {
             "FRAGMENTED_MP4" => ContainerFormat::FragmentedMp4,
             "MPEG_TS" => ContainerFormat::MpegTs,
-            other => ContainerFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ContainerFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContainerFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContainerFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContainerFormat::from(s))
+                }
+            }
 impl ContainerFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerFormat::FragmentedMp4 => "FRAGMENTED_MP4",
             ContainerFormat::MpegTs => "MPEG_TS",
-            ContainerFormat::Unknown(value) => value.as_str(),
+            ContainerFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FRAGMENTED_MP4", "MPEG_TS"]
+        &[
+            "FRAGMENTED_MP4", "MPEG_TS"
+        ]
     }
 }
 impl AsRef<str> for ContainerFormat {
@@ -1141,94 +1061,84 @@ impl AsRef<str> for ContainerFormat {
 /// <p>Contains the range of timestamps for the requested media, and the source of the timestamps.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsFragmentSelector {
-    /// <p>The source of the timestamps for the requested media.</p>
-    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p>
-    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
-    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
+pub struct HlsFragmentSelector  {
+    /// <p>The source of the timestamps for the requested media.</p> 
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p> 
+    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> 
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p> 
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
     #[doc(hidden)]
     pub fragment_selector_type: std::option::Option<crate::model::HlsFragmentSelectorType>,
-    /// <p>The start and end of the timestamp range for the requested media.</p>
+    /// <p>The start and end of the timestamp range for the requested media.</p> 
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
     #[doc(hidden)]
     pub timestamp_range: std::option::Option<crate::model::HlsTimestampRange>,
 }
 impl HlsFragmentSelector {
-    /// <p>The source of the timestamps for the requested media.</p>
-    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p>
-    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
-    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
+    /// <p>The source of the timestamps for the requested media.</p> 
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p> 
+    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> 
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p> 
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-    pub fn fragment_selector_type(
-        &self,
-    ) -> std::option::Option<&crate::model::HlsFragmentSelectorType> {
+    pub fn fragment_selector_type(&self) -> std::option::Option<& crate::model::HlsFragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
-    /// <p>The start and end of the timestamp range for the requested media.</p>
+    /// <p>The start and end of the timestamp range for the requested media.</p> 
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
-    pub fn timestamp_range(&self) -> std::option::Option<&crate::model::HlsTimestampRange> {
+    pub fn timestamp_range(&self) -> std::option::Option<& crate::model::HlsTimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
 /// See [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
 pub mod hls_fragment_selector {
-
+    
     /// A builder for [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fragment_selector_type:
-            std::option::Option<crate::model::HlsFragmentSelectorType>,
+        pub(crate) fragment_selector_type: std::option::Option<crate::model::HlsFragmentSelectorType>,
         pub(crate) timestamp_range: std::option::Option<crate::model::HlsTimestampRange>,
     }
     impl Builder {
-        /// <p>The source of the timestamps for the requested media.</p>
-        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p>
-        /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
-        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
+        /// <p>The source of the timestamps for the requested media.</p> 
+        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p> 
+        /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> 
+        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p> 
         /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-        pub fn fragment_selector_type(
-            mut self,
-            input: crate::model::HlsFragmentSelectorType,
-        ) -> Self {
+        pub fn fragment_selector_type(mut self, input: crate::model::HlsFragmentSelectorType) -> Self {
             self.fragment_selector_type = Some(input);
             self
         }
-        /// <p>The source of the timestamps for the requested media.</p>
-        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p>
-        /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
-        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
+        /// <p>The source of the timestamps for the requested media.</p> 
+        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p> 
+        /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> 
+        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p> 
         /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-        pub fn set_fragment_selector_type(
-            mut self,
-            input: std::option::Option<crate::model::HlsFragmentSelectorType>,
-        ) -> Self {
-            self.fragment_selector_type = input;
-            self
+        pub fn set_fragment_selector_type(mut self, input: std::option::Option<crate::model::HlsFragmentSelectorType>) -> Self {
+            self.fragment_selector_type = input; self
         }
-        /// <p>The start and end of the timestamp range for the requested media.</p>
+        /// <p>The start and end of the timestamp range for the requested media.</p> 
         /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
         pub fn timestamp_range(mut self, input: crate::model::HlsTimestampRange) -> Self {
             self.timestamp_range = Some(input);
             self
         }
-        /// <p>The start and end of the timestamp range for the requested media.</p>
+        /// <p>The start and end of the timestamp range for the requested media.</p> 
         /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
-        pub fn set_timestamp_range(
-            mut self,
-            input: std::option::Option<crate::model::HlsTimestampRange>,
-        ) -> Self {
-            self.timestamp_range = input;
-            self
+        pub fn set_timestamp_range(mut self, input: std::option::Option<crate::model::HlsTimestampRange>) -> Self {
+            self.timestamp_range = input; self
         }
         /// Consumes the builder and constructs a [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
         pub fn build(self) -> crate::model::HlsFragmentSelector {
             crate::model::HlsFragmentSelector {
-                fragment_selector_type: self.fragment_selector_type,
-                timestamp_range: self.timestamp_range,
+                fragment_selector_type: self.fragment_selector_type
+                ,
+                timestamp_range: self.timestamp_range
+                ,
             }
         }
     }
+    
+    
 }
 impl HlsFragmentSelector {
     /// Creates a new builder-style object to manufacture [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
@@ -1237,43 +1147,43 @@ impl HlsFragmentSelector {
     }
 }
 
-/// <p>The start and end of the timestamp range for the requested media.</p>
+/// <p>The start and end of the timestamp range for the requested media.</p> 
 /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsTimestampRange {
-    /// <p>The start of the timestamp range for the requested media.</p>
-    /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p>
+pub struct HlsTimestampRange  {
+    /// <p>The start of the timestamp range for the requested media.</p> 
+    /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p> 
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
     #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
-    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
-    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
-    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
+    /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p> 
+    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> 
+    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note> 
+    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p> 
     /// </note>
     #[doc(hidden)]
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl HlsTimestampRange {
-    /// <p>The start of the timestamp range for the requested media.</p>
-    /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p>
+    /// <p>The start of the timestamp range for the requested media.</p> 
+    /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p> 
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
-    /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
-    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
-    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
-    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
+    /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p> 
+    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> 
+    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note> 
+    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p> 
     /// </note>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
 /// See [`HlsTimestampRange`](crate::model::HlsTimestampRange).
 pub mod hls_timestamp_range {
-
+    
     /// A builder for [`HlsTimestampRange`](crate::model::HlsTimestampRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1281,52 +1191,48 @@ pub mod hls_timestamp_range {
         pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The start of the timestamp range for the requested media.</p>
-        /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p>
+        /// <p>The start of the timestamp range for the requested media.</p> 
+        /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p> 
         /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
         pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
-        /// <p>The start of the timestamp range for the requested media.</p>
-        /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p>
+        /// <p>The start of the timestamp range for the requested media.</p> 
+        /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p> 
         /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
-        pub fn set_start_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_timestamp = input;
-            self
+        pub fn set_start_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_timestamp = input; self
         }
-        /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
-        /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
-        /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
-        /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
+        /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p> 
+        /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> 
+        /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note> 
+        /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p> 
         /// </note>
         pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
-        /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
-        /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
-        /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
-        /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
+        /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p> 
+        /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> 
+        /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note> 
+        /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p> 
         /// </note>
-        pub fn set_end_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_timestamp = input;
-            self
+        pub fn set_end_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`HlsTimestampRange`](crate::model::HlsTimestampRange).
         pub fn build(self) -> crate::model::HlsTimestampRange {
             crate::model::HlsTimestampRange {
-                start_timestamp: self.start_timestamp,
-                end_timestamp: self.end_timestamp,
+                start_timestamp: self.start_timestamp
+                ,
+                end_timestamp: self.end_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl HlsTimestampRange {
     /// Creates a new builder-style object to manufacture [`HlsTimestampRange`](crate::model::HlsTimestampRange).
@@ -1341,9 +1247,9 @@ impl HlsTimestampRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hlsfragmentselectortype = unimplemented!();
 /// match hlsfragmentselectortype {
@@ -1365,60 +1271,52 @@ impl HlsTimestampRange {
 /// Specifically, when `hlsfragmentselectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HlsFragmentSelectorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HlsFragmentSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HlsFragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => HlsFragmentSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => HlsFragmentSelectorType::ServerTimestamp,
-            other => HlsFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HlsFragmentSelectorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsFragmentSelectorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HlsFragmentSelectorType::from(s))
+                }
+            }
 impl HlsFragmentSelectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsFragmentSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             HlsFragmentSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            HlsFragmentSelectorType::Unknown(value) => value.as_str(),
+            HlsFragmentSelectorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+        &[
+            "PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for HlsFragmentSelectorType {
@@ -1433,9 +1331,9 @@ impl AsRef<str> for HlsFragmentSelectorType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hlsplaybackmode = unimplemented!();
 /// match hlsplaybackmode {
@@ -1458,22 +1356,14 @@ impl AsRef<str> for HlsFragmentSelectorType {
 /// Specifically, when `hlsplaybackmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HlsPlaybackMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HlsPlaybackMode {
     #[allow(missing_docs)] // documentation missing in model
     Live,
@@ -1482,7 +1372,7 @@ pub enum HlsPlaybackMode {
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HlsPlaybackMode {
     fn from(s: &str) -> Self {
@@ -1490,17 +1380,17 @@ impl std::convert::From<&str> for HlsPlaybackMode {
             "LIVE" => HlsPlaybackMode::Live,
             "LIVE_REPLAY" => HlsPlaybackMode::LiveReplay,
             "ON_DEMAND" => HlsPlaybackMode::OnDemand,
-            other => HlsPlaybackMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HlsPlaybackMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HlsPlaybackMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsPlaybackMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HlsPlaybackMode::from(s))
+                }
+            }
 impl HlsPlaybackMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1508,12 +1398,14 @@ impl HlsPlaybackMode {
             HlsPlaybackMode::Live => "LIVE",
             HlsPlaybackMode::LiveReplay => "LIVE_REPLAY",
             HlsPlaybackMode::OnDemand => "ON_DEMAND",
-            HlsPlaybackMode::Unknown(value) => value.as_str(),
+            HlsPlaybackMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LIVE", "LIVE_REPLAY", "ON_DEMAND"]
+        &[
+            "LIVE", "LIVE_REPLAY", "ON_DEMAND"
+        ]
     }
 }
 impl AsRef<str> for HlsPlaybackMode {
@@ -1525,94 +1417,84 @@ impl AsRef<str> for HlsPlaybackMode {
 /// <p>Contains the range of timestamps for the requested media, and the source of the timestamps. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashFragmentSelector {
-    /// <p>The source of the timestamps for the requested media.</p>
-    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p>
-    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
-    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
+pub struct DashFragmentSelector  {
+    /// <p>The source of the timestamps for the requested media.</p> 
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p> 
+    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> 
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p> 
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
     #[doc(hidden)]
     pub fragment_selector_type: std::option::Option<crate::model::DashFragmentSelectorType>,
-    /// <p>The start and end of the timestamp range for the requested media.</p>
+    /// <p>The start and end of the timestamp range for the requested media.</p> 
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
     #[doc(hidden)]
     pub timestamp_range: std::option::Option<crate::model::DashTimestampRange>,
 }
 impl DashFragmentSelector {
-    /// <p>The source of the timestamps for the requested media.</p>
-    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p>
-    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
-    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
+    /// <p>The source of the timestamps for the requested media.</p> 
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p> 
+    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> 
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p> 
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-    pub fn fragment_selector_type(
-        &self,
-    ) -> std::option::Option<&crate::model::DashFragmentSelectorType> {
+    pub fn fragment_selector_type(&self) -> std::option::Option<& crate::model::DashFragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
-    /// <p>The start and end of the timestamp range for the requested media.</p>
+    /// <p>The start and end of the timestamp range for the requested media.</p> 
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
-    pub fn timestamp_range(&self) -> std::option::Option<&crate::model::DashTimestampRange> {
+    pub fn timestamp_range(&self) -> std::option::Option<& crate::model::DashTimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
 /// See [`DashFragmentSelector`](crate::model::DashFragmentSelector).
 pub mod dash_fragment_selector {
-
+    
     /// A builder for [`DashFragmentSelector`](crate::model::DashFragmentSelector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fragment_selector_type:
-            std::option::Option<crate::model::DashFragmentSelectorType>,
+        pub(crate) fragment_selector_type: std::option::Option<crate::model::DashFragmentSelectorType>,
         pub(crate) timestamp_range: std::option::Option<crate::model::DashTimestampRange>,
     }
     impl Builder {
-        /// <p>The source of the timestamps for the requested media.</p>
-        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p>
-        /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
-        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
+        /// <p>The source of the timestamps for the requested media.</p> 
+        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p> 
+        /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> 
+        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p> 
         /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-        pub fn fragment_selector_type(
-            mut self,
-            input: crate::model::DashFragmentSelectorType,
-        ) -> Self {
+        pub fn fragment_selector_type(mut self, input: crate::model::DashFragmentSelectorType) -> Self {
             self.fragment_selector_type = Some(input);
             self
         }
-        /// <p>The source of the timestamps for the requested media.</p>
-        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p>
-        /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
-        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
+        /// <p>The source of the timestamps for the requested media.</p> 
+        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p> 
+        /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> 
+        /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p> 
         /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-        pub fn set_fragment_selector_type(
-            mut self,
-            input: std::option::Option<crate::model::DashFragmentSelectorType>,
-        ) -> Self {
-            self.fragment_selector_type = input;
-            self
+        pub fn set_fragment_selector_type(mut self, input: std::option::Option<crate::model::DashFragmentSelectorType>) -> Self {
+            self.fragment_selector_type = input; self
         }
-        /// <p>The start and end of the timestamp range for the requested media.</p>
+        /// <p>The start and end of the timestamp range for the requested media.</p> 
         /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
         pub fn timestamp_range(mut self, input: crate::model::DashTimestampRange) -> Self {
             self.timestamp_range = Some(input);
             self
         }
-        /// <p>The start and end of the timestamp range for the requested media.</p>
+        /// <p>The start and end of the timestamp range for the requested media.</p> 
         /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
-        pub fn set_timestamp_range(
-            mut self,
-            input: std::option::Option<crate::model::DashTimestampRange>,
-        ) -> Self {
-            self.timestamp_range = input;
-            self
+        pub fn set_timestamp_range(mut self, input: std::option::Option<crate::model::DashTimestampRange>) -> Self {
+            self.timestamp_range = input; self
         }
         /// Consumes the builder and constructs a [`DashFragmentSelector`](crate::model::DashFragmentSelector).
         pub fn build(self) -> crate::model::DashFragmentSelector {
             crate::model::DashFragmentSelector {
-                fragment_selector_type: self.fragment_selector_type,
-                timestamp_range: self.timestamp_range,
+                fragment_selector_type: self.fragment_selector_type
+                ,
+                timestamp_range: self.timestamp_range
+                ,
             }
         }
     }
+    
+    
 }
 impl DashFragmentSelector {
     /// Creates a new builder-style object to manufacture [`DashFragmentSelector`](crate::model::DashFragmentSelector).
@@ -1621,44 +1503,44 @@ impl DashFragmentSelector {
     }
 }
 
-/// <p>The start and end of the timestamp range for the requested media.</p>
-/// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
+/// <p>The start and end of the timestamp range for the requested media.</p> 
+/// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> 
 /// <p>The values in <code>DASHimestampRange</code> are inclusive. Fragments that start exactly at or after the start time are included in the session. Fragments that start before the start time and continue past it are not included in the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashTimestampRange {
-    /// <p>The start of the timestamp range for the requested media.</p>
-    /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
+pub struct DashTimestampRange  {
+    /// <p>The start of the timestamp range for the requested media.</p> 
+    /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p> 
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
     #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
-    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
-    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
-    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
+    /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p> 
+    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> 
+    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note> 
+    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p> 
     /// </note>
     #[doc(hidden)]
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DashTimestampRange {
-    /// <p>The start of the timestamp range for the requested media.</p>
-    /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
+    /// <p>The start of the timestamp range for the requested media.</p> 
+    /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p> 
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
-    /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
-    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
-    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
-    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
+    /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p> 
+    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> 
+    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note> 
+    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p> 
     /// </note>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
 /// See [`DashTimestampRange`](crate::model::DashTimestampRange).
 pub mod dash_timestamp_range {
-
+    
     /// A builder for [`DashTimestampRange`](crate::model::DashTimestampRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1666,52 +1548,48 @@ pub mod dash_timestamp_range {
         pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The start of the timestamp range for the requested media.</p>
-        /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
+        /// <p>The start of the timestamp range for the requested media.</p> 
+        /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p> 
         /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
         pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
-        /// <p>The start of the timestamp range for the requested media.</p>
-        /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
+        /// <p>The start of the timestamp range for the requested media.</p> 
+        /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p> 
         /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
-        pub fn set_start_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_timestamp = input;
-            self
+        pub fn set_start_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_timestamp = input; self
         }
-        /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
-        /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
-        /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
-        /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
+        /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p> 
+        /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> 
+        /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note> 
+        /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p> 
         /// </note>
         pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
-        /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
-        /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
-        /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
-        /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
+        /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p> 
+        /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> 
+        /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note> 
+        /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p> 
         /// </note>
-        pub fn set_end_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_timestamp = input;
-            self
+        pub fn set_end_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`DashTimestampRange`](crate::model::DashTimestampRange).
         pub fn build(self) -> crate::model::DashTimestampRange {
             crate::model::DashTimestampRange {
-                start_timestamp: self.start_timestamp,
-                end_timestamp: self.end_timestamp,
+                start_timestamp: self.start_timestamp
+                ,
+                end_timestamp: self.end_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl DashTimestampRange {
     /// Creates a new builder-style object to manufacture [`DashTimestampRange`](crate::model::DashTimestampRange).
@@ -1726,9 +1604,9 @@ impl DashTimestampRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dashfragmentselectortype = unimplemented!();
 /// match dashfragmentselectortype {
@@ -1750,60 +1628,52 @@ impl DashTimestampRange {
 /// Specifically, when `dashfragmentselectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DashFragmentSelectorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DashFragmentSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DashFragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => DashFragmentSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => DashFragmentSelectorType::ServerTimestamp,
-            other => DashFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DashFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DashFragmentSelectorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DashFragmentSelectorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DashFragmentSelectorType::from(s))
+                }
+            }
 impl DashFragmentSelectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DashFragmentSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             DashFragmentSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            DashFragmentSelectorType::Unknown(value) => value.as_str(),
+            DashFragmentSelectorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+        &[
+            "PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for DashFragmentSelectorType {
@@ -1818,9 +1688,9 @@ impl AsRef<str> for DashFragmentSelectorType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dashdisplayfragmentnumber = unimplemented!();
 /// match dashdisplayfragmentnumber {
@@ -1842,60 +1712,52 @@ impl AsRef<str> for DashFragmentSelectorType {
 /// Specifically, when `dashdisplayfragmentnumber` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DashDisplayFragmentNumber::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DashDisplayFragmentNumber {
     #[allow(missing_docs)] // documentation missing in model
     Always,
     #[allow(missing_docs)] // documentation missing in model
     Never,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DashDisplayFragmentNumber {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS" => DashDisplayFragmentNumber::Always,
             "NEVER" => DashDisplayFragmentNumber::Never,
-            other => DashDisplayFragmentNumber::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DashDisplayFragmentNumber::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DashDisplayFragmentNumber {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DashDisplayFragmentNumber::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DashDisplayFragmentNumber::from(s))
+                }
+            }
 impl DashDisplayFragmentNumber {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DashDisplayFragmentNumber::Always => "ALWAYS",
             DashDisplayFragmentNumber::Never => "NEVER",
-            DashDisplayFragmentNumber::Unknown(value) => value.as_str(),
+            DashDisplayFragmentNumber::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALWAYS", "NEVER"]
+        &[
+            "ALWAYS", "NEVER"
+        ]
     }
 }
 impl AsRef<str> for DashDisplayFragmentNumber {
@@ -1910,9 +1772,9 @@ impl AsRef<str> for DashDisplayFragmentNumber {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dashdisplayfragmenttimestamp = unimplemented!();
 /// match dashdisplayfragmenttimestamp {
@@ -1934,60 +1796,52 @@ impl AsRef<str> for DashDisplayFragmentNumber {
 /// Specifically, when `dashdisplayfragmenttimestamp` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DashDisplayFragmentTimestamp::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DashDisplayFragmentTimestamp {
     #[allow(missing_docs)] // documentation missing in model
     Always,
     #[allow(missing_docs)] // documentation missing in model
     Never,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DashDisplayFragmentTimestamp {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS" => DashDisplayFragmentTimestamp::Always,
             "NEVER" => DashDisplayFragmentTimestamp::Never,
-            other => DashDisplayFragmentTimestamp::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DashDisplayFragmentTimestamp::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DashDisplayFragmentTimestamp {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DashDisplayFragmentTimestamp::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DashDisplayFragmentTimestamp::from(s))
+                }
+            }
 impl DashDisplayFragmentTimestamp {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DashDisplayFragmentTimestamp::Always => "ALWAYS",
             DashDisplayFragmentTimestamp::Never => "NEVER",
-            DashDisplayFragmentTimestamp::Unknown(value) => value.as_str(),
+            DashDisplayFragmentTimestamp::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALWAYS", "NEVER"]
+        &[
+            "ALWAYS", "NEVER"
+        ]
     }
 }
 impl AsRef<str> for DashDisplayFragmentTimestamp {
@@ -2002,9 +1856,9 @@ impl AsRef<str> for DashDisplayFragmentTimestamp {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dashplaybackmode = unimplemented!();
 /// match dashplaybackmode {
@@ -2027,22 +1881,14 @@ impl AsRef<str> for DashDisplayFragmentTimestamp {
 /// Specifically, when `dashplaybackmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DashPlaybackMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DashPlaybackMode {
     #[allow(missing_docs)] // documentation missing in model
     Live,
@@ -2051,7 +1897,7 @@ pub enum DashPlaybackMode {
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DashPlaybackMode {
     fn from(s: &str) -> Self {
@@ -2059,17 +1905,17 @@ impl std::convert::From<&str> for DashPlaybackMode {
             "LIVE" => DashPlaybackMode::Live,
             "LIVE_REPLAY" => DashPlaybackMode::LiveReplay,
             "ON_DEMAND" => DashPlaybackMode::OnDemand,
-            other => DashPlaybackMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DashPlaybackMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DashPlaybackMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DashPlaybackMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DashPlaybackMode::from(s))
+                }
+            }
 impl DashPlaybackMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2077,12 +1923,14 @@ impl DashPlaybackMode {
             DashPlaybackMode::Live => "LIVE",
             DashPlaybackMode::LiveReplay => "LIVE_REPLAY",
             DashPlaybackMode::OnDemand => "ON_DEMAND",
-            DashPlaybackMode::Unknown(value) => value.as_str(),
+            DashPlaybackMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LIVE", "LIVE_REPLAY", "ON_DEMAND"]
+        &[
+            "LIVE", "LIVE_REPLAY", "ON_DEMAND"
+        ]
     }
 }
 impl AsRef<str> for DashPlaybackMode {
@@ -2091,11 +1939,11 @@ impl AsRef<str> for DashPlaybackMode {
     }
 }
 
-/// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p>
+/// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> 
 /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClipFragmentSelector {
+pub struct ClipFragmentSelector  {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     #[doc(hidden)]
     pub fragment_selector_type: std::option::Option<crate::model::ClipFragmentSelectorType>,
@@ -2105,42 +1953,32 @@ pub struct ClipFragmentSelector {
 }
 impl ClipFragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    pub fn fragment_selector_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ClipFragmentSelectorType> {
+    pub fn fragment_selector_type(&self) -> std::option::Option<& crate::model::ClipFragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
     /// <p>The range of timestamps to return.</p>
-    pub fn timestamp_range(&self) -> std::option::Option<&crate::model::ClipTimestampRange> {
+    pub fn timestamp_range(&self) -> std::option::Option<& crate::model::ClipTimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
 /// See [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
 pub mod clip_fragment_selector {
-
+    
     /// A builder for [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fragment_selector_type:
-            std::option::Option<crate::model::ClipFragmentSelectorType>,
+        pub(crate) fragment_selector_type: std::option::Option<crate::model::ClipFragmentSelectorType>,
         pub(crate) timestamp_range: std::option::Option<crate::model::ClipTimestampRange>,
     }
     impl Builder {
         /// <p>The origin of the timestamps to use (Server or Producer).</p>
-        pub fn fragment_selector_type(
-            mut self,
-            input: crate::model::ClipFragmentSelectorType,
-        ) -> Self {
+        pub fn fragment_selector_type(mut self, input: crate::model::ClipFragmentSelectorType) -> Self {
             self.fragment_selector_type = Some(input);
             self
         }
         /// <p>The origin of the timestamps to use (Server or Producer).</p>
-        pub fn set_fragment_selector_type(
-            mut self,
-            input: std::option::Option<crate::model::ClipFragmentSelectorType>,
-        ) -> Self {
-            self.fragment_selector_type = input;
-            self
+        pub fn set_fragment_selector_type(mut self, input: std::option::Option<crate::model::ClipFragmentSelectorType>) -> Self {
+            self.fragment_selector_type = input; self
         }
         /// <p>The range of timestamps to return.</p>
         pub fn timestamp_range(mut self, input: crate::model::ClipTimestampRange) -> Self {
@@ -2148,21 +1986,21 @@ pub mod clip_fragment_selector {
             self
         }
         /// <p>The range of timestamps to return.</p>
-        pub fn set_timestamp_range(
-            mut self,
-            input: std::option::Option<crate::model::ClipTimestampRange>,
-        ) -> Self {
-            self.timestamp_range = input;
-            self
+        pub fn set_timestamp_range(mut self, input: std::option::Option<crate::model::ClipTimestampRange>) -> Self {
+            self.timestamp_range = input; self
         }
         /// Consumes the builder and constructs a [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
         pub fn build(self) -> crate::model::ClipFragmentSelector {
             crate::model::ClipFragmentSelector {
-                fragment_selector_type: self.fragment_selector_type,
-                timestamp_range: self.timestamp_range,
+                fragment_selector_type: self.fragment_selector_type
+                ,
+                timestamp_range: self.timestamp_range
+                ,
             }
         }
     }
+    
+    
 }
 impl ClipFragmentSelector {
     /// Creates a new builder-style object to manufacture [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
@@ -2174,33 +2012,33 @@ impl ClipFragmentSelector {
 /// <p>The range of timestamps for which to return fragments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClipTimestampRange {
-    /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
+pub struct ClipTimestampRange  {
+    /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p> 
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
     #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the timestamp range for the requested media.</p>
-    /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
+    /// <p>The end of the timestamp range for the requested media.</p> 
+    /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> 
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
     #[doc(hidden)]
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClipTimestampRange {
-    /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
+    /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p> 
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
-    /// <p>The end of the timestamp range for the requested media.</p>
-    /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
+    /// <p>The end of the timestamp range for the requested media.</p> 
+    /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> 
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
 /// See [`ClipTimestampRange`](crate::model::ClipTimestampRange).
 pub mod clip_timestamp_range {
-
+    
     /// A builder for [`ClipTimestampRange`](crate::model::ClipTimestampRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2208,46 +2046,42 @@ pub mod clip_timestamp_range {
         pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
+        /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p> 
         /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
         pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_timestamp = Some(input);
             self
         }
-        /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
+        /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p> 
         /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
-        pub fn set_start_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_timestamp = input;
-            self
+        pub fn set_start_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_timestamp = input; self
         }
-        /// <p>The end of the timestamp range for the requested media.</p>
-        /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
+        /// <p>The end of the timestamp range for the requested media.</p> 
+        /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> 
         /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
         pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
-        /// <p>The end of the timestamp range for the requested media.</p>
-        /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
+        /// <p>The end of the timestamp range for the requested media.</p> 
+        /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> 
         /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
-        pub fn set_end_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_timestamp = input;
-            self
+        pub fn set_end_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`ClipTimestampRange`](crate::model::ClipTimestampRange).
         pub fn build(self) -> crate::model::ClipTimestampRange {
             crate::model::ClipTimestampRange {
-                start_timestamp: self.start_timestamp,
-                end_timestamp: self.end_timestamp,
+                start_timestamp: self.start_timestamp
+                ,
+                end_timestamp: self.end_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl ClipTimestampRange {
     /// Creates a new builder-style object to manufacture [`ClipTimestampRange`](crate::model::ClipTimestampRange).
@@ -2262,9 +2096,9 @@ impl ClipTimestampRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clipfragmentselectortype = unimplemented!();
 /// match clipfragmentselectortype {
@@ -2286,60 +2120,52 @@ impl ClipTimestampRange {
 /// Specifically, when `clipfragmentselectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClipFragmentSelectorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClipFragmentSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClipFragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => ClipFragmentSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => ClipFragmentSelectorType::ServerTimestamp,
-            other => ClipFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ClipFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClipFragmentSelectorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClipFragmentSelectorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClipFragmentSelectorType::from(s))
+                }
+            }
 impl ClipFragmentSelectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClipFragmentSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             ClipFragmentSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            ClipFragmentSelectorType::Unknown(value) => value.as_str(),
+            ClipFragmentSelectorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+        &[
+            "PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for ClipFragmentSelectorType {
@@ -2347,3 +2173,4 @@ impl AsRef<str> for ClipFragmentSelectorType {
         self.as_str()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendStorageOutput {
+pub struct UpdateBackendStorageOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct UpdateBackendStorageOutput {
 }
 impl UpdateBackendStorageOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
 pub mod update_backend_storage_output {
-
+    
     /// A builder for [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -53,8 +53,7 @@ pub mod update_backend_storage_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,12 +61,8 @@ pub mod update_backend_storage_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +71,7 @@ pub mod update_backend_storage_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,19 +80,24 @@ pub mod update_backend_storage_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
         pub fn build(self) -> crate::output::UpdateBackendStorageOutput {
             crate::output::UpdateBackendStorageOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                job_id: self.job_id,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendStorageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
@@ -110,7 +109,7 @@ impl UpdateBackendStorageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendJobOutput {
+pub struct UpdateBackendJobOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -138,41 +137,41 @@ pub struct UpdateBackendJobOutput {
 }
 impl UpdateBackendJobOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The time when the job was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&str> {
+    pub fn create_time(&self) -> std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time when the job was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&str> {
+    pub fn update_time(&self) -> std::option::Option<& str> {
         self.update_time.as_deref()
     }
 }
 /// See [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
 pub mod update_backend_job_output {
-
+    
     /// A builder for [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -193,8 +192,7 @@ pub mod update_backend_job_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,12 +200,8 @@ pub mod update_backend_job_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The time when the job was created.</p>
         pub fn create_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,8 +210,7 @@ pub mod update_backend_job_output {
         }
         /// <p>The time when the job was created.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -226,8 +219,7 @@ pub mod update_backend_job_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -236,8 +228,7 @@ pub mod update_backend_job_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -246,8 +237,7 @@ pub mod update_backend_job_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,8 +246,7 @@ pub mod update_backend_job_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time when the job was last updated.</p>
         pub fn update_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,23 +255,32 @@ pub mod update_backend_job_output {
         }
         /// <p>The time when the job was last updated.</p>
         pub fn set_update_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_time = input;
-            self
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
         pub fn build(self) -> crate::output::UpdateBackendJobOutput {
             crate::output::UpdateBackendJobOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                create_time: self.create_time,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
-                update_time: self.update_time,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                create_time: self.create_time
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
@@ -294,7 +292,7 @@ impl UpdateBackendJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendConfigOutput {
+pub struct UpdateBackendConfigOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -310,25 +308,25 @@ pub struct UpdateBackendConfigOutput {
 }
 impl UpdateBackendConfigOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn backend_manager_app_id(&self) -> std::option::Option<&str> {
+    pub fn backend_manager_app_id(&self) -> std::option::Option<& str> {
         self.backend_manager_app_id.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
-    pub fn login_auth_config(&self) -> std::option::Option<&crate::model::LoginAuthConfigReqObj> {
+    pub fn login_auth_config(&self) -> std::option::Option<& crate::model::LoginAuthConfigReqObj> {
         self.login_auth_config.as_ref()
     }
 }
 /// See [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
 pub mod update_backend_config_output {
-
+    
     /// A builder for [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -345,8 +343,7 @@ pub mod update_backend_config_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The app ID for the backend manager.</p>
         pub fn backend_manager_app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,12 +351,8 @@ pub mod update_backend_config_output {
             self
         }
         /// <p>The app ID for the backend manager.</p>
-        pub fn set_backend_manager_app_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_manager_app_id = input;
-            self
+        pub fn set_backend_manager_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_manager_app_id = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -368,8 +361,7 @@ pub mod update_backend_config_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
         pub fn login_auth_config(mut self, input: crate::model::LoginAuthConfigReqObj) -> Self {
@@ -377,23 +369,25 @@ pub mod update_backend_config_output {
             self
         }
         /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
-        pub fn set_login_auth_config(
-            mut self,
-            input: std::option::Option<crate::model::LoginAuthConfigReqObj>,
-        ) -> Self {
-            self.login_auth_config = input;
-            self
+        pub fn set_login_auth_config(mut self, input: std::option::Option<crate::model::LoginAuthConfigReqObj>) -> Self {
+            self.login_auth_config = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
         pub fn build(self) -> crate::output::UpdateBackendConfigOutput {
             crate::output::UpdateBackendConfigOutput {
-                app_id: self.app_id,
-                backend_manager_app_id: self.backend_manager_app_id,
-                error: self.error,
-                login_auth_config: self.login_auth_config,
+                app_id: self.app_id
+                ,
+                backend_manager_app_id: self.backend_manager_app_id
+                ,
+                error: self.error
+                ,
+                login_auth_config: self.login_auth_config
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
@@ -405,7 +399,7 @@ impl UpdateBackendConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthOutput {
+pub struct UpdateBackendAuthOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -427,33 +421,33 @@ pub struct UpdateBackendAuthOutput {
 }
 impl UpdateBackendAuthOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
 pub mod update_backend_auth_output {
-
+    
     /// A builder for [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -472,8 +466,7 @@ pub mod update_backend_auth_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -481,12 +474,8 @@ pub mod update_backend_auth_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -495,8 +484,7 @@ pub mod update_backend_auth_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -505,8 +493,7 @@ pub mod update_backend_auth_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -515,8 +502,7 @@ pub mod update_backend_auth_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -525,21 +511,28 @@ pub mod update_backend_auth_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
         pub fn build(self) -> crate::output::UpdateBackendAuthOutput {
             crate::output::UpdateBackendAuthOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendAuthOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
@@ -551,7 +544,7 @@ impl UpdateBackendAuthOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendApiOutput {
+pub struct UpdateBackendApiOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -573,33 +566,33 @@ pub struct UpdateBackendApiOutput {
 }
 impl UpdateBackendApiOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
 pub mod update_backend_api_output {
-
+    
     /// A builder for [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -618,8 +611,7 @@ pub mod update_backend_api_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -627,12 +619,8 @@ pub mod update_backend_api_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -641,8 +629,7 @@ pub mod update_backend_api_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -651,8 +638,7 @@ pub mod update_backend_api_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -661,8 +647,7 @@ pub mod update_backend_api_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -671,21 +656,28 @@ pub mod update_backend_api_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
         pub fn build(self) -> crate::output::UpdateBackendApiOutput {
             crate::output::UpdateBackendApiOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBackendApiOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
@@ -697,20 +689,20 @@ impl UpdateBackendApiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveBackendConfigOutput {
+pub struct RemoveBackendConfigOutput  {
     /// <p>If the request fails, this error is returned.</p>
     #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
 }
 impl RemoveBackendConfigOutput {
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
 }
 /// See [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
 pub mod remove_backend_config_output {
-
+    
     /// A builder for [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -724,14 +716,18 @@ pub mod remove_backend_config_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
         pub fn build(self) -> crate::output::RemoveBackendConfigOutput {
-            crate::output::RemoveBackendConfigOutput { error: self.error }
+            crate::output::RemoveBackendConfigOutput {
+                error: self.error
+                ,
+            }
         }
     }
+    
+    
 }
 impl RemoveBackendConfigOutput {
     /// Creates a new builder-style object to manufacture [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
@@ -743,7 +739,7 @@ impl RemoveBackendConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAllBackendsOutput {
+pub struct RemoveAllBackendsOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -762,29 +758,29 @@ pub struct RemoveAllBackendsOutput {
 }
 impl RemoveAllBackendsOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
 pub mod remove_all_backends_output {
-
+    
     /// A builder for [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -802,8 +798,7 @@ pub mod remove_all_backends_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -812,8 +807,7 @@ pub mod remove_all_backends_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -822,8 +816,7 @@ pub mod remove_all_backends_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -832,8 +825,7 @@ pub mod remove_all_backends_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -842,20 +834,26 @@ pub mod remove_all_backends_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
         pub fn build(self) -> crate::output::RemoveAllBackendsOutput {
             crate::output::RemoveAllBackendsOutput {
-                app_id: self.app_id,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveAllBackendsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
@@ -867,7 +865,7 @@ impl RemoveAllBackendsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListS3BucketsOutput {
+pub struct ListS3BucketsOutput  {
     /// <p>The list of S3 buckets.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>,
@@ -877,17 +875,17 @@ pub struct ListS3BucketsOutput {
 }
 impl ListS3BucketsOutput {
     /// <p>The list of S3 buckets.</p>
-    pub fn buckets(&self) -> std::option::Option<&[crate::model::S3BucketInfo]> {
+    pub fn buckets(&self) -> std::option::Option<& [crate::model::S3BucketInfo]> {
         self.buckets.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
 pub mod list_s3_buckets_output {
-
+    
     /// A builder for [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -902,17 +900,13 @@ pub mod list_s3_buckets_output {
         /// <p>The list of S3 buckets.</p>
         pub fn buckets(mut self, input: crate::model::S3BucketInfo) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input);
-            self.buckets = Some(v);
-            self
+                            v.push(input);
+                            self.buckets = Some(v);
+                            self
         }
         /// <p>The list of S3 buckets.</p>
-        pub fn set_buckets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>,
-        ) -> Self {
-            self.buckets = input;
-            self
+        pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>) -> Self {
+            self.buckets = input; self
         }
         /// <p>Reserved for future use.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -921,17 +915,20 @@ pub mod list_s3_buckets_output {
         }
         /// <p>Reserved for future use.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
         pub fn build(self) -> crate::output::ListS3BucketsOutput {
             crate::output::ListS3BucketsOutput {
-                buckets: self.buckets,
-                next_token: self.next_token,
+                buckets: self.buckets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListS3BucketsOutput {
     /// Creates a new builder-style object to manufacture [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
@@ -943,7 +940,7 @@ impl ListS3BucketsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBackendJobsOutput {
+pub struct ListBackendJobsOutput  {
     /// <p>An array of jobs and their properties.</p>
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::BackendJobRespObj>>,
@@ -953,17 +950,17 @@ pub struct ListBackendJobsOutput {
 }
 impl ListBackendJobsOutput {
     /// <p>An array of jobs and their properties.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::model::BackendJobRespObj]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::model::BackendJobRespObj]> {
         self.jobs.as_deref()
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
 pub mod list_backend_jobs_output {
-
+    
     /// A builder for [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -978,17 +975,13 @@ pub mod list_backend_jobs_output {
         /// <p>An array of jobs and their properties.</p>
         pub fn jobs(mut self, input: crate::model::BackendJobRespObj) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input);
-            self.jobs = Some(v);
-            self
+                            v.push(input);
+                            self.jobs = Some(v);
+                            self
         }
         /// <p>An array of jobs and their properties.</p>
-        pub fn set_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BackendJobRespObj>>,
-        ) -> Self {
-            self.jobs = input;
-            self
+        pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::BackendJobRespObj>>) -> Self {
+            self.jobs = input; self
         }
         /// <p>The token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -997,17 +990,20 @@ pub mod list_backend_jobs_output {
         }
         /// <p>The token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
         pub fn build(self) -> crate::output::ListBackendJobsOutput {
             crate::output::ListBackendJobsOutput {
-                jobs: self.jobs,
-                next_token: self.next_token,
+                jobs: self.jobs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBackendJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
@@ -1019,7 +1015,7 @@ impl ListBackendJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportBackendStorageOutput {
+pub struct ImportBackendStorageOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -1035,25 +1031,25 @@ pub struct ImportBackendStorageOutput {
 }
 impl ImportBackendStorageOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
 pub mod import_backend_storage_output {
-
+    
     /// A builder for [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1070,8 +1066,7 @@ pub mod import_backend_storage_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1079,12 +1074,8 @@ pub mod import_backend_storage_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1093,8 +1084,7 @@ pub mod import_backend_storage_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1103,19 +1093,24 @@ pub mod import_backend_storage_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
         pub fn build(self) -> crate::output::ImportBackendStorageOutput {
             crate::output::ImportBackendStorageOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                job_id: self.job_id,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportBackendStorageOutput {
     /// Creates a new builder-style object to manufacture [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
@@ -1127,7 +1122,7 @@ impl ImportBackendStorageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportBackendAuthOutput {
+pub struct ImportBackendAuthOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -1149,33 +1144,33 @@ pub struct ImportBackendAuthOutput {
 }
 impl ImportBackendAuthOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
 pub mod import_backend_auth_output {
-
+    
     /// A builder for [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1194,8 +1189,7 @@ pub mod import_backend_auth_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1203,12 +1197,8 @@ pub mod import_backend_auth_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1217,8 +1207,7 @@ pub mod import_backend_auth_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1227,8 +1216,7 @@ pub mod import_backend_auth_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1237,8 +1225,7 @@ pub mod import_backend_auth_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1247,21 +1234,28 @@ pub mod import_backend_auth_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
         pub fn build(self) -> crate::output::ImportBackendAuthOutput {
             crate::output::ImportBackendAuthOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportBackendAuthOutput {
     /// Creates a new builder-style object to manufacture [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
@@ -1273,7 +1267,7 @@ impl ImportBackendAuthOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTokenOutput {
+pub struct GetTokenOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -1289,25 +1283,25 @@ pub struct GetTokenOutput {
 }
 impl GetTokenOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
-    pub fn challenge_code(&self) -> std::option::Option<&str> {
+    pub fn challenge_code(&self) -> std::option::Option<& str> {
         self.challenge_code.as_deref()
     }
     /// <p>A unique ID provided when creating a new challenge token.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The expiry time for the one-time generated token code.</p>
-    pub fn ttl(&self) -> std::option::Option<&str> {
+    pub fn ttl(&self) -> std::option::Option<& str> {
         self.ttl.as_deref()
     }
 }
 /// See [`GetTokenOutput`](crate::output::GetTokenOutput).
 pub mod get_token_output {
-
+    
     /// A builder for [`GetTokenOutput`](crate::output::GetTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1324,8 +1318,7 @@ pub mod get_token_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
         pub fn challenge_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1333,12 +1326,8 @@ pub mod get_token_output {
             self
         }
         /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
-        pub fn set_challenge_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.challenge_code = input;
-            self
+        pub fn set_challenge_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.challenge_code = input; self
         }
         /// <p>A unique ID provided when creating a new challenge token.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1347,8 +1336,7 @@ pub mod get_token_output {
         }
         /// <p>A unique ID provided when creating a new challenge token.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>The expiry time for the one-time generated token code.</p>
         pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1357,19 +1345,24 @@ pub mod get_token_output {
         }
         /// <p>The expiry time for the one-time generated token code.</p>
         pub fn set_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
         /// Consumes the builder and constructs a [`GetTokenOutput`](crate::output::GetTokenOutput).
         pub fn build(self) -> crate::output::GetTokenOutput {
             crate::output::GetTokenOutput {
-                app_id: self.app_id,
-                challenge_code: self.challenge_code,
-                session_id: self.session_id,
-                ttl: self.ttl,
+                app_id: self.app_id
+                ,
+                challenge_code: self.challenge_code
+                ,
+                session_id: self.session_id
+                ,
+                ttl: self.ttl
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetTokenOutput`](crate::output::GetTokenOutput).
@@ -1381,7 +1374,7 @@ impl GetTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendStorageOutput {
+pub struct GetBackendStorageOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -1397,34 +1390,31 @@ pub struct GetBackendStorageOutput {
 }
 impl GetBackendStorageOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The resource configuration for the backend storage resource.</p>
-    pub fn resource_config(
-        &self,
-    ) -> std::option::Option<&crate::model::GetBackendStorageResourceConfig> {
+    pub fn resource_config(&self) -> std::option::Option<& crate::model::GetBackendStorageResourceConfig> {
         self.resource_config.as_ref()
     }
     /// <p>The name of the storage resource.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
 /// See [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
 pub mod get_backend_storage_output {
-
+    
     /// A builder for [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
-        pub(crate) resource_config:
-            std::option::Option<crate::model::GetBackendStorageResourceConfig>,
+        pub(crate) resource_config: std::option::Option<crate::model::GetBackendStorageResourceConfig>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1435,8 +1425,7 @@ pub mod get_backend_storage_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1444,28 +1433,17 @@ pub mod get_backend_storage_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The resource configuration for the backend storage resource.</p>
-        pub fn resource_config(
-            mut self,
-            input: crate::model::GetBackendStorageResourceConfig,
-        ) -> Self {
+        pub fn resource_config(mut self, input: crate::model::GetBackendStorageResourceConfig) -> Self {
             self.resource_config = Some(input);
             self
         }
         /// <p>The resource configuration for the backend storage resource.</p>
-        pub fn set_resource_config(
-            mut self,
-            input: std::option::Option<crate::model::GetBackendStorageResourceConfig>,
-        ) -> Self {
-            self.resource_config = input;
-            self
+        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::GetBackendStorageResourceConfig>) -> Self {
+            self.resource_config = input; self
         }
         /// <p>The name of the storage resource.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1473,23 +1451,25 @@ pub mod get_backend_storage_output {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
         /// Consumes the builder and constructs a [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
         pub fn build(self) -> crate::output::GetBackendStorageOutput {
             crate::output::GetBackendStorageOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                resource_config: self.resource_config,
-                resource_name: self.resource_name,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                resource_config: self.resource_config
+                ,
+                resource_name: self.resource_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBackendStorageOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
@@ -1501,7 +1481,7 @@ impl GetBackendStorageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendJobOutput {
+pub struct GetBackendJobOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -1529,41 +1509,41 @@ pub struct GetBackendJobOutput {
 }
 impl GetBackendJobOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The time when the job was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&str> {
+    pub fn create_time(&self) -> std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time when the job was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&str> {
+    pub fn update_time(&self) -> std::option::Option<& str> {
         self.update_time.as_deref()
     }
 }
 /// See [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
 pub mod get_backend_job_output {
-
+    
     /// A builder for [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1584,8 +1564,7 @@ pub mod get_backend_job_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1593,12 +1572,8 @@ pub mod get_backend_job_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The time when the job was created.</p>
         pub fn create_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1607,8 +1582,7 @@ pub mod get_backend_job_output {
         }
         /// <p>The time when the job was created.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1617,8 +1591,7 @@ pub mod get_backend_job_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1627,8 +1600,7 @@ pub mod get_backend_job_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1637,8 +1609,7 @@ pub mod get_backend_job_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1647,8 +1618,7 @@ pub mod get_backend_job_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time when the job was last updated.</p>
         pub fn update_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1657,23 +1627,32 @@ pub mod get_backend_job_output {
         }
         /// <p>The time when the job was last updated.</p>
         pub fn set_update_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_time = input;
-            self
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
         pub fn build(self) -> crate::output::GetBackendJobOutput {
             crate::output::GetBackendJobOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                create_time: self.create_time,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
-                update_time: self.update_time,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                create_time: self.create_time
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBackendJobOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
@@ -1685,7 +1664,7 @@ impl GetBackendJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendAuthOutput {
+pub struct GetBackendAuthOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -1704,39 +1683,36 @@ pub struct GetBackendAuthOutput {
 }
 impl GetBackendAuthOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The resource configuration for authorization requests to the backend of your Amplify project.</p>
-    pub fn resource_config(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateBackendAuthResourceConfig> {
+    pub fn resource_config(&self) -> std::option::Option<& crate::model::CreateBackendAuthResourceConfig> {
         self.resource_config.as_ref()
     }
     /// <p>The name of this resource.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
 /// See [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
 pub mod get_backend_auth_output {
-
+    
     /// A builder for [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<std::string::String>,
-        pub(crate) resource_config:
-            std::option::Option<crate::model::CreateBackendAuthResourceConfig>,
+        pub(crate) resource_config: std::option::Option<crate::model::CreateBackendAuthResourceConfig>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1747,8 +1723,7 @@ pub mod get_backend_auth_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1756,12 +1731,8 @@ pub mod get_backend_auth_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1770,24 +1741,16 @@ pub mod get_backend_auth_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The resource configuration for authorization requests to the backend of your Amplify project.</p>
-        pub fn resource_config(
-            mut self,
-            input: crate::model::CreateBackendAuthResourceConfig,
-        ) -> Self {
+        pub fn resource_config(mut self, input: crate::model::CreateBackendAuthResourceConfig) -> Self {
             self.resource_config = Some(input);
             self
         }
         /// <p>The resource configuration for authorization requests to the backend of your Amplify project.</p>
-        pub fn set_resource_config(
-            mut self,
-            input: std::option::Option<crate::model::CreateBackendAuthResourceConfig>,
-        ) -> Self {
-            self.resource_config = input;
-            self
+        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::CreateBackendAuthResourceConfig>) -> Self {
+            self.resource_config = input; self
         }
         /// <p>The name of this resource.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1795,24 +1758,27 @@ pub mod get_backend_auth_output {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
         /// Consumes the builder and constructs a [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
         pub fn build(self) -> crate::output::GetBackendAuthOutput {
             crate::output::GetBackendAuthOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                resource_config: self.resource_config,
-                resource_name: self.resource_name,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                resource_config: self.resource_config
+                ,
+                resource_name: self.resource_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBackendAuthOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
@@ -1824,7 +1790,7 @@ impl GetBackendAuthOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendApiModelsOutput {
+pub struct GetBackendApiModelsOutput  {
     /// <p>Stringified JSON of the datastore model.</p>
     #[doc(hidden)]
     pub models: std::option::Option<std::string::String>,
@@ -1837,21 +1803,21 @@ pub struct GetBackendApiModelsOutput {
 }
 impl GetBackendApiModelsOutput {
     /// <p>Stringified JSON of the datastore model.</p>
-    pub fn models(&self) -> std::option::Option<&str> {
+    pub fn models(&self) -> std::option::Option<& str> {
         self.models.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
-    pub fn model_introspection_schema(&self) -> std::option::Option<&str> {
+    pub fn model_introspection_schema(&self) -> std::option::Option<& str> {
         self.model_introspection_schema.as_deref()
     }
 }
 /// See [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
 pub mod get_backend_api_models_output {
-
+    
     /// A builder for [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1867,8 +1833,7 @@ pub mod get_backend_api_models_output {
         }
         /// <p>Stringified JSON of the datastore model.</p>
         pub fn set_models(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.models = input;
-            self
+            self.models = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -1877,8 +1842,7 @@ pub mod get_backend_api_models_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
         pub fn model_introspection_schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1886,22 +1850,23 @@ pub mod get_backend_api_models_output {
             self
         }
         /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
-        pub fn set_model_introspection_schema(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_introspection_schema = input;
-            self
+        pub fn set_model_introspection_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_introspection_schema = input; self
         }
         /// Consumes the builder and constructs a [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
         pub fn build(self) -> crate::output::GetBackendApiModelsOutput {
             crate::output::GetBackendApiModelsOutput {
-                models: self.models,
-                status: self.status,
-                model_introspection_schema: self.model_introspection_schema,
+                models: self.models
+                ,
+                status: self.status
+                ,
+                model_introspection_schema: self.model_introspection_schema
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBackendApiModelsOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
@@ -1913,7 +1878,7 @@ impl GetBackendApiModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendApiOutput {
+pub struct GetBackendApiOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -1932,29 +1897,29 @@ pub struct GetBackendApiOutput {
 }
 impl GetBackendApiOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The resource configuration for this response object.</p>
-    pub fn resource_config(&self) -> std::option::Option<&crate::model::BackendApiResourceConfig> {
+    pub fn resource_config(&self) -> std::option::Option<& crate::model::BackendApiResourceConfig> {
         self.resource_config.as_ref()
     }
     /// <p>The name of this resource.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
 /// See [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
 pub mod get_backend_api_output {
-
+    
     /// A builder for [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1972,8 +1937,7 @@ pub mod get_backend_api_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1981,12 +1945,8 @@ pub mod get_backend_api_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1995,8 +1955,7 @@ pub mod get_backend_api_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The resource configuration for this response object.</p>
         pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
@@ -2004,12 +1963,8 @@ pub mod get_backend_api_output {
             self
         }
         /// <p>The resource configuration for this response object.</p>
-        pub fn set_resource_config(
-            mut self,
-            input: std::option::Option<crate::model::BackendApiResourceConfig>,
-        ) -> Self {
-            self.resource_config = input;
-            self
+        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::BackendApiResourceConfig>) -> Self {
+            self.resource_config = input; self
         }
         /// <p>The name of this resource.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2017,24 +1972,27 @@ pub mod get_backend_api_output {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
         /// Consumes the builder and constructs a [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
         pub fn build(self) -> crate::output::GetBackendApiOutput {
             crate::output::GetBackendApiOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                resource_config: self.resource_config,
-                resource_name: self.resource_name,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                resource_config: self.resource_config
+                ,
+                resource_name: self.resource_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBackendApiOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
@@ -2046,7 +2004,7 @@ impl GetBackendApiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendOutput {
+pub struct GetBackendOutput  {
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
     #[doc(hidden)]
     pub amplify_feature_flags: std::option::Option<std::string::String>,
@@ -2071,37 +2029,37 @@ pub struct GetBackendOutput {
 }
 impl GetBackendOutput {
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
-    pub fn amplify_feature_flags(&self) -> std::option::Option<&str> {
+    pub fn amplify_feature_flags(&self) -> std::option::Option<& str> {
         self.amplify_feature_flags.as_deref()
     }
     /// <p>A stringified version of the current configs for your Amplify project.</p>
-    pub fn amplify_meta_config(&self) -> std::option::Option<&str> {
+    pub fn amplify_meta_config(&self) -> std::option::Option<& str> {
         self.amplify_meta_config.as_deref()
     }
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the app.</p>
-    pub fn app_name(&self) -> std::option::Option<&str> {
+    pub fn app_name(&self) -> std::option::Option<& str> {
         self.app_name.as_deref()
     }
     /// <p>A list of backend environments in an array.</p>
-    pub fn backend_environment_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn backend_environment_list(&self) -> std::option::Option<& [std::string::String]> {
         self.backend_environment_list.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request failed, this is the returned error.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
 }
 /// See [`GetBackendOutput`](crate::output::GetBackendOutput).
 pub mod get_backend_output {
-
+    
     /// A builder for [`GetBackendOutput`](crate::output::GetBackendOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2109,8 +2067,7 @@ pub mod get_backend_output {
         pub(crate) amplify_meta_config: std::option::Option<std::string::String>,
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) app_name: std::option::Option<std::string::String>,
-        pub(crate) backend_environment_list:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) backend_environment_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<std::string::String>,
     }
@@ -2121,12 +2078,8 @@ pub mod get_backend_output {
             self
         }
         /// <p>A stringified version of the cli.json file for your Amplify project.</p>
-        pub fn set_amplify_feature_flags(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amplify_feature_flags = input;
-            self
+        pub fn set_amplify_feature_flags(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amplify_feature_flags = input; self
         }
         /// <p>A stringified version of the current configs for your Amplify project.</p>
         pub fn amplify_meta_config(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2134,12 +2087,8 @@ pub mod get_backend_output {
             self
         }
         /// <p>A stringified version of the current configs for your Amplify project.</p>
-        pub fn set_amplify_meta_config(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amplify_meta_config = input;
-            self
+        pub fn set_amplify_meta_config(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amplify_meta_config = input; self
         }
         /// <p>The app ID.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2148,8 +2097,7 @@ pub mod get_backend_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the app.</p>
         pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2158,8 +2106,7 @@ pub mod get_backend_output {
         }
         /// <p>The name of the app.</p>
         pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_name = input;
-            self
+            self.app_name = input; self
         }
         /// Appends an item to `backend_environment_list`.
         ///
@@ -2168,17 +2115,13 @@ pub mod get_backend_output {
         /// <p>A list of backend environments in an array.</p>
         pub fn backend_environment_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.backend_environment_list.unwrap_or_default();
-            v.push(input.into());
-            self.backend_environment_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.backend_environment_list = Some(v);
+                            self
         }
         /// <p>A list of backend environments in an array.</p>
-        pub fn set_backend_environment_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.backend_environment_list = input;
-            self
+        pub fn set_backend_environment_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.backend_environment_list = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2186,12 +2129,8 @@ pub mod get_backend_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request failed, this is the returned error.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2200,22 +2139,30 @@ pub mod get_backend_output {
         }
         /// <p>If the request failed, this is the returned error.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`GetBackendOutput`](crate::output::GetBackendOutput).
         pub fn build(self) -> crate::output::GetBackendOutput {
             crate::output::GetBackendOutput {
-                amplify_feature_flags: self.amplify_feature_flags,
-                amplify_meta_config: self.amplify_meta_config,
-                app_id: self.app_id,
-                app_name: self.app_name,
-                backend_environment_list: self.backend_environment_list,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
+                amplify_feature_flags: self.amplify_feature_flags
+                ,
+                amplify_meta_config: self.amplify_meta_config
+                ,
+                app_id: self.app_id
+                ,
+                app_name: self.app_name
+                ,
+                backend_environment_list: self.backend_environment_list
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBackendOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendOutput`](crate::output::GetBackendOutput).
@@ -2227,7 +2174,7 @@ impl GetBackendOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateBackendApiModelsOutput {
+pub struct GenerateBackendApiModelsOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -2249,33 +2196,33 @@ pub struct GenerateBackendApiModelsOutput {
 }
 impl GenerateBackendApiModelsOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
 pub mod generate_backend_api_models_output {
-
+    
     /// A builder for [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2294,8 +2241,7 @@ pub mod generate_backend_api_models_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2303,12 +2249,8 @@ pub mod generate_backend_api_models_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2317,8 +2259,7 @@ pub mod generate_backend_api_models_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2327,8 +2268,7 @@ pub mod generate_backend_api_models_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2337,8 +2277,7 @@ pub mod generate_backend_api_models_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2347,21 +2286,28 @@ pub mod generate_backend_api_models_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
         pub fn build(self) -> crate::output::GenerateBackendApiModelsOutput {
             crate::output::GenerateBackendApiModelsOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GenerateBackendApiModelsOutput {
     /// Creates a new builder-style object to manufacture [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
@@ -2373,7 +2319,7 @@ impl GenerateBackendApiModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTokenOutput {
+pub struct DeleteTokenOutput  {
     /// <p>Indicates whether the request succeeded or failed.</p>
     #[doc(hidden)]
     pub is_success: bool,
@@ -2386,7 +2332,7 @@ impl DeleteTokenOutput {
 }
 /// See [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
 pub mod delete_token_output {
-
+    
     /// A builder for [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2400,16 +2346,19 @@ pub mod delete_token_output {
         }
         /// <p>Indicates whether the request succeeded or failed.</p>
         pub fn set_is_success(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_success = input;
-            self
+            self.is_success = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
         pub fn build(self) -> crate::output::DeleteTokenOutput {
             crate::output::DeleteTokenOutput {
-                is_success: self.is_success.unwrap_or_default(),
+                is_success: self.is_success
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteTokenOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
@@ -2421,7 +2370,7 @@ impl DeleteTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackendStorageOutput {
+pub struct DeleteBackendStorageOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -2437,25 +2386,25 @@ pub struct DeleteBackendStorageOutput {
 }
 impl DeleteBackendStorageOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
 pub mod delete_backend_storage_output {
-
+    
     /// A builder for [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2472,8 +2421,7 @@ pub mod delete_backend_storage_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2481,12 +2429,8 @@ pub mod delete_backend_storage_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2495,8 +2439,7 @@ pub mod delete_backend_storage_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2505,19 +2448,24 @@ pub mod delete_backend_storage_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
         pub fn build(self) -> crate::output::DeleteBackendStorageOutput {
             crate::output::DeleteBackendStorageOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                job_id: self.job_id,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBackendStorageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
@@ -2529,7 +2477,7 @@ impl DeleteBackendStorageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackendAuthOutput {
+pub struct DeleteBackendAuthOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -2551,33 +2499,33 @@ pub struct DeleteBackendAuthOutput {
 }
 impl DeleteBackendAuthOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
 pub mod delete_backend_auth_output {
-
+    
     /// A builder for [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2596,8 +2544,7 @@ pub mod delete_backend_auth_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2605,12 +2552,8 @@ pub mod delete_backend_auth_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2619,8 +2562,7 @@ pub mod delete_backend_auth_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2629,8 +2571,7 @@ pub mod delete_backend_auth_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2639,8 +2580,7 @@ pub mod delete_backend_auth_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2649,21 +2589,28 @@ pub mod delete_backend_auth_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
         pub fn build(self) -> crate::output::DeleteBackendAuthOutput {
             crate::output::DeleteBackendAuthOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBackendAuthOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
@@ -2675,7 +2622,7 @@ impl DeleteBackendAuthOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackendApiOutput {
+pub struct DeleteBackendApiOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -2697,33 +2644,33 @@ pub struct DeleteBackendApiOutput {
 }
 impl DeleteBackendApiOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
 pub mod delete_backend_api_output {
-
+    
     /// A builder for [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2742,8 +2689,7 @@ pub mod delete_backend_api_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2751,12 +2697,8 @@ pub mod delete_backend_api_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2765,8 +2707,7 @@ pub mod delete_backend_api_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2775,8 +2716,7 @@ pub mod delete_backend_api_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2785,8 +2725,7 @@ pub mod delete_backend_api_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2795,21 +2734,28 @@ pub mod delete_backend_api_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
         pub fn build(self) -> crate::output::DeleteBackendApiOutput {
             crate::output::DeleteBackendApiOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBackendApiOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
@@ -2821,7 +2767,7 @@ impl DeleteBackendApiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackendOutput {
+pub struct DeleteBackendOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -2843,33 +2789,33 @@ pub struct DeleteBackendOutput {
 }
 impl DeleteBackendOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
 pub mod delete_backend_output {
-
+    
     /// A builder for [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2888,8 +2834,7 @@ pub mod delete_backend_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2897,12 +2842,8 @@ pub mod delete_backend_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2911,8 +2852,7 @@ pub mod delete_backend_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2921,8 +2861,7 @@ pub mod delete_backend_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2931,8 +2870,7 @@ pub mod delete_backend_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2941,21 +2879,28 @@ pub mod delete_backend_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
         pub fn build(self) -> crate::output::DeleteBackendOutput {
             crate::output::DeleteBackendOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBackendOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
@@ -2967,7 +2912,7 @@ impl DeleteBackendOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTokenOutput {
+pub struct CreateTokenOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -2983,25 +2928,25 @@ pub struct CreateTokenOutput {
 }
 impl CreateTokenOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
-    pub fn challenge_code(&self) -> std::option::Option<&str> {
+    pub fn challenge_code(&self) -> std::option::Option<& str> {
         self.challenge_code.as_deref()
     }
     /// <p>A unique ID provided when creating a new challenge token.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The expiry time for the one-time generated token code.</p>
-    pub fn ttl(&self) -> std::option::Option<&str> {
+    pub fn ttl(&self) -> std::option::Option<& str> {
         self.ttl.as_deref()
     }
 }
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
-
+    
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3018,8 +2963,7 @@ pub mod create_token_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
         pub fn challenge_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3027,12 +2971,8 @@ pub mod create_token_output {
             self
         }
         /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
-        pub fn set_challenge_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.challenge_code = input;
-            self
+        pub fn set_challenge_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.challenge_code = input; self
         }
         /// <p>A unique ID provided when creating a new challenge token.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3041,8 +2981,7 @@ pub mod create_token_output {
         }
         /// <p>A unique ID provided when creating a new challenge token.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>The expiry time for the one-time generated token code.</p>
         pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3051,19 +2990,24 @@ pub mod create_token_output {
         }
         /// <p>The expiry time for the one-time generated token code.</p>
         pub fn set_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
         /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::output::CreateTokenOutput).
         pub fn build(self) -> crate::output::CreateTokenOutput {
             crate::output::CreateTokenOutput {
-                app_id: self.app_id,
-                challenge_code: self.challenge_code,
-                session_id: self.session_id,
-                ttl: self.ttl,
+                app_id: self.app_id
+                ,
+                challenge_code: self.challenge_code
+                ,
+                session_id: self.session_id
+                ,
+                ttl: self.ttl
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
@@ -3075,7 +3019,7 @@ impl CreateTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendStorageOutput {
+pub struct CreateBackendStorageOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -3091,25 +3035,25 @@ pub struct CreateBackendStorageOutput {
 }
 impl CreateBackendStorageOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
 pub mod create_backend_storage_output {
-
+    
     /// A builder for [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3126,8 +3070,7 @@ pub mod create_backend_storage_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3135,12 +3078,8 @@ pub mod create_backend_storage_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3149,8 +3088,7 @@ pub mod create_backend_storage_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3159,19 +3097,24 @@ pub mod create_backend_storage_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
         pub fn build(self) -> crate::output::CreateBackendStorageOutput {
             crate::output::CreateBackendStorageOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                job_id: self.job_id,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendStorageOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
@@ -3183,7 +3126,7 @@ impl CreateBackendStorageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendConfigOutput {
+pub struct CreateBackendConfigOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -3199,25 +3142,25 @@ pub struct CreateBackendConfigOutput {
 }
 impl CreateBackendConfigOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
 pub mod create_backend_config_output {
-
+    
     /// A builder for [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3234,8 +3177,7 @@ pub mod create_backend_config_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3243,12 +3185,8 @@ pub mod create_backend_config_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3257,8 +3195,7 @@ pub mod create_backend_config_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3267,19 +3204,24 @@ pub mod create_backend_config_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
         pub fn build(self) -> crate::output::CreateBackendConfigOutput {
             crate::output::CreateBackendConfigOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                job_id: self.job_id,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
@@ -3291,7 +3233,7 @@ impl CreateBackendConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthOutput {
+pub struct CreateBackendAuthOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -3313,33 +3255,33 @@ pub struct CreateBackendAuthOutput {
 }
 impl CreateBackendAuthOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
 pub mod create_backend_auth_output {
-
+    
     /// A builder for [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3358,8 +3300,7 @@ pub mod create_backend_auth_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3367,12 +3308,8 @@ pub mod create_backend_auth_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3381,8 +3318,7 @@ pub mod create_backend_auth_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3391,8 +3327,7 @@ pub mod create_backend_auth_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3401,8 +3336,7 @@ pub mod create_backend_auth_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3411,21 +3345,28 @@ pub mod create_backend_auth_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
         pub fn build(self) -> crate::output::CreateBackendAuthOutput {
             crate::output::CreateBackendAuthOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendAuthOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
@@ -3437,7 +3378,7 @@ impl CreateBackendAuthOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendApiOutput {
+pub struct CreateBackendApiOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -3459,33 +3400,33 @@ pub struct CreateBackendApiOutput {
 }
 impl CreateBackendApiOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
 pub mod create_backend_api_output {
-
+    
     /// A builder for [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3504,8 +3445,7 @@ pub mod create_backend_api_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3513,12 +3453,8 @@ pub mod create_backend_api_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3527,8 +3463,7 @@ pub mod create_backend_api_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3537,8 +3472,7 @@ pub mod create_backend_api_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3547,8 +3481,7 @@ pub mod create_backend_api_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3557,21 +3490,28 @@ pub mod create_backend_api_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
         pub fn build(self) -> crate::output::CreateBackendApiOutput {
             crate::output::CreateBackendApiOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendApiOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
@@ -3583,7 +3523,7 @@ impl CreateBackendApiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendOutput {
+pub struct CreateBackendOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -3605,33 +3545,33 @@ pub struct CreateBackendOutput {
 }
 impl CreateBackendOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`CreateBackendOutput`](crate::output::CreateBackendOutput).
 pub mod create_backend_output {
-
+    
     /// A builder for [`CreateBackendOutput`](crate::output::CreateBackendOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3650,8 +3590,7 @@ pub mod create_backend_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3659,12 +3598,8 @@ pub mod create_backend_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3673,8 +3608,7 @@ pub mod create_backend_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3683,8 +3617,7 @@ pub mod create_backend_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3693,8 +3626,7 @@ pub mod create_backend_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3703,21 +3635,28 @@ pub mod create_backend_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendOutput`](crate::output::CreateBackendOutput).
         pub fn build(self) -> crate::output::CreateBackendOutput {
             crate::output::CreateBackendOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackendOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendOutput`](crate::output::CreateBackendOutput).
@@ -3729,7 +3668,7 @@ impl CreateBackendOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloneBackendOutput {
+pub struct CloneBackendOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -3751,33 +3690,33 @@ pub struct CloneBackendOutput {
 }
 impl CloneBackendOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`CloneBackendOutput`](crate::output::CloneBackendOutput).
 pub mod clone_backend_output {
-
+    
     /// A builder for [`CloneBackendOutput`](crate::output::CloneBackendOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3796,8 +3735,7 @@ pub mod clone_backend_output {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment.</p>
         pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3805,12 +3743,8 @@ pub mod clone_backend_output {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_name = input;
-            self
+        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_name = input; self
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3819,8 +3753,7 @@ pub mod clone_backend_output {
         }
         /// <p>If the request fails, this error is returned.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The ID for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3829,8 +3762,7 @@ pub mod clone_backend_output {
         }
         /// <p>The ID for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The name of the operation.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3839,8 +3771,7 @@ pub mod clone_backend_output {
         }
         /// <p>The name of the operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3849,21 +3780,28 @@ pub mod clone_backend_output {
         }
         /// <p>The current status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CloneBackendOutput`](crate::output::CloneBackendOutput).
         pub fn build(self) -> crate::output::CloneBackendOutput {
             crate::output::CloneBackendOutput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                error: self.error,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                error: self.error
+                ,
+                job_id: self.job_id
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CloneBackendOutput {
     /// Creates a new builder-style object to manufacture [`CloneBackendOutput`](crate::output::CloneBackendOutput).
@@ -3871,3 +3809,4 @@ impl CloneBackendOutput {
         crate::output::clone_backend_output::Builder::default()
     }
 }
+

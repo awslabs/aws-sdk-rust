@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`CancelImageCreationInput`](crate::input::CancelImageCreationInput).
 pub mod cancel_image_creation_input {
-
+    
     /// A builder for [`CancelImageCreationInput`](crate::input::CancelImageCreationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,12 +17,8 @@ pub mod cancel_image_creation_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
-        pub fn set_image_build_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_build_version_arn = input;
-            self
+        pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_build_version_arn = input; self
         }
         /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -31,144 +27,93 @@ pub mod cancel_image_creation_input {
         }
         /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CancelImageCreationInput`](crate::input::CancelImageCreationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CancelImageCreationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CancelImageCreationInput {
-                image_build_version_arn: self.image_build_version_arn,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CancelImageCreationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CancelImageCreationInput {
+                    image_build_version_arn: self.image_build_version_arn
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CancelImageCreationInput {
     /// Consumes the builder and constructs an Operation<[`CancelImageCreation`](crate::operation::CancelImageCreation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CancelImageCreation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelImageCreation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CancelImageCreationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CancelImageCreationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CancelImageCreation").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CancelImageCreationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CancelImageCreationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_image_creation(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_cancel_image_creation(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CancelImageCreation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CancelImageCreation",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelImageCreation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelImageCreation", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -180,7 +125,7 @@ impl CancelImageCreationInput {
 
 /// See [`CreateComponentInput`](crate::input::CreateComponentInput).
 pub mod create_component_input {
-
+    
     /// A builder for [`CreateComponentInput`](crate::input::CreateComponentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -193,9 +138,7 @@ pub mod create_component_input {
         pub(crate) data: std::option::Option<std::string::String>,
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -206,10 +149,9 @@ pub mod create_component_input {
         }
         /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -221,15 +163,15 @@ pub mod create_component_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -241,16 +183,12 @@ pub mod create_component_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
         /// </note>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>Describes the contents of the component.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -259,8 +197,7 @@ pub mod create_component_input {
         }
         /// <p>Describes the contents of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -268,12 +205,8 @@ pub mod create_component_input {
             self
         }
         /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
-        pub fn set_change_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_description = input;
-            self
+        pub fn set_change_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_description = input; self
         }
         /// <p>The operating system platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -282,8 +215,7 @@ pub mod create_component_input {
         }
         /// <p>The operating system platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// Appends an item to `supported_os_versions`.
         ///
@@ -292,17 +224,13 @@ pub mod create_component_input {
         /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
-            v.push(input.into());
-            self.supported_os_versions = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_os_versions = Some(v);
+                            self
         }
         /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-        pub fn set_supported_os_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_os_versions = input;
-            self
+        pub fn set_supported_os_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_os_versions = input; self
         }
         /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -311,20 +239,18 @@ pub mod create_component_input {
         }
         /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
-        /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
+        /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p> 
         /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri = Some(input.into());
             self
         }
-        /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
+        /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p> 
         /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The ID of the KMS key that is used to encrypt this component.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -333,33 +259,22 @@ pub mod create_component_input {
         }
         /// <p>The ID of the KMS key that is used to encrypt this component.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that apply to the component.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags that apply to the component.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The idempotency token of the component.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -368,151 +283,111 @@ pub mod create_component_input {
         }
         /// <p>The idempotency token of the component.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateComponentInput`](crate::input::CreateComponentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateComponentInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateComponentInput {
-                name: self.name,
-                semantic_version: self.semantic_version,
-                description: self.description,
-                change_description: self.change_description,
-                platform: self.platform,
-                supported_os_versions: self.supported_os_versions,
-                data: self.data,
-                uri: self.uri,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateComponentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateComponentInput {
+                    name: self.name
+                    ,
+                    semantic_version: self.semantic_version
+                    ,
+                    description: self.description
+                    ,
+                    change_description: self.change_description
+                    ,
+                    platform: self.platform
+                    ,
+                    supported_os_versions: self.supported_os_versions
+                    ,
+                    data: self.data
+                    ,
+                    uri: self.uri
+                    ,
+                    kms_key_id: self.kms_key_id
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponent`](crate::operation::CreateComponent)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateComponent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateComponent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateComponentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateComponentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CreateComponent").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateComponentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateComponentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_component(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_component(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateComponent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateComponent",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateComponent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateComponent", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -524,7 +399,7 @@ impl CreateComponentInput {
 
 /// See [`CreateContainerRecipeInput`](crate::input::CreateContainerRecipeInput).
 pub mod create_container_recipe_input {
-
+    
     /// A builder for [`CreateContainerRecipeInput`](crate::input::CreateContainerRecipeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -532,17 +407,14 @@ pub mod create_container_recipe_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) semantic_version: std::option::Option<std::string::String>,
-        pub(crate) components:
-            std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
+        pub(crate) components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
         pub(crate) instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
         pub(crate) dockerfile_template_data: std::option::Option<std::string::String>,
         pub(crate) dockerfile_template_uri: std::option::Option<std::string::String>,
         pub(crate) platform_override: std::option::Option<crate::model::Platform>,
         pub(crate) image_os_version_override: std::option::Option<std::string::String>,
         pub(crate) parent_image: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) working_directory: std::option::Option<std::string::String>,
         pub(crate) target_repository: std::option::Option<crate::model::TargetContainerRepository>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -555,12 +427,8 @@ pub mod create_container_recipe_input {
             self
         }
         /// <p>The type of container to create.</p>
-        pub fn set_container_type(
-            mut self,
-            input: std::option::Option<crate::model::ContainerType>,
-        ) -> Self {
-            self.container_type = input;
-            self
+        pub fn set_container_type(mut self, input: std::option::Option<crate::model::ContainerType>) -> Self {
+            self.container_type = input; self
         }
         /// <p>The name of the container recipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -569,8 +437,7 @@ pub mod create_container_recipe_input {
         }
         /// <p>The name of the container recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the container recipe.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -579,10 +446,9 @@ pub mod create_container_recipe_input {
         }
         /// <p>The description of the container recipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -594,15 +460,15 @@ pub mod create_container_recipe_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -614,16 +480,12 @@ pub mod create_container_recipe_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
         /// </note>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// Appends an item to `components`.
         ///
@@ -632,33 +494,22 @@ pub mod create_container_recipe_input {
         /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input);
-            self.components = Some(v);
-            self
+                            v.push(input);
+                            self.components = Some(v);
+                            self
         }
         /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-        pub fn set_components(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
-        ) -> Self {
-            self.components = input;
-            self
+        pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>) -> Self {
+            self.components = input; self
         }
         /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-        pub fn instance_configuration(
-            mut self,
-            input: crate::model::InstanceConfiguration,
-        ) -> Self {
+        pub fn instance_configuration(mut self, input: crate::model::InstanceConfiguration) -> Self {
             self.instance_configuration = Some(input);
             self
         }
         /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-        pub fn set_instance_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InstanceConfiguration>,
-        ) -> Self {
-            self.instance_configuration = input;
-            self
+        pub fn set_instance_configuration(mut self, input: std::option::Option<crate::model::InstanceConfiguration>) -> Self {
+            self.instance_configuration = input; self
         }
         /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
         pub fn dockerfile_template_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -666,12 +517,8 @@ pub mod create_container_recipe_input {
             self
         }
         /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-        pub fn set_dockerfile_template_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dockerfile_template_data = input;
-            self
+        pub fn set_dockerfile_template_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dockerfile_template_data = input; self
         }
         /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
         pub fn dockerfile_template_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -679,12 +526,8 @@ pub mod create_container_recipe_input {
             self
         }
         /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-        pub fn set_dockerfile_template_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dockerfile_template_uri = input;
-            self
+        pub fn set_dockerfile_template_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dockerfile_template_uri = input; self
         }
         /// <p>Specifies the operating system platform when you use a custom base image.</p>
         pub fn platform_override(mut self, input: crate::model::Platform) -> Self {
@@ -692,12 +535,8 @@ pub mod create_container_recipe_input {
             self
         }
         /// <p>Specifies the operating system platform when you use a custom base image.</p>
-        pub fn set_platform_override(
-            mut self,
-            input: std::option::Option<crate::model::Platform>,
-        ) -> Self {
-            self.platform_override = input;
-            self
+        pub fn set_platform_override(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
+            self.platform_override = input; self
         }
         /// <p>Specifies the operating system version for the base image.</p>
         pub fn image_os_version_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -705,12 +544,8 @@ pub mod create_container_recipe_input {
             self
         }
         /// <p>Specifies the operating system version for the base image.</p>
-        pub fn set_image_os_version_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_os_version_override = input;
-            self
+        pub fn set_image_os_version_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_os_version_override = input; self
         }
         /// <p>The base image for the container recipe.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -719,33 +554,22 @@ pub mod create_container_recipe_input {
         }
         /// <p>The base image for the container recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_image = input;
-            self
+            self.parent_image = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags that are attached to the container recipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags that are attached to the container recipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The working directory for use during build and test workflows.</p>
         pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -753,12 +577,8 @@ pub mod create_container_recipe_input {
             self
         }
         /// <p>The working directory for use during build and test workflows.</p>
-        pub fn set_working_directory(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.working_directory = input;
-            self
+        pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.working_directory = input; self
         }
         /// <p>The destination repository for the container image.</p>
         pub fn target_repository(mut self, input: crate::model::TargetContainerRepository) -> Self {
@@ -766,12 +586,8 @@ pub mod create_container_recipe_input {
             self
         }
         /// <p>The destination repository for the container image.</p>
-        pub fn set_target_repository(
-            mut self,
-            input: std::option::Option<crate::model::TargetContainerRepository>,
-        ) -> Self {
-            self.target_repository = input;
-            self
+        pub fn set_target_repository(mut self, input: std::option::Option<crate::model::TargetContainerRepository>) -> Self {
+            self.target_repository = input; self
         }
         /// <p>Identifies which KMS key is used to encrypt the container image.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -780,8 +596,7 @@ pub mod create_container_recipe_input {
         }
         /// <p>Identifies which KMS key is used to encrypt the container image.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The client token used to make this request idempotent.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -790,160 +605,121 @@ pub mod create_container_recipe_input {
         }
         /// <p>The client token used to make this request idempotent.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateContainerRecipeInput`](crate::input::CreateContainerRecipeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateContainerRecipeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateContainerRecipeInput {
-                container_type: self.container_type,
-                name: self.name,
-                description: self.description,
-                semantic_version: self.semantic_version,
-                components: self.components,
-                instance_configuration: self.instance_configuration,
-                dockerfile_template_data: self.dockerfile_template_data,
-                dockerfile_template_uri: self.dockerfile_template_uri,
-                platform_override: self.platform_override,
-                image_os_version_override: self.image_os_version_override,
-                parent_image: self.parent_image,
-                tags: self.tags,
-                working_directory: self.working_directory,
-                target_repository: self.target_repository,
-                kms_key_id: self.kms_key_id,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateContainerRecipeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateContainerRecipeInput {
+                    container_type: self.container_type
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    semantic_version: self.semantic_version
+                    ,
+                    components: self.components
+                    ,
+                    instance_configuration: self.instance_configuration
+                    ,
+                    dockerfile_template_data: self.dockerfile_template_data
+                    ,
+                    dockerfile_template_uri: self.dockerfile_template_uri
+                    ,
+                    platform_override: self.platform_override
+                    ,
+                    image_os_version_override: self.image_os_version_override
+                    ,
+                    parent_image: self.parent_image
+                    ,
+                    tags: self.tags
+                    ,
+                    working_directory: self.working_directory
+                    ,
+                    target_repository: self.target_repository
+                    ,
+                    kms_key_id: self.kms_key_id
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateContainerRecipe`](crate::operation::CreateContainerRecipe)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateContainerRecipe,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateContainerRecipe, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateContainerRecipeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateContainerRecipeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CreateContainerRecipe").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateContainerRecipeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateContainerRecipeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_container_recipe(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_container_recipe(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateContainerRecipe::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateContainerRecipe",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateContainerRecipe::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateContainerRecipe", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -955,16 +731,14 @@ impl CreateContainerRecipeInput {
 
 /// See [`CreateDistributionConfigurationInput`](crate::input::CreateDistributionConfigurationInput).
 pub mod create_distribution_configuration_input {
-
+    
     /// A builder for [`CreateDistributionConfigurationInput`](crate::input::CreateDistributionConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) distributions: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -975,8 +749,7 @@ pub mod create_distribution_configuration_input {
         }
         /// <p> The name of the distribution configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The description of the distribution configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -985,8 +758,7 @@ pub mod create_distribution_configuration_input {
         }
         /// <p> The description of the distribution configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `distributions`.
         ///
@@ -995,42 +767,28 @@ pub mod create_distribution_configuration_input {
         /// <p> The distributions of the distribution configuration.</p>
         pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input);
-            self.distributions = Some(v);
-            self
+                            v.push(input);
+                            self.distributions = Some(v);
+                            self
         }
         /// <p> The distributions of the distribution configuration.</p>
-        pub fn set_distributions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
-        ) -> Self {
-            self.distributions = input;
-            self
+        pub fn set_distributions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Distribution>>) -> Self {
+            self.distributions = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags of the distribution configuration.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags of the distribution configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> The idempotency token of the distribution configuration.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1039,90 +797,64 @@ pub mod create_distribution_configuration_input {
         }
         /// <p> The idempotency token of the distribution configuration.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateDistributionConfigurationInput`](crate::input::CreateDistributionConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateDistributionConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateDistributionConfigurationInput {
-                name: self.name,
-                description: self.description,
-                distributions: self.distributions,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateDistributionConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateDistributionConfigurationInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    distributions: self.distributions
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistributionConfiguration`](crate::operation::CreateDistributionConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDistributionConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDistributionConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDistributionConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/CreateDistributionConfiguration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::CreateDistributionConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/CreateDistributionConfiguration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateDistributionConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateDistributionConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1131,56 +863,33 @@ impl CreateDistributionConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_create_distribution_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDistributionConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDistributionConfiguration",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDistributionConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDistributionConfiguration", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1192,7 +901,7 @@ impl CreateDistributionConfigurationInput {
 
 /// See [`CreateImageInput`](crate::input::CreateImageInput).
 pub mod create_image_input {
-
+    
     /// A builder for [`CreateImageInput`](crate::input::CreateImageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1200,12 +909,9 @@ pub mod create_image_input {
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
-        pub(crate) image_tests_configuration:
-            std::option::Option<crate::model::ImageTestsConfiguration>,
+        pub(crate) image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
         pub(crate) enhanced_image_metadata_enabled: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1215,12 +921,8 @@ pub mod create_image_input {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
-        pub fn set_image_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_recipe_arn = input;
-            self
+        pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_recipe_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
         pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1228,60 +930,35 @@ pub mod create_image_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
-        pub fn set_container_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_recipe_arn = input;
-            self
+        pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_recipe_arn = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
-        pub fn distribution_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
-        pub fn set_distribution_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.distribution_configuration_arn = input;
-            self
+        pub fn set_distribution_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.distribution_configuration_arn = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
-        pub fn infrastructure_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
-        pub fn set_infrastructure_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.infrastructure_configuration_arn = input;
-            self
+        pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.infrastructure_configuration_arn = input; self
         }
         /// <p> The image tests configuration of the image.</p>
-        pub fn image_tests_configuration(
-            mut self,
-            input: crate::model::ImageTestsConfiguration,
-        ) -> Self {
+        pub fn image_tests_configuration(mut self, input: crate::model::ImageTestsConfiguration) -> Self {
             self.image_tests_configuration = Some(input);
             self
         }
         /// <p> The image tests configuration of the image.</p>
-        pub fn set_image_tests_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ImageTestsConfiguration>,
-        ) -> Self {
-            self.image_tests_configuration = input;
-            self
+        pub fn set_image_tests_configuration(mut self, input: std::option::Option<crate::model::ImageTestsConfiguration>) -> Self {
+            self.image_tests_configuration = input; self
         }
         /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
@@ -1289,37 +966,23 @@ pub mod create_image_input {
             self
         }
         /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
-        pub fn set_enhanced_image_metadata_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enhanced_image_metadata_enabled = input;
-            self
+        pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enhanced_image_metadata_enabled = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags of the image.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags of the image.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> The idempotency token used to make this request idempotent.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1328,148 +991,105 @@ pub mod create_image_input {
         }
         /// <p> The idempotency token used to make this request idempotent.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateImageInput`](crate::input::CreateImageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateImageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateImageInput {
-                image_recipe_arn: self.image_recipe_arn,
-                container_recipe_arn: self.container_recipe_arn,
-                distribution_configuration_arn: self.distribution_configuration_arn,
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-                image_tests_configuration: self.image_tests_configuration,
-                enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateImageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateImageInput {
+                    image_recipe_arn: self.image_recipe_arn
+                    ,
+                    container_recipe_arn: self.container_recipe_arn
+                    ,
+                    distribution_configuration_arn: self.distribution_configuration_arn
+                    ,
+                    infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                    ,
+                    image_tests_configuration: self.image_tests_configuration
+                    ,
+                    enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateImage`](crate::operation::CreateImage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateImage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateImage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateImageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateImageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CreateImage").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateImageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateImageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_image(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_image(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateImage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateImage",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateImage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateImage", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1481,7 +1101,7 @@ impl CreateImageInput {
 
 /// See [`CreateImagePipelineInput`](crate::input::CreateImagePipelineInput).
 pub mod create_image_pipeline_input {
-
+    
     /// A builder for [`CreateImagePipelineInput`](crate::input::CreateImagePipelineInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1491,14 +1111,11 @@ pub mod create_image_pipeline_input {
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
-        pub(crate) image_tests_configuration:
-            std::option::Option<crate::model::ImageTestsConfiguration>,
+        pub(crate) image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
         pub(crate) enhanced_image_metadata_enabled: std::option::Option<bool>,
         pub(crate) schedule: std::option::Option<crate::model::Schedule>,
         pub(crate) status: std::option::Option<crate::model::PipelineStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1509,8 +1126,7 @@ pub mod create_image_pipeline_input {
         }
         /// <p> The name of the image pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The description of the image pipeline.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1519,8 +1135,7 @@ pub mod create_image_pipeline_input {
         }
         /// <p> The description of the image pipeline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1528,12 +1143,8 @@ pub mod create_image_pipeline_input {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
-        pub fn set_image_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_recipe_arn = input;
-            self
+        pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_recipe_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
         pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1541,60 +1152,35 @@ pub mod create_image_pipeline_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
-        pub fn set_container_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_recipe_arn = input;
-            self
+        pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_recipe_arn = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
-        pub fn infrastructure_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
-        pub fn set_infrastructure_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.infrastructure_configuration_arn = input;
-            self
+        pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.infrastructure_configuration_arn = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
-        pub fn distribution_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
-        pub fn set_distribution_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.distribution_configuration_arn = input;
-            self
+        pub fn set_distribution_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.distribution_configuration_arn = input; self
         }
         /// <p> The image test configuration of the image pipeline.</p>
-        pub fn image_tests_configuration(
-            mut self,
-            input: crate::model::ImageTestsConfiguration,
-        ) -> Self {
+        pub fn image_tests_configuration(mut self, input: crate::model::ImageTestsConfiguration) -> Self {
             self.image_tests_configuration = Some(input);
             self
         }
         /// <p> The image test configuration of the image pipeline.</p>
-        pub fn set_image_tests_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ImageTestsConfiguration>,
-        ) -> Self {
-            self.image_tests_configuration = input;
-            self
+        pub fn set_image_tests_configuration(mut self, input: std::option::Option<crate::model::ImageTestsConfiguration>) -> Self {
+            self.image_tests_configuration = input; self
         }
         /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
@@ -1602,12 +1188,8 @@ pub mod create_image_pipeline_input {
             self
         }
         /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
-        pub fn set_enhanced_image_metadata_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enhanced_image_metadata_enabled = input;
-            self
+        pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enhanced_image_metadata_enabled = input; self
         }
         /// <p> The schedule of the image pipeline.</p>
         pub fn schedule(mut self, input: crate::model::Schedule) -> Self {
@@ -1616,8 +1198,7 @@ pub mod create_image_pipeline_input {
         }
         /// <p> The schedule of the image pipeline.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
-            self.schedule = input;
-            self
+            self.schedule = input; self
         }
         /// <p> The status of the image pipeline.</p>
         pub fn status(mut self, input: crate::model::PipelineStatus) -> Self {
@@ -1625,37 +1206,23 @@ pub mod create_image_pipeline_input {
             self
         }
         /// <p> The status of the image pipeline.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PipelineStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PipelineStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags of the image pipeline.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags of the image pipeline.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> The idempotency token used to make this request idempotent.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1664,154 +1231,113 @@ pub mod create_image_pipeline_input {
         }
         /// <p> The idempotency token used to make this request idempotent.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateImagePipelineInput`](crate::input::CreateImagePipelineInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateImagePipelineInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateImagePipelineInput {
-                name: self.name,
-                description: self.description,
-                image_recipe_arn: self.image_recipe_arn,
-                container_recipe_arn: self.container_recipe_arn,
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-                distribution_configuration_arn: self.distribution_configuration_arn,
-                image_tests_configuration: self.image_tests_configuration,
-                enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled,
-                schedule: self.schedule,
-                status: self.status,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateImagePipelineInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateImagePipelineInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    image_recipe_arn: self.image_recipe_arn
+                    ,
+                    container_recipe_arn: self.container_recipe_arn
+                    ,
+                    infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                    ,
+                    distribution_configuration_arn: self.distribution_configuration_arn
+                    ,
+                    image_tests_configuration: self.image_tests_configuration
+                    ,
+                    enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled
+                    ,
+                    schedule: self.schedule
+                    ,
+                    status: self.status
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateImagePipeline`](crate::operation::CreateImagePipeline)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateImagePipeline,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateImagePipeline, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateImagePipelineInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateImagePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CreateImagePipeline").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateImagePipelineInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateImagePipelineInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_image_pipeline(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_image_pipeline(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateImagePipeline::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateImagePipeline",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateImagePipeline::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateImagePipeline", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1823,24 +1349,19 @@ impl CreateImagePipelineInput {
 
 /// See [`CreateImageRecipeInput`](crate::input::CreateImageRecipeInput).
 pub mod create_image_recipe_input {
-
+    
     /// A builder for [`CreateImageRecipeInput`](crate::input::CreateImageRecipeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) semantic_version: std::option::Option<std::string::String>,
-        pub(crate) components:
-            std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
+        pub(crate) components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
         pub(crate) parent_image: std::option::Option<std::string::String>,
-        pub(crate) block_device_mappings:
-            std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) block_device_mappings: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) working_directory: std::option::Option<std::string::String>,
-        pub(crate) additional_instance_configuration:
-            std::option::Option<crate::model::AdditionalInstanceConfiguration>,
+        pub(crate) additional_instance_configuration: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1851,8 +1372,7 @@ pub mod create_image_recipe_input {
         }
         /// <p> The name of the image recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The description of the image recipe.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1861,10 +1381,9 @@ pub mod create_image_recipe_input {
         }
         /// <p> The description of the image recipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -1876,15 +1395,15 @@ pub mod create_image_recipe_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -1896,16 +1415,12 @@ pub mod create_image_recipe_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
         /// </note>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// Appends an item to `components`.
         ///
@@ -1914,17 +1429,13 @@ pub mod create_image_recipe_input {
         /// <p>The components included in the image recipe.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input);
-            self.components = Some(v);
-            self
+                            v.push(input);
+                            self.components = Some(v);
+                            self
         }
         /// <p>The components included in the image recipe.</p>
-        pub fn set_components(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
-        ) -> Self {
-            self.components = input;
-            self
+        pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>) -> Self {
+            self.components = input; self
         }
         /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1933,55 +1444,37 @@ pub mod create_image_recipe_input {
         }
         /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_image = input;
-            self
+            self.parent_image = input; self
         }
         /// Appends an item to `block_device_mappings`.
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
         /// <p>The block device mappings of the image recipe.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: crate::model::InstanceBlockDeviceMapping,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::InstanceBlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input);
-            self.block_device_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.block_device_mappings = Some(v);
+                            self
         }
         /// <p>The block device mappings of the image recipe.</p>
-        pub fn set_block_device_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
-        ) -> Self {
-            self.block_device_mappings = input;
-            self
+        pub fn set_block_device_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>) -> Self {
+            self.block_device_mappings = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags of the image recipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags of the image recipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The working directory used during build and test workflows.</p>
         pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1989,28 +1482,17 @@ pub mod create_image_recipe_input {
             self
         }
         /// <p>The working directory used during build and test workflows.</p>
-        pub fn set_working_directory(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.working_directory = input;
-            self
+        pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.working_directory = input; self
         }
         /// <p>Specify additional settings and launch scripts for your build instances.</p>
-        pub fn additional_instance_configuration(
-            mut self,
-            input: crate::model::AdditionalInstanceConfiguration,
-        ) -> Self {
+        pub fn additional_instance_configuration(mut self, input: crate::model::AdditionalInstanceConfiguration) -> Self {
             self.additional_instance_configuration = Some(input);
             self
         }
         /// <p>Specify additional settings and launch scripts for your build instances.</p>
-        pub fn set_additional_instance_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
-        ) -> Self {
-            self.additional_instance_configuration = input;
-            self
+        pub fn set_additional_instance_configuration(mut self, input: std::option::Option<crate::model::AdditionalInstanceConfiguration>) -> Self {
+            self.additional_instance_configuration = input; self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2019,152 +1501,109 @@ pub mod create_image_recipe_input {
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateImageRecipeInput`](crate::input::CreateImageRecipeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateImageRecipeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateImageRecipeInput {
-                name: self.name,
-                description: self.description,
-                semantic_version: self.semantic_version,
-                components: self.components,
-                parent_image: self.parent_image,
-                block_device_mappings: self.block_device_mappings,
-                tags: self.tags,
-                working_directory: self.working_directory,
-                additional_instance_configuration: self.additional_instance_configuration,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateImageRecipeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateImageRecipeInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    semantic_version: self.semantic_version
+                    ,
+                    components: self.components
+                    ,
+                    parent_image: self.parent_image
+                    ,
+                    block_device_mappings: self.block_device_mappings
+                    ,
+                    tags: self.tags
+                    ,
+                    working_directory: self.working_directory
+                    ,
+                    additional_instance_configuration: self.additional_instance_configuration
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateImageRecipe`](crate::operation::CreateImageRecipe)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateImageRecipe,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateImageRecipe, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateImageRecipeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateImageRecipeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CreateImageRecipe").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateImageRecipeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateImageRecipeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_image_recipe(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_image_recipe(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateImageRecipe::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateImageRecipe",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateImageRecipe::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateImageRecipe", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2176,7 +1615,7 @@ impl CreateImageRecipeInput {
 
 /// See [`CreateInfrastructureConfigurationInput`](crate::input::CreateInfrastructureConfigurationInput).
 pub mod create_infrastructure_configuration_input {
-
+    
     /// A builder for [`CreateInfrastructureConfigurationInput`](crate::input::CreateInfrastructureConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2190,14 +1629,9 @@ pub mod create_infrastructure_configuration_input {
         pub(crate) key_pair: std::option::Option<std::string::String>,
         pub(crate) terminate_instance_on_failure: std::option::Option<bool>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-        pub(crate) resource_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) instance_metadata_options:
-            std::option::Option<crate::model::InstanceMetadataOptions>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2208,8 +1642,7 @@ pub mod create_infrastructure_configuration_input {
         }
         /// <p>The name of the infrastructure configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the infrastructure configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2218,8 +1651,7 @@ pub mod create_infrastructure_configuration_input {
         }
         /// <p>The description of the infrastructure configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `instance_types`.
         ///
@@ -2228,17 +1660,13 @@ pub mod create_infrastructure_configuration_input {
         /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
-            self.instance_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.instance_types = Some(v);
+                            self
         }
         /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-        pub fn set_instance_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instance_types = input;
-            self
+        pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instance_types = input; self
         }
         /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2246,12 +1674,8 @@ pub mod create_infrastructure_configuration_input {
             self
         }
         /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn set_instance_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_profile_name = input;
-            self
+        pub fn set_instance_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_profile_name = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -2260,17 +1684,13 @@ pub mod create_infrastructure_configuration_input {
         /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2279,8 +1699,7 @@ pub mod create_infrastructure_configuration_input {
         }
         /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
         pub fn logging(mut self, input: crate::model::Logging) -> Self {
@@ -2289,8 +1708,7 @@ pub mod create_infrastructure_configuration_input {
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
         pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
-            self.logging = input;
-            self
+            self.logging = input; self
         }
         /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2299,8 +1717,7 @@ pub mod create_infrastructure_configuration_input {
         }
         /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_pair = input;
-            self
+            self.key_pair = input; self
         }
         /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
@@ -2308,95 +1725,60 @@ pub mod create_infrastructure_configuration_input {
             self
         }
         /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
-        pub fn set_terminate_instance_on_failure(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.terminate_instance_on_failure = input;
-            self
+        pub fn set_terminate_instance_on_failure(mut self, input: std::option::Option<bool>) -> Self {
+            self.terminate_instance_on_failure = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
         /// </note>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
         /// </note>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// Adds a key-value pair to `resource_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags attached to the resource created by Image Builder.</p>
-        pub fn resource_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags attached to the resource created by Image Builder.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_tags = input; self
         }
         /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
-        pub fn instance_metadata_options(
-            mut self,
-            input: crate::model::InstanceMetadataOptions,
-        ) -> Self {
+        pub fn instance_metadata_options(mut self, input: crate::model::InstanceMetadataOptions) -> Self {
             self.instance_metadata_options = Some(input);
             self
         }
         /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
-        pub fn set_instance_metadata_options(
-            mut self,
-            input: std::option::Option<crate::model::InstanceMetadataOptions>,
-        ) -> Self {
-            self.instance_metadata_options = input;
-            self
+        pub fn set_instance_metadata_options(mut self, input: std::option::Option<crate::model::InstanceMetadataOptions>) -> Self {
+            self.instance_metadata_options = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the infrastructure configuration.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of the infrastructure configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2405,99 +1787,82 @@ pub mod create_infrastructure_configuration_input {
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateInfrastructureConfigurationInput`](crate::input::CreateInfrastructureConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateInfrastructureConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateInfrastructureConfigurationInput {
-                name: self.name,
-                description: self.description,
-                instance_types: self.instance_types,
-                instance_profile_name: self.instance_profile_name,
-                security_group_ids: self.security_group_ids,
-                subnet_id: self.subnet_id,
-                logging: self.logging,
-                key_pair: self.key_pair,
-                terminate_instance_on_failure: self.terminate_instance_on_failure,
-                sns_topic_arn: self.sns_topic_arn,
-                resource_tags: self.resource_tags,
-                instance_metadata_options: self.instance_metadata_options,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateInfrastructureConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateInfrastructureConfigurationInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    instance_types: self.instance_types
+                    ,
+                    instance_profile_name: self.instance_profile_name
+                    ,
+                    security_group_ids: self.security_group_ids
+                    ,
+                    subnet_id: self.subnet_id
+                    ,
+                    logging: self.logging
+                    ,
+                    key_pair: self.key_pair
+                    ,
+                    terminate_instance_on_failure: self.terminate_instance_on_failure
+                    ,
+                    sns_topic_arn: self.sns_topic_arn
+                    ,
+                    resource_tags: self.resource_tags
+                    ,
+                    instance_metadata_options: self.instance_metadata_options
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInfrastructureConfiguration`](crate::operation::CreateInfrastructureConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateInfrastructureConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateInfrastructureConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateInfrastructureConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/CreateInfrastructureConfiguration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::CreateInfrastructureConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/CreateInfrastructureConfiguration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateInfrastructureConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateInfrastructureConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2506,56 +1871,33 @@ impl CreateInfrastructureConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_create_infrastructure_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateInfrastructureConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateInfrastructureConfiguration",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateInfrastructureConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateInfrastructureConfiguration", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2567,7 +1909,7 @@ impl CreateInfrastructureConfigurationInput {
 
 /// See [`DeleteComponentInput`](crate::input::DeleteComponentInput).
 pub mod delete_component_input {
-
+    
     /// A builder for [`DeleteComponentInput`](crate::input::DeleteComponentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2575,108 +1917,63 @@ pub mod delete_component_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-        pub fn component_build_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn component_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_build_version_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-        pub fn set_component_build_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_build_version_arn = input;
-            self
+        pub fn set_component_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_build_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::input::DeleteComponentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteComponentInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteComponentInput {
-                component_build_version_arn: self.component_build_version_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteComponentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteComponentInput {
+                    component_build_version_arn: self.component_build_version_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComponent`](crate::operation::DeleteComponent)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteComponent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteComponent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteComponentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteComponentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DeleteComponent").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteComponentInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteComponentInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_1 = &_input.component_build_version_arn;
-                let inner_1 = inner_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "component_build_version_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("component_build_version_arn", "cannot be empty or unset"))?;
                 if inner_1.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "component_build_version_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("component_build_version_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "componentBuildVersionArn",
-                    &aws_smithy_http::query::fmt_string(&inner_1),
-                );
+                query.push_kv("componentBuildVersionArn", &aws_smithy_http::query::fmt_string(&inner_1));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteComponentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteComponentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2687,51 +1984,34 @@ impl DeleteComponentInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteComponent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteComponent",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteComponent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteComponent", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2743,7 +2023,7 @@ impl DeleteComponentInput {
 
 /// See [`DeleteContainerRecipeInput`](crate::input::DeleteContainerRecipeInput).
 pub mod delete_container_recipe_input {
-
+    
     /// A builder for [`DeleteContainerRecipeInput`](crate::input::DeleteContainerRecipeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2756,102 +2036,58 @@ pub mod delete_container_recipe_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-        pub fn set_container_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_recipe_arn = input;
-            self
+        pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_recipe_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteContainerRecipeInput`](crate::input::DeleteContainerRecipeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteContainerRecipeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteContainerRecipeInput {
-                container_recipe_arn: self.container_recipe_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteContainerRecipeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteContainerRecipeInput {
+                    container_recipe_arn: self.container_recipe_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainerRecipe`](crate::operation::DeleteContainerRecipe)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteContainerRecipe,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteContainerRecipe, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteContainerRecipeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteContainerRecipeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DeleteContainerRecipe").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteContainerRecipeInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteContainerRecipeInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_2 = &_input.container_recipe_arn;
-                let inner_2 = inner_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "container_recipe_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("container_recipe_arn", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "container_recipe_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("container_recipe_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "containerRecipeArn",
-                    &aws_smithy_http::query::fmt_string(&inner_2),
-                );
+                query.push_kv("containerRecipeArn", &aws_smithy_http::query::fmt_string(&inner_2));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteContainerRecipeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteContainerRecipeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2862,51 +2098,34 @@ impl DeleteContainerRecipeInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteContainerRecipe::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteContainerRecipe",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteContainerRecipe::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteContainerRecipe", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2918,7 +2137,7 @@ impl DeleteContainerRecipeInput {
 
 /// See [`DeleteDistributionConfigurationInput`](crate::input::DeleteDistributionConfigurationInput).
 pub mod delete_distribution_configuration_input {
-
+    
     /// A builder for [`DeleteDistributionConfigurationInput`](crate::input::DeleteDistributionConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2926,111 +2145,63 @@ pub mod delete_distribution_configuration_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
-        pub fn distribution_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
-        pub fn set_distribution_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.distribution_configuration_arn = input;
-            self
+        pub fn set_distribution_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.distribution_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDistributionConfigurationInput`](crate::input::DeleteDistributionConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteDistributionConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteDistributionConfigurationInput {
-                distribution_configuration_arn: self.distribution_configuration_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDistributionConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteDistributionConfigurationInput {
+                    distribution_configuration_arn: self.distribution_configuration_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDistributionConfiguration`](crate::operation::DeleteDistributionConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDistributionConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDistributionConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDistributionConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/DeleteDistributionConfiguration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::DeleteDistributionConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/DeleteDistributionConfiguration").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteDistributionConfigurationInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteDistributionConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_3 = &_input.distribution_configuration_arn;
-                let inner_3 = inner_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "distribution_configuration_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("distribution_configuration_arn", "cannot be empty or unset"))?;
                 if inner_3.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "distribution_configuration_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("distribution_configuration_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "distributionConfigurationArn",
-                    &aws_smithy_http::query::fmt_string(&inner_3),
-                );
+                query.push_kv("distributionConfigurationArn", &aws_smithy_http::query::fmt_string(&inner_3));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteDistributionConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteDistributionConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3041,51 +2212,34 @@ impl DeleteDistributionConfigurationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDistributionConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDistributionConfiguration",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDistributionConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDistributionConfiguration", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3097,7 +2251,7 @@ impl DeleteDistributionConfigurationInput {
 
 /// See [`DeleteImageInput`](crate::input::DeleteImageInput).
 pub mod delete_image_input {
-
+    
     /// A builder for [`DeleteImageInput`](crate::input::DeleteImageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3110,100 +2264,58 @@ pub mod delete_image_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
-        pub fn set_image_build_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_build_version_arn = input;
-            self
+        pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_build_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteImageInput`](crate::input::DeleteImageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteImageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteImageInput {
-                image_build_version_arn: self.image_build_version_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteImageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteImageInput {
+                    image_build_version_arn: self.image_build_version_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImage`](crate::operation::DeleteImage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteImage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteImage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteImageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteImageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DeleteImage").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteImageInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteImageInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_4 = &_input.image_build_version_arn;
-                let inner_4 = inner_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "image_build_version_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("image_build_version_arn", "cannot be empty or unset"))?;
                 if inner_4.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "image_build_version_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("image_build_version_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "imageBuildVersionArn",
-                    &aws_smithy_http::query::fmt_string(&inner_4),
-                );
+                query.push_kv("imageBuildVersionArn", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteImageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteImageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3214,51 +2326,34 @@ impl DeleteImageInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteImage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteImage",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteImage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteImage", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3270,7 +2365,7 @@ impl DeleteImageInput {
 
 /// See [`DeleteImagePipelineInput`](crate::input::DeleteImagePipelineInput).
 pub mod delete_image_pipeline_input {
-
+    
     /// A builder for [`DeleteImagePipelineInput`](crate::input::DeleteImagePipelineInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3283,102 +2378,58 @@ pub mod delete_image_pipeline_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
-        pub fn set_image_pipeline_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_pipeline_arn = input;
-            self
+        pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_pipeline_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteImagePipelineInput`](crate::input::DeleteImagePipelineInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteImagePipelineInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteImagePipelineInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteImagePipelineInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteImagePipelineInput {
+                    image_pipeline_arn: self.image_pipeline_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImagePipeline`](crate::operation::DeleteImagePipeline)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteImagePipeline,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteImagePipeline, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteImagePipelineInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteImagePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DeleteImagePipeline").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteImagePipelineInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteImagePipelineInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_5 = &_input.image_pipeline_arn;
-                let inner_5 = inner_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "image_pipeline_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("image_pipeline_arn", "cannot be empty or unset"))?;
                 if inner_5.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "image_pipeline_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("image_pipeline_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "imagePipelineArn",
-                    &aws_smithy_http::query::fmt_string(&inner_5),
-                );
+                query.push_kv("imagePipelineArn", &aws_smithy_http::query::fmt_string(&inner_5));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteImagePipelineInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteImagePipelineInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3389,51 +2440,34 @@ impl DeleteImagePipelineInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteImagePipeline::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteImagePipeline",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteImagePipeline::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteImagePipeline", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3445,7 +2479,7 @@ impl DeleteImagePipelineInput {
 
 /// See [`DeleteImageRecipeInput`](crate::input::DeleteImageRecipeInput).
 pub mod delete_image_recipe_input {
-
+    
     /// A builder for [`DeleteImageRecipeInput`](crate::input::DeleteImageRecipeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3458,102 +2492,58 @@ pub mod delete_image_recipe_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
-        pub fn set_image_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_recipe_arn = input;
-            self
+        pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_recipe_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteImageRecipeInput`](crate::input::DeleteImageRecipeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteImageRecipeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteImageRecipeInput {
-                image_recipe_arn: self.image_recipe_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteImageRecipeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteImageRecipeInput {
+                    image_recipe_arn: self.image_recipe_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImageRecipe`](crate::operation::DeleteImageRecipe)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteImageRecipe,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteImageRecipe, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteImageRecipeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteImageRecipeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DeleteImageRecipe").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteImageRecipeInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteImageRecipeInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_6 = &_input.image_recipe_arn;
-                let inner_6 = inner_6.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "image_recipe_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("image_recipe_arn", "cannot be empty or unset"))?;
                 if inner_6.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "image_recipe_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("image_recipe_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "imageRecipeArn",
-                    &aws_smithy_http::query::fmt_string(&inner_6),
-                );
+                query.push_kv("imageRecipeArn", &aws_smithy_http::query::fmt_string(&inner_6));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteImageRecipeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteImageRecipeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3564,51 +2554,34 @@ impl DeleteImageRecipeInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteImageRecipe::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteImageRecipe",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteImageRecipe::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteImageRecipe", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3620,7 +2593,7 @@ impl DeleteImageRecipeInput {
 
 /// See [`DeleteInfrastructureConfigurationInput`](crate::input::DeleteInfrastructureConfigurationInput).
 pub mod delete_infrastructure_configuration_input {
-
+    
     /// A builder for [`DeleteInfrastructureConfigurationInput`](crate::input::DeleteInfrastructureConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3628,111 +2601,63 @@ pub mod delete_infrastructure_configuration_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
-        pub fn infrastructure_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
-        pub fn set_infrastructure_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.infrastructure_configuration_arn = input;
-            self
+        pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.infrastructure_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInfrastructureConfigurationInput`](crate::input::DeleteInfrastructureConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteInfrastructureConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteInfrastructureConfigurationInput {
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteInfrastructureConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteInfrastructureConfigurationInput {
+                    infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInfrastructureConfiguration`](crate::operation::DeleteInfrastructureConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteInfrastructureConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteInfrastructureConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteInfrastructureConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/DeleteInfrastructureConfiguration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::DeleteInfrastructureConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/DeleteInfrastructureConfiguration").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteInfrastructureConfigurationInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteInfrastructureConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_7 = &_input.infrastructure_configuration_arn;
-                let inner_7 = inner_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "infrastructure_configuration_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("infrastructure_configuration_arn", "cannot be empty or unset"))?;
                 if inner_7.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "infrastructure_configuration_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("infrastructure_configuration_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "infrastructureConfigurationArn",
-                    &aws_smithy_http::query::fmt_string(&inner_7),
-                );
+                query.push_kv("infrastructureConfigurationArn", &aws_smithy_http::query::fmt_string(&inner_7));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteInfrastructureConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteInfrastructureConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3743,51 +2668,34 @@ impl DeleteInfrastructureConfigurationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteInfrastructureConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteInfrastructureConfiguration",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteInfrastructureConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteInfrastructureConfiguration", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3799,7 +2707,7 @@ impl DeleteInfrastructureConfigurationInput {
 
 /// See [`GetComponentInput`](crate::input::GetComponentInput).
 pub mod get_component_input {
-
+    
     /// A builder for [`GetComponentInput`](crate::input::GetComponentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3807,108 +2715,63 @@ pub mod get_component_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
-        pub fn component_build_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn component_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_build_version_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
-        pub fn set_component_build_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_build_version_arn = input;
-            self
+        pub fn set_component_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_build_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetComponentInput`](crate::input::GetComponentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetComponentInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetComponentInput {
-                component_build_version_arn: self.component_build_version_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetComponentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetComponentInput {
+                    component_build_version_arn: self.component_build_version_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetComponent`](crate::operation::GetComponent)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetComponent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetComponent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetComponentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetComponentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetComponent").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetComponentInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetComponentInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_8 = &_input.component_build_version_arn;
-                let inner_8 = inner_8.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "component_build_version_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("component_build_version_arn", "cannot be empty or unset"))?;
                 if inner_8.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "component_build_version_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("component_build_version_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "componentBuildVersionArn",
-                    &aws_smithy_http::query::fmt_string(&inner_8),
-                );
+                query.push_kv("componentBuildVersionArn", &aws_smithy_http::query::fmt_string(&inner_8));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetComponentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetComponentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3919,51 +2782,34 @@ impl GetComponentInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetComponent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetComponent",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetComponent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetComponent", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3975,7 +2821,7 @@ impl GetComponentInput {
 
 /// See [`GetComponentPolicyInput`](crate::input::GetComponentPolicyInput).
 pub mod get_component_policy_input {
-
+    
     /// A builder for [`GetComponentPolicyInput`](crate::input::GetComponentPolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3988,102 +2834,58 @@ pub mod get_component_policy_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
-        pub fn set_component_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_arn = input;
-            self
+        pub fn set_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetComponentPolicyInput`](crate::input::GetComponentPolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetComponentPolicyInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetComponentPolicyInput {
-                component_arn: self.component_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetComponentPolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetComponentPolicyInput {
+                    component_arn: self.component_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetComponentPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetComponentPolicy`](crate::operation::GetComponentPolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetComponentPolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetComponentPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetComponentPolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetComponentPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetComponentPolicy").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetComponentPolicyInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetComponentPolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_9 = &_input.component_arn;
-                let inner_9 = inner_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "component_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("component_arn", "cannot be empty or unset"))?;
                 if inner_9.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "component_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("component_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "componentArn",
-                    &aws_smithy_http::query::fmt_string(&inner_9),
-                );
+                query.push_kv("componentArn", &aws_smithy_http::query::fmt_string(&inner_9));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetComponentPolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetComponentPolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4094,51 +2896,34 @@ impl GetComponentPolicyInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetComponentPolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetComponentPolicy",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetComponentPolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetComponentPolicy", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4150,7 +2935,7 @@ impl GetComponentPolicyInput {
 
 /// See [`GetContainerRecipeInput`](crate::input::GetContainerRecipeInput).
 pub mod get_container_recipe_input {
-
+    
     /// A builder for [`GetContainerRecipeInput`](crate::input::GetContainerRecipeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4163,102 +2948,58 @@ pub mod get_container_recipe_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
-        pub fn set_container_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_recipe_arn = input;
-            self
+        pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_recipe_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerRecipeInput`](crate::input::GetContainerRecipeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetContainerRecipeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetContainerRecipeInput {
-                container_recipe_arn: self.container_recipe_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetContainerRecipeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetContainerRecipeInput {
+                    container_recipe_arn: self.container_recipe_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerRecipe`](crate::operation::GetContainerRecipe)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetContainerRecipe,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetContainerRecipe, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetContainerRecipeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetContainerRecipeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetContainerRecipe").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetContainerRecipeInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetContainerRecipeInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_10 = &_input.container_recipe_arn;
-                let inner_10 = inner_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "container_recipe_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_10 = inner_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("container_recipe_arn", "cannot be empty or unset"))?;
                 if inner_10.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "container_recipe_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("container_recipe_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "containerRecipeArn",
-                    &aws_smithy_http::query::fmt_string(&inner_10),
-                );
+                query.push_kv("containerRecipeArn", &aws_smithy_http::query::fmt_string(&inner_10));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetContainerRecipeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetContainerRecipeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4269,51 +3010,34 @@ impl GetContainerRecipeInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetContainerRecipe::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetContainerRecipe",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetContainerRecipe::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetContainerRecipe", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4325,7 +3049,7 @@ impl GetContainerRecipeInput {
 
 /// See [`GetContainerRecipePolicyInput`](crate::input::GetContainerRecipePolicyInput).
 pub mod get_container_recipe_policy_input {
-
+    
     /// A builder for [`GetContainerRecipePolicyInput`](crate::input::GetContainerRecipePolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4338,102 +3062,58 @@ pub mod get_container_recipe_policy_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
-        pub fn set_container_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_recipe_arn = input;
-            self
+        pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_recipe_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerRecipePolicyInput`](crate::input::GetContainerRecipePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetContainerRecipePolicyInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetContainerRecipePolicyInput {
-                container_recipe_arn: self.container_recipe_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetContainerRecipePolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetContainerRecipePolicyInput {
+                    container_recipe_arn: self.container_recipe_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetContainerRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerRecipePolicy`](crate::operation::GetContainerRecipePolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetContainerRecipePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetContainerRecipePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetContainerRecipePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetContainerRecipePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetContainerRecipePolicy").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetContainerRecipePolicyInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetContainerRecipePolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_11 = &_input.container_recipe_arn;
-                let inner_11 = inner_11.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "container_recipe_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_11 = inner_11.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("container_recipe_arn", "cannot be empty or unset"))?;
                 if inner_11.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "container_recipe_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("container_recipe_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "containerRecipeArn",
-                    &aws_smithy_http::query::fmt_string(&inner_11),
-                );
+                query.push_kv("containerRecipeArn", &aws_smithy_http::query::fmt_string(&inner_11));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetContainerRecipePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetContainerRecipePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4444,51 +3124,34 @@ impl GetContainerRecipePolicyInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetContainerRecipePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetContainerRecipePolicy",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetContainerRecipePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetContainerRecipePolicy", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4500,7 +3163,7 @@ impl GetContainerRecipePolicyInput {
 
 /// See [`GetDistributionConfigurationInput`](crate::input::GetDistributionConfigurationInput).
 pub mod get_distribution_configuration_input {
-
+    
     /// A builder for [`GetDistributionConfigurationInput`](crate::input::GetDistributionConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4508,110 +3171,63 @@ pub mod get_distribution_configuration_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-        pub fn distribution_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-        pub fn set_distribution_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.distribution_configuration_arn = input;
-            self
+        pub fn set_distribution_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.distribution_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetDistributionConfigurationInput`](crate::input::GetDistributionConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetDistributionConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetDistributionConfigurationInput {
-                distribution_configuration_arn: self.distribution_configuration_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetDistributionConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetDistributionConfigurationInput {
+                    distribution_configuration_arn: self.distribution_configuration_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetDistributionConfiguration`](crate::operation::GetDistributionConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDistributionConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDistributionConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDistributionConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetDistributionConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetDistributionConfiguration").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetDistributionConfigurationInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetDistributionConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_12 = &_input.distribution_configuration_arn;
-                let inner_12 = inner_12.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "distribution_configuration_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_12 = inner_12.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("distribution_configuration_arn", "cannot be empty or unset"))?;
                 if inner_12.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "distribution_configuration_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("distribution_configuration_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "distributionConfigurationArn",
-                    &aws_smithy_http::query::fmt_string(&inner_12),
-                );
+                query.push_kv("distributionConfigurationArn", &aws_smithy_http::query::fmt_string(&inner_12));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetDistributionConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetDistributionConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4622,51 +3238,34 @@ impl GetDistributionConfigurationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDistributionConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDistributionConfiguration",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDistributionConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDistributionConfiguration", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4678,7 +3277,7 @@ impl GetDistributionConfigurationInput {
 
 /// See [`GetImageInput`](crate::input::GetImageInput).
 pub mod get_image_input {
-
+    
     /// A builder for [`GetImageInput`](crate::input::GetImageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4691,100 +3290,58 @@ pub mod get_image_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
-        pub fn set_image_build_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_build_version_arn = input;
-            self
+        pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_build_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetImageInput`](crate::input::GetImageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetImageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetImageInput {
-                image_build_version_arn: self.image_build_version_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetImageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetImageInput {
+                    image_build_version_arn: self.image_build_version_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetImageInput {
     /// Consumes the builder and constructs an Operation<[`GetImage`](crate::operation::GetImage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetImage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetImage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetImageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetImageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetImage").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetImageInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetImageInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_13 = &_input.image_build_version_arn;
-                let inner_13 = inner_13.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "image_build_version_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("image_build_version_arn", "cannot be empty or unset"))?;
                 if inner_13.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "image_build_version_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("image_build_version_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "imageBuildVersionArn",
-                    &aws_smithy_http::query::fmt_string(&inner_13),
-                );
+                query.push_kv("imageBuildVersionArn", &aws_smithy_http::query::fmt_string(&inner_13));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetImageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetImageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4795,49 +3352,34 @@ impl GetImageInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetImage::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetImage",
-                    "imagebuilder",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetImage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetImage", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4849,7 +3391,7 @@ impl GetImageInput {
 
 /// See [`GetImagePipelineInput`](crate::input::GetImagePipelineInput).
 pub mod get_image_pipeline_input {
-
+    
     /// A builder for [`GetImagePipelineInput`](crate::input::GetImagePipelineInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4862,102 +3404,58 @@ pub mod get_image_pipeline_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
-        pub fn set_image_pipeline_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_pipeline_arn = input;
-            self
+        pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_pipeline_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetImagePipelineInput`](crate::input::GetImagePipelineInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetImagePipelineInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetImagePipelineInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetImagePipelineInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetImagePipelineInput {
+                    image_pipeline_arn: self.image_pipeline_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetImagePipeline`](crate::operation::GetImagePipeline)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetImagePipeline,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetImagePipeline, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetImagePipelineInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetImagePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetImagePipeline").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetImagePipelineInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetImagePipelineInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_14 = &_input.image_pipeline_arn;
-                let inner_14 = inner_14.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "image_pipeline_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_14 = inner_14.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("image_pipeline_arn", "cannot be empty or unset"))?;
                 if inner_14.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "image_pipeline_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("image_pipeline_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "imagePipelineArn",
-                    &aws_smithy_http::query::fmt_string(&inner_14),
-                );
+                query.push_kv("imagePipelineArn", &aws_smithy_http::query::fmt_string(&inner_14));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetImagePipelineInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetImagePipelineInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4968,51 +3466,34 @@ impl GetImagePipelineInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetImagePipeline::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetImagePipeline",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetImagePipeline::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetImagePipeline", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5024,7 +3505,7 @@ impl GetImagePipelineInput {
 
 /// See [`GetImagePolicyInput`](crate::input::GetImagePolicyInput).
 pub mod get_image_policy_input {
-
+    
     /// A builder for [`GetImagePolicyInput`](crate::input::GetImagePolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5038,93 +3519,57 @@ pub mod get_image_policy_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_arn = input;
-            self
+            self.image_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetImagePolicyInput`](crate::input::GetImagePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetImagePolicyInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetImagePolicyInput {
-                image_arn: self.image_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetImagePolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetImagePolicyInput {
+                    image_arn: self.image_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetImagePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetImagePolicy`](crate::operation::GetImagePolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetImagePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetImagePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetImagePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetImagePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetImagePolicy").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetImagePolicyInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetImagePolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_15 = &_input.image_arn;
-                let inner_15 = inner_15.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "image_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_15 = inner_15.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("image_arn", "cannot be empty or unset"))?;
                 if inner_15.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "image_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("image_arn", "cannot be empty or unset"));
                 }
                 query.push_kv("imageArn", &aws_smithy_http::query::fmt_string(&inner_15));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetImagePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetImagePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5135,51 +3580,34 @@ impl GetImagePolicyInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetImagePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetImagePolicy",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetImagePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetImagePolicy", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5191,7 +3619,7 @@ impl GetImagePolicyInput {
 
 /// See [`GetImageRecipeInput`](crate::input::GetImageRecipeInput).
 pub mod get_image_recipe_input {
-
+    
     /// A builder for [`GetImageRecipeInput`](crate::input::GetImageRecipeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5204,100 +3632,58 @@ pub mod get_image_recipe_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
-        pub fn set_image_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_recipe_arn = input;
-            self
+        pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_recipe_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetImageRecipeInput`](crate::input::GetImageRecipeInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetImageRecipeInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetImageRecipeInput {
-                image_recipe_arn: self.image_recipe_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetImageRecipeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetImageRecipeInput {
+                    image_recipe_arn: self.image_recipe_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`GetImageRecipe`](crate::operation::GetImageRecipe)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetImageRecipe,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetImageRecipe, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetImageRecipeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetImageRecipeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetImageRecipe").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetImageRecipeInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetImageRecipeInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_16 = &_input.image_recipe_arn;
-                let inner_16 = inner_16.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "image_recipe_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("image_recipe_arn", "cannot be empty or unset"))?;
                 if inner_16.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "image_recipe_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("image_recipe_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "imageRecipeArn",
-                    &aws_smithy_http::query::fmt_string(&inner_16),
-                );
+                query.push_kv("imageRecipeArn", &aws_smithy_http::query::fmt_string(&inner_16));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetImageRecipeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetImageRecipeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5308,51 +3694,34 @@ impl GetImageRecipeInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetImageRecipe::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetImageRecipe",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetImageRecipe::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetImageRecipe", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5364,7 +3733,7 @@ impl GetImageRecipeInput {
 
 /// See [`GetImageRecipePolicyInput`](crate::input::GetImageRecipePolicyInput).
 pub mod get_image_recipe_policy_input {
-
+    
     /// A builder for [`GetImageRecipePolicyInput`](crate::input::GetImageRecipePolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5377,102 +3746,58 @@ pub mod get_image_recipe_policy_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
-        pub fn set_image_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_recipe_arn = input;
-            self
+        pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_recipe_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetImageRecipePolicyInput`](crate::input::GetImageRecipePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetImageRecipePolicyInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetImageRecipePolicyInput {
-                image_recipe_arn: self.image_recipe_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetImageRecipePolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetImageRecipePolicyInput {
+                    image_recipe_arn: self.image_recipe_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetImageRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetImageRecipePolicy`](crate::operation::GetImageRecipePolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetImageRecipePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetImageRecipePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetImageRecipePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetImageRecipePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetImageRecipePolicy").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetImageRecipePolicyInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetImageRecipePolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_17 = &_input.image_recipe_arn;
-                let inner_17 = inner_17.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "image_recipe_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_17 = inner_17.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("image_recipe_arn", "cannot be empty or unset"))?;
                 if inner_17.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "image_recipe_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("image_recipe_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "imageRecipeArn",
-                    &aws_smithy_http::query::fmt_string(&inner_17),
-                );
+                query.push_kv("imageRecipeArn", &aws_smithy_http::query::fmt_string(&inner_17));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetImageRecipePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetImageRecipePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5483,51 +3808,34 @@ impl GetImageRecipePolicyInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetImageRecipePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetImageRecipePolicy",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetImageRecipePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetImageRecipePolicy", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5539,7 +3847,7 @@ impl GetImageRecipePolicyInput {
 
 /// See [`GetInfrastructureConfigurationInput`](crate::input::GetInfrastructureConfigurationInput).
 pub mod get_infrastructure_configuration_input {
-
+    
     /// A builder for [`GetInfrastructureConfigurationInput`](crate::input::GetInfrastructureConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5547,111 +3855,63 @@ pub mod get_infrastructure_configuration_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
-        pub fn infrastructure_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
-        pub fn set_infrastructure_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.infrastructure_configuration_arn = input;
-            self
+        pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.infrastructure_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetInfrastructureConfigurationInput`](crate::input::GetInfrastructureConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetInfrastructureConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetInfrastructureConfigurationInput {
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetInfrastructureConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetInfrastructureConfigurationInput {
+                    infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetInfrastructureConfiguration`](crate::operation::GetInfrastructureConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetInfrastructureConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetInfrastructureConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetInfrastructureConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/GetInfrastructureConfiguration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::GetInfrastructureConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/GetInfrastructureConfiguration").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetInfrastructureConfigurationInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetInfrastructureConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_18 = &_input.infrastructure_configuration_arn;
-                let inner_18 = inner_18.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "infrastructure_configuration_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("infrastructure_configuration_arn", "cannot be empty or unset"))?;
                 if inner_18.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "infrastructure_configuration_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("infrastructure_configuration_arn", "cannot be empty or unset"));
                 }
-                query.push_kv(
-                    "infrastructureConfigurationArn",
-                    &aws_smithy_http::query::fmt_string(&inner_18),
-                );
+                query.push_kv("infrastructureConfigurationArn", &aws_smithy_http::query::fmt_string(&inner_18));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetInfrastructureConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetInfrastructureConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5662,51 +3922,34 @@ impl GetInfrastructureConfigurationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetInfrastructureConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetInfrastructureConfiguration",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetInfrastructureConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetInfrastructureConfiguration", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5718,7 +3961,7 @@ impl GetInfrastructureConfigurationInput {
 
 /// See [`ImportComponentInput`](crate::input::ImportComponentInput).
 pub mod import_component_input {
-
+    
     /// A builder for [`ImportComponentInput`](crate::input::ImportComponentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5732,9 +3975,7 @@ pub mod import_component_input {
         pub(crate) data: std::option::Option<std::string::String>,
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5745,10 +3986,9 @@ pub mod import_component_input {
         }
         /// <p> The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -5760,14 +4000,14 @@ pub mod import_component_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -5779,15 +4019,11 @@ pub mod import_component_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+        /// </major></p> 
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
         /// </note>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>The description of the component. Describes the contents of the component.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5796,8 +4032,7 @@ pub mod import_component_input {
         }
         /// <p>The description of the component. Describes the contents of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5805,12 +4040,8 @@ pub mod import_component_input {
             self
         }
         /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
-        pub fn set_change_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_description = input;
-            self
+        pub fn set_change_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_description = input; self
         }
         /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
@@ -5819,8 +4050,7 @@ pub mod import_component_input {
         }
         /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The format of the resource that you want to import as a component.</p>
         pub fn format(mut self, input: crate::model::ComponentFormat) -> Self {
@@ -5828,12 +4058,8 @@ pub mod import_component_input {
             self
         }
         /// <p>The format of the resource that you want to import as a component.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::ComponentFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::ComponentFormat>) -> Self {
+            self.format = input; self
         }
         /// <p>The platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -5842,8 +4068,7 @@ pub mod import_component_input {
         }
         /// <p>The platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5852,8 +4077,7 @@ pub mod import_component_input {
         }
         /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5862,8 +4086,7 @@ pub mod import_component_input {
         }
         /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5872,33 +4095,22 @@ pub mod import_component_input {
         }
         /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the component.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of the component.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The idempotency token of the component.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5907,152 +4119,113 @@ pub mod import_component_input {
         }
         /// <p>The idempotency token of the component.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`ImportComponentInput`](crate::input::ImportComponentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ImportComponentInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ImportComponentInput {
-                name: self.name,
-                semantic_version: self.semantic_version,
-                description: self.description,
-                change_description: self.change_description,
-                r#type: self.r#type,
-                format: self.format,
-                platform: self.platform,
-                data: self.data,
-                uri: self.uri,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::ImportComponentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ImportComponentInput {
+                    name: self.name
+                    ,
+                    semantic_version: self.semantic_version
+                    ,
+                    description: self.description
+                    ,
+                    change_description: self.change_description
+                    ,
+                    r#type: self.r#type
+                    ,
+                    format: self.format
+                    ,
+                    platform: self.platform
+                    ,
+                    data: self.data
+                    ,
+                    uri: self.uri
+                    ,
+                    kms_key_id: self.kms_key_id
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ImportComponentInput {
     /// Consumes the builder and constructs an Operation<[`ImportComponent`](crate::operation::ImportComponent)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ImportComponent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ImportComponent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ImportComponentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ImportComponentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ImportComponent").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ImportComponentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ImportComponentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_import_component(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_import_component(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ImportComponent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ImportComponent",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ImportComponent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ImportComponent", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6064,7 +4237,7 @@ impl ImportComponentInput {
 
 /// See [`ImportVmImageInput`](crate::input::ImportVmImageInput).
 pub mod import_vm_image_input {
-
+    
     /// A builder for [`ImportVmImageInput`](crate::input::ImportVmImageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6074,9 +4247,7 @@ pub mod import_vm_image_input {
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) os_version: std::option::Option<std::string::String>,
         pub(crate) vm_import_task_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6087,10 +4258,9 @@ pub mod import_vm_image_input {
         }
         /// <p>The name of the base image that is created by the import process.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -6102,15 +4272,15 @@ pub mod import_vm_image_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note> 
         /// <p>The semantic version has four nodes: <major>
         /// .
         /// <minor>
@@ -6122,16 +4292,12 @@ pub mod import_vm_image_input {
         /// </build>
         /// </patch>
         /// </minor>
-        /// </major></p>
-        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </major></p> 
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
         /// </note>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>The description for the base image that is created by the import process.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6140,8 +4306,7 @@ pub mod import_vm_image_input {
         }
         /// <p>The description for the base image that is created by the import process.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The operating system platform for the imported VM.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -6150,8 +4315,7 @@ pub mod import_vm_image_input {
         }
         /// <p>The operating system platform for the imported VM.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The operating system version for the imported VM.</p>
         pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6160,8 +4324,7 @@ pub mod import_vm_image_input {
         }
         /// <p>The operating system version for the imported VM.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.os_version = input;
-            self
+            self.os_version = input; self
         }
         /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
         pub fn vm_import_task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6169,37 +4332,23 @@ pub mod import_vm_image_input {
             self
         }
         /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
-        pub fn set_vm_import_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vm_import_task_id = input;
-            self
+        pub fn set_vm_import_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vm_import_task_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags that are attached to the import resources.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags that are attached to the import resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6208,148 +4357,105 @@ pub mod import_vm_image_input {
         }
         /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`ImportVmImageInput`](crate::input::ImportVmImageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ImportVmImageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ImportVmImageInput {
-                name: self.name,
-                semantic_version: self.semantic_version,
-                description: self.description,
-                platform: self.platform,
-                os_version: self.os_version,
-                vm_import_task_id: self.vm_import_task_id,
-                tags: self.tags,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::ImportVmImageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ImportVmImageInput {
+                    name: self.name
+                    ,
+                    semantic_version: self.semantic_version
+                    ,
+                    description: self.description
+                    ,
+                    platform: self.platform
+                    ,
+                    os_version: self.os_version
+                    ,
+                    vm_import_task_id: self.vm_import_task_id
+                    ,
+                    tags: self.tags
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ImportVmImageInput {
     /// Consumes the builder and constructs an Operation<[`ImportVmImage`](crate::operation::ImportVmImage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ImportVmImage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ImportVmImage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ImportVmImageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ImportVmImageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ImportVmImage").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ImportVmImageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ImportVmImageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_import_vm_image(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_import_vm_image(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ImportVmImage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ImportVmImage",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ImportVmImage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ImportVmImage", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6361,7 +4467,7 @@ impl ImportVmImageInput {
 
 /// See [`ListComponentBuildVersionsInput`](crate::input::ListComponentBuildVersionsInput).
 pub mod list_component_build_versions_input {
-
+    
     /// A builder for [`ListComponentBuildVersionsInput`](crate::input::ListComponentBuildVersionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6376,12 +4482,8 @@ pub mod list_component_build_versions_input {
             self
         }
         /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-        pub fn set_component_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_version_arn = input;
-            self
+        pub fn set_component_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_version_arn = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6390,8 +4492,7 @@ pub mod list_component_build_versions_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6400,84 +4501,57 @@ pub mod list_component_build_versions_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListComponentBuildVersionsInput`](crate::input::ListComponentBuildVersionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListComponentBuildVersionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListComponentBuildVersionsInput {
-                component_version_arn: self.component_version_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListComponentBuildVersionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListComponentBuildVersionsInput {
+                    component_version_arn: self.component_version_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListComponentBuildVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponentBuildVersions`](crate::operation::ListComponentBuildVersions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListComponentBuildVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListComponentBuildVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListComponentBuildVersionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListComponentBuildVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListComponentBuildVersions").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListComponentBuildVersionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListComponentBuildVersionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6486,56 +4560,33 @@ impl ListComponentBuildVersionsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_component_build_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListComponentBuildVersions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListComponentBuildVersions",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListComponentBuildVersions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListComponentBuildVersions", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6547,7 +4598,7 @@ impl ListComponentBuildVersionsInput {
 
 /// See [`ListComponentsInput`](crate::input::ListComponentsInput).
 pub mod list_components_input {
-
+    
     /// A builder for [`ListComponentsInput`](crate::input::ListComponentsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6565,43 +4616,38 @@ pub mod list_components_input {
         }
         /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>description</code> </p> </li>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
-        /// <li> <p> <code>supportedOsVersion</code> </p> </li>
-        /// <li> <p> <code>type</code> </p> </li>
-        /// <li> <p> <code>version</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>description</code> </p> </li> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
+        /// <li> <p> <code>supportedOsVersion</code> </p> </li> 
+        /// <li> <p> <code>type</code> </p> </li> 
+        /// <li> <p> <code>version</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>description</code> </p> </li>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
-        /// <li> <p> <code>supportedOsVersion</code> </p> </li>
-        /// <li> <p> <code>type</code> </p> </li>
-        /// <li> <p> <code>version</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>description</code> </p> </li> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
+        /// <li> <p> <code>supportedOsVersion</code> </p> </li> 
+        /// <li> <p> <code>type</code> </p> </li> 
+        /// <li> <p> <code>version</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Returns the list of components for the specified name.</p>
         pub fn by_name(mut self, input: bool) -> Self {
@@ -6610,8 +4656,7 @@ pub mod list_components_input {
         }
         /// <p>Returns the list of components for the specified name.</p>
         pub fn set_by_name(mut self, input: std::option::Option<bool>) -> Self {
-            self.by_name = input;
-            self
+            self.by_name = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6620,8 +4665,7 @@ pub mod list_components_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6630,142 +4674,97 @@ pub mod list_components_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListComponentsInput`](crate::input::ListComponentsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListComponentsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListComponentsInput {
-                owner: self.owner,
-                filters: self.filters,
-                by_name: self.by_name.unwrap_or_default(),
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListComponentsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListComponentsInput {
+                    owner: self.owner
+                    ,
+                    filters: self.filters
+                    ,
+                    by_name: self.by_name
+                        .unwrap_or_default()
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponents`](crate::operation::ListComponents)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListComponents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListComponents, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListComponentsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListComponentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListComponents").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListComponentsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListComponentsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_components(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_components(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListComponents::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListComponents",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListComponents::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListComponents", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6777,7 +4776,7 @@ impl ListComponentsInput {
 
 /// See [`ListContainerRecipesInput`](crate::input::ListContainerRecipesInput).
 pub mod list_container_recipes_input {
-
+    
     /// A builder for [`ListContainerRecipesInput`](crate::input::ListContainerRecipesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6794,39 +4793,34 @@ pub mod list_container_recipes_input {
         }
         /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>containerType</code> </p> </li>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>parentImage</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>containerType</code> </p> </li> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>parentImage</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>containerType</code> </p> </li>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>parentImage</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>containerType</code> </p> </li> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>parentImage</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The maximum number of results to return in the list.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6835,8 +4829,7 @@ pub mod list_container_recipes_input {
         }
         /// <p>The maximum number of results to return in the list.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6845,145 +4838,94 @@ pub mod list_container_recipes_input {
         }
         /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListContainerRecipesInput`](crate::input::ListContainerRecipesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListContainerRecipesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListContainerRecipesInput {
-                owner: self.owner,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListContainerRecipesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListContainerRecipesInput {
+                    owner: self.owner
+                    ,
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListContainerRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListContainerRecipes`](crate::operation::ListContainerRecipes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListContainerRecipes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListContainerRecipes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListContainerRecipesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListContainerRecipesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListContainerRecipes").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListContainerRecipesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListContainerRecipesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_container_recipes(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_container_recipes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListContainerRecipes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListContainerRecipes",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListContainerRecipes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListContainerRecipes", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6995,7 +4937,7 @@ impl ListContainerRecipesInput {
 
 /// See [`ListDistributionConfigurationsInput`](crate::input::ListDistributionConfigurationsInput).
 pub mod list_distribution_configurations_input {
-
+    
     /// A builder for [`ListDistributionConfigurationsInput`](crate::input::ListDistributionConfigurationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7011,17 +4953,13 @@ pub mod list_distribution_configurations_input {
         /// <p>You can filter on <code>name</code> to streamline results.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>You can filter on <code>name</code> to streamline results.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7030,8 +4968,7 @@ pub mod list_distribution_configurations_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7040,85 +4977,57 @@ pub mod list_distribution_configurations_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDistributionConfigurationsInput`](crate::input::ListDistributionConfigurationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListDistributionConfigurationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListDistributionConfigurationsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListDistributionConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListDistributionConfigurationsInput {
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDistributionConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionConfigurations`](crate::operation::ListDistributionConfigurations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDistributionConfigurations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDistributionConfigurations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDistributionConfigurationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/ListDistributionConfigurations")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListDistributionConfigurationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/ListDistributionConfigurations").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListDistributionConfigurationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListDistributionConfigurationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7127,56 +5036,33 @@ impl ListDistributionConfigurationsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_distribution_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDistributionConfigurations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDistributionConfigurations",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDistributionConfigurations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDistributionConfigurations", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7188,7 +5074,7 @@ impl ListDistributionConfigurationsInput {
 
 /// See [`ListImageBuildVersionsInput`](crate::input::ListImageBuildVersionsInput).
 pub mod list_image_build_versions_input {
-
+    
     /// A builder for [`ListImageBuildVersionsInput`](crate::input::ListImageBuildVersionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7204,45 +5090,37 @@ pub mod list_image_build_versions_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
-        pub fn set_image_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_version_arn = input;
-            self
+        pub fn set_image_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_version_arn = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>osVersion</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
-        /// <li> <p> <code>type</code> </p> </li>
-        /// <li> <p> <code>version</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>osVersion</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
+        /// <li> <p> <code>type</code> </p> </li> 
+        /// <li> <p> <code>version</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>osVersion</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
-        /// <li> <p> <code>type</code> </p> </li>
-        /// <li> <p> <code>version</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>osVersion</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
+        /// <li> <p> <code>type</code> </p> </li> 
+        /// <li> <p> <code>version</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7251,8 +5129,7 @@ pub mod list_image_build_versions_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7261,145 +5138,94 @@ pub mod list_image_build_versions_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImageBuildVersionsInput`](crate::input::ListImageBuildVersionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListImageBuildVersionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListImageBuildVersionsInput {
-                image_version_arn: self.image_version_arn,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListImageBuildVersionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListImageBuildVersionsInput {
+                    image_version_arn: self.image_version_arn
+                    ,
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListImageBuildVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListImageBuildVersions`](crate::operation::ListImageBuildVersions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListImageBuildVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListImageBuildVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListImageBuildVersionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListImageBuildVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListImageBuildVersions").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListImageBuildVersionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListImageBuildVersionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_image_build_versions(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_image_build_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListImageBuildVersions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListImageBuildVersions",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListImageBuildVersions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListImageBuildVersions", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7411,7 +5237,7 @@ impl ListImageBuildVersionsInput {
 
 /// See [`ListImagePackagesInput`](crate::input::ListImagePackagesInput).
 pub mod list_image_packages_input {
-
+    
     /// A builder for [`ListImagePackagesInput`](crate::input::ListImagePackagesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7426,12 +5252,8 @@ pub mod list_image_packages_input {
             self
         }
         /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
-        pub fn set_image_build_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_build_version_arn = input;
-            self
+        pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_build_version_arn = input; self
         }
         /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7440,8 +5262,7 @@ pub mod list_image_packages_input {
         }
         /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7450,142 +5271,92 @@ pub mod list_image_packages_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImagePackagesInput`](crate::input::ListImagePackagesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListImagePackagesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListImagePackagesInput {
-                image_build_version_arn: self.image_build_version_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListImagePackagesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListImagePackagesInput {
+                    image_build_version_arn: self.image_build_version_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListImagePackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePackages`](crate::operation::ListImagePackages)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListImagePackages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListImagePackages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListImagePackagesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListImagePackagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListImagePackages").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListImagePackagesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListImagePackagesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_image_packages(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_image_packages(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListImagePackages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListImagePackages",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListImagePackages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListImagePackages", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7597,7 +5368,7 @@ impl ListImagePackagesInput {
 
 /// See [`ListImagePipelineImagesInput`](crate::input::ListImagePipelineImagesInput).
 pub mod list_image_pipeline_images_input {
-
+    
     /// A builder for [`ListImagePipelineImagesInput`](crate::input::ListImagePipelineImagesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7613,39 +5384,31 @@ pub mod list_image_pipeline_images_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-        pub fn set_image_pipeline_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_pipeline_arn = input;
-            self
+        pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_pipeline_arn = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>version</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>version</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>version</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>version</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7654,8 +5417,7 @@ pub mod list_image_pipeline_images_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7664,145 +5426,94 @@ pub mod list_image_pipeline_images_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImagePipelineImagesInput`](crate::input::ListImagePipelineImagesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListImagePipelineImagesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListImagePipelineImagesInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListImagePipelineImagesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListImagePipelineImagesInput {
+                    image_pipeline_arn: self.image_pipeline_arn
+                    ,
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListImagePipelineImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePipelineImages`](crate::operation::ListImagePipelineImages)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListImagePipelineImages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListImagePipelineImages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListImagePipelineImagesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListImagePipelineImagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListImagePipelineImages").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListImagePipelineImagesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListImagePipelineImagesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_image_pipeline_images(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_image_pipeline_images(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListImagePipelineImages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListImagePipelineImages",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListImagePipelineImages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListImagePipelineImages", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7814,7 +5525,7 @@ impl ListImagePipelineImagesInput {
 
 /// See [`ListImagePipelinesInput`](crate::input::ListImagePipelinesInput).
 pub mod list_image_pipelines_input {
-
+    
     /// A builder for [`ListImagePipelinesInput`](crate::input::ListImagePipelinesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7827,36 +5538,32 @@ pub mod list_image_pipelines_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>description</code> </p> </li>
-        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
-        /// <li> <p> <code>imageRecipeArn</code> </p> </li>
-        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>status</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>description</code> </p> </li> 
+        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li> 
+        /// <li> <p> <code>imageRecipeArn</code> </p> </li> 
+        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>status</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>description</code> </p> </li>
-        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
-        /// <li> <p> <code>imageRecipeArn</code> </p> </li>
-        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>status</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>description</code> </p> </li> 
+        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li> 
+        /// <li> <p> <code>imageRecipeArn</code> </p> </li> 
+        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>status</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7865,8 +5572,7 @@ pub mod list_image_pipelines_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7875,142 +5581,92 @@ pub mod list_image_pipelines_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImagePipelinesInput`](crate::input::ListImagePipelinesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListImagePipelinesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListImagePipelinesInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListImagePipelinesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListImagePipelinesInput {
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListImagePipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePipelines`](crate::operation::ListImagePipelines)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListImagePipelines,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListImagePipelines, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListImagePipelinesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListImagePipelinesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListImagePipelines").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListImagePipelinesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListImagePipelinesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_image_pipelines(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_image_pipelines(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListImagePipelines::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListImagePipelines",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListImagePipelines::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListImagePipelines", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8022,7 +5678,7 @@ impl ListImagePipelinesInput {
 
 /// See [`ListImageRecipesInput`](crate::input::ListImageRecipesInput).
 pub mod list_image_recipes_input {
-
+    
     /// A builder for [`ListImageRecipesInput`](crate::input::ListImageRecipesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8039,37 +5695,32 @@ pub mod list_image_recipes_input {
         }
         /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>parentImage</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>parentImage</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>parentImage</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>parentImage</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -8078,8 +5729,7 @@ pub mod list_image_recipes_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8088,143 +5738,94 @@ pub mod list_image_recipes_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImageRecipesInput`](crate::input::ListImageRecipesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListImageRecipesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListImageRecipesInput {
-                owner: self.owner,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListImageRecipesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListImageRecipesInput {
+                    owner: self.owner
+                    ,
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListImageRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListImageRecipes`](crate::operation::ListImageRecipes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListImageRecipes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListImageRecipes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListImageRecipesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListImageRecipesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListImageRecipes").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListImageRecipesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListImageRecipesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_image_recipes(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_image_recipes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListImageRecipes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListImageRecipes",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListImageRecipes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListImageRecipes", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8236,7 +5837,7 @@ impl ListImageRecipesInput {
 
 /// See [`ListImagesInput`](crate::input::ListImagesInput).
 pub mod list_images_input {
-
+    
     /// A builder for [`ListImagesInput`](crate::input::ListImagesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8255,41 +5856,36 @@ pub mod list_images_input {
         }
         /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>osVersion</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
-        /// <li> <p> <code>type</code> </p> </li>
-        /// <li> <p> <code>version</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>osVersion</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
+        /// <li> <p> <code>type</code> </p> </li> 
+        /// <li> <p> <code>version</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Use the following filters to streamline results:</p>
-        /// <ul>
-        /// <li> <p> <code>name</code> </p> </li>
-        /// <li> <p> <code>osVersion</code> </p> </li>
-        /// <li> <p> <code>platform</code> </p> </li>
-        /// <li> <p> <code>type</code> </p> </li>
-        /// <li> <p> <code>version</code> </p> </li>
+        /// <p>Use the following filters to streamline results:</p> 
+        /// <ul> 
+        /// <li> <p> <code>name</code> </p> </li> 
+        /// <li> <p> <code>osVersion</code> </p> </li> 
+        /// <li> <p> <code>platform</code> </p> </li> 
+        /// <li> <p> <code>type</code> </p> </li> 
+        /// <li> <p> <code>version</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Requests a list of images with a specific recipe name.</p>
         pub fn by_name(mut self, input: bool) -> Self {
@@ -8298,8 +5894,7 @@ pub mod list_images_input {
         }
         /// <p>Requests a list of images with a specific recipe name.</p>
         pub fn set_by_name(mut self, input: std::option::Option<bool>) -> Self {
-            self.by_name = input;
-            self
+            self.by_name = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -8308,8 +5903,7 @@ pub mod list_images_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8318,8 +5912,7 @@ pub mod list_images_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Includes deprecated images in the response list.</p>
         pub fn include_deprecated(mut self, input: bool) -> Self {
@@ -8328,143 +5921,99 @@ pub mod list_images_input {
         }
         /// <p>Includes deprecated images in the response list.</p>
         pub fn set_include_deprecated(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_deprecated = input;
-            self
+            self.include_deprecated = input; self
         }
         /// Consumes the builder and constructs a [`ListImagesInput`](crate::input::ListImagesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListImagesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListImagesInput {
-                owner: self.owner,
-                filters: self.filters,
-                by_name: self.by_name.unwrap_or_default(),
-                max_results: self.max_results,
-                next_token: self.next_token,
-                include_deprecated: self.include_deprecated,
-            })
+        pub fn build(self) -> Result<crate::input::ListImagesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListImagesInput {
+                    owner: self.owner
+                    ,
+                    filters: self.filters
+                    ,
+                    by_name: self.by_name
+                        .unwrap_or_default()
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    include_deprecated: self.include_deprecated
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImages`](crate::operation::ListImages)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListImages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListImages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListImagesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListImagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListImages").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListImagesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListImagesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_images(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_images(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListImages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListImages",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListImages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListImages", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8476,7 +6025,7 @@ impl ListImagesInput {
 
 /// See [`ListInfrastructureConfigurationsInput`](crate::input::ListInfrastructureConfigurationsInput).
 pub mod list_infrastructure_configurations_input {
-
+    
     /// A builder for [`ListInfrastructureConfigurationsInput`](crate::input::ListInfrastructureConfigurationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8492,17 +6041,13 @@ pub mod list_infrastructure_configurations_input {
         /// <p>You can filter on <code>name</code> to streamline results.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>You can filter on <code>name</code> to streamline results.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -8511,8 +6056,7 @@ pub mod list_infrastructure_configurations_input {
         }
         /// <p>The maximum items to return in a request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8521,85 +6065,57 @@ pub mod list_infrastructure_configurations_input {
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInfrastructureConfigurationsInput`](crate::input::ListInfrastructureConfigurationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListInfrastructureConfigurationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListInfrastructureConfigurationsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListInfrastructureConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListInfrastructureConfigurationsInput {
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListInfrastructureConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInfrastructureConfigurations`](crate::operation::ListInfrastructureConfigurations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListInfrastructureConfigurations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListInfrastructureConfigurations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListInfrastructureConfigurationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/ListInfrastructureConfigurations")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListInfrastructureConfigurationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/ListInfrastructureConfigurations").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListInfrastructureConfigurationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListInfrastructureConfigurationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8608,56 +6124,33 @@ impl ListInfrastructureConfigurationsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_infrastructure_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListInfrastructureConfigurations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListInfrastructureConfigurations",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListInfrastructureConfigurations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListInfrastructureConfigurations", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8669,7 +6162,7 @@ impl ListInfrastructureConfigurationsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8683,92 +6176,53 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.resource_arn;
-                let input_19 = input_19.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_19,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_19 = input_19.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -8778,51 +6232,34 @@ impl ListTagsForResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8834,7 +6271,7 @@ impl ListTagsForResourceInput {
 
 /// See [`PutComponentPolicyInput`](crate::input::PutComponentPolicyInput).
 pub mod put_component_policy_input {
-
+    
     /// A builder for [`PutComponentPolicyInput`](crate::input::PutComponentPolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8848,12 +6285,8 @@ pub mod put_component_policy_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
-        pub fn set_component_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_arn = input;
-            self
+        pub fn set_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_arn = input; self
         }
         /// <p>The policy to apply.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8862,141 +6295,90 @@ pub mod put_component_policy_input {
         }
         /// <p>The policy to apply.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutComponentPolicyInput`](crate::input::PutComponentPolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutComponentPolicyInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutComponentPolicyInput {
-                component_arn: self.component_arn,
-                policy: self.policy,
-            })
+        pub fn build(self) -> Result<crate::input::PutComponentPolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutComponentPolicyInput {
+                    component_arn: self.component_arn
+                    ,
+                    policy: self.policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutComponentPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutComponentPolicy`](crate::operation::PutComponentPolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutComponentPolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutComponentPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutComponentPolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutComponentPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/PutComponentPolicy").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutComponentPolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutComponentPolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_component_policy(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_component_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutComponentPolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutComponentPolicy",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutComponentPolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutComponentPolicy", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9008,7 +6390,7 @@ impl PutComponentPolicyInput {
 
 /// See [`PutContainerRecipePolicyInput`](crate::input::PutContainerRecipePolicyInput).
 pub mod put_container_recipe_policy_input {
-
+    
     /// A builder for [`PutContainerRecipePolicyInput`](crate::input::PutContainerRecipePolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9022,12 +6404,8 @@ pub mod put_container_recipe_policy_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
-        pub fn set_container_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_recipe_arn = input;
-            self
+        pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_recipe_arn = input; self
         }
         /// <p>The policy to apply to the container recipe.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9036,143 +6414,90 @@ pub mod put_container_recipe_policy_input {
         }
         /// <p>The policy to apply to the container recipe.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutContainerRecipePolicyInput`](crate::input::PutContainerRecipePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutContainerRecipePolicyInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutContainerRecipePolicyInput {
-                container_recipe_arn: self.container_recipe_arn,
-                policy: self.policy,
-            })
+        pub fn build(self) -> Result<crate::input::PutContainerRecipePolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutContainerRecipePolicyInput {
+                    container_recipe_arn: self.container_recipe_arn
+                    ,
+                    policy: self.policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutContainerRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContainerRecipePolicy`](crate::operation::PutContainerRecipePolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutContainerRecipePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutContainerRecipePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutContainerRecipePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutContainerRecipePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/PutContainerRecipePolicy").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutContainerRecipePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutContainerRecipePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_container_recipe_policy(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_put_container_recipe_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutContainerRecipePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutContainerRecipePolicy",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutContainerRecipePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutContainerRecipePolicy", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9184,7 +6509,7 @@ impl PutContainerRecipePolicyInput {
 
 /// See [`PutImagePolicyInput`](crate::input::PutImagePolicyInput).
 pub mod put_image_policy_input {
-
+    
     /// A builder for [`PutImagePolicyInput`](crate::input::PutImagePolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9199,8 +6524,7 @@ pub mod put_image_policy_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_arn = input;
-            self
+            self.image_arn = input; self
         }
         /// <p>The policy to apply.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9209,139 +6533,90 @@ pub mod put_image_policy_input {
         }
         /// <p>The policy to apply.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutImagePolicyInput`](crate::input::PutImagePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutImagePolicyInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PutImagePolicyInput {
-                image_arn: self.image_arn,
-                policy: self.policy,
-            })
+        pub fn build(self) -> Result<crate::input::PutImagePolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutImagePolicyInput {
+                    image_arn: self.image_arn
+                    ,
+                    policy: self.policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutImagePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutImagePolicy`](crate::operation::PutImagePolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutImagePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutImagePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutImagePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutImagePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/PutImagePolicy").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutImagePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutImagePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_image_policy(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_image_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutImagePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutImagePolicy",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutImagePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutImagePolicy", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9353,7 +6628,7 @@ impl PutImagePolicyInput {
 
 /// See [`PutImageRecipePolicyInput`](crate::input::PutImageRecipePolicyInput).
 pub mod put_image_recipe_policy_input {
-
+    
     /// A builder for [`PutImageRecipePolicyInput`](crate::input::PutImageRecipePolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9367,12 +6642,8 @@ pub mod put_image_recipe_policy_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
-        pub fn set_image_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_recipe_arn = input;
-            self
+        pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_recipe_arn = input; self
         }
         /// <p>The policy to apply.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9381,143 +6652,90 @@ pub mod put_image_recipe_policy_input {
         }
         /// <p>The policy to apply.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutImageRecipePolicyInput`](crate::input::PutImageRecipePolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutImageRecipePolicyInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutImageRecipePolicyInput {
-                image_recipe_arn: self.image_recipe_arn,
-                policy: self.policy,
-            })
+        pub fn build(self) -> Result<crate::input::PutImageRecipePolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutImageRecipePolicyInput {
+                    image_recipe_arn: self.image_recipe_arn
+                    ,
+                    policy: self.policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutImageRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutImageRecipePolicy`](crate::operation::PutImageRecipePolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutImageRecipePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutImageRecipePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutImageRecipePolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutImageRecipePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/PutImageRecipePolicy").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutImageRecipePolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutImageRecipePolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_image_recipe_policy(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_put_image_recipe_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutImageRecipePolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutImageRecipePolicy",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutImageRecipePolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutImageRecipePolicy", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9529,7 +6747,7 @@ impl PutImageRecipePolicyInput {
 
 /// See [`StartImagePipelineExecutionInput`](crate::input::StartImagePipelineExecutionInput).
 pub mod start_image_pipeline_execution_input {
-
+    
     /// A builder for [`StartImagePipelineExecutionInput`](crate::input::StartImagePipelineExecutionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9543,12 +6761,8 @@ pub mod start_image_pipeline_execution_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-        pub fn set_image_pipeline_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_pipeline_arn = input;
-            self
+        pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_pipeline_arn = input; self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9557,86 +6771,58 @@ pub mod start_image_pipeline_execution_input {
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`StartImagePipelineExecutionInput`](crate::input::StartImagePipelineExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartImagePipelineExecutionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::StartImagePipelineExecutionInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::StartImagePipelineExecutionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartImagePipelineExecutionInput {
+                    image_pipeline_arn: self.image_pipeline_arn
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartImagePipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartImagePipelineExecution`](crate::operation::StartImagePipelineExecution)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartImagePipelineExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartImagePipelineExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartImagePipelineExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartImagePipelineExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/StartImagePipelineExecution").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartImagePipelineExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartImagePipelineExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -9645,56 +6831,33 @@ impl StartImagePipelineExecutionInput {
             crate::operation_ser::serialize_operation_crate_operation_start_image_pipeline_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartImagePipelineExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartImagePipelineExecution",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartImagePipelineExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartImagePipelineExecution", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9706,14 +6869,12 @@ impl StartImagePipelineExecutionInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
@@ -9723,184 +6884,111 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags to apply to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.resource_arn;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_20,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_20 = input_20.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9912,7 +7000,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9927,8 +7015,7 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -9937,104 +7024,60 @@ pub mod untag_resource_input {
         /// <p>The tag keys to remove from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The tag keys to remove from the resource.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.resource_arn;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_21,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_21 = input_21.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_22 = &_input.tag_keys;
-                let inner_22 = inner_22.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "tag_keys",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_22 = inner_22.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_23 in inner_22 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_23));
                 }
@@ -10042,12 +7085,9 @@ impl UntagResourceInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10058,51 +7098,34 @@ impl UntagResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -10114,7 +7137,7 @@ impl UntagResourceInput {
 
 /// See [`UpdateDistributionConfigurationInput`](crate::input::UpdateDistributionConfigurationInput).
 pub mod update_distribution_configuration_input {
-
+    
     /// A builder for [`UpdateDistributionConfigurationInput`](crate::input::UpdateDistributionConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10125,20 +7148,13 @@ pub mod update_distribution_configuration_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-        pub fn distribution_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-        pub fn set_distribution_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.distribution_configuration_arn = input;
-            self
+        pub fn set_distribution_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.distribution_configuration_arn = input; self
         }
         /// <p>The description of the distribution configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10147,8 +7163,7 @@ pub mod update_distribution_configuration_input {
         }
         /// <p>The description of the distribution configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `distributions`.
         ///
@@ -10157,17 +7172,13 @@ pub mod update_distribution_configuration_input {
         /// <p>The distributions of the distribution configuration.</p>
         pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input);
-            self.distributions = Some(v);
-            self
+                            v.push(input);
+                            self.distributions = Some(v);
+                            self
         }
         /// <p>The distributions of the distribution configuration.</p>
-        pub fn set_distributions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
-        ) -> Self {
-            self.distributions = input;
-            self
+        pub fn set_distributions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Distribution>>) -> Self {
+            self.distributions = input; self
         }
         /// <p>The idempotency token of the distribution configuration.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10176,89 +7187,62 @@ pub mod update_distribution_configuration_input {
         }
         /// <p>The idempotency token of the distribution configuration.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDistributionConfigurationInput`](crate::input::UpdateDistributionConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateDistributionConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateDistributionConfigurationInput {
-                distribution_configuration_arn: self.distribution_configuration_arn,
-                description: self.description,
-                distributions: self.distributions,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateDistributionConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateDistributionConfigurationInput {
+                    distribution_configuration_arn: self.distribution_configuration_arn
+                    ,
+                    description: self.description
+                    ,
+                    distributions: self.distributions
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDistributionConfiguration`](crate::operation::UpdateDistributionConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateDistributionConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateDistributionConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateDistributionConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/UpdateDistributionConfiguration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::UpdateDistributionConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/UpdateDistributionConfiguration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateDistributionConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateDistributionConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -10267,56 +7251,33 @@ impl UpdateDistributionConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_distribution_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateDistributionConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateDistributionConfiguration",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateDistributionConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateDistributionConfiguration", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -10328,7 +7289,7 @@ impl UpdateDistributionConfigurationInput {
 
 /// See [`UpdateImagePipelineInput`](crate::input::UpdateImagePipelineInput).
 pub mod update_image_pipeline_input {
-
+    
     /// A builder for [`UpdateImagePipelineInput`](crate::input::UpdateImagePipelineInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10338,8 +7299,7 @@ pub mod update_image_pipeline_input {
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
-        pub(crate) image_tests_configuration:
-            std::option::Option<crate::model::ImageTestsConfiguration>,
+        pub(crate) image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
         pub(crate) enhanced_image_metadata_enabled: std::option::Option<bool>,
         pub(crate) schedule: std::option::Option<crate::model::Schedule>,
         pub(crate) status: std::option::Option<crate::model::PipelineStatus>,
@@ -10352,12 +7312,8 @@ pub mod update_image_pipeline_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
-        pub fn set_image_pipeline_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_pipeline_arn = input;
-            self
+        pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_pipeline_arn = input; self
         }
         /// <p>The description of the image pipeline.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10366,8 +7322,7 @@ pub mod update_image_pipeline_input {
         }
         /// <p>The description of the image pipeline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10375,12 +7330,8 @@ pub mod update_image_pipeline_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
-        pub fn set_image_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_recipe_arn = input;
-            self
+        pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_recipe_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
         pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10388,60 +7339,35 @@ pub mod update_image_pipeline_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
-        pub fn set_container_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_recipe_arn = input;
-            self
+        pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_recipe_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
-        pub fn infrastructure_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
-        pub fn set_infrastructure_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.infrastructure_configuration_arn = input;
-            self
+        pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.infrastructure_configuration_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
-        pub fn distribution_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
-        pub fn set_distribution_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.distribution_configuration_arn = input;
-            self
+        pub fn set_distribution_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.distribution_configuration_arn = input; self
         }
         /// <p>The image test configuration of the image pipeline.</p>
-        pub fn image_tests_configuration(
-            mut self,
-            input: crate::model::ImageTestsConfiguration,
-        ) -> Self {
+        pub fn image_tests_configuration(mut self, input: crate::model::ImageTestsConfiguration) -> Self {
             self.image_tests_configuration = Some(input);
             self
         }
         /// <p>The image test configuration of the image pipeline.</p>
-        pub fn set_image_tests_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ImageTestsConfiguration>,
-        ) -> Self {
-            self.image_tests_configuration = input;
-            self
+        pub fn set_image_tests_configuration(mut self, input: std::option::Option<crate::model::ImageTestsConfiguration>) -> Self {
+            self.image_tests_configuration = input; self
         }
         /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
@@ -10449,12 +7375,8 @@ pub mod update_image_pipeline_input {
             self
         }
         /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
-        pub fn set_enhanced_image_metadata_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enhanced_image_metadata_enabled = input;
-            self
+        pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enhanced_image_metadata_enabled = input; self
         }
         /// <p>The schedule of the image pipeline.</p>
         pub fn schedule(mut self, input: crate::model::Schedule) -> Self {
@@ -10463,8 +7385,7 @@ pub mod update_image_pipeline_input {
         }
         /// <p>The schedule of the image pipeline.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
-            self.schedule = input;
-            self
+            self.schedule = input; self
         }
         /// <p>The status of the image pipeline.</p>
         pub fn status(mut self, input: crate::model::PipelineStatus) -> Self {
@@ -10472,12 +7393,8 @@ pub mod update_image_pipeline_input {
             self
         }
         /// <p>The status of the image pipeline.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PipelineStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PipelineStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10486,153 +7403,111 @@ pub mod update_image_pipeline_input {
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateImagePipelineInput`](crate::input::UpdateImagePipelineInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateImagePipelineInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateImagePipelineInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-                description: self.description,
-                image_recipe_arn: self.image_recipe_arn,
-                container_recipe_arn: self.container_recipe_arn,
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-                distribution_configuration_arn: self.distribution_configuration_arn,
-                image_tests_configuration: self.image_tests_configuration,
-                enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled,
-                schedule: self.schedule,
-                status: self.status,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateImagePipelineInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateImagePipelineInput {
+                    image_pipeline_arn: self.image_pipeline_arn
+                    ,
+                    description: self.description
+                    ,
+                    image_recipe_arn: self.image_recipe_arn
+                    ,
+                    container_recipe_arn: self.container_recipe_arn
+                    ,
+                    infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                    ,
+                    distribution_configuration_arn: self.distribution_configuration_arn
+                    ,
+                    image_tests_configuration: self.image_tests_configuration
+                    ,
+                    enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled
+                    ,
+                    schedule: self.schedule
+                    ,
+                    status: self.status
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdateImagePipeline`](crate::operation::UpdateImagePipeline)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateImagePipeline,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateImagePipeline, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateImagePipelineInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateImagePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/UpdateImagePipeline").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateImagePipelineInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateImagePipelineInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_image_pipeline(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_image_pipeline(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateImagePipeline::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateImagePipeline",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateImagePipeline::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateImagePipeline", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -10644,7 +7519,7 @@ impl UpdateImagePipelineInput {
 
 /// See [`UpdateInfrastructureConfigurationInput`](crate::input::UpdateInfrastructureConfigurationInput).
 pub mod update_infrastructure_configuration_input {
-
+    
     /// A builder for [`UpdateInfrastructureConfigurationInput`](crate::input::UpdateInfrastructureConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10659,28 +7534,18 @@ pub mod update_infrastructure_configuration_input {
         pub(crate) terminate_instance_on_failure: std::option::Option<bool>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
-        pub(crate) resource_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) instance_metadata_options:
-            std::option::Option<crate::model::InstanceMetadataOptions>,
+        pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
-        pub fn infrastructure_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
-        pub fn set_infrastructure_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.infrastructure_configuration_arn = input;
-            self
+        pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.infrastructure_configuration_arn = input; self
         }
         /// <p>The description of the infrastructure configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10689,8 +7554,7 @@ pub mod update_infrastructure_configuration_input {
         }
         /// <p>The description of the infrastructure configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `instance_types`.
         ///
@@ -10699,17 +7563,13 @@ pub mod update_infrastructure_configuration_input {
         /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
-            self.instance_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.instance_types = Some(v);
+                            self
         }
         /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-        pub fn set_instance_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instance_types = input;
-            self
+        pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instance_types = input; self
         }
         /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10717,12 +7577,8 @@ pub mod update_infrastructure_configuration_input {
             self
         }
         /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn set_instance_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_profile_name = input;
-            self
+        pub fn set_instance_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_profile_name = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -10731,17 +7587,13 @@ pub mod update_infrastructure_configuration_input {
         /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10750,8 +7602,7 @@ pub mod update_infrastructure_configuration_input {
         }
         /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
         pub fn logging(mut self, input: crate::model::Logging) -> Self {
@@ -10760,8 +7611,7 @@ pub mod update_infrastructure_configuration_input {
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
         pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
-            self.logging = input;
-            self
+            self.logging = input; self
         }
         /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10770,8 +7620,7 @@ pub mod update_infrastructure_configuration_input {
         }
         /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_pair = input;
-            self
+            self.key_pair = input; self
         }
         /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
@@ -10779,29 +7628,21 @@ pub mod update_infrastructure_configuration_input {
             self
         }
         /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
-        pub fn set_terminate_instance_on_failure(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.terminate_instance_on_failure = input;
-            self
+        pub fn set_terminate_instance_on_failure(mut self, input: std::option::Option<bool>) -> Self {
+            self.terminate_instance_on_failure = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
         /// </note>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
         /// </note>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10810,147 +7651,112 @@ pub mod update_infrastructure_configuration_input {
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Adds a key-value pair to `resource_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags attached to the resource created by Image Builder.</p>
-        pub fn resource_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags attached to the resource created by Image Builder.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_tags = input; self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li> 
         /// </ul>
-        pub fn instance_metadata_options(
-            mut self,
-            input: crate::model::InstanceMetadataOptions,
-        ) -> Self {
+        pub fn instance_metadata_options(mut self, input: crate::model::InstanceMetadataOptions) -> Self {
             self.instance_metadata_options = Some(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li> 
         /// </ul>
-        pub fn set_instance_metadata_options(
-            mut self,
-            input: std::option::Option<crate::model::InstanceMetadataOptions>,
-        ) -> Self {
-            self.instance_metadata_options = input;
-            self
+        pub fn set_instance_metadata_options(mut self, input: std::option::Option<crate::model::InstanceMetadataOptions>) -> Self {
+            self.instance_metadata_options = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInfrastructureConfigurationInput`](crate::input::UpdateInfrastructureConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateInfrastructureConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateInfrastructureConfigurationInput {
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-                description: self.description,
-                instance_types: self.instance_types,
-                instance_profile_name: self.instance_profile_name,
-                security_group_ids: self.security_group_ids,
-                subnet_id: self.subnet_id,
-                logging: self.logging,
-                key_pair: self.key_pair,
-                terminate_instance_on_failure: self.terminate_instance_on_failure,
-                sns_topic_arn: self.sns_topic_arn,
-                client_token: self.client_token,
-                resource_tags: self.resource_tags,
-                instance_metadata_options: self.instance_metadata_options,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateInfrastructureConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateInfrastructureConfigurationInput {
+                    infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                    ,
+                    description: self.description
+                    ,
+                    instance_types: self.instance_types
+                    ,
+                    instance_profile_name: self.instance_profile_name
+                    ,
+                    security_group_ids: self.security_group_ids
+                    ,
+                    subnet_id: self.subnet_id
+                    ,
+                    logging: self.logging
+                    ,
+                    key_pair: self.key_pair
+                    ,
+                    terminate_instance_on_failure: self.terminate_instance_on_failure
+                    ,
+                    sns_topic_arn: self.sns_topic_arn
+                    ,
+                    client_token: self.client_token
+                    ,
+                    resource_tags: self.resource_tags
+                    ,
+                    instance_metadata_options: self.instance_metadata_options
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInfrastructureConfiguration`](crate::operation::UpdateInfrastructureConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateInfrastructureConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateInfrastructureConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateInfrastructureConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/UpdateInfrastructureConfiguration")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::UpdateInfrastructureConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/UpdateInfrastructureConfiguration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateInfrastructureConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateInfrastructureConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -10959,56 +7765,33 @@ impl UpdateInfrastructureConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_infrastructure_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateInfrastructureConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateInfrastructureConfiguration",
-            "imagebuilder",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateInfrastructureConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateInfrastructureConfiguration", "imagebuilder"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -11021,7 +7804,7 @@ impl UpdateInfrastructureConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInfrastructureConfigurationInput {
+pub struct UpdateInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
     #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
@@ -11049,8 +7832,8 @@ pub struct UpdateInfrastructureConfigurationInput {
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     #[doc(hidden)]
     pub terminate_instance_on_failure: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
     /// </note>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
@@ -11059,78 +7842,72 @@ pub struct UpdateInfrastructureConfigurationInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
 }
 impl UpdateInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
-    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
     /// <p>The description of the infrastructure configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_types(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_types.as_deref()
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
-    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+    pub fn logging(&self) -> std::option::Option<& crate::model::Logging> {
         self.logging.as_ref()
     }
     /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
-    pub fn key_pair(&self) -> std::option::Option<&str> {
+    pub fn key_pair(&self) -> std::option::Option<& str> {
         self.key_pair.as_deref()
     }
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub fn terminate_instance_on_failure(&self) -> std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
     /// </note>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li> 
     /// </ul>
-    pub fn instance_metadata_options(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
+    pub fn instance_metadata_options(&self) -> std::option::Option<& crate::model::InstanceMetadataOptions> {
         self.instance_metadata_options.as_ref()
     }
 }
@@ -11138,7 +7915,7 @@ impl UpdateInfrastructureConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateImagePipelineInput {
+pub struct UpdateImagePipelineInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
@@ -11175,33 +7952,31 @@ pub struct UpdateImagePipelineInput {
 }
 impl UpdateImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
     /// <p>The description of the image pipeline.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
-    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
-    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
     /// <p>The image test configuration of the image pipeline.</p>
-    pub fn image_tests_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(&self) -> std::option::Option<& crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
@@ -11209,15 +7984,15 @@ impl UpdateImagePipelineInput {
         self.enhanced_image_metadata_enabled
     }
     /// <p>The schedule of the image pipeline.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::model::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>The status of the image pipeline.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PipelineStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PipelineStatus> {
         self.status.as_ref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -11225,7 +8000,7 @@ impl UpdateImagePipelineInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDistributionConfigurationInput {
+pub struct UpdateDistributionConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
     #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
@@ -11241,19 +8016,19 @@ pub struct UpdateDistributionConfigurationInput {
 }
 impl UpdateDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
     /// <p>The description of the distribution configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn distributions(&self) -> std::option::Option<&[crate::model::Distribution]> {
+    pub fn distributions(&self) -> std::option::Option<& [crate::model::Distribution]> {
         self.distributions.as_deref()
     }
     /// <p>The idempotency token of the distribution configuration.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -11261,7 +8036,7 @@ impl UpdateDistributionConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -11271,11 +8046,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tag keys to remove from the resource.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -11283,25 +8058,21 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags to apply to the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -11309,7 +8080,7 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImagePipelineExecutionInput {
+pub struct StartImagePipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
@@ -11319,11 +8090,11 @@ pub struct StartImagePipelineExecutionInput {
 }
 impl StartImagePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -11331,7 +8102,7 @@ impl StartImagePipelineExecutionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutImageRecipePolicyInput {
+pub struct PutImageRecipePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
@@ -11341,11 +8112,11 @@ pub struct PutImageRecipePolicyInput {
 }
 impl PutImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
     /// <p>The policy to apply.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -11353,7 +8124,7 @@ impl PutImageRecipePolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutImagePolicyInput {
+pub struct PutImagePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
@@ -11363,11 +8134,11 @@ pub struct PutImagePolicyInput {
 }
 impl PutImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
-    pub fn image_arn(&self) -> std::option::Option<&str> {
+    pub fn image_arn(&self) -> std::option::Option<& str> {
         self.image_arn.as_deref()
     }
     /// <p>The policy to apply.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -11375,7 +8146,7 @@ impl PutImagePolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutContainerRecipePolicyInput {
+pub struct PutContainerRecipePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
     #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
@@ -11385,11 +8156,11 @@ pub struct PutContainerRecipePolicyInput {
 }
 impl PutContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
     /// <p>The policy to apply to the container recipe.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -11397,7 +8168,7 @@ impl PutContainerRecipePolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutComponentPolicyInput {
+pub struct PutComponentPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
     #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
@@ -11407,11 +8178,11 @@ pub struct PutComponentPolicyInput {
 }
 impl PutComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
-    pub fn component_arn(&self) -> std::option::Option<&str> {
+    pub fn component_arn(&self) -> std::option::Option<& str> {
         self.component_arn.as_deref()
     }
     /// <p>The policy to apply.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -11419,14 +8190,14 @@ impl PutComponentPolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -11434,7 +8205,7 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInfrastructureConfigurationsInput {
+pub struct ListInfrastructureConfigurationsInput  {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11447,7 +8218,7 @@ pub struct ListInfrastructureConfigurationsInput {
 }
 impl ListInfrastructureConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -11455,7 +8226,7 @@ impl ListInfrastructureConfigurationsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11463,17 +8234,17 @@ impl ListInfrastructureConfigurationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagesInput {
+pub struct ListImagesInput  {
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>osVersion</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11492,18 +8263,18 @@ pub struct ListImagesInput {
 }
 impl ListImagesInput {
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::Ownership> {
         self.owner.as_ref()
     }
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>osVersion</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Requests a list of images with a specific recipe name.</p>
@@ -11515,7 +8286,7 @@ impl ListImagesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Includes deprecated images in the response list.</p>
@@ -11527,15 +8298,15 @@ impl ListImagesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImageRecipesInput {
+pub struct ListImageRecipesInput  {
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>parentImage</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>parentImage</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11548,16 +8319,16 @@ pub struct ListImageRecipesInput {
 }
 impl ListImageRecipesInput {
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::Ownership> {
         self.owner.as_ref()
     }
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>parentImage</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>parentImage</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -11565,7 +8336,7 @@ impl ListImageRecipesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11573,15 +8344,15 @@ impl ListImageRecipesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagePipelinesInput {
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>description</code> </p> </li>
-    /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
-    /// <li> <p> <code>imageRecipeArn</code> </p> </li>
-    /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
+pub struct ListImagePipelinesInput  {
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>description</code> </p> </li> 
+    /// <li> <p> <code>distributionConfigurationArn</code> </p> </li> 
+    /// <li> <p> <code>imageRecipeArn</code> </p> </li> 
+    /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>status</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11593,16 +8364,16 @@ pub struct ListImagePipelinesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelinesInput {
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>description</code> </p> </li>
-    /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
-    /// <li> <p> <code>imageRecipeArn</code> </p> </li>
-    /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>description</code> </p> </li> 
+    /// <li> <p> <code>distributionConfigurationArn</code> </p> </li> 
+    /// <li> <p> <code>imageRecipeArn</code> </p> </li> 
+    /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>status</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -11610,7 +8381,7 @@ impl ListImagePipelinesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11618,14 +8389,14 @@ impl ListImagePipelinesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagePipelineImagesInput {
+pub struct ListImagePipelineImagesInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11638,15 +8409,15 @@ pub struct ListImagePipelineImagesInput {
 }
 impl ListImagePipelineImagesInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -11654,7 +8425,7 @@ impl ListImagePipelineImagesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11662,7 +8433,7 @@ impl ListImagePipelineImagesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagePackagesInput {
+pub struct ListImagePackagesInput  {
     /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
@@ -11675,7 +8446,7 @@ pub struct ListImagePackagesInput {
 }
 impl ListImagePackagesInput {
     /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
@@ -11683,7 +8454,7 @@ impl ListImagePackagesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11691,17 +8462,17 @@ impl ListImagePackagesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImageBuildVersionsInput {
+pub struct ListImageBuildVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
     #[doc(hidden)]
     pub image_version_arn: std::option::Option<std::string::String>,
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>osVersion</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11714,18 +8485,18 @@ pub struct ListImageBuildVersionsInput {
 }
 impl ListImageBuildVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
-    pub fn image_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_version_arn(&self) -> std::option::Option<& str> {
         self.image_version_arn.as_deref()
     }
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>osVersion</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -11733,7 +8504,7 @@ impl ListImageBuildVersionsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11741,7 +8512,7 @@ impl ListImageBuildVersionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributionConfigurationsInput {
+pub struct ListDistributionConfigurationsInput  {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11754,7 +8525,7 @@ pub struct ListDistributionConfigurationsInput {
 }
 impl ListDistributionConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -11762,7 +8533,7 @@ impl ListDistributionConfigurationsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11770,16 +8541,16 @@ impl ListDistributionConfigurationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContainerRecipesInput {
+pub struct ListContainerRecipesInput  {
     /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>containerType</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>parentImage</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>containerType</code> </p> </li> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>parentImage</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11792,17 +8563,17 @@ pub struct ListContainerRecipesInput {
 }
 impl ListContainerRecipesInput {
     /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::Ownership> {
         self.owner.as_ref()
     }
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>containerType</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>parentImage</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>containerType</code> </p> </li> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>parentImage</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of results to return in the list.</p>
@@ -11810,7 +8581,7 @@ impl ListContainerRecipesInput {
         self.max_results
     }
     /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11818,18 +8589,18 @@ impl ListContainerRecipesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentsInput {
+pub struct ListComponentsInput  {
     /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>description</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>description</code> </p> </li> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>supportedOsVersion</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11845,19 +8616,19 @@ pub struct ListComponentsInput {
 }
 impl ListComponentsInput {
     /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::Ownership> {
         self.owner.as_ref()
     }
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>description</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>description</code> </p> </li> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>supportedOsVersion</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Returns the list of components for the specified name.</p>
@@ -11869,7 +8640,7 @@ impl ListComponentsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11877,7 +8648,7 @@ impl ListComponentsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentBuildVersionsInput {
+pub struct ListComponentBuildVersionsInput  {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
     #[doc(hidden)]
     pub component_version_arn: std::option::Option<std::string::String>,
@@ -11890,7 +8661,7 @@ pub struct ListComponentBuildVersionsInput {
 }
 impl ListComponentBuildVersionsInput {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-    pub fn component_version_arn(&self) -> std::option::Option<&str> {
+    pub fn component_version_arn(&self) -> std::option::Option<& str> {
         self.component_version_arn.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -11898,7 +8669,7 @@ impl ListComponentBuildVersionsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11906,11 +8677,11 @@ impl ListComponentBuildVersionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportVmImageInput {
+pub struct ImportVmImageInput  {
     /// <p>The name of the base image that is created by the import process.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -11922,9 +8693,9 @@ pub struct ImportVmImageInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
@@ -11942,18 +8713,17 @@ pub struct ImportVmImageInput {
     pub vm_import_task_id: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the import resources.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ImportVmImageInput {
     /// <p>The name of the base image that is created by the import process.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -11965,38 +8735,35 @@ impl ImportVmImageInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
     /// </note>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>The description for the base image that is created by the import process.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The operating system platform for the imported VM.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The operating system version for the imported VM.</p>
-    pub fn os_version(&self) -> std::option::Option<&str> {
+    pub fn os_version(&self) -> std::option::Option<& str> {
         self.os_version.as_deref()
     }
     /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
-    pub fn vm_import_task_id(&self) -> std::option::Option<&str> {
+    pub fn vm_import_task_id(&self) -> std::option::Option<& str> {
         self.vm_import_task_id.as_deref()
     }
     /// <p>Tags that are attached to the import resources.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12004,11 +8771,11 @@ impl ImportVmImageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportComponentInput {
+pub struct ImportComponentInput  {
     /// <p> The name of the component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -12020,8 +8787,8 @@ pub struct ImportComponentInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
@@ -12051,18 +8818,17 @@ pub struct ImportComponentInput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The tags of the component.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The idempotency token of the component.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ImportComponentInput {
     /// <p> The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -12074,53 +8840,50 @@ impl ImportComponentInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>The description of the component. Describes the contents of the component.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn change_description(&self) -> std::option::Option<&str> {
+    pub fn change_description(&self) -> std::option::Option<& str> {
         self.change_description.as_deref()
     }
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ComponentType> {
         self.r#type.as_ref()
     }
     /// <p>The format of the resource that you want to import as a component.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::ComponentFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::ComponentFormat> {
         self.format.as_ref()
     }
     /// <p>The platform of the component.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> std::option::Option<& str> {
         self.data.as_deref()
     }
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The tags of the component.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The idempotency token of the component.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12128,14 +8891,14 @@ impl ImportComponentInput {
 /// <p> GetInfrastructureConfiguration request object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInfrastructureConfigurationInput {
+pub struct GetInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
     #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl GetInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
-    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
@@ -12143,14 +8906,14 @@ impl GetInfrastructureConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImageRecipePolicyInput {
+pub struct GetImageRecipePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
 }
@@ -12158,14 +8921,14 @@ impl GetImageRecipePolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImageRecipeInput {
+pub struct GetImageRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
 }
@@ -12173,14 +8936,14 @@ impl GetImageRecipeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImagePolicyInput {
+pub struct GetImagePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
 }
 impl GetImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
-    pub fn image_arn(&self) -> std::option::Option<&str> {
+    pub fn image_arn(&self) -> std::option::Option<& str> {
         self.image_arn.as_deref()
     }
 }
@@ -12188,14 +8951,14 @@ impl GetImagePolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImagePipelineInput {
+pub struct GetImagePipelineInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl GetImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
 }
@@ -12203,14 +8966,14 @@ impl GetImagePipelineInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImageInput {
+pub struct GetImageInput  {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetImageInput {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
 }
@@ -12218,14 +8981,14 @@ impl GetImageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionConfigurationInput {
+pub struct GetDistributionConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
     #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl GetDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
 }
@@ -12233,14 +8996,14 @@ impl GetDistributionConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerRecipePolicyInput {
+pub struct GetContainerRecipePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
     #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
 }
@@ -12248,14 +9011,14 @@ impl GetContainerRecipePolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerRecipeInput {
+pub struct GetContainerRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
     #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
 }
@@ -12263,14 +9026,14 @@ impl GetContainerRecipeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComponentPolicyInput {
+pub struct GetComponentPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
     #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
 }
 impl GetComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
-    pub fn component_arn(&self) -> std::option::Option<&str> {
+    pub fn component_arn(&self) -> std::option::Option<& str> {
         self.component_arn.as_deref()
     }
 }
@@ -12278,14 +9041,14 @@ impl GetComponentPolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComponentInput {
+pub struct GetComponentInput  {
     /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
     #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
-    pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn component_build_version_arn(&self) -> std::option::Option<& str> {
         self.component_build_version_arn.as_deref()
     }
 }
@@ -12293,14 +9056,14 @@ impl GetComponentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInfrastructureConfigurationInput {
+pub struct DeleteInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
     #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
-    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
@@ -12308,14 +9071,14 @@ impl DeleteInfrastructureConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImageRecipeInput {
+pub struct DeleteImageRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
 }
@@ -12323,14 +9086,14 @@ impl DeleteImageRecipeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImagePipelineInput {
+pub struct DeleteImagePipelineInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
 }
@@ -12338,14 +9101,14 @@ impl DeleteImagePipelineInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImageInput {
+pub struct DeleteImageInput  {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImageInput {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
 }
@@ -12353,14 +9116,14 @@ impl DeleteImageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDistributionConfigurationInput {
+pub struct DeleteDistributionConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
     #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
-    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
 }
@@ -12368,14 +9131,14 @@ impl DeleteDistributionConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContainerRecipeInput {
+pub struct DeleteContainerRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
     #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl DeleteContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
 }
@@ -12383,14 +9146,14 @@ impl DeleteContainerRecipeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteComponentInput {
+pub struct DeleteComponentInput  {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
     #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl DeleteComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-    pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn component_build_version_arn(&self) -> std::option::Option<& str> {
         self.component_build_version_arn.as_deref()
     }
 }
@@ -12398,7 +9161,7 @@ impl DeleteComponentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInfrastructureConfigurationInput {
+pub struct CreateInfrastructureConfigurationInput  {
     /// <p>The name of the infrastructure configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12426,91 +9189,81 @@ pub struct CreateInfrastructureConfigurationInput {
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     #[doc(hidden)]
     pub terminate_instance_on_failure: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
     /// </note>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
     #[doc(hidden)]
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateInfrastructureConfigurationInput {
     /// <p>The name of the infrastructure configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the infrastructure configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_types(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_types.as_deref()
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
-    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+    pub fn logging(&self) -> std::option::Option<& crate::model::Logging> {
         self.logging.as_ref()
     }
     /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
-    pub fn key_pair(&self) -> std::option::Option<&str> {
+    pub fn key_pair(&self) -> std::option::Option<& str> {
         self.key_pair.as_deref()
     }
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub fn terminate_instance_on_failure(&self) -> std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
     /// </note>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
-    pub fn instance_metadata_options(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
+    pub fn instance_metadata_options(&self) -> std::option::Option<& crate::model::InstanceMetadataOptions> {
         self.instance_metadata_options.as_ref()
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12518,14 +9271,14 @@ impl CreateInfrastructureConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateImageRecipeInput {
+pub struct CreateImageRecipeInput  {
     /// <p> The name of the image recipe.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the image recipe.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -12537,9 +9290,9 @@ pub struct CreateImageRecipeInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
@@ -12551,33 +9304,30 @@ pub struct CreateImageRecipeInput {
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The block device mappings of the image recipe.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+    pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
     /// <p> The tags of the image recipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory used during build and test workflows.</p>
     #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
     #[doc(hidden)]
-    pub additional_instance_configuration:
-        std::option::Option<crate::model::AdditionalInstanceConfiguration>,
+    pub additional_instance_configuration: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateImageRecipeInput {
     /// <p> The name of the image recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The description of the image recipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -12589,46 +9339,39 @@ impl CreateImageRecipeInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
     /// </note>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>The components included in the image recipe.</p>
-    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
+    pub fn components(&self) -> std::option::Option<& [crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
-    pub fn parent_image(&self) -> std::option::Option<&str> {
+    pub fn parent_image(&self) -> std::option::Option<& str> {
         self.parent_image.as_deref()
     }
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> std::option::Option<& [crate::model::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p> The tags of the image recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The working directory used during build and test workflows.</p>
-    pub fn working_directory(&self) -> std::option::Option<&str> {
+    pub fn working_directory(&self) -> std::option::Option<& str> {
         self.working_directory.as_deref()
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn additional_instance_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::AdditionalInstanceConfiguration> {
+    pub fn additional_instance_configuration(&self) -> std::option::Option<& crate::model::AdditionalInstanceConfiguration> {
         self.additional_instance_configuration.as_ref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12636,7 +9379,7 @@ impl CreateImageRecipeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateImagePipelineInput {
+pub struct CreateImagePipelineInput  {
     /// <p> The name of the image pipeline.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12669,41 +9412,38 @@ pub struct CreateImagePipelineInput {
     pub status: std::option::Option<crate::model::PipelineStatus>,
     /// <p> The tags of the image pipeline.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The idempotency token used to make this request idempotent.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateImagePipelineInput {
     /// <p> The name of the image pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The description of the image pipeline.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
-    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
-    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
     /// <p> The image test configuration of the image pipeline.</p>
-    pub fn image_tests_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(&self) -> std::option::Option<& crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
@@ -12711,22 +9451,19 @@ impl CreateImagePipelineInput {
         self.enhanced_image_metadata_enabled
     }
     /// <p> The schedule of the image pipeline.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::model::Schedule> {
         self.schedule.as_ref()
     }
     /// <p> The status of the image pipeline.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PipelineStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PipelineStatus> {
         self.status.as_ref()
     }
     /// <p> The tags of the image pipeline.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12734,7 +9471,7 @@ impl CreateImagePipelineInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateImageInput {
+pub struct CreateImageInput  {
     /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
@@ -12755,33 +9492,30 @@ pub struct CreateImageInput {
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p> The tags of the image.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The idempotency token used to make this request idempotent.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateImageInput {
     /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
-    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
-    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
     /// <p> The image tests configuration of the image.</p>
-    pub fn image_tests_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(&self) -> std::option::Option<& crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
@@ -12789,14 +9523,11 @@ impl CreateImageInput {
         self.enhanced_image_metadata_enabled
     }
     /// <p> The tags of the image.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12804,7 +9535,7 @@ impl CreateImageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDistributionConfigurationInput {
+pub struct CreateDistributionConfigurationInput  {
     /// <p> The name of the distribution configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12816,34 +9547,30 @@ pub struct CreateDistributionConfigurationInput {
     pub distributions: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
     /// <p> The tags of the distribution configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The idempotency token of the distribution configuration.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDistributionConfigurationInput {
     /// <p> The name of the distribution configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The description of the distribution configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The distributions of the distribution configuration.</p>
-    pub fn distributions(&self) -> std::option::Option<&[crate::model::Distribution]> {
+    pub fn distributions(&self) -> std::option::Option<& [crate::model::Distribution]> {
         self.distributions.as_deref()
     }
     /// <p> The tags of the distribution configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The idempotency token of the distribution configuration.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12851,7 +9578,7 @@ impl CreateDistributionConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContainerRecipeInput {
+pub struct CreateContainerRecipeInput  {
     /// <p>The type of container to create.</p>
     #[doc(hidden)]
     pub container_type: std::option::Option<crate::model::ContainerType>,
@@ -12861,7 +9588,7 @@ pub struct CreateContainerRecipeInput {
     /// <p>The description of the container recipe.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -12873,9 +9600,9 @@ pub struct CreateContainerRecipeInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
@@ -12902,8 +9629,7 @@ pub struct CreateContainerRecipeInput {
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
     #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
@@ -12919,18 +9645,18 @@ pub struct CreateContainerRecipeInput {
 }
 impl CreateContainerRecipeInput {
     /// <p>The type of container to create.</p>
-    pub fn container_type(&self) -> std::option::Option<&crate::model::ContainerType> {
+    pub fn container_type(&self) -> std::option::Option<& crate::model::ContainerType> {
         self.container_type.as_ref()
     }
     /// <p>The name of the container recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the container recipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -12942,66 +9668,59 @@ impl CreateContainerRecipeInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
     /// </note>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
+    pub fn components(&self) -> std::option::Option<& [crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn instance_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceConfiguration> {
+    pub fn instance_configuration(&self) -> std::option::Option<& crate::model::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-    pub fn dockerfile_template_data(&self) -> std::option::Option<&str> {
+    pub fn dockerfile_template_data(&self) -> std::option::Option<& str> {
         self.dockerfile_template_data.as_deref()
     }
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-    pub fn dockerfile_template_uri(&self) -> std::option::Option<&str> {
+    pub fn dockerfile_template_uri(&self) -> std::option::Option<& str> {
         self.dockerfile_template_uri.as_deref()
     }
     /// <p>Specifies the operating system platform when you use a custom base image.</p>
-    pub fn platform_override(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform_override(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform_override.as_ref()
     }
     /// <p>Specifies the operating system version for the base image.</p>
-    pub fn image_os_version_override(&self) -> std::option::Option<&str> {
+    pub fn image_os_version_override(&self) -> std::option::Option<& str> {
         self.image_os_version_override.as_deref()
     }
     /// <p>The base image for the container recipe.</p>
-    pub fn parent_image(&self) -> std::option::Option<&str> {
+    pub fn parent_image(&self) -> std::option::Option<& str> {
         self.parent_image.as_deref()
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn working_directory(&self) -> std::option::Option<&str> {
+    pub fn working_directory(&self) -> std::option::Option<& str> {
         self.working_directory.as_deref()
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn target_repository(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetContainerRepository> {
+    pub fn target_repository(&self) -> std::option::Option<& crate::model::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
     /// <p>Identifies which KMS key is used to encrypt the container image.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The client token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -13009,11 +9728,11 @@ impl CreateContainerRecipeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateComponentInput {
+pub struct CreateComponentInput  {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -13025,9 +9744,9 @@ pub struct CreateComponentInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
@@ -13046,7 +9765,7 @@ pub struct CreateComponentInput {
     /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
     #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
-    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
+    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p> 
     /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -13055,18 +9774,17 @@ pub struct CreateComponentInput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The tags that apply to the component.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The idempotency token of the component.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateComponentInput {
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -13078,51 +9796,48 @@ impl CreateComponentInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </major></p> 
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
     /// </note>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>Describes the contents of the component.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn change_description(&self) -> std::option::Option<&str> {
+    pub fn change_description(&self) -> std::option::Option<& str> {
         self.change_description.as_deref()
     }
     /// <p>The operating system platform of the component.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_os_versions(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_os_versions.as_deref()
     }
     /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> std::option::Option<& str> {
         self.data.as_deref()
     }
-    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
+    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p> 
     /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The ID of the KMS key that is used to encrypt this component.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The idempotency token of the component.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -13130,7 +9845,7 @@ impl CreateComponentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelImageCreationInput {
+pub struct CancelImageCreationInput  {
     /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
@@ -13140,11 +9855,12 @@ pub struct CancelImageCreationInput {
 }
 impl CancelImageCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
+

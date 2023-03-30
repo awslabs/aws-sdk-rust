@@ -27,46 +27,46 @@ pub enum Error {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The request failed because it conflicts with the current state of the specified resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Performing this operation violates a minimum or maximum value limit. For example, attempting to remove the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional information about the violated limit:</p> <note>
-    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p>
-    /// </note>
-    /// <ul>
-    /// <li> <p>ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization. You can't remove the management account. Instead, after you remove all member accounts, delete the organization itself.</p> </li>
-    /// <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first complete phone verification. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a> in the <i>Organizations User Guide.</i> </p> </li>
-    /// <li> <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.</p> </li>
-    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a> to request an increase in your limit. </p> <p>Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your organization. Send fewer invitations or contact Amazon Web Services Support to request an increase in the number of accounts.</p> <note>
-    /// <p>Deleted and closed accounts still count toward your limit.</p>
-    /// </note> <important>
-    /// <p>If you get this exception when running a command immediately after creating the organization, wait one hour and try again. After an hour, if the command continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
-    /// </important> </li>
-    /// <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of the organization as a delegated administrator for an Amazon Web Services service integrated with Organizations. You can designate only a member account as a delegated administrator.</p> </li>
-    /// <li> <p>CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To close the management account for the organization, you must first either remove or close all member accounts in the organization. Follow standard account closure process using root credentials.​ </p> </li>
-    /// <li> <p>CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as a delegated administrator for a service integrated with your organization. To complete this operation, you must first deregister this account as a delegated administrator. </p> </li>
-    /// <li> <p>CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30 days. </p> </li>
-    /// <li> <p>CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can close at a time. ​ </p> </li>
-    /// <li> <p>CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified region, you must enable all features mode.</p> </li>
-    /// <li> <p>DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon Web Services account as a delegated administrator for an Amazon Web Services service that already has a delegated administrator. To complete this operation, you must first deregister any existing delegated administrators for this service.</p> </li>
-    /// <li> <p>EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time. You must resubmit the request and generate a new verfication code.</p> </li>
-    /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li>
-    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment method is associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
-    /// <li> <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first must migrate the organization's management account to the marketplace that corresponds to the management account's address. For example, accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be associated with the same marketplace.</p> </li>
-    /// <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services /&gt; Regions in China. To create an organization, the master must have a valid business license. For more information, contact customer support.</p> </li>
-    /// <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact address and phone number for the management account. Then try the operation again.</p> </li>
-    /// <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an associated account in the Amazon Web Services GovCloud (US-West) Region. For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the <i>Amazon Web Services GovCloud User Guide.</i> </p> </li>
-    /// <li> <p>MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
-    /// <li> <p>MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated administrators than allowed for the service principal. </p> </li>
-    /// <li> <p>MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can be attached to an entity at one time.</p> </li>
-    /// <li> <p>MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource. </p> </li>
-    /// <li> <p>MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
-    /// <li> <p>MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the entity to have fewer than the minimum number of policies of a certain type required.</p> </li>
-    /// <li> <p>ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be configured to support all features. An organization that supports only consolidated billing features can't perform this operation.</p> </li>
-    /// <li> <p>OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.</p> </li>
-    /// <li> <p>OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.</p> </li>
-    /// <li> <p>POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.</p> </li>
-    /// <li> <p>POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an organization.</p> </li>
-    /// <li> <p>SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.</p> </li>
-    /// <li> <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p> </li>
-    /// <li> <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting period before you can remove it from the organization. If you get an error that indicates that a wait period is required, try again in a few days.</p> </li>
+    /// <p>Performing this operation violates a minimum or maximum value limit. For example, attempting to remove the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional information about the violated limit:</p> <note> 
+    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p> 
+    /// </note> 
+    /// <ul> 
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization. You can't remove the management account. Instead, after you remove all member accounts, delete the organization itself.</p> </li> 
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first complete phone verification. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a> in the <i>Organizations User Guide.</i> </p> </li> 
+    /// <li> <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.</p> </li> 
+    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a> to request an increase in your limit. </p> <p>Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your organization. Send fewer invitations or contact Amazon Web Services Support to request an increase in the number of accounts.</p> <note> 
+    /// <p>Deleted and closed accounts still count toward your limit.</p> 
+    /// </note> <important> 
+    /// <p>If you get this exception when running a command immediately after creating the organization, wait one hour and try again. After an hour, if the command continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p> 
+    /// </important> </li> 
+    /// <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of the organization as a delegated administrator for an Amazon Web Services service integrated with Organizations. You can designate only a member account as a delegated administrator.</p> </li> 
+    /// <li> <p>CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To close the management account for the organization, you must first either remove or close all member accounts in the organization. Follow standard account closure process using root credentials.​ </p> </li> 
+    /// <li> <p>CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as a delegated administrator for a service integrated with your organization. To complete this operation, you must first deregister this account as a delegated administrator. </p> </li> 
+    /// <li> <p>CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30 days. </p> </li> 
+    /// <li> <p>CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can close at a time. ​ </p> </li> 
+    /// <li> <p>CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified region, you must enable all features mode.</p> </li> 
+    /// <li> <p>DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon Web Services account as a delegated administrator for an Amazon Web Services service that already has a delegated administrator. To complete this operation, you must first deregister any existing delegated administrators for this service.</p> </li> 
+    /// <li> <p>EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time. You must resubmit the request and generate a new verfication code.</p> </li> 
+    /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li> 
+    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment method is associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li> 
+    /// <li> <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first must migrate the organization's management account to the marketplace that corresponds to the management account's address. For example, accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be associated with the same marketplace.</p> </li> 
+    /// <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services /&gt; Regions in China. To create an organization, the master must have a valid business license. For more information, contact customer support.</p> </li> 
+    /// <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact address and phone number for the management account. Then try the operation again.</p> </li> 
+    /// <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an associated account in the Amazon Web Services GovCloud (US-West) Region. For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the <i>Amazon Web Services GovCloud User Guide.</i> </p> </li> 
+    /// <li> <p>MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li> 
+    /// <li> <p>MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated administrators than allowed for the service principal. </p> </li> 
+    /// <li> <p>MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can be attached to an entity at one time.</p> </li> 
+    /// <li> <p>MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource. </p> </li> 
+    /// <li> <p>MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li> 
+    /// <li> <p>MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the entity to have fewer than the minimum number of policies of a certain type required.</p> </li> 
+    /// <li> <p>ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be configured to support all features. An organization that supports only consolidated billing features can't perform this operation.</p> </li> 
+    /// <li> <p>OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.</p> </li> 
+    /// <li> <p>OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.</p> </li> 
+    /// <li> <p>POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.</p> </li> 
+    /// <li> <p>POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an organization.</p> </li> 
+    /// <li> <p>SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.</p> </li> 
+    /// <li> <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p> </li> 
+    /// <li> <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting period before you can remove it from the organization. If you get an error that indicates that a wait period is required, try again in a few days.</p> </li> 
     /// </ul>
     ConstraintViolationException(crate::error::ConstraintViolationException),
     /// <p>We can't find an create account request with the <code>CreateAccountRequestId</code> that you specified.</p>
@@ -89,55 +89,55 @@ pub enum Error {
     FinalizingOrganizationException(crate::error::FinalizingOrganizationException),
     /// <p>The specified handshake is already in the requested state. For example, you can't accept a handshake that was already accepted.</p>
     HandshakeAlreadyInStateException(crate::error::HandshakeAlreadyInStateException),
-    /// <p>The requested operation would violate the constraint identified in the reason code.</p> <note>
-    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation:</p>
-    /// </note>
-    /// <ul>
-    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. Note that deleted and closed accounts still count toward your limit.</p> <important>
-    /// <p>If you get this exception immediately after creating the organization, wait one hour and try again. If after an hour it continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
-    /// </important> </li>
-    /// <li> <p>ALREADY_IN_AN_ORGANIZATION: The handshake request is invalid because the invited account is already a member of an organization.</p> </li>
-    /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li>
-    /// <li> <p>INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You can't issue new invitations to join an organization while it's in the process of enabling all features. You can resume inviting accounts after you finalize the process when all accounts have agreed to the change.</p> </li>
-    /// <li> <p>ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has already enabled all features.</p> </li>
-    /// <li> <p>ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the organization has already started the process to enable all features.</p> </li>
-    /// <li> <p>ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different marketplace than the accounts in the organization. For example, accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.</p> </li>
-    /// <li> <p>ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account too quickly after its previous change.</p> </li>
-    /// <li> <p>PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that doesn't have a payment instrument, such as a credit card, associated with it.</p> </li>
+    /// <p>The requested operation would violate the constraint identified in the reason code.</p> <note> 
+    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation:</p> 
+    /// </note> 
+    /// <ul> 
+    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. Note that deleted and closed accounts still count toward your limit.</p> <important> 
+    /// <p>If you get this exception immediately after creating the organization, wait one hour and try again. If after an hour it continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p> 
+    /// </important> </li> 
+    /// <li> <p>ALREADY_IN_AN_ORGANIZATION: The handshake request is invalid because the invited account is already a member of an organization.</p> </li> 
+    /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li> 
+    /// <li> <p>INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You can't issue new invitations to join an organization while it's in the process of enabling all features. You can resume inviting accounts after you finalize the process when all accounts have agreed to the change.</p> </li> 
+    /// <li> <p>ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has already enabled all features.</p> </li> 
+    /// <li> <p>ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the organization has already started the process to enable all features.</p> </li> 
+    /// <li> <p>ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different marketplace than the accounts in the organization. For example, accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.</p> </li> 
+    /// <li> <p>ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account too quickly after its previous change.</p> </li> 
+    /// <li> <p>PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that doesn't have a payment instrument, such as a credit card, associated with it.</p> </li> 
     /// </ul>
     HandshakeConstraintViolationException(crate::error::HandshakeConstraintViolationException),
     /// <p>We can't find a handshake with the <code>HandshakeId</code> that you specified.</p>
     HandshakeNotFoundException(crate::error::HandshakeNotFoundException),
     /// <p>You can't perform the operation on the handshake in its current state. For example, you can't cancel a handshake that was already accepted or accept a handshake that was already declined.</p>
     InvalidHandshakeTransitionException(crate::error::InvalidHandshakeTransitionException),
-    /// <p>The requested operation failed because you provided invalid values for one or more of the request parameters. This exception includes a reason that contains additional information about the violated limit:</p> <note>
-    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p>
-    /// </note>
-    /// <ul>
-    /// <li> <p>DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.</p> </li>
-    /// <li> <p>IMMUTABLE_POLICY: You specified a policy that is managed by Amazon Web Services and can't be modified.</p> </li>
-    /// <li> <p>INPUT_REQUIRED: You must include a value for all required parameters.</p> </li>
-    /// <li> <p>INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.</p> </li>
-    /// <li> <p>INVALID_ENUM: You specified an invalid value.</p> </li>
-    /// <li> <p>INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.</p> </li>
-    /// <li> <p>INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.</p> </li>
-    /// <li> <p>INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.</p> </li>
-    /// <li> <p>INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from the response to a previous call of the operation.</p> </li>
-    /// <li> <p>INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a party.</p> </li>
-    /// <li> <p>INVALID_PATTERN: You provided a value that doesn't match the required pattern.</p> </li>
-    /// <li> <p>INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.</p> </li>
-    /// <li> <p>INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved prefix <code>AWSServiceRoleFor</code>.</p> </li>
-    /// <li> <p>INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the organization.</p> </li>
-    /// <li> <p>INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. </p> </li>
-    /// <li> <p>INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t add, edit, or delete system tag keys because they're reserved for Amazon Web Services use. System tags don’t count against your tags per resource limit.</p> </li>
-    /// <li> <p>MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.</p> </li>
-    /// <li> <p>MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.</p> </li>
-    /// <li> <p>MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.</p> </li>
-    /// <li> <p>MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.</p> </li>
-    /// <li> <p>MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.</p> </li>
-    /// <li> <p>MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.</p> </li>
-    /// <li> <p>TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.</p> </li>
-    /// <li> <p>UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.</p> </li>
+    /// <p>The requested operation failed because you provided invalid values for one or more of the request parameters. This exception includes a reason that contains additional information about the violated limit:</p> <note> 
+    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p> 
+    /// </note> 
+    /// <ul> 
+    /// <li> <p>DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.</p> </li> 
+    /// <li> <p>IMMUTABLE_POLICY: You specified a policy that is managed by Amazon Web Services and can't be modified.</p> </li> 
+    /// <li> <p>INPUT_REQUIRED: You must include a value for all required parameters.</p> </li> 
+    /// <li> <p>INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.</p> </li> 
+    /// <li> <p>INVALID_ENUM: You specified an invalid value.</p> </li> 
+    /// <li> <p>INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.</p> </li> 
+    /// <li> <p>INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.</p> </li> 
+    /// <li> <p>INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.</p> </li> 
+    /// <li> <p>INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from the response to a previous call of the operation.</p> </li> 
+    /// <li> <p>INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a party.</p> </li> 
+    /// <li> <p>INVALID_PATTERN: You provided a value that doesn't match the required pattern.</p> </li> 
+    /// <li> <p>INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.</p> </li> 
+    /// <li> <p>INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved prefix <code>AWSServiceRoleFor</code>.</p> </li> 
+    /// <li> <p>INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the organization.</p> </li> 
+    /// <li> <p>INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. </p> </li> 
+    /// <li> <p>INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t add, edit, or delete system tag keys because they're reserved for Amazon Web Services use. System tags don’t count against your tags per resource limit.</p> </li> 
+    /// <li> <p>MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.</p> </li> 
+    /// <li> <p>MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.</p> </li> 
+    /// <li> <p>MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.</p> </li> 
+    /// <li> <p>MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.</p> </li> 
+    /// <li> <p>MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.</p> </li> 
+    /// <li> <p>MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.</p> </li> 
+    /// <li> <p>TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.</p> </li> 
+    /// <li> <p>UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.</p> </li> 
     /// </ul>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The provided policy document doesn't meet the requirements of the specified policy type. For example, the syntax might be incorrect. For details about service control policy syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
@@ -163,9 +163,7 @@ pub enum Error {
     /// <p>The specified policy type is already enabled in the specified root.</p>
     PolicyTypeAlreadyEnabledException(crate::error::PolicyTypeAlreadyEnabledException),
     /// <p>You can't use the specified policy type with the feature set currently enabled for this organization. For example, you can enable SCPs only after you enable all features in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Managing Organizations Policies</a>in the <i>Organizations User Guide.</i> </p>
-    PolicyTypeNotAvailableForOrganizationException(
-        crate::error::PolicyTypeNotAvailableForOrganizationException,
-    ),
+    PolicyTypeNotAvailableForOrganizationException(crate::error::PolicyTypeNotAvailableForOrganizationException),
     /// <p>The specified policy type isn't currently enabled in this root. You can't attach policies of the specified type to entities in a root until you enable that type in the root. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide.</i> </p>
     PolicyTypeNotEnabledException(crate::error::PolicyTypeNotEnabledException),
     /// <p>We can't find a resource policy request with the parameter that you specified.</p>
@@ -178,20 +176,20 @@ pub enum Error {
     SourceParentNotFoundException(crate::error::SourceParentNotFoundException),
     /// <p>We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),
-    /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p>
+    /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p> 
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -243,19 +241,14 @@ impl std::fmt::Display for Error {
             Error::TargetNotFoundException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::UnsupportedApiEndpointException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptHandshakeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptHandshakeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AcceptHandshakeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -263,54 +256,25 @@ where
 impl From<crate::error::AcceptHandshakeError> for Error {
     fn from(err: crate::error::AcceptHandshakeError) -> Self {
         match err.kind {
-            crate::error::AcceptHandshakeErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::AccessDeniedForDependencyException(inner) => {
-                Error::AccessDeniedForDependencyException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::HandshakeAlreadyInStateException(inner) => {
-                Error::HandshakeAlreadyInStateException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::HandshakeConstraintViolationException(
-                inner,
-            ) => Error::HandshakeConstraintViolationException(inner),
-            crate::error::AcceptHandshakeErrorKind::HandshakeNotFoundException(inner) => {
-                Error::HandshakeNotFoundException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::InvalidHandshakeTransitionException(inner) => {
-                Error::InvalidHandshakeTransitionException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AcceptHandshakeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AcceptHandshakeErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AcceptHandshakeErrorKind::AccessDeniedForDependencyException(inner) => Error::AccessDeniedForDependencyException(inner),
+            crate::error::AcceptHandshakeErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::AcceptHandshakeErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::AcceptHandshakeErrorKind::HandshakeAlreadyInStateException(inner) => Error::HandshakeAlreadyInStateException(inner),
+            crate::error::AcceptHandshakeErrorKind::HandshakeConstraintViolationException(inner) => Error::HandshakeConstraintViolationException(inner),
+            crate::error::AcceptHandshakeErrorKind::HandshakeNotFoundException(inner) => Error::HandshakeNotFoundException(inner),
+            crate::error::AcceptHandshakeErrorKind::InvalidHandshakeTransitionException(inner) => Error::InvalidHandshakeTransitionException(inner),
+            crate::error::AcceptHandshakeErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::AcceptHandshakeErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::AcceptHandshakeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::AcceptHandshakeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -318,60 +282,27 @@ where
 impl From<crate::error::AttachPolicyError> for Error {
     fn from(err: crate::error::AttachPolicyError) -> Self {
         match err.kind {
-            crate::error::AttachPolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::DuplicatePolicyAttachmentException(inner) => {
-                Error::DuplicatePolicyAttachmentException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::PolicyChangesInProgressException(inner) => {
-                Error::PolicyChangesInProgressException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::PolicyNotFoundException(inner) => {
-                Error::PolicyNotFoundException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::PolicyTypeNotEnabledException(inner) => {
-                Error::PolicyTypeNotEnabledException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::TargetNotFoundException(inner) => {
-                Error::TargetNotFoundException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::AttachPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AttachPolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AttachPolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::AttachPolicyErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::AttachPolicyErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::AttachPolicyErrorKind::DuplicatePolicyAttachmentException(inner) => Error::DuplicatePolicyAttachmentException(inner),
+            crate::error::AttachPolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::AttachPolicyErrorKind::PolicyChangesInProgressException(inner) => Error::PolicyChangesInProgressException(inner),
+            crate::error::AttachPolicyErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::error::AttachPolicyErrorKind::PolicyTypeNotEnabledException(inner) => Error::PolicyTypeNotEnabledException(inner),
+            crate::error::AttachPolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::AttachPolicyErrorKind::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
+            crate::error::AttachPolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::AttachPolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::AttachPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelHandshakeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelHandshakeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelHandshakeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -379,45 +310,22 @@ where
 impl From<crate::error::CancelHandshakeError> for Error {
     fn from(err: crate::error::CancelHandshakeError) -> Self {
         match err.kind {
-            crate::error::CancelHandshakeErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CancelHandshakeErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::CancelHandshakeErrorKind::HandshakeAlreadyInStateException(inner) => {
-                Error::HandshakeAlreadyInStateException(inner)
-            }
-            crate::error::CancelHandshakeErrorKind::HandshakeNotFoundException(inner) => {
-                Error::HandshakeNotFoundException(inner)
-            }
-            crate::error::CancelHandshakeErrorKind::InvalidHandshakeTransitionException(inner) => {
-                Error::InvalidHandshakeTransitionException(inner)
-            }
-            crate::error::CancelHandshakeErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::CancelHandshakeErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::CancelHandshakeErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CancelHandshakeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CancelHandshakeErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CancelHandshakeErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CancelHandshakeErrorKind::HandshakeAlreadyInStateException(inner) => Error::HandshakeAlreadyInStateException(inner),
+            crate::error::CancelHandshakeErrorKind::HandshakeNotFoundException(inner) => Error::HandshakeNotFoundException(inner),
+            crate::error::CancelHandshakeErrorKind::InvalidHandshakeTransitionException(inner) => Error::InvalidHandshakeTransitionException(inner),
+            crate::error::CancelHandshakeErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CancelHandshakeErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::CancelHandshakeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CancelHandshakeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CloseAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CloseAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CloseAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -425,54 +333,25 @@ where
 impl From<crate::error::CloseAccountError> for Error {
     fn from(err: crate::error::CloseAccountError) -> Self {
         match err.kind {
-            crate::error::CloseAccountErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CloseAccountErrorKind::AccountAlreadyClosedException(inner) => {
-                Error::AccountAlreadyClosedException(inner)
-            }
-            crate::error::CloseAccountErrorKind::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::CloseAccountErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::CloseAccountErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::CloseAccountErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CloseAccountErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::CloseAccountErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::CloseAccountErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::CloseAccountErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CloseAccountErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::CloseAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CloseAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CloseAccountErrorKind::AccountAlreadyClosedException(inner) => Error::AccountAlreadyClosedException(inner),
+            crate::error::CloseAccountErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::CloseAccountErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::CloseAccountErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CloseAccountErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CloseAccountErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::CloseAccountErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CloseAccountErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::CloseAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CloseAccountErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::CloseAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -480,51 +359,23 @@ where
 impl From<crate::error::CreateAccountError> for Error {
     fn from(err: crate::error::CreateAccountError) -> Self {
         match err.kind {
-            crate::error::CreateAccountErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateAccountErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::CreateAccountErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::CreateAccountErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::CreateAccountErrorKind::FinalizingOrganizationException(inner) => {
-                Error::FinalizingOrganizationException(inner)
-            }
-            crate::error::CreateAccountErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::CreateAccountErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::CreateAccountErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateAccountErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::CreateAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateAccountErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::CreateAccountErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CreateAccountErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::CreateAccountErrorKind::FinalizingOrganizationException(inner) => Error::FinalizingOrganizationException(inner),
+            crate::error::CreateAccountErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateAccountErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::CreateAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CreateAccountErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::CreateAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGovCloudAccountError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGovCloudAccountError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGovCloudAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGovCloudAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -532,50 +383,23 @@ where
 impl From<crate::error::CreateGovCloudAccountError> for Error {
     fn from(err: crate::error::CreateGovCloudAccountError) -> Self {
         match err.kind {
-            crate::error::CreateGovCloudAccountErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateGovCloudAccountErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::CreateGovCloudAccountErrorKind::ConcurrentModificationException(
-                inner,
-            ) => Error::ConcurrentModificationException(inner),
-            crate::error::CreateGovCloudAccountErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::CreateGovCloudAccountErrorKind::FinalizingOrganizationException(
-                inner,
-            ) => Error::FinalizingOrganizationException(inner),
-            crate::error::CreateGovCloudAccountErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::CreateGovCloudAccountErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::CreateGovCloudAccountErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateGovCloudAccountErrorKind::UnsupportedApiEndpointException(
-                inner,
-            ) => Error::UnsupportedApiEndpointException(inner),
-            crate::error::CreateGovCloudAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGovCloudAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::FinalizingOrganizationException(inner) => Error::FinalizingOrganizationException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::CreateGovCloudAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOrganizationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateOrganizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -583,48 +407,22 @@ where
 impl From<crate::error::CreateOrganizationError> for Error {
     fn from(err: crate::error::CreateOrganizationError) -> Self {
         match err.kind {
-            crate::error::CreateOrganizationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateOrganizationErrorKind::AccessDeniedForDependencyException(
-                inner,
-            ) => Error::AccessDeniedForDependencyException(inner),
-            crate::error::CreateOrganizationErrorKind::AlreadyInOrganizationException(inner) => {
-                Error::AlreadyInOrganizationException(inner)
-            }
-            crate::error::CreateOrganizationErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::CreateOrganizationErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::CreateOrganizationErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::CreateOrganizationErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::CreateOrganizationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateOrganizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateOrganizationErrorKind::AccessDeniedForDependencyException(inner) => Error::AccessDeniedForDependencyException(inner),
+            crate::error::CreateOrganizationErrorKind::AlreadyInOrganizationException(inner) => Error::AlreadyInOrganizationException(inner),
+            crate::error::CreateOrganizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CreateOrganizationErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::CreateOrganizationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::CreateOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CreateOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOrganizationalUnitError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateOrganizationalUnitError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOrganizationalUnitError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateOrganizationalUnitError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -645,15 +443,10 @@ impl From<crate::error::CreateOrganizationalUnitError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -661,56 +454,25 @@ where
 impl From<crate::error::CreatePolicyError> for Error {
     fn from(err: crate::error::CreatePolicyError) -> Self {
         match err.kind {
-            crate::error::CreatePolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::DuplicatePolicyException(inner) => {
-                Error::DuplicatePolicyException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::PolicyTypeNotAvailableForOrganizationException(
-                inner,
-            ) => Error::PolicyTypeNotAvailableForOrganizationException(inner),
-            crate::error::CreatePolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::CreatePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreatePolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreatePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::CreatePolicyErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CreatePolicyErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::CreatePolicyErrorKind::DuplicatePolicyException(inner) => Error::DuplicatePolicyException(inner),
+            crate::error::CreatePolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreatePolicyErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::error::CreatePolicyErrorKind::PolicyTypeNotAvailableForOrganizationException(inner) => Error::PolicyTypeNotAvailableForOrganizationException(inner),
+            crate::error::CreatePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::CreatePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CreatePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::CreatePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeclineHandshakeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeclineHandshakeError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeclineHandshakeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeclineHandshakeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -718,47 +480,22 @@ where
 impl From<crate::error::DeclineHandshakeError> for Error {
     fn from(err: crate::error::DeclineHandshakeError) -> Self {
         match err.kind {
-            crate::error::DeclineHandshakeErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeclineHandshakeErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DeclineHandshakeErrorKind::HandshakeAlreadyInStateException(inner) => {
-                Error::HandshakeAlreadyInStateException(inner)
-            }
-            crate::error::DeclineHandshakeErrorKind::HandshakeNotFoundException(inner) => {
-                Error::HandshakeNotFoundException(inner)
-            }
-            crate::error::DeclineHandshakeErrorKind::InvalidHandshakeTransitionException(inner) => {
-                Error::InvalidHandshakeTransitionException(inner)
-            }
-            crate::error::DeclineHandshakeErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DeclineHandshakeErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DeclineHandshakeErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeclineHandshakeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeclineHandshakeErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeclineHandshakeErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeclineHandshakeErrorKind::HandshakeAlreadyInStateException(inner) => Error::HandshakeAlreadyInStateException(inner),
+            crate::error::DeclineHandshakeErrorKind::HandshakeNotFoundException(inner) => Error::HandshakeNotFoundException(inner),
+            crate::error::DeclineHandshakeErrorKind::InvalidHandshakeTransitionException(inner) => Error::InvalidHandshakeTransitionException(inner),
+            crate::error::DeclineHandshakeErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeclineHandshakeErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DeclineHandshakeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DeclineHandshakeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -766,45 +503,21 @@ where
 impl From<crate::error::DeleteOrganizationError> for Error {
     fn from(err: crate::error::DeleteOrganizationError) -> Self {
         match err.kind {
-            crate::error::DeleteOrganizationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteOrganizationErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::DeleteOrganizationErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DeleteOrganizationErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DeleteOrganizationErrorKind::OrganizationNotEmptyException(inner) => {
-                Error::OrganizationNotEmptyException(inner)
-            }
-            crate::error::DeleteOrganizationErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DeleteOrganizationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteOrganizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteOrganizationErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DeleteOrganizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteOrganizationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeleteOrganizationErrorKind::OrganizationNotEmptyException(inner) => Error::OrganizationNotEmptyException(inner),
+            crate::error::DeleteOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DeleteOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DeleteOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationalUnitError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationalUnitError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationalUnitError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationalUnitError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -824,15 +537,10 @@ impl From<crate::error::DeleteOrganizationalUnitError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -840,51 +548,23 @@ where
 impl From<crate::error::DeletePolicyError> for Error {
     fn from(err: crate::error::DeletePolicyError) -> Self {
         match err.kind {
-            crate::error::DeletePolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::PolicyInUseException(inner) => {
-                Error::PolicyInUseException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::PolicyNotFoundException(inner) => {
-                Error::PolicyNotFoundException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::DeletePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeletePolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeletePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DeletePolicyErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeletePolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeletePolicyErrorKind::PolicyInUseException(inner) => Error::PolicyInUseException(inner),
+            crate::error::DeletePolicyErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::error::DeletePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DeletePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DeletePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DeletePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -892,52 +572,22 @@ where
 impl From<crate::error::DeleteResourcePolicyError> for Error {
     fn from(err: crate::error::DeleteResourcePolicyError) -> Self {
         match err.kind {
-            crate::error::DeleteResourcePolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::DeleteResourcePolicyErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::ResourcePolicyNotFoundException(inner) => {
-                Error::ResourcePolicyNotFoundException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteResourcePolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::ResourcePolicyNotFoundException(inner) => Error::ResourcePolicyNotFoundException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeregisterDelegatedAdministratorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeregisterDelegatedAdministratorError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterDelegatedAdministratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeregisterDelegatedAdministratorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -959,15 +609,10 @@ impl From<crate::error::DeregisterDelegatedAdministratorError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -975,42 +620,20 @@ where
 impl From<crate::error::DescribeAccountError> for Error {
     fn from(err: crate::error::DescribeAccountError) -> Self {
         match err.kind {
-            crate::error::DescribeAccountErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeAccountErrorKind::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::DescribeAccountErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::DescribeAccountErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DescribeAccountErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DescribeAccountErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeAccountErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::DescribeAccountErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DescribeAccountErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribeAccountErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DescribeAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribeAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCreateAccountStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCreateAccountStatusError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCreateAccountStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeCreateAccountStatusError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1029,18 +652,10 @@ impl From<crate::error::DescribeCreateAccountStatusError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEffectivePolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeEffectivePolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEffectivePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEffectivePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1048,50 +663,23 @@ where
 impl From<crate::error::DescribeEffectivePolicyError> for Error {
     fn from(err: crate::error::DescribeEffectivePolicyError) -> Self {
         match err.kind {
-            crate::error::DescribeEffectivePolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeEffectivePolicyErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::DescribeEffectivePolicyErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::DescribeEffectivePolicyErrorKind::EffectivePolicyNotFoundException(
-                inner,
-            ) => Error::EffectivePolicyNotFoundException(inner),
-            crate::error::DescribeEffectivePolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DescribeEffectivePolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DescribeEffectivePolicyErrorKind::TargetNotFoundException(inner) => {
-                Error::TargetNotFoundException(inner)
-            }
-            crate::error::DescribeEffectivePolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeEffectivePolicyErrorKind::UnsupportedApiEndpointException(
-                inner,
-            ) => Error::UnsupportedApiEndpointException(inner),
-            crate::error::DescribeEffectivePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeEffectivePolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::EffectivePolicyNotFoundException(inner) => Error::EffectivePolicyNotFoundException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DescribeEffectivePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeHandshakeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeHandshakeError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeHandshakeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeHandshakeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1099,42 +687,20 @@ where
 impl From<crate::error::DescribeHandshakeError> for Error {
     fn from(err: crate::error::DescribeHandshakeError) -> Self {
         match err.kind {
-            crate::error::DescribeHandshakeErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeHandshakeErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DescribeHandshakeErrorKind::HandshakeNotFoundException(inner) => {
-                Error::HandshakeNotFoundException(inner)
-            }
-            crate::error::DescribeHandshakeErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DescribeHandshakeErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DescribeHandshakeErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeHandshakeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeHandshakeErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeHandshakeErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DescribeHandshakeErrorKind::HandshakeNotFoundException(inner) => Error::HandshakeNotFoundException(inner),
+            crate::error::DescribeHandshakeErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribeHandshakeErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DescribeHandshakeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribeHandshakeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1142,39 +708,19 @@ where
 impl From<crate::error::DescribeOrganizationError> for Error {
     fn from(err: crate::error::DescribeOrganizationError) -> Self {
         match err.kind {
-            crate::error::DescribeOrganizationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeOrganizationErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::DescribeOrganizationErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DescribeOrganizationErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DescribeOrganizationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeOrganizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeOrganizationErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DescribeOrganizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DescribeOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DescribeOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribeOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationalUnitError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationalUnitError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationalUnitError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationalUnitError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1192,15 +738,10 @@ impl From<crate::error::DescribeOrganizationalUnitError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1208,45 +749,21 @@ where
 impl From<crate::error::DescribePolicyError> for Error {
     fn from(err: crate::error::DescribePolicyError) -> Self {
         match err.kind {
-            crate::error::DescribePolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::DescribePolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DescribePolicyErrorKind::PolicyNotFoundException(inner) => {
-                Error::PolicyNotFoundException(inner)
-            }
-            crate::error::DescribePolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DescribePolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::DescribePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribePolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DescribePolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribePolicyErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::error::DescribePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DescribePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DescribePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1254,42 +771,21 @@ where
 impl From<crate::error::DescribeResourcePolicyError> for Error {
     fn from(err: crate::error::DescribeResourcePolicyError) -> Self {
         match err.kind {
-            crate::error::DescribeResourcePolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::DescribeResourcePolicyErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::DescribeResourcePolicyErrorKind::ResourcePolicyNotFoundException(
-                inner,
-            ) => Error::ResourcePolicyNotFoundException(inner),
-            crate::error::DescribeResourcePolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DescribeResourcePolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeResourcePolicyErrorKind::UnsupportedApiEndpointException(
-                inner,
-            ) => Error::UnsupportedApiEndpointException(inner),
-            crate::error::DescribeResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeResourcePolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::ResourcePolicyNotFoundException(inner) => Error::ResourcePolicyNotFoundException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DetachPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1297,60 +793,26 @@ where
 impl From<crate::error::DetachPolicyError> for Error {
     fn from(err: crate::error::DetachPolicyError) -> Self {
         match err.kind {
-            crate::error::DetachPolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::PolicyChangesInProgressException(inner) => {
-                Error::PolicyChangesInProgressException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::PolicyNotAttachedException(inner) => {
-                Error::PolicyNotAttachedException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::PolicyNotFoundException(inner) => {
-                Error::PolicyNotFoundException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::TargetNotFoundException(inner) => {
-                Error::TargetNotFoundException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::DetachPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DetachPolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DetachPolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DetachPolicyErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DetachPolicyErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::DetachPolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DetachPolicyErrorKind::PolicyChangesInProgressException(inner) => Error::PolicyChangesInProgressException(inner),
+            crate::error::DetachPolicyErrorKind::PolicyNotAttachedException(inner) => Error::PolicyNotAttachedException(inner),
+            crate::error::DetachPolicyErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::error::DetachPolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DetachPolicyErrorKind::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
+            crate::error::DetachPolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DetachPolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DetachPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableAWSServiceAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DisableAWSServiceAccessError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableAWSServiceAccessError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableAWSServiceAccessError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1358,47 +820,22 @@ where
 impl From<crate::error::DisableAWSServiceAccessError> for Error {
     fn from(err: crate::error::DisableAWSServiceAccessError) -> Self {
         match err.kind {
-            crate::error::DisableAWSServiceAccessErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DisableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::DisableAWSServiceAccessErrorKind::ConcurrentModificationException(
-                inner,
-            ) => Error::ConcurrentModificationException(inner),
-            crate::error::DisableAWSServiceAccessErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::DisableAWSServiceAccessErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DisableAWSServiceAccessErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DisableAWSServiceAccessErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DisableAWSServiceAccessErrorKind::UnsupportedApiEndpointException(
-                inner,
-            ) => Error::UnsupportedApiEndpointException(inner),
-            crate::error::DisableAWSServiceAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DisableAWSServiceAccessErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DisableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DisableAWSServiceAccessErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DisableAWSServiceAccessErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::DisableAWSServiceAccessErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DisableAWSServiceAccessErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DisableAWSServiceAccessErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DisableAWSServiceAccessErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DisableAWSServiceAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisablePolicyTypeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DisablePolicyTypeError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisablePolicyTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisablePolicyTypeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1406,56 +843,25 @@ where
 impl From<crate::error::DisablePolicyTypeError> for Error {
     fn from(err: crate::error::DisablePolicyTypeError) -> Self {
         match err.kind {
-            crate::error::DisablePolicyTypeErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::PolicyChangesInProgressException(inner) => {
-                Error::PolicyChangesInProgressException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::PolicyTypeNotEnabledException(inner) => {
-                Error::PolicyTypeNotEnabledException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::RootNotFoundException(inner) => {
-                Error::RootNotFoundException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::DisablePolicyTypeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DisablePolicyTypeErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DisablePolicyTypeErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DisablePolicyTypeErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DisablePolicyTypeErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::DisablePolicyTypeErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DisablePolicyTypeErrorKind::PolicyChangesInProgressException(inner) => Error::PolicyChangesInProgressException(inner),
+            crate::error::DisablePolicyTypeErrorKind::PolicyTypeNotEnabledException(inner) => Error::PolicyTypeNotEnabledException(inner),
+            crate::error::DisablePolicyTypeErrorKind::RootNotFoundException(inner) => Error::RootNotFoundException(inner),
+            crate::error::DisablePolicyTypeErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DisablePolicyTypeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DisablePolicyTypeErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DisablePolicyTypeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableAllFeaturesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::EnableAllFeaturesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableAllFeaturesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableAllFeaturesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1463,45 +869,21 @@ where
 impl From<crate::error::EnableAllFeaturesError> for Error {
     fn from(err: crate::error::EnableAllFeaturesError) -> Self {
         match err.kind {
-            crate::error::EnableAllFeaturesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::EnableAllFeaturesErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::EnableAllFeaturesErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::EnableAllFeaturesErrorKind::HandshakeConstraintViolationException(
-                inner,
-            ) => Error::HandshakeConstraintViolationException(inner),
-            crate::error::EnableAllFeaturesErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::EnableAllFeaturesErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::EnableAllFeaturesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::EnableAllFeaturesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::EnableAllFeaturesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::EnableAllFeaturesErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::EnableAllFeaturesErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::EnableAllFeaturesErrorKind::HandshakeConstraintViolationException(inner) => Error::HandshakeConstraintViolationException(inner),
+            crate::error::EnableAllFeaturesErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::EnableAllFeaturesErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::EnableAllFeaturesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::EnableAllFeaturesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableAWSServiceAccessError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::EnableAWSServiceAccessError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableAWSServiceAccessError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableAWSServiceAccessError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1509,47 +891,22 @@ where
 impl From<crate::error::EnableAWSServiceAccessError> for Error {
     fn from(err: crate::error::EnableAWSServiceAccessError) -> Self {
         match err.kind {
-            crate::error::EnableAWSServiceAccessErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::EnableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::EnableAWSServiceAccessErrorKind::ConcurrentModificationException(
-                inner,
-            ) => Error::ConcurrentModificationException(inner),
-            crate::error::EnableAWSServiceAccessErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::EnableAWSServiceAccessErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::EnableAWSServiceAccessErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::EnableAWSServiceAccessErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::EnableAWSServiceAccessErrorKind::UnsupportedApiEndpointException(
-                inner,
-            ) => Error::UnsupportedApiEndpointException(inner),
-            crate::error::EnableAWSServiceAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::EnableAWSServiceAccessErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::EnableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::EnableAWSServiceAccessErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::EnableAWSServiceAccessErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::EnableAWSServiceAccessErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::EnableAWSServiceAccessErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::EnableAWSServiceAccessErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::EnableAWSServiceAccessErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::EnableAWSServiceAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnablePolicyTypeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::EnablePolicyTypeError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnablePolicyTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::EnablePolicyTypeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1573,18 +930,10 @@ impl From<crate::error::EnablePolicyTypeError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InviteAccountToOrganizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::InviteAccountToOrganizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::InviteAccountToOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::InviteAccountToOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1607,17 +956,10 @@ impl From<crate::error::InviteAccountToOrganizationError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::LeaveOrganizationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::LeaveOrganizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::LeaveOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::LeaveOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1625,48 +967,23 @@ where
 impl From<crate::error::LeaveOrganizationError> for Error {
     fn from(err: crate::error::LeaveOrganizationError) -> Self {
         match err.kind {
-            crate::error::LeaveOrganizationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::LeaveOrganizationErrorKind::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::LeaveOrganizationErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::LeaveOrganizationErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::LeaveOrganizationErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::LeaveOrganizationErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::LeaveOrganizationErrorKind::MasterCannotLeaveOrganizationException(
-                inner,
-            ) => Error::MasterCannotLeaveOrganizationException(inner),
-            crate::error::LeaveOrganizationErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::LeaveOrganizationErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::LeaveOrganizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::LeaveOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::LeaveOrganizationErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::LeaveOrganizationErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::LeaveOrganizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::LeaveOrganizationErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::LeaveOrganizationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::LeaveOrganizationErrorKind::MasterCannotLeaveOrganizationException(inner) => Error::MasterCannotLeaveOrganizationException(inner),
+            crate::error::LeaveOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::LeaveOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::LeaveOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1674,39 +991,19 @@ where
 impl From<crate::error::ListAccountsError> for Error {
     fn from(err: crate::error::ListAccountsError) -> Self {
         match err.kind {
-            crate::error::ListAccountsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListAccountsErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::ListAccountsErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListAccountsErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListAccountsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListAccountsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAccountsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListAccountsErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListAccountsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListAccountsErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListAccountsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListAccountsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsForParentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAccountsForParentError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsForParentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountsForParentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1714,50 +1011,20 @@ where
 impl From<crate::error::ListAccountsForParentError> for Error {
     fn from(err: crate::error::ListAccountsForParentError) -> Self {
         match err.kind {
-            crate::error::ListAccountsForParentErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListAccountsForParentErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::ListAccountsForParentErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListAccountsForParentErrorKind::ParentNotFoundException(inner) => {
-                Error::ParentNotFoundException(inner)
-            }
-            crate::error::ListAccountsForParentErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListAccountsForParentErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListAccountsForParentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAccountsForParentErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListAccountsForParentErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListAccountsForParentErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListAccountsForParentErrorKind::ParentNotFoundException(inner) => Error::ParentNotFoundException(inner),
+            crate::error::ListAccountsForParentErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListAccountsForParentErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListAccountsForParentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListAWSServiceAccessForOrganizationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListAWSServiceAccessForOrganizationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAWSServiceAccessForOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAWSServiceAccessForOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1776,15 +1043,10 @@ impl From<crate::error::ListAWSServiceAccessForOrganizationError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChildrenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChildrenError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChildrenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1792,42 +1054,20 @@ where
 impl From<crate::error::ListChildrenError> for Error {
     fn from(err: crate::error::ListChildrenError) -> Self {
         match err.kind {
-            crate::error::ListChildrenErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListChildrenErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::ListChildrenErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListChildrenErrorKind::ParentNotFoundException(inner) => {
-                Error::ParentNotFoundException(inner)
-            }
-            crate::error::ListChildrenErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListChildrenErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListChildrenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChildrenErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListChildrenErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListChildrenErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListChildrenErrorKind::ParentNotFoundException(inner) => Error::ParentNotFoundException(inner),
+            crate::error::ListChildrenErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListChildrenErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListChildrenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCreateAccountStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListCreateAccountStatusError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCreateAccountStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListCreateAccountStatusError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1835,42 +1075,20 @@ where
 impl From<crate::error::ListCreateAccountStatusError> for Error {
     fn from(err: crate::error::ListCreateAccountStatusError) -> Self {
         match err.kind {
-            crate::error::ListCreateAccountStatusErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::ListCreateAccountStatusErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListCreateAccountStatusErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListCreateAccountStatusErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListCreateAccountStatusErrorKind::UnsupportedApiEndpointException(
-                inner,
-            ) => Error::UnsupportedApiEndpointException(inner),
-            crate::error::ListCreateAccountStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListCreateAccountStatusErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListCreateAccountStatusErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListCreateAccountStatusErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListCreateAccountStatusErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListCreateAccountStatusErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::ListCreateAccountStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDelegatedAdministratorsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDelegatedAdministratorsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDelegatedAdministratorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDelegatedAdministratorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1889,22 +1107,10 @@ impl From<crate::error::ListDelegatedAdministratorsError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListDelegatedServicesForAccountError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListDelegatedServicesForAccountError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDelegatedServicesForAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDelegatedServicesForAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1925,18 +1131,10 @@ impl From<crate::error::ListDelegatedServicesForAccountError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListHandshakesForAccountError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListHandshakesForAccountError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListHandshakesForAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListHandshakesForAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1944,39 +1142,19 @@ where
 impl From<crate::error::ListHandshakesForAccountError> for Error {
     fn from(err: crate::error::ListHandshakesForAccountError) -> Self {
         match err.kind {
-            crate::error::ListHandshakesForAccountErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListHandshakesForAccountErrorKind::ConcurrentModificationException(
-                inner,
-            ) => Error::ConcurrentModificationException(inner),
-            crate::error::ListHandshakesForAccountErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListHandshakesForAccountErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListHandshakesForAccountErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListHandshakesForAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListHandshakesForAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListHandshakesForAccountErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::ListHandshakesForAccountErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListHandshakesForAccountErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListHandshakesForAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListHandshakesForAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListHandshakesForOrganizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListHandshakesForOrganizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListHandshakesForOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListHandshakesForOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1994,22 +1172,10 @@ impl From<crate::error::ListHandshakesForOrganizationError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListOrganizationalUnitsForParentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListOrganizationalUnitsForParentError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOrganizationalUnitsForParentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListOrganizationalUnitsForParentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2027,15 +1193,10 @@ impl From<crate::error::ListOrganizationalUnitsForParentError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListParentsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListParentsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListParentsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2043,39 +1204,20 @@ where
 impl From<crate::error::ListParentsError> for Error {
     fn from(err: crate::error::ListParentsError) -> Self {
         match err.kind {
-            crate::error::ListParentsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListParentsErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::ListParentsErrorKind::ChildNotFoundException(inner) => {
-                Error::ChildNotFoundException(inner)
-            }
-            crate::error::ListParentsErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListParentsErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListParentsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListParentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListParentsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListParentsErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListParentsErrorKind::ChildNotFoundException(inner) => Error::ChildNotFoundException(inner),
+            crate::error::ListParentsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListParentsErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListParentsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListParentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPoliciesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPoliciesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2083,42 +1225,20 @@ where
 impl From<crate::error::ListPoliciesError> for Error {
     fn from(err: crate::error::ListPoliciesError) -> Self {
         match err.kind {
-            crate::error::ListPoliciesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListPoliciesErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::ListPoliciesErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListPoliciesErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListPoliciesErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListPoliciesErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::ListPoliciesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListPoliciesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListPoliciesErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListPoliciesErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListPoliciesErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListPoliciesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListPoliciesErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::ListPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPoliciesForTargetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListPoliciesForTargetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPoliciesForTargetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPoliciesForTargetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2126,42 +1246,21 @@ where
 impl From<crate::error::ListPoliciesForTargetError> for Error {
     fn from(err: crate::error::ListPoliciesForTargetError) -> Self {
         match err.kind {
-            crate::error::ListPoliciesForTargetErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListPoliciesForTargetErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::ListPoliciesForTargetErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListPoliciesForTargetErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListPoliciesForTargetErrorKind::TargetNotFoundException(inner) => {
-                Error::TargetNotFoundException(inner)
-            }
-            crate::error::ListPoliciesForTargetErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListPoliciesForTargetErrorKind::UnsupportedApiEndpointException(
-                inner,
-            ) => Error::UnsupportedApiEndpointException(inner),
-            crate::error::ListPoliciesForTargetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListPoliciesForTargetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListPoliciesForTargetErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListPoliciesForTargetErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListPoliciesForTargetErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListPoliciesForTargetErrorKind::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
+            crate::error::ListPoliciesForTargetErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListPoliciesForTargetErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::ListPoliciesForTargetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRootsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRootsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRootsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2169,38 +1268,19 @@ where
 impl From<crate::error::ListRootsError> for Error {
     fn from(err: crate::error::ListRootsError) -> Self {
         match err.kind {
-            crate::error::ListRootsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListRootsErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::ListRootsErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListRootsErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListRootsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListRootsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRootsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListRootsErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListRootsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListRootsErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListRootsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListRootsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2208,42 +1288,20 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::ListTagsForResourceErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::TargetNotFoundException(inner) => {
-                Error::TargetNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListTagsForResourceErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListTagsForResourceErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListTagsForResourceErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListTagsForResourceErrorKind::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
+            crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTargetsForPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTargetsForPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTargetsForPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTargetsForPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2251,42 +1309,21 @@ where
 impl From<crate::error::ListTargetsForPolicyError> for Error {
     fn from(err: crate::error::ListTargetsForPolicyError) -> Self {
         match err.kind {
-            crate::error::ListTargetsForPolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTargetsForPolicyErrorKind::AwsOrganizationsNotInUseException(
-                inner,
-            ) => Error::AwsOrganizationsNotInUseException(inner),
-            crate::error::ListTargetsForPolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListTargetsForPolicyErrorKind::PolicyNotFoundException(inner) => {
-                Error::PolicyNotFoundException(inner)
-            }
-            crate::error::ListTargetsForPolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::ListTargetsForPolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListTargetsForPolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::ListTargetsForPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTargetsForPolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListTargetsForPolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::ListTargetsForPolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::ListTargetsForPolicyErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::error::ListTargetsForPolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListTargetsForPolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListTargetsForPolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::ListTargetsForPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MoveAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::MoveAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::MoveAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2294,53 +1331,24 @@ where
 impl From<crate::error::MoveAccountError> for Error {
     fn from(err: crate::error::MoveAccountError) -> Self {
         match err.kind {
-            crate::error::MoveAccountErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::MoveAccountErrorKind::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::MoveAccountErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::MoveAccountErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::MoveAccountErrorKind::DestinationParentNotFoundException(inner) => {
-                Error::DestinationParentNotFoundException(inner)
-            }
-            crate::error::MoveAccountErrorKind::DuplicateAccountException(inner) => {
-                Error::DuplicateAccountException(inner)
-            }
-            crate::error::MoveAccountErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::MoveAccountErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::MoveAccountErrorKind::SourceParentNotFoundException(inner) => {
-                Error::SourceParentNotFoundException(inner)
-            }
-            crate::error::MoveAccountErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::MoveAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::MoveAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::MoveAccountErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::MoveAccountErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::MoveAccountErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::MoveAccountErrorKind::DestinationParentNotFoundException(inner) => Error::DestinationParentNotFoundException(inner),
+            crate::error::MoveAccountErrorKind::DuplicateAccountException(inner) => Error::DuplicateAccountException(inner),
+            crate::error::MoveAccountErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::MoveAccountErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::MoveAccountErrorKind::SourceParentNotFoundException(inner) => Error::SourceParentNotFoundException(inner),
+            crate::error::MoveAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::MoveAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2348,52 +1356,22 @@ where
 impl From<crate::error::PutResourcePolicyError> for Error {
     fn from(err: crate::error::PutResourcePolicyError) -> Self {
         match err.kind {
-            crate::error::PutResourcePolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutResourcePolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::PutResourcePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::PutResourcePolicyErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::PutResourcePolicyErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::PutResourcePolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::PutResourcePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::PutResourcePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::PutResourcePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::RegisterDelegatedAdministratorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::RegisterDelegatedAdministratorError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterDelegatedAdministratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterDelegatedAdministratorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2415,18 +1393,10 @@ impl From<crate::error::RegisterDelegatedAdministratorError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveAccountFromOrganizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RemoveAccountFromOrganizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveAccountFromOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveAccountFromOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2447,15 +1417,10 @@ impl From<crate::error::RemoveAccountFromOrganizationError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2463,45 +1428,22 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::TagResourceErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::TagResourceErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::TagResourceErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::TagResourceErrorKind::TargetNotFoundException(inner) => {
-                Error::TargetNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::TagResourceErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::TagResourceErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::TagResourceErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::TagResourceErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::TagResourceErrorKind::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
+            crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2509,48 +1451,22 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UntagResourceErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::UntagResourceErrorKind::TargetNotFoundException(inner) => {
-                Error::TargetNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UntagResourceErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::UntagResourceErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::UntagResourceErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::UntagResourceErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::UntagResourceErrorKind::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
+            crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationalUnitError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationalUnitError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationalUnitError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationalUnitError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2570,15 +1486,10 @@ impl From<crate::error::UpdateOrganizationalUnitError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2586,46 +1497,21 @@ where
 impl From<crate::error::UpdatePolicyError> for Error {
     fn from(err: crate::error::UpdatePolicyError) -> Self {
         match err.kind {
-            crate::error::UpdatePolicyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => {
-                Error::AwsOrganizationsNotInUseException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::DuplicatePolicyException(inner) => {
-                Error::DuplicatePolicyException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::PolicyChangesInProgressException(inner) => {
-                Error::PolicyChangesInProgressException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::PolicyNotFoundException(inner) => {
-                Error::PolicyNotFoundException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
-                Error::UnsupportedApiEndpointException(inner)
-            }
-            crate::error::UpdatePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdatePolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdatePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::UpdatePolicyErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::UpdatePolicyErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::UpdatePolicyErrorKind::DuplicatePolicyException(inner) => Error::DuplicatePolicyException(inner),
+            crate::error::UpdatePolicyErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::UpdatePolicyErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::error::UpdatePolicyErrorKind::PolicyChangesInProgressException(inner) => Error::PolicyChangesInProgressException(inner),
+            crate::error::UpdatePolicyErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::error::UpdatePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::UpdatePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::UpdatePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::UpdatePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

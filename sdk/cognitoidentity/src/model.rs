@@ -3,30 +3,30 @@
 /// <p>A provider representing an Amazon Cognito user pool and its client ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CognitoIdentityProvider {
+pub struct CognitoIdentityProvider  {
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
     #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The client ID for the Amazon Cognito user pool.</p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p> 
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p> 
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     #[doc(hidden)]
     pub server_side_token_check: std::option::Option<bool>,
 }
 impl CognitoIdentityProvider {
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>The client ID for the Amazon Cognito user pool.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
-    /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p> 
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p> 
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub fn server_side_token_check(&self) -> std::option::Option<bool> {
         self.server_side_token_check
@@ -34,7 +34,7 @@ impl CognitoIdentityProvider {
 }
 /// See [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
 pub mod cognito_identity_provider {
-
+    
     /// A builder for [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -49,12 +49,8 @@ pub mod cognito_identity_provider {
             self
         }
         /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>The client ID for the Amazon Cognito user pool.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,32 +59,35 @@ pub mod cognito_identity_provider {
         }
         /// <p>The client ID for the Amazon Cognito user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_id = input;
-            self
+            self.client_id = input; self
         }
-        /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-        /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+        /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p> 
+        /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p> 
         /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
         pub fn server_side_token_check(mut self, input: bool) -> Self {
             self.server_side_token_check = Some(input);
             self
         }
-        /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-        /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+        /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p> 
+        /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p> 
         /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
         pub fn set_server_side_token_check(mut self, input: std::option::Option<bool>) -> Self {
-            self.server_side_token_check = input;
-            self
+            self.server_side_token_check = input; self
         }
         /// Consumes the builder and constructs a [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
         pub fn build(self) -> crate::model::CognitoIdentityProvider {
             crate::model::CognitoIdentityProvider {
-                provider_name: self.provider_name,
-                client_id: self.client_id,
-                server_side_token_check: self.server_side_token_check,
+                provider_name: self.provider_name
+                ,
+                client_id: self.client_id
+                ,
+                server_side_token_check: self.server_side_token_check
+                ,
             }
         }
     }
+    
+    
 }
 impl CognitoIdentityProvider {
     /// Creates a new builder-style object to manufacture [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
@@ -100,48 +99,43 @@ impl CognitoIdentityProvider {
 /// <p>A role mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoleMapping {
+pub struct RoleMapping  {
     /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RoleMappingType>,
-    /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+    /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> 
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
     #[doc(hidden)]
     pub ambiguous_role_resolution: std::option::Option<crate::model::AmbiguousRoleResolutionType>,
-    /// <p>The rules to be used for mapping users to roles.</p>
+    /// <p>The rules to be used for mapping users to roles.</p> 
     /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
     #[doc(hidden)]
     pub rules_configuration: std::option::Option<crate::model::RulesConfigurationType>,
 }
 impl RoleMapping {
     /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RoleMappingType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RoleMappingType> {
         self.r#type.as_ref()
     }
-    /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+    /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> 
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
-    pub fn ambiguous_role_resolution(
-        &self,
-    ) -> std::option::Option<&crate::model::AmbiguousRoleResolutionType> {
+    pub fn ambiguous_role_resolution(&self) -> std::option::Option<& crate::model::AmbiguousRoleResolutionType> {
         self.ambiguous_role_resolution.as_ref()
     }
-    /// <p>The rules to be used for mapping users to roles.</p>
+    /// <p>The rules to be used for mapping users to roles.</p> 
     /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
-    pub fn rules_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RulesConfigurationType> {
+    pub fn rules_configuration(&self) -> std::option::Option<& crate::model::RulesConfigurationType> {
         self.rules_configuration.as_ref()
     }
 }
 /// See [`RoleMapping`](crate::model::RoleMapping).
 pub mod role_mapping {
-
+    
     /// A builder for [`RoleMapping`](crate::model::RoleMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RoleMappingType>,
-        pub(crate) ambiguous_role_resolution:
-            std::option::Option<crate::model::AmbiguousRoleResolutionType>,
+        pub(crate) ambiguous_role_resolution: std::option::Option<crate::model::AmbiguousRoleResolutionType>,
         pub(crate) rules_configuration: std::option::Option<crate::model::RulesConfigurationType>,
     }
     impl Builder {
@@ -151,55 +145,45 @@ pub mod role_mapping {
             self
         }
         /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::RoleMappingType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RoleMappingType>) -> Self {
+            self.r#type = input; self
         }
-        /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+        /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> 
         /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
-        pub fn ambiguous_role_resolution(
-            mut self,
-            input: crate::model::AmbiguousRoleResolutionType,
-        ) -> Self {
+        pub fn ambiguous_role_resolution(mut self, input: crate::model::AmbiguousRoleResolutionType) -> Self {
             self.ambiguous_role_resolution = Some(input);
             self
         }
-        /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+        /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> 
         /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
-        pub fn set_ambiguous_role_resolution(
-            mut self,
-            input: std::option::Option<crate::model::AmbiguousRoleResolutionType>,
-        ) -> Self {
-            self.ambiguous_role_resolution = input;
-            self
+        pub fn set_ambiguous_role_resolution(mut self, input: std::option::Option<crate::model::AmbiguousRoleResolutionType>) -> Self {
+            self.ambiguous_role_resolution = input; self
         }
-        /// <p>The rules to be used for mapping users to roles.</p>
+        /// <p>The rules to be used for mapping users to roles.</p> 
         /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
         pub fn rules_configuration(mut self, input: crate::model::RulesConfigurationType) -> Self {
             self.rules_configuration = Some(input);
             self
         }
-        /// <p>The rules to be used for mapping users to roles.</p>
+        /// <p>The rules to be used for mapping users to roles.</p> 
         /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
-        pub fn set_rules_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RulesConfigurationType>,
-        ) -> Self {
-            self.rules_configuration = input;
-            self
+        pub fn set_rules_configuration(mut self, input: std::option::Option<crate::model::RulesConfigurationType>) -> Self {
+            self.rules_configuration = input; self
         }
         /// Consumes the builder and constructs a [`RoleMapping`](crate::model::RoleMapping).
         pub fn build(self) -> crate::model::RoleMapping {
             crate::model::RoleMapping {
-                r#type: self.r#type,
-                ambiguous_role_resolution: self.ambiguous_role_resolution,
-                rules_configuration: self.rules_configuration,
+                r#type: self.r#type
+                ,
+                ambiguous_role_resolution: self.ambiguous_role_resolution
+                ,
+                rules_configuration: self.rules_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl RoleMapping {
     /// Creates a new builder-style object to manufacture [`RoleMapping`](crate::model::RoleMapping).
@@ -211,22 +195,22 @@ impl RoleMapping {
 /// <p>A container for rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RulesConfigurationType {
-    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+pub struct RulesConfigurationType  {
+    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p> 
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::MappingRule>>,
 }
 impl RulesConfigurationType {
-    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p> 
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::MappingRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::MappingRule]> {
         self.rules.as_deref()
     }
 }
 /// See [`RulesConfigurationType`](crate::model::RulesConfigurationType).
 pub mod rules_configuration_type {
-
+    
     /// A builder for [`RulesConfigurationType`](crate::model::RulesConfigurationType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -237,28 +221,29 @@ pub mod rules_configuration_type {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+        /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p> 
         /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
         pub fn rules(mut self, input: crate::model::MappingRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
-        /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+        /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p> 
         /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MappingRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::MappingRule>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`RulesConfigurationType`](crate::model::RulesConfigurationType).
         pub fn build(self) -> crate::model::RulesConfigurationType {
-            crate::model::RulesConfigurationType { rules: self.rules }
+            crate::model::RulesConfigurationType {
+                rules: self.rules
+                ,
+            }
         }
     }
+    
+    
 }
 impl RulesConfigurationType {
     /// Creates a new builder-style object to manufacture [`RulesConfigurationType`](crate::model::RulesConfigurationType).
@@ -270,7 +255,7 @@ impl RulesConfigurationType {
 /// <p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MappingRule {
+pub struct MappingRule  {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     #[doc(hidden)]
     pub claim: std::option::Option<std::string::String>,
@@ -286,25 +271,25 @@ pub struct MappingRule {
 }
 impl MappingRule {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
-    pub fn claim(&self) -> std::option::Option<&str> {
+    pub fn claim(&self) -> std::option::Option<& str> {
         self.claim.as_deref()
     }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
-    pub fn match_type(&self) -> std::option::Option<&crate::model::MappingRuleMatchType> {
+    pub fn match_type(&self) -> std::option::Option<& crate::model::MappingRuleMatchType> {
         self.match_type.as_ref()
     }
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`MappingRule`](crate::model::MappingRule).
 pub mod mapping_rule {
-
+    
     /// A builder for [`MappingRule`](crate::model::MappingRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -321,8 +306,7 @@ pub mod mapping_rule {
         }
         /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
         pub fn set_claim(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.claim = input;
-            self
+            self.claim = input; self
         }
         /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
         pub fn match_type(mut self, input: crate::model::MappingRuleMatchType) -> Self {
@@ -330,12 +314,8 @@ pub mod mapping_rule {
             self
         }
         /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
-        pub fn set_match_type(
-            mut self,
-            input: std::option::Option<crate::model::MappingRuleMatchType>,
-        ) -> Self {
-            self.match_type = input;
-            self
+        pub fn set_match_type(mut self, input: std::option::Option<crate::model::MappingRuleMatchType>) -> Self {
+            self.match_type = input; self
         }
         /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -344,8 +324,7 @@ pub mod mapping_rule {
         }
         /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The role ARN.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,19 +333,24 @@ pub mod mapping_rule {
         }
         /// <p>The role ARN.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`MappingRule`](crate::model::MappingRule).
         pub fn build(self) -> crate::model::MappingRule {
             crate::model::MappingRule {
-                claim: self.claim,
-                match_type: self.match_type,
-                value: self.value,
-                role_arn: self.role_arn,
+                claim: self.claim
+                ,
+                match_type: self.match_type
+                ,
+                value: self.value
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl MappingRule {
     /// Creates a new builder-style object to manufacture [`MappingRule`](crate::model::MappingRule).
@@ -381,9 +365,9 @@ impl MappingRule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mappingrulematchtype = unimplemented!();
 /// match mappingrulematchtype {
@@ -407,22 +391,14 @@ impl MappingRule {
 /// Specifically, when `mappingrulematchtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MappingRuleMatchType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MappingRuleMatchType {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
@@ -433,7 +409,7 @@ pub enum MappingRuleMatchType {
     #[allow(missing_docs)] // documentation missing in model
     StartsWith,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MappingRuleMatchType {
     fn from(s: &str) -> Self {
@@ -442,19 +418,17 @@ impl std::convert::From<&str> for MappingRuleMatchType {
             "Equals" => MappingRuleMatchType::Equals,
             "NotEqual" => MappingRuleMatchType::NotEqual,
             "StartsWith" => MappingRuleMatchType::StartsWith,
-            other => {
-                MappingRuleMatchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MappingRuleMatchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MappingRuleMatchType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MappingRuleMatchType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MappingRuleMatchType::from(s))
+                }
+            }
 impl MappingRuleMatchType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -463,12 +437,14 @@ impl MappingRuleMatchType {
             MappingRuleMatchType::Equals => "Equals",
             MappingRuleMatchType::NotEqual => "NotEqual",
             MappingRuleMatchType::StartsWith => "StartsWith",
-            MappingRuleMatchType::Unknown(value) => value.as_str(),
+            MappingRuleMatchType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Contains", "Equals", "NotEqual", "StartsWith"]
+        &[
+            "Contains", "Equals", "NotEqual", "StartsWith"
+        ]
     }
 }
 impl AsRef<str> for MappingRuleMatchType {
@@ -483,9 +459,9 @@ impl AsRef<str> for MappingRuleMatchType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ambiguousroleresolutiontype = unimplemented!();
 /// match ambiguousroleresolutiontype {
@@ -507,60 +483,52 @@ impl AsRef<str> for MappingRuleMatchType {
 /// Specifically, when `ambiguousroleresolutiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AmbiguousRoleResolutionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AmbiguousRoleResolutionType {
     #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRole,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AmbiguousRoleResolutionType {
     fn from(s: &str) -> Self {
         match s {
             "AuthenticatedRole" => AmbiguousRoleResolutionType::AuthenticatedRole,
             "Deny" => AmbiguousRoleResolutionType::Deny,
-            other => AmbiguousRoleResolutionType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AmbiguousRoleResolutionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AmbiguousRoleResolutionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AmbiguousRoleResolutionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AmbiguousRoleResolutionType::from(s))
+                }
+            }
 impl AmbiguousRoleResolutionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AmbiguousRoleResolutionType::AuthenticatedRole => "AuthenticatedRole",
             AmbiguousRoleResolutionType::Deny => "Deny",
-            AmbiguousRoleResolutionType::Unknown(value) => value.as_str(),
+            AmbiguousRoleResolutionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AuthenticatedRole", "Deny"]
+        &[
+            "AuthenticatedRole", "Deny"
+        ]
     }
 }
 impl AsRef<str> for AmbiguousRoleResolutionType {
@@ -575,9 +543,9 @@ impl AsRef<str> for AmbiguousRoleResolutionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rolemappingtype = unimplemented!();
 /// match rolemappingtype {
@@ -599,58 +567,52 @@ impl AsRef<str> for AmbiguousRoleResolutionType {
 /// Specifically, when `rolemappingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RoleMappingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RoleMappingType {
     #[allow(missing_docs)] // documentation missing in model
     Rules,
     #[allow(missing_docs)] // documentation missing in model
     Token,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RoleMappingType {
     fn from(s: &str) -> Self {
         match s {
             "Rules" => RoleMappingType::Rules,
             "Token" => RoleMappingType::Token,
-            other => RoleMappingType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RoleMappingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RoleMappingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RoleMappingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RoleMappingType::from(s))
+                }
+            }
 impl RoleMappingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RoleMappingType::Rules => "Rules",
             RoleMappingType::Token => "Token",
-            RoleMappingType::Unknown(value) => value.as_str(),
+            RoleMappingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Rules", "Token"]
+        &[
+            "Rules", "Token"
+        ]
     }
 }
 impl AsRef<str> for RoleMappingType {
@@ -662,7 +624,7 @@ impl AsRef<str> for RoleMappingType {
 /// <p>A description of the identity pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityPoolShortDescription {
+pub struct IdentityPoolShortDescription  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -672,17 +634,17 @@ pub struct IdentityPoolShortDescription {
 }
 impl IdentityPoolShortDescription {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A string that you provide.</p>
-    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_name(&self) -> std::option::Option<& str> {
         self.identity_pool_name.as_deref()
     }
 }
 /// See [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
 pub mod identity_pool_short_description {
-
+    
     /// A builder for [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -696,12 +658,8 @@ pub mod identity_pool_short_description {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// <p>A string that you provide.</p>
         pub fn identity_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -709,21 +667,21 @@ pub mod identity_pool_short_description {
             self
         }
         /// <p>A string that you provide.</p>
-        pub fn set_identity_pool_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_name = input;
-            self
+        pub fn set_identity_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_name = input; self
         }
         /// Consumes the builder and constructs a [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
         pub fn build(self) -> crate::model::IdentityPoolShortDescription {
             crate::model::IdentityPoolShortDescription {
-                identity_pool_id: self.identity_pool_id,
-                identity_pool_name: self.identity_pool_name,
+                identity_pool_id: self.identity_pool_id
+                ,
+                identity_pool_name: self.identity_pool_name
+                ,
             }
         }
     }
+    
+    
 }
 impl IdentityPoolShortDescription {
     /// Creates a new builder-style object to manufacture [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
@@ -735,7 +693,7 @@ impl IdentityPoolShortDescription {
 /// <p>A description of the identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityDescription {
+pub struct IdentityDescription  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
@@ -751,25 +709,25 @@ pub struct IdentityDescription {
 }
 impl IdentityDescription {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The provider names.</p>
-    pub fn logins(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn logins(&self) -> std::option::Option<& [std::string::String]> {
         self.logins.as_deref()
     }
     /// <p>Date on which the identity was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Date on which the identity was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 /// See [`IdentityDescription`](crate::model::IdentityDescription).
 pub mod identity_description {
-
+    
     /// A builder for [`IdentityDescription`](crate::model::IdentityDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -786,8 +744,7 @@ pub mod identity_description {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// Appends an item to `logins`.
         ///
@@ -796,17 +753,13 @@ pub mod identity_description {
         /// <p>The provider names.</p>
         pub fn logins(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logins.unwrap_or_default();
-            v.push(input.into());
-            self.logins = Some(v);
-            self
+                            v.push(input.into());
+                            self.logins = Some(v);
+                            self
         }
         /// <p>The provider names.</p>
-        pub fn set_logins(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.logins = input;
-            self
+        pub fn set_logins(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.logins = input; self
         }
         /// <p>Date on which the identity was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -814,12 +767,8 @@ pub mod identity_description {
             self
         }
         /// <p>Date on which the identity was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>Date on which the identity was last modified.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -827,23 +776,25 @@ pub mod identity_description {
             self
         }
         /// <p>Date on which the identity was last modified.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`IdentityDescription`](crate::model::IdentityDescription).
         pub fn build(self) -> crate::model::IdentityDescription {
             crate::model::IdentityDescription {
-                identity_id: self.identity_id,
-                logins: self.logins,
-                creation_date: self.creation_date,
-                last_modified_date: self.last_modified_date,
+                identity_id: self.identity_id
+                ,
+                logins: self.logins
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl IdentityDescription {
     /// Creates a new builder-style object to manufacture [`IdentityDescription`](crate::model::IdentityDescription).
@@ -855,7 +806,7 @@ impl IdentityDescription {
 /// <p>Credentials for the provided identity ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Credentials {
+pub struct Credentials  {
     /// <p>The Access Key portion of the credentials.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -871,25 +822,25 @@ pub struct Credentials {
 }
 impl Credentials {
     /// <p>The Access Key portion of the credentials.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The Secret Access Key portion of the credentials</p>
-    pub fn secret_key(&self) -> std::option::Option<&str> {
+    pub fn secret_key(&self) -> std::option::Option<& str> {
         self.secret_key.as_deref()
     }
     /// <p>The Session Token portion of the credentials</p>
-    pub fn session_token(&self) -> std::option::Option<&str> {
+    pub fn session_token(&self) -> std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>The date at which these credentials will expire.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
 /// See [`Credentials`](crate::model::Credentials).
 pub mod credentials {
-
+    
     /// A builder for [`Credentials`](crate::model::Credentials).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -905,12 +856,8 @@ pub mod credentials {
             self
         }
         /// <p>The Access Key portion of the credentials.</p>
-        pub fn set_access_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_key_id = input;
-            self
+        pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_key_id = input; self
         }
         /// <p>The Secret Access Key portion of the credentials</p>
         pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -919,8 +866,7 @@ pub mod credentials {
         }
         /// <p>The Secret Access Key portion of the credentials</p>
         pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_key = input;
-            self
+            self.secret_key = input; self
         }
         /// <p>The Session Token portion of the credentials</p>
         pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -928,12 +874,8 @@ pub mod credentials {
             self
         }
         /// <p>The Session Token portion of the credentials</p>
-        pub fn set_session_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_token = input;
-            self
+        pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_token = input; self
         }
         /// <p>The date at which these credentials will expire.</p>
         pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -941,23 +883,25 @@ pub mod credentials {
             self
         }
         /// <p>The date at which these credentials will expire.</p>
-        pub fn set_expiration(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration = input;
-            self
+        pub fn set_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiration = input; self
         }
         /// Consumes the builder and constructs a [`Credentials`](crate::model::Credentials).
         pub fn build(self) -> crate::model::Credentials {
             crate::model::Credentials {
-                access_key_id: self.access_key_id,
-                secret_key: self.secret_key,
-                session_token: self.session_token,
-                expiration: self.expiration,
+                access_key_id: self.access_key_id
+                ,
+                secret_key: self.secret_key
+                ,
+                session_token: self.session_token
+                ,
+                expiration: self.expiration
+                ,
             }
         }
     }
+    
+    
 }
 impl Credentials {
     /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
@@ -969,7 +913,7 @@ impl Credentials {
 /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnprocessedIdentityId {
+pub struct UnprocessedIdentityId  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
@@ -979,17 +923,17 @@ pub struct UnprocessedIdentityId {
 }
 impl UnprocessedIdentityId {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The error code indicating the type of error that occurred.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
 }
 /// See [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
 pub mod unprocessed_identity_id {
-
+    
     /// A builder for [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1004,8 +948,7 @@ pub mod unprocessed_identity_id {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// <p>The error code indicating the type of error that occurred.</p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
@@ -1013,21 +956,21 @@ pub mod unprocessed_identity_id {
             self
         }
         /// <p>The error code indicating the type of error that occurred.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// Consumes the builder and constructs a [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
         pub fn build(self) -> crate::model::UnprocessedIdentityId {
             crate::model::UnprocessedIdentityId {
-                identity_id: self.identity_id,
-                error_code: self.error_code,
+                identity_id: self.identity_id
+                ,
+                error_code: self.error_code
+                ,
             }
         }
     }
+    
+    
 }
 impl UnprocessedIdentityId {
     /// Creates a new builder-style object to manufacture [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
@@ -1042,9 +985,9 @@ impl UnprocessedIdentityId {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -1066,58 +1009,52 @@ impl UnprocessedIdentityId {
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
     InternalServerError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "AccessDenied" => ErrorCode::AccessDenied,
             "InternalServerError" => ErrorCode::InternalServerError,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::AccessDenied => "AccessDenied",
             ErrorCode::InternalServerError => "InternalServerError",
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AccessDenied", "InternalServerError"]
+        &[
+            "AccessDenied", "InternalServerError"
+        ]
     }
 }
 impl AsRef<str> for ErrorCode {
@@ -1125,3 +1062,4 @@ impl AsRef<str> for ErrorCode {
         self.as_str()
     }
 }
+

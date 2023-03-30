@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceSetOutput {
+pub struct UpdateResourceSetOutput  {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
     #[doc(hidden)]
     pub resource_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource set.</p>
     #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
@@ -18,38 +18,34 @@ pub struct UpdateResourceSetOutput {
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_set_arn(&self) -> std::option::Option<& str> {
         self.resource_set_arn.as_deref()
     }
     /// <p>The name of the resource set.</p>
-    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> std::option::Option<& str> {
         self.resource_set_name.as_deref()
     }
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+    pub fn resource_set_type(&self) -> std::option::Option<& str> {
         self.resource_set_type.as_deref()
     }
     /// <p>A list of resource objects.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::Resource]> {
         self.resources.as_deref()
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput).
 pub mod update_resource_set_output {
-
+    
     /// A builder for [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -57,9 +53,7 @@ pub mod update_resource_set_output {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
         pub(crate) resource_set_type: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -68,12 +62,8 @@ pub mod update_resource_set_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-        pub fn set_resource_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_arn = input;
-            self
+        pub fn set_resource_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_arn = input; self
         }
         /// <p>The name of the resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,27 +71,19 @@ pub mod update_resource_set_output {
             self
         }
         /// <p>The name of the resource set.</p>
-        pub fn set_resource_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_name = input;
-            self
+        pub fn set_resource_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_name = input; self
         }
-        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
         /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_type = Some(input.into());
             self
         }
-        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
         /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-        pub fn set_resource_set_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_type = input;
-            self
+        pub fn set_resource_set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_type = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -110,54 +92,47 @@ pub mod update_resource_set_output {
         /// <p>A list of resource objects.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>A list of resource objects.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Resource>>) -> Self {
+            self.resources = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput).
         pub fn build(self) -> crate::output::UpdateResourceSetOutput {
             crate::output::UpdateResourceSetOutput {
-                resource_set_arn: self.resource_set_arn,
-                resource_set_name: self.resource_set_name,
-                resource_set_type: self.resource_set_type,
-                resources: self.resources,
-                tags: self.tags,
+                resource_set_arn: self.resource_set_arn
+                ,
+                resource_set_name: self.resource_set_name
+                ,
+                resource_set_type: self.resource_set_type
+                ,
+                resources: self.resources
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput).
@@ -169,7 +144,7 @@ impl UpdateResourceSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRecoveryGroupOutput {
+pub struct UpdateRecoveryGroupOutput  {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -181,42 +156,36 @@ pub struct UpdateRecoveryGroupOutput {
     pub recovery_group_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
         self.cells.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    pub fn recovery_group_arn(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_arn(&self) -> std::option::Option<& str> {
         self.recovery_group_arn.as_deref()
     }
     /// <p>The name of the recovery group.</p>
-    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput).
 pub mod update_recovery_group_output {
-
+    
     /// A builder for [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `cells`.
@@ -226,17 +195,13 @@ pub mod update_recovery_group_output {
         /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
-            self.cells = Some(v);
-            self
+                            v.push(input.into());
+                            self.cells = Some(v);
+                            self
         }
         /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-        pub fn set_cells(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cells = input;
-            self
+        pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cells = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
         pub fn recovery_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,12 +209,8 @@ pub mod update_recovery_group_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-        pub fn set_recovery_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recovery_group_arn = input;
-            self
+        pub fn set_recovery_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recovery_group_arn = input; self
         }
         /// <p>The name of the recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -257,48 +218,40 @@ pub mod update_recovery_group_output {
             self
         }
         /// <p>The name of the recovery group.</p>
-        pub fn set_recovery_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recovery_group_name = input;
-            self
+        pub fn set_recovery_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recovery_group_name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the recovery group.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the recovery group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput).
         pub fn build(self) -> crate::output::UpdateRecoveryGroupOutput {
             crate::output::UpdateRecoveryGroupOutput {
-                cells: self.cells,
-                recovery_group_arn: self.recovery_group_arn,
-                recovery_group_name: self.recovery_group_name,
-                tags: self.tags,
+                cells: self.cells
+                ,
+                recovery_group_arn: self.recovery_group_arn
+                ,
+                recovery_group_name: self.recovery_group_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRecoveryGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput).
@@ -310,7 +263,7 @@ impl UpdateRecoveryGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateReadinessCheckOutput {
+pub struct UpdateReadinessCheckOutput  {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
     #[doc(hidden)]
     pub readiness_check_arn: std::option::Option<std::string::String>,
@@ -322,42 +275,36 @@ pub struct UpdateReadinessCheckOutput {
     pub resource_set: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-    pub fn readiness_check_arn(&self) -> std::option::Option<&str> {
+    pub fn readiness_check_arn(&self) -> std::option::Option<& str> {
         self.readiness_check_arn.as_deref()
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+    pub fn readiness_check_name(&self) -> std::option::Option<& str> {
         self.readiness_check_name.as_deref()
     }
     /// <p>Name of the resource set to be checked.</p>
-    pub fn resource_set(&self) -> std::option::Option<&str> {
+    pub fn resource_set(&self) -> std::option::Option<& str> {
         self.resource_set.as_deref()
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput).
 pub mod update_readiness_check_output {
-
+    
     /// A builder for [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_arn: std::option::Option<std::string::String>,
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
         pub(crate) resource_set: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -366,12 +313,8 @@ pub mod update_readiness_check_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-        pub fn set_readiness_check_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.readiness_check_arn = input;
-            self
+        pub fn set_readiness_check_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.readiness_check_arn = input; self
         }
         /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -379,12 +322,8 @@ pub mod update_readiness_check_output {
             self
         }
         /// <p>Name of a readiness check.</p>
-        pub fn set_readiness_check_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.readiness_check_name = input;
-            self
+        pub fn set_readiness_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.readiness_check_name = input; self
         }
         /// <p>Name of the resource set to be checked.</p>
         pub fn resource_set(mut self, input: impl Into<std::string::String>) -> Self {
@@ -393,44 +332,39 @@ pub mod update_readiness_check_output {
         }
         /// <p>Name of the resource set to be checked.</p>
         pub fn set_resource_set(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_set = input;
-            self
+            self.resource_set = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput).
         pub fn build(self) -> crate::output::UpdateReadinessCheckOutput {
             crate::output::UpdateReadinessCheckOutput {
-                readiness_check_arn: self.readiness_check_arn,
-                readiness_check_name: self.readiness_check_name,
-                resource_set: self.resource_set,
-                tags: self.tags,
+                readiness_check_arn: self.readiness_check_arn
+                ,
+                readiness_check_name: self.readiness_check_name
+                ,
+                resource_set: self.resource_set
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateReadinessCheckOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput).
@@ -442,7 +376,7 @@ impl UpdateReadinessCheckOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCellOutput {
+pub struct UpdateCellOutput  {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     #[doc(hidden)]
     pub cell_arn: std::option::Option<std::string::String>,
@@ -457,37 +391,33 @@ pub struct UpdateCellOutput {
     pub parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags on the resources.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
-    pub fn cell_arn(&self) -> std::option::Option<&str> {
+    pub fn cell_arn(&self) -> std::option::Option<& str> {
         self.cell_arn.as_deref()
     }
     /// <p>The name of the cell.</p>
-    pub fn cell_name(&self) -> std::option::Option<&str> {
+    pub fn cell_name(&self) -> std::option::Option<& str> {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell ARNs.</p>
-    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
         self.cells.as_deref()
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub fn parent_readiness_scopes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parent_readiness_scopes(&self) -> std::option::Option<& [std::string::String]> {
         self.parent_readiness_scopes.as_deref()
     }
     /// <p>Tags on the resources.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateCellOutput`](crate::output::UpdateCellOutput).
 pub mod update_cell_output {
-
+    
     /// A builder for [`UpdateCellOutput`](crate::output::UpdateCellOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -495,9 +425,7 @@ pub mod update_cell_output {
         pub(crate) cell_name: std::option::Option<std::string::String>,
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -507,8 +435,7 @@ pub mod update_cell_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
         pub fn set_cell_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cell_arn = input;
-            self
+            self.cell_arn = input; self
         }
         /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -517,8 +444,7 @@ pub mod update_cell_output {
         }
         /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cell_name = input;
-            self
+            self.cell_name = input; self
         }
         /// Appends an item to `cells`.
         ///
@@ -527,17 +453,13 @@ pub mod update_cell_output {
         /// <p>A list of cell ARNs.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
-            self.cells = Some(v);
-            self
+                            v.push(input.into());
+                            self.cells = Some(v);
+                            self
         }
         /// <p>A list of cell ARNs.</p>
-        pub fn set_cells(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cells = input;
-            self
+        pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cells = input; self
         }
         /// Appends an item to `parent_readiness_scopes`.
         ///
@@ -546,54 +468,47 @@ pub mod update_cell_output {
         /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
         pub fn parent_readiness_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parent_readiness_scopes.unwrap_or_default();
-            v.push(input.into());
-            self.parent_readiness_scopes = Some(v);
-            self
+                            v.push(input.into());
+                            self.parent_readiness_scopes = Some(v);
+                            self
         }
         /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-        pub fn set_parent_readiness_scopes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.parent_readiness_scopes = input;
-            self
+        pub fn set_parent_readiness_scopes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.parent_readiness_scopes = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags on the resources.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags on the resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCellOutput`](crate::output::UpdateCellOutput).
         pub fn build(self) -> crate::output::UpdateCellOutput {
             crate::output::UpdateCellOutput {
-                cell_arn: self.cell_arn,
-                cell_name: self.cell_name,
-                cells: self.cells,
-                parent_readiness_scopes: self.parent_readiness_scopes,
-                tags: self.tags,
+                cell_arn: self.cell_arn
+                ,
+                cell_name: self.cell_name
+                ,
+                cells: self.cells
+                ,
+                parent_readiness_scopes: self.parent_readiness_scopes
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCellOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCellOutput`](crate::output::UpdateCellOutput).
@@ -605,19 +520,24 @@ impl UpdateCellOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -629,19 +549,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -653,30 +578,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourcesOutput {
+pub struct ListTagsForResourcesOutput  {
     /// <p></p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourcesOutput {
     /// <p></p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
 pub mod list_tags_for_resources_output {
-
+    
     /// A builder for [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -684,31 +603,26 @@ pub mod list_tags_for_resources_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p></p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
         pub fn build(self) -> crate::output::ListTagsForResourcesOutput {
-            crate::output::ListTagsForResourcesOutput { tags: self.tags }
+            crate::output::ListTagsForResourcesOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
@@ -720,7 +634,7 @@ impl ListTagsForResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRulesOutput {
+pub struct ListRulesOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -730,17 +644,17 @@ pub struct ListRulesOutput {
 }
 impl ListRulesOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of readiness rules for a specific resource type.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::ListRulesOutput]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::ListRulesOutput]> {
         self.rules.as_deref()
     }
 }
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
-
+    
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -755,8 +669,7 @@ pub mod list_rules_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -765,26 +678,26 @@ pub mod list_rules_output {
         /// <p>A list of readiness rules for a specific resource type.</p>
         pub fn rules(mut self, input: crate::model::ListRulesOutput) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>A list of readiness rules for a specific resource type.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput).
         pub fn build(self) -> crate::output::ListRulesOutput {
             crate::output::ListRulesOutput {
-                next_token: self.next_token,
-                rules: self.rules,
+                next_token: self.next_token
+                ,
+                rules: self.rules
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
@@ -796,7 +709,7 @@ impl ListRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceSetsOutput {
+pub struct ListResourceSetsOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -806,23 +719,22 @@ pub struct ListResourceSetsOutput {
 }
 impl ListResourceSetsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of resource sets associated with the account.</p>
-    pub fn resource_sets(&self) -> std::option::Option<&[crate::model::ResourceSetOutput]> {
+    pub fn resource_sets(&self) -> std::option::Option<& [crate::model::ResourceSetOutput]> {
         self.resource_sets.as_deref()
     }
 }
 /// See [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
 pub mod list_resource_sets_output {
-
+    
     /// A builder for [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) resource_sets:
-            std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>,
+        pub(crate) resource_sets: std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -832,8 +744,7 @@ pub mod list_resource_sets_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `resource_sets`.
         ///
@@ -842,26 +753,26 @@ pub mod list_resource_sets_output {
         /// <p>A list of resource sets associated with the account.</p>
         pub fn resource_sets(mut self, input: crate::model::ResourceSetOutput) -> Self {
             let mut v = self.resource_sets.unwrap_or_default();
-            v.push(input);
-            self.resource_sets = Some(v);
-            self
+                            v.push(input);
+                            self.resource_sets = Some(v);
+                            self
         }
         /// <p>A list of resource sets associated with the account.</p>
-        pub fn set_resource_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>,
-        ) -> Self {
-            self.resource_sets = input;
-            self
+        pub fn set_resource_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>) -> Self {
+            self.resource_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
         pub fn build(self) -> crate::output::ListResourceSetsOutput {
             crate::output::ListResourceSetsOutput {
-                next_token: self.next_token,
-                resource_sets: self.resource_sets,
+                next_token: self.next_token
+                ,
+                resource_sets: self.resource_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
@@ -873,7 +784,7 @@ impl ListResourceSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecoveryGroupsOutput {
+pub struct ListRecoveryGroupsOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -883,23 +794,22 @@ pub struct ListRecoveryGroupsOutput {
 }
 impl ListRecoveryGroupsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of recovery groups.</p>
-    pub fn recovery_groups(&self) -> std::option::Option<&[crate::model::RecoveryGroupOutput]> {
+    pub fn recovery_groups(&self) -> std::option::Option<& [crate::model::RecoveryGroupOutput]> {
         self.recovery_groups.as_deref()
     }
 }
 /// See [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput).
 pub mod list_recovery_groups_output {
-
+    
     /// A builder for [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) recovery_groups:
-            std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>,
+        pub(crate) recovery_groups: std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -909,8 +819,7 @@ pub mod list_recovery_groups_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `recovery_groups`.
         ///
@@ -919,26 +828,26 @@ pub mod list_recovery_groups_output {
         /// <p>A list of recovery groups.</p>
         pub fn recovery_groups(mut self, input: crate::model::RecoveryGroupOutput) -> Self {
             let mut v = self.recovery_groups.unwrap_or_default();
-            v.push(input);
-            self.recovery_groups = Some(v);
-            self
+                            v.push(input);
+                            self.recovery_groups = Some(v);
+                            self
         }
         /// <p>A list of recovery groups.</p>
-        pub fn set_recovery_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>,
-        ) -> Self {
-            self.recovery_groups = input;
-            self
+        pub fn set_recovery_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>) -> Self {
+            self.recovery_groups = input; self
         }
         /// Consumes the builder and constructs a [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput).
         pub fn build(self) -> crate::output::ListRecoveryGroupsOutput {
             crate::output::ListRecoveryGroupsOutput {
-                next_token: self.next_token,
-                recovery_groups: self.recovery_groups,
+                next_token: self.next_token
+                ,
+                recovery_groups: self.recovery_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRecoveryGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput).
@@ -950,7 +859,7 @@ impl ListRecoveryGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadinessChecksOutput {
+pub struct ListReadinessChecksOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -960,23 +869,22 @@ pub struct ListReadinessChecksOutput {
 }
 impl ListReadinessChecksOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of readiness checks associated with the account.</p>
-    pub fn readiness_checks(&self) -> std::option::Option<&[crate::model::ReadinessCheckOutput]> {
+    pub fn readiness_checks(&self) -> std::option::Option<& [crate::model::ReadinessCheckOutput]> {
         self.readiness_checks.as_deref()
     }
 }
 /// See [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput).
 pub mod list_readiness_checks_output {
-
+    
     /// A builder for [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) readiness_checks:
-            std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>,
+        pub(crate) readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -986,8 +894,7 @@ pub mod list_readiness_checks_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `readiness_checks`.
         ///
@@ -996,26 +903,26 @@ pub mod list_readiness_checks_output {
         /// <p>A list of readiness checks associated with the account.</p>
         pub fn readiness_checks(mut self, input: crate::model::ReadinessCheckOutput) -> Self {
             let mut v = self.readiness_checks.unwrap_or_default();
-            v.push(input);
-            self.readiness_checks = Some(v);
-            self
+                            v.push(input);
+                            self.readiness_checks = Some(v);
+                            self
         }
         /// <p>A list of readiness checks associated with the account.</p>
-        pub fn set_readiness_checks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>,
-        ) -> Self {
-            self.readiness_checks = input;
-            self
+        pub fn set_readiness_checks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>) -> Self {
+            self.readiness_checks = input; self
         }
         /// Consumes the builder and constructs a [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput).
         pub fn build(self) -> crate::output::ListReadinessChecksOutput {
             crate::output::ListReadinessChecksOutput {
-                next_token: self.next_token,
-                readiness_checks: self.readiness_checks,
+                next_token: self.next_token
+                ,
+                readiness_checks: self.readiness_checks
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReadinessChecksOutput {
     /// Creates a new builder-style object to manufacture [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput).
@@ -1027,7 +934,7 @@ impl ListReadinessChecksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCrossAccountAuthorizationsOutput {
+pub struct ListCrossAccountAuthorizationsOutput  {
     /// <p>A list of cross-account authorizations.</p>
     #[doc(hidden)]
     pub cross_account_authorizations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1037,22 +944,21 @@ pub struct ListCrossAccountAuthorizationsOutput {
 }
 impl ListCrossAccountAuthorizationsOutput {
     /// <p>A list of cross-account authorizations.</p>
-    pub fn cross_account_authorizations(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cross_account_authorizations(&self) -> std::option::Option<& [std::string::String]> {
         self.cross_account_authorizations.as_deref()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput).
 pub mod list_cross_account_authorizations_output {
-
+    
     /// A builder for [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cross_account_authorizations:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) cross_account_authorizations: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1061,22 +967,15 @@ pub mod list_cross_account_authorizations_output {
         /// To override the contents of this collection use [`set_cross_account_authorizations`](Self::set_cross_account_authorizations).
         ///
         /// <p>A list of cross-account authorizations.</p>
-        pub fn cross_account_authorizations(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cross_account_authorizations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cross_account_authorizations.unwrap_or_default();
-            v.push(input.into());
-            self.cross_account_authorizations = Some(v);
-            self
+                            v.push(input.into());
+                            self.cross_account_authorizations = Some(v);
+                            self
         }
         /// <p>A list of cross-account authorizations.</p>
-        pub fn set_cross_account_authorizations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cross_account_authorizations = input;
-            self
+        pub fn set_cross_account_authorizations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cross_account_authorizations = input; self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1085,17 +984,20 @@ pub mod list_cross_account_authorizations_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput).
         pub fn build(self) -> crate::output::ListCrossAccountAuthorizationsOutput {
             crate::output::ListCrossAccountAuthorizationsOutput {
-                cross_account_authorizations: self.cross_account_authorizations,
-                next_token: self.next_token,
+                cross_account_authorizations: self.cross_account_authorizations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCrossAccountAuthorizationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput).
@@ -1107,7 +1009,7 @@ impl ListCrossAccountAuthorizationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCellsOutput {
+pub struct ListCellsOutput  {
     /// <p>A list of cells.</p>
     #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<crate::model::CellOutput>>,
@@ -1117,17 +1019,17 @@ pub struct ListCellsOutput {
 }
 impl ListCellsOutput {
     /// <p>A list of cells.</p>
-    pub fn cells(&self) -> std::option::Option<&[crate::model::CellOutput]> {
+    pub fn cells(&self) -> std::option::Option<& [crate::model::CellOutput]> {
         self.cells.as_deref()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCellsOutput`](crate::output::ListCellsOutput).
 pub mod list_cells_output {
-
+    
     /// A builder for [`ListCellsOutput`](crate::output::ListCellsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1142,17 +1044,13 @@ pub mod list_cells_output {
         /// <p>A list of cells.</p>
         pub fn cells(mut self, input: crate::model::CellOutput) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input);
-            self.cells = Some(v);
-            self
+                            v.push(input);
+                            self.cells = Some(v);
+                            self
         }
         /// <p>A list of cells.</p>
-        pub fn set_cells(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CellOutput>>,
-        ) -> Self {
-            self.cells = input;
-            self
+        pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<crate::model::CellOutput>>) -> Self {
+            self.cells = input; self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1161,17 +1059,20 @@ pub mod list_cells_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCellsOutput`](crate::output::ListCellsOutput).
         pub fn build(self) -> crate::output::ListCellsOutput {
             crate::output::ListCellsOutput {
-                cells: self.cells,
-                next_token: self.next_token,
+                cells: self.cells
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCellsOutput {
     /// Creates a new builder-style object to manufacture [`ListCellsOutput`](crate::output::ListCellsOutput).
@@ -1183,14 +1084,14 @@ impl ListCellsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceSetOutput {
+pub struct GetResourceSetOutput  {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
     #[doc(hidden)]
     pub resource_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource set.</p>
     #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
@@ -1199,38 +1100,34 @@ pub struct GetResourceSetOutput {
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_set_arn(&self) -> std::option::Option<& str> {
         self.resource_set_arn.as_deref()
     }
     /// <p>The name of the resource set.</p>
-    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> std::option::Option<& str> {
         self.resource_set_name.as_deref()
     }
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+    pub fn resource_set_type(&self) -> std::option::Option<& str> {
         self.resource_set_type.as_deref()
     }
     /// <p>A list of resource objects.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::Resource]> {
         self.resources.as_deref()
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
 pub mod get_resource_set_output {
-
+    
     /// A builder for [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1238,9 +1135,7 @@ pub mod get_resource_set_output {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
         pub(crate) resource_set_type: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -1249,12 +1144,8 @@ pub mod get_resource_set_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-        pub fn set_resource_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_arn = input;
-            self
+        pub fn set_resource_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_arn = input; self
         }
         /// <p>The name of the resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1262,27 +1153,19 @@ pub mod get_resource_set_output {
             self
         }
         /// <p>The name of the resource set.</p>
-        pub fn set_resource_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_name = input;
-            self
+        pub fn set_resource_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_name = input; self
         }
-        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
         /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_type = Some(input.into());
             self
         }
-        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
         /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-        pub fn set_resource_set_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_type = input;
-            self
+        pub fn set_resource_set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_type = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -1291,54 +1174,47 @@ pub mod get_resource_set_output {
         /// <p>A list of resource objects.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>A list of resource objects.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Resource>>) -> Self {
+            self.resources = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
         pub fn build(self) -> crate::output::GetResourceSetOutput {
             crate::output::GetResourceSetOutput {
-                resource_set_arn: self.resource_set_arn,
-                resource_set_name: self.resource_set_name,
-                resource_set_type: self.resource_set_type,
-                resources: self.resources,
-                tags: self.tags,
+                resource_set_arn: self.resource_set_arn
+                ,
+                resource_set_name: self.resource_set_name
+                ,
+                resource_set_type: self.resource_set_type
+                ,
+                resources: self.resources
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
@@ -1350,7 +1226,7 @@ impl GetResourceSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecoveryGroupReadinessSummaryOutput {
+pub struct GetRecoveryGroupReadinessSummaryOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1363,28 +1239,27 @@ pub struct GetRecoveryGroupReadinessSummaryOutput {
 }
 impl GetRecoveryGroupReadinessSummaryOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The readiness status at a recovery group level.</p>
-    pub fn readiness(&self) -> std::option::Option<&crate::model::Readiness> {
+    pub fn readiness(&self) -> std::option::Option<& crate::model::Readiness> {
         self.readiness.as_ref()
     }
     /// <p>Summaries of the readiness checks for the recovery group.</p>
-    pub fn readiness_checks(&self) -> std::option::Option<&[crate::model::ReadinessCheckSummary]> {
+    pub fn readiness_checks(&self) -> std::option::Option<& [crate::model::ReadinessCheckSummary]> {
         self.readiness_checks.as_deref()
     }
 }
 /// See [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput).
 pub mod get_recovery_group_readiness_summary_output {
-
+    
     /// A builder for [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
-        pub(crate) readiness_checks:
-            std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
+        pub(crate) readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1394,8 +1269,7 @@ pub mod get_recovery_group_readiness_summary_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The readiness status at a recovery group level.</p>
         pub fn readiness(mut self, input: crate::model::Readiness) -> Self {
@@ -1403,12 +1277,8 @@ pub mod get_recovery_group_readiness_summary_output {
             self
         }
         /// <p>The readiness status at a recovery group level.</p>
-        pub fn set_readiness(
-            mut self,
-            input: std::option::Option<crate::model::Readiness>,
-        ) -> Self {
-            self.readiness = input;
-            self
+        pub fn set_readiness(mut self, input: std::option::Option<crate::model::Readiness>) -> Self {
+            self.readiness = input; self
         }
         /// Appends an item to `readiness_checks`.
         ///
@@ -1417,27 +1287,28 @@ pub mod get_recovery_group_readiness_summary_output {
         /// <p>Summaries of the readiness checks for the recovery group.</p>
         pub fn readiness_checks(mut self, input: crate::model::ReadinessCheckSummary) -> Self {
             let mut v = self.readiness_checks.unwrap_or_default();
-            v.push(input);
-            self.readiness_checks = Some(v);
-            self
+                            v.push(input);
+                            self.readiness_checks = Some(v);
+                            self
         }
         /// <p>Summaries of the readiness checks for the recovery group.</p>
-        pub fn set_readiness_checks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
-        ) -> Self {
-            self.readiness_checks = input;
-            self
+        pub fn set_readiness_checks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>) -> Self {
+            self.readiness_checks = input; self
         }
         /// Consumes the builder and constructs a [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput).
         pub fn build(self) -> crate::output::GetRecoveryGroupReadinessSummaryOutput {
             crate::output::GetRecoveryGroupReadinessSummaryOutput {
-                next_token: self.next_token,
-                readiness: self.readiness,
-                readiness_checks: self.readiness_checks,
+                next_token: self.next_token
+                ,
+                readiness: self.readiness
+                ,
+                readiness_checks: self.readiness_checks
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRecoveryGroupReadinessSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput).
@@ -1449,7 +1320,7 @@ impl GetRecoveryGroupReadinessSummaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecoveryGroupOutput {
+pub struct GetRecoveryGroupOutput  {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1461,42 +1332,36 @@ pub struct GetRecoveryGroupOutput {
     pub recovery_group_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
         self.cells.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    pub fn recovery_group_arn(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_arn(&self) -> std::option::Option<& str> {
         self.recovery_group_arn.as_deref()
     }
     /// <p>The name of the recovery group.</p>
-    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput).
 pub mod get_recovery_group_output {
-
+    
     /// A builder for [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `cells`.
@@ -1506,17 +1371,13 @@ pub mod get_recovery_group_output {
         /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
-            self.cells = Some(v);
-            self
+                            v.push(input.into());
+                            self.cells = Some(v);
+                            self
         }
         /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-        pub fn set_cells(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cells = input;
-            self
+        pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cells = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
         pub fn recovery_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1524,12 +1385,8 @@ pub mod get_recovery_group_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-        pub fn set_recovery_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recovery_group_arn = input;
-            self
+        pub fn set_recovery_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recovery_group_arn = input; self
         }
         /// <p>The name of the recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1537,48 +1394,40 @@ pub mod get_recovery_group_output {
             self
         }
         /// <p>The name of the recovery group.</p>
-        pub fn set_recovery_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recovery_group_name = input;
-            self
+        pub fn set_recovery_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recovery_group_name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the recovery group.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the recovery group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput).
         pub fn build(self) -> crate::output::GetRecoveryGroupOutput {
             crate::output::GetRecoveryGroupOutput {
-                cells: self.cells,
-                recovery_group_arn: self.recovery_group_arn,
-                recovery_group_name: self.recovery_group_name,
-                tags: self.tags,
+                cells: self.cells
+                ,
+                recovery_group_arn: self.recovery_group_arn
+                ,
+                recovery_group_name: self.recovery_group_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRecoveryGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput).
@@ -1590,7 +1439,7 @@ impl GetRecoveryGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadinessCheckStatusOutput {
+pub struct GetReadinessCheckStatusOutput  {
     /// <p>Top level messages for readiness check status</p>
     #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -1606,25 +1455,25 @@ pub struct GetReadinessCheckStatusOutput {
 }
 impl GetReadinessCheckStatusOutput {
     /// <p>Top level messages for readiness check status</p>
-    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+    pub fn messages(&self) -> std::option::Option<& [crate::model::Message]> {
         self.messages.as_deref()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The readiness at rule level.</p>
-    pub fn readiness(&self) -> std::option::Option<&crate::model::Readiness> {
+    pub fn readiness(&self) -> std::option::Option<& crate::model::Readiness> {
         self.readiness.as_ref()
     }
     /// <p>Summary of the readiness of resources.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::ResourceResult]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::ResourceResult]> {
         self.resources.as_deref()
     }
 }
 /// See [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput).
 pub mod get_readiness_check_status_output {
-
+    
     /// A builder for [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1641,17 +1490,13 @@ pub mod get_readiness_check_status_output {
         /// <p>Top level messages for readiness check status</p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input);
-            self.messages = Some(v);
-            self
+                            v.push(input);
+                            self.messages = Some(v);
+                            self
         }
         /// <p>Top level messages for readiness check status</p>
-        pub fn set_messages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Message>>,
-        ) -> Self {
-            self.messages = input;
-            self
+        pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<crate::model::Message>>) -> Self {
+            self.messages = input; self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1660,8 +1505,7 @@ pub mod get_readiness_check_status_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The readiness at rule level.</p>
         pub fn readiness(mut self, input: crate::model::Readiness) -> Self {
@@ -1669,12 +1513,8 @@ pub mod get_readiness_check_status_output {
             self
         }
         /// <p>The readiness at rule level.</p>
-        pub fn set_readiness(
-            mut self,
-            input: std::option::Option<crate::model::Readiness>,
-        ) -> Self {
-            self.readiness = input;
-            self
+        pub fn set_readiness(mut self, input: std::option::Option<crate::model::Readiness>) -> Self {
+            self.readiness = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -1683,28 +1523,30 @@ pub mod get_readiness_check_status_output {
         /// <p>Summary of the readiness of resources.</p>
         pub fn resources(mut self, input: crate::model::ResourceResult) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>Summary of the readiness of resources.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceResult>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceResult>>) -> Self {
+            self.resources = input; self
         }
         /// Consumes the builder and constructs a [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput).
         pub fn build(self) -> crate::output::GetReadinessCheckStatusOutput {
             crate::output::GetReadinessCheckStatusOutput {
-                messages: self.messages,
-                next_token: self.next_token,
-                readiness: self.readiness,
-                resources: self.resources,
+                messages: self.messages
+                ,
+                next_token: self.next_token
+                ,
+                readiness: self.readiness
+                ,
+                resources: self.resources
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReadinessCheckStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput).
@@ -1716,7 +1558,7 @@ impl GetReadinessCheckStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadinessCheckResourceStatusOutput {
+pub struct GetReadinessCheckResourceStatusOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1729,21 +1571,21 @@ pub struct GetReadinessCheckResourceStatusOutput {
 }
 impl GetReadinessCheckResourceStatusOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The readiness at a rule level.</p>
-    pub fn readiness(&self) -> std::option::Option<&crate::model::Readiness> {
+    pub fn readiness(&self) -> std::option::Option<& crate::model::Readiness> {
         self.readiness.as_ref()
     }
     /// <p>Details of the rule's results.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::RuleResult]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::RuleResult]> {
         self.rules.as_deref()
     }
 }
 /// See [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput).
 pub mod get_readiness_check_resource_status_output {
-
+    
     /// A builder for [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1759,8 +1601,7 @@ pub mod get_readiness_check_resource_status_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The readiness at a rule level.</p>
         pub fn readiness(mut self, input: crate::model::Readiness) -> Self {
@@ -1768,12 +1609,8 @@ pub mod get_readiness_check_resource_status_output {
             self
         }
         /// <p>The readiness at a rule level.</p>
-        pub fn set_readiness(
-            mut self,
-            input: std::option::Option<crate::model::Readiness>,
-        ) -> Self {
-            self.readiness = input;
-            self
+        pub fn set_readiness(mut self, input: std::option::Option<crate::model::Readiness>) -> Self {
+            self.readiness = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -1782,27 +1619,28 @@ pub mod get_readiness_check_resource_status_output {
         /// <p>Details of the rule's results.</p>
         pub fn rules(mut self, input: crate::model::RuleResult) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>Details of the rule's results.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleResult>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput).
         pub fn build(self) -> crate::output::GetReadinessCheckResourceStatusOutput {
             crate::output::GetReadinessCheckResourceStatusOutput {
-                next_token: self.next_token,
-                readiness: self.readiness,
-                rules: self.rules,
+                next_token: self.next_token
+                ,
+                readiness: self.readiness
+                ,
+                rules: self.rules
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReadinessCheckResourceStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput).
@@ -1814,7 +1652,7 @@ impl GetReadinessCheckResourceStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadinessCheckOutput {
+pub struct GetReadinessCheckOutput  {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
     #[doc(hidden)]
     pub readiness_check_arn: std::option::Option<std::string::String>,
@@ -1826,42 +1664,36 @@ pub struct GetReadinessCheckOutput {
     pub resource_set: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-    pub fn readiness_check_arn(&self) -> std::option::Option<&str> {
+    pub fn readiness_check_arn(&self) -> std::option::Option<& str> {
         self.readiness_check_arn.as_deref()
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+    pub fn readiness_check_name(&self) -> std::option::Option<& str> {
         self.readiness_check_name.as_deref()
     }
     /// <p>Name of the resource set to be checked.</p>
-    pub fn resource_set(&self) -> std::option::Option<&str> {
+    pub fn resource_set(&self) -> std::option::Option<& str> {
         self.resource_set.as_deref()
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput).
 pub mod get_readiness_check_output {
-
+    
     /// A builder for [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_arn: std::option::Option<std::string::String>,
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
         pub(crate) resource_set: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -1870,12 +1702,8 @@ pub mod get_readiness_check_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-        pub fn set_readiness_check_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.readiness_check_arn = input;
-            self
+        pub fn set_readiness_check_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.readiness_check_arn = input; self
         }
         /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1883,12 +1711,8 @@ pub mod get_readiness_check_output {
             self
         }
         /// <p>Name of a readiness check.</p>
-        pub fn set_readiness_check_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.readiness_check_name = input;
-            self
+        pub fn set_readiness_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.readiness_check_name = input; self
         }
         /// <p>Name of the resource set to be checked.</p>
         pub fn resource_set(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1897,44 +1721,39 @@ pub mod get_readiness_check_output {
         }
         /// <p>Name of the resource set to be checked.</p>
         pub fn set_resource_set(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_set = input;
-            self
+            self.resource_set = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput).
         pub fn build(self) -> crate::output::GetReadinessCheckOutput {
             crate::output::GetReadinessCheckOutput {
-                readiness_check_arn: self.readiness_check_arn,
-                readiness_check_name: self.readiness_check_name,
-                resource_set: self.resource_set,
-                tags: self.tags,
+                readiness_check_arn: self.readiness_check_arn
+                ,
+                readiness_check_name: self.readiness_check_name
+                ,
+                resource_set: self.resource_set
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReadinessCheckOutput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput).
@@ -1946,7 +1765,7 @@ impl GetReadinessCheckOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCellReadinessSummaryOutput {
+pub struct GetCellReadinessSummaryOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1959,28 +1778,27 @@ pub struct GetCellReadinessSummaryOutput {
 }
 impl GetCellReadinessSummaryOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The readiness at a cell level.</p>
-    pub fn readiness(&self) -> std::option::Option<&crate::model::Readiness> {
+    pub fn readiness(&self) -> std::option::Option<& crate::model::Readiness> {
         self.readiness.as_ref()
     }
     /// <p>Summaries for the readiness checks that make up the cell.</p>
-    pub fn readiness_checks(&self) -> std::option::Option<&[crate::model::ReadinessCheckSummary]> {
+    pub fn readiness_checks(&self) -> std::option::Option<& [crate::model::ReadinessCheckSummary]> {
         self.readiness_checks.as_deref()
     }
 }
 /// See [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput).
 pub mod get_cell_readiness_summary_output {
-
+    
     /// A builder for [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
-        pub(crate) readiness_checks:
-            std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
+        pub(crate) readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1990,8 +1808,7 @@ pub mod get_cell_readiness_summary_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The readiness at a cell level.</p>
         pub fn readiness(mut self, input: crate::model::Readiness) -> Self {
@@ -1999,12 +1816,8 @@ pub mod get_cell_readiness_summary_output {
             self
         }
         /// <p>The readiness at a cell level.</p>
-        pub fn set_readiness(
-            mut self,
-            input: std::option::Option<crate::model::Readiness>,
-        ) -> Self {
-            self.readiness = input;
-            self
+        pub fn set_readiness(mut self, input: std::option::Option<crate::model::Readiness>) -> Self {
+            self.readiness = input; self
         }
         /// Appends an item to `readiness_checks`.
         ///
@@ -2013,27 +1826,28 @@ pub mod get_cell_readiness_summary_output {
         /// <p>Summaries for the readiness checks that make up the cell.</p>
         pub fn readiness_checks(mut self, input: crate::model::ReadinessCheckSummary) -> Self {
             let mut v = self.readiness_checks.unwrap_or_default();
-            v.push(input);
-            self.readiness_checks = Some(v);
-            self
+                            v.push(input);
+                            self.readiness_checks = Some(v);
+                            self
         }
         /// <p>Summaries for the readiness checks that make up the cell.</p>
-        pub fn set_readiness_checks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
-        ) -> Self {
-            self.readiness_checks = input;
-            self
+        pub fn set_readiness_checks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>) -> Self {
+            self.readiness_checks = input; self
         }
         /// Consumes the builder and constructs a [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput).
         pub fn build(self) -> crate::output::GetCellReadinessSummaryOutput {
             crate::output::GetCellReadinessSummaryOutput {
-                next_token: self.next_token,
-                readiness: self.readiness,
-                readiness_checks: self.readiness_checks,
+                next_token: self.next_token
+                ,
+                readiness: self.readiness
+                ,
+                readiness_checks: self.readiness_checks
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCellReadinessSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput).
@@ -2045,7 +1859,7 @@ impl GetCellReadinessSummaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCellOutput {
+pub struct GetCellOutput  {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     #[doc(hidden)]
     pub cell_arn: std::option::Option<std::string::String>,
@@ -2060,37 +1874,33 @@ pub struct GetCellOutput {
     pub parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags on the resources.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
-    pub fn cell_arn(&self) -> std::option::Option<&str> {
+    pub fn cell_arn(&self) -> std::option::Option<& str> {
         self.cell_arn.as_deref()
     }
     /// <p>The name of the cell.</p>
-    pub fn cell_name(&self) -> std::option::Option<&str> {
+    pub fn cell_name(&self) -> std::option::Option<& str> {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell ARNs.</p>
-    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
         self.cells.as_deref()
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub fn parent_readiness_scopes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parent_readiness_scopes(&self) -> std::option::Option<& [std::string::String]> {
         self.parent_readiness_scopes.as_deref()
     }
     /// <p>Tags on the resources.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetCellOutput`](crate::output::GetCellOutput).
 pub mod get_cell_output {
-
+    
     /// A builder for [`GetCellOutput`](crate::output::GetCellOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2098,9 +1908,7 @@ pub mod get_cell_output {
         pub(crate) cell_name: std::option::Option<std::string::String>,
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -2110,8 +1918,7 @@ pub mod get_cell_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
         pub fn set_cell_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cell_arn = input;
-            self
+            self.cell_arn = input; self
         }
         /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2120,8 +1927,7 @@ pub mod get_cell_output {
         }
         /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cell_name = input;
-            self
+            self.cell_name = input; self
         }
         /// Appends an item to `cells`.
         ///
@@ -2130,17 +1936,13 @@ pub mod get_cell_output {
         /// <p>A list of cell ARNs.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
-            self.cells = Some(v);
-            self
+                            v.push(input.into());
+                            self.cells = Some(v);
+                            self
         }
         /// <p>A list of cell ARNs.</p>
-        pub fn set_cells(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cells = input;
-            self
+        pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cells = input; self
         }
         /// Appends an item to `parent_readiness_scopes`.
         ///
@@ -2149,54 +1951,47 @@ pub mod get_cell_output {
         /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
         pub fn parent_readiness_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parent_readiness_scopes.unwrap_or_default();
-            v.push(input.into());
-            self.parent_readiness_scopes = Some(v);
-            self
+                            v.push(input.into());
+                            self.parent_readiness_scopes = Some(v);
+                            self
         }
         /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-        pub fn set_parent_readiness_scopes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.parent_readiness_scopes = input;
-            self
+        pub fn set_parent_readiness_scopes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.parent_readiness_scopes = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags on the resources.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags on the resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetCellOutput`](crate::output::GetCellOutput).
         pub fn build(self) -> crate::output::GetCellOutput {
             crate::output::GetCellOutput {
-                cell_arn: self.cell_arn,
-                cell_name: self.cell_name,
-                cells: self.cells,
-                parent_readiness_scopes: self.parent_readiness_scopes,
-                tags: self.tags,
+                cell_arn: self.cell_arn
+                ,
+                cell_name: self.cell_name
+                ,
+                cells: self.cells
+                ,
+                parent_readiness_scopes: self.parent_readiness_scopes
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCellOutput {
     /// Creates a new builder-style object to manufacture [`GetCellOutput`](crate::output::GetCellOutput).
@@ -2208,7 +2003,7 @@ impl GetCellOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetArchitectureRecommendationsOutput {
+pub struct GetArchitectureRecommendationsOutput  {
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
     #[doc(hidden)]
     pub last_audit_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -2221,28 +2016,27 @@ pub struct GetArchitectureRecommendationsOutput {
 }
 impl GetArchitectureRecommendationsOutput {
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
-    pub fn last_audit_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_audit_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_audit_timestamp.as_ref()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of the recommendations for the customer's application.</p>
-    pub fn recommendations(&self) -> std::option::Option<&[crate::model::Recommendation]> {
+    pub fn recommendations(&self) -> std::option::Option<& [crate::model::Recommendation]> {
         self.recommendations.as_deref()
     }
 }
 /// See [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput).
 pub mod get_architecture_recommendations_output {
-
+    
     /// A builder for [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_audit_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) recommendations:
-            std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+        pub(crate) recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
     }
     impl Builder {
         /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
@@ -2251,12 +2045,8 @@ pub mod get_architecture_recommendations_output {
             self
         }
         /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
-        pub fn set_last_audit_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_audit_timestamp = input;
-            self
+        pub fn set_last_audit_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_audit_timestamp = input; self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2265,8 +2055,7 @@ pub mod get_architecture_recommendations_output {
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `recommendations`.
         ///
@@ -2275,27 +2064,28 @@ pub mod get_architecture_recommendations_output {
         /// <p>A list of the recommendations for the customer's application.</p>
         pub fn recommendations(mut self, input: crate::model::Recommendation) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input);
-            self.recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.recommendations = Some(v);
+                            self
         }
         /// <p>A list of the recommendations for the customer's application.</p>
-        pub fn set_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
-        ) -> Self {
-            self.recommendations = input;
-            self
+        pub fn set_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>) -> Self {
+            self.recommendations = input; self
         }
         /// Consumes the builder and constructs a [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput).
         pub fn build(self) -> crate::output::GetArchitectureRecommendationsOutput {
             crate::output::GetArchitectureRecommendationsOutput {
-                last_audit_timestamp: self.last_audit_timestamp,
-                next_token: self.next_token,
-                recommendations: self.recommendations,
+                last_audit_timestamp: self.last_audit_timestamp
+                ,
+                next_token: self.next_token
+                ,
+                recommendations: self.recommendations
+                ,
             }
         }
     }
+    
+    
 }
 impl GetArchitectureRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput).
@@ -2307,19 +2097,24 @@ impl GetArchitectureRecommendationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourceSetOutput {}
+pub struct DeleteResourceSetOutput  {
+}
 /// See [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
 pub mod delete_resource_set_output {
-
+    
     /// A builder for [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
         pub fn build(self) -> crate::output::DeleteResourceSetOutput {
-            crate::output::DeleteResourceSetOutput {}
+            crate::output::DeleteResourceSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
@@ -2331,19 +2126,24 @@ impl DeleteResourceSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecoveryGroupOutput {}
+pub struct DeleteRecoveryGroupOutput  {
+}
 /// See [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput).
 pub mod delete_recovery_group_output {
-
+    
     /// A builder for [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput).
         pub fn build(self) -> crate::output::DeleteRecoveryGroupOutput {
-            crate::output::DeleteRecoveryGroupOutput {}
+            crate::output::DeleteRecoveryGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRecoveryGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput).
@@ -2355,19 +2155,24 @@ impl DeleteRecoveryGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReadinessCheckOutput {}
+pub struct DeleteReadinessCheckOutput  {
+}
 /// See [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput).
 pub mod delete_readiness_check_output {
-
+    
     /// A builder for [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput).
         pub fn build(self) -> crate::output::DeleteReadinessCheckOutput {
-            crate::output::DeleteReadinessCheckOutput {}
+            crate::output::DeleteReadinessCheckOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteReadinessCheckOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput).
@@ -2379,19 +2184,24 @@ impl DeleteReadinessCheckOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCrossAccountAuthorizationOutput {}
+pub struct DeleteCrossAccountAuthorizationOutput  {
+}
 /// See [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput).
 pub mod delete_cross_account_authorization_output {
-
+    
     /// A builder for [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput).
         pub fn build(self) -> crate::output::DeleteCrossAccountAuthorizationOutput {
-            crate::output::DeleteCrossAccountAuthorizationOutput {}
+            crate::output::DeleteCrossAccountAuthorizationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCrossAccountAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput).
@@ -2403,19 +2213,24 @@ impl DeleteCrossAccountAuthorizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCellOutput {}
+pub struct DeleteCellOutput  {
+}
 /// See [`DeleteCellOutput`](crate::output::DeleteCellOutput).
 pub mod delete_cell_output {
-
+    
     /// A builder for [`DeleteCellOutput`](crate::output::DeleteCellOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCellOutput`](crate::output::DeleteCellOutput).
         pub fn build(self) -> crate::output::DeleteCellOutput {
-            crate::output::DeleteCellOutput {}
+            crate::output::DeleteCellOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCellOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCellOutput`](crate::output::DeleteCellOutput).
@@ -2427,14 +2242,14 @@ impl DeleteCellOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceSetOutput {
+pub struct CreateResourceSetOutput  {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
     #[doc(hidden)]
     pub resource_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource set.</p>
     #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
@@ -2443,38 +2258,34 @@ pub struct CreateResourceSetOutput {
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_set_arn(&self) -> std::option::Option<& str> {
         self.resource_set_arn.as_deref()
     }
     /// <p>The name of the resource set.</p>
-    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> std::option::Option<& str> {
         self.resource_set_name.as_deref()
     }
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+    pub fn resource_set_type(&self) -> std::option::Option<& str> {
         self.resource_set_type.as_deref()
     }
     /// <p>A list of resource objects.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::Resource]> {
         self.resources.as_deref()
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput).
 pub mod create_resource_set_output {
-
+    
     /// A builder for [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2482,9 +2293,7 @@ pub mod create_resource_set_output {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
         pub(crate) resource_set_type: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -2493,12 +2302,8 @@ pub mod create_resource_set_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-        pub fn set_resource_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_arn = input;
-            self
+        pub fn set_resource_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_arn = input; self
         }
         /// <p>The name of the resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2506,27 +2311,19 @@ pub mod create_resource_set_output {
             self
         }
         /// <p>The name of the resource set.</p>
-        pub fn set_resource_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_name = input;
-            self
+        pub fn set_resource_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_name = input; self
         }
-        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
         /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_type = Some(input.into());
             self
         }
-        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
         /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-        pub fn set_resource_set_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_type = input;
-            self
+        pub fn set_resource_set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_type = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -2535,54 +2332,47 @@ pub mod create_resource_set_output {
         /// <p>A list of resource objects.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>A list of resource objects.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Resource>>) -> Self {
+            self.resources = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput).
         pub fn build(self) -> crate::output::CreateResourceSetOutput {
             crate::output::CreateResourceSetOutput {
-                resource_set_arn: self.resource_set_arn,
-                resource_set_name: self.resource_set_name,
-                resource_set_type: self.resource_set_type,
-                resources: self.resources,
-                tags: self.tags,
+                resource_set_arn: self.resource_set_arn
+                ,
+                resource_set_name: self.resource_set_name
+                ,
+                resource_set_type: self.resource_set_type
+                ,
+                resources: self.resources
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput).
@@ -2594,7 +2384,7 @@ impl CreateResourceSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRecoveryGroupOutput {
+pub struct CreateRecoveryGroupOutput  {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2606,42 +2396,36 @@ pub struct CreateRecoveryGroupOutput {
     pub recovery_group_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
         self.cells.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    pub fn recovery_group_arn(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_arn(&self) -> std::option::Option<& str> {
         self.recovery_group_arn.as_deref()
     }
     /// <p>The name of the recovery group.</p>
-    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput).
 pub mod create_recovery_group_output {
-
+    
     /// A builder for [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `cells`.
@@ -2651,17 +2435,13 @@ pub mod create_recovery_group_output {
         /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
-            self.cells = Some(v);
-            self
+                            v.push(input.into());
+                            self.cells = Some(v);
+                            self
         }
         /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-        pub fn set_cells(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cells = input;
-            self
+        pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cells = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
         pub fn recovery_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2669,12 +2449,8 @@ pub mod create_recovery_group_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-        pub fn set_recovery_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recovery_group_arn = input;
-            self
+        pub fn set_recovery_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recovery_group_arn = input; self
         }
         /// <p>The name of the recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2682,48 +2458,40 @@ pub mod create_recovery_group_output {
             self
         }
         /// <p>The name of the recovery group.</p>
-        pub fn set_recovery_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recovery_group_name = input;
-            self
+        pub fn set_recovery_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recovery_group_name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the recovery group.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the recovery group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput).
         pub fn build(self) -> crate::output::CreateRecoveryGroupOutput {
             crate::output::CreateRecoveryGroupOutput {
-                cells: self.cells,
-                recovery_group_arn: self.recovery_group_arn,
-                recovery_group_name: self.recovery_group_name,
-                tags: self.tags,
+                cells: self.cells
+                ,
+                recovery_group_arn: self.recovery_group_arn
+                ,
+                recovery_group_name: self.recovery_group_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRecoveryGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput).
@@ -2735,7 +2503,7 @@ impl CreateRecoveryGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReadinessCheckOutput {
+pub struct CreateReadinessCheckOutput  {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
     #[doc(hidden)]
     pub readiness_check_arn: std::option::Option<std::string::String>,
@@ -2747,42 +2515,36 @@ pub struct CreateReadinessCheckOutput {
     pub resource_set: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-    pub fn readiness_check_arn(&self) -> std::option::Option<&str> {
+    pub fn readiness_check_arn(&self) -> std::option::Option<& str> {
         self.readiness_check_arn.as_deref()
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+    pub fn readiness_check_name(&self) -> std::option::Option<& str> {
         self.readiness_check_name.as_deref()
     }
     /// <p>Name of the resource set to be checked.</p>
-    pub fn resource_set(&self) -> std::option::Option<&str> {
+    pub fn resource_set(&self) -> std::option::Option<& str> {
         self.resource_set.as_deref()
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput).
 pub mod create_readiness_check_output {
-
+    
     /// A builder for [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_arn: std::option::Option<std::string::String>,
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
         pub(crate) resource_set: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -2791,12 +2553,8 @@ pub mod create_readiness_check_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-        pub fn set_readiness_check_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.readiness_check_arn = input;
-            self
+        pub fn set_readiness_check_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.readiness_check_arn = input; self
         }
         /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2804,12 +2562,8 @@ pub mod create_readiness_check_output {
             self
         }
         /// <p>Name of a readiness check.</p>
-        pub fn set_readiness_check_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.readiness_check_name = input;
-            self
+        pub fn set_readiness_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.readiness_check_name = input; self
         }
         /// <p>Name of the resource set to be checked.</p>
         pub fn resource_set(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2818,44 +2572,39 @@ pub mod create_readiness_check_output {
         }
         /// <p>Name of the resource set to be checked.</p>
         pub fn set_resource_set(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_set = input;
-            self
+            self.resource_set = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A collection of tags associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput).
         pub fn build(self) -> crate::output::CreateReadinessCheckOutput {
             crate::output::CreateReadinessCheckOutput {
-                readiness_check_arn: self.readiness_check_arn,
-                readiness_check_name: self.readiness_check_name,
-                resource_set: self.resource_set,
-                tags: self.tags,
+                readiness_check_arn: self.readiness_check_arn
+                ,
+                readiness_check_name: self.readiness_check_name
+                ,
+                resource_set: self.resource_set
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateReadinessCheckOutput {
     /// Creates a new builder-style object to manufacture [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput).
@@ -2867,20 +2616,20 @@ impl CreateReadinessCheckOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCrossAccountAuthorizationOutput {
+pub struct CreateCrossAccountAuthorizationOutput  {
     /// <p>The cross-account authorization.</p>
     #[doc(hidden)]
     pub cross_account_authorization: std::option::Option<std::string::String>,
 }
 impl CreateCrossAccountAuthorizationOutput {
     /// <p>The cross-account authorization.</p>
-    pub fn cross_account_authorization(&self) -> std::option::Option<&str> {
+    pub fn cross_account_authorization(&self) -> std::option::Option<& str> {
         self.cross_account_authorization.as_deref()
     }
 }
 /// See [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput).
 pub mod create_cross_account_authorization_output {
-
+    
     /// A builder for [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2888,28 +2637,24 @@ pub mod create_cross_account_authorization_output {
     }
     impl Builder {
         /// <p>The cross-account authorization.</p>
-        pub fn cross_account_authorization(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cross_account_authorization(mut self, input: impl Into<std::string::String>) -> Self {
             self.cross_account_authorization = Some(input.into());
             self
         }
         /// <p>The cross-account authorization.</p>
-        pub fn set_cross_account_authorization(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cross_account_authorization = input;
-            self
+        pub fn set_cross_account_authorization(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cross_account_authorization = input; self
         }
         /// Consumes the builder and constructs a [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput).
         pub fn build(self) -> crate::output::CreateCrossAccountAuthorizationOutput {
             crate::output::CreateCrossAccountAuthorizationOutput {
-                cross_account_authorization: self.cross_account_authorization,
+                cross_account_authorization: self.cross_account_authorization
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCrossAccountAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput).
@@ -2921,7 +2666,7 @@ impl CreateCrossAccountAuthorizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCellOutput {
+pub struct CreateCellOutput  {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     #[doc(hidden)]
     pub cell_arn: std::option::Option<std::string::String>,
@@ -2936,37 +2681,33 @@ pub struct CreateCellOutput {
     pub parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags on the resources.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
-    pub fn cell_arn(&self) -> std::option::Option<&str> {
+    pub fn cell_arn(&self) -> std::option::Option<& str> {
         self.cell_arn.as_deref()
     }
     /// <p>The name of the cell.</p>
-    pub fn cell_name(&self) -> std::option::Option<&str> {
+    pub fn cell_name(&self) -> std::option::Option<& str> {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell ARNs.</p>
-    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
         self.cells.as_deref()
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub fn parent_readiness_scopes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parent_readiness_scopes(&self) -> std::option::Option<& [std::string::String]> {
         self.parent_readiness_scopes.as_deref()
     }
     /// <p>Tags on the resources.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateCellOutput`](crate::output::CreateCellOutput).
 pub mod create_cell_output {
-
+    
     /// A builder for [`CreateCellOutput`](crate::output::CreateCellOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2974,9 +2715,7 @@ pub mod create_cell_output {
         pub(crate) cell_name: std::option::Option<std::string::String>,
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -2986,8 +2725,7 @@ pub mod create_cell_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
         pub fn set_cell_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cell_arn = input;
-            self
+            self.cell_arn = input; self
         }
         /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2996,8 +2734,7 @@ pub mod create_cell_output {
         }
         /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cell_name = input;
-            self
+            self.cell_name = input; self
         }
         /// Appends an item to `cells`.
         ///
@@ -3006,17 +2743,13 @@ pub mod create_cell_output {
         /// <p>A list of cell ARNs.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
-            self.cells = Some(v);
-            self
+                            v.push(input.into());
+                            self.cells = Some(v);
+                            self
         }
         /// <p>A list of cell ARNs.</p>
-        pub fn set_cells(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cells = input;
-            self
+        pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cells = input; self
         }
         /// Appends an item to `parent_readiness_scopes`.
         ///
@@ -3025,54 +2758,47 @@ pub mod create_cell_output {
         /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
         pub fn parent_readiness_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parent_readiness_scopes.unwrap_or_default();
-            v.push(input.into());
-            self.parent_readiness_scopes = Some(v);
-            self
+                            v.push(input.into());
+                            self.parent_readiness_scopes = Some(v);
+                            self
         }
         /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-        pub fn set_parent_readiness_scopes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.parent_readiness_scopes = input;
-            self
+        pub fn set_parent_readiness_scopes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.parent_readiness_scopes = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags on the resources.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags on the resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateCellOutput`](crate::output::CreateCellOutput).
         pub fn build(self) -> crate::output::CreateCellOutput {
             crate::output::CreateCellOutput {
-                cell_arn: self.cell_arn,
-                cell_name: self.cell_name,
-                cells: self.cells,
-                parent_readiness_scopes: self.parent_readiness_scopes,
-                tags: self.tags,
+                cell_arn: self.cell_arn
+                ,
+                cell_name: self.cell_name
+                ,
+                cells: self.cells
+                ,
+                parent_readiness_scopes: self.parent_readiness_scopes
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCellOutput {
     /// Creates a new builder-style object to manufacture [`CreateCellOutput`](crate::output::CreateCellOutput).
@@ -3080,3 +2806,4 @@ impl CreateCellOutput {
         crate::output::create_cell_output::Builder::default()
     }
 }
+

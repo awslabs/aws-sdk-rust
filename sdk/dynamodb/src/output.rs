@@ -2,52 +2,45 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTimeToLiveOutput {
+pub struct UpdateTimeToLiveOutput  {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
     #[doc(hidden)]
     pub time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
 }
 impl UpdateTimeToLiveOutput {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-    pub fn time_to_live_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::TimeToLiveSpecification> {
+    pub fn time_to_live_specification(&self) -> std::option::Option<& crate::model::TimeToLiveSpecification> {
         self.time_to_live_specification.as_ref()
     }
 }
 /// See [`UpdateTimeToLiveOutput`](crate::output::UpdateTimeToLiveOutput).
 pub mod update_time_to_live_output {
-
+    
     /// A builder for [`UpdateTimeToLiveOutput`](crate::output::UpdateTimeToLiveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) time_to_live_specification:
-            std::option::Option<crate::model::TimeToLiveSpecification>,
+        pub(crate) time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
     }
     impl Builder {
         /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-        pub fn time_to_live_specification(
-            mut self,
-            input: crate::model::TimeToLiveSpecification,
-        ) -> Self {
+        pub fn time_to_live_specification(mut self, input: crate::model::TimeToLiveSpecification) -> Self {
             self.time_to_live_specification = Some(input);
             self
         }
         /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-        pub fn set_time_to_live_specification(
-            mut self,
-            input: std::option::Option<crate::model::TimeToLiveSpecification>,
-        ) -> Self {
-            self.time_to_live_specification = input;
-            self
+        pub fn set_time_to_live_specification(mut self, input: std::option::Option<crate::model::TimeToLiveSpecification>) -> Self {
+            self.time_to_live_specification = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTimeToLiveOutput`](crate::output::UpdateTimeToLiveOutput).
         pub fn build(self) -> crate::output::UpdateTimeToLiveOutput {
             crate::output::UpdateTimeToLiveOutput {
-                time_to_live_specification: self.time_to_live_specification,
+                time_to_live_specification: self.time_to_live_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTimeToLiveOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTimeToLiveOutput`](crate::output::UpdateTimeToLiveOutput).
@@ -59,53 +52,45 @@ impl UpdateTimeToLiveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTableReplicaAutoScalingOutput {
+pub struct UpdateTableReplicaAutoScalingOutput  {
     /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
     #[doc(hidden)]
-    pub table_auto_scaling_description:
-        std::option::Option<crate::model::TableAutoScalingDescription>,
+    pub table_auto_scaling_description: std::option::Option<crate::model::TableAutoScalingDescription>,
 }
 impl UpdateTableReplicaAutoScalingOutput {
     /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
-    pub fn table_auto_scaling_description(
-        &self,
-    ) -> std::option::Option<&crate::model::TableAutoScalingDescription> {
+    pub fn table_auto_scaling_description(&self) -> std::option::Option<& crate::model::TableAutoScalingDescription> {
         self.table_auto_scaling_description.as_ref()
     }
 }
 /// See [`UpdateTableReplicaAutoScalingOutput`](crate::output::UpdateTableReplicaAutoScalingOutput).
 pub mod update_table_replica_auto_scaling_output {
-
+    
     /// A builder for [`UpdateTableReplicaAutoScalingOutput`](crate::output::UpdateTableReplicaAutoScalingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) table_auto_scaling_description:
-            std::option::Option<crate::model::TableAutoScalingDescription>,
+        pub(crate) table_auto_scaling_description: std::option::Option<crate::model::TableAutoScalingDescription>,
     }
     impl Builder {
         /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
-        pub fn table_auto_scaling_description(
-            mut self,
-            input: crate::model::TableAutoScalingDescription,
-        ) -> Self {
+        pub fn table_auto_scaling_description(mut self, input: crate::model::TableAutoScalingDescription) -> Self {
             self.table_auto_scaling_description = Some(input);
             self
         }
         /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
-        pub fn set_table_auto_scaling_description(
-            mut self,
-            input: std::option::Option<crate::model::TableAutoScalingDescription>,
-        ) -> Self {
-            self.table_auto_scaling_description = input;
-            self
+        pub fn set_table_auto_scaling_description(mut self, input: std::option::Option<crate::model::TableAutoScalingDescription>) -> Self {
+            self.table_auto_scaling_description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTableReplicaAutoScalingOutput`](crate::output::UpdateTableReplicaAutoScalingOutput).
         pub fn build(self) -> crate::output::UpdateTableReplicaAutoScalingOutput {
             crate::output::UpdateTableReplicaAutoScalingOutput {
-                table_auto_scaling_description: self.table_auto_scaling_description,
+                table_auto_scaling_description: self.table_auto_scaling_description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTableReplicaAutoScalingOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTableReplicaAutoScalingOutput`](crate::output::UpdateTableReplicaAutoScalingOutput).
@@ -117,20 +102,20 @@ impl UpdateTableReplicaAutoScalingOutput {
 /// <p>Represents the output of an <code>UpdateTable</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTableOutput {
+pub struct UpdateTableOutput  {
     /// <p>Represents the properties of the table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl UpdateTableOutput {
     /// <p>Represents the properties of the table.</p>
-    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+    pub fn table_description(&self) -> std::option::Option<& crate::model::TableDescription> {
         self.table_description.as_ref()
     }
 }
 /// See [`UpdateTableOutput`](crate::output::UpdateTableOutput).
 pub mod update_table_output {
-
+    
     /// A builder for [`UpdateTableOutput`](crate::output::UpdateTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -143,20 +128,19 @@ pub mod update_table_output {
             self
         }
         /// <p>Represents the properties of the table.</p>
-        pub fn set_table_description(
-            mut self,
-            input: std::option::Option<crate::model::TableDescription>,
-        ) -> Self {
-            self.table_description = input;
-            self
+        pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
+            self.table_description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTableOutput`](crate::output::UpdateTableOutput).
         pub fn build(self) -> crate::output::UpdateTableOutput {
             crate::output::UpdateTableOutput {
-                table_description: self.table_description,
+                table_description: self.table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTableOutput`](crate::output::UpdateTableOutput).
@@ -168,91 +152,70 @@ impl UpdateTableOutput {
 /// <p>Represents the output of an <code>UpdateItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateItemOutput {
-    /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p>
+pub struct UpdateItemOutput  {
+    /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p> 
     /// <p>The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    >,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-    /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+    /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
 impl UpdateItemOutput {
-    /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p>
+    /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p> 
     /// <p>The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::AttributeValue>> {
         self.attributes.as_ref()
     }
     /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
-    /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+    /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
     /// </ul>
-    pub fn item_collection_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::ItemCollectionMetrics> {
+    pub fn item_collection_metrics(&self) -> std::option::Option<& crate::model::ItemCollectionMetrics> {
         self.item_collection_metrics.as_ref()
     }
 }
 /// See [`UpdateItemOutput`](crate::output::UpdateItemOutput).
 pub mod update_item_output {
-
+    
     /// A builder for [`UpdateItemOutput`](crate::output::UpdateItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-        pub(crate) item_collection_metrics:
-            std::option::Option<crate::model::ItemCollectionMetrics>,
+        pub(crate) item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
     }
     impl Builder {
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p>
+        /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p> 
         /// <p>The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::AttributeValue,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: crate::model::AttributeValue) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.attributes = Some(hash_map);
+                            self
         }
-        /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p>
+        /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p> 
         /// <p>The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
@@ -260,48 +223,42 @@ pub mod update_item_output {
             self
         }
         /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ConsumedCapacity>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
+            self.consumed_capacity = input; self
         }
-        /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+        /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
         /// </ul>
-        pub fn item_collection_metrics(
-            mut self,
-            input: crate::model::ItemCollectionMetrics,
-        ) -> Self {
+        pub fn item_collection_metrics(mut self, input: crate::model::ItemCollectionMetrics) -> Self {
             self.item_collection_metrics = Some(input);
             self
         }
-        /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+        /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
         /// </ul>
-        pub fn set_item_collection_metrics(
-            mut self,
-            input: std::option::Option<crate::model::ItemCollectionMetrics>,
-        ) -> Self {
-            self.item_collection_metrics = input;
-            self
+        pub fn set_item_collection_metrics(mut self, input: std::option::Option<crate::model::ItemCollectionMetrics>) -> Self {
+            self.item_collection_metrics = input; self
         }
         /// Consumes the builder and constructs a [`UpdateItemOutput`](crate::output::UpdateItemOutput).
         pub fn build(self) -> crate::output::UpdateItemOutput {
             crate::output::UpdateItemOutput {
-                attributes: self.attributes,
-                consumed_capacity: self.consumed_capacity,
-                item_collection_metrics: self.item_collection_metrics,
+                attributes: self.attributes
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
+                item_collection_metrics: self.item_collection_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateItemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateItemOutput`](crate::output::UpdateItemOutput).
@@ -313,36 +270,32 @@ impl UpdateItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGlobalTableSettingsOutput {
+pub struct UpdateGlobalTableSettingsOutput  {
     /// <p>The name of the global table.</p>
     #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
     /// <p>The Region-specific settings for the global table.</p>
     #[doc(hidden)]
-    pub replica_settings:
-        std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
+    pub replica_settings: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
 }
 impl UpdateGlobalTableSettingsOutput {
     /// <p>The name of the global table.</p>
-    pub fn global_table_name(&self) -> std::option::Option<&str> {
+    pub fn global_table_name(&self) -> std::option::Option<& str> {
         self.global_table_name.as_deref()
     }
     /// <p>The Region-specific settings for the global table.</p>
-    pub fn replica_settings(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicaSettingsDescription]> {
+    pub fn replica_settings(&self) -> std::option::Option<& [crate::model::ReplicaSettingsDescription]> {
         self.replica_settings.as_deref()
     }
 }
 /// See [`UpdateGlobalTableSettingsOutput`](crate::output::UpdateGlobalTableSettingsOutput).
 pub mod update_global_table_settings_output {
-
+    
     /// A builder for [`UpdateGlobalTableSettingsOutput`](crate::output::UpdateGlobalTableSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
-        pub(crate) replica_settings:
-            std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
+        pub(crate) replica_settings: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
     }
     impl Builder {
         /// <p>The name of the global table.</p>
@@ -351,12 +304,8 @@ pub mod update_global_table_settings_output {
             self
         }
         /// <p>The name of the global table.</p>
-        pub fn set_global_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.global_table_name = input;
-            self
+        pub fn set_global_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.global_table_name = input; self
         }
         /// Appends an item to `replica_settings`.
         ///
@@ -365,26 +314,26 @@ pub mod update_global_table_settings_output {
         /// <p>The Region-specific settings for the global table.</p>
         pub fn replica_settings(mut self, input: crate::model::ReplicaSettingsDescription) -> Self {
             let mut v = self.replica_settings.unwrap_or_default();
-            v.push(input);
-            self.replica_settings = Some(v);
-            self
+                            v.push(input);
+                            self.replica_settings = Some(v);
+                            self
         }
         /// <p>The Region-specific settings for the global table.</p>
-        pub fn set_replica_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
-        ) -> Self {
-            self.replica_settings = input;
-            self
+        pub fn set_replica_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>) -> Self {
+            self.replica_settings = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGlobalTableSettingsOutput`](crate::output::UpdateGlobalTableSettingsOutput).
         pub fn build(self) -> crate::output::UpdateGlobalTableSettingsOutput {
             crate::output::UpdateGlobalTableSettingsOutput {
-                global_table_name: self.global_table_name,
-                replica_settings: self.replica_settings,
+                global_table_name: self.global_table_name
+                ,
+                replica_settings: self.replica_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGlobalTableSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableSettingsOutput`](crate::output::UpdateGlobalTableSettingsOutput).
@@ -396,52 +345,45 @@ impl UpdateGlobalTableSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGlobalTableOutput {
+pub struct UpdateGlobalTableOutput  {
     /// <p>Contains the details of the global table.</p>
     #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
 }
 impl UpdateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
-    pub fn global_table_description(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalTableDescription> {
+    pub fn global_table_description(&self) -> std::option::Option<& crate::model::GlobalTableDescription> {
         self.global_table_description.as_ref()
     }
 }
 /// See [`UpdateGlobalTableOutput`](crate::output::UpdateGlobalTableOutput).
 pub mod update_global_table_output {
-
+    
     /// A builder for [`UpdateGlobalTableOutput`](crate::output::UpdateGlobalTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_table_description:
-            std::option::Option<crate::model::GlobalTableDescription>,
+        pub(crate) global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
-        pub fn global_table_description(
-            mut self,
-            input: crate::model::GlobalTableDescription,
-        ) -> Self {
+        pub fn global_table_description(mut self, input: crate::model::GlobalTableDescription) -> Self {
             self.global_table_description = Some(input);
             self
         }
         /// <p>Contains the details of the global table.</p>
-        pub fn set_global_table_description(
-            mut self,
-            input: std::option::Option<crate::model::GlobalTableDescription>,
-        ) -> Self {
-            self.global_table_description = input;
-            self
+        pub fn set_global_table_description(mut self, input: std::option::Option<crate::model::GlobalTableDescription>) -> Self {
+            self.global_table_description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGlobalTableOutput`](crate::output::UpdateGlobalTableOutput).
         pub fn build(self) -> crate::output::UpdateGlobalTableOutput {
             crate::output::UpdateGlobalTableOutput {
-                global_table_description: self.global_table_description,
+                global_table_description: self.global_table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGlobalTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableOutput`](crate::output::UpdateGlobalTableOutput).
@@ -453,7 +395,7 @@ impl UpdateGlobalTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContributorInsightsOutput {
+pub struct UpdateContributorInsightsOutput  {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -466,30 +408,27 @@ pub struct UpdateContributorInsightsOutput {
 }
 impl UpdateContributorInsightsOutput {
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the global secondary index, if applicable.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The status of contributor insights</p>
-    pub fn contributor_insights_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ContributorInsightsStatus> {
+    pub fn contributor_insights_status(&self) -> std::option::Option<& crate::model::ContributorInsightsStatus> {
         self.contributor_insights_status.as_ref()
     }
 }
 /// See [`UpdateContributorInsightsOutput`](crate::output::UpdateContributorInsightsOutput).
 pub mod update_contributor_insights_output {
-
+    
     /// A builder for [`UpdateContributorInsightsOutput`](crate::output::UpdateContributorInsightsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
-        pub(crate) contributor_insights_status:
-            std::option::Option<crate::model::ContributorInsightsStatus>,
+        pub(crate) contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
     }
     impl Builder {
         /// <p>The name of the table.</p>
@@ -499,8 +438,7 @@ pub mod update_contributor_insights_output {
         }
         /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The name of the global secondary index, if applicable.</p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -509,34 +447,31 @@ pub mod update_contributor_insights_output {
         }
         /// <p>The name of the global secondary index, if applicable.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_name = input;
-            self
+            self.index_name = input; self
         }
         /// <p>The status of contributor insights</p>
-        pub fn contributor_insights_status(
-            mut self,
-            input: crate::model::ContributorInsightsStatus,
-        ) -> Self {
+        pub fn contributor_insights_status(mut self, input: crate::model::ContributorInsightsStatus) -> Self {
             self.contributor_insights_status = Some(input);
             self
         }
         /// <p>The status of contributor insights</p>
-        pub fn set_contributor_insights_status(
-            mut self,
-            input: std::option::Option<crate::model::ContributorInsightsStatus>,
-        ) -> Self {
-            self.contributor_insights_status = input;
-            self
+        pub fn set_contributor_insights_status(mut self, input: std::option::Option<crate::model::ContributorInsightsStatus>) -> Self {
+            self.contributor_insights_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateContributorInsightsOutput`](crate::output::UpdateContributorInsightsOutput).
         pub fn build(self) -> crate::output::UpdateContributorInsightsOutput {
             crate::output::UpdateContributorInsightsOutput {
-                table_name: self.table_name,
-                index_name: self.index_name,
-                contributor_insights_status: self.contributor_insights_status,
+                table_name: self.table_name
+                ,
+                index_name: self.index_name
+                ,
+                contributor_insights_status: self.contributor_insights_status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateContributorInsightsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContributorInsightsOutput`](crate::output::UpdateContributorInsightsOutput).
@@ -548,53 +483,45 @@ impl UpdateContributorInsightsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContinuousBackupsOutput {
+pub struct UpdateContinuousBackupsOutput  {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
     #[doc(hidden)]
-    pub continuous_backups_description:
-        std::option::Option<crate::model::ContinuousBackupsDescription>,
+    pub continuous_backups_description: std::option::Option<crate::model::ContinuousBackupsDescription>,
 }
 impl UpdateContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-    pub fn continuous_backups_description(
-        &self,
-    ) -> std::option::Option<&crate::model::ContinuousBackupsDescription> {
+    pub fn continuous_backups_description(&self) -> std::option::Option<& crate::model::ContinuousBackupsDescription> {
         self.continuous_backups_description.as_ref()
     }
 }
 /// See [`UpdateContinuousBackupsOutput`](crate::output::UpdateContinuousBackupsOutput).
 pub mod update_continuous_backups_output {
-
+    
     /// A builder for [`UpdateContinuousBackupsOutput`](crate::output::UpdateContinuousBackupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) continuous_backups_description:
-            std::option::Option<crate::model::ContinuousBackupsDescription>,
+        pub(crate) continuous_backups_description: std::option::Option<crate::model::ContinuousBackupsDescription>,
     }
     impl Builder {
         /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-        pub fn continuous_backups_description(
-            mut self,
-            input: crate::model::ContinuousBackupsDescription,
-        ) -> Self {
+        pub fn continuous_backups_description(mut self, input: crate::model::ContinuousBackupsDescription) -> Self {
             self.continuous_backups_description = Some(input);
             self
         }
         /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-        pub fn set_continuous_backups_description(
-            mut self,
-            input: std::option::Option<crate::model::ContinuousBackupsDescription>,
-        ) -> Self {
-            self.continuous_backups_description = input;
-            self
+        pub fn set_continuous_backups_description(mut self, input: std::option::Option<crate::model::ContinuousBackupsDescription>) -> Self {
+            self.continuous_backups_description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateContinuousBackupsOutput`](crate::output::UpdateContinuousBackupsOutput).
         pub fn build(self) -> crate::output::UpdateContinuousBackupsOutput {
             crate::output::UpdateContinuousBackupsOutput {
-                continuous_backups_description: self.continuous_backups_description,
+                continuous_backups_description: self.continuous_backups_description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateContinuousBackupsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContinuousBackupsOutput`](crate::output::UpdateContinuousBackupsOutput).
@@ -606,19 +533,24 @@ impl UpdateContinuousBackupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -630,50 +562,32 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransactWriteItemsOutput {
+pub struct TransactWriteItemsOutput  {
     /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
     #[doc(hidden)]
-    pub item_collection_metrics: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ItemCollectionMetrics>,
-        >,
-    >,
+    pub item_collection_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>,
 }
 impl TransactWriteItemsOutput {
     /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& [crate::model::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
-    pub fn item_collection_metrics(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ItemCollectionMetrics>,
-        >,
-    > {
+    pub fn item_collection_metrics(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>> {
         self.item_collection_metrics.as_ref()
     }
 }
 /// See [`TransactWriteItemsOutput`](crate::output::TransactWriteItemsOutput).
 pub mod transact_write_items_output {
-
+    
     /// A builder for [`TransactWriteItemsOutput`](crate::output::TransactWriteItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) consumed_capacity:
-            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        pub(crate) item_collection_metrics: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::ItemCollectionMetrics>,
-            >,
-        >,
+        pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) item_collection_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>,
     }
     impl Builder {
         /// Appends an item to `consumed_capacity`.
@@ -683,54 +597,41 @@ pub mod transact_write_items_output {
         /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input);
-            self.consumed_capacity = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_capacity = Some(v);
+                            self
         }
         /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Adds a key-value pair to `item_collection_metrics`.
         ///
         /// To override the contents of this collection use [`set_item_collection_metrics`](Self::set_item_collection_metrics).
         ///
         /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
-        pub fn item_collection_metrics(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::ItemCollectionMetrics>,
-        ) -> Self {
+        pub fn item_collection_metrics(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::ItemCollectionMetrics>) -> Self {
             let mut hash_map = self.item_collection_metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.item_collection_metrics = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.item_collection_metrics = Some(hash_map);
+                            self
         }
         /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
-        pub fn set_item_collection_metrics(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::ItemCollectionMetrics>,
-                >,
-            >,
-        ) -> Self {
-            self.item_collection_metrics = input;
-            self
+        pub fn set_item_collection_metrics(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>) -> Self {
+            self.item_collection_metrics = input; self
         }
         /// Consumes the builder and constructs a [`TransactWriteItemsOutput`](crate::output::TransactWriteItemsOutput).
         pub fn build(self) -> crate::output::TransactWriteItemsOutput {
             crate::output::TransactWriteItemsOutput {
-                consumed_capacity: self.consumed_capacity,
-                item_collection_metrics: self.item_collection_metrics,
+                consumed_capacity: self.consumed_capacity
+                ,
+                item_collection_metrics: self.item_collection_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl TransactWriteItemsOutput {
     /// Creates a new builder-style object to manufacture [`TransactWriteItemsOutput`](crate::output::TransactWriteItemsOutput).
@@ -742,34 +643,33 @@ impl TransactWriteItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransactGetItemsOutput {
+pub struct TransactGetItemsOutput  {
     /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i> parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units consumed by the <code>TransactGetItems</code> call in that table.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-    /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p>
+    /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p> 
     /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code> object is Null, or if the requested item has no projected attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
     #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
 }
 impl TransactGetItemsOutput {
     /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i> parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units consumed by the <code>TransactGetItems</code> call in that table.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& [crate::model::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
-    /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p>
+    /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p> 
     /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code> object is Null, or if the requested item has no projected attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
-    pub fn responses(&self) -> std::option::Option<&[crate::model::ItemResponse]> {
+    pub fn responses(&self) -> std::option::Option<& [crate::model::ItemResponse]> {
         self.responses.as_deref()
     }
 }
 /// See [`TransactGetItemsOutput`](crate::output::TransactGetItemsOutput).
 pub mod transact_get_items_output {
-
+    
     /// A builder for [`TransactGetItemsOutput`](crate::output::TransactGetItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) consumed_capacity:
-            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
         pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
     }
     impl Builder {
@@ -780,47 +680,43 @@ pub mod transact_get_items_output {
         /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i> parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units consumed by the <code>TransactGetItems</code> call in that table.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input);
-            self.consumed_capacity = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_capacity = Some(v);
+                            self
         }
         /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i> parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units consumed by the <code>TransactGetItems</code> call in that table.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Appends an item to `responses`.
         ///
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
-        /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p>
+        /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p> 
         /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code> object is Null, or if the requested item has no projected attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
         pub fn responses(mut self, input: crate::model::ItemResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input);
-            self.responses = Some(v);
-            self
+                            v.push(input);
+                            self.responses = Some(v);
+                            self
         }
-        /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p>
+        /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p> 
         /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code> object is Null, or if the requested item has no projected attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
-        pub fn set_responses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
-        ) -> Self {
-            self.responses = input;
-            self
+        pub fn set_responses(mut self, input: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>) -> Self {
+            self.responses = input; self
         }
         /// Consumes the builder and constructs a [`TransactGetItemsOutput`](crate::output::TransactGetItemsOutput).
         pub fn build(self) -> crate::output::TransactGetItemsOutput {
             crate::output::TransactGetItemsOutput {
-                consumed_capacity: self.consumed_capacity,
-                responses: self.responses,
+                consumed_capacity: self.consumed_capacity
+                ,
+                responses: self.responses
+                ,
             }
         }
     }
+    
+    
 }
 impl TransactGetItemsOutput {
     /// Creates a new builder-style object to manufacture [`TransactGetItemsOutput`](crate::output::TransactGetItemsOutput).
@@ -832,19 +728,24 @@ impl TransactGetItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -856,83 +757,65 @@ impl TagResourceOutput {
 /// <p>Represents the output of a <code>Scan</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScanOutput {
+pub struct ScanOutput  {
     /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
-    >,
-    /// <p>The number of items in the response.</p>
-    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+    pub items: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>,
+    /// <p>The number of items in the response.</p> 
+    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p> 
     /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as <code>ScannedCount</code>.</p>
     #[doc(hidden)]
     pub count: i32,
-    /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> 
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
     #[doc(hidden)]
     pub scanned_count: i32,
-    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> 
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> 
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     #[doc(hidden)]
-    pub last_evaluated_key: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    >,
+    pub last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl ScanOutput {
     /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
-    pub fn items(
-        &self,
-    ) -> std::option::Option<
-        &[std::collections::HashMap<std::string::String, crate::model::AttributeValue>],
-    > {
+    pub fn items(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, crate::model::AttributeValue>]> {
         self.items.as_deref()
     }
-    /// <p>The number of items in the response.</p>
-    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+    /// <p>The number of items in the response.</p> 
+    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p> 
     /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as <code>ScannedCount</code>.</p>
     pub fn count(&self) -> i32 {
         self.count
     }
-    /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> 
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
     pub fn scanned_count(&self) -> i32 {
         self.scanned_count
     }
-    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> 
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> 
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
-    pub fn last_evaluated_key(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    > {
+    pub fn last_evaluated_key(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::AttributeValue>> {
         self.last_evaluated_key.as_ref()
     }
     /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
 }
 /// See [`ScanOutput`](crate::output::ScanOutput).
 pub mod scan_output {
-
+    
     /// A builder for [`ScanOutput`](crate::output::ScanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items: std::option::Option<
-            std::vec::Vec<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        >,
+        pub(crate) items: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>,
         pub(crate) count: std::option::Option<i32>,
         pub(crate) scanned_count: std::option::Option<i32>,
-        pub(crate) last_evaluated_key: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        >,
+        pub(crate) last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     }
     impl Builder {
@@ -941,81 +824,58 @@ pub mod scan_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
-        pub fn items(
-            mut self,
-            input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        ) -> Self {
+        pub fn items(mut self, input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<
-                    std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-                >,
-            >,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>) -> Self {
+            self.items = input; self
         }
-        /// <p>The number of items in the response.</p>
-        /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+        /// <p>The number of items in the response.</p> 
+        /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p> 
         /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as <code>ScannedCount</code>.</p>
         pub fn count(mut self, input: i32) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>The number of items in the response.</p>
-        /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+        /// <p>The number of items in the response.</p> 
+        /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p> 
         /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as <code>ScannedCount</code>.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
-        /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> 
         /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
         pub fn scanned_count(mut self, input: i32) -> Self {
             self.scanned_count = Some(input);
             self
         }
-        /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> 
         /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
         pub fn set_scanned_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.scanned_count = input;
-            self
+            self.scanned_count = input; self
         }
         /// Adds a key-value pair to `last_evaluated_key`.
         ///
         /// To override the contents of this collection use [`set_last_evaluated_key`](Self::set_last_evaluated_key).
         ///
-        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> 
+        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> 
         /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
-        pub fn last_evaluated_key(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::AttributeValue,
-        ) -> Self {
+        pub fn last_evaluated_key(mut self, k: impl Into<std::string::String>, v: crate::model::AttributeValue) -> Self {
             let mut hash_map = self.last_evaluated_key.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.last_evaluated_key = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.last_evaluated_key = Some(hash_map);
+                            self
         }
-        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> 
+        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> 
         /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
-        pub fn set_last_evaluated_key(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        ) -> Self {
-            self.last_evaluated_key = input;
-            self
+        pub fn set_last_evaluated_key(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
+            self.last_evaluated_key = input; self
         }
         /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
@@ -1023,24 +883,29 @@ pub mod scan_output {
             self
         }
         /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ConsumedCapacity>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Consumes the builder and constructs a [`ScanOutput`](crate::output::ScanOutput).
         pub fn build(self) -> crate::output::ScanOutput {
             crate::output::ScanOutput {
-                items: self.items,
-                count: self.count.unwrap_or_default(),
-                scanned_count: self.scanned_count.unwrap_or_default(),
-                last_evaluated_key: self.last_evaluated_key,
-                consumed_capacity: self.consumed_capacity,
+                items: self.items
+                ,
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                scanned_count: self.scanned_count
+                    .unwrap_or_default()
+                ,
+                last_evaluated_key: self.last_evaluated_key
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl ScanOutput {
     /// Creates a new builder-style object to manufacture [`ScanOutput`](crate::output::ScanOutput).
@@ -1052,20 +917,20 @@ impl ScanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableToPointInTimeOutput {
+pub struct RestoreTableToPointInTimeOutput  {
     /// <p>Represents the properties of a table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl RestoreTableToPointInTimeOutput {
     /// <p>Represents the properties of a table.</p>
-    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+    pub fn table_description(&self) -> std::option::Option<& crate::model::TableDescription> {
         self.table_description.as_ref()
     }
 }
 /// See [`RestoreTableToPointInTimeOutput`](crate::output::RestoreTableToPointInTimeOutput).
 pub mod restore_table_to_point_in_time_output {
-
+    
     /// A builder for [`RestoreTableToPointInTimeOutput`](crate::output::RestoreTableToPointInTimeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1078,20 +943,19 @@ pub mod restore_table_to_point_in_time_output {
             self
         }
         /// <p>Represents the properties of a table.</p>
-        pub fn set_table_description(
-            mut self,
-            input: std::option::Option<crate::model::TableDescription>,
-        ) -> Self {
-            self.table_description = input;
-            self
+        pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
+            self.table_description = input; self
         }
         /// Consumes the builder and constructs a [`RestoreTableToPointInTimeOutput`](crate::output::RestoreTableToPointInTimeOutput).
         pub fn build(self) -> crate::output::RestoreTableToPointInTimeOutput {
             crate::output::RestoreTableToPointInTimeOutput {
-                table_description: self.table_description,
+                table_description: self.table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreTableToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableToPointInTimeOutput`](crate::output::RestoreTableToPointInTimeOutput).
@@ -1103,20 +967,20 @@ impl RestoreTableToPointInTimeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableFromBackupOutput {
+pub struct RestoreTableFromBackupOutput  {
     /// <p>The description of the table created from an existing backup.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl RestoreTableFromBackupOutput {
     /// <p>The description of the table created from an existing backup.</p>
-    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+    pub fn table_description(&self) -> std::option::Option<& crate::model::TableDescription> {
         self.table_description.as_ref()
     }
 }
 /// See [`RestoreTableFromBackupOutput`](crate::output::RestoreTableFromBackupOutput).
 pub mod restore_table_from_backup_output {
-
+    
     /// A builder for [`RestoreTableFromBackupOutput`](crate::output::RestoreTableFromBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1129,20 +993,19 @@ pub mod restore_table_from_backup_output {
             self
         }
         /// <p>The description of the table created from an existing backup.</p>
-        pub fn set_table_description(
-            mut self,
-            input: std::option::Option<crate::model::TableDescription>,
-        ) -> Self {
-            self.table_description = input;
-            self
+        pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
+            self.table_description = input; self
         }
         /// Consumes the builder and constructs a [`RestoreTableFromBackupOutput`](crate::output::RestoreTableFromBackupOutput).
         pub fn build(self) -> crate::output::RestoreTableFromBackupOutput {
             crate::output::RestoreTableFromBackupOutput {
-                table_description: self.table_description,
+                table_description: self.table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreTableFromBackupOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromBackupOutput`](crate::output::RestoreTableFromBackupOutput).
@@ -1154,83 +1017,65 @@ impl RestoreTableFromBackupOutput {
 /// <p>Represents the output of a <code>Query</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryOutput {
+pub struct QueryOutput  {
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
-    >,
-    /// <p>The number of items in the response.</p>
-    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+    pub items: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>,
+    /// <p>The number of items in the response.</p> 
+    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p> 
     /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
     #[doc(hidden)]
     pub count: i32,
-    /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> 
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
     #[doc(hidden)]
     pub scanned_count: i32,
-    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> 
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> 
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     #[doc(hidden)]
-    pub last_evaluated_key: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    >,
+    pub last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl QueryOutput {
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
-    pub fn items(
-        &self,
-    ) -> std::option::Option<
-        &[std::collections::HashMap<std::string::String, crate::model::AttributeValue>],
-    > {
+    pub fn items(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, crate::model::AttributeValue>]> {
         self.items.as_deref()
     }
-    /// <p>The number of items in the response.</p>
-    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+    /// <p>The number of items in the response.</p> 
+    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p> 
     /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
     pub fn count(&self) -> i32 {
         self.count
     }
-    /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> 
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
     pub fn scanned_count(&self) -> i32 {
         self.scanned_count
     }
-    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> 
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> 
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
-    pub fn last_evaluated_key(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    > {
+    pub fn last_evaluated_key(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::AttributeValue>> {
         self.last_evaluated_key.as_ref()
     }
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
 }
 /// See [`QueryOutput`](crate::output::QueryOutput).
 pub mod query_output {
-
+    
     /// A builder for [`QueryOutput`](crate::output::QueryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items: std::option::Option<
-            std::vec::Vec<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        >,
+        pub(crate) items: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>,
         pub(crate) count: std::option::Option<i32>,
         pub(crate) scanned_count: std::option::Option<i32>,
-        pub(crate) last_evaluated_key: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        >,
+        pub(crate) last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     }
     impl Builder {
@@ -1239,81 +1084,58 @@ pub mod query_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
-        pub fn items(
-            mut self,
-            input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        ) -> Self {
+        pub fn items(mut self, input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<
-                    std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-                >,
-            >,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>) -> Self {
+            self.items = input; self
         }
-        /// <p>The number of items in the response.</p>
-        /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+        /// <p>The number of items in the response.</p> 
+        /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p> 
         /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
         pub fn count(mut self, input: i32) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>The number of items in the response.</p>
-        /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
+        /// <p>The number of items in the response.</p> 
+        /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p> 
         /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
-        /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> 
         /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
         pub fn scanned_count(mut self, input: i32) -> Self {
             self.scanned_count = Some(input);
             self
         }
-        /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> 
         /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
         pub fn set_scanned_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.scanned_count = input;
-            self
+            self.scanned_count = input; self
         }
         /// Adds a key-value pair to `last_evaluated_key`.
         ///
         /// To override the contents of this collection use [`set_last_evaluated_key`](Self::set_last_evaluated_key).
         ///
-        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> 
+        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> 
         /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
-        pub fn last_evaluated_key(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::AttributeValue,
-        ) -> Self {
+        pub fn last_evaluated_key(mut self, k: impl Into<std::string::String>, v: crate::model::AttributeValue) -> Self {
             let mut hash_map = self.last_evaluated_key.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.last_evaluated_key = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.last_evaluated_key = Some(hash_map);
+                            self
         }
-        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> 
+        /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p> 
         /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
-        pub fn set_last_evaluated_key(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        ) -> Self {
-            self.last_evaluated_key = input;
-            self
+        pub fn set_last_evaluated_key(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
+            self.last_evaluated_key = input; self
         }
         /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
@@ -1321,24 +1143,29 @@ pub mod query_output {
             self
         }
         /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ConsumedCapacity>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Consumes the builder and constructs a [`QueryOutput`](crate::output::QueryOutput).
         pub fn build(self) -> crate::output::QueryOutput {
             crate::output::QueryOutput {
-                items: self.items,
-                count: self.count.unwrap_or_default(),
-                scanned_count: self.scanned_count.unwrap_or_default(),
-                last_evaluated_key: self.last_evaluated_key,
-                consumed_capacity: self.consumed_capacity,
+                items: self.items
+                ,
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                scanned_count: self.scanned_count
+                    .unwrap_or_default()
+                ,
+                last_evaluated_key: self.last_evaluated_key
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryOutput {
     /// Creates a new builder-style object to manufacture [`QueryOutput`](crate::output::QueryOutput).
@@ -1350,61 +1177,50 @@ impl QueryOutput {
 /// <p>Represents the output of a <code>PutItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutItemOutput {
+pub struct PutItemOutput  {
     /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    >,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
 impl PutItemOutput {
     /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::AttributeValue>> {
         self.attributes.as_ref()
     }
     /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
-    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
     /// </ul>
-    pub fn item_collection_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::ItemCollectionMetrics> {
+    pub fn item_collection_metrics(&self) -> std::option::Option<& crate::model::ItemCollectionMetrics> {
         self.item_collection_metrics.as_ref()
     }
 }
 /// See [`PutItemOutput`](crate::output::PutItemOutput).
 pub mod put_item_output {
-
+    
     /// A builder for [`PutItemOutput`](crate::output::PutItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-        pub(crate) item_collection_metrics:
-            std::option::Option<crate::model::ItemCollectionMetrics>,
+        pub(crate) item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
     }
     impl Builder {
         /// Adds a key-value pair to `attributes`.
@@ -1412,25 +1228,15 @@ pub mod put_item_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::AttributeValue,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: crate::model::AttributeValue) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
@@ -1438,48 +1244,42 @@ pub mod put_item_output {
             self
         }
         /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ConsumedCapacity>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
+            self.consumed_capacity = input; self
         }
-        /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+        /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
         /// </ul>
-        pub fn item_collection_metrics(
-            mut self,
-            input: crate::model::ItemCollectionMetrics,
-        ) -> Self {
+        pub fn item_collection_metrics(mut self, input: crate::model::ItemCollectionMetrics) -> Self {
             self.item_collection_metrics = Some(input);
             self
         }
-        /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+        /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
         /// </ul>
-        pub fn set_item_collection_metrics(
-            mut self,
-            input: std::option::Option<crate::model::ItemCollectionMetrics>,
-        ) -> Self {
-            self.item_collection_metrics = input;
-            self
+        pub fn set_item_collection_metrics(mut self, input: std::option::Option<crate::model::ItemCollectionMetrics>) -> Self {
+            self.item_collection_metrics = input; self
         }
         /// Consumes the builder and constructs a [`PutItemOutput`](crate::output::PutItemOutput).
         pub fn build(self) -> crate::output::PutItemOutput {
             crate::output::PutItemOutput {
-                attributes: self.attributes,
-                consumed_capacity: self.consumed_capacity,
-                item_collection_metrics: self.item_collection_metrics,
+                attributes: self.attributes
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
+                item_collection_metrics: self.item_collection_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl PutItemOutput {
     /// Creates a new builder-style object to manufacture [`PutItemOutput`](crate::output::PutItemOutput).
@@ -1491,7 +1291,7 @@ impl PutItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsOfResourceOutput {
+pub struct ListTagsOfResourceOutput  {
     /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1501,17 +1301,17 @@ pub struct ListTagsOfResourceOutput {
 }
 impl ListTagsOfResourceOutput {
     /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call ListTagsOfResource again, with NextToken set to this value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsOfResourceOutput`](crate::output::ListTagsOfResourceOutput).
 pub mod list_tags_of_resource_output {
-
+    
     /// A builder for [`ListTagsOfResourceOutput`](crate::output::ListTagsOfResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1526,17 +1326,13 @@ pub mod list_tags_of_resource_output {
         /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call ListTagsOfResource again, with NextToken set to this value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1545,17 +1341,20 @@ pub mod list_tags_of_resource_output {
         }
         /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call ListTagsOfResource again, with NextToken set to this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsOfResourceOutput`](crate::output::ListTagsOfResourceOutput).
         pub fn build(self) -> crate::output::ListTagsOfResourceOutput {
             crate::output::ListTagsOfResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsOfResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsOfResourceOutput`](crate::output::ListTagsOfResourceOutput).
@@ -1567,31 +1366,31 @@ impl ListTagsOfResourceOutput {
 /// <p>Represents the output of a <code>ListTables</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTablesOutput {
-    /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
+pub struct ListTablesOutput  {
+    /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p> 
     /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
     #[doc(hidden)]
     pub table_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
+    /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p> 
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
     #[doc(hidden)]
     pub last_evaluated_table_name: std::option::Option<std::string::String>,
 }
 impl ListTablesOutput {
-    /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
+    /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p> 
     /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
-    pub fn table_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn table_names(&self) -> std::option::Option<& [std::string::String]> {
         self.table_names.as_deref()
     }
-    /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
+    /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p> 
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
-    pub fn last_evaluated_table_name(&self) -> std::option::Option<&str> {
+    pub fn last_evaluated_table_name(&self) -> std::option::Option<& str> {
         self.last_evaluated_table_name.as_deref()
     }
 }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
-
+    
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1603,46 +1402,42 @@ pub mod list_tables_output {
         ///
         /// To override the contents of this collection use [`set_table_names`](Self::set_table_names).
         ///
-        /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
+        /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p> 
         /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
         pub fn table_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.table_names.unwrap_or_default();
-            v.push(input.into());
-            self.table_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.table_names = Some(v);
+                            self
         }
-        /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
+        /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p> 
         /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
-        pub fn set_table_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.table_names = input;
-            self
+        pub fn set_table_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.table_names = input; self
         }
-        /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
+        /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p> 
         /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
         pub fn last_evaluated_table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_evaluated_table_name = Some(input.into());
             self
         }
-        /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
+        /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p> 
         /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
-        pub fn set_last_evaluated_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_evaluated_table_name = input;
-            self
+        pub fn set_last_evaluated_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_evaluated_table_name = input; self
         }
         /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
-                table_names: self.table_names,
-                last_evaluated_table_name: self.last_evaluated_table_name,
+                table_names: self.table_names
+                ,
+                last_evaluated_table_name: self.last_evaluated_table_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput).
@@ -1654,7 +1449,7 @@ impl ListTablesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportsOutput {
+pub struct ListImportsOutput  {
     /// <p> A list of <code>ImportSummary</code> objects. </p>
     #[doc(hidden)]
     pub import_summary_list: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
@@ -1664,22 +1459,21 @@ pub struct ListImportsOutput {
 }
 impl ListImportsOutput {
     /// <p> A list of <code>ImportSummary</code> objects. </p>
-    pub fn import_summary_list(&self) -> std::option::Option<&[crate::model::ImportSummary]> {
+    pub fn import_summary_list(&self) -> std::option::Option<& [crate::model::ImportSummary]> {
         self.import_summary_list.as_deref()
     }
     /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListImportsOutput`](crate::output::ListImportsOutput).
 pub mod list_imports_output {
-
+    
     /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) import_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
+        pub(crate) import_summary_list: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1690,17 +1484,13 @@ pub mod list_imports_output {
         /// <p> A list of <code>ImportSummary</code> objects. </p>
         pub fn import_summary_list(mut self, input: crate::model::ImportSummary) -> Self {
             let mut v = self.import_summary_list.unwrap_or_default();
-            v.push(input);
-            self.import_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.import_summary_list = Some(v);
+                            self
         }
         /// <p> A list of <code>ImportSummary</code> objects. </p>
-        pub fn set_import_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
-        ) -> Self {
-            self.import_summary_list = input;
-            self
+        pub fn set_import_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>) -> Self {
+            self.import_summary_list = input; self
         }
         /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1709,17 +1499,20 @@ pub mod list_imports_output {
         }
         /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImportsOutput`](crate::output::ListImportsOutput).
         pub fn build(self) -> crate::output::ListImportsOutput {
             crate::output::ListImportsOutput {
-                import_summary_list: self.import_summary_list,
-                next_token: self.next_token,
+                import_summary_list: self.import_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListImportsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportsOutput`](crate::output::ListImportsOutput).
@@ -1731,7 +1524,7 @@ impl ListImportsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGlobalTablesOutput {
+pub struct ListGlobalTablesOutput  {
     /// <p>List of global table names.</p>
     #[doc(hidden)]
     pub global_tables: std::option::Option<std::vec::Vec<crate::model::GlobalTable>>,
@@ -1741,17 +1534,17 @@ pub struct ListGlobalTablesOutput {
 }
 impl ListGlobalTablesOutput {
     /// <p>List of global table names.</p>
-    pub fn global_tables(&self) -> std::option::Option<&[crate::model::GlobalTable]> {
+    pub fn global_tables(&self) -> std::option::Option<& [crate::model::GlobalTable]> {
         self.global_tables.as_deref()
     }
     /// <p>Last evaluated global table name.</p>
-    pub fn last_evaluated_global_table_name(&self) -> std::option::Option<&str> {
+    pub fn last_evaluated_global_table_name(&self) -> std::option::Option<& str> {
         self.last_evaluated_global_table_name.as_deref()
     }
 }
 /// See [`ListGlobalTablesOutput`](crate::output::ListGlobalTablesOutput).
 pub mod list_global_tables_output {
-
+    
     /// A builder for [`ListGlobalTablesOutput`](crate::output::ListGlobalTablesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1766,42 +1559,35 @@ pub mod list_global_tables_output {
         /// <p>List of global table names.</p>
         pub fn global_tables(mut self, input: crate::model::GlobalTable) -> Self {
             let mut v = self.global_tables.unwrap_or_default();
-            v.push(input);
-            self.global_tables = Some(v);
-            self
+                            v.push(input);
+                            self.global_tables = Some(v);
+                            self
         }
         /// <p>List of global table names.</p>
-        pub fn set_global_tables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GlobalTable>>,
-        ) -> Self {
-            self.global_tables = input;
-            self
+        pub fn set_global_tables(mut self, input: std::option::Option<std::vec::Vec<crate::model::GlobalTable>>) -> Self {
+            self.global_tables = input; self
         }
         /// <p>Last evaluated global table name.</p>
-        pub fn last_evaluated_global_table_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn last_evaluated_global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_evaluated_global_table_name = Some(input.into());
             self
         }
         /// <p>Last evaluated global table name.</p>
-        pub fn set_last_evaluated_global_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_evaluated_global_table_name = input;
-            self
+        pub fn set_last_evaluated_global_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_evaluated_global_table_name = input; self
         }
         /// Consumes the builder and constructs a [`ListGlobalTablesOutput`](crate::output::ListGlobalTablesOutput).
         pub fn build(self) -> crate::output::ListGlobalTablesOutput {
             crate::output::ListGlobalTablesOutput {
-                global_tables: self.global_tables,
-                last_evaluated_global_table_name: self.last_evaluated_global_table_name,
+                global_tables: self.global_tables
+                ,
+                last_evaluated_global_table_name: self.last_evaluated_global_table_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGlobalTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListGlobalTablesOutput`](crate::output::ListGlobalTablesOutput).
@@ -1813,7 +1599,7 @@ impl ListGlobalTablesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExportsOutput {
+pub struct ListExportsOutput  {
     /// <p>A list of <code>ExportSummary</code> objects.</p>
     #[doc(hidden)]
     pub export_summaries: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
@@ -1823,22 +1609,21 @@ pub struct ListExportsOutput {
 }
 impl ListExportsOutput {
     /// <p>A list of <code>ExportSummary</code> objects.</p>
-    pub fn export_summaries(&self) -> std::option::Option<&[crate::model::ExportSummary]> {
+    pub fn export_summaries(&self) -> std::option::Option<& [crate::model::ExportSummary]> {
         self.export_summaries.as_deref()
     }
     /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListExports</code> again, with <code>NextToken</code> set to this value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListExportsOutput`](crate::output::ListExportsOutput).
 pub mod list_exports_output {
-
+    
     /// A builder for [`ListExportsOutput`](crate::output::ListExportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) export_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
+        pub(crate) export_summaries: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1849,17 +1634,13 @@ pub mod list_exports_output {
         /// <p>A list of <code>ExportSummary</code> objects.</p>
         pub fn export_summaries(mut self, input: crate::model::ExportSummary) -> Self {
             let mut v = self.export_summaries.unwrap_or_default();
-            v.push(input);
-            self.export_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.export_summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>ExportSummary</code> objects.</p>
-        pub fn set_export_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
-        ) -> Self {
-            self.export_summaries = input;
-            self
+        pub fn set_export_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>) -> Self {
+            self.export_summaries = input; self
         }
         /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListExports</code> again, with <code>NextToken</code> set to this value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1868,17 +1649,20 @@ pub mod list_exports_output {
         }
         /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListExports</code> again, with <code>NextToken</code> set to this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListExportsOutput`](crate::output::ListExportsOutput).
         pub fn build(self) -> crate::output::ListExportsOutput {
             crate::output::ListExportsOutput {
-                export_summaries: self.export_summaries,
-                next_token: self.next_token,
+                export_summaries: self.export_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListExportsOutput {
     /// Creates a new builder-style object to manufacture [`ListExportsOutput`](crate::output::ListExportsOutput).
@@ -1890,35 +1674,31 @@ impl ListExportsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContributorInsightsOutput {
+pub struct ListContributorInsightsOutput  {
     /// <p>A list of ContributorInsightsSummary.</p>
     #[doc(hidden)]
-    pub contributor_insights_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
+    pub contributor_insights_summaries: std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
     /// <p>A token to go to the next page if there is one.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContributorInsightsOutput {
     /// <p>A list of ContributorInsightsSummary.</p>
-    pub fn contributor_insights_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ContributorInsightsSummary]> {
+    pub fn contributor_insights_summaries(&self) -> std::option::Option<& [crate::model::ContributorInsightsSummary]> {
         self.contributor_insights_summaries.as_deref()
     }
     /// <p>A token to go to the next page if there is one.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListContributorInsightsOutput`](crate::output::ListContributorInsightsOutput).
 pub mod list_contributor_insights_output {
-
+    
     /// A builder for [`ListContributorInsightsOutput`](crate::output::ListContributorInsightsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) contributor_insights_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
+        pub(crate) contributor_insights_summaries: std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1927,22 +1707,15 @@ pub mod list_contributor_insights_output {
         /// To override the contents of this collection use [`set_contributor_insights_summaries`](Self::set_contributor_insights_summaries).
         ///
         /// <p>A list of ContributorInsightsSummary.</p>
-        pub fn contributor_insights_summaries(
-            mut self,
-            input: crate::model::ContributorInsightsSummary,
-        ) -> Self {
+        pub fn contributor_insights_summaries(mut self, input: crate::model::ContributorInsightsSummary) -> Self {
             let mut v = self.contributor_insights_summaries.unwrap_or_default();
-            v.push(input);
-            self.contributor_insights_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.contributor_insights_summaries = Some(v);
+                            self
         }
         /// <p>A list of ContributorInsightsSummary.</p>
-        pub fn set_contributor_insights_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
-        ) -> Self {
-            self.contributor_insights_summaries = input;
-            self
+        pub fn set_contributor_insights_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>) -> Self {
+            self.contributor_insights_summaries = input; self
         }
         /// <p>A token to go to the next page if there is one.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1951,17 +1724,20 @@ pub mod list_contributor_insights_output {
         }
         /// <p>A token to go to the next page if there is one.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListContributorInsightsOutput`](crate::output::ListContributorInsightsOutput).
         pub fn build(self) -> crate::output::ListContributorInsightsOutput {
             crate::output::ListContributorInsightsOutput {
-                contributor_insights_summaries: self.contributor_insights_summaries,
-                next_token: self.next_token,
+                contributor_insights_summaries: self.contributor_insights_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListContributorInsightsOutput {
     /// Creates a new builder-style object to manufacture [`ListContributorInsightsOutput`](crate::output::ListContributorInsightsOutput).
@@ -1973,36 +1749,35 @@ impl ListContributorInsightsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBackupsOutput {
+pub struct ListBackupsOutput  {
     /// <p>List of <code>BackupSummary</code> objects.</p>
     #[doc(hidden)]
     pub backup_summaries: std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
-    /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-    /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p>
+    /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p> 
+    /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p> 
     /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be returned. All results are guaranteed to have been returned if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
     #[doc(hidden)]
     pub last_evaluated_backup_arn: std::option::Option<std::string::String>,
 }
 impl ListBackupsOutput {
     /// <p>List of <code>BackupSummary</code> objects.</p>
-    pub fn backup_summaries(&self) -> std::option::Option<&[crate::model::BackupSummary]> {
+    pub fn backup_summaries(&self) -> std::option::Option<& [crate::model::BackupSummary]> {
         self.backup_summaries.as_deref()
     }
-    /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-    /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p>
+    /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p> 
+    /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p> 
     /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be returned. All results are guaranteed to have been returned if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
-    pub fn last_evaluated_backup_arn(&self) -> std::option::Option<&str> {
+    pub fn last_evaluated_backup_arn(&self) -> std::option::Option<& str> {
         self.last_evaluated_backup_arn.as_deref()
     }
 }
 /// See [`ListBackupsOutput`](crate::output::ListBackupsOutput).
 pub mod list_backups_output {
-
+    
     /// A builder for [`ListBackupsOutput`](crate::output::ListBackupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) backup_summaries:
-            std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
+        pub(crate) backup_summaries: std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
         pub(crate) last_evaluated_backup_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2013,43 +1788,39 @@ pub mod list_backups_output {
         /// <p>List of <code>BackupSummary</code> objects.</p>
         pub fn backup_summaries(mut self, input: crate::model::BackupSummary) -> Self {
             let mut v = self.backup_summaries.unwrap_or_default();
-            v.push(input);
-            self.backup_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.backup_summaries = Some(v);
+                            self
         }
         /// <p>List of <code>BackupSummary</code> objects.</p>
-        pub fn set_backup_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
-        ) -> Self {
-            self.backup_summaries = input;
-            self
+        pub fn set_backup_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BackupSummary>>) -> Self {
+            self.backup_summaries = input; self
         }
-        /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-        /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p>
+        /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p> 
+        /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p> 
         /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be returned. All results are guaranteed to have been returned if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
         pub fn last_evaluated_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_evaluated_backup_arn = Some(input.into());
             self
         }
-        /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-        /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p>
+        /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p> 
+        /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p> 
         /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be returned. All results are guaranteed to have been returned if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
-        pub fn set_last_evaluated_backup_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_evaluated_backup_arn = input;
-            self
+        pub fn set_last_evaluated_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_evaluated_backup_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListBackupsOutput`](crate::output::ListBackupsOutput).
         pub fn build(self) -> crate::output::ListBackupsOutput {
             crate::output::ListBackupsOutput {
-                backup_summaries: self.backup_summaries,
-                last_evaluated_backup_arn: self.last_evaluated_backup_arn,
+                backup_summaries: self.backup_summaries
+                ,
+                last_evaluated_backup_arn: self.last_evaluated_backup_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBackupsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackupsOutput`](crate::output::ListBackupsOutput).
@@ -2061,52 +1832,45 @@ impl ListBackupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportTableOutput {
+pub struct ImportTableOutput  {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
     #[doc(hidden)]
     pub import_table_description: std::option::Option<crate::model::ImportTableDescription>,
 }
 impl ImportTableOutput {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
-    pub fn import_table_description(
-        &self,
-    ) -> std::option::Option<&crate::model::ImportTableDescription> {
+    pub fn import_table_description(&self) -> std::option::Option<& crate::model::ImportTableDescription> {
         self.import_table_description.as_ref()
     }
 }
 /// See [`ImportTableOutput`](crate::output::ImportTableOutput).
 pub mod import_table_output {
-
+    
     /// A builder for [`ImportTableOutput`](crate::output::ImportTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) import_table_description:
-            std::option::Option<crate::model::ImportTableDescription>,
+        pub(crate) import_table_description: std::option::Option<crate::model::ImportTableDescription>,
     }
     impl Builder {
         /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
-        pub fn import_table_description(
-            mut self,
-            input: crate::model::ImportTableDescription,
-        ) -> Self {
+        pub fn import_table_description(mut self, input: crate::model::ImportTableDescription) -> Self {
             self.import_table_description = Some(input);
             self
         }
         /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
-        pub fn set_import_table_description(
-            mut self,
-            input: std::option::Option<crate::model::ImportTableDescription>,
-        ) -> Self {
-            self.import_table_description = input;
-            self
+        pub fn set_import_table_description(mut self, input: std::option::Option<crate::model::ImportTableDescription>) -> Self {
+            self.import_table_description = input; self
         }
         /// Consumes the builder and constructs a [`ImportTableOutput`](crate::output::ImportTableOutput).
         pub fn build(self) -> crate::output::ImportTableOutput {
             crate::output::ImportTableOutput {
-                import_table_description: self.import_table_description,
+                import_table_description: self.import_table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportTableOutput {
     /// Creates a new builder-style object to manufacture [`ImportTableOutput`](crate::output::ImportTableOutput).
@@ -2118,39 +1882,31 @@ impl ImportTableOutput {
 /// <p>Represents the output of a <code>GetItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetItemOutput {
+pub struct GetItemOutput  {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by <code>ProjectionExpression</code>.</p>
     #[doc(hidden)]
-    pub item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    >,
+    pub item: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     /// <p>The capacity units consumed by the <code>GetItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl GetItemOutput {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by <code>ProjectionExpression</code>.</p>
-    pub fn item(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    > {
+    pub fn item(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::AttributeValue>> {
         self.item.as_ref()
     }
     /// <p>The capacity units consumed by the <code>GetItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
 }
 /// See [`GetItemOutput`](crate::output::GetItemOutput).
 pub mod get_item_output {
-
+    
     /// A builder for [`GetItemOutput`](crate::output::GetItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) item: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        >,
+        pub(crate) item: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     }
     impl Builder {
@@ -2159,25 +1915,15 @@ pub mod get_item_output {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by <code>ProjectionExpression</code>.</p>
-        pub fn item(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::AttributeValue,
-        ) -> Self {
+        pub fn item(mut self, k: impl Into<std::string::String>, v: crate::model::AttributeValue) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.item = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.item = Some(hash_map);
+                            self
         }
         /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by <code>ProjectionExpression</code>.</p>
-        pub fn set_item(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        ) -> Self {
-            self.item = input;
-            self
+        pub fn set_item(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
+            self.item = input; self
         }
         /// <p>The capacity units consumed by the <code>GetItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
@@ -2185,21 +1931,21 @@ pub mod get_item_output {
             self
         }
         /// <p>The capacity units consumed by the <code>GetItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ConsumedCapacity>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Consumes the builder and constructs a [`GetItemOutput`](crate::output::GetItemOutput).
         pub fn build(self) -> crate::output::GetItemOutput {
             crate::output::GetItemOutput {
-                item: self.item,
-                consumed_capacity: self.consumed_capacity,
+                item: self.item
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl GetItemOutput {
     /// Creates a new builder-style object to manufacture [`GetItemOutput`](crate::output::GetItemOutput).
@@ -2211,20 +1957,20 @@ impl GetItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportTableToPointInTimeOutput {
+pub struct ExportTableToPointInTimeOutput  {
     /// <p>Contains a description of the table export.</p>
     #[doc(hidden)]
     pub export_description: std::option::Option<crate::model::ExportDescription>,
 }
 impl ExportTableToPointInTimeOutput {
     /// <p>Contains a description of the table export.</p>
-    pub fn export_description(&self) -> std::option::Option<&crate::model::ExportDescription> {
+    pub fn export_description(&self) -> std::option::Option<& crate::model::ExportDescription> {
         self.export_description.as_ref()
     }
 }
 /// See [`ExportTableToPointInTimeOutput`](crate::output::ExportTableToPointInTimeOutput).
 pub mod export_table_to_point_in_time_output {
-
+    
     /// A builder for [`ExportTableToPointInTimeOutput`](crate::output::ExportTableToPointInTimeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2237,20 +1983,19 @@ pub mod export_table_to_point_in_time_output {
             self
         }
         /// <p>Contains a description of the table export.</p>
-        pub fn set_export_description(
-            mut self,
-            input: std::option::Option<crate::model::ExportDescription>,
-        ) -> Self {
-            self.export_description = input;
-            self
+        pub fn set_export_description(mut self, input: std::option::Option<crate::model::ExportDescription>) -> Self {
+            self.export_description = input; self
         }
         /// Consumes the builder and constructs a [`ExportTableToPointInTimeOutput`](crate::output::ExportTableToPointInTimeOutput).
         pub fn build(self) -> crate::output::ExportTableToPointInTimeOutput {
             crate::output::ExportTableToPointInTimeOutput {
-                export_description: self.export_description,
+                export_description: self.export_description
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportTableToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeOutput`](crate::output::ExportTableToPointInTimeOutput).
@@ -2262,7 +2007,7 @@ impl ExportTableToPointInTimeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteTransactionOutput {
+pub struct ExecuteTransactionOutput  {
     /// <p>The response to a PartiQL transaction.</p>
     #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
@@ -2272,23 +2017,22 @@ pub struct ExecuteTransactionOutput {
 }
 impl ExecuteTransactionOutput {
     /// <p>The response to a PartiQL transaction.</p>
-    pub fn responses(&self) -> std::option::Option<&[crate::model::ItemResponse]> {
+    pub fn responses(&self) -> std::option::Option<& [crate::model::ItemResponse]> {
         self.responses.as_deref()
     }
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& [crate::model::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
 }
 /// See [`ExecuteTransactionOutput`](crate::output::ExecuteTransactionOutput).
 pub mod execute_transaction_output {
-
+    
     /// A builder for [`ExecuteTransactionOutput`](crate::output::ExecuteTransactionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
-        pub(crate) consumed_capacity:
-            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     }
     impl Builder {
         /// Appends an item to `responses`.
@@ -2298,17 +2042,13 @@ pub mod execute_transaction_output {
         /// <p>The response to a PartiQL transaction.</p>
         pub fn responses(mut self, input: crate::model::ItemResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input);
-            self.responses = Some(v);
-            self
+                            v.push(input);
+                            self.responses = Some(v);
+                            self
         }
         /// <p>The response to a PartiQL transaction.</p>
-        pub fn set_responses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
-        ) -> Self {
-            self.responses = input;
-            self
+        pub fn set_responses(mut self, input: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>) -> Self {
+            self.responses = input; self
         }
         /// Appends an item to `consumed_capacity`.
         ///
@@ -2317,26 +2057,26 @@ pub mod execute_transaction_output {
         /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input);
-            self.consumed_capacity = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_capacity = Some(v);
+                            self
         }
         /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteTransactionOutput`](crate::output::ExecuteTransactionOutput).
         pub fn build(self) -> crate::output::ExecuteTransactionOutput {
             crate::output::ExecuteTransactionOutput {
-                responses: self.responses,
-                consumed_capacity: self.consumed_capacity,
+                responses: self.responses
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteTransactionOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteTransactionOutput`](crate::output::ExecuteTransactionOutput).
@@ -2348,12 +2088,10 @@ impl ExecuteTransactionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteStatementOutput {
+pub struct ExecuteStatementOutput  {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
-    >,
+    pub items: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>,
     /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2362,52 +2100,36 @@ pub struct ExecuteStatementOutput {
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
     #[doc(hidden)]
-    pub last_evaluated_key: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    >,
+    pub last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
 }
 impl ExecuteStatementOutput {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
-    pub fn items(
-        &self,
-    ) -> std::option::Option<
-        &[std::collections::HashMap<std::string::String, crate::model::AttributeValue>],
-    > {
+    pub fn items(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, crate::model::AttributeValue>]> {
         self.items.as_deref()
     }
     /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
-    pub fn last_evaluated_key(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    > {
+    pub fn last_evaluated_key(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::AttributeValue>> {
         self.last_evaluated_key.as_ref()
     }
 }
 /// See [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
 pub mod execute_statement_output {
-
+    
     /// A builder for [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items: std::option::Option<
-            std::vec::Vec<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        >,
+        pub(crate) items: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-        pub(crate) last_evaluated_key: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        >,
+        pub(crate) last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -2415,26 +2137,15 @@ pub mod execute_statement_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
-        pub fn items(
-            mut self,
-            input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        ) -> Self {
+        pub fn items(mut self, input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<
-                    std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-                >,
-            >,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>) -> Self {
+            self.items = input; self
         }
         /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2443,8 +2154,7 @@ pub mod execute_statement_output {
         }
         /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
@@ -2452,48 +2162,40 @@ pub mod execute_statement_output {
             self
         }
         /// <p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ConsumedCapacity>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Adds a key-value pair to `last_evaluated_key`.
         ///
         /// To override the contents of this collection use [`set_last_evaluated_key`](Self::set_last_evaluated_key).
         ///
         /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
-        pub fn last_evaluated_key(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::AttributeValue,
-        ) -> Self {
+        pub fn last_evaluated_key(mut self, k: impl Into<std::string::String>, v: crate::model::AttributeValue) -> Self {
             let mut hash_map = self.last_evaluated_key.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.last_evaluated_key = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.last_evaluated_key = Some(hash_map);
+                            self
         }
         /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
-        pub fn set_last_evaluated_key(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        ) -> Self {
-            self.last_evaluated_key = input;
-            self
+        pub fn set_last_evaluated_key(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
+            self.last_evaluated_key = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
         pub fn build(self) -> crate::output::ExecuteStatementOutput {
             crate::output::ExecuteStatementOutput {
-                items: self.items,
-                next_token: self.next_token,
-                consumed_capacity: self.consumed_capacity,
-                last_evaluated_key: self.last_evaluated_key,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
+                last_evaluated_key: self.last_evaluated_key
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
@@ -2505,7 +2207,7 @@ impl ExecuteStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableKinesisStreamingDestinationOutput {
+pub struct EnableKinesisStreamingDestinationOutput  {
     /// <p>The name of the table being modified.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -2518,21 +2220,21 @@ pub struct EnableKinesisStreamingDestinationOutput {
 }
 impl EnableKinesisStreamingDestinationOutput {
     /// <p>The name of the table being modified.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The ARN for the specific Kinesis data stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The current status of the replication.</p>
-    pub fn destination_status(&self) -> std::option::Option<&crate::model::DestinationStatus> {
+    pub fn destination_status(&self) -> std::option::Option<& crate::model::DestinationStatus> {
         self.destination_status.as_ref()
     }
 }
 /// See [`EnableKinesisStreamingDestinationOutput`](crate::output::EnableKinesisStreamingDestinationOutput).
 pub mod enable_kinesis_streaming_destination_output {
-
+    
     /// A builder for [`EnableKinesisStreamingDestinationOutput`](crate::output::EnableKinesisStreamingDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2548,8 +2250,7 @@ pub mod enable_kinesis_streaming_destination_output {
         }
         /// <p>The name of the table being modified.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The ARN for the specific Kinesis data stream.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2558,8 +2259,7 @@ pub mod enable_kinesis_streaming_destination_output {
         }
         /// <p>The ARN for the specific Kinesis data stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// <p>The current status of the replication.</p>
         pub fn destination_status(mut self, input: crate::model::DestinationStatus) -> Self {
@@ -2567,22 +2267,23 @@ pub mod enable_kinesis_streaming_destination_output {
             self
         }
         /// <p>The current status of the replication.</p>
-        pub fn set_destination_status(
-            mut self,
-            input: std::option::Option<crate::model::DestinationStatus>,
-        ) -> Self {
-            self.destination_status = input;
-            self
+        pub fn set_destination_status(mut self, input: std::option::Option<crate::model::DestinationStatus>) -> Self {
+            self.destination_status = input; self
         }
         /// Consumes the builder and constructs a [`EnableKinesisStreamingDestinationOutput`](crate::output::EnableKinesisStreamingDestinationOutput).
         pub fn build(self) -> crate::output::EnableKinesisStreamingDestinationOutput {
             crate::output::EnableKinesisStreamingDestinationOutput {
-                table_name: self.table_name,
-                stream_arn: self.stream_arn,
-                destination_status: self.destination_status,
+                table_name: self.table_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                destination_status: self.destination_status
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableKinesisStreamingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`EnableKinesisStreamingDestinationOutput`](crate::output::EnableKinesisStreamingDestinationOutput).
@@ -2594,7 +2295,7 @@ impl EnableKinesisStreamingDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableKinesisStreamingDestinationOutput {
+pub struct DisableKinesisStreamingDestinationOutput  {
     /// <p>The name of the table being modified.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -2607,21 +2308,21 @@ pub struct DisableKinesisStreamingDestinationOutput {
 }
 impl DisableKinesisStreamingDestinationOutput {
     /// <p>The name of the table being modified.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The ARN for the specific Kinesis data stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The current status of the replication.</p>
-    pub fn destination_status(&self) -> std::option::Option<&crate::model::DestinationStatus> {
+    pub fn destination_status(&self) -> std::option::Option<& crate::model::DestinationStatus> {
         self.destination_status.as_ref()
     }
 }
 /// See [`DisableKinesisStreamingDestinationOutput`](crate::output::DisableKinesisStreamingDestinationOutput).
 pub mod disable_kinesis_streaming_destination_output {
-
+    
     /// A builder for [`DisableKinesisStreamingDestinationOutput`](crate::output::DisableKinesisStreamingDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2637,8 +2338,7 @@ pub mod disable_kinesis_streaming_destination_output {
         }
         /// <p>The name of the table being modified.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The ARN for the specific Kinesis data stream.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2647,8 +2347,7 @@ pub mod disable_kinesis_streaming_destination_output {
         }
         /// <p>The ARN for the specific Kinesis data stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// <p>The current status of the replication.</p>
         pub fn destination_status(mut self, input: crate::model::DestinationStatus) -> Self {
@@ -2656,22 +2355,23 @@ pub mod disable_kinesis_streaming_destination_output {
             self
         }
         /// <p>The current status of the replication.</p>
-        pub fn set_destination_status(
-            mut self,
-            input: std::option::Option<crate::model::DestinationStatus>,
-        ) -> Self {
-            self.destination_status = input;
-            self
+        pub fn set_destination_status(mut self, input: std::option::Option<crate::model::DestinationStatus>) -> Self {
+            self.destination_status = input; self
         }
         /// Consumes the builder and constructs a [`DisableKinesisStreamingDestinationOutput`](crate::output::DisableKinesisStreamingDestinationOutput).
         pub fn build(self) -> crate::output::DisableKinesisStreamingDestinationOutput {
             crate::output::DisableKinesisStreamingDestinationOutput {
-                table_name: self.table_name,
-                stream_arn: self.stream_arn,
-                destination_status: self.destination_status,
+                table_name: self.table_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                destination_status: self.destination_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableKinesisStreamingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DisableKinesisStreamingDestinationOutput`](crate::output::DisableKinesisStreamingDestinationOutput).
@@ -2683,52 +2383,45 @@ impl DisableKinesisStreamingDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTimeToLiveOutput {
+pub struct DescribeTimeToLiveOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
 }
 impl DescribeTimeToLiveOutput {
     /// <p></p>
-    pub fn time_to_live_description(
-        &self,
-    ) -> std::option::Option<&crate::model::TimeToLiveDescription> {
+    pub fn time_to_live_description(&self) -> std::option::Option<& crate::model::TimeToLiveDescription> {
         self.time_to_live_description.as_ref()
     }
 }
 /// See [`DescribeTimeToLiveOutput`](crate::output::DescribeTimeToLiveOutput).
 pub mod describe_time_to_live_output {
-
+    
     /// A builder for [`DescribeTimeToLiveOutput`](crate::output::DescribeTimeToLiveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) time_to_live_description:
-            std::option::Option<crate::model::TimeToLiveDescription>,
+        pub(crate) time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
     }
     impl Builder {
         /// <p></p>
-        pub fn time_to_live_description(
-            mut self,
-            input: crate::model::TimeToLiveDescription,
-        ) -> Self {
+        pub fn time_to_live_description(mut self, input: crate::model::TimeToLiveDescription) -> Self {
             self.time_to_live_description = Some(input);
             self
         }
         /// <p></p>
-        pub fn set_time_to_live_description(
-            mut self,
-            input: std::option::Option<crate::model::TimeToLiveDescription>,
-        ) -> Self {
-            self.time_to_live_description = input;
-            self
+        pub fn set_time_to_live_description(mut self, input: std::option::Option<crate::model::TimeToLiveDescription>) -> Self {
+            self.time_to_live_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTimeToLiveOutput`](crate::output::DescribeTimeToLiveOutput).
         pub fn build(self) -> crate::output::DescribeTimeToLiveOutput {
             crate::output::DescribeTimeToLiveOutput {
-                time_to_live_description: self.time_to_live_description,
+                time_to_live_description: self.time_to_live_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTimeToLiveOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTimeToLiveOutput`](crate::output::DescribeTimeToLiveOutput).
@@ -2740,53 +2433,45 @@ impl DescribeTimeToLiveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTableReplicaAutoScalingOutput {
+pub struct DescribeTableReplicaAutoScalingOutput  {
     /// <p>Represents the auto scaling properties of the table.</p>
     #[doc(hidden)]
-    pub table_auto_scaling_description:
-        std::option::Option<crate::model::TableAutoScalingDescription>,
+    pub table_auto_scaling_description: std::option::Option<crate::model::TableAutoScalingDescription>,
 }
 impl DescribeTableReplicaAutoScalingOutput {
     /// <p>Represents the auto scaling properties of the table.</p>
-    pub fn table_auto_scaling_description(
-        &self,
-    ) -> std::option::Option<&crate::model::TableAutoScalingDescription> {
+    pub fn table_auto_scaling_description(&self) -> std::option::Option<& crate::model::TableAutoScalingDescription> {
         self.table_auto_scaling_description.as_ref()
     }
 }
 /// See [`DescribeTableReplicaAutoScalingOutput`](crate::output::DescribeTableReplicaAutoScalingOutput).
 pub mod describe_table_replica_auto_scaling_output {
-
+    
     /// A builder for [`DescribeTableReplicaAutoScalingOutput`](crate::output::DescribeTableReplicaAutoScalingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) table_auto_scaling_description:
-            std::option::Option<crate::model::TableAutoScalingDescription>,
+        pub(crate) table_auto_scaling_description: std::option::Option<crate::model::TableAutoScalingDescription>,
     }
     impl Builder {
         /// <p>Represents the auto scaling properties of the table.</p>
-        pub fn table_auto_scaling_description(
-            mut self,
-            input: crate::model::TableAutoScalingDescription,
-        ) -> Self {
+        pub fn table_auto_scaling_description(mut self, input: crate::model::TableAutoScalingDescription) -> Self {
             self.table_auto_scaling_description = Some(input);
             self
         }
         /// <p>Represents the auto scaling properties of the table.</p>
-        pub fn set_table_auto_scaling_description(
-            mut self,
-            input: std::option::Option<crate::model::TableAutoScalingDescription>,
-        ) -> Self {
-            self.table_auto_scaling_description = input;
-            self
+        pub fn set_table_auto_scaling_description(mut self, input: std::option::Option<crate::model::TableAutoScalingDescription>) -> Self {
+            self.table_auto_scaling_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTableReplicaAutoScalingOutput`](crate::output::DescribeTableReplicaAutoScalingOutput).
         pub fn build(self) -> crate::output::DescribeTableReplicaAutoScalingOutput {
             crate::output::DescribeTableReplicaAutoScalingOutput {
-                table_auto_scaling_description: self.table_auto_scaling_description,
+                table_auto_scaling_description: self.table_auto_scaling_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTableReplicaAutoScalingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableReplicaAutoScalingOutput`](crate::output::DescribeTableReplicaAutoScalingOutput).
@@ -2798,20 +2483,20 @@ impl DescribeTableReplicaAutoScalingOutput {
 /// <p>Represents the output of a <code>DescribeTable</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTableOutput {
+pub struct DescribeTableOutput  {
     /// <p>The properties of the table.</p>
     #[doc(hidden)]
     pub table: std::option::Option<crate::model::TableDescription>,
 }
 impl DescribeTableOutput {
     /// <p>The properties of the table.</p>
-    pub fn table(&self) -> std::option::Option<&crate::model::TableDescription> {
+    pub fn table(&self) -> std::option::Option<& crate::model::TableDescription> {
         self.table.as_ref()
     }
 }
 /// See [`DescribeTableOutput`](crate::output::DescribeTableOutput).
 pub mod describe_table_output {
-
+    
     /// A builder for [`DescribeTableOutput`](crate::output::DescribeTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2824,18 +2509,19 @@ pub mod describe_table_output {
             self
         }
         /// <p>The properties of the table.</p>
-        pub fn set_table(
-            mut self,
-            input: std::option::Option<crate::model::TableDescription>,
-        ) -> Self {
-            self.table = input;
-            self
+        pub fn set_table(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
+            self.table = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTableOutput`](crate::output::DescribeTableOutput).
         pub fn build(self) -> crate::output::DescribeTableOutput {
-            crate::output::DescribeTableOutput { table: self.table }
+            crate::output::DescribeTableOutput {
+                table: self.table
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeTableOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableOutput`](crate::output::DescribeTableOutput).
@@ -2847,7 +2533,7 @@ impl DescribeTableOutput {
 /// <p>Represents the output of a <code>DescribeLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLimitsOutput {
+pub struct DescribeLimitsOutput  {
     /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
     #[doc(hidden)]
     pub account_max_read_capacity_units: std::option::Option<i64>,
@@ -2881,7 +2567,7 @@ impl DescribeLimitsOutput {
 }
 /// See [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
 pub mod describe_limits_output {
-
+    
     /// A builder for [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2897,12 +2583,8 @@ pub mod describe_limits_output {
             self
         }
         /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
-        pub fn set_account_max_read_capacity_units(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.account_max_read_capacity_units = input;
-            self
+        pub fn set_account_max_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+            self.account_max_read_capacity_units = input; self
         }
         /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
         pub fn account_max_write_capacity_units(mut self, input: i64) -> Self {
@@ -2910,12 +2592,8 @@ pub mod describe_limits_output {
             self
         }
         /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
-        pub fn set_account_max_write_capacity_units(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.account_max_write_capacity_units = input;
-            self
+        pub fn set_account_max_write_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+            self.account_max_write_capacity_units = input; self
         }
         /// <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
         pub fn table_max_read_capacity_units(mut self, input: i64) -> Self {
@@ -2923,12 +2601,8 @@ pub mod describe_limits_output {
             self
         }
         /// <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
-        pub fn set_table_max_read_capacity_units(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.table_max_read_capacity_units = input;
-            self
+        pub fn set_table_max_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+            self.table_max_read_capacity_units = input; self
         }
         /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
         pub fn table_max_write_capacity_units(mut self, input: i64) -> Self {
@@ -2936,23 +2610,25 @@ pub mod describe_limits_output {
             self
         }
         /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
-        pub fn set_table_max_write_capacity_units(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.table_max_write_capacity_units = input;
-            self
+        pub fn set_table_max_write_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+            self.table_max_write_capacity_units = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
         pub fn build(self) -> crate::output::DescribeLimitsOutput {
             crate::output::DescribeLimitsOutput {
-                account_max_read_capacity_units: self.account_max_read_capacity_units,
-                account_max_write_capacity_units: self.account_max_write_capacity_units,
-                table_max_read_capacity_units: self.table_max_read_capacity_units,
-                table_max_write_capacity_units: self.table_max_write_capacity_units,
+                account_max_read_capacity_units: self.account_max_read_capacity_units
+                ,
+                account_max_write_capacity_units: self.account_max_write_capacity_units
+                ,
+                table_max_read_capacity_units: self.table_max_read_capacity_units
+                ,
+                table_max_write_capacity_units: self.table_max_write_capacity_units
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
@@ -2964,36 +2640,32 @@ impl DescribeLimitsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeKinesisStreamingDestinationOutput {
+pub struct DescribeKinesisStreamingDestinationOutput  {
     /// <p>The name of the table being described.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The list of replica structures for the table being described.</p>
     #[doc(hidden)]
-    pub kinesis_data_stream_destinations:
-        std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
+    pub kinesis_data_stream_destinations: std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
 }
 impl DescribeKinesisStreamingDestinationOutput {
     /// <p>The name of the table being described.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The list of replica structures for the table being described.</p>
-    pub fn kinesis_data_stream_destinations(
-        &self,
-    ) -> std::option::Option<&[crate::model::KinesisDataStreamDestination]> {
+    pub fn kinesis_data_stream_destinations(&self) -> std::option::Option<& [crate::model::KinesisDataStreamDestination]> {
         self.kinesis_data_stream_destinations.as_deref()
     }
 }
 /// See [`DescribeKinesisStreamingDestinationOutput`](crate::output::DescribeKinesisStreamingDestinationOutput).
 pub mod describe_kinesis_streaming_destination_output {
-
+    
     /// A builder for [`DescribeKinesisStreamingDestinationOutput`](crate::output::DescribeKinesisStreamingDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
-        pub(crate) kinesis_data_stream_destinations:
-            std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
+        pub(crate) kinesis_data_stream_destinations: std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
     }
     impl Builder {
         /// <p>The name of the table being described.</p>
@@ -3003,39 +2675,35 @@ pub mod describe_kinesis_streaming_destination_output {
         }
         /// <p>The name of the table being described.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// Appends an item to `kinesis_data_stream_destinations`.
         ///
         /// To override the contents of this collection use [`set_kinesis_data_stream_destinations`](Self::set_kinesis_data_stream_destinations).
         ///
         /// <p>The list of replica structures for the table being described.</p>
-        pub fn kinesis_data_stream_destinations(
-            mut self,
-            input: crate::model::KinesisDataStreamDestination,
-        ) -> Self {
+        pub fn kinesis_data_stream_destinations(mut self, input: crate::model::KinesisDataStreamDestination) -> Self {
             let mut v = self.kinesis_data_stream_destinations.unwrap_or_default();
-            v.push(input);
-            self.kinesis_data_stream_destinations = Some(v);
-            self
+                            v.push(input);
+                            self.kinesis_data_stream_destinations = Some(v);
+                            self
         }
         /// <p>The list of replica structures for the table being described.</p>
-        pub fn set_kinesis_data_stream_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
-        ) -> Self {
-            self.kinesis_data_stream_destinations = input;
-            self
+        pub fn set_kinesis_data_stream_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>) -> Self {
+            self.kinesis_data_stream_destinations = input; self
         }
         /// Consumes the builder and constructs a [`DescribeKinesisStreamingDestinationOutput`](crate::output::DescribeKinesisStreamingDestinationOutput).
         pub fn build(self) -> crate::output::DescribeKinesisStreamingDestinationOutput {
             crate::output::DescribeKinesisStreamingDestinationOutput {
-                table_name: self.table_name,
-                kinesis_data_stream_destinations: self.kinesis_data_stream_destinations,
+                table_name: self.table_name
+                ,
+                kinesis_data_stream_destinations: self.kinesis_data_stream_destinations
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeKinesisStreamingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKinesisStreamingDestinationOutput`](crate::output::DescribeKinesisStreamingDestinationOutput).
@@ -3047,52 +2715,45 @@ impl DescribeKinesisStreamingDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImportOutput {
+pub struct DescribeImportOutput  {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
     #[doc(hidden)]
     pub import_table_description: std::option::Option<crate::model::ImportTableDescription>,
 }
 impl DescribeImportOutput {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
-    pub fn import_table_description(
-        &self,
-    ) -> std::option::Option<&crate::model::ImportTableDescription> {
+    pub fn import_table_description(&self) -> std::option::Option<& crate::model::ImportTableDescription> {
         self.import_table_description.as_ref()
     }
 }
 /// See [`DescribeImportOutput`](crate::output::DescribeImportOutput).
 pub mod describe_import_output {
-
+    
     /// A builder for [`DescribeImportOutput`](crate::output::DescribeImportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) import_table_description:
-            std::option::Option<crate::model::ImportTableDescription>,
+        pub(crate) import_table_description: std::option::Option<crate::model::ImportTableDescription>,
     }
     impl Builder {
         /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
-        pub fn import_table_description(
-            mut self,
-            input: crate::model::ImportTableDescription,
-        ) -> Self {
+        pub fn import_table_description(mut self, input: crate::model::ImportTableDescription) -> Self {
             self.import_table_description = Some(input);
             self
         }
         /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
-        pub fn set_import_table_description(
-            mut self,
-            input: std::option::Option<crate::model::ImportTableDescription>,
-        ) -> Self {
-            self.import_table_description = input;
-            self
+        pub fn set_import_table_description(mut self, input: std::option::Option<crate::model::ImportTableDescription>) -> Self {
+            self.import_table_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeImportOutput`](crate::output::DescribeImportOutput).
         pub fn build(self) -> crate::output::DescribeImportOutput {
             crate::output::DescribeImportOutput {
-                import_table_description: self.import_table_description,
+                import_table_description: self.import_table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeImportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImportOutput`](crate::output::DescribeImportOutput).
@@ -3104,36 +2765,32 @@ impl DescribeImportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGlobalTableSettingsOutput {
+pub struct DescribeGlobalTableSettingsOutput  {
     /// <p>The name of the global table.</p>
     #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
     /// <p>The Region-specific settings for the global table.</p>
     #[doc(hidden)]
-    pub replica_settings:
-        std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
+    pub replica_settings: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
 }
 impl DescribeGlobalTableSettingsOutput {
     /// <p>The name of the global table.</p>
-    pub fn global_table_name(&self) -> std::option::Option<&str> {
+    pub fn global_table_name(&self) -> std::option::Option<& str> {
         self.global_table_name.as_deref()
     }
     /// <p>The Region-specific settings for the global table.</p>
-    pub fn replica_settings(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicaSettingsDescription]> {
+    pub fn replica_settings(&self) -> std::option::Option<& [crate::model::ReplicaSettingsDescription]> {
         self.replica_settings.as_deref()
     }
 }
 /// See [`DescribeGlobalTableSettingsOutput`](crate::output::DescribeGlobalTableSettingsOutput).
 pub mod describe_global_table_settings_output {
-
+    
     /// A builder for [`DescribeGlobalTableSettingsOutput`](crate::output::DescribeGlobalTableSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
-        pub(crate) replica_settings:
-            std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
+        pub(crate) replica_settings: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
     }
     impl Builder {
         /// <p>The name of the global table.</p>
@@ -3142,12 +2799,8 @@ pub mod describe_global_table_settings_output {
             self
         }
         /// <p>The name of the global table.</p>
-        pub fn set_global_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.global_table_name = input;
-            self
+        pub fn set_global_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.global_table_name = input; self
         }
         /// Appends an item to `replica_settings`.
         ///
@@ -3156,26 +2809,26 @@ pub mod describe_global_table_settings_output {
         /// <p>The Region-specific settings for the global table.</p>
         pub fn replica_settings(mut self, input: crate::model::ReplicaSettingsDescription) -> Self {
             let mut v = self.replica_settings.unwrap_or_default();
-            v.push(input);
-            self.replica_settings = Some(v);
-            self
+                            v.push(input);
+                            self.replica_settings = Some(v);
+                            self
         }
         /// <p>The Region-specific settings for the global table.</p>
-        pub fn set_replica_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
-        ) -> Self {
-            self.replica_settings = input;
-            self
+        pub fn set_replica_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>) -> Self {
+            self.replica_settings = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalTableSettingsOutput`](crate::output::DescribeGlobalTableSettingsOutput).
         pub fn build(self) -> crate::output::DescribeGlobalTableSettingsOutput {
             crate::output::DescribeGlobalTableSettingsOutput {
-                global_table_name: self.global_table_name,
-                replica_settings: self.replica_settings,
+                global_table_name: self.global_table_name
+                ,
+                replica_settings: self.replica_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGlobalTableSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalTableSettingsOutput`](crate::output::DescribeGlobalTableSettingsOutput).
@@ -3187,52 +2840,45 @@ impl DescribeGlobalTableSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGlobalTableOutput {
+pub struct DescribeGlobalTableOutput  {
     /// <p>Contains the details of the global table.</p>
     #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
 }
 impl DescribeGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
-    pub fn global_table_description(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalTableDescription> {
+    pub fn global_table_description(&self) -> std::option::Option<& crate::model::GlobalTableDescription> {
         self.global_table_description.as_ref()
     }
 }
 /// See [`DescribeGlobalTableOutput`](crate::output::DescribeGlobalTableOutput).
 pub mod describe_global_table_output {
-
+    
     /// A builder for [`DescribeGlobalTableOutput`](crate::output::DescribeGlobalTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_table_description:
-            std::option::Option<crate::model::GlobalTableDescription>,
+        pub(crate) global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
-        pub fn global_table_description(
-            mut self,
-            input: crate::model::GlobalTableDescription,
-        ) -> Self {
+        pub fn global_table_description(mut self, input: crate::model::GlobalTableDescription) -> Self {
             self.global_table_description = Some(input);
             self
         }
         /// <p>Contains the details of the global table.</p>
-        pub fn set_global_table_description(
-            mut self,
-            input: std::option::Option<crate::model::GlobalTableDescription>,
-        ) -> Self {
-            self.global_table_description = input;
-            self
+        pub fn set_global_table_description(mut self, input: std::option::Option<crate::model::GlobalTableDescription>) -> Self {
+            self.global_table_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalTableOutput`](crate::output::DescribeGlobalTableOutput).
         pub fn build(self) -> crate::output::DescribeGlobalTableOutput {
             crate::output::DescribeGlobalTableOutput {
-                global_table_description: self.global_table_description,
+                global_table_description: self.global_table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGlobalTableOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalTableOutput`](crate::output::DescribeGlobalTableOutput).
@@ -3244,20 +2890,20 @@ impl DescribeGlobalTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExportOutput {
+pub struct DescribeExportOutput  {
     /// <p>Represents the properties of the export.</p>
     #[doc(hidden)]
     pub export_description: std::option::Option<crate::model::ExportDescription>,
 }
 impl DescribeExportOutput {
     /// <p>Represents the properties of the export.</p>
-    pub fn export_description(&self) -> std::option::Option<&crate::model::ExportDescription> {
+    pub fn export_description(&self) -> std::option::Option<& crate::model::ExportDescription> {
         self.export_description.as_ref()
     }
 }
 /// See [`DescribeExportOutput`](crate::output::DescribeExportOutput).
 pub mod describe_export_output {
-
+    
     /// A builder for [`DescribeExportOutput`](crate::output::DescribeExportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3270,20 +2916,19 @@ pub mod describe_export_output {
             self
         }
         /// <p>Represents the properties of the export.</p>
-        pub fn set_export_description(
-            mut self,
-            input: std::option::Option<crate::model::ExportDescription>,
-        ) -> Self {
-            self.export_description = input;
-            self
+        pub fn set_export_description(mut self, input: std::option::Option<crate::model::ExportDescription>) -> Self {
+            self.export_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeExportOutput`](crate::output::DescribeExportOutput).
         pub fn build(self) -> crate::output::DescribeExportOutput {
             crate::output::DescribeExportOutput {
-                export_description: self.export_description,
+                export_description: self.export_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeExportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportOutput`](crate::output::DescribeExportOutput).
@@ -3295,20 +2940,20 @@ impl DescribeExportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointsOutput {
+pub struct DescribeEndpointsOutput  {
     /// <p>List of endpoints.</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
 }
 impl DescribeEndpointsOutput {
     /// <p>List of endpoints.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::model::Endpoint]> {
         self.endpoints.as_deref()
     }
 }
 /// See [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
 pub mod describe_endpoints_output {
-
+    
     /// A builder for [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3322,25 +2967,24 @@ pub mod describe_endpoints_output {
         /// <p>List of endpoints.</p>
         pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input);
-            self.endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.endpoints = Some(v);
+                            self
         }
         /// <p>List of endpoints.</p>
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>) -> Self {
+            self.endpoints = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeEndpointsOutput {
             crate::output::DescribeEndpointsOutput {
-                endpoints: self.endpoints,
+                endpoints: self.endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
@@ -3352,7 +2996,7 @@ impl DescribeEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeContributorInsightsOutput {
+pub struct DescribeContributorInsightsOutput  {
     /// <p>The name of the table being described.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -3368,64 +3012,60 @@ pub struct DescribeContributorInsightsOutput {
     /// <p>Timestamp of the last time the status was changed.</p>
     #[doc(hidden)]
     pub last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Returns information about the last failure that was encountered.</p>
-    /// <p>The most common exceptions for a FAILED status are:</p>
-    /// <ul>
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+    /// <p>Returns information about the last failure that was encountered.</p> 
+    /// <p>The most common exceptions for a FAILED status are:</p> 
+    /// <ul> 
+    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li> 
+    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li> 
+    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li> 
+    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub failure_exception: std::option::Option<crate::model::FailureException>,
 }
 impl DescribeContributorInsightsOutput {
     /// <p>The name of the table being described.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the global secondary index being described.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>List of names of the associated contributor insights rules.</p>
-    pub fn contributor_insights_rule_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn contributor_insights_rule_list(&self) -> std::option::Option<& [std::string::String]> {
         self.contributor_insights_rule_list.as_deref()
     }
     /// <p>Current status of contributor insights.</p>
-    pub fn contributor_insights_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ContributorInsightsStatus> {
+    pub fn contributor_insights_status(&self) -> std::option::Option<& crate::model::ContributorInsightsStatus> {
         self.contributor_insights_status.as_ref()
     }
     /// <p>Timestamp of the last time the status was changed.</p>
-    pub fn last_update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date_time.as_ref()
     }
-    /// <p>Returns information about the last failure that was encountered.</p>
-    /// <p>The most common exceptions for a FAILED status are:</p>
-    /// <ul>
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+    /// <p>Returns information about the last failure that was encountered.</p> 
+    /// <p>The most common exceptions for a FAILED status are:</p> 
+    /// <ul> 
+    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li> 
+    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li> 
+    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li> 
+    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li> 
     /// </ul>
-    pub fn failure_exception(&self) -> std::option::Option<&crate::model::FailureException> {
+    pub fn failure_exception(&self) -> std::option::Option<& crate::model::FailureException> {
         self.failure_exception.as_ref()
     }
 }
 /// See [`DescribeContributorInsightsOutput`](crate::output::DescribeContributorInsightsOutput).
 pub mod describe_contributor_insights_output {
-
+    
     /// A builder for [`DescribeContributorInsightsOutput`](crate::output::DescribeContributorInsightsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
-        pub(crate) contributor_insights_rule_list:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) contributor_insights_status:
-            std::option::Option<crate::model::ContributorInsightsStatus>,
+        pub(crate) contributor_insights_rule_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
         pub(crate) last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_exception: std::option::Option<crate::model::FailureException>,
     }
@@ -3437,8 +3077,7 @@ pub mod describe_contributor_insights_output {
         }
         /// <p>The name of the table being described.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The name of the global secondary index being described.</p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3447,46 +3086,31 @@ pub mod describe_contributor_insights_output {
         }
         /// <p>The name of the global secondary index being described.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_name = input;
-            self
+            self.index_name = input; self
         }
         /// Appends an item to `contributor_insights_rule_list`.
         ///
         /// To override the contents of this collection use [`set_contributor_insights_rule_list`](Self::set_contributor_insights_rule_list).
         ///
         /// <p>List of names of the associated contributor insights rules.</p>
-        pub fn contributor_insights_rule_list(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn contributor_insights_rule_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.contributor_insights_rule_list.unwrap_or_default();
-            v.push(input.into());
-            self.contributor_insights_rule_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.contributor_insights_rule_list = Some(v);
+                            self
         }
         /// <p>List of names of the associated contributor insights rules.</p>
-        pub fn set_contributor_insights_rule_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.contributor_insights_rule_list = input;
-            self
+        pub fn set_contributor_insights_rule_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.contributor_insights_rule_list = input; self
         }
         /// <p>Current status of contributor insights.</p>
-        pub fn contributor_insights_status(
-            mut self,
-            input: crate::model::ContributorInsightsStatus,
-        ) -> Self {
+        pub fn contributor_insights_status(mut self, input: crate::model::ContributorInsightsStatus) -> Self {
             self.contributor_insights_status = Some(input);
             self
         }
         /// <p>Current status of contributor insights.</p>
-        pub fn set_contributor_insights_status(
-            mut self,
-            input: std::option::Option<crate::model::ContributorInsightsStatus>,
-        ) -> Self {
-            self.contributor_insights_status = input;
-            self
+        pub fn set_contributor_insights_status(mut self, input: std::option::Option<crate::model::ContributorInsightsStatus>) -> Self {
+            self.contributor_insights_status = input; self
         }
         /// <p>Timestamp of the last time the status was changed.</p>
         pub fn last_update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3494,52 +3118,52 @@ pub mod describe_contributor_insights_output {
             self
         }
         /// <p>Timestamp of the last time the status was changed.</p>
-        pub fn set_last_update_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date_time = input;
-            self
+        pub fn set_last_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date_time = input; self
         }
-        /// <p>Returns information about the last failure that was encountered.</p>
-        /// <p>The most common exceptions for a FAILED status are:</p>
-        /// <ul>
-        /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-        /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-        /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-        /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+        /// <p>Returns information about the last failure that was encountered.</p> 
+        /// <p>The most common exceptions for a FAILED status are:</p> 
+        /// <ul> 
+        /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li> 
+        /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li> 
+        /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li> 
+        /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li> 
         /// </ul>
         pub fn failure_exception(mut self, input: crate::model::FailureException) -> Self {
             self.failure_exception = Some(input);
             self
         }
-        /// <p>Returns information about the last failure that was encountered.</p>
-        /// <p>The most common exceptions for a FAILED status are:</p>
-        /// <ul>
-        /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
-        /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
-        /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
-        /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+        /// <p>Returns information about the last failure that was encountered.</p> 
+        /// <p>The most common exceptions for a FAILED status are:</p> 
+        /// <ul> 
+        /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li> 
+        /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li> 
+        /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li> 
+        /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li> 
         /// </ul>
-        pub fn set_failure_exception(
-            mut self,
-            input: std::option::Option<crate::model::FailureException>,
-        ) -> Self {
-            self.failure_exception = input;
-            self
+        pub fn set_failure_exception(mut self, input: std::option::Option<crate::model::FailureException>) -> Self {
+            self.failure_exception = input; self
         }
         /// Consumes the builder and constructs a [`DescribeContributorInsightsOutput`](crate::output::DescribeContributorInsightsOutput).
         pub fn build(self) -> crate::output::DescribeContributorInsightsOutput {
             crate::output::DescribeContributorInsightsOutput {
-                table_name: self.table_name,
-                index_name: self.index_name,
-                contributor_insights_rule_list: self.contributor_insights_rule_list,
-                contributor_insights_status: self.contributor_insights_status,
-                last_update_date_time: self.last_update_date_time,
-                failure_exception: self.failure_exception,
+                table_name: self.table_name
+                ,
+                index_name: self.index_name
+                ,
+                contributor_insights_rule_list: self.contributor_insights_rule_list
+                ,
+                contributor_insights_status: self.contributor_insights_status
+                ,
+                last_update_date_time: self.last_update_date_time
+                ,
+                failure_exception: self.failure_exception
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeContributorInsightsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContributorInsightsOutput`](crate::output::DescribeContributorInsightsOutput).
@@ -3551,53 +3175,45 @@ impl DescribeContributorInsightsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeContinuousBackupsOutput {
+pub struct DescribeContinuousBackupsOutput  {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
     #[doc(hidden)]
-    pub continuous_backups_description:
-        std::option::Option<crate::model::ContinuousBackupsDescription>,
+    pub continuous_backups_description: std::option::Option<crate::model::ContinuousBackupsDescription>,
 }
 impl DescribeContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-    pub fn continuous_backups_description(
-        &self,
-    ) -> std::option::Option<&crate::model::ContinuousBackupsDescription> {
+    pub fn continuous_backups_description(&self) -> std::option::Option<& crate::model::ContinuousBackupsDescription> {
         self.continuous_backups_description.as_ref()
     }
 }
 /// See [`DescribeContinuousBackupsOutput`](crate::output::DescribeContinuousBackupsOutput).
 pub mod describe_continuous_backups_output {
-
+    
     /// A builder for [`DescribeContinuousBackupsOutput`](crate::output::DescribeContinuousBackupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) continuous_backups_description:
-            std::option::Option<crate::model::ContinuousBackupsDescription>,
+        pub(crate) continuous_backups_description: std::option::Option<crate::model::ContinuousBackupsDescription>,
     }
     impl Builder {
         /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-        pub fn continuous_backups_description(
-            mut self,
-            input: crate::model::ContinuousBackupsDescription,
-        ) -> Self {
+        pub fn continuous_backups_description(mut self, input: crate::model::ContinuousBackupsDescription) -> Self {
             self.continuous_backups_description = Some(input);
             self
         }
         /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-        pub fn set_continuous_backups_description(
-            mut self,
-            input: std::option::Option<crate::model::ContinuousBackupsDescription>,
-        ) -> Self {
-            self.continuous_backups_description = input;
-            self
+        pub fn set_continuous_backups_description(mut self, input: std::option::Option<crate::model::ContinuousBackupsDescription>) -> Self {
+            self.continuous_backups_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeContinuousBackupsOutput`](crate::output::DescribeContinuousBackupsOutput).
         pub fn build(self) -> crate::output::DescribeContinuousBackupsOutput {
             crate::output::DescribeContinuousBackupsOutput {
-                continuous_backups_description: self.continuous_backups_description,
+                continuous_backups_description: self.continuous_backups_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeContinuousBackupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContinuousBackupsOutput`](crate::output::DescribeContinuousBackupsOutput).
@@ -3609,20 +3225,20 @@ impl DescribeContinuousBackupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBackupOutput {
+pub struct DescribeBackupOutput  {
     /// <p>Contains the description of the backup created for the table.</p>
     #[doc(hidden)]
     pub backup_description: std::option::Option<crate::model::BackupDescription>,
 }
 impl DescribeBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
-    pub fn backup_description(&self) -> std::option::Option<&crate::model::BackupDescription> {
+    pub fn backup_description(&self) -> std::option::Option<& crate::model::BackupDescription> {
         self.backup_description.as_ref()
     }
 }
 /// See [`DescribeBackupOutput`](crate::output::DescribeBackupOutput).
 pub mod describe_backup_output {
-
+    
     /// A builder for [`DescribeBackupOutput`](crate::output::DescribeBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3635,20 +3251,19 @@ pub mod describe_backup_output {
             self
         }
         /// <p>Contains the description of the backup created for the table.</p>
-        pub fn set_backup_description(
-            mut self,
-            input: std::option::Option<crate::model::BackupDescription>,
-        ) -> Self {
-            self.backup_description = input;
-            self
+        pub fn set_backup_description(mut self, input: std::option::Option<crate::model::BackupDescription>) -> Self {
+            self.backup_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBackupOutput`](crate::output::DescribeBackupOutput).
         pub fn build(self) -> crate::output::DescribeBackupOutput {
             crate::output::DescribeBackupOutput {
-                backup_description: self.backup_description,
+                backup_description: self.backup_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBackupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupOutput`](crate::output::DescribeBackupOutput).
@@ -3660,20 +3275,20 @@ impl DescribeBackupOutput {
 /// <p>Represents the output of a <code>DeleteTable</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTableOutput {
+pub struct DeleteTableOutput  {
     /// <p>Represents the properties of a table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl DeleteTableOutput {
     /// <p>Represents the properties of a table.</p>
-    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+    pub fn table_description(&self) -> std::option::Option<& crate::model::TableDescription> {
         self.table_description.as_ref()
     }
 }
 /// See [`DeleteTableOutput`](crate::output::DeleteTableOutput).
 pub mod delete_table_output {
-
+    
     /// A builder for [`DeleteTableOutput`](crate::output::DeleteTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3686,20 +3301,19 @@ pub mod delete_table_output {
             self
         }
         /// <p>Represents the properties of a table.</p>
-        pub fn set_table_description(
-            mut self,
-            input: std::option::Option<crate::model::TableDescription>,
-        ) -> Self {
-            self.table_description = input;
-            self
+        pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
+            self.table_description = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTableOutput`](crate::output::DeleteTableOutput).
         pub fn build(self) -> crate::output::DeleteTableOutput {
             crate::output::DeleteTableOutput {
-                table_description: self.table_description,
+                table_description: self.table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteTableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTableOutput`](crate::output::DeleteTableOutput).
@@ -3711,61 +3325,50 @@ impl DeleteTableOutput {
 /// <p>Represents the output of a <code>DeleteItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteItemOutput {
+pub struct DeleteItemOutput  {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it appeared before the <code>DeleteItem</code> operation. This map appears in the response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    >,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     /// <p>The capacity units consumed by the <code>DeleteItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-    /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+    /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
 impl DeleteItemOutput {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it appeared before the <code>DeleteItem</code> operation. This map appears in the response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::AttributeValue>> {
         self.attributes.as_ref()
     }
     /// <p>The capacity units consumed by the <code>DeleteItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
-    /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+    /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
     /// </ul>
-    pub fn item_collection_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::ItemCollectionMetrics> {
+    pub fn item_collection_metrics(&self) -> std::option::Option<& crate::model::ItemCollectionMetrics> {
         self.item_collection_metrics.as_ref()
     }
 }
 /// See [`DeleteItemOutput`](crate::output::DeleteItemOutput).
 pub mod delete_item_output {
-
+    
     /// A builder for [`DeleteItemOutput`](crate::output::DeleteItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-        pub(crate) item_collection_metrics:
-            std::option::Option<crate::model::ItemCollectionMetrics>,
+        pub(crate) item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
     }
     impl Builder {
         /// Adds a key-value pair to `attributes`.
@@ -3773,25 +3376,15 @@ pub mod delete_item_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it appeared before the <code>DeleteItem</code> operation. This map appears in the response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::AttributeValue,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: crate::model::AttributeValue) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it appeared before the <code>DeleteItem</code> operation. This map appears in the response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The capacity units consumed by the <code>DeleteItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
@@ -3799,48 +3392,42 @@ pub mod delete_item_output {
             self
         }
         /// <p>The capacity units consumed by the <code>DeleteItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ConsumedCapacity>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
+            self.consumed_capacity = input; self
         }
-        /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+        /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
         /// </ul>
-        pub fn item_collection_metrics(
-            mut self,
-            input: crate::model::ItemCollectionMetrics,
-        ) -> Self {
+        pub fn item_collection_metrics(mut self, input: crate::model::ItemCollectionMetrics) -> Self {
             self.item_collection_metrics = Some(input);
             self
         }
-        /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
-        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
-        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+        /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
+        /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
+        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
         /// </ul>
-        pub fn set_item_collection_metrics(
-            mut self,
-            input: std::option::Option<crate::model::ItemCollectionMetrics>,
-        ) -> Self {
-            self.item_collection_metrics = input;
-            self
+        pub fn set_item_collection_metrics(mut self, input: std::option::Option<crate::model::ItemCollectionMetrics>) -> Self {
+            self.item_collection_metrics = input; self
         }
         /// Consumes the builder and constructs a [`DeleteItemOutput`](crate::output::DeleteItemOutput).
         pub fn build(self) -> crate::output::DeleteItemOutput {
             crate::output::DeleteItemOutput {
-                attributes: self.attributes,
-                consumed_capacity: self.consumed_capacity,
-                item_collection_metrics: self.item_collection_metrics,
+                attributes: self.attributes
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
+                item_collection_metrics: self.item_collection_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteItemOutput {
     /// Creates a new builder-style object to manufacture [`DeleteItemOutput`](crate::output::DeleteItemOutput).
@@ -3852,20 +3439,20 @@ impl DeleteItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackupOutput {
+pub struct DeleteBackupOutput  {
     /// <p>Contains the description of the backup created for the table.</p>
     #[doc(hidden)]
     pub backup_description: std::option::Option<crate::model::BackupDescription>,
 }
 impl DeleteBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
-    pub fn backup_description(&self) -> std::option::Option<&crate::model::BackupDescription> {
+    pub fn backup_description(&self) -> std::option::Option<& crate::model::BackupDescription> {
         self.backup_description.as_ref()
     }
 }
 /// See [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
 pub mod delete_backup_output {
-
+    
     /// A builder for [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3878,20 +3465,19 @@ pub mod delete_backup_output {
             self
         }
         /// <p>Contains the description of the backup created for the table.</p>
-        pub fn set_backup_description(
-            mut self,
-            input: std::option::Option<crate::model::BackupDescription>,
-        ) -> Self {
-            self.backup_description = input;
-            self
+        pub fn set_backup_description(mut self, input: std::option::Option<crate::model::BackupDescription>) -> Self {
+            self.backup_description = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
         pub fn build(self) -> crate::output::DeleteBackupOutput {
             crate::output::DeleteBackupOutput {
-                backup_description: self.backup_description,
+                backup_description: self.backup_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBackupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
@@ -3903,20 +3489,20 @@ impl DeleteBackupOutput {
 /// <p>Represents the output of a <code>CreateTable</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTableOutput {
+pub struct CreateTableOutput  {
     /// <p>Represents the properties of the table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl CreateTableOutput {
     /// <p>Represents the properties of the table.</p>
-    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+    pub fn table_description(&self) -> std::option::Option<& crate::model::TableDescription> {
         self.table_description.as_ref()
     }
 }
 /// See [`CreateTableOutput`](crate::output::CreateTableOutput).
 pub mod create_table_output {
-
+    
     /// A builder for [`CreateTableOutput`](crate::output::CreateTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3929,20 +3515,19 @@ pub mod create_table_output {
             self
         }
         /// <p>Represents the properties of the table.</p>
-        pub fn set_table_description(
-            mut self,
-            input: std::option::Option<crate::model::TableDescription>,
-        ) -> Self {
-            self.table_description = input;
-            self
+        pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
+            self.table_description = input; self
         }
         /// Consumes the builder and constructs a [`CreateTableOutput`](crate::output::CreateTableOutput).
         pub fn build(self) -> crate::output::CreateTableOutput {
             crate::output::CreateTableOutput {
-                table_description: self.table_description,
+                table_description: self.table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateTableOutput`](crate::output::CreateTableOutput).
@@ -3954,52 +3539,45 @@ impl CreateTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalTableOutput {
+pub struct CreateGlobalTableOutput  {
     /// <p>Contains the details of the global table.</p>
     #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
 }
 impl CreateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
-    pub fn global_table_description(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalTableDescription> {
+    pub fn global_table_description(&self) -> std::option::Option<& crate::model::GlobalTableDescription> {
         self.global_table_description.as_ref()
     }
 }
 /// See [`CreateGlobalTableOutput`](crate::output::CreateGlobalTableOutput).
 pub mod create_global_table_output {
-
+    
     /// A builder for [`CreateGlobalTableOutput`](crate::output::CreateGlobalTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_table_description:
-            std::option::Option<crate::model::GlobalTableDescription>,
+        pub(crate) global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
-        pub fn global_table_description(
-            mut self,
-            input: crate::model::GlobalTableDescription,
-        ) -> Self {
+        pub fn global_table_description(mut self, input: crate::model::GlobalTableDescription) -> Self {
             self.global_table_description = Some(input);
             self
         }
         /// <p>Contains the details of the global table.</p>
-        pub fn set_global_table_description(
-            mut self,
-            input: std::option::Option<crate::model::GlobalTableDescription>,
-        ) -> Self {
-            self.global_table_description = input;
-            self
+        pub fn set_global_table_description(mut self, input: std::option::Option<crate::model::GlobalTableDescription>) -> Self {
+            self.global_table_description = input; self
         }
         /// Consumes the builder and constructs a [`CreateGlobalTableOutput`](crate::output::CreateGlobalTableOutput).
         pub fn build(self) -> crate::output::CreateGlobalTableOutput {
             crate::output::CreateGlobalTableOutput {
-                global_table_description: self.global_table_description,
+                global_table_description: self.global_table_description
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGlobalTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalTableOutput`](crate::output::CreateGlobalTableOutput).
@@ -4011,20 +3589,20 @@ impl CreateGlobalTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackupOutput {
+pub struct CreateBackupOutput  {
     /// <p>Contains the details of the backup created for the table.</p>
     #[doc(hidden)]
     pub backup_details: std::option::Option<crate::model::BackupDetails>,
 }
 impl CreateBackupOutput {
     /// <p>Contains the details of the backup created for the table.</p>
-    pub fn backup_details(&self) -> std::option::Option<&crate::model::BackupDetails> {
+    pub fn backup_details(&self) -> std::option::Option<& crate::model::BackupDetails> {
         self.backup_details.as_ref()
     }
 }
 /// See [`CreateBackupOutput`](crate::output::CreateBackupOutput).
 pub mod create_backup_output {
-
+    
     /// A builder for [`CreateBackupOutput`](crate::output::CreateBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4037,20 +3615,19 @@ pub mod create_backup_output {
             self
         }
         /// <p>Contains the details of the backup created for the table.</p>
-        pub fn set_backup_details(
-            mut self,
-            input: std::option::Option<crate::model::BackupDetails>,
-        ) -> Self {
-            self.backup_details = input;
-            self
+        pub fn set_backup_details(mut self, input: std::option::Option<crate::model::BackupDetails>) -> Self {
+            self.backup_details = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackupOutput`](crate::output::CreateBackupOutput).
         pub fn build(self) -> crate::output::CreateBackupOutput {
             crate::output::CreateBackupOutput {
-                backup_details: self.backup_details,
+                backup_details: self.backup_details
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackupOutput`](crate::output::CreateBackupOutput).
@@ -4062,243 +3639,189 @@ impl CreateBackupOutput {
 /// <p>Represents the output of a <code>BatchWriteItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchWriteItemOutput {
-    /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
-    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
-    /// <ul>
-    /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
-    /// <ul>
-    /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p>
-    /// <ul>
-    /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
-    /// </ul> </li>
-    /// </ul>
+pub struct BatchWriteItemOutput  {
+    /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
+    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p> 
+    /// <ul> 
+    /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
     /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
     #[doc(hidden)]
-    pub unprocessed_items: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
-    >,
-    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
-    /// <p>Each entry consists of the following subelements:</p>
-    /// <ul>
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li>
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+    pub unprocessed_items: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>>,
+    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p> 
+    /// <p>Each entry consists of the following subelements:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li> 
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub item_collection_metrics: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ItemCollectionMetrics>,
-        >,
-    >,
-    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
-    /// <p>Each element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
-    /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
+    pub item_collection_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>,
+    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p> 
+    /// <p>Each element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li> 
+    /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl BatchWriteItemOutput {
-    /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
-    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
-    /// <ul>
-    /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
-    /// <ul>
-    /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p>
-    /// <ul>
-    /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
-    /// </ul> </li>
-    /// </ul>
+    /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
+    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p> 
+    /// <ul> 
+    /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
     /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
-    pub fn unprocessed_items(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
-    > {
+    pub fn unprocessed_items(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>> {
         self.unprocessed_items.as_ref()
     }
-    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
-    /// <p>Each entry consists of the following subelements:</p>
-    /// <ul>
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li>
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p> 
+    /// <p>Each entry consists of the following subelements:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li> 
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
     /// </ul>
-    pub fn item_collection_metrics(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ItemCollectionMetrics>,
-        >,
-    > {
+    pub fn item_collection_metrics(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>> {
         self.item_collection_metrics.as_ref()
     }
-    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
-    /// <p>Each element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
-    /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
+    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p> 
+    /// <p>Each element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li> 
+    /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li> 
     /// </ul>
-    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& [crate::model::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
 }
 /// See [`BatchWriteItemOutput`](crate::output::BatchWriteItemOutput).
 pub mod batch_write_item_output {
-
+    
     /// A builder for [`BatchWriteItemOutput`](crate::output::BatchWriteItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) unprocessed_items: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::WriteRequest>,
-            >,
-        >,
-        pub(crate) item_collection_metrics: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::ItemCollectionMetrics>,
-            >,
-        >,
-        pub(crate) consumed_capacity:
-            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) unprocessed_items: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>>,
+        pub(crate) item_collection_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>,
+        pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     }
     impl Builder {
         /// Adds a key-value pair to `unprocessed_items`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_items`](Self::set_unprocessed_items).
         ///
-        /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
-        /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
-        /// <ul>
-        /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
-        /// <ul>
-        /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p>
-        /// <ul>
-        /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
-        /// </ul> </li>
-        /// </ul>
+        /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
+        /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p> 
+        /// <ul> 
+        /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
         /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
-        pub fn unprocessed_items(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::WriteRequest>,
-        ) -> Self {
+        pub fn unprocessed_items(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::WriteRequest>) -> Self {
             let mut hash_map = self.unprocessed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.unprocessed_items = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.unprocessed_items = Some(hash_map);
+                            self
         }
-        /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
-        /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
-        /// <ul>
-        /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
-        /// <ul>
-        /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p>
-        /// <ul>
-        /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
-        /// </ul> </li>
-        /// </ul>
+        /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
+        /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p> 
+        /// <ul> 
+        /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
         /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
-        pub fn set_unprocessed_items(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::WriteRequest>,
-                >,
-            >,
-        ) -> Self {
-            self.unprocessed_items = input;
-            self
+        pub fn set_unprocessed_items(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>>) -> Self {
+            self.unprocessed_items = input; self
         }
         /// Adds a key-value pair to `item_collection_metrics`.
         ///
         /// To override the contents of this collection use [`set_item_collection_metrics`](Self::set_item_collection_metrics).
         ///
-        /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
-        /// <p>Each entry consists of the following subelements:</p>
-        /// <ul>
-        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li>
-        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+        /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p> 
+        /// <p>Each entry consists of the following subelements:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li> 
+        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
         /// </ul>
-        pub fn item_collection_metrics(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::ItemCollectionMetrics>,
-        ) -> Self {
+        pub fn item_collection_metrics(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::ItemCollectionMetrics>) -> Self {
             let mut hash_map = self.item_collection_metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.item_collection_metrics = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.item_collection_metrics = Some(hash_map);
+                            self
         }
-        /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
-        /// <p>Each entry consists of the following subelements:</p>
-        /// <ul>
-        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li>
-        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
+        /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p> 
+        /// <p>Each entry consists of the following subelements:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li> 
+        /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
         /// </ul>
-        pub fn set_item_collection_metrics(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::ItemCollectionMetrics>,
-                >,
-            >,
-        ) -> Self {
-            self.item_collection_metrics = input;
-            self
+        pub fn set_item_collection_metrics(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>) -> Self {
+            self.item_collection_metrics = input; self
         }
         /// Appends an item to `consumed_capacity`.
         ///
         /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
         ///
-        /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
-        /// <p>Each element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
-        /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
+        /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p> 
+        /// <p>Each element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li> 
+        /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li> 
         /// </ul>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input);
-            self.consumed_capacity = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_capacity = Some(v);
+                            self
         }
-        /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
-        /// <p>Each element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
-        /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
+        /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p> 
+        /// <p>Each element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li> 
+        /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li> 
         /// </ul>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Consumes the builder and constructs a [`BatchWriteItemOutput`](crate::output::BatchWriteItemOutput).
         pub fn build(self) -> crate::output::BatchWriteItemOutput {
             crate::output::BatchWriteItemOutput {
-                unprocessed_items: self.unprocessed_items,
-                item_collection_metrics: self.item_collection_metrics,
-                consumed_capacity: self.consumed_capacity,
+                unprocessed_items: self.unprocessed_items
+                ,
+                item_collection_metrics: self.item_collection_metrics
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchWriteItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchWriteItemOutput`](crate::output::BatchWriteItemOutput).
@@ -4310,96 +3833,64 @@ impl BatchWriteItemOutput {
 /// <p>Represents the output of a <code>BatchGetItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetItemOutput {
+pub struct BatchGetItemOutput  {
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
     #[doc(hidden)]
-    pub responses: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        >,
-    >,
-    /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
-    /// <p>Each element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table.</p> </li>
-    /// <li> <p> <code>ProjectionExpression</code> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</p> </li>
-    /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li>
-    /// </ul>
+    pub responses: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>>,
+    /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
+    /// <p>Each element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table.</p> </li> 
+    /// <li> <p> <code>ProjectionExpression</code> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</p> </li> 
+    /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li> 
+    /// </ul> 
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
     #[doc(hidden)]
-    pub unprocessed_keys: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
-    >,
-    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
-    /// <p>Each element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
-    /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
+    pub unprocessed_keys: std::option::Option<std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>>,
+    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p> 
+    /// <p>Each element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li> 
+    /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl BatchGetItemOutput {
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-    pub fn responses(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        >,
-    > {
+    pub fn responses(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>> {
         self.responses.as_ref()
     }
-    /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
-    /// <p>Each element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table.</p> </li>
-    /// <li> <p> <code>ProjectionExpression</code> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</p> </li>
-    /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li>
-    /// </ul>
+    /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
+    /// <p>Each element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table.</p> </li> 
+    /// <li> <p> <code>ProjectionExpression</code> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</p> </li> 
+    /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li> 
+    /// </ul> 
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
-    pub fn unprocessed_keys(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
-    > {
+    pub fn unprocessed_keys(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>> {
         self.unprocessed_keys.as_ref()
     }
-    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
-    /// <p>Each element consists of:</p>
-    /// <ul>
-    /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
-    /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
+    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p> 
+    /// <p>Each element consists of:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li> 
+    /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li> 
     /// </ul>
-    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& [crate::model::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
 }
 /// See [`BatchGetItemOutput`](crate::output::BatchGetItemOutput).
 pub mod batch_get_item_output {
-
+    
     /// A builder for [`BatchGetItemOutput`](crate::output::BatchGetItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) responses: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<
-                    std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-                >,
-            >,
-        >,
-        pub(crate) unprocessed_keys: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
-        >,
-        pub(crate) consumed_capacity:
-            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) responses: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>>,
+        pub(crate) unprocessed_keys: std::option::Option<std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>>,
+        pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     }
     impl Builder {
         /// Adds a key-value pair to `responses`.
@@ -4407,113 +3898,84 @@ pub mod batch_get_item_output {
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
         /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-        pub fn responses(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
-        ) -> Self {
+        pub fn responses(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
             let mut hash_map = self.responses.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.responses = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.responses = Some(hash_map);
+                            self
         }
         /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-        pub fn set_responses(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<
-                        std::collections::HashMap<
-                            std::string::String,
-                            crate::model::AttributeValue,
-                        >,
-                    >,
-                >,
-            >,
-        ) -> Self {
-            self.responses = input;
-            self
+        pub fn set_responses(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>>) -> Self {
+            self.responses = input; self
         }
         /// Adds a key-value pair to `unprocessed_keys`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_keys`](Self::set_unprocessed_keys).
         ///
-        /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
-        /// <p>Each element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table.</p> </li>
-        /// <li> <p> <code>ProjectionExpression</code> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</p> </li>
-        /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li>
-        /// </ul>
+        /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
+        /// <p>Each element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table.</p> </li> 
+        /// <li> <p> <code>ProjectionExpression</code> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</p> </li> 
+        /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li> 
+        /// </ul> 
         /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
-        pub fn unprocessed_keys(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::KeysAndAttributes,
-        ) -> Self {
+        pub fn unprocessed_keys(mut self, k: impl Into<std::string::String>, v: crate::model::KeysAndAttributes) -> Self {
             let mut hash_map = self.unprocessed_keys.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.unprocessed_keys = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.unprocessed_keys = Some(hash_map);
+                            self
         }
-        /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
-        /// <p>Each element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table.</p> </li>
-        /// <li> <p> <code>ProjectionExpression</code> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</p> </li>
-        /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li>
-        /// </ul>
+        /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
+        /// <p>Each element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table.</p> </li> 
+        /// <li> <p> <code>ProjectionExpression</code> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</p> </li> 
+        /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li> 
+        /// </ul> 
         /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
-        pub fn set_unprocessed_keys(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
-            >,
-        ) -> Self {
-            self.unprocessed_keys = input;
-            self
+        pub fn set_unprocessed_keys(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>>) -> Self {
+            self.unprocessed_keys = input; self
         }
         /// Appends an item to `consumed_capacity`.
         ///
         /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
         ///
-        /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
-        /// <p>Each element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
-        /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
+        /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p> 
+        /// <p>Each element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li> 
+        /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li> 
         /// </ul>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input);
-            self.consumed_capacity = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_capacity = Some(v);
+                            self
         }
-        /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
-        /// <p>Each element consists of:</p>
-        /// <ul>
-        /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
-        /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
+        /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p> 
+        /// <p>Each element consists of:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li> 
+        /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li> 
         /// </ul>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetItemOutput`](crate::output::BatchGetItemOutput).
         pub fn build(self) -> crate::output::BatchGetItemOutput {
             crate::output::BatchGetItemOutput {
-                responses: self.responses,
-                unprocessed_keys: self.unprocessed_keys,
-                consumed_capacity: self.consumed_capacity,
+                responses: self.responses
+                ,
+                unprocessed_keys: self.unprocessed_keys
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetItemOutput`](crate::output::BatchGetItemOutput).
@@ -4525,7 +3987,7 @@ impl BatchGetItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchExecuteStatementOutput {
+pub struct BatchExecuteStatementOutput  {
     /// <p>The response to each PartiQL statement in the batch.</p>
     #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
@@ -4535,24 +3997,22 @@ pub struct BatchExecuteStatementOutput {
 }
 impl BatchExecuteStatementOutput {
     /// <p>The response to each PartiQL statement in the batch.</p>
-    pub fn responses(&self) -> std::option::Option<&[crate::model::BatchStatementResponse]> {
+    pub fn responses(&self) -> std::option::Option<& [crate::model::BatchStatementResponse]> {
         self.responses.as_deref()
     }
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+    pub fn consumed_capacity(&self) -> std::option::Option<& [crate::model::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
 }
 /// See [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
 pub mod batch_execute_statement_output {
-
+    
     /// A builder for [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) responses:
-            std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
-        pub(crate) consumed_capacity:
-            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
+        pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     }
     impl Builder {
         /// Appends an item to `responses`.
@@ -4562,17 +4022,13 @@ pub mod batch_execute_statement_output {
         /// <p>The response to each PartiQL statement in the batch.</p>
         pub fn responses(mut self, input: crate::model::BatchStatementResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input);
-            self.responses = Some(v);
-            self
+                            v.push(input);
+                            self.responses = Some(v);
+                            self
         }
         /// <p>The response to each PartiQL statement in the batch.</p>
-        pub fn set_responses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
-        ) -> Self {
-            self.responses = input;
-            self
+        pub fn set_responses(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>) -> Self {
+            self.responses = input; self
         }
         /// Appends an item to `consumed_capacity`.
         ///
@@ -4581,26 +4037,26 @@ pub mod batch_execute_statement_output {
         /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
         pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input);
-            self.consumed_capacity = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_capacity = Some(v);
+                            self
         }
         /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
-        pub fn set_consumed_capacity(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        ) -> Self {
-            self.consumed_capacity = input;
-            self
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
+            self.consumed_capacity = input; self
         }
         /// Consumes the builder and constructs a [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
         pub fn build(self) -> crate::output::BatchExecuteStatementOutput {
             crate::output::BatchExecuteStatementOutput {
-                responses: self.responses,
-                consumed_capacity: self.consumed_capacity,
+                responses: self.responses
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
@@ -4608,3 +4064,4 @@ impl BatchExecuteStatementOutput {
         crate::output::batch_execute_statement_output::Builder::default()
     }
 }
+

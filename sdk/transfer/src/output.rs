@@ -3,7 +3,7 @@
 /// <p> <code>UpdateUserResponse</code> returns the user name and identifier for the request to update a user's properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserOutput {
+pub struct UpdateUserOutput  {
     /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct UpdateUserOutput {
 }
 impl UpdateUserOutput {
     /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
-
+    
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod update_user_output {
         }
         /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod update_user_output {
         }
         /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::output::UpdateUserOutput).
         pub fn build(self) -> crate::output::UpdateUserOutput {
             crate::output::UpdateUserOutput {
-                server_id: self.server_id,
-                user_name: self.user_name,
+                server_id: self.server_id
+                ,
+                user_name: self.user_name
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateUserOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
@@ -70,20 +72,20 @@ impl UpdateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServerOutput {
+pub struct UpdateServerOutput  {
     /// <p>A system-assigned unique identifier for a server that the user account is assigned to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
 impl UpdateServerOutput {
     /// <p>A system-assigned unique identifier for a server that the user account is assigned to.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
 /// See [`UpdateServerOutput`](crate::output::UpdateServerOutput).
 pub mod update_server_output {
-
+    
     /// A builder for [`UpdateServerOutput`](crate::output::UpdateServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -97,16 +99,18 @@ pub mod update_server_output {
         }
         /// <p>A system-assigned unique identifier for a server that the user account is assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateServerOutput`](crate::output::UpdateServerOutput).
         pub fn build(self) -> crate::output::UpdateServerOutput {
             crate::output::UpdateServerOutput {
-                server_id: self.server_id,
+                server_id: self.server_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateServerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServerOutput`](crate::output::UpdateServerOutput).
@@ -118,20 +122,20 @@ impl UpdateServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProfileOutput {
+pub struct UpdateProfileOutput  {
     /// <p>Returns the identifier for the profile that's being updated.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl UpdateProfileOutput {
     /// <p>Returns the identifier for the profile that's being updated.</p>
-    pub fn profile_id(&self) -> std::option::Option<&str> {
+    pub fn profile_id(&self) -> std::option::Option<& str> {
         self.profile_id.as_deref()
     }
 }
 /// See [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
 pub mod update_profile_output {
-
+    
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -145,16 +149,18 @@ pub mod update_profile_output {
         }
         /// <p>Returns the identifier for the profile that's being updated.</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_id = input;
-            self
+            self.profile_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
         pub fn build(self) -> crate::output::UpdateProfileOutput {
             crate::output::UpdateProfileOutput {
-                profile_id: self.profile_id,
+                profile_id: self.profile_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
@@ -166,7 +172,7 @@ impl UpdateProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHostKeyOutput {
+pub struct UpdateHostKeyOutput  {
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -176,17 +182,17 @@ pub struct UpdateHostKeyOutput {
 }
 impl UpdateHostKeyOutput {
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>Returns the host key identifier for the updated host key.</p>
-    pub fn host_key_id(&self) -> std::option::Option<&str> {
+    pub fn host_key_id(&self) -> std::option::Option<& str> {
         self.host_key_id.as_deref()
     }
 }
 /// See [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
 pub mod update_host_key_output {
-
+    
     /// A builder for [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -201,8 +207,7 @@ pub mod update_host_key_output {
         }
         /// <p>Returns the server identifier for the server that contains the updated host key.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>Returns the host key identifier for the updated host key.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,17 +216,20 @@ pub mod update_host_key_output {
         }
         /// <p>Returns the host key identifier for the updated host key.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host_key_id = input;
-            self
+            self.host_key_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
         pub fn build(self) -> crate::output::UpdateHostKeyOutput {
             crate::output::UpdateHostKeyOutput {
-                server_id: self.server_id,
-                host_key_id: self.host_key_id,
+                server_id: self.server_id
+                ,
+                host_key_id: self.host_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateHostKeyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
@@ -233,20 +241,20 @@ impl UpdateHostKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectorOutput {
+pub struct UpdateConnectorOutput  {
     /// <p>Returns the identifier of the connector object that you are updating.</p>
     #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
 }
 impl UpdateConnectorOutput {
     /// <p>Returns the identifier of the connector object that you are updating.</p>
-    pub fn connector_id(&self) -> std::option::Option<&str> {
+    pub fn connector_id(&self) -> std::option::Option<& str> {
         self.connector_id.as_deref()
     }
 }
 /// See [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
 pub mod update_connector_output {
-
+    
     /// A builder for [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -260,16 +268,18 @@ pub mod update_connector_output {
         }
         /// <p>Returns the identifier of the connector object that you are updating.</p>
         pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_id = input;
-            self
+            self.connector_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
         pub fn build(self) -> crate::output::UpdateConnectorOutput {
             crate::output::UpdateConnectorOutput {
-                connector_id: self.connector_id,
+                connector_id: self.connector_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConnectorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
@@ -281,20 +291,20 @@ impl UpdateConnectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCertificateOutput {
+pub struct UpdateCertificateOutput  {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl UpdateCertificateOutput {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
 }
 /// See [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
 pub mod update_certificate_output {
-
+    
     /// A builder for [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -307,20 +317,19 @@ pub mod update_certificate_output {
             self
         }
         /// <p>Returns the identifier of the certificate object that you are updating.</p>
-        pub fn set_certificate_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_id = input;
-            self
+        pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
         pub fn build(self) -> crate::output::UpdateCertificateOutput {
             crate::output::UpdateCertificateOutput {
-                certificate_id: self.certificate_id,
+                certificate_id: self.certificate_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
@@ -332,20 +341,20 @@ impl UpdateCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAgreementOutput {
+pub struct UpdateAgreementOutput  {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     #[doc(hidden)]
     pub agreement_id: std::option::Option<std::string::String>,
 }
 impl UpdateAgreementOutput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    pub fn agreement_id(&self) -> std::option::Option<&str> {
+    pub fn agreement_id(&self) -> std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
 }
 /// See [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
 pub mod update_agreement_output {
-
+    
     /// A builder for [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -359,16 +368,18 @@ pub mod update_agreement_output {
         }
         /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
         pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agreement_id = input;
-            self
+            self.agreement_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
         pub fn build(self) -> crate::output::UpdateAgreementOutput {
             crate::output::UpdateAgreementOutput {
-                agreement_id: self.agreement_id,
+                agreement_id: self.agreement_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAgreementOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
@@ -380,7 +391,7 @@ impl UpdateAgreementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccessOutput {
+pub struct UpdateAccessOutput  {
     /// <p>The identifier of the server that the user is attached to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -390,17 +401,17 @@ pub struct UpdateAccessOutput {
 }
 impl UpdateAccessOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
 /// See [`UpdateAccessOutput`](crate::output::UpdateAccessOutput).
 pub mod update_access_output {
-
+    
     /// A builder for [`UpdateAccessOutput`](crate::output::UpdateAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -415,8 +426,7 @@ pub mod update_access_output {
         }
         /// <p>The identifier of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -425,17 +435,20 @@ pub mod update_access_output {
         }
         /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.external_id = input;
-            self
+            self.external_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAccessOutput`](crate::output::UpdateAccessOutput).
         pub fn build(self) -> crate::output::UpdateAccessOutput {
             crate::output::UpdateAccessOutput {
-                server_id: self.server_id,
-                external_id: self.external_id,
+                server_id: self.server_id
+                ,
+                external_id: self.external_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAccessOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessOutput`](crate::output::UpdateAccessOutput).
@@ -447,19 +460,24 @@ impl UpdateAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -471,15 +489,15 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestIdentityProviderOutput {
+pub struct TestIdentityProviderOutput  {
     /// <p>The response that is returned from your API Gateway.</p>
     #[doc(hidden)]
     pub response: std::option::Option<std::string::String>,
     /// <p>The HTTP status code that is the response from your API Gateway.</p>
     #[doc(hidden)]
     pub status_code: i32,
-    /// <p>A message that indicates whether the test was successful or not.</p> <note>
-    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
     /// </note>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -489,27 +507,27 @@ pub struct TestIdentityProviderOutput {
 }
 impl TestIdentityProviderOutput {
     /// <p>The response that is returned from your API Gateway.</p>
-    pub fn response(&self) -> std::option::Option<&str> {
+    pub fn response(&self) -> std::option::Option<& str> {
         self.response.as_deref()
     }
     /// <p>The HTTP status code that is the response from your API Gateway.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
-    /// <p>A message that indicates whether the test was successful or not.</p> <note>
-    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
     /// </note>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The endpoint of the service used to authenticate a user.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`TestIdentityProviderOutput`](crate::output::TestIdentityProviderOutput).
 pub mod test_identity_provider_output {
-
+    
     /// A builder for [`TestIdentityProviderOutput`](crate::output::TestIdentityProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -526,8 +544,7 @@ pub mod test_identity_provider_output {
         }
         /// <p>The response that is returned from your API Gateway.</p>
         pub fn set_response(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.response = input;
-            self
+            self.response = input; self
         }
         /// <p>The HTTP status code that is the response from your API Gateway.</p>
         pub fn status_code(mut self, input: i32) -> Self {
@@ -536,22 +553,20 @@ pub mod test_identity_provider_output {
         }
         /// <p>The HTTP status code that is the response from your API Gateway.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.status_code = input;
-            self
+            self.status_code = input; self
         }
-        /// <p>A message that indicates whether the test was successful or not.</p> <note>
-        /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+        /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+        /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
         /// </note>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>A message that indicates whether the test was successful or not.</p> <note>
-        /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+        /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+        /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
         /// </note>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The endpoint of the service used to authenticate a user.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -560,19 +575,25 @@ pub mod test_identity_provider_output {
         }
         /// <p>The endpoint of the service used to authenticate a user.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`TestIdentityProviderOutput`](crate::output::TestIdentityProviderOutput).
         pub fn build(self) -> crate::output::TestIdentityProviderOutput {
             crate::output::TestIdentityProviderOutput {
-                response: self.response,
-                status_code: self.status_code.unwrap_or_default(),
-                message: self.message,
-                url: self.url,
+                response: self.response
+                ,
+                status_code: self.status_code
+                    .unwrap_or_default()
+                ,
+                message: self.message
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl TestIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`TestIdentityProviderOutput`](crate::output::TestIdentityProviderOutput).
@@ -584,19 +605,24 @@ impl TestIdentityProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -608,19 +634,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopServerOutput {}
+pub struct StopServerOutput  {
+}
 /// See [`StopServerOutput`](crate::output::StopServerOutput).
 pub mod stop_server_output {
-
+    
     /// A builder for [`StopServerOutput`](crate::output::StopServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopServerOutput`](crate::output::StopServerOutput).
         pub fn build(self) -> crate::output::StopServerOutput {
-            crate::output::StopServerOutput {}
+            crate::output::StopServerOutput {
+            }
         }
     }
+    
+    
 }
 impl StopServerOutput {
     /// Creates a new builder-style object to manufacture [`StopServerOutput`](crate::output::StopServerOutput).
@@ -632,19 +663,24 @@ impl StopServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartServerOutput {}
+pub struct StartServerOutput  {
+}
 /// See [`StartServerOutput`](crate::output::StartServerOutput).
 pub mod start_server_output {
-
+    
     /// A builder for [`StartServerOutput`](crate::output::StartServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartServerOutput`](crate::output::StartServerOutput).
         pub fn build(self) -> crate::output::StartServerOutput {
-            crate::output::StartServerOutput {}
+            crate::output::StartServerOutput {
+            }
         }
     }
+    
+    
 }
 impl StartServerOutput {
     /// Creates a new builder-style object to manufacture [`StartServerOutput`](crate::output::StartServerOutput).
@@ -656,20 +692,20 @@ impl StartServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFileTransferOutput {
+pub struct StartFileTransferOutput  {
     /// <p>Returns the unique identifier for this file transfer. </p>
     #[doc(hidden)]
     pub transfer_id: std::option::Option<std::string::String>,
 }
 impl StartFileTransferOutput {
     /// <p>Returns the unique identifier for this file transfer. </p>
-    pub fn transfer_id(&self) -> std::option::Option<&str> {
+    pub fn transfer_id(&self) -> std::option::Option<& str> {
         self.transfer_id.as_deref()
     }
 }
 /// See [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
 pub mod start_file_transfer_output {
-
+    
     /// A builder for [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -683,16 +719,18 @@ pub mod start_file_transfer_output {
         }
         /// <p>Returns the unique identifier for this file transfer. </p>
         pub fn set_transfer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.transfer_id = input;
-            self
+            self.transfer_id = input; self
         }
         /// Consumes the builder and constructs a [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
         pub fn build(self) -> crate::output::StartFileTransferOutput {
             crate::output::StartFileTransferOutput {
-                transfer_id: self.transfer_id,
+                transfer_id: self.transfer_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartFileTransferOutput {
     /// Creates a new builder-style object to manufacture [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
@@ -704,19 +742,24 @@ impl StartFileTransferOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendWorkflowStepStateOutput {}
+pub struct SendWorkflowStepStateOutput  {
+}
 /// See [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput).
 pub mod send_workflow_step_state_output {
-
+    
     /// A builder for [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput).
         pub fn build(self) -> crate::output::SendWorkflowStepStateOutput {
-            crate::output::SendWorkflowStepStateOutput {}
+            crate::output::SendWorkflowStepStateOutput {
+            }
         }
     }
+    
+    
 }
 impl SendWorkflowStepStateOutput {
     /// Creates a new builder-style object to manufacture [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput).
@@ -728,7 +771,7 @@ impl SendWorkflowStepStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowsOutput {
+pub struct ListWorkflowsOutput  {
     /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -738,17 +781,17 @@ pub struct ListWorkflowsOutput {
 }
 impl ListWorkflowsOutput {
     /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub fn workflows(&self) -> std::option::Option<&[crate::model::ListedWorkflow]> {
+    pub fn workflows(&self) -> std::option::Option<& [crate::model::ListedWorkflow]> {
         self.workflows.as_deref()
     }
 }
 /// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
 pub mod list_workflows_output {
-
+    
     /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -763,8 +806,7 @@ pub mod list_workflows_output {
         }
         /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `workflows`.
         ///
@@ -773,26 +815,26 @@ pub mod list_workflows_output {
         /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
         pub fn workflows(mut self, input: crate::model::ListedWorkflow) -> Self {
             let mut v = self.workflows.unwrap_or_default();
-            v.push(input);
-            self.workflows = Some(v);
-            self
+                            v.push(input);
+                            self.workflows = Some(v);
+                            self
         }
         /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-        pub fn set_workflows(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>,
-        ) -> Self {
-            self.workflows = input;
-            self
+        pub fn set_workflows(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>) -> Self {
+            self.workflows = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
         pub fn build(self) -> crate::output::ListWorkflowsOutput {
             crate::output::ListWorkflowsOutput {
-                next_token: self.next_token,
-                workflows: self.workflows,
+                next_token: self.next_token
+                ,
+                workflows: self.workflows
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
@@ -804,7 +846,7 @@ impl ListWorkflowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsersOutput {
+pub struct ListUsersOutput  {
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -817,21 +859,21 @@ pub struct ListUsersOutput {
 }
 impl ListUsersOutput {
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::ListedUser]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::ListedUser]> {
         self.users.as_deref()
     }
 }
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
 pub mod list_users_output {
-
+    
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -847,8 +889,7 @@ pub mod list_users_output {
         }
         /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -857,8 +898,7 @@ pub mod list_users_output {
         }
         /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// Appends an item to `users`.
         ///
@@ -867,27 +907,28 @@ pub mod list_users_output {
         /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
         pub fn users(mut self, input: crate::model::ListedUser) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedUser>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedUser>>) -> Self {
+            self.users = input; self
         }
         /// Consumes the builder and constructs a [`ListUsersOutput`](crate::output::ListUsersOutput).
         pub fn build(self) -> crate::output::ListUsersOutput {
             crate::output::ListUsersOutput {
-                next_token: self.next_token,
-                server_id: self.server_id,
-                users: self.users,
+                next_token: self.next_token
+                ,
+                server_id: self.server_id
+                ,
+                users: self.users
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::output::ListUsersOutput).
@@ -899,7 +940,7 @@ impl ListUsersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The ARN you specified to list the tags of.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -912,21 +953,21 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The ARN you specified to list the tags of.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -942,8 +983,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The ARN you specified to list the tags of.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -952,8 +992,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -962,27 +1001,28 @@ pub mod list_tags_for_resource_output {
         /// <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                arn: self.arn,
-                next_token: self.next_token,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                next_token: self.next_token
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -994,7 +1034,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServersOutput {
+pub struct ListServersOutput  {
     /// <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1004,17 +1044,17 @@ pub struct ListServersOutput {
 }
 impl ListServersOutput {
     /// <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of servers that were listed.</p>
-    pub fn servers(&self) -> std::option::Option<&[crate::model::ListedServer]> {
+    pub fn servers(&self) -> std::option::Option<& [crate::model::ListedServer]> {
         self.servers.as_deref()
     }
 }
 /// See [`ListServersOutput`](crate::output::ListServersOutput).
 pub mod list_servers_output {
-
+    
     /// A builder for [`ListServersOutput`](crate::output::ListServersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1029,8 +1069,7 @@ pub mod list_servers_output {
         }
         /// <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `servers`.
         ///
@@ -1039,26 +1078,26 @@ pub mod list_servers_output {
         /// <p>An array of servers that were listed.</p>
         pub fn servers(mut self, input: crate::model::ListedServer) -> Self {
             let mut v = self.servers.unwrap_or_default();
-            v.push(input);
-            self.servers = Some(v);
-            self
+                            v.push(input);
+                            self.servers = Some(v);
+                            self
         }
         /// <p>An array of servers that were listed.</p>
-        pub fn set_servers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedServer>>,
-        ) -> Self {
-            self.servers = input;
-            self
+        pub fn set_servers(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedServer>>) -> Self {
+            self.servers = input; self
         }
         /// Consumes the builder and constructs a [`ListServersOutput`](crate::output::ListServersOutput).
         pub fn build(self) -> crate::output::ListServersOutput {
             crate::output::ListServersOutput {
-                next_token: self.next_token,
-                servers: self.servers,
+                next_token: self.next_token
+                ,
+                servers: self.servers
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServersOutput {
     /// Creates a new builder-style object to manufacture [`ListServersOutput`](crate::output::ListServersOutput).
@@ -1070,7 +1109,7 @@ impl ListServersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecurityPoliciesOutput {
+pub struct ListSecurityPoliciesOutput  {
     /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1080,17 +1119,17 @@ pub struct ListSecurityPoliciesOutput {
 }
 impl ListSecurityPoliciesOutput {
     /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of security policies that were listed.</p>
-    pub fn security_policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_policy_names(&self) -> std::option::Option<& [std::string::String]> {
         self.security_policy_names.as_deref()
     }
 }
 /// See [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput).
 pub mod list_security_policies_output {
-
+    
     /// A builder for [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1105,8 +1144,7 @@ pub mod list_security_policies_output {
         }
         /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `security_policy_names`.
         ///
@@ -1115,26 +1153,26 @@ pub mod list_security_policies_output {
         /// <p>An array of security policies that were listed.</p>
         pub fn security_policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_policy_names.unwrap_or_default();
-            v.push(input.into());
-            self.security_policy_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_policy_names = Some(v);
+                            self
         }
         /// <p>An array of security policies that were listed.</p>
-        pub fn set_security_policy_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_policy_names = input;
-            self
+        pub fn set_security_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_policy_names = input; self
         }
         /// Consumes the builder and constructs a [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput).
         pub fn build(self) -> crate::output::ListSecurityPoliciesOutput {
             crate::output::ListSecurityPoliciesOutput {
-                next_token: self.next_token,
-                security_policy_names: self.security_policy_names,
+                next_token: self.next_token
+                ,
+                security_policy_names: self.security_policy_names
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSecurityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput).
@@ -1146,7 +1184,7 @@ impl ListSecurityPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfilesOutput {
+pub struct ListProfilesOutput  {
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1156,17 +1194,17 @@ pub struct ListProfilesOutput {
 }
 impl ListProfilesOutput {
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub fn profiles(&self) -> std::option::Option<&[crate::model::ListedProfile]> {
+    pub fn profiles(&self) -> std::option::Option<& [crate::model::ListedProfile]> {
         self.profiles.as_deref()
     }
 }
 /// See [`ListProfilesOutput`](crate::output::ListProfilesOutput).
 pub mod list_profiles_output {
-
+    
     /// A builder for [`ListProfilesOutput`](crate::output::ListProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1181,8 +1219,7 @@ pub mod list_profiles_output {
         }
         /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `profiles`.
         ///
@@ -1191,26 +1228,26 @@ pub mod list_profiles_output {
         /// <p>Returns an array, where each item contains the details of a profile.</p>
         pub fn profiles(mut self, input: crate::model::ListedProfile) -> Self {
             let mut v = self.profiles.unwrap_or_default();
-            v.push(input);
-            self.profiles = Some(v);
-            self
+                            v.push(input);
+                            self.profiles = Some(v);
+                            self
         }
         /// <p>Returns an array, where each item contains the details of a profile.</p>
-        pub fn set_profiles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedProfile>>,
-        ) -> Self {
-            self.profiles = input;
-            self
+        pub fn set_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedProfile>>) -> Self {
+            self.profiles = input; self
         }
         /// Consumes the builder and constructs a [`ListProfilesOutput`](crate::output::ListProfilesOutput).
         pub fn build(self) -> crate::output::ListProfilesOutput {
             crate::output::ListProfilesOutput {
-                next_token: self.next_token,
-                profiles: self.profiles,
+                next_token: self.next_token
+                ,
+                profiles: self.profiles
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfilesOutput`](crate::output::ListProfilesOutput).
@@ -1222,7 +1259,7 @@ impl ListProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHostKeysOutput {
+pub struct ListHostKeysOutput  {
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1235,21 +1272,21 @@ pub struct ListHostKeysOutput {
 }
 impl ListHostKeysOutput {
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns the server identifier that contains the listed host keys.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub fn host_keys(&self) -> std::option::Option<&[crate::model::ListedHostKey]> {
+    pub fn host_keys(&self) -> std::option::Option<& [crate::model::ListedHostKey]> {
         self.host_keys.as_deref()
     }
 }
 /// See [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
 pub mod list_host_keys_output {
-
+    
     /// A builder for [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1265,8 +1302,7 @@ pub mod list_host_keys_output {
         }
         /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Returns the server identifier that contains the listed host keys.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1275,8 +1311,7 @@ pub mod list_host_keys_output {
         }
         /// <p>Returns the server identifier that contains the listed host keys.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// Appends an item to `host_keys`.
         ///
@@ -1285,27 +1320,28 @@ pub mod list_host_keys_output {
         /// <p>Returns an array, where each item contains the details of a host key.</p>
         pub fn host_keys(mut self, input: crate::model::ListedHostKey) -> Self {
             let mut v = self.host_keys.unwrap_or_default();
-            v.push(input);
-            self.host_keys = Some(v);
-            self
+                            v.push(input);
+                            self.host_keys = Some(v);
+                            self
         }
         /// <p>Returns an array, where each item contains the details of a host key.</p>
-        pub fn set_host_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedHostKey>>,
-        ) -> Self {
-            self.host_keys = input;
-            self
+        pub fn set_host_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedHostKey>>) -> Self {
+            self.host_keys = input; self
         }
         /// Consumes the builder and constructs a [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
         pub fn build(self) -> crate::output::ListHostKeysOutput {
             crate::output::ListHostKeysOutput {
-                next_token: self.next_token,
-                server_id: self.server_id,
-                host_keys: self.host_keys,
+                next_token: self.next_token
+                ,
+                server_id: self.server_id
+                ,
+                host_keys: self.host_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHostKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
@@ -1317,46 +1353,46 @@ impl ListHostKeysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExecutionsOutput {
+pub struct ListExecutionsOutput  {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
-    /// <p>Returns the details for each execution.</p>
-    /// <ul>
-    /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>
-    /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>
-    /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
-    /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
+    /// <p>Returns the details for each execution.</p> 
+    /// <ul> 
+    /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li> 
+    /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> 
+    /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li> 
+    /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub executions: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>,
 }
 impl ListExecutionsOutput {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
-    /// <p>Returns the details for each execution.</p>
-    /// <ul>
-    /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>
-    /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>
-    /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
-    /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
+    /// <p>Returns the details for each execution.</p> 
+    /// <ul> 
+    /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li> 
+    /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> 
+    /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li> 
+    /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> 
     /// </ul>
-    pub fn executions(&self) -> std::option::Option<&[crate::model::ListedExecution]> {
+    pub fn executions(&self) -> std::option::Option<& [crate::model::ListedExecution]> {
         self.executions.as_deref()
     }
 }
 /// See [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
 pub mod list_executions_output {
-
+    
     /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1372,8 +1408,7 @@ pub mod list_executions_output {
         }
         /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>A unique identifier for the workflow.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1382,49 +1417,49 @@ pub mod list_executions_output {
         }
         /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// Appends an item to `executions`.
         ///
         /// To override the contents of this collection use [`set_executions`](Self::set_executions).
         ///
-        /// <p>Returns the details for each execution.</p>
-        /// <ul>
-        /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>
-        /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>
-        /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
-        /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
+        /// <p>Returns the details for each execution.</p> 
+        /// <ul> 
+        /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li> 
+        /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> 
+        /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li> 
+        /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> 
         /// </ul>
         pub fn executions(mut self, input: crate::model::ListedExecution) -> Self {
             let mut v = self.executions.unwrap_or_default();
-            v.push(input);
-            self.executions = Some(v);
-            self
+                            v.push(input);
+                            self.executions = Some(v);
+                            self
         }
-        /// <p>Returns the details for each execution.</p>
-        /// <ul>
-        /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>
-        /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>
-        /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
-        /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
+        /// <p>Returns the details for each execution.</p> 
+        /// <ul> 
+        /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li> 
+        /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> 
+        /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li> 
+        /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> 
         /// </ul>
-        pub fn set_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>,
-        ) -> Self {
-            self.executions = input;
-            self
+        pub fn set_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>) -> Self {
+            self.executions = input; self
         }
         /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
         pub fn build(self) -> crate::output::ListExecutionsOutput {
             crate::output::ListExecutionsOutput {
-                next_token: self.next_token,
-                workflow_id: self.workflow_id,
-                executions: self.executions,
+                next_token: self.next_token
+                ,
+                workflow_id: self.workflow_id
+                ,
+                executions: self.executions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
@@ -1436,7 +1471,7 @@ impl ListExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectorsOutput {
+pub struct ListConnectorsOutput  {
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1446,17 +1481,17 @@ pub struct ListConnectorsOutput {
 }
 impl ListConnectorsOutput {
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of a connector.</p>
-    pub fn connectors(&self) -> std::option::Option<&[crate::model::ListedConnector]> {
+    pub fn connectors(&self) -> std::option::Option<& [crate::model::ListedConnector]> {
         self.connectors.as_deref()
     }
 }
 /// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
 pub mod list_connectors_output {
-
+    
     /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1471,8 +1506,7 @@ pub mod list_connectors_output {
         }
         /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `connectors`.
         ///
@@ -1481,26 +1515,26 @@ pub mod list_connectors_output {
         /// <p>Returns an array, where each item contains the details of a connector.</p>
         pub fn connectors(mut self, input: crate::model::ListedConnector) -> Self {
             let mut v = self.connectors.unwrap_or_default();
-            v.push(input);
-            self.connectors = Some(v);
-            self
+                            v.push(input);
+                            self.connectors = Some(v);
+                            self
         }
         /// <p>Returns an array, where each item contains the details of a connector.</p>
-        pub fn set_connectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedConnector>>,
-        ) -> Self {
-            self.connectors = input;
-            self
+        pub fn set_connectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedConnector>>) -> Self {
+            self.connectors = input; self
         }
         /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
         pub fn build(self) -> crate::output::ListConnectorsOutput {
             crate::output::ListConnectorsOutput {
-                next_token: self.next_token,
-                connectors: self.connectors,
+                next_token: self.next_token
+                ,
+                connectors: self.connectors
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
@@ -1512,7 +1546,7 @@ impl ListConnectorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCertificatesOutput {
+pub struct ListCertificatesOutput  {
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1522,23 +1556,22 @@ pub struct ListCertificatesOutput {
 }
 impl ListCertificatesOutput {
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::ListedCertificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::ListedCertificate]> {
         self.certificates.as_deref()
     }
 }
 /// See [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
 pub mod list_certificates_output {
-
+    
     /// A builder for [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) certificates:
-            std::option::Option<std::vec::Vec<crate::model::ListedCertificate>>,
+        pub(crate) certificates: std::option::Option<std::vec::Vec<crate::model::ListedCertificate>>,
     }
     impl Builder {
         /// <p>Returns the next token, which you can use to list the next certificate.</p>
@@ -1548,8 +1581,7 @@ pub mod list_certificates_output {
         }
         /// <p>Returns the next token, which you can use to list the next certificate.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `certificates`.
         ///
@@ -1558,26 +1590,26 @@ pub mod list_certificates_output {
         /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
         pub fn certificates(mut self, input: crate::model::ListedCertificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedCertificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedCertificate>>) -> Self {
+            self.certificates = input; self
         }
         /// Consumes the builder and constructs a [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
         pub fn build(self) -> crate::output::ListCertificatesOutput {
             crate::output::ListCertificatesOutput {
-                next_token: self.next_token,
-                certificates: self.certificates,
+                next_token: self.next_token
+                ,
+                certificates: self.certificates
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
@@ -1589,7 +1621,7 @@ impl ListCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAgreementsOutput {
+pub struct ListAgreementsOutput  {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1599,17 +1631,17 @@ pub struct ListAgreementsOutput {
 }
 impl ListAgreementsOutput {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn agreements(&self) -> std::option::Option<&[crate::model::ListedAgreement]> {
+    pub fn agreements(&self) -> std::option::Option<& [crate::model::ListedAgreement]> {
         self.agreements.as_deref()
     }
 }
 /// See [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
 pub mod list_agreements_output {
-
+    
     /// A builder for [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1624,8 +1656,7 @@ pub mod list_agreements_output {
         }
         /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `agreements`.
         ///
@@ -1634,26 +1665,26 @@ pub mod list_agreements_output {
         /// <p>Returns an array, where each item contains the details of an agreement.</p>
         pub fn agreements(mut self, input: crate::model::ListedAgreement) -> Self {
             let mut v = self.agreements.unwrap_or_default();
-            v.push(input);
-            self.agreements = Some(v);
-            self
+                            v.push(input);
+                            self.agreements = Some(v);
+                            self
         }
         /// <p>Returns an array, where each item contains the details of an agreement.</p>
-        pub fn set_agreements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedAgreement>>,
-        ) -> Self {
-            self.agreements = input;
-            self
+        pub fn set_agreements(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedAgreement>>) -> Self {
+            self.agreements = input; self
         }
         /// Consumes the builder and constructs a [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
         pub fn build(self) -> crate::output::ListAgreementsOutput {
             crate::output::ListAgreementsOutput {
-                next_token: self.next_token,
-                agreements: self.agreements,
+                next_token: self.next_token
+                ,
+                agreements: self.agreements
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAgreementsOutput {
     /// Creates a new builder-style object to manufacture [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
@@ -1665,7 +1696,7 @@ impl ListAgreementsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessesOutput {
+pub struct ListAccessesOutput  {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1678,21 +1709,21 @@ pub struct ListAccessesOutput {
 }
 impl ListAccessesOutput {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn accesses(&self) -> std::option::Option<&[crate::model::ListedAccess]> {
+    pub fn accesses(&self) -> std::option::Option<& [crate::model::ListedAccess]> {
         self.accesses.as_deref()
     }
 }
 /// See [`ListAccessesOutput`](crate::output::ListAccessesOutput).
 pub mod list_accesses_output {
-
+    
     /// A builder for [`ListAccessesOutput`](crate::output::ListAccessesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1708,8 +1739,7 @@ pub mod list_accesses_output {
         }
         /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1718,8 +1748,7 @@ pub mod list_accesses_output {
         }
         /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// Appends an item to `accesses`.
         ///
@@ -1728,27 +1757,28 @@ pub mod list_accesses_output {
         /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
         pub fn accesses(mut self, input: crate::model::ListedAccess) -> Self {
             let mut v = self.accesses.unwrap_or_default();
-            v.push(input);
-            self.accesses = Some(v);
-            self
+                            v.push(input);
+                            self.accesses = Some(v);
+                            self
         }
         /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-        pub fn set_accesses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedAccess>>,
-        ) -> Self {
-            self.accesses = input;
-            self
+        pub fn set_accesses(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedAccess>>) -> Self {
+            self.accesses = input; self
         }
         /// Consumes the builder and constructs a [`ListAccessesOutput`](crate::output::ListAccessesOutput).
         pub fn build(self) -> crate::output::ListAccessesOutput {
             crate::output::ListAccessesOutput {
-                next_token: self.next_token,
-                server_id: self.server_id,
-                accesses: self.accesses,
+                next_token: self.next_token
+                ,
+                server_id: self.server_id
+                ,
+                accesses: self.accesses
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccessesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessesOutput`](crate::output::ListAccessesOutput).
@@ -1760,7 +1790,7 @@ impl ListAccessesOutput {
 /// <p>Identifies the user, the server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportSshPublicKeyOutput {
+pub struct ImportSshPublicKeyOutput  {
     /// <p>A system-assigned unique identifier for a server.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -1773,21 +1803,21 @@ pub struct ImportSshPublicKeyOutput {
 }
 impl ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key_id(&self) -> std::option::Option<& str> {
         self.ssh_public_key_id.as_deref()
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
 /// See [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput).
 pub mod import_ssh_public_key_output {
-
+    
     /// A builder for [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1803,8 +1833,7 @@ pub mod import_ssh_public_key_output {
         }
         /// <p>A system-assigned unique identifier for a server.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>The name given to a public key by the system that was imported.</p>
         pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1812,12 +1841,8 @@ pub mod import_ssh_public_key_output {
             self
         }
         /// <p>The name given to a public key by the system that was imported.</p>
-        pub fn set_ssh_public_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssh_public_key_id = input;
-            self
+        pub fn set_ssh_public_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssh_public_key_id = input; self
         }
         /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1826,18 +1851,22 @@ pub mod import_ssh_public_key_output {
         }
         /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// Consumes the builder and constructs a [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput).
         pub fn build(self) -> crate::output::ImportSshPublicKeyOutput {
             crate::output::ImportSshPublicKeyOutput {
-                server_id: self.server_id,
-                ssh_public_key_id: self.ssh_public_key_id,
-                user_name: self.user_name,
+                server_id: self.server_id
+                ,
+                ssh_public_key_id: self.ssh_public_key_id
+                ,
+                user_name: self.user_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput).
@@ -1849,7 +1878,7 @@ impl ImportSshPublicKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportHostKeyOutput {
+pub struct ImportHostKeyOutput  {
     /// <p>Returns the server identifier that contains the imported key.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -1859,17 +1888,17 @@ pub struct ImportHostKeyOutput {
 }
 impl ImportHostKeyOutput {
     /// <p>Returns the server identifier that contains the imported key.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>Returns the host key identifier for the imported key.</p>
-    pub fn host_key_id(&self) -> std::option::Option<&str> {
+    pub fn host_key_id(&self) -> std::option::Option<& str> {
         self.host_key_id.as_deref()
     }
 }
 /// See [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
 pub mod import_host_key_output {
-
+    
     /// A builder for [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1884,8 +1913,7 @@ pub mod import_host_key_output {
         }
         /// <p>Returns the server identifier that contains the imported key.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>Returns the host key identifier for the imported key.</p>
         pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1894,17 +1922,20 @@ pub mod import_host_key_output {
         }
         /// <p>Returns the host key identifier for the imported key.</p>
         pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host_key_id = input;
-            self
+            self.host_key_id = input; self
         }
         /// Consumes the builder and constructs a [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
         pub fn build(self) -> crate::output::ImportHostKeyOutput {
             crate::output::ImportHostKeyOutput {
-                server_id: self.server_id,
-                host_key_id: self.host_key_id,
+                server_id: self.server_id
+                ,
+                host_key_id: self.host_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportHostKeyOutput {
     /// Creates a new builder-style object to manufacture [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
@@ -1916,20 +1947,20 @@ impl ImportHostKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCertificateOutput {
+pub struct ImportCertificateOutput  {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl ImportCertificateOutput {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
 }
 /// See [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
 pub mod import_certificate_output {
-
+    
     /// A builder for [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1942,20 +1973,19 @@ pub mod import_certificate_output {
             self
         }
         /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-        pub fn set_certificate_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_id = input;
-            self
+        pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_id = input; self
         }
         /// Consumes the builder and constructs a [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
         pub fn build(self) -> crate::output::ImportCertificateOutput {
             crate::output::ImportCertificateOutput {
-                certificate_id: self.certificate_id,
+                certificate_id: self.certificate_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
@@ -1967,20 +1997,20 @@ impl ImportCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkflowOutput {
+pub struct DescribeWorkflowOutput  {
     /// <p>The structure that contains the details of the workflow.</p>
     #[doc(hidden)]
     pub workflow: std::option::Option<crate::model::DescribedWorkflow>,
 }
 impl DescribeWorkflowOutput {
     /// <p>The structure that contains the details of the workflow.</p>
-    pub fn workflow(&self) -> std::option::Option<&crate::model::DescribedWorkflow> {
+    pub fn workflow(&self) -> std::option::Option<& crate::model::DescribedWorkflow> {
         self.workflow.as_ref()
     }
 }
 /// See [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput).
 pub mod describe_workflow_output {
-
+    
     /// A builder for [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1993,20 +2023,19 @@ pub mod describe_workflow_output {
             self
         }
         /// <p>The structure that contains the details of the workflow.</p>
-        pub fn set_workflow(
-            mut self,
-            input: std::option::Option<crate::model::DescribedWorkflow>,
-        ) -> Self {
-            self.workflow = input;
-            self
+        pub fn set_workflow(mut self, input: std::option::Option<crate::model::DescribedWorkflow>) -> Self {
+            self.workflow = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput).
         pub fn build(self) -> crate::output::DescribeWorkflowOutput {
             crate::output::DescribeWorkflowOutput {
-                workflow: self.workflow,
+                workflow: self.workflow
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput).
@@ -2018,7 +2047,7 @@ impl DescribeWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserOutput {
+pub struct DescribeUserOutput  {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -2028,17 +2057,17 @@ pub struct DescribeUserOutput {
 }
 impl DescribeUserOutput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::DescribedUser> {
+    pub fn user(&self) -> std::option::Option<& crate::model::DescribedUser> {
         self.user.as_ref()
     }
 }
 /// See [`DescribeUserOutput`](crate::output::DescribeUserOutput).
 pub mod describe_user_output {
-
+    
     /// A builder for [`DescribeUserOutput`](crate::output::DescribeUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2053,8 +2082,7 @@ pub mod describe_user_output {
         }
         /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
         pub fn user(mut self, input: crate::model::DescribedUser) -> Self {
@@ -2063,17 +2091,20 @@ pub mod describe_user_output {
         }
         /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::DescribedUser>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::output::DescribeUserOutput).
         pub fn build(self) -> crate::output::DescribeUserOutput {
             crate::output::DescribeUserOutput {
-                server_id: self.server_id,
-                user: self.user,
+                server_id: self.server_id
+                ,
+                user: self.user
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::output::DescribeUserOutput).
@@ -2085,20 +2116,20 @@ impl DescribeUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServerOutput {
+pub struct DescribeServerOutput  {
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::DescribedServer>,
 }
 impl DescribeServerOutput {
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
-    pub fn server(&self) -> std::option::Option<&crate::model::DescribedServer> {
+    pub fn server(&self) -> std::option::Option<& crate::model::DescribedServer> {
         self.server.as_ref()
     }
 }
 /// See [`DescribeServerOutput`](crate::output::DescribeServerOutput).
 pub mod describe_server_output {
-
+    
     /// A builder for [`DescribeServerOutput`](crate::output::DescribeServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2111,20 +2142,19 @@ pub mod describe_server_output {
             self
         }
         /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
-        pub fn set_server(
-            mut self,
-            input: std::option::Option<crate::model::DescribedServer>,
-        ) -> Self {
-            self.server = input;
-            self
+        pub fn set_server(mut self, input: std::option::Option<crate::model::DescribedServer>) -> Self {
+            self.server = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServerOutput`](crate::output::DescribeServerOutput).
         pub fn build(self) -> crate::output::DescribeServerOutput {
             crate::output::DescribeServerOutput {
-                server: self.server,
+                server: self.server
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeServerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServerOutput`](crate::output::DescribeServerOutput).
@@ -2136,20 +2166,20 @@ impl DescribeServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSecurityPolicyOutput {
+pub struct DescribeSecurityPolicyOutput  {
     /// <p>An array containing the properties of the security policy.</p>
     #[doc(hidden)]
     pub security_policy: std::option::Option<crate::model::DescribedSecurityPolicy>,
 }
 impl DescribeSecurityPolicyOutput {
     /// <p>An array containing the properties of the security policy.</p>
-    pub fn security_policy(&self) -> std::option::Option<&crate::model::DescribedSecurityPolicy> {
+    pub fn security_policy(&self) -> std::option::Option<& crate::model::DescribedSecurityPolicy> {
         self.security_policy.as_ref()
     }
 }
 /// See [`DescribeSecurityPolicyOutput`](crate::output::DescribeSecurityPolicyOutput).
 pub mod describe_security_policy_output {
-
+    
     /// A builder for [`DescribeSecurityPolicyOutput`](crate::output::DescribeSecurityPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2162,20 +2192,19 @@ pub mod describe_security_policy_output {
             self
         }
         /// <p>An array containing the properties of the security policy.</p>
-        pub fn set_security_policy(
-            mut self,
-            input: std::option::Option<crate::model::DescribedSecurityPolicy>,
-        ) -> Self {
-            self.security_policy = input;
-            self
+        pub fn set_security_policy(mut self, input: std::option::Option<crate::model::DescribedSecurityPolicy>) -> Self {
+            self.security_policy = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSecurityPolicyOutput`](crate::output::DescribeSecurityPolicyOutput).
         pub fn build(self) -> crate::output::DescribeSecurityPolicyOutput {
             crate::output::DescribeSecurityPolicyOutput {
-                security_policy: self.security_policy,
+                security_policy: self.security_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSecurityPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityPolicyOutput`](crate::output::DescribeSecurityPolicyOutput).
@@ -2187,20 +2216,20 @@ impl DescribeSecurityPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProfileOutput {
+pub struct DescribeProfileOutput  {
     /// <p>The details of the specified profile, returned as an object.</p>
     #[doc(hidden)]
     pub profile: std::option::Option<crate::model::DescribedProfile>,
 }
 impl DescribeProfileOutput {
     /// <p>The details of the specified profile, returned as an object.</p>
-    pub fn profile(&self) -> std::option::Option<&crate::model::DescribedProfile> {
+    pub fn profile(&self) -> std::option::Option<& crate::model::DescribedProfile> {
         self.profile.as_ref()
     }
 }
 /// See [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
 pub mod describe_profile_output {
-
+    
     /// A builder for [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2213,20 +2242,19 @@ pub mod describe_profile_output {
             self
         }
         /// <p>The details of the specified profile, returned as an object.</p>
-        pub fn set_profile(
-            mut self,
-            input: std::option::Option<crate::model::DescribedProfile>,
-        ) -> Self {
-            self.profile = input;
-            self
+        pub fn set_profile(mut self, input: std::option::Option<crate::model::DescribedProfile>) -> Self {
+            self.profile = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
         pub fn build(self) -> crate::output::DescribeProfileOutput {
             crate::output::DescribeProfileOutput {
-                profile: self.profile,
+                profile: self.profile
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
@@ -2238,20 +2266,20 @@ impl DescribeProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHostKeyOutput {
+pub struct DescribeHostKeyOutput  {
     /// <p>Returns the details for the specified host key.</p>
     #[doc(hidden)]
     pub host_key: std::option::Option<crate::model::DescribedHostKey>,
 }
 impl DescribeHostKeyOutput {
     /// <p>Returns the details for the specified host key.</p>
-    pub fn host_key(&self) -> std::option::Option<&crate::model::DescribedHostKey> {
+    pub fn host_key(&self) -> std::option::Option<& crate::model::DescribedHostKey> {
         self.host_key.as_ref()
     }
 }
 /// See [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
 pub mod describe_host_key_output {
-
+    
     /// A builder for [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2264,20 +2292,19 @@ pub mod describe_host_key_output {
             self
         }
         /// <p>Returns the details for the specified host key.</p>
-        pub fn set_host_key(
-            mut self,
-            input: std::option::Option<crate::model::DescribedHostKey>,
-        ) -> Self {
-            self.host_key = input;
-            self
+        pub fn set_host_key(mut self, input: std::option::Option<crate::model::DescribedHostKey>) -> Self {
+            self.host_key = input; self
         }
         /// Consumes the builder and constructs a [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
         pub fn build(self) -> crate::output::DescribeHostKeyOutput {
             crate::output::DescribeHostKeyOutput {
-                host_key: self.host_key,
+                host_key: self.host_key
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeHostKeyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
@@ -2289,7 +2316,7 @@ impl DescribeHostKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExecutionOutput {
+pub struct DescribeExecutionOutput  {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -2299,17 +2326,17 @@ pub struct DescribeExecutionOutput {
 }
 impl DescribeExecutionOutput {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The structure that contains the details of the workflow' execution.</p>
-    pub fn execution(&self) -> std::option::Option<&crate::model::DescribedExecution> {
+    pub fn execution(&self) -> std::option::Option<& crate::model::DescribedExecution> {
         self.execution.as_ref()
     }
 }
 /// See [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
 pub mod describe_execution_output {
-
+    
     /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2324,8 +2351,7 @@ pub mod describe_execution_output {
         }
         /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The structure that contains the details of the workflow' execution.</p>
         pub fn execution(mut self, input: crate::model::DescribedExecution) -> Self {
@@ -2333,21 +2359,21 @@ pub mod describe_execution_output {
             self
         }
         /// <p>The structure that contains the details of the workflow' execution.</p>
-        pub fn set_execution(
-            mut self,
-            input: std::option::Option<crate::model::DescribedExecution>,
-        ) -> Self {
-            self.execution = input;
-            self
+        pub fn set_execution(mut self, input: std::option::Option<crate::model::DescribedExecution>) -> Self {
+            self.execution = input; self
         }
         /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
         pub fn build(self) -> crate::output::DescribeExecutionOutput {
             crate::output::DescribeExecutionOutput {
-                workflow_id: self.workflow_id,
-                execution: self.execution,
+                workflow_id: self.workflow_id
+                ,
+                execution: self.execution
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
@@ -2359,20 +2385,20 @@ impl DescribeExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectorOutput {
+pub struct DescribeConnectorOutput  {
     /// <p>The structure that contains the details of the connector.</p>
     #[doc(hidden)]
     pub connector: std::option::Option<crate::model::DescribedConnector>,
 }
 impl DescribeConnectorOutput {
     /// <p>The structure that contains the details of the connector.</p>
-    pub fn connector(&self) -> std::option::Option<&crate::model::DescribedConnector> {
+    pub fn connector(&self) -> std::option::Option<& crate::model::DescribedConnector> {
         self.connector.as_ref()
     }
 }
 /// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
 pub mod describe_connector_output {
-
+    
     /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2385,20 +2411,19 @@ pub mod describe_connector_output {
             self
         }
         /// <p>The structure that contains the details of the connector.</p>
-        pub fn set_connector(
-            mut self,
-            input: std::option::Option<crate::model::DescribedConnector>,
-        ) -> Self {
-            self.connector = input;
-            self
+        pub fn set_connector(mut self, input: std::option::Option<crate::model::DescribedConnector>) -> Self {
+            self.connector = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
         pub fn build(self) -> crate::output::DescribeConnectorOutput {
             crate::output::DescribeConnectorOutput {
-                connector: self.connector,
+                connector: self.connector
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
@@ -2410,20 +2435,20 @@ impl DescribeConnectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificateOutput {
+pub struct DescribeCertificateOutput  {
     /// <p>The details for the specified certificate, returned as an object.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::DescribedCertificate>,
 }
 impl DescribeCertificateOutput {
     /// <p>The details for the specified certificate, returned as an object.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::DescribedCertificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::DescribedCertificate> {
         self.certificate.as_ref()
     }
 }
 /// See [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
 pub mod describe_certificate_output {
-
+    
     /// A builder for [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2436,20 +2461,19 @@ pub mod describe_certificate_output {
             self
         }
         /// <p>The details for the specified certificate, returned as an object.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::DescribedCertificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::DescribedCertificate>) -> Self {
+            self.certificate = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
         pub fn build(self) -> crate::output::DescribeCertificateOutput {
             crate::output::DescribeCertificateOutput {
-                certificate: self.certificate,
+                certificate: self.certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
@@ -2461,20 +2485,20 @@ impl DescribeCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAgreementOutput {
+pub struct DescribeAgreementOutput  {
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
     #[doc(hidden)]
     pub agreement: std::option::Option<crate::model::DescribedAgreement>,
 }
 impl DescribeAgreementOutput {
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
-    pub fn agreement(&self) -> std::option::Option<&crate::model::DescribedAgreement> {
+    pub fn agreement(&self) -> std::option::Option<& crate::model::DescribedAgreement> {
         self.agreement.as_ref()
     }
 }
 /// See [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
 pub mod describe_agreement_output {
-
+    
     /// A builder for [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2487,20 +2511,19 @@ pub mod describe_agreement_output {
             self
         }
         /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
-        pub fn set_agreement(
-            mut self,
-            input: std::option::Option<crate::model::DescribedAgreement>,
-        ) -> Self {
-            self.agreement = input;
-            self
+        pub fn set_agreement(mut self, input: std::option::Option<crate::model::DescribedAgreement>) -> Self {
+            self.agreement = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
         pub fn build(self) -> crate::output::DescribeAgreementOutput {
             crate::output::DescribeAgreementOutput {
-                agreement: self.agreement,
+                agreement: self.agreement
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAgreementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
@@ -2512,7 +2535,7 @@ impl DescribeAgreementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccessOutput {
+pub struct DescribeAccessOutput  {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -2522,17 +2545,17 @@ pub struct DescribeAccessOutput {
 }
 impl DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The external identifier of the server that the access is attached to.</p>
-    pub fn access(&self) -> std::option::Option<&crate::model::DescribedAccess> {
+    pub fn access(&self) -> std::option::Option<& crate::model::DescribedAccess> {
         self.access.as_ref()
     }
 }
 /// See [`DescribeAccessOutput`](crate::output::DescribeAccessOutput).
 pub mod describe_access_output {
-
+    
     /// A builder for [`DescribeAccessOutput`](crate::output::DescribeAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2547,8 +2570,7 @@ pub mod describe_access_output {
         }
         /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>The external identifier of the server that the access is attached to.</p>
         pub fn access(mut self, input: crate::model::DescribedAccess) -> Self {
@@ -2556,21 +2578,21 @@ pub mod describe_access_output {
             self
         }
         /// <p>The external identifier of the server that the access is attached to.</p>
-        pub fn set_access(
-            mut self,
-            input: std::option::Option<crate::model::DescribedAccess>,
-        ) -> Self {
-            self.access = input;
-            self
+        pub fn set_access(mut self, input: std::option::Option<crate::model::DescribedAccess>) -> Self {
+            self.access = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccessOutput`](crate::output::DescribeAccessOutput).
         pub fn build(self) -> crate::output::DescribeAccessOutput {
             crate::output::DescribeAccessOutput {
-                server_id: self.server_id,
-                access: self.access,
+                server_id: self.server_id
+                ,
+                access: self.access
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessOutput`](crate::output::DescribeAccessOutput).
@@ -2582,19 +2604,24 @@ impl DescribeAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkflowOutput {}
+pub struct DeleteWorkflowOutput  {
+}
 /// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
 pub mod delete_workflow_output {
-
+    
     /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
         pub fn build(self) -> crate::output::DeleteWorkflowOutput {
-            crate::output::DeleteWorkflowOutput {}
+            crate::output::DeleteWorkflowOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
@@ -2606,19 +2633,24 @@ impl DeleteWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserOutput {}
+pub struct DeleteUserOutput  {
+}
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
-
+    
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
         pub fn build(self) -> crate::output::DeleteUserOutput {
-            crate::output::DeleteUserOutput {}
+            crate::output::DeleteUserOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteUserOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -2630,19 +2662,24 @@ impl DeleteUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSshPublicKeyOutput {}
+pub struct DeleteSshPublicKeyOutput  {
+}
 /// See [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
 pub mod delete_ssh_public_key_output {
-
+    
     /// A builder for [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
         pub fn build(self) -> crate::output::DeleteSshPublicKeyOutput {
-            crate::output::DeleteSshPublicKeyOutput {}
+            crate::output::DeleteSshPublicKeyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
@@ -2654,19 +2691,24 @@ impl DeleteSshPublicKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServerOutput {}
+pub struct DeleteServerOutput  {
+}
 /// See [`DeleteServerOutput`](crate::output::DeleteServerOutput).
 pub mod delete_server_output {
-
+    
     /// A builder for [`DeleteServerOutput`](crate::output::DeleteServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServerOutput`](crate::output::DeleteServerOutput).
         pub fn build(self) -> crate::output::DeleteServerOutput {
-            crate::output::DeleteServerOutput {}
+            crate::output::DeleteServerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteServerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServerOutput`](crate::output::DeleteServerOutput).
@@ -2678,19 +2720,24 @@ impl DeleteServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProfileOutput {}
+pub struct DeleteProfileOutput  {
+}
 /// See [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
 pub mod delete_profile_output {
-
+    
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
         pub fn build(self) -> crate::output::DeleteProfileOutput {
-            crate::output::DeleteProfileOutput {}
+            crate::output::DeleteProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
@@ -2702,19 +2749,24 @@ impl DeleteProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHostKeyOutput {}
+pub struct DeleteHostKeyOutput  {
+}
 /// See [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
 pub mod delete_host_key_output {
-
+    
     /// A builder for [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
         pub fn build(self) -> crate::output::DeleteHostKeyOutput {
-            crate::output::DeleteHostKeyOutput {}
+            crate::output::DeleteHostKeyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteHostKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
@@ -2726,19 +2778,24 @@ impl DeleteHostKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectorOutput {}
+pub struct DeleteConnectorOutput  {
+}
 /// See [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
 pub mod delete_connector_output {
-
+    
     /// A builder for [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
         pub fn build(self) -> crate::output::DeleteConnectorOutput {
-            crate::output::DeleteConnectorOutput {}
+            crate::output::DeleteConnectorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
@@ -2750,19 +2807,24 @@ impl DeleteConnectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCertificateOutput {}
+pub struct DeleteCertificateOutput  {
+}
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
 pub mod delete_certificate_output {
-
+    
     /// A builder for [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
         pub fn build(self) -> crate::output::DeleteCertificateOutput {
-            crate::output::DeleteCertificateOutput {}
+            crate::output::DeleteCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
@@ -2774,19 +2836,24 @@ impl DeleteCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAgreementOutput {}
+pub struct DeleteAgreementOutput  {
+}
 /// See [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
 pub mod delete_agreement_output {
-
+    
     /// A builder for [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
         pub fn build(self) -> crate::output::DeleteAgreementOutput {
-            crate::output::DeleteAgreementOutput {}
+            crate::output::DeleteAgreementOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAgreementOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
@@ -2798,19 +2865,24 @@ impl DeleteAgreementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessOutput {}
+pub struct DeleteAccessOutput  {
+}
 /// See [`DeleteAccessOutput`](crate::output::DeleteAccessOutput).
 pub mod delete_access_output {
-
+    
     /// A builder for [`DeleteAccessOutput`](crate::output::DeleteAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessOutput`](crate::output::DeleteAccessOutput).
         pub fn build(self) -> crate::output::DeleteAccessOutput {
-            crate::output::DeleteAccessOutput {}
+            crate::output::DeleteAccessOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessOutput`](crate::output::DeleteAccessOutput).
@@ -2822,20 +2894,20 @@ impl DeleteAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkflowOutput {
+pub struct CreateWorkflowOutput  {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl CreateWorkflowOutput {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
 }
 /// See [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
 pub mod create_workflow_output {
-
+    
     /// A builder for [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2849,16 +2921,18 @@ pub mod create_workflow_output {
         }
         /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
         pub fn build(self) -> crate::output::CreateWorkflowOutput {
             crate::output::CreateWorkflowOutput {
-                workflow_id: self.workflow_id,
+                workflow_id: self.workflow_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
@@ -2870,7 +2944,7 @@ impl CreateWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserOutput {
+pub struct CreateUserOutput  {
     /// <p>The identifier of the server that the user is attached to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -2880,17 +2954,17 @@ pub struct CreateUserOutput {
 }
 impl CreateUserOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>A unique string that identifies a user account associated with a server.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
-
+    
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2905,8 +2979,7 @@ pub mod create_user_output {
         }
         /// <p>The identifier of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>A unique string that identifies a user account associated with a server.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2915,17 +2988,20 @@ pub mod create_user_output {
         }
         /// <p>A unique string that identifies a user account associated with a server.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput).
         pub fn build(self) -> crate::output::CreateUserOutput {
             crate::output::CreateUserOutput {
-                server_id: self.server_id,
-                user_name: self.user_name,
+                server_id: self.server_id
+                ,
+                user_name: self.user_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateUserOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
@@ -2937,20 +3013,20 @@ impl CreateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServerOutput {
+pub struct CreateServerOutput  {
     /// <p>The service-assigned identifier of the server that is created.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
 impl CreateServerOutput {
     /// <p>The service-assigned identifier of the server that is created.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
 /// See [`CreateServerOutput`](crate::output::CreateServerOutput).
 pub mod create_server_output {
-
+    
     /// A builder for [`CreateServerOutput`](crate::output::CreateServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2964,16 +3040,18 @@ pub mod create_server_output {
         }
         /// <p>The service-assigned identifier of the server that is created.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateServerOutput`](crate::output::CreateServerOutput).
         pub fn build(self) -> crate::output::CreateServerOutput {
             crate::output::CreateServerOutput {
-                server_id: self.server_id,
+                server_id: self.server_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateServerOutput {
     /// Creates a new builder-style object to manufacture [`CreateServerOutput`](crate::output::CreateServerOutput).
@@ -2985,20 +3063,20 @@ impl CreateServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProfileOutput {
+pub struct CreateProfileOutput  {
     /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl CreateProfileOutput {
     /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
-    pub fn profile_id(&self) -> std::option::Option<&str> {
+    pub fn profile_id(&self) -> std::option::Option<& str> {
         self.profile_id.as_deref()
     }
 }
 /// See [`CreateProfileOutput`](crate::output::CreateProfileOutput).
 pub mod create_profile_output {
-
+    
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3012,16 +3090,18 @@ pub mod create_profile_output {
         }
         /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_id = input;
-            self
+            self.profile_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateProfileOutput`](crate::output::CreateProfileOutput).
         pub fn build(self) -> crate::output::CreateProfileOutput {
             crate::output::CreateProfileOutput {
-                profile_id: self.profile_id,
+                profile_id: self.profile_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfileOutput`](crate::output::CreateProfileOutput).
@@ -3033,20 +3113,20 @@ impl CreateProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectorOutput {
+pub struct CreateConnectorOutput  {
     /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
     #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
 }
 impl CreateConnectorOutput {
     /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
-    pub fn connector_id(&self) -> std::option::Option<&str> {
+    pub fn connector_id(&self) -> std::option::Option<& str> {
         self.connector_id.as_deref()
     }
 }
 /// See [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
 pub mod create_connector_output {
-
+    
     /// A builder for [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3060,16 +3140,18 @@ pub mod create_connector_output {
         }
         /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
         pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_id = input;
-            self
+            self.connector_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
         pub fn build(self) -> crate::output::CreateConnectorOutput {
             crate::output::CreateConnectorOutput {
-                connector_id: self.connector_id,
+                connector_id: self.connector_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConnectorOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
@@ -3081,20 +3163,20 @@ impl CreateConnectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAgreementOutput {
+pub struct CreateAgreementOutput  {
     /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
     #[doc(hidden)]
     pub agreement_id: std::option::Option<std::string::String>,
 }
 impl CreateAgreementOutput {
     /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
-    pub fn agreement_id(&self) -> std::option::Option<&str> {
+    pub fn agreement_id(&self) -> std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
 }
 /// See [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
 pub mod create_agreement_output {
-
+    
     /// A builder for [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3108,16 +3190,18 @@ pub mod create_agreement_output {
         }
         /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
         pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agreement_id = input;
-            self
+            self.agreement_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
         pub fn build(self) -> crate::output::CreateAgreementOutput {
             crate::output::CreateAgreementOutput {
-                agreement_id: self.agreement_id,
+                agreement_id: self.agreement_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAgreementOutput {
     /// Creates a new builder-style object to manufacture [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
@@ -3129,7 +3213,7 @@ impl CreateAgreementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessOutput {
+pub struct CreateAccessOutput  {
     /// <p>The identifier of the server that the user is attached to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -3139,17 +3223,17 @@ pub struct CreateAccessOutput {
 }
 impl CreateAccessOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
 /// See [`CreateAccessOutput`](crate::output::CreateAccessOutput).
 pub mod create_access_output {
-
+    
     /// A builder for [`CreateAccessOutput`](crate::output::CreateAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3164,8 +3248,7 @@ pub mod create_access_output {
         }
         /// <p>The identifier of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_id = input;
-            self
+            self.server_id = input; self
         }
         /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3174,17 +3257,20 @@ pub mod create_access_output {
         }
         /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.external_id = input;
-            self
+            self.external_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccessOutput`](crate::output::CreateAccessOutput).
         pub fn build(self) -> crate::output::CreateAccessOutput {
             crate::output::CreateAccessOutput {
-                server_id: self.server_id,
-                external_id: self.external_id,
+                server_id: self.server_id
+                ,
+                external_id: self.external_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccessOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessOutput`](crate::output::CreateAccessOutput).
@@ -3192,3 +3278,4 @@ impl CreateAccessOutput {
         crate::output::create_access_output::Builder::default()
     }
 }
+

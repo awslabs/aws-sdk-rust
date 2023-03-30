@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOrganizationConfigurationOutput {
+pub struct UpdateOrganizationConfigurationOutput  {
     /// <p>The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.</p>
     #[doc(hidden)]
     pub auto_enable: std::option::Option<crate::model::AutoEnable>,
 }
 impl UpdateOrganizationConfigurationOutput {
     /// <p>The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub fn auto_enable(&self) -> std::option::Option<&crate::model::AutoEnable> {
+    pub fn auto_enable(&self) -> std::option::Option<& crate::model::AutoEnable> {
         self.auto_enable.as_ref()
     }
 }
 /// See [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
 pub mod update_organization_configuration_output {
-
+    
     /// A builder for [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_organization_configuration_output {
             self
         }
         /// <p>The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.</p>
-        pub fn set_auto_enable(
-            mut self,
-            input: std::option::Option<crate::model::AutoEnable>,
-        ) -> Self {
-            self.auto_enable = input;
-            self
+        pub fn set_auto_enable(mut self, input: std::option::Option<crate::model::AutoEnable>) -> Self {
+            self.auto_enable = input; self
         }
         /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateOrganizationConfigurationOutput {
             crate::output::UpdateOrganizationConfigurationOutput {
-                auto_enable: self.auto_enable,
+                auto_enable: self.auto_enable
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
@@ -53,20 +52,20 @@ impl UpdateOrganizationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFilterOutput {
+pub struct UpdateFilterOutput  {
     /// <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl UpdateFilterOutput {
     /// <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`UpdateFilterOutput`](crate::output::UpdateFilterOutput).
 pub mod update_filter_output {
-
+    
     /// A builder for [`UpdateFilterOutput`](crate::output::UpdateFilterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -80,14 +79,18 @@ pub mod update_filter_output {
         }
         /// <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFilterOutput`](crate::output::UpdateFilterOutput).
         pub fn build(self) -> crate::output::UpdateFilterOutput {
-            crate::output::UpdateFilterOutput { arn: self.arn }
+            crate::output::UpdateFilterOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateFilterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFilterOutput`](crate::output::UpdateFilterOutput).
@@ -99,19 +102,24 @@ impl UpdateFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationOutput {}
+pub struct UpdateConfigurationOutput  {
+}
 /// See [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
 pub mod update_configuration_output {
-
+    
     /// A builder for [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateConfigurationOutput {
-            crate::output::UpdateConfigurationOutput {}
+            crate::output::UpdateConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
@@ -123,19 +131,24 @@ impl UpdateConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -147,19 +160,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -171,7 +189,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsageTotalsOutput {
+pub struct ListUsageTotalsOutput  {
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -181,17 +199,17 @@ pub struct ListUsageTotalsOutput {
 }
 impl ListUsageTotalsOutput {
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An object with details on the total usage for the requested account.</p>
-    pub fn totals(&self) -> std::option::Option<&[crate::model::UsageTotal]> {
+    pub fn totals(&self) -> std::option::Option<& [crate::model::UsageTotal]> {
         self.totals.as_deref()
     }
 }
 /// See [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput).
 pub mod list_usage_totals_output {
-
+    
     /// A builder for [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -206,8 +224,7 @@ pub mod list_usage_totals_output {
         }
         /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `totals`.
         ///
@@ -216,26 +233,26 @@ pub mod list_usage_totals_output {
         /// <p>An object with details on the total usage for the requested account.</p>
         pub fn totals(mut self, input: crate::model::UsageTotal) -> Self {
             let mut v = self.totals.unwrap_or_default();
-            v.push(input);
-            self.totals = Some(v);
-            self
+                            v.push(input);
+                            self.totals = Some(v);
+                            self
         }
         /// <p>An object with details on the total usage for the requested account.</p>
-        pub fn set_totals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UsageTotal>>,
-        ) -> Self {
-            self.totals = input;
-            self
+        pub fn set_totals(mut self, input: std::option::Option<std::vec::Vec<crate::model::UsageTotal>>) -> Self {
+            self.totals = input; self
         }
         /// Consumes the builder and constructs a [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput).
         pub fn build(self) -> crate::output::ListUsageTotalsOutput {
             crate::output::ListUsageTotalsOutput {
-                next_token: self.next_token,
-                totals: self.totals,
+                next_token: self.next_token
+                ,
+                totals: self.totals
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUsageTotalsOutput {
     /// Creates a new builder-style object to manufacture [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput).
@@ -247,30 +264,24 @@ impl ListUsageTotalsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -278,31 +289,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -314,7 +320,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMembersOutput {
+pub struct ListMembersOutput  {
     /// <p>An object that contains details for each member account.</p>
     #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
@@ -324,17 +330,17 @@ pub struct ListMembersOutput {
 }
 impl ListMembersOutput {
     /// <p>An object that contains details for each member account.</p>
-    pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
+    pub fn members(&self) -> std::option::Option<& [crate::model::Member]> {
         self.members.as_deref()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMembersOutput`](crate::output::ListMembersOutput).
 pub mod list_members_output {
-
+    
     /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -349,17 +355,13 @@ pub mod list_members_output {
         /// <p>An object that contains details for each member account.</p>
         pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input);
-            self.members = Some(v);
-            self
+                            v.push(input);
+                            self.members = Some(v);
+                            self
         }
         /// <p>An object that contains details for each member account.</p>
-        pub fn set_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Member>>,
-        ) -> Self {
-            self.members = input;
-            self
+        pub fn set_members(mut self, input: std::option::Option<std::vec::Vec<crate::model::Member>>) -> Self {
+            self.members = input; self
         }
         /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -368,17 +370,20 @@ pub mod list_members_output {
         }
         /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMembersOutput`](crate::output::ListMembersOutput).
         pub fn build(self) -> crate::output::ListMembersOutput {
             crate::output::ListMembersOutput {
-                members: self.members,
-                next_token: self.next_token,
+                members: self.members
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListMembersOutput`](crate::output::ListMembersOutput).
@@ -390,7 +395,7 @@ impl ListMembersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsOutput {
+pub struct ListFindingsOutput  {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -400,17 +405,17 @@ pub struct ListFindingsOutput {
 }
 impl ListFindingsOutput {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Contains details on the findings in your environment.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::model::Finding]> {
+    pub fn findings(&self) -> std::option::Option<& [crate::model::Finding]> {
         self.findings.as_deref()
     }
 }
 /// See [`ListFindingsOutput`](crate::output::ListFindingsOutput).
 pub mod list_findings_output {
-
+    
     /// A builder for [`ListFindingsOutput`](crate::output::ListFindingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -425,8 +430,7 @@ pub mod list_findings_output {
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `findings`.
         ///
@@ -435,26 +439,26 @@ pub mod list_findings_output {
         /// <p>Contains details on the findings in your environment.</p>
         pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input);
-            self.findings = Some(v);
-            self
+                            v.push(input);
+                            self.findings = Some(v);
+                            self
         }
         /// <p>Contains details on the findings in your environment.</p>
-        pub fn set_findings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Finding>>,
-        ) -> Self {
-            self.findings = input;
-            self
+        pub fn set_findings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Finding>>) -> Self {
+            self.findings = input; self
         }
         /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::output::ListFindingsOutput).
         pub fn build(self) -> crate::output::ListFindingsOutput {
             crate::output::ListFindingsOutput {
-                next_token: self.next_token,
-                findings: self.findings,
+                next_token: self.next_token
+                ,
+                findings: self.findings
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsOutput`](crate::output::ListFindingsOutput).
@@ -466,7 +470,7 @@ impl ListFindingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingAggregationsOutput {
+pub struct ListFindingAggregationsOutput  {
     /// <p>The type of aggregation to perform.</p>
     #[doc(hidden)]
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
@@ -479,21 +483,21 @@ pub struct ListFindingAggregationsOutput {
 }
 impl ListFindingAggregationsOutput {
     /// <p>The type of aggregation to perform.</p>
-    pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
+    pub fn aggregation_type(&self) -> std::option::Option<& crate::model::AggregationType> {
         self.aggregation_type.as_ref()
     }
     /// <p>Objects that contain the results of an aggregation operation.</p>
-    pub fn responses(&self) -> std::option::Option<&[crate::model::AggregationResponse]> {
+    pub fn responses(&self) -> std::option::Option<& [crate::model::AggregationResponse]> {
         self.responses.as_deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput).
 pub mod list_finding_aggregations_output {
-
+    
     /// A builder for [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -508,12 +512,8 @@ pub mod list_finding_aggregations_output {
             self
         }
         /// <p>The type of aggregation to perform.</p>
-        pub fn set_aggregation_type(
-            mut self,
-            input: std::option::Option<crate::model::AggregationType>,
-        ) -> Self {
-            self.aggregation_type = input;
-            self
+        pub fn set_aggregation_type(mut self, input: std::option::Option<crate::model::AggregationType>) -> Self {
+            self.aggregation_type = input; self
         }
         /// Appends an item to `responses`.
         ///
@@ -522,17 +522,13 @@ pub mod list_finding_aggregations_output {
         /// <p>Objects that contain the results of an aggregation operation.</p>
         pub fn responses(mut self, input: crate::model::AggregationResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input);
-            self.responses = Some(v);
-            self
+                            v.push(input);
+                            self.responses = Some(v);
+                            self
         }
         /// <p>Objects that contain the results of an aggregation operation.</p>
-        pub fn set_responses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AggregationResponse>>,
-        ) -> Self {
-            self.responses = input;
-            self
+        pub fn set_responses(mut self, input: std::option::Option<std::vec::Vec<crate::model::AggregationResponse>>) -> Self {
+            self.responses = input; self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -541,18 +537,22 @@ pub mod list_finding_aggregations_output {
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput).
         pub fn build(self) -> crate::output::ListFindingAggregationsOutput {
             crate::output::ListFindingAggregationsOutput {
-                aggregation_type: self.aggregation_type,
-                responses: self.responses,
-                next_token: self.next_token,
+                aggregation_type: self.aggregation_type
+                ,
+                responses: self.responses
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFindingAggregationsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput).
@@ -564,7 +564,7 @@ impl ListFindingAggregationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFiltersOutput {
+pub struct ListFiltersOutput  {
     /// <p>Contains details on the filters associated with your account.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -574,17 +574,17 @@ pub struct ListFiltersOutput {
 }
 impl ListFiltersOutput {
     /// <p>Contains details on the filters associated with your account.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFiltersOutput`](crate::output::ListFiltersOutput).
 pub mod list_filters_output {
-
+    
     /// A builder for [`ListFiltersOutput`](crate::output::ListFiltersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -599,17 +599,13 @@ pub mod list_filters_output {
         /// <p>Contains details on the filters associated with your account.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>Contains details on the filters associated with your account.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -618,17 +614,20 @@ pub mod list_filters_output {
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFiltersOutput`](crate::output::ListFiltersOutput).
         pub fn build(self) -> crate::output::ListFiltersOutput {
             crate::output::ListFiltersOutput {
-                filters: self.filters,
-                next_token: self.next_token,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFiltersOutput {
     /// Creates a new builder-style object to manufacture [`ListFiltersOutput`](crate::output::ListFiltersOutput).
@@ -640,35 +639,31 @@ impl ListFiltersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDelegatedAdminAccountsOutput {
+pub struct ListDelegatedAdminAccountsOutput  {
     /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
     #[doc(hidden)]
-    pub delegated_admin_accounts:
-        std::option::Option<std::vec::Vec<crate::model::DelegatedAdminAccount>>,
+    pub delegated_admin_accounts: std::option::Option<std::vec::Vec<crate::model::DelegatedAdminAccount>>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedAdminAccountsOutput {
     /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
-    pub fn delegated_admin_accounts(
-        &self,
-    ) -> std::option::Option<&[crate::model::DelegatedAdminAccount]> {
+    pub fn delegated_admin_accounts(&self) -> std::option::Option<& [crate::model::DelegatedAdminAccount]> {
         self.delegated_admin_accounts.as_deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput).
 pub mod list_delegated_admin_accounts_output {
-
+    
     /// A builder for [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) delegated_admin_accounts:
-            std::option::Option<std::vec::Vec<crate::model::DelegatedAdminAccount>>,
+        pub(crate) delegated_admin_accounts: std::option::Option<std::vec::Vec<crate::model::DelegatedAdminAccount>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -677,22 +672,15 @@ pub mod list_delegated_admin_accounts_output {
         /// To override the contents of this collection use [`set_delegated_admin_accounts`](Self::set_delegated_admin_accounts).
         ///
         /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
-        pub fn delegated_admin_accounts(
-            mut self,
-            input: crate::model::DelegatedAdminAccount,
-        ) -> Self {
+        pub fn delegated_admin_accounts(mut self, input: crate::model::DelegatedAdminAccount) -> Self {
             let mut v = self.delegated_admin_accounts.unwrap_or_default();
-            v.push(input);
-            self.delegated_admin_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.delegated_admin_accounts = Some(v);
+                            self
         }
         /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
-        pub fn set_delegated_admin_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DelegatedAdminAccount>>,
-        ) -> Self {
-            self.delegated_admin_accounts = input;
-            self
+        pub fn set_delegated_admin_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::DelegatedAdminAccount>>) -> Self {
+            self.delegated_admin_accounts = input; self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -701,17 +689,20 @@ pub mod list_delegated_admin_accounts_output {
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput).
         pub fn build(self) -> crate::output::ListDelegatedAdminAccountsOutput {
             crate::output::ListDelegatedAdminAccountsOutput {
-                delegated_admin_accounts: self.delegated_admin_accounts,
-                next_token: self.next_token,
+                delegated_admin_accounts: self.delegated_admin_accounts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDelegatedAdminAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput).
@@ -723,7 +714,7 @@ impl ListDelegatedAdminAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoverageStatisticsOutput {
+pub struct ListCoverageStatisticsOutput  {
     /// <p>An array with the number for each group.</p>
     #[doc(hidden)]
     pub counts_by_group: std::option::Option<std::vec::Vec<crate::model::Counts>>,
@@ -736,7 +727,7 @@ pub struct ListCoverageStatisticsOutput {
 }
 impl ListCoverageStatisticsOutput {
     /// <p>An array with the number for each group.</p>
-    pub fn counts_by_group(&self) -> std::option::Option<&[crate::model::Counts]> {
+    pub fn counts_by_group(&self) -> std::option::Option<& [crate::model::Counts]> {
         self.counts_by_group.as_deref()
     }
     /// <p>The total number for all groups.</p>
@@ -744,13 +735,13 @@ impl ListCoverageStatisticsOutput {
         self.total_counts
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput).
 pub mod list_coverage_statistics_output {
-
+    
     /// A builder for [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -766,17 +757,13 @@ pub mod list_coverage_statistics_output {
         /// <p>An array with the number for each group.</p>
         pub fn counts_by_group(mut self, input: crate::model::Counts) -> Self {
             let mut v = self.counts_by_group.unwrap_or_default();
-            v.push(input);
-            self.counts_by_group = Some(v);
-            self
+                            v.push(input);
+                            self.counts_by_group = Some(v);
+                            self
         }
         /// <p>An array with the number for each group.</p>
-        pub fn set_counts_by_group(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Counts>>,
-        ) -> Self {
-            self.counts_by_group = input;
-            self
+        pub fn set_counts_by_group(mut self, input: std::option::Option<std::vec::Vec<crate::model::Counts>>) -> Self {
+            self.counts_by_group = input; self
         }
         /// <p>The total number for all groups.</p>
         pub fn total_counts(mut self, input: i64) -> Self {
@@ -785,8 +772,7 @@ pub mod list_coverage_statistics_output {
         }
         /// <p>The total number for all groups.</p>
         pub fn set_total_counts(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_counts = input;
-            self
+            self.total_counts = input; self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -795,18 +781,22 @@ pub mod list_coverage_statistics_output {
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput).
         pub fn build(self) -> crate::output::ListCoverageStatisticsOutput {
             crate::output::ListCoverageStatisticsOutput {
-                counts_by_group: self.counts_by_group,
-                total_counts: self.total_counts,
-                next_token: self.next_token,
+                counts_by_group: self.counts_by_group
+                ,
+                total_counts: self.total_counts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCoverageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput).
@@ -818,7 +808,7 @@ impl ListCoverageStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoverageOutput {
+pub struct ListCoverageOutput  {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -828,23 +818,22 @@ pub struct ListCoverageOutput {
 }
 impl ListCoverageOutput {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An object that contains details on the covered resources in your environment.</p>
-    pub fn covered_resources(&self) -> std::option::Option<&[crate::model::CoveredResource]> {
+    pub fn covered_resources(&self) -> std::option::Option<& [crate::model::CoveredResource]> {
         self.covered_resources.as_deref()
     }
 }
 /// See [`ListCoverageOutput`](crate::output::ListCoverageOutput).
 pub mod list_coverage_output {
-
+    
     /// A builder for [`ListCoverageOutput`](crate::output::ListCoverageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) covered_resources:
-            std::option::Option<std::vec::Vec<crate::model::CoveredResource>>,
+        pub(crate) covered_resources: std::option::Option<std::vec::Vec<crate::model::CoveredResource>>,
     }
     impl Builder {
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -854,8 +843,7 @@ pub mod list_coverage_output {
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `covered_resources`.
         ///
@@ -864,26 +852,26 @@ pub mod list_coverage_output {
         /// <p>An object that contains details on the covered resources in your environment.</p>
         pub fn covered_resources(mut self, input: crate::model::CoveredResource) -> Self {
             let mut v = self.covered_resources.unwrap_or_default();
-            v.push(input);
-            self.covered_resources = Some(v);
-            self
+                            v.push(input);
+                            self.covered_resources = Some(v);
+                            self
         }
         /// <p>An object that contains details on the covered resources in your environment.</p>
-        pub fn set_covered_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CoveredResource>>,
-        ) -> Self {
-            self.covered_resources = input;
-            self
+        pub fn set_covered_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::CoveredResource>>) -> Self {
+            self.covered_resources = input; self
         }
         /// Consumes the builder and constructs a [`ListCoverageOutput`](crate::output::ListCoverageOutput).
         pub fn build(self) -> crate::output::ListCoverageOutput {
             crate::output::ListCoverageOutput {
-                next_token: self.next_token,
-                covered_resources: self.covered_resources,
+                next_token: self.next_token
+                ,
+                covered_resources: self.covered_resources
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCoverageOutput {
     /// Creates a new builder-style object to manufacture [`ListCoverageOutput`](crate::output::ListCoverageOutput).
@@ -895,7 +883,7 @@ impl ListCoverageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountPermissionsOutput {
+pub struct ListAccountPermissionsOutput  {
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -905,17 +893,17 @@ pub struct ListAccountPermissionsOutput {
 }
 impl ListAccountPermissionsOutput {
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::Permission]> {
         self.permissions.as_deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput).
 pub mod list_account_permissions_output {
-
+    
     /// A builder for [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -930,17 +918,13 @@ pub mod list_account_permissions_output {
         /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
         pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Permission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -949,17 +933,20 @@ pub mod list_account_permissions_output {
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput).
         pub fn build(self) -> crate::output::ListAccountPermissionsOutput {
             crate::output::ListAccountPermissionsOutput {
-                permissions: self.permissions,
-                next_token: self.next_token,
+                permissions: self.permissions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccountPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput).
@@ -971,20 +958,20 @@ impl ListAccountPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMemberOutput {
+pub struct GetMemberOutput  {
     /// <p>Details of the retrieved member account.</p>
     #[doc(hidden)]
     pub member: std::option::Option<crate::model::Member>,
 }
 impl GetMemberOutput {
     /// <p>Details of the retrieved member account.</p>
-    pub fn member(&self) -> std::option::Option<&crate::model::Member> {
+    pub fn member(&self) -> std::option::Option<& crate::model::Member> {
         self.member.as_ref()
     }
 }
 /// See [`GetMemberOutput`](crate::output::GetMemberOutput).
 pub mod get_member_output {
-
+    
     /// A builder for [`GetMemberOutput`](crate::output::GetMemberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -998,16 +985,18 @@ pub mod get_member_output {
         }
         /// <p>Details of the retrieved member account.</p>
         pub fn set_member(mut self, input: std::option::Option<crate::model::Member>) -> Self {
-            self.member = input;
-            self
+            self.member = input; self
         }
         /// Consumes the builder and constructs a [`GetMemberOutput`](crate::output::GetMemberOutput).
         pub fn build(self) -> crate::output::GetMemberOutput {
             crate::output::GetMemberOutput {
-                member: self.member,
+                member: self.member
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMemberOutput {
     /// Creates a new builder-style object to manufacture [`GetMemberOutput`](crate::output::GetMemberOutput).
@@ -1019,7 +1008,7 @@ impl GetMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsReportStatusOutput {
+pub struct GetFindingsReportStatusOutput  {
     /// <p>The ID of the report.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
@@ -1041,33 +1030,33 @@ pub struct GetFindingsReportStatusOutput {
 }
 impl GetFindingsReportStatusOutput {
     /// <p>The ID of the report.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>The status of the report.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ExternalReportStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ExternalReportStatus> {
         self.status.as_ref()
     }
     /// <p>The error code of the report.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ReportingErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ReportingErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message of the report.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The destination of the report.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::Destination> {
         self.destination.as_ref()
     }
     /// <p>The filter criteria associated with the report.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
 }
 /// See [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput).
 pub mod get_findings_report_status_output {
-
+    
     /// A builder for [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1086,8 +1075,7 @@ pub mod get_findings_report_status_output {
         }
         /// <p>The ID of the report.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// <p>The status of the report.</p>
         pub fn status(mut self, input: crate::model::ExternalReportStatus) -> Self {
@@ -1095,12 +1083,8 @@ pub mod get_findings_report_status_output {
             self
         }
         /// <p>The status of the report.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ExternalReportStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ExternalReportStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The error code of the report.</p>
         pub fn error_code(mut self, input: crate::model::ReportingErrorCode) -> Self {
@@ -1108,12 +1092,8 @@ pub mod get_findings_report_status_output {
             self
         }
         /// <p>The error code of the report.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ReportingErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ReportingErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The error message of the report.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1121,12 +1101,8 @@ pub mod get_findings_report_status_output {
             self
         }
         /// <p>The error message of the report.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The destination of the report.</p>
         pub fn destination(mut self, input: crate::model::Destination) -> Self {
@@ -1134,12 +1110,8 @@ pub mod get_findings_report_status_output {
             self
         }
         /// <p>The destination of the report.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::Destination>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::Destination>) -> Self {
+            self.destination = input; self
         }
         /// <p>The filter criteria associated with the report.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
@@ -1147,25 +1119,29 @@ pub mod get_findings_report_status_output {
             self
         }
         /// <p>The filter criteria associated with the report.</p>
-        pub fn set_filter_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FilterCriteria>,
-        ) -> Self {
-            self.filter_criteria = input;
-            self
+        pub fn set_filter_criteria(mut self, input: std::option::Option<crate::model::FilterCriteria>) -> Self {
+            self.filter_criteria = input; self
         }
         /// Consumes the builder and constructs a [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput).
         pub fn build(self) -> crate::output::GetFindingsReportStatusOutput {
             crate::output::GetFindingsReportStatusOutput {
-                report_id: self.report_id,
-                status: self.status,
-                error_code: self.error_code,
-                error_message: self.error_message,
-                destination: self.destination,
-                filter_criteria: self.filter_criteria,
+                report_id: self.report_id
+                ,
+                status: self.status
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
+                destination: self.destination
+                ,
+                filter_criteria: self.filter_criteria
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFindingsReportStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput).
@@ -1177,20 +1153,20 @@ impl GetFindingsReportStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDelegatedAdminAccountOutput {
+pub struct GetDelegatedAdminAccountOutput  {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
     #[doc(hidden)]
     pub delegated_admin: std::option::Option<crate::model::DelegatedAdmin>,
 }
 impl GetDelegatedAdminAccountOutput {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
-    pub fn delegated_admin(&self) -> std::option::Option<&crate::model::DelegatedAdmin> {
+    pub fn delegated_admin(&self) -> std::option::Option<& crate::model::DelegatedAdmin> {
         self.delegated_admin.as_ref()
     }
 }
 /// See [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
 pub mod get_delegated_admin_account_output {
-
+    
     /// A builder for [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1203,20 +1179,19 @@ pub mod get_delegated_admin_account_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
-        pub fn set_delegated_admin(
-            mut self,
-            input: std::option::Option<crate::model::DelegatedAdmin>,
-        ) -> Self {
-            self.delegated_admin = input;
-            self
+        pub fn set_delegated_admin(mut self, input: std::option::Option<crate::model::DelegatedAdmin>) -> Self {
+            self.delegated_admin = input; self
         }
         /// Consumes the builder and constructs a [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
         pub fn build(self) -> crate::output::GetDelegatedAdminAccountOutput {
             crate::output::GetDelegatedAdminAccountOutput {
-                delegated_admin: self.delegated_admin,
+                delegated_admin: self.delegated_admin
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDelegatedAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
@@ -1228,20 +1203,20 @@ impl GetDelegatedAdminAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationOutput {
+pub struct GetConfigurationOutput  {
     /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
     #[doc(hidden)]
     pub ecr_configuration: std::option::Option<crate::model::EcrConfigurationState>,
 }
 impl GetConfigurationOutput {
     /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
-    pub fn ecr_configuration(&self) -> std::option::Option<&crate::model::EcrConfigurationState> {
+    pub fn ecr_configuration(&self) -> std::option::Option<& crate::model::EcrConfigurationState> {
         self.ecr_configuration.as_ref()
     }
 }
 /// See [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
 pub mod get_configuration_output {
-
+    
     /// A builder for [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1254,20 +1229,19 @@ pub mod get_configuration_output {
             self
         }
         /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
-        pub fn set_ecr_configuration(
-            mut self,
-            input: std::option::Option<crate::model::EcrConfigurationState>,
-        ) -> Self {
-            self.ecr_configuration = input;
-            self
+        pub fn set_ecr_configuration(mut self, input: std::option::Option<crate::model::EcrConfigurationState>) -> Self {
+            self.ecr_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
         pub fn build(self) -> crate::output::GetConfigurationOutput {
             crate::output::GetConfigurationOutput {
-                ecr_configuration: self.ecr_configuration,
+                ecr_configuration: self.ecr_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
@@ -1279,20 +1253,20 @@ impl GetConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableDelegatedAdminAccountOutput {
+pub struct EnableDelegatedAdminAccountOutput  {
     /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
     #[doc(hidden)]
     pub delegated_admin_account_id: std::option::Option<std::string::String>,
 }
 impl EnableDelegatedAdminAccountOutput {
     /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
-    pub fn delegated_admin_account_id(&self) -> std::option::Option<&str> {
+    pub fn delegated_admin_account_id(&self) -> std::option::Option<& str> {
         self.delegated_admin_account_id.as_deref()
     }
 }
 /// See [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput).
 pub mod enable_delegated_admin_account_output {
-
+    
     /// A builder for [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1305,20 +1279,19 @@ pub mod enable_delegated_admin_account_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
-        pub fn set_delegated_admin_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delegated_admin_account_id = input;
-            self
+        pub fn set_delegated_admin_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delegated_admin_account_id = input; self
         }
         /// Consumes the builder and constructs a [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput).
         pub fn build(self) -> crate::output::EnableDelegatedAdminAccountOutput {
             crate::output::EnableDelegatedAdminAccountOutput {
-                delegated_admin_account_id: self.delegated_admin_account_id,
+                delegated_admin_account_id: self.delegated_admin_account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableDelegatedAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput).
@@ -1330,7 +1303,7 @@ impl EnableDelegatedAdminAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableOutput {
+pub struct EnableOutput  {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1340,17 +1313,17 @@ pub struct EnableOutput {
 }
 impl EnableOutput {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+    pub fn accounts(&self) -> std::option::Option<& [crate::model::Account]> {
         self.accounts.as_deref()
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-    pub fn failed_accounts(&self) -> std::option::Option<&[crate::model::FailedAccount]> {
+    pub fn failed_accounts(&self) -> std::option::Option<& [crate::model::FailedAccount]> {
         self.failed_accounts.as_deref()
     }
 }
 /// See [`EnableOutput`](crate::output::EnableOutput).
 pub mod enable_output {
-
+    
     /// A builder for [`EnableOutput`](crate::output::EnableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1365,17 +1338,13 @@ pub mod enable_output {
         /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
         pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input);
-            self.accounts = Some(v);
-            self
+                            v.push(input);
+                            self.accounts = Some(v);
+                            self
         }
         /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-        pub fn set_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Account>>,
-        ) -> Self {
-            self.accounts = input;
-            self
+        pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Account>>) -> Self {
+            self.accounts = input; self
         }
         /// Appends an item to `failed_accounts`.
         ///
@@ -1384,26 +1353,26 @@ pub mod enable_output {
         /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
         pub fn failed_accounts(mut self, input: crate::model::FailedAccount) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
-            v.push(input);
-            self.failed_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.failed_accounts = Some(v);
+                            self
         }
         /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-        pub fn set_failed_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>,
-        ) -> Self {
-            self.failed_accounts = input;
-            self
+        pub fn set_failed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>) -> Self {
+            self.failed_accounts = input; self
         }
         /// Consumes the builder and constructs a [`EnableOutput`](crate::output::EnableOutput).
         pub fn build(self) -> crate::output::EnableOutput {
             crate::output::EnableOutput {
-                accounts: self.accounts,
-                failed_accounts: self.failed_accounts,
+                accounts: self.accounts
+                ,
+                failed_accounts: self.failed_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableOutput {
     /// Creates a new builder-style object to manufacture [`EnableOutput`](crate::output::EnableOutput).
@@ -1415,20 +1384,20 @@ impl EnableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMemberOutput {
+pub struct DisassociateMemberOutput  {
     /// <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DisassociateMemberOutput {
     /// <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 /// See [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
 pub mod disassociate_member_output {
-
+    
     /// A builder for [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1442,16 +1411,18 @@ pub mod disassociate_member_output {
         }
         /// <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
         pub fn build(self) -> crate::output::DisassociateMemberOutput {
             crate::output::DisassociateMemberOutput {
-                account_id: self.account_id,
+                account_id: self.account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateMemberOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
@@ -1463,20 +1434,20 @@ impl DisassociateMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableDelegatedAdminAccountOutput {
+pub struct DisableDelegatedAdminAccountOutput  {
     /// <p>The Amazon Web Services account ID of the successfully disabled delegated administrator.</p>
     #[doc(hidden)]
     pub delegated_admin_account_id: std::option::Option<std::string::String>,
 }
 impl DisableDelegatedAdminAccountOutput {
     /// <p>The Amazon Web Services account ID of the successfully disabled delegated administrator.</p>
-    pub fn delegated_admin_account_id(&self) -> std::option::Option<&str> {
+    pub fn delegated_admin_account_id(&self) -> std::option::Option<& str> {
         self.delegated_admin_account_id.as_deref()
     }
 }
 /// See [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput).
 pub mod disable_delegated_admin_account_output {
-
+    
     /// A builder for [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1489,20 +1460,19 @@ pub mod disable_delegated_admin_account_output {
             self
         }
         /// <p>The Amazon Web Services account ID of the successfully disabled delegated administrator.</p>
-        pub fn set_delegated_admin_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delegated_admin_account_id = input;
-            self
+        pub fn set_delegated_admin_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delegated_admin_account_id = input; self
         }
         /// Consumes the builder and constructs a [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput).
         pub fn build(self) -> crate::output::DisableDelegatedAdminAccountOutput {
             crate::output::DisableDelegatedAdminAccountOutput {
-                delegated_admin_account_id: self.delegated_admin_account_id,
+                delegated_admin_account_id: self.delegated_admin_account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableDelegatedAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput).
@@ -1514,7 +1484,7 @@ impl DisableDelegatedAdminAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableOutput {
+pub struct DisableOutput  {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1524,17 +1494,17 @@ pub struct DisableOutput {
 }
 impl DisableOutput {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
-    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+    pub fn accounts(&self) -> std::option::Option<& [crate::model::Account]> {
         self.accounts.as_deref()
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
-    pub fn failed_accounts(&self) -> std::option::Option<&[crate::model::FailedAccount]> {
+    pub fn failed_accounts(&self) -> std::option::Option<& [crate::model::FailedAccount]> {
         self.failed_accounts.as_deref()
     }
 }
 /// See [`DisableOutput`](crate::output::DisableOutput).
 pub mod disable_output {
-
+    
     /// A builder for [`DisableOutput`](crate::output::DisableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1549,17 +1519,13 @@ pub mod disable_output {
         /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
         pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input);
-            self.accounts = Some(v);
-            self
+                            v.push(input);
+                            self.accounts = Some(v);
+                            self
         }
         /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
-        pub fn set_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Account>>,
-        ) -> Self {
-            self.accounts = input;
-            self
+        pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Account>>) -> Self {
+            self.accounts = input; self
         }
         /// Appends an item to `failed_accounts`.
         ///
@@ -1568,26 +1534,26 @@ pub mod disable_output {
         /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
         pub fn failed_accounts(mut self, input: crate::model::FailedAccount) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
-            v.push(input);
-            self.failed_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.failed_accounts = Some(v);
+                            self
         }
         /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
-        pub fn set_failed_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>,
-        ) -> Self {
-            self.failed_accounts = input;
-            self
+        pub fn set_failed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>) -> Self {
+            self.failed_accounts = input; self
         }
         /// Consumes the builder and constructs a [`DisableOutput`](crate::output::DisableOutput).
         pub fn build(self) -> crate::output::DisableOutput {
             crate::output::DisableOutput {
-                accounts: self.accounts,
-                failed_accounts: self.failed_accounts,
+                accounts: self.accounts
+                ,
+                failed_accounts: self.failed_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableOutput {
     /// Creates a new builder-style object to manufacture [`DisableOutput`](crate::output::DisableOutput).
@@ -1599,7 +1565,7 @@ impl DisableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationOutput {
+pub struct DescribeOrganizationConfigurationOutput  {
     /// <p>The scan types are automatically enabled for new members of your organization.</p>
     #[doc(hidden)]
     pub auto_enable: std::option::Option<crate::model::AutoEnable>,
@@ -1609,7 +1575,7 @@ pub struct DescribeOrganizationConfigurationOutput {
 }
 impl DescribeOrganizationConfigurationOutput {
     /// <p>The scan types are automatically enabled for new members of your organization.</p>
-    pub fn auto_enable(&self) -> std::option::Option<&crate::model::AutoEnable> {
+    pub fn auto_enable(&self) -> std::option::Option<& crate::model::AutoEnable> {
         self.auto_enable.as_ref()
     }
     /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
@@ -1619,7 +1585,7 @@ impl DescribeOrganizationConfigurationOutput {
 }
 /// See [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
 pub mod describe_organization_configuration_output {
-
+    
     /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1633,12 +1599,8 @@ pub mod describe_organization_configuration_output {
             self
         }
         /// <p>The scan types are automatically enabled for new members of your organization.</p>
-        pub fn set_auto_enable(
-            mut self,
-            input: std::option::Option<crate::model::AutoEnable>,
-        ) -> Self {
-            self.auto_enable = input;
-            self
+        pub fn set_auto_enable(mut self, input: std::option::Option<crate::model::AutoEnable>) -> Self {
+            self.auto_enable = input; self
         }
         /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
         pub fn max_account_limit_reached(mut self, input: bool) -> Self {
@@ -1647,17 +1609,20 @@ pub mod describe_organization_configuration_output {
         }
         /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
         pub fn set_max_account_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
-            self.max_account_limit_reached = input;
-            self
+            self.max_account_limit_reached = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeOrganizationConfigurationOutput {
             crate::output::DescribeOrganizationConfigurationOutput {
-                auto_enable: self.auto_enable,
-                max_account_limit_reached: self.max_account_limit_reached,
+                auto_enable: self.auto_enable
+                ,
+                max_account_limit_reached: self.max_account_limit_reached
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
@@ -1669,20 +1634,20 @@ impl DescribeOrganizationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFilterOutput {
+pub struct DeleteFilterOutput  {
     /// <p>The Amazon Resource Number (ARN) of the filter that has been deleted.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteFilterOutput {
     /// <p>The Amazon Resource Number (ARN) of the filter that has been deleted.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
 pub mod delete_filter_output {
-
+    
     /// A builder for [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1696,14 +1661,18 @@ pub mod delete_filter_output {
         }
         /// <p>The Amazon Resource Number (ARN) of the filter that has been deleted.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
         pub fn build(self) -> crate::output::DeleteFilterOutput {
-            crate::output::DeleteFilterOutput { arn: self.arn }
+            crate::output::DeleteFilterOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteFilterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
@@ -1715,20 +1684,20 @@ impl DeleteFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFindingsReportOutput {
+pub struct CreateFindingsReportOutput  {
     /// <p>The ID of the report.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl CreateFindingsReportOutput {
     /// <p>The ID of the report.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
 /// See [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput).
 pub mod create_findings_report_output {
-
+    
     /// A builder for [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1742,16 +1711,18 @@ pub mod create_findings_report_output {
         }
         /// <p>The ID of the report.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput).
         pub fn build(self) -> crate::output::CreateFindingsReportOutput {
             crate::output::CreateFindingsReportOutput {
-                report_id: self.report_id,
+                report_id: self.report_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFindingsReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput).
@@ -1763,20 +1734,20 @@ impl CreateFindingsReportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFilterOutput {
+pub struct CreateFilterOutput  {
     /// <p>The Amazon Resource Number (ARN) of the successfully created filter.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateFilterOutput {
     /// <p>The Amazon Resource Number (ARN) of the successfully created filter.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateFilterOutput`](crate::output::CreateFilterOutput).
 pub mod create_filter_output {
-
+    
     /// A builder for [`CreateFilterOutput`](crate::output::CreateFilterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1790,14 +1761,18 @@ pub mod create_filter_output {
         }
         /// <p>The Amazon Resource Number (ARN) of the successfully created filter.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateFilterOutput`](crate::output::CreateFilterOutput).
         pub fn build(self) -> crate::output::CreateFilterOutput {
-            crate::output::CreateFilterOutput { arn: self.arn }
+            crate::output::CreateFilterOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateFilterOutput {
     /// Creates a new builder-style object to manufacture [`CreateFilterOutput`](crate::output::CreateFilterOutput).
@@ -1809,20 +1784,20 @@ impl CreateFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelFindingsReportOutput {
+pub struct CancelFindingsReportOutput  {
     /// <p>The ID of the canceled report.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl CancelFindingsReportOutput {
     /// <p>The ID of the canceled report.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
 /// See [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput).
 pub mod cancel_findings_report_output {
-
+    
     /// A builder for [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1836,16 +1811,18 @@ pub mod cancel_findings_report_output {
         }
         /// <p>The ID of the canceled report.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput).
         pub fn build(self) -> crate::output::CancelFindingsReportOutput {
             crate::output::CancelFindingsReportOutput {
-                report_id: self.report_id,
+                report_id: self.report_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelFindingsReportOutput {
     /// Creates a new builder-style object to manufacture [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput).
@@ -1857,7 +1834,7 @@ impl CancelFindingsReportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetFreeTrialInfoOutput {
+pub struct BatchGetFreeTrialInfoOutput  {
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::FreeTrialAccountInfo>>,
@@ -1867,23 +1844,22 @@ pub struct BatchGetFreeTrialInfoOutput {
 }
 impl BatchGetFreeTrialInfoOutput {
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
-    pub fn accounts(&self) -> std::option::Option<&[crate::model::FreeTrialAccountInfo]> {
+    pub fn accounts(&self) -> std::option::Option<& [crate::model::FreeTrialAccountInfo]> {
         self.accounts.as_deref()
     }
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
-    pub fn failed_accounts(&self) -> std::option::Option<&[crate::model::FreeTrialInfoError]> {
+    pub fn failed_accounts(&self) -> std::option::Option<& [crate::model::FreeTrialInfoError]> {
         self.failed_accounts.as_deref()
     }
 }
 /// See [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput).
 pub mod batch_get_free_trial_info_output {
-
+    
     /// A builder for [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::FreeTrialAccountInfo>>,
-        pub(crate) failed_accounts:
-            std::option::Option<std::vec::Vec<crate::model::FreeTrialInfoError>>,
+        pub(crate) failed_accounts: std::option::Option<std::vec::Vec<crate::model::FreeTrialInfoError>>,
     }
     impl Builder {
         /// Appends an item to `accounts`.
@@ -1893,17 +1869,13 @@ pub mod batch_get_free_trial_info_output {
         /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
         pub fn accounts(mut self, input: crate::model::FreeTrialAccountInfo) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input);
-            self.accounts = Some(v);
-            self
+                            v.push(input);
+                            self.accounts = Some(v);
+                            self
         }
         /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
-        pub fn set_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FreeTrialAccountInfo>>,
-        ) -> Self {
-            self.accounts = input;
-            self
+        pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::FreeTrialAccountInfo>>) -> Self {
+            self.accounts = input; self
         }
         /// Appends an item to `failed_accounts`.
         ///
@@ -1912,26 +1884,26 @@ pub mod batch_get_free_trial_info_output {
         /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
         pub fn failed_accounts(mut self, input: crate::model::FreeTrialInfoError) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
-            v.push(input);
-            self.failed_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.failed_accounts = Some(v);
+                            self
         }
         /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
-        pub fn set_failed_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FreeTrialInfoError>>,
-        ) -> Self {
-            self.failed_accounts = input;
-            self
+        pub fn set_failed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::FreeTrialInfoError>>) -> Self {
+            self.failed_accounts = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput).
         pub fn build(self) -> crate::output::BatchGetFreeTrialInfoOutput {
             crate::output::BatchGetFreeTrialInfoOutput {
-                accounts: self.accounts,
-                failed_accounts: self.failed_accounts,
+                accounts: self.accounts
+                ,
+                failed_accounts: self.failed_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetFreeTrialInfoOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput).
@@ -1943,7 +1915,7 @@ impl BatchGetFreeTrialInfoOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAccountStatusOutput {
+pub struct BatchGetAccountStatusOutput  {
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::AccountState>>,
@@ -1953,17 +1925,17 @@ pub struct BatchGetAccountStatusOutput {
 }
 impl BatchGetAccountStatusOutput {
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
-    pub fn accounts(&self) -> std::option::Option<&[crate::model::AccountState]> {
+    pub fn accounts(&self) -> std::option::Option<& [crate::model::AccountState]> {
         self.accounts.as_deref()
     }
     /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
-    pub fn failed_accounts(&self) -> std::option::Option<&[crate::model::FailedAccount]> {
+    pub fn failed_accounts(&self) -> std::option::Option<& [crate::model::FailedAccount]> {
         self.failed_accounts.as_deref()
     }
 }
 /// See [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput).
 pub mod batch_get_account_status_output {
-
+    
     /// A builder for [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1978,17 +1950,13 @@ pub mod batch_get_account_status_output {
         /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
         pub fn accounts(mut self, input: crate::model::AccountState) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input);
-            self.accounts = Some(v);
-            self
+                            v.push(input);
+                            self.accounts = Some(v);
+                            self
         }
         /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
-        pub fn set_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountState>>,
-        ) -> Self {
-            self.accounts = input;
-            self
+        pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountState>>) -> Self {
+            self.accounts = input; self
         }
         /// Appends an item to `failed_accounts`.
         ///
@@ -1997,26 +1965,26 @@ pub mod batch_get_account_status_output {
         /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
         pub fn failed_accounts(mut self, input: crate::model::FailedAccount) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
-            v.push(input);
-            self.failed_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.failed_accounts = Some(v);
+                            self
         }
         /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
-        pub fn set_failed_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>,
-        ) -> Self {
-            self.failed_accounts = input;
-            self
+        pub fn set_failed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>) -> Self {
+            self.failed_accounts = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput).
         pub fn build(self) -> crate::output::BatchGetAccountStatusOutput {
             crate::output::BatchGetAccountStatusOutput {
-                accounts: self.accounts,
-                failed_accounts: self.failed_accounts,
+                accounts: self.accounts
+                ,
+                failed_accounts: self.failed_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput).
@@ -2028,20 +1996,20 @@ impl BatchGetAccountStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateMemberOutput {
+pub struct AssociateMemberOutput  {
     /// <p>The Amazon Web Services account ID of the successfully associated member account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl AssociateMemberOutput {
     /// <p>The Amazon Web Services account ID of the successfully associated member account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 /// See [`AssociateMemberOutput`](crate::output::AssociateMemberOutput).
 pub mod associate_member_output {
-
+    
     /// A builder for [`AssociateMemberOutput`](crate::output::AssociateMemberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2055,16 +2023,18 @@ pub mod associate_member_output {
         }
         /// <p>The Amazon Web Services account ID of the successfully associated member account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Consumes the builder and constructs a [`AssociateMemberOutput`](crate::output::AssociateMemberOutput).
         pub fn build(self) -> crate::output::AssociateMemberOutput {
             crate::output::AssociateMemberOutput {
-                account_id: self.account_id,
+                account_id: self.account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateMemberOutput {
     /// Creates a new builder-style object to manufacture [`AssociateMemberOutput`](crate::output::AssociateMemberOutput).
@@ -2072,3 +2042,4 @@ impl AssociateMemberOutput {
         crate::output::associate_member_output::Builder::default()
     }
 }
+

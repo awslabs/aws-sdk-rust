@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLabelGroupOutput {}
+pub struct UpdateLabelGroupOutput  {
+}
 /// See [`UpdateLabelGroupOutput`](crate::output::UpdateLabelGroupOutput).
 pub mod update_label_group_output {
-
+    
     /// A builder for [`UpdateLabelGroupOutput`](crate::output::UpdateLabelGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLabelGroupOutput`](crate::output::UpdateLabelGroupOutput).
         pub fn build(self) -> crate::output::UpdateLabelGroupOutput {
-            crate::output::UpdateLabelGroupOutput {}
+            crate::output::UpdateLabelGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLabelGroupOutput`](crate::output::UpdateLabelGroupOutput).
@@ -26,19 +31,24 @@ impl UpdateLabelGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInferenceSchedulerOutput {}
+pub struct UpdateInferenceSchedulerOutput  {
+}
 /// See [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput).
 pub mod update_inference_scheduler_output {
-
+    
     /// A builder for [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::UpdateInferenceSchedulerOutput {
-            crate::output::UpdateInferenceSchedulerOutput {}
+            crate::output::UpdateInferenceSchedulerOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput).
@@ -50,19 +60,24 @@ impl UpdateInferenceSchedulerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -74,19 +89,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -98,7 +118,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopInferenceSchedulerOutput {
+pub struct StopInferenceSchedulerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
     #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
@@ -117,29 +137,29 @@ pub struct StopInferenceSchedulerOutput {
 }
 impl StopInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The name of the inference scheduler being stopped. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
-    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>Indicates the status of the inference scheduler. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput).
 pub mod stop_inference_scheduler_output {
-
+    
     /// A builder for [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -157,8 +177,7 @@ pub mod stop_inference_scheduler_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +186,7 @@ pub mod stop_inference_scheduler_output {
         }
         /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p>The name of the inference scheduler being stopped. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,12 +194,8 @@ pub mod stop_inference_scheduler_output {
             self
         }
         /// <p>The name of the inference scheduler being stopped. </p>
-        pub fn set_inference_scheduler_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_name = input;
-            self
+        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
         pub fn inference_scheduler_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,12 +203,8 @@ pub mod stop_inference_scheduler_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
-        pub fn set_inference_scheduler_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_arn = input;
-            self
+        pub fn set_inference_scheduler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_arn = input; self
         }
         /// <p>Indicates the status of the inference scheduler. </p>
         pub fn status(mut self, input: crate::model::InferenceSchedulerStatus) -> Self {
@@ -202,24 +212,27 @@ pub mod stop_inference_scheduler_output {
             self
         }
         /// <p>Indicates the status of the inference scheduler. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InferenceSchedulerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceSchedulerStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::StopInferenceSchedulerOutput {
             crate::output::StopInferenceSchedulerOutput {
-                model_arn: self.model_arn,
-                model_name: self.model_name,
-                inference_scheduler_name: self.inference_scheduler_name,
-                inference_scheduler_arn: self.inference_scheduler_arn,
-                status: self.status,
+                model_arn: self.model_arn
+                ,
+                model_name: self.model_name
+                ,
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+                inference_scheduler_arn: self.inference_scheduler_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput).
@@ -231,7 +244,7 @@ impl StopInferenceSchedulerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartInferenceSchedulerOutput {
+pub struct StartInferenceSchedulerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler. </p>
     #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
@@ -250,29 +263,29 @@ pub struct StartInferenceSchedulerOutput {
 }
 impl StartInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the ML model being used by the inference scheduler. </p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The name of the inference scheduler being started. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
-    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>Indicates the status of the inference scheduler. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput).
 pub mod start_inference_scheduler_output {
-
+    
     /// A builder for [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -290,8 +303,7 @@ pub mod start_inference_scheduler_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// <p>The name of the ML model being used by the inference scheduler. </p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -300,8 +312,7 @@ pub mod start_inference_scheduler_output {
         }
         /// <p>The name of the ML model being used by the inference scheduler. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p>The name of the inference scheduler being started. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -309,12 +320,8 @@ pub mod start_inference_scheduler_output {
             self
         }
         /// <p>The name of the inference scheduler being started. </p>
-        pub fn set_inference_scheduler_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_name = input;
-            self
+        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
         pub fn inference_scheduler_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -322,12 +329,8 @@ pub mod start_inference_scheduler_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
-        pub fn set_inference_scheduler_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_arn = input;
-            self
+        pub fn set_inference_scheduler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_arn = input; self
         }
         /// <p>Indicates the status of the inference scheduler. </p>
         pub fn status(mut self, input: crate::model::InferenceSchedulerStatus) -> Self {
@@ -335,24 +338,27 @@ pub mod start_inference_scheduler_output {
             self
         }
         /// <p>Indicates the status of the inference scheduler. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InferenceSchedulerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceSchedulerStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::StartInferenceSchedulerOutput {
             crate::output::StartInferenceSchedulerOutput {
-                model_arn: self.model_arn,
-                model_name: self.model_name,
-                inference_scheduler_name: self.inference_scheduler_name,
-                inference_scheduler_arn: self.inference_scheduler_arn,
-                status: self.status,
+                model_arn: self.model_arn
+                ,
+                model_name: self.model_name
+                ,
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+                inference_scheduler_arn: self.inference_scheduler_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput).
@@ -364,7 +370,7 @@ impl StartInferenceSchedulerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDataIngestionJobOutput {
+pub struct StartDataIngestionJobOutput  {
     /// <p>Indicates the job ID of the data ingestion job. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -374,17 +380,17 @@ pub struct StartDataIngestionJobOutput {
 }
 impl StartDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::IngestionJobStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput).
 pub mod start_data_ingestion_job_output {
-
+    
     /// A builder for [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -399,8 +405,7 @@ pub mod start_data_ingestion_job_output {
         }
         /// <p>Indicates the job ID of the data ingestion job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
         pub fn status(mut self, input: crate::model::IngestionJobStatus) -> Self {
@@ -408,21 +413,21 @@ pub mod start_data_ingestion_job_output {
             self
         }
         /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::IngestionJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::IngestionJobStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput).
         pub fn build(self) -> crate::output::StartDataIngestionJobOutput {
             crate::output::StartDataIngestionJobOutput {
-                job_id: self.job_id,
-                status: self.status,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDataIngestionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput).
@@ -434,20 +439,20 @@ impl StartDataIngestionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p> Any tags associated with the resource. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p> Any tags associated with the resource. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -461,23 +466,24 @@ pub mod list_tags_for_resource_output {
         /// <p> Any tags associated with the resource. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p> Any tags associated with the resource. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -489,35 +495,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSensorStatisticsOutput {
+pub struct ListSensorStatisticsOutput  {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     #[doc(hidden)]
-    pub sensor_statistics_summaries:
-        std::option::Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>,
+    pub sensor_statistics_summaries: std::option::Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>,
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSensorStatisticsOutput {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn sensor_statistics_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::SensorStatisticsSummary]> {
+    pub fn sensor_statistics_summaries(&self) -> std::option::Option<& [crate::model::SensorStatisticsSummary]> {
         self.sensor_statistics_summaries.as_deref()
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput).
 pub mod list_sensor_statistics_output {
-
+    
     /// A builder for [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sensor_statistics_summaries:
-            std::option::Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>,
+        pub(crate) sensor_statistics_summaries: std::option::Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -526,22 +528,15 @@ pub mod list_sensor_statistics_output {
         /// To override the contents of this collection use [`set_sensor_statistics_summaries`](Self::set_sensor_statistics_summaries).
         ///
         /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-        pub fn sensor_statistics_summaries(
-            mut self,
-            input: crate::model::SensorStatisticsSummary,
-        ) -> Self {
+        pub fn sensor_statistics_summaries(mut self, input: crate::model::SensorStatisticsSummary) -> Self {
             let mut v = self.sensor_statistics_summaries.unwrap_or_default();
-            v.push(input);
-            self.sensor_statistics_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.sensor_statistics_summaries = Some(v);
+                            self
         }
         /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-        pub fn set_sensor_statistics_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>,
-        ) -> Self {
-            self.sensor_statistics_summaries = input;
-            self
+        pub fn set_sensor_statistics_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>) -> Self {
+            self.sensor_statistics_summaries = input; self
         }
         /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -550,17 +545,20 @@ pub mod list_sensor_statistics_output {
         }
         /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput).
         pub fn build(self) -> crate::output::ListSensorStatisticsOutput {
             crate::output::ListSensorStatisticsOutput {
-                sensor_statistics_summaries: self.sensor_statistics_summaries,
-                next_token: self.next_token,
+                sensor_statistics_summaries: self.sensor_statistics_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSensorStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput).
@@ -572,7 +570,7 @@ impl ListSensorStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListModelsOutput {
+pub struct ListModelsOutput  {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -582,17 +580,17 @@ pub struct ListModelsOutput {
 }
 impl ListModelsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
-    pub fn model_summaries(&self) -> std::option::Option<&[crate::model::ModelSummary]> {
+    pub fn model_summaries(&self) -> std::option::Option<& [crate::model::ModelSummary]> {
         self.model_summaries.as_deref()
     }
 }
 /// See [`ListModelsOutput`](crate::output::ListModelsOutput).
 pub mod list_models_output {
-
+    
     /// A builder for [`ListModelsOutput`](crate::output::ListModelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -607,8 +605,7 @@ pub mod list_models_output {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `model_summaries`.
         ///
@@ -617,26 +614,26 @@ pub mod list_models_output {
         /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
         pub fn model_summaries(mut self, input: crate::model::ModelSummary) -> Self {
             let mut v = self.model_summaries.unwrap_or_default();
-            v.push(input);
-            self.model_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.model_summaries = Some(v);
+                            self
         }
         /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
-        pub fn set_model_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ModelSummary>>,
-        ) -> Self {
-            self.model_summaries = input;
-            self
+        pub fn set_model_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ModelSummary>>) -> Self {
+            self.model_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListModelsOutput`](crate::output::ListModelsOutput).
         pub fn build(self) -> crate::output::ListModelsOutput {
             crate::output::ListModelsOutput {
-                next_token: self.next_token,
-                model_summaries: self.model_summaries,
+                next_token: self.next_token
+                ,
+                model_summaries: self.model_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListModelsOutput`](crate::output::ListModelsOutput).
@@ -648,7 +645,7 @@ impl ListModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLabelsOutput {
+pub struct ListLabelsOutput  {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -658,17 +655,17 @@ pub struct ListLabelsOutput {
 }
 impl ListLabelsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> A summary of the items in the label group. </p>
-    pub fn label_summaries(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
+    pub fn label_summaries(&self) -> std::option::Option<& [crate::model::LabelSummary]> {
         self.label_summaries.as_deref()
     }
 }
 /// See [`ListLabelsOutput`](crate::output::ListLabelsOutput).
 pub mod list_labels_output {
-
+    
     /// A builder for [`ListLabelsOutput`](crate::output::ListLabelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -683,8 +680,7 @@ pub mod list_labels_output {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `label_summaries`.
         ///
@@ -693,26 +689,26 @@ pub mod list_labels_output {
         /// <p> A summary of the items in the label group. </p>
         pub fn label_summaries(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.label_summaries.unwrap_or_default();
-            v.push(input);
-            self.label_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.label_summaries = Some(v);
+                            self
         }
         /// <p> A summary of the items in the label group. </p>
-        pub fn set_label_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
-        ) -> Self {
-            self.label_summaries = input;
-            self
+        pub fn set_label_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>) -> Self {
+            self.label_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListLabelsOutput`](crate::output::ListLabelsOutput).
         pub fn build(self) -> crate::output::ListLabelsOutput {
             crate::output::ListLabelsOutput {
-                next_token: self.next_token,
-                label_summaries: self.label_summaries,
+                next_token: self.next_token
+                ,
+                label_summaries: self.label_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLabelsOutput {
     /// Creates a new builder-style object to manufacture [`ListLabelsOutput`](crate::output::ListLabelsOutput).
@@ -724,7 +720,7 @@ impl ListLabelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLabelGroupsOutput {
+pub struct ListLabelGroupsOutput  {
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -734,23 +730,22 @@ pub struct ListLabelGroupsOutput {
 }
 impl ListLabelGroupsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> A summary of the label groups. </p>
-    pub fn label_group_summaries(&self) -> std::option::Option<&[crate::model::LabelGroupSummary]> {
+    pub fn label_group_summaries(&self) -> std::option::Option<& [crate::model::LabelGroupSummary]> {
         self.label_group_summaries.as_deref()
     }
 }
 /// See [`ListLabelGroupsOutput`](crate::output::ListLabelGroupsOutput).
 pub mod list_label_groups_output {
-
+    
     /// A builder for [`ListLabelGroupsOutput`](crate::output::ListLabelGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) label_group_summaries:
-            std::option::Option<std::vec::Vec<crate::model::LabelGroupSummary>>,
+        pub(crate) label_group_summaries: std::option::Option<std::vec::Vec<crate::model::LabelGroupSummary>>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
@@ -760,8 +755,7 @@ pub mod list_label_groups_output {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `label_group_summaries`.
         ///
@@ -770,26 +764,26 @@ pub mod list_label_groups_output {
         /// <p> A summary of the label groups. </p>
         pub fn label_group_summaries(mut self, input: crate::model::LabelGroupSummary) -> Self {
             let mut v = self.label_group_summaries.unwrap_or_default();
-            v.push(input);
-            self.label_group_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.label_group_summaries = Some(v);
+                            self
         }
         /// <p> A summary of the label groups. </p>
-        pub fn set_label_group_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LabelGroupSummary>>,
-        ) -> Self {
-            self.label_group_summaries = input;
-            self
+        pub fn set_label_group_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::LabelGroupSummary>>) -> Self {
+            self.label_group_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListLabelGroupsOutput`](crate::output::ListLabelGroupsOutput).
         pub fn build(self) -> crate::output::ListLabelGroupsOutput {
             crate::output::ListLabelGroupsOutput {
-                next_token: self.next_token,
-                label_group_summaries: self.label_group_summaries,
+                next_token: self.next_token
+                ,
+                label_group_summaries: self.label_group_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLabelGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListLabelGroupsOutput`](crate::output::ListLabelGroupsOutput).
@@ -801,36 +795,32 @@ impl ListLabelGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInferenceSchedulersOutput {
+pub struct ListInferenceSchedulersOutput  {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     #[doc(hidden)]
-    pub inference_scheduler_summaries:
-        std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
+    pub inference_scheduler_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
 }
 impl ListInferenceSchedulersOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-    pub fn inference_scheduler_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::InferenceSchedulerSummary]> {
+    pub fn inference_scheduler_summaries(&self) -> std::option::Option<& [crate::model::InferenceSchedulerSummary]> {
         self.inference_scheduler_summaries.as_deref()
     }
 }
 /// See [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput).
 pub mod list_inference_schedulers_output {
-
+    
     /// A builder for [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) inference_scheduler_summaries:
-            std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
+        pub(crate) inference_scheduler_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
@@ -840,39 +830,35 @@ pub mod list_inference_schedulers_output {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `inference_scheduler_summaries`.
         ///
         /// To override the contents of this collection use [`set_inference_scheduler_summaries`](Self::set_inference_scheduler_summaries).
         ///
         /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-        pub fn inference_scheduler_summaries(
-            mut self,
-            input: crate::model::InferenceSchedulerSummary,
-        ) -> Self {
+        pub fn inference_scheduler_summaries(mut self, input: crate::model::InferenceSchedulerSummary) -> Self {
             let mut v = self.inference_scheduler_summaries.unwrap_or_default();
-            v.push(input);
-            self.inference_scheduler_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.inference_scheduler_summaries = Some(v);
+                            self
         }
         /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-        pub fn set_inference_scheduler_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
-        ) -> Self {
-            self.inference_scheduler_summaries = input;
-            self
+        pub fn set_inference_scheduler_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>) -> Self {
+            self.inference_scheduler_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput).
         pub fn build(self) -> crate::output::ListInferenceSchedulersOutput {
             crate::output::ListInferenceSchedulersOutput {
-                next_token: self.next_token,
-                inference_scheduler_summaries: self.inference_scheduler_summaries,
+                next_token: self.next_token
+                ,
+                inference_scheduler_summaries: self.inference_scheduler_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInferenceSchedulersOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput).
@@ -884,36 +870,32 @@ impl ListInferenceSchedulersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInferenceExecutionsOutput {
+pub struct ListInferenceExecutionsOutput  {
     /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     #[doc(hidden)]
-    pub inference_execution_summaries:
-        std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
+    pub inference_execution_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
 }
 impl ListInferenceExecutionsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
-    pub fn inference_execution_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::InferenceExecutionSummary]> {
+    pub fn inference_execution_summaries(&self) -> std::option::Option<& [crate::model::InferenceExecutionSummary]> {
         self.inference_execution_summaries.as_deref()
     }
 }
 /// See [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput).
 pub mod list_inference_executions_output {
-
+    
     /// A builder for [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) inference_execution_summaries:
-            std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
+        pub(crate) inference_execution_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
@@ -923,39 +905,35 @@ pub mod list_inference_executions_output {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `inference_execution_summaries`.
         ///
         /// To override the contents of this collection use [`set_inference_execution_summaries`](Self::set_inference_execution_summaries).
         ///
         /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
-        pub fn inference_execution_summaries(
-            mut self,
-            input: crate::model::InferenceExecutionSummary,
-        ) -> Self {
+        pub fn inference_execution_summaries(mut self, input: crate::model::InferenceExecutionSummary) -> Self {
             let mut v = self.inference_execution_summaries.unwrap_or_default();
-            v.push(input);
-            self.inference_execution_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.inference_execution_summaries = Some(v);
+                            self
         }
         /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
-        pub fn set_inference_execution_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
-        ) -> Self {
-            self.inference_execution_summaries = input;
-            self
+        pub fn set_inference_execution_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>) -> Self {
+            self.inference_execution_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput).
         pub fn build(self) -> crate::output::ListInferenceExecutionsOutput {
             crate::output::ListInferenceExecutionsOutput {
-                next_token: self.next_token,
-                inference_execution_summaries: self.inference_execution_summaries,
+                next_token: self.next_token
+                ,
+                inference_execution_summaries: self.inference_execution_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInferenceExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput).
@@ -967,36 +945,32 @@ impl ListInferenceExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInferenceEventsOutput {
+pub struct ListInferenceEventsOutput  {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     #[doc(hidden)]
-    pub inference_event_summaries:
-        std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
+    pub inference_event_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
 }
 impl ListInferenceEventsOutput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
-    pub fn inference_event_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::InferenceEventSummary]> {
+    pub fn inference_event_summaries(&self) -> std::option::Option<& [crate::model::InferenceEventSummary]> {
         self.inference_event_summaries.as_deref()
     }
 }
 /// See [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
 pub mod list_inference_events_output {
-
+    
     /// A builder for [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) inference_event_summaries:
-            std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
+        pub(crate) inference_event_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
     }
     impl Builder {
         /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
@@ -1006,39 +980,35 @@ pub mod list_inference_events_output {
         }
         /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `inference_event_summaries`.
         ///
         /// To override the contents of this collection use [`set_inference_event_summaries`](Self::set_inference_event_summaries).
         ///
         /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
-        pub fn inference_event_summaries(
-            mut self,
-            input: crate::model::InferenceEventSummary,
-        ) -> Self {
+        pub fn inference_event_summaries(mut self, input: crate::model::InferenceEventSummary) -> Self {
             let mut v = self.inference_event_summaries.unwrap_or_default();
-            v.push(input);
-            self.inference_event_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.inference_event_summaries = Some(v);
+                            self
         }
         /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
-        pub fn set_inference_event_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
-        ) -> Self {
-            self.inference_event_summaries = input;
-            self
+        pub fn set_inference_event_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>) -> Self {
+            self.inference_event_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
         pub fn build(self) -> crate::output::ListInferenceEventsOutput {
             crate::output::ListInferenceEventsOutput {
-                next_token: self.next_token,
-                inference_event_summaries: self.inference_event_summaries,
+                next_token: self.next_token
+                ,
+                inference_event_summaries: self.inference_event_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInferenceEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
@@ -1050,7 +1020,7 @@ impl ListInferenceEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasetsOutput {
+pub struct ListDatasetsOutput  {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1060,23 +1030,22 @@ pub struct ListDatasetsOutput {
 }
 impl ListDatasetsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
-    pub fn dataset_summaries(&self) -> std::option::Option<&[crate::model::DatasetSummary]> {
+    pub fn dataset_summaries(&self) -> std::option::Option<& [crate::model::DatasetSummary]> {
         self.dataset_summaries.as_deref()
     }
 }
 /// See [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
 pub mod list_datasets_output {
-
+    
     /// A builder for [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) dataset_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
+        pub(crate) dataset_summaries: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
@@ -1086,8 +1055,7 @@ pub mod list_datasets_output {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `dataset_summaries`.
         ///
@@ -1096,26 +1064,26 @@ pub mod list_datasets_output {
         /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
         pub fn dataset_summaries(mut self, input: crate::model::DatasetSummary) -> Self {
             let mut v = self.dataset_summaries.unwrap_or_default();
-            v.push(input);
-            self.dataset_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.dataset_summaries = Some(v);
+                            self
         }
         /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
-        pub fn set_dataset_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
-        ) -> Self {
-            self.dataset_summaries = input;
-            self
+        pub fn set_dataset_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>) -> Self {
+            self.dataset_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
         pub fn build(self) -> crate::output::ListDatasetsOutput {
             crate::output::ListDatasetsOutput {
-                next_token: self.next_token,
-                dataset_summaries: self.dataset_summaries,
+                next_token: self.next_token
+                ,
+                dataset_summaries: self.dataset_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDatasetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
@@ -1127,36 +1095,32 @@ impl ListDatasetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataIngestionJobsOutput {
+pub struct ListDataIngestionJobsOutput  {
     /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
     #[doc(hidden)]
-    pub data_ingestion_job_summaries:
-        std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
+    pub data_ingestion_job_summaries: std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
 }
 impl ListDataIngestionJobsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-    pub fn data_ingestion_job_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataIngestionJobSummary]> {
+    pub fn data_ingestion_job_summaries(&self) -> std::option::Option<& [crate::model::DataIngestionJobSummary]> {
         self.data_ingestion_job_summaries.as_deref()
     }
 }
 /// See [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput).
 pub mod list_data_ingestion_jobs_output {
-
+    
     /// A builder for [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) data_ingestion_job_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
+        pub(crate) data_ingestion_job_summaries: std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
@@ -1166,39 +1130,35 @@ pub mod list_data_ingestion_jobs_output {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `data_ingestion_job_summaries`.
         ///
         /// To override the contents of this collection use [`set_data_ingestion_job_summaries`](Self::set_data_ingestion_job_summaries).
         ///
         /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-        pub fn data_ingestion_job_summaries(
-            mut self,
-            input: crate::model::DataIngestionJobSummary,
-        ) -> Self {
+        pub fn data_ingestion_job_summaries(mut self, input: crate::model::DataIngestionJobSummary) -> Self {
             let mut v = self.data_ingestion_job_summaries.unwrap_or_default();
-            v.push(input);
-            self.data_ingestion_job_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.data_ingestion_job_summaries = Some(v);
+                            self
         }
         /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-        pub fn set_data_ingestion_job_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
-        ) -> Self {
-            self.data_ingestion_job_summaries = input;
-            self
+        pub fn set_data_ingestion_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>) -> Self {
+            self.data_ingestion_job_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput).
         pub fn build(self) -> crate::output::ListDataIngestionJobsOutput {
             crate::output::ListDataIngestionJobsOutput {
-                next_token: self.next_token,
-                data_ingestion_job_summaries: self.data_ingestion_job_summaries,
+                next_token: self.next_token
+                ,
+                data_ingestion_job_summaries: self.data_ingestion_job_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataIngestionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput).
@@ -1210,7 +1170,7 @@ impl ListDataIngestionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelOutput {
+pub struct DescribeModelOutput  {
     /// <p>The name of the ML model being described. </p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
@@ -1244,11 +1204,10 @@ pub struct DescribeModelOutput {
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     #[doc(hidden)]
-    pub data_pre_processing_configuration:
-        std::option::Option<crate::model::DataPreProcessingConfiguration>,
+    pub data_pre_processing_configuration: std::option::Option<crate::model::DataPreProcessingConfiguration>,
     /// <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelStatus>,
@@ -1279,100 +1238,94 @@ pub struct DescribeModelOutput {
 }
 impl DescribeModelOutput {
     /// <p>The name of the ML model being described. </p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the dataset being used by the ML being described. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>Specifies configuration information about the labels input, including its S3 location. </p>
-    pub fn labels_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LabelsInputConfiguration> {
+    pub fn labels_input_configuration(&self) -> std::option::Option<& crate::model::LabelsInputConfiguration> {
         self.labels_input_configuration.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of training data for the ML model. </p>
-    pub fn training_data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn training_data_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.training_data_start_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that was used to end the subset of training data for the ML model. </p>
-    pub fn training_data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn training_data_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.training_data_end_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of evaluation data for the ML model. </p>
-    pub fn evaluation_data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn evaluation_data_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.evaluation_data_start_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that was used to end the subset of evaluation data for the ML model. </p>
-    pub fn evaluation_data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn evaluation_data_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.evaluation_data_end_time.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn data_pre_processing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DataPreProcessingConfiguration> {
+    pub fn data_pre_processing_configuration(&self) -> std::option::Option<& crate::model::DataPreProcessingConfiguration> {
         self.data_pre_processing_configuration.as_ref()
     }
     /// <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ModelStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates the time at which the training of the ML model began. </p>
-    pub fn training_execution_start_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn training_execution_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.training_execution_start_time.as_ref()
     }
     /// <p>Indicates the time at which the training of the ML model was completed. </p>
-    pub fn training_execution_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn training_execution_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.training_execution_end_time.as_ref()
     }
     /// <p>If the training of the ML model failed, this indicates the reason for that failure. </p>
-    pub fn failed_reason(&self) -> std::option::Option<&str> {
+    pub fn failed_reason(&self) -> std::option::Option<& str> {
         self.failed_reason.as_deref()
     }
     /// <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time range. This is the JSON content of the metrics created when evaluating the model. </p>
-    pub fn model_metrics(&self) -> std::option::Option<&str> {
+    pub fn model_metrics(&self) -> std::option::Option<& str> {
         self.model_metrics.as_deref()
     }
     /// <p>Indicates the last time the ML model was updated. The type of update is not specified. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates the time and date at which the ML model was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    pub fn off_condition(&self) -> std::option::Option<&str> {
+    pub fn off_condition(&self) -> std::option::Option<& str> {
         self.off_condition.as_deref()
     }
 }
 /// See [`DescribeModelOutput`](crate::output::DescribeModelOutput).
 pub mod describe_model_output {
-
+    
     /// A builder for [`DescribeModelOutput`](crate::output::DescribeModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1381,15 +1334,13 @@ pub mod describe_model_output {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) schema: std::option::Option<std::string::String>,
-        pub(crate) labels_input_configuration:
-            std::option::Option<crate::model::LabelsInputConfiguration>,
+        pub(crate) labels_input_configuration: std::option::Option<crate::model::LabelsInputConfiguration>,
         pub(crate) training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) data_pre_processing_configuration:
-            std::option::Option<crate::model::DataPreProcessingConfiguration>,
+        pub(crate) data_pre_processing_configuration: std::option::Option<crate::model::DataPreProcessingConfiguration>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) training_execution_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) training_execution_end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1408,8 +1359,7 @@ pub mod describe_model_output {
         }
         /// <p>The name of the ML model being described. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
         pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1418,8 +1368,7 @@ pub mod describe_model_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// <p>The name of the dataset being used by the ML being described. </p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1428,8 +1377,7 @@ pub mod describe_model_output {
         }
         /// <p>The name of the dataset being used by the ML being described. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1438,8 +1386,7 @@ pub mod describe_model_output {
         }
         /// <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1448,24 +1395,16 @@ pub mod describe_model_output {
         }
         /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
         /// <p>Specifies configuration information about the labels input, including its S3 location. </p>
-        pub fn labels_input_configuration(
-            mut self,
-            input: crate::model::LabelsInputConfiguration,
-        ) -> Self {
+        pub fn labels_input_configuration(mut self, input: crate::model::LabelsInputConfiguration) -> Self {
             self.labels_input_configuration = Some(input);
             self
         }
         /// <p>Specifies configuration information about the labels input, including its S3 location. </p>
-        pub fn set_labels_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LabelsInputConfiguration>,
-        ) -> Self {
-            self.labels_input_configuration = input;
-            self
+        pub fn set_labels_input_configuration(mut self, input: std::option::Option<crate::model::LabelsInputConfiguration>) -> Self {
+            self.labels_input_configuration = input; self
         }
         /// <p> Indicates the time reference in the dataset that was used to begin the subset of training data for the ML model. </p>
         pub fn training_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1473,12 +1412,8 @@ pub mod describe_model_output {
             self
         }
         /// <p> Indicates the time reference in the dataset that was used to begin the subset of training data for the ML model. </p>
-        pub fn set_training_data_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.training_data_start_time = input;
-            self
+        pub fn set_training_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.training_data_start_time = input; self
         }
         /// <p> Indicates the time reference in the dataset that was used to end the subset of training data for the ML model. </p>
         pub fn training_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1486,12 +1421,8 @@ pub mod describe_model_output {
             self
         }
         /// <p> Indicates the time reference in the dataset that was used to end the subset of training data for the ML model. </p>
-        pub fn set_training_data_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.training_data_end_time = input;
-            self
+        pub fn set_training_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.training_data_end_time = input; self
         }
         /// <p> Indicates the time reference in the dataset that was used to begin the subset of evaluation data for the ML model. </p>
         pub fn evaluation_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1499,12 +1430,8 @@ pub mod describe_model_output {
             self
         }
         /// <p> Indicates the time reference in the dataset that was used to begin the subset of evaluation data for the ML model. </p>
-        pub fn set_evaluation_data_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.evaluation_data_start_time = input;
-            self
+        pub fn set_evaluation_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.evaluation_data_start_time = input; self
         }
         /// <p> Indicates the time reference in the dataset that was used to end the subset of evaluation data for the ML model. </p>
         pub fn evaluation_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1512,12 +1439,8 @@ pub mod describe_model_output {
             self
         }
         /// <p> Indicates the time reference in the dataset that was used to end the subset of evaluation data for the ML model. </p>
-        pub fn set_evaluation_data_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.evaluation_data_end_time = input;
-            self
+        pub fn set_evaluation_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.evaluation_data_end_time = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1526,26 +1449,18 @@ pub mod describe_model_output {
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
         /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-        pub fn data_pre_processing_configuration(
-            mut self,
-            input: crate::model::DataPreProcessingConfiguration,
-        ) -> Self {
+        pub fn data_pre_processing_configuration(mut self, input: crate::model::DataPreProcessingConfiguration) -> Self {
             self.data_pre_processing_configuration = Some(input);
             self
         }
-        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
         /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-        pub fn set_data_pre_processing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DataPreProcessingConfiguration>,
-        ) -> Self {
-            self.data_pre_processing_configuration = input;
-            self
+        pub fn set_data_pre_processing_configuration(mut self, input: std::option::Option<crate::model::DataPreProcessingConfiguration>) -> Self {
+            self.data_pre_processing_configuration = input; self
         }
         /// <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
         pub fn status(mut self, input: crate::model::ModelStatus) -> Self {
@@ -1554,8 +1469,7 @@ pub mod describe_model_output {
         }
         /// <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Indicates the time at which the training of the ML model began. </p>
         pub fn training_execution_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1563,12 +1477,8 @@ pub mod describe_model_output {
             self
         }
         /// <p>Indicates the time at which the training of the ML model began. </p>
-        pub fn set_training_execution_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.training_execution_start_time = input;
-            self
+        pub fn set_training_execution_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.training_execution_start_time = input; self
         }
         /// <p>Indicates the time at which the training of the ML model was completed. </p>
         pub fn training_execution_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1576,12 +1486,8 @@ pub mod describe_model_output {
             self
         }
         /// <p>Indicates the time at which the training of the ML model was completed. </p>
-        pub fn set_training_execution_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.training_execution_end_time = input;
-            self
+        pub fn set_training_execution_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.training_execution_end_time = input; self
         }
         /// <p>If the training of the ML model failed, this indicates the reason for that failure. </p>
         pub fn failed_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1589,12 +1495,8 @@ pub mod describe_model_output {
             self
         }
         /// <p>If the training of the ML model failed, this indicates the reason for that failure. </p>
-        pub fn set_failed_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failed_reason = input;
-            self
+        pub fn set_failed_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failed_reason = input; self
         }
         /// <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time range. This is the JSON content of the metrics created when evaluating the model. </p>
         pub fn model_metrics(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1602,12 +1504,8 @@ pub mod describe_model_output {
             self
         }
         /// <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time range. This is the JSON content of the metrics created when evaluating the model. </p>
-        pub fn set_model_metrics(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_metrics = input;
-            self
+        pub fn set_model_metrics(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_metrics = input; self
         }
         /// <p>Indicates the last time the ML model was updated. The type of update is not specified. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1615,12 +1513,8 @@ pub mod describe_model_output {
             self
         }
         /// <p>Indicates the last time the ML model was updated. The type of update is not specified. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>Indicates the time and date at which the ML model was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1628,12 +1522,8 @@ pub mod describe_model_output {
             self
         }
         /// <p>Indicates the time and date at which the ML model was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1641,12 +1531,8 @@ pub mod describe_model_output {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-        pub fn set_server_side_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_side_kms_key_id = input;
-            self
+        pub fn set_server_side_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_side_kms_key_id = input; self
         }
         /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
         pub fn off_condition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1654,40 +1540,59 @@ pub mod describe_model_output {
             self
         }
         /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-        pub fn set_off_condition(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.off_condition = input;
-            self
+        pub fn set_off_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.off_condition = input; self
         }
         /// Consumes the builder and constructs a [`DescribeModelOutput`](crate::output::DescribeModelOutput).
         pub fn build(self) -> crate::output::DescribeModelOutput {
             crate::output::DescribeModelOutput {
-                model_name: self.model_name,
-                model_arn: self.model_arn,
-                dataset_name: self.dataset_name,
-                dataset_arn: self.dataset_arn,
-                schema: self.schema,
-                labels_input_configuration: self.labels_input_configuration,
-                training_data_start_time: self.training_data_start_time,
-                training_data_end_time: self.training_data_end_time,
-                evaluation_data_start_time: self.evaluation_data_start_time,
-                evaluation_data_end_time: self.evaluation_data_end_time,
-                role_arn: self.role_arn,
-                data_pre_processing_configuration: self.data_pre_processing_configuration,
-                status: self.status,
-                training_execution_start_time: self.training_execution_start_time,
-                training_execution_end_time: self.training_execution_end_time,
-                failed_reason: self.failed_reason,
-                model_metrics: self.model_metrics,
-                last_updated_time: self.last_updated_time,
-                created_at: self.created_at,
-                server_side_kms_key_id: self.server_side_kms_key_id,
-                off_condition: self.off_condition,
+                model_name: self.model_name
+                ,
+                model_arn: self.model_arn
+                ,
+                dataset_name: self.dataset_name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                schema: self.schema
+                ,
+                labels_input_configuration: self.labels_input_configuration
+                ,
+                training_data_start_time: self.training_data_start_time
+                ,
+                training_data_end_time: self.training_data_end_time
+                ,
+                evaluation_data_start_time: self.evaluation_data_start_time
+                ,
+                evaluation_data_end_time: self.evaluation_data_end_time
+                ,
+                role_arn: self.role_arn
+                ,
+                data_pre_processing_configuration: self.data_pre_processing_configuration
+                ,
+                status: self.status
+                ,
+                training_execution_start_time: self.training_execution_start_time
+                ,
+                training_execution_end_time: self.training_execution_end_time
+                ,
+                failed_reason: self.failed_reason
+                ,
+                model_metrics: self.model_metrics
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_at: self.created_at
+                ,
+                server_side_kms_key_id: self.server_side_kms_key_id
+                ,
+                off_condition: self.off_condition
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeModelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelOutput`](crate::output::DescribeModelOutput).
@@ -1699,7 +1604,7 @@ impl DescribeModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLabelGroupOutput {
+pub struct DescribeLabelGroupOutput  {
     /// <p> The name of the label group. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
@@ -1718,29 +1623,29 @@ pub struct DescribeLabelGroupOutput {
 }
 impl DescribeLabelGroupOutput {
     /// <p> The name of the label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ARN of the label group. </p>
-    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
     /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
-    pub fn fault_codes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn fault_codes(&self) -> std::option::Option<& [std::string::String]> {
         self.fault_codes.as_deref()
     }
     /// <p> The time at which the label group was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The time at which the label group was updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`DescribeLabelGroupOutput`](crate::output::DescribeLabelGroupOutput).
 pub mod describe_label_group_output {
-
+    
     /// A builder for [`DescribeLabelGroupOutput`](crate::output::DescribeLabelGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1757,12 +1662,8 @@ pub mod describe_label_group_output {
             self
         }
         /// <p> The name of the label group. </p>
-        pub fn set_label_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_name = input;
-            self
+        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_name = input; self
         }
         /// <p> The ARN of the label group. </p>
         pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1770,12 +1671,8 @@ pub mod describe_label_group_output {
             self
         }
         /// <p> The ARN of the label group. </p>
-        pub fn set_label_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_arn = input;
-            self
+        pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_arn = input; self
         }
         /// Appends an item to `fault_codes`.
         ///
@@ -1784,17 +1681,13 @@ pub mod describe_label_group_output {
         /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
         pub fn fault_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fault_codes.unwrap_or_default();
-            v.push(input.into());
-            self.fault_codes = Some(v);
-            self
+                            v.push(input.into());
+                            self.fault_codes = Some(v);
+                            self
         }
         /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
-        pub fn set_fault_codes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.fault_codes = input;
-            self
+        pub fn set_fault_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.fault_codes = input; self
         }
         /// <p> The time at which the label group was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1802,12 +1695,8 @@ pub mod describe_label_group_output {
             self
         }
         /// <p> The time at which the label group was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p> The time at which the label group was updated. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1815,24 +1704,27 @@ pub mod describe_label_group_output {
             self
         }
         /// <p> The time at which the label group was updated. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLabelGroupOutput`](crate::output::DescribeLabelGroupOutput).
         pub fn build(self) -> crate::output::DescribeLabelGroupOutput {
             crate::output::DescribeLabelGroupOutput {
-                label_group_name: self.label_group_name,
-                label_group_arn: self.label_group_arn,
-                fault_codes: self.fault_codes,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                label_group_name: self.label_group_name
+                ,
+                label_group_arn: self.label_group_arn
+                ,
+                fault_codes: self.fault_codes
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelGroupOutput`](crate::output::DescribeLabelGroupOutput).
@@ -1844,7 +1736,7 @@ impl DescribeLabelGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLabelOutput {
+pub struct DescribeLabelOutput  {
     /// <p> The name of the requested label group. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
@@ -1863,11 +1755,11 @@ pub struct DescribeLabelOutput {
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     #[doc(hidden)]
     pub rating: std::option::Option<crate::model::LabelRating>,
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     #[doc(hidden)]
     pub fault_code: std::option::Option<std::string::String>,
-    /// <p>Metadata providing additional information about the label.</p>
+    /// <p>Metadata providing additional information about the label.</p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
@@ -1880,51 +1772,51 @@ pub struct DescribeLabelOutput {
 }
 impl DescribeLabelOutput {
     /// <p> The name of the requested label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ARN of the requested label group. </p>
-    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
     /// <p> The ID of the requested label. </p>
-    pub fn label_id(&self) -> std::option::Option<&str> {
+    pub fn label_id(&self) -> std::option::Option<& str> {
         self.label_id.as_deref()
     }
     /// <p> The start time of the requested label. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end time of the requested label. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    pub fn rating(&self) -> std::option::Option<&crate::model::LabelRating> {
+    pub fn rating(&self) -> std::option::Option<& crate::model::LabelRating> {
         self.rating.as_ref()
     }
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_code(&self) -> std::option::Option<&str> {
+    pub fn fault_code(&self) -> std::option::Option<& str> {
         self.fault_code.as_deref()
     }
-    /// <p>Metadata providing additional information about the label.</p>
+    /// <p>Metadata providing additional information about the label.</p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn notes(&self) -> std::option::Option<&str> {
+    pub fn notes(&self) -> std::option::Option<& str> {
         self.notes.as_deref()
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
-    pub fn equipment(&self) -> std::option::Option<&str> {
+    pub fn equipment(&self) -> std::option::Option<& str> {
         self.equipment.as_deref()
     }
     /// <p> The time at which the label was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`DescribeLabelOutput`](crate::output::DescribeLabelOutput).
 pub mod describe_label_output {
-
+    
     /// A builder for [`DescribeLabelOutput`](crate::output::DescribeLabelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1946,12 +1838,8 @@ pub mod describe_label_output {
             self
         }
         /// <p> The name of the requested label group. </p>
-        pub fn set_label_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_name = input;
-            self
+        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_name = input; self
         }
         /// <p> The ARN of the requested label group. </p>
         pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1959,12 +1847,8 @@ pub mod describe_label_output {
             self
         }
         /// <p> The ARN of the requested label group. </p>
-        pub fn set_label_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_arn = input;
-            self
+        pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_arn = input; self
         }
         /// <p> The ID of the requested label. </p>
         pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1973,8 +1857,7 @@ pub mod describe_label_output {
         }
         /// <p> The ID of the requested label. </p>
         pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_id = input;
-            self
+            self.label_id = input; self
         }
         /// <p> The start time of the requested label. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1982,12 +1865,8 @@ pub mod describe_label_output {
             self
         }
         /// <p> The start time of the requested label. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The end time of the requested label. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1995,12 +1874,8 @@ pub mod describe_label_output {
             self
         }
         /// <p> The end time of the requested label. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p> Indicates whether a labeled event represents an anomaly. </p>
         pub fn rating(mut self, input: crate::model::LabelRating) -> Self {
@@ -2009,32 +1884,29 @@ pub mod describe_label_output {
         }
         /// <p> Indicates whether a labeled event represents an anomaly. </p>
         pub fn set_rating(mut self, input: std::option::Option<crate::model::LabelRating>) -> Self {
-            self.rating = input;
-            self
+            self.rating = input; self
         }
-        /// <p> Indicates the type of anomaly associated with the label. </p>
+        /// <p> Indicates the type of anomaly associated with the label. </p> 
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.fault_code = Some(input.into());
             self
         }
-        /// <p> Indicates the type of anomaly associated with the label. </p>
+        /// <p> Indicates the type of anomaly associated with the label. </p> 
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fault_code = input;
-            self
+            self.fault_code = input; self
         }
-        /// <p>Metadata providing additional information about the label.</p>
+        /// <p>Metadata providing additional information about the label.</p> 
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.notes = Some(input.into());
             self
         }
-        /// <p>Metadata providing additional information about the label.</p>
+        /// <p>Metadata providing additional information about the label.</p> 
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.notes = input;
-            self
+            self.notes = input; self
         }
         /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
         pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2043,8 +1915,7 @@ pub mod describe_label_output {
         }
         /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
         pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.equipment = input;
-            self
+            self.equipment = input; self
         }
         /// <p> The time at which the label was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2052,29 +1923,37 @@ pub mod describe_label_output {
             self
         }
         /// <p> The time at which the label was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLabelOutput`](crate::output::DescribeLabelOutput).
         pub fn build(self) -> crate::output::DescribeLabelOutput {
             crate::output::DescribeLabelOutput {
-                label_group_name: self.label_group_name,
-                label_group_arn: self.label_group_arn,
-                label_id: self.label_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                rating: self.rating,
-                fault_code: self.fault_code,
-                notes: self.notes,
-                equipment: self.equipment,
-                created_at: self.created_at,
+                label_group_name: self.label_group_name
+                ,
+                label_group_arn: self.label_group_arn
+                ,
+                label_id: self.label_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                rating: self.rating
+                ,
+                fault_code: self.fault_code
+                ,
+                notes: self.notes
+                ,
+                equipment: self.equipment
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLabelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelOutput`](crate::output::DescribeLabelOutput).
@@ -2086,7 +1965,7 @@ impl DescribeLabelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInferenceSchedulerOutput {
+pub struct DescribeInferenceSchedulerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
     #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
@@ -2132,23 +2011,23 @@ pub struct DescribeInferenceSchedulerOutput {
 }
 impl DescribeInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the ML model of the inference scheduler being described. </p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being described. </p>
-    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>Indicates the status of the inference scheduler. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
     /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
@@ -2156,47 +2035,41 @@ impl DescribeInferenceSchedulerOutput {
         self.data_delay_offset_in_minutes
     }
     /// <p>Specifies how often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
+    pub fn data_upload_frequency(&self) -> std::option::Option<& crate::model::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
     /// <p>Specifies the time at which the inference scheduler was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn data_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
+    pub fn data_input_configuration(&self) -> std::option::Option<& crate::model::InferenceInputConfiguration> {
         self.data_input_configuration.as_ref()
     }
     /// <p> Specifies information for the output results for the inference scheduler, including the output S3 location. </p>
-    pub fn data_output_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
+    pub fn data_output_configuration(&self) -> std::option::Option<& crate::model::InferenceOutputConfiguration> {
         self.data_output_configuration.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler being described. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-    pub fn latest_inference_result(
-        &self,
-    ) -> std::option::Option<&crate::model::LatestInferenceResult> {
+    pub fn latest_inference_result(&self) -> std::option::Option<& crate::model::LatestInferenceResult> {
         self.latest_inference_result.as_ref()
     }
 }
 /// See [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput).
 pub mod describe_inference_scheduler_output {
-
+    
     /// A builder for [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2209,14 +2082,11 @@ pub mod describe_inference_scheduler_output {
         pub(crate) data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) data_input_configuration:
-            std::option::Option<crate::model::InferenceInputConfiguration>,
-        pub(crate) data_output_configuration:
-            std::option::Option<crate::model::InferenceOutputConfiguration>,
+        pub(crate) data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
+        pub(crate) data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) latest_inference_result:
-            std::option::Option<crate::model::LatestInferenceResult>,
+        pub(crate) latest_inference_result: std::option::Option<crate::model::LatestInferenceResult>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
@@ -2226,8 +2096,7 @@ pub mod describe_inference_scheduler_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// <p>The name of the ML model of the inference scheduler being described. </p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2236,8 +2105,7 @@ pub mod describe_inference_scheduler_output {
         }
         /// <p>The name of the ML model of the inference scheduler being described. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p>The name of the inference scheduler being described. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2245,12 +2113,8 @@ pub mod describe_inference_scheduler_output {
             self
         }
         /// <p>The name of the inference scheduler being described. </p>
-        pub fn set_inference_scheduler_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_name = input;
-            self
+        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the inference scheduler being described. </p>
         pub fn inference_scheduler_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2258,12 +2122,8 @@ pub mod describe_inference_scheduler_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the inference scheduler being described. </p>
-        pub fn set_inference_scheduler_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_arn = input;
-            self
+        pub fn set_inference_scheduler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_arn = input; self
         }
         /// <p>Indicates the status of the inference scheduler. </p>
         pub fn status(mut self, input: crate::model::InferenceSchedulerStatus) -> Self {
@@ -2271,12 +2131,8 @@ pub mod describe_inference_scheduler_output {
             self
         }
         /// <p>Indicates the status of the inference scheduler. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InferenceSchedulerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceSchedulerStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
         pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
@@ -2285,8 +2141,7 @@ pub mod describe_inference_scheduler_output {
         }
         /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_delay_offset_in_minutes = input;
-            self
+            self.data_delay_offset_in_minutes = input; self
         }
         /// <p>Specifies how often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
         pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
@@ -2294,12 +2149,8 @@ pub mod describe_inference_scheduler_output {
             self
         }
         /// <p>Specifies how often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-        pub fn set_data_upload_frequency(
-            mut self,
-            input: std::option::Option<crate::model::DataUploadFrequency>,
-        ) -> Self {
-            self.data_upload_frequency = input;
-            self
+        pub fn set_data_upload_frequency(mut self, input: std::option::Option<crate::model::DataUploadFrequency>) -> Self {
+            self.data_upload_frequency = input; self
         }
         /// <p>Specifies the time at which the inference scheduler was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2307,12 +2158,8 @@ pub mod describe_inference_scheduler_output {
             self
         }
         /// <p>Specifies the time at which the inference scheduler was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2320,44 +2167,26 @@ pub mod describe_inference_scheduler_output {
             self
         }
         /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-        pub fn data_input_configuration(
-            mut self,
-            input: crate::model::InferenceInputConfiguration,
-        ) -> Self {
+        pub fn data_input_configuration(mut self, input: crate::model::InferenceInputConfiguration) -> Self {
             self.data_input_configuration = Some(input);
             self
         }
         /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-        pub fn set_data_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InferenceInputConfiguration>,
-        ) -> Self {
-            self.data_input_configuration = input;
-            self
+        pub fn set_data_input_configuration(mut self, input: std::option::Option<crate::model::InferenceInputConfiguration>) -> Self {
+            self.data_input_configuration = input; self
         }
         /// <p> Specifies information for the output results for the inference scheduler, including the output S3 location. </p>
-        pub fn data_output_configuration(
-            mut self,
-            input: crate::model::InferenceOutputConfiguration,
-        ) -> Self {
+        pub fn data_output_configuration(mut self, input: crate::model::InferenceOutputConfiguration) -> Self {
             self.data_output_configuration = Some(input);
             self
         }
         /// <p> Specifies information for the output results for the inference scheduler, including the output S3 location. </p>
-        pub fn set_data_output_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InferenceOutputConfiguration>,
-        ) -> Self {
-            self.data_output_configuration = input;
-            self
+        pub fn set_data_output_configuration(mut self, input: std::option::Option<crate::model::InferenceOutputConfiguration>) -> Self {
+            self.data_output_configuration = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler being described. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2366,8 +2195,7 @@ pub mod describe_inference_scheduler_output {
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler being described. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2375,49 +2203,54 @@ pub mod describe_inference_scheduler_output {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-        pub fn set_server_side_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_side_kms_key_id = input;
-            self
+        pub fn set_server_side_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_side_kms_key_id = input; self
         }
         /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-        pub fn latest_inference_result(
-            mut self,
-            input: crate::model::LatestInferenceResult,
-        ) -> Self {
+        pub fn latest_inference_result(mut self, input: crate::model::LatestInferenceResult) -> Self {
             self.latest_inference_result = Some(input);
             self
         }
         /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-        pub fn set_latest_inference_result(
-            mut self,
-            input: std::option::Option<crate::model::LatestInferenceResult>,
-        ) -> Self {
-            self.latest_inference_result = input;
-            self
+        pub fn set_latest_inference_result(mut self, input: std::option::Option<crate::model::LatestInferenceResult>) -> Self {
+            self.latest_inference_result = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::DescribeInferenceSchedulerOutput {
             crate::output::DescribeInferenceSchedulerOutput {
-                model_arn: self.model_arn,
-                model_name: self.model_name,
-                inference_scheduler_name: self.inference_scheduler_name,
-                inference_scheduler_arn: self.inference_scheduler_arn,
-                status: self.status,
-                data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
-                data_upload_frequency: self.data_upload_frequency,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                data_input_configuration: self.data_input_configuration,
-                data_output_configuration: self.data_output_configuration,
-                role_arn: self.role_arn,
-                server_side_kms_key_id: self.server_side_kms_key_id,
-                latest_inference_result: self.latest_inference_result,
+                model_arn: self.model_arn
+                ,
+                model_name: self.model_name
+                ,
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+                inference_scheduler_arn: self.inference_scheduler_arn
+                ,
+                status: self.status
+                ,
+                data_delay_offset_in_minutes: self.data_delay_offset_in_minutes
+                ,
+                data_upload_frequency: self.data_upload_frequency
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                data_input_configuration: self.data_input_configuration
+                ,
+                data_output_configuration: self.data_output_configuration
+                ,
+                role_arn: self.role_arn
+                ,
+                server_side_kms_key_id: self.server_side_kms_key_id
+                ,
+                latest_inference_result: self.latest_inference_result
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput).
@@ -2429,7 +2262,7 @@ impl DescribeInferenceSchedulerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDatasetOutput {
+pub struct DescribeDatasetOutput  {
     /// <p>The name of the dataset being described. </p>
     #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
@@ -2453,8 +2286,7 @@ pub struct DescribeDatasetOutput {
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
     #[doc(hidden)]
-    pub ingestion_input_configuration:
-        std::option::Option<crate::model::IngestionInputConfiguration>,
+    pub ingestion_input_configuration: std::option::Option<crate::model::IngestionInputConfiguration>,
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
     #[doc(hidden)]
     pub data_quality_summary: std::option::Option<crate::model::DataQualitySummary>,
@@ -2473,65 +2305,61 @@ pub struct DescribeDatasetOutput {
 }
 impl DescribeDatasetOutput {
     /// <p>The name of the dataset being described. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Indicates the status of the dataset. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn ingestion_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> std::option::Option<& crate::model::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    pub fn data_quality_summary(&self) -> std::option::Option<&crate::model::DataQualitySummary> {
+    pub fn data_quality_summary(&self) -> std::option::Option<& crate::model::DataQualitySummary> {
         self.data_quality_summary.as_ref()
     }
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
-    pub fn ingested_files_summary(
-        &self,
-    ) -> std::option::Option<&crate::model::IngestedFilesSummary> {
+    pub fn ingested_files_summary(&self) -> std::option::Option<& crate::model::IngestedFilesSummary> {
         self.ingested_files_summary.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    pub fn data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
 }
 /// See [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
 pub mod describe_dataset_output {
-
+    
     /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2542,8 +2370,7 @@ pub mod describe_dataset_output {
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
         pub(crate) schema: std::option::Option<std::string::String>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) ingestion_input_configuration:
-            std::option::Option<crate::model::IngestionInputConfiguration>,
+        pub(crate) ingestion_input_configuration: std::option::Option<crate::model::IngestionInputConfiguration>,
         pub(crate) data_quality_summary: std::option::Option<crate::model::DataQualitySummary>,
         pub(crate) ingested_files_summary: std::option::Option<crate::model::IngestedFilesSummary>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -2558,8 +2385,7 @@ pub mod describe_dataset_output {
         }
         /// <p>The name of the dataset being described. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2568,8 +2394,7 @@ pub mod describe_dataset_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2577,12 +2402,8 @@ pub mod describe_dataset_output {
             self
         }
         /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Specifies the time the dataset was last updated, if it was. </p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2590,12 +2411,8 @@ pub mod describe_dataset_output {
             self
         }
         /// <p>Specifies the time the dataset was last updated, if it was. </p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>Indicates the status of the dataset. </p>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
@@ -2603,12 +2420,8 @@ pub mod describe_dataset_output {
             self
         }
         /// <p>Indicates the status of the dataset. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DatasetStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2617,8 +2430,7 @@ pub mod describe_dataset_output {
         }
         /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2626,28 +2438,17 @@ pub mod describe_dataset_output {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-        pub fn set_server_side_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_side_kms_key_id = input;
-            self
+        pub fn set_server_side_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_side_kms_key_id = input; self
         }
         /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-        pub fn ingestion_input_configuration(
-            mut self,
-            input: crate::model::IngestionInputConfiguration,
-        ) -> Self {
+        pub fn ingestion_input_configuration(mut self, input: crate::model::IngestionInputConfiguration) -> Self {
             self.ingestion_input_configuration = Some(input);
             self
         }
         /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-        pub fn set_ingestion_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::IngestionInputConfiguration>,
-        ) -> Self {
-            self.ingestion_input_configuration = input;
-            self
+        pub fn set_ingestion_input_configuration(mut self, input: std::option::Option<crate::model::IngestionInputConfiguration>) -> Self {
+            self.ingestion_input_configuration = input; self
         }
         /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
         pub fn data_quality_summary(mut self, input: crate::model::DataQualitySummary) -> Self {
@@ -2655,12 +2456,8 @@ pub mod describe_dataset_output {
             self
         }
         /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-        pub fn set_data_quality_summary(
-            mut self,
-            input: std::option::Option<crate::model::DataQualitySummary>,
-        ) -> Self {
-            self.data_quality_summary = input;
-            self
+        pub fn set_data_quality_summary(mut self, input: std::option::Option<crate::model::DataQualitySummary>) -> Self {
+            self.data_quality_summary = input; self
         }
         /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
         pub fn ingested_files_summary(mut self, input: crate::model::IngestedFilesSummary) -> Self {
@@ -2668,12 +2465,8 @@ pub mod describe_dataset_output {
             self
         }
         /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
-        pub fn set_ingested_files_summary(
-            mut self,
-            input: std::option::Option<crate::model::IngestedFilesSummary>,
-        ) -> Self {
-            self.ingested_files_summary = input;
-            self
+        pub fn set_ingested_files_summary(mut self, input: std::option::Option<crate::model::IngestedFilesSummary>) -> Self {
+            self.ingested_files_summary = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2682,8 +2475,7 @@ pub mod describe_dataset_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
         pub fn data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2691,12 +2483,8 @@ pub mod describe_dataset_output {
             self
         }
         /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-        pub fn set_data_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.data_start_time = input;
-            self
+        pub fn set_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.data_start_time = input; self
         }
         /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
         pub fn data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2704,32 +2492,43 @@ pub mod describe_dataset_output {
             self
         }
         /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-        pub fn set_data_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.data_end_time = input;
-            self
+        pub fn set_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.data_end_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
         pub fn build(self) -> crate::output::DescribeDatasetOutput {
             crate::output::DescribeDatasetOutput {
-                dataset_name: self.dataset_name,
-                dataset_arn: self.dataset_arn,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                status: self.status,
-                schema: self.schema,
-                server_side_kms_key_id: self.server_side_kms_key_id,
-                ingestion_input_configuration: self.ingestion_input_configuration,
-                data_quality_summary: self.data_quality_summary,
-                ingested_files_summary: self.ingested_files_summary,
-                role_arn: self.role_arn,
-                data_start_time: self.data_start_time,
-                data_end_time: self.data_end_time,
+                dataset_name: self.dataset_name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                status: self.status
+                ,
+                schema: self.schema
+                ,
+                server_side_kms_key_id: self.server_side_kms_key_id
+                ,
+                ingestion_input_configuration: self.ingestion_input_configuration
+                ,
+                data_quality_summary: self.data_quality_summary
+                ,
+                ingested_files_summary: self.ingested_files_summary
+                ,
+                role_arn: self.role_arn
+                ,
+                data_start_time: self.data_start_time
+                ,
+                data_end_time: self.data_end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDatasetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
@@ -2741,7 +2540,7 @@ impl DescribeDatasetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataIngestionJobOutput {
+pub struct DescribeDataIngestionJobOutput  {
     /// <p>Indicates the job ID of the data ingestion job. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -2750,8 +2549,7 @@ pub struct DescribeDataIngestionJobOutput {
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
     #[doc(hidden)]
-    pub ingestion_input_configuration:
-        std::option::Option<crate::model::IngestionInputConfiguration>,
+    pub ingestion_input_configuration: std::option::Option<crate::model::IngestionInputConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -2785,47 +2583,43 @@ pub struct DescribeDataIngestionJobOutput {
 }
 impl DescribeDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn ingestion_input_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> std::option::Option<& crate::model::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The time at which the data ingestion job was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::IngestionJobStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
-    pub fn failed_reason(&self) -> std::option::Option<&str> {
+    pub fn failed_reason(&self) -> std::option::Option<& str> {
         self.failed_reason.as_deref()
     }
     /// <p> Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    pub fn data_quality_summary(&self) -> std::option::Option<&crate::model::DataQualitySummary> {
+    pub fn data_quality_summary(&self) -> std::option::Option<& crate::model::DataQualitySummary> {
         self.data_quality_summary.as_ref()
     }
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
-    pub fn ingested_files_summary(
-        &self,
-    ) -> std::option::Option<&crate::model::IngestedFilesSummary> {
+    pub fn ingested_files_summary(&self) -> std::option::Option<& crate::model::IngestedFilesSummary> {
         self.ingested_files_summary.as_ref()
     }
     /// <p> Provides details about status of the ingestion job that is currently in progress. </p>
-    pub fn status_detail(&self) -> std::option::Option<&str> {
+    pub fn status_detail(&self) -> std::option::Option<& str> {
         self.status_detail.as_deref()
     }
     /// <p> Indicates the size of the ingested dataset. </p>
@@ -2833,24 +2627,23 @@ impl DescribeDataIngestionJobOutput {
         self.ingested_data_size
     }
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
-    pub fn data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
-    pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
 }
 /// See [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput).
 pub mod describe_data_ingestion_job_output {
-
+    
     /// A builder for [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
-        pub(crate) ingestion_input_configuration:
-            std::option::Option<crate::model::IngestionInputConfiguration>,
+        pub(crate) ingestion_input_configuration: std::option::Option<crate::model::IngestionInputConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::IngestionJobStatus>,
@@ -2870,8 +2663,7 @@ pub mod describe_data_ingestion_job_output {
         }
         /// <p>Indicates the job ID of the data ingestion job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2880,24 +2672,16 @@ pub mod describe_data_ingestion_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-        pub fn ingestion_input_configuration(
-            mut self,
-            input: crate::model::IngestionInputConfiguration,
-        ) -> Self {
+        pub fn ingestion_input_configuration(mut self, input: crate::model::IngestionInputConfiguration) -> Self {
             self.ingestion_input_configuration = Some(input);
             self
         }
         /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-        pub fn set_ingestion_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::IngestionInputConfiguration>,
-        ) -> Self {
-            self.ingestion_input_configuration = input;
-            self
+        pub fn set_ingestion_input_configuration(mut self, input: std::option::Option<crate::model::IngestionInputConfiguration>) -> Self {
+            self.ingestion_input_configuration = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2906,8 +2690,7 @@ pub mod describe_data_ingestion_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The time at which the data ingestion job was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2915,12 +2698,8 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p>The time at which the data ingestion job was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
         pub fn status(mut self, input: crate::model::IngestionJobStatus) -> Self {
@@ -2928,12 +2707,8 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::IngestionJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::IngestionJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
         pub fn failed_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2941,12 +2716,8 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
-        pub fn set_failed_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failed_reason = input;
-            self
+        pub fn set_failed_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failed_reason = input; self
         }
         /// <p> Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
         pub fn data_quality_summary(mut self, input: crate::model::DataQualitySummary) -> Self {
@@ -2954,12 +2725,8 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p> Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-        pub fn set_data_quality_summary(
-            mut self,
-            input: std::option::Option<crate::model::DataQualitySummary>,
-        ) -> Self {
-            self.data_quality_summary = input;
-            self
+        pub fn set_data_quality_summary(mut self, input: std::option::Option<crate::model::DataQualitySummary>) -> Self {
+            self.data_quality_summary = input; self
         }
         /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
         pub fn ingested_files_summary(mut self, input: crate::model::IngestedFilesSummary) -> Self {
@@ -2967,12 +2734,8 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
-        pub fn set_ingested_files_summary(
-            mut self,
-            input: std::option::Option<crate::model::IngestedFilesSummary>,
-        ) -> Self {
-            self.ingested_files_summary = input;
-            self
+        pub fn set_ingested_files_summary(mut self, input: std::option::Option<crate::model::IngestedFilesSummary>) -> Self {
+            self.ingested_files_summary = input; self
         }
         /// <p> Provides details about status of the ingestion job that is currently in progress. </p>
         pub fn status_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2980,12 +2743,8 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p> Provides details about status of the ingestion job that is currently in progress. </p>
-        pub fn set_status_detail(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_detail = input;
-            self
+        pub fn set_status_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_detail = input; self
         }
         /// <p> Indicates the size of the ingested dataset. </p>
         pub fn ingested_data_size(mut self, input: i64) -> Self {
@@ -2994,8 +2753,7 @@ pub mod describe_data_ingestion_job_output {
         }
         /// <p> Indicates the size of the ingested dataset. </p>
         pub fn set_ingested_data_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.ingested_data_size = input;
-            self
+            self.ingested_data_size = input; self
         }
         /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
         pub fn data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3003,12 +2761,8 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
-        pub fn set_data_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.data_start_time = input;
-            self
+        pub fn set_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.data_start_time = input; self
         }
         /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
         pub fn data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3016,32 +2770,43 @@ pub mod describe_data_ingestion_job_output {
             self
         }
         /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
-        pub fn set_data_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.data_end_time = input;
-            self
+        pub fn set_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.data_end_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput).
         pub fn build(self) -> crate::output::DescribeDataIngestionJobOutput {
             crate::output::DescribeDataIngestionJobOutput {
-                job_id: self.job_id,
-                dataset_arn: self.dataset_arn,
-                ingestion_input_configuration: self.ingestion_input_configuration,
-                role_arn: self.role_arn,
-                created_at: self.created_at,
-                status: self.status,
-                failed_reason: self.failed_reason,
-                data_quality_summary: self.data_quality_summary,
-                ingested_files_summary: self.ingested_files_summary,
-                status_detail: self.status_detail,
-                ingested_data_size: self.ingested_data_size,
-                data_start_time: self.data_start_time,
-                data_end_time: self.data_end_time,
+                job_id: self.job_id
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                ingestion_input_configuration: self.ingestion_input_configuration
+                ,
+                role_arn: self.role_arn
+                ,
+                created_at: self.created_at
+                ,
+                status: self.status
+                ,
+                failed_reason: self.failed_reason
+                ,
+                data_quality_summary: self.data_quality_summary
+                ,
+                ingested_files_summary: self.ingested_files_summary
+                ,
+                status_detail: self.status_detail
+                ,
+                ingested_data_size: self.ingested_data_size
+                ,
+                data_start_time: self.data_start_time
+                ,
+                data_end_time: self.data_end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDataIngestionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput).
@@ -3053,19 +2818,24 @@ impl DescribeDataIngestionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteModelOutput {}
+pub struct DeleteModelOutput  {
+}
 /// See [`DeleteModelOutput`](crate::output::DeleteModelOutput).
 pub mod delete_model_output {
-
+    
     /// A builder for [`DeleteModelOutput`](crate::output::DeleteModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteModelOutput`](crate::output::DeleteModelOutput).
         pub fn build(self) -> crate::output::DeleteModelOutput {
-            crate::output::DeleteModelOutput {}
+            crate::output::DeleteModelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelOutput`](crate::output::DeleteModelOutput).
@@ -3077,19 +2847,24 @@ impl DeleteModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLabelGroupOutput {}
+pub struct DeleteLabelGroupOutput  {
+}
 /// See [`DeleteLabelGroupOutput`](crate::output::DeleteLabelGroupOutput).
 pub mod delete_label_group_output {
-
+    
     /// A builder for [`DeleteLabelGroupOutput`](crate::output::DeleteLabelGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLabelGroupOutput`](crate::output::DeleteLabelGroupOutput).
         pub fn build(self) -> crate::output::DeleteLabelGroupOutput {
-            crate::output::DeleteLabelGroupOutput {}
+            crate::output::DeleteLabelGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLabelGroupOutput`](crate::output::DeleteLabelGroupOutput).
@@ -3101,19 +2876,24 @@ impl DeleteLabelGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLabelOutput {}
+pub struct DeleteLabelOutput  {
+}
 /// See [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
 pub mod delete_label_output {
-
+    
     /// A builder for [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
         pub fn build(self) -> crate::output::DeleteLabelOutput {
-            crate::output::DeleteLabelOutput {}
+            crate::output::DeleteLabelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLabelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
@@ -3125,19 +2905,24 @@ impl DeleteLabelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInferenceSchedulerOutput {}
+pub struct DeleteInferenceSchedulerOutput  {
+}
 /// See [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput).
 pub mod delete_inference_scheduler_output {
-
+    
     /// A builder for [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::DeleteInferenceSchedulerOutput {
-            crate::output::DeleteInferenceSchedulerOutput {}
+            crate::output::DeleteInferenceSchedulerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput).
@@ -3149,19 +2934,24 @@ impl DeleteInferenceSchedulerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatasetOutput {}
+pub struct DeleteDatasetOutput  {
+}
 /// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
 pub mod delete_dataset_output {
-
+    
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
         pub fn build(self) -> crate::output::DeleteDatasetOutput {
-            crate::output::DeleteDatasetOutput {}
+            crate::output::DeleteDatasetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDatasetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
@@ -3173,7 +2963,7 @@ impl DeleteDatasetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateModelOutput {
+pub struct CreateModelOutput  {
     /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
     #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
@@ -3183,17 +2973,17 @@ pub struct CreateModelOutput {
 }
 impl CreateModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ModelStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateModelOutput`](crate::output::CreateModelOutput).
 pub mod create_model_output {
-
+    
     /// A builder for [`CreateModelOutput`](crate::output::CreateModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3208,8 +2998,7 @@ pub mod create_model_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
         pub fn status(mut self, input: crate::model::ModelStatus) -> Self {
@@ -3218,17 +3007,20 @@ pub mod create_model_output {
         }
         /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateModelOutput`](crate::output::CreateModelOutput).
         pub fn build(self) -> crate::output::CreateModelOutput {
             crate::output::CreateModelOutput {
-                model_arn: self.model_arn,
-                status: self.status,
+                model_arn: self.model_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelOutput`](crate::output::CreateModelOutput).
@@ -3240,7 +3032,7 @@ impl CreateModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLabelGroupOutput {
+pub struct CreateLabelGroupOutput  {
     /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
@@ -3250,17 +3042,17 @@ pub struct CreateLabelGroupOutput {
 }
 impl CreateLabelGroupOutput {
     /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ARN of the label group that you have created. </p>
-    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
 }
 /// See [`CreateLabelGroupOutput`](crate::output::CreateLabelGroupOutput).
 pub mod create_label_group_output {
-
+    
     /// A builder for [`CreateLabelGroupOutput`](crate::output::CreateLabelGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3274,12 +3066,8 @@ pub mod create_label_group_output {
             self
         }
         /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-        pub fn set_label_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_name = input;
-            self
+        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_name = input; self
         }
         /// <p> The ARN of the label group that you have created. </p>
         pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3287,21 +3075,21 @@ pub mod create_label_group_output {
             self
         }
         /// <p> The ARN of the label group that you have created. </p>
-        pub fn set_label_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_group_arn = input;
-            self
+        pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLabelGroupOutput`](crate::output::CreateLabelGroupOutput).
         pub fn build(self) -> crate::output::CreateLabelGroupOutput {
             crate::output::CreateLabelGroupOutput {
-                label_group_name: self.label_group_name,
-                label_group_arn: self.label_group_arn,
+                label_group_name: self.label_group_name
+                ,
+                label_group_arn: self.label_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateLabelGroupOutput`](crate::output::CreateLabelGroupOutput).
@@ -3313,20 +3101,20 @@ impl CreateLabelGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLabelOutput {
+pub struct CreateLabelOutput  {
     /// <p> The ID of the label that you have created. </p>
     #[doc(hidden)]
     pub label_id: std::option::Option<std::string::String>,
 }
 impl CreateLabelOutput {
     /// <p> The ID of the label that you have created. </p>
-    pub fn label_id(&self) -> std::option::Option<&str> {
+    pub fn label_id(&self) -> std::option::Option<& str> {
         self.label_id.as_deref()
     }
 }
 /// See [`CreateLabelOutput`](crate::output::CreateLabelOutput).
 pub mod create_label_output {
-
+    
     /// A builder for [`CreateLabelOutput`](crate::output::CreateLabelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3340,16 +3128,18 @@ pub mod create_label_output {
         }
         /// <p> The ID of the label that you have created. </p>
         pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_id = input;
-            self
+            self.label_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateLabelOutput`](crate::output::CreateLabelOutput).
         pub fn build(self) -> crate::output::CreateLabelOutput {
             crate::output::CreateLabelOutput {
-                label_id: self.label_id,
+                label_id: self.label_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLabelOutput {
     /// Creates a new builder-style object to manufacture [`CreateLabelOutput`](crate::output::CreateLabelOutput).
@@ -3361,7 +3151,7 @@ impl CreateLabelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInferenceSchedulerOutput {
+pub struct CreateInferenceSchedulerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
     #[doc(hidden)]
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
@@ -3374,21 +3164,21 @@ pub struct CreateInferenceSchedulerOutput {
 }
 impl CreateInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
-    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>The name of inference scheduler being created. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput).
 pub mod create_inference_scheduler_output {
-
+    
     /// A builder for [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3403,12 +3193,8 @@ pub mod create_inference_scheduler_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
-        pub fn set_inference_scheduler_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_arn = input;
-            self
+        pub fn set_inference_scheduler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_arn = input; self
         }
         /// <p>The name of inference scheduler being created. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3416,12 +3202,8 @@ pub mod create_inference_scheduler_output {
             self
         }
         /// <p>The name of inference scheduler being created. </p>
-        pub fn set_inference_scheduler_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inference_scheduler_name = input;
-            self
+        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_scheduler_name = input; self
         }
         /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
         pub fn status(mut self, input: crate::model::InferenceSchedulerStatus) -> Self {
@@ -3429,22 +3211,23 @@ pub mod create_inference_scheduler_output {
             self
         }
         /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InferenceSchedulerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceSchedulerStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::CreateInferenceSchedulerOutput {
             crate::output::CreateInferenceSchedulerOutput {
-                inference_scheduler_arn: self.inference_scheduler_arn,
-                inference_scheduler_name: self.inference_scheduler_name,
-                status: self.status,
+                inference_scheduler_arn: self.inference_scheduler_arn
+                ,
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput).
@@ -3456,7 +3239,7 @@ impl CreateInferenceSchedulerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetOutput {
+pub struct CreateDatasetOutput  {
     /// <p>The name of the dataset being created. </p>
     #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
@@ -3469,21 +3252,21 @@ pub struct CreateDatasetOutput {
 }
 impl CreateDatasetOutput {
     /// <p>The name of the dataset being created. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DatasetStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
 pub mod create_dataset_output {
-
+    
     /// A builder for [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3499,8 +3282,7 @@ pub mod create_dataset_output {
         }
         /// <p>The name of the dataset being created. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3509,8 +3291,7 @@ pub mod create_dataset_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
@@ -3518,22 +3299,23 @@ pub mod create_dataset_output {
             self
         }
         /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DatasetStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
         pub fn build(self) -> crate::output::CreateDatasetOutput {
             crate::output::CreateDatasetOutput {
-                dataset_name: self.dataset_name,
-                dataset_arn: self.dataset_arn,
-                status: self.status,
+                dataset_name: self.dataset_name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDatasetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
@@ -3541,3 +3323,4 @@ impl CreateDatasetOutput {
         crate::output::create_dataset_output::Builder::default()
     }
 }
+

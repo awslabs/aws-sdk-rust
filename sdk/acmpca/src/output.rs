@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCertificateAuthorityOutput {}
+pub struct UpdateCertificateAuthorityOutput  {
+}
 /// See [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput).
 pub mod update_certificate_authority_output {
-
+    
     /// A builder for [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::UpdateCertificateAuthorityOutput {
-            crate::output::UpdateCertificateAuthorityOutput {}
+            crate::output::UpdateCertificateAuthorityOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput).
@@ -26,19 +31,24 @@ impl UpdateCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagCertificateAuthorityOutput {}
+pub struct UntagCertificateAuthorityOutput  {
+}
 /// See [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput).
 pub mod untag_certificate_authority_output {
-
+    
     /// A builder for [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::UntagCertificateAuthorityOutput {
-            crate::output::UntagCertificateAuthorityOutput {}
+            crate::output::UntagCertificateAuthorityOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput).
@@ -50,19 +60,24 @@ impl UntagCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagCertificateAuthorityOutput {}
+pub struct TagCertificateAuthorityOutput  {
+}
 /// See [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput).
 pub mod tag_certificate_authority_output {
-
+    
     /// A builder for [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::TagCertificateAuthorityOutput {
-            crate::output::TagCertificateAuthorityOutput {}
+            crate::output::TagCertificateAuthorityOutput {
+            }
         }
     }
+    
+    
 }
 impl TagCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput).
@@ -74,19 +89,24 @@ impl TagCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeCertificateOutput {}
+pub struct RevokeCertificateOutput  {
+}
 /// See [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput).
 pub mod revoke_certificate_output {
-
+    
     /// A builder for [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput).
         pub fn build(self) -> crate::output::RevokeCertificateOutput {
-            crate::output::RevokeCertificateOutput {}
+            crate::output::RevokeCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl RevokeCertificateOutput {
     /// Creates a new builder-style object to manufacture [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput).
@@ -98,19 +118,24 @@ impl RevokeCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreCertificateAuthorityOutput {}
+pub struct RestoreCertificateAuthorityOutput  {
+}
 /// See [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput).
 pub mod restore_certificate_authority_output {
-
+    
     /// A builder for [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::RestoreCertificateAuthorityOutput {
-            crate::output::RestoreCertificateAuthorityOutput {}
+            crate::output::RestoreCertificateAuthorityOutput {
+            }
         }
     }
+    
+    
 }
 impl RestoreCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput).
@@ -122,19 +147,24 @@ impl RestoreCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPolicyOutput {}
+pub struct PutPolicyOutput  {
+}
 /// See [`PutPolicyOutput`](crate::output::PutPolicyOutput).
 pub mod put_policy_output {
-
+    
     /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutPolicyOutput`](crate::output::PutPolicyOutput).
         pub fn build(self) -> crate::output::PutPolicyOutput {
-            crate::output::PutPolicyOutput {}
+            crate::output::PutPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutPolicyOutput`](crate::output::PutPolicyOutput).
@@ -146,7 +176,7 @@ impl PutPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsOutput {
+pub struct ListTagsOutput  {
     /// <p>The tags associated with your private CA.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -156,17 +186,17 @@ pub struct ListTagsOutput {
 }
 impl ListTagsOutput {
     /// <p>The tags associated with your private CA.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
-
+    
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -181,17 +211,13 @@ pub mod list_tags_output {
         /// <p>The tags associated with your private CA.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with your private CA.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,17 +226,20 @@ pub mod list_tags_output {
         }
         /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
             crate::output::ListTagsOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput).
@@ -222,7 +251,7 @@ impl ListTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionsOutput {
+pub struct ListPermissionsOutput  {
     /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -232,17 +261,17 @@ pub struct ListPermissionsOutput {
 }
 impl ListPermissionsOutput {
     /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::Permission]> {
         self.permissions.as_deref()
     }
     /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
 pub mod list_permissions_output {
-
+    
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -257,17 +286,13 @@ pub mod list_permissions_output {
         /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
         pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Permission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,17 +301,20 @@ pub mod list_permissions_output {
         }
         /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
         pub fn build(self) -> crate::output::ListPermissionsOutput {
             crate::output::ListPermissionsOutput {
-                permissions: self.permissions,
-                next_token: self.next_token,
+                permissions: self.permissions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
@@ -298,35 +326,31 @@ impl ListPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCertificateAuthoritiesOutput {
+pub struct ListCertificateAuthoritiesOutput  {
     /// <p>Summary information about each certificate authority you have created.</p>
     #[doc(hidden)]
-    pub certificate_authorities:
-        std::option::Option<std::vec::Vec<crate::model::CertificateAuthority>>,
+    pub certificate_authorities: std::option::Option<std::vec::Vec<crate::model::CertificateAuthority>>,
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCertificateAuthoritiesOutput {
     /// <p>Summary information about each certificate authority you have created.</p>
-    pub fn certificate_authorities(
-        &self,
-    ) -> std::option::Option<&[crate::model::CertificateAuthority]> {
+    pub fn certificate_authorities(&self) -> std::option::Option<& [crate::model::CertificateAuthority]> {
         self.certificate_authorities.as_deref()
     }
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput).
 pub mod list_certificate_authorities_output {
-
+    
     /// A builder for [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) certificate_authorities:
-            std::option::Option<std::vec::Vec<crate::model::CertificateAuthority>>,
+        pub(crate) certificate_authorities: std::option::Option<std::vec::Vec<crate::model::CertificateAuthority>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -335,22 +359,15 @@ pub mod list_certificate_authorities_output {
         /// To override the contents of this collection use [`set_certificate_authorities`](Self::set_certificate_authorities).
         ///
         /// <p>Summary information about each certificate authority you have created.</p>
-        pub fn certificate_authorities(
-            mut self,
-            input: crate::model::CertificateAuthority,
-        ) -> Self {
+        pub fn certificate_authorities(mut self, input: crate::model::CertificateAuthority) -> Self {
             let mut v = self.certificate_authorities.unwrap_or_default();
-            v.push(input);
-            self.certificate_authorities = Some(v);
-            self
+                            v.push(input);
+                            self.certificate_authorities = Some(v);
+                            self
         }
         /// <p>Summary information about each certificate authority you have created.</p>
-        pub fn set_certificate_authorities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CertificateAuthority>>,
-        ) -> Self {
-            self.certificate_authorities = input;
-            self
+        pub fn set_certificate_authorities(mut self, input: std::option::Option<std::vec::Vec<crate::model::CertificateAuthority>>) -> Self {
+            self.certificate_authorities = input; self
         }
         /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -359,17 +376,20 @@ pub mod list_certificate_authorities_output {
         }
         /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput).
         pub fn build(self) -> crate::output::ListCertificateAuthoritiesOutput {
             crate::output::ListCertificateAuthoritiesOutput {
-                certificate_authorities: self.certificate_authorities,
-                next_token: self.next_token,
+                certificate_authorities: self.certificate_authorities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCertificateAuthoritiesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput).
@@ -381,50 +401,49 @@ impl ListCertificateAuthoritiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IssueCertificateOutput {
-    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
+pub struct IssueCertificateOutput  {
+    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p> 
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl IssueCertificateOutput {
-    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
+    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p> 
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
 /// See [`IssueCertificateOutput`](crate::output::IssueCertificateOutput).
 pub mod issue_certificate_output {
-
+    
     /// A builder for [`IssueCertificateOutput`](crate::output::IssueCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
+        /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p> 
         /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
+        /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p> 
         /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// Consumes the builder and constructs a [`IssueCertificateOutput`](crate::output::IssueCertificateOutput).
         pub fn build(self) -> crate::output::IssueCertificateOutput {
             crate::output::IssueCertificateOutput {
-                certificate_arn: self.certificate_arn,
+                certificate_arn: self.certificate_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl IssueCertificateOutput {
     /// Creates a new builder-style object to manufacture [`IssueCertificateOutput`](crate::output::IssueCertificateOutput).
@@ -436,19 +455,24 @@ impl IssueCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCertificateAuthorityCertificateOutput {}
+pub struct ImportCertificateAuthorityCertificateOutput  {
+}
 /// See [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput).
 pub mod import_certificate_authority_certificate_output {
-
+    
     /// A builder for [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput).
         pub fn build(self) -> crate::output::ImportCertificateAuthorityCertificateOutput {
-            crate::output::ImportCertificateAuthorityCertificateOutput {}
+            crate::output::ImportCertificateAuthorityCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl ImportCertificateAuthorityCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput).
@@ -460,20 +484,20 @@ impl ImportCertificateAuthorityCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// <p>The policy attached to the private CA as a JSON document.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetPolicyOutput {
     /// <p>The policy attached to the private CA as a JSON document.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
-
+    
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -487,16 +511,18 @@ pub mod get_policy_output {
         }
         /// <p>The policy attached to the private CA as a JSON document.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput).
         pub fn build(self) -> crate::output::GetPolicyOutput {
             crate::output::GetPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput).
@@ -508,20 +534,20 @@ impl GetPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCertificateAuthorityCsrOutput {
+pub struct GetCertificateAuthorityCsrOutput  {
     /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
     #[doc(hidden)]
     pub csr: std::option::Option<std::string::String>,
 }
 impl GetCertificateAuthorityCsrOutput {
     /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
-    pub fn csr(&self) -> std::option::Option<&str> {
+    pub fn csr(&self) -> std::option::Option<& str> {
         self.csr.as_deref()
     }
 }
 /// See [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput).
 pub mod get_certificate_authority_csr_output {
-
+    
     /// A builder for [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -535,14 +561,18 @@ pub mod get_certificate_authority_csr_output {
         }
         /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
         pub fn set_csr(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.csr = input;
-            self
+            self.csr = input; self
         }
         /// Consumes the builder and constructs a [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput).
         pub fn build(self) -> crate::output::GetCertificateAuthorityCsrOutput {
-            crate::output::GetCertificateAuthorityCsrOutput { csr: self.csr }
+            crate::output::GetCertificateAuthorityCsrOutput {
+                csr: self.csr
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetCertificateAuthorityCsrOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput).
@@ -554,7 +584,7 @@ impl GetCertificateAuthorityCsrOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCertificateAuthorityCertificateOutput {
+pub struct GetCertificateAuthorityCertificateOutput  {
     /// <p>Base64-encoded certificate authority (CA) certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -564,17 +594,17 @@ pub struct GetCertificateAuthorityCertificateOutput {
 }
 impl GetCertificateAuthorityCertificateOutput {
     /// <p>Base64-encoded certificate authority (CA) certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
 }
 /// See [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput).
 pub mod get_certificate_authority_certificate_output {
-
+    
     /// A builder for [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -589,8 +619,7 @@ pub mod get_certificate_authority_certificate_output {
         }
         /// <p>Base64-encoded certificate authority (CA) certificate.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.certificate = input;
-            self
+            self.certificate = input; self
         }
         /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -598,21 +627,21 @@ pub mod get_certificate_authority_certificate_output {
             self
         }
         /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
-        pub fn set_certificate_chain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_chain = input;
-            self
+        pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_chain = input; self
         }
         /// Consumes the builder and constructs a [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput).
         pub fn build(self) -> crate::output::GetCertificateAuthorityCertificateOutput {
             crate::output::GetCertificateAuthorityCertificateOutput {
-                certificate: self.certificate,
-                certificate_chain: self.certificate_chain,
+                certificate: self.certificate
+                ,
+                certificate_chain: self.certificate_chain
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCertificateAuthorityCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput).
@@ -624,7 +653,7 @@ impl GetCertificateAuthorityCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCertificateOutput {
+pub struct GetCertificateOutput  {
     /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -634,17 +663,17 @@ pub struct GetCertificateOutput {
 }
 impl GetCertificateOutput {
     /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
 }
 /// See [`GetCertificateOutput`](crate::output::GetCertificateOutput).
 pub mod get_certificate_output {
-
+    
     /// A builder for [`GetCertificateOutput`](crate::output::GetCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -659,8 +688,7 @@ pub mod get_certificate_output {
         }
         /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.certificate = input;
-            self
+            self.certificate = input; self
         }
         /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -668,21 +696,21 @@ pub mod get_certificate_output {
             self
         }
         /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
-        pub fn set_certificate_chain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_chain = input;
-            self
+        pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_chain = input; self
         }
         /// Consumes the builder and constructs a [`GetCertificateOutput`](crate::output::GetCertificateOutput).
         pub fn build(self) -> crate::output::GetCertificateOutput {
             crate::output::GetCertificateOutput {
-                certificate: self.certificate,
-                certificate_chain: self.certificate_chain,
+                certificate: self.certificate
+                ,
+                certificate_chain: self.certificate_chain
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificateOutput`](crate::output::GetCertificateOutput).
@@ -694,7 +722,7 @@ impl GetCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificateAuthorityAuditReportOutput {
+pub struct DescribeCertificateAuthorityAuditReportOutput  {
     /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
     #[doc(hidden)]
     pub audit_report_status: std::option::Option<crate::model::AuditReportStatus>,
@@ -710,25 +738,25 @@ pub struct DescribeCertificateAuthorityAuditReportOutput {
 }
 impl DescribeCertificateAuthorityAuditReportOutput {
     /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
-    pub fn audit_report_status(&self) -> std::option::Option<&crate::model::AuditReportStatus> {
+    pub fn audit_report_status(&self) -> std::option::Option<& crate::model::AuditReportStatus> {
         self.audit_report_status.as_ref()
     }
     /// <p>Name of the S3 bucket that contains the report.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>The date and time at which the report was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput).
 pub mod describe_certificate_authority_audit_report_output {
-
+    
     /// A builder for [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -744,12 +772,8 @@ pub mod describe_certificate_authority_audit_report_output {
             self
         }
         /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
-        pub fn set_audit_report_status(
-            mut self,
-            input: std::option::Option<crate::model::AuditReportStatus>,
-        ) -> Self {
-            self.audit_report_status = input;
-            self
+        pub fn set_audit_report_status(mut self, input: std::option::Option<crate::model::AuditReportStatus>) -> Self {
+            self.audit_report_status = input; self
         }
         /// <p>Name of the S3 bucket that contains the report.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -757,12 +781,8 @@ pub mod describe_certificate_authority_audit_report_output {
             self
         }
         /// <p>Name of the S3 bucket that contains the report.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -771,8 +791,7 @@ pub mod describe_certificate_authority_audit_report_output {
         }
         /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// <p>The date and time at which the report was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -780,23 +799,25 @@ pub mod describe_certificate_authority_audit_report_output {
             self
         }
         /// <p>The date and time at which the report was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput).
         pub fn build(self) -> crate::output::DescribeCertificateAuthorityAuditReportOutput {
             crate::output::DescribeCertificateAuthorityAuditReportOutput {
-                audit_report_status: self.audit_report_status,
-                s3_bucket_name: self.s3_bucket_name,
-                s3_key: self.s3_key,
-                created_at: self.created_at,
+                audit_report_status: self.audit_report_status
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                s3_key: self.s3_key
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCertificateAuthorityAuditReportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput).
@@ -808,22 +829,20 @@ impl DescribeCertificateAuthorityAuditReportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificateAuthorityOutput {
+pub struct DescribeCertificateAuthorityOutput  {
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
     #[doc(hidden)]
     pub certificate_authority: std::option::Option<crate::model::CertificateAuthority>,
 }
 impl DescribeCertificateAuthorityOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
-    pub fn certificate_authority(
-        &self,
-    ) -> std::option::Option<&crate::model::CertificateAuthority> {
+    pub fn certificate_authority(&self) -> std::option::Option<& crate::model::CertificateAuthority> {
         self.certificate_authority.as_ref()
     }
 }
 /// See [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput).
 pub mod describe_certificate_authority_output {
-
+    
     /// A builder for [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -836,20 +855,19 @@ pub mod describe_certificate_authority_output {
             self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
-        pub fn set_certificate_authority(
-            mut self,
-            input: std::option::Option<crate::model::CertificateAuthority>,
-        ) -> Self {
-            self.certificate_authority = input;
-            self
+        pub fn set_certificate_authority(mut self, input: std::option::Option<crate::model::CertificateAuthority>) -> Self {
+            self.certificate_authority = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::DescribeCertificateAuthorityOutput {
             crate::output::DescribeCertificateAuthorityOutput {
-                certificate_authority: self.certificate_authority,
+                certificate_authority: self.certificate_authority
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput).
@@ -861,19 +879,24 @@ impl DescribeCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyOutput {}
+pub struct DeletePolicyOutput  {
+}
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
 pub mod delete_policy_output {
-
+    
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
         pub fn build(self) -> crate::output::DeletePolicyOutput {
-            crate::output::DeletePolicyOutput {}
+            crate::output::DeletePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
@@ -885,19 +908,24 @@ impl DeletePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionOutput {}
+pub struct DeletePermissionOutput  {
+}
 /// See [`DeletePermissionOutput`](crate::output::DeletePermissionOutput).
 pub mod delete_permission_output {
-
+    
     /// A builder for [`DeletePermissionOutput`](crate::output::DeletePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePermissionOutput`](crate::output::DeletePermissionOutput).
         pub fn build(self) -> crate::output::DeletePermissionOutput {
-            crate::output::DeletePermissionOutput {}
+            crate::output::DeletePermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePermissionOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionOutput`](crate::output::DeletePermissionOutput).
@@ -909,19 +937,24 @@ impl DeletePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCertificateAuthorityOutput {}
+pub struct DeleteCertificateAuthorityOutput  {
+}
 /// See [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput).
 pub mod delete_certificate_authority_output {
-
+    
     /// A builder for [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::DeleteCertificateAuthorityOutput {
-            crate::output::DeleteCertificateAuthorityOutput {}
+            crate::output::DeleteCertificateAuthorityOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput).
@@ -933,19 +966,24 @@ impl DeleteCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePermissionOutput {}
+pub struct CreatePermissionOutput  {
+}
 /// See [`CreatePermissionOutput`](crate::output::CreatePermissionOutput).
 pub mod create_permission_output {
-
+    
     /// A builder for [`CreatePermissionOutput`](crate::output::CreatePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreatePermissionOutput`](crate::output::CreatePermissionOutput).
         pub fn build(self) -> crate::output::CreatePermissionOutput {
-            crate::output::CreatePermissionOutput {}
+            crate::output::CreatePermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl CreatePermissionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionOutput`](crate::output::CreatePermissionOutput).
@@ -957,7 +995,7 @@ impl CreatePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCertificateAuthorityAuditReportOutput {
+pub struct CreateCertificateAuthorityAuditReportOutput  {
     /// <p>An alphanumeric string that contains a report identifier.</p>
     #[doc(hidden)]
     pub audit_report_id: std::option::Option<std::string::String>,
@@ -967,17 +1005,17 @@ pub struct CreateCertificateAuthorityAuditReportOutput {
 }
 impl CreateCertificateAuthorityAuditReportOutput {
     /// <p>An alphanumeric string that contains a report identifier.</p>
-    pub fn audit_report_id(&self) -> std::option::Option<&str> {
+    pub fn audit_report_id(&self) -> std::option::Option<& str> {
         self.audit_report_id.as_deref()
     }
     /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
 /// See [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput).
 pub mod create_certificate_authority_audit_report_output {
-
+    
     /// A builder for [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -991,12 +1029,8 @@ pub mod create_certificate_authority_audit_report_output {
             self
         }
         /// <p>An alphanumeric string that contains a report identifier.</p>
-        pub fn set_audit_report_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.audit_report_id = input;
-            self
+        pub fn set_audit_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audit_report_id = input; self
         }
         /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1005,17 +1039,20 @@ pub mod create_certificate_authority_audit_report_output {
         }
         /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// Consumes the builder and constructs a [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput).
         pub fn build(self) -> crate::output::CreateCertificateAuthorityAuditReportOutput {
             crate::output::CreateCertificateAuthorityAuditReportOutput {
-                audit_report_id: self.audit_report_id,
-                s3_key: self.s3_key,
+                audit_report_id: self.audit_report_id
+                ,
+                s3_key: self.s3_key
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCertificateAuthorityAuditReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput).
@@ -1027,50 +1064,49 @@ impl CreateCertificateAuthorityAuditReportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCertificateAuthorityOutput {
-    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+pub struct CreateCertificateAuthorityOutput  {
+    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p> 
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl CreateCertificateAuthorityOutput {
-    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p> 
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
 }
 /// See [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput).
 pub mod create_certificate_authority_output {
-
+    
     /// A builder for [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+        /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p> 
         /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+        /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p> 
         /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-        pub fn set_certificate_authority_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_authority_arn = input;
-            self
+        pub fn set_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_authority_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::CreateCertificateAuthorityOutput {
             crate::output::CreateCertificateAuthorityOutput {
-                certificate_authority_arn: self.certificate_authority_arn,
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput).
@@ -1078,3 +1114,4 @@ impl CreateCertificateAuthorityOutput {
         crate::output::create_certificate_authority_output::Builder::default()
     }
 }
+

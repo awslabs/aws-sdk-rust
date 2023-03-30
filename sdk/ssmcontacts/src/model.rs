@@ -3,7 +3,7 @@
 /// <p>Provides information about which field caused the exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the field that caused the exception.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the field that caused the exception.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Information about what caused the field to cause an exception.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the field that caused the exception.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Information about what caused the field to cause an exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>Information about what caused the field to cause an exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -99,22 +101,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -125,7 +119,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -134,19 +128,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -155,16 +147,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANNOT_PARSE",
-            "FIELD_VALIDATION_FAILED",
-            "OTHER",
-            "UNKNOWN_OPERATION",
+            "CANNOT_PARSE", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
         ]
     }
 }
@@ -177,66 +166,65 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactChannelAddress {
-    /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
-    /// <ul>
-    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
-    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
-    /// <li> <p>EMAIL - any standard email format</p> </li>
+pub struct ContactChannelAddress  {
+    /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p> 
+    /// <ul> 
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li> 
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li> 
+    /// <li> <p>EMAIL - any standard email format</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub simple_address: std::option::Option<std::string::String>,
 }
 impl ContactChannelAddress {
-    /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
-    /// <ul>
-    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
-    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
-    /// <li> <p>EMAIL - any standard email format</p> </li>
+    /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p> 
+    /// <ul> 
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li> 
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li> 
+    /// <li> <p>EMAIL - any standard email format</p> </li> 
     /// </ul>
-    pub fn simple_address(&self) -> std::option::Option<&str> {
+    pub fn simple_address(&self) -> std::option::Option<& str> {
         self.simple_address.as_deref()
     }
 }
 /// See [`ContactChannelAddress`](crate::model::ContactChannelAddress).
 pub mod contact_channel_address {
-
+    
     /// A builder for [`ContactChannelAddress`](crate::model::ContactChannelAddress).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simple_address: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
-        /// <ul>
-        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
-        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
-        /// <li> <p>EMAIL - any standard email format</p> </li>
+        /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p> 
+        /// <ul> 
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li> 
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li> 
+        /// <li> <p>EMAIL - any standard email format</p> </li> 
         /// </ul>
         pub fn simple_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.simple_address = Some(input.into());
             self
         }
-        /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
-        /// <ul>
-        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
-        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
-        /// <li> <p>EMAIL - any standard email format</p> </li>
+        /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p> 
+        /// <ul> 
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li> 
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li> 
+        /// <li> <p>EMAIL - any standard email format</p> </li> 
         /// </ul>
-        pub fn set_simple_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.simple_address = input;
-            self
+        pub fn set_simple_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.simple_address = input; self
         }
         /// Consumes the builder and constructs a [`ContactChannelAddress`](crate::model::ContactChannelAddress).
         pub fn build(self) -> crate::model::ContactChannelAddress {
             crate::model::ContactChannelAddress {
-                simple_address: self.simple_address,
+                simple_address: self.simple_address
+                ,
             }
         }
     }
+    
+    
 }
 impl ContactChannelAddress {
     /// Creates a new builder-style object to manufacture [`ContactChannelAddress`](crate::model::ContactChannelAddress).
@@ -248,20 +236,20 @@ impl ContactChannelAddress {
 /// <p>The stages that an escalation plan or engagement plan engages contacts and contact methods in.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Plan {
+pub struct Plan  {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     #[doc(hidden)]
     pub stages: std::option::Option<std::vec::Vec<crate::model::Stage>>,
 }
 impl Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
-    pub fn stages(&self) -> std::option::Option<&[crate::model::Stage]> {
+    pub fn stages(&self) -> std::option::Option<& [crate::model::Stage]> {
         self.stages.as_deref()
     }
 }
 /// See [`Plan`](crate::model::Plan).
 pub mod plan {
-
+    
     /// A builder for [`Plan`](crate::model::Plan).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -275,25 +263,24 @@ pub mod plan {
         /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
         pub fn stages(mut self, input: crate::model::Stage) -> Self {
             let mut v = self.stages.unwrap_or_default();
-            v.push(input);
-            self.stages = Some(v);
-            self
+                            v.push(input);
+                            self.stages = Some(v);
+                            self
         }
         /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
-        pub fn set_stages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Stage>>,
-        ) -> Self {
-            self.stages = input;
-            self
+        pub fn set_stages(mut self, input: std::option::Option<std::vec::Vec<crate::model::Stage>>) -> Self {
+            self.stages = input; self
         }
         /// Consumes the builder and constructs a [`Plan`](crate::model::Plan).
         pub fn build(self) -> crate::model::Plan {
             crate::model::Plan {
-                stages: self.stages,
+                stages: self.stages
+                ,
             }
         }
     }
+    
+    
 }
 impl Plan {
     /// Creates a new builder-style object to manufacture [`Plan`](crate::model::Plan).
@@ -305,7 +292,7 @@ impl Plan {
 /// <p>A set amount of time that an escalation plan or engagement plan engages the specified contacts or contact methods.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Stage {
+pub struct Stage  {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
     #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
@@ -319,13 +306,13 @@ impl Stage {
         self.duration_in_minutes
     }
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::Target]> {
         self.targets.as_deref()
     }
 }
 /// See [`Stage`](crate::model::Stage).
 pub mod stage {
-
+    
     /// A builder for [`Stage`](crate::model::Stage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -340,8 +327,7 @@ pub mod stage {
         }
         /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_minutes = input;
-            self
+            self.duration_in_minutes = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -350,26 +336,26 @@ pub mod stage {
         /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Target>>) -> Self {
+            self.targets = input; self
         }
         /// Consumes the builder and constructs a [`Stage`](crate::model::Stage).
         pub fn build(self) -> crate::model::Stage {
             crate::model::Stage {
-                duration_in_minutes: self.duration_in_minutes,
-                targets: self.targets,
+                duration_in_minutes: self.duration_in_minutes
+                ,
+                targets: self.targets
+                ,
             }
         }
     }
+    
+    
 }
 impl Stage {
     /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage).
@@ -381,7 +367,7 @@ impl Stage {
 /// <p>The contact or contact channel that's being engaged.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Target {
+pub struct Target  {
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
     #[doc(hidden)]
     pub channel_target_info: std::option::Option<crate::model::ChannelTargetInfo>,
@@ -391,17 +377,17 @@ pub struct Target {
 }
 impl Target {
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
-    pub fn channel_target_info(&self) -> std::option::Option<&crate::model::ChannelTargetInfo> {
+    pub fn channel_target_info(&self) -> std::option::Option<& crate::model::ChannelTargetInfo> {
         self.channel_target_info.as_ref()
     }
     /// <p>Information about the contact that Incident Manager is engaging.</p>
-    pub fn contact_target_info(&self) -> std::option::Option<&crate::model::ContactTargetInfo> {
+    pub fn contact_target_info(&self) -> std::option::Option<& crate::model::ContactTargetInfo> {
         self.contact_target_info.as_ref()
     }
 }
 /// See [`Target`](crate::model::Target).
 pub mod target {
-
+    
     /// A builder for [`Target`](crate::model::Target).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -415,12 +401,8 @@ pub mod target {
             self
         }
         /// <p>Information about the contact channel Incident Manager is engaging.</p>
-        pub fn set_channel_target_info(
-            mut self,
-            input: std::option::Option<crate::model::ChannelTargetInfo>,
-        ) -> Self {
-            self.channel_target_info = input;
-            self
+        pub fn set_channel_target_info(mut self, input: std::option::Option<crate::model::ChannelTargetInfo>) -> Self {
+            self.channel_target_info = input; self
         }
         /// <p>Information about the contact that Incident Manager is engaging.</p>
         pub fn contact_target_info(mut self, input: crate::model::ContactTargetInfo) -> Self {
@@ -428,21 +410,21 @@ pub mod target {
             self
         }
         /// <p>Information about the contact that Incident Manager is engaging.</p>
-        pub fn set_contact_target_info(
-            mut self,
-            input: std::option::Option<crate::model::ContactTargetInfo>,
-        ) -> Self {
-            self.contact_target_info = input;
-            self
+        pub fn set_contact_target_info(mut self, input: std::option::Option<crate::model::ContactTargetInfo>) -> Self {
+            self.contact_target_info = input; self
         }
         /// Consumes the builder and constructs a [`Target`](crate::model::Target).
         pub fn build(self) -> crate::model::Target {
             crate::model::Target {
-                channel_target_info: self.channel_target_info,
-                contact_target_info: self.contact_target_info,
+                channel_target_info: self.channel_target_info
+                ,
+                contact_target_info: self.contact_target_info
+                ,
             }
         }
     }
+    
+    
 }
 impl Target {
     /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
@@ -454,7 +436,7 @@ impl Target {
 /// <p>The contact that Incident Manager is engaging during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactTargetInfo {
+pub struct ContactTargetInfo  {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
@@ -464,7 +446,7 @@ pub struct ContactTargetInfo {
 }
 impl ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
@@ -474,7 +456,7 @@ impl ContactTargetInfo {
 }
 /// See [`ContactTargetInfo`](crate::model::ContactTargetInfo).
 pub mod contact_target_info {
-
+    
     /// A builder for [`ContactTargetInfo`](crate::model::ContactTargetInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -489,8 +471,7 @@ pub mod contact_target_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_id = input;
-            self
+            self.contact_id = input; self
         }
         /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
         pub fn is_essential(mut self, input: bool) -> Self {
@@ -499,17 +480,20 @@ pub mod contact_target_info {
         }
         /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
         pub fn set_is_essential(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_essential = input;
-            self
+            self.is_essential = input; self
         }
         /// Consumes the builder and constructs a [`ContactTargetInfo`](crate::model::ContactTargetInfo).
         pub fn build(self) -> crate::model::ContactTargetInfo {
             crate::model::ContactTargetInfo {
-                contact_id: self.contact_id,
-                is_essential: self.is_essential,
+                contact_id: self.contact_id
+                ,
+                is_essential: self.is_essential
+                ,
             }
         }
     }
+    
+    
 }
 impl ContactTargetInfo {
     /// Creates a new builder-style object to manufacture [`ContactTargetInfo`](crate::model::ContactTargetInfo).
@@ -521,7 +505,7 @@ impl ContactTargetInfo {
 /// <p>Information about the contact channel that Incident Manager uses to engage the contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelTargetInfo {
+pub struct ChannelTargetInfo  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
@@ -531,7 +515,7 @@ pub struct ChannelTargetInfo {
 }
 impl ChannelTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
+    pub fn contact_channel_id(&self) -> std::option::Option<& str> {
         self.contact_channel_id.as_deref()
     }
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
@@ -541,7 +525,7 @@ impl ChannelTargetInfo {
 }
 /// See [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
 pub mod channel_target_info {
-
+    
     /// A builder for [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -555,12 +539,8 @@ pub mod channel_target_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn set_contact_channel_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_channel_id = input;
-            self
+        pub fn set_contact_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_channel_id = input; self
         }
         /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
         pub fn retry_interval_in_minutes(mut self, input: i32) -> Self {
@@ -569,17 +549,20 @@ pub mod channel_target_info {
         }
         /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
         pub fn set_retry_interval_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.retry_interval_in_minutes = input;
-            self
+            self.retry_interval_in_minutes = input; self
         }
         /// Consumes the builder and constructs a [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
         pub fn build(self) -> crate::model::ChannelTargetInfo {
             crate::model::ChannelTargetInfo {
-                contact_channel_id: self.contact_channel_id,
-                retry_interval_in_minutes: self.retry_interval_in_minutes,
+                contact_channel_id: self.contact_channel_id
+                ,
+                retry_interval_in_minutes: self.retry_interval_in_minutes
+                ,
             }
         }
     }
+    
+    
 }
 impl ChannelTargetInfo {
     /// Creates a new builder-style object to manufacture [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
@@ -591,7 +574,7 @@ impl ChannelTargetInfo {
 /// <p>A container of a key-value name pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>Name of the object key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -601,17 +584,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>Name of the object key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -626,8 +609,7 @@ pub mod tag {
         }
         /// <p>Name of the object key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>Value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -636,17 +618,20 @@ pub mod tag {
         }
         /// <p>Value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -658,7 +643,7 @@ impl Tag {
 /// <p>Incident Manager engaging a contact's contact channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Page {
+pub struct Page  {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
     #[doc(hidden)]
     pub page_arn: std::option::Option<std::string::String>,
@@ -686,41 +671,41 @@ pub struct Page {
 }
 impl Page {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
-    pub fn page_arn(&self) -> std::option::Option<&str> {
+    pub fn page_arn(&self) -> std::option::Option<& str> {
         self.page_arn.as_deref()
     }
     /// <p>The ARN of the engagement that this page is part of.</p>
-    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+    pub fn engagement_arn(&self) -> std::option::Option<& str> {
         self.engagement_arn.as_deref()
     }
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> std::option::Option<&str> {
+    pub fn sender(&self) -> std::option::Option<& str> {
         self.sender.as_deref()
     }
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
-    pub fn incident_id(&self) -> std::option::Option<&str> {
+    pub fn incident_id(&self) -> std::option::Option<& str> {
         self.incident_id.as_deref()
     }
     /// <p>The time that Incident Manager engaged the contact channel.</p>
-    pub fn sent_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sent_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sent_time.as_ref()
     }
     /// <p>The time the message was delivered to the contact channel.</p>
-    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn delivery_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.delivery_time.as_ref()
     }
     /// <p>The time that the contact channel acknowledged engagement.</p>
-    pub fn read_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn read_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.read_time.as_ref()
     }
 }
 /// See [`Page`](crate::model::Page).
 pub mod page {
-
+    
     /// A builder for [`Page`](crate::model::Page).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -741,8 +726,7 @@ pub mod page {
         }
         /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
         pub fn set_page_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.page_arn = input;
-            self
+            self.page_arn = input; self
         }
         /// <p>The ARN of the engagement that this page is part of.</p>
         pub fn engagement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -750,12 +734,8 @@ pub mod page {
             self
         }
         /// <p>The ARN of the engagement that this page is part of.</p>
-        pub fn set_engagement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engagement_arn = input;
-            self
+        pub fn set_engagement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engagement_arn = input; self
         }
         /// <p>The ARN of the contact that Incident Manager is engaging.</p>
         pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -764,8 +744,7 @@ pub mod page {
         }
         /// <p>The ARN of the contact that Incident Manager is engaging.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The user that started the engagement.</p>
         pub fn sender(mut self, input: impl Into<std::string::String>) -> Self {
@@ -774,8 +753,7 @@ pub mod page {
         }
         /// <p>The user that started the engagement.</p>
         pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender = input;
-            self
+            self.sender = input; self
         }
         /// <p>The ARN of the incident that's engaging the contact channel.</p>
         pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -784,8 +762,7 @@ pub mod page {
         }
         /// <p>The ARN of the incident that's engaging the contact channel.</p>
         pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.incident_id = input;
-            self
+            self.incident_id = input; self
         }
         /// <p>The time that Incident Manager engaged the contact channel.</p>
         pub fn sent_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -793,12 +770,8 @@ pub mod page {
             self
         }
         /// <p>The time that Incident Manager engaged the contact channel.</p>
-        pub fn set_sent_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sent_time = input;
-            self
+        pub fn set_sent_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sent_time = input; self
         }
         /// <p>The time the message was delivered to the contact channel.</p>
         pub fn delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -806,12 +779,8 @@ pub mod page {
             self
         }
         /// <p>The time the message was delivered to the contact channel.</p>
-        pub fn set_delivery_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.delivery_time = input;
-            self
+        pub fn set_delivery_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.delivery_time = input; self
         }
         /// <p>The time that the contact channel acknowledged engagement.</p>
         pub fn read_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -819,27 +788,33 @@ pub mod page {
             self
         }
         /// <p>The time that the contact channel acknowledged engagement.</p>
-        pub fn set_read_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.read_time = input;
-            self
+        pub fn set_read_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.read_time = input; self
         }
         /// Consumes the builder and constructs a [`Page`](crate::model::Page).
         pub fn build(self) -> crate::model::Page {
             crate::model::Page {
-                page_arn: self.page_arn,
-                engagement_arn: self.engagement_arn,
-                contact_arn: self.contact_arn,
-                sender: self.sender,
-                incident_id: self.incident_id,
-                sent_time: self.sent_time,
-                delivery_time: self.delivery_time,
-                read_time: self.read_time,
+                page_arn: self.page_arn
+                ,
+                engagement_arn: self.engagement_arn
+                ,
+                contact_arn: self.contact_arn
+                ,
+                sender: self.sender
+                ,
+                incident_id: self.incident_id
+                ,
+                sent_time: self.sent_time
+                ,
+                delivery_time: self.delivery_time
+                ,
+                read_time: self.read_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Page {
     /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
@@ -851,7 +826,7 @@ impl Page {
 /// <p>Records events during an engagement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Receipt {
+pub struct Receipt  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
     #[doc(hidden)]
     pub contact_channel_arn: std::option::Option<std::string::String>,
@@ -867,25 +842,25 @@ pub struct Receipt {
 }
 impl Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
-    pub fn contact_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_channel_arn(&self) -> std::option::Option<& str> {
         self.contact_channel_arn.as_deref()
     }
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
-    pub fn receipt_type(&self) -> std::option::Option<&crate::model::ReceiptType> {
+    pub fn receipt_type(&self) -> std::option::Option<& crate::model::ReceiptType> {
         self.receipt_type.as_ref()
     }
     /// <p>Information provided during the page acknowledgement.</p>
-    pub fn receipt_info(&self) -> std::option::Option<&str> {
+    pub fn receipt_info(&self) -> std::option::Option<& str> {
         self.receipt_info.as_deref()
     }
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
-    pub fn receipt_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn receipt_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.receipt_time.as_ref()
     }
 }
 /// See [`Receipt`](crate::model::Receipt).
 pub mod receipt {
-
+    
     /// A builder for [`Receipt`](crate::model::Receipt).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -901,12 +876,8 @@ pub mod receipt {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
-        pub fn set_contact_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_channel_arn = input;
-            self
+        pub fn set_contact_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_channel_arn = input; self
         }
         /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
         pub fn receipt_type(mut self, input: crate::model::ReceiptType) -> Self {
@@ -914,12 +885,8 @@ pub mod receipt {
             self
         }
         /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
-        pub fn set_receipt_type(
-            mut self,
-            input: std::option::Option<crate::model::ReceiptType>,
-        ) -> Self {
-            self.receipt_type = input;
-            self
+        pub fn set_receipt_type(mut self, input: std::option::Option<crate::model::ReceiptType>) -> Self {
+            self.receipt_type = input; self
         }
         /// <p>Information provided during the page acknowledgement.</p>
         pub fn receipt_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -928,8 +895,7 @@ pub mod receipt {
         }
         /// <p>Information provided during the page acknowledgement.</p>
         pub fn set_receipt_info(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.receipt_info = input;
-            self
+            self.receipt_info = input; self
         }
         /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
         pub fn receipt_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -937,23 +903,25 @@ pub mod receipt {
             self
         }
         /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
-        pub fn set_receipt_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.receipt_time = input;
-            self
+        pub fn set_receipt_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.receipt_time = input; self
         }
         /// Consumes the builder and constructs a [`Receipt`](crate::model::Receipt).
         pub fn build(self) -> crate::model::Receipt {
             crate::model::Receipt {
-                contact_channel_arn: self.contact_channel_arn,
-                receipt_type: self.receipt_type,
-                receipt_info: self.receipt_info,
-                receipt_time: self.receipt_time,
+                contact_channel_arn: self.contact_channel_arn
+                ,
+                receipt_type: self.receipt_type
+                ,
+                receipt_info: self.receipt_info
+                ,
+                receipt_time: self.receipt_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Receipt {
     /// Creates a new builder-style object to manufacture [`Receipt`](crate::model::Receipt).
@@ -968,9 +936,9 @@ impl Receipt {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let receipttype = unimplemented!();
 /// match receipttype {
@@ -995,22 +963,14 @@ impl Receipt {
 /// Specifically, when `receipttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReceiptType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReceiptType {
     #[allow(missing_docs)] // documentation missing in model
     Delivered,
@@ -1023,7 +983,7 @@ pub enum ReceiptType {
     #[allow(missing_docs)] // documentation missing in model
     Stop,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReceiptType {
     fn from(s: &str) -> Self {
@@ -1033,17 +993,17 @@ impl std::convert::From<&str> for ReceiptType {
             "READ" => ReceiptType::Read,
             "SENT" => ReceiptType::Sent,
             "STOP" => ReceiptType::Stop,
-            other => ReceiptType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReceiptType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReceiptType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReceiptType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReceiptType::from(s))
+                }
+            }
 impl ReceiptType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1053,12 +1013,14 @@ impl ReceiptType {
             ReceiptType::Read => "READ",
             ReceiptType::Sent => "SENT",
             ReceiptType::Stop => "STOP",
-            ReceiptType::Unknown(value) => value.as_str(),
+            ReceiptType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELIVERED", "ERROR", "READ", "SENT", "STOP"]
+        &[
+            "DELIVERED", "ERROR", "READ", "SENT", "STOP"
+        ]
     }
 }
 impl AsRef<str> for ReceiptType {
@@ -1070,7 +1032,7 @@ impl AsRef<str> for ReceiptType {
 /// <p>Incident Manager reaching out to a contact or escalation plan to engage contact during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Engagement {
+pub struct Engagement  {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     #[doc(hidden)]
     pub engagement_arn: std::option::Option<std::string::String>,
@@ -1092,33 +1054,33 @@ pub struct Engagement {
 }
 impl Engagement {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+    pub fn engagement_arn(&self) -> std::option::Option<& str> {
         self.engagement_arn.as_deref()
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> std::option::Option<&str> {
+    pub fn sender(&self) -> std::option::Option<& str> {
         self.sender.as_deref()
     }
     /// <p>The ARN of the incident that's engaging the contact.</p>
-    pub fn incident_id(&self) -> std::option::Option<&str> {
+    pub fn incident_id(&self) -> std::option::Option<& str> {
         self.incident_id.as_deref()
     }
     /// <p>The time that the engagement began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the engagement ended.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
 /// See [`Engagement`](crate::model::Engagement).
 pub mod engagement {
-
+    
     /// A builder for [`Engagement`](crate::model::Engagement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1136,12 +1098,8 @@ pub mod engagement {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-        pub fn set_engagement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engagement_arn = input;
-            self
+        pub fn set_engagement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engagement_arn = input; self
         }
         /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
         pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1150,8 +1108,7 @@ pub mod engagement {
         }
         /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The user that started the engagement.</p>
         pub fn sender(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1160,8 +1117,7 @@ pub mod engagement {
         }
         /// <p>The user that started the engagement.</p>
         pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender = input;
-            self
+            self.sender = input; self
         }
         /// <p>The ARN of the incident that's engaging the contact.</p>
         pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1170,8 +1126,7 @@ pub mod engagement {
         }
         /// <p>The ARN of the incident that's engaging the contact.</p>
         pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.incident_id = input;
-            self
+            self.incident_id = input; self
         }
         /// <p>The time that the engagement began.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1179,12 +1134,8 @@ pub mod engagement {
             self
         }
         /// <p>The time that the engagement began.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time that the engagement ended.</p>
         pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1192,25 +1143,29 @@ pub mod engagement {
             self
         }
         /// <p>The time that the engagement ended.</p>
-        pub fn set_stop_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stop_time = input;
-            self
+        pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stop_time = input; self
         }
         /// Consumes the builder and constructs a [`Engagement`](crate::model::Engagement).
         pub fn build(self) -> crate::model::Engagement {
             crate::model::Engagement {
-                engagement_arn: self.engagement_arn,
-                contact_arn: self.contact_arn,
-                sender: self.sender,
-                incident_id: self.incident_id,
-                start_time: self.start_time,
-                stop_time: self.stop_time,
+                engagement_arn: self.engagement_arn
+                ,
+                contact_arn: self.contact_arn
+                ,
+                sender: self.sender
+                ,
+                incident_id: self.incident_id
+                ,
+                start_time: self.start_time
+                ,
+                stop_time: self.stop_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Engagement {
     /// Creates a new builder-style object to manufacture [`Engagement`](crate::model::Engagement).
@@ -1222,7 +1177,7 @@ impl Engagement {
 /// <p>A range of between two set times</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeRange {
+pub struct TimeRange  {
     /// <p>The start of the time range.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1232,17 +1187,17 @@ pub struct TimeRange {
 }
 impl TimeRange {
     /// <p>The start of the time range.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time range.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
-
+    
     /// A builder for [`TimeRange`](crate::model::TimeRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1256,12 +1211,8 @@ pub mod time_range {
             self
         }
         /// <p>The start of the time range.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end of the time range.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1269,21 +1220,21 @@ pub mod time_range {
             self
         }
         /// <p>The end of the time range.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`TimeRange`](crate::model::TimeRange).
         pub fn build(self) -> crate::model::TimeRange {
             crate::model::TimeRange {
-                start_time: self.start_time,
-                end_time: self.end_time,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeRange {
     /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
@@ -1295,7 +1246,7 @@ impl TimeRange {
 /// <p>A personal contact or escalation plan that Incident Manager engages during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Contact {
+pub struct Contact  {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -1311,25 +1262,25 @@ pub struct Contact {
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ContactType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Contact`](crate::model::Contact).
 pub mod contact {
-
+    
     /// A builder for [`Contact`](crate::model::Contact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1346,8 +1297,7 @@ pub mod contact {
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1356,8 +1306,7 @@ pub mod contact {
         }
         /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The full name of the contact or escalation plan.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1366,8 +1315,7 @@ pub mod contact {
         }
         /// <p>The full name of the contact or escalation plan.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
@@ -1376,19 +1324,24 @@ pub mod contact {
         }
         /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Contact`](crate::model::Contact).
         pub fn build(self) -> crate::model::Contact {
             crate::model::Contact {
-                contact_arn: self.contact_arn,
-                alias: self.alias,
-                display_name: self.display_name,
-                r#type: self.r#type,
+                contact_arn: self.contact_arn
+                ,
+                alias: self.alias
+                ,
+                display_name: self.display_name
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Contact {
     /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
@@ -1403,9 +1356,9 @@ impl Contact {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contacttype = unimplemented!();
 /// match contacttype {
@@ -1427,58 +1380,52 @@ impl Contact {
 /// Specifically, when `contacttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContactType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContactType {
     #[allow(missing_docs)] // documentation missing in model
     Escalation,
     #[allow(missing_docs)] // documentation missing in model
     Personal,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContactType {
     fn from(s: &str) -> Self {
         match s {
             "ESCALATION" => ContactType::Escalation,
             "PERSONAL" => ContactType::Personal,
-            other => ContactType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ContactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContactType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContactType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContactType::from(s))
+                }
+            }
 impl ContactType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactType::Escalation => "ESCALATION",
             ContactType::Personal => "PERSONAL",
-            ContactType::Unknown(value) => value.as_str(),
+            ContactType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ESCALATION", "PERSONAL"]
+        &[
+            "ESCALATION", "PERSONAL"
+        ]
     }
 }
 impl AsRef<str> for ContactType {
@@ -1490,7 +1437,7 @@ impl AsRef<str> for ContactType {
 /// <p>The method that Incident Manager uses to engage a contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactChannel {
+pub struct ContactChannel  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
     pub contact_channel_arn: std::option::Option<std::string::String>,
@@ -1500,11 +1447,11 @@ pub struct ContactChannel {
     /// <p>The name of the contact channel.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
-    /// <ul>
-    /// <li> <p>SMS</p> </li>
-    /// <li> <p>VOICE</p> </li>
-    /// <li> <p>EMAIL</p> </li>
+    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+    /// <ul> 
+    /// <li> <p>SMS</p> </li> 
+    /// <li> <p>VOICE</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
@@ -1517,38 +1464,38 @@ pub struct ContactChannel {
 }
 impl ContactChannel {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_channel_arn(&self) -> std::option::Option<& str> {
         self.contact_channel_arn.as_deref()
     }
     /// <p>The ARN of the contact that contains the contact channel.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The name of the contact channel.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
-    /// <ul>
-    /// <li> <p>SMS</p> </li>
-    /// <li> <p>VOICE</p> </li>
-    /// <li> <p>EMAIL</p> </li>
+    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+    /// <ul> 
+    /// <li> <p>SMS</p> </li> 
+    /// <li> <p>VOICE</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn delivery_address(&self) -> std::option::Option<&crate::model::ContactChannelAddress> {
+    pub fn delivery_address(&self) -> std::option::Option<& crate::model::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
-    pub fn activation_status(&self) -> std::option::Option<&crate::model::ActivationStatus> {
+    pub fn activation_status(&self) -> std::option::Option<& crate::model::ActivationStatus> {
         self.activation_status.as_ref()
     }
 }
 /// See [`ContactChannel`](crate::model::ContactChannel).
 pub mod contact_channel {
-
+    
     /// A builder for [`ContactChannel`](crate::model::ContactChannel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1566,12 +1513,8 @@ pub mod contact_channel {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn set_contact_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_channel_arn = input;
-            self
+        pub fn set_contact_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_channel_arn = input; self
         }
         /// <p>The ARN of the contact that contains the contact channel.</p>
         pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1580,8 +1523,7 @@ pub mod contact_channel {
         }
         /// <p>The ARN of the contact that contains the contact channel.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The name of the contact channel.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1590,28 +1532,26 @@ pub mod contact_channel {
         }
         /// <p>The name of the contact channel.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
-        /// <ul>
-        /// <li> <p>SMS</p> </li>
-        /// <li> <p>VOICE</p> </li>
-        /// <li> <p>EMAIL</p> </li>
+        /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+        /// <ul> 
+        /// <li> <p>SMS</p> </li> 
+        /// <li> <p>VOICE</p> </li> 
+        /// <li> <p>EMAIL</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
-        /// <ul>
-        /// <li> <p>SMS</p> </li>
-        /// <li> <p>VOICE</p> </li>
-        /// <li> <p>EMAIL</p> </li>
+        /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+        /// <ul> 
+        /// <li> <p>SMS</p> </li> 
+        /// <li> <p>VOICE</p> </li> 
+        /// <li> <p>EMAIL</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
         pub fn delivery_address(mut self, input: crate::model::ContactChannelAddress) -> Self {
@@ -1619,12 +1559,8 @@ pub mod contact_channel {
             self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-        pub fn set_delivery_address(
-            mut self,
-            input: std::option::Option<crate::model::ContactChannelAddress>,
-        ) -> Self {
-            self.delivery_address = input;
-            self
+        pub fn set_delivery_address(mut self, input: std::option::Option<crate::model::ContactChannelAddress>) -> Self {
+            self.delivery_address = input; self
         }
         /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
         pub fn activation_status(mut self, input: crate::model::ActivationStatus) -> Self {
@@ -1632,25 +1568,29 @@ pub mod contact_channel {
             self
         }
         /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
-        pub fn set_activation_status(
-            mut self,
-            input: std::option::Option<crate::model::ActivationStatus>,
-        ) -> Self {
-            self.activation_status = input;
-            self
+        pub fn set_activation_status(mut self, input: std::option::Option<crate::model::ActivationStatus>) -> Self {
+            self.activation_status = input; self
         }
         /// Consumes the builder and constructs a [`ContactChannel`](crate::model::ContactChannel).
         pub fn build(self) -> crate::model::ContactChannel {
             crate::model::ContactChannel {
-                contact_channel_arn: self.contact_channel_arn,
-                contact_arn: self.contact_arn,
-                name: self.name,
-                r#type: self.r#type,
-                delivery_address: self.delivery_address,
-                activation_status: self.activation_status,
+                contact_channel_arn: self.contact_channel_arn
+                ,
+                contact_arn: self.contact_arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                delivery_address: self.delivery_address
+                ,
+                activation_status: self.activation_status
+                ,
             }
         }
     }
+    
+    
 }
 impl ContactChannel {
     /// Creates a new builder-style object to manufacture [`ContactChannel`](crate::model::ContactChannel).
@@ -1665,9 +1605,9 @@ impl ContactChannel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let activationstatus = unimplemented!();
 /// match activationstatus {
@@ -1689,58 +1629,52 @@ impl ContactChannel {
 /// Specifically, when `activationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActivationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActivationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Activated,
     #[allow(missing_docs)] // documentation missing in model
     NotActivated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActivationStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVATED" => ActivationStatus::Activated,
             "NOT_ACTIVATED" => ActivationStatus::NotActivated,
-            other => ActivationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActivationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActivationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActivationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActivationStatus::from(s))
+                }
+            }
 impl ActivationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActivationStatus::Activated => "ACTIVATED",
             ActivationStatus::NotActivated => "NOT_ACTIVATED",
-            ActivationStatus::Unknown(value) => value.as_str(),
+            ActivationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVATED", "NOT_ACTIVATED"]
+        &[
+            "ACTIVATED", "NOT_ACTIVATED"
+        ]
     }
 }
 impl AsRef<str> for ActivationStatus {
@@ -1755,9 +1689,9 @@ impl AsRef<str> for ActivationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let channeltype = unimplemented!();
 /// match channeltype {
@@ -1780,22 +1714,14 @@ impl AsRef<str> for ActivationStatus {
 /// Specifically, when `channeltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChannelType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChannelType {
     #[allow(missing_docs)] // documentation missing in model
     Email,
@@ -1804,7 +1730,7 @@ pub enum ChannelType {
     #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChannelType {
     fn from(s: &str) -> Self {
@@ -1812,17 +1738,17 @@ impl std::convert::From<&str> for ChannelType {
             "EMAIL" => ChannelType::Email,
             "SMS" => ChannelType::Sms,
             "VOICE" => ChannelType::Voice,
-            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChannelType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChannelType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChannelType::from(s))
+                }
+            }
 impl ChannelType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1830,12 +1756,14 @@ impl ChannelType {
             ChannelType::Email => "EMAIL",
             ChannelType::Sms => "SMS",
             ChannelType::Voice => "VOICE",
-            ChannelType::Unknown(value) => value.as_str(),
+            ChannelType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EMAIL", "SMS", "VOICE"]
+        &[
+            "EMAIL", "SMS", "VOICE"
+        ]
     }
 }
 impl AsRef<str> for ChannelType {
@@ -1850,9 +1778,9 @@ impl AsRef<str> for ChannelType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let acceptcodevalidation = unimplemented!();
 /// match acceptcodevalidation {
@@ -1874,60 +1802,52 @@ impl AsRef<str> for ChannelType {
 /// Specifically, when `acceptcodevalidation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AcceptCodeValidation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AcceptCodeValidation {
     #[allow(missing_docs)] // documentation missing in model
     Enforce,
     #[allow(missing_docs)] // documentation missing in model
     Ignore,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AcceptCodeValidation {
     fn from(s: &str) -> Self {
         match s {
             "ENFORCE" => AcceptCodeValidation::Enforce,
             "IGNORE" => AcceptCodeValidation::Ignore,
-            other => {
-                AcceptCodeValidation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AcceptCodeValidation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AcceptCodeValidation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AcceptCodeValidation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AcceptCodeValidation::from(s))
+                }
+            }
 impl AcceptCodeValidation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AcceptCodeValidation::Enforce => "ENFORCE",
             AcceptCodeValidation::Ignore => "IGNORE",
-            AcceptCodeValidation::Unknown(value) => value.as_str(),
+            AcceptCodeValidation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENFORCE", "IGNORE"]
+        &[
+            "ENFORCE", "IGNORE"
+        ]
     }
 }
 impl AsRef<str> for AcceptCodeValidation {
@@ -1942,9 +1862,9 @@ impl AsRef<str> for AcceptCodeValidation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accepttype = unimplemented!();
 /// match accepttype {
@@ -1966,58 +1886,52 @@ impl AsRef<str> for AcceptCodeValidation {
 /// Specifically, when `accepttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AcceptType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AcceptType {
     #[allow(missing_docs)] // documentation missing in model
     Delivered,
     #[allow(missing_docs)] // documentation missing in model
     Read,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AcceptType {
     fn from(s: &str) -> Self {
         match s {
             "DELIVERED" => AcceptType::Delivered,
             "READ" => AcceptType::Read,
-            other => AcceptType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AcceptType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AcceptType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AcceptType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AcceptType::from(s))
+                }
+            }
 impl AcceptType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AcceptType::Delivered => "DELIVERED",
             AcceptType::Read => "READ",
-            AcceptType::Unknown(value) => value.as_str(),
+            AcceptType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELIVERED", "READ"]
+        &[
+            "DELIVERED", "READ"
+        ]
     }
 }
 impl AsRef<str> for AcceptType {
@@ -2025,3 +1939,4 @@ impl AsRef<str> for AcceptType {
         self.as_str()
     }
 }
+

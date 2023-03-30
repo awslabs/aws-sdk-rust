@@ -3,58 +3,54 @@
 /// <p>Use the split charge rule to split the cost of one Cost Category value across several other target values. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategorySplitChargeRule {
+pub struct CostCategorySplitChargeRule  {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The method that's used to define how to split your source costs across your targets. </p>
-    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
-    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
+    /// <p>The method that's used to define how to split your source costs across your targets. </p> 
+    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p> 
+    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p> 
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
     #[doc(hidden)]
     pub method: std::option::Option<crate::model::CostCategorySplitChargeMethod>,
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>>,
+    pub parameters: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>>,
 }
 impl CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
-    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn targets(&self) -> std::option::Option<& [std::string::String]> {
         self.targets.as_deref()
     }
-    /// <p>The method that's used to define how to split your source costs across your targets. </p>
-    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
-    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
+    /// <p>The method that's used to define how to split your source costs across your targets. </p> 
+    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p> 
+    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p> 
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-    pub fn method(&self) -> std::option::Option<&crate::model::CostCategorySplitChargeMethod> {
+    pub fn method(&self) -> std::option::Option<& crate::model::CostCategorySplitChargeMethod> {
         self.method.as_ref()
     }
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&[crate::model::CostCategorySplitChargeRuleParameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::CostCategorySplitChargeRuleParameter]> {
         self.parameters.as_deref()
     }
 }
 /// See [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
 pub mod cost_category_split_charge_rule {
-
+    
     /// A builder for [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) method: std::option::Option<crate::model::CostCategorySplitChargeMethod>,
-        pub(crate) parameters:
-            std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>>,
     }
     impl Builder {
         /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
@@ -64,8 +60,7 @@ pub mod cost_category_split_charge_rule {
         }
         /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -74,71 +69,60 @@ pub mod cost_category_split_charge_rule {
         /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
         pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
-            self.targets = Some(v);
-            self
+                            v.push(input.into());
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.targets = input; self
         }
-        /// <p>The method that's used to define how to split your source costs across your targets. </p>
-        /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
-        /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
+        /// <p>The method that's used to define how to split your source costs across your targets. </p> 
+        /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p> 
+        /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p> 
         /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
         pub fn method(mut self, input: crate::model::CostCategorySplitChargeMethod) -> Self {
             self.method = Some(input);
             self
         }
-        /// <p>The method that's used to define how to split your source costs across your targets. </p>
-        /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
-        /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
+        /// <p>The method that's used to define how to split your source costs across your targets. </p> 
+        /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p> 
+        /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p> 
         /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-        pub fn set_method(
-            mut self,
-            input: std::option::Option<crate::model::CostCategorySplitChargeMethod>,
-        ) -> Self {
-            self.method = input;
-            self
+        pub fn set_method(mut self, input: std::option::Option<crate::model::CostCategorySplitChargeMethod>) -> Self {
+            self.method = input; self
         }
         /// Appends an item to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-        pub fn parameters(
-            mut self,
-            input: crate::model::CostCategorySplitChargeRuleParameter,
-        ) -> Self {
+        pub fn parameters(mut self, input: crate::model::CostCategorySplitChargeRuleParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
         pub fn build(self) -> crate::model::CostCategorySplitChargeRule {
             crate::model::CostCategorySplitChargeRule {
-                source: self.source,
-                targets: self.targets,
-                method: self.method,
-                parameters: self.parameters,
+                source: self.source
+                ,
+                targets: self.targets
+                ,
+                method: self.method
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl CostCategorySplitChargeRule {
     /// Creates a new builder-style object to manufacture [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
@@ -150,7 +134,7 @@ impl CostCategorySplitChargeRule {
 /// <p>The parameters for a split charge method. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategorySplitChargeRuleParameter {
+pub struct CostCategorySplitChargeRuleParameter  {
     /// <p>The parameter type. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>,
@@ -160,42 +144,32 @@ pub struct CostCategorySplitChargeRuleParameter {
 }
 impl CostCategorySplitChargeRuleParameter {
     /// <p>The parameter type. </p>
-    pub fn r#type(
-        &self,
-    ) -> std::option::Option<&crate::model::CostCategorySplitChargeRuleParameterType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::CostCategorySplitChargeRuleParameterType> {
         self.r#type.as_ref()
     }
     /// <p>The parameter values. </p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
 pub mod cost_category_split_charge_rule_parameter {
-
+    
     /// A builder for [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) r#type:
-            std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>,
+        pub(crate) r#type: std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The parameter type. </p>
-        pub fn r#type(
-            mut self,
-            input: crate::model::CostCategorySplitChargeRuleParameterType,
-        ) -> Self {
+        pub fn r#type(mut self, input: crate::model::CostCategorySplitChargeRuleParameterType) -> Self {
             self.r#type = Some(input);
             self
         }
         /// <p>The parameter type. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>) -> Self {
+            self.r#type = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -204,26 +178,26 @@ pub mod cost_category_split_charge_rule_parameter {
         /// <p>The parameter values. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The parameter values. </p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
         pub fn build(self) -> crate::model::CostCategorySplitChargeRuleParameter {
             crate::model::CostCategorySplitChargeRuleParameter {
-                r#type: self.r#type,
-                values: self.values,
+                r#type: self.r#type
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl CostCategorySplitChargeRuleParameter {
     /// Creates a new builder-style object to manufacture [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
@@ -238,9 +212,9 @@ impl CostCategorySplitChargeRuleParameter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costcategorysplitchargeruleparametertype = unimplemented!();
 /// match costcategorysplitchargeruleparametertype {
@@ -261,60 +235,48 @@ impl CostCategorySplitChargeRuleParameter {
 /// Specifically, when `costcategorysplitchargeruleparametertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostCategorySplitChargeRuleParameterType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostCategorySplitChargeRuleParameterType {
     #[allow(missing_docs)] // documentation missing in model
     AllocationPercentages,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostCategorySplitChargeRuleParameterType {
     fn from(s: &str) -> Self {
         match s {
-            "ALLOCATION_PERCENTAGES" => {
-                CostCategorySplitChargeRuleParameterType::AllocationPercentages
-            }
-            other => CostCategorySplitChargeRuleParameterType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "ALLOCATION_PERCENTAGES" => CostCategorySplitChargeRuleParameterType::AllocationPercentages,
+            other => CostCategorySplitChargeRuleParameterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostCategorySplitChargeRuleParameterType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostCategorySplitChargeRuleParameterType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostCategorySplitChargeRuleParameterType::from(s))
+                }
+            }
 impl CostCategorySplitChargeRuleParameterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            CostCategorySplitChargeRuleParameterType::AllocationPercentages => {
-                "ALLOCATION_PERCENTAGES"
-            }
-            CostCategorySplitChargeRuleParameterType::Unknown(value) => value.as_str(),
+            CostCategorySplitChargeRuleParameterType::AllocationPercentages => "ALLOCATION_PERCENTAGES",
+            CostCategorySplitChargeRuleParameterType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOCATION_PERCENTAGES"]
+        &[
+            "ALLOCATION_PERCENTAGES"
+        ]
     }
 }
 impl AsRef<str> for CostCategorySplitChargeRuleParameterType {
@@ -329,9 +291,9 @@ impl AsRef<str> for CostCategorySplitChargeRuleParameterType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costcategorysplitchargemethod = unimplemented!();
 /// match costcategorysplitchargemethod {
@@ -354,22 +316,14 @@ impl AsRef<str> for CostCategorySplitChargeRuleParameterType {
 /// Specifically, when `costcategorysplitchargemethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostCategorySplitChargeMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostCategorySplitChargeMethod {
     #[allow(missing_docs)] // documentation missing in model
     Even,
@@ -378,7 +332,7 @@ pub enum CostCategorySplitChargeMethod {
     #[allow(missing_docs)] // documentation missing in model
     Proportional,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostCategorySplitChargeMethod {
     fn from(s: &str) -> Self {
@@ -386,19 +340,17 @@ impl std::convert::From<&str> for CostCategorySplitChargeMethod {
             "EVEN" => CostCategorySplitChargeMethod::Even,
             "FIXED" => CostCategorySplitChargeMethod::Fixed,
             "PROPORTIONAL" => CostCategorySplitChargeMethod::Proportional,
-            other => CostCategorySplitChargeMethod::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CostCategorySplitChargeMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostCategorySplitChargeMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostCategorySplitChargeMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostCategorySplitChargeMethod::from(s))
+                }
+            }
 impl CostCategorySplitChargeMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -406,12 +358,14 @@ impl CostCategorySplitChargeMethod {
             CostCategorySplitChargeMethod::Even => "EVEN",
             CostCategorySplitChargeMethod::Fixed => "FIXED",
             CostCategorySplitChargeMethod::Proportional => "PROPORTIONAL",
-            CostCategorySplitChargeMethod::Unknown(value) => value.as_str(),
+            CostCategorySplitChargeMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EVEN", "FIXED", "PROPORTIONAL"]
+        &[
+            "EVEN", "FIXED", "PROPORTIONAL"
+        ]
     }
 }
 impl AsRef<str> for CostCategorySplitChargeMethod {
@@ -423,12 +377,12 @@ impl AsRef<str> for CostCategorySplitChargeMethod {
 /// <p>Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategoryRule {
+pub struct CostCategoryRule  {
     /// <p>The default value for the cost category.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
-    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
-    /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> 
+    /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p> 
     /// <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Expression>,
@@ -441,36 +395,33 @@ pub struct CostCategoryRule {
 }
 impl CostCategoryRule {
     /// <p>The default value for the cost category.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
-    /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> 
+    /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p> 
     /// <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
-    pub fn rule(&self) -> std::option::Option<&crate::model::Expression> {
+    pub fn rule(&self) -> std::option::Option<& crate::model::Expression> {
         self.rule.as_ref()
     }
     /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
-    pub fn inherited_value(
-        &self,
-    ) -> std::option::Option<&crate::model::CostCategoryInheritedValueDimension> {
+    pub fn inherited_value(&self) -> std::option::Option<& crate::model::CostCategoryInheritedValueDimension> {
         self.inherited_value.as_ref()
     }
     /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::CostCategoryRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::CostCategoryRuleType> {
         self.r#type.as_ref()
     }
 }
 /// See [`CostCategoryRule`](crate::model::CostCategoryRule).
 pub mod cost_category_rule {
-
+    
     /// A builder for [`CostCategoryRule`](crate::model::CostCategoryRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) rule: std::option::Option<crate::model::Expression>,
-        pub(crate) inherited_value:
-            std::option::Option<crate::model::CostCategoryInheritedValueDimension>,
+        pub(crate) inherited_value: std::option::Option<crate::model::CostCategoryInheritedValueDimension>,
         pub(crate) r#type: std::option::Option<crate::model::CostCategoryRuleType>,
     }
     impl Builder {
@@ -481,38 +432,29 @@ pub mod cost_category_rule {
         }
         /// <p>The default value for the cost category.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
-        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
-        /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p>
+        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> 
+        /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p> 
         /// <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
         pub fn rule(mut self, input: crate::model::Expression) -> Self {
             self.rule = Some(input);
             self
         }
-        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
-        /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p>
+        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> 
+        /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p> 
         /// <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
-            self.rule = input;
-            self
+            self.rule = input; self
         }
         /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
-        pub fn inherited_value(
-            mut self,
-            input: crate::model::CostCategoryInheritedValueDimension,
-        ) -> Self {
+        pub fn inherited_value(mut self, input: crate::model::CostCategoryInheritedValueDimension) -> Self {
             self.inherited_value = Some(input);
             self
         }
         /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
-        pub fn set_inherited_value(
-            mut self,
-            input: std::option::Option<crate::model::CostCategoryInheritedValueDimension>,
-        ) -> Self {
-            self.inherited_value = input;
-            self
+        pub fn set_inherited_value(mut self, input: std::option::Option<crate::model::CostCategoryInheritedValueDimension>) -> Self {
+            self.inherited_value = input; self
         }
         /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
         pub fn r#type(mut self, input: crate::model::CostCategoryRuleType) -> Self {
@@ -520,23 +462,25 @@ pub mod cost_category_rule {
             self
         }
         /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::CostCategoryRuleType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CostCategoryRuleType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`CostCategoryRule`](crate::model::CostCategoryRule).
         pub fn build(self) -> crate::model::CostCategoryRule {
             crate::model::CostCategoryRule {
-                value: self.value,
-                rule: self.rule,
-                inherited_value: self.inherited_value,
-                r#type: self.r#type,
+                value: self.value
+                ,
+                rule: self.rule
+                ,
+                inherited_value: self.inherited_value
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl CostCategoryRule {
     /// Creates a new builder-style object to manufacture [`CostCategoryRule`](crate::model::CostCategoryRule).
@@ -551,9 +495,9 @@ impl CostCategoryRule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costcategoryruletype = unimplemented!();
 /// match costcategoryruletype {
@@ -575,60 +519,52 @@ impl CostCategoryRule {
 /// Specifically, when `costcategoryruletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostCategoryRuleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostCategoryRuleType {
     #[allow(missing_docs)] // documentation missing in model
     InheritedValue,
     #[allow(missing_docs)] // documentation missing in model
     Regular,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostCategoryRuleType {
     fn from(s: &str) -> Self {
         match s {
             "INHERITED_VALUE" => CostCategoryRuleType::InheritedValue,
             "REGULAR" => CostCategoryRuleType::Regular,
-            other => {
-                CostCategoryRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CostCategoryRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostCategoryRuleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostCategoryRuleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostCategoryRuleType::from(s))
+                }
+            }
 impl CostCategoryRuleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryRuleType::InheritedValue => "INHERITED_VALUE",
             CostCategoryRuleType::Regular => "REGULAR",
-            CostCategoryRuleType::Unknown(value) => value.as_str(),
+            CostCategoryRuleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INHERITED_VALUE", "REGULAR"]
+        &[
+            "INHERITED_VALUE", "REGULAR"
+        ]
     }
 }
 impl AsRef<str> for CostCategoryRuleType {
@@ -640,8 +576,8 @@ impl AsRef<str> for CostCategoryRuleType {
 /// <p>When you create or update a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility to define a rule that dynamically inherits the cost category value from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to dynamically group costs that are based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategoryInheritedValueDimension {
-    /// <p>The name of the dimension that's used to group costs.</p>
+pub struct CostCategoryInheritedValueDimension  {
+    /// <p>The name of the dimension that's used to group costs.</p> 
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
     #[doc(hidden)]
     pub dimension_name: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
@@ -650,46 +586,36 @@ pub struct CostCategoryInheritedValueDimension {
     pub dimension_key: std::option::Option<std::string::String>,
 }
 impl CostCategoryInheritedValueDimension {
-    /// <p>The name of the dimension that's used to group costs.</p>
+    /// <p>The name of the dimension that's used to group costs.</p> 
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-    pub fn dimension_name(
-        &self,
-    ) -> std::option::Option<&crate::model::CostCategoryInheritedValueDimensionName> {
+    pub fn dimension_name(&self) -> std::option::Option<& crate::model::CostCategoryInheritedValueDimensionName> {
         self.dimension_name.as_ref()
     }
     /// <p>The key to extract cost category values.</p>
-    pub fn dimension_key(&self) -> std::option::Option<&str> {
+    pub fn dimension_key(&self) -> std::option::Option<& str> {
         self.dimension_key.as_deref()
     }
 }
 /// See [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
 pub mod cost_category_inherited_value_dimension {
-
+    
     /// A builder for [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dimension_name:
-            std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
+        pub(crate) dimension_name: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
         pub(crate) dimension_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the dimension that's used to group costs.</p>
+        /// <p>The name of the dimension that's used to group costs.</p> 
         /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-        pub fn dimension_name(
-            mut self,
-            input: crate::model::CostCategoryInheritedValueDimensionName,
-        ) -> Self {
+        pub fn dimension_name(mut self, input: crate::model::CostCategoryInheritedValueDimensionName) -> Self {
             self.dimension_name = Some(input);
             self
         }
-        /// <p>The name of the dimension that's used to group costs.</p>
+        /// <p>The name of the dimension that's used to group costs.</p> 
         /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-        pub fn set_dimension_name(
-            mut self,
-            input: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
-        ) -> Self {
-            self.dimension_name = input;
-            self
+        pub fn set_dimension_name(mut self, input: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>) -> Self {
+            self.dimension_name = input; self
         }
         /// <p>The key to extract cost category values.</p>
         pub fn dimension_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -697,21 +623,21 @@ pub mod cost_category_inherited_value_dimension {
             self
         }
         /// <p>The key to extract cost category values.</p>
-        pub fn set_dimension_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_key = input;
-            self
+        pub fn set_dimension_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_key = input; self
         }
         /// Consumes the builder and constructs a [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
         pub fn build(self) -> crate::model::CostCategoryInheritedValueDimension {
             crate::model::CostCategoryInheritedValueDimension {
-                dimension_name: self.dimension_name,
-                dimension_key: self.dimension_key,
+                dimension_name: self.dimension_name
+                ,
+                dimension_key: self.dimension_key
+                ,
             }
         }
     }
+    
+    
 }
 impl CostCategoryInheritedValueDimension {
     /// Creates a new builder-style object to manufacture [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
@@ -726,9 +652,9 @@ impl CostCategoryInheritedValueDimension {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costcategoryinheritedvaluedimensionname = unimplemented!();
 /// match costcategoryinheritedvaluedimensionname {
@@ -750,60 +676,52 @@ impl CostCategoryInheritedValueDimension {
 /// Specifically, when `costcategoryinheritedvaluedimensionname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostCategoryInheritedValueDimensionName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostCategoryInheritedValueDimensionName {
     #[allow(missing_docs)] // documentation missing in model
     LinkedAccountName,
     #[allow(missing_docs)] // documentation missing in model
     Tag,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostCategoryInheritedValueDimensionName {
     fn from(s: &str) -> Self {
         match s {
             "LINKED_ACCOUNT_NAME" => CostCategoryInheritedValueDimensionName::LinkedAccountName,
             "TAG" => CostCategoryInheritedValueDimensionName::Tag,
-            other => CostCategoryInheritedValueDimensionName::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => CostCategoryInheritedValueDimensionName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostCategoryInheritedValueDimensionName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostCategoryInheritedValueDimensionName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostCategoryInheritedValueDimensionName::from(s))
+                }
+            }
 impl CostCategoryInheritedValueDimensionName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryInheritedValueDimensionName::LinkedAccountName => "LINKED_ACCOUNT_NAME",
             CostCategoryInheritedValueDimensionName::Tag => "TAG",
-            CostCategoryInheritedValueDimensionName::Unknown(value) => value.as_str(),
+            CostCategoryInheritedValueDimensionName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LINKED_ACCOUNT_NAME", "TAG"]
+        &[
+            "LINKED_ACCOUNT_NAME", "TAG"
+        ]
     }
 }
 impl AsRef<str> for CostCategoryInheritedValueDimensionName {
@@ -812,46 +730,46 @@ impl AsRef<str> for CostCategoryInheritedValueDimensionName {
     }
 }
 
-/// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
-/// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-/// <p>There are two patterns:</p>
-/// <ul>
-/// <li> <p>Simple dimension values.</p>
-/// <ul>
-/// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
-/// <ul>
-/// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
-/// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
-/// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
-/// </ul> </li>
-/// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
-/// <ul>
-/// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
-/// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
-/// </ul> </li>
-/// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
-/// <ul>
-/// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
-/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
-/// </ul> </li>
-/// </ul> </li>
-/// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
-/// <ul>
-/// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
-/// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
-/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
-/// </ul> <note>
-/// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
-/// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
-/// </note> </li>
-/// </ul> <note>
-/// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
-/// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+/// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> 
+/// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+/// <p>There are two patterns:</p> 
+/// <ul> 
+/// <li> <p>Simple dimension values.</p> 
+/// <ul> 
+/// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> 
+/// <ul> 
+/// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> 
+/// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> 
+/// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> 
+/// </ul> </li> 
+/// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> 
+/// <ul> 
+/// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> 
+/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li> 
+/// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> 
+/// </ul> </li> 
+/// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> 
+/// <ul> 
+/// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li> 
+/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> 
+/// </ul> </li> 
+/// </ul> </li> 
+/// <li> <p>Compound <code>Expression</code> types with logical operations.</p> 
+/// <ul> 
+/// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> 
+/// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> 
+/// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> 
+/// </ul> <note> 
+/// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> 
+/// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> 
+/// </note> </li> 
+/// </ul> <note> 
+/// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> 
+/// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Expression {
+pub struct Expression  {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
     #[doc(hidden)]
     pub or: std::option::Option<std::vec::Vec<crate::model::Expression>>,
@@ -873,33 +791,33 @@ pub struct Expression {
 }
 impl Expression {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
-    pub fn or(&self) -> std::option::Option<&[crate::model::Expression]> {
+    pub fn or(&self) -> std::option::Option<& [crate::model::Expression]> {
         self.or.as_deref()
     }
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
-    pub fn and(&self) -> std::option::Option<&[crate::model::Expression]> {
+    pub fn and(&self) -> std::option::Option<& [crate::model::Expression]> {
         self.and.as_deref()
     }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
-    pub fn not(&self) -> std::option::Option<&crate::model::Expression> {
+    pub fn not(&self) -> std::option::Option<& crate::model::Expression> {
         self.not.as_deref()
     }
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-    pub fn dimensions(&self) -> std::option::Option<&crate::model::DimensionValues> {
+    pub fn dimensions(&self) -> std::option::Option<& crate::model::DimensionValues> {
         self.dimensions.as_ref()
     }
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&crate::model::TagValues> {
+    pub fn tags(&self) -> std::option::Option<& crate::model::TagValues> {
         self.tags.as_ref()
     }
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
-    pub fn cost_categories(&self) -> std::option::Option<&crate::model::CostCategoryValues> {
+    pub fn cost_categories(&self) -> std::option::Option<& crate::model::CostCategoryValues> {
         self.cost_categories.as_ref()
     }
 }
 /// See [`Expression`](crate::model::Expression).
 pub mod expression {
-
+    
     /// A builder for [`Expression`](crate::model::Expression).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -918,17 +836,13 @@ pub mod expression {
         /// <p>Return results that match either <code>Dimension</code> object.</p>
         pub fn or(mut self, input: crate::model::Expression) -> Self {
             let mut v = self.or.unwrap_or_default();
-            v.push(input);
-            self.or = Some(v);
-            self
+                            v.push(input);
+                            self.or = Some(v);
+                            self
         }
         /// <p>Return results that match either <code>Dimension</code> object.</p>
-        pub fn set_or(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Expression>>,
-        ) -> Self {
-            self.or = input;
-            self
+        pub fn set_or(mut self, input: std::option::Option<std::vec::Vec<crate::model::Expression>>) -> Self {
+            self.or = input; self
         }
         /// Appends an item to `and`.
         ///
@@ -937,17 +851,13 @@ pub mod expression {
         /// <p>Return results that match both <code>Dimension</code> objects.</p>
         pub fn and(mut self, input: crate::model::Expression) -> Self {
             let mut v = self.and.unwrap_or_default();
-            v.push(input);
-            self.and = Some(v);
-            self
+                            v.push(input);
+                            self.and = Some(v);
+                            self
         }
         /// <p>Return results that match both <code>Dimension</code> objects.</p>
-        pub fn set_and(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Expression>>,
-        ) -> Self {
-            self.and = input;
-            self
+        pub fn set_and(mut self, input: std::option::Option<std::vec::Vec<crate::model::Expression>>) -> Self {
+            self.and = input; self
         }
         /// <p>Return results that don't match a <code>Dimension</code> object.</p>
         pub fn not(mut self, input: impl Into<std::boxed::Box<crate::model::Expression>>) -> Self {
@@ -955,12 +865,8 @@ pub mod expression {
             self
         }
         /// <p>Return results that don't match a <code>Dimension</code> object.</p>
-        pub fn set_not(
-            mut self,
-            input: std::option::Option<std::boxed::Box<crate::model::Expression>>,
-        ) -> Self {
-            self.not = input;
-            self
+        pub fn set_not(mut self, input: std::option::Option<std::boxed::Box<crate::model::Expression>>) -> Self {
+            self.not = input; self
         }
         /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
         pub fn dimensions(mut self, input: crate::model::DimensionValues) -> Self {
@@ -968,12 +874,8 @@ pub mod expression {
             self
         }
         /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<crate::model::DimensionValues>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<crate::model::DimensionValues>) -> Self {
+            self.dimensions = input; self
         }
         /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
         pub fn tags(mut self, input: crate::model::TagValues) -> Self {
@@ -982,8 +884,7 @@ pub mod expression {
         }
         /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
         pub fn set_tags(mut self, input: std::option::Option<crate::model::TagValues>) -> Self {
-            self.tags = input;
-            self
+            self.tags = input; self
         }
         /// <p>The filter that's based on <code>CostCategory</code> values.</p>
         pub fn cost_categories(mut self, input: crate::model::CostCategoryValues) -> Self {
@@ -991,25 +892,29 @@ pub mod expression {
             self
         }
         /// <p>The filter that's based on <code>CostCategory</code> values.</p>
-        pub fn set_cost_categories(
-            mut self,
-            input: std::option::Option<crate::model::CostCategoryValues>,
-        ) -> Self {
-            self.cost_categories = input;
-            self
+        pub fn set_cost_categories(mut self, input: std::option::Option<crate::model::CostCategoryValues>) -> Self {
+            self.cost_categories = input; self
         }
         /// Consumes the builder and constructs a [`Expression`](crate::model::Expression).
         pub fn build(self) -> crate::model::Expression {
             crate::model::Expression {
-                or: self.or,
-                and: self.and,
-                not: self.not,
-                dimensions: self.dimensions,
-                tags: self.tags,
-                cost_categories: self.cost_categories,
+                or: self.or
+                ,
+                and: self.and
+                ,
+                not: self.not
+                ,
+                dimensions: self.dimensions
+                ,
+                tags: self.tags
+                ,
+                cost_categories: self.cost_categories
+                ,
             }
         }
     }
+    
+    
 }
 impl Expression {
     /// Creates a new builder-style object to manufacture [`Expression`](crate::model::Expression).
@@ -1018,12 +923,12 @@ impl Expression {
     }
 }
 
-/// <p>The Cost Categories values used for filtering the costs.</p>
-/// <p>If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all Cost Categories. That is, it filters on resources that aren't mapped to any Cost Categories.</p>
+/// <p>The Cost Categories values used for filtering the costs.</p> 
+/// <p>If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all Cost Categories. That is, it filters on resources that aren't mapped to any Cost Categories.</p> 
 /// <p>If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the Cost Categories <code>Key</code> only. That is, it filters on resources without the given Cost Categories key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategoryValues {
+pub struct CostCategoryValues  {
     /// <p>The unique name of the Cost Category.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1036,21 +941,21 @@ pub struct CostCategoryValues {
 }
 impl CostCategoryValues {
     /// <p>The unique name of the Cost Category.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The specific value of the Cost Category.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
-    pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
+    pub fn match_options(&self) -> std::option::Option<& [crate::model::MatchOption]> {
         self.match_options.as_deref()
     }
 }
 /// See [`CostCategoryValues`](crate::model::CostCategoryValues).
 pub mod cost_category_values {
-
+    
     /// A builder for [`CostCategoryValues`](crate::model::CostCategoryValues).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1066,8 +971,7 @@ pub mod cost_category_values {
         }
         /// <p>The unique name of the Cost Category.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1076,17 +980,13 @@ pub mod cost_category_values {
         /// <p>The specific value of the Cost Category.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The specific value of the Cost Category.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Appends an item to `match_options`.
         ///
@@ -1095,27 +995,28 @@ pub mod cost_category_values {
         /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
         pub fn match_options(mut self, input: crate::model::MatchOption) -> Self {
             let mut v = self.match_options.unwrap_or_default();
-            v.push(input);
-            self.match_options = Some(v);
-            self
+                            v.push(input);
+                            self.match_options = Some(v);
+                            self
         }
         /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
-        pub fn set_match_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
-        ) -> Self {
-            self.match_options = input;
-            self
+        pub fn set_match_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>) -> Self {
+            self.match_options = input; self
         }
         /// Consumes the builder and constructs a [`CostCategoryValues`](crate::model::CostCategoryValues).
         pub fn build(self) -> crate::model::CostCategoryValues {
             crate::model::CostCategoryValues {
-                key: self.key,
-                values: self.values,
-                match_options: self.match_options,
+                key: self.key
+                ,
+                values: self.values
+                ,
+                match_options: self.match_options
+                ,
             }
         }
     }
+    
+    
 }
 impl CostCategoryValues {
     /// Creates a new builder-style object to manufacture [`CostCategoryValues`](crate::model::CostCategoryValues).
@@ -1130,9 +1031,9 @@ impl CostCategoryValues {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let matchoption = unimplemented!();
 /// match matchoption {
@@ -1160,22 +1061,14 @@ impl CostCategoryValues {
 /// Specifically, when `matchoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MatchOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MatchOption {
     #[allow(missing_docs)] // documentation missing in model
     Absent,
@@ -1194,7 +1087,7 @@ pub enum MatchOption {
     #[allow(missing_docs)] // documentation missing in model
     StartsWith,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MatchOption {
     fn from(s: &str) -> Self {
@@ -1207,17 +1100,17 @@ impl std::convert::From<&str> for MatchOption {
             "EQUALS" => MatchOption::Equals,
             "GREATER_THAN_OR_EQUAL" => MatchOption::GreaterThanOrEqual,
             "STARTS_WITH" => MatchOption::StartsWith,
-            other => MatchOption::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MatchOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MatchOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MatchOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MatchOption::from(s))
+                }
+            }
 impl MatchOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1230,20 +1123,13 @@ impl MatchOption {
             MatchOption::Equals => "EQUALS",
             MatchOption::GreaterThanOrEqual => "GREATER_THAN_OR_EQUAL",
             MatchOption::StartsWith => "STARTS_WITH",
-            MatchOption::Unknown(value) => value.as_str(),
+            MatchOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ABSENT",
-            "CASE_INSENSITIVE",
-            "CASE_SENSITIVE",
-            "CONTAINS",
-            "ENDS_WITH",
-            "EQUALS",
-            "GREATER_THAN_OR_EQUAL",
-            "STARTS_WITH",
+            "ABSENT", "CASE_INSENSITIVE", "CASE_SENSITIVE", "CONTAINS", "ENDS_WITH", "EQUALS", "GREATER_THAN_OR_EQUAL", "STARTS_WITH"
         ]
     }
 }
@@ -1253,12 +1139,12 @@ impl AsRef<str> for MatchOption {
     }
 }
 
-/// <p>The values that are available for a tag.</p>
-/// <p>If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags.</p>
+/// <p>The values that are available for a tag.</p> 
+/// <p>If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags.</p> 
 /// <p>If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagValues {
+pub struct TagValues  {
     /// <p>The key for the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1271,21 +1157,21 @@ pub struct TagValues {
 }
 impl TagValues {
     /// <p>The key for the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The specific value of the tag.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
+    pub fn match_options(&self) -> std::option::Option<& [crate::model::MatchOption]> {
         self.match_options.as_deref()
     }
 }
 /// See [`TagValues`](crate::model::TagValues).
 pub mod tag_values {
-
+    
     /// A builder for [`TagValues`](crate::model::TagValues).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1301,8 +1187,7 @@ pub mod tag_values {
         }
         /// <p>The key for the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1311,17 +1196,13 @@ pub mod tag_values {
         /// <p>The specific value of the tag.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The specific value of the tag.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Appends an item to `match_options`.
         ///
@@ -1330,27 +1211,28 @@ pub mod tag_values {
         /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
         pub fn match_options(mut self, input: crate::model::MatchOption) -> Self {
             let mut v = self.match_options.unwrap_or_default();
-            v.push(input);
-            self.match_options = Some(v);
-            self
+                            v.push(input);
+                            self.match_options = Some(v);
+                            self
         }
         /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-        pub fn set_match_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
-        ) -> Self {
-            self.match_options = input;
-            self
+        pub fn set_match_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>) -> Self {
+            self.match_options = input; self
         }
         /// Consumes the builder and constructs a [`TagValues`](crate::model::TagValues).
         pub fn build(self) -> crate::model::TagValues {
             crate::model::TagValues {
-                key: self.key,
-                values: self.values,
-                match_options: self.match_options,
+                key: self.key
+                ,
+                values: self.values
+                ,
+                match_options: self.match_options
+                ,
             }
         }
     }
+    
+    
 }
 impl TagValues {
     /// Creates a new builder-style object to manufacture [`TagValues`](crate::model::TagValues).
@@ -1362,44 +1244,44 @@ impl TagValues {
 /// <p>The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionValues {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
-    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+pub struct DimensionValues  {
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> 
+    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p> 
     /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::model::Dimension>,
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The match options that you can use to filter your results.</p>
-    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>The match options that you can use to filter your results.</p> 
+    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> 
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     #[doc(hidden)]
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
 }
 impl DimensionValues {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
-    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> 
+    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p> 
     /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
-    pub fn key(&self) -> std::option::Option<&crate::model::Dimension> {
+    pub fn key(&self) -> std::option::Option<& crate::model::Dimension> {
         self.key.as_ref()
     }
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
-    /// <p>The match options that you can use to filter your results.</p>
-    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>The match options that you can use to filter your results.</p> 
+    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> 
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
+    pub fn match_options(&self) -> std::option::Option<& [crate::model::MatchOption]> {
         self.match_options.as_deref()
     }
 }
 /// See [`DimensionValues`](crate::model::DimensionValues).
 pub mod dimension_values {
-
+    
     /// A builder for [`DimensionValues`](crate::model::DimensionValues).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1408,21 +1290,20 @@ pub mod dimension_values {
         pub(crate) match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
     }
     impl Builder {
-        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
-        /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-        /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> 
+        /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+        /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p> 
         /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
         pub fn key(mut self, input: crate::model::Dimension) -> Self {
             self.key = Some(input);
             self
         }
-        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
-        /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-        /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+        /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> 
+        /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+        /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p> 
         /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
         pub fn set_key(mut self, input: std::option::Option<crate::model::Dimension>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1431,50 +1312,47 @@ pub mod dimension_values {
         /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Appends an item to `match_options`.
         ///
         /// To override the contents of this collection use [`set_match_options`](Self::set_match_options).
         ///
-        /// <p>The match options that you can use to filter your results.</p>
-        /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <p>The match options that you can use to filter your results.</p> 
+        /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> 
         /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
         pub fn match_options(mut self, input: crate::model::MatchOption) -> Self {
             let mut v = self.match_options.unwrap_or_default();
-            v.push(input);
-            self.match_options = Some(v);
-            self
+                            v.push(input);
+                            self.match_options = Some(v);
+                            self
         }
-        /// <p>The match options that you can use to filter your results.</p>
-        /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
+        /// <p>The match options that you can use to filter your results.</p> 
+        /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> 
         /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-        pub fn set_match_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
-        ) -> Self {
-            self.match_options = input;
-            self
+        pub fn set_match_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>) -> Self {
+            self.match_options = input; self
         }
         /// Consumes the builder and constructs a [`DimensionValues`](crate::model::DimensionValues).
         pub fn build(self) -> crate::model::DimensionValues {
             crate::model::DimensionValues {
-                key: self.key,
-                values: self.values,
-                match_options: self.match_options,
+                key: self.key
+                ,
+                values: self.values
+                ,
+                match_options: self.match_options
+                ,
             }
         }
     }
+    
+    
 }
 impl DimensionValues {
     /// Creates a new builder-style object to manufacture [`DimensionValues`](crate::model::DimensionValues).
@@ -1489,9 +1367,9 @@ impl DimensionValues {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dimension = unimplemented!();
 /// match dimension {
@@ -1545,22 +1423,14 @@ impl DimensionValues {
 /// Specifically, when `dimension` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Dimension::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     AgreementEndDateTimeAfter,
@@ -1631,7 +1501,7 @@ pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     UsageTypeGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Dimension {
     fn from(s: &str) -> Self {
@@ -1670,17 +1540,17 @@ impl std::convert::From<&str> for Dimension {
             "TENANCY" => Dimension::Tenancy,
             "USAGE_TYPE" => Dimension::UsageType,
             "USAGE_TYPE_GROUP" => Dimension::UsageTypeGroup,
-            other => Dimension::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Dimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Dimension {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Dimension::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Dimension::from(s))
+                }
+            }
 impl Dimension {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1719,46 +1589,13 @@ impl Dimension {
             Dimension::Tenancy => "TENANCY",
             Dimension::UsageType => "USAGE_TYPE",
             Dimension::UsageTypeGroup => "USAGE_TYPE_GROUP",
-            Dimension::Unknown(value) => value.as_str(),
+            Dimension::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AGREEMENT_END_DATE_TIME_AFTER",
-            "AGREEMENT_END_DATE_TIME_BEFORE",
-            "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
-            "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
-            "AZ",
-            "BILLING_ENTITY",
-            "CACHE_ENGINE",
-            "DATABASE_ENGINE",
-            "DEPLOYMENT_OPTION",
-            "INSTANCE_TYPE",
-            "INSTANCE_TYPE_FAMILY",
-            "INVOICING_ENTITY",
-            "LEGAL_ENTITY_NAME",
-            "LINKED_ACCOUNT",
-            "LINKED_ACCOUNT_NAME",
-            "OPERATING_SYSTEM",
-            "OPERATION",
-            "PAYMENT_OPTION",
-            "PLATFORM",
-            "PURCHASE_TYPE",
-            "RECORD_TYPE",
-            "REGION",
-            "RESERVATION_ID",
-            "RESOURCE_ID",
-            "RIGHTSIZING_TYPE",
-            "SAVINGS_PLANS_TYPE",
-            "SAVINGS_PLAN_ARN",
-            "SCOPE",
-            "SERVICE",
-            "SERVICE_CODE",
-            "SUBSCRIPTION_ID",
-            "TENANCY",
-            "USAGE_TYPE",
-            "USAGE_TYPE_GROUP",
+            "AGREEMENT_END_DATE_TIME_AFTER", "AGREEMENT_END_DATE_TIME_BEFORE", "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "AZ", "BILLING_ENTITY", "CACHE_ENGINE", "DATABASE_ENGINE", "DEPLOYMENT_OPTION", "INSTANCE_TYPE", "INSTANCE_TYPE_FAMILY", "INVOICING_ENTITY", "LEGAL_ENTITY_NAME", "LINKED_ACCOUNT", "LINKED_ACCOUNT_NAME", "OPERATING_SYSTEM", "OPERATION", "PAYMENT_OPTION", "PLATFORM", "PURCHASE_TYPE", "RECORD_TYPE", "REGION", "RESERVATION_ID", "RESOURCE_ID", "RIGHTSIZING_TYPE", "SAVINGS_PLANS_TYPE", "SAVINGS_PLAN_ARN", "SCOPE", "SERVICE", "SERVICE_CODE", "SUBSCRIPTION_ID", "TENANCY", "USAGE_TYPE", "USAGE_TYPE_GROUP"
         ]
     }
 }
@@ -1774,9 +1611,9 @@ impl AsRef<str> for Dimension {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costcategoryruleversion = unimplemented!();
 /// match costcategoryruleversion {
@@ -1797,56 +1634,48 @@ impl AsRef<str> for Dimension {
 /// Specifically, when `costcategoryruleversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostCategoryRuleVersion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The rule schema version in this particular Cost Category.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostCategoryRuleVersion {
     #[allow(missing_docs)] // documentation missing in model
     CostCategoryExpressionV1,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostCategoryRuleVersion {
     fn from(s: &str) -> Self {
         match s {
             "CostCategoryExpression.v1" => CostCategoryRuleVersion::CostCategoryExpressionV1,
-            other => CostCategoryRuleVersion::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CostCategoryRuleVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostCategoryRuleVersion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostCategoryRuleVersion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostCategoryRuleVersion::from(s))
+                }
+            }
 impl CostCategoryRuleVersion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryRuleVersion::CostCategoryExpressionV1 => "CostCategoryExpression.v1",
-            CostCategoryRuleVersion::Unknown(value) => value.as_str(),
+            CostCategoryRuleVersion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CostCategoryExpression.v1"]
+        &[
+            "CostCategoryExpression.v1"
+        ]
     }
 }
 impl AsRef<str> for CostCategoryRuleVersion {
@@ -1858,7 +1687,7 @@ impl AsRef<str> for CostCategoryRuleVersion {
 /// <p>Gives a detailed description of the result of an action. It's on each cost allocation tag entry in the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCostAllocationTagsStatusError {
+pub struct UpdateCostAllocationTagsStatusError  {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -1871,21 +1700,21 @@ pub struct UpdateCostAllocationTagsStatusError {
 }
 impl UpdateCostAllocationTagsStatusError {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>An error code representing why the action failed on this entry. </p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A message explaining why the action failed on this entry. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
 pub mod update_cost_allocation_tags_status_error {
-
+    
     /// A builder for [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1901,8 +1730,7 @@ pub mod update_cost_allocation_tags_status_error {
         }
         /// <p>The key for the cost allocation tag. </p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// <p>An error code representing why the action failed on this entry. </p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1911,8 +1739,7 @@ pub mod update_cost_allocation_tags_status_error {
         }
         /// <p>An error code representing why the action failed on this entry. </p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>A message explaining why the action failed on this entry. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1921,18 +1748,22 @@ pub mod update_cost_allocation_tags_status_error {
         }
         /// <p>A message explaining why the action failed on this entry. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
         pub fn build(self) -> crate::model::UpdateCostAllocationTagsStatusError {
             crate::model::UpdateCostAllocationTagsStatusError {
-                tag_key: self.tag_key,
-                code: self.code,
-                message: self.message,
+                tag_key: self.tag_key
+                ,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCostAllocationTagsStatusError {
     /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
@@ -1944,7 +1775,7 @@ impl UpdateCostAllocationTagsStatusError {
 /// <p>The cost allocation tag status. The status of a key can either be active or inactive. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostAllocationTagStatusEntry {
+pub struct CostAllocationTagStatusEntry  {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -1954,17 +1785,17 @@ pub struct CostAllocationTagStatusEntry {
 }
 impl CostAllocationTagStatusEntry {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CostAllocationTagStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CostAllocationTagStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
 pub mod cost_allocation_tag_status_entry {
-
+    
     /// A builder for [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1979,8 +1810,7 @@ pub mod cost_allocation_tag_status_entry {
         }
         /// <p>The key for the cost allocation tag. </p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// <p>The status of a cost allocation tag. </p>
         pub fn status(mut self, input: crate::model::CostAllocationTagStatus) -> Self {
@@ -1988,21 +1818,21 @@ pub mod cost_allocation_tag_status_entry {
             self
         }
         /// <p>The status of a cost allocation tag. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CostAllocationTagStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CostAllocationTagStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
         pub fn build(self) -> crate::model::CostAllocationTagStatusEntry {
             crate::model::CostAllocationTagStatusEntry {
-                tag_key: self.tag_key,
-                status: self.status,
+                tag_key: self.tag_key
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CostAllocationTagStatusEntry {
     /// Creates a new builder-style object to manufacture [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
@@ -2017,9 +1847,9 @@ impl CostAllocationTagStatusEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costallocationtagstatus = unimplemented!();
 /// match costallocationtagstatus {
@@ -2041,60 +1871,52 @@ impl CostAllocationTagStatusEntry {
 /// Specifically, when `costallocationtagstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostAllocationTagStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostAllocationTagStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostAllocationTagStatus {
     fn from(s: &str) -> Self {
         match s {
             "Active" => CostAllocationTagStatus::Active,
             "Inactive" => CostAllocationTagStatus::Inactive,
-            other => CostAllocationTagStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CostAllocationTagStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostAllocationTagStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostAllocationTagStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostAllocationTagStatus::from(s))
+                }
+            }
 impl CostAllocationTagStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostAllocationTagStatus::Active => "Active",
             CostAllocationTagStatus::Inactive => "Inactive",
-            CostAllocationTagStatus::Unknown(value) => value.as_str(),
+            CostAllocationTagStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "Inactive"]
+        &[
+            "Active", "Inactive"
+        ]
     }
 }
 impl AsRef<str> for CostAllocationTagStatus {
@@ -2106,7 +1928,7 @@ impl AsRef<str> for CostAllocationTagStatus {
 /// <p>The recipient of <code>AnomalySubscription</code> notifications. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subscriber {
+pub struct Subscriber  {
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
@@ -2119,21 +1941,21 @@ pub struct Subscriber {
 }
 impl Subscriber {
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The notification delivery channel. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SubscriberType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SubscriberType> {
         self.r#type.as_ref()
     }
     /// <p>Indicates if the subscriber accepts the notifications. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SubscriberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SubscriberStatus> {
         self.status.as_ref()
     }
 }
 /// See [`Subscriber`](crate::model::Subscriber).
 pub mod subscriber {
-
+    
     /// A builder for [`Subscriber`](crate::model::Subscriber).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2149,8 +1971,7 @@ pub mod subscriber {
         }
         /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// <p>The notification delivery channel. </p>
         pub fn r#type(mut self, input: crate::model::SubscriberType) -> Self {
@@ -2158,12 +1979,8 @@ pub mod subscriber {
             self
         }
         /// <p>The notification delivery channel. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::SubscriberType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SubscriberType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Indicates if the subscriber accepts the notifications. </p>
         pub fn status(mut self, input: crate::model::SubscriberStatus) -> Self {
@@ -2171,22 +1988,23 @@ pub mod subscriber {
             self
         }
         /// <p>Indicates if the subscriber accepts the notifications. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SubscriberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SubscriberStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`Subscriber`](crate::model::Subscriber).
         pub fn build(self) -> crate::model::Subscriber {
             crate::model::Subscriber {
-                address: self.address,
-                r#type: self.r#type,
-                status: self.status,
+                address: self.address
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl Subscriber {
     /// Creates a new builder-style object to manufacture [`Subscriber`](crate::model::Subscriber).
@@ -2201,9 +2019,9 @@ impl Subscriber {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subscriberstatus = unimplemented!();
 /// match subscriberstatus {
@@ -2225,58 +2043,52 @@ impl Subscriber {
 /// Specifically, when `subscriberstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubscriberStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubscriberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Confirmed,
     #[allow(missing_docs)] // documentation missing in model
     Declined,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubscriberStatus {
     fn from(s: &str) -> Self {
         match s {
             "CONFIRMED" => SubscriberStatus::Confirmed,
             "DECLINED" => SubscriberStatus::Declined,
-            other => SubscriberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SubscriberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubscriberStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubscriberStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubscriberStatus::from(s))
+                }
+            }
 impl SubscriberStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriberStatus::Confirmed => "CONFIRMED",
             SubscriberStatus::Declined => "DECLINED",
-            SubscriberStatus::Unknown(value) => value.as_str(),
+            SubscriberStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFIRMED", "DECLINED"]
+        &[
+            "CONFIRMED", "DECLINED"
+        ]
     }
 }
 impl AsRef<str> for SubscriberStatus {
@@ -2291,9 +2103,9 @@ impl AsRef<str> for SubscriberStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subscribertype = unimplemented!();
 /// match subscribertype {
@@ -2315,58 +2127,52 @@ impl AsRef<str> for SubscriberStatus {
 /// Specifically, when `subscribertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubscriberType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubscriberType {
     #[allow(missing_docs)] // documentation missing in model
     Email,
     #[allow(missing_docs)] // documentation missing in model
     Sns,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubscriberType {
     fn from(s: &str) -> Self {
         match s {
             "EMAIL" => SubscriberType::Email,
             "SNS" => SubscriberType::Sns,
-            other => SubscriberType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SubscriberType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubscriberType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubscriberType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubscriberType::from(s))
+                }
+            }
 impl SubscriberType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriberType::Email => "EMAIL",
             SubscriberType::Sns => "SNS",
-            SubscriberType::Unknown(value) => value.as_str(),
+            SubscriberType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EMAIL", "SNS"]
+        &[
+            "EMAIL", "SNS"
+        ]
     }
 }
 impl AsRef<str> for SubscriberType {
@@ -2381,9 +2187,9 @@ impl AsRef<str> for SubscriberType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let anomalysubscriptionfrequency = unimplemented!();
 /// match anomalysubscriptionfrequency {
@@ -2406,22 +2212,14 @@ impl AsRef<str> for SubscriberType {
 /// Specifically, when `anomalysubscriptionfrequency` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnomalySubscriptionFrequency::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnomalySubscriptionFrequency {
     #[allow(missing_docs)] // documentation missing in model
     Daily,
@@ -2430,7 +2228,7 @@ pub enum AnomalySubscriptionFrequency {
     #[allow(missing_docs)] // documentation missing in model
     Weekly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnomalySubscriptionFrequency {
     fn from(s: &str) -> Self {
@@ -2438,19 +2236,17 @@ impl std::convert::From<&str> for AnomalySubscriptionFrequency {
             "DAILY" => AnomalySubscriptionFrequency::Daily,
             "IMMEDIATE" => AnomalySubscriptionFrequency::Immediate,
             "WEEKLY" => AnomalySubscriptionFrequency::Weekly,
-            other => AnomalySubscriptionFrequency::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AnomalySubscriptionFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnomalySubscriptionFrequency {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnomalySubscriptionFrequency::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnomalySubscriptionFrequency::from(s))
+                }
+            }
 impl AnomalySubscriptionFrequency {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2458,12 +2254,14 @@ impl AnomalySubscriptionFrequency {
             AnomalySubscriptionFrequency::Daily => "DAILY",
             AnomalySubscriptionFrequency::Immediate => "IMMEDIATE",
             AnomalySubscriptionFrequency::Weekly => "WEEKLY",
-            AnomalySubscriptionFrequency::Unknown(value) => value.as_str(),
+            AnomalySubscriptionFrequency::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAILY", "IMMEDIATE", "WEEKLY"]
+        &[
+            "DAILY", "IMMEDIATE", "WEEKLY"
+        ]
     }
 }
 impl AsRef<str> for AnomalySubscriptionFrequency {
@@ -2472,12 +2270,12 @@ impl AsRef<str> for AnomalySubscriptionFrequency {
     }
 }
 
-/// <p>The tag structure that contains a tag key and value. </p> <note>
-/// <p>Tagging is supported only for the following Cost Explorer resource types: <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>.</p>
+/// <p>The tag structure that contains a tag key and value. </p> <note> 
+/// <p>Tagging is supported only for the following Cost Explorer resource types: <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceTag {
+pub struct ResourceTag  {
     /// <p>The key that's associated with the tag. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2487,17 +2285,17 @@ pub struct ResourceTag {
 }
 impl ResourceTag {
     /// <p>The key that's associated with the tag. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value that's associated with the tag. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
-
+    
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2512,8 +2310,7 @@ pub mod resource_tag {
         }
         /// <p>The key that's associated with the tag. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value that's associated with the tag. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2522,17 +2319,20 @@ pub mod resource_tag {
         }
         /// <p>The value that's associated with the tag. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag).
         pub fn build(self) -> crate::model::ResourceTag {
             crate::model::ResourceTag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceTag {
     /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
@@ -2547,9 +2347,9 @@ impl ResourceTag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let anomalyfeedbacktype = unimplemented!();
 /// match anomalyfeedbacktype {
@@ -2572,22 +2372,14 @@ impl ResourceTag {
 /// Specifically, when `anomalyfeedbacktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnomalyFeedbackType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnomalyFeedbackType {
     #[allow(missing_docs)] // documentation missing in model
     No,
@@ -2596,7 +2388,7 @@ pub enum AnomalyFeedbackType {
     #[allow(missing_docs)] // documentation missing in model
     Yes,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnomalyFeedbackType {
     fn from(s: &str) -> Self {
@@ -2604,19 +2396,17 @@ impl std::convert::From<&str> for AnomalyFeedbackType {
             "NO" => AnomalyFeedbackType::No,
             "PLANNED_ACTIVITY" => AnomalyFeedbackType::PlannedActivity,
             "YES" => AnomalyFeedbackType::Yes,
-            other => {
-                AnomalyFeedbackType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AnomalyFeedbackType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnomalyFeedbackType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnomalyFeedbackType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnomalyFeedbackType::from(s))
+                }
+            }
 impl AnomalyFeedbackType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2624,12 +2414,14 @@ impl AnomalyFeedbackType {
             AnomalyFeedbackType::No => "NO",
             AnomalyFeedbackType::PlannedActivity => "PLANNED_ACTIVITY",
             AnomalyFeedbackType::Yes => "YES",
-            AnomalyFeedbackType::Unknown(value) => value.as_str(),
+            AnomalyFeedbackType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NO", "PLANNED_ACTIVITY", "YES"]
+        &[
+            "NO", "PLANNED_ACTIVITY", "YES"
+        ]
     }
 }
 impl AsRef<str> for AnomalyFeedbackType {
@@ -2641,7 +2433,7 @@ impl AsRef<str> for AnomalyFeedbackType {
 /// <p>The summary of the Savings Plans recommendation generation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerationSummary {
+pub struct GenerationSummary  {
     /// <p>Indicates the ID for this specific recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -2660,29 +2452,29 @@ pub struct GenerationSummary {
 }
 impl GenerationSummary {
     /// <p>Indicates the ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
-    pub fn generation_status(&self) -> std::option::Option<&crate::model::GenerationStatus> {
+    pub fn generation_status(&self) -> std::option::Option<& crate::model::GenerationStatus> {
         self.generation_status.as_ref()
     }
     /// <p>Indicates the start time of the recommendation generation.</p>
-    pub fn generation_started_time(&self) -> std::option::Option<&str> {
+    pub fn generation_started_time(&self) -> std::option::Option<& str> {
         self.generation_started_time.as_deref()
     }
     /// <p>Indicates the completion time of the recommendation generation.</p>
-    pub fn generation_completion_time(&self) -> std::option::Option<&str> {
+    pub fn generation_completion_time(&self) -> std::option::Option<& str> {
         self.generation_completion_time.as_deref()
     }
     /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
-    pub fn estimated_completion_time(&self) -> std::option::Option<&str> {
+    pub fn estimated_completion_time(&self) -> std::option::Option<& str> {
         self.estimated_completion_time.as_deref()
     }
 }
 /// See [`GenerationSummary`](crate::model::GenerationSummary).
 pub mod generation_summary {
-
+    
     /// A builder for [`GenerationSummary`](crate::model::GenerationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2699,12 +2491,8 @@ pub mod generation_summary {
             self
         }
         /// <p>Indicates the ID for this specific recommendation.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
         pub fn generation_status(mut self, input: crate::model::GenerationStatus) -> Self {
@@ -2712,12 +2500,8 @@ pub mod generation_summary {
             self
         }
         /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
-        pub fn set_generation_status(
-            mut self,
-            input: std::option::Option<crate::model::GenerationStatus>,
-        ) -> Self {
-            self.generation_status = input;
-            self
+        pub fn set_generation_status(mut self, input: std::option::Option<crate::model::GenerationStatus>) -> Self {
+            self.generation_status = input; self
         }
         /// <p>Indicates the start time of the recommendation generation.</p>
         pub fn generation_started_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2725,12 +2509,8 @@ pub mod generation_summary {
             self
         }
         /// <p>Indicates the start time of the recommendation generation.</p>
-        pub fn set_generation_started_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generation_started_time = input;
-            self
+        pub fn set_generation_started_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generation_started_time = input; self
         }
         /// <p>Indicates the completion time of the recommendation generation.</p>
         pub fn generation_completion_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2738,12 +2518,8 @@ pub mod generation_summary {
             self
         }
         /// <p>Indicates the completion time of the recommendation generation.</p>
-        pub fn set_generation_completion_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generation_completion_time = input;
-            self
+        pub fn set_generation_completion_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generation_completion_time = input; self
         }
         /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
         pub fn estimated_completion_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2751,24 +2527,27 @@ pub mod generation_summary {
             self
         }
         /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
-        pub fn set_estimated_completion_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_completion_time = input;
-            self
+        pub fn set_estimated_completion_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_completion_time = input; self
         }
         /// Consumes the builder and constructs a [`GenerationSummary`](crate::model::GenerationSummary).
         pub fn build(self) -> crate::model::GenerationSummary {
             crate::model::GenerationSummary {
-                recommendation_id: self.recommendation_id,
-                generation_status: self.generation_status,
-                generation_started_time: self.generation_started_time,
-                generation_completion_time: self.generation_completion_time,
-                estimated_completion_time: self.estimated_completion_time,
+                recommendation_id: self.recommendation_id
+                ,
+                generation_status: self.generation_status
+                ,
+                generation_started_time: self.generation_started_time
+                ,
+                generation_completion_time: self.generation_completion_time
+                ,
+                estimated_completion_time: self.estimated_completion_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GenerationSummary {
     /// Creates a new builder-style object to manufacture [`GenerationSummary`](crate::model::GenerationSummary).
@@ -2783,9 +2562,9 @@ impl GenerationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let generationstatus = unimplemented!();
 /// match generationstatus {
@@ -2808,22 +2587,14 @@ impl GenerationSummary {
 /// Specifically, when `generationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GenerationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GenerationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -2832,7 +2603,7 @@ pub enum GenerationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GenerationStatus {
     fn from(s: &str) -> Self {
@@ -2840,17 +2611,17 @@ impl std::convert::From<&str> for GenerationStatus {
             "FAILED" => GenerationStatus::Failed,
             "PROCESSING" => GenerationStatus::Processing,
             "SUCCEEDED" => GenerationStatus::Succeeded,
-            other => GenerationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GenerationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GenerationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GenerationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GenerationStatus::from(s))
+                }
+            }
 impl GenerationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2858,12 +2629,14 @@ impl GenerationStatus {
             GenerationStatus::Failed => "FAILED",
             GenerationStatus::Processing => "PROCESSING",
             GenerationStatus::Succeeded => "SUCCEEDED",
-            GenerationStatus::Unknown(value) => value.as_str(),
+            GenerationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "PROCESSING", "SUCCEEDED"]
+        &[
+            "FAILED", "PROCESSING", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for GenerationStatus {
@@ -2872,11 +2645,11 @@ impl AsRef<str> for GenerationStatus {
     }
 }
 
-/// <p>A reference to a Cost Category containing only enough information to identify the Cost Category.</p>
+/// <p>A reference to a Cost Category containing only enough information to identify the Cost Category.</p> 
 /// <p>You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategoryReference {
+pub struct CostCategoryReference  {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -2894,8 +2667,7 @@ pub struct CostCategoryReference {
     pub number_of_rules: i32,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
     #[doc(hidden)]
-    pub processing_status:
-        std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
+    pub processing_status: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
     /// <p>A list of unique cost category values in a specific cost category. </p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2905,19 +2677,19 @@ pub struct CostCategoryReference {
 }
 impl CostCategoryReference {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Cost Category's effective start date.</p>
-    pub fn effective_start(&self) -> std::option::Option<&str> {
+    pub fn effective_start(&self) -> std::option::Option<& str> {
         self.effective_start.as_deref()
     }
     /// <p>The Cost Category's effective end date.</p>
-    pub fn effective_end(&self) -> std::option::Option<&str> {
+    pub fn effective_end(&self) -> std::option::Option<& str> {
         self.effective_end.as_deref()
     }
     /// <p>The number of rules that are associated with a specific Cost Category. </p>
@@ -2925,23 +2697,21 @@ impl CostCategoryReference {
         self.number_of_rules
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-    pub fn processing_status(
-        &self,
-    ) -> std::option::Option<&[crate::model::CostCategoryProcessingStatus]> {
+    pub fn processing_status(&self) -> std::option::Option<& [crate::model::CostCategoryProcessingStatus]> {
         self.processing_status.as_deref()
     }
     /// <p>A list of unique cost category values in a specific cost category. </p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
 /// See [`CostCategoryReference`](crate::model::CostCategoryReference).
 pub mod cost_category_reference {
-
+    
     /// A builder for [`CostCategoryReference`](crate::model::CostCategoryReference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2950,8 +2720,7 @@ pub mod cost_category_reference {
         pub(crate) effective_start: std::option::Option<std::string::String>,
         pub(crate) effective_end: std::option::Option<std::string::String>,
         pub(crate) number_of_rules: std::option::Option<i32>,
-        pub(crate) processing_status:
-            std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
+        pub(crate) processing_status: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) default_value: std::option::Option<std::string::String>,
     }
@@ -2962,12 +2731,8 @@ pub mod cost_category_reference {
             self
         }
         /// <p>The unique identifier for your Cost Category. </p>
-        pub fn set_cost_category_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cost_category_arn = input;
-            self
+        pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cost_category_arn = input; self
         }
         /// <p>The unique name of the Cost Category.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2976,8 +2741,7 @@ pub mod cost_category_reference {
         }
         /// <p>The unique name of the Cost Category.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Cost Category's effective start date.</p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2985,12 +2749,8 @@ pub mod cost_category_reference {
             self
         }
         /// <p>The Cost Category's effective start date.</p>
-        pub fn set_effective_start(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.effective_start = input;
-            self
+        pub fn set_effective_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.effective_start = input; self
         }
         /// <p>The Cost Category's effective end date.</p>
         pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2998,12 +2758,8 @@ pub mod cost_category_reference {
             self
         }
         /// <p>The Cost Category's effective end date.</p>
-        pub fn set_effective_end(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.effective_end = input;
-            self
+        pub fn set_effective_end(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.effective_end = input; self
         }
         /// <p>The number of rules that are associated with a specific Cost Category. </p>
         pub fn number_of_rules(mut self, input: i32) -> Self {
@@ -3012,30 +2768,22 @@ pub mod cost_category_reference {
         }
         /// <p>The number of rules that are associated with a specific Cost Category. </p>
         pub fn set_number_of_rules(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_rules = input;
-            self
+            self.number_of_rules = input; self
         }
         /// Appends an item to `processing_status`.
         ///
         /// To override the contents of this collection use [`set_processing_status`](Self::set_processing_status).
         ///
         /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-        pub fn processing_status(
-            mut self,
-            input: crate::model::CostCategoryProcessingStatus,
-        ) -> Self {
+        pub fn processing_status(mut self, input: crate::model::CostCategoryProcessingStatus) -> Self {
             let mut v = self.processing_status.unwrap_or_default();
-            v.push(input);
-            self.processing_status = Some(v);
-            self
+                            v.push(input);
+                            self.processing_status = Some(v);
+                            self
         }
         /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-        pub fn set_processing_status(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
-        ) -> Self {
-            self.processing_status = input;
-            self
+        pub fn set_processing_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>) -> Self {
+            self.processing_status = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -3044,17 +2792,13 @@ pub mod cost_category_reference {
         /// <p>A list of unique cost category values in a specific cost category. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of unique cost category values in a specific cost category. </p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The default value for the cost category.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3062,27 +2806,34 @@ pub mod cost_category_reference {
             self
         }
         /// <p>The default value for the cost category.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// Consumes the builder and constructs a [`CostCategoryReference`](crate::model::CostCategoryReference).
         pub fn build(self) -> crate::model::CostCategoryReference {
             crate::model::CostCategoryReference {
-                cost_category_arn: self.cost_category_arn,
-                name: self.name,
-                effective_start: self.effective_start,
-                effective_end: self.effective_end,
-                number_of_rules: self.number_of_rules.unwrap_or_default(),
-                processing_status: self.processing_status,
-                values: self.values,
-                default_value: self.default_value,
+                cost_category_arn: self.cost_category_arn
+                ,
+                name: self.name
+                ,
+                effective_start: self.effective_start
+                ,
+                effective_end: self.effective_end
+                ,
+                number_of_rules: self.number_of_rules
+                    .unwrap_or_default()
+                ,
+                processing_status: self.processing_status
+                ,
+                values: self.values
+                ,
+                default_value: self.default_value
+                ,
             }
         }
     }
+    
+    
 }
 impl CostCategoryReference {
     /// Creates a new builder-style object to manufacture [`CostCategoryReference`](crate::model::CostCategoryReference).
@@ -3094,7 +2845,7 @@ impl CostCategoryReference {
 /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategoryProcessingStatus {
+pub struct CostCategoryProcessingStatus  {
     /// <p>The Cost Management product name of the applied status. </p>
     #[doc(hidden)]
     pub component: std::option::Option<crate::model::CostCategoryStatusComponent>,
@@ -3104,17 +2855,17 @@ pub struct CostCategoryProcessingStatus {
 }
 impl CostCategoryProcessingStatus {
     /// <p>The Cost Management product name of the applied status. </p>
-    pub fn component(&self) -> std::option::Option<&crate::model::CostCategoryStatusComponent> {
+    pub fn component(&self) -> std::option::Option<& crate::model::CostCategoryStatusComponent> {
         self.component.as_ref()
     }
     /// <p>The process status for a specific cost category. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CostCategoryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CostCategoryStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
 pub mod cost_category_processing_status {
-
+    
     /// A builder for [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3128,12 +2879,8 @@ pub mod cost_category_processing_status {
             self
         }
         /// <p>The Cost Management product name of the applied status. </p>
-        pub fn set_component(
-            mut self,
-            input: std::option::Option<crate::model::CostCategoryStatusComponent>,
-        ) -> Self {
-            self.component = input;
-            self
+        pub fn set_component(mut self, input: std::option::Option<crate::model::CostCategoryStatusComponent>) -> Self {
+            self.component = input; self
         }
         /// <p>The process status for a specific cost category. </p>
         pub fn status(mut self, input: crate::model::CostCategoryStatus) -> Self {
@@ -3141,21 +2888,21 @@ pub mod cost_category_processing_status {
             self
         }
         /// <p>The process status for a specific cost category. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CostCategoryStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CostCategoryStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
         pub fn build(self) -> crate::model::CostCategoryProcessingStatus {
             crate::model::CostCategoryProcessingStatus {
-                component: self.component,
-                status: self.status,
+                component: self.component
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CostCategoryProcessingStatus {
     /// Creates a new builder-style object to manufacture [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
@@ -3170,9 +2917,9 @@ impl CostCategoryProcessingStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costcategorystatus = unimplemented!();
 /// match costcategorystatus {
@@ -3194,60 +2941,52 @@ impl CostCategoryProcessingStatus {
 /// Specifically, when `costcategorystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostCategoryStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostCategoryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Applied,
     #[allow(missing_docs)] // documentation missing in model
     Processing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostCategoryStatus {
     fn from(s: &str) -> Self {
         match s {
             "APPLIED" => CostCategoryStatus::Applied,
             "PROCESSING" => CostCategoryStatus::Processing,
-            other => {
-                CostCategoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CostCategoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostCategoryStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostCategoryStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostCategoryStatus::from(s))
+                }
+            }
 impl CostCategoryStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryStatus::Applied => "APPLIED",
             CostCategoryStatus::Processing => "PROCESSING",
-            CostCategoryStatus::Unknown(value) => value.as_str(),
+            CostCategoryStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPLIED", "PROCESSING"]
+        &[
+            "APPLIED", "PROCESSING"
+        ]
     }
 }
 impl AsRef<str> for CostCategoryStatus {
@@ -3262,9 +3001,9 @@ impl AsRef<str> for CostCategoryStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costcategorystatuscomponent = unimplemented!();
 /// match costcategorystatuscomponent {
@@ -3285,56 +3024,48 @@ impl AsRef<str> for CostCategoryStatus {
 /// Specifically, when `costcategorystatuscomponent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostCategoryStatusComponent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostCategoryStatusComponent {
     #[allow(missing_docs)] // documentation missing in model
     CostExplorer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostCategoryStatusComponent {
     fn from(s: &str) -> Self {
         match s {
             "COST_EXPLORER" => CostCategoryStatusComponent::CostExplorer,
-            other => CostCategoryStatusComponent::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CostCategoryStatusComponent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostCategoryStatusComponent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostCategoryStatusComponent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostCategoryStatusComponent::from(s))
+                }
+            }
 impl CostCategoryStatusComponent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryStatusComponent::CostExplorer => "COST_EXPLORER",
-            CostCategoryStatusComponent::Unknown(value) => value.as_str(),
+            CostCategoryStatusComponent::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COST_EXPLORER"]
+        &[
+            "COST_EXPLORER"
+        ]
     }
 }
 impl AsRef<str> for CostCategoryStatusComponent {
@@ -3346,7 +3077,7 @@ impl AsRef<str> for CostCategoryStatusComponent {
 /// <p>The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code> object. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostAllocationTag {
+pub struct CostAllocationTag  {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -3359,21 +3090,21 @@ pub struct CostAllocationTag {
 }
 impl CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::CostAllocationTagType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::CostAllocationTagType> {
         self.r#type.as_ref()
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CostAllocationTagStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CostAllocationTagStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CostAllocationTag`](crate::model::CostAllocationTag).
 pub mod cost_allocation_tag {
-
+    
     /// A builder for [`CostAllocationTag`](crate::model::CostAllocationTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3389,8 +3120,7 @@ pub mod cost_allocation_tag {
         }
         /// <p>The key for the cost allocation tag. </p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
         pub fn r#type(mut self, input: crate::model::CostAllocationTagType) -> Self {
@@ -3398,12 +3128,8 @@ pub mod cost_allocation_tag {
             self
         }
         /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::CostAllocationTagType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CostAllocationTagType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The status of a cost allocation tag. </p>
         pub fn status(mut self, input: crate::model::CostAllocationTagStatus) -> Self {
@@ -3411,22 +3137,23 @@ pub mod cost_allocation_tag {
             self
         }
         /// <p>The status of a cost allocation tag. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CostAllocationTagStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CostAllocationTagStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CostAllocationTag`](crate::model::CostAllocationTag).
         pub fn build(self) -> crate::model::CostAllocationTag {
             crate::model::CostAllocationTag {
-                tag_key: self.tag_key,
-                r#type: self.r#type,
-                status: self.status,
+                tag_key: self.tag_key
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CostAllocationTag {
     /// Creates a new builder-style object to manufacture [`CostAllocationTag`](crate::model::CostAllocationTag).
@@ -3441,9 +3168,9 @@ impl CostAllocationTag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costallocationtagtype = unimplemented!();
 /// match costallocationtagtype {
@@ -3465,60 +3192,52 @@ impl CostAllocationTag {
 /// Specifically, when `costallocationtagtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostAllocationTagType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostAllocationTagType {
     #[allow(missing_docs)] // documentation missing in model
     AwsGenerated,
     #[allow(missing_docs)] // documentation missing in model
     UserDefined,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostAllocationTagType {
     fn from(s: &str) -> Self {
         match s {
             "AWSGenerated" => CostAllocationTagType::AwsGenerated,
             "UserDefined" => CostAllocationTagType::UserDefined,
-            other => {
-                CostAllocationTagType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CostAllocationTagType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostAllocationTagType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostAllocationTagType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostAllocationTagType::from(s))
+                }
+            }
 impl CostAllocationTagType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostAllocationTagType::AwsGenerated => "AWSGenerated",
             CostAllocationTagType::UserDefined => "UserDefined",
-            CostAllocationTagType::Unknown(value) => value.as_str(),
+            CostAllocationTagType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWSGenerated", "UserDefined"]
+        &[
+            "AWSGenerated", "UserDefined"
+        ]
     }
 }
 impl AsRef<str> for CostAllocationTagType {
@@ -3530,7 +3249,7 @@ impl AsRef<str> for CostAllocationTagType {
 /// <p>The forecast that's created for your query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForecastResult {
+pub struct ForecastResult  {
     /// <p>The period of time that the forecast covers.</p>
     #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
@@ -3546,25 +3265,25 @@ pub struct ForecastResult {
 }
 impl ForecastResult {
     /// <p>The period of time that the forecast covers.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The mean value of the forecast.</p>
-    pub fn mean_value(&self) -> std::option::Option<&str> {
+    pub fn mean_value(&self) -> std::option::Option<& str> {
         self.mean_value.as_deref()
     }
     /// <p>The lower limit for the prediction interval. </p>
-    pub fn prediction_interval_lower_bound(&self) -> std::option::Option<&str> {
+    pub fn prediction_interval_lower_bound(&self) -> std::option::Option<& str> {
         self.prediction_interval_lower_bound.as_deref()
     }
     /// <p>The upper limit for the prediction interval. </p>
-    pub fn prediction_interval_upper_bound(&self) -> std::option::Option<&str> {
+    pub fn prediction_interval_upper_bound(&self) -> std::option::Option<& str> {
         self.prediction_interval_upper_bound.as_deref()
     }
 }
 /// See [`ForecastResult`](crate::model::ForecastResult).
 pub mod forecast_result {
-
+    
     /// A builder for [`ForecastResult`](crate::model::ForecastResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3580,12 +3299,8 @@ pub mod forecast_result {
             self
         }
         /// <p>The period of time that the forecast covers.</p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::DateInterval>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::DateInterval>) -> Self {
+            self.time_period = input; self
         }
         /// <p>The mean value of the forecast.</p>
         pub fn mean_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3594,51 +3309,42 @@ pub mod forecast_result {
         }
         /// <p>The mean value of the forecast.</p>
         pub fn set_mean_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mean_value = input;
-            self
+            self.mean_value = input; self
         }
         /// <p>The lower limit for the prediction interval. </p>
-        pub fn prediction_interval_lower_bound(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn prediction_interval_lower_bound(mut self, input: impl Into<std::string::String>) -> Self {
             self.prediction_interval_lower_bound = Some(input.into());
             self
         }
         /// <p>The lower limit for the prediction interval. </p>
-        pub fn set_prediction_interval_lower_bound(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.prediction_interval_lower_bound = input;
-            self
+        pub fn set_prediction_interval_lower_bound(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prediction_interval_lower_bound = input; self
         }
         /// <p>The upper limit for the prediction interval. </p>
-        pub fn prediction_interval_upper_bound(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn prediction_interval_upper_bound(mut self, input: impl Into<std::string::String>) -> Self {
             self.prediction_interval_upper_bound = Some(input.into());
             self
         }
         /// <p>The upper limit for the prediction interval. </p>
-        pub fn set_prediction_interval_upper_bound(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.prediction_interval_upper_bound = input;
-            self
+        pub fn set_prediction_interval_upper_bound(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prediction_interval_upper_bound = input; self
         }
         /// Consumes the builder and constructs a [`ForecastResult`](crate::model::ForecastResult).
         pub fn build(self) -> crate::model::ForecastResult {
             crate::model::ForecastResult {
-                time_period: self.time_period,
-                mean_value: self.mean_value,
-                prediction_interval_lower_bound: self.prediction_interval_lower_bound,
-                prediction_interval_upper_bound: self.prediction_interval_upper_bound,
+                time_period: self.time_period
+                ,
+                mean_value: self.mean_value
+                ,
+                prediction_interval_lower_bound: self.prediction_interval_lower_bound
+                ,
+                prediction_interval_upper_bound: self.prediction_interval_upper_bound
+                ,
             }
         }
     }
+    
+    
 }
 impl ForecastResult {
     /// Creates a new builder-style object to manufacture [`ForecastResult`](crate::model::ForecastResult).
@@ -3650,7 +3356,7 @@ impl ForecastResult {
 /// <p>The time period of the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateInterval {
+pub struct DateInterval  {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
@@ -3660,17 +3366,17 @@ pub struct DateInterval {
 }
 impl DateInterval {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> std::option::Option<& str> {
         self.start.as_deref()
     }
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
 }
 /// See [`DateInterval`](crate::model::DateInterval).
 pub mod date_interval {
-
+    
     /// A builder for [`DateInterval`](crate::model::DateInterval).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3685,8 +3391,7 @@ pub mod date_interval {
         }
         /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
         pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3695,17 +3400,20 @@ pub mod date_interval {
         }
         /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// Consumes the builder and constructs a [`DateInterval`](crate::model::DateInterval).
         pub fn build(self) -> crate::model::DateInterval {
             crate::model::DateInterval {
-                start: self.start,
-                end: self.end,
+                start: self.start
+                ,
+                end: self.end
+                ,
             }
         }
     }
+    
+    
 }
 impl DateInterval {
     /// Creates a new builder-style object to manufacture [`DateInterval`](crate::model::DateInterval).
@@ -3717,7 +3425,7 @@ impl DateInterval {
 /// <p>The aggregated value for a metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricValue {
+pub struct MetricValue  {
     /// <p>The actual number that represents the metric.</p>
     #[doc(hidden)]
     pub amount: std::option::Option<std::string::String>,
@@ -3727,17 +3435,17 @@ pub struct MetricValue {
 }
 impl MetricValue {
     /// <p>The actual number that represents the metric.</p>
-    pub fn amount(&self) -> std::option::Option<&str> {
+    pub fn amount(&self) -> std::option::Option<& str> {
         self.amount.as_deref()
     }
     /// <p>The unit that the metric is given in.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
 /// See [`MetricValue`](crate::model::MetricValue).
 pub mod metric_value {
-
+    
     /// A builder for [`MetricValue`](crate::model::MetricValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3752,8 +3460,7 @@ pub mod metric_value {
         }
         /// <p>The actual number that represents the metric.</p>
         pub fn set_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.amount = input;
-            self
+            self.amount = input; self
         }
         /// <p>The unit that the metric is given in.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3762,17 +3469,20 @@ pub mod metric_value {
         }
         /// <p>The unit that the metric is given in.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`MetricValue`](crate::model::MetricValue).
         pub fn build(self) -> crate::model::MetricValue {
             crate::model::MetricValue {
-                amount: self.amount,
-                unit: self.unit,
+                amount: self.amount
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricValue {
     /// Creates a new builder-style object to manufacture [`MetricValue`](crate::model::MetricValue).
@@ -3787,9 +3497,9 @@ impl MetricValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let granularity = unimplemented!();
 /// match granularity {
@@ -3812,22 +3522,14 @@ impl MetricValue {
 /// Specifically, when `granularity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Granularity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Granularity {
     #[allow(missing_docs)] // documentation missing in model
     Daily,
@@ -3836,7 +3538,7 @@ pub enum Granularity {
     #[allow(missing_docs)] // documentation missing in model
     Monthly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Granularity {
     fn from(s: &str) -> Self {
@@ -3844,17 +3546,17 @@ impl std::convert::From<&str> for Granularity {
             "DAILY" => Granularity::Daily,
             "HOURLY" => Granularity::Hourly,
             "MONTHLY" => Granularity::Monthly,
-            other => Granularity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Granularity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Granularity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Granularity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Granularity::from(s))
+                }
+            }
 impl Granularity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3862,12 +3564,14 @@ impl Granularity {
             Granularity::Daily => "DAILY",
             Granularity::Hourly => "HOURLY",
             Granularity::Monthly => "MONTHLY",
-            Granularity::Unknown(value) => value.as_str(),
+            Granularity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAILY", "HOURLY", "MONTHLY"]
+        &[
+            "DAILY", "HOURLY", "MONTHLY"
+        ]
     }
 }
 impl AsRef<str> for Granularity {
@@ -3882,9 +3586,9 @@ impl AsRef<str> for Granularity {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metric = unimplemented!();
 /// match metric {
@@ -3911,22 +3615,14 @@ impl AsRef<str> for Granularity {
 /// Specifically, when `metric` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Metric::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Metric {
     #[allow(missing_docs)] // documentation missing in model
     AmortizedCost,
@@ -3943,7 +3639,7 @@ pub enum Metric {
     #[allow(missing_docs)] // documentation missing in model
     UsageQuantity,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Metric {
     fn from(s: &str) -> Self {
@@ -3955,17 +3651,17 @@ impl std::convert::From<&str> for Metric {
             "NORMALIZED_USAGE_AMOUNT" => Metric::NormalizedUsageAmount,
             "UNBLENDED_COST" => Metric::UnblendedCost,
             "USAGE_QUANTITY" => Metric::UsageQuantity,
-            other => Metric::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Metric::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Metric {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Metric::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Metric::from(s))
+                }
+            }
 impl Metric {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3977,19 +3673,13 @@ impl Metric {
             Metric::NormalizedUsageAmount => "NORMALIZED_USAGE_AMOUNT",
             Metric::UnblendedCost => "UNBLENDED_COST",
             Metric::UsageQuantity => "USAGE_QUANTITY",
-            Metric::Unknown(value) => value.as_str(),
+            Metric::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AMORTIZED_COST",
-            "BLENDED_COST",
-            "NET_AMORTIZED_COST",
-            "NET_UNBLENDED_COST",
-            "NORMALIZED_USAGE_AMOUNT",
-            "UNBLENDED_COST",
-            "USAGE_QUANTITY",
+            "AMORTIZED_COST", "BLENDED_COST", "NET_AMORTIZED_COST", "NET_UNBLENDED_COST", "NORMALIZED_USAGE_AMOUNT", "UNBLENDED_COST", "USAGE_QUANTITY"
         ]
     }
 }
@@ -4002,7 +3692,7 @@ impl AsRef<str> for Metric {
 /// <p>The details for how to sort the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SortDefinition {
+pub struct SortDefinition  {
     /// <p>The key that's used to sort the data.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -4012,17 +3702,17 @@ pub struct SortDefinition {
 }
 impl SortDefinition {
     /// <p>The key that's used to sort the data.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The order that's used to sort the data.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
 }
 /// See [`SortDefinition`](crate::model::SortDefinition).
 pub mod sort_definition {
-
+    
     /// A builder for [`SortDefinition`](crate::model::SortDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4037,8 +3727,7 @@ pub mod sort_definition {
         }
         /// <p>The key that's used to sort the data.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The order that's used to sort the data.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
@@ -4046,21 +3735,21 @@ pub mod sort_definition {
             self
         }
         /// <p>The order that's used to sort the data.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// Consumes the builder and constructs a [`SortDefinition`](crate::model::SortDefinition).
         pub fn build(self) -> crate::model::SortDefinition {
             crate::model::SortDefinition {
-                key: self.key,
-                sort_order: self.sort_order,
+                key: self.key
+                ,
+                sort_order: self.sort_order
+                ,
             }
         }
     }
+    
+    
 }
 impl SortDefinition {
     /// Creates a new builder-style object to manufacture [`SortDefinition`](crate::model::SortDefinition).
@@ -4075,9 +3764,9 @@ impl SortDefinition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortorder = unimplemented!();
 /// match sortorder {
@@ -4099,58 +3788,52 @@ impl SortDefinition {
 /// Specifically, when `sortorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortOrder {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
     fn from(s: &str) -> Self {
         match s {
             "ASCENDING" => SortOrder::Ascending,
             "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortOrder::from(s))
+                }
+            }
 impl SortOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ASCENDING",
             SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str(),
+            SortOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASCENDING", "DESCENDING"]
+        &[
+            "ASCENDING", "DESCENDING"
+        ]
     }
 }
 impl AsRef<str> for SortOrder {
@@ -4162,7 +3845,7 @@ impl AsRef<str> for SortOrder {
 /// <p>The aggregated utilization metrics for your Savings Plans usage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansUtilizationAggregates {
+pub struct SavingsPlansUtilizationAggregates  {
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     #[doc(hidden)]
     pub utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
@@ -4175,30 +3858,27 @@ pub struct SavingsPlansUtilizationAggregates {
 }
 impl SavingsPlansUtilizationAggregates {
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-    pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
+    pub fn utilization(&self) -> std::option::Option<& crate::model::SavingsPlansUtilization> {
         self.utilization.as_ref()
     }
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-    pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
+    pub fn savings(&self) -> std::option::Option<& crate::model::SavingsPlansSavings> {
         self.savings.as_ref()
     }
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
-    pub fn amortized_commitment(
-        &self,
-    ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
+    pub fn amortized_commitment(&self) -> std::option::Option<& crate::model::SavingsPlansAmortizedCommitment> {
         self.amortized_commitment.as_ref()
     }
 }
 /// See [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
 pub mod savings_plans_utilization_aggregates {
-
+    
     /// A builder for [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
         pub(crate) savings: std::option::Option<crate::model::SavingsPlansSavings>,
-        pub(crate) amortized_commitment:
-            std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
+        pub(crate) amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
     }
     impl Builder {
         /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
@@ -4207,12 +3887,8 @@ pub mod savings_plans_utilization_aggregates {
             self
         }
         /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-        pub fn set_utilization(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansUtilization>,
-        ) -> Self {
-            self.utilization = input;
-            self
+        pub fn set_utilization(mut self, input: std::option::Option<crate::model::SavingsPlansUtilization>) -> Self {
+            self.utilization = input; self
         }
         /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn savings(mut self, input: crate::model::SavingsPlansSavings) -> Self {
@@ -4220,38 +3896,32 @@ pub mod savings_plans_utilization_aggregates {
             self
         }
         /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-        pub fn set_savings(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansSavings>,
-        ) -> Self {
-            self.savings = input;
-            self
+        pub fn set_savings(mut self, input: std::option::Option<crate::model::SavingsPlansSavings>) -> Self {
+            self.savings = input; self
         }
         /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
-        pub fn amortized_commitment(
-            mut self,
-            input: crate::model::SavingsPlansAmortizedCommitment,
-        ) -> Self {
+        pub fn amortized_commitment(mut self, input: crate::model::SavingsPlansAmortizedCommitment) -> Self {
             self.amortized_commitment = Some(input);
             self
         }
         /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
-        pub fn set_amortized_commitment(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
-        ) -> Self {
-            self.amortized_commitment = input;
-            self
+        pub fn set_amortized_commitment(mut self, input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>) -> Self {
+            self.amortized_commitment = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
         pub fn build(self) -> crate::model::SavingsPlansUtilizationAggregates {
             crate::model::SavingsPlansUtilizationAggregates {
-                utilization: self.utilization,
-                savings: self.savings,
-                amortized_commitment: self.amortized_commitment,
+                utilization: self.utilization
+                ,
+                savings: self.savings
+                ,
+                amortized_commitment: self.amortized_commitment
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansUtilizationAggregates {
     /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
@@ -4263,7 +3933,7 @@ impl SavingsPlansUtilizationAggregates {
 /// <p>The amortized amount of Savings Plans purchased in a specific account during a specific time interval.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansAmortizedCommitment {
+pub struct SavingsPlansAmortizedCommitment  {
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
     #[doc(hidden)]
     pub amortized_recurring_commitment: std::option::Option<std::string::String>,
@@ -4276,21 +3946,21 @@ pub struct SavingsPlansAmortizedCommitment {
 }
 impl SavingsPlansAmortizedCommitment {
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
-    pub fn amortized_recurring_commitment(&self) -> std::option::Option<&str> {
+    pub fn amortized_recurring_commitment(&self) -> std::option::Option<& str> {
         self.amortized_recurring_commitment.as_deref()
     }
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
-    pub fn amortized_upfront_commitment(&self) -> std::option::Option<&str> {
+    pub fn amortized_upfront_commitment(&self) -> std::option::Option<& str> {
         self.amortized_upfront_commitment.as_deref()
     }
     /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
-    pub fn total_amortized_commitment(&self) -> std::option::Option<&str> {
+    pub fn total_amortized_commitment(&self) -> std::option::Option<& str> {
         self.total_amortized_commitment.as_deref()
     }
 }
 /// See [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
 pub mod savings_plans_amortized_commitment {
-
+    
     /// A builder for [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4300,36 +3970,22 @@ pub mod savings_plans_amortized_commitment {
     }
     impl Builder {
         /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
-        pub fn amortized_recurring_commitment(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn amortized_recurring_commitment(mut self, input: impl Into<std::string::String>) -> Self {
             self.amortized_recurring_commitment = Some(input.into());
             self
         }
         /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
-        pub fn set_amortized_recurring_commitment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amortized_recurring_commitment = input;
-            self
+        pub fn set_amortized_recurring_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amortized_recurring_commitment = input; self
         }
         /// <p>The amortized amount of your Savings Plans commitment that was purchased with an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
-        pub fn amortized_upfront_commitment(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn amortized_upfront_commitment(mut self, input: impl Into<std::string::String>) -> Self {
             self.amortized_upfront_commitment = Some(input.into());
             self
         }
         /// <p>The amortized amount of your Savings Plans commitment that was purchased with an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
-        pub fn set_amortized_upfront_commitment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amortized_upfront_commitment = input;
-            self
+        pub fn set_amortized_upfront_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amortized_upfront_commitment = input; self
         }
         /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
         pub fn total_amortized_commitment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4337,22 +3993,23 @@ pub mod savings_plans_amortized_commitment {
             self
         }
         /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
-        pub fn set_total_amortized_commitment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_amortized_commitment = input;
-            self
+        pub fn set_total_amortized_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_amortized_commitment = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
         pub fn build(self) -> crate::model::SavingsPlansAmortizedCommitment {
             crate::model::SavingsPlansAmortizedCommitment {
-                amortized_recurring_commitment: self.amortized_recurring_commitment,
-                amortized_upfront_commitment: self.amortized_upfront_commitment,
-                total_amortized_commitment: self.total_amortized_commitment,
+                amortized_recurring_commitment: self.amortized_recurring_commitment
+                ,
+                amortized_upfront_commitment: self.amortized_upfront_commitment
+                ,
+                total_amortized_commitment: self.total_amortized_commitment
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansAmortizedCommitment {
     /// Creates a new builder-style object to manufacture [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
@@ -4364,7 +4021,7 @@ impl SavingsPlansAmortizedCommitment {
 /// <p>The amount of savings that you're accumulating, against the public On-Demand rate of the usage accrued in an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansSavings {
+pub struct SavingsPlansSavings  {
     /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
     #[doc(hidden)]
     pub net_savings: std::option::Option<std::string::String>,
@@ -4374,17 +4031,17 @@ pub struct SavingsPlansSavings {
 }
 impl SavingsPlansSavings {
     /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-    pub fn net_savings(&self) -> std::option::Option<&str> {
+    pub fn net_savings(&self) -> std::option::Option<& str> {
         self.net_savings.as_deref()
     }
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
-    pub fn on_demand_cost_equivalent(&self) -> std::option::Option<&str> {
+    pub fn on_demand_cost_equivalent(&self) -> std::option::Option<& str> {
         self.on_demand_cost_equivalent.as_deref()
     }
 }
 /// See [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
 pub mod savings_plans_savings {
-
+    
     /// A builder for [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4399,8 +4056,7 @@ pub mod savings_plans_savings {
         }
         /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
         pub fn set_net_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.net_savings = input;
-            self
+            self.net_savings = input; self
         }
         /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
         pub fn on_demand_cost_equivalent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4408,21 +4064,21 @@ pub mod savings_plans_savings {
             self
         }
         /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
-        pub fn set_on_demand_cost_equivalent(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.on_demand_cost_equivalent = input;
-            self
+        pub fn set_on_demand_cost_equivalent(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_demand_cost_equivalent = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
         pub fn build(self) -> crate::model::SavingsPlansSavings {
             crate::model::SavingsPlansSavings {
-                net_savings: self.net_savings,
-                on_demand_cost_equivalent: self.on_demand_cost_equivalent,
+                net_savings: self.net_savings
+                ,
+                on_demand_cost_equivalent: self.on_demand_cost_equivalent
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansSavings {
     /// Creates a new builder-style object to manufacture [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
@@ -4434,7 +4090,7 @@ impl SavingsPlansSavings {
 /// <p>The measurement of how well you're using your existing Savings Plans.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansUtilization {
+pub struct SavingsPlansUtilization  {
     /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
     #[doc(hidden)]
     pub total_commitment: std::option::Option<std::string::String>,
@@ -4450,25 +4106,25 @@ pub struct SavingsPlansUtilization {
 }
 impl SavingsPlansUtilization {
     /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
-    pub fn total_commitment(&self) -> std::option::Option<&str> {
+    pub fn total_commitment(&self) -> std::option::Option<& str> {
         self.total_commitment.as_deref()
     }
     /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
-    pub fn used_commitment(&self) -> std::option::Option<&str> {
+    pub fn used_commitment(&self) -> std::option::Option<& str> {
         self.used_commitment.as_deref()
     }
     /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
-    pub fn unused_commitment(&self) -> std::option::Option<&str> {
+    pub fn unused_commitment(&self) -> std::option::Option<& str> {
         self.unused_commitment.as_deref()
     }
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
-    pub fn utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn utilization_percentage(&self) -> std::option::Option<& str> {
         self.utilization_percentage.as_deref()
     }
 }
 /// See [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
 pub mod savings_plans_utilization {
-
+    
     /// A builder for [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4484,12 +4140,8 @@ pub mod savings_plans_utilization {
             self
         }
         /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
-        pub fn set_total_commitment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_commitment = input;
-            self
+        pub fn set_total_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_commitment = input; self
         }
         /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
         pub fn used_commitment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4497,12 +4149,8 @@ pub mod savings_plans_utilization {
             self
         }
         /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
-        pub fn set_used_commitment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.used_commitment = input;
-            self
+        pub fn set_used_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.used_commitment = input; self
         }
         /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
         pub fn unused_commitment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4510,12 +4158,8 @@ pub mod savings_plans_utilization {
             self
         }
         /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
-        pub fn set_unused_commitment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.unused_commitment = input;
-            self
+        pub fn set_unused_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unused_commitment = input; self
         }
         /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
         pub fn utilization_percentage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4523,23 +4167,25 @@ pub mod savings_plans_utilization {
             self
         }
         /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
-        pub fn set_utilization_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.utilization_percentage = input;
-            self
+        pub fn set_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.utilization_percentage = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
         pub fn build(self) -> crate::model::SavingsPlansUtilization {
             crate::model::SavingsPlansUtilization {
-                total_commitment: self.total_commitment,
-                used_commitment: self.used_commitment,
-                unused_commitment: self.unused_commitment,
-                utilization_percentage: self.utilization_percentage,
+                total_commitment: self.total_commitment
+                ,
+                used_commitment: self.used_commitment
+                ,
+                unused_commitment: self.unused_commitment
+                ,
+                utilization_percentage: self.utilization_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansUtilization {
     /// Creates a new builder-style object to manufacture [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
@@ -4551,14 +4197,13 @@ impl SavingsPlansUtilization {
 /// <p>A single daily or monthly Savings Plans utilization rate and details for your account. A management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansUtilizationDetail {
+pub struct SavingsPlansUtilizationDetail  {
     /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
     #[doc(hidden)]
     pub savings_plan_arn: std::option::Option<std::string::String>,
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     #[doc(hidden)]
     pub utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
@@ -4571,45 +4216,37 @@ pub struct SavingsPlansUtilizationDetail {
 }
 impl SavingsPlansUtilizationDetail {
     /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
-    pub fn savings_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn savings_plan_arn(&self) -> std::option::Option<& str> {
         self.savings_plan_arn.as_deref()
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-    pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
+    pub fn utilization(&self) -> std::option::Option<& crate::model::SavingsPlansUtilization> {
         self.utilization.as_ref()
     }
     /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-    pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
+    pub fn savings(&self) -> std::option::Option<& crate::model::SavingsPlansSavings> {
         self.savings.as_ref()
     }
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
-    pub fn amortized_commitment(
-        &self,
-    ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
+    pub fn amortized_commitment(&self) -> std::option::Option<& crate::model::SavingsPlansAmortizedCommitment> {
         self.amortized_commitment.as_ref()
     }
 }
 /// See [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
 pub mod savings_plans_utilization_detail {
-
+    
     /// A builder for [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_arn: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
         pub(crate) savings: std::option::Option<crate::model::SavingsPlansSavings>,
-        pub(crate) amortized_commitment:
-            std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
+        pub(crate) amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
     }
     impl Builder {
         /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
@@ -4618,37 +4255,23 @@ pub mod savings_plans_utilization_detail {
             self
         }
         /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
-        pub fn set_savings_plan_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.savings_plan_arn = input;
-            self
+        pub fn set_savings_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.savings_plan_arn = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
         pub fn utilization(mut self, input: crate::model::SavingsPlansUtilization) -> Self {
@@ -4656,12 +4279,8 @@ pub mod savings_plans_utilization_detail {
             self
         }
         /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-        pub fn set_utilization(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansUtilization>,
-        ) -> Self {
-            self.utilization = input;
-            self
+        pub fn set_utilization(mut self, input: std::option::Option<crate::model::SavingsPlansUtilization>) -> Self {
+            self.utilization = input; self
         }
         /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn savings(mut self, input: crate::model::SavingsPlansSavings) -> Self {
@@ -4669,40 +4288,36 @@ pub mod savings_plans_utilization_detail {
             self
         }
         /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-        pub fn set_savings(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansSavings>,
-        ) -> Self {
-            self.savings = input;
-            self
+        pub fn set_savings(mut self, input: std::option::Option<crate::model::SavingsPlansSavings>) -> Self {
+            self.savings = input; self
         }
         /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
-        pub fn amortized_commitment(
-            mut self,
-            input: crate::model::SavingsPlansAmortizedCommitment,
-        ) -> Self {
+        pub fn amortized_commitment(mut self, input: crate::model::SavingsPlansAmortizedCommitment) -> Self {
             self.amortized_commitment = Some(input);
             self
         }
         /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
-        pub fn set_amortized_commitment(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
-        ) -> Self {
-            self.amortized_commitment = input;
-            self
+        pub fn set_amortized_commitment(mut self, input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>) -> Self {
+            self.amortized_commitment = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
         pub fn build(self) -> crate::model::SavingsPlansUtilizationDetail {
             crate::model::SavingsPlansUtilizationDetail {
-                savings_plan_arn: self.savings_plan_arn,
-                attributes: self.attributes,
-                utilization: self.utilization,
-                savings: self.savings,
-                amortized_commitment: self.amortized_commitment,
+                savings_plan_arn: self.savings_plan_arn
+                ,
+                attributes: self.attributes
+                ,
+                utilization: self.utilization
+                ,
+                savings: self.savings
+                ,
+                amortized_commitment: self.amortized_commitment
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansUtilizationDetail {
     /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
@@ -4717,9 +4332,9 @@ impl SavingsPlansUtilizationDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplansdatatype = unimplemented!();
 /// match savingsplansdatatype {
@@ -4743,22 +4358,14 @@ impl SavingsPlansUtilizationDetail {
 /// Specifically, when `savingsplansdatatype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlansDataType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlansDataType {
     #[allow(missing_docs)] // documentation missing in model
     AmortizedCommitment,
@@ -4769,7 +4376,7 @@ pub enum SavingsPlansDataType {
     #[allow(missing_docs)] // documentation missing in model
     Utilization,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlansDataType {
     fn from(s: &str) -> Self {
@@ -4778,19 +4385,17 @@ impl std::convert::From<&str> for SavingsPlansDataType {
             "ATTRIBUTES" => SavingsPlansDataType::Attributes,
             "SAVINGS" => SavingsPlansDataType::Savings,
             "UTILIZATION" => SavingsPlansDataType::Utilization,
-            other => {
-                SavingsPlansDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SavingsPlansDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlansDataType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlansDataType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlansDataType::from(s))
+                }
+            }
 impl SavingsPlansDataType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4799,16 +4404,13 @@ impl SavingsPlansDataType {
             SavingsPlansDataType::Attributes => "ATTRIBUTES",
             SavingsPlansDataType::Savings => "SAVINGS",
             SavingsPlansDataType::Utilization => "UTILIZATION",
-            SavingsPlansDataType::Unknown(value) => value.as_str(),
+            SavingsPlansDataType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AMORTIZED_COMMITMENT",
-            "ATTRIBUTES",
-            "SAVINGS",
-            "UTILIZATION",
+            "AMORTIZED_COMMITMENT", "ATTRIBUTES", "SAVINGS", "UTILIZATION"
         ]
     }
 }
@@ -4821,7 +4423,7 @@ impl AsRef<str> for SavingsPlansDataType {
 /// <p>The amount of Savings Plans utilization (in hours).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansUtilizationByTime {
+pub struct SavingsPlansUtilizationByTime  {
     /// <p>The time period of the request. </p>
     #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
@@ -4837,35 +4439,32 @@ pub struct SavingsPlansUtilizationByTime {
 }
 impl SavingsPlansUtilizationByTime {
     /// <p>The time period of the request. </p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-    pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
+    pub fn utilization(&self) -> std::option::Option<& crate::model::SavingsPlansUtilization> {
         self.utilization.as_ref()
     }
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-    pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
+    pub fn savings(&self) -> std::option::Option<& crate::model::SavingsPlansSavings> {
         self.savings.as_ref()
     }
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
-    pub fn amortized_commitment(
-        &self,
-    ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
+    pub fn amortized_commitment(&self) -> std::option::Option<& crate::model::SavingsPlansAmortizedCommitment> {
         self.amortized_commitment.as_ref()
     }
 }
 /// See [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
 pub mod savings_plans_utilization_by_time {
-
+    
     /// A builder for [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
         pub(crate) savings: std::option::Option<crate::model::SavingsPlansSavings>,
-        pub(crate) amortized_commitment:
-            std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
+        pub(crate) amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
     }
     impl Builder {
         /// <p>The time period of the request. </p>
@@ -4874,12 +4473,8 @@ pub mod savings_plans_utilization_by_time {
             self
         }
         /// <p>The time period of the request. </p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::DateInterval>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::DateInterval>) -> Self {
+            self.time_period = input; self
         }
         /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
         pub fn utilization(mut self, input: crate::model::SavingsPlansUtilization) -> Self {
@@ -4887,12 +4482,8 @@ pub mod savings_plans_utilization_by_time {
             self
         }
         /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-        pub fn set_utilization(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansUtilization>,
-        ) -> Self {
-            self.utilization = input;
-            self
+        pub fn set_utilization(mut self, input: std::option::Option<crate::model::SavingsPlansUtilization>) -> Self {
+            self.utilization = input; self
         }
         /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn savings(mut self, input: crate::model::SavingsPlansSavings) -> Self {
@@ -4900,39 +4491,34 @@ pub mod savings_plans_utilization_by_time {
             self
         }
         /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-        pub fn set_savings(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansSavings>,
-        ) -> Self {
-            self.savings = input;
-            self
+        pub fn set_savings(mut self, input: std::option::Option<crate::model::SavingsPlansSavings>) -> Self {
+            self.savings = input; self
         }
         /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
-        pub fn amortized_commitment(
-            mut self,
-            input: crate::model::SavingsPlansAmortizedCommitment,
-        ) -> Self {
+        pub fn amortized_commitment(mut self, input: crate::model::SavingsPlansAmortizedCommitment) -> Self {
             self.amortized_commitment = Some(input);
             self
         }
         /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
-        pub fn set_amortized_commitment(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
-        ) -> Self {
-            self.amortized_commitment = input;
-            self
+        pub fn set_amortized_commitment(mut self, input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>) -> Self {
+            self.amortized_commitment = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
         pub fn build(self) -> crate::model::SavingsPlansUtilizationByTime {
             crate::model::SavingsPlansUtilizationByTime {
-                time_period: self.time_period,
-                utilization: self.utilization,
-                savings: self.savings,
-                amortized_commitment: self.amortized_commitment,
+                time_period: self.time_period
+                ,
+                utilization: self.utilization
+                ,
+                savings: self.savings
+                ,
+                amortized_commitment: self.amortized_commitment
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansUtilizationByTime {
     /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
@@ -4944,7 +4530,7 @@ impl SavingsPlansUtilizationByTime {
 /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansPurchaseRecommendation {
+pub struct SavingsPlansPurchaseRecommendation  {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     #[doc(hidden)]
     pub account_scope: std::option::Option<crate::model::AccountScope>,
@@ -4962,55 +4548,44 @@ pub struct SavingsPlansPurchaseRecommendation {
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
     #[doc(hidden)]
-    pub savings_plans_purchase_recommendation_details:
-        std::option::Option<std::vec::Vec<crate::model::SavingsPlansPurchaseRecommendationDetail>>,
+    pub savings_plans_purchase_recommendation_details: std::option::Option<std::vec::Vec<crate::model::SavingsPlansPurchaseRecommendationDetail>>,
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
     #[doc(hidden)]
-    pub savings_plans_purchase_recommendation_summary:
-        std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
+    pub savings_plans_purchase_recommendation_summary: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
 }
 impl SavingsPlansPurchaseRecommendation {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-    pub fn account_scope(&self) -> std::option::Option<&crate::model::AccountScope> {
+    pub fn account_scope(&self) -> std::option::Option<& crate::model::AccountScope> {
         self.account_scope.as_ref()
     }
     /// <p>The requested Savings Plans recommendation type.</p>
-    pub fn savings_plans_type(
-        &self,
-    ) -> std::option::Option<&crate::model::SupportedSavingsPlansType> {
+    pub fn savings_plans_type(&self) -> std::option::Option<& crate::model::SupportedSavingsPlansType> {
         self.savings_plans_type.as_ref()
     }
     /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
-    pub fn term_in_years(&self) -> std::option::Option<&crate::model::TermInYears> {
+    pub fn term_in_years(&self) -> std::option::Option<& crate::model::TermInYears> {
         self.term_in_years.as_ref()
     }
     /// <p>The payment option that's used to generate the recommendation.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::model::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The lookback period in days that's used to generate the recommendation.</p>
-    pub fn lookback_period_in_days(
-        &self,
-    ) -> std::option::Option<&crate::model::LookbackPeriodInDays> {
+    pub fn lookback_period_in_days(&self) -> std::option::Option<& crate::model::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
-    pub fn savings_plans_purchase_recommendation_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::SavingsPlansPurchaseRecommendationDetail]> {
-        self.savings_plans_purchase_recommendation_details
-            .as_deref()
+    pub fn savings_plans_purchase_recommendation_details(&self) -> std::option::Option<& [crate::model::SavingsPlansPurchaseRecommendationDetail]> {
+        self.savings_plans_purchase_recommendation_details.as_deref()
     }
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
-    pub fn savings_plans_purchase_recommendation_summary(
-        &self,
-    ) -> std::option::Option<&crate::model::SavingsPlansPurchaseRecommendationSummary> {
+    pub fn savings_plans_purchase_recommendation_summary(&self) -> std::option::Option<& crate::model::SavingsPlansPurchaseRecommendationSummary> {
         self.savings_plans_purchase_recommendation_summary.as_ref()
     }
 }
 /// See [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
 pub mod savings_plans_purchase_recommendation {
-
+    
     /// A builder for [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5019,11 +4594,8 @@ pub mod savings_plans_purchase_recommendation {
         pub(crate) term_in_years: std::option::Option<crate::model::TermInYears>,
         pub(crate) payment_option: std::option::Option<crate::model::PaymentOption>,
         pub(crate) lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
-        pub(crate) savings_plans_purchase_recommendation_details: std::option::Option<
-            std::vec::Vec<crate::model::SavingsPlansPurchaseRecommendationDetail>,
-        >,
-        pub(crate) savings_plans_purchase_recommendation_summary:
-            std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
+        pub(crate) savings_plans_purchase_recommendation_details: std::option::Option<std::vec::Vec<crate::model::SavingsPlansPurchaseRecommendationDetail>>,
+        pub(crate) savings_plans_purchase_recommendation_summary: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
     }
     impl Builder {
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
@@ -5032,28 +4604,17 @@ pub mod savings_plans_purchase_recommendation {
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-        pub fn set_account_scope(
-            mut self,
-            input: std::option::Option<crate::model::AccountScope>,
-        ) -> Self {
-            self.account_scope = input;
-            self
+        pub fn set_account_scope(mut self, input: std::option::Option<crate::model::AccountScope>) -> Self {
+            self.account_scope = input; self
         }
         /// <p>The requested Savings Plans recommendation type.</p>
-        pub fn savings_plans_type(
-            mut self,
-            input: crate::model::SupportedSavingsPlansType,
-        ) -> Self {
+        pub fn savings_plans_type(mut self, input: crate::model::SupportedSavingsPlansType) -> Self {
             self.savings_plans_type = Some(input);
             self
         }
         /// <p>The requested Savings Plans recommendation type.</p>
-        pub fn set_savings_plans_type(
-            mut self,
-            input: std::option::Option<crate::model::SupportedSavingsPlansType>,
-        ) -> Self {
-            self.savings_plans_type = input;
-            self
+        pub fn set_savings_plans_type(mut self, input: std::option::Option<crate::model::SupportedSavingsPlansType>) -> Self {
+            self.savings_plans_type = input; self
         }
         /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
         pub fn term_in_years(mut self, input: crate::model::TermInYears) -> Self {
@@ -5061,12 +4622,8 @@ pub mod savings_plans_purchase_recommendation {
             self
         }
         /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
-        pub fn set_term_in_years(
-            mut self,
-            input: std::option::Option<crate::model::TermInYears>,
-        ) -> Self {
-            self.term_in_years = input;
-            self
+        pub fn set_term_in_years(mut self, input: std::option::Option<crate::model::TermInYears>) -> Self {
+            self.term_in_years = input; self
         }
         /// <p>The payment option that's used to generate the recommendation.</p>
         pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
@@ -5074,86 +4631,64 @@ pub mod savings_plans_purchase_recommendation {
             self
         }
         /// <p>The payment option that's used to generate the recommendation.</p>
-        pub fn set_payment_option(
-            mut self,
-            input: std::option::Option<crate::model::PaymentOption>,
-        ) -> Self {
-            self.payment_option = input;
-            self
+        pub fn set_payment_option(mut self, input: std::option::Option<crate::model::PaymentOption>) -> Self {
+            self.payment_option = input; self
         }
         /// <p>The lookback period in days that's used to generate the recommendation.</p>
-        pub fn lookback_period_in_days(
-            mut self,
-            input: crate::model::LookbackPeriodInDays,
-        ) -> Self {
+        pub fn lookback_period_in_days(mut self, input: crate::model::LookbackPeriodInDays) -> Self {
             self.lookback_period_in_days = Some(input);
             self
         }
         /// <p>The lookback period in days that's used to generate the recommendation.</p>
-        pub fn set_lookback_period_in_days(
-            mut self,
-            input: std::option::Option<crate::model::LookbackPeriodInDays>,
-        ) -> Self {
-            self.lookback_period_in_days = input;
-            self
+        pub fn set_lookback_period_in_days(mut self, input: std::option::Option<crate::model::LookbackPeriodInDays>) -> Self {
+            self.lookback_period_in_days = input; self
         }
         /// Appends an item to `savings_plans_purchase_recommendation_details`.
         ///
         /// To override the contents of this collection use [`set_savings_plans_purchase_recommendation_details`](Self::set_savings_plans_purchase_recommendation_details).
         ///
         /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
-        pub fn savings_plans_purchase_recommendation_details(
-            mut self,
-            input: crate::model::SavingsPlansPurchaseRecommendationDetail,
-        ) -> Self {
-            let mut v = self
-                .savings_plans_purchase_recommendation_details
-                .unwrap_or_default();
-            v.push(input);
-            self.savings_plans_purchase_recommendation_details = Some(v);
-            self
+        pub fn savings_plans_purchase_recommendation_details(mut self, input: crate::model::SavingsPlansPurchaseRecommendationDetail) -> Self {
+            let mut v = self.savings_plans_purchase_recommendation_details.unwrap_or_default();
+                            v.push(input);
+                            self.savings_plans_purchase_recommendation_details = Some(v);
+                            self
         }
         /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
-        pub fn set_savings_plans_purchase_recommendation_details(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::SavingsPlansPurchaseRecommendationDetail>,
-            >,
-        ) -> Self {
-            self.savings_plans_purchase_recommendation_details = input;
-            self
+        pub fn set_savings_plans_purchase_recommendation_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansPurchaseRecommendationDetail>>) -> Self {
+            self.savings_plans_purchase_recommendation_details = input; self
         }
         /// <p>Summary metrics for your Savings Plans Recommendations. </p>
-        pub fn savings_plans_purchase_recommendation_summary(
-            mut self,
-            input: crate::model::SavingsPlansPurchaseRecommendationSummary,
-        ) -> Self {
+        pub fn savings_plans_purchase_recommendation_summary(mut self, input: crate::model::SavingsPlansPurchaseRecommendationSummary) -> Self {
             self.savings_plans_purchase_recommendation_summary = Some(input);
             self
         }
         /// <p>Summary metrics for your Savings Plans Recommendations. </p>
-        pub fn set_savings_plans_purchase_recommendation_summary(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
-        ) -> Self {
-            self.savings_plans_purchase_recommendation_summary = input;
-            self
+        pub fn set_savings_plans_purchase_recommendation_summary(mut self, input: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>) -> Self {
+            self.savings_plans_purchase_recommendation_summary = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
         pub fn build(self) -> crate::model::SavingsPlansPurchaseRecommendation {
             crate::model::SavingsPlansPurchaseRecommendation {
-                account_scope: self.account_scope,
-                savings_plans_type: self.savings_plans_type,
-                term_in_years: self.term_in_years,
-                payment_option: self.payment_option,
-                lookback_period_in_days: self.lookback_period_in_days,
-                savings_plans_purchase_recommendation_details: self
-                    .savings_plans_purchase_recommendation_details,
-                savings_plans_purchase_recommendation_summary: self
-                    .savings_plans_purchase_recommendation_summary,
+                account_scope: self.account_scope
+                ,
+                savings_plans_type: self.savings_plans_type
+                ,
+                term_in_years: self.term_in_years
+                ,
+                payment_option: self.payment_option
+                ,
+                lookback_period_in_days: self.lookback_period_in_days
+                ,
+                savings_plans_purchase_recommendation_details: self.savings_plans_purchase_recommendation_details
+                ,
+                savings_plans_purchase_recommendation_summary: self.savings_plans_purchase_recommendation_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansPurchaseRecommendation {
     /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
@@ -5165,7 +4700,7 @@ impl SavingsPlansPurchaseRecommendation {
 /// <p>Summary metrics for your Savings Plans Purchase Recommendations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansPurchaseRecommendationSummary {
+pub struct SavingsPlansPurchaseRecommendationSummary  {
     /// <p>The estimated return on investment that's based on the recommended Savings Plans and estimated savings.</p>
     #[doc(hidden)]
     pub estimated_roi: std::option::Option<std::string::String>,
@@ -5202,54 +4737,53 @@ pub struct SavingsPlansPurchaseRecommendationSummary {
 }
 impl SavingsPlansPurchaseRecommendationSummary {
     /// <p>The estimated return on investment that's based on the recommended Savings Plans and estimated savings.</p>
-    pub fn estimated_roi(&self) -> std::option::Option<&str> {
+    pub fn estimated_roi(&self) -> std::option::Option<& str> {
         self.estimated_roi.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans. This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand usage.</p>
-    pub fn estimated_total_cost(&self) -> std::option::Option<&str> {
+    pub fn estimated_total_cost(&self) -> std::option::Option<& str> {
         self.estimated_total_cost.as_deref()
     }
     /// <p>The current total on demand spend of the applicable usage types over the lookback period.</p>
-    pub fn current_on_demand_spend(&self) -> std::option::Option<&str> {
+    pub fn current_on_demand_spend(&self) -> std::option::Option<& str> {
         self.current_on_demand_spend.as_deref()
     }
     /// <p>The estimated total savings over the lookback period, based on the purchase of the recommended Savings Plans.</p>
-    pub fn estimated_savings_amount(&self) -> std::option::Option<&str> {
+    pub fn estimated_savings_amount(&self) -> std::option::Option<& str> {
         self.estimated_savings_amount.as_deref()
     }
     /// <p>The aggregate number of Savings Plans recommendations that exist for your account.</p>
-    pub fn total_recommendation_count(&self) -> std::option::Option<&str> {
+    pub fn total_recommendation_count(&self) -> std::option::Option<& str> {
         self.total_recommendation_count.as_deref()
     }
     /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
-    pub fn daily_commitment_to_purchase(&self) -> std::option::Option<&str> {
+    pub fn daily_commitment_to_purchase(&self) -> std::option::Option<& str> {
         self.daily_commitment_to_purchase.as_deref()
     }
     /// <p>The recommended hourly commitment that's based on the recommendation parameters.</p>
-    pub fn hourly_commitment_to_purchase(&self) -> std::option::Option<&str> {
+    pub fn hourly_commitment_to_purchase(&self) -> std::option::Option<& str> {
         self.hourly_commitment_to_purchase.as_deref()
     }
     /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.</p>
-    pub fn estimated_savings_percentage(&self) -> std::option::Option<&str> {
+    pub fn estimated_savings_percentage(&self) -> std::option::Option<& str> {
         self.estimated_savings_percentage.as_deref()
     }
     /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans purchase.</p>
-    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<& str> {
         self.estimated_monthly_savings_amount.as_deref()
     }
     /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
-    pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<&str> {
-        self.estimated_on_demand_cost_with_current_commitment
-            .as_deref()
+    pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<& str> {
+        self.estimated_on_demand_cost_with_current_commitment.as_deref()
     }
 }
 /// See [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
 pub mod savings_plans_purchase_recommendation_summary {
-
+    
     /// A builder for [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5263,8 +4797,7 @@ pub mod savings_plans_purchase_recommendation_summary {
         pub(crate) hourly_commitment_to_purchase: std::option::Option<std::string::String>,
         pub(crate) estimated_savings_percentage: std::option::Option<std::string::String>,
         pub(crate) estimated_monthly_savings_amount: std::option::Option<std::string::String>,
-        pub(crate) estimated_on_demand_cost_with_current_commitment:
-            std::option::Option<std::string::String>,
+        pub(crate) estimated_on_demand_cost_with_current_commitment: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The estimated return on investment that's based on the recommended Savings Plans and estimated savings.</p>
@@ -5273,12 +4806,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self
         }
         /// <p>The estimated return on investment that's based on the recommended Savings Plans and estimated savings.</p>
-        pub fn set_estimated_roi(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_roi = input;
-            self
+        pub fn set_estimated_roi(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_roi = input; self
         }
         /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5286,12 +4815,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self
         }
         /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans. This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand usage.</p>
         pub fn estimated_total_cost(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5299,12 +4824,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self
         }
         /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans. This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand usage.</p>
-        pub fn set_estimated_total_cost(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_total_cost = input;
-            self
+        pub fn set_estimated_total_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_total_cost = input; self
         }
         /// <p>The current total on demand spend of the applicable usage types over the lookback period.</p>
         pub fn current_on_demand_spend(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5312,12 +4833,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self
         }
         /// <p>The current total on demand spend of the applicable usage types over the lookback period.</p>
-        pub fn set_current_on_demand_spend(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_on_demand_spend = input;
-            self
+        pub fn set_current_on_demand_spend(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_on_demand_spend = input; self
         }
         /// <p>The estimated total savings over the lookback period, based on the purchase of the recommended Savings Plans.</p>
         pub fn estimated_savings_amount(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5325,12 +4842,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self
         }
         /// <p>The estimated total savings over the lookback period, based on the purchase of the recommended Savings Plans.</p>
-        pub fn set_estimated_savings_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_savings_amount = input;
-            self
+        pub fn set_estimated_savings_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_savings_amount = input; self
         }
         /// <p>The aggregate number of Savings Plans recommendations that exist for your account.</p>
         pub fn total_recommendation_count(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5338,111 +4851,84 @@ pub mod savings_plans_purchase_recommendation_summary {
             self
         }
         /// <p>The aggregate number of Savings Plans recommendations that exist for your account.</p>
-        pub fn set_total_recommendation_count(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_recommendation_count = input;
-            self
+        pub fn set_total_recommendation_count(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_recommendation_count = input; self
         }
         /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
-        pub fn daily_commitment_to_purchase(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn daily_commitment_to_purchase(mut self, input: impl Into<std::string::String>) -> Self {
             self.daily_commitment_to_purchase = Some(input.into());
             self
         }
         /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
-        pub fn set_daily_commitment_to_purchase(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.daily_commitment_to_purchase = input;
-            self
+        pub fn set_daily_commitment_to_purchase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.daily_commitment_to_purchase = input; self
         }
         /// <p>The recommended hourly commitment that's based on the recommendation parameters.</p>
-        pub fn hourly_commitment_to_purchase(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn hourly_commitment_to_purchase(mut self, input: impl Into<std::string::String>) -> Self {
             self.hourly_commitment_to_purchase = Some(input.into());
             self
         }
         /// <p>The recommended hourly commitment that's based on the recommendation parameters.</p>
-        pub fn set_hourly_commitment_to_purchase(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hourly_commitment_to_purchase = input;
-            self
+        pub fn set_hourly_commitment_to_purchase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hourly_commitment_to_purchase = input; self
         }
         /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.</p>
-        pub fn estimated_savings_percentage(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_savings_percentage(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_savings_percentage = Some(input.into());
             self
         }
         /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.</p>
-        pub fn set_estimated_savings_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_savings_percentage = input;
-            self
+        pub fn set_estimated_savings_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_savings_percentage = input; self
         }
         /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans purchase.</p>
-        pub fn estimated_monthly_savings_amount(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_monthly_savings_amount(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_monthly_savings_amount = Some(input.into());
             self
         }
         /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans purchase.</p>
-        pub fn set_estimated_monthly_savings_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_monthly_savings_amount = input;
-            self
+        pub fn set_estimated_monthly_savings_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_monthly_savings_amount = input; self
         }
         /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
-        pub fn estimated_on_demand_cost_with_current_commitment(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_on_demand_cost_with_current_commitment(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_on_demand_cost_with_current_commitment = Some(input.into());
             self
         }
         /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
-        pub fn set_estimated_on_demand_cost_with_current_commitment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_on_demand_cost_with_current_commitment = input;
-            self
+        pub fn set_estimated_on_demand_cost_with_current_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_on_demand_cost_with_current_commitment = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
         pub fn build(self) -> crate::model::SavingsPlansPurchaseRecommendationSummary {
             crate::model::SavingsPlansPurchaseRecommendationSummary {
-                estimated_roi: self.estimated_roi,
-                currency_code: self.currency_code,
-                estimated_total_cost: self.estimated_total_cost,
-                current_on_demand_spend: self.current_on_demand_spend,
-                estimated_savings_amount: self.estimated_savings_amount,
-                total_recommendation_count: self.total_recommendation_count,
-                daily_commitment_to_purchase: self.daily_commitment_to_purchase,
-                hourly_commitment_to_purchase: self.hourly_commitment_to_purchase,
-                estimated_savings_percentage: self.estimated_savings_percentage,
-                estimated_monthly_savings_amount: self.estimated_monthly_savings_amount,
-                estimated_on_demand_cost_with_current_commitment: self
-                    .estimated_on_demand_cost_with_current_commitment,
+                estimated_roi: self.estimated_roi
+                ,
+                currency_code: self.currency_code
+                ,
+                estimated_total_cost: self.estimated_total_cost
+                ,
+                current_on_demand_spend: self.current_on_demand_spend
+                ,
+                estimated_savings_amount: self.estimated_savings_amount
+                ,
+                total_recommendation_count: self.total_recommendation_count
+                ,
+                daily_commitment_to_purchase: self.daily_commitment_to_purchase
+                ,
+                hourly_commitment_to_purchase: self.hourly_commitment_to_purchase
+                ,
+                estimated_savings_percentage: self.estimated_savings_percentage
+                ,
+                estimated_monthly_savings_amount: self.estimated_monthly_savings_amount
+                ,
+                estimated_on_demand_cost_with_current_commitment: self.estimated_on_demand_cost_with_current_commitment
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansPurchaseRecommendationSummary {
     /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
@@ -5454,7 +4940,7 @@ impl SavingsPlansPurchaseRecommendationSummary {
 /// <p>Details for your recommended Savings Plans.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansPurchaseRecommendationDetail {
+pub struct SavingsPlansPurchaseRecommendationDetail  {
     /// <p>Details for your recommended Savings Plans.</p>
     #[doc(hidden)]
     pub savings_plans_details: std::option::Option<crate::model::SavingsPlansDetails>,
@@ -5506,74 +4992,73 @@ pub struct SavingsPlansPurchaseRecommendationDetail {
 }
 impl SavingsPlansPurchaseRecommendationDetail {
     /// <p>Details for your recommended Savings Plans.</p>
-    pub fn savings_plans_details(&self) -> std::option::Option<&crate::model::SavingsPlansDetails> {
+    pub fn savings_plans_details(&self) -> std::option::Option<& crate::model::SavingsPlansDetails> {
         self.savings_plans_details.as_ref()
     }
     /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The upfront cost of the recommended Savings Plans, based on the selected payment option.</p>
-    pub fn upfront_cost(&self) -> std::option::Option<&str> {
+    pub fn upfront_cost(&self) -> std::option::Option<& str> {
         self.upfront_cost.as_deref()
     }
     /// <p>The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
-    pub fn estimated_roi(&self) -> std::option::Option<&str> {
+    pub fn estimated_roi(&self) -> std::option::Option<& str> {
         self.estimated_roi.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The cost of the recommended Savings Plans over the length of the lookback period.</p>
-    pub fn estimated_sp_cost(&self) -> std::option::Option<&str> {
+    pub fn estimated_sp_cost(&self) -> std::option::Option<& str> {
         self.estimated_sp_cost.as_deref()
     }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
-    pub fn estimated_on_demand_cost(&self) -> std::option::Option<&str> {
+    pub fn estimated_on_demand_cost(&self) -> std::option::Option<& str> {
         self.estimated_on_demand_cost.as_deref()
     }
     /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
-    pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<&str> {
-        self.estimated_on_demand_cost_with_current_commitment
-            .as_deref()
+    pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<& str> {
+        self.estimated_on_demand_cost_with_current_commitment.as_deref()
     }
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
-    pub fn estimated_savings_amount(&self) -> std::option::Option<&str> {
+    pub fn estimated_savings_amount(&self) -> std::option::Option<& str> {
         self.estimated_savings_amount.as_deref()
     }
     /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
-    pub fn estimated_savings_percentage(&self) -> std::option::Option<&str> {
+    pub fn estimated_savings_percentage(&self) -> std::option::Option<& str> {
         self.estimated_savings_percentage.as_deref()
     }
     /// <p>The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the usage during the lookback period.</p>
-    pub fn hourly_commitment_to_purchase(&self) -> std::option::Option<&str> {
+    pub fn hourly_commitment_to_purchase(&self) -> std::option::Option<& str> {
         self.hourly_commitment_to_purchase.as_deref()
     }
     /// <p>The estimated utilization of the recommended Savings Plans.</p>
-    pub fn estimated_average_utilization(&self) -> std::option::Option<&str> {
+    pub fn estimated_average_utilization(&self) -> std::option::Option<& str> {
         self.estimated_average_utilization.as_deref()
     }
     /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
-    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<& str> {
         self.estimated_monthly_savings_amount.as_deref()
     }
     /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn current_minimum_hourly_on_demand_spend(&self) -> std::option::Option<&str> {
+    pub fn current_minimum_hourly_on_demand_spend(&self) -> std::option::Option<& str> {
         self.current_minimum_hourly_on_demand_spend.as_deref()
     }
     /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn current_maximum_hourly_on_demand_spend(&self) -> std::option::Option<&str> {
+    pub fn current_maximum_hourly_on_demand_spend(&self) -> std::option::Option<& str> {
         self.current_maximum_hourly_on_demand_spend.as_deref()
     }
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    pub fn current_average_hourly_on_demand_spend(&self) -> std::option::Option<&str> {
+    pub fn current_average_hourly_on_demand_spend(&self) -> std::option::Option<& str> {
         self.current_average_hourly_on_demand_spend.as_deref()
     }
 }
 /// See [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
 pub mod savings_plans_purchase_recommendation_detail {
-
+    
     /// A builder for [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5584,8 +5069,7 @@ pub mod savings_plans_purchase_recommendation_detail {
         pub(crate) currency_code: std::option::Option<std::string::String>,
         pub(crate) estimated_sp_cost: std::option::Option<std::string::String>,
         pub(crate) estimated_on_demand_cost: std::option::Option<std::string::String>,
-        pub(crate) estimated_on_demand_cost_with_current_commitment:
-            std::option::Option<std::string::String>,
+        pub(crate) estimated_on_demand_cost_with_current_commitment: std::option::Option<std::string::String>,
         pub(crate) estimated_savings_amount: std::option::Option<std::string::String>,
         pub(crate) estimated_savings_percentage: std::option::Option<std::string::String>,
         pub(crate) hourly_commitment_to_purchase: std::option::Option<std::string::String>,
@@ -5602,12 +5086,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self
         }
         /// <p>Details for your recommended Savings Plans.</p>
-        pub fn set_savings_plans_details(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansDetails>,
-        ) -> Self {
-            self.savings_plans_details = input;
-            self
+        pub fn set_savings_plans_details(mut self, input: std::option::Option<crate::model::SavingsPlansDetails>) -> Self {
+            self.savings_plans_details = input; self
         }
         /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5616,8 +5096,7 @@ pub mod savings_plans_purchase_recommendation_detail {
         }
         /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The upfront cost of the recommended Savings Plans, based on the selected payment option.</p>
         pub fn upfront_cost(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5626,8 +5105,7 @@ pub mod savings_plans_purchase_recommendation_detail {
         }
         /// <p>The upfront cost of the recommended Savings Plans, based on the selected payment option.</p>
         pub fn set_upfront_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upfront_cost = input;
-            self
+            self.upfront_cost = input; self
         }
         /// <p>The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
         pub fn estimated_roi(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5635,12 +5113,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self
         }
         /// <p>The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
-        pub fn set_estimated_roi(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_roi = input;
-            self
+        pub fn set_estimated_roi(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_roi = input; self
         }
         /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5648,12 +5122,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self
         }
         /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// <p>The cost of the recommended Savings Plans over the length of the lookback period.</p>
         pub fn estimated_sp_cost(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5661,12 +5131,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self
         }
         /// <p>The cost of the recommended Savings Plans over the length of the lookback period.</p>
-        pub fn set_estimated_sp_cost(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_sp_cost = input;
-            self
+        pub fn set_estimated_sp_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_sp_cost = input; self
         }
         /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
         pub fn estimated_on_demand_cost(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5674,28 +5140,17 @@ pub mod savings_plans_purchase_recommendation_detail {
             self
         }
         /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
-        pub fn set_estimated_on_demand_cost(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_on_demand_cost = input;
-            self
+        pub fn set_estimated_on_demand_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_on_demand_cost = input; self
         }
         /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
-        pub fn estimated_on_demand_cost_with_current_commitment(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_on_demand_cost_with_current_commitment(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_on_demand_cost_with_current_commitment = Some(input.into());
             self
         }
         /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
-        pub fn set_estimated_on_demand_cost_with_current_commitment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_on_demand_cost_with_current_commitment = input;
-            self
+        pub fn set_estimated_on_demand_cost_with_current_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_on_demand_cost_with_current_commitment = input; self
         }
         /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
         pub fn estimated_savings_amount(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5703,148 +5158,112 @@ pub mod savings_plans_purchase_recommendation_detail {
             self
         }
         /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
-        pub fn set_estimated_savings_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_savings_amount = input;
-            self
+        pub fn set_estimated_savings_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_savings_amount = input; self
         }
         /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
-        pub fn estimated_savings_percentage(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_savings_percentage(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_savings_percentage = Some(input.into());
             self
         }
         /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
-        pub fn set_estimated_savings_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_savings_percentage = input;
-            self
+        pub fn set_estimated_savings_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_savings_percentage = input; self
         }
         /// <p>The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the usage during the lookback period.</p>
-        pub fn hourly_commitment_to_purchase(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn hourly_commitment_to_purchase(mut self, input: impl Into<std::string::String>) -> Self {
             self.hourly_commitment_to_purchase = Some(input.into());
             self
         }
         /// <p>The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the usage during the lookback period.</p>
-        pub fn set_hourly_commitment_to_purchase(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hourly_commitment_to_purchase = input;
-            self
+        pub fn set_hourly_commitment_to_purchase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hourly_commitment_to_purchase = input; self
         }
         /// <p>The estimated utilization of the recommended Savings Plans.</p>
-        pub fn estimated_average_utilization(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_average_utilization(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_average_utilization = Some(input.into());
             self
         }
         /// <p>The estimated utilization of the recommended Savings Plans.</p>
-        pub fn set_estimated_average_utilization(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_average_utilization = input;
-            self
+        pub fn set_estimated_average_utilization(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_average_utilization = input; self
         }
         /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
-        pub fn estimated_monthly_savings_amount(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_monthly_savings_amount(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_monthly_savings_amount = Some(input.into());
             self
         }
         /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
-        pub fn set_estimated_monthly_savings_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_monthly_savings_amount = input;
-            self
+        pub fn set_estimated_monthly_savings_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_monthly_savings_amount = input; self
         }
         /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-        pub fn current_minimum_hourly_on_demand_spend(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn current_minimum_hourly_on_demand_spend(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_minimum_hourly_on_demand_spend = Some(input.into());
             self
         }
         /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-        pub fn set_current_minimum_hourly_on_demand_spend(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_minimum_hourly_on_demand_spend = input;
-            self
+        pub fn set_current_minimum_hourly_on_demand_spend(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_minimum_hourly_on_demand_spend = input; self
         }
         /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-        pub fn current_maximum_hourly_on_demand_spend(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn current_maximum_hourly_on_demand_spend(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_maximum_hourly_on_demand_spend = Some(input.into());
             self
         }
         /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-        pub fn set_current_maximum_hourly_on_demand_spend(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_maximum_hourly_on_demand_spend = input;
-            self
+        pub fn set_current_maximum_hourly_on_demand_spend(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_maximum_hourly_on_demand_spend = input; self
         }
         /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-        pub fn current_average_hourly_on_demand_spend(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn current_average_hourly_on_demand_spend(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_average_hourly_on_demand_spend = Some(input.into());
             self
         }
         /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-        pub fn set_current_average_hourly_on_demand_spend(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_average_hourly_on_demand_spend = input;
-            self
+        pub fn set_current_average_hourly_on_demand_spend(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_average_hourly_on_demand_spend = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
         pub fn build(self) -> crate::model::SavingsPlansPurchaseRecommendationDetail {
             crate::model::SavingsPlansPurchaseRecommendationDetail {
-                savings_plans_details: self.savings_plans_details,
-                account_id: self.account_id,
-                upfront_cost: self.upfront_cost,
-                estimated_roi: self.estimated_roi,
-                currency_code: self.currency_code,
-                estimated_sp_cost: self.estimated_sp_cost,
-                estimated_on_demand_cost: self.estimated_on_demand_cost,
-                estimated_on_demand_cost_with_current_commitment: self
-                    .estimated_on_demand_cost_with_current_commitment,
-                estimated_savings_amount: self.estimated_savings_amount,
-                estimated_savings_percentage: self.estimated_savings_percentage,
-                hourly_commitment_to_purchase: self.hourly_commitment_to_purchase,
-                estimated_average_utilization: self.estimated_average_utilization,
-                estimated_monthly_savings_amount: self.estimated_monthly_savings_amount,
-                current_minimum_hourly_on_demand_spend: self.current_minimum_hourly_on_demand_spend,
-                current_maximum_hourly_on_demand_spend: self.current_maximum_hourly_on_demand_spend,
-                current_average_hourly_on_demand_spend: self.current_average_hourly_on_demand_spend,
+                savings_plans_details: self.savings_plans_details
+                ,
+                account_id: self.account_id
+                ,
+                upfront_cost: self.upfront_cost
+                ,
+                estimated_roi: self.estimated_roi
+                ,
+                currency_code: self.currency_code
+                ,
+                estimated_sp_cost: self.estimated_sp_cost
+                ,
+                estimated_on_demand_cost: self.estimated_on_demand_cost
+                ,
+                estimated_on_demand_cost_with_current_commitment: self.estimated_on_demand_cost_with_current_commitment
+                ,
+                estimated_savings_amount: self.estimated_savings_amount
+                ,
+                estimated_savings_percentage: self.estimated_savings_percentage
+                ,
+                hourly_commitment_to_purchase: self.hourly_commitment_to_purchase
+                ,
+                estimated_average_utilization: self.estimated_average_utilization
+                ,
+                estimated_monthly_savings_amount: self.estimated_monthly_savings_amount
+                ,
+                current_minimum_hourly_on_demand_spend: self.current_minimum_hourly_on_demand_spend
+                ,
+                current_maximum_hourly_on_demand_spend: self.current_maximum_hourly_on_demand_spend
+                ,
+                current_average_hourly_on_demand_spend: self.current_average_hourly_on_demand_spend
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansPurchaseRecommendationDetail {
     /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
@@ -5856,7 +5275,7 @@ impl SavingsPlansPurchaseRecommendationDetail {
 /// <p>The attribute details on a specific Savings Plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansDetails {
+pub struct SavingsPlansDetails  {
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -5869,21 +5288,21 @@ pub struct SavingsPlansDetails {
 }
 impl SavingsPlansDetails {
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>A group of instance types that Savings Plans applies to.</p>
-    pub fn instance_family(&self) -> std::option::Option<&str> {
+    pub fn instance_family(&self) -> std::option::Option<& str> {
         self.instance_family.as_deref()
     }
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
 }
 /// See [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
 pub mod savings_plans_details {
-
+    
     /// A builder for [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5899,8 +5318,7 @@ pub mod savings_plans_details {
         }
         /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>A group of instance types that Savings Plans applies to.</p>
         pub fn instance_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5908,12 +5326,8 @@ pub mod savings_plans_details {
             self
         }
         /// <p>A group of instance types that Savings Plans applies to.</p>
-        pub fn set_instance_family(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_family = input;
-            self
+        pub fn set_instance_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_family = input; self
         }
         /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
         pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5922,18 +5336,22 @@ pub mod savings_plans_details {
         }
         /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = input;
-            self
+            self.offering_id = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
         pub fn build(self) -> crate::model::SavingsPlansDetails {
             crate::model::SavingsPlansDetails {
-                region: self.region,
-                instance_family: self.instance_family,
-                offering_id: self.offering_id,
+                region: self.region
+                ,
+                instance_family: self.instance_family
+                ,
+                offering_id: self.offering_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansDetails {
     /// Creates a new builder-style object to manufacture [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
@@ -5948,9 +5366,9 @@ impl SavingsPlansDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lookbackperiodindays = unimplemented!();
 /// match lookbackperiodindays {
@@ -5973,22 +5391,14 @@ impl SavingsPlansDetails {
 /// Specifically, when `lookbackperiodindays` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LookbackPeriodInDays::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LookbackPeriodInDays {
     #[allow(missing_docs)] // documentation missing in model
     SevenDays,
@@ -5997,7 +5407,7 @@ pub enum LookbackPeriodInDays {
     #[allow(missing_docs)] // documentation missing in model
     ThirtyDays,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LookbackPeriodInDays {
     fn from(s: &str) -> Self {
@@ -6005,19 +5415,17 @@ impl std::convert::From<&str> for LookbackPeriodInDays {
             "SEVEN_DAYS" => LookbackPeriodInDays::SevenDays,
             "SIXTY_DAYS" => LookbackPeriodInDays::SixtyDays,
             "THIRTY_DAYS" => LookbackPeriodInDays::ThirtyDays,
-            other => {
-                LookbackPeriodInDays::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LookbackPeriodInDays::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LookbackPeriodInDays {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LookbackPeriodInDays::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LookbackPeriodInDays::from(s))
+                }
+            }
 impl LookbackPeriodInDays {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6025,12 +5433,14 @@ impl LookbackPeriodInDays {
             LookbackPeriodInDays::SevenDays => "SEVEN_DAYS",
             LookbackPeriodInDays::SixtyDays => "SIXTY_DAYS",
             LookbackPeriodInDays::ThirtyDays => "THIRTY_DAYS",
-            LookbackPeriodInDays::Unknown(value) => value.as_str(),
+            LookbackPeriodInDays::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SEVEN_DAYS", "SIXTY_DAYS", "THIRTY_DAYS"]
+        &[
+            "SEVEN_DAYS", "SIXTY_DAYS", "THIRTY_DAYS"
+        ]
     }
 }
 impl AsRef<str> for LookbackPeriodInDays {
@@ -6045,9 +5455,9 @@ impl AsRef<str> for LookbackPeriodInDays {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let paymentoption = unimplemented!();
 /// match paymentoption {
@@ -6073,22 +5483,14 @@ impl AsRef<str> for LookbackPeriodInDays {
 /// Specifically, when `paymentoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PaymentOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PaymentOption {
     #[allow(missing_docs)] // documentation missing in model
     AllUpfront,
@@ -6103,7 +5505,7 @@ pub enum PaymentOption {
     #[allow(missing_docs)] // documentation missing in model
     PartialUpfront,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PaymentOption {
     fn from(s: &str) -> Self {
@@ -6114,17 +5516,17 @@ impl std::convert::From<&str> for PaymentOption {
             "MEDIUM_UTILIZATION" => PaymentOption::MediumUtilization,
             "NO_UPFRONT" => PaymentOption::NoUpfront,
             "PARTIAL_UPFRONT" => PaymentOption::PartialUpfront,
-            other => PaymentOption::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PaymentOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PaymentOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PaymentOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PaymentOption::from(s))
+                }
+            }
 impl PaymentOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6135,18 +5537,13 @@ impl PaymentOption {
             PaymentOption::MediumUtilization => "MEDIUM_UTILIZATION",
             PaymentOption::NoUpfront => "NO_UPFRONT",
             PaymentOption::PartialUpfront => "PARTIAL_UPFRONT",
-            PaymentOption::Unknown(value) => value.as_str(),
+            PaymentOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALL_UPFRONT",
-            "HEAVY_UTILIZATION",
-            "LIGHT_UTILIZATION",
-            "MEDIUM_UTILIZATION",
-            "NO_UPFRONT",
-            "PARTIAL_UPFRONT",
+            "ALL_UPFRONT", "HEAVY_UTILIZATION", "LIGHT_UTILIZATION", "MEDIUM_UTILIZATION", "NO_UPFRONT", "PARTIAL_UPFRONT"
         ]
     }
 }
@@ -6162,9 +5559,9 @@ impl AsRef<str> for PaymentOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let terminyears = unimplemented!();
 /// match terminyears {
@@ -6186,58 +5583,52 @@ impl AsRef<str> for PaymentOption {
 /// Specifically, when `terminyears` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TermInYears::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TermInYears {
     #[allow(missing_docs)] // documentation missing in model
     OneYear,
     #[allow(missing_docs)] // documentation missing in model
     ThreeYears,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TermInYears {
     fn from(s: &str) -> Self {
         match s {
             "ONE_YEAR" => TermInYears::OneYear,
             "THREE_YEARS" => TermInYears::ThreeYears,
-            other => TermInYears::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TermInYears::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TermInYears {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TermInYears::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TermInYears::from(s))
+                }
+            }
 impl TermInYears {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TermInYears::OneYear => "ONE_YEAR",
             TermInYears::ThreeYears => "THREE_YEARS",
-            TermInYears::Unknown(value) => value.as_str(),
+            TermInYears::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ONE_YEAR", "THREE_YEARS"]
+        &[
+            "ONE_YEAR", "THREE_YEARS"
+        ]
     }
 }
 impl AsRef<str> for TermInYears {
@@ -6252,9 +5643,9 @@ impl AsRef<str> for TermInYears {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let supportedsavingsplanstype = unimplemented!();
 /// match supportedsavingsplanstype {
@@ -6277,22 +5668,14 @@ impl AsRef<str> for TermInYears {
 /// Specifically, when `supportedsavingsplanstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SupportedSavingsPlansType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SupportedSavingsPlansType {
     #[allow(missing_docs)] // documentation missing in model
     ComputeSp,
@@ -6301,7 +5684,7 @@ pub enum SupportedSavingsPlansType {
     #[allow(missing_docs)] // documentation missing in model
     SagemakerSp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SupportedSavingsPlansType {
     fn from(s: &str) -> Self {
@@ -6309,19 +5692,17 @@ impl std::convert::From<&str> for SupportedSavingsPlansType {
             "COMPUTE_SP" => SupportedSavingsPlansType::ComputeSp,
             "EC2_INSTANCE_SP" => SupportedSavingsPlansType::Ec2InstanceSp,
             "SAGEMAKER_SP" => SupportedSavingsPlansType::SagemakerSp,
-            other => SupportedSavingsPlansType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SupportedSavingsPlansType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SupportedSavingsPlansType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SupportedSavingsPlansType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SupportedSavingsPlansType::from(s))
+                }
+            }
 impl SupportedSavingsPlansType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6329,12 +5710,14 @@ impl SupportedSavingsPlansType {
             SupportedSavingsPlansType::ComputeSp => "COMPUTE_SP",
             SupportedSavingsPlansType::Ec2InstanceSp => "EC2_INSTANCE_SP",
             SupportedSavingsPlansType::SagemakerSp => "SAGEMAKER_SP",
-            SupportedSavingsPlansType::Unknown(value) => value.as_str(),
+            SupportedSavingsPlansType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPUTE_SP", "EC2_INSTANCE_SP", "SAGEMAKER_SP"]
+        &[
+            "COMPUTE_SP", "EC2_INSTANCE_SP", "SAGEMAKER_SP"
+        ]
     }
 }
 impl AsRef<str> for SupportedSavingsPlansType {
@@ -6349,9 +5732,9 @@ impl AsRef<str> for SupportedSavingsPlansType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountscope = unimplemented!();
 /// match accountscope {
@@ -6373,58 +5756,52 @@ impl AsRef<str> for SupportedSavingsPlansType {
 /// Specifically, when `accountscope` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountScope::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountScope {
     #[allow(missing_docs)] // documentation missing in model
     Linked,
     #[allow(missing_docs)] // documentation missing in model
     Payer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountScope {
     fn from(s: &str) -> Self {
         match s {
             "LINKED" => AccountScope::Linked,
             "PAYER" => AccountScope::Payer,
-            other => AccountScope::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccountScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccountScope {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountScope::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountScope::from(s))
+                }
+            }
 impl AccountScope {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccountScope::Linked => "LINKED",
             AccountScope::Payer => "PAYER",
-            AccountScope::Unknown(value) => value.as_str(),
+            AccountScope::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LINKED", "PAYER"]
+        &[
+            "LINKED", "PAYER"
+        ]
     }
 }
 impl AsRef<str> for AccountScope {
@@ -6436,7 +5813,7 @@ impl AsRef<str> for AccountScope {
 /// <p>Metadata about your Savings Plans Purchase Recommendations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansPurchaseRecommendationMetadata {
+pub struct SavingsPlansPurchaseRecommendationMetadata  {
     /// <p>The unique identifier for the recommendation set.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -6449,21 +5826,21 @@ pub struct SavingsPlansPurchaseRecommendationMetadata {
 }
 impl SavingsPlansPurchaseRecommendationMetadata {
     /// <p>The unique identifier for the recommendation set.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The timestamp that shows when the recommendations were generated.</p>
-    pub fn generation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn generation_timestamp(&self) -> std::option::Option<& str> {
         self.generation_timestamp.as_deref()
     }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
-    pub fn additional_metadata(&self) -> std::option::Option<&str> {
+    pub fn additional_metadata(&self) -> std::option::Option<& str> {
         self.additional_metadata.as_deref()
     }
 }
 /// See [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
 pub mod savings_plans_purchase_recommendation_metadata {
-
+    
     /// A builder for [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6478,12 +5855,8 @@ pub mod savings_plans_purchase_recommendation_metadata {
             self
         }
         /// <p>The unique identifier for the recommendation set.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>The timestamp that shows when the recommendations were generated.</p>
         pub fn generation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6491,12 +5864,8 @@ pub mod savings_plans_purchase_recommendation_metadata {
             self
         }
         /// <p>The timestamp that shows when the recommendations were generated.</p>
-        pub fn set_generation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generation_timestamp = input;
-            self
+        pub fn set_generation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generation_timestamp = input; self
         }
         /// <p>Additional metadata that might be applicable to the recommendation.</p>
         pub fn additional_metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6504,22 +5873,23 @@ pub mod savings_plans_purchase_recommendation_metadata {
             self
         }
         /// <p>Additional metadata that might be applicable to the recommendation.</p>
-        pub fn set_additional_metadata(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_metadata = input;
-            self
+        pub fn set_additional_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_metadata = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
         pub fn build(self) -> crate::model::SavingsPlansPurchaseRecommendationMetadata {
             crate::model::SavingsPlansPurchaseRecommendationMetadata {
-                recommendation_id: self.recommendation_id,
-                generation_timestamp: self.generation_timestamp,
-                additional_metadata: self.additional_metadata,
+                recommendation_id: self.recommendation_id
+                ,
+                generation_timestamp: self.generation_timestamp
+                ,
+                additional_metadata: self.additional_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansPurchaseRecommendationMetadata {
     /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
@@ -6531,11 +5901,10 @@ impl SavingsPlansPurchaseRecommendationMetadata {
 /// <p>The amount of Savings Plans eligible usage that's covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansCoverage {
+pub struct SavingsPlansCoverage  {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
     #[doc(hidden)]
     pub coverage: std::option::Option<crate::model::SavingsPlansCoverageData>,
@@ -6545,30 +5914,25 @@ pub struct SavingsPlansCoverage {
 }
 impl SavingsPlansCoverage {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
-    pub fn coverage(&self) -> std::option::Option<&crate::model::SavingsPlansCoverageData> {
+    pub fn coverage(&self) -> std::option::Option<& crate::model::SavingsPlansCoverageData> {
         self.coverage.as_ref()
     }
     /// <p>The time period of the request. </p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::DateInterval> {
         self.time_period.as_ref()
     }
 }
 /// See [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
 pub mod savings_plans_coverage {
-
+    
     /// A builder for [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) coverage: std::option::Option<crate::model::SavingsPlansCoverageData>,
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
     }
@@ -6578,25 +5942,15 @@ pub mod savings_plans_coverage {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
         pub fn coverage(mut self, input: crate::model::SavingsPlansCoverageData) -> Self {
@@ -6604,12 +5958,8 @@ pub mod savings_plans_coverage {
             self
         }
         /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
-        pub fn set_coverage(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansCoverageData>,
-        ) -> Self {
-            self.coverage = input;
-            self
+        pub fn set_coverage(mut self, input: std::option::Option<crate::model::SavingsPlansCoverageData>) -> Self {
+            self.coverage = input; self
         }
         /// <p>The time period of the request. </p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
@@ -6617,22 +5967,23 @@ pub mod savings_plans_coverage {
             self
         }
         /// <p>The time period of the request. </p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::DateInterval>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::DateInterval>) -> Self {
+            self.time_period = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
         pub fn build(self) -> crate::model::SavingsPlansCoverage {
             crate::model::SavingsPlansCoverage {
-                attributes: self.attributes,
-                coverage: self.coverage,
-                time_period: self.time_period,
+                attributes: self.attributes
+                ,
+                coverage: self.coverage
+                ,
+                time_period: self.time_period
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansCoverage {
     /// Creates a new builder-style object to manufacture [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
@@ -6644,7 +5995,7 @@ impl SavingsPlansCoverage {
 /// <p>Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansCoverageData {
+pub struct SavingsPlansCoverageData  {
     /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
     #[doc(hidden)]
     pub spend_covered_by_savings_plans: std::option::Option<std::string::String>,
@@ -6660,25 +6011,25 @@ pub struct SavingsPlansCoverageData {
 }
 impl SavingsPlansCoverageData {
     /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
-    pub fn spend_covered_by_savings_plans(&self) -> std::option::Option<&str> {
+    pub fn spend_covered_by_savings_plans(&self) -> std::option::Option<& str> {
         self.spend_covered_by_savings_plans.as_deref()
     }
     /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
-    pub fn on_demand_cost(&self) -> std::option::Option<&str> {
+    pub fn on_demand_cost(&self) -> std::option::Option<& str> {
         self.on_demand_cost.as_deref()
     }
     /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase option.</p>
-    pub fn total_cost(&self) -> std::option::Option<&str> {
+    pub fn total_cost(&self) -> std::option::Option<& str> {
         self.total_cost.as_deref()
     }
     /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
-    pub fn coverage_percentage(&self) -> std::option::Option<&str> {
+    pub fn coverage_percentage(&self) -> std::option::Option<& str> {
         self.coverage_percentage.as_deref()
     }
 }
 /// See [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
 pub mod savings_plans_coverage_data {
-
+    
     /// A builder for [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6689,20 +6040,13 @@ pub mod savings_plans_coverage_data {
     }
     impl Builder {
         /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
-        pub fn spend_covered_by_savings_plans(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn spend_covered_by_savings_plans(mut self, input: impl Into<std::string::String>) -> Self {
             self.spend_covered_by_savings_plans = Some(input.into());
             self
         }
         /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
-        pub fn set_spend_covered_by_savings_plans(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.spend_covered_by_savings_plans = input;
-            self
+        pub fn set_spend_covered_by_savings_plans(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.spend_covered_by_savings_plans = input; self
         }
         /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
         pub fn on_demand_cost(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6710,12 +6054,8 @@ pub mod savings_plans_coverage_data {
             self
         }
         /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
-        pub fn set_on_demand_cost(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.on_demand_cost = input;
-            self
+        pub fn set_on_demand_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_demand_cost = input; self
         }
         /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase option.</p>
         pub fn total_cost(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6724,8 +6064,7 @@ pub mod savings_plans_coverage_data {
         }
         /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase option.</p>
         pub fn set_total_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.total_cost = input;
-            self
+            self.total_cost = input; self
         }
         /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
         pub fn coverage_percentage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6733,23 +6072,25 @@ pub mod savings_plans_coverage_data {
             self
         }
         /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
-        pub fn set_coverage_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.coverage_percentage = input;
-            self
+        pub fn set_coverage_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.coverage_percentage = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
         pub fn build(self) -> crate::model::SavingsPlansCoverageData {
             crate::model::SavingsPlansCoverageData {
-                spend_covered_by_savings_plans: self.spend_covered_by_savings_plans,
-                on_demand_cost: self.on_demand_cost,
-                total_cost: self.total_cost,
-                coverage_percentage: self.coverage_percentage,
+                spend_covered_by_savings_plans: self.spend_covered_by_savings_plans
+                ,
+                on_demand_cost: self.on_demand_cost
+                ,
+                total_cost: self.total_cost
+                ,
+                coverage_percentage: self.coverage_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlansCoverageData {
     /// Creates a new builder-style object to manufacture [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
@@ -6761,7 +6102,7 @@ impl SavingsPlansCoverageData {
 /// <p>Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupDefinition {
+pub struct GroupDefinition  {
     /// <p>The string that represents the type of group.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::GroupDefinitionType>,
@@ -6771,17 +6112,17 @@ pub struct GroupDefinition {
 }
 impl GroupDefinition {
     /// <p>The string that represents the type of group.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::GroupDefinitionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::GroupDefinitionType> {
         self.r#type.as_ref()
     }
     /// <p>The string that represents a key for a specified group.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
 /// See [`GroupDefinition`](crate::model::GroupDefinition).
 pub mod group_definition {
-
+    
     /// A builder for [`GroupDefinition`](crate::model::GroupDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6795,12 +6136,8 @@ pub mod group_definition {
             self
         }
         /// <p>The string that represents the type of group.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::GroupDefinitionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::GroupDefinitionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The string that represents a key for a specified group.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6809,17 +6146,20 @@ pub mod group_definition {
         }
         /// <p>The string that represents a key for a specified group.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Consumes the builder and constructs a [`GroupDefinition`](crate::model::GroupDefinition).
         pub fn build(self) -> crate::model::GroupDefinition {
             crate::model::GroupDefinition {
-                r#type: self.r#type,
-                key: self.key,
+                r#type: self.r#type
+                ,
+                key: self.key
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupDefinition {
     /// Creates a new builder-style object to manufacture [`GroupDefinition`](crate::model::GroupDefinition).
@@ -6834,9 +6174,9 @@ impl GroupDefinition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let groupdefinitiontype = unimplemented!();
 /// match groupdefinitiontype {
@@ -6859,22 +6199,14 @@ impl GroupDefinition {
 /// Specifically, when `groupdefinitiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GroupDefinitionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GroupDefinitionType {
     #[allow(missing_docs)] // documentation missing in model
     CostCategory,
@@ -6883,7 +6215,7 @@ pub enum GroupDefinitionType {
     #[allow(missing_docs)] // documentation missing in model
     Tag,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupDefinitionType {
     fn from(s: &str) -> Self {
@@ -6891,19 +6223,17 @@ impl std::convert::From<&str> for GroupDefinitionType {
             "COST_CATEGORY" => GroupDefinitionType::CostCategory,
             "DIMENSION" => GroupDefinitionType::Dimension,
             "TAG" => GroupDefinitionType::Tag,
-            other => {
-                GroupDefinitionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => GroupDefinitionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GroupDefinitionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GroupDefinitionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GroupDefinitionType::from(s))
+                }
+            }
 impl GroupDefinitionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6911,12 +6241,14 @@ impl GroupDefinitionType {
             GroupDefinitionType::CostCategory => "COST_CATEGORY",
             GroupDefinitionType::Dimension => "DIMENSION",
             GroupDefinitionType::Tag => "TAG",
-            GroupDefinitionType::Unknown(value) => value.as_str(),
+            GroupDefinitionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COST_CATEGORY", "DIMENSION", "TAG"]
+        &[
+            "COST_CATEGORY", "DIMENSION", "TAG"
+        ]
     }
 }
 impl AsRef<str> for GroupDefinitionType {
@@ -6928,7 +6260,7 @@ impl AsRef<str> for GroupDefinitionType {
 /// <p>You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or Reserved Instance (RI) benefits, or neither. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RightsizingRecommendationConfiguration {
+pub struct RightsizingRecommendationConfiguration  {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
     #[doc(hidden)]
     pub recommendation_target: std::option::Option<crate::model::RecommendationTarget>,
@@ -6938,9 +6270,7 @@ pub struct RightsizingRecommendationConfiguration {
 }
 impl RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    pub fn recommendation_target(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommendationTarget> {
+    pub fn recommendation_target(&self) -> std::option::Option<& crate::model::RecommendationTarget> {
         self.recommendation_target.as_ref()
     }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
@@ -6950,7 +6280,7 @@ impl RightsizingRecommendationConfiguration {
 }
 /// See [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
 pub mod rightsizing_recommendation_configuration {
-
+    
     /// A builder for [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6964,12 +6294,8 @@ pub mod rightsizing_recommendation_configuration {
             self
         }
         /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-        pub fn set_recommendation_target(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationTarget>,
-        ) -> Self {
-            self.recommendation_target = input;
-            self
+        pub fn set_recommendation_target(mut self, input: std::option::Option<crate::model::RecommendationTarget>) -> Self {
+            self.recommendation_target = input; self
         }
         /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
         pub fn benefits_considered(mut self, input: bool) -> Self {
@@ -6978,17 +6304,21 @@ pub mod rightsizing_recommendation_configuration {
         }
         /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
         pub fn set_benefits_considered(mut self, input: std::option::Option<bool>) -> Self {
-            self.benefits_considered = input;
-            self
+            self.benefits_considered = input; self
         }
         /// Consumes the builder and constructs a [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
         pub fn build(self) -> crate::model::RightsizingRecommendationConfiguration {
             crate::model::RightsizingRecommendationConfiguration {
-                recommendation_target: self.recommendation_target,
-                benefits_considered: self.benefits_considered.unwrap_or_default(),
+                recommendation_target: self.recommendation_target
+                ,
+                benefits_considered: self.benefits_considered
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RightsizingRecommendationConfiguration {
     /// Creates a new builder-style object to manufacture [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
@@ -7003,9 +6333,9 @@ impl RightsizingRecommendationConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationtarget = unimplemented!();
 /// match recommendationtarget {
@@ -7027,60 +6357,52 @@ impl RightsizingRecommendationConfiguration {
 /// Specifically, when `recommendationtarget` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationTarget::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecommendationTarget {
     #[allow(missing_docs)] // documentation missing in model
     CrossInstanceFamily,
     #[allow(missing_docs)] // documentation missing in model
     SameInstanceFamily,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationTarget {
     fn from(s: &str) -> Self {
         match s {
             "CROSS_INSTANCE_FAMILY" => RecommendationTarget::CrossInstanceFamily,
             "SAME_INSTANCE_FAMILY" => RecommendationTarget::SameInstanceFamily,
-            other => {
-                RecommendationTarget::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RecommendationTarget::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecommendationTarget {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationTarget::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecommendationTarget::from(s))
+                }
+            }
 impl RecommendationTarget {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecommendationTarget::CrossInstanceFamily => "CROSS_INSTANCE_FAMILY",
             RecommendationTarget::SameInstanceFamily => "SAME_INSTANCE_FAMILY",
-            RecommendationTarget::Unknown(value) => value.as_str(),
+            RecommendationTarget::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CROSS_INSTANCE_FAMILY", "SAME_INSTANCE_FAMILY"]
+        &[
+            "CROSS_INSTANCE_FAMILY", "SAME_INSTANCE_FAMILY"
+        ]
     }
 }
 impl AsRef<str> for RecommendationTarget {
@@ -7092,7 +6414,7 @@ impl AsRef<str> for RecommendationTarget {
 /// <p>Recommendations to rightsize resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RightsizingRecommendation {
+pub struct RightsizingRecommendation  {
     /// <p>The account that this recommendation is for.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -7107,57 +6429,49 @@ pub struct RightsizingRecommendation {
     pub modify_recommendation_detail: std::option::Option<crate::model::ModifyRecommendationDetail>,
     /// <p>The details for termination recommendations.</p>
     #[doc(hidden)]
-    pub terminate_recommendation_detail:
-        std::option::Option<crate::model::TerminateRecommendationDetail>,
+    pub terminate_recommendation_detail: std::option::Option<crate::model::TerminateRecommendationDetail>,
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     #[doc(hidden)]
     pub finding_reason_codes: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
 }
 impl RightsizingRecommendation {
     /// <p>The account that this recommendation is for.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Context regarding the current instance.</p>
-    pub fn current_instance(&self) -> std::option::Option<&crate::model::CurrentInstance> {
+    pub fn current_instance(&self) -> std::option::Option<& crate::model::CurrentInstance> {
         self.current_instance.as_ref()
     }
     /// <p>A recommendation to either terminate or modify the resource.</p>
-    pub fn rightsizing_type(&self) -> std::option::Option<&crate::model::RightsizingType> {
+    pub fn rightsizing_type(&self) -> std::option::Option<& crate::model::RightsizingType> {
         self.rightsizing_type.as_ref()
     }
     /// <p>The details for the modification recommendations. </p>
-    pub fn modify_recommendation_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ModifyRecommendationDetail> {
+    pub fn modify_recommendation_detail(&self) -> std::option::Option<& crate::model::ModifyRecommendationDetail> {
         self.modify_recommendation_detail.as_ref()
     }
     /// <p>The details for termination recommendations.</p>
-    pub fn terminate_recommendation_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::TerminateRecommendationDetail> {
+    pub fn terminate_recommendation_detail(&self) -> std::option::Option<& crate::model::TerminateRecommendationDetail> {
         self.terminate_recommendation_detail.as_ref()
     }
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
-    pub fn finding_reason_codes(&self) -> std::option::Option<&[crate::model::FindingReasonCode]> {
+    pub fn finding_reason_codes(&self) -> std::option::Option<& [crate::model::FindingReasonCode]> {
         self.finding_reason_codes.as_deref()
     }
 }
 /// See [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
 pub mod rightsizing_recommendation {
-
+    
     /// A builder for [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) current_instance: std::option::Option<crate::model::CurrentInstance>,
         pub(crate) rightsizing_type: std::option::Option<crate::model::RightsizingType>,
-        pub(crate) modify_recommendation_detail:
-            std::option::Option<crate::model::ModifyRecommendationDetail>,
-        pub(crate) terminate_recommendation_detail:
-            std::option::Option<crate::model::TerminateRecommendationDetail>,
-        pub(crate) finding_reason_codes:
-            std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
+        pub(crate) modify_recommendation_detail: std::option::Option<crate::model::ModifyRecommendationDetail>,
+        pub(crate) terminate_recommendation_detail: std::option::Option<crate::model::TerminateRecommendationDetail>,
+        pub(crate) finding_reason_codes: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
     }
     impl Builder {
         /// <p>The account that this recommendation is for.</p>
@@ -7167,8 +6481,7 @@ pub mod rightsizing_recommendation {
         }
         /// <p>The account that this recommendation is for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>Context regarding the current instance.</p>
         pub fn current_instance(mut self, input: crate::model::CurrentInstance) -> Self {
@@ -7176,12 +6489,8 @@ pub mod rightsizing_recommendation {
             self
         }
         /// <p>Context regarding the current instance.</p>
-        pub fn set_current_instance(
-            mut self,
-            input: std::option::Option<crate::model::CurrentInstance>,
-        ) -> Self {
-            self.current_instance = input;
-            self
+        pub fn set_current_instance(mut self, input: std::option::Option<crate::model::CurrentInstance>) -> Self {
+            self.current_instance = input; self
         }
         /// <p>A recommendation to either terminate or modify the resource.</p>
         pub fn rightsizing_type(mut self, input: crate::model::RightsizingType) -> Self {
@@ -7189,44 +6498,26 @@ pub mod rightsizing_recommendation {
             self
         }
         /// <p>A recommendation to either terminate or modify the resource.</p>
-        pub fn set_rightsizing_type(
-            mut self,
-            input: std::option::Option<crate::model::RightsizingType>,
-        ) -> Self {
-            self.rightsizing_type = input;
-            self
+        pub fn set_rightsizing_type(mut self, input: std::option::Option<crate::model::RightsizingType>) -> Self {
+            self.rightsizing_type = input; self
         }
         /// <p>The details for the modification recommendations. </p>
-        pub fn modify_recommendation_detail(
-            mut self,
-            input: crate::model::ModifyRecommendationDetail,
-        ) -> Self {
+        pub fn modify_recommendation_detail(mut self, input: crate::model::ModifyRecommendationDetail) -> Self {
             self.modify_recommendation_detail = Some(input);
             self
         }
         /// <p>The details for the modification recommendations. </p>
-        pub fn set_modify_recommendation_detail(
-            mut self,
-            input: std::option::Option<crate::model::ModifyRecommendationDetail>,
-        ) -> Self {
-            self.modify_recommendation_detail = input;
-            self
+        pub fn set_modify_recommendation_detail(mut self, input: std::option::Option<crate::model::ModifyRecommendationDetail>) -> Self {
+            self.modify_recommendation_detail = input; self
         }
         /// <p>The details for termination recommendations.</p>
-        pub fn terminate_recommendation_detail(
-            mut self,
-            input: crate::model::TerminateRecommendationDetail,
-        ) -> Self {
+        pub fn terminate_recommendation_detail(mut self, input: crate::model::TerminateRecommendationDetail) -> Self {
             self.terminate_recommendation_detail = Some(input);
             self
         }
         /// <p>The details for termination recommendations.</p>
-        pub fn set_terminate_recommendation_detail(
-            mut self,
-            input: std::option::Option<crate::model::TerminateRecommendationDetail>,
-        ) -> Self {
-            self.terminate_recommendation_detail = input;
-            self
+        pub fn set_terminate_recommendation_detail(mut self, input: std::option::Option<crate::model::TerminateRecommendationDetail>) -> Self {
+            self.terminate_recommendation_detail = input; self
         }
         /// Appends an item to `finding_reason_codes`.
         ///
@@ -7235,30 +6526,34 @@ pub mod rightsizing_recommendation {
         /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
         pub fn finding_reason_codes(mut self, input: crate::model::FindingReasonCode) -> Self {
             let mut v = self.finding_reason_codes.unwrap_or_default();
-            v.push(input);
-            self.finding_reason_codes = Some(v);
-            self
+                            v.push(input);
+                            self.finding_reason_codes = Some(v);
+                            self
         }
         /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
-        pub fn set_finding_reason_codes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
-        ) -> Self {
-            self.finding_reason_codes = input;
-            self
+        pub fn set_finding_reason_codes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>) -> Self {
+            self.finding_reason_codes = input; self
         }
         /// Consumes the builder and constructs a [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
         pub fn build(self) -> crate::model::RightsizingRecommendation {
             crate::model::RightsizingRecommendation {
-                account_id: self.account_id,
-                current_instance: self.current_instance,
-                rightsizing_type: self.rightsizing_type,
-                modify_recommendation_detail: self.modify_recommendation_detail,
-                terminate_recommendation_detail: self.terminate_recommendation_detail,
-                finding_reason_codes: self.finding_reason_codes,
+                account_id: self.account_id
+                ,
+                current_instance: self.current_instance
+                ,
+                rightsizing_type: self.rightsizing_type
+                ,
+                modify_recommendation_detail: self.modify_recommendation_detail
+                ,
+                terminate_recommendation_detail: self.terminate_recommendation_detail
+                ,
+                finding_reason_codes: self.finding_reason_codes
+                ,
             }
         }
     }
+    
+    
 }
 impl RightsizingRecommendation {
     /// Creates a new builder-style object to manufacture [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
@@ -7273,9 +6568,9 @@ impl RightsizingRecommendation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let findingreasoncode = unimplemented!();
 /// match findingreasoncode {
@@ -7311,22 +6606,14 @@ impl RightsizingRecommendation {
 /// Specifically, when `findingreasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FindingReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CpuOverProvisioned,
@@ -7361,7 +6648,7 @@ pub enum FindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     NetworkPpsUnderProvisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FindingReasonCode {
     fn from(s: &str) -> Self {
@@ -7371,36 +6658,28 @@ impl std::convert::From<&str> for FindingReasonCode {
             "DISK_IOPS_OVER_PROVISIONED" => FindingReasonCode::DiskIopsOverProvisioned,
             "DISK_IOPS_UNDER_PROVISIONED" => FindingReasonCode::DiskIopsUnderProvisioned,
             "DISK_THROUGHPUT_OVER_PROVISIONED" => FindingReasonCode::DiskThroughputOverProvisioned,
-            "DISK_THROUGHPUT_UNDER_PROVISIONED" => {
-                FindingReasonCode::DiskThroughputUnderProvisioned
-            }
+            "DISK_THROUGHPUT_UNDER_PROVISIONED" => FindingReasonCode::DiskThroughputUnderProvisioned,
             "EBS_IOPS_OVER_PROVISIONED" => FindingReasonCode::EbsIopsOverProvisioned,
             "EBS_IOPS_UNDER_PROVISIONED" => FindingReasonCode::EbsIopsUnderProvisioned,
             "EBS_THROUGHPUT_OVER_PROVISIONED" => FindingReasonCode::EbsThroughputOverProvisioned,
             "EBS_THROUGHPUT_UNDER_PROVISIONED" => FindingReasonCode::EbsThroughputUnderProvisioned,
             "MEMORY_OVER_PROVISIONED" => FindingReasonCode::MemoryOverProvisioned,
             "MEMORY_UNDER_PROVISIONED" => FindingReasonCode::MemoryUnderProvisioned,
-            "NETWORK_BANDWIDTH_OVER_PROVISIONED" => {
-                FindingReasonCode::NetworkBandwidthOverProvisioned
-            }
-            "NETWORK_BANDWIDTH_UNDER_PROVISIONED" => {
-                FindingReasonCode::NetworkBandwidthUnderProvisioned
-            }
+            "NETWORK_BANDWIDTH_OVER_PROVISIONED" => FindingReasonCode::NetworkBandwidthOverProvisioned,
+            "NETWORK_BANDWIDTH_UNDER_PROVISIONED" => FindingReasonCode::NetworkBandwidthUnderProvisioned,
             "NETWORK_PPS_OVER_PROVISIONED" => FindingReasonCode::NetworkPpsOverProvisioned,
             "NETWORK_PPS_UNDER_PROVISIONED" => FindingReasonCode::NetworkPpsUnderProvisioned,
-            other => {
-                FindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FindingReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FindingReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FindingReasonCode::from(s))
+                }
+            }
 impl FindingReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7410,45 +6689,24 @@ impl FindingReasonCode {
             FindingReasonCode::DiskIopsOverProvisioned => "DISK_IOPS_OVER_PROVISIONED",
             FindingReasonCode::DiskIopsUnderProvisioned => "DISK_IOPS_UNDER_PROVISIONED",
             FindingReasonCode::DiskThroughputOverProvisioned => "DISK_THROUGHPUT_OVER_PROVISIONED",
-            FindingReasonCode::DiskThroughputUnderProvisioned => {
-                "DISK_THROUGHPUT_UNDER_PROVISIONED"
-            }
+            FindingReasonCode::DiskThroughputUnderProvisioned => "DISK_THROUGHPUT_UNDER_PROVISIONED",
             FindingReasonCode::EbsIopsOverProvisioned => "EBS_IOPS_OVER_PROVISIONED",
             FindingReasonCode::EbsIopsUnderProvisioned => "EBS_IOPS_UNDER_PROVISIONED",
             FindingReasonCode::EbsThroughputOverProvisioned => "EBS_THROUGHPUT_OVER_PROVISIONED",
             FindingReasonCode::EbsThroughputUnderProvisioned => "EBS_THROUGHPUT_UNDER_PROVISIONED",
             FindingReasonCode::MemoryOverProvisioned => "MEMORY_OVER_PROVISIONED",
             FindingReasonCode::MemoryUnderProvisioned => "MEMORY_UNDER_PROVISIONED",
-            FindingReasonCode::NetworkBandwidthOverProvisioned => {
-                "NETWORK_BANDWIDTH_OVER_PROVISIONED"
-            }
-            FindingReasonCode::NetworkBandwidthUnderProvisioned => {
-                "NETWORK_BANDWIDTH_UNDER_PROVISIONED"
-            }
+            FindingReasonCode::NetworkBandwidthOverProvisioned => "NETWORK_BANDWIDTH_OVER_PROVISIONED",
+            FindingReasonCode::NetworkBandwidthUnderProvisioned => "NETWORK_BANDWIDTH_UNDER_PROVISIONED",
             FindingReasonCode::NetworkPpsOverProvisioned => "NETWORK_PPS_OVER_PROVISIONED",
             FindingReasonCode::NetworkPpsUnderProvisioned => "NETWORK_PPS_UNDER_PROVISIONED",
-            FindingReasonCode::Unknown(value) => value.as_str(),
+            FindingReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CPU_OVER_PROVISIONED",
-            "CPU_UNDER_PROVISIONED",
-            "DISK_IOPS_OVER_PROVISIONED",
-            "DISK_IOPS_UNDER_PROVISIONED",
-            "DISK_THROUGHPUT_OVER_PROVISIONED",
-            "DISK_THROUGHPUT_UNDER_PROVISIONED",
-            "EBS_IOPS_OVER_PROVISIONED",
-            "EBS_IOPS_UNDER_PROVISIONED",
-            "EBS_THROUGHPUT_OVER_PROVISIONED",
-            "EBS_THROUGHPUT_UNDER_PROVISIONED",
-            "MEMORY_OVER_PROVISIONED",
-            "MEMORY_UNDER_PROVISIONED",
-            "NETWORK_BANDWIDTH_OVER_PROVISIONED",
-            "NETWORK_BANDWIDTH_UNDER_PROVISIONED",
-            "NETWORK_PPS_OVER_PROVISIONED",
-            "NETWORK_PPS_UNDER_PROVISIONED",
+            "CPU_OVER_PROVISIONED", "CPU_UNDER_PROVISIONED", "DISK_IOPS_OVER_PROVISIONED", "DISK_IOPS_UNDER_PROVISIONED", "DISK_THROUGHPUT_OVER_PROVISIONED", "DISK_THROUGHPUT_UNDER_PROVISIONED", "EBS_IOPS_OVER_PROVISIONED", "EBS_IOPS_UNDER_PROVISIONED", "EBS_THROUGHPUT_OVER_PROVISIONED", "EBS_THROUGHPUT_UNDER_PROVISIONED", "MEMORY_OVER_PROVISIONED", "MEMORY_UNDER_PROVISIONED", "NETWORK_BANDWIDTH_OVER_PROVISIONED", "NETWORK_BANDWIDTH_UNDER_PROVISIONED", "NETWORK_PPS_OVER_PROVISIONED", "NETWORK_PPS_UNDER_PROVISIONED"
         ]
     }
 }
@@ -7461,7 +6719,7 @@ impl AsRef<str> for FindingReasonCode {
 /// <p>Details on termination recommendation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateRecommendationDetail {
+pub struct TerminateRecommendationDetail  {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
     #[doc(hidden)]
     pub estimated_monthly_savings: std::option::Option<std::string::String>,
@@ -7471,17 +6729,17 @@ pub struct TerminateRecommendationDetail {
 }
 impl TerminateRecommendationDetail {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn estimated_monthly_savings(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_savings(&self) -> std::option::Option<& str> {
         self.estimated_monthly_savings.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
 }
 /// See [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
 pub mod terminate_recommendation_detail {
-
+    
     /// A builder for [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7495,12 +6753,8 @@ pub mod terminate_recommendation_detail {
             self
         }
         /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-        pub fn set_estimated_monthly_savings(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_monthly_savings = input;
-            self
+        pub fn set_estimated_monthly_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_monthly_savings = input; self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7508,21 +6762,21 @@ pub mod terminate_recommendation_detail {
             self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// Consumes the builder and constructs a [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
         pub fn build(self) -> crate::model::TerminateRecommendationDetail {
             crate::model::TerminateRecommendationDetail {
-                estimated_monthly_savings: self.estimated_monthly_savings,
-                currency_code: self.currency_code,
+                estimated_monthly_savings: self.estimated_monthly_savings
+                ,
+                currency_code: self.currency_code
+                ,
             }
         }
     }
+    
+    
 }
 impl TerminateRecommendationDetail {
     /// Creates a new builder-style object to manufacture [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
@@ -7534,25 +6788,24 @@ impl TerminateRecommendationDetail {
 /// <p>Details for the modification recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyRecommendationDetail {
+pub struct ModifyRecommendationDetail  {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
     #[doc(hidden)]
     pub target_instances: std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
 }
 impl ModifyRecommendationDetail {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
-    pub fn target_instances(&self) -> std::option::Option<&[crate::model::TargetInstance]> {
+    pub fn target_instances(&self) -> std::option::Option<& [crate::model::TargetInstance]> {
         self.target_instances.as_deref()
     }
 }
 /// See [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
 pub mod modify_recommendation_detail {
-
+    
     /// A builder for [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) target_instances:
-            std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
+        pub(crate) target_instances: std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
     }
     impl Builder {
         /// Appends an item to `target_instances`.
@@ -7562,25 +6815,24 @@ pub mod modify_recommendation_detail {
         /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
         pub fn target_instances(mut self, input: crate::model::TargetInstance) -> Self {
             let mut v = self.target_instances.unwrap_or_default();
-            v.push(input);
-            self.target_instances = Some(v);
-            self
+                            v.push(input);
+                            self.target_instances = Some(v);
+                            self
         }
         /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
-        pub fn set_target_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
-        ) -> Self {
-            self.target_instances = input;
-            self
+        pub fn set_target_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetInstance>>) -> Self {
+            self.target_instances = input; self
         }
         /// Consumes the builder and constructs a [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
         pub fn build(self) -> crate::model::ModifyRecommendationDetail {
             crate::model::ModifyRecommendationDetail {
-                target_instances: self.target_instances,
+                target_instances: self.target_instances
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyRecommendationDetail {
     /// Creates a new builder-style object to manufacture [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
@@ -7592,7 +6844,7 @@ impl ModifyRecommendationDetail {
 /// <p>Details on recommended instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetInstance {
+pub struct TargetInstance  {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
     #[doc(hidden)]
     pub estimated_monthly_cost: std::option::Option<std::string::String>,
@@ -7617,15 +6869,15 @@ pub struct TargetInstance {
 }
 impl TargetInstance {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
-    pub fn estimated_monthly_cost(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_cost(&self) -> std::option::Option<& str> {
         self.estimated_monthly_cost.as_deref()
     }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn estimated_monthly_savings(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_savings(&self) -> std::option::Option<& str> {
         self.estimated_monthly_savings.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
@@ -7633,23 +6885,21 @@ impl TargetInstance {
         self.default_target_instance
     }
     /// <p>Details on the target instance type. </p>
-    pub fn resource_details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+    pub fn resource_details(&self) -> std::option::Option<& crate::model::ResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>The expected utilization metrics for target instance type.</p>
-    pub fn expected_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceUtilization> {
+    pub fn expected_resource_utilization(&self) -> std::option::Option<& crate::model::ResourceUtilization> {
         self.expected_resource_utilization.as_ref()
     }
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
-    pub fn platform_differences(&self) -> std::option::Option<&[crate::model::PlatformDifference]> {
+    pub fn platform_differences(&self) -> std::option::Option<& [crate::model::PlatformDifference]> {
         self.platform_differences.as_deref()
     }
 }
 /// See [`TargetInstance`](crate::model::TargetInstance).
 pub mod target_instance {
-
+    
     /// A builder for [`TargetInstance`](crate::model::TargetInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7658,10 +6908,8 @@ pub mod target_instance {
         pub(crate) currency_code: std::option::Option<std::string::String>,
         pub(crate) default_target_instance: std::option::Option<bool>,
         pub(crate) resource_details: std::option::Option<crate::model::ResourceDetails>,
-        pub(crate) expected_resource_utilization:
-            std::option::Option<crate::model::ResourceUtilization>,
-        pub(crate) platform_differences:
-            std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
+        pub(crate) expected_resource_utilization: std::option::Option<crate::model::ResourceUtilization>,
+        pub(crate) platform_differences: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
     }
     impl Builder {
         /// <p>The expected cost to operate this instance type on a monthly basis.</p>
@@ -7670,12 +6918,8 @@ pub mod target_instance {
             self
         }
         /// <p>The expected cost to operate this instance type on a monthly basis.</p>
-        pub fn set_estimated_monthly_cost(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_monthly_cost = input;
-            self
+        pub fn set_estimated_monthly_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_monthly_cost = input; self
         }
         /// <p>The estimated savings that result from modification, on a monthly basis.</p>
         pub fn estimated_monthly_savings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7683,12 +6927,8 @@ pub mod target_instance {
             self
         }
         /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-        pub fn set_estimated_monthly_savings(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_monthly_savings = input;
-            self
+        pub fn set_estimated_monthly_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_monthly_savings = input; self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7696,12 +6936,8 @@ pub mod target_instance {
             self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
         pub fn default_target_instance(mut self, input: bool) -> Self {
@@ -7710,8 +6946,7 @@ pub mod target_instance {
         }
         /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
         pub fn set_default_target_instance(mut self, input: std::option::Option<bool>) -> Self {
-            self.default_target_instance = input;
-            self
+            self.default_target_instance = input; self
         }
         /// <p>Details on the target instance type. </p>
         pub fn resource_details(mut self, input: crate::model::ResourceDetails) -> Self {
@@ -7719,28 +6954,17 @@ pub mod target_instance {
             self
         }
         /// <p>Details on the target instance type. </p>
-        pub fn set_resource_details(
-            mut self,
-            input: std::option::Option<crate::model::ResourceDetails>,
-        ) -> Self {
-            self.resource_details = input;
-            self
+        pub fn set_resource_details(mut self, input: std::option::Option<crate::model::ResourceDetails>) -> Self {
+            self.resource_details = input; self
         }
         /// <p>The expected utilization metrics for target instance type.</p>
-        pub fn expected_resource_utilization(
-            mut self,
-            input: crate::model::ResourceUtilization,
-        ) -> Self {
+        pub fn expected_resource_utilization(mut self, input: crate::model::ResourceUtilization) -> Self {
             self.expected_resource_utilization = Some(input);
             self
         }
         /// <p>The expected utilization metrics for target instance type.</p>
-        pub fn set_expected_resource_utilization(
-            mut self,
-            input: std::option::Option<crate::model::ResourceUtilization>,
-        ) -> Self {
-            self.expected_resource_utilization = input;
-            self
+        pub fn set_expected_resource_utilization(mut self, input: std::option::Option<crate::model::ResourceUtilization>) -> Self {
+            self.expected_resource_utilization = input; self
         }
         /// Appends an item to `platform_differences`.
         ///
@@ -7749,31 +6973,37 @@ pub mod target_instance {
         /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
         pub fn platform_differences(mut self, input: crate::model::PlatformDifference) -> Self {
             let mut v = self.platform_differences.unwrap_or_default();
-            v.push(input);
-            self.platform_differences = Some(v);
-            self
+                            v.push(input);
+                            self.platform_differences = Some(v);
+                            self
         }
         /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
-        pub fn set_platform_differences(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
-        ) -> Self {
-            self.platform_differences = input;
-            self
+        pub fn set_platform_differences(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>) -> Self {
+            self.platform_differences = input; self
         }
         /// Consumes the builder and constructs a [`TargetInstance`](crate::model::TargetInstance).
         pub fn build(self) -> crate::model::TargetInstance {
             crate::model::TargetInstance {
-                estimated_monthly_cost: self.estimated_monthly_cost,
-                estimated_monthly_savings: self.estimated_monthly_savings,
-                currency_code: self.currency_code,
-                default_target_instance: self.default_target_instance.unwrap_or_default(),
-                resource_details: self.resource_details,
-                expected_resource_utilization: self.expected_resource_utilization,
-                platform_differences: self.platform_differences,
+                estimated_monthly_cost: self.estimated_monthly_cost
+                ,
+                estimated_monthly_savings: self.estimated_monthly_savings
+                ,
+                currency_code: self.currency_code
+                ,
+                default_target_instance: self.default_target_instance
+                    .unwrap_or_default()
+                ,
+                resource_details: self.resource_details
+                ,
+                expected_resource_utilization: self.expected_resource_utilization
+                ,
+                platform_differences: self.platform_differences
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetInstance {
     /// Creates a new builder-style object to manufacture [`TargetInstance`](crate::model::TargetInstance).
@@ -7788,9 +7018,9 @@ impl TargetInstance {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let platformdifference = unimplemented!();
 /// match platformdifference {
@@ -7815,22 +7045,14 @@ impl TargetInstance {
 /// Specifically, when `platformdifference` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PlatformDifference::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PlatformDifference {
     #[allow(missing_docs)] // documentation missing in model
     Hypervisor,
@@ -7843,7 +7065,7 @@ pub enum PlatformDifference {
     #[allow(missing_docs)] // documentation missing in model
     VirtualizationType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlatformDifference {
     fn from(s: &str) -> Self {
@@ -7853,19 +7075,17 @@ impl std::convert::From<&str> for PlatformDifference {
             "NETWORK_INTERFACE" => PlatformDifference::NetworkInterface,
             "STORAGE_INTERFACE" => PlatformDifference::StorageInterface,
             "VIRTUALIZATION_TYPE" => PlatformDifference::VirtualizationType,
-            other => {
-                PlatformDifference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PlatformDifference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PlatformDifference {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlatformDifference::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PlatformDifference::from(s))
+                }
+            }
 impl PlatformDifference {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7875,17 +7095,13 @@ impl PlatformDifference {
             PlatformDifference::NetworkInterface => "NETWORK_INTERFACE",
             PlatformDifference::StorageInterface => "STORAGE_INTERFACE",
             PlatformDifference::VirtualizationType => "VIRTUALIZATION_TYPE",
-            PlatformDifference::Unknown(value) => value.as_str(),
+            PlatformDifference::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "HYPERVISOR",
-            "INSTANCE_STORE_AVAILABILITY",
-            "NETWORK_INTERFACE",
-            "STORAGE_INTERFACE",
-            "VIRTUALIZATION_TYPE",
+            "HYPERVISOR", "INSTANCE_STORE_AVAILABILITY", "NETWORK_INTERFACE", "STORAGE_INTERFACE", "VIRTUALIZATION_TYPE"
         ]
     }
 }
@@ -7898,52 +7114,45 @@ impl AsRef<str> for PlatformDifference {
 /// <p>Resource utilization of current resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceUtilization {
+pub struct ResourceUtilization  {
     /// <p>The utilization of current Amazon EC2 instance. </p>
     #[doc(hidden)]
     pub ec2_resource_utilization: std::option::Option<crate::model::Ec2ResourceUtilization>,
 }
 impl ResourceUtilization {
     /// <p>The utilization of current Amazon EC2 instance. </p>
-    pub fn ec2_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::model::Ec2ResourceUtilization> {
+    pub fn ec2_resource_utilization(&self) -> std::option::Option<& crate::model::Ec2ResourceUtilization> {
         self.ec2_resource_utilization.as_ref()
     }
 }
 /// See [`ResourceUtilization`](crate::model::ResourceUtilization).
 pub mod resource_utilization {
-
+    
     /// A builder for [`ResourceUtilization`](crate::model::ResourceUtilization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ec2_resource_utilization:
-            std::option::Option<crate::model::Ec2ResourceUtilization>,
+        pub(crate) ec2_resource_utilization: std::option::Option<crate::model::Ec2ResourceUtilization>,
     }
     impl Builder {
         /// <p>The utilization of current Amazon EC2 instance. </p>
-        pub fn ec2_resource_utilization(
-            mut self,
-            input: crate::model::Ec2ResourceUtilization,
-        ) -> Self {
+        pub fn ec2_resource_utilization(mut self, input: crate::model::Ec2ResourceUtilization) -> Self {
             self.ec2_resource_utilization = Some(input);
             self
         }
         /// <p>The utilization of current Amazon EC2 instance. </p>
-        pub fn set_ec2_resource_utilization(
-            mut self,
-            input: std::option::Option<crate::model::Ec2ResourceUtilization>,
-        ) -> Self {
-            self.ec2_resource_utilization = input;
-            self
+        pub fn set_ec2_resource_utilization(mut self, input: std::option::Option<crate::model::Ec2ResourceUtilization>) -> Self {
+            self.ec2_resource_utilization = input; self
         }
         /// Consumes the builder and constructs a [`ResourceUtilization`](crate::model::ResourceUtilization).
         pub fn build(self) -> crate::model::ResourceUtilization {
             crate::model::ResourceUtilization {
-                ec2_resource_utilization: self.ec2_resource_utilization,
+                ec2_resource_utilization: self.ec2_resource_utilization
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceUtilization {
     /// Creates a new builder-style object to manufacture [`ResourceUtilization`](crate::model::ResourceUtilization).
@@ -7955,7 +7164,7 @@ impl ResourceUtilization {
 /// <p>Utilization metrics for the instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2ResourceUtilization {
+pub struct Ec2ResourceUtilization  {
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
     #[doc(hidden)]
     pub max_cpu_utilization_percentage: std::option::Option<std::string::String>,
@@ -7977,161 +7186,118 @@ pub struct Ec2ResourceUtilization {
 }
 impl Ec2ResourceUtilization {
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
-    pub fn max_cpu_utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn max_cpu_utilization_percentage(&self) -> std::option::Option<& str> {
         self.max_cpu_utilization_percentage.as_deref()
     }
     /// <p>The maximum observed or expected memory utilization of the instance.</p>
-    pub fn max_memory_utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn max_memory_utilization_percentage(&self) -> std::option::Option<& str> {
         self.max_memory_utilization_percentage.as_deref()
     }
     /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
-    pub fn max_storage_utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn max_storage_utilization_percentage(&self) -> std::option::Option<& str> {
         self.max_storage_utilization_percentage.as_deref()
     }
     /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
-    pub fn ebs_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::model::EbsResourceUtilization> {
+    pub fn ebs_resource_utilization(&self) -> std::option::Option<& crate::model::EbsResourceUtilization> {
         self.ebs_resource_utilization.as_ref()
     }
     /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
-    pub fn disk_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::model::DiskResourceUtilization> {
+    pub fn disk_resource_utilization(&self) -> std::option::Option<& crate::model::DiskResourceUtilization> {
         self.disk_resource_utilization.as_ref()
     }
     /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
-    pub fn network_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::model::NetworkResourceUtilization> {
+    pub fn network_resource_utilization(&self) -> std::option::Option<& crate::model::NetworkResourceUtilization> {
         self.network_resource_utilization.as_ref()
     }
 }
 /// See [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
 pub mod ec2_resource_utilization {
-
+    
     /// A builder for [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_cpu_utilization_percentage: std::option::Option<std::string::String>,
         pub(crate) max_memory_utilization_percentage: std::option::Option<std::string::String>,
         pub(crate) max_storage_utilization_percentage: std::option::Option<std::string::String>,
-        pub(crate) ebs_resource_utilization:
-            std::option::Option<crate::model::EbsResourceUtilization>,
-        pub(crate) disk_resource_utilization:
-            std::option::Option<crate::model::DiskResourceUtilization>,
-        pub(crate) network_resource_utilization:
-            std::option::Option<crate::model::NetworkResourceUtilization>,
+        pub(crate) ebs_resource_utilization: std::option::Option<crate::model::EbsResourceUtilization>,
+        pub(crate) disk_resource_utilization: std::option::Option<crate::model::DiskResourceUtilization>,
+        pub(crate) network_resource_utilization: std::option::Option<crate::model::NetworkResourceUtilization>,
     }
     impl Builder {
         /// <p>The maximum observed or expected CPU utilization of the instance.</p>
-        pub fn max_cpu_utilization_percentage(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn max_cpu_utilization_percentage(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_cpu_utilization_percentage = Some(input.into());
             self
         }
         /// <p>The maximum observed or expected CPU utilization of the instance.</p>
-        pub fn set_max_cpu_utilization_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_cpu_utilization_percentage = input;
-            self
+        pub fn set_max_cpu_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_cpu_utilization_percentage = input; self
         }
         /// <p>The maximum observed or expected memory utilization of the instance.</p>
-        pub fn max_memory_utilization_percentage(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn max_memory_utilization_percentage(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_memory_utilization_percentage = Some(input.into());
             self
         }
         /// <p>The maximum observed or expected memory utilization of the instance.</p>
-        pub fn set_max_memory_utilization_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_memory_utilization_percentage = input;
-            self
+        pub fn set_max_memory_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_memory_utilization_percentage = input; self
         }
         /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
-        pub fn max_storage_utilization_percentage(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn max_storage_utilization_percentage(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_storage_utilization_percentage = Some(input.into());
             self
         }
         /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
-        pub fn set_max_storage_utilization_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_storage_utilization_percentage = input;
-            self
+        pub fn set_max_storage_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_storage_utilization_percentage = input; self
         }
         /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
-        pub fn ebs_resource_utilization(
-            mut self,
-            input: crate::model::EbsResourceUtilization,
-        ) -> Self {
+        pub fn ebs_resource_utilization(mut self, input: crate::model::EbsResourceUtilization) -> Self {
             self.ebs_resource_utilization = Some(input);
             self
         }
         /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
-        pub fn set_ebs_resource_utilization(
-            mut self,
-            input: std::option::Option<crate::model::EbsResourceUtilization>,
-        ) -> Self {
-            self.ebs_resource_utilization = input;
-            self
+        pub fn set_ebs_resource_utilization(mut self, input: std::option::Option<crate::model::EbsResourceUtilization>) -> Self {
+            self.ebs_resource_utilization = input; self
         }
         /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
-        pub fn disk_resource_utilization(
-            mut self,
-            input: crate::model::DiskResourceUtilization,
-        ) -> Self {
+        pub fn disk_resource_utilization(mut self, input: crate::model::DiskResourceUtilization) -> Self {
             self.disk_resource_utilization = Some(input);
             self
         }
         /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
-        pub fn set_disk_resource_utilization(
-            mut self,
-            input: std::option::Option<crate::model::DiskResourceUtilization>,
-        ) -> Self {
-            self.disk_resource_utilization = input;
-            self
+        pub fn set_disk_resource_utilization(mut self, input: std::option::Option<crate::model::DiskResourceUtilization>) -> Self {
+            self.disk_resource_utilization = input; self
         }
         /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
-        pub fn network_resource_utilization(
-            mut self,
-            input: crate::model::NetworkResourceUtilization,
-        ) -> Self {
+        pub fn network_resource_utilization(mut self, input: crate::model::NetworkResourceUtilization) -> Self {
             self.network_resource_utilization = Some(input);
             self
         }
         /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
-        pub fn set_network_resource_utilization(
-            mut self,
-            input: std::option::Option<crate::model::NetworkResourceUtilization>,
-        ) -> Self {
-            self.network_resource_utilization = input;
-            self
+        pub fn set_network_resource_utilization(mut self, input: std::option::Option<crate::model::NetworkResourceUtilization>) -> Self {
+            self.network_resource_utilization = input; self
         }
         /// Consumes the builder and constructs a [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
         pub fn build(self) -> crate::model::Ec2ResourceUtilization {
             crate::model::Ec2ResourceUtilization {
-                max_cpu_utilization_percentage: self.max_cpu_utilization_percentage,
-                max_memory_utilization_percentage: self.max_memory_utilization_percentage,
-                max_storage_utilization_percentage: self.max_storage_utilization_percentage,
-                ebs_resource_utilization: self.ebs_resource_utilization,
-                disk_resource_utilization: self.disk_resource_utilization,
-                network_resource_utilization: self.network_resource_utilization,
+                max_cpu_utilization_percentage: self.max_cpu_utilization_percentage
+                ,
+                max_memory_utilization_percentage: self.max_memory_utilization_percentage
+                ,
+                max_storage_utilization_percentage: self.max_storage_utilization_percentage
+                ,
+                ebs_resource_utilization: self.ebs_resource_utilization
+                ,
+                disk_resource_utilization: self.disk_resource_utilization
+                ,
+                network_resource_utilization: self.network_resource_utilization
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2ResourceUtilization {
     /// Creates a new builder-style object to manufacture [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
@@ -8143,7 +7309,7 @@ impl Ec2ResourceUtilization {
 /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkResourceUtilization {
+pub struct NetworkResourceUtilization  {
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
     #[doc(hidden)]
     pub network_in_bytes_per_second: std::option::Option<std::string::String>,
@@ -8159,25 +7325,25 @@ pub struct NetworkResourceUtilization {
 }
 impl NetworkResourceUtilization {
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
-    pub fn network_in_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn network_in_bytes_per_second(&self) -> std::option::Option<& str> {
         self.network_in_bytes_per_second.as_deref()
     }
     /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
-    pub fn network_out_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn network_out_bytes_per_second(&self) -> std::option::Option<& str> {
         self.network_out_bytes_per_second.as_deref()
     }
     /// <p>The network inbound packets that are measured in packets per second. </p>
-    pub fn network_packets_in_per_second(&self) -> std::option::Option<&str> {
+    pub fn network_packets_in_per_second(&self) -> std::option::Option<& str> {
         self.network_packets_in_per_second.as_deref()
     }
     /// <p>The network outbound packets that are measured in packets per second. </p>
-    pub fn network_packets_out_per_second(&self) -> std::option::Option<&str> {
+    pub fn network_packets_out_per_second(&self) -> std::option::Option<& str> {
         self.network_packets_out_per_second.as_deref()
     }
 }
 /// See [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
 pub mod network_resource_utilization {
-
+    
     /// A builder for [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8188,79 +7354,57 @@ pub mod network_resource_utilization {
     }
     impl Builder {
         /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
-        pub fn network_in_bytes_per_second(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn network_in_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_in_bytes_per_second = Some(input.into());
             self
         }
         /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
-        pub fn set_network_in_bytes_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_in_bytes_per_second = input;
-            self
+        pub fn set_network_in_bytes_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_in_bytes_per_second = input; self
         }
         /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
-        pub fn network_out_bytes_per_second(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn network_out_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_out_bytes_per_second = Some(input.into());
             self
         }
         /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
-        pub fn set_network_out_bytes_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_out_bytes_per_second = input;
-            self
+        pub fn set_network_out_bytes_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_out_bytes_per_second = input; self
         }
         /// <p>The network inbound packets that are measured in packets per second. </p>
-        pub fn network_packets_in_per_second(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn network_packets_in_per_second(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_packets_in_per_second = Some(input.into());
             self
         }
         /// <p>The network inbound packets that are measured in packets per second. </p>
-        pub fn set_network_packets_in_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_packets_in_per_second = input;
-            self
+        pub fn set_network_packets_in_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_packets_in_per_second = input; self
         }
         /// <p>The network outbound packets that are measured in packets per second. </p>
-        pub fn network_packets_out_per_second(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn network_packets_out_per_second(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_packets_out_per_second = Some(input.into());
             self
         }
         /// <p>The network outbound packets that are measured in packets per second. </p>
-        pub fn set_network_packets_out_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_packets_out_per_second = input;
-            self
+        pub fn set_network_packets_out_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_packets_out_per_second = input; self
         }
         /// Consumes the builder and constructs a [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
         pub fn build(self) -> crate::model::NetworkResourceUtilization {
             crate::model::NetworkResourceUtilization {
-                network_in_bytes_per_second: self.network_in_bytes_per_second,
-                network_out_bytes_per_second: self.network_out_bytes_per_second,
-                network_packets_in_per_second: self.network_packets_in_per_second,
-                network_packets_out_per_second: self.network_packets_out_per_second,
+                network_in_bytes_per_second: self.network_in_bytes_per_second
+                ,
+                network_out_bytes_per_second: self.network_out_bytes_per_second
+                ,
+                network_packets_in_per_second: self.network_packets_in_per_second
+                ,
+                network_packets_out_per_second: self.network_packets_out_per_second
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkResourceUtilization {
     /// Creates a new builder-style object to manufacture [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
@@ -8272,7 +7416,7 @@ impl NetworkResourceUtilization {
 /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiskResourceUtilization {
+pub struct DiskResourceUtilization  {
     /// <p>The maximum number of read operations per second. </p>
     #[doc(hidden)]
     pub disk_read_ops_per_second: std::option::Option<std::string::String>,
@@ -8288,25 +7432,25 @@ pub struct DiskResourceUtilization {
 }
 impl DiskResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
-    pub fn disk_read_ops_per_second(&self) -> std::option::Option<&str> {
+    pub fn disk_read_ops_per_second(&self) -> std::option::Option<& str> {
         self.disk_read_ops_per_second.as_deref()
     }
     /// <p>The maximum number of write operations per second. </p>
-    pub fn disk_write_ops_per_second(&self) -> std::option::Option<&str> {
+    pub fn disk_write_ops_per_second(&self) -> std::option::Option<& str> {
         self.disk_write_ops_per_second.as_deref()
     }
     /// <p>The maximum read throughput operations per second. </p>
-    pub fn disk_read_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn disk_read_bytes_per_second(&self) -> std::option::Option<& str> {
         self.disk_read_bytes_per_second.as_deref()
     }
     /// <p>The maximum write throughput operations per second. </p>
-    pub fn disk_write_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn disk_write_bytes_per_second(&self) -> std::option::Option<& str> {
         self.disk_write_bytes_per_second.as_deref()
     }
 }
 /// See [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
 pub mod disk_resource_utilization {
-
+    
     /// A builder for [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8322,12 +7466,8 @@ pub mod disk_resource_utilization {
             self
         }
         /// <p>The maximum number of read operations per second. </p>
-        pub fn set_disk_read_ops_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disk_read_ops_per_second = input;
-            self
+        pub fn set_disk_read_ops_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disk_read_ops_per_second = input; self
         }
         /// <p>The maximum number of write operations per second. </p>
         pub fn disk_write_ops_per_second(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8335,12 +7475,8 @@ pub mod disk_resource_utilization {
             self
         }
         /// <p>The maximum number of write operations per second. </p>
-        pub fn set_disk_write_ops_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disk_write_ops_per_second = input;
-            self
+        pub fn set_disk_write_ops_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disk_write_ops_per_second = input; self
         }
         /// <p>The maximum read throughput operations per second. </p>
         pub fn disk_read_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8348,39 +7484,34 @@ pub mod disk_resource_utilization {
             self
         }
         /// <p>The maximum read throughput operations per second. </p>
-        pub fn set_disk_read_bytes_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disk_read_bytes_per_second = input;
-            self
+        pub fn set_disk_read_bytes_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disk_read_bytes_per_second = input; self
         }
         /// <p>The maximum write throughput operations per second. </p>
-        pub fn disk_write_bytes_per_second(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn disk_write_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
             self.disk_write_bytes_per_second = Some(input.into());
             self
         }
         /// <p>The maximum write throughput operations per second. </p>
-        pub fn set_disk_write_bytes_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disk_write_bytes_per_second = input;
-            self
+        pub fn set_disk_write_bytes_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disk_write_bytes_per_second = input; self
         }
         /// Consumes the builder and constructs a [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
         pub fn build(self) -> crate::model::DiskResourceUtilization {
             crate::model::DiskResourceUtilization {
-                disk_read_ops_per_second: self.disk_read_ops_per_second,
-                disk_write_ops_per_second: self.disk_write_ops_per_second,
-                disk_read_bytes_per_second: self.disk_read_bytes_per_second,
-                disk_write_bytes_per_second: self.disk_write_bytes_per_second,
+                disk_read_ops_per_second: self.disk_read_ops_per_second
+                ,
+                disk_write_ops_per_second: self.disk_write_ops_per_second
+                ,
+                disk_read_bytes_per_second: self.disk_read_bytes_per_second
+                ,
+                disk_write_bytes_per_second: self.disk_write_bytes_per_second
+                ,
             }
         }
     }
+    
+    
 }
 impl DiskResourceUtilization {
     /// Creates a new builder-style object to manufacture [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
@@ -8392,7 +7523,7 @@ impl DiskResourceUtilization {
 /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsResourceUtilization {
+pub struct EbsResourceUtilization  {
     /// <p>The maximum number of read operations per second. </p>
     #[doc(hidden)]
     pub ebs_read_ops_per_second: std::option::Option<std::string::String>,
@@ -8408,25 +7539,25 @@ pub struct EbsResourceUtilization {
 }
 impl EbsResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
-    pub fn ebs_read_ops_per_second(&self) -> std::option::Option<&str> {
+    pub fn ebs_read_ops_per_second(&self) -> std::option::Option<& str> {
         self.ebs_read_ops_per_second.as_deref()
     }
     /// <p>The maximum number of write operations per second. </p>
-    pub fn ebs_write_ops_per_second(&self) -> std::option::Option<&str> {
+    pub fn ebs_write_ops_per_second(&self) -> std::option::Option<& str> {
         self.ebs_write_ops_per_second.as_deref()
     }
     /// <p>The maximum size of read operations per second </p>
-    pub fn ebs_read_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn ebs_read_bytes_per_second(&self) -> std::option::Option<& str> {
         self.ebs_read_bytes_per_second.as_deref()
     }
     /// <p>The maximum size of write operations per second. </p>
-    pub fn ebs_write_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn ebs_write_bytes_per_second(&self) -> std::option::Option<& str> {
         self.ebs_write_bytes_per_second.as_deref()
     }
 }
 /// See [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
 pub mod ebs_resource_utilization {
-
+    
     /// A builder for [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8442,12 +7573,8 @@ pub mod ebs_resource_utilization {
             self
         }
         /// <p>The maximum number of read operations per second. </p>
-        pub fn set_ebs_read_ops_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_read_ops_per_second = input;
-            self
+        pub fn set_ebs_read_ops_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_read_ops_per_second = input; self
         }
         /// <p>The maximum number of write operations per second. </p>
         pub fn ebs_write_ops_per_second(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8455,12 +7582,8 @@ pub mod ebs_resource_utilization {
             self
         }
         /// <p>The maximum number of write operations per second. </p>
-        pub fn set_ebs_write_ops_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_write_ops_per_second = input;
-            self
+        pub fn set_ebs_write_ops_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_write_ops_per_second = input; self
         }
         /// <p>The maximum size of read operations per second </p>
         pub fn ebs_read_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8468,12 +7591,8 @@ pub mod ebs_resource_utilization {
             self
         }
         /// <p>The maximum size of read operations per second </p>
-        pub fn set_ebs_read_bytes_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_read_bytes_per_second = input;
-            self
+        pub fn set_ebs_read_bytes_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_read_bytes_per_second = input; self
         }
         /// <p>The maximum size of write operations per second. </p>
         pub fn ebs_write_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8481,23 +7600,25 @@ pub mod ebs_resource_utilization {
             self
         }
         /// <p>The maximum size of write operations per second. </p>
-        pub fn set_ebs_write_bytes_per_second(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_write_bytes_per_second = input;
-            self
+        pub fn set_ebs_write_bytes_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_write_bytes_per_second = input; self
         }
         /// Consumes the builder and constructs a [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
         pub fn build(self) -> crate::model::EbsResourceUtilization {
             crate::model::EbsResourceUtilization {
-                ebs_read_ops_per_second: self.ebs_read_ops_per_second,
-                ebs_write_ops_per_second: self.ebs_write_ops_per_second,
-                ebs_read_bytes_per_second: self.ebs_read_bytes_per_second,
-                ebs_write_bytes_per_second: self.ebs_write_bytes_per_second,
+                ebs_read_ops_per_second: self.ebs_read_ops_per_second
+                ,
+                ebs_write_ops_per_second: self.ebs_write_ops_per_second
+                ,
+                ebs_read_bytes_per_second: self.ebs_read_bytes_per_second
+                ,
+                ebs_write_bytes_per_second: self.ebs_write_bytes_per_second
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsResourceUtilization {
     /// Creates a new builder-style object to manufacture [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
@@ -8509,20 +7630,20 @@ impl EbsResourceUtilization {
 /// <p>Details for the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDetails {
+pub struct ResourceDetails  {
     /// <p>Details for the Amazon EC2 resource.</p>
     #[doc(hidden)]
     pub ec2_resource_details: std::option::Option<crate::model::Ec2ResourceDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for the Amazon EC2 resource.</p>
-    pub fn ec2_resource_details(&self) -> std::option::Option<&crate::model::Ec2ResourceDetails> {
+    pub fn ec2_resource_details(&self) -> std::option::Option<& crate::model::Ec2ResourceDetails> {
         self.ec2_resource_details.as_ref()
     }
 }
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
 pub mod resource_details {
-
+    
     /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8535,20 +7656,19 @@ pub mod resource_details {
             self
         }
         /// <p>Details for the Amazon EC2 resource.</p>
-        pub fn set_ec2_resource_details(
-            mut self,
-            input: std::option::Option<crate::model::Ec2ResourceDetails>,
-        ) -> Self {
-            self.ec2_resource_details = input;
-            self
+        pub fn set_ec2_resource_details(mut self, input: std::option::Option<crate::model::Ec2ResourceDetails>) -> Self {
+            self.ec2_resource_details = input; self
         }
         /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails).
         pub fn build(self) -> crate::model::ResourceDetails {
             crate::model::ResourceDetails {
-                ec2_resource_details: self.ec2_resource_details,
+                ec2_resource_details: self.ec2_resource_details
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
@@ -8560,7 +7680,7 @@ impl ResourceDetails {
 /// <p>Details on the Amazon EC2 Resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2ResourceDetails {
+pub struct Ec2ResourceDetails  {
     /// <p>The hourly public On-Demand rate for the instance type.</p>
     #[doc(hidden)]
     pub hourly_on_demand_rate: std::option::Option<std::string::String>,
@@ -8591,45 +7711,45 @@ pub struct Ec2ResourceDetails {
 }
 impl Ec2ResourceDetails {
     /// <p>The hourly public On-Demand rate for the instance type.</p>
-    pub fn hourly_on_demand_rate(&self) -> std::option::Option<&str> {
+    pub fn hourly_on_demand_rate(&self) -> std::option::Option<& str> {
         self.hourly_on_demand_rate.as_deref()
     }
     /// <p>The type of Amazon Web Services instance.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The platform of the Amazon Web Services instance. The platform is the specific combination of operating system, license model, and software on an instance.</p>
-    pub fn platform(&self) -> std::option::Option<&str> {
+    pub fn platform(&self) -> std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The Amazon Web Services Region of the instance.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The SKU of the product.</p>
-    pub fn sku(&self) -> std::option::Option<&str> {
+    pub fn sku(&self) -> std::option::Option<& str> {
         self.sku.as_deref()
     }
     /// <p>The memory capacity of the Amazon Web Services instance.</p>
-    pub fn memory(&self) -> std::option::Option<&str> {
+    pub fn memory(&self) -> std::option::Option<& str> {
         self.memory.as_deref()
     }
     /// <p>The network performance capacity of the Amazon Web Services instance.</p>
-    pub fn network_performance(&self) -> std::option::Option<&str> {
+    pub fn network_performance(&self) -> std::option::Option<& str> {
         self.network_performance.as_deref()
     }
     /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS storage.</p>
-    pub fn storage(&self) -> std::option::Option<&str> {
+    pub fn storage(&self) -> std::option::Option<& str> {
         self.storage.as_deref()
     }
     /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
-    pub fn vcpu(&self) -> std::option::Option<&str> {
+    pub fn vcpu(&self) -> std::option::Option<& str> {
         self.vcpu.as_deref()
     }
 }
 /// See [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
 pub mod ec2_resource_details {
-
+    
     /// A builder for [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8650,12 +7770,8 @@ pub mod ec2_resource_details {
             self
         }
         /// <p>The hourly public On-Demand rate for the instance type.</p>
-        pub fn set_hourly_on_demand_rate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hourly_on_demand_rate = input;
-            self
+        pub fn set_hourly_on_demand_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hourly_on_demand_rate = input; self
         }
         /// <p>The type of Amazon Web Services instance.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8663,12 +7779,8 @@ pub mod ec2_resource_details {
             self
         }
         /// <p>The type of Amazon Web Services instance.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The platform of the Amazon Web Services instance. The platform is the specific combination of operating system, license model, and software on an instance.</p>
         pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8677,8 +7789,7 @@ pub mod ec2_resource_details {
         }
         /// <p>The platform of the Amazon Web Services instance. The platform is the specific combination of operating system, license model, and software on an instance.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The Amazon Web Services Region of the instance.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8687,8 +7798,7 @@ pub mod ec2_resource_details {
         }
         /// <p>The Amazon Web Services Region of the instance.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The SKU of the product.</p>
         pub fn sku(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8697,8 +7807,7 @@ pub mod ec2_resource_details {
         }
         /// <p>The SKU of the product.</p>
         pub fn set_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sku = input;
-            self
+            self.sku = input; self
         }
         /// <p>The memory capacity of the Amazon Web Services instance.</p>
         pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8707,8 +7816,7 @@ pub mod ec2_resource_details {
         }
         /// <p>The memory capacity of the Amazon Web Services instance.</p>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.memory = input;
-            self
+            self.memory = input; self
         }
         /// <p>The network performance capacity of the Amazon Web Services instance.</p>
         pub fn network_performance(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8716,12 +7824,8 @@ pub mod ec2_resource_details {
             self
         }
         /// <p>The network performance capacity of the Amazon Web Services instance.</p>
-        pub fn set_network_performance(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_performance = input;
-            self
+        pub fn set_network_performance(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_performance = input; self
         }
         /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS storage.</p>
         pub fn storage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8730,8 +7834,7 @@ pub mod ec2_resource_details {
         }
         /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS storage.</p>
         pub fn set_storage(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.storage = input;
-            self
+            self.storage = input; self
         }
         /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
         pub fn vcpu(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8740,24 +7843,34 @@ pub mod ec2_resource_details {
         }
         /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
         pub fn set_vcpu(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vcpu = input;
-            self
+            self.vcpu = input; self
         }
         /// Consumes the builder and constructs a [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
         pub fn build(self) -> crate::model::Ec2ResourceDetails {
             crate::model::Ec2ResourceDetails {
-                hourly_on_demand_rate: self.hourly_on_demand_rate,
-                instance_type: self.instance_type,
-                platform: self.platform,
-                region: self.region,
-                sku: self.sku,
-                memory: self.memory,
-                network_performance: self.network_performance,
-                storage: self.storage,
-                vcpu: self.vcpu,
+                hourly_on_demand_rate: self.hourly_on_demand_rate
+                ,
+                instance_type: self.instance_type
+                ,
+                platform: self.platform
+                ,
+                region: self.region
+                ,
+                sku: self.sku
+                ,
+                memory: self.memory
+                ,
+                network_performance: self.network_performance
+                ,
+                storage: self.storage
+                ,
+                vcpu: self.vcpu
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2ResourceDetails {
     /// Creates a new builder-style object to manufacture [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
@@ -8772,9 +7885,9 @@ impl Ec2ResourceDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rightsizingtype = unimplemented!();
 /// match rightsizingtype {
@@ -8796,58 +7909,52 @@ impl Ec2ResourceDetails {
 /// Specifically, when `rightsizingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RightsizingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RightsizingType {
     #[allow(missing_docs)] // documentation missing in model
     Modify,
     #[allow(missing_docs)] // documentation missing in model
     Terminate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RightsizingType {
     fn from(s: &str) -> Self {
         match s {
             "MODIFY" => RightsizingType::Modify,
             "TERMINATE" => RightsizingType::Terminate,
-            other => RightsizingType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RightsizingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RightsizingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RightsizingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RightsizingType::from(s))
+                }
+            }
 impl RightsizingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RightsizingType::Modify => "MODIFY",
             RightsizingType::Terminate => "TERMINATE",
-            RightsizingType::Unknown(value) => value.as_str(),
+            RightsizingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MODIFY", "TERMINATE"]
+        &[
+            "MODIFY", "TERMINATE"
+        ]
     }
 }
 impl AsRef<str> for RightsizingType {
@@ -8859,7 +7966,7 @@ impl AsRef<str> for RightsizingType {
 /// <p>Context about the current instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CurrentInstance {
+pub struct CurrentInstance  {
     /// <p>Resource ID of the current instance.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -8896,54 +8003,53 @@ pub struct CurrentInstance {
 }
 impl CurrentInstance {
     /// <p>Resource ID of the current instance.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
-    pub fn instance_name(&self) -> std::option::Option<&str> {
+    pub fn instance_name(&self) -> std::option::Option<& str> {
         self.instance_name.as_deref()
     }
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagValues]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagValues]> {
         self.tags.as_deref()
     }
     /// <p>Details about the resource and utilization.</p>
-    pub fn resource_details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+    pub fn resource_details(&self) -> std::option::Option<& crate::model::ResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>Utilization information of the current instance during the lookback period.</p>
-    pub fn resource_utilization(&self) -> std::option::Option<&crate::model::ResourceUtilization> {
+    pub fn resource_utilization(&self) -> std::option::Option<& crate::model::ResourceUtilization> {
         self.resource_utilization.as_ref()
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
-    pub fn reservation_covered_hours_in_lookback_period(&self) -> std::option::Option<&str> {
+    pub fn reservation_covered_hours_in_lookback_period(&self) -> std::option::Option<& str> {
         self.reservation_covered_hours_in_lookback_period.as_deref()
     }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
-    pub fn savings_plans_covered_hours_in_lookback_period(&self) -> std::option::Option<&str> {
-        self.savings_plans_covered_hours_in_lookback_period
-            .as_deref()
+    pub fn savings_plans_covered_hours_in_lookback_period(&self) -> std::option::Option<& str> {
+        self.savings_plans_covered_hours_in_lookback_period.as_deref()
     }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
-    pub fn on_demand_hours_in_lookback_period(&self) -> std::option::Option<&str> {
+    pub fn on_demand_hours_in_lookback_period(&self) -> std::option::Option<& str> {
         self.on_demand_hours_in_lookback_period.as_deref()
     }
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
-    pub fn total_running_hours_in_lookback_period(&self) -> std::option::Option<&str> {
+    pub fn total_running_hours_in_lookback_period(&self) -> std::option::Option<& str> {
         self.total_running_hours_in_lookback_period.as_deref()
     }
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
-    pub fn monthly_cost(&self) -> std::option::Option<&str> {
+    pub fn monthly_cost(&self) -> std::option::Option<& str> {
         self.monthly_cost.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
 }
 /// See [`CurrentInstance`](crate::model::CurrentInstance).
 pub mod current_instance {
-
+    
     /// A builder for [`CurrentInstance`](crate::model::CurrentInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8952,10 +8058,8 @@ pub mod current_instance {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagValues>>,
         pub(crate) resource_details: std::option::Option<crate::model::ResourceDetails>,
         pub(crate) resource_utilization: std::option::Option<crate::model::ResourceUtilization>,
-        pub(crate) reservation_covered_hours_in_lookback_period:
-            std::option::Option<std::string::String>,
-        pub(crate) savings_plans_covered_hours_in_lookback_period:
-            std::option::Option<std::string::String>,
+        pub(crate) reservation_covered_hours_in_lookback_period: std::option::Option<std::string::String>,
+        pub(crate) savings_plans_covered_hours_in_lookback_period: std::option::Option<std::string::String>,
         pub(crate) on_demand_hours_in_lookback_period: std::option::Option<std::string::String>,
         pub(crate) total_running_hours_in_lookback_period: std::option::Option<std::string::String>,
         pub(crate) monthly_cost: std::option::Option<std::string::String>,
@@ -8969,8 +8073,7 @@ pub mod current_instance {
         }
         /// <p>Resource ID of the current instance.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
         pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8978,12 +8081,8 @@ pub mod current_instance {
             self
         }
         /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
-        pub fn set_instance_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_name = input;
-            self
+        pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -8992,17 +8091,13 @@ pub mod current_instance {
         /// <p>Cost allocation resource tags that are applied to the instance.</p>
         pub fn tags(mut self, input: crate::model::TagValues) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Cost allocation resource tags that are applied to the instance.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagValues>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagValues>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Details about the resource and utilization.</p>
         pub fn resource_details(mut self, input: crate::model::ResourceDetails) -> Self {
@@ -9010,12 +8105,8 @@ pub mod current_instance {
             self
         }
         /// <p>Details about the resource and utilization.</p>
-        pub fn set_resource_details(
-            mut self,
-            input: std::option::Option<crate::model::ResourceDetails>,
-        ) -> Self {
-            self.resource_details = input;
-            self
+        pub fn set_resource_details(mut self, input: std::option::Option<crate::model::ResourceDetails>) -> Self {
+            self.resource_details = input; self
         }
         /// <p>Utilization information of the current instance during the lookback period.</p>
         pub fn resource_utilization(mut self, input: crate::model::ResourceUtilization) -> Self {
@@ -9023,76 +8114,44 @@ pub mod current_instance {
             self
         }
         /// <p>Utilization information of the current instance during the lookback period.</p>
-        pub fn set_resource_utilization(
-            mut self,
-            input: std::option::Option<crate::model::ResourceUtilization>,
-        ) -> Self {
-            self.resource_utilization = input;
-            self
+        pub fn set_resource_utilization(mut self, input: std::option::Option<crate::model::ResourceUtilization>) -> Self {
+            self.resource_utilization = input; self
         }
         /// <p>The number of hours during the lookback period that's covered by reservations.</p>
-        pub fn reservation_covered_hours_in_lookback_period(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn reservation_covered_hours_in_lookback_period(mut self, input: impl Into<std::string::String>) -> Self {
             self.reservation_covered_hours_in_lookback_period = Some(input.into());
             self
         }
         /// <p>The number of hours during the lookback period that's covered by reservations.</p>
-        pub fn set_reservation_covered_hours_in_lookback_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reservation_covered_hours_in_lookback_period = input;
-            self
+        pub fn set_reservation_covered_hours_in_lookback_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reservation_covered_hours_in_lookback_period = input; self
         }
         /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
-        pub fn savings_plans_covered_hours_in_lookback_period(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn savings_plans_covered_hours_in_lookback_period(mut self, input: impl Into<std::string::String>) -> Self {
             self.savings_plans_covered_hours_in_lookback_period = Some(input.into());
             self
         }
         /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
-        pub fn set_savings_plans_covered_hours_in_lookback_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.savings_plans_covered_hours_in_lookback_period = input;
-            self
+        pub fn set_savings_plans_covered_hours_in_lookback_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.savings_plans_covered_hours_in_lookback_period = input; self
         }
         /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
-        pub fn on_demand_hours_in_lookback_period(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn on_demand_hours_in_lookback_period(mut self, input: impl Into<std::string::String>) -> Self {
             self.on_demand_hours_in_lookback_period = Some(input.into());
             self
         }
         /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
-        pub fn set_on_demand_hours_in_lookback_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.on_demand_hours_in_lookback_period = input;
-            self
+        pub fn set_on_demand_hours_in_lookback_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_demand_hours_in_lookback_period = input; self
         }
         /// <p>The total number of hours that the instance ran during the lookback period.</p>
-        pub fn total_running_hours_in_lookback_period(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn total_running_hours_in_lookback_period(mut self, input: impl Into<std::string::String>) -> Self {
             self.total_running_hours_in_lookback_period = Some(input.into());
             self
         }
         /// <p>The total number of hours that the instance ran during the lookback period.</p>
-        pub fn set_total_running_hours_in_lookback_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_running_hours_in_lookback_period = input;
-            self
+        pub fn set_total_running_hours_in_lookback_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_running_hours_in_lookback_period = input; self
         }
         /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
         pub fn monthly_cost(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9101,8 +8160,7 @@ pub mod current_instance {
         }
         /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
         pub fn set_monthly_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.monthly_cost = input;
-            self
+            self.monthly_cost = input; self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9110,32 +8168,39 @@ pub mod current_instance {
             self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// Consumes the builder and constructs a [`CurrentInstance`](crate::model::CurrentInstance).
         pub fn build(self) -> crate::model::CurrentInstance {
             crate::model::CurrentInstance {
-                resource_id: self.resource_id,
-                instance_name: self.instance_name,
-                tags: self.tags,
-                resource_details: self.resource_details,
-                resource_utilization: self.resource_utilization,
-                reservation_covered_hours_in_lookback_period: self
-                    .reservation_covered_hours_in_lookback_period,
-                savings_plans_covered_hours_in_lookback_period: self
-                    .savings_plans_covered_hours_in_lookback_period,
-                on_demand_hours_in_lookback_period: self.on_demand_hours_in_lookback_period,
-                total_running_hours_in_lookback_period: self.total_running_hours_in_lookback_period,
-                monthly_cost: self.monthly_cost,
-                currency_code: self.currency_code,
+                resource_id: self.resource_id
+                ,
+                instance_name: self.instance_name
+                ,
+                tags: self.tags
+                ,
+                resource_details: self.resource_details
+                ,
+                resource_utilization: self.resource_utilization
+                ,
+                reservation_covered_hours_in_lookback_period: self.reservation_covered_hours_in_lookback_period
+                ,
+                savings_plans_covered_hours_in_lookback_period: self.savings_plans_covered_hours_in_lookback_period
+                ,
+                on_demand_hours_in_lookback_period: self.on_demand_hours_in_lookback_period
+                ,
+                total_running_hours_in_lookback_period: self.total_running_hours_in_lookback_period
+                ,
+                monthly_cost: self.monthly_cost
+                ,
+                currency_code: self.currency_code
+                ,
             }
         }
     }
+    
+    
 }
 impl CurrentInstance {
     /// Creates a new builder-style object to manufacture [`CurrentInstance`](crate::model::CurrentInstance).
@@ -9147,7 +8212,7 @@ impl CurrentInstance {
 /// <p>The summary of rightsizing recommendations </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RightsizingRecommendationSummary {
+pub struct RightsizingRecommendationSummary  {
     /// <p>The total number of instance recommendations.</p>
     #[doc(hidden)]
     pub total_recommendation_count: std::option::Option<std::string::String>,
@@ -9163,25 +8228,25 @@ pub struct RightsizingRecommendationSummary {
 }
 impl RightsizingRecommendationSummary {
     /// <p>The total number of instance recommendations.</p>
-    pub fn total_recommendation_count(&self) -> std::option::Option<&str> {
+    pub fn total_recommendation_count(&self) -> std::option::Option<& str> {
         self.total_recommendation_count.as_deref()
     }
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
-    pub fn estimated_total_monthly_savings_amount(&self) -> std::option::Option<&str> {
+    pub fn estimated_total_monthly_savings_amount(&self) -> std::option::Option<& str> {
         self.estimated_total_monthly_savings_amount.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
-    pub fn savings_currency_code(&self) -> std::option::Option<&str> {
+    pub fn savings_currency_code(&self) -> std::option::Option<& str> {
         self.savings_currency_code.as_deref()
     }
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
-    pub fn savings_percentage(&self) -> std::option::Option<&str> {
+    pub fn savings_percentage(&self) -> std::option::Option<& str> {
         self.savings_percentage.as_deref()
     }
 }
 /// See [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
 pub mod rightsizing_recommendation_summary {
-
+    
     /// A builder for [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9197,28 +8262,17 @@ pub mod rightsizing_recommendation_summary {
             self
         }
         /// <p>The total number of instance recommendations.</p>
-        pub fn set_total_recommendation_count(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_recommendation_count = input;
-            self
+        pub fn set_total_recommendation_count(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_recommendation_count = input; self
         }
         /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
-        pub fn estimated_total_monthly_savings_amount(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_total_monthly_savings_amount(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_total_monthly_savings_amount = Some(input.into());
             self
         }
         /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
-        pub fn set_estimated_total_monthly_savings_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_total_monthly_savings_amount = input;
-            self
+        pub fn set_estimated_total_monthly_savings_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_total_monthly_savings_amount = input; self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
         pub fn savings_currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9226,12 +8280,8 @@ pub mod rightsizing_recommendation_summary {
             self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
-        pub fn set_savings_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.savings_currency_code = input;
-            self
+        pub fn set_savings_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.savings_currency_code = input; self
         }
         /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
         pub fn savings_percentage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9239,23 +8289,25 @@ pub mod rightsizing_recommendation_summary {
             self
         }
         /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
-        pub fn set_savings_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.savings_percentage = input;
-            self
+        pub fn set_savings_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.savings_percentage = input; self
         }
         /// Consumes the builder and constructs a [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
         pub fn build(self) -> crate::model::RightsizingRecommendationSummary {
             crate::model::RightsizingRecommendationSummary {
-                total_recommendation_count: self.total_recommendation_count,
-                estimated_total_monthly_savings_amount: self.estimated_total_monthly_savings_amount,
-                savings_currency_code: self.savings_currency_code,
-                savings_percentage: self.savings_percentage,
+                total_recommendation_count: self.total_recommendation_count
+                ,
+                estimated_total_monthly_savings_amount: self.estimated_total_monthly_savings_amount
+                ,
+                savings_currency_code: self.savings_currency_code
+                ,
+                savings_percentage: self.savings_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl RightsizingRecommendationSummary {
     /// Creates a new builder-style object to manufacture [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
@@ -9267,7 +8319,7 @@ impl RightsizingRecommendationSummary {
 /// <p>Metadata for this recommendation set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RightsizingRecommendationMetadata {
+pub struct RightsizingRecommendationMetadata  {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -9283,27 +8335,25 @@ pub struct RightsizingRecommendationMetadata {
 }
 impl RightsizingRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn generation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn generation_timestamp(&self) -> std::option::Option<& str> {
         self.generation_timestamp.as_deref()
     }
     /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-    pub fn lookback_period_in_days(
-        &self,
-    ) -> std::option::Option<&crate::model::LookbackPeriodInDays> {
+    pub fn lookback_period_in_days(&self) -> std::option::Option<& crate::model::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
-    pub fn additional_metadata(&self) -> std::option::Option<&str> {
+    pub fn additional_metadata(&self) -> std::option::Option<& str> {
         self.additional_metadata.as_deref()
     }
 }
 /// See [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
 pub mod rightsizing_recommendation_metadata {
-
+    
     /// A builder for [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9319,12 +8369,8 @@ pub mod rightsizing_recommendation_metadata {
             self
         }
         /// <p>The ID for this specific recommendation.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
         pub fn generation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9332,28 +8378,17 @@ pub mod rightsizing_recommendation_metadata {
             self
         }
         /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-        pub fn set_generation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generation_timestamp = input;
-            self
+        pub fn set_generation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generation_timestamp = input; self
         }
         /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-        pub fn lookback_period_in_days(
-            mut self,
-            input: crate::model::LookbackPeriodInDays,
-        ) -> Self {
+        pub fn lookback_period_in_days(mut self, input: crate::model::LookbackPeriodInDays) -> Self {
             self.lookback_period_in_days = Some(input);
             self
         }
         /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-        pub fn set_lookback_period_in_days(
-            mut self,
-            input: std::option::Option<crate::model::LookbackPeriodInDays>,
-        ) -> Self {
-            self.lookback_period_in_days = input;
-            self
+        pub fn set_lookback_period_in_days(mut self, input: std::option::Option<crate::model::LookbackPeriodInDays>) -> Self {
+            self.lookback_period_in_days = input; self
         }
         /// <p>Additional metadata that might be applicable to the recommendation.</p>
         pub fn additional_metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9361,23 +8396,25 @@ pub mod rightsizing_recommendation_metadata {
             self
         }
         /// <p>Additional metadata that might be applicable to the recommendation.</p>
-        pub fn set_additional_metadata(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_metadata = input;
-            self
+        pub fn set_additional_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_metadata = input; self
         }
         /// Consumes the builder and constructs a [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
         pub fn build(self) -> crate::model::RightsizingRecommendationMetadata {
             crate::model::RightsizingRecommendationMetadata {
-                recommendation_id: self.recommendation_id,
-                generation_timestamp: self.generation_timestamp,
-                lookback_period_in_days: self.lookback_period_in_days,
-                additional_metadata: self.additional_metadata,
+                recommendation_id: self.recommendation_id
+                ,
+                generation_timestamp: self.generation_timestamp
+                ,
+                lookback_period_in_days: self.lookback_period_in_days
+                ,
+                additional_metadata: self.additional_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl RightsizingRecommendationMetadata {
     /// Creates a new builder-style object to manufacture [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
@@ -9389,7 +8426,7 @@ impl RightsizingRecommendationMetadata {
 /// <p>The aggregated numbers for your reservation usage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationAggregates {
+pub struct ReservationAggregates  {
     /// <p>The percentage of reservation time that you used.</p>
     #[doc(hidden)]
     pub utilization_percentage: std::option::Option<std::string::String>,
@@ -9444,77 +8481,77 @@ pub struct ReservationAggregates {
 }
 impl ReservationAggregates {
     /// <p>The percentage of reservation time that you used.</p>
-    pub fn utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn utilization_percentage(&self) -> std::option::Option<& str> {
         self.utilization_percentage.as_deref()
     }
     /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-    pub fn utilization_percentage_in_units(&self) -> std::option::Option<&str> {
+    pub fn utilization_percentage_in_units(&self) -> std::option::Option<& str> {
         self.utilization_percentage_in_units.as_deref()
     }
     /// <p>How many reservation hours that you purchased.</p>
-    pub fn purchased_hours(&self) -> std::option::Option<&str> {
+    pub fn purchased_hours(&self) -> std::option::Option<& str> {
         self.purchased_hours.as_deref()
     }
     /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-    pub fn purchased_units(&self) -> std::option::Option<&str> {
+    pub fn purchased_units(&self) -> std::option::Option<& str> {
         self.purchased_units.as_deref()
     }
     /// <p>The total number of reservation hours that you used.</p>
-    pub fn total_actual_hours(&self) -> std::option::Option<&str> {
+    pub fn total_actual_hours(&self) -> std::option::Option<& str> {
         self.total_actual_hours.as_deref()
     }
     /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-    pub fn total_actual_units(&self) -> std::option::Option<&str> {
+    pub fn total_actual_units(&self) -> std::option::Option<& str> {
         self.total_actual_units.as_deref()
     }
     /// <p>The number of reservation hours that you didn't use.</p>
-    pub fn unused_hours(&self) -> std::option::Option<&str> {
+    pub fn unused_hours(&self) -> std::option::Option<& str> {
         self.unused_hours.as_deref()
     }
     /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-    pub fn unused_units(&self) -> std::option::Option<&str> {
+    pub fn unused_units(&self) -> std::option::Option<& str> {
         self.unused_units.as_deref()
     }
     /// <p>How much your reservation costs if charged On-Demand rates.</p>
-    pub fn on_demand_cost_of_ri_hours_used(&self) -> std::option::Option<&str> {
+    pub fn on_demand_cost_of_ri_hours_used(&self) -> std::option::Option<& str> {
         self.on_demand_cost_of_ri_hours_used.as_deref()
     }
     /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.</p>
-    pub fn net_ri_savings(&self) -> std::option::Option<&str> {
+    pub fn net_ri_savings(&self) -> std::option::Option<& str> {
         self.net_ri_savings.as_deref()
     }
     /// <p>How much you might save if you use your entire reservation.</p>
-    pub fn total_potential_ri_savings(&self) -> std::option::Option<&str> {
+    pub fn total_potential_ri_savings(&self) -> std::option::Option<& str> {
         self.total_potential_ri_savings.as_deref()
     }
     /// <p>The upfront cost of your reservation. It's amortized over the reservation period.</p>
-    pub fn amortized_upfront_fee(&self) -> std::option::Option<&str> {
+    pub fn amortized_upfront_fee(&self) -> std::option::Option<& str> {
         self.amortized_upfront_fee.as_deref()
     }
     /// <p>The monthly cost of your reservation. It's amortized over the reservation period.</p>
-    pub fn amortized_recurring_fee(&self) -> std::option::Option<&str> {
+    pub fn amortized_recurring_fee(&self) -> std::option::Option<& str> {
         self.amortized_recurring_fee.as_deref()
     }
     /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
-    pub fn total_amortized_fee(&self) -> std::option::Option<&str> {
+    pub fn total_amortized_fee(&self) -> std::option::Option<& str> {
         self.total_amortized_fee.as_deref()
     }
     /// <p>The cost of unused hours for your reservation.</p>
-    pub fn ri_cost_for_unused_hours(&self) -> std::option::Option<&str> {
+    pub fn ri_cost_for_unused_hours(&self) -> std::option::Option<& str> {
         self.ri_cost_for_unused_hours.as_deref()
     }
     /// <p>The realized savings because of purchasing and using a reservation.</p>
-    pub fn realized_savings(&self) -> std::option::Option<&str> {
+    pub fn realized_savings(&self) -> std::option::Option<& str> {
         self.realized_savings.as_deref()
     }
     /// <p>The unrealized savings because of purchasing and using a reservation.</p>
-    pub fn unrealized_savings(&self) -> std::option::Option<&str> {
+    pub fn unrealized_savings(&self) -> std::option::Option<& str> {
         self.unrealized_savings.as_deref()
     }
 }
 /// See [`ReservationAggregates`](crate::model::ReservationAggregates).
 pub mod reservation_aggregates {
-
+    
     /// A builder for [`ReservationAggregates`](crate::model::ReservationAggregates).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9543,28 +8580,17 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The percentage of reservation time that you used.</p>
-        pub fn set_utilization_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.utilization_percentage = input;
-            self
+        pub fn set_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.utilization_percentage = input; self
         }
         /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-        pub fn utilization_percentage_in_units(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn utilization_percentage_in_units(mut self, input: impl Into<std::string::String>) -> Self {
             self.utilization_percentage_in_units = Some(input.into());
             self
         }
         /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-        pub fn set_utilization_percentage_in_units(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.utilization_percentage_in_units = input;
-            self
+        pub fn set_utilization_percentage_in_units(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.utilization_percentage_in_units = input; self
         }
         /// <p>How many reservation hours that you purchased.</p>
         pub fn purchased_hours(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9572,12 +8598,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>How many reservation hours that you purchased.</p>
-        pub fn set_purchased_hours(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.purchased_hours = input;
-            self
+        pub fn set_purchased_hours(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.purchased_hours = input; self
         }
         /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
         pub fn purchased_units(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9585,12 +8607,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-        pub fn set_purchased_units(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.purchased_units = input;
-            self
+        pub fn set_purchased_units(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.purchased_units = input; self
         }
         /// <p>The total number of reservation hours that you used.</p>
         pub fn total_actual_hours(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9598,12 +8616,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The total number of reservation hours that you used.</p>
-        pub fn set_total_actual_hours(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_actual_hours = input;
-            self
+        pub fn set_total_actual_hours(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_actual_hours = input; self
         }
         /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
         pub fn total_actual_units(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9611,12 +8625,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-        pub fn set_total_actual_units(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_actual_units = input;
-            self
+        pub fn set_total_actual_units(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_actual_units = input; self
         }
         /// <p>The number of reservation hours that you didn't use.</p>
         pub fn unused_hours(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9625,8 +8635,7 @@ pub mod reservation_aggregates {
         }
         /// <p>The number of reservation hours that you didn't use.</p>
         pub fn set_unused_hours(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unused_hours = input;
-            self
+            self.unused_hours = input; self
         }
         /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
         pub fn unused_units(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9635,24 +8644,16 @@ pub mod reservation_aggregates {
         }
         /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
         pub fn set_unused_units(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unused_units = input;
-            self
+            self.unused_units = input; self
         }
         /// <p>How much your reservation costs if charged On-Demand rates.</p>
-        pub fn on_demand_cost_of_ri_hours_used(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn on_demand_cost_of_ri_hours_used(mut self, input: impl Into<std::string::String>) -> Self {
             self.on_demand_cost_of_ri_hours_used = Some(input.into());
             self
         }
         /// <p>How much your reservation costs if charged On-Demand rates.</p>
-        pub fn set_on_demand_cost_of_ri_hours_used(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.on_demand_cost_of_ri_hours_used = input;
-            self
+        pub fn set_on_demand_cost_of_ri_hours_used(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_demand_cost_of_ri_hours_used = input; self
         }
         /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.</p>
         pub fn net_ri_savings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9660,12 +8661,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.</p>
-        pub fn set_net_ri_savings(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.net_ri_savings = input;
-            self
+        pub fn set_net_ri_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.net_ri_savings = input; self
         }
         /// <p>How much you might save if you use your entire reservation.</p>
         pub fn total_potential_ri_savings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9673,12 +8670,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>How much you might save if you use your entire reservation.</p>
-        pub fn set_total_potential_ri_savings(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_potential_ri_savings = input;
-            self
+        pub fn set_total_potential_ri_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_potential_ri_savings = input; self
         }
         /// <p>The upfront cost of your reservation. It's amortized over the reservation period.</p>
         pub fn amortized_upfront_fee(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9686,12 +8679,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The upfront cost of your reservation. It's amortized over the reservation period.</p>
-        pub fn set_amortized_upfront_fee(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amortized_upfront_fee = input;
-            self
+        pub fn set_amortized_upfront_fee(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amortized_upfront_fee = input; self
         }
         /// <p>The monthly cost of your reservation. It's amortized over the reservation period.</p>
         pub fn amortized_recurring_fee(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9699,12 +8688,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The monthly cost of your reservation. It's amortized over the reservation period.</p>
-        pub fn set_amortized_recurring_fee(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amortized_recurring_fee = input;
-            self
+        pub fn set_amortized_recurring_fee(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amortized_recurring_fee = input; self
         }
         /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
         pub fn total_amortized_fee(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9712,12 +8697,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
-        pub fn set_total_amortized_fee(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_amortized_fee = input;
-            self
+        pub fn set_total_amortized_fee(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_amortized_fee = input; self
         }
         /// <p>The cost of unused hours for your reservation.</p>
         pub fn ri_cost_for_unused_hours(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9725,12 +8706,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The cost of unused hours for your reservation.</p>
-        pub fn set_ri_cost_for_unused_hours(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ri_cost_for_unused_hours = input;
-            self
+        pub fn set_ri_cost_for_unused_hours(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ri_cost_for_unused_hours = input; self
         }
         /// <p>The realized savings because of purchasing and using a reservation.</p>
         pub fn realized_savings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9738,12 +8715,8 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The realized savings because of purchasing and using a reservation.</p>
-        pub fn set_realized_savings(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.realized_savings = input;
-            self
+        pub fn set_realized_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.realized_savings = input; self
         }
         /// <p>The unrealized savings because of purchasing and using a reservation.</p>
         pub fn unrealized_savings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9751,36 +8724,51 @@ pub mod reservation_aggregates {
             self
         }
         /// <p>The unrealized savings because of purchasing and using a reservation.</p>
-        pub fn set_unrealized_savings(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.unrealized_savings = input;
-            self
+        pub fn set_unrealized_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unrealized_savings = input; self
         }
         /// Consumes the builder and constructs a [`ReservationAggregates`](crate::model::ReservationAggregates).
         pub fn build(self) -> crate::model::ReservationAggregates {
             crate::model::ReservationAggregates {
-                utilization_percentage: self.utilization_percentage,
-                utilization_percentage_in_units: self.utilization_percentage_in_units,
-                purchased_hours: self.purchased_hours,
-                purchased_units: self.purchased_units,
-                total_actual_hours: self.total_actual_hours,
-                total_actual_units: self.total_actual_units,
-                unused_hours: self.unused_hours,
-                unused_units: self.unused_units,
-                on_demand_cost_of_ri_hours_used: self.on_demand_cost_of_ri_hours_used,
-                net_ri_savings: self.net_ri_savings,
-                total_potential_ri_savings: self.total_potential_ri_savings,
-                amortized_upfront_fee: self.amortized_upfront_fee,
-                amortized_recurring_fee: self.amortized_recurring_fee,
-                total_amortized_fee: self.total_amortized_fee,
-                ri_cost_for_unused_hours: self.ri_cost_for_unused_hours,
-                realized_savings: self.realized_savings,
-                unrealized_savings: self.unrealized_savings,
+                utilization_percentage: self.utilization_percentage
+                ,
+                utilization_percentage_in_units: self.utilization_percentage_in_units
+                ,
+                purchased_hours: self.purchased_hours
+                ,
+                purchased_units: self.purchased_units
+                ,
+                total_actual_hours: self.total_actual_hours
+                ,
+                total_actual_units: self.total_actual_units
+                ,
+                unused_hours: self.unused_hours
+                ,
+                unused_units: self.unused_units
+                ,
+                on_demand_cost_of_ri_hours_used: self.on_demand_cost_of_ri_hours_used
+                ,
+                net_ri_savings: self.net_ri_savings
+                ,
+                total_potential_ri_savings: self.total_potential_ri_savings
+                ,
+                amortized_upfront_fee: self.amortized_upfront_fee
+                ,
+                amortized_recurring_fee: self.amortized_recurring_fee
+                ,
+                total_amortized_fee: self.total_amortized_fee
+                ,
+                ri_cost_for_unused_hours: self.ri_cost_for_unused_hours
+                ,
+                realized_savings: self.realized_savings
+                ,
+                unrealized_savings: self.unrealized_savings
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservationAggregates {
     /// Creates a new builder-style object to manufacture [`ReservationAggregates`](crate::model::ReservationAggregates).
@@ -9792,7 +8780,7 @@ impl ReservationAggregates {
 /// <p>The amount of utilization, in hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UtilizationByTime {
+pub struct UtilizationByTime  {
     /// <p>The period of time that this utilization was used for.</p>
     #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
@@ -9805,27 +8793,26 @@ pub struct UtilizationByTime {
 }
 impl UtilizationByTime {
     /// <p>The period of time that this utilization was used for.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The groups that this utilization result uses.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::ReservationUtilizationGroup]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::ReservationUtilizationGroup]> {
         self.groups.as_deref()
     }
     /// <p>The total number of reservation hours that were used.</p>
-    pub fn total(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
+    pub fn total(&self) -> std::option::Option<& crate::model::ReservationAggregates> {
         self.total.as_ref()
     }
 }
 /// See [`UtilizationByTime`](crate::model::UtilizationByTime).
 pub mod utilization_by_time {
-
+    
     /// A builder for [`UtilizationByTime`](crate::model::UtilizationByTime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
-        pub(crate) groups:
-            std::option::Option<std::vec::Vec<crate::model::ReservationUtilizationGroup>>,
+        pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::ReservationUtilizationGroup>>,
         pub(crate) total: std::option::Option<crate::model::ReservationAggregates>,
     }
     impl Builder {
@@ -9835,12 +8822,8 @@ pub mod utilization_by_time {
             self
         }
         /// <p>The period of time that this utilization was used for.</p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::DateInterval>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::DateInterval>) -> Self {
+            self.time_period = input; self
         }
         /// Appends an item to `groups`.
         ///
@@ -9849,17 +8832,13 @@ pub mod utilization_by_time {
         /// <p>The groups that this utilization result uses.</p>
         pub fn groups(mut self, input: crate::model::ReservationUtilizationGroup) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>The groups that this utilization result uses.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReservationUtilizationGroup>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservationUtilizationGroup>>) -> Self {
+            self.groups = input; self
         }
         /// <p>The total number of reservation hours that were used.</p>
         pub fn total(mut self, input: crate::model::ReservationAggregates) -> Self {
@@ -9867,22 +8846,23 @@ pub mod utilization_by_time {
             self
         }
         /// <p>The total number of reservation hours that were used.</p>
-        pub fn set_total(
-            mut self,
-            input: std::option::Option<crate::model::ReservationAggregates>,
-        ) -> Self {
-            self.total = input;
-            self
+        pub fn set_total(mut self, input: std::option::Option<crate::model::ReservationAggregates>) -> Self {
+            self.total = input; self
         }
         /// Consumes the builder and constructs a [`UtilizationByTime`](crate::model::UtilizationByTime).
         pub fn build(self) -> crate::model::UtilizationByTime {
             crate::model::UtilizationByTime {
-                time_period: self.time_period,
-                groups: self.groups,
-                total: self.total,
+                time_period: self.time_period
+                ,
+                groups: self.groups
+                ,
+                total: self.total
+                ,
             }
         }
     }
+    
+    
 }
 impl UtilizationByTime {
     /// Creates a new builder-style object to manufacture [`UtilizationByTime`](crate::model::UtilizationByTime).
@@ -9894,7 +8874,7 @@ impl UtilizationByTime {
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationUtilizationGroup {
+pub struct ReservationUtilizationGroup  {
     /// <p>The key for a specific reservation attribute.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -9903,44 +8883,38 @@ pub struct ReservationUtilizationGroup {
     pub value: std::option::Option<std::string::String>,
     /// <p>The attributes for this group of reservations.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>How much you used this group of reservations.</p>
     #[doc(hidden)]
     pub utilization: std::option::Option<crate::model::ReservationAggregates>,
 }
 impl ReservationUtilizationGroup {
     /// <p>The key for a specific reservation attribute.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of a specific reservation attribute.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The attributes for this group of reservations.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>How much you used this group of reservations.</p>
-    pub fn utilization(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
+    pub fn utilization(&self) -> std::option::Option<& crate::model::ReservationAggregates> {
         self.utilization.as_ref()
     }
 }
 /// See [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
 pub mod reservation_utilization_group {
-
+    
     /// A builder for [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) utilization: std::option::Option<crate::model::ReservationAggregates>,
     }
     impl Builder {
@@ -9951,8 +8925,7 @@ pub mod reservation_utilization_group {
         }
         /// <p>The key for a specific reservation attribute.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of a specific reservation attribute.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9961,33 +8934,22 @@ pub mod reservation_utilization_group {
         }
         /// <p>The value of a specific reservation attribute.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes for this group of reservations.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The attributes for this group of reservations.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>How much you used this group of reservations.</p>
         pub fn utilization(mut self, input: crate::model::ReservationAggregates) -> Self {
@@ -9995,23 +8957,25 @@ pub mod reservation_utilization_group {
             self
         }
         /// <p>How much you used this group of reservations.</p>
-        pub fn set_utilization(
-            mut self,
-            input: std::option::Option<crate::model::ReservationAggregates>,
-        ) -> Self {
-            self.utilization = input;
-            self
+        pub fn set_utilization(mut self, input: std::option::Option<crate::model::ReservationAggregates>) -> Self {
+            self.utilization = input; self
         }
         /// Consumes the builder and constructs a [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
         pub fn build(self) -> crate::model::ReservationUtilizationGroup {
             crate::model::ReservationUtilizationGroup {
-                key: self.key,
-                value: self.value,
-                attributes: self.attributes,
-                utilization: self.utilization,
+                key: self.key
+                ,
+                value: self.value
+                ,
+                attributes: self.attributes
+                ,
+                utilization: self.utilization
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservationUtilizationGroup {
     /// Creates a new builder-style object to manufacture [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
@@ -10023,7 +8987,7 @@ impl ReservationUtilizationGroup {
 /// <p>A specific reservation that Amazon Web Services recommends for purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationPurchaseRecommendation {
+pub struct ReservationPurchaseRecommendation  {
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
     #[doc(hidden)]
     pub account_scope: std::option::Option<crate::model::AccountScope>,
@@ -10041,54 +9005,44 @@ pub struct ReservationPurchaseRecommendation {
     pub service_specification: std::option::Option<crate::model::ServiceSpecification>,
     /// <p>Details about the recommended purchases.</p>
     #[doc(hidden)]
-    pub recommendation_details:
-        std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendationDetail>>,
+    pub recommendation_details: std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendationDetail>>,
     /// <p>A summary about the recommended purchase.</p>
     #[doc(hidden)]
-    pub recommendation_summary:
-        std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>,
+    pub recommendation_summary: std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>,
 }
 impl ReservationPurchaseRecommendation {
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
-    pub fn account_scope(&self) -> std::option::Option<&crate::model::AccountScope> {
+    pub fn account_scope(&self) -> std::option::Option<& crate::model::AccountScope> {
         self.account_scope.as_ref()
     }
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-    pub fn lookback_period_in_days(
-        &self,
-    ) -> std::option::Option<&crate::model::LookbackPeriodInDays> {
+    pub fn lookback_period_in_days(&self) -> std::option::Option<& crate::model::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>The term of the reservation that you want recommendations for, in years.</p>
-    pub fn term_in_years(&self) -> std::option::Option<&crate::model::TermInYears> {
+    pub fn term_in_years(&self) -> std::option::Option<& crate::model::TermInYears> {
         self.term_in_years.as_ref()
     }
     /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::model::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>Hardware specifications for the service that you want recommendations for.</p>
-    pub fn service_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceSpecification> {
+    pub fn service_specification(&self) -> std::option::Option<& crate::model::ServiceSpecification> {
         self.service_specification.as_ref()
     }
     /// <p>Details about the recommended purchases.</p>
-    pub fn recommendation_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReservationPurchaseRecommendationDetail]> {
+    pub fn recommendation_details(&self) -> std::option::Option<& [crate::model::ReservationPurchaseRecommendationDetail]> {
         self.recommendation_details.as_deref()
     }
     /// <p>A summary about the recommended purchase.</p>
-    pub fn recommendation_summary(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservationPurchaseRecommendationSummary> {
+    pub fn recommendation_summary(&self) -> std::option::Option<& crate::model::ReservationPurchaseRecommendationSummary> {
         self.recommendation_summary.as_ref()
     }
 }
 /// See [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
 pub mod reservation_purchase_recommendation {
-
+    
     /// A builder for [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10097,11 +9051,8 @@ pub mod reservation_purchase_recommendation {
         pub(crate) term_in_years: std::option::Option<crate::model::TermInYears>,
         pub(crate) payment_option: std::option::Option<crate::model::PaymentOption>,
         pub(crate) service_specification: std::option::Option<crate::model::ServiceSpecification>,
-        pub(crate) recommendation_details: std::option::Option<
-            std::vec::Vec<crate::model::ReservationPurchaseRecommendationDetail>,
-        >,
-        pub(crate) recommendation_summary:
-            std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>,
+        pub(crate) recommendation_details: std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendationDetail>>,
+        pub(crate) recommendation_summary: std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>,
     }
     impl Builder {
         /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
@@ -10110,28 +9061,17 @@ pub mod reservation_purchase_recommendation {
             self
         }
         /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
-        pub fn set_account_scope(
-            mut self,
-            input: std::option::Option<crate::model::AccountScope>,
-        ) -> Self {
-            self.account_scope = input;
-            self
+        pub fn set_account_scope(mut self, input: std::option::Option<crate::model::AccountScope>) -> Self {
+            self.account_scope = input; self
         }
         /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-        pub fn lookback_period_in_days(
-            mut self,
-            input: crate::model::LookbackPeriodInDays,
-        ) -> Self {
+        pub fn lookback_period_in_days(mut self, input: crate::model::LookbackPeriodInDays) -> Self {
             self.lookback_period_in_days = Some(input);
             self
         }
         /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-        pub fn set_lookback_period_in_days(
-            mut self,
-            input: std::option::Option<crate::model::LookbackPeriodInDays>,
-        ) -> Self {
-            self.lookback_period_in_days = input;
-            self
+        pub fn set_lookback_period_in_days(mut self, input: std::option::Option<crate::model::LookbackPeriodInDays>) -> Self {
+            self.lookback_period_in_days = input; self
         }
         /// <p>The term of the reservation that you want recommendations for, in years.</p>
         pub fn term_in_years(mut self, input: crate::model::TermInYears) -> Self {
@@ -10139,12 +9079,8 @@ pub mod reservation_purchase_recommendation {
             self
         }
         /// <p>The term of the reservation that you want recommendations for, in years.</p>
-        pub fn set_term_in_years(
-            mut self,
-            input: std::option::Option<crate::model::TermInYears>,
-        ) -> Self {
-            self.term_in_years = input;
-            self
+        pub fn set_term_in_years(mut self, input: std::option::Option<crate::model::TermInYears>) -> Self {
+            self.term_in_years = input; self
         }
         /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
         pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
@@ -10152,12 +9088,8 @@ pub mod reservation_purchase_recommendation {
             self
         }
         /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
-        pub fn set_payment_option(
-            mut self,
-            input: std::option::Option<crate::model::PaymentOption>,
-        ) -> Self {
-            self.payment_option = input;
-            self
+        pub fn set_payment_option(mut self, input: std::option::Option<crate::model::PaymentOption>) -> Self {
+            self.payment_option = input; self
         }
         /// <p>Hardware specifications for the service that you want recommendations for.</p>
         pub fn service_specification(mut self, input: crate::model::ServiceSpecification) -> Self {
@@ -10165,66 +9097,55 @@ pub mod reservation_purchase_recommendation {
             self
         }
         /// <p>Hardware specifications for the service that you want recommendations for.</p>
-        pub fn set_service_specification(
-            mut self,
-            input: std::option::Option<crate::model::ServiceSpecification>,
-        ) -> Self {
-            self.service_specification = input;
-            self
+        pub fn set_service_specification(mut self, input: std::option::Option<crate::model::ServiceSpecification>) -> Self {
+            self.service_specification = input; self
         }
         /// Appends an item to `recommendation_details`.
         ///
         /// To override the contents of this collection use [`set_recommendation_details`](Self::set_recommendation_details).
         ///
         /// <p>Details about the recommended purchases.</p>
-        pub fn recommendation_details(
-            mut self,
-            input: crate::model::ReservationPurchaseRecommendationDetail,
-        ) -> Self {
+        pub fn recommendation_details(mut self, input: crate::model::ReservationPurchaseRecommendationDetail) -> Self {
             let mut v = self.recommendation_details.unwrap_or_default();
-            v.push(input);
-            self.recommendation_details = Some(v);
-            self
+                            v.push(input);
+                            self.recommendation_details = Some(v);
+                            self
         }
         /// <p>Details about the recommended purchases.</p>
-        pub fn set_recommendation_details(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ReservationPurchaseRecommendationDetail>,
-            >,
-        ) -> Self {
-            self.recommendation_details = input;
-            self
+        pub fn set_recommendation_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendationDetail>>) -> Self {
+            self.recommendation_details = input; self
         }
         /// <p>A summary about the recommended purchase.</p>
-        pub fn recommendation_summary(
-            mut self,
-            input: crate::model::ReservationPurchaseRecommendationSummary,
-        ) -> Self {
+        pub fn recommendation_summary(mut self, input: crate::model::ReservationPurchaseRecommendationSummary) -> Self {
             self.recommendation_summary = Some(input);
             self
         }
         /// <p>A summary about the recommended purchase.</p>
-        pub fn set_recommendation_summary(
-            mut self,
-            input: std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>,
-        ) -> Self {
-            self.recommendation_summary = input;
-            self
+        pub fn set_recommendation_summary(mut self, input: std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>) -> Self {
+            self.recommendation_summary = input; self
         }
         /// Consumes the builder and constructs a [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
         pub fn build(self) -> crate::model::ReservationPurchaseRecommendation {
             crate::model::ReservationPurchaseRecommendation {
-                account_scope: self.account_scope,
-                lookback_period_in_days: self.lookback_period_in_days,
-                term_in_years: self.term_in_years,
-                payment_option: self.payment_option,
-                service_specification: self.service_specification,
-                recommendation_details: self.recommendation_details,
-                recommendation_summary: self.recommendation_summary,
+                account_scope: self.account_scope
+                ,
+                lookback_period_in_days: self.lookback_period_in_days
+                ,
+                term_in_years: self.term_in_years
+                ,
+                payment_option: self.payment_option
+                ,
+                service_specification: self.service_specification
+                ,
+                recommendation_details: self.recommendation_details
+                ,
+                recommendation_summary: self.recommendation_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservationPurchaseRecommendation {
     /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
@@ -10236,7 +9157,7 @@ impl ReservationPurchaseRecommendation {
 /// <p>A summary about this recommendation, such as the currency code, the amount that Amazon Web Services estimates that you could save, and the total amount of reservation to purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationPurchaseRecommendationSummary {
+pub struct ReservationPurchaseRecommendationSummary  {
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
     #[doc(hidden)]
     pub total_estimated_monthly_savings_amount: std::option::Option<std::string::String>,
@@ -10249,61 +9170,46 @@ pub struct ReservationPurchaseRecommendationSummary {
 }
 impl ReservationPurchaseRecommendationSummary {
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
-    pub fn total_estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
+    pub fn total_estimated_monthly_savings_amount(&self) -> std::option::Option<& str> {
         self.total_estimated_monthly_savings_amount.as_deref()
     }
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
-    pub fn total_estimated_monthly_savings_percentage(&self) -> std::option::Option<&str> {
+    pub fn total_estimated_monthly_savings_percentage(&self) -> std::option::Option<& str> {
         self.total_estimated_monthly_savings_percentage.as_deref()
     }
     /// <p>The currency code used for this recommendation.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
 }
 /// See [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
 pub mod reservation_purchase_recommendation_summary {
-
+    
     /// A builder for [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_estimated_monthly_savings_amount: std::option::Option<std::string::String>,
-        pub(crate) total_estimated_monthly_savings_percentage:
-            std::option::Option<std::string::String>,
+        pub(crate) total_estimated_monthly_savings_percentage: std::option::Option<std::string::String>,
         pub(crate) currency_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
-        pub fn total_estimated_monthly_savings_amount(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn total_estimated_monthly_savings_amount(mut self, input: impl Into<std::string::String>) -> Self {
             self.total_estimated_monthly_savings_amount = Some(input.into());
             self
         }
         /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
-        pub fn set_total_estimated_monthly_savings_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_estimated_monthly_savings_amount = input;
-            self
+        pub fn set_total_estimated_monthly_savings_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_estimated_monthly_savings_amount = input; self
         }
         /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
-        pub fn total_estimated_monthly_savings_percentage(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn total_estimated_monthly_savings_percentage(mut self, input: impl Into<std::string::String>) -> Self {
             self.total_estimated_monthly_savings_percentage = Some(input.into());
             self
         }
         /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
-        pub fn set_total_estimated_monthly_savings_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_estimated_monthly_savings_percentage = input;
-            self
+        pub fn set_total_estimated_monthly_savings_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_estimated_monthly_savings_percentage = input; self
         }
         /// <p>The currency code used for this recommendation.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10311,23 +9217,23 @@ pub mod reservation_purchase_recommendation_summary {
             self
         }
         /// <p>The currency code used for this recommendation.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// Consumes the builder and constructs a [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
         pub fn build(self) -> crate::model::ReservationPurchaseRecommendationSummary {
             crate::model::ReservationPurchaseRecommendationSummary {
-                total_estimated_monthly_savings_amount: self.total_estimated_monthly_savings_amount,
-                total_estimated_monthly_savings_percentage: self
-                    .total_estimated_monthly_savings_percentage,
-                currency_code: self.currency_code,
+                total_estimated_monthly_savings_amount: self.total_estimated_monthly_savings_amount
+                ,
+                total_estimated_monthly_savings_percentage: self.total_estimated_monthly_savings_percentage
+                ,
+                currency_code: self.currency_code
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservationPurchaseRecommendationSummary {
     /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
@@ -10339,7 +9245,7 @@ impl ReservationPurchaseRecommendationSummary {
 /// <p>Details about your recommended reservation purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationPurchaseRecommendationDetail {
+pub struct ReservationPurchaseRecommendationDetail  {
     /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -10400,103 +9306,97 @@ pub struct ReservationPurchaseRecommendationDetail {
 }
 impl ReservationPurchaseRecommendationDetail {
     /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn instance_details(&self) -> std::option::Option<&crate::model::InstanceDetails> {
+    pub fn instance_details(&self) -> std::option::Option<& crate::model::InstanceDetails> {
         self.instance_details.as_ref()
     }
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn recommended_number_of_instances_to_purchase(&self) -> std::option::Option<&str> {
+    pub fn recommended_number_of_instances_to_purchase(&self) -> std::option::Option<& str> {
         self.recommended_number_of_instances_to_purchase.as_deref()
     }
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
-    pub fn recommended_normalized_units_to_purchase(&self) -> std::option::Option<&str> {
+    pub fn recommended_normalized_units_to_purchase(&self) -> std::option::Option<& str> {
         self.recommended_normalized_units_to_purchase.as_deref()
     }
     /// <p>The minimum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn minimum_number_of_instances_used_per_hour(&self) -> std::option::Option<&str> {
+    pub fn minimum_number_of_instances_used_per_hour(&self) -> std::option::Option<& str> {
         self.minimum_number_of_instances_used_per_hour.as_deref()
     }
     /// <p>The minimum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn minimum_normalized_units_used_per_hour(&self) -> std::option::Option<&str> {
+    pub fn minimum_normalized_units_used_per_hour(&self) -> std::option::Option<& str> {
         self.minimum_normalized_units_used_per_hour.as_deref()
     }
     /// <p>The maximum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn maximum_number_of_instances_used_per_hour(&self) -> std::option::Option<&str> {
+    pub fn maximum_number_of_instances_used_per_hour(&self) -> std::option::Option<& str> {
         self.maximum_number_of_instances_used_per_hour.as_deref()
     }
     /// <p>The maximum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn maximum_normalized_units_used_per_hour(&self) -> std::option::Option<&str> {
+    pub fn maximum_normalized_units_used_per_hour(&self) -> std::option::Option<& str> {
         self.maximum_normalized_units_used_per_hour.as_deref()
     }
     /// <p>The average number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn average_number_of_instances_used_per_hour(&self) -> std::option::Option<&str> {
+    pub fn average_number_of_instances_used_per_hour(&self) -> std::option::Option<& str> {
         self.average_number_of_instances_used_per_hour.as_deref()
     }
     /// <p>The average number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn average_normalized_units_used_per_hour(&self) -> std::option::Option<&str> {
+    pub fn average_normalized_units_used_per_hour(&self) -> std::option::Option<& str> {
         self.average_normalized_units_used_per_hour.as_deref()
     }
     /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn average_utilization(&self) -> std::option::Option<&str> {
+    pub fn average_utilization(&self) -> std::option::Option<& str> {
         self.average_utilization.as_deref()
     }
     /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving you money, in months.</p>
-    pub fn estimated_break_even_in_months(&self) -> std::option::Option<&str> {
+    pub fn estimated_break_even_in_months(&self) -> std::option::Option<& str> {
         self.estimated_break_even_in_months.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
-    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<& str> {
         self.estimated_monthly_savings_amount.as_deref()
     }
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
-    pub fn estimated_monthly_savings_percentage(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_savings_percentage(&self) -> std::option::Option<& str> {
         self.estimated_monthly_savings_percentage.as_deref()
     }
     /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
-    pub fn estimated_monthly_on_demand_cost(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_on_demand_cost(&self) -> std::option::Option<& str> {
         self.estimated_monthly_on_demand_cost.as_deref()
     }
     /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
-    pub fn estimated_reservation_cost_for_lookback_period(&self) -> std::option::Option<&str> {
-        self.estimated_reservation_cost_for_lookback_period
-            .as_deref()
+    pub fn estimated_reservation_cost_for_lookback_period(&self) -> std::option::Option<& str> {
+        self.estimated_reservation_cost_for_lookback_period.as_deref()
     }
     /// <p>How much purchasing this instance costs you upfront.</p>
-    pub fn upfront_cost(&self) -> std::option::Option<&str> {
+    pub fn upfront_cost(&self) -> std::option::Option<& str> {
         self.upfront_cost.as_deref()
     }
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
-    pub fn recurring_standard_monthly_cost(&self) -> std::option::Option<&str> {
+    pub fn recurring_standard_monthly_cost(&self) -> std::option::Option<& str> {
         self.recurring_standard_monthly_cost.as_deref()
     }
 }
 /// See [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
 pub mod reservation_purchase_recommendation_detail {
-
+    
     /// A builder for [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) instance_details: std::option::Option<crate::model::InstanceDetails>,
-        pub(crate) recommended_number_of_instances_to_purchase:
-            std::option::Option<std::string::String>,
-        pub(crate) recommended_normalized_units_to_purchase:
-            std::option::Option<std::string::String>,
-        pub(crate) minimum_number_of_instances_used_per_hour:
-            std::option::Option<std::string::String>,
+        pub(crate) recommended_number_of_instances_to_purchase: std::option::Option<std::string::String>,
+        pub(crate) recommended_normalized_units_to_purchase: std::option::Option<std::string::String>,
+        pub(crate) minimum_number_of_instances_used_per_hour: std::option::Option<std::string::String>,
         pub(crate) minimum_normalized_units_used_per_hour: std::option::Option<std::string::String>,
-        pub(crate) maximum_number_of_instances_used_per_hour:
-            std::option::Option<std::string::String>,
+        pub(crate) maximum_number_of_instances_used_per_hour: std::option::Option<std::string::String>,
         pub(crate) maximum_normalized_units_used_per_hour: std::option::Option<std::string::String>,
-        pub(crate) average_number_of_instances_used_per_hour:
-            std::option::Option<std::string::String>,
+        pub(crate) average_number_of_instances_used_per_hour: std::option::Option<std::string::String>,
         pub(crate) average_normalized_units_used_per_hour: std::option::Option<std::string::String>,
         pub(crate) average_utilization: std::option::Option<std::string::String>,
         pub(crate) estimated_break_even_in_months: std::option::Option<std::string::String>,
@@ -10504,8 +9404,7 @@ pub mod reservation_purchase_recommendation_detail {
         pub(crate) estimated_monthly_savings_amount: std::option::Option<std::string::String>,
         pub(crate) estimated_monthly_savings_percentage: std::option::Option<std::string::String>,
         pub(crate) estimated_monthly_on_demand_cost: std::option::Option<std::string::String>,
-        pub(crate) estimated_reservation_cost_for_lookback_period:
-            std::option::Option<std::string::String>,
+        pub(crate) estimated_reservation_cost_for_lookback_period: std::option::Option<std::string::String>,
         pub(crate) upfront_cost: std::option::Option<std::string::String>,
         pub(crate) recurring_standard_monthly_cost: std::option::Option<std::string::String>,
     }
@@ -10517,8 +9416,7 @@ pub mod reservation_purchase_recommendation_detail {
         }
         /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
         pub fn instance_details(mut self, input: crate::model::InstanceDetails) -> Self {
@@ -10526,140 +9424,80 @@ pub mod reservation_purchase_recommendation_detail {
             self
         }
         /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn set_instance_details(
-            mut self,
-            input: std::option::Option<crate::model::InstanceDetails>,
-        ) -> Self {
-            self.instance_details = input;
-            self
+        pub fn set_instance_details(mut self, input: std::option::Option<crate::model::InstanceDetails>) -> Self {
+            self.instance_details = input; self
         }
         /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn recommended_number_of_instances_to_purchase(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn recommended_number_of_instances_to_purchase(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommended_number_of_instances_to_purchase = Some(input.into());
             self
         }
         /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn set_recommended_number_of_instances_to_purchase(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_number_of_instances_to_purchase = input;
-            self
+        pub fn set_recommended_number_of_instances_to_purchase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_number_of_instances_to_purchase = input; self
         }
         /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
-        pub fn recommended_normalized_units_to_purchase(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn recommended_normalized_units_to_purchase(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommended_normalized_units_to_purchase = Some(input.into());
             self
         }
         /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
-        pub fn set_recommended_normalized_units_to_purchase(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_normalized_units_to_purchase = input;
-            self
+        pub fn set_recommended_normalized_units_to_purchase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_normalized_units_to_purchase = input; self
         }
         /// <p>The minimum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn minimum_number_of_instances_used_per_hour(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn minimum_number_of_instances_used_per_hour(mut self, input: impl Into<std::string::String>) -> Self {
             self.minimum_number_of_instances_used_per_hour = Some(input.into());
             self
         }
         /// <p>The minimum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn set_minimum_number_of_instances_used_per_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_number_of_instances_used_per_hour = input;
-            self
+        pub fn set_minimum_number_of_instances_used_per_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_number_of_instances_used_per_hour = input; self
         }
         /// <p>The minimum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn minimum_normalized_units_used_per_hour(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn minimum_normalized_units_used_per_hour(mut self, input: impl Into<std::string::String>) -> Self {
             self.minimum_normalized_units_used_per_hour = Some(input.into());
             self
         }
         /// <p>The minimum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn set_minimum_normalized_units_used_per_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_normalized_units_used_per_hour = input;
-            self
+        pub fn set_minimum_normalized_units_used_per_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_normalized_units_used_per_hour = input; self
         }
         /// <p>The maximum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn maximum_number_of_instances_used_per_hour(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn maximum_number_of_instances_used_per_hour(mut self, input: impl Into<std::string::String>) -> Self {
             self.maximum_number_of_instances_used_per_hour = Some(input.into());
             self
         }
         /// <p>The maximum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn set_maximum_number_of_instances_used_per_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maximum_number_of_instances_used_per_hour = input;
-            self
+        pub fn set_maximum_number_of_instances_used_per_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maximum_number_of_instances_used_per_hour = input; self
         }
         /// <p>The maximum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn maximum_normalized_units_used_per_hour(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn maximum_normalized_units_used_per_hour(mut self, input: impl Into<std::string::String>) -> Self {
             self.maximum_normalized_units_used_per_hour = Some(input.into());
             self
         }
         /// <p>The maximum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn set_maximum_normalized_units_used_per_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maximum_normalized_units_used_per_hour = input;
-            self
+        pub fn set_maximum_normalized_units_used_per_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maximum_normalized_units_used_per_hour = input; self
         }
         /// <p>The average number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn average_number_of_instances_used_per_hour(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn average_number_of_instances_used_per_hour(mut self, input: impl Into<std::string::String>) -> Self {
             self.average_number_of_instances_used_per_hour = Some(input.into());
             self
         }
         /// <p>The average number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn set_average_number_of_instances_used_per_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.average_number_of_instances_used_per_hour = input;
-            self
+        pub fn set_average_number_of_instances_used_per_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.average_number_of_instances_used_per_hour = input; self
         }
         /// <p>The average number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn average_normalized_units_used_per_hour(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn average_normalized_units_used_per_hour(mut self, input: impl Into<std::string::String>) -> Self {
             self.average_normalized_units_used_per_hour = Some(input.into());
             self
         }
         /// <p>The average number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn set_average_normalized_units_used_per_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.average_normalized_units_used_per_hour = input;
-            self
+        pub fn set_average_normalized_units_used_per_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.average_normalized_units_used_per_hour = input; self
         }
         /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
         pub fn average_utilization(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10667,28 +9505,17 @@ pub mod reservation_purchase_recommendation_detail {
             self
         }
         /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-        pub fn set_average_utilization(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.average_utilization = input;
-            self
+        pub fn set_average_utilization(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.average_utilization = input; self
         }
         /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving you money, in months.</p>
-        pub fn estimated_break_even_in_months(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_break_even_in_months(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_break_even_in_months = Some(input.into());
             self
         }
         /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving you money, in months.</p>
-        pub fn set_estimated_break_even_in_months(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_break_even_in_months = input;
-            self
+        pub fn set_estimated_break_even_in_months(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_break_even_in_months = input; self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10696,76 +9523,44 @@ pub mod reservation_purchase_recommendation_detail {
             self
         }
         /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
-        pub fn estimated_monthly_savings_amount(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_monthly_savings_amount(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_monthly_savings_amount = Some(input.into());
             self
         }
         /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
-        pub fn set_estimated_monthly_savings_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_monthly_savings_amount = input;
-            self
+        pub fn set_estimated_monthly_savings_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_monthly_savings_amount = input; self
         }
         /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
-        pub fn estimated_monthly_savings_percentage(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_monthly_savings_percentage(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_monthly_savings_percentage = Some(input.into());
             self
         }
         /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
-        pub fn set_estimated_monthly_savings_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_monthly_savings_percentage = input;
-            self
+        pub fn set_estimated_monthly_savings_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_monthly_savings_percentage = input; self
         }
         /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
-        pub fn estimated_monthly_on_demand_cost(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_monthly_on_demand_cost(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_monthly_on_demand_cost = Some(input.into());
             self
         }
         /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
-        pub fn set_estimated_monthly_on_demand_cost(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_monthly_on_demand_cost = input;
-            self
+        pub fn set_estimated_monthly_on_demand_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_monthly_on_demand_cost = input; self
         }
         /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
-        pub fn estimated_reservation_cost_for_lookback_period(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn estimated_reservation_cost_for_lookback_period(mut self, input: impl Into<std::string::String>) -> Self {
             self.estimated_reservation_cost_for_lookback_period = Some(input.into());
             self
         }
         /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
-        pub fn set_estimated_reservation_cost_for_lookback_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_reservation_cost_for_lookback_period = input;
-            self
+        pub fn set_estimated_reservation_cost_for_lookback_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_reservation_cost_for_lookback_period = input; self
         }
         /// <p>How much purchasing this instance costs you upfront.</p>
         pub fn upfront_cost(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10774,56 +9569,63 @@ pub mod reservation_purchase_recommendation_detail {
         }
         /// <p>How much purchasing this instance costs you upfront.</p>
         pub fn set_upfront_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upfront_cost = input;
-            self
+            self.upfront_cost = input; self
         }
         /// <p>How much purchasing this instance costs you on a monthly basis.</p>
-        pub fn recurring_standard_monthly_cost(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn recurring_standard_monthly_cost(mut self, input: impl Into<std::string::String>) -> Self {
             self.recurring_standard_monthly_cost = Some(input.into());
             self
         }
         /// <p>How much purchasing this instance costs you on a monthly basis.</p>
-        pub fn set_recurring_standard_monthly_cost(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recurring_standard_monthly_cost = input;
-            self
+        pub fn set_recurring_standard_monthly_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recurring_standard_monthly_cost = input; self
         }
         /// Consumes the builder and constructs a [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
         pub fn build(self) -> crate::model::ReservationPurchaseRecommendationDetail {
             crate::model::ReservationPurchaseRecommendationDetail {
-                account_id: self.account_id,
-                instance_details: self.instance_details,
-                recommended_number_of_instances_to_purchase: self
-                    .recommended_number_of_instances_to_purchase,
-                recommended_normalized_units_to_purchase: self
-                    .recommended_normalized_units_to_purchase,
-                minimum_number_of_instances_used_per_hour: self
-                    .minimum_number_of_instances_used_per_hour,
-                minimum_normalized_units_used_per_hour: self.minimum_normalized_units_used_per_hour,
-                maximum_number_of_instances_used_per_hour: self
-                    .maximum_number_of_instances_used_per_hour,
-                maximum_normalized_units_used_per_hour: self.maximum_normalized_units_used_per_hour,
-                average_number_of_instances_used_per_hour: self
-                    .average_number_of_instances_used_per_hour,
-                average_normalized_units_used_per_hour: self.average_normalized_units_used_per_hour,
-                average_utilization: self.average_utilization,
-                estimated_break_even_in_months: self.estimated_break_even_in_months,
-                currency_code: self.currency_code,
-                estimated_monthly_savings_amount: self.estimated_monthly_savings_amount,
-                estimated_monthly_savings_percentage: self.estimated_monthly_savings_percentage,
-                estimated_monthly_on_demand_cost: self.estimated_monthly_on_demand_cost,
-                estimated_reservation_cost_for_lookback_period: self
-                    .estimated_reservation_cost_for_lookback_period,
-                upfront_cost: self.upfront_cost,
-                recurring_standard_monthly_cost: self.recurring_standard_monthly_cost,
+                account_id: self.account_id
+                ,
+                instance_details: self.instance_details
+                ,
+                recommended_number_of_instances_to_purchase: self.recommended_number_of_instances_to_purchase
+                ,
+                recommended_normalized_units_to_purchase: self.recommended_normalized_units_to_purchase
+                ,
+                minimum_number_of_instances_used_per_hour: self.minimum_number_of_instances_used_per_hour
+                ,
+                minimum_normalized_units_used_per_hour: self.minimum_normalized_units_used_per_hour
+                ,
+                maximum_number_of_instances_used_per_hour: self.maximum_number_of_instances_used_per_hour
+                ,
+                maximum_normalized_units_used_per_hour: self.maximum_normalized_units_used_per_hour
+                ,
+                average_number_of_instances_used_per_hour: self.average_number_of_instances_used_per_hour
+                ,
+                average_normalized_units_used_per_hour: self.average_normalized_units_used_per_hour
+                ,
+                average_utilization: self.average_utilization
+                ,
+                estimated_break_even_in_months: self.estimated_break_even_in_months
+                ,
+                currency_code: self.currency_code
+                ,
+                estimated_monthly_savings_amount: self.estimated_monthly_savings_amount
+                ,
+                estimated_monthly_savings_percentage: self.estimated_monthly_savings_percentage
+                ,
+                estimated_monthly_on_demand_cost: self.estimated_monthly_on_demand_cost
+                ,
+                estimated_reservation_cost_for_lookback_period: self.estimated_reservation_cost_for_lookback_period
+                ,
+                upfront_cost: self.upfront_cost
+                ,
+                recurring_standard_monthly_cost: self.recurring_standard_monthly_cost
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservationPurchaseRecommendationDetail {
     /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
@@ -10835,7 +9637,7 @@ impl ReservationPurchaseRecommendationDetail {
 /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceDetails {
+pub struct InstanceDetails  {
     /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
     #[doc(hidden)]
     pub ec2_instance_details: std::option::Option<crate::model::Ec2InstanceDetails>,
@@ -10847,50 +9649,43 @@ pub struct InstanceDetails {
     pub redshift_instance_details: std::option::Option<crate::model::RedshiftInstanceDetails>,
     /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
     #[doc(hidden)]
-    pub elasti_cache_instance_details:
-        std::option::Option<crate::model::ElastiCacheInstanceDetails>,
+    pub elasti_cache_instance_details: std::option::Option<crate::model::ElastiCacheInstanceDetails>,
     /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
     #[doc(hidden)]
     pub es_instance_details: std::option::Option<crate::model::EsInstanceDetails>,
 }
 impl InstanceDetails {
     /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn ec2_instance_details(&self) -> std::option::Option<&crate::model::Ec2InstanceDetails> {
+    pub fn ec2_instance_details(&self) -> std::option::Option<& crate::model::Ec2InstanceDetails> {
         self.ec2_instance_details.as_ref()
     }
     /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn rds_instance_details(&self) -> std::option::Option<&crate::model::RdsInstanceDetails> {
+    pub fn rds_instance_details(&self) -> std::option::Option<& crate::model::RdsInstanceDetails> {
         self.rds_instance_details.as_ref()
     }
     /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn redshift_instance_details(
-        &self,
-    ) -> std::option::Option<&crate::model::RedshiftInstanceDetails> {
+    pub fn redshift_instance_details(&self) -> std::option::Option<& crate::model::RedshiftInstanceDetails> {
         self.redshift_instance_details.as_ref()
     }
     /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn elasti_cache_instance_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ElastiCacheInstanceDetails> {
+    pub fn elasti_cache_instance_details(&self) -> std::option::Option<& crate::model::ElastiCacheInstanceDetails> {
         self.elasti_cache_instance_details.as_ref()
     }
     /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn es_instance_details(&self) -> std::option::Option<&crate::model::EsInstanceDetails> {
+    pub fn es_instance_details(&self) -> std::option::Option<& crate::model::EsInstanceDetails> {
         self.es_instance_details.as_ref()
     }
 }
 /// See [`InstanceDetails`](crate::model::InstanceDetails).
 pub mod instance_details {
-
+    
     /// A builder for [`InstanceDetails`](crate::model::InstanceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_instance_details: std::option::Option<crate::model::Ec2InstanceDetails>,
         pub(crate) rds_instance_details: std::option::Option<crate::model::RdsInstanceDetails>,
-        pub(crate) redshift_instance_details:
-            std::option::Option<crate::model::RedshiftInstanceDetails>,
-        pub(crate) elasti_cache_instance_details:
-            std::option::Option<crate::model::ElastiCacheInstanceDetails>,
+        pub(crate) redshift_instance_details: std::option::Option<crate::model::RedshiftInstanceDetails>,
+        pub(crate) elasti_cache_instance_details: std::option::Option<crate::model::ElastiCacheInstanceDetails>,
         pub(crate) es_instance_details: std::option::Option<crate::model::EsInstanceDetails>,
     }
     impl Builder {
@@ -10900,12 +9695,8 @@ pub mod instance_details {
             self
         }
         /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn set_ec2_instance_details(
-            mut self,
-            input: std::option::Option<crate::model::Ec2InstanceDetails>,
-        ) -> Self {
-            self.ec2_instance_details = input;
-            self
+        pub fn set_ec2_instance_details(mut self, input: std::option::Option<crate::model::Ec2InstanceDetails>) -> Self {
+            self.ec2_instance_details = input; self
         }
         /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
         pub fn rds_instance_details(mut self, input: crate::model::RdsInstanceDetails) -> Self {
@@ -10913,44 +9704,26 @@ pub mod instance_details {
             self
         }
         /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn set_rds_instance_details(
-            mut self,
-            input: std::option::Option<crate::model::RdsInstanceDetails>,
-        ) -> Self {
-            self.rds_instance_details = input;
-            self
+        pub fn set_rds_instance_details(mut self, input: std::option::Option<crate::model::RdsInstanceDetails>) -> Self {
+            self.rds_instance_details = input; self
         }
         /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn redshift_instance_details(
-            mut self,
-            input: crate::model::RedshiftInstanceDetails,
-        ) -> Self {
+        pub fn redshift_instance_details(mut self, input: crate::model::RedshiftInstanceDetails) -> Self {
             self.redshift_instance_details = Some(input);
             self
         }
         /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn set_redshift_instance_details(
-            mut self,
-            input: std::option::Option<crate::model::RedshiftInstanceDetails>,
-        ) -> Self {
-            self.redshift_instance_details = input;
-            self
+        pub fn set_redshift_instance_details(mut self, input: std::option::Option<crate::model::RedshiftInstanceDetails>) -> Self {
+            self.redshift_instance_details = input; self
         }
         /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn elasti_cache_instance_details(
-            mut self,
-            input: crate::model::ElastiCacheInstanceDetails,
-        ) -> Self {
+        pub fn elasti_cache_instance_details(mut self, input: crate::model::ElastiCacheInstanceDetails) -> Self {
             self.elasti_cache_instance_details = Some(input);
             self
         }
         /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn set_elasti_cache_instance_details(
-            mut self,
-            input: std::option::Option<crate::model::ElastiCacheInstanceDetails>,
-        ) -> Self {
-            self.elasti_cache_instance_details = input;
-            self
+        pub fn set_elasti_cache_instance_details(mut self, input: std::option::Option<crate::model::ElastiCacheInstanceDetails>) -> Self {
+            self.elasti_cache_instance_details = input; self
         }
         /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
         pub fn es_instance_details(mut self, input: crate::model::EsInstanceDetails) -> Self {
@@ -10958,24 +9731,27 @@ pub mod instance_details {
             self
         }
         /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
-        pub fn set_es_instance_details(
-            mut self,
-            input: std::option::Option<crate::model::EsInstanceDetails>,
-        ) -> Self {
-            self.es_instance_details = input;
-            self
+        pub fn set_es_instance_details(mut self, input: std::option::Option<crate::model::EsInstanceDetails>) -> Self {
+            self.es_instance_details = input; self
         }
         /// Consumes the builder and constructs a [`InstanceDetails`](crate::model::InstanceDetails).
         pub fn build(self) -> crate::model::InstanceDetails {
             crate::model::InstanceDetails {
-                ec2_instance_details: self.ec2_instance_details,
-                rds_instance_details: self.rds_instance_details,
-                redshift_instance_details: self.redshift_instance_details,
-                elasti_cache_instance_details: self.elasti_cache_instance_details,
-                es_instance_details: self.es_instance_details,
+                ec2_instance_details: self.ec2_instance_details
+                ,
+                rds_instance_details: self.rds_instance_details
+                ,
+                redshift_instance_details: self.redshift_instance_details
+                ,
+                elasti_cache_instance_details: self.elasti_cache_instance_details
+                ,
+                es_instance_details: self.es_instance_details
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceDetails {
     /// Creates a new builder-style object to manufacture [`InstanceDetails`](crate::model::InstanceDetails).
@@ -10987,7 +9763,7 @@ impl InstanceDetails {
 /// <p>Details about the Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EsInstanceDetails {
+pub struct EsInstanceDetails  {
     /// <p>The class of instance that Amazon Web Services recommends.</p>
     #[doc(hidden)]
     pub instance_class: std::option::Option<std::string::String>,
@@ -11006,15 +9782,15 @@ pub struct EsInstanceDetails {
 }
 impl EsInstanceDetails {
     /// <p>The class of instance that Amazon Web Services recommends.</p>
-    pub fn instance_class(&self) -> std::option::Option<&str> {
+    pub fn instance_class(&self) -> std::option::Option<& str> {
         self.instance_class.as_deref()
     }
     /// <p>The size of instance that Amazon Web Services recommends.</p>
-    pub fn instance_size(&self) -> std::option::Option<&str> {
+    pub fn instance_size(&self) -> std::option::Option<& str> {
         self.instance_size.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
@@ -11028,7 +9804,7 @@ impl EsInstanceDetails {
 }
 /// See [`EsInstanceDetails`](crate::model::EsInstanceDetails).
 pub mod es_instance_details {
-
+    
     /// A builder for [`EsInstanceDetails`](crate::model::EsInstanceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11045,12 +9821,8 @@ pub mod es_instance_details {
             self
         }
         /// <p>The class of instance that Amazon Web Services recommends.</p>
-        pub fn set_instance_class(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_class = input;
-            self
+        pub fn set_instance_class(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_class = input; self
         }
         /// <p>The size of instance that Amazon Web Services recommends.</p>
         pub fn instance_size(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11058,12 +9830,8 @@ pub mod es_instance_details {
             self
         }
         /// <p>The size of instance that Amazon Web Services recommends.</p>
-        pub fn set_instance_size(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_size = input;
-            self
+        pub fn set_instance_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_size = input; self
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11072,8 +9840,7 @@ pub mod es_instance_details {
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>Determines whether the recommendation is for a current-generation instance.</p>
         pub fn current_generation(mut self, input: bool) -> Self {
@@ -11082,8 +9849,7 @@ pub mod es_instance_details {
         }
         /// <p>Determines whether the recommendation is for a current-generation instance.</p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
-            self.current_generation = input;
-            self
+            self.current_generation = input; self
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn size_flex_eligible(mut self, input: bool) -> Self {
@@ -11092,20 +9858,28 @@ pub mod es_instance_details {
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
-            self.size_flex_eligible = input;
-            self
+            self.size_flex_eligible = input; self
         }
         /// Consumes the builder and constructs a [`EsInstanceDetails`](crate::model::EsInstanceDetails).
         pub fn build(self) -> crate::model::EsInstanceDetails {
             crate::model::EsInstanceDetails {
-                instance_class: self.instance_class,
-                instance_size: self.instance_size,
-                region: self.region,
-                current_generation: self.current_generation.unwrap_or_default(),
-                size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
+                instance_class: self.instance_class
+                ,
+                instance_size: self.instance_size
+                ,
+                region: self.region
+                ,
+                current_generation: self.current_generation
+                    .unwrap_or_default()
+                ,
+                size_flex_eligible: self.size_flex_eligible
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl EsInstanceDetails {
     /// Creates a new builder-style object to manufacture [`EsInstanceDetails`](crate::model::EsInstanceDetails).
@@ -11117,7 +9891,7 @@ impl EsInstanceDetails {
 /// <p>Details about the Amazon ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElastiCacheInstanceDetails {
+pub struct ElastiCacheInstanceDetails  {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
@@ -11139,19 +9913,19 @@ pub struct ElastiCacheInstanceDetails {
 }
 impl ElastiCacheInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The type of node that Amazon Web Services recommends.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The description of the recommended reservation.</p>
-    pub fn product_description(&self) -> std::option::Option<&str> {
+    pub fn product_description(&self) -> std::option::Option<& str> {
         self.product_description.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current generation instance.</p>
@@ -11165,7 +9939,7 @@ impl ElastiCacheInstanceDetails {
 }
 /// See [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
 pub mod elasti_cache_instance_details {
-
+    
     /// A builder for [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11184,8 +9958,7 @@ pub mod elasti_cache_instance_details {
         }
         /// <p>The instance family of the recommended reservation.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.family = input;
-            self
+            self.family = input; self
         }
         /// <p>The type of node that Amazon Web Services recommends.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11194,8 +9967,7 @@ pub mod elasti_cache_instance_details {
         }
         /// <p>The type of node that Amazon Web Services recommends.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11204,8 +9976,7 @@ pub mod elasti_cache_instance_details {
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The description of the recommended reservation.</p>
         pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11213,12 +9984,8 @@ pub mod elasti_cache_instance_details {
             self
         }
         /// <p>The description of the recommended reservation.</p>
-        pub fn set_product_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.product_description = input;
-            self
+        pub fn set_product_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_description = input; self
         }
         /// <p>Determines whether the recommendation is for a current generation instance.</p>
         pub fn current_generation(mut self, input: bool) -> Self {
@@ -11227,8 +9994,7 @@ pub mod elasti_cache_instance_details {
         }
         /// <p>Determines whether the recommendation is for a current generation instance.</p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
-            self.current_generation = input;
-            self
+            self.current_generation = input; self
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn size_flex_eligible(mut self, input: bool) -> Self {
@@ -11237,21 +10003,30 @@ pub mod elasti_cache_instance_details {
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
-            self.size_flex_eligible = input;
-            self
+            self.size_flex_eligible = input; self
         }
         /// Consumes the builder and constructs a [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
         pub fn build(self) -> crate::model::ElastiCacheInstanceDetails {
             crate::model::ElastiCacheInstanceDetails {
-                family: self.family,
-                node_type: self.node_type,
-                region: self.region,
-                product_description: self.product_description,
-                current_generation: self.current_generation.unwrap_or_default(),
-                size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
+                family: self.family
+                ,
+                node_type: self.node_type
+                ,
+                region: self.region
+                ,
+                product_description: self.product_description
+                ,
+                current_generation: self.current_generation
+                    .unwrap_or_default()
+                ,
+                size_flex_eligible: self.size_flex_eligible
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ElastiCacheInstanceDetails {
     /// Creates a new builder-style object to manufacture [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
@@ -11263,7 +10038,7 @@ impl ElastiCacheInstanceDetails {
 /// <p>Details about the Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedshiftInstanceDetails {
+pub struct RedshiftInstanceDetails  {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
@@ -11282,15 +10057,15 @@ pub struct RedshiftInstanceDetails {
 }
 impl RedshiftInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The type of node that Amazon Web Services recommends.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
@@ -11304,7 +10079,7 @@ impl RedshiftInstanceDetails {
 }
 /// See [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
 pub mod redshift_instance_details {
-
+    
     /// A builder for [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11322,8 +10097,7 @@ pub mod redshift_instance_details {
         }
         /// <p>The instance family of the recommended reservation.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.family = input;
-            self
+            self.family = input; self
         }
         /// <p>The type of node that Amazon Web Services recommends.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11332,8 +10106,7 @@ pub mod redshift_instance_details {
         }
         /// <p>The type of node that Amazon Web Services recommends.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11342,8 +10115,7 @@ pub mod redshift_instance_details {
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>Determines whether the recommendation is for a current-generation instance.</p>
         pub fn current_generation(mut self, input: bool) -> Self {
@@ -11352,8 +10124,7 @@ pub mod redshift_instance_details {
         }
         /// <p>Determines whether the recommendation is for a current-generation instance.</p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
-            self.current_generation = input;
-            self
+            self.current_generation = input; self
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn size_flex_eligible(mut self, input: bool) -> Self {
@@ -11362,20 +10133,28 @@ pub mod redshift_instance_details {
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
-            self.size_flex_eligible = input;
-            self
+            self.size_flex_eligible = input; self
         }
         /// Consumes the builder and constructs a [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
         pub fn build(self) -> crate::model::RedshiftInstanceDetails {
             crate::model::RedshiftInstanceDetails {
-                family: self.family,
-                node_type: self.node_type,
-                region: self.region,
-                current_generation: self.current_generation.unwrap_or_default(),
-                size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
+                family: self.family
+                ,
+                node_type: self.node_type
+                ,
+                region: self.region
+                ,
+                current_generation: self.current_generation
+                    .unwrap_or_default()
+                ,
+                size_flex_eligible: self.size_flex_eligible
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RedshiftInstanceDetails {
     /// Creates a new builder-style object to manufacture [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
@@ -11387,7 +10166,7 @@ impl RedshiftInstanceDetails {
 /// <p>Details about the Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsInstanceDetails {
+pub struct RdsInstanceDetails  {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
@@ -11418,31 +10197,31 @@ pub struct RdsInstanceDetails {
 }
 impl RdsInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The database engine that the recommended reservation supports.</p>
-    pub fn database_engine(&self) -> std::option::Option<&str> {
+    pub fn database_engine(&self) -> std::option::Option<& str> {
         self.database_engine.as_deref()
     }
     /// <p>The database edition that the recommended reservation supports.</p>
-    pub fn database_edition(&self) -> std::option::Option<&str> {
+    pub fn database_edition(&self) -> std::option::Option<& str> {
         self.database_edition.as_deref()
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
-    pub fn deployment_option(&self) -> std::option::Option<&str> {
+    pub fn deployment_option(&self) -> std::option::Option<& str> {
         self.deployment_option.as_deref()
     }
     /// <p>The license model that the recommended reservation supports.</p>
-    pub fn license_model(&self) -> std::option::Option<&str> {
+    pub fn license_model(&self) -> std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
@@ -11456,7 +10235,7 @@ impl RdsInstanceDetails {
 }
 /// See [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
 pub mod rds_instance_details {
-
+    
     /// A builder for [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11478,8 +10257,7 @@ pub mod rds_instance_details {
         }
         /// <p>The instance family of the recommended reservation.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.family = input;
-            self
+            self.family = input; self
         }
         /// <p>The type of instance that Amazon Web Services recommends.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11487,12 +10265,8 @@ pub mod rds_instance_details {
             self
         }
         /// <p>The type of instance that Amazon Web Services recommends.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11501,8 +10275,7 @@ pub mod rds_instance_details {
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The database engine that the recommended reservation supports.</p>
         pub fn database_engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11510,12 +10283,8 @@ pub mod rds_instance_details {
             self
         }
         /// <p>The database engine that the recommended reservation supports.</p>
-        pub fn set_database_engine(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_engine = input;
-            self
+        pub fn set_database_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_engine = input; self
         }
         /// <p>The database edition that the recommended reservation supports.</p>
         pub fn database_edition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11523,12 +10292,8 @@ pub mod rds_instance_details {
             self
         }
         /// <p>The database edition that the recommended reservation supports.</p>
-        pub fn set_database_edition(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_edition = input;
-            self
+        pub fn set_database_edition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_edition = input; self
         }
         /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
         pub fn deployment_option(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11536,12 +10301,8 @@ pub mod rds_instance_details {
             self
         }
         /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
-        pub fn set_deployment_option(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_option = input;
-            self
+        pub fn set_deployment_option(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_option = input; self
         }
         /// <p>The license model that the recommended reservation supports.</p>
         pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11549,12 +10310,8 @@ pub mod rds_instance_details {
             self
         }
         /// <p>The license model that the recommended reservation supports.</p>
-        pub fn set_license_model(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_model = input;
-            self
+        pub fn set_license_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_model = input; self
         }
         /// <p>Determines whether the recommendation is for a current-generation instance. </p>
         pub fn current_generation(mut self, input: bool) -> Self {
@@ -11563,8 +10320,7 @@ pub mod rds_instance_details {
         }
         /// <p>Determines whether the recommendation is for a current-generation instance. </p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
-            self.current_generation = input;
-            self
+            self.current_generation = input; self
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn size_flex_eligible(mut self, input: bool) -> Self {
@@ -11573,24 +10329,36 @@ pub mod rds_instance_details {
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
-            self.size_flex_eligible = input;
-            self
+            self.size_flex_eligible = input; self
         }
         /// Consumes the builder and constructs a [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
         pub fn build(self) -> crate::model::RdsInstanceDetails {
             crate::model::RdsInstanceDetails {
-                family: self.family,
-                instance_type: self.instance_type,
-                region: self.region,
-                database_engine: self.database_engine,
-                database_edition: self.database_edition,
-                deployment_option: self.deployment_option,
-                license_model: self.license_model,
-                current_generation: self.current_generation.unwrap_or_default(),
-                size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
+                family: self.family
+                ,
+                instance_type: self.instance_type
+                ,
+                region: self.region
+                ,
+                database_engine: self.database_engine
+                ,
+                database_edition: self.database_edition
+                ,
+                deployment_option: self.deployment_option
+                ,
+                license_model: self.license_model
+                ,
+                current_generation: self.current_generation
+                    .unwrap_or_default()
+                ,
+                size_flex_eligible: self.size_flex_eligible
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RdsInstanceDetails {
     /// Creates a new builder-style object to manufacture [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
@@ -11602,7 +10370,7 @@ impl RdsInstanceDetails {
 /// <p>Details about the Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceDetails {
+pub struct Ec2InstanceDetails  {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
@@ -11630,27 +10398,27 @@ pub struct Ec2InstanceDetails {
 }
 impl Ec2InstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Availability Zone of the recommended reservation.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
-    pub fn platform(&self) -> std::option::Option<&str> {
+    pub fn platform(&self) -> std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
-    pub fn tenancy(&self) -> std::option::Option<&str> {
+    pub fn tenancy(&self) -> std::option::Option<& str> {
         self.tenancy.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
@@ -11664,7 +10432,7 @@ impl Ec2InstanceDetails {
 }
 /// See [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
 pub mod ec2_instance_details {
-
+    
     /// A builder for [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11685,8 +10453,7 @@ pub mod ec2_instance_details {
         }
         /// <p>The instance family of the recommended reservation.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.family = input;
-            self
+            self.family = input; self
         }
         /// <p>The type of instance that Amazon Web Services recommends.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11694,12 +10461,8 @@ pub mod ec2_instance_details {
             self
         }
         /// <p>The type of instance that Amazon Web Services recommends.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11708,8 +10471,7 @@ pub mod ec2_instance_details {
         }
         /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The Availability Zone of the recommended reservation.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11717,12 +10479,8 @@ pub mod ec2_instance_details {
             self
         }
         /// <p>The Availability Zone of the recommended reservation.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
         pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11731,8 +10489,7 @@ pub mod ec2_instance_details {
         }
         /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
         pub fn tenancy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11741,8 +10498,7 @@ pub mod ec2_instance_details {
         }
         /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tenancy = input;
-            self
+            self.tenancy = input; self
         }
         /// <p>Determines whether the recommendation is for a current-generation instance. </p>
         pub fn current_generation(mut self, input: bool) -> Self {
@@ -11751,8 +10507,7 @@ pub mod ec2_instance_details {
         }
         /// <p>Determines whether the recommendation is for a current-generation instance. </p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
-            self.current_generation = input;
-            self
+            self.current_generation = input; self
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn size_flex_eligible(mut self, input: bool) -> Self {
@@ -11761,23 +10516,34 @@ pub mod ec2_instance_details {
         }
         /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
-            self.size_flex_eligible = input;
-            self
+            self.size_flex_eligible = input; self
         }
         /// Consumes the builder and constructs a [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
         pub fn build(self) -> crate::model::Ec2InstanceDetails {
             crate::model::Ec2InstanceDetails {
-                family: self.family,
-                instance_type: self.instance_type,
-                region: self.region,
-                availability_zone: self.availability_zone,
-                platform: self.platform,
-                tenancy: self.tenancy,
-                current_generation: self.current_generation.unwrap_or_default(),
-                size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
+                family: self.family
+                ,
+                instance_type: self.instance_type
+                ,
+                region: self.region
+                ,
+                availability_zone: self.availability_zone
+                ,
+                platform: self.platform
+                ,
+                tenancy: self.tenancy
+                ,
+                current_generation: self.current_generation
+                    .unwrap_or_default()
+                ,
+                size_flex_eligible: self.size_flex_eligible
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2InstanceDetails {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
@@ -11789,20 +10555,20 @@ impl Ec2InstanceDetails {
 /// <p>Hardware specifications for the service that you want recommendations for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceSpecification {
+pub struct ServiceSpecification  {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
     #[doc(hidden)]
     pub ec2_specification: std::option::Option<crate::model::Ec2Specification>,
 }
 impl ServiceSpecification {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
-    pub fn ec2_specification(&self) -> std::option::Option<&crate::model::Ec2Specification> {
+    pub fn ec2_specification(&self) -> std::option::Option<& crate::model::Ec2Specification> {
         self.ec2_specification.as_ref()
     }
 }
 /// See [`ServiceSpecification`](crate::model::ServiceSpecification).
 pub mod service_specification {
-
+    
     /// A builder for [`ServiceSpecification`](crate::model::ServiceSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11815,20 +10581,19 @@ pub mod service_specification {
             self
         }
         /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
-        pub fn set_ec2_specification(
-            mut self,
-            input: std::option::Option<crate::model::Ec2Specification>,
-        ) -> Self {
-            self.ec2_specification = input;
-            self
+        pub fn set_ec2_specification(mut self, input: std::option::Option<crate::model::Ec2Specification>) -> Self {
+            self.ec2_specification = input; self
         }
         /// Consumes the builder and constructs a [`ServiceSpecification`](crate::model::ServiceSpecification).
         pub fn build(self) -> crate::model::ServiceSpecification {
             crate::model::ServiceSpecification {
-                ec2_specification: self.ec2_specification,
+                ec2_specification: self.ec2_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceSpecification {
     /// Creates a new builder-style object to manufacture [`ServiceSpecification`](crate::model::ServiceSpecification).
@@ -11840,20 +10605,20 @@ impl ServiceSpecification {
 /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2Specification {
+pub struct Ec2Specification  {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     #[doc(hidden)]
     pub offering_class: std::option::Option<crate::model::OfferingClass>,
 }
 impl Ec2Specification {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
-    pub fn offering_class(&self) -> std::option::Option<&crate::model::OfferingClass> {
+    pub fn offering_class(&self) -> std::option::Option<& crate::model::OfferingClass> {
         self.offering_class.as_ref()
     }
 }
 /// See [`Ec2Specification`](crate::model::Ec2Specification).
 pub mod ec2_specification {
-
+    
     /// A builder for [`Ec2Specification`](crate::model::Ec2Specification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11866,20 +10631,19 @@ pub mod ec2_specification {
             self
         }
         /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
-        pub fn set_offering_class(
-            mut self,
-            input: std::option::Option<crate::model::OfferingClass>,
-        ) -> Self {
-            self.offering_class = input;
-            self
+        pub fn set_offering_class(mut self, input: std::option::Option<crate::model::OfferingClass>) -> Self {
+            self.offering_class = input; self
         }
         /// Consumes the builder and constructs a [`Ec2Specification`](crate::model::Ec2Specification).
         pub fn build(self) -> crate::model::Ec2Specification {
             crate::model::Ec2Specification {
-                offering_class: self.offering_class,
+                offering_class: self.offering_class
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2Specification {
     /// Creates a new builder-style object to manufacture [`Ec2Specification`](crate::model::Ec2Specification).
@@ -11894,9 +10658,9 @@ impl Ec2Specification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let offeringclass = unimplemented!();
 /// match offeringclass {
@@ -11918,58 +10682,52 @@ impl Ec2Specification {
 /// Specifically, when `offeringclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OfferingClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OfferingClass {
     #[allow(missing_docs)] // documentation missing in model
     Convertible,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OfferingClass {
     fn from(s: &str) -> Self {
         match s {
             "CONVERTIBLE" => OfferingClass::Convertible,
             "STANDARD" => OfferingClass::Standard,
-            other => OfferingClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OfferingClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OfferingClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OfferingClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OfferingClass::from(s))
+                }
+            }
 impl OfferingClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OfferingClass::Convertible => "CONVERTIBLE",
             OfferingClass::Standard => "STANDARD",
-            OfferingClass::Unknown(value) => value.as_str(),
+            OfferingClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONVERTIBLE", "STANDARD"]
+        &[
+            "CONVERTIBLE", "STANDARD"
+        ]
     }
 }
 impl AsRef<str> for OfferingClass {
@@ -11981,7 +10739,7 @@ impl AsRef<str> for OfferingClass {
 /// <p>Information about this specific recommendation, such as the timestamp for when Amazon Web Services made a specific recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationPurchaseRecommendationMetadata {
+pub struct ReservationPurchaseRecommendationMetadata  {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -11991,17 +10749,17 @@ pub struct ReservationPurchaseRecommendationMetadata {
 }
 impl ReservationPurchaseRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn generation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn generation_timestamp(&self) -> std::option::Option<& str> {
         self.generation_timestamp.as_deref()
     }
 }
 /// See [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
 pub mod reservation_purchase_recommendation_metadata {
-
+    
     /// A builder for [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12015,12 +10773,8 @@ pub mod reservation_purchase_recommendation_metadata {
             self
         }
         /// <p>The ID for this specific recommendation.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
         pub fn generation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12028,21 +10782,21 @@ pub mod reservation_purchase_recommendation_metadata {
             self
         }
         /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-        pub fn set_generation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generation_timestamp = input;
-            self
+        pub fn set_generation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generation_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
         pub fn build(self) -> crate::model::ReservationPurchaseRecommendationMetadata {
             crate::model::ReservationPurchaseRecommendationMetadata {
-                recommendation_id: self.recommendation_id,
-                generation_timestamp: self.generation_timestamp,
+                recommendation_id: self.recommendation_id
+                ,
+                generation_timestamp: self.generation_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservationPurchaseRecommendationMetadata {
     /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
@@ -12054,7 +10808,7 @@ impl ReservationPurchaseRecommendationMetadata {
 /// <p>The amount of instance usage that a reservation covered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Coverage {
+pub struct Coverage  {
     /// <p>The amount of instance usage that the reservation covered, in hours.</p>
     #[doc(hidden)]
     pub coverage_hours: std::option::Option<crate::model::CoverageHours>,
@@ -12067,29 +10821,26 @@ pub struct Coverage {
 }
 impl Coverage {
     /// <p>The amount of instance usage that the reservation covered, in hours.</p>
-    pub fn coverage_hours(&self) -> std::option::Option<&crate::model::CoverageHours> {
+    pub fn coverage_hours(&self) -> std::option::Option<& crate::model::CoverageHours> {
         self.coverage_hours.as_ref()
     }
     /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
-    pub fn coverage_normalized_units(
-        &self,
-    ) -> std::option::Option<&crate::model::CoverageNormalizedUnits> {
+    pub fn coverage_normalized_units(&self) -> std::option::Option<& crate::model::CoverageNormalizedUnits> {
         self.coverage_normalized_units.as_ref()
     }
     /// <p>The amount of cost that the reservation covered.</p>
-    pub fn coverage_cost(&self) -> std::option::Option<&crate::model::CoverageCost> {
+    pub fn coverage_cost(&self) -> std::option::Option<& crate::model::CoverageCost> {
         self.coverage_cost.as_ref()
     }
 }
 /// See [`Coverage`](crate::model::Coverage).
 pub mod coverage {
-
+    
     /// A builder for [`Coverage`](crate::model::Coverage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) coverage_hours: std::option::Option<crate::model::CoverageHours>,
-        pub(crate) coverage_normalized_units:
-            std::option::Option<crate::model::CoverageNormalizedUnits>,
+        pub(crate) coverage_normalized_units: std::option::Option<crate::model::CoverageNormalizedUnits>,
         pub(crate) coverage_cost: std::option::Option<crate::model::CoverageCost>,
     }
     impl Builder {
@@ -12099,28 +10850,17 @@ pub mod coverage {
             self
         }
         /// <p>The amount of instance usage that the reservation covered, in hours.</p>
-        pub fn set_coverage_hours(
-            mut self,
-            input: std::option::Option<crate::model::CoverageHours>,
-        ) -> Self {
-            self.coverage_hours = input;
-            self
+        pub fn set_coverage_hours(mut self, input: std::option::Option<crate::model::CoverageHours>) -> Self {
+            self.coverage_hours = input; self
         }
         /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
-        pub fn coverage_normalized_units(
-            mut self,
-            input: crate::model::CoverageNormalizedUnits,
-        ) -> Self {
+        pub fn coverage_normalized_units(mut self, input: crate::model::CoverageNormalizedUnits) -> Self {
             self.coverage_normalized_units = Some(input);
             self
         }
         /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
-        pub fn set_coverage_normalized_units(
-            mut self,
-            input: std::option::Option<crate::model::CoverageNormalizedUnits>,
-        ) -> Self {
-            self.coverage_normalized_units = input;
-            self
+        pub fn set_coverage_normalized_units(mut self, input: std::option::Option<crate::model::CoverageNormalizedUnits>) -> Self {
+            self.coverage_normalized_units = input; self
         }
         /// <p>The amount of cost that the reservation covered.</p>
         pub fn coverage_cost(mut self, input: crate::model::CoverageCost) -> Self {
@@ -12128,22 +10868,23 @@ pub mod coverage {
             self
         }
         /// <p>The amount of cost that the reservation covered.</p>
-        pub fn set_coverage_cost(
-            mut self,
-            input: std::option::Option<crate::model::CoverageCost>,
-        ) -> Self {
-            self.coverage_cost = input;
-            self
+        pub fn set_coverage_cost(mut self, input: std::option::Option<crate::model::CoverageCost>) -> Self {
+            self.coverage_cost = input; self
         }
         /// Consumes the builder and constructs a [`Coverage`](crate::model::Coverage).
         pub fn build(self) -> crate::model::Coverage {
             crate::model::Coverage {
-                coverage_hours: self.coverage_hours,
-                coverage_normalized_units: self.coverage_normalized_units,
-                coverage_cost: self.coverage_cost,
+                coverage_hours: self.coverage_hours
+                ,
+                coverage_normalized_units: self.coverage_normalized_units
+                ,
+                coverage_cost: self.coverage_cost
+                ,
             }
         }
     }
+    
+    
 }
 impl Coverage {
     /// Creates a new builder-style object to manufacture [`Coverage`](crate::model::Coverage).
@@ -12155,20 +10896,20 @@ impl Coverage {
 /// <p>How much it costs to run an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageCost {
+pub struct CoverageCost  {
     /// <p>How much an On-Demand Instance costs.</p>
     #[doc(hidden)]
     pub on_demand_cost: std::option::Option<std::string::String>,
 }
 impl CoverageCost {
     /// <p>How much an On-Demand Instance costs.</p>
-    pub fn on_demand_cost(&self) -> std::option::Option<&str> {
+    pub fn on_demand_cost(&self) -> std::option::Option<& str> {
         self.on_demand_cost.as_deref()
     }
 }
 /// See [`CoverageCost`](crate::model::CoverageCost).
 pub mod coverage_cost {
-
+    
     /// A builder for [`CoverageCost`](crate::model::CoverageCost).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12181,20 +10922,19 @@ pub mod coverage_cost {
             self
         }
         /// <p>How much an On-Demand Instance costs.</p>
-        pub fn set_on_demand_cost(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.on_demand_cost = input;
-            self
+        pub fn set_on_demand_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_demand_cost = input; self
         }
         /// Consumes the builder and constructs a [`CoverageCost`](crate::model::CoverageCost).
         pub fn build(self) -> crate::model::CoverageCost {
             crate::model::CoverageCost {
-                on_demand_cost: self.on_demand_cost,
+                on_demand_cost: self.on_demand_cost
+                ,
             }
         }
     }
+    
+    
 }
 impl CoverageCost {
     /// Creates a new builder-style object to manufacture [`CoverageCost`](crate::model::CoverageCost).
@@ -12203,11 +10943,11 @@ impl CoverageCost {
     }
 }
 
-/// <p>The amount of instance usage, in normalized units. You can use normalized units to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose that you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. When you use normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p>
+/// <p>The amount of instance usage, in normalized units. You can use normalized units to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose that you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. When you use normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageNormalizedUnits {
+pub struct CoverageNormalizedUnits  {
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
     #[doc(hidden)]
     pub on_demand_normalized_units: std::option::Option<std::string::String>,
@@ -12223,25 +10963,25 @@ pub struct CoverageNormalizedUnits {
 }
 impl CoverageNormalizedUnits {
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
-    pub fn on_demand_normalized_units(&self) -> std::option::Option<&str> {
+    pub fn on_demand_normalized_units(&self) -> std::option::Option<& str> {
         self.on_demand_normalized_units.as_deref()
     }
     /// <p>The number of normalized units that a reservation covers.</p>
-    pub fn reserved_normalized_units(&self) -> std::option::Option<&str> {
+    pub fn reserved_normalized_units(&self) -> std::option::Option<& str> {
         self.reserved_normalized_units.as_deref()
     }
     /// <p>The total number of normalized units that you used.</p>
-    pub fn total_running_normalized_units(&self) -> std::option::Option<&str> {
+    pub fn total_running_normalized_units(&self) -> std::option::Option<& str> {
         self.total_running_normalized_units.as_deref()
     }
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
-    pub fn coverage_normalized_units_percentage(&self) -> std::option::Option<&str> {
+    pub fn coverage_normalized_units_percentage(&self) -> std::option::Option<& str> {
         self.coverage_normalized_units_percentage.as_deref()
     }
 }
 /// See [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
 pub mod coverage_normalized_units {
-
+    
     /// A builder for [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12257,12 +10997,8 @@ pub mod coverage_normalized_units {
             self
         }
         /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
-        pub fn set_on_demand_normalized_units(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.on_demand_normalized_units = input;
-            self
+        pub fn set_on_demand_normalized_units(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_demand_normalized_units = input; self
         }
         /// <p>The number of normalized units that a reservation covers.</p>
         pub fn reserved_normalized_units(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12270,55 +11006,43 @@ pub mod coverage_normalized_units {
             self
         }
         /// <p>The number of normalized units that a reservation covers.</p>
-        pub fn set_reserved_normalized_units(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reserved_normalized_units = input;
-            self
+        pub fn set_reserved_normalized_units(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved_normalized_units = input; self
         }
         /// <p>The total number of normalized units that you used.</p>
-        pub fn total_running_normalized_units(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn total_running_normalized_units(mut self, input: impl Into<std::string::String>) -> Self {
             self.total_running_normalized_units = Some(input.into());
             self
         }
         /// <p>The total number of normalized units that you used.</p>
-        pub fn set_total_running_normalized_units(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_running_normalized_units = input;
-            self
+        pub fn set_total_running_normalized_units(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_running_normalized_units = input; self
         }
         /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
-        pub fn coverage_normalized_units_percentage(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn coverage_normalized_units_percentage(mut self, input: impl Into<std::string::String>) -> Self {
             self.coverage_normalized_units_percentage = Some(input.into());
             self
         }
         /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
-        pub fn set_coverage_normalized_units_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.coverage_normalized_units_percentage = input;
-            self
+        pub fn set_coverage_normalized_units_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.coverage_normalized_units_percentage = input; self
         }
         /// Consumes the builder and constructs a [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
         pub fn build(self) -> crate::model::CoverageNormalizedUnits {
             crate::model::CoverageNormalizedUnits {
-                on_demand_normalized_units: self.on_demand_normalized_units,
-                reserved_normalized_units: self.reserved_normalized_units,
-                total_running_normalized_units: self.total_running_normalized_units,
-                coverage_normalized_units_percentage: self.coverage_normalized_units_percentage,
+                on_demand_normalized_units: self.on_demand_normalized_units
+                ,
+                reserved_normalized_units: self.reserved_normalized_units
+                ,
+                total_running_normalized_units: self.total_running_normalized_units
+                ,
+                coverage_normalized_units_percentage: self.coverage_normalized_units_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl CoverageNormalizedUnits {
     /// Creates a new builder-style object to manufacture [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
@@ -12330,7 +11054,7 @@ impl CoverageNormalizedUnits {
 /// <p>How long a running instance either used a reservation or was On-Demand.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageHours {
+pub struct CoverageHours  {
     /// <p>The number of instance running hours that On-Demand Instances covered.</p>
     #[doc(hidden)]
     pub on_demand_hours: std::option::Option<std::string::String>,
@@ -12346,25 +11070,25 @@ pub struct CoverageHours {
 }
 impl CoverageHours {
     /// <p>The number of instance running hours that On-Demand Instances covered.</p>
-    pub fn on_demand_hours(&self) -> std::option::Option<&str> {
+    pub fn on_demand_hours(&self) -> std::option::Option<& str> {
         self.on_demand_hours.as_deref()
     }
     /// <p>The number of instance running hours that reservations covered.</p>
-    pub fn reserved_hours(&self) -> std::option::Option<&str> {
+    pub fn reserved_hours(&self) -> std::option::Option<& str> {
         self.reserved_hours.as_deref()
     }
     /// <p>The total instance usage, in hours.</p>
-    pub fn total_running_hours(&self) -> std::option::Option<&str> {
+    pub fn total_running_hours(&self) -> std::option::Option<& str> {
         self.total_running_hours.as_deref()
     }
     /// <p>The percentage of instance hours that a reservation covered.</p>
-    pub fn coverage_hours_percentage(&self) -> std::option::Option<&str> {
+    pub fn coverage_hours_percentage(&self) -> std::option::Option<& str> {
         self.coverage_hours_percentage.as_deref()
     }
 }
 /// See [`CoverageHours`](crate::model::CoverageHours).
 pub mod coverage_hours {
-
+    
     /// A builder for [`CoverageHours`](crate::model::CoverageHours).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12380,12 +11104,8 @@ pub mod coverage_hours {
             self
         }
         /// <p>The number of instance running hours that On-Demand Instances covered.</p>
-        pub fn set_on_demand_hours(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.on_demand_hours = input;
-            self
+        pub fn set_on_demand_hours(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.on_demand_hours = input; self
         }
         /// <p>The number of instance running hours that reservations covered.</p>
         pub fn reserved_hours(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12393,12 +11113,8 @@ pub mod coverage_hours {
             self
         }
         /// <p>The number of instance running hours that reservations covered.</p>
-        pub fn set_reserved_hours(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reserved_hours = input;
-            self
+        pub fn set_reserved_hours(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved_hours = input; self
         }
         /// <p>The total instance usage, in hours.</p>
         pub fn total_running_hours(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12406,12 +11122,8 @@ pub mod coverage_hours {
             self
         }
         /// <p>The total instance usage, in hours.</p>
-        pub fn set_total_running_hours(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.total_running_hours = input;
-            self
+        pub fn set_total_running_hours(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.total_running_hours = input; self
         }
         /// <p>The percentage of instance hours that a reservation covered.</p>
         pub fn coverage_hours_percentage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12419,23 +11131,25 @@ pub mod coverage_hours {
             self
         }
         /// <p>The percentage of instance hours that a reservation covered.</p>
-        pub fn set_coverage_hours_percentage(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.coverage_hours_percentage = input;
-            self
+        pub fn set_coverage_hours_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.coverage_hours_percentage = input; self
         }
         /// Consumes the builder and constructs a [`CoverageHours`](crate::model::CoverageHours).
         pub fn build(self) -> crate::model::CoverageHours {
             crate::model::CoverageHours {
-                on_demand_hours: self.on_demand_hours,
-                reserved_hours: self.reserved_hours,
-                total_running_hours: self.total_running_hours,
-                coverage_hours_percentage: self.coverage_hours_percentage,
+                on_demand_hours: self.on_demand_hours
+                ,
+                reserved_hours: self.reserved_hours
+                ,
+                total_running_hours: self.total_running_hours
+                ,
+                coverage_hours_percentage: self.coverage_hours_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl CoverageHours {
     /// Creates a new builder-style object to manufacture [`CoverageHours`](crate::model::CoverageHours).
@@ -12447,7 +11161,7 @@ impl CoverageHours {
 /// <p>Reservation coverage for a specified period, in hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageByTime {
+pub struct CoverageByTime  {
     /// <p>The period that this coverage was used over.</p>
     #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
@@ -12460,27 +11174,26 @@ pub struct CoverageByTime {
 }
 impl CoverageByTime {
     /// <p>The period that this coverage was used over.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The groups of instances that the reservation covered.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::ReservationCoverageGroup]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::ReservationCoverageGroup]> {
         self.groups.as_deref()
     }
     /// <p>The total reservation coverage, in hours.</p>
-    pub fn total(&self) -> std::option::Option<&crate::model::Coverage> {
+    pub fn total(&self) -> std::option::Option<& crate::model::Coverage> {
         self.total.as_ref()
     }
 }
 /// See [`CoverageByTime`](crate::model::CoverageByTime).
 pub mod coverage_by_time {
-
+    
     /// A builder for [`CoverageByTime`](crate::model::CoverageByTime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
-        pub(crate) groups:
-            std::option::Option<std::vec::Vec<crate::model::ReservationCoverageGroup>>,
+        pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::ReservationCoverageGroup>>,
         pub(crate) total: std::option::Option<crate::model::Coverage>,
     }
     impl Builder {
@@ -12490,12 +11203,8 @@ pub mod coverage_by_time {
             self
         }
         /// <p>The period that this coverage was used over.</p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::DateInterval>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::DateInterval>) -> Self {
+            self.time_period = input; self
         }
         /// Appends an item to `groups`.
         ///
@@ -12504,17 +11213,13 @@ pub mod coverage_by_time {
         /// <p>The groups of instances that the reservation covered.</p>
         pub fn groups(mut self, input: crate::model::ReservationCoverageGroup) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>The groups of instances that the reservation covered.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReservationCoverageGroup>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservationCoverageGroup>>) -> Self {
+            self.groups = input; self
         }
         /// <p>The total reservation coverage, in hours.</p>
         pub fn total(mut self, input: crate::model::Coverage) -> Self {
@@ -12523,18 +11228,22 @@ pub mod coverage_by_time {
         }
         /// <p>The total reservation coverage, in hours.</p>
         pub fn set_total(mut self, input: std::option::Option<crate::model::Coverage>) -> Self {
-            self.total = input;
-            self
+            self.total = input; self
         }
         /// Consumes the builder and constructs a [`CoverageByTime`](crate::model::CoverageByTime).
         pub fn build(self) -> crate::model::CoverageByTime {
             crate::model::CoverageByTime {
-                time_period: self.time_period,
-                groups: self.groups,
-                total: self.total,
+                time_period: self.time_period
+                ,
+                groups: self.groups
+                ,
+                total: self.total
+                ,
             }
         }
     }
+    
+    
 }
 impl CoverageByTime {
     /// Creates a new builder-style object to manufacture [`CoverageByTime`](crate::model::CoverageByTime).
@@ -12546,37 +11255,31 @@ impl CoverageByTime {
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationCoverageGroup {
+pub struct ReservationCoverageGroup  {
     /// <p>The attributes for this group of reservations.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>How much instance usage this group of reservations covered.</p>
     #[doc(hidden)]
     pub coverage: std::option::Option<crate::model::Coverage>,
 }
 impl ReservationCoverageGroup {
     /// <p>The attributes for this group of reservations.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>How much instance usage this group of reservations covered.</p>
-    pub fn coverage(&self) -> std::option::Option<&crate::model::Coverage> {
+    pub fn coverage(&self) -> std::option::Option<& crate::model::Coverage> {
         self.coverage.as_ref()
     }
 }
 /// See [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
 pub mod reservation_coverage_group {
-
+    
     /// A builder for [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) coverage: std::option::Option<crate::model::Coverage>,
     }
     impl Builder {
@@ -12585,25 +11288,15 @@ pub mod reservation_coverage_group {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes for this group of reservations.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The attributes for this group of reservations.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>How much instance usage this group of reservations covered.</p>
         pub fn coverage(mut self, input: crate::model::Coverage) -> Self {
@@ -12612,17 +11305,20 @@ pub mod reservation_coverage_group {
         }
         /// <p>How much instance usage this group of reservations covered.</p>
         pub fn set_coverage(mut self, input: std::option::Option<crate::model::Coverage>) -> Self {
-            self.coverage = input;
-            self
+            self.coverage = input; self
         }
         /// Consumes the builder and constructs a [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
         pub fn build(self) -> crate::model::ReservationCoverageGroup {
             crate::model::ReservationCoverageGroup {
-                attributes: self.attributes,
-                coverage: self.coverage,
+                attributes: self.attributes
+                ,
+                coverage: self.coverage
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservationCoverageGroup {
     /// Creates a new builder-style object to manufacture [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
@@ -12634,38 +11330,32 @@ impl ReservationCoverageGroup {
 /// <p>The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionValuesWithAttributes {
+pub struct DimensionValuesWithAttributes  {
     /// <p>The value of a dimension with a specific attribute.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DimensionValuesWithAttributes {
     /// <p>The value of a dimension with a specific attribute.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
 }
 /// See [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
 pub mod dimension_values_with_attributes {
-
+    
     /// A builder for [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The value of a dimension with a specific attribute.</p>
@@ -12675,42 +11365,35 @@ pub mod dimension_values_with_attributes {
         }
         /// <p>The value of a dimension with a specific attribute.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
         pub fn build(self) -> crate::model::DimensionValuesWithAttributes {
             crate::model::DimensionValuesWithAttributes {
-                value: self.value,
-                attributes: self.attributes,
+                value: self.value
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl DimensionValuesWithAttributes {
     /// Creates a new builder-style object to manufacture [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
@@ -12725,9 +11408,9 @@ impl DimensionValuesWithAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let context = unimplemented!();
 /// match context {
@@ -12750,22 +11433,14 @@ impl DimensionValuesWithAttributes {
 /// Specifically, when `context` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Context::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Context {
     #[allow(missing_docs)] // documentation missing in model
     CostAndUsage,
@@ -12774,7 +11449,7 @@ pub enum Context {
     #[allow(missing_docs)] // documentation missing in model
     SavingsPlans,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Context {
     fn from(s: &str) -> Self {
@@ -12782,17 +11457,17 @@ impl std::convert::From<&str> for Context {
             "COST_AND_USAGE" => Context::CostAndUsage,
             "RESERVATIONS" => Context::Reservations,
             "SAVINGS_PLANS" => Context::SavingsPlans,
-            other => Context::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Context::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Context {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Context::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Context::from(s))
+                }
+            }
 impl Context {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12800,12 +11475,14 @@ impl Context {
             Context::CostAndUsage => "COST_AND_USAGE",
             Context::Reservations => "RESERVATIONS",
             Context::SavingsPlans => "SAVINGS_PLANS",
-            Context::Unknown(value) => value.as_str(),
+            Context::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COST_AND_USAGE", "RESERVATIONS", "SAVINGS_PLANS"]
+        &[
+            "COST_AND_USAGE", "RESERVATIONS", "SAVINGS_PLANS"
+        ]
     }
 }
 impl AsRef<str> for Context {
@@ -12817,15 +11494,13 @@ impl AsRef<str> for Context {
 /// <p>The result that's associated with a time period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultByTime {
+pub struct ResultByTime  {
     /// <p>The time period that the result covers.</p>
     #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The total amount of cost or usage accrued during the time period.</p>
     #[doc(hidden)]
-    pub total: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::MetricValue>,
-    >,
+    pub total: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetricValue>>,
     /// <p>The groups that this time period includes.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -12835,19 +11510,15 @@ pub struct ResultByTime {
 }
 impl ResultByTime {
     /// <p>The time period that the result covers.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The total amount of cost or usage accrued during the time period.</p>
-    pub fn total(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::MetricValue>,
-    > {
+    pub fn total(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::MetricValue>> {
         self.total.as_ref()
     }
     /// <p>The groups that this time period includes.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::Group]> {
         self.groups.as_deref()
     }
     /// <p>Determines whether the result is estimated.</p>
@@ -12857,14 +11528,12 @@ impl ResultByTime {
 }
 /// See [`ResultByTime`](crate::model::ResultByTime).
 pub mod result_by_time {
-
+    
     /// A builder for [`ResultByTime`](crate::model::ResultByTime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
-        pub(crate) total: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::MetricValue>,
-        >,
+        pub(crate) total: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetricValue>>,
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
         pub(crate) estimated: std::option::Option<bool>,
     }
@@ -12875,37 +11544,23 @@ pub mod result_by_time {
             self
         }
         /// <p>The time period that the result covers.</p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::DateInterval>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::DateInterval>) -> Self {
+            self.time_period = input; self
         }
         /// Adds a key-value pair to `total`.
         ///
         /// To override the contents of this collection use [`set_total`](Self::set_total).
         ///
         /// <p>The total amount of cost or usage accrued during the time period.</p>
-        pub fn total(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::MetricValue,
-        ) -> Self {
+        pub fn total(mut self, k: impl Into<std::string::String>, v: crate::model::MetricValue) -> Self {
             let mut hash_map = self.total.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.total = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.total = Some(hash_map);
+                            self
         }
         /// <p>The total amount of cost or usage accrued during the time period.</p>
-        pub fn set_total(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::MetricValue>,
-            >,
-        ) -> Self {
-            self.total = input;
-            self
+        pub fn set_total(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetricValue>>) -> Self {
+            self.total = input; self
         }
         /// Appends an item to `groups`.
         ///
@@ -12914,17 +11569,13 @@ pub mod result_by_time {
         /// <p>The groups that this time period includes.</p>
         pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>The groups that this time period includes.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::Group>>) -> Self {
+            self.groups = input; self
         }
         /// <p>Determines whether the result is estimated.</p>
         pub fn estimated(mut self, input: bool) -> Self {
@@ -12933,19 +11584,25 @@ pub mod result_by_time {
         }
         /// <p>Determines whether the result is estimated.</p>
         pub fn set_estimated(mut self, input: std::option::Option<bool>) -> Self {
-            self.estimated = input;
-            self
+            self.estimated = input; self
         }
         /// Consumes the builder and constructs a [`ResultByTime`](crate::model::ResultByTime).
         pub fn build(self) -> crate::model::ResultByTime {
             crate::model::ResultByTime {
-                time_period: self.time_period,
-                total: self.total,
-                groups: self.groups,
-                estimated: self.estimated.unwrap_or_default(),
+                time_period: self.time_period
+                ,
+                total: self.total
+                ,
+                groups: self.groups
+                ,
+                estimated: self.estimated
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ResultByTime {
     /// Creates a new builder-style object to manufacture [`ResultByTime`](crate::model::ResultByTime).
@@ -12957,40 +11614,32 @@ impl ResultByTime {
 /// <p>One level of grouped data in the results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Group {
+pub struct Group  {
     /// <p>The keys that are included in this group.</p>
     #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The metrics that are included in this group.</p>
     #[doc(hidden)]
-    pub metrics: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::MetricValue>,
-    >,
+    pub metrics: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetricValue>>,
 }
 impl Group {
     /// <p>The keys that are included in this group.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keys(&self) -> std::option::Option<& [std::string::String]> {
         self.keys.as_deref()
     }
     /// <p>The metrics that are included in this group.</p>
-    pub fn metrics(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::MetricValue>,
-    > {
+    pub fn metrics(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::MetricValue>> {
         self.metrics.as_ref()
     }
 }
 /// See [`Group`](crate::model::Group).
 pub mod group {
-
+    
     /// A builder for [`Group`](crate::model::Group).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) metrics: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::MetricValue>,
-        >,
+        pub(crate) metrics: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetricValue>>,
     }
     impl Builder {
         /// Appends an item to `keys`.
@@ -13000,51 +11649,41 @@ pub mod group {
         /// <p>The keys that are included in this group.</p>
         pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keys.unwrap_or_default();
-            v.push(input.into());
-            self.keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.keys = Some(v);
+                            self
         }
         /// <p>The keys that are included in this group.</p>
-        pub fn set_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.keys = input;
-            self
+        pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.keys = input; self
         }
         /// Adds a key-value pair to `metrics`.
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>The metrics that are included in this group.</p>
-        pub fn metrics(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::MetricValue,
-        ) -> Self {
+        pub fn metrics(mut self, k: impl Into<std::string::String>, v: crate::model::MetricValue) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.metrics = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.metrics = Some(hash_map);
+                            self
         }
         /// <p>The metrics that are included in this group.</p>
-        pub fn set_metrics(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::MetricValue>,
-            >,
-        ) -> Self {
-            self.metrics = input;
-            self
+        pub fn set_metrics(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetricValue>>) -> Self {
+            self.metrics = input; self
         }
         /// Consumes the builder and constructs a [`Group`](crate::model::Group).
         pub fn build(self) -> crate::model::Group {
             crate::model::Group {
-                keys: self.keys,
-                metrics: self.metrics,
+                keys: self.keys
+                ,
+                metrics: self.metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl Group {
     /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
@@ -13056,7 +11695,7 @@ impl Group {
 /// <p>The association between a monitor, threshold, and list of subscribers used to deliver notifications about anomalies detected by a monitor that exceeds a threshold. The content consists of the detailed metadata and the current status of the <code>AnomalySubscription</code> object. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalySubscription {
+pub struct AnomalySubscription  {
     /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
@@ -13069,9 +11708,9 @@ pub struct AnomalySubscription {
     /// <p>A list of subscribers to notify. </p>
     #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
-    /// <p>(deprecated)</p>
-    /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
-    /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+    /// <p>(deprecated)</p> 
+    /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p> 
+    /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p> 
     /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
     #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     #[doc(hidden)]
@@ -13082,67 +11721,67 @@ pub struct AnomalySubscription {
     /// <p>The name for the subscription. </p>
     #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
-    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
-    /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
-    /// <p>The following are examples of valid ThresholdExpressions:</p>
-    /// <ul>
-    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
-    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
-    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
-    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p> 
+    /// <p>One of Threshold or ThresholdExpression is required for this resource.</p> 
+    /// <p>The following are examples of valid ThresholdExpressions:</p> 
+    /// <ul> 
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub threshold_expression: std::option::Option<crate::model::Expression>,
 }
 impl AnomalySubscription {
     /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
-    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+    pub fn subscription_arn(&self) -> std::option::Option<& str> {
         self.subscription_arn.as_deref()
     }
     /// <p>Your unique account identifier. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>A list of cost anomaly monitors. </p>
-    pub fn monitor_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn monitor_arn_list(&self) -> std::option::Option<& [std::string::String]> {
         self.monitor_arn_list.as_deref()
     }
     /// <p>A list of subscribers to notify. </p>
-    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+    pub fn subscribers(&self) -> std::option::Option<& [crate::model::Subscriber]> {
         self.subscribers.as_deref()
     }
-    /// <p>(deprecated)</p>
-    /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
-    /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+    /// <p>(deprecated)</p> 
+    /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p> 
+    /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p> 
     /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
     #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     pub fn threshold(&self) -> std::option::Option<f64> {
         self.threshold
     }
     /// <p>The frequency that anomaly reports are sent over email. </p>
-    pub fn frequency(&self) -> std::option::Option<&crate::model::AnomalySubscriptionFrequency> {
+    pub fn frequency(&self) -> std::option::Option<& crate::model::AnomalySubscriptionFrequency> {
         self.frequency.as_ref()
     }
     /// <p>The name for the subscription. </p>
-    pub fn subscription_name(&self) -> std::option::Option<&str> {
+    pub fn subscription_name(&self) -> std::option::Option<& str> {
         self.subscription_name.as_deref()
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
-    /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
-    /// <p>The following are examples of valid ThresholdExpressions:</p>
-    /// <ul>
-    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
-    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
-    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
-    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p> 
+    /// <p>One of Threshold or ThresholdExpression is required for this resource.</p> 
+    /// <p>The following are examples of valid ThresholdExpressions:</p> 
+    /// <ul> 
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
     /// </ul>
-    pub fn threshold_expression(&self) -> std::option::Option<&crate::model::Expression> {
+    pub fn threshold_expression(&self) -> std::option::Option<& crate::model::Expression> {
         self.threshold_expression.as_ref()
     }
 }
 /// See [`AnomalySubscription`](crate::model::AnomalySubscription).
 pub mod anomaly_subscription {
-
+    
     /// A builder for [`AnomalySubscription`](crate::model::AnomalySubscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13162,12 +11801,8 @@ pub mod anomaly_subscription {
             self
         }
         /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
-        pub fn set_subscription_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_arn = input;
-            self
+        pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_arn = input; self
         }
         /// <p>Your unique account identifier. </p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13176,8 +11811,7 @@ pub mod anomaly_subscription {
         }
         /// <p>Your unique account identifier. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Appends an item to `monitor_arn_list`.
         ///
@@ -13186,17 +11820,13 @@ pub mod anomaly_subscription {
         /// <p>A list of cost anomaly monitors. </p>
         pub fn monitor_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.monitor_arn_list.unwrap_or_default();
-            v.push(input.into());
-            self.monitor_arn_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.monitor_arn_list = Some(v);
+                            self
         }
         /// <p>A list of cost anomaly monitors. </p>
-        pub fn set_monitor_arn_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.monitor_arn_list = input;
-            self
+        pub fn set_monitor_arn_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.monitor_arn_list = input; self
         }
         /// Appends an item to `subscribers`.
         ///
@@ -13205,35 +11835,30 @@ pub mod anomaly_subscription {
         /// <p>A list of subscribers to notify. </p>
         pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input);
-            self.subscribers = Some(v);
-            self
+                            v.push(input);
+                            self.subscribers = Some(v);
+                            self
         }
         /// <p>A list of subscribers to notify. </p>
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
+        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>) -> Self {
+            self.subscribers = input; self
         }
-        /// <p>(deprecated)</p>
-        /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
-        /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+        /// <p>(deprecated)</p> 
+        /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p> 
+        /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p> 
         /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
         #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
         pub fn threshold(mut self, input: f64) -> Self {
             self.threshold = Some(input);
             self
         }
-        /// <p>(deprecated)</p>
-        /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
-        /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
+        /// <p>(deprecated)</p> 
+        /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p> 
+        /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p> 
         /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
         #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
-            self.threshold = input;
-            self
+            self.threshold = input; self
         }
         /// <p>The frequency that anomaly reports are sent over email. </p>
         pub fn frequency(mut self, input: crate::model::AnomalySubscriptionFrequency) -> Self {
@@ -13241,12 +11866,8 @@ pub mod anomaly_subscription {
             self
         }
         /// <p>The frequency that anomaly reports are sent over email. </p>
-        pub fn set_frequency(
-            mut self,
-            input: std::option::Option<crate::model::AnomalySubscriptionFrequency>,
-        ) -> Self {
-            self.frequency = input;
-            self
+        pub fn set_frequency(mut self, input: std::option::Option<crate::model::AnomalySubscriptionFrequency>) -> Self {
+            self.frequency = input; self
         }
         /// <p>The name for the subscription. </p>
         pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13254,56 +11875,58 @@ pub mod anomaly_subscription {
             self
         }
         /// <p>The name for the subscription. </p>
-        pub fn set_subscription_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_name = input;
-            self
+        pub fn set_subscription_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_name = input; self
         }
-        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
-        /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
-        /// <p>The following are examples of valid ThresholdExpressions:</p>
-        /// <ul>
-        /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
-        /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
-        /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
-        /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p> 
+        /// <p>One of Threshold or ThresholdExpression is required for this resource.</p> 
+        /// <p>The following are examples of valid ThresholdExpressions:</p> 
+        /// <ul> 
+        /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
+        /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
+        /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
+        /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
         /// </ul>
         pub fn threshold_expression(mut self, input: crate::model::Expression) -> Self {
             self.threshold_expression = Some(input);
             self
         }
-        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
-        /// <p>One of Threshold or ThresholdExpression is required for this resource.</p>
-        /// <p>The following are examples of valid ThresholdExpressions:</p>
-        /// <ul>
-        /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
-        /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
-        /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
-        /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p> 
+        /// <p>One of Threshold or ThresholdExpression is required for this resource.</p> 
+        /// <p>The following are examples of valid ThresholdExpressions:</p> 
+        /// <ul> 
+        /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
+        /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
+        /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
+        /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
         /// </ul>
-        pub fn set_threshold_expression(
-            mut self,
-            input: std::option::Option<crate::model::Expression>,
-        ) -> Self {
-            self.threshold_expression = input;
-            self
+        pub fn set_threshold_expression(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
+            self.threshold_expression = input; self
         }
         /// Consumes the builder and constructs a [`AnomalySubscription`](crate::model::AnomalySubscription).
         pub fn build(self) -> crate::model::AnomalySubscription {
             crate::model::AnomalySubscription {
-                subscription_arn: self.subscription_arn,
-                account_id: self.account_id,
-                monitor_arn_list: self.monitor_arn_list,
-                subscribers: self.subscribers,
-                threshold: self.threshold,
-                frequency: self.frequency,
-                subscription_name: self.subscription_name,
-                threshold_expression: self.threshold_expression,
+                subscription_arn: self.subscription_arn
+                ,
+                account_id: self.account_id
+                ,
+                monitor_arn_list: self.monitor_arn_list
+                ,
+                subscribers: self.subscribers
+                ,
+                threshold: self.threshold
+                ,
+                frequency: self.frequency
+                ,
+                subscription_name: self.subscription_name
+                ,
+                threshold_expression: self.threshold_expression
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalySubscription {
     /// Creates a new builder-style object to manufacture [`AnomalySubscription`](crate::model::AnomalySubscription).
@@ -13315,7 +11938,7 @@ impl AnomalySubscription {
 /// <p>This object continuously inspects your account's cost data for anomalies. It's based on <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists of detailed metadata and the current status of the monitor object. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyMonitor {
+pub struct AnomalyMonitor  {
     /// <p>The Amazon Resource Name (ARN) value. </p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
@@ -13337,42 +11960,42 @@ pub struct AnomalyMonitor {
     /// <p>The dimensions to evaluate. </p>
     #[doc(hidden)]
     pub monitor_dimension: std::option::Option<crate::model::MonitorDimension>,
-    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
-    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-    /// <p>There are two patterns:</p>
-    /// <ul>
-    /// <li> <p>Simple dimension values.</p>
-    /// <ul>
-    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
-    /// <ul>
-    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
-    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
-    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
-    /// <ul>
-    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
-    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
-    /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
-    /// <ul>
-    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
-    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
-    /// </ul> <note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
-    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
-    /// </note> </li>
-    /// </ul> <note>
-    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
-    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> 
+    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <p>There are two patterns:</p> 
+    /// <ul> 
+    /// <li> <p>Simple dimension values.</p> 
+    /// <ul> 
+    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> 
+    /// <ul> 
+    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> 
+    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> 
+    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> 
+    /// <ul> 
+    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> 
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li> 
+    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <ul> 
+    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li> 
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p> 
+    /// <ul> 
+    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> 
+    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> 
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> 
+    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> 
+    /// </note> </li> 
+    /// </ul> <note> 
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> 
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub monitor_specification: std::option::Option<crate::model::Expression>,
@@ -13382,71 +12005,71 @@ pub struct AnomalyMonitor {
 }
 impl AnomalyMonitor {
     /// <p>The Amazon Resource Name (ARN) value. </p>
-    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The name of the monitor. </p>
-    pub fn monitor_name(&self) -> std::option::Option<&str> {
+    pub fn monitor_name(&self) -> std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The date when the monitor was created. </p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The date when the monitor was last updated. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&str> {
+    pub fn last_updated_date(&self) -> std::option::Option<& str> {
         self.last_updated_date.as_deref()
     }
     /// <p>The date when the monitor last evaluated for anomalies. </p>
-    pub fn last_evaluated_date(&self) -> std::option::Option<&str> {
+    pub fn last_evaluated_date(&self) -> std::option::Option<& str> {
         self.last_evaluated_date.as_deref()
     }
     /// <p>The possible type values. </p>
-    pub fn monitor_type(&self) -> std::option::Option<&crate::model::MonitorType> {
+    pub fn monitor_type(&self) -> std::option::Option<& crate::model::MonitorType> {
         self.monitor_type.as_ref()
     }
     /// <p>The dimensions to evaluate. </p>
-    pub fn monitor_dimension(&self) -> std::option::Option<&crate::model::MonitorDimension> {
+    pub fn monitor_dimension(&self) -> std::option::Option<& crate::model::MonitorDimension> {
         self.monitor_dimension.as_ref()
     }
-    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
-    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-    /// <p>There are two patterns:</p>
-    /// <ul>
-    /// <li> <p>Simple dimension values.</p>
-    /// <ul>
-    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
-    /// <ul>
-    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
-    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
-    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
-    /// <ul>
-    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
-    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
-    /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
-    /// <ul>
-    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
-    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
-    /// </ul> <note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
-    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
-    /// </note> </li>
-    /// </ul> <note>
-    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
-    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> 
+    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <p>There are two patterns:</p> 
+    /// <ul> 
+    /// <li> <p>Simple dimension values.</p> 
+    /// <ul> 
+    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> 
+    /// <ul> 
+    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> 
+    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> 
+    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> 
+    /// <ul> 
+    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> 
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li> 
+    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <ul> 
+    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li> 
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p> 
+    /// <ul> 
+    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> 
+    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> 
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> 
+    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> 
+    /// </note> </li> 
+    /// </ul> <note> 
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> 
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> 
     /// </note>
-    pub fn monitor_specification(&self) -> std::option::Option<&crate::model::Expression> {
+    pub fn monitor_specification(&self) -> std::option::Option<& crate::model::Expression> {
         self.monitor_specification.as_ref()
     }
     /// <p>The value for evaluated dimensions. </p>
@@ -13456,7 +12079,7 @@ impl AnomalyMonitor {
 }
 /// See [`AnomalyMonitor`](crate::model::AnomalyMonitor).
 pub mod anomaly_monitor {
-
+    
     /// A builder for [`AnomalyMonitor`](crate::model::AnomalyMonitor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13478,8 +12101,7 @@ pub mod anomaly_monitor {
         }
         /// <p>The Amazon Resource Name (ARN) value. </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.monitor_arn = input;
-            self
+            self.monitor_arn = input; self
         }
         /// <p>The name of the monitor. </p>
         pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13488,8 +12110,7 @@ pub mod anomaly_monitor {
         }
         /// <p>The name of the monitor. </p>
         pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.monitor_name = input;
-            self
+            self.monitor_name = input; self
         }
         /// <p>The date when the monitor was created. </p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13497,12 +12118,8 @@ pub mod anomaly_monitor {
             self
         }
         /// <p>The date when the monitor was created. </p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date when the monitor was last updated. </p>
         pub fn last_updated_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13510,12 +12127,8 @@ pub mod anomaly_monitor {
             self
         }
         /// <p>The date when the monitor was last updated. </p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date when the monitor last evaluated for anomalies. </p>
         pub fn last_evaluated_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13523,12 +12136,8 @@ pub mod anomaly_monitor {
             self
         }
         /// <p>The date when the monitor last evaluated for anomalies. </p>
-        pub fn set_last_evaluated_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_evaluated_date = input;
-            self
+        pub fn set_last_evaluated_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_evaluated_date = input; self
         }
         /// <p>The possible type values. </p>
         pub fn monitor_type(mut self, input: crate::model::MonitorType) -> Self {
@@ -13536,12 +12145,8 @@ pub mod anomaly_monitor {
             self
         }
         /// <p>The possible type values. </p>
-        pub fn set_monitor_type(
-            mut self,
-            input: std::option::Option<crate::model::MonitorType>,
-        ) -> Self {
-            self.monitor_type = input;
-            self
+        pub fn set_monitor_type(mut self, input: std::option::Option<crate::model::MonitorType>) -> Self {
+            self.monitor_type = input; self
         }
         /// <p>The dimensions to evaluate. </p>
         pub fn monitor_dimension(mut self, input: crate::model::MonitorDimension) -> Self {
@@ -13549,97 +12154,89 @@ pub mod anomaly_monitor {
             self
         }
         /// <p>The dimensions to evaluate. </p>
-        pub fn set_monitor_dimension(
-            mut self,
-            input: std::option::Option<crate::model::MonitorDimension>,
-        ) -> Self {
-            self.monitor_dimension = input;
-            self
+        pub fn set_monitor_dimension(mut self, input: std::option::Option<crate::model::MonitorDimension>) -> Self {
+            self.monitor_dimension = input; self
         }
-        /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
-        /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-        /// <p>There are two patterns:</p>
-        /// <ul>
-        /// <li> <p>Simple dimension values.</p>
-        /// <ul>
-        /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
-        /// <ul>
-        /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
-        /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
-        /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
-        /// <ul>
-        /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
-        /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
-        /// <ul>
-        /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
-        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
-        /// </ul> </li>
-        /// </ul> </li>
-        /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
-        /// <ul>
-        /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
-        /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
-        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
-        /// </ul> <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
-        /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
-        /// </note> </li>
-        /// </ul> <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> 
+        /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+        /// <p>There are two patterns:</p> 
+        /// <ul> 
+        /// <li> <p>Simple dimension values.</p> 
+        /// <ul> 
+        /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> 
+        /// <ul> 
+        /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> 
+        /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> 
+        /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> 
+        /// <ul> 
+        /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> 
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li> 
+        /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> 
+        /// <ul> 
+        /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li> 
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> </li> 
+        /// <li> <p>Compound <code>Expression</code> types with logical operations.</p> 
+        /// <ul> 
+        /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> 
+        /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> 
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> 
+        /// </ul> <note> 
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> 
+        /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> 
+        /// </note> </li> 
+        /// </ul> <note> 
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> 
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> 
         /// </note>
         pub fn monitor_specification(mut self, input: crate::model::Expression) -> Self {
             self.monitor_specification = Some(input);
             self
         }
-        /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
-        /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
-        /// <p>There are two patterns:</p>
-        /// <ul>
-        /// <li> <p>Simple dimension values.</p>
-        /// <ul>
-        /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
-        /// <ul>
-        /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
-        /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
-        /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
-        /// <ul>
-        /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
-        /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
-        /// </ul> </li>
-        /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
-        /// <ul>
-        /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
-        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
-        /// </ul> </li>
-        /// </ul> </li>
-        /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
-        /// <ul>
-        /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
-        /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
-        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
-        /// </ul> <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
-        /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
-        /// </note> </li>
-        /// </ul> <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> 
+        /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
+        /// <p>There are two patterns:</p> 
+        /// <ul> 
+        /// <li> <p>Simple dimension values.</p> 
+        /// <ul> 
+        /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> 
+        /// <ul> 
+        /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> 
+        /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> 
+        /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> 
+        /// <ul> 
+        /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> 
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li> 
+        /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> 
+        /// <ul> 
+        /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li> 
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> </li> 
+        /// <li> <p>Compound <code>Expression</code> types with logical operations.</p> 
+        /// <ul> 
+        /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> 
+        /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> 
+        /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> 
+        /// </ul> <note> 
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> 
+        /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> 
+        /// </note> </li> 
+        /// </ul> <note> 
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> 
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> 
         /// </note>
-        pub fn set_monitor_specification(
-            mut self,
-            input: std::option::Option<crate::model::Expression>,
-        ) -> Self {
-            self.monitor_specification = input;
-            self
+        pub fn set_monitor_specification(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
+            self.monitor_specification = input; self
         }
         /// <p>The value for evaluated dimensions. </p>
         pub fn dimensional_value_count(mut self, input: i32) -> Self {
@@ -13648,24 +12245,35 @@ pub mod anomaly_monitor {
         }
         /// <p>The value for evaluated dimensions. </p>
         pub fn set_dimensional_value_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.dimensional_value_count = input;
-            self
+            self.dimensional_value_count = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyMonitor`](crate::model::AnomalyMonitor).
         pub fn build(self) -> crate::model::AnomalyMonitor {
             crate::model::AnomalyMonitor {
-                monitor_arn: self.monitor_arn,
-                monitor_name: self.monitor_name,
-                creation_date: self.creation_date,
-                last_updated_date: self.last_updated_date,
-                last_evaluated_date: self.last_evaluated_date,
-                monitor_type: self.monitor_type,
-                monitor_dimension: self.monitor_dimension,
-                monitor_specification: self.monitor_specification,
-                dimensional_value_count: self.dimensional_value_count.unwrap_or_default(),
+                monitor_arn: self.monitor_arn
+                ,
+                monitor_name: self.monitor_name
+                ,
+                creation_date: self.creation_date
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                last_evaluated_date: self.last_evaluated_date
+                ,
+                monitor_type: self.monitor_type
+                ,
+                monitor_dimension: self.monitor_dimension
+                ,
+                monitor_specification: self.monitor_specification
+                ,
+                dimensional_value_count: self.dimensional_value_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyMonitor {
     /// Creates a new builder-style object to manufacture [`AnomalyMonitor`](crate::model::AnomalyMonitor).
@@ -13680,9 +12288,9 @@ impl AnomalyMonitor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let monitordimension = unimplemented!();
 /// match monitordimension {
@@ -13703,54 +12311,48 @@ impl AnomalyMonitor {
 /// Specifically, when `monitordimension` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MonitorDimension::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MonitorDimension {
     #[allow(missing_docs)] // documentation missing in model
     Service,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MonitorDimension {
     fn from(s: &str) -> Self {
         match s {
             "SERVICE" => MonitorDimension::Service,
-            other => MonitorDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MonitorDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MonitorDimension {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MonitorDimension::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MonitorDimension::from(s))
+                }
+            }
 impl MonitorDimension {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MonitorDimension::Service => "SERVICE",
-            MonitorDimension::Unknown(value) => value.as_str(),
+            MonitorDimension::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SERVICE"]
+        &[
+            "SERVICE"
+        ]
     }
 }
 impl AsRef<str> for MonitorDimension {
@@ -13765,9 +12367,9 @@ impl AsRef<str> for MonitorDimension {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let monitortype = unimplemented!();
 /// match monitortype {
@@ -13789,58 +12391,52 @@ impl AsRef<str> for MonitorDimension {
 /// Specifically, when `monitortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MonitorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MonitorType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Dimensional,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MonitorType {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM" => MonitorType::Custom,
             "DIMENSIONAL" => MonitorType::Dimensional,
-            other => MonitorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MonitorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MonitorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MonitorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MonitorType::from(s))
+                }
+            }
 impl MonitorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MonitorType::Custom => "CUSTOM",
             MonitorType::Dimensional => "DIMENSIONAL",
-            MonitorType::Unknown(value) => value.as_str(),
+            MonitorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "DIMENSIONAL"]
+        &[
+            "CUSTOM", "DIMENSIONAL"
+        ]
     }
 }
 impl AsRef<str> for MonitorType {
@@ -13852,7 +12448,7 @@ impl AsRef<str> for MonitorType {
 /// <p>An unusual cost pattern. This consists of the detailed metadata and the current status of the anomaly object. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Anomaly {
+pub struct Anomaly  {
     /// <p>The unique identifier for the anomaly. </p>
     #[doc(hidden)]
     pub anomaly_id: std::option::Option<std::string::String>,
@@ -13883,45 +12479,45 @@ pub struct Anomaly {
 }
 impl Anomaly {
     /// <p>The unique identifier for the anomaly. </p>
-    pub fn anomaly_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_id(&self) -> std::option::Option<& str> {
         self.anomaly_id.as_deref()
     }
     /// <p>The first day the anomaly is detected. </p>
-    pub fn anomaly_start_date(&self) -> std::option::Option<&str> {
+    pub fn anomaly_start_date(&self) -> std::option::Option<& str> {
         self.anomaly_start_date.as_deref()
     }
     /// <p>The last day the anomaly is detected. </p>
-    pub fn anomaly_end_date(&self) -> std::option::Option<&str> {
+    pub fn anomaly_end_date(&self) -> std::option::Option<& str> {
         self.anomaly_end_date.as_deref()
     }
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
-    pub fn dimension_value(&self) -> std::option::Option<&str> {
+    pub fn dimension_value(&self) -> std::option::Option<& str> {
         self.dimension_value.as_deref()
     }
     /// <p>The list of identified root causes for the anomaly. </p>
-    pub fn root_causes(&self) -> std::option::Option<&[crate::model::RootCause]> {
+    pub fn root_causes(&self) -> std::option::Option<& [crate::model::RootCause]> {
         self.root_causes.as_deref()
     }
     /// <p>The latest and maximum score for the anomaly. </p>
-    pub fn anomaly_score(&self) -> std::option::Option<&crate::model::AnomalyScore> {
+    pub fn anomaly_score(&self) -> std::option::Option<& crate::model::AnomalyScore> {
         self.anomaly_score.as_ref()
     }
     /// <p>The dollar impact for the anomaly. </p>
-    pub fn impact(&self) -> std::option::Option<&crate::model::Impact> {
+    pub fn impact(&self) -> std::option::Option<& crate::model::Impact> {
         self.impact.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
-    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The feedback value. </p>
-    pub fn feedback(&self) -> std::option::Option<&crate::model::AnomalyFeedbackType> {
+    pub fn feedback(&self) -> std::option::Option<& crate::model::AnomalyFeedbackType> {
         self.feedback.as_ref()
     }
 }
 /// See [`Anomaly`](crate::model::Anomaly).
 pub mod anomaly {
-
+    
     /// A builder for [`Anomaly`](crate::model::Anomaly).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13943,8 +12539,7 @@ pub mod anomaly {
         }
         /// <p>The unique identifier for the anomaly. </p>
         pub fn set_anomaly_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.anomaly_id = input;
-            self
+            self.anomaly_id = input; self
         }
         /// <p>The first day the anomaly is detected. </p>
         pub fn anomaly_start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13952,12 +12547,8 @@ pub mod anomaly {
             self
         }
         /// <p>The first day the anomaly is detected. </p>
-        pub fn set_anomaly_start_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_start_date = input;
-            self
+        pub fn set_anomaly_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_start_date = input; self
         }
         /// <p>The last day the anomaly is detected. </p>
         pub fn anomaly_end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13965,12 +12556,8 @@ pub mod anomaly {
             self
         }
         /// <p>The last day the anomaly is detected. </p>
-        pub fn set_anomaly_end_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_end_date = input;
-            self
+        pub fn set_anomaly_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_end_date = input; self
         }
         /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
         pub fn dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13978,12 +12565,8 @@ pub mod anomaly {
             self
         }
         /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
-        pub fn set_dimension_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_value = input;
-            self
+        pub fn set_dimension_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_value = input; self
         }
         /// Appends an item to `root_causes`.
         ///
@@ -13992,17 +12575,13 @@ pub mod anomaly {
         /// <p>The list of identified root causes for the anomaly. </p>
         pub fn root_causes(mut self, input: crate::model::RootCause) -> Self {
             let mut v = self.root_causes.unwrap_or_default();
-            v.push(input);
-            self.root_causes = Some(v);
-            self
+                            v.push(input);
+                            self.root_causes = Some(v);
+                            self
         }
         /// <p>The list of identified root causes for the anomaly. </p>
-        pub fn set_root_causes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RootCause>>,
-        ) -> Self {
-            self.root_causes = input;
-            self
+        pub fn set_root_causes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RootCause>>) -> Self {
+            self.root_causes = input; self
         }
         /// <p>The latest and maximum score for the anomaly. </p>
         pub fn anomaly_score(mut self, input: crate::model::AnomalyScore) -> Self {
@@ -14010,12 +12589,8 @@ pub mod anomaly {
             self
         }
         /// <p>The latest and maximum score for the anomaly. </p>
-        pub fn set_anomaly_score(
-            mut self,
-            input: std::option::Option<crate::model::AnomalyScore>,
-        ) -> Self {
-            self.anomaly_score = input;
-            self
+        pub fn set_anomaly_score(mut self, input: std::option::Option<crate::model::AnomalyScore>) -> Self {
+            self.anomaly_score = input; self
         }
         /// <p>The dollar impact for the anomaly. </p>
         pub fn impact(mut self, input: crate::model::Impact) -> Self {
@@ -14024,8 +12599,7 @@ pub mod anomaly {
         }
         /// <p>The dollar impact for the anomaly. </p>
         pub fn set_impact(mut self, input: std::option::Option<crate::model::Impact>) -> Self {
-            self.impact = input;
-            self
+            self.impact = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14034,8 +12608,7 @@ pub mod anomaly {
         }
         /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.monitor_arn = input;
-            self
+            self.monitor_arn = input; self
         }
         /// <p>The feedback value. </p>
         pub fn feedback(mut self, input: crate::model::AnomalyFeedbackType) -> Self {
@@ -14043,28 +12616,35 @@ pub mod anomaly {
             self
         }
         /// <p>The feedback value. </p>
-        pub fn set_feedback(
-            mut self,
-            input: std::option::Option<crate::model::AnomalyFeedbackType>,
-        ) -> Self {
-            self.feedback = input;
-            self
+        pub fn set_feedback(mut self, input: std::option::Option<crate::model::AnomalyFeedbackType>) -> Self {
+            self.feedback = input; self
         }
         /// Consumes the builder and constructs a [`Anomaly`](crate::model::Anomaly).
         pub fn build(self) -> crate::model::Anomaly {
             crate::model::Anomaly {
-                anomaly_id: self.anomaly_id,
-                anomaly_start_date: self.anomaly_start_date,
-                anomaly_end_date: self.anomaly_end_date,
-                dimension_value: self.dimension_value,
-                root_causes: self.root_causes,
-                anomaly_score: self.anomaly_score,
-                impact: self.impact,
-                monitor_arn: self.monitor_arn,
-                feedback: self.feedback,
+                anomaly_id: self.anomaly_id
+                ,
+                anomaly_start_date: self.anomaly_start_date
+                ,
+                anomaly_end_date: self.anomaly_end_date
+                ,
+                dimension_value: self.dimension_value
+                ,
+                root_causes: self.root_causes
+                ,
+                anomaly_score: self.anomaly_score
+                ,
+                impact: self.impact
+                ,
+                monitor_arn: self.monitor_arn
+                ,
+                feedback: self.feedback
+                ,
             }
         }
     }
+    
+    
 }
 impl Anomaly {
     /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
@@ -14076,7 +12656,7 @@ impl Anomaly {
 /// <p>The dollar value of the anomaly. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Impact {
+pub struct Impact  {
     /// <p>The maximum dollar value that's observed for an anomaly.</p>
     #[doc(hidden)]
     pub max_impact: f64,
@@ -14117,7 +12697,7 @@ impl Impact {
 }
 /// See [`Impact`](crate::model::Impact).
 pub mod impact {
-
+    
     /// A builder for [`Impact`](crate::model::Impact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14135,8 +12715,7 @@ pub mod impact {
         }
         /// <p>The maximum dollar value that's observed for an anomaly.</p>
         pub fn set_max_impact(mut self, input: std::option::Option<f64>) -> Self {
-            self.max_impact = input;
-            self
+            self.max_impact = input; self
         }
         /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
         pub fn total_impact(mut self, input: f64) -> Self {
@@ -14145,8 +12724,7 @@ pub mod impact {
         }
         /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
         pub fn set_total_impact(mut self, input: std::option::Option<f64>) -> Self {
-            self.total_impact = input;
-            self
+            self.total_impact = input; self
         }
         /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
         pub fn total_actual_spend(mut self, input: f64) -> Self {
@@ -14155,8 +12733,7 @@ pub mod impact {
         }
         /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
         pub fn set_total_actual_spend(mut self, input: std::option::Option<f64>) -> Self {
-            self.total_actual_spend = input;
-            self
+            self.total_actual_spend = input; self
         }
         /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
         pub fn total_expected_spend(mut self, input: f64) -> Self {
@@ -14165,8 +12742,7 @@ pub mod impact {
         }
         /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
         pub fn set_total_expected_spend(mut self, input: std::option::Option<f64>) -> Self {
-            self.total_expected_spend = input;
-            self
+            self.total_expected_spend = input; self
         }
         /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
         pub fn total_impact_percentage(mut self, input: f64) -> Self {
@@ -14175,20 +12751,28 @@ pub mod impact {
         }
         /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
         pub fn set_total_impact_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.total_impact_percentage = input;
-            self
+            self.total_impact_percentage = input; self
         }
         /// Consumes the builder and constructs a [`Impact`](crate::model::Impact).
         pub fn build(self) -> crate::model::Impact {
             crate::model::Impact {
-                max_impact: self.max_impact.unwrap_or_default(),
-                total_impact: self.total_impact.unwrap_or_default(),
-                total_actual_spend: self.total_actual_spend,
-                total_expected_spend: self.total_expected_spend,
-                total_impact_percentage: self.total_impact_percentage,
+                max_impact: self.max_impact
+                    .unwrap_or_default()
+                ,
+                total_impact: self.total_impact
+                    .unwrap_or_default()
+                ,
+                total_actual_spend: self.total_actual_spend
+                ,
+                total_expected_spend: self.total_expected_spend
+                ,
+                total_impact_percentage: self.total_impact_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl Impact {
     /// Creates a new builder-style object to manufacture [`Impact`](crate::model::Impact).
@@ -14200,7 +12784,7 @@ impl Impact {
 /// <p>Quantifies the anomaly. The higher score means that it's more anomalous. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyScore {
+pub struct AnomalyScore  {
     /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
     #[doc(hidden)]
     pub max_score: f64,
@@ -14220,7 +12804,7 @@ impl AnomalyScore {
 }
 /// See [`AnomalyScore`](crate::model::AnomalyScore).
 pub mod anomaly_score {
-
+    
     /// A builder for [`AnomalyScore`](crate::model::AnomalyScore).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14235,8 +12819,7 @@ pub mod anomaly_score {
         }
         /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
         pub fn set_max_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.max_score = input;
-            self
+            self.max_score = input; self
         }
         /// <p>The last observed score. </p>
         pub fn current_score(mut self, input: f64) -> Self {
@@ -14245,17 +12828,22 @@ pub mod anomaly_score {
         }
         /// <p>The last observed score. </p>
         pub fn set_current_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.current_score = input;
-            self
+            self.current_score = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyScore`](crate::model::AnomalyScore).
         pub fn build(self) -> crate::model::AnomalyScore {
             crate::model::AnomalyScore {
-                max_score: self.max_score.unwrap_or_default(),
-                current_score: self.current_score.unwrap_or_default(),
+                max_score: self.max_score
+                    .unwrap_or_default()
+                ,
+                current_score: self.current_score
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyScore {
     /// Creates a new builder-style object to manufacture [`AnomalyScore`](crate::model::AnomalyScore).
@@ -14267,7 +12855,7 @@ impl AnomalyScore {
 /// <p>The combination of Amazon Web Service, linked account, linked account name, Region, and usage type where a cost anomaly is observed. The linked account name will only be available when the account name can be identified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RootCause {
+pub struct RootCause  {
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
     #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
@@ -14286,29 +12874,29 @@ pub struct RootCause {
 }
 impl RootCause {
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The member account value that's associated with the cost anomaly. </p>
-    pub fn linked_account(&self) -> std::option::Option<&str> {
+    pub fn linked_account(&self) -> std::option::Option<& str> {
         self.linked_account.as_deref()
     }
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
-    pub fn usage_type(&self) -> std::option::Option<&str> {
+    pub fn usage_type(&self) -> std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The member account name value that's associated with the cost anomaly.</p>
-    pub fn linked_account_name(&self) -> std::option::Option<&str> {
+    pub fn linked_account_name(&self) -> std::option::Option<& str> {
         self.linked_account_name.as_deref()
     }
 }
 /// See [`RootCause`](crate::model::RootCause).
 pub mod root_cause {
-
+    
     /// A builder for [`RootCause`](crate::model::RootCause).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14326,8 +12914,7 @@ pub mod root_cause {
         }
         /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14336,8 +12923,7 @@ pub mod root_cause {
         }
         /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The member account value that's associated with the cost anomaly. </p>
         pub fn linked_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14345,12 +12931,8 @@ pub mod root_cause {
             self
         }
         /// <p>The member account value that's associated with the cost anomaly. </p>
-        pub fn set_linked_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.linked_account = input;
-            self
+        pub fn set_linked_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.linked_account = input; self
         }
         /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
         pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14359,8 +12941,7 @@ pub mod root_cause {
         }
         /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.usage_type = input;
-            self
+            self.usage_type = input; self
         }
         /// <p>The member account name value that's associated with the cost anomaly.</p>
         pub fn linked_account_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14368,24 +12949,27 @@ pub mod root_cause {
             self
         }
         /// <p>The member account name value that's associated with the cost anomaly.</p>
-        pub fn set_linked_account_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.linked_account_name = input;
-            self
+        pub fn set_linked_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.linked_account_name = input; self
         }
         /// Consumes the builder and constructs a [`RootCause`](crate::model::RootCause).
         pub fn build(self) -> crate::model::RootCause {
             crate::model::RootCause {
-                service: self.service,
-                region: self.region,
-                linked_account: self.linked_account,
-                usage_type: self.usage_type,
-                linked_account_name: self.linked_account_name,
+                service: self.service
+                ,
+                region: self.region
+                ,
+                linked_account: self.linked_account
+                ,
+                usage_type: self.usage_type
+                ,
+                linked_account_name: self.linked_account_name
+                ,
             }
         }
     }
+    
+    
 }
 impl RootCause {
     /// Creates a new builder-style object to manufacture [`RootCause`](crate::model::RootCause).
@@ -14397,7 +12981,7 @@ impl RootCause {
 /// <p>Filters cost anomalies based on the total impact. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TotalImpactFilter {
+pub struct TotalImpactFilter  {
     /// <p>The comparing value that's used in the filter. </p>
     #[doc(hidden)]
     pub numeric_operator: std::option::Option<crate::model::NumericOperator>,
@@ -14410,7 +12994,7 @@ pub struct TotalImpactFilter {
 }
 impl TotalImpactFilter {
     /// <p>The comparing value that's used in the filter. </p>
-    pub fn numeric_operator(&self) -> std::option::Option<&crate::model::NumericOperator> {
+    pub fn numeric_operator(&self) -> std::option::Option<& crate::model::NumericOperator> {
         self.numeric_operator.as_ref()
     }
     /// <p>The lower bound dollar value that's used in the filter. </p>
@@ -14424,7 +13008,7 @@ impl TotalImpactFilter {
 }
 /// See [`TotalImpactFilter`](crate::model::TotalImpactFilter).
 pub mod total_impact_filter {
-
+    
     /// A builder for [`TotalImpactFilter`](crate::model::TotalImpactFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14439,12 +13023,8 @@ pub mod total_impact_filter {
             self
         }
         /// <p>The comparing value that's used in the filter. </p>
-        pub fn set_numeric_operator(
-            mut self,
-            input: std::option::Option<crate::model::NumericOperator>,
-        ) -> Self {
-            self.numeric_operator = input;
-            self
+        pub fn set_numeric_operator(mut self, input: std::option::Option<crate::model::NumericOperator>) -> Self {
+            self.numeric_operator = input; self
         }
         /// <p>The lower bound dollar value that's used in the filter. </p>
         pub fn start_value(mut self, input: f64) -> Self {
@@ -14453,8 +13033,7 @@ pub mod total_impact_filter {
         }
         /// <p>The lower bound dollar value that's used in the filter. </p>
         pub fn set_start_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.start_value = input;
-            self
+            self.start_value = input; self
         }
         /// <p>The upper bound dollar value that's used in the filter. </p>
         pub fn end_value(mut self, input: f64) -> Self {
@@ -14463,18 +13042,24 @@ pub mod total_impact_filter {
         }
         /// <p>The upper bound dollar value that's used in the filter. </p>
         pub fn set_end_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.end_value = input;
-            self
+            self.end_value = input; self
         }
         /// Consumes the builder and constructs a [`TotalImpactFilter`](crate::model::TotalImpactFilter).
         pub fn build(self) -> crate::model::TotalImpactFilter {
             crate::model::TotalImpactFilter {
-                numeric_operator: self.numeric_operator,
-                start_value: self.start_value.unwrap_or_default(),
-                end_value: self.end_value.unwrap_or_default(),
+                numeric_operator: self.numeric_operator
+                ,
+                start_value: self.start_value
+                    .unwrap_or_default()
+                ,
+                end_value: self.end_value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl TotalImpactFilter {
     /// Creates a new builder-style object to manufacture [`TotalImpactFilter`](crate::model::TotalImpactFilter).
@@ -14489,9 +13074,9 @@ impl TotalImpactFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let numericoperator = unimplemented!();
 /// match numericoperator {
@@ -14517,22 +13102,14 @@ impl TotalImpactFilter {
 /// Specifically, when `numericoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NumericOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NumericOperator {
     #[allow(missing_docs)] // documentation missing in model
     Between,
@@ -14547,7 +13124,7 @@ pub enum NumericOperator {
     #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NumericOperator {
     fn from(s: &str) -> Self {
@@ -14558,17 +13135,17 @@ impl std::convert::From<&str> for NumericOperator {
             "GREATER_THAN_OR_EQUAL" => NumericOperator::GreaterThanOrEqual,
             "LESS_THAN" => NumericOperator::LessThan,
             "LESS_THAN_OR_EQUAL" => NumericOperator::LessThanOrEqual,
-            other => NumericOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NumericOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NumericOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NumericOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NumericOperator::from(s))
+                }
+            }
 impl NumericOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -14579,18 +13156,13 @@ impl NumericOperator {
             NumericOperator::GreaterThanOrEqual => "GREATER_THAN_OR_EQUAL",
             NumericOperator::LessThan => "LESS_THAN",
             NumericOperator::LessThanOrEqual => "LESS_THAN_OR_EQUAL",
-            NumericOperator::Unknown(value) => value.as_str(),
+            NumericOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BETWEEN",
-            "EQUAL",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL",
+            "BETWEEN", "EQUAL", "GREATER_THAN", "GREATER_THAN_OR_EQUAL", "LESS_THAN", "LESS_THAN_OR_EQUAL"
         ]
     }
 }
@@ -14603,7 +13175,7 @@ impl AsRef<str> for NumericOperator {
 /// <p>The time period for an anomaly. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyDateInterval {
+pub struct AnomalyDateInterval  {
     /// <p>The first date an anomaly was observed. </p>
     #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
@@ -14613,17 +13185,17 @@ pub struct AnomalyDateInterval {
 }
 impl AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> std::option::Option<& str> {
         self.start_date.as_deref()
     }
     /// <p>The last date an anomaly was observed. </p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> std::option::Option<& str> {
         self.end_date.as_deref()
     }
 }
 /// See [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
 pub mod anomaly_date_interval {
-
+    
     /// A builder for [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14638,8 +13210,7 @@ pub mod anomaly_date_interval {
         }
         /// <p>The first date an anomaly was observed. </p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input;
-            self
+            self.start_date = input; self
         }
         /// <p>The last date an anomaly was observed. </p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14648,17 +13219,20 @@ pub mod anomaly_date_interval {
         }
         /// <p>The last date an anomaly was observed. </p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_date = input;
-            self
+            self.end_date = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
         pub fn build(self) -> crate::model::AnomalyDateInterval {
             crate::model::AnomalyDateInterval {
-                start_date: self.start_date,
-                end_date: self.end_date,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyDateInterval {
     /// Creates a new builder-style object to manufacture [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
@@ -14670,7 +13244,7 @@ impl AnomalyDateInterval {
 /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategory {
+pub struct CostCategory  {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -14691,61 +13265,55 @@ pub struct CostCategory {
     pub rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
     #[doc(hidden)]
-    pub split_charge_rules:
-        std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
+    pub split_charge_rules: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
     #[doc(hidden)]
-    pub processing_status:
-        std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
+    pub processing_status: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
     /// <p>The default value for the cost category.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The effective start date of your Cost Category.</p>
-    pub fn effective_start(&self) -> std::option::Option<&str> {
+    pub fn effective_start(&self) -> std::option::Option<& str> {
         self.effective_start.as_deref()
     }
     /// <p>The effective end date of your Cost Category.</p>
-    pub fn effective_end(&self) -> std::option::Option<&str> {
+    pub fn effective_end(&self) -> std::option::Option<& str> {
         self.effective_end.as_deref()
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn rule_version(&self) -> std::option::Option<&crate::model::CostCategoryRuleVersion> {
+    pub fn rule_version(&self) -> std::option::Option<& crate::model::CostCategoryRuleVersion> {
         self.rule_version.as_ref()
     }
     /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::CostCategoryRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::CostCategoryRule]> {
         self.rules.as_deref()
     }
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
-    pub fn split_charge_rules(
-        &self,
-    ) -> std::option::Option<&[crate::model::CostCategorySplitChargeRule]> {
+    pub fn split_charge_rules(&self) -> std::option::Option<& [crate::model::CostCategorySplitChargeRule]> {
         self.split_charge_rules.as_deref()
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-    pub fn processing_status(
-        &self,
-    ) -> std::option::Option<&[crate::model::CostCategoryProcessingStatus]> {
+    pub fn processing_status(&self) -> std::option::Option<& [crate::model::CostCategoryProcessingStatus]> {
         self.processing_status.as_deref()
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
 /// See [`CostCategory`](crate::model::CostCategory).
 pub mod cost_category {
-
+    
     /// A builder for [`CostCategory`](crate::model::CostCategory).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14755,10 +13323,8 @@ pub mod cost_category {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
-        pub(crate) split_charge_rules:
-            std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
-        pub(crate) processing_status:
-            std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
+        pub(crate) split_charge_rules: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
+        pub(crate) processing_status: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
         pub(crate) default_value: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -14768,12 +13334,8 @@ pub mod cost_category {
             self
         }
         /// <p>The unique identifier for your Cost Category. </p>
-        pub fn set_cost_category_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cost_category_arn = input;
-            self
+        pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cost_category_arn = input; self
         }
         /// <p>The effective start date of your Cost Category.</p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14781,12 +13343,8 @@ pub mod cost_category {
             self
         }
         /// <p>The effective start date of your Cost Category.</p>
-        pub fn set_effective_start(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.effective_start = input;
-            self
+        pub fn set_effective_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.effective_start = input; self
         }
         /// <p>The effective end date of your Cost Category.</p>
         pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14794,12 +13352,8 @@ pub mod cost_category {
             self
         }
         /// <p>The effective end date of your Cost Category.</p>
-        pub fn set_effective_end(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.effective_end = input;
-            self
+        pub fn set_effective_end(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.effective_end = input; self
         }
         /// <p>The unique name of the Cost Category.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14808,8 +13362,7 @@ pub mod cost_category {
         }
         /// <p>The unique name of the Cost Category.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
         pub fn rule_version(mut self, input: crate::model::CostCategoryRuleVersion) -> Self {
@@ -14817,12 +13370,8 @@ pub mod cost_category {
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
-        pub fn set_rule_version(
-            mut self,
-            input: std::option::Option<crate::model::CostCategoryRuleVersion>,
-        ) -> Self {
-            self.rule_version = input;
-            self
+        pub fn set_rule_version(mut self, input: std::option::Option<crate::model::CostCategoryRuleVersion>) -> Self {
+            self.rule_version = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -14831,61 +13380,43 @@ pub mod cost_category {
         /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
         pub fn rules(mut self, input: crate::model::CostCategoryRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>) -> Self {
+            self.rules = input; self
         }
         /// Appends an item to `split_charge_rules`.
         ///
         /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
         ///
         /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
-        pub fn split_charge_rules(
-            mut self,
-            input: crate::model::CostCategorySplitChargeRule,
-        ) -> Self {
+        pub fn split_charge_rules(mut self, input: crate::model::CostCategorySplitChargeRule) -> Self {
             let mut v = self.split_charge_rules.unwrap_or_default();
-            v.push(input);
-            self.split_charge_rules = Some(v);
-            self
+                            v.push(input);
+                            self.split_charge_rules = Some(v);
+                            self
         }
         /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
-        pub fn set_split_charge_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
-        ) -> Self {
-            self.split_charge_rules = input;
-            self
+        pub fn set_split_charge_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>) -> Self {
+            self.split_charge_rules = input; self
         }
         /// Appends an item to `processing_status`.
         ///
         /// To override the contents of this collection use [`set_processing_status`](Self::set_processing_status).
         ///
         /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-        pub fn processing_status(
-            mut self,
-            input: crate::model::CostCategoryProcessingStatus,
-        ) -> Self {
+        pub fn processing_status(mut self, input: crate::model::CostCategoryProcessingStatus) -> Self {
             let mut v = self.processing_status.unwrap_or_default();
-            v.push(input);
-            self.processing_status = Some(v);
-            self
+                            v.push(input);
+                            self.processing_status = Some(v);
+                            self
         }
         /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-        pub fn set_processing_status(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
-        ) -> Self {
-            self.processing_status = input;
-            self
+        pub fn set_processing_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>) -> Self {
+            self.processing_status = input; self
         }
         /// <p>The default value for the cost category.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14893,28 +13424,35 @@ pub mod cost_category {
             self
         }
         /// <p>The default value for the cost category.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// Consumes the builder and constructs a [`CostCategory`](crate::model::CostCategory).
         pub fn build(self) -> crate::model::CostCategory {
             crate::model::CostCategory {
-                cost_category_arn: self.cost_category_arn,
-                effective_start: self.effective_start,
-                effective_end: self.effective_end,
-                name: self.name,
-                rule_version: self.rule_version,
-                rules: self.rules,
-                split_charge_rules: self.split_charge_rules,
-                processing_status: self.processing_status,
-                default_value: self.default_value,
+                cost_category_arn: self.cost_category_arn
+                ,
+                effective_start: self.effective_start
+                ,
+                effective_end: self.effective_end
+                ,
+                name: self.name
+                ,
+                rule_version: self.rule_version
+                ,
+                rules: self.rules
+                ,
+                split_charge_rules: self.split_charge_rules
+                ,
+                processing_status: self.processing_status
+                ,
+                default_value: self.default_value
+                ,
             }
         }
     }
+    
+    
 }
 impl CostCategory {
     /// Creates a new builder-style object to manufacture [`CostCategory`](crate::model::CostCategory).
@@ -14922,3 +13460,4 @@ impl CostCategory {
         crate::model::cost_category::Builder::default()
     }
 }
+

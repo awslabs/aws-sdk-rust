@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopHumanLoopOutput {}
+pub struct StopHumanLoopOutput  {
+}
 /// See [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
 pub mod stop_human_loop_output {
-
+    
     /// A builder for [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
         pub fn build(self) -> crate::output::StopHumanLoopOutput {
-            crate::output::StopHumanLoopOutput {}
+            crate::output::StopHumanLoopOutput {
+            }
         }
     }
+    
+    
 }
 impl StopHumanLoopOutput {
     /// Creates a new builder-style object to manufacture [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
@@ -26,20 +31,20 @@ impl StopHumanLoopOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartHumanLoopOutput {
+pub struct StartHumanLoopOutput  {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
     #[doc(hidden)]
     pub human_loop_arn: std::option::Option<std::string::String>,
 }
 impl StartHumanLoopOutput {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-    pub fn human_loop_arn(&self) -> std::option::Option<&str> {
+    pub fn human_loop_arn(&self) -> std::option::Option<& str> {
         self.human_loop_arn.as_deref()
     }
 }
 /// See [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
 pub mod start_human_loop_output {
-
+    
     /// A builder for [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -52,20 +57,19 @@ pub mod start_human_loop_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-        pub fn set_human_loop_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.human_loop_arn = input;
-            self
+        pub fn set_human_loop_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.human_loop_arn = input; self
         }
         /// Consumes the builder and constructs a [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
         pub fn build(self) -> crate::output::StartHumanLoopOutput {
             crate::output::StartHumanLoopOutput {
-                human_loop_arn: self.human_loop_arn,
+                human_loop_arn: self.human_loop_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StartHumanLoopOutput {
     /// Creates a new builder-style object to manufacture [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
@@ -77,7 +81,7 @@ impl StartHumanLoopOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHumanLoopsOutput {
+pub struct ListHumanLoopsOutput  {
     /// <p>An array of objects that contain information about the human loops.</p>
     #[doc(hidden)]
     pub human_loop_summaries: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
@@ -87,22 +91,21 @@ pub struct ListHumanLoopsOutput {
 }
 impl ListHumanLoopsOutput {
     /// <p>An array of objects that contain information about the human loops.</p>
-    pub fn human_loop_summaries(&self) -> std::option::Option<&[crate::model::HumanLoopSummary]> {
+    pub fn human_loop_summaries(&self) -> std::option::Option<& [crate::model::HumanLoopSummary]> {
         self.human_loop_summaries.as_deref()
     }
     /// <p>A token to display the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
 pub mod list_human_loops_output {
-
+    
     /// A builder for [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) human_loop_summaries:
-            std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
+        pub(crate) human_loop_summaries: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -113,17 +116,13 @@ pub mod list_human_loops_output {
         /// <p>An array of objects that contain information about the human loops.</p>
         pub fn human_loop_summaries(mut self, input: crate::model::HumanLoopSummary) -> Self {
             let mut v = self.human_loop_summaries.unwrap_or_default();
-            v.push(input);
-            self.human_loop_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.human_loop_summaries = Some(v);
+                            self
         }
         /// <p>An array of objects that contain information about the human loops.</p>
-        pub fn set_human_loop_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
-        ) -> Self {
-            self.human_loop_summaries = input;
-            self
+        pub fn set_human_loop_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>) -> Self {
+            self.human_loop_summaries = input; self
         }
         /// <p>A token to display the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,17 +131,20 @@ pub mod list_human_loops_output {
         }
         /// <p>A token to display the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
         pub fn build(self) -> crate::output::ListHumanLoopsOutput {
             crate::output::ListHumanLoopsOutput {
-                human_loop_summaries: self.human_loop_summaries,
-                next_token: self.next_token,
+                human_loop_summaries: self.human_loop_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHumanLoopsOutput {
     /// Creates a new builder-style object to manufacture [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
@@ -154,14 +156,14 @@ impl ListHumanLoopsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHumanLoopOutput {
+pub struct DescribeHumanLoopOutput  {
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>A failure code that identifies the type of failure.</p>
+    /// <p>A failure code that identifies the type of failure.</p> 
     /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     #[doc(hidden)]
     pub failure_code: std::option::Option<std::string::String>,
@@ -183,42 +185,42 @@ pub struct DescribeHumanLoopOutput {
 }
 impl DescribeHumanLoopOutput {
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
-    /// <p>A failure code that identifies the type of failure.</p>
+    /// <p>A failure code that identifies the type of failure.</p> 
     /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
-    pub fn failure_code(&self) -> std::option::Option<&str> {
+    pub fn failure_code(&self) -> std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The status of the human loop. </p>
-    pub fn human_loop_status(&self) -> std::option::Option<&crate::model::HumanLoopStatus> {
+    pub fn human_loop_status(&self) -> std::option::Option<& crate::model::HumanLoopStatus> {
         self.human_loop_status.as_ref()
     }
     /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
-    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+    pub fn human_loop_name(&self) -> std::option::Option<& str> {
         self.human_loop_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-    pub fn human_loop_arn(&self) -> std::option::Option<&str> {
+    pub fn human_loop_arn(&self) -> std::option::Option<& str> {
         self.human_loop_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_definition_arn(&self) -> std::option::Option<& str> {
         self.flow_definition_arn.as_deref()
     }
     /// <p>An object that contains information about the output of the human loop.</p>
-    pub fn human_loop_output(&self) -> std::option::Option<&crate::model::HumanLoopOutput> {
+    pub fn human_loop_output(&self) -> std::option::Option<& crate::model::HumanLoopOutput> {
         self.human_loop_output.as_ref()
     }
 }
 /// See [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
 pub mod describe_human_loop_output {
-
+    
     /// A builder for [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -238,12 +240,8 @@ pub mod describe_human_loop_output {
             self
         }
         /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,24 +249,19 @@ pub mod describe_human_loop_output {
             self
         }
         /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
-        /// <p>A failure code that identifies the type of failure.</p>
+        /// <p>A failure code that identifies the type of failure.</p> 
         /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
         pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_code = Some(input.into());
             self
         }
-        /// <p>A failure code that identifies the type of failure.</p>
+        /// <p>A failure code that identifies the type of failure.</p> 
         /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
         pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.failure_code = input;
-            self
+            self.failure_code = input; self
         }
         /// <p>The status of the human loop. </p>
         pub fn human_loop_status(mut self, input: crate::model::HumanLoopStatus) -> Self {
@@ -276,12 +269,8 @@ pub mod describe_human_loop_output {
             self
         }
         /// <p>The status of the human loop. </p>
-        pub fn set_human_loop_status(
-            mut self,
-            input: std::option::Option<crate::model::HumanLoopStatus>,
-        ) -> Self {
-            self.human_loop_status = input;
-            self
+        pub fn set_human_loop_status(mut self, input: std::option::Option<crate::model::HumanLoopStatus>) -> Self {
+            self.human_loop_status = input; self
         }
         /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
         pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -289,12 +278,8 @@ pub mod describe_human_loop_output {
             self
         }
         /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
-        pub fn set_human_loop_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.human_loop_name = input;
-            self
+        pub fn set_human_loop_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.human_loop_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
         pub fn human_loop_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -302,12 +287,8 @@ pub mod describe_human_loop_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-        pub fn set_human_loop_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.human_loop_arn = input;
-            self
+        pub fn set_human_loop_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.human_loop_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
         pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -315,12 +296,8 @@ pub mod describe_human_loop_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-        pub fn set_flow_definition_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.flow_definition_arn = input;
-            self
+        pub fn set_flow_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_definition_arn = input; self
         }
         /// <p>An object that contains information about the output of the human loop.</p>
         pub fn human_loop_output(mut self, input: crate::model::HumanLoopOutput) -> Self {
@@ -328,27 +305,33 @@ pub mod describe_human_loop_output {
             self
         }
         /// <p>An object that contains information about the output of the human loop.</p>
-        pub fn set_human_loop_output(
-            mut self,
-            input: std::option::Option<crate::model::HumanLoopOutput>,
-        ) -> Self {
-            self.human_loop_output = input;
-            self
+        pub fn set_human_loop_output(mut self, input: std::option::Option<crate::model::HumanLoopOutput>) -> Self {
+            self.human_loop_output = input; self
         }
         /// Consumes the builder and constructs a [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
         pub fn build(self) -> crate::output::DescribeHumanLoopOutput {
             crate::output::DescribeHumanLoopOutput {
-                creation_time: self.creation_time,
-                failure_reason: self.failure_reason,
-                failure_code: self.failure_code,
-                human_loop_status: self.human_loop_status,
-                human_loop_name: self.human_loop_name,
-                human_loop_arn: self.human_loop_arn,
-                flow_definition_arn: self.flow_definition_arn,
-                human_loop_output: self.human_loop_output,
+                creation_time: self.creation_time
+                ,
+                failure_reason: self.failure_reason
+                ,
+                failure_code: self.failure_code
+                ,
+                human_loop_status: self.human_loop_status
+                ,
+                human_loop_name: self.human_loop_name
+                ,
+                human_loop_arn: self.human_loop_arn
+                ,
+                flow_definition_arn: self.flow_definition_arn
+                ,
+                human_loop_output: self.human_loop_output
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeHumanLoopOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
@@ -360,19 +343,24 @@ impl DescribeHumanLoopOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHumanLoopOutput {}
+pub struct DeleteHumanLoopOutput  {
+}
 /// See [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
 pub mod delete_human_loop_output {
-
+    
     /// A builder for [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
         pub fn build(self) -> crate::output::DeleteHumanLoopOutput {
-            crate::output::DeleteHumanLoopOutput {}
+            crate::output::DeleteHumanLoopOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteHumanLoopOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
@@ -380,3 +368,4 @@ impl DeleteHumanLoopOutput {
         crate::output::delete_human_loop_output::Builder::default()
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRelationalDatabaseParametersOutput {
+pub struct UpdateRelationalDatabaseParametersOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateRelationalDatabaseParametersOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`UpdateRelationalDatabaseParametersOutput`](crate::output::UpdateRelationalDatabaseParametersOutput).
 pub mod update_relational_database_parameters_output {
-
+    
     /// A builder for [`UpdateRelationalDatabaseParametersOutput`](crate::output::UpdateRelationalDatabaseParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,25 +29,24 @@ pub mod update_relational_database_parameters_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRelationalDatabaseParametersOutput`](crate::output::UpdateRelationalDatabaseParametersOutput).
         pub fn build(self) -> crate::output::UpdateRelationalDatabaseParametersOutput {
             crate::output::UpdateRelationalDatabaseParametersOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRelationalDatabaseParametersOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseParametersOutput`](crate::output::UpdateRelationalDatabaseParametersOutput).
@@ -59,20 +58,20 @@ impl UpdateRelationalDatabaseParametersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRelationalDatabaseOutput {
+pub struct UpdateRelationalDatabaseOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`UpdateRelationalDatabaseOutput`](crate::output::UpdateRelationalDatabaseOutput).
 pub mod update_relational_database_output {
-
+    
     /// A builder for [`UpdateRelationalDatabaseOutput`](crate::output::UpdateRelationalDatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -86,25 +85,24 @@ pub mod update_relational_database_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRelationalDatabaseOutput`](crate::output::UpdateRelationalDatabaseOutput).
         pub fn build(self) -> crate::output::UpdateRelationalDatabaseOutput {
             crate::output::UpdateRelationalDatabaseOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseOutput`](crate::output::UpdateRelationalDatabaseOutput).
@@ -116,20 +114,20 @@ impl UpdateRelationalDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLoadBalancerAttributeOutput {
+pub struct UpdateLoadBalancerAttributeOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateLoadBalancerAttributeOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput).
 pub mod update_load_balancer_attribute_output {
-
+    
     /// A builder for [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -143,25 +141,24 @@ pub mod update_load_balancer_attribute_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput).
         pub fn build(self) -> crate::output::UpdateLoadBalancerAttributeOutput {
             crate::output::UpdateLoadBalancerAttributeOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateLoadBalancerAttributeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput).
@@ -173,20 +170,20 @@ impl UpdateLoadBalancerAttributeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstanceMetadataOptionsOutput {
+pub struct UpdateInstanceMetadataOptionsOutput  {
     /// <p>Describes the API operation.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UpdateInstanceMetadataOptionsOutput {
     /// <p>Describes the API operation.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
 pub mod update_instance_metadata_options_output {
-
+    
     /// A builder for [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -199,20 +196,19 @@ pub mod update_instance_metadata_options_output {
             self
         }
         /// <p>Describes the API operation.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
         pub fn build(self) -> crate::output::UpdateInstanceMetadataOptionsOutput {
             crate::output::UpdateInstanceMetadataOptionsOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInstanceMetadataOptionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
@@ -224,20 +220,20 @@ impl UpdateInstanceMetadataOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainEntryOutput {
+pub struct UpdateDomainEntryOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`UpdateDomainEntryOutput`](crate::output::UpdateDomainEntryOutput).
 pub mod update_domain_entry_output {
-
+    
     /// A builder for [`UpdateDomainEntryOutput`](crate::output::UpdateDomainEntryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -251,25 +247,24 @@ pub mod update_domain_entry_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDomainEntryOutput`](crate::output::UpdateDomainEntryOutput).
         pub fn build(self) -> crate::output::UpdateDomainEntryOutput {
             crate::output::UpdateDomainEntryOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDomainEntryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainEntryOutput`](crate::output::UpdateDomainEntryOutput).
@@ -281,20 +276,20 @@ impl UpdateDomainEntryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDistributionBundleOutput {
+pub struct UpdateDistributionBundleOutput  {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UpdateDistributionBundleOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput).
 pub mod update_distribution_bundle_output {
-
+    
     /// A builder for [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -307,20 +302,19 @@ pub mod update_distribution_bundle_output {
             self
         }
         /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput).
         pub fn build(self) -> crate::output::UpdateDistributionBundleOutput {
             crate::output::UpdateDistributionBundleOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDistributionBundleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput).
@@ -332,20 +326,20 @@ impl UpdateDistributionBundleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDistributionOutput {
+pub struct UpdateDistributionOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UpdateDistributionOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
 pub mod update_distribution_output {
-
+    
     /// A builder for [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -358,20 +352,19 @@ pub mod update_distribution_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
         pub fn build(self) -> crate::output::UpdateDistributionOutput {
             crate::output::UpdateDistributionOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDistributionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
@@ -383,20 +376,20 @@ impl UpdateDistributionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContainerServiceOutput {
+pub struct UpdateContainerServiceOutput  {
     /// <p>An object that describes a container service.</p>
     #[doc(hidden)]
     pub container_service: std::option::Option<crate::model::ContainerService>,
 }
 impl UpdateContainerServiceOutput {
     /// <p>An object that describes a container service.</p>
-    pub fn container_service(&self) -> std::option::Option<&crate::model::ContainerService> {
+    pub fn container_service(&self) -> std::option::Option<& crate::model::ContainerService> {
         self.container_service.as_ref()
     }
 }
 /// See [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput).
 pub mod update_container_service_output {
-
+    
     /// A builder for [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -409,20 +402,19 @@ pub mod update_container_service_output {
             self
         }
         /// <p>An object that describes a container service.</p>
-        pub fn set_container_service(
-            mut self,
-            input: std::option::Option<crate::model::ContainerService>,
-        ) -> Self {
-            self.container_service = input;
-            self
+        pub fn set_container_service(mut self, input: std::option::Option<crate::model::ContainerService>) -> Self {
+            self.container_service = input; self
         }
         /// Consumes the builder and constructs a [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput).
         pub fn build(self) -> crate::output::UpdateContainerServiceOutput {
             crate::output::UpdateContainerServiceOutput {
-                container_service: self.container_service,
+                container_service: self.container_service
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateContainerServiceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput).
@@ -434,20 +426,20 @@ impl UpdateContainerServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBucketBundleOutput {
+pub struct UpdateBucketBundleOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateBucketBundleOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput).
 pub mod update_bucket_bundle_output {
-
+    
     /// A builder for [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -461,25 +453,24 @@ pub mod update_bucket_bundle_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput).
         pub fn build(self) -> crate::output::UpdateBucketBundleOutput {
             crate::output::UpdateBucketBundleOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBucketBundleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput).
@@ -491,7 +482,7 @@ impl UpdateBucketBundleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBucketOutput {
+pub struct UpdateBucketOutput  {
     /// <p>An object that describes the bucket that is updated.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<crate::model::Bucket>,
@@ -501,17 +492,17 @@ pub struct UpdateBucketOutput {
 }
 impl UpdateBucketOutput {
     /// <p>An object that describes the bucket that is updated.</p>
-    pub fn bucket(&self) -> std::option::Option<&crate::model::Bucket> {
+    pub fn bucket(&self) -> std::option::Option<& crate::model::Bucket> {
         self.bucket.as_ref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`UpdateBucketOutput`](crate::output::UpdateBucketOutput).
 pub mod update_bucket_output {
-
+    
     /// A builder for [`UpdateBucketOutput`](crate::output::UpdateBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -526,8 +517,7 @@ pub mod update_bucket_output {
         }
         /// <p>An object that describes the bucket that is updated.</p>
         pub fn set_bucket(mut self, input: std::option::Option<crate::model::Bucket>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// Appends an item to `operations`.
         ///
@@ -536,26 +526,26 @@ pub mod update_bucket_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBucketOutput`](crate::output::UpdateBucketOutput).
         pub fn build(self) -> crate::output::UpdateBucketOutput {
             crate::output::UpdateBucketOutput {
-                bucket: self.bucket,
-                operations: self.operations,
+                bucket: self.bucket
+                ,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBucketOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBucketOutput`](crate::output::UpdateBucketOutput).
@@ -567,20 +557,20 @@ impl UpdateBucketOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {
+pub struct UntagResourceOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UntagResourceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -594,25 +584,24 @@ pub mod untag_resource_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -624,20 +613,20 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnpeerVpcOutput {
+pub struct UnpeerVpcOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UnpeerVpcOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`UnpeerVpcOutput`](crate::output::UnpeerVpcOutput).
 pub mod unpeer_vpc_output {
-
+    
     /// A builder for [`UnpeerVpcOutput`](crate::output::UnpeerVpcOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -650,20 +639,19 @@ pub mod unpeer_vpc_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`UnpeerVpcOutput`](crate::output::UnpeerVpcOutput).
         pub fn build(self) -> crate::output::UnpeerVpcOutput {
             crate::output::UnpeerVpcOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl UnpeerVpcOutput {
     /// Creates a new builder-style object to manufacture [`UnpeerVpcOutput`](crate::output::UnpeerVpcOutput).
@@ -675,20 +663,20 @@ impl UnpeerVpcOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestAlarmOutput {
+pub struct TestAlarmOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl TestAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`TestAlarmOutput`](crate::output::TestAlarmOutput).
 pub mod test_alarm_output {
-
+    
     /// A builder for [`TestAlarmOutput`](crate::output::TestAlarmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -702,25 +690,24 @@ pub mod test_alarm_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`TestAlarmOutput`](crate::output::TestAlarmOutput).
         pub fn build(self) -> crate::output::TestAlarmOutput {
             crate::output::TestAlarmOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl TestAlarmOutput {
     /// Creates a new builder-style object to manufacture [`TestAlarmOutput`](crate::output::TestAlarmOutput).
@@ -732,20 +719,20 @@ impl TestAlarmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {
+pub struct TagResourceOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl TagResourceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -759,25 +746,24 @@ pub mod tag_resource_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -789,20 +775,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopRelationalDatabaseOutput {
+pub struct StopRelationalDatabaseOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StopRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`StopRelationalDatabaseOutput`](crate::output::StopRelationalDatabaseOutput).
 pub mod stop_relational_database_output {
-
+    
     /// A builder for [`StopRelationalDatabaseOutput`](crate::output::StopRelationalDatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -816,25 +802,24 @@ pub mod stop_relational_database_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`StopRelationalDatabaseOutput`](crate::output::StopRelationalDatabaseOutput).
         pub fn build(self) -> crate::output::StopRelationalDatabaseOutput {
             crate::output::StopRelationalDatabaseOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl StopRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`StopRelationalDatabaseOutput`](crate::output::StopRelationalDatabaseOutput).
@@ -846,20 +831,20 @@ impl StopRelationalDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopInstanceOutput {
+pub struct StopInstanceOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StopInstanceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`StopInstanceOutput`](crate::output::StopInstanceOutput).
 pub mod stop_instance_output {
-
+    
     /// A builder for [`StopInstanceOutput`](crate::output::StopInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -873,25 +858,24 @@ pub mod stop_instance_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`StopInstanceOutput`](crate::output::StopInstanceOutput).
         pub fn build(self) -> crate::output::StopInstanceOutput {
             crate::output::StopInstanceOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl StopInstanceOutput {
     /// Creates a new builder-style object to manufacture [`StopInstanceOutput`](crate::output::StopInstanceOutput).
@@ -903,20 +887,20 @@ impl StopInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRelationalDatabaseOutput {
+pub struct StartRelationalDatabaseOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StartRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`StartRelationalDatabaseOutput`](crate::output::StartRelationalDatabaseOutput).
 pub mod start_relational_database_output {
-
+    
     /// A builder for [`StartRelationalDatabaseOutput`](crate::output::StartRelationalDatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -930,25 +914,24 @@ pub mod start_relational_database_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`StartRelationalDatabaseOutput`](crate::output::StartRelationalDatabaseOutput).
         pub fn build(self) -> crate::output::StartRelationalDatabaseOutput {
             crate::output::StartRelationalDatabaseOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl StartRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`StartRelationalDatabaseOutput`](crate::output::StartRelationalDatabaseOutput).
@@ -960,20 +943,20 @@ impl StartRelationalDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartInstanceOutput {
+pub struct StartInstanceOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StartInstanceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`StartInstanceOutput`](crate::output::StartInstanceOutput).
 pub mod start_instance_output {
-
+    
     /// A builder for [`StartInstanceOutput`](crate::output::StartInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -987,25 +970,24 @@ pub mod start_instance_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`StartInstanceOutput`](crate::output::StartInstanceOutput).
         pub fn build(self) -> crate::output::StartInstanceOutput {
             crate::output::StartInstanceOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl StartInstanceOutput {
     /// Creates a new builder-style object to manufacture [`StartInstanceOutput`](crate::output::StartInstanceOutput).
@@ -1017,20 +999,20 @@ impl StartInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetResourceAccessForBucketOutput {
+pub struct SetResourceAccessForBucketOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SetResourceAccessForBucketOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput).
 pub mod set_resource_access_for_bucket_output {
-
+    
     /// A builder for [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1044,25 +1026,24 @@ pub mod set_resource_access_for_bucket_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput).
         pub fn build(self) -> crate::output::SetResourceAccessForBucketOutput {
             crate::output::SetResourceAccessForBucketOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl SetResourceAccessForBucketOutput {
     /// Creates a new builder-style object to manufacture [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput).
@@ -1074,20 +1055,20 @@ impl SetResourceAccessForBucketOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetIpAddressTypeOutput {
+pub struct SetIpAddressTypeOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SetIpAddressTypeOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput).
 pub mod set_ip_address_type_output {
-
+    
     /// A builder for [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1101,25 +1082,24 @@ pub mod set_ip_address_type_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput).
         pub fn build(self) -> crate::output::SetIpAddressTypeOutput {
             crate::output::SetIpAddressTypeOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl SetIpAddressTypeOutput {
     /// Creates a new builder-style object to manufacture [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput).
@@ -1131,20 +1111,20 @@ impl SetIpAddressTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendContactMethodVerificationOutput {
+pub struct SendContactMethodVerificationOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SendContactMethodVerificationOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`SendContactMethodVerificationOutput`](crate::output::SendContactMethodVerificationOutput).
 pub mod send_contact_method_verification_output {
-
+    
     /// A builder for [`SendContactMethodVerificationOutput`](crate::output::SendContactMethodVerificationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1158,25 +1138,24 @@ pub mod send_contact_method_verification_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`SendContactMethodVerificationOutput`](crate::output::SendContactMethodVerificationOutput).
         pub fn build(self) -> crate::output::SendContactMethodVerificationOutput {
             crate::output::SendContactMethodVerificationOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl SendContactMethodVerificationOutput {
     /// Creates a new builder-style object to manufacture [`SendContactMethodVerificationOutput`](crate::output::SendContactMethodVerificationOutput).
@@ -1188,7 +1167,7 @@ impl SendContactMethodVerificationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDistributionCacheOutput {
+pub struct ResetDistributionCacheOutput  {
     /// <p>The status of the reset cache request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -1201,21 +1180,21 @@ pub struct ResetDistributionCacheOutput {
 }
 impl ResetDistributionCacheOutput {
     /// <p>The status of the reset cache request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`ResetDistributionCacheOutput`](crate::output::ResetDistributionCacheOutput).
 pub mod reset_distribution_cache_output {
-
+    
     /// A builder for [`ResetDistributionCacheOutput`](crate::output::ResetDistributionCacheOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1231,8 +1210,7 @@ pub mod reset_distribution_cache_output {
         }
         /// <p>The status of the reset cache request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1240,12 +1218,8 @@ pub mod reset_distribution_cache_output {
             self
         }
         /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
@@ -1253,22 +1227,23 @@ pub mod reset_distribution_cache_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`ResetDistributionCacheOutput`](crate::output::ResetDistributionCacheOutput).
         pub fn build(self) -> crate::output::ResetDistributionCacheOutput {
             crate::output::ResetDistributionCacheOutput {
-                status: self.status,
-                create_time: self.create_time,
-                operation: self.operation,
+                status: self.status
+                ,
+                create_time: self.create_time
+                ,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetDistributionCacheOutput {
     /// Creates a new builder-style object to manufacture [`ResetDistributionCacheOutput`](crate::output::ResetDistributionCacheOutput).
@@ -1280,20 +1255,20 @@ impl ResetDistributionCacheOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReleaseStaticIpOutput {
+pub struct ReleaseStaticIpOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl ReleaseStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`ReleaseStaticIpOutput`](crate::output::ReleaseStaticIpOutput).
 pub mod release_static_ip_output {
-
+    
     /// A builder for [`ReleaseStaticIpOutput`](crate::output::ReleaseStaticIpOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1307,25 +1282,24 @@ pub mod release_static_ip_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`ReleaseStaticIpOutput`](crate::output::ReleaseStaticIpOutput).
         pub fn build(self) -> crate::output::ReleaseStaticIpOutput {
             crate::output::ReleaseStaticIpOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl ReleaseStaticIpOutput {
     /// Creates a new builder-style object to manufacture [`ReleaseStaticIpOutput`](crate::output::ReleaseStaticIpOutput).
@@ -1337,20 +1311,20 @@ impl ReleaseStaticIpOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterContainerImageOutput {
+pub struct RegisterContainerImageOutput  {
     /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
     #[doc(hidden)]
     pub container_image: std::option::Option<crate::model::ContainerImage>,
 }
 impl RegisterContainerImageOutput {
     /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
-    pub fn container_image(&self) -> std::option::Option<&crate::model::ContainerImage> {
+    pub fn container_image(&self) -> std::option::Option<& crate::model::ContainerImage> {
         self.container_image.as_ref()
     }
 }
 /// See [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput).
 pub mod register_container_image_output {
-
+    
     /// A builder for [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1363,20 +1337,19 @@ pub mod register_container_image_output {
             self
         }
         /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
-        pub fn set_container_image(
-            mut self,
-            input: std::option::Option<crate::model::ContainerImage>,
-        ) -> Self {
-            self.container_image = input;
-            self
+        pub fn set_container_image(mut self, input: std::option::Option<crate::model::ContainerImage>) -> Self {
+            self.container_image = input; self
         }
         /// Consumes the builder and constructs a [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput).
         pub fn build(self) -> crate::output::RegisterContainerImageOutput {
             crate::output::RegisterContainerImageOutput {
-                container_image: self.container_image,
+                container_image: self.container_image
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterContainerImageOutput {
     /// Creates a new builder-style object to manufacture [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput).
@@ -1388,20 +1361,20 @@ impl RegisterContainerImageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootRelationalDatabaseOutput {
+pub struct RebootRelationalDatabaseOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl RebootRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`RebootRelationalDatabaseOutput`](crate::output::RebootRelationalDatabaseOutput).
 pub mod reboot_relational_database_output {
-
+    
     /// A builder for [`RebootRelationalDatabaseOutput`](crate::output::RebootRelationalDatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1415,25 +1388,24 @@ pub mod reboot_relational_database_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`RebootRelationalDatabaseOutput`](crate::output::RebootRelationalDatabaseOutput).
         pub fn build(self) -> crate::output::RebootRelationalDatabaseOutput {
             crate::output::RebootRelationalDatabaseOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl RebootRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`RebootRelationalDatabaseOutput`](crate::output::RebootRelationalDatabaseOutput).
@@ -1445,20 +1417,20 @@ impl RebootRelationalDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootInstanceOutput {
+pub struct RebootInstanceOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl RebootInstanceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
 pub mod reboot_instance_output {
-
+    
     /// A builder for [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1472,25 +1444,24 @@ pub mod reboot_instance_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
         pub fn build(self) -> crate::output::RebootInstanceOutput {
             crate::output::RebootInstanceOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl RebootInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
@@ -1502,20 +1473,20 @@ impl RebootInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInstancePublicPortsOutput {
+pub struct PutInstancePublicPortsOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl PutInstancePublicPortsOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`PutInstancePublicPortsOutput`](crate::output::PutInstancePublicPortsOutput).
 pub mod put_instance_public_ports_output {
-
+    
     /// A builder for [`PutInstancePublicPortsOutput`](crate::output::PutInstancePublicPortsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1528,20 +1499,19 @@ pub mod put_instance_public_ports_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`PutInstancePublicPortsOutput`](crate::output::PutInstancePublicPortsOutput).
         pub fn build(self) -> crate::output::PutInstancePublicPortsOutput {
             crate::output::PutInstancePublicPortsOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl PutInstancePublicPortsOutput {
     /// Creates a new builder-style object to manufacture [`PutInstancePublicPortsOutput`](crate::output::PutInstancePublicPortsOutput).
@@ -1553,20 +1523,20 @@ impl PutInstancePublicPortsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAlarmOutput {
+pub struct PutAlarmOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl PutAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`PutAlarmOutput`](crate::output::PutAlarmOutput).
 pub mod put_alarm_output {
-
+    
     /// A builder for [`PutAlarmOutput`](crate::output::PutAlarmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1580,25 +1550,24 @@ pub mod put_alarm_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`PutAlarmOutput`](crate::output::PutAlarmOutput).
         pub fn build(self) -> crate::output::PutAlarmOutput {
             crate::output::PutAlarmOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl PutAlarmOutput {
     /// Creates a new builder-style object to manufacture [`PutAlarmOutput`](crate::output::PutAlarmOutput).
@@ -1610,20 +1579,20 @@ impl PutAlarmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PeerVpcOutput {
+pub struct PeerVpcOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl PeerVpcOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`PeerVpcOutput`](crate::output::PeerVpcOutput).
 pub mod peer_vpc_output {
-
+    
     /// A builder for [`PeerVpcOutput`](crate::output::PeerVpcOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1636,20 +1605,19 @@ pub mod peer_vpc_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`PeerVpcOutput`](crate::output::PeerVpcOutput).
         pub fn build(self) -> crate::output::PeerVpcOutput {
             crate::output::PeerVpcOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl PeerVpcOutput {
     /// Creates a new builder-style object to manufacture [`PeerVpcOutput`](crate::output::PeerVpcOutput).
@@ -1661,20 +1629,20 @@ impl PeerVpcOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpenInstancePublicPortsOutput {
+pub struct OpenInstancePublicPortsOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl OpenInstancePublicPortsOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`OpenInstancePublicPortsOutput`](crate::output::OpenInstancePublicPortsOutput).
 pub mod open_instance_public_ports_output {
-
+    
     /// A builder for [`OpenInstancePublicPortsOutput`](crate::output::OpenInstancePublicPortsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1687,20 +1655,19 @@ pub mod open_instance_public_ports_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`OpenInstancePublicPortsOutput`](crate::output::OpenInstancePublicPortsOutput).
         pub fn build(self) -> crate::output::OpenInstancePublicPortsOutput {
             crate::output::OpenInstancePublicPortsOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl OpenInstancePublicPortsOutput {
     /// Creates a new builder-style object to manufacture [`OpenInstancePublicPortsOutput`](crate::output::OpenInstancePublicPortsOutput).
@@ -1712,7 +1679,7 @@ impl OpenInstancePublicPortsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IsVpcPeeredOutput {
+pub struct IsVpcPeeredOutput  {
     /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
     #[doc(hidden)]
     pub is_peered: std::option::Option<bool>,
@@ -1725,7 +1692,7 @@ impl IsVpcPeeredOutput {
 }
 /// See [`IsVpcPeeredOutput`](crate::output::IsVpcPeeredOutput).
 pub mod is_vpc_peered_output {
-
+    
     /// A builder for [`IsVpcPeeredOutput`](crate::output::IsVpcPeeredOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1739,16 +1706,18 @@ pub mod is_vpc_peered_output {
         }
         /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
         pub fn set_is_peered(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_peered = input;
-            self
+            self.is_peered = input; self
         }
         /// Consumes the builder and constructs a [`IsVpcPeeredOutput`](crate::output::IsVpcPeeredOutput).
         pub fn build(self) -> crate::output::IsVpcPeeredOutput {
             crate::output::IsVpcPeeredOutput {
-                is_peered: self.is_peered,
+                is_peered: self.is_peered
+                ,
             }
         }
     }
+    
+    
 }
 impl IsVpcPeeredOutput {
     /// Creates a new builder-style object to manufacture [`IsVpcPeeredOutput`](crate::output::IsVpcPeeredOutput).
@@ -1760,20 +1729,20 @@ impl IsVpcPeeredOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportKeyPairOutput {
+pub struct ImportKeyPairOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl ImportKeyPairOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput).
 pub mod import_key_pair_output {
-
+    
     /// A builder for [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1786,20 +1755,19 @@ pub mod import_key_pair_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput).
         pub fn build(self) -> crate::output::ImportKeyPairOutput {
             crate::output::ImportKeyPairOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput).
@@ -1811,31 +1779,31 @@ impl ImportKeyPairOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStaticIpsOutput {
+pub struct GetStaticIpsOutput  {
     /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
     #[doc(hidden)]
     pub static_ips: std::option::Option<std::vec::Vec<crate::model::StaticIp>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetStaticIpsOutput {
     /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
-    pub fn static_ips(&self) -> std::option::Option<&[crate::model::StaticIp]> {
+    pub fn static_ips(&self) -> std::option::Option<& [crate::model::StaticIp]> {
         self.static_ips.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetStaticIpsOutput`](crate::output::GetStaticIpsOutput).
 pub mod get_static_ips_output {
-
+    
     /// A builder for [`GetStaticIpsOutput`](crate::output::GetStaticIpsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1850,43 +1818,39 @@ pub mod get_static_ips_output {
         /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
         pub fn static_ips(mut self, input: crate::model::StaticIp) -> Self {
             let mut v = self.static_ips.unwrap_or_default();
-            v.push(input);
-            self.static_ips = Some(v);
-            self
+                            v.push(input);
+                            self.static_ips = Some(v);
+                            self
         }
         /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
-        pub fn set_static_ips(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StaticIp>>,
-        ) -> Self {
-            self.static_ips = input;
-            self
+        pub fn set_static_ips(mut self, input: std::option::Option<std::vec::Vec<crate::model::StaticIp>>) -> Self {
+            self.static_ips = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetStaticIpsOutput`](crate::output::GetStaticIpsOutput).
         pub fn build(self) -> crate::output::GetStaticIpsOutput {
             crate::output::GetStaticIpsOutput {
-                static_ips: self.static_ips,
-                next_page_token: self.next_page_token,
+                static_ips: self.static_ips
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetStaticIpsOutput {
     /// Creates a new builder-style object to manufacture [`GetStaticIpsOutput`](crate::output::GetStaticIpsOutput).
@@ -1898,20 +1862,20 @@ impl GetStaticIpsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStaticIpOutput {
+pub struct GetStaticIpOutput  {
     /// <p>An array of key-value pairs containing information about the requested static IP.</p>
     #[doc(hidden)]
     pub static_ip: std::option::Option<crate::model::StaticIp>,
 }
 impl GetStaticIpOutput {
     /// <p>An array of key-value pairs containing information about the requested static IP.</p>
-    pub fn static_ip(&self) -> std::option::Option<&crate::model::StaticIp> {
+    pub fn static_ip(&self) -> std::option::Option<& crate::model::StaticIp> {
         self.static_ip.as_ref()
     }
 }
 /// See [`GetStaticIpOutput`](crate::output::GetStaticIpOutput).
 pub mod get_static_ip_output {
-
+    
     /// A builder for [`GetStaticIpOutput`](crate::output::GetStaticIpOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1925,16 +1889,18 @@ pub mod get_static_ip_output {
         }
         /// <p>An array of key-value pairs containing information about the requested static IP.</p>
         pub fn set_static_ip(mut self, input: std::option::Option<crate::model::StaticIp>) -> Self {
-            self.static_ip = input;
-            self
+            self.static_ip = input; self
         }
         /// Consumes the builder and constructs a [`GetStaticIpOutput`](crate::output::GetStaticIpOutput).
         pub fn build(self) -> crate::output::GetStaticIpOutput {
             crate::output::GetStaticIpOutput {
-                static_ip: self.static_ip,
+                static_ip: self.static_ip
+                ,
             }
         }
     }
+    
+    
 }
 impl GetStaticIpOutput {
     /// Creates a new builder-style object to manufacture [`GetStaticIpOutput`](crate::output::GetStaticIpOutput).
@@ -1946,39 +1912,35 @@ impl GetStaticIpOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseSnapshotsOutput {
+pub struct GetRelationalDatabaseSnapshotsOutput  {
     /// <p>An object describing the result of your get relational database snapshots request.</p>
     #[doc(hidden)]
-    pub relational_database_snapshots:
-        std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseSnapshot>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    pub relational_database_snapshots: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseSnapshot>>,
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseSnapshotsOutput {
     /// <p>An object describing the result of your get relational database snapshots request.</p>
-    pub fn relational_database_snapshots(
-        &self,
-    ) -> std::option::Option<&[crate::model::RelationalDatabaseSnapshot]> {
+    pub fn relational_database_snapshots(&self) -> std::option::Option<& [crate::model::RelationalDatabaseSnapshot]> {
         self.relational_database_snapshots.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetRelationalDatabaseSnapshotsOutput`](crate::output::GetRelationalDatabaseSnapshotsOutput).
 pub mod get_relational_database_snapshots_output {
-
+    
     /// A builder for [`GetRelationalDatabaseSnapshotsOutput`](crate::output::GetRelationalDatabaseSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) relational_database_snapshots:
-            std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseSnapshot>>,
+        pub(crate) relational_database_snapshots: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseSnapshot>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1987,48 +1949,41 @@ pub mod get_relational_database_snapshots_output {
         /// To override the contents of this collection use [`set_relational_database_snapshots`](Self::set_relational_database_snapshots).
         ///
         /// <p>An object describing the result of your get relational database snapshots request.</p>
-        pub fn relational_database_snapshots(
-            mut self,
-            input: crate::model::RelationalDatabaseSnapshot,
-        ) -> Self {
+        pub fn relational_database_snapshots(mut self, input: crate::model::RelationalDatabaseSnapshot) -> Self {
             let mut v = self.relational_database_snapshots.unwrap_or_default();
-            v.push(input);
-            self.relational_database_snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.relational_database_snapshots = Some(v);
+                            self
         }
         /// <p>An object describing the result of your get relational database snapshots request.</p>
-        pub fn set_relational_database_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseSnapshot>>,
-        ) -> Self {
-            self.relational_database_snapshots = input;
-            self
+        pub fn set_relational_database_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseSnapshot>>) -> Self {
+            self.relational_database_snapshots = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseSnapshotsOutput`](crate::output::GetRelationalDatabaseSnapshotsOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseSnapshotsOutput {
             crate::output::GetRelationalDatabaseSnapshotsOutput {
-                relational_database_snapshots: self.relational_database_snapshots,
-                next_page_token: self.next_page_token,
+                relational_database_snapshots: self.relational_database_snapshots
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotsOutput`](crate::output::GetRelationalDatabaseSnapshotsOutput).
@@ -2040,52 +1995,45 @@ impl GetRelationalDatabaseSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseSnapshotOutput {
+pub struct GetRelationalDatabaseSnapshotOutput  {
     /// <p>An object describing the specified database snapshot.</p>
     #[doc(hidden)]
     pub relational_database_snapshot: std::option::Option<crate::model::RelationalDatabaseSnapshot>,
 }
 impl GetRelationalDatabaseSnapshotOutput {
     /// <p>An object describing the specified database snapshot.</p>
-    pub fn relational_database_snapshot(
-        &self,
-    ) -> std::option::Option<&crate::model::RelationalDatabaseSnapshot> {
+    pub fn relational_database_snapshot(&self) -> std::option::Option<& crate::model::RelationalDatabaseSnapshot> {
         self.relational_database_snapshot.as_ref()
     }
 }
 /// See [`GetRelationalDatabaseSnapshotOutput`](crate::output::GetRelationalDatabaseSnapshotOutput).
 pub mod get_relational_database_snapshot_output {
-
+    
     /// A builder for [`GetRelationalDatabaseSnapshotOutput`](crate::output::GetRelationalDatabaseSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) relational_database_snapshot:
-            std::option::Option<crate::model::RelationalDatabaseSnapshot>,
+        pub(crate) relational_database_snapshot: std::option::Option<crate::model::RelationalDatabaseSnapshot>,
     }
     impl Builder {
         /// <p>An object describing the specified database snapshot.</p>
-        pub fn relational_database_snapshot(
-            mut self,
-            input: crate::model::RelationalDatabaseSnapshot,
-        ) -> Self {
+        pub fn relational_database_snapshot(mut self, input: crate::model::RelationalDatabaseSnapshot) -> Self {
             self.relational_database_snapshot = Some(input);
             self
         }
         /// <p>An object describing the specified database snapshot.</p>
-        pub fn set_relational_database_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::RelationalDatabaseSnapshot>,
-        ) -> Self {
-            self.relational_database_snapshot = input;
-            self
+        pub fn set_relational_database_snapshot(mut self, input: std::option::Option<crate::model::RelationalDatabaseSnapshot>) -> Self {
+            self.relational_database_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseSnapshotOutput`](crate::output::GetRelationalDatabaseSnapshotOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseSnapshotOutput {
             crate::output::GetRelationalDatabaseSnapshotOutput {
-                relational_database_snapshot: self.relational_database_snapshot,
+                relational_database_snapshot: self.relational_database_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotOutput`](crate::output::GetRelationalDatabaseSnapshotOutput).
@@ -2097,36 +2045,35 @@ impl GetRelationalDatabaseSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabasesOutput {
+pub struct GetRelationalDatabasesOutput  {
     /// <p>An object describing the result of your get relational databases request.</p>
     #[doc(hidden)]
     pub relational_databases: std::option::Option<std::vec::Vec<crate::model::RelationalDatabase>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabasesOutput {
     /// <p>An object describing the result of your get relational databases request.</p>
-    pub fn relational_databases(&self) -> std::option::Option<&[crate::model::RelationalDatabase]> {
+    pub fn relational_databases(&self) -> std::option::Option<& [crate::model::RelationalDatabase]> {
         self.relational_databases.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetRelationalDatabasesOutput`](crate::output::GetRelationalDatabasesOutput).
 pub mod get_relational_databases_output {
-
+    
     /// A builder for [`GetRelationalDatabasesOutput`](crate::output::GetRelationalDatabasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) relational_databases:
-            std::option::Option<std::vec::Vec<crate::model::RelationalDatabase>>,
+        pub(crate) relational_databases: std::option::Option<std::vec::Vec<crate::model::RelationalDatabase>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2137,43 +2084,39 @@ pub mod get_relational_databases_output {
         /// <p>An object describing the result of your get relational databases request.</p>
         pub fn relational_databases(mut self, input: crate::model::RelationalDatabase) -> Self {
             let mut v = self.relational_databases.unwrap_or_default();
-            v.push(input);
-            self.relational_databases = Some(v);
-            self
+                            v.push(input);
+                            self.relational_databases = Some(v);
+                            self
         }
         /// <p>An object describing the result of your get relational databases request.</p>
-        pub fn set_relational_databases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabase>>,
-        ) -> Self {
-            self.relational_databases = input;
-            self
+        pub fn set_relational_databases(mut self, input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabase>>) -> Self {
+            self.relational_databases = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabasesOutput`](crate::output::GetRelationalDatabasesOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabasesOutput {
             crate::output::GetRelationalDatabasesOutput {
-                relational_databases: self.relational_databases,
-                next_page_token: self.next_page_token,
+                relational_databases: self.relational_databases
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabasesOutput`](crate::output::GetRelationalDatabasesOutput).
@@ -2185,36 +2128,35 @@ impl GetRelationalDatabasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseParametersOutput {
+pub struct GetRelationalDatabaseParametersOutput  {
     /// <p>An object describing the result of your get relational database parameters request.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseParameter>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseParametersOutput {
     /// <p>An object describing the result of your get relational database parameters request.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::RelationalDatabaseParameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::RelationalDatabaseParameter]> {
         self.parameters.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetRelationalDatabaseParametersOutput`](crate::output::GetRelationalDatabaseParametersOutput).
 pub mod get_relational_database_parameters_output {
-
+    
     /// A builder for [`GetRelationalDatabaseParametersOutput`](crate::output::GetRelationalDatabaseParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) parameters:
-            std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseParameter>>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseParameter>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2225,43 +2167,39 @@ pub mod get_relational_database_parameters_output {
         /// <p>An object describing the result of your get relational database parameters request.</p>
         pub fn parameters(mut self, input: crate::model::RelationalDatabaseParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>An object describing the result of your get relational database parameters request.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseParameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseParameter>>) -> Self {
+            self.parameters = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseParametersOutput`](crate::output::GetRelationalDatabaseParametersOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseParametersOutput {
             crate::output::GetRelationalDatabaseParametersOutput {
-                parameters: self.parameters,
-                next_page_token: self.next_page_token,
+                parameters: self.parameters
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseParametersOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseParametersOutput`](crate::output::GetRelationalDatabaseParametersOutput).
@@ -2273,7 +2211,7 @@ impl GetRelationalDatabaseParametersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseMetricDataOutput {
+pub struct GetRelationalDatabaseMetricDataOutput  {
     /// <p>The name of the metric returned.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::RelationalDatabaseMetricName>,
@@ -2283,17 +2221,17 @@ pub struct GetRelationalDatabaseMetricDataOutput {
 }
 impl GetRelationalDatabaseMetricDataOutput {
     /// <p>The name of the metric returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<&crate::model::RelationalDatabaseMetricName> {
+    pub fn metric_name(&self) -> std::option::Option<& crate::model::RelationalDatabaseMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+    pub fn metric_data(&self) -> std::option::Option<& [crate::model::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 /// See [`GetRelationalDatabaseMetricDataOutput`](crate::output::GetRelationalDatabaseMetricDataOutput).
 pub mod get_relational_database_metric_data_output {
-
+    
     /// A builder for [`GetRelationalDatabaseMetricDataOutput`](crate::output::GetRelationalDatabaseMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2307,12 +2245,8 @@ pub mod get_relational_database_metric_data_output {
             self
         }
         /// <p>The name of the metric returned.</p>
-        pub fn set_metric_name(
-            mut self,
-            input: std::option::Option<crate::model::RelationalDatabaseMetricName>,
-        ) -> Self {
-            self.metric_name = input;
-            self
+        pub fn set_metric_name(mut self, input: std::option::Option<crate::model::RelationalDatabaseMetricName>) -> Self {
+            self.metric_name = input; self
         }
         /// Appends an item to `metric_data`.
         ///
@@ -2321,26 +2255,26 @@ pub mod get_relational_database_metric_data_output {
         /// <p>An array of objects that describe the metric data returned.</p>
         pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input);
-            self.metric_data = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn set_metric_data(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
-        ) -> Self {
-            self.metric_data = input;
-            self
+        pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>) -> Self {
+            self.metric_data = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseMetricDataOutput`](crate::output::GetRelationalDatabaseMetricDataOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseMetricDataOutput {
             crate::output::GetRelationalDatabaseMetricDataOutput {
-                metric_name: self.metric_name,
-                metric_data: self.metric_data,
+                metric_name: self.metric_name
+                ,
+                metric_data: self.metric_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMetricDataOutput`](crate::output::GetRelationalDatabaseMetricDataOutput).
@@ -2352,7 +2286,7 @@ impl GetRelationalDatabaseMetricDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetRelationalDatabaseMasterUserPasswordOutput {
+pub struct GetRelationalDatabaseMasterUserPasswordOutput  {
     /// <p>The master user password for the <code>password version</code> specified.</p>
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
@@ -2362,15 +2296,15 @@ pub struct GetRelationalDatabaseMasterUserPasswordOutput {
 }
 impl GetRelationalDatabaseMasterUserPasswordOutput {
     /// <p>The master user password for the <code>password version</code> specified.</p>
-    pub fn master_user_password(&self) -> std::option::Option<&str> {
+    pub fn master_user_password(&self) -> std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>The timestamp when the specified version of the master user password was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
-impl std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordOutput {
+impl  std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseMasterUserPasswordOutput");
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
@@ -2380,7 +2314,7 @@ impl std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordOutput {
 }
 /// See [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput).
 pub mod get_relational_database_master_user_password_output {
-
+    
     /// A builder for [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2394,12 +2328,8 @@ pub mod get_relational_database_master_user_password_output {
             self
         }
         /// <p>The master user password for the <code>password version</code> specified.</p>
-        pub fn set_master_user_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_user_password = input;
-            self
+        pub fn set_master_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_user_password = input; self
         }
         /// <p>The timestamp when the specified version of the master user password was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2407,18 +2337,16 @@ pub mod get_relational_database_master_user_password_output {
             self
         }
         /// <p>The timestamp when the specified version of the master user password was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseMasterUserPasswordOutput {
             crate::output::GetRelationalDatabaseMasterUserPasswordOutput {
-                master_user_password: self.master_user_password,
-                created_at: self.created_at,
+                master_user_password: self.master_user_password
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
@@ -2430,11 +2358,12 @@ pub mod get_relational_database_master_user_password_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseMasterUserPasswordOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput).
-    pub fn builder() -> crate::output::get_relational_database_master_user_password_output::Builder
-    {
+    pub fn builder() -> crate::output::get_relational_database_master_user_password_output::Builder {
         crate::output::get_relational_database_master_user_password_output::Builder::default()
     }
 }
@@ -2442,20 +2371,20 @@ impl GetRelationalDatabaseMasterUserPasswordOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseLogStreamsOutput {
+pub struct GetRelationalDatabaseLogStreamsOutput  {
     /// <p>An object describing the result of your get relational database log streams request.</p>
     #[doc(hidden)]
     pub log_streams: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetRelationalDatabaseLogStreamsOutput {
     /// <p>An object describing the result of your get relational database log streams request.</p>
-    pub fn log_streams(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn log_streams(&self) -> std::option::Option<& [std::string::String]> {
         self.log_streams.as_deref()
     }
 }
 /// See [`GetRelationalDatabaseLogStreamsOutput`](crate::output::GetRelationalDatabaseLogStreamsOutput).
 pub mod get_relational_database_log_streams_output {
-
+    
     /// A builder for [`GetRelationalDatabaseLogStreamsOutput`](crate::output::GetRelationalDatabaseLogStreamsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2469,25 +2398,24 @@ pub mod get_relational_database_log_streams_output {
         /// <p>An object describing the result of your get relational database log streams request.</p>
         pub fn log_streams(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_streams.unwrap_or_default();
-            v.push(input.into());
-            self.log_streams = Some(v);
-            self
+                            v.push(input.into());
+                            self.log_streams = Some(v);
+                            self
         }
         /// <p>An object describing the result of your get relational database log streams request.</p>
-        pub fn set_log_streams(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.log_streams = input;
-            self
+        pub fn set_log_streams(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.log_streams = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseLogStreamsOutput`](crate::output::GetRelationalDatabaseLogStreamsOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseLogStreamsOutput {
             crate::output::GetRelationalDatabaseLogStreamsOutput {
-                log_streams: self.log_streams,
+                log_streams: self.log_streams
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseLogStreamsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogStreamsOutput`](crate::output::GetRelationalDatabaseLogStreamsOutput).
@@ -2499,7 +2427,7 @@ impl GetRelationalDatabaseLogStreamsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseLogEventsOutput {
+pub struct GetRelationalDatabaseLogEventsOutput  {
     /// <p>An object describing the result of your get relational database log events request.</p>
     #[doc(hidden)]
     pub resource_log_events: std::option::Option<std::vec::Vec<crate::model::LogEvent>>,
@@ -2512,21 +2440,21 @@ pub struct GetRelationalDatabaseLogEventsOutput {
 }
 impl GetRelationalDatabaseLogEventsOutput {
     /// <p>An object describing the result of your get relational database log events request.</p>
-    pub fn resource_log_events(&self) -> std::option::Option<&[crate::model::LogEvent]> {
+    pub fn resource_log_events(&self) -> std::option::Option<& [crate::model::LogEvent]> {
         self.resource_log_events.as_deref()
     }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
-    pub fn next_backward_token(&self) -> std::option::Option<&str> {
+    pub fn next_backward_token(&self) -> std::option::Option<& str> {
         self.next_backward_token.as_deref()
     }
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
-    pub fn next_forward_token(&self) -> std::option::Option<&str> {
+    pub fn next_forward_token(&self) -> std::option::Option<& str> {
         self.next_forward_token.as_deref()
     }
 }
 /// See [`GetRelationalDatabaseLogEventsOutput`](crate::output::GetRelationalDatabaseLogEventsOutput).
 pub mod get_relational_database_log_events_output {
-
+    
     /// A builder for [`GetRelationalDatabaseLogEventsOutput`](crate::output::GetRelationalDatabaseLogEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2542,17 +2470,13 @@ pub mod get_relational_database_log_events_output {
         /// <p>An object describing the result of your get relational database log events request.</p>
         pub fn resource_log_events(mut self, input: crate::model::LogEvent) -> Self {
             let mut v = self.resource_log_events.unwrap_or_default();
-            v.push(input);
-            self.resource_log_events = Some(v);
-            self
+                            v.push(input);
+                            self.resource_log_events = Some(v);
+                            self
         }
         /// <p>An object describing the result of your get relational database log events request.</p>
-        pub fn set_resource_log_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LogEvent>>,
-        ) -> Self {
-            self.resource_log_events = input;
-            self
+        pub fn set_resource_log_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::LogEvent>>) -> Self {
+            self.resource_log_events = input; self
         }
         /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
         pub fn next_backward_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2560,12 +2484,8 @@ pub mod get_relational_database_log_events_output {
             self
         }
         /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
-        pub fn set_next_backward_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_backward_token = input;
-            self
+        pub fn set_next_backward_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_backward_token = input; self
         }
         /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
         pub fn next_forward_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2573,22 +2493,23 @@ pub mod get_relational_database_log_events_output {
             self
         }
         /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
-        pub fn set_next_forward_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_forward_token = input;
-            self
+        pub fn set_next_forward_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_forward_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseLogEventsOutput`](crate::output::GetRelationalDatabaseLogEventsOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseLogEventsOutput {
             crate::output::GetRelationalDatabaseLogEventsOutput {
-                resource_log_events: self.resource_log_events,
-                next_backward_token: self.next_backward_token,
-                next_forward_token: self.next_forward_token,
+                resource_log_events: self.resource_log_events
+                ,
+                next_backward_token: self.next_backward_token
+                ,
+                next_forward_token: self.next_forward_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseLogEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogEventsOutput`](crate::output::GetRelationalDatabaseLogEventsOutput).
@@ -2600,39 +2521,35 @@ impl GetRelationalDatabaseLogEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseEventsOutput {
+pub struct GetRelationalDatabaseEventsOutput  {
     /// <p>An object describing the result of your get relational database events request.</p>
     #[doc(hidden)]
-    pub relational_database_events:
-        std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseEvent>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    pub relational_database_events: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseEvent>>,
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseEventsOutput {
     /// <p>An object describing the result of your get relational database events request.</p>
-    pub fn relational_database_events(
-        &self,
-    ) -> std::option::Option<&[crate::model::RelationalDatabaseEvent]> {
+    pub fn relational_database_events(&self) -> std::option::Option<& [crate::model::RelationalDatabaseEvent]> {
         self.relational_database_events.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetRelationalDatabaseEventsOutput`](crate::output::GetRelationalDatabaseEventsOutput).
 pub mod get_relational_database_events_output {
-
+    
     /// A builder for [`GetRelationalDatabaseEventsOutput`](crate::output::GetRelationalDatabaseEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) relational_database_events:
-            std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseEvent>>,
+        pub(crate) relational_database_events: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseEvent>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2641,48 +2558,41 @@ pub mod get_relational_database_events_output {
         /// To override the contents of this collection use [`set_relational_database_events`](Self::set_relational_database_events).
         ///
         /// <p>An object describing the result of your get relational database events request.</p>
-        pub fn relational_database_events(
-            mut self,
-            input: crate::model::RelationalDatabaseEvent,
-        ) -> Self {
+        pub fn relational_database_events(mut self, input: crate::model::RelationalDatabaseEvent) -> Self {
             let mut v = self.relational_database_events.unwrap_or_default();
-            v.push(input);
-            self.relational_database_events = Some(v);
-            self
+                            v.push(input);
+                            self.relational_database_events = Some(v);
+                            self
         }
         /// <p>An object describing the result of your get relational database events request.</p>
-        pub fn set_relational_database_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseEvent>>,
-        ) -> Self {
-            self.relational_database_events = input;
-            self
+        pub fn set_relational_database_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseEvent>>) -> Self {
+            self.relational_database_events = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseEventsOutput`](crate::output::GetRelationalDatabaseEventsOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseEventsOutput {
             crate::output::GetRelationalDatabaseEventsOutput {
-                relational_database_events: self.relational_database_events,
-                next_page_token: self.next_page_token,
+                relational_database_events: self.relational_database_events
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseEventsOutput`](crate::output::GetRelationalDatabaseEventsOutput).
@@ -2694,36 +2604,35 @@ impl GetRelationalDatabaseEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseBundlesOutput {
+pub struct GetRelationalDatabaseBundlesOutput  {
     /// <p>An object describing the result of your get relational database bundles request.</p>
     #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBundle>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseBundlesOutput {
     /// <p>An object describing the result of your get relational database bundles request.</p>
-    pub fn bundles(&self) -> std::option::Option<&[crate::model::RelationalDatabaseBundle]> {
+    pub fn bundles(&self) -> std::option::Option<& [crate::model::RelationalDatabaseBundle]> {
         self.bundles.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput).
 pub mod get_relational_database_bundles_output {
-
+    
     /// A builder for [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bundles:
-            std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBundle>>,
+        pub(crate) bundles: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBundle>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2734,43 +2643,39 @@ pub mod get_relational_database_bundles_output {
         /// <p>An object describing the result of your get relational database bundles request.</p>
         pub fn bundles(mut self, input: crate::model::RelationalDatabaseBundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input);
-            self.bundles = Some(v);
-            self
+                            v.push(input);
+                            self.bundles = Some(v);
+                            self
         }
         /// <p>An object describing the result of your get relational database bundles request.</p>
-        pub fn set_bundles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBundle>>,
-        ) -> Self {
-            self.bundles = input;
-            self
+        pub fn set_bundles(mut self, input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBundle>>) -> Self {
+            self.bundles = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseBundlesOutput {
             crate::output::GetRelationalDatabaseBundlesOutput {
-                bundles: self.bundles,
-                next_page_token: self.next_page_token,
+                bundles: self.bundles
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput).
@@ -2782,36 +2687,35 @@ impl GetRelationalDatabaseBundlesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseBlueprintsOutput {
+pub struct GetRelationalDatabaseBlueprintsOutput  {
     /// <p>An object describing the result of your get relational database blueprints request.</p>
     #[doc(hidden)]
     pub blueprints: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBlueprint>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseBlueprintsOutput {
     /// <p>An object describing the result of your get relational database blueprints request.</p>
-    pub fn blueprints(&self) -> std::option::Option<&[crate::model::RelationalDatabaseBlueprint]> {
+    pub fn blueprints(&self) -> std::option::Option<& [crate::model::RelationalDatabaseBlueprint]> {
         self.blueprints.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetRelationalDatabaseBlueprintsOutput`](crate::output::GetRelationalDatabaseBlueprintsOutput).
 pub mod get_relational_database_blueprints_output {
-
+    
     /// A builder for [`GetRelationalDatabaseBlueprintsOutput`](crate::output::GetRelationalDatabaseBlueprintsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) blueprints:
-            std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBlueprint>>,
+        pub(crate) blueprints: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBlueprint>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2822,43 +2726,39 @@ pub mod get_relational_database_blueprints_output {
         /// <p>An object describing the result of your get relational database blueprints request.</p>
         pub fn blueprints(mut self, input: crate::model::RelationalDatabaseBlueprint) -> Self {
             let mut v = self.blueprints.unwrap_or_default();
-            v.push(input);
-            self.blueprints = Some(v);
-            self
+                            v.push(input);
+                            self.blueprints = Some(v);
+                            self
         }
         /// <p>An object describing the result of your get relational database blueprints request.</p>
-        pub fn set_blueprints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBlueprint>>,
-        ) -> Self {
-            self.blueprints = input;
-            self
+        pub fn set_blueprints(mut self, input: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBlueprint>>) -> Self {
+            self.blueprints = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseBlueprintsOutput`](crate::output::GetRelationalDatabaseBlueprintsOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseBlueprintsOutput {
             crate::output::GetRelationalDatabaseBlueprintsOutput {
-                blueprints: self.blueprints,
-                next_page_token: self.next_page_token,
+                blueprints: self.blueprints
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseBlueprintsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBlueprintsOutput`](crate::output::GetRelationalDatabaseBlueprintsOutput).
@@ -2870,20 +2770,20 @@ impl GetRelationalDatabaseBlueprintsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseOutput {
+pub struct GetRelationalDatabaseOutput  {
     /// <p>An object describing the specified database.</p>
     #[doc(hidden)]
     pub relational_database: std::option::Option<crate::model::RelationalDatabase>,
 }
 impl GetRelationalDatabaseOutput {
     /// <p>An object describing the specified database.</p>
-    pub fn relational_database(&self) -> std::option::Option<&crate::model::RelationalDatabase> {
+    pub fn relational_database(&self) -> std::option::Option<& crate::model::RelationalDatabase> {
         self.relational_database.as_ref()
     }
 }
 /// See [`GetRelationalDatabaseOutput`](crate::output::GetRelationalDatabaseOutput).
 pub mod get_relational_database_output {
-
+    
     /// A builder for [`GetRelationalDatabaseOutput`](crate::output::GetRelationalDatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2896,20 +2796,19 @@ pub mod get_relational_database_output {
             self
         }
         /// <p>An object describing the specified database.</p>
-        pub fn set_relational_database(
-            mut self,
-            input: std::option::Option<crate::model::RelationalDatabase>,
-        ) -> Self {
-            self.relational_database = input;
-            self
+        pub fn set_relational_database(mut self, input: std::option::Option<crate::model::RelationalDatabase>) -> Self {
+            self.relational_database = input; self
         }
         /// Consumes the builder and constructs a [`GetRelationalDatabaseOutput`](crate::output::GetRelationalDatabaseOutput).
         pub fn build(self) -> crate::output::GetRelationalDatabaseOutput {
             crate::output::GetRelationalDatabaseOutput {
-                relational_database: self.relational_database,
+                relational_database: self.relational_database
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseOutput`](crate::output::GetRelationalDatabaseOutput).
@@ -2921,20 +2820,20 @@ impl GetRelationalDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegionsOutput {
+pub struct GetRegionsOutput  {
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
     #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
 }
 impl GetRegionsOutput {
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
-    pub fn regions(&self) -> std::option::Option<&[crate::model::Region]> {
+    pub fn regions(&self) -> std::option::Option<& [crate::model::Region]> {
         self.regions.as_deref()
     }
 }
 /// See [`GetRegionsOutput`](crate::output::GetRegionsOutput).
 pub mod get_regions_output {
-
+    
     /// A builder for [`GetRegionsOutput`](crate::output::GetRegionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2948,25 +2847,24 @@ pub mod get_regions_output {
         /// <p>An array of key-value pairs containing information about your get regions request.</p>
         pub fn regions(mut self, input: crate::model::Region) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input);
-            self.regions = Some(v);
-            self
+                            v.push(input);
+                            self.regions = Some(v);
+                            self
         }
         /// <p>An array of key-value pairs containing information about your get regions request.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Region>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Region>>) -> Self {
+            self.regions = input; self
         }
         /// Consumes the builder and constructs a [`GetRegionsOutput`](crate::output::GetRegionsOutput).
         pub fn build(self) -> crate::output::GetRegionsOutput {
             crate::output::GetRegionsOutput {
-                regions: self.regions,
+                regions: self.regions
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRegionsOutput {
     /// Creates a new builder-style object to manufacture [`GetRegionsOutput`](crate::output::GetRegionsOutput).
@@ -2978,44 +2876,44 @@ impl GetRegionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOperationsForResourceOutput {
+pub struct GetOperationsForResourceOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
-    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note> 
+    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p> 
     /// </note>
     #[deprecated]
     #[doc(hidden)]
     pub next_page_count: std::option::Option<std::string::String>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetOperationsForResourceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
-    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note> 
+    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p> 
     /// </note>
     #[deprecated]
-    pub fn next_page_count(&self) -> std::option::Option<&str> {
+    pub fn next_page_count(&self) -> std::option::Option<& str> {
         self.next_page_count.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetOperationsForResourceOutput`](crate::output::GetOperationsForResourceOutput).
 pub mod get_operations_for_resource_output {
-
+    
     /// A builder for [`GetOperationsForResourceOutput`](crate::output::GetOperationsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3031,63 +2929,56 @@ pub mod get_operations_for_resource_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
-        /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
-        /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
+        /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note> 
+        /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p> 
         /// </note>
         #[deprecated]
         pub fn next_page_count(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_count = Some(input.into());
             self
         }
-        /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
-        /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
+        /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note> 
+        /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p> 
         /// </note>
         #[deprecated]
-        pub fn set_next_page_count(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_count = input;
-            self
+        pub fn set_next_page_count(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_count = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetOperationsForResourceOutput`](crate::output::GetOperationsForResourceOutput).
         pub fn build(self) -> crate::output::GetOperationsForResourceOutput {
             crate::output::GetOperationsForResourceOutput {
-                operations: self.operations,
-                next_page_count: self.next_page_count,
-                next_page_token: self.next_page_token,
+                operations: self.operations
+                ,
+                next_page_count: self.next_page_count
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOperationsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationsForResourceOutput`](crate::output::GetOperationsForResourceOutput).
@@ -3099,31 +2990,31 @@ impl GetOperationsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOperationsOutput {
+pub struct GetOperationsOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetOperationsOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetOperationsOutput`](crate::output::GetOperationsOutput).
 pub mod get_operations_output {
-
+    
     /// A builder for [`GetOperationsOutput`](crate::output::GetOperationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3138,43 +3029,39 @@ pub mod get_operations_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetOperationsOutput`](crate::output::GetOperationsOutput).
         pub fn build(self) -> crate::output::GetOperationsOutput {
             crate::output::GetOperationsOutput {
-                operations: self.operations,
-                next_page_token: self.next_page_token,
+                operations: self.operations
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOperationsOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationsOutput`](crate::output::GetOperationsOutput).
@@ -3186,20 +3073,20 @@ impl GetOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOperationOutput {
+pub struct GetOperationOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl GetOperationOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`GetOperationOutput`](crate::output::GetOperationOutput).
 pub mod get_operation_output {
-
+    
     /// A builder for [`GetOperationOutput`](crate::output::GetOperationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3212,20 +3099,19 @@ pub mod get_operation_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`GetOperationOutput`](crate::output::GetOperationOutput).
         pub fn build(self) -> crate::output::GetOperationOutput {
             crate::output::GetOperationOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
@@ -3237,36 +3123,35 @@ impl GetOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoadBalancerTlsPoliciesOutput {
+pub struct GetLoadBalancerTlsPoliciesOutput  {
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
     #[doc(hidden)]
     pub tls_policies: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetLoadBalancerTlsPoliciesOutput {
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
-    pub fn tls_policies(&self) -> std::option::Option<&[crate::model::LoadBalancerTlsPolicy]> {
+    pub fn tls_policies(&self) -> std::option::Option<& [crate::model::LoadBalancerTlsPolicy]> {
         self.tls_policies.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput).
 pub mod get_load_balancer_tls_policies_output {
-
+    
     /// A builder for [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tls_policies:
-            std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
+        pub(crate) tls_policies: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3277,43 +3162,39 @@ pub mod get_load_balancer_tls_policies_output {
         /// <p>An array of objects that describe the TLS security policies that are available.</p>
         pub fn tls_policies(mut self, input: crate::model::LoadBalancerTlsPolicy) -> Self {
             let mut v = self.tls_policies.unwrap_or_default();
-            v.push(input);
-            self.tls_policies = Some(v);
-            self
+                            v.push(input);
+                            self.tls_policies = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the TLS security policies that are available.</p>
-        pub fn set_tls_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
-        ) -> Self {
-            self.tls_policies = input;
-            self
+        pub fn set_tls_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>) -> Self {
+            self.tls_policies = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput).
         pub fn build(self) -> crate::output::GetLoadBalancerTlsPoliciesOutput {
             crate::output::GetLoadBalancerTlsPoliciesOutput {
-                tls_policies: self.tls_policies,
-                next_page_token: self.next_page_token,
+                tls_policies: self.tls_policies
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoadBalancerTlsPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput).
@@ -3325,28 +3206,24 @@ impl GetLoadBalancerTlsPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoadBalancerTlsCertificatesOutput {
+pub struct GetLoadBalancerTlsCertificatesOutput  {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
     #[doc(hidden)]
-    pub tls_certificates:
-        std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
+    pub tls_certificates: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
 }
 impl GetLoadBalancerTlsCertificatesOutput {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    pub fn tls_certificates(
-        &self,
-    ) -> std::option::Option<&[crate::model::LoadBalancerTlsCertificate]> {
+    pub fn tls_certificates(&self) -> std::option::Option<& [crate::model::LoadBalancerTlsCertificate]> {
         self.tls_certificates.as_deref()
     }
 }
 /// See [`GetLoadBalancerTlsCertificatesOutput`](crate::output::GetLoadBalancerTlsCertificatesOutput).
 pub mod get_load_balancer_tls_certificates_output {
-
+    
     /// A builder for [`GetLoadBalancerTlsCertificatesOutput`](crate::output::GetLoadBalancerTlsCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tls_certificates:
-            std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
+        pub(crate) tls_certificates: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
     }
     impl Builder {
         /// Appends an item to `tls_certificates`.
@@ -3356,25 +3233,24 @@ pub mod get_load_balancer_tls_certificates_output {
         /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
         pub fn tls_certificates(mut self, input: crate::model::LoadBalancerTlsCertificate) -> Self {
             let mut v = self.tls_certificates.unwrap_or_default();
-            v.push(input);
-            self.tls_certificates = Some(v);
-            self
+                            v.push(input);
+                            self.tls_certificates = Some(v);
+                            self
         }
         /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-        pub fn set_tls_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
-        ) -> Self {
-            self.tls_certificates = input;
-            self
+        pub fn set_tls_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>) -> Self {
+            self.tls_certificates = input; self
         }
         /// Consumes the builder and constructs a [`GetLoadBalancerTlsCertificatesOutput`](crate::output::GetLoadBalancerTlsCertificatesOutput).
         pub fn build(self) -> crate::output::GetLoadBalancerTlsCertificatesOutput {
             crate::output::GetLoadBalancerTlsCertificatesOutput {
-                tls_certificates: self.tls_certificates,
+                tls_certificates: self.tls_certificates
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoadBalancerTlsCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsCertificatesOutput`](crate::output::GetLoadBalancerTlsCertificatesOutput).
@@ -3386,31 +3262,31 @@ impl GetLoadBalancerTlsCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoadBalancersOutput {
+pub struct GetLoadBalancersOutput  {
     /// <p>An array of LoadBalancer objects describing your load balancers.</p>
     #[doc(hidden)]
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetLoadBalancersOutput {
     /// <p>An array of LoadBalancer objects describing your load balancers.</p>
-    pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
+    pub fn load_balancers(&self) -> std::option::Option<& [crate::model::LoadBalancer]> {
         self.load_balancers.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetLoadBalancersOutput`](crate::output::GetLoadBalancersOutput).
 pub mod get_load_balancers_output {
-
+    
     /// A builder for [`GetLoadBalancersOutput`](crate::output::GetLoadBalancersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3425,43 +3301,39 @@ pub mod get_load_balancers_output {
         /// <p>An array of LoadBalancer objects describing your load balancers.</p>
         pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input);
-            self.load_balancers = Some(v);
-            self
+                            v.push(input);
+                            self.load_balancers = Some(v);
+                            self
         }
         /// <p>An array of LoadBalancer objects describing your load balancers.</p>
-        pub fn set_load_balancers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
-        ) -> Self {
-            self.load_balancers = input;
-            self
+        pub fn set_load_balancers(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>) -> Self {
+            self.load_balancers = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetLoadBalancersOutput`](crate::output::GetLoadBalancersOutput).
         pub fn build(self) -> crate::output::GetLoadBalancersOutput {
             crate::output::GetLoadBalancersOutput {
-                load_balancers: self.load_balancers,
-                next_page_token: self.next_page_token,
+                load_balancers: self.load_balancers
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoadBalancersOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancersOutput`](crate::output::GetLoadBalancersOutput).
@@ -3473,7 +3345,7 @@ impl GetLoadBalancersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoadBalancerMetricDataOutput {
+pub struct GetLoadBalancerMetricDataOutput  {
     /// <p>The name of the metric returned.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::LoadBalancerMetricName>,
@@ -3483,17 +3355,17 @@ pub struct GetLoadBalancerMetricDataOutput {
 }
 impl GetLoadBalancerMetricDataOutput {
     /// <p>The name of the metric returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<&crate::model::LoadBalancerMetricName> {
+    pub fn metric_name(&self) -> std::option::Option<& crate::model::LoadBalancerMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+    pub fn metric_data(&self) -> std::option::Option<& [crate::model::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 /// See [`GetLoadBalancerMetricDataOutput`](crate::output::GetLoadBalancerMetricDataOutput).
 pub mod get_load_balancer_metric_data_output {
-
+    
     /// A builder for [`GetLoadBalancerMetricDataOutput`](crate::output::GetLoadBalancerMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3507,12 +3379,8 @@ pub mod get_load_balancer_metric_data_output {
             self
         }
         /// <p>The name of the metric returned.</p>
-        pub fn set_metric_name(
-            mut self,
-            input: std::option::Option<crate::model::LoadBalancerMetricName>,
-        ) -> Self {
-            self.metric_name = input;
-            self
+        pub fn set_metric_name(mut self, input: std::option::Option<crate::model::LoadBalancerMetricName>) -> Self {
+            self.metric_name = input; self
         }
         /// Appends an item to `metric_data`.
         ///
@@ -3521,26 +3389,26 @@ pub mod get_load_balancer_metric_data_output {
         /// <p>An array of objects that describe the metric data returned.</p>
         pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input);
-            self.metric_data = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn set_metric_data(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
-        ) -> Self {
-            self.metric_data = input;
-            self
+        pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>) -> Self {
+            self.metric_data = input; self
         }
         /// Consumes the builder and constructs a [`GetLoadBalancerMetricDataOutput`](crate::output::GetLoadBalancerMetricDataOutput).
         pub fn build(self) -> crate::output::GetLoadBalancerMetricDataOutput {
             crate::output::GetLoadBalancerMetricDataOutput {
-                metric_name: self.metric_name,
-                metric_data: self.metric_data,
+                metric_name: self.metric_name
+                ,
+                metric_data: self.metric_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoadBalancerMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerMetricDataOutput`](crate::output::GetLoadBalancerMetricDataOutput).
@@ -3552,20 +3420,20 @@ impl GetLoadBalancerMetricDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoadBalancerOutput {
+pub struct GetLoadBalancerOutput  {
     /// <p>An object containing information about your load balancer.</p>
     #[doc(hidden)]
     pub load_balancer: std::option::Option<crate::model::LoadBalancer>,
 }
 impl GetLoadBalancerOutput {
     /// <p>An object containing information about your load balancer.</p>
-    pub fn load_balancer(&self) -> std::option::Option<&crate::model::LoadBalancer> {
+    pub fn load_balancer(&self) -> std::option::Option<& crate::model::LoadBalancer> {
         self.load_balancer.as_ref()
     }
 }
 /// See [`GetLoadBalancerOutput`](crate::output::GetLoadBalancerOutput).
 pub mod get_load_balancer_output {
-
+    
     /// A builder for [`GetLoadBalancerOutput`](crate::output::GetLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3578,20 +3446,19 @@ pub mod get_load_balancer_output {
             self
         }
         /// <p>An object containing information about your load balancer.</p>
-        pub fn set_load_balancer(
-            mut self,
-            input: std::option::Option<crate::model::LoadBalancer>,
-        ) -> Self {
-            self.load_balancer = input;
-            self
+        pub fn set_load_balancer(mut self, input: std::option::Option<crate::model::LoadBalancer>) -> Self {
+            self.load_balancer = input; self
         }
         /// Consumes the builder and constructs a [`GetLoadBalancerOutput`](crate::output::GetLoadBalancerOutput).
         pub fn build(self) -> crate::output::GetLoadBalancerOutput {
             crate::output::GetLoadBalancerOutput {
-                load_balancer: self.load_balancer,
+                load_balancer: self.load_balancer
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerOutput`](crate::output::GetLoadBalancerOutput).
@@ -3603,31 +3470,31 @@ impl GetLoadBalancerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetKeyPairsOutput {
+pub struct GetKeyPairsOutput  {
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
     #[doc(hidden)]
     pub key_pairs: std::option::Option<std::vec::Vec<crate::model::KeyPair>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetKeyPairsOutput {
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
-    pub fn key_pairs(&self) -> std::option::Option<&[crate::model::KeyPair]> {
+    pub fn key_pairs(&self) -> std::option::Option<& [crate::model::KeyPair]> {
         self.key_pairs.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput).
 pub mod get_key_pairs_output {
-
+    
     /// A builder for [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3642,43 +3509,39 @@ pub mod get_key_pairs_output {
         /// <p>An array of key-value pairs containing information about the key pairs.</p>
         pub fn key_pairs(mut self, input: crate::model::KeyPair) -> Self {
             let mut v = self.key_pairs.unwrap_or_default();
-            v.push(input);
-            self.key_pairs = Some(v);
-            self
+                            v.push(input);
+                            self.key_pairs = Some(v);
+                            self
         }
         /// <p>An array of key-value pairs containing information about the key pairs.</p>
-        pub fn set_key_pairs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KeyPair>>,
-        ) -> Self {
-            self.key_pairs = input;
-            self
+        pub fn set_key_pairs(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeyPair>>) -> Self {
+            self.key_pairs = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput).
         pub fn build(self) -> crate::output::GetKeyPairsOutput {
             crate::output::GetKeyPairsOutput {
-                key_pairs: self.key_pairs,
-                next_page_token: self.next_page_token,
+                key_pairs: self.key_pairs
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetKeyPairsOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput).
@@ -3690,20 +3553,20 @@ impl GetKeyPairsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetKeyPairOutput {
+pub struct GetKeyPairOutput  {
     /// <p>An array of key-value pairs containing information about the key pair.</p>
     #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::KeyPair>,
 }
 impl GetKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the key pair.</p>
-    pub fn key_pair(&self) -> std::option::Option<&crate::model::KeyPair> {
+    pub fn key_pair(&self) -> std::option::Option<& crate::model::KeyPair> {
         self.key_pair.as_ref()
     }
 }
 /// See [`GetKeyPairOutput`](crate::output::GetKeyPairOutput).
 pub mod get_key_pair_output {
-
+    
     /// A builder for [`GetKeyPairOutput`](crate::output::GetKeyPairOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3717,16 +3580,18 @@ pub mod get_key_pair_output {
         }
         /// <p>An array of key-value pairs containing information about the key pair.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<crate::model::KeyPair>) -> Self {
-            self.key_pair = input;
-            self
+            self.key_pair = input; self
         }
         /// Consumes the builder and constructs a [`GetKeyPairOutput`](crate::output::GetKeyPairOutput).
         pub fn build(self) -> crate::output::GetKeyPairOutput {
             crate::output::GetKeyPairOutput {
-                key_pair: self.key_pair,
+                key_pair: self.key_pair
+                ,
             }
         }
     }
+    
+    
 }
 impl GetKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyPairOutput`](crate::output::GetKeyPairOutput).
@@ -3738,20 +3603,20 @@ impl GetKeyPairOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceStateOutput {
+pub struct GetInstanceStateOutput  {
     /// <p>The state of the instance.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceState>,
 }
 impl GetInstanceStateOutput {
     /// <p>The state of the instance.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::InstanceState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InstanceState> {
         self.state.as_ref()
     }
 }
 /// See [`GetInstanceStateOutput`](crate::output::GetInstanceStateOutput).
 pub mod get_instance_state_output {
-
+    
     /// A builder for [`GetInstanceStateOutput`](crate::output::GetInstanceStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3764,18 +3629,19 @@ pub mod get_instance_state_output {
             self
         }
         /// <p>The state of the instance.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::InstanceState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::InstanceState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceStateOutput`](crate::output::GetInstanceStateOutput).
         pub fn build(self) -> crate::output::GetInstanceStateOutput {
-            crate::output::GetInstanceStateOutput { state: self.state }
+            crate::output::GetInstanceStateOutput {
+                state: self.state
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetInstanceStateOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceStateOutput`](crate::output::GetInstanceStateOutput).
@@ -3787,36 +3653,35 @@ impl GetInstanceStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceSnapshotsOutput {
+pub struct GetInstanceSnapshotsOutput  {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
     #[doc(hidden)]
     pub instance_snapshots: std::option::Option<std::vec::Vec<crate::model::InstanceSnapshot>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetInstanceSnapshotsOutput {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
-    pub fn instance_snapshots(&self) -> std::option::Option<&[crate::model::InstanceSnapshot]> {
+    pub fn instance_snapshots(&self) -> std::option::Option<& [crate::model::InstanceSnapshot]> {
         self.instance_snapshots.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetInstanceSnapshotsOutput`](crate::output::GetInstanceSnapshotsOutput).
 pub mod get_instance_snapshots_output {
-
+    
     /// A builder for [`GetInstanceSnapshotsOutput`](crate::output::GetInstanceSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_snapshots:
-            std::option::Option<std::vec::Vec<crate::model::InstanceSnapshot>>,
+        pub(crate) instance_snapshots: std::option::Option<std::vec::Vec<crate::model::InstanceSnapshot>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3827,43 +3692,39 @@ pub mod get_instance_snapshots_output {
         /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
         pub fn instance_snapshots(mut self, input: crate::model::InstanceSnapshot) -> Self {
             let mut v = self.instance_snapshots.unwrap_or_default();
-            v.push(input);
-            self.instance_snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.instance_snapshots = Some(v);
+                            self
         }
         /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
-        pub fn set_instance_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceSnapshot>>,
-        ) -> Self {
-            self.instance_snapshots = input;
-            self
+        pub fn set_instance_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceSnapshot>>) -> Self {
+            self.instance_snapshots = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceSnapshotsOutput`](crate::output::GetInstanceSnapshotsOutput).
         pub fn build(self) -> crate::output::GetInstanceSnapshotsOutput {
             crate::output::GetInstanceSnapshotsOutput {
-                instance_snapshots: self.instance_snapshots,
-                next_page_token: self.next_page_token,
+                instance_snapshots: self.instance_snapshots
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstanceSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotsOutput`](crate::output::GetInstanceSnapshotsOutput).
@@ -3875,20 +3736,20 @@ impl GetInstanceSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceSnapshotOutput {
+pub struct GetInstanceSnapshotOutput  {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
     #[doc(hidden)]
     pub instance_snapshot: std::option::Option<crate::model::InstanceSnapshot>,
 }
 impl GetInstanceSnapshotOutput {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
-    pub fn instance_snapshot(&self) -> std::option::Option<&crate::model::InstanceSnapshot> {
+    pub fn instance_snapshot(&self) -> std::option::Option<& crate::model::InstanceSnapshot> {
         self.instance_snapshot.as_ref()
     }
 }
 /// See [`GetInstanceSnapshotOutput`](crate::output::GetInstanceSnapshotOutput).
 pub mod get_instance_snapshot_output {
-
+    
     /// A builder for [`GetInstanceSnapshotOutput`](crate::output::GetInstanceSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3901,20 +3762,19 @@ pub mod get_instance_snapshot_output {
             self
         }
         /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
-        pub fn set_instance_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::InstanceSnapshot>,
-        ) -> Self {
-            self.instance_snapshot = input;
-            self
+        pub fn set_instance_snapshot(mut self, input: std::option::Option<crate::model::InstanceSnapshot>) -> Self {
+            self.instance_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceSnapshotOutput`](crate::output::GetInstanceSnapshotOutput).
         pub fn build(self) -> crate::output::GetInstanceSnapshotOutput {
             crate::output::GetInstanceSnapshotOutput {
-                instance_snapshot: self.instance_snapshot,
+                instance_snapshot: self.instance_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstanceSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotOutput`](crate::output::GetInstanceSnapshotOutput).
@@ -3926,31 +3786,31 @@ impl GetInstanceSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstancesOutput {
+pub struct GetInstancesOutput  {
     /// <p>An array of key-value pairs containing information about your instances.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetInstancesOutput {
     /// <p>An array of key-value pairs containing information about your instances.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
         self.instances.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetInstancesOutput`](crate::output::GetInstancesOutput).
 pub mod get_instances_output {
-
+    
     /// A builder for [`GetInstancesOutput`](crate::output::GetInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3965,43 +3825,39 @@ pub mod get_instances_output {
         /// <p>An array of key-value pairs containing information about your instances.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>An array of key-value pairs containing information about your instances.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
+            self.instances = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInstancesOutput`](crate::output::GetInstancesOutput).
         pub fn build(self) -> crate::output::GetInstancesOutput {
             crate::output::GetInstancesOutput {
-                instances: self.instances,
-                next_page_token: self.next_page_token,
+                instances: self.instances
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstancesOutput {
     /// Creates a new builder-style object to manufacture [`GetInstancesOutput`](crate::output::GetInstancesOutput).
@@ -4013,20 +3869,20 @@ impl GetInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstancePortStatesOutput {
+pub struct GetInstancePortStatesOutput  {
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
     #[doc(hidden)]
     pub port_states: std::option::Option<std::vec::Vec<crate::model::InstancePortState>>,
 }
 impl GetInstancePortStatesOutput {
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    pub fn port_states(&self) -> std::option::Option<&[crate::model::InstancePortState]> {
+    pub fn port_states(&self) -> std::option::Option<& [crate::model::InstancePortState]> {
         self.port_states.as_deref()
     }
 }
 /// See [`GetInstancePortStatesOutput`](crate::output::GetInstancePortStatesOutput).
 pub mod get_instance_port_states_output {
-
+    
     /// A builder for [`GetInstancePortStatesOutput`](crate::output::GetInstancePortStatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4040,25 +3896,24 @@ pub mod get_instance_port_states_output {
         /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
         pub fn port_states(mut self, input: crate::model::InstancePortState) -> Self {
             let mut v = self.port_states.unwrap_or_default();
-            v.push(input);
-            self.port_states = Some(v);
-            self
+                            v.push(input);
+                            self.port_states = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-        pub fn set_port_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstancePortState>>,
-        ) -> Self {
-            self.port_states = input;
-            self
+        pub fn set_port_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstancePortState>>) -> Self {
+            self.port_states = input; self
         }
         /// Consumes the builder and constructs a [`GetInstancePortStatesOutput`](crate::output::GetInstancePortStatesOutput).
         pub fn build(self) -> crate::output::GetInstancePortStatesOutput {
             crate::output::GetInstancePortStatesOutput {
-                port_states: self.port_states,
+                port_states: self.port_states
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstancePortStatesOutput {
     /// Creates a new builder-style object to manufacture [`GetInstancePortStatesOutput`](crate::output::GetInstancePortStatesOutput).
@@ -4070,7 +3925,7 @@ impl GetInstancePortStatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceMetricDataOutput {
+pub struct GetInstanceMetricDataOutput  {
     /// <p>The name of the metric returned.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::InstanceMetricName>,
@@ -4080,17 +3935,17 @@ pub struct GetInstanceMetricDataOutput {
 }
 impl GetInstanceMetricDataOutput {
     /// <p>The name of the metric returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<&crate::model::InstanceMetricName> {
+    pub fn metric_name(&self) -> std::option::Option<& crate::model::InstanceMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+    pub fn metric_data(&self) -> std::option::Option<& [crate::model::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 /// See [`GetInstanceMetricDataOutput`](crate::output::GetInstanceMetricDataOutput).
 pub mod get_instance_metric_data_output {
-
+    
     /// A builder for [`GetInstanceMetricDataOutput`](crate::output::GetInstanceMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4104,12 +3959,8 @@ pub mod get_instance_metric_data_output {
             self
         }
         /// <p>The name of the metric returned.</p>
-        pub fn set_metric_name(
-            mut self,
-            input: std::option::Option<crate::model::InstanceMetricName>,
-        ) -> Self {
-            self.metric_name = input;
-            self
+        pub fn set_metric_name(mut self, input: std::option::Option<crate::model::InstanceMetricName>) -> Self {
+            self.metric_name = input; self
         }
         /// Appends an item to `metric_data`.
         ///
@@ -4118,26 +3969,26 @@ pub mod get_instance_metric_data_output {
         /// <p>An array of objects that describe the metric data returned.</p>
         pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input);
-            self.metric_data = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn set_metric_data(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
-        ) -> Self {
-            self.metric_data = input;
-            self
+        pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>) -> Self {
+            self.metric_data = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceMetricDataOutput`](crate::output::GetInstanceMetricDataOutput).
         pub fn build(self) -> crate::output::GetInstanceMetricDataOutput {
             crate::output::GetInstanceMetricDataOutput {
-                metric_name: self.metric_name,
-                metric_data: self.metric_data,
+                metric_name: self.metric_name
+                ,
+                metric_data: self.metric_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstanceMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceMetricDataOutput`](crate::output::GetInstanceMetricDataOutput).
@@ -4149,20 +4000,20 @@ impl GetInstanceMetricDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceAccessDetailsOutput {
+pub struct GetInstanceAccessDetailsOutput  {
     /// <p>An array of key-value pairs containing information about a get instance access request.</p>
     #[doc(hidden)]
     pub access_details: std::option::Option<crate::model::InstanceAccessDetails>,
 }
 impl GetInstanceAccessDetailsOutput {
     /// <p>An array of key-value pairs containing information about a get instance access request.</p>
-    pub fn access_details(&self) -> std::option::Option<&crate::model::InstanceAccessDetails> {
+    pub fn access_details(&self) -> std::option::Option<& crate::model::InstanceAccessDetails> {
         self.access_details.as_ref()
     }
 }
 /// See [`GetInstanceAccessDetailsOutput`](crate::output::GetInstanceAccessDetailsOutput).
 pub mod get_instance_access_details_output {
-
+    
     /// A builder for [`GetInstanceAccessDetailsOutput`](crate::output::GetInstanceAccessDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4175,20 +4026,19 @@ pub mod get_instance_access_details_output {
             self
         }
         /// <p>An array of key-value pairs containing information about a get instance access request.</p>
-        pub fn set_access_details(
-            mut self,
-            input: std::option::Option<crate::model::InstanceAccessDetails>,
-        ) -> Self {
-            self.access_details = input;
-            self
+        pub fn set_access_details(mut self, input: std::option::Option<crate::model::InstanceAccessDetails>) -> Self {
+            self.access_details = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceAccessDetailsOutput`](crate::output::GetInstanceAccessDetailsOutput).
         pub fn build(self) -> crate::output::GetInstanceAccessDetailsOutput {
             crate::output::GetInstanceAccessDetailsOutput {
-                access_details: self.access_details,
+                access_details: self.access_details
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstanceAccessDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessDetailsOutput`](crate::output::GetInstanceAccessDetailsOutput).
@@ -4200,20 +4050,20 @@ impl GetInstanceAccessDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceOutput {
+pub struct GetInstanceOutput  {
     /// <p>An array of key-value pairs containing information about the specified instance.</p>
     #[doc(hidden)]
     pub instance: std::option::Option<crate::model::Instance>,
 }
 impl GetInstanceOutput {
     /// <p>An array of key-value pairs containing information about the specified instance.</p>
-    pub fn instance(&self) -> std::option::Option<&crate::model::Instance> {
+    pub fn instance(&self) -> std::option::Option<& crate::model::Instance> {
         self.instance.as_ref()
     }
 }
 /// See [`GetInstanceOutput`](crate::output::GetInstanceOutput).
 pub mod get_instance_output {
-
+    
     /// A builder for [`GetInstanceOutput`](crate::output::GetInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4227,16 +4077,18 @@ pub mod get_instance_output {
         }
         /// <p>An array of key-value pairs containing information about the specified instance.</p>
         pub fn set_instance(mut self, input: std::option::Option<crate::model::Instance>) -> Self {
-            self.instance = input;
-            self
+            self.instance = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceOutput`](crate::output::GetInstanceOutput).
         pub fn build(self) -> crate::output::GetInstanceOutput {
             crate::output::GetInstanceOutput {
-                instance: self.instance,
+                instance: self.instance
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::output::GetInstanceOutput).
@@ -4248,39 +4100,35 @@ impl GetInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExportSnapshotRecordsOutput {
+pub struct GetExportSnapshotRecordsOutput  {
     /// <p>A list of objects describing the export snapshot records.</p>
     #[doc(hidden)]
-    pub export_snapshot_records:
-        std::option::Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    pub export_snapshot_records: std::option::Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>,
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetExportSnapshotRecordsOutput {
     /// <p>A list of objects describing the export snapshot records.</p>
-    pub fn export_snapshot_records(
-        &self,
-    ) -> std::option::Option<&[crate::model::ExportSnapshotRecord]> {
+    pub fn export_snapshot_records(&self) -> std::option::Option<& [crate::model::ExportSnapshotRecord]> {
         self.export_snapshot_records.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetExportSnapshotRecordsOutput`](crate::output::GetExportSnapshotRecordsOutput).
 pub mod get_export_snapshot_records_output {
-
+    
     /// A builder for [`GetExportSnapshotRecordsOutput`](crate::output::GetExportSnapshotRecordsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) export_snapshot_records:
-            std::option::Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>,
+        pub(crate) export_snapshot_records: std::option::Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4289,48 +4137,41 @@ pub mod get_export_snapshot_records_output {
         /// To override the contents of this collection use [`set_export_snapshot_records`](Self::set_export_snapshot_records).
         ///
         /// <p>A list of objects describing the export snapshot records.</p>
-        pub fn export_snapshot_records(
-            mut self,
-            input: crate::model::ExportSnapshotRecord,
-        ) -> Self {
+        pub fn export_snapshot_records(mut self, input: crate::model::ExportSnapshotRecord) -> Self {
             let mut v = self.export_snapshot_records.unwrap_or_default();
-            v.push(input);
-            self.export_snapshot_records = Some(v);
-            self
+                            v.push(input);
+                            self.export_snapshot_records = Some(v);
+                            self
         }
         /// <p>A list of objects describing the export snapshot records.</p>
-        pub fn set_export_snapshot_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>,
-        ) -> Self {
-            self.export_snapshot_records = input;
-            self
+        pub fn set_export_snapshot_records(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>) -> Self {
+            self.export_snapshot_records = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetExportSnapshotRecordsOutput`](crate::output::GetExportSnapshotRecordsOutput).
         pub fn build(self) -> crate::output::GetExportSnapshotRecordsOutput {
             crate::output::GetExportSnapshotRecordsOutput {
-                export_snapshot_records: self.export_snapshot_records,
-                next_page_token: self.next_page_token,
+                export_snapshot_records: self.export_snapshot_records
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExportSnapshotRecordsOutput {
     /// Creates a new builder-style object to manufacture [`GetExportSnapshotRecordsOutput`](crate::output::GetExportSnapshotRecordsOutput).
@@ -4342,31 +4183,31 @@ impl GetExportSnapshotRecordsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainsOutput {
+pub struct GetDomainsOutput  {
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDomainsOutput {
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
-    pub fn domains(&self) -> std::option::Option<&[crate::model::Domain]> {
+    pub fn domains(&self) -> std::option::Option<& [crate::model::Domain]> {
         self.domains.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetDomainsOutput`](crate::output::GetDomainsOutput).
 pub mod get_domains_output {
-
+    
     /// A builder for [`GetDomainsOutput`](crate::output::GetDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4381,43 +4222,39 @@ pub mod get_domains_output {
         /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
         pub fn domains(mut self, input: crate::model::Domain) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input);
-            self.domains = Some(v);
-            self
+                            v.push(input);
+                            self.domains = Some(v);
+                            self
         }
         /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
-        pub fn set_domains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Domain>>,
-        ) -> Self {
-            self.domains = input;
-            self
+        pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<crate::model::Domain>>) -> Self {
+            self.domains = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainsOutput`](crate::output::GetDomainsOutput).
         pub fn build(self) -> crate::output::GetDomainsOutput {
             crate::output::GetDomainsOutput {
-                domains: self.domains,
-                next_page_token: self.next_page_token,
+                domains: self.domains
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDomainsOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainsOutput`](crate::output::GetDomainsOutput).
@@ -4429,20 +4266,20 @@ impl GetDomainsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainOutput {
+pub struct GetDomainOutput  {
     /// <p>An array of key-value pairs containing information about your get domain request.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl GetDomainOutput {
     /// <p>An array of key-value pairs containing information about your get domain request.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`GetDomainOutput`](crate::output::GetDomainOutput).
 pub mod get_domain_output {
-
+    
     /// A builder for [`GetDomainOutput`](crate::output::GetDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4456,16 +4293,18 @@ pub mod get_domain_output {
         }
         /// <p>An array of key-value pairs containing information about your get domain request.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainOutput`](crate::output::GetDomainOutput).
         pub fn build(self) -> crate::output::GetDomainOutput {
             crate::output::GetDomainOutput {
-                domain: self.domain,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDomainOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainOutput`](crate::output::GetDomainOutput).
@@ -4477,36 +4316,35 @@ impl GetDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionsOutput {
+pub struct GetDistributionsOutput  {
     /// <p>An array of objects that describe your distributions.</p>
     #[doc(hidden)]
     pub distributions: std::option::Option<std::vec::Vec<crate::model::LightsailDistribution>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDistributionsOutput {
     /// <p>An array of objects that describe your distributions.</p>
-    pub fn distributions(&self) -> std::option::Option<&[crate::model::LightsailDistribution]> {
+    pub fn distributions(&self) -> std::option::Option<& [crate::model::LightsailDistribution]> {
         self.distributions.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetDistributionsOutput`](crate::output::GetDistributionsOutput).
 pub mod get_distributions_output {
-
+    
     /// A builder for [`GetDistributionsOutput`](crate::output::GetDistributionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) distributions:
-            std::option::Option<std::vec::Vec<crate::model::LightsailDistribution>>,
+        pub(crate) distributions: std::option::Option<std::vec::Vec<crate::model::LightsailDistribution>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4517,43 +4355,39 @@ pub mod get_distributions_output {
         /// <p>An array of objects that describe your distributions.</p>
         pub fn distributions(mut self, input: crate::model::LightsailDistribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input);
-            self.distributions = Some(v);
-            self
+                            v.push(input);
+                            self.distributions = Some(v);
+                            self
         }
         /// <p>An array of objects that describe your distributions.</p>
-        pub fn set_distributions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LightsailDistribution>>,
-        ) -> Self {
-            self.distributions = input;
-            self
+        pub fn set_distributions(mut self, input: std::option::Option<std::vec::Vec<crate::model::LightsailDistribution>>) -> Self {
+            self.distributions = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDistributionsOutput`](crate::output::GetDistributionsOutput).
         pub fn build(self) -> crate::output::GetDistributionsOutput {
             crate::output::GetDistributionsOutput {
-                distributions: self.distributions,
-                next_page_token: self.next_page_token,
+                distributions: self.distributions
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDistributionsOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionsOutput`](crate::output::GetDistributionsOutput).
@@ -4565,7 +4399,7 @@ impl GetDistributionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionMetricDataOutput {
+pub struct GetDistributionMetricDataOutput  {
     /// <p>The name of the metric returned.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::DistributionMetricName>,
@@ -4575,17 +4409,17 @@ pub struct GetDistributionMetricDataOutput {
 }
 impl GetDistributionMetricDataOutput {
     /// <p>The name of the metric returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<&crate::model::DistributionMetricName> {
+    pub fn metric_name(&self) -> std::option::Option<& crate::model::DistributionMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+    pub fn metric_data(&self) -> std::option::Option<& [crate::model::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 /// See [`GetDistributionMetricDataOutput`](crate::output::GetDistributionMetricDataOutput).
 pub mod get_distribution_metric_data_output {
-
+    
     /// A builder for [`GetDistributionMetricDataOutput`](crate::output::GetDistributionMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4599,12 +4433,8 @@ pub mod get_distribution_metric_data_output {
             self
         }
         /// <p>The name of the metric returned.</p>
-        pub fn set_metric_name(
-            mut self,
-            input: std::option::Option<crate::model::DistributionMetricName>,
-        ) -> Self {
-            self.metric_name = input;
-            self
+        pub fn set_metric_name(mut self, input: std::option::Option<crate::model::DistributionMetricName>) -> Self {
+            self.metric_name = input; self
         }
         /// Appends an item to `metric_data`.
         ///
@@ -4613,26 +4443,26 @@ pub mod get_distribution_metric_data_output {
         /// <p>An array of objects that describe the metric data returned.</p>
         pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input);
-            self.metric_data = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn set_metric_data(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
-        ) -> Self {
-            self.metric_data = input;
-            self
+        pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>) -> Self {
+            self.metric_data = input; self
         }
         /// Consumes the builder and constructs a [`GetDistributionMetricDataOutput`](crate::output::GetDistributionMetricDataOutput).
         pub fn build(self) -> crate::output::GetDistributionMetricDataOutput {
             crate::output::GetDistributionMetricDataOutput {
-                metric_name: self.metric_name,
-                metric_data: self.metric_data,
+                metric_name: self.metric_name
+                ,
+                metric_data: self.metric_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDistributionMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionMetricDataOutput`](crate::output::GetDistributionMetricDataOutput).
@@ -4644,7 +4474,7 @@ impl GetDistributionMetricDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionLatestCacheResetOutput {
+pub struct GetDistributionLatestCacheResetOutput  {
     /// <p>The status of the last cache reset.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -4654,17 +4484,17 @@ pub struct GetDistributionLatestCacheResetOutput {
 }
 impl GetDistributionLatestCacheResetOutput {
     /// <p>The status of the last cache reset.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 /// See [`GetDistributionLatestCacheResetOutput`](crate::output::GetDistributionLatestCacheResetOutput).
 pub mod get_distribution_latest_cache_reset_output {
-
+    
     /// A builder for [`GetDistributionLatestCacheResetOutput`](crate::output::GetDistributionLatestCacheResetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4679,8 +4509,7 @@ pub mod get_distribution_latest_cache_reset_output {
         }
         /// <p>The status of the last cache reset.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4688,21 +4517,21 @@ pub mod get_distribution_latest_cache_reset_output {
             self
         }
         /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Consumes the builder and constructs a [`GetDistributionLatestCacheResetOutput`](crate::output::GetDistributionLatestCacheResetOutput).
         pub fn build(self) -> crate::output::GetDistributionLatestCacheResetOutput {
             crate::output::GetDistributionLatestCacheResetOutput {
-                status: self.status,
-                create_time: self.create_time,
+                status: self.status
+                ,
+                create_time: self.create_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDistributionLatestCacheResetOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionLatestCacheResetOutput`](crate::output::GetDistributionLatestCacheResetOutput).
@@ -4714,20 +4543,20 @@ impl GetDistributionLatestCacheResetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionBundlesOutput {
+pub struct GetDistributionBundlesOutput  {
     /// <p>An object that describes a distribution bundle.</p>
     #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::DistributionBundle>>,
 }
 impl GetDistributionBundlesOutput {
     /// <p>An object that describes a distribution bundle.</p>
-    pub fn bundles(&self) -> std::option::Option<&[crate::model::DistributionBundle]> {
+    pub fn bundles(&self) -> std::option::Option<& [crate::model::DistributionBundle]> {
         self.bundles.as_deref()
     }
 }
 /// See [`GetDistributionBundlesOutput`](crate::output::GetDistributionBundlesOutput).
 pub mod get_distribution_bundles_output {
-
+    
     /// A builder for [`GetDistributionBundlesOutput`](crate::output::GetDistributionBundlesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4741,25 +4570,24 @@ pub mod get_distribution_bundles_output {
         /// <p>An object that describes a distribution bundle.</p>
         pub fn bundles(mut self, input: crate::model::DistributionBundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input);
-            self.bundles = Some(v);
-            self
+                            v.push(input);
+                            self.bundles = Some(v);
+                            self
         }
         /// <p>An object that describes a distribution bundle.</p>
-        pub fn set_bundles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DistributionBundle>>,
-        ) -> Self {
-            self.bundles = input;
-            self
+        pub fn set_bundles(mut self, input: std::option::Option<std::vec::Vec<crate::model::DistributionBundle>>) -> Self {
+            self.bundles = input; self
         }
         /// Consumes the builder and constructs a [`GetDistributionBundlesOutput`](crate::output::GetDistributionBundlesOutput).
         pub fn build(self) -> crate::output::GetDistributionBundlesOutput {
             crate::output::GetDistributionBundlesOutput {
-                bundles: self.bundles,
+                bundles: self.bundles
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDistributionBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionBundlesOutput`](crate::output::GetDistributionBundlesOutput).
@@ -4771,31 +4599,31 @@ impl GetDistributionBundlesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDiskSnapshotsOutput {
+pub struct GetDiskSnapshotsOutput  {
     /// <p>An array of objects containing information about all block storage disk snapshots.</p>
     #[doc(hidden)]
     pub disk_snapshots: std::option::Option<std::vec::Vec<crate::model::DiskSnapshot>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDiskSnapshotsOutput {
     /// <p>An array of objects containing information about all block storage disk snapshots.</p>
-    pub fn disk_snapshots(&self) -> std::option::Option<&[crate::model::DiskSnapshot]> {
+    pub fn disk_snapshots(&self) -> std::option::Option<& [crate::model::DiskSnapshot]> {
         self.disk_snapshots.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetDiskSnapshotsOutput`](crate::output::GetDiskSnapshotsOutput).
 pub mod get_disk_snapshots_output {
-
+    
     /// A builder for [`GetDiskSnapshotsOutput`](crate::output::GetDiskSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4810,43 +4638,39 @@ pub mod get_disk_snapshots_output {
         /// <p>An array of objects containing information about all block storage disk snapshots.</p>
         pub fn disk_snapshots(mut self, input: crate::model::DiskSnapshot) -> Self {
             let mut v = self.disk_snapshots.unwrap_or_default();
-            v.push(input);
-            self.disk_snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.disk_snapshots = Some(v);
+                            self
         }
         /// <p>An array of objects containing information about all block storage disk snapshots.</p>
-        pub fn set_disk_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DiskSnapshot>>,
-        ) -> Self {
-            self.disk_snapshots = input;
-            self
+        pub fn set_disk_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::DiskSnapshot>>) -> Self {
+            self.disk_snapshots = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDiskSnapshotsOutput`](crate::output::GetDiskSnapshotsOutput).
         pub fn build(self) -> crate::output::GetDiskSnapshotsOutput {
             crate::output::GetDiskSnapshotsOutput {
-                disk_snapshots: self.disk_snapshots,
-                next_page_token: self.next_page_token,
+                disk_snapshots: self.disk_snapshots
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDiskSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetDiskSnapshotsOutput`](crate::output::GetDiskSnapshotsOutput).
@@ -4858,20 +4682,20 @@ impl GetDiskSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDiskSnapshotOutput {
+pub struct GetDiskSnapshotOutput  {
     /// <p>An object containing information about the disk snapshot.</p>
     #[doc(hidden)]
     pub disk_snapshot: std::option::Option<crate::model::DiskSnapshot>,
 }
 impl GetDiskSnapshotOutput {
     /// <p>An object containing information about the disk snapshot.</p>
-    pub fn disk_snapshot(&self) -> std::option::Option<&crate::model::DiskSnapshot> {
+    pub fn disk_snapshot(&self) -> std::option::Option<& crate::model::DiskSnapshot> {
         self.disk_snapshot.as_ref()
     }
 }
 /// See [`GetDiskSnapshotOutput`](crate::output::GetDiskSnapshotOutput).
 pub mod get_disk_snapshot_output {
-
+    
     /// A builder for [`GetDiskSnapshotOutput`](crate::output::GetDiskSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4884,20 +4708,19 @@ pub mod get_disk_snapshot_output {
             self
         }
         /// <p>An object containing information about the disk snapshot.</p>
-        pub fn set_disk_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DiskSnapshot>,
-        ) -> Self {
-            self.disk_snapshot = input;
-            self
+        pub fn set_disk_snapshot(mut self, input: std::option::Option<crate::model::DiskSnapshot>) -> Self {
+            self.disk_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`GetDiskSnapshotOutput`](crate::output::GetDiskSnapshotOutput).
         pub fn build(self) -> crate::output::GetDiskSnapshotOutput {
             crate::output::GetDiskSnapshotOutput {
-                disk_snapshot: self.disk_snapshot,
+                disk_snapshot: self.disk_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDiskSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetDiskSnapshotOutput`](crate::output::GetDiskSnapshotOutput).
@@ -4909,31 +4732,31 @@ impl GetDiskSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDisksOutput {
+pub struct GetDisksOutput  {
     /// <p>An array of objects containing information about all block storage disks.</p>
     #[doc(hidden)]
     pub disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDisksOutput {
     /// <p>An array of objects containing information about all block storage disks.</p>
-    pub fn disks(&self) -> std::option::Option<&[crate::model::Disk]> {
+    pub fn disks(&self) -> std::option::Option<& [crate::model::Disk]> {
         self.disks.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetDisksOutput`](crate::output::GetDisksOutput).
 pub mod get_disks_output {
-
+    
     /// A builder for [`GetDisksOutput`](crate::output::GetDisksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4948,43 +4771,39 @@ pub mod get_disks_output {
         /// <p>An array of objects containing information about all block storage disks.</p>
         pub fn disks(mut self, input: crate::model::Disk) -> Self {
             let mut v = self.disks.unwrap_or_default();
-            v.push(input);
-            self.disks = Some(v);
-            self
+                            v.push(input);
+                            self.disks = Some(v);
+                            self
         }
         /// <p>An array of objects containing information about all block storage disks.</p>
-        pub fn set_disks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Disk>>,
-        ) -> Self {
-            self.disks = input;
-            self
+        pub fn set_disks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Disk>>) -> Self {
+            self.disks = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDisksOutput`](crate::output::GetDisksOutput).
         pub fn build(self) -> crate::output::GetDisksOutput {
             crate::output::GetDisksOutput {
-                disks: self.disks,
-                next_page_token: self.next_page_token,
+                disks: self.disks
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDisksOutput {
     /// Creates a new builder-style object to manufacture [`GetDisksOutput`](crate::output::GetDisksOutput).
@@ -4996,20 +4815,20 @@ impl GetDisksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDiskOutput {
+pub struct GetDiskOutput  {
     /// <p>An object containing information about the disk.</p>
     #[doc(hidden)]
     pub disk: std::option::Option<crate::model::Disk>,
 }
 impl GetDiskOutput {
     /// <p>An object containing information about the disk.</p>
-    pub fn disk(&self) -> std::option::Option<&crate::model::Disk> {
+    pub fn disk(&self) -> std::option::Option<& crate::model::Disk> {
         self.disk.as_ref()
     }
 }
 /// See [`GetDiskOutput`](crate::output::GetDiskOutput).
 pub mod get_disk_output {
-
+    
     /// A builder for [`GetDiskOutput`](crate::output::GetDiskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5023,14 +4842,18 @@ pub mod get_disk_output {
         }
         /// <p>An object containing information about the disk.</p>
         pub fn set_disk(mut self, input: std::option::Option<crate::model::Disk>) -> Self {
-            self.disk = input;
-            self
+            self.disk = input; self
         }
         /// Consumes the builder and constructs a [`GetDiskOutput`](crate::output::GetDiskOutput).
         pub fn build(self) -> crate::output::GetDiskOutput {
-            crate::output::GetDiskOutput { disk: self.disk }
+            crate::output::GetDiskOutput {
+                disk: self.disk
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetDiskOutput {
     /// Creates a new builder-style object to manufacture [`GetDiskOutput`](crate::output::GetDiskOutput).
@@ -5042,25 +4865,24 @@ impl GetDiskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerServicesOutput {
+pub struct GetContainerServicesOutput  {
     /// <p>An array of objects that describe one or more container services.</p>
     #[doc(hidden)]
     pub container_services: std::option::Option<std::vec::Vec<crate::model::ContainerService>>,
 }
 impl GetContainerServicesOutput {
     /// <p>An array of objects that describe one or more container services.</p>
-    pub fn container_services(&self) -> std::option::Option<&[crate::model::ContainerService]> {
+    pub fn container_services(&self) -> std::option::Option<& [crate::model::ContainerService]> {
         self.container_services.as_deref()
     }
 }
 /// See [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput).
 pub mod get_container_services_output {
-
+    
     /// A builder for [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) container_services:
-            std::option::Option<std::vec::Vec<crate::model::ContainerService>>,
+        pub(crate) container_services: std::option::Option<std::vec::Vec<crate::model::ContainerService>>,
     }
     impl Builder {
         /// Appends an item to `container_services`.
@@ -5070,25 +4892,24 @@ pub mod get_container_services_output {
         /// <p>An array of objects that describe one or more container services.</p>
         pub fn container_services(mut self, input: crate::model::ContainerService) -> Self {
             let mut v = self.container_services.unwrap_or_default();
-            v.push(input);
-            self.container_services = Some(v);
-            self
+                            v.push(input);
+                            self.container_services = Some(v);
+                            self
         }
         /// <p>An array of objects that describe one or more container services.</p>
-        pub fn set_container_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContainerService>>,
-        ) -> Self {
-            self.container_services = input;
-            self
+        pub fn set_container_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContainerService>>) -> Self {
+            self.container_services = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput).
         pub fn build(self) -> crate::output::GetContainerServicesOutput {
             crate::output::GetContainerServicesOutput {
-                container_services: self.container_services,
+                container_services: self.container_services
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContainerServicesOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput).
@@ -5100,20 +4921,20 @@ impl GetContainerServicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerServicePowersOutput {
+pub struct GetContainerServicePowersOutput  {
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
     #[doc(hidden)]
     pub powers: std::option::Option<std::vec::Vec<crate::model::ContainerServicePower>>,
 }
 impl GetContainerServicePowersOutput {
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    pub fn powers(&self) -> std::option::Option<&[crate::model::ContainerServicePower]> {
+    pub fn powers(&self) -> std::option::Option<& [crate::model::ContainerServicePower]> {
         self.powers.as_deref()
     }
 }
 /// See [`GetContainerServicePowersOutput`](crate::output::GetContainerServicePowersOutput).
 pub mod get_container_service_powers_output {
-
+    
     /// A builder for [`GetContainerServicePowersOutput`](crate::output::GetContainerServicePowersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5127,25 +4948,24 @@ pub mod get_container_service_powers_output {
         /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
         pub fn powers(mut self, input: crate::model::ContainerServicePower) -> Self {
             let mut v = self.powers.unwrap_or_default();
-            v.push(input);
-            self.powers = Some(v);
-            self
+                            v.push(input);
+                            self.powers = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-        pub fn set_powers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContainerServicePower>>,
-        ) -> Self {
-            self.powers = input;
-            self
+        pub fn set_powers(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContainerServicePower>>) -> Self {
+            self.powers = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerServicePowersOutput`](crate::output::GetContainerServicePowersOutput).
         pub fn build(self) -> crate::output::GetContainerServicePowersOutput {
             crate::output::GetContainerServicePowersOutput {
-                powers: self.powers,
+                powers: self.powers
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContainerServicePowersOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServicePowersOutput`](crate::output::GetContainerServicePowersOutput).
@@ -5157,7 +4977,7 @@ impl GetContainerServicePowersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerServiceMetricDataOutput {
+pub struct GetContainerServiceMetricDataOutput  {
     /// <p>The name of the metric returned. </p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::ContainerServiceMetricName>,
@@ -5167,17 +4987,17 @@ pub struct GetContainerServiceMetricDataOutput {
 }
 impl GetContainerServiceMetricDataOutput {
     /// <p>The name of the metric returned. </p>
-    pub fn metric_name(&self) -> std::option::Option<&crate::model::ContainerServiceMetricName> {
+    pub fn metric_name(&self) -> std::option::Option<& crate::model::ContainerServiceMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+    pub fn metric_data(&self) -> std::option::Option<& [crate::model::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 /// See [`GetContainerServiceMetricDataOutput`](crate::output::GetContainerServiceMetricDataOutput).
 pub mod get_container_service_metric_data_output {
-
+    
     /// A builder for [`GetContainerServiceMetricDataOutput`](crate::output::GetContainerServiceMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5191,12 +5011,8 @@ pub mod get_container_service_metric_data_output {
             self
         }
         /// <p>The name of the metric returned. </p>
-        pub fn set_metric_name(
-            mut self,
-            input: std::option::Option<crate::model::ContainerServiceMetricName>,
-        ) -> Self {
-            self.metric_name = input;
-            self
+        pub fn set_metric_name(mut self, input: std::option::Option<crate::model::ContainerServiceMetricName>) -> Self {
+            self.metric_name = input; self
         }
         /// Appends an item to `metric_data`.
         ///
@@ -5205,26 +5021,26 @@ pub mod get_container_service_metric_data_output {
         /// <p>An array of objects that describe the metric data returned.</p>
         pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input);
-            self.metric_data = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn set_metric_data(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
-        ) -> Self {
-            self.metric_data = input;
-            self
+        pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>) -> Self {
+            self.metric_data = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerServiceMetricDataOutput`](crate::output::GetContainerServiceMetricDataOutput).
         pub fn build(self) -> crate::output::GetContainerServiceMetricDataOutput {
             crate::output::GetContainerServiceMetricDataOutput {
-                metric_name: self.metric_name,
-                metric_data: self.metric_data,
+                metric_name: self.metric_name
+                ,
+                metric_data: self.metric_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContainerServiceMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServiceMetricDataOutput`](crate::output::GetContainerServiceMetricDataOutput).
@@ -5236,25 +5052,24 @@ impl GetContainerServiceMetricDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerServiceDeploymentsOutput {
+pub struct GetContainerServiceDeploymentsOutput  {
     /// <p>An array of objects that describe deployments for a container service.</p>
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::ContainerServiceDeployment>>,
 }
 impl GetContainerServiceDeploymentsOutput {
     /// <p>An array of objects that describe deployments for a container service.</p>
-    pub fn deployments(&self) -> std::option::Option<&[crate::model::ContainerServiceDeployment]> {
+    pub fn deployments(&self) -> std::option::Option<& [crate::model::ContainerServiceDeployment]> {
         self.deployments.as_deref()
     }
 }
 /// See [`GetContainerServiceDeploymentsOutput`](crate::output::GetContainerServiceDeploymentsOutput).
 pub mod get_container_service_deployments_output {
-
+    
     /// A builder for [`GetContainerServiceDeploymentsOutput`](crate::output::GetContainerServiceDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) deployments:
-            std::option::Option<std::vec::Vec<crate::model::ContainerServiceDeployment>>,
+        pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::ContainerServiceDeployment>>,
     }
     impl Builder {
         /// Appends an item to `deployments`.
@@ -5264,25 +5079,24 @@ pub mod get_container_service_deployments_output {
         /// <p>An array of objects that describe deployments for a container service.</p>
         pub fn deployments(mut self, input: crate::model::ContainerServiceDeployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input);
-            self.deployments = Some(v);
-            self
+                            v.push(input);
+                            self.deployments = Some(v);
+                            self
         }
         /// <p>An array of objects that describe deployments for a container service.</p>
-        pub fn set_deployments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContainerServiceDeployment>>,
-        ) -> Self {
-            self.deployments = input;
-            self
+        pub fn set_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContainerServiceDeployment>>) -> Self {
+            self.deployments = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerServiceDeploymentsOutput`](crate::output::GetContainerServiceDeploymentsOutput).
         pub fn build(self) -> crate::output::GetContainerServiceDeploymentsOutput {
             crate::output::GetContainerServiceDeploymentsOutput {
-                deployments: self.deployments,
+                deployments: self.deployments
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContainerServiceDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServiceDeploymentsOutput`](crate::output::GetContainerServiceDeploymentsOutput).
@@ -5294,36 +5108,35 @@ impl GetContainerServiceDeploymentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerLogOutput {
+pub struct GetContainerLogOutput  {
     /// <p>An array of objects that describe the log events of a container.</p>
     #[doc(hidden)]
     pub log_events: std::option::Option<std::vec::Vec<crate::model::ContainerServiceLogEvent>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetContainerLogOutput {
     /// <p>An array of objects that describe the log events of a container.</p>
-    pub fn log_events(&self) -> std::option::Option<&[crate::model::ContainerServiceLogEvent]> {
+    pub fn log_events(&self) -> std::option::Option<& [crate::model::ContainerServiceLogEvent]> {
         self.log_events.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetContainerLogOutput`](crate::output::GetContainerLogOutput).
 pub mod get_container_log_output {
-
+    
     /// A builder for [`GetContainerLogOutput`](crate::output::GetContainerLogOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) log_events:
-            std::option::Option<std::vec::Vec<crate::model::ContainerServiceLogEvent>>,
+        pub(crate) log_events: std::option::Option<std::vec::Vec<crate::model::ContainerServiceLogEvent>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5334,43 +5147,39 @@ pub mod get_container_log_output {
         /// <p>An array of objects that describe the log events of a container.</p>
         pub fn log_events(mut self, input: crate::model::ContainerServiceLogEvent) -> Self {
             let mut v = self.log_events.unwrap_or_default();
-            v.push(input);
-            self.log_events = Some(v);
-            self
+                            v.push(input);
+                            self.log_events = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the log events of a container.</p>
-        pub fn set_log_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContainerServiceLogEvent>>,
-        ) -> Self {
-            self.log_events = input;
-            self
+        pub fn set_log_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContainerServiceLogEvent>>) -> Self {
+            self.log_events = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerLogOutput`](crate::output::GetContainerLogOutput).
         pub fn build(self) -> crate::output::GetContainerLogOutput {
             crate::output::GetContainerLogOutput {
-                log_events: self.log_events,
-                next_page_token: self.next_page_token,
+                log_events: self.log_events
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContainerLogOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerLogOutput`](crate::output::GetContainerLogOutput).
@@ -5382,25 +5191,24 @@ impl GetContainerLogOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerImagesOutput {
+pub struct GetContainerImagesOutput  {
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
     #[doc(hidden)]
     pub container_images: std::option::Option<std::vec::Vec<crate::model::ContainerImage>>,
 }
 impl GetContainerImagesOutput {
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
-    pub fn container_images(&self) -> std::option::Option<&[crate::model::ContainerImage]> {
+    pub fn container_images(&self) -> std::option::Option<& [crate::model::ContainerImage]> {
         self.container_images.as_deref()
     }
 }
 /// See [`GetContainerImagesOutput`](crate::output::GetContainerImagesOutput).
 pub mod get_container_images_output {
-
+    
     /// A builder for [`GetContainerImagesOutput`](crate::output::GetContainerImagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) container_images:
-            std::option::Option<std::vec::Vec<crate::model::ContainerImage>>,
+        pub(crate) container_images: std::option::Option<std::vec::Vec<crate::model::ContainerImage>>,
     }
     impl Builder {
         /// Appends an item to `container_images`.
@@ -5410,25 +5218,24 @@ pub mod get_container_images_output {
         /// <p>An array of objects that describe container images that are registered to the container service.</p>
         pub fn container_images(mut self, input: crate::model::ContainerImage) -> Self {
             let mut v = self.container_images.unwrap_or_default();
-            v.push(input);
-            self.container_images = Some(v);
-            self
+                            v.push(input);
+                            self.container_images = Some(v);
+                            self
         }
         /// <p>An array of objects that describe container images that are registered to the container service.</p>
-        pub fn set_container_images(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContainerImage>>,
-        ) -> Self {
-            self.container_images = input;
-            self
+        pub fn set_container_images(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContainerImage>>) -> Self {
+            self.container_images = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerImagesOutput`](crate::output::GetContainerImagesOutput).
         pub fn build(self) -> crate::output::GetContainerImagesOutput {
             crate::output::GetContainerImagesOutput {
-                container_images: self.container_images,
+                container_images: self.container_images
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContainerImagesOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerImagesOutput`](crate::output::GetContainerImagesOutput).
@@ -5440,31 +5247,24 @@ impl GetContainerImagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerApiMetadataOutput {
+pub struct GetContainerApiMetadataOutput  {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-    >,
+    pub metadata: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
 }
 impl GetContainerApiMetadataOutput {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
-    {
+    pub fn metadata(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, std::string::String>]> {
         self.metadata.as_deref()
     }
 }
 /// See [`GetContainerApiMetadataOutput`](crate::output::GetContainerApiMetadataOutput).
 pub mod get_container_api_metadata_output {
-
+    
     /// A builder for [`GetContainerApiMetadataOutput`](crate::output::GetContainerApiMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) metadata: std::option::Option<
-            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-        >,
+        pub(crate) metadata: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
     }
     impl Builder {
         /// Appends an item to `metadata`.
@@ -5472,32 +5272,26 @@ pub mod get_container_api_metadata_output {
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-        pub fn metadata(
-            mut self,
-            input: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn metadata(mut self, input: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut v = self.metadata.unwrap_or_default();
-            v.push(input);
-            self.metadata = Some(v);
-            self
+                            v.push(input);
+                            self.metadata = Some(v);
+                            self
         }
         /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-            >,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.metadata = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerApiMetadataOutput`](crate::output::GetContainerApiMetadataOutput).
         pub fn build(self) -> crate::output::GetContainerApiMetadataOutput {
             crate::output::GetContainerApiMetadataOutput {
-                metadata: self.metadata,
+                metadata: self.metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContainerApiMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerApiMetadataOutput`](crate::output::GetContainerApiMetadataOutput).
@@ -5509,20 +5303,20 @@ impl GetContainerApiMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactMethodsOutput {
+pub struct GetContactMethodsOutput  {
     /// <p>An array of objects that describe the contact methods.</p>
     #[doc(hidden)]
     pub contact_methods: std::option::Option<std::vec::Vec<crate::model::ContactMethod>>,
 }
 impl GetContactMethodsOutput {
     /// <p>An array of objects that describe the contact methods.</p>
-    pub fn contact_methods(&self) -> std::option::Option<&[crate::model::ContactMethod]> {
+    pub fn contact_methods(&self) -> std::option::Option<& [crate::model::ContactMethod]> {
         self.contact_methods.as_deref()
     }
 }
 /// See [`GetContactMethodsOutput`](crate::output::GetContactMethodsOutput).
 pub mod get_contact_methods_output {
-
+    
     /// A builder for [`GetContactMethodsOutput`](crate::output::GetContactMethodsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5536,25 +5330,24 @@ pub mod get_contact_methods_output {
         /// <p>An array of objects that describe the contact methods.</p>
         pub fn contact_methods(mut self, input: crate::model::ContactMethod) -> Self {
             let mut v = self.contact_methods.unwrap_or_default();
-            v.push(input);
-            self.contact_methods = Some(v);
-            self
+                            v.push(input);
+                            self.contact_methods = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the contact methods.</p>
-        pub fn set_contact_methods(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContactMethod>>,
-        ) -> Self {
-            self.contact_methods = input;
-            self
+        pub fn set_contact_methods(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContactMethod>>) -> Self {
+            self.contact_methods = input; self
         }
         /// Consumes the builder and constructs a [`GetContactMethodsOutput`](crate::output::GetContactMethodsOutput).
         pub fn build(self) -> crate::output::GetContactMethodsOutput {
             crate::output::GetContactMethodsOutput {
-                contact_methods: self.contact_methods,
+                contact_methods: self.contact_methods
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContactMethodsOutput {
     /// Creates a new builder-style object to manufacture [`GetContactMethodsOutput`](crate::output::GetContactMethodsOutput).
@@ -5566,39 +5359,35 @@ impl GetContactMethodsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCloudFormationStackRecordsOutput {
+pub struct GetCloudFormationStackRecordsOutput  {
     /// <p>A list of objects describing the CloudFormation stack records.</p>
     #[doc(hidden)]
-    pub cloud_formation_stack_records:
-        std::option::Option<std::vec::Vec<crate::model::CloudFormationStackRecord>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    pub cloud_formation_stack_records: std::option::Option<std::vec::Vec<crate::model::CloudFormationStackRecord>>,
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetCloudFormationStackRecordsOutput {
     /// <p>A list of objects describing the CloudFormation stack records.</p>
-    pub fn cloud_formation_stack_records(
-        &self,
-    ) -> std::option::Option<&[crate::model::CloudFormationStackRecord]> {
+    pub fn cloud_formation_stack_records(&self) -> std::option::Option<& [crate::model::CloudFormationStackRecord]> {
         self.cloud_formation_stack_records.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetCloudFormationStackRecordsOutput`](crate::output::GetCloudFormationStackRecordsOutput).
 pub mod get_cloud_formation_stack_records_output {
-
+    
     /// A builder for [`GetCloudFormationStackRecordsOutput`](crate::output::GetCloudFormationStackRecordsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_formation_stack_records:
-            std::option::Option<std::vec::Vec<crate::model::CloudFormationStackRecord>>,
+        pub(crate) cloud_formation_stack_records: std::option::Option<std::vec::Vec<crate::model::CloudFormationStackRecord>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5607,48 +5396,41 @@ pub mod get_cloud_formation_stack_records_output {
         /// To override the contents of this collection use [`set_cloud_formation_stack_records`](Self::set_cloud_formation_stack_records).
         ///
         /// <p>A list of objects describing the CloudFormation stack records.</p>
-        pub fn cloud_formation_stack_records(
-            mut self,
-            input: crate::model::CloudFormationStackRecord,
-        ) -> Self {
+        pub fn cloud_formation_stack_records(mut self, input: crate::model::CloudFormationStackRecord) -> Self {
             let mut v = self.cloud_formation_stack_records.unwrap_or_default();
-            v.push(input);
-            self.cloud_formation_stack_records = Some(v);
-            self
+                            v.push(input);
+                            self.cloud_formation_stack_records = Some(v);
+                            self
         }
         /// <p>A list of objects describing the CloudFormation stack records.</p>
-        pub fn set_cloud_formation_stack_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CloudFormationStackRecord>>,
-        ) -> Self {
-            self.cloud_formation_stack_records = input;
-            self
+        pub fn set_cloud_formation_stack_records(mut self, input: std::option::Option<std::vec::Vec<crate::model::CloudFormationStackRecord>>) -> Self {
+            self.cloud_formation_stack_records = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetCloudFormationStackRecordsOutput`](crate::output::GetCloudFormationStackRecordsOutput).
         pub fn build(self) -> crate::output::GetCloudFormationStackRecordsOutput {
             crate::output::GetCloudFormationStackRecordsOutput {
-                cloud_formation_stack_records: self.cloud_formation_stack_records,
-                next_page_token: self.next_page_token,
+                cloud_formation_stack_records: self.cloud_formation_stack_records
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCloudFormationStackRecordsOutput {
     /// Creates a new builder-style object to manufacture [`GetCloudFormationStackRecordsOutput`](crate::output::GetCloudFormationStackRecordsOutput).
@@ -5660,25 +5442,24 @@ impl GetCloudFormationStackRecordsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCertificatesOutput {
+pub struct GetCertificatesOutput  {
     /// <p>An object that describes certificates.</p>
     #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
 }
 impl GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::CertificateSummary]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::CertificateSummary]> {
         self.certificates.as_deref()
     }
 }
 /// See [`GetCertificatesOutput`](crate::output::GetCertificatesOutput).
 pub mod get_certificates_output {
-
+    
     /// A builder for [`GetCertificatesOutput`](crate::output::GetCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) certificates:
-            std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
+        pub(crate) certificates: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
     }
     impl Builder {
         /// Appends an item to `certificates`.
@@ -5688,25 +5469,24 @@ pub mod get_certificates_output {
         /// <p>An object that describes certificates.</p>
         pub fn certificates(mut self, input: crate::model::CertificateSummary) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>An object that describes certificates.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>) -> Self {
+            self.certificates = input; self
         }
         /// Consumes the builder and constructs a [`GetCertificatesOutput`](crate::output::GetCertificatesOutput).
         pub fn build(self) -> crate::output::GetCertificatesOutput {
             crate::output::GetCertificatesOutput {
-                certificates: self.certificates,
+                certificates: self.certificates
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificatesOutput`](crate::output::GetCertificatesOutput).
@@ -5718,31 +5498,31 @@ impl GetCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBundlesOutput {
+pub struct GetBundlesOutput  {
     /// <p>An array of key-value pairs that contains information about the available bundles.</p>
     #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::Bundle>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetBundlesOutput {
     /// <p>An array of key-value pairs that contains information about the available bundles.</p>
-    pub fn bundles(&self) -> std::option::Option<&[crate::model::Bundle]> {
+    pub fn bundles(&self) -> std::option::Option<& [crate::model::Bundle]> {
         self.bundles.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetBundlesOutput`](crate::output::GetBundlesOutput).
 pub mod get_bundles_output {
-
+    
     /// A builder for [`GetBundlesOutput`](crate::output::GetBundlesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5757,43 +5537,39 @@ pub mod get_bundles_output {
         /// <p>An array of key-value pairs that contains information about the available bundles.</p>
         pub fn bundles(mut self, input: crate::model::Bundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input);
-            self.bundles = Some(v);
-            self
+                            v.push(input);
+                            self.bundles = Some(v);
+                            self
         }
         /// <p>An array of key-value pairs that contains information about the available bundles.</p>
-        pub fn set_bundles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Bundle>>,
-        ) -> Self {
-            self.bundles = input;
-            self
+        pub fn set_bundles(mut self, input: std::option::Option<std::vec::Vec<crate::model::Bundle>>) -> Self {
+            self.bundles = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBundlesOutput`](crate::output::GetBundlesOutput).
         pub fn build(self) -> crate::output::GetBundlesOutput {
             crate::output::GetBundlesOutput {
-                bundles: self.bundles,
-                next_page_token: self.next_page_token,
+                bundles: self.bundles
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetBundlesOutput`](crate::output::GetBundlesOutput).
@@ -5805,42 +5581,40 @@ impl GetBundlesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketsOutput {
+pub struct GetBucketsOutput  {
     /// <p>An array of objects that describe buckets.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
+    /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p> 
     /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
     #[doc(hidden)]
     pub account_level_bpa_sync: std::option::Option<crate::model::AccountLevelBpaSync>,
 }
 impl GetBucketsOutput {
     /// <p>An array of objects that describe buckets.</p>
-    pub fn buckets(&self) -> std::option::Option<&[crate::model::Bucket]> {
+    pub fn buckets(&self) -> std::option::Option<& [crate::model::Bucket]> {
         self.buckets.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
-    /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
+    /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p> 
     /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
-    pub fn account_level_bpa_sync(
-        &self,
-    ) -> std::option::Option<&crate::model::AccountLevelBpaSync> {
+    pub fn account_level_bpa_sync(&self) -> std::option::Option<& crate::model::AccountLevelBpaSync> {
         self.account_level_bpa_sync.as_ref()
     }
 }
 /// See [`GetBucketsOutput`](crate::output::GetBucketsOutput).
 pub mod get_buckets_output {
-
+    
     /// A builder for [`GetBucketsOutput`](crate::output::GetBucketsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5856,59 +5630,52 @@ pub mod get_buckets_output {
         /// <p>An array of objects that describe buckets.</p>
         pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input);
-            self.buckets = Some(v);
-            self
+                            v.push(input);
+                            self.buckets = Some(v);
+                            self
         }
         /// <p>An array of objects that describe buckets.</p>
-        pub fn set_buckets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
-        ) -> Self {
-            self.buckets = input;
-            self
+        pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Bucket>>) -> Self {
+            self.buckets = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
-        /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
+        /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p> 
         /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
         pub fn account_level_bpa_sync(mut self, input: crate::model::AccountLevelBpaSync) -> Self {
             self.account_level_bpa_sync = Some(input);
             self
         }
-        /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
+        /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p> 
         /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
-        pub fn set_account_level_bpa_sync(
-            mut self,
-            input: std::option::Option<crate::model::AccountLevelBpaSync>,
-        ) -> Self {
-            self.account_level_bpa_sync = input;
-            self
+        pub fn set_account_level_bpa_sync(mut self, input: std::option::Option<crate::model::AccountLevelBpaSync>) -> Self {
+            self.account_level_bpa_sync = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketsOutput`](crate::output::GetBucketsOutput).
         pub fn build(self) -> crate::output::GetBucketsOutput {
             crate::output::GetBucketsOutput {
-                buckets: self.buckets,
-                next_page_token: self.next_page_token,
-                account_level_bpa_sync: self.account_level_bpa_sync,
+                buckets: self.buckets
+                ,
+                next_page_token: self.next_page_token
+                ,
+                account_level_bpa_sync: self.account_level_bpa_sync
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketsOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketsOutput`](crate::output::GetBucketsOutput).
@@ -5920,7 +5687,7 @@ impl GetBucketsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketMetricDataOutput {
+pub struct GetBucketMetricDataOutput  {
     /// <p>The name of the metric returned.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::BucketMetricName>,
@@ -5930,17 +5697,17 @@ pub struct GetBucketMetricDataOutput {
 }
 impl GetBucketMetricDataOutput {
     /// <p>The name of the metric returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<&crate::model::BucketMetricName> {
+    pub fn metric_name(&self) -> std::option::Option<& crate::model::BucketMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+    pub fn metric_data(&self) -> std::option::Option<& [crate::model::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 /// See [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput).
 pub mod get_bucket_metric_data_output {
-
+    
     /// A builder for [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5954,12 +5721,8 @@ pub mod get_bucket_metric_data_output {
             self
         }
         /// <p>The name of the metric returned.</p>
-        pub fn set_metric_name(
-            mut self,
-            input: std::option::Option<crate::model::BucketMetricName>,
-        ) -> Self {
-            self.metric_name = input;
-            self
+        pub fn set_metric_name(mut self, input: std::option::Option<crate::model::BucketMetricName>) -> Self {
+            self.metric_name = input; self
         }
         /// Appends an item to `metric_data`.
         ///
@@ -5968,26 +5731,26 @@ pub mod get_bucket_metric_data_output {
         /// <p>An array of objects that describe the metric data returned.</p>
         pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input);
-            self.metric_data = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn set_metric_data(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
-        ) -> Self {
-            self.metric_data = input;
-            self
+        pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>) -> Self {
+            self.metric_data = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput).
         pub fn build(self) -> crate::output::GetBucketMetricDataOutput {
             crate::output::GetBucketMetricDataOutput {
-                metric_name: self.metric_name,
-                metric_data: self.metric_data,
+                metric_name: self.metric_name
+                ,
+                metric_data: self.metric_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput).
@@ -5999,20 +5762,20 @@ impl GetBucketMetricDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketBundlesOutput {
+pub struct GetBucketBundlesOutput  {
     /// <p>An object that describes bucket bundles.</p>
     #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::BucketBundle>>,
 }
 impl GetBucketBundlesOutput {
     /// <p>An object that describes bucket bundles.</p>
-    pub fn bundles(&self) -> std::option::Option<&[crate::model::BucketBundle]> {
+    pub fn bundles(&self) -> std::option::Option<& [crate::model::BucketBundle]> {
         self.bundles.as_deref()
     }
 }
 /// See [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput).
 pub mod get_bucket_bundles_output {
-
+    
     /// A builder for [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6026,25 +5789,24 @@ pub mod get_bucket_bundles_output {
         /// <p>An object that describes bucket bundles.</p>
         pub fn bundles(mut self, input: crate::model::BucketBundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input);
-            self.bundles = Some(v);
-            self
+                            v.push(input);
+                            self.bundles = Some(v);
+                            self
         }
         /// <p>An object that describes bucket bundles.</p>
-        pub fn set_bundles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BucketBundle>>,
-        ) -> Self {
-            self.bundles = input;
-            self
+        pub fn set_bundles(mut self, input: std::option::Option<std::vec::Vec<crate::model::BucketBundle>>) -> Self {
+            self.bundles = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput).
         pub fn build(self) -> crate::output::GetBucketBundlesOutput {
             crate::output::GetBucketBundlesOutput {
-                bundles: self.bundles,
+                bundles: self.bundles
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput).
@@ -6056,20 +5818,20 @@ impl GetBucketBundlesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketAccessKeysOutput {
+pub struct GetBucketAccessKeysOutput  {
     /// <p>An object that describes the access keys for the specified bucket.</p>
     #[doc(hidden)]
     pub access_keys: std::option::Option<std::vec::Vec<crate::model::AccessKey>>,
 }
 impl GetBucketAccessKeysOutput {
     /// <p>An object that describes the access keys for the specified bucket.</p>
-    pub fn access_keys(&self) -> std::option::Option<&[crate::model::AccessKey]> {
+    pub fn access_keys(&self) -> std::option::Option<& [crate::model::AccessKey]> {
         self.access_keys.as_deref()
     }
 }
 /// See [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput).
 pub mod get_bucket_access_keys_output {
-
+    
     /// A builder for [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6083,25 +5845,24 @@ pub mod get_bucket_access_keys_output {
         /// <p>An object that describes the access keys for the specified bucket.</p>
         pub fn access_keys(mut self, input: crate::model::AccessKey) -> Self {
             let mut v = self.access_keys.unwrap_or_default();
-            v.push(input);
-            self.access_keys = Some(v);
-            self
+                            v.push(input);
+                            self.access_keys = Some(v);
+                            self
         }
         /// <p>An object that describes the access keys for the specified bucket.</p>
-        pub fn set_access_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessKey>>,
-        ) -> Self {
-            self.access_keys = input;
-            self
+        pub fn set_access_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessKey>>) -> Self {
+            self.access_keys = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput).
         pub fn build(self) -> crate::output::GetBucketAccessKeysOutput {
             crate::output::GetBucketAccessKeysOutput {
-                access_keys: self.access_keys,
+                access_keys: self.access_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketAccessKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput).
@@ -6113,31 +5874,31 @@ impl GetBucketAccessKeysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBlueprintsOutput {
+pub struct GetBlueprintsOutput  {
     /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
     #[doc(hidden)]
     pub blueprints: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetBlueprintsOutput {
     /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
-    pub fn blueprints(&self) -> std::option::Option<&[crate::model::Blueprint]> {
+    pub fn blueprints(&self) -> std::option::Option<& [crate::model::Blueprint]> {
         self.blueprints.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput).
 pub mod get_blueprints_output {
-
+    
     /// A builder for [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6152,43 +5913,39 @@ pub mod get_blueprints_output {
         /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
         pub fn blueprints(mut self, input: crate::model::Blueprint) -> Self {
             let mut v = self.blueprints.unwrap_or_default();
-            v.push(input);
-            self.blueprints = Some(v);
-            self
+                            v.push(input);
+                            self.blueprints = Some(v);
+                            self
         }
         /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
-        pub fn set_blueprints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
-        ) -> Self {
-            self.blueprints = input;
-            self
+        pub fn set_blueprints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Blueprint>>) -> Self {
+            self.blueprints = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput).
         pub fn build(self) -> crate::output::GetBlueprintsOutput {
             crate::output::GetBlueprintsOutput {
-                blueprints: self.blueprints,
-                next_page_token: self.next_page_token,
+                blueprints: self.blueprints
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBlueprintsOutput {
     /// Creates a new builder-style object to manufacture [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput).
@@ -6200,7 +5957,7 @@ impl GetBlueprintsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAutoSnapshotsOutput {
+pub struct GetAutoSnapshotsOutput  {
     /// <p>The name of the source instance or disk for the automatic snapshots.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
@@ -6213,28 +5970,27 @@ pub struct GetAutoSnapshotsOutput {
 }
 impl GetAutoSnapshotsOutput {
     /// <p>The name of the source instance or disk for the automatic snapshots.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
-    pub fn auto_snapshots(&self) -> std::option::Option<&[crate::model::AutoSnapshotDetails]> {
+    pub fn auto_snapshots(&self) -> std::option::Option<& [crate::model::AutoSnapshotDetails]> {
         self.auto_snapshots.as_deref()
     }
 }
 /// See [`GetAutoSnapshotsOutput`](crate::output::GetAutoSnapshotsOutput).
 pub mod get_auto_snapshots_output {
-
+    
     /// A builder for [`GetAutoSnapshotsOutput`](crate::output::GetAutoSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
-        pub(crate) auto_snapshots:
-            std::option::Option<std::vec::Vec<crate::model::AutoSnapshotDetails>>,
+        pub(crate) auto_snapshots: std::option::Option<std::vec::Vec<crate::model::AutoSnapshotDetails>>,
     }
     impl Builder {
         /// <p>The name of the source instance or disk for the automatic snapshots.</p>
@@ -6243,12 +5999,8 @@ pub mod get_auto_snapshots_output {
             self
         }
         /// <p>The name of the source instance or disk for the automatic snapshots.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
         /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -6256,12 +6008,8 @@ pub mod get_auto_snapshots_output {
             self
         }
         /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `auto_snapshots`.
         ///
@@ -6270,27 +6018,28 @@ pub mod get_auto_snapshots_output {
         /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
         pub fn auto_snapshots(mut self, input: crate::model::AutoSnapshotDetails) -> Self {
             let mut v = self.auto_snapshots.unwrap_or_default();
-            v.push(input);
-            self.auto_snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.auto_snapshots = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
-        pub fn set_auto_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoSnapshotDetails>>,
-        ) -> Self {
-            self.auto_snapshots = input;
-            self
+        pub fn set_auto_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoSnapshotDetails>>) -> Self {
+            self.auto_snapshots = input; self
         }
         /// Consumes the builder and constructs a [`GetAutoSnapshotsOutput`](crate::output::GetAutoSnapshotsOutput).
         pub fn build(self) -> crate::output::GetAutoSnapshotsOutput {
             crate::output::GetAutoSnapshotsOutput {
-                resource_name: self.resource_name,
-                resource_type: self.resource_type,
-                auto_snapshots: self.auto_snapshots,
+                resource_name: self.resource_name
+                ,
+                resource_type: self.resource_type
+                ,
+                auto_snapshots: self.auto_snapshots
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAutoSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetAutoSnapshotsOutput`](crate::output::GetAutoSnapshotsOutput).
@@ -6302,31 +6051,31 @@ impl GetAutoSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAlarmsOutput {
+pub struct GetAlarmsOutput  {
     /// <p>An array of objects that describe the alarms.</p>
     #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAlarmsOutput {
     /// <p>An array of objects that describe the alarms.</p>
-    pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
+    pub fn alarms(&self) -> std::option::Option<& [crate::model::Alarm]> {
         self.alarms.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetAlarmsOutput`](crate::output::GetAlarmsOutput).
 pub mod get_alarms_output {
-
+    
     /// A builder for [`GetAlarmsOutput`](crate::output::GetAlarmsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6341,43 +6090,39 @@ pub mod get_alarms_output {
         /// <p>An array of objects that describe the alarms.</p>
         pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input);
-            self.alarms = Some(v);
-            self
+                            v.push(input);
+                            self.alarms = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the alarms.</p>
-        pub fn set_alarms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
-        ) -> Self {
-            self.alarms = input;
-            self
+        pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alarm>>) -> Self {
+            self.alarms = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAlarmsOutput`](crate::output::GetAlarmsOutput).
         pub fn build(self) -> crate::output::GetAlarmsOutput {
             crate::output::GetAlarmsOutput {
-                alarms: self.alarms,
-                next_page_token: self.next_page_token,
+                alarms: self.alarms
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAlarmsOutput {
     /// Creates a new builder-style object to manufacture [`GetAlarmsOutput`](crate::output::GetAlarmsOutput).
@@ -6389,31 +6134,31 @@ impl GetAlarmsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetActiveNamesOutput {
+pub struct GetActiveNamesOutput  {
     /// <p>The list of active names returned by the get active names request.</p>
     #[doc(hidden)]
     pub active_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetActiveNamesOutput {
     /// <p>The list of active names returned by the get active names request.</p>
-    pub fn active_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn active_names(&self) -> std::option::Option<& [std::string::String]> {
         self.active_names.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetActiveNamesOutput`](crate::output::GetActiveNamesOutput).
 pub mod get_active_names_output {
-
+    
     /// A builder for [`GetActiveNamesOutput`](crate::output::GetActiveNamesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6428,43 +6173,39 @@ pub mod get_active_names_output {
         /// <p>The list of active names returned by the get active names request.</p>
         pub fn active_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.active_names.unwrap_or_default();
-            v.push(input.into());
-            self.active_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.active_names = Some(v);
+                            self
         }
         /// <p>The list of active names returned by the get active names request.</p>
-        pub fn set_active_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.active_names = input;
-            self
+        pub fn set_active_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.active_names = input; self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>The token to advance to the next page of results from your request.</p> 
+        /// <p>A next page token is not returned if there are no more results to display.</p> 
         /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetActiveNamesOutput`](crate::output::GetActiveNamesOutput).
         pub fn build(self) -> crate::output::GetActiveNamesOutput {
             crate::output::GetActiveNamesOutput {
-                active_names: self.active_names,
-                next_page_token: self.next_page_token,
+                active_names: self.active_names
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetActiveNamesOutput {
     /// Creates a new builder-style object to manufacture [`GetActiveNamesOutput`](crate::output::GetActiveNamesOutput).
@@ -6476,20 +6217,20 @@ impl GetActiveNamesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSnapshotOutput {
+pub struct ExportSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl ExportSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput).
 pub mod export_snapshot_output {
-
+    
     /// A builder for [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6503,25 +6244,24 @@ pub mod export_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput).
         pub fn build(self) -> crate::output::ExportSnapshotOutput {
             crate::output::ExportSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput).
@@ -6533,20 +6273,20 @@ impl ExportSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAddOnOutput {
+pub struct EnableAddOnOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl EnableAddOnOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`EnableAddOnOutput`](crate::output::EnableAddOnOutput).
 pub mod enable_add_on_output {
-
+    
     /// A builder for [`EnableAddOnOutput`](crate::output::EnableAddOnOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6560,25 +6300,24 @@ pub mod enable_add_on_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`EnableAddOnOutput`](crate::output::EnableAddOnOutput).
         pub fn build(self) -> crate::output::EnableAddOnOutput {
             crate::output::EnableAddOnOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableAddOnOutput {
     /// Creates a new builder-style object to manufacture [`EnableAddOnOutput`](crate::output::EnableAddOnOutput).
@@ -6590,7 +6329,7 @@ impl EnableAddOnOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DownloadDefaultKeyPairOutput {
+pub struct DownloadDefaultKeyPairOutput  {
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     #[doc(hidden)]
     pub public_key_base64: std::option::Option<std::string::String>,
@@ -6603,21 +6342,21 @@ pub struct DownloadDefaultKeyPairOutput {
 }
 impl DownloadDefaultKeyPairOutput {
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(&self) -> std::option::Option<&str> {
+    pub fn public_key_base64(&self) -> std::option::Option<& str> {
         self.public_key_base64.as_deref()
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn private_key_base64(&self) -> std::option::Option<&str> {
+    pub fn private_key_base64(&self) -> std::option::Option<& str> {
         self.private_key_base64.as_deref()
     }
     /// <p>The timestamp when the default key pair was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput).
 pub mod download_default_key_pair_output {
-
+    
     /// A builder for [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6632,12 +6371,8 @@ pub mod download_default_key_pair_output {
             self
         }
         /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-        pub fn set_public_key_base64(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_key_base64 = input;
-            self
+        pub fn set_public_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_key_base64 = input; self
         }
         /// <p>A base64-encoded RSA private key.</p>
         pub fn private_key_base64(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6645,12 +6380,8 @@ pub mod download_default_key_pair_output {
             self
         }
         /// <p>A base64-encoded RSA private key.</p>
-        pub fn set_private_key_base64(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_key_base64 = input;
-            self
+        pub fn set_private_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_key_base64 = input; self
         }
         /// <p>The timestamp when the default key pair was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6658,22 +6389,23 @@ pub mod download_default_key_pair_output {
             self
         }
         /// <p>The timestamp when the default key pair was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput).
         pub fn build(self) -> crate::output::DownloadDefaultKeyPairOutput {
             crate::output::DownloadDefaultKeyPairOutput {
-                public_key_base64: self.public_key_base64,
-                private_key_base64: self.private_key_base64,
-                created_at: self.created_at,
+                public_key_base64: self.public_key_base64
+                ,
+                private_key_base64: self.private_key_base64
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DownloadDefaultKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput).
@@ -6685,20 +6417,20 @@ impl DownloadDefaultKeyPairOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAddOnOutput {
+pub struct DisableAddOnOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DisableAddOnOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DisableAddOnOutput`](crate::output::DisableAddOnOutput).
 pub mod disable_add_on_output {
-
+    
     /// A builder for [`DisableAddOnOutput`](crate::output::DisableAddOnOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6712,25 +6444,24 @@ pub mod disable_add_on_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DisableAddOnOutput`](crate::output::DisableAddOnOutput).
         pub fn build(self) -> crate::output::DisableAddOnOutput {
             crate::output::DisableAddOnOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableAddOnOutput {
     /// Creates a new builder-style object to manufacture [`DisableAddOnOutput`](crate::output::DisableAddOnOutput).
@@ -6742,20 +6473,20 @@ impl DisableAddOnOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachStaticIpOutput {
+pub struct DetachStaticIpOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DetachStaticIpOutput`](crate::output::DetachStaticIpOutput).
 pub mod detach_static_ip_output {
-
+    
     /// A builder for [`DetachStaticIpOutput`](crate::output::DetachStaticIpOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6769,25 +6500,24 @@ pub mod detach_static_ip_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DetachStaticIpOutput`](crate::output::DetachStaticIpOutput).
         pub fn build(self) -> crate::output::DetachStaticIpOutput {
             crate::output::DetachStaticIpOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DetachStaticIpOutput {
     /// Creates a new builder-style object to manufacture [`DetachStaticIpOutput`](crate::output::DetachStaticIpOutput).
@@ -6799,20 +6529,20 @@ impl DetachStaticIpOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachInstancesFromLoadBalancerOutput {
+pub struct DetachInstancesFromLoadBalancerOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachInstancesFromLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DetachInstancesFromLoadBalancerOutput`](crate::output::DetachInstancesFromLoadBalancerOutput).
 pub mod detach_instances_from_load_balancer_output {
-
+    
     /// A builder for [`DetachInstancesFromLoadBalancerOutput`](crate::output::DetachInstancesFromLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6826,25 +6556,24 @@ pub mod detach_instances_from_load_balancer_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DetachInstancesFromLoadBalancerOutput`](crate::output::DetachInstancesFromLoadBalancerOutput).
         pub fn build(self) -> crate::output::DetachInstancesFromLoadBalancerOutput {
             crate::output::DetachInstancesFromLoadBalancerOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DetachInstancesFromLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DetachInstancesFromLoadBalancerOutput`](crate::output::DetachInstancesFromLoadBalancerOutput).
@@ -6856,20 +6585,20 @@ impl DetachInstancesFromLoadBalancerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachDiskOutput {
+pub struct DetachDiskOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DetachDiskOutput`](crate::output::DetachDiskOutput).
 pub mod detach_disk_output {
-
+    
     /// A builder for [`DetachDiskOutput`](crate::output::DetachDiskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6883,25 +6612,24 @@ pub mod detach_disk_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DetachDiskOutput`](crate::output::DetachDiskOutput).
         pub fn build(self) -> crate::output::DetachDiskOutput {
             crate::output::DetachDiskOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DetachDiskOutput {
     /// Creates a new builder-style object to manufacture [`DetachDiskOutput`](crate::output::DetachDiskOutput).
@@ -6913,20 +6641,20 @@ impl DetachDiskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachCertificateFromDistributionOutput {
+pub struct DetachCertificateFromDistributionOutput  {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DetachCertificateFromDistributionOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`DetachCertificateFromDistributionOutput`](crate::output::DetachCertificateFromDistributionOutput).
 pub mod detach_certificate_from_distribution_output {
-
+    
     /// A builder for [`DetachCertificateFromDistributionOutput`](crate::output::DetachCertificateFromDistributionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6939,20 +6667,19 @@ pub mod detach_certificate_from_distribution_output {
             self
         }
         /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`DetachCertificateFromDistributionOutput`](crate::output::DetachCertificateFromDistributionOutput).
         pub fn build(self) -> crate::output::DetachCertificateFromDistributionOutput {
             crate::output::DetachCertificateFromDistributionOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl DetachCertificateFromDistributionOutput {
     /// Creates a new builder-style object to manufacture [`DetachCertificateFromDistributionOutput`](crate::output::DetachCertificateFromDistributionOutput).
@@ -6964,20 +6691,20 @@ impl DetachCertificateFromDistributionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRelationalDatabaseSnapshotOutput {
+pub struct DeleteRelationalDatabaseSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteRelationalDatabaseSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteRelationalDatabaseSnapshotOutput`](crate::output::DeleteRelationalDatabaseSnapshotOutput).
 pub mod delete_relational_database_snapshot_output {
-
+    
     /// A builder for [`DeleteRelationalDatabaseSnapshotOutput`](crate::output::DeleteRelationalDatabaseSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6991,25 +6718,24 @@ pub mod delete_relational_database_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRelationalDatabaseSnapshotOutput`](crate::output::DeleteRelationalDatabaseSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteRelationalDatabaseSnapshotOutput {
             crate::output::DeleteRelationalDatabaseSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRelationalDatabaseSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRelationalDatabaseSnapshotOutput`](crate::output::DeleteRelationalDatabaseSnapshotOutput).
@@ -7021,20 +6747,20 @@ impl DeleteRelationalDatabaseSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRelationalDatabaseOutput {
+pub struct DeleteRelationalDatabaseOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteRelationalDatabaseOutput`](crate::output::DeleteRelationalDatabaseOutput).
 pub mod delete_relational_database_output {
-
+    
     /// A builder for [`DeleteRelationalDatabaseOutput`](crate::output::DeleteRelationalDatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7048,25 +6774,24 @@ pub mod delete_relational_database_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRelationalDatabaseOutput`](crate::output::DeleteRelationalDatabaseOutput).
         pub fn build(self) -> crate::output::DeleteRelationalDatabaseOutput {
             crate::output::DeleteRelationalDatabaseOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRelationalDatabaseOutput`](crate::output::DeleteRelationalDatabaseOutput).
@@ -7078,20 +6803,20 @@ impl DeleteRelationalDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoadBalancerTlsCertificateOutput {
+pub struct DeleteLoadBalancerTlsCertificateOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteLoadBalancerTlsCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteLoadBalancerTlsCertificateOutput`](crate::output::DeleteLoadBalancerTlsCertificateOutput).
 pub mod delete_load_balancer_tls_certificate_output {
-
+    
     /// A builder for [`DeleteLoadBalancerTlsCertificateOutput`](crate::output::DeleteLoadBalancerTlsCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7105,25 +6830,24 @@ pub mod delete_load_balancer_tls_certificate_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerTlsCertificateOutput`](crate::output::DeleteLoadBalancerTlsCertificateOutput).
         pub fn build(self) -> crate::output::DeleteLoadBalancerTlsCertificateOutput {
             crate::output::DeleteLoadBalancerTlsCertificateOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteLoadBalancerTlsCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerTlsCertificateOutput`](crate::output::DeleteLoadBalancerTlsCertificateOutput).
@@ -7135,20 +6859,20 @@ impl DeleteLoadBalancerTlsCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoadBalancerOutput {
+pub struct DeleteLoadBalancerOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
 pub mod delete_load_balancer_output {
-
+    
     /// A builder for [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7162,25 +6886,24 @@ pub mod delete_load_balancer_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
         pub fn build(self) -> crate::output::DeleteLoadBalancerOutput {
             crate::output::DeleteLoadBalancerOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
@@ -7192,20 +6915,20 @@ impl DeleteLoadBalancerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteKnownHostKeysOutput {
+pub struct DeleteKnownHostKeysOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteKnownHostKeysOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteKnownHostKeysOutput`](crate::output::DeleteKnownHostKeysOutput).
 pub mod delete_known_host_keys_output {
-
+    
     /// A builder for [`DeleteKnownHostKeysOutput`](crate::output::DeleteKnownHostKeysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7219,25 +6942,24 @@ pub mod delete_known_host_keys_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteKnownHostKeysOutput`](crate::output::DeleteKnownHostKeysOutput).
         pub fn build(self) -> crate::output::DeleteKnownHostKeysOutput {
             crate::output::DeleteKnownHostKeysOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteKnownHostKeysOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKnownHostKeysOutput`](crate::output::DeleteKnownHostKeysOutput).
@@ -7249,20 +6971,20 @@ impl DeleteKnownHostKeysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteKeyPairOutput {
+pub struct DeleteKeyPairOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteKeyPairOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput).
 pub mod delete_key_pair_output {
-
+    
     /// A builder for [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7275,20 +6997,19 @@ pub mod delete_key_pair_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput).
         pub fn build(self) -> crate::output::DeleteKeyPairOutput {
             crate::output::DeleteKeyPairOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput).
@@ -7300,20 +7021,20 @@ impl DeleteKeyPairOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInstanceSnapshotOutput {
+pub struct DeleteInstanceSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteInstanceSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteInstanceSnapshotOutput`](crate::output::DeleteInstanceSnapshotOutput).
 pub mod delete_instance_snapshot_output {
-
+    
     /// A builder for [`DeleteInstanceSnapshotOutput`](crate::output::DeleteInstanceSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7327,25 +7048,24 @@ pub mod delete_instance_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInstanceSnapshotOutput`](crate::output::DeleteInstanceSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteInstanceSnapshotOutput {
             crate::output::DeleteInstanceSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteInstanceSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceSnapshotOutput`](crate::output::DeleteInstanceSnapshotOutput).
@@ -7357,20 +7077,20 @@ impl DeleteInstanceSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInstanceOutput {
+pub struct DeleteInstanceOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteInstanceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
 pub mod delete_instance_output {
-
+    
     /// A builder for [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7384,25 +7104,24 @@ pub mod delete_instance_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
         pub fn build(self) -> crate::output::DeleteInstanceOutput {
             crate::output::DeleteInstanceOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
@@ -7414,20 +7133,20 @@ impl DeleteInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainEntryOutput {
+pub struct DeleteDomainEntryOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`DeleteDomainEntryOutput`](crate::output::DeleteDomainEntryOutput).
 pub mod delete_domain_entry_output {
-
+    
     /// A builder for [`DeleteDomainEntryOutput`](crate::output::DeleteDomainEntryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7440,20 +7159,19 @@ pub mod delete_domain_entry_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDomainEntryOutput`](crate::output::DeleteDomainEntryOutput).
         pub fn build(self) -> crate::output::DeleteDomainEntryOutput {
             crate::output::DeleteDomainEntryOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDomainEntryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainEntryOutput`](crate::output::DeleteDomainEntryOutput).
@@ -7465,20 +7183,20 @@ impl DeleteDomainEntryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainOutput {
+pub struct DeleteDomainOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDomainOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
-
+    
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7491,20 +7209,19 @@ pub mod delete_domain_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
         pub fn build(self) -> crate::output::DeleteDomainOutput {
             crate::output::DeleteDomainOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
@@ -7516,20 +7233,20 @@ impl DeleteDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDistributionOutput {
+pub struct DeleteDistributionOutput  {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDistributionOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput).
 pub mod delete_distribution_output {
-
+    
     /// A builder for [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7542,20 +7259,19 @@ pub mod delete_distribution_output {
             self
         }
         /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput).
         pub fn build(self) -> crate::output::DeleteDistributionOutput {
             crate::output::DeleteDistributionOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDistributionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput).
@@ -7567,20 +7283,20 @@ impl DeleteDistributionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDiskSnapshotOutput {
+pub struct DeleteDiskSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteDiskSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteDiskSnapshotOutput`](crate::output::DeleteDiskSnapshotOutput).
 pub mod delete_disk_snapshot_output {
-
+    
     /// A builder for [`DeleteDiskSnapshotOutput`](crate::output::DeleteDiskSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7594,25 +7310,24 @@ pub mod delete_disk_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDiskSnapshotOutput`](crate::output::DeleteDiskSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteDiskSnapshotOutput {
             crate::output::DeleteDiskSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDiskSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDiskSnapshotOutput`](crate::output::DeleteDiskSnapshotOutput).
@@ -7624,20 +7339,20 @@ impl DeleteDiskSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDiskOutput {
+pub struct DeleteDiskOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteDiskOutput`](crate::output::DeleteDiskOutput).
 pub mod delete_disk_output {
-
+    
     /// A builder for [`DeleteDiskOutput`](crate::output::DeleteDiskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7651,25 +7366,24 @@ pub mod delete_disk_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDiskOutput`](crate::output::DeleteDiskOutput).
         pub fn build(self) -> crate::output::DeleteDiskOutput {
             crate::output::DeleteDiskOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDiskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDiskOutput`](crate::output::DeleteDiskOutput).
@@ -7681,19 +7395,24 @@ impl DeleteDiskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContainerServiceOutput {}
+pub struct DeleteContainerServiceOutput  {
+}
 /// See [`DeleteContainerServiceOutput`](crate::output::DeleteContainerServiceOutput).
 pub mod delete_container_service_output {
-
+    
     /// A builder for [`DeleteContainerServiceOutput`](crate::output::DeleteContainerServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContainerServiceOutput`](crate::output::DeleteContainerServiceOutput).
         pub fn build(self) -> crate::output::DeleteContainerServiceOutput {
-            crate::output::DeleteContainerServiceOutput {}
+            crate::output::DeleteContainerServiceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteContainerServiceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContainerServiceOutput`](crate::output::DeleteContainerServiceOutput).
@@ -7705,19 +7424,24 @@ impl DeleteContainerServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContainerImageOutput {}
+pub struct DeleteContainerImageOutput  {
+}
 /// See [`DeleteContainerImageOutput`](crate::output::DeleteContainerImageOutput).
 pub mod delete_container_image_output {
-
+    
     /// A builder for [`DeleteContainerImageOutput`](crate::output::DeleteContainerImageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContainerImageOutput`](crate::output::DeleteContainerImageOutput).
         pub fn build(self) -> crate::output::DeleteContainerImageOutput {
-            crate::output::DeleteContainerImageOutput {}
+            crate::output::DeleteContainerImageOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteContainerImageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContainerImageOutput`](crate::output::DeleteContainerImageOutput).
@@ -7729,20 +7453,20 @@ impl DeleteContainerImageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactMethodOutput {
+pub struct DeleteContactMethodOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteContactMethodOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteContactMethodOutput`](crate::output::DeleteContactMethodOutput).
 pub mod delete_contact_method_output {
-
+    
     /// A builder for [`DeleteContactMethodOutput`](crate::output::DeleteContactMethodOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7756,25 +7480,24 @@ pub mod delete_contact_method_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteContactMethodOutput`](crate::output::DeleteContactMethodOutput).
         pub fn build(self) -> crate::output::DeleteContactMethodOutput {
             crate::output::DeleteContactMethodOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteContactMethodOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactMethodOutput`](crate::output::DeleteContactMethodOutput).
@@ -7786,20 +7509,20 @@ impl DeleteContactMethodOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCertificateOutput {
+pub struct DeleteCertificateOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
 pub mod delete_certificate_output {
-
+    
     /// A builder for [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7813,25 +7536,24 @@ pub mod delete_certificate_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
         pub fn build(self) -> crate::output::DeleteCertificateOutput {
             crate::output::DeleteCertificateOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
@@ -7843,20 +7565,20 @@ impl DeleteCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBucketAccessKeyOutput {
+pub struct DeleteBucketAccessKeyOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteBucketAccessKeyOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput).
 pub mod delete_bucket_access_key_output {
-
+    
     /// A builder for [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7870,25 +7592,24 @@ pub mod delete_bucket_access_key_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput).
         pub fn build(self) -> crate::output::DeleteBucketAccessKeyOutput {
             crate::output::DeleteBucketAccessKeyOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBucketAccessKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput).
@@ -7900,20 +7621,20 @@ impl DeleteBucketAccessKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBucketOutput {
+pub struct DeleteBucketOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteBucketOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
 pub mod delete_bucket_output {
-
+    
     /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7927,25 +7648,24 @@ pub mod delete_bucket_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
         pub fn build(self) -> crate::output::DeleteBucketOutput {
             crate::output::DeleteBucketOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBucketOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
@@ -7957,20 +7677,20 @@ impl DeleteBucketOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAutoSnapshotOutput {
+pub struct DeleteAutoSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteAutoSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteAutoSnapshotOutput`](crate::output::DeleteAutoSnapshotOutput).
 pub mod delete_auto_snapshot_output {
-
+    
     /// A builder for [`DeleteAutoSnapshotOutput`](crate::output::DeleteAutoSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7984,25 +7704,24 @@ pub mod delete_auto_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAutoSnapshotOutput`](crate::output::DeleteAutoSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteAutoSnapshotOutput {
             crate::output::DeleteAutoSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAutoSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoSnapshotOutput`](crate::output::DeleteAutoSnapshotOutput).
@@ -8014,20 +7733,20 @@ impl DeleteAutoSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlarmOutput {
+pub struct DeleteAlarmOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`DeleteAlarmOutput`](crate::output::DeleteAlarmOutput).
 pub mod delete_alarm_output {
-
+    
     /// A builder for [`DeleteAlarmOutput`](crate::output::DeleteAlarmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8041,25 +7760,24 @@ pub mod delete_alarm_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAlarmOutput`](crate::output::DeleteAlarmOutput).
         pub fn build(self) -> crate::output::DeleteAlarmOutput {
             crate::output::DeleteAlarmOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAlarmOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlarmOutput`](crate::output::DeleteAlarmOutput).
@@ -8071,20 +7789,20 @@ impl DeleteAlarmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRelationalDatabaseSnapshotOutput {
+pub struct CreateRelationalDatabaseSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateRelationalDatabaseSnapshotOutput`](crate::output::CreateRelationalDatabaseSnapshotOutput).
 pub mod create_relational_database_snapshot_output {
-
+    
     /// A builder for [`CreateRelationalDatabaseSnapshotOutput`](crate::output::CreateRelationalDatabaseSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8098,25 +7816,24 @@ pub mod create_relational_database_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateRelationalDatabaseSnapshotOutput`](crate::output::CreateRelationalDatabaseSnapshotOutput).
         pub fn build(self) -> crate::output::CreateRelationalDatabaseSnapshotOutput {
             crate::output::CreateRelationalDatabaseSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRelationalDatabaseSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseSnapshotOutput`](crate::output::CreateRelationalDatabaseSnapshotOutput).
@@ -8128,20 +7845,20 @@ impl CreateRelationalDatabaseSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRelationalDatabaseFromSnapshotOutput {
+pub struct CreateRelationalDatabaseFromSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateRelationalDatabaseFromSnapshotOutput`](crate::output::CreateRelationalDatabaseFromSnapshotOutput).
 pub mod create_relational_database_from_snapshot_output {
-
+    
     /// A builder for [`CreateRelationalDatabaseFromSnapshotOutput`](crate::output::CreateRelationalDatabaseFromSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8155,25 +7872,24 @@ pub mod create_relational_database_from_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateRelationalDatabaseFromSnapshotOutput`](crate::output::CreateRelationalDatabaseFromSnapshotOutput).
         pub fn build(self) -> crate::output::CreateRelationalDatabaseFromSnapshotOutput {
             crate::output::CreateRelationalDatabaseFromSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRelationalDatabaseFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseFromSnapshotOutput`](crate::output::CreateRelationalDatabaseFromSnapshotOutput).
@@ -8185,20 +7901,20 @@ impl CreateRelationalDatabaseFromSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRelationalDatabaseOutput {
+pub struct CreateRelationalDatabaseOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateRelationalDatabaseOutput`](crate::output::CreateRelationalDatabaseOutput).
 pub mod create_relational_database_output {
-
+    
     /// A builder for [`CreateRelationalDatabaseOutput`](crate::output::CreateRelationalDatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8212,25 +7928,24 @@ pub mod create_relational_database_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateRelationalDatabaseOutput`](crate::output::CreateRelationalDatabaseOutput).
         pub fn build(self) -> crate::output::CreateRelationalDatabaseOutput {
             crate::output::CreateRelationalDatabaseOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseOutput`](crate::output::CreateRelationalDatabaseOutput).
@@ -8242,20 +7957,20 @@ impl CreateRelationalDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoadBalancerTlsCertificateOutput {
+pub struct CreateLoadBalancerTlsCertificateOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateLoadBalancerTlsCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateLoadBalancerTlsCertificateOutput`](crate::output::CreateLoadBalancerTlsCertificateOutput).
 pub mod create_load_balancer_tls_certificate_output {
-
+    
     /// A builder for [`CreateLoadBalancerTlsCertificateOutput`](crate::output::CreateLoadBalancerTlsCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8269,25 +7984,24 @@ pub mod create_load_balancer_tls_certificate_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateLoadBalancerTlsCertificateOutput`](crate::output::CreateLoadBalancerTlsCertificateOutput).
         pub fn build(self) -> crate::output::CreateLoadBalancerTlsCertificateOutput {
             crate::output::CreateLoadBalancerTlsCertificateOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLoadBalancerTlsCertificateOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerTlsCertificateOutput`](crate::output::CreateLoadBalancerTlsCertificateOutput).
@@ -8299,20 +8013,20 @@ impl CreateLoadBalancerTlsCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoadBalancerOutput {
+pub struct CreateLoadBalancerOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
 pub mod create_load_balancer_output {
-
+    
     /// A builder for [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8326,25 +8040,24 @@ pub mod create_load_balancer_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
         pub fn build(self) -> crate::output::CreateLoadBalancerOutput {
             crate::output::CreateLoadBalancerOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
@@ -8356,7 +8069,7 @@ impl CreateLoadBalancerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateKeyPairOutput {
+pub struct CreateKeyPairOutput  {
     /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
     #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::KeyPair>,
@@ -8372,25 +8085,25 @@ pub struct CreateKeyPairOutput {
 }
 impl CreateKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
-    pub fn key_pair(&self) -> std::option::Option<&crate::model::KeyPair> {
+    pub fn key_pair(&self) -> std::option::Option<& crate::model::KeyPair> {
         self.key_pair.as_ref()
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(&self) -> std::option::Option<&str> {
+    pub fn public_key_base64(&self) -> std::option::Option<& str> {
         self.public_key_base64.as_deref()
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn private_key_base64(&self) -> std::option::Option<&str> {
+    pub fn private_key_base64(&self) -> std::option::Option<& str> {
         self.private_key_base64.as_deref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput).
 pub mod create_key_pair_output {
-
+    
     /// A builder for [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8407,8 +8120,7 @@ pub mod create_key_pair_output {
         }
         /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<crate::model::KeyPair>) -> Self {
-            self.key_pair = input;
-            self
+            self.key_pair = input; self
         }
         /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
         pub fn public_key_base64(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8416,12 +8128,8 @@ pub mod create_key_pair_output {
             self
         }
         /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-        pub fn set_public_key_base64(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_key_base64 = input;
-            self
+        pub fn set_public_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_key_base64 = input; self
         }
         /// <p>A base64-encoded RSA private key.</p>
         pub fn private_key_base64(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8429,12 +8137,8 @@ pub mod create_key_pair_output {
             self
         }
         /// <p>A base64-encoded RSA private key.</p>
-        pub fn set_private_key_base64(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_key_base64 = input;
-            self
+        pub fn set_private_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_key_base64 = input; self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
@@ -8442,23 +8146,25 @@ pub mod create_key_pair_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput).
         pub fn build(self) -> crate::output::CreateKeyPairOutput {
             crate::output::CreateKeyPairOutput {
-                key_pair: self.key_pair,
-                public_key_base64: self.public_key_base64,
-                private_key_base64: self.private_key_base64,
-                operation: self.operation,
+                key_pair: self.key_pair
+                ,
+                public_key_base64: self.public_key_base64
+                ,
+                private_key_base64: self.private_key_base64
+                ,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput).
@@ -8470,20 +8176,20 @@ impl CreateKeyPairOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstanceSnapshotOutput {
+pub struct CreateInstanceSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstanceSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateInstanceSnapshotOutput`](crate::output::CreateInstanceSnapshotOutput).
 pub mod create_instance_snapshot_output {
-
+    
     /// A builder for [`CreateInstanceSnapshotOutput`](crate::output::CreateInstanceSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8497,25 +8203,24 @@ pub mod create_instance_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateInstanceSnapshotOutput`](crate::output::CreateInstanceSnapshotOutput).
         pub fn build(self) -> crate::output::CreateInstanceSnapshotOutput {
             crate::output::CreateInstanceSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInstanceSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceSnapshotOutput`](crate::output::CreateInstanceSnapshotOutput).
@@ -8527,20 +8232,20 @@ impl CreateInstanceSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstancesFromSnapshotOutput {
+pub struct CreateInstancesFromSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstancesFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateInstancesFromSnapshotOutput`](crate::output::CreateInstancesFromSnapshotOutput).
 pub mod create_instances_from_snapshot_output {
-
+    
     /// A builder for [`CreateInstancesFromSnapshotOutput`](crate::output::CreateInstancesFromSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8554,25 +8259,24 @@ pub mod create_instances_from_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateInstancesFromSnapshotOutput`](crate::output::CreateInstancesFromSnapshotOutput).
         pub fn build(self) -> crate::output::CreateInstancesFromSnapshotOutput {
             crate::output::CreateInstancesFromSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInstancesFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstancesFromSnapshotOutput`](crate::output::CreateInstancesFromSnapshotOutput).
@@ -8584,20 +8288,20 @@ impl CreateInstancesFromSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstancesOutput {
+pub struct CreateInstancesOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstancesOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateInstancesOutput`](crate::output::CreateInstancesOutput).
 pub mod create_instances_output {
-
+    
     /// A builder for [`CreateInstancesOutput`](crate::output::CreateInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8611,25 +8315,24 @@ pub mod create_instances_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateInstancesOutput`](crate::output::CreateInstancesOutput).
         pub fn build(self) -> crate::output::CreateInstancesOutput {
             crate::output::CreateInstancesOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInstancesOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstancesOutput`](crate::output::CreateInstancesOutput).
@@ -8641,20 +8344,20 @@ impl CreateInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainEntryOutput {
+pub struct CreateDomainEntryOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`CreateDomainEntryOutput`](crate::output::CreateDomainEntryOutput).
 pub mod create_domain_entry_output {
-
+    
     /// A builder for [`CreateDomainEntryOutput`](crate::output::CreateDomainEntryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8667,20 +8370,19 @@ pub mod create_domain_entry_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`CreateDomainEntryOutput`](crate::output::CreateDomainEntryOutput).
         pub fn build(self) -> crate::output::CreateDomainEntryOutput {
             crate::output::CreateDomainEntryOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDomainEntryOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainEntryOutput`](crate::output::CreateDomainEntryOutput).
@@ -8692,20 +8394,20 @@ impl CreateDomainEntryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainOutput {
+pub struct CreateDomainOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateDomainOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
-
+    
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8718,20 +8420,19 @@ pub mod create_domain_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
         pub fn build(self) -> crate::output::CreateDomainOutput {
             crate::output::CreateDomainOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
@@ -8743,7 +8444,7 @@ impl CreateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDistributionOutput {
+pub struct CreateDistributionOutput  {
     /// <p>An object that describes the distribution created.</p>
     #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::LightsailDistribution>,
@@ -8753,17 +8454,17 @@ pub struct CreateDistributionOutput {
 }
 impl CreateDistributionOutput {
     /// <p>An object that describes the distribution created.</p>
-    pub fn distribution(&self) -> std::option::Option<&crate::model::LightsailDistribution> {
+    pub fn distribution(&self) -> std::option::Option<& crate::model::LightsailDistribution> {
         self.distribution.as_ref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
 pub mod create_distribution_output {
-
+    
     /// A builder for [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8777,12 +8478,8 @@ pub mod create_distribution_output {
             self
         }
         /// <p>An object that describes the distribution created.</p>
-        pub fn set_distribution(
-            mut self,
-            input: std::option::Option<crate::model::LightsailDistribution>,
-        ) -> Self {
-            self.distribution = input;
-            self
+        pub fn set_distribution(mut self, input: std::option::Option<crate::model::LightsailDistribution>) -> Self {
+            self.distribution = input; self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
@@ -8790,21 +8487,21 @@ pub mod create_distribution_output {
             self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
         pub fn build(self) -> crate::output::CreateDistributionOutput {
             crate::output::CreateDistributionOutput {
-                distribution: self.distribution,
-                operation: self.operation,
+                distribution: self.distribution
+                ,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDistributionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
@@ -8816,20 +8513,20 @@ impl CreateDistributionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDiskSnapshotOutput {
+pub struct CreateDiskSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateDiskSnapshotOutput`](crate::output::CreateDiskSnapshotOutput).
 pub mod create_disk_snapshot_output {
-
+    
     /// A builder for [`CreateDiskSnapshotOutput`](crate::output::CreateDiskSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8843,25 +8540,24 @@ pub mod create_disk_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateDiskSnapshotOutput`](crate::output::CreateDiskSnapshotOutput).
         pub fn build(self) -> crate::output::CreateDiskSnapshotOutput {
             crate::output::CreateDiskSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDiskSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateDiskSnapshotOutput`](crate::output::CreateDiskSnapshotOutput).
@@ -8873,20 +8569,20 @@ impl CreateDiskSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDiskFromSnapshotOutput {
+pub struct CreateDiskFromSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateDiskFromSnapshotOutput`](crate::output::CreateDiskFromSnapshotOutput).
 pub mod create_disk_from_snapshot_output {
-
+    
     /// A builder for [`CreateDiskFromSnapshotOutput`](crate::output::CreateDiskFromSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8900,25 +8596,24 @@ pub mod create_disk_from_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateDiskFromSnapshotOutput`](crate::output::CreateDiskFromSnapshotOutput).
         pub fn build(self) -> crate::output::CreateDiskFromSnapshotOutput {
             crate::output::CreateDiskFromSnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDiskFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateDiskFromSnapshotOutput`](crate::output::CreateDiskFromSnapshotOutput).
@@ -8930,20 +8625,20 @@ impl CreateDiskFromSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDiskOutput {
+pub struct CreateDiskOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateDiskOutput`](crate::output::CreateDiskOutput).
 pub mod create_disk_output {
-
+    
     /// A builder for [`CreateDiskOutput`](crate::output::CreateDiskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8957,25 +8652,24 @@ pub mod create_disk_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateDiskOutput`](crate::output::CreateDiskOutput).
         pub fn build(self) -> crate::output::CreateDiskOutput {
             crate::output::CreateDiskOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDiskOutput {
     /// Creates a new builder-style object to manufacture [`CreateDiskOutput`](crate::output::CreateDiskOutput).
@@ -8987,22 +8681,20 @@ impl CreateDiskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContainerServiceRegistryLoginOutput {
+pub struct CreateContainerServiceRegistryLoginOutput  {
     /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
     #[doc(hidden)]
     pub registry_login: std::option::Option<crate::model::ContainerServiceRegistryLogin>,
 }
 impl CreateContainerServiceRegistryLoginOutput {
     /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
-    pub fn registry_login(
-        &self,
-    ) -> std::option::Option<&crate::model::ContainerServiceRegistryLogin> {
+    pub fn registry_login(&self) -> std::option::Option<& crate::model::ContainerServiceRegistryLogin> {
         self.registry_login.as_ref()
     }
 }
 /// See [`CreateContainerServiceRegistryLoginOutput`](crate::output::CreateContainerServiceRegistryLoginOutput).
 pub mod create_container_service_registry_login_output {
-
+    
     /// A builder for [`CreateContainerServiceRegistryLoginOutput`](crate::output::CreateContainerServiceRegistryLoginOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9010,28 +8702,24 @@ pub mod create_container_service_registry_login_output {
     }
     impl Builder {
         /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
-        pub fn registry_login(
-            mut self,
-            input: crate::model::ContainerServiceRegistryLogin,
-        ) -> Self {
+        pub fn registry_login(mut self, input: crate::model::ContainerServiceRegistryLogin) -> Self {
             self.registry_login = Some(input);
             self
         }
         /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
-        pub fn set_registry_login(
-            mut self,
-            input: std::option::Option<crate::model::ContainerServiceRegistryLogin>,
-        ) -> Self {
-            self.registry_login = input;
-            self
+        pub fn set_registry_login(mut self, input: std::option::Option<crate::model::ContainerServiceRegistryLogin>) -> Self {
+            self.registry_login = input; self
         }
         /// Consumes the builder and constructs a [`CreateContainerServiceRegistryLoginOutput`](crate::output::CreateContainerServiceRegistryLoginOutput).
         pub fn build(self) -> crate::output::CreateContainerServiceRegistryLoginOutput {
             crate::output::CreateContainerServiceRegistryLoginOutput {
-                registry_login: self.registry_login,
+                registry_login: self.registry_login
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateContainerServiceRegistryLoginOutput {
     /// Creates a new builder-style object to manufacture [`CreateContainerServiceRegistryLoginOutput`](crate::output::CreateContainerServiceRegistryLoginOutput).
@@ -9043,20 +8731,20 @@ impl CreateContainerServiceRegistryLoginOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContainerServiceDeploymentOutput {
+pub struct CreateContainerServiceDeploymentOutput  {
     /// <p>An object that describes a container service.</p>
     #[doc(hidden)]
     pub container_service: std::option::Option<crate::model::ContainerService>,
 }
 impl CreateContainerServiceDeploymentOutput {
     /// <p>An object that describes a container service.</p>
-    pub fn container_service(&self) -> std::option::Option<&crate::model::ContainerService> {
+    pub fn container_service(&self) -> std::option::Option<& crate::model::ContainerService> {
         self.container_service.as_ref()
     }
 }
 /// See [`CreateContainerServiceDeploymentOutput`](crate::output::CreateContainerServiceDeploymentOutput).
 pub mod create_container_service_deployment_output {
-
+    
     /// A builder for [`CreateContainerServiceDeploymentOutput`](crate::output::CreateContainerServiceDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9069,20 +8757,19 @@ pub mod create_container_service_deployment_output {
             self
         }
         /// <p>An object that describes a container service.</p>
-        pub fn set_container_service(
-            mut self,
-            input: std::option::Option<crate::model::ContainerService>,
-        ) -> Self {
-            self.container_service = input;
-            self
+        pub fn set_container_service(mut self, input: std::option::Option<crate::model::ContainerService>) -> Self {
+            self.container_service = input; self
         }
         /// Consumes the builder and constructs a [`CreateContainerServiceDeploymentOutput`](crate::output::CreateContainerServiceDeploymentOutput).
         pub fn build(self) -> crate::output::CreateContainerServiceDeploymentOutput {
             crate::output::CreateContainerServiceDeploymentOutput {
-                container_service: self.container_service,
+                container_service: self.container_service
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateContainerServiceDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateContainerServiceDeploymentOutput`](crate::output::CreateContainerServiceDeploymentOutput).
@@ -9094,20 +8781,20 @@ impl CreateContainerServiceDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContainerServiceOutput {
+pub struct CreateContainerServiceOutput  {
     /// <p>An object that describes a container service.</p>
     #[doc(hidden)]
     pub container_service: std::option::Option<crate::model::ContainerService>,
 }
 impl CreateContainerServiceOutput {
     /// <p>An object that describes a container service.</p>
-    pub fn container_service(&self) -> std::option::Option<&crate::model::ContainerService> {
+    pub fn container_service(&self) -> std::option::Option<& crate::model::ContainerService> {
         self.container_service.as_ref()
     }
 }
 /// See [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput).
 pub mod create_container_service_output {
-
+    
     /// A builder for [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9120,20 +8807,19 @@ pub mod create_container_service_output {
             self
         }
         /// <p>An object that describes a container service.</p>
-        pub fn set_container_service(
-            mut self,
-            input: std::option::Option<crate::model::ContainerService>,
-        ) -> Self {
-            self.container_service = input;
-            self
+        pub fn set_container_service(mut self, input: std::option::Option<crate::model::ContainerService>) -> Self {
+            self.container_service = input; self
         }
         /// Consumes the builder and constructs a [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput).
         pub fn build(self) -> crate::output::CreateContainerServiceOutput {
             crate::output::CreateContainerServiceOutput {
-                container_service: self.container_service,
+                container_service: self.container_service
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateContainerServiceOutput {
     /// Creates a new builder-style object to manufacture [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput).
@@ -9145,20 +8831,20 @@ impl CreateContainerServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContactMethodOutput {
+pub struct CreateContactMethodOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateContactMethodOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput).
 pub mod create_contact_method_output {
-
+    
     /// A builder for [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9172,25 +8858,24 @@ pub mod create_contact_method_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput).
         pub fn build(self) -> crate::output::CreateContactMethodOutput {
             crate::output::CreateContactMethodOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateContactMethodOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput).
@@ -9202,20 +8887,20 @@ impl CreateContactMethodOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCloudFormationStackOutput {
+pub struct CreateCloudFormationStackOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateCloudFormationStackOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateCloudFormationStackOutput`](crate::output::CreateCloudFormationStackOutput).
 pub mod create_cloud_formation_stack_output {
-
+    
     /// A builder for [`CreateCloudFormationStackOutput`](crate::output::CreateCloudFormationStackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9229,25 +8914,24 @@ pub mod create_cloud_formation_stack_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateCloudFormationStackOutput`](crate::output::CreateCloudFormationStackOutput).
         pub fn build(self) -> crate::output::CreateCloudFormationStackOutput {
             crate::output::CreateCloudFormationStackOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCloudFormationStackOutput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFormationStackOutput`](crate::output::CreateCloudFormationStackOutput).
@@ -9259,7 +8943,7 @@ impl CreateCloudFormationStackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCertificateOutput {
+pub struct CreateCertificateOutput  {
     /// <p>An object that describes the certificate created.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::CertificateSummary>,
@@ -9269,17 +8953,17 @@ pub struct CreateCertificateOutput {
 }
 impl CreateCertificateOutput {
     /// <p>An object that describes the certificate created.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::CertificateSummary> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::CertificateSummary> {
         self.certificate.as_ref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateCertificateOutput`](crate::output::CreateCertificateOutput).
 pub mod create_certificate_output {
-
+    
     /// A builder for [`CreateCertificateOutput`](crate::output::CreateCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9293,12 +8977,8 @@ pub mod create_certificate_output {
             self
         }
         /// <p>An object that describes the certificate created.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::CertificateSummary>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::CertificateSummary>) -> Self {
+            self.certificate = input; self
         }
         /// Appends an item to `operations`.
         ///
@@ -9307,26 +8987,26 @@ pub mod create_certificate_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateCertificateOutput`](crate::output::CreateCertificateOutput).
         pub fn build(self) -> crate::output::CreateCertificateOutput {
             crate::output::CreateCertificateOutput {
-                certificate: self.certificate,
-                operations: self.operations,
+                certificate: self.certificate
+                ,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateOutput`](crate::output::CreateCertificateOutput).
@@ -9338,7 +9018,7 @@ impl CreateCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBucketAccessKeyOutput {
+pub struct CreateBucketAccessKeyOutput  {
     /// <p>An object that describes the access key that is created.</p>
     #[doc(hidden)]
     pub access_key: std::option::Option<crate::model::AccessKey>,
@@ -9348,17 +9028,17 @@ pub struct CreateBucketAccessKeyOutput {
 }
 impl CreateBucketAccessKeyOutput {
     /// <p>An object that describes the access key that is created.</p>
-    pub fn access_key(&self) -> std::option::Option<&crate::model::AccessKey> {
+    pub fn access_key(&self) -> std::option::Option<& crate::model::AccessKey> {
         self.access_key.as_ref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput).
 pub mod create_bucket_access_key_output {
-
+    
     /// A builder for [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9372,12 +9052,8 @@ pub mod create_bucket_access_key_output {
             self
         }
         /// <p>An object that describes the access key that is created.</p>
-        pub fn set_access_key(
-            mut self,
-            input: std::option::Option<crate::model::AccessKey>,
-        ) -> Self {
-            self.access_key = input;
-            self
+        pub fn set_access_key(mut self, input: std::option::Option<crate::model::AccessKey>) -> Self {
+            self.access_key = input; self
         }
         /// Appends an item to `operations`.
         ///
@@ -9386,26 +9062,26 @@ pub mod create_bucket_access_key_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput).
         pub fn build(self) -> crate::output::CreateBucketAccessKeyOutput {
             crate::output::CreateBucketAccessKeyOutput {
-                access_key: self.access_key,
-                operations: self.operations,
+                access_key: self.access_key
+                ,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBucketAccessKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput).
@@ -9417,7 +9093,7 @@ impl CreateBucketAccessKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBucketOutput {
+pub struct CreateBucketOutput  {
     /// <p>An object that describes the bucket that is created.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<crate::model::Bucket>,
@@ -9427,17 +9103,17 @@ pub struct CreateBucketOutput {
 }
 impl CreateBucketOutput {
     /// <p>An object that describes the bucket that is created.</p>
-    pub fn bucket(&self) -> std::option::Option<&crate::model::Bucket> {
+    pub fn bucket(&self) -> std::option::Option<& crate::model::Bucket> {
         self.bucket.as_ref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CreateBucketOutput`](crate::output::CreateBucketOutput).
 pub mod create_bucket_output {
-
+    
     /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9452,8 +9128,7 @@ pub mod create_bucket_output {
         }
         /// <p>An object that describes the bucket that is created.</p>
         pub fn set_bucket(mut self, input: std::option::Option<crate::model::Bucket>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// Appends an item to `operations`.
         ///
@@ -9462,26 +9137,26 @@ pub mod create_bucket_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateBucketOutput`](crate::output::CreateBucketOutput).
         pub fn build(self) -> crate::output::CreateBucketOutput {
             crate::output::CreateBucketOutput {
-                bucket: self.bucket,
-                operations: self.operations,
+                bucket: self.bucket
+                ,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBucketOutput {
     /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput).
@@ -9493,20 +9168,20 @@ impl CreateBucketOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopySnapshotOutput {
+pub struct CopySnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CopySnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
 pub mod copy_snapshot_output {
-
+    
     /// A builder for [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9520,25 +9195,24 @@ pub mod copy_snapshot_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
         pub fn build(self) -> crate::output::CopySnapshotOutput {
             crate::output::CopySnapshotOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl CopySnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
@@ -9550,20 +9224,20 @@ impl CopySnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloseInstancePublicPortsOutput {
+pub struct CloseInstancePublicPortsOutput  {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CloseInstancePublicPortsOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`CloseInstancePublicPortsOutput`](crate::output::CloseInstancePublicPortsOutput).
 pub mod close_instance_public_ports_output {
-
+    
     /// A builder for [`CloseInstancePublicPortsOutput`](crate::output::CloseInstancePublicPortsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9576,20 +9250,19 @@ pub mod close_instance_public_ports_output {
             self
         }
         /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`CloseInstancePublicPortsOutput`](crate::output::CloseInstancePublicPortsOutput).
         pub fn build(self) -> crate::output::CloseInstancePublicPortsOutput {
             crate::output::CloseInstancePublicPortsOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl CloseInstancePublicPortsOutput {
     /// Creates a new builder-style object to manufacture [`CloseInstancePublicPortsOutput`](crate::output::CloseInstancePublicPortsOutput).
@@ -9601,20 +9274,20 @@ impl CloseInstancePublicPortsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachStaticIpOutput {
+pub struct AttachStaticIpOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`AttachStaticIpOutput`](crate::output::AttachStaticIpOutput).
 pub mod attach_static_ip_output {
-
+    
     /// A builder for [`AttachStaticIpOutput`](crate::output::AttachStaticIpOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9628,25 +9301,24 @@ pub mod attach_static_ip_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`AttachStaticIpOutput`](crate::output::AttachStaticIpOutput).
         pub fn build(self) -> crate::output::AttachStaticIpOutput {
             crate::output::AttachStaticIpOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachStaticIpOutput {
     /// Creates a new builder-style object to manufacture [`AttachStaticIpOutput`](crate::output::AttachStaticIpOutput).
@@ -9658,22 +9330,22 @@ impl AttachStaticIpOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachLoadBalancerTlsCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+pub struct AttachLoadBalancerTlsCertificateOutput  {
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p> 
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachLoadBalancerTlsCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p> 
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`AttachLoadBalancerTlsCertificateOutput`](crate::output::AttachLoadBalancerTlsCertificateOutput).
 pub mod attach_load_balancer_tls_certificate_output {
-
+    
     /// A builder for [`AttachLoadBalancerTlsCertificateOutput`](crate::output::AttachLoadBalancerTlsCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9684,30 +9356,29 @@ pub mod attach_load_balancer_tls_certificate_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p> 
         /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p> 
         /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`AttachLoadBalancerTlsCertificateOutput`](crate::output::AttachLoadBalancerTlsCertificateOutput).
         pub fn build(self) -> crate::output::AttachLoadBalancerTlsCertificateOutput {
             crate::output::AttachLoadBalancerTlsCertificateOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachLoadBalancerTlsCertificateOutput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTlsCertificateOutput`](crate::output::AttachLoadBalancerTlsCertificateOutput).
@@ -9719,20 +9390,20 @@ impl AttachLoadBalancerTlsCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachInstancesToLoadBalancerOutput {
+pub struct AttachInstancesToLoadBalancerOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachInstancesToLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`AttachInstancesToLoadBalancerOutput`](crate::output::AttachInstancesToLoadBalancerOutput).
 pub mod attach_instances_to_load_balancer_output {
-
+    
     /// A builder for [`AttachInstancesToLoadBalancerOutput`](crate::output::AttachInstancesToLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9746,25 +9417,24 @@ pub mod attach_instances_to_load_balancer_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`AttachInstancesToLoadBalancerOutput`](crate::output::AttachInstancesToLoadBalancerOutput).
         pub fn build(self) -> crate::output::AttachInstancesToLoadBalancerOutput {
             crate::output::AttachInstancesToLoadBalancerOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachInstancesToLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`AttachInstancesToLoadBalancerOutput`](crate::output::AttachInstancesToLoadBalancerOutput).
@@ -9776,20 +9446,20 @@ impl AttachInstancesToLoadBalancerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachDiskOutput {
+pub struct AttachDiskOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`AttachDiskOutput`](crate::output::AttachDiskOutput).
 pub mod attach_disk_output {
-
+    
     /// A builder for [`AttachDiskOutput`](crate::output::AttachDiskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9803,25 +9473,24 @@ pub mod attach_disk_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`AttachDiskOutput`](crate::output::AttachDiskOutput).
         pub fn build(self) -> crate::output::AttachDiskOutput {
             crate::output::AttachDiskOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachDiskOutput {
     /// Creates a new builder-style object to manufacture [`AttachDiskOutput`](crate::output::AttachDiskOutput).
@@ -9833,20 +9502,20 @@ impl AttachDiskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachCertificateToDistributionOutput {
+pub struct AttachCertificateToDistributionOutput  {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl AttachCertificateToDistributionOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`AttachCertificateToDistributionOutput`](crate::output::AttachCertificateToDistributionOutput).
 pub mod attach_certificate_to_distribution_output {
-
+    
     /// A builder for [`AttachCertificateToDistributionOutput`](crate::output::AttachCertificateToDistributionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9859,20 +9528,19 @@ pub mod attach_certificate_to_distribution_output {
             self
         }
         /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`AttachCertificateToDistributionOutput`](crate::output::AttachCertificateToDistributionOutput).
         pub fn build(self) -> crate::output::AttachCertificateToDistributionOutput {
             crate::output::AttachCertificateToDistributionOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachCertificateToDistributionOutput {
     /// Creates a new builder-style object to manufacture [`AttachCertificateToDistributionOutput`](crate::output::AttachCertificateToDistributionOutput).
@@ -9884,20 +9552,20 @@ impl AttachCertificateToDistributionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocateStaticIpOutput {
+pub struct AllocateStaticIpOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AllocateStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
 }
 /// See [`AllocateStaticIpOutput`](crate::output::AllocateStaticIpOutput).
 pub mod allocate_static_ip_output {
-
+    
     /// A builder for [`AllocateStaticIpOutput`](crate::output::AllocateStaticIpOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9911,25 +9579,24 @@ pub mod allocate_static_ip_output {
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// Consumes the builder and constructs a [`AllocateStaticIpOutput`](crate::output::AllocateStaticIpOutput).
         pub fn build(self) -> crate::output::AllocateStaticIpOutput {
             crate::output::AllocateStaticIpOutput {
-                operations: self.operations,
+                operations: self.operations
+                ,
             }
         }
     }
+    
+    
 }
 impl AllocateStaticIpOutput {
     /// Creates a new builder-style object to manufacture [`AllocateStaticIpOutput`](crate::output::AllocateStaticIpOutput).
@@ -9937,3 +9604,4 @@ impl AllocateStaticIpOutput {
         crate::output::allocate_static_ip_output::Builder::default()
     }
 }
+

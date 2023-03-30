@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndeprecateWorkflowTypeOutput {}
+pub struct UndeprecateWorkflowTypeOutput  {
+}
 /// See [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
 pub mod undeprecate_workflow_type_output {
-
+    
     /// A builder for [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
         pub fn build(self) -> crate::output::UndeprecateWorkflowTypeOutput {
-            crate::output::UndeprecateWorkflowTypeOutput {}
+            crate::output::UndeprecateWorkflowTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl UndeprecateWorkflowTypeOutput {
     /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
@@ -50,19 +60,24 @@ impl UndeprecateWorkflowTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndeprecateDomainOutput {}
+pub struct UndeprecateDomainOutput  {
+}
 /// See [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
 pub mod undeprecate_domain_output {
-
+    
     /// A builder for [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
         pub fn build(self) -> crate::output::UndeprecateDomainOutput {
-            crate::output::UndeprecateDomainOutput {}
+            crate::output::UndeprecateDomainOutput {
+            }
         }
     }
+    
+    
 }
 impl UndeprecateDomainOutput {
     /// Creates a new builder-style object to manufacture [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
@@ -74,19 +89,24 @@ impl UndeprecateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndeprecateActivityTypeOutput {}
+pub struct UndeprecateActivityTypeOutput  {
+}
 /// See [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
 pub mod undeprecate_activity_type_output {
-
+    
     /// A builder for [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
         pub fn build(self) -> crate::output::UndeprecateActivityTypeOutput {
-            crate::output::UndeprecateActivityTypeOutput {}
+            crate::output::UndeprecateActivityTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl UndeprecateActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
@@ -98,19 +118,24 @@ impl UndeprecateActivityTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateWorkflowExecutionOutput {}
+pub struct TerminateWorkflowExecutionOutput  {
+}
 /// See [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
 pub mod terminate_workflow_execution_output {
-
+    
     /// A builder for [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::TerminateWorkflowExecutionOutput {
-            crate::output::TerminateWorkflowExecutionOutput {}
+            crate::output::TerminateWorkflowExecutionOutput {
+            }
         }
     }
+    
+    
 }
 impl TerminateWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
@@ -122,19 +147,24 @@ impl TerminateWorkflowExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -146,20 +176,20 @@ impl TagResourceOutput {
 /// <p>Specifies the <code>runId</code> of a workflow execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartWorkflowExecutionOutput {
+pub struct StartWorkflowExecutionOutput  {
     /// <p>The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.</p>
     #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl StartWorkflowExecutionOutput {
     /// <p>The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
 /// See [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
 pub mod start_workflow_execution_output {
-
+    
     /// A builder for [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -173,16 +203,18 @@ pub mod start_workflow_execution_output {
         }
         /// <p>The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.run_id = input;
-            self
+            self.run_id = input; self
         }
         /// Consumes the builder and constructs a [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::StartWorkflowExecutionOutput {
             crate::output::StartWorkflowExecutionOutput {
-                run_id: self.run_id,
+                run_id: self.run_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
@@ -194,19 +226,24 @@ impl StartWorkflowExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalWorkflowExecutionOutput {}
+pub struct SignalWorkflowExecutionOutput  {
+}
 /// See [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
 pub mod signal_workflow_execution_output {
-
+    
     /// A builder for [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::SignalWorkflowExecutionOutput {
-            crate::output::SignalWorkflowExecutionOutput {}
+            crate::output::SignalWorkflowExecutionOutput {
+            }
         }
     }
+    
+    
 }
 impl SignalWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
@@ -218,19 +255,24 @@ impl SignalWorkflowExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondDecisionTaskCompletedOutput {}
+pub struct RespondDecisionTaskCompletedOutput  {
+}
 /// See [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
 pub mod respond_decision_task_completed_output {
-
+    
     /// A builder for [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
         pub fn build(self) -> crate::output::RespondDecisionTaskCompletedOutput {
-            crate::output::RespondDecisionTaskCompletedOutput {}
+            crate::output::RespondDecisionTaskCompletedOutput {
+            }
         }
     }
+    
+    
 }
 impl RespondDecisionTaskCompletedOutput {
     /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
@@ -242,19 +284,24 @@ impl RespondDecisionTaskCompletedOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondActivityTaskFailedOutput {}
+pub struct RespondActivityTaskFailedOutput  {
+}
 /// See [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
 pub mod respond_activity_task_failed_output {
-
+    
     /// A builder for [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskFailedOutput {
-            crate::output::RespondActivityTaskFailedOutput {}
+            crate::output::RespondActivityTaskFailedOutput {
+            }
         }
     }
+    
+    
 }
 impl RespondActivityTaskFailedOutput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
@@ -266,19 +313,24 @@ impl RespondActivityTaskFailedOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondActivityTaskCompletedOutput {}
+pub struct RespondActivityTaskCompletedOutput  {
+}
 /// See [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
 pub mod respond_activity_task_completed_output {
-
+    
     /// A builder for [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskCompletedOutput {
-            crate::output::RespondActivityTaskCompletedOutput {}
+            crate::output::RespondActivityTaskCompletedOutput {
+            }
         }
     }
+    
+    
 }
 impl RespondActivityTaskCompletedOutput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
@@ -290,19 +342,24 @@ impl RespondActivityTaskCompletedOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondActivityTaskCanceledOutput {}
+pub struct RespondActivityTaskCanceledOutput  {
+}
 /// See [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
 pub mod respond_activity_task_canceled_output {
-
+    
     /// A builder for [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskCanceledOutput {
-            crate::output::RespondActivityTaskCanceledOutput {}
+            crate::output::RespondActivityTaskCanceledOutput {
+            }
         }
     }
+    
+    
 }
 impl RespondActivityTaskCanceledOutput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
@@ -314,19 +371,24 @@ impl RespondActivityTaskCanceledOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestCancelWorkflowExecutionOutput {}
+pub struct RequestCancelWorkflowExecutionOutput  {
+}
 /// See [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
 pub mod request_cancel_workflow_execution_output {
-
+    
     /// A builder for [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::RequestCancelWorkflowExecutionOutput {
-            crate::output::RequestCancelWorkflowExecutionOutput {}
+            crate::output::RequestCancelWorkflowExecutionOutput {
+            }
         }
     }
+    
+    
 }
 impl RequestCancelWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
@@ -338,19 +400,24 @@ impl RequestCancelWorkflowExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterWorkflowTypeOutput {}
+pub struct RegisterWorkflowTypeOutput  {
+}
 /// See [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
 pub mod register_workflow_type_output {
-
+    
     /// A builder for [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
         pub fn build(self) -> crate::output::RegisterWorkflowTypeOutput {
-            crate::output::RegisterWorkflowTypeOutput {}
+            crate::output::RegisterWorkflowTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl RegisterWorkflowTypeOutput {
     /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
@@ -362,19 +429,24 @@ impl RegisterWorkflowTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDomainOutput {}
+pub struct RegisterDomainOutput  {
+}
 /// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
 pub mod register_domain_output {
-
+    
     /// A builder for [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
         pub fn build(self) -> crate::output::RegisterDomainOutput {
-            crate::output::RegisterDomainOutput {}
+            crate::output::RegisterDomainOutput {
+            }
         }
     }
+    
+    
 }
 impl RegisterDomainOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
@@ -386,19 +458,24 @@ impl RegisterDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterActivityTypeOutput {}
+pub struct RegisterActivityTypeOutput  {
+}
 /// See [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
 pub mod register_activity_type_output {
-
+    
     /// A builder for [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
         pub fn build(self) -> crate::output::RegisterActivityTypeOutput {
-            crate::output::RegisterActivityTypeOutput {}
+            crate::output::RegisterActivityTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl RegisterActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
@@ -410,7 +487,7 @@ impl RegisterActivityTypeOutput {
 /// <p>Status information about an activity task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordActivityTaskHeartbeatOutput {
+pub struct RecordActivityTaskHeartbeatOutput  {
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
     #[doc(hidden)]
     pub cancel_requested: bool,
@@ -423,7 +500,7 @@ impl RecordActivityTaskHeartbeatOutput {
 }
 /// See [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
 pub mod record_activity_task_heartbeat_output {
-
+    
     /// A builder for [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -437,16 +514,19 @@ pub mod record_activity_task_heartbeat_output {
         }
         /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
         pub fn set_cancel_requested(mut self, input: std::option::Option<bool>) -> Self {
-            self.cancel_requested = input;
-            self
+            self.cancel_requested = input; self
         }
         /// Consumes the builder and constructs a [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
         pub fn build(self) -> crate::output::RecordActivityTaskHeartbeatOutput {
             crate::output::RecordActivityTaskHeartbeatOutput {
-                cancel_requested: self.cancel_requested.unwrap_or_default(),
+                cancel_requested: self.cancel_requested
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RecordActivityTaskHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
@@ -458,7 +538,7 @@ impl RecordActivityTaskHeartbeatOutput {
 /// <p>A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForDecisionTaskOutput {
+pub struct PollForDecisionTaskOutput  {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -474,7 +554,7 @@ pub struct PollForDecisionTaskOutput {
     /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -484,7 +564,7 @@ pub struct PollForDecisionTaskOutput {
 }
 impl PollForDecisionTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
@@ -492,20 +572,20 @@ impl PollForDecisionTaskOutput {
         self.started_event_id
     }
     /// <p>The workflow execution for which this decision task was created.</p>
-    pub fn workflow_execution(&self) -> std::option::Option<&crate::model::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> std::option::Option<& crate::model::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The type of the workflow execution for which this decision task was created.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::HistoryEvent]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::HistoryEvent]> {
         self.events.as_deref()
     }
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
@@ -515,7 +595,7 @@ impl PollForDecisionTaskOutput {
 }
 /// See [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
 pub mod poll_for_decision_task_output {
-
+    
     /// A builder for [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -535,8 +615,7 @@ pub mod poll_for_decision_task_output {
         }
         /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_token = input;
-            self
+            self.task_token = input; self
         }
         /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
         pub fn started_event_id(mut self, input: i64) -> Self {
@@ -545,8 +624,7 @@ pub mod poll_for_decision_task_output {
         }
         /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.started_event_id = input;
-            self
+            self.started_event_id = input; self
         }
         /// <p>The workflow execution for which this decision task was created.</p>
         pub fn workflow_execution(mut self, input: crate::model::WorkflowExecution) -> Self {
@@ -554,12 +632,8 @@ pub mod poll_for_decision_task_output {
             self
         }
         /// <p>The workflow execution for which this decision task was created.</p>
-        pub fn set_workflow_execution(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecution>,
-        ) -> Self {
-            self.workflow_execution = input;
-            self
+        pub fn set_workflow_execution(mut self, input: std::option::Option<crate::model::WorkflowExecution>) -> Self {
+            self.workflow_execution = input; self
         }
         /// <p>The type of the workflow execution for which this decision task was created.</p>
         pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -567,12 +641,8 @@ pub mod poll_for_decision_task_output {
             self
         }
         /// <p>The type of the workflow execution for which this decision task was created.</p>
-        pub fn set_workflow_type(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowType>,
-        ) -> Self {
-            self.workflow_type = input;
-            self
+        pub fn set_workflow_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
+            self.workflow_type = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -581,32 +651,24 @@ pub mod poll_for_decision_task_output {
         /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
         pub fn events(mut self, input: crate::model::HistoryEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>) -> Self {
+            self.events = input; self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
         pub fn previous_started_event_id(mut self, input: i64) -> Self {
@@ -615,22 +677,32 @@ pub mod poll_for_decision_task_output {
         }
         /// <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
         pub fn set_previous_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.previous_started_event_id = input;
-            self
+            self.previous_started_event_id = input; self
         }
         /// Consumes the builder and constructs a [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
         pub fn build(self) -> crate::output::PollForDecisionTaskOutput {
             crate::output::PollForDecisionTaskOutput {
-                task_token: self.task_token,
-                started_event_id: self.started_event_id.unwrap_or_default(),
-                workflow_execution: self.workflow_execution,
-                workflow_type: self.workflow_type,
-                events: self.events,
-                next_page_token: self.next_page_token,
-                previous_started_event_id: self.previous_started_event_id.unwrap_or_default(),
+                task_token: self.task_token
+                ,
+                started_event_id: self.started_event_id
+                    .unwrap_or_default()
+                ,
+                workflow_execution: self.workflow_execution
+                ,
+                workflow_type: self.workflow_type
+                ,
+                events: self.events
+                ,
+                next_page_token: self.next_page_token
+                ,
+                previous_started_event_id: self.previous_started_event_id
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PollForDecisionTaskOutput {
     /// Creates a new builder-style object to manufacture [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
@@ -642,7 +714,7 @@ impl PollForDecisionTaskOutput {
 /// <p>Unit of work sent to an activity worker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForActivityTaskOutput {
+pub struct PollForActivityTaskOutput  {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -664,11 +736,11 @@ pub struct PollForActivityTaskOutput {
 }
 impl PollForActivityTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p>The unique ID of the task.</p>
-    pub fn activity_id(&self) -> std::option::Option<&str> {
+    pub fn activity_id(&self) -> std::option::Option<& str> {
         self.activity_id.as_deref()
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
@@ -676,21 +748,21 @@ impl PollForActivityTaskOutput {
         self.started_event_id
     }
     /// <p>The workflow execution that started this activity task.</p>
-    pub fn workflow_execution(&self) -> std::option::Option<&crate::model::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> std::option::Option<& crate::model::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The type of this activity task.</p>
-    pub fn activity_type(&self) -> std::option::Option<&crate::model::ActivityType> {
+    pub fn activity_type(&self) -> std::option::Option<& crate::model::ActivityType> {
         self.activity_type.as_ref()
     }
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
 }
 /// See [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
 pub mod poll_for_activity_task_output {
-
+    
     /// A builder for [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -709,8 +781,7 @@ pub mod poll_for_activity_task_output {
         }
         /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_token = input;
-            self
+            self.task_token = input; self
         }
         /// <p>The unique ID of the task.</p>
         pub fn activity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -719,8 +790,7 @@ pub mod poll_for_activity_task_output {
         }
         /// <p>The unique ID of the task.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.activity_id = input;
-            self
+            self.activity_id = input; self
         }
         /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
         pub fn started_event_id(mut self, input: i64) -> Self {
@@ -729,8 +799,7 @@ pub mod poll_for_activity_task_output {
         }
         /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.started_event_id = input;
-            self
+            self.started_event_id = input; self
         }
         /// <p>The workflow execution that started this activity task.</p>
         pub fn workflow_execution(mut self, input: crate::model::WorkflowExecution) -> Self {
@@ -738,12 +807,8 @@ pub mod poll_for_activity_task_output {
             self
         }
         /// <p>The workflow execution that started this activity task.</p>
-        pub fn set_workflow_execution(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecution>,
-        ) -> Self {
-            self.workflow_execution = input;
-            self
+        pub fn set_workflow_execution(mut self, input: std::option::Option<crate::model::WorkflowExecution>) -> Self {
+            self.workflow_execution = input; self
         }
         /// <p>The type of this activity task.</p>
         pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
@@ -751,12 +816,8 @@ pub mod poll_for_activity_task_output {
             self
         }
         /// <p>The type of this activity task.</p>
-        pub fn set_activity_type(
-            mut self,
-            input: std::option::Option<crate::model::ActivityType>,
-        ) -> Self {
-            self.activity_type = input;
-            self
+        pub fn set_activity_type(mut self, input: std::option::Option<crate::model::ActivityType>) -> Self {
+            self.activity_type = input; self
         }
         /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -765,21 +826,29 @@ pub mod poll_for_activity_task_output {
         }
         /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// Consumes the builder and constructs a [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
         pub fn build(self) -> crate::output::PollForActivityTaskOutput {
             crate::output::PollForActivityTaskOutput {
-                task_token: self.task_token,
-                activity_id: self.activity_id,
-                started_event_id: self.started_event_id.unwrap_or_default(),
-                workflow_execution: self.workflow_execution,
-                activity_type: self.activity_type,
-                input: self.input,
+                task_token: self.task_token
+                ,
+                activity_id: self.activity_id
+                ,
+                started_event_id: self.started_event_id
+                    .unwrap_or_default()
+                ,
+                workflow_execution: self.workflow_execution
+                ,
+                activity_type: self.activity_type
+                ,
+                input: self.input
+                ,
             }
         }
     }
+    
+    
 }
 impl PollForActivityTaskOutput {
     /// Creates a new builder-style object to manufacture [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
@@ -791,29 +860,29 @@ impl PollForActivityTaskOutput {
 /// <p>Contains a paginated list of information structures about workflow types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowTypesOutput {
+pub struct ListWorkflowTypesOutput  {
     /// <p>The list of workflow type information.</p>
     #[doc(hidden)]
     pub type_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowTypeInfo>>,
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListWorkflowTypesOutput {
     /// <p>The list of workflow type information.</p>
-    pub fn type_infos(&self) -> std::option::Option<&[crate::model::WorkflowTypeInfo]> {
+    pub fn type_infos(&self) -> std::option::Option<& [crate::model::WorkflowTypeInfo]> {
         self.type_infos.as_deref()
     }
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
 pub mod list_workflow_types_output {
-
+    
     /// A builder for [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -828,41 +897,37 @@ pub mod list_workflow_types_output {
         /// <p>The list of workflow type information.</p>
         pub fn type_infos(mut self, input: crate::model::WorkflowTypeInfo) -> Self {
             let mut v = self.type_infos.unwrap_or_default();
-            v.push(input);
-            self.type_infos = Some(v);
-            self
+                            v.push(input);
+                            self.type_infos = Some(v);
+                            self
         }
         /// <p>The list of workflow type information.</p>
-        pub fn set_type_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkflowTypeInfo>>,
-        ) -> Self {
-            self.type_infos = input;
-            self
+        pub fn set_type_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkflowTypeInfo>>) -> Self {
+            self.type_infos = input; self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
         pub fn build(self) -> crate::output::ListWorkflowTypesOutput {
             crate::output::ListWorkflowTypesOutput {
-                type_infos: self.type_infos,
-                next_page_token: self.next_page_token,
+                type_infos: self.type_infos
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkflowTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
@@ -874,20 +939,20 @@ impl ListWorkflowTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>An array of tags associated with the domain.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>An array of tags associated with the domain.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::ResourceTag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -901,23 +966,24 @@ pub mod list_tags_for_resource_output {
         /// <p>An array of tags associated with the domain.</p>
         pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of tags associated with the domain.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -929,34 +995,33 @@ impl ListTagsForResourceOutput {
 /// <p>Contains a paginated list of information about workflow executions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpenWorkflowExecutionsOutput {
+pub struct ListOpenWorkflowExecutionsOutput  {
     /// <p>The list of workflow information structures.</p>
     #[doc(hidden)]
     pub execution_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListOpenWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
-    pub fn execution_infos(&self) -> std::option::Option<&[crate::model::WorkflowExecutionInfo]> {
+    pub fn execution_infos(&self) -> std::option::Option<& [crate::model::WorkflowExecutionInfo]> {
         self.execution_infos.as_deref()
     }
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
 pub mod list_open_workflow_executions_output {
-
+    
     /// A builder for [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) execution_infos:
-            std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
+        pub(crate) execution_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -967,41 +1032,37 @@ pub mod list_open_workflow_executions_output {
         /// <p>The list of workflow information structures.</p>
         pub fn execution_infos(mut self, input: crate::model::WorkflowExecutionInfo) -> Self {
             let mut v = self.execution_infos.unwrap_or_default();
-            v.push(input);
-            self.execution_infos = Some(v);
-            self
+                            v.push(input);
+                            self.execution_infos = Some(v);
+                            self
         }
         /// <p>The list of workflow information structures.</p>
-        pub fn set_execution_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
-        ) -> Self {
-            self.execution_infos = input;
-            self
+        pub fn set_execution_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>) -> Self {
+            self.execution_infos = input; self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::ListOpenWorkflowExecutionsOutput {
             crate::output::ListOpenWorkflowExecutionsOutput {
-                execution_infos: self.execution_infos,
-                next_page_token: self.next_page_token,
+                execution_infos: self.execution_infos
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOpenWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
@@ -1013,29 +1074,29 @@ impl ListOpenWorkflowExecutionsOutput {
 /// <p>Contains a paginated collection of DomainInfo structures.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainsOutput {
+pub struct ListDomainsOutput  {
     /// <p>A list of DomainInfo structures.</p>
     #[doc(hidden)]
     pub domain_infos: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
     /// <p>A list of DomainInfo structures.</p>
-    pub fn domain_infos(&self) -> std::option::Option<&[crate::model::DomainInfo]> {
+    pub fn domain_infos(&self) -> std::option::Option<& [crate::model::DomainInfo]> {
         self.domain_infos.as_deref()
     }
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
-
+    
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1050,41 +1111,37 @@ pub mod list_domains_output {
         /// <p>A list of DomainInfo structures.</p>
         pub fn domain_infos(mut self, input: crate::model::DomainInfo) -> Self {
             let mut v = self.domain_infos.unwrap_or_default();
-            v.push(input);
-            self.domain_infos = Some(v);
-            self
+                            v.push(input);
+                            self.domain_infos = Some(v);
+                            self
         }
         /// <p>A list of DomainInfo structures.</p>
-        pub fn set_domain_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
-        ) -> Self {
-            self.domain_infos = input;
-            self
+        pub fn set_domain_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>) -> Self {
+            self.domain_infos = input; self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
-                domain_infos: self.domain_infos,
-                next_page_token: self.next_page_token,
+                domain_infos: self.domain_infos
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
@@ -1096,34 +1153,33 @@ impl ListDomainsOutput {
 /// <p>Contains a paginated list of information about workflow executions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClosedWorkflowExecutionsOutput {
+pub struct ListClosedWorkflowExecutionsOutput  {
     /// <p>The list of workflow information structures.</p>
     #[doc(hidden)]
     pub execution_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListClosedWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
-    pub fn execution_infos(&self) -> std::option::Option<&[crate::model::WorkflowExecutionInfo]> {
+    pub fn execution_infos(&self) -> std::option::Option<& [crate::model::WorkflowExecutionInfo]> {
         self.execution_infos.as_deref()
     }
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
 pub mod list_closed_workflow_executions_output {
-
+    
     /// A builder for [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) execution_infos:
-            std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
+        pub(crate) execution_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1134,41 +1190,37 @@ pub mod list_closed_workflow_executions_output {
         /// <p>The list of workflow information structures.</p>
         pub fn execution_infos(mut self, input: crate::model::WorkflowExecutionInfo) -> Self {
             let mut v = self.execution_infos.unwrap_or_default();
-            v.push(input);
-            self.execution_infos = Some(v);
-            self
+                            v.push(input);
+                            self.execution_infos = Some(v);
+                            self
         }
         /// <p>The list of workflow information structures.</p>
-        pub fn set_execution_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
-        ) -> Self {
-            self.execution_infos = input;
-            self
+        pub fn set_execution_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>) -> Self {
+            self.execution_infos = input; self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::ListClosedWorkflowExecutionsOutput {
             crate::output::ListClosedWorkflowExecutionsOutput {
-                execution_infos: self.execution_infos,
-                next_page_token: self.next_page_token,
+                execution_infos: self.execution_infos
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListClosedWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
@@ -1180,29 +1232,29 @@ impl ListClosedWorkflowExecutionsOutput {
 /// <p>Contains a paginated list of activity type information structures.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListActivityTypesOutput {
+pub struct ListActivityTypesOutput  {
     /// <p>List of activity type information.</p>
     #[doc(hidden)]
     pub type_infos: std::option::Option<std::vec::Vec<crate::model::ActivityTypeInfo>>,
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListActivityTypesOutput {
     /// <p>List of activity type information.</p>
-    pub fn type_infos(&self) -> std::option::Option<&[crate::model::ActivityTypeInfo]> {
+    pub fn type_infos(&self) -> std::option::Option<& [crate::model::ActivityTypeInfo]> {
         self.type_infos.as_deref()
     }
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
 pub mod list_activity_types_output {
-
+    
     /// A builder for [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1217,41 +1269,37 @@ pub mod list_activity_types_output {
         /// <p>List of activity type information.</p>
         pub fn type_infos(mut self, input: crate::model::ActivityTypeInfo) -> Self {
             let mut v = self.type_infos.unwrap_or_default();
-            v.push(input);
-            self.type_infos = Some(v);
-            self
+                            v.push(input);
+                            self.type_infos = Some(v);
+                            self
         }
         /// <p>List of activity type information.</p>
-        pub fn set_type_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActivityTypeInfo>>,
-        ) -> Self {
-            self.type_infos = input;
-            self
+        pub fn set_type_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActivityTypeInfo>>) -> Self {
+            self.type_infos = input; self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
         pub fn build(self) -> crate::output::ListActivityTypesOutput {
             crate::output::ListActivityTypesOutput {
-                type_infos: self.type_infos,
-                next_page_token: self.next_page_token,
+                type_infos: self.type_infos
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListActivityTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
@@ -1263,29 +1311,29 @@ impl ListActivityTypesOutput {
 /// <p>Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowExecutionHistoryOutput {
+pub struct GetWorkflowExecutionHistoryOutput  {
     /// <p>The list of history events.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetWorkflowExecutionHistoryOutput {
     /// <p>The list of history events.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::HistoryEvent]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::HistoryEvent]> {
         self.events.as_deref()
     }
-    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
 pub mod get_workflow_execution_history_output {
-
+    
     /// A builder for [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1300,41 +1348,37 @@ pub mod get_workflow_execution_history_output {
         /// <p>The list of history events.</p>
         pub fn events(mut self, input: crate::model::HistoryEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>The list of history events.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>) -> Self {
+            self.events = input; self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+        /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
         pub fn build(self) -> crate::output::GetWorkflowExecutionHistoryOutput {
             crate::output::GetWorkflowExecutionHistoryOutput {
-                events: self.events,
-                next_page_token: self.next_page_token,
+                events: self.events
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWorkflowExecutionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
@@ -1346,12 +1390,12 @@ impl GetWorkflowExecutionHistoryOutput {
 /// <p>Contains details about a workflow type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkflowTypeOutput {
-    /// <p>General information about the workflow type.</p>
-    /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
-    /// <ul>
-    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
-    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
+pub struct DescribeWorkflowTypeOutput  {
+    /// <p>General information about the workflow type.</p> 
+    /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p> 
+    /// <ul> 
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li> 
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub type_info: std::option::Option<crate::model::WorkflowTypeInfo>,
@@ -1360,23 +1404,23 @@ pub struct DescribeWorkflowTypeOutput {
     pub configuration: std::option::Option<crate::model::WorkflowTypeConfiguration>,
 }
 impl DescribeWorkflowTypeOutput {
-    /// <p>General information about the workflow type.</p>
-    /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
-    /// <ul>
-    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
-    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
+    /// <p>General information about the workflow type.</p> 
+    /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p> 
+    /// <ul> 
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li> 
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li> 
     /// </ul>
-    pub fn type_info(&self) -> std::option::Option<&crate::model::WorkflowTypeInfo> {
+    pub fn type_info(&self) -> std::option::Option<& crate::model::WorkflowTypeInfo> {
         self.type_info.as_ref()
     }
     /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::WorkflowTypeConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::WorkflowTypeConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
 pub mod describe_workflow_type_output {
-
+    
     /// A builder for [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1384,28 +1428,24 @@ pub mod describe_workflow_type_output {
         pub(crate) configuration: std::option::Option<crate::model::WorkflowTypeConfiguration>,
     }
     impl Builder {
-        /// <p>General information about the workflow type.</p>
-        /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
-        /// <ul>
-        /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
-        /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
+        /// <p>General information about the workflow type.</p> 
+        /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p> 
+        /// <ul> 
+        /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li> 
+        /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li> 
         /// </ul>
         pub fn type_info(mut self, input: crate::model::WorkflowTypeInfo) -> Self {
             self.type_info = Some(input);
             self
         }
-        /// <p>General information about the workflow type.</p>
-        /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>
-        /// <ul>
-        /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
-        /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
+        /// <p>General information about the workflow type.</p> 
+        /// <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p> 
+        /// <ul> 
+        /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li> 
+        /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li> 
         /// </ul>
-        pub fn set_type_info(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowTypeInfo>,
-        ) -> Self {
-            self.type_info = input;
-            self
+        pub fn set_type_info(mut self, input: std::option::Option<crate::model::WorkflowTypeInfo>) -> Self {
+            self.type_info = input; self
         }
         /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
         pub fn configuration(mut self, input: crate::model::WorkflowTypeConfiguration) -> Self {
@@ -1413,21 +1453,21 @@ pub mod describe_workflow_type_output {
             self
         }
         /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowTypeConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::WorkflowTypeConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
         pub fn build(self) -> crate::output::DescribeWorkflowTypeOutput {
             crate::output::DescribeWorkflowTypeOutput {
-                type_info: self.type_info,
-                configuration: self.configuration,
+                type_info: self.type_info
+                ,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeWorkflowTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
@@ -1439,7 +1479,7 @@ impl DescribeWorkflowTypeOutput {
 /// <p>Contains details about a workflow execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkflowExecutionOutput {
+pub struct DescribeWorkflowExecutionOutput  {
     /// <p>Information about the workflow execution.</p>
     #[doc(hidden)]
     pub execution_info: std::option::Option<crate::model::WorkflowExecutionInfo>,
@@ -1458,39 +1498,34 @@ pub struct DescribeWorkflowExecutionOutput {
 }
 impl DescribeWorkflowExecutionOutput {
     /// <p>Information about the workflow execution.</p>
-    pub fn execution_info(&self) -> std::option::Option<&crate::model::WorkflowExecutionInfo> {
+    pub fn execution_info(&self) -> std::option::Option<& crate::model::WorkflowExecutionInfo> {
         self.execution_info.as_ref()
     }
     /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-    pub fn execution_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::WorkflowExecutionConfiguration> {
+    pub fn execution_configuration(&self) -> std::option::Option<& crate::model::WorkflowExecutionConfiguration> {
         self.execution_configuration.as_ref()
     }
     /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-    pub fn open_counts(&self) -> std::option::Option<&crate::model::WorkflowExecutionOpenCounts> {
+    pub fn open_counts(&self) -> std::option::Option<& crate::model::WorkflowExecutionOpenCounts> {
         self.open_counts.as_ref()
     }
     /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-    pub fn latest_activity_task_timestamp(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_activity_task_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_activity_task_timestamp.as_ref()
     }
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
-    pub fn latest_execution_context(&self) -> std::option::Option<&str> {
+    pub fn latest_execution_context(&self) -> std::option::Option<& str> {
         self.latest_execution_context.as_deref()
     }
 }
 /// See [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
 pub mod describe_workflow_execution_output {
-
+    
     /// A builder for [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_info: std::option::Option<crate::model::WorkflowExecutionInfo>,
-        pub(crate) execution_configuration:
-            std::option::Option<crate::model::WorkflowExecutionConfiguration>,
+        pub(crate) execution_configuration: std::option::Option<crate::model::WorkflowExecutionConfiguration>,
         pub(crate) open_counts: std::option::Option<crate::model::WorkflowExecutionOpenCounts>,
         pub(crate) latest_activity_task_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_execution_context: std::option::Option<std::string::String>,
@@ -1502,28 +1537,17 @@ pub mod describe_workflow_execution_output {
             self
         }
         /// <p>Information about the workflow execution.</p>
-        pub fn set_execution_info(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecutionInfo>,
-        ) -> Self {
-            self.execution_info = input;
-            self
+        pub fn set_execution_info(mut self, input: std::option::Option<crate::model::WorkflowExecutionInfo>) -> Self {
+            self.execution_info = input; self
         }
         /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-        pub fn execution_configuration(
-            mut self,
-            input: crate::model::WorkflowExecutionConfiguration,
-        ) -> Self {
+        pub fn execution_configuration(mut self, input: crate::model::WorkflowExecutionConfiguration) -> Self {
             self.execution_configuration = Some(input);
             self
         }
         /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-        pub fn set_execution_configuration(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecutionConfiguration>,
-        ) -> Self {
-            self.execution_configuration = input;
-            self
+        pub fn set_execution_configuration(mut self, input: std::option::Option<crate::model::WorkflowExecutionConfiguration>) -> Self {
+            self.execution_configuration = input; self
         }
         /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
         pub fn open_counts(mut self, input: crate::model::WorkflowExecutionOpenCounts) -> Self {
@@ -1531,12 +1555,8 @@ pub mod describe_workflow_execution_output {
             self
         }
         /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-        pub fn set_open_counts(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecutionOpenCounts>,
-        ) -> Self {
-            self.open_counts = input;
-            self
+        pub fn set_open_counts(mut self, input: std::option::Option<crate::model::WorkflowExecutionOpenCounts>) -> Self {
+            self.open_counts = input; self
         }
         /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
         pub fn latest_activity_task_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1544,12 +1564,8 @@ pub mod describe_workflow_execution_output {
             self
         }
         /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-        pub fn set_latest_activity_task_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_activity_task_timestamp = input;
-            self
+        pub fn set_latest_activity_task_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_activity_task_timestamp = input; self
         }
         /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
         pub fn latest_execution_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1557,24 +1573,27 @@ pub mod describe_workflow_execution_output {
             self
         }
         /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
-        pub fn set_latest_execution_context(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_execution_context = input;
-            self
+        pub fn set_latest_execution_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_execution_context = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::DescribeWorkflowExecutionOutput {
             crate::output::DescribeWorkflowExecutionOutput {
-                execution_info: self.execution_info,
-                execution_configuration: self.execution_configuration,
-                open_counts: self.open_counts,
-                latest_activity_task_timestamp: self.latest_activity_task_timestamp,
-                latest_execution_context: self.latest_execution_context,
+                execution_info: self.execution_info
+                ,
+                execution_configuration: self.execution_configuration
+                ,
+                open_counts: self.open_counts
+                ,
+                latest_activity_task_timestamp: self.latest_activity_task_timestamp
+                ,
+                latest_execution_context: self.latest_execution_context
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
@@ -1586,7 +1605,7 @@ impl DescribeWorkflowExecutionOutput {
 /// <p>Contains details of a domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainOutput {
+pub struct DescribeDomainOutput  {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
     #[doc(hidden)]
     pub domain_info: std::option::Option<crate::model::DomainInfo>,
@@ -1596,17 +1615,17 @@ pub struct DescribeDomainOutput {
 }
 impl DescribeDomainOutput {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
-    pub fn domain_info(&self) -> std::option::Option<&crate::model::DomainInfo> {
+    pub fn domain_info(&self) -> std::option::Option<& crate::model::DomainInfo> {
         self.domain_info.as_ref()
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::DomainConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::DomainConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
-
+    
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1620,12 +1639,8 @@ pub mod describe_domain_output {
             self
         }
         /// <p>The basic information about a domain, such as its name, status, and description.</p>
-        pub fn set_domain_info(
-            mut self,
-            input: std::option::Option<crate::model::DomainInfo>,
-        ) -> Self {
-            self.domain_info = input;
-            self
+        pub fn set_domain_info(mut self, input: std::option::Option<crate::model::DomainInfo>) -> Self {
+            self.domain_info = input; self
         }
         /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
         pub fn configuration(mut self, input: crate::model::DomainConfiguration) -> Self {
@@ -1633,21 +1648,21 @@ pub mod describe_domain_output {
             self
         }
         /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DomainConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::DomainConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
         pub fn build(self) -> crate::output::DescribeDomainOutput {
             crate::output::DescribeDomainOutput {
-                domain_info: self.domain_info,
-                configuration: self.configuration,
+                domain_info: self.domain_info
+                ,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
@@ -1659,12 +1674,12 @@ impl DescribeDomainOutput {
 /// <p>Detailed information about an activity type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeActivityTypeOutput {
-    /// <p>General information about the activity type.</p>
-    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
-    /// <ul>
-    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
-    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
+pub struct DescribeActivityTypeOutput  {
+    /// <p>General information about the activity type.</p> 
+    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> 
+    /// <ul> 
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> 
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub type_info: std::option::Option<crate::model::ActivityTypeInfo>,
@@ -1673,23 +1688,23 @@ pub struct DescribeActivityTypeOutput {
     pub configuration: std::option::Option<crate::model::ActivityTypeConfiguration>,
 }
 impl DescribeActivityTypeOutput {
-    /// <p>General information about the activity type.</p>
-    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
-    /// <ul>
-    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
-    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
+    /// <p>General information about the activity type.</p> 
+    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> 
+    /// <ul> 
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> 
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> 
     /// </ul>
-    pub fn type_info(&self) -> std::option::Option<&crate::model::ActivityTypeInfo> {
+    pub fn type_info(&self) -> std::option::Option<& crate::model::ActivityTypeInfo> {
         self.type_info.as_ref()
     }
     /// <p>The configuration settings registered with the activity type.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::ActivityTypeConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::ActivityTypeConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
 pub mod describe_activity_type_output {
-
+    
     /// A builder for [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1697,28 +1712,24 @@ pub mod describe_activity_type_output {
         pub(crate) configuration: std::option::Option<crate::model::ActivityTypeConfiguration>,
     }
     impl Builder {
-        /// <p>General information about the activity type.</p>
-        /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
-        /// <ul>
-        /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
-        /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
+        /// <p>General information about the activity type.</p> 
+        /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> 
+        /// <ul> 
+        /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> 
+        /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> 
         /// </ul>
         pub fn type_info(mut self, input: crate::model::ActivityTypeInfo) -> Self {
             self.type_info = Some(input);
             self
         }
-        /// <p>General information about the activity type.</p>
-        /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
-        /// <ul>
-        /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
-        /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
+        /// <p>General information about the activity type.</p> 
+        /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> 
+        /// <ul> 
+        /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> 
+        /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> 
         /// </ul>
-        pub fn set_type_info(
-            mut self,
-            input: std::option::Option<crate::model::ActivityTypeInfo>,
-        ) -> Self {
-            self.type_info = input;
-            self
+        pub fn set_type_info(mut self, input: std::option::Option<crate::model::ActivityTypeInfo>) -> Self {
+            self.type_info = input; self
         }
         /// <p>The configuration settings registered with the activity type.</p>
         pub fn configuration(mut self, input: crate::model::ActivityTypeConfiguration) -> Self {
@@ -1726,21 +1737,21 @@ pub mod describe_activity_type_output {
             self
         }
         /// <p>The configuration settings registered with the activity type.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ActivityTypeConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::ActivityTypeConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
         pub fn build(self) -> crate::output::DescribeActivityTypeOutput {
             crate::output::DescribeActivityTypeOutput {
-                type_info: self.type_info,
-                configuration: self.configuration,
+                type_info: self.type_info
+                ,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
@@ -1752,19 +1763,24 @@ impl DescribeActivityTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprecateWorkflowTypeOutput {}
+pub struct DeprecateWorkflowTypeOutput  {
+}
 /// See [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
 pub mod deprecate_workflow_type_output {
-
+    
     /// A builder for [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
         pub fn build(self) -> crate::output::DeprecateWorkflowTypeOutput {
-            crate::output::DeprecateWorkflowTypeOutput {}
+            crate::output::DeprecateWorkflowTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeprecateWorkflowTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
@@ -1776,19 +1792,24 @@ impl DeprecateWorkflowTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprecateDomainOutput {}
+pub struct DeprecateDomainOutput  {
+}
 /// See [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
 pub mod deprecate_domain_output {
-
+    
     /// A builder for [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
         pub fn build(self) -> crate::output::DeprecateDomainOutput {
-            crate::output::DeprecateDomainOutput {}
+            crate::output::DeprecateDomainOutput {
+            }
         }
     }
+    
+    
 }
 impl DeprecateDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
@@ -1800,19 +1821,24 @@ impl DeprecateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprecateActivityTypeOutput {}
+pub struct DeprecateActivityTypeOutput  {
+}
 /// See [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
 pub mod deprecate_activity_type_output {
-
+    
     /// A builder for [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
         pub fn build(self) -> crate::output::DeprecateActivityTypeOutput {
-            crate::output::DeprecateActivityTypeOutput {}
+            crate::output::DeprecateActivityTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeprecateActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
@@ -1824,7 +1850,7 @@ impl DeprecateActivityTypeOutput {
 /// <p>Contains the count of tasks in a task list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountPendingDecisionTasksOutput {
+pub struct CountPendingDecisionTasksOutput  {
     /// <p>The number of tasks in the task list.</p>
     #[doc(hidden)]
     pub count: i32,
@@ -1844,7 +1870,7 @@ impl CountPendingDecisionTasksOutput {
 }
 /// See [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
 pub mod count_pending_decision_tasks_output {
-
+    
     /// A builder for [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1859,8 +1885,7 @@ pub mod count_pending_decision_tasks_output {
         }
         /// <p>The number of tasks in the task list.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
         pub fn truncated(mut self, input: bool) -> Self {
@@ -1869,17 +1894,22 @@ pub mod count_pending_decision_tasks_output {
         }
         /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.truncated = input;
-            self
+            self.truncated = input; self
         }
         /// Consumes the builder and constructs a [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
         pub fn build(self) -> crate::output::CountPendingDecisionTasksOutput {
             crate::output::CountPendingDecisionTasksOutput {
-                count: self.count.unwrap_or_default(),
-                truncated: self.truncated.unwrap_or_default(),
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                truncated: self.truncated
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CountPendingDecisionTasksOutput {
     /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
@@ -1891,7 +1921,7 @@ impl CountPendingDecisionTasksOutput {
 /// <p>Contains the count of tasks in a task list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountPendingActivityTasksOutput {
+pub struct CountPendingActivityTasksOutput  {
     /// <p>The number of tasks in the task list.</p>
     #[doc(hidden)]
     pub count: i32,
@@ -1911,7 +1941,7 @@ impl CountPendingActivityTasksOutput {
 }
 /// See [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
 pub mod count_pending_activity_tasks_output {
-
+    
     /// A builder for [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1926,8 +1956,7 @@ pub mod count_pending_activity_tasks_output {
         }
         /// <p>The number of tasks in the task list.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
         pub fn truncated(mut self, input: bool) -> Self {
@@ -1936,17 +1965,22 @@ pub mod count_pending_activity_tasks_output {
         }
         /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.truncated = input;
-            self
+            self.truncated = input; self
         }
         /// Consumes the builder and constructs a [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
         pub fn build(self) -> crate::output::CountPendingActivityTasksOutput {
             crate::output::CountPendingActivityTasksOutput {
-                count: self.count.unwrap_or_default(),
-                truncated: self.truncated.unwrap_or_default(),
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                truncated: self.truncated
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CountPendingActivityTasksOutput {
     /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
@@ -1958,7 +1992,7 @@ impl CountPendingActivityTasksOutput {
 /// <p>Contains the count of workflow executions returned from <code>CountOpenWorkflowExecutions</code> or <code>CountClosedWorkflowExecutions</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountOpenWorkflowExecutionsOutput {
+pub struct CountOpenWorkflowExecutionsOutput  {
     /// <p>The number of workflow executions.</p>
     #[doc(hidden)]
     pub count: i32,
@@ -1978,7 +2012,7 @@ impl CountOpenWorkflowExecutionsOutput {
 }
 /// See [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
 pub mod count_open_workflow_executions_output {
-
+    
     /// A builder for [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1993,8 +2027,7 @@ pub mod count_open_workflow_executions_output {
         }
         /// <p>The number of workflow executions.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
         pub fn truncated(mut self, input: bool) -> Self {
@@ -2003,17 +2036,22 @@ pub mod count_open_workflow_executions_output {
         }
         /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.truncated = input;
-            self
+            self.truncated = input; self
         }
         /// Consumes the builder and constructs a [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::CountOpenWorkflowExecutionsOutput {
             crate::output::CountOpenWorkflowExecutionsOutput {
-                count: self.count.unwrap_or_default(),
-                truncated: self.truncated.unwrap_or_default(),
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                truncated: self.truncated
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CountOpenWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
@@ -2025,7 +2063,7 @@ impl CountOpenWorkflowExecutionsOutput {
 /// <p>Contains the count of workflow executions returned from <code>CountOpenWorkflowExecutions</code> or <code>CountClosedWorkflowExecutions</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountClosedWorkflowExecutionsOutput {
+pub struct CountClosedWorkflowExecutionsOutput  {
     /// <p>The number of workflow executions.</p>
     #[doc(hidden)]
     pub count: i32,
@@ -2045,7 +2083,7 @@ impl CountClosedWorkflowExecutionsOutput {
 }
 /// See [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
 pub mod count_closed_workflow_executions_output {
-
+    
     /// A builder for [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2060,8 +2098,7 @@ pub mod count_closed_workflow_executions_output {
         }
         /// <p>The number of workflow executions.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
         pub fn truncated(mut self, input: bool) -> Self {
@@ -2070,17 +2107,22 @@ pub mod count_closed_workflow_executions_output {
         }
         /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
-            self.truncated = input;
-            self
+            self.truncated = input; self
         }
         /// Consumes the builder and constructs a [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::CountClosedWorkflowExecutionsOutput {
             crate::output::CountClosedWorkflowExecutionsOutput {
-                count: self.count.unwrap_or_default(),
-                truncated: self.truncated.unwrap_or_default(),
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                truncated: self.truncated
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CountClosedWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
@@ -2088,3 +2130,4 @@ impl CountClosedWorkflowExecutionsOutput {
         crate::output::count_closed_workflow_executions_output::Builder::default()
     }
 }
+

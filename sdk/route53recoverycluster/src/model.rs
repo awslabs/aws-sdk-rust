@@ -3,7 +3,7 @@
 /// <p>There was a validation error on the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The field that had the validation exception.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The field that had the validation exception.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Information about the validation exception.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The field that had the validation exception.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Information about the validation exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>Information about the validation exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -99,22 +101,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Reason the request failed validation
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -125,7 +119,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -134,19 +128,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "other" => ValidationExceptionReason::Other,
             "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -155,16 +147,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cannotParse",
-            "fieldValidationFailed",
-            "other",
-            "unknownOperation",
+            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
         ]
     }
 }
@@ -177,7 +166,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>A routing control state entry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRoutingControlStateEntry {
+pub struct UpdateRoutingControlStateEntry  {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
     #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
@@ -187,17 +176,17 @@ pub struct UpdateRoutingControlStateEntry {
 }
 impl UpdateRoutingControlStateEntry {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> std::option::Option<& str> {
         self.routing_control_arn.as_deref()
     }
     /// <p>The routing control state in a set of routing control state entries.</p>
-    pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
+    pub fn routing_control_state(&self) -> std::option::Option<& crate::model::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
 }
 /// See [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
 pub mod update_routing_control_state_entry {
-
+    
     /// A builder for [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -211,12 +200,8 @@ pub mod update_routing_control_state_entry {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-        pub fn set_routing_control_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.routing_control_arn = input;
-            self
+        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.routing_control_arn = input; self
         }
         /// <p>The routing control state in a set of routing control state entries.</p>
         pub fn routing_control_state(mut self, input: crate::model::RoutingControlState) -> Self {
@@ -224,21 +209,21 @@ pub mod update_routing_control_state_entry {
             self
         }
         /// <p>The routing control state in a set of routing control state entries.</p>
-        pub fn set_routing_control_state(
-            mut self,
-            input: std::option::Option<crate::model::RoutingControlState>,
-        ) -> Self {
-            self.routing_control_state = input;
-            self
+        pub fn set_routing_control_state(mut self, input: std::option::Option<crate::model::RoutingControlState>) -> Self {
+            self.routing_control_state = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
         pub fn build(self) -> crate::model::UpdateRoutingControlStateEntry {
             crate::model::UpdateRoutingControlStateEntry {
-                routing_control_arn: self.routing_control_arn,
-                routing_control_state: self.routing_control_state,
+                routing_control_arn: self.routing_control_arn
+                ,
+                routing_control_state: self.routing_control_state
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRoutingControlStateEntry {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
@@ -253,9 +238,9 @@ impl UpdateRoutingControlStateEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let routingcontrolstate = unimplemented!();
 /// match routingcontrolstate {
@@ -277,60 +262,52 @@ impl UpdateRoutingControlStateEntry {
 /// Specifically, when `routingcontrolstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RoutingControlState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RoutingControlState {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     #[allow(missing_docs)] // documentation missing in model
     On,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RoutingControlState {
     fn from(s: &str) -> Self {
         match s {
             "Off" => RoutingControlState::Off,
             "On" => RoutingControlState::On,
-            other => {
-                RoutingControlState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RoutingControlState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RoutingControlState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RoutingControlState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RoutingControlState::from(s))
+                }
+            }
 impl RoutingControlState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RoutingControlState::Off => "Off",
             RoutingControlState::On => "On",
-            RoutingControlState::Unknown(value) => value.as_str(),
+            RoutingControlState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Off", "On"]
+        &[
+            "Off", "On"
+        ]
     }
 }
 impl AsRef<str> for RoutingControlState {
@@ -342,7 +319,7 @@ impl AsRef<str> for RoutingControlState {
 /// <p>A routing control, which is a simple on/off switch that you can use to route traffic to cells. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoutingControl {
+pub struct RoutingControl  {
     /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
     #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
@@ -361,29 +338,29 @@ pub struct RoutingControl {
 }
 impl RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> std::option::Option<& str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The name of the control panel where the routing control is located.</p>
-    pub fn control_panel_name(&self) -> std::option::Option<&str> {
+    pub fn control_panel_name(&self) -> std::option::Option<& str> {
         self.control_panel_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> std::option::Option<& str> {
         self.routing_control_arn.as_deref()
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(&self) -> std::option::Option<&str> {
+    pub fn routing_control_name(&self) -> std::option::Option<& str> {
         self.routing_control_name.as_deref()
     }
     /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
-    pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
+    pub fn routing_control_state(&self) -> std::option::Option<& crate::model::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
 }
 /// See [`RoutingControl`](crate::model::RoutingControl).
 pub mod routing_control {
-
+    
     /// A builder for [`RoutingControl`](crate::model::RoutingControl).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -400,12 +377,8 @@ pub mod routing_control {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
-        pub fn set_control_panel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.control_panel_arn = input;
-            self
+        pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.control_panel_arn = input; self
         }
         /// <p>The name of the control panel where the routing control is located.</p>
         pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -413,12 +386,8 @@ pub mod routing_control {
             self
         }
         /// <p>The name of the control panel where the routing control is located.</p>
-        pub fn set_control_panel_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.control_panel_name = input;
-            self
+        pub fn set_control_panel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.control_panel_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -426,12 +395,8 @@ pub mod routing_control {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn set_routing_control_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.routing_control_arn = input;
-            self
+        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.routing_control_arn = input; self
         }
         /// <p>The name of the routing control.</p>
         pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -439,12 +404,8 @@ pub mod routing_control {
             self
         }
         /// <p>The name of the routing control.</p>
-        pub fn set_routing_control_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.routing_control_name = input;
-            self
+        pub fn set_routing_control_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.routing_control_name = input; self
         }
         /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
         pub fn routing_control_state(mut self, input: crate::model::RoutingControlState) -> Self {
@@ -452,24 +413,27 @@ pub mod routing_control {
             self
         }
         /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
-        pub fn set_routing_control_state(
-            mut self,
-            input: std::option::Option<crate::model::RoutingControlState>,
-        ) -> Self {
-            self.routing_control_state = input;
-            self
+        pub fn set_routing_control_state(mut self, input: std::option::Option<crate::model::RoutingControlState>) -> Self {
+            self.routing_control_state = input; self
         }
         /// Consumes the builder and constructs a [`RoutingControl`](crate::model::RoutingControl).
         pub fn build(self) -> crate::model::RoutingControl {
             crate::model::RoutingControl {
-                control_panel_arn: self.control_panel_arn,
-                control_panel_name: self.control_panel_name,
-                routing_control_arn: self.routing_control_arn,
-                routing_control_name: self.routing_control_name,
-                routing_control_state: self.routing_control_state,
+                control_panel_arn: self.control_panel_arn
+                ,
+                control_panel_name: self.control_panel_name
+                ,
+                routing_control_arn: self.routing_control_arn
+                ,
+                routing_control_name: self.routing_control_name
+                ,
+                routing_control_state: self.routing_control_state
+                ,
             }
         }
     }
+    
+    
 }
 impl RoutingControl {
     /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl).
@@ -477,3 +441,4 @@ impl RoutingControl {
         crate::model::routing_control::Builder::default()
     }
 }
+

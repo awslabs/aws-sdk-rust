@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFragmentsOutput {
+pub struct ListFragmentsOutput  {
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
     #[doc(hidden)]
     pub fragments: std::option::Option<std::vec::Vec<crate::model::Fragment>>,
@@ -12,17 +12,17 @@ pub struct ListFragmentsOutput {
 }
 impl ListFragmentsOutput {
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
-    pub fn fragments(&self) -> std::option::Option<&[crate::model::Fragment]> {
+    pub fn fragments(&self) -> std::option::Option<& [crate::model::Fragment]> {
         self.fragments.as_deref()
     }
     /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
 pub mod list_fragments_output {
-
+    
     /// A builder for [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod list_fragments_output {
         /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
         pub fn fragments(mut self, input: crate::model::Fragment) -> Self {
             let mut v = self.fragments.unwrap_or_default();
-            v.push(input);
-            self.fragments = Some(v);
-            self
+                            v.push(input);
+                            self.fragments = Some(v);
+                            self
         }
         /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
-        pub fn set_fragments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Fragment>>,
-        ) -> Self {
-            self.fragments = input;
-            self
+        pub fn set_fragments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Fragment>>) -> Self {
+            self.fragments = input; self
         }
         /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod list_fragments_output {
         }
         /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
         pub fn build(self) -> crate::output::ListFragmentsOutput {
             crate::output::ListFragmentsOutput {
-                fragments: self.fragments,
-                next_token: self.next_token,
+                fragments: self.fragments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFragmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
@@ -78,48 +77,48 @@ impl ListFragmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetMediaForFragmentListOutput {
+pub struct GetMediaForFragmentListOutput  {
     /// <p>The content type of the requested media.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p>
-    /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.</p> </li>
-    /// </ul>
-    /// <p>The following tags will be included if an exception occurs:</p>
-    /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
+    /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p> 
+    /// <ul> 
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li> 
+    /// <li> <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.</p> </li> 
+    /// <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.</p> </li> 
+    /// </ul> 
+    /// <p>The following tags will be included if an exception occurs:</p> 
+    /// <ul> 
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li> 
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li> 
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li> 
     /// </ul>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
 }
 impl GetMediaForFragmentListOutput {
     /// <p>The content type of the requested media.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
-    /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p>
-    /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.</p> </li>
+    /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p> 
+    /// <ul> 
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li> 
+    /// <li> <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.</p> </li> 
+    /// <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.</p> </li> 
+    /// </ul> 
+    /// <p>The following tags will be included if an exception occurs:</p> 
+    /// <ul> 
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li> 
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li> 
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li> 
     /// </ul>
-    /// <p>The following tags will be included if an exception occurs:</p>
-    /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
-    /// </ul>
-    pub fn payload(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.payload
     }
 }
 /// See [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
 pub mod get_media_for_fragment_list_output {
-
+    
     /// A builder for [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -134,52 +133,52 @@ pub mod get_media_for_fragment_list_output {
         }
         /// <p>The content type of the requested media.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
-        /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p>
-        /// <ul>
-        /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li>
-        /// <li> <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.</p> </li>
-        /// <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.</p> </li>
-        /// </ul>
-        /// <p>The following tags will be included if an exception occurs:</p>
-        /// <ul>
-        /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-        /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-        /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
+        /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p> 
+        /// <ul> 
+        /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li> 
+        /// <li> <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.</p> </li> 
+        /// <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.</p> </li> 
+        /// </ul> 
+        /// <p>The following tags will be included if an exception occurs:</p> 
+        /// <ul> 
+        /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li> 
+        /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li> 
+        /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li> 
         /// </ul>
         pub fn payload(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.payload = Some(input);
             self
         }
-        /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p>
-        /// <ul>
-        /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li>
-        /// <li> <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.</p> </li>
-        /// <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.</p> </li>
+        /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p> 
+        /// <ul> 
+        /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li> 
+        /// <li> <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.</p> </li> 
+        /// <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.</p> </li> 
+        /// </ul> 
+        /// <p>The following tags will be included if an exception occurs:</p> 
+        /// <ul> 
+        /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li> 
+        /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li> 
+        /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li> 
         /// </ul>
-        /// <p>The following tags will be included if an exception occurs:</p>
-        /// <ul>
-        /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-        /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-        /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
-        /// </ul>
-        pub fn set_payload(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.payload = input;
-            self
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.payload = input; self
         }
         /// Consumes the builder and constructs a [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
         pub fn build(self) -> crate::output::GetMediaForFragmentListOutput {
             crate::output::GetMediaForFragmentListOutput {
-                content_type: self.content_type,
-                payload: self.payload.unwrap_or_default(),
+                content_type: self.content_type
+                ,
+                payload: self.payload
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMediaForFragmentListOutput {
     /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
@@ -191,7 +190,7 @@ impl GetMediaForFragmentListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImagesOutput {
+pub struct GetImagesOutput  {
     /// <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image. </p>
     #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
@@ -201,17 +200,17 @@ pub struct GetImagesOutput {
 }
 impl GetImagesOutput {
     /// <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image. </p>
-    pub fn images(&self) -> std::option::Option<&[crate::model::Image]> {
+    pub fn images(&self) -> std::option::Option<& [crate::model::Image]> {
         self.images.as_deref()
     }
     /// <p>The encrypted token that was used in the request to get more images.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetImagesOutput`](crate::output::GetImagesOutput).
 pub mod get_images_output {
-
+    
     /// A builder for [`GetImagesOutput`](crate::output::GetImagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -226,17 +225,13 @@ pub mod get_images_output {
         /// <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image. </p>
         pub fn images(mut self, input: crate::model::Image) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(input);
-            self.images = Some(v);
-            self
+                            v.push(input);
+                            self.images = Some(v);
+                            self
         }
         /// <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image. </p>
-        pub fn set_images(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Image>>,
-        ) -> Self {
-            self.images = input;
-            self
+        pub fn set_images(mut self, input: std::option::Option<std::vec::Vec<crate::model::Image>>) -> Self {
+            self.images = input; self
         }
         /// <p>The encrypted token that was used in the request to get more images.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,17 +240,20 @@ pub mod get_images_output {
         }
         /// <p>The encrypted token that was used in the request to get more images.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetImagesOutput`](crate::output::GetImagesOutput).
         pub fn build(self) -> crate::output::GetImagesOutput {
             crate::output::GetImagesOutput {
-                images: self.images,
-                next_token: self.next_token,
+                images: self.images
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetImagesOutput {
     /// Creates a new builder-style object to manufacture [`GetImagesOutput`](crate::output::GetImagesOutput).
@@ -267,20 +265,20 @@ impl GetImagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHlsStreamingSessionUrlOutput {
+pub struct GetHlsStreamingSessionUrlOutput  {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
     #[doc(hidden)]
     pub hls_streaming_session_url: std::option::Option<std::string::String>,
 }
 impl GetHlsStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
-    pub fn hls_streaming_session_url(&self) -> std::option::Option<&str> {
+    pub fn hls_streaming_session_url(&self) -> std::option::Option<& str> {
         self.hls_streaming_session_url.as_deref()
     }
 }
 /// See [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
 pub mod get_hls_streaming_session_url_output {
-
+    
     /// A builder for [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -293,20 +291,19 @@ pub mod get_hls_streaming_session_url_output {
             self
         }
         /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
-        pub fn set_hls_streaming_session_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hls_streaming_session_url = input;
-            self
+        pub fn set_hls_streaming_session_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hls_streaming_session_url = input; self
         }
         /// Consumes the builder and constructs a [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
         pub fn build(self) -> crate::output::GetHlsStreamingSessionUrlOutput {
             crate::output::GetHlsStreamingSessionUrlOutput {
-                hls_streaming_session_url: self.hls_streaming_session_url,
+                hls_streaming_session_url: self.hls_streaming_session_url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetHlsStreamingSessionUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
@@ -318,20 +315,20 @@ impl GetHlsStreamingSessionUrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDashStreamingSessionUrlOutput {
+pub struct GetDashStreamingSessionUrlOutput  {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
     #[doc(hidden)]
     pub dash_streaming_session_url: std::option::Option<std::string::String>,
 }
 impl GetDashStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
-    pub fn dash_streaming_session_url(&self) -> std::option::Option<&str> {
+    pub fn dash_streaming_session_url(&self) -> std::option::Option<& str> {
         self.dash_streaming_session_url.as_deref()
     }
 }
 /// See [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
 pub mod get_dash_streaming_session_url_output {
-
+    
     /// A builder for [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -344,20 +341,19 @@ pub mod get_dash_streaming_session_url_output {
             self
         }
         /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
-        pub fn set_dash_streaming_session_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dash_streaming_session_url = input;
-            self
+        pub fn set_dash_streaming_session_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dash_streaming_session_url = input; self
         }
         /// Consumes the builder and constructs a [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
         pub fn build(self) -> crate::output::GetDashStreamingSessionUrlOutput {
             crate::output::GetDashStreamingSessionUrlOutput {
-                dash_streaming_session_url: self.dash_streaming_session_url,
+                dash_streaming_session_url: self.dash_streaming_session_url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDashStreamingSessionUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
@@ -369,7 +365,7 @@ impl GetDashStreamingSessionUrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetClipOutput {
+pub struct GetClipOutput  {
     /// <p>The content type of the media in the requested clip.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
@@ -378,17 +374,17 @@ pub struct GetClipOutput {
 }
 impl GetClipOutput {
     /// <p>The content type of the media in the requested clip.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-    pub fn payload(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.payload
     }
 }
 /// See [`GetClipOutput`](crate::output::GetClipOutput).
 pub mod get_clip_output {
-
+    
     /// A builder for [`GetClipOutput`](crate::output::GetClipOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -403,8 +399,7 @@ pub mod get_clip_output {
         }
         /// <p>The content type of the media in the requested clip.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
         pub fn payload(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -412,21 +407,22 @@ pub mod get_clip_output {
             self
         }
         /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-        pub fn set_payload(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.payload = input;
-            self
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.payload = input; self
         }
         /// Consumes the builder and constructs a [`GetClipOutput`](crate::output::GetClipOutput).
         pub fn build(self) -> crate::output::GetClipOutput {
             crate::output::GetClipOutput {
-                content_type: self.content_type,
-                payload: self.payload.unwrap_or_default(),
+                content_type: self.content_type
+                ,
+                payload: self.payload
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetClipOutput {
     /// Creates a new builder-style object to manufacture [`GetClipOutput`](crate::output::GetClipOutput).
@@ -434,3 +430,4 @@ impl GetClipOutput {
         crate::output::get_clip_output::Builder::default()
     }
 }
+

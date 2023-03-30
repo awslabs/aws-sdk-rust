@@ -3,7 +3,7 @@
 /// <p>The input fails to meet the constraints specified in Amazon Security Lake. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>Name of the validation exception.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>Name of the validation exception.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Describes the error encountered.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>Name of the validation exception.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Describes the error encountered.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>Describes the error encountered.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -99,22 +101,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -125,7 +119,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -134,19 +128,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "other" => ValidationExceptionReason::Other,
             "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -155,16 +147,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cannotParse",
-            "fieldValidationFailed",
-            "other",
-            "unknownOperation",
+            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
         ]
     }
 }
@@ -180,9 +169,9 @@ impl AsRef<str> for ValidationExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let httpsmethod = unimplemented!();
 /// match httpsmethod {
@@ -204,58 +193,52 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Specifically, when `httpsmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HttpsMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HttpsMethod {
     #[allow(missing_docs)] // documentation missing in model
     Post,
     #[allow(missing_docs)] // documentation missing in model
     Put,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HttpsMethod {
     fn from(s: &str) -> Self {
         match s {
             "POST" => HttpsMethod::Post,
             "PUT" => HttpsMethod::Put,
-            other => HttpsMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HttpsMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HttpsMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HttpsMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HttpsMethod::from(s))
+                }
+            }
 impl HttpsMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HttpsMethod::Post => "POST",
             HttpsMethod::Put => "PUT",
-            HttpsMethod::Unknown(value) => value.as_str(),
+            HttpsMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["POST", "PUT"]
+        &[
+            "POST", "PUT"
+        ]
     }
 }
 impl AsRef<str> for HttpsMethod {
@@ -267,7 +250,7 @@ impl AsRef<str> for HttpsMethod {
 /// <p>Provides details about the Amazon Security Lake account subscription. Subscribers are notified of new objects for a source as the data is written to your Amazon S3 bucket for Security Lake. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscriberResource {
+pub struct SubscriberResource  {
     /// <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
     #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
@@ -295,7 +278,7 @@ pub struct SubscriberResource {
     /// <p>The ARN for the Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
-    /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+    /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber. </p> 
     /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>. </p>
     #[doc(hidden)]
     pub access_types: std::option::Option<std::vec::Vec<crate::model::AccessType>>,
@@ -317,70 +300,70 @@ pub struct SubscriberResource {
 }
 impl SubscriberResource {
     /// <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-    pub fn subscription_id(&self) -> std::option::Option<&str> {
+    pub fn subscription_id(&self) -> std::option::Option<& str> {
         self.subscription_id.as_deref()
     }
     /// <p>Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more information, see the Amazon Security Lake User Guide.</p>
-    pub fn source_types(&self) -> std::option::Option<&[crate::model::SourceType]> {
+    pub fn source_types(&self) -> std::option::Option<& [crate::model::SourceType]> {
         self.source_types.as_deref()
     }
     /// <p>The Amazon Web Services account ID you are using to create your Amazon Security Lake account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of your Amazon Security Lake subscriber account.</p>
-    pub fn subscriber_name(&self) -> std::option::Option<&str> {
+    pub fn subscriber_name(&self) -> std::option::Option<& str> {
         self.subscriber_name.as_deref()
     }
     /// <p>The subscriber descriptions for a subscriber account. The description for a subscriber includes <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriptionId</code>.</p>
-    pub fn subscriber_description(&self) -> std::option::Option<&str> {
+    pub fn subscriber_description(&self) -> std::option::Option<& str> {
         self.subscriber_description.as_deref()
     }
     /// <p>The subscription status of the Amazon Security Lake subscriber account.</p>
-    pub fn subscription_status(&self) -> std::option::Option<&crate::model::SubscriptionStatus> {
+    pub fn subscription_status(&self) -> std::option::Option<& crate::model::SubscriptionStatus> {
         self.subscription_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The ARN for the Amazon Simple Notification Service.</p>
-    pub fn sns_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_arn(&self) -> std::option::Option<& str> {
         self.sns_arn.as_deref()
     }
     /// <p>The ARN for the Amazon S3 bucket. </p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
-    /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+    /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber. </p> 
     /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>. </p>
-    pub fn access_types(&self) -> std::option::Option<&[crate::model::AccessType]> {
+    pub fn access_types(&self) -> std::option::Option<& [crate::model::AccessType]> {
         self.access_types.as_deref()
     }
     /// <p>The subscription endpoint to which exception messages are posted. </p>
-    pub fn subscription_endpoint(&self) -> std::option::Option<&str> {
+    pub fn subscription_endpoint(&self) -> std::option::Option<& str> {
         self.subscription_endpoint.as_deref()
     }
     /// <p>The subscription protocol to which exception messages are posted. </p>
-    pub fn subscription_protocol(&self) -> std::option::Option<&crate::model::EndpointProtocol> {
+    pub fn subscription_protocol(&self) -> std::option::Option<& crate::model::EndpointProtocol> {
         self.subscription_protocol.as_ref()
     }
     /// <p>The external ID of the subscriber. The external ID lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The date and time when the subscription was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the subscription was created. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`SubscriberResource`](crate::model::SubscriberResource).
 pub mod subscriber_resource {
-
+    
     /// A builder for [`SubscriberResource`](crate::model::SubscriberResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -407,12 +390,8 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-        pub fn set_subscription_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_id = input;
-            self
+        pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_id = input; self
         }
         /// Appends an item to `source_types`.
         ///
@@ -421,17 +400,13 @@ pub mod subscriber_resource {
         /// <p>Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more information, see the Amazon Security Lake User Guide.</p>
         pub fn source_types(mut self, input: crate::model::SourceType) -> Self {
             let mut v = self.source_types.unwrap_or_default();
-            v.push(input);
-            self.source_types = Some(v);
-            self
+                            v.push(input);
+                            self.source_types = Some(v);
+                            self
         }
         /// <p>Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more information, see the Amazon Security Lake User Guide.</p>
-        pub fn set_source_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceType>>,
-        ) -> Self {
-            self.source_types = input;
-            self
+        pub fn set_source_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceType>>) -> Self {
+            self.source_types = input; self
         }
         /// <p>The Amazon Web Services account ID you are using to create your Amazon Security Lake account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -440,8 +415,7 @@ pub mod subscriber_resource {
         }
         /// <p>The Amazon Web Services account ID you are using to create your Amazon Security Lake account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The name of your Amazon Security Lake subscriber account.</p>
         pub fn subscriber_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -449,12 +423,8 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The name of your Amazon Security Lake subscriber account.</p>
-        pub fn set_subscriber_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscriber_name = input;
-            self
+        pub fn set_subscriber_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscriber_name = input; self
         }
         /// <p>The subscriber descriptions for a subscriber account. The description for a subscriber includes <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriptionId</code>.</p>
         pub fn subscriber_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -462,12 +432,8 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The subscriber descriptions for a subscriber account. The description for a subscriber includes <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriptionId</code>.</p>
-        pub fn set_subscriber_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscriber_description = input;
-            self
+        pub fn set_subscriber_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscriber_description = input; self
         }
         /// <p>The subscription status of the Amazon Security Lake subscriber account.</p>
         pub fn subscription_status(mut self, input: crate::model::SubscriptionStatus) -> Self {
@@ -475,12 +441,8 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The subscription status of the Amazon Security Lake subscriber account.</p>
-        pub fn set_subscription_status(
-            mut self,
-            input: std::option::Option<crate::model::SubscriptionStatus>,
-        ) -> Self {
-            self.subscription_status = input;
-            self
+        pub fn set_subscription_status(mut self, input: std::option::Option<crate::model::SubscriptionStatus>) -> Self {
+            self.subscription_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -489,8 +451,7 @@ pub mod subscriber_resource {
         }
         /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The ARN for the Amazon Simple Notification Service.</p>
         pub fn sns_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -499,8 +460,7 @@ pub mod subscriber_resource {
         }
         /// <p>The ARN for the Amazon Simple Notification Service.</p>
         pub fn set_sns_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sns_arn = input;
-            self
+            self.sns_arn = input; self
         }
         /// <p>The ARN for the Amazon S3 bucket. </p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -508,33 +468,25 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The ARN for the Amazon S3 bucket. </p>
-        pub fn set_s3_bucket_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_arn = input;
-            self
+        pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_arn = input; self
         }
         /// Appends an item to `access_types`.
         ///
         /// To override the contents of this collection use [`set_access_types`](Self::set_access_types).
         ///
-        /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+        /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber. </p> 
         /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>. </p>
         pub fn access_types(mut self, input: crate::model::AccessType) -> Self {
             let mut v = self.access_types.unwrap_or_default();
-            v.push(input);
-            self.access_types = Some(v);
-            self
+                            v.push(input);
+                            self.access_types = Some(v);
+                            self
         }
-        /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+        /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber. </p> 
         /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>. </p>
-        pub fn set_access_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessType>>,
-        ) -> Self {
-            self.access_types = input;
-            self
+        pub fn set_access_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessType>>) -> Self {
+            self.access_types = input; self
         }
         /// <p>The subscription endpoint to which exception messages are posted. </p>
         pub fn subscription_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -542,12 +494,8 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The subscription endpoint to which exception messages are posted. </p>
-        pub fn set_subscription_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_endpoint = input;
-            self
+        pub fn set_subscription_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_endpoint = input; self
         }
         /// <p>The subscription protocol to which exception messages are posted. </p>
         pub fn subscription_protocol(mut self, input: crate::model::EndpointProtocol) -> Self {
@@ -555,12 +503,8 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The subscription protocol to which exception messages are posted. </p>
-        pub fn set_subscription_protocol(
-            mut self,
-            input: std::option::Option<crate::model::EndpointProtocol>,
-        ) -> Self {
-            self.subscription_protocol = input;
-            self
+        pub fn set_subscription_protocol(mut self, input: std::option::Option<crate::model::EndpointProtocol>) -> Self {
+            self.subscription_protocol = input; self
         }
         /// <p>The external ID of the subscriber. The external ID lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -569,8 +513,7 @@ pub mod subscriber_resource {
         }
         /// <p>The external ID of the subscriber. The external ID lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.external_id = input;
-            self
+            self.external_id = input; self
         }
         /// <p>The date and time when the subscription was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -578,12 +521,8 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The date and time when the subscription was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The date and time when the subscription was created. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -591,34 +530,47 @@ pub mod subscriber_resource {
             self
         }
         /// <p>The date and time when the subscription was created. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`SubscriberResource`](crate::model::SubscriberResource).
         pub fn build(self) -> crate::model::SubscriberResource {
             crate::model::SubscriberResource {
-                subscription_id: self.subscription_id,
-                source_types: self.source_types,
-                account_id: self.account_id,
-                subscriber_name: self.subscriber_name,
-                subscriber_description: self.subscriber_description,
-                subscription_status: self.subscription_status,
-                role_arn: self.role_arn,
-                sns_arn: self.sns_arn,
-                s3_bucket_arn: self.s3_bucket_arn,
-                access_types: self.access_types,
-                subscription_endpoint: self.subscription_endpoint,
-                subscription_protocol: self.subscription_protocol,
-                external_id: self.external_id,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                subscription_id: self.subscription_id
+                ,
+                source_types: self.source_types
+                ,
+                account_id: self.account_id
+                ,
+                subscriber_name: self.subscriber_name
+                ,
+                subscriber_description: self.subscriber_description
+                ,
+                subscription_status: self.subscription_status
+                ,
+                role_arn: self.role_arn
+                ,
+                sns_arn: self.sns_arn
+                ,
+                s3_bucket_arn: self.s3_bucket_arn
+                ,
+                access_types: self.access_types
+                ,
+                subscription_endpoint: self.subscription_endpoint
+                ,
+                subscription_protocol: self.subscription_protocol
+                ,
+                external_id: self.external_id
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl SubscriberResource {
     /// Creates a new builder-style object to manufacture [`SubscriberResource`](crate::model::SubscriberResource).
@@ -633,9 +585,9 @@ impl SubscriberResource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let endpointprotocol = unimplemented!();
 /// match endpointprotocol {
@@ -657,58 +609,52 @@ impl SubscriberResource {
 /// Specifically, when `endpointprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EndpointProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EndpointProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Https,
     #[allow(missing_docs)] // documentation missing in model
     Sqs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EndpointProtocol {
     fn from(s: &str) -> Self {
         match s {
             "HTTPS" => EndpointProtocol::Https,
             "SQS" => EndpointProtocol::Sqs,
-            other => EndpointProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EndpointProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EndpointProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EndpointProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EndpointProtocol::from(s))
+                }
+            }
 impl EndpointProtocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointProtocol::Https => "HTTPS",
             EndpointProtocol::Sqs => "SQS",
-            EndpointProtocol::Unknown(value) => value.as_str(),
+            EndpointProtocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTPS", "SQS"]
+        &[
+            "HTTPS", "SQS"
+        ]
     }
 }
 impl AsRef<str> for EndpointProtocol {
@@ -723,9 +669,9 @@ impl AsRef<str> for EndpointProtocol {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accesstype = unimplemented!();
 /// match accesstype {
@@ -747,58 +693,52 @@ impl AsRef<str> for EndpointProtocol {
 /// Specifically, when `accesstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessType {
     #[allow(missing_docs)] // documentation missing in model
     Lakeformation,
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessType {
     fn from(s: &str) -> Self {
         match s {
             "LAKEFORMATION" => AccessType::Lakeformation,
             "S3" => AccessType::S3,
-            other => AccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessType::from(s))
+                }
+            }
 impl AccessType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessType::Lakeformation => "LAKEFORMATION",
             AccessType::S3 => "S3",
-            AccessType::Unknown(value) => value.as_str(),
+            AccessType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LAKEFORMATION", "S3"]
+        &[
+            "LAKEFORMATION", "S3"
+        ]
     }
 }
 impl AsRef<str> for AccessType {
@@ -813,9 +753,9 @@ impl AsRef<str> for AccessType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subscriptionstatus = unimplemented!();
 /// match subscriptionstatus {
@@ -839,22 +779,14 @@ impl AsRef<str> for AccessType {
 /// Specifically, when `subscriptionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubscriptionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubscriptionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -865,7 +797,7 @@ pub enum SubscriptionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubscriptionStatus {
     fn from(s: &str) -> Self {
@@ -874,19 +806,17 @@ impl std::convert::From<&str> for SubscriptionStatus {
             "DEACTIVATED" => SubscriptionStatus::Deactivated,
             "PENDING" => SubscriptionStatus::Pending,
             "READY" => SubscriptionStatus::Ready,
-            other => {
-                SubscriptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SubscriptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubscriptionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubscriptionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubscriptionStatus::from(s))
+                }
+            }
 impl SubscriptionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -895,12 +825,14 @@ impl SubscriptionStatus {
             SubscriptionStatus::Deactivated => "DEACTIVATED",
             SubscriptionStatus::Pending => "PENDING",
             SubscriptionStatus::Ready => "READY",
-            SubscriptionStatus::Unknown(value) => value.as_str(),
+            SubscriptionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DEACTIVATED", "PENDING", "READY"]
+        &[
+            "ACTIVE", "DEACTIVATED", "PENDING", "READY"
+        ]
     }
 }
 impl AsRef<str> for SubscriptionStatus {
@@ -930,14 +862,8 @@ pub enum SourceType {
 impl SourceType {
     /// Tries to convert the enum instance into [`AwsSourceType`](crate::model::SourceType::AwsSourceType), extracting the inner [`AwsLogSourceType`](crate::model::AwsLogSourceType).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_source_type(
-        &self,
-    ) -> std::result::Result<&crate::model::AwsLogSourceType, &Self> {
-        if let SourceType::AwsSourceType(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_aws_source_type(&self) -> std::result::Result<&crate::model::AwsLogSourceType, &Self> {
+        if let SourceType::AwsSourceType(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AwsSourceType`](crate::model::SourceType::AwsSourceType).
     pub fn is_aws_source_type(&self) -> bool {
@@ -946,11 +872,7 @@ impl SourceType {
     /// Tries to convert the enum instance into [`CustomSourceType`](crate::model::SourceType::CustomSourceType), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_custom_source_type(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let SourceType::CustomSourceType(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let SourceType::CustomSourceType(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`CustomSourceType`](crate::model::SourceType::CustomSourceType).
     pub fn is_custom_source_type(&self) -> bool {
@@ -968,9 +890,9 @@ impl SourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let awslogsourcetype = unimplemented!();
 /// match awslogsourcetype {
@@ -994,22 +916,14 @@ impl SourceType {
 /// Specifically, when `awslogsourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AwsLogSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AwsLogSourceType {
     #[allow(missing_docs)] // documentation missing in model
     CloudTrail,
@@ -1020,7 +934,7 @@ pub enum AwsLogSourceType {
     #[allow(missing_docs)] // documentation missing in model
     VpcFlow,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AwsLogSourceType {
     fn from(s: &str) -> Self {
@@ -1029,17 +943,17 @@ impl std::convert::From<&str> for AwsLogSourceType {
             "ROUTE53" => AwsLogSourceType::Route53,
             "SH_FINDINGS" => AwsLogSourceType::ShFindings,
             "VPC_FLOW" => AwsLogSourceType::VpcFlow,
-            other => AwsLogSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AwsLogSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AwsLogSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AwsLogSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AwsLogSourceType::from(s))
+                }
+            }
 impl AwsLogSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1048,12 +962,14 @@ impl AwsLogSourceType {
             AwsLogSourceType::Route53 => "ROUTE53",
             AwsLogSourceType::ShFindings => "SH_FINDINGS",
             AwsLogSourceType::VpcFlow => "VPC_FLOW",
-            AwsLogSourceType::Unknown(value) => value.as_str(),
+            AwsLogSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD_TRAIL", "ROUTE53", "SH_FINDINGS", "VPC_FLOW"]
+        &[
+            "CLOUD_TRAIL", "ROUTE53", "SH_FINDINGS", "VPC_FLOW"
+        ]
     }
 }
 impl AsRef<str> for AwsLogSourceType {
@@ -1068,9 +984,9 @@ impl AsRef<str> for AwsLogSourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subscriptionprotocoltype = unimplemented!();
 /// match subscriptionprotocoltype {
@@ -1099,22 +1015,14 @@ impl AsRef<str> for AwsLogSourceType {
 /// Specifically, when `subscriptionprotocoltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubscriptionProtocolType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubscriptionProtocolType {
     #[allow(missing_docs)] // documentation missing in model
     App,
@@ -1135,7 +1043,7 @@ pub enum SubscriptionProtocolType {
     #[allow(missing_docs)] // documentation missing in model
     Sqs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubscriptionProtocolType {
     fn from(s: &str) -> Self {
@@ -1149,19 +1057,17 @@ impl std::convert::From<&str> for SubscriptionProtocolType {
             "LAMBDA" => SubscriptionProtocolType::Lambda,
             "SMS" => SubscriptionProtocolType::Sms,
             "SQS" => SubscriptionProtocolType::Sqs,
-            other => SubscriptionProtocolType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SubscriptionProtocolType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubscriptionProtocolType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubscriptionProtocolType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubscriptionProtocolType::from(s))
+                }
+            }
 impl SubscriptionProtocolType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1175,21 +1081,13 @@ impl SubscriptionProtocolType {
             SubscriptionProtocolType::Lambda => "LAMBDA",
             SubscriptionProtocolType::Sms => "SMS",
             SubscriptionProtocolType::Sqs => "SQS",
-            SubscriptionProtocolType::Unknown(value) => value.as_str(),
+            SubscriptionProtocolType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "APP",
-            "EMAIL",
-            "EMAIL_JSON",
-            "FIREHOSE",
-            "HTTP",
-            "HTTPS",
-            "LAMBDA",
-            "SMS",
-            "SQS",
+            "APP", "EMAIL", "EMAIL_JSON", "FIREHOSE", "HTTP", "HTTPS", "LAMBDA", "SMS", "SQS"
         ]
     }
 }
@@ -1202,7 +1100,7 @@ impl AsRef<str> for SubscriptionProtocolType {
 /// <p>Provides details of Amazon Security Lake configuration object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LakeConfigurationRequest {
+pub struct LakeConfigurationRequest  {
     /// <p>The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.</p>
     #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
@@ -1211,9 +1109,8 @@ pub struct LakeConfigurationRequest {
     pub retention_settings: std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define.</p>
     #[doc(hidden)]
-    pub tags_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p>
+    pub tags_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p> 
     /// <p>Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup Region. </p>
     #[doc(hidden)]
     pub replication_destination_regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
@@ -1223,44 +1120,37 @@ pub struct LakeConfigurationRequest {
 }
 impl LakeConfigurationRequest {
     /// <p>The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>Retention settings for the destination Amazon S3 buckets. </p>
-    pub fn retention_settings(&self) -> std::option::Option<&[crate::model::RetentionSetting]> {
+    pub fn retention_settings(&self) -> std::option::Option<& [crate::model::RetentionSetting]> {
         self.retention_settings.as_deref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags_map.as_ref()
     }
-    /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p>
+    /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p> 
     /// <p>Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup Region. </p>
-    pub fn replication_destination_regions(&self) -> std::option::Option<&[crate::model::Region]> {
+    pub fn replication_destination_regions(&self) -> std::option::Option<& [crate::model::Region]> {
         self.replication_destination_regions.as_deref()
     }
     /// <p>Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management (IAM) role you created that is managed by Security Lake, to ensure the replication setting is correct. </p>
-    pub fn replication_role_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_role_arn(&self) -> std::option::Option<& str> {
         self.replication_role_arn.as_deref()
     }
 }
 /// See [`LakeConfigurationRequest`](crate::model::LakeConfigurationRequest).
 pub mod lake_configuration_request {
-
+    
     /// A builder for [`LakeConfigurationRequest`](crate::model::LakeConfigurationRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_key: std::option::Option<std::string::String>,
-        pub(crate) retention_settings:
-            std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>,
-        pub(crate) tags_map: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) replication_destination_regions:
-            std::option::Option<std::vec::Vec<crate::model::Region>>,
+        pub(crate) retention_settings: std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>,
+        pub(crate) tags_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) replication_destination_regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
         pub(crate) replication_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1270,12 +1160,8 @@ pub mod lake_configuration_request {
             self
         }
         /// <p>The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// Appends an item to `retention_settings`.
         ///
@@ -1284,63 +1170,45 @@ pub mod lake_configuration_request {
         /// <p>Retention settings for the destination Amazon S3 buckets. </p>
         pub fn retention_settings(mut self, input: crate::model::RetentionSetting) -> Self {
             let mut v = self.retention_settings.unwrap_or_default();
-            v.push(input);
-            self.retention_settings = Some(v);
-            self
+                            v.push(input);
+                            self.retention_settings = Some(v);
+                            self
         }
         /// <p>Retention settings for the destination Amazon S3 buckets. </p>
-        pub fn set_retention_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>,
-        ) -> Self {
-            self.retention_settings = input;
-            self
+        pub fn set_retention_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>) -> Self {
+            self.retention_settings = input; self
         }
         /// Adds a key-value pair to `tags_map`.
         ///
         /// To override the contents of this collection use [`set_tags_map`](Self::set_tags_map).
         ///
         /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define.</p>
-        pub fn tags_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags_map = Some(hash_map);
+                            self
         }
         /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define.</p>
-        pub fn set_tags_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags_map = input;
-            self
+        pub fn set_tags_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags_map = input; self
         }
         /// Appends an item to `replication_destination_regions`.
         ///
         /// To override the contents of this collection use [`set_replication_destination_regions`](Self::set_replication_destination_regions).
         ///
-        /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p>
+        /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p> 
         /// <p>Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup Region. </p>
         pub fn replication_destination_regions(mut self, input: crate::model::Region) -> Self {
             let mut v = self.replication_destination_regions.unwrap_or_default();
-            v.push(input);
-            self.replication_destination_regions = Some(v);
-            self
+                            v.push(input);
+                            self.replication_destination_regions = Some(v);
+                            self
         }
-        /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p>
+        /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p> 
         /// <p>Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup Region. </p>
-        pub fn set_replication_destination_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Region>>,
-        ) -> Self {
-            self.replication_destination_regions = input;
-            self
+        pub fn set_replication_destination_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Region>>) -> Self {
+            self.replication_destination_regions = input; self
         }
         /// <p>Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management (IAM) role you created that is managed by Security Lake, to ensure the replication setting is correct. </p>
         pub fn replication_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1348,24 +1216,27 @@ pub mod lake_configuration_request {
             self
         }
         /// <p>Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management (IAM) role you created that is managed by Security Lake, to ensure the replication setting is correct. </p>
-        pub fn set_replication_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_role_arn = input;
-            self
+        pub fn set_replication_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`LakeConfigurationRequest`](crate::model::LakeConfigurationRequest).
         pub fn build(self) -> crate::model::LakeConfigurationRequest {
             crate::model::LakeConfigurationRequest {
-                encryption_key: self.encryption_key,
-                retention_settings: self.retention_settings,
-                tags_map: self.tags_map,
-                replication_destination_regions: self.replication_destination_regions,
-                replication_role_arn: self.replication_role_arn,
+                encryption_key: self.encryption_key
+                ,
+                retention_settings: self.retention_settings
+                ,
+                tags_map: self.tags_map
+                ,
+                replication_destination_regions: self.replication_destination_regions
+                ,
+                replication_role_arn: self.replication_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl LakeConfigurationRequest {
     /// Creates a new builder-style object to manufacture [`LakeConfigurationRequest`](crate::model::LakeConfigurationRequest).
@@ -1380,9 +1251,9 @@ impl LakeConfigurationRequest {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let region = unimplemented!();
 /// match region {
@@ -1409,22 +1280,14 @@ impl LakeConfigurationRequest {
 /// Specifically, when `region` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Region::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Region {
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
@@ -1441,7 +1304,7 @@ pub enum Region {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Region {
     fn from(s: &str) -> Self {
@@ -1453,17 +1316,17 @@ impl std::convert::From<&str> for Region {
             "us-east-1" => Region::UsEast1,
             "us-east-2" => Region::UsEast2,
             "us-west-2" => Region::UsWest2,
-            other => Region::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Region::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Region {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Region::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Region::from(s))
+                }
+            }
 impl Region {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1475,19 +1338,13 @@ impl Region {
             Region::UsEast1 => "us-east-1",
             Region::UsEast2 => "us-east-2",
             Region::UsWest2 => "us-west-2",
-            Region::Unknown(value) => value.as_str(),
+            Region::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ap-northeast-1",
-            "ap-southeast-2",
-            "eu-central-1",
-            "eu-west-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-2",
+            "ap-northeast-1", "ap-southeast-2", "eu-central-1", "eu-west-1", "us-east-1", "us-east-2", "us-west-2"
         ]
     }
 }
@@ -1500,7 +1357,7 @@ impl AsRef<str> for Region {
 /// <p>Retention settings for the destination Amazon S3 buckets in Amazon Security Lake. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetentionSetting {
+pub struct RetentionSetting  {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
     #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
@@ -1510,7 +1367,7 @@ pub struct RetentionSetting {
 }
 impl RetentionSetting {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>The retention period specifies a fixed period of time during which the Security Lake object remains locked. You can specify the retention period in days for one or more sources. </p>
@@ -1520,7 +1377,7 @@ impl RetentionSetting {
 }
 /// See [`RetentionSetting`](crate::model::RetentionSetting).
 pub mod retention_setting {
-
+    
     /// A builder for [`RetentionSetting`](crate::model::RetentionSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1534,12 +1391,8 @@ pub mod retention_setting {
             self
         }
         /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
-        pub fn set_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::StorageClass>,
-        ) -> Self {
-            self.storage_class = input;
-            self
+        pub fn set_storage_class(mut self, input: std::option::Option<crate::model::StorageClass>) -> Self {
+            self.storage_class = input; self
         }
         /// <p>The retention period specifies a fixed period of time during which the Security Lake object remains locked. You can specify the retention period in days for one or more sources. </p>
         pub fn retention_period(mut self, input: i32) -> Self {
@@ -1548,17 +1401,20 @@ pub mod retention_setting {
         }
         /// <p>The retention period specifies a fixed period of time during which the Security Lake object remains locked. You can specify the retention period in days for one or more sources. </p>
         pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.retention_period = input;
-            self
+            self.retention_period = input; self
         }
         /// Consumes the builder and constructs a [`RetentionSetting`](crate::model::RetentionSetting).
         pub fn build(self) -> crate::model::RetentionSetting {
             crate::model::RetentionSetting {
-                storage_class: self.storage_class,
-                retention_period: self.retention_period,
+                storage_class: self.storage_class
+                ,
+                retention_period: self.retention_period
+                ,
             }
         }
     }
+    
+    
 }
 impl RetentionSetting {
     /// Creates a new builder-style object to manufacture [`RetentionSetting`](crate::model::RetentionSetting).
@@ -1573,9 +1429,9 @@ impl RetentionSetting {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storageclass = unimplemented!();
 /// match storageclass {
@@ -1602,22 +1458,14 @@ impl RetentionSetting {
 /// Specifically, when `storageclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
@@ -1634,7 +1482,7 @@ pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     StandardIa,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageClass {
     fn from(s: &str) -> Self {
@@ -1646,17 +1494,17 @@ impl std::convert::From<&str> for StorageClass {
             "INTELLIGENT_TIERING" => StorageClass::IntelligentTiering,
             "ONEZONE_IA" => StorageClass::OnezoneIa,
             "STANDARD_IA" => StorageClass::StandardIa,
-            other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StorageClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StorageClass::from(s))
+                }
+            }
 impl StorageClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1668,19 +1516,13 @@ impl StorageClass {
             StorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
             StorageClass::OnezoneIa => "ONEZONE_IA",
             StorageClass::StandardIa => "STANDARD_IA",
-            StorageClass::Unknown(value) => value.as_str(),
+            StorageClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DEEP_ARCHIVE",
-            "EXPIRE",
-            "GLACIER",
-            "GLACIER_IR",
-            "INTELLIGENT_TIERING",
-            "ONEZONE_IA",
-            "STANDARD_IA",
+            "DEEP_ARCHIVE", "EXPIRE", "GLACIER", "GLACIER_IR", "INTELLIGENT_TIERING", "ONEZONE_IA", "STANDARD_IA"
         ]
     }
 }
@@ -1696,9 +1538,9 @@ impl AsRef<str> for StorageClass {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dimension = unimplemented!();
 /// match dimension {
@@ -1721,22 +1563,14 @@ impl AsRef<str> for StorageClass {
 /// Specifically, when `dimension` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Dimension::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     Member,
@@ -1745,7 +1579,7 @@ pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     SourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Dimension {
     fn from(s: &str) -> Self {
@@ -1753,17 +1587,17 @@ impl std::convert::From<&str> for Dimension {
             "MEMBER" => Dimension::Member,
             "REGION" => Dimension::Region,
             "SOURCE_TYPE" => Dimension::SourceType,
-            other => Dimension::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Dimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Dimension {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Dimension::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Dimension::from(s))
+                }
+            }
 impl Dimension {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1771,12 +1605,14 @@ impl Dimension {
             Dimension::Member => "MEMBER",
             Dimension::Region => "REGION",
             Dimension::SourceType => "SOURCE_TYPE",
-            Dimension::Unknown(value) => value.as_str(),
+            Dimension::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MEMBER", "REGION", "SOURCE_TYPE"]
+        &[
+            "MEMBER", "REGION", "SOURCE_TYPE"
+        ]
     }
 }
 impl AsRef<str> for Dimension {
@@ -1788,7 +1624,7 @@ impl AsRef<str> for Dimension {
 /// <p>Response element for actions that make changes, namely create, update, or delete actions. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailuresResponse {
+pub struct FailuresResponse  {
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -1798,17 +1634,17 @@ pub struct FailuresResponse {
 }
 impl FailuresResponse {
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>List of all failures. </p>
-    pub fn failures(&self) -> std::option::Option<&[crate::model::Failures]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::model::Failures]> {
         self.failures.as_deref()
     }
 }
 /// See [`FailuresResponse`](crate::model::FailuresResponse).
 pub mod failures_response {
-
+    
     /// A builder for [`FailuresResponse`](crate::model::FailuresResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1823,8 +1659,7 @@ pub mod failures_response {
         }
         /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Appends an item to `failures`.
         ///
@@ -1833,26 +1668,26 @@ pub mod failures_response {
         /// <p>List of all failures. </p>
         pub fn failures(mut self, input: crate::model::Failures) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input);
-            self.failures = Some(v);
-            self
+                            v.push(input);
+                            self.failures = Some(v);
+                            self
         }
         /// <p>List of all failures. </p>
-        pub fn set_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Failures>>,
-        ) -> Self {
-            self.failures = input;
-            self
+        pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Failures>>) -> Self {
+            self.failures = input; self
         }
         /// Consumes the builder and constructs a [`FailuresResponse`](crate::model::FailuresResponse).
         pub fn build(self) -> crate::model::FailuresResponse {
             crate::model::FailuresResponse {
-                region: self.region,
-                failures: self.failures,
+                region: self.region
+                ,
+                failures: self.failures
+                ,
             }
         }
     }
+    
+    
 }
 impl FailuresResponse {
     /// Creates a new builder-style object to manufacture [`FailuresResponse`](crate::model::FailuresResponse).
@@ -1864,7 +1699,7 @@ impl FailuresResponse {
 /// <p>List of all failures.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Failures {
+pub struct Failures  {
     /// <p>List of all exception messages.</p>
     #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
@@ -1877,21 +1712,21 @@ pub struct Failures {
 }
 impl Failures {
     /// <p>List of all exception messages.</p>
-    pub fn exception_message(&self) -> std::option::Option<&str> {
+    pub fn exception_message(&self) -> std::option::Option<& str> {
         self.exception_message.as_deref()
     }
     /// <p>List of all remediation steps for failures.</p>
-    pub fn remediation(&self) -> std::option::Option<&str> {
+    pub fn remediation(&self) -> std::option::Option<& str> {
         self.remediation.as_deref()
     }
     /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
 /// See [`Failures`](crate::model::Failures).
 pub mod failures {
-
+    
     /// A builder for [`Failures`](crate::model::Failures).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1906,12 +1741,8 @@ pub mod failures {
             self
         }
         /// <p>List of all exception messages.</p>
-        pub fn set_exception_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exception_message = input;
-            self
+        pub fn set_exception_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.exception_message = input; self
         }
         /// <p>List of all remediation steps for failures.</p>
         pub fn remediation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1920,8 +1751,7 @@ pub mod failures {
         }
         /// <p>List of all remediation steps for failures.</p>
         pub fn set_remediation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.remediation = input;
-            self
+            self.remediation = input; self
         }
         /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1929,22 +1759,23 @@ pub mod failures {
             self
         }
         /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`Failures`](crate::model::Failures).
         pub fn build(self) -> crate::model::Failures {
             crate::model::Failures {
-                exception_message: self.exception_message,
-                remediation: self.remediation,
-                timestamp: self.timestamp,
+                exception_message: self.exception_message
+                ,
+                remediation: self.remediation
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl Failures {
     /// Creates a new builder-style object to manufacture [`Failures`](crate::model::Failures).
@@ -1956,7 +1787,7 @@ impl Failures {
 /// <p>Amazon Security Lake collects logs and events from supported Amazon Web Services and custom sources. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountSources {
+pub struct AccountSources  {
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
     #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
@@ -1972,25 +1803,25 @@ pub struct AccountSources {
 }
 impl AccountSources {
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
-    pub fn account(&self) -> std::option::Option<&str> {
+    pub fn account(&self) -> std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. </p>
-    pub fn source_type(&self) -> std::option::Option<&str> {
+    pub fn source_type(&self) -> std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>The log status for the Security Lake account.</p>
-    pub fn logs_status(&self) -> std::option::Option<&[crate::model::LogsStatus]> {
+    pub fn logs_status(&self) -> std::option::Option<& [crate::model::LogsStatus]> {
         self.logs_status.as_deref()
     }
     /// <p>Initializes a new instance of the Event class.</p>
-    pub fn event_class(&self) -> std::option::Option<&crate::model::OcsfEventClass> {
+    pub fn event_class(&self) -> std::option::Option<& crate::model::OcsfEventClass> {
         self.event_class.as_ref()
     }
 }
 /// See [`AccountSources`](crate::model::AccountSources).
 pub mod account_sources {
-
+    
     /// A builder for [`AccountSources`](crate::model::AccountSources).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2007,8 +1838,7 @@ pub mod account_sources {
         }
         /// <p>The ID of the Security Lake account for which logs are collected.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account = input;
-            self
+            self.account = input; self
         }
         /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. </p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2017,8 +1847,7 @@ pub mod account_sources {
         }
         /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. </p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_type = input;
-            self
+            self.source_type = input; self
         }
         /// Appends an item to `logs_status`.
         ///
@@ -2027,17 +1856,13 @@ pub mod account_sources {
         /// <p>The log status for the Security Lake account.</p>
         pub fn logs_status(mut self, input: crate::model::LogsStatus) -> Self {
             let mut v = self.logs_status.unwrap_or_default();
-            v.push(input);
-            self.logs_status = Some(v);
-            self
+                            v.push(input);
+                            self.logs_status = Some(v);
+                            self
         }
         /// <p>The log status for the Security Lake account.</p>
-        pub fn set_logs_status(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LogsStatus>>,
-        ) -> Self {
-            self.logs_status = input;
-            self
+        pub fn set_logs_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::LogsStatus>>) -> Self {
+            self.logs_status = input; self
         }
         /// <p>Initializes a new instance of the Event class.</p>
         pub fn event_class(mut self, input: crate::model::OcsfEventClass) -> Self {
@@ -2045,23 +1870,25 @@ pub mod account_sources {
             self
         }
         /// <p>Initializes a new instance of the Event class.</p>
-        pub fn set_event_class(
-            mut self,
-            input: std::option::Option<crate::model::OcsfEventClass>,
-        ) -> Self {
-            self.event_class = input;
-            self
+        pub fn set_event_class(mut self, input: std::option::Option<crate::model::OcsfEventClass>) -> Self {
+            self.event_class = input; self
         }
         /// Consumes the builder and constructs a [`AccountSources`](crate::model::AccountSources).
         pub fn build(self) -> crate::model::AccountSources {
             crate::model::AccountSources {
-                account: self.account,
-                source_type: self.source_type,
-                logs_status: self.logs_status,
-                event_class: self.event_class,
+                account: self.account
+                ,
+                source_type: self.source_type
+                ,
+                logs_status: self.logs_status
+                ,
+                event_class: self.event_class
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountSources {
     /// Creates a new builder-style object to manufacture [`AccountSources`](crate::model::AccountSources).
@@ -2076,9 +1903,9 @@ impl AccountSources {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ocsfeventclass = unimplemented!();
 /// match ocsfeventclass {
@@ -2131,22 +1958,14 @@ impl AccountSources {
 /// Specifically, when `ocsfeventclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OcsfEventClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OcsfEventClass {
     #[allow(missing_docs)] // documentation missing in model
     AccessActivity,
@@ -2215,7 +2034,7 @@ pub enum OcsfEventClass {
     #[allow(missing_docs)] // documentation missing in model
     VirtualMachineActivity,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OcsfEventClass {
     fn from(s: &str) -> Self {
@@ -2253,17 +2072,17 @@ impl std::convert::From<&str> for OcsfEventClass {
             "SMTP_ACTIVITY" => OcsfEventClass::SmtpActivity,
             "SSH_ACTIVITY" => OcsfEventClass::SshActivity,
             "VIRTUAL_MACHINE_ACTIVITY" => OcsfEventClass::VirtualMachineActivity,
-            other => OcsfEventClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OcsfEventClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OcsfEventClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OcsfEventClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OcsfEventClass::from(s))
+                }
+            }
 impl OcsfEventClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2301,45 +2120,13 @@ impl OcsfEventClass {
             OcsfEventClass::SmtpActivity => "SMTP_ACTIVITY",
             OcsfEventClass::SshActivity => "SSH_ACTIVITY",
             OcsfEventClass::VirtualMachineActivity => "VIRTUAL_MACHINE_ACTIVITY",
-            OcsfEventClass::Unknown(value) => value.as_str(),
+            OcsfEventClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCESS_ACTIVITY",
-            "ACCOUNT_CHANGE",
-            "AUTHENTICATION",
-            "AUTHORIZATION",
-            "CLOUD_API",
-            "CLOUD_STORAGE",
-            "CONFIG_STATE",
-            "CONTAINER_LIFECYCLE",
-            "DATABASE_LIFECYCLE",
-            "DHCP_ACTIVITY",
-            "DNS_ACTIVITY",
-            "ENTITY_MANAGEMENT_AUDIT",
-            "FILE_ACTIVITY",
-            "FTP_ACTIVITY",
-            "HTTP_ACTIVITY",
-            "INVENTORY_INFO",
-            "KERNEL_ACTIVITY",
-            "KERNEL_EXTENSION",
-            "MEMORY_ACTIVITY",
-            "MODULE_ACTIVITY",
-            "NETWORK_ACTIVITY",
-            "PROCESS_ACTIVITY",
-            "RDP_ACTIVITY",
-            "REGISTRY_KEY_ACTIVITY",
-            "REGISTRY_VALUE_ACTIVITY",
-            "RESOURCE_ACTIVITY",
-            "RFB_ACTIVITY",
-            "SCHEDULED_JOB_ACTIVITY",
-            "SECURITY_FINDING",
-            "SMB_ACTIVITY",
-            "SMTP_ACTIVITY",
-            "SSH_ACTIVITY",
-            "VIRTUAL_MACHINE_ACTIVITY",
+            "ACCESS_ACTIVITY", "ACCOUNT_CHANGE", "AUTHENTICATION", "AUTHORIZATION", "CLOUD_API", "CLOUD_STORAGE", "CONFIG_STATE", "CONTAINER_LIFECYCLE", "DATABASE_LIFECYCLE", "DHCP_ACTIVITY", "DNS_ACTIVITY", "ENTITY_MANAGEMENT_AUDIT", "FILE_ACTIVITY", "FTP_ACTIVITY", "HTTP_ACTIVITY", "INVENTORY_INFO", "KERNEL_ACTIVITY", "KERNEL_EXTENSION", "MEMORY_ACTIVITY", "MODULE_ACTIVITY", "NETWORK_ACTIVITY", "PROCESS_ACTIVITY", "RDP_ACTIVITY", "REGISTRY_KEY_ACTIVITY", "REGISTRY_VALUE_ACTIVITY", "RESOURCE_ACTIVITY", "RFB_ACTIVITY", "SCHEDULED_JOB_ACTIVITY", "SECURITY_FINDING", "SMB_ACTIVITY", "SMTP_ACTIVITY", "SSH_ACTIVITY", "VIRTUAL_MACHINE_ACTIVITY"
         ]
     }
 }
@@ -2352,7 +2139,7 @@ impl AsRef<str> for OcsfEventClass {
 /// <p>Retrieves the Logs status for the Amazon Security Lake account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogsStatus {
+pub struct LogsStatus  {
     /// <p>Defines path the stored logs are available which has information on your systems, applications, and services. </p>
     #[doc(hidden)]
     pub path_to_logs: std::option::Option<std::string::String>,
@@ -2362,17 +2149,17 @@ pub struct LogsStatus {
 }
 impl LogsStatus {
     /// <p>Defines path the stored logs are available which has information on your systems, applications, and services. </p>
-    pub fn path_to_logs(&self) -> std::option::Option<&str> {
+    pub fn path_to_logs(&self) -> std::option::Option<& str> {
         self.path_to_logs.as_deref()
     }
     /// <p>The health status of services, including error codes and patterns.</p>
-    pub fn health_status(&self) -> std::option::Option<&crate::model::SourceStatus> {
+    pub fn health_status(&self) -> std::option::Option<& crate::model::SourceStatus> {
         self.health_status.as_ref()
     }
 }
 /// See [`LogsStatus`](crate::model::LogsStatus).
 pub mod logs_status {
-
+    
     /// A builder for [`LogsStatus`](crate::model::LogsStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2387,8 +2174,7 @@ pub mod logs_status {
         }
         /// <p>Defines path the stored logs are available which has information on your systems, applications, and services. </p>
         pub fn set_path_to_logs(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path_to_logs = input;
-            self
+            self.path_to_logs = input; self
         }
         /// <p>The health status of services, including error codes and patterns.</p>
         pub fn health_status(mut self, input: crate::model::SourceStatus) -> Self {
@@ -2396,21 +2182,21 @@ pub mod logs_status {
             self
         }
         /// <p>The health status of services, including error codes and patterns.</p>
-        pub fn set_health_status(
-            mut self,
-            input: std::option::Option<crate::model::SourceStatus>,
-        ) -> Self {
-            self.health_status = input;
-            self
+        pub fn set_health_status(mut self, input: std::option::Option<crate::model::SourceStatus>) -> Self {
+            self.health_status = input; self
         }
         /// Consumes the builder and constructs a [`LogsStatus`](crate::model::LogsStatus).
         pub fn build(self) -> crate::model::LogsStatus {
             crate::model::LogsStatus {
-                path_to_logs: self.path_to_logs,
-                health_status: self.health_status,
+                path_to_logs: self.path_to_logs
+                ,
+                health_status: self.health_status
+                ,
             }
         }
     }
+    
+    
 }
 impl LogsStatus {
     /// Creates a new builder-style object to manufacture [`LogsStatus`](crate::model::LogsStatus).
@@ -2425,9 +2211,9 @@ impl LogsStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourcestatus = unimplemented!();
 /// match sourcestatus {
@@ -2450,22 +2236,14 @@ impl LogsStatus {
 /// Specifically, when `sourcestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2474,7 +2252,7 @@ pub enum SourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceStatus {
     fn from(s: &str) -> Self {
@@ -2482,17 +2260,17 @@ impl std::convert::From<&str> for SourceStatus {
             "ACTIVE" => SourceStatus::Active,
             "DEACTIVATED" => SourceStatus::Deactivated,
             "PENDING" => SourceStatus::Pending,
-            other => SourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SourceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SourceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SourceStatus::from(s))
+                }
+            }
 impl SourceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2500,12 +2278,14 @@ impl SourceStatus {
             SourceStatus::Active => "ACTIVE",
             SourceStatus::Deactivated => "DEACTIVATED",
             SourceStatus::Pending => "PENDING",
-            SourceStatus::Unknown(value) => value.as_str(),
+            SourceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DEACTIVATED", "PENDING"]
+        &[
+            "ACTIVE", "DEACTIVATED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for SourceStatus {
@@ -2517,7 +2297,7 @@ impl AsRef<str> for SourceStatus {
 /// <p>Protocol used in Amazon Security Lake that dictates how notifications are posted at the endpoint. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtocolAndNotificationEndpoint {
+pub struct ProtocolAndNotificationEndpoint  {
     /// <p>The protocol to which notification messages are posted. </p>
     #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
@@ -2527,17 +2307,17 @@ pub struct ProtocolAndNotificationEndpoint {
 }
 impl ProtocolAndNotificationEndpoint {
     /// <p>The protocol to which notification messages are posted. </p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The account that is subscribed to receive exception notifications. </p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
 /// See [`ProtocolAndNotificationEndpoint`](crate::model::ProtocolAndNotificationEndpoint).
 pub mod protocol_and_notification_endpoint {
-
+    
     /// A builder for [`ProtocolAndNotificationEndpoint`](crate::model::ProtocolAndNotificationEndpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2552,8 +2332,7 @@ pub mod protocol_and_notification_endpoint {
         }
         /// <p>The protocol to which notification messages are posted. </p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.protocol = input;
-            self
+            self.protocol = input; self
         }
         /// <p>The account that is subscribed to receive exception notifications. </p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2562,17 +2341,20 @@ pub mod protocol_and_notification_endpoint {
         }
         /// <p>The account that is subscribed to receive exception notifications. </p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// Consumes the builder and constructs a [`ProtocolAndNotificationEndpoint`](crate::model::ProtocolAndNotificationEndpoint).
         pub fn build(self) -> crate::model::ProtocolAndNotificationEndpoint {
             crate::model::ProtocolAndNotificationEndpoint {
-                protocol: self.protocol,
-                endpoint: self.endpoint,
+                protocol: self.protocol
+                ,
+                endpoint: self.endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtocolAndNotificationEndpoint {
     /// Creates a new builder-style object to manufacture [`ProtocolAndNotificationEndpoint`](crate::model::ProtocolAndNotificationEndpoint).
@@ -2584,7 +2366,7 @@ impl ProtocolAndNotificationEndpoint {
 /// <p>Automatically enable new organization accounts as member accounts from an Amazon Security Lake administrator account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoEnableNewRegionConfiguration {
+pub struct AutoEnableNewRegionConfiguration  {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
     #[doc(hidden)]
     pub region: std::option::Option<crate::model::Region>,
@@ -2594,17 +2376,17 @@ pub struct AutoEnableNewRegionConfiguration {
 }
 impl AutoEnableNewRegionConfiguration {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
-    pub fn region(&self) -> std::option::Option<&crate::model::Region> {
+    pub fn region(&self) -> std::option::Option<& crate::model::Region> {
         self.region.as_ref()
     }
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::AwsLogSourceType]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::AwsLogSourceType]> {
         self.sources.as_deref()
     }
 }
 /// See [`AutoEnableNewRegionConfiguration`](crate::model::AutoEnableNewRegionConfiguration).
 pub mod auto_enable_new_region_configuration {
-
+    
     /// A builder for [`AutoEnableNewRegionConfiguration`](crate::model::AutoEnableNewRegionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2619,8 +2401,7 @@ pub mod auto_enable_new_region_configuration {
         }
         /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
         pub fn set_region(mut self, input: std::option::Option<crate::model::Region>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -2629,26 +2410,26 @@ pub mod auto_enable_new_region_configuration {
         /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
         pub fn sources(mut self, input: crate::model::AwsLogSourceType) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AwsLogSourceType>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::AwsLogSourceType>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`AutoEnableNewRegionConfiguration`](crate::model::AutoEnableNewRegionConfiguration).
         pub fn build(self) -> crate::model::AutoEnableNewRegionConfiguration {
             crate::model::AutoEnableNewRegionConfiguration {
-                region: self.region,
-                sources: self.sources,
+                region: self.region
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoEnableNewRegionConfiguration {
     /// Creates a new builder-style object to manufacture [`AutoEnableNewRegionConfiguration`](crate::model::AutoEnableNewRegionConfiguration).
@@ -2660,7 +2441,7 @@ impl AutoEnableNewRegionConfiguration {
 /// <p>Provides details of Amazon Security Lake lake configuration object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LakeConfigurationResponse {
+pub struct LakeConfigurationResponse  {
     /// <p>The type of encryption key used by secure the Security Lake configuration object.</p>
     #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
@@ -2669,9 +2450,8 @@ pub struct LakeConfigurationResponse {
     pub retention_settings: std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define.</p>
     #[doc(hidden)]
-    pub tags_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p>
+    pub tags_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p> 
     /// <p>Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup Region. </p>
     #[doc(hidden)]
     pub replication_destination_regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
@@ -2687,52 +2467,45 @@ pub struct LakeConfigurationResponse {
 }
 impl LakeConfigurationResponse {
     /// <p>The type of encryption key used by secure the Security Lake configuration object.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>Retention settings for the destination Amazon S3 buckets. </p>
-    pub fn retention_settings(&self) -> std::option::Option<&[crate::model::RetentionSetting]> {
+    pub fn retention_settings(&self) -> std::option::Option<& [crate::model::RetentionSetting]> {
         self.retention_settings.as_deref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags_map.as_ref()
     }
-    /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p>
+    /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p> 
     /// <p>Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup Region. </p>
-    pub fn replication_destination_regions(&self) -> std::option::Option<&[crate::model::Region]> {
+    pub fn replication_destination_regions(&self) -> std::option::Option<& [crate::model::Region]> {
         self.replication_destination_regions.as_deref()
     }
     /// <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is managed by Security Lake, to ensure the replication setting is correct. </p>
-    pub fn replication_role_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_role_arn(&self) -> std::option::Option<& str> {
         self.replication_role_arn.as_deref()
     }
     /// <p>Amazon Resource Names (ARNs) uniquely identify Amazon Web Services resources. Security Lake requires an ARN when you need to specify a resource unambiguously across all of Amazon Web Services, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls. </p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SettingsStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SettingsStatus> {
         self.status.as_ref()
     }
 }
 /// See [`LakeConfigurationResponse`](crate::model::LakeConfigurationResponse).
 pub mod lake_configuration_response {
-
+    
     /// A builder for [`LakeConfigurationResponse`](crate::model::LakeConfigurationResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_key: std::option::Option<std::string::String>,
-        pub(crate) retention_settings:
-            std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>,
-        pub(crate) tags_map: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) replication_destination_regions:
-            std::option::Option<std::vec::Vec<crate::model::Region>>,
+        pub(crate) retention_settings: std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>,
+        pub(crate) tags_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) replication_destination_regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
         pub(crate) replication_role_arn: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SettingsStatus>,
@@ -2744,12 +2517,8 @@ pub mod lake_configuration_response {
             self
         }
         /// <p>The type of encryption key used by secure the Security Lake configuration object.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// Appends an item to `retention_settings`.
         ///
@@ -2758,63 +2527,45 @@ pub mod lake_configuration_response {
         /// <p>Retention settings for the destination Amazon S3 buckets. </p>
         pub fn retention_settings(mut self, input: crate::model::RetentionSetting) -> Self {
             let mut v = self.retention_settings.unwrap_or_default();
-            v.push(input);
-            self.retention_settings = Some(v);
-            self
+                            v.push(input);
+                            self.retention_settings = Some(v);
+                            self
         }
         /// <p>Retention settings for the destination Amazon S3 buckets. </p>
-        pub fn set_retention_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>,
-        ) -> Self {
-            self.retention_settings = input;
-            self
+        pub fn set_retention_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::RetentionSetting>>) -> Self {
+            self.retention_settings = input; self
         }
         /// Adds a key-value pair to `tags_map`.
         ///
         /// To override the contents of this collection use [`set_tags_map`](Self::set_tags_map).
         ///
         /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define.</p>
-        pub fn tags_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags_map = Some(hash_map);
+                            self
         }
         /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define.</p>
-        pub fn set_tags_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags_map = input;
-            self
+        pub fn set_tags_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags_map = input; self
         }
         /// Appends an item to `replication_destination_regions`.
         ///
         /// To override the contents of this collection use [`set_replication_destination_regions`](Self::set_replication_destination_regions).
         ///
-        /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p>
+        /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p> 
         /// <p>Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup Region. </p>
         pub fn replication_destination_regions(mut self, input: crate::model::Region) -> Self {
             let mut v = self.replication_destination_regions.unwrap_or_default();
-            v.push(input);
-            self.replication_destination_regions = Some(v);
-            self
+                            v.push(input);
+                            self.replication_destination_regions = Some(v);
+                            self
         }
-        /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p>
+        /// <p>Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that are configured for object replication can be owned by the same Amazon Web Services account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region as the source bucket.</p> 
         /// <p>Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup Region. </p>
-        pub fn set_replication_destination_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Region>>,
-        ) -> Self {
-            self.replication_destination_regions = input;
-            self
+        pub fn set_replication_destination_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Region>>) -> Self {
+            self.replication_destination_regions = input; self
         }
         /// <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is managed by Security Lake, to ensure the replication setting is correct. </p>
         pub fn replication_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2822,12 +2573,8 @@ pub mod lake_configuration_response {
             self
         }
         /// <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is managed by Security Lake, to ensure the replication setting is correct. </p>
-        pub fn set_replication_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_role_arn = input;
-            self
+        pub fn set_replication_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_role_arn = input; self
         }
         /// <p>Amazon Resource Names (ARNs) uniquely identify Amazon Web Services resources. Security Lake requires an ARN when you need to specify a resource unambiguously across all of Amazon Web Services, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls. </p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2835,12 +2582,8 @@ pub mod lake_configuration_response {
             self
         }
         /// <p>Amazon Resource Names (ARNs) uniquely identify Amazon Web Services resources. Security Lake requires an ARN when you need to specify a resource unambiguously across all of Amazon Web Services, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls. </p>
-        pub fn set_s3_bucket_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_arn = input;
-            self
+        pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_arn = input; self
         }
         /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake. </p>
         pub fn status(mut self, input: crate::model::SettingsStatus) -> Self {
@@ -2848,26 +2591,31 @@ pub mod lake_configuration_response {
             self
         }
         /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SettingsStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SettingsStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`LakeConfigurationResponse`](crate::model::LakeConfigurationResponse).
         pub fn build(self) -> crate::model::LakeConfigurationResponse {
             crate::model::LakeConfigurationResponse {
-                encryption_key: self.encryption_key,
-                retention_settings: self.retention_settings,
-                tags_map: self.tags_map,
-                replication_destination_regions: self.replication_destination_regions,
-                replication_role_arn: self.replication_role_arn,
-                s3_bucket_arn: self.s3_bucket_arn,
-                status: self.status,
+                encryption_key: self.encryption_key
+                ,
+                retention_settings: self.retention_settings
+                ,
+                tags_map: self.tags_map
+                ,
+                replication_destination_regions: self.replication_destination_regions
+                ,
+                replication_role_arn: self.replication_role_arn
+                ,
+                s3_bucket_arn: self.s3_bucket_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl LakeConfigurationResponse {
     /// Creates a new builder-style object to manufacture [`LakeConfigurationResponse`](crate::model::LakeConfigurationResponse).
@@ -2882,9 +2630,9 @@ impl LakeConfigurationResponse {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let settingsstatus = unimplemented!();
 /// match settingsstatus {
@@ -2908,22 +2656,14 @@ impl LakeConfigurationResponse {
 /// Specifically, when `settingsstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SettingsStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SettingsStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -2934,7 +2674,7 @@ pub enum SettingsStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SettingsStatus {
     fn from(s: &str) -> Self {
@@ -2943,17 +2683,17 @@ impl std::convert::From<&str> for SettingsStatus {
             "FAILED" => SettingsStatus::Failed,
             "INITIALIZED" => SettingsStatus::Initialized,
             "PENDING" => SettingsStatus::Pending,
-            other => SettingsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SettingsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SettingsStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SettingsStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SettingsStatus::from(s))
+                }
+            }
 impl SettingsStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2962,12 +2702,14 @@ impl SettingsStatus {
             SettingsStatus::Failed => "FAILED",
             SettingsStatus::Initialized => "INITIALIZED",
             SettingsStatus::Pending => "PENDING",
-            SettingsStatus::Unknown(value) => value.as_str(),
+            SettingsStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "INITIALIZED", "PENDING"]
+        &[
+            "COMPLETED", "FAILED", "INITIALIZED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for SettingsStatus {
@@ -2975,3 +2717,4 @@ impl AsRef<str> for SettingsStatus {
         self.as_str()
     }
 }
+

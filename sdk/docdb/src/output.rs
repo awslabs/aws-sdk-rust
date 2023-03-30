@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDbClusterOutput {
+pub struct StopDbClusterOutput  {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StopDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
 pub mod stop_db_cluster_output {
-
+    
     /// A builder for [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod stop_db_cluster_output {
             self
         }
         /// <p>Detailed information about a cluster. </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
         pub fn build(self) -> crate::output::StopDbClusterOutput {
             crate::output::StopDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
@@ -53,20 +52,20 @@ impl StopDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDbClusterOutput {
+pub struct StartDbClusterOutput  {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StartDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
 pub mod start_db_cluster_output {
-
+    
     /// A builder for [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod start_db_cluster_output {
             self
         }
         /// <p>Detailed information about a cluster. </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
         pub fn build(self) -> crate::output::StartDbClusterOutput {
             crate::output::StartDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
@@ -104,20 +102,20 @@ impl StartDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDbClusterToPointInTimeOutput {
+pub struct RestoreDbClusterToPointInTimeOutput  {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterToPointInTimeOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
 pub mod restore_db_cluster_to_point_in_time_output {
-
+    
     /// A builder for [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -130,20 +128,19 @@ pub mod restore_db_cluster_to_point_in_time_output {
             self
         }
         /// <p>Detailed information about a cluster. </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
         pub fn build(self) -> crate::output::RestoreDbClusterToPointInTimeOutput {
             crate::output::RestoreDbClusterToPointInTimeOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreDbClusterToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
@@ -155,20 +152,20 @@ impl RestoreDbClusterToPointInTimeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDbClusterFromSnapshotOutput {
+pub struct RestoreDbClusterFromSnapshotOutput  {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromSnapshotOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
 pub mod restore_db_cluster_from_snapshot_output {
-
+    
     /// A builder for [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -181,20 +178,19 @@ pub mod restore_db_cluster_from_snapshot_output {
             self
         }
         /// <p>Detailed information about a cluster. </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
         pub fn build(self) -> crate::output::RestoreDbClusterFromSnapshotOutput {
             crate::output::RestoreDbClusterFromSnapshotOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreDbClusterFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
@@ -206,81 +202,77 @@ impl RestoreDbClusterFromSnapshotOutput {
 /// <p>Contains the name of a cluster parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDbClusterParameterGroupOutput {
-    /// <p>The name of a cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lowercase string.</p>
+pub struct ResetDbClusterParameterGroupOutput  {
+    /// <p>The name of a cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li> 
+    /// <li> <p>The first character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lowercase string.</p> 
     /// </note>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetDbClusterParameterGroupOutput {
-    /// <p>The name of a cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lowercase string.</p>
+    /// <p>The name of a cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li> 
+    /// <li> <p>The first character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lowercase string.</p> 
     /// </note>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
 /// See [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
 pub mod reset_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a cluster parameter group.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-        /// <li> <p>The first character must be a letter.</p> </li>
-        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-        /// </ul> <note>
-        /// <p>This value is stored as a lowercase string.</p>
+        /// <p>The name of a cluster parameter group.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li> 
+        /// <li> <p>The first character must be a letter.</p> </li> 
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+        /// </ul> <note> 
+        /// <p>This value is stored as a lowercase string.</p> 
         /// </note>
-        pub fn db_cluster_parameter_group_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
-        /// <p>The name of a cluster parameter group.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-        /// <li> <p>The first character must be a letter.</p> </li>
-        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-        /// </ul> <note>
-        /// <p>This value is stored as a lowercase string.</p>
+        /// <p>The name of a cluster parameter group.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li> 
+        /// <li> <p>The first character must be a letter.</p> </li> 
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+        /// </ul> <note> 
+        /// <p>This value is stored as a lowercase string.</p> 
         /// </note>
-        pub fn set_db_cluster_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_parameter_group_name = input;
-            self
+        pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_parameter_group_name = input; self
         }
         /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::ResetDbClusterParameterGroupOutput {
             crate::output::ResetDbClusterParameterGroupOutput {
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
@@ -292,19 +284,24 @@ impl ResetDbClusterParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromResourceOutput {}
+pub struct RemoveTagsFromResourceOutput  {
+}
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
-
+    
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
-            crate::output::RemoveTagsFromResourceOutput {}
+            crate::output::RemoveTagsFromResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
@@ -316,20 +313,20 @@ impl RemoveTagsFromResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveSourceIdentifierFromSubscriptionOutput {
+pub struct RemoveSourceIdentifierFromSubscriptionOutput  {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
 pub mod remove_source_identifier_from_subscription_output {
-
+    
     /// A builder for [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -342,20 +339,19 @@ pub mod remove_source_identifier_from_subscription_output {
             self
         }
         /// <p>Detailed information about an event to which you have subscribed.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
         pub fn build(self) -> crate::output::RemoveSourceIdentifierFromSubscriptionOutput {
             crate::output::RemoveSourceIdentifierFromSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
@@ -367,20 +363,20 @@ impl RemoveSourceIdentifierFromSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFromGlobalClusterOutput {
+pub struct RemoveFromGlobalClusterOutput  {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl RemoveFromGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
 pub mod remove_from_global_cluster_output {
-
+    
     /// A builder for [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -393,20 +389,19 @@ pub mod remove_from_global_cluster_output {
             self
         }
         /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
         pub fn build(self) -> crate::output::RemoveFromGlobalClusterOutput {
             crate::output::RemoveFromGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveFromGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
@@ -418,20 +413,20 @@ impl RemoveFromGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootDbInstanceOutput {
+pub struct RebootDbInstanceOutput  {
     /// <p>Detailed information about an instance. </p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RebootDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
 pub mod reboot_db_instance_output {
-
+    
     /// A builder for [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -444,20 +439,19 @@ pub mod reboot_db_instance_output {
             self
         }
         /// <p>Detailed information about an instance. </p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
         pub fn build(self) -> crate::output::RebootDbInstanceOutput {
             crate::output::RebootDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl RebootDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
@@ -469,20 +463,20 @@ impl RebootDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyGlobalClusterOutput {
+pub struct ModifyGlobalClusterOutput  {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl ModifyGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
 pub mod modify_global_cluster_output {
-
+    
     /// A builder for [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -495,20 +489,19 @@ pub mod modify_global_cluster_output {
             self
         }
         /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
         pub fn build(self) -> crate::output::ModifyGlobalClusterOutput {
             crate::output::ModifyGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
@@ -520,20 +513,20 @@ impl ModifyGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyEventSubscriptionOutput {
+pub struct ModifyEventSubscriptionOutput  {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
 pub mod modify_event_subscription_output {
-
+    
     /// A builder for [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -546,20 +539,19 @@ pub mod modify_event_subscription_output {
             self
         }
         /// <p>Detailed information about an event to which you have subscribed.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
         pub fn build(self) -> crate::output::ModifyEventSubscriptionOutput {
             crate::output::ModifyEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
@@ -571,20 +563,20 @@ impl ModifyEventSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbSubnetGroupOutput {
+pub struct ModifyDbSubnetGroupOutput  {
     /// <p>Detailed information about a subnet group. </p>
     #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl ModifyDbSubnetGroupOutput {
     /// <p>Detailed information about a subnet group. </p>
-    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+    pub fn db_subnet_group(&self) -> std::option::Option<& crate::model::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
 }
 /// See [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
 pub mod modify_db_subnet_group_output {
-
+    
     /// A builder for [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -597,20 +589,19 @@ pub mod modify_db_subnet_group_output {
             self
         }
         /// <p>Detailed information about a subnet group. </p>
-        pub fn set_db_subnet_group(
-            mut self,
-            input: std::option::Option<crate::model::DbSubnetGroup>,
-        ) -> Self {
-            self.db_subnet_group = input;
-            self
+        pub fn set_db_subnet_group(mut self, input: std::option::Option<crate::model::DbSubnetGroup>) -> Self {
+            self.db_subnet_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbSubnetGroupOutput {
             crate::output::ModifyDbSubnetGroupOutput {
-                db_subnet_group: self.db_subnet_group,
+                db_subnet_group: self.db_subnet_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
@@ -622,20 +613,20 @@ impl ModifyDbSubnetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbInstanceOutput {
+pub struct ModifyDbInstanceOutput  {
     /// <p>Detailed information about an instance. </p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl ModifyDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
 pub mod modify_db_instance_output {
-
+    
     /// A builder for [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -648,20 +639,19 @@ pub mod modify_db_instance_output {
             self
         }
         /// <p>Detailed information about an instance. </p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
         pub fn build(self) -> crate::output::ModifyDbInstanceOutput {
             crate::output::ModifyDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
@@ -673,53 +663,45 @@ impl ModifyDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterSnapshotAttributeOutput {
+pub struct ModifyDbClusterSnapshotAttributeOutput  {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_attributes_result:
-        std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+    pub db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-    pub fn db_cluster_snapshot_attributes_result(
-        &self,
-    ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
+    pub fn db_cluster_snapshot_attributes_result(&self) -> std::option::Option<& crate::model::DbClusterSnapshotAttributesResult> {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
 /// See [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
 pub mod modify_db_cluster_snapshot_attribute_output {
-
+    
     /// A builder for [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_cluster_snapshot_attributes_result:
-            std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+        pub(crate) db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
     }
     impl Builder {
         /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-        pub fn db_cluster_snapshot_attributes_result(
-            mut self,
-            input: crate::model::DbClusterSnapshotAttributesResult,
-        ) -> Self {
+        pub fn db_cluster_snapshot_attributes_result(mut self, input: crate::model::DbClusterSnapshotAttributesResult) -> Self {
             self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
         /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-        pub fn set_db_cluster_snapshot_attributes_result(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
-        ) -> Self {
-            self.db_cluster_snapshot_attributes_result = input;
-            self
+        pub fn set_db_cluster_snapshot_attributes_result(mut self, input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>) -> Self {
+            self.db_cluster_snapshot_attributes_result = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterSnapshotAttributeOutput {
             crate::output::ModifyDbClusterSnapshotAttributeOutput {
-                db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result,
+                db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
@@ -731,81 +713,77 @@ impl ModifyDbClusterSnapshotAttributeOutput {
 /// <p>Contains the name of a cluster parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterParameterGroupOutput {
-    /// <p>The name of a cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lowercase string.</p>
+pub struct ModifyDbClusterParameterGroupOutput  {
+    /// <p>The name of a cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li> 
+    /// <li> <p>The first character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lowercase string.</p> 
     /// </note>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterParameterGroupOutput {
-    /// <p>The name of a cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lowercase string.</p>
+    /// <p>The name of a cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li> 
+    /// <li> <p>The first character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lowercase string.</p> 
     /// </note>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
 /// See [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
 pub mod modify_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a cluster parameter group.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-        /// <li> <p>The first character must be a letter.</p> </li>
-        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-        /// </ul> <note>
-        /// <p>This value is stored as a lowercase string.</p>
+        /// <p>The name of a cluster parameter group.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li> 
+        /// <li> <p>The first character must be a letter.</p> </li> 
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+        /// </ul> <note> 
+        /// <p>This value is stored as a lowercase string.</p> 
         /// </note>
-        pub fn db_cluster_parameter_group_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
-        /// <p>The name of a cluster parameter group.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
-        /// <li> <p>The first character must be a letter.</p> </li>
-        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-        /// </ul> <note>
-        /// <p>This value is stored as a lowercase string.</p>
+        /// <p>The name of a cluster parameter group.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li> 
+        /// <li> <p>The first character must be a letter.</p> </li> 
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+        /// </ul> <note> 
+        /// <p>This value is stored as a lowercase string.</p> 
         /// </note>
-        pub fn set_db_cluster_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_parameter_group_name = input;
-            self
+        pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_parameter_group_name = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterParameterGroupOutput {
             crate::output::ModifyDbClusterParameterGroupOutput {
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
@@ -817,20 +795,20 @@ impl ModifyDbClusterParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterOutput {
+pub struct ModifyDbClusterOutput  {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl ModifyDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
 pub mod modify_db_cluster_output {
-
+    
     /// A builder for [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -843,20 +821,19 @@ pub mod modify_db_cluster_output {
             self
         }
         /// <p>Detailed information about a cluster. </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterOutput {
             crate::output::ModifyDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
@@ -868,20 +845,20 @@ impl ModifyDbClusterOutput {
 /// <p>Represents the output of <code>ListTagsForResource</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of one or more tags.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of one or more tags.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -895,25 +872,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of one or more tags.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of one or more tags.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -925,20 +901,20 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailoverDbClusterOutput {
+pub struct FailoverDbClusterOutput  {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl FailoverDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
 pub mod failover_db_cluster_output {
-
+    
     /// A builder for [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -951,20 +927,19 @@ pub mod failover_db_cluster_output {
             self
         }
         /// <p>Detailed information about a cluster. </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
         pub fn build(self) -> crate::output::FailoverDbClusterOutput {
             crate::output::FailoverDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl FailoverDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
@@ -976,35 +951,31 @@ impl FailoverDbClusterOutput {
 /// <p>Represents the output of <code>DescribePendingMaintenanceActions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePendingMaintenanceActionsOutput {
+pub struct DescribePendingMaintenanceActionsOutput  {
     /// <p>The maintenance actions to be applied.</p>
     #[doc(hidden)]
-    pub pending_maintenance_actions:
-        std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
+    pub pending_maintenance_actions: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// <p>The maintenance actions to be applied.</p>
-    pub fn pending_maintenance_actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
+    pub fn pending_maintenance_actions(&self) -> std::option::Option<& [crate::model::ResourcePendingMaintenanceActions]> {
         self.pending_maintenance_actions.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
 pub mod describe_pending_maintenance_actions_output {
-
+    
     /// A builder for [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pending_maintenance_actions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
+        pub(crate) pending_maintenance_actions: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1013,24 +984,15 @@ pub mod describe_pending_maintenance_actions_output {
         /// To override the contents of this collection use [`set_pending_maintenance_actions`](Self::set_pending_maintenance_actions).
         ///
         /// <p>The maintenance actions to be applied.</p>
-        pub fn pending_maintenance_actions(
-            mut self,
-            input: crate::model::ResourcePendingMaintenanceActions,
-        ) -> Self {
+        pub fn pending_maintenance_actions(mut self, input: crate::model::ResourcePendingMaintenanceActions) -> Self {
             let mut v = self.pending_maintenance_actions.unwrap_or_default();
-            v.push(input);
-            self.pending_maintenance_actions = Some(v);
-            self
+                            v.push(input);
+                            self.pending_maintenance_actions = Some(v);
+                            self
         }
         /// <p>The maintenance actions to be applied.</p>
-        pub fn set_pending_maintenance_actions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>,
-            >,
-        ) -> Self {
-            self.pending_maintenance_actions = input;
-            self
+        pub fn set_pending_maintenance_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>) -> Self {
+            self.pending_maintenance_actions = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1039,17 +1001,20 @@ pub mod describe_pending_maintenance_actions_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
         pub fn build(self) -> crate::output::DescribePendingMaintenanceActionsOutput {
             crate::output::DescribePendingMaintenanceActionsOutput {
-                pending_maintenance_actions: self.pending_maintenance_actions,
-                marker: self.marker,
+                pending_maintenance_actions: self.pending_maintenance_actions
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
@@ -1061,35 +1026,31 @@ impl DescribePendingMaintenanceActionsOutput {
 /// <p>Represents the output of <code>DescribeOrderableDBInstanceOptions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrderableDbInstanceOptionsOutput {
+pub struct DescribeOrderableDbInstanceOptionsOutput  {
     /// <p>The options that are available for a particular orderable instance.</p>
     #[doc(hidden)]
-    pub orderable_db_instance_options:
-        std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
+    pub orderable_db_instance_options: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// <p>The options that are available for a particular orderable instance.</p>
-    pub fn orderable_db_instance_options(
-        &self,
-    ) -> std::option::Option<&[crate::model::OrderableDbInstanceOption]> {
+    pub fn orderable_db_instance_options(&self) -> std::option::Option<& [crate::model::OrderableDbInstanceOption]> {
         self.orderable_db_instance_options.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
 pub mod describe_orderable_db_instance_options_output {
-
+    
     /// A builder for [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) orderable_db_instance_options:
-            std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
+        pub(crate) orderable_db_instance_options: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1098,22 +1059,15 @@ pub mod describe_orderable_db_instance_options_output {
         /// To override the contents of this collection use [`set_orderable_db_instance_options`](Self::set_orderable_db_instance_options).
         ///
         /// <p>The options that are available for a particular orderable instance.</p>
-        pub fn orderable_db_instance_options(
-            mut self,
-            input: crate::model::OrderableDbInstanceOption,
-        ) -> Self {
+        pub fn orderable_db_instance_options(mut self, input: crate::model::OrderableDbInstanceOption) -> Self {
             let mut v = self.orderable_db_instance_options.unwrap_or_default();
-            v.push(input);
-            self.orderable_db_instance_options = Some(v);
-            self
+                            v.push(input);
+                            self.orderable_db_instance_options = Some(v);
+                            self
         }
         /// <p>The options that are available for a particular orderable instance.</p>
-        pub fn set_orderable_db_instance_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
-        ) -> Self {
-            self.orderable_db_instance_options = input;
-            self
+        pub fn set_orderable_db_instance_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>) -> Self {
+            self.orderable_db_instance_options = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1122,17 +1076,20 @@ pub mod describe_orderable_db_instance_options_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
         pub fn build(self) -> crate::output::DescribeOrderableDbInstanceOptionsOutput {
             crate::output::DescribeOrderableDbInstanceOptionsOutput {
-                orderable_db_instance_options: self.orderable_db_instance_options,
-                marker: self.marker,
+                orderable_db_instance_options: self.orderable_db_instance_options
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
@@ -1144,7 +1101,7 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGlobalClustersOutput {
+pub struct DescribeGlobalClustersOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1154,17 +1111,17 @@ pub struct DescribeGlobalClustersOutput {
 }
 impl DescribeGlobalClustersOutput {
     /// <p></p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p></p>
-    pub fn global_clusters(&self) -> std::option::Option<&[crate::model::GlobalCluster]> {
+    pub fn global_clusters(&self) -> std::option::Option<& [crate::model::GlobalCluster]> {
         self.global_clusters.as_deref()
     }
 }
 /// See [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
 pub mod describe_global_clusters_output {
-
+    
     /// A builder for [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1179,8 +1136,7 @@ pub mod describe_global_clusters_output {
         }
         /// <p></p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `global_clusters`.
         ///
@@ -1189,26 +1145,26 @@ pub mod describe_global_clusters_output {
         /// <p></p>
         pub fn global_clusters(mut self, input: crate::model::GlobalCluster) -> Self {
             let mut v = self.global_clusters.unwrap_or_default();
-            v.push(input);
-            self.global_clusters = Some(v);
-            self
+                            v.push(input);
+                            self.global_clusters = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_global_clusters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
-        ) -> Self {
-            self.global_clusters = input;
-            self
+        pub fn set_global_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>) -> Self {
+            self.global_clusters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
         pub fn build(self) -> crate::output::DescribeGlobalClustersOutput {
             crate::output::DescribeGlobalClustersOutput {
-                marker: self.marker,
-                global_clusters: self.global_clusters,
+                marker: self.marker
+                ,
+                global_clusters: self.global_clusters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGlobalClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
@@ -1220,36 +1176,32 @@ impl DescribeGlobalClustersOutput {
 /// <p>Represents the output of <code>DescribeEventSubscriptions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventSubscriptionsOutput {
+pub struct DescribeEventSubscriptionsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of event subscriptions.</p>
     #[doc(hidden)]
-    pub event_subscriptions_list:
-        std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+    pub event_subscriptions_list: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
 impl DescribeEventSubscriptionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of event subscriptions.</p>
-    pub fn event_subscriptions_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventSubscription]> {
+    pub fn event_subscriptions_list(&self) -> std::option::Option<& [crate::model::EventSubscription]> {
         self.event_subscriptions_list.as_deref()
     }
 }
 /// See [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
 pub mod describe_event_subscriptions_output {
-
+    
     /// A builder for [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) event_subscriptions_list:
-            std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+        pub(crate) event_subscriptions_list: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1259,8 +1211,7 @@ pub mod describe_event_subscriptions_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `event_subscriptions_list`.
         ///
@@ -1269,26 +1220,26 @@ pub mod describe_event_subscriptions_output {
         /// <p>A list of event subscriptions.</p>
         pub fn event_subscriptions_list(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions_list.unwrap_or_default();
-            v.push(input);
-            self.event_subscriptions_list = Some(v);
-            self
+                            v.push(input);
+                            self.event_subscriptions_list = Some(v);
+                            self
         }
         /// <p>A list of event subscriptions.</p>
-        pub fn set_event_subscriptions_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
-        ) -> Self {
-            self.event_subscriptions_list = input;
-            self
+        pub fn set_event_subscriptions_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>) -> Self {
+            self.event_subscriptions_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
         pub fn build(self) -> crate::output::DescribeEventSubscriptionsOutput {
             crate::output::DescribeEventSubscriptionsOutput {
-                marker: self.marker,
-                event_subscriptions_list: self.event_subscriptions_list,
+                marker: self.marker
+                ,
+                event_subscriptions_list: self.event_subscriptions_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
@@ -1300,7 +1251,7 @@ impl DescribeEventSubscriptionsOutput {
 /// <p>Represents the output of <code>DescribeEvents</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventsOutput {
+pub struct DescribeEventsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1310,17 +1261,17 @@ pub struct DescribeEventsOutput {
 }
 impl DescribeEventsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Detailed information about one or more events. </p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::Event]> {
         self.events.as_deref()
     }
 }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
-
+    
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1335,8 +1286,7 @@ pub mod describe_events_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -1345,26 +1295,26 @@ pub mod describe_events_output {
         /// <p>Detailed information about one or more events. </p>
         pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>Detailed information about one or more events. </p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::Event>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
-                marker: self.marker,
-                events: self.events,
+                marker: self.marker
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
@@ -1376,28 +1326,24 @@ impl DescribeEventsOutput {
 /// <p>Represents the output of <code>DescribeEventCategories</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventCategoriesOutput {
+pub struct DescribeEventCategoriesOutput  {
     /// <p>A list of event category maps.</p>
     #[doc(hidden)]
-    pub event_categories_map_list:
-        std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
+    pub event_categories_map_list: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
 impl DescribeEventCategoriesOutput {
     /// <p>A list of event category maps.</p>
-    pub fn event_categories_map_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventCategoriesMap]> {
+    pub fn event_categories_map_list(&self) -> std::option::Option<& [crate::model::EventCategoriesMap]> {
         self.event_categories_map_list.as_deref()
     }
 }
 /// See [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
 pub mod describe_event_categories_output {
-
+    
     /// A builder for [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_categories_map_list:
-            std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
+        pub(crate) event_categories_map_list: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
     }
     impl Builder {
         /// Appends an item to `event_categories_map_list`.
@@ -1405,30 +1351,26 @@ pub mod describe_event_categories_output {
         /// To override the contents of this collection use [`set_event_categories_map_list`](Self::set_event_categories_map_list).
         ///
         /// <p>A list of event category maps.</p>
-        pub fn event_categories_map_list(
-            mut self,
-            input: crate::model::EventCategoriesMap,
-        ) -> Self {
+        pub fn event_categories_map_list(mut self, input: crate::model::EventCategoriesMap) -> Self {
             let mut v = self.event_categories_map_list.unwrap_or_default();
-            v.push(input);
-            self.event_categories_map_list = Some(v);
-            self
+                            v.push(input);
+                            self.event_categories_map_list = Some(v);
+                            self
         }
         /// <p>A list of event category maps.</p>
-        pub fn set_event_categories_map_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
-        ) -> Self {
-            self.event_categories_map_list = input;
-            self
+        pub fn set_event_categories_map_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>) -> Self {
+            self.event_categories_map_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
         pub fn build(self) -> crate::output::DescribeEventCategoriesOutput {
             crate::output::DescribeEventCategoriesOutput {
-                event_categories_map_list: self.event_categories_map_list,
+                event_categories_map_list: self.event_categories_map_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
@@ -1440,20 +1382,20 @@ impl DescribeEventCategoriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEngineDefaultClusterParametersOutput {
+pub struct DescribeEngineDefaultClusterParametersOutput  {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
     #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultClusterParametersOutput {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
-    pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
+    pub fn engine_defaults(&self) -> std::option::Option<& crate::model::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
 }
 /// See [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
 pub mod describe_engine_default_cluster_parameters_output {
-
+    
     /// A builder for [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1466,20 +1408,19 @@ pub mod describe_engine_default_cluster_parameters_output {
             self
         }
         /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
-        pub fn set_engine_defaults(
-            mut self,
-            input: std::option::Option<crate::model::EngineDefaults>,
-        ) -> Self {
-            self.engine_defaults = input;
-            self
+        pub fn set_engine_defaults(mut self, input: std::option::Option<crate::model::EngineDefaults>) -> Self {
+            self.engine_defaults = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
         pub fn build(self) -> crate::output::DescribeEngineDefaultClusterParametersOutput {
             crate::output::DescribeEngineDefaultClusterParametersOutput {
-                engine_defaults: self.engine_defaults,
+                engine_defaults: self.engine_defaults
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEngineDefaultClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
@@ -1491,7 +1432,7 @@ impl DescribeEngineDefaultClusterParametersOutput {
 /// <p>Represents the output of <code>DescribeDBSubnetGroups</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbSubnetGroupsOutput {
+pub struct DescribeDbSubnetGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1501,23 +1442,22 @@ pub struct DescribeDbSubnetGroupsOutput {
 }
 impl DescribeDbSubnetGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Detailed information about one or more subnet groups.</p>
-    pub fn db_subnet_groups(&self) -> std::option::Option<&[crate::model::DbSubnetGroup]> {
+    pub fn db_subnet_groups(&self) -> std::option::Option<& [crate::model::DbSubnetGroup]> {
         self.db_subnet_groups.as_deref()
     }
 }
 /// See [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
 pub mod describe_db_subnet_groups_output {
-
+    
     /// A builder for [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_subnet_groups:
-            std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
+        pub(crate) db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1527,8 +1467,7 @@ pub mod describe_db_subnet_groups_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_subnet_groups`.
         ///
@@ -1537,26 +1476,26 @@ pub mod describe_db_subnet_groups_output {
         /// <p>Detailed information about one or more subnet groups.</p>
         pub fn db_subnet_groups(mut self, input: crate::model::DbSubnetGroup) -> Self {
             let mut v = self.db_subnet_groups.unwrap_or_default();
-            v.push(input);
-            self.db_subnet_groups = Some(v);
-            self
+                            v.push(input);
+                            self.db_subnet_groups = Some(v);
+                            self
         }
         /// <p>Detailed information about one or more subnet groups.</p>
-        pub fn set_db_subnet_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
-        ) -> Self {
-            self.db_subnet_groups = input;
-            self
+        pub fn set_db_subnet_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>) -> Self {
+            self.db_subnet_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbSubnetGroupsOutput {
             crate::output::DescribeDbSubnetGroupsOutput {
-                marker: self.marker,
-                db_subnet_groups: self.db_subnet_groups,
+                marker: self.marker
+                ,
+                db_subnet_groups: self.db_subnet_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
@@ -1568,7 +1507,7 @@ impl DescribeDbSubnetGroupsOutput {
 /// <p>Represents the output of <code>DescribeDBInstances</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbInstancesOutput {
+pub struct DescribeDbInstancesOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1578,17 +1517,17 @@ pub struct DescribeDbInstancesOutput {
 }
 impl DescribeDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Detailed information about one or more instances. </p>
-    pub fn db_instances(&self) -> std::option::Option<&[crate::model::DbInstance]> {
+    pub fn db_instances(&self) -> std::option::Option<& [crate::model::DbInstance]> {
         self.db_instances.as_deref()
     }
 }
 /// See [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
 pub mod describe_db_instances_output {
-
+    
     /// A builder for [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1603,8 +1542,7 @@ pub mod describe_db_instances_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_instances`.
         ///
@@ -1613,26 +1551,26 @@ pub mod describe_db_instances_output {
         /// <p>Detailed information about one or more instances. </p>
         pub fn db_instances(mut self, input: crate::model::DbInstance) -> Self {
             let mut v = self.db_instances.unwrap_or_default();
-            v.push(input);
-            self.db_instances = Some(v);
-            self
+                            v.push(input);
+                            self.db_instances = Some(v);
+                            self
         }
         /// <p>Detailed information about one or more instances. </p>
-        pub fn set_db_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
-        ) -> Self {
-            self.db_instances = input;
-            self
+        pub fn set_db_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbInstance>>) -> Self {
+            self.db_instances = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
         pub fn build(self) -> crate::output::DescribeDbInstancesOutput {
             crate::output::DescribeDbInstancesOutput {
-                marker: self.marker,
-                db_instances: self.db_instances,
+                marker: self.marker
+                ,
+                db_instances: self.db_instances
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
@@ -1644,7 +1582,7 @@ impl DescribeDbInstancesOutput {
 /// <p>Represents the output of <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbEngineVersionsOutput {
+pub struct DescribeDbEngineVersionsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1654,23 +1592,22 @@ pub struct DescribeDbEngineVersionsOutput {
 }
 impl DescribeDbEngineVersionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Detailed information about one or more engine versions.</p>
-    pub fn db_engine_versions(&self) -> std::option::Option<&[crate::model::DbEngineVersion]> {
+    pub fn db_engine_versions(&self) -> std::option::Option<& [crate::model::DbEngineVersion]> {
         self.db_engine_versions.as_deref()
     }
 }
 /// See [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
 pub mod describe_db_engine_versions_output {
-
+    
     /// A builder for [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_engine_versions:
-            std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
+        pub(crate) db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1680,8 +1617,7 @@ pub mod describe_db_engine_versions_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_engine_versions`.
         ///
@@ -1690,26 +1626,26 @@ pub mod describe_db_engine_versions_output {
         /// <p>Detailed information about one or more engine versions.</p>
         pub fn db_engine_versions(mut self, input: crate::model::DbEngineVersion) -> Self {
             let mut v = self.db_engine_versions.unwrap_or_default();
-            v.push(input);
-            self.db_engine_versions = Some(v);
-            self
+                            v.push(input);
+                            self.db_engine_versions = Some(v);
+                            self
         }
         /// <p>Detailed information about one or more engine versions.</p>
-        pub fn set_db_engine_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
-        ) -> Self {
-            self.db_engine_versions = input;
-            self
+        pub fn set_db_engine_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>) -> Self {
+            self.db_engine_versions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
         pub fn build(self) -> crate::output::DescribeDbEngineVersionsOutput {
             crate::output::DescribeDbEngineVersionsOutput {
-                marker: self.marker,
-                db_engine_versions: self.db_engine_versions,
+                marker: self.marker
+                ,
+                db_engine_versions: self.db_engine_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
@@ -1721,7 +1657,7 @@ impl DescribeDbEngineVersionsOutput {
 /// <p>Represents the output of <code>DescribeDBClusterSnapshots</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterSnapshotsOutput {
+pub struct DescribeDbClusterSnapshotsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1731,23 +1667,22 @@ pub struct DescribeDbClusterSnapshotsOutput {
 }
 impl DescribeDbClusterSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Provides a list of cluster snapshots.</p>
-    pub fn db_cluster_snapshots(&self) -> std::option::Option<&[crate::model::DbClusterSnapshot]> {
+    pub fn db_cluster_snapshots(&self) -> std::option::Option<& [crate::model::DbClusterSnapshot]> {
         self.db_cluster_snapshots.as_deref()
     }
 }
 /// See [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
 pub mod describe_db_cluster_snapshots_output {
-
+    
     /// A builder for [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_snapshots:
-            std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
+        pub(crate) db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1757,8 +1692,7 @@ pub mod describe_db_cluster_snapshots_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_cluster_snapshots`.
         ///
@@ -1767,26 +1701,26 @@ pub mod describe_db_cluster_snapshots_output {
         /// <p>Provides a list of cluster snapshots.</p>
         pub fn db_cluster_snapshots(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             let mut v = self.db_cluster_snapshots.unwrap_or_default();
-            v.push(input);
-            self.db_cluster_snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.db_cluster_snapshots = Some(v);
+                            self
         }
         /// <p>Provides a list of cluster snapshots.</p>
-        pub fn set_db_cluster_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
-        ) -> Self {
-            self.db_cluster_snapshots = input;
-            self
+        pub fn set_db_cluster_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>) -> Self {
+            self.db_cluster_snapshots = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterSnapshotsOutput {
             crate::output::DescribeDbClusterSnapshotsOutput {
-                marker: self.marker,
-                db_cluster_snapshots: self.db_cluster_snapshots,
+                marker: self.marker
+                ,
+                db_cluster_snapshots: self.db_cluster_snapshots
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
@@ -1798,53 +1732,45 @@ impl DescribeDbClusterSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterSnapshotAttributesOutput {
+pub struct DescribeDbClusterSnapshotAttributesOutput  {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_attributes_result:
-        std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+    pub db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
 impl DescribeDbClusterSnapshotAttributesOutput {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-    pub fn db_cluster_snapshot_attributes_result(
-        &self,
-    ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
+    pub fn db_cluster_snapshot_attributes_result(&self) -> std::option::Option<& crate::model::DbClusterSnapshotAttributesResult> {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
 /// See [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
 pub mod describe_db_cluster_snapshot_attributes_output {
-
+    
     /// A builder for [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_cluster_snapshot_attributes_result:
-            std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+        pub(crate) db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
     }
     impl Builder {
         /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-        pub fn db_cluster_snapshot_attributes_result(
-            mut self,
-            input: crate::model::DbClusterSnapshotAttributesResult,
-        ) -> Self {
+        pub fn db_cluster_snapshot_attributes_result(mut self, input: crate::model::DbClusterSnapshotAttributesResult) -> Self {
             self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
         /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-        pub fn set_db_cluster_snapshot_attributes_result(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
-        ) -> Self {
-            self.db_cluster_snapshot_attributes_result = input;
-            self
+        pub fn set_db_cluster_snapshot_attributes_result(mut self, input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>) -> Self {
+            self.db_cluster_snapshot_attributes_result = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterSnapshotAttributesOutput {
             crate::output::DescribeDbClusterSnapshotAttributesOutput {
-                db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result,
+                db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterSnapshotAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
@@ -1856,7 +1782,7 @@ impl DescribeDbClusterSnapshotAttributesOutput {
 /// <p>Represents the output of <code>DescribeDBClusters</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClustersOutput {
+pub struct DescribeDbClustersOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1866,17 +1792,17 @@ pub struct DescribeDbClustersOutput {
 }
 impl DescribeDbClustersOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of clusters.</p>
-    pub fn db_clusters(&self) -> std::option::Option<&[crate::model::DbCluster]> {
+    pub fn db_clusters(&self) -> std::option::Option<& [crate::model::DbCluster]> {
         self.db_clusters.as_deref()
     }
 }
 /// See [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
 pub mod describe_db_clusters_output {
-
+    
     /// A builder for [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1891,8 +1817,7 @@ pub mod describe_db_clusters_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_clusters`.
         ///
@@ -1901,26 +1826,26 @@ pub mod describe_db_clusters_output {
         /// <p>A list of clusters.</p>
         pub fn db_clusters(mut self, input: crate::model::DbCluster) -> Self {
             let mut v = self.db_clusters.unwrap_or_default();
-            v.push(input);
-            self.db_clusters = Some(v);
-            self
+                            v.push(input);
+                            self.db_clusters = Some(v);
+                            self
         }
         /// <p>A list of clusters.</p>
-        pub fn set_db_clusters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
-        ) -> Self {
-            self.db_clusters = input;
-            self
+        pub fn set_db_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbCluster>>) -> Self {
+            self.db_clusters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
         pub fn build(self) -> crate::output::DescribeDbClustersOutput {
             crate::output::DescribeDbClustersOutput {
-                marker: self.marker,
-                db_clusters: self.db_clusters,
+                marker: self.marker
+                ,
+                db_clusters: self.db_clusters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
@@ -1932,7 +1857,7 @@ impl DescribeDbClustersOutput {
 /// <p>Represents the output of <code>DBClusterParameterGroup</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterParametersOutput {
+pub struct DescribeDbClusterParametersOutput  {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -1942,17 +1867,17 @@ pub struct DescribeDbClusterParametersOutput {
 }
 impl DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
 pub mod describe_db_cluster_parameters_output {
-
+    
     /// A builder for [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1967,17 +1892,13 @@ pub mod describe_db_cluster_parameters_output {
         /// <p>Provides a list of parameters for the cluster parameter group.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>Provides a list of parameters for the cluster parameter group.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1986,17 +1907,20 @@ pub mod describe_db_cluster_parameters_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterParametersOutput {
             crate::output::DescribeDbClusterParametersOutput {
-                parameters: self.parameters,
-                marker: self.marker,
+                parameters: self.parameters
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
@@ -2008,36 +1932,32 @@ impl DescribeDbClusterParametersOutput {
 /// <p>Represents the output of <code>DBClusterParameterGroups</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterParameterGroupsOutput {
+pub struct DescribeDbClusterParameterGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cluster parameter groups.</p>
     #[doc(hidden)]
-    pub db_cluster_parameter_groups:
-        std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
+    pub db_cluster_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
 }
 impl DescribeDbClusterParameterGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of cluster parameter groups.</p>
-    pub fn db_cluster_parameter_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::DbClusterParameterGroup]> {
+    pub fn db_cluster_parameter_groups(&self) -> std::option::Option<& [crate::model::DbClusterParameterGroup]> {
         self.db_cluster_parameter_groups.as_deref()
     }
 }
 /// See [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
 pub mod describe_db_cluster_parameter_groups_output {
-
+    
     /// A builder for [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_parameter_groups:
-            std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
+        pub(crate) db_cluster_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2047,39 +1967,35 @@ pub mod describe_db_cluster_parameter_groups_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_cluster_parameter_groups`.
         ///
         /// To override the contents of this collection use [`set_db_cluster_parameter_groups`](Self::set_db_cluster_parameter_groups).
         ///
         /// <p>A list of cluster parameter groups.</p>
-        pub fn db_cluster_parameter_groups(
-            mut self,
-            input: crate::model::DbClusterParameterGroup,
-        ) -> Self {
+        pub fn db_cluster_parameter_groups(mut self, input: crate::model::DbClusterParameterGroup) -> Self {
             let mut v = self.db_cluster_parameter_groups.unwrap_or_default();
-            v.push(input);
-            self.db_cluster_parameter_groups = Some(v);
-            self
+                            v.push(input);
+                            self.db_cluster_parameter_groups = Some(v);
+                            self
         }
         /// <p>A list of cluster parameter groups.</p>
-        pub fn set_db_cluster_parameter_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
-        ) -> Self {
-            self.db_cluster_parameter_groups = input;
-            self
+        pub fn set_db_cluster_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>) -> Self {
+            self.db_cluster_parameter_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterParameterGroupsOutput {
             crate::output::DescribeDbClusterParameterGroupsOutput {
-                marker: self.marker,
-                db_cluster_parameter_groups: self.db_cluster_parameter_groups,
+                marker: self.marker
+                ,
+                db_cluster_parameter_groups: self.db_cluster_parameter_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
@@ -2091,7 +2007,7 @@ impl DescribeDbClusterParameterGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificatesOutput {
+pub struct DescribeCertificatesOutput  {
     /// <p>A list of certificates for this Amazon Web Services account.</p>
     #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -2101,17 +2017,17 @@ pub struct DescribeCertificatesOutput {
 }
 impl DescribeCertificatesOutput {
     /// <p>A list of certificates for this Amazon Web Services account.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::Certificate]> {
         self.certificates.as_deref()
     }
     /// <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
 pub mod describe_certificates_output {
-
+    
     /// A builder for [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2126,17 +2042,13 @@ pub mod describe_certificates_output {
         /// <p>A list of certificates for this Amazon Web Services account.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>A list of certificates for this Amazon Web Services account.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Certificate>>) -> Self {
+            self.certificates = input; self
         }
         /// <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2145,17 +2057,20 @@ pub mod describe_certificates_output {
         }
         /// <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
         pub fn build(self) -> crate::output::DescribeCertificatesOutput {
             crate::output::DescribeCertificatesOutput {
-                certificates: self.certificates,
-                marker: self.marker,
+                certificates: self.certificates
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
@@ -2167,20 +2082,20 @@ impl DescribeCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGlobalClusterOutput {
+pub struct DeleteGlobalClusterOutput  {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl DeleteGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
 pub mod delete_global_cluster_output {
-
+    
     /// A builder for [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2193,20 +2108,19 @@ pub mod delete_global_cluster_output {
             self
         }
         /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
         pub fn build(self) -> crate::output::DeleteGlobalClusterOutput {
             crate::output::DeleteGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
@@ -2218,20 +2132,20 @@ impl DeleteGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventSubscriptionOutput {
+pub struct DeleteEventSubscriptionOutput  {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl DeleteEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
 pub mod delete_event_subscription_output {
-
+    
     /// A builder for [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2244,20 +2158,19 @@ pub mod delete_event_subscription_output {
             self
         }
         /// <p>Detailed information about an event to which you have subscribed.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteEventSubscriptionOutput {
             crate::output::DeleteEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
@@ -2269,19 +2182,24 @@ impl DeleteEventSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbSubnetGroupOutput {}
+pub struct DeleteDbSubnetGroupOutput  {
+}
 /// See [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
 pub mod delete_db_subnet_group_output {
-
+    
     /// A builder for [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbSubnetGroupOutput {
-            crate::output::DeleteDbSubnetGroupOutput {}
+            crate::output::DeleteDbSubnetGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
@@ -2293,20 +2211,20 @@ impl DeleteDbSubnetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbInstanceOutput {
+pub struct DeleteDbInstanceOutput  {
     /// <p>Detailed information about an instance. </p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl DeleteDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
 pub mod delete_db_instance_output {
-
+    
     /// A builder for [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2319,20 +2237,19 @@ pub mod delete_db_instance_output {
             self
         }
         /// <p>Detailed information about an instance. </p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
         pub fn build(self) -> crate::output::DeleteDbInstanceOutput {
             crate::output::DeleteDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
@@ -2344,20 +2261,20 @@ impl DeleteDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterSnapshotOutput {
+pub struct DeleteDbClusterSnapshotOutput  {
     /// <p>Detailed information about a cluster snapshot. </p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl DeleteDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
-    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<& crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
 }
 /// See [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
 pub mod delete_db_cluster_snapshot_output {
-
+    
     /// A builder for [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2370,20 +2287,19 @@ pub mod delete_db_cluster_snapshot_output {
             self
         }
         /// <p>Detailed information about a cluster snapshot. </p>
-        pub fn set_db_cluster_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshot>,
-        ) -> Self {
-            self.db_cluster_snapshot = input;
-            self
+        pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
+            self.db_cluster_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterSnapshotOutput {
             crate::output::DeleteDbClusterSnapshotOutput {
-                db_cluster_snapshot: self.db_cluster_snapshot,
+                db_cluster_snapshot: self.db_cluster_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
@@ -2395,19 +2311,24 @@ impl DeleteDbClusterSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterParameterGroupOutput {}
+pub struct DeleteDbClusterParameterGroupOutput  {
+}
 /// See [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
 pub mod delete_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterParameterGroupOutput {
-            crate::output::DeleteDbClusterParameterGroupOutput {}
+            crate::output::DeleteDbClusterParameterGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
@@ -2419,20 +2340,20 @@ impl DeleteDbClusterParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterOutput {
+pub struct DeleteDbClusterOutput  {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl DeleteDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
 pub mod delete_db_cluster_output {
-
+    
     /// A builder for [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2445,20 +2366,19 @@ pub mod delete_db_cluster_output {
             self
         }
         /// <p>Detailed information about a cluster. </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterOutput {
             crate::output::DeleteDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
@@ -2470,20 +2390,20 @@ impl DeleteDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalClusterOutput {
+pub struct CreateGlobalClusterOutput  {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl CreateGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
 pub mod create_global_cluster_output {
-
+    
     /// A builder for [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2496,20 +2416,19 @@ pub mod create_global_cluster_output {
             self
         }
         /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
         pub fn build(self) -> crate::output::CreateGlobalClusterOutput {
             crate::output::CreateGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
@@ -2521,20 +2440,20 @@ impl CreateGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventSubscriptionOutput {
+pub struct CreateEventSubscriptionOutput  {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
 pub mod create_event_subscription_output {
-
+    
     /// A builder for [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2547,20 +2466,19 @@ pub mod create_event_subscription_output {
             self
         }
         /// <p>Detailed information about an event to which you have subscribed.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateEventSubscriptionOutput {
             crate::output::CreateEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
@@ -2572,20 +2490,20 @@ impl CreateEventSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbSubnetGroupOutput {
+pub struct CreateDbSubnetGroupOutput  {
     /// <p>Detailed information about a subnet group. </p>
     #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl CreateDbSubnetGroupOutput {
     /// <p>Detailed information about a subnet group. </p>
-    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+    pub fn db_subnet_group(&self) -> std::option::Option<& crate::model::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
 }
 /// See [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
 pub mod create_db_subnet_group_output {
-
+    
     /// A builder for [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2598,20 +2516,19 @@ pub mod create_db_subnet_group_output {
             self
         }
         /// <p>Detailed information about a subnet group. </p>
-        pub fn set_db_subnet_group(
-            mut self,
-            input: std::option::Option<crate::model::DbSubnetGroup>,
-        ) -> Self {
-            self.db_subnet_group = input;
-            self
+        pub fn set_db_subnet_group(mut self, input: std::option::Option<crate::model::DbSubnetGroup>) -> Self {
+            self.db_subnet_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::CreateDbSubnetGroupOutput {
             crate::output::CreateDbSubnetGroupOutput {
-                db_subnet_group: self.db_subnet_group,
+                db_subnet_group: self.db_subnet_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
@@ -2623,20 +2540,20 @@ impl CreateDbSubnetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbInstanceOutput {
+pub struct CreateDbInstanceOutput  {
     /// <p>Detailed information about an instance. </p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
 pub mod create_db_instance_output {
-
+    
     /// A builder for [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2649,20 +2566,19 @@ pub mod create_db_instance_output {
             self
         }
         /// <p>Detailed information about an instance. </p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
         pub fn build(self) -> crate::output::CreateDbInstanceOutput {
             crate::output::CreateDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
@@ -2674,20 +2590,20 @@ impl CreateDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbClusterSnapshotOutput {
+pub struct CreateDbClusterSnapshotOutput  {
     /// <p>Detailed information about a cluster snapshot. </p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CreateDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
-    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<& crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
 }
 /// See [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
 pub mod create_db_cluster_snapshot_output {
-
+    
     /// A builder for [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2700,20 +2616,19 @@ pub mod create_db_cluster_snapshot_output {
             self
         }
         /// <p>Detailed information about a cluster snapshot. </p>
-        pub fn set_db_cluster_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshot>,
-        ) -> Self {
-            self.db_cluster_snapshot = input;
-            self
+        pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
+            self.db_cluster_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CreateDbClusterSnapshotOutput {
             crate::output::CreateDbClusterSnapshotOutput {
-                db_cluster_snapshot: self.db_cluster_snapshot,
+                db_cluster_snapshot: self.db_cluster_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
@@ -2725,52 +2640,45 @@ impl CreateDbClusterSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbClusterParameterGroupOutput {
+pub struct CreateDbClusterParameterGroupOutput  {
     /// <p>Detailed information about a cluster parameter group. </p>
     #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CreateDbClusterParameterGroupOutput {
     /// <p>Detailed information about a cluster parameter group. </p>
-    pub fn db_cluster_parameter_group(
-        &self,
-    ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
+    pub fn db_cluster_parameter_group(&self) -> std::option::Option<& crate::model::DbClusterParameterGroup> {
         self.db_cluster_parameter_group.as_ref()
     }
 }
 /// See [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
 pub mod create_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_cluster_parameter_group:
-            std::option::Option<crate::model::DbClusterParameterGroup>,
+        pub(crate) db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
     }
     impl Builder {
         /// <p>Detailed information about a cluster parameter group. </p>
-        pub fn db_cluster_parameter_group(
-            mut self,
-            input: crate::model::DbClusterParameterGroup,
-        ) -> Self {
+        pub fn db_cluster_parameter_group(mut self, input: crate::model::DbClusterParameterGroup) -> Self {
             self.db_cluster_parameter_group = Some(input);
             self
         }
         /// <p>Detailed information about a cluster parameter group. </p>
-        pub fn set_db_cluster_parameter_group(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterParameterGroup>,
-        ) -> Self {
-            self.db_cluster_parameter_group = input;
-            self
+        pub fn set_db_cluster_parameter_group(mut self, input: std::option::Option<crate::model::DbClusterParameterGroup>) -> Self {
+            self.db_cluster_parameter_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateDbClusterParameterGroupOutput {
             crate::output::CreateDbClusterParameterGroupOutput {
-                db_cluster_parameter_group: self.db_cluster_parameter_group,
+                db_cluster_parameter_group: self.db_cluster_parameter_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
@@ -2782,20 +2690,20 @@ impl CreateDbClusterParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbClusterOutput {
+pub struct CreateDbClusterOutput  {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl CreateDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
 pub mod create_db_cluster_output {
-
+    
     /// A builder for [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2808,20 +2716,19 @@ pub mod create_db_cluster_output {
             self
         }
         /// <p>Detailed information about a cluster. </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
         pub fn build(self) -> crate::output::CreateDbClusterOutput {
             crate::output::CreateDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
@@ -2833,20 +2740,20 @@ impl CreateDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyDbClusterSnapshotOutput {
+pub struct CopyDbClusterSnapshotOutput  {
     /// <p>Detailed information about a cluster snapshot. </p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CopyDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
-    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<& crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
 }
 /// See [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
 pub mod copy_db_cluster_snapshot_output {
-
+    
     /// A builder for [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2859,20 +2766,19 @@ pub mod copy_db_cluster_snapshot_output {
             self
         }
         /// <p>Detailed information about a cluster snapshot. </p>
-        pub fn set_db_cluster_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshot>,
-        ) -> Self {
-            self.db_cluster_snapshot = input;
-            self
+        pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
+            self.db_cluster_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CopyDbClusterSnapshotOutput {
             crate::output::CopyDbClusterSnapshotOutput {
-                db_cluster_snapshot: self.db_cluster_snapshot,
+                db_cluster_snapshot: self.db_cluster_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
@@ -2884,52 +2790,45 @@ impl CopyDbClusterSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyDbClusterParameterGroupOutput {
+pub struct CopyDbClusterParameterGroupOutput  {
     /// <p>Detailed information about a cluster parameter group. </p>
     #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CopyDbClusterParameterGroupOutput {
     /// <p>Detailed information about a cluster parameter group. </p>
-    pub fn db_cluster_parameter_group(
-        &self,
-    ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
+    pub fn db_cluster_parameter_group(&self) -> std::option::Option<& crate::model::DbClusterParameterGroup> {
         self.db_cluster_parameter_group.as_ref()
     }
 }
 /// See [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
 pub mod copy_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_cluster_parameter_group:
-            std::option::Option<crate::model::DbClusterParameterGroup>,
+        pub(crate) db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
     }
     impl Builder {
         /// <p>Detailed information about a cluster parameter group. </p>
-        pub fn db_cluster_parameter_group(
-            mut self,
-            input: crate::model::DbClusterParameterGroup,
-        ) -> Self {
+        pub fn db_cluster_parameter_group(mut self, input: crate::model::DbClusterParameterGroup) -> Self {
             self.db_cluster_parameter_group = Some(input);
             self
         }
         /// <p>Detailed information about a cluster parameter group. </p>
-        pub fn set_db_cluster_parameter_group(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterParameterGroup>,
-        ) -> Self {
-            self.db_cluster_parameter_group = input;
-            self
+        pub fn set_db_cluster_parameter_group(mut self, input: std::option::Option<crate::model::DbClusterParameterGroup>) -> Self {
+            self.db_cluster_parameter_group = input; self
         }
         /// Consumes the builder and constructs a [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::CopyDbClusterParameterGroupOutput {
             crate::output::CopyDbClusterParameterGroupOutput {
-                db_cluster_parameter_group: self.db_cluster_parameter_group,
+                db_cluster_parameter_group: self.db_cluster_parameter_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
@@ -2941,53 +2840,45 @@ impl CopyDbClusterParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplyPendingMaintenanceActionOutput {
+pub struct ApplyPendingMaintenanceActionOutput  {
     /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
     #[doc(hidden)]
-    pub resource_pending_maintenance_actions:
-        std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+    pub resource_pending_maintenance_actions: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
-    pub fn resource_pending_maintenance_actions(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourcePendingMaintenanceActions> {
+    pub fn resource_pending_maintenance_actions(&self) -> std::option::Option<& crate::model::ResourcePendingMaintenanceActions> {
         self.resource_pending_maintenance_actions.as_ref()
     }
 }
 /// See [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
 pub mod apply_pending_maintenance_action_output {
-
+    
     /// A builder for [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_pending_maintenance_actions:
-            std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+        pub(crate) resource_pending_maintenance_actions: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
     }
     impl Builder {
         /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
-        pub fn resource_pending_maintenance_actions(
-            mut self,
-            input: crate::model::ResourcePendingMaintenanceActions,
-        ) -> Self {
+        pub fn resource_pending_maintenance_actions(mut self, input: crate::model::ResourcePendingMaintenanceActions) -> Self {
             self.resource_pending_maintenance_actions = Some(input);
             self
         }
         /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
-        pub fn set_resource_pending_maintenance_actions(
-            mut self,
-            input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
-        ) -> Self {
-            self.resource_pending_maintenance_actions = input;
-            self
+        pub fn set_resource_pending_maintenance_actions(mut self, input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>) -> Self {
+            self.resource_pending_maintenance_actions = input; self
         }
         /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
         pub fn build(self) -> crate::output::ApplyPendingMaintenanceActionOutput {
             crate::output::ApplyPendingMaintenanceActionOutput {
-                resource_pending_maintenance_actions: self.resource_pending_maintenance_actions,
+                resource_pending_maintenance_actions: self.resource_pending_maintenance_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
@@ -2999,19 +2890,24 @@ impl ApplyPendingMaintenanceActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceOutput {}
+pub struct AddTagsToResourceOutput  {
+}
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
-
+    
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
-            crate::output::AddTagsToResourceOutput {}
+            crate::output::AddTagsToResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
@@ -3023,20 +2919,20 @@ impl AddTagsToResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddSourceIdentifierToSubscriptionOutput {
+pub struct AddSourceIdentifierToSubscriptionOutput  {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl AddSourceIdentifierToSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
 pub mod add_source_identifier_to_subscription_output {
-
+    
     /// A builder for [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3049,20 +2945,19 @@ pub mod add_source_identifier_to_subscription_output {
             self
         }
         /// <p>Detailed information about an event to which you have subscribed.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
         pub fn build(self) -> crate::output::AddSourceIdentifierToSubscriptionOutput {
             crate::output::AddSourceIdentifierToSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl AddSourceIdentifierToSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
@@ -3070,3 +2965,4 @@ impl AddSourceIdentifierToSubscriptionOutput {
         crate::output::add_source_identifier_to_subscription_output::Builder::default()
     }
 }
+

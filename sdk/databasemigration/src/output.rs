@@ -3,20 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriptionsToEventBridgeOutput {
+pub struct UpdateSubscriptionsToEventBridgeOutput  {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
     #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl UpdateSubscriptionsToEventBridgeOutput {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
-    pub fn result(&self) -> std::option::Option<&str> {
+    pub fn result(&self) -> std::option::Option<& str> {
         self.result.as_deref()
     }
 }
 /// See [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput).
 pub mod update_subscriptions_to_event_bridge_output {
-
+    
     /// A builder for [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,16 +30,18 @@ pub mod update_subscriptions_to_event_bridge_output {
         }
         /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.result = input;
-            self
+            self.result = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput).
         pub fn build(self) -> crate::output::UpdateSubscriptionsToEventBridgeOutput {
             crate::output::UpdateSubscriptionsToEventBridgeOutput {
-                result: self.result,
+                result: self.result
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSubscriptionsToEventBridgeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput).
@@ -51,20 +53,20 @@ impl UpdateSubscriptionsToEventBridgeOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestConnectionOutput {
+pub struct TestConnectionOutput  {
     /// <p>The connection tested.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl TestConnectionOutput {
     /// <p>The connection tested.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+    pub fn connection(&self) -> std::option::Option<& crate::model::Connection> {
         self.connection.as_ref()
     }
 }
 /// See [`TestConnectionOutput`](crate::output::TestConnectionOutput).
 pub mod test_connection_output {
-
+    
     /// A builder for [`TestConnectionOutput`](crate::output::TestConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,20 +79,19 @@ pub mod test_connection_output {
             self
         }
         /// <p>The connection tested.</p>
-        pub fn set_connection(
-            mut self,
-            input: std::option::Option<crate::model::Connection>,
-        ) -> Self {
-            self.connection = input;
-            self
+        pub fn set_connection(mut self, input: std::option::Option<crate::model::Connection>) -> Self {
+            self.connection = input; self
         }
         /// Consumes the builder and constructs a [`TestConnectionOutput`](crate::output::TestConnectionOutput).
         pub fn build(self) -> crate::output::TestConnectionOutput {
             crate::output::TestConnectionOutput {
-                connection: self.connection,
+                connection: self.connection
+                ,
             }
         }
     }
+    
+    
 }
 impl TestConnectionOutput {
     /// Creates a new builder-style object to manufacture [`TestConnectionOutput`](crate::output::TestConnectionOutput).
@@ -102,20 +103,20 @@ impl TestConnectionOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopReplicationTaskOutput {
+pub struct StopReplicationTaskOutput  {
     /// <p>The replication task stopped.</p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl StopReplicationTaskOutput {
     /// <p>The replication task stopped.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::model::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 /// See [`StopReplicationTaskOutput`](crate::output::StopReplicationTaskOutput).
 pub mod stop_replication_task_output {
-
+    
     /// A builder for [`StopReplicationTaskOutput`](crate::output::StopReplicationTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -128,20 +129,19 @@ pub mod stop_replication_task_output {
             self
         }
         /// <p>The replication task stopped.</p>
-        pub fn set_replication_task(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTask>,
-        ) -> Self {
-            self.replication_task = input;
-            self
+        pub fn set_replication_task(mut self, input: std::option::Option<crate::model::ReplicationTask>) -> Self {
+            self.replication_task = input; self
         }
         /// Consumes the builder and constructs a [`StopReplicationTaskOutput`](crate::output::StopReplicationTaskOutput).
         pub fn build(self) -> crate::output::StopReplicationTaskOutput {
             crate::output::StopReplicationTaskOutput {
-                replication_task: self.replication_task,
+                replication_task: self.replication_task
+                ,
             }
         }
     }
+    
+    
 }
 impl StopReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`StopReplicationTaskOutput`](crate::output::StopReplicationTaskOutput).
@@ -153,53 +153,45 @@ impl StopReplicationTaskOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReplicationTaskAssessmentRunOutput {
+pub struct StartReplicationTaskAssessmentRunOutput  {
     /// <p>The premigration assessment run that was started.</p>
     #[doc(hidden)]
-    pub replication_task_assessment_run:
-        std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
+    pub replication_task_assessment_run: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
 impl StartReplicationTaskAssessmentRunOutput {
     /// <p>The premigration assessment run that was started.</p>
-    pub fn replication_task_assessment_run(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationTaskAssessmentRun> {
+    pub fn replication_task_assessment_run(&self) -> std::option::Option<& crate::model::ReplicationTaskAssessmentRun> {
         self.replication_task_assessment_run.as_ref()
     }
 }
 /// See [`StartReplicationTaskAssessmentRunOutput`](crate::output::StartReplicationTaskAssessmentRunOutput).
 pub mod start_replication_task_assessment_run_output {
-
+    
     /// A builder for [`StartReplicationTaskAssessmentRunOutput`](crate::output::StartReplicationTaskAssessmentRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) replication_task_assessment_run:
-            std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
+        pub(crate) replication_task_assessment_run: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
     }
     impl Builder {
         /// <p>The premigration assessment run that was started.</p>
-        pub fn replication_task_assessment_run(
-            mut self,
-            input: crate::model::ReplicationTaskAssessmentRun,
-        ) -> Self {
+        pub fn replication_task_assessment_run(mut self, input: crate::model::ReplicationTaskAssessmentRun) -> Self {
             self.replication_task_assessment_run = Some(input);
             self
         }
         /// <p>The premigration assessment run that was started.</p>
-        pub fn set_replication_task_assessment_run(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
-        ) -> Self {
-            self.replication_task_assessment_run = input;
-            self
+        pub fn set_replication_task_assessment_run(mut self, input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>) -> Self {
+            self.replication_task_assessment_run = input; self
         }
         /// Consumes the builder and constructs a [`StartReplicationTaskAssessmentRunOutput`](crate::output::StartReplicationTaskAssessmentRunOutput).
         pub fn build(self) -> crate::output::StartReplicationTaskAssessmentRunOutput {
             crate::output::StartReplicationTaskAssessmentRunOutput {
-                replication_task_assessment_run: self.replication_task_assessment_run,
+                replication_task_assessment_run: self.replication_task_assessment_run
+                ,
             }
         }
     }
+    
+    
 }
 impl StartReplicationTaskAssessmentRunOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationTaskAssessmentRunOutput`](crate::output::StartReplicationTaskAssessmentRunOutput).
@@ -211,20 +203,20 @@ impl StartReplicationTaskAssessmentRunOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReplicationTaskAssessmentOutput {
+pub struct StartReplicationTaskAssessmentOutput  {
     /// <p> The assessed replication task. </p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl StartReplicationTaskAssessmentOutput {
     /// <p> The assessed replication task. </p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::model::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 /// See [`StartReplicationTaskAssessmentOutput`](crate::output::StartReplicationTaskAssessmentOutput).
 pub mod start_replication_task_assessment_output {
-
+    
     /// A builder for [`StartReplicationTaskAssessmentOutput`](crate::output::StartReplicationTaskAssessmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -237,20 +229,19 @@ pub mod start_replication_task_assessment_output {
             self
         }
         /// <p> The assessed replication task. </p>
-        pub fn set_replication_task(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTask>,
-        ) -> Self {
-            self.replication_task = input;
-            self
+        pub fn set_replication_task(mut self, input: std::option::Option<crate::model::ReplicationTask>) -> Self {
+            self.replication_task = input; self
         }
         /// Consumes the builder and constructs a [`StartReplicationTaskAssessmentOutput`](crate::output::StartReplicationTaskAssessmentOutput).
         pub fn build(self) -> crate::output::StartReplicationTaskAssessmentOutput {
             crate::output::StartReplicationTaskAssessmentOutput {
-                replication_task: self.replication_task,
+                replication_task: self.replication_task
+                ,
             }
         }
     }
+    
+    
 }
 impl StartReplicationTaskAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationTaskAssessmentOutput`](crate::output::StartReplicationTaskAssessmentOutput).
@@ -262,20 +253,20 @@ impl StartReplicationTaskAssessmentOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReplicationTaskOutput {
+pub struct StartReplicationTaskOutput  {
     /// <p>The replication task started.</p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl StartReplicationTaskOutput {
     /// <p>The replication task started.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::model::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 /// See [`StartReplicationTaskOutput`](crate::output::StartReplicationTaskOutput).
 pub mod start_replication_task_output {
-
+    
     /// A builder for [`StartReplicationTaskOutput`](crate::output::StartReplicationTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -288,20 +279,19 @@ pub mod start_replication_task_output {
             self
         }
         /// <p>The replication task started.</p>
-        pub fn set_replication_task(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTask>,
-        ) -> Self {
-            self.replication_task = input;
-            self
+        pub fn set_replication_task(mut self, input: std::option::Option<crate::model::ReplicationTask>) -> Self {
+            self.replication_task = input; self
         }
         /// Consumes the builder and constructs a [`StartReplicationTaskOutput`](crate::output::StartReplicationTaskOutput).
         pub fn build(self) -> crate::output::StartReplicationTaskOutput {
             crate::output::StartReplicationTaskOutput {
-                replication_task: self.replication_task,
+                replication_task: self.replication_task
+                ,
             }
         }
     }
+    
+    
 }
 impl StartReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationTaskOutput`](crate::output::StartReplicationTaskOutput).
@@ -313,7 +303,7 @@ impl StartReplicationTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RunFleetAdvisorLsaAnalysisOutput {
+pub struct RunFleetAdvisorLsaAnalysisOutput  {
     /// <p>The ID of the LSA analysis run.</p>
     #[doc(hidden)]
     pub lsa_analysis_id: std::option::Option<std::string::String>,
@@ -323,17 +313,17 @@ pub struct RunFleetAdvisorLsaAnalysisOutput {
 }
 impl RunFleetAdvisorLsaAnalysisOutput {
     /// <p>The ID of the LSA analysis run.</p>
-    pub fn lsa_analysis_id(&self) -> std::option::Option<&str> {
+    pub fn lsa_analysis_id(&self) -> std::option::Option<& str> {
         self.lsa_analysis_id.as_deref()
     }
     /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput).
 pub mod run_fleet_advisor_lsa_analysis_output {
-
+    
     /// A builder for [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -347,12 +337,8 @@ pub mod run_fleet_advisor_lsa_analysis_output {
             self
         }
         /// <p>The ID of the LSA analysis run.</p>
-        pub fn set_lsa_analysis_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.lsa_analysis_id = input;
-            self
+        pub fn set_lsa_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lsa_analysis_id = input; self
         }
         /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -361,17 +347,20 @@ pub mod run_fleet_advisor_lsa_analysis_output {
         }
         /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput).
         pub fn build(self) -> crate::output::RunFleetAdvisorLsaAnalysisOutput {
             crate::output::RunFleetAdvisorLsaAnalysisOutput {
-                lsa_analysis_id: self.lsa_analysis_id,
-                status: self.status,
+                lsa_analysis_id: self.lsa_analysis_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl RunFleetAdvisorLsaAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput).
@@ -383,19 +372,24 @@ impl RunFleetAdvisorLsaAnalysisOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromResourceOutput {}
+pub struct RemoveTagsFromResourceOutput  {
+}
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
-
+    
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
-            crate::output::RemoveTagsFromResourceOutput {}
+            crate::output::RemoveTagsFromResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
@@ -407,20 +401,20 @@ impl RemoveTagsFromResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReloadTablesOutput {
+pub struct ReloadTablesOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
     #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
 }
 impl ReloadTablesOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
 }
 /// See [`ReloadTablesOutput`](crate::output::ReloadTablesOutput).
 pub mod reload_tables_output {
-
+    
     /// A builder for [`ReloadTablesOutput`](crate::output::ReloadTablesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -433,20 +427,19 @@ pub mod reload_tables_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-        pub fn set_replication_task_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_task_arn = input;
-            self
+        pub fn set_replication_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_task_arn = input; self
         }
         /// Consumes the builder and constructs a [`ReloadTablesOutput`](crate::output::ReloadTablesOutput).
         pub fn build(self) -> crate::output::ReloadTablesOutput {
             crate::output::ReloadTablesOutput {
-                replication_task_arn: self.replication_task_arn,
+                replication_task_arn: self.replication_task_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ReloadTablesOutput {
     /// Creates a new builder-style object to manufacture [`ReloadTablesOutput`](crate::output::ReloadTablesOutput).
@@ -458,22 +451,20 @@ impl ReloadTablesOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RefreshSchemasOutput {
+pub struct RefreshSchemasOutput  {
     /// <p>The status of the refreshed schema.</p>
     #[doc(hidden)]
     pub refresh_schemas_status: std::option::Option<crate::model::RefreshSchemasStatus>,
 }
 impl RefreshSchemasOutput {
     /// <p>The status of the refreshed schema.</p>
-    pub fn refresh_schemas_status(
-        &self,
-    ) -> std::option::Option<&crate::model::RefreshSchemasStatus> {
+    pub fn refresh_schemas_status(&self) -> std::option::Option<& crate::model::RefreshSchemasStatus> {
         self.refresh_schemas_status.as_ref()
     }
 }
 /// See [`RefreshSchemasOutput`](crate::output::RefreshSchemasOutput).
 pub mod refresh_schemas_output {
-
+    
     /// A builder for [`RefreshSchemasOutput`](crate::output::RefreshSchemasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -486,20 +477,19 @@ pub mod refresh_schemas_output {
             self
         }
         /// <p>The status of the refreshed schema.</p>
-        pub fn set_refresh_schemas_status(
-            mut self,
-            input: std::option::Option<crate::model::RefreshSchemasStatus>,
-        ) -> Self {
-            self.refresh_schemas_status = input;
-            self
+        pub fn set_refresh_schemas_status(mut self, input: std::option::Option<crate::model::RefreshSchemasStatus>) -> Self {
+            self.refresh_schemas_status = input; self
         }
         /// Consumes the builder and constructs a [`RefreshSchemasOutput`](crate::output::RefreshSchemasOutput).
         pub fn build(self) -> crate::output::RefreshSchemasOutput {
             crate::output::RefreshSchemasOutput {
-                refresh_schemas_status: self.refresh_schemas_status,
+                refresh_schemas_status: self.refresh_schemas_status
+                ,
             }
         }
     }
+    
+    
 }
 impl RefreshSchemasOutput {
     /// Creates a new builder-style object to manufacture [`RefreshSchemasOutput`](crate::output::RefreshSchemasOutput).
@@ -511,20 +501,20 @@ impl RefreshSchemasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootReplicationInstanceOutput {
+pub struct RebootReplicationInstanceOutput  {
     /// <p>The replication instance that is being rebooted. </p>
     #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
 impl RebootReplicationInstanceOutput {
     /// <p>The replication instance that is being rebooted. </p>
-    pub fn replication_instance(&self) -> std::option::Option<&crate::model::ReplicationInstance> {
+    pub fn replication_instance(&self) -> std::option::Option<& crate::model::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
 }
 /// See [`RebootReplicationInstanceOutput`](crate::output::RebootReplicationInstanceOutput).
 pub mod reboot_replication_instance_output {
-
+    
     /// A builder for [`RebootReplicationInstanceOutput`](crate::output::RebootReplicationInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -537,20 +527,19 @@ pub mod reboot_replication_instance_output {
             self
         }
         /// <p>The replication instance that is being rebooted. </p>
-        pub fn set_replication_instance(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationInstance>,
-        ) -> Self {
-            self.replication_instance = input;
-            self
+        pub fn set_replication_instance(mut self, input: std::option::Option<crate::model::ReplicationInstance>) -> Self {
+            self.replication_instance = input; self
         }
         /// Consumes the builder and constructs a [`RebootReplicationInstanceOutput`](crate::output::RebootReplicationInstanceOutput).
         pub fn build(self) -> crate::output::RebootReplicationInstanceOutput {
             crate::output::RebootReplicationInstanceOutput {
-                replication_instance: self.replication_instance,
+                replication_instance: self.replication_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl RebootReplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RebootReplicationInstanceOutput`](crate::output::RebootReplicationInstanceOutput).
@@ -562,20 +551,20 @@ impl RebootReplicationInstanceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MoveReplicationTaskOutput {
+pub struct MoveReplicationTaskOutput  {
     /// <p>The replication task that was moved.</p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl MoveReplicationTaskOutput {
     /// <p>The replication task that was moved.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::model::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 /// See [`MoveReplicationTaskOutput`](crate::output::MoveReplicationTaskOutput).
 pub mod move_replication_task_output {
-
+    
     /// A builder for [`MoveReplicationTaskOutput`](crate::output::MoveReplicationTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -588,20 +577,19 @@ pub mod move_replication_task_output {
             self
         }
         /// <p>The replication task that was moved.</p>
-        pub fn set_replication_task(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTask>,
-        ) -> Self {
-            self.replication_task = input;
-            self
+        pub fn set_replication_task(mut self, input: std::option::Option<crate::model::ReplicationTask>) -> Self {
+            self.replication_task = input; self
         }
         /// Consumes the builder and constructs a [`MoveReplicationTaskOutput`](crate::output::MoveReplicationTaskOutput).
         pub fn build(self) -> crate::output::MoveReplicationTaskOutput {
             crate::output::MoveReplicationTaskOutput {
-                replication_task: self.replication_task,
+                replication_task: self.replication_task
+                ,
             }
         }
     }
+    
+    
 }
 impl MoveReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`MoveReplicationTaskOutput`](crate::output::MoveReplicationTaskOutput).
@@ -613,20 +601,20 @@ impl MoveReplicationTaskOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyReplicationTaskOutput {
+pub struct ModifyReplicationTaskOutput  {
     /// <p>The replication task that was modified.</p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl ModifyReplicationTaskOutput {
     /// <p>The replication task that was modified.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::model::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 /// See [`ModifyReplicationTaskOutput`](crate::output::ModifyReplicationTaskOutput).
 pub mod modify_replication_task_output {
-
+    
     /// A builder for [`ModifyReplicationTaskOutput`](crate::output::ModifyReplicationTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -639,20 +627,19 @@ pub mod modify_replication_task_output {
             self
         }
         /// <p>The replication task that was modified.</p>
-        pub fn set_replication_task(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTask>,
-        ) -> Self {
-            self.replication_task = input;
-            self
+        pub fn set_replication_task(mut self, input: std::option::Option<crate::model::ReplicationTask>) -> Self {
+            self.replication_task = input; self
         }
         /// Consumes the builder and constructs a [`ModifyReplicationTaskOutput`](crate::output::ModifyReplicationTaskOutput).
         pub fn build(self) -> crate::output::ModifyReplicationTaskOutput {
             crate::output::ModifyReplicationTaskOutput {
-                replication_task: self.replication_task,
+                replication_task: self.replication_task
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationTaskOutput`](crate::output::ModifyReplicationTaskOutput).
@@ -664,52 +651,45 @@ impl ModifyReplicationTaskOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyReplicationSubnetGroupOutput {
+pub struct ModifyReplicationSubnetGroupOutput  {
     /// <p>The modified replication subnet group.</p>
     #[doc(hidden)]
     pub replication_subnet_group: std::option::Option<crate::model::ReplicationSubnetGroup>,
 }
 impl ModifyReplicationSubnetGroupOutput {
     /// <p>The modified replication subnet group.</p>
-    pub fn replication_subnet_group(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationSubnetGroup> {
+    pub fn replication_subnet_group(&self) -> std::option::Option<& crate::model::ReplicationSubnetGroup> {
         self.replication_subnet_group.as_ref()
     }
 }
 /// See [`ModifyReplicationSubnetGroupOutput`](crate::output::ModifyReplicationSubnetGroupOutput).
 pub mod modify_replication_subnet_group_output {
-
+    
     /// A builder for [`ModifyReplicationSubnetGroupOutput`](crate::output::ModifyReplicationSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) replication_subnet_group:
-            std::option::Option<crate::model::ReplicationSubnetGroup>,
+        pub(crate) replication_subnet_group: std::option::Option<crate::model::ReplicationSubnetGroup>,
     }
     impl Builder {
         /// <p>The modified replication subnet group.</p>
-        pub fn replication_subnet_group(
-            mut self,
-            input: crate::model::ReplicationSubnetGroup,
-        ) -> Self {
+        pub fn replication_subnet_group(mut self, input: crate::model::ReplicationSubnetGroup) -> Self {
             self.replication_subnet_group = Some(input);
             self
         }
         /// <p>The modified replication subnet group.</p>
-        pub fn set_replication_subnet_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationSubnetGroup>,
-        ) -> Self {
-            self.replication_subnet_group = input;
-            self
+        pub fn set_replication_subnet_group(mut self, input: std::option::Option<crate::model::ReplicationSubnetGroup>) -> Self {
+            self.replication_subnet_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyReplicationSubnetGroupOutput`](crate::output::ModifyReplicationSubnetGroupOutput).
         pub fn build(self) -> crate::output::ModifyReplicationSubnetGroupOutput {
             crate::output::ModifyReplicationSubnetGroupOutput {
-                replication_subnet_group: self.replication_subnet_group,
+                replication_subnet_group: self.replication_subnet_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyReplicationSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationSubnetGroupOutput`](crate::output::ModifyReplicationSubnetGroupOutput).
@@ -721,20 +701,20 @@ impl ModifyReplicationSubnetGroupOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyReplicationInstanceOutput {
+pub struct ModifyReplicationInstanceOutput  {
     /// <p>The modified replication instance.</p>
     #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
 impl ModifyReplicationInstanceOutput {
     /// <p>The modified replication instance.</p>
-    pub fn replication_instance(&self) -> std::option::Option<&crate::model::ReplicationInstance> {
+    pub fn replication_instance(&self) -> std::option::Option<& crate::model::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
 }
 /// See [`ModifyReplicationInstanceOutput`](crate::output::ModifyReplicationInstanceOutput).
 pub mod modify_replication_instance_output {
-
+    
     /// A builder for [`ModifyReplicationInstanceOutput`](crate::output::ModifyReplicationInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -747,20 +727,19 @@ pub mod modify_replication_instance_output {
             self
         }
         /// <p>The modified replication instance.</p>
-        pub fn set_replication_instance(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationInstance>,
-        ) -> Self {
-            self.replication_instance = input;
-            self
+        pub fn set_replication_instance(mut self, input: std::option::Option<crate::model::ReplicationInstance>) -> Self {
+            self.replication_instance = input; self
         }
         /// Consumes the builder and constructs a [`ModifyReplicationInstanceOutput`](crate::output::ModifyReplicationInstanceOutput).
         pub fn build(self) -> crate::output::ModifyReplicationInstanceOutput {
             crate::output::ModifyReplicationInstanceOutput {
-                replication_instance: self.replication_instance,
+                replication_instance: self.replication_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyReplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationInstanceOutput`](crate::output::ModifyReplicationInstanceOutput).
@@ -772,20 +751,20 @@ impl ModifyReplicationInstanceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyEventSubscriptionOutput {
+pub struct ModifyEventSubscriptionOutput  {
     /// <p>The modified event subscription.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
     /// <p>The modified event subscription.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
 pub mod modify_event_subscription_output {
-
+    
     /// A builder for [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -798,20 +777,19 @@ pub mod modify_event_subscription_output {
             self
         }
         /// <p>The modified event subscription.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
         pub fn build(self) -> crate::output::ModifyEventSubscriptionOutput {
             crate::output::ModifyEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
@@ -823,20 +801,20 @@ impl ModifyEventSubscriptionOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyEndpointOutput {
+pub struct ModifyEndpointOutput  {
     /// <p>The modified endpoint.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl ModifyEndpointOutput {
     /// <p>The modified endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+    pub fn endpoint(&self) -> std::option::Option<& crate::model::Endpoint> {
         self.endpoint.as_ref()
     }
 }
 /// See [`ModifyEndpointOutput`](crate::output::ModifyEndpointOutput).
 pub mod modify_endpoint_output {
-
+    
     /// A builder for [`ModifyEndpointOutput`](crate::output::ModifyEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -850,16 +828,18 @@ pub mod modify_endpoint_output {
         }
         /// <p>The modified endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// Consumes the builder and constructs a [`ModifyEndpointOutput`](crate::output::ModifyEndpointOutput).
         pub fn build(self) -> crate::output::ModifyEndpointOutput {
             crate::output::ModifyEndpointOutput {
-                endpoint: self.endpoint,
+                endpoint: self.endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyEndpointOutput {
     /// Creates a new builder-style object to manufacture [`ModifyEndpointOutput`](crate::output::ModifyEndpointOutput).
@@ -871,20 +851,20 @@ impl ModifyEndpointOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags for the resource.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags for the resource.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -898,25 +878,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tags for the resource.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of tags for the resource.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -928,20 +907,20 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCertificateOutput {
+pub struct ImportCertificateOutput  {
     /// <p>The certificate to be uploaded.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl ImportCertificateOutput {
     /// <p>The certificate to be uploaded.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::Certificate> {
         self.certificate.as_ref()
     }
 }
 /// See [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
 pub mod import_certificate_output {
-
+    
     /// A builder for [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -954,20 +933,19 @@ pub mod import_certificate_output {
             self
         }
         /// <p>The certificate to be uploaded.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::Certificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::Certificate>) -> Self {
+            self.certificate = input; self
         }
         /// Consumes the builder and constructs a [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
         pub fn build(self) -> crate::output::ImportCertificateOutput {
             crate::output::ImportCertificateOutput {
-                certificate: self.certificate,
+                certificate: self.certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
@@ -979,7 +957,7 @@ impl ImportCertificateOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTableStatisticsOutput {
+pub struct DescribeTableStatisticsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
@@ -992,27 +970,26 @@ pub struct DescribeTableStatisticsOutput {
 }
 impl DescribeTableStatisticsOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
     /// <p>The table statistics.</p>
-    pub fn table_statistics(&self) -> std::option::Option<&[crate::model::TableStatistics]> {
+    pub fn table_statistics(&self) -> std::option::Option<& [crate::model::TableStatistics]> {
         self.table_statistics.as_deref()
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeTableStatisticsOutput`](crate::output::DescribeTableStatisticsOutput).
 pub mod describe_table_statistics_output {
-
+    
     /// A builder for [`DescribeTableStatisticsOutput`](crate::output::DescribeTableStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
-        pub(crate) table_statistics:
-            std::option::Option<std::vec::Vec<crate::model::TableStatistics>>,
+        pub(crate) table_statistics: std::option::Option<std::vec::Vec<crate::model::TableStatistics>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1022,12 +999,8 @@ pub mod describe_table_statistics_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-        pub fn set_replication_task_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_task_arn = input;
-            self
+        pub fn set_replication_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_task_arn = input; self
         }
         /// Appends an item to `table_statistics`.
         ///
@@ -1036,17 +1009,13 @@ pub mod describe_table_statistics_output {
         /// <p>The table statistics.</p>
         pub fn table_statistics(mut self, input: crate::model::TableStatistics) -> Self {
             let mut v = self.table_statistics.unwrap_or_default();
-            v.push(input);
-            self.table_statistics = Some(v);
-            self
+                            v.push(input);
+                            self.table_statistics = Some(v);
+                            self
         }
         /// <p>The table statistics.</p>
-        pub fn set_table_statistics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TableStatistics>>,
-        ) -> Self {
-            self.table_statistics = input;
-            self
+        pub fn set_table_statistics(mut self, input: std::option::Option<std::vec::Vec<crate::model::TableStatistics>>) -> Self {
+            self.table_statistics = input; self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1055,18 +1024,22 @@ pub mod describe_table_statistics_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTableStatisticsOutput`](crate::output::DescribeTableStatisticsOutput).
         pub fn build(self) -> crate::output::DescribeTableStatisticsOutput {
             crate::output::DescribeTableStatisticsOutput {
-                replication_task_arn: self.replication_task_arn,
-                table_statistics: self.table_statistics,
-                marker: self.marker,
+                replication_task_arn: self.replication_task_arn
+                ,
+                table_statistics: self.table_statistics
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTableStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableStatisticsOutput`](crate::output::DescribeTableStatisticsOutput).
@@ -1078,7 +1051,7 @@ impl DescribeTableStatisticsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSchemasOutput {
+pub struct DescribeSchemasOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1088,17 +1061,17 @@ pub struct DescribeSchemasOutput {
 }
 impl DescribeSchemasOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The described schema.</p>
-    pub fn schemas(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schemas(&self) -> std::option::Option<& [std::string::String]> {
         self.schemas.as_deref()
     }
 }
 /// See [`DescribeSchemasOutput`](crate::output::DescribeSchemasOutput).
 pub mod describe_schemas_output {
-
+    
     /// A builder for [`DescribeSchemasOutput`](crate::output::DescribeSchemasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1113,8 +1086,7 @@ pub mod describe_schemas_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `schemas`.
         ///
@@ -1123,26 +1095,26 @@ pub mod describe_schemas_output {
         /// <p>The described schema.</p>
         pub fn schemas(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
-            self.schemas = Some(v);
-            self
+                            v.push(input.into());
+                            self.schemas = Some(v);
+                            self
         }
         /// <p>The described schema.</p>
-        pub fn set_schemas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.schemas = input;
-            self
+        pub fn set_schemas(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.schemas = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSchemasOutput`](crate::output::DescribeSchemasOutput).
         pub fn build(self) -> crate::output::DescribeSchemasOutput {
             crate::output::DescribeSchemasOutput {
-                marker: self.marker,
-                schemas: self.schemas,
+                marker: self.marker
+                ,
+                schemas: self.schemas
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSchemasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSchemasOutput`](crate::output::DescribeSchemasOutput).
@@ -1154,7 +1126,7 @@ impl DescribeSchemasOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationTasksOutput {
+pub struct DescribeReplicationTasksOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1164,23 +1136,22 @@ pub struct DescribeReplicationTasksOutput {
 }
 impl DescribeReplicationTasksOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A description of the replication tasks.</p>
-    pub fn replication_tasks(&self) -> std::option::Option<&[crate::model::ReplicationTask]> {
+    pub fn replication_tasks(&self) -> std::option::Option<& [crate::model::ReplicationTask]> {
         self.replication_tasks.as_deref()
     }
 }
 /// See [`DescribeReplicationTasksOutput`](crate::output::DescribeReplicationTasksOutput).
 pub mod describe_replication_tasks_output {
-
+    
     /// A builder for [`DescribeReplicationTasksOutput`](crate::output::DescribeReplicationTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) replication_tasks:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>,
+        pub(crate) replication_tasks: std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -1190,8 +1161,7 @@ pub mod describe_replication_tasks_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `replication_tasks`.
         ///
@@ -1200,26 +1170,26 @@ pub mod describe_replication_tasks_output {
         /// <p>A description of the replication tasks.</p>
         pub fn replication_tasks(mut self, input: crate::model::ReplicationTask) -> Self {
             let mut v = self.replication_tasks.unwrap_or_default();
-            v.push(input);
-            self.replication_tasks = Some(v);
-            self
+                            v.push(input);
+                            self.replication_tasks = Some(v);
+                            self
         }
         /// <p>A description of the replication tasks.</p>
-        pub fn set_replication_tasks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>,
-        ) -> Self {
-            self.replication_tasks = input;
-            self
+        pub fn set_replication_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>) -> Self {
+            self.replication_tasks = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationTasksOutput`](crate::output::DescribeReplicationTasksOutput).
         pub fn build(self) -> crate::output::DescribeReplicationTasksOutput {
             crate::output::DescribeReplicationTasksOutput {
-                marker: self.marker,
-                replication_tasks: self.replication_tasks,
+                marker: self.marker
+                ,
+                replication_tasks: self.replication_tasks
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTasksOutput`](crate::output::DescribeReplicationTasksOutput).
@@ -1231,36 +1201,32 @@ impl DescribeReplicationTasksOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationTaskIndividualAssessmentsOutput {
+pub struct DescribeReplicationTaskIndividualAssessmentsOutput  {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     #[doc(hidden)]
-    pub replication_task_individual_assessments:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>,
+    pub replication_task_individual_assessments: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsOutput {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
-    pub fn replication_task_individual_assessments(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationTaskIndividualAssessment]> {
+    pub fn replication_task_individual_assessments(&self) -> std::option::Option<& [crate::model::ReplicationTaskIndividualAssessment]> {
         self.replication_task_individual_assessments.as_deref()
     }
 }
 /// See [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::output::DescribeReplicationTaskIndividualAssessmentsOutput).
 pub mod describe_replication_task_individual_assessments_output {
-
+    
     /// A builder for [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::output::DescribeReplicationTaskIndividualAssessmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) replication_task_individual_assessments:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>,
+        pub(crate) replication_task_individual_assessments: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>,
     }
     impl Builder {
         /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
@@ -1270,49 +1236,39 @@ pub mod describe_replication_task_individual_assessments_output {
         }
         /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `replication_task_individual_assessments`.
         ///
         /// To override the contents of this collection use [`set_replication_task_individual_assessments`](Self::set_replication_task_individual_assessments).
         ///
         /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
-        pub fn replication_task_individual_assessments(
-            mut self,
-            input: crate::model::ReplicationTaskIndividualAssessment,
-        ) -> Self {
-            let mut v = self
-                .replication_task_individual_assessments
-                .unwrap_or_default();
-            v.push(input);
-            self.replication_task_individual_assessments = Some(v);
-            self
+        pub fn replication_task_individual_assessments(mut self, input: crate::model::ReplicationTaskIndividualAssessment) -> Self {
+            let mut v = self.replication_task_individual_assessments.unwrap_or_default();
+                            v.push(input);
+                            self.replication_task_individual_assessments = Some(v);
+                            self
         }
         /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
-        pub fn set_replication_task_individual_assessments(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>,
-            >,
-        ) -> Self {
-            self.replication_task_individual_assessments = input;
-            self
+        pub fn set_replication_task_individual_assessments(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>) -> Self {
+            self.replication_task_individual_assessments = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::output::DescribeReplicationTaskIndividualAssessmentsOutput).
         pub fn build(self) -> crate::output::DescribeReplicationTaskIndividualAssessmentsOutput {
             crate::output::DescribeReplicationTaskIndividualAssessmentsOutput {
-                marker: self.marker,
-                replication_task_individual_assessments: self
-                    .replication_task_individual_assessments,
+                marker: self.marker
+                ,
+                replication_task_individual_assessments: self.replication_task_individual_assessments
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationTaskIndividualAssessmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::output::DescribeReplicationTaskIndividualAssessmentsOutput).
-    pub fn builder(
-    ) -> crate::output::describe_replication_task_individual_assessments_output::Builder {
+    pub fn builder() -> crate::output::describe_replication_task_individual_assessments_output::Builder {
         crate::output::describe_replication_task_individual_assessments_output::Builder::default()
     }
 }
@@ -1320,36 +1276,32 @@ impl DescribeReplicationTaskIndividualAssessmentsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationTaskAssessmentRunsOutput {
+pub struct DescribeReplicationTaskAssessmentRunsOutput  {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
     #[doc(hidden)]
-    pub replication_task_assessment_runs:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
+    pub replication_task_assessment_runs: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
 }
 impl DescribeReplicationTaskAssessmentRunsOutput {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    pub fn replication_task_assessment_runs(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationTaskAssessmentRun]> {
+    pub fn replication_task_assessment_runs(&self) -> std::option::Option<& [crate::model::ReplicationTaskAssessmentRun]> {
         self.replication_task_assessment_runs.as_deref()
     }
 }
 /// See [`DescribeReplicationTaskAssessmentRunsOutput`](crate::output::DescribeReplicationTaskAssessmentRunsOutput).
 pub mod describe_replication_task_assessment_runs_output {
-
+    
     /// A builder for [`DescribeReplicationTaskAssessmentRunsOutput`](crate::output::DescribeReplicationTaskAssessmentRunsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) replication_task_assessment_runs:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
+        pub(crate) replication_task_assessment_runs: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
     }
     impl Builder {
         /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
@@ -1359,39 +1311,35 @@ pub mod describe_replication_task_assessment_runs_output {
         }
         /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `replication_task_assessment_runs`.
         ///
         /// To override the contents of this collection use [`set_replication_task_assessment_runs`](Self::set_replication_task_assessment_runs).
         ///
         /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-        pub fn replication_task_assessment_runs(
-            mut self,
-            input: crate::model::ReplicationTaskAssessmentRun,
-        ) -> Self {
+        pub fn replication_task_assessment_runs(mut self, input: crate::model::ReplicationTaskAssessmentRun) -> Self {
             let mut v = self.replication_task_assessment_runs.unwrap_or_default();
-            v.push(input);
-            self.replication_task_assessment_runs = Some(v);
-            self
+                            v.push(input);
+                            self.replication_task_assessment_runs = Some(v);
+                            self
         }
         /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-        pub fn set_replication_task_assessment_runs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
-        ) -> Self {
-            self.replication_task_assessment_runs = input;
-            self
+        pub fn set_replication_task_assessment_runs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>) -> Self {
+            self.replication_task_assessment_runs = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationTaskAssessmentRunsOutput`](crate::output::DescribeReplicationTaskAssessmentRunsOutput).
         pub fn build(self) -> crate::output::DescribeReplicationTaskAssessmentRunsOutput {
             crate::output::DescribeReplicationTaskAssessmentRunsOutput {
-                marker: self.marker,
-                replication_task_assessment_runs: self.replication_task_assessment_runs,
+                marker: self.marker
+                ,
+                replication_task_assessment_runs: self.replication_task_assessment_runs
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationTaskAssessmentRunsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskAssessmentRunsOutput`](crate::output::DescribeReplicationTaskAssessmentRunsOutput).
@@ -1403,7 +1351,7 @@ impl DescribeReplicationTaskAssessmentRunsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationTaskAssessmentResultsOutput {
+pub struct DescribeReplicationTaskAssessmentResultsOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1412,35 +1360,31 @@ pub struct DescribeReplicationTaskAssessmentResultsOutput {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p> The task assessment report. </p>
     #[doc(hidden)]
-    pub replication_task_assessment_results:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
+    pub replication_task_assessment_results: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
 }
 impl DescribeReplicationTaskAssessmentResultsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p> The task assessment report. </p>
-    pub fn replication_task_assessment_results(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationTaskAssessmentResult]> {
+    pub fn replication_task_assessment_results(&self) -> std::option::Option<& [crate::model::ReplicationTaskAssessmentResult]> {
         self.replication_task_assessment_results.as_deref()
     }
 }
 /// See [`DescribeReplicationTaskAssessmentResultsOutput`](crate::output::DescribeReplicationTaskAssessmentResultsOutput).
 pub mod describe_replication_task_assessment_results_output {
-
+    
     /// A builder for [`DescribeReplicationTaskAssessmentResultsOutput`](crate::output::DescribeReplicationTaskAssessmentResultsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
-        pub(crate) replication_task_assessment_results:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
+        pub(crate) replication_task_assessment_results: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -1450,8 +1394,7 @@ pub mod describe_replication_task_assessment_results_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1460,47 +1403,41 @@ pub mod describe_replication_task_assessment_results_output {
         }
         /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// Appends an item to `replication_task_assessment_results`.
         ///
         /// To override the contents of this collection use [`set_replication_task_assessment_results`](Self::set_replication_task_assessment_results).
         ///
         /// <p> The task assessment report. </p>
-        pub fn replication_task_assessment_results(
-            mut self,
-            input: crate::model::ReplicationTaskAssessmentResult,
-        ) -> Self {
+        pub fn replication_task_assessment_results(mut self, input: crate::model::ReplicationTaskAssessmentResult) -> Self {
             let mut v = self.replication_task_assessment_results.unwrap_or_default();
-            v.push(input);
-            self.replication_task_assessment_results = Some(v);
-            self
+                            v.push(input);
+                            self.replication_task_assessment_results = Some(v);
+                            self
         }
         /// <p> The task assessment report. </p>
-        pub fn set_replication_task_assessment_results(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>,
-            >,
-        ) -> Self {
-            self.replication_task_assessment_results = input;
-            self
+        pub fn set_replication_task_assessment_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>) -> Self {
+            self.replication_task_assessment_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationTaskAssessmentResultsOutput`](crate::output::DescribeReplicationTaskAssessmentResultsOutput).
         pub fn build(self) -> crate::output::DescribeReplicationTaskAssessmentResultsOutput {
             crate::output::DescribeReplicationTaskAssessmentResultsOutput {
-                marker: self.marker,
-                bucket_name: self.bucket_name,
-                replication_task_assessment_results: self.replication_task_assessment_results,
+                marker: self.marker
+                ,
+                bucket_name: self.bucket_name
+                ,
+                replication_task_assessment_results: self.replication_task_assessment_results
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationTaskAssessmentResultsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskAssessmentResultsOutput`](crate::output::DescribeReplicationTaskAssessmentResultsOutput).
-    pub fn builder() -> crate::output::describe_replication_task_assessment_results_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_replication_task_assessment_results_output::Builder {
         crate::output::describe_replication_task_assessment_results_output::Builder::default()
     }
 }
@@ -1508,36 +1445,32 @@ impl DescribeReplicationTaskAssessmentResultsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationSubnetGroupsOutput {
+pub struct DescribeReplicationSubnetGroupsOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A description of the replication subnet groups.</p>
     #[doc(hidden)]
-    pub replication_subnet_groups:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
+    pub replication_subnet_groups: std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
 }
 impl DescribeReplicationSubnetGroupsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A description of the replication subnet groups.</p>
-    pub fn replication_subnet_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationSubnetGroup]> {
+    pub fn replication_subnet_groups(&self) -> std::option::Option<& [crate::model::ReplicationSubnetGroup]> {
         self.replication_subnet_groups.as_deref()
     }
 }
 /// See [`DescribeReplicationSubnetGroupsOutput`](crate::output::DescribeReplicationSubnetGroupsOutput).
 pub mod describe_replication_subnet_groups_output {
-
+    
     /// A builder for [`DescribeReplicationSubnetGroupsOutput`](crate::output::DescribeReplicationSubnetGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) replication_subnet_groups:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
+        pub(crate) replication_subnet_groups: std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -1547,39 +1480,35 @@ pub mod describe_replication_subnet_groups_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `replication_subnet_groups`.
         ///
         /// To override the contents of this collection use [`set_replication_subnet_groups`](Self::set_replication_subnet_groups).
         ///
         /// <p>A description of the replication subnet groups.</p>
-        pub fn replication_subnet_groups(
-            mut self,
-            input: crate::model::ReplicationSubnetGroup,
-        ) -> Self {
+        pub fn replication_subnet_groups(mut self, input: crate::model::ReplicationSubnetGroup) -> Self {
             let mut v = self.replication_subnet_groups.unwrap_or_default();
-            v.push(input);
-            self.replication_subnet_groups = Some(v);
-            self
+                            v.push(input);
+                            self.replication_subnet_groups = Some(v);
+                            self
         }
         /// <p>A description of the replication subnet groups.</p>
-        pub fn set_replication_subnet_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
-        ) -> Self {
-            self.replication_subnet_groups = input;
-            self
+        pub fn set_replication_subnet_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>) -> Self {
+            self.replication_subnet_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationSubnetGroupsOutput`](crate::output::DescribeReplicationSubnetGroupsOutput).
         pub fn build(self) -> crate::output::DescribeReplicationSubnetGroupsOutput {
             crate::output::DescribeReplicationSubnetGroupsOutput {
-                marker: self.marker,
-                replication_subnet_groups: self.replication_subnet_groups,
+                marker: self.marker
+                ,
+                replication_subnet_groups: self.replication_subnet_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationSubnetGroupsOutput`](crate::output::DescribeReplicationSubnetGroupsOutput).
@@ -1591,43 +1520,39 @@ impl DescribeReplicationSubnetGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationInstanceTaskLogsOutput {
+pub struct DescribeReplicationInstanceTaskLogsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
     #[doc(hidden)]
-    pub replication_instance_task_logs:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
+    pub replication_instance_task_logs: std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationInstanceTaskLogsOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_instance_arn(&self) -> std::option::Option<& str> {
         self.replication_instance_arn.as_deref()
     }
     /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
-    pub fn replication_instance_task_logs(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationInstanceTaskLog]> {
+    pub fn replication_instance_task_logs(&self) -> std::option::Option<& [crate::model::ReplicationInstanceTaskLog]> {
         self.replication_instance_task_logs.as_deref()
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeReplicationInstanceTaskLogsOutput`](crate::output::DescribeReplicationInstanceTaskLogsOutput).
 pub mod describe_replication_instance_task_logs_output {
-
+    
     /// A builder for [`DescribeReplicationInstanceTaskLogsOutput`](crate::output::DescribeReplicationInstanceTaskLogsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
-        pub(crate) replication_instance_task_logs:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
+        pub(crate) replication_instance_task_logs: std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1637,34 +1562,23 @@ pub mod describe_replication_instance_task_logs_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn set_replication_instance_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_instance_arn = input;
-            self
+        pub fn set_replication_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_instance_arn = input; self
         }
         /// Appends an item to `replication_instance_task_logs`.
         ///
         /// To override the contents of this collection use [`set_replication_instance_task_logs`](Self::set_replication_instance_task_logs).
         ///
         /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
-        pub fn replication_instance_task_logs(
-            mut self,
-            input: crate::model::ReplicationInstanceTaskLog,
-        ) -> Self {
+        pub fn replication_instance_task_logs(mut self, input: crate::model::ReplicationInstanceTaskLog) -> Self {
             let mut v = self.replication_instance_task_logs.unwrap_or_default();
-            v.push(input);
-            self.replication_instance_task_logs = Some(v);
-            self
+                            v.push(input);
+                            self.replication_instance_task_logs = Some(v);
+                            self
         }
         /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
-        pub fn set_replication_instance_task_logs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
-        ) -> Self {
-            self.replication_instance_task_logs = input;
-            self
+        pub fn set_replication_instance_task_logs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>) -> Self {
+            self.replication_instance_task_logs = input; self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1673,18 +1587,22 @@ pub mod describe_replication_instance_task_logs_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationInstanceTaskLogsOutput`](crate::output::DescribeReplicationInstanceTaskLogsOutput).
         pub fn build(self) -> crate::output::DescribeReplicationInstanceTaskLogsOutput {
             crate::output::DescribeReplicationInstanceTaskLogsOutput {
-                replication_instance_arn: self.replication_instance_arn,
-                replication_instance_task_logs: self.replication_instance_task_logs,
-                marker: self.marker,
+                replication_instance_arn: self.replication_instance_arn
+                ,
+                replication_instance_task_logs: self.replication_instance_task_logs
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationInstanceTaskLogsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationInstanceTaskLogsOutput`](crate::output::DescribeReplicationInstanceTaskLogsOutput).
@@ -1696,36 +1614,32 @@ impl DescribeReplicationInstanceTaskLogsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationInstancesOutput {
+pub struct DescribeReplicationInstancesOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The replication instances described.</p>
     #[doc(hidden)]
-    pub replication_instances:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
+    pub replication_instances: std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
 }
 impl DescribeReplicationInstancesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The replication instances described.</p>
-    pub fn replication_instances(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationInstance]> {
+    pub fn replication_instances(&self) -> std::option::Option<& [crate::model::ReplicationInstance]> {
         self.replication_instances.as_deref()
     }
 }
 /// See [`DescribeReplicationInstancesOutput`](crate::output::DescribeReplicationInstancesOutput).
 pub mod describe_replication_instances_output {
-
+    
     /// A builder for [`DescribeReplicationInstancesOutput`](crate::output::DescribeReplicationInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) replication_instances:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
+        pub(crate) replication_instances: std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -1735,8 +1649,7 @@ pub mod describe_replication_instances_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `replication_instances`.
         ///
@@ -1745,26 +1658,26 @@ pub mod describe_replication_instances_output {
         /// <p>The replication instances described.</p>
         pub fn replication_instances(mut self, input: crate::model::ReplicationInstance) -> Self {
             let mut v = self.replication_instances.unwrap_or_default();
-            v.push(input);
-            self.replication_instances = Some(v);
-            self
+                            v.push(input);
+                            self.replication_instances = Some(v);
+                            self
         }
         /// <p>The replication instances described.</p>
-        pub fn set_replication_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
-        ) -> Self {
-            self.replication_instances = input;
-            self
+        pub fn set_replication_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>) -> Self {
+            self.replication_instances = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationInstancesOutput`](crate::output::DescribeReplicationInstancesOutput).
         pub fn build(self) -> crate::output::DescribeReplicationInstancesOutput {
             crate::output::DescribeReplicationInstancesOutput {
-                marker: self.marker,
-                replication_instances: self.replication_instances,
+                marker: self.marker
+                ,
+                replication_instances: self.replication_instances
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationInstancesOutput`](crate::output::DescribeReplicationInstancesOutput).
@@ -1776,22 +1689,20 @@ impl DescribeReplicationInstancesOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRefreshSchemasStatusOutput {
+pub struct DescribeRefreshSchemasStatusOutput  {
     /// <p>The status of the schema.</p>
     #[doc(hidden)]
     pub refresh_schemas_status: std::option::Option<crate::model::RefreshSchemasStatus>,
 }
 impl DescribeRefreshSchemasStatusOutput {
     /// <p>The status of the schema.</p>
-    pub fn refresh_schemas_status(
-        &self,
-    ) -> std::option::Option<&crate::model::RefreshSchemasStatus> {
+    pub fn refresh_schemas_status(&self) -> std::option::Option<& crate::model::RefreshSchemasStatus> {
         self.refresh_schemas_status.as_ref()
     }
 }
 /// See [`DescribeRefreshSchemasStatusOutput`](crate::output::DescribeRefreshSchemasStatusOutput).
 pub mod describe_refresh_schemas_status_output {
-
+    
     /// A builder for [`DescribeRefreshSchemasStatusOutput`](crate::output::DescribeRefreshSchemasStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1804,20 +1715,19 @@ pub mod describe_refresh_schemas_status_output {
             self
         }
         /// <p>The status of the schema.</p>
-        pub fn set_refresh_schemas_status(
-            mut self,
-            input: std::option::Option<crate::model::RefreshSchemasStatus>,
-        ) -> Self {
-            self.refresh_schemas_status = input;
-            self
+        pub fn set_refresh_schemas_status(mut self, input: std::option::Option<crate::model::RefreshSchemasStatus>) -> Self {
+            self.refresh_schemas_status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRefreshSchemasStatusOutput`](crate::output::DescribeRefreshSchemasStatusOutput).
         pub fn build(self) -> crate::output::DescribeRefreshSchemasStatusOutput {
             crate::output::DescribeRefreshSchemasStatusOutput {
-                refresh_schemas_status: self.refresh_schemas_status,
+                refresh_schemas_status: self.refresh_schemas_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRefreshSchemasStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRefreshSchemasStatusOutput`](crate::output::DescribeRefreshSchemasStatusOutput).
@@ -1829,35 +1739,31 @@ impl DescribeRefreshSchemasStatusOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePendingMaintenanceActionsOutput {
+pub struct DescribePendingMaintenanceActionsOutput  {
     /// <p>The pending maintenance action.</p>
     #[doc(hidden)]
-    pub pending_maintenance_actions:
-        std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
+    pub pending_maintenance_actions: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// <p>The pending maintenance action.</p>
-    pub fn pending_maintenance_actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
+    pub fn pending_maintenance_actions(&self) -> std::option::Option<& [crate::model::ResourcePendingMaintenanceActions]> {
         self.pending_maintenance_actions.as_deref()
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
 pub mod describe_pending_maintenance_actions_output {
-
+    
     /// A builder for [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pending_maintenance_actions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
+        pub(crate) pending_maintenance_actions: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1866,24 +1772,15 @@ pub mod describe_pending_maintenance_actions_output {
         /// To override the contents of this collection use [`set_pending_maintenance_actions`](Self::set_pending_maintenance_actions).
         ///
         /// <p>The pending maintenance action.</p>
-        pub fn pending_maintenance_actions(
-            mut self,
-            input: crate::model::ResourcePendingMaintenanceActions,
-        ) -> Self {
+        pub fn pending_maintenance_actions(mut self, input: crate::model::ResourcePendingMaintenanceActions) -> Self {
             let mut v = self.pending_maintenance_actions.unwrap_or_default();
-            v.push(input);
-            self.pending_maintenance_actions = Some(v);
-            self
+                            v.push(input);
+                            self.pending_maintenance_actions = Some(v);
+                            self
         }
         /// <p>The pending maintenance action.</p>
-        pub fn set_pending_maintenance_actions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>,
-            >,
-        ) -> Self {
-            self.pending_maintenance_actions = input;
-            self
+        pub fn set_pending_maintenance_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>) -> Self {
+            self.pending_maintenance_actions = input; self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1892,17 +1789,20 @@ pub mod describe_pending_maintenance_actions_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
         pub fn build(self) -> crate::output::DescribePendingMaintenanceActionsOutput {
             crate::output::DescribePendingMaintenanceActionsOutput {
-                pending_maintenance_actions: self.pending_maintenance_actions,
-                marker: self.marker,
+                pending_maintenance_actions: self.pending_maintenance_actions
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
@@ -1914,35 +1814,31 @@ impl DescribePendingMaintenanceActionsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrderableReplicationInstancesOutput {
+pub struct DescribeOrderableReplicationInstancesOutput  {
     /// <p>The order-able replication instances available.</p>
     #[doc(hidden)]
-    pub orderable_replication_instances:
-        std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
+    pub orderable_replication_instances: std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableReplicationInstancesOutput {
     /// <p>The order-able replication instances available.</p>
-    pub fn orderable_replication_instances(
-        &self,
-    ) -> std::option::Option<&[crate::model::OrderableReplicationInstance]> {
+    pub fn orderable_replication_instances(&self) -> std::option::Option<& [crate::model::OrderableReplicationInstance]> {
         self.orderable_replication_instances.as_deref()
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeOrderableReplicationInstancesOutput`](crate::output::DescribeOrderableReplicationInstancesOutput).
 pub mod describe_orderable_replication_instances_output {
-
+    
     /// A builder for [`DescribeOrderableReplicationInstancesOutput`](crate::output::DescribeOrderableReplicationInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) orderable_replication_instances:
-            std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
+        pub(crate) orderable_replication_instances: std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1951,22 +1847,15 @@ pub mod describe_orderable_replication_instances_output {
         /// To override the contents of this collection use [`set_orderable_replication_instances`](Self::set_orderable_replication_instances).
         ///
         /// <p>The order-able replication instances available.</p>
-        pub fn orderable_replication_instances(
-            mut self,
-            input: crate::model::OrderableReplicationInstance,
-        ) -> Self {
+        pub fn orderable_replication_instances(mut self, input: crate::model::OrderableReplicationInstance) -> Self {
             let mut v = self.orderable_replication_instances.unwrap_or_default();
-            v.push(input);
-            self.orderable_replication_instances = Some(v);
-            self
+                            v.push(input);
+                            self.orderable_replication_instances = Some(v);
+                            self
         }
         /// <p>The order-able replication instances available.</p>
-        pub fn set_orderable_replication_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
-        ) -> Self {
-            self.orderable_replication_instances = input;
-            self
+        pub fn set_orderable_replication_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>) -> Self {
+            self.orderable_replication_instances = input; self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1975,17 +1864,20 @@ pub mod describe_orderable_replication_instances_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOrderableReplicationInstancesOutput`](crate::output::DescribeOrderableReplicationInstancesOutput).
         pub fn build(self) -> crate::output::DescribeOrderableReplicationInstancesOutput {
             crate::output::DescribeOrderableReplicationInstancesOutput {
-                orderable_replication_instances: self.orderable_replication_instances,
-                marker: self.marker,
+                orderable_replication_instances: self.orderable_replication_instances
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOrderableReplicationInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableReplicationInstancesOutput`](crate::output::DescribeOrderableReplicationInstancesOutput).
@@ -1997,7 +1889,7 @@ impl DescribeOrderableReplicationInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorSchemasOutput {
+pub struct DescribeFleetAdvisorSchemasOutput  {
     /// <p>A collection of <code>SchemaResponse</code> objects.</p>
     #[doc(hidden)]
     pub fleet_advisor_schemas: std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>,
@@ -2007,22 +1899,21 @@ pub struct DescribeFleetAdvisorSchemasOutput {
 }
 impl DescribeFleetAdvisorSchemasOutput {
     /// <p>A collection of <code>SchemaResponse</code> objects.</p>
-    pub fn fleet_advisor_schemas(&self) -> std::option::Option<&[crate::model::SchemaResponse]> {
+    pub fn fleet_advisor_schemas(&self) -> std::option::Option<& [crate::model::SchemaResponse]> {
         self.fleet_advisor_schemas.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput).
 pub mod describe_fleet_advisor_schemas_output {
-
+    
     /// A builder for [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fleet_advisor_schemas:
-            std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>,
+        pub(crate) fleet_advisor_schemas: std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2033,17 +1924,13 @@ pub mod describe_fleet_advisor_schemas_output {
         /// <p>A collection of <code>SchemaResponse</code> objects.</p>
         pub fn fleet_advisor_schemas(mut self, input: crate::model::SchemaResponse) -> Self {
             let mut v = self.fleet_advisor_schemas.unwrap_or_default();
-            v.push(input);
-            self.fleet_advisor_schemas = Some(v);
-            self
+                            v.push(input);
+                            self.fleet_advisor_schemas = Some(v);
+                            self
         }
         /// <p>A collection of <code>SchemaResponse</code> objects.</p>
-        pub fn set_fleet_advisor_schemas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>,
-        ) -> Self {
-            self.fleet_advisor_schemas = input;
-            self
+        pub fn set_fleet_advisor_schemas(mut self, input: std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>) -> Self {
+            self.fleet_advisor_schemas = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2052,17 +1939,20 @@ pub mod describe_fleet_advisor_schemas_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput).
         pub fn build(self) -> crate::output::DescribeFleetAdvisorSchemasOutput {
             crate::output::DescribeFleetAdvisorSchemasOutput {
-                fleet_advisor_schemas: self.fleet_advisor_schemas,
-                next_token: self.next_token,
+                fleet_advisor_schemas: self.fleet_advisor_schemas
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetAdvisorSchemasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput).
@@ -2074,35 +1964,31 @@ impl DescribeFleetAdvisorSchemasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorSchemaObjectSummaryOutput {
+pub struct DescribeFleetAdvisorSchemaObjectSummaryOutput  {
     /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
     #[doc(hidden)]
-    pub fleet_advisor_schema_objects:
-        std::option::Option<std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>>,
+    pub fleet_advisor_schema_objects: std::option::Option<std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
     /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
-    pub fn fleet_advisor_schema_objects(
-        &self,
-    ) -> std::option::Option<&[crate::model::FleetAdvisorSchemaObjectResponse]> {
+    pub fn fleet_advisor_schema_objects(&self) -> std::option::Option<& [crate::model::FleetAdvisorSchemaObjectResponse]> {
         self.fleet_advisor_schema_objects.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput).
 pub mod describe_fleet_advisor_schema_object_summary_output {
-
+    
     /// A builder for [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fleet_advisor_schema_objects:
-            std::option::Option<std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>>,
+        pub(crate) fleet_advisor_schema_objects: std::option::Option<std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2111,24 +1997,15 @@ pub mod describe_fleet_advisor_schema_object_summary_output {
         /// To override the contents of this collection use [`set_fleet_advisor_schema_objects`](Self::set_fleet_advisor_schema_objects).
         ///
         /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
-        pub fn fleet_advisor_schema_objects(
-            mut self,
-            input: crate::model::FleetAdvisorSchemaObjectResponse,
-        ) -> Self {
+        pub fn fleet_advisor_schema_objects(mut self, input: crate::model::FleetAdvisorSchemaObjectResponse) -> Self {
             let mut v = self.fleet_advisor_schema_objects.unwrap_or_default();
-            v.push(input);
-            self.fleet_advisor_schema_objects = Some(v);
-            self
+                            v.push(input);
+                            self.fleet_advisor_schema_objects = Some(v);
+                            self
         }
         /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
-        pub fn set_fleet_advisor_schema_objects(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>,
-            >,
-        ) -> Self {
-            self.fleet_advisor_schema_objects = input;
-            self
+        pub fn set_fleet_advisor_schema_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>>) -> Self {
+            self.fleet_advisor_schema_objects = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2137,22 +2014,24 @@ pub mod describe_fleet_advisor_schema_object_summary_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput).
         pub fn build(self) -> crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput {
             crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput {
-                fleet_advisor_schema_objects: self.fleet_advisor_schema_objects,
-                next_token: self.next_token,
+                fleet_advisor_schema_objects: self.fleet_advisor_schema_objects
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput).
-    pub fn builder() -> crate::output::describe_fleet_advisor_schema_object_summary_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_fleet_advisor_schema_object_summary_output::Builder {
         crate::output::describe_fleet_advisor_schema_object_summary_output::Builder::default()
     }
 }
@@ -2160,7 +2039,7 @@ impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorLsaAnalysisOutput {
+pub struct DescribeFleetAdvisorLsaAnalysisOutput  {
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
     #[doc(hidden)]
     pub analysis: std::option::Option<std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>>,
@@ -2170,24 +2049,21 @@ pub struct DescribeFleetAdvisorLsaAnalysisOutput {
 }
 impl DescribeFleetAdvisorLsaAnalysisOutput {
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    pub fn analysis(
-        &self,
-    ) -> std::option::Option<&[crate::model::FleetAdvisorLsaAnalysisResponse]> {
+    pub fn analysis(&self) -> std::option::Option<& [crate::model::FleetAdvisorLsaAnalysisResponse]> {
         self.analysis.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput).
 pub mod describe_fleet_advisor_lsa_analysis_output {
-
+    
     /// A builder for [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) analysis:
-            std::option::Option<std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>>,
+        pub(crate) analysis: std::option::Option<std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2198,19 +2074,13 @@ pub mod describe_fleet_advisor_lsa_analysis_output {
         /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
         pub fn analysis(mut self, input: crate::model::FleetAdvisorLsaAnalysisResponse) -> Self {
             let mut v = self.analysis.unwrap_or_default();
-            v.push(input);
-            self.analysis = Some(v);
-            self
+                            v.push(input);
+                            self.analysis = Some(v);
+                            self
         }
         /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-        pub fn set_analysis(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>,
-            >,
-        ) -> Self {
-            self.analysis = input;
-            self
+        pub fn set_analysis(mut self, input: std::option::Option<std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>>) -> Self {
+            self.analysis = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2219,17 +2089,20 @@ pub mod describe_fleet_advisor_lsa_analysis_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput).
         pub fn build(self) -> crate::output::DescribeFleetAdvisorLsaAnalysisOutput {
             crate::output::DescribeFleetAdvisorLsaAnalysisOutput {
-                analysis: self.analysis,
-                next_token: self.next_token,
+                analysis: self.analysis
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetAdvisorLsaAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput).
@@ -2241,7 +2114,7 @@ impl DescribeFleetAdvisorLsaAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorDatabasesOutput {
+pub struct DescribeFleetAdvisorDatabasesOutput  {
     /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
     #[doc(hidden)]
     pub databases: std::option::Option<std::vec::Vec<crate::model::DatabaseResponse>>,
@@ -2251,17 +2124,17 @@ pub struct DescribeFleetAdvisorDatabasesOutput {
 }
 impl DescribeFleetAdvisorDatabasesOutput {
     /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
-    pub fn databases(&self) -> std::option::Option<&[crate::model::DatabaseResponse]> {
+    pub fn databases(&self) -> std::option::Option<& [crate::model::DatabaseResponse]> {
         self.databases.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput).
 pub mod describe_fleet_advisor_databases_output {
-
+    
     /// A builder for [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2276,17 +2149,13 @@ pub mod describe_fleet_advisor_databases_output {
         /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
         pub fn databases(mut self, input: crate::model::DatabaseResponse) -> Self {
             let mut v = self.databases.unwrap_or_default();
-            v.push(input);
-            self.databases = Some(v);
-            self
+                            v.push(input);
+                            self.databases = Some(v);
+                            self
         }
         /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
-        pub fn set_databases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DatabaseResponse>>,
-        ) -> Self {
-            self.databases = input;
-            self
+        pub fn set_databases(mut self, input: std::option::Option<std::vec::Vec<crate::model::DatabaseResponse>>) -> Self {
+            self.databases = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2295,17 +2164,20 @@ pub mod describe_fleet_advisor_databases_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput).
         pub fn build(self) -> crate::output::DescribeFleetAdvisorDatabasesOutput {
             crate::output::DescribeFleetAdvisorDatabasesOutput {
-                databases: self.databases,
-                next_token: self.next_token,
+                databases: self.databases
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetAdvisorDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput).
@@ -2317,7 +2189,7 @@ impl DescribeFleetAdvisorDatabasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorCollectorsOutput {
+pub struct DescribeFleetAdvisorCollectorsOutput  {
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
     #[doc(hidden)]
     pub collectors: std::option::Option<std::vec::Vec<crate::model::CollectorResponse>>,
@@ -2327,17 +2199,17 @@ pub struct DescribeFleetAdvisorCollectorsOutput {
 }
 impl DescribeFleetAdvisorCollectorsOutput {
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
-    pub fn collectors(&self) -> std::option::Option<&[crate::model::CollectorResponse]> {
+    pub fn collectors(&self) -> std::option::Option<& [crate::model::CollectorResponse]> {
         self.collectors.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput).
 pub mod describe_fleet_advisor_collectors_output {
-
+    
     /// A builder for [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2352,17 +2224,13 @@ pub mod describe_fleet_advisor_collectors_output {
         /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
         pub fn collectors(mut self, input: crate::model::CollectorResponse) -> Self {
             let mut v = self.collectors.unwrap_or_default();
-            v.push(input);
-            self.collectors = Some(v);
-            self
+                            v.push(input);
+                            self.collectors = Some(v);
+                            self
         }
         /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
-        pub fn set_collectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CollectorResponse>>,
-        ) -> Self {
-            self.collectors = input;
-            self
+        pub fn set_collectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::CollectorResponse>>) -> Self {
+            self.collectors = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2371,17 +2239,20 @@ pub mod describe_fleet_advisor_collectors_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput).
         pub fn build(self) -> crate::output::DescribeFleetAdvisorCollectorsOutput {
             crate::output::DescribeFleetAdvisorCollectorsOutput {
-                collectors: self.collectors,
-                next_token: self.next_token,
+                collectors: self.collectors
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetAdvisorCollectorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput).
@@ -2393,36 +2264,32 @@ impl DescribeFleetAdvisorCollectorsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventSubscriptionsOutput {
+pub struct DescribeEventSubscriptionsOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of event subscriptions.</p>
     #[doc(hidden)]
-    pub event_subscriptions_list:
-        std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+    pub event_subscriptions_list: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
 impl DescribeEventSubscriptionsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of event subscriptions.</p>
-    pub fn event_subscriptions_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventSubscription]> {
+    pub fn event_subscriptions_list(&self) -> std::option::Option<& [crate::model::EventSubscription]> {
         self.event_subscriptions_list.as_deref()
     }
 }
 /// See [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
 pub mod describe_event_subscriptions_output {
-
+    
     /// A builder for [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) event_subscriptions_list:
-            std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+        pub(crate) event_subscriptions_list: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -2432,8 +2299,7 @@ pub mod describe_event_subscriptions_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `event_subscriptions_list`.
         ///
@@ -2442,26 +2308,26 @@ pub mod describe_event_subscriptions_output {
         /// <p>A list of event subscriptions.</p>
         pub fn event_subscriptions_list(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions_list.unwrap_or_default();
-            v.push(input);
-            self.event_subscriptions_list = Some(v);
-            self
+                            v.push(input);
+                            self.event_subscriptions_list = Some(v);
+                            self
         }
         /// <p>A list of event subscriptions.</p>
-        pub fn set_event_subscriptions_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
-        ) -> Self {
-            self.event_subscriptions_list = input;
-            self
+        pub fn set_event_subscriptions_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>) -> Self {
+            self.event_subscriptions_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
         pub fn build(self) -> crate::output::DescribeEventSubscriptionsOutput {
             crate::output::DescribeEventSubscriptionsOutput {
-                marker: self.marker,
-                event_subscriptions_list: self.event_subscriptions_list,
+                marker: self.marker
+                ,
+                event_subscriptions_list: self.event_subscriptions_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
@@ -2473,7 +2339,7 @@ impl DescribeEventSubscriptionsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventsOutput {
+pub struct DescribeEventsOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2483,17 +2349,17 @@ pub struct DescribeEventsOutput {
 }
 impl DescribeEventsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The events described.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::Event]> {
         self.events.as_deref()
     }
 }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
-
+    
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2508,8 +2374,7 @@ pub mod describe_events_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -2518,26 +2383,26 @@ pub mod describe_events_output {
         /// <p>The events described.</p>
         pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>The events described.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::Event>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
-                marker: self.marker,
-                events: self.events,
+                marker: self.marker
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
@@ -2549,28 +2414,24 @@ impl DescribeEventsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventCategoriesOutput {
+pub struct DescribeEventCategoriesOutput  {
     /// <p>A list of event categories.</p>
     #[doc(hidden)]
-    pub event_category_group_list:
-        std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
+    pub event_category_group_list: std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
 }
 impl DescribeEventCategoriesOutput {
     /// <p>A list of event categories.</p>
-    pub fn event_category_group_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventCategoryGroup]> {
+    pub fn event_category_group_list(&self) -> std::option::Option<& [crate::model::EventCategoryGroup]> {
         self.event_category_group_list.as_deref()
     }
 }
 /// See [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
 pub mod describe_event_categories_output {
-
+    
     /// A builder for [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_category_group_list:
-            std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
+        pub(crate) event_category_group_list: std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
     }
     impl Builder {
         /// Appends an item to `event_category_group_list`.
@@ -2578,30 +2439,26 @@ pub mod describe_event_categories_output {
         /// To override the contents of this collection use [`set_event_category_group_list`](Self::set_event_category_group_list).
         ///
         /// <p>A list of event categories.</p>
-        pub fn event_category_group_list(
-            mut self,
-            input: crate::model::EventCategoryGroup,
-        ) -> Self {
+        pub fn event_category_group_list(mut self, input: crate::model::EventCategoryGroup) -> Self {
             let mut v = self.event_category_group_list.unwrap_or_default();
-            v.push(input);
-            self.event_category_group_list = Some(v);
-            self
+                            v.push(input);
+                            self.event_category_group_list = Some(v);
+                            self
         }
         /// <p>A list of event categories.</p>
-        pub fn set_event_category_group_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
-        ) -> Self {
-            self.event_category_group_list = input;
-            self
+        pub fn set_event_category_group_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>) -> Self {
+            self.event_category_group_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
         pub fn build(self) -> crate::output::DescribeEventCategoriesOutput {
             crate::output::DescribeEventCategoriesOutput {
-                event_category_group_list: self.event_category_group_list,
+                event_category_group_list: self.event_category_group_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
@@ -2613,36 +2470,32 @@ impl DescribeEventCategoriesOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointTypesOutput {
+pub struct DescribeEndpointTypesOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The types of endpoints that are supported.</p>
     #[doc(hidden)]
-    pub supported_endpoint_types:
-        std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
+    pub supported_endpoint_types: std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
 }
 impl DescribeEndpointTypesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The types of endpoints that are supported.</p>
-    pub fn supported_endpoint_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::SupportedEndpointType]> {
+    pub fn supported_endpoint_types(&self) -> std::option::Option<& [crate::model::SupportedEndpointType]> {
         self.supported_endpoint_types.as_deref()
     }
 }
 /// See [`DescribeEndpointTypesOutput`](crate::output::DescribeEndpointTypesOutput).
 pub mod describe_endpoint_types_output {
-
+    
     /// A builder for [`DescribeEndpointTypesOutput`](crate::output::DescribeEndpointTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) supported_endpoint_types:
-            std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
+        pub(crate) supported_endpoint_types: std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -2652,39 +2505,35 @@ pub mod describe_endpoint_types_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `supported_endpoint_types`.
         ///
         /// To override the contents of this collection use [`set_supported_endpoint_types`](Self::set_supported_endpoint_types).
         ///
         /// <p>The types of endpoints that are supported.</p>
-        pub fn supported_endpoint_types(
-            mut self,
-            input: crate::model::SupportedEndpointType,
-        ) -> Self {
+        pub fn supported_endpoint_types(mut self, input: crate::model::SupportedEndpointType) -> Self {
             let mut v = self.supported_endpoint_types.unwrap_or_default();
-            v.push(input);
-            self.supported_endpoint_types = Some(v);
-            self
+                            v.push(input);
+                            self.supported_endpoint_types = Some(v);
+                            self
         }
         /// <p>The types of endpoints that are supported.</p>
-        pub fn set_supported_endpoint_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
-        ) -> Self {
-            self.supported_endpoint_types = input;
-            self
+        pub fn set_supported_endpoint_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>) -> Self {
+            self.supported_endpoint_types = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEndpointTypesOutput`](crate::output::DescribeEndpointTypesOutput).
         pub fn build(self) -> crate::output::DescribeEndpointTypesOutput {
             crate::output::DescribeEndpointTypesOutput {
-                marker: self.marker,
-                supported_endpoint_types: self.supported_endpoint_types,
+                marker: self.marker
+                ,
+                supported_endpoint_types: self.supported_endpoint_types
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEndpointTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointTypesOutput`](crate::output::DescribeEndpointTypesOutput).
@@ -2696,7 +2545,7 @@ impl DescribeEndpointTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointSettingsOutput {
+pub struct DescribeEndpointSettingsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2706,23 +2555,22 @@ pub struct DescribeEndpointSettingsOutput {
 }
 impl DescribeEndpointSettingsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    pub fn endpoint_settings(&self) -> std::option::Option<&[crate::model::EndpointSetting]> {
+    pub fn endpoint_settings(&self) -> std::option::Option<& [crate::model::EndpointSetting]> {
         self.endpoint_settings.as_deref()
     }
 }
 /// See [`DescribeEndpointSettingsOutput`](crate::output::DescribeEndpointSettingsOutput).
 pub mod describe_endpoint_settings_output {
-
+    
     /// A builder for [`DescribeEndpointSettingsOutput`](crate::output::DescribeEndpointSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) endpoint_settings:
-            std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>,
+        pub(crate) endpoint_settings: std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2732,8 +2580,7 @@ pub mod describe_endpoint_settings_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `endpoint_settings`.
         ///
@@ -2742,26 +2589,26 @@ pub mod describe_endpoint_settings_output {
         /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
         pub fn endpoint_settings(mut self, input: crate::model::EndpointSetting) -> Self {
             let mut v = self.endpoint_settings.unwrap_or_default();
-            v.push(input);
-            self.endpoint_settings = Some(v);
-            self
+                            v.push(input);
+                            self.endpoint_settings = Some(v);
+                            self
         }
         /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-        pub fn set_endpoint_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>,
-        ) -> Self {
-            self.endpoint_settings = input;
-            self
+        pub fn set_endpoint_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>) -> Self {
+            self.endpoint_settings = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEndpointSettingsOutput`](crate::output::DescribeEndpointSettingsOutput).
         pub fn build(self) -> crate::output::DescribeEndpointSettingsOutput {
             crate::output::DescribeEndpointSettingsOutput {
-                marker: self.marker,
-                endpoint_settings: self.endpoint_settings,
+                marker: self.marker
+                ,
+                endpoint_settings: self.endpoint_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEndpointSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointSettingsOutput`](crate::output::DescribeEndpointSettingsOutput).
@@ -2773,7 +2620,7 @@ impl DescribeEndpointSettingsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointsOutput {
+pub struct DescribeEndpointsOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2783,17 +2630,17 @@ pub struct DescribeEndpointsOutput {
 }
 impl DescribeEndpointsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Endpoint description.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::model::Endpoint]> {
         self.endpoints.as_deref()
     }
 }
 /// See [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
 pub mod describe_endpoints_output {
-
+    
     /// A builder for [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2808,8 +2655,7 @@ pub mod describe_endpoints_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `endpoints`.
         ///
@@ -2818,26 +2664,26 @@ pub mod describe_endpoints_output {
         /// <p>Endpoint description.</p>
         pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input);
-            self.endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.endpoints = Some(v);
+                            self
         }
         /// <p>Endpoint description.</p>
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>) -> Self {
+            self.endpoints = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeEndpointsOutput {
             crate::output::DescribeEndpointsOutput {
-                marker: self.marker,
-                endpoints: self.endpoints,
+                marker: self.marker
+                ,
+                endpoints: self.endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
@@ -2849,7 +2695,7 @@ impl DescribeEndpointsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectionsOutput {
+pub struct DescribeConnectionsOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2859,17 +2705,17 @@ pub struct DescribeConnectionsOutput {
 }
 impl DescribeConnectionsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A description of the connections.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
 }
 /// See [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
 pub mod describe_connections_output {
-
+    
     /// A builder for [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2884,8 +2730,7 @@ pub mod describe_connections_output {
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `connections`.
         ///
@@ -2894,26 +2739,26 @@ pub mod describe_connections_output {
         /// <p>A description of the connections.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>A description of the connections.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeConnectionsOutput {
             crate::output::DescribeConnectionsOutput {
-                marker: self.marker,
-                connections: self.connections,
+                marker: self.marker
+                ,
+                connections: self.connections
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
@@ -2925,7 +2770,7 @@ impl DescribeConnectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificatesOutput {
+pub struct DescribeCertificatesOutput  {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2935,17 +2780,17 @@ pub struct DescribeCertificatesOutput {
 }
 impl DescribeCertificatesOutput {
     /// <p>The pagination token.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::Certificate]> {
         self.certificates.as_deref()
     }
 }
 /// See [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
 pub mod describe_certificates_output {
-
+    
     /// A builder for [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2960,8 +2805,7 @@ pub mod describe_certificates_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `certificates`.
         ///
@@ -2970,26 +2814,26 @@ pub mod describe_certificates_output {
         /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Certificate>>) -> Self {
+            self.certificates = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
         pub fn build(self) -> crate::output::DescribeCertificatesOutput {
             crate::output::DescribeCertificatesOutput {
-                marker: self.marker,
-                certificates: self.certificates,
+                marker: self.marker
+                ,
+                certificates: self.certificates
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
@@ -3001,7 +2845,7 @@ impl DescribeCertificatesOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicableIndividualAssessmentsOutput {
+pub struct DescribeApplicableIndividualAssessmentsOutput  {
     /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
     #[doc(hidden)]
     pub individual_assessment_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3011,22 +2855,21 @@ pub struct DescribeApplicableIndividualAssessmentsOutput {
 }
 impl DescribeApplicableIndividualAssessmentsOutput {
     /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn individual_assessment_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn individual_assessment_names(&self) -> std::option::Option<& [std::string::String]> {
         self.individual_assessment_names.as_deref()
     }
     /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeApplicableIndividualAssessmentsOutput`](crate::output::DescribeApplicableIndividualAssessmentsOutput).
 pub mod describe_applicable_individual_assessments_output {
-
+    
     /// A builder for [`DescribeApplicableIndividualAssessmentsOutput`](crate::output::DescribeApplicableIndividualAssessmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) individual_assessment_names:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) individual_assessment_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3035,22 +2878,15 @@ pub mod describe_applicable_individual_assessments_output {
         /// To override the contents of this collection use [`set_individual_assessment_names`](Self::set_individual_assessment_names).
         ///
         /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
-        pub fn individual_assessment_names(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn individual_assessment_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.individual_assessment_names.unwrap_or_default();
-            v.push(input.into());
-            self.individual_assessment_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.individual_assessment_names = Some(v);
+                            self
         }
         /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
-        pub fn set_individual_assessment_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.individual_assessment_names = input;
-            self
+        pub fn set_individual_assessment_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.individual_assessment_names = input; self
         }
         /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3059,17 +2895,20 @@ pub mod describe_applicable_individual_assessments_output {
         }
         /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicableIndividualAssessmentsOutput`](crate::output::DescribeApplicableIndividualAssessmentsOutput).
         pub fn build(self) -> crate::output::DescribeApplicableIndividualAssessmentsOutput {
             crate::output::DescribeApplicableIndividualAssessmentsOutput {
-                individual_assessment_names: self.individual_assessment_names,
-                marker: self.marker,
+                individual_assessment_names: self.individual_assessment_names
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeApplicableIndividualAssessmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicableIndividualAssessmentsOutput`](crate::output::DescribeApplicableIndividualAssessmentsOutput).
@@ -3081,31 +2920,31 @@ impl DescribeApplicableIndividualAssessmentsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAttributesOutput {
+pub struct DescribeAccountAttributesOutput  {
     /// <p>Account quota information.</p>
     #[doc(hidden)]
     pub account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
-    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
-    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
+    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note> 
+    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p> 
     /// </note>
     #[doc(hidden)]
     pub unique_account_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeAccountAttributesOutput {
     /// <p>Account quota information.</p>
-    pub fn account_quotas(&self) -> std::option::Option<&[crate::model::AccountQuota]> {
+    pub fn account_quotas(&self) -> std::option::Option<& [crate::model::AccountQuota]> {
         self.account_quotas.as_deref()
     }
-    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
-    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
+    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note> 
+    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p> 
     /// </note>
-    pub fn unique_account_identifier(&self) -> std::option::Option<&str> {
+    pub fn unique_account_identifier(&self) -> std::option::Option<& str> {
         self.unique_account_identifier.as_deref()
     }
 }
 /// See [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
 pub mod describe_account_attributes_output {
-
+    
     /// A builder for [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3120,43 +2959,39 @@ pub mod describe_account_attributes_output {
         /// <p>Account quota information.</p>
         pub fn account_quotas(mut self, input: crate::model::AccountQuota) -> Self {
             let mut v = self.account_quotas.unwrap_or_default();
-            v.push(input);
-            self.account_quotas = Some(v);
-            self
+                            v.push(input);
+                            self.account_quotas = Some(v);
+                            self
         }
         /// <p>Account quota information.</p>
-        pub fn set_account_quotas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
-        ) -> Self {
-            self.account_quotas = input;
-            self
+        pub fn set_account_quotas(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>) -> Self {
+            self.account_quotas = input; self
         }
-        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
-        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
+        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note> 
+        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p> 
         /// </note>
         pub fn unique_account_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.unique_account_identifier = Some(input.into());
             self
         }
-        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
-        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
+        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note> 
+        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p> 
         /// </note>
-        pub fn set_unique_account_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.unique_account_identifier = input;
-            self
+        pub fn set_unique_account_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unique_account_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
         pub fn build(self) -> crate::output::DescribeAccountAttributesOutput {
             crate::output::DescribeAccountAttributesOutput {
-                account_quotas: self.account_quotas,
-                unique_account_identifier: self.unique_account_identifier,
+                account_quotas: self.account_quotas
+                ,
+                unique_account_identifier: self.unique_account_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
@@ -3168,53 +3003,45 @@ impl DescribeAccountAttributesOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationTaskAssessmentRunOutput {
+pub struct DeleteReplicationTaskAssessmentRunOutput  {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
     #[doc(hidden)]
-    pub replication_task_assessment_run:
-        std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
+    pub replication_task_assessment_run: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
 impl DeleteReplicationTaskAssessmentRunOutput {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
-    pub fn replication_task_assessment_run(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationTaskAssessmentRun> {
+    pub fn replication_task_assessment_run(&self) -> std::option::Option<& crate::model::ReplicationTaskAssessmentRun> {
         self.replication_task_assessment_run.as_ref()
     }
 }
 /// See [`DeleteReplicationTaskAssessmentRunOutput`](crate::output::DeleteReplicationTaskAssessmentRunOutput).
 pub mod delete_replication_task_assessment_run_output {
-
+    
     /// A builder for [`DeleteReplicationTaskAssessmentRunOutput`](crate::output::DeleteReplicationTaskAssessmentRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) replication_task_assessment_run:
-            std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
+        pub(crate) replication_task_assessment_run: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
     }
     impl Builder {
         /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
-        pub fn replication_task_assessment_run(
-            mut self,
-            input: crate::model::ReplicationTaskAssessmentRun,
-        ) -> Self {
+        pub fn replication_task_assessment_run(mut self, input: crate::model::ReplicationTaskAssessmentRun) -> Self {
             self.replication_task_assessment_run = Some(input);
             self
         }
         /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
-        pub fn set_replication_task_assessment_run(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
-        ) -> Self {
-            self.replication_task_assessment_run = input;
-            self
+        pub fn set_replication_task_assessment_run(mut self, input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>) -> Self {
+            self.replication_task_assessment_run = input; self
         }
         /// Consumes the builder and constructs a [`DeleteReplicationTaskAssessmentRunOutput`](crate::output::DeleteReplicationTaskAssessmentRunOutput).
         pub fn build(self) -> crate::output::DeleteReplicationTaskAssessmentRunOutput {
             crate::output::DeleteReplicationTaskAssessmentRunOutput {
-                replication_task_assessment_run: self.replication_task_assessment_run,
+                replication_task_assessment_run: self.replication_task_assessment_run
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteReplicationTaskAssessmentRunOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationTaskAssessmentRunOutput`](crate::output::DeleteReplicationTaskAssessmentRunOutput).
@@ -3226,20 +3053,20 @@ impl DeleteReplicationTaskAssessmentRunOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationTaskOutput {
+pub struct DeleteReplicationTaskOutput  {
     /// <p>The deleted replication task.</p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl DeleteReplicationTaskOutput {
     /// <p>The deleted replication task.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::model::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 /// See [`DeleteReplicationTaskOutput`](crate::output::DeleteReplicationTaskOutput).
 pub mod delete_replication_task_output {
-
+    
     /// A builder for [`DeleteReplicationTaskOutput`](crate::output::DeleteReplicationTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3252,20 +3079,19 @@ pub mod delete_replication_task_output {
             self
         }
         /// <p>The deleted replication task.</p>
-        pub fn set_replication_task(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTask>,
-        ) -> Self {
-            self.replication_task = input;
-            self
+        pub fn set_replication_task(mut self, input: std::option::Option<crate::model::ReplicationTask>) -> Self {
+            self.replication_task = input; self
         }
         /// Consumes the builder and constructs a [`DeleteReplicationTaskOutput`](crate::output::DeleteReplicationTaskOutput).
         pub fn build(self) -> crate::output::DeleteReplicationTaskOutput {
             crate::output::DeleteReplicationTaskOutput {
-                replication_task: self.replication_task,
+                replication_task: self.replication_task
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationTaskOutput`](crate::output::DeleteReplicationTaskOutput).
@@ -3277,19 +3103,24 @@ impl DeleteReplicationTaskOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationSubnetGroupOutput {}
+pub struct DeleteReplicationSubnetGroupOutput  {
+}
 /// See [`DeleteReplicationSubnetGroupOutput`](crate::output::DeleteReplicationSubnetGroupOutput).
 pub mod delete_replication_subnet_group_output {
-
+    
     /// A builder for [`DeleteReplicationSubnetGroupOutput`](crate::output::DeleteReplicationSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReplicationSubnetGroupOutput`](crate::output::DeleteReplicationSubnetGroupOutput).
         pub fn build(self) -> crate::output::DeleteReplicationSubnetGroupOutput {
-            crate::output::DeleteReplicationSubnetGroupOutput {}
+            crate::output::DeleteReplicationSubnetGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteReplicationSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationSubnetGroupOutput`](crate::output::DeleteReplicationSubnetGroupOutput).
@@ -3301,20 +3132,20 @@ impl DeleteReplicationSubnetGroupOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationInstanceOutput {
+pub struct DeleteReplicationInstanceOutput  {
     /// <p>The replication instance that was deleted.</p>
     #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
 impl DeleteReplicationInstanceOutput {
     /// <p>The replication instance that was deleted.</p>
-    pub fn replication_instance(&self) -> std::option::Option<&crate::model::ReplicationInstance> {
+    pub fn replication_instance(&self) -> std::option::Option<& crate::model::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
 }
 /// See [`DeleteReplicationInstanceOutput`](crate::output::DeleteReplicationInstanceOutput).
 pub mod delete_replication_instance_output {
-
+    
     /// A builder for [`DeleteReplicationInstanceOutput`](crate::output::DeleteReplicationInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3327,20 +3158,19 @@ pub mod delete_replication_instance_output {
             self
         }
         /// <p>The replication instance that was deleted.</p>
-        pub fn set_replication_instance(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationInstance>,
-        ) -> Self {
-            self.replication_instance = input;
-            self
+        pub fn set_replication_instance(mut self, input: std::option::Option<crate::model::ReplicationInstance>) -> Self {
+            self.replication_instance = input; self
         }
         /// Consumes the builder and constructs a [`DeleteReplicationInstanceOutput`](crate::output::DeleteReplicationInstanceOutput).
         pub fn build(self) -> crate::output::DeleteReplicationInstanceOutput {
             crate::output::DeleteReplicationInstanceOutput {
-                replication_instance: self.replication_instance,
+                replication_instance: self.replication_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteReplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationInstanceOutput`](crate::output::DeleteReplicationInstanceOutput).
@@ -3352,20 +3182,20 @@ impl DeleteReplicationInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetAdvisorDatabasesOutput {
+pub struct DeleteFleetAdvisorDatabasesOutput  {
     /// <p>The IDs of the databases that the operation deleted.</p>
     #[doc(hidden)]
     pub database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteFleetAdvisorDatabasesOutput {
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub fn database_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn database_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.database_ids.as_deref()
     }
 }
 /// See [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput).
 pub mod delete_fleet_advisor_databases_output {
-
+    
     /// A builder for [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3379,25 +3209,24 @@ pub mod delete_fleet_advisor_databases_output {
         /// <p>The IDs of the databases that the operation deleted.</p>
         pub fn database_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.database_ids.unwrap_or_default();
-            v.push(input.into());
-            self.database_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.database_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the databases that the operation deleted.</p>
-        pub fn set_database_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.database_ids = input;
-            self
+        pub fn set_database_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.database_ids = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput).
         pub fn build(self) -> crate::output::DeleteFleetAdvisorDatabasesOutput {
             crate::output::DeleteFleetAdvisorDatabasesOutput {
-                database_ids: self.database_ids,
+                database_ids: self.database_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFleetAdvisorDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput).
@@ -3409,19 +3238,24 @@ impl DeleteFleetAdvisorDatabasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetAdvisorCollectorOutput {}
+pub struct DeleteFleetAdvisorCollectorOutput  {
+}
 /// See [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput).
 pub mod delete_fleet_advisor_collector_output {
-
+    
     /// A builder for [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput).
         pub fn build(self) -> crate::output::DeleteFleetAdvisorCollectorOutput {
-            crate::output::DeleteFleetAdvisorCollectorOutput {}
+            crate::output::DeleteFleetAdvisorCollectorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFleetAdvisorCollectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput).
@@ -3433,20 +3267,20 @@ impl DeleteFleetAdvisorCollectorOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventSubscriptionOutput {
+pub struct DeleteEventSubscriptionOutput  {
     /// <p>The event subscription that was deleted.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl DeleteEventSubscriptionOutput {
     /// <p>The event subscription that was deleted.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
 pub mod delete_event_subscription_output {
-
+    
     /// A builder for [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3459,20 +3293,19 @@ pub mod delete_event_subscription_output {
             self
         }
         /// <p>The event subscription that was deleted.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteEventSubscriptionOutput {
             crate::output::DeleteEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
@@ -3484,20 +3317,20 @@ impl DeleteEventSubscriptionOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEndpointOutput {
+pub struct DeleteEndpointOutput  {
     /// <p>The endpoint that was deleted.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl DeleteEndpointOutput {
     /// <p>The endpoint that was deleted.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+    pub fn endpoint(&self) -> std::option::Option<& crate::model::Endpoint> {
         self.endpoint.as_ref()
     }
 }
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
-
+    
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3511,16 +3344,18 @@ pub mod delete_endpoint_output {
         }
         /// <p>The endpoint that was deleted.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
         pub fn build(self) -> crate::output::DeleteEndpointOutput {
             crate::output::DeleteEndpointOutput {
-                endpoint: self.endpoint,
+                endpoint: self.endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
@@ -3532,20 +3367,20 @@ impl DeleteEndpointOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectionOutput {
+pub struct DeleteConnectionOutput  {
     /// <p>The connection that is being deleted.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl DeleteConnectionOutput {
     /// <p>The connection that is being deleted.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+    pub fn connection(&self) -> std::option::Option<& crate::model::Connection> {
         self.connection.as_ref()
     }
 }
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
-
+    
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3558,20 +3393,19 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The connection that is being deleted.</p>
-        pub fn set_connection(
-            mut self,
-            input: std::option::Option<crate::model::Connection>,
-        ) -> Self {
-            self.connection = input;
-            self
+        pub fn set_connection(mut self, input: std::option::Option<crate::model::Connection>) -> Self {
+            self.connection = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
             crate::output::DeleteConnectionOutput {
-                connection: self.connection,
+                connection: self.connection
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
@@ -3583,20 +3417,20 @@ impl DeleteConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCertificateOutput {
+pub struct DeleteCertificateOutput  {
     /// <p>The Secure Sockets Layer (SSL) certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl DeleteCertificateOutput {
     /// <p>The Secure Sockets Layer (SSL) certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::Certificate> {
         self.certificate.as_ref()
     }
 }
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
 pub mod delete_certificate_output {
-
+    
     /// A builder for [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3609,20 +3443,19 @@ pub mod delete_certificate_output {
             self
         }
         /// <p>The Secure Sockets Layer (SSL) certificate.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::Certificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::Certificate>) -> Self {
+            self.certificate = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
         pub fn build(self) -> crate::output::DeleteCertificateOutput {
             crate::output::DeleteCertificateOutput {
-                certificate: self.certificate,
+                certificate: self.certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
@@ -3634,20 +3467,20 @@ impl DeleteCertificateOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReplicationTaskOutput {
+pub struct CreateReplicationTaskOutput  {
     /// <p>The replication task that was created.</p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl CreateReplicationTaskOutput {
     /// <p>The replication task that was created.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::model::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 /// See [`CreateReplicationTaskOutput`](crate::output::CreateReplicationTaskOutput).
 pub mod create_replication_task_output {
-
+    
     /// A builder for [`CreateReplicationTaskOutput`](crate::output::CreateReplicationTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3660,20 +3493,19 @@ pub mod create_replication_task_output {
             self
         }
         /// <p>The replication task that was created.</p>
-        pub fn set_replication_task(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTask>,
-        ) -> Self {
-            self.replication_task = input;
-            self
+        pub fn set_replication_task(mut self, input: std::option::Option<crate::model::ReplicationTask>) -> Self {
+            self.replication_task = input; self
         }
         /// Consumes the builder and constructs a [`CreateReplicationTaskOutput`](crate::output::CreateReplicationTaskOutput).
         pub fn build(self) -> crate::output::CreateReplicationTaskOutput {
             crate::output::CreateReplicationTaskOutput {
-                replication_task: self.replication_task,
+                replication_task: self.replication_task
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationTaskOutput`](crate::output::CreateReplicationTaskOutput).
@@ -3685,52 +3517,45 @@ impl CreateReplicationTaskOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReplicationSubnetGroupOutput {
+pub struct CreateReplicationSubnetGroupOutput  {
     /// <p>The replication subnet group that was created.</p>
     #[doc(hidden)]
     pub replication_subnet_group: std::option::Option<crate::model::ReplicationSubnetGroup>,
 }
 impl CreateReplicationSubnetGroupOutput {
     /// <p>The replication subnet group that was created.</p>
-    pub fn replication_subnet_group(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationSubnetGroup> {
+    pub fn replication_subnet_group(&self) -> std::option::Option<& crate::model::ReplicationSubnetGroup> {
         self.replication_subnet_group.as_ref()
     }
 }
 /// See [`CreateReplicationSubnetGroupOutput`](crate::output::CreateReplicationSubnetGroupOutput).
 pub mod create_replication_subnet_group_output {
-
+    
     /// A builder for [`CreateReplicationSubnetGroupOutput`](crate::output::CreateReplicationSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) replication_subnet_group:
-            std::option::Option<crate::model::ReplicationSubnetGroup>,
+        pub(crate) replication_subnet_group: std::option::Option<crate::model::ReplicationSubnetGroup>,
     }
     impl Builder {
         /// <p>The replication subnet group that was created.</p>
-        pub fn replication_subnet_group(
-            mut self,
-            input: crate::model::ReplicationSubnetGroup,
-        ) -> Self {
+        pub fn replication_subnet_group(mut self, input: crate::model::ReplicationSubnetGroup) -> Self {
             self.replication_subnet_group = Some(input);
             self
         }
         /// <p>The replication subnet group that was created.</p>
-        pub fn set_replication_subnet_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationSubnetGroup>,
-        ) -> Self {
-            self.replication_subnet_group = input;
-            self
+        pub fn set_replication_subnet_group(mut self, input: std::option::Option<crate::model::ReplicationSubnetGroup>) -> Self {
+            self.replication_subnet_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateReplicationSubnetGroupOutput`](crate::output::CreateReplicationSubnetGroupOutput).
         pub fn build(self) -> crate::output::CreateReplicationSubnetGroupOutput {
             crate::output::CreateReplicationSubnetGroupOutput {
-                replication_subnet_group: self.replication_subnet_group,
+                replication_subnet_group: self.replication_subnet_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateReplicationSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationSubnetGroupOutput`](crate::output::CreateReplicationSubnetGroupOutput).
@@ -3742,20 +3567,20 @@ impl CreateReplicationSubnetGroupOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReplicationInstanceOutput {
+pub struct CreateReplicationInstanceOutput  {
     /// <p>The replication instance that was created.</p>
     #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
 impl CreateReplicationInstanceOutput {
     /// <p>The replication instance that was created.</p>
-    pub fn replication_instance(&self) -> std::option::Option<&crate::model::ReplicationInstance> {
+    pub fn replication_instance(&self) -> std::option::Option<& crate::model::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
 }
 /// See [`CreateReplicationInstanceOutput`](crate::output::CreateReplicationInstanceOutput).
 pub mod create_replication_instance_output {
-
+    
     /// A builder for [`CreateReplicationInstanceOutput`](crate::output::CreateReplicationInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3768,20 +3593,19 @@ pub mod create_replication_instance_output {
             self
         }
         /// <p>The replication instance that was created.</p>
-        pub fn set_replication_instance(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationInstance>,
-        ) -> Self {
-            self.replication_instance = input;
-            self
+        pub fn set_replication_instance(mut self, input: std::option::Option<crate::model::ReplicationInstance>) -> Self {
+            self.replication_instance = input; self
         }
         /// Consumes the builder and constructs a [`CreateReplicationInstanceOutput`](crate::output::CreateReplicationInstanceOutput).
         pub fn build(self) -> crate::output::CreateReplicationInstanceOutput {
             crate::output::CreateReplicationInstanceOutput {
-                replication_instance: self.replication_instance,
+                replication_instance: self.replication_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateReplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationInstanceOutput`](crate::output::CreateReplicationInstanceOutput).
@@ -3793,7 +3617,7 @@ impl CreateReplicationInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetAdvisorCollectorOutput {
+pub struct CreateFleetAdvisorCollectorOutput  {
     /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
     #[doc(hidden)]
     pub collector_referenced_id: std::option::Option<std::string::String>,
@@ -3812,29 +3636,29 @@ pub struct CreateFleetAdvisorCollectorOutput {
 }
 impl CreateFleetAdvisorCollectorOutput {
     /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
-    pub fn collector_referenced_id(&self) -> std::option::Option<&str> {
+    pub fn collector_referenced_id(&self) -> std::option::Option<& str> {
         self.collector_referenced_id.as_deref()
     }
     /// <p>The name of the new Fleet Advisor collector.</p>
-    pub fn collector_name(&self) -> std::option::Option<&str> {
+    pub fn collector_name(&self) -> std::option::Option<& str> {
         self.collector_name.as_deref()
     }
     /// <p>A summary description of the Fleet Advisor collector.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> std::option::Option<& str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
 }
 /// See [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput).
 pub mod create_fleet_advisor_collector_output {
-
+    
     /// A builder for [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3851,12 +3675,8 @@ pub mod create_fleet_advisor_collector_output {
             self
         }
         /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
-        pub fn set_collector_referenced_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collector_referenced_id = input;
-            self
+        pub fn set_collector_referenced_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collector_referenced_id = input; self
         }
         /// <p>The name of the new Fleet Advisor collector.</p>
         pub fn collector_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3864,12 +3684,8 @@ pub mod create_fleet_advisor_collector_output {
             self
         }
         /// <p>The name of the new Fleet Advisor collector.</p>
-        pub fn set_collector_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collector_name = input;
-            self
+        pub fn set_collector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collector_name = input; self
         }
         /// <p>A summary description of the Fleet Advisor collector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3878,8 +3694,7 @@ pub mod create_fleet_advisor_collector_output {
         }
         /// <p>A summary description of the Fleet Advisor collector.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
         pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3887,12 +3702,8 @@ pub mod create_fleet_advisor_collector_output {
             self
         }
         /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-        pub fn set_service_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_access_role_arn = input;
-            self
+        pub fn set_service_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_access_role_arn = input; self
         }
         /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3900,24 +3711,27 @@ pub mod create_fleet_advisor_collector_output {
             self
         }
         /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// Consumes the builder and constructs a [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput).
         pub fn build(self) -> crate::output::CreateFleetAdvisorCollectorOutput {
             crate::output::CreateFleetAdvisorCollectorOutput {
-                collector_referenced_id: self.collector_referenced_id,
-                collector_name: self.collector_name,
-                description: self.description,
-                service_access_role_arn: self.service_access_role_arn,
-                s3_bucket_name: self.s3_bucket_name,
+                collector_referenced_id: self.collector_referenced_id
+                ,
+                collector_name: self.collector_name
+                ,
+                description: self.description
+                ,
+                service_access_role_arn: self.service_access_role_arn
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFleetAdvisorCollectorOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput).
@@ -3929,20 +3743,20 @@ impl CreateFleetAdvisorCollectorOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventSubscriptionOutput {
+pub struct CreateEventSubscriptionOutput  {
     /// <p>The event subscription that was created.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
     /// <p>The event subscription that was created.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
 pub mod create_event_subscription_output {
-
+    
     /// A builder for [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3955,20 +3769,19 @@ pub mod create_event_subscription_output {
             self
         }
         /// <p>The event subscription that was created.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateEventSubscriptionOutput {
             crate::output::CreateEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
@@ -3980,20 +3793,20 @@ impl CreateEventSubscriptionOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEndpointOutput {
+pub struct CreateEndpointOutput  {
     /// <p>The endpoint that was created.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl CreateEndpointOutput {
     /// <p>The endpoint that was created.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+    pub fn endpoint(&self) -> std::option::Option<& crate::model::Endpoint> {
         self.endpoint.as_ref()
     }
 }
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
 pub mod create_endpoint_output {
-
+    
     /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4007,16 +3820,18 @@ pub mod create_endpoint_output {
         }
         /// <p>The endpoint that was created.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// Consumes the builder and constructs a [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
         pub fn build(self) -> crate::output::CreateEndpointOutput {
             crate::output::CreateEndpointOutput {
-                endpoint: self.endpoint,
+                endpoint: self.endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
@@ -4028,53 +3843,45 @@ impl CreateEndpointOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelReplicationTaskAssessmentRunOutput {
+pub struct CancelReplicationTaskAssessmentRunOutput  {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
     #[doc(hidden)]
-    pub replication_task_assessment_run:
-        std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
+    pub replication_task_assessment_run: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
 impl CancelReplicationTaskAssessmentRunOutput {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
-    pub fn replication_task_assessment_run(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationTaskAssessmentRun> {
+    pub fn replication_task_assessment_run(&self) -> std::option::Option<& crate::model::ReplicationTaskAssessmentRun> {
         self.replication_task_assessment_run.as_ref()
     }
 }
 /// See [`CancelReplicationTaskAssessmentRunOutput`](crate::output::CancelReplicationTaskAssessmentRunOutput).
 pub mod cancel_replication_task_assessment_run_output {
-
+    
     /// A builder for [`CancelReplicationTaskAssessmentRunOutput`](crate::output::CancelReplicationTaskAssessmentRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) replication_task_assessment_run:
-            std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
+        pub(crate) replication_task_assessment_run: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
     }
     impl Builder {
         /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
-        pub fn replication_task_assessment_run(
-            mut self,
-            input: crate::model::ReplicationTaskAssessmentRun,
-        ) -> Self {
+        pub fn replication_task_assessment_run(mut self, input: crate::model::ReplicationTaskAssessmentRun) -> Self {
             self.replication_task_assessment_run = Some(input);
             self
         }
         /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
-        pub fn set_replication_task_assessment_run(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
-        ) -> Self {
-            self.replication_task_assessment_run = input;
-            self
+        pub fn set_replication_task_assessment_run(mut self, input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>) -> Self {
+            self.replication_task_assessment_run = input; self
         }
         /// Consumes the builder and constructs a [`CancelReplicationTaskAssessmentRunOutput`](crate::output::CancelReplicationTaskAssessmentRunOutput).
         pub fn build(self) -> crate::output::CancelReplicationTaskAssessmentRunOutput {
             crate::output::CancelReplicationTaskAssessmentRunOutput {
-                replication_task_assessment_run: self.replication_task_assessment_run,
+                replication_task_assessment_run: self.replication_task_assessment_run
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelReplicationTaskAssessmentRunOutput {
     /// Creates a new builder-style object to manufacture [`CancelReplicationTaskAssessmentRunOutput`](crate::output::CancelReplicationTaskAssessmentRunOutput).
@@ -4086,53 +3893,45 @@ impl CancelReplicationTaskAssessmentRunOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplyPendingMaintenanceActionOutput {
+pub struct ApplyPendingMaintenanceActionOutput  {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
     #[doc(hidden)]
-    pub resource_pending_maintenance_actions:
-        std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+    pub resource_pending_maintenance_actions: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-    pub fn resource_pending_maintenance_actions(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourcePendingMaintenanceActions> {
+    pub fn resource_pending_maintenance_actions(&self) -> std::option::Option<& crate::model::ResourcePendingMaintenanceActions> {
         self.resource_pending_maintenance_actions.as_ref()
     }
 }
 /// See [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
 pub mod apply_pending_maintenance_action_output {
-
+    
     /// A builder for [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_pending_maintenance_actions:
-            std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+        pub(crate) resource_pending_maintenance_actions: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
     }
     impl Builder {
         /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-        pub fn resource_pending_maintenance_actions(
-            mut self,
-            input: crate::model::ResourcePendingMaintenanceActions,
-        ) -> Self {
+        pub fn resource_pending_maintenance_actions(mut self, input: crate::model::ResourcePendingMaintenanceActions) -> Self {
             self.resource_pending_maintenance_actions = Some(input);
             self
         }
         /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-        pub fn set_resource_pending_maintenance_actions(
-            mut self,
-            input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
-        ) -> Self {
-            self.resource_pending_maintenance_actions = input;
-            self
+        pub fn set_resource_pending_maintenance_actions(mut self, input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>) -> Self {
+            self.resource_pending_maintenance_actions = input; self
         }
         /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
         pub fn build(self) -> crate::output::ApplyPendingMaintenanceActionOutput {
             crate::output::ApplyPendingMaintenanceActionOutput {
-                resource_pending_maintenance_actions: self.resource_pending_maintenance_actions,
+                resource_pending_maintenance_actions: self.resource_pending_maintenance_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
@@ -4144,19 +3943,24 @@ impl ApplyPendingMaintenanceActionOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceOutput {}
+pub struct AddTagsToResourceOutput  {
+}
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
-
+    
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
-            crate::output::AddTagsToResourceOutput {}
+            crate::output::AddTagsToResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
@@ -4164,3 +3968,4 @@ impl AddTagsToResourceOutput {
         crate::output::add_tags_to_resource_output::Builder::default()
     }
 }
+
